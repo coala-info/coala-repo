@@ -94,12 +94,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: output_bam_path
+    type: string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bam
 outputs:
   - id: output_bam
     type: File
     doc: Name of the output BAM file
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamsurgeon:1.4.1--pyhdfd78af_0

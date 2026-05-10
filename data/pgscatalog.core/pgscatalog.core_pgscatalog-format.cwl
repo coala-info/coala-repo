@@ -89,13 +89,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type: File
     doc: Output path to combined long scorefile [ will compress output if 
       filename ends with .gz ]
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgscatalog.core:1.0.2--pyhdfd78af_0

@@ -60,6 +60,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --toggling-list
+  - id: contributions_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `contributions_file_path`
+    inputBinding:
+      position: 103
+      prefix: --contributions-file
+  - id: potential_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `potential_file_path`
+    inputBinding:
+      position: 104
+      prefix: --potential-file
+  - id: probabilities_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `probabilities_file_path`
+    inputBinding:
+      position: 105
+      prefix: --probabilities-file
+  - id: single_areas_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `single_areas_file_path`
+    inputBinding:
+      position: 106
+      prefix: --single-areas-file
 outputs:
   - id: potential_file
     type:
@@ -67,28 +99,28 @@ outputs:
       - File
     doc: file path to output potential values
     outputBinding:
-      glob: $(inputs.potential_file)
+      glob: $(inputs.potential_file_path)
   - id: probabilities_file
     type:
       - 'null'
       - File
     doc: file path to output observed and expected probabilities
     outputBinding:
-      glob: $(inputs.probabilities_file)
+      glob: $(inputs.probabilities_file_path)
   - id: single_areas_file
     type:
       - 'null'
       - File
     doc: file path to output single type total areas
     outputBinding:
-      glob: $(inputs.single_areas_file)
+      glob: $(inputs.single_areas_file_path)
   - id: contributions_file
     type:
       - 'null'
       - File
     doc: file path to output contact types contributions
     outputBinding:
-      glob: $(inputs.contributions_file)
+      glob: $(inputs.contributions_file_path)
   - id: stdout_summaries
     type:
       - 'null'
@@ -97,6 +129,8 @@ outputs:
       conditions area')"
     outputBinding:
       glob: '*.out'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0

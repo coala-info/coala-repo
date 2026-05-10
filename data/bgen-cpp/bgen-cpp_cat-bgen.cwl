@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -set-free-data
+  - id: output_bgen_file_path
+    type: string
+    doc: Output or path parameter `output_bgen_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bgen-file
 outputs:
   - id: output_bgen_file
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: Path of bgen file to output.
     outputBinding:
-      glob: $(inputs.output_bgen_file)
+      glob: $(inputs.output_bgen_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0

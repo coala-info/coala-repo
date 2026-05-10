@@ -119,6 +119,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --miRanda
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -126,7 +132,9 @@ outputs:
       - File
     doc: path to the output file (overwritten if it exists)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bufet:1.0--py35h470a237_0

@@ -104,12 +104,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trim
+  - id: mapping_dir_path
+    type: string
+    doc: Output or path parameter `mapping_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --mapping-dir
 outputs:
   - id: mapping_dir
     type: Directory
     doc: Directory where mapping and raw gene counts of the sample are saved.
     outputBinding:
-      glob: $(inputs.mapping_dir)
+      glob: $(inputs.mapping_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

@@ -88,6 +88,60 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: cell_assign_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --cell-assign
+  - id: draw_path
+    type:
+      - 'null'
+      - string
+    doc: Path to where the tree visualization should be saved
+    inputBinding:
+      position: 103
+      prefix: --draw
+  - id: q_y_path
+    type:
+      - 'null'
+      - string
+    doc: Path to where the approximate SNV posterior should be
+    inputBinding:
+      position: 104
+      prefix: --q_y
+  - id: q_z_path
+    type:
+      - 'null'
+      - string
+    doc: Path to where the approximate cell posterior should be
+    inputBinding:
+      position: 105
+      prefix: --q_z
+  - id: ranking_path
+    type:
+      - 'null'
+      - string
+    doc: Path to where tree ranking output should be saved
+    inputBinding:
+      position: 106
+      prefix: --ranking
+  - id: snv_assign_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --snv-assign
+  - id: tree_path
+    type:
+      - 'null'
+      - string
+    doc: Path to save the top ranked tree as a txt file.
+    inputBinding:
+      position: 108
+      prefix: --tree
 outputs:
   - id: draw
     type:
@@ -95,49 +149,51 @@ outputs:
       - File
     doc: Path to where the tree visualization should be saved
     outputBinding:
-      glob: $(inputs.draw)
+      glob: $(inputs.draw_path)
   - id: tree
     type:
       - 'null'
       - File
     doc: Path to save the top ranked tree as a txt file.
     outputBinding:
-      glob: $(inputs.tree)
+      glob: $(inputs.tree_path)
   - id: ranking
     type:
       - 'null'
       - File
     doc: Path to where tree ranking output should be saved
     outputBinding:
-      glob: $(inputs.ranking)
+      glob: $(inputs.ranking_path)
   - id: cell_assign
     type:
       - 'null'
       - File
     doc: Path to where the MAP cell-to-clone labels should be saved
     outputBinding:
-      glob: $(inputs.cell_assign)
+      glob: $(inputs.cell_assign_path)
   - id: snv_assign
     type:
       - 'null'
       - File
     doc: Path to where the MAP SNV-to-cluster labels should be saved.
     outputBinding:
-      glob: $(inputs.snv_assign)
+      glob: $(inputs.snv_assign_path)
   - id: q_y
     type:
       - 'null'
       - File
     doc: Path to where the approximate SNV posterior should be saved
     outputBinding:
-      glob: $(inputs.q_y)
+      glob: $(inputs.q_y_path)
   - id: q_z
     type:
       - 'null'
       - File
     doc: Path to where the approximate cell posterior should be saved
     outputBinding:
-      glob: $(inputs.q_z)
+      glob: $(inputs.q_z_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/arborist:1.0.0--pyhdfd78af_0

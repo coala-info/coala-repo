@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output-type
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: Output filepath(s); stdout if not present
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/skc:0.1.0--h7b50bb2_1

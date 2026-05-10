@@ -470,6 +470,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: junit_xml_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `junit_xml_path`
+    inputBinding:
+      position: 103
+      prefix: --junit-xml
+  - id: result_log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `result_log_path`
+    inputBinding:
+      position: 104
+      prefix: --result-log
 outputs:
   - id: junit_xml
     type:
@@ -477,14 +493,16 @@ outputs:
       - File
     doc: create junit-xml style report file at given path.
     outputBinding:
-      glob: $(inputs.junit_xml)
+      glob: $(inputs.junit_xml_path)
   - id: result_log
     type:
       - 'null'
       - File
     doc: DEPRECATED path for machine-readable result log.
     outputBinding:
-      glob: $(inputs.result_log)
+      glob: $(inputs.result_log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pytest-timeout:1.0.0--py35_0

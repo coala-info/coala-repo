@@ -151,6 +151,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: folder_path
+    type: string
+    doc: Output or path parameter `folder_path`
+    inputBinding:
+      position: 102
+      prefix: --folder
 outputs:
   - id: folder
     type:
@@ -159,7 +165,9 @@ outputs:
     doc: "Output folder path, will be created if it doesn't exist.\n             \
       \                   Defaults to the name of the pretext map."
     outputBinding:
-      glob: $(inputs.folder)
+      glob: $(inputs.folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pretextsnapshot:0.0.5--h9948957_0

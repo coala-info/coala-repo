@@ -103,6 +103,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: plot_result_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_result_path`
+    inputBinding:
+      position: 102
+      prefix: --plot-result
+  - id: save_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --save-fasta
+  - id: save_result_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_result_path`
+    inputBinding:
+      position: 104
+      prefix: --save-result
 outputs:
   - id: save_result
     type:
@@ -111,14 +135,14 @@ outputs:
     doc: Path to save the result table (csv) file. If not set, the result will 
       be printed to the console
     outputBinding:
-      glob: $(inputs.save_result)
+      glob: $(inputs.save_result_path)
   - id: plot_result
     type:
       - 'null'
       - File
     doc: Path to save the result plot
     outputBinding:
-      glob: $(inputs.plot_result)
+      glob: $(inputs.plot_result_path)
   - id: save_fasta
     type:
       - 'null'
@@ -126,7 +150,9 @@ outputs:
     doc: Path to save the output fasta file (requires --structure if using 
       --json)
     outputBinding:
-      glob: $(inputs.save_fasta)
+      glob: $(inputs.save_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/afragmenter:0.0.6--pyhdfd78af_0

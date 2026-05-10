@@ -61,12 +61,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type: Directory
     doc: Directory to save the output files.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/serotypefinder:2.0.2--py312hdfd78af_1

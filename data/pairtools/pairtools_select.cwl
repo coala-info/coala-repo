@@ -103,6 +103,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --type-cast
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: output_rest_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_rest_path`
+    inputBinding:
+      position: 105
+      prefix: --output-rest
 outputs:
   - id: output_file
     type:
@@ -111,7 +127,7 @@ outputs:
     doc: output file. If the path ends with .gz or .lz4, the output is 
       bgzip-/lz4c-compressed. By default, the output is printed into stdout.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_rest
     type:
       - 'null'
@@ -120,7 +136,9 @@ outputs:
       .lz4, the output is bgzip-/lz4c-compressed. By default, such pairs are 
       dropped.
     outputBinding:
-      glob: $(inputs.output_rest)
+      glob: $(inputs.output_rest_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

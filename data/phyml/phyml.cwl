@@ -9,7 +9,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File that provides the amino acid substitution rate matrix in PAML format.
+    doc: File that provides the amino acid substitution rate matrix in PAML 
+      format.
     inputBinding:
       position: 101
       prefix: --aa_rate_file
@@ -25,7 +26,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Distribution of the gamma distribution shape parameter. Fixed value or 'e'.
+    doc: Distribution of the gamma distribution shape parameter. Fixed value or 
+      'e'.
     inputBinding:
       position: 101
       prefix: --alpha
@@ -88,8 +90,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: PhyML removes duplicate sequences by default. Use this option to leave them
-      in.
+    doc: PhyML removes duplicate sequences by default. Use this option to leave 
+      them in.
     inputBinding:
       position: 101
       prefix: --leave_duplicates
@@ -209,8 +211,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Computes TBE instead of FBP (standard) bootstrap support. Has no effect with
-      -b <= 0.
+    doc: Computes TBE instead of FBP (standard) bootstrap support. Has no effect
+      with -b <= 0.
     inputBinding:
       position: 101
       prefix: --tbe
@@ -222,6 +224,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ts/tv
+  - id: print_site_lnl_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `print_site_lnl_path`
+    inputBinding:
+      position: 102
+      prefix: --print-site-lnl
+  - id: print_trace_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `print_trace_path`
+    inputBinding:
+      position: 103
+      prefix: --print-trace
 outputs:
   - id: print_site_lnl
     type:
@@ -229,14 +247,17 @@ outputs:
       - File
     doc: Print the likelihood for each site in file *_phyml_lk.txt.
     outputBinding:
-      glob: $(inputs.print_site_lnl)
+      glob: $(inputs.print_site_lnl_path)
   - id: print_trace
     type:
       - 'null'
       - File
-    doc: Print each phylogeny explored during the tree search process in file *_phyml_trace.txt.
+    doc: Print each phylogeny explored during the tree search process in file 
+      *_phyml_trace.txt.
     outputBinding:
-      glob: $(inputs.print_trace)
+      glob: $(inputs.print_trace_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyml:3.3.20220408--h9bc3f66_3

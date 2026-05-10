@@ -411,6 +411,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weighted-trees
+  - id: output_tree_filepath_path
+    type: string
+    doc: Output or path parameter `output_tree_filepath_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tree-filepath
 outputs:
   - id: output_tree_filepath
     type:
@@ -418,7 +424,9 @@ outputs:
       - File
     doc: Path to output file (if not specified, will print to standard output).
     outputBinding:
-      glob: $(inputs.output_tree_filepath)
+      glob: $(inputs.output_tree_filepath_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dendropy:5.0.8--pyhdfd78af_1

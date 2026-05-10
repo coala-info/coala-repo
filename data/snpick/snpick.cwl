@@ -35,19 +35,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: vcf_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_output_path`
+    inputBinding:
+      position: 103
+      prefix: --vcf-output
 outputs:
   - id: output
     type: File
     doc: Output FASTA file with variable sites
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: vcf_output
     type:
       - 'null'
       - File
     doc: Output VCF file (optional)
     outputBinding:
-      glob: $(inputs.vcf_output)
+      glob: $(inputs.vcf_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snpick:1.0.0--h3f2c17f_0

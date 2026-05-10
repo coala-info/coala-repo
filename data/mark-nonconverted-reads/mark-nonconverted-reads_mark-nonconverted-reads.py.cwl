@@ -36,6 +36,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference
+  - id: out_path
+    type: string
+    doc: Name for output sam file [default = stdout]
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -43,7 +49,9 @@ outputs:
       - File
     doc: Name for output sam file
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mark-nonconverted-reads:1.2--pyhdfd78af_0

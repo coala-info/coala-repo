@@ -61,6 +61,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-pydot
+  - id: outdir_path
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -68,7 +74,9 @@ outputs:
       - Directory
     doc: Path to output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

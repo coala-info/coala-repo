@@ -55,12 +55,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_otu_fp_path
+    type: string
+    doc: Output or path parameter `output_otu_fp_path`
+    inputBinding:
+      position: 102
+      prefix: --output-otu-fp
 outputs:
   - id: output_otu_fp
     type: File
     doc: the output otu table filepath in biom format
     outputBinding:
-      glob: $(inputs.output_otu_fp)
+      glob: $(inputs.output_otu_fp_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picrust:1.1.4--pyh24bf2e0_0

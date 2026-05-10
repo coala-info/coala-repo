@@ -136,12 +136,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -threads
+  - id: output_vcf_path
+    type: string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type: File
     doc: Output VCF file annotated with predicted consequences for each variant.
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

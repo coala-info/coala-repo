@@ -191,12 +191,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_read2
+  - id: outputDir_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --outputDir
 outputs:
   - id: outputDir
     type: Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.outputDir)
+      glob: $(inputs.outputDir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pigpen:0.0.9--pyhdfd78af_0

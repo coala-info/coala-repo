@@ -275,6 +275,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: -U
+  - id: map_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `map_file_path`
+    inputBinding:
+      position: 103
+      prefix: --map-file
+  - id: object_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `object_file_path`
+    inputBinding:
+      position: 104
+      prefix: --object-file
+  - id: object_file_short_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `object_file_short_path`
+    inputBinding:
+      position: 105
+      prefix: --object-file-short
+  - id: redirect_error_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `redirect_error_file_path`
+    inputBinding:
+      position: 106
+      prefix: --redirect-error-file
 outputs:
   - id: object_file
     type:
@@ -282,28 +314,30 @@ outputs:
       - File
     doc: name of object-file output
     outputBinding:
-      glob: $(inputs.object_file)
+      glob: $(inputs.object_file_path)
   - id: object_file_short
     type:
       - 'null'
       - File
     doc: name of object-file output
     outputBinding:
-      glob: $(inputs.object_file_short)
+      glob: $(inputs.object_file_short_path)
   - id: map_file
     type:
       - 'null'
       - File
     doc: name of map-file output
     outputBinding:
-      glob: $(inputs.map_file)
+      glob: $(inputs.map_file_path)
   - id: redirect_error_file
     type:
       - 'null'
       - File
     doc: redirect error messages to file
     outputBinding:
-      glob: $(inputs.redirect_error_file)
+      glob: $(inputs.redirect_error_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yasm:1.3.0--0

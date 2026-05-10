@@ -235,13 +235,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --directory
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: "Output alignment path. Will be set to /dev/stdout if\n                 \
       \       '-' is passed."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/magus-msa:0.2.0--pyhdfd78af_0

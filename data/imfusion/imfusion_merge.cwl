@@ -30,13 +30,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output_expression
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Path to the output directory where the merged imfusion object will be 
       saved.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1

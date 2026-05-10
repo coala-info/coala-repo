@@ -149,6 +149,86 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: eulertigs_fa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `eulertigs_fa_out_path`
+    inputBinding:
+      position: 102
+      prefix: --eulertigs-fa-out
+  - id: eulertigs_gfa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `eulertigs_gfa_out_path`
+    inputBinding:
+      position: 103
+      prefix: --eulertigs-gfa-out
+  - id: greedytigs_duplication_bitvector_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `greedytigs_duplication_bitvector_out_path`
+    inputBinding:
+      position: 104
+      prefix: --greedytigs-duplication-bitvector-out
+  - id: greedytigs_fa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `greedytigs_fa_out_path`
+    inputBinding:
+      position: 105
+      prefix: --greedytigs-fa-out
+  - id: greedytigs_gfa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `greedytigs_gfa_out_path`
+    inputBinding:
+      position: 106
+      prefix: --greedytigs-gfa-out
+  - id: matchtigs_duplication_bitvector_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `matchtigs_duplication_bitvector_out_path`
+    inputBinding:
+      position: 107
+      prefix: --matchtigs-duplication-bitvector-out
+  - id: matchtigs_fa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `matchtigs_fa_out_path`
+    inputBinding:
+      position: 108
+      prefix: --matchtigs-fa-out
+  - id: matchtigs_gfa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `matchtigs_gfa_out_path`
+    inputBinding:
+      position: 109
+      prefix: --matchtigs-gfa-out
+  - id: pathtigs_fa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pathtigs_fa_out_path`
+    inputBinding:
+      position: 110
+      prefix: --pathtigs-fa-out
+  - id: pathtigs_gfa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pathtigs_gfa_out_path`
+    inputBinding:
+      position: 111
+      prefix: --pathtigs-gfa-out
 outputs:
   - id: pathtigs_gfa_out
     type:
@@ -157,7 +237,7 @@ outputs:
     doc: Compute pathtigs and write them to the given file in GFA format. If the
       file ends in '.gz', then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.pathtigs_gfa_out)
+      glob: $(inputs.pathtigs_gfa_out_path)
   - id: pathtigs_fa_out
     type:
       - 'null'
@@ -165,7 +245,7 @@ outputs:
     doc: Compute pathtigs and write them to the given file in fasta format. If 
       the file ends in '.gz', then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.pathtigs_fa_out)
+      glob: $(inputs.pathtigs_fa_out_path)
   - id: eulertigs_gfa_out
     type:
       - 'null'
@@ -173,7 +253,7 @@ outputs:
     doc: Compute eulertigs and write them to the given file in GFA format. If 
       the file ends in '.gz', then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.eulertigs_gfa_out)
+      glob: $(inputs.eulertigs_gfa_out_path)
   - id: eulertigs_fa_out
     type:
       - 'null'
@@ -181,7 +261,7 @@ outputs:
     doc: Compute eulertigs and write them to the given file in fasta format. If 
       the file ends in '.gz', then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.eulertigs_fa_out)
+      glob: $(inputs.eulertigs_fa_out_path)
   - id: greedytigs_gfa_out
     type:
       - 'null'
@@ -189,7 +269,7 @@ outputs:
     doc: Compute greedy matchtigs and write them to the given file in GFA 
       format. If the file ends in '.gz', then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.greedytigs_gfa_out)
+      glob: $(inputs.greedytigs_gfa_out_path)
   - id: greedytigs_fa_out
     type:
       - 'null'
@@ -197,7 +277,7 @@ outputs:
     doc: Compute greedy matchtigs and write them to the given file in fasta 
       format. If the file ends in '.gz', then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.greedytigs_fa_out)
+      glob: $(inputs.greedytigs_fa_out_path)
   - id: matchtigs_gfa_out
     type:
       - 'null'
@@ -206,7 +286,7 @@ outputs:
       file ends in '.gz', then it will be gzip-compressed. WARNING: Uses `O(|V|^2)`
       memory"
     outputBinding:
-      glob: $(inputs.matchtigs_gfa_out)
+      glob: $(inputs.matchtigs_gfa_out_path)
   - id: matchtigs_fa_out
     type:
       - 'null'
@@ -215,7 +295,7 @@ outputs:
       file ends in '.gz', then it will be gzip-compressed. WARNING: Uses `O(|V|^2)`
       memory"
     outputBinding:
-      glob: $(inputs.matchtigs_fa_out)
+      glob: $(inputs.matchtigs_fa_out_path)
   - id: greedytigs_duplication_bitvector_out
     type:
       - 'null'
@@ -226,7 +306,7 @@ outputs:
       set of all original kmers with no duplicates. If the file ends in '.gz', 
       then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.greedytigs_duplication_bitvector_out)
+      glob: $(inputs.greedytigs_duplication_bitvector_out_path)
   - id: matchtigs_duplication_bitvector_out
     type:
       - 'null'
@@ -237,7 +317,9 @@ outputs:
       set of all original kmers with no duplicates. If the file ends in '.gz', 
       then it will be gzip-compressed
     outputBinding:
-      glob: $(inputs.matchtigs_duplication_bitvector_out)
+      glob: $(inputs.matchtigs_duplication_bitvector_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/matchtigs:2.1.9--hc1c3326_0

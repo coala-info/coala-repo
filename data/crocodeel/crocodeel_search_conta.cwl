@@ -47,7 +47,7 @@ inputs:
       - 'null'
       - File
     doc: Joblib file containing the pre-trained Random Forest model used to 
-      detect contamination events
+      detect contamination events 
       /usr/local/lib/python3.14/site-packages/crocodeel/models/crocodeel_rf_Feb2026.joblib
     inputBinding:
       position: 101
@@ -69,6 +69,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s2
+  - id: contamination_events_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: -c
 outputs:
   - id: contamination_events_file
     type:
@@ -76,7 +81,9 @@ outputs:
       - File
     doc: Output TSV file listing all contamination events
     outputBinding:
-      glob: $(inputs.contamination_events_file)
+      glob: $(inputs.contamination_events_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crocodeel:1.1.0--pyhdfd78af_0

@@ -18,7 +18,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: String representing analysis pathway desired (e.g., rma-sketch, plier-mm-sketch).
+    doc: String representing analysis pathway desired (e.g., rma-sketch, 
+      plier-mm-sketch).
     inputBinding:
       position: 102
       prefix: --analysis
@@ -83,7 +84,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File defining x,y <-> probe id conversion. Required when using PGF file.
+    doc: File defining x,y <-> probe id conversion. Required when using PGF 
+      file.
     inputBinding:
       position: 102
       prefix: --clf-file
@@ -91,7 +93,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Turn off the default messages to the console but not logging or sockets.
+    doc: Turn off the default messages to the console but not logging or 
+      sockets.
     inputBinding:
       position: 102
       prefix: --console-off
@@ -227,7 +230,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File specifying a target distribution to use for quantile normalization.
+    doc: File specifying a target distribution to use for quantile 
+      normalization.
     inputBinding:
       position: 102
       prefix: --target-sketch
@@ -267,8 +271,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use the probeset_names instead of probeset_id column in the PGF file for
-      output.
+    doc: Use the probeset_names instead of probeset_id column in the PGF file 
+      for output.
     inputBinding:
       position: 102
       prefix: --use-pgf-names
@@ -284,8 +288,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: How verbose to be with status messages 0 - quiet, 1 - usual messages, 2 -
-      more messages.
+    doc: How verbose to be with status messages 0 - quiet, 1 - usual messages, 2
+      - more messages.
     inputBinding:
       position: 102
       prefix: --verbose
@@ -313,6 +317,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xml-file
+  - id: cc_chp_out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `cc_chp_out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --cc-chp-out-dir
+  - id: cc_md_chp_out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `cc_md_chp_out_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --cc-md-chp-out-dir
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 105
+      prefix: --log-file
+  - id: out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 106
+      prefix: --out-dir
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 107
+      prefix: --report-file
+  - id: xda_chp_out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `xda_chp_out_dir_path`
+    inputBinding:
+      position: 108
+      prefix: --xda-chp-out-dir
 outputs:
   - id: out_dir
     type:
@@ -320,42 +372,44 @@ outputs:
       - Directory
     doc: Directory for output files.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: The name of the log file.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
   - id: cc_chp_out_dir
     type:
       - 'null'
       - Directory
     doc: Over-ride the default location for chp output.
     outputBinding:
-      glob: $(inputs.cc_chp_out_dir)
+      glob: $(inputs.cc_chp_out_dir_path)
   - id: xda_chp_out_dir
     type:
       - 'null'
       - Directory
     doc: Over-ride the default location for chp output.
     outputBinding:
-      glob: $(inputs.xda_chp_out_dir)
+      glob: $(inputs.xda_chp_out_dir_path)
   - id: cc_md_chp_out_dir
     type:
       - 'null'
       - Directory
     doc: Over-ride the default location for chp output.
     outputBinding:
-      glob: $(inputs.cc_md_chp_out_dir)
+      glob: $(inputs.cc_md_chp_out_dir_path)
   - id: report_file
     type:
       - 'null'
       - File
     doc: Over-ride the default report file name.
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/apt-probeset-summarize:2.10.0--h9948957_6

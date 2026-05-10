@@ -183,6 +183,70 @@ inputs:
     inputBinding:
       position: 101
       prefix: -Xmx
+  - id: out1_fastq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out1_fastq_path`
+    inputBinding:
+      position: 102
+      prefix: --out1-fastq
+  - id: out2_fastq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out2_fastq_path`
+    inputBinding:
+      position: 103
+      prefix: --out2-fastq
+  - id: out_merged_fastq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_merged_fastq_path`
+    inputBinding:
+      position: 104
+      prefix: --out-merged-fastq
+  - id: out_ref_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_ref_path`
+    inputBinding:
+      position: 105
+      prefix: --out-ref
+  - id: out_sam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_sam_path`
+    inputBinding:
+      position: 106
+      prefix: --out-sam
+  - id: out_single_fastq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_single_fastq_path`
+    inputBinding:
+      position: 107
+      prefix: --out-single-fastq
+  - id: outu1_fastq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outu1_fastq_path`
+    inputBinding:
+      position: 108
+      prefix: --outu1-fastq
+  - id: outu2_fastq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outu2_fastq_path`
+    inputBinding:
+      position: 109
+      prefix: --outu2-fastq
 outputs:
   - id: out_ref
     type:
@@ -190,56 +254,58 @@ outputs:
       - File
     doc: Output file for the reference genome.
     outputBinding:
-      glob: $(inputs.out_ref)
+      glob: $(inputs.out_ref_path)
   - id: out1_fastq
     type:
       - 'null'
       - File
     doc: Output file for the first read pair.
     outputBinding:
-      glob: $(inputs.out1_fastq)
+      glob: $(inputs.out1_fastq_path)
   - id: out2_fastq
     type:
       - 'null'
       - File
     doc: Output file for the second read pair.
     outputBinding:
-      glob: $(inputs.out2_fastq)
+      glob: $(inputs.out2_fastq_path)
   - id: out_single_fastq
     type:
       - 'null'
       - File
     doc: Output file for single-end reads.
     outputBinding:
-      glob: $(inputs.out_single_fastq)
+      glob: $(inputs.out_single_fastq_path)
   - id: out_sam
     type:
       - 'null'
       - File
     doc: Output SAM file.
     outputBinding:
-      glob: $(inputs.out_sam)
+      glob: $(inputs.out_sam_path)
   - id: out_merged_fastq
     type:
       - 'null'
       - File
     doc: Output file for merged reads.
     outputBinding:
-      glob: $(inputs.out_merged_fastq)
+      glob: $(inputs.out_merged_fastq_path)
   - id: outu1_fastq
     type:
       - 'null'
       - File
     doc: Output file for unmerged reads (read 1).
     outputBinding:
-      glob: $(inputs.outu1_fastq)
+      glob: $(inputs.outu1_fastq_path)
   - id: outu2_fastq
     type:
       - 'null'
       - File
     doc: Output file for unmerged reads (read 2).
     outputBinding:
-      glob: $(inputs.outu2_fastq)
+      glob: $(inputs.outu2_fastq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bbmapy:0.0.51--pyhdfd78af_0

@@ -89,6 +89,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: log_path
+    type: string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 102
+      prefix: --log
 outputs:
   - id: log
     type:
@@ -96,7 +102,9 @@ outputs:
       - File
     doc: log output file
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

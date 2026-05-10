@@ -78,7 +78,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Whether you want to keep FASTQ files containing putative plasmid reads  
+    doc: Whether you want to keep FASTQ files containing putative plasmid reads 
       and long reads that map to multiple contigs (plasmid and chromosome).
     inputBinding:
       position: 101
@@ -138,7 +138,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use --nano-raw for Flye.  Designed for Guppy fast configuration reads.  
+    doc: Use --nano-raw for Flye.  Designed for Guppy fast configuration reads. 
       By default, Flye will assume SUP or HAC reads and use --nano-hq.
     inputBinding:
       position: 101
@@ -206,6 +206,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_raven
+  - id: outdir_path
+    type: string
+    doc: 'Directory to write the output to.  [default:'
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -213,7 +219,9 @@ outputs:
       - Directory
     doc: Directory to write the output to.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plassembler:1.8.2--pyhdfd78af_0

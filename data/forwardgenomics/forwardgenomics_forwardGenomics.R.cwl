@@ -125,13 +125,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weights
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type: File
     doc: Output file that will contain the element ID and the P-values from the 
       methods.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/forwardgenomics:1.0--hdfd78af_0

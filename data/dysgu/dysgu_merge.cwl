@@ -154,6 +154,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --wd
+  - id: svs_out_path
+    type: string
+    doc: 'Output file [default: stdout]'
+    inputBinding:
+      position: 103
+      prefix: --svs-out
 outputs:
   - id: svs_out
     type:
@@ -161,7 +167,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.svs_out)
+      glob: $(inputs.svs_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dysgu:1.8.7--py311h8ddd9a4_0

@@ -26,8 +26,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: force edgewise (not node - so when things are unrooted) and assume all taxa
-      are present in all trees
+    doc: force edgewise (not node - so when things are unrooted) and assume all 
+      taxa are present in all trees
     inputBinding:
       position: 101
       prefix: --edgeall
@@ -35,8 +35,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: put the bipart freq on the edges of this tree. This will create a *.pxbpmapped.tre
-      file.
+    doc: put the bipart freq on the edges of this tree. This will create a 
+      *.pxbpmapped.tre file.
     inputBinding:
       position: 101
       prefix: --maptree
@@ -72,6 +72,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -79,7 +85,9 @@ outputs:
       - File
     doc: output file, STOUT otherwise
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

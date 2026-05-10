@@ -4,8 +4,8 @@ baseCommand:
   - pancake
   - core
 label: pancake_core
-doc: "Identify and extract core genome regions from a PanCake Data Object File.\n\n
-  Tool homepage: https://github.com/pancakeswap/pancake-frontend"
+doc: "Identify and extract core genome regions from a PanCake Data Object File.\n\n\
+  \ Tool homepage: https://github.com/pancakeswap/pancake-frontend"
 inputs:
   - id: exclude_chromosomes
     type:
@@ -30,8 +30,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum fraction of non-core sequence regions within each included sequence
-      (FLOAT, DEAFULT=0.05)
+    doc: Maximum fraction of non-core sequence regions within each included 
+      sequence (FLOAT, DEAFULT=0.05)
     inputBinding:
       position: 101
       prefix: --max_non_core_frac
@@ -47,7 +47,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum length of regions to identify as part of core genome (INTEGER, DEFAULT=25)
+    doc: minimum length of regions to identify as part of core genome (INTEGER, 
+      DEFAULT=25)
     inputBinding:
       position: 101
       prefix: --min_len
@@ -87,8 +88,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Reference CHROMOSOME (define either ONE reference chromosome OR ONE reference
-      genome)
+    doc: Reference CHROMOSOME (define either ONE reference chromosome OR ONE 
+      reference genome)
     inputBinding:
       position: 101
       prefix: --ref_chrom
@@ -96,11 +97,27 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Reference GENOME (define either ONE reference chromosome OR ONE reference
-      genome)
+    doc: Reference GENOME (define either ONE reference chromosome OR ONE 
+      reference genome)
     inputBinding:
       position: 101
       prefix: --ref_genome
+  - id: bed_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_file_path`
+    inputBinding:
+      position: 102
+      prefix: --bed-file
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -108,14 +125,17 @@ outputs:
       - Directory
     doc: 'directory to which .fasta files of core regions are written (DEFAULT: core_{REF_CHROM|REF_GENOME})'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: bed_file
     type:
       - 'null'
       - File
-    doc: .bed file to which core regions are written (DEFAULT= core_{REF_CHROM|REF_GENOME}.bed)
+    doc: .bed file to which core regions are written (DEFAULT= 
+      core_{REF_CHROM|REF_GENOME}.bed)
     outputBinding:
-      glob: $(inputs.bed_file)
+      glob: $(inputs.bed_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pancake:1.1.2--py35_0

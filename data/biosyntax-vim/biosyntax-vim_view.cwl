@@ -300,6 +300,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -u
+  - id: script_out_append_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `script_out_append_path`
+    inputBinding:
+      position: 103
+      prefix: --script-out-append
+  - id: script_out_write_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `script_out_write_path`
+    inputBinding:
+      position: 104
+      prefix: --script-out-write
+  - id: startup_time_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `startup_time_file_path`
+    inputBinding:
+      position: 105
+      prefix: --startup-time-file
 outputs:
   - id: script_out_append
     type:
@@ -307,21 +331,23 @@ outputs:
       - File
     doc: Append all typed commands to file <scriptout>
     outputBinding:
-      glob: $(inputs.script_out_append)
+      glob: $(inputs.script_out_append_path)
   - id: script_out_write
     type:
       - 'null'
       - File
     doc: Write all typed commands to file <scriptout>
     outputBinding:
-      glob: $(inputs.script_out_write)
+      glob: $(inputs.script_out_write_path)
   - id: startup_time_file
     type:
       - 'null'
       - File
     doc: Write startup timing messages to <file>
     outputBinding:
-      glob: $(inputs.startup_time_file)
+      glob: $(inputs.startup_time_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/biosyntax-vim:v1.0.0b-1-deb_cv1

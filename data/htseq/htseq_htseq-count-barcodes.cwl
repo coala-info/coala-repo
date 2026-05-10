@@ -200,6 +200,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --UMI
+  - id: counts_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `counts_output_path`
+    inputBinding:
+      position: 104
+      prefix: --counts-output
+  - id: samout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `samout_path`
+    inputBinding:
+      position: 105
+      prefix: --samout
 outputs:
   - id: samout
     type:
@@ -209,14 +225,16 @@ outputs:
       line with its feature assignment (as an optional field with tag 'XF'). See
       the -p option to use BAM instead of SAM.
     outputBinding:
-      glob: $(inputs.samout)
+      glob: $(inputs.samout_path)
   - id: counts_output
     type:
       - 'null'
       - File
     doc: TSV/CSV filename to output the counts to instead of stdout.
     outputBinding:
-      glob: $(inputs.counts_output)
+      glob: $(inputs.counts_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htseq:2.1.2--py311hb6b0eea_0

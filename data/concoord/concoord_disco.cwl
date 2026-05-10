@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of rounds of triangular bound smoothing (if >= 6, tetragonal BS is
-      activated)
+    doc: number of rounds of triangular bound smoothing (if >= 6, tetragonal BS 
+      is activated)
     inputBinding:
       position: 101
       prefix: -bs
@@ -76,8 +76,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: file containing input distances. This file is usually the output of the program
-      dist.
+    doc: file containing input distances. This file is usually the output of the
+      program dist.
     inputBinding:
       position: 101
       prefix: -d
@@ -85,8 +85,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: file containing input structure in PDB file format. This file is usually
-      the output of the program dist.
+    doc: file containing input structure in PDB file format. This file is 
+      usually the output of the program dist.
     inputBinding:
       position: 101
       prefix: -p
@@ -170,50 +170,100 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_b_factors_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_b_factors_path`
+    inputBinding:
+      position: 102
+      prefix: --output-b-factors
+  - id: output_gromos_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gromos_path`
+    inputBinding:
+      position: 103
+      prefix: --output-gromos
+  - id: output_nmr_pdb_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_nmr_pdb_path`
+    inputBinding:
+      position: 104
+      prefix: --output-nmr-pdb
+  - id: output_pdb_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_pdb_prefix_path`
+    inputBinding:
+      position: 105
+      prefix: --output-pdb-prefix
+  - id: output_rmsd_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_rmsd_path`
+    inputBinding:
+      position: 106
+      prefix: --output-rmsd
+  - id: output_xtc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_xtc_path`
+    inputBinding:
+      position: 107
+      prefix: --output-xtc
 outputs:
   - id: output_pdb_prefix
     type:
       - 'null'
       - File
-    doc: basic filename for output PDB structures. (a number plus extension .pdb will
-      be added)
+    doc: basic filename for output PDB structures. (a number plus extension .pdb
+      will be added)
     outputBinding:
-      glob: $(inputs.output_pdb_prefix)
+      glob: $(inputs.output_pdb_prefix_path)
   - id: output_nmr_pdb
     type:
       - 'null'
       - File
     doc: output trajectory in NMR-PDB format
     outputBinding:
-      glob: $(inputs.output_nmr_pdb)
+      glob: $(inputs.output_nmr_pdb_path)
   - id: output_xtc
     type:
       - 'null'
       - File
     doc: output trajectory in xtc format
     outputBinding:
-      glob: $(inputs.output_xtc)
+      glob: $(inputs.output_xtc_path)
   - id: output_gromos
     type:
       - 'null'
       - File
     doc: output trajectory in formatted GROMOS87 format
     outputBinding:
-      glob: $(inputs.output_gromos)
+      glob: $(inputs.output_gromos_path)
   - id: output_rmsd
     type:
       - 'null'
       - File
     doc: file with RMSD values of output structures to initial structure.
     outputBinding:
-      glob: $(inputs.output_rmsd)
+      glob: $(inputs.output_rmsd_path)
   - id: output_b_factors
     type:
       - 'null'
       - File
     doc: file with mean square atomic fluctuations expressed as B-factors
     outputBinding:
-      glob: $(inputs.output_b_factors)
+      glob: $(inputs.output_b_factors_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/concoord:2.1.2--h9ee0642_4

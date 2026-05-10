@@ -143,12 +143,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --with_confidence
+  - id: output_metagenome_table_path
+    type: string
+    doc: Output or path parameter `output_metagenome_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-metagenome-table
 outputs:
   - id: output_metagenome_table
     type: File
     doc: the output file for the predicted metagenome
     outputBinding:
-      glob: $(inputs.output_metagenome_table)
+      glob: $(inputs.output_metagenome_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picrust:1.1.4--pyh24bf2e0_0

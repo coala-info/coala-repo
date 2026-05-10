@@ -42,6 +42,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dir_path`
+    inputBinding:
+      position: 103
+      prefix: --dir
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -49,14 +65,16 @@ outputs:
       - File
     doc: Output filename for the TSVs (without extension)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: dir
     type:
       - 'null'
       - Directory
     doc: Output directory to write files to
     outputBinding:
-      glob: $(inputs.dir)
+      glob: $(inputs.dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tidk:0.2.65--h3dc2dae_0

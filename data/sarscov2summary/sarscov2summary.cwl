@@ -81,6 +81,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --slac
+  - id: evolutionary_csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `evolutionary_csv_path`
+    inputBinding:
+      position: 102
+      prefix: --evolutionary-csv
+  - id: mafs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mafs_path`
+    inputBinding:
+      position: 103
+      prefix: --mafs
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -88,21 +112,23 @@ outputs:
       - File
     doc: Write results here
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: mafs
     type:
       - 'null'
       - File
     doc: If provided, write a CSV file with MAF/p-value tables
     outputBinding:
-      glob: $(inputs.mafs)
+      glob: $(inputs.mafs_path)
   - id: evolutionary_csv
     type:
       - 'null'
       - File
     doc: If provided, write a CSV file with observed/predicted frequncies
     outputBinding:
-      glob: $(inputs.evolutionary_csv)
+      glob: $(inputs.evolutionary_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sarscov2summary:0.5--py_1

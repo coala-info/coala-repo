@@ -234,12 +234,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --size
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: The directory to place all output.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neptune:1.2.5--py27_0

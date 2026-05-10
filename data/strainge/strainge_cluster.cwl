@@ -67,6 +67,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --warn-too-distant
+  - id: clusters_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clusters_out_path`
+    inputBinding:
+      position: 103
+      prefix: --clusters-out
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -75,7 +91,7 @@ outputs:
     doc: The file where the list of kmersets to keep after clustering gets 
       written. Defaults to standard output.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: clusters_out
     type:
       - 'null'
@@ -83,7 +99,9 @@ outputs:
     doc: Output an optional tab separated file with all clusters and their 
       entries.
     outputBinding:
-      glob: $(inputs.clusters_out)
+      glob: $(inputs.clusters_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainge:1.3.9--py38h737be40_0

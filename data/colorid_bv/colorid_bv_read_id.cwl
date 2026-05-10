@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Collects matches for subset of kmers indicated, using this subset to more
-      rapidly find hits for the remainder of the kmers
+    doc: Collects matches for subset of kmers indicated, using this subset to 
+      more rapidly find hits for the remainder of the kmers
     inputBinding:
       position: 101
       prefix: --bitvector_sample
@@ -33,8 +33,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: down-sample k-mers used for read classification; increases speed at cost
-      of decreased sensitivity
+    doc: down-sample k-mers used for read classification; increases speed at 
+      cost of decreased sensitivity
     inputBinding:
       position: 101
       prefix: --down_sample
@@ -42,8 +42,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Parameter to correct for false positives, maybe increased for larger searches.
-      Adjust for larger datasets
+    doc: Parameter to correct for false positives, maybe increased for larger 
+      searches. Adjust for larger datasets
     inputBinding:
       position: 101
       prefix: --fp_correct
@@ -51,9 +51,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When this flag is set, a faster, but less memory efficient method to load
-      the index is used. Loading the index requires approximately 2X the size of the
-      index of RAM.
+    doc: When this flag is set, a faster, but less memory efficient method to 
+      load the index is used. Loading the index requires approximately 2X the 
+      size of the index of RAM.
     inputBinding:
       position: 101
       prefix: --high_mem_load
@@ -61,8 +61,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: kmers with nucleotides below this minimum phred score will be excluded from
-      the analyses
+    doc: kmers with nucleotides below this minimum phred score will be excluded 
+      from the analyses
     inputBinding:
       position: 101
       prefix: --quality
@@ -86,17 +86,25 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of threads to use, if not set the maximum available number threads
-      will be used
+    doc: number of threads to use, if not set the maximum available number 
+      threads will be used
     inputBinding:
       position: 101
       prefix: --threads
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --prefix
 outputs:
   - id: prefix
     type: File
     doc: prefix for output file(-s)
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colorid_bv:0.1.0--h3ab6199_2

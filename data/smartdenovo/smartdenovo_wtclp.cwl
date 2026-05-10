@@ -132,6 +132,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_regions_path
+    type: string
+    doc: Output or path parameter `output_regions_path`
+    inputBinding:
+      position: 102
+      prefix: --output-regions
 outputs:
   - id: output_regions
     type:
@@ -140,7 +146,9 @@ outputs:
     doc: "Ouput of reads' regions after clipping, -:stdout, *\n             Format:
       read_name\toffset\tlength"
     outputBinding:
-      glob: $(inputs.output_regions)
+      glob: $(inputs.output_regions_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8

@@ -67,6 +67,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --swap-distance
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -75,7 +81,9 @@ outputs:
     doc: Path to the output subsampled alignment file. Defaults to stdout (same 
       format as input)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rasusa:3.0.0--h54198d6_0

@@ -142,6 +142,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: --threads
+  - id: dump_sv_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dump_sv_reads_file_path`
+    inputBinding:
+      position: 105
+      prefix: --dump-sv-reads-file
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 106
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -149,14 +165,16 @@ outputs:
       - File
     doc: BCF output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: dump_sv_reads_file
     type:
       - 'null'
       - File
     doc: gzipped output file for SV-reads (optional)
     outputBinding:
-      glob: $(inputs.dump_sv_reads_file)
+      glob: $(inputs.dump_sv_reads_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/delly:1.7.2--h4d20210_0

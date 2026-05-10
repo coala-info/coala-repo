@@ -35,6 +35,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --input-format
+  - id: output_html_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-html
+  - id: save_json_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --save-json
 outputs:
   - id: output_html
     type:
@@ -42,14 +56,16 @@ outputs:
       - File
     doc: output HTML file to this location.
     outputBinding:
-      glob: $(inputs.output_html)
+      glob: $(inputs.output_html_path)
   - id: save_json
     type:
       - 'null'
       - File
     doc: output a JSON file of the taxonomy
     outputBinding:
-      glob: $(inputs.save_json)
+      glob: $(inputs.save_json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/taxburst:0.3.2--pyhdfd78af_0

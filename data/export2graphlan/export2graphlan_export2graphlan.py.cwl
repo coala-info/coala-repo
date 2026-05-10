@@ -272,24 +272,49 @@ inputs:
     inputBinding:
       position: 101
       prefix: --title_font_size
+  - id: annotation_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `annotation_path`
+    inputBinding:
+      position: 102
+      prefix: --annotation
+  - id: out_table_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --out_table
+  - id: tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tree_path`
+    inputBinding:
+      position: 104
+      prefix: --tree
 outputs:
   - id: tree
     type: File
     doc: Output filename where save the input tree for GraPhlAn
     outputBinding:
-      glob: $(inputs.tree)
+      glob: $(inputs.tree_path)
   - id: annotation
     type: File
     doc: Output filename where save GraPhlAn annotation
     outputBinding:
-      glob: $(inputs.annotation)
+      glob: $(inputs.annotation_path)
   - id: out_table
     type:
       - 'null'
       - File
     doc: Write processed data matrix to file
     outputBinding:
-      glob: $(inputs.out_table)
+      glob: $(inputs.out_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/export2graphlan:0.22--py_0

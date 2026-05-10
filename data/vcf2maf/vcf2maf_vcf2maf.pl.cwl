@@ -45,7 +45,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Reference FASTA file
+    doc: Reference FASTA file 
       ~/.vep/homo_sapiens/112_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
     inputBinding:
       position: 101
@@ -104,12 +104,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_maf_path
+    type: string
+    doc: Output or path parameter `output_maf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-maf
 outputs:
   - id: output_maf
     type: File
     doc: Path to output MAF file
     outputBinding:
-      glob: $(inputs.output_maf)
+      glob: $(inputs.output_maf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf2maf:1.6.22--hdfd78af_2

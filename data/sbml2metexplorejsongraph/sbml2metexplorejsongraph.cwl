@@ -26,12 +26,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -validate
+  - id: output_json_file_path
+    type: string
+    doc: Output or path parameter `output_json_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-json-file
 outputs:
   - id: output_json_file
     type: File
     doc: Output json file name.
     outputBinding:
-      glob: $(inputs.output_json_file)
+      glob: $(inputs.output_json_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sbml2metexplorejsongraph:phenomenal-v1.2_cv1.1.7

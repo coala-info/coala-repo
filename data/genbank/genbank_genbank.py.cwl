@@ -82,6 +82,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --slice
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -89,7 +95,9 @@ outputs:
       - File
     doc: where to write output
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genbank:0.121--py312h247cb63_2

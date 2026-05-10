@@ -41,17 +41,34 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s2
+  - id: contamination_events_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: -c
+  - id: pdf_report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output PDF file with scatterplots for all
+    inputBinding:
+      position: 103
+      prefix: -r
 outputs:
   - id: contamination_events_file
     type: File
     doc: Output TSV file listing all contamination events
     outputBinding:
-      glob: $(inputs.contamination_events_file)
+      glob: $(inputs.contamination_events_file_path)
   - id: pdf_report_file
     type: File
     doc: Output PDF file with scatterplots for all contamination events
     outputBinding:
-      glob: $(inputs.pdf_report_file)
+      glob: $(inputs.pdf_report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crocodeel:1.1.0--pyhdfd78af_0

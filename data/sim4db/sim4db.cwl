@@ -222,12 +222,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_sim4db_path
+    type: string
+    doc: Output or path parameter `output_sim4db_path`
+    inputBinding:
+      position: 102
+      prefix: --output-sim4db
 outputs:
   - id: output_sim4db
     type: File
     doc: write output to this file
     outputBinding:
-      glob: $(inputs.output_sim4db)
+      glob: $(inputs.output_sim4db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sim4db:2008--pl5321h609437b_2

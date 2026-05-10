@@ -80,12 +80,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_step
+  - id: out_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type: Directory
     doc: the output directory
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycov3:2.1.1--pyh7e72e81_0

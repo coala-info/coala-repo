@@ -17,8 +17,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optional path to a user-defined config file listing the full set of regions
-      to analyze.
+    doc: Optional path to a user-defined config file listing the full set of 
+      regions to analyze.
     inputBinding:
       position: 101
       prefix: --config
@@ -26,8 +26,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Optionally specify which gene(s) to run (separated by comma). Will run all
-      genes if not specified.
+    doc: Optionally specify which gene(s) to run (separated by comma). Will run 
+      all genes if not specified.
     inputBinding:
       position: 101
       prefix: --gene
@@ -35,8 +35,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Optional. If specified, variant calls will be made against the main gene
-      only.
+    doc: Optional. If specified, variant calls will be made against the main 
+      gene only.
     inputBinding:
       position: 101
       prefix: --gene1only
@@ -44,8 +44,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Optionally specify which genome reference build the input BAM files are aligned
-      against. Accepted values are 19, 37, chm13, and 38.
+    doc: Optionally specify which genome reference build the input BAM files are
+      aligned against. Accepted values are 19, 37, chm13, and 38.
     inputBinding:
       position: 101
       prefix: --genome
@@ -61,8 +61,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Optional. Minimum frequency of unique supporting reads for a haplotype. Works
-      with the targeted mode.
+    doc: Optional. Minimum frequency of unique supporting reads for a haplotype.
+      Works with the targeted mode.
     inputBinding:
       position: 101
       prefix: --min-haplotype-frequency
@@ -70,8 +70,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Optional. Minimum frequency for a variant to be used for phasing. Works with
-      the targeted mode.
+    doc: Optional. Minimum frequency for a variant to be used for phasing. Works
+      with the targeted mode.
     inputBinding:
       position: 101
       prefix: --min-variant-frequency
@@ -95,8 +95,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix of output files for a single sample. Used with -b. If not provided,
-      prefix will be extracted from the header of the input BAM.
+    doc: Prefix of output files for a single sample. Used with -b. If not 
+      provided, prefix will be extracted from the header of the input BAM.
     inputBinding:
       position: 101
       prefix: --prefix
@@ -118,8 +118,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Optional. If specified, paraphase will not assume depth is uniform across
-      the genome.
+    doc: Optional. If specified, paraphase will not assume depth is uniform 
+      across the genome.
     inputBinding:
       position: 101
       prefix: --targeted
@@ -135,17 +135,25 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Optional. If specified, Paraphase will write no-call sites in the VCFs, marked
-      with LowQual filter.
+    doc: Optional. If specified, Paraphase will write no-call sites in the VCFs,
+      marked with LowQual filter.
     inputBinding:
       position: 101
       prefix: --write-nocalls-in-vcf
+  - id: out_path
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paraphase:3.4.0--pyhdfd78af_0

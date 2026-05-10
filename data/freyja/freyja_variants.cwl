@@ -50,6 +50,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --varthresh
+  - id: depths_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `depths_path`
+    inputBinding:
+      position: 103
+      prefix: --depths
+  - id: variants_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `variants_path`
+    inputBinding:
+      position: 104
+      prefix: --variants
 outputs:
   - id: variants
     type:
@@ -57,14 +73,16 @@ outputs:
       - File
     doc: Variant calling output file
     outputBinding:
-      glob: $(inputs.variants)
+      glob: $(inputs.variants_path)
   - id: depths
     type:
       - 'null'
       - File
     doc: Sequencing depth output file
     outputBinding:
-      glob: $(inputs.depths)
+      glob: $(inputs.depths_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0

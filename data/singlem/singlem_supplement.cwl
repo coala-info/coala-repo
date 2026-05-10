@@ -227,6 +227,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --working-directory
+  - id: output_taxonomies_path
+    type: string
+    doc: Output or path parameter `output_taxonomies_path`
+    inputBinding:
+      position: 102
+      prefix: --output-taxonomies
 outputs:
   - id: output_taxonomies
     type:
@@ -235,7 +241,9 @@ outputs:
     doc: TSV output file of taxonomies of new genomes, whether they are novel 
       species or not.
     outputBinding:
-      glob: $(inputs.output_taxonomies)
+      glob: $(inputs.output_taxonomies_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

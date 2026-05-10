@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Flank maximum erors in flank, ONLY set manually when you know what you are
-      doing
+    doc: Flank maximum erors in flank, ONLY set manually when you know what you 
+      are doing
     inputBinding:
       position: 101
       prefix: --flank-max-errors
@@ -71,8 +71,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Also use extended templates (if using kit), i.e. detect fusions, breaks,
-      etc. (slower)
+    doc: Also use extended templates (if using kit), i.e. detect fusions, 
+      breaks, etc. (slower)
     inputBinding:
       position: 101
       prefix: --use-extended
@@ -84,19 +84,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: failed_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `failed_out_path`
+    inputBinding:
+      position: 102
+      prefix: --failed-out
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output folder
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: failed_out
     type:
       - 'null'
       - File
     doc: Write ids of failed trimmed reads to this file
     outputBinding:
-      glob: $(inputs.failed_out)
+      glob: $(inputs.failed_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barbell:0.3.1--hc1c3326_0

@@ -60,12 +60,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ref_reads
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Directory for pipeline output
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lassensus:0.0.5--pyhdfd78af_0

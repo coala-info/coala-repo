@@ -19,12 +19,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --uniprot_id
+  - id: output_pdb_path_path
+    type: string
+    doc: Output or path parameter `output_pdb_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-pdb-path
 outputs:
   - id: output_pdb_path
     type: File
     doc: Path to the output PDB file
     outputBinding:
-      glob: $(inputs.output_pdb_path)
+      glob: $(inputs.output_pdb_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobb_io:5.2.2--pyhdfd78af_0

@@ -17,6 +17,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-fasta
+  - id: genotypes_table_path
+    type: string
+    doc: Output or path parameter `genotypes_table_path`
+    inputBinding:
+      position: 102
+      prefix: --genotypes-table
 outputs:
   - id: genotypes_table
     type: File
@@ -24,7 +30,9 @@ outputs:
       at each position in --codons-\nfile for each sequence in --input-fasta, or \"\
       X\" for\nmissing data"
     outputBinding:
-      glob: $(inputs.genotypes_table)
+      glob: $(inputs.genotypes_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

@@ -40,12 +40,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vcf
+  - id: outvcf_path
+    type: string
+    doc: Output or path parameter `outvcf_path`
+    inputBinding:
+      position: 103
+      prefix: --outvcf
 outputs:
   - id: outvcf
     type: File
     doc: path to output SV VCF
     outputBinding:
-      glob: $(inputs.outvcf)
+      glob: $(inputs.outvcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smoove:0.2.8--h9ee0642_1

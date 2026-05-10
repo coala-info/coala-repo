@@ -624,6 +624,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weight
+  - id: hapout_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hapout_file_path`
+    inputBinding:
+      position: 103
+      prefix: --hapout-file
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -631,14 +647,16 @@ outputs:
       - File
     doc: Set output file name.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
   - id: hapout_file
     type:
       - 'null'
       - File
     doc: Set haplotype output file name.
     outputBinding:
-      glob: $(inputs.hapout_file)
+      glob: $(inputs.hapout_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kestrel:1.0.3--hdfd78af_0

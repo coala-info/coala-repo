@@ -18,6 +18,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: dict_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dict_path`
+    inputBinding:
+      position: 102
+      prefix: --dict
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: dict
     type:
@@ -25,12 +41,14 @@ outputs:
       - File
     doc: Write a dictionary for Old->New identifiers in this file.
     outputBinding:
-      glob: $(inputs.dict)
+      glob: $(inputs.dict_path)
   - id: output
     type: File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gretl:0.1.1--hc1c3326_2

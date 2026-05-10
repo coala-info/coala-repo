@@ -85,6 +85,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --target-data
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -93,14 +109,16 @@ outputs:
     doc: Output file to write the processed result. If omitted, default to 
       stdout.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: File to which the program log should be redirected
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rpsbproc:0.5.1--hd6d6fdc_0

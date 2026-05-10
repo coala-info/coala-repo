@@ -365,6 +365,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --width
+  - id: output_realigned_bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_realigned_bam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-realigned-bam
+  - id: process_realigned_bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `process_realigned_bam_path`
+    inputBinding:
+      position: 103
+      prefix: --process-realigned-bam
 outputs:
   - id: output_realigned_bam
     type:
@@ -372,14 +388,16 @@ outputs:
       - File
     doc: output BAM file with realigned reads
     outputBinding:
-      glob: $(inputs.output_realigned_bam)
+      glob: $(inputs.output_realigned_bam_path)
   - id: process_realigned_bam
     type:
       - 'null'
       - File
     doc: ABSOLUTE path to script to process realigned BAM file
     outputBinding:
-      glob: $(inputs.process_realigned_bam)
+      glob: $(inputs.process_realigned_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/dindel:v1.01-wu1-3dfsg-1b1-deb_cv1

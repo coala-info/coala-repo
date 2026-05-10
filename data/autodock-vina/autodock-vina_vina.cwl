@@ -35,8 +35,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: the number of CPUs to use (the default is to try to detect the number of
-      CPUs or, failing that, use 1)
+    doc: the number of CPUs to use (the default is to try to detect the number 
+      of CPUs or, failing that, use 1)
     inputBinding:
       position: 101
       prefix: --cpu
@@ -44,8 +44,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: maximum energy difference between the best binding mode and the worst one
-      displayed (kcal/mol)
+    doc: maximum energy difference between the best binding mode and the worst 
+      one displayed (kcal/mol)
     inputBinding:
       position: 101
       prefix: --energy_range
@@ -123,21 +123,40 @@ inputs:
     inputBinding:
       position: 101
       prefix: --size_z
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 102
+      prefix: --log
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
       - 'null'
       - File
-    doc: output models (PDBQT), the default is chosen based on the ligand file name
+    doc: output models (PDBQT), the default is chosen based on the ligand file 
+      name
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: log
     type:
       - 'null'
       - File
     doc: optionally, write log file
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/autodock-vina:v1.1.2-3b6-deb_cv1

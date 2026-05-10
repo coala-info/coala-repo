@@ -70,6 +70,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -v
+  - id: output_template_path
+    type: string
+    doc: Output or path parameter `output_template_path`
+    inputBinding:
+      position: 105
+      prefix: --output-template
 outputs:
   - id: output_template
     type:
@@ -77,7 +83,9 @@ outputs:
       - File
     doc: Output file name template or list of files for un1, un2, join
     outputBinding:
-      glob: $(inputs.output_template)
+      glob: $(inputs.output_template_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ea-utils:1.1.2.779--h9dd4a16_0

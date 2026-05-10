@@ -129,6 +129,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: png_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `png_path`
+    inputBinding:
+      position: 102
+      prefix: --png
+  - id: svg_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `svg_path`
+    inputBinding:
+      position: 103
+      prefix: --svg
+  - id: tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tsv_path`
+    inputBinding:
+      position: 104
+      prefix: --tsv
 outputs:
   - id: tsv
     type:
@@ -136,21 +160,23 @@ outputs:
       - File
     doc: Write the TSV layout plus displayed annotations to this FILE.
     outputBinding:
-      glob: $(inputs.tsv)
+      glob: $(inputs.tsv_path)
   - id: svg
     type:
       - 'null'
       - File
     doc: Write an SVG rendering to this FILE.
     outputBinding:
-      glob: $(inputs.svg)
+      glob: $(inputs.svg_path)
   - id: png
     type:
       - 'null'
       - File
     doc: Write a rasterized PNG rendering to this FILE.
     outputBinding:
-      glob: $(inputs.png)
+      glob: $(inputs.png_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

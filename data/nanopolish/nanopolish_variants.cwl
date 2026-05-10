@@ -209,6 +209,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -216,7 +222,9 @@ outputs:
       - File
     doc: 'write result to FILE [default: stdout]'
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanopolish:0.14.0--h773013f_3

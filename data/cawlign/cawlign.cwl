@@ -130,6 +130,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -I
+  - id: output_path
+    type: string
+    doc: direct the output to a file named OUTPUT (default=stdout)
+    inputBinding:
+      position: 103
+      prefix: -o
 outputs:
   - id: output
     type:
@@ -137,7 +143,9 @@ outputs:
       - File
     doc: direct the output to a file named OUTPUT (default=stdout)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cawlign:0.1.16--he91c24d_0

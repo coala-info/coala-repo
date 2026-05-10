@@ -70,6 +70,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf-reference
+  - id: alignment_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignment_output_path`
+    inputBinding:
+      position: 102
+      prefix: --alignment-output
+  - id: output_node_data_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_node_data_path`
+    inputBinding:
+      position: 103
+      prefix: --output-node-data
+  - id: vcf_reference_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_reference_output_path`
+    inputBinding:
+      position: 104
+      prefix: --vcf-reference-output
 outputs:
   - id: output_node_data
     type:
@@ -77,7 +101,7 @@ outputs:
       - File
     doc: name of JSON file to save aa-mutations to
     outputBinding:
-      glob: $(inputs.output_node_data)
+      glob: $(inputs.output_node_data_path)
   - id: alignment_output
     type:
       - 'null'
@@ -87,7 +111,7 @@ outputs:
       file name like so: 'my_alignment_%GENE.fasta', where '%GENE' will be replaced
       by the name of the gene"
     outputBinding:
-      glob: $(inputs.alignment_output)
+      glob: $(inputs.alignment_output_path)
   - id: vcf_reference_output
     type:
       - 'null'
@@ -95,7 +119,9 @@ outputs:
     doc: fasta file where reference sequence translations for VCF input will be 
       written
     outputBinding:
-      glob: $(inputs.vcf_reference_output)
+      glob: $(inputs.vcf_reference_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

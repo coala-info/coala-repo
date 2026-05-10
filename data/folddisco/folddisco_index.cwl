@@ -93,12 +93,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: index_path_path
+    type: string
+    doc: Output or path parameter `index_path_path`
+    inputBinding:
+      position: 102
+      prefix: --index-path
 outputs:
   - id: index_path
     type: Directory
     doc: Path to save the index table
     outputBinding:
-      glob: $(inputs.index_path)
+      glob: $(inputs.index_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/folddisco:1.7514114--ha6fb395_0

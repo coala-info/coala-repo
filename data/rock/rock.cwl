@@ -108,6 +108,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_files_list_path
+    type: string
+    doc: Output or path parameter `output_files_list_path`
+    inputBinding:
+      position: 103
+      prefix: --output-files-list
 outputs:
   - id: output_files_list
     type:
@@ -117,7 +123,9 @@ outputs:
       name(s) should be structured in the same way as the file specified in 
       option -i.
     outputBinding:
-      glob: $(inputs.output_files_list)
+      glob: $(inputs.output_files_list_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rock:2.0--h4ac6f70_2

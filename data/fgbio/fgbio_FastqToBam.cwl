@@ -181,6 +181,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --umi-tag
+  - id: output_bam_path
+    type: string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bam
 outputs:
   - id: output_bam
     type:
@@ -188,7 +194,9 @@ outputs:
       - File
     doc: The output SAM or BAM file to be written.
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0

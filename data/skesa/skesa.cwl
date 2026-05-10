@@ -182,6 +182,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vector_percent
+  - id: connected_reads_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `connected_reads_path`
+    inputBinding:
+      position: 102
+      prefix: --connected-reads
+  - id: contigs_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `contigs_out_path`
+    inputBinding:
+      position: 103
+      prefix: --contigs-out
+  - id: dbg_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dbg_out_path`
+    inputBinding:
+      position: 104
+      prefix: --dbg-out
+  - id: hist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hist_path`
+    inputBinding:
+      position: 105
+      prefix: --hist
 outputs:
   - id: contigs_out
     type:
@@ -189,28 +221,30 @@ outputs:
       - File
     doc: Output file for contigs (stdout if not specified)
     outputBinding:
-      glob: $(inputs.contigs_out)
+      glob: $(inputs.contigs_out_path)
   - id: dbg_out
     type:
       - 'null'
       - File
     doc: Output kmer file
     outputBinding:
-      glob: $(inputs.dbg_out)
+      glob: $(inputs.dbg_out_path)
   - id: hist
     type:
       - 'null'
       - File
     doc: File for histogram
     outputBinding:
-      glob: $(inputs.hist)
+      glob: $(inputs.hist_path)
   - id: connected_reads
     type:
       - 'null'
       - File
     doc: File for connected paired reads
     outputBinding:
-      glob: $(inputs.connected_reads)
+      glob: $(inputs.connected_reads_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/skesa:2.5.1--h077b44d_3

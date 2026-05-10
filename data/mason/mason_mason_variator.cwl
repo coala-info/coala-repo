@@ -248,12 +248,42 @@ inputs:
     inputBinding:
       position: 101
       prefix: --very-verbose
+  - id: meth_fasta_out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --meth-fasta-out
+  - id: out_breakpoints_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --out-breakpoints
+  - id: out_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_fasta_path`
+    inputBinding:
+      position: 104
+      prefix: --out-fasta
+  - id: out_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_vcf_path`
+    inputBinding:
+      position: 105
+      prefix: --out-vcf
 outputs:
   - id: out_vcf
     type: File
     doc: 'VCF file to write simulated variations to. Valid filetype is: .vcf.'
     outputBinding:
-      glob: $(inputs.out_vcf)
+      glob: $(inputs.out_vcf_path)
   - id: out_fasta
     type:
       - 'null'
@@ -261,7 +291,7 @@ outputs:
     doc: 'FASTA file to write simulated haplotypes to. Valid filetypes are: .fasta
       and .fa.'
     outputBinding:
-      glob: $(inputs.out_fasta)
+      glob: $(inputs.out_fasta_path)
   - id: out_breakpoints
     type:
       - 'null'
@@ -269,7 +299,7 @@ outputs:
     doc: 'TSV file to write breakpoints in variants to. Valid filetypes are: .txt
       and .tsv.'
     outputBinding:
-      glob: $(inputs.out_breakpoints)
+      glob: $(inputs.out_breakpoints_path)
   - id: meth_fasta_out
     type:
       - 'null'
@@ -279,7 +309,9 @@ outputs:
       .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*], .faa[.*], .fa[.*], and .bam, where
       * is any of the following extensions: gz, bz2, and bgzf for transparent (de)compression.'
     outputBinding:
-      glob: $(inputs.meth_fasta_out)
+      glob: $(inputs.meth_fasta_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mason:2.0.13--h7f3286b_0

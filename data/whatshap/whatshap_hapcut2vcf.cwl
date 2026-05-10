@@ -16,6 +16,12 @@ inputs:
     doc: hapCUT result file
     inputBinding:
       position: 2
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -23,7 +29,9 @@ outputs:
       - File
     doc: Output VCF file. If omitted, use standard output.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0

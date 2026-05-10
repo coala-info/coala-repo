@@ -684,13 +684,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --y_present
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory. XYalign will create a directory structure within this
       directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xyalign:1.1.5--py_1

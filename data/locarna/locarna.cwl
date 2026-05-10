@@ -539,6 +539,54 @@ inputs:
     inputBinding:
       position: 103
       prefix: --write-structure
+  - id: clustal_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clustal_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --clustal-output-file
+  - id: pp_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pp_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --pp-output-file
+  - id: stockholm_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stockholm_output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --stockholm-output-file
+  - id: write_arcmatch_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_arcmatch_scores_file_path`
+    inputBinding:
+      position: 107
+      prefix: --write-arcmatch-scores-file
+  - id: write_match_probs_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_match_probs_file_path`
+    inputBinding:
+      position: 108
+      prefix: --write-match-probs-file
+  - id: write_trace_probs_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_trace_probs_file_path`
+    inputBinding:
+      position: 109
+      prefix: --write-trace-probs-file
 outputs:
   - id: clustal_output_file
     type:
@@ -546,42 +594,44 @@ outputs:
       - File
     doc: Write alignment in ClustalW (aln) format to given file.
     outputBinding:
-      glob: $(inputs.clustal_output_file)
+      glob: $(inputs.clustal_output_file_path)
   - id: stockholm_output_file
     type:
       - 'null'
       - File
     doc: Write alignment Stockholm format to given file.
     outputBinding:
-      glob: $(inputs.stockholm_output_file)
+      glob: $(inputs.stockholm_output_file_path)
   - id: pp_output_file
     type:
       - 'null'
       - File
     doc: Write alignment in PP format to given file.
     outputBinding:
-      glob: $(inputs.pp_output_file)
+      glob: $(inputs.pp_output_file_path)
   - id: write_match_probs_file
     type:
       - 'null'
       - File
     doc: Write match probs to file (don't align!).
     outputBinding:
-      glob: $(inputs.write_match_probs_file)
+      glob: $(inputs.write_match_probs_file_path)
   - id: write_trace_probs_file
     type:
       - 'null'
       - File
     doc: Write trace probs to file (don't align!).
     outputBinding:
-      glob: $(inputs.write_trace_probs_file)
+      glob: $(inputs.write_trace_probs_file_path)
   - id: write_arcmatch_scores_file
     type:
       - 'null'
       - File
     doc: Write arcmatch scores (don't align!)
     outputBinding:
-      glob: $(inputs.write_arcmatch_scores_file)
+      glob: $(inputs.write_arcmatch_scores_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locarna:2.0.1--pl5321h4ac6f70_0

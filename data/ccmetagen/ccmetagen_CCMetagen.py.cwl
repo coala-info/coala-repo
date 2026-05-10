@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: CCMetagen.py
 label: ccmetagen_CCMetagen.py
 doc: "CCMetagen is a pipeline for accurate taxonomic classification and abundance
-  estimation of metagenomic data, typically using KMA (K-mer Alignment) results.\n
-  \nTool homepage: https://github.com/vrmarcelino/CCMetagen"
+  estimation of metagenomic data, typically using KMA (K-mer Alignment) results.\n\
+  \ \nTool homepage: https://github.com/vrmarcelino/CCMetagen"
 inputs:
   - id: exclude_taxa
     type:
@@ -49,17 +49,25 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Taxonomy level for classification (e.g., kingdom, phylum, class, order, family,
-      genus, species)
+    doc: Taxonomy level for classification (e.g., kingdom, phylum, class, order,
+      family, genus, species)
     inputBinding:
       position: 101
       prefix: --tax_level
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: Prefix for output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ccmetagen:1.5.0--pyh7cba7a3_0

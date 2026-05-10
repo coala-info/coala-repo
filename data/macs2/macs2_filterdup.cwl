@@ -89,6 +89,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsize
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -98,7 +104,9 @@ outputs:
       Note, if the input format is BAMPE or BEDPE, the output will be in BEDPE 
       format.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs2:2.2.9.1--py310h1fe012e_5

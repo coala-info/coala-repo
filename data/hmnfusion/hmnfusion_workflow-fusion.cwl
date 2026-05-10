@@ -72,22 +72,48 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_genefuse_html_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_genefuse_html_path`
+    inputBinding:
+      position: 102
+      prefix: --output-genefuse-html
+  - id: output_hmnfusion_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_hmnfusion_vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-hmnfusion-vcf
+  - id: output_lumpy_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_lumpy_vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --output-lumpy-vcf
 outputs:
   - id: output_hmnfusion_vcf
     type: File
     doc: Vcf file output
     outputBinding:
-      glob: $(inputs.output_hmnfusion_vcf)
+      glob: $(inputs.output_hmnfusion_vcf_path)
   - id: output_genefuse_html
     type: File
     doc: Genefuse html file output
     outputBinding:
-      glob: $(inputs.output_genefuse_html)
+      glob: $(inputs.output_genefuse_html_path)
   - id: output_lumpy_vcf
     type: File
     doc: Lumpy vcf file output
     outputBinding:
-      glob: $(inputs.output_lumpy_vcf)
+      glob: $(inputs.output_lumpy_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0

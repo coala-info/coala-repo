@@ -195,6 +195,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unimod
+  - id: peaks_path
+    type:
+      - 'null'
+      - string
+    doc: Output peaks file.
+    inputBinding:
+      position: 102
+      prefix: --peaks
+  - id: psms_path
+    type:
+      - 'null'
+      - string
+    doc: Output PSMs file.
+    inputBinding:
+      position: 103
+      prefix: --psms
 outputs:
   - id: psms
     type:
@@ -202,14 +218,16 @@ outputs:
       - File
     doc: Output PSMs file.
     outputBinding:
-      glob: $(inputs.psms)
+      glob: $(inputs.psms_path)
   - id: peaks
     type:
       - 'null'
       - File
     doc: Output peaks file.
     outputBinding:
-      glob: $(inputs.peaks)
+      glob: $(inputs.peaks_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/easypqp:0.1.56--pyhdfd78af_0

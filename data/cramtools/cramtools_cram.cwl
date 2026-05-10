@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Fail on MD5 mismatch if true, or correct (overwrite) the checksums and continue
-      if false.
+    doc: Fail on MD5 mismatch if true, or correct (overwrite) the checksums and 
+      continue if false.
     inputBinding:
       position: 101
       prefix: --ignore-md5-mismatch
@@ -49,7 +49,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Inject or change the @SQ:UR header fields to point to ENA reference service.
+    doc: Inject or change the @SQ:UR header fields to point to ENA reference 
+      service.
     inputBinding:
       position: 101
       prefix: --inject-sq-uri
@@ -57,7 +58,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to a BAM file to be converted to CRAM. Omit if standard input (pipe).
+    doc: Path to a BAM file to be converted to CRAM. Omit if standard input 
+      (pipe).
     inputBinding:
       position: 101
       prefix: --input-bam-file
@@ -113,11 +115,17 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The reference fasta file, uncompressed and indexed (.fai file, use 'samtools
-      faidx').
+    doc: The reference fasta file, uncompressed and indexed (.fai file, use 
+      'samtools faidx').
     inputBinding:
       position: 101
       prefix: --reference-fasta-file
+  - id: output_cram_file_path
+    type: string
+    doc: Output or path parameter `output_cram_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-cram-file
 outputs:
   - id: output_cram_file
     type:
@@ -125,7 +133,9 @@ outputs:
       - File
     doc: The path for the output CRAM file. Omit if standard output (pipe).
     outputBinding:
-      glob: $(inputs.output_cram_file)
+      glob: $(inputs.output_cram_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramtools:3.0.b127--0

@@ -107,6 +107,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -warnAndContinue
+  - id: attrs_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `attrs_out_path`
+    inputBinding:
+      position: 103
+      prefix: --attrs-out
+  - id: bad_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bad_path`
+    inputBinding:
+      position: 104
+      prefix: --bad
+  - id: unprocessed_roots_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unprocessed_roots_out_path`
+    inputBinding:
+      position: 105
+      prefix: --unprocessed-roots-out
 outputs:
   - id: output_gp
     type: File
@@ -121,7 +145,7 @@ outputs:
       not per-GFF3 record. Thery are derived from GFF3 attributes, not the 
       attributes themselves.
     outputBinding:
-      glob: $(inputs.attrs_out)
+      glob: $(inputs.attrs_out_path)
   - id: unprocessed_roots_out
     type:
       - 'null'
@@ -130,14 +154,16 @@ outputs:
       GFF3 file. It's expected that many non-root records will not be used and 
       they are not reported.
     outputBinding:
-      glob: $(inputs.unprocessed_roots_out)
+      glob: $(inputs.unprocessed_roots_out_path)
   - id: bad
     type:
       - 'null'
       - File
     doc: output genepreds that fail checks to file
     outputBinding:
-      glob: $(inputs.bad)
+      glob: $(inputs.bad_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

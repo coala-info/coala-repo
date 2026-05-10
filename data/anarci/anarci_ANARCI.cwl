@@ -89,6 +89,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_species
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: outfile_hits_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_hits_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile-hits
 outputs:
   - id: outfile
     type:
@@ -96,7 +112,7 @@ outputs:
       - File
     doc: The output file to use. Default is stdout
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: outfile_hits
     type:
       - 'null'
@@ -104,7 +120,9 @@ outputs:
     doc: "Output file for domain hit tables for each sequence.\n                 \
       \       Otherwise not output."
     outputBinding:
-      glob: $(inputs.outfile_hits)
+      glob: $(inputs.outfile_hits_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anarci:2024.05.21--pyhdfd78af_0

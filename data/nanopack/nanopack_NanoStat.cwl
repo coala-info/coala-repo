@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: NanoStat
 label: nanopack_NanoStat
-doc: "NanoStat: Calculate statistics of long read sequencing data and generate plots.\n
-  \nTool homepage: https://github.com/wdecoster/nanopack"
+doc: "NanoStat: Calculate statistics of long read sequencing data and generate plots.\n\
+  \ \nTool homepage: https://github.com/wdecoster/nanopack"
 inputs:
   - id: bam
     type:
@@ -90,6 +90,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsv
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -97,7 +103,9 @@ outputs:
       - Directory
     doc: Directory to write output files to
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanopack:1.1.1--hdfd78af_0

@@ -193,6 +193,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -201,7 +207,9 @@ outputs:
     doc: output file (fa*[.gz], bam, cram, rd). Optionally write reads to file 
       or generate rd summary file.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rdeval:0.0.8--r44h35c04b2_1

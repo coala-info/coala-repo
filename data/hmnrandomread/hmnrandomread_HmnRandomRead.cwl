@@ -67,17 +67,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --std-insert-size
+  - id: read_forward_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `read_forward_path`
+    inputBinding:
+      position: 102
+      prefix: --read-forward
+  - id: read_reverse_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `read_reverse_path`
+    inputBinding:
+      position: 103
+      prefix: --read-reverse
 outputs:
   - id: read_forward
     type: File
     doc: Name Read Forward output
     outputBinding:
-      glob: $(inputs.read_forward)
+      glob: $(inputs.read_forward_path)
   - id: read_reverse
     type: File
     doc: Name Read Reverse output
     outputBinding:
-      glob: $(inputs.read_reverse)
+      glob: $(inputs.read_reverse_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnrandomread:0.10.0--h9948957_4

@@ -85,6 +85,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weightedpercentile
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -92,7 +98,9 @@ outputs:
       - Directory
     doc: path to your output directory to contain normalized abundances
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainr2:2.3.0--r44h577a1d6_0

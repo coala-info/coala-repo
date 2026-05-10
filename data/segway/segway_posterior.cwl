@@ -79,6 +79,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: --virtual-evidence
+  - id: bed_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_file_path`
+    inputBinding:
+      position: 105
+      prefix: --bed-file
+  - id: big_bed_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `big_bed_file_path`
+    inputBinding:
+      position: 106
+      prefix: --big-bed-file
 outputs:
   - id: bed_file
     type:
@@ -86,14 +102,16 @@ outputs:
       - File
     doc: create identification BED track in FILE (default WORKDIR/segway.bed.gz)
     outputBinding:
-      glob: $(inputs.bed_file)
+      glob: $(inputs.bed_file_path)
   - id: big_bed_file
     type:
       - 'null'
       - File
     doc: specify layered bigBed filename
     outputBinding:
-      glob: $(inputs.big_bed_file)
+      glob: $(inputs.big_bed_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/segway:3.0.4--pyh7cba7a3_1

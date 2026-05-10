@@ -75,6 +75,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output_gff3_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gff3_path`
+    inputBinding:
+      position: 103
+      prefix: --output-gff3
+  - id: output_orf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_orf_path`
+    inputBinding:
+      position: 104
+      prefix: --output-orf
 outputs:
   - id: output
     type:
@@ -82,7 +106,7 @@ outputs:
       - File
     doc: output json file name
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_orf
     type:
       - 'null'
@@ -90,7 +114,7 @@ outputs:
     doc: "output identified ORFs (FASTA), only contains the\n                    \
       \    first solution"
     outputBinding:
-      glob: $(inputs.output_orf)
+      glob: $(inputs.output_orf_path)
   - id: output_gff3
     type:
       - 'null'
@@ -98,7 +122,9 @@ outputs:
     doc: "output identified ORFs (FASTA), only contains the\n                    \
       \    first solution"
     outputBinding:
-      glob: $(inputs.output_gff3)
+      glob: $(inputs.output_gff3_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/corsid:0.1.3--pyh5e36f6f_0

@@ -17,8 +17,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Read count expression threshold. Isoforms in which both conditions contain
-      fewer than E reads are filtered out (Default E=10)
+    doc: Read count expression threshold. Isoforms in which both conditions 
+      contain fewer than E reads are filtered out (Default E=10)
     inputBinding:
       position: 101
       prefix: --exp_thresh
@@ -26,8 +26,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Specify this argument to force overwriting of files in an existing output
-      directory
+    doc: Specify this argument to force overwriting of files in an existing 
+      output directory
     inputBinding:
       position: 101
       prefix: --out_dir_force
@@ -39,12 +39,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type: Directory
     doc: Output directory for tables and plots.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

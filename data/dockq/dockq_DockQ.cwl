@@ -97,6 +97,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: json_path
+    type: string
+    doc: Output or path parameter `json_path`
+    inputBinding:
+      position: 104
+      prefix: --json
 outputs:
   - id: json
     type:
@@ -104,7 +110,9 @@ outputs:
       - File
     doc: Write outputs to a chosen json file
     outputBinding:
-      glob: $(inputs.json)
+      glob: $(inputs.json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dockq:2.1.3--py312h031d066_0

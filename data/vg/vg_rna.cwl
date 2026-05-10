@@ -159,6 +159,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-hap-ref
+  - id: write_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --write-fasta
+  - id: write_gbwt_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_gbwt_path`
+    inputBinding:
+      position: 104
+      prefix: --write-gbwt
+  - id: write_hap_gbwt_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_hap_gbwt_path`
+    inputBinding:
+      position: 105
+      prefix: --write-hap-gbwt
+  - id: write_info_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_info_path`
+    inputBinding:
+      position: 106
+      prefix: --write-info
 outputs:
   - id: write_gbwt
     type:
@@ -166,7 +198,7 @@ outputs:
       - File
     doc: write pantranscriptome transcript paths as GBWT
     outputBinding:
-      glob: $(inputs.write_gbwt)
+      glob: $(inputs.write_gbwt_path)
   - id: write_hap_gbwt
     type:
       - 'null'
@@ -174,21 +206,23 @@ outputs:
     doc: write input haplotypes as a GBWT with node IDs matching the output 
       graph
     outputBinding:
-      glob: $(inputs.write_hap_gbwt)
+      glob: $(inputs.write_hap_gbwt_path)
   - id: write_fasta
     type:
       - 'null'
       - File
     doc: write pantranscriptome transcript sequences to here
     outputBinding:
-      glob: $(inputs.write_fasta)
+      glob: $(inputs.write_fasta_path)
   - id: write_info
     type:
       - 'null'
       - File
     doc: write pantranscriptome transcript info table as TSV
     outputBinding:
-      glob: $(inputs.write_info)
+      glob: $(inputs.write_info_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0

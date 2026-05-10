@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -x
+  - id: output_sequences_path
+    type: string
+    doc: Output or path parameter `output_sequences_path`
+    inputBinding:
+      position: 102
+      prefix: --output-sequences
 outputs:
   - id: output_sequences
     type: File
     doc: output file of the longest CDS/exon for each gene
     outputBinding:
-      glob: $(inputs.output_sequences)
+      glob: $(inputs.output_sequences_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anchorwave:1.2.6--h077b44d_0

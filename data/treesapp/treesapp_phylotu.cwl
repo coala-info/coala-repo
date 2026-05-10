@@ -123,6 +123,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --treesapp_output
 outputs:
   - id: output
     type:
@@ -130,7 +135,9 @@ outputs:
       - Directory
     doc: Path to an output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treesapp:0.11.4--py39h2de1943_2

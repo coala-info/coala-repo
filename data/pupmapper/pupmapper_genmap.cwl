@@ -34,13 +34,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Directory for all outputs of k-mer mappability processing w/ Genmap 
       (indexing and mapping steps)
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pupmapper:0.2.0--pyhdfd78af_0

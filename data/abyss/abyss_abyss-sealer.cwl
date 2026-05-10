@@ -261,6 +261,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: dot_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dot_file_path`
+    inputBinding:
+      position: 104
+      prefix: --dot-file
+  - id: gap_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gap_file_path`
+    inputBinding:
+      position: 105
+      prefix: --gap-file
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 106
+      prefix: --output-prefix
+  - id: trace_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `trace_file_path`
+    inputBinding:
+      position: 107
+      prefix: --trace-file
 outputs:
   - id: dot_file
     type:
@@ -268,26 +300,28 @@ outputs:
       - File
     doc: write graph traversals to a DOT file
     outputBinding:
-      glob: $(inputs.dot_file)
+      glob: $(inputs.dot_file_path)
   - id: output_prefix
     type: File
     doc: prefix of output FASTA files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: gap_file
     type:
       - 'null'
       - File
     doc: write sealed gaps to FILE
     outputBinding:
-      glob: $(inputs.gap_file)
+      glob: $(inputs.gap_file_path)
   - id: trace_file
     type:
       - 'null'
       - File
     doc: write graph search stats to FILE
     outputBinding:
-      glob: $(inputs.trace_file)
+      glob: $(inputs.trace_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abyss:2.3.10--hf316886_2

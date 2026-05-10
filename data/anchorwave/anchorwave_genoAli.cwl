@@ -64,8 +64,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: if the inter-anchor length is shorter than this value, stop trying to find
-      new anchors
+    doc: if the inter-anchor length is shorter than this value, stop trying to 
+      find new anchors
     inputBinding:
       position: 101
       prefix: -fa3
@@ -97,8 +97,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum exon length to use (should be identical with the setting of gff2seq
-      function)
+    doc: minimum exon length to use (should be identical with the setting of 
+      gff2seq function)
     inputBinding:
       position: 101
       prefix: -m
@@ -188,30 +188,65 @@ inputs:
     inputBinding:
       position: 101
       prefix: -w
+  - id: output_anchors_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_anchors_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-anchors-file
+  - id: output_bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bed_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bed
+  - id: output_fragmentation_maf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fragmentation_maf_path`
+    inputBinding:
+      position: 104
+      prefix: --output-fragmentation-maf
+  - id: output_maf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_maf_path`
+    inputBinding:
+      position: 105
+      prefix: --output-maf
 outputs:
   - id: output_anchors_file
     type: File
     doc: output anchors file
     outputBinding:
-      glob: $(inputs.output_anchors_file)
+      glob: $(inputs.output_anchors_file_path)
   - id: output_maf
     type: File
     doc: output file in maf format
     outputBinding:
-      glob: $(inputs.output_maf)
+      glob: $(inputs.output_maf_path)
   - id: output_fragmentation_maf
     type: File
-    doc: output sequence alignment for each anchor/inter-anchor region in maf format
+    doc: output sequence alignment for each anchor/inter-anchor region in maf 
+      format
     outputBinding:
-      glob: $(inputs.output_fragmentation_maf)
+      glob: $(inputs.output_fragmentation_maf_path)
   - id: output_bed
     type:
       - 'null'
       - File
-    doc: output the sequence alignment method used for each anchor/inter-anchor region,
-      in bed format
+    doc: output the sequence alignment method used for each anchor/inter-anchor 
+      region, in bed format
     outputBinding:
-      glob: $(inputs.output_bed)
+      glob: $(inputs.output_bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anchorwave:1.2.6--h077b44d_0

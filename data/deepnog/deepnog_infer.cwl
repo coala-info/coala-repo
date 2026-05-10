@@ -120,6 +120,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weights
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -128,7 +134,9 @@ outputs:
     doc: Store orthologous group predictions to outputfile. Per default, write 
       predictions to stdout.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepnog:1.2.4--pyh7e72e81_0

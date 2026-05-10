@@ -25,6 +25,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --minlen
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -32,7 +38,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/berokka:0.2.3--0

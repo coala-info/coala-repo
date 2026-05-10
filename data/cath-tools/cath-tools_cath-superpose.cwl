@@ -284,6 +284,46 @@ inputs:
     inputBinding:
       position: 104
       prefix: --viewer-colours
+  - id: sup_to_json_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_json_file_path`
+    inputBinding:
+      position: 105
+      prefix: --sup-to-json-file
+  - id: sup_to_pdb_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_pdb_file_path`
+    inputBinding:
+      position: 106
+      prefix: --sup-to-pdb-file
+  - id: sup_to_pdb_files_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_pdb_files_dir_path`
+    inputBinding:
+      position: 107
+      prefix: --sup-to-pdb-files-dir
+  - id: sup_to_pymol_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_pymol_file_path`
+    inputBinding:
+      position: 108
+      prefix: --sup-to-pymol-file
+  - id: sup_to_stdout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_stdout_path`
+    inputBinding:
+      position: 109
+      prefix: --sup-to-stdout
 outputs:
   - id: sup_to_pdb_file
     type:
@@ -292,14 +332,14 @@ outputs:
     doc: Write the superposed structures to a single PDB file, separated using 
       faked chain codes
     outputBinding:
-      glob: $(inputs.sup_to_pdb_file)
+      glob: $(inputs.sup_to_pdb_file_path)
   - id: sup_to_pdb_files_dir
     type:
       - 'null'
       - Directory
     doc: Write the superposed structures to separate PDB files in directory
     outputBinding:
-      glob: $(inputs.sup_to_pdb_files_dir)
+      glob: $(inputs.sup_to_pdb_files_dir_path)
   - id: sup_to_stdout
     type:
       - 'null'
@@ -307,7 +347,7 @@ outputs:
     doc: Print the superposed structures to stdout, separated using faked chain 
       codes
     outputBinding:
-      glob: $(inputs.sup_to_stdout)
+      glob: $(inputs.sup_to_stdout_path)
   - id: sup_to_pymol_file
     type:
       - 'null'
@@ -315,7 +355,7 @@ outputs:
     doc: 'Write the superposition to a PyMOL script. (Recommended filename extension:
       .pml)'
     outputBinding:
-      glob: $(inputs.sup_to_pymol_file)
+      glob: $(inputs.sup_to_pymol_file_path)
   - id: sup_to_json_file
     type:
       - 'null'
@@ -323,7 +363,9 @@ outputs:
     doc: 'Write the superposition to JSON superposition file. (Recommended filename
       extension: .sup_json)'
     outputBinding:
-      glob: $(inputs.sup_to_json_file)
+      glob: $(inputs.sup_to_json_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0

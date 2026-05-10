@@ -72,17 +72,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: left_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `left_out_path`
+    inputBinding:
+      position: 102
+      prefix: --left-out
+  - id: right_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `right_out_path`
+    inputBinding:
+      position: 103
+      prefix: --right-out
 outputs:
   - id: left_out
     type: File
     doc: the output fastq file for r1
     outputBinding:
-      glob: $(inputs.left_out)
+      glob: $(inputs.left_out_path)
   - id: right_out
     type: File
     doc: the output fastq file for r2
     outputBinding:
-      glob: $(inputs.right_out)
+      glob: $(inputs.right_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umitools:0.3.4--py36_0

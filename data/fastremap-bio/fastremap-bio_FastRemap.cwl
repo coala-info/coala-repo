@@ -72,6 +72,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --times
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-unmapped
+  - id: output_unmapped_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-unmapped
 outputs:
   - id: output_file
     type:
@@ -79,7 +93,7 @@ outputs:
       - File
     doc: File containing all the remapped elements from the input file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_unmapped
     type:
       - 'null'
@@ -87,7 +101,9 @@ outputs:
     doc: File containing all the elements that could not be remapped from the 
       input file based on the provided chain file
     outputBinding:
-      glob: $(inputs.output_unmapped)
+      glob: $(inputs.output_unmapped_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastremap-bio:1.0.0--h077b44d_2

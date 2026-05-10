@@ -268,6 +268,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zuker
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -275,7 +281,9 @@ outputs:
       - File
     doc: Print output to file instead of stdout
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pourrna:1.2.0--h6bb024c_0

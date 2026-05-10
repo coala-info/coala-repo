@@ -222,6 +222,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: -unplaced
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: unmapped_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unmapped_file_path`
+    inputBinding:
+      position: 105
+      prefix: --unmapped-file
 outputs:
   - id: output_file
     type:
@@ -230,14 +246,16 @@ outputs:
     doc: write output to FILE in same format as input; by default, output is 
       written to terminal (stdout)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: unmapped_file
     type:
       - 'null'
       - File
     doc: write unmapped features to FILE; default is "unmapped_features.txt"
     outputBinding:
-      glob: $(inputs.unmapped_file)
+      glob: $(inputs.unmapped_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/liftoff:1.6.3--pyhdfd78af_2

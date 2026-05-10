@@ -11,11 +11,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --inbam
+  - id: outbam_path
+    type: string
+    doc: Output or path parameter `outbam_path`
+    inputBinding:
+      position: 102
+      prefix: --outbam
 outputs:
   - id: outbam
     type: File
     outputBinding:
-      glob: $(inputs.outbam)
+      glob: $(inputs.outbam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboraptor:0.2.2--py36_0

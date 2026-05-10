@@ -71,8 +71,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Reference CHROMOSOME (define either ONE reference chromosome or ONE reference
-      genome)
+    doc: Reference CHROMOSOME (define either ONE reference chromosome or ONE 
+      reference genome)
     inputBinding:
       position: 101
       prefix: --ref_chrom
@@ -80,11 +80,27 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Reference GENOME (define either ONE reference chromosome or ONE reference
-      genome)
+    doc: Reference GENOME (define either ONE reference chromosome or ONE 
+      reference genome)
     inputBinding:
       position: 101
       prefix: --ref_genome
+  - id: bed_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_file_path`
+    inputBinding:
+      position: 102
+      prefix: --bed-file
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -92,14 +108,16 @@ outputs:
       - Directory
     doc: directory to which .fasta files of singleton regions are written
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: bed_file
     type:
       - 'null'
       - File
     doc: .bed file to which singleton regions are written
     outputBinding:
-      glob: $(inputs.bed_file)
+      glob: $(inputs.bed_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pancake:1.1.2--py35_0

@@ -63,12 +63,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: Directory
     doc: path to where pickled clonotype dictionary input should be saved
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tribal:0.1.1--py310hdbdd923_1

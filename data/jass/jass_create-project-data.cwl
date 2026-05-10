@@ -130,6 +130,46 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sumz
+  - id: csv_file_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_file_path_path`
+    inputBinding:
+      position: 104
+      prefix: --csv-file-path
+  - id: manhattan_plot_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `manhattan_plot_path_path`
+    inputBinding:
+      position: 105
+      prefix: --manhattan-plot-path
+  - id: qq_plot_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `qq_plot_path_path`
+    inputBinding:
+      position: 106
+      prefix: --qq-plot-path
+  - id: quadrant_plot_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `quadrant_plot_path_path`
+    inputBinding:
+      position: 107
+      prefix: --quadrant-plot-path
+  - id: zoom_plot_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `zoom_plot_path_path`
+    inputBinding:
+      position: 108
+      prefix: --zoom-plot-path
 outputs:
   - id: manhattan_plot_path
     type:
@@ -137,35 +177,37 @@ outputs:
       - File
     doc: path to the genome-wide manhattan plot to generate
     outputBinding:
-      glob: $(inputs.manhattan_plot_path)
+      glob: $(inputs.manhattan_plot_path_path)
   - id: quadrant_plot_path
     type:
       - 'null'
       - File
     doc: path to the quadrant plot to generate
     outputBinding:
-      glob: $(inputs.quadrant_plot_path)
+      glob: $(inputs.quadrant_plot_path_path)
   - id: zoom_plot_path
     type:
       - 'null'
       - File
     doc: path to the local plot to generate
     outputBinding:
-      glob: $(inputs.zoom_plot_path)
+      glob: $(inputs.zoom_plot_path_path)
   - id: qq_plot_path
     type:
       - 'null'
       - File
     doc: path to the quantile-quantile plot to generate
     outputBinding:
-      glob: $(inputs.qq_plot_path)
+      glob: $(inputs.qq_plot_path_path)
   - id: csv_file_path
     type:
       - 'null'
       - File
     doc: path to the results file in csv format
     outputBinding:
-      glob: $(inputs.csv_file_path)
+      glob: $(inputs.csv_file_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jass:2.3--pyhca03a8a_0

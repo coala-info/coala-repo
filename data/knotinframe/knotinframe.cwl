@@ -115,6 +115,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --windowSize
+  - id: varna_output_file_path
+    type: string
+    doc: Output or path parameter `varna_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --varna-output-file
 outputs:
   - id: varna_output_file
     type:
@@ -123,7 +129,9 @@ outputs:
     doc: Provide a file name to which a HTML formatted version of the output 
       should be saved in.
     outputBinding:
-      glob: $(inputs.varna_output_file)
+      glob: $(inputs.varna_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/knotinframe:2.3.2--h9948957_2

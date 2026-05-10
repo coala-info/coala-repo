@@ -87,6 +87,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxon-genome-lengths-file
+  - id: output_per_taxon_read_fractions_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_per_taxon_read_fractions_path`
+    inputBinding:
+      position: 102
+      prefix: --output-per-taxon-read-fractions
+  - id: output_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tsv
 outputs:
   - id: output_tsv
     type:
@@ -94,14 +110,16 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
   - id: output_per_taxon_read_fractions
     type:
       - 'null'
       - File
     doc: Output a fraction for each taxon to this TSV
     outputBinding:
-      glob: $(inputs.output_per_taxon_read_fractions)
+      glob: $(inputs.output_per_taxon_read_fractions_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

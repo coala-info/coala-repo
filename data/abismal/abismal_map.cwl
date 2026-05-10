@@ -122,6 +122,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: -verbose
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 104
+      prefix: --outfile
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 105
+      prefix: --stats
 outputs:
   - id: outfile
     type:
@@ -129,14 +145,16 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: stats
     type:
       - 'null'
       - File
     doc: map statistics file (YAML)
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abismal:3.3.0--h077b44d_0

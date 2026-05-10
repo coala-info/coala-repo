@@ -72,6 +72,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: estimate_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `estimate_output_path`
+    inputBinding:
+      position: 104
+      prefix: --estimate-output
+  - id: stats_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_output_path`
+    inputBinding:
+      position: 105
+      prefix: --stats-output
 outputs:
   - id: estimate_output
     type:
@@ -81,7 +97,7 @@ outputs:
       to.\n                                     Output is formatted into columns:
       cell, feature, expected value, standard deviation"
     outputBinding:
-      glob: $(inputs.estimate_output)
+      glob: $(inputs.estimate_output_path)
   - id: stats_output
     type:
       - 'null'
@@ -89,7 +105,9 @@ outputs:
     doc: "Path to write global statistics per cell to.\n                         \
       \            Output is formatted into columns: cell, noise-rate"
     outputBinding:
-      glob: $(inputs.stats_output)
+      glob: $(inputs.stats_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfishtools:1.5.0--py312h9d36253_3

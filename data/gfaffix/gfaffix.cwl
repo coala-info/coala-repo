@@ -44,6 +44,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_affixes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_affixes_path`
+    inputBinding:
+      position: 103
+      prefix: --output-affixes
+  - id: output_refined_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_refined_path`
+    inputBinding:
+      position: 104
+      prefix: --output-refined
+  - id: output_transformation_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_transformation_path`
+    inputBinding:
+      position: 105
+      prefix: --output-transformation
 outputs:
   - id: output_refined
     type:
@@ -52,7 +76,7 @@ outputs:
     doc: Write refined graph output (GFA1 format) to supplied file instead of 
       stdout; if file name ends with .gz, output will be compressed
     outputBinding:
-      glob: $(inputs.output_refined)
+      glob: $(inputs.output_refined_path)
   - id: output_transformation
     type:
       - 'null'
@@ -60,14 +84,16 @@ outputs:
     doc: Report original nodes and their corresponding walks in refined graph to
       supplied file
     outputBinding:
-      glob: $(inputs.output_transformation)
+      glob: $(inputs.output_transformation_path)
   - id: output_affixes
     type:
       - 'null'
       - File
     doc: Report identified affixes
     outputBinding:
-      glob: $(inputs.output_affixes)
+      glob: $(inputs.output_affixes_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gfaffix:0.2.1--hc1c3326_0

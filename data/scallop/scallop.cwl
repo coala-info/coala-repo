@@ -96,12 +96,20 @@ inputs:
     doc: '0: quiet; 1: one line for each graph; 2: with details'
     inputBinding:
       position: 101
+  - id: output_gtf_path
+    type: string
+    doc: Output or path parameter `output_gtf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-gtf
 outputs:
   - id: output_gtf
     type: File
     doc: Output GTF file
     outputBinding:
-      glob: $(inputs.output_gtf)
+      glob: $(inputs.output_gtf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scallop:0.10.5--hea69786_9

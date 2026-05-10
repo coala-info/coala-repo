@@ -349,6 +349,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+  - id: archive_output_path
+    type: string
+    doc: Output or path parameter `archive_output_path`
+    inputBinding:
+      position: 103
+      prefix: --archive-output
 outputs:
   - id: archive_output
     type:
@@ -356,7 +362,9 @@ outputs:
       - File
     doc: Store the resulting TAP in an archive file.
     outputBinding:
-      glob: $(inputs.archive_output)
+      glob: $(inputs.archive_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

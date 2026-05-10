@@ -300,6 +300,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-dump
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 103
+      prefix: --summary
 outputs:
   - id: output
     type:
@@ -307,14 +323,16 @@ outputs:
       - File
     doc: output to file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: summary
     type:
       - 'null'
       - File
     doc: summarise the alignment of each read/strand in FILE
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/f5c:1.6--hee927d3_0

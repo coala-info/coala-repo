@@ -49,8 +49,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Reduce ITSx scan to specified organim groups.
-      - F
+    doc: Reduce ITSx scan to specified organim groups. - F
     inputBinding:
       position: 101
       prefix: --organism-groups
@@ -63,6 +62,43 @@ inputs:
     inputBinding:
       position: 101
       prefix: --region
+  - id: html_path
+    type:
+      - 'null'
+      - string
+    doc: 'The HTML file containing the graphs. [Default:'
+    inputBinding:
+      position: 102
+      prefix: --html
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: This output file will contain several informations on
+    inputBinding:
+      position: 103
+      prefix: --log-file
+  - id: output_biom_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --output-biom
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --output-fasta
+  - id: output_removed_sequences_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output-removed-sequences
 outputs:
   - id: output_fasta
     type:
@@ -70,28 +106,28 @@ outputs:
       - File
     doc: 'sequences file out from ITSx (format: FASTA).'
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: output_biom
     type:
       - 'null'
       - File
     doc: 'Abundance file without chimera (format: BIOM ).'
     outputBinding:
-      glob: $(inputs.output_biom)
+      glob: $(inputs.output_biom_path)
   - id: output_removed_sequences
     type:
       - 'null'
       - File
     doc: 'sequences file removed (format: FASTA).'
     outputBinding:
-      glob: $(inputs.output_removed_sequences)
+      glob: $(inputs.output_removed_sequences_path)
   - id: html
     type:
       - 'null'
       - File
     doc: The HTML file containing the graphs.
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
   - id: log_file
     type:
       - 'null'
@@ -99,7 +135,9 @@ outputs:
     doc: This output file will contain several informations on executed 
       commands.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/frogs:5.1.0--h9ee0642_0

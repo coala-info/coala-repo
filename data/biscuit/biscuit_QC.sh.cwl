@@ -65,6 +65,12 @@ inputs:
     inputBinding:
       position: 105
       prefix: --vcf
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 106
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -72,7 +78,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

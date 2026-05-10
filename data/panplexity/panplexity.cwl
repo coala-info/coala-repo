@@ -84,6 +84,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-size
+  - id: bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_path`
+    inputBinding:
+      position: 102
+      prefix: --bed
+  - id: csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_path`
+    inputBinding:
+      position: 103
+      prefix: --csv
+  - id: mask_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mask_path`
+    inputBinding:
+      position: 104
+      prefix: --mask
+  - id: output_gfa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gfa_path`
+    inputBinding:
+      position: 105
+      prefix: --output-gfa
+  - id: weights_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `weights_path`
+    inputBinding:
+      position: 106
+      prefix: --weights
 outputs:
   - id: output_gfa
     type:
@@ -91,35 +131,37 @@ outputs:
       - File
     doc: Output annotated GFA file
     outputBinding:
-      glob: $(inputs.output_gfa)
+      glob: $(inputs.output_gfa_path)
   - id: bed
     type:
       - 'null'
       - File
     doc: Output BED file with low-complexity ranges
     outputBinding:
-      glob: $(inputs.bed)
+      glob: $(inputs.bed_path)
   - id: csv
     type:
       - 'null'
       - File
     doc: Output CSV file for Bandage node coloring (Node,Colour format)
     outputBinding:
-      glob: $(inputs.csv)
+      glob: $(inputs.csv_path)
   - id: mask
     type:
       - 'null'
       - File
     doc: 'Output boolean mask file: 1 if node is not annotated, 0 if annotated'
     outputBinding:
-      glob: $(inputs.mask)
+      glob: $(inputs.mask_path)
   - id: weights
     type:
       - 'null'
       - File
     doc: 'Output weights file: node_id and its associated complexity/entropy weight'
     outputBinding:
-      glob: $(inputs.weights)
+      glob: $(inputs.weights_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panplexity:0.1.1--h3ab6199_0

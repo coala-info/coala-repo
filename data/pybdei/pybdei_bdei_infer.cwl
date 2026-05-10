@@ -137,6 +137,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upper_bounds
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Path to the output file where to write the estimates.
+    inputBinding:
+      position: 102
+      prefix: --log
+  - id: time_log_path
+    type:
+      - 'null'
+      - string
+    doc: Path to the output file where to write the time. If
+    inputBinding:
+      position: 103
+      prefix: --time_log
 outputs:
   - id: log
     type:
@@ -145,7 +161,7 @@ outputs:
     doc: Path to the output file where to write the estimates. If not given, the
       estimates will only be printed in the stdout
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
   - id: time_log
     type:
       - 'null'
@@ -153,7 +169,9 @@ outputs:
     doc: Path to the output file where to write the time. If not given, the time
       will only be printed in the stdout
     outputBinding:
-      glob: $(inputs.time_log)
+      glob: $(inputs.time_log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pybdei:0.13--py310hef477bb_1

@@ -28,12 +28,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --res
+  - id: out_png_path
+    type: string
+    doc: Output or path parameter `out_png_path`
+    inputBinding:
+      position: 102
+      prefix: --out-png
 outputs:
   - id: out_png
     type: File
     doc: File path where dotplot PNG will be saved (required)
     outputBinding:
-      glob: $(inputs.out_png)
+      glob: $(inputs.out_png_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

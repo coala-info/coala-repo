@@ -4,8 +4,8 @@ baseCommand: pfam_scan.pl
 label: pfam_scan
 doc: "The provided text is an error log indicating a failure to build or run the container
   image (no space left on device) and does not contain the help text for pfam_scan.
-  Below is the structured representation of the tool based on its standard usage.\n
-  \nTool homepage: http://ftp.ebi.ac.uk/pub/databases/Pfam/Tools/"
+  Below is the structured representation of the tool based on its standard usage.\n\
+  \ \nTool homepage: http://ftp.ebi.ac.uk/pub/databases/Pfam/Tools/"
 inputs:
   - id: as_flag
     type:
@@ -83,6 +83,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -translate
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -90,7 +96,9 @@ outputs:
       - File
     doc: Output file; if not specified, output goes to STDOUT
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pfam_scan:1.6--hdfd78af_5

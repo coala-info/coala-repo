@@ -98,26 +98,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: -tmp
+  - id: match_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `match_output_path`
+    inputBinding:
+      position: 102
+      prefix: --match-output
+  - id: mtx_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mtx_output_path`
+    inputBinding:
+      position: 103
+      prefix: --mtx-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output result file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: match_output
     type:
       - 'null'
       - File
     doc: Path to write a result of matched CDS names
     outputBinding:
-      glob: $(inputs.match_output)
+      glob: $(inputs.match_output_path)
   - id: mtx_output
     type:
       - 'null'
       - File
     doc: Path to write a Matrix Market formatted output
     outputBinding:
-      glob: $(inputs.mtx_output)
+      glob: $(inputs.mtx_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ezaai:1.2.4--hdfd78af_0

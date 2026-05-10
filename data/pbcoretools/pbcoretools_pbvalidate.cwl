@@ -78,8 +78,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Limits validation to the first 100 records (plus file header); equivalent
-      to --max-records=100
+    doc: Limits validation to the first 100 records (plus file header); 
+      equivalent to --max-records=100
     inputBinding:
       position: 102
       prefix: --quick
@@ -95,8 +95,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to optional reference FASTA file, used for additional validation of
-      mapped BAM records
+    doc: Path to optional reference FASTA file, used for additional validation 
+      of mapped BAM records
     inputBinding:
       position: 102
       prefix: --reference
@@ -112,8 +112,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Use the specified file type instead of guessing (BAM, Fasta, AlignmentSet,
-      etc.)
+    doc: Use the specified file type instead of guessing (BAM, Fasta, 
+      AlignmentSet, etc.)
     inputBinding:
       position: 102
       prefix: --type
@@ -141,6 +141,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: alarms_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alarms_out_path`
+    inputBinding:
+      position: 103
+      prefix: --alarms-out
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 104
+      prefix: --log-file
+  - id: xunit_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `xunit_out_path`
+    inputBinding:
+      position: 105
+      prefix: --xunit-out
 outputs:
   - id: log_file
     type:
@@ -148,21 +172,23 @@ outputs:
       - File
     doc: Write the log to file. Default(None) will write to stdout.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
   - id: xunit_out
     type:
       - 'null'
       - File
     doc: Xunit test results for Jenkins
     outputBinding:
-      glob: $(inputs.xunit_out)
+      glob: $(inputs.xunit_out_path)
   - id: alarms_out
     type:
       - 'null'
       - File
     doc: alarms.json for errors
     outputBinding:
-      glob: $(inputs.alarms_out)
+      glob: $(inputs.alarms_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbcoretools:0.8.1--py_1

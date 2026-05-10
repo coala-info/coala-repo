@@ -86,19 +86,43 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trim-percent
+  - id: output_after_em_otu_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_after_em_otu_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-after-em-otu-table
+  - id: taxonomic_profile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `taxonomic_profile_path`
+    inputBinding:
+      position: 103
+      prefix: --taxonomic-profile
+  - id: taxonomic_profile_krona_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `taxonomic_profile_krona_path`
+    inputBinding:
+      position: 104
+      prefix: --taxonomic-profile-krona
 outputs:
   - id: taxonomic_profile
     type: File
     doc: output OTU table
     outputBinding:
-      glob: $(inputs.taxonomic_profile)
+      glob: $(inputs.taxonomic_profile_path)
   - id: taxonomic_profile_krona
     type:
       - 'null'
       - File
     doc: name of krona file to generate.
     outputBinding:
-      glob: $(inputs.taxonomic_profile_krona)
+      glob: $(inputs.taxonomic_profile_krona_path)
   - id: output_after_em_otu_table
     type:
       - 'null'
@@ -107,7 +131,9 @@ outputs:
       that this table usually contains multiple rows with the same window 
       sequence.
     outputBinding:
-      glob: $(inputs.output_after_em_otu_table)
+      glob: $(inputs.output_after_em_otu_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

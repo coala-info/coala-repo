@@ -8,15 +8,16 @@ inputs:
     type:
       type: array
       items: File
-    doc: a list of input fasta file names. If there is one file, it is assumed that
-      this file contains a list of input files separated by a newline
+    doc: a list of input fasta file names. If there is one file, it is assumed 
+      that this file contains a list of input files separated by a newline
     inputBinding:
       position: 1
   - id: align_only
     type:
       - 'null'
       - boolean
-    doc: Used with --template. Does not append to pangenome, just produces tsv alignment.
+    doc: Used with --template. Does not append to pangenome, just produces tsv 
+      alignment.
     inputBinding:
       position: 102
       prefix: --align-only
@@ -56,8 +57,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Realign all input genomes to the resulting pangenome to get a more accurate
-      fragment mapping
+    doc: Realign all input genomes to the resulting pangenome to get a more 
+      accurate fragment mapping
     inputBinding:
       position: 102
       prefix: --realign
@@ -93,14 +94,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --work-dir
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: output pan-genome fasta and metadata file stem (does not include file extension)
+    doc: output pan-genome fasta and metadata file stem (does not include file 
+      extension)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pan-plaster:1.2.1--hdfd78af_0

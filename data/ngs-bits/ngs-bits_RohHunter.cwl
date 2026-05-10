@@ -139,12 +139,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -var_min_q
+  - id: output_tsv_path
+    type: string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 102
+      prefix: --output-tsv
 outputs:
   - id: output_tsv
     type: File
     doc: Output TSV file with ROH regions.
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

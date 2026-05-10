@@ -80,6 +80,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -st
+  - id: alignment_output_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignment_output_filename_path`
+    inputBinding:
+      position: 102
+      prefix: --alignment-output-filename
+  - id: visualisation_output_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `visualisation_output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --visualisation-output-filename
 outputs:
   - id: alignment_output_filename
     type:
@@ -88,14 +104,16 @@ outputs:
     doc: "Alignment output filename.\n(used only if input is unaligned sequences)\n\
       [default: auto; based on input file name]"
     outputBinding:
-      glob: $(inputs.alignment_output_filename)
+      glob: $(inputs.alignment_output_filename_path)
   - id: visualisation_output_filename
     type:
       - 'null'
       - File
     doc: "Aligment visualisation filename.\n[default: auto; based on input file name]"
     outputBinding:
-      glob: $(inputs.visualisation_output_filename)
+      glob: $(inputs.visualisation_output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msa4u:0.4.0--pyh7e72e81_0

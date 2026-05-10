@@ -206,6 +206,70 @@ inputs:
       when it runs out of colours)'
     inputBinding:
       position: 104
+  - id: aln_to_cath_aln_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aln_to_cath_aln_file_path`
+    inputBinding:
+      position: 105
+      prefix: --aln-to-cath-aln-file
+  - id: aln_to_fasta_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aln_to_fasta_file_path`
+    inputBinding:
+      position: 106
+      prefix: --aln-to-fasta-file
+  - id: aln_to_html_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aln_to_html_file_path`
+    inputBinding:
+      position: 107
+      prefix: --aln-to-html-file
+  - id: aln_to_ssap_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aln_to_ssap_file_path`
+    inputBinding:
+      position: 108
+      prefix: --aln-to-ssap-file
+  - id: sup_to_json_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_json_file_path`
+    inputBinding:
+      position: 109
+      prefix: --sup-to-json-file
+  - id: sup_to_pdb_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_pdb_file_path`
+    inputBinding:
+      position: 110
+      prefix: --sup-to-pdb-file
+  - id: sup_to_pdb_files_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_pdb_files_dir_path`
+    inputBinding:
+      position: 111
+      prefix: --sup-to-pdb-files-dir
+  - id: sup_to_pymol_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sup_to_pymol_file_path`
+    inputBinding:
+      position: 112
+      prefix: --sup-to-pymol-file
 outputs:
   - id: aln_to_cath_aln_file
     type:
@@ -213,28 +277,28 @@ outputs:
       - File
     doc: '[EXPERIMENTAL] Write the alignment to a CATH alignment file'
     outputBinding:
-      glob: $(inputs.aln_to_cath_aln_file)
+      glob: $(inputs.aln_to_cath_aln_file_path)
   - id: aln_to_fasta_file
     type:
       - 'null'
       - File
     doc: Write the alignment to a FASTA file
     outputBinding:
-      glob: $(inputs.aln_to_fasta_file)
+      glob: $(inputs.aln_to_fasta_file_path)
   - id: aln_to_ssap_file
     type:
       - 'null'
       - File
     doc: Write the alignment to a SSAP file
     outputBinding:
-      glob: $(inputs.aln_to_ssap_file)
+      glob: $(inputs.aln_to_ssap_file_path)
   - id: aln_to_html_file
     type:
       - 'null'
       - File
     doc: Write the alignment to a HTML file
     outputBinding:
-      glob: $(inputs.aln_to_html_file)
+      glob: $(inputs.aln_to_html_file_path)
   - id: sup_to_pdb_file
     type:
       - 'null'
@@ -242,14 +306,14 @@ outputs:
     doc: Write the superposed structures to a single PDB file, separated using 
       faked chain codes
     outputBinding:
-      glob: $(inputs.sup_to_pdb_file)
+      glob: $(inputs.sup_to_pdb_file_path)
   - id: sup_to_pdb_files_dir
     type:
       - 'null'
       - Directory
     doc: Write the superposed structures to separate PDB files in directory
     outputBinding:
-      glob: $(inputs.sup_to_pdb_files_dir)
+      glob: $(inputs.sup_to_pdb_files_dir_path)
   - id: sup_to_pymol_file
     type:
       - 'null'
@@ -257,7 +321,7 @@ outputs:
     doc: 'Write the superposition to a PyMOL script. (Recommended filename extension:
       .pml)'
     outputBinding:
-      glob: $(inputs.sup_to_pymol_file)
+      glob: $(inputs.sup_to_pymol_file_path)
   - id: sup_to_json_file
     type:
       - 'null'
@@ -265,7 +329,9 @@ outputs:
     doc: 'Write the superposition to JSON superposition file. (Recommended filename
       extension: .sup_json)'
     outputBinding:
-      glob: $(inputs.sup_to_json_file)
+      glob: $(inputs.sup_to_json_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0

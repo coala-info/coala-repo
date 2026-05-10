@@ -49,6 +49,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -simple
+  - id: info_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `info_out_path`
+    inputBinding:
+      position: 103
+      prefix: --info-out
 outputs:
   - id: output_genepred
     type: File
@@ -61,7 +69,9 @@ outputs:
       - File
     doc: Write info to file
     outputBinding:
-      glob: $(inputs.info_out)
+      glob: $(inputs.info_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-genepredtoprot:482--h0b57e2e_0

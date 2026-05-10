@@ -62,8 +62,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Combination of options for compression level (can be -1, -3, -5, -7, -8,
-      -9)
+    doc: Combination of options for compression level (can be -1, -3, -5, -7, 
+      -8, -9)
     inputBinding:
       position: 102
       prefix: '-9'
@@ -239,7 +239,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: In highly confident regions, quality values above/below this are quantised
+    doc: In highly confident regions, quality values above/below this are 
+      quantised
     inputBinding:
       position: 102
       prefix: -c
@@ -347,6 +348,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bed_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bed
 outputs:
   - id: output_file
     type: File
@@ -359,7 +368,9 @@ outputs:
       - File
     doc: Output suspicious regions to out.bed
     outputBinding:
-      glob: $(inputs.output_bed)
+      glob: $(inputs.output_bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crumble:0.9.1--h577a1d6_4

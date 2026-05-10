@@ -39,8 +39,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of random reads used; note that fewer reads might be used if a position
-      has depth<n_random_reads
+    doc: number of random reads used; note that fewer reads might be used if a 
+      position has depth<n_random_reads
     inputBinding:
       position: 101
       prefix: -n_random_reads
@@ -48,7 +48,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if set, empty scaffolds in the counts file are NOT printed in the fasta output
+    doc: if set, empty scaffolds in the counts file are NOT printed in the fasta
+      output
     inputBinding:
       position: 101
       prefix: -no_empty_scaffold
@@ -68,8 +69,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: seed for the random number generator (if not set, random device is used to
-      initialise the Marsenne-Twister)
+    doc: seed for the random number generator (if not set, random device is used
+      to initialise the Marsenne-Twister)
     inputBinding:
       position: 101
       prefix: -seed
@@ -81,12 +82,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_fasta_path
+    type: string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fasta
 outputs:
   - id: output_fasta
     type: File
     doc: filename(with path) of the output fasta
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/consensify:2.4.0--h077b44d_2

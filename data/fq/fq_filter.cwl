@@ -29,12 +29,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sequence-pattern
+  - id: dsts_path
+    type: string
+    doc: Output or path parameter `dsts_path`
+    inputBinding:
+      position: 103
+      prefix: --dsts
 outputs:
   - id: dsts
     type: File
     doc: Filtered FASTQ destinations
     outputBinding:
-      glob: $(inputs.dsts)
+      glob: $(inputs.dsts_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fq:0.12.0--h9ee0642_0

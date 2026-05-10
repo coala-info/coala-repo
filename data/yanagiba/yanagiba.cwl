@@ -60,6 +60,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tailtrim
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -67,7 +73,9 @@ outputs:
       - File
     doc: Write filtered reads to this file in .bgz format.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yanagiba:1.0.0--py36_1

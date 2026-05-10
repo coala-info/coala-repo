@@ -116,6 +116,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unmatedReads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -123,7 +129,9 @@ outputs:
       - File
     doc: 'The output file (default: stdout)'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rapmap:v0.12.0dfsg-3b1-deb_cv1

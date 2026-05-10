@@ -68,6 +68,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --targets
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 105
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -75,7 +81,9 @@ outputs:
       - Directory
     doc: Output directory for results
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0

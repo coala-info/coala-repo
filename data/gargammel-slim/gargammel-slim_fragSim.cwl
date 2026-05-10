@@ -148,6 +148,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -uniq
+  - id: output_bam_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bam_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam-file
+  - id: output_zipped_fasta_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_zipped_fasta_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-zipped-fasta-file
 outputs:
   - id: output_bam_file
     type:
@@ -155,14 +171,16 @@ outputs:
       - File
     doc: Write output as a BAM file
     outputBinding:
-      glob: $(inputs.output_bam_file)
+      glob: $(inputs.output_bam_file_path)
   - id: output_zipped_fasta_file
     type:
       - 'null'
       - File
     doc: Write output as a zipped fasta
     outputBinding:
-      glob: $(inputs.output_zipped_fasta_file)
+      glob: $(inputs.output_zipped_fasta_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gargammel-slim:1.1.2--hf107e4d_6

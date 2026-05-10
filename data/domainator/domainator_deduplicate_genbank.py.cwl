@@ -150,6 +150,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --suffix_count
+  - id: output_path
+    type: string
+    doc: 'output genbank filename. If not supplied, writes to stdout. (default: None)'
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -157,7 +163,9 @@ outputs:
       - File
     doc: The name of the output file. If not supplied, writes to stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/domainator:0.8.1--pyhdfd78af_0

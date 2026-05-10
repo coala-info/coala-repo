@@ -126,6 +126,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --pathway-prediction-timeout
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -134,7 +140,9 @@ outputs:
     doc: Output filename. Multiple output files can be provided (pair with 
       respective format options).
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cameo:0.13.6--pyhdfd78af_0

@@ -25,12 +25,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+  - id: build_output_path
+    type: string
+    doc: Output or path parameter `build_output_path`
+    inputBinding:
+      position: 102
+      prefix: --build-output
 outputs:
   - id: build_output
     type: Directory
     doc: directory where results should be written
     outputBinding:
-      glob: $(inputs.build_output)
+      glob: $(inputs.build_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4

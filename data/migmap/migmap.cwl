@@ -149,6 +149,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-kabat
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 104
+      prefix: --report-file
+  - id: unmapped_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unmapped_output_path`
+    inputBinding:
+      position: 105
+      prefix: --unmapped-output
 outputs:
   - id: report_file
     type:
@@ -156,14 +172,16 @@ outputs:
       - File
     doc: File to store MIGMAP report. Will append report line if file exists.
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
   - id: unmapped_output
     type:
       - 'null'
       - File
     doc: Output unmapped reads in specified file.
     outputBinding:
-      glob: $(inputs.unmapped_output)
+      glob: $(inputs.unmapped_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/migmap:1.0.3--0

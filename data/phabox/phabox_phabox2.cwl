@@ -172,13 +172,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree
+  - id: outpth_path
+    type: string
+    doc: Output or path parameter `outpth_path`
+    inputBinding:
+      position: 102
+      prefix: --outpth
 outputs:
   - id: outpth
     type: Directory
     doc: "Rootpth for the output folder (required)\n    All the results, including
       intermediate files and final predictions, are stored in this folder."
     outputBinding:
-      glob: $(inputs.outpth)
+      glob: $(inputs.outpth_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phabox:2.1.13--pyhdfd78af_1

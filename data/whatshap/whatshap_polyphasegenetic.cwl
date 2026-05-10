@@ -104,6 +104,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --tag
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -112,7 +118,9 @@ outputs:
     doc: Output VCF file. Add .gz to the file name to get compressed output. If 
       omitted, use standard output.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0

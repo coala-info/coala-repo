@@ -59,6 +59,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_sam_path
+    type: string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 103
+      prefix: --output-sam
 outputs:
   - id: output_sam
     type:
@@ -66,7 +72,9 @@ outputs:
       - File
     doc: file to write merged read-pairs to
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smallgenomeutilities:0.5.2--pyhdfd78af_0

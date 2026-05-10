@@ -86,6 +86,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --with-nm
+  - id: discordant_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `discordant_path`
+    inputBinding:
+      position: 103
+      prefix: --discordant
+  - id: splitter_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `splitter_path`
+    inputBinding:
+      position: 104
+      prefix: --splitter
 outputs:
   - id: splitter_file_pos
     type: File
@@ -101,12 +117,14 @@ outputs:
     type: File
     doc: output split reads to this file in BAM format
     outputBinding:
-      glob: $(inputs.splitter)
+      glob: $(inputs.splitter_path)
   - id: discordant
     type: File
     doc: output discordant reads to this file in BAM format
     outputBinding:
-      glob: $(inputs.discordant)
+      glob: $(inputs.discordant_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/extract-sv-reads:1.3.0--pl5321h9948957_6

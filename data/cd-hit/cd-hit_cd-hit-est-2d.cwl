@@ -85,16 +85,25 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Word length, default 10 for threshold 0.95-1.0, 8 for 0.9-0.95, 7 for 0.88-0.9
+    doc: Word length, default 10 for threshold 0.95-1.0, 8 for 0.9-0.95, 7 for 
+      0.88-0.9
     inputBinding:
       position: 101
       prefix: -n
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cd-hit:4.8.1--h5ca1c30_13

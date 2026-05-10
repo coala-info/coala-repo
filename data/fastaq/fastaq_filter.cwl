@@ -69,6 +69,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --regex
+  - id: mate_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mate_out_path`
+    inputBinding:
+      position: 103
+      prefix: --mate-out
 outputs:
   - id: outfile
     type: File
@@ -81,7 +89,9 @@ outputs:
       - File
     doc: Name of mates output file
     outputBinding:
-      glob: $(inputs.mate_out)
+      glob: $(inputs.mate_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

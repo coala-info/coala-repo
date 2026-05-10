@@ -74,7 +74,7 @@ inputs:
       - 'null'
       - Directory
     doc: Directory containing models. Either a binding affinity predictor or a 
-      presentation predictor can be used.
+      presentation predictor can be used. 
       /root/.local/share/mhcflurry/4/2.2.0/models_class1_presentation/models
     inputBinding:
       position: 102
@@ -144,6 +144,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --prediction-column-prefix
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -151,7 +157,9 @@ outputs:
       - File
     doc: Output CSV
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mhcflurry:2.1.5--pyh7e72e81_0

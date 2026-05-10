@@ -51,6 +51,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_fp_path
+    type: string
+    doc: Output or path parameter `output_fp_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fp
 outputs:
   - id: output_fp
     type:
@@ -58,7 +64,9 @@ outputs:
       - File
     doc: Output BIOM file path
     outputBinding:
-      glob: $(inputs.output_fp)
+      glob: $(inputs.output_fp_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kraken-biom:1.2.0--pyh5e36f6f_0

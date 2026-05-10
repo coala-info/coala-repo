@@ -121,6 +121,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -129,7 +135,9 @@ outputs:
     doc: "Output path.\n          \n          If no path is given, SFS will be output
       to stdout."
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0

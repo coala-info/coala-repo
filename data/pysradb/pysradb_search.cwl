@@ -208,6 +208,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
+  - id: save_to_path
+    type: string
+    doc: Output or path parameter `save_to_path`
+    inputBinding:
+      position: 102
+      prefix: --save-to
 outputs:
   - id: save_to
     type:
@@ -215,7 +221,9 @@ outputs:
       - File
     doc: Save search result dataframe to file
     outputBinding:
-      glob: $(inputs.save_to)
+      glob: $(inputs.save_to_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0

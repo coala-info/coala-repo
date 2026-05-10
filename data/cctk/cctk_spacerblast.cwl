@@ -132,6 +132,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upstream
+  - id: no_pam_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `no_pam_out_path`
+    inputBinding:
+      position: 102
+      prefix: --no-pam-out
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -139,14 +155,16 @@ outputs:
       - File
     doc: path to output file.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: no_pam_out
     type:
       - 'null'
       - File
     doc: path to output file for protospacers with no PAM, if desired
     outputBinding:
-      glob: $(inputs.no_pam_out)
+      glob: $(inputs.no_pam_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cctk:1.0.3--pyhdfd78af_0

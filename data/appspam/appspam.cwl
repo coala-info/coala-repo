@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: appspam
 label: appspam
-doc: "Alignment-free phylogenetic placement algorithm based on spaced word matches\n
-  \nTool homepage: https://github.com/matthiasblanke/App-SpaM/"
+doc: "Alignment-free phylogenetic placement algorithm based on spaced word matches\n\
+  \ \nTool homepage: https://github.com/matthiasblanke/App-SpaM/"
 inputs:
   - id: delimiter
     type:
@@ -135,6 +135,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-scores
+  - id: out_jplace_path
+    type: string
+    doc: Output or path parameter `out_jplace_path`
+    inputBinding:
+      position: 102
+      prefix: --out-jplace
 outputs:
   - id: out_jplace
     type:
@@ -142,7 +148,9 @@ outputs:
       - File
     doc: Path and name to JPlace output file.
     outputBinding:
-      glob: $(inputs.out_jplace)
+      glob: $(inputs.out_jplace_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/appspam:1.03--h9f5acd7_3

@@ -77,6 +77,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --remove-ids
+  - id: output_fasta_path
+    type: string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
 outputs:
   - id: output_fasta
     type:
@@ -85,7 +91,9 @@ outputs:
     doc: Output FASTA file. If not specified, results are printed to standard 
       output.
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

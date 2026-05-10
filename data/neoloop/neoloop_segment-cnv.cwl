@@ -90,6 +90,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ploidy
+  - id: output_path
+    type: string
+    doc: 'Output file path. (default: None)'
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -97,7 +103,9 @@ outputs:
       - File
     doc: Output file path.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0

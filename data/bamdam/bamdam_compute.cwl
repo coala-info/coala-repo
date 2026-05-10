@@ -66,17 +66,41 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upto
+  - id: out_subs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_subs_path`
+    inputBinding:
+      position: 102
+      prefix: --out-subs
+  - id: out_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --out-tsv
+  - id: plotdupdust_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plotdupdust_path`
+    inputBinding:
+      position: 104
+      prefix: --plotdupdust
 outputs:
   - id: out_tsv
     type: File
     doc: Path to the output tsv file (required)
     outputBinding:
-      glob: $(inputs.out_tsv)
+      glob: $(inputs.out_tsv_path)
   - id: out_subs
     type: File
     doc: Path to the output subs file (required)
     outputBinding:
-      glob: $(inputs.out_subs)
+      glob: $(inputs.out_subs_path)
   - id: plotdupdust
     type:
       - 'null'
@@ -84,7 +108,9 @@ outputs:
     doc: 'Path to create a duplicity-dust plot, ending in .pdf or .png. (default:
       not set)'
     outputBinding:
-      glob: $(inputs.plotdupdust)
+      glob: $(inputs.plotdupdust_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamdam:0.4.3--pyhdfd78af_0

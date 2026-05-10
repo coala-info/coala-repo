@@ -81,6 +81,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --wgs-only
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: stats_output_path
+    type:
+      - 'null'
+      - string
+    doc: name of file to write statistics to (see Note 3 for details)
+    inputBinding:
+      position: 105
+      prefix: --stats-output
 outputs:
   - id: output_file
     type:
@@ -88,14 +104,16 @@ outputs:
       - File
     doc: name of output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: stats_output
     type:
       - 'null'
       - File
     doc: name of file to write statistics to
     outputBinding:
-      glob: $(inputs.stats_output)
+      glob: $(inputs.stats_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dupsifter:1.3.0.20241113--h566b1c6_1

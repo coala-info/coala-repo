@@ -307,12 +307,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_existing_scores
+  - id: output_path
+    type: string
+    doc: Prefix for srst2 output files
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Prefix for srst2 output files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/srst2:v0.2.0-6-deb_cv1

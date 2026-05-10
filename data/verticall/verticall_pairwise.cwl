@@ -132,12 +132,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_size
+  - id: out_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --out_file
 outputs:
   - id: out_file
     type: File
     doc: Filename of TSV output
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/verticall:0.4.3--pyhdfd78af_0

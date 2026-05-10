@@ -16,13 +16,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxa
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type: Directory
     doc: "The output directory，including the output and\n                        intermediate
       file."
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnavirhost:1.0.5--pyh7cba7a3_0

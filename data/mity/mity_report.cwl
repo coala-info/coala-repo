@@ -84,6 +84,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vcfanno-base-path
+  - id: output_annotated_vcf_path
+    type: string
+    doc: Output or path parameter `output_annotated_vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-annotated-vcf
 outputs:
   - id: output_annotated_vcf
     type:
@@ -91,7 +97,9 @@ outputs:
       - File
     doc: Output annotated vcf file
     outputBinding:
-      glob: $(inputs.output_annotated_vcf)
+      glob: $(inputs.output_annotated_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mity:2.0.1--pyhdfd78af_0

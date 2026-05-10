@@ -109,6 +109,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: alias_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alias_file_path`
+    inputBinding:
+      position: 102
+      prefix: --alias-file
+  - id: binary_gifile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `binary_gifile_path`
+    inputBinding:
+      position: 103
+      prefix: --binary-gifile
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 104
+      prefix: --logfile
 outputs:
   - id: logfile
     type:
@@ -116,21 +140,23 @@ outputs:
       - File
     doc: Logfile name
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
   - id: alias_file
     type:
       - 'null'
       - File
     doc: Create an alias file with this name
     outputBinding:
-      glob: $(inputs.alias_file)
+      glob: $(inputs.alias_file_path)
   - id: binary_gifile
     type:
       - 'null'
       - File
     doc: Binary Gifile produced from the Gifile specified above
     outputBinding:
-      glob: $(inputs.binary_gifile)
+      glob: $(inputs.binary_gifile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast-legacy:2.2.26--h9ee0642_3

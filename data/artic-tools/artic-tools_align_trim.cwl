@@ -67,6 +67,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: report_path
+    type: string
+    doc: Output an align_trim report to file
+    inputBinding:
+      position: 103
+      prefix: --report
 outputs:
   - id: report
     type:
@@ -74,7 +80,9 @@ outputs:
       - File
     doc: Output an align_trim report to file
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/artic-tools:0.3.1--hf9554c4_7

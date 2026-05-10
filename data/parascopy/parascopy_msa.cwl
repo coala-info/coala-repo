@@ -26,8 +26,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 1-based
-      inclusive. Commas are ignored.
+    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 
+      1-based inclusive. Commas are ignored.
     inputBinding:
       position: 101
       prefix: --regions
@@ -36,7 +36,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based semi-exclusive).
+    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based 
+      semi-exclusive).
     inputBinding:
       position: 101
       prefix: --regions-file
@@ -63,6 +64,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --width
+  - id: out_csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_csv_path`
+    inputBinding:
+      position: 102
+      prefix: --out-csv
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -70,14 +87,16 @@ outputs:
       - File
     doc: 'Optional: output in clustal format.'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: out_csv
     type:
       - 'null'
       - File
     doc: 'Optional: output csv file with aligned positions.'
     outputBinding:
-      glob: $(inputs.out_csv)
+      glob: $(inputs.out_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

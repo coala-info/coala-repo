@@ -43,6 +43,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --mate
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -50,7 +56,9 @@ outputs:
       - File
     doc: prefix for output files (NULL writes to stdout)
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

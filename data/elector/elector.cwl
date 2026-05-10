@@ -116,6 +116,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -uncorrected
+  - id: output_dir_path_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir-path
 outputs:
   - id: output_dir_path
     type:
@@ -123,7 +129,9 @@ outputs:
       - Directory
     doc: Name for output directory
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_dir_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/elector:1.0.4--py312h719dbc0_5

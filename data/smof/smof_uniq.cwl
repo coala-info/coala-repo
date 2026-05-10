@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unpack
+  - id: removed_file_path
+    type: string
+    doc: Output or path parameter `removed_file_path`
+    inputBinding:
+      position: 103
+      prefix: --removed-file
 outputs:
   - id: removed_file
     type:
@@ -80,7 +86,9 @@ outputs:
       - File
     doc: With -f, store removed sequences in FILE
     outputBinding:
-      glob: $(inputs.removed_file)
+      glob: $(inputs.removed_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0

@@ -38,6 +38,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --rel-ids
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 105
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -45,7 +51,9 @@ outputs:
       - File
     doc: Output file (defaults to stdout)
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

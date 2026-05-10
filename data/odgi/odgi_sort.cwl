@@ -369,6 +369,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --two-way
+  - id: output_graph_path
+    type: string
+    doc: Output or path parameter `output_graph_path`
+    inputBinding:
+      position: 102
+      prefix: --output-graph
 outputs:
   - id: output_graph
     type:
@@ -377,7 +383,9 @@ outputs:
     doc: Write the sorted dynamic succinct variation graph to this file. A file 
       ending with *.og* is recommended.
     outputBinding:
-      glob: $(inputs.output_graph)
+      glob: $(inputs.output_graph_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

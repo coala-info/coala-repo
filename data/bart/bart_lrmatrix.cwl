@@ -86,6 +86,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -k
+  - id: denoised_output_path
+    type: string
+    doc: Output or path parameter `denoised_output_path`
+    inputBinding:
+      position: 104
+      prefix: --denoised-output
 outputs:
   - id: denoised_output
     type:
@@ -93,7 +99,9 @@ outputs:
       - File
     doc: summed over all non-noise scales to create a denoised output.
     outputBinding:
-      glob: $(inputs.denoised_output)
+      glob: $(inputs.denoised_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1

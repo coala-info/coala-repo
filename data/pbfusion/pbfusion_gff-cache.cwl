@@ -39,6 +39,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: gtf_out_path
+    type: string
+    doc: Output or path parameter `gtf_out_path`
+    inputBinding:
+      position: 102
+      prefix: --gtf-out
 outputs:
   - id: gtf_out
     type:
@@ -46,7 +52,9 @@ outputs:
       - File
     doc: Output binary GTF file
     outputBinding:
-      glob: $(inputs.gtf_out)
+      glob: $(inputs.gtf_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbfusion:0.5.1--hdfd78af_0

@@ -23,8 +23,8 @@ inputs:
       prefix: --maximum-n-number
   - id: ploidy_table
     type: File
-    doc: Tab-delimited file with two columns specifying the chromosome name and its
-      ploidy. By default all chromosomes have a ploidy of 2.
+    doc: Tab-delimited file with two columns specifying the chromosome name and 
+      its ploidy. By default all chromosomes have a ploidy of 2.
     inputBinding:
       position: 101
       prefix: --ploidy-table
@@ -40,7 +40,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Same as -e flag in dwgsim. per base/color/flow error rate of the first read.
+    doc: Same as -e flag in dwgsim. per base/color/flow error rate of the first 
+      read.
     inputBinding:
       position: 101
       prefix: --read1-error-rate
@@ -48,7 +49,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Same as -E flag in dwgsim. per base/color/flow error rate of the second read.
+    doc: Same as -E flag in dwgsim. per base/color/flow error rate of the second
+      read.
     inputBinding:
       position: 101
       prefix: --read2-error-rate
@@ -78,6 +80,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -85,7 +93,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biotdg:0.1.0--py_0

@@ -45,6 +45,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --thresholds
+  - id: figdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `figdir_path`
+    inputBinding:
+      position: 103
+      prefix: --figdir
 outputs:
   - id: output
     type: File
@@ -58,7 +66,9 @@ outputs:
     doc: Path to the output figure directory. By default, the figure is only 
       shown but not saved.
     outputBinding:
-      glob: $(inputs.figdir)
+      glob: $(inputs.figdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0

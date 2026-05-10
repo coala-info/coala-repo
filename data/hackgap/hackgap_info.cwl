@@ -65,6 +65,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --statistics
+  - id: export_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `export_path`
+    inputBinding:
+      position: 104
+      prefix: --export
+  - id: outprefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outprefix_path`
+    inputBinding:
+      position: 105
+      prefix: --outprefix
 outputs:
   - id: outprefix
     type:
@@ -73,7 +89,7 @@ outputs:
     doc: file name prefix of exported data, extended by 
       .{key,chc.val}.{txt,data}.
     outputBinding:
-      glob: $(inputs.outprefix)
+      glob: $(inputs.outprefix_path)
   - id: export
     type:
       - 'null'
@@ -81,7 +97,9 @@ outputs:
     doc: file name prefix of exported data, extended by 
       .{key,chc.val}.{txt,data}.
     outputBinding:
-      glob: $(inputs.export)
+      glob: $(inputs.export_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hackgap:1.0.1--pyhdfd78af_0

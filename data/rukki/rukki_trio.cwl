@@ -271,6 +271,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --try-fill-bubbles
+  - id: final_assign_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `final_assign_path`
+    inputBinding:
+      position: 102
+      prefix: --final-assign
+  - id: init_assign_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `init_assign_path`
+    inputBinding:
+      position: 103
+      prefix: --init-assign
+  - id: refined_assign_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `refined_assign_path`
+    inputBinding:
+      position: 104
+      prefix: --refined-assign
 outputs:
   - id: init_assign
     type:
@@ -278,21 +302,23 @@ outputs:
       - File
     doc: Marker-based annotation output file
     outputBinding:
-      glob: $(inputs.init_assign)
+      glob: $(inputs.init_assign_path)
   - id: refined_assign
     type:
       - 'null'
       - File
     doc: Refined annotation output file
     outputBinding:
-      glob: $(inputs.refined_assign)
+      glob: $(inputs.refined_assign_path)
   - id: final_assign
     type:
       - 'null'
       - File
     doc: Final annotation output file
     outputBinding:
-      glob: $(inputs.final_assign)
+      glob: $(inputs.final_assign_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rukki:0.3.0--ha6fb395_1

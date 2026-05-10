@@ -508,6 +508,110 @@ inputs:
     inputBinding:
       position: 101
       prefix: -track
+  - id: aggressive_tagging_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aggressive_tagging_path`
+    inputBinding:
+      position: 102
+      prefix: --aggressive-tagging
+  - id: assoc_cc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `assoc_cc_path`
+    inputBinding:
+      position: 103
+      prefix: --assoc-cc
+  - id: assoc_tdt_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `assoc_tdt_path`
+    inputBinding:
+      position: 104
+      prefix: --assoc-tdt
+  - id: check_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `check_path`
+    inputBinding:
+      position: 105
+      prefix: --check
+  - id: compressed_png_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `compressed_png_path`
+    inputBinding:
+      position: 106
+      prefix: --compressed-png
+  - id: dprime_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dprime_path`
+    inputBinding:
+      position: 107
+      prefix: --dprime
+  - id: ind_check_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ind_check_path`
+    inputBinding:
+      position: 108
+      prefix: --ind-check
+  - id: male_hets_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `male_hets_path`
+    inputBinding:
+      position: 109
+      prefix: --male-hets
+  - id: mendel_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mendel_path`
+    inputBinding:
+      position: 110
+      prefix: --mendel
+  - id: pairwise_tagging_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pairwise_tagging_path`
+    inputBinding:
+      position: 111
+      prefix: --pairwise-tagging
+  - id: perm_tests_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `perm_tests_path`
+    inputBinding:
+      position: 112
+      prefix: --perm-tests
+  - id: png_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `png_path`
+    inputBinding:
+      position: 113
+      prefix: --png
+  - id: svg_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `svg_path`
+    inputBinding:
+      position: 114
+      prefix: --svg
 outputs:
   - id: dprime
     type:
@@ -515,56 +619,56 @@ outputs:
       - File
     doc: Outputs LD text to <fileroot>.LD
     outputBinding:
-      glob: $(inputs.dprime)
+      glob: $(inputs.dprime_path)
   - id: png
     type:
       - 'null'
       - File
     doc: Outputs LD display to <fileroot>.LD.PNG
     outputBinding:
-      glob: $(inputs.png)
+      glob: $(inputs.png_path)
   - id: compressed_png
     type:
       - 'null'
       - File
     doc: Outputs compressed LD display to <fileroot>.LD.PNG
     outputBinding:
-      glob: $(inputs.compressed_png)
+      glob: $(inputs.compressed_png_path)
   - id: svg
     type:
       - 'null'
       - File
     doc: Outputs svg format LD display to <fileroot>.LD.SVG
     outputBinding:
-      glob: $(inputs.svg)
+      glob: $(inputs.svg_path)
   - id: check
     type:
       - 'null'
       - File
     doc: Outputs marker checks to <fileroot>.CHECK
     outputBinding:
-      glob: $(inputs.check)
+      glob: $(inputs.check_path)
   - id: ind_check
     type:
       - 'null'
       - File
     doc: Outputs genotype percent per individual to <fileroot>.INDCHECK
     outputBinding:
-      glob: $(inputs.ind_check)
+      glob: $(inputs.ind_check_path)
   - id: mendel
     type:
       - 'null'
       - File
     doc: Outputs Mendel error information to <fileroot>.MENDEL
     outputBinding:
-      glob: $(inputs.mendel)
+      glob: $(inputs.mendel_path)
   - id: male_hets
     type:
       - 'null'
       - File
     doc: Outputs male heterozygote information to <fileroot>.MALEHETS
     outputBinding:
-      glob: $(inputs.male_hets)
+      glob: $(inputs.male_hets_path)
   - id: assoc_cc
     type:
       - 'null'
@@ -572,7 +676,7 @@ outputs:
     doc: Outputs case control association results to <fileroot>.ASSOC and 
       <fileroot>.HAPASSOC
     outputBinding:
-      glob: $(inputs.assoc_cc)
+      glob: $(inputs.assoc_cc_path)
   - id: assoc_tdt
     type:
       - 'null'
@@ -580,7 +684,7 @@ outputs:
     doc: Outputs trio association results to <fileroot>.ASSOC and 
       <fileroot>.HAPASSOC
     outputBinding:
-      glob: $(inputs.assoc_tdt)
+      glob: $(inputs.assoc_tdt_path)
   - id: perm_tests
     type:
       - 'null'
@@ -589,14 +693,14 @@ outputs:
       custom tests if a custom association file is specified) and writes to 
       <fileroot>.PERMUT
     outputBinding:
-      glob: $(inputs.perm_tests)
+      glob: $(inputs.perm_tests_path)
   - id: pairwise_tagging
     type:
       - 'null'
       - File
     doc: Generates pairwise tagging information in <fileroot>.TAGS and .TESTS
     outputBinding:
-      glob: $(inputs.pairwise_tagging)
+      glob: $(inputs.pairwise_tagging_path)
   - id: aggressive_tagging
     type:
       - 'null'
@@ -604,7 +708,9 @@ outputs:
     doc: As above but generates 2-marker haplotype tags unless specified 
       otherwise by -aggressiveNumMarkers
     outputBinding:
-      glob: $(inputs.aggressive_tagging)
+      glob: $(inputs.aggressive_tagging_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haploview:4.2--hdfd78af_1

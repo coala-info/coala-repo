@@ -37,15 +37,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Output file for the sorted GTF. If not specified, result is printed to standard
-      out.
+    doc: Output file for the sorted GTF. If not specified, result is printed to 
+      standard out.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/astalavista:4.0--0

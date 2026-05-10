@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: save_supporting_set_path
+    type: string
+    doc: Output or path parameter `save_supporting_set_path`
+    inputBinding:
+      position: 102
+      prefix: --save-supporting-set
 outputs:
   - id: save_supporting_set
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: Save supporting set to file
     outputBinding:
-      glob: $(inputs.save_supporting_set)
+      glob: $(inputs.save_supporting_set_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/provean:1.1.5--h503566f_3

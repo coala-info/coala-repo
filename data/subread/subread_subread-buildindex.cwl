@@ -16,8 +16,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Build a full index for the reference genome (16bp step size). If not specified,
-      a gapped index is built (2bp step size).
+    doc: Build a full index for the reference genome (16bp step size). If not 
+      specified, a gapped index is built (2bp step size).
     inputBinding:
       position: 102
       prefix: -F
@@ -33,7 +33,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Size of computer memory (RAM) in megabytes that will be used for index building
+    doc: Size of computer memory (RAM) in megabytes that will be used for index 
+      building
     inputBinding:
       position: 102
       prefix: -M
@@ -45,12 +46,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: -B
+  - id: output_basename_path
+    type: string
+    doc: Output or path parameter `output_basename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-basename
 outputs:
   - id: output_basename
     type: File
     doc: Base name of the index to be created
     outputBinding:
-      glob: $(inputs.output_basename)
+      glob: $(inputs.output_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/subread:2.1.1--h577a1d6_0

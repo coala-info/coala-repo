@@ -15,8 +15,8 @@ inputs:
       position: 1
   - id: query_idx
     type: File
-    doc: A tab-delimited file where each line is a sample identifier followed by the
-      path to the fast{a,q} of reads for that sample
+    doc: A tab-delimited file where each line is a sample identifier followed by
+      the path to the fast{a,q} of reads for that sample
     inputBinding:
       position: 2
   - id: bin
@@ -47,8 +47,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Estimated length of the genome - used for coverage estimation. Can pass string
-      such as 4.4m, 100k etc.
+    doc: Estimated length of the genome - used for coverage estimation. Can pass
+      string such as 4.4m, 100k etc.
     inputBinding:
       position: 103
       prefix: --genome-size
@@ -72,8 +72,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: When genotyping, assume that coverage on alternative alleles arises as a
-      result of an error process with rate -E.
+    doc: When genotyping, assume that coverage on alternative alleles arises as 
+      a result of an error process with rate -E.
     inputBinding:
       position: 103
       prefix: --gt-error-rate
@@ -81,7 +81,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Reads are from Illumina. Alters error rate used and adjusts for shorter reads
+    doc: Reads are from Illumina. Alters error rate used and adjusts for shorter
+      reads
     inputBinding:
       position: 103
       prefix: --illumina
@@ -89,8 +90,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of kmers to average over when selecting the maximum likelihood
-      path
+    doc: Maximum number of kmers to average over when selecting the maximum 
+      likelihood path
     inputBinding:
       position: 103
       prefix: --kmer-avg
@@ -106,8 +107,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: (Intended for developers) Use coverage-oriented (local) genotyping instead
-      of the default ML path-oriented (global) approach.
+    doc: (Intended for developers) Use coverage-oriented (local) genotyping 
+      instead of the default ML path-oriented (global) approach.
     inputBinding:
       position: 103
       prefix: --local
@@ -147,8 +148,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum allele coverage, as a fraction of the expected coverage, allowed
-      when genotyping
+    doc: Minimum allele coverage, as a fraction of the expected coverage, 
+      allowed when genotyping
     inputBinding:
       position: 103
       prefix: -F
@@ -156,8 +157,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum size of a cluster of hits between a read and a loci to consider the
-      loci present
+    doc: Minimum size of a cluster of hits between a read and a loci to consider
+      the loci present
     inputBinding:
       position: 103
       prefix: --min-cluster-size
@@ -165,8 +166,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum difference in coverage on a site required between the first and second
-      maximum likelihood path
+    doc: Minimum difference in coverage on a site required between the first and
+      second maximum likelihood path
     inputBinding:
       position: 103
       prefix: -D
@@ -190,8 +191,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta file with a reference sequence to use for each loci. The sequence MUST
-      have a perfect match in <TARGET> and the same name
+    doc: Fasta file with a reference sequence to use for each loci. The sequence
+      MUST have a perfect match in <TARGET> and the same name
     inputBinding:
       position: 103
       prefix: --vcf-refs
@@ -212,6 +213,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -w
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 104
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -219,7 +226,9 @@ outputs:
       - Directory
     doc: Directory to write output files to
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pandora:0.9.2--h4ac6f70_0

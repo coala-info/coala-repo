@@ -67,12 +67,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --shortbred_map
+  - id: ham_out_path
+    type: string
+    doc: output file from hAMRonization (tsv), REQUIRED
+    inputBinding:
+      position: 102
+      prefix: --ham_out
 outputs:
   - id: ham_out
     type: File
     doc: output file from hAMRonization (tsv), REQUIRED
     outputBinding:
-      glob: $(inputs.ham_out)
+      glob: $(inputs.ham_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hamroaster:2.0--hdfd78af_0

@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of records to use for automatic library evaluation. Set to 0 to evaluate
-      all. In range [0..inf].
+    doc: Number of records to use for automatic library evaluation. Set to 0 to 
+      evaluate all. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --auto-library-num-records
@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Radius around breakpoints to extract for remapping. Set to 0 to use maximal
-      fragment size. In range [0..inf].
+    doc: Radius around breakpoints to extract for remapping. Set to 0 to use 
+      maximal fragment size. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --breakpoint-window-radius
@@ -27,8 +27,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of clipping positions to find in one window such that the window
-      is not discarded.
+    doc: The number of clipping positions to find in one window such that the 
+      window is not discarded.
     inputBinding:
       position: 101
       prefix: --clipping-min-coverage
@@ -36,8 +36,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Smallest number of characters that have to be soft-clipped such that the
-      alignment is not ignored.
+    doc: Smallest number of characters that have to be soft-clipped such that 
+      the alignment is not ignored.
     inputBinding:
       position: 101
       prefix: --clipping-min-length
@@ -45,7 +45,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Window radius to use for clipping position clustering. In range [0..inf].
+    doc: Window radius to use for clipping position clustering. In range 
+      [0..inf].
     inputBinding:
       position: 101
       prefix: --clipping-window-radius
@@ -53,8 +54,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filter out calls at locations that have a higher coverage than this number.
-      Set to 0 to disable filter. In range [0..inf].
+    doc: Filter out calls at locations that have a higher coverage than this 
+      number. Set to 0 to disable filter. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --filter-max-coverage
@@ -78,8 +79,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Factor to multiple fragment size stddev with to get allowed error. In range
-      [0..inf].
+    doc: Factor to multiple fragment size stddev with to get allowed error. In 
+      range [0..inf].
     inputBinding:
       position: 101
       prefix: --fragment-size-factor
@@ -131,7 +132,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Smallest number of EOA reads to support an insertion. In range [1..inf].
+    doc: Smallest number of EOA reads to support an insertion. In range 
+      [1..inf].
     inputBinding:
       position: 101
       prefix: --oea-min-support
@@ -139,8 +141,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Smallest number of EOA reads on each side to support an insertion. In range
-      [1..inf].
+    doc: Smallest number of EOA reads on each side to support an insertion. In 
+      range [1..inf].
     inputBinding:
       position: 101
       prefix: --oea-min-support-each-side
@@ -192,20 +194,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --very-verbose
+  - id: out_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --out-vcf
+  - id: output_debug_dir_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-debug-dir
 outputs:
   - id: out_vcf
     type: File
     doc: 'VCF file to write variations to. Use "-" for stdout. Valid filetype is:
       vcf.'
     outputBinding:
-      glob: $(inputs.out_vcf)
+      glob: $(inputs.out_vcf_path)
   - id: output_debug_dir
     type:
       - 'null'
       - Directory
     doc: Directory for debug output files. Created if required.
     outputBinding:
-      glob: $(inputs.output_debug_dir)
+      glob: $(inputs.output_debug_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anise_basil:1.2.0--py312hdcc493e_9

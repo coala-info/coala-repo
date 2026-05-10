@@ -33,6 +33,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --pdb_output_template
+  - id: pdb_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pdb_output_path`
+    inputBinding:
+      position: 103
+      prefix: --pdb-output
 outputs:
   - id: pdb_output
     type:
@@ -40,12 +48,14 @@ outputs:
       - File
     doc: file path to output query result in PDB format
     outputBinding:
-      glob: $(inputs.pdb_output)
+      glob: $(inputs.pdb_output_path)
   - id: output_balls
     type: File
     doc: "list of balls (line format: 'annotation x y z r tags adjuncts')"
     outputBinding:
       glob: '*.out'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0

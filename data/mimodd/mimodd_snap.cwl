@@ -251,9 +251,7 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: min and max spacing to allow between paired ends
-      - 100
-      - 10000
+    doc: min and max spacing to allow between paired ends - 100 - 10000
     inputBinding:
       position: 104
       prefix: --spacing
@@ -292,12 +290,28 @@ inputs:
     inputBinding:
       position: 104
       prefix: --verbose
+  - id: idx_out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `idx_out_dir_path`
+    inputBinding:
+      position: 105
+      prefix: --idx-out-dir
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: name of the output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: idx_out_dir
     type:
       - 'null'
@@ -305,7 +319,9 @@ outputs:
     doc: name of the index directory to be created; if given, the index 
       directory will be permanent, otherwise a temporary directory will be used
     outputBinding:
-      glob: $(inputs.idx_out_dir)
+      glob: $(inputs.idx_out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimodd:0.1.9--py35_0

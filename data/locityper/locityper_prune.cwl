@@ -79,12 +79,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_db_path
+    type: string
+    doc: Output or path parameter `output_db_path`
+    inputBinding:
+      position: 102
+      prefix: --output-db
 outputs:
   - id: output_db
     type: Directory
     doc: Output pruned database directory.
     outputBinding:
-      glob: $(inputs.output_db)
+      glob: $(inputs.output_db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locityper:1.3.4--ha6fb395_0

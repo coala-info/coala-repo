@@ -112,12 +112,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sort
+  - id: output_dm_file_path
+    type: string
+    doc: Output or path parameter `output_dm_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dm-file
 outputs:
   - id: output_dm_file
     type: File
     doc: output DM file
     outputBinding:
-      glob: $(inputs.output_dm_file)
+      glob: $(inputs.output_dm_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dmtools:0.2.6--hda3def1_0

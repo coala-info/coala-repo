@@ -109,13 +109,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --size-y
+  - id: output_patch_path
+    type: string
+    doc: Output or path parameter `output_patch_path`
+    inputBinding:
+      position: 102
+      prefix: --output-patch
 outputs:
   - id: output_patch
     type: File
     doc: Path to the patch PNG file, will append .png to the end if not included
       in file name.
     outputBinding:
-      glob: $(inputs.output_patch)
+      glob: $(inputs.output_patch_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

@@ -62,27 +62,61 @@ inputs:
     doc: set the input variable metadata_in file
     inputBinding:
       position: 101
+  - id: figure_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `figure_path`
+    inputBinding:
+      position: 102
+      prefix: --figure
+  - id: information_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `information_path`
+    inputBinding:
+      position: 103
+      prefix: --information
+  - id: sampleMetadata_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sampleMetadata_out_path`
+    inputBinding:
+      position: 104
+      prefix: --sampleMetadata-out
+  - id: variableMetadata_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `variableMetadata_out_path`
+    inputBinding:
+      position: 105
+      prefix: --variableMetadata-out
 outputs:
   - id: sampleMetadata_out
     type: File
     doc: set the output sample metadata file
     outputBinding:
-      glob: $(inputs.sampleMetadata_out)
+      glob: $(inputs.sampleMetadata_out_path)
   - id: variableMetadata_out
     type: File
     doc: set the outputvariable metadata file
     outputBinding:
-      glob: $(inputs.variableMetadata_out)
+      glob: $(inputs.variableMetadata_out_path)
   - id: figure
     type: File
     doc: set the output figure file
     outputBinding:
-      glob: $(inputs.figure)
+      glob: $(inputs.figure_path)
   - id: information
     type: File
     doc: set the output information file
     outputBinding:
-      glob: $(inputs.information)
+      glob: $(inputs.information_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/qualitymetrics:phenomenal-v2.2.11_cv1.0.11

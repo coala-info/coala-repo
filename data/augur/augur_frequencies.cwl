@@ -79,9 +79,7 @@ inputs:
       - type: array
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
-      will be inferred.
-      - ','
-      - "\t"
+      will be inferred. - ',' - "\t"
     inputBinding:
       position: 101
       prefix: --metadata-delimiters
@@ -91,9 +89,7 @@ inputs:
       - type: array
         items: string
     doc: names of possible metadata columns containing identifier information, 
-      ordered by priority. Only one ID column will be inferred.
-      - strain
-      - name
+      ordered by priority. Only one ID column will be inferred. - strain - name
     inputBinding:
       position: 101
       prefix: --metadata-id-columns
@@ -189,8 +185,7 @@ inputs:
         items: string
     doc: region to filter to. Regions should match values in the 'region' column
       of the metadata file if specifying values other than the default 'global' 
-      region.
-      - global
+      region. - global
     inputBinding:
       position: 101
       prefix: --regions
@@ -236,6 +231,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wide-bandwidth
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -243,7 +244,9 @@ outputs:
       - File
     doc: JSON file to save estimated frequencies to
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

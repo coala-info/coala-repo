@@ -123,6 +123,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignment_path`
+    inputBinding:
+      position: 103
+      prefix: --alignment
+  - id: consensus_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `consensus_path`
+    inputBinding:
+      position: 104
+      prefix: --consensus
 outputs:
   - id: alignment
     type:
@@ -130,14 +146,16 @@ outputs:
       - File
     doc: vertical/horizontal alignment
     outputBinding:
-      glob: $(inputs.alignment)
+      glob: $(inputs.alignment_path)
   - id: consensus
     type:
       - 'null'
       - File
     doc: consensus
     outputBinding:
-      glob: $(inputs.consensus)
+      glob: $(inputs.consensus_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alfred:0.5.1--h4d20210_0

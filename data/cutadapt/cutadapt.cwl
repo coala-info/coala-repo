@@ -479,6 +479,103 @@ inputs:
     inputBinding:
       position: 103
       prefix: --zero-cap
+  - id: info_file_path
+    type:
+      - 'null'
+      - string
+    doc: Write information about each read and its adapter
+    inputBinding:
+      position: 104
+      prefix: --info-file
+  - id: info_file_paired_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --info-file-paired
+  - id: json_path
+    type:
+      - 'null'
+      - string
+    doc: Dump report in JSON format to FILE
+    inputBinding:
+      position: 106
+      prefix: --json
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 107
+      prefix: --output
+  - id: paired_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `paired_output_path`
+    inputBinding:
+      position: 108
+      prefix: --paired-output
+  - id: rest_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `rest_file_path`
+    inputBinding:
+      position: 109
+      prefix: --rest-file
+  - id: too_long_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 110
+      prefix: --too-long-output
+  - id: too_long_paired_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 111
+      prefix: --too-long-paired-output
+  - id: too_short_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 112
+      prefix: --too-short-output
+  - id: too_short_paired_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 113
+      prefix: --too-short-paired-output
+  - id: untrimmed_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 114
+      prefix: --untrimmed-output
+  - id: untrimmed_paired_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 115
+      prefix: --untrimmed-paired-output
+  - id: wildcard_file_path
+    type:
+      - 'null'
+      - string
+    doc: When the adapter has N wildcard bases, write adapter
+    inputBinding:
+      position: 116
+      prefix: --wildcard-file
 outputs:
   - id: json
     type:
@@ -486,7 +583,7 @@ outputs:
       - File
     doc: Dump report in JSON format to FILE
     outputBinding:
-      glob: $(inputs.json)
+      glob: $(inputs.json_path)
   - id: output
     type:
       - 'null'
@@ -495,7 +592,7 @@ outputs:
       input. Summary report is sent to standard output. Use '{name}' for demultiplexing
       (see docs). Default: write to standard output"
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: info_file
     type:
       - 'null'
@@ -503,7 +600,7 @@ outputs:
     doc: Write information about each read and its adapter matches into FILE. 
       See the documentation for the file format.
     outputBinding:
-      glob: $(inputs.info_file)
+      glob: $(inputs.info_file_path)
   - id: rest_file
     type:
       - 'null'
@@ -511,7 +608,7 @@ outputs:
     doc: When the adapter matches in the middle of a read, write the rest (after
       the adapter) to FILE.
     outputBinding:
-      glob: $(inputs.rest_file)
+      glob: $(inputs.rest_file_path)
   - id: wildcard_file
     type:
       - 'null'
@@ -519,7 +616,7 @@ outputs:
     doc: When the adapter has N wildcard bases, write adapter bases matching 
       wildcard positions to FILE. (Inaccurate with indels.)
     outputBinding:
-      glob: $(inputs.wildcard_file)
+      glob: $(inputs.wildcard_file_path)
   - id: too_short_output
     type:
       - 'null'
@@ -527,7 +624,7 @@ outputs:
     doc: 'Write reads that are too short (according to length specified by -m) to
       FILE. Default: discard reads'
     outputBinding:
-      glob: $(inputs.too_short_output)
+      glob: $(inputs.too_short_output_path)
   - id: too_long_output
     type:
       - 'null'
@@ -535,7 +632,7 @@ outputs:
     doc: 'Write reads that are too long (according to length specified by -M) to FILE.
       Default: discard reads'
     outputBinding:
-      glob: $(inputs.too_long_output)
+      glob: $(inputs.too_long_output_path)
   - id: untrimmed_output
     type:
       - 'null'
@@ -543,21 +640,21 @@ outputs:
     doc: 'Write reads that do not contain any adapter to FILE. Default: output to
       same file as trimmed reads'
     outputBinding:
-      glob: $(inputs.untrimmed_output)
+      glob: $(inputs.untrimmed_output_path)
   - id: paired_output
     type:
       - 'null'
       - File
     doc: Write R2 to FILE.
     outputBinding:
-      glob: $(inputs.paired_output)
+      glob: $(inputs.paired_output_path)
   - id: info_file_paired
     type:
       - 'null'
       - File
     doc: Write info about R2 to FILE (see --info-file)
     outputBinding:
-      glob: $(inputs.info_file_paired)
+      glob: $(inputs.info_file_paired_path)
   - id: untrimmed_paired_output
     type:
       - 'null'
@@ -565,21 +662,23 @@ outputs:
     doc: 'Write second read in a pair to this FILE when no adapter was found. Use
       with --untrimmed-output. Default: output to same file as trimmed reads'
     outputBinding:
-      glob: $(inputs.untrimmed_paired_output)
+      glob: $(inputs.untrimmed_paired_output_path)
   - id: too_short_paired_output
     type:
       - 'null'
       - File
     doc: Write second read in a pair to this file if pair is too short.
     outputBinding:
-      glob: $(inputs.too_short_paired_output)
+      glob: $(inputs.too_short_paired_output_path)
   - id: too_long_paired_output
     type:
       - 'null'
       - File
     doc: Write second read in a pair to this file if pair is too long.
     outputBinding:
-      glob: $(inputs.too_long_paired_output)
+      glob: $(inputs.too_long_paired_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cutadapt:5.2--py311haab0aaa_0

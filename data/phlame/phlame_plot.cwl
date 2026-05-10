@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min_prob
+  - id: output_path
+    type: string
+    doc: Path to output frequencies file (required).
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: output
     type: File
     doc: Path to pdf of informative output plots (required).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phlame:1.1.0--pyhdfd78af_0

@@ -37,6 +37,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reject
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -44,7 +50,9 @@ outputs:
       - Directory
     doc: output dir
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blockclust:1.1.1--py311r43h2a4ad6c_1

@@ -397,6 +397,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output filename.
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -404,7 +410,9 @@ outputs:
       - File
     doc: Output filename.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emblmygff3:2.4--pyhdfd78af_1

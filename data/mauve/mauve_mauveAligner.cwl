@@ -213,6 +213,70 @@ inputs:
     inputBinding:
       position: 105
       prefix: --weight
+  - id: alignment_output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `alignment_output_dir_path`
+    inputBinding:
+      position: 106
+      prefix: --alignment-output-dir
+  - id: backbone_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `backbone_output_path`
+    inputBinding:
+      position: 107
+      prefix: --backbone-output
+  - id: coverage_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coverage_output_path`
+    inputBinding:
+      position: 108
+      prefix: --coverage-output
+  - id: island_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `island_output_path`
+    inputBinding:
+      position: 109
+      prefix: --island-output
+  - id: output_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_alignment_path`
+    inputBinding:
+      position: 110
+      prefix: --output-alignment
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 111
+      prefix: --output-file
+  - id: output_guide_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_guide_tree_path`
+    inputBinding:
+      position: 112
+      prefix: --output-guide-tree
+  - id: permutation_matrix_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `permutation_matrix_output_path`
+    inputBinding:
+      position: 113
+      prefix: --permutation-matrix-output
 outputs:
   - id: output_file
     type:
@@ -220,56 +284,58 @@ outputs:
       - File
     doc: Output file name. Prints to screen by default
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: island_output
     type:
       - 'null'
       - File
     doc: Output islands the given file (requires --island-size)
     outputBinding:
-      glob: $(inputs.island_output)
+      glob: $(inputs.island_output_path)
   - id: backbone_output
     type:
       - 'null'
       - File
     doc: Output islands the given file (requires --island-size)
     outputBinding:
-      glob: $(inputs.backbone_output)
+      glob: $(inputs.backbone_output_path)
   - id: coverage_output
     type:
       - 'null'
       - File
     doc: Output a coverage list to the specified file (- for stdout)
     outputBinding:
-      glob: $(inputs.coverage_output)
+      glob: $(inputs.coverage_output_path)
   - id: output_guide_tree
     type:
       - 'null'
       - File
     doc: Write out a guide tree to the designated file
     outputBinding:
-      glob: $(inputs.output_guide_tree)
+      glob: $(inputs.output_guide_tree_path)
   - id: permutation_matrix_output
     type:
       - 'null'
       - File
     doc: Write out the LCBs as a signed permutation matrix to the given file
     outputBinding:
-      glob: $(inputs.permutation_matrix_output)
+      glob: $(inputs.permutation_matrix_output_path)
   - id: alignment_output_dir
     type:
       - 'null'
       - Directory
     doc: Outputs a set of alignment files (one per LCB) to a given directory
     outputBinding:
-      glob: $(inputs.alignment_output_dir)
+      glob: $(inputs.alignment_output_dir_path)
   - id: output_alignment
     type:
       - 'null'
       - File
     doc: Write out an XMFA format alignment to the designated file
     outputBinding:
-      glob: $(inputs.output_alignment)
+      glob: $(inputs.output_alignment_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

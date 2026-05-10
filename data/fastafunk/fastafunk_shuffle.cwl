@@ -27,12 +27,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_metadata_path
+    type: string
+    doc: Output or path parameter `out_metadata_path`
+    inputBinding:
+      position: 102
+      prefix: --out-metadata
 outputs:
   - id: out_metadata
     type: File
     doc: CSV or TSV of metadata
     outputBinding:
-      glob: $(inputs.out_metadata)
+      glob: $(inputs.out_metadata_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastafunk:0.1.2--pyh5e36f6f_0

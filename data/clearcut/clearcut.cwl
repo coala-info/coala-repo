@@ -146,19 +146,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: matrixout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `matrixout_path`
+    inputBinding:
+      position: 102
+      prefix: --matrixout
+  - id: outfilename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfilename_path`
+    inputBinding:
+      position: 103
+      prefix: --outfilename
 outputs:
   - id: outfilename
     type: File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.outfilename)
+      glob: $(inputs.outfilename_path)
   - id: matrixout
     type:
       - 'null'
       - File
     doc: Output distance matrix to specified file.
     outputBinding:
-      glob: $(inputs.matrixout)
+      glob: $(inputs.matrixout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/clearcut:v1.0.9-3-deb_cv1

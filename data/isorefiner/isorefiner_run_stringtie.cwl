@@ -48,6 +48,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --work_dir
+  - id: out_gtf_path
+    type: string
+    doc: Output or path parameter `out_gtf_path`
+    inputBinding:
+      position: 104
+      prefix: --out-gtf
 outputs:
   - id: out_gtf
     type:
@@ -55,7 +61,9 @@ outputs:
       - File
     doc: Final output file name (GTF)
     outputBinding:
-      glob: $(inputs.out_gtf)
+      glob: $(inputs.out_gtf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isorefiner:0.1.0--pyh7e72e81_1

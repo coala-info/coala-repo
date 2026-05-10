@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -sn
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -42,7 +48,9 @@ outputs:
     doc: output prefix. This value will override corresponding value in 
       properties file.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mobster:0.2.4.1--py36_0

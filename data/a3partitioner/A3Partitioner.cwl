@@ -19,12 +19,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -partition
+  - id: output_path
+    type: string
+    doc: Output FASTA file
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/a3partitioner:0.1.0--pyhdfd78af_1

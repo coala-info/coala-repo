@@ -32,6 +32,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: output_bam_path
+    type: string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 104
+      prefix: --output-bam
 outputs:
   - id: output_bam
     type:
@@ -39,7 +45,9 @@ outputs:
       - File
     doc: Output BAM file path.
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alignlib-lite:0.3--py312h9c9b0c2_9

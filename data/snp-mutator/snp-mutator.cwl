@@ -42,6 +42,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seed
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --output-vcf
 outputs:
   - id: output_fasta
     type:
@@ -49,14 +65,16 @@ outputs:
       - File
     doc: Path to the output mutated FASTA file
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: output_vcf
     type:
       - 'null'
       - File
     doc: Path to the output VCF file containing the mutations
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snp-mutator:1.2.0--pyh24bf2e0_0

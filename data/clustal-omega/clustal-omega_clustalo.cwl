@@ -266,6 +266,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wrap
+  - id: clustering_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clustering_out_path`
+    inputBinding:
+      position: 102
+      prefix: --clustering-out
+  - id: distmat_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `distmat_out_path`
+    inputBinding:
+      position: 103
+      prefix: --distmat-out
+  - id: guidetree_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `guidetree_out_path`
+    inputBinding:
+      position: 104
+      prefix: --guidetree-out
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 105
+      prefix: --log
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 106
+      prefix: --outfile
+  - id: posterior_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `posterior_out_path`
+    inputBinding:
+      position: 107
+      prefix: --posterior-out
 outputs:
   - id: distmat_out
     type:
@@ -273,42 +321,44 @@ outputs:
       - File
     doc: Pairwise distance matrix output file
     outputBinding:
-      glob: $(inputs.distmat_out)
+      glob: $(inputs.distmat_out_path)
   - id: guidetree_out
     type:
       - 'null'
       - File
     doc: Guide tree output file
     outputBinding:
-      glob: $(inputs.guidetree_out)
+      glob: $(inputs.guidetree_out_path)
   - id: clustering_out
     type:
       - 'null'
       - File
     doc: Clustering output file
     outputBinding:
-      glob: $(inputs.clustering_out)
+      glob: $(inputs.clustering_out_path)
   - id: posterior_out
     type:
       - 'null'
       - File
     doc: Posterior probability output file
     outputBinding:
-      glob: $(inputs.posterior_out)
+      glob: $(inputs.posterior_out_path)
   - id: outfile
     type:
       - 'null'
       - File
     doc: 'Multiple sequence alignment output file (default: stdout)'
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: log
     type:
       - 'null'
       - File
     doc: Log all non-essential output to this file
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/clustal-omega:v1.2.1-1_cv3

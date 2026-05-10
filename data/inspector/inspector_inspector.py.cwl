@@ -131,12 +131,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
+  - id: output_dict_path
+    type: string
+    doc: Output or path parameter `output_dict_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dict
 outputs:
   - id: output_dict
     type: Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dict)
+      glob: $(inputs.output_dict_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/inspector:1.3.1--hdfd78af_1

@@ -241,6 +241,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -view
+  - id: cptrees_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cptrees_path`
+    inputBinding:
+      position: 102
+      prefix: --cptrees
+  - id: pe_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pe_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --pe-output-file
 outputs:
   - id: pe_output_file
     type:
@@ -248,14 +264,16 @@ outputs:
       - File
     doc: Output file for paired-end analysis
     outputBinding:
-      glob: $(inputs.pe_output_file)
+      glob: $(inputs.pe_output_file_path)
   - id: cptrees
     type:
       - 'null'
       - File
     doc: Copy trees to a new root file
     outputBinding:
-      glob: $(inputs.cptrees)
+      glob: $(inputs.cptrees_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnvnator:0.4.1--py312h99c8fb2_11

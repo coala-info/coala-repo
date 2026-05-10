@@ -65,6 +65,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --show-types
+  - id: output_json_path
+    type: string
+    doc: Output or path parameter `output_json_path`
+    inputBinding:
+      position: 103
+      prefix: --output-json
 outputs:
   - id: output_json
     type:
@@ -72,7 +78,9 @@ outputs:
       - File
     doc: Path to the output JSON file (defaults to stdout)
     outputBinding:
-      glob: $(inputs.output_json)
+      glob: $(inputs.output_json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wdltool:0.14--1

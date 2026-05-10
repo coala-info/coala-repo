@@ -566,6 +566,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: aligned_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aligned_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --aligned-output-file
+  - id: max_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `max_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --max-output-file
+  - id: unaligned_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unaligned_output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --unaligned-output-file
 outputs:
   - id: hit_file
     type:
@@ -580,21 +604,23 @@ outputs:
       - File
     doc: write aligned reads/pairs to file(s)
     outputBinding:
-      glob: $(inputs.aligned_output_file)
+      glob: $(inputs.aligned_output_file_path)
   - id: unaligned_output_file
     type:
       - 'null'
       - File
     doc: write unaligned reads/pairs to file(s)
     outputBinding:
-      glob: $(inputs.unaligned_output_file)
+      glob: $(inputs.unaligned_output_file_path)
   - id: max_output_file
     type:
       - 'null'
       - File
     doc: write reads/pairs over -m limit to file(s)
     outputBinding:
-      glob: $(inputs.max_output_file)
+      glob: $(inputs.max_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repenrich:1.2--py27_1

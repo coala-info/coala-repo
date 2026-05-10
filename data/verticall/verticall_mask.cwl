@@ -99,12 +99,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vertical_colour
+  - id: out_alignment_path
+    type: string
+    doc: Output or path parameter `out_alignment_path`
+    inputBinding:
+      position: 102
+      prefix: --out-alignment
 outputs:
   - id: out_alignment
     type: File
     doc: Filename of masked whole-genome pseudo-alignment
     outputBinding:
-      glob: $(inputs.out_alignment)
+      glob: $(inputs.out_alignment_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/verticall:0.4.3--pyhdfd78af_0

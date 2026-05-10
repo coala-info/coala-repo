@@ -57,6 +57,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: subdir_path
+    type:
+      - 'null'
+      - string
+    doc: subdirectory path under --workdir to which sequence
+    inputBinding:
+      position: 104
+      prefix: --subdir
+  - id: workdir_path
+    type:
+      - 'null'
+      - string
+    doc: project directory to which input files will be copied
+    inputBinding:
+      position: 105
+      prefix: --workdir
 outputs:
   - id: workdir
     type:
@@ -65,7 +81,7 @@ outputs:
     doc: project directory to which input files will be copied and renamed; 
       current directory is used by default
     outputBinding:
-      glob: $(inputs.workdir)
+      glob: $(inputs.workdir_path)
   - id: subdir
     type:
       - 'null'
@@ -73,7 +89,9 @@ outputs:
     doc: subdirectory path under --workdir to which sequence files will be 
       written; PATH=`seq` by default, but can contain nesting (e.g. `seq/study`)
     outputBinding:
-      glob: $(inputs.subdir)
+      glob: $(inputs.subdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ezfastq:0.2--pyhdfd78af_0

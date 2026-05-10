@@ -223,6 +223,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --test_mode
+  - id: path_out_path
+    type: string
+    doc: Path to the output directory
+    inputBinding:
+      position: 102
+      prefix: --path_out
 outputs:
   - id: path_out
     type:
@@ -230,7 +236,9 @@ outputs:
       - Directory
     doc: Path to the output directory
     outputBinding:
-      glob: $(inputs.path_out)
+      glob: $(inputs.path_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/drevalpy:1.4.1--pyhdfd78af_0

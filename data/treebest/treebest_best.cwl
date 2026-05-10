@@ -180,6 +180,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -q
+  - id: output_tree_path
+    type: string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type:
@@ -187,7 +193,9 @@ outputs:
       - File
     doc: output tree
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treebest:1.9.2_ep78--hfc679d8_2

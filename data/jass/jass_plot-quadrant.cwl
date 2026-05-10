@@ -18,12 +18,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --worktable-path
+  - id: plot_path_path
+    type: string
+    doc: Output or path parameter `plot_path_path`
+    inputBinding:
+      position: 102
+      prefix: --plot-path
 outputs:
   - id: plot_path
     type: File
     doc: path to the quadrant plot file to generate
     outputBinding:
-      glob: $(inputs.plot_path)
+      glob: $(inputs.plot_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jass:2.3--pyhca03a8a_0

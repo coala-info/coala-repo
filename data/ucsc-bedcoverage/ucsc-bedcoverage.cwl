@@ -54,6 +54,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --no-header
+  - id: output_coverage_path
+    type: string
+    doc: Output or path parameter `output_coverage_path`
+    inputBinding:
+      position: 104
+      prefix: --output-coverage
 outputs:
   - id: output_coverage
     type:
@@ -61,7 +67,9 @@ outputs:
       - File
     doc: 'Output file for coverage data (default: stdout)'
     outputBinding:
-      glob: $(inputs.output_coverage)
+      glob: $(inputs.output_coverage_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedcoverage:482--h0b57e2e_0

@@ -90,33 +90,67 @@ inputs:
     inputBinding:
       position: 101
       prefix: --short_ids
+  - id: distribution_json_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `distribution_json_file_path`
+    inputBinding:
+      position: 102
+      prefix: --distribution-json-file
+  - id: distribution_tabular_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `distribution_tabular_file_path`
+    inputBinding:
+      position: 103
+      prefix: --distribution-tabular-file
+  - id: output_json_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_json_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-json-file
+  - id: output_tabular_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tabular_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-tabular-file
 outputs:
   - id: output_json_file
     type: File
     doc: Path to JSON output file
     outputBinding:
-      glob: $(inputs.output_json_file)
+      glob: $(inputs.output_json_file_path)
   - id: output_tabular_file
     type:
       - 'null'
       - File
     doc: Path to tabular output file
     outputBinding:
-      glob: $(inputs.output_tabular_file)
+      glob: $(inputs.output_tabular_file_path)
   - id: distribution_json_file
     type:
       - 'null'
       - File
     doc: Path to distribution output JSON file
     outputBinding:
-      glob: $(inputs.distribution_json_file)
+      glob: $(inputs.distribution_json_file_path)
   - id: distribution_tabular_file
     type:
       - 'null'
       - File
     doc: Path to distribution output JSON file
     outputBinding:
-      glob: $(inputs.distribution_tabular_file)
+      glob: $(inputs.distribution_tabular_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/b2btools:3.0.7--py311h39195ad_3

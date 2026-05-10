@@ -167,8 +167,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum length of a transcript would be --min_transcript_length_base + --min_transcript_length_increase
-      * num-of-exons
+    doc: minimum length of a transcript would be --min_transcript_length_base + 
+      --min_transcript_length_increase * num-of-exons
     inputBinding:
       position: 101
       prefix: --min_transcript_length_base
@@ -268,19 +268,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_gtf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gtf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-gtf
+  - id: transcript_fragments_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `transcript_fragments_path`
+    inputBinding:
+      position: 103
+      prefix: --transcript-fragments
 outputs:
   - id: output_gtf
     type: File
     doc: Output GTF file
     outputBinding:
-      glob: $(inputs.output_gtf)
+      glob: $(inputs.output_gtf_path)
   - id: transcript_fragments
     type:
       - 'null'
       - File
-    doc: file to which the assembled non-full-length transcripts will be written to
+    doc: file to which the assembled non-full-length transcripts will be written
+      to
     outputBinding:
-      glob: $(inputs.transcript_fragments)
+      glob: $(inputs.transcript_fragments_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amaranth-assembler:0.1.0--h5ca1c30_0

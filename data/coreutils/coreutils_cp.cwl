@@ -95,7 +95,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if an existing destination file cannot be opened, remove it and try again
+    doc: if an existing destination file cannot be opened, remove it and try 
+      again
     inputBinding:
       position: 102
       prefix: --force
@@ -275,6 +276,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: target_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `target_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --target-directory
 outputs:
   - id: dest
     type:
@@ -289,7 +298,9 @@ outputs:
       - Directory
     doc: copy all SOURCE arguments into DIRECTORY
     outputBinding:
-      glob: $(inputs.target_directory)
+      glob: $(inputs.target_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5

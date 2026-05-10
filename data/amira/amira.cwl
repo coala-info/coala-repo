@@ -9,7 +9,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use Flye to assemble the full reads assigned to each AMR gene copy (default=False).
+    doc: Use Flye to assemble the full reads assigned to each AMR gene copy 
+      (default=False).
     inputBinding:
       position: 101
       prefix: --assemble-paths
@@ -33,7 +34,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum alignment coverage of a reference allele to keep an AMR gene (default=0.9).
+    doc: Minimum alignment coverage of a reference allele to keep an AMR gene 
+      (default=0.9).
     inputBinding:
       position: 101
       prefix: --coverage
@@ -49,7 +51,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum relative threshold to remove all instances of a gene (default=0.2).
+    doc: Minimum relative threshold to remove all instances of a gene 
+      (default=0.2).
     inputBinding:
       position: 101
       prefix: -g
@@ -57,7 +60,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum identity to a reference allele needed to report an AMR gene (default=0.9).
+    doc: Minimum identity to a reference allele needed to report an AMR gene 
+      (default=0.9).
     inputBinding:
       position: 101
       prefix: --identity
@@ -105,7 +109,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not randomly sample to a maximum of 500,000 input reads (default=False).
+    doc: Do not randomly sample to a maximum of 500,000 input reads 
+      (default=False).
     inputBinding:
       position: 101
       prefix: --no-sampling
@@ -129,7 +134,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output FASTQs of the reads for each connected component (default=False).
+    doc: Output FASTQs of the reads for each connected component 
+      (default=False).
     inputBinding:
       position: 101
       prefix: --output-component-fastqs
@@ -151,7 +157,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Genotype the promoter sequences of certain AMR genes (only for Escherichia_coli).
+    doc: Genotype the promoter sequences of certain AMR genes (only for 
+      Escherichia_coli).
     inputBinding:
       position: 101
       prefix: --promoter-mutations
@@ -210,6 +217,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --species
+  - id: output_path
+    type: string
+    doc: Directory for Amira outputs (default=amira_output).
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -217,7 +230,9 @@ outputs:
       - Directory
     doc: Directory for Amira outputs (default=amira_output).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amira:0.11.0--pyhdfd78af_0

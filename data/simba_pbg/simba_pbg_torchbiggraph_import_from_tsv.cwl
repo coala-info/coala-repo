@@ -490,6 +490,12 @@ inputs:
       set to CPU count.
     inputBinding:
       position: 103
+  - id: checkpoint_path_path
+    type: string
+    doc: Output or path parameter `checkpoint_path_path`
+    inputBinding:
+      position: 104
+      prefix: --checkpoint-path
 outputs:
   - id: checkpoint_path
     type:
@@ -499,7 +505,9 @@ outputs:
       be written to. If checkpoints are found in it, training will resume from 
       them.
     outputBinding:
-      glob: $(inputs.checkpoint_path)
+      glob: $(inputs.checkpoint_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/simba:1.2--pyh7cba7a3_0

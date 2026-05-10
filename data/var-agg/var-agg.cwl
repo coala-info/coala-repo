@@ -63,13 +63,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Path to output VCF/BCF file to create. Will also write out a CSI/TBI 
       index.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/var-agg:0.1.1--h2c42bab_0

@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: chira_chira_merge.py
 label: chira_chira_merge.py
-doc: "Merge multiple ChiRA (Chimeric Read Analysis) results into a single output.\n
-  \nTool homepage: https://github.com/pavanvidem/chira/"
+doc: "Merge multiple ChiRA (Chimeric Read Analysis) results into a single output.\n\
+  \ \nTool homepage: https://github.com/pavanvidem/chira/"
 inputs:
   - id: indices
     type:
@@ -13,12 +13,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --indices
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output file to write the merged results.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chira:1.4.3--hdfd78af_2

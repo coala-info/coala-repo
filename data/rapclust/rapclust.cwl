@@ -28,12 +28,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: The output directory where the clustering results will be written.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rapclust:0.1.2--py35_0

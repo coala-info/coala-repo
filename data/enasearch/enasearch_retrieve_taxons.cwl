@@ -85,6 +85,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subseq_range
+  - id: file_path
+    type: string
+    doc: Output or path parameter `file_path`
+    inputBinding:
+      position: 102
+      prefix: --file
 outputs:
   - id: file
     type:
@@ -93,7 +99,9 @@ outputs:
     doc: "File to save the content of the search (used with\n                    \
       \      download option)"
     outputBinding:
-      glob: $(inputs.file)
+      glob: $(inputs.file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/enasearch:0.2.2--py27_0

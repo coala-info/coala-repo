@@ -116,6 +116,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threshold
+  - id: output_path
+    type: string
+    doc: The path for storing the Same-Sample-Droplets (SSDs).
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -124,7 +130,9 @@ outputs:
     doc: The path for storing the Same-Sample-Droplets (SSDs). SSDs are stored 
       in mtx format. Requires a path argument.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmm-demux:0.2.2.3--pyh7e72e81_1

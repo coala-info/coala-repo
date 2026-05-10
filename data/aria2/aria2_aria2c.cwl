@@ -10,14 +10,16 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: HTTP(S)/FTP/BitTorrent Magnet URIs, or paths to local torrent/metalink files
+    doc: HTTP(S)/FTP/BitTorrent Magnet URIs, or paths to local torrent/metalink 
+      files
     inputBinding:
       position: 1
   - id: check_integrity
     type:
       - 'null'
       - boolean
-    doc: Check file integrity by validating piece hashes or a hash of entire file.
+    doc: Check file integrity by validating piece hashes or a hash of entire 
+      file.
     inputBinding:
       position: 102
       prefix: --check-integrity
@@ -33,8 +35,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify address to bind socket for IPv6 DHT. It should be a global unicast
-      IPv6 address of the host.
+    doc: Specify address to bind socket for IPv6 DHT. It should be a global 
+      unicast IPv6 address of the host.
     inputBinding:
       position: 102
       prefix: --dht-listen-addr6
@@ -83,8 +85,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Fetch URIs in the command-line sequentially and download each URI in a separate
-      session.
+    doc: Fetch URIs in the command-line sequentially and download each URI in a 
+      separate session.
     inputBinding:
       position: 102
       prefix: --force-sequential
@@ -133,8 +135,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Set TCP port number for BitTorrent downloads. Multiple ports can be specified
-      by using ',' or '-'.
+    doc: Set TCP port number for BitTorrent downloads. Multiple ports can be 
+      specified by using ',' or '-'.
     inputBinding:
       position: 102
       prefix: --listen-port
@@ -142,8 +144,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Load Cookies from FILE using the Firefox3 format and Mozilla/Firefox/Netscape
-      format.
+    doc: Load Cookies from FILE using the Firefox3 format and 
+      Mozilla/Firefox/Netscape format.
     inputBinding:
       position: 102
       prefix: --load-cookies
@@ -151,7 +153,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The file name of the log file. If '-' is specified, log is written to stdout.
+    doc: The file name of the log file. If '-' is specified, log is written to 
+      stdout.
     inputBinding:
       position: 102
       prefix: --log
@@ -159,8 +162,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set maximum number of parallel downloads for every static (HTTP/FTP) URL,
-      torrent and metalink.
+    doc: Set maximum number of parallel downloads for every static (HTTP/FTP) 
+      URL, torrent and metalink.
     inputBinding:
       position: 102
       prefix: --max-concurrent-downloads
@@ -176,8 +179,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set max overall upload speed in bytes/sec. 0 means unrestricted. You can
-      append K or M.
+    doc: Set max overall upload speed in bytes/sec. 0 means unrestricted. You 
+      can append K or M.
     inputBinding:
       position: 102
       prefix: --max-overall-upload-limit
@@ -185,8 +188,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set max upload speed per each torrent in bytes/sec. 0 means unrestricted.
-      You can append K or M.
+    doc: Set max upload speed per each torrent in bytes/sec. 0 means 
+      unrestricted. You can append K or M.
     inputBinding:
       position: 102
       prefix: --max-upload-limit
@@ -202,7 +205,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: aria2 does not split less than 2*SIZE byte range. You can append K or M.
+    doc: aria2 does not split less than 2*SIZE byte range. You can append K or 
+      M.
     inputBinding:
       position: 102
       prefix: --min-split-size
@@ -230,15 +234,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --torrent-file
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
       - 'null'
       - File
-    doc: The file name of the downloaded file. It is always relative to the directory
-      given in -d option.
+    doc: The file name of the downloaded file. It is always relative to the 
+      directory given in -d option.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aria2:1.36.0

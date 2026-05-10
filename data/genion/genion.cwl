@@ -85,12 +85,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcriptome-self-align
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output path for an existing path
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genion:1.2.3--h077b44d_2

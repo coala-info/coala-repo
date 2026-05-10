@@ -8,7 +8,8 @@ doc: "filters reads\n\nTool homepage: https://github.com/hcdenbakker/colorid_bv"
 inputs:
   - id: classification
     type: File
-    doc: tab delimited read classification file generated with the read_id subcommand
+    doc: tab delimited read classification file generated with the read_id 
+      subcommand
     inputBinding:
       position: 101
       prefix: --classification
@@ -16,8 +17,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If set('-e or --exclude'), reads for which the classification contains the
-      taxon name will be excluded
+    doc: If set('-e or --exclude'), reads for which the classification contains 
+      the taxon name will be excluded
     inputBinding:
       position: 101
       prefix: --exclude
@@ -35,12 +36,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxon
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --prefix
 outputs:
   - id: prefix
     type: File
     doc: prefix for output file(-s)
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colorid_bv:0.1.0--h3ab6199_2

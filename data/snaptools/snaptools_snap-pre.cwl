@@ -166,12 +166,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_snap_path
+    type: string
+    doc: Output or path parameter `output_snap_path`
+    inputBinding:
+      position: 102
+      prefix: --output-snap
 outputs:
   - id: output_snap
     type: File
     doc: output snap file.
     outputBinding:
-      glob: $(inputs.output_snap)
+      glob: $(inputs.output_snap_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snaptools:1.4.8--py_0

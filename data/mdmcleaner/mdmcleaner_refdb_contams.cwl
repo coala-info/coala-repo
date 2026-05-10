@@ -15,9 +15,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: "provide a local config file with the target location to store database-files.
-      directory. settings in the local config file will override settings in the global
-      config file '/usr/local/lib/python3.11/site-packages/mdmcleaner/mdmcleaner.config'"
+    doc: provide a local config file with the target location to store 
+      database-files. directory. settings in the local config file will override
+      settings in the global config file 
+      '/usr/local/lib/python3.11/site-packages/mdmcleaner/mdmcleaner.config'
     inputBinding:
       position: 102
       prefix: --config
@@ -29,6 +30,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_blacklist_path
+    type: string
+    doc: Output or path parameter `out_blacklist_path`
+    inputBinding:
+      position: 103
+      prefix: --out-blacklist
 outputs:
   - id: out_blacklist
     type:
@@ -37,7 +44,9 @@ outputs:
     doc: Outputfile for new blacklist additions. If a preexisting file is 
       selected, additions will be appended to end of that file
     outputBinding:
-      glob: $(inputs.out_blacklist)
+      glob: $(inputs.out_blacklist_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mdmcleaner:0.8.7--pyh7cba7a3_0

@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: db_path
+    type: string
+    doc: Kmer database
+    inputBinding:
+      position: 103
+      prefix: --db
 outputs:
   - id: db
     type: File
     doc: Output file (kmer database)
     outputBinding:
-      glob: $(inputs.db)
+      glob: $(inputs.db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mentalist:0.2.4--h7b50bb2_8

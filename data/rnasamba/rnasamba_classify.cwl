@@ -31,6 +31,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --verbose
+  - id: protein_fasta_path
+    type: string
+    doc: Output or path parameter `protein_fasta_path`
+    inputBinding:
+      position: 105
+      prefix: --protein-fasta
 outputs:
   - id: protein_fasta
     type:
@@ -39,7 +45,9 @@ outputs:
     doc: output FASTA file containing translated sequences for the predicted 
       coding ORFs.
     outputBinding:
-      glob: $(inputs.protein_fasta)
+      glob: $(inputs.protein_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasamba:0.2.5--py36h91eb985_1

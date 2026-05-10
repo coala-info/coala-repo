@@ -84,12 +84,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --parameter-threads
+  - id: output_hmnqc_json_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-hmnqc-json
 outputs:
   - id: output_hmnqc_json
     type: File
     doc: Output json file
     outputBinding:
-      glob: $(inputs.output_hmnqc_json)
+      glob: $(inputs.output_hmnqc_json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnqc:0.5.1--pyhdfd78af_0

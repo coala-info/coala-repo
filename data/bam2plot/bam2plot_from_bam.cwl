@@ -111,12 +111,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zoom
+  - id: outpath_path
+    type: string
+    doc: Output or path parameter `outpath_path`
+    inputBinding:
+      position: 103
+      prefix: --outpath
 outputs:
   - id: outpath
     type: Directory
     doc: Where to save the plots.
     outputBinding:
-      glob: $(inputs.outpath)
+      glob: $(inputs.outpath_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bam2plot:0.4.0--pyhdfd78af_0

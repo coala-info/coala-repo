@@ -26,12 +26,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min-active
+  - id: output_estimate_path
+    type: string
+    doc: Output or path parameter `output_estimate_path`
+    inputBinding:
+      position: 102
+      prefix: --output-estimate
 outputs:
   - id: output_estimate
     type: File
     doc: Output summary file from deconvolution estimates (JSON)
     outputBinding:
-      glob: $(inputs.output_estimate)
+      glob: $(inputs.output_estimate_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methbat:0.17.0--h9ee0642_0

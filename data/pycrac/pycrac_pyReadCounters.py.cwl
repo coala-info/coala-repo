@@ -252,6 +252,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: discarded_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `discarded_path`
+    inputBinding:
+      position: 102
+      prefix: --discarded
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: zip_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `zip_path`
+    inputBinding:
+      position: 104
+      prefix: --zip
 outputs:
   - id: output_file
     type:
@@ -260,7 +284,7 @@ outputs:
     doc: Use this flag to override the standard file names. Do NOT add an 
       extension.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: discarded
     type:
       - 'null'
@@ -271,14 +295,16 @@ outputs:
       locations or were too far apart on the same chromosome. Useful for 
       debugging purposes
     outputBinding:
-      glob: $(inputs.discarded)
+      glob: $(inputs.discarded_path)
   - id: zip
     type:
       - 'null'
       - File
     doc: use this option to compress all the output files in a single zip file
     outputBinding:
-      glob: $(inputs.zip)
+      glob: $(inputs.zip_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycrac:1.5.2--pyh7cba7a3_0

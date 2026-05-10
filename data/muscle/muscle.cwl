@@ -140,6 +140,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -super5
+  - id: html_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_path`
+    inputBinding:
+      position: 102
+      prefix: --html
+  - id: jalview_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `jalview_path`
+    inputBinding:
+      position: 103
+      prefix: --jalview
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -147,21 +171,23 @@ outputs:
       - File
     doc: Output aligned FASTA (AFA) or Ensemble FASTA (EFA) file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: html
     type:
       - 'null'
       - File
     doc: Output alignment colored by LC in HTML format
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
   - id: jalview
     type:
       - 'null'
       - File
     doc: Output Jalview feature file with LC values and colors
     outputBinding:
-      glob: $(inputs.jalview)
+      glob: $(inputs.jalview_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/muscle:5.3--h9948957_3

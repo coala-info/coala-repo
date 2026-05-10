@@ -89,6 +89,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xref-label
+  - id: taxdump_out_path
+    type: string
+    doc: Output or path parameter `taxdump_out_path`
+    inputBinding:
+      position: 102
+      prefix: --taxdump-out
 outputs:
   - id: taxdump_out
     type:
@@ -96,7 +102,9 @@ outputs:
       - Directory
     doc: Path to output filtered backbone taxonomy
     outputBinding:
-      glob: $(inputs.taxdump_out)
+      glob: $(inputs.taxdump_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blobtk:0.7.1--py39hf6b2c50_0

@@ -22,6 +22,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --overwrite
+  - id: output_image_path
+    type: string
+    doc: Output or path parameter `output_image_path`
+    inputBinding:
+      position: 102
+      prefix: --output-image
 outputs:
   - id: output_image
     type:
@@ -29,7 +35,9 @@ outputs:
       - File
     doc: Either a path to a directory or a path to a specific file.
     outputBinding:
-      glob: $(inputs.output_image)
+      glob: $(inputs.output_image_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

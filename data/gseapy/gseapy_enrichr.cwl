@@ -114,6 +114,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -122,7 +128,9 @@ outputs:
     doc: "The GSEApy output directory. Default: the current\n                    \
       \    working directory"
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gseapy:1.1.11--py311h5e00ca1_1

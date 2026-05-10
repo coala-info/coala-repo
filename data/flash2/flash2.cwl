@@ -10,7 +10,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: First mate FASTQ file (or interleaved/tab-delimited file if flags are set)
+    doc: First mate FASTQ file (or interleaved/tab-delimited file if flags are 
+      set)
     inputBinding:
       position: 1
   - id: mates_2
@@ -48,7 +49,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Pipe the output through the compression program PROG (e.g., gzip, bzip2).
+    doc: Pipe the output through the compression program PROG (e.g., gzip, 
+      bzip2).
     inputBinding:
       position: 103
       prefix: --compress-prog
@@ -56,7 +58,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: A string of additional arguments that will be passed to the compression program.
+    doc: A string of additional arguments that will be passed to the compression
+      program.
     inputBinding:
       position: 103
       prefix: --compress-prog-args
@@ -80,7 +83,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Equivalent to specifying both --interleaved-input and --interleaved-output.
+    doc: Equivalent to specifying both --interleaved-input and 
+      --interleaved-output.
     inputBinding:
       position: 103
       prefix: --interleaved
@@ -104,8 +108,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum allowed ratio between the number of mismatched base pairs and the
-      overlap length.
+    doc: Maximum allowed ratio between the number of mismatched base pairs and 
+      the overlap length.
     inputBinding:
       position: 103
       prefix: --max-mismatch-density
@@ -121,8 +125,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum required overlap length between two reads to provide a confident
-      overlap.
+    doc: The minimum required overlap length between two reads to provide a 
+      confident overlap.
     inputBinding:
       position: 103
       prefix: --min-overlap
@@ -130,8 +134,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum required overlap length between two reads to provide a confident
-      overlap in an outie scenario.
+    doc: The minimum required overlap length between two reads to provide a 
+      confident overlap in an outie scenario.
     inputBinding:
       position: 103
       prefix: --min-overlap-outie
@@ -155,8 +159,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The cutoff percentage for each read that will be discarded if it falls below
-      -Q option. (0-100)
+    doc: The cutoff percentage for each read that will be discarded if it falls 
+      below -Q option. (0-100)
     inputBinding:
       position: 103
       prefix: --percent-cutoff
@@ -164,8 +168,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The smallest ASCII value of the characters used to represent quality values
-      of bases in FASTQ files (33 or 64).
+    doc: The smallest ASCII value of the characters used to represent quality 
+      values of bases in FASTQ files (33 or 64).
     inputBinding:
       position: 103
       prefix: --phred-offset
@@ -173,7 +177,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The cut off number for the quality score corresponding with the percent cutoff.
+    doc: The cut off number for the quality score corresponding with the percent
+      cutoff.
     inputBinding:
       position: 103
       prefix: --quality-cutoff
@@ -233,6 +238,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --to-stdout
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -240,7 +251,9 @@ outputs:
       - Directory
     doc: Path to directory for output files.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flash2:2.2.00--h577a1d6_9

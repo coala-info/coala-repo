@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: panISa.py
 label: panisa_panISa.py
-doc: "Search integrative element (IS) insertion on a genome using BAM alignment\n\n
-  Tool homepage: https://github.com/bvalot/panISa"
+doc: "Search integrative element (IS) insertion on a genome using BAM alignment\n\n\
+  \ Tool homepage: https://github.com/bvalot/panISa"
 inputs:
   - id: bam
     type: File
@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --size
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: Return list of IS insertion by alignment, default=stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panisa:0.1.7--pyhdfd78af_0

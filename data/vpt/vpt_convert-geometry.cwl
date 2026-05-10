@@ -96,13 +96,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --spacing-z-planes
+  - id: output_boundaries_path
+    type: string
+    doc: Output or path parameter `output_boundaries_path`
+    inputBinding:
+      position: 102
+      prefix: --output-boundaries
 outputs:
   - id: output_boundaries
     type: File
     doc: The path to the parquet file where segmentation compatible with vpt 
       will be saved.
     outputBinding:
-      glob: $(inputs.output_boundaries)
+      glob: $(inputs.output_boundaries_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

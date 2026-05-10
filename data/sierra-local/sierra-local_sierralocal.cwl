@@ -92,6 +92,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -xml
+  - id: outfile_path
+    type: string
+    doc: Output filename.
+    inputBinding:
+      position: 103
+      prefix: -o
 outputs:
   - id: outfile
     type:
@@ -99,7 +105,9 @@ outputs:
       - File
     doc: Output filename.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sierra-local:0.4.3--py310hdfd78af_0

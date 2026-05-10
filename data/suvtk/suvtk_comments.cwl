@@ -38,12 +38,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxonomy
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output filename.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/suvtk:0.1.6--pyh64700be_0

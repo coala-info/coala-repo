@@ -53,7 +53,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to the decontaminaton database metadata file
+    doc: Path to the decontaminaton database metadata file 
       /usr/local/lib/python3.8/site-packages/data/decontamination_db/remove_contam.tsv.gz
     inputBinding:
       position: 102
@@ -108,6 +108,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tmp
+  - id: outdir_path
+    type: string
+    doc: 'Directory to place output files  [default:'
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -115,7 +121,9 @@ outputs:
       - Directory
     doc: Directory to place output files
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbpore:0.7.1--pyhdfd78af_0

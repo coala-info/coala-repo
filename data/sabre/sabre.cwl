@@ -38,6 +38,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -r
+  - id: unknown_output_f_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unknown_output_f_path`
+    inputBinding:
+      position: 103
+      prefix: --unknown-output-f
+  - id: unknown_output_r_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unknown_output_r_path`
+    inputBinding:
+      position: 104
+      prefix: --unknown-output-r
 outputs:
   - id: unknown_output_f
     type:
@@ -45,14 +61,16 @@ outputs:
       - File
     doc: File to write reads with unknown barcodes to
     outputBinding:
-      glob: $(inputs.unknown_output_f)
+      glob: $(inputs.unknown_output_f_path)
   - id: unknown_output_r
     type:
       - 'null'
       - File
     doc: File to write reverse reads with unknown barcodes to (for paired-end)
     outputBinding:
-      glob: $(inputs.unknown_output_r)
+      glob: $(inputs.unknown_output_r_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sabre:1.000--h577a1d6_6

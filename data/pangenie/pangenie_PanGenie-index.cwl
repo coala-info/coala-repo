@@ -41,13 +41,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: 'prefix of the output files. NOTE: the given path must not include non-existent
       folders.'
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0

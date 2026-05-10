@@ -69,6 +69,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wiggle-types
+  - id: wiggle_basename_path
+    type: string
+    doc: Output or path parameter `wiggle_basename_path`
+    inputBinding:
+      position: 102
+      prefix: --wiggle-basename
 outputs:
   - id: wiggle_basename
     type:
@@ -77,7 +83,9 @@ outputs:
     doc: Basename for output wiggle files. Two files (plus and minus strand) 
       will be produced for each --wiggle-types supplied.
     outputBinding:
-      glob: $(inputs.wiggle_basename)
+      glob: $(inputs.wiggle_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

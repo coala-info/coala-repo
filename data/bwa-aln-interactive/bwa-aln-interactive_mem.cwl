@@ -52,7 +52,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: drop chains shorter than FLOAT fraction of the longest overlapping chain
+    doc: drop chains shorter than FLOAT fraction of the longest overlapping 
+      chain
     inputBinding:
       position: 104
       prefix: -D
@@ -108,7 +109,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: specify the mean, standard deviation, max and min of the insert size distribution
+    doc: specify the mean, standard deviation, max and min of the insert size 
+      distribution
     inputBinding:
       position: 104
       prefix: -I
@@ -260,8 +262,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: for split alignment, take the alignment with the smallest query coordinate
-      as primary
+    doc: for split alignment, take the alignment with the smallest query 
+      coordinate as primary
     inputBinding:
       position: 104
       prefix: '-5'
@@ -321,6 +323,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -h
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -328,7 +336,9 @@ outputs:
       - File
     doc: sam file to output results to
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-aln-interactive:0.7.18--h577a1d6_2

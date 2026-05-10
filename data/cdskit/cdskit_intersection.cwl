@@ -70,6 +70,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seqfile2
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: 'default=-: Output sequence file. Use "-" for STDOUT.'
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: outfile2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile2_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile2
+  - id: outgff_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outgff_path`
+    inputBinding:
+      position: 104
+      prefix: --outgff
 outputs:
   - id: outfile
     type:
@@ -77,21 +101,23 @@ outputs:
       - File
     doc: Output sequence file. Use "-" for STDOUT.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: outgff
     type:
       - 'null'
       - File
     doc: Output gff file.
     outputBinding:
-      glob: $(inputs.outgff)
+      glob: $(inputs.outgff_path)
   - id: outfile2
     type:
       - 'null'
       - File
     doc: Output sequence file 2.
     outputBinding:
-      glob: $(inputs.outfile2)
+      glob: $(inputs.outfile2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cdskit:0.16.1--pyhdfd78af_0

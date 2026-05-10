@@ -198,6 +198,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --validate-seq
+  - id: out_bam_path
+    type: string
+    doc: Output or path parameter `out_bam_path`
+    inputBinding:
+      position: 102
+      prefix: --out-bam
 outputs:
   - id: out_bam
     type:
@@ -205,7 +211,9 @@ outputs:
       - File
     doc: save aligmnets to this BAM file (memory intensive)
     outputBinding:
-      glob: $(inputs.out_bam)
+      glob: $(inputs.out_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1

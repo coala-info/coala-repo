@@ -19,8 +19,8 @@ inputs:
       prefix: --custom_id_name_map_info
   - id: enriched
     type: File
-    doc: Name of a directory containing files, or a single file containing the names
-      of enriched peptides, one per line.
+    doc: Name of a directory containing files, or a single file containing the 
+      names of enriched peptides, one per line.
     inputBinding:
       position: 101
       prefix: --enriched
@@ -28,8 +28,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Optional flag that specifies what string is expected at the end of each file
-      containing enriched peptides.
+    doc: Optional flag that specifies what string is expected at the end of each
+      file containing enriched peptides.
     inputBinding:
       position: 101
       prefix: --enriched_file_ending
@@ -37,15 +37,15 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optional file containing mappings from taxonomic ID to taxon name (NCBI rankedlineage.dmp
-      format).
+    doc: Optional file containing mappings from taxonomic ID to taxon name (NCBI
+      rankedlineage.dmp format).
     inputBinding:
       position: 101
       prefix: --id_name_map
   - id: linked
     type: File
-    doc: Name of linkage map to be used for deconvolution. It should be in the format
-      output by the 'link' module.
+    doc: Name of linkage map to be used for deconvolution. It should be in the 
+      format output by the 'link' module.
     inputBinding:
       position: 101
       prefix: --linked
@@ -53,8 +53,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Used for batch mode only. When specified, the name of each '--peptide_assignment_map'
-      will have this suffix.
+    doc: Used for batch mode only. When specified, the name of each 
+      '--peptide_assignment_map' will have this suffix.
     inputBinding:
       position: 101
       prefix: --mapfile_suffix
@@ -62,8 +62,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Used for batch mode only. When specified, the name of each file written to
-      the output directory will have this suffix.
+    doc: Used for batch mode only. When specified, the name of each file written
+      to the output directory will have this suffix.
     inputBinding:
       position: 101
       prefix: --outfile_suffix
@@ -71,8 +71,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use this flag to exclude input file ('--enrich') extensions from the names
-      of output files. Not used in singular mode.
+    doc: Use this flag to exclude input file ('--enrich') extensions from the 
+      names of output files. Not used in singular mode.
     inputBinding:
       position: 101
       prefix: --remove_file_types
@@ -80,8 +80,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Include this option if you want filtering to be done by the score of each
-      taxon, rather than the count of linked peptides.
+    doc: Include this option if you want filtering to be done by the score of 
+      each taxon, rather than the count of linked peptides.
     inputBinding:
       position: 101
       prefix: --score_filtering
@@ -89,8 +89,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Threshold for evaluating ties. Values [1, inf) for integer evaluation, (0,1)
-      for ratio evaluation.
+    doc: Threshold for evaluating ties. Values [1, inf) for integer evaluation, 
+      (0,1) for ratio evaluation.
     inputBinding:
       position: 101
       prefix: --score_overlap_threshold
@@ -98,8 +98,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Threshold for two species to be evaluated as a tie. Can be an integer or
-      a ratio in (0,1).
+    doc: Threshold for two species to be evaluated as a tie. Can be an integer 
+      or a ratio in (0,1).
     inputBinding:
       position: 101
       prefix: --score_tie_threshold
@@ -107,7 +107,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Scoring strategies "summation", "integer", or "fraction" can be specified.
+    doc: Scoring strategies "summation", "integer", or "fraction" can be 
+      specified.
     inputBinding:
       position: 101
       prefix: --scoring_strategy
@@ -115,8 +116,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: By default this module uses two threads. Include this option with no arguments
-      if you only want only one thread to be used.
+    doc: By default this module uses two threads. Include this option with no 
+      arguments if you only want only one thread to be used.
     inputBinding:
       position: 101
       prefix: --single_threaded
@@ -124,42 +125,77 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Filepath to tab delimited file with a TaxID column and a score threshold
-      for that TaxID.
+    doc: Filepath to tab delimited file with a TaxID column and a score 
+      threshold for that TaxID.
     inputBinding:
       position: 101
       prefix: --thresholds
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: peptide_assignment_map_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `peptide_assignment_map_path`
+    inputBinding:
+      position: 104
+      prefix: --peptide-assignment-map
+  - id: scores_per_round_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `scores_per_round_path`
+    inputBinding:
+      position: 105
+      prefix: --scores-per-round
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Name for the output directory or file. Output will be in the form of either
-      one file or a directory containing files.
+    doc: Name for the output directory or file. Output will be in the form of 
+      either one file or a directory containing files.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: scores_per_round
     type:
       - 'null'
       - Directory
-    doc: Optional. Name of directory to write counts/scores to after every round.
+    doc: Optional. Name of directory to write counts/scores to after every 
+      round.
     outputBinding:
-      glob: $(inputs.scores_per_round)
+      glob: $(inputs.scores_per_round_path)
   - id: peptide_assignment_map
     type:
       - 'null'
       - File
-    doc: Optional output. If specified, a map detailing which peptides were assigned
-      to which taxa will be written.
+    doc: Optional output. If specified, a map detailing which peptides were 
+      assigned to which taxa will be written.
     outputBinding:
-      glob: $(inputs.peptide_assignment_map)
+      glob: $(inputs.peptide_assignment_map_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Designated file to which the module's processes are logged.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

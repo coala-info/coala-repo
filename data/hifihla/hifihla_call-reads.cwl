@@ -124,6 +124,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -131,7 +137,9 @@ outputs:
       - Directory
     doc: Output directory [deprecated]
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hifihla:0.3.1--hdfd78af_0

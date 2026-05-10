@@ -33,6 +33,12 @@ inputs:
     inputBinding:
       position: 105
       prefix: f
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -40,7 +46,9 @@ outputs:
       - File
     doc: The output file path
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/assemblyutility:20160209--h077b44d_9

@@ -10,15 +10,16 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Defines which feature types in the input GFF will be processed to AA sequences.
-      Defaults to 'CDS'. You can provide multiple types (space-separated), e.g. -ft
-      CDS gene exon
+    doc: Defines which feature types in the input GFF will be processed to AA 
+      sequences. Defaults to 'CDS'. You can provide multiple types 
+      (space-separated), e.g. -ft CDS gene exon
     inputBinding:
       position: 101
       prefix: --feature-type
   - id: features_file
     type: File
-    doc: GFF file containing the information of the amino acid sequences to extract.
+    doc: GFF file containing the information of the amino acid sequences to 
+      extract.
     inputBinding:
       position: 101
       prefix: --features
@@ -32,18 +33,18 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If this flag is set then the AA translation will be done including gaps in
-      the nucleotide sequence. This results in an "X" on gapped positions in the AA
-      sequence as gap characters ("-") will be replaced by "N" in the nucleotide sequence.
-      By default, gaps are removed before translation.
+    doc: If this flag is set then the AA translation will be done including gaps
+      in the nucleotide sequence. This results in an "X" on gapped positions in 
+      the AA sequence as gap characters ("-") will be replaced by "N" in the 
+      nucleotide sequence. By default, gaps are removed before translation.
     inputBinding:
       position: 101
       prefix: --keep-gaps
   - id: sample_name
     type: string
-    doc: Name of the sample that is being processed. This will be used to create the
-      fasta headers when all amino acid sequences are written to a single file, or
-      as a prefix for individual files.
+    doc: Name of the sample that is being processed. This will be used to create
+      the fasta headers when all amino acid sequences are written to a single 
+      file, or as a prefix for individual files.
     inputBinding:
       position: 101
       prefix: --name
@@ -55,14 +56,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type: File
-    doc: Output path, either a file or directory. If a file path is given, then all
-      amino acid sequences will be written to this file. If a directory path is given,
-      then each amino acid sequence will be written to a separate file in this directory.
+    doc: Output path, either a file or directory. If a file path is given, then 
+      all amino acid sequences will be written to this file. If a directory path
+      is given, then each amino acid sequence will be written to a separate file
+      in this directory.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aminoextract:0.4.1--pyhdfd78af_0

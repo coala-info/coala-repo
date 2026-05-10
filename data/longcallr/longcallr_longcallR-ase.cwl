@@ -22,9 +22,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Gene types to be analyzed. Default is ["protein_coding", "lncRNA"]
-      - protein_coding
-      - lncRNA
+    doc: Gene types to be analyzed. Default is ["protein_coding", "lncRNA"] - 
+      protein_coding - lncRNA
     inputBinding:
       position: 101
       prefix: --gene_types
@@ -76,12 +75,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf3
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: prefix of output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/longcallr:1.12.0--py313ha45639b_1

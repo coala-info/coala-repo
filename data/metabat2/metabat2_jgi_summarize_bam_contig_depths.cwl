@@ -59,12 +59,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --shm
+  - id: output_depth_path
+    type: string
+    doc: Output or path parameter `output_depth_path`
+    inputBinding:
+      position: 103
+      prefix: --output-depth
 outputs:
   - id: output_depth
     type: File
     doc: The file to put the contig depths in
     outputBinding:
-      glob: $(inputs.output_depth)
+      glob: $(inputs.output_depth_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metabat2:2.18--h6f16272_0

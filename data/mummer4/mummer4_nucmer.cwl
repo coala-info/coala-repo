@@ -177,6 +177,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: delta_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `delta_file_path`
+    inputBinding:
+      position: 104
+      prefix: --delta-file
+  - id: sam_long_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sam_long_file_path`
+    inputBinding:
+      position: 105
+      prefix: --sam-long-file
+  - id: sam_short_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sam_short_file_path`
+    inputBinding:
+      position: 106
+      prefix: --sam-short-file
 outputs:
   - id: delta_file
     type:
@@ -184,21 +208,23 @@ outputs:
       - File
     doc: Output delta file to PATH (instead of PREFIX.delta)
     outputBinding:
-      glob: $(inputs.delta_file)
+      glob: $(inputs.delta_file_path)
   - id: sam_short_file
     type:
       - 'null'
       - File
     doc: Output SAM file to PATH, short format
     outputBinding:
-      glob: $(inputs.sam_short_file)
+      glob: $(inputs.sam_short_file_path)
   - id: sam_long_file
     type:
       - 'null'
       - File
     doc: Output SAM file to PATH, long format
     outputBinding:
-      glob: $(inputs.sam_long_file)
+      glob: $(inputs.sam_long_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0

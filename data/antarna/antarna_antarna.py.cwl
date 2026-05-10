@@ -30,8 +30,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Delimits the amount of internal ants for termination convergence criterion
-      for a reset.
+    doc: Delimits the amount of internal ants for termination convergence 
+      criterion for a reset.
     inputBinding:
       position: 102
       prefix: --antsTerConv
@@ -63,8 +63,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Sequence constraint using RNA nucleotide alphabet {A,C,G,U} and wild-card
-      "N".
+    doc: Sequence constraint using RNA nucleotide alphabet {A,C,G,U} and 
+      wild-card "N".
     inputBinding:
       position: 102
       prefix: --Cseq
@@ -104,8 +104,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sets the level of allowed influence of sequence constraint on the structure
-      constraint [0:no influence; 3:extensive influence].
+    doc: Sets the level of allowed influence of sequence constraint on the 
+      structure constraint [0:no influence; 3:extensive influence].
     inputBinding:
       position: 102
       prefix: --level
@@ -145,8 +145,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Sets the value, which is used in the mimiced 1/x evaluation function in order
-      to set a crossing point on the y-axis.
+    doc: Sets the value, which is used in the mimiced 1/x evaluation function in
+      order to set a crossing point on the y-axis.
     inputBinding:
       position: 102
       prefix: --omega
@@ -154,8 +154,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Prints additional features and stats to the headers of the produced sequences.
-      Also adds the structure of the sequence.
+    doc: Prints additional features and stats to the headers of the produced 
+      sequences. Also adds the structure of the sequence.
     inputBinding:
       position: 102
       prefix: --output_verbose
@@ -163,8 +163,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Changes the energy parameterfile of RNAfold. If using this explicitly, please
-      provide a suitable energy file delivered by RNAfold.
+    doc: Changes the energy parameterfile of RNAfold. If using this explicitly, 
+      please provide a suitable energy file delivered by RNAfold.
     inputBinding:
       position: 102
       prefix: --paramFile
@@ -188,7 +188,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Amount of maximal terrain resets, until the best solution is retuned as solution.
+    doc: Amount of maximal terrain resets, until the best solution is retuned as
+      solution.
     inputBinding:
       position: 102
       prefix: --Resets
@@ -218,8 +219,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Provides a maximum tGC value [0,1] for the case of uniform distribution sampling.
-      The regular tGC value serves as minimum value.
+    doc: Provides a maximum tGC value [0,1] for the case of uniform distribution
+      sampling. The regular tGC value serves as minimum value.
     inputBinding:
       position: 102
       prefix: --tGCmax
@@ -227,8 +228,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Provides a tGC variance (sigma square) for the case of normal distribution
-      sampling. The regular tGC value serves as expectation value (mu).
+    doc: Provides a tGC variance (sigma square) for the case of normal 
+      distribution sampling. The regular tGC value serves as expectation value 
+      (mu).
     inputBinding:
       position: 102
       prefix: --tGCvar
@@ -248,6 +250,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -255,7 +263,9 @@ outputs:
       - File
     doc: Provide a path and an output file, e.g. "/path/to/the/target_file".
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/antarna:2.0.1.2--py27_0

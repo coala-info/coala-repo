@@ -142,12 +142,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --update_obo
+  - id: outfile_path
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type: File
     doc: Output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaquant:0.1.2--py35_0

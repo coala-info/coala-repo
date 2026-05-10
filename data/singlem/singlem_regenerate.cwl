@@ -129,12 +129,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --window-position
+  - id: output_singlem_package_path
+    type: string
+    doc: Output or path parameter `output_singlem_package_path`
+    inputBinding:
+      position: 104
+      prefix: --output-singlem-package
 outputs:
   - id: output_singlem_package
     type: File
     doc: output package path
     outputBinding:
-      glob: $(inputs.output_singlem_package)
+      glob: $(inputs.output_singlem_package_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

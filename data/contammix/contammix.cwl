@@ -117,6 +117,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trimBases
+  - id: figure_path
+    type: string
+    doc: Output or path parameter `figure_path`
+    inputBinding:
+      position: 102
+      prefix: --figure
 outputs:
   - id: figure
     type:
@@ -126,7 +132,9 @@ outputs:
       diagnostic (if --nChains>1), Pr(authentic) as a function of MC iteration, estimated
       posterior density for Pr(authentic)'
     outputBinding:
-      glob: $(inputs.figure)
+      glob: $(inputs.figure_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contammix:1.0.11--r45h28c4f14_5

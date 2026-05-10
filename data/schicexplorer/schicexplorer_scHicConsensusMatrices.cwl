@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outFileName_path
+    type: string
+    doc: Output or path parameter `outFileName_path`
+    inputBinding:
+      position: 102
+      prefix: --outFileName
 outputs:
   - id: outFileName
     type: File
     doc: File name of the consensus scool matrix.
     outputBinding:
-      glob: $(inputs.outFileName)
+      glob: $(inputs.outFileName_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/schicexplorer:7--py_0

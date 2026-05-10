@@ -77,6 +77,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --to-db
+  - id: output_path
+    type: string
+    doc: Path to the output file to write the returned fields.
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -85,7 +91,9 @@ outputs:
     doc: "Path to the output file to write the returned fields.\n                \
       \        If not provided, will write to stdout."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/uniprot-id-mapper:1.1.4--pyh7e72e81_0

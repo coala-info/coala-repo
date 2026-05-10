@@ -259,6 +259,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --to-db
+  - id: output_table_path
+    type: string
+    doc: Output or path parameter `output_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-table
 outputs:
   - id: output_table
     type:
@@ -267,7 +273,9 @@ outputs:
     doc: Filename of table output, where UniProt info is stored. If set, will 
       override 'output' parameter just for that specific file
     outputBinding:
-      glob: $(inputs.output_table)
+      glob: $(inputs.output_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/upimapi:1.13.3--hdfd78af_0

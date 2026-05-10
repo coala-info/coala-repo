@@ -310,6 +310,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -C
+  - id: save_index_to_file_path
+    type: string
+    doc: Output or path parameter `save_index_to_file_path`
+    inputBinding:
+      position: 105
+      prefix: --save-index-to-file
 outputs:
   - id: save_index_to_file
     type:
@@ -317,7 +323,9 @@ outputs:
       - File
     doc: save index to FILE
     outputBinding:
-      glob: $(inputs.save_index_to_file)
+      glob: $(inputs.save_index_to_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/miniprot:0.18--h577a1d6_0

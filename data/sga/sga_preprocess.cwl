@@ -179,6 +179,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 104
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -186,7 +192,9 @@ outputs:
       - File
     doc: 'write the reads to FILE (default: stdout)'
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

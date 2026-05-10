@@ -29,6 +29,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quiet
+  - id: log_file_path
+    type: string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -36,7 +42,9 @@ outputs:
       - File
     doc: path to log file
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hocort:1.2.2--py39hdfd78af_0

@@ -91,6 +91,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: -verbose=n
+  - id: map_info_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `map_info_file_path`
+    inputBinding:
+      position: 104
+      prefix: --map-info-file
+  - id: mapping_psls_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mapping_psls_file_path`
+    inputBinding:
+      position: 105
+      prefix: --mapping-psls-file
 outputs:
   - id: out_psl
     type: File
@@ -117,7 +133,7 @@ outputs:
       for qEnd If the psl count not be mapped, the mapping* and mapped* columns are
       empty.'
     outputBinding:
-      glob: $(inputs.map_info_file)
+      glob: $(inputs.map_info_file_path)
   - id: mapping_psls_file
     type:
       - 'null'
@@ -127,7 +143,9 @@ outputs:
       this file. There will be a one-to-one correspondence of rows of this file 
       to rows of the outPsl file.
     outputBinding:
-      glob: $(inputs.mapping_psls_file)
+      glob: $(inputs.mapping_psls_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

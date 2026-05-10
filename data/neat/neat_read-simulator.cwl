@@ -27,6 +27,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --prefix
+  - id: log_file_path
+    type: string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -35,7 +41,9 @@ outputs:
     doc: Path to the log file. If not specified, a log file will be created in 
       the current directory.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neat:4.3.5--pyhdfd78af_0

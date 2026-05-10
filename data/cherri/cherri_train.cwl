@@ -183,6 +183,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use_structure
+  - id: out_path_path
+    type: string
+    doc: Output or path parameter `out_path_path`
+    inputBinding:
+      position: 103
+      prefix: --out-path
 outputs:
   - id: out_path
     type: Directory
@@ -190,7 +196,9 @@ outputs:
       will contain separate output folders for each step of the data, feature 
       and model preparation
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cherri:0.8--pyh7cba7a3_0

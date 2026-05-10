@@ -31,7 +31,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print commas as thousand separator and split info field into tab entries.
+    doc: Print commas as thousand separator and split info field into tab 
+      entries.
     inputBinding:
       position: 102
       prefix: --pretty
@@ -40,8 +41,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 1-based
-      inclusive. Commas are ignored.
+    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 
+      1-based inclusive. Commas are ignored.
     inputBinding:
       position: 102
       prefix: --regions
@@ -50,8 +51,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Second region must overlap region(s) in format "chr" or "chr:start-end").
-      Start and end are 1-based inclusive. Commas are ignored.
+    doc: Second region must overlap region(s) in format "chr" or 
+      "chr:start-end"). Start and end are 1-based inclusive. Commas are ignored.
     inputBinding:
       position: 102
       prefix: --regions2
@@ -69,7 +70,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based semi-exclusive).
+    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based 
+      semi-exclusive).
     inputBinding:
       position: 102
       prefix: --regions-file
@@ -81,6 +83,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --skip-tangled
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -88,7 +96,9 @@ outputs:
       - File
     doc: 'Optional: output path.'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
+  - id: histogram_path
+    type: string
+    doc: Output or path parameter `histogram_path`
+    inputBinding:
+      position: 102
+      prefix: --histogram
 outputs:
   - id: histogram
     type:
@@ -62,7 +68,9 @@ outputs:
       - File
     doc: Make a histogram of the read lengths and saves it to a new file
     outputBinding:
-      glob: $(inputs.histogram)
+      glob: $(inputs.histogram_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pauvre:0.1924--py_0

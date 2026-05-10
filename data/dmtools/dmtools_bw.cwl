@@ -69,12 +69,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --strand
+  - id: output_bigwig_file_path
+    type: string
+    doc: Output or path parameter `output_bigwig_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bigwig-file
 outputs:
   - id: output_bigwig_file
     type: File
     doc: Prefix of methratio.dm output file
     outputBinding:
-      glob: $(inputs.output_bigwig_file)
+      glob: $(inputs.output_bigwig_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dmtools:0.2.6--hda3def1_0

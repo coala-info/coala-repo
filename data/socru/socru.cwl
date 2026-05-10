@@ -104,6 +104,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: output_operon_directions_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_operon_directions_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-operon-directions-file
+  - id: output_plot_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_plot_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-plot-file
 outputs:
   - id: output_file
     type:
@@ -111,21 +135,23 @@ outputs:
       - File
     doc: Output filename, defaults to STDOUT
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_plot_file
     type:
       - 'null'
       - File
     doc: Filename of plot of genome structure
     outputBinding:
-      glob: $(inputs.output_plot_file)
+      glob: $(inputs.output_plot_file_path)
   - id: output_operon_directions_file
     type:
       - 'null'
       - File
     doc: Filename of directions of operons
     outputBinding:
-      glob: $(inputs.output_operon_directions_file)
+      glob: $(inputs.output_operon_directions_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/socru:2.2.5--pyhdfd78af_0

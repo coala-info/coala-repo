@@ -61,6 +61,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --perturbation
+  - id: output_graph_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_graph_path`
+    inputBinding:
+      position: 103
+      prefix: --output-graph
+  - id: output_log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_log_path`
+    inputBinding:
+      position: 104
+      prefix: --output-log
 outputs:
   - id: output_graph
     type:
@@ -69,7 +85,7 @@ outputs:
     doc: Pickle the complete graph at the end of simulation (after last 
       dissociation step) and write it to the given path.
     outputBinding:
-      glob: $(inputs.output_graph)
+      glob: $(inputs.output_graph_path)
   - id: output_log
     type:
       - 'null'
@@ -77,7 +93,9 @@ outputs:
     doc: Write some log information of each simulation stept to the given path. 
       If not specified, std-out is used.
     outputBinding:
-      glob: $(inputs.output_log)
+      glob: $(inputs.output_log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cpinsim:0.5.2--py36_1

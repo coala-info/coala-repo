@@ -74,6 +74,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -w
+  - id: dot_output_file_path
+    type: string
+    doc: Output or path parameter `dot_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --dot-output-file
 outputs:
   - id: dot_output_file
     type:
@@ -81,7 +87,9 @@ outputs:
       - File
     doc: file for dot output
     outputBinding:
-      glob: $(inputs.dot_output_file)
+      glob: $(inputs.dot_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/revoluzer:0.1.8--hbcc2d2b_0

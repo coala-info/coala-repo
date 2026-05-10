@@ -203,6 +203,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verify
+  - id: s3_destination_path
+    type: string
+    doc: Output or path parameter `s3_destination_path`
+    inputBinding:
+      position: 103
+      prefix: --s3-destination
 outputs:
   - id: s3_destination
     type:
@@ -233,7 +239,9 @@ outputs:
       needed. \n                        For more details, check the information on
       the README page."
     outputBinding:
-      glob: $(inputs.s3_destination)
+      glob: $(inputs.s3_destination_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nda-tools:0.6.0--pyh7e72e81_0

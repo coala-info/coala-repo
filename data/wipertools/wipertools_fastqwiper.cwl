@@ -36,12 +36,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --report
+  - id: fastq_out_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --fastq_out
 outputs:
   - id: fastq_out
     type: File
     doc: Wiped FASTQ file
     outputBinding:
-      glob: $(inputs.fastq_out)
+      glob: $(inputs.fastq_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wipertools:1.1.5--pyhdfd78af_0

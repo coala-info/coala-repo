@@ -73,6 +73,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --test-ambient
+  - id: output_object_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
+  - id: output_text_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_text_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-text-file
 outputs:
   - id: output_text_file
     type:
@@ -80,14 +96,16 @@ outputs:
       - File
     doc: File name of text file in which to store output data frame.
     outputBinding:
-      glob: $(inputs.output_text_file)
+      glob: $(inputs.output_text_file_path)
   - id: output_object_file
     type:
       - 'null'
       - File
     doc: File name in which to store serialized SingleCellExperiment object.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dropletutils-scripts:0.0.5--hdfd78af_1

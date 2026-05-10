@@ -73,6 +73,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf_path
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output_cache_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cache_path`
+    inputBinding:
+      position: 103
+      prefix: --output-cache
 outputs:
   - id: output
     type:
@@ -80,14 +96,16 @@ outputs:
       - File
     doc: Optional path to save the final variant summary file (CSV).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_cache
     type:
       - 'null'
       - Directory
     doc: Optional path to save the cache file for storing new summary results.
     outputBinding:
-      glob: $(inputs.output_cache)
+      glob: $(inputs.output_cache_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varpubs:0.5.0--pyhdfd78af_0

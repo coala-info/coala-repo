@@ -48,6 +48,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample
+  - id: json_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `json_output_path`
+    inputBinding:
+      position: 102
+      prefix: --json-output
+  - id: tsv_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tsv_output_path`
+    inputBinding:
+      position: 103
+      prefix: --tsv-output
 outputs:
   - id: json_output
     type:
@@ -55,14 +71,16 @@ outputs:
       - File
     doc: json output file
     outputBinding:
-      glob: $(inputs.json_output)
+      glob: $(inputs.json_output_path)
   - id: tsv_output
     type:
       - 'null'
       - File
     doc: tsv output file
     outputBinding:
-      glob: $(inputs.tsv_output)
+      glob: $(inputs.tsv_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-sampleconfig:0.3--0

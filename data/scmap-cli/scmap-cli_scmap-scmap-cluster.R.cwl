@@ -30,6 +30,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_object_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
+  - id: output_text_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_text_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-text-file
 outputs:
   - id: output_text_file
     type:
@@ -37,7 +53,7 @@ outputs:
       - File
     doc: File name in which to text-format cell type assignments.
     outputBinding:
-      glob: $(inputs.output_text_file)
+      glob: $(inputs.output_text_file_path)
   - id: output_object_file
     type:
       - 'null'
@@ -45,7 +61,9 @@ outputs:
     doc: File name in which to store serialized R object of type 
       'SingleCellExperiment'.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scmap-cli:0.1.0--hdfd78af_0

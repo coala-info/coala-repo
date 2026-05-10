@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: biobloomcategorizer
 label: biobloomtools_biobloomcategorizer
-doc: "Categorize Sequences. The input format may be FASTA, FASTQ, and compressed gz.\n
-  \nTool homepage: https://github.com/bcgsc/biobloom"
+doc: "Categorize Sequences. The input format may be FASTA, FASTQ, and compressed gz.\n\
+  \ \nTool homepage: https://github.com/bcgsc/biobloom"
 inputs:
   - id: input_files
     type:
@@ -17,8 +17,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: The best hit is used rather than the score (-s) threshold. Score will be
-      appended to the header of the output read.
+    doc: The best hit is used rather than the score (-s) threshold. Score will 
+      be appended to the header of the output read.
     inputBinding:
       position: 102
       prefix: --best_hit
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A file of list of file pairs to run in parallel. Should only be used when
-      the number of input files is large.
+    doc: A file of list of file pairs to run in parallel. Should only be used 
+      when the number of input files is large.
     inputBinding:
       position: 102
       prefix: --file_list
@@ -59,7 +59,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: List of filter files to use. Required option. eg. "filter1.bf filter2.bf"
+    doc: List of filter files to use. Required option. eg. "filter1.bf 
+      filter2.bf"
     inputBinding:
       position: 102
       prefix: --filter_files
@@ -115,8 +116,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use ordered filtering. Order of filters matters (filters listed first have
-      higher priority).
+    doc: Use ordered filtering. Order of filters matters (filters listed first 
+      have higher priority).
     inputBinding:
       position: 102
       prefix: --ordered
@@ -132,8 +133,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Score threshold for matching. N may be either a floating point score between
-      0 and 1 or a positive integer representing the minimum match length in bases.
+    doc: Score threshold for matching. N may be either a floating point score 
+      between 0 and 1 or a positive integer representing the minimum match 
+      length in bases.
     inputBinding:
       position: 102
       prefix: --score
@@ -157,8 +159,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of hits tiling in second pass needed to jump several tiles upon
-      a miss.
+    doc: The number of hits tiling in second pass needed to jump several tiles 
+      upon a miss.
     inputBinding:
       position: 102
       prefix: --streak
@@ -202,6 +204,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --with_score
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --prefix
 outputs:
   - id: prefix
     type:
@@ -209,7 +217,9 @@ outputs:
       - File
     doc: Output prefix to use. Otherwise will output to current directory.
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobloomtools:2.3.5--h077b44d_6

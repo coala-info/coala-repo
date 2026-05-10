@@ -45,6 +45,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -SubPop
+  - id: output_stat_path
+    type: string
+    doc: Output or path parameter `output_stat_path`
+    inputBinding:
+      position: 102
+      prefix: --output-stat
 outputs:
   - id: output_stat
     type:
@@ -52,7 +58,9 @@ outputs:
       - File
     doc: Output file for LD statistics (e.g., LDDecay.stat.gz).
     outputBinding:
-      glob: $(inputs.output_stat)
+      glob: $(inputs.output_stat_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1

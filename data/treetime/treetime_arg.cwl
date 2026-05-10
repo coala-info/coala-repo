@@ -348,6 +348,30 @@ inputs:
     inputBinding:
       position: 104
       prefix: --zero-based
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: directory to write the output to
+    inputBinding:
+      position: 105
+      prefix: --outdir
+  - id: plot_rtt_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_rtt_path`
+    inputBinding:
+      position: 106
+      prefix: --plot-rtt
+  - id: plot_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_tree_path`
+    inputBinding:
+      position: 107
+      prefix: --plot-tree
 outputs:
   - id: plot_tree
     type:
@@ -356,7 +380,7 @@ outputs:
     doc: filename to save the plot to. Suffix will determine format (choices 
       pdf, png, svg, default=pdf)
     outputBinding:
-      glob: $(inputs.plot_tree)
+      glob: $(inputs.plot_tree_path)
   - id: plot_rtt
     type:
       - 'null'
@@ -364,14 +388,16 @@ outputs:
     doc: filename to save the plot to. Suffix will determine format (choices 
       pdf, png, svg, default=pdf)
     outputBinding:
-      glob: $(inputs.plot_rtt)
+      glob: $(inputs.plot_rtt_path)
   - id: outdir
     type:
       - 'null'
       - Directory
     doc: directory to write the output to
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treetime:0.11.4--pyhdfd78af_0

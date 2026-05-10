@@ -133,6 +133,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --turn_off_classification
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -140,7 +146,9 @@ outputs:
       - Directory
     doc: Write results to this path.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stoatydive:1.1.1--pyh5e36f6f_0

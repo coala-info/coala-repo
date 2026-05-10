@@ -92,6 +92,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: cov_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cov_path`
+    inputBinding:
+      position: 102
+      prefix: --cov
+  - id: proj_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `proj_path`
+    inputBinding:
+      position: 103
+      prefix: --proj
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 104
+      prefix: --stats
+  - id: val_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `val_path`
+    inputBinding:
+      position: 105
+      prefix: --val
+  - id: vec_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vec_path`
+    inputBinding:
+      position: 106
+      prefix: --vec
 outputs:
   - id: proj
     type:
@@ -99,21 +139,21 @@ outputs:
       - File
     doc: 'output (optional): file for projected data'
     outputBinding:
-      glob: $(inputs.proj)
+      glob: $(inputs.proj_path)
   - id: cov
     type:
       - 'null'
       - File
     doc: 'output (optional): file for covariance matrix'
     outputBinding:
-      glob: $(inputs.cov)
+      glob: $(inputs.cov_path)
   - id: vec
     type:
       - 'null'
       - File
     doc: 'output (optional): file for eigenvectors'
     outputBinding:
-      glob: $(inputs.vec)
+      glob: $(inputs.vec_path)
   - id: stats
     type:
       - 'null'
@@ -121,14 +161,16 @@ outputs:
     doc: 'output (optional): mean values, sigmas and boundary shifts (shifts only
       for periodic)'
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
   - id: val
     type:
       - 'null'
       - File
     doc: 'output (optional): file for eigenvalues'
     outputBinding:
-      glob: $(inputs.val)
+      glob: $(inputs.val_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastpca:0.9.1

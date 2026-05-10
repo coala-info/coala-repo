@@ -59,6 +59,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --samples
+  - id: output_object_file_path
+    type: string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
 outputs:
   - id: output_object_file
     type:
@@ -66,7 +72,9 @@ outputs:
       - File
     doc: File name in which to store serialized SingleCellExperiment object.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dropletutils-scripts:0.0.5--hdfd78af_1

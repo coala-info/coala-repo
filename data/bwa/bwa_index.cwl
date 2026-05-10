@@ -35,6 +35,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: '-6'
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --prefix
 outputs:
   - id: prefix
     type:
@@ -42,7 +48,9 @@ outputs:
       - File
     doc: prefix of the index [same as fasta name]
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa:0.7.19--h577a1d6_1

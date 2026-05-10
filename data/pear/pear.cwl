@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify the upper bound for the resulting quality score. If set to zero,
-      capping is disabled.
+    doc: Specify the upper bound for the resulting quality score. If set to 
+      zero, capping is disabled.
     inputBinding:
       position: 101
       prefix: --cap
@@ -32,9 +32,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify the maximum possible length of the assembled sequences. Setting this
-      value to 0 disables the restriction and assembled sequences may be arbitrary
-      long.
+    doc: Specify the maximum possible length of the assembled sequences. Setting
+      this value to 0 disables the restriction and assembled sequences may be 
+      arbitrary long.
     inputBinding:
       position: 101
       prefix: --max-assembly-length
@@ -42,10 +42,10 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Specify the maximal proportion of uncalled bases in a read. Setting this
-      value to 0 will cause PEAR to discard all reads containing uncalled bases. The
-      other extreme setting is 1 which causes PEAR to process all reads independent
-      on the number of uncalled bases.
+    doc: Specify the maximal proportion of uncalled bases in a read. Setting 
+      this value to 0 will cause PEAR to discard all reads containing uncalled 
+      bases. The other extreme setting is 1 which causes PEAR to process all 
+      reads independent on the number of uncalled bases.
     inputBinding:
       position: 101
       prefix: --max-uncalled-base
@@ -53,8 +53,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify the amount of memory to be used. The number may be followed by one
-      of the letters K, M, or G denoting Kilobytes, Megabytes and Gigabytes, respectively.
+    doc: Specify the amount of memory to be used. The number may be followed by 
+      one of the letters K, M, or G denoting Kilobytes, Megabytes and Gigabytes,
+      respectively.
     inputBinding:
       position: 101
       prefix: --memory
@@ -62,9 +63,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify the minimum possible length of the assembled sequences. Setting this
-      value to 0 disables the restriction and assembled sequences may be arbitrary
-      short.
+    doc: Specify the minimum possible length of the assembled sequences. Setting
+      this value to 0 disables the restriction and assembled sequences may be 
+      arbitrary short.
     inputBinding:
       position: 101
       prefix: --min-assembly-length
@@ -72,9 +73,10 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify the minimum overlap size. The minimum overlap may be set to 1 when
-      the statistical test is used. However, further restricting the minimum overlap
-      size to a proper value may reduce false-positive assembles.
+    doc: Specify the minimum overlap size. The minimum overlap may be set to 1 
+      when the statistical test is used. However, further restricting the 
+      minimum overlap size to a proper value may reduce false-positive 
+      assembles.
     inputBinding:
       position: 101
       prefix: --min-overlap
@@ -82,8 +84,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify the minimum length of reads after trimming the low quality part (see
-      option -q).
+    doc: Specify the minimum length of reads after trimming the low quality part
+      (see option -q).
     inputBinding:
       position: 101
       prefix: --min-trim-length
@@ -91,9 +93,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When merging a base-pair that consists of two non-equal bases out of which
-      none is degenerate, set the merged base to N and use the highest quality score
-      of the two bases
+    doc: When merging a base-pair that consists of two non-equal bases out of 
+      which none is degenerate, set the merged base to N and use the highest 
+      quality score of the two bases
     inputBinding:
       position: 101
       prefix: --nbase
@@ -120,9 +122,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify the quality score threshold for trimming the low quality part of
-      a read. If the quality scores of two consecutive bases are strictly less than
-      the specified threshold, the rest of the read will be trimmed.
+    doc: Specify the quality score threshold for trimming the low quality part 
+      of a read. If the quality scores of two consecutive bases are strictly 
+      less than the specified threshold, the rest of the read will be trimmed.
     inputBinding:
       position: 101
       prefix: --quality-threshold
@@ -160,12 +162,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output filename.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pear:0.9.6--hb1d24b7_13

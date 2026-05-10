@@ -164,6 +164,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
+  - id: out_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_alignment_path`
+    inputBinding:
+      position: 104
+      prefix: --out-alignment
+  - id: out_ids_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_ids_path`
+    inputBinding:
+      position: 105
+      prefix: --out-ids
 outputs:
   - id: out
     type:
@@ -171,21 +195,23 @@ outputs:
       - File
     doc: output file name
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out_ids
     type:
       - 'null'
       - File
     doc: output file name for ids file (optional)
     outputBinding:
-      glob: $(inputs.out_ids)
+      glob: $(inputs.out_ids_path)
   - id: out_alignment
     type:
       - 'null'
       - File
     doc: output file name for ids file (optional)
     outputBinding:
-      glob: $(inputs.out_alignment)
+      glob: $(inputs.out_alignment_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lz-ani:1.2.3--h9ee0642_0

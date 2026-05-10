@@ -372,6 +372,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --skipmer-m2n3
+  - id: csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_path`
+    inputBinding:
+      position: 103
+      prefix: --csv
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -380,14 +396,16 @@ outputs:
     doc: file to which output will be written; default is terminal (standard 
       output)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: csv
     type:
       - 'null'
       - File
     doc: write matrix to specified file in CSV format (with column headers)
     outputBinding:
-      glob: $(inputs.csv)
+      glob: $(inputs.csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0

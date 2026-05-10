@@ -680,6 +680,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tumour
+  - id: somatic_output_path
+    type: string
+    doc: Output or path parameter `somatic_output_path`
+    inputBinding:
+      position: 102
+      prefix: --somatic-output
 outputs:
   - id: somatic_output
     type:
@@ -687,7 +693,9 @@ outputs:
       - File
     doc: Output VCF with only PASS somatic variants
     outputBinding:
-      glob: $(inputs.somatic_output)
+      glob: $(inputs.somatic_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savana:1.3.6--pyhdfd78af_0

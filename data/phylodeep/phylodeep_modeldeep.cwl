@@ -29,13 +29,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vector_representation
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: The name of the output csv file (comma-separated) containing predicted 
       probabilities of each model.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylodeep:0.9--pyhdfd78af_0

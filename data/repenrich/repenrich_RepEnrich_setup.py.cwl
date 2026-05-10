@@ -67,6 +67,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --is_bed
+  - id: nfragmentsfile1_path
+    type: string
+    doc: Output or path parameter `nfragmentsfile1_path`
+    inputBinding:
+      position: 105
+      prefix: --nfragmentsfile1
 outputs:
   - id: nfragmentsfile1
     type:
@@ -75,7 +81,9 @@ outputs:
     doc: "Output location of a description file that saves the\n                 \
       \       number of fragments processed per repname."
     outputBinding:
-      glob: $(inputs.nfragmentsfile1)
+      glob: $(inputs.nfragmentsfile1_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repenrich:1.2--py27_1

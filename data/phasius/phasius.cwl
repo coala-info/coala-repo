@@ -37,8 +37,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: strictly plot the begin and end of the specified interval, not the whole
-      interval gathered from blocks
+    doc: strictly plot the begin and end of the specified interval, not the 
+      whole interval gathered from blocks
     inputBinding:
       position: 102
       prefix: --strict
@@ -58,19 +58,37 @@ inputs:
     inputBinding:
       position: 102
       prefix: --width
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 104
+      prefix: --summary
 outputs:
   - id: output
     type: File
     doc: HTML output file name
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: summary
     type:
       - 'null'
       - File
     doc: summary file
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phasius:0.7.0--ha6fb395_0

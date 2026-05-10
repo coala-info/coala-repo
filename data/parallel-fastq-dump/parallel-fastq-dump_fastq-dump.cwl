@@ -15,8 +15,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Replaces accession derived from <path> in filename(s) and deflines (only
-      for single table dump)
+    doc: Replaces accession derived from <path> in filename(s) and deflines 
+      (only for single table dump)
     inputBinding:
       position: 102
       prefix: --accession
@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Filter by position on genome. Name can eiter by accession.version or file
-      specific name. from and to are 1-based coordinates
+    doc: Filter by position on genome. Name can eiter by accession.version or 
+      file specific name. from and to are 1-based coordinates
     inputBinding:
       position: 102
       prefix: --aligned-region
@@ -97,8 +97,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Formats sequence using color space (default for SOLiD), 'cskey' may be specified
-      for translation or else specify 'dflt' to use the default value
+    doc: Formats sequence using color space (default for SOLiD), 'cskey' may be 
+      specified for translation or else specify 'dflt' to use the default value
     inputBinding:
       position: 102
       prefix: --dumpcs
@@ -154,8 +154,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Logging level as number or enum string. One of (fatal|sys|int|err|warn|info|debug)
-      or (0-6)
+    doc: Logging level as number or enum string. One of 
+      (fatal|sys|int|err|warn|info|debug) or (0-6)
     inputBinding:
       position: 102
       prefix: --log-level
@@ -163,8 +163,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Filter by distance between matepairs. Use 'unknown' to find matepairs split
-      between the references. Use from-to to limit matepair distance on the same reference
+    doc: Filter by distance between matepairs. Use 'unknown' to find matepairs 
+      split between the references. Use from-to to limit matepair distance on 
+      the same reference
     inputBinding:
       position: 102
       prefix: --matepair_distance
@@ -286,8 +287,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Write reads into separate files. Read number will be suffixed to the file
-      name.
+    doc: Write reads into separate files. Read number will be suffixed to the 
+      file name.
     inputBinding:
       position: 102
       prefix: --split-files
@@ -353,11 +354,17 @@ inputs:
       - 'null'
       - type: array
         items: boolean
-    doc: Increase the verbosity of the program status messages. Use multiple times
-      for more verbosity.
+    doc: Increase the verbosity of the program status messages. Use multiple 
+      times for more verbosity.
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -365,7 +372,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parallel-fastq-dump:0.6.7--pyhdfd78af_0

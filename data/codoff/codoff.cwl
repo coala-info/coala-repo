@@ -74,6 +74,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --start-coord
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: plot_outfile_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --plot-outfile
 outputs:
   - id: outfile
     type:
@@ -81,7 +95,7 @@ outputs:
       - File
     doc: Path to output file [Default is standard output].
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: plot_outfile
     type:
       - 'null'
@@ -89,7 +103,9 @@ outputs:
     doc: Plot output file name (will be in SVG format). If not provided, no plot
       will be made.
     outputBinding:
-      glob: $(inputs.plot_outfile)
+      glob: $(inputs.plot_outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/codoff:1.2.3--pyhdfd78af_0

@@ -153,12 +153,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write_single_copy_genes
+  - id: out_dir_path
+    type: Directory
+    doc: directory to output files
+    inputBinding:
+      position: 102
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type: Directory
     doc: directory to output files
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2

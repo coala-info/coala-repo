@@ -60,6 +60,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: design_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `design_output_path`
+    inputBinding:
+      position: 103
+      prefix: --design-output
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 104
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -67,14 +83,16 @@ outputs:
       - Directory
     doc: Output directory for downloaded FASTQ files.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: design_output
     type:
       - 'null'
       - File
     doc: 'Output path for design CSV (default: metadata_{assay}.csv in outdir).'
     outputBinding:
-      glob: $(inputs.design_output)
+      glob: $(inputs.design_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqnado:1.0.4--pyhdfd78af_0

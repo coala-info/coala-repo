@@ -53,6 +53,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: haplotypes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `haplotypes_path`
+    inputBinding:
+      position: 102
+      prefix: --haplotypes
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
 outputs:
   - id: haplotypes
     type:
@@ -60,14 +76,16 @@ outputs:
       - File
     doc: Output file containing haplotypes
     outputBinding:
-      glob: $(inputs.haplotypes)
+      glob: $(inputs.haplotypes_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: File containing log information
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pastrami:1.0.1--pyh67a8953_0

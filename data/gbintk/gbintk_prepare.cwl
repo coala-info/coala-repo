@@ -33,12 +33,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --resfolder
+  - id: output_path
+    type: string
+    doc: path to the output folder  [required]
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: path to the output folder
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gbintk:1.0.3--py310h9ee0642_0

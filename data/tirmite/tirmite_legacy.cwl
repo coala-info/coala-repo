@@ -250,6 +250,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outdir_path
+    type: string
+    doc: All output files will be written to this directory.
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -257,7 +263,9 @@ outputs:
       - Directory
     doc: All output files will be written to this directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tirmite:1.3.0--pyhdfd78af_0

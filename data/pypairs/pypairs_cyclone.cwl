@@ -36,6 +36,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -44,7 +50,9 @@ outputs:
     doc: Output file to save the inferred cell cycle phases (e.g., AnnData, 
       Loom, or CSV format).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypairs:3.2.3--py_0

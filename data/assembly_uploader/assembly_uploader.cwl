@@ -49,6 +49,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -56,7 +62,9 @@ outputs:
       - Directory
     doc: Local directory to store uploaded file metadata.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/assemblycomparator2:2.7.1--hdfd78af_2

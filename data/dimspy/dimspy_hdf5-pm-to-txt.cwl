@@ -53,12 +53,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --representation-samples
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Directory (peaklists) or text file (peak matrix) to write to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dimspy:2.0.0--pyhdfd78af_1

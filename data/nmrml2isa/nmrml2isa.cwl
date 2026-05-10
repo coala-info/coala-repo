@@ -65,12 +65,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -W
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type: Directory
     doc: out folder (a new directory will be created here)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nmrml2isa:0.3.3--pyhdfd78af_0

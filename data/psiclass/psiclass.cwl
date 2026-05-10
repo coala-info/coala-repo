@@ -111,6 +111,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tssTesQuantile
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -118,7 +124,9 @@ outputs:
       - File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/psiclass:1.0.3--h5ca1c30_6

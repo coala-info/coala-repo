@@ -22,6 +22,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 104
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -29,7 +35,9 @@ outputs:
       - File
     doc: Output acc2tax file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtdb_to_taxdump:0.1.9--pyhcf36b3e_0

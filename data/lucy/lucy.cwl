@@ -140,6 +140,12 @@ inputs:
     doc: cpu_threads
     inputBinding:
       position: 104
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -147,7 +153,9 @@ outputs:
       - File
     doc: sequence_filename quality_filename
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/lucy:v1.20-1-deb_cv1

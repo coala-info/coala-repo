@@ -152,12 +152,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: file to write identified consensi to (FASTA format)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repeatscout:1.0.7--h7b50bb2_1

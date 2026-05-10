@@ -76,6 +76,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -83,7 +89,9 @@ outputs:
       - File
     doc: output file for counts + strand state (gz)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mosaicatcher:0.3.1--h66ab1b6_2

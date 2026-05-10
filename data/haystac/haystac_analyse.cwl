@@ -125,12 +125,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unlock
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Path to the analysis output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haystac:0.4.12--pyhcf36b3e_0

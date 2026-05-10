@@ -592,6 +592,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weighted-trees
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: output_tree_filepath_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_filepath_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tree-filepath
 outputs:
   - id: output_tree_filepath
     type:
@@ -599,14 +615,16 @@ outputs:
       - File
     doc: Path to output file (if not specified, will print to standard output).
     outputBinding:
-      glob: $(inputs.output_tree_filepath)
+      glob: $(inputs.output_tree_filepath_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Path to output file (if not specified, will print to standard output).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sumtrees:v4.4.0-1-deb_cv1

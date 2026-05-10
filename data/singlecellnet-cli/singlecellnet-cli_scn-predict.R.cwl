@@ -33,12 +33,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --return-raw-output
+  - id: prediction_output_path
+    type: string
+    doc: Output or path parameter `prediction_output_path`
+    inputBinding:
+      position: 102
+      prefix: --prediction-output
 outputs:
   - id: prediction_output
     type: File
     doc: Output path to the predictions obtained from the classifier.
     outputBinding:
-      glob: $(inputs.prediction_output)
+      glob: $(inputs.prediction_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlecellnet-cli:0.0.1--hdfd78af_0

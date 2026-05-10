@@ -524,6 +524,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: -WINDOW
+  - id: newtree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `newtree_path`
+    inputBinding:
+      position: 102
+      prefix: --newtree
+  - id: newtree1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `newtree1_path`
+    inputBinding:
+      position: 103
+      prefix: --newtree1
+  - id: newtree2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `newtree2_path`
+    inputBinding:
+      position: 104
+      prefix: --newtree2
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 105
+      prefix: --outfile
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 106
+      prefix: --stats
 outputs:
   - id: outfile
     type:
@@ -531,35 +571,37 @@ outputs:
       - File
     doc: sequence alignment file name
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: stats
     type:
       - 'null'
       - File
     doc: Log some alignents statistics to file
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
   - id: newtree
     type:
       - 'null'
       - File
     doc: file for new guide tree
     outputBinding:
-      glob: $(inputs.newtree)
+      glob: $(inputs.newtree_path)
   - id: newtree1
     type:
       - 'null'
       - File
     doc: file for new guide tree for profile1
     outputBinding:
-      glob: $(inputs.newtree1)
+      glob: $(inputs.newtree1_path)
   - id: newtree2
     type:
       - 'null'
       - File
     doc: file for new guide tree for profile2
     outputBinding:
-      glob: $(inputs.newtree2)
+      glob: $(inputs.newtree2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clustalw:2.1--h9948957_12

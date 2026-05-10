@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: boquila
 label: boquila
 doc: "Generate NGS reads with same nucleotide distribution as input file. Generated
-  reads will be written to stdout. By default input and output format is FASTQ.\n\n
-  Tool homepage: https://github.com/CompGenomeLab/boquila"
+  reads will be written to stdout. By default input and output format is FASTQ.\n\n\
+  \ Tool homepage: https://github.com/CompGenomeLab/boquila"
 inputs:
   - id: src
     type: File
@@ -47,9 +47,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Quality score to be applied to to each position for all reads. 'setQual'
-      flag should be present in order it to work. Has no effect if input reads are
-      not in FASTQ format.
+    doc: Quality score to be applied to to each position for all reads. 
+      'setQual' flag should be present in order it to work. Has no effect if 
+      input reads are not in FASTQ format.
     inputBinding:
       position: 102
       prefix: --qual
@@ -65,8 +65,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: RON formatted file containing genomic regions that generated reads will be
-      selected from
+    doc: RON formatted file containing genomic regions that generated reads will
+      be selected from
     inputBinding:
       position: 102
       prefix: --regions
@@ -74,8 +74,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Random number seed. If not provided system's default source of entropy will
-      be used instead.
+    doc: Random number seed. If not provided system's default source of entropy 
+      will be used instead.
     inputBinding:
       position: 102
       prefix: --seed
@@ -83,9 +83,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sensitivity of selected reads. If some positions are predominated by specific
-      nucleotides, increasing this value can make simulated reads more similar to
-      input reads. However runtime will also increase linearly.
+    doc: Sensitivity of selected reads. If some positions are predominated by 
+      specific nucleotides, increasing this value can make simulated reads more 
+      similar to input reads. However runtime will also increase linearly.
     inputBinding:
       position: 102
       prefix: --sens
@@ -97,6 +97,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --setQual
+  - id: bed_path
+    type: string
+    doc: Output or path parameter `bed_path`
+    inputBinding:
+      position: 103
+      prefix: --bed
 outputs:
   - id: bed
     type:
@@ -104,7 +110,9 @@ outputs:
       - File
     doc: File name in which the simulated reads will be saved in BED format
     outputBinding:
-      glob: $(inputs.bed)
+      glob: $(inputs.bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/boquila:0.6.1--hdfd78af_0

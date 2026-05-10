@@ -82,6 +82,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --size
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -89,7 +95,9 @@ outputs:
       - File
     doc: ChIP-seq output filename prefix
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chip-r:1.2.0--pyh3252c3a_0

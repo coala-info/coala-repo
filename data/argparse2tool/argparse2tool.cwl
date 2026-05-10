@@ -43,6 +43,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tool-name
+  - id: output_cwl_path
+    type: string
+    doc: Output or path parameter `output_cwl_path`
+    inputBinding:
+      position: 103
+      prefix: --output-cwl
 outputs:
   - id: output_cwl
     type:
@@ -50,7 +56,9 @@ outputs:
       - File
     doc: Path to the output CWL CommandLineTool file.
     outputBinding:
-      glob: $(inputs.output_cwl)
+      glob: $(inputs.output_cwl_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/argparse2tool:0.5.2--pyhdfd78af_0

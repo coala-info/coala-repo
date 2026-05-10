@@ -70,12 +70,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s2
+  - id: pdf_report_file_path
+    type: string
+    doc: Output PDF file with scatterplots for all
+    inputBinding:
+      position: 102
+      prefix: -r
 outputs:
   - id: pdf_report_file
     type: File
     doc: Output PDF file with scatterplots for all contamination events
     outputBinding:
-      glob: $(inputs.pdf_report_file)
+      glob: $(inputs.pdf_report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crocodeel:1.1.0--pyhdfd78af_0

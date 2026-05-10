@@ -4,8 +4,8 @@ baseCommand:
   - scssim
   - genreads
 label: scssim_genreads
-doc: "Generate reads from a sequence file using MALBAC and read simulation models\n
-  \nTool homepage: https://github.com/qasimyu/scssim"
+doc: "Generate reads from a sequence file using MALBAC and read simulation models\n\
+  \ \nTool homepage: https://github.com/qasimyu/scssim"
 inputs:
   - id: coverage
     type:
@@ -69,6 +69,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -76,7 +82,9 @@ outputs:
       - File
     doc: the prefix of output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scssim:1.0--h9948957_5

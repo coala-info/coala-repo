@@ -53,12 +53,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Name for the output database.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqforge:2.0.0--pyh7e72e81_0

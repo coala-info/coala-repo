@@ -120,6 +120,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tm_range
+  - id: bed_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_file_path`
+    inputBinding:
+      position: 102
+      prefix: --bed-file
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -127,14 +143,16 @@ outputs:
       - File
     doc: output filename for primer pair data
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: bed_file
     type:
       - 'null'
       - File
     doc: output filename for primer data in BED file format
     outputBinding:
-      glob: $(inputs.bed_file)
+      glob: $(inputs.bed_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/primerforge:1.5.3--pyhdfd78af_0

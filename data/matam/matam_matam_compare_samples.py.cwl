@@ -14,17 +14,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --samples_file
+  - id: ouput_comparaison_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ouput_comparaison_table_path`
+    inputBinding:
+      position: 102
+      prefix: --ouput-comparaison-table
+  - id: ouput_contingency_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ouput_contingency_table_path`
+    inputBinding:
+      position: 103
+      prefix: --ouput-contingency-table
 outputs:
   - id: ouput_contingency_table
     type: File
     doc: Output a table with the abundance for each sequence
     outputBinding:
-      glob: $(inputs.ouput_contingency_table)
+      glob: $(inputs.ouput_contingency_table_path)
   - id: ouput_comparaison_table
     type: File
     doc: Output a comparaison table (taxonomy vs samples)
     outputBinding:
-      glob: $(inputs.ouput_comparaison_table)
+      glob: $(inputs.ouput_comparaison_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/matam:1.6.2--haf24da9_0

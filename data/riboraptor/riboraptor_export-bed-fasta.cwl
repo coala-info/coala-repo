@@ -46,6 +46,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --region_bed
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -53,7 +59,9 @@ outputs:
       - File
     doc: Path to write output
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboraptor:0.2.2--py36_0

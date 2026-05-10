@@ -162,6 +162,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wig
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --index
 outputs:
   - id: output_file
     type:
@@ -170,7 +175,9 @@ outputs:
     doc: Path to output directory (or path to filename if only a single fasta 
       files has been indexed)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genmap:1.3.0--h9948957_4

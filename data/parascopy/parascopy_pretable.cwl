@@ -49,8 +49,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If true, partial self-alignments will be kept (for example keep an alignment
-      with a 300bp shift). Full self-alignments are always discarded.
+    doc: If true, partial self-alignments will be kept (for example keep an 
+      alignment with a 300bp shift). Full self-alignments are always discarded.
     inputBinding:
       position: 101
       prefix: --keep-self-alns
@@ -91,8 +91,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 1-based
-      inclusive. Commas are ignored.
+    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 
+      1-based inclusive. Commas are ignored.
     inputBinding:
       position: 101
       prefix: --regions
@@ -101,7 +101,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based semi-exclusive).
+    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based 
+      semi-exclusive).
     inputBinding:
       position: 101
       prefix: --regions-file
@@ -149,17 +150,26 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Puts temporary files in the following directory (does not remove temporary
-      files after finishing). Otherwise, creates a temporary directory.
+    doc: Puts temporary files in the following directory (does not remove 
+      temporary files after finishing). Otherwise, creates a temporary 
+      directory.
     inputBinding:
       position: 101
       prefix: --tmp-dir
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output bed[.gz] file.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

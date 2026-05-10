@@ -108,6 +108,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_filepaths_path
+    type: string
+    doc: Output or path parameter `output_filepaths_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filepaths
 outputs:
   - id: output_filepaths
     type: File
@@ -116,7 +122,9 @@ outputs:
       The order of the pairs is assumed to be the same as the input - e.g., R1 then
       R2.\n          \n          This option is required for paired input."
     outputBinding:
-      glob: $(inputs.output_filepaths)
+      glob: $(inputs.output_filepaths_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rasusa:3.0.0--h54198d6_0

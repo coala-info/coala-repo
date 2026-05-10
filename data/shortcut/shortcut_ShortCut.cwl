@@ -81,6 +81,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -trimkey
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
+  - id: ssout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ssout_path`
+    inputBinding:
+      position: 104
+      prefix: --ssout
 outputs:
   - id: out
     type:
@@ -88,14 +104,16 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: ssout
     type:
       - 'null'
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.ssout)
+      glob: $(inputs.ssout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shortcut:1.0--hdfd78af_0

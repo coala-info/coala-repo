@@ -587,6 +587,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: -V
+  - id: cleanup_log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cleanup_log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --cleanup-log-file
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 103
+      prefix: --logfile
+  - id: logxml_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logxml_path`
+    inputBinding:
+      position: 104
+      prefix: --logxml
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 105
+      prefix: --outdir
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-file
 outputs:
   - id: outdir
     type:
@@ -594,35 +634,37 @@ outputs:
       - Directory
     doc: Path to results
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Single Output File
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: cleanup_log_file
     type:
       - 'null'
       - File
     doc: Cleanup Log File
     outputBinding:
-      glob: $(inputs.cleanup_log_file)
+      glob: $(inputs.cleanup_log_file_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Error Log File
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
   - id: logxml
     type:
       - 'null'
       - File
     doc: XML Error Log File
     outputBinding:
-      glob: $(inputs.logxml)
+      glob: $(inputs.logxml_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/table2asn:1.28.1179--he45da00_1

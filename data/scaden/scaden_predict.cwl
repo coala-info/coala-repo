@@ -26,6 +26,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seed
+  - id: outname_path
+    type: string
+    doc: Output or path parameter `outname_path`
+    inputBinding:
+      position: 103
+      prefix: --outname
 outputs:
   - id: outname
     type:
@@ -33,7 +39,9 @@ outputs:
       - File
     doc: Name of predictions file.
     outputBinding:
-      glob: $(inputs.outname)
+      glob: $(inputs.outname_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scaden:1.1.2--pyhdfd78af_0

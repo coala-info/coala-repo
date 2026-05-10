@@ -343,6 +343,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sampleFile
+  - id: stats_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_path`
+    inputBinding:
+      position: 102
+      prefix: --stats-file
+  - id: stats_file_bgen_snps_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_bgen_snps_path`
+    inputBinding:
+      position: 103
+      prefix: --stats-file-bgen-snps
+  - id: stats_file_dosage2_snps_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_dosage2_snps_path`
+    inputBinding:
+      position: 104
+      prefix: --stats-file-dosage2-snps
+  - id: stats_file_dosage_snps_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_dosage_snps_path`
+    inputBinding:
+      position: 105
+      prefix: --stats-file-dosage-snps
+  - id: stats_file_impute2_snps_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_impute2_snps_path`
+    inputBinding:
+      position: 106
+      prefix: --stats-file-impute2-snps
 outputs:
   - id: stats_file
     type:
@@ -350,35 +390,37 @@ outputs:
       - File
     doc: output file for assoc stats at PLINK genotypes
     outputBinding:
-      glob: $(inputs.stats_file)
+      glob: $(inputs.stats_file_path)
   - id: stats_file_dosage_snps
     type:
       - 'null'
       - File
     doc: output file for assoc stats at dosage format genotypes
     outputBinding:
-      glob: $(inputs.stats_file_dosage_snps)
+      glob: $(inputs.stats_file_dosage_snps_path)
   - id: stats_file_bgen_snps
     type:
       - 'null'
       - File
     doc: output file for assoc stats at BGEN-format genotypes
     outputBinding:
-      glob: $(inputs.stats_file_bgen_snps)
+      glob: $(inputs.stats_file_bgen_snps_path)
   - id: stats_file_impute2_snps
     type:
       - 'null'
       - File
     doc: output file for assoc stats at IMPUTE2 format genotypes
     outputBinding:
-      glob: $(inputs.stats_file_impute2_snps)
+      glob: $(inputs.stats_file_impute2_snps_path)
   - id: stats_file_dosage2_snps
     type:
       - 'null'
       - File
     doc: output file for assoc stats at 2-dosage format genotypes
     outputBinding:
-      glob: $(inputs.stats_file_dosage2_snps)
+      glob: $(inputs.stats_file_dosage2_snps_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bolt-lmm:2.5--h15e0e67_0

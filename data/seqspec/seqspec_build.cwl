@@ -59,6 +59,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -66,7 +72,9 @@ outputs:
       - File
     doc: Output YAML (default stdout)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqspec:0.4.0--pyhdfd78af_0

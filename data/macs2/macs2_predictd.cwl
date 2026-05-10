@@ -72,9 +72,7 @@ inputs:
     doc: Select the regions within MFOLD range of high-confidence enrichment 
       ratio against background to build model. Fold-enrichment in regions must 
       be lower than upper limit, and higher than the lower limit. Use as "-m 10 
-      30".
-      - 5
-      - 50
+      30". - 5 - 50
     inputBinding:
       position: 101
       prefix: --mfold
@@ -86,6 +84,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsize
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: If specified all output files will be written to that
+    inputBinding:
+      position: 102
+      prefix: --outdir
+  - id: rfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `rfile_path`
+    inputBinding:
+      position: 103
+      prefix: --rfile
 outputs:
   - id: outdir
     type:
@@ -94,7 +108,7 @@ outputs:
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: rfile
     type:
       - 'null'
@@ -102,7 +116,9 @@ outputs:
     doc: PREFIX of filename of R script for drawing X-correlation figure. 
       DEFAULT:'predictd' and R file will be predicted_model.R
     outputBinding:
-      glob: $(inputs.rfile)
+      glob: $(inputs.rfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs2:2.2.9.1--py310h1fe012e_5

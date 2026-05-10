@@ -627,6 +627,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --xattrs
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 104
+      prefix: --log-file
+  - id: write_batch_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_batch_path`
+    inputBinding:
+      position: 105
+      prefix: --write-batch
 outputs:
   - id: log_file
     type:
@@ -634,11 +650,13 @@ outputs:
       - File
     doc: log what we're doing to the specified FILE
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
   - id: write_batch
     type:
       - 'null'
       - File
     doc: write a batched update to FILE
     outputBinding:
-      glob: $(inputs.write_batch)
+      glob: $(inputs.write_batch_path)
+requirements:
+  - class: InlineJavascriptRequirement

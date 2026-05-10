@@ -84,6 +84,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t=
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: stats_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_path`
+    inputBinding:
+      position: 103
+      prefix: --stats-file
 outputs:
   - id: output_file
     type:
@@ -91,7 +107,7 @@ outputs:
       - File
     doc: Full path to the output file. If not provided, outputs to standard out.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: stats_file
     type:
       - 'null'
@@ -99,7 +115,9 @@ outputs:
     doc: Full path to a file where program execution details/statistics are to 
       be listed.
     outputBinding:
-      glob: $(inputs.stats_file)
+      glob: $(inputs.stats_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aacon:1.1--hdfd78af_0

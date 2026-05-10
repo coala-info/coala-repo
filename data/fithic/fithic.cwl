@@ -121,12 +121,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --visual
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: 'REQUIRED: where the output files will be written'
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fithic:2.0.8--pyhdfd78af_1

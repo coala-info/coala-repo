@@ -218,6 +218,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zip
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -226,7 +232,9 @@ outputs:
     doc: Use this flag to override the standard output file names. All 
       alignments will be written to one output file.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycrac:1.5.2--pyh7cba7a3_0

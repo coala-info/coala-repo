@@ -71,6 +71,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --relative
+  - id: outfile_name_path
+    type: string
+    doc: Output or path parameter `outfile_name_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile-name
 outputs:
   - id: outfile_name
     type:
@@ -78,7 +84,9 @@ outputs:
       - File
     doc: Output file for the results
     outputBinding:
-      glob: $(inputs.outfile_name)
+      glob: $(inputs.outfile_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0

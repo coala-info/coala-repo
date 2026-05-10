@@ -75,13 +75,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_graph_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_graph_path`
+    inputBinding:
+      position: 102
+      prefix: --output-graph
+  - id: write_node_depth_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_node_depth_path`
+    inputBinding:
+      position: 103
+      prefix: --write-node-depth
 outputs:
   - id: output_graph
     type: File
     doc: Write the succinct variation graph with the generated paths in ODGI 
       format to *FILE*. A file ending with *.og* is recommended.
     outputBinding:
-      glob: $(inputs.output_graph)
+      glob: $(inputs.output_graph_path)
   - id: write_node_depth
     type:
       - 'null'
@@ -90,7 +106,9 @@ outputs:
       will contain tab-separated values (header included), and have 3 columns: component_id,
       node_ide, coverage.'
     outputBinding:
-      glob: $(inputs.write_node_depth)
+      glob: $(inputs.write_node_depth_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

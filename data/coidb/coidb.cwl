@@ -45,6 +45,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmpdir
+  - id: output_log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_log_path`
+    inputBinding:
+      position: 102
+      prefix: --output-log
+  - id: output_zipfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_zipfile_path`
+    inputBinding:
+      position: 103
+      prefix: --output-zipfile
 outputs:
   - id: output_zipfile
     type:
@@ -52,14 +68,16 @@ outputs:
       - File
     doc: Output zip file name.
     outputBinding:
-      glob: $(inputs.output_zipfile)
+      glob: $(inputs.output_zipfile_path)
   - id: output_log
     type:
       - 'null'
       - File
     doc: Output log file name.
     outputBinding:
-      glob: $(inputs.output_log)
+      glob: $(inputs.output_log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coidb:0.4.8--pyhdfd78af_0

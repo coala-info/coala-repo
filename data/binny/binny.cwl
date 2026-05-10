@@ -46,9 +46,8 @@ inputs:
       - 'null'
       - string
     doc: Submission command of a cluster or batch system to use (Atm only slurm 
-      support.
-      {cluster.nodes} {cluster.qos} {cluster.threads}{threads} {cluster.partition}
-      {cluster.stdout}'
+      support. {cluster.nodes} {cluster.qos} {cluster.threads}{threads} 
+      {cluster.partition} {cluster.stdout}'
     inputBinding:
       position: 101
       prefix: --cluster_submission_command
@@ -303,7 +302,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to the scheduler preset file for cluster submission.
+    doc: Path to the scheduler preset file for cluster submission. 
       packages/binny/config/slurm.config.yaml
     inputBinding:
       position: 101
@@ -364,6 +363,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write_contig_data
+  - id: outputdir_path
+    type: string
+    doc: Output or path parameter `outputdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outputdir
 outputs:
   - id: outputdir
     type:
@@ -371,7 +376,9 @@ outputs:
       - Directory
     doc: Path to desired output dir binny should create and store results in.
     outputBinding:
-      glob: $(inputs.outputdir)
+      glob: $(inputs.outputdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/binny:2.2.18--pyhdfd78af_0

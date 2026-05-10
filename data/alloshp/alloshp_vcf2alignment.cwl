@@ -59,19 +59,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -p
+  - id: output_msa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_msa_path`
+    inputBinding:
+      position: 102
+      prefix: --output-msa
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 103
+      prefix: --report-file
 outputs:
   - id: report_file
     type: File
     doc: output report file name, 1-based coordinates
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
   - id: output_msa
     type:
       - 'null'
       - File
     doc: output MSA file name
     outputBinding:
-      glob: $(inputs.output_msa)
+      glob: $(inputs.output_msa_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alloshp:2025.09.12--h7b50bb2_0

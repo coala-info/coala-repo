@@ -32,6 +32,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -nf
+  - id: output_pretext_path
+    type: string
+    doc: Output or path parameter `output_pretext_path`
+    inputBinding:
+      position: 102
+      prefix: --output-pretext
 outputs:
   - id: output_pretext
     type:
@@ -39,7 +45,9 @@ outputs:
       - File
     doc: output.pretext
     outputBinding:
-      glob: $(inputs.output_pretext)
+      glob: $(inputs.output_pretext_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pretextgraph:0.0.9--h9948957_1

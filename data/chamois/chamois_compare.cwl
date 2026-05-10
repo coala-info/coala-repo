@@ -42,6 +42,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --render
+  - id: distance_matrix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `distance_matrix_path`
+    inputBinding:
+      position: 102
+      prefix: --distance-matrix
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: The path where to write the sequence annotations in
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -49,14 +65,16 @@ outputs:
       - File
     doc: The path where to write the catalog search results in TSV format.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: distance_matrix
     type:
       - 'null'
       - File
     doc: The path where to write the generated pairwise distance matrix.
     outputBinding:
-      glob: $(inputs.distance_matrix)
+      glob: $(inputs.distance_matrix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0

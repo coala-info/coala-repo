@@ -26,12 +26,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --return_feature
+  - id: output_matrix_path
+    type: string
+    doc: Output or path parameter `output_matrix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-matrix
 outputs:
   - id: output_matrix
     type: File
     doc: Path to save cleaned TPM matrix
     outputBinding:
-      glob: $(inputs.output_matrix)
+      glob: $(inputs.output_matrix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0

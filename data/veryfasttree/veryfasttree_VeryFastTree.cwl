@@ -237,6 +237,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -ext
+  - id: output_tree_path
+    type: string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type:
@@ -244,7 +250,9 @@ outputs:
       - File
     doc: output tree file
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/veryfasttree:4.0.5--h9948957_0

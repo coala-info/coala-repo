@@ -178,12 +178,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --trim_reads
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quasitools:0.7.0--py_0

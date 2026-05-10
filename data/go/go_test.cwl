@@ -231,6 +231,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: -vet
+  - id: block_profile_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `block_profile_file_path`
+    inputBinding:
+      position: 103
+      prefix: --block-profile-file
+  - id: coverage_profile_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coverage_profile_file_path`
+    inputBinding:
+      position: 104
+      prefix: --coverage-profile-file
+  - id: cpu_profile_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cpu_profile_file_path`
+    inputBinding:
+      position: 105
+      prefix: --cpu-profile-file
+  - id: memory_profile_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `memory_profile_file_path`
+    inputBinding:
+      position: 106
+      prefix: --memory-profile-file
+  - id: mutex_profile_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mutex_profile_file_path`
+    inputBinding:
+      position: 107
+      prefix: --mutex-profile-file
+  - id: trace_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `trace_file_path`
+    inputBinding:
+      position: 108
+      prefix: --trace-file
 outputs:
   - id: block_profile_file
     type:
@@ -239,28 +287,28 @@ outputs:
     doc: Write a goroutine blocking profile to the specified file when all tests
       are complete.
     outputBinding:
-      glob: $(inputs.block_profile_file)
+      glob: $(inputs.block_profile_file_path)
   - id: coverage_profile_file
     type:
       - 'null'
       - File
     doc: Write a coverage profile to the file after all tests have passed.
     outputBinding:
-      glob: $(inputs.coverage_profile_file)
+      glob: $(inputs.coverage_profile_file_path)
   - id: cpu_profile_file
     type:
       - 'null'
       - File
     doc: Write a CPU profile to the specified file before exiting.
     outputBinding:
-      glob: $(inputs.cpu_profile_file)
+      glob: $(inputs.cpu_profile_file_path)
   - id: memory_profile_file
     type:
       - 'null'
       - File
     doc: Write an allocation profile to the file after all tests have passed.
     outputBinding:
-      glob: $(inputs.memory_profile_file)
+      glob: $(inputs.memory_profile_file_path)
   - id: mutex_profile_file
     type:
       - 'null'
@@ -268,14 +316,16 @@ outputs:
     doc: Write a mutex contention profile to the specified file when all tests 
       are complete.
     outputBinding:
-      glob: $(inputs.mutex_profile_file)
+      glob: $(inputs.mutex_profile_file_path)
   - id: trace_file
     type:
       - 'null'
       - File
     doc: Write an execution trace to the specified file before exiting.
     outputBinding:
-      glob: $(inputs.trace_file)
+      glob: $(inputs.trace_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/go:1.11.3

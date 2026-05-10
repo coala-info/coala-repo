@@ -403,6 +403,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-size
+  - id: out_path_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --out-path
 outputs:
   - id: out_path
     type:
@@ -410,7 +415,9 @@ outputs:
       - Directory
     doc: Path to output directory.
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnasim:1.3.5--pyhdfd78af_0

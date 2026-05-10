@@ -51,6 +51,50 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_aa_path
+    type:
+      - 'null'
+      - string
+    doc: Path to write aa translations with <=MAXSTOPS stop
+    inputBinding:
+      position: 102
+      prefix: --out_aa
+  - id: out_aln_aa_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --out_aln_aa
+  - id: out_aln_nt_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --out_aln_nt
+  - id: out_aln_nt_aug_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --out_aln_nt_aug
+  - id: out_bad_path
+    type:
+      - 'null'
+      - string
+    doc: Path to write nt sequences with too many stop codons
+    inputBinding:
+      position: 106
+      prefix: --out_bad
+  - id: out_bad_fs_report_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --out_bad_fs_report
 outputs:
   - id: out_aa
     type:
@@ -58,7 +102,7 @@ outputs:
       - File
     doc: Path to write aa translations with <=MAXSTOPS stop codons
     outputBinding:
-      glob: $(inputs.out_aa)
+      glob: $(inputs.out_aa_path)
   - id: out_bad
     type:
       - 'null'
@@ -66,35 +110,37 @@ outputs:
     doc: Path to write nt sequences with too many stop codons (putative 
       pseudogenes)
     outputBinding:
-      glob: $(inputs.out_bad)
+      glob: $(inputs.out_bad_path)
   - id: out_aln_aa
     type:
       - 'null'
       - File
     doc: Path to write initial aa alignment
     outputBinding:
-      glob: $(inputs.out_aln_aa)
+      glob: $(inputs.out_aln_aa_path)
   - id: out_aln_nt
     type:
       - 'null'
       - File
     doc: Path to write initial codon alignment
     outputBinding:
-      glob: $(inputs.out_aln_nt)
+      glob: $(inputs.out_aln_nt_path)
   - id: out_aln_nt_aug
     type:
       - 'null'
       - File
     doc: Path to write codon alignment augmented with putative pseudogenes
     outputBinding:
-      glob: $(inputs.out_aln_nt_aug)
+      glob: $(inputs.out_aln_nt_aug_path)
   - id: out_bad_fs_report
     type:
       - 'null'
       - File
     doc: Path to write report on likely frameshifts in putative pseudogenes
     outputBinding:
-      glob: $(inputs.out_bad_fs_report)
+      glob: $(inputs.out_bad_fs_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pytransaln:0.2.2--pyh7e72e81_0

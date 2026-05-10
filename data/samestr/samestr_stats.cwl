@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --nprocs
+  - id: output_dir_path
+    type: Directory
+    doc: 'Path to output directory. (default: out_db/)'
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -49,7 +55,9 @@ outputs:
       - Directory
     doc: Path to output directory.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samestr:1.2025.111--pyhdfd78af_0

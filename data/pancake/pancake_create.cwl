@@ -11,7 +11,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: pairwise alignments (BLAST or nucmer output) to include in PanCake Object
+    doc: pairwise alignments (BLAST or nucmer output) to include in PanCake 
+      Object
     inputBinding:
       position: 101
       prefix: --ali
@@ -19,9 +20,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: if downloading your sequences via gi ids, please specify your email address;
-      in case of excessive usage, NCBI will attempt to contact a user at the e-mail
-      address provided prior to blocking access to the E-utilities
+    doc: if downloading your sequences via gi ids, please specify your email 
+      address; in case of excessive usage, NCBI will attempt to contact a user 
+      at the e-mail address provided prior to blocking access to the E-utilities
     inputBinding:
       position: 101
       prefix: --email
@@ -46,8 +47,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if set, skip pairwise alignments between regions on identical chromosomes
-      as input
+    doc: if set, skip pairwise alignments between regions on identical 
+      chromosomes as input
     inputBinding:
       position: 101
       prefix: --no_self_alignments
@@ -60,6 +61,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sequences
+  - id: pan_file_path
+    type: string
+    doc: Output or path parameter `pan_file_path`
+    inputBinding:
+      position: 102
+      prefix: --pan-file
 outputs:
   - id: pan_file
     type:
@@ -67,7 +74,9 @@ outputs:
       - File
     doc: File name of new PanCake Object
     outputBinding:
-      glob: $(inputs.pan_file)
+      glob: $(inputs.pan_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pancake:1.1.2--py35_0

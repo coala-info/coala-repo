@@ -99,12 +99,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
+  - id: output_bam_file_path
+    type: string
+    doc: Output or path parameter `output_bam_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bam-file
 outputs:
   - id: output_bam_file
     type: File
     doc: output-bam-file
     outputBinding:
-      glob: $(inputs.output_bam_file)
+      glob: $(inputs.output_bam_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coral:1.0.0--hf5e1fbb_1

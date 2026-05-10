@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: fastani
 label: fastani
 doc: "Fast Whole-Genome Similarity (ANI) estimation. FastANI is a fast alignment-free
-  implementation for computing whole-genome Average Nucleotide Identity (ANI).\n\n
-  Tool homepage: https://github.com/ParBLiSS/FastANI"
+  implementation for computing whole-genome Average Nucleotide Identity (ANI).\n\n\
+  \ Tool homepage: https://github.com/ParBLiSS/FastANI"
 inputs:
   - id: frag_len
     type:
@@ -74,11 +74,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output mappings for visualization, can be used for only one-to-one genome
-      comparison
+    doc: Output mappings for visualization, can be used for only one-to-one 
+      genome comparison
     inputBinding:
       position: 101
       prefix: --visualize
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -86,7 +92,9 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastani:1.34--h4dfc31f_4

@@ -33,8 +33,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Filename prefix of files computed by PanGenie-index (i.e. option -o used
-      with PanGenie-index).
+    doc: Filename prefix of files computed by PanGenie-index (i.e. option -o 
+      used with PanGenie-index).
     inputBinding:
       position: 101
       prefix: -f
@@ -137,8 +137,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of threads to use for core algorithm. Largest number of threads possible
-      is the number of chromosomes given in the VCF
+    doc: number of threads to use for core algorithm. Largest number of threads 
+      possible is the number of chromosomes given in the VCF
     inputBinding:
       position: 101
       prefix: -t
@@ -150,6 +150,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
+  - id: write_sampled_panel_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_sampled_panel_path`
+    inputBinding:
+      position: 103
+      prefix: --write-sampled-panel
 outputs:
   - id: write_sampled_panel
     type:
@@ -157,13 +173,15 @@ outputs:
       - File
     doc: write sampled panel to additional output VCF.
     outputBinding:
-      glob: $(inputs.write_sampled_panel)
+      glob: $(inputs.write_sampled_panel_path)
   - id: output_prefix
     type: File
     doc: 'prefix of the output files. NOTE: the given path must not include non-existent
       folders'
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0

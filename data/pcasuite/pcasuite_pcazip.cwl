@@ -23,8 +23,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: pdb format mask file - only atoms in this file will be included in the compression.
-      Atom numbers (2nd field) must be correct!
+    doc: pdb format mask file - only atoms in this file will be included in the 
+      compression. Atom numbers (2nd field) must be correct!
     inputBinding:
       position: 101
       prefix: --mask
@@ -54,7 +54,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Include enough eigenvectors to capture qual% (1<=qual<=99) of the total variance
+    doc: Include enough eigenvectors to capture qual% (1<=qual<=99) of the total
+      variance
     inputBinding:
       position: 101
       prefix: -q
@@ -74,12 +75,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: compressed output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pcasuite:1.0.0--h7baada4_6

@@ -107,6 +107,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trace
+  - id: sample_output_directory_path
+    type: Directory
+    doc: Output or path parameter `sample_output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --sample-output-directory
 outputs:
   - id: sample_output_directory
     type:
@@ -114,7 +120,9 @@ outputs:
       - Directory
     doc: Output directory for sample sketches
     outputBinding:
-      glob: $(inputs.sample_output_directory)
+      glob: $(inputs.sample_output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fairy:0.5.8--hc1c3326_0

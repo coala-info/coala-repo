@@ -65,6 +65,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_summary_path
+    type: string
+    doc: Output or path parameter `output_summary_path`
+    inputBinding:
+      position: 104
+      prefix: --output-summary
 outputs:
   - id: output_summary
     type:
@@ -72,7 +78,9 @@ outputs:
       - File
     doc: Output for summary file.
     outputBinding:
-      glob: $(inputs.output_summary)
+      glob: $(inputs.output_summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntsm:1.2.1--h077b44d_1

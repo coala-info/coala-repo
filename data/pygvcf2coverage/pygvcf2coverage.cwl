@@ -85,6 +85,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_coverage_path
+    type: string
+    doc: Output or path parameter `output_coverage_path`
+    inputBinding:
+      position: 103
+      prefix: --output-coverage
 outputs:
   - id: output_coverage
     type:
@@ -92,7 +98,9 @@ outputs:
       - File
     doc: Output coverage BEDGraph file. Defaults to stdout.
     outputBinding:
-      glob: $(inputs.output_coverage)
+      glob: $(inputs.output_coverage_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pygvcf2coverage:0.2--py_0

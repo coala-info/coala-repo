@@ -51,9 +51,7 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Distance range.
-      - 1
-      - 1000000000
+    doc: Distance range. - 1 - 1000000000
     inputBinding:
       position: 102
   - id: n_dist_bins_decade
@@ -92,6 +90,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --view
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -99,7 +103,9 @@ outputs:
       - File
     doc: output .tsv file with summary.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

@@ -37,7 +37,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The size of the region for motif finding or counting, default is 'given'
+    doc: The size of the region for motif finding or counting, default is 
+      'given'
     inputBinding:
       position: 103
       prefix: -size
@@ -50,6 +51,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: -d
+  - id: annotation_stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `annotation_stats_path`
+    inputBinding:
+      position: 104
+      prefix: --annotation-stats
+  - id: go_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `go_directory_path`
+    inputBinding:
+      position: 105
+      prefix: --go-directory
 outputs:
   - id: annotation_stats
     type:
@@ -57,14 +74,16 @@ outputs:
       - File
     doc: File to write annotation statistics
     outputBinding:
-      glob: $(inputs.annotation_stats)
+      glob: $(inputs.annotation_stats_path)
   - id: go_directory
     type:
       - 'null'
       - Directory
     doc: Directory to write Gene Ontology analysis results
     outputBinding:
-      glob: $(inputs.go_directory)
+      glob: $(inputs.go_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/homer:5.1--pl5262h9948957_0

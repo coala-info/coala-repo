@@ -8,8 +8,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Break tie when no consensus amino acid at position, pick random amino acid
-      (1 = yes, default = no)
+    doc: Break tie when no consensus amino acid at position, pick random amino 
+      acid (1 = yes, default = no)
     inputBinding:
       position: 101
       prefix: -q
@@ -17,8 +17,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Ignore read name/header *will use less RAM if set to -h 1* (1 = yes, default
-      = no)
+    doc: Ignore read name/header *will use less RAM if set to -h 1* (1 = yes, 
+      default = no)
     inputBinding:
       position: 101
       prefix: -h
@@ -34,8 +34,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Independent (de novo) assembly i.e Targets used to recruit reads for de novo
-      assembly, not guide/seed reference-based assemblies (1 = yes, 0 = no)
+    doc: Independent (de novo) assembly i.e Targets used to recruit reads for de
+      novo assembly, not guide/seed reference-based assemblies (1 = yes, 0 = no)
     inputBinding:
       position: 101
       prefix: -i
@@ -49,8 +49,9 @@ inputs:
       prefix: -z
   - id: min_depth
     type: int
-    doc: Minimum depth of coverage allowed for contigs (e.g. -w 1 = process all reads).
-      The assembly will stop when 50+ contigs with coverage < -w have been seen.
+    doc: Minimum depth of coverage allowed for contigs (e.g. -w 1 = process all 
+      reads). The assembly will stop when 50+ contigs with coverage < -w have 
+      been seen.
     inputBinding:
       position: 101
       prefix: -w
@@ -58,8 +59,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of overlapping amino acids with the seed/contig during overhang
-      consensus build up
+    doc: Minimum number of overlapping amino acids with the seed/contig during 
+      overhang consensus build up
     inputBinding:
       position: 101
       prefix: -m
@@ -75,7 +76,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of peptide reads needed to call a amino acid during an extension
+    doc: Minimum number of peptide reads needed to call a amino acid during an 
+      extension
     inputBinding:
       position: 101
       prefix: -o
@@ -89,8 +91,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Apply read space restriction to seeds while -s option in use (1 = yes, default
-      = no)
+    doc: Apply read space restriction to seeds while -s option in use (1 = yes, 
+      default = no)
     inputBinding:
       position: 101
       prefix: -u
@@ -98,8 +100,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta file containing sequences to use as seeds exclusively (specify only
-      if different from read set)
+    doc: Fasta file containing sequences to use as seeds exclusively (specify 
+      only if different from read set)
     inputBinding:
       position: 101
       prefix: -s
@@ -115,8 +117,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Trim up to -t amino acid(s) on the contig end when all possibilities have
-      been exhausted for an extension
+    doc: Trim up to -t amino acid(s) on the contig end when all possibilities 
+      have been exhausted for an extension
     inputBinding:
       position: 101
       prefix: -t
@@ -136,6 +138,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -j
+  - id: output_basename_path
+    type: string
+    doc: Output or path parameter `output_basename_path`
+    inputBinding:
+      position: 102
+      prefix: --output-basename
 outputs:
   - id: output_basename
     type:
@@ -143,7 +151,9 @@ outputs:
       - File
     doc: Basename for your output files
     outputBinding:
-      glob: $(inputs.output_basename)
+      glob: $(inputs.output_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pass:0.3.1--hdfd78af_0

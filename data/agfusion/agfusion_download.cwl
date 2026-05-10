@@ -41,6 +41,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --species
+  - id: dir_path
+    type: string
+    doc: Output or path parameter `dir_path`
+    inputBinding:
+      position: 102
+      prefix: --dir
 outputs:
   - id: dir
     type:
@@ -49,7 +55,9 @@ outputs:
     doc: (Optional) Directory to the database will be downloaded to (defaults to
       current working directory).
     outputBinding:
-      glob: $(inputs.dir)
+      glob: $(inputs.dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agfusion:1.252--py_0

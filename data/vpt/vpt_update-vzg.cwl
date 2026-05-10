@@ -59,12 +59,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --temp-path
+  - id: output_vzg_path
+    type: string
+    doc: Output or path parameter `output_vzg_path`
+    inputBinding:
+      position: 102
+      prefix: --output-vzg
 outputs:
   - id: output_vzg
     type: File
     doc: Path where the updated vzg should be saved.
     outputBinding:
-      glob: $(inputs.output_vzg)
+      glob: $(inputs.output_vzg_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

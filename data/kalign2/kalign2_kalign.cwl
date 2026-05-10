@@ -134,6 +134,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -zcutoff
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: output_file
     type:
@@ -148,7 +156,9 @@ outputs:
       - File
     doc: The output file.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kalign2:2.04--h7b50bb2_8

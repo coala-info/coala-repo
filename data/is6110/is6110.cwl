@@ -97,12 +97,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Output file for IS counts.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/is6110:0.5.0--pyh7e72e81_0

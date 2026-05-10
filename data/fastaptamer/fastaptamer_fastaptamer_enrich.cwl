@@ -52,12 +52,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -z
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Plain text output file with tab separated values.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastaptamer:1.0.16--hdfd78af_0

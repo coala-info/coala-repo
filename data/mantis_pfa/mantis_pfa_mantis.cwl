@@ -137,19 +137,37 @@ inputs:
     inputBinding:
       position: 103
       prefix: -v
+  - id: build_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `build_output_path`
+    inputBinding:
+      position: 104
+      prefix: --build-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
 outputs:
   - id: build_output
     type: Directory
     doc: Output directory for the build command
     outputBinding:
-      glob: $(inputs.build_output)
+      glob: $(inputs.build_output_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output file for query results
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4

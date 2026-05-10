@@ -106,6 +106,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --weights
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -115,7 +121,9 @@ outputs:
       csv or loom. If loom file is specified the loom file while contain the original
       expression matrix and the calculated AUC values as extra column attributes.'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyscenic:0.12.1--pyhdfd78af_1

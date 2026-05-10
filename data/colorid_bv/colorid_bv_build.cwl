@@ -70,12 +70,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: bigsi_path
+    type: string
+    doc: Output or path parameter `bigsi_path`
+    inputBinding:
+      position: 102
+      prefix: --bigsi
 outputs:
   - id: bigsi
     type: File
     doc: Sets the bigsi output file
     outputBinding:
-      glob: $(inputs.bigsi)
+      glob: $(inputs.bigsi_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colorid_bv:0.1.0--h3ab6199_2

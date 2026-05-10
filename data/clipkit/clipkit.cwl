@@ -131,6 +131,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --validate_only
+  - id: output_file_name_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_name_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file-name
+  - id: report_json_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_json_path`
+    inputBinding:
+      position: 104
+      prefix: --report-json
 outputs:
   - id: output_file_name
     type:
@@ -138,14 +154,16 @@ outputs:
       - File
     doc: output file name
     outputBinding:
-      glob: $(inputs.output_file_name)
+      glob: $(inputs.output_file_name_path)
   - id: report_json
     type:
       - 'null'
       - File
     doc: write run summary as JSON
     outputBinding:
-      glob: $(inputs.report_json)
+      glob: $(inputs.report_json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clipkit:2.10.2--pyhdfd78af_0

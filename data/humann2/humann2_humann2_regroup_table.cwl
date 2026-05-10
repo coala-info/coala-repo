@@ -25,8 +25,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The built-in groups to use (e.g., uniprot50, uniprot90, infogo1000, eggnog,
-      ko, level2, pathway)
+    doc: The built-in groups to use (e.g., uniprot50, uniprot90, infogo1000, 
+      eggnog, ko, level2, pathway)
     inputBinding:
       position: 101
       prefix: --groups
@@ -52,12 +52,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reversed
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: The path to write the new regrouped table
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/humann2:2.8.1--py27_0

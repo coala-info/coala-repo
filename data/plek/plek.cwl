@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: PLEK.py
 label: plek
-doc: "Predictor of Long non-coding RNAs and messenger RNAs based on K-mer scheme\n
-  \nTool homepage: https://sourceforge.net/projects/plek"
+doc: "Predictor of Long non-coding RNAs and messenger RNAs based on K-mer scheme\n\
+  \ \nTool homepage: https://sourceforge.net/projects/plek"
 inputs:
   - id: fasta
     type: File
@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -thread
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output file to write the predictions
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plek:1.2--py310h8ea774a_10

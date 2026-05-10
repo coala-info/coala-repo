@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: /usr/local/bin/pfp++
 label: pfp_pfp++
-doc: "PFP++: A tool for parsing and processing genomic data using Prefix-Free Parsing.\n
-  \nTool homepage: https://github.com/marco-oliva/pfp"
+doc: "PFP++: A tool for parsing and processing genomic data using Prefix-Free Parsing.\n\
+  \ \nTool homepage: https://github.com/marco-oliva/pfp"
 inputs:
   - id: acgt_only
     type:
@@ -57,8 +57,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Each integer i in int32t input is interpreted as (i + int-shift). Range [0
-      - 200].
+    doc: Each integer i in int32t input is interpreted as (i + int-shift). Range
+      [0 - 200].
     inputBinding:
       position: 101
       prefix: --int-shift
@@ -184,6 +184,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-size
+  - id: out_prefix_path
+    type: string
+    doc: Output or path parameter `out_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --out-prefix
 outputs:
   - id: out_prefix
     type:
@@ -191,7 +197,9 @@ outputs:
       - File
     doc: Output prefix.
     outputBinding:
-      glob: $(inputs.out_prefix)
+      glob: $(inputs.out_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pfp:0.3.9--h20648a7_3

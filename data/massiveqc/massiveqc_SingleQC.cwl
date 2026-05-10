@@ -112,13 +112,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --THREADS
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Path to result output directory. If it doesn't exist, it will be 
       created automatically
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/massiveqc:0.1.2--pyh086e186_0

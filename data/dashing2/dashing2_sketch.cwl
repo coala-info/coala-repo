@@ -482,6 +482,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window-size
+  - id: cmpout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cmpout_path`
+    inputBinding:
+      position: 103
+      prefix: --cmpout
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 104
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -489,14 +505,16 @@ outputs:
       - File
     doc: Sketches are stacked into a single file and written to <arg>.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: cmpout
     type:
       - 'null'
       - File
     doc: Compute distances and emit them to <arg>.
     outputBinding:
-      glob: $(inputs.cmpout)
+      glob: $(inputs.cmpout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dashing2:2.1.20--he9e5f93_0

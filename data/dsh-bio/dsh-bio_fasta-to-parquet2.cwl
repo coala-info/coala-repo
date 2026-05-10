@@ -36,12 +36,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transaction-size
+  - id: output_parquet_file_path
+    type: string
+    doc: Output or path parameter `output_parquet_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-parquet-file
 outputs:
   - id: output_parquet_file
     type: File
     doc: output Parquet file
     outputBinding:
-      glob: $(inputs.output_parquet_file)
+      glob: $(inputs.output_parquet_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

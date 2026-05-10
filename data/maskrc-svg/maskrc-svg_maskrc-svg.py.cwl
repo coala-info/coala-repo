@@ -72,6 +72,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --symbol
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: output file for masked alignment (default="maskrc.aln")
+    inputBinding:
+      position: 103
+      prefix: --out
+  - id: svg_path
+    type:
+      - 'null'
+      - string
+    doc: draw SVG output of recombinant regions and save as specified file
+    inputBinding:
+      position: 104
+      prefix: --svg
 outputs:
   - id: out
     type:
@@ -79,14 +95,16 @@ outputs:
       - File
     doc: output file for masked alignment (default="maskrc.aln")
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: svg
     type:
       - 'null'
       - File
     doc: draw SVG output of recombinant regions and save as specified file
     outputBinding:
-      glob: $(inputs.svg)
+      glob: $(inputs.svg_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/maskrc-svg:0.5--0

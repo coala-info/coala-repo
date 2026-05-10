@@ -85,6 +85,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outdir
+  - id: ofile_path
+    type: string
+    doc: Output or path parameter `ofile_path`
+    inputBinding:
+      position: 102
+      prefix: --ofile
 outputs:
   - id: ofile
     type:
@@ -92,7 +98,9 @@ outputs:
       - File
     doc: Output file name. Mutually exclusive with --o-prefix.
     outputBinding:
-      glob: $(inputs.ofile)
+      glob: $(inputs.ofile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs2:2.2.9.1--py310h1fe012e_5

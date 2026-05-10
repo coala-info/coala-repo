@@ -6,15 +6,16 @@ doc: "Parse samplesheets for BioWDL pipelines.\n\nTool homepage: https://github.
 inputs:
   - id: samplesheet
     type: File
-    doc: The input samplesheet. Format will be automatically detected from file suffix
-      if --format argument not provided
+    doc: The input samplesheet. Format will be automatically detected from file 
+      suffix if --format argument not provided
     inputBinding:
       position: 1
   - id: check_file_md5sums
     type:
       - 'null'
       - boolean
-    doc: Do a md5sum check for reads which have md5sums added in the samplesheet.
+    doc: Do a md5sum check for reads which have md5sums added in the 
+      samplesheet.
     inputBinding:
       position: 102
       prefix: --check-file-md5sums
@@ -30,8 +31,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output old style JSON as used in BioWDL germline-DNA and RNA-seq version
-      1 pipelines
+    doc: Output old style JSON as used in BioWDL germline-DNA and RNA-seq 
+      version 1 pipelines
     inputBinding:
       position: 102
       prefix: --old
@@ -59,6 +60,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --validate
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -66,7 +73,9 @@ outputs:
       - File
     doc: 'The output file to which the json is written. Default: stdout'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biowdl-input-converter:0.3.0--pyhdfd78af_0

@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_table_path
+    type: string
+    doc: Output or path parameter `output_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-table
 outputs:
   - id: output_table
     type:
@@ -80,7 +86,9 @@ outputs:
       - File
     doc: Name of a file to write the alignment stats to.
     outputBinding:
-      glob: $(inputs.output_table)
+      glob: $(inputs.output_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samsum:0.1.4--py39h918f1d6_7

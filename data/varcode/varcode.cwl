@@ -78,6 +78,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vcf
+  - id: output_csv_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --output-csv
 outputs:
   - id: output_csv
     type:
@@ -85,7 +90,9 @@ outputs:
       - File
     doc: Output path to CSV
     outputBinding:
-      glob: $(inputs.output_csv)
+      glob: $(inputs.output_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varcode:1.2.1--pyh7e72e81_0

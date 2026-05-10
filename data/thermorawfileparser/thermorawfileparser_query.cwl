@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --warningsAreErrors
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -60,7 +66,9 @@ outputs:
     doc: The output file. Specifying none writes the output file to the input 
       file parent directory.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/thermorawfileparser:2.0.0.dev--h9ee0642_0

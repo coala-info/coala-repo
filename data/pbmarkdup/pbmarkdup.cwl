@@ -50,6 +50,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --rmdup
+  - id: dup_file_path
+    type:
+      - 'null'
+      - string
+    doc: Write duplicates to this file instead of OUTFILE.
+    inputBinding:
+      position: 103
+      prefix: --dup-file
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Log to a file, instead of stderr.
+    inputBinding:
+      position: 104
+      prefix: --log-file
 outputs:
   - id: output_file
     type: File
@@ -62,14 +78,16 @@ outputs:
       - File
     doc: Write duplicates to this file instead of OUTFILE.
     outputBinding:
-      glob: $(inputs.dup_file)
+      glob: $(inputs.dup_file_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: Log to a file, instead of stderr.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbmarkdup:1.2.0--h9ee0642_0

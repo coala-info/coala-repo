@@ -215,19 +215,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --region_partition_length
+  - id: output_gtf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gtf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-gtf
+  - id: output_gtf_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gtf_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-gtf-dir
 outputs:
   - id: output_gtf
     type: File
     doc: output.gtf
     outputBinding:
-      glob: $(inputs.output_gtf)
+      glob: $(inputs.output_gtf_path)
   - id: output_gtf_dir
     type:
       - 'null'
       - Directory
     doc: 'existing directory for individual transcripts, default: N/A'
     outputBinding:
-      glob: $(inputs.output_gtf_dir)
+      glob: $(inputs.output_gtf_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aletsch:1.1.3--h503566f_1

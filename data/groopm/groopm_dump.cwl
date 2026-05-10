@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --separator
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -41,7 +47,9 @@ outputs:
       - File
     doc: write data to this file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groopm:0.3.4--pyhdfd78af_2

@@ -60,6 +60,110 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: exon_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `exon_path`
+    inputBinding:
+      position: 103
+      prefix: --exon
+  - id: gene_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gene_path`
+    inputBinding:
+      position: 104
+      prefix: --gene
+  - id: gene_length_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gene_length_path`
+    inputBinding:
+      position: 105
+      prefix: --gene-length
+  - id: independent_intron_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `independent_intron_path`
+    inputBinding:
+      position: 106
+      prefix: --independent-intron
+  - id: intergenic_region_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `intergenic_region_path`
+    inputBinding:
+      position: 107
+      prefix: --intergenic-region
+  - id: intron_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `intron_path`
+    inputBinding:
+      position: 108
+      prefix: --intron
+  - id: isoform_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `isoform_path`
+    inputBinding:
+      position: 109
+      prefix: --isoform
+  - id: isoform_length_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `isoform_length_path`
+    inputBinding:
+      position: 110
+      prefix: --isoform-length
+  - id: masked_intron_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `masked_intron_path`
+    inputBinding:
+      position: 111
+      prefix: --masked-intron
+  - id: merged_exon_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `merged_exon_path`
+    inputBinding:
+      position: 112
+      prefix: --merged-exon
+  - id: splice_site_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `splice_site_path`
+    inputBinding:
+      position: 113
+      prefix: --splice-site
+  - id: tss_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tss_path`
+    inputBinding:
+      position: 114
+      prefix: --tss
+  - id: utr_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `utr_path`
+    inputBinding:
+      position: 115
+      prefix: --utr
 outputs:
   - id: merged_exon
     type:
@@ -68,14 +172,14 @@ outputs:
     doc: output file name for outputing merged exons from all isoforms of a gene
       in bed format
     outputBinding:
-      glob: $(inputs.merged_exon)
+      glob: $(inputs.merged_exon_path)
   - id: exon
     type:
       - 'null'
       - File
     doc: output file name for exon coordination of splice isoforms in bed format
     outputBinding:
-      glob: $(inputs.exon)
+      glob: $(inputs.exon_path)
   - id: intron
     type:
       - 'null'
@@ -83,7 +187,7 @@ outputs:
     doc: output file name for outputing intron coordination of splice isoforms 
       in bed format
     outputBinding:
-      glob: $(inputs.intron)
+      glob: $(inputs.intron_path)
   - id: independent_intron
     type:
       - 'null'
@@ -93,7 +197,7 @@ outputs:
       any exon of isoforms. It is calcualted by merging all exons of a 
       chromosome followed by substracting them from gene regions.
     outputBinding:
-      glob: $(inputs.independent_intron)
+      glob: $(inputs.independent_intron_path)
   - id: intergenic_region
     type:
       - 'null'
@@ -101,7 +205,7 @@ outputs:
     doc: output file name for coordinates of intergenic regions, which is 
       calculated by subtracting gene regions from each chromosome.
     outputBinding:
-      glob: $(inputs.intergenic_region)
+      glob: $(inputs.intergenic_region_path)
   - id: gene_length
     type:
       - 'null'
@@ -111,7 +215,7 @@ outputs:
       isoforms of a gene. The fourth is the length of the non-overlapping exons 
       of all isoforms.
     outputBinding:
-      glob: $(inputs.gene_length)
+      glob: $(inputs.gene_length_path)
   - id: isoform_length
     type:
       - 'null'
@@ -119,7 +223,7 @@ outputs:
     doc: output file name for isoform length file. Isoform length is calculated 
       as the summed length of its exons
     outputBinding:
-      glob: $(inputs.isoform_length)
+      glob: $(inputs.isoform_length_path)
   - id: masked_intron
     type:
       - 'null'
@@ -127,21 +231,21 @@ outputs:
     doc: output file name for the intron that overlaps with exons of other 
       isoforms/genes
     outputBinding:
-      glob: $(inputs.masked_intron)
+      glob: $(inputs.masked_intron_path)
   - id: utr
     type:
       - 'null'
       - File
     doc: output file name for UTR regions
     outputBinding:
-      glob: $(inputs.utr)
+      glob: $(inputs.utr_path)
   - id: isoform
     type:
       - 'null'
       - File
     doc: output file name for isoform coordinates and names.
     outputBinding:
-      glob: $(inputs.isoform)
+      glob: $(inputs.isoform_path)
   - id: splice_site
     type:
       - 'null'
@@ -151,7 +255,7 @@ outputs:
       bases in intron, and the 3' acceptor site is 23 bases long with 20 bases in
       the intron and 3 bases in the exon."
     outputBinding:
-      glob: $(inputs.splice_site)
+      glob: $(inputs.splice_site_path)
   - id: gene
     type:
       - 'null'
@@ -160,7 +264,7 @@ outputs:
       gene needs to be calculated, users can include the -f option to sepcify 
       cis-range.
     outputBinding:
-      glob: $(inputs.gene)
+      glob: $(inputs.gene_path)
   - id: tss
     type:
       - 'null'
@@ -170,7 +274,9 @@ outputs:
       distance, say 1000bp, upstream of TSS, wdown is the distance downstream of
       TSS. wup and wdown is defined by the w parameter specified by '-w'.
     outputBinding:
-      glob: $(inputs.tss)
+      glob: $(inputs.tss_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtftools:0.9.0--pyh5e36f6f_0

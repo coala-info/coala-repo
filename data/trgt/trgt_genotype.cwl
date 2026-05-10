@@ -27,8 +27,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads for querying input BAM files. Defaults to half the number
-      of analysis threads, with a max of 8
+    doc: Number of threads for querying input BAM files. Defaults to half the 
+      number of analysis threads, with a max of 8
     inputBinding:
       position: 101
       prefix: --fetcher-threads
@@ -119,16 +119,25 @@ inputs:
       - 'null'
       - type: array
         items: boolean
-    doc: Specify multiple times to increase verbosity level (e.g., -vv for more verbosity)
+    doc: Specify multiple times to increase verbosity level (e.g., -vv for more 
+      verbosity)
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: Prefix for output files (.vcf.gz and .spanning.bam)
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trgt:5.0.0--h9ee0642_0

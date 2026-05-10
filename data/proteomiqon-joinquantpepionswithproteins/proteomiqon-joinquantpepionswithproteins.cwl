@@ -43,12 +43,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quantifiedpeptides
+  - id: outputdirectory_path
+    type: string
+    doc: Output or path parameter `outputdirectory_path`
+    inputBinding:
+      position: 102
+      prefix: --outputdirectory
 outputs:
   - id: outputdirectory
     type: Directory
     doc: Specify the output directory.
     outputBinding:
-      glob: $(inputs.outputdirectory)
+      glob: $(inputs.outputdirectory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

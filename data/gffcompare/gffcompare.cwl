@@ -24,7 +24,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Discard multi-exon query transcripts that do not overlap any reference transcript.
+    doc: Discard multi-exon query transcripts that do not overlap any reference 
+      transcript.
     inputBinding:
       position: 102
       prefix: -M
@@ -32,7 +33,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Ignore reference transcripts that are not overlapped by any query transcript.
+    doc: Ignore reference transcripts that are not overlapped by any query 
+      transcript.
     inputBinding:
       position: 102
       prefix: -R
@@ -84,6 +86,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -V
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -91,7 +99,9 @@ outputs:
       - File
     doc: Prefix for output files.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gffcompare:0.12.10--h9948957_0

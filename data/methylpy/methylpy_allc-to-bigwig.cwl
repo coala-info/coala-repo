@@ -45,8 +45,7 @@ inputs:
         items: string
     doc: List of space separated mc nucleotide contexts for which you want to 
       look for DMRs. These classifications may use the wildcards H (indicating 
-      anything but a G) and N (indicating any nucleotide).
-      - CGN
+      anything but a G) and N (indicating any nucleotide). - CGN
     inputBinding:
       position: 101
       prefix: --mc-type
@@ -107,12 +106,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --remove-chr-prefix
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Name of output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

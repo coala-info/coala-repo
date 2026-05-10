@@ -133,6 +133,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tile-size
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -144,7 +150,9 @@ outputs:
       If PATH starts with a relative or absolute path to another directory, that
       directory must already exist.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ashlar:1.19.0--pyhdfd78af_0

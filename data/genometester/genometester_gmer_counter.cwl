@@ -121,6 +121,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: '-32'
+  - id: compile_index_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `compile_index_path`
+    inputBinding:
+      position: 104
+      prefix: --compile-index
+  - id: write_binary_database_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_binary_database_path`
+    inputBinding:
+      position: 105
+      prefix: --write-binary-database
 outputs:
   - id: write_binary_database
     type:
@@ -128,14 +144,16 @@ outputs:
       - File
     doc: write binary database to file
     outputBinding:
-      glob: $(inputs.write_binary_database)
+      glob: $(inputs.write_binary_database_path)
   - id: compile_index
     type:
       - 'null'
       - File
     doc: Add read index to database and write it to file
     outputBinding:
-      glob: $(inputs.compile_index)
+      glob: $(inputs.compile_index_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1

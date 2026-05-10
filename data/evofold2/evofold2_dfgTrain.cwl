@@ -126,6 +126,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --writeInfo
+  - id: dot_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dot_file_path`
+    inputBinding:
+      position: 104
+      prefix: --dot-file
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 105
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -133,14 +149,16 @@ outputs:
       - File
     doc: Log file for EM training.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
   - id: dot_file
     type:
       - 'null'
       - File
     doc: Output dfg in dot format to given fileName.
     outputBinding:
-      glob: $(inputs.dot_file)
+      glob: $(inputs.dot_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/evofold2:0.1--0

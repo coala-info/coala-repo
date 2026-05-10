@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if set, all chromosomes contained in PAN_FILE appear in output (irrespective
-      to CHROMS), DEFAULT=False
+    doc: if set, all chromosomes contained in PAN_FILE appear in output 
+      (irrespective to CHROMS), DEFAULT=False
     inputBinding:
       position: 101
       prefix: -all
@@ -61,8 +61,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if set, only specified regions are shown in output (DEFAULT=False), ignored
-      if -all is set
+    doc: if set, only specified regions are shown in output (DEFAULT=False), 
+      ignored if -all is set
     inputBinding:
       position: 101
       prefix: -regions
@@ -71,7 +71,8 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Start positions (in same order as chromosomes), DEFAULT=1 on all chromosomes
+    doc: Start positions (in same order as chromosomes), DEFAULT=1 on all 
+      chromosomes
     inputBinding:
       position: 101
       prefix: -starts
@@ -80,10 +81,17 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Stop positions (in same order as chromosomes), DEFAULT=length of chromosomes
+    doc: Stop positions (in same order as chromosomes), DEFAULT=length of 
+      chromosomes
     inputBinding:
       position: 101
       prefix: -stops
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -91,7 +99,9 @@ outputs:
       - File
     doc: 'output DOT file (DEFAULT: STDOUT)'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pancake:1.1.2--py35_0

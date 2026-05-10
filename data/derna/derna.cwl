@@ -93,6 +93,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold_tau2
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: sweep_output_csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sweep_output_csv_path`
+    inputBinding:
+      position: 103
+      prefix: --sweep-output-csv
 outputs:
   - id: output_file
     type:
@@ -100,14 +116,16 @@ outputs:
       - File
     doc: output file path
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: sweep_output_csv
     type:
       - 'null'
       - File
     doc: sweep output csv file name
     outputBinding:
-      glob: $(inputs.sweep_output_csv)
+      glob: $(inputs.sweep_output_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/derna:1.0.4--h503566f_1

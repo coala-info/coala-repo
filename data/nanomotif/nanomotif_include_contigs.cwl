@@ -118,12 +118,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write_bins
+  - id: out_path
+    type: string
+    doc: path to the output folder
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: Directory
     doc: Path to output directory
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0

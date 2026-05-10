@@ -106,6 +106,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -113,7 +119,9 @@ outputs:
       - Directory
     doc: Write to a given directory instead of the default directory.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/motifscan:1.3.0--py310h4b81fae_3

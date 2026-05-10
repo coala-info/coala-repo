@@ -50,6 +50,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --replacement
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -57,7 +63,9 @@ outputs:
       - File
     doc: Output file name ['-' for stdout]
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154

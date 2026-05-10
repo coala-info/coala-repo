@@ -51,6 +51,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --reference_database_version
+  - id: output_path
+    type: string
+    doc: Output location
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -58,7 +64,9 @@ outputs:
       - File
     doc: Output location
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tooldistillator:1.0.5--pyh7e72e81_0

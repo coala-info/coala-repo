@@ -31,12 +31,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -p
+  - id: fastq_dir_path
+    type: string
+    doc: Output or path parameter `fastq_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --fastq-dir
 outputs:
   - id: fastq_dir
     type: Directory
     doc: Directory where the fastq repository is created.
     outputBinding:
-      glob: $(inputs.fastq_dir)
+      glob: $(inputs.fastq_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

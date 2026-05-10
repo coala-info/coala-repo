@@ -36,6 +36,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quiet
+  - id: outdir_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -43,7 +48,9 @@ outputs:
       - Directory
     doc: Directory to save output files.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chipseq-greylist:1.0.2--pyh145b6a8_1

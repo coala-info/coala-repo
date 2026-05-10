@@ -91,6 +91,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --working_dir
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: vcf_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_out_path`
+    inputBinding:
+      position: 103
+      prefix: --vcf-out
 outputs:
   - id: out
     type:
@@ -98,14 +114,16 @@ outputs:
       - File
     doc: Augmented GFA output file name
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: vcf_out
     type:
       - 'null'
       - File
     doc: VCF output file name
     outputBinding:
-      glob: $(inputs.vcf_out)
+      glob: $(inputs.vcf_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svpg:1.4.1--pyhdfd78af_0

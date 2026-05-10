@@ -63,13 +63,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_bam_path
+    type: string
+    doc: Output or path parameter `out_bam_path`
+    inputBinding:
+      position: 103
+      prefix: --out-bam
 outputs:
   - id: out_bam
     type: File
     doc: "Path where the alignment will be written in\n                          \
       \       BAM format."
     outputBinding:
-      glob: $(inputs.out_bam)
+      glob: $(inputs.out_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0

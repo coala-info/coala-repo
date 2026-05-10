@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: path to (optional) ',' sparated list of decoy sequences used to insert poison
-      k-mer information into the index
+    doc: path to (optional) ',' sparated list of decoy sequences used to insert 
+      poison k-mer information into the index
     inputBinding:
       position: 101
       prefix: --decoy-paths
@@ -19,8 +19,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: retain the reduced format GFA files produced by cuttlefish that describe
-      the reference cDBG (the default is to remove these)
+    doc: retain the reduced format GFA files produced by cuttlefish that 
+      describe the reference cDBG (the default is to remove these)
     inputBinding:
       position: 101
       prefix: --keep-intermediate-dbg
@@ -44,8 +44,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: skip the construction of the equivalence class lookup table when building
-      the index (not recommended)
+    doc: skip the construction of the equivalence class lookup table when 
+      building the index (not recommended)
     inputBinding:
       position: 101
       prefix: --no-ec-table
@@ -61,8 +61,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If provided (default is not to clip polyA), then reference sequences ending
-      with polyA tails of length greater than or equal to this value will be clipped
+    doc: If provided (default is not to clip polyA), then reference sequences 
+      ending with polyA tails of length greater than or equal to this value will
+      be clipped
     inputBinding:
       position: 101
       prefix: --polya-clip-length
@@ -95,8 +96,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: index construction seed (seed value passed to SSHash index construction;
-      useful if empty buckets occur)
+    doc: index construction seed (seed value passed to SSHash index 
+      construction; useful if empty buckets occur)
     inputBinding:
       position: 101
       prefix: --seed
@@ -114,12 +115,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --work-dir
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: output file stem
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/piscem:0.14.5--he431ac4_0

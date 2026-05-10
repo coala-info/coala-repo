@@ -74,12 +74,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tau
+  - id: outfile_path
+    type: string
+    doc: Output file name
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type: File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/robust-bias-aware:0.0.1--pyh7cba7a3_1

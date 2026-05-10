@@ -15,6 +15,12 @@ inputs:
     doc: GenBank file of the reference genome.
     inputBinding:
       position: 2
+  - id: output_path
+    type: string
+    doc: File to write VCF output to (Default STDOUT).
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -22,7 +28,9 @@ outputs:
       - File
     doc: File to write VCF output to (Default STDOUT).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf-annotator:0.7--hdfd78af_0

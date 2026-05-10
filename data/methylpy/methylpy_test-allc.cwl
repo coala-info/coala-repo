@@ -80,6 +80,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unmethylated-control
+  - id: path_to_output_path
+    type: string
+    doc: Output or path parameter `path_to_output_path`
+    inputBinding:
+      position: 102
+      prefix: --path-to-output
 outputs:
   - id: path_to_output
     type:
@@ -88,7 +94,9 @@ outputs:
     doc: Path to a directory where you would like the output to be stored. The 
       default is the same directory as the input fastqs.
     outputBinding:
-      glob: $(inputs.path_to_output)
+      glob: $(inputs.path_to_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

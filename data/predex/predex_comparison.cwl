@@ -17,6 +17,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --design
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -24,7 +30,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/predex:0.9.3--pyh5e36f6f_0

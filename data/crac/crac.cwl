@@ -45,8 +45,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: discard biological events (splice, snv, indel, chimera) which have several
-      matches on the reference index
+    doc: discard biological events (splice, snv, indel, chimera) which have 
+      several matches on the reference index
     inputBinding:
       position: 101
       prefix: --no-ambiguity
@@ -71,8 +71,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: set read length in case of all reads have the same length to optimize CPU
-      and memory times
+    doc: set read length in case of all reads have the same length to optimize 
+      CPU and memory times
     inputBinding:
       position: 101
       prefix: --reads-length
@@ -80,8 +80,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: set the read mapping with for a strand specific library (DEFAULT non-strand
-      specific)
+    doc: set the read mapping with for a strand specific library (DEFAULT 
+      non-strand specific)
     inputBinding:
       position: 101
       prefix: --stranded
@@ -89,24 +89,43 @@ inputs:
     type:
       - 'null'
       - int
-    doc: write alignments with multiple locations (with a fixed limit) in the SAM
-      file rather than only one occurrence
+    doc: write alignments with multiple locations (with a fixed limit) in the 
+      SAM file rather than only one occurrence
     inputBinding:
       position: 101
       prefix: --treat-multiple
+  - id: output_sam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-sam
+  - id: summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 103
+      prefix: --summary
 outputs:
   - id: output_sam
     type: File
     doc: set SAM output filename or print on STDOUT with "-o -" argument
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
   - id: summary
     type:
       - 'null'
       - File
-    doc: set output summary file with some statistics about mapping and classification
+    doc: set output summary file with some statistics about mapping and 
+      classification
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crac:v2.5.0dfsg-3-deb_cv1

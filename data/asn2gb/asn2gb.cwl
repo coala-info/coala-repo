@@ -8,8 +8,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Accession to Fetch (or Accession,retcode,flags where flags -1 fetches external
-      features)
+    doc: Accession to Fetch (or Accession,retcode,flags where flags -1 fetches 
+      external features)
     inputBinding:
       position: 101
       prefix: -A
@@ -34,8 +34,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Batch (1 Report, 2 Sequin/Release, 3 asn2gb SSEC/nocleanup, 4 asn2flat BSEC/nocleanup,
-      5 asn2gb/asn2flat, 6 asn2gb NEW dbxref/OLD dbxref, 7 oldasn2gb/newasn2gb)
+    doc: Batch (1 Report, 2 Sequin/Release, 3 asn2gb SSEC/nocleanup, 4 asn2flat 
+      BSEC/nocleanup, 5 asn2gb/asn2flat, 6 asn2gb NEW dbxref/OLD dbxref, 7 
+      oldasn2gb/newasn2gb)
     inputBinding:
       position: 101
       prefix: -t
@@ -59,7 +60,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Custom Flags (4 HideFeats, 1792 HideRefs, 8192 HideSources, 262144 HideTranslation)
+    doc: Custom Flags (4 HideFeats, 1792 HideRefs, 8192 HideSources, 262144 
+      HideTranslation)
     inputBinding:
       position: 101
       prefix: -u
@@ -175,6 +177,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --log-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -182,14 +200,16 @@ outputs:
       - File
     doc: Output File Name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: Log file
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/asn2gb:18.2--0

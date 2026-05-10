@@ -36,6 +36,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --overlaps
+  - id: output_path
+    type: string
+    doc: Output directory for report files
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -43,7 +49,9 @@ outputs:
       - File
     doc: Output file for the visualization PNG, PDF, SVG, etc.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mylotools:2.0.0--pyh7e72e81_0

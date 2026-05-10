@@ -379,6 +379,11 @@ inputs:
     inputBinding:
       position: 104
       prefix: --vverbose
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 105
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -386,7 +391,9 @@ outputs:
       - File
     doc: Mapping result filename (use - to dump to stdout in razers format).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/optitype:1.3.5--hdfd78af_3

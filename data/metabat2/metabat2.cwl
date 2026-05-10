@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: metabat2
 label: metabat2
-doc: "MetaBAT: Metagenome Binning based on Abundance and Tetranucleotide frequency.\n
-  \nTool homepage: https://bitbucket.org/berkeleylab/metabat"
+doc: "MetaBAT: Metagenome Binning based on Abundance and Tetranucleotide frequency.\n\
+  \ \nTool homepage: https://bitbucket.org/berkeleylab/metabat"
 inputs:
   - id: abundance_file
     type:
@@ -83,12 +83,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Output file prefix for bins
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metabat2:2.18--h6f16272_0

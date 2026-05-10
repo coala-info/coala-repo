@@ -20,6 +20,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --summary-report
+  - id: outpath_path
+    type: string
+    doc: Output or path parameter `outpath_path`
+    inputBinding:
+      position: 102
+      prefix: --outpath
 outputs:
   - id: outpath
     type:
@@ -28,7 +34,9 @@ outputs:
     doc: Path to desired output file. If no value is provided, will create a new
       report in the same directory as the input summary report.
     outputBinding:
-      glob: $(inputs.outpath)
+      glob: $(inputs.outpath_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centreseq:0.3.8--py_0

@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --technology
+  - id: sdata_path_path
+    type: string
+    doc: Output or path parameter `sdata_path_path`
+    inputBinding:
+      position: 103
+      prefix: --sdata-path
 outputs:
   - id: sdata_path
     type:
@@ -63,7 +69,9 @@ outputs:
     doc: Optional path to write the SpatialData object. If not provided, will 
       write to the `{data_path}.zarr` directory
     outputBinding:
-      glob: $(inputs.sdata_path)
+      glob: $(inputs.sdata_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sopa:2.1.11--pyhdfd78af_0

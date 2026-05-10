@@ -5,8 +5,8 @@ baseCommand:
   - -jar
   - ArtificialFastqGenerator.jar
 label: artfastqgenerator
-doc: ArtificialFastqGenerator generates artificial FASTQ files from a reference genome,
-  simulating coverage biases and quality scores.
+doc: ArtificialFastqGenerator generates artificial FASTQ files from a reference 
+  genome, simulating coverage biases and quality scores.
 inputs:
   - id: coverage_mean_gc_content_spread
     type:
@@ -44,8 +44,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix of the sequence identifier in the reference where read generation
-      should stop (default = end of file).
+    doc: Prefix of the sequence identifier in the reference where read 
+      generation should stop (default = end of file).
     inputBinding:
       position: 101
       prefix: -E
@@ -53,8 +53,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: First fastq file to use for real quality scores (required if useRealQualityScores
-      = true).
+    doc: First fastq file to use for real quality scores (required if 
+      useRealQualityScores = true).
     inputBinding:
       position: 101
       prefix: -F1
@@ -62,8 +62,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Second fastq file to use for real quality scores (required if useRealQualityScores
-      = true).
+    doc: Second fastq file to use for real quality scores (required if 
+      useRealQualityScores = true).
     inputBinding:
       position: 101
       prefix: -F2
@@ -87,8 +87,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The region size as a multiple of -NBS for which summary coverage statistics
-      are recorded.
+    doc: The region size as a multiple of -NBS for which summary coverage 
+      statistics are recorded.
     inputBinding:
       position: 101
       prefix: -L
@@ -120,8 +120,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filter out no 'N-containing' reads (0), 'all-N' reads (1), 'at-least-1-N'
-      reads (2).
+    doc: Filter out no 'N-containing' reads (0), 'all-N' reads (1), 
+      'at-least-1-N' reads (2).
     inputBinding:
       position: 101
       prefix: -RCNF
@@ -141,8 +141,8 @@ inputs:
       prefix: -SE
   - id: start_sequence_identifier
     type: string
-    doc: Prefix of the sequence identifier in the reference after which read generation
-      should begin.
+    doc: Prefix of the sequence identifier in the reference after which read 
+      generation should begin.
     inputBinding:
       position: 101
       prefix: -S
@@ -166,8 +166,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Whether to use real quality scores from existing fastq files or set all to
-      the maximum.
+    doc: Whether to use real quality scores from existing fastq files or set all
+      to the maximum.
     inputBinding:
       position: 101
       prefix: -URQS
@@ -187,12 +187,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -Y
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type: File
     doc: Path for the artificial fastq and log files, including their base name.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/artfastqgenerator:v0.0.20150519-3-deb_cv1

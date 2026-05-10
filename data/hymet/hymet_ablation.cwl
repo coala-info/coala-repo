@@ -92,6 +92,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -99,7 +105,9 @@ outputs:
       - Directory
     doc: Output directory for ablation results
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hymet:1.3.0--hdfd78af_0

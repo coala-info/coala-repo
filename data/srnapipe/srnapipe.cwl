@@ -204,12 +204,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcripts
+  - id: html_results_path
+    type: string
+    doc: Output or path parameter `html_results_path`
+    inputBinding:
+      position: 102
+      prefix: --html-results
 outputs:
   - id: html_results
     type: File
     doc: Main HTML file where results will be displayed
     outputBinding:
-      glob: $(inputs.html_results)
+      glob: $(inputs.html_results_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/srnapipe:1.2.1--pl5321r44hdfd78af_0

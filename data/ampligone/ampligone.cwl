@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The preset to use for alignment of reads against the reference ('sr', 'map-ont',
-      'map-pb', or 'splice').
+    doc: The preset to use for alignment of reads against the reference ('sr', 
+      'map-ont', 'map-pb', or 'splice').
     inputBinding:
       position: 101
       prefix: --alignment-preset
@@ -19,8 +19,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: The scoring matrix to use for alignment of reads. This should be list of
-      key-value pairs (e.g., match=4 mismatch=3).
+    doc: The scoring matrix to use for alignment of reads. This should be list 
+      of key-value pairs (e.g., match=4 mismatch=3).
     inputBinding:
       position: 101
       prefix: --alignment-scoring
@@ -28,8 +28,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If set, AmpliGone will always create the output files even if there is nothing
-      to output.
+    doc: If set, AmpliGone will always create the output files even if there is 
+      nothing to output.
     inputBinding:
       position: 101
       prefix: -to
@@ -37,7 +37,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Define the amplicon-type, either being 'end-to-end', 'end-to-mid', or 'fragmented'.
+    doc: Define the amplicon-type, either being 'end-to-end', 'end-to-mid', or 
+      'fragmented'.
     inputBinding:
       position: 101
       prefix: --amplicon-type
@@ -45,8 +46,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The maximum allowed error rate (as a percentage) for the primer search. Use
-      0 for exact primer matches.
+    doc: The maximum allowed error rate (as a percentage) for the primer search.
+      Use 0 for exact primer matches.
     inputBinding:
       position: 101
       prefix: --error-rate
@@ -54,8 +55,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of bases to look around a primer-site to consider it part of a
-      fragment. Only used if amplicon-type is 'fragmented'.
+    doc: The number of bases to look around a primer-site to consider it part of
+      a fragment. Only used if amplicon-type is 'fragmented'.
     inputBinding:
       position: 101
       prefix: --fragment-lookaround-size
@@ -67,7 +68,8 @@ inputs:
       prefix: --input
   - id: primers
     type: File
-    doc: Used primer sequences in FASTA format or primer coordinates in BED format.
+    doc: Used primer sequences in FASTA format or primer coordinates in BED 
+      format.
     inputBinding:
       position: 101
       prefix: --primers
@@ -75,7 +77,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Prints less information, like only WARNING and ERROR statements, to the terminal
+    doc: Prints less information, like only WARNING and ERROR statements, to the
+      terminal
     inputBinding:
       position: 101
       prefix: --quiet
@@ -105,25 +108,43 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If set, primers closely positioned to each other in the same orientation
-      will be virtually combined into a single primer.
+    doc: If set, primers closely positioned to each other in the same 
+      orientation will be virtually combined into a single primer.
     inputBinding:
       position: 101
       prefix: --virtual-primers
+  - id: export_primers_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `export_primers_path`
+    inputBinding:
+      position: 102
+      prefix: --export-primers
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output (FastQ) file with cleaned reads.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: export_primers
     type:
       - 'null'
       - File
-    doc: Output BED file with found primer coordinates if they are actually cut from
-      the reads
+    doc: Output BED file with found primer coordinates if they are actually cut 
+      from the reads
     outputBinding:
-      glob: $(inputs.export_primers)
+      glob: $(inputs.export_primers_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ampligone:2.0.2--pyhdfd78af_0

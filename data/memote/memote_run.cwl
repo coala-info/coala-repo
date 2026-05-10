@@ -129,6 +129,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --solver-timeout
+  - id: filename_path
+    type: string
+    doc: Output or path parameter `filename_path`
+    inputBinding:
+      position: 103
+      prefix: --filename
 outputs:
   - id: filename
     type:
@@ -137,7 +143,9 @@ outputs:
     doc: Path for the collected results as JSON. Ignored when working with a git
       repository.
     outputBinding:
-      glob: $(inputs.filename)
+      glob: $(inputs.filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/memote:0.17.0--pyhdfd78af_0

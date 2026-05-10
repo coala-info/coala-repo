@@ -88,6 +88,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_enrichment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_enrichment_path`
+    inputBinding:
+      position: 104
+      prefix: --output-enrichment
+  - id: output_network_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_network_path`
+    inputBinding:
+      position: 105
+      prefix: --output-network
 outputs:
   - id: output_enrichment
     type:
@@ -95,14 +111,16 @@ outputs:
       - File
     doc: Output file for enrichment results.
     outputBinding:
-      glob: $(inputs.output_enrichment)
+      glob: $(inputs.output_enrichment_path)
   - id: output_network
     type:
       - 'null'
       - File
     doc: Output file for network visualization (e.g., GML format).
     outputBinding:
-      glob: $(inputs.output_network)
+      glob: $(inputs.output_network_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/enrichm:0.6.6--pyhdfd78af_0

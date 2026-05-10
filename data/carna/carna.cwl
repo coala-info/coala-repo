@@ -224,6 +224,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --write-structure
+  - id: clustal_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clustal_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --clustal-output-file
+  - id: pp_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pp_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --pp-output-file
 outputs:
   - id: clustal_output_file
     type:
@@ -231,14 +247,16 @@ outputs:
       - File
     doc: Clustal output
     outputBinding:
-      glob: $(inputs.clustal_output_file)
+      glob: $(inputs.clustal_output_file_path)
   - id: pp_output_file
     type:
       - 'null'
       - File
     doc: PP output
     outputBinding:
-      glob: $(inputs.pp_output_file)
+      glob: $(inputs.pp_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carna:1.3.3--1

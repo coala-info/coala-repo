@@ -58,17 +58,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --yes
+  - id: correlation_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `correlation_path`
+    inputBinding:
+      position: 102
+      prefix: --correlation
+  - id: covariance_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `covariance_path`
+    inputBinding:
+      position: 103
+      prefix: --covariance
 outputs:
   - id: correlation
     type: File
     doc: Correlation output table
     outputBinding:
-      glob: $(inputs.correlation)
+      glob: $(inputs.correlation_path)
   - id: covariance
     type: File
     doc: Covariance output table
     outputBinding:
-      glob: $(inputs.covariance)
+      glob: $(inputs.covariance_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6

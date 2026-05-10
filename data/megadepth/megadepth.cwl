@@ -362,6 +362,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unsorted
+  - id: bigwig_output_path
+    type: string
+    doc: Output or path parameter `bigwig_output_path`
+    inputBinding:
+      position: 103
+      prefix: --bigwig-output
 outputs:
   - id: bigwig_output
     type:
@@ -371,7 +377,9 @@ outputs:
       <prefix>.unique.bw when --min-unique-qual is specified). Requires 
       libBigWig.
     outputBinding:
-      glob: $(inputs.bigwig_output)
+      glob: $(inputs.bigwig_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/megadepth:1.2.0--h5ca1c30_7

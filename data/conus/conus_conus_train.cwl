@@ -68,6 +68,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: save_model_path
+    type: string
+    doc: Output or path parameter `save_model_path`
+    inputBinding:
+      position: 103
+      prefix: --save-model
 outputs:
   - id: save_model
     type:
@@ -75,7 +81,9 @@ outputs:
       - File
     doc: save model file to <file>; defaults to conus.mod
     outputBinding:
-      glob: $(inputs.save_model)
+      glob: $(inputs.save_model_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/conus:1.0--h7b50bb2_6

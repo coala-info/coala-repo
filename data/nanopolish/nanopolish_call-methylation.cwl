@@ -120,6 +120,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --watch-write-bam
+  - id: modbam_output_name_path
+    type: string
+    doc: Output or path parameter `modbam_output_name_path`
+    inputBinding:
+      position: 102
+      prefix: --modbam-output-name
 outputs:
   - id: modbam_output_name
     type:
@@ -127,7 +133,9 @@ outputs:
       - File
     doc: 'write the results as tags in FILE (default: tsv output)'
     outputBinding:
-      glob: $(inputs.modbam_output_name)
+      glob: $(inputs.modbam_output_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanopolish:0.14.0--h773013f_3

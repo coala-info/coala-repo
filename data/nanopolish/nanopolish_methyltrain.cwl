@@ -136,6 +136,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_fofn_path
+    type: string
+    doc: Output or path parameter `out_fofn_path`
+    inputBinding:
+      position: 102
+      prefix: --out-fofn
 outputs:
   - id: out_fofn
     type:
@@ -143,7 +149,9 @@ outputs:
       - File
     doc: write the names of the output models into FILE
     outputBinding:
-      glob: $(inputs.out_fofn)
+      glob: $(inputs.out_fofn_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanopolish:0.14.0--h773013f_3

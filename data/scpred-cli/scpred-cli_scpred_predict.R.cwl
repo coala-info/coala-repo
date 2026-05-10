@@ -88,6 +88,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold-level
+  - id: output_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
+  - id: plot_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_path_path`
+    inputBinding:
+      position: 103
+      prefix: --plot-path
 outputs:
   - id: output_path
     type:
@@ -95,14 +111,16 @@ outputs:
       - Directory
     doc: Output path for Seurat object holding predicted values
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
   - id: plot_path
     type:
       - 'null'
       - File
     doc: Output path for prediction probabilities histograms in .png format
     outputBinding:
-      glob: $(inputs.plot_path)
+      glob: $(inputs.plot_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scpred-cli:0.1.0--hdfd78af_2

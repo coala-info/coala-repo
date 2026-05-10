@@ -90,6 +90,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --windowsize
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --prefix
 outputs:
   - id: prefix
     type:
@@ -97,7 +103,9 @@ outputs:
       - File
     doc: prefix for output files depth.bed and callable.bed
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/goleft:0.2.6--he881be0_1

@@ -132,24 +132,50 @@ inputs:
     inputBinding:
       position: 101
       prefix: --qual
+  - id: output_clades_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_clades_path`
+    inputBinding:
+      position: 102
+      prefix: --output-clades
+  - id: output_db_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_db_path`
+    inputBinding:
+      position: 103
+      prefix: --output-db
+  - id: output_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tree
 outputs:
   - id: output_db
     type: File
     doc: Path to output classifier (required).
     outputBinding:
-      glob: $(inputs.output_db)
+      glob: $(inputs.output_db_path)
   - id: output_clades
     type: File
     doc: Path to output clades file (required).
     outputBinding:
-      glob: $(inputs.output_clades)
+      glob: $(inputs.output_clades_path)
   - id: output_tree
     type:
       - 'null'
       - File
     doc: Path to output tree labelled with clade names.
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phlame:1.1.0--pyhdfd78af_0

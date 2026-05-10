@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -w
+  - id: output_fastq_file_path
+    type: string
+    doc: Output or path parameter `output_fastq_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fastq-file
 outputs:
   - id: output_fastq_file
     type:
@@ -108,7 +114,9 @@ outputs:
       - File
     doc: Desired fastq output file. If not specified to stdout
     outputBinding:
-      glob: $(inputs.output_fastq_file)
+      glob: $(inputs.output_fastq_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rapifilt:1.0--h5ca1c30_7

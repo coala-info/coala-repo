@@ -50,6 +50,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: closest_cells_similarities_text_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `closest_cells_similarities_text_file_path`
+    inputBinding:
+      position: 102
+      prefix: --closest-cells-similarities-text-file
+  - id: closest_cells_text_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `closest_cells_text_file_path`
+    inputBinding:
+      position: 103
+      prefix: --closest-cells-text-file
+  - id: output_clusters_text_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_clusters_text_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-clusters-text-file
+  - id: output_object_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-object-file
 outputs:
   - id: output_object_file
     type:
@@ -60,14 +92,14 @@ outputs:
       --projection-object-file with cluster labels in its colData (where 
       --cluster-col is set and scmapCell2Cluster() is run).
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
   - id: output_clusters_text_file
     type:
       - 'null'
       - File
     doc: File name in which to text-format cell type assignments.
     outputBinding:
-      glob: $(inputs.output_clusters_text_file)
+      glob: $(inputs.output_clusters_text_file_path)
   - id: closest_cells_text_file
     type:
       - 'null'
@@ -76,7 +108,7 @@ outputs:
       reference dataset that a given cell of the projection dataset is closest 
       to.
     outputBinding:
-      glob: $(inputs.closest_cells_text_file)
+      glob: $(inputs.closest_cells_text_file_path)
   - id: closest_cells_similarities_text_file
     type:
       - 'null'
@@ -85,7 +117,9 @@ outputs:
       the reference dataset that a given cell of the projection dataset is 
       closest to.
     outputBinding:
-      glob: $(inputs.closest_cells_similarities_text_file)
+      glob: $(inputs.closest_cells_similarities_text_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scmap-cli:0.1.0--hdfd78af_0

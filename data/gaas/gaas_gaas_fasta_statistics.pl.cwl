@@ -14,6 +14,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --f
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -22,7 +28,9 @@ outputs:
     doc: "Output directory where diffrent output files will be\n            written.
       If no output is specified, the result will written to\n            STDOUT."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gaas:1.2.0--pl5321r42hdfd78af_1

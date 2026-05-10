@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: DefineClones.py
 label: changeo_DefineClones.py
-doc: "Assigns Ig sequences to clonal groups based on junction sequence similarity.\n
-  \nTool homepage: http://changeo.readthedocs.io"
+doc: "Assigns Ig sequences to clonal groups based on junction sequence similarity.\n\
+  \ \nTool homepage: http://changeo.readthedocs.io"
 inputs:
   - id: act
     type:
@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sym
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -108,7 +114,9 @@ outputs:
       - Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/changeo:1.3.4--pyhdfd78af_0

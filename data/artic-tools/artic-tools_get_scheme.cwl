@@ -19,6 +19,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --schemeVersion
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -26,7 +32,9 @@ outputs:
       - Directory
     doc: The directory to write the scheme and reference sequence to
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/artic-tools:0.3.1--hf9554c4_7

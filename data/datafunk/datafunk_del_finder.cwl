@@ -27,6 +27,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-fasta
+  - id: genotypes_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `genotypes_table_path`
+    inputBinding:
+      position: 102
+      prefix: --genotypes-table
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
 outputs:
   - id: genotypes_table
     type: File
@@ -35,14 +51,16 @@ outputs:
       \        file for each sequence in --input-fasta: either \"ref\",\n        \
       \                \"del\" or \"X\" (for missing data)"
     outputBinding:
-      glob: $(inputs.genotypes_table)
+      glob: $(inputs.genotypes_table_path)
   - id: output_fasta
     type:
       - 'null'
       - File
     doc: Fasta file to write
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

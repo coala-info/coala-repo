@@ -51,12 +51,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tax_file
+  - id: out_bam_path
+    type: string
+    doc: Path to the short output BAM file (required)
+    inputBinding:
+      position: 102
+      prefix: --out_bam
 outputs:
   - id: out_bam
     type: File
     doc: Path to the output BAM file
     outputBinding:
-      glob: $(inputs.out_bam)
+      glob: $(inputs.out_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamdam:0.4.3--pyhdfd78af_0

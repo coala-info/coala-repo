@@ -16,8 +16,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File for caching annotation (created if not present, otherwise reused from
-      previous runs)
+    doc: File for caching annotation (created if not present, otherwise reused 
+      from previous runs)
     inputBinding:
       position: 101
       prefix: --cache
@@ -61,6 +61,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -k
+  - id: output_prefix_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output_prefix
     type:
@@ -68,7 +73,9 @@ outputs:
       - File
     doc: Prefix for output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pizzly:0.37.3--0

@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: defines the expected number of cells to use in determining the (read, not
-      UMI) based cutoff
+    doc: defines the expected number of cells to use in determining the (read, 
+      not UMI) based cutoff
     inputBinding:
       position: 101
       prefix: --expect-cells
@@ -25,7 +25,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: select the top-k most-frequent barcodes, based on read count, as valid (true)
+    doc: select the top-k most-frequent barcodes, based on read count, as valid 
+      (true)
     inputBinding:
       position: 101
       prefix: --force-cells
@@ -39,8 +40,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: attempt to determine the number of barcodes to keep using the knee distance
-      method.
+    doc: attempt to determine the number of barcodes to keep using the knee 
+      distance method.
     inputBinding:
       position: 101
       prefix: --knee-distance
@@ -76,12 +77,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --valid-bc
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alevin-fry:0.11.2--ha6fb395_0

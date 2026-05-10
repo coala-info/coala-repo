@@ -104,6 +104,62 @@ inputs:
     inputBinding:
       position: 101
       prefix: -T
+  - id: clonal_genealogy_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clonal_genealogy_file_path`
+    inputBinding:
+      position: 102
+      prefix: --clonal-genealogy-file
+  - id: dot_graph_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dot_graph_file_path`
+    inputBinding:
+      position: 103
+      prefix: --dot-graph-file
+  - id: external_recombinant_break_log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `external_recombinant_break_log_path`
+    inputBinding:
+      position: 104
+      prefix: --external-recombinant-break-log
+  - id: internal_recombinant_break_log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `internal_recombinant_break_log_path`
+    inputBinding:
+      position: 105
+      prefix: --internal-recombinant-break-log
+  - id: local_trees_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `local_trees_file_path`
+    inputBinding:
+      position: 106
+      prefix: --local-trees-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 107
+      prefix: --output-file
+  - id: recombinant_break_log_with_taxa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `recombinant_break_log_with_taxa_path`
+    inputBinding:
+      position: 108
+      prefix: --recombinant-break-log-with-taxa
 outputs:
   - id: output_file
     type:
@@ -111,35 +167,35 @@ outputs:
       - File
     doc: Export data to given file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: clonal_genealogy_file
     type:
       - 'null'
       - File
     doc: Export clonal genealogy to given file
     outputBinding:
-      glob: $(inputs.clonal_genealogy_file)
+      glob: $(inputs.clonal_genealogy_file_path)
   - id: local_trees_file
     type:
       - 'null'
       - File
     doc: Export local trees to given file
     outputBinding:
-      glob: $(inputs.local_trees_file)
+      glob: $(inputs.local_trees_file_path)
   - id: internal_recombinant_break_log
     type:
       - 'null'
       - File
     doc: Write log file of internal recombinant break interval locations
     outputBinding:
-      glob: $(inputs.internal_recombinant_break_log)
+      glob: $(inputs.internal_recombinant_break_log_path)
   - id: external_recombinant_break_log
     type:
       - 'null'
       - File
     doc: Write log file of external recombinant break interval locations
     outputBinding:
-      glob: $(inputs.external_recombinant_break_log)
+      glob: $(inputs.external_recombinant_break_log_path)
   - id: recombinant_break_log_with_taxa
     type:
       - 'null'
@@ -147,14 +203,16 @@ outputs:
     doc: Write log file of recombinant break interval locations and relevant 
       taxa (Use only recommended for small ARGs)
     outputBinding:
-      glob: $(inputs.recombinant_break_log_with_taxa)
+      glob: $(inputs.recombinant_break_log_with_taxa_path)
   - id: dot_graph_file
     type:
       - 'null'
       - File
     doc: Export DOT graph to given file
     outputBinding:
-      glob: $(inputs.dot_graph_file)
+      glob: $(inputs.dot_graph_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/simbac:0.1a--h3053a90_6

@@ -11,8 +11,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: BAM file or list of BAM files containing CLIP-seq library reads used for
-      estimating --in site context
+    doc: BAM file or list of BAM files containing CLIP-seq library reads used 
+      for estimating --in site context
     inputBinding:
       position: 101
       prefix: --bam
@@ -45,8 +45,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Width of exon-intron border regions (EIB) to calculate coverage drops from
-      exon to intron region
+    doc: Width of exon-intron border regions (EIB) to calculate coverage drops 
+      from exon to intron region
     inputBinding:
       position: 101
       prefix: --eib-width
@@ -81,8 +81,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Define transcript selection strategy for a given exonic site during F2 filtering.
-      (1) majority vote, (2) sequential
+    doc: Define transcript selection strategy for a given exonic site during F2 
+      filtering. (1) majority vote, (2) sequential
     inputBinding:
       position: 101
       prefix: --f2-mode
@@ -125,7 +125,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Enable prefilerting of exons by exon neigbhorhood intron-spanning read count
+    doc: Enable prefilerting of exons by exon neigbhorhood intron-spanning read 
+      count
     inputBinding:
       position: 101
       prefix: --isrn-prefilter
@@ -157,8 +158,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Defines whether or how to merge nearby sites before applying --seq-ext. (1)
-      No merge, (2) merge overlapping/adjacent
+    doc: Defines whether or how to merge nearby sites before applying --seq-ext.
+      (1) No merge, (2) merge overlapping/adjacent
     inputBinding:
       position: 101
       prefix: --merge-mode
@@ -166,8 +167,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum exon to neighboring intron coverage for exonic site to be reported
-      as exonic site with transcript context
+    doc: Minimum exon to neighboring intron coverage for exonic site to be 
+      reported as exonic site with transcript context
     inputBinding:
       position: 101
       prefix: --min-ei-ratio
@@ -175,8 +176,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum exon border to neighboring intron border region coverage for an exon
-      to be considered for transcript context selection
+    doc: Minimum exon border to neighboring intron border region coverage for an
+      exon to be considered for transcript context selection
     inputBinding:
       position: 101
       prefix: --min-eib-ratio
@@ -184,8 +185,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum intron-spanning read count to connect two sites at adjacent exon
-      borders
+    doc: Minimum intron-spanning read count to connect two sites at adjacent 
+      exon borders
     inputBinding:
       position: 101
       prefix: --min-exbs-isr-c
@@ -193,7 +194,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum exon overlap of a site to be considered for transcript context extraction
+    doc: Minimum exon overlap of a site to be considered for transcript context 
+      extraction
     inputBinding:
       position: 101
       prefix: --min-exon-overlap
@@ -201,8 +203,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of intronic sites needed per transcript to assign all sites
-      on the transcript to genomic context
+    doc: Minimum number of intronic sites needed per transcript to assign all 
+      sites on the transcript to genomic context
     inputBinding:
       position: 101
       prefix: --min-tis-sites
@@ -210,8 +212,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Generate new IDs with stem ID --new-site-id to exchange --in BED column 4
-      site IDs
+    doc: Generate new IDs with stem ID --new-site-id to exchange --in BED column
+      4 site IDs
     inputBinding:
       position: 101
       prefix: --new-site-id
@@ -235,8 +237,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable exon-intron border ratio filtering by checking the ratios of whole
-      transcripts
+    doc: Disable exon-intron border ratio filtering by checking the ratios of 
+      whole transcripts
     inputBinding:
       position: 101
       prefix: --no-eibr-wt-filter
@@ -244,7 +246,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable exon-intron ratio filtering by checking the ratios of whole transcripts
+    doc: Disable exon-intron ratio filtering by checking the ratios of whole 
+      transcripts
     inputBinding:
       position: 101
       prefix: --no-eir-wt-filter
@@ -260,7 +263,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not count intron-spanning reads twice for intron-exon coverage calculations
+    doc: Do not count intron-spanning reads twice for intron-exon coverage 
+      calculations
     inputBinding:
       position: 101
       prefix: --no-isr-double-count
@@ -268,7 +272,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not substract the intron-spanning read count from the intronic read count
+    doc: Do not substract the intron-spanning read count from the intronic read 
+      count
     inputBinding:
       position: 101
       prefix: --no-isr-sub-count
@@ -276,8 +281,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not discard transcripts containing intronic sites from transcript context
-      selection
+    doc: Do not discard transcripts containing intronic sites from transcript 
+      context selection
     inputBinding:
       position: 101
       prefix: --no-tis-filter
@@ -285,7 +290,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Merge book-ended and overlapping --in sites BEFORE transcript context extraction
+    doc: Merge book-ended and overlapping --in sites BEFORE transcript context 
+      extraction
     inputBinding:
       position: 101
       prefix: --pre-merge
@@ -302,7 +308,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate an .html report containing various additional statistics and plots
+    doc: Generate an .html report containing various additional statistics and 
+      plots
     inputBinding:
       position: 101
       prefix: --report
@@ -334,8 +341,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Define mode for site context sequence extraction after determining context.
-      (1) Complete site, (2) Center, (3) Upstream end
+    doc: Define mode for site context sequence extraction after determining 
+      context. (1) Complete site, (2) Center, (3) Upstream end
     inputBinding:
       position: 101
       prefix: --seq-ext-mode
@@ -344,8 +351,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Provide site ID(s) from --in (BED column 4) and run peakhood extract only
-      for these regions
+    doc: Provide site ID(s) from --in (BED column 4) and run peakhood extract 
+      only for these regions
     inputBinding:
       position: 101
       prefix: --site-id
@@ -354,8 +361,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Manually provide transcript biotype ID(s) to filter out transcripts with
-      these biotypes
+    doc: Manually provide transcript biotype ID(s) to filter out transcripts 
+      with these biotypes
     inputBinding:
       position: 101
       prefix: --tbt-filter-ids
@@ -375,12 +382,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thr-rev-filter
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: Directory
     doc: Site context extraction results output folder
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peakhood:0.3--pyhdfd78af_0

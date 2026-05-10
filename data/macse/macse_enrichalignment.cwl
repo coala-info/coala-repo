@@ -134,6 +134,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: output_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_alignment_path`
+    inputBinding:
+      position: 104
+      prefix: --output-alignment
+  - id: output_mask_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_mask_path`
+    inputBinding:
+      position: 105
+      prefix: --output-mask
 outputs:
   - id: output_alignment
     type:
@@ -141,14 +157,16 @@ outputs:
       - File
     doc: Output file name for the enriched alignment in FASTA format.
     outputBinding:
-      glob: $(inputs.output_alignment)
+      glob: $(inputs.output_alignment_path)
   - id: output_mask
     type:
       - 'null'
       - File
     doc: Output file name for the mask of the enriched alignment.
     outputBinding:
-      glob: $(inputs.output_mask)
+      glob: $(inputs.output_mask_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macse:2.07--hdfd78af_0

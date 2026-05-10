@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: altex-be
 label: altex-be
-doc: "Altex BE: A CLI tool for processing refFlat files and extracting target exons.\n
-  \nTool homepage: https://github.com/kinari-labwork/AltEx-BE"
+doc: "Altex BE: A CLI tool for processing refFlat files and extracting target exons.\n\
+  \ \nTool homepage: https://github.com/kinari-labwork/AltEx-BE"
 inputs:
   - id: assembly_name
     type: string
@@ -78,8 +78,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to a file (csv,txt,tsv) containing gene symbols or IDs correspond to
-      reference of transcript (one per line)
+    doc: Path to a file (csv,txt,tsv) containing gene symbols or IDs correspond 
+      to reference of transcript (one per line)
     inputBinding:
       position: 101
       prefix: --gene-file
@@ -117,12 +117,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --refseq-ids
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Directory of the output files
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/altex-be:1.0.5--pyhdfd78af_0

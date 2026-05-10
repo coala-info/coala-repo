@@ -96,6 +96,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --minimap2
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -104,7 +110,9 @@ outputs:
     doc: output file path for alignment results, bam/sam supported. If not 
       specified, the results will be saved in input_file_prefix.bam by default.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ccsmeth:0.5.0--pyhdfd78af_0

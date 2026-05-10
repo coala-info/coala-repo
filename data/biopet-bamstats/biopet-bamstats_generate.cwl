@@ -51,9 +51,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Exclude reads from which the start originates from another region. This is
-      useful for running multiple instances of bamstats each on a different region.
-      The files can be merged afterwards without duplicates.
+    doc: Exclude reads from which the start originates from another region. This
+      is useful for running multiple instances of bamstats each on a different 
+      region. The files can be merged afterwards without duplicates.
     inputBinding:
       position: 101
       prefix: --scatterMode
@@ -65,12 +65,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsvOutputs
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-bamstats:1.0.1--0

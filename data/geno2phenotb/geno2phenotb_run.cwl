@@ -44,12 +44,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --skip-mtbseq
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Path to the directory were the final output files shall be stored.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/geno2phenotb:1.0.1--pyhdfd78af_1

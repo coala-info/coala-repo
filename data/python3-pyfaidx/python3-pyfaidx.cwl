@@ -59,6 +59,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --size
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -66,7 +72,9 @@ outputs:
       - File
     doc: Write output to file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/python3-pyfaidx:v0.4.8.1-1-deb_cv1

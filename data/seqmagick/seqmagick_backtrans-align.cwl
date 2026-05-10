@@ -32,6 +32,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --translation-table
+  - id: destination_file_path
+    type: string
+    doc: Output or path parameter `destination_file_path`
+    inputBinding:
+      position: 104
+      prefix: --destination-file
 outputs:
   - id: destination_file
     type:
@@ -39,7 +45,9 @@ outputs:
       - File
     doc: Output destination.
     outputBinding:
-      glob: $(inputs.destination_file)
+      glob: $(inputs.destination_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqmagick:0.8.6--pyhdfd78af_0

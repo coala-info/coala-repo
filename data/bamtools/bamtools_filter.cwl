@@ -18,9 +18,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if results are sent to stdout (like when piping to another tool), default
-      behavior is to leave output uncompressed. Use this flag to override and force
-      compression
+    doc: if results are sent to stdout (like when piping to another tool), 
+      default behavior is to leave output uncompressed. Use this flag to 
+      override and force compression
     inputBinding:
       position: 101
       prefix: -forceCompression
@@ -181,7 +181,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: only read data from this genomic region (see documentation for more details)
+    doc: only read data from this genomic region (see documentation for more 
+      details)
     inputBinding:
       position: 101
       prefix: -region
@@ -201,6 +202,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -tag
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -208,7 +215,9 @@ outputs:
       - File
     doc: the output BAM file [stdout]
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamtools:2.5.3--he132191_0

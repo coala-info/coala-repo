@@ -137,6 +137,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weighted
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -144,14 +160,16 @@ outputs:
       - File
     doc: Output prefix.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output file for cluster of calculators.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/expressbetadiversity:1.0.10--h9948957_6

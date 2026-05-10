@@ -47,6 +47,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --uppercase
+  - id: outf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outf_path`
+    inputBinding:
+      position: 103
+      prefix: --outf
+  - id: partf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `partf_path`
+    inputBinding:
+      position: 104
+      prefix: --partf
 outputs:
   - id: outf
     type:
@@ -54,14 +70,16 @@ outputs:
       - File
     doc: output sequence file, STOUT otherwise
     outputBinding:
-      glob: $(inputs.outf)
+      glob: $(inputs.outf_path)
   - id: partf
     type:
       - 'null'
       - File
     doc: output partition file, none otherwise
     outputBinding:
-      glob: $(inputs.partf)
+      glob: $(inputs.partf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

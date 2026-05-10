@@ -20,22 +20,41 @@ inputs:
     inputBinding:
       position: 102
       prefix: --refSeq
+  - id: output_inserts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_inserts_path`
+    inputBinding:
+      position: 103
+      prefix: --output-inserts
+  - id: output_primer_seqs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_primer_seqs_path`
+    inputBinding:
+      position: 104
+      prefix: --output-primer-seqs
 outputs:
   - id: output_primer_seqs
     type:
       - 'null'
       - File
-    doc: If provided, will write primer sequences as multiFASTA (requires --refSeq
-      to be provided)
+    doc: If provided, will write primer sequences as multiFASTA (requires 
+      --refSeq to be provided)
     outputBinding:
-      glob: $(inputs.output_primer_seqs)
+      glob: $(inputs.output_primer_seqs_path)
   - id: output_inserts
     type:
       - 'null'
       - File
-    doc: If provided, will write primer scheme inserts as BED (exluding primer sequences)
+    doc: If provided, will write primer scheme inserts as BED (exluding primer 
+      sequences)
     outputBinding:
-      glob: $(inputs.output_inserts)
+      glob: $(inputs.output_inserts_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/artic-tools:0.3.1--hf9554c4_7

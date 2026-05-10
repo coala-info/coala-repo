@@ -52,17 +52,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: -verbose
+  - id: discarded_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `discarded_reads_file_path`
+    inputBinding:
+      position: 102
+      prefix: --discarded-reads-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: discarded_reads_file
     type: File
     doc: output file for discarded reads
     outputBinding:
-      glob: $(inputs.discarded_reads_file)
+      glob: $(inputs.discarded_reads_file_path)
   - id: output_file
     type: File
     doc: output file for corrected reads
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lorma:0.4--2

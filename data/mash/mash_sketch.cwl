@@ -180,6 +180,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -188,7 +194,9 @@ outputs:
     doc: Output prefix (first input file used if unspecified). The suffix '.msh'
       will be appended.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mash:2.3--hb105d93_10

@@ -122,13 +122,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_chrom
+  - id: fragments_output_path
+    type: string
+    doc: Output or path parameter `fragments_output_path`
+    inputBinding:
+      position: 102
+      prefix: --fragments-output
 outputs:
   - id: fragments_output
     type: File
     doc: Name and path for output fragments file. Note that the output is not 
       sorted or compressed. To sort the output file use sort -k 1,1 -k2,2n
     outputBinding:
-      glob: $(inputs.fragments_output)
+      glob: $(inputs.fragments_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sinto:0.10.1--pyhdfd78af_0

@@ -198,6 +198,11 @@ inputs:
     inputBinding:
       position: 104
       prefix: --X
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 105
+      prefix: --Output_Dir
 outputs:
   - id: output_dir
     type:
@@ -205,7 +210,9 @@ outputs:
       - Directory
     doc: Enter a directory name that all compiled output files will be saved in.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virema:0.6--py27_0

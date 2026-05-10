@@ -87,8 +87,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: don't make any changes; instead, try to predict some of the changes that
-      may occur
+    doc: don't make any changes; instead, try to predict some of the changes 
+      that may occur
     inputBinding:
       position: 102
       prefix: --check
@@ -252,6 +252,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: tree_path
+    type: string
+    doc: Output or path parameter `tree_path`
+    inputBinding:
+      position: 103
+      prefix: --tree
 outputs:
   - id: tree
     type:
@@ -259,7 +265,9 @@ outputs:
       - Directory
     doc: log output to this directory
     outputBinding:
-      glob: $(inputs.tree)
+      glob: $(inputs.tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ansible:1.9.4--py27_0

@@ -75,15 +75,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: only show TaxIds and names of these ranks
-      - superkingdom
-      - phylum
-      - class
-      - order
-      - family
-      - genus
-      - species
-      - strain
+    doc: only show TaxIds and names of these ranks - superkingdom - phylum - 
+      class - order - family - genus - species - strain
     inputBinding:
       position: 101
       prefix: --show-rank
@@ -119,6 +112,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -126,7 +125,9 @@ outputs:
       - File
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/taxonkit:0.20.0--h9ee0642_1

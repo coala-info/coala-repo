@@ -131,6 +131,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_size
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Path to log file
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: path_to_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `path_to_output_path`
+    inputBinding:
+      position: 103
+      prefix: --path-to-output
+  - id: path_to_plots_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `path_to_plots_path`
+    inputBinding:
+      position: 104
+      prefix: --path-to-plots
 outputs:
   - id: path_to_output
     type:
@@ -140,7 +164,7 @@ outputs:
       If path does not exist, it will be created. If -AA or -NT flag is set, 
       sequences will be saved here, too.
     outputBinding:
-      glob: $(inputs.path_to_output)
+      glob: $(inputs.path_to_output_path)
   - id: path_to_plots
     type:
       - 'null'
@@ -149,14 +173,16 @@ outputs:
       different MGM models. Only available with isoform prediction. If path does
       not exist, it will be created
     outputBinding:
-      glob: $(inputs.path_to_plots)
+      glob: $(inputs.path_to_plots_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Path to log file
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgcod:1.0.2--hdfd78af_0

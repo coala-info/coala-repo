@@ -139,6 +139,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -146,7 +152,9 @@ outputs:
       - Directory
     doc: Name of optional output directory
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/psytrans:2.0.0--hdfd78af_1

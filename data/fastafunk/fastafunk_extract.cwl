@@ -45,6 +45,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: --low-memory
+  - id: out_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_fasta_path`
+    inputBinding:
+      position: 105
+      prefix: --out-fasta
+  - id: reject_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reject_fasta_path`
+    inputBinding:
+      position: 106
+      prefix: --reject-fasta
 outputs:
   - id: out_fasta
     type:
@@ -52,14 +68,16 @@ outputs:
       - File
     doc: A FASTA file (else writes to stdout)
     outputBinding:
-      glob: $(inputs.out_fasta)
+      glob: $(inputs.out_fasta_path)
   - id: reject_fasta
     type:
       - 'null'
       - File
     doc: A FASTA file to write the omitted sequences
     outputBinding:
-      glob: $(inputs.reject_fasta)
+      glob: $(inputs.reject_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastafunk:0.1.2--pyh5e36f6f_0

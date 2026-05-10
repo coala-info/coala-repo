@@ -92,6 +92,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -99,7 +105,9 @@ outputs:
       - File
     doc: OPTIONAL path to output results file
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/psauron:1.1.0--pyhdfd78af_0

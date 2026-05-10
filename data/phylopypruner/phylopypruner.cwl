@@ -28,8 +28,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: include these OTUs, even if deemed problematic by '--trim-freq-paralogs'
-      or '--trim-divergent'
+    doc: include these OTUs, even if deemed problematic by 
+      '--trim-freq-paralogs' or '--trim-divergent'
     inputBinding:
       position: 101
       prefix: --include
@@ -45,8 +45,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: exclude each OTU one by one, rerun the whole analysis and generate statistics
-      for each subsample
+    doc: exclude each OTU one by one, rerun the whole analysis and generate 
+      statistics for each subsample
     inputBinding:
       position: 101
       prefix: --jackknife
@@ -54,8 +54,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: if 2+ sequences from a single OTU forms a clade, choose which sequence to
-      keep using this method (longest or pdist)
+    doc: if 2+ sequences from a single OTU forms a clade, choose which sequence 
+      to keep using this method (longest or pdist)
     inputBinding:
       position: 101
       prefix: --mask
@@ -128,8 +128,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: root trees using these OTUs if at least one OTU is present and if all present
-      OTUs are non-repetetive and form a clade
+    doc: root trees using these OTUs if at least one OTU is present and if all 
+      present OTUs are non-repetetive and form a clade
     inputBinding:
       position: 101
       prefix: --outgroup
@@ -161,7 +161,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: specify a set of subclades within this file and analyse their overall stability
+    doc: specify a set of subclades within this file and analyse their overall 
+      stability
     inputBinding:
       position: 101
       prefix: --subclades
@@ -188,8 +189,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: exclude OTUs with more paralogy frequency (PF) than <factor> standard deviations
-      of all PFs
+    doc: exclude OTUs with more paralogy frequency (PF) than <factor> standard 
+      deviations of all PFs
     inputBinding:
       position: 101
       prefix: --trim-freq-paralogs
@@ -197,7 +198,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: remove branches longer than <factor> standard deviations of all branches
+    doc: remove branches longer than <factor> standard deviations of all 
+      branches
     inputBinding:
       position: 101
       prefix: --trim-lb
@@ -205,11 +207,17 @@ inputs:
     type:
       - 'null'
       - int
-    doc: wrap output sequences at column <number>, instead of writing each sequence
-      to a single line
+    doc: wrap output sequences at column <number>, instead of writing each 
+      sequence to a single line
     inputBinding:
       position: 101
       prefix: --wrap
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -217,7 +225,9 @@ outputs:
       - Directory
     doc: save output files to <directory>, instead of the input directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylopypruner:1.2.6--pyhdfd78af_0

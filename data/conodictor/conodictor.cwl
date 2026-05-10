@@ -83,6 +83,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quiet
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 103
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -90,7 +96,9 @@ outputs:
       - Directory
     doc: Specify output folder.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/conodictor:v2.3.1_cv1

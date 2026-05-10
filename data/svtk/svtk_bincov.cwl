@@ -74,6 +74,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --presubsetted
+  - id: norm_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `norm_out_path`
+    inputBinding:
+      position: 104
+      prefix: --norm-out
 outputs:
   - id: cov_out
     type: File
@@ -86,7 +94,9 @@ outputs:
       - File
     doc: Output bed file of normalized coverage
     outputBinding:
-      glob: $(inputs.norm_out)
+      glob: $(inputs.norm_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

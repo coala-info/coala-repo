@@ -58,6 +58,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -65,7 +71,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lorax:0.5.1--h4d20210_0

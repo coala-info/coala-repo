@@ -218,6 +218,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -y
+  - id: outdir_path
+    type: string
+    doc: Output directory to store all results.
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: outdir
     type:
@@ -225,7 +231,9 @@ outputs:
       - Directory
     doc: Output directory to store all results.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virusrecom:1.4.0--pyhdfd78af_0

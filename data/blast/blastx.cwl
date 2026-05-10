@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If the query range of a hit is enveloped by that of at least this many higher-scoring
-      hits, delete the hit
+    doc: If the query range of a hit is enveloped by that of at least this many 
+      higher-scoring hits, delete the hit
     inputBinding:
       position: 101
       prefix: -culling_limit
@@ -169,8 +169,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Length of the largest intron allowed in a translated nucleotide sequence
-      when linking multiple distinct alignments
+    doc: Length of the largest intron allowed in a translated nucleotide 
+      sequence when linking multiple distinct alignments
     inputBinding:
       position: 101
       prefix: -max_intron_length
@@ -218,8 +218,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Restrict search of database to everything except the specified taxonomy IDs
-      and their descendants
+    doc: Restrict search of database to everything except the specified taxonomy
+      IDs and their descendants
     inputBinding:
       position: 101
       prefix: -negative_taxidlist
@@ -227,8 +227,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Restrict search of database to everything except the specified taxonomy IDs
-      and their descendants
+    doc: Restrict search of database to everything except the specified taxonomy
+      IDs and their descendants
     inputBinding:
       position: 101
       prefix: -negative_taxids
@@ -236,7 +236,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not expand the taxonomy IDs provided to their descendant taxonomy IDs
+    doc: Do not expand the taxonomy IDs provided to their descendant taxonomy 
+      IDs
     inputBinding:
       position: 101
       prefix: -no_taxid_expansion
@@ -428,8 +429,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Restrict search of database to include only the specified taxonomy IDs and
-      their descendants
+    doc: Restrict search of database to include only the specified taxonomy IDs 
+      and their descendants
     inputBinding:
       position: 101
       prefix: -taxidlist
@@ -437,8 +438,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Restrict search of database to include only the specified taxonomy IDs and
-      their descendants
+    doc: Restrict search of database to include only the specified taxonomy IDs 
+      and their descendants
     inputBinding:
       position: 101
       prefix: -taxids
@@ -446,7 +447,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum word score such that the word is added to the BLAST lookup table
+    doc: Minimum word score such that the word is added to the BLAST lookup 
+      table
     inputBinding:
       position: 101
       prefix: -threshold
@@ -506,6 +508,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -xdrop_ungap
+  - id: export_search_strategy_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `export_search_strategy_path`
+    inputBinding:
+      position: 102
+      prefix: --export-search-strategy
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -513,14 +531,16 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: export_search_strategy
     type:
       - 'null'
       - File
     doc: File name to record the search strategy used
     outputBinding:
-      glob: $(inputs.export_search_strategy)
+      glob: $(inputs.export_search_strategy_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast:2.17.0--h66d330f_0

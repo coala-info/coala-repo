@@ -40,12 +40,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --suffix1
+  - id: path_out_path
+    type: string
+    doc: Output or path parameter `path_out_path`
+    inputBinding:
+      position: 102
+      prefix: --path-out
 outputs:
   - id: path_out
     type: Directory
     doc: Output folder for STAR results
     outputBinding:
-      glob: $(inputs.path_out)
+      glob: $(inputs.path_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0

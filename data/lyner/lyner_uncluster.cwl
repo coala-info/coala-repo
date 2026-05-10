@@ -43,6 +43,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_clusters_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_clusters_path`
+    inputBinding:
+      position: 103
+      prefix: --output-clusters
+  - id: output_sequences_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sequences_path`
+    inputBinding:
+      position: 104
+      prefix: --output-sequences
 outputs:
   - id: output_sequences
     type:
@@ -50,14 +66,16 @@ outputs:
       - File
     doc: Output sequences (FASTA/FASTQ)
     outputBinding:
-      glob: $(inputs.output_sequences)
+      glob: $(inputs.output_sequences_path)
   - id: output_clusters
     type:
       - 'null'
       - File
     doc: Output clusters (TSV)
     outputBinding:
-      glob: $(inputs.output_clusters)
+      glob: $(inputs.output_clusters_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0

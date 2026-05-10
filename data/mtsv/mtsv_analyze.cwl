@@ -74,6 +74,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wd
+  - id: analysis_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `analysis_file_path`
+    inputBinding:
+      position: 102
+      prefix: --analysis-file
+  - id: summary_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_file_path`
+    inputBinding:
+      position: 103
+      prefix: --summary-file
 outputs:
   - id: analysis_file
     type:
@@ -81,14 +97,16 @@ outputs:
       - File
     doc: File to write output.
     outputBinding:
-      glob: $(inputs.analysis_file)
+      glob: $(inputs.analysis_file_path)
   - id: summary_file
     type:
       - 'null'
       - File
     doc: Path to summary output
     outputBinding:
-      glob: $(inputs.summary_file)
+      glob: $(inputs.summary_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2

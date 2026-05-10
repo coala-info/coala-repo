@@ -153,6 +153,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --quoting
+  - id: details_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `details_out_path`
+    inputBinding:
+      position: 104
+      prefix: --details-out
+  - id: map_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `map_out_path`
+    inputBinding:
+      position: 105
+      prefix: --map-out
+  - id: report_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_out_path`
+    inputBinding:
+      position: 106
+      prefix: --report-out
 outputs:
   - id: report_out
     type:
@@ -160,21 +184,23 @@ outputs:
       - File
     doc: Output file for report
     outputBinding:
-      glob: $(inputs.report_out)
+      glob: $(inputs.report_out_path)
   - id: details_out
     type:
       - 'null'
       - File
     doc: Output file to report fate of each sequence
     outputBinding:
-      glob: $(inputs.details_out)
+      glob: $(inputs.details_out_path)
   - id: map_out
     type:
       - 'null'
       - File
     doc: Path to write sequence_id,sample_id pairs
     outputBinding:
-      glob: $(inputs.map_out)
+      glob: $(inputs.map_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqmagick:0.8.6--pyhdfd78af_0

@@ -566,6 +566,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: aligned_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aligned_reads_file_path`
+    inputBinding:
+      position: 104
+      prefix: --aligned-reads-file
+  - id: max_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `max_reads_file_path`
+    inputBinding:
+      position: 105
+      prefix: --max-reads-file
+  - id: unaligned_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unaligned_reads_file_path`
+    inputBinding:
+      position: 106
+      prefix: --unaligned-reads-file
 outputs:
   - id: hit_file
     type:
@@ -580,21 +604,23 @@ outputs:
       - File
     doc: write aligned reads/pairs to file(s)
     outputBinding:
-      glob: $(inputs.aligned_reads_file)
+      glob: $(inputs.aligned_reads_file_path)
   - id: unaligned_reads_file
     type:
       - 'null'
       - File
     doc: write unaligned reads/pairs to file(s)
     outputBinding:
-      glob: $(inputs.unaligned_reads_file)
+      glob: $(inputs.unaligned_reads_file_path)
   - id: max_reads_file
     type:
       - 'null'
       - File
     doc: write reads/pairs over -m limit to file(s)
     outputBinding:
-      glob: $(inputs.max_reads_file)
+      glob: $(inputs.max_reads_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emirge:0.61.1--py27_1

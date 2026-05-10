@@ -36,6 +36,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unimog
+  - id: write_ancestor_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_ancestor_path`
+    inputBinding:
+      position: 102
+      prefix: --write-ancestor
+  - id: write_measure_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_measure_path`
+    inputBinding:
+      position: 103
+      prefix: --write-measure
 outputs:
   - id: write_ancestor
     type:
@@ -43,14 +59,16 @@ outputs:
       - Directory
     doc: Path to write ancestral adjacencies to.
     outputBinding:
-      glob: $(inputs.write_ancestor)
+      glob: $(inputs.write_ancestor_path)
   - id: write_measure
     type:
       - 'null'
       - Directory
     doc: Path to write the carp measure to.
     outputBinding:
-      glob: $(inputs.write_measure)
+      glob: $(inputs.write_measure_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carp:0.1.1--h4349ce8_0

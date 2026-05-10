@@ -32,7 +32,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum base quality (assume FASTQ Illumina 1.8+ Phred scale, 
+    doc: minimum base quality (assume FASTQ Illumina 1.8+ Phred scale,
     inputBinding:
       position: 101
       prefix: --min-base-quality
@@ -80,6 +80,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out1_path`
+    inputBinding:
+      position: 102
+      prefix: --out1
+  - id: out2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out2_path`
+    inputBinding:
+      position: 103
+      prefix: --out2
 outputs:
   - id: out1
     type:
@@ -87,14 +103,16 @@ outputs:
       - File
     doc: first output sample in FASTQ
     outputBinding:
-      glob: $(inputs.out1)
+      glob: $(inputs.out1_path)
   - id: out2
     type:
       - 'null'
       - File
     doc: second output sample in FASTQ
     outputBinding:
-      glob: $(inputs.out2)
+      glob: $(inputs.out2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shark:1.2.0--h077b44d_5

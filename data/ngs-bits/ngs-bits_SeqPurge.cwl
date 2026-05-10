@@ -198,17 +198,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tdx
+  - id: output_forward_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_forward_path`
+    inputBinding:
+      position: 102
+      prefix: --output-forward
+  - id: output_reverse_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_reverse_path`
+    inputBinding:
+      position: 103
+      prefix: --output-reverse
 outputs:
   - id: output_forward
     type: File
     doc: Forward output gzipped FASTQ file.
     outputBinding:
-      glob: $(inputs.output_forward)
+      glob: $(inputs.output_forward_path)
   - id: output_reverse
     type: File
     doc: Reverse output gzipped FASTQ file.
     outputBinding:
-      glob: $(inputs.output_reverse)
+      glob: $(inputs.output_reverse_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

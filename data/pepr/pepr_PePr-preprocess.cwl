@@ -69,8 +69,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: maximum number of reads to keep at each position. if not specified, will
-      not remove any duplicate.
+    doc: maximum number of reads to keep at each position. if not specified, 
+      will not remove any duplicate.
     inputBinding:
       position: 101
       prefix: --keep-max-dup
@@ -86,8 +86,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Normalization method. inter-group, intra-group, scale or no. Must manually
-      specify for differential binding analysis.
+    doc: Normalization method. inter-group, intra-group, scale or no. Must 
+      manually specify for differential binding analysis.
     inputBinding:
       position: 101
       prefix: --normalization
@@ -139,6 +139,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --windowsize
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -146,7 +152,9 @@ outputs:
       - Directory
     doc: where you want the output files to be
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepr:1.1.24--py35_0

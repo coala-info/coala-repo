@@ -13,10 +13,10 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Optional modification to the way scores are calculated. If this flag is used,
-      then instead of a peptide receiving one point for each kmer it shares with proteins
-      of a given taxonomic group, it receives 1 / ( the number of times the kmer appears
-      in the provided peptides ) points.
+    doc: Optional modification to the way scores are calculated. If this flag is
+      used, then instead of a peptide receiving one point for each kmer it 
+      shares with proteins of a given taxonomic group, it receives 1 / ( the 
+      number of times the kmer appears in the provided peptides ) points.
     inputBinding:
       position: 101
       prefix: --kmer_redundancy_control
@@ -40,8 +40,8 @@ inputs:
       prefix: --meta
   - id: peptide_file
     type: File
-    doc: Name of fasta file containing aa peptides of interest. These will generally
-      be peptides that are contained in a particular assay.
+    doc: Name of fasta file containing aa peptides of interest. These will 
+      generally be peptides that are contained in a particular assay.
     inputBinding:
       position: 101
       prefix: --peptide_file
@@ -55,12 +55,29 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Optional method for parsing taxonomic information from the names of the protein
-      sequences. This is an alternative to the "--meta" argument and will only work
-      if the protein names contain "OXX" tags of the form "OXX=variableID,speciesID,genusID,familyID".
+    doc: Optional method for parsing taxonomic information from the names of the
+      protein sequences. This is an alternative to the "--meta" argument and 
+      will only work if the protein names contain "OXX" tags of the form 
+      "OXX=variableID,speciesID,genusID,familyID".
     inputBinding:
       position: 101
       prefix: --tax_id_index
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -70,14 +87,16 @@ outputs:
       of a tab-delimited file with a header. Each entry/row will be of the form: peptide_name
       TAB id:score,id:score, and so on.'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Designated file to which the module's processes are logged.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

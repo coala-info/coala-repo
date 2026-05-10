@@ -85,7 +85,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: interactive mode (no input buffer and empty lines between records force processing)
+    doc: interactive mode (no input buffer and empty lines between records force
+      processing)
     inputBinding:
       position: 103
       prefix: -Z
@@ -241,6 +242,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -t
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -248,7 +255,9 @@ outputs:
       - File
     doc: file to write output to instead of stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-aln-interactive:0.7.18--h577a1d6_2

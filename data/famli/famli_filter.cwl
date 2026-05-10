@@ -103,6 +103,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -110,14 +126,16 @@ outputs:
       - File
     doc: Location for output JSON file.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: (Optional) Write log to this file.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/famli:v1.0_cv2

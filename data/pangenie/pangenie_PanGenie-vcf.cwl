@@ -7,13 +7,15 @@ doc: "Genotyping based on kmer-counting and known haplotype sequences using seri
 inputs:
   - id: genotyping_results
     type: File
-    doc: serialized genotyping results (produced by PanGenie run with parameter -w).
+    doc: serialized genotyping results (produced by PanGenie run with parameter 
+      -w).
     inputBinding:
       position: 101
       prefix: -z
   - id: index_prefix
     type: File
-    doc: filename prefix of the index files (i.e. option -o used with PanGenie-index).
+    doc: filename prefix of the index files (i.e. option -o used with 
+      PanGenie-index).
     inputBinding:
       position: 101
       prefix: -f
@@ -49,13 +51,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: 'prefix of the output files. NOTE: the given path must not include non-existent
       folders.'
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0

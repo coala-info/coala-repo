@@ -35,6 +35,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --model-info
+  - id: output_file_path
+    type: string
+    doc: Output TSV
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -42,7 +48,9 @@ outputs:
       - File
     doc: Output TSV
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genin2:2.1.5--pyhdfd78af_0

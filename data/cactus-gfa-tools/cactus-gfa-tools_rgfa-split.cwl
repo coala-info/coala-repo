@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: All query contigs that do not meet min coverage (-n) assigned to single reference
-      with name NAME
+    doc: All query contigs that do not meet min coverage (-n) assigned to single
+      reference with name NAME
     inputBinding:
       position: 101
       prefix: --ambiguous-name
@@ -28,8 +28,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: BED file. Used to subtract out softmasked regions when computing coverage
-      (multiple allowed)
+    doc: BED file. Used to subtract out softmasked regions when computing 
+      coverage (multiple allowed)
     inputBinding:
       position: 101
       prefix: --bed
@@ -86,8 +86,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: I a query interval of >= N bp aligns to a reference with sufficient coverage,
-      cut it out. Disabled when 0.
+    doc: I a query interval of >= N bp aligns to a reference with sufficient 
+      coverage, cut it out. Disabled when 0.
     inputBinding:
       position: 101
       prefix: --min-query-chunk
@@ -96,8 +96,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: At least this fraction of input contig must align to reference contig for
-      it to be assigned (can repeat)
+    doc: At least this fraction of input contig must align to reference contig 
+      for it to be assigned (can repeat)
     inputBinding:
       position: 101
       prefix: --min-query-coverage
@@ -105,8 +105,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The ratio of the number of query bases aligned to the chosen ref contig vs
-      the next best ref contig must exceed this threshold to not be considered ambigious
+    doc: The ratio of the number of query bases aligned to the chosen ref contig
+      vs the next best ref contig must exceed this threshold to not be 
+      considered ambigious
     inputBinding:
       position: 101
       prefix: --min-query-uniqueness
@@ -114,8 +115,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Lump all contigs not selected by above options into single reference with
-      name NAME
+    doc: Lump all contigs not selected by above options into single reference 
+      with name NAME
     inputBinding:
       position: 101
       prefix: --other-name
@@ -139,8 +140,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: rGFA to use as baseline for contig splitting (if not defined, minmap2 output
-      assumed)
+    doc: rGFA to use as baseline for contig splitting (if not defined, minmap2 
+      output assumed)
     inputBinding:
       position: 101
       prefix: --rgfa
@@ -149,8 +150,8 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Used to toggle between the coverage thresholds (-n). Should have one-fewer
-      value than -n
+    doc: Used to toggle between the coverage thresholds (-n). Should have 
+      one-fewer value than -n
     inputBinding:
       position: 101
       prefix: --small-coverage-threshold
@@ -162,6 +163,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --split-gfa
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 102
+      prefix: --log
+  - id: output_contig_map_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_contig_map_path`
+    inputBinding:
+      position: 103
+      prefix: --output-contig-map
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -169,21 +194,23 @@ outputs:
       - File
     doc: All output files will be of the form <PREFIX><contig>.paf/.fa_contigs
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: output_contig_map
     type:
       - 'null'
       - File
     doc: Output rgfa node -> contig map to this file
     outputBinding:
-      glob: $(inputs.output_contig_map)
+      glob: $(inputs.output_contig_map_path)
   - id: log
     type:
       - 'null'
       - File
     doc: Keep track of filtered and assigned contigs in given file [stderr]
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0

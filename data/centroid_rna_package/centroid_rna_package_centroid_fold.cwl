@@ -150,6 +150,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threshold
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: output_posteriors_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_posteriors_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-posteriors-file
 outputs:
   - id: output_file
     type:
@@ -158,7 +174,7 @@ outputs:
     doc: specify filename to output predicted secondary structures. If empty, 
       use the standard output.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_posteriors_file
     type:
       - 'null'
@@ -166,7 +182,9 @@ outputs:
     doc: specify filename to output base-pairing probability matrices. If empty,
       use the standard output.
     outputBinding:
-      glob: $(inputs.output_posteriors_file)
+      glob: $(inputs.output_posteriors_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centroid_rna_package:0.0.16--0

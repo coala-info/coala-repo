@@ -20,8 +20,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: short-read junctions in bed format (can be generated from short-read alignment
-      with junctions_from_sam)
+    doc: short-read junctions in bed format (can be generated from short-read 
+      alignment with junctions_from_sam)
     inputBinding:
       position: 101
       prefix: --junction_bed
@@ -29,9 +29,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: if providing short-read junctions, minimum junction support required to keep
-      junction. If your junctions file is in bed format, the score field will be used
-      for read support.
+    doc: if providing short-read junctions, minimum junction support required to
+      keep junction. If your junctions file is in bed format, the score field 
+      will be used for read support.
     inputBinding:
       position: 101
       prefix: --junction_support
@@ -39,8 +39,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: short-read junctions in SJ.out.tab format. Use this option if you aligned
-      your short-reads with STAR, STAR will automatically output this file
+    doc: short-read junctions in SJ.out.tab format. Use this option if you 
+      aligned your short-reads with STAR, STAR will automatically output this 
+      file
     inputBinding:
       position: 101
       prefix: --junction_tab
@@ -48,8 +49,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify this flag to make the strand of a read consistent with the annotation
-      during correction
+    doc: specify this flag to make the strand of a read consistent with the 
+      annotation during correction
     inputBinding:
       position: 101
       prefix: --nvrna
@@ -75,6 +76,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -82,7 +89,9 @@ outputs:
       - File
     doc: output name base
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

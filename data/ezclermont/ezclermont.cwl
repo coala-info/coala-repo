@@ -38,6 +38,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no_partial
+  - id: logfile_path
+    type: string
+    doc: send log messages to logfile instead stderr
+    inputBinding:
+      position: 103
+      prefix: --logfile
 outputs:
   - id: logfile
     type:
@@ -45,7 +51,9 @@ outputs:
       - File
     doc: send log messages to logfile instead stderr
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ezclermont:0.7.0--pyhdfd78af_0

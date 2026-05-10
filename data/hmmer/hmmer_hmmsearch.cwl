@@ -238,6 +238,46 @@ inputs:
     inputBinding:
       position: 103
       prefix: -Z
+  - id: alignment_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignment_output_path`
+    inputBinding:
+      position: 104
+      prefix: --alignment-output
+  - id: domtblout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `domtblout_path`
+    inputBinding:
+      position: 105
+      prefix: --domtblout
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-file
+  - id: pfamtblout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pfamtblout_path`
+    inputBinding:
+      position: 107
+      prefix: --pfamtblout
+  - id: tblout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tblout_path`
+    inputBinding:
+      position: 108
+      prefix: --tblout
 outputs:
   - id: output_file
     type:
@@ -245,35 +285,37 @@ outputs:
       - File
     doc: direct output to file, not stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: alignment_output
     type:
       - 'null'
       - File
     doc: save multiple alignment of all hits to file
     outputBinding:
-      glob: $(inputs.alignment_output)
+      glob: $(inputs.alignment_output_path)
   - id: tblout
     type:
       - 'null'
       - File
     doc: save parseable table of per-sequence hits to file
     outputBinding:
-      glob: $(inputs.tblout)
+      glob: $(inputs.tblout_path)
   - id: domtblout
     type:
       - 'null'
       - File
     doc: save parseable table of per-domain hits to file
     outputBinding:
-      glob: $(inputs.domtblout)
+      glob: $(inputs.domtblout_path)
   - id: pfamtblout
     type:
       - 'null'
       - File
     doc: save table of hits and domains to file, in Pfam format
     outputBinding:
-      glob: $(inputs.pfamtblout)
+      glob: $(inputs.pfamtblout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmer:3.4--hb6cb901_4

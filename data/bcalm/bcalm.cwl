@@ -88,7 +88,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: compute the 2D histogram (with first file = genome, remaining files = reads)
+    doc: compute the 2D histogram (with first file = genome, remaining files = 
+      reads)
     inputBinding:
       position: 101
       prefix: -histo2D
@@ -247,8 +248,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: when solidity-kind is custom, specifies list of files where kmer must be
-      present
+    doc: when solidity-kind is custom, specifies list of files where kmer must 
+      be present
     inputBinding:
       position: 101
       prefix: -solidity-custom
@@ -276,6 +277,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -verbose
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -283,14 +300,16 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_dir
     type:
       - 'null'
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcalm:2.2.3--h43eeafb_6

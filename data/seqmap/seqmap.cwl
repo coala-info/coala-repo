@@ -76,6 +76,14 @@ inputs:
     inputBinding:
       position: 104
       prefix: /v
+  - id: match_statistics_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `match_statistics_path`
+    inputBinding:
+      position: 105
+      prefix: --match-statistics
 outputs:
   - id: output_file
     type: File
@@ -88,7 +96,9 @@ outputs:
       - File
     doc: Write match statistics to a file.
     outputBinding:
-      glob: $(inputs.match_statistics)
+      glob: $(inputs.match_statistics_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqmap:1.0.13--h9948957_3

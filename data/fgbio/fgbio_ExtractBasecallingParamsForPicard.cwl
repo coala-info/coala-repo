@@ -70,12 +70,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmp-dir
+  - id: bam_output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `bam_output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --bam-output-directory
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type: Directory
     doc: The output folder to where per-lane parameter files should be written.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: bam_output_directory
     type:
       - 'null'
@@ -83,7 +99,9 @@ outputs:
     doc: Optional output folder to where per-lane BAM files should be written, 
       otherwise the output directory will be used.
     outputBinding:
-      glob: $(inputs.bam_output_directory)
+      glob: $(inputs.bam_output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0

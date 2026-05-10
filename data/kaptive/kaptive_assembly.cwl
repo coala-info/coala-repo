@@ -162,6 +162,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --weight-metric
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `scores_file_path`
+    inputBinding:
+      position: 105
+      prefix: --scores-file
 outputs:
   - id: output_file
     type:
@@ -169,7 +185,7 @@ outputs:
       - File
     doc: Output file to write/append tabular results to
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: scores_file
     type:
       - 'null'
@@ -177,7 +193,9 @@ outputs:
     doc: Dump locus score matrix to tsv (typing will not be performed!). 
       Optionally choose file (can be existing)
     outputBinding:
-      glob: $(inputs.scores_file)
+      glob: $(inputs.scores_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kaptive:3.1.0--pyhdfd78af_0

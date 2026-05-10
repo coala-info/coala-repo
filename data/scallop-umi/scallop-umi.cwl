@@ -108,12 +108,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: gtf_file_path
+    type: string
+    doc: Output or path parameter `gtf_file_path`
+    inputBinding:
+      position: 102
+      prefix: --gtf-file
 outputs:
   - id: gtf_file
     type: File
     doc: Output GTF file
     outputBinding:
-      glob: $(inputs.gtf_file)
+      glob: $(inputs.gtf_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scallop-umi:1.1.0--hbce0939_0

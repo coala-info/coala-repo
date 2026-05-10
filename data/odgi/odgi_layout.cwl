@@ -187,6 +187,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_layout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_layout_path`
+    inputBinding:
+      position: 102
+      prefix: --output-layout
+  - id: output_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tsv
 outputs:
   - id: output_layout
     type:
@@ -194,14 +210,16 @@ outputs:
       - File
     doc: Write the layout coordinates to this FILE in .lay binary format.
     outputBinding:
-      glob: $(inputs.output_layout)
+      glob: $(inputs.output_layout_path)
   - id: output_tsv
     type:
       - 'null'
       - File
     doc: Write the layout in TSV format to this FILE.
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

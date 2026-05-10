@@ -33,6 +33,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --occpeaks
+  - id: out_basename_path
+    type: string
+    doc: Output or path parameter `out_basename_path`
+    inputBinding:
+      position: 102
+      prefix: --out-basename
 outputs:
   - id: out_basename
     type:
@@ -40,7 +46,9 @@ outputs:
       - File
     doc: output file basename
     outputBinding:
-      glob: $(inputs.out_basename)
+      glob: $(inputs.out_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nucleoatac:0.3.4--py27hf119a78_5

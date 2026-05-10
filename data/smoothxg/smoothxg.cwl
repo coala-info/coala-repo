@@ -84,6 +84,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-maf
+  - id: gfa_out_path
+    type: string
+    doc: Output or path parameter `gfa_out_path`
+    inputBinding:
+      position: 102
+      prefix: --gfa-out
 outputs:
   - id: gfa_out
     type:
@@ -91,7 +97,9 @@ outputs:
       - File
     doc: Output GFA file.
     outputBinding:
-      glob: $(inputs.gfa_out)
+      glob: $(inputs.gfa_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smoothxg:0.8.2--h2fa790d_1

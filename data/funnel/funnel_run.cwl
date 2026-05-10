@@ -202,6 +202,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zone
+  - id: out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --out-file
+  - id: stderr_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stderr_file_path`
+    inputBinding:
+      position: 105
+      prefix: --stderr-file
+  - id: stdout_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stdout_file_path`
+    inputBinding:
+      position: 106
+      prefix: --stdout-file
 outputs:
   - id: out_file
     type:
@@ -209,28 +241,30 @@ outputs:
       - File
     doc: Output file e.g. varname=/path/to/output.txt
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
   - id: out_dir
     type:
       - 'null'
       - Directory
     doc: Output directory e.g. varname=/path/to/dir
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
   - id: stdout_file
     type:
       - 'null'
       - File
     doc: File to write to stdout of the command.
     outputBinding:
-      glob: $(inputs.stdout_file)
+      glob: $(inputs.stdout_file_path)
   - id: stderr_file
     type:
       - 'null'
       - File
     doc: File to write to stderr of the command.
     outputBinding:
-      glob: $(inputs.stderr_file)
+      glob: $(inputs.stderr_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/funnel:0.9.0--0

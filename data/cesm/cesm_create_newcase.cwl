@@ -207,6 +207,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workflow
+  - id: output_root_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-root
 outputs:
   - id: output_root
     type:
@@ -214,7 +219,9 @@ outputs:
       - Directory
     doc: Alternative pathname for the directory where case output is written.
     outputBinding:
-      glob: $(inputs.output_root)
+      glob: $(inputs.output_root_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cesm:2.1.3--py39hd40aa7f_3

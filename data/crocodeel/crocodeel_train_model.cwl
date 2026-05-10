@@ -45,18 +45,36 @@ inputs:
     inputBinding:
       position: 101
       prefix: --test-size
+  - id: json_report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `json_report_file_path`
+    inputBinding:
+      position: 102
+      prefix: --json-report-file
+  - id: model_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `model_file_path`
+    inputBinding:
+      position: 103
+      prefix: --model-file
 outputs:
   - id: model_file
     type: File
     doc: Output file storing the trained Random Forest model
     outputBinding:
-      glob: $(inputs.model_file)
+      glob: $(inputs.model_file_path)
   - id: json_report_file
     type: File
     doc: Output JSON file storing classification performance metrics for train 
       and test splits
     outputBinding:
-      glob: $(inputs.json_report_file)
+      glob: $(inputs.json_report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crocodeel:1.1.0--pyhdfd78af_0

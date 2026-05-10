@@ -54,12 +54,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min-zscore
+  - id: output_comparison_path
+    type: string
+    doc: Output or path parameter `output_comparison_path`
+    inputBinding:
+      position: 102
+      prefix: --output-comparison
 outputs:
   - id: output_comparison
     type: File
     doc: Output comparison file (CSV/TSV)
     outputBinding:
-      glob: $(inputs.output_comparison)
+      glob: $(inputs.output_comparison_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methbat:0.17.0--h9ee0642_0

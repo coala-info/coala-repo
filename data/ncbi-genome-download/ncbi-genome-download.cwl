@@ -80,6 +80,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: metadata_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `metadata_table_path`
+    inputBinding:
+      position: 103
+      prefix: --metadata-table
+  - id: output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 104
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -87,14 +103,16 @@ outputs:
       - Directory
     doc: Output directory for downloaded files
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
   - id: metadata_table
     type:
       - 'null'
       - File
     doc: Save metadata to a tab-separated file
     outputBinding:
-      glob: $(inputs.metadata_table)
+      glob: $(inputs.metadata_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-genome-download:0.3.3--pyh7cba7a3_0

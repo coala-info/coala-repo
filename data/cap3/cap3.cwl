@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: cap3
 label: cap3
-doc: "CAP3 is a DNA sequence assembly program for small-scale assembly projects.\n
-  \nTool homepage: https://github.com/crockwell/Cap3D"
+doc: "CAP3 is a DNA sequence assembly program for small-scale assembly projects.\n\
+  \ \nTool homepage: https://github.com/crockwell/Cap3D"
 inputs:
   - id: file_of_reads
     type: File
@@ -186,6 +186,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -i
+  - id: clipping_info_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clipping_info_file_path`
+    inputBinding:
+      position: 103
+      prefix: --clipping-info-file
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
 outputs:
   - id: clipping_info_file
     type:
@@ -193,14 +209,16 @@ outputs:
       - File
     doc: specify file name for clipping information
     outputBinding:
-      glob: $(inputs.clipping_info_file)
+      glob: $(inputs.clipping_info_file_path)
   - id: output_prefix
     type:
       - 'null'
       - File
     doc: specify prefix string for output file names
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cap3:10.2011--1

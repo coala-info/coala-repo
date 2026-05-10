@@ -657,6 +657,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ymin
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: smoothed_csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `smoothed_csv_path`
+    inputBinding:
+      position: 103
+      prefix: --smoothed-csv
 outputs:
   - id: outfile
     type:
@@ -664,7 +680,7 @@ outputs:
       - File
     doc: 'output file name (default: generated from input)'
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: smoothed_csv
     type:
       - 'null'
@@ -672,7 +688,9 @@ outputs:
     doc: output values from smoothed plot to CSV format (can specify filename or
       "auto")
     outputBinding:
-      glob: $(inputs.smoothed_csv)
+      glob: $(inputs.smoothed_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0

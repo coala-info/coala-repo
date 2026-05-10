@@ -146,6 +146,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: coverage_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coverage_output_path`
+    inputBinding:
+      position: 102
+      prefix: --coverage-output
+  - id: highlight_data_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `highlight_data_output_path`
+    inputBinding:
+      position: 103
+      prefix: --highlight-data-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
+  - id: read_data_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `read_data_output_path`
+    inputBinding:
+      position: 105
+      prefix: --read-data-output
+  - id: ref_data_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ref_data_output_path`
+    inputBinding:
+      position: 106
+      prefix: --ref-data-output
+  - id: spec_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `spec_output_path`
+    inputBinding:
+      position: 107
+      prefix: --spec-output
 outputs:
   - id: coverage_output
     type:
@@ -153,14 +201,14 @@ outputs:
       - File
     doc: If present coverage data will be written to the given file path
     outputBinding:
-      glob: $(inputs.coverage_output)
+      glob: $(inputs.coverage_output_path)
   - id: highlight_data_output
     type:
       - 'null'
       - File
     doc: If present highlight data will be written to the given file path
     outputBinding:
-      glob: $(inputs.highlight_data_output)
+      glob: $(inputs.highlight_data_output_path)
   - id: output
     type:
       - 'null'
@@ -168,28 +216,30 @@ outputs:
     doc: If present, data and vega-lite specs of the generated plot will be 
       split and written to the given directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: read_data_output
     type:
       - 'null'
       - File
     doc: If present read data will be written to the given file path
     outputBinding:
-      glob: $(inputs.read_data_output)
+      glob: $(inputs.read_data_output_path)
   - id: ref_data_output
     type:
       - 'null'
       - File
     doc: If present reference data will be written to the given file path
     outputBinding:
-      glob: $(inputs.ref_data_output)
+      glob: $(inputs.ref_data_output_path)
   - id: spec_output
     type:
       - 'null'
       - File
     doc: If present vega-lite specs will be written to the given file path
     outputBinding:
-      glob: $(inputs.spec_output)
+      glob: $(inputs.spec_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alignoth:1.4.6--h1520f10_0

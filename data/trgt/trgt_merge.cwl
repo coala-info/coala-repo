@@ -43,8 +43,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Stream VCFs without loading their indexes (contig order must match across
-      inputs)
+    doc: Stream VCFs without loading their indexes (contig order must match 
+      across inputs)
     inputBinding:
       position: 101
       prefix: --no-index
@@ -126,7 +126,8 @@ inputs:
       - 'null'
       - type: array
         items: boolean
-    doc: Specify multiple times to increase verbosity level (e.g., -vv for more verbosity)
+    doc: Specify multiple times to increase verbosity level (e.g., -vv for more 
+      verbosity)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -138,6 +139,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-index
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -145,7 +152,9 @@ outputs:
       - File
     doc: Write output to a file [standard output]
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trgt:5.0.0--h9ee0642_0

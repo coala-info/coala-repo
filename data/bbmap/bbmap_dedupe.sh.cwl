@@ -68,8 +68,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: When non-zero, overlaps will only be formed between reads with a depth ratio
-      of at most this.
+    doc: When non-zero, overlaps will only be formed between reads with a depth 
+      ratio of at most this.
     inputBinding:
       position: 101
       prefix: depthratio
@@ -77,7 +77,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Only allow exact symbol matches. When false, an 'N' will match any symbol.
+    doc: Only allow exact symbol matches. When false, an 'N' will match any 
+      symbol.
     inputBinding:
       position: 101
       prefix: exact
@@ -93,8 +94,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Find overlaps between contigs (containments and non-containments). Necessary
-      for clustering.
+    doc: Find overlaps between contigs (containments and non-containments). 
+      Necessary for clustering.
     inputBinding:
       position: 101
       prefix: findoverlap
@@ -118,7 +119,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If positive, trim bases to the left of this position (exclusive, 0-based).
+    doc: If positive, trim bases to the left of this position (exclusive, 
+      0-based).
     inputBinding:
       position: 101
       prefix: forcetrimleft
@@ -126,7 +128,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If positive, trim bases to the right of this position (exclusive, 0-based).
+    doc: If positive, trim bases to the right of this position (exclusive, 
+      0-based).
     inputBinding:
       position: 101
       prefix: forcetrimright
@@ -214,8 +217,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Smaller contig must be at least this percent of larger contig's length to
-      be absorbed.
+    doc: Smaller contig must be at least this percent of larger contig's length 
+      to be absorbed.
     inputBinding:
       position: 101
       prefix: minlengthpercent
@@ -231,8 +234,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Overlap must be at least this percent of smaller contig's length to cluster
-      and merge.
+    doc: Overlap must be at least this percent of smaller contig's length to 
+      cluster and merge.
     inputBinding:
       position: 101
       prefix: minoverlappercent
@@ -280,8 +283,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Set to false to force the program to abort rather than overwrite an existing
-      file.
+    doc: Set to false to force the program to abort rather than overwrite an 
+      existing file.
     inputBinding:
       position: 101
       prefix: overwrite
@@ -433,8 +436,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If true, all copies of duplicate reads will be discarded, rather than keeping
-      1.
+    doc: If true, all copies of duplicate reads will be discarded, rather than 
+      keeping 1.
     inputBinding:
       position: 101
       prefix: uniqueonly
@@ -442,7 +445,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do alignments in C code, which is faster, if an edit distance is allowed.
+    doc: Do alignments in C code, which is faster, if an edit distance is 
+      allowed.
     inputBinding:
       position: 101
       prefix: usejni
@@ -454,6 +458,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: ziplevel
+  - id: csf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csf_path`
+    inputBinding:
+      position: 102
+      prefix: --csf
+  - id: dot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dot_path`
+    inputBinding:
+      position: 103
+      prefix: --dot
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 104
+      prefix: --out
+  - id: outd_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outd_path`
+    inputBinding:
+      position: 105
+      prefix: --outd
+  - id: pattern_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pattern_path`
+    inputBinding:
+      position: 106
+      prefix: --pattern
 outputs:
   - id: out
     type:
@@ -461,36 +505,38 @@ outputs:
       - File
     doc: Destination for all output contigs.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: pattern
     type:
       - 'null'
       - File
-    doc: Clusters will be written to individual files, where the '%' symbol in the
-      pattern is replaced by cluster number.
+    doc: Clusters will be written to individual files, where the '%' symbol in 
+      the pattern is replaced by cluster number.
     outputBinding:
-      glob: $(inputs.pattern)
+      glob: $(inputs.pattern_path)
   - id: outd
     type:
       - 'null'
       - File
     doc: Optional; removed duplicates will go here.
     outputBinding:
-      glob: $(inputs.outd)
+      glob: $(inputs.outd_path)
   - id: csf
     type:
       - 'null'
       - File
     doc: (clusterstatsfile) Write a list of cluster names and sizes.
     outputBinding:
-      glob: $(inputs.csf)
+      glob: $(inputs.csf_path)
   - id: dot
     type:
       - 'null'
       - File
     doc: (graph) Write a graph in dot format. Requires 'fo' and 'pc' flags.
     outputBinding:
-      glob: $(inputs.dot)
+      glob: $(inputs.dot_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bbmap:39.52--he5f24ec_0

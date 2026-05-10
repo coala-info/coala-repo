@@ -688,6 +688,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: html_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_path`
+    inputBinding:
+      position: 102
+      prefix: --html
+  - id: json_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `json_path`
+    inputBinding:
+      position: 103
+      prefix: --json
+  - id: out1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out1_path`
+    inputBinding:
+      position: 104
+      prefix: --out1
+  - id: out2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out2_path`
+    inputBinding:
+      position: 105
+      prefix: --out2
 outputs:
   - id: out1
     type:
@@ -695,28 +727,30 @@ outputs:
       - File
     doc: read1 output file name
     outputBinding:
-      glob: $(inputs.out1)
+      glob: $(inputs.out1_path)
   - id: out2
     type:
       - 'null'
       - File
     doc: read2 output file name
     outputBinding:
-      glob: $(inputs.out2)
+      glob: $(inputs.out2_path)
   - id: json
     type:
       - 'null'
       - File
     doc: the json format report file name
     outputBinding:
-      glob: $(inputs.json)
+      glob: $(inputs.json_path)
   - id: html
     type:
       - 'null'
       - File
     doc: the html format report file name
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metagem:1.0.5--hdfd78af_0

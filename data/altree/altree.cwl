@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify the ancestral sequence (only useful with phylip and ancestral states
-      file)
+    doc: Specify the ancestral sequence (only useful with phylip and ancestral 
+      states file)
     inputBinding:
       position: 101
       prefix: --anc-seq
@@ -60,8 +60,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input file 1 (paup, phylip or paml results file). If several input files
-      are analysed, their names must be separated by colons.
+    doc: Input file 1 (paup, phylip or paml results file). If several input 
+      files are analysed, their names must be separated by colons.
     inputBinding:
       position: 101
       prefix: --first-input-file
@@ -85,8 +85,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of trees to analyse in the localisation analysis (only for localisation
-      method using S-character)
+    doc: Number of trees to analyse in the localisation analysis (only for 
+      localisation method using S-character)
     inputBinding:
       position: 101
       prefix: --number-of-trees-to-analyse
@@ -102,8 +102,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of permutations used to calculate exact p_values (Only for association
-      test)
+    doc: Number of permutations used to calculate exact p_values (Only for 
+      association test)
     inputBinding:
       position: 101
       prefix: --permutations
@@ -144,8 +144,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of the S character site in the sequence (only for localisation method
-      using S-character)
+    doc: Number of the S character site in the sequence (only for localisation 
+      method using S-character)
     inputBinding:
       position: 101
       prefix: --s-site-number
@@ -154,8 +154,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input file 2, containing the nb of cases/controls carrying an haplotype.
-      Names must be separated by colons.
+    doc: Input file 2, containing the nb of cases/controls carrying an 
+      haplotype. Names must be separated by colons.
     inputBinding:
       position: 101
       prefix: --second-input-file
@@ -180,11 +180,17 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Specify the tree to use (instead of random). Can be used several times to
-      specify multiple trees.
+    doc: Specify the tree to use (instead of random). Can be used several times 
+      to specify multiple trees.
     inputBinding:
       position: 101
       prefix: --tree-to-analyse
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -192,7 +198,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/altree:v1.3.1-4b2-deb_cv1

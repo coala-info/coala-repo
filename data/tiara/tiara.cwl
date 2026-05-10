@@ -12,9 +12,7 @@ inputs:
         items: float
     doc: Probability threshold needed for classification to a class. If two 
       floats are provided, the first is used in a first stage, the second in the
-      second stage
-      - 0.65
-      - 0.65
+      second stage - 0.65 - 0.65
     inputBinding:
       position: 101
       prefix: --prob_cutoff
@@ -140,6 +138,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -148,7 +152,9 @@ outputs:
     doc: A path to output file. If not provided, the result is printed to 
       stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tiara:1.0.3

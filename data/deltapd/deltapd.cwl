@@ -104,12 +104,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --r_tree
+  - id: out_dir_path
+    type: Directory
+    doc: path to output directory
+    inputBinding:
+      position: 102
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type: Directory
     doc: path to output directory
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deltapd:0.1.5--py39h918f1d6_7

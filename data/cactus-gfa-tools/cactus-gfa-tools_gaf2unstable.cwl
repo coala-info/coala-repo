@@ -17,15 +17,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --rGFA
+  - id: out_lengths_path
+    type: string
+    doc: Output or path parameter `out_lengths_path`
+    inputBinding:
+      position: 103
+      prefix: --out-lengths
 outputs:
   - id: out_lengths
     type:
       - 'null'
       - File
-    doc: Output lengths of all minigraph sequences in given file (can be passed to
-      gaf2paf)
+    doc: Output lengths of all minigraph sequences in given file (can be passed 
+      to gaf2paf)
     outputBinding:
-      glob: $(inputs.out_lengths)
+      glob: $(inputs.out_lengths_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0

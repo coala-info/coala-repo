@@ -26,6 +26,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --from-zero-based
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -33,7 +39,9 @@ outputs:
       - File
     doc: Output BED file. If not specified, output to stdout.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/convert_zero_one_based:0.0.1--py_0

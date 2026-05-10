@@ -18,6 +18,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -m
+  - id: output_base_name_path
+    type: string
+    doc: Output or path parameter `output_base_name_path`
+    inputBinding:
+      position: 102
+      prefix: --output-base-name
 outputs:
   - id: output_base_name
     type:
@@ -25,7 +31,9 @@ outputs:
       - File
     doc: output base name for plot
     outputBinding:
-      glob: $(inputs.output_base_name)
+      glob: $(inputs.output_base_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biotradis:1.4.5--0

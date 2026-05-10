@@ -58,6 +58,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --valid-splice-sites
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -67,7 +73,9 @@ outputs:
       (default is ./outrigger_output, which is relative to the directory where 
       you called the program).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/outrigger:1.1.1--py35_0

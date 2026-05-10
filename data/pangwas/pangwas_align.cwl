@@ -45,6 +45,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outdir_path
+    type: string
+    doc: 'Output directory. (default: .)'
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -52,7 +58,9 @@ outputs:
       - Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangwas:0.1.0--pyh7e72e81_0

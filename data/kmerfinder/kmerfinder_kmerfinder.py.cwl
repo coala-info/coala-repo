@@ -78,6 +78,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tax
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -85,7 +91,9 @@ outputs:
       - Directory
     doc: folder to store the output
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmerfinder:3.0.2--hdfd78af_0

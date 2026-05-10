@@ -303,6 +303,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -w
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 104
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -310,7 +316,9 @@ outputs:
       - Directory
     doc: For -o option, write the output file(s) to <outdir> directory instead
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fqtrim:0.9.7--h077b44d_7

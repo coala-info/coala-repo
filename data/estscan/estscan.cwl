@@ -133,15 +133,7 @@ inputs:
         items: int
     doc: 8 integers used as log-probabilities for transitions, start->5'UTR, 
       start->CDS, start->3'UTR, 5'UTR->CDS, 5'UTR->end, CDS->3'UTR, CDS->end, 
-      3'UTR->end
-      - -10
-      - -10
-      - -5
-      - -80
-      - -40
-      - -80
-      - -40
-      - -20
+      3'UTR->end - -10 - -10 - -5 - -80 - -40 - -80 - -40 - -20
     inputBinding:
       position: 102
       prefix: -T
@@ -154,6 +146,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -162,7 +160,9 @@ outputs:
     doc: send output to file. - means stdout. If both -t and -o specify stdout, 
       only proteins will be written.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/estscan:v3.0.3-3-deb_cv1

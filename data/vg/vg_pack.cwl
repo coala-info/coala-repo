@@ -127,6 +127,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xg
+  - id: packs_out_path
+    type: string
+    doc: Output or path parameter `packs_out_path`
+    inputBinding:
+      position: 102
+      prefix: --packs-out
 outputs:
   - id: packs_out
     type:
@@ -134,7 +140,9 @@ outputs:
       - File
     doc: write compressed coverage packs to this output file
     outputBinding:
-      glob: $(inputs.packs_out)
+      glob: $(inputs.packs_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0

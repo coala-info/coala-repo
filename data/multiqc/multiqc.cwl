@@ -450,6 +450,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zip-data-dir
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -457,7 +463,9 @@ outputs:
       - Directory
     doc: Create report in the specified output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/multiqc:1.33--pyhdfd78af_0

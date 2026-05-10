@@ -19,8 +19,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: specify hostname running mysql if you want to use mysql instead of hash method
-      in mapping gi to taxonomy id
+    doc: specify hostname running mysql if you want to use mysql instead of hash
+      method in mapping gi to taxonomy id
     inputBinding:
       position: 101
       prefix: -dbhost
@@ -52,14 +52,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify taxon ids to exclude with comma separated (if you have multiple taxon
-      ids to exclude).
+    doc: Specify taxon ids to exclude with comma separated (if you have multiple
+      taxon ids to exclude).
     inputBinding:
       position: 101
       prefix: -excludeTaxonIds
   - id: genome_file
     type: File
-    doc: Specify reference genome (Download ftp://ftp.ncbi.nih.gov/blast/db/FASTA/nt.gz)
+    doc: Specify reference genome (Download 
+      ftp://ftp.ncbi.nih.gov/blast/db/FASTA/nt.gz)
     inputBinding:
       position: 101
       prefix: -genomeFile
@@ -67,8 +68,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not keep an additional description in original fasta seq header. Depending
-      on NGS aligner, a long sequence header may slow down its mapping process.
+    doc: Do not keep an additional description in original fasta seq header. 
+      Depending on NGS aligner, a long sequence header may slow down its mapping
+      process.
     inputBinding:
       position: 101
       prefix: --noDesc
@@ -76,9 +78,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: To enable online searching in case you cannot find a correct taxonomy id
-      for a given gi. When there are many entries in nt whose gi is invalid, this
-      option may slow down the overall process.
+    doc: To enable online searching in case you cannot find a correct taxonomy 
+      id for a given gi. When there are many entries in nt whose gi is invalid, 
+      this option may slow down the overall process.
     inputBinding:
       position: 101
       prefix: --online
@@ -92,8 +94,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: To include all sub taxonomies under the query taxonomy id. e.g., if you set
-      -t 4751 --subtax, it will cover all sub taxonomies under taxon id 4751 (fungi).
+    doc: To include all sub taxonomies under the query taxonomy id. e.g., if you
+      set -t 4751 --subtax, it will cover all sub taxonomies under taxon id 4751
+      (fungi).
     inputBinding:
       position: 101
       prefix: --subTax
@@ -101,12 +104,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify taxon ids of your interest with comma separated (if you have multiple
-      taxon ids). If you do not specify this option, it will work on all entries in
-      the reference file.
+    doc: Specify taxon ids of your interest with comma separated (if you have 
+      multiple taxon ids). If you do not specify this option, it will work on 
+      all entries in the reference file.
     inputBinding:
       position: 101
       prefix: -taxonIds
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -114,7 +123,9 @@ outputs:
       - Directory
     doc: Output Directory (Default=. (current directory))
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2

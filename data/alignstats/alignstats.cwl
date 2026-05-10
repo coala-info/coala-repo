@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File in BED format listing regions of N bases in reference. Coverage counts
-      will be suppressed for these regions.
+    doc: File in BED format listing regions of N bases in reference. Coverage 
+      counts will be suppressed for these regions.
     inputBinding:
       position: 101
       prefix: -m
@@ -58,8 +58,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable processing unplaced unmapped reads (CHROM "*") when using the -r
-      option.
+    doc: Disable processing unplaced unmapped reads (CHROM "*") when using the 
+      -r option.
     inputBinding:
       position: 101
       prefix: -U
@@ -67,8 +67,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Enable excluding overlapping bases in paired-end reads from first read in
-      coordinate-sorted order from coverage statistics.
+    doc: Enable excluding overlapping bases in paired-end reads from first read 
+      in coordinate-sorted order from coverage statistics.
     inputBinding:
       position: 101
       prefix: -O
@@ -76,8 +76,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Enable excluding overlapping bases in paired-end reads by determining overlapping
-      bases from MC tag.
+    doc: Enable excluding overlapping bases in paired-end reads by determining 
+      overlapping bases from MC tag.
     inputBinding:
       position: 101
       prefix: -M
@@ -93,8 +93,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Read INPUT as the input SAM, BAM, or CRAM file (stdin). Input must be coordinate-sorted
-      for accurate results.
+    doc: Read INPUT as the input SAM, BAM, or CRAM file (stdin). Input must be 
+      coordinate-sorted for accurate results.
     inputBinding:
       position: 101
       prefix: -i
@@ -102,8 +102,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify file format of input alignment file ("sam", "bam", or "cram" available,
-      default guessed from filename or "sam").
+    doc: Specify file format of input alignment file ("sam", "bam", or "cram" 
+      available, default guessed from filename or "sam").
     inputBinding:
       position: 101
       prefix: -j
@@ -143,8 +143,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File in BED format listing which regions to process. By default, all available
-      records are processed. This option requires the alignment file to be indexed.
+    doc: File in BED format listing which regions to process. By default, all 
+      available records are processed. This option requires the alignment file 
+      to be indexed.
     inputBinding:
       position: 101
       prefix: -r
@@ -160,8 +161,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use separate threads for reading and processing records (requires builtin
-      pthread support).
+    doc: Use separate threads for reading and processing records (requires 
+      builtin pthread support).
     inputBinding:
       position: 101
       prefix: -p
@@ -169,8 +170,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File in BED format listing capture coverage regions. Required if capture
-      coverage statistics are enabled.
+    doc: File in BED format listing capture coverage regions. Required if 
+      capture coverage statistics are enabled.
     inputBinding:
       position: 101
       prefix: -t
@@ -182,6 +183,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -189,7 +196,9 @@ outputs:
       - File
     doc: Write report to OUTPUT (stdout).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alignstats:0.11--h7b50bb2_0

@@ -55,17 +55,41 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: pcr_duplicate_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pcr_duplicate_path`
+    inputBinding:
+      position: 103
+      prefix: --pcr-duplicate
+  - id: reads_with_improper_umi_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reads_with_improper_umi_path`
+    inputBinding:
+      position: 104
+      prefix: --reads-with-improper-umi
 outputs:
   - id: output
     type: File
     doc: "the output fastq file containing reads that are not\nduplicates"
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: pcr_duplicate
     type: File
     doc: The output fastq file containing PCR duplicates
     outputBinding:
-      glob: $(inputs.pcr_duplicate)
+      glob: $(inputs.pcr_duplicate_path)
   - id: reads_with_improper_umi
     type:
       - 'null'
@@ -73,7 +97,9 @@ outputs:
     doc: "The output fastq file containing reads with improper\nUMIs. The default
       is to throw away these reads. This\nis for debugging purposes"
     outputBinding:
-      glob: $(inputs.reads_with_improper_umi)
+      glob: $(inputs.reads_with_improper_umi_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umitools:0.3.4--py36_0

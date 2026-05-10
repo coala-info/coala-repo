@@ -67,6 +67,36 @@ inputs:
     inputBinding:
       position: 102
       prefix: --update
+  - id: excel_output_path
+    type:
+      - 'null'
+      - string
+    doc: Excel complete report.
+    inputBinding:
+      position: 103
+      prefix: --excel-output
+  - id: literature_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --literature-output
+  - id: markers_output_path
+    type:
+      - 'null'
+      - string
+    doc: TSV markers output file.
+    inputBinding:
+      position: 105
+      prefix: --markers-output
+  - id: mutations_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --mutations-output
 outputs:
   - id: markers_output
     type:
@@ -74,28 +104,30 @@ outputs:
       - File
     doc: TSV markers output file.
     outputBinding:
-      glob: $(inputs.markers_output)
+      glob: $(inputs.markers_output_path)
   - id: mutations_output
     type:
       - 'null'
       - File
     doc: TSV mutations output file.
     outputBinding:
-      glob: $(inputs.mutations_output)
+      glob: $(inputs.mutations_output_path)
   - id: literature_output
     type:
       - 'null'
       - File
     doc: TSV literature output file.
     outputBinding:
-      glob: $(inputs.literature_output)
+      glob: $(inputs.literature_output_path)
   - id: excel_output
     type:
       - 'null'
       - File
     doc: Excel complete report.
     outputBinding:
-      glob: $(inputs.excel_output)
+      glob: $(inputs.excel_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flumut:0.6.4--pyhdfd78af_0

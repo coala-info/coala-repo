@@ -307,6 +307,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xml-ns
+  - id: ddl_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ddl_path`
+    inputBinding:
+      position: 103
+      prefix: --ddl
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -314,7 +330,7 @@ outputs:
       - File
     doc: Output raw data into file F
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: ddl
     type:
       - 'null'
@@ -322,7 +338,9 @@ outputs:
     doc: Output ddl text into file F. Use blank(empty) filename F to suppress 
       ddl display
     outputBinding:
-      glob: $(inputs.ddl)
+      glob: $(inputs.ddl_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hdf5:1.10.4

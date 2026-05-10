@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pargenes.py
 label: pargenes_pargenes.py
-doc: "A tool for parallel phylogenomic analyses using RAxML-NG and ModelTest-NG.\n
-  \nTool homepage: https://github.com/BenoitMorel/ParGenes"
+doc: "A tool for parallel phylogenomic analyses using RAxML-NG and ModelTest-NG.\n\
+  \ \nTool homepage: https://github.com/BenoitMorel/ParGenes"
 inputs:
   - id: alignments_dir
     type:
@@ -25,8 +25,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Stop computing bootstrap trees after autoMRE bootstrap convergence test.
-      You have to specify the maximum number of bootstrap trees with -b or --bs-tree
+    doc: Stop computing bootstrap trees after autoMRE bootstrap convergence 
+      test. You have to specify the maximum number of bootstrap trees with -b or
+      --bs-tree
     inputBinding:
       position: 101
       prefix: --autoMRE
@@ -50,8 +51,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Policy to decide the per-job number of cores (low favors a low per-job number
-      of cores)
+    doc: Policy to decide the per-job number of cores (low favors a low per-job 
+      number of cores)
     inputBinding:
       position: 101
       prefix: --core-assignment
@@ -59,8 +60,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of computational cores available for computation. Should at least
-      2.
+    doc: The number of computational cores available for computation. Should at 
+      least 2.
     inputBinding:
       position: 101
       prefix: --cores
@@ -196,7 +197,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: List of parameters to pass to raxml (see also --raxml-global-parameters)
+    doc: List of parameters to pass to raxml (see also 
+      --raxml-global-parameters)
     inputBinding:
       position: 101
       prefix: --raxml-global-parameters-string
@@ -248,6 +250,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --valgrind
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -255,7 +263,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pargenes:1.2.0--py37hf7b2935_0

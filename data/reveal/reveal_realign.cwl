@@ -75,6 +75,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -c
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 105
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -82,7 +88,9 @@ outputs:
       - File
     doc: File to which realigned graph is to be written.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reveal:0.1--py27_1

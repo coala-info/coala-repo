@@ -73,6 +73,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -verbose
+  - id: ambiguous_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ambiguous_reads_file_path`
+    inputBinding:
+      position: 103
+      prefix: --ambiguous-reads-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -80,14 +96,16 @@ outputs:
       - File
     doc: output file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: ambiguous_reads_file
     type:
       - 'null'
       - File
     doc: file to write names of ambiguously mapped reads
     outputBinding:
-      glob: $(inputs.ambiguous_reads_file)
+      glob: $(inputs.ambiguous_reads_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rmap:2.1--0

@@ -156,6 +156,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: junit_xml_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --junit-xml
 outputs:
   - id: junit_xml
     type:
@@ -163,7 +168,9 @@ outputs:
       - File
     doc: Path to JUnit xml file
     outputBinding:
-      glob: $(inputs.junit_xml)
+      glob: $(inputs.junit_xml_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cwltest:2.2.20220521103021--pyhdfd78af_0

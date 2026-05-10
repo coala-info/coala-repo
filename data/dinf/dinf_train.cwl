@@ -82,6 +82,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: discriminator_path
+    type: string
+    doc: Output or path parameter `discriminator_path`
+    inputBinding:
+      position: 102
+      prefix: --discriminator
 outputs:
   - id: discriminator
     type:
@@ -89,7 +95,9 @@ outputs:
       - File
     doc: Output file where the discriminator will be saved.
     outputBinding:
-      glob: $(inputs.discriminator)
+      glob: $(inputs.discriminator_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dinf:0.5.0--pyhdfd78af_0

@@ -86,6 +86,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: alignments_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignments_file_path`
+    inputBinding:
+      position: 104
+      prefix: --alignments-file
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 105
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -93,14 +109,16 @@ outputs:
       - File
     doc: write alignments to this file [basename(seqs).o6]
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: alignments_file
     type:
       - 'null'
       - File
     doc: write alignments to this file
     outputBinding:
-      glob: $(inputs.alignments_file)
+      glob: $(inputs.alignments_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/proovframe:0.9.7--hdfd78af_1

@@ -47,12 +47,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --homolog_file
+  - id: slice_mean_output_file_path
+    type: string
+    doc: Output or path parameter `slice_mean_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --slice-mean-output-file
 outputs:
   - id: slice_mean_output_file
     type: File
     doc: Path to the output file for the slice mean
     outputBinding:
-      glob: $(inputs.slice_mean_output_file)
+      glob: $(inputs.slice_mean_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0

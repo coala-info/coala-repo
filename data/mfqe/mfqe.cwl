@@ -57,6 +57,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sequence-name-lists
+  - id: output_fasta_files_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_files_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fasta-files
+  - id: output_fastq_files_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fastq_files_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fastq-files
 outputs:
   - id: output_fasta_files
     type:
@@ -64,14 +80,16 @@ outputs:
       - File
     doc: List of files to write FASTA to
     outputBinding:
-      glob: $(inputs.output_fasta_files)
+      glob: $(inputs.output_fasta_files_path)
   - id: output_fastq_files
     type:
       - 'null'
       - File
     doc: List of files to write FASTQ to
     outputBinding:
-      glob: $(inputs.output_fastq_files)
+      glob: $(inputs.output_fastq_files_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mfqe:0.5.0--h7b50bb2_5

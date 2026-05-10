@@ -22,7 +22,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: If the analysis use one of the known setups, please specify which one (ped|alt|cmms|mip).
+    doc: If the analysis use one of the known setups, please specify which one 
+      (ped|alt|cmms|mip).
     inputBinding:
       position: 102
       prefix: --family_type
@@ -82,6 +83,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: outfile_path
+    type: string
+    doc: Specify the path to a file where results
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -89,7 +96,9 @@ outputs:
       - File
     doc: Specify the path to a file where results should be stored.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ped_parser:1.6.6--py27_1

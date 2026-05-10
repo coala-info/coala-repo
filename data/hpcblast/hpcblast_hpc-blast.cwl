@@ -75,6 +75,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tempdir
+  - id: log_path
+    type: string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 103
+      prefix: --log
 outputs:
   - id: log
     type:
@@ -82,7 +88,9 @@ outputs:
       - File
     doc: append hpc-blast log info to file, sys.stdout by default
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hpcblast:1.0.2--pyhdfd78af_0

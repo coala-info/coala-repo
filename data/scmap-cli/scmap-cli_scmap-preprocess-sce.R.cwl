@@ -10,12 +10,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-object
+  - id: output_sce_object_path
+    type: string
+    doc: Output or path parameter `output_sce_object_path`
+    inputBinding:
+      position: 102
+      prefix: --output-sce-object
 outputs:
   - id: output_sce_object
     type: File
     doc: Path for the output object in .rds format
     outputBinding:
-      glob: $(inputs.output_sce_object)
+      glob: $(inputs.output_sce_object_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scmap-cli:0.1.0--hdfd78af_0

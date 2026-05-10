@@ -29,6 +29,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --include_internal_nodes
+  - id: output_metadata_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_metadata_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-metadata-path
+  - id: output_tree_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tree-path
 outputs:
   - id: output_metadata_path
     type:
@@ -36,14 +52,16 @@ outputs:
       - File
     doc: Path to save the metadata table (TSV format).
     outputBinding:
-      glob: $(inputs.output_metadata_path)
+      glob: $(inputs.output_metadata_path_path)
   - id: output_tree_path
     type:
       - 'null'
       - File
     doc: Path to save the tree in Newick format.
     outputBinding:
-      glob: $(inputs.output_tree_path)
+      glob: $(inputs.output_tree_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barcodeforge:1.1.2--pyhdfd78af_0

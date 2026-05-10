@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Loci with up to this number of alternative supporting reads in the bulk control
-      sample will be skipped as germline.
+    doc: Loci with up to this number of alternative supporting reads in the bulk
+      control sample will be skipped as germline.
     inputBinding:
       position: 101
       prefix: --bns
@@ -27,9 +27,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Data usage rate increment steps. In order to speed up the algorithm one can
-      choose to iteratively add more and more of the candidate loci while learning
-      the tree model.
+    doc: Data usage rate increment steps. In order to speed up the algorithm one
+      can choose to iteratively add more and more of the candidate loci while 
+      learning the tree model.
     inputBinding:
       position: 101
       prefix: --ur
@@ -37,8 +37,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: This option is deprecated. The index will be saved in a folder specified
-      with -o in 'last_index'.
+    doc: This option is deprecated. The index will be saved in a folder 
+      specified with -o in 'last_index'.
     inputBinding:
       position: 101
       prefix: --ol
@@ -54,8 +54,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File name of exclusion list (VCF format), containing loci which should be
-      ignored.
+    doc: File name of exclusion list (VCF format), containing loci which should 
+      be ignored.
     inputBinding:
       position: 101
       prefix: --ex
@@ -63,8 +63,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File name of inclusion list (VCF format) containing Variants (CHROM, POS,
-      REF, ALT) that should be included.
+    doc: File name of inclusion list (VCF format) containing Variants (CHROM, 
+      POS, REF, ALT) that should be included.
     inputBinding:
       position: 101
       prefix: --inc
@@ -88,8 +88,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set to 1 if zygosity should be learned. The zygosity rate is the fraction
-      of mutations which are homozygous in all cells.
+    doc: Set to 1 if zygosity should be learned. The zygosity rate is the 
+      fraction of mutations which are homozygous in all cells.
     inputBinding:
       position: 101
       prefix: --lz
@@ -97,8 +97,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximal number of iterations before sampling form the posterior distribution
-      of the mutation to cell assignment.
+    doc: Maximal number of iterations before sampling form the posterior 
+      distribution of the mutation to cell assignment.
     inputBinding:
       position: 101
       prefix: -l
@@ -122,8 +122,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Mean error rate. If the sequencing error rate should not be learned '--ese
-      0' one can specify it.
+    doc: Mean error rate. If the sequencing error rate should not be learned 
+      '--ese 0' one can specify it.
     inputBinding:
       position: 101
       prefix: --wildMean
@@ -131,8 +131,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Mean of acceptable variant allele frequency across all cells for a specific
-      locus.
+    doc: Mean of acceptable variant allele frequency across all cells for a 
+      specific locus.
     inputBinding:
       position: 101
       prefix: --mff
@@ -140,7 +140,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum required frequency of reads supporting the alternative per cell.
+    doc: Minimum required frequency of reads supporting the alternative per 
+      cell.
     inputBinding:
       position: 101
       prefix: --mf
@@ -172,7 +173,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of tumor cells required to have a mutation in order to be called.
+    doc: Number of tumor cells required to have a mutation in order to be 
+      called.
     inputBinding:
       position: 101
       prefix: --cwm
@@ -180,8 +182,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Initial overdispersion for mutant type. The overdispersion is learned during
-      the tree traversal.
+    doc: Initial overdispersion for mutant type. The overdispersion is learned 
+      during the tree traversal.
     inputBinding:
       position: 101
       prefix: --mutationOverDis
@@ -189,8 +191,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File name of mutations to exclude during the sequencing error rate estimation
-      (VCF format).
+    doc: File name of mutations to exclude during the sequencing error rate 
+      estimation (VCF format).
     inputBinding:
       position: 101
       prefix: --me
@@ -206,8 +208,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Parameter estimation rate, i.e. the fraction of loops used to estimate the
-      different parameters.
+    doc: Parameter estimation rate, i.e. the fraction of loops used to estimate 
+      the different parameters.
     inputBinding:
       position: 101
       prefix: -e
@@ -215,8 +217,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: PCR substitution rate. An error early during the PCR amplification can result
-      in high allele fractions.
+    doc: PCR substitution rate. An error early during the PCR amplification can 
+      result in high allele fractions.
     inputBinding:
       position: 101
       prefix: --sub
@@ -232,7 +234,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of iterations in which the mutation to cell assignment is sampled.
+    doc: Number of iterations in which the mutation to cell assignment is 
+      sampled.
     inputBinding:
       position: 101
       prefix: --ls
@@ -240,9 +243,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sampling step. If a value x different from 0 is specified, every x iteration,
-      after the burn in phase, an index will be writen to disk to provide a posterior
-      sampling.
+    doc: Sampling step. If a value x different from 0 is specified, every x 
+      iteration, after the burn in phase, an index will be writen to disk to 
+      provide a posterior sampling.
     inputBinding:
       position: 101
       prefix: --sa
@@ -282,8 +285,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Initial overdispersion for wild type. The overdispersion is learned during
-      the tree traversal.
+    doc: Initial overdispersion for wild type. The overdispersion is learned 
+      during the tree traversal.
     inputBinding:
       position: 101
       prefix: --wildOverDis
@@ -291,8 +294,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Window size in which only x (see option '--mmw') mutations are allowed to
-      be present.
+    doc: Window size in which only x (see option '--mmw') mutations are allowed 
+      to be present.
     inputBinding:
       position: 101
       prefix: --md
@@ -304,6 +307,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zyg
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -311,7 +320,9 @@ outputs:
       - File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sciphi:0.1.7--h077b44d_6

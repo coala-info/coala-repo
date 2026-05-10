@@ -14,8 +14,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Single reference FASTA file (+faid index) containing all genomic reference
-      sequences
+    doc: Single reference FASTA file (+faid index) containing all genomic 
+      reference sequences
     inputBinding:
       position: 102
       prefix: --fasta
@@ -31,8 +31,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Offset in bp added to the exon-type annotations in the GTF file. This offset
-      is used in tools estimating the expression levels
+    doc: Offset in bp added to the exon-type annotations in the GTF file. This 
+      offset is used in tools estimating the expression levels
     inputBinding:
       position: 102
       prefix: --offset3p
@@ -40,8 +40,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Offset in bp added to the exon-type annotations in the GTF file. This offset
-      is used in tools estimating the expression levels
+    doc: Offset in bp added to the exon-type annotations in the GTF file. This 
+      offset is used in tools estimating the expression levels
     inputBinding:
       position: 102
       prefix: --offset5p
@@ -49,7 +49,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File containing the filtering parameters, using default if none is provided
+    doc: File containing the filtering parameters, using default if none is 
+      provided
     inputBinding:
       position: 102
       prefix: --parameters
@@ -69,6 +70,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -76,7 +83,9 @@ outputs:
       - File
     doc: output filename; '-' for stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flaimapper:3.0.0--py36_1

@@ -51,8 +51,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: comma separated key fields, column name or index. e.g. -f 1-3 or -f id,id2
-      or -F -f "group*"
+    doc: comma separated key fields, column name or index. e.g. -f 1-3 or -f 
+      id,id2 or -F -f "group*"
     inputBinding:
       position: 101
       prefix: --fields
@@ -100,8 +100,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: file of input files list (one file per line), if given, they are appended
-      to files from cli arguments
+    doc: file of input files list (one file per line), if given, they are 
+      appended to files from cli arguments
     inputBinding:
       position: 101
       prefix: --infile-list
@@ -109,8 +109,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if given, a quote may appear in an unquoted field and a non-doubled quote
-      may appear in a quoted field
+    doc: if given, a quote may appear in an unquoted field and a non-doubled 
+      quote may appear in a quoted field
     inputBinding:
       position: 101
       prefix: --lazy-quotes
@@ -150,8 +150,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output file prefix, the default value is the input file. use -p "" to disable
-      outputting prefix
+    doc: output file prefix, the default value is the input file. use -p "" to 
+      disable outputting prefix
     inputBinding:
       position: 101
       prefix: --out-prefix
@@ -167,8 +167,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: create subdirectories with prefixes of keys of length X, to avoid writing
-      too many files in the output directory
+    doc: create subdirectories with prefixes of keys of length X, to avoid 
+      writing too many files in the output directory
     inputBinding:
       position: 101
       prefix: --prefix-as-subdir
@@ -192,10 +192,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specifies that the input CSV file is delimited with tabs. Overrides "-d"
+    doc: specifies that the input CSV file is delimited with tabs. Overrides 
+      "-d"
     inputBinding:
       position: 101
       prefix: --tabs
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -204,7 +211,9 @@ outputs:
     doc: 'out file ("-" for stdout, suffix .gz for gzipped out). Note: for split command,
       this can specify the output directory.'
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/csvtk:0.31.0--h9ee0642_0

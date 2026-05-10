@@ -9,7 +9,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A bam file of unknown type; Pilon will scan it and attempt to classify it.
+    doc: A bam file of unknown type; Pilon will scan it and attempt to classify 
+      it.
     inputBinding:
       position: 101
       prefix: --bam
@@ -17,7 +18,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Input FASTA elements larger than this will be processed in smaller pieces.
+    doc: Input FASTA elements larger than this will be processed in smaller 
+      pieces.
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -33,7 +35,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Assumes bases are of this quality if quals are no present in input BAMs.
+    doc: Assumes bases are of this quality if quals are no present in input 
+      BAMs.
     inputBinding:
       position: 101
       prefix: --defaultqual
@@ -65,8 +68,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: A comma-separated list of categories of issues to try to fix (snps, indels,
-      gaps, local, all, bases, none, amb, breaks, circles, novel).
+    doc: A comma-separated list of categories of issues to try to fix (snps, 
+      indels, gaps, local, all, bases, none, amb, breaks, circles, novel).
     inputBinding:
       position: 101
       prefix: --fix
@@ -74,8 +77,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Controls how much of the well-aligned reads will be used; bases at each end
-      of the good reads will be ignored.
+    doc: Controls how much of the well-aligned reads will be used; bases at each
+      end of the good reads will be ignored.
     inputBinding:
       position: 101
       prefix: --flank
@@ -84,8 +87,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: A bam file consisting of fragment paired-end alignments. This argument may
-      be specified more than once.
+    doc: A bam file consisting of fragment paired-end alignments. This argument 
+      may be specified more than once.
     inputBinding:
       position: 101
       prefix: --frags
@@ -93,14 +96,15 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Closed gaps must be within this number of bases of true size to be closed.
+    doc: Closed gaps must be within this number of bases of true size to be 
+      closed.
     inputBinding:
       position: 101
       prefix: --gapmargin
   - id: genome
     type: File
-    doc: The input genome we are trying to improve, which must be the reference used
-      for the bam alignments.
+    doc: The input genome we are trying to improve, which must be the reference 
+      used for the bam alignments.
     inputBinding:
       position: 101
       prefix: --genome
@@ -108,7 +112,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output IUPAC ambiguous base codes in the output FASTA file when appropriate.
+    doc: Output IUPAC ambiguous base codes in the output FASTA file when 
+      appropriate.
     inputBinding:
       position: 101
       prefix: --iupac
@@ -117,8 +122,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: A bam file consisting of jump (mate pair) paired-end alignments. This argument
-      may be specified more than once.
+    doc: A bam file consisting of jump (mate pair) paired-end alignments. This 
+      argument may be specified more than once.
     inputBinding:
       position: 101
       prefix: --jumps
@@ -174,7 +179,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use reads which failed sequencer quality filtering (ignored by default).
+    doc: Use reads which failed sequencer quality filtering (ignored by 
+      default).
     inputBinding:
       position: 101
       prefix: --nonpf
@@ -198,7 +204,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A bam file containing Pacific Biosciences read alignments. Experimental.
+    doc: A bam file containing Pacific Biosciences read alignments. 
+      Experimental.
     inputBinding:
       position: 101
       prefix: --pacbio
@@ -206,8 +213,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Only process the specified target(s). Can be a comma-separated list or a
-      file name.
+    doc: Only process the specified target(s). Can be a comma-separated list or 
+      a file name.
     inputBinding:
       position: 101
       prefix: --targets
@@ -216,8 +223,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: A bam file consisting of unpaired alignments. This argument may be specified
-      more than once.
+    doc: A bam file consisting of unpaired alignments. This argument may be 
+      specified more than once.
     inputBinding:
       position: 101
       prefix: --unpaired
@@ -225,7 +232,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Sets up heuristics for variant calling; equivalent to "--vcf --fix all,breaks".
+    doc: Sets up heuristics for variant calling; equivalent to "--vcf --fix 
+      all,breaks".
     inputBinding:
       position: 101
       prefix: --variant
@@ -233,8 +241,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If specified, the VCF will contain a QE (quality-weighted evidence) field
-      rather than the default QP field.
+    doc: If specified, the VCF will contain a QE (quality-weighted evidence) 
+      field rather than the default QP field.
     inputBinding:
       position: 101
       prefix: --vcfqe
@@ -246,6 +254,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: changes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `changes_path`
+    inputBinding:
+      position: 102
+      prefix: --changes
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
+  - id: tracks_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tracks_path`
+    inputBinding:
+      position: 104
+      prefix: --tracks
+  - id: vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_path`
+    inputBinding:
+      position: 105
+      prefix: --vcf
 outputs:
   - id: outdir
     type:
@@ -253,29 +293,32 @@ outputs:
       - Directory
     doc: Use this directory for all output files.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: changes
     type:
       - 'null'
       - File
-    doc: If specified, a file listing changes in the <output>.fasta will be generated.
+    doc: If specified, a file listing changes in the <output>.fasta will be 
+      generated.
     outputBinding:
-      glob: $(inputs.changes)
+      glob: $(inputs.changes_path)
   - id: vcf
     type:
       - 'null'
       - File
     doc: If specified, a vcf file will be generated
     outputBinding:
-      glob: $(inputs.vcf)
+      glob: $(inputs.vcf_path)
   - id: tracks
     type:
       - 'null'
       - File
-    doc: This options will cause many track files (*.bed, *.wig) suitable for viewing
-      in a genome browser to be written.
+    doc: This options will cause many track files (*.bed, *.wig) suitable for 
+      viewing in a genome browser to be written.
     outputBinding:
-      glob: $(inputs.tracks)
+      glob: $(inputs.tracks_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pilon:1.24--hdfd78af_0

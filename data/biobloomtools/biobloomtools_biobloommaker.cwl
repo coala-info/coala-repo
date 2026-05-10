@@ -48,8 +48,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set number of hash functions to use in filter instead of automatically using
-      calculated optimal number of functions.
+    doc: Set number of hash functions to use in filter instead of automatically 
+      using calculated optimal number of functions.
     inputBinding:
       position: 102
       prefix: --hash_num
@@ -57,8 +57,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If one paired read matches, both reads will be included in the filter. Only
-      active with the (-r) option.
+    doc: If one paired read matches, both reads will be included in the filter. 
+      Only active with the (-r) option.
     inputBinding:
       position: 102
       prefix: --inclusive
@@ -98,8 +98,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set the number of expected elements. If set to 0 number is determined from
-      sequences sizes within files.
+    doc: Set the number of expected elements. If set to 0 number is determined 
+      from sequences sizes within files.
     inputBinding:
       position: 102
       prefix: --num_ele
@@ -107,8 +107,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: During progressive filter creation, print tagged reads to STDOUT in FASTQ
-      format for debugging
+    doc: During progressive filter creation, print tagged reads to STDOUT in 
+      FASTQ format for debugging
     inputBinding:
       position: 102
       prefix: --print_reads
@@ -116,8 +116,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Progressive filter creation. The score threshold is specified by N, which
-      may be either a floating point score between 0 and 1 or a positive integer.
+    doc: Progressive filter creation. The score threshold is specified by N, 
+      which may be either a floating point score between 0 and 1 or a positive 
+      integer.
     inputBinding:
       position: 102
       prefix: --progressive
@@ -125,8 +126,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of hits tiling in second pass needed to jump Several tiles upon
-      a miss. Progressive mode only.
+    doc: The number of hits tiling in second pass needed to jump Several tiles 
+      upon a miss. Progressive mode only.
     inputBinding:
       position: 102
       prefix: --streak
@@ -134,8 +135,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to filter that you want to uses to minimize repeat propagation of k-mers
-      inserted into new filter.
+    doc: Path to filter that you want to uses to minimize repeat propagation of 
+      k-mers inserted into new filter.
     inputBinding:
       position: 102
       prefix: --subtract
@@ -155,6 +156,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -162,7 +169,9 @@ outputs:
       - Directory
     doc: Output location of the filter and filter info files.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobloomtools:2.3.5--h077b44d_6

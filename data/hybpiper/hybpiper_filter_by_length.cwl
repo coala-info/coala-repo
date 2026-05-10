@@ -72,6 +72,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sequence_dir
+  - id: filtered_dir_path
+    type: string
+    doc: Output or path parameter `filtered_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --filtered-dir
 outputs:
   - id: filtered_dir
     type:
@@ -80,7 +86,9 @@ outputs:
     doc: Specify directory for output filtered FASTA files. Default is to write 
       to the current working directory
     outputBinding:
-      glob: $(inputs.filtered_dir)
+      glob: $(inputs.filtered_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

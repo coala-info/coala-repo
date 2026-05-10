@@ -127,19 +127,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -var_min_q
+  - id: output_informative_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_informative_path`
+    inputBinding:
+      position: 102
+      prefix: --output-informative
+  - id: output_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tsv
 outputs:
   - id: output_tsv
     type: File
     doc: Output TSV file containing the detected UPDs.
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
   - id: output_informative
     type:
       - 'null'
       - File
     doc: Output IGV file containing informative variants.
     outputBinding:
-      glob: $(inputs.output_informative)
+      glob: $(inputs.output_informative_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

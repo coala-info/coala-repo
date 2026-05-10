@@ -77,12 +77,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_prediction_path
+    type: string
+    doc: Output or path parameter `output_prediction_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prediction
 outputs:
   - id: output_prediction
     type: File
     doc: Output file for prediction results.
     outputBinding:
-      glob: $(inputs.output_prediction)
+      glob: $(inputs.output_prediction_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sistr_cmd:1.1.3--pyhdc42f0e_2

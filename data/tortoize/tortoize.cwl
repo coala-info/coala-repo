@@ -30,6 +30,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 103
+      prefix: --log
 outputs:
   - id: output
     type:
@@ -44,7 +52,9 @@ outputs:
       - File
     doc: Write log to this file
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tortoize:2.0.16--haf24da9_0

@@ -113,6 +113,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variance
+  - id: best_model_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `best_model_path`
+    inputBinding:
+      position: 102
+      prefix: --best-model
+  - id: metrics_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `metrics_path`
+    inputBinding:
+      position: 103
+      prefix: --metrics
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: The path where to write the sequence annotations in
+    inputBinding:
+      position: 104
+      prefix: --output
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 105
+      prefix: --report
 outputs:
   - id: output
     type:
@@ -120,21 +152,21 @@ outputs:
       - File
     doc: The path where to write the probabilities for each test fold.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: metrics
     type:
       - 'null'
       - File
     doc: The path to an optional metrics file to write in DVC/JSON format.
     outputBinding:
-      glob: $(inputs.metrics)
+      glob: $(inputs.metrics_path)
   - id: report
     type:
       - 'null'
       - File
     doc: An optional file where to generate a label-wise evaluation report.
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
   - id: best_model
     type:
       - 'null'
@@ -142,7 +174,9 @@ outputs:
     doc: An optional file where to write the model with highest 
       macro-average-precision.
     outputBinding:
-      glob: $(inputs.best_model)
+      glob: $(inputs.best_model_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0

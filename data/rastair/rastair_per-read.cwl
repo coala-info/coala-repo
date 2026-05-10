@@ -146,6 +146,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: bed_path
+    type: string
+    doc: Output or path parameter `bed_path`
+    inputBinding:
+      position: 103
+      prefix: --bed
 outputs:
   - id: bed
     type:
@@ -153,7 +159,9 @@ outputs:
       - File
     doc: Output BED file with all reads
     outputBinding:
-      glob: $(inputs.bed)
+      glob: $(inputs.bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rastair:2.0.0--h03e3cfe_0

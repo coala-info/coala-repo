@@ -8,8 +8,8 @@ doc: "map reads for single-cell processing\n\nTool homepage: https://github.com/
 inputs:
   - id: geometry
     type: string
-    doc: list available geometries supported by the underlying `pesc-sc` mapper geometry
-      of barcode, umi and read
+    doc: list available geometries supported by the underlying `pesc-sc` mapper 
+      geometry of barcode, umi and read
     inputBinding:
       position: 101
       prefix: --geometry
@@ -17,9 +17,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: skip checking of the equivalence classes of k-mers that were too ambiguous
-      to be otherwise considered (passing this flag can speed up mapping slightly,
-      but may reduce specificity)
+    doc: skip checking of the equivalence classes of k-mers that were too 
+      ambiguous to be otherwise considered (passing this flag can speed up 
+      mapping slightly, but may reduce specificity)
     inputBinding:
       position: 101
       prefix: --ignore-ambig-hits
@@ -33,8 +33,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: determines the maximum cardinality equivalence class (number of (txp, orientation
-      status) pairs) to examine (cannot be used with --ignore-ambig-hits)
+    doc: determines the maximum cardinality equivalence class (number of (txp, 
+      orientation status) pairs) to examine (cannot be used with 
+      --ignore-ambig-hits)
     inputBinding:
       position: 101
       prefix: --max-ec-card
@@ -50,8 +51,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: if all k-mers have > --max-hit-occ hits, then make a second pass and consider
-      k-mers having <= --max-hit-occ-recover hits
+    doc: if all k-mers have > --max-hit-occ hits, then make a second pass and 
+      consider k-mers having <= --max-hit-occ-recover hits
     inputBinding:
       position: 101
       prefix: --max-hit-occ-recover
@@ -59,8 +60,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: reads with more than this number of mappings will not have their mappings
-      reported
+    doc: reads with more than this number of mappings will not have their 
+      mappings reported
     inputBinding:
       position: 101
       prefix: --max-read-occ
@@ -68,9 +69,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: do not consider poison k-mers, even if the underlying index contains them.
-      In this case, the mapping results will be identical to those obtained as if
-      no poison table was added to the index
+    doc: do not consider poison k-mers, even if the underlying index contains 
+      them. In this case, the mapping results will be identical to those 
+      obtained as if no poison table was added to the index
     inputBinding:
       position: 101
       prefix: --no-poison
@@ -119,18 +120,27 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: includes the positions of each mapped read in the resulting RAD file. Likewise,
-      this will cause the `known_rad_type` tag of the resulting file to be `sc_rna_pos`
-      rather than the default `sc_rna_basic`. (incompatible with alevin-fry < 0.12)
+    doc: includes the positions of each mapped read in the resulting RAD file. 
+      Likewise, this will cause the `known_rad_type` tag of the resulting file 
+      to be `sc_rna_pos` rather than the default `sc_rna_basic`. (incompatible 
+      with alevin-fry < 0.12)
     inputBinding:
       position: 101
       prefix: --with-position
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: path to output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/piscem:0.14.5--he431ac4_0

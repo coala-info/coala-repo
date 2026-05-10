@@ -52,6 +52,22 @@ inputs:
     doc: Verbose output flag
     inputBinding:
       position: 103
+  - id: out1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out1_path`
+    inputBinding:
+      position: 104
+      prefix: --out1
+  - id: out2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out2_path`
+    inputBinding:
+      position: 105
+      prefix: --out2
 outputs:
   - id: out1
     type:
@@ -59,14 +75,16 @@ outputs:
       - File
     doc: File name for collecting unused input from file1
     outputBinding:
-      glob: $(inputs.out1)
+      glob: $(inputs.out1_path)
   - id: out2
     type:
       - 'null'
       - File
     doc: File name for collecting unused input from file2
     outputBinding:
-      glob: $(inputs.out2)
+      glob: $(inputs.out2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/multiz:11.2--hec16e2b_3

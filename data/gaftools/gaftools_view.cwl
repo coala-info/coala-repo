@@ -59,6 +59,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --region
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -67,7 +73,9 @@ outputs:
     doc: Output GAF (bgzipped if the file ends with .gz). If omitted, use 
       standard output.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gaftools:1.3.1--pyhdfd78af_0

@@ -60,6 +60,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -r
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -67,7 +73,9 @@ outputs:
       - File
     doc: 'output to files at path (default: output is sent to stdout)'
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agc:3.2.1--h9ee0642_0

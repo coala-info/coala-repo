@@ -124,12 +124,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window-size
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Output directory for statistics files
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clam:1.1.3--h79ce301_0

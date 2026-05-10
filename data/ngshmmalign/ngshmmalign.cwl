@@ -206,6 +206,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: filtered_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `filtered_alignment_path`
+    inputBinding:
+      position: 102
+      prefix: --filtered-alignment
+  - id: output_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_alignment_path`
+    inputBinding:
+      position: 103
+      prefix: --output-alignment
 outputs:
   - id: output_alignment
     type:
@@ -213,7 +229,7 @@ outputs:
       - File
     doc: Filename where alignment will be written to
     outputBinding:
-      glob: $(inputs.output_alignment)
+      glob: $(inputs.output_alignment_path)
   - id: filtered_alignment
     type:
       - 'null'
@@ -221,7 +237,9 @@ outputs:
     doc: Filename where alignment will be written that are filtered (too short, 
       unpaired)
     outputBinding:
-      glob: $(inputs.filtered_alignment)
+      glob: $(inputs.filtered_alignment_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngshmmalign:0.1.1--0

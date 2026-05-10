@@ -104,6 +104,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --vverbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -111,7 +117,9 @@ outputs:
       - Directory
     doc: "Output directory. Results will be written in \n      <output>/<contig>/<region>.vcf.gz"
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphtyper:2.7.7--h7594796_1

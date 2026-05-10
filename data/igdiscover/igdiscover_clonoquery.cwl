@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --mismatches
+  - id: summary_path
+    type: string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 104
+      prefix: --summary
 outputs:
   - id: summary
     type:
@@ -60,7 +66,9 @@ outputs:
       - File
     doc: Write summary table to FILE
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igdiscover:0.15.1--pyhdfd78af_2

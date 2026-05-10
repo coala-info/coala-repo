@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -l
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -63,7 +69,9 @@ outputs:
     doc: Write output to a file. If provided, an output index (.cxi) is also 
       generated. If omitted, writes to stdout (no index).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yame:1.8--ha83d96e_0

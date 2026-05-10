@@ -117,6 +117,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rescale
+  - id: output_phylip_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_phylip_path`
+    inputBinding:
+      position: 102
+      prefix: --output-phylip
+  - id: output_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type:
@@ -124,14 +140,16 @@ outputs:
       - File
     doc: Path to output tree.
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
   - id: output_phylip
     type:
       - 'null'
       - File
     doc: Path to output phylip file.
     outputBinding:
-      glob: $(inputs.output_phylip)
+      glob: $(inputs.output_phylip_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phlame:1.1.0--pyhdfd78af_0

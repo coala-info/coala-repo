@@ -56,6 +56,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sort-threads
+  - id: write_bam_path
+    type: string
+    doc: Output or path parameter `write_bam_path`
+    inputBinding:
+      position: 104
+      prefix: --write-bam
 outputs:
   - id: write_bam
     type:
@@ -63,7 +69,9 @@ outputs:
       - File
     doc: Write annotated BAM file.
     outputBinding:
-      glob: $(inputs.write_bam)
+      glob: $(inputs.write_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoseq:4.3.0--h9ee0642_0

@@ -12,6 +12,12 @@ inputs:
     doc: The path to the distance matrix TSV, as created by `straingr dist`.
     inputBinding:
       position: 1
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -19,7 +25,9 @@ outputs:
       - File
     doc: Output filename.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainge:1.3.9--py38h737be40_0

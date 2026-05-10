@@ -42,12 +42,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --run-ids
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Output directory. Created if does not already exist.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyani-plus:1.0.0--pyhdfd78af_0

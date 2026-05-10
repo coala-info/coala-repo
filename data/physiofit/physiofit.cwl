@@ -53,6 +53,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --model
+  - id: output_config_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_config_path`
+    inputBinding:
+      position: 102
+      prefix: --output-config
+  - id: output_recap_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_recap_path`
+    inputBinding:
+      position: 103
+      prefix: --output-recap
+  - id: output_zip_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_zip_path`
+    inputBinding:
+      position: 104
+      prefix: --output-zip
 outputs:
   - id: output_config
     type:
@@ -60,21 +84,23 @@ outputs:
       - File
     doc: Path to output the yaml config file
     outputBinding:
-      glob: $(inputs.output_config)
+      glob: $(inputs.output_config_path)
   - id: output_recap
     type:
       - 'null'
       - File
     doc: Path to output the summary
     outputBinding:
-      glob: $(inputs.output_recap)
+      glob: $(inputs.output_recap_path)
   - id: output_zip
     type:
       - 'null'
       - File
     doc: Path to export zip file
     outputBinding:
-      glob: $(inputs.output_zip)
+      glob: $(inputs.output_zip_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/physiofit:3.4.0--pyhdfd78af_0

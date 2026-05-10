@@ -124,6 +124,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -vertical
+  - id: mtzout_path
+    type: string
+    doc: Output or path parameter `mtzout_path`
+    inputBinding:
+      position: 102
+      prefix: --mtzout
 outputs:
   - id: mtzout
     type:
@@ -131,7 +137,9 @@ outputs:
       - File
     doc: Output best and difference map coefficients to MTZ files
     outputBinding:
-      glob: $(inputs.mtzout)
+      glob: $(inputs.mtzout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/privateer:MKV--py311h8d1dbc1_0

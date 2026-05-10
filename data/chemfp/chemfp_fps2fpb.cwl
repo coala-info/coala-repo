@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: chemfp_fps2fpb
 label: chemfp_fps2fpb
 doc: "Convert a fingerprint file in FPS format to the FPB format. FPB files are a
-  binary format for fingerprints that allow for fast loading and memory-mapped access.\n
-  \nTool homepage: https://chemfp.com"
+  binary format for fingerprints that allow for fast loading and memory-mapped access.\n\
+  \ \nTool homepage: https://chemfp.com"
 inputs:
   - id: input_file
     type:
@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --reorder
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -60,7 +66,9 @@ outputs:
       - File
     doc: Output FPB file name.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chemfp:1.6.1--py27h9801fc8_2

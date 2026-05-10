@@ -51,8 +51,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum branch factor in the query optimizer; limits work on dense variant
-      regions
+    doc: Maximum branch factor in the query optimizer; limits work on dense 
+      variant regions
     inputBinding:
       position: 101
       prefix: --max-branch-factor
@@ -60,7 +60,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum gap (bp) between variants to split into separate sub-regions
+    doc: The minimum gap (bp) between variants to split into separate 
+      sub-regions
     inputBinding:
       position: 101
       prefix: --min-variant-gap
@@ -131,19 +132,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_debug_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_debug_path`
+    inputBinding:
+      position: 102
+      prefix: --output-debug
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory containing summary and VCFs
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_debug
     type:
       - 'null'
       - Directory
     doc: Optional output debug folder
     outputBinding:
-      glob: $(inputs.output_debug)
+      glob: $(inputs.output_debug_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aardvark:0.10.4--h4349ce8_0

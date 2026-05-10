@@ -23,6 +23,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: -minMax
+  - id: bed_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_out_path`
+    inputBinding:
+      position: 104
+      prefix: --bed-out
+  - id: sample_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sample_path`
+    inputBinding:
+      position: 105
+      prefix: --sample
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 106
+      prefix: --stats
 outputs:
   - id: out_tab
     type: File
@@ -35,21 +59,23 @@ outputs:
       - File
     doc: Write out statistics to this file
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
   - id: sample
     type:
       - 'null'
       - File
     doc: Write out sampling to this file
     outputBinding:
-      glob: $(inputs.sample)
+      glob: $(inputs.sample_path)
   - id: bed_out
     type:
       - 'null'
       - File
     doc: Make output a BED file with the average score in the score column
     outputBinding:
-      glob: $(inputs.bed_out)
+      glob: $(inputs.bed_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bigwigaverageoverbed:482--h0b57e2e_0

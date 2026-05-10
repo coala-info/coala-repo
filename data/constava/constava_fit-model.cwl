@@ -75,13 +75,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Write the generated model to a pickled file, that can be loaded gain 
       using `constava analyze --load-model`
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/constava:1.2.0--pyhdfd78af_0

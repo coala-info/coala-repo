@@ -171,12 +171,28 @@ inputs:
     inputBinding:
       position: 102
       prefix: --upsetr
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: upsetr_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `upsetr_output_path`
+    inputBinding:
+      position: 104
+      prefix: --upsetr-output
 outputs:
   - id: output_file
     type: File
     doc: Output file for merged SV data.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: upsetr_output
     type:
       - 'null'
@@ -184,7 +200,9 @@ outputs:
     doc: Output path for UpSet plot. If not provided, will use output_file 
       basename with _upset.png suffix.
     outputBinding:
-      glob: $(inputs.upsetr_output)
+      glob: $(inputs.upsetr_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/octopusv:0.3.0--pyhdfd78af_0

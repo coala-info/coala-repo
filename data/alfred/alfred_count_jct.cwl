@@ -58,6 +58,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --stranded
+  - id: outinter_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outinter_path`
+    inputBinding:
+      position: 103
+      prefix: --outinter
+  - id: outintra_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outintra_path`
+    inputBinding:
+      position: 104
+      prefix: --outintra
+  - id: outnovel_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outnovel_path`
+    inputBinding:
+      position: 105
+      prefix: --outnovel
 outputs:
   - id: outintra
     type:
@@ -65,21 +89,23 @@ outputs:
       - File
     doc: intra-gene exon-exon junction reads
     outputBinding:
-      glob: $(inputs.outintra)
+      glob: $(inputs.outintra_path)
   - id: outinter
     type:
       - 'null'
       - File
     doc: inter-gene exon-exon junction reads
     outputBinding:
-      glob: $(inputs.outinter)
+      glob: $(inputs.outinter_path)
   - id: outnovel
     type:
       - 'null'
       - File
     doc: output file for not annotated intra-chromosomal junction reads
     outputBinding:
-      glob: $(inputs.outnovel)
+      glob: $(inputs.outnovel_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alfred:0.5.1--h4d20210_0

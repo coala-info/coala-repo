@@ -344,6 +344,70 @@ inputs:
     inputBinding:
       position: 102
       prefix: -fontsize
+  - id: align_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `align_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --align-output-file
+  - id: align_output_stdout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `align_output_stdout_path`
+    inputBinding:
+      position: 104
+      prefix: --align-output-stdout
+  - id: build_tree_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `build_tree_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --build-tree-output-file
+  - id: build_tree_output_stdout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `build_tree_output_stdout_path`
+    inputBinding:
+      position: 106
+      prefix: --build-tree-output-stdout
+  - id: concatenate_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `concatenate_output_file_path`
+    inputBinding:
+      position: 107
+      prefix: --concatenate-output-file
+  - id: concatenate_output_stdout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `concatenate_output_stdout_path`
+    inputBinding:
+      position: 108
+      prefix: --concatenate-output-stdout
+  - id: convert_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `convert_output_file_path`
+    inputBinding:
+      position: 109
+      prefix: --convert-output-file
+  - id: convert_output_stdout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `convert_output_stdout_path`
+    inputBinding:
+      position: 110
+      prefix: --convert-output-stdout
 outputs:
   - id: convert_output_file
     type:
@@ -352,14 +416,14 @@ outputs:
     doc: use fname as name of the converted alignment (default is built from 
       input filename)
     outputBinding:
-      glob: $(inputs.convert_output_file)
+      glob: $(inputs.convert_output_file_path)
   - id: convert_output_stdout
     type:
       - 'null'
       - File
     doc: write the output alignment to standard output
     outputBinding:
-      glob: $(inputs.convert_output_stdout)
+      glob: $(inputs.convert_output_stdout_path)
   - id: concatenate_output_file
     type:
       - 'null'
@@ -367,14 +431,14 @@ outputs:
     doc: use fname as name of the concatenated alignment (default is built from 
       input filename)
     outputBinding:
-      glob: $(inputs.concatenate_output_file)
+      glob: $(inputs.concatenate_output_file_path)
   - id: concatenate_output_stdout
     type:
       - 'null'
       - File
     doc: write the concatenated alignment to standard output
     outputBinding:
-      glob: $(inputs.concatenate_output_stdout)
+      glob: $(inputs.concatenate_output_stdout_path)
   - id: align_output_file
     type:
       - 'null'
@@ -382,28 +446,30 @@ outputs:
     doc: use fname as name of the output alignment (default is built from input 
       filename)
     outputBinding:
-      glob: $(inputs.align_output_file)
+      glob: $(inputs.align_output_file_path)
   - id: align_output_stdout
     type:
       - 'null'
       - File
     doc: write the output alignment to standard output
     outputBinding:
-      glob: $(inputs.align_output_stdout)
+      glob: $(inputs.align_output_stdout_path)
   - id: build_tree_output_file
     type:
       - 'null'
       - File
     doc: use fname as name of the output tree
     outputBinding:
-      glob: $(inputs.build_tree_output_file)
+      glob: $(inputs.build_tree_output_file_path)
   - id: build_tree_output_stdout
     type:
       - 'null'
       - File
     doc: write the output tree to standard output
     outputBinding:
-      glob: $(inputs.build_tree_output_stdout)
+      glob: $(inputs.build_tree_output_stdout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/seaview:v1-4.7-1-deb_cv1

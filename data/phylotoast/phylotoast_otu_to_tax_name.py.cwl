@@ -26,6 +26,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reverse_lookup
+  - id: output_fp_path
+    type: string
+    doc: Output or path parameter `output_fp_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fp
 outputs:
   - id: output_fp
     type: File
@@ -34,7 +40,9 @@ outputs:
       file input, a new mapping file with all the OTU IDs replaced by the short 
       identifier.
     outputBinding:
-      glob: $(inputs.output_fp)
+      glob: $(inputs.output_fp_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylotoast:1.4.0rc2--py27_0

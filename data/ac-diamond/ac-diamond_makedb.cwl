@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: db_path
+    type: string
+    doc: Output or path parameter `db_path`
+    inputBinding:
+      position: 102
+      prefix: --db
 outputs:
   - id: db
     type:
@@ -59,7 +65,9 @@ outputs:
       - File
     doc: database file
     outputBinding:
-      glob: $(inputs.db)
+      glob: $(inputs.db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ac-diamond:1.0--boost1.64_0

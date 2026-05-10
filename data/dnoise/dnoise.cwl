@@ -183,6 +183,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --within_MOTU
+  - id: csv_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_output_path`
+    inputBinding:
+      position: 102
+      prefix: --csv-output
+  - id: fasta_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fasta_output_path`
+    inputBinding:
+      position: 103
+      prefix: --fasta-output
 outputs:
   - id: csv_output
     type:
@@ -190,14 +206,16 @@ outputs:
       - File
     doc: common path for csv format
     outputBinding:
-      glob: $(inputs.csv_output)
+      glob: $(inputs.csv_output_path)
   - id: fasta_output
     type:
       - 'null'
       - File
     doc: common path for fasta format
     outputBinding:
-      glob: $(inputs.fasta_output)
+      glob: $(inputs.fasta_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dnoise:1.4.2--pyhdfd78af_0

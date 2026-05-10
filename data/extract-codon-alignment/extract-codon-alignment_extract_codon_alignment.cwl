@@ -28,12 +28,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --codonPoses
+  - id: out_aln_path
+    type: string
+    doc: Output or path parameter `out_aln_path`
+    inputBinding:
+      position: 102
+      prefix: --out-aln
 outputs:
   - id: out_aln
     type: File
     doc: output file name
     outputBinding:
-      glob: $(inputs.out_aln)
+      glob: $(inputs.out_aln_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0

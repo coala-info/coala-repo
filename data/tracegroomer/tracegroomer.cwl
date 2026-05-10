@@ -121,6 +121,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_internal_standard
+  - id: output_files_extension_path
+    type: string
+    doc: Output or path parameter `output_files_extension_path`
+    inputBinding:
+      position: 102
+      prefix: --output-files-extension
 outputs:
   - id: output_files_extension
     type:
@@ -128,7 +134,9 @@ outputs:
       - File
     doc: 'Extension for the output files, must be one of the following: csv|tsv|txt'
     outputBinding:
-      glob: $(inputs.output_files_extension)
+      glob: $(inputs.output_files_extension_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tracegroomer:0.1.4--pyhdfd78af_0

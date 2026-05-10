@@ -55,7 +55,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Type of the data specified in input_file (asn1_bin, asn1_txt, blastdb, fasta)
+    doc: Type of the data specified in input_file (asn1_bin, asn1_txt, blastdb, 
+      fasta)
     inputBinding:
       position: 101
       prefix: -input_type
@@ -64,8 +65,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Comma-separated list of input files containing masking data as produced by
-      NCBI masking applications
+    doc: Comma-separated list of input files containing masking data as produced
+      by NCBI masking applications
     inputBinding:
       position: 101
       prefix: -mask_data
@@ -74,8 +75,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Comma-separated list of free form strings to describe the masking algorithm
-      details
+    doc: Comma-separated list of free form strings to describe the masking 
+      algorithm details
     inputBinding:
       position: 101
       prefix: -mask_desc
@@ -84,7 +85,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Comma-separated list of strings to uniquely identify the masking algorithm
+    doc: Comma-separated list of strings to uniquely identify the masking 
+      algorithm
     inputBinding:
       position: 101
       prefix: -mask_id
@@ -116,8 +118,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Option to parse seqid for FASTA input if set, for all other input types seqids
-      are parsed automatically
+    doc: Option to parse seqid for FASTA input if set, for all other input types
+      seqids are parsed automatically
     inputBinding:
       position: 101
       prefix: -parse_seqids
@@ -145,6 +147,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -title
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_db_name_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_db_name_path`
+    inputBinding:
+      position: 103
+      prefix: --output-db-name
 outputs:
   - id: output_db_name
     type:
@@ -152,14 +170,16 @@ outputs:
       - File
     doc: Name of BLAST database to be created
     outputBinding:
-      glob: $(inputs.output_db_name)
+      glob: $(inputs.output_db_name_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: File to which the program log should be redirected
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast:2.17.0--h66d330f_0

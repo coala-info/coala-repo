@@ -9,7 +9,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: align sequences left/center/right for site positional distribution plots
+    doc: align sequences left/center/right for site positional distribution 
+      plots
     inputBinding:
       position: 101
       prefix: --align
@@ -25,8 +26,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: use the background model contained in bfile instead of creating it from the
-      control sequences
+    doc: use the background model contained in bfile instead of creating it from
+      the control sequences
     inputBinding:
       position: 101
       prefix: --bfile
@@ -122,8 +123,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: do not show actual genomic coordinates for the discovered motif sites reported
-      in the Sites TSV file
+    doc: do not show actual genomic coordinates for the discovered motif sites 
+      reported in the Sites TSV file
     inputBinding:
       position: 101
       prefix: --no-pgc
@@ -131,8 +132,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: do not trim the control sequences even if their average length is greater
-      than the primary sequences
+    doc: do not trim the control sequences even if their average length is 
+      greater than the primary sequences
     inputBinding:
       position: 101
       prefix: --notrim
@@ -157,8 +158,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: estimates an m-order background model for scoring sites and uses an m-order
-      shuffle if creating control sequences
+    doc: estimates an m-order background model for scoring sites and uses an 
+      m-order shuffle if creating control sequences
     inputBinding:
       position: 101
       prefix: --order
@@ -256,6 +257,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --w
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
+  - id: output_dir_overwrite_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_overwrite_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir-overwrite
 outputs:
   - id: output_dir
     type:
@@ -263,14 +280,16 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_dir_overwrite
     type:
       - 'null'
       - Directory
     doc: allow overwriting output directory
     outputBinding:
-      glob: $(inputs.output_dir_overwrite)
+      glob: $(inputs.output_dir_overwrite_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0

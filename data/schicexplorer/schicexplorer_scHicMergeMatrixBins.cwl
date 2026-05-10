@@ -35,13 +35,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_file_name_path
+    type: string
+    doc: Output or path parameter `out_file_name_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file-name
 outputs:
   - id: out_file_name
     type: File
     doc: "File name to save the resulting matrix. The output is\nalso a .scool file.
       But don't add the suffix."
     outputBinding:
-      glob: $(inputs.out_file_name)
+      glob: $(inputs.out_file_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/schicexplorer:7--py_0

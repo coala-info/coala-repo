@@ -44,12 +44,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --overwrite
+  - id: output_csv_path
+    type: string
+    doc: Output or path parameter `output_csv_path`
+    inputBinding:
+      position: 102
+      prefix: --output-csv
 outputs:
   - id: output_csv
     type: File
     doc: Path to the csv file where the sum intensities will be stored.
     outputBinding:
-      glob: $(inputs.output_csv)
+      glob: $(inputs.output_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

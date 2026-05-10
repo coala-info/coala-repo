@@ -90,6 +90,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --realign
+  - id: snp_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `snp_report_path`
+    inputBinding:
+      position: 104
+      prefix: --snp-report
 outputs:
   - id: output_file
     type: File
@@ -103,7 +111,9 @@ outputs:
     doc: Creates a new text file reporting all SNP phasing observed by a read 
       against ambiguous bases in the reference
     outputBinding:
-      glob: $(inputs.snp_report)
+      glob: $(inputs.snp_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ale:20180904--py27ha92aebf_0

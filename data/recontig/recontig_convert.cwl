@@ -99,6 +99,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: ejected_output_path
+    type: string
+    doc: Output or path parameter `ejected_output_path`
+    inputBinding:
+      position: 103
+      prefix: --ejected-output
 outputs:
   - id: ejected_output
     type:
@@ -106,7 +112,9 @@ outputs:
       - File
     doc: File to write ejected records to (records with unmapped contigs)
     outputBinding:
-      glob: $(inputs.ejected_output)
+      glob: $(inputs.ejected_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recontig:1.5.0--h9ee0642_0

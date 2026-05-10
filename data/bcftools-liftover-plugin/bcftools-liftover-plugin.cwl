@@ -39,6 +39,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fasta
+  - id: reject_path
+    type: string
+    doc: Output or path parameter `reject_path`
+    inputBinding:
+      position: 103
+      prefix: --reject
 outputs:
   - id: reject
     type:
@@ -46,7 +52,9 @@ outputs:
       - File
     doc: Write rejected records to this file
     outputBinding:
-      glob: $(inputs.reject)
+      glob: $(inputs.reject_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools-liftover-plugin:1.22--hb66fcc3_0

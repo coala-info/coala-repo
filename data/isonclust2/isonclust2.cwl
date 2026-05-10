@@ -59,12 +59,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --w
+  - id: outfolder_path
+    type: string
+    doc: Output or path parameter `outfolder_path`
+    inputBinding:
+      position: 102
+      prefix: --outfolder
 outputs:
   - id: outfolder
     type: Directory
     doc: Output directory for clustering results
     outputBinding:
-      glob: $(inputs.outfolder)
+      glob: $(inputs.outfolder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isonclust2:2.3--hc9558a2_0

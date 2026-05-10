@@ -100,6 +100,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --strategy
+  - id: anno_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `anno_path`
+    inputBinding:
+      position: 103
+      prefix: --anno
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: anno
     type:
@@ -107,14 +123,16 @@ outputs:
       - File
     doc: output annotation VCF/BCF file
     outputBinding:
-      glob: $(inputs.anno)
+      glob: $(inputs.anno_path)
   - id: output
     type:
       - 'null'
       - File
     doc: gzipped output file for query SVs
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sansa:0.2.5--h4d20210_0

@@ -53,6 +53,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: -p
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: save_plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_plot_path`
+    inputBinding:
+      position: 104
+      prefix: --save-plot
+  - id: save_rdata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_rdata_path`
+    inputBinding:
+      position: 105
+      prefix: --save-rdata
 outputs:
   - id: output_directory
     type:
@@ -60,28 +92,30 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: save_plot
     type:
       - 'null'
       - File
     doc: Save cross-correlation plot to this file
     outputBinding:
-      glob: $(inputs.save_plot)
+      glob: $(inputs.save_plot_path)
   - id: save_rdata
     type:
       - 'null'
       - File
     doc: Save Rdata file
     outputBinding:
-      glob: $(inputs.save_rdata)
+      glob: $(inputs.save_rdata_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Append peak quality metrics to this file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phantompeakqualtools:1.2.2--0

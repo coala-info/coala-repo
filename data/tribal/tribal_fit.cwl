@@ -105,6 +105,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: pickle_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pickle_path`
+    inputBinding:
+      position: 102
+      prefix: --pickle
+  - id: transmat_infer_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `transmat_infer_path`
+    inputBinding:
+      position: 103
+      prefix: --transmat-infer
+  - id: write_results_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_results_path`
+    inputBinding:
+      position: 104
+      prefix: --write-results
 outputs:
   - id: transmat_infer
     type:
@@ -112,21 +136,23 @@ outputs:
       - File
     doc: filename where the inferred transition matrix should be saved
     outputBinding:
-      glob: $(inputs.transmat_infer)
+      glob: $(inputs.transmat_infer_path)
   - id: pickle
     type:
       - 'null'
       - File
     doc: path where the output dictionary of LineageTree lists should be pickled
     outputBinding:
-      glob: $(inputs.pickle)
+      glob: $(inputs.pickle_path)
   - id: write_results
     type:
       - 'null'
       - File
     doc: path where all optimal solution results are saved
     outputBinding:
-      glob: $(inputs.write_results)
+      glob: $(inputs.write_results_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tribal:0.1.1--py310hdbdd923_1

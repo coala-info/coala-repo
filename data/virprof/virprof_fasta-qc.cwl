@@ -29,12 +29,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --in-fasta
+  - id: out_csv_path
+    type: string
+    doc: Output or path parameter `out_csv_path`
+    inputBinding:
+      position: 102
+      prefix: --out-csv
 outputs:
   - id: out_csv
     type: File
     doc: Output CSV file for scores
     outputBinding:
-      glob: $(inputs.out_csv)
+      glob: $(inputs.out_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virprof:0.9.2--pyhdfd78af_0

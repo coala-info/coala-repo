@@ -59,6 +59,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --trimRight
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -66,7 +72,9 @@ outputs:
       - File
     doc: basecalling output
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tracy:0.8.1--h4d20210_0

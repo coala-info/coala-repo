@@ -137,12 +137,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -w
+  - id: outfolder_path
+    type: string
+    doc: Output or path parameter `outfolder_path`
+    inputBinding:
+      position: 102
+      prefix: --outfolder
 outputs:
   - id: outfolder
     type: Directory
     doc: Path to outfolder
     outputBinding:
-      glob: $(inputs.outfolder)
+      glob: $(inputs.outfolder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isonclust3:0.3.0--h4349ce8_0

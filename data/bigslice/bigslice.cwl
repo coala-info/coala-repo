@@ -165,6 +165,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threshold_pct
+  - id: export_tsv_path
+    type: string
+    doc: Output or path parameter `export_tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --export-tsv
 outputs:
   - id: export_tsv
     type:
@@ -173,7 +179,9 @@ outputs:
     doc: Export existing pre-calculated output data into TSVs (specify the 
       target folder path)
     outputBinding:
-      glob: $(inputs.export_tsv)
+      glob: $(inputs.export_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bigslice:2.0.2--pyh8ed023e_0

@@ -24,7 +24,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Whether to include special features (UNMAPPED, UNGROUPED, etc.) in the normalization
+    doc: Whether to include special features (UNMAPPED, UNGROUPED, etc.) in the 
+      normalization
     inputBinding:
       position: 101
       prefix: --special-features
@@ -45,12 +46,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --update-snames
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: The path to write the renormalized table
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/humann:3.9--py312hdfd78af_0

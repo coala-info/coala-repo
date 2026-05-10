@@ -101,7 +101,7 @@ inputs:
       - Directory
     doc: Folder containing the MetaPhlAn database. You can specify the location 
       by exporting the DEFAULT_DB_FOLDER variable in the shell (old --bowtie2db 
-      option).
+      option). 
       /usr/local/lib/python3.13/site-packages/metaphlan/metaphlan_databases
     inputBinding:
       position: 102
@@ -502,6 +502,37 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vsc_breadth
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: samout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `samout_path`
+    inputBinding:
+      position: 104
+      prefix: --samout
+  - id: subsampling_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --subsampling_output
+  - id: vsc_out_path
+    type:
+      - 'null'
+      - string
+    doc: Path to the VSCs breadth-of-coverage output file
+    inputBinding:
+      position: 106
+      prefix: --vsc_out
 outputs:
   - id: output_file
     type:
@@ -509,21 +540,21 @@ outputs:
       - File
     doc: The output file (if not specified stdout)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: samout
     type:
       - 'null'
       - File
     doc: The sam output file
     outputBinding:
-      glob: $(inputs.samout)
+      glob: $(inputs.samout_path)
   - id: vsc_out
     type:
       - 'null'
       - File
     doc: Path to the VSCs breadth-of-coverage output file
     outputBinding:
-      glob: $(inputs.vsc_out)
+      glob: $(inputs.vsc_out_path)
   - id: subsampling_output
     type:
       - 'null'
@@ -532,7 +563,9 @@ outputs:
       gzip, the files will be compressed. If not specified the subsampled reads 
       will not be saved.
     outputBinding:
-      glob: $(inputs.subsampling_output)
+      glob: $(inputs.subsampling_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0

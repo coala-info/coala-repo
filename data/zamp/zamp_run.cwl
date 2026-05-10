@@ -367,6 +367,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-singularity
+  - id: output_path
+    type: string
+    doc: 'Output directory  [default: zamp_out]'
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -374,7 +380,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/zamp:1.0.0--pyhdfd78af_1

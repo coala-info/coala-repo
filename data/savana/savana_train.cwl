@@ -77,6 +77,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcfs
+  - id: save_matrix_path
+    type: string
+    doc: Output or path parameter `save_matrix_path`
+    inputBinding:
+      position: 102
+      prefix: --save-matrix
 outputs:
   - id: save_matrix
     type:
@@ -84,7 +90,9 @@ outputs:
       - File
     doc: Output pickle file for data matrix of VCFs
     outputBinding:
-      glob: $(inputs.save_matrix)
+      glob: $(inputs.save_matrix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savana:1.3.6--pyhdfd78af_0

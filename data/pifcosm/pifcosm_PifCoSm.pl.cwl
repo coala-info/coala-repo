@@ -401,6 +401,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use_guide_tree
+  - id: out_file_name_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_name_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file-name
+  - id: partition_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `partition_file_path`
+    inputBinding:
+      position: 104
+      prefix: --partition-file
 outputs:
   - id: out_file_name
     type:
@@ -408,14 +424,16 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.out_file_name)
+      glob: $(inputs.out_file_name_path)
   - id: partition_file
     type:
       - 'null'
       - File
     doc: Output partition file
     outputBinding:
-      glob: $(inputs.partition_file)
+      glob: $(inputs.partition_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pifcosm:0.1.1--hdfd78af_0

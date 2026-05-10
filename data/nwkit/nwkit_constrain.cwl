@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxid_tsv
+  - id: outfile_path
+    type: string
+    doc: 'default=-: Output newick file. Use "-" for STDOUT.'
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: Output newick file. Use "-" for STDOUT.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nwkit:0.21.1--pyhdfd78af_0

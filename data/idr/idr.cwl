@@ -97,6 +97,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --soft-idr-threshold
+  - id: log_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --log-output-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -104,14 +120,16 @@ outputs:
       - File
     doc: File to write the IDR results to.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: log_output_file
     type:
       - 'null'
       - File
     doc: File to write the log to.
     outputBinding:
-      glob: $(inputs.log_output_file)
+      glob: $(inputs.log_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/idr:2.0.4.2--py39h031d066_12

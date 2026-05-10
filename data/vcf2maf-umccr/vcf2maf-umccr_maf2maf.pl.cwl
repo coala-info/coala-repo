@@ -90,7 +90,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Reference FASTA file
+    doc: Reference FASTA file 
       ~/.vep/homo_sapiens/102_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
     inputBinding:
       position: 101
@@ -100,7 +100,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Comma-delimited list of columns to retain from the input MAF
+    doc: Comma-delimited list of columns to retain from the input MAF 
       Center,Verification_Status,Validation_Status,Mutation_Status,Sequencing_Phase,Sequence_Source,Validation_Method,Score,BAM_file,Sequencer,Tumor_Sample_UUID,Matched_Norm_Sample_UUID
     inputBinding:
       position: 101
@@ -169,6 +169,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vep-path
+  - id: output_maf_path
+    type: string
+    doc: Output or path parameter `output_maf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-maf
 outputs:
   - id: output_maf
     type:
@@ -176,7 +182,9 @@ outputs:
       - File
     doc: Path to output MAF file
     outputBinding:
-      glob: $(inputs.output_maf)
+      glob: $(inputs.output_maf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf2maf-umccr:1.6.21.20230511--hdfd78af_0

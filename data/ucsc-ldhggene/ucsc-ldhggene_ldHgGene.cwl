@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -requireCDS
+  - id: output_gene_pred_file_path
+    type: string
+    doc: Output or path parameter `output_gene_pred_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-gene-pred-file
 outputs:
   - id: output_gene_pred_file
     type:
@@ -109,7 +115,9 @@ outputs:
     doc: write output, in genePred format, instead of loading table. Database is
       ignored.
     outputBinding:
-      glob: $(inputs.output_gene_pred_file)
+      glob: $(inputs.output_gene_pred_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-ldhggene:482--h0b57e2e_0

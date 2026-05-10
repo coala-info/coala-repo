@@ -221,6 +221,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --O
+  - id: outfile_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -228,7 +233,9 @@ outputs:
       - File
     doc: Write current citation report to an ASCII text file.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pmidcite:0.3.1--pyhdfd78af_0

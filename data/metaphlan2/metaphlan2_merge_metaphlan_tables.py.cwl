@@ -12,6 +12,12 @@ inputs:
     doc: One or more tab-delimited text tables to join
     inputBinding:
       position: 1
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 101
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -19,7 +25,9 @@ outputs:
       - File
     doc: Name of output file in which joined tables are saved
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaphlan2:2.96.1--py_0

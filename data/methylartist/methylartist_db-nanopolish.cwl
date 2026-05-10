@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thresh
+  - id: db_path
+    type: string
+    doc: 'database name (default: auto-infer)'
+    inputBinding:
+      position: 102
+      prefix: --db
 outputs:
   - id: db
     type:
@@ -62,7 +68,9 @@ outputs:
       - File
     doc: 'database name (default: auto-infer)'
     outputBinding:
-      glob: $(inputs.db)
+      glob: $(inputs.db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0

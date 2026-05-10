@@ -126,6 +126,36 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-names
+  - id: classified_out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --classified-out
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 105
+      prefix: --report-file
+  - id: unclassified_out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --unclassified-out
 outputs:
   - id: unclassified_out
     type:
@@ -133,28 +163,30 @@ outputs:
       - File
     doc: Print unclassified sequences to filename
     outputBinding:
-      glob: $(inputs.unclassified_out)
+      glob: $(inputs.unclassified_out_path)
   - id: classified_out
     type:
       - 'null'
       - File
     doc: Print classified sequences to filename
     outputBinding:
-      glob: $(inputs.classified_out)
+      glob: $(inputs.classified_out_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: 'Print output to filename (default: stdout); "-" will suppress normal output'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: report_file
     type:
       - 'null'
       - File
     doc: Print a report with aggregrate counts/clade to file
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kraken2:2.17.1--pl5321h077b44d_0

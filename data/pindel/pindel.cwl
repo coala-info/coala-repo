@@ -8,8 +8,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Pindel will only map part of a read if there are no other candidate positions
-      with no more than the specified number of mismatches
+    doc: Pindel will only map part of a read if there are no other candidate 
+      positions with no more than the specified number of mismatches
     inputBinding:
       position: 101
       prefix: --additional_mismatch
@@ -25,7 +25,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: the number of bases of a SV above which a more stringent filter is applied
+    doc: the number of bases of a SV above which a more stringent filter is 
+      applied
     inputBinding:
       position: 101
       prefix: --balance_cutoff
@@ -41,8 +42,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Which chr/fragment. '-c ALL' will make Pindel loop over all chromosomes.
-      Can also be limited to a specific region (e.g., -c 20:5,000,000-15,000,000)
+    doc: Which chr/fragment. '-c ALL' will make Pindel loop over all 
+      chromosomes. Can also be limited to a specific region (e.g., -c 
+      20:5,000,000-15,000,000)
     inputBinding:
       position: 101
       prefix: --chromosome
@@ -50,8 +52,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: the bam config file; either this, a pindel input file, or a pindel config
-      file is required.
+    doc: the bam config file; either this, a pindel input file, or a pindel 
+      config file is required.
     inputBinding:
       position: 101
       prefix: --config-file
@@ -59,8 +61,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Report discordant sequences and positions for mates of reads mapping inside
-      dispersed duplications
+    doc: Report discordant sequences and positions for mates of reads mapping 
+      inside dispersed duplications
     inputBinding:
       position: 101
       prefix: --DD_REPORT_DUPLICATION_READS
@@ -130,8 +132,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum distance between reads for them to provide evidence for a single
-      breakpoint
+    doc: Maximum distance between reads for them to provide evidence for a 
+      single breakpoint
     inputBinding:
       position: 101
       prefix: --MAX_DISTANCE_CLUSTER_READS
@@ -147,8 +149,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Only reads with more than this fraction of mismatches than the reference
-      genome will be considered
+    doc: Only reads with more than this fraction of mismatches than the 
+      reference genome will be considered
     inputBinding:
       position: 101
       prefix: --maximum_allowed_mismatch_rate
@@ -156,8 +158,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of split reads for calling an exact breakpoint for dispersed
-      duplications
+    doc: Minimum number of split reads for calling an exact breakpoint for 
+      dispersed duplications
     inputBinding:
       position: 101
       prefix: --MIN_DD_BREAKPOINT_SUPPORT
@@ -165,7 +167,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of reads needed for calling a breakpoint for dispersed duplications
+    doc: Minimum number of reads needed for calling a breakpoint for dispersed 
+      duplications
     inputBinding:
       position: 101
       prefix: --MIN_DD_CLUSTER_SIZE
@@ -173,7 +176,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum mapping distance of read pairs for them to be considered discordant
+    doc: Minimum mapping distance of read pairs for them to be considered 
+      discordant
     inputBinding:
       position: 101
       prefix: --MIN_DD_MAP_DISTANCE
@@ -197,8 +201,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: only consider reads as evidence if they map with more than X bases to the
-      reference
+    doc: only consider reads as evidence if they map with more than X bases to 
+      the reference
     inputBinding:
       position: 101
       prefix: --min_num_matched_bases
@@ -206,7 +210,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum perfectly matching bases between read and reference at split point
+    doc: minimum perfectly matching bases between read and reference at split 
+      point
     inputBinding:
       position: 101
       prefix: --min_perfect_match_around_BP
@@ -214,7 +219,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Pindel only calls events which have this number or more supporting reads
+    doc: Pindel only calls events which have this number or more supporting 
+      reads
     inputBinding:
       position: 101
       prefix: --minimum_support_for_event
@@ -246,8 +252,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: the pindel config file, containing the names of all Pindel files that need
-      to be sampled
+    doc: the pindel config file, containing the names of all Pindel files that 
+      need to be sampled
     inputBinding:
       position: 101
       prefix: --pindel-config-file
@@ -255,8 +261,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: the Pindel input file; either this, a pindel configuration file or a bam
-      configuration file is required
+    doc: the Pindel input file; either this, a pindel configuration file or a 
+      bam configuration file is required
     inputBinding:
       position: 101
       prefix: --pindel-file
@@ -320,7 +326,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: do not search for SVs, only report reads of which only one end could be mapped
+    doc: do not search for SVs, only report reads of which only one end could be
+      mapped
     inputBinding:
       position: 101
       prefix: --report_only_close_mapped_reads
@@ -336,8 +343,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Pindel only reports reads if they can be fit around an event within a certain
-      number of mismatches
+    doc: Pindel only reports reads if they can be fit around an event within a 
+      certain number of mismatches
     inputBinding:
       position: 101
       prefix: --sensitivity
@@ -357,26 +364,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_size
+  - id: name_of_logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `name_of_logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --name-of-logfile
+  - id: output_of_breakdancer_events_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_of_breakdancer_events_path`
+    inputBinding:
+      position: 103
+      prefix: --output-of-breakdancer-events
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: Output prefix
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: output_of_breakdancer_events
     type:
       - 'null'
       - File
     doc: specify a filename to write the confirmed breakdancer events
     outputBinding:
-      glob: $(inputs.output_of_breakdancer_events)
+      glob: $(inputs.output_of_breakdancer_events_path)
   - id: name_of_logfile
     type:
       - 'null'
       - File
     doc: Specifies a file to write Pindel's log to
     outputBinding:
-      glob: $(inputs.name_of_logfile)
+      glob: $(inputs.name_of_logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pindel:0.2.5b9--h077b44d_12

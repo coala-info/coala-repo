@@ -218,6 +218,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: data_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `data_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --data-filename
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 104
+      prefix: --outdir
+  - id: report_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_filename_path`
+    inputBinding:
+      position: 105
+      prefix: --report-filename
+  - id: summary_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_filename_path`
+    inputBinding:
+      position: 106
+      prefix: --summary-filename
 outputs:
   - id: outdir
     type:
@@ -225,28 +257,30 @@ outputs:
       - Directory
     doc: Create all output files in the specified output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: data_filename
     type:
       - 'null'
       - File
     doc: '[Falco only] Specify filename for FastQC data output (TXT).'
     outputBinding:
-      glob: $(inputs.data_filename)
+      glob: $(inputs.data_filename_path)
   - id: report_filename
     type:
       - 'null'
       - File
     doc: '[Falco only] Specify filename for FastQC report output (HTML).'
     outputBinding:
-      glob: $(inputs.report_filename)
+      glob: $(inputs.report_filename_path)
   - id: summary_filename
     type:
       - 'null'
       - File
     doc: '[Falco only] Specify filename for the short summary output (TXT).'
     outputBinding:
-      glob: $(inputs.summary_filename)
+      glob: $(inputs.summary_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/falco:1.2.5--h077b44d_0

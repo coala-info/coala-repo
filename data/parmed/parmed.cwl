@@ -24,7 +24,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Allow arbitrary single Python commands or blocks of Python code to be run.
+    doc: Allow arbitrary single Python commands or blocks of Python code to be 
+      run.
     inputBinding:
       position: 103
       prefix: --enable-interpreter
@@ -33,8 +34,9 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: List of inpcrd files to load into ParmEd. They are paired with the topology
-      files in the same order that each set of files is specified on the command-line.
+    doc: List of inpcrd files to load into ParmEd. They are paired with the 
+      topology files in the same order that each set of files is specified on 
+      the command-line.
     inputBinding:
       position: 103
       prefix: --inpcrd
@@ -43,8 +45,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Script with ParmEd commands to execute. Default reads from stdin. Can be
-      specified multiple times to process multiple input files.
+    doc: Script with ParmEd commands to execute. Default reads from stdin. Can 
+      be specified multiple times to process multiple input files.
     inputBinding:
       position: 103
       prefix: --input
@@ -69,8 +71,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: List of topology files to load into ParmEd. Can be specified multiple times
-      to process multiple topologies.
+    doc: List of topology files to load into ParmEd. Can be specified multiple 
+      times to process multiple topologies.
     inputBinding:
       position: 103
       prefix: --parm
@@ -86,8 +88,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Scripts ignore unrecognized input and simply skip over failed actions, executing
-      the rest of the script.
+    doc: Scripts ignore unrecognized input and simply skip over failed actions, 
+      executing the rest of the script.
     inputBinding:
       position: 103
       prefix: --relaxed
@@ -95,19 +97,28 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Prevent scripts from running past unrecognized input and actions that end
-      with an error. This is the default behavior.
+    doc: Prevent scripts from running past unrecognized input and actions that 
+      end with an error. This is the default behavior.
     inputBinding:
       position: 103
       prefix: --strict
+  - id: logfile_path
+    type: string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 104
+      prefix: --logfile
 outputs:
   - id: logfile
     type:
       - 'null'
       - File
-    doc: Log file with every command executed during an interactive ParmEd session.
+    doc: Log file with every command executed during an interactive ParmEd 
+      session.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parmed:3.4.3

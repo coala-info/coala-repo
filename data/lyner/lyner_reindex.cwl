@@ -19,6 +19,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: output_matrix_path
+    type: string
+    doc: Output or path parameter `output_matrix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-matrix
 outputs:
   - id: output_matrix
     type:
@@ -26,7 +32,9 @@ outputs:
       - File
     doc: Output matrix file
     outputBinding:
-      glob: $(inputs.output_matrix)
+      glob: $(inputs.output_matrix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0

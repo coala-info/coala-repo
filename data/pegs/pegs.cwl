@@ -115,6 +115,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-directory
+  - id: xlsx_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `xlsx_path`
+    inputBinding:
+      position: 104
+      prefix: --xlsx
 outputs:
   - id: output_directory
     type:
@@ -122,14 +138,16 @@ outputs:
       - Directory
     doc: Directory to write output files
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: xlsx
     type:
       - 'null'
       - File
     doc: XLSX output filename
     outputBinding:
-      glob: $(inputs.xlsx)
+      glob: $(inputs.xlsx_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pegs:0.6.6--pyhdfd78af_0

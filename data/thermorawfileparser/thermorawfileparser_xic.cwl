@@ -66,6 +66,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --warningsAreErrors
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -74,7 +90,7 @@ outputs:
     doc: The output file. Specify this or an output directory. Specifying 
       neither writes to the input directory.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_directory
     type:
       - 'null'
@@ -82,7 +98,9 @@ outputs:
     doc: The output directory. Specify this or an output file. Specifying 
       neither writes to the input directory.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/thermorawfileparser:2.0.0.dev--h9ee0642_0

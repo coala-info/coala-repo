@@ -207,12 +207,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vaw
+  - id: output_distance_matrix_path
+    type: string
+    doc: Output or path parameter `output_distance_matrix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-distance-matrix
 outputs:
   - id: output_distance_matrix
     type: File
     doc: The output distance matrix.
     outputBinding:
-      glob: $(inputs.output_distance_matrix)
+      glob: $(inputs.output_distance_matrix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unifrac:1.5.1--py39hff726c5_0

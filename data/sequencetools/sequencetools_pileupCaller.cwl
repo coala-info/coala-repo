@@ -204,6 +204,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: '----zip'
+  - id: eigenstrat_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `eigenstrat_out_path`
+    inputBinding:
+      position: 102
+      prefix: --eigenstrat-out
+  - id: plink_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plink_out_path`
+    inputBinding:
+      position: 103
+      prefix: --plink-out
+  - id: vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --vcf
 outputs:
   - id: eigenstrat_out
     type:
@@ -215,7 +239,7 @@ outputs:
       at https://rarecoal-docs.readthedocs.io/en/latest/rarecoal-tools.html#vcf2freqsum,
       is useful for testing your pipeline, since it's output to standard out"
     outputBinding:
-      glob: $(inputs.eigenstrat_out)
+      glob: $(inputs.eigenstrat_out_path)
   - id: plink_out
     type:
       - 'null'
@@ -226,14 +250,16 @@ outputs:
       at https://rarecoal-docs.readthedocs.io/en/latest/rarecoal-tools.html#vcf2freqsum,
       is useful for testing your pipeline, since it's output to standard out"
     outputBinding:
-      glob: $(inputs.plink_out)
+      glob: $(inputs.plink_out_path)
   - id: vcf
     type:
       - 'null'
       - File
     doc: output VCF format to stdout
     outputBinding:
-      glob: $(inputs.vcf)
+      glob: $(inputs.vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sequencetools:1.6.0.0--hebebf5b_0

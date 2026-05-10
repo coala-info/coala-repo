@@ -233,6 +233,62 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_counts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_counts_path`
+    inputBinding:
+      position: 102
+      prefix: --output-counts
+  - id: output_final_umis_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_final_umis_path`
+    inputBinding:
+      position: 103
+      prefix: --output-final-umis
+  - id: output_genewise_fits_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_genewise_fits_path`
+    inputBinding:
+      position: 104
+      prefix: --output-genewise-fits
+  - id: output_groupwise_fits_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_groupwise_fits_path`
+    inputBinding:
+      position: 105
+      prefix: --output-groupwise-fits
+  - id: output_plots_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_plots_path`
+    inputBinding:
+      position: 106
+      prefix: --output-plots
+  - id: output_readdist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_readdist_path`
+    inputBinding:
+      position: 107
+      prefix: --output-readdist
+  - id: output_umis_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_umis_path`
+    inputBinding:
+      position: 108
+      prefix: --output-umis
 outputs:
   - id: output_counts
     type:
@@ -240,21 +296,21 @@ outputs:
       - File
     doc: write bias-corrected per-group counts and models to FILE
     outputBinding:
-      glob: $(inputs.output_counts)
+      glob: $(inputs.output_counts_path)
   - id: output_umis
     type:
       - 'null'
       - File
     doc: write UMIs reported by `umi_tools group` to FILE
     outputBinding:
-      glob: $(inputs.output_umis)
+      glob: $(inputs.output_umis_path)
   - id: output_final_umis
     type:
       - 'null'
       - File
     doc: write strand-combined and filtered UMIs to FILE
     outputBinding:
-      glob: $(inputs.output_final_umis)
+      glob: $(inputs.output_final_umis_path)
   - id: output_readdist
     type:
       - 'null'
@@ -262,28 +318,30 @@ outputs:
     doc: write global reads/UMI distribution (before and after filtering) to 
       FILE
     outputBinding:
-      glob: $(inputs.output_readdist)
+      glob: $(inputs.output_readdist_path)
   - id: output_plots
     type:
       - 'null'
       - File
     doc: write diagnostic plots in PDF format to PLOT
     outputBinding:
-      glob: $(inputs.output_plots)
+      glob: $(inputs.output_plots_path)
   - id: output_groupwise_fits
     type:
       - 'null'
       - File
     doc: write group-wise model details to FILE
     outputBinding:
-      glob: $(inputs.output_groupwise_fits)
+      glob: $(inputs.output_groupwise_fits_path)
   - id: output_genewise_fits
     type:
       - 'null'
       - File
     doc: obsolete name for --output-groupwise-fits
     outputBinding:
-      glob: $(inputs.output_genewise_fits)
+      glob: $(inputs.output_genewise_fits_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trumicount:0.9.14--r44hdfd78af_3

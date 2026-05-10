@@ -51,6 +51,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose-details
+  - id: details_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `details_out_path`
+    inputBinding:
+      position: 103
+      prefix: --details-out
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
+  - id: summary_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_out_path`
+    inputBinding:
+      position: 105
+      prefix: --summary-out
 outputs:
   - id: summary_out
     type:
@@ -58,7 +82,7 @@ outputs:
       - File
     doc: Output file for summary statistics. Defaults to stdout.
     outputBinding:
-      glob: $(inputs.summary_out)
+      glob: $(inputs.summary_out_path)
   - id: details_out
     type:
       - 'null'
@@ -66,7 +90,7 @@ outputs:
     doc: Output file for detailed base level differences between samples 
       (optional).
     outputBinding:
-      glob: $(inputs.details_out)
+      glob: $(inputs.details_out_path)
   - id: output_dir
     type:
       - 'null'
@@ -74,7 +98,9 @@ outputs:
     doc: The output directory of all comparison files when using --baseline or 
       --all-vs-all.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainge:1.3.9--py38h737be40_0

@@ -38,6 +38,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --position
+  - id: csv_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_out_path`
+    inputBinding:
+      position: 103
+      prefix: --csv-out
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -46,7 +62,7 @@ outputs:
     doc: 'Specify plot output filename. File extension defines the format (default:
       fastcov_output.pdf)'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: csv_out
     type:
       - 'null'
@@ -55,7 +71,9 @@ outputs:
       disable plot output by default, specify --output_file to re-enable plot 
       output.
     outputBinding:
-      glob: $(inputs.csv_out)
+      glob: $(inputs.csv_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastcov:0.1.3--hdfd78af_0

@@ -46,6 +46,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --type
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -53,7 +59,9 @@ outputs:
       - Directory
     doc: Output folder for the scheme Fasta files.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mentalist:0.2.4--h7b50bb2_8

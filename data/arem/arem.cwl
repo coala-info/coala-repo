@@ -16,7 +16,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If set, AREM will invoke Mali Salmon's PeakSplitter soft through system call.
+    doc: If set, AREM will invoke Mali Salmon's PeakSplitter soft through system
+      call.
     inputBinding:
       position: 101
       prefix: --call-subpeaks
@@ -25,8 +26,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Control files. When ELANDMULTIPET is selected, you must provide two files
-      separated by comma.
+    doc: Control files. When ELANDMULTIPET is selected, you must provide two 
+      files separated by comma.
     inputBinding:
       position: 101
       prefix: --control
@@ -98,8 +99,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or "ELANDMULTIPET"
-      or "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE".
+    doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or 
+      "ELANDMULTIPET" or "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE".
     inputBinding:
       position: 101
       prefix: --format
@@ -107,8 +108,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Effective genome size. It can be 1.0e+9 or shortcuts:'hs' for human, 'mm'
-      for mouse, 'ce' for C. elegans and 'dm' for fruitfly.
+    doc: Effective genome size. It can be 1.0e+9 or shortcuts:'hs' for human, 
+      'mm' for mouse, 'ce' for C. elegans and 'dm' for fruitfly.
     inputBinding:
       position: 101
       prefix: --gsize
@@ -116,7 +117,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: It controls the AREM behavior towards duplicate tags at the exact same location.
+    doc: It controls the AREM behavior towards duplicate tags at the exact same 
+      location.
     inputBinding:
       position: 101
       prefix: --keep-dup
@@ -132,8 +134,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Select the regions within MFOLD range of high-confidence enrichment ratio
-      against background to build model.
+    doc: Select the regions within MFOLD range of high-confidence enrichment 
+      ratio against background to build model.
     inputBinding:
       position: 101
       prefix: --mfold
@@ -165,8 +167,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If True, AREM will use fixed background lambda as local lambda for every
-      peak region.
+    doc: If True, AREM will use fixed background lambda as local lambda for 
+      every peak region.
     inputBinding:
       position: 101
       prefix: --nolambda
@@ -206,7 +208,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Best distance between Pair-End Tags. Only available when format is 'ELANDMULTIPET'.
+    doc: Best distance between Pair-End Tags. Only available when format is 
+      'ELANDMULTIPET'.
     inputBinding:
       position: 101
       prefix: --petdist
@@ -238,8 +241,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Convert all multi reads to unique reads by selecting one alignment at random
-      for each read.
+    doc: Convert all multi reads to unique reads by selecting one alignment at 
+      random for each read.
     inputBinding:
       position: 101
       prefix: --random-multi
@@ -247,8 +250,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The arbitrary shift size in bp. When nomodel is true, AREM will use this
-      value as 1/2 of fragment size.
+    doc: The arbitrary shift size in bp. When nomodel is true, AREM will use 
+      this value as 1/2 of fragment size.
     inputBinding:
       position: 101
       prefix: --shiftsize
@@ -272,7 +275,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The resoluation for saving wiggle files. Usable only with '--wig' option.
+    doc: The resoluation for saving wiggle files. Usable only with '--wig' 
+      option.
     inputBinding:
       position: 101
       prefix: --space
@@ -296,8 +300,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: ChIP-seq treatment files. When ELANDMULTIPET is selected, you must provide
-      two files separated by comma.
+    doc: ChIP-seq treatment files. When ELANDMULTIPET is selected, you must 
+      provide two files separated by comma.
     inputBinding:
       position: 101
       prefix: --treatment
@@ -309,31 +313,57 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: bed_graph_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_graph_path`
+    inputBinding:
+      position: 102
+      prefix: --bed-graph
+  - id: wig_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `wig_path`
+    inputBinding:
+      position: 103
+      prefix: --wig
+  - id: write_read_probs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_read_probs_path`
+    inputBinding:
+      position: 104
+      prefix: --write-read-probs
 outputs:
   - id: wig
     type:
       - 'null'
       - File
-    doc: Whether or not to save extended fragment pileup at every WIGEXTEND bps into
-      a wiggle file.
+    doc: Whether or not to save extended fragment pileup at every WIGEXTEND bps 
+      into a wiggle file.
     outputBinding:
-      glob: $(inputs.wig)
+      glob: $(inputs.wig_path)
   - id: bed_graph
     type:
       - 'null'
       - File
-    doc: Whether or not to save extended fragment pileup at every bp into a bedGraph
-      file.
+    doc: Whether or not to save extended fragment pileup at every bp into a 
+      bedGraph file.
     outputBinding:
-      glob: $(inputs.bed_graph)
+      glob: $(inputs.bed_graph_path)
   - id: write_read_probs
     type:
       - 'null'
       - File
-    doc: Write out all final reads, including their alignment probabilities as a BED
-      file.
+    doc: Write out all final reads, including their alignment probabilities as a
+      BED file.
     outputBinding:
-      glob: $(inputs.write_read_probs)
+      glob: $(inputs.write_read_probs_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/arem:1.0.1--py27_0

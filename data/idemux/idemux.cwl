@@ -40,12 +40,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample-sheet
+  - id: output_dir_path
+    type: Directory
+    doc: where to write the output files
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: output_dir
     type: Directory
     doc: where to write the output files
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/idemux:0.1.6--pyhdfd78af_0

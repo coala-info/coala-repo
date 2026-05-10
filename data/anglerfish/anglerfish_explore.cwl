@@ -17,8 +17,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Fraction of adaptor bases immediately before and immediately after index
-      insert required to match perfectly for a hit to be considered a good hit
+    doc: Fraction of adaptor bases immediately before and immediately after 
+      index insert required to match perfectly for a hit to be considered a good
+      hit
     inputBinding:
       position: 101
       prefix: --good_hit_threshold
@@ -50,7 +51,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of good hits for an adaptor to be included in the analysis.
+    doc: Minimum number of good hits for an adaptor to be included in the 
+      analysis.
     inputBinding:
       position: 101
       prefix: --min_hits_per_adaptor
@@ -86,12 +88,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-existing
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anglerfish:0.7.0--pyhdfd78af_0

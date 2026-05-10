@@ -184,6 +184,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --tmp-dir
+  - id: ali_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ali_out_path`
+    inputBinding:
+      position: 104
+      prefix: --ali-out
+  - id: seeds_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `seeds_out_path`
+    inputBinding:
+      position: 105
+      prefix: --seeds-out
+  - id: tbl_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tbl_out_path`
+    inputBinding:
+      position: 106
+      prefix: --tbl-out
 outputs:
   - id: tbl_out
     type:
@@ -191,21 +215,23 @@ outputs:
       - File
     doc: The file where tabular output will be written
     outputBinding:
-      glob: $(inputs.tbl_out)
+      glob: $(inputs.tbl_out_path)
   - id: ali_out
     type:
       - 'null'
       - File
     doc: The file where alignment output will be written
     outputBinding:
-      glob: $(inputs.ali_out)
+      glob: $(inputs.ali_out_path)
   - id: seeds_out
     type:
       - 'null'
       - File
     doc: The file where alignment seeds will be written
     outputBinding:
-      glob: $(inputs.seeds_out)
+      glob: $(inputs.seeds_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nail:0.4.0--h4349ce8_1

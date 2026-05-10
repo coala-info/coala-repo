@@ -25,6 +25,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --mapq-score
+  - id: secondary_file_path
+    type: string
+    doc: Output or path parameter `secondary_file_path`
+    inputBinding:
+      position: 104
+      prefix: --secondary-file
 outputs:
   - id: secondary_file
     type:
@@ -32,7 +38,9 @@ outputs:
       - File
     doc: Separate out secondaries (tp tag == S) and write them to given path
     outputBinding:
-      glob: $(inputs.secondary_file)
+      glob: $(inputs.secondary_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0

@@ -12,9 +12,10 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: If your fasta file was doubled to map circularly, use this flag or you may
-      encounter plotting errors. Accepts multiple arguments. 'main' is for the sam
-      file passed with --sam, 'rnaseq' is for the sam file passed with --rnaseq
+    doc: If your fasta file was doubled to map circularly, use this flag or you 
+      may encounter plotting errors. Accepts multiple arguments. 'main' is for 
+      the sam file passed with --sam, 'rnaseq' is for the sam file passed with 
+      --rnaseq
     inputBinding:
       position: 101
       prefix: --doubled
@@ -47,7 +48,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Interlace the reads so the pileup plot looks better. Doesn't work currently
+    doc: Interlace the reads so the pileup plot looks better. Doesn't work 
+      currently
     inputBinding:
       position: 101
       prefix: --interlace
@@ -55,8 +57,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: invert the image so that it looks better on a dark background. DOESN'T DO
-      ANYTHING.
+    doc: invert the image so that it looks better on a dark background. DOESN'T 
+      DO ANYTHING.
     inputBinding:
       position: 101
       prefix: --invert
@@ -72,8 +74,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The input filepath for the bam file to plot. Ideally was plotted with a fasta
-      file that is two copies of the mitochondrial genome concatenated.
+    doc: The input filepath for the bam file to plot. Ideally was plotted with a
+      fasta file that is two copies of the mitochondrial genome concatenated.
     inputBinding:
       position: 101
       prefix: --main_bam
@@ -123,8 +125,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: What value to use to sort the order in which the reads are plotted? (ALNLEN,
-      TRULEN, MAPLEN, POS)
+    doc: What value to use to sort the order in which the reads are plotted? 
+      (ALNLEN, TRULEN, MAPLEN, POS)
     inputBinding:
       position: 101
       prefix: --sort
@@ -141,20 +143,28 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Specify this option if you DON'T want a transparent background. Default is
-      on.
+    doc: Specify this option if you DON'T want a transparent background. Default
+      is on.
     inputBinding:
       position: 101
       prefix: --transparent
+  - id: output_base_name_path
+    type: string
+    doc: Output or path parameter `output_base_name_path`
+    inputBinding:
+      position: 102
+      prefix: --output-base-name
 outputs:
   - id: output_base_name
     type:
       - 'null'
       - File
-    doc: Specify a base name for the output file(s). The input file base name is the
-      default.
+    doc: Specify a base name for the output file(s). The input file base name is
+      the default.
     outputBinding:
-      glob: $(inputs.output_base_name)
+      glob: $(inputs.output_base_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pauvre:0.1924--py_0

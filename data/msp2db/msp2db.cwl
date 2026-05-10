@@ -74,6 +74,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --source
+  - id: out_pth_path
+    type: string
+    doc: Output or path parameter `out_pth_path`
+    inputBinding:
+      position: 102
+      prefix: --out-pth
 outputs:
   - id: out_pth
     type:
@@ -81,7 +87,9 @@ outputs:
       - File
     doc: File path for SQLite database
     outputBinding:
-      glob: $(inputs.out_pth)
+      glob: $(inputs.out_pth_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msp2db:0.0.9--py_0

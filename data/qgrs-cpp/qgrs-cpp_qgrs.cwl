@@ -70,6 +70,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -g
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 102
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -77,7 +83,9 @@ outputs:
       - File
     doc: write output to file as specified (defaults to stdout)
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qgrs-cpp:1.0--h503566f_5

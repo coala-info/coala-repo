@@ -98,6 +98,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --version-check
+  - id: output_prefix_path
+    type: string
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -105,7 +110,9 @@ outputs:
       - File
     doc: output path prefix.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slimm:0.3.4--hd6d6fdc_6

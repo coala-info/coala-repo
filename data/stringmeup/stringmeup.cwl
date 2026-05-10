@@ -59,6 +59,28 @@ inputs:
     inputBinding:
       position: 103
       prefix: --nodes
+  - id: output_classifications_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --output_classifications
+  - id: output_report_path
+    type:
+      - 'null'
+      - string
+    doc: File to save the Kraken 2 report in.
+    inputBinding:
+      position: 105
+      prefix: --output_report
+  - id: output_verbose_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output_verbose
 outputs:
   - id: output_report
     type:
@@ -66,14 +88,14 @@ outputs:
       - File
     doc: File to save the Kraken 2 report in.
     outputBinding:
-      glob: $(inputs.output_report)
+      glob: $(inputs.output_report_path)
   - id: output_classifications
     type:
       - 'null'
       - File
     doc: File to save the Kraken 2 read classifications in.
     outputBinding:
-      glob: $(inputs.output_classifications)
+      glob: $(inputs.output_classifications_path)
   - id: output_verbose
     type:
       - 'null'
@@ -84,7 +106,9 @@ outputs:
       name, (7) original rank, (8) new rank, (9) distance travelled (how many 
       nodes was it lifted upwards in the taxonomy).
     outputBinding:
-      glob: $(inputs.output_verbose)
+      glob: $(inputs.output_verbose_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stringmeup:0.1.5--pyhdfd78af_0

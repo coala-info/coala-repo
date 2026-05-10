@@ -57,6 +57,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tfile
+  - id: ofile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ofile_path`
+    inputBinding:
+      position: 102
+      prefix: --ofile
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: If specified all output files will be written to that
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -65,7 +81,7 @@ outputs:
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: ofile
     type:
       - 'null'
@@ -73,7 +89,9 @@ outputs:
     doc: Output filename. Mutually exclusive with --o-prefix. The number and the
       order of arguments for --ofile must be the same as for -m.
     outputBinding:
-      glob: $(inputs.ofile)
+      glob: $(inputs.ofile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs2:2.2.9.1--py310h1fe012e_5

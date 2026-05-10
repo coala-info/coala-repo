@@ -14,7 +14,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: a comma separated list of INFO features to annotate (all annotations by default)
+    doc: a comma separated list of INFO features to annotate (all annotations by
+      default)
     inputBinding:
       position: 101
       prefix: --annot-list
@@ -22,7 +23,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix that will be added before every annotation from the annotation file
+    doc: prefix that will be added before every annotation from the annotation 
+      file
     inputBinding:
       position: 101
       prefix: --annotprefix
@@ -54,8 +56,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Annotation of splitted alleles can skip variants with bcftools. This flag
-      try to use bcftools norm -m + to join alleles to correct this behavior
+    doc: Annotation of splitted alleles can skip variants with bcftools. This 
+      flag try to use bcftools norm -m + to join alleles to correct this 
+      behavior
     inputBinding:
       position: 101
       prefix: --join-alleles
@@ -103,6 +106,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -110,7 +119,9 @@ outputs:
       - File
     doc: output, e.g. annotated VCF file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/annotwg:1.0--hdfd78af_1

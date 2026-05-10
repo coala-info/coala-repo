@@ -270,6 +270,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zero-branch-supp
+  - id: out_aln_path
+    type: string
+    doc: Output or path parameter `out_aln_path`
+    inputBinding:
+      position: 102
+      prefix: --out-aln
 outputs:
   - id: out_aln
     type:
@@ -278,7 +284,9 @@ outputs:
     doc: Write the input alignment to a file in MAPLE (default), PHYLIP, or 
       FASTA format.
     outputBinding:
-      glob: $(inputs.out_aln)
+      glob: $(inputs.out_aln_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmaple:1.1.0--h503566f_1

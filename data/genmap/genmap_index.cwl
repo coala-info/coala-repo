@@ -58,6 +58,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --version-check
+  - id: index_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --index
 outputs:
   - id: index
     type:
@@ -65,7 +70,9 @@ outputs:
       - File
     doc: Path to the index.
     outputBinding:
-      glob: $(inputs.index)
+      glob: $(inputs.index_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genmap:1.3.0--h9948957_4

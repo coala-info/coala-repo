@@ -36,6 +36,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --url-encode
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -43,7 +49,9 @@ outputs:
       - File
     doc: 'write santized GFF3 output to file (default: stdout)'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gfftk:26.2.12--pyh1f0d9b5_0

@@ -327,6 +327,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+  - id: archive_path
+    type: string
+    doc: Output or path parameter `archive_path`
+    inputBinding:
+      position: 103
+      prefix: --archive
 outputs:
   - id: archive
     type:
@@ -334,7 +340,10 @@ outputs:
       - File
     doc: Store the resulting TAP in an archive file.
     outputBinding:
-      glob: $(inputs.archive)
+      glob: $(inputs.archive_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/perl-moosex-types-stringlike:0.003--pl526_0
+    dockerPull: 
+      quay.io/biocontainers/perl-moosex-types-stringlike:0.003--pl526_0

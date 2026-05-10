@@ -83,6 +83,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -sourcePrefix=pre
+  - id: info_out_file_path
+    type: string
+    doc: Output or path parameter `info_out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --info-out-file
 outputs:
   - id: info_out_file
     type:
@@ -90,7 +96,9 @@ outputs:
       - File
     doc: write a file with information on each transcript
     outputBinding:
-      glob: $(inputs.info_out_file)
+      glob: $(inputs.info_out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1

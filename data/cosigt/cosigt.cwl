@@ -43,7 +43,8 @@ inputs:
       prefix: --mask
   - id: paths
     type: File
-    doc: gzip-compressed tsv file with path names and node coverages from odgi paths
+    doc: gzip-compressed tsv file with path names and node coverages from odgi 
+      paths
     inputBinding:
       position: 101
       prefix: --paths
@@ -63,12 +64,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weights
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: folder prefix for output files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cosigt:0.1.7--he881be0_0

@@ -119,6 +119,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --train-id
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -126,7 +132,9 @@ outputs:
       - Directory
     doc: Path to the output file
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/garnett-cli:0.0.5--hdfd78af_1

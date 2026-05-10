@@ -73,6 +73,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unique
+  - id: html_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_path`
+    inputBinding:
+      position: 102
+      prefix: --html
+  - id: json_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `json_path`
+    inputBinding:
+      position: 103
+      prefix: --json
 outputs:
   - id: html
     type:
@@ -80,14 +96,16 @@ outputs:
       - File
     doc: file name to store HTML report
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
   - id: json
     type:
       - 'null'
       - File
     doc: file name to store JSON report
     outputBinding:
-      glob: $(inputs.json)
+      glob: $(inputs.json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genefuse:0.8.0--h5ca1c30_4

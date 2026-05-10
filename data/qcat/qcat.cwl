@@ -160,6 +160,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsv
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -167,7 +173,9 @@ outputs:
       - File
     doc: Output file trimmed reads will be written to
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qcat:1.1.0--py_0

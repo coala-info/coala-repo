@@ -232,18 +232,36 @@ inputs:
     inputBinding:
       position: 101
       prefix: --WeightRanking
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Full path to output directory to store tables for
+    inputBinding:
+      position: 102
+      prefix: --outdir
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Full path to the output file to store final results in
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type: File
     doc: Full path to the output file to store final results in tab format
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: outdir
     type: Directory
     doc: Full path to output directory to store tables for plot, it is suggested
       to use a different directory for each analysis. It will be created
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prooverlap:0.1.2--pyhdfd78af_0

@@ -42,12 +42,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --highlightid
+  - id: outgraph_path
+    type: string
+    doc: Output or path parameter `outgraph_path`
+    inputBinding:
+      position: 102
+      prefix: --outgraph
 outputs:
   - id: outgraph
     type: File
     doc: The output graph file (output format determined by the file suffix)
     outputBinding:
-      glob: $(inputs.outgraph)
+      glob: $(inputs.outgraph_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/syngap:1.2.5--py312hdfd78af_0

@@ -23,6 +23,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcriptFile
+  - id: output_all_transcripts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_all_transcripts_path`
+    inputBinding:
+      position: 102
+      prefix: --output-all-transcripts
+  - id: output_longest_transcripts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_longest_transcripts_path`
+    inputBinding:
+      position: 103
+      prefix: --output-longest-transcripts
 outputs:
   - id: output_longest_transcripts
     type:
@@ -30,14 +46,16 @@ outputs:
       - File
     doc: Longest transcripts information.
     outputBinding:
-      glob: $(inputs.output_longest_transcripts)
+      glob: $(inputs.output_longest_transcripts_path)
   - id: output_all_transcripts
     type:
       - 'null'
       - File
     doc: All transcripts information.
     outputBinding:
-      glob: $(inputs.output_all_transcripts)
+      glob: $(inputs.output_all_transcripts_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribominer:0.2.3.2--pyh5e36f6f_0

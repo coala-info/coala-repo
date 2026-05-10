@@ -36,12 +36,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: autocycler_dir_path
+    type: string
+    doc: Output or path parameter `autocycler_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --autocycler-dir
 outputs:
   - id: autocycler_dir
     type: Directory
     doc: Autocycler directory to be created
     outputBinding:
-      glob: $(inputs.autocycler_dir)
+      glob: $(inputs.autocycler_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

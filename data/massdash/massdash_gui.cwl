@@ -39,6 +39,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: perf_output_path
+    type: string
+    doc: Name of the performance report file to writeout
+    inputBinding:
+      position: 102
+      prefix: --perf_output
 outputs:
   - id: perf_output
     type:
@@ -46,7 +52,9 @@ outputs:
       - File
     doc: Name of the performance report file to writeout to.
     outputBinding:
-      glob: $(inputs.perf_output)
+      glob: $(inputs.perf_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/massdash:0.1.1--pyhdfd78af_0

@@ -58,6 +58,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
+  - id: outseq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outseq_path`
+    inputBinding:
+      position: 104
+      prefix: --outseq
 outputs:
   - id: outseq
     type:
@@ -65,14 +81,16 @@ outputs:
       - File
     doc: Write sequences with rRNA genes to this file
     outputBinding:
-      glob: $(inputs.outseq)
+      glob: $(inputs.outseq_path)
   - id: out
     type:
       - 'null'
       - File
     doc: 'Write annotations to this file (default: stdout)'
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barrnap:0.9--1

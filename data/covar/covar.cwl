@@ -7,8 +7,8 @@ doc: "Calls physically-linked mutation clusters from wastewater amplicon sequenc
 inputs:
   - id: annotation
     type: File
-    doc: Annotation GFF3 file. Used for translating mutations to respective amino
-      acid mutation
+    doc: Annotation GFF3 file. Used for translating mutations to respective 
+      amino acid mutation
     inputBinding:
       position: 101
       prefix: --annotation
@@ -16,8 +16,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Genomic end site for variant calling. Defaults to the length of the reference
-      genome
+    doc: Genomic end site for variant calling. Defaults to the length of the 
+      reference genome
     inputBinding:
       position: 101
       prefix: --end_site
@@ -39,7 +39,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum frequency (cluster depth / total depth) to include a cluster in output
+    doc: Minimum frequency (cluster depth / total depth) to include a cluster in
+      output
     inputBinding:
       position: 101
       prefix: --min_frequency
@@ -73,14 +74,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Optional output file path. If not provided, output will be printed to stdout
+    doc: Optional output file path. If not provided, output will be printed to 
+      stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/covar:0.3.0--h3dc2dae_0

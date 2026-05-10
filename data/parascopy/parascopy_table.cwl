@@ -33,8 +33,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 1-based
-      inclusive. Commas are ignored.
+    doc: Region(s) in format "chr" or "chr:start-end"). Start and end are 
+      1-based inclusive. Commas are ignored.
     inputBinding:
       position: 101
       prefix: --regions
@@ -42,7 +42,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based semi-exclusive).
+    doc: Input bed[.gz] file(s) containing regions (tab-separated, 0-based 
+      semi-exclusive).
     inputBinding:
       position: 101
       prefix: --regions-file
@@ -58,8 +59,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Exclude duplications for which the expression is true and mark regions as
-      "tangled". These regions will be discarded from downstream analysis.
+    doc: Exclude duplications for which the expression is true and mark regions 
+      as "tangled". These regions will be discarded from downstream analysis.
     inputBinding:
       position: 101
       prefix: --tangled
@@ -71,19 +72,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: graph_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `graph_path`
+    inputBinding:
+      position: 102
+      prefix: --graph
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output table bed[.gz] file with homology table.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: graph
     type:
       - 'null'
       - Directory
     doc: 'Optional: output directory with duplication graphs.'
     outputBinding:
-      glob: $(inputs.graph)
+      glob: $(inputs.graph_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

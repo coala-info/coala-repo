@@ -307,6 +307,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --single-end
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: output_parsed_alignments_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_parsed_alignments_path`
+    inputBinding:
+      position: 104
+      prefix: --output-parsed-alignments
+  - id: output_stats_path
+    type:
+      - 'null'
+      - string
+    doc: output file for duplicate statistics. If
+    inputBinding:
+      position: 105
+      prefix: --output-stats
 outputs:
   - id: output_file
     type:
@@ -315,7 +339,7 @@ outputs:
     doc: output file with pairs. If the path ends with .gz or .lz4, the output 
       is bgzip-/lz4-compressed.By default, the output is printed into stdout.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_parsed_alignments
     type:
       - 'null'
@@ -325,7 +349,7 @@ outputs:
       the append mode. If the path ends with .gz or .lz4, the output is 
       bgzip-/lz4-compressed. By default, not used.
     outputBinding:
-      glob: $(inputs.output_parsed_alignments)
+      glob: $(inputs.output_parsed_alignments_path)
   - id: output_stats
     type:
       - 'null'
@@ -333,7 +357,9 @@ outputs:
     doc: output file for various statistics of pairs file. By default, 
       statistics is not generated.
     outputBinding:
-      glob: $(inputs.output_stats)
+      glob: $(inputs.output_stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

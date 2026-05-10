@@ -386,6 +386,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use_group_representative
+  - id: biom_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `biom_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --biom-output-file
+  - id: output_file_opt_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_opt_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file-opt
 outputs:
   - id: output_file
     type:
@@ -401,14 +417,16 @@ outputs:
       - File
     doc: The output file (if not specified as positional argument)
     outputBinding:
-      glob: $(inputs.output_file_opt)
+      glob: $(inputs.output_file_opt_path)
   - id: biom_output_file
     type:
       - 'null'
       - File
     doc: 'If requesting biom file output: The name of the output file in biom format'
     outputBinding:
-      glob: $(inputs.biom_output_file)
+      glob: $(inputs.biom_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaphlan2:2.96.1--py_0

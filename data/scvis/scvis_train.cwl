@@ -66,6 +66,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose_interval
+  - id: out_dir_path
+    type: Directory
+    doc: Path for output files
+    inputBinding:
+      position: 102
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type:
@@ -73,7 +79,9 @@ outputs:
       - Directory
     doc: Path for output files
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scvis:0.1.0--scvis_0

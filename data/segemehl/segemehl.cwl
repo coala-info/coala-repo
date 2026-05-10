@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: segemehl.x
 label: segemehl
 doc: "segemehl is a software to map short sequencer reads to reference genomes. Unlike
-  other methods, segemehl is able to find de novo junctions (splits) in short reads.\n
-  \nTool homepage: http://www.bioinf.uni-leipzig.de/Software/segemehl/"
+  other methods, segemehl is able to find de novo junctions (splits) in short reads.\n\
+  \ \nTool homepage: http://www.bioinf.uni-leipzig.de/Software/segemehl/"
 inputs:
   - id: accuracy
     type:
@@ -74,6 +74,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -81,7 +87,9 @@ outputs:
       - File
     doc: path to the output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/segemehl:v0.3.4-1-deb_cv1

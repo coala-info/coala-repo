@@ -13,7 +13,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Search PuChem for each product, and store with CID and synonyms, when available.
+    doc: Search PuChem for each product, and store with CID and synonyms, when 
+      available.
     inputBinding:
       position: 101
       prefix: --annotate
@@ -21,8 +22,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Define an ordered sequence of biotransformer/nr_of_steps to apply (e.g.,
-      'cyp450:2; hgut:1').
+    doc: Define an ordered sequence of biotransformer/nr_of_steps to apply 
+      (e.g., 'cyp450:2; hgut:1').
     inputBinding:
       position: 101
       prefix: --bsequence
@@ -137,8 +138,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify if you want to enable the retrieving from database feature (e.g.,
-      true/false).
+    doc: Specify if you want to enable the retrieving from database feature 
+      (e.g., true/false).
     inputBinding:
       position: 101
       prefix: -useDB
@@ -146,26 +147,46 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify if you want to enable using the first 14 characters of the InChIkey
-      when retrieving from database.
+    doc: Specify if you want to enable using the first 14 characters of the 
+      InChIkey when retrieving from database.
     inputBinding:
       position: 101
       prefix: -useSub
+  - id: csv_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_output_path`
+    inputBinding:
+      position: 102
+      prefix: --csv-output
+  - id: sdf_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sdf_output_path`
+    inputBinding:
+      position: 103
+      prefix: --sdf-output
 outputs:
   - id: csv_output
     type:
       - 'null'
       - File
-    doc: Select this option to return CSV output(s). You must enter an output filename
+    doc: Select this option to return CSV output(s). You must enter an output 
+      filename
     outputBinding:
-      glob: $(inputs.csv_output)
+      glob: $(inputs.csv_output_path)
   - id: sdf_output
     type:
       - 'null'
       - File
-    doc: Select this option to return SDF output(s). You must enter an output filename
+    doc: Select this option to return SDF output(s). You must enter an output 
+      filename
     outputBinding:
-      glob: $(inputs.sdf_output)
+      glob: $(inputs.sdf_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biotransformer:3.0.20230403--hdfd78af_0

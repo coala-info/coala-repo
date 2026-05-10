@@ -80,6 +80,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --primary
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -87,7 +93,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cthreepo:0.1.3--pyh7cba7a3_0

@@ -172,6 +172,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -D
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -179,7 +185,9 @@ outputs:
       - File
     doc: Output filename to send to
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-bioperl-core:1.007002--pl526_0

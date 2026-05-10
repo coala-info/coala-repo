@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The fraction of the adapters in a read should be above this fraction, default
-      is 0.001
+    doc: The fraction of the adapters in a read should be above this fraction, 
+      default is 0.001
     inputBinding:
       position: 101
       prefix: --adapterCutoff
@@ -57,11 +57,27 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If this is set only the adapters block is used, other wise contaminations
-      is also used
+    doc: If this is set only the adapters block is used, other wise 
+      contaminations is also used
     inputBinding:
       position: 101
       prefix: --skipContams
+  - id: adapter_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `adapter_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --adapter-output-file
+  - id: contams_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `contams_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --contams-output-file
 outputs:
   - id: adapter_output_file
     type:
@@ -69,14 +85,16 @@ outputs:
       - File
     doc: Output file for adapters, if not supplied output will go to stdout
     outputBinding:
-      glob: $(inputs.adapter_output_file)
+      glob: $(inputs.adapter_output_file_path)
   - id: contams_output_file
     type:
       - 'null'
       - File
     doc: Output file for adapters, if not supplied output will go to stdout
     outputBinding:
-      glob: $(inputs.contams_output_file)
+      glob: $(inputs.contams_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-extractadaptersfastqc:0.2--1

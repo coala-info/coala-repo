@@ -58,8 +58,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: the name of Illumina sequencing system of the built-in profile (e.g. HS25,
-      MSv3)
+    doc: the name of Illumina sequencing system of the built-in profile (e.g. 
+      HS25, MSv3)
     inputBinding:
       position: 101
       prefix: -ss
@@ -71,12 +71,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --std
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: the prefix of output read data file
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/art:2016.06.05--h0704011_13

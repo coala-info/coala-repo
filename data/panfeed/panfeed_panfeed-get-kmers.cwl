@@ -6,10 +6,10 @@ doc: "Annotate association results with positional information\n\nTool homepage:
 inputs:
   - id: associations
     type: File
-    doc: TSV file containing hashes and their significance (e.g. pyseer output; tab-delimited,
-      should have a header, first column contains the hash, and another column - by
-      default 'lrt-pvalue' - contains the association p-value, which can be used to
-      filter the table)
+    doc: TSV file containing hashes and their significance (e.g. pyseer output; 
+      tab-delimited, should have a header, first column contains the hash, and 
+      another column - by default 'lrt-pvalue' - contains the association 
+      p-value, which can be used to filter the table)
     inputBinding:
       position: 101
       prefix: --associations
@@ -17,8 +17,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of clusters to be considered in each iteration, a higher number means
-      faster execution but higher memory usage
+    doc: Number of clusters to be considered in each iteration, a higher number 
+      means faster execution but higher memory usage
     inputBinding:
       position: 101
       prefix: --clusters-per-iteration
@@ -32,15 +32,15 @@ inputs:
       prefix: --column
   - id: kmers
     type: File
-    doc: TSV file with positional information of individual k-mers (i.e. panfeed's
-      kmers.tsv file)
+    doc: TSV file with positional information of individual k-mers (i.e. 
+      panfeed's kmers.tsv file)
     inputBinding:
       position: 101
       prefix: --kmers
   - id: kmers_to_hashes
     type: File
-    doc: TSV file relating gene clusters, kmers, and their hashes (i.e. panfeed's
-      kmers_to_hases.tsv file)
+    doc: TSV file relating gene clusters, kmers, and their hashes (i.e. 
+      panfeed's kmers_to_hases.tsv file)
     inputBinding:
       position: 101
       prefix: --kmers-to-hashes
@@ -68,6 +68,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_path
+    type: string
+    doc: Output directory to store outputs (will cause an error
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -75,7 +81,9 @@ outputs:
       - File
     doc: Filename to save filtered associations table (not saved by default)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panfeed:1.7.2--pyhdfd78af_0

@@ -193,6 +193,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: -Waterman
+  - id: boundary_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `boundary_file_path`
+    inputBinding:
+      position: 103
+      prefix: --boundary-file
+  - id: boundary_score_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `boundary_score_file_path`
+    inputBinding:
+      position: 104
+      prefix: --boundary-score-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
+  - id: param_out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `param_out_file_path`
+    inputBinding:
+      position: 106
+      prefix: --param-out-file
+  - id: readcount_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `readcount_file_path`
+    inputBinding:
+      position: 107
+      prefix: --readcount-file
+  - id: score_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `score_file_path`
+    inputBinding:
+      position: 108
+      prefix: --score-file
 outputs:
   - id: output_file
     type:
@@ -200,42 +248,44 @@ outputs:
       - File
     doc: domain output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: score_file
     type:
       - 'null'
       - File
     doc: Posterior scores file
     outputBinding:
-      glob: $(inputs.score_file)
+      glob: $(inputs.score_file_path)
   - id: readcount_file
     type:
       - 'null'
       - File
     doc: readcounts file
     outputBinding:
-      glob: $(inputs.readcount_file)
+      glob: $(inputs.readcount_file_path)
   - id: boundary_file
     type:
       - 'null'
       - File
     doc: domain boundary file
     outputBinding:
-      glob: $(inputs.boundary_file)
+      glob: $(inputs.boundary_file_path)
   - id: boundary_score_file
     type:
       - 'null'
       - File
     doc: boundary transition scores file
     outputBinding:
-      glob: $(inputs.boundary_score_file)
+      glob: $(inputs.boundary_score_file_path)
   - id: param_out_file
     type:
       - 'null'
       - File
     doc: Output parameters file
     outputBinding:
-      glob: $(inputs.param_out_file)
+      glob: $(inputs.param_out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rseg:0.4.9--he941832_1

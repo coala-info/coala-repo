@@ -32,6 +32,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --repeat-file
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -39,7 +45,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pytrf:1.4.2--py310h1fe012e_1

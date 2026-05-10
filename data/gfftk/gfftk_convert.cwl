@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --url-encode
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -108,7 +114,9 @@ outputs:
       - File
     doc: 'write converted output to file (default: stdout)'
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gfftk:26.2.12--pyh1f0d9b5_0

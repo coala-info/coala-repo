@@ -292,6 +292,126 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upto
+  - id: aligned_reads_bz2_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aligned_reads_bz2_output_path`
+    inputBinding:
+      position: 102
+      prefix: --aligned-reads-bz2-output
+  - id: aligned_reads_gz_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aligned_reads_gz_output_path`
+    inputBinding:
+      position: 103
+      prefix: --aligned-reads-gz-output
+  - id: aligned_reads_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aligned_reads_output_path`
+    inputBinding:
+      position: 104
+      prefix: --aligned-reads-output
+  - id: conc_pairs_bz2_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `conc_pairs_bz2_output_path`
+    inputBinding:
+      position: 105
+      prefix: --conc-pairs-bz2-output
+  - id: conc_pairs_gz_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `conc_pairs_gz_output_path`
+    inputBinding:
+      position: 106
+      prefix: --conc-pairs-gz-output
+  - id: conc_pairs_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `conc_pairs_output_path`
+    inputBinding:
+      position: 107
+      prefix: --conc-pairs-output
+  - id: metrics_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `metrics_file_path`
+    inputBinding:
+      position: 108
+      prefix: --metrics-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 109
+      prefix: --output-file
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 110
+      prefix: --report-file
+  - id: unaligned_reads_bz2_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unaligned_reads_bz2_output_path`
+    inputBinding:
+      position: 111
+      prefix: --unaligned-reads-bz2-output
+  - id: unaligned_reads_gz_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unaligned_reads_gz_output_path`
+    inputBinding:
+      position: 112
+      prefix: --unaligned-reads-gz-output
+  - id: unaligned_reads_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unaligned_reads_output_path`
+    inputBinding:
+      position: 113
+      prefix: --unaligned-reads-output
+  - id: unconc_pairs_bz2_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unconc_pairs_bz2_output_path`
+    inputBinding:
+      position: 114
+      prefix: --unconc-pairs-bz2-output
+  - id: unconc_pairs_gz_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unconc_pairs_gz_output_path`
+    inputBinding:
+      position: 115
+      prefix: --unconc-pairs-gz-output
+  - id: unconc_pairs_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unconc_pairs_output_path`
+    inputBinding:
+      position: 116
+      prefix: --unconc-pairs-output
 outputs:
   - id: output_file
     type:
@@ -299,77 +419,77 @@ outputs:
       - File
     doc: 'File for classification output (default: stdout)'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: report_file
     type:
       - 'null'
       - File
     doc: 'File for tabular report output (default: centrifuge_report.tsv)'
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
   - id: unaligned_reads_output
     type:
       - 'null'
       - File
     doc: write unpaired reads that didn't align to <path>
     outputBinding:
-      glob: $(inputs.unaligned_reads_output)
+      glob: $(inputs.unaligned_reads_output_path)
   - id: aligned_reads_output
     type:
       - 'null'
       - File
     doc: write unpaired reads that aligned at least once to <path>
     outputBinding:
-      glob: $(inputs.aligned_reads_output)
+      glob: $(inputs.aligned_reads_output_path)
   - id: unconc_pairs_output
     type:
       - 'null'
       - File
     doc: write pairs that didn't align concordantly to <path>
     outputBinding:
-      glob: $(inputs.unconc_pairs_output)
+      glob: $(inputs.unconc_pairs_output_path)
   - id: conc_pairs_output
     type:
       - 'null'
       - File
     doc: write pairs that aligned concordantly at least once to <path>
     outputBinding:
-      glob: $(inputs.conc_pairs_output)
+      glob: $(inputs.conc_pairs_output_path)
   - id: unaligned_reads_gz_output
     type:
       - 'null'
       - File
     doc: write unpaired reads that didn't align to <path> (gzipped)
     outputBinding:
-      glob: $(inputs.unaligned_reads_gz_output)
+      glob: $(inputs.unaligned_reads_gz_output_path)
   - id: aligned_reads_gz_output
     type:
       - 'null'
       - File
     doc: write unpaired reads that aligned at least once to <path> (gzipped)
     outputBinding:
-      glob: $(inputs.aligned_reads_gz_output)
+      glob: $(inputs.aligned_reads_gz_output_path)
   - id: unconc_pairs_gz_output
     type:
       - 'null'
       - File
     doc: write pairs that didn't align concordantly to <path> (gzipped)
     outputBinding:
-      glob: $(inputs.unconc_pairs_gz_output)
+      glob: $(inputs.unconc_pairs_gz_output_path)
   - id: conc_pairs_gz_output
     type:
       - 'null'
       - File
     doc: write pairs that aligned concordantly at least once to <path> (gzipped)
     outputBinding:
-      glob: $(inputs.conc_pairs_gz_output)
+      glob: $(inputs.conc_pairs_gz_output_path)
   - id: unaligned_reads_bz2_output
     type:
       - 'null'
       - File
     doc: write unpaired reads that didn't align to <path> (bzip2 compressed)
     outputBinding:
-      glob: $(inputs.unaligned_reads_bz2_output)
+      glob: $(inputs.unaligned_reads_bz2_output_path)
   - id: aligned_reads_bz2_output
     type:
       - 'null'
@@ -377,14 +497,14 @@ outputs:
     doc: write unpaired reads that aligned at least once to <path> (bzip2 
       compressed)
     outputBinding:
-      glob: $(inputs.aligned_reads_bz2_output)
+      glob: $(inputs.aligned_reads_bz2_output_path)
   - id: unconc_pairs_bz2_output
     type:
       - 'null'
       - File
     doc: write pairs that didn't align concordantly to <path> (bzip2 compressed)
     outputBinding:
-      glob: $(inputs.unconc_pairs_bz2_output)
+      glob: $(inputs.unconc_pairs_bz2_output_path)
   - id: conc_pairs_bz2_output
     type:
       - 'null'
@@ -392,14 +512,16 @@ outputs:
     doc: write pairs that aligned concordantly at least once to <path> (bzip2 
       compressed)
     outputBinding:
-      glob: $(inputs.conc_pairs_bz2_output)
+      glob: $(inputs.conc_pairs_bz2_output_path)
   - id: metrics_file
     type:
       - 'null'
       - File
     doc: send metrics to file at <path> (off)
     outputBinding:
-      glob: $(inputs.metrics_file)
+      glob: $(inputs.metrics_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centrifuge-core:1.0.4.2--h5ca1c30_2

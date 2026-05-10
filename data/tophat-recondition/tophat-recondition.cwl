@@ -34,6 +34,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unmapped-file
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 103
+      prefix: --logfile
+  - id: result_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `result_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --result-dir
 outputs:
   - id: logfile
     type:
@@ -41,14 +57,16 @@ outputs:
       - File
     doc: 'log file (optional, (default: result_dir/tophat-recondition.log)'
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
   - id: result_dir
     type:
       - 'null'
       - Directory
     doc: 'directory to write unmapped_fixup.bam to (default: tophat_output_dir)'
     outputBinding:
-      glob: $(inputs.result_dir)
+      glob: $(inputs.result_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tophat-recondition:1.4--py35_0

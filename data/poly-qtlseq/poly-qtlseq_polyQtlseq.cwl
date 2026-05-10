@@ -252,6 +252,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xStep
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -259,7 +265,9 @@ outputs:
       - Directory
     doc: Output Directory.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poly-qtlseq:1.2.6--hdfd78af_0

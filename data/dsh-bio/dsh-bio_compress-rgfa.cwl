@@ -12,6 +12,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-rgfa-path
+  - id: output_rgfa_file_path
+    type: string
+    doc: Output or path parameter `output_rgfa_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-rgfa-file
 outputs:
   - id: output_rgfa_file
     type:
@@ -19,7 +25,9 @@ outputs:
       - File
     doc: output rGFA file
     outputBinding:
-      glob: $(inputs.output_rgfa_file)
+      glob: $(inputs.output_rgfa_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

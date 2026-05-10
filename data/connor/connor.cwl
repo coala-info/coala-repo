@@ -80,6 +80,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: annotated_output_bam_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --annotated_output_bam
 outputs:
   - id: output_bam
     type: File
@@ -93,7 +100,9 @@ outputs:
     doc: path to output BAM containing all original aligns annotated with BAM 
       tags
     outputBinding:
-      glob: $(inputs.annotated_output_bam)
+      glob: $(inputs.annotated_output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/connor:0.6.1--py_0

@@ -91,12 +91,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variantFile
+  - id: outprefix_path
+    type: string
+    doc: Output or path parameter `outprefix_path`
+    inputBinding:
+      position: 102
+      prefix: --outprefix
 outputs:
   - id: outprefix
     type: File
     doc: Prefix for output files.
     outputBinding:
-      glob: $(inputs.outprefix)
+      glob: $(inputs.outprefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/transcriptclean:v2.0.2_cv1

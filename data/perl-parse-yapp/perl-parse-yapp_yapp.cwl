@@ -7,8 +7,8 @@ doc: "A perl-based compiler for Parse::Yapp grammar files, used to generate pars
 inputs:
   - id: grammar
     type: File
-    doc: The grammar file. If no suffix is given, and the file does not exists, .yp
-      is added
+    doc: The grammar file. If no suffix is given, and the file does not exists, 
+      .yp is added
     inputBinding:
       position: 1
   - id: create_output_file
@@ -55,20 +55,28 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Uses the file <filename> as a template for creating the parser module file.
-      Default is to use internal template defined in Parse::Yapp::Output
+    doc: Uses the file <filename> as a template for creating the parser module 
+      file. Default is to use internal template defined in Parse::Yapp::Output
     inputBinding:
       position: 102
       prefix: -t
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Create the file <outfile> for your parser module. Default is <grammar>.pm
-      or, if -m A::Module::Name is specified, Name.pm
+    doc: Create the file <outfile> for your parser module. Default is 
+      <grammar>.pm or, if -m A::Module::Name is specified, Name.pm
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-parse-yapp:1.21--pl526_0

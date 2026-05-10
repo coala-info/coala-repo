@@ -435,19 +435,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write_individual_files
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-directory
 outputs:
   - id: output
     type: File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: The directory to save outputs.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboloco:0.3.10--pyhdfd78af_0

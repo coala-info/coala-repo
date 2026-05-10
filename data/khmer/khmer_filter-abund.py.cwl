@@ -49,6 +49,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --variable-coverage
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -56,7 +62,9 @@ outputs:
       - Directory
     doc: Output directory for filtered files.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khmer:3.0.0a1--py36hfc679d8_0

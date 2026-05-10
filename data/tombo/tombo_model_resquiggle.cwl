@@ -153,6 +153,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tombo-model-filename
+  - id: failed_reads_filename_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --failed-reads-filename
 outputs:
   - id: failed_reads_filename
     type:
@@ -160,7 +165,9 @@ outputs:
       - File
     doc: Output failed read filenames with assoicated error.
     outputBinding:
-      glob: $(inputs.failed_reads_filename)
+      glob: $(inputs.failed_reads_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

@@ -29,6 +29,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --uppercase
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -36,7 +42,9 @@ outputs:
       - File
     doc: output sequence file, STOUT otherwise
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

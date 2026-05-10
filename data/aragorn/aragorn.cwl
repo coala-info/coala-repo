@@ -30,8 +30,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Assume that each sequence has a circular topology. Search wraps around each
-      end. Default setting.
+    doc: Assume that each sequence has a circular topology. Search wraps around 
+      each end. Default setting.
     inputBinding:
       position: 102
       prefix: -c
@@ -39,8 +39,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display 4-base sequence on 3' end of astem regardless of predicted amino-acyl
-      acceptor length.
+    doc: Display 4-base sequence on 3' end of astem regardless of predicted 
+      amino-acyl acceptor length.
     inputBinding:
       position: 102
       prefix: -j
@@ -64,7 +64,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print out primary sequence in fasta format only (no secondary structure).
+    doc: Print out primary sequence in fasta format only (no secondary 
+      structure).
     inputBinding:
       position: 102
       prefix: -fo
@@ -72,8 +73,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Flag possible pseudogenes and optionally change score threshold to <num>
-      percent.
+    doc: Flag possible pseudogenes and optionally change score threshold to 
+      <num> percent.
     inputBinding:
       position: 102
       prefix: -rp
@@ -161,8 +162,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Lower scoring thresholds to specified percent of default levels (default
-      95%).
+    doc: Lower scoring thresholds to specified percent of default levels 
+      (default 95%).
     inputBinding:
       position: 102
       prefix: -ps
@@ -194,7 +195,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Overlapping metazoan mitochondrial tRNA genes on opposite strands are reported.
+    doc: Overlapping metazoan mitochondrial tRNA genes on opposite strands are 
+      reported.
     inputBinding:
       position: 102
       prefix: -mtd
@@ -202,8 +204,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not search for mitochondrial TV replacement loop tRNA genes. Only relevant
-      if -mt used.
+    doc: Do not search for mitochondrial TV replacement loop tRNA genes. Only 
+      relevant if -mt used.
     inputBinding:
       position: 102
       prefix: -tv
@@ -283,7 +285,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Single. Do not search the complementary (antisense) strand of each sequence.
+    doc: Single. Do not search the complementary (antisense) strand of each 
+      sequence.
     inputBinding:
       position: 102
       prefix: -s
@@ -303,6 +306,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -310,7 +319,9 @@ outputs:
       - File
     doc: Print output to <outfile>.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aragorn:1.2.41--h7b50bb2_5

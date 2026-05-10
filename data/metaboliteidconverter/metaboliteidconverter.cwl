@@ -38,12 +38,20 @@ inputs:
     doc: Output databases to convert to.
     inputBinding:
       position: 101
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type: File
     doc: Output file name.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/metaboliteidconverter:phenomenal-v0.5.1_cv1.2.31

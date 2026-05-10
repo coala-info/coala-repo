@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: pxtlate
 label: phyx_pxtlate
 doc: "Translate DNA alignment to amino acids. This will take fasta, fastq, phylip,
-  and nexus formats from a file or STDIN. NOTE: assumes sequences are in frame.\n\n
-  Tool homepage: https://github.com/FePhyFoFum/phyx"
+  and nexus formats from a file or STDIN. NOTE: assumes sequences are in frame.\n\n\
+  \ Tool homepage: https://github.com/FePhyFoFum/phyx"
 inputs:
   - id: citation
     type:
@@ -31,6 +31,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --table
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -38,7 +44,9 @@ outputs:
       - File
     doc: output aa sequence file, STOUT otherwise
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

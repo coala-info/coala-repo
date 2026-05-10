@@ -83,6 +83,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference
+  - id: assembly_path
+    type: string
+    doc: Output or path parameter `assembly_path`
+    inputBinding:
+      position: 102
+      prefix: --assembly
 outputs:
   - id: assembly
     type: File
@@ -90,7 +96,9 @@ outputs:
       suffix _x.fa will be appended to this prefix, where x is the minimum 
       overlap size.
     outputBinding:
-      glob: $(inputs.assembly)
+      glob: $(inputs.assembly_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/detonate:1.11--boost1.64_1

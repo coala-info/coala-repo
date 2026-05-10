@@ -180,6 +180,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcript
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --prefix
 outputs:
   - id: prefix
     type:
@@ -187,7 +193,9 @@ outputs:
       - File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbsim3:3.0.5--h9948957_2

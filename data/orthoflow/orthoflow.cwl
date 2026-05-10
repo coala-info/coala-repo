@@ -80,6 +80,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --show-completion
+  - id: target_path
+    type: string
+    doc: Output or path parameter `target_path`
+    inputBinding:
+      position: 102
+      prefix: --target
 outputs:
   - id: target
     type:
@@ -87,7 +93,9 @@ outputs:
       - File
     doc: The target file to create
     outputBinding:
-      glob: $(inputs.target)
+      glob: $(inputs.target_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orthoflow:0.3.4--pyhdfd78af_0

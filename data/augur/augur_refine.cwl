@@ -160,9 +160,7 @@ inputs:
       - type: array
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
-      will be inferred.
-      - ','
-      - "\t"
+      will be inferred. - ',' - "\t"
     inputBinding:
       position: 101
       prefix: --metadata-delimiters
@@ -172,9 +170,7 @@ inputs:
       - type: array
         items: string
     doc: names of possible metadata columns containing identifier information, 
-      ordered by priority. Only one ID column will be inferred.
-      - strain
-      - name
+      ordered by priority. Only one ID column will be inferred. - strain - name
     inputBinding:
       position: 101
       prefix: --metadata-id-columns
@@ -212,8 +208,8 @@ inputs:
         items: string
     doc: rooting mechanism ('best', 'least-squares', 'min_dev', 'oldest', 
       'mid_point') OR node to root by OR two nodes indicating a monophyletic 
-      group to root by. Run treetime -h for definitions of rooting methods.
-      - best
+      group to root by. Run treetime -h for definitions of rooting methods. - 
+      best
     inputBinding:
       position: 101
       prefix: --root
@@ -283,6 +279,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --year-bounds
+  - id: output_node_data_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_node_data_path`
+    inputBinding:
+      position: 102
+      prefix: --output-node-data
+  - id: output_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type:
@@ -290,14 +302,16 @@ outputs:
       - File
     doc: file name to write tree to
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
   - id: output_node_data
     type:
       - 'null'
       - File
     doc: file name to write branch lengths as node data
     outputBinding:
-      glob: $(inputs.output_node_data)
+      glob: $(inputs.output_node_data_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

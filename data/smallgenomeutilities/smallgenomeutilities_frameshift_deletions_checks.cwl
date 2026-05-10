@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zero-based
+  - id: output_tsv_path
+    type: string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 102
+      prefix: --output-tsv
 outputs:
   - id: output_tsv
     type:
@@ -80,7 +86,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smallgenomeutilities:0.5.2--pyhdfd78af_0

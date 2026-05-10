@@ -78,6 +78,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --workflow-root
+  - id: metadata_output_path
+    type: string
+    doc: Output or path parameter `metadata_output_path`
+    inputBinding:
+      position: 104
+      prefix: --metadata-output
 outputs:
   - id: metadata_output
     type:
@@ -85,7 +91,9 @@ outputs:
       - Directory
     doc: An optional directory path to output metadata
     outputBinding:
-      glob: $(inputs.metadata_output)
+      glob: $(inputs.metadata_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cromwell:0.40--1

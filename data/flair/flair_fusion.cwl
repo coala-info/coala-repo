@@ -21,8 +21,8 @@ inputs:
       prefix: --genomechimbam
   - id: gtf
     type: File
-    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated isoforms
-      and adjusting TSS/TESs
+    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated 
+      isoforms and adjusting TSS/TESs
     inputBinding:
       position: 101
       prefix: --gtf
@@ -30,7 +30,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: max loci detected in fusion. Set higher for detection of 3-gene+ fusions
+    doc: max loci detected in fusion. Set higher for detection of 3-gene+ 
+      fusions
     inputBinding:
       position: 101
       prefix: --maxloci
@@ -38,8 +39,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum size of alignment kept, used in minimap -s. More important when doing
-      downstream fusion detection
+    doc: minimum size of alignment kept, used in minimap -s. More important when
+      doing downstream fusion detection
     inputBinding:
       position: 101
       prefix: --minfragmentsize
@@ -76,6 +77,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcriptchimbam
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -83,7 +90,9 @@ outputs:
       - File
     doc: output file name base for FLAIR isoforms
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

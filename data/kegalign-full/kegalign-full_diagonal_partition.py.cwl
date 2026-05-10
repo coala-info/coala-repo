@@ -38,6 +38,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --min-diagonal-size
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 105
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -46,7 +52,9 @@ outputs:
     doc: The directory to save the output chunk files. Defaults to the current 
       directory.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kegalign-full:0.1.2.8--hdfd78af_0

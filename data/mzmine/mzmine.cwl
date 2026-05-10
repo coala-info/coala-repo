@@ -62,6 +62,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --temp-dir
+  - id: export_results_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `export_results_path`
+    inputBinding:
+      position: 102
+      prefix: --export-results
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -69,14 +85,16 @@ outputs:
       - File
     doc: Path to a log file
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
   - id: export_results
     type:
       - 'null'
       - File
     doc: Path to export results to
     outputBinding:
-      glob: $(inputs.export_results)
+      glob: $(inputs.export_results_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mzmine:4.7.29--hdfd78af_0

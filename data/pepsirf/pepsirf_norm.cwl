@@ -20,8 +20,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Optional approach for identifying negative controls. Provide a unique string
-      at the start of all negative control samples.
+    doc: Optional approach for identifying negative controls. Provide a unique 
+      string at the start of all negative control samples.
     inputBinding:
       position: 101
       prefix: --negative_id
@@ -30,8 +30,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Optional approach for identifying negative controls. Comma-separated list
-      of negative control sample names.
+    doc: Optional approach for identifying negative controls. Comma-separated 
+      list of negative control sample names.
     inputBinding:
       position: 101
       prefix: --negative_names
@@ -48,8 +48,8 @@ inputs:
       prefix: --normalize_approach
   - id: peptide_scores
     type: File
-    doc: Name of tab-delimited matrix file containing peptide scores. This file should
-      be in the same format as the output from the demux module.
+    doc: Name of tab-delimited matrix file containing peptide scores. This file 
+      should be in the same format as the output from the demux module.
     inputBinding:
       position: 101
       prefix: --peptide_scores
@@ -57,27 +57,45 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Output score precision. The scores written to the output will be output to
-      this many decimal places.
+    doc: Output score precision. The scores written to the output will be output
+      to this many decimal places.
     inputBinding:
       position: 101
       prefix: --precision
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Name for the output file. The output is formatted in the same way the input
-      file provided with 'peptide_scores'.
+    doc: Name for the output file. The output is formatted in the same way the 
+      input file provided with 'peptide_scores'.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Designated file to which the module's processes are logged.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

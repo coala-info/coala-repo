@@ -154,6 +154,21 @@ inputs:
     inputBinding:
       position: 103
       prefix: --xDrop
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --out
+  - id: out_disabled_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_disabled_path`
+    inputBinding:
+      position: 105
+      prefix: --out-disabled
 outputs:
   - id: out
     type:
@@ -161,7 +176,7 @@ outputs:
       - File
     doc: 'Name of output file. Valid filetypes are: .txt and .gff.'
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out_disabled
     type:
       - 'null'
@@ -169,7 +184,9 @@ outputs:
     doc: 'Name of output file for disabled query sequences. Valid filetypes are: .fasta
       and .fa.'
     outputBinding:
-      glob: $(inputs.out_disabled)
+      glob: $(inputs.out_disabled_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stellar:1.4.9--0

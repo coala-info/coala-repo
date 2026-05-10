@@ -45,6 +45,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --processes
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -53,7 +59,9 @@ outputs:
     doc: path to output (labelled peptide database) file. Defaults to file in 
       directory of input data.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pynteny:1.0.0--py310hec16e2b_0

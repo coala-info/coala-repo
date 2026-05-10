@@ -168,6 +168,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --utree
+  - id: logfile_path
+    type: string
+    doc: Append console output to this file
+    inputBinding:
+      position: 102
+      prefix: --logfile
 outputs:
   - id: logfile
     type:
@@ -175,7 +181,9 @@ outputs:
       - File
     doc: Name for log file (output)
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

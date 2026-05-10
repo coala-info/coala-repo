@@ -66,6 +66,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --save-key
+  - id: output_table_path
+    type: string
+    doc: Output or path parameter `output_table_path`
+    inputBinding:
+      position: 105
+      prefix: --output-table
 outputs:
   - id: output_table
     type:
@@ -74,7 +80,9 @@ outputs:
     doc: path for saving the Regional Bayes Factors (RBF) as a table. If not 
       provided, the table will not be saved.
     outputBinding:
-      glob: $(inputs.output_table)
+      glob: $(inputs.output_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snp2cell:0.3.0--pyhdfd78af_0

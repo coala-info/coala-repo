@@ -105,6 +105,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --ROI-file
+  - id: out_path
+    type: string
+    inputBinding:
+      position: 104
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -112,7 +117,9 @@ outputs:
       - File
     doc: Output file name.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/popdel:1.5.0--h6b13edd_1

@@ -483,6 +483,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --Worker.WorkDir
+  - id: logger_output_file_path
+    type: string
+    doc: Output or path parameter `logger_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --logger-output-file
 outputs:
   - id: logger_output_file
     type:
@@ -490,7 +496,9 @@ outputs:
       - File
     doc: File path to write logs to
     outputBinding:
-      glob: $(inputs.logger_output_file)
+      glob: $(inputs.logger_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/funnel:0.9.0--0

@@ -151,6 +151,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbosity
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
+  - id: output_dir_clobber_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_clobber_path`
+    inputBinding:
+      position: 105
+      prefix: --output-dir-clobber
 outputs:
   - id: output_dir
     type:
@@ -158,14 +174,16 @@ outputs:
       - Directory
     doc: Name of output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_dir_clobber
     type:
       - 'null'
       - Directory
     doc: Name of output directory, allowing overwriting
     outputBinding:
-      glob: $(inputs.output_dir_clobber)
+      glob: $(inputs.output_dir_clobber_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0

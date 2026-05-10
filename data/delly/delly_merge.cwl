@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vaf
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -108,7 +114,9 @@ outputs:
       - File
     doc: Merged SV BCF output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/delly:1.7.2--h4d20210_0

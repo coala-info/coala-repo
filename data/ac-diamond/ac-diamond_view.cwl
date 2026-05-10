@@ -62,6 +62,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -69,7 +75,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ac-diamond:1.0--boost1.64_0

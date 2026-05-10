@@ -60,6 +60,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: -verbose
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: params_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `params_out_path`
+    inputBinding:
+      position: 104
+      prefix: --params-out
+  - id: post_hypo_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `post_hypo_path`
+    inputBinding:
+      position: 105
+      prefix: --post-hypo
+  - id: post_meth_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `post_meth_path`
+    inputBinding:
+      position: 106
+      prefix: --post-meth
 outputs:
   - id: output_file
     type:
@@ -67,7 +99,7 @@ outputs:
       - File
     doc: 'output file (default: stdout)'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: post_hypo
     type:
       - 'null'
@@ -75,21 +107,23 @@ outputs:
     doc: 'output file for single-CpG posterior hypomethylation probability (default:
       none)'
     outputBinding:
-      glob: $(inputs.post_hypo)
+      glob: $(inputs.post_hypo_path)
   - id: post_meth
     type:
       - 'null'
       - File
     doc: 'output file for single-CpG posteiror methylation probability (default: none)'
     outputBinding:
-      glob: $(inputs.post_meth)
+      glob: $(inputs.post_meth_path)
   - id: params_out
     type:
       - 'null'
       - File
     doc: 'write HMM parameters to this file (default: none)'
     outputBinding:
-      glob: $(inputs.params_out)
+      glob: $(inputs.params_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6

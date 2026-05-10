@@ -138,6 +138,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --uneven-coverage-multiplier
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -148,7 +154,9 @@ outputs:
       you called the program). Cannot specify both an --index and --output with 
       "psi"
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/outrigger:1.1.1--py35_0

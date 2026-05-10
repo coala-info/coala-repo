@@ -105,8 +105,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude variants with missing call frequencies greater than a threshold (default
-      0.1).
+    doc: Exclude variants with missing call frequencies greater than a threshold
+      (default 0.1).
     inputBinding:
       position: 101
       prefix: --geno
@@ -114,8 +114,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude variants with Hardy-Weinberg equilibrium exact test p-values below
-      a threshold.
+    doc: Exclude variants with Hardy-Weinberg equilibrium exact test p-values 
+      below a threshold.
     inputBinding:
       position: 101
       prefix: --hwe
@@ -155,8 +155,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude variants with minor allele frequency lower than a threshold (default
-      0.01).
+    doc: Exclude variants with minor allele frequency lower than a threshold 
+      (default 0.01).
     inputBinding:
       position: 101
       prefix: --maf
@@ -197,8 +197,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude samples with missing call frequencies greater than a threshold (default
-      0.1).
+    doc: Exclude samples with missing call frequencies greater than a threshold 
+      (default 0.1).
     inputBinding:
       position: 101
       prefix: --mind
@@ -231,7 +231,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Create a new text fileset with all filters applied. Accepts format and modifiers.
+    doc: Create a new text fileset with all filters applied. Accepts format and 
+      modifiers.
     inputBinding:
       position: 101
       prefix: --recode
@@ -259,6 +260,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -266,7 +273,9 @@ outputs:
       - File
     doc: Specify prefix for output files.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plink:1.9.0b.7.7--h7b50bb2_0

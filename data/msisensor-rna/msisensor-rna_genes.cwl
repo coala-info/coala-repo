@@ -54,12 +54,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thresh_p_ranksum
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: The output file of gene information. e.g. xxx.csv
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msisensor-rna:0.1.6--pyhdfd78af_0

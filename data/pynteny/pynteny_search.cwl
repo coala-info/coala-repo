@@ -123,6 +123,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unordered
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -130,7 +136,9 @@ outputs:
       - Directory
     doc: path to output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pynteny:1.0.0--py310hec16e2b_0

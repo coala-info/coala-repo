@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: More passes can sometimes increase accuracy by iteratively removing low-depth
-      kmers
+    doc: More passes can sometimes increase accuracy by iteratively removing 
+      low-depth kmers
     inputBinding:
       position: 101
       prefix: buildpasses
@@ -35,7 +35,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: This flag will cause the process to exit if an out-of-memory exception occurs.
+    doc: This flag will cause the process to exit if an out-of-memory exception 
+      occurs.
     inputBinding:
       position: 101
       prefix: -eoom
@@ -44,7 +45,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Additional files to use for input (generating hash table) but not for output
+    doc: Additional files to use for input (generating hash table) but not for 
+      output
     inputBinding:
       position: 101
       prefix: extra
@@ -82,8 +84,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: May be set to true or false to force the input read file to override autodetection
-      of the input file as paired interleaved.
+    doc: May be set to true or false to force the input read file to override 
+      autodetection of the input file as paired interleaved.
     inputBinding:
       position: 101
       prefix: interleaved
@@ -91,7 +93,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: This will set Java's memory usage, overriding autodetection (e.g., -Xmx20g).
+    doc: This will set Java's memory usage, overriding autodetection (e.g., 
+      -Xmx20g).
     inputBinding:
       position: 101
       prefix: -Xmx
@@ -131,8 +134,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Kmers with depth below this number will not be included when calculating
-      the depth of a read.
+    doc: Kmers with depth below this number will not be included when 
+      calculating the depth of a read.
     inputBinding:
       position: 101
       prefix: mindepth
@@ -172,7 +175,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Read depth is by default inferred from the 54th percentile of kmer depth
+    doc: Read depth is by default inferred from the 54th percentile of kmer 
+      depth
     inputBinding:
       position: 101
       prefix: percentile
@@ -212,7 +216,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: ASCII offset for input quality. May be 33 (Sanger), 64 (Illumina), or auto.
+    doc: ASCII offset for input quality. May be 33 (Sanger), 64 (Illumina), or 
+      auto.
     inputBinding:
       position: 101
       prefix: qin
@@ -220,7 +225,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: ASCII offset for output quality. May be 33 (Sanger), 64 (Illumina), or auto.
+    doc: ASCII offset for output quality. May be 33 (Sanger), 64 (Illumina), or 
+      auto.
     inputBinding:
       position: 101
       prefix: qout
@@ -284,7 +290,8 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: This will specify a directory for temp files (only needed for multipass runs).
+    doc: This will specify a directory for temp files (only needed for multipass
+      runs).
     inputBinding:
       position: 101
       prefix: tmpdir
@@ -308,48 +315,90 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Set to true if you want kmers with a count of 0 to go in the 0 bin instead
-      of the 1 bin in histograms.
+    doc: Set to true if you want kmers with a count of 0 to go in the 0 bin 
+      instead of the 1 bin in histograms.
     inputBinding:
       position: 101
       prefix: zerobin
+  - id: histogram_input_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `histogram_input_path`
+    inputBinding:
+      position: 102
+      prefix: --histogram-input
+  - id: histogram_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `histogram_output_path`
+    inputBinding:
+      position: 103
+      prefix: --histogram-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: output_toss_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_toss_path`
+    inputBinding:
+      position: 105
+      prefix: --output-toss
+  - id: peaks_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `peaks_file_path`
+    inputBinding:
+      position: 106
+      prefix: --peaks-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: File for normalized or corrected reads. Use out2 for paired reads in a second
-      file
+    doc: File for normalized or corrected reads. Use out2 for paired reads in a 
+      second file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_toss
     type:
       - 'null'
       - File
     doc: File for reads that were excluded from primary output
     outputBinding:
-      glob: $(inputs.output_toss)
+      glob: $(inputs.output_toss_path)
   - id: histogram_input
     type:
       - 'null'
       - File
     doc: Specify a file to write the input kmer depth histogram.
     outputBinding:
-      glob: $(inputs.histogram_input)
+      glob: $(inputs.histogram_input_path)
   - id: histogram_output
     type:
       - 'null'
       - File
     doc: Specify a file to write the output kmer depth histogram.
     outputBinding:
-      glob: $(inputs.histogram_output)
+      glob: $(inputs.histogram_output_path)
   - id: peaks_file
     type:
       - 'null'
       - File
     doc: Write the peaks to this file. Default is stdout.
     outputBinding:
-      glob: $(inputs.peaks_file)
+      glob: $(inputs.peaks_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bbmap:39.52--he5f24ec_0

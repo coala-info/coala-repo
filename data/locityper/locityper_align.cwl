@@ -26,10 +26,7 @@ inputs:
       - type: array
         items: int
     doc: One or more k-mer sizes (5 <= k <= 127) for backbone alignment, 
-      separated by comma
-      - 25
-      - 51
-      - 101
+      separated by comma - 25 - 51 - 101
     inputBinding:
       position: 101
       prefix: --backbone
@@ -68,9 +65,7 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: (k,w)-minimizers for sequence divergence calculation
-      - 15
-      - 15
+    doc: (k,w)-minimizers for sequence divergence calculation - 15 - 15
     inputBinding:
       position: 101
       prefix: --minimizer
@@ -133,12 +128,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thresh-div
+  - id: output_paf_path
+    type: string
+    doc: Output or path parameter `output_paf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-paf
 outputs:
   - id: output_paf
     type: File
     doc: Output PAF[.gz] file.
     outputBinding:
-      glob: $(inputs.output_paf)
+      glob: $(inputs.output_paf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locityper:1.3.4--ha6fb395_0

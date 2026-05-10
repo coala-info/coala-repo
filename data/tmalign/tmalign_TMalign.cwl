@@ -239,6 +239,12 @@ inputs:
     inputBinding:
       position: 108
       prefix: -u
+  - id: output_superposition_prefix_path
+    type: string
+    doc: Output or path parameter `output_superposition_prefix_path`
+    inputBinding:
+      position: 109
+      prefix: --output-superposition-prefix
 outputs:
   - id: output_superposition_prefix
     type:
@@ -246,7 +252,9 @@ outputs:
       - File
     doc: Output the superposition to 'TM_sup*'
     outputBinding:
-      glob: $(inputs.output_superposition_prefix)
+      glob: $(inputs.output_superposition_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tmalign:20220227--h9948957_0

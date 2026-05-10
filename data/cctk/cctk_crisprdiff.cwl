@@ -123,19 +123,37 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seed
+  - id: colour_scheme_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `colour_scheme_outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --colour-scheme-outfile
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --out-file
 outputs:
   - id: out_file
     type: File
     doc: output plot file name and path
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
   - id: colour_scheme_outfile
     type:
       - 'null'
       - File
     doc: output file to store json format colour schemes
     outputBinding:
-      glob: $(inputs.colour_scheme_outfile)
+      glob: $(inputs.colour_scheme_outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cctk:1.0.3--pyhdfd78af_0

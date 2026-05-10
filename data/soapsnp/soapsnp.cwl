@@ -189,12 +189,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: -a
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: quality_calibration_matrix_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `quality_calibration_matrix_output_path`
+    inputBinding:
+      position: 103
+      prefix: --quality-calibration-matrix-output
 outputs:
   - id: output_file
     type: File
     doc: Output consensus file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: quality_calibration_matrix_output
     type:
       - 'null'
@@ -202,7 +218,9 @@ outputs:
     doc: Output the quality calibration matrix; the matrix can be reused with -I
       if you rerun the program
     outputBinding:
-      glob: $(inputs.quality_calibration_matrix_output)
+      glob: $(inputs.quality_calibration_matrix_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/soapsnp:v1.03-3-deb_cv1

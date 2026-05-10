@@ -32,7 +32,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Compress bitmask (requires version 2) looking for duplicate extension sets
+    doc: Compress bitmask (requires version 2) looking for duplicate extension 
+      sets
     inputBinding:
       position: 101
       prefix: --extra-compress
@@ -120,8 +121,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set pattern to use with discontiguous words, 0x or 0b prefix may be used
-      for hex or bin (-w## will be ignored)
+    doc: Set pattern to use with discontiguous words, 0x or 0b prefix may be 
+      used for hex or bin (-w## will be ignored)
     inputBinding:
       position: 101
       prefix: --pattern
@@ -157,6 +158,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --word-step
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -164,7 +171,9 @@ outputs:
       - File
     doc: Output word bitmask file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bmtool:3.101--h503566f_6

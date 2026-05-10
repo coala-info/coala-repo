@@ -57,6 +57,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tui
+  - id: out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --out-dir
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -64,14 +80,16 @@ outputs:
       - File
     doc: Write reciprocal BLAST pairs to this file.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
   - id: out_dir
     type:
       - 'null'
       - Directory
     doc: Directory for new sequence files to be written to.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blastbesties:1.2.0--pyhdfd78af_0

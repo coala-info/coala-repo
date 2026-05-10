@@ -149,6 +149,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-aliases-for-barcodes
+  - id: data_report_path_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --data-report-path
+  - id: html_report_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_report_path_path`
+    inputBinding:
+      position: 103
+      prefix: --html-report-path
+  - id: images_directory_path
+    type:
+      - 'null'
+      - Directory
+    inputBinding:
+      position: 104
+      prefix: --images-directory
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    inputBinding:
+      position: 105
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -156,28 +185,30 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: html_report_path
     type:
       - 'null'
       - File
     doc: Output HTML report
     outputBinding:
-      glob: $(inputs.html_report_path)
+      glob: $(inputs.html_report_path_path)
   - id: data_report_path
     type:
       - 'null'
       - File
     doc: Output data report
     outputBinding:
-      glob: $(inputs.data_report_path)
+      glob: $(inputs.data_report_path_path)
   - id: images_directory
     type:
       - 'null'
       - Directory
     doc: Images directory
     outputBinding:
-      glob: $(inputs.images_directory)
+      glob: $(inputs.images_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/toulligqc:2.8.3--pyhdfd78af_0

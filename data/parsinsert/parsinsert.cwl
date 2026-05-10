@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: parsinsert
 label: parsinsert
-doc: "Parsimonious Insertion of unclassified sequences into phylogenetic tree\n\n
-  Tool homepage: https://github.com/dark2dark/parsinsert"
+doc: "Parsimonious Insertion of unclassified sequences into phylogenetic tree\n\n\
+  \ Tool homepage: https://github.com/dark2dark/parsinsert"
 inputs:
   - id: insert_sequences
     type: File
@@ -74,6 +74,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -x
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -81,14 +97,16 @@ outputs:
       - File
     doc: output taxonomy for each insert sequence to this file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: create log file
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/parsinsert:v1.04-4-deb_cv1

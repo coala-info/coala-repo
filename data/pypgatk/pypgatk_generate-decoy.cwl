@@ -143,6 +143,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --temp_file
+  - id: output_database_path
+    type: string
+    doc: Output or path parameter `output_database_path`
+    inputBinding:
+      position: 102
+      prefix: --output-database
 outputs:
   - id: output_database
     type:
@@ -150,7 +156,9 @@ outputs:
       - File
     doc: Output file for decoy database
     outputBinding:
-      glob: $(inputs.output_database)
+      glob: $(inputs.output_database_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0

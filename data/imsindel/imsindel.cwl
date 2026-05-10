@@ -140,6 +140,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --within
+  - id: outd_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outd_path`
+    inputBinding:
+      position: 102
+      prefix: --outd
+  - id: output_consensus_seq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_consensus_seq_path`
+    inputBinding:
+      position: 103
+      prefix: --output-consensus-seq
 outputs:
   - id: outd
     type:
@@ -147,14 +163,16 @@ outputs:
       - Directory
     doc: /path/to/outoput-dir
     outputBinding:
-      glob: $(inputs.outd)
+      glob: $(inputs.outd_path)
   - id: output_consensus_seq
     type:
       - 'null'
       - Directory
     doc: /path/to/output-dir
     outputBinding:
-      glob: $(inputs.output_consensus_seq)
+      glob: $(inputs.output_consensus_seq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/imsindel:1.0.2--hdfd78af_1

@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: megablast
 label: blast-legacy_megablast
-doc: "megablast 2.2.26: a tool for fast alignment of highly similar sequences\n\n
-  Tool homepage: http://blast.ncbi.nlm.nih.gov"
+doc: "megablast 2.2.26: a tool for fast alignment of highly similar sequences\n\n\
+  \ Tool homepage: http://blast.ncbi.nlm.nih.gov"
 inputs:
   - id: alignment_view
     type:
@@ -45,7 +45,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Type of a discontiguous word template (0 - coding, 1 - optimal, 2 - two simultaneous)
+    doc: Type of a discontiguous word template (0 - coding, 1 - optimal, 2 - two
+      simultaneous)
     inputBinding:
       position: 101
       prefix: -N
@@ -117,7 +118,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Make discontiguous megablast generate words for every base of the database
+    doc: Make discontiguous megablast generate words for every base of the 
+      database
     inputBinding:
       position: 101
       prefix: -g
@@ -205,8 +207,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Multiple Hits window size; default is 0 (i.e. single-hit extensions) or 40
-      for discontiguous template
+    doc: Multiple Hits window size; default is 0 (i.e. single-hit extensions) or
+      40 for discontiguous template
     inputBinding:
       position: 101
       prefix: -A
@@ -322,6 +324,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -y
+  - id: asn1_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `asn1_output_path`
+    inputBinding:
+      position: 102
+      prefix: --asn1-output
+  - id: masked_query_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `masked_query_output_path`
+    inputBinding:
+      position: 103
+      prefix: --masked-query-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -329,21 +355,23 @@ outputs:
       - File
     doc: BLAST report Output File
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: asn1_output
     type:
       - 'null'
       - File
     doc: ASN.1 SeqAlign file; must be used in conjunction with -D2 option
     outputBinding:
-      glob: $(inputs.asn1_output)
+      glob: $(inputs.asn1_output_path)
   - id: masked_query_output
     type:
       - 'null'
       - File
     doc: Masked query output, must be used in conjunction with -D 2 option
     outputBinding:
-      glob: $(inputs.masked_query_output)
+      glob: $(inputs.masked_query_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast-legacy:2.2.26--h9ee0642_3

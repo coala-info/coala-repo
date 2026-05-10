@@ -212,6 +212,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --spurious-isize-rate
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -219,7 +225,9 @@ outputs:
       - File
     doc: BCF file that shall contain the results (if omitted, write to STDOUT).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prosic:2.1.2--hc7800f0_1

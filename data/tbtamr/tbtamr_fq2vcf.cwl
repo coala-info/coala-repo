@@ -391,6 +391,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbosity-level
+  - id: output_bam_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bam_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam-file
+  - id: output_sam_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sam_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-sam-file
 outputs:
   - id: output_sam_file
     type:
@@ -398,14 +414,16 @@ outputs:
       - File
     doc: Sam file to output results to in BWA.
     outputBinding:
-      glob: $(inputs.output_sam_file)
+      glob: $(inputs.output_sam_file_path)
   - id: output_bam_file
     type:
       - 'null'
       - File
     doc: Output BAM file name.
     outputBinding:
-      glob: $(inputs.output_bam_file)
+      glob: $(inputs.output_bam_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbtamr:1.0.3--pyhdfd78af_0

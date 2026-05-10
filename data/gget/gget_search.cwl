@@ -109,6 +109,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --searchwords
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -117,7 +123,9 @@ outputs:
     doc: "Path to the file the results will be saved in, e.g. path/to/directory/results.json.\n\
       \                        Default: Standard out."
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gget:0.29.0--pyhdfd78af_0

@@ -81,13 +81,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seed
+  - id: profiled_sample_dir_path
+    type: string
+    doc: Output or path parameter `profiled_sample_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --profiled-sample-dir
 outputs:
   - id: profiled_sample_dir
     type: Directory
     doc: Directory where species and functional abundance tables of the sample 
       are saved.
     outputBinding:
-      glob: $(inputs.profiled_sample_dir)
+      glob: $(inputs.profiled_sample_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

@@ -66,6 +66,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf-translate-reference
+  - id: output_node_data_path
+    type: string
+    doc: Output or path parameter `output_node_data_path`
+    inputBinding:
+      position: 102
+      prefix: --output-node-data
 outputs:
   - id: output_node_data
     type:
@@ -73,7 +79,9 @@ outputs:
       - File
     doc: name of JSON file to save sequence features to
     outputBinding:
-      glob: $(inputs.output_node_data)
+      glob: $(inputs.output_node_data_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

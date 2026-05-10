@@ -32,12 +32,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_file_name_path
+    type: string
+    doc: Output or path parameter `output_file_name_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file-name
 outputs:
   - id: output_file_name
     type: File
     doc: output file name including the full path
     outputBinding:
-      glob: $(inputs.output_file_name)
+      glob: $(inputs.output_file_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fraggenescan:1.32--h7b50bb2_1

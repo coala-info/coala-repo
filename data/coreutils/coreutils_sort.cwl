@@ -33,8 +33,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: check for sorted input; do not sort. Can be 'diagnose-first', 'quiet', or
-      'silent'.
+    doc: check for sorted input; do not sort. Can be 'diagnose-first', 'quiet', 
+      or 'silent'.
     inputBinding:
       position: 102
       prefix: --check
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: annotate the part of the line used to sort, and warn about questionable usage
-      to stderr
+    doc: annotate the part of the line used to sort, and warn about questionable
+      usage to stderr
     inputBinding:
       position: 102
       prefix: --debug
@@ -205,8 +205,8 @@ inputs:
       - 'null'
       - type: array
         items: Directory
-    doc: use DIR for temporaries, not $TMPDIR or /tmp; multiple options specify multiple
-      directories
+    doc: use DIR for temporaries, not $TMPDIR or /tmp; multiple options specify 
+      multiple directories
     inputBinding:
       position: 102
       prefix: --temporary-directory
@@ -214,8 +214,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: with -c, check for strict ordering; without -c, output only the first of
-      an equal run
+    doc: with -c, check for strict ordering; without -c, output only the first 
+      of an equal run
     inputBinding:
       position: 102
       prefix: --unique
@@ -235,6 +235,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zero-terminated
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -242,7 +248,9 @@ outputs:
       - File
     doc: write result to FILE instead of standard output
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5

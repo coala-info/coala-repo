@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -species
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -41,7 +47,9 @@ outputs:
       - File
     doc: Output file name (defaults to stdout if not specified)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0

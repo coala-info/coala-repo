@@ -26,8 +26,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set to a non-zero number to break fasta files into reads of at most this
-      length
+    doc: Set to a non-zero number to break fasta files into reads of at most 
+      this length
     inputBinding:
       position: 101
       prefix: fastareadlen
@@ -73,7 +73,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Reads with average quality (after trimming) below this will be discarded
+    doc: Reads with average quality (after trimming) below this will be 
+      discarded
     inputBinding:
       position: 101
       prefix: minavgquality
@@ -129,7 +130,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: ASCII offset for input quality. May be 33 (Sanger), 64 (Illumina), or auto
+    doc: ASCII offset for input quality. May be 33 (Sanger), 64 (Illumina), or 
+      auto
     inputBinding:
       position: 101
       prefix: qin
@@ -137,7 +139,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: ASCII offset for output quality. May be 33 (Sanger), 64 (Illumina), or auto
+    doc: ASCII offset for output quality. May be 33 (Sanger), 64 (Illumina), or 
+      auto
     inputBinding:
       position: 101
       prefix: qout
@@ -205,6 +208,62 @@ inputs:
     inputBinding:
       position: 101
       prefix: zl
+  - id: base_hist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `base_hist_path`
+    inputBinding:
+      position: 102
+      prefix: --base-hist
+  - id: length_hist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `length_hist_path`
+    inputBinding:
+      position: 103
+      prefix: --length-hist
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: output_file_2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_2_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file-2
+  - id: output_single_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_single_path`
+    inputBinding:
+      position: 106
+      prefix: --output-single
+  - id: quality_file_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `quality_file_out_path`
+    inputBinding:
+      position: 107
+      prefix: --quality-file-out
+  - id: quality_hist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `quality_hist_path`
+    inputBinding:
+      position: 108
+      prefix: --quality-hist
 outputs:
   - id: output_file
     type:
@@ -212,50 +271,52 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_file_2
     type:
       - 'null'
       - File
     doc: Second output file for paired reads
     outputBinding:
-      glob: $(inputs.output_file_2)
+      glob: $(inputs.output_file_2_path)
   - id: quality_file_out
     type:
       - 'null'
       - File
     doc: Write qualities to this qual file for 'out'
     outputBinding:
-      glob: $(inputs.quality_file_out)
+      glob: $(inputs.quality_file_out_path)
   - id: output_single
     type:
       - 'null'
       - File
-    doc: If a read is longer than minlength and its mate is shorter, the longer one
-      goes here
+    doc: If a read is longer than minlength and its mate is shorter, the longer 
+      one goes here
     outputBinding:
-      glob: $(inputs.output_single)
+      glob: $(inputs.output_single_path)
   - id: base_hist
     type:
       - 'null'
       - File
     doc: Base composition histogram by position
     outputBinding:
-      glob: $(inputs.base_hist)
+      glob: $(inputs.base_hist_path)
   - id: quality_hist
     type:
       - 'null'
       - File
     doc: Quality histogram by position
     outputBinding:
-      glob: $(inputs.quality_hist)
+      glob: $(inputs.quality_hist_path)
   - id: length_hist
     type:
       - 'null'
       - File
     doc: Read length histogram
     outputBinding:
-      glob: $(inputs.length_hist)
+      glob: $(inputs.length_hist_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bbmap:39.52--he5f24ec_0

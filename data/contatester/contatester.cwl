@@ -83,6 +83,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -90,7 +96,9 @@ outputs:
       - Directory
     doc: folder for storing all output files (optional)
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contatester:1.0.0--py311r44he3b539c_4

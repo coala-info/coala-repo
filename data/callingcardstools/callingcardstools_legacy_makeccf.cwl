@@ -91,12 +91,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: outputpath_path
+    type: string
+    doc: Output or path parameter `outputpath_path`
+    inputBinding:
+      position: 103
+      prefix: --outputpath
 outputs:
   - id: outputpath
     type: Directory
     doc: Path to the output directory for calling card files.
     outputBinding:
-      glob: $(inputs.outputpath)
+      glob: $(inputs.outputpath_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

@@ -34,6 +34,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --in-fasta-files
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output CSV file containing final calls (one row
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: out_bins_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_bins_path`
+    inputBinding:
+      position: 103
+      prefix: --out-bins
 outputs:
   - id: out
     type:
@@ -41,14 +57,16 @@ outputs:
       - File
     doc: FASTA output containing bins
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out_bins
     type:
       - 'null'
       - File
     doc: Output list of created bins
     outputBinding:
-      glob: $(inputs.out_bins)
+      glob: $(inputs.out_bins_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virprof:0.9.2--pyhdfd78af_0

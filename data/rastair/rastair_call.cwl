@@ -346,6 +346,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_path`
+    inputBinding:
+      position: 103
+      prefix: --bed
+  - id: vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --vcf
 outputs:
   - id: vcf
     type:
@@ -356,14 +372,16 @@ outputs:
       (compressed), `.bcf` for BCF (compressed) `.mpk.lz4` for internal format (Message
       Pack, LZ4-compressed)"
     outputBinding:
-      glob: $(inputs.vcf)
+      glob: $(inputs.vcf_path)
   - id: bed
     type:
       - 'null'
       - File
     doc: Output BED file with the called methylated positions
     outputBinding:
-      glob: $(inputs.bed)
+      glob: $(inputs.bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rastair:2.0.0--h03e3cfe_0

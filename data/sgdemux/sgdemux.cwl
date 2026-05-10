@@ -206,13 +206,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --writer-threads
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: "The directory to write outputs to.\n\n            This tool will overwrite
       existing files."
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sgdemux:1.2.0--h3ab6199_4

@@ -42,18 +42,26 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path or url to the motif databae (JASPAR format).
+    doc: Path or url to the motif databae (JASPAR format). 
       v11_core_HUMAN_mono_jaspar_format.txt'
     inputBinding:
       position: 101
       prefix: --motif_database
+  - id: output_path
+    type: string
+    doc: Path to the directory to store all the output files.
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Path to the directory where the files will be stored. Will be created 
       if it does not exist.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parm:0.1.44--pyh7e72e81_0

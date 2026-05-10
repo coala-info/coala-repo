@@ -29,8 +29,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate bash script with Aspera-based download commands for all libraries
-      of samples in input table
+    doc: Generate bash script with Aspera-based download commands for all 
+      libraries of samples in input table
     inputBinding:
       position: 103
       prefix: --aspera
@@ -46,8 +46,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate bash script with curl-based download commands for all libraries
-      of samples in input table
+    doc: Generate bash script with curl-based download commands for all 
+      libraries of samples in input table
     inputBinding:
       position: 103
       prefix: --curl
@@ -71,7 +71,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Convert filtered samples and libraries tables to nf-core/fetchngs input tables
+    doc: Convert filtered samples and libraries tables to nf-core/fetchngs input
+      tables
     inputBinding:
       position: 103
       prefix: --fetchngs
@@ -79,8 +80,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: (Optional) Path to a pre-filtered libraries table. Mutually exclusive with
-      librarymetadata.
+    doc: (Optional) Path to a pre-filtered libraries table. Mutually exclusive 
+      with librarymetadata.
     inputBinding:
       position: 103
       prefix: --libraries
@@ -88,8 +89,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate AncientMetagenomeDir libraries table of all samples in input table.
-      Mutually exclusive with libraries.
+    doc: Generate AncientMetagenomeDir libraries table of all samples in input 
+      table. Mutually exclusive with libraries.
     inputBinding:
       position: 103
       prefix: --librarymetadata
@@ -97,7 +98,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Convert filtered samples and libraries tables to nf-core/mag input tables
+    doc: Convert filtered samples and libraries tables to nf-core/mag input 
+      tables
     inputBinding:
       position: 103
       prefix: --mag
@@ -105,8 +107,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate bash script with SRA Toolkit fasterq-dump based download commands
-      for all libraries of samples in input table
+    doc: Generate bash script with SRA Toolkit fasterq-dump based download 
+      commands for all libraries of samples in input table
     inputBinding:
       position: 103
       prefix: --sratoolkit
@@ -122,11 +124,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Convert filtered samples and libraries tables to nf-core/taxprofiler input
-      tables
+    doc: Convert filtered samples and libraries tables to nf-core/taxprofiler 
+      input tables
     inputBinding:
       position: 103
       prefix: --taxprofiler
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -134,7 +142,9 @@ outputs:
       - Directory
     doc: conversion output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amdirt:1.7.0--pyhdfd78af_0

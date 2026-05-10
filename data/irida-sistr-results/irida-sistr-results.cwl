@@ -96,7 +96,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The reportable serovars file
+    doc: The reportable serovars file 
       /usr/local/lib/python3.6/site-packages/irida_sistr_results/data/reportable_serovars.tsv
     inputBinding:
       position: 101
@@ -144,6 +144,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workflow
+  - id: output_excel_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_excel_path`
+    inputBinding:
+      position: 102
+      prefix: --output-excel
+  - id: output_tab_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tab_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tab
 outputs:
   - id: output_tab
     type:
@@ -151,14 +167,16 @@ outputs:
       - File
     doc: Print results to tab-deliminited file.
     outputBinding:
-      glob: $(inputs.output_tab)
+      glob: $(inputs.output_tab_path)
   - id: output_excel
     type:
       - 'null'
       - File
     doc: Print results to the given excel file.
     outputBinding:
-      glob: $(inputs.output_excel)
+      glob: $(inputs.output_excel_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/irida-sistr-results:0.6.0--py36_0

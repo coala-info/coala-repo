@@ -17,6 +17,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -verbose
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -24,7 +30,9 @@ outputs:
       - File
     doc: Write problems to specified file.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0

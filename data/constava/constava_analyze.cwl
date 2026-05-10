@@ -132,6 +132,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-series
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -139,7 +145,9 @@ outputs:
       - File
     doc: The file to write the results to.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/constava:1.2.0--pyhdfd78af_0

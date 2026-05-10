@@ -61,6 +61,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: -u
+  - id: output_art_paired_end_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_art_paired_end_path`
+    inputBinding:
+      position: 103
+      prefix: --output-art-paired-end
+  - id: output_art_single_end_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_art_single_end_path`
+    inputBinding:
+      position: 104
+      prefix: --output-art-single-end
+  - id: output_forward_read_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_forward_read_path`
+    inputBinding:
+      position: 105
+      prefix: --output-forward-read
+  - id: output_reverse_read_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_reverse_read_path`
+    inputBinding:
+      position: 106
+      prefix: --output-reverse-read
+  - id: read_bam_output_paired_end_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `read_bam_output_paired_end_path`
+    inputBinding:
+      position: 107
+      prefix: --read-bam-output-paired-end
+  - id: read_bam_output_single_end_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `read_bam_output_single_end_path`
+    inputBinding:
+      position: 108
+      prefix: --read-bam-output-single-end
 outputs:
   - id: output_art_single_end
     type:
@@ -68,7 +116,7 @@ outputs:
       - File
     doc: Output single-end reads as ART (unzipped fasta)
     outputBinding:
-      glob: $(inputs.output_art_single_end)
+      glob: $(inputs.output_art_single_end_path)
   - id: output_art_paired_end
     type:
       - 'null'
@@ -76,35 +124,37 @@ outputs:
     doc: Output reads as ART (unzipped fasta) with wrap-around for paired-end 
       mode
     outputBinding:
-      glob: $(inputs.output_art_paired_end)
+      glob: $(inputs.output_art_paired_end_path)
   - id: output_forward_read
     type:
       - 'null'
       - File
     doc: Output forward read as zipped fasta
     outputBinding:
-      glob: $(inputs.output_forward_read)
+      glob: $(inputs.output_forward_read_path)
   - id: output_reverse_read
     type:
       - 'null'
       - File
     doc: Output reverse read as zipped fasta
     outputBinding:
-      glob: $(inputs.output_reverse_read)
+      glob: $(inputs.output_reverse_read_path)
   - id: read_bam_output_single_end
     type:
       - 'null'
       - File
     doc: Read BAM and write output as a single-end BAM
     outputBinding:
-      glob: $(inputs.read_bam_output_single_end)
+      glob: $(inputs.read_bam_output_single_end_path)
   - id: read_bam_output_paired_end
     type:
       - 'null'
       - File
     doc: Read BAM and write output as a single-end BAM
     outputBinding:
-      glob: $(inputs.read_bam_output_paired_end)
+      glob: $(inputs.read_bam_output_paired_end_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gargammel-slim:1.1.2--hf107e4d_6

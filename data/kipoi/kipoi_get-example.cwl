@@ -20,6 +20,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --source
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -28,7 +34,9 @@ outputs:
     doc: "Output directory where to store the examples. Default:\n               \
       \         'example'"
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kipoi:0.8.6--pyh5e36f6f_0

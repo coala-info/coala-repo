@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -55,7 +61,9 @@ outputs:
     doc: Filename to write fast5 paths to. If nothing is entered, it will write 
       the paths to STDOUT.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fast5seek:0.1.1--py35_0

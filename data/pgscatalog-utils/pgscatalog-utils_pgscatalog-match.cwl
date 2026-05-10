@@ -137,12 +137,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgscatalog-utils:2.0.2--pyhdfd78af_0

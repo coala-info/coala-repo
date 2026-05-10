@@ -216,6 +216,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 104
+      prefix: --report
 outputs:
   - id: output_dir
     type:
@@ -223,7 +239,7 @@ outputs:
       - Directory
     doc: Writes the final outputs to the directory in this path.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: report
     type:
       - 'null'
@@ -234,7 +250,9 @@ outputs:
       report file. A single report file will be generated. Information for each 
       species will be put into individual worksheets.
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gothresher:1.0.29--pyh7cba7a3_0

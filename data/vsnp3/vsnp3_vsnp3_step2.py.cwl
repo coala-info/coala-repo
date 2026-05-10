@@ -210,6 +210,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wd
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -219,7 +225,9 @@ outputs:
       writen to. Name can be a directory path, but doesn't have to be. By default
       VCF files are worked on in your current working directory"
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vsnp3:3.33--hdfd78af_0

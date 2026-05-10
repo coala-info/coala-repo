@@ -251,6 +251,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --update-m3vcf
+  - id: compress_reference_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `compress_reference_output_path`
+    inputBinding:
+      position: 104
+      prefix: --compress-reference-output
+  - id: update_m3vcf_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `update_m3vcf_output_path`
+    inputBinding:
+      position: 105
+      prefix: --update-m3vcf-output
 outputs:
   - id: update_m3vcf_output
     type:
@@ -258,14 +274,16 @@ outputs:
       - File
     doc: Converts M3VCF to MVCF
     outputBinding:
-      glob: $(inputs.update_m3vcf_output)
+      glob: $(inputs.update_m3vcf_output_path)
   - id: compress_reference_output
     type:
       - 'null'
       - File
     doc: Compresses VCF to MVCF
     outputBinding:
-      glob: $(inputs.compress_reference_output)
+      glob: $(inputs.compress_reference_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minimac4:4.1.6--hcb620b3_1

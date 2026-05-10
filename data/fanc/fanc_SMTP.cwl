@@ -68,6 +68,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: log_file_path
+    type: string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -75,7 +81,9 @@ outputs:
       - File
     doc: Path to file in which to save log.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fanc:0.9.0--py37h73a75cf_1

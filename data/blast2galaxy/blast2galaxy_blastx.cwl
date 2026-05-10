@@ -191,6 +191,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --word_size
+  - id: out_path
+    type: string
+    doc: Path / filename of file to store the BLAST
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -198,7 +204,9 @@ outputs:
       - File
     doc: Path / filename of file to store the BLAST result
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast2galaxy:1.0.0--pyhdfd78af_0

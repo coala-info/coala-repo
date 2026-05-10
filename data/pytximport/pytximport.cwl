@@ -140,12 +140,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcript-gene-map
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type: Directory
     doc: The output path to save the resulting counts to.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pytximport:0.12.0--pyhdfd78af_0

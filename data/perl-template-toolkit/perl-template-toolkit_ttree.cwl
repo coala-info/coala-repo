@@ -398,6 +398,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --wrapper
+  - id: dest_path
+    type: string
+    doc: Output or path parameter `dest_path`
+    inputBinding:
+      position: 103
+      prefix: --dest
 outputs:
   - id: dest
     type:
@@ -405,7 +411,9 @@ outputs:
       - Directory
     doc: Destination directory
     outputBinding:
-      glob: $(inputs.dest)
+      glob: $(inputs.dest_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

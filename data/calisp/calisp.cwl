@@ -70,6 +70,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output_file
 outputs:
   - id: output_file
     type:
@@ -77,7 +82,9 @@ outputs:
       - Directory
     doc: The name of the folder the output gets written to.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0

@@ -55,9 +55,7 @@ inputs:
       - type: array
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
-      will be inferred.
-      - ','
-      - "\t"
+      will be inferred. - ',' - "\t"
     inputBinding:
       position: 101
       prefix: --metadata-delimiters
@@ -67,9 +65,7 @@ inputs:
       - type: array
         items: string
     doc: names of possible metadata columns containing identifier information, 
-      ordered by priority. Only one ID column will be inferred.
-      - strain
-      - name
+      ordered by priority. Only one ID column will be inferred. - strain - name
     inputBinding:
       position: 101
       prefix: --metadata-id-columns
@@ -99,6 +95,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weights
+  - id: output_node_data_path
+    type: string
+    doc: Output or path parameter `output_node_data_path`
+    inputBinding:
+      position: 102
+      prefix: --output-node-data
 outputs:
   - id: output_node_data
     type:
@@ -106,7 +108,9 @@ outputs:
       - File
     doc: name of JSON file to save trait inferences to
     outputBinding:
-      glob: $(inputs.output_node_data)
+      glob: $(inputs.output_node_data_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

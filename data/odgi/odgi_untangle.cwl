@@ -166,6 +166,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: cut_points_output_path
+    type: string
+    doc: Output or path parameter `cut_points_output_path`
+    inputBinding:
+      position: 102
+      prefix: --cut-points-output
 outputs:
   - id: cut_points_output
     type:
@@ -174,7 +180,9 @@ outputs:
     doc: Emit node identifiers where segment boundaries started (one identifier 
       per row).
     outputBinding:
-      glob: $(inputs.cut_points_output)
+      glob: $(inputs.cut_points_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

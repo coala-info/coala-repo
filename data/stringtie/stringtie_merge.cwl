@@ -87,6 +87,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -T
+  - id: output_gtf_path
+    type: string
+    doc: Output or path parameter `output_gtf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-gtf
 outputs:
   - id: output_gtf
     type:
@@ -94,7 +100,9 @@ outputs:
       - File
     doc: Output file name for the merged transcripts GTF
     outputBinding:
-      glob: $(inputs.output_gtf)
+      glob: $(inputs.output_gtf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stringtie:3.0.3--h29c0135_0

@@ -28,6 +28,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sort
+  - id: output_pangenome_file_path
+    type: string
+    doc: Output or path parameter `output_pangenome_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-pangenome-file
 outputs:
   - id: output_pangenome_file
     type:
@@ -35,7 +41,9 @@ outputs:
       - File
     doc: output pangenome tree file
     outputBinding:
-      glob: $(inputs.output_pangenome_file)
+      glob: $(inputs.output_pangenome_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

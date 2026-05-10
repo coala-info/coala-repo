@@ -168,6 +168,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: -ultraw
+  - id: gene_tree_nhx_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gene_tree_nhx_file_path`
+    inputBinding:
+      position: 102
+      prefix: --gene-tree-nhx-file
+  - id: gene_tree_phyloxml_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gene_tree_phyloxml_file_path`
+    inputBinding:
+      position: 103
+      prefix: --gene-tree-phyloxml-file
+  - id: output_gene_tree_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gene_tree_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-gene-tree-file
+  - id: output_species_tree_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_species_tree_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-species-tree-file
+  - id: reconciled_tree_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reconciled_tree_file_path`
+    inputBinding:
+      position: 106
+      prefix: --reconciled-tree-file
+  - id: stats_gene_tree_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_gene_tree_file_path`
+    inputBinding:
+      position: 107
+      prefix: --stats-gene-tree-file
 outputs:
   - id: gene_tree_nhx_file
     type:
@@ -175,21 +223,21 @@ outputs:
       - File
     doc: The output tree file (annotated with duplications) in NHX format
     outputBinding:
-      glob: $(inputs.gene_tree_nhx_file)
+      glob: $(inputs.gene_tree_nhx_file_path)
   - id: stats_gene_tree_file
     type:
       - 'null'
       - File
     doc: The output scoring statistic file
     outputBinding:
-      glob: $(inputs.stats_gene_tree_file)
+      glob: $(inputs.stats_gene_tree_file_path)
   - id: output_species_tree_file
     type:
       - 'null'
       - File
     doc: The output species tree file (limited to gene tree species)
     outputBinding:
-      glob: $(inputs.output_species_tree_file)
+      glob: $(inputs.output_species_tree_file_path)
   - id: reconciled_tree_file
     type:
       - 'null'
@@ -197,21 +245,23 @@ outputs:
     doc: The output reconciled tree file (consensus tree, with reductions and 
       losses)
     outputBinding:
-      glob: $(inputs.reconciled_tree_file)
+      glob: $(inputs.reconciled_tree_file_path)
   - id: output_gene_tree_file
     type:
       - 'null'
       - File
     doc: The output tree file (annotated with duplications)
     outputBinding:
-      glob: $(inputs.output_gene_tree_file)
+      glob: $(inputs.output_gene_tree_file_path)
   - id: gene_tree_phyloxml_file
     type:
       - 'null'
       - File
     doc: The output tree file (annotated with duplications) in phyloXML format
     outputBinding:
-      glob: $(inputs.gene_tree_phyloxml_file)
+      glob: $(inputs.gene_tree_phyloxml_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rapgreen:1.0--hdfd78af_0

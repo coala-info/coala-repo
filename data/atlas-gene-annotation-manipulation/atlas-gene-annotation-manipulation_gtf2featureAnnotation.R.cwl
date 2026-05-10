@@ -116,6 +116,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --version-transcripts
+  - id: filter_cdnas_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `filter_cdnas_output_path`
+    inputBinding:
+      position: 102
+      prefix: --filter-cdnas-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: filter_cdnas_output
     type:
@@ -125,14 +141,16 @@ outputs:
       specified file. No file will be output if this is not specified (for 
       example for use of --dummy-from-cdnas only).
     outputBinding:
-      glob: $(inputs.filter_cdnas_output)
+      glob: $(inputs.filter_cdnas_output_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output file path
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

@@ -154,19 +154,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: out_aln_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_aln_path`
+    inputBinding:
+      position: 102
+      prefix: --out-aln
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: out_aln
     type:
       - 'null'
       - File
     doc: Write alignments to the tsv <file>
     outputBinding:
-      glob: $(inputs.out_aln)
+      glob: $(inputs.out_aln_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vclust:1.3.1--py311he264feb_1

@@ -161,6 +161,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf-verbose
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -168,7 +174,9 @@ outputs:
       - File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/popscle:0.1--ha0d7e29_1

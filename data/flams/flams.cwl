@@ -31,6 +31,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -38,7 +44,9 @@ outputs:
       - File
     doc: Output file for alignment results
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flams:1.1.7--pyhdfd78af_0

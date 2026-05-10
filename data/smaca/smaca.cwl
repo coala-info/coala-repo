@@ -36,6 +36,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --reference
+  - id: output_path
+    type: string
+    doc: output file
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -43,7 +49,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smaca:1.2.3--py311hc1104ee_6

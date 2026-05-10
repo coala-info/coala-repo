@@ -98,6 +98,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --zmin
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 104
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -108,7 +114,9 @@ outputs:
       from the extension of the file, the supported formats are png, jpg, svg, 
       pdf, ps and eps.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

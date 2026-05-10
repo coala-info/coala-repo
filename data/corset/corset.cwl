@@ -2,15 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: corset
 label: corset
-doc: "Corset clusters contigs and counts reads from de novo assembled transcriptomes.\n
-  \nTool homepage: https://github.com/Oshlack/Corset"
+doc: "Corset clusters contigs and counts reads from de novo assembled transcriptomes.\n\
+  \ \nTool homepage: https://github.com/Oshlack/Corset"
 inputs:
   - id: input_bam_files
     type:
       type: array
       items: File
-    doc: The input files should be multi-mapped bam files. They can be single, paired-end
-      or mixed and do not need to be indexed. A space separated list should be given.
+    doc: The input files should be multi-mapped bam files. They can be single, 
+      paired-end or mixed and do not need to be indexed. A space separated list 
+      should be given.
     inputBinding:
       position: 1
   - id: distance_thresholds
@@ -28,9 +29,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specifies the grouping. i.e. which samples belong to which experimental groups.
-      The parameter must be a comma separated list (no spaces), with the groupings
-      given in the same order as the bam filename.
+    doc: Specifies the grouping. i.e. which samples belong to which experimental
+      groups. The parameter must be a comma separated list (no spaces), with the
+      groupings given in the same order as the bam filename.
     inputBinding:
       position: 102
       prefix: -g
@@ -46,8 +47,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The value used for thresholding the log likelihood ratio. By default D =
-      17.5 + 2.5 * ndf.
+    doc: The value used for thresholding the log likelihood ratio. By default D 
+      = 17.5 + 2.5 * ndf.
     inputBinding:
       position: 102
       prefix: -D
@@ -55,8 +56,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If running with -i corset or salmon_eq_classes, this option will filter out
-      reads that align to more than x contigs.
+    doc: If running with -i corset or salmon_eq_classes, this option will filter
+      out reads that align to more than x contigs.
     inputBinding:
       position: 102
       prefix: -x
@@ -64,8 +65,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If running with -i corset or salmon_eq_classes, this will filter out a link
-      between contigs if the link is supported by less than this many reads.
+    doc: If running with -i corset or salmon_eq_classes, this will filter out a 
+      link between contigs if the link is supported by less than this many 
+      reads.
     inputBinding:
       position: 102
       prefix: -l
@@ -81,8 +83,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specifies whether the output files should be overwritten if they already
-      exist.
+    doc: Specifies whether the output files should be overwritten if they 
+      already exist.
     inputBinding:
       position: 102
       prefix: -f
@@ -90,8 +92,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specifies the sample names to be used in the header of the output count file.
-      This should be a comma separated list without spaces.
+    doc: Specifies the sample names to be used in the header of the output count
+      file. This should be a comma separated list without spaces.
     inputBinding:
       position: 102
       prefix: -n
@@ -108,21 +110,29 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Switches off the log likelihood ratio test and should be used for downstream
-      differential transcript usage analysis. It will prevent differentially expressed
-      transcript being split into different clusters.
+    doc: Switches off the log likelihood ratio test and should be used for 
+      downstream differential transcript usage analysis. It will prevent 
+      differentially expressed transcript being split into different clusters.
     inputBinding:
       position: 102
       prefix: -I
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
       - 'null'
       - File
-    doc: Prefix for the output filenames. The output files will be of the form <prefix>-counts.txt
-      and <prefix>-clusters.txt.
+    doc: Prefix for the output filenames. The output files will be of the form 
+      <prefix>-counts.txt and <prefix>-clusters.txt.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/corset:1.09--h077b44d_6

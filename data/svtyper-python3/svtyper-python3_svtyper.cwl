@@ -103,6 +103,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output_vcf
+  - id: write_alignment_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --write_alignment
 outputs:
   - id: output_vcf
     type:
@@ -110,14 +124,16 @@ outputs:
       - File
     doc: output VCF to write
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
   - id: write_alignment
     type:
       - 'null'
       - File
     doc: write relevant reads to BAM file
     outputBinding:
-      glob: $(inputs.write_alignment)
+      glob: $(inputs.write_alignment_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtyper-python3:0.7.1--pyhdfd78af_0

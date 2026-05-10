@@ -16,13 +16,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --number
+  - id: out_location_path
+    type: string
+    doc: Output or path parameter `out_location_path`
+    inputBinding:
+      position: 102
+      prefix: --out-location
 outputs:
   - id: out_location
     type: File
     doc: The file name of the bootstrapped alignment data output, stored in 
       relaxed PHYLIP format.
     outputBinding:
-      glob: $(inputs.out_location)
+      glob: $(inputs.out_location_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msaboot:0.1.2--py_1

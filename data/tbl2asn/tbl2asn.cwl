@@ -358,6 +358,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -V
+  - id: cleanup_log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cleanup_log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --cleanup-log-file
+  - id: discrepancy_report_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `discrepancy_report_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --discrepancy-report-output-file
+  - id: single_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `single_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --single-output-file
 outputs:
   - id: single_output_file
     type:
@@ -365,21 +389,23 @@ outputs:
       - File
     doc: Single Output File
     outputBinding:
-      glob: $(inputs.single_output_file)
+      glob: $(inputs.single_output_file_path)
   - id: discrepancy_report_output_file
     type:
       - 'null'
       - File
     doc: Discrepancy Report Output File
     outputBinding:
-      glob: $(inputs.discrepancy_report_output_file)
+      glob: $(inputs.discrepancy_report_output_file_path)
   - id: cleanup_log_file
     type:
       - 'null'
       - File
     doc: Cleanup Log File
     outputBinding:
-      glob: $(inputs.cleanup_log_file)
+      glob: $(inputs.cleanup_log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbl2asn:25.8--0

@@ -41,8 +41,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Cutoff for indels in LCB extension region. LCB extension will be at most
-      min(seqs) + cutoff bases
+    doc: Cutoff for indels in LCB extension region. LCB extension will be at 
+      most min(seqs) + cutoff bases
     inputBinding:
       position: 101
       prefix: --extend-indel-cutoff
@@ -123,7 +123,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Maximal diagonal difference. Either percentage (e.g. 0.2) or bp (e.g. 100bp)
+    doc: Maximal diagonal difference. Either percentage (e.g. 0.2) or bp (e.g. 
+      100bp)
     inputBinding:
       position: 101
       prefix: --max-diagonal-difference
@@ -187,8 +188,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum size of a partition. Input genomes will be split evenly across partitions
-      at least this large.
+    doc: Minimum size of a partition. Input genomes will be split evenly across 
+      partitions at least this large.
     inputBinding:
       position: 101
       prefix: --min-partition-size
@@ -244,8 +245,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Specify (assembled) query genome to use, in addition to genomes found in
-      genome dir
+    doc: Specify (assembled) query genome to use, in addition to genomes found 
+      in genome dir
     inputBinding:
       position: 101
       prefix: --query
@@ -269,8 +270,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: A list of files containing genomes/contigs/scaffolds. If the file ends in
-      .txt, each line in the file corresponds to the path to an input file.
+    doc: A list of files containing genomes/contigs/scaffolds. If the file ends 
+      in .txt, each line in the file corresponds to the path to an input file.
     inputBinding:
       position: 101
       prefix: --sequences
@@ -278,8 +279,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Skip the filtering step which discards inputs based on the ANI/MUMi distance
-      to the reference.
+    doc: Skip the filtering step which discards inputs based on the ANI/MUMi 
+      distance to the reference.
     inputBinding:
       position: 101
       prefix: --skip-ani-filter
@@ -355,6 +356,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -362,7 +369,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parsnp:2.1.5--h077b44d_0

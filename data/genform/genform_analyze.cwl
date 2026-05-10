@@ -305,6 +305,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: vsp
+  - id: output_cleaned_msms_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cleaned_msms_path`
+    inputBinding:
+      position: 102
+      prefix: --output-cleaned-msms
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: output_scaled_ms_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_scaled_ms_path`
+    inputBinding:
+      position: 104
+      prefix: --output-scaled-ms
+  - id: output_weighted_msms_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_weighted_msms_path`
+    inputBinding:
+      position: 105
+      prefix: --output-weighted-msms
 outputs:
   - id: output_file
     type:
@@ -312,28 +344,30 @@ outputs:
       - File
     doc: output generated formulas
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_scaled_ms
     type:
       - 'null'
       - File
     doc: write scaled MS peaks to output
     outputBinding:
-      glob: $(inputs.output_scaled_ms)
+      glob: $(inputs.output_scaled_ms_path)
   - id: output_weighted_msms
     type:
       - 'null'
       - File
     doc: write weighted MS/MS peaks to output
     outputBinding:
-      glob: $(inputs.output_weighted_msms)
+      glob: $(inputs.output_weighted_msms_path)
   - id: output_cleaned_msms
     type:
       - 'null'
       - File
     doc: write explained MS/MS peaks to output
     outputBinding:
-      glob: $(inputs.output_cleaned_msms)
+      glob: $(inputs.output_cleaned_msms_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genform:r8--h9948957_8

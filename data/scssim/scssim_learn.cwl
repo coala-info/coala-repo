@@ -4,8 +4,8 @@ baseCommand:
   - scssim
   - learn
 label: scssim_learn
-doc: "Learn parameters from a normal BAM file for single-cell sequencing simulation\n
-  \nTool homepage: https://github.com/qasimyu/scssim"
+doc: "Learn parameters from a normal BAM file for single-cell sequencing simulation\n\
+  \ \nTool homepage: https://github.com/qasimyu/scssim"
 inputs:
   - id: bam
     type: File
@@ -57,6 +57,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wsize
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -64,7 +70,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scssim:1.0--h9948957_5

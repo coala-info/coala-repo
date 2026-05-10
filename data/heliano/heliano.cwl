@@ -153,12 +153,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: opdir_path
+    type: string
+    doc: Output or path parameter `opdir_path`
+    inputBinding:
+      position: 102
+      prefix: --opdir
 outputs:
   - id: opdir
     type: Directory
     doc: The output directory.
     outputBinding:
-      glob: $(inputs.opdir)
+      glob: $(inputs.opdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/heliano:1.3.1--hdfd78af_0

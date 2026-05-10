@@ -66,8 +66,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: sets linter for sequence ('none'|'DNA'|'dna'|'protein'). All non-base/non-AA
-      characters are converted to unknowns
+    doc: sets linter for sequence ('none'|'DNA'|'dna'|'protein'). All 
+      non-base/non-AA characters are converted to unknowns
     inputBinding:
       position: 101
       prefix: --linter
@@ -75,8 +75,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: sets whether the linter should keep dashes appearing in sequences rather
-      than convert them to unknowns
+    doc: sets whether the linter should keep dashes appearing in sequences 
+      rather than convert them to unknowns
     inputBinding:
       position: 101
       prefix: --linter-keep-dashes
@@ -84,8 +84,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: sets whether the linter should keep lowercase DNA/protein characters appearing
-      in sequences rather than capitalise them
+    doc: sets whether the linter should keep lowercase DNA/protein characters 
+      appearing in sequences rather than capitalise them
     inputBinding:
       position: 101
       prefix: --linter-keep-lowercase
@@ -93,8 +93,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: select matching sequence names in FASTA/FASTQ records or tab-separated lines
-      using a regular expression
+    doc: select matching sequence names in FASTA/FASTQ records or tab-separated 
+      lines using a regular expression
     inputBinding:
       position: 101
       prefix: --match
@@ -103,8 +103,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: process FASTQ input files containing paired-end sequencing reads (expects
-      two files)
+    doc: process FASTQ input files containing paired-end sequencing reads 
+      (expects two files)
     inputBinding:
       position: 101
       prefix: --paired-end
@@ -112,7 +112,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: reverse-complement sequences in FASTA/FASTQ records or tab-separated lines
+    doc: reverse-complement sequences in FASTA/FASTQ records or tab-separated 
+      lines
     inputBinding:
       position: 101
       prefix: --revcom
@@ -156,6 +157,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: paired_end_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `paired_end_output_path`
+    inputBinding:
+      position: 103
+      prefix: --paired-end-output
 outputs:
   - id: output
     type:
@@ -163,14 +180,16 @@ outputs:
       - File
     doc: set the name of the output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: paired_end_output
     type:
       - 'null'
       - File
     doc: set the names of paired-end FASTQ output files (expects two files)
     outputBinding:
-      glob: $(inputs.paired_end_output)
+      glob: $(inputs.paired_end_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biocamlib:1.0.0--h9ee0642_0

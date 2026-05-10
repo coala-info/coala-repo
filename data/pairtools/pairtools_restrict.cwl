@@ -62,6 +62,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --nproc-out
+  - id: output_path
+    type: string
+    doc: output file for pairs after duplicate
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -71,7 +77,9 @@ outputs:
       \    .gz/.lz4, the output is compressed by bgzip/lz4c. By\n                \
       \       default, the output is printed into stdout."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

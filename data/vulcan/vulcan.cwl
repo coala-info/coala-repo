@@ -140,12 +140,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --work_dir
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: vulcan's output's prefix, the output will be prefix_{percentile}.bam
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vulcan:1.0.3--hdfd78af_0

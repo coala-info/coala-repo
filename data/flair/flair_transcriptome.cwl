@@ -4,15 +4,15 @@ baseCommand:
   - flair
   - transcriptome
 label: flair_transcriptome
-doc: "Defines isoforms from genomic alignments and optional short-read junction support.\n
-  \nTool homepage: https://github.com/BrooksLabUCSC/flair"
+doc: "Defines isoforms from genomic alignments and optional short-read junction support.\n\
+  \ \nTool homepage: https://github.com/BrooksLabUCSC/flair"
 inputs:
   - id: check_splice
     type:
       - 'null'
       - boolean
-    doc: enforce coverage of 4 out of 6 bp around each splice site and no insertions
-      greater than 3 bp at the splice site
+    doc: enforce coverage of 4 out of 6 bp around each splice site and no 
+      insertions greater than 3 bp at the splice site
     inputBinding:
       position: 101
       prefix: --check_splice
@@ -52,8 +52,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated isoforms
-      and adjusting TSS/TESs
+    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated 
+      isoforms and adjusting TSS/TESs
     inputBinding:
       position: 101
       prefix: --gtf
@@ -61,8 +61,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: short-read junctions in bed format (can be generated from short-read alignment
-      with junctions_from_sam)
+    doc: short-read junctions in bed format (can be generated from short-read 
+      alignment with junctions_from_sam)
     inputBinding:
       position: 101
       prefix: --junction_bed
@@ -70,9 +70,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: if providing short-read junctions, minimum junction support required to keep
-      junction. If your junctions file is in bed format, the score field will be used
-      for read support.
+    doc: if providing short-read junctions, minimum junction support required to
+      keep junction. If your junctions file is in bed format, the score field 
+      will be used for read support.
     inputBinding:
       position: 101
       prefix: --junction_support
@@ -80,8 +80,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: short-read junctions in SJ.out.tab format. Use this option if you aligned
-      your short-reads with STAR, STAR will automatically output this file
+    doc: short-read junctions in SJ.out.tab format. Use this option if you 
+      aligned your short-reads with STAR, STAR will automatically output this 
+      file
     inputBinding:
       position: 101
       prefix: --junction_tab
@@ -89,7 +90,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if intermediate and temporary files are to be kept for debugging
+    doc: specify if intermediate and temporary files are to be kept for 
+      debugging
     inputBinding:
       position: 101
       prefix: --keep_intermediate
@@ -113,8 +115,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if you don't want an initial alignment to the annotated sequences
-      and only want transcript detection from the genomic alignment
+    doc: specify if you don't want an initial alignment to the annotated 
+      sequences and only want transcript detection from the genomic alignment
     inputBinding:
       position: 101
       prefix: --noaligntoannot
@@ -155,8 +157,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if all supporting reads need to be full-length (spanning 25 bp of
-      the first and last exons)
+    doc: specify if all supporting reads need to be full-length (spanning 25 bp 
+      of the first and last exons)
     inputBinding:
       position: 101
       prefix: --stringent
@@ -176,6 +178,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -183,7 +191,9 @@ outputs:
       - File
     doc: output file name base for FLAIR isoforms
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

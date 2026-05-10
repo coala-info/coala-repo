@@ -187,6 +187,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: append_a3m_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `append_a3m_file_path`
+    inputBinding:
+      position: 102
+      prefix: --append-a3m-file
+  - id: output_a3m_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_a3m_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-a3m-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -194,14 +218,14 @@ outputs:
       - File
     doc: write results in standard format to file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_a3m_file
     type:
       - 'null'
       - File
     doc: write query alignment in a3m or PSI-BLAST format (-opsi) to file
     outputBinding:
-      glob: $(inputs.output_a3m_file)
+      glob: $(inputs.output_a3m_file_path)
   - id: append_a3m_file
     type:
       - 'null'
@@ -209,7 +233,9 @@ outputs:
     doc: append query alignment in a3m (-aa3m) or PSI-BLAST format (-apsi )to 
       file
     outputBinding:
-      glob: $(inputs.append_a3m_file)
+      glob: $(inputs.append_a3m_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15

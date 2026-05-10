@@ -189,6 +189,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --u
+  - id: rmout_path
+    type: string
+    doc: Output or path parameter `rmout_path`
+    inputBinding:
+      position: 102
+      prefix: --rmout
 outputs:
   - id: rmout
     type:
@@ -199,7 +205,9 @@ outputs:
       merged with the structural-based TE annotation. (--anno 1\nrequired). Default:
       use the EDTA library for annotation."
     outputBinding:
-      glob: $(inputs.rmout)
+      glob: $(inputs.rmout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/edta:2.2.2--hdfd78af_1

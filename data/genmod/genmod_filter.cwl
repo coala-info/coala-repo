@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threshold
+  - id: outfile_path
+    type: string
+    doc: Specify the path to a file where results
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -59,7 +65,9 @@ outputs:
       - File
     doc: Specify the path to a file where results should be stored.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genmod:3.10.2--pyh7e72e81_0

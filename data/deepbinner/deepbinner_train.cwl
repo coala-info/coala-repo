@@ -56,12 +56,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --val
+  - id: model_out_path
+    type: string
+    doc: Output or path parameter `model_out_path`
+    inputBinding:
+      position: 102
+      prefix: --model-out
 outputs:
   - id: model_out
     type: File
     doc: Filename for the trained model
     outputBinding:
-      glob: $(inputs.model_out)
+      glob: $(inputs.model_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepbinner:0.2.0--py36hc873e9d_0

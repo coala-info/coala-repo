@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --scheme
+  - id: outfile_path
+    type: string
+    doc: Path to a output file.
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -59,7 +65,9 @@ outputs:
       - File
     doc: Path to a output file.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/saqc:2.6.0

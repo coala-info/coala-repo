@@ -111,6 +111,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: --variablesFile
+  - id: exp_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `exp_file_path`
+    inputBinding:
+      position: 104
+      prefix: --exp-file
+  - id: mps_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mps_file_path`
+    inputBinding:
+      position: 105
+      prefix: --mps-file
+  - id: nc_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `nc_file_path`
+    inputBinding:
+      position: 106
+      prefix: --nc-file
+  - id: pp_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pp_file_path`
+    inputBinding:
+      position: 107
+      prefix: --pp-file
 outputs:
   - id: pp_file
     type:
@@ -119,14 +151,14 @@ outputs:
     doc: Calculate posterior probabilities for each state of each random 
       variable and output to file.
     outputBinding:
-      glob: $(inputs.pp_file)
+      glob: $(inputs.pp_file_path)
   - id: nc_file
     type:
       - 'null'
       - File
     doc: Calculate normalization constant output to file.
     outputBinding:
-      glob: $(inputs.nc_file)
+      glob: $(inputs.nc_file_path)
   - id: mps_file
     type:
       - 'null'
@@ -134,14 +166,16 @@ outputs:
     doc: Calculate most probable state for each random variable and output to 
       file.
     outputBinding:
-      glob: $(inputs.mps_file)
+      glob: $(inputs.mps_file_path)
   - id: exp_file
     type:
       - 'null'
       - File
     doc: Calculate expectancies and output to file
     outputBinding:
-      glob: $(inputs.exp_file)
+      glob: $(inputs.exp_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/evofold2:0.1--0

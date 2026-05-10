@@ -333,12 +333,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight-decay
+  - id: out_folder_path
+    type: Directory
+    doc: Model training results output folder
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out_folder
     type: Directory
     doc: Model training results output folder
     outputBinding:
-      glob: $(inputs.out_folder)
+      glob: $(inputs.out_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnaprot:0.5--pyhdfd78af_1

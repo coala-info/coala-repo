@@ -66,7 +66,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Skip the gene calling step (useful if you are providing external gene calls).
+    doc: Skip the gene calling step (useful if you are providing external gene 
+      calls).
     inputBinding:
       position: 101
       prefix: --skip-gene-calling
@@ -74,8 +75,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: By default, anvi'o tries to split contigs without cutting through genes.
-      This flag disables that behavior.
+    doc: By default, anvi'o tries to split contigs without cutting through 
+      genes. This flag disables that behavior.
     inputBinding:
       position: 101
       prefix: --skip-mindful-splitting
@@ -87,6 +88,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --split-length
+  - id: output_db_path
+    type: string
+    doc: Output or path parameter `output_db_path`
+    inputBinding:
+      position: 102
+      prefix: --output-db
 outputs:
   - id: output_db
     type:
@@ -94,7 +101,9 @@ outputs:
       - File
     doc: The output contigs database file (usually ends in .db).
     outputBinding:
-      glob: $(inputs.output_db)
+      glob: $(inputs.output_db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anvio-minimal:9--pyhdfd78af_0

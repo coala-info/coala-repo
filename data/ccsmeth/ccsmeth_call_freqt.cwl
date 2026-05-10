@@ -125,12 +125,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: result_file_path
+    type: string
+    doc: Output or path parameter `result_file_path`
+    inputBinding:
+      position: 102
+      prefix: --result-file
 outputs:
   - id: result_file
     type: File
     doc: the file path to save the result
     outputBinding:
-      glob: $(inputs.result_file)
+      glob: $(inputs.result_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ccsmeth:0.5.0--pyhdfd78af_0

@@ -21,6 +21,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_stream_path
+    type: string
+    doc: Output or path parameter `output_stream_path`
+    inputBinding:
+      position: 102
+      prefix: --output-stream
 outputs:
   - id: output_stream
     type:
@@ -28,7 +34,9 @@ outputs:
       - File
     doc: output stream
     outputBinding:
-      glob: $(inputs.output_stream)
+      glob: $(inputs.output_stream_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastaindex:0.11c--py36_0

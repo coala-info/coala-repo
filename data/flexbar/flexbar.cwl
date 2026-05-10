@@ -252,6 +252,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zip-output
+  - id: target_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --target
 outputs:
   - id: target
     type:
@@ -259,7 +264,9 @@ outputs:
       - File
     doc: Prefix for output file names or paths.
     outputBinding:
-      glob: $(inputs.target)
+      glob: $(inputs.target_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexbar:3.5.0--hdfd68b8_12

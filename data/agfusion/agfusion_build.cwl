@@ -33,12 +33,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --species
+  - id: dir_path
+    type: string
+    doc: Output or path parameter `dir_path`
+    inputBinding:
+      position: 102
+      prefix: --dir
 outputs:
   - id: dir
     type: Directory
     doc: Directory to write database file to.
     outputBinding:
-      glob: $(inputs.dir)
+      glob: $(inputs.dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agfusion:1.252--py_0

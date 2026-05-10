@@ -67,6 +67,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-metadata
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fasta
+  - id: output_metadata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_metadata_path`
+    inputBinding:
+      position: 103
+      prefix: --output-metadata
 outputs:
   - id: output_fasta
     type:
@@ -74,14 +90,16 @@ outputs:
       - File
     doc: fasta format file to write.
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: output_metadata
     type:
       - 'null'
       - File
     doc: metadata file to write.
     outputBinding:
-      glob: $(inputs.output_metadata)
+      glob: $(inputs.output_metadata_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

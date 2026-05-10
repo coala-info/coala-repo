@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --regex
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: Write output to a file instead of stdout.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tsv-utils:2.2.0--h9ee0642_0

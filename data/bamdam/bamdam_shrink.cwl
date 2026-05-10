@@ -89,17 +89,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upto
+  - id: out_bam_path
+    type:
+      - 'null'
+      - string
+    doc: Path to the short output BAM file (required)
+    inputBinding:
+      position: 102
+      prefix: --out_bam
+  - id: out_lca_path
+    type:
+      - 'null'
+      - string
+    doc: Path to the short output LCA file (required)
+    inputBinding:
+      position: 103
+      prefix: --out_lca
 outputs:
   - id: out_lca
     type: File
     doc: Path to the short output LCA file (required)
     outputBinding:
-      glob: $(inputs.out_lca)
+      glob: $(inputs.out_lca_path)
   - id: out_bam
     type: File
     doc: Path to the short output BAM file (required)
     outputBinding:
-      glob: $(inputs.out_bam)
+      glob: $(inputs.out_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamdam:0.4.3--pyhdfd78af_0

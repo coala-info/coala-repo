@@ -2,15 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: Parallel
 label: biocamlib_Parallel
-doc: "A tool to parallelize commands by processing blocks of lines from an input file.\n
-  \nTool homepage: https://github.com/PaoloRibeca/BiOCamLib"
+doc: "A tool to parallelize commands by processing blocks of lines from an input file.\n\
+  \ \nTool homepage: https://github.com/PaoloRibeca/BiOCamLib"
 inputs:
   - id: command
     type:
       type: array
       items: string
-    doc: Consider all the subsequent parameters as the command to be executed in parallel.
-      At least one command must be specified.
+    doc: Consider all the subsequent parameters as the command to be executed in
+      parallel. At least one command must be specified.
     inputBinding:
       position: 1
   - id: debug
@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -60,7 +66,9 @@ outputs:
       - File
     doc: name of output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biocamlib:1.0.0--h9ee0642_0

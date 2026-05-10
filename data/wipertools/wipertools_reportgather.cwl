@@ -13,12 +13,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reports
+  - id: final_report_path
+    type: string
+    doc: Output or path parameter `final_report_path`
+    inputBinding:
+      position: 102
+      prefix: --final-report
 outputs:
   - id: final_report
     type: File
     doc: The final report file
     outputBinding:
-      glob: $(inputs.final_report)
+      glob: $(inputs.final_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wipertools:1.1.5--pyhdfd78af_0

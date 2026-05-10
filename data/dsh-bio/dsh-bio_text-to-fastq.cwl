@@ -20,6 +20,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-text-path
+  - id: output_fastq_file_path
+    type: string
+    doc: Output or path parameter `output_fastq_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fastq-file
 outputs:
   - id: output_fastq_file
     type:
@@ -27,7 +33,9 @@ outputs:
       - File
     doc: output FASTQ file
     outputBinding:
-      glob: $(inputs.output_fastq_file)
+      glob: $(inputs.output_fastq_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

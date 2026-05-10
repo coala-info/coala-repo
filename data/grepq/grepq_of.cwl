@@ -124,6 +124,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --write-zstd
+  - id: write_sql_path
+    type: string
+    doc: Output or path parameter `write_sql_path`
+    inputBinding:
+      position: 105
+      prefix: --write-sql
 outputs:
   - id: write_sql
     type:
@@ -135,7 +141,9 @@ outputs:
       percent tetranucleotide frequency within the sequence (TNF), and average 
       quality score for the sequence field (average_quality)
     outputBinding:
-      glob: $(inputs.write_sql)
+      glob: $(inputs.write_sql_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grepq:1.5.4--h6ce8773_0

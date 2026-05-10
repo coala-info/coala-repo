@@ -204,6 +204,78 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: barriers_like_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `barriers_like_output_path`
+    inputBinding:
+      position: 102
+      prefix: --barriers-like-output
+  - id: binary_rates_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `binary_rates_file_path`
+    inputBinding:
+      position: 103
+      prefix: --binary-rates-file
+  - id: binary_rates_file_sparse_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `binary_rates_file_sparse_path`
+    inputBinding:
+      position: 104
+      prefix: --binary-rates-file-sparse
+  - id: dot_plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dot_plot_path`
+    inputBinding:
+      position: 105
+      prefix: --dot-plot
+  - id: dot_plot_per_basin_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dot_plot_per_basin_path`
+    inputBinding:
+      position: 106
+      prefix: --dot-plot-per-basin
+  - id: energy_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `energy_file_path`
+    inputBinding:
+      position: 107
+      prefix: --energy-file
+  - id: partition_functions_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `partition_functions_path`
+    inputBinding:
+      position: 108
+      prefix: --partition-functions
+  - id: saddle_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `saddle_file_path`
+    inputBinding:
+      position: 109
+      prefix: --saddle-file
+  - id: transition_prob_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `transition_prob_path`
+    inputBinding:
+      position: 110
+      prefix: --transition-prob
 outputs:
   - id: transition_prob
     type:
@@ -212,21 +284,21 @@ outputs:
     doc: If provided, the transition probability matrix will be written to the 
       given file name or 'STDOUT' when to write to standard output
     outputBinding:
-      glob: $(inputs.transition_prob)
+      glob: $(inputs.transition_prob_path)
   - id: energy_file
     type:
       - 'null'
       - File
     doc: File to store all energies.
     outputBinding:
-      glob: $(inputs.energy_file)
+      glob: $(inputs.energy_file_path)
   - id: binary_rates_file
     type:
       - 'null'
       - File
     doc: File to store all rates in a treekin readable format.
     outputBinding:
-      glob: $(inputs.binary_rates_file)
+      glob: $(inputs.binary_rates_file_path)
   - id: binary_rates_file_sparse
     type:
       - 'null'
@@ -235,14 +307,14 @@ outputs:
       of states (uint_32), then <uint_32 from>, <uint_32 number of how many value
       pairs to>, <value pair <uint_32 to, double rate from, to>> etc.'
     outputBinding:
-      glob: $(inputs.binary_rates_file_sparse)
+      glob: $(inputs.binary_rates_file_sparse_path)
   - id: saddle_file
     type:
       - 'null'
       - File
     doc: Store all saddles in a CSV file.
     outputBinding:
-      glob: $(inputs.saddle_file)
+      glob: $(inputs.saddle_file_path)
   - id: barriers_like_output
     type:
       - 'null'
@@ -250,7 +322,7 @@ outputs:
     doc: Output the rates file and the structures in a format similar to the 
       tool barriers. For the same prefix is used for both files.
     outputBinding:
-      glob: $(inputs.barriers_like_output)
+      glob: $(inputs.barriers_like_output_path)
   - id: partition_functions
     type:
       - 'null'
@@ -258,7 +330,7 @@ outputs:
     doc: If provided, the partition function matrix will be written to the given
       file name.
     outputBinding:
-      glob: $(inputs.partition_functions)
+      glob: $(inputs.partition_functions_path)
   - id: dot_plot
     type:
       - 'null'
@@ -267,7 +339,7 @@ outputs:
       dotPlot contains the base pair probabilities for all structures in the 
       (filtered) energy landscape.
     outputBinding:
-      glob: $(inputs.dot_plot)
+      glob: $(inputs.dot_plot_path)
   - id: dot_plot_per_basin
     type:
       - 'null'
@@ -276,7 +348,9 @@ outputs:
       shows the Maximum Expected Accuracy (MEA) structure in the upper right 
       triangle and the basin representative in the lower left triangle.
     outputBinding:
-      glob: $(inputs.dot_plot_per_basin)
+      glob: $(inputs.dot_plot_per_basin_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pourrna:1.2.0--h6bb024c_0

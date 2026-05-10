@@ -12,8 +12,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Process non-AGCT IUPAC reference bases by making all possible unambiguous
-      copies.
+    doc: Process non-AGCT IUPAC reference bases by making all possible 
+      unambiguous copies.
     inputBinding:
       position: 101
       prefix: copyundefined
@@ -92,7 +92,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Reads with average quality (after trimming) below this will be discarded.
+    doc: Reads with average quality (after trimming) below this will be 
+      discarded.
     inputBinding:
       position: 101
       prefix: minavgquality
@@ -132,7 +133,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Trim read ends to remove bases with quality below trimq (rl, f, r, l, w).
+    doc: Trim read ends to remove bases with quality below trimq (rl, f, r, l, 
+      w).
     inputBinding:
       position: 101
       prefix: qtrim
@@ -157,8 +159,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Comma-delimited list of reference files or keywords (adapters, artifacts,
-      phix, etc).
+    doc: Comma-delimited list of reference files or keywords (adapters, 
+      artifacts, phix, etc).
     inputBinding:
       position: 101
       prefix: ref
@@ -206,7 +208,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When kmer right-trimming, trim both reads to the minimum length of either.
+    doc: When kmer right-trimming, trim both reads to the minimum length of 
+      either.
     inputBinding:
       position: 101
       prefix: tpe
@@ -226,6 +229,102 @@ inputs:
     inputBinding:
       position: 101
       prefix: ziplevel
+  - id: bhist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bhist_path`
+    inputBinding:
+      position: 102
+      prefix: --bhist
+  - id: gchist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gchist_path`
+    inputBinding:
+      position: 103
+      prefix: --gchist
+  - id: lhist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `lhist_path`
+    inputBinding:
+      position: 104
+      prefix: --lhist
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 105
+      prefix: --out
+  - id: out2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out2_path`
+    inputBinding:
+      position: 106
+      prefix: --out2
+  - id: outm_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outm_path`
+    inputBinding:
+      position: 107
+      prefix: --outm
+  - id: outm2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outm2_path`
+    inputBinding:
+      position: 108
+      prefix: --outm2
+  - id: outs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outs_path`
+    inputBinding:
+      position: 109
+      prefix: --outs
+  - id: qhist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `qhist_path`
+    inputBinding:
+      position: 110
+      prefix: --qhist
+  - id: refstats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `refstats_path`
+    inputBinding:
+      position: 111
+      prefix: --refstats
+  - id: rpkm_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `rpkm_path`
+    inputBinding:
+      position: 112
+      prefix: --rpkm
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 113
+      prefix: --stats
 outputs:
   - id: out
     type:
@@ -233,84 +332,88 @@ outputs:
       - File
     doc: Write reads here that do not contain kmers matching the database.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out2
     type:
       - 'null'
       - File
     doc: Use this to write 2nd read of pairs to a different file.
     outputBinding:
-      glob: $(inputs.out2)
+      glob: $(inputs.out2_path)
   - id: outm
     type:
       - 'null'
       - File
-    doc: Write reads here that fail filters (matching kmers or quality/length filters).
+    doc: Write reads here that fail filters (matching kmers or quality/length 
+      filters).
     outputBinding:
-      glob: $(inputs.outm)
+      glob: $(inputs.outm_path)
   - id: outm2
     type:
       - 'null'
       - File
     doc: Use this to write 2nd read of pairs to a different file (matches).
     outputBinding:
-      glob: $(inputs.outm2)
+      glob: $(inputs.outm2_path)
   - id: outs
     type:
       - 'null'
       - File
-    doc: Use this to write singleton reads whose mate was trimmed shorter than minlen.
+    doc: Use this to write singleton reads whose mate was trimmed shorter than 
+      minlen.
     outputBinding:
-      glob: $(inputs.outs)
+      glob: $(inputs.outs_path)
   - id: stats
     type:
       - 'null'
       - File
     doc: Write statistics about which contaminants were detected.
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
   - id: refstats
     type:
       - 'null'
       - File
     doc: Write statistics on a per-reference-file basis.
     outputBinding:
-      glob: $(inputs.refstats)
+      glob: $(inputs.refstats_path)
   - id: rpkm
     type:
       - 'null'
       - File
     doc: Write RPKM for each reference sequence (for RNA-seq).
     outputBinding:
-      glob: $(inputs.rpkm)
+      glob: $(inputs.rpkm_path)
   - id: bhist
     type:
       - 'null'
       - File
     doc: Base composition histogram by position.
     outputBinding:
-      glob: $(inputs.bhist)
+      glob: $(inputs.bhist_path)
   - id: qhist
     type:
       - 'null'
       - File
     doc: Quality histogram by position.
     outputBinding:
-      glob: $(inputs.qhist)
+      glob: $(inputs.qhist_path)
   - id: lhist
     type:
       - 'null'
       - File
     doc: Read length histogram.
     outputBinding:
-      glob: $(inputs.lhist)
+      glob: $(inputs.lhist_path)
   - id: gchist
     type:
       - 'null'
       - File
     doc: Read GC content histogram.
     outputBinding:
-      glob: $(inputs.gchist)
+      glob: $(inputs.gchist_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bbmap:39.52--he5f24ec_0

@@ -22,6 +22,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: -keepEmpty
+  - id: out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --out-dir
 outputs:
   - id: out_maf
     type: File
@@ -34,7 +42,9 @@ outputs:
       - Directory
     doc: Output to a directory, one file per region. out.maf is ignored.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-mafsinregion:482--h0b57e2e_0

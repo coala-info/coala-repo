@@ -11,6 +11,12 @@ inputs:
     doc: Input genome fasta file (e.g., genome.fa.gz)
     inputBinding:
       position: 1
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -18,7 +24,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tracy:0.8.1--h4d20210_0

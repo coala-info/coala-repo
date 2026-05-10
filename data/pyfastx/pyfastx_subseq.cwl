@@ -35,6 +35,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --region-file
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -42,7 +48,9 @@ outputs:
       - File
     doc: 'output file, default: output to stdout'
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastx:2.3.0--py312h4711d71_1

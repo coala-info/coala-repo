@@ -196,8 +196,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Length of the largest intron allowed in a translated nucleotide sequence
-      when linking multiple distinct alignments.
+    doc: Length of the largest intron allowed in a translated nucleotide 
+      sequence when linking multiple distinct alignments.
     inputBinding:
       position: 101
       prefix: -t
@@ -283,8 +283,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Query strands to search against database (for blast[nx], and tblastx). 3
-      is both, 1 is top, 2 is bottom
+    doc: Query strands to search against database (for blast[nx], and tblastx). 
+      3 is both, 1 is top, 2 is bottom
     inputBinding:
       position: 101
       prefix: -S
@@ -300,8 +300,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Compute locally optimal Smith-Waterman alignments (This option is only available
-      for gapped tblastn.)
+    doc: Compute locally optimal Smith-Waterman alignments (This option is only 
+      available for gapped tblastn.)
     inputBinding:
       position: 101
       prefix: -s
@@ -325,7 +325,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: X dropoff value for final gapped alignment in bits (0.0 invokes default behavior)
+    doc: X dropoff value for final gapped alignment in bits (0.0 invokes default
+      behavior)
     inputBinding:
       position: 101
       prefix: -Z
@@ -333,7 +334,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: X dropoff value for gapped alignment (in bits) (zero invokes default behavior)
+    doc: X dropoff value for gapped alignment (in bits) (zero invokes default 
+      behavior)
     inputBinding:
       position: 101
       prefix: -X
@@ -341,10 +343,27 @@ inputs:
     type:
       - 'null'
       - float
-    doc: X dropoff value for ungapped extensions in bits (0.0 invokes default behavior)
+    doc: X dropoff value for ungapped extensions in bits (0.0 invokes default 
+      behavior)
     inputBinding:
       position: 101
       prefix: -y
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: seqalign_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `seqalign_file_path`
+    inputBinding:
+      position: 103
+      prefix: --seqalign-file
 outputs:
   - id: output_file
     type:
@@ -352,14 +371,16 @@ outputs:
       - File
     doc: BLAST report Output File
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: seqalign_file
     type:
       - 'null'
       - File
     doc: SeqAlign file
     outputBinding:
-      glob: $(inputs.seqalign_file)
+      glob: $(inputs.seqalign_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast-legacy:2.2.26--h9ee0642_3

@@ -51,12 +51,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -T
+  - id: out_graph_file_path
+    type: string
+    doc: Output or path parameter `out_graph_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-graph-file
 outputs:
   - id: out_graph_file
     type: File
     doc: out graph file
     outputBinding:
-      glob: $(inputs.out_graph_file)
+      glob: $(inputs.out_graph_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lordec:0.9--h77376b9_3

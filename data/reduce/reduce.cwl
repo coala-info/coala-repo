@@ -453,6 +453,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -Xplor
+  - id: dumpatoms_file_path
+    type: string
+    doc: Output or path parameter `dumpatoms_file_path`
+    inputBinding:
+      position: 104
+      prefix: --dumpatoms-file
 outputs:
   - id: dumpatoms_file
     type:
@@ -460,7 +466,9 @@ outputs:
       - File
     doc: Dump the atoms, along with extra information about them, to FILE
     outputBinding:
-      glob: $(inputs.dumpatoms_file)
+      glob: $(inputs.dumpatoms_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reduce:4.15--py39h2de1943_4

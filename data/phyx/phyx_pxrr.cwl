@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: pxrr
 label: phyx_pxrr
 doc: "Reroot (or unroot) a tree file and produce a newick. This will take a newick-
-  or nexus-formatted tree from a file or STDIN. Output is written in newick format.\n
-  \nTool homepage: https://github.com/FePhyFoFum/phyx"
+  or nexus-formatted tree from a file or STDIN. Output is written in newick format.\n\
+  \ \nTool homepage: https://github.com/FePhyFoFum/phyx"
 inputs:
   - id: citation
     type:
@@ -54,6 +54,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unroot
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -61,7 +67,9 @@ outputs:
       - File
     doc: output tree file, STOUT otherwise
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

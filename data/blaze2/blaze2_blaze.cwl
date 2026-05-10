@@ -177,6 +177,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --umi-len
+  - id: output_fastq_path
+    type: string
+    doc: Output or path parameter `output_fastq_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fastq
 outputs:
   - id: output_fastq
     type:
@@ -185,7 +191,9 @@ outputs:
     doc: Filename of output fastq file name. Note that the filename has to end 
       with .fastq, .fq, .fastq.gz or .fq.gz.
     outputBinding:
-      glob: $(inputs.output_fastq)
+      glob: $(inputs.output_fastq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blaze2:2.5.1--pyhdfd78af_0

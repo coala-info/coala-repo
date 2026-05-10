@@ -185,6 +185,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: failed_stitching_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `failed_stitching_file_path`
+    inputBinding:
+      position: 102
+      prefix: --failed-stitching-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
@@ -192,7 +208,7 @@ outputs:
       - in 'adapter-removal' mode (-a) or 'validate' mode (-r), the output files will
       be <file>_1.fastq and <file>_2.fastq"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: failed_stitching_file
     type:
       - 'null'
@@ -200,7 +216,9 @@ outputs:
     doc: FASTQ files for reads that failed stitching (output as <file>_1.fastq 
       and <file>_2.fastq)
     outputBinding:
-      glob: $(inputs.failed_stitching_file)
+      glob: $(inputs.failed_stitching_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngmerge:0.5--h89d970f_0

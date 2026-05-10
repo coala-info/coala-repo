@@ -138,6 +138,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -nw
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: output_genome_coverage_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_genome_coverage_path`
+    inputBinding:
+      position: 104
+      prefix: --output-genome-coverage
 outputs:
   - id: output_genome_coverage
     type:
@@ -146,21 +170,23 @@ outputs:
     doc: 'File to save per base non-zero coverage. Warning: large files are expected
       for large genomes'
     outputBinding:
-      glob: $(inputs.output_genome_coverage)
+      glob: $(inputs.output_genome_coverage_path)
   - id: output_dir
     type:
       - 'null'
       - Directory
     doc: Output folder for HTML report and raw data.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output file for PDF report
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

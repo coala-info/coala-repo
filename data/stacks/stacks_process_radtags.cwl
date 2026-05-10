@@ -356,6 +356,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-size
+  - id: discarded_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `discarded_reads_file_path`
+    inputBinding:
+      position: 102
+      prefix: --discarded-reads-file
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -363,14 +379,16 @@ outputs:
       - Directory
     doc: Path to output the processed files.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: discarded_reads_file
     type:
       - 'null'
       - File
     doc: Capture discarded reads to a file.
     outputBinding:
-      glob: $(inputs.discarded_reads_file)
+      glob: $(inputs.discarded_reads_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

@@ -99,6 +99,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --print_config
+  - id: cluster_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cluster_tsv_path`
+    inputBinding:
+      position: 102
+      prefix: --cluster-tsv
+  - id: color_table_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `color_table_out_path`
+    inputBinding:
+      position: 103
+      prefix: --color-table-out
+  - id: xgmml_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `xgmml_path`
+    inputBinding:
+      position: 104
+      prefix: --xgmml
 outputs:
   - id: color_table_out
     type:
@@ -108,14 +132,14 @@ outputs:
       hex color. Written after the color table is updated with new colors, for example
       if using --color_by, but not supplying an external color table.'
     outputBinding:
-      glob: $(inputs.color_table_out)
+      glob: $(inputs.color_table_out_path)
   - id: xgmml
     type:
       - 'null'
       - File
     doc: write a cytoscape xgmml file of the projection.
     outputBinding:
-      glob: $(inputs.xgmml)
+      glob: $(inputs.xgmml_path)
   - id: cluster_tsv
     type:
       - 'null'
@@ -124,7 +148,9 @@ outputs:
       set, then --cluster is automatically activated. If --no_cluster_header not
       set, then the file will have header contig cluster.
     outputBinding:
-      glob: $(inputs.cluster_tsv)
+      glob: $(inputs.cluster_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/domainator:0.8.1--pyhdfd78af_0

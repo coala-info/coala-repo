@@ -12,12 +12,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --in_gfa
+  - id: out_fasta_path
+    type: string
+    doc: Output or path parameter `out_fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --out-fasta
 outputs:
   - id: out_fasta
     type: File
     doc: Output FASTA file (required)
     outputBinding:
-      glob: $(inputs.out_fasta)
+      glob: $(inputs.out_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

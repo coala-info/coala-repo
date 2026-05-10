@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --split_by_filter_column
+  - id: output_db_path
+    type: string
+    doc: Output or path parameter `output_db_path`
+    inputBinding:
+      position: 102
+      prefix: --output-db
 outputs:
   - id: output_db
     type:
@@ -62,7 +68,9 @@ outputs:
       - File
     doc: Protein database including all the mutations
     outputBinding:
-      glob: $(inputs.output_db)
+      glob: $(inputs.output_db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0

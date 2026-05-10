@@ -116,6 +116,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: log_file_path
+    type: string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -124,7 +130,9 @@ outputs:
     doc: "Print log messages to this file instead of to\n                      stderr.
       NOTE: Will overwrite the file."
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4

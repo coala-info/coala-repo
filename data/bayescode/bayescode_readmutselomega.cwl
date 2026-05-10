@@ -143,6 +143,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --until
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -150,7 +156,9 @@ outputs:
       - File
     doc: Output file path (optional)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bayescode:1.3.4--h9948957_0

@@ -69,12 +69,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Directory for output files
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amplicontyper:0.1.34--pyhdfd78af_0

@@ -42,6 +42,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --low-memory
+  - id: out_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_fasta_path`
+    inputBinding:
+      position: 104
+      prefix: --out-fasta
 outputs:
   - id: out_metadata
     type: File
@@ -54,7 +62,9 @@ outputs:
       - File
     doc: A FASTA file (else writes to stdout)
     outputBinding:
-      glob: $(inputs.out_fasta)
+      glob: $(inputs.out_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastafunk:0.1.2--pyh5e36f6f_0

@@ -391,6 +391,30 @@ inputs:
     inputBinding:
       position: 104
       prefix: -v
+  - id: output_bam_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bam_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-bam-file
+  - id: output_sam_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sam_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-sam-file
+  - id: output_vcf_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_file_path`
+    inputBinding:
+      position: 107
+      prefix: --output-vcf-file
 outputs:
   - id: output_sam_file
     type:
@@ -398,21 +422,23 @@ outputs:
       - File
     doc: sam file to output results to
     outputBinding:
-      glob: $(inputs.output_sam_file)
+      glob: $(inputs.output_sam_file_path)
   - id: output_bam_file
     type:
       - 'null'
       - File
     doc: Path to the output BAM file
     outputBinding:
-      glob: $(inputs.output_bam_file)
+      glob: $(inputs.output_bam_file_path)
   - id: output_vcf_file
     type:
       - 'null'
       - File
     doc: Path to the output VCF file
     outputBinding:
-      glob: $(inputs.output_vcf_file)
+      glob: $(inputs.output_vcf_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbtamr:1.0.3--pyhdfd78af_0

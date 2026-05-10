@@ -473,6 +473,12 @@ inputs:
       usearch.
     inputBinding:
       position: 101
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
@@ -480,7 +486,9 @@ outputs:
       at the beginning of the LotuS3 run. Please ensure this is a new directory or
       contains only disposable data!'
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lotus3:3.03--hdfd78af_1

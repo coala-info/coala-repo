@@ -89,6 +89,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_align_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_align_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-align-file
 outputs:
   - id: cmfile_output
     type: File
@@ -101,7 +109,9 @@ outputs:
       - File
     doc: the output motif structural alignment in stockholm format
     outputBinding:
-      glob: $(inputs.output_align_file)
+      glob: $(inputs.output_align_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmfinder:0.4.1.9--pl5.22.0_1

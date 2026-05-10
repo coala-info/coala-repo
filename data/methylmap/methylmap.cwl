@@ -147,6 +147,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: output_path
+    type: string
+    doc: TSV file to write the frequencies to.
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -154,7 +160,9 @@ outputs:
       - File
     doc: TSV file to write the frequencies to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylmap:0.5.11--pyhdfd78af_0

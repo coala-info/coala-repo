@@ -242,6 +242,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: --verify
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 105
+      prefix: --output-directory
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -249,14 +265,16 @@ outputs:
       - File
     doc: Write file to FILE when downloading single file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: Save files to DIRECTORY/
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sra-tools:3.2.1--h4304569_1

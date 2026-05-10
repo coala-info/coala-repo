@@ -203,6 +203,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --url
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -211,7 +217,9 @@ outputs:
     doc: "Output file, if not specified, output is written to\n                  \
       \      STDOUT."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vembrane:2.4.0--pyhdfd78af_0

@@ -83,6 +83,45 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trimq
+  - id: cram_out_path
+    type:
+      - 'null'
+      - string
+    doc: CRAM output. For IO efficiency, you can output CRAM or
+    inputBinding:
+      position: 102
+      prefix: --cram
+  - id: logs_directory_path
+    type:
+      - 'null'
+      - Directory
+    inputBinding:
+      position: 103
+      prefix: --logs
+  - id: r1_out_path
+    type:
+      - 'null'
+      - string
+    doc: Read 1 output. For IO efficiency, you can output CRAM
+    inputBinding:
+      position: 104
+      prefix: --out
+  - id: r2_out_path
+    type:
+      - 'null'
+      - string
+    doc: Read 2 output
+    inputBinding:
+      position: 105
+      prefix: --out2
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Stats output (json)
+    inputBinding:
+      position: 106
+      prefix: --stats
 outputs:
   - id: cram_out
     type:
@@ -91,7 +130,7 @@ outputs:
     doc: CRAM output. For IO efficiency, you can output CRAM or fastq, but not 
       both. If you need both, convert the output afterwards.
     outputBinding:
-      glob: $(inputs.cram_out)
+      glob: $(inputs.cram_out_path)
   - id: r1_out
     type:
       - 'null'
@@ -99,26 +138,28 @@ outputs:
     doc: Read 1 output. For IO efficiency, you can output CRAM or fastq, but not
       both. If you need both, convert the output afterwards.
     outputBinding:
-      glob: $(inputs.r1_out)
+      glob: $(inputs.r1_out_path)
   - id: r2_out
     type:
       - 'null'
       - File
     doc: Read 2 output
     outputBinding:
-      glob: $(inputs.r2_out)
+      glob: $(inputs.r2_out_path)
   - id: stats
     type: File
     doc: Stats output (json)
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
   - id: logs_directory
     type:
       - 'null'
       - Directory
     doc: 'Log output directory. Default: logs are discarded.'
     outputBinding:
-      glob: $(inputs.logs_directory)
+      glob: $(inputs.logs_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atol-qc-raw-shortread:0.2.2--pyhdfd78af_0

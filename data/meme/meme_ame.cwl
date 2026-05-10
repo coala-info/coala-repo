@@ -29,8 +29,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: control sequences in FASTA format or the keyword '--shuffle--' to use shuffled
-      versions of the primary sequences
+    doc: control sequences in FASTA format or the keyword '--shuffle--' to use 
+      shuffled versions of the primary sequences
     inputBinding:
       position: 103
       prefix: --control
@@ -55,7 +55,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: maximum FASTA score for sequence to be positive (requires --poslist pwm)
+    doc: maximum FASTA score for sequence to be positive (requires --poslist 
+      pwm)
     inputBinding:
       position: 103
       prefix: --fasta-threshold
@@ -180,6 +181,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --xalph
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
+  - id: output_dir_overwrite_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_overwrite_path`
+    inputBinding:
+      position: 105
+      prefix: --output-dir-overwrite
 outputs:
   - id: output_dir
     type:
@@ -187,14 +204,16 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_dir_overwrite
     type:
       - 'null'
       - Directory
     doc: overwrite output directory
     outputBinding:
-      glob: $(inputs.output_dir_overwrite)
+      glob: $(inputs.output_dir_overwrite_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0

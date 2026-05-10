@@ -22,6 +22,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-sample-vcf
+  - id: output_hmnfusion_xlsx_path
+    type: string
+    doc: Output or path parameter `output_hmnfusion_xlsx_path`
+    inputBinding:
+      position: 102
+      prefix: --output-hmnfusion-xlsx
 outputs:
   - id: output_hmnfusion_xlsx
     type:
@@ -29,7 +35,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_hmnfusion_xlsx)
+      glob: $(inputs.output_hmnfusion_xlsx_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0

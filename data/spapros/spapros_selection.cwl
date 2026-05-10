@@ -11,6 +11,11 @@ inputs:
     doc: Path to the h5ad file
     inputBinding:
       position: 1
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -18,7 +23,9 @@ outputs:
       - File
     doc: Output path
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spapros:0.1.6--pyhdfd78af_0

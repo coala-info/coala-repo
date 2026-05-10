@@ -60,6 +60,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wait
+  - id: results_path_path
+    type: string
+    doc: Output or path parameter `results_path_path`
+    inputBinding:
+      position: 102
+      prefix: --results-path
 outputs:
   - id: results_path
     type:
@@ -67,7 +73,9 @@ outputs:
       - Directory
     doc: Path to directory where to save archive with results
     outputBinding:
-      glob: $(inputs.results_path)
+      glob: $(inputs.results_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jpredapi:1.5.6--py_0

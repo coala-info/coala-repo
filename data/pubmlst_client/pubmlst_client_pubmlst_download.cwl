@@ -27,6 +27,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --scheme_name
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -34,7 +40,9 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pubmlst_client:0.2.0--py_0

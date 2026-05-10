@@ -89,6 +89,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbosity
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -96,7 +102,9 @@ outputs:
       - File
     doc: Path where pin file will be written instead of make-pin.pin.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -100,6 +100,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --warm-start-sol
+  - id: output_id_mapping_path
+    type: string
+    doc: Output or path parameter `output_id_mapping_path`
+    inputBinding:
+      position: 104
+      prefix: --output-id-mapping
 outputs:
   - id: output_id_mapping
     type:
@@ -107,7 +113,9 @@ outputs:
       - File
     doc: writs a table with ID-to-gene extremity mapping
     outputBinding:
-      glob: $(inputs.output_id_mapping)
+      glob: $(inputs.output_id_mapping_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spp-dcj:2.0.0--pyh7e72e81_0

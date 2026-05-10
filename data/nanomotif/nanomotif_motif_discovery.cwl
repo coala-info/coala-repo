@@ -133,6 +133,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: out_path
+    type: string
+    doc: path to the output folder
+    inputBinding:
+      position: 104
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -140,7 +146,9 @@ outputs:
       - Directory
     doc: path to the output folder
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0

@@ -114,6 +114,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_1_path`
+    inputBinding:
+      position: 103
+      prefix: --output-1
+  - id: output_2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_2_path`
+    inputBinding:
+      position: 104
+      prefix: --output-2
 outputs:
   - id: output_1
     type:
@@ -126,7 +142,7 @@ outputs:
       option. If no output path is given, the same compression\n          as the input
       file will be used."
     outputBinding:
-      glob: $(inputs.output_1)
+      glob: $(inputs.output_1_path)
   - id: output_2
     type:
       - 'null'
@@ -138,7 +154,9 @@ outputs:
       option. If no output path is given, the same compression\n          as the input
       file will be used."
     outputBinding:
-      glob: $(inputs.output_2)
+      glob: $(inputs.output_2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nohuman:0.5.0--hbbf5808_0

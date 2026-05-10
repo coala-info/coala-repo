@@ -80,6 +80,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -87,7 +93,9 @@ outputs:
       - Directory
     doc: Directory to write the binary files containing the 'unique' lengths to.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/newmap:0.2--py312h9c9b0c2_1

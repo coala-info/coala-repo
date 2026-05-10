@@ -273,6 +273,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -280,7 +286,9 @@ outputs:
       - File
     doc: use <file> for output (this option can be passed MULTIPLE times)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mbuffer:20160228--h7b50bb2_8

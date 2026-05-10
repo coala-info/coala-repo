@@ -19,13 +19,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ks
+  - id: output_object_file_path
+    type: string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
 outputs:
   - id: output_object_file
     type: File
     doc: File name for R object of type 'SingleCellExperiment' from SC3 in which
       to store the kmeans clustering as metadata.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sc3-scripts:0.0.6--r351_0

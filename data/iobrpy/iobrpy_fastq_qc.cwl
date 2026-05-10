@@ -52,12 +52,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --suffix1
+  - id: path2_fastp_path
+    type: string
+    doc: Output or path parameter `path2_fastp_path`
+    inputBinding:
+      position: 102
+      prefix: --path2-fastp
 outputs:
   - id: path2_fastp
     type: Directory
     doc: Output directory for cleaned FASTQ files
     outputBinding:
-      glob: $(inputs.path2_fastp)
+      glob: $(inputs.path2_fastp_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0

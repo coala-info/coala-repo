@@ -29,6 +29,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bam_path`
+    inputBinding:
+      position: 103
+      prefix: --bam
+  - id: ubam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ubam_path`
+    inputBinding:
+      position: 104
+      prefix: --ubam
 outputs:
   - id: bam
     type:
@@ -36,14 +52,16 @@ outputs:
       - File
     doc: output bam
     outputBinding:
-      glob: $(inputs.bam)
+      glob: $(inputs.bam_path)
   - id: ubam
     type:
       - 'null'
       - File
     doc: output uncompressed bam
     outputBinding:
-      glob: $(inputs.ubam)
+      glob: $(inputs.ubam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fade:0.6.0--h9ee0642_0

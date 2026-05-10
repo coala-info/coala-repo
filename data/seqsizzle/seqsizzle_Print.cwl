@@ -81,6 +81,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --quality-threshold
+  - id: save_patterns_path
+    type: string
+    doc: Output or path parameter `save_patterns_path`
+    inputBinding:
+      position: 104
+      prefix: --save-patterns
 outputs:
   - id: save_patterns
     type:
@@ -90,7 +96,9 @@ outputs:
       the future since you can now hit Ctrl-S in the search panel to save the 
       patterns
     outputBinding:
-      glob: $(inputs.save_patterns)
+      glob: $(inputs.save_patterns_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqsizzle:0.4.1--h790517f_0

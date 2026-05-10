@@ -429,26 +429,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --very-verbose
+  - id: output_bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bed_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bed
+  - id: output_parameters_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_parameters_path`
+    inputBinding:
+      position: 103
+      prefix: --output-parameters
+  - id: output_regions_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_regions_path`
+    inputBinding:
+      position: 104
+      prefix: --output-regions
 outputs:
   - id: output_bed
     type: File
     doc: 'Output file to write crosslink sites. Valid filetype is: .bed.'
     outputBinding:
-      glob: $(inputs.output_bed)
+      glob: $(inputs.output_bed_path)
   - id: output_regions
     type:
       - 'null'
       - File
     doc: 'Output file to write binding regions. Valid filetype is: .bed.'
     outputBinding:
-      glob: $(inputs.output_regions)
+      glob: $(inputs.output_regions_path)
   - id: output_parameters
     type:
       - 'null'
       - File
     doc: Output file to write learned parameters.
     outputBinding:
-      glob: $(inputs.output_parameters)
+      glob: $(inputs.output_parameters_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pureclip:1.3.1--r44h9ee0642_2

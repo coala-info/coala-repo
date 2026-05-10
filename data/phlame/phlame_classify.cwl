@@ -87,17 +87,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_data_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_data_path`
+    inputBinding:
+      position: 102
+      prefix: --output-data
+  - id: output_frequencies_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_frequencies_path`
+    inputBinding:
+      position: 103
+      prefix: --output-frequencies
 outputs:
   - id: output_frequencies
     type: File
     doc: Path to output frequencies file (required).
     outputBinding:
-      glob: $(inputs.output_frequencies)
+      glob: $(inputs.output_frequencies_path)
   - id: output_data
     type: File
     doc: Path to output data file (required).
     outputBinding:
-      glob: $(inputs.output_data)
+      glob: $(inputs.output_data_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phlame:1.1.0--pyhdfd78af_0

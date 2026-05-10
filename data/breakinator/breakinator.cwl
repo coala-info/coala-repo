@@ -102,6 +102,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -109,7 +115,9 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/breakinator:1.1.1--h067a5f5_1

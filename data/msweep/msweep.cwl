@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -54,7 +60,9 @@ outputs:
       - File
     doc: Prefix for the output files.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msweep:2.2.1--h503566f_1

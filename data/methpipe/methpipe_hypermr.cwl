@@ -65,6 +65,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -viterbi
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: params_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `params_out_path`
+    inputBinding:
+      position: 104
+      prefix: --params-out
+  - id: scores_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `scores_output_path`
+    inputBinding:
+      position: 105
+      prefix: --scores-output
 outputs:
   - id: output_file
     type:
@@ -72,21 +96,23 @@ outputs:
       - File
     doc: output file (BED format)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: scores_output
     type:
       - 'null'
       - File
     doc: output file for posterior scores
     outputBinding:
-      glob: $(inputs.scores_output)
+      glob: $(inputs.scores_output_path)
   - id: params_out
     type:
       - 'null'
       - File
     doc: HMM parameters file
     outputBinding:
-      glob: $(inputs.params_out)
+      glob: $(inputs.params_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6

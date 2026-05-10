@@ -122,12 +122,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sig-cutoff
+  - id: output_prefix_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: Prefix for output files.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

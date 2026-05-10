@@ -244,6 +244,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmp_file
+  - id: bedpe_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bedpe_output_path`
+    inputBinding:
+      position: 102
+      prefix: --bedpe-output
+  - id: vcf_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_output_path`
+    inputBinding:
+      position: 103
+      prefix: --vcf-output
 outputs:
   - id: vcf_output
     type:
@@ -251,14 +267,16 @@ outputs:
       - File
     doc: VCF output file name
     outputBinding:
-      glob: $(inputs.vcf_output)
+      glob: $(inputs.vcf_output_path)
   - id: bedpe_output
     type:
       - 'null'
       - File
     doc: bedpe output file name
     outputBinding:
-      glob: $(inputs.bedpe_output)
+      glob: $(inputs.bedpe_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/telr:1.1--pyhdfd78af_0

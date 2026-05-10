@@ -42,12 +42,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -tmp
+  - id: output_db_path
+    type: string
+    doc: Output or path parameter `output_db_path`
+    inputBinding:
+      position: 102
+      prefix: --output-db
 outputs:
   - id: output_db
     type: File
     doc: Output protein DB
     outputBinding:
-      glob: $(inputs.output_db)
+      glob: $(inputs.output_db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ezaai:1.2.4--hdfd78af_0

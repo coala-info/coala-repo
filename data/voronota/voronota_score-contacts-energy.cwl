@@ -31,6 +31,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --potential-file
+  - id: atom_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `atom_scores_file_path`
+    inputBinding:
+      position: 103
+      prefix: --atom-scores-file
+  - id: inter_atom_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `inter_atom_scores_file_path`
+    inputBinding:
+      position: 104
+      prefix: --inter-atom-scores-file
 outputs:
   - id: inter_atom_scores_file
     type:
@@ -38,14 +54,16 @@ outputs:
       - File
     doc: file path to output inter-atom scores
     outputBinding:
-      glob: $(inputs.inter_atom_scores_file)
+      glob: $(inputs.inter_atom_scores_file_path)
   - id: atom_scores_file
     type:
       - 'null'
       - File
     doc: file path to output atom scores
     outputBinding:
-      glob: $(inputs.atom_scores_file)
+      glob: $(inputs.atom_scores_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0

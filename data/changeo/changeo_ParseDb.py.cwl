@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ParseDb.py
 label: changeo_ParseDb.py
-doc: "A utility to parse, filter, and manipulate Change-O tab-delimited database files.\n
-  \nTool homepage: http://changeo.readthedocs.io"
+doc: "A utility to parse, filter, and manipulate Change-O tab-delimited database files.\n\
+  \ \nTool homepage: http://changeo.readthedocs.io"
 inputs:
   - id: action
     type: string
@@ -69,6 +69,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -u
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -76,7 +82,9 @@ outputs:
       - Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/changeo:1.3.4--pyhdfd78af_0

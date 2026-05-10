@@ -65,6 +65,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -V
+  - id: output_option_path
+    type: string
+    doc: Output or path parameter `output_option_path`
+    inputBinding:
+      position: 103
+      prefix: --output-option
 outputs:
   - id: output_option
     type:
@@ -72,7 +78,9 @@ outputs:
       - File
     doc: output option
     outputBinding:
-      glob: $(inputs.output_option)
+      glob: $(inputs.output_option_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0

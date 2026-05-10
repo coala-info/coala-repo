@@ -88,12 +88,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --timeline-file
+  - id: output_fp_path
+    type: string
+    doc: Output or path parameter `output_fp_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fp
 outputs:
   - id: output_fp
     type: File
     doc: Path to the output file. Must end with .ndjson.
     outputBinding:
-      glob: $(inputs.output_fp)
+      glob: $(inputs.output_fp_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sr2silo:1.8.0--pyhdfd78af_0

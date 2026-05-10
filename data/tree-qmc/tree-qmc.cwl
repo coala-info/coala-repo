@@ -49,8 +49,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Contract internal branches with support less than specified threshold after
-      mapping suport to the interval 0 to 1
+    doc: Contract internal branches with support less than specified threshold 
+      after mapping suport to the interval 0 to 1
     inputBinding:
       position: 101
       prefix: --contract
@@ -145,8 +145,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Compute partitioned coalescent support (PCS) for specified branch in species
-      tree in file and then exit
+    doc: Compute partitioned coalescent support (PCS) for specified branch in 
+      species tree in file and then exit
     inputBinding:
       position: 101
       prefix: --pcsonly
@@ -162,8 +162,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Root species tree at given species if possible (list of species separated
-      by commas)
+    doc: Root species tree at given species if possible (list of species 
+      separated by commas)
     inputBinding:
       position: 101
       prefix: --root
@@ -179,8 +179,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use shared taxon data structure to normalize quartet weights (Do NOT use
-      unless there are NO missing data)
+    doc: Use shared taxon data structure to normalize quartet weights (Do NOT 
+      use unless there are NO missing data)
     inputBinding:
       position: 101
       prefix: --shared
@@ -217,6 +217,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: writetable_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `writetable_path`
+    inputBinding:
+      position: 103
+      prefix: --writetable
 outputs:
   - id: output
     type:
@@ -224,14 +240,16 @@ outputs:
       - File
     doc: 'File for writing output species tree (default: stdout)'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: writetable
     type:
       - 'null'
       - File
     doc: Write branch and quartet support information to CSV
     outputBinding:
-      glob: $(inputs.writetable)
+      glob: $(inputs.writetable_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tree-qmc:3.0.4--hee07fbb_0

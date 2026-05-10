@@ -25,8 +25,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Loci with up to this number of alternative supporting reads in the bulk control
-      sample will be skiped.
+    doc: Loci with up to this number of alternative supporting reads in the bulk
+      control sample will be skiped.
     inputBinding:
       position: 101
       prefix: --bns
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Paramter estimation rate, i.e. the fraction of loops used to estimate the
-      different parameters.
+    doc: Paramter estimation rate, i.e. the fraction of loops used to estimate 
+      the different parameters.
     inputBinding:
       position: 101
       prefix: -e
@@ -67,8 +67,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File name of inclusion list (VCF format) containing Variants (CHROM, POS,
-      REF, ALT) that should be included.
+    doc: File name of inclusion list (VCF format) containing Variants (CHROM, 
+      POS, REF, ALT) that should be included.
     inputBinding:
       position: 101
       prefix: --inc
@@ -156,8 +156,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Mean of acceptable variant allele frequency across all cells for a specific
-      locus.
+    doc: Mean of acceptable variant allele frequency across all cells for a 
+      specific locus.
     inputBinding:
       position: 101
       prefix: --mff
@@ -165,7 +165,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum required frequency of reads supporting the alternative per cell.
+    doc: Minimum required frequency of reads supporting the alternative per 
+      cell.
     inputBinding:
       position: 101
       prefix: --mf
@@ -213,8 +214,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Filename of mutations to exclude during the sequencing error rate estimation
-      (VCF format).
+    doc: Filename of mutations to exclude during the sequencing error rate 
+      estimation (VCF format).
     inputBinding:
       position: 101
       prefix: --me
@@ -238,8 +239,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Compute the parallel score = allow a mutation to be acquired twice independently
-      in the tree.
+    doc: Compute the parallel score = allow a mutation to be acquired twice 
+      independently in the tree.
     inputBinding:
       position: 101
       prefix: --lp
@@ -271,9 +272,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sampling step. If a value x different from 0 is specified, every x iteration,
-      after the burn in phase, an index will be writen to disk to provide a posterior
-      sampling.
+    doc: Sampling step. If a value x different from 0 is specified, every x 
+      iteration, after the burn in phase, an index will be writen to disk to 
+      provide a posterior sampling.
     inputBinding:
       position: 101
       prefix: --sa
@@ -341,6 +342,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zyg
+  - id: output_intermediate_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_intermediate_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-intermediate-dir
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_intermediate_dir
     type:
@@ -348,14 +365,16 @@ outputs:
       - Directory
     doc: Directory to store intermediate results.
     outputBinding:
-      glob: $(inputs.output_intermediate_dir)
+      glob: $(inputs.output_intermediate_dir_path)
   - id: output_prefix
     type:
       - 'null'
       - File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sciphin:1.0.1--h077b44d_4

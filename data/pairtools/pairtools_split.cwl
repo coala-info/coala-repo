@@ -54,6 +54,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --nproc-out
+  - id: output_pairs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_pairs_path`
+    inputBinding:
+      position: 103
+      prefix: --output-pairs
+  - id: output_sam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 104
+      prefix: --output-sam
 outputs:
   - id: output_pairs
     type:
@@ -63,7 +79,7 @@ outputs:
       \       the output is bgzip-/lz4c-compressed. If -, pairs are\n            \
       \           printed to stdout. If not specified, pairs are dropped."
     outputBinding:
-      glob: $(inputs.output_pairs)
+      glob: $(inputs.output_pairs_path)
   - id: output_sam
     type:
       - 'null'
@@ -73,7 +89,9 @@ outputs:
       \            printed to stdout. If not specified, sam entries are\n        \
       \               dropped."
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

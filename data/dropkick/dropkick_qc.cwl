@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quietly
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -42,7 +48,9 @@ outputs:
     doc: Output directory. Output will be placed in 
       [output-dir]/[name]_dropkick.h5ad. Default './'.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dropkick:1.2.8--py310h7eb0018_0

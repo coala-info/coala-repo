@@ -19,8 +19,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: where the new column should appear, 1 for the 1st column, 0 for the last
-      column
+    doc: where the new column should appear, 1 for the 1st column, 0 for the 
+      last column
     inputBinding:
       position: 101
       prefix: --at
@@ -100,8 +100,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if given, a quote may appear in an unquoted field and a non-doubled quote
-      may appear in a quoted field
+    doc: if given, a quote may appear in an unquoted field and a non-doubled 
+      quote may appear in a quoted field
     inputBinding:
       position: 101
       prefix: --lazy-quotes
@@ -189,10 +189,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specifies that the input CSV file is delimited with tabs. Overrides "-d"
+    doc: specifies that the input CSV file is delimited with tabs. Overrides 
+      "-d"
     inputBinding:
       position: 101
       prefix: --tabs
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -200,7 +207,9 @@ outputs:
       - File
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/csvtk:0.31.0--h9ee0642_0

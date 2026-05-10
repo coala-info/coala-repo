@@ -12,8 +12,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Data ID (column 1) for --stats-out output table to store motif search results
-      (requires --stats-out to be set)
+    doc: Data ID (column 1) for --stats-out output table to store motif search 
+      results (requires --stats-out to be set)
     inputBinding:
       position: 101
       prefix: --data-id
@@ -29,8 +29,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Genomic annotations GTF file (.gtf or .gtf.gz). Required for --in type (2)
-      or (3)
+    doc: Genomic annotations GTF file (.gtf or .gtf.gz). Required for --in type 
+      (2) or (3)
     inputBinding:
       position: 101
       prefix: --gtf
@@ -46,11 +46,27 @@ inputs:
       prefix: --in
   - id: motif
     type: string
-    doc: Motif or regular expression (RNA letters!) to search for in --in folder context
-      sequences (e.g. --motif '[AC]UGCUAA')
+    doc: Motif or regular expression (RNA letters!) to search for in --in folder
+      context sequences (e.g. --motif '[AC]UGCUAA')
     inputBinding:
       position: 101
       prefix: --motif
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: stats_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_out_path`
+    inputBinding:
+      position: 103
+      prefix: --stats-out
 outputs:
   - id: out
     type:
@@ -58,15 +74,18 @@ outputs:
       - Directory
     doc: Output results folder, to store motif hit regions in BED files
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: stats_out
     type:
       - 'null'
       - File
-    doc: Output table to store motif search results in (for --in type (1) (requires
-      --data-id to be set). If table exists, append results row to table
+    doc: Output table to store motif search results in (for --in type (1) 
+      (requires --data-id to be set). If table exists, append results row to 
+      table
     outputBinding:
-      glob: $(inputs.stats_out)
+      glob: $(inputs.stats_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peakhood:0.3--pyhdfd78af_0

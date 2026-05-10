@@ -82,6 +82,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -use-mdins
+  - id: csv_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_output_path`
+    inputBinding:
+      position: 102
+      prefix: --csv-output
+  - id: decomp_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `decomp_output_path`
+    inputBinding:
+      position: 103
+      prefix: --decomp-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -89,21 +113,23 @@ outputs:
       - File
     doc: Output file with the calculated energy values.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: decomp_output
     type:
       - 'null'
       - File
     doc: Output file for decomposition analysis.
     outputBinding:
-      glob: $(inputs.decomp_output)
+      glob: $(inputs.decomp_output_path)
   - id: csv_output
     type:
       - 'null'
       - File
     doc: CSV output file for spreadsheet programs.
     outputBinding:
-      glob: $(inputs.csv_output)
+      glob: $(inputs.csv_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ambertools:21.10

@@ -68,6 +68,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: gff_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gff_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --gff-output-file
+  - id: nucleotide_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `nucleotide_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --nucleotide-output-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: protein_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `protein_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --protein-output-file
+  - id: starts_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `starts_output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --starts-output-file
 outputs:
   - id: output_file
     type:
@@ -75,35 +115,37 @@ outputs:
       - File
     doc: Specify output file (default writes to stdout).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: protein_output_file
     type:
       - 'null'
       - File
     doc: Write protein translations to the selected file.
     outputBinding:
-      glob: $(inputs.protein_output_file)
+      glob: $(inputs.protein_output_file_path)
   - id: nucleotide_output_file
     type:
       - 'null'
       - File
     doc: Write nucleotide sequences of genes to the selected file.
     outputBinding:
-      glob: $(inputs.nucleotide_output_file)
+      glob: $(inputs.nucleotide_output_file_path)
   - id: gff_output_file
     type:
       - 'null'
       - File
     doc: Write GFF output to the selected file.
     outputBinding:
-      glob: $(inputs.gff_output_file)
+      glob: $(inputs.gff_output_file_path)
   - id: starts_output_file
     type:
       - 'null'
       - File
     doc: Write all potential genes (with scores) to the selected file.
     outputBinding:
-      glob: $(inputs.starts_output_file)
+      glob: $(inputs.starts_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prodigal:2.60--1

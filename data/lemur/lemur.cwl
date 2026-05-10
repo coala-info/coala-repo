@@ -158,6 +158,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --width-filter
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -165,7 +171,9 @@ outputs:
       - Directory
     doc: Folder where the Mob output will be stored
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lemur:1.0.1--hdfd78af_0

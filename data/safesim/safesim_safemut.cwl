@@ -119,22 +119,48 @@ inputs:
     inputBinding:
       position: 101
       prefix: -F
+  - id: output_r1_fastq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_r1_fastq_path`
+    inputBinding:
+      position: 102
+      prefix: --output-r1-fastq
+  - id: output_r2_fastq_gz_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_r2_fastq_gz_path`
+    inputBinding:
+      position: 103
+      prefix: --output-r2-fastq-gz
+  - id: output_unpaired_fastq_gz_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_unpaired_fastq_gz_path`
+    inputBinding:
+      position: 104
+      prefix: --output-unpaired-fastq-gz
 outputs:
   - id: output_r1_fastq
     type: File
     doc: OUTPUT-R1-FASTQ
     outputBinding:
-      glob: $(inputs.output_r1_fastq)
+      glob: $(inputs.output_r1_fastq_path)
   - id: output_r2_fastq_gz
     type: File
     doc: OUTPUT-R2-FASTQ.gz
     outputBinding:
-      glob: $(inputs.output_r2_fastq_gz)
+      glob: $(inputs.output_r2_fastq_gz_path)
   - id: output_unpaired_fastq_gz
     type: File
     doc: OUTPUT-UNPAIRED-FASTQ.GZ
     outputBinding:
-      glob: $(inputs.output_unpaired_fastq_gz)
+      glob: $(inputs.output_unpaired_fastq_gz_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/safesim:0.1.6.8d44580--h7d57edc_4

@@ -25,12 +25,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ribotricer_index
+  - id: saveto_path
+    type: string
+    doc: Output or path parameter `saveto_path`
+    inputBinding:
+      position: 102
+      prefix: --saveto
 outputs:
   - id: saveto
     type: File
     doc: Path to output file
     outputBinding:
-      glob: $(inputs.saveto)
+      glob: $(inputs.saveto_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribotricer:1.5.0--pyhdfd78af_0

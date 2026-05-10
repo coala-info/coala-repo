@@ -134,6 +134,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: origins_file_path
+    type: string
+    doc: Output or path parameter `origins_file_path`
+    inputBinding:
+      position: 102
+      prefix: --origins-file
 outputs:
   - id: origins_file
     type:
@@ -141,7 +147,9 @@ outputs:
       - File
     doc: Full file path of where variant origins should be stored (if enabled)
     outputBinding:
-      glob: $(inputs.origins_file)
+      glob: $(inputs.origins_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beacon2-import:2.2.4--pyhdfd78af_0

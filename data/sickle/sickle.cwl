@@ -71,6 +71,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --trunc-n
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: output_pe2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_pe2_path`
+    inputBinding:
+      position: 104
+      prefix: --output-pe2
+  - id: output_single_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_single_path`
+    inputBinding:
+      position: 105
+      prefix: --output-single
 outputs:
   - id: output_file
     type:
@@ -78,21 +102,23 @@ outputs:
       - File
     doc: Output trimmed FASTQ file (for 'se' or forward reads in 'pe')
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_pe2
     type:
       - 'null'
       - File
     doc: Output reverse trimmed FASTQ file (for 'pe' mode)
     outputBinding:
-      glob: $(inputs.output_pe2)
+      glob: $(inputs.output_pe2_path)
   - id: output_single
     type:
       - 'null'
       - File
     doc: Output trimmed singles FASTQ file (for 'pe' mode)
     outputBinding:
-      glob: $(inputs.output_single)
+      glob: $(inputs.output_single_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sickle:v1.33-1b1-deb_cv1

@@ -386,6 +386,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: --working-directory-dev-shm
+  - id: archive_otu_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `archive_otu_table_path`
+    inputBinding:
+      position: 102
+      prefix: --archive-otu-table
+  - id: otu_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `otu_table_path`
+    inputBinding:
+      position: 103
+      prefix: --otu-table
+  - id: output_jplace_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_jplace_path`
+    inputBinding:
+      position: 104
+      prefix: --output-jplace
+  - id: taxonomic_profile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `taxonomic_profile_path`
+    inputBinding:
+      position: 105
+      prefix: --taxonomic-profile
+  - id: taxonomic_profile_krona_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `taxonomic_profile_krona_path`
+    inputBinding:
+      position: 106
+      prefix: --taxonomic-profile-krona
 outputs:
   - id: taxonomic_profile
     type:
@@ -395,7 +435,7 @@ outputs:
       table. Taxonomic profiles output can be further converted to other formats
       using singlem summarise.
     outputBinding:
-      glob: $(inputs.taxonomic_profile)
+      glob: $(inputs.taxonomic_profile_path)
   - id: taxonomic_profile_krona
     type:
       - 'null'
@@ -403,21 +443,21 @@ outputs:
     doc: output a 'condensed' taxonomic profile for each sample based on the OTU
       table
     outputBinding:
-      glob: $(inputs.taxonomic_profile_krona)
+      glob: $(inputs.taxonomic_profile_krona_path)
   - id: otu_table
     type:
       - 'null'
       - File
     doc: output OTU table
     outputBinding:
-      glob: $(inputs.otu_table)
+      glob: $(inputs.otu_table_path)
   - id: archive_otu_table
     type:
       - 'null'
       - File
     doc: output OTU table in archive format for making DBs etc.
     outputBinding:
-      glob: $(inputs.archive_otu_table)
+      glob: $(inputs.archive_otu_table_path)
   - id: output_jplace
     type:
       - 'null'
@@ -426,7 +466,9 @@ outputs:
       with this string, each with one entry per OTU. Requires 'pplacer' as the 
       --assignment_method
     outputBinding:
-      glob: $(inputs.output_jplace)
+      glob: $(inputs.output_jplace_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

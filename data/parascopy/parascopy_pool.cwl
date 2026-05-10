@@ -33,7 +33,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input indexed BAM/CRAM files. All entries should follow the format "filename[::sample]"
+    doc: Input indexed BAM/CRAM files. All entries should follow the format 
+      "filename[::sample]"
     inputBinding:
       position: 101
       prefix: --input
@@ -41,8 +42,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A file containing a list of input BAM/CRAM files. All lines should follow
-      the format "filename[ sample]"
+    doc: A file containing a list of input BAM/CRAM files. All lines should 
+      follow the format "filename[ sample]"
     inputBinding:
       position: 101
       prefix: --input-list
@@ -50,9 +51,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output read mates even if they are outside of the duplication, if the distance
-      between mates is less than <int>. Use 0 to skip all mates outside the duplicated
-      regions. Use inf|infinity to write all mapped read mates.
+    doc: Output read mates even if they are outside of the duplication, if the 
+      distance between mates is less than <int>. Use 0 to skip all mates outside
+      the duplicated regions. Use inf|infinity to write all mapped read mates.
     inputBinding:
       position: 101
       prefix: --mate-dist
@@ -66,7 +67,8 @@ inputs:
       prefix: --quiet
   - id: region
     type: string
-    doc: Single region in format "chr:start-end". Start and end are 1-based inclusive.
+    doc: Single region in format "chr:start-end". Start and end are 1-based 
+      inclusive.
     inputBinding:
       position: 101
       prefix: --region
@@ -74,7 +76,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Path to samtools executable. Use python wrapper if "none", can lead to errors.
+    doc: Path to samtools executable. Use python wrapper if "none", can lead to 
+      errors.
     inputBinding:
       position: 101
       prefix: --samtools
@@ -84,20 +87,39 @@ inputs:
     inputBinding:
       position: 101
       prefix: --table
+  - id: only_regions_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `only_regions_path`
+    inputBinding:
+      position: 102
+      prefix: --only-regions
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: Directory
-    doc: Output BAM/CRAM file if corresponding extension is used. Otherwise, write
-      CRAM files in the output directory.
+    doc: Output BAM/CRAM file if corresponding extension is used. Otherwise, 
+      write CRAM files in the output directory.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: only_regions
     type:
       - 'null'
       - File
-    doc: Append regions, used for pooling and realigning, to this file, and stop.
+    doc: Append regions, used for pooling and realigning, to this file, and 
+      stop.
     outputBinding:
-      glob: $(inputs.only_regions)
+      glob: $(inputs.only_regions_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

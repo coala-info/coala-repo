@@ -31,12 +31,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --overwrite
+  - id: output_metadata_path
+    type: string
+    doc: Output or path parameter `output_metadata_path`
+    inputBinding:
+      position: 102
+      prefix: --output-metadata
 outputs:
   - id: output_metadata
     type: File
     doc: Path to the output csv file where the entity metadata will be stored.
     outputBinding:
-      glob: $(inputs.output_metadata)
+      glob: $(inputs.output_metadata_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

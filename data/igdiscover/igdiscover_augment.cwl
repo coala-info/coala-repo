@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sequence-type
+  - id: stats_path
+    type: string
+    doc: Write statistics in JSON format to FILE
+    inputBinding:
+      position: 104
+      prefix: --stats
 outputs:
   - id: stats
     type:
@@ -41,7 +47,9 @@ outputs:
       - File
     doc: Write statistics in JSON format to FILE
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igdiscover:0.15.1--pyhdfd78af_2

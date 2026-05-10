@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bitmapperBS
 label: bitmapperbs_bitmapperBS
-doc: "A fast and accurate read aligner for whole-genome bisulfite sequencing.\n\n
-  Tool homepage: https://github.com/chhylp123/BitMapperBS"
+doc: "A fast and accurate read aligner for whole-genome bisulfite sequencing.\n\n\
+  \ Tool homepage: https://github.com/chhylp123/BitMapperBS"
 inputs:
   - id: ambiguous_out
     type:
@@ -34,8 +34,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Set bitmapperBS in fast mode (default). This option is only available in
-      paired-end mode.
+    doc: Set bitmapperBS in fast mode (default). This option is only available 
+      in paired-end mode.
     inputBinding:
       position: 101
       prefix: --fast
@@ -67,8 +67,9 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Set the folder that stores the genome indexes. If this option is not set,
-      the indexes would be stores in the same folder of genome (input fasta file).
+    doc: Set the folder that stores the genome indexes. If this option is not 
+      set, the indexes would be stores in the same folder of genome (input fasta
+      file).
     inputBinding:
       position: 101
       prefix: --index_folder
@@ -148,8 +149,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Search in the specified genome. Provide the path to the fasta file or the
-      index folder.
+    doc: Search in the specified genome. Provide the path to the fasta file or 
+      the index folder.
     inputBinding:
       position: 101
       prefix: --search
@@ -157,8 +158,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Set bitmapperBS in sensitive mode. This option is only available in paired-end
-      mode.
+    doc: Set bitmapperBS in sensitive mode. This option is only available in 
+      paired-end mode.
     inputBinding:
       position: 101
       prefix: --sensitive
@@ -166,8 +167,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input sequences in fastq/fastq.gz format [file]. This option is used for
-      single-end reads.
+    doc: Input sequences in fastq/fastq.gz format [file]. This option is used 
+      for single-end reads.
     inputBinding:
       position: 101
       prefix: --seq
@@ -175,8 +176,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input sequences in fastq/fastq.gz format [file] (First file). Use this option
-      to indicate the first file of paired-end reads.
+    doc: Input sequences in fastq/fastq.gz format [file] (First file). Use this 
+      option to indicate the first file of paired-end reads.
     inputBinding:
       position: 101
       prefix: --seq1
@@ -184,8 +185,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input sequences in fastq/fastq.gz format [file] (Second file). Use this option
-      to indicate the second file of paired-end reads.
+    doc: Input sequences in fastq/fastq.gz format [file] (Second file). Use this
+      option to indicate the second file of paired-end reads.
     inputBinding:
       position: 101
       prefix: --seq2
@@ -197,36 +198,71 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: mapstats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mapstats_path`
+    inputBinding:
+      position: 102
+      prefix: --mapstats
+  - id: methy_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `methy_out_path`
+    inputBinding:
+      position: 103
+      prefix: --methy-out
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
+  - id: unmapped_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unmapped_out_path`
+    inputBinding:
+      position: 105
+      prefix: --unmapped-out
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Output of the mapped sequences in SAM or BAM format. The default is "stdout"
-      (standard output) in SAM format.
+    doc: Output of the mapped sequences in SAM or BAM format. The default is 
+      "stdout" (standard output) in SAM format.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: methy_out
     type:
       - 'null'
       - File
-    doc: Output the intermediate methylation result files, instead of SAM or BAM files.
+    doc: Output the intermediate methylation result files, instead of SAM or BAM
+      files.
     outputBinding:
-      glob: $(inputs.methy_out)
+      glob: $(inputs.methy_out_path)
   - id: unmapped_out
     type:
       - 'null'
       - File
     doc: Report unmapped reads.
     outputBinding:
-      glob: $(inputs.unmapped_out)
+      glob: $(inputs.unmapped_out_path)
   - id: mapstats
     type:
       - 'null'
       - File
     doc: Output the statistical information of read alignment into file.
     outputBinding:
-      glob: $(inputs.mapstats)
+      glob: $(inputs.mapstats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bitmapperbs:1.0.2.3--hf5e1c6e_5

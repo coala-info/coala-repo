@@ -59,6 +59,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --strict_tags
+  - id: error_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `error_path`
+    inputBinding:
+      position: 103
+      prefix: --error
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -66,14 +82,16 @@ outputs:
       - File
     doc: Output file path
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: error
     type:
       - 'null'
       - File
     doc: Error file path
     outputBinding:
-      glob: $(inputs.error)
+      glob: $(inputs.error_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/primer3:2.6.1--pl5262h1b792b2_0

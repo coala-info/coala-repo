@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: RNAlien
 label: rnalien
 doc: "RNAlien is a tool for the construction of RNA family models. It automatically
-  collects sequences, performs structural alignments, and creates covariance models.\n
-  \nTool homepage: http://rna.tbi.univie.ac.at/rnalien/tool"
+  collects sequences, performs structural alignments, and creates covariance models.\n\
+  \ \nTool homepage: http://rna.tbi.univie.ac.at/rnalien/tool"
 inputs:
   - id: blast_database
     type:
@@ -44,6 +44,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -51,7 +57,9 @@ outputs:
       - Directory
     doc: Directory where the results will be stored
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnalien:1.8.0--1

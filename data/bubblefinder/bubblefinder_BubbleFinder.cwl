@@ -65,19 +65,37 @@ inputs:
     inputBinding:
       position: 102
       prefix: -j
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: report_json_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_json_file_path`
+    inputBinding:
+      position: 104
+      prefix: --report-json-file
 outputs:
   - id: output_file
     type: File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: report_json_file
     type:
       - 'null'
       - File
     doc: Write JSON metrics report
     outputBinding:
-      glob: $(inputs.report_json_file)
+      glob: $(inputs.report_json_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bubblefinder:1.0.3--h503566f_0

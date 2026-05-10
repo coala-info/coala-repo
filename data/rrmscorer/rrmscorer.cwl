@@ -86,6 +86,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --x_min
+  - id: aligned_output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `aligned_output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --aligned-output-dir
+  - id: csv_output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `csv_output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --csv-output-dir
+  - id: json_output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `json_output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --json-output-dir
+  - id: plot_output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `plot_output_dir_path`
+    inputBinding:
+      position: 105
+      prefix: --plot-output-dir
 outputs:
   - id: json_output_dir
     type:
@@ -93,28 +125,30 @@ outputs:
       - Directory
     doc: Store the results in a json file in the declared directory path
     outputBinding:
-      glob: $(inputs.json_output_dir)
+      glob: $(inputs.json_output_dir_path)
   - id: csv_output_dir
     type:
       - 'null'
       - Directory
     doc: Store the results in a CSV file in the declared directory path
     outputBinding:
-      glob: $(inputs.csv_output_dir)
+      glob: $(inputs.csv_output_dir_path)
   - id: plot_output_dir
     type:
       - 'null'
       - Directory
     doc: Store the plots in the declared directory path
     outputBinding:
-      glob: $(inputs.plot_output_dir)
+      glob: $(inputs.plot_output_dir_path)
   - id: aligned_output_dir
     type:
       - 'null'
       - Directory
     doc: Store the aligned sequences in the declared directory path
     outputBinding:
-      glob: $(inputs.aligned_output_dir)
+      glob: $(inputs.aligned_output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rrmscorer:1.0.11--pyhdfd78af_0

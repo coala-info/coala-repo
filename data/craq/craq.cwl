@@ -54,8 +54,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Mapping use map-pb/map-hifi/map-ont for PacBio CLR/HiFi or Nanopore vs reference
-      [ignored if .bam provided]
+    doc: Mapping use map-pb/map-hifi/map-ont for PacBio CLR/HiFi or Nanopore vs 
+      reference [ignored if .bam provided]
     inputBinding:
       position: 101
       prefix: --map
@@ -111,8 +111,8 @@ inputs:
     type:
       type: array
       items: string
-    doc: NGS short-read alignment(.bam) or sequences(.fq.gz), separated with comma
-      if paired
+    doc: NGS short-read alignment(.bam) or sequences(.fq.gz), separated with 
+      comma if paired
     inputBinding:
       position: 101
       prefix: --ngs_input
@@ -136,7 +136,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: An file including selected assembly IDs for plotting. Default use all IDs.
+    doc: An file including selected assembly IDs for plotting. Default use all 
+      IDs.
     inputBinding:
       position: 101
       prefix: --plot_ids
@@ -186,6 +187,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -193,7 +200,9 @@ outputs:
       - Directory
     doc: User-specified output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/craq:1.10--hdfd78af_0

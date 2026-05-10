@@ -17,6 +17,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ext
+  - id: output_path
+    type: string
+    doc: 'name for aggregated results  [default: aggregated_result.tsv]'
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -24,7 +30,9 @@ outputs:
       - File
     doc: name for aggregated results
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0

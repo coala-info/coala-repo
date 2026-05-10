@@ -46,12 +46,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+  - id: output_kmer_path
+    type: string
+    doc: Output or path parameter `output_kmer_path`
+    inputBinding:
+      position: 102
+      prefix: --output-kmer
 outputs:
   - id: output_kmer
     type: File
     doc: Output kmer
     outputBinding:
-      glob: $(inputs.output_kmer)
+      glob: $(inputs.output_kmer_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/novobreak:1.1.3rc--h7132678_8

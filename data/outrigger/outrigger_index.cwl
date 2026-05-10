@@ -147,6 +147,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --splice-types
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -157,7 +163,9 @@ outputs:
       you called the program)". You will need this file for the next step, 
       "outrigger psi"
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/outrigger:1.1.1--py35_0

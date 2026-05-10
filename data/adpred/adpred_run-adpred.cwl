@@ -29,13 +29,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --uniprot_id
+  - id: out_prefix_path
+    type: string
+    doc: Output or path parameter `out_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --out-prefix
 outputs:
   - id: out_prefix
     type: File
     doc: Prefix for output files (e.g., results will be saved to 
       <out_prefix>.predictions.csv)
     outputBinding:
-      glob: $(inputs.out_prefix)
+      glob: $(inputs.out_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/adpred:1.3.1--pyhdfd78af_0

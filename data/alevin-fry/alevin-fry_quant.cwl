@@ -40,8 +40,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: file containing list of barcodes to quantify, those not in this list will
-      be ignored
+    doc: file containing list of barcodes to quantify, those not in this list 
+      will be ignored
     inputBinding:
       position: 101
       prefix: --quant-subset
@@ -90,12 +90,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-mtx
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: output directory where quantification results will be written
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alevin-fry:0.11.2--ha6fb395_0

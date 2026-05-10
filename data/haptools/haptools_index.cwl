@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbosity
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -41,7 +47,9 @@ outputs:
       - File
     doc: A .hap file containing sorted and indexed haplotypes and variants
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haptools:0.6.2--pyhdfd78af_0

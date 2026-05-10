@@ -98,6 +98,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -g
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -105,7 +111,9 @@ outputs:
       - Directory
     doc: 'output folder (optional, default: speciesA.speciesB)'
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alloshp:2025.09.12--h7b50bb2_0

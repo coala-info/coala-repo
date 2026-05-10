@@ -49,6 +49,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -r
+  - id: output_pdf_path
+    type: string
+    doc: Output or path parameter `output_pdf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-pdf
 outputs:
   - id: output_pdf
     type:
@@ -56,7 +62,9 @@ outputs:
       - File
     doc: output pdf file
     outputBinding:
-      glob: $(inputs.output_pdf)
+      glob: $(inputs.output_pdf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vt:2015.11.10--2

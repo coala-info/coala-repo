@@ -66,6 +66,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_model_path
+    type: string
+    doc: Output or path parameter `output_model_path`
+    inputBinding:
+      position: 103
+      prefix: --output-model
 outputs:
   - id: output_model
     type:
@@ -73,7 +79,9 @@ outputs:
       - File
     doc: File to write the trained substitution model to
     outputBinding:
-      glob: $(inputs.output_model)
+      glob: $(inputs.output_model_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phast:1.9.7--h7eac25e_0

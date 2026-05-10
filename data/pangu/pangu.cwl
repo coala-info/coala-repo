@@ -48,7 +48,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Logging level (CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET). Default INFO
+    doc: Logging level (CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET). Default 
+      INFO
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -56,8 +57,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Calling mode by HiFi input type (wgs, amplicon, capture, consensus). Default
-      wgs
+    doc: Calling mode by HiFi input type (wgs, amplicon, capture, consensus). 
+      Default wgs
     inputBinding:
       position: 102
       prefix: --mode
@@ -101,6 +102,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: log_file_path
+    type: string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -108,7 +115,9 @@ outputs:
       - File
     doc: Log file. Default {prefix}[_/]caller.log
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangu:0.2.8--pyhdfd78af_0

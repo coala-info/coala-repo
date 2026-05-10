@@ -173,6 +173,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --window-size
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 104
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -180,7 +186,9 @@ outputs:
       - File
     doc: File to write results to. By default sent to stdout.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/epic:0.2.12--py35h24bf2e0_1

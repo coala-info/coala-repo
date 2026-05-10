@@ -51,26 +51,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: masked_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `masked_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --masked-dir
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
+  - id: repeats_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `repeats_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --repeats-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Directory where the output files will be written
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: masked_dir
     type:
       - 'null'
       - Directory
     doc: Directory for masked genome files
     outputBinding:
-      glob: $(inputs.masked_dir)
+      glob: $(inputs.masked_dir_path)
   - id: repeats_dir
     type:
       - 'null'
       - Directory
     doc: Directory for repeat files
     outputBinding:
-      glob: $(inputs.repeats_dir)
+      glob: $(inputs.repeats_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/red:2018.09.10--h9948957_3

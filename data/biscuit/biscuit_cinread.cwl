@@ -4,8 +4,8 @@ baseCommand:
   - biscuit
   - cinread
 label: biscuit_cinread
-doc: "Extract cytosine information from a BAM file based on a reference genome.\n\n
-  Tool homepage: https://github.com/huishenlab/biscuit"
+doc: "Extract cytosine information from a BAM file based on a reference genome.\n\n\
+  \ Tool homepage: https://github.com/huishenlab/biscuit"
 inputs:
   - id: reference_fasta
     type: File
@@ -50,6 +50,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -t
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -57,7 +63,9 @@ outputs:
       - File
     doc: Output file [stdout]
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

@@ -89,12 +89,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --type-ignore
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory for benchmark results.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/octopusv:0.3.0--pyhdfd78af_0

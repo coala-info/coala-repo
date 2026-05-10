@@ -187,6 +187,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -unknown
+  - id: dist_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dist_out_path`
+    inputBinding:
+      position: 102
+      prefix: --dist-out
+  - id: msa_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `msa_out_path`
+    inputBinding:
+      position: 103
+      prefix: --msa-out
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 104
+      prefix: --out
 outputs:
   - id: msa_out
     type:
@@ -195,7 +219,7 @@ outputs:
     doc: "is the path of a .msa format file, to which the input\nalignment is to be
       written (in .msa format)."
     outputBinding:
-      glob: $(inputs.msa_out)
+      glob: $(inputs.msa_out_path)
   - id: dist_out
     type:
       - 'null'
@@ -203,7 +227,7 @@ outputs:
     doc: "is the path, of a file, into which the distance matrix is to be written\n\
       (possibly in a .gz format)"
     outputBinding:
-      glob: $(inputs.dist_out)
+      glob: $(inputs.dist_out_path)
   - id: out
     type:
       - 'null'
@@ -211,7 +235,9 @@ outputs:
     doc: is the path to write the newick tree file to (if it ends in .gz it will
       be compressed)
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/decenttree:1.0.0--h3f9e6b0_0

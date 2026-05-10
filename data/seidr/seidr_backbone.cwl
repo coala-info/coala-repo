@@ -43,6 +43,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tempdir
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -50,7 +56,9 @@ outputs:
       - File
     doc: Output file name ['-' for stdout]
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154

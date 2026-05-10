@@ -79,6 +79,22 @@ inputs:
     inputBinding:
       position: 106
       prefix: --separate_cb
+  - id: fastq1out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fastq1out_path`
+    inputBinding:
+      position: 107
+      prefix: --fastq1out
+  - id: fastq2out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fastq2out_path`
+    inputBinding:
+      position: 108
+      prefix: --fastq2out
 outputs:
   - id: fastq1out
     type:
@@ -86,14 +102,16 @@ outputs:
       - File
     doc: Output file for FASTQ1
     outputBinding:
-      glob: $(inputs.fastq1out)
+      glob: $(inputs.fastq1out_path)
   - id: fastq2out
     type:
       - 'null'
       - File
     doc: Output file for FASTQ2
     outputBinding:
-      glob: $(inputs.fastq2out)
+      glob: $(inputs.fastq2out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

@@ -34,12 +34,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --top-labels-num
+  - id: output_table_path
+    type: string
+    doc: Output or path parameter `output_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-table
 outputs:
   - id: output_table
     type: File
     doc: Path to the output table in text format
     outputBinding:
-      glob: $(inputs.output_table)
+      glob: $(inputs.output_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cell-types-analysis:0.1.11--hdfd78af_1

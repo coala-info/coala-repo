@@ -90,6 +90,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: base_depth_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `base_depth_output_path`
+    inputBinding:
+      position: 104
+      prefix: --base-depth-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -97,14 +113,16 @@ outputs:
       - File
     doc: The output BED file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: base_depth_output
     type:
       - 'null'
       - File
     doc: If a file name is given, per-base depth will be written to this file
     outputBinding:
-      glob: $(inputs.base_depth_output)
+      glob: $(inputs.base_depth_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callstate:0.0.2--h0fde405_1

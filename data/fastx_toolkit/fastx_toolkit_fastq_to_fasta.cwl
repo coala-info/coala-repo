@@ -24,7 +24,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Keep sequences with unknown (N) nucleotides. Default is to discard such sequences.
+    doc: Keep sequences with unknown (N) nucleotides. Default is to discard such
+      sequences.
     inputBinding:
       position: 101
       prefix: -n
@@ -40,12 +41,18 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Verbose - report number of sequences. If [-o] is specified, report will be
-      printed to STDOUT. If [-o] is not specified (and output goes to STDOUT), report
-      will be printed to STDERR.
+    doc: Verbose - report number of sequences. If [-o] is specified, report will
+      be printed to STDOUT. If [-o] is not specified (and output goes to 
+      STDOUT), report will be printed to STDERR.
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -53,7 +60,9 @@ outputs:
       - File
     doc: FASTA output file. Default is STDOUT.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastx-toolkit:v0.0.14-6-deb_cv1

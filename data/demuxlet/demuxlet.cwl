@@ -10,9 +10,7 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: Grid of alpha to search for (default is 0, 0.5)
-      - 0.0
-      - 0.5
+    doc: Grid of alpha to search for (default is 0, 0.5) - 0.0 - 0.5
     inputBinding:
       position: 101
       prefix: --alpha
@@ -206,6 +204,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-pair
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -213,7 +217,9 @@ outputs:
       - File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/demuxlet:1.0--h5ca1c30_7

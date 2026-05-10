@@ -26,17 +26,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input_prmtop_path
+  - id: output_itp_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_itp_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-itp-path
+  - id: output_top_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_top_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-top-path
 outputs:
   - id: output_top_path
     type: File
     doc: Path to the output GROMACS topology file (.top)
     outputBinding:
-      glob: $(inputs.output_top_path)
+      glob: $(inputs.output_top_path_path)
   - id: output_itp_path
     type: File
     doc: Path to the output GROMACS itp file (.itp)
     outputBinding:
-      glob: $(inputs.output_itp_path)
+      glob: $(inputs.output_itp_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobb_chemistry:5.2.0--pyhdfd78af_0

@@ -24,8 +24,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Value between 0 and 1 reflecting how strictly to filter low CN decompositions
-      (default = 0.1). Higher values filter more of the low-weight decompositions.
+    doc: Value between 0 and 1 reflecting how strictly to filter low CN 
+      decompositions (default = 0.1). Higher values filter more of the 
+      low-weight decompositions.
     inputBinding:
       position: 101
       prefix: --decomposition_strictness
@@ -41,9 +42,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Only use if all samples are of independent origins (not replicates and not
-      multi-region biopsies). Permits filtering of false-positive amps arising in
-      multiple independent samples based on similarity calculation
+    doc: Only use if all samples are of independent origins (not replicates and 
+      not multi-region biopsies). Permits filtering of false-positive amps 
+      arising in multiple independent samples based on similarity calculation
     inputBinding:
       position: 101
       prefix: --filter_similar
@@ -106,8 +107,8 @@ inputs:
       prefix: --plotstyle
   - id: ref
     type: string
-    doc: Reference genome name used for alignment, one of hg19, GRCh37, hg38, GRCh38,
-      GRCh38_viral, mm10, GRCm38.
+    doc: Reference genome name used for alignment, one of hg19, GRCh37, hg38, 
+      GRCh38, GRCh38_viral, mm10, GRCm38.
     inputBinding:
       position: 101
       prefix: --ref
@@ -127,6 +128,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose_classification
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -134,7 +141,9 @@ outputs:
       - File
     doc: Output filename prefix
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ampliconclassifier:0.4.14--hdfd78af_0

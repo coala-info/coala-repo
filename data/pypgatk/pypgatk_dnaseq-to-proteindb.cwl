@@ -111,6 +111,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --translation_table
+  - id: output_proteindb_path
+    type: string
+    doc: Output or path parameter `output_proteindb_path`
+    inputBinding:
+      position: 102
+      prefix: --output-proteindb
 outputs:
   - id: output_proteindb
     type:
@@ -118,7 +124,9 @@ outputs:
       - File
     doc: Output file name, exits if already exists
     outputBinding:
-      glob: $(inputs.output_proteindb)
+      glob: $(inputs.output_proteindb_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0

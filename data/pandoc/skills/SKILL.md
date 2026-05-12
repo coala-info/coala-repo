@@ -1,64 +1,100 @@
 ---
 name: pandoc
-description: Pandoc is a command-line utility that converts files between different markup and document formats. Use when user asks to convert documents between formats like Markdown, PDF, and DOCX, generate slide decks, or process academic citations and metadata.
+description: Pandoc is a versatile command-line tool used for converting documents between dozens of different markup formats. Use when user asks to convert files between formats like Markdown and PDF, generate ebooks, create standalone documents with metadata, or apply custom styling using reference files and filters.
 homepage: https://github.com/jgm/pandoc
 metadata:
-  docker_image: "quay.io/biocontainers/pandoc:2.1.3--0"
+  docker_image: "pandoc/latex:latest-ubuntu"
 ---
+
 
 # pandoc
 
 ## Overview
-Pandoc is a powerful command-line utility designed to translate one markup format into another. It functions by parsing input into an intermediate Abstract Syntax Tree (AST) and then writing that AST into a target format. This skill provides the necessary CLI patterns and expert configurations to handle complex conversions, manage document metadata, and produce high-quality outputs while preserving structural elements like tables, citations, and math.
 
-## Core CLI Usage
-The basic syntax for pandoc is `pandoc [options] [input-files]`.
+Pandoc is the industry-standard tool for document conversion, acting as a "Swiss-army knife" for markup formats. It works by parsing an input format into an Abstract Syntax Tree (AST) and then writing that AST into a target format. This skill enables precise control over document structure, metadata, and styling across dozens of formats, allowing for professional-grade publishing workflows from simple text sources.
+
+## Core CLI Patterns
 
 ### Basic Conversion
-If no output file is specified with `-o`, pandoc sends the result to stdout.
-- **Auto-detect formats**: `pandoc input.md -o output.pdf`
-- **Explicit formats**: `pandoc -f markdown -t html input.md -o output.html`
-- **Standalone document**: Use `-s` or `--standalone` to include necessary headers and footers (e.g., `<head>` in HTML or a LaTeX preamble).
+The simplest form of conversion guesses formats based on file extensions:
+```bash
+pandoc input.md -o output.pdf
+```
 
-### Common Output Options
-- **Table of Contents**: Add `--toc` and control depth with `--toc-depth=N`.
-- **Custom Variables**: Pass variables to templates using `-V` or `--variable`, e.g., `-V geometry:margin=1in`.
-- **Metadata**: Set document metadata via the CLI using `--metadata title="My Document"`.
-- **Syntax Highlighting**: Change the code block style with `--highlight-style=monochrome`.
+### Standalone Documents
+By default, pandoc produces document fragments (e.g., HTML without `<head>` or `<body>`). Use `-s` or `--standalone` to create a complete, valid file:
+```bash
+pandoc -s input.md -o output.html
+```
+
+### Explicit Format Specification
+When extensions are ambiguous or input comes from stdin:
+```bash
+# -f (from), -t (to)
+pandoc -f markdown -t latex input.txt -o output.tex
+```
+
+### Combining Multiple Inputs
+Pandoc can concatenate multiple files into a single output:
+```bash
+pandoc chapter1.md chapter2.md chapter3.md -o book.docx
+```
 
 ## Expert Workflows
 
-### Working with Microsoft Word (DOCX)
-Pandoc can both read and write `.docx` files.
-- **Styling Output**: Use a reference document to define styles (fonts, margins, headers) for the output:
-  `pandoc input.md --reference-doc=template.docx -o output.docx`
-- **Extracting Media**: When converting from DOCX to Markdown, extract images into a folder:
-  `pandoc input.docx -t gfm --extract-media=./images -o output.md`
+### Creating Ebooks (EPUB)
+Pandoc automatically handles metadata and local image embedding for EPUBs:
+```bash
+pandoc mybook.md -o mybook.epub --metadata title="My Book" --metadata author="Author Name"
+```
 
-### PDF Generation
-Pandoc produces PDFs via an intermediary engine.
-- **LaTeX (Default)**: Requires a TeX distribution (like TeX Live or MiKTeX).
-- **Alternative Engines**: Use `--pdf-engine=xelatex` (better font support) or `--pdf-engine=weasyprint` (HTML/CSS based).
+### PDF Generation Engines
+Pandoc requires an external engine for PDF creation. While LaTeX is the default, you can specify others:
+```bash
+# Using wkhtmltopdf for HTML-based PDF
+pandoc input.md -t html --pdf-engine=wkhtmltopdf -o output.pdf
 
-### Academic and Technical Writing
-- **Citations**: Use the `--citeproc` flag to process bibliographies. You must provide a bibliography file:
-  `pandoc input.md --citeproc --bibliography=refs.bib -o output.pdf`
-- **Math Rendering**: For HTML output, use `--mathjax` or `--katex` to ensure formulas render correctly in browsers.
+# Using WeasyPrint
+pandoc input.md --pdf-engine=weasyprint -o output.pdf
+```
 
-### Slide Shows
-Convert Markdown into interactive slide decks:
-- **Reveal.js**: `pandoc slides.md -t revealjs -s -o slides.html`
-- **PowerPoint**: `pandoc slides.md -o presentation.pptx`
-- **Beamer (LaTeX)**: `pandoc slides.md -t beamer -o presentation.pdf`
+### Using Reference Documents (DOCX/PPTX)
+To apply specific styles (fonts, margins, headers) to Word or PowerPoint files, use a reference document as a template:
+```bash
+pandoc input.md --reference-doc=template.docx -o output.docx
+```
 
-## Format Reference
-Pandoc supports a vast array of formats. Key identifiers for `-f` (from) and `-t` (to) include:
-- **Markdown**: `markdown` (Pandoc), `commonmark`, `gfm` (GitHub-flavored), `markdown_strict`.
-- **Web**: `html`, `html5`, `epub`, `epub3`.
-- **Office**: `docx`, `pptx`, `odt`, `rtf`.
-- **Technical**: `latex`, `man`, `rst`, `asciidoc`, `ipynb` (Jupyter).
-- **Wiki**: `mediawiki`, `vimwiki`, `dokuwiki`.
+### Applying Lua Filters
+Modify the document AST programmatically during conversion without external dependencies:
+```bash
+pandoc input.md --lua-filter=wordcount.lua -o output.txt
+```
+
+### Managing Variables and Metadata
+Inject data into templates at runtime:
+```bash
+pandoc input.md -V fontsize=12pt -V margin-left=2cm -o output.pdf
+```
+
+## Best Practices
+
+- **Character Encoding**: Pandoc assumes UTF-8. If using other encodings, pipe through `iconv` before processing.
+- **Media Handling**: When converting to HTML, use `--self-contained` to embed images as base64 data into a single file.
+- **Debugging**: If a conversion fails (especially PDF), output to an intermediate format like LaTeX (`-t latex -s -o debug.tex`) to inspect the generated code.
+- **Math Rendering**: For HTML output, use `--mathjax` or `--katex` to ensure mathematical formulas render correctly in browsers.
+- **Table of Contents**: Use `--toc` and `--toc-depth=N` to automatically generate and control the granularity of the table of contents.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pandoc | Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library. |
 
 ## Reference documentation
-- [Pandoc Formats and Features](./references/github_com_jgm_pandoc.md)
-- [Pandoc Wiki and User Tips](./references/github_com_jgm_pandoc_wiki.md)
+
+- [Pandoc User's Guide](./references/pandoc_org_MANUAL.html.md)
+- [Creating an ebook with pandoc](./references/github_com_jgm_pandoc_blob_main_doc_epub.md)
+- [Customizing Pandoc](./references/github_com_jgm_pandoc_blob_main_doc_customizing-pandoc.md)
+- [Lua Filters](./references/github_com_jgm_pandoc_blob_main_doc_lua-filters.md)

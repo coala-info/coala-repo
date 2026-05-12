@@ -1,1 +1,0 @@
-#json_block_div { overflow-y: scroll; height: 12rem; }

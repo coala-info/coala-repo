@@ -1,1 +1,0 @@
-.wy-nav-content { max-width: 1200px; }

@@ -1,1 +1,0 @@
-Download Shannon About Download FAQ License Manual Installation Getting Started Download Repository The Shannon GitHub repository is here . Licence Shannon is distributed under the license . &copy; 2016 Sreeram Kannan with help from Jekyll Bootstrap and Twitter Bootstrap

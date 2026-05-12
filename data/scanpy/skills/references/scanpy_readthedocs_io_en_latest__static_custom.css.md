@@ -1,1 +1,0 @@
-code.literal > a > code.literal { border: none; padding: 0; font-size: inherit; }

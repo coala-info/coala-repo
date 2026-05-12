@@ -1,1 +1,0 @@
-Coot Screenshots Coot 1 Apoferritin screenshots Coot 0.0 to 0.9.x

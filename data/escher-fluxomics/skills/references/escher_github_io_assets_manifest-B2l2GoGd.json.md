@@ -1,1 +1,0 @@
-{ "short_name": "Escher", "name": "Escher", "icons": [ { "src": "favicon.ico", "sizes": "32x32", "type": "image/png" } ], "start_url": "./index.html", "display": "standalone", "theme_color": "#000000", "background_color": "#ffffff" }

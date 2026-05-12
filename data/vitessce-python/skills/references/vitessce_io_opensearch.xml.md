@@ -1,1 +1,0 @@
-Vitessce Search Vitessce UTF-8 http://vitessce.io/img/favicon.ico http://vitessce.io/

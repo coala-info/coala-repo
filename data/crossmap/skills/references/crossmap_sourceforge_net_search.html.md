@@ -1,1 +1,0 @@
-Search &mdash; CrossMap documentation CrossMap CrossMap Search Please activate JavaScript to enable the search functionality. &#169; Copyright 2024, Liguo Wang. Built with Sphinx using a theme provided by Read the Docs .

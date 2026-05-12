@@ -1,1 +1,0 @@
-/* CSS for binder integration */ div.binder-badge { margin: 1em auto; vertical-align: middle; } div.lite-badge { margin: 1em auto; vertical-align: middle; }

@@ -1,1 +1,0 @@
-.post-micro-snippet { margin-top: 20px; padding-bottom: 5px; } .post-micro-snippet .post-image { vertical-align: middle; max-width: 60px; padding-right: 10px; } .post-micro-snippet .post-social-media-link { display: none; } .post-micro-snippet h3 { font-size: 20px; }

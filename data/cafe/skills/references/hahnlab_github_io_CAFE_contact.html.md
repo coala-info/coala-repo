@@ -1,1 +1,0 @@
-CAFE HOME DOWNLOAD MANUAL FAQ CITATION CONTACT Contact If you are in need of assistance or want to ask us a question, please research the threads in (or post a new thread to) CAFE's Google group.

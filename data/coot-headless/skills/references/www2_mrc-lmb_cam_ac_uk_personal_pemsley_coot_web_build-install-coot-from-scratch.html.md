@@ -1,1 +1,0 @@
-Coot 0.9.x (GTK+-2-based) From Scratch Get this and run: $ bash build-it Coot 1.1 (GTK-+-4-based) From Scratch Get this and run: $ bash build-it-3-3

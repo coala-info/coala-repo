@@ -1,1 +1,0 @@
-.wrapper .affil-wrapper{padding:0px;margin-top:20px}.affil-li{margin:10px;list-style-type:none}.affil-image{padding-right:5px}

@@ -1,1 +1,0 @@
-{"version":"1.0","provider_name":"MSMS","provider_url":"https:\/\/ccsb.scripps.edu\/msms","title":"MSMS","type":"rich","width":600,"height":338,"html":" MSMS \n\/* *\/\n \n"}

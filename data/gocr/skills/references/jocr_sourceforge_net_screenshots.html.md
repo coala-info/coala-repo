@@ -1,1 +1,0 @@
-GOCR open-source character recognition Index | Download | Screenshots | Examples | Developers | Support | Links Screenshots This are two snapshots of gocr.tcl front end for gocr. First the main window: and here the options window:

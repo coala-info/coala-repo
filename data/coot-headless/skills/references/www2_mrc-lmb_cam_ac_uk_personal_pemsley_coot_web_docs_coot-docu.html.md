@@ -1,1 +1,0 @@
-Coot User Manual: HTML Coot User Manual [Monolithic] (2.7M) Coot User Manual: Other Formats Coot User Manual PDF format Python API User Scripting Functions Documentation A Quick Guide to Coot’s Keys and Buttons – print it out and stick it on your wall. Contact: Paul Emsley

@@ -1,1 +1,0 @@
-.banner-container{background-color:black}.banner-wrapper{color:white;margin-top:0}.banner-background{background:url("../images/frontpage/banner.jpg") no-repeat center center}.banner-title{font-size:500% !important;font-family:"Sarabun",serif}

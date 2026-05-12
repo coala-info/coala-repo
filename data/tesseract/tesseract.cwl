@@ -2,35 +2,31 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tesseract
 label: tesseract
-doc: "Performs OCR on an image and outputs the recognized text.\n\nTool homepage:
-  https://github.com/tesseract-ocr/tesseract"
+doc: Tesseract Open Source OCR Engine
 inputs:
   - id: imagename
     type: File
-    doc: The input image file to perform OCR on.
+    doc: Input image file
     inputBinding:
       position: 1
   - id: outputbase
     type: string
-    doc: The base name for the output file(s). Tesseract will append extensions 
-      like .txt.
+    doc: Base name for output file (the appropriate extension will be appended)
     inputBinding:
       position: 2
-  - id: config_files
+  - id: configfile
     type:
       - 'null'
       - type: array
         items: File
-    doc: Optional configuration files to customize OCR behavior.
+    doc: Optional configuration files
     inputBinding:
       position: 3
-  - id: languages
+  - id: lang
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Specify language(s) used for OCR. Can be a single language or multiple 
-      languages separated by '+'.
+      - string
+    doc: Specify language(s) used for OCR.
     inputBinding:
       position: 104
       prefix: -l
@@ -43,10 +39,16 @@ inputs:
       position: 104
       prefix: --list-langs
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_outputbase
+    type:
+      type: array
+      items: File
+    doc: Base name for output file (the appropriate extension will be appended)
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/tesseract:5.5.1
-stdout: tesseract.out
+    dockerPull: jitesoft/tesseract-ocr:5-5.5.2
+s:url: https://github.com/tesseract-ocr/tesseract
+$namespaces:
+  s: https://schema.org/

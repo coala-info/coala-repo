@@ -1,1 +1,0 @@
-Mojolicious Search Mojolicious UTF-8 http://mojolicious.org/favicon.ico http://mojolicious.org

@@ -1,1 +1,0 @@
-.contrib-image{max-width:50px;padding-right:5px}.contrib-li{margin:5px;list-style-type:none}.wrapper .contrib-wrapper{padding:0px;margin-top:20px;margin-bottom:10px}

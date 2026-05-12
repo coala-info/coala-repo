@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tesseract
+baseCommand: ""
 label: tesseract
 doc: Tesseract Open Source OCR Engine
 inputs:
@@ -45,7 +45,9 @@ outputs:
       items: File
     doc: Base name for output file (the appropriate extension will be appended)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outputbase + ".*")
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: jitesoft/tesseract-ocr:5-5.5.2

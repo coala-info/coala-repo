@@ -6,10 +6,11 @@
 Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/pandoc:2.1.3--0
+- **Docker Image**: pandoc/latex:latest-ubuntu
 - **Homepage**: https://github.com/jgm/pandoc
 - **Package**: Not found
 - **Validation**: PASS
+- **manual**: https://pandoc.org/MANUAL.html
 
 - **Conda**: https://anaconda.org/channels/main/packages/pandoc/overview
 - **Total Downloads**: 18.0K

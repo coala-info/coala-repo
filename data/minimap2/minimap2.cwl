@@ -2,85 +2,344 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: minimap2
 label: minimap2
-doc: "A versatile pairwise aligner for genomic and spliced nucleotide sequences\n\n\
-  Tool homepage: https://github.com/lh3/minimap2"
+doc: A versatile sequence alignment program that aligns DNA or mRNA sequences 
+  against a large reference database.
 inputs:
   - id: target
     type: File
-    doc: Target sequence file (FASTA/FASTQ/mmi index)
+    doc: Target reference genome or index file (.fa, .idx, etc.)
     inputBinding:
       position: 1
   - id: query
     type:
-      type: array
-      items: File
-    doc: Query sequence file(s) (FASTA/FASTQ)
+      - 'null'
+      - type: array
+        items: File
+    doc: Query sequence file(s)
     inputBinding:
       position: 2
+  - id: homopolymer_compressed
+    type:
+      - 'null'
+      - boolean
+    doc: use homopolymer-compressed k-mer (preferrable for PacBio)
+    inputBinding:
+      position: 103
+      prefix: -H
   - id: kmer_size
     type:
       - 'null'
       - int
-    doc: K-mer size (no larger than 28)
+    doc: k-mer size (no larger than 28)
     inputBinding:
       position: 103
       prefix: -k
-  - id: min_chain_score
+  - id: minimizer_window
     type:
       - 'null'
       - int
-    doc: Minimal chaining score
+    doc: minimizer window size
+    inputBinding:
+      position: 103
+      prefix: -w
+  - id: split_index
+    type:
+      - 'null'
+      - string
+    doc: split index for every ~NUM input bases
+    inputBinding:
+      position: 103
+      prefix: -I
+  - id: dump_index
+    type: string
+    doc: dump index to FILE
+    inputBinding:
+      position: 103
+      prefix: -d
+  - id: filter_repetitive
+    type:
+      - 'null'
+      - float
+    doc: filter out top FLOAT fraction of repetitive minimizers
+    inputBinding:
+      position: 103
+      prefix: -f
+  - id: stop_chain_elongation
+    type:
+      - 'null'
+      - int
+    doc: stop chain enlongation if there are no minimizers in INT-bp
+    inputBinding:
+      position: 103
+      prefix: -g
+  - id: max_intron_length
+    type:
+      - 'null'
+      - string
+    doc: max intron length (effective with -xsplice; changing -r)
+    inputBinding:
+      position: 103
+      prefix: -G
+  - id: max_fragment_length
+    type:
+      - 'null'
+      - int
+    doc: max fragment length (effective with -xsr or in the fragment mode)
+    inputBinding:
+      position: 103
+      prefix: -F
+  - id: bandwidth
+    type:
+      - 'null'
+      - string
+    doc: chaining/alignment bandwidth and long-join bandwidth
+    inputBinding:
+      position: 103
+      prefix: -r
+  - id: min_minimizers
+    type:
+      - 'null'
+      - int
+    doc: minimal number of minimizers on a chain
+    inputBinding:
+      position: 103
+      prefix: -n
+  - id: min_chaining_score
+    type:
+      - 'null'
+      - int
+    doc: minimal chaining score (matching bases minus log gap penalty)
     inputBinding:
       position: 103
       prefix: -m
+  - id: skip_self_dual
+    type:
+      - 'null'
+      - boolean
+    doc: skip self and dual mappings (for the all-vs-all mode)
+    inputBinding:
+      position: 103
+      prefix: -X
+  - id: min_secondary_ratio
+    type:
+      - 'null'
+      - float
+    doc: min secondary-to-primary score ratio
+    inputBinding:
+      position: 103
+      prefix: -p
+  - id: max_secondary_alignments
+    type:
+      - 'null'
+      - int
+    doc: retain at most INT secondary alignments
+    inputBinding:
+      position: 103
+      prefix: -N
+  - id: matching_score
+    type:
+      - 'null'
+      - int
+    doc: matching score
+    inputBinding:
+      position: 103
+      prefix: -A
+  - id: mismatch_penalty
+    type:
+      - 'null'
+      - int
+    doc: mismatch penalty (larger value for lower divergence)
+    inputBinding:
+      position: 103
+      prefix: -B
+  - id: gap_open_penalty
+    type:
+      - 'null'
+      - string
+    doc: gap open penalty
+    inputBinding:
+      position: 103
+      prefix: -O
+  - id: gap_extension_penalty
+    type:
+      - 'null'
+      - string
+    doc: gap extension penalty; a k-long gap costs min{O1+k*E1,O2+k*E2}
+    inputBinding:
+      position: 103
+      prefix: -E
+  - id: z_drop_score
+    type:
+      - 'null'
+      - string
+    doc: Z-drop score and inversion Z-drop score
+    inputBinding:
+      position: 103
+      prefix: -z
+  - id: min_peak_dp_score
+    type:
+      - 'null'
+      - int
+    doc: minimal peak DP alignment score
+    inputBinding:
+      position: 103
+      prefix: -s
+  - id: gt_ag_finding
+    type:
+      - 'null'
+      - string
+    doc: how to find GT-AG. f:transcript strand, b:both strands, n:don't match 
+      GT-AG
+    inputBinding:
+      position: 103
+      prefix: -u
+  - id: splice_mode
+    type:
+      - 'null'
+      - int
+    doc: 'splice mode. 0: original minimap2 model; 1: miniprot model'
+    inputBinding:
+      position: 103
+      prefix: -J
+  - id: junctions_bed
+    type:
+      - 'null'
+      - File
+    doc: junctions in BED12 to extend *short* RNA-seq alignment
+    inputBinding:
+      position: 103
+      prefix: -j
   - id: output_sam
     type:
       - 'null'
       - boolean
-    doc: Output in SAM format (default is PAF)
+    doc: output in the SAM format (PAF by default)
     inputBinding:
       position: 103
       prefix: -a
-  - id: preset
+  - id: output_file
+    type: string
+    doc: output alignments to FILE
+    inputBinding:
+      position: 103
+      prefix: -o
+  - id: long_cigar
+    type:
+      - 'null'
+      - boolean
+    doc: write CIGAR with >65535 ops at the CG tag
+    inputBinding:
+      position: 103
+      prefix: -L
+  - id: read_group
     type:
       - 'null'
       - string
-    doc: Preset (e.g. map-pb, map-ont, asm5, asm10, asm20, sr, splice)
+    doc: SAM read group line in a format like '@RG\tID:foo\tSM:bar'
     inputBinding:
       position: 103
-      prefix: -x
+      prefix: -R
+  - id: output_cigar_paf
+    type:
+      - 'null'
+      - boolean
+    doc: output CIGAR in PAF
+    inputBinding:
+      position: 103
+      prefix: -c
+  - id: cs_tag
+    type:
+      - 'null'
+      - string
+    doc: output the cs tag; STR is 'short' (if absent) or 'long'
+    inputBinding:
+      position: 103
+      prefix: --cs
+  - id: ds_tag
+    type:
+      - 'null'
+      - boolean
+    doc: output the ds tag, which is an extension to cs
+    inputBinding:
+      position: 103
+      prefix: --ds
+  - id: md_tag
+    type:
+      - 'null'
+      - boolean
+    doc: output the MD tag
+    inputBinding:
+      position: 103
+      prefix: --MD
+  - id: eqx_cigar
+    type:
+      - 'null'
+      - boolean
+    doc: write =/X CIGAR operators
+    inputBinding:
+      position: 103
+      prefix: --eqx
+  - id: soft_clipping
+    type:
+      - 'null'
+      - boolean
+    doc: use soft clipping for supplementary alignments
+    inputBinding:
+      position: 103
+      prefix: -Y
+  - id: copy_comments
+    type:
+      - 'null'
+      - boolean
+    doc: copy FASTA/Q comments to output SAM
+    inputBinding:
+      position: 103
+      prefix: -y
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads
+    doc: number of threads
     inputBinding:
       position: 103
       prefix: -t
-  - id: window_size
+  - id: minibatch_size
     type:
       - 'null'
-      - int
-    doc: Minimizer window size
+      - string
+    doc: minibatch size for mapping
     inputBinding:
       position: 103
-      prefix: -w
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      prefix: -K
+  - id: preset
+    type:
+      - 'null'
+      - string
+    doc: preset (always applied before other options; e.g., map-pb, sr, splice, 
+      etc.)
     inputBinding:
-      position: 104
-      prefix: --output-file
+      position: 103
+      prefix: -x
 outputs:
-  - id: output_file
+  - id: output_dump_index
     type:
       - 'null'
       - File
-    doc: Output file name
+    doc: dump index to FILE
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.dump_index)
+  - id: output_output_file
+    type:
+      - 'null'
+      - File
+    doc: output alignments to FILE
+    outputBinding:
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minimap2:2.30--h577a1d6_0
+s:url: https://github.com/lh3/minimap2
+$namespaces:
+  s: https://schema.org/

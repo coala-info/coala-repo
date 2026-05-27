@@ -1,169 +1,278 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - makeblastdb
-  - windowmasker
+baseCommand: windowmasker
 label: blast_windowmasker
-doc: Application to create BLAST databases
+doc: Window based sequence masker
 inputs:
-  - id: blastdb_version
-    type:
-      - 'null'
-      - string
-    doc: version
-    inputBinding:
-      position: 101
-      prefix: -blastdb_version
-  - id: db_type
-    type: string
-    doc: molecule_type
-    inputBinding:
-      position: 101
-      prefix: -dbtype
-  - id: gi_mask
-    type:
-      - 'null'
-      - boolean
-    doc: GI based mask
-    inputBinding:
-      position: 101
-      prefix: -gi_mask
-  - id: gi_mask_name
-    type:
-      - 'null'
-      - string
-    doc: gi_based_mask_names
-    inputBinding:
-      position: 101
-      prefix: -gi_mask_name
-  - id: hash_index
-    type:
-      - 'null'
-      - boolean
-    doc: create hash index
-    inputBinding:
-      position: 101
-      prefix: -hash_index
-  - id: input_file
+  - id: ustat
     type: File
-    doc: input_file
+    doc: file with unit counts
+    inputBinding:
+      position: 101
+      prefix: -ustat
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: input file name (not optional if used with -mk_counts or -convert 
+      options)
     inputBinding:
       position: 101
       prefix: -in
-  - id: input_type
-    type:
-      - 'null'
-      - string
-    doc: type
-    inputBinding:
-      position: 101
-      prefix: -input_type
-  - id: logfile
-    type:
-      - 'null'
-      - File
-    doc: File_Name
-    inputBinding:
-      position: 101
-      prefix: -logfile
-  - id: mask_data
-    type:
-      - 'null'
-      - File
-    doc: mask_data_files
-    inputBinding:
-      position: 101
-      prefix: -mask_data
-  - id: mask_desc
-    type:
-      - 'null'
-      - string
-    doc: mask_algo_descriptions
-    inputBinding:
-      position: 101
-      prefix: -mask_desc
-  - id: mask_id
-    type:
-      - 'null'
-      - string
-    doc: mask_algo_ids
-    inputBinding:
-      position: 101
-      prefix: -mask_id
-  - id: max_file_size
-    type:
-      - 'null'
-      - int
-    doc: number_of_bytes
-    inputBinding:
-      position: 101
-      prefix: -max_file_sz
-  - id: metadata_output_prefix
-    type:
-      - 'null'
-      - string
-    doc: metadata_output_prefix
-    inputBinding:
-      position: 101
-      prefix: -metadata_output_prefix
-  - id: oid_masks
-    type:
-      - 'null'
-      - string
-    doc: oid_masks
-    inputBinding:
-      position: 101
-      prefix: -oid_masks
-  - id: output_database_name
-    type:
-      - 'null'
-      - string
-    doc: database_name
+  - id: output_file
+    type: string
+    doc: output file name
     inputBinding:
       position: 101
       prefix: -out
+  - id: check_duplicates
+    type:
+      - 'null'
+      - boolean
+    doc: check for duplicate sequences
+    inputBinding:
+      position: 101
+      prefix: -checkdup
+  - id: input_is_a_list
+    type:
+      - 'null'
+      - boolean
+    doc: indicates that -input represents a file containing a list of names of 
+      fasta files to process, one name per line
+    inputBinding:
+      position: 101
+      prefix: -fa_list
+  - id: available_memory
+    type:
+      - 'null'
+      - int
+    doc: memory available for mk_counts option in megabytes
+    inputBinding:
+      position: 101
+      prefix: -mem
+  - id: info_string
+    type:
+      - 'null'
+      - string
+    doc: add metadata to the counts file
+    inputBinding:
+      position: 101
+      prefix: -meta
+  - id: unit_length
+    type:
+      - 'null'
+      - int
+    doc: number of bases in a unit
+    inputBinding:
+      position: 101
+      prefix: -unit
+  - id: genome_size
+    type:
+      - 'null'
+      - int
+    doc: total size of the genome
+    inputBinding:
+      position: 101
+      prefix: -genome_size
+  - id: window_size
+    type:
+      - 'null'
+      - int
+    doc: window size
+    inputBinding:
+      position: 101
+      prefix: -window
+  - id: t_extend
+    type:
+      - 'null'
+      - int
+    doc: window score above which it is allowed to extend masking
+    inputBinding:
+      position: 101
+      prefix: -t_extend
+  - id: t_threshold
+    type:
+      - 'null'
+      - int
+    doc: window score threshold used to trigger masking
+    inputBinding:
+      position: 101
+      prefix: -t_thres
+  - id: set_t_high
+    type:
+      - 'null'
+      - int
+    doc: alternative high score for a unit if theoriginal unit score is more 
+      than highscore
+    inputBinding:
+      position: 101
+      prefix: -set_t_high
+  - id: set_t_low
+    type:
+      - 'null'
+      - int
+    doc: alternative low score for a unit if theoriginal unit score is lower 
+      than lowscore
+    inputBinding:
+      position: 101
+      prefix: -set_t_low
   - id: parse_seqids
     type:
       - 'null'
       - boolean
-    doc: parse sequence identifiers
+    doc: Parse Seq-ids in FASTA input
     inputBinding:
       position: 101
       prefix: -parse_seqids
-  - id: taxid
-    type:
-      - 'null'
-      - int
-    doc: TaxID
-    inputBinding:
-      position: 101
-      prefix: -taxid
-  - id: taxid_map
-    type:
-      - 'null'
-      - File
-    doc: TaxIDMapFile
-    inputBinding:
-      position: 101
-      prefix: -taxid_map
-  - id: title
+  - id: output_format
     type:
       - 'null'
       - string
-    doc: database_title
+    doc: controls the format of the masker output (for masking stage only)
     inputBinding:
       position: 101
-      prefix: -title
-outputs:
-  - id: output_output_database_name
+      prefix: -outfmt
+  - id: t_high
+    type:
+      - 'null'
+      - int
+    doc: maximum useful unit score
+    inputBinding:
+      position: 101
+      prefix: -t_high
+  - id: t_high_pct
+    type:
+      - 'null'
+      - float
+    doc: maximum useful unit score as percentage
+    inputBinding:
+      position: 101
+      prefix: -t_high_pct
+  - id: t_threshold_pct
+    type:
+      - 'null'
+      - float
+    doc: window score threshold used to trigger masking as percentage
+    inputBinding:
+      position: 101
+      prefix: -t_thres_pct
+  - id: t_extend_pct
+    type:
+      - 'null'
+      - float
+    doc: window score above which it is allowed to extend masking as percentage
+    inputBinding:
+      position: 101
+      prefix: -t_extend_pct
+  - id: t_low
+    type:
+      - 'null'
+      - int
+    doc: minimum useful unit score
+    inputBinding:
+      position: 101
+      prefix: -t_low
+  - id: t_low_pct
+    type:
+      - 'null'
+      - float
+    doc: minimum useful unit score as percentage
+    inputBinding:
+      position: 101
+      prefix: -t_low_pct
+  - id: input_format
+    type:
+      - 'null'
+      - string
+    doc: controls the format of the masker input
+    inputBinding:
+      position: 101
+      prefix: -infmt
+  - id: exclude_id_list
     type:
       - 'null'
       - File
-    doc: database_name
+    doc: file containing the list of ids to exclude from processing
+    inputBinding:
+      position: 101
+      prefix: -exclude_ids
+  - id: id_list
+    type:
+      - 'null'
+      - File
+    doc: file containing the list of ids to process
+    inputBinding:
+      position: 101
+      prefix: -ids
+  - id: text_match_ids
+    type:
+      - 'null'
+      - boolean
+    doc: match ids as strings
+    inputBinding:
+      position: 101
+      prefix: -text_match
+  - id: unit_counts_format
+    type:
+      - 'null'
+      - string
+    doc: controls the format of the output file containing the unit counts (for 
+      counts generation and conversion only)
+    inputBinding:
+      position: 101
+      prefix: -sformat
+  - id: available_memory_output
+    type:
+      - 'null'
+      - int
+    doc: target size of the output file containing the unit counts
+    inputBinding:
+      position: 101
+      prefix: -smem
+  - id: use_dust
+    type:
+      - 'null'
+      - boolean
+    doc: combine window masking with dusting
+    inputBinding:
+      position: 101
+      prefix: -dust
+  - id: dust_level
+    type:
+      - 'null'
+      - int
+    doc: dust minimum level
+    inputBinding:
+      position: 101
+      prefix: -dust_level
+  - id: mk_counts
+    type:
+      - 'null'
+      - boolean
+    doc: generate frequency counts for a database
+    inputBinding:
+      position: 101
+      prefix: -mk_counts
+  - id: convert
+    type:
+      - 'null'
+      - boolean
+    doc: convert counts between different formats
+    inputBinding:
+      position: 101
+      prefix: -convert
+outputs:
+  - id: output_output_file
+    type:
+      - 'null'
+      - File
+    doc: output file name
     outputBinding:
-      glob: $(inputs.output_database_name)
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast:2.17.0--h66d330f_0

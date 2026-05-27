@@ -508,6 +508,8 @@ outputs:
       glob: $(inputs.export_search_strategy_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast:2.17.0--h66d330f_0

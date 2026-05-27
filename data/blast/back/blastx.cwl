@@ -1,14 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tblastn
-label: tblastn
-doc: "Protein Query-Translated Subject BLAST 2.17.0+\n\nTool homepage: https://blast.ncbi.nlm.nih.gov/doc/blast-help/"
+baseCommand: blastx
+label: blastx
+doc: "Translated Query-Protein Subject BLAST 2.17.0+\n\nTool homepage: https://blast.ncbi.nlm.nih.gov/doc/blast-help/"
 inputs:
   - id: best_hit_overhang
     type:
       - 'null'
       - float
-    doc: Best Hit algorithm overhang value
+    doc: 'Best Hit algorithm overhang value (recommended value: 0.1)'
     inputBinding:
       position: 101
       prefix: -best_hit_overhang
@@ -16,7 +16,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Best Hit algorithm score edge value
+    doc: 'Best Hit algorithm score edge value (recommended value: 0.1)'
     inputBinding:
       position: 101
       prefix: -best_hit_score_edge
@@ -45,14 +45,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -db
-  - id: db_gencode
-    type:
-      - 'null'
-      - int
-    doc: Genetic code to use to translate database/subjects
-    inputBinding:
-      position: 101
-      prefix: -db_gencode
   - id: db_hard_mask
     type:
       - 'null'
@@ -133,14 +125,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -import_search_strategy
-  - id: in_pssm
+  - id: ipglist
     type:
       - 'null'
-      - File
-    doc: PSI-TBLASTN checkpoint file
+      - string
+    doc: Restrict search of database to list of IPGs
     inputBinding:
       position: 101
-      prefix: -in_pssm
+      prefix: -ipglist
   - id: lcase_masking
     type:
       - 'null'
@@ -178,7 +170,7 @@ inputs:
       - 'null'
       - int
     doc: Length of the largest intron allowed in a translated nucleotide 
-      sequence
+      sequence when linking multiple distinct alignments
     inputBinding:
       position: 101
       prefix: -max_intron_length
@@ -206,6 +198,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -negative_gilist
+  - id: negative_ipglist
+    type:
+      - 'null'
+      - string
+    doc: Restrict search of database to everything except the specified IPGs
+    inputBinding:
+      position: 101
+      prefix: -negative_ipglist
   - id: negative_seqidlist
     type:
       - 'null'
@@ -219,7 +219,7 @@ inputs:
       - 'null'
       - string
     doc: Restrict search of database to everything except the specified taxonomy
-      IDs
+      IDs and their descendants
     inputBinding:
       position: 101
       prefix: -negative_taxidlist
@@ -228,7 +228,7 @@ inputs:
       - 'null'
       - string
     doc: Restrict search of database to everything except the specified taxonomy
-      IDs
+      IDs and their descendants
     inputBinding:
       position: 101
       prefix: -negative_taxids
@@ -297,6 +297,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -query
+  - id: query_gencode
+    type:
+      - 'null'
+      - int
+    doc: Genetic code to use to translate query
+    inputBinding:
+      position: 101
+      prefix: -query_gencode
   - id: query_loc
     type:
       - 'null'
@@ -369,6 +377,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -sorthsps
+  - id: strand
+    type:
+      - 'null'
+      - string
+    doc: Query strand(s) to search against database/subject
+    inputBinding:
+      position: 101
+      prefix: -strand
   - id: subject
     type:
       - 'null'
@@ -405,7 +421,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Task to execute (Permissible values: 'tblastn' 'tblastn-fast')"
+    doc: Task to execute
     inputBinding:
       position: 101
       prefix: -task
@@ -413,7 +429,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Restrict search of database to include only the specified taxonomy IDs
+    doc: Restrict search of database to include only the specified taxonomy IDs 
+      and their descendants
     inputBinding:
       position: 101
       prefix: -taxidlist
@@ -421,7 +438,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Restrict search of database to include only the specified taxonomy IDs
+    doc: Restrict search of database to include only the specified taxonomy IDs 
+      and their descendants
     inputBinding:
       position: 101
       prefix: -taxids
@@ -523,6 +541,8 @@ outputs:
       glob: $(inputs.export_search_strategy_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast:2.17.0--h66d330f_0

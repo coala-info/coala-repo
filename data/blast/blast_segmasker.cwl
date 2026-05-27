@@ -1,169 +1,81 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - makeblastdb
-  - segmasker
+baseCommand: segmasker
 label: blast_segmasker
-doc: Application to create BLAST databases
+doc: Low complexity region masker based on the SEG algorithm
 inputs:
-  - id: blastdb_version
-    type:
-      - 'null'
-      - string
-    doc: version
-    inputBinding:
-      position: 101
-      prefix: -blastdb_version
-  - id: db_type
-    type: string
-    doc: molecule_type
-    inputBinding:
-      position: 101
-      prefix: -dbtype
-  - id: gi_mask
-    type:
-      - 'null'
-      - boolean
-    doc: gi_mask
-    inputBinding:
-      position: 101
-      prefix: -gi_mask
-  - id: gi_mask_name
-    type:
-      - 'null'
-      - string
-    doc: gi_based_mask_names
-    inputBinding:
-      position: 101
-      prefix: -gi_mask_name
-  - id: hash_index
-    type:
-      - 'null'
-      - boolean
-    doc: hash_index
-    inputBinding:
-      position: 101
-      prefix: -hash_index
   - id: input_file
     type: File
-    doc: input_file
+    doc: input file name
     inputBinding:
       position: 101
       prefix: -in
-  - id: input_type
-    type:
-      - 'null'
-      - string
-    doc: type
-    inputBinding:
-      position: 101
-      prefix: -input_type
-  - id: logfile
-    type:
-      - 'null'
-      - File
-    doc: File_Name
-    inputBinding:
-      position: 101
-      prefix: -logfile
-  - id: mask_data
-    type:
-      - 'null'
-      - File
-    doc: mask_data_files
-    inputBinding:
-      position: 101
-      prefix: -mask_data
-  - id: mask_desc
-    type:
-      - 'null'
-      - string
-    doc: mask_algo_descriptions
-    inputBinding:
-      position: 101
-      prefix: -mask_desc
-  - id: mask_id
-    type:
-      - 'null'
-      - string
-    doc: mask_algo_ids
-    inputBinding:
-      position: 101
-      prefix: -mask_id
-  - id: max_file_size
-    type:
-      - 'null'
-      - int
-    doc: number_of_bytes
-    inputBinding:
-      position: 101
-      prefix: -max_file_sz
-  - id: metadata_output_prefix
-    type:
-      - 'null'
-      - string
-    doc: metadata_output_prefix
-    inputBinding:
-      position: 101
-      prefix: -metadata_output_prefix
-  - id: oid_masks
-    type:
-      - 'null'
-      - string
-    doc: oid_masks
-    inputBinding:
-      position: 101
-      prefix: -oid_masks
-  - id: output_database_name
-    type:
-      - 'null'
-      - string
-    doc: database_name
+  - id: output_file
+    type: string
+    doc: output file name
     inputBinding:
       position: 101
       prefix: -out
+  - id: input_format
+    type:
+      - 'null'
+      - string
+    doc: controls the format of the masker input
+    inputBinding:
+      position: 101
+      prefix: -infmt
   - id: parse_seqids
     type:
       - 'null'
       - boolean
-    doc: parse_seqids
+    doc: Parse Seq-ids in FASTA input
     inputBinding:
       position: 101
       prefix: -parse_seqids
-  - id: taxid
-    type:
-      - 'null'
-      - int
-    doc: TaxID
-    inputBinding:
-      position: 101
-      prefix: -taxid
-  - id: taxid_map
-    type:
-      - 'null'
-      - File
-    doc: TaxIDMapFile
-    inputBinding:
-      position: 101
-      prefix: -taxid_map
-  - id: title
+  - id: output_format
     type:
       - 'null'
       - string
-    doc: database_title
+    doc: controls the format of the masker output
     inputBinding:
       position: 101
-      prefix: -title
+      prefix: -outfmt
+  - id: window
+    type:
+      - 'null'
+      - int
+    doc: SEG window
+    inputBinding:
+      position: 101
+      prefix: -window
+  - id: locut
+    type:
+      - 'null'
+      - float
+    doc: SEG locut
+    inputBinding:
+      position: 101
+      prefix: -locut
+  - id: hicut
+    type:
+      - 'null'
+      - float
+    doc: SEG hicut
+    inputBinding:
+      position: 101
+      prefix: -hicut
 outputs:
-  - id: output_output_database_name
+  - id: output_output_file
     type:
       - 'null'
       - File
-    doc: database_name
+    doc: output file name
     outputBinding:
-      glob: $(inputs.output_database_name)
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast:2.17.0--h66d330f_0

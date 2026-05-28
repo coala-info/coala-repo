@@ -16,6 +16,8 @@ inputs:
   type:
     type: array
     items: File
+  secondaryFiles:
+  - .bai
   doc: Input BAM/CRAM files
   inputBinding:
     position: 1
@@ -96,6 +98,8 @@ inputs:
   - 'null'
   - File
   doc: Faidx indexed reference sequence file
+  secondaryFiles:
+  - .fai
   inputBinding:
     position: 102
     prefix: --fasta-ref

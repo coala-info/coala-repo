@@ -385,11 +385,11 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output_prefix
-    type: File
+    type: File[]
     doc: The prefix for output FASTQs. Extensions as described above are 
       appended. Cannot be used in conjunction with MULTIPLEX_PARAMS.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix)*
   - id: output_metrics_file
     type:
       - 'null'

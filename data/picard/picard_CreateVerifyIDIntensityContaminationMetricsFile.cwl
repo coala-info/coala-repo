@@ -132,11 +132,11 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output
-    type: File
+    type: File[]
     doc: Basename for the metrics file that will be written. Resulting file will
       be <OUTPUT>.verifyidintensity_metrics
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

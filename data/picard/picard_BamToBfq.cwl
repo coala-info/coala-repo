@@ -222,11 +222,11 @@ outputs:
     outputBinding:
       glob: $(inputs.analysis_dir)
   - id: output_output_file_prefix
-    type: File
+    type: File[]
     doc: Prefix for all output files. Cannot be used in conjunction with 
       argument(s) FLOWCELL_BARCODE (F) LANE (L)
     outputBinding:
-      glob: $(inputs.output_file_prefix)
+      glob: $(inputs.output_file_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

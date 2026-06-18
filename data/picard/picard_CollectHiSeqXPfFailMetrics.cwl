@@ -159,11 +159,11 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output
-    type: File
+    type: File[]
     doc: Basename for metrics file. Resulting file will be 
       <OUTPUT>.pffail_summary_metrics
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

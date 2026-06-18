@@ -237,13 +237,13 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output
-    type: File
+    type: File[]
     doc: Basename for the three metrics files that are to be written. Resulting 
       files will be <OUTPUT>.genotype_concordance_summary_metrics, 
       <OUTPUT>.genotype_concordance_detail_metrics, and 
       <OUTPUT>.genotype_concordance_contingency_metrics.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

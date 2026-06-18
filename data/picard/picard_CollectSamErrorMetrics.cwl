@@ -260,11 +260,11 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output
-    type: File
+    type: File[]
     doc: Base name for output files. Actual file names will be generated from 
       the basename and suffixes from the ERROR and STRATIFIER.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

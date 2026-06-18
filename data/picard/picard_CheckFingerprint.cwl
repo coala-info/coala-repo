@@ -223,12 +223,12 @@ outputs:
     outputBinding:
       glob: $(inputs.detail_output)
   - id: output_output
-    type: File
+    type: File[]
     doc: The base prefix of output files to write. The summary metrics will have
       the file extension '.fingerprinting_summary_metrics' and the detail 
       metrics will have the extension '.fingerprinting_detail_metrics'.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
   - id: output_summary_output
     type: File
     doc: The text file to which to write summary metrics. Required. Cannot be 

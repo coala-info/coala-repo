@@ -155,13 +155,11 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output_base
-    type:
-      - 'null'
-      - File
+    type: File[]
     doc: Basename for output OxoG metrics. Defaults to same basename as input 
       metrics
     outputBinding:
-      glob: $(inputs.output_base)
+      glob: $(inputs.output_base)*
   - id: output_oxog_out
     type:
       - 'null'

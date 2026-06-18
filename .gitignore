@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+.eggs/
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Node (if used under web/)
+node_modules/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local / generated (uncomment if needed)
+*.tar.gz
+web/public/
+data/*/output
+temp/*
+output/*
+back/*
+testdata/*

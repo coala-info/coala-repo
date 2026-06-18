@@ -189,10 +189,10 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_metrics_file_prefix
-    type: File
+    type: File[]
     doc: Base name for output files
     outputBinding:
-      glob: $(inputs.metrics_file_prefix)
+      glob: $(inputs.metrics_file_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

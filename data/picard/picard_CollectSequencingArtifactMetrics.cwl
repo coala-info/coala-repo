@@ -266,10 +266,10 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output
-    type: File
+    type: File[]
     doc: The file to write the output to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

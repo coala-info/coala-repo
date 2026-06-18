@@ -225,10 +225,10 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output
-    type: File
+    type: File[]
     doc: Base name of output files.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -31,17 +31,18 @@ inputs:
       - 'null'
       - Directory
     doc: >
-      Directory containing BLAST database files for one prefix
+      Optional directory of local BLAST database files for one prefix
       (e.g. subject_database.phr, subject_database.pin, subject_database.psq).
+      Omit when using -remote; -db is then db_prefix only (e.g. nr).
   - id: db_prefix
     type: string?
     doc: >
-      Database basename inside db_dir (no extension), e.g. subject_database.
-      blastp -db is set to db_dir/path + '/' + db_prefix.
+      BLAST database name, or local basename (no extension) inside db_dir.
+      With db_dir, -db is db_dir/path/db_prefix; without db_dir, -db is db_prefix.
     inputBinding:
       position: 101
       prefix: -db
-      valueFrom: $(inputs.db_dir.path + '/' + self)
+      valueFrom: '$(inputs.db_dir != null ? inputs.db_dir.path + ''/'' + self : self)'
   - id: out
     type: string
     doc: Output file name

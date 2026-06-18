@@ -26,6 +26,8 @@ inputs:
       - 'null'
       - File
     doc: Input FASTA file
+    secondaryFiles:
+      - .fai?
     inputBinding:
       position: 101
       prefix: -fi

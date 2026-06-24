@@ -2,279 +2,242 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: prefetch
 label: sra-tools_prefetch
-doc: "Download SRA files and their dependencies\n\nTool homepage: https://github.com/ncbi/sra-tools"
+doc: Download SRA files and their dependencies
 inputs:
-  - id: sra_accession
+  - id: input
     type:
       type: array
       items: string
-    doc: SRA accession to download
+    doc: SRA accession, URL, or SRA file to download
     inputBinding:
       position: 1
-  - id: sra_file
-    type:
-      type: array
-      items: File
-    doc: SRA file to check for missed dependencies
-    inputBinding:
-      position: 2
-  - id: url
-    type:
-      type: array
-      items: string
-    doc: URL to download
-    inputBinding:
-      position: 3
-  - id: ascp_options
+  - id: type
     type:
       - 'null'
       - string
-    doc: Arbitrary options to pass to ascp command line
+    doc: Specify file type to download.
     inputBinding:
-      position: 104
-      prefix: --ascp-options
-  - id: ascp_path
+      position: 102
+      prefix: --type
+  - id: transport
     type:
       - 'null'
       - string
-    doc: Path to ascp program and private key file (asperaweb_id_dsa.putty)
+    doc: 'Transport: one of: fasp; http; both. (fasp only; http only; first try fasp
+      (ascp), use http if cannot download using fasp).'
     inputBinding:
-      position: 104
-      prefix: --ascp-path
-  - id: cart_file
+      position: 102
+      prefix: --transport
+  - id: location
     type:
       - 'null'
-      - File
-    doc: To read kart file
+      - string
+    doc: Location of data.
     inputBinding:
-      position: 104
-      prefix: --cart
-  - id: check_all
+      position: 102
+      prefix: --location
+  - id: min_size
+    type:
+      - 'null'
+      - string
+    doc: Minimum file size to download in KB (inclusive).
+    inputBinding:
+      position: 102
+      prefix: --min-size
+  - id: max_size
+    type:
+      - 'null'
+      - string
+    doc: Maximum file size to download in KB (exclusive).
+    inputBinding:
+      position: 102
+      prefix: --max-size
+  - id: force
+    type:
+      - 'null'
+      - string
+    doc: 'Force object download: one of: no, yes, all, ALL.'
+    inputBinding:
+      position: 102
+      prefix: --force
+  - id: resume
+    type:
+      - 'null'
+      - string
+    doc: 'Resume partial downloads: one of: no, yes.'
+    inputBinding:
+      position: 102
+      prefix: --resume
+  - id: verify
+    type:
+      - 'null'
+      - string
+    doc: 'Verify after download: one of: no, yes.'
+    inputBinding:
+      position: 102
+      prefix: --verify
+  - id: progress
     type:
       - 'null'
       - boolean
-    doc: Double-check all refseqs
+    doc: Show progress.
     inputBinding:
-      position: 104
-      prefix: --check-all
-  - id: check_rs
+      position: 102
+      prefix: --progress
+  - id: heartbeat
     type:
       - 'null'
-      - string
-    doc: 'Check for refseqs in downloaded files: one of: no, yes, smart'
+      - int
+    doc: 'Time period in minutes to display download progress. (0: no progress)'
     inputBinding:
-      position: 104
-      prefix: --check-rs
+      position: 102
+      prefix: --heartbeat
   - id: eliminate_quals
     type:
       - 'null'
       - boolean
     doc: Download SRA Lite files with simplified base quality scores, or fail if
-      not available
+      not available.
     inputBinding:
-      position: 104
+      position: 102
       prefix: --eliminate-quals
-  - id: file_type
-    type:
-      - 'null'
-      - string
-    doc: Specify file type to download
-    inputBinding:
-      position: 104
-      prefix: --type
-  - id: force
-    type:
-      - 'null'
-      - string
-    doc: 'Force object download: one of: no, yes, all, ALL'
-    inputBinding:
-      position: 104
-      prefix: --force
-  - id: heartbeat
-    type:
-      - 'null'
-      - int
-    doc: Time period in minutes to display download progress
-    inputBinding:
-      position: 104
-      prefix: --heartbeat
-  - id: jwt_cart_file
-    type:
-      - 'null'
-      - File
-    doc: PATH to jwt cart file
-    inputBinding:
-      position: 104
-      prefix: --perm
-  - id: list_kart
+  - id: check_all
     type:
       - 'null'
       - boolean
-    doc: List the content of kart file
+    doc: Double-check all refseqs.
     inputBinding:
-      position: 104
+      position: 102
+      prefix: --check-all
+  - id: check_rs
+    type:
+      - 'null'
+      - string
+    doc: 'Check for refseqs in downloaded files: one of: no, yes, smart.'
+    inputBinding:
+      position: 102
+      prefix: --check-rs
+  - id: list
+    type:
+      - 'null'
+      - boolean
+    doc: List the content of kart file.
+    inputBinding:
+      position: 102
       prefix: --list
-  - id: list_sizes
-    type:
-      - 'null'
-      - boolean
-    doc: List the content of kart file with target file sizes
-    inputBinding:
-      position: 104
-      prefix: --list-sizes
-  - id: location
-    type:
-      - 'null'
-      - string
-    doc: Location of data
-    inputBinding:
-      position: 104
-      prefix: --location
-  - id: log_level
-    type:
-      - 'null'
-      - string
-    doc: Logging level as number or enum string
-    inputBinding:
-      position: 104
-      prefix: --log-level
-  - id: max_size
-    type:
-      - 'null'
-      - string
-    doc: Maximum file size to download in KB (exclusive)
-    inputBinding:
-      position: 104
-      prefix: --max-size
-  - id: min_size
-    type:
-      - 'null'
-      - int
-    doc: Minimum file size to download in KB (inclusive)
-    inputBinding:
-      position: 104
-      prefix: --min-size
-  - id: ngc_file
-    type:
-      - 'null'
-      - File
-    doc: PATH to ngc file
-    inputBinding:
-      position: 104
-      prefix: --ngc
   - id: numbered_list
     type:
       - 'null'
       - boolean
-    doc: List the content of kart file with kart row numbers
+    doc: List the content of kart file with kart row numbers.
     inputBinding:
-      position: 104
+      position: 102
       prefix: --numbered-list
-  - id: option_file
+  - id: list_sizes
     type:
       - 'null'
-      - File
-    doc: Read more options and parameters from the file
+      - boolean
+    doc: List the content of kart file with target file sizes.
     inputBinding:
-      position: 104
-      prefix: --option-file
+      position: 102
+      prefix: --list-sizes
   - id: order
     type:
       - 'null'
       - string
-    doc: 'Kart prefetch order when downloading kart: one of: kart, size'
+    doc: 'Kart prefetch order when downloading kart: one of: kart, size.'
     inputBinding:
-      position: 104
+      position: 102
       prefix: --order
-  - id: progress
-    type:
-      - 'null'
-      - boolean
-    doc: Show progress
-    inputBinding:
-      position: 104
-      prefix: --progress
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Turn off all status messages for the program
-    inputBinding:
-      position: 104
-      prefix: --quiet
-  - id: resume
-    type:
-      - 'null'
-      - string
-    doc: 'Resume partial downloads: one of: no, yes'
-    inputBinding:
-      position: 104
-      prefix: --resume
   - id: rows
     type:
       - 'null'
       - string
-    doc: Kart rows to download (default all)
+    doc: Kart rows to download (default all). Row list should be ordered.
     inputBinding:
-      position: 104
+      position: 102
       prefix: --rows
-  - id: transport
-    type:
-      - 'null'
-      - string
-    doc: 'Transport: one of: fasp; http; both'
+  - id: perm
+    type: File
+    doc: PATH to jwt cart file.
     inputBinding:
-      position: 104
-      prefix: --transport
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Increase the verbosity of the program status messages
-    inputBinding:
-      position: 104
-      prefix: --verbose
-  - id: verify
-    type:
-      - 'null'
-      - string
-    doc: 'Verify after download: one of: no, yes'
-    inputBinding:
-      position: 104
-      prefix: --verify
-  - id: output_directory_path
-    type:
-      - 'null'
-      - Directory
-    doc: Output or path parameter `output_directory_path`
-    inputBinding:
-      position: 105
-      prefix: --output-directory
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 106
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 102
+      prefix: --perm
+  - id: ngc
     type:
       - 'null'
       - File
-    doc: Write file to FILE when downloading single file
-    outputBinding:
-      glob: $(inputs.output_file_path)
+    doc: PATH to ngc file.
+    inputBinding:
+      position: 102
+      prefix: --ngc
+  - id: cart
+    type:
+      - 'null'
+      - File
+    doc: To read kart file.
+    inputBinding:
+      position: 102
+      prefix: --cart
+  - id: ascp_path
+    type:
+      - 'null'
+      - string
+    doc: Path to ascp program and private key file (aspera_tokenauth_id_rsa)
+    inputBinding:
+      position: 102
+      prefix: --ascp-path
+  - id: ascp_options
+    type:
+      - 'null'
+      - string
+    doc: Arbitrary options to pass to ascp command line.
+    inputBinding:
+      position: 102
+      prefix: --ascp-options
   - id: output_directory
+    type: string
+    doc: Save files to DIRECTORY/
+    inputBinding:
+      position: 102
+      prefix: --output-directory
+  - id: log_level
+    type:
+      - 'null'
+      - string
+    doc: Logging level as number or enum string.
+    inputBinding:
+      position: 102
+      prefix: --log-level
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Turn off all status messages for the program.
+    inputBinding:
+      position: 102
+      prefix: --quiet
+  - id: option_file
+    type:
+      - 'null'
+      - File
+    doc: Read more options and parameters from the file.
+    inputBinding:
+      position: 102
+      prefix: --option-file
+outputs:
+  - id: output_output_directory
     type:
       - 'null'
       - Directory
     doc: Save files to DIRECTORY/
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $(inputs.output_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/sra-tools:3.2.1--h4304569_1
+    dockerPull: quay.io/biocontainers/sra-tools:3.4.1--2_linux_64
+s:url: https://github.com/ncbi/sra-tools
+$namespaces:
+  s: https://schema.org/

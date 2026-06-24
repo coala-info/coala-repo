@@ -2,93 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fasterq-dump
 label: sra-tools_fasterq-dump
-doc: "Dump SRA data in FASTQ format\n\nTool homepage: https://github.com/ncbi/sra-tools"
+doc: A tool for dumping data from SRA accessions or paths in FASTQ/FASTA format,
+  designed for speed and efficiency.
 inputs:
-  - id: path_or_accession
+  - id: input
     type: string
-    doc: Path to SRA data or accession ID
+    doc: Path or accession to process
     inputBinding:
       position: 1
-  - id: append_to_file
-    type:
-      - 'null'
-      - boolean
-    doc: append to output-file
-    inputBinding:
-      position: 102
-      prefix: --append
-  - id: buffer_size
-    type:
-      - 'null'
-      - string
-    doc: size of file-buffer
-    inputBinding:
-      position: 102
-      prefix: --bufsize
-  - id: concatenate_reads
-    type:
-      - 'null'
-      - boolean
-    doc: writes whole spots into one file
-    inputBinding:
-      position: 102
-      prefix: --concatenate-reads
-  - id: cursor_cache_size
-    type:
-      - 'null'
-      - string
-    doc: size of cursor-cache
-    inputBinding:
-      position: 102
-      prefix: --curcache
-  - id: disk_limit
-    type:
-      - 'null'
-      - string
-    doc: explicitly set disk-limit
-    inputBinding:
-      position: 102
-      prefix: --disk-limit
-  - id: disk_limit_tmp
-    type:
-      - 'null'
-      - string
-    doc: explicitly set disk-limit for temp. files
-    inputBinding:
-      position: 102
-      prefix: --disk-limit-tmp
-  - id: external_ref
-    type:
-      - 'null'
-      - boolean
-    doc: extract only external REFERENCEs
-    inputBinding:
-      position: 102
-      prefix: --external-ref
-  - id: fasta_concat_all
-    type:
-      - 'null'
-      - boolean
-    doc: concatenate all rows and produce FASTA
-    inputBinding:
-      position: 102
-      prefix: --fasta-concat-all
-  - id: filter_bases
-    type:
-      - 'null'
-      - int
-    doc: filter by bases
-    inputBinding:
-      position: 102
-      prefix: --bases
-  - id: force_overwrite
-    type:
-      - 'null'
-      - boolean
-    doc: force to overwrite existing file(s)
-    inputBinding:
-      position: 102
-      prefix: --force
   - id: format
     type:
       - 'null'
@@ -97,6 +18,130 @@ inputs:
     inputBinding:
       position: 102
       prefix: --format
+  - id: outfile
+    type: string
+    doc: output-file
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: outdir
+    type: string
+    doc: output-dir
+    inputBinding:
+      position: 102
+      prefix: --outdir
+  - id: bufsize
+    type:
+      - 'null'
+      - string
+    doc: size of file-buffer
+    inputBinding:
+      position: 102
+      prefix: --bufsize
+  - id: curcache
+    type:
+      - 'null'
+      - string
+    doc: size of cursor-cache
+    inputBinding:
+      position: 102
+      prefix: --curcache
+  - id: mem
+    type:
+      - 'null'
+      - string
+    doc: memory limit for sorting
+    inputBinding:
+      position: 102
+      prefix: --mem
+  - id: temp
+    type:
+      - 'null'
+      - Directory
+    doc: where to put temp. files
+    inputBinding:
+      position: 102
+      prefix: --temp
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: how many thread
+    inputBinding:
+      position: 102
+      prefix: --threads
+  - id: progress
+    type:
+      - 'null'
+      - boolean
+    doc: show progress
+    inputBinding:
+      position: 102
+      prefix: --progress
+  - id: details
+    type:
+      - 'null'
+      - boolean
+    doc: print details
+    inputBinding:
+      position: 102
+      prefix: --details
+  - id: split_spot
+    type:
+      - 'null'
+      - boolean
+    doc: split spots into reads
+    inputBinding:
+      position: 102
+      prefix: --split-spot
+  - id: split_files
+    type:
+      - 'null'
+      - boolean
+    doc: write reads into different files
+    inputBinding:
+      position: 102
+      prefix: --split-files
+  - id: split_3
+    type:
+      - 'null'
+      - boolean
+    doc: writes single reads in special file
+    inputBinding:
+      position: 102
+      prefix: --split-3
+  - id: concatenate_reads
+    type:
+      - 'null'
+      - boolean
+    doc: writes whole spots into one file
+    inputBinding:
+      position: 102
+      prefix: --concatenate-reads
+  - id: stdout
+    type:
+      - 'null'
+      - boolean
+    doc: print output to stdout
+    inputBinding:
+      position: 102
+      prefix: --stdout
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: force to overwrite existing file(s)
+    inputBinding:
+      position: 102
+      prefix: --force
+  - id: skip_technical
+    type:
+      - 'null'
+      - boolean
+    doc: skip technical reads
+    inputBinding:
+      position: 102
+      prefix: --skip-technical
   - id: include_technical
     type:
       - 'null'
@@ -105,31 +150,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --include-technical
-  - id: internal_ref
-    type:
-      - 'null'
-      - boolean
-    doc: extract only internal REFERENCEs
-    inputBinding:
-      position: 102
-      prefix: --internal-ref
-  - id: log_level
-    type:
-      - 'null'
-      - string
-    doc: Logging level as number or enum string. One of 
-      (fatal|sys|int|err|warn|info|debug) or (0-6) Current/default is warn.
-    inputBinding:
-      position: 102
-      prefix: --log-level
-  - id: memory_limit
-    type:
-      - 'null'
-      - string
-    doc: memory limit for sorting
-    inputBinding:
-      position: 102
-      prefix: --mem
   - id: min_read_len
     type:
       - 'null'
@@ -138,39 +158,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --min-read-len
-  - id: ngc_file
-    type:
-      - 'null'
-      - File
-    doc: PATH to ngc file
-    inputBinding:
-      position: 102
-      prefix: --ngc
-  - id: only_aligned
-    type:
-      - 'null'
-      - boolean
-    doc: process only aligned reads
-    inputBinding:
-      position: 102
-      prefix: --only-aligned
-  - id: only_unaligned
-    type:
-      - 'null'
-      - boolean
-    doc: process only unaligned reads
-    inputBinding:
-      position: 102
-      prefix: --only-unaligned
-  - id: option_file
-    type:
-      - 'null'
-      - File
-    doc: Read more options and parameters from the file.
-    inputBinding:
-      position: 102
-      prefix: --option-file
-  - id: pacbio_seq_table
+  - id: table
     type:
       - 'null'
       - string
@@ -178,15 +166,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --table
-  - id: print_details
+  - id: bases
+    type:
+      - 'null'
+      - string
+    doc: filter by bases
+    inputBinding:
+      position: 102
+      prefix: --bases
+  - id: append
     type:
       - 'null'
       - boolean
-    doc: print details
+    doc: append to output-file
     inputBinding:
       position: 102
-      prefix: --details
-  - id: produce_fasta
+      prefix: --append
+  - id: fasta
     type:
       - 'null'
       - boolean
@@ -194,15 +190,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fasta
-  - id: produce_fasta_ref_tbl
-    type:
-      - 'null'
-      - boolean
-    doc: produce FASTA output from REFERENCE tbl
-    inputBinding:
-      position: 102
-      prefix: --fasta-ref-tbl
-  - id: produce_fasta_unsorted
+  - id: fasta_unsorted
     type:
       - 'null'
       - boolean
@@ -210,22 +198,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fasta-unsorted
-  - id: qual_defline
-    type:
-      - 'null'
-      - string
-    doc: 'custom defline for qualities:  same as seq-defline'
-    inputBinding:
-      position: 102
-      prefix: --qual-defline
-  - id: quiet
+  - id: fasta_ref_tbl
     type:
       - 'null'
       - boolean
-    doc: Turn off all status messages for the program. Negated by verbose.
+    doc: produce FASTA output from REFERENCE tbl
     inputBinding:
       position: 102
-      prefix: --quiet
+      prefix: --fasta-ref-tbl
+  - id: fasta_concat_all
+    type:
+      - 'null'
+      - boolean
+    doc: concatenate all rows and produce FASTA
+    inputBinding:
+      position: 102
+      prefix: --fasta-concat-all
+  - id: internal_ref
+    type:
+      - 'null'
+      - boolean
+    doc: extract only internal REFERENCEs
+    inputBinding:
+      position: 102
+      prefix: --internal-ref
+  - id: external_ref
+    type:
+      - 'null'
+      - boolean
+    doc: extract only external REFERENCEs
+    inputBinding:
+      position: 102
+      prefix: --external-ref
   - id: ref_name
     type:
       - 'null'
@@ -242,89 +246,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ref-report
-  - id: seq_defline
-    type:
-      - 'null'
-      - string
-    doc: 'custom defline for sequence:  $ac=accession, $sn=spot-name,  $sg=spot-group,
-      $si=spot-id,  $ri=read-id, $rl=read-length'
-    inputBinding:
-      position: 102
-      prefix: --seq-defline
-  - id: show_progress
-    type:
-      - 'null'
-      - boolean
-    doc: show progress
-    inputBinding:
-      position: 102
-      prefix: --progress
-  - id: size_check
-    type:
-      - 'null'
-      - string
-    doc: 'switch to control: on=perform size-check (default),  off=do not perform
-      size-check,  only=perform size-check only'
-      only=perform size-check only
-    inputBinding:
-      position: 102
-      prefix: --size-check
-  - id: skip_technical
-    type:
-      - 'null'
-      - boolean
-    doc: skip technical reads
-    inputBinding:
-      position: 102
-      prefix: --skip-technical
-  - id: split_3
-    type:
-      - 'null'
-      - boolean
-    doc: writes single reads in special file
-    inputBinding:
-      position: 102
-      prefix: --split-3
-  - id: split_files
-    type:
-      - 'null'
-      - boolean
-    doc: write reads into different files
-    inputBinding:
-      position: 102
-      prefix: --split-files
-  - id: split_spot
-    type:
-      - 'null'
-      - boolean
-    doc: split spots into reads
-    inputBinding:
-      position: 102
-      prefix: --split-spot
-  - id: stdout
-    type:
-      - 'null'
-      - boolean
-    doc: print output to stdout
-    inputBinding:
-      position: 102
-      prefix: --stdout
-  - id: temp_dir
-    type:
-      - 'null'
-      - Directory
-    doc: where to put temp. files
-    inputBinding:
-      position: 102
-      prefix: --temp
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: how many thread
-    inputBinding:
-      position: 102
-      prefix: --threads
   - id: use_name
     type:
       - 'null'
@@ -333,30 +254,117 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-name
-  - id: verbose
+  - id: seq_defline
+    type:
+      - 'null'
+      - string
+    doc: 'custom defline for sequence: $ac=accession, $sn=spot-name, $sg=spot-group,
+      $si=spot-id, $ri=read-id, $rl=read-length'
+    inputBinding:
+      position: 102
+      prefix: --seq-defline
+  - id: qual_defline
+    type:
+      - 'null'
+      - string
+    doc: 'custom defline for qualities: same as seq-defline'
+    inputBinding:
+      position: 102
+      prefix: --qual-defline
+  - id: only_unaligned
     type:
       - 'null'
       - boolean
-    doc: Increase the verbosity of the program status messages. Use multiple 
-      times for more verbosity. Negates quiet.
+    doc: process only unaligned reads
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: --only-unaligned
+  - id: only_aligned
+    type:
+      - 'null'
+      - boolean
+    doc: process only aligned reads
+    inputBinding:
+      position: 102
+      prefix: --only-aligned
+  - id: disk_limit
+    type:
+      - 'null'
+      - string
+    doc: explicitly set disk-limit
+    inputBinding:
+      position: 102
+      prefix: --disk-limit
+  - id: disk_limit_tmp
+    type:
+      - 'null'
+      - string
+    doc: explicitly set disk-limit for temp. files
+    inputBinding:
+      position: 102
+      prefix: --disk-limit-tmp
+  - id: size_check
+    type:
+      - 'null'
+      - string
+    doc: 'switch to control: on=perform size-check (default), off=do not perform size-check,
+      only=perform size-check only'
+    inputBinding:
+      position: 102
+      prefix: --size-check
+  - id: ngc
+    type:
+      - 'null'
+      - File
+    doc: PATH to ngc file
+    inputBinding:
+      position: 102
+      prefix: --ngc
+  - id: log_level
+    type:
+      - 'null'
+      - string
+    doc: Logging level as number or enum string. One of 
+      (fatal|sys|int|err|warn|info|debug) or (0-6)
+    inputBinding:
+      position: 102
+      prefix: --log-level
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Turn off all status messages for the program.
+    inputBinding:
+      position: 102
+      prefix: --quiet
+  - id: option_file
+    type:
+      - 'null'
+      - File
+    doc: Read more options and parameters from the file.
+    inputBinding:
+      position: 102
+      prefix: --option-file
 outputs:
-  - id: output_file
+  - id: output_outfile
     type:
       - 'null'
       - File
     doc: output-file
     outputBinding:
-      glob: $(inputs.output_file)
-  - id: output_dir
+      glob: $(inputs.outfile)
+  - id: output_outdir
     type:
       - 'null'
       - Directory
     doc: output-dir
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/sra-tools:3.2.1--h4304569_1
+    dockerPull: quay.io/biocontainers/sra-tools:3.4.1--2_linux_64
+s:url: https://github.com/ncbi/sra-tools
+$namespaces:
+  s: https://schema.org/

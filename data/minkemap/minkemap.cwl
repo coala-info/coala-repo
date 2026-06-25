@@ -120,6 +120,8 @@ inputs:
       prefix: --palette
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome (FASTA or GenBank)
     inputBinding:
       position: 101

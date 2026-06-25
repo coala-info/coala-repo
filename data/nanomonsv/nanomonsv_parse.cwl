@@ -34,6 +34,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: the path to the reference genome sequence
     inputBinding:
       position: 103

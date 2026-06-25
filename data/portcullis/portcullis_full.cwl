@@ -139,6 +139,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference annotation of junctions in BED format. Any junctions found by
       the junction analysis tool will be preserved if found in this reference 
       file regardless of any other filtering criteria. If you need to convert a 

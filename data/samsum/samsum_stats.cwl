@@ -41,6 +41,8 @@ inputs:
       prefix: --multireads
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: "Path to the reference file used to generate the\n                      \
       \  SAM/BAM file."
     inputBinding:

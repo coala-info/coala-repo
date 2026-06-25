@@ -6,6 +6,8 @@ doc: "Simulator for long-read sequencers (PacBio and Nanopore)\n\nTool homepage:
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA format file (text file only).
     inputBinding:
       position: 1

@@ -9,6 +9,8 @@ doc: "Index a reference genome or transcriptome for PALADIN alignment\n\nTool ho
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file (nucleotide or protein)
     inputBinding:
       position: 1

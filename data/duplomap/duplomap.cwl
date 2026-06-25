@@ -229,6 +229,8 @@ inputs:
       prefix: --read-psv-impact
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome in the indexed fasta format.
     inputBinding:
       position: 101

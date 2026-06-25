@@ -235,4 +235,4 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/pyscenic:0.12.1--pyhdfd78af_1
+    dockerPull: aertslab/pyscenic:0.12.1

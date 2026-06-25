@@ -82,6 +82,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference file. Must be accompanied by .fai index (create with samtools
       faidx)
     inputBinding:

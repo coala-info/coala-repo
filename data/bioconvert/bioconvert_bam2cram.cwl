@@ -117,6 +117,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: the reference used (FASTA format). If not provided, prompt will appear
     inputBinding:
       position: 102

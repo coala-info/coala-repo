@@ -14,6 +14,8 @@ inputs:
       position: 1
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: "The reference genome in (gzipped) FASTA format. This is needed to\n    \
       \               recompute alignment scores (AS tags). If your BAM file does
       have AS tags\n                   such that 10^(AS/-10.0) can be interpreted

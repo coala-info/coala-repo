@@ -54,6 +54,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to reference FASTA file
     inputBinding:
       position: 101

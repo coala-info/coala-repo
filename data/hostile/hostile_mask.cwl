@@ -8,6 +8,8 @@ doc: "Mask reference genome against target genome(s)\n\nTool homepage: https://g
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: path to reference genome in fasta(.gz) format
     inputBinding:
       position: 1

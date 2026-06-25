@@ -36,6 +36,8 @@ inputs:
       prefix: -g
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference file in fasta format
     inputBinding:
       position: 101

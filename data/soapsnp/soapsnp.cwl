@@ -129,6 +129,8 @@ inputs:
       prefix: -z
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference Sequence in fasta format
     inputBinding:
       position: 101

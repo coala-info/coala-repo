@@ -75,6 +75,8 @@ inputs:
       prefix: --prefix_orientation
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: the reference from which the STR Graph will be generated
     inputBinding:
       position: 101

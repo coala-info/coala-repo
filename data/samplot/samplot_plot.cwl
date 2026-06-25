@@ -243,6 +243,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference file for CRAM, required if CRAM files used
     inputBinding:
       position: 101

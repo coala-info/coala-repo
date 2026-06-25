@@ -48,6 +48,8 @@ inputs:
       prefix: -O2
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference sequence (single sequence in FASTA format)
     inputBinding:
       position: 101

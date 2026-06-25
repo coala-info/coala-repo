@@ -138,6 +138,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: The reference file to which the k-mers should be mapped.
     inputBinding:
       position: 102

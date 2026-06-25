@@ -71,6 +71,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Fasta file with reference genome sequences (each sequence on one line)
     inputBinding:
       position: 101

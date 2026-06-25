@@ -174,6 +174,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence the reads were aligned against. To enable output of 
       deletion SV sequences, this parameter must be set.
     inputBinding:

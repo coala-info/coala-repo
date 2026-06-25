@@ -82,6 +82,8 @@ inputs:
       prefix: --prefix
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference sequence. Only fasta format is accepted 
       currently.
     inputBinding:

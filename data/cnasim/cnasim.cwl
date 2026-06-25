@@ -324,6 +324,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to input reference genome as the primary haplotype in fasta 
       format.
     inputBinding:

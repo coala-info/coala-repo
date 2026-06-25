@@ -24,6 +24,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Genome FASTA for sequence context
     inputBinding:
       position: 104

@@ -106,6 +106,8 @@ inputs:
     prefix: --no-sc
 - id: reference
   type: File?
+  secondaryFiles:
+    - .fai
   doc: Reference sequence FASTA FILE
   inputBinding:
     position: 102

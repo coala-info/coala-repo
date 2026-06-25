@@ -9,6 +9,8 @@ doc: "View modifications in reads using a reference genome and BAM file\n\nTool 
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome FASTA file
     inputBinding:
       position: 1

@@ -126,6 +126,8 @@ inputs:
       prefix: -x
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference used for recruiting reads
     inputBinding:
       position: 101

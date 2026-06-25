@@ -27,6 +27,8 @@ inputs:
       position: 3
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: A multi-fasta format file that contains the whole genome sequence for 
       the appropriate organism and genome build. This file should be indexed (eg
       by using samtools faidx) and placed in the same directory.

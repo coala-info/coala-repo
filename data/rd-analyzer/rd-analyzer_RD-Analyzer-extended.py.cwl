@@ -6,6 +6,8 @@ doc: "RD-Analyzer-extended.py\n\nTool homepage: https://github.com/xiaeryu/RD-An
 inputs:
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

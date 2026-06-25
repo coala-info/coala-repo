@@ -6,6 +6,8 @@ doc: "Create a sixframe translation of a genome.\n\nTool homepage: https://githu
 inputs:
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input genome fasta file
     inputBinding:
       position: 1

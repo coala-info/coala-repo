@@ -6,6 +6,8 @@ doc: "Download and build the mitochondria database\n\nTool homepage: https://git
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 101

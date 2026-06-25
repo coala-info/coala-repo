@@ -69,6 +69,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .tbi?
     doc: DBsnp database (VCF) to compare indels against
     inputBinding:
       position: 101

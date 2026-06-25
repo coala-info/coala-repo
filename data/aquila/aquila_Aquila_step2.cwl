@@ -53,6 +53,8 @@ inputs:
       prefix: --out_dir
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file, run ./install to download "source/ref.fa" for 
       GRCh38
     inputBinding:

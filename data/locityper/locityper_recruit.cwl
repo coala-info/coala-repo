@@ -145,6 +145,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file. Required with input CRAM file (-a alns.cram).
     inputBinding:
       position: 101

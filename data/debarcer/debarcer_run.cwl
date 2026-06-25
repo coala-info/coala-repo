@@ -228,6 +228,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to the refeence genome
     inputBinding:
       position: 101

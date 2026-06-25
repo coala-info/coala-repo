@@ -213,6 +213,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: 'The the reference fasta. Should be indexed (.fai). Default to: /ngs/reference_data/genomes/Hsapiens/hg19/seq/hg19.fa'
     inputBinding:
       position: 102

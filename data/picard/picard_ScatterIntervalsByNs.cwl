@@ -20,6 +20,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: 'Reference sequence to use. Note: this tool requires that the reference fasta
       has both an associated index and a dictionary.'
     inputBinding:

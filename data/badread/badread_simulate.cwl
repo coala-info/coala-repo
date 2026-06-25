@@ -95,6 +95,8 @@ inputs:
       prefix: --random_reads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file (can be gzipped)
     inputBinding:
       position: 101

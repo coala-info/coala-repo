@@ -7,6 +7,8 @@ doc: "gapped alignment with minimap2. Performs minimap2/mappy alignment with spl
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference genome (FASTA)
     inputBinding:
       position: 1

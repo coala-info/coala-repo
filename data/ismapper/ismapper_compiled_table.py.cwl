@@ -43,6 +43,8 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: gbk file of reference
     inputBinding:
       position: 101

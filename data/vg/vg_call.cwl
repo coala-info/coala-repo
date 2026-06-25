@@ -176,6 +176,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference FASTA (required if VCF has symbolic deletions/inversions)
     inputBinding:
       position: 102

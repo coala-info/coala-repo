@@ -142,6 +142,8 @@ inputs:
       prefix: --pool_size
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference genome in fasta format
     inputBinding:
       position: 101

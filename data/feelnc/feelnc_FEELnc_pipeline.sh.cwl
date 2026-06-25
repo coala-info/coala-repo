@@ -30,6 +30,8 @@ inputs:
       prefix: --outname
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference GTF file
     inputBinding:
       position: 101

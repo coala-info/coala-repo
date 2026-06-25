@@ -29,6 +29,8 @@ inputs:
       prefix: --input
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Provide a reference library (FASTA) containing sequences for the genes 
       of interest (required to find contigs matching targeted regions).
     inputBinding:

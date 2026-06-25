@@ -28,6 +28,8 @@ inputs:
       prefix: --motif-list
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference sequence in fasta format
     inputBinding:
       position: 102

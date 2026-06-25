@@ -147,6 +147,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file for read generation.
     inputBinding:
       position: 101

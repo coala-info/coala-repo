@@ -38,6 +38,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: FASTA file used to re-squiggle. For faster sequence access.
     inputBinding:
       position: 101

@@ -46,6 +46,8 @@ inputs:
       prefix: --max-cds-length
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to reference genome fasta file
     inputBinding:
       position: 101

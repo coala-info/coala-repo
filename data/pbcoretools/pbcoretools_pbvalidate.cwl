@@ -95,6 +95,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to optional reference FASTA file, used for additional validation 
       of mapped BAM records
     inputBinding:

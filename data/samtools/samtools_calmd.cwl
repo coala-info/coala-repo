@@ -20,6 +20,8 @@ inputs:
     position: 1
 - id: reference_fasta
   type: File
+  secondaryFiles:
+    - .fai
   doc: Reference sequence FASTA file
   inputBinding:
     position: 2
@@ -118,6 +120,8 @@ inputs:
   type:
   - 'null'
   - File
+  secondaryFiles:
+    - .fai
   doc: Reference sequence FASTA FILE [null]
   inputBinding:
     position: 103

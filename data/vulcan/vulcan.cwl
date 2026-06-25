@@ -120,6 +120,8 @@ inputs:
       prefix: --raw_edit_distance
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference path
     inputBinding:
       position: 101

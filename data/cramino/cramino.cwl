@@ -47,6 +47,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference for decompressing cram
     inputBinding:
       position: 102

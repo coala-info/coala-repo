@@ -77,6 +77,8 @@ inputs:
       prefix: --quiet
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Fasta file with the GFF Reference
     inputBinding:
       position: 101

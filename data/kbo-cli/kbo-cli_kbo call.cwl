@@ -46,6 +46,8 @@ inputs:
       prefix: --prefix-precalc
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence to call variants in.
     inputBinding:
       position: 102

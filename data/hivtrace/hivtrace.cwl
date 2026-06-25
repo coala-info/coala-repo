@@ -86,6 +86,8 @@ inputs:
       prefix: --prior
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference to align to
     inputBinding:
       position: 101

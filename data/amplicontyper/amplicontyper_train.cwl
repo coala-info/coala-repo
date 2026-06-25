@@ -43,6 +43,8 @@ inputs:
       prefix: --positive_bams
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file with the reference to which reads where mapped
     inputBinding:
       position: 101

@@ -211,6 +211,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Either a file in the reference directory where the fasta file for the 
       database is located, or a directory containing multiple fasta files that 
       constitute the database.

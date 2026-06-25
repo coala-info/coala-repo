@@ -54,6 +54,8 @@ inputs:
       prefix: --no_local
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta file of naive CDR3 amino acid sequences used for 
       estimation of significant k-mers.
     inputBinding:

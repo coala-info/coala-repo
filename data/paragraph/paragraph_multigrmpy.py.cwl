@@ -149,6 +149,8 @@ inputs:
       prefix: --read-length
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome fasta file.
     inputBinding:
       position: 101

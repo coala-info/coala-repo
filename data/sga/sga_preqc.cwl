@@ -42,6 +42,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: use the reference FILE to calculate GC plot
     inputBinding:
       position: 102

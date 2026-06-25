@@ -73,6 +73,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: "read the reference sequence from this file (default=\"HXB2_pol\")\n    \
       \                       first checks to see if the filepath exists, if not looks
       inside the res/references directory\n                           relative to

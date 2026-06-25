@@ -31,6 +31,8 @@ inputs:
       prefix: --log_level
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta to check vcf file against
     inputBinding:
       position: 101

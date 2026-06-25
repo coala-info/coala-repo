@@ -35,6 +35,8 @@ inputs:
       prefix: --prefix
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file for the target assembly
     inputBinding:
       position: 102

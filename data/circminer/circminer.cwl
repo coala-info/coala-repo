@@ -112,6 +112,8 @@ inputs:
       prefix: --pam
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference file.
     inputBinding:
       position: 101

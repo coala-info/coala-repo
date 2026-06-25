@@ -9,6 +9,8 @@ doc: "Calculate modification frequencies from reads aligned to a reference\n\nTo
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

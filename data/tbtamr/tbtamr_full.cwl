@@ -7,6 +7,8 @@ doc: "Runs the full tbtamr pipeline, including mutAMR for VCF generation and BWA
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file for BWA indexing
     inputBinding:
       position: 1

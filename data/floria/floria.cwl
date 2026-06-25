@@ -143,6 +143,8 @@ inputs:
       prefix: --ploidy-sensitivity
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta for the BAM file.
     inputBinding:
       position: 101

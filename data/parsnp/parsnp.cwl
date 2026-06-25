@@ -262,6 +262,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: (r)eference genome (set to ! to pick random one from sequence dir)
     inputBinding:
       position: 101

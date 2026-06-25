@@ -48,6 +48,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference file for CRAMs
     inputBinding:
       position: 101

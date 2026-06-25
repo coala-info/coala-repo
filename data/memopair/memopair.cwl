@@ -6,6 +6,8 @@ doc: "Methylation Motif Pairs\n\nTool homepage: https://github.com/SorenHeidelba
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: File path to the fasta file with references
     inputBinding:
       position: 1

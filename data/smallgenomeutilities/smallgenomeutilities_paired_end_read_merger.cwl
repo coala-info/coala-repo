@@ -30,6 +30,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference file used during alignment
     inputBinding:
       position: 102

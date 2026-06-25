@@ -8,6 +8,8 @@ doc: "Localisation of inducible prophages using NGS data\n\nTool homepage: https
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file. Can be gzipped.
     inputBinding:
       position: 101

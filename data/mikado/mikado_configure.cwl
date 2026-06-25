@@ -313,6 +313,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Fasta genomic reference.
     inputBinding:
       position: 102

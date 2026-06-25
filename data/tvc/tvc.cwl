@@ -568,6 +568,8 @@ inputs:
       prefix: --recal-model-hp-thres
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file
     inputBinding:
       position: 101

@@ -118,6 +118,8 @@ inputs:
       prefix: --ref-bed
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 101

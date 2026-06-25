@@ -9,6 +9,8 @@ doc: "AGC (Assembled Genomes Compressor) - Create a compressed archive from asse
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

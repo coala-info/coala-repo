@@ -38,6 +38,8 @@ inputs:
       prefix: --min-base-quality
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference sequences in FASTA format (can be gzipped)
     inputBinding:
       position: 101

@@ -40,6 +40,8 @@ inputs:
       prefix: --outdir
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: path/to/REFERENCE/pvar
     inputBinding:
       position: 101

@@ -18,6 +18,8 @@ inputs:
       position: 1
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: REFERENCE in FASTA format
     inputBinding:
       position: 2

@@ -75,6 +75,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference genome FASTA file.
     inputBinding:
       position: 101

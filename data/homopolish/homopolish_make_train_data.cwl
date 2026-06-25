@@ -96,6 +96,8 @@ inputs:
       prefix: --minimap_args
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: True reference aligned to assembly genome. Include labels in output.
     inputBinding:
       position: 101

@@ -14,6 +14,8 @@ inputs:
       prefix: -d
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: genome.fasta
     inputBinding:
       position: 101

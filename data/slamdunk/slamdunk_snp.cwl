@@ -21,6 +21,8 @@ inputs:
       prefix: --min-coverage
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta file
     inputBinding:
       position: 102

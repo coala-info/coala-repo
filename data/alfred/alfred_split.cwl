@@ -38,6 +38,8 @@ inputs:
       prefix: --map-qual
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file
     inputBinding:
       position: 102

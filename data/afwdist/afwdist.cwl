@@ -21,6 +21,8 @@ inputs:
       prefix: --input
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence in FASTA format
     inputBinding:
       position: 101

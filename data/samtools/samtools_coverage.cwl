@@ -96,6 +96,8 @@ inputs:
     prefix: --plot-depth
 - id: reference
   type: File?
+  secondaryFiles:
+    - .fai
   doc: Reference sequence FASTA FILE
   inputBinding:
     position: 102

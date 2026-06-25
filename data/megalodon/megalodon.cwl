@@ -135,6 +135,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA or minimap2 index file used for mapping called reads.
     inputBinding:
       position: 102

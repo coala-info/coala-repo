@@ -9,6 +9,8 @@ doc: "Filter and convert bisulfite sequencing reads based on CpH retention and o
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome in FASTA format
     inputBinding:
       position: 1

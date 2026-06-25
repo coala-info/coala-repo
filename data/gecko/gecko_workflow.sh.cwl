@@ -12,6 +12,8 @@ inputs:
       position: 1
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: The reference sequence where to look for matches from the query. Note 
       that the reverse strand is computed for the reference and also matched. 
       Use only FASTA format.

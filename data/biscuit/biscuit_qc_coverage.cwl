@@ -9,6 +9,8 @@ doc: "BISCUIT QC coverage tool for calculating coverage statistics from BAM file
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

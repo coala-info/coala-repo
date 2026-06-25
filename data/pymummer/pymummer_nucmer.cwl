@@ -9,6 +9,8 @@ doc: "nucmer generates nucleotide alignments between two mutli-FASTA input files
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Set the input reference multi-FASTA filename
     inputBinding:
       position: 1

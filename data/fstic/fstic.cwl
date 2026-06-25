@@ -57,6 +57,8 @@ inputs:
       prefix: --normalize
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file (required for all inputs).
     inputBinding:
       position: 101

@@ -98,6 +98,8 @@ inputs:
       prefix: -process
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to reference genome file *.fa[.gz]
     inputBinding:
       position: 102

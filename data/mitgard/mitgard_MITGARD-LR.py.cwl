@@ -44,6 +44,8 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: "Mandatory - input mitogenome in FASTA format to be\n                   \
       \     used as reference, /path/to/reference.fa"
     inputBinding:

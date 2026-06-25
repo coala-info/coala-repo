@@ -37,6 +37,8 @@ inputs:
       prefix: --helpFormat
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: "Indexed fasta Reference file. This file must be indexed with samtools \n\
       \      faidx and with picard/gatk CreateSequenceDictionary or samtools dict"
     inputBinding:

@@ -32,6 +32,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence file.
     inputBinding:
       position: 101

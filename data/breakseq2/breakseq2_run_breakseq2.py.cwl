@@ -92,6 +92,8 @@ inputs:
       prefix: --nthreads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA
     inputBinding:
       position: 103

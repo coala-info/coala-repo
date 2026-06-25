@@ -7,6 +7,8 @@ doc: "Aligns sequences to a reference genome, identifying mutations and structur
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file or ORF description XML file
     inputBinding:
       position: 1

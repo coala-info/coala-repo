@@ -56,6 +56,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference file used for alignment. This is used to translate the 
       nucleotide sequences and identify intra host single nucleotide variants
     inputBinding:

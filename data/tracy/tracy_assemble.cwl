@@ -98,6 +98,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference-guided assembly (optional)
     inputBinding:
       position: 102

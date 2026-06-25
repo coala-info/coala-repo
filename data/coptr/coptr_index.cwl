@@ -6,6 +6,8 @@ doc: "Index a reference FASTA file for use with coptr.\n\nTool homepage: https:/
 inputs:
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: File or folder containing fasta to index. If a folder, the extension 
       for each fasta must be one of [.fasta, .fna, .fa]
     inputBinding:

@@ -81,6 +81,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference to use for alignment. Not required if using --mtb
     inputBinding:
       position: 101

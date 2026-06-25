@@ -9,6 +9,8 @@ doc: "Get pseudo-tree-aware catchments for query sequences from alignments\n\nTo
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence, in fasta format, which is treated as the root of 
       the imaginary tree
     inputBinding:

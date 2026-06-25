@@ -7,6 +7,8 @@ doc: "This is the \"Northern Arizona SNP Pipeline\", version 1.2.0\n\nTool homep
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference fasta.
     inputBinding:
       position: 1

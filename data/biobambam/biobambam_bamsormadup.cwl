@@ -110,6 +110,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference FastA for writing cram
     inputBinding:
       position: 101

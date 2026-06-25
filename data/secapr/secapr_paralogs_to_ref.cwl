@@ -40,6 +40,8 @@ inputs:
       prefix: --gap_open_penalty
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: The fasta-file containing the reference sequences that were used for 
       extracting target contigs.
     inputBinding:

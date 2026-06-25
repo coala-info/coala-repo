@@ -52,6 +52,8 @@ inputs:
       prefix: --pval
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: an input reference file (fasta/fastq)[.gz]
     inputBinding:
       position: 101

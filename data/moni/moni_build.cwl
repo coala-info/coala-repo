@@ -54,6 +54,8 @@ inputs:
       prefix: -f
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference file name
     inputBinding:
       position: 101

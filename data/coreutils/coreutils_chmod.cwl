@@ -80,6 +80,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: use RFILE's mode instead of specifying MODE values
     inputBinding:
       position: 103

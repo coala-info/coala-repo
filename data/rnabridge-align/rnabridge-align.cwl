@@ -95,6 +95,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference genome file
     inputBinding:
       position: 101

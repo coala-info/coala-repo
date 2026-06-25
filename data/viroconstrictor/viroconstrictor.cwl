@@ -123,6 +123,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: "Input Reference sequence genome in\nFASTA format"
     inputBinding:
       position: 101

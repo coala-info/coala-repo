@@ -11,6 +11,8 @@ inputs:
       position: 1
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to fasta file for mapping.
     inputBinding:
       position: 2

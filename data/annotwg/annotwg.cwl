@@ -72,6 +72,8 @@ inputs:
       prefix: --output-format
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: indexed fasta genome reference (.fai or .dict format)
     inputBinding:
       position: 101

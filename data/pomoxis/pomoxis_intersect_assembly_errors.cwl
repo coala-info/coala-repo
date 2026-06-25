@@ -21,6 +21,8 @@ inputs:
       prefix: -o
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: "reference, should be a fasta file. If correspondng bwa indices\ndo not exist
       they will be created."
     inputBinding:

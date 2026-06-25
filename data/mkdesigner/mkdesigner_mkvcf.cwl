@@ -30,6 +30,8 @@ inputs:
       prefix: --output
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta.
     inputBinding:
       position: 101

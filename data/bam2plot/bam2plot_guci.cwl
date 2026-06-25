@@ -18,6 +18,8 @@ inputs:
       prefix: --plot_type
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta
     inputBinding:
       position: 102

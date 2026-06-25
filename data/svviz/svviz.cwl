@@ -15,6 +15,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file (a .faidx index file will be created if it doesn't
       exist so you need write permissions for this directory)
     inputBinding:

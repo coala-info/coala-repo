@@ -27,6 +27,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Provide the reference that was used for read-mapping. If you used the 
       alignment-consensus method, provide the joined_fasta_library.fasta which 
       is found in the reference_seqs folder within the reference-assembly 

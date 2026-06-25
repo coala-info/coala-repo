@@ -164,6 +164,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Optional reference fasta for sam processing
     inputBinding:
       position: 101

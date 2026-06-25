@@ -12,6 +12,8 @@ doc: "Estimate the distance of each query sequence to the reference. Both the re
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference file (fasta, fastq, or Mash sketch)
     inputBinding:
       position: 1

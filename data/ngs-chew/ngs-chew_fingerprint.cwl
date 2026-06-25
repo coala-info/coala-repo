@@ -94,6 +94,8 @@ inputs:
       prefix: --output-aafs
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to reference FASTA file.
     inputBinding:
       position: 101

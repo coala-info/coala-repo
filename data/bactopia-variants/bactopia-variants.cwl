@@ -30,6 +30,8 @@ inputs:
       prefix: --prefix
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Please supply a reference FASTA/GBK/EMBL file with --reference
     inputBinding:
       position: 101

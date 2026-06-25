@@ -8,6 +8,8 @@ doc: "Run the SNP/indel genotyping pipeline.\n\nTool homepage: https://github.co
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome in FASTA format.
     inputBinding:
       position: 1

@@ -70,6 +70,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Add this reference sequence to the dataset & strip insertions relative 
       to this. Use if the reference is NOT already in the input sequences
     inputBinding:

@@ -32,6 +32,8 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence, in fasta format
     inputBinding:
       position: 101

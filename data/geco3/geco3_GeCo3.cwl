@@ -70,6 +70,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: 'Reference sequence filename ("-rm" are trainned here). Example: -r file1.txt.'
     inputBinding:
       position: 102

@@ -92,6 +92,8 @@ inputs:
       prefix: --path-to-wigToBigWig
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: string indicating the path to a fasta file containing the genome 
       sequences
     inputBinding:

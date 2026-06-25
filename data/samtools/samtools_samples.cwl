@@ -32,6 +32,8 @@ inputs:
     prefix: -h
 - id: reference_fasta
   type: File[]?
+  secondaryFiles:
+    - .fai
   doc: load an indexed fasta file in the collection of references. Can be used 
     multiple times.
   inputBinding:

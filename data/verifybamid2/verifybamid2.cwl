@@ -178,6 +178,8 @@ inputs:
       prefix: --RefVCF
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference file[Required]
     inputBinding:
       position: 101

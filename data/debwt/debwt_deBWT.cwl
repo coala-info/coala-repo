@@ -7,6 +7,8 @@ doc: "Please make sure your sequence don't contain any uncertain characters like
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: sequence in fasta or fastq format
     inputBinding:
       position: 1

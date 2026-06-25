@@ -28,6 +28,8 @@ inputs:
       prefix: --genes
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: GenBank or GFF file containing the annotation
     inputBinding:
       position: 101

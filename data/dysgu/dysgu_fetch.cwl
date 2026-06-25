@@ -102,6 +102,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference file for opening cram files
     inputBinding:
       position: 103

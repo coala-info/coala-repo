@@ -61,6 +61,8 @@ inputs:
       prefix: --fast5-basedirs
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file used to re-squiggle. For faster sequence access.
     inputBinding:
       position: 101

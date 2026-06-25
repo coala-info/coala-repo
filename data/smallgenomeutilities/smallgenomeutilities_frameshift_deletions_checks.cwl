@@ -61,6 +61,8 @@ inputs:
       prefix: --orf1ab
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Fasta file containing the reference sequence to compare against
     inputBinding:
       position: 101

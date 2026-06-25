@@ -67,6 +67,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file for indel normalization
     inputBinding:
       position: 101

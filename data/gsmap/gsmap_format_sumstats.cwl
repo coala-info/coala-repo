@@ -49,6 +49,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .tbi?
     doc: Path to reference dnsnp file
     inputBinding:
       position: 101

@@ -17,6 +17,8 @@ doc: "Run comparative analysis of two sequence sets using nucmer and its associa
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Set the input reference multi-FASTA filename
     inputBinding:
       position: 1

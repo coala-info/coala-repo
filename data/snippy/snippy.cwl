@@ -86,6 +86,8 @@ inputs:
       prefix: --ram
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome in FASTA or Genbank format
     inputBinding:
       position: 101

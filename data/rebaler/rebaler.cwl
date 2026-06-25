@@ -7,6 +7,8 @@ doc: "reference-based long read assemblies of bacterial genomes\n\nTool homepage
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file of reference assembly
     inputBinding:
       position: 1

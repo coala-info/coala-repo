@@ -23,6 +23,8 @@ inputs:
       prefix: --bed
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: genome fasta file
     inputBinding:
       position: 102

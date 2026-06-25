@@ -150,6 +150,8 @@ inputs:
       prefix: --random-seed
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Genome FASTA file. Required.
     inputBinding:
       position: 102

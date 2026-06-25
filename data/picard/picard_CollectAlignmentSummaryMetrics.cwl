@@ -145,6 +145,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence file. Note that while this argument isn't required, 
       without it a small subset (MISMATCH-related) of the metrics cannot be 
       calculated.

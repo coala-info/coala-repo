@@ -31,6 +31,8 @@ inputs:
       prefix: --distalwindow
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: genome fasta file, ideally the same as was used for read alignment
     inputBinding:
       position: 101

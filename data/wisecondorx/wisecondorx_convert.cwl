@@ -29,6 +29,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Fasta reference to be used during cram conversion
     inputBinding:
       position: 102

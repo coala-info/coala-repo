@@ -24,6 +24,8 @@ inputs:
       prefix: --kmer
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome
     inputBinding:
       position: 103

@@ -86,6 +86,8 @@ inputs:
       prefix: --no-index
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file. Must be indexed with FAIDX.
     inputBinding:
       position: 101

@@ -126,6 +126,8 @@ inputs:
       prefix: --quiet
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference annotation file (GTF/GFF3)
     inputBinding:
       position: 101

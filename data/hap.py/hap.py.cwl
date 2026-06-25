@@ -316,6 +316,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Specify a reference file.
     inputBinding:
       position: 102

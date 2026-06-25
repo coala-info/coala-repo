@@ -14,6 +14,8 @@ inputs:
       prefix: --port
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file containing the genome to be indexed
     inputBinding:
       position: 101

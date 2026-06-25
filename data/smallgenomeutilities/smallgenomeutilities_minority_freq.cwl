@@ -39,6 +39,8 @@ inputs:
       prefix: -c
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Either a fasta file containing a reference sequence or the reference 
       name of the region/chromosome of interest. The latter is expected if a 
       region is specified

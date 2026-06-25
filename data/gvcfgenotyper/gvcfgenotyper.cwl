@@ -37,6 +37,8 @@ inputs:
       prefix: --output-type
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference sequence
     inputBinding:
       position: 101

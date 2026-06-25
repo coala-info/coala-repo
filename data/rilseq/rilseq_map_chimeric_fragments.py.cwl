@@ -6,6 +6,8 @@ doc: "Map unmapped reads as chimeric fragments\n\nTool homepage: http://github.c
 inputs:
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Name of genome fasta file. The file must be indexed using bwa index 
       command prior to this run.
     inputBinding:

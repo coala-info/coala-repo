@@ -17,6 +17,8 @@ inputs:
       position: 2
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file containing draft reference sequence
     inputBinding:
       position: 3

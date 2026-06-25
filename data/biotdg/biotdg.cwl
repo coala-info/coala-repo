@@ -64,6 +64,8 @@ inputs:
       prefix: --read-length
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome for the sample.
     inputBinding:
       position: 101

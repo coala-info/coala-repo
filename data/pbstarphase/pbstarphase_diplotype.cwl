@@ -128,6 +128,8 @@ inputs:
       prefix: --normalize-d6-only
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 101

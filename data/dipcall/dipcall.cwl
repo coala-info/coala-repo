@@ -8,6 +8,8 @@ doc: "A variant calling pipeline for diploid assemblies. It takes a reference ge
 inputs:
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome FASTA file
     inputBinding:
       position: 1

@@ -16,6 +16,8 @@ inputs:
       position: 1
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference FASTA file
     inputBinding:
       position: 2

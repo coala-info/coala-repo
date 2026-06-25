@@ -15,6 +15,8 @@ inputs:
       prefix: --allowed_exon_gap_or_overlap
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: fasta file containing the genome sequence
     inputBinding:
       position: 101

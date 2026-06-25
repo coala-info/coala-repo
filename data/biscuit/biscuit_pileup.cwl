@@ -9,6 +9,8 @@ doc: "Pileup tool for DNA methylation and genetic variant calling from bisulfite
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome FASTA file
     inputBinding:
       position: 1

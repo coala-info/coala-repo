@@ -11,6 +11,8 @@ inputs:
       position: 1
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta genome to lift genes from
     inputBinding:
       position: 2

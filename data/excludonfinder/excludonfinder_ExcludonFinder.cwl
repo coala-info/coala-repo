@@ -58,6 +58,8 @@ inputs:
       prefix: '-2'
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome in FASTA format
     inputBinding:
       position: 101

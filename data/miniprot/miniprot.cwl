@@ -6,6 +6,8 @@ doc: "Align protein sequences to a reference database.\n\nTool homepage: https:/
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference protein FASTA file
     inputBinding:
       position: 1

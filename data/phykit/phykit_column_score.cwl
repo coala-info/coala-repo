@@ -17,6 +17,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference fasta alignment to compare query alignment to
     inputBinding:
       position: 102

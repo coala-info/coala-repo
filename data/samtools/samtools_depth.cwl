@@ -134,6 +134,8 @@ inputs:
   type:
   - 'null'
   - File
+  secondaryFiles:
+    - .fai
   doc: Reference sequence FASTA FILE
   inputBinding:
     position: 102

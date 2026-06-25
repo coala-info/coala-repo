@@ -227,6 +227,8 @@ inputs:
       prefix: --qual-clust
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file with gene segment reference sequences.
     inputBinding:
       position: 104

@@ -9,6 +9,8 @@ doc: "Run the dysgu pipeline. Important parameters are --mode, --diploid, --min-
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome
     inputBinding:
       position: 1

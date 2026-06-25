@@ -103,6 +103,8 @@ inputs:
       prefix: --random_reads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to reference fasta (can be gzipped, bzip2ped, xzped)
     inputBinding:
       position: 101

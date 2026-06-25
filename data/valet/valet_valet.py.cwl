@@ -16,6 +16,8 @@ inputs:
       prefix: --intervals
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome file (FASTA)
     inputBinding:
       position: 101

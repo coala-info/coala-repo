@@ -43,6 +43,8 @@ inputs:
       prefix: --min-base-qual
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta file
     inputBinding:
       position: 102

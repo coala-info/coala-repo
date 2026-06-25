@@ -78,6 +78,8 @@ inputs:
       prefix: --pratio
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: (gzipped) fasta or wildtype ab1 file
     inputBinding:
       position: 102

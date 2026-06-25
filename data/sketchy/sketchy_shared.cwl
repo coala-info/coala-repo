@@ -12,6 +12,8 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: 'Sketch file, format: Mash (.msh) or Finch (.fsh)'
     inputBinding:
       position: 101

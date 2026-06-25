@@ -6,6 +6,8 @@ doc: "MALVA is a tool for variant calling in sequencing data.\n\nTool homepage: 
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference file in FASTA format
     inputBinding:
       position: 1

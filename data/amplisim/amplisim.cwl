@@ -7,6 +7,8 @@ doc: "a program to simulate amplicon sequences from a reference genome\n\nTool h
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome
     inputBinding:
       position: 1

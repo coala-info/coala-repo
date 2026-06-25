@@ -307,6 +307,8 @@ inputs:
       prefix: --read-files
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: string indicating the path to a fasta file containing the sequences you
       used for mapping
     inputBinding:

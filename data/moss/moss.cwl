@@ -110,6 +110,8 @@ inputs:
       prefix: --realigned
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference FASTA file
     inputBinding:
       position: 101

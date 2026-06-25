@@ -102,6 +102,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to reference assembly used to rename and reorient contigs. 
       Defaults to CHM13 v2.0 and assumes contig names are exact matches to 
       --chromosomes. If not provided and --chromosomes set to 'none', no 

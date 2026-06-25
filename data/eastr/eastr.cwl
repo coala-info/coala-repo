@@ -155,6 +155,8 @@ inputs:
       prefix: -o
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference FASTA genome used in alignment
     inputBinding:
       position: 101

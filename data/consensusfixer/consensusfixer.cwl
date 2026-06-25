@@ -22,6 +22,8 @@ inputs:
       prefix: --min-cov
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file used for the alignments.
     inputBinding:
       position: 101

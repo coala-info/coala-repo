@@ -278,6 +278,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Genome reference location
     inputBinding:
       position: 101

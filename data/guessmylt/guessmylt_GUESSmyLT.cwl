@@ -84,6 +84,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Mandatory when --mapped used or when no reads provided (--reads). 
       Reference file in .fa/.fasta format. Reference can be either transcriptome
       or genome.

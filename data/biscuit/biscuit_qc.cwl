@@ -8,6 +8,8 @@ doc: "Produces a subset of QC metrics for BISCUIT alignments.\n\nTool homepage: 
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

@@ -38,6 +38,8 @@ inputs:
       prefix: --processor
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome fasta file
     inputBinding:
       position: 101

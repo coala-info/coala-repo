@@ -66,6 +66,8 @@ inputs:
       prefix: --RefThreshold
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the refeence genome
     inputBinding:
       position: 102

@@ -11,6 +11,8 @@ doc: "promer generates amino acid alignments between two mutli-FASTA DNA input f
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Set the input reference multi-FASTA DNA file
     inputBinding:
       position: 1

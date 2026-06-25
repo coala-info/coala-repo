@@ -33,6 +33,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: The reference sequence (fasta) for the TARGET genome build (i.e., the 
       new one. The fasta file must have an accompanying sequence dictionary 
       (.dict file).

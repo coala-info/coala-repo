@@ -6,6 +6,8 @@ doc: "Map reads using bwa mem\n\nTool homepage: https://github.com/sanger-pathog
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Name of input reference FASTA file
     inputBinding:
       position: 1

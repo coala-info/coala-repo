@@ -41,6 +41,8 @@ inputs:
       prefix: -i
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference FASTA file
     inputBinding:
       position: 102

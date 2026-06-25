@@ -6,6 +6,8 @@ doc: "Map fastq files to the genome using bwa.\n\nTool homepage: http://github.c
 inputs:
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Name of genome fasta file. The file must be indexed usingbwa index 
       command prior to this run.
     inputBinding:

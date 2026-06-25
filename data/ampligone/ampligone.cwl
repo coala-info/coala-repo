@@ -84,6 +84,8 @@ inputs:
       prefix: --quiet
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input Reference genome in FASTA format
     inputBinding:
       position: 101

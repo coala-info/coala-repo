@@ -21,6 +21,8 @@ inputs:
       prefix: --input
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference genome file (FASTA format)
     inputBinding:
       position: 101

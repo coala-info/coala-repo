@@ -66,6 +66,8 @@ inputs:
       prefix: --normalBam
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: samtools-indexed reference fasta file
     inputBinding:
       position: 101

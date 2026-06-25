@@ -45,6 +45,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference sequence fasta file
     inputBinding:
       position: 102

@@ -350,6 +350,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference fasta filename for VCF/BCF writing (optional)
     inputBinding:
       position: 101

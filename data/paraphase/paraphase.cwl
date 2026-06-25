@@ -102,6 +102,8 @@ inputs:
       prefix: --prefix
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to reference genome fasta file
     inputBinding:
       position: 101

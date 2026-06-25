@@ -135,6 +135,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Indexed FASTA reference file for CRAM input alignment.
     inputBinding:
       position: 101

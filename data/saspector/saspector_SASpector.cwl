@@ -80,6 +80,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Completed assembly FASTA file as reference genome
     inputBinding:
       position: 101

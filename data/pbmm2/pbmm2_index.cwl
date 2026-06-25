@@ -8,6 +8,8 @@ doc: "Index reference and store as .mmi file\n\nTool homepage: https://github.co
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA, ReferenceSet XML
     inputBinding:
       position: 1

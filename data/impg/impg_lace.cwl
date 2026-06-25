@@ -50,6 +50,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference (FASTA or AGC) file for validating contig lengths in VCF 
       files
     inputBinding:

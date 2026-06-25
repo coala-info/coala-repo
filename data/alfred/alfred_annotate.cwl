@@ -87,6 +87,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference file
     inputBinding:
       position: 102

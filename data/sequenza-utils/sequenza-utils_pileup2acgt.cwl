@@ -47,6 +47,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence FASTA file. If provided, the output will include the
       reference base at each position.
     inputBinding:

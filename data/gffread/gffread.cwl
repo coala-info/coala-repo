@@ -38,6 +38,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Full path to a multi-fasta file with the genomic sequences
     inputBinding:
       position: 102

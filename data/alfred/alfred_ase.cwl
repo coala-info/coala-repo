@@ -45,6 +45,8 @@ inputs:
       prefix: --phased
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file
     inputBinding:
       position: 102

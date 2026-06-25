@@ -335,6 +335,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Haplotype reference in VCF/BCF or binary format
     inputBinding:
       position: 101

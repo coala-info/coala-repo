@@ -136,6 +136,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference fasta
     inputBinding:
       position: 101

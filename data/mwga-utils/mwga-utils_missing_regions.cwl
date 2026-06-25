@@ -12,6 +12,8 @@ inputs:
       position: 1
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to a FASTA file for the reference assembly.
     inputBinding:
       position: 2

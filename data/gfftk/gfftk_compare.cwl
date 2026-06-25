@@ -26,6 +26,8 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: query annotation in GFF3 format
     inputBinding:
       position: 101

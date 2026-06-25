@@ -110,6 +110,8 @@ inputs:
       prefix: --normal-bam
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference genome FASTA file.
     inputBinding:
       position: 101

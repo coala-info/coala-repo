@@ -29,6 +29,8 @@ inputs:
       prefix: --paf
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Give the full path to a reference FASTA file
     inputBinding:
       position: 102

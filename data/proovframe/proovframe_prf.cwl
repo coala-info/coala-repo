@@ -7,6 +7,8 @@ doc: "Assess error rate of a query sequence against a reference sequence.\n\nToo
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

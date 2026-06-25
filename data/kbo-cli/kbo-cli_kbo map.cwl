@@ -86,6 +86,8 @@ inputs:
       prefix: --raw
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence to map against.
     inputBinding:
       position: 102

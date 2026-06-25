@@ -57,6 +57,8 @@ inputs:
       prefix: --out_format
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference genome in fasta format
     inputBinding:
       position: 101

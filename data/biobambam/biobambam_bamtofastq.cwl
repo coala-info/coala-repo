@@ -220,6 +220,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: name of reference FastA in case of inputformat=cram
     inputBinding:
       position: 101

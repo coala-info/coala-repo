@@ -159,6 +159,8 @@ inputs:
       prefix: -p
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: "reference, should be a fasta file. If correspondng minimap indices\ndo not
       exist they will be created."
     inputBinding:

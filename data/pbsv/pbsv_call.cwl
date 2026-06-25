@@ -9,6 +9,8 @@ doc: "Call structural variants from SV signatures and assign genotypes (SVSIG to
 inputs:
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome assembly against which to call variants.
     inputBinding:
       position: 1

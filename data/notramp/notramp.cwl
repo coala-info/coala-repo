@@ -85,6 +85,8 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: "Path to reference (genome) fasta file. Must contain\nonly one target sequence.
       Multiple target sequences\nare not currently supported."
     inputBinding:

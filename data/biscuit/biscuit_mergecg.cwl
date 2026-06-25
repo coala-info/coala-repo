@@ -9,6 +9,8 @@ doc: "Merge CpG sites from a position-sorted BED file with beta values and cover
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

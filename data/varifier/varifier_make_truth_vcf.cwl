@@ -13,6 +13,8 @@ inputs:
       position: 1
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file of reference genome
     inputBinding:
       position: 2

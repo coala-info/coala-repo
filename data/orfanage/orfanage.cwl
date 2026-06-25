@@ -137,6 +137,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: 'Path to the reference genome file in FASTA format. This parameter is required
       when the following parameters are used: 1. cleanq; 2. cleant; 3. pi.'
     inputBinding:

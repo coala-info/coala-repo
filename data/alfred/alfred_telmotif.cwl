@@ -21,6 +21,8 @@ inputs:
       prefix: --quality
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file (required)
     inputBinding:
       position: 102

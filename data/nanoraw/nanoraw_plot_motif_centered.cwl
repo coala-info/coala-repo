@@ -21,6 +21,8 @@ inputs:
       position: 2
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file used to map reads with "genome_resquiggle" command.
     inputBinding:
       position: 3

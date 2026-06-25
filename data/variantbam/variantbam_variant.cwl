@@ -180,6 +180,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to reference. Required for reading/writing CRAM
     inputBinding:
       position: 102

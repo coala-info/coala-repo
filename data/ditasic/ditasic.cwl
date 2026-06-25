@@ -29,6 +29,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference sequences (FASTA format) for the 'build' subcommand.
     inputBinding:
       position: 102

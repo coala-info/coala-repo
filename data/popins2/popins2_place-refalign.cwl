@@ -74,6 +74,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: 'Name of reference genome file. Valid filetypes are: fa, fna, and fasta.'
     inputBinding:
       position: 101

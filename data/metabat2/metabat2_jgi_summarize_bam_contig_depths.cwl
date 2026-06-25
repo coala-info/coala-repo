@@ -47,6 +47,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: The reference file used for alignment; used to verify contig lengths
     inputBinding:
       position: 102

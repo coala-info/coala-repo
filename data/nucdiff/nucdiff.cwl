@@ -6,6 +6,8 @@ doc: "Compares two fasta files and outputs differences\n\nTool homepage: https:/
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Fasta file with the reference sequences
     inputBinding:
       position: 1

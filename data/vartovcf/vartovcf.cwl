@@ -23,6 +23,8 @@ inputs:
       prefix: --mode
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: The indexed FASTA reference sequence file
     inputBinding:
       position: 101

@@ -15,6 +15,8 @@ inputs:
       position: 1
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome
     inputBinding:
       position: 2

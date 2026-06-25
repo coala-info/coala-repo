@@ -35,6 +35,8 @@ inputs:
       prefix: --flip
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Genome FASTA file
     inputBinding:
       position: 103

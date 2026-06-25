@@ -125,6 +125,8 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: When choosing "alignment-consensus" or "sample-specific" as 
       reference_type, this flag calls the folder containing the alignment files 
       for your target loci (fasta-format). In case of "user-ref-lib" as 

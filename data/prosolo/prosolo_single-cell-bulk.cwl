@@ -17,6 +17,8 @@ inputs:
       position: 2
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file with reference genome. Has to be indexed with samtools 
       faidx.
     inputBinding:

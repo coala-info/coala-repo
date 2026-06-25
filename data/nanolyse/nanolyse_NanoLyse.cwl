@@ -9,6 +9,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Specify a fasta file against which to filter. Standard is DNA CS.
     inputBinding:
       position: 101

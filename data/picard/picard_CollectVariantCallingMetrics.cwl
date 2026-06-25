@@ -9,6 +9,8 @@ doc: Collects per-sample and aggregate (spanning all samples) metrics from the
 inputs:
   - id: dbsnp
     type: File
+    secondaryFiles:
+      - .tbi?
     doc: Reference dbSNP file in dbSNP or VCF format.
     inputBinding:
       position: 101
@@ -93,6 +95,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence file.
     inputBinding:
       position: 101

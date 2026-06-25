@@ -76,6 +76,8 @@ inputs:
       prefix: --output_prefix
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome file
     inputBinding:
       position: 101

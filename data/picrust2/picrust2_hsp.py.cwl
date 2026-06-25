@@ -83,6 +83,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference file for marker gene annotation.
     inputBinding:
       position: 101

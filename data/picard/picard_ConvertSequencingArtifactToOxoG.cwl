@@ -104,6 +104,8 @@ inputs:
       prefix: --QUIET
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence file.
     inputBinding:
       position: 101

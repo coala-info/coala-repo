@@ -26,6 +26,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: The reference sequence (fasta) for the TARGET genome build.
     inputBinding:
       position: 101
@@ -92,6 +94,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .tbi?
     doc: Reference dbSNP file in VCF format.
     inputBinding:
       position: 101

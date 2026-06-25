@@ -54,6 +54,8 @@ inputs:
       prefix: --min-shift
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference.fa is required
     inputBinding:
       position: 103

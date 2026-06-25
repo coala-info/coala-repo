@@ -60,6 +60,8 @@ inputs:
       prefix: --per-library
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta file.
     inputBinding:
       position: 103

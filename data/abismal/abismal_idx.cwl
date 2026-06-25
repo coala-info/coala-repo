@@ -8,6 +8,8 @@ doc: "build abismal index\n\nTool homepage: https://github.com/smithlabcode/abis
 inputs:
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: genome fasta file
     inputBinding:
       position: 1

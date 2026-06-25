@@ -376,6 +376,8 @@ inputs:
       prefix: --refactor_NDN_cigar_string
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence file
     inputBinding:
       position: 101

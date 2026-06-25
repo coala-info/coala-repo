@@ -49,6 +49,8 @@ inputs:
       prefix: --notSplitContigs
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta file, (dict file should be next to it)
     inputBinding:
       position: 101

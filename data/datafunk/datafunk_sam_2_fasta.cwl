@@ -57,6 +57,8 @@ inputs:
       prefix: --prefix-ref
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference
     inputBinding:
       position: 101

@@ -19,6 +19,8 @@ inputs:
       position: 2
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input reference
     inputBinding:
       position: 3

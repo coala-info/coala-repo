@@ -26,6 +26,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference genome file in fasta format, if absent from GFF3
     inputBinding:
       position: 102

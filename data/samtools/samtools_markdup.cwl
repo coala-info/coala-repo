@@ -144,6 +144,8 @@ inputs:
     prefix: --read-coords
 - id: reference
   type: File?
+  secondaryFiles:
+    - .fai
   doc: Reference sequence FASTA FILE [null]
   inputBinding:
     position: 102

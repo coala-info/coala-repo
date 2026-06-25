@@ -38,6 +38,8 @@ inputs:
       prefix: --longreads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: 'MANDATORY: reference contigs or scaffolds in fasta format'
     inputBinding:
       position: 101

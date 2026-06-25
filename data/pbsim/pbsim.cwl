@@ -7,6 +7,8 @@ doc: "PacBio read simulator for sampling-based or model-based simulation\n\nTool
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA format file
     inputBinding:
       position: 1

@@ -65,6 +65,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference sequence used to encode CRAM file, recommended if reading 
       CRAM
     inputBinding:

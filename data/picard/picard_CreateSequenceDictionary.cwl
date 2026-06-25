@@ -11,6 +11,8 @@ doc: Creates a sequence dictionary for a reference sequence. This tool creates a
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input reference fasta or fasta.gz
     inputBinding:
       position: 101

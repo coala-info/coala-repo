@@ -6,6 +6,8 @@ doc: "Generates a VCF file from FASTQ reads using mutAMR.\n\nTool homepage: http
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference FASTA file.
     inputBinding:
       position: 1

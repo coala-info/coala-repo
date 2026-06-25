@@ -1,44 +1,190 @@
 ---
 name: gatk
-description: The Genome Analysis Toolkit identifies variants in high-throughput sequencing data using industry-standard workflows. Use when user asks to identify germline or somatic variants, preprocess sequencing data, or construct command-line calls for GATK4 tools.
+description: The Genome Analysis Toolkit is a software package for variant discovery and genotyping in high-throughput sequencing data. Use when user asks to call germline or somatic variants, preprocess genomic data, perform base quality score recalibration, or implement Broad Institute Best Practices.
 homepage: https://www.broadinstitute.org/gatk/
 metadata:
-  docker_image: "quay.io/biocontainers/gatk:3.8--py27_1"
+  docker_image: "broadinstitute/gatk:latest"
 ---
+
 
 # gatk
 
 ## Overview
-The Genome Analysis Toolkit (GATK) is the industry-standard software package for identifying variants in high-throughput sequencing data. This skill assists in constructing command-line calls for GATK's wide array of tools, focusing on the Best Practices workflows for germline short variant discovery, somatic mutation calling (Mutect2), and data preprocessing. It helps navigate the transition between GATK3 (legacy) and GATK4 (current) syntax and ensures proper parameter selection for different sequencing technologies.
+The Genome Analysis Toolkit (GATK) is a specialized software package designed for analyzing high-throughput sequencing data. It is primarily used for variant discovery and genotyping, with a strong emphasis on data quality assurance. This skill assists in constructing command-line calls for GATK tools, navigating the transition between GATK3 and GATK4, and implementing the Broad Institute's Best Practices for genomic data analysis.
 
-## Common CLI Patterns
+## Core Usage Patterns
 
-### GATK4 Standard Syntax
-GATK4 uses a unified executable. The general structure is:
-`gatk ToolName -I input.bam -R reference.fasta -O output.vcf [tool-specific arguments]`
+### GATK4 Command Structure
+GATK4 uses a single executable wrapper. The general syntax is:
+`gatk [--java-options "JVM_ARGS"] ToolName TOOL_ARGUMENTS`
 
-### Data Preprocessing
-Before variant calling, data must be cleaned.
-*   **MarkDuplicates**: `gatk MarkDuplicates -I input.bam -O marked_duplicates.bam -M metrics.txt`
-*   **BaseRecalibrator (BQSR)**:
-    1. Generate table: `gatk BaseRecalibrator -I input.bam -R ref.fasta --known-sites sites.vcf -O recal_data.table`
-    2. Apply recalibration: `gatk ApplyBQSR -I input.bam -R ref.fasta --bqsr-recal-file recal_data.table -O recalibrated.bam`
+Example for Base Quality Score Recalibration (BQSR):
+```bash
+gatk --java-options "-Xmx4g" BaseRecalibrator \
+  -I input.bam \
+  -R reference.fasta \
+  --known-sites sites.vcf \
+  -O recal_data.table
+```
 
-### Germline Variant Discovery
-*   **HaplotypeCaller (GVCF mode)**: Recommended for cohort analysis.
-    `gatk HaplotypeCaller -R ref.fasta -I input.bam -O output.g.vcf.gz -ERC GVCF`
-*   **GenotypeGVCFs**: Perform joint genotyping on one or more GVCFs.
-    `gatk GenotypeGVCFs -R ref.fasta -V input.g.vcf.gz -O final_variants.vcf`
+### Data Preprocessing Best Practices
+1.  **MarkDuplicates**: Identify and tag duplicate reads in a BAM file.
+    `gatk MarkDuplicates -I input.bam -O marked_duplicates.bam -M metrics.txt`
+2.  **BaseRecalibrator**: Generate a recalibration table based on known variation sites.
+3.  **ApplyBQSR**: Apply the recalibration to the original BAM.
+    `gatk ApplyBQSR -R ref.fasta -I input.bam --bqsr-recal-file recal_data.table -O output.bam`
 
-### Somatic Variant Discovery (Mutect2)
-*   **Tumor-only**: `gatk Mutect2 -R ref.fasta -I tumor.bam -O somatic.vcf.gz`
-*   **Tumor-Normal pair**: `gatk Mutect2 -R ref.fasta -I tumor.bam -I normal.bam -normal normal_sample_name -O somatic.vcf.gz`
+### Variant Discovery
+*   **HaplotypeCaller**: Call germline SNPs and indels via local de-novo assembly.
+    `gatk HaplotypeCaller -R ref.fasta -I input.bam -O output.vcf.gz -ERC GVCF`
+*   **Mutect2**: Call somatic mutations (SNVs and indels).
+    `gatk Mutect2 -R ref.fasta -I tumor.bam -I normal.bam -O somatic.vcf.gz`
 
-## Expert Tips
-*   **Memory Management**: Use the `--java-options` flag to control heap size, e.g., `gatk --java-options "-Xmx4G" ToolName ...`.
-*   **Intervals**: Use `-L` to restrict analysis to specific chromosomes or regions (BED or interval list format) to significantly speed up processing.
-*   **Index Files**: Ensure all input BAMs are indexed (.bai) and the reference FASTA has a dictionary (.dict) and index (.fai) in the same directory.
-*   **Read Filters**: GATK applies default filters (e.g., mapping quality). Use `--disable-read-filter` only if you have a specific reason to include low-quality data.
+### Expert Tips
+*   **Memory Management**: Always specify `-Xmx` in `--java-options` to prevent Java from consuming all system memory or crashing due to insufficient heap space.
+*   **Reference Files**: Ensure your reference genome is indexed (`.fai`) and has a dictionary file (`.dict`) in the same directory.
+*   **Intervals**: Use the `-L` argument to restrict analysis to specific chromosomes or regions to speed up processing.
+*   **Read Filters**: GATK tools apply default filters (e.g., mapping quality). Use `--list-read-filters` to see what is being applied to your data.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gatk ASEReadCounter | Counts filtered reads at het sites for allele specific expression estimate |
+| gatk AccumulateQualityYieldMetrics | Combines multiple QualityYieldMetrics files into a single file. This tool is used in cases where the metrics are calculated separately on shards of the same read-group. |
+| gatk AccumulateVariantCallingMetrics | Combines multiple Variant Calling Metrics files into a single file. This tool is used in cases where the metrics are calculated separately for different (genomic) shards of the same callset and we want to combine them into a single result over the entire callset. |
+| gatk AddFlowBaseQuality | Prints reads from the input SAM/BAM/CRAM file to the SAM/BAM/CRAM file while adding a base quality attribute. |
+| gatk AddFlowSNVQuality | This program converts the flow qualities that Ultima Genomics CRAM reports to more conventional base qualities. Specifically, the generated quality will report the probability that a specific base is a sequencing error mismatch, while auxilary tags qa, qt, qg, qc report specific probability that a specific base X is a A->X error. |
+| gatk AnalyzeCovariates | Evaluate and compare base quality score recalibration (BQSR) tables |
+| gatk AnalyzeSaturationMutagenesis | (Experimental) Processes reads from a MITESeq or other saturation mutagenesis experiment. Main output is a tab-delimited text file reportNamePrefix.variantCounts. |
+| gatk AnnotateIntervals | Annotates intervals with GC content, mappability, and segmental-duplication content |
+| gatk BamIndexStats | Generate index statistics from a BAM file. This tool calculates statistics from a BAM index (.bai) file, emulating the behavior of the "samtools idxstats" command. The statistics collected include counts of aligned and unaligned reads as well as all records with no start coordinate. |
+| gatk BedToIntervalList | Converts a BED file to a Picard Interval List. This tool provides easy conversion from BED to the Picard interval_list format which is required by many Picard processing tools. |
+| gatk BpmToNormalizationManifestCsv | BpmToNormalizationManifestCsv takes an Illumina BPM (Bead Pool Manifest) file and generates an Illumina-formatted bpm.csv file from it. A bpm.csv is a file that was generated by an old version of Illumina's Autocall software. Since it contained normalization IDs (needed to calculate normalized intensities), it came into use in several programs notably zCall. |
+| gatk CalcMetadataSpark | This tool takes a SAM/BAM/CRAM as input and calculates metrics about the reads: fragment length statistics by read group, mean length, coverage, partition statistics, etc. |
+| gatk CalculateAverageCombinedAnnotations | Divides annotations that were summed across samples by genomicsDB by the number of samples with het or hom var calls. This is an approximation of taking the average of these annotations. |
+| gatk CalculateContamination | Calculate the fraction of reads coming from cross-sample contamination |
+| gatk CalculateFingerprintMetrics | Calculate statistics on fingerprints, checking their viability. This tool collects various statistics that pertain to a single fingerprint and reports the results in a metrics file. |
+| gatk CalculateReadGroupChecksum | Creates a hash code based on the read groups (RG). This tool creates a hash code based on identifying information in the read groups (RG) of a ".BAM" or "SAM" file header. Addition or removal of RGs changes the hash code, enabling the user to quickly determine if changes have been made to the read group information. |
+| gatk CallCopyRatioSegments | Calls copy-ratio segments as amplified, deleted, or copy-number neutral |
+| gatk CallableLoci | Collect statistics on callable, uncallable, poorly mapped, and other parts of the genome |
+| gatk CheckDuplicateMarking | This tool checks that all reads with the same queryname have their duplicate marking flags set the same way. NOTE: This tool does NOT check that the duplicate marking is correct. The ONLY thing that it checks is that the 0x400 bit-flags of records with the same queryname are equal. |
+| gatk CheckFingerprint | Checks the sample identity of the sequence/genotype data in the provided file (SAM/BAM/CRAM or VCF) against a set of known genotypes in the supplied genotype file (in VCF format). |
+| gatk CheckIlluminaDirectory | Asserts the validity for specified Illumina basecalling data. This tool will check that the basecall directory and the internal files are available, exist, and are reasonably sized for every tile and cycle. |
+| gatk CheckPileup | This tool compares the mpileup data (reference base, aligned base from each overlapping read, and quality score) generated internally by GATK to a reference pileup data generated by Samtools, for each position in the requested interval. |
+| gatk CheckTerminatorBlock | Asserts the provided gzip file's (e.g., BAM) last block is well-formed; RC 100 otherwise |
+| gatk ClusterCrosscheckMetrics | Clusters the results from a CrosscheckFingerprints run according to the LOD score. The resulting metric file can be used to assist diagnosing results from CrosscheckFingerprints. It clusters the connectivity graph between the different groups. Two groups are connected if they have a LOD score greater than the LOD_THRESHOLD. |
+| gatk CollectAlignmentSummaryMetrics | Produces a summary of alignment metrics from a SAM or BAM file. This tool takes a SAM/BAM file input and produces metrics detailing the quality of the read alignments as well as the proportion of the reads that passed machine signal-to-noise threshold quality filters. |
+| gatk CollectAllelicCounts | Collects reference and alternate allele counts at specified sites |
+| gatk CollectAllelicCountsSpark | Collects reference and alternate allele counts at specified sites |
+| gatk CollectArraysVariantCallingMetrics | CollectArraysVariantCallingMetrics takes a Genotyping Arrays VCF file (as generated by GtcToVcf) and calculates summary and per-sample metrics. |
+| gatk CollectBaseDistributionByCycle | Chart the nucleotide distribution per cycle in a SAM or BAM file in order to enable assessment of systematic errors at specific positions in the reads. |
+| gatk CollectBaseDistributionByCycleSpark | Collects base distribution per cycle in SAM/BAM/CRAM file(s). The tool leverages the Spark framework for faster operation. |
+| gatk CollectF1R2Counts | Collect F1R2 read counts for the Mutect2 orientation bias mixture model filter |
+| gatk CollectGcBiasMetrics | Collect metrics regarding GC bias. This tool collects information about the relative proportions of guanine (G) and cytosine (C) nucleotides in a sample. |
+| gatk CollectHiSeqXPfFailMetrics | Classify PF-Failing reads in a HiSeqX Illumina Basecalling directory into various categories. This tool categorizes the reads that did not pass filter (PF-Failing) into four groups: MISALIGNED, EMPTY, POLYCLONAL, and UNKNOWN. |
+| gatk CollectHsMetrics | Collects hybrid-selection (HS) metrics for a SAM or BAM file. This tool takes a SAM/BAM file input and collects metrics that are specific for sequence datasets generated through hybrid-selection. |
+| gatk CollectIlluminaBasecallingMetrics | Collects Illumina Basecalling metrics for a sequencing run. This tool will produce per-barcode and per-lane basecall metrics for each sequencing run. Mean values for each metric are determined using data from all of the tiles. |
+| gatk CollectIlluminaLaneMetrics | Collects Illumina lane metrics for the given BaseCalling analysis directory. This tool produces quality control metrics on cluster density for each lane of an Illumina flowcell. This tool takes Illumina TileMetrics data and places them into directories containing lane- and phasing-level metrics. |
+| gatk CollectIndependentReplicateMetrics | Estimates the rate of independent replication rate of reads within a bam. This tool estimates the fraction of the input reads which would be marked as duplicates but are actually biological replicates, independent observations of the data. |
+| gatk CollectInsertSizeMetrics | Collect metrics about the insert size distribution of a paired-end library. This tool provides useful metrics for validating library construction including the insert size distribution and read orientation of paired-end libraries. |
+| gatk CollectInsertSizeMetricsSpark | Collects insert size distribution information in SAM/BAM/CRAM file(s). The tool leverages the Spark framework for faster operation. |
+| gatk CollectJumpingLibraryMetrics | Collect jumping library metrics. This tool collects high-level metrics about the presence of outward-facing (jumping) and inward-facing (non-jumping) read pairs within a SAM/BAM/CRAM file. |
+| gatk CollectMultipleMetrics | Collect multiple classes of metrics. This 'meta-metrics' tool runs one or more of the metrics collection modules at the same time to cut down on the time spent reading in data from input files. |
+| gatk CollectMultipleMetricsSpark | Instantiates and executes multiple metrics collection tasks for a given SAM/BAM/CRAM file. The tool leverages the Spark framework for faster operation. |
+| gatk CollectOxoGMetrics | Collect metrics to assess oxidative artifacts. This tool calculates the Phred-scaled probability that an alternate base call results from an oxidation artifact based on base context, sequencing read orientation, and the characteristic low allelic frequency. |
+| gatk CollectQualityYieldMetrics | Collect metrics about reads that pass quality thresholds and Illumina-specific filters. This tool evaluates the overall quality of reads within a bam file containing one read group. The output indicates the total numbers of bases within a read group that pass a minimum base quality score threshold and (in the case of Illumina data) pass Illumina quality filters. |
+| gatk CollectQualityYieldMetricsFlow | Collect metrics about reads that pass quality thresholds from flow based read files. This tool evaluates the overall quality of reads within a bam file containing one read group. The output indicates the total numbers of flows within a read group that pass a minimum base quality score threshold |
+| gatk CollectQualityYieldMetricsSNVQ | Collect SNVQ metrics about reads that pass quality thresholds and other filters (such as vendor fail, etc). This tool evaluates the overall SNVQ quality of reads within a bam file containing one read group. |
+| gatk CollectQualityYieldMetricsSpark | Collects quality yield metrics from SAM/BAM/CRAM file(s). The tool leverages the Spark framework for faster operation. |
+| gatk CollectRawWgsMetrics | Collect whole genome sequencing-related metrics. This tool computes metrics that are useful for evaluating coverage and performance of whole genome sequencing experiments. These metrics include the percentages of reads that pass minimal base- and mapping- quality filters as well as coverage (read-depth) levels. |
+| gatk CollectReadCounts | Collects read counts at specified intervals |
+| gatk CollectRnaSeqMetrics | Produces RNA alignment metrics for a SAM or BAM file. This tool takes a SAM/BAM file containing the aligned reads from an RNAseq experiment and produces metrics describing the distribution of the bases within the transcripts. |
+| gatk CollectRrbsMetrics | Collects metrics from reduced representation bisulfite sequencing (Rrbs) data. This tool uses reduced representation bisulfite sequencing (Rrbs) data to determine cytosine methylation status across all reads of a genomic DNA sequence. |
+| gatk CollectSamErrorMetrics | Program to collect error metrics on bases stratified in various ways. To estimate the error rate the tool assumes that all differences from the reference are errors. For this to be a reasonable assumption the tool needs to know the sites at which the sample is actually polymorphic and a confidence interval where the user is relatively certain that the polymorphic sites are known and accurate. These two inputs are provided as a VCF and INTERVALS. |
+| gatk CollectSequencingArtifactMetrics | Collect metrics to quantify single-base sequencing artifacts. This tool examines two sources of sequencing errors associated with hybrid selection protocols: pre-adapter and bait-bias. |
+| gatk CollectTargetedPcrMetrics | Calculate PCR-related metrics from targeted sequencing data. This tool calculates a set of PCR-related metrics from an aligned SAM or BAM file containing targeted sequencing data. |
+| gatk CollectUmiPrevalenceMetrics | Tally the counts of UMIs in duplicate sets within a bam. This tool collects the Histogram of the number of duplicate sets that contain a given number of UMIs. Understanding this distribution can help understand the role that the UMIs have in the determination of consensus sets, the risk of UMI collisions, and of spurious reads that result from uncorrected UMIs. |
+| gatk CollectVariantCallingMetrics | Collects per-sample and aggregate (spanning all samples) metrics from the provided VCF file. |
+| gatk CollectWgsMetrics | Collect metrics about coverage and performance of whole genome sequencing (WGS) experiments. This tool collects metrics about the fractions of reads that pass base- and mapping-quality filters as well as coverage (read-depth) levels for WGS analyses. |
+| gatk CollectWgsMetricsWithNonZeroCoverage | Collect metrics about coverage and performance of whole genome sequencing (WGS) experiments. This tool extends CollectWgsMetrics by including metrics related only to sites with non-zero (>0) coverage. |
+| gatk CombineGenotypingArrayVcfs | CombineGenotypingArrayVcfs takes one or more VCF files, as generated by GtcToVcf and combines them into a single VCF. The input VCFs must have the same sequence dictionary and same list of variant loci. The input VCFs must not share sample Ids. |
+| gatk CombineSegmentBreakpoints | Combine the breakpoints of two segment files while preserving annotations. This tool will load all segments into RAM. |
+| gatk CompareBaseQualities | Compares the base qualities of two SAM/BAM/CRAM files. The reads in the two files must have exactly the same names and appear in the same order. |
+| gatk CompareDuplicatesSpark | Determine if two potentially identical BAMs have the same duplicate reads. This tool is useful for checking if two BAMs that seem identical have the same reads marked as duplicates. |
+| gatk CompareGtcFiles | CompareGtcFiles takes two Illumina GTC file and compares their contents to ensure that fields expected to be the same are in fact the same. This will exclude any variable field, such as a date. The GTC files must be generated on the same chip type. |
+| gatk CompareIntervalLists | Compare two interval lists to see if they are equal |
+| gatk CompareMetrics | Compare two metrics files. This tool compares the metrics and histograms generated from metric tools to determine if the generated results are identical. |
+| gatk CompareSAMs | Compare two input SAM/BAM/CRAM files. This tool initially compares the headers of the input files. If the file headers are comparable, the tool can perform either strict comparisons for which each alignment and the header must be identical, or a more lenient check of "equivalence", where reads with mapping quality < LOW_MQ_THRESHOLD are allowed to have different alignments, duplicate marks are allowed to differ to account for ambiguities in selecting the representative read of a duplicate set, and some differences in headers is allowed. Results of comparison are summarised in an output metrics file. |
+| gatk ConvertHaplotypeDatabaseToVcf | Convert Haplotype database file to vcf |
+| gatk ConvertSequencingArtifactToOxoG | Extract OxoG metrics from generalized artifacts metrics. This tool extracts 8-oxoguanine (OxoG) artifact metrics from the output of CollectSequencingArtifactsMetrics and converts them to the CollectOxoGMetrics tool's output format. |
+| gatk CountBases | Count and print to standard output (and optionally to a file) the total number of bases in a SAM/BAM/CRAM file |
+| gatk CountBasesSpark | Counts bases in the input SAM/BAM |
+| gatk CountReads | Count and print to standard output (and optionally to a file) the total number of reads in a SAM/BAM/CRAM file |
+| gatk CountReadsSpark | Counts reads in the input SAM/BAM |
+| gatk CreateBafRegressMetricsFile | CreateBafRegressMetricsFile takes an output file as generated by the bafRegress tool and creates a picard metrics file. BAFRegress is a software that detects and estimates sample contamination using B allele frequency data from Illumina genotyping arrays using a regression model. |
+| gatk CreateExtendedIlluminaManifest | CreateExtendedIlluminaManifest takes an Illumina manifest file (this is the text version of an Illumina '.bpm' file) and creates an 'extended' version of this text file by adding fields that facilitate VCF generation by downstream tools. As part of generating this extended version of the manifest, the tool may mark loci as 'FAIL' if they do not pass validation. |
+| gatk CreateReadCountPanelOfNormals | Creates a panel of normals for read-count denoising given the read counts for samples in the panel |
+| gatk CreateVerifyIDIntensityContaminationMetricsFile | CreateVerifyIDIntensityContaminationMetricsFile takes an output file as generated by the VerifyIDIntensity tool and creates a picard metrics file. VerifyIDIntensity is a tool for detecting and estimating sample contamination of Illumina genotyping array data. |
+| gatk CrosscheckFingerprints | Checks the odds that all data in the set of input files come from the same individual. Can be used to cross-check readgroups, libraries, samples, or files. Acceptable inputs include BAM/SAM/CRAM and VCF/GVCF files. Output delivers LOD scores in the form of a CrosscheckMetric file. |
+| gatk DenoiseReadCounts | Denoises read counts to produce denoised copy ratios |
+| gatk DepthOfCoverage | Generate coverage summary information for reads data |
+| gatk DetermineGermlineContigPloidy | Determines the baseline contig ploidy for germline samples given counts data |
+| gatk DumpTabixIndex | Prints a text file describing the contents of the tabix index input file. |
+| gatk EstimateLibraryComplexity | Estimates the numbers of unique molecules in a sequencing library. This tool outputs quality metrics for a sequencing library preparation. Library complexity refers to the number of unique DNA fragments present in a given library. |
+| gatk ExampleMultiFeatureWalker | Example of a MultiFeatureWalker subclass. |
+| gatk ExtractFingerprint | Computes/Extracts the fingerprint genotype likelihoods from the supplied file. It is given as a list of PLs at the fingerprinting sites. |
+| gatk ExtractIlluminaBarcodes | Tool determines the barcode for each read in an Illumina lane. This tool determines the numbers of reads containing barcode-matching sequences and provides statistics on the quality of these barcode matches. |
+| gatk FilterIntervals | Filters intervals based on annotations and/or count statistics |
+| gatk FlagStat | Accumulate flag statistics given a BAM file, e.g. total number of reads with QC failure flag set, number of duplicates, percentage mapped etc. and output summary to standard output (and optionally to a file). |
+| gatk FlagStatSpark | Spark tool to accumulate flag statistics given a BAM file, e.g. total number of reads with QC failure flag set, number of duplicates, percentage mapped etc. |
+| gatk FlowFeatureMapper | Mapping features (flow space processing) |
+| gatk FlowPairHMMAlignReadsToHaplotypes | Align Reads to Haplotypes using FlowBasedPairHMM |
+| gatk GatherNormalArtifactData | Combine output files from GetNormalArtifactData in the order defined by a sequence dictionary |
+| gatk GatherPileupSummaries | Combine output files from GetPileupSummary in the order defined by a sequence dictionary |
+| gatk GeneExpressionEvaluation | This tool evaluates gene expression from RNA-seq reads aligned to genome. Features to evaluate expression over are defined in an input annotation file in gff3 fomat. Output is a tsv listing sense and antisense expression for all grouping features. |
+| gatk GermlineCNVCaller | Calls copy-number variants in germline samples given their counts and the output of DetermineGermlineContigPloidy |
+| gatk GetNormalArtifactData | Collects data for training normal artifact filter |
+| gatk GetPileupSummaries | Tabulates pileup metrics for inferring contamination |
+| gatk GetSampleName | Emit a single sample name from the bam header into an output file. The sample name is that in the read group (RG) sample (SM) field |
+| gatk GroundTruthReadsBuilder | Ground Truth Reads Builder. EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK. This tool builds ground truth reads by comparing input reads against maternal and paternal reference sequences. |
+| gatk GroundTruthScorer | Ground Truth Scorer. EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK |
+| gatk GtcToVcf | GtcToVcf takes an Illumina GTC file and converts it to a VCF file using several supporting files. A GTC file is an Illumina-specific file containing called genotypes in AA/AB/BB format. A VCF, aka Variant Calling Format, is a text file for storing how a sequenced sample differs from the reference genome. |
+| gatk HtsgetReader | Download a file using htsget |
+| gatk IdentifyContaminant | Computes the fingerprint genotype likelihoods from the supplied SAM/BAM file and a contamination estimate. NOTA BENE: the fingerprint is provided for the contamination (by default) for the main sample. It is given as a list of PLs at the fingerprinting sites. |
+| gatk IlluminaBasecallsToFastq | Generate FASTQ file(s) from Illumina basecall read data. This tool generates FASTQ files from data in an Illumina BaseCalls output directory. Separate FASTQ files are created for each template, barcode, and index (molecular barcode) read. |
+| gatk IlluminaBasecallsToSam | Transforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM file. The IlluminaBaseCallsToSam program collects, demultiplexes, and sorts reads across all of the tiles of a lane via barcode to produce an unmapped SAM, BAM or CRAM file. |
+| gatk IntervalListToBed | Converts an Picard IntervalList file to a BED file. |
+| gatk IntervalListTools | A tool for performing various IntervalList manipulations including sorting, merging, subtracting, padding, and other set-theoretic operations. |
+| gatk LiftOverHaplotypeMap | Lifts over a haplotype database from one reference to another. Based on UCSC liftOver. Uses a UCSC chain file to guide the liftOver. |
+| gatk LiftOverIntervalList | Lifts over an interval list from one reference build to another. This tool adjusts the coordinates in an interval list on one reference to its homologous interval list on another reference, based on a chain file that describes the correspondence between the two references. |
+| gatk LocalAssembler | Performs local assembly of small regions to discover structural variants. |
+| gatk MarkIlluminaAdapters | Reads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags. This tool clears any existing adapter-trimming tags (XT:i:) in the optional tag region of the input file. The SAM/BAM/CRAM file must be sorted by query name. Outputs a metrics file histogram showing counts of bases_clipped per read. |
+| gatk MeanQualityByCycle | Collect mean quality by cycle. This tool generates a data table and chart of mean quality by cycle from a BAM file. It is intended to be used on a single lane or a read group's worth of data, but can be applied to merged BAMs if needed. |
+| gatk MeanQualityByCycleSpark | Program to generate a data table and pdf chart of mean base quality by cycle from a SAM/BAM file. Works best on a single lane/run of data, but can be applied to merged BAMs. Uses R to generate chart output. |
+| gatk MergeAnnotatedRegions | Merge annotated genomic regions based entirely on contig and annotation value. Column header order is not guaranteed to be preserved. Reference is required and will superseded any sequence dictionary in the given seg/region files. Sequence dictionary is optional on the input file, but will be included on the output. Conflicts of annotations is resolved by sorting the values and inserting a delimiter. |
+| gatk MergeAnnotatedRegionsByAnnotation | This simple tool will merge genomic regions (specified in a tsv) when given annotations (columns) contain exact values in neighboring segments and the segments are within a specified maximum genomic distance. |
+| gatk MergePedIntoVcf | MergePedIntoVcf takes a single-sample ped file output from zCall and merges into a single-sample vcf file using several supporting files. |
+| gatk ModelSegments | Models segmented copy ratios from denoised copy ratios and segmented minor-allele fractions from allelic counts; if multiple samples are specified, finds a joint segmentation that can be used in subsequent runs to perform modeling of each sample |
+| gatk PathSeqBuildKmers | Produce a set of k-mers from the given host reference. The output file from this tool is required to run the PathSeq pipeline. |
+| gatk PathSeqBuildReferenceTaxonomy | Build an annotated taxonomy datafile for a given microbe reference. The output file from this tool is required to run the PathSeq pipeline. |
+| gatk Pileup | Prints read alignments in samtools pileup format. The output comprises one line per genomic position, listing the chromosome name, coordinate, reference base, read bases, and read qualities. |
+| gatk PileupSpark | Prints read alignments in samtools pileup format. The tool leverages the Spark framework for faster operation. The output comprises one line per genomic position, listing the chromosome name, coordinate, reference base, read bases, and read qualities. |
+| gatk PlotDenoisedCopyRatios | Creates plots of denoised copy ratios |
+| gatk PlotModeledSegments | Creates plots of denoised and segmented copy-ratio and minor-allele-fraction estimates |
+| gatk PostprocessGermlineCNVCalls | Postprocesses the output of GermlineCNVCaller and generates VCFs and denoised copy ratios |
+| gatk PreprocessIntervals | Prepares bins for coverage collection |
+| gatk QualityScoreDistribution | Chart the distribution of quality scores. This tool is used for determining the overall 'quality' for a library in a given run. It outputs a chart and tables indicating the range of quality scores and the total numbers of bases corresponding to those scores. |
+| gatk QualityScoreDistributionSpark | Program to chart quality score distributions in a SAM/BAM file. |
+| gatk SplitCRAM | Splits CRAM files efficiently by taking advantage of their container based structure |
+| gatk SplitIntervals | Split intervals into sub-interval files. |
+| gatk TagGermlineEvents | A tool for tagging possible germline events in a tumor segment file. The algorithm used is very simplistic. Segments called as amplified or deleted in the normal are matched by breakpoints (+/- some padding) or reciprocal overlap. |
+| gatk ValidateSamFile | Validates a SAM/BAM/CRAM file relative to the SAM format specification. Reports on improper formatting, faulty alignments, incorrect flag values, etc. |
+| gatk VariantEval | Given a variant callset, it is common to calculate various quality control metrics. These metrics include the number of raw or filtered SNP counts; ratio of transition mutations to transversions; concordance of a particular sample's calls to a genotyping chip; number of singletons per sample; etc. Furthermore, it is often useful to stratify these metrics by various criteria like functional class (missense, nonsense, silent), whether the site is CpG site, the amino acid degeneracy of the site, etc. |
+| gatk VcfToAdpc | VcfToAdpc takes a VCF, as generated by GtcToVcf and generates an Illumina 'adpc.bin' file from it. An adpc.bin file is a binary file containing genotyping array intensity data that can be exported by Illumina's GenomeStudio and Beadstudio analysis tools. The adpc.bin file is used as an input to VerifyIDintensity a tool for detecting and estimating sample contamination of Illumina genotyping array data. |
+| gatk ViewSam | Very simple command that just reads a SAM or BAM file and writes out the header and each record to standard out. When an (optional) intervals file is specified, only records overlapping those intervals will be output. All reads, just the aligned reads, or just the unaligned reads can be printed out by setting AlignmentStatus accordingly. |
 
 ## Reference documentation
 - [GATK Overview](./references/anaconda_org_channels_bioconda_packages_gatk_overview.md)

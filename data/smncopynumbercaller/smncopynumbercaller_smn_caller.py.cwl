@@ -41,6 +41,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Optional path to reference fasta file for CRAM
     inputBinding:
       position: 101

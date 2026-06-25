@@ -121,6 +121,8 @@ inputs:
       prefix: -i
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Full path of fasta file used as reference.
     inputBinding:
       position: 102

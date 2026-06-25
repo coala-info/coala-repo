@@ -59,6 +59,8 @@ inputs:
       prefix: --min-k-count
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference file name
     inputBinding:
       position: 101

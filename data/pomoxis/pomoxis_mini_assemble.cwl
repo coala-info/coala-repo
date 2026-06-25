@@ -89,6 +89,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference fasta for reference-guided consensus (instead of de novo 
       assembly)
     inputBinding:

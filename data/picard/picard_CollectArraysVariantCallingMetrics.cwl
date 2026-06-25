@@ -9,6 +9,8 @@ doc: CollectArraysVariantCallingMetrics takes a Genotyping Arrays VCF file (as
 inputs:
   - id: dbsnp
     type: File
+    secondaryFiles:
+      - .tbi?
     doc: Reference dbSNP file in dbSNP or VCF format.
     inputBinding:
       position: 101
@@ -101,6 +103,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference sequence file.
     inputBinding:
       position: 101

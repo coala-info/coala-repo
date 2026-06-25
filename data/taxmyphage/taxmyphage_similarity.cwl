@@ -89,6 +89,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference database file. Input file will be used as query 
       against it. If not provided, input will be compare against itself. If you 
       use reference no figure is generated.

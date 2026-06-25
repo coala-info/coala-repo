@@ -6,6 +6,8 @@ doc: "namfinder 0.1.2\n\nTool homepage: https://github.com/ksahlin/namfinder"
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference in FASTA format
     inputBinding:
       position: 1

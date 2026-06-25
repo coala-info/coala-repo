@@ -7,6 +7,8 @@ doc: "Convert streamlines of white matter bundle into a density map and binary m
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference image
     inputBinding:
       position: 101

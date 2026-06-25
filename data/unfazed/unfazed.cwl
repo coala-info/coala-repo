@@ -177,6 +177,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file (required for crams)
     inputBinding:
       position: 101

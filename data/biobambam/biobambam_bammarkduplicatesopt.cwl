@@ -174,6 +174,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference FastA (.fai file required, for cram i/o only)
     inputBinding:
       position: 101

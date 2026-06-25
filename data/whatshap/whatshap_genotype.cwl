@@ -211,6 +211,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference file. Provide this to detect alleles through re-alignment. If
       no index (.fai) exists, it will be created
     inputBinding:

@@ -11,6 +11,8 @@ inputs:
       position: 1
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: fasta file containing bam reference sequences
     inputBinding:
       position: 2

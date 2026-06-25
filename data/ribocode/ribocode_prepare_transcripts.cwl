@@ -7,6 +7,8 @@ doc: "This script is designed for preparing transcripts annotation files.\n\nToo
 inputs:
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: The genome sequences file in fasta format.
     inputBinding:
       position: 101

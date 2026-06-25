@@ -207,6 +207,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: path to a (multi)fasta or a directory containing one or more 
       chromosomal sequences in fasta format. Required, unless using a config 
       file

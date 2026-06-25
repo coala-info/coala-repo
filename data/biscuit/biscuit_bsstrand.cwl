@@ -9,6 +9,8 @@ doc: "Correct or append bisulfite strand information in BAM files\n\nTool homepa
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta file
     inputBinding:
       position: 1

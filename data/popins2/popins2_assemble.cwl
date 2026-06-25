@@ -50,6 +50,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: 'Remap reads to this reference before assembly. Default: no remapping. Valid
       filetypes are: fa, fna, fasta, and gz.'
     inputBinding:

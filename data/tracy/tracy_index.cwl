@@ -8,6 +8,8 @@ doc: "Index a genome for tracy\n\nTool homepage: https://github.com/gear-genomic
 inputs:
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input genome fasta file (e.g., genome.fa.gz)
     inputBinding:
       position: 1

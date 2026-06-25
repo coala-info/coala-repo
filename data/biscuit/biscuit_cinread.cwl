@@ -9,6 +9,8 @@ doc: "Extract cytosine information from a BAM file based on a reference genome.\
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome in FASTA format
     inputBinding:
       position: 1

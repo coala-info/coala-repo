@@ -6,6 +6,8 @@ doc: Fast and accurate splice-aware read aligner.
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Specify the reference sequence. Only do this ONCE, when building the 
       index (unless using 'nodisk').
     inputBinding:

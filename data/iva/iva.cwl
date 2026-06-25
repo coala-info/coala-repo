@@ -172,6 +172,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: EXPERIMENTAL! This option is EXPERIMENTAL, not recommended, and has not
       been tested! Fasta file of reference genome, or parts thereof. IVA will 
       try to assemble one contig per sequence in this file. Incompatible with 

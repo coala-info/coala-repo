@@ -14,6 +14,8 @@ doc: "Simulate a diploid genome by creating a copy of a haploid genome with hete
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file containing the reference genome. It may be compressed 
       (gzip). It may contain multiple sequences (scaffolds or chromosomes), each
       marked with a separate FASTA tag line. If '-' is specified, the reference 

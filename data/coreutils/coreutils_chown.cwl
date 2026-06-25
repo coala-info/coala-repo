@@ -89,6 +89,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: use RFILE's ownership rather than specifying values
     inputBinding:
       position: 103

@@ -6,7 +6,7 @@
 Infer gene regulatory networks
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/pyscenic:0.12.1--pyhdfd78af_1
+- **Docker Image**: aertslab/pyscenic:0.12.1
 - **Homepage**: https://github.com/aertslab/pySCENIC
 - **Package**: https://anaconda.org/channels/bioconda/packages/pyscenic/overview
 - **Validation**: PASS

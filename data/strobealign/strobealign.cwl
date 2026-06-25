@@ -6,6 +6,8 @@ doc: "strobealign 0.17.0\n\nTool homepage: https://github.com/ksahlin/StrobeAlig
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference in FASTA format
     inputBinding:
       position: 1

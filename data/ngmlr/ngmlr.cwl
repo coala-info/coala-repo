@@ -152,6 +152,8 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference genome (FASTA/Q, can be gzipped)
     inputBinding:
       position: 101

@@ -13,6 +13,8 @@ inputs:
       position: 1
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: indexed reference genome in .fasta format (along with .fai file in the 
       same directory)
     inputBinding:

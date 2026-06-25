@@ -93,6 +93,8 @@ inputs:
       prefix: --out_dir
   - id: ref_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference FASTA file
     inputBinding:
       position: 101

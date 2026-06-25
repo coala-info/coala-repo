@@ -134,6 +134,8 @@ inputs:
       prefix: -F
   - id: reference_sequence
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference sequence
     inputBinding:
       position: 101

@@ -23,6 +23,8 @@ inputs:
       prefix: --read-group
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta
     inputBinding:
       position: 102

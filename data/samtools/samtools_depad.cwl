@@ -69,6 +69,8 @@ inputs:
     prefix: -s
 - id: reference
   type: File
+  secondaryFiles:
+    - .fai
   doc: Padded reference sequence file
   inputBinding:
     position: 1

@@ -24,6 +24,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: A tree to correct branch lengths by in the two input trees. Typically, 
       this is a putative species tree.
     inputBinding:

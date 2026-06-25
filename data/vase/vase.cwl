@@ -623,6 +623,8 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - .tbi?
     doc: "dbSNP or ClinVar VCF file for variant\n                        annotating/filtering."
     inputBinding:
       position: 101
@@ -632,6 +634,8 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - .tbi?
     doc: "dbSNP or ClinVar VCF file for variant\n                        annotating/filtering."
     inputBinding:
       position: 101

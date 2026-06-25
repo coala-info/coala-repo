@@ -21,6 +21,8 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file containing the reference genome
     inputBinding:
       position: 101

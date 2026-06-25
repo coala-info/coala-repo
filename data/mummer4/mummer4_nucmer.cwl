@@ -9,6 +9,8 @@ doc: "generates nucleotide alignments between two mutli-FASTA input files. The o
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

@@ -28,6 +28,8 @@ inputs:
       prefix: --processes
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to HDF5 file containing reference
     inputBinding:
       position: 101

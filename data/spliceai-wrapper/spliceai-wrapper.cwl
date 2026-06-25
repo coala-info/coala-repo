@@ -53,6 +53,8 @@ inputs:
       prefix: --min-distance
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome FASTA file.
     inputBinding:
       position: 102

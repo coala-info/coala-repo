@@ -132,6 +132,8 @@ inputs:
       prefix: --reads_type
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file (.fa / .fna)
     inputBinding:
       position: 101

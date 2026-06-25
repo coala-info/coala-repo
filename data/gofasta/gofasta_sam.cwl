@@ -8,6 +8,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference fasta file used to generate the sam file
     inputBinding:
       position: 101

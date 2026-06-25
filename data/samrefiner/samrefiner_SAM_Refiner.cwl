@@ -263,6 +263,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference fasta or genbank file. Only chimera removal and collections 
       will be performed if omitted.
     inputBinding:

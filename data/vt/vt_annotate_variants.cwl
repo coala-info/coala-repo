@@ -51,6 +51,8 @@ inputs:
       prefix: -m
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference sequence fasta file
     inputBinding:
       position: 102

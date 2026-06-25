@@ -167,6 +167,8 @@ inputs:
       prefix: --purity-range
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: path to reference
     inputBinding:
       position: 102

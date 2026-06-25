@@ -152,6 +152,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Indexed reference fasta, set if using CRAM
     inputBinding:
       position: 102

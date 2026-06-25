@@ -85,6 +85,8 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference genome
     inputBinding:
       position: 101

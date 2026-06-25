@@ -31,6 +31,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: load the reference genome from FILE
     inputBinding:
       position: 104

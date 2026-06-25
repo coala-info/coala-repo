@@ -70,6 +70,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference assembly in FASTA format
     inputBinding:
       position: 101

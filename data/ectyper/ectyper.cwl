@@ -118,6 +118,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Location of pre-computed MASH sketch for species identification. If 
       provided, genomes identified as non-E. coli will have their species 
       identified using MASH dist

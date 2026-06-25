@@ -179,6 +179,8 @@ inputs:
       prefix: --pindel_output_root
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: The name of the file containing the reference genome
     inputBinding:
       position: 101

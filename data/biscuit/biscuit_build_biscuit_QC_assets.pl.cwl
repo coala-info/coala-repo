@@ -17,6 +17,8 @@ inputs:
       prefix: --include
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference input genome in FASTA format
     inputBinding:
       position: 101

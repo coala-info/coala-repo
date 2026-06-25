@@ -8,6 +8,8 @@ doc: "Align PacBio reads to reference sequences\n\nTool homepage: https://github
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA, ReferenceSet XML, or Reference Index
     inputBinding:
       position: 1

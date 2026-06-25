@@ -491,6 +491,8 @@ inputs:
       prefix: --read-snp-limit
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Use FILE as the reference sequence for analysis. An index file 
       (FILE.fai) will be created if none exists. If neither --targets nor 
       --region are specified, FreeBayes will analyze every position in this 

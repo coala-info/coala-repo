@@ -47,6 +47,8 @@ inputs:
       prefix: --functional
   - id: genome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: 'MANDATORY: genome fasta file'
     inputBinding:
       position: 101

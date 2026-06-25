@@ -8,6 +8,8 @@ doc: "Build the SNP matrix in DGRP format.\n\nTool homepage: https://github.com/
 inputs:
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome file
     inputBinding:
       position: 1

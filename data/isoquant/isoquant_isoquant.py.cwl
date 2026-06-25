@@ -144,6 +144,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: reference genome in FASTA format (can be gzipped)
     inputBinding:
       position: 101

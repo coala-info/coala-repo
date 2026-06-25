@@ -9,6 +9,8 @@ doc: "Process epiread files against a reference genome to generate a rectangle f
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1

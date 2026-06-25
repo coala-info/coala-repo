@@ -59,6 +59,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .tbi?
     doc: VCF file from dbSNP.
     inputBinding:
       position: 107

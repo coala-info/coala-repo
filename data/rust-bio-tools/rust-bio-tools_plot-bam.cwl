@@ -25,6 +25,8 @@ inputs:
       prefix: --max-read-depth
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference fasta file
     inputBinding:
       position: 101

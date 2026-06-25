@@ -32,6 +32,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to reference genome if wanting to also extract reads spanning 
       indels
     inputBinding:

@@ -114,6 +114,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .tbi?
     doc: Path to dbSNP VCF file, activates dbSNP annotation
     inputBinding:
       position: 101
@@ -362,6 +364,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Path to FAI-indexed reference FASTA file, required for 
       dbSNP/ExAC/UK10K-based annotation
     inputBinding:

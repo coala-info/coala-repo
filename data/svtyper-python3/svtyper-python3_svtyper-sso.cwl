@@ -82,6 +82,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Indexed reference FASTA file (recommended for reading CRAM files)
     inputBinding:
       position: 101

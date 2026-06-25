@@ -37,6 +37,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference panel of haplotypes in VCF/BCF format
     inputBinding:
       position: 101

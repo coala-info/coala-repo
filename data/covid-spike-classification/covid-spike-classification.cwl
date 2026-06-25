@@ -37,6 +37,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Reference FASTA file to use
     inputBinding:
       position: 102

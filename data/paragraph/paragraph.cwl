@@ -186,6 +186,8 @@ inputs:
       prefix: --path-sequence-matching
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome fasta file.
     inputBinding:
       position: 101

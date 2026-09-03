@@ -34,3 +34,4 @@ temp/*
 output/*
 back/*
 testdata/*
+.agents/*

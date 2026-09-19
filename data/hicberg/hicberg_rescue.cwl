@@ -35,7 +35,7 @@ inputs:
       position: 102
       prefix: --mode
   - id: output_folder_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 103

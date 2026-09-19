@@ -94,7 +94,7 @@ inputs:
   - id: logs_directory_path
     type:
       - 'null'
-      - Directory
+      - string
     inputBinding:
       position: 103
       prefix: --logs

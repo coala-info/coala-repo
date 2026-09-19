@@ -279,7 +279,7 @@ inputs:
   - id: target_directory_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `target_directory_path`
     inputBinding:
       position: 103

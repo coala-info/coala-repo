@@ -162,7 +162,7 @@ inputs:
       position: 102
       prefix: --verbosity
   - id: output_directory_path
-    type: Directory
+    type: string
     inputBinding:
       position: 103
       prefix: --output-directory

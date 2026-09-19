@@ -216,7 +216,7 @@ inputs:
   - id: output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 104
@@ -224,7 +224,7 @@ inputs:
   - id: output_dir_overwrite_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `output_dir_overwrite_path`
     inputBinding:
       position: 105

@@ -225,7 +225,7 @@ inputs:
       position: 102
       prefix: --tta-threshold
   - id: output_dir_path
-    type: Directory
+    type: string
     inputBinding:
       position: 103
       prefix: --output-dir

@@ -320,7 +320,7 @@ inputs:
   - id: cc_chp_out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `cc_chp_out_dir_path`
     inputBinding:
       position: 103
@@ -328,7 +328,7 @@ inputs:
   - id: cc_md_chp_out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `cc_md_chp_out_dir_path`
     inputBinding:
       position: 104
@@ -344,7 +344,7 @@ inputs:
   - id: out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 106
@@ -360,7 +360,7 @@ inputs:
   - id: xda_chp_out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `xda_chp_out_dir_path`
     inputBinding:
       position: 108

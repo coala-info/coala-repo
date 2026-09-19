@@ -160,7 +160,7 @@ inputs:
       position: 102
       prefix: --vverbose
   - id: output_directory_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 103

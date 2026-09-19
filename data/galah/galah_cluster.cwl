@@ -90,7 +90,7 @@ inputs:
   - id: output_representative_fasta_directory_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `output_representative_fasta_directory_path`
     inputBinding:
       position: 103

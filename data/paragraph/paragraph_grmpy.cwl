@@ -159,7 +159,7 @@ inputs:
   - id: alignment_output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `alignment_output_folder_path`
     inputBinding:
       position: 102
@@ -175,7 +175,7 @@ inputs:
   - id: output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 104

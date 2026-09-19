@@ -46,7 +46,7 @@ inputs:
       position: 104
       prefix: -t
   - id: output_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 105

@@ -772,7 +772,7 @@ inputs:
   - id: output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: base directory for all output files [current dir]
     inputBinding:
       position: 102

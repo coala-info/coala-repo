@@ -67,7 +67,7 @@ inputs:
       position: 101
       prefix: --verbose_interval
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: Path for output files
     inputBinding:
       position: 102

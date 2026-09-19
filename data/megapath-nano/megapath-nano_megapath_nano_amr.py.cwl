@@ -79,7 +79,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_folder_path
-    type: Directory
+    type: string
     inputBinding:
       position: 102
       prefix: --output_folder

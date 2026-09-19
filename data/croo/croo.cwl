@@ -157,7 +157,7 @@ inputs:
       position: 102
       prefix: --use-presigned-url-s3
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: Output directory/bucket (LOCAL OR REMOTE). This can be
     inputBinding:
       position: 103

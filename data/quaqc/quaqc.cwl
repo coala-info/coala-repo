@@ -518,7 +518,7 @@ inputs:
   - id: output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save QC report if not that of input.
     inputBinding:
       position: 104

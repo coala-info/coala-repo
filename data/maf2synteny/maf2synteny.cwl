@@ -27,7 +27,7 @@ inputs:
       position: 102
       prefix: --simplify
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 103

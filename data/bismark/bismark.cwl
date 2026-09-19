@@ -766,7 +766,7 @@ inputs:
       position: 103
       prefix: --upto
   - id: output_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 104

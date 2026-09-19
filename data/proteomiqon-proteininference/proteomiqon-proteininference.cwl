@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: --peptidedatabase
   - id: output_directory_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102

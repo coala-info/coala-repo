@@ -41,7 +41,7 @@ inputs:
       position: 101
       prefix: --sample-sheet
   - id: output_dir_path
-    type: Directory
+    type: string
     doc: where to write the output files
     inputBinding:
       position: 102

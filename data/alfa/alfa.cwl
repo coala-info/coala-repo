@@ -123,7 +123,7 @@ inputs:
   - id: output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for all files created by ALFA (current dir by 
       default).
     inputBinding:

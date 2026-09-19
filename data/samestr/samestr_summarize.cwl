@@ -53,7 +53,7 @@ inputs:
       position: 101
       prefix: --tax-profiles-extension
   - id: output_dir_path
-    type: Directory
+    type: string
     doc: 'Path to output directory. (default: out_db/)'
     inputBinding:
       position: 102

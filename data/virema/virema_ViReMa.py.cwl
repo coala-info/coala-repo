@@ -199,7 +199,7 @@ inputs:
       position: 104
       prefix: --X
   - id: output_dir_path
-    type: Directory
+    type: string
     inputBinding:
       position: 105
       prefix: --Output_Dir

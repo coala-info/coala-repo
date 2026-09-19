@@ -239,7 +239,7 @@ inputs:
   - id: export_output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `export_output_folder_path`
     inputBinding:
       position: 103

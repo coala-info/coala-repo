@@ -31,7 +31,7 @@ inputs:
       position: 102
       prefix: --window
   - id: out_folder_path
-    type: Directory
+    type: string
     doc: Output or path parameter `out_folder_path`
     inputBinding:
       position: 103

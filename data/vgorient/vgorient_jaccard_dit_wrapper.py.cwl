@@ -86,7 +86,7 @@ inputs:
   - id: vg_output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     inputBinding:
       position: 104
       prefix: --vg_output_dir

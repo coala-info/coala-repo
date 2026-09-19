@@ -71,7 +71,7 @@ inputs:
       position: 104
       prefix: --targets
   - id: output_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 105

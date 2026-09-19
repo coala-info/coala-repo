@@ -45,7 +45,7 @@ inputs:
       position: 102
       prefix: --num_groups
   - id: output_dir_path
-    type: Directory
+    type: string
     inputBinding:
       position: 103
       prefix: --output_dir

@@ -166,7 +166,7 @@ inputs:
       position: 101
       prefix: --WindowSize
   - id: output_dir_name_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_dir_name_path`
     inputBinding:
       position: 102

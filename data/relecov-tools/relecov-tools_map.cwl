@@ -42,7 +42,7 @@ inputs:
   - id: out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
@@ -50,7 +50,7 @@ inputs:
   - id: out_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `out_folder_path`
     inputBinding:
       position: 103
@@ -66,7 +66,7 @@ inputs:
   - id: output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 105
@@ -74,7 +74,7 @@ inputs:
   - id: output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 106
@@ -82,7 +82,7 @@ inputs:
   - id: output_folder_alt_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `output_folder_alt_path`
     inputBinding:
       position: 107

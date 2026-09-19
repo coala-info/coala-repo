@@ -105,7 +105,7 @@ inputs:
       position: 101
       prefix: --r_tree
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: path to output directory
     inputBinding:
       position: 102

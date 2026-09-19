@@ -172,7 +172,7 @@ inputs:
       position: 105
       prefix: --weights
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: Store training results to files in the given
     inputBinding:
       position: 106

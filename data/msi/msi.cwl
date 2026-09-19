@@ -126,7 +126,7 @@ inputs:
       position: 101
       prefix: -V
   - id: out_folder_path
-    type: Directory
+    type: string
     doc: Output or path parameter `out_folder_path`
     inputBinding:
       position: 102

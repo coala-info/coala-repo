@@ -144,7 +144,7 @@ inputs:
       position: 101
       prefix: --update
   - id: output_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102

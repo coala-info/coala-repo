@@ -181,7 +181,7 @@ inputs:
       position: 101
       prefix: --window
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102

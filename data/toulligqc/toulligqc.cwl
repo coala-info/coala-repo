@@ -167,14 +167,14 @@ inputs:
   - id: images_directory_path
     type:
       - 'null'
-      - Directory
+      - string
     inputBinding:
       position: 104
       prefix: --images-directory
   - id: output_directory_path
     type:
       - 'null'
-      - Directory
+      - string
     inputBinding:
       position: 105
       prefix: --output-directory

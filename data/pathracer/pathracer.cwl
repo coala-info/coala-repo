@@ -420,7 +420,7 @@ inputs:
       position: 103
       prefix: --top
   - id: output_directory_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 104

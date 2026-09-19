@@ -89,7 +89,7 @@ inputs:
   - id: aligned_output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `aligned_output_dir_path`
     inputBinding:
       position: 102
@@ -97,7 +97,7 @@ inputs:
   - id: csv_output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `csv_output_dir_path`
     inputBinding:
       position: 103
@@ -105,7 +105,7 @@ inputs:
   - id: json_output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `json_output_dir_path`
     inputBinding:
       position: 104
@@ -113,7 +113,7 @@ inputs:
   - id: plot_output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `plot_output_dir_path`
     inputBinding:
       position: 105

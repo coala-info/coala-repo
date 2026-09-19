@@ -300,7 +300,7 @@ inputs:
   - id: bad_output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `bad_output_folder_path`
     inputBinding:
       position: 102
@@ -316,7 +316,7 @@ inputs:
   - id: good_output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `good_output_folder_path`
     inputBinding:
       position: 104
@@ -324,7 +324,7 @@ inputs:
   - id: overlap_output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `overlap_output_folder_path`
     inputBinding:
       position: 105
@@ -332,7 +332,7 @@ inputs:
   - id: report_output_folder_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `report_output_folder_path`
     inputBinding:
       position: 106

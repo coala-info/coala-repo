@@ -154,7 +154,7 @@ inputs:
       position: 101
       prefix: --write_single_copy_genes
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: directory to output files
     inputBinding:
       position: 102

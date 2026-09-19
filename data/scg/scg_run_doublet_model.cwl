@@ -73,7 +73,7 @@ inputs:
   - id: out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path where output files will be written.
     inputBinding:
       position: 103

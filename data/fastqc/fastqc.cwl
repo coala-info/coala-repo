@@ -210,11 +210,12 @@ inputs:
       position: 102
       prefix: --threads
   - id: output_dir_path
-    type: Directory
-    doc: Output or path parameter `output_dir_path`
+    type: string
+    doc: Name of the output directory fastqc writes into (a plain name, not a host
+      path). It is created for the run.
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --outdir
 outputs:
   - id: output_dir
     type:
@@ -228,6 +229,11 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir_path)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0

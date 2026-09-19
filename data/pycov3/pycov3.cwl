@@ -81,7 +81,7 @@ inputs:
       position: 101
       prefix: --window_step
   - id: out_dir_path
-    type: Directory
+    type: string
     inputBinding:
       position: 102
       prefix: --out_dir

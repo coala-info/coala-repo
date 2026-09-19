@@ -226,7 +226,7 @@ inputs:
   - id: output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     inputBinding:
       position: 104
       prefix: --output-dir

@@ -216,7 +216,7 @@ inputs:
   - id: alignment_output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `alignment_output_dir_path`
     inputBinding:
       position: 106

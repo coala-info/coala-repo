@@ -62,7 +62,7 @@ inputs:
   - id: go_directory_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `go_directory_path`
     inputBinding:
       position: 105

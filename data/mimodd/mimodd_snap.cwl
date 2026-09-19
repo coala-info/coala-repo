@@ -293,7 +293,7 @@ inputs:
   - id: idx_out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `idx_out_dir_path`
     inputBinding:
       position: 105

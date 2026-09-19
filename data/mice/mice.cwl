@@ -38,7 +38,7 @@ inputs:
       position: 102
       prefix: --remove-dup
   - id: out_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 103

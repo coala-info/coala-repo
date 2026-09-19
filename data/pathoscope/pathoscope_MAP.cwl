@@ -146,7 +146,7 @@ inputs:
   - id: out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 103

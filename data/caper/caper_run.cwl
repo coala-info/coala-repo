@@ -591,7 +591,7 @@ inputs:
   - id: aws_out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `aws_out_dir_path`
     inputBinding:
       position: 103
@@ -599,7 +599,7 @@ inputs:
   - id: gcp_out_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `gcp_out_dir_path`
     inputBinding:
       position: 104

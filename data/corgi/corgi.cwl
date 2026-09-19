@@ -116,7 +116,7 @@ inputs:
   - id: output_dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: A path to output the results as a CSV.
     inputBinding:
       position: 103

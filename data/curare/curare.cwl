@@ -94,7 +94,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_folder_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 102

@@ -122,7 +122,7 @@ inputs:
   - id: retrieve_task_directory_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output or path parameter `retrieve_task_directory_path`
     inputBinding:
       position: 105

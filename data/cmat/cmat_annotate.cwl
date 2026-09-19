@@ -396,7 +396,7 @@ inputs:
       position: 102
       prefix: -work-dir
   - id: output_dir_path
-    type: Directory
+    type: string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103

@@ -10,23 +10,29 @@ inputs:
     type: File
     doc: Input FASTA file
     inputBinding:
-      position: 1
+      position: 201
   - id: f_flag
     type:
       - 'null'
       - boolean
-    doc: Force overwrite of existing files
+    doc: pack the forward strand only
     inputBinding:
       position: 102
       prefix: -f
+  - id: out_prefix
+    type: string
+    doc: Prefix of the output files, for example ref.fa; any directory part is dropped
+    inputBinding:
+      position: 202
+      valueFrom: $(self.split('/').pop())
 outputs:
-  - id: output_prefix
-    type:
-      - 'null'
-      - File
-    doc: Prefix for the output files
+  - id: output_files
+    type: File[]
+    doc: The files <out_prefix>.pac, .ann and .amb
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_prefix.split('/').pop()).*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa:0.7.19--h577a1d6_1

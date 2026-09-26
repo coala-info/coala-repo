@@ -8,15 +8,21 @@ doc: "Identify Super Maximal Exact Matches (SMEMs) in a sequence against a refer
   index.\n\nTool homepage: https://github.com/lh3/bwa"
 inputs:
   - id: idxbase
-    type: string
-    doc: The prefix of the BWA index files
+    type: File
+    doc: The bwa index, given as its .bwt file (for example ref.fa.bwt from bwa_index) or
+      as the file named like the index prefix (for example ref.fa); the .amb, .ann,
+      .bwt, .pac and .sa files must sit beside it
+    secondaryFiles:
+      - pattern: "${ var b = self.basename.replace(/\\.bwt$/, ''); var s = ['.amb', '.ann', '.pac', '.sa']; if (b === self.basename) { s.push('.bwt'); } return s.map(function (e) { return b + e; }); }"
+        required: true
     inputBinding:
-      position: 1
+      position: 201
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: input_fastq
     type: File
     doc: Input FASTQ file
     inputBinding:
-      position: 2
+      position: 202
   - id: max_interval_size
     type:
       - 'null'
@@ -61,6 +67,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa:0.7.19--h577a1d6_1

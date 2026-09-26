@@ -10,14 +10,14 @@ inputs:
     type: File
     doc: First read input file (FQ format)
     inputBinding:
-      position: 1
+      position: 201
   - id: read2_fq
     type:
       - 'null'
       - File
     doc: Second read input file (FQ format)
     inputBinding:
-      position: 2
+      position: 202
   - id: max_errors
     type:
       - 'null'

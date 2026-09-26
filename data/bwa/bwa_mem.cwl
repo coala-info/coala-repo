@@ -9,21 +9,27 @@ doc: "Burrows-Wheeler Alignment Tool, MEM algorithm for aligning low-divergence 
 inputs:
   - id: idxbase
     type: File
-    doc: Index basename
+    doc: The bwa index, given as its .bwt file (for example ref.fa.bwt from bwa_index) or
+      as the file named like the index prefix (for example ref.fa); the .amb, .ann,
+      .bwt, .pac and .sa files must sit beside it
+    secondaryFiles:
+      - pattern: "${ var b = self.basename.replace(/\\.bwt$/, ''); var s = ['.amb', '.ann', '.pac', '.sa']; if (b === self.basename) { s.push('.bwt'); } return s.map(function (e) { return b + e; }); }"
+        required: true
     inputBinding:
-      position: 1
+      position: 201
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: in1_fq
     type: File
     doc: Input FASTQ file 1
     inputBinding:
-      position: 2
+      position: 202
   - id: in2_fq
     type:
       - 'null'
       - File
     doc: Input FASTQ file 2
     inputBinding:
-      position: 3
+      position: 203
   - id: append_comment
     type:
       - 'null'
@@ -331,18 +337,17 @@ inputs:
       prefix: -h
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Name of the SAM file to write; any directory part is dropped
     inputBinding:
-      position: 105
-      prefix: --output-file
+      position: 150
+      prefix: -o
+      valueFrom: $(self.split('/').pop())
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: sam file to output results to
+    type: File
+    doc: The SAM file with the alignments
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path.split('/').pop())
 requirements:
   - class: InlineJavascriptRequirement
 hints:

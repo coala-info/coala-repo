@@ -7,15 +7,21 @@ label: bwa_aln
 doc: "Find the SA coordinates of the input reads\n\nTool homepage: https://github.com/lh3/bwa"
 inputs:
   - id: prefix
-    type: string
-    doc: Prefix of the BWA index
+    type: File
+    doc: The bwa index, given as its .bwt file (for example ref.fa.bwt from bwa_index) or
+      as the file named like the index prefix (for example ref.fa); the .amb, .ann,
+      .bwt, .pac and .sa files must sit beside it
+    secondaryFiles:
+      - pattern: "${ var b = self.basename.replace(/\\.bwt$/, ''); var s = ['.amb', '.ann', '.pac', '.sa']; if (b === self.basename) { s.push('.bwt'); } return s.map(function (e) { return b + e; }); }"
+        required: true
     inputBinding:
-      position: 1
+      position: 201
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: input_fastq
     type: File
     doc: Input FASTQ file
     inputBinding:
-      position: 2
+      position: 202
   - id: bam_input
     type:
       - 'null'
@@ -202,18 +208,17 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Name of the .sai file to write; any directory part is dropped
     inputBinding:
-      position: 104
-      prefix: --output-file
+      position: 150
+      prefix: -f
+      valueFrom: $(self.split('/').pop())
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: file to write output to instead of stdout
+    type: File
+    doc: The .sai file with the SA coordinates of the reads
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path.split('/').pop())
 requirements:
   - class: InlineJavascriptRequirement
 hints:

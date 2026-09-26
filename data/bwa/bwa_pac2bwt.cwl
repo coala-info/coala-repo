@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: Input PAC file
     inputBinding:
-      position: 1
+      position: 201
   - id: d
     type:
       - 'null'
@@ -19,12 +19,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: -d
+  - id: out_bwt
+    type: string
+    doc: Name of the .bwt file to write, for example ref.fa.bwt; any directory part is dropped
+    inputBinding:
+      position: 202
+      valueFrom: $(self.split('/').pop())
 outputs:
   - id: output_bwt
     type: File
-    doc: Output BWT file
+    doc: The file written
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_bwt.split('/').pop())
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa:0.7.19--h577a1d6_1

@@ -8,22 +8,28 @@ doc: "BWA-SW alignment algorithm for long reads, supporting Smith-Waterman align
   and chimeric read detection.\n\nTool homepage: https://github.com/lh3/bwa"
 inputs:
   - id: target_prefix
-    type: string
-    doc: Prefix of the BWA index
+    type: File
+    doc: The bwa index of the target, given as its .bwt file (for example ref.fa.bwt from bwa_index) or
+      as the file named like the index prefix (for example ref.fa); the .amb, .ann,
+      .bwt, .pac and .sa files must sit beside it
+    secondaryFiles:
+      - pattern: "${ var b = self.basename.replace(/\\.bwt$/, ''); var s = ['.amb', '.ann', '.pac', '.sa']; if (b === self.basename) { s.push('.bwt'); } return s.map(function (e) { return b + e; }); }"
+        required: true
     inputBinding:
-      position: 1
+      position: 201
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: query_fa
     type: File
     doc: Query FASTA/FASTQ file
     inputBinding:
-      position: 2
+      position: 202
   - id: query2_fa
     type:
       - 'null'
       - File
     doc: Second query FASTA/FASTQ file for paired-end alignment
     inputBinding:
-      position: 3
+      position: 203
   - id: band_width
     type:
       - 'null'
@@ -170,18 +176,17 @@ inputs:
       prefix: -z
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Name of the SAM file to write; any directory part is dropped
     inputBinding:
-      position: 105
-      prefix: --output-file
+      position: 150
+      prefix: -f
+      valueFrom: $(self.split('/').pop())
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: file to output results to instead of stdout
+    type: File
+    doc: The SAM file with the alignments
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path.split('/').pop())
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbgc_download
+baseCommand:
+  - deepbgc
+  - download
 label: deepbgc_download
 doc: "Download trained models and other file dependencies to the DeepBGC downloads
   directory.\n\nTool homepage: https://github.com/Merck/DeepBGC"

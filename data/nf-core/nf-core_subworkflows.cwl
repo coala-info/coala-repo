@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nf-core subworkflows
+baseCommand:
+  - nf-core
+  - subworkflows
 label: nf-core_subworkflows
 doc: "Commands to manage Nextflow DSL2 subworkflows (tool wrappers).\n\nTool homepage:
   http://nf-co.re/"

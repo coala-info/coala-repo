@@ -132,7 +132,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_clustering_path`
     inputBinding:
       position: 102
       prefix: --output-clustering
@@ -140,7 +139,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_csv_path`
     inputBinding:
       position: 103
       prefix: --output-csv
@@ -148,7 +146,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_report_path`
     inputBinding:
       position: 104
       prefix: --output-report

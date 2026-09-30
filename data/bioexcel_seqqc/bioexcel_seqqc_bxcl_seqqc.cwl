@@ -49,7 +49,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory.
     inputBinding:
       position: 101
@@ -65,7 +65,7 @@ inputs:
       prefix: --trim
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: 'Output directory. (default: current directory)'
     inputBinding:
       position: 102
       prefix: --outdir

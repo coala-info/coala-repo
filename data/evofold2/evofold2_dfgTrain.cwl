@@ -130,18 +130,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dot_file_path`
+    doc: 'arg                         Output dfg in dot format to given fileName.
+      (To convert to ps format, e.g. run: "cat fileName.dot | dot -Tps'
     inputBinding:
       position: 104
-      prefix: --dot-file
+      prefix: --dotFile
   - id: log_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: Log file for EM training.
     inputBinding:
       position: 105
-      prefix: --log-file
+      prefix: --logFile
 outputs:
   - id: log_file
     type:

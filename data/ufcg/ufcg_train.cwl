@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg train
+baseCommand:
+  - ufcg
+  - train
 label: ufcg_train
 doc: "Train and generate sequence model of fungal markers\n\nTool homepage: https://ufcg.steineggerlab.com"
 inputs:
@@ -52,7 +54,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write temporary files
     inputBinding:
       position: 101

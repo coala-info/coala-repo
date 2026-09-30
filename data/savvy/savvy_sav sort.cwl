@@ -16,7 +16,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Specifies whether to sort in ascending or descending order (asc or desc;
+    doc: 'Specifies whether to sort in ascending or descending order (asc or desc;'
     inputBinding:
       position: 102
       prefix: --direction

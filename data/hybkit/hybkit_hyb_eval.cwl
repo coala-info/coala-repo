@@ -106,6 +106,7 @@ inputs:
       \               \"allowed_mismatches\" setting; \"energy_mismatch\": Error\n\
       \                        when a mismatch exists between HybRecord and\n    \
       \                    FoldRecord energy values."
+    default:
       - hybrecord_indel
       - foldrecord_nofold
       - max_mismatch
@@ -135,6 +136,7 @@ inputs:
     doc: "Types of evaluations to perform on input hyb file.\n                   \
       \     (Note: evaluations can be combined, such as \"--\n                   \
       \     eval_types type mirna\")"
+    default:
       - type
     inputBinding:
       position: 103
@@ -212,6 +214,7 @@ inputs:
       - type: array
         items: string
     doc: '"seg_type" fields identifying a miRNA'
+    default:
       - miRNA
       - microRNA
     inputBinding:
@@ -304,6 +307,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: out_fold_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --out_fold
+  - id: out_hyb_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --out_hyb
 outputs:
   - id: out_hyb
     type:
@@ -315,7 +332,7 @@ outputs:
       \ will be used as a template for\n                        the output \"OUT_DIR/MY_FILE_OUT.HYB\"\
       ."
     outputBinding:
-      glob: $(inputs.out_hyb)
+      glob: $(inputs.out_hyb_path)
   - id: out_fold
     type:
       - 'null'
@@ -327,7 +344,9 @@ outputs:
       \                       as a template for the output\n                     \
       \   \"OUT_DIR/MY_FILE_OUT.VIENNA\"."
     outputBinding:
-      glob: $(inputs.out_fold)
+      glob: $(inputs.out_fold_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybkit:0.3.6--pyhdfd78af_0

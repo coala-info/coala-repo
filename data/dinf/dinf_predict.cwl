@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dinf predict
+baseCommand:
+  - dinf
+  - predict
 label: dinf_predict
 doc: "Make predictions using a trained discriminator.\n\nTool homepage: https://github.com/RacimoLab/dinf"
 inputs:
@@ -83,7 +85,6 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

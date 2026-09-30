@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools_info
+baseCommand:
+  - cpstools
+  - info
 label: cpstools_info
 doc: "Show information about a genbank file.\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

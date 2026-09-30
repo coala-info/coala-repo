@@ -137,10 +137,9 @@ inputs:
       prefix: --write-scores
   - id: out_jplace_path
     type: string
-    doc: Output or path parameter `out_jplace_path`
     inputBinding:
       position: 102
-      prefix: --out-jplace
+      prefix: --out_jplace
 outputs:
   - id: out_jplace
     type:

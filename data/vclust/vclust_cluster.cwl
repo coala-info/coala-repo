@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vclust_cluster
+baseCommand:
+  - vclust
+  - cluster
 label: vclust_cluster
 doc: "Cluster genomes based on ANI metrics.\n\nTool homepage: https://github.com/refresh-bio/vclust"
 inputs:
@@ -140,10 +142,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output filename
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type: File

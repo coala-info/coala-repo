@@ -54,10 +54,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_base_breakdown_file_path`
+    doc: output base breakdown by per phred quality at every cycle. It sets 
+      cylemax to longest read length
     inputBinding:
       position: 103
-      prefix: --output-base-breakdown-file
+      prefix: -b
   - id: output_fastx_file_path
     type:
       - 'null'
@@ -70,10 +71,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_length_counts_file_path`
+    doc: Output length counts
     inputBinding:
       position: 105
-      prefix: --output-length-counts-file
+      prefix: -L
 outputs:
   - id: output_fastx_file
     type:

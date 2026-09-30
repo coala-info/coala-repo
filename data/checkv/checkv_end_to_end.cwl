@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: checkv end_to_end
+baseCommand:
+  - checkv
+  - end_to_end
 label: checkv_end_to_end
 doc: "Run full pipeline to estimate completeness, contamination, and identify closed
   genomes\n\nTool homepage: https://bitbucket.org/berkeleylab/checkv"
@@ -11,6 +13,11 @@ inputs:
       supported)
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 2
   - id: quiet
     type:
       - 'null'
@@ -54,11 +61,11 @@ inputs:
       position: 102
       prefix: -t
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkv:1.0.3--pyhdfd78af_0

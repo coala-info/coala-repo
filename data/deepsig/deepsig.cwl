@@ -34,7 +34,7 @@ inputs:
       prefix: --threads
   - id: outf_path
     type: string
-    doc: Output or path parameter `outf_path`
+    doc: The output file
     inputBinding:
       position: 102
       prefix: --outf

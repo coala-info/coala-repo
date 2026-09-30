@@ -9,7 +9,7 @@ inputs:
   - id: init_table_path
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the initialization table
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmer-db_new2all
+baseCommand:
+  - kmer-db
+  - new2all
 label: kmer-db_new2all
 doc: "Counting common kmers between set of new samples and all the samples in the
   database\n\nTool homepage: https://github.com/refresh-bio/kmer-db"
@@ -26,6 +28,7 @@ inputs:
     doc: Input samples are in KMC k-mers format
     inputBinding:
       position: 103
+      prefix: -from-kmers
   - id: from_minhash
     type:
       - 'null'
@@ -33,6 +36,7 @@ inputs:
     doc: Input samples are in minhashed k-mers format
     inputBinding:
       position: 103
+      prefix: -from-minhash
   - id: max_filter
     type:
       - 'null'
@@ -58,6 +62,7 @@ inputs:
     doc: each sequence in a FASTA file is treated as a separate sample
     inputBinding:
       position: 103
+      prefix: -multisample-fasta
   - id: sparse
     type:
       - 'null'
@@ -65,6 +70,7 @@ inputs:
     doc: outputs a sparse matrix
     inputBinding:
       position: 103
+      prefix: -sparse
   - id: threads
     type:
       - 'null'

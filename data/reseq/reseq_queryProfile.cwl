@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reseq queryProfile
+baseCommand:
+  - reseq
+  - queryProfile
 label: reseq_queryProfile
 doc: "Runs ReSeq in queryProfile mode\n\nTool homepage: https://github.com/schmeing/ReSeq/tree/devel"
 inputs:
@@ -50,10 +52,11 @@ inputs:
       prefix: --verbosity
   - id: ref_seq_bias_path
     type: string
-    doc: Output or path parameter `ref_seq_bias_path`
+    doc: arg          Output reference sequence bias to file (tsv format; - for 
+      stdout)
     inputBinding:
       position: 102
-      prefix: --ref-seq-bias
+      prefix: --refSeqBias
 outputs:
   - id: ref_seq_bias
     type:

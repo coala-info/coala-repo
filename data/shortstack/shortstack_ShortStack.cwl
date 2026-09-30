@@ -170,7 +170,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory name. Defaults to ShortStack_time
     inputBinding:
       position: 103

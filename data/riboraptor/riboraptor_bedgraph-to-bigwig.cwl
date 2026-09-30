@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: riboraptor bedgraph-to-bigwig
+baseCommand:
+  - riboraptor
+  - bedgraph-to-bigwig
 label: riboraptor_bedgraph-to-bigwig
 doc: "Convert bedgraph to bigwig\n\nTool homepage: https://github.com/saketkc/riboraptor"
 inputs:

@@ -23,22 +23,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --institution
-  - id: out_dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_dir_path`
-    inputBinding:
-      position: 102
-      prefix: --out-dir
-  - id: out_folder_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_folder_path`
-    inputBinding:
-      position: 103
-      prefix: --out-folder
   - id: output_path2
     type:
       - 'null'
@@ -47,38 +31,48 @@ inputs:
     inputBinding:
       position: 104
       prefix: --output
+  - id: out_dir_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --out_dir
+  - id: out_folder_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --out-folder
   - id: output_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
-      position: 105
-      prefix: --output-dir
+      position: 107
+      prefix: --output_dir
   - id: output_folder_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_folder_path`
     inputBinding:
-      position: 106
-      prefix: --output-folder
+      position: 108
+      prefix: --output_folder
   - id: output_location_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_location_path`
     inputBinding:
-      position: 107
-      prefix: --output-location
+      position: 109
+      prefix: --output_location
   - id: output_path_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
-      position: 108
-      prefix: --output-path
+      position: 110
+      prefix: --output_path
 outputs:
   - id: output_dir
     type:

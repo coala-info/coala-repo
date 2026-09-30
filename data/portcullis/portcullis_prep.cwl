@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: portcullis prep
+baseCommand:
+  - portcullis
+  - prep
 label: portcullis_prep
 doc: "Prepares a genome and bam file(s) ready for junction analysis. This involves
   ensuring the bam file is sorted and indexed and the genome file is indexed.\n\n\
@@ -41,7 +43,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for prepared files.
     inputBinding:
       position: 103

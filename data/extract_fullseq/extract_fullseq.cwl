@@ -19,6 +19,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ids
+      itemSeparator: ','
   - id: output_fasta_path
     type: string
     doc: Output or path parameter `output_fasta_path`

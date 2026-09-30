@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tidk explore
+baseCommand:
+  - tidk
+  - explore
 label: tidk_explore
 doc: "Use a range of kmer sizes to find potential telomeric repeats.\nOne of either
   length, or minimum and maximum must be specified.\n\nTool homepage: https://github.com/tolkit/telomeric-identifier"

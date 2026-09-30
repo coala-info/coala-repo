@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metabuli classify
+baseCommand:
+  - metabuli
+  - classify
 label: metabuli_classify
 doc: "By Jaebeom Kim <jbeom0731@gmail.com>\n\nTool homepage: https://github.com/steineggerlab/Metabuli"
 inputs:

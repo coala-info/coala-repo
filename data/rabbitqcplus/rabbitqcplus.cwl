@@ -463,7 +463,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store temporary files, default is the output directory
     inputBinding:
       position: 101
@@ -606,18 +606,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file1_path`
+    doc: output fastq name 1
     inputBinding:
       position: 102
-      prefix: --output-file1
+      prefix: --outFile1
   - id: output_file2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file2_path`
+    doc: output fastq name 2
     inputBinding:
       position: 103
-      prefix: --output-file2
+      prefix: --outFile2
 outputs:
   - id: output_file1
     type:

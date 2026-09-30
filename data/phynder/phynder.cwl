@@ -97,10 +97,10 @@ inputs:
       prefix: -b
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: ONEfile name; default is stdout [-]
     inputBinding:
       position: 104
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type:

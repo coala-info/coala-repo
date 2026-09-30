@@ -64,7 +64,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - Directory
+      - string
     doc: output dir
     inputBinding:
       position: 101

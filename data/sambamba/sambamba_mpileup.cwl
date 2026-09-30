@@ -64,14 +64,13 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 102
       prefix: --tmpdir
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 103
       prefix: --output-filename

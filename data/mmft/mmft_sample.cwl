@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_sample
+baseCommand:
+  - mmft
+  - sample
 label: mmft_sample
 doc: "Randomly sample records from a fasta file.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

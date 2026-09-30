@@ -41,6 +41,7 @@ inputs:
     doc: 'Use graph threading algorithm w/ error correction, the default algorithm.
       Discard pe reads if # of matching kmers < INT1 [100] Maxmimal # of edits allowed
       = INT2 [3]'
+    default:
       - 100
       - 3
     inputBinding:
@@ -76,6 +77,7 @@ inputs:
         items: int
     doc: 'Parameters for kmer-based pre-filtering, optimized for 150bp paired-end
       reads. INT1 = # of sub-sampled kmers. [4] INT2 = minimal # of matches. [1]'
+    default:
       - 4
       - 1
     inputBinding:

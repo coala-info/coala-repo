@@ -38,7 +38,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 102
       prefix: --output-object-file
@@ -46,7 +45,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_plot_file_path`
     inputBinding:
       position: 103
       prefix: --output-plot-file

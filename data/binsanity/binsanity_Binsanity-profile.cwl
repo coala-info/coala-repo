@@ -20,7 +20,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Specify directory for output files to be deposited [Default: Working Directory]'
     inputBinding:
       position: 101
@@ -58,10 +58,10 @@ inputs:
       prefix: --transform
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Identify name of output file for coverage information'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -c
 outputs:
   - id: output_file
     type: File

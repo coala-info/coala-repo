@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch_makedecoy
+baseCommand:
+  - msstitch
+  - makedecoy
 label: msstitch_makedecoy
 doc: "Create decoy sequences for MS/MS analysis.\n\nTool homepage: https://github.com/lehtiolab/msstitch"
 inputs:
@@ -100,10 +102,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_dir
     type:

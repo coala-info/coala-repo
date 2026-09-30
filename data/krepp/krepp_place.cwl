@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: krepp place
+baseCommand:
+  - krepp
+  - place
 label: krepp_place
 doc: "Place queries on a tree with respect to an index.\n\nTool homepage: https://github.com/bo1929/krepp"
 inputs:
@@ -136,7 +138,7 @@ inputs:
       prefix: --tau
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: Write output to a file at <path>. [stdout]
     inputBinding:
       position: 102
       prefix: --output-path

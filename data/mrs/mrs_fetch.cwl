@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_fetch
+baseCommand:
+  - mrs
+  - fetch
 label: mrs_fetch
 doc: "Fetch data from a databank.\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

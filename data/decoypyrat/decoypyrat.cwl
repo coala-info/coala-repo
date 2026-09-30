@@ -121,10 +121,9 @@ inputs:
       prefix: --temp_file
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 103
-      prefix: --output-fasta
+      prefix: --output_fasta
 outputs:
   - id: output_fasta
     type:

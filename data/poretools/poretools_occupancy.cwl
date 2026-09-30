@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_occupancy
+baseCommand:
+  - poretools
+  - occupancy
 label: poretools_occupancy
 doc: "Calculate and plot the occupancy of pores over time.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:
@@ -28,8 +30,8 @@ inputs:
       position: 102
       prefix: --quiet
   - id: saveas_path
-    type: string
-    doc: Output or path parameter `saveas_path`
+    type: string?
+    doc: Save the plot to a file. Extension (.pdf or .png) drives
     inputBinding:
       position: 103
       prefix: --saveas

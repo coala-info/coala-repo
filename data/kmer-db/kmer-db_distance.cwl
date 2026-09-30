@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmer-db distance
+baseCommand:
+  - kmer-db
+  - distance
 label: kmer-db_distance
 doc: "Calculating similarities/distances on the basis of common k-mers\n\nTool homepage:
   https://github.com/refresh-bio/kmer-db"

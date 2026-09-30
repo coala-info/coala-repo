@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmapper_search
+baseCommand:
+  - taxmapper
+  - search
 label: taxmapper_search
 doc: "Search for taxonomic assignments using RAPSearch.\n\nTool homepage: https://bitbucket.org/dbeisser/taxmapper"
 inputs:

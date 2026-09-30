@@ -145,18 +145,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: Directory to output in
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -d
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_directory
     type:

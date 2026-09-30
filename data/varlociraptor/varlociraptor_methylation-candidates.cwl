@@ -19,6 +19,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --motifs
+      itemSeparator: ','
 outputs:
   - id: output
     type: File

@@ -110,14 +110,14 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory where temporary files should be placed
     inputBinding:
       position: 101
       prefix: --work-dir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output file stem
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini annotate
+baseCommand:
+  - oncogemini
+  - annotate
 label: oncogemini_annotate
 doc: "Annotate variants with information from a BED file.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

@@ -26,10 +26,10 @@ inputs:
       prefix: --log_level
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output file, if none given stdout is used'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outputFile
 outputs:
   - id: output_file
     type:

@@ -17,6 +17,11 @@ inputs:
     doc: Taxon category
     inputBinding:
       position: 2
+  - id: output_table
+    type: string
+    doc: Output table file
+    inputBinding:
+      position: 3
   - id: step_size
     type:
       - 'null'
@@ -26,11 +31,11 @@ inputs:
       position: 103
       prefix: --step_size
 outputs:
-  - id: output_table
+  - id: out_output_table
     type: File
     doc: Output table file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_table)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

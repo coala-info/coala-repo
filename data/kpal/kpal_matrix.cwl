@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal matrix
+baseCommand:
+  - kpal
+  - matrix
 label: kpal_matrix
 doc: "Make a distance matrix between any number of k-mer profiles.\n\nTool homepage:
   https://github.com/LUMC/kPAL"
@@ -10,6 +12,11 @@ inputs:
     doc: input k-mer profile file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output file
+    inputBinding:
+      position: 2
   - id: balance
     type:
       - 'null'
@@ -124,11 +131,11 @@ inputs:
       position: 102
       prefix: -t
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpal:2.1.1--py27_0

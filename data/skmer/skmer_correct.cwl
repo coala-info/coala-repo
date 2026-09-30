@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: skmer_correct
+baseCommand:
+  - skmer
+  - correct
 label: skmer_correct
 doc: "Performs correction of subsampled distance matrices obtained for reference genome-skims
   or assemblies\n\nTool homepage: https://github.com/shahab-sarmashghi/Skmer"
 inputs:
   - id: main
-    type: File
+    type: File?
     doc: Distance matrix of main estimate
     inputBinding:
       position: 101

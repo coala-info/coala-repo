@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msoma count
+baseCommand:
+  - msoma
+  - count
 label: msoma_count
 doc: "Count somatic mutations\n\nTool homepage: https://github.com/AkeyLab/mSOMA"
 inputs:

@@ -429,34 +429,35 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: "(1 arg) :    output file  [default '']"
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
   - id: out_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_dir_path`
+    doc: output directory  [default '.']
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: -out-dir
   - id: out_tmp_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_tmp_path`
+    doc: output directory for temporary files  [default '.']
     inputBinding:
       position: 104
-      prefix: --out-tmp
+      prefix: -out-tmp
   - id: solid_kmers_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `solid_kmers_out_path`
+    doc: output file for solid kmers (only when constructing a graph)  [default 
+      '']
     inputBinding:
       position: 105
-      prefix: --solid-kmers-out
+      prefix: -solid-kmers-out
 outputs:
   - id: solid_kmers_out
     type:

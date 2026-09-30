@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: parm train
+baseCommand:
+  - parm
+  - train
 label: parm_train
 doc: "Promoter Activity Regulatory Model\n\nTool homepage: https://github.com/vansteensellab/PARM"
 inputs:
@@ -11,6 +13,7 @@ inputs:
         items: string
     doc: "If not false, give adaptor in 5 and 3 prima to use\n                   \
       \       as padding. e.g. -adaptor CAGTGAT ACGACTG"
+    default:
       - CAGTGAT
       - ACGACTG
     inputBinding:
@@ -29,9 +32,7 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: L1 and L2 regularization terms respectively.
-      - 0.005
-      - 0.005
+    doc: L1 and L2 regularization terms respectively. - 0.005 - 0.005
     inputBinding:
       position: 101
       prefix: --betas
@@ -148,12 +149,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight_decay
+  - id: output_path
+    type: string
+    doc: Path to the directory to store all the output files.
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Path to the directory to store all the output files.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parm:0.1.44--pyh7e72e81_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk collect-pesr
+baseCommand:
+  - svtk
+  - collect-pesr
 label: svtk_collect-pesr
 doc: "Collect split read and discordant pair data from a bam alignment.\n\nTool homepage:
   https://github.com/talkowski-lab/svtk"

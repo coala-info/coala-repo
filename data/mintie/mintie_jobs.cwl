@@ -75,7 +75,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 104
@@ -155,10 +155,10 @@ inputs:
       prefix: --yes
   - id: report_filename_path
     type: string
-    doc: Output or path parameter `report_filename_path`
+    doc: output file name of report
     inputBinding:
       position: 105
-      prefix: --report-filename
+      prefix: --filename
 outputs:
   - id: report_filename
     type:

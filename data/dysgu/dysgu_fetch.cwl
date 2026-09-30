@@ -1,13 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dysgu fetch
+baseCommand:
+  - dysgu
+  - fetch
 label: dysgu_fetch
 doc: "Filters input bam/cram for read-pairs that are discordant or have a soft-clip
   of length > '--clip-length', saves bam file in WORKING_DIRECTORY\n\nTool homepage:
   https://github.com/kcleal/dysgu"
 inputs:
   - id: working_directory
-    type: Directory
+    type: string
     doc: Working directory to save output BAM file
     inputBinding:
       position: 1
@@ -102,9 +104,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference file for opening cram files
     secondaryFiles:
       - .fai
-    doc: Reference file for opening cram files
     inputBinding:
       position: 103
       prefix: --reference
@@ -126,10 +128,11 @@ inputs:
       prefix: --write_all
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output reads, discordant, supplementary and soft- clipped reads to 
+      file.
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

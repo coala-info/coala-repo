@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spp-dcj draw
+baseCommand:
+  - spp-dcj
+  - draw
 label: spp-dcj_draw
 doc: "Draws candidate adjacencies of the genomes in the phylogeny.\n\nTool homepage:
   https://github.com/codialab/spp-dcj"

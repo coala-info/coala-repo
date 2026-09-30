@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: circlator_mapreads
+baseCommand:
+  - circlator
+  - mapreads
 label: circlator_mapreads
 doc: "Map reads using bwa mem\n\nTool homepage: https://github.com/sanger-pathogens/circlator"
 inputs:
@@ -16,6 +18,11 @@ inputs:
     doc: Name of corrected reads FASTA file
     inputBinding:
       position: 2
+  - id: out_bam
+    type: string
+    doc: Name of output BAM file
+    inputBinding:
+      position: 3
   - id: bwa_opts
     type:
       - 'null'
@@ -41,11 +48,11 @@ inputs:
       position: 103
       prefix: --verbose
 outputs:
-  - id: out_bam
+  - id: out_out_bam
     type: File
     doc: Name of output BAM file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_bam)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/circlator:v1.5.5-3-deb_cv1

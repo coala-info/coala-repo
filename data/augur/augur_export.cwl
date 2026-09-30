@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur export
+baseCommand:
+  - augur
+  - export
 label: augur_export
 doc: "Export JSON files suitable for visualization with auspice.\n\nTool homepage:
   https://github.com/nextstrain/augur"

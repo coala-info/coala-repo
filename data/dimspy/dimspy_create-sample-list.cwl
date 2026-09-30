@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy create-sample-list
+baseCommand:
+  - dimspy
+  - create-sample-list
 label: dimspy_create-sample-list
 doc: "Create a sample list from an HDF5 peak matrix.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
@@ -21,7 +23,6 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

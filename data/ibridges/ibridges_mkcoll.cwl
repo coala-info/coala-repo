@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges mkcoll
+baseCommand:
+  - ibridges
+  - mkcoll
 label: ibridges_mkcoll
 doc: "Create a new collecion with all its parent collections.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

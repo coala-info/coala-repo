@@ -8,7 +8,7 @@ doc: "Calculate copying matrices for reference and query haplotypes\n\nTool home
   https://github.com/healthdisparities/pastrami"
 inputs:
   - id: haplotypes
-    type: File
+    type: File?
     doc: File of haplotype positions
     inputBinding:
       position: 101
@@ -30,7 +30,7 @@ inputs:
       position: 101
       prefix: --query-prefix
   - id: reference_prefix
-    type: File
+    type: File?
     doc: Prefix for the reference TPED/TFAM input files
     inputBinding:
       position: 101
@@ -55,7 +55,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `combined_out_path`
+    doc: The all v. reference copying matrix output
     inputBinding:
       position: 102
       prefix: --combined-out
@@ -63,7 +63,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `query_out_path`
+    doc: The query v. reference copying matrix output
     inputBinding:
       position: 103
       prefix: --query-out
@@ -71,7 +71,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reference_out_path`
+    doc: The reference v. reference copying matrix output
     inputBinding:
       position: 104
       prefix: --reference-out

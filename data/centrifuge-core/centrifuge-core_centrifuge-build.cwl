@@ -11,6 +11,7 @@ inputs:
     doc: comma-separated list of files with ref sequences
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: cf_index_base
     type: Directory
     doc: write cf data to files with this dir/basename

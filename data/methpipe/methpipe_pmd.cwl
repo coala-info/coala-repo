@@ -100,18 +100,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: 'output file (default: stdout)'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -out
   - id: params_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `params_out_path`
+    doc: write HMM parameters to this file
     inputBinding:
       position: 104
-      prefix: --params-out
+      prefix: -params-out
 outputs:
   - id: output_file
     type:

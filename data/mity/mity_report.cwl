@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mity report
+baseCommand:
+  - mity
+  - report
 label: mity_report
 doc: "Create a report from mity VCF files.\n\nTool homepage: https://github.com/KCCG/mity"
 inputs:
@@ -62,7 +64,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output files will be saved in OUTPUT_DIR.
     inputBinding:
       position: 102
@@ -85,8 +87,7 @@ inputs:
       position: 102
       prefix: --vcfanno-base-path
   - id: output_annotated_vcf_path
-    type: string
-    doc: Output or path parameter `output_annotated_vcf_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --output-annotated-vcf

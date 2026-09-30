@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_entry
+baseCommand:
+  - mrs
+  - entry
 label: mrs_entry
 doc: "Display entry information\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

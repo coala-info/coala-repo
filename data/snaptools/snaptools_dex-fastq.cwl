@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snaptools dex-fastq
+baseCommand:
+  - snaptools
+  - dex-fastq
 label: snaptools_dex-fastq
 doc: "Decomplexes a fastq file containing reads from multiple cells into individual
   fastq files for each cell.\n\nTool homepage: https://github.com/r3fang/SnapTools.git"

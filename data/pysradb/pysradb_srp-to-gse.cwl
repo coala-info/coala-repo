@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pysradb srp-to-gse
+baseCommand:
+  - pysradb
+  - srp-to-gse
 label: pysradb_srp-to-gse
 doc: "Convert SRP accession to GSE accession\n\nTool homepage: https://github.com/saketkc/pysradb"
 inputs:
@@ -34,7 +36,7 @@ inputs:
       position: 102
       prefix: --expand
   - id: saveto_path
-    type: string
+    type: string?
     doc: Save metadata dataframe to file
     inputBinding:
       position: 103

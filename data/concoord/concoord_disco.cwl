@@ -174,10 +174,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_b_factors_path`
+    doc: '- file with mean square atomic fluctuations expressed as B-factors (default
+      disco_Bfac.pdb)'
     inputBinding:
       position: 102
-      prefix: --output-b-factors
+      prefix: -of
   - id: output_gromos_path
     type:
       - 'null'
@@ -190,10 +191,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_nmr_pdb_path`
+    doc: '- output trajectory in NMR-PDB format'
     inputBinding:
       position: 104
-      prefix: --output-nmr-pdb
+      prefix: -on
   - id: output_pdb_prefix_path
     type:
       - 'null'
@@ -206,27 +207,29 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_rmsd_path`
+    doc: '- file with RMSD values of output structures to initial structure. Default
+      : disco.rms'
     inputBinding:
       position: 106
-      prefix: --output-rmsd
+      prefix: -or
   - id: output_xtc_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_xtc_path`
+    doc: '- output trajectory in xtc format'
     inputBinding:
       position: 107
-      prefix: --output-xtc
+      prefix: -ox
 outputs:
   - id: output_pdb_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: basic filename for output PDB structures. (a number plus extension .pdb
       will be added)
     outputBinding:
-      glob: $(inputs.output_pdb_prefix_path)
+      glob: $(inputs.output_pdb_prefix_path)*
   - id: output_nmr_pdb
     type:
       - 'null'

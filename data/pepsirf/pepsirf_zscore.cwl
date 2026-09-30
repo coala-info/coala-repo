@@ -56,7 +56,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 102
       prefix: --logfile
@@ -64,15 +63,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `nan_report_path`
+    doc: Name of the file to write out information regarding peptides that are 
+      given a zscore of 'nan'. This occurs when the mean score of a bin and the 
+      score of the focal peptide are both zero. This will be a tab-delimited 
+      file, with three columns per line. The first column will contain the name 
+      of the peptide, the second will be the name of the sample, and the third 
+      will be the bin number of the probe. This bin number corresponds to the 
+      line number in the bins file, within which the probe was found.
     inputBinding:
       position: 103
-      prefix: --nan-report
+      prefix: --nan_report
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Name for the output Z scores file. This file will be a tab-delimited 
+      matrix file with the same dimensions as the input score file. Each peptide
+      will be written with its z-score within each sample.
     inputBinding:
       position: 104
       prefix: --output

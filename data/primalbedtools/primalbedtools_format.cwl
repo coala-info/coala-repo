@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools format
+baseCommand:
+  - primalbedtools
+  - format
 label: primalbedtools_format
 doc: "Format a BED file.\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

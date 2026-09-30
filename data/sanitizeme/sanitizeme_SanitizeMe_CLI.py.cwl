@@ -30,7 +30,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output Folder. Default is ~/dehost_output/dehost_2026-02-25
     inputBinding:
       position: 101

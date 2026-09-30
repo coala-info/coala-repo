@@ -80,7 +80,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `nucl_path`
+    doc: Write nucleotide sequences of genes to the selected
     inputBinding:
       position: 102
       prefix: --nucl
@@ -88,7 +88,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output
@@ -96,7 +95,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `proteins_path`
     inputBinding:
       position: 104
       prefix: --proteins
@@ -104,7 +102,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `scorefile_path`
     inputBinding:
       position: 105
       prefix: --scorefile

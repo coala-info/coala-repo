@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deeparg short_reads_pipeline
+baseCommand:
+  - deeparg
+  - short_reads_pipeline
 label: deeparg_short_reads_pipeline
 doc: "Pipeline for short reads to predict ARGs and 16S rRNA genes.\n\nTool homepage:
   https://bitbucket.org/gusphdproj/deeparg-ss/"
@@ -71,16 +73,17 @@ inputs:
       prefix: --reverse_pe_file
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: output_file
-    type: File
+    type:
+      type: array
+      items: File
     doc: save results to this file prefix
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

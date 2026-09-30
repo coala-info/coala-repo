@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash compute
+baseCommand:
+  - sourmash
+  - compute
 label: sourmash_compute
 doc: "Create MinHash sketches at k-mer sizes of 21, 31 and 51, for\nall FASTA and
   FASTQ files in the current directory, and save them in\nsignature files ending in
@@ -332,7 +334,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 103
       prefix: --outdir
@@ -340,7 +341,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: output computed signatures to this file
     inputBinding:
       position: 104
       prefix: --output
@@ -348,7 +349,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 105
       prefix: --output-dir

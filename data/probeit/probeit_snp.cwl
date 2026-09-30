@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: probeit_snp
+baseCommand:
+  - probeit
+  - snp
 label: probeit_snp
 doc: "It generates a probe set which detect input amino acid SNPs from strain genome.\n\
   \nTool homepage: https://github.com/steineggerlab/probeit"
@@ -122,10 +124,9 @@ inputs:
       prefix: --window-size
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

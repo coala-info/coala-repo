@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini amend
+baseCommand:
+  - gemini
+  - amend
 label: gemini_amend
 doc: "Amend a Gemini database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

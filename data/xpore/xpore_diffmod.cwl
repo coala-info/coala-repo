@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xpore_diffmod
+baseCommand:
+  - xpore
+  - diffmod
 label: xpore_diffmod
 doc: "Performs differential modification analysis.\n\nTool homepage: https://github.com/GoekeLab/xpore"
 inputs:

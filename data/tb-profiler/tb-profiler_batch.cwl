@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tb-profiler batch
+baseCommand:
+  - tb-profiler
+  - batch
 label: tb-profiler_batch
 doc: "Run tb-profiler on multiple samples defined in a CSV file.\n\nTool homepage:
   https://github.com/jodyphelan/TBProfiler"
@@ -54,7 +56,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 101

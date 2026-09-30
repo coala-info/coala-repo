@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi degree
+baseCommand:
+  - odgi
+  - degree
 label: odgi_degree
 doc: "Describe the graph in terms of node degree.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

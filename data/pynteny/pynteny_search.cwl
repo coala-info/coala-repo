@@ -61,6 +61,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hmmsearch_args
+      itemSeparator: ','
   - id: log
     type:
       - 'null'
@@ -125,7 +126,6 @@ inputs:
       prefix: --unordered
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

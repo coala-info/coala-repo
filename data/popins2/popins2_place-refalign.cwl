@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popins2 place-refalign
+baseCommand:
+  - popins2
+  - place-refalign
 label: popins2_place-refalign
 doc: "Contig placing by alignment of contig ends to reference genome.\n\nTool homepage:
   https://github.com/kehrlab/PopIns2"
@@ -74,15 +76,14 @@ inputs:
     type:
       - 'null'
       - File
+    doc: 'Name of reference genome file. Valid filetypes are: fa, fna, and fasta.'
     secondaryFiles:
       - .fai
-    doc: 'Name of reference genome file. Valid filetypes are: fa, fna, and fasta.'
     inputBinding:
       position: 101
       prefix: --reference
   - id: insertions_path
     type: string
-    doc: Output or path parameter `insertions_path`
     inputBinding:
       position: 102
       prefix: --insertions

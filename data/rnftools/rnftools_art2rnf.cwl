@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnftools art2rnf
+baseCommand:
+  - rnftools
+  - art2rnf
 label: rnftools_art2rnf
 doc: "Convert an Art SAM file to RNF-FASTQ. Note that Art produces non-standard SAM
   files and manual editation might be necessary. In particular, when a FASTA file
@@ -48,10 +50,10 @@ inputs:
       prefix: --simulator-name
   - id: rnf_fastq_file_path
     type: string
-    doc: Output or path parameter `rnf_fastq_file_path`
+    doc: Output FASTQ file (- for standard output).
     inputBinding:
       position: 102
-      prefix: --rnf-fastq-file
+      prefix: --rnf-fastq
 outputs:
   - id: rnf_fastq_file
     type: File

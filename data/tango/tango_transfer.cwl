@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tango transfer
+baseCommand:
+  - tango
+  - transfer
 label: tango_transfer
 doc: "Transfer taxonomy from ORFs to contigs.\n\nTool homepage: https://github.com/johnne/tango"
 inputs:
@@ -14,6 +16,11 @@ inputs:
     doc: GFF or file with contig id in first column and ORF id in second column
     inputBinding:
       position: 2
+  - id: contig_taxonomy
+    type: string
+    doc: Output file with assigned taxonomy for contigs
+    inputBinding:
+      position: 3
   - id: chunksize
     type:
       - 'null'
@@ -44,16 +51,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `orf_tax_out_path`
     inputBinding:
       position: 104
-      prefix: --orf-tax-out
+      prefix: --orf_tax_out
 outputs:
-  - id: contig_taxonomy
+  - id: out_contig_taxonomy
     type: File
     doc: Output file with assigned taxonomy for contigs
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.contig_taxonomy)'
   - id: orf_tax_out
     type:
       - 'null'

@@ -55,7 +55,7 @@ inputs:
   - id: tmp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: tmp direcory name for remote files
     inputBinding:
       position: 101

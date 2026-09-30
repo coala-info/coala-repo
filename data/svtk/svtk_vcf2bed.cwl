@@ -9,6 +9,11 @@ inputs:
     doc: VCF to convert.
     inputBinding:
       position: 1
+  - id: bed
+    type: string
+    doc: Converted bed. Specify `-` or `stdout` to write to stdout.
+    inputBinding:
+      position: 2
   - id: include_filters
     type:
       - 'null'
@@ -87,11 +92,11 @@ inputs:
       position: 102
       prefix: --split-cpx
 outputs:
-  - id: bed
+  - id: out_bed
     type: File
     doc: Converted bed. Specify `-` or `stdout` to write to stdout.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.bed)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

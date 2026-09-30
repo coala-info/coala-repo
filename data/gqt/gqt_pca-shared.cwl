@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gqt pca-shared
+baseCommand:
+  - gqt
+  - pca-shared
 label: gqt_pca-shared
 doc: "Performs Principal Component Analysis (PCA) on shared genotypes between populations.\n\
   \nTool homepage: https://github.com/ryanlayer/gqt"
@@ -41,7 +43,7 @@ inputs:
   - id: tmp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory name for remote files
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yame pairwise
+baseCommand:
+  - yame
+  - pairwise
 label: yame_pairwise
 doc: "Compute a per-site differential-methylation set between two format-3 (M/U) samples,
   and output it as a single format-6 track (set + universe).\n\nTool homepage: https://github.com/zhou-lab/YAME"
@@ -48,10 +50,10 @@ inputs:
       prefix: -c
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Write output to file (default: stdout).'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

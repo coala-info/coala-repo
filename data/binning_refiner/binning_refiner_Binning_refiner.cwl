@@ -53,7 +53,7 @@ inputs:
   - id: silent_progress_report
     type:
       - 'null'
-      - boolean
+      - string
     doc: silent progress report
     inputBinding:
       position: 101

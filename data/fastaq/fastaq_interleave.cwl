@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_interleave
+baseCommand:
+  - fastaq
+  - interleave
 label: fastaq_interleave
 doc: "Interleaves two files, output is alternating between fwd/rev reads\n\nTool homepage:
   https://github.com/sanger-pathogens/Fastaq"
@@ -15,6 +17,11 @@ inputs:
     doc: Name of second input file
     inputBinding:
       position: 2
+  - id: outfile
+    type: string
+    doc: Name of output file of interleaved reads
+    inputBinding:
+      position: 3
   - id: suffix1
     type:
       - 'null'
@@ -34,11 +41,11 @@ inputs:
       position: 103
       prefix: --suffix2
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output file of interleaved reads
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybracter hybrid-single
+baseCommand:
+  - hybracter
+  - hybrid-single
 label: hybracter_hybrid-single
 doc: "Run hybracter hybrid on 1 isolate\n\nTool homepage: https://github.com/gbouras13/hybracter"
 inputs:
@@ -252,7 +254,7 @@ inputs:
       prefix: --use-conda
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Output directory  [default: hybracter_out]'
     inputBinding:
       position: 103
       prefix: --output

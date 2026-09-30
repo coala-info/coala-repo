@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: captus assemble
+baseCommand:
+  - captus
+  - assemble
 label: captus_assemble
 doc: "Assemble; perform de novo assembly using MEGAHIT\n\nTool homepage: https://github.com/edgardomortiz/Captus"
 inputs:
@@ -17,6 +19,7 @@ inputs:
       -r ./raw_reads/*.fastq.gz) (default: ./01_clean_reads)"
     inputBinding:
       position: 1
+      prefix: --reads
   - id: concurrent
     type:
       - 'null'
@@ -237,7 +240,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Location to create the temporary directory 'captus_assembly_tmp' for 
       MEGAHIT assembly. Sometimes, when working on external hard drives MEGAHIT 
       will refuse to run unless this directory is created in an internal hard 

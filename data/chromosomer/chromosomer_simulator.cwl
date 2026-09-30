@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chromosomer simulator
+baseCommand:
+  - chromosomer
+  - simulator
 label: chromosomer_simulator
 doc: "Simulate fragments and test assembly for testing purposes.\n\nTool homepage:
   https://github.com/gtamazian/chromosomer"
@@ -21,7 +23,7 @@ inputs:
     inputBinding:
       position: 3
   - id: output_dir
-    type: Directory
+    type: string
     doc: the directory for output files
     inputBinding:
       position: 4

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pytrf_findgtr
+baseCommand:
+  - pytrf
+  - findgtr
 label: pytrf_findgtr
 doc: "Finds tandem repeats in a fasta or fastq file.\n\nTool homepage: https://github.com/lmdu/pytrf"
 inputs:
@@ -51,7 +53,6 @@ inputs:
       prefix: --out-format
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 103
       prefix: --out-file

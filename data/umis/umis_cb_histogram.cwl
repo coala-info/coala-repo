@@ -14,10 +14,10 @@ inputs:
       position: 1
   - id: umi_histogram_path
     type: string
-    doc: Output or path parameter `umi_histogram_path`
+    doc: Output a count of each UMI for each cellular barcode
     inputBinding:
       position: 101
-      prefix: --umi-histogram
+      prefix: --umi_histogram
 outputs:
   - id: umi_histogram
     type:

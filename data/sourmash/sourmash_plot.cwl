@@ -63,7 +63,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for output plots
     inputBinding:
       position: 102

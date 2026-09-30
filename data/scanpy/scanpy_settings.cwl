@@ -131,7 +131,7 @@ inputs:
   - id: writedir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for writing output files.
     inputBinding:
       position: 101

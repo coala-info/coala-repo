@@ -4,6 +4,11 @@ baseCommand: toil
 label: toil_config
 doc: "Generate a configuration file for Toil.\n\nTool homepage: https://toil.ucsc-cgl.org/"
 inputs:
+  - id: output
+    type: string
+    doc: Filepath to write the config file too.
+    inputBinding:
+      position: 1
   - id: log_colors
     type:
       - 'null'
@@ -88,11 +93,11 @@ inputs:
       position: 101
       prefix: --rotatingLogging
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Filepath to write the config file too.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/toil:7.0.0--pyhdfd78af_0

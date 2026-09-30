@@ -43,6 +43,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -D
+      separate: false
   - id: define_name_equals_def
     type:
       - 'null'
@@ -51,6 +52,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -D
+      separate: false
   - id: depend
     type:
       - 'null'
@@ -83,6 +85,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -I
+      separate: false
   - id: output_dir
     type:
       - 'null'
@@ -115,6 +118,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -U
+      separate: false
 outputs:
   - id: stdout
     type: stdout

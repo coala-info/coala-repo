@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clipcontext mtf
+baseCommand:
+  - clipcontext
+  - mtf
 label: clipcontext_mtf
 doc: "Search for motifs in genomic or transcript sequences.\n\nTool homepage: https://github.com/BackofenLab/CLIPcontext"
 inputs:
@@ -51,7 +53,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out
@@ -59,7 +60,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_out_path`
     inputBinding:
       position: 103
       prefix: --stats-out

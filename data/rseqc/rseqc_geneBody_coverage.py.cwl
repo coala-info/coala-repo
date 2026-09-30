@@ -15,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-file
+      itemSeparator: ','
   - id: minimum_length
     type:
       - 'null'
@@ -38,10 +39,12 @@ inputs:
       prefix: --out-prefix
 outputs:
   - id: out_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

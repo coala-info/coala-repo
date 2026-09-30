@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk_merge
+baseCommand:
+  - fastafunk
+  - merge
 label: fastafunk_merge
 doc: "Merge FASTA files and associated metadata.\n\nTool homepage: https://github.com/cov-ert/fastafunk"
 inputs:
@@ -46,7 +48,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_fasta_path`
     inputBinding:
       position: 104
       prefix: --out-fasta

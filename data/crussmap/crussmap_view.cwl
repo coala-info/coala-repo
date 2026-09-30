@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crussmap_view
+baseCommand:
+  - crussmap
+  - view
 label: crussmap_view
 doc: "View chain file in tsv/csv format\n\nTool homepage: https://github.com/wjwei-handsome/crussmap"
 inputs:
@@ -30,7 +32,7 @@ inputs:
       prefix: --rewrite
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file path, if not set, output to STDOUT
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini truncal
+baseCommand:
+  - oncogemini
+  - truncal
 label: oncogemini_truncal
 doc: "Query the database for truncal variants.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

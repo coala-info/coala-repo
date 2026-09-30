@@ -14,18 +14,20 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_attributed_tree_path`
+    doc: =out.atree - Output attributed tag tree.
     inputBinding:
       position: 101
-      prefix: --output-attributed-tree
+      prefix: -atree=
+      separate: false
   - id: output_tree_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_path`
+    doc: =out.tree - Output tag tree.
     inputBinding:
       position: 102
-      prefix: --output-tree
+      prefix: -tree=
+      separate: false
 outputs:
   - id: output_dtd
     type: File

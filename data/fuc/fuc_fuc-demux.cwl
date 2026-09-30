@@ -19,7 +19,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output
-    type: Directory
+    type: string
     doc: Output directory (will be created).
     inputBinding:
       position: 2

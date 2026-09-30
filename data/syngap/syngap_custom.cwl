@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: syngap custom
+baseCommand:
+  - syngap
+  - custom
 label: syngap_custom
 doc: "Custom synteny analysis between two species.\n\nTool homepage: https://github.com/yanyew/SynGAP"
 inputs:

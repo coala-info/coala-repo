@@ -366,14 +366,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: --html_mixed
-  - id: out_data_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_data_path`
-    inputBinding:
-      position: 105
-      prefix: --out-data
   - id: pajek_path
     type:
       - 'null'
@@ -382,6 +374,13 @@ inputs:
     inputBinding:
       position: 106
       prefix: --pajek
+  - id: out_data_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --out_data
 outputs:
   - id: out_data
     type:

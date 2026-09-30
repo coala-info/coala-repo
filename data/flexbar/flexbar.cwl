@@ -261,10 +261,11 @@ outputs:
   - id: target
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix for output file names or paths.
     outputBinding:
-      glob: $(inputs.target_path)
+      glob: $(inputs.target_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

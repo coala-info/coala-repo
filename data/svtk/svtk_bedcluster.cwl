@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk_bedcluster
+baseCommand:
+  - svtk
+  - bedcluster
 label: svtk_bedcluster
 doc: "Cluster a bed of structural variants based on reciprocal overlap.\n\nTool homepage:
   https://github.com/talkowski-lab/svtk"
@@ -54,7 +56,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory
     inputBinding:
       position: 102

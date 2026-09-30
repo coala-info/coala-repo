@@ -294,10 +294,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' output file name [default : mashmap.out ]'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

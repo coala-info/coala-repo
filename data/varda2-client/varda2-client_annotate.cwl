@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varda2-client annotate
+baseCommand:
+  - varda2-client
+  - annotate
 label: varda2-client_annotate
 doc: "Annotate variants with sample information.\n\nTool homepage: https://github.com/varda/varda2-client"
 inputs:

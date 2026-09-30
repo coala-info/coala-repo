@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isorefiner run_espresso
+baseCommand:
+  - isorefiner
+  - run_espresso
 label: isorefiner_run_espresso
 doc: "Run ESPRESSO for transcript assembly and quantification.\n\nTool homepage: https://github.com/rkajitani/IsoRefiner"
 inputs:
@@ -66,10 +68,9 @@ inputs:
       prefix: --work_dir
   - id: out_gtf_path
     type: string
-    doc: Output or path parameter `out_gtf_path`
     inputBinding:
       position: 102
-      prefix: --out-gtf
+      prefix: --out_gtf
 outputs:
   - id: out_gtf
     type:

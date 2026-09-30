@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ivar filtervariants
+baseCommand:
+  - ivar
+  - filtervariants
 label: ivar_filtervariants
 doc: "Filters variant TSV files across multiple replicates.\n\nTool homepage: https://andersen-lab.github.io/ivar/html/"
 inputs:

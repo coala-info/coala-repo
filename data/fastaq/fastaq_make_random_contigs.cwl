@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freq make_random_contigs
+baseCommand:
+  - freq
+  - make_random_contigs
 label: fastaq_make_random_contigs
 doc: "Makes a multi-FASTA file of random sequences, all of the same length. Each base
   has equal chance of being A,C,G or T\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
@@ -15,6 +17,11 @@ inputs:
     doc: Length of each contig
     inputBinding:
       position: 2
+  - id: outfile
+    type: string
+    doc: Name of output file
+    inputBinding:
+      position: 3
   - id: first_number
     type:
       - 'null'
@@ -48,11 +55,11 @@ inputs:
       position: 103
       prefix: --seed
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini query
+baseCommand:
+  - oncogemini
+  - query
 label: oncogemini_query
 doc: "Query the oncogemini database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
@@ -76,7 +78,7 @@ inputs:
     doc: The query to be issued to the database
     inputBinding:
       position: 102
-      prefix: --query-str
+      prefix: -q
   - id: region
     type:
       - 'null'

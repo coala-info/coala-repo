@@ -28,7 +28,7 @@ inputs:
       prefix: --seed
   - id: outname_path
     type: string
-    doc: Output or path parameter `outname_path`
+    doc: Name of predictions file.
     inputBinding:
       position: 103
       prefix: --outname

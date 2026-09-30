@@ -109,7 +109,7 @@ inputs:
       position: 101
       prefix: --only_match
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

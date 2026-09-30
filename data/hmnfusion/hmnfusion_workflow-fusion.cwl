@@ -73,26 +73,17 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_genefuse_html_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_genefuse_html_path`
+    type: string
     inputBinding:
       position: 102
       prefix: --output-genefuse-html
   - id: output_hmnfusion_vcf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_hmnfusion_vcf_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --output-hmnfusion-vcf
   - id: output_lumpy_vcf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_lumpy_vcf_path`
+    type: string
     inputBinding:
       position: 104
       prefix: --output-lumpy-vcf

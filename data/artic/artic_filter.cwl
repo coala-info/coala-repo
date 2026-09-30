@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: artic filter
+baseCommand:
+  - artic
+  - filter
 label: artic_filter
 doc: "Filter FASTQ reads based on length.\n\nTool homepage: https://github.com/artic-network/fieldbioinformatics"
 inputs:

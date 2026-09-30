@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virsorter setup
+baseCommand:
+  - virsorter
+  - setup
 label: virsorter_setup
 doc: "Setup databases and install dependencies.\n\nExecutes a snakemake workflow to
   download reference database files and\nvalidate based on their MD5 checksum, and

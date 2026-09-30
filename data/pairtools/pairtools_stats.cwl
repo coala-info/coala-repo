@@ -197,10 +197,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_stats_file_path`
+    doc: output stats tsv file.
     inputBinding:
       position: 104
-      prefix: --output-stats-file
+      prefix: --output
 outputs:
   - id: output_stats_file
     type:

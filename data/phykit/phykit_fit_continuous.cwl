@@ -32,6 +32,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --models
+      itemSeparator: ','
   - id: gene_trees
     type:
       - 'null'

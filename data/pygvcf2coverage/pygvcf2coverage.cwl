@@ -14,11 +14,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --interval
+          separate: true
     doc: Intervals to process (e.g., chr1:1000-2000). Can be specified multiple 
       times.
     inputBinding:
       position: 102
-      prefix: --interval
   - id: interval_file
     type:
       - 'null'

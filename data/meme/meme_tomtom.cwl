@@ -40,7 +40,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Distance metric for scoring alignments (allr|ed|kullback|pearson|sandelin|blic1|blic5|llr1|llr5);
+    doc: 'Distance metric for scoring alignments (allr|ed|kullback|pearson|sandelin|blic1|blic5|llr1|llr5);'
     inputBinding:
       position: 103
       prefix: -dist
@@ -82,19 +82,23 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -m
+          separate: true
     doc: Use only query motifs with a specified id; may be repeated
     inputBinding:
       position: 103
-      prefix: -m
   - id: motif_index
     type:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: -mi
+          separate: true
     doc: Use only query motifs with a specified index; may be repeated
     inputBinding:
       position: 103
-      prefix: -mi
   - id: motif_pseudo
     type:
       - 'null'

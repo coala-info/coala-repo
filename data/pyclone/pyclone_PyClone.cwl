@@ -35,7 +35,7 @@ inputs:
       position: 102
       prefix: --n-samples
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to write results to
     inputBinding:
       position: 102

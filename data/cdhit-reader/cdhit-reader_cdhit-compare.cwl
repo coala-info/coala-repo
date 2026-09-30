@@ -41,7 +41,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for intermediate files
     inputBinding:
       position: 103

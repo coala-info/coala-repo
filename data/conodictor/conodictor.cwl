@@ -85,10 +85,10 @@ inputs:
       prefix: --quiet
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Specify output folder.
     inputBinding:
       position: 103
-      prefix: --output-folder
+      prefix: --out
 outputs:
   - id: output_folder
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_fish
+baseCommand:
+  - seqkit
+  - fish
 label: seqkit_fish
 doc: "look for short sequences in larger sequences using local alignment\n\nTool homepage:
   https://github.com/shenwei356/seqkit"
@@ -200,7 +202,7 @@ inputs:
       prefix: --validate-seq
   - id: out_bam_path
     type: string
-    doc: Output or path parameter `out_bam_path`
+    doc: save aligmnets to this BAM file (memory intensive)
     inputBinding:
       position: 102
       prefix: --out-bam

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bohra_deps
+baseCommand:
+  - bohra
+  - deps
 label: bohra_deps
 doc: "Manage bohra dependencies.\n\nTool homepage: https://github.com/kristyhoran/bohra"
 inputs:

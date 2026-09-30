@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: knock-knock build-indices
+baseCommand:
+  - knock-knock
+  - build-indices
 label: knock-knock_build-indices
 doc: "Build indices for a genome.\n\nTool homepage: https://github.com/jeffhussmann/knock-knock"
 inputs:

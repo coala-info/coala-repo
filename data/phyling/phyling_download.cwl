@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyling download
+baseCommand:
+  - phyling
+  - download
 label: phyling_download
 doc: "Help to download/update BUSCO v5 markerset to a local folder.\n\nTool homepage:
   https://github.com/stajichlab/Phyling"

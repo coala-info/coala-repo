@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaeuk reduceredundancy
+baseCommand:
+  - metaeuk
+  - reduceredundancy
 label: metaeuk_reduceredundancy
 doc: "By Eli Levy Karin <eli.levy.karin@gmail.com>\n\nTool homepage: https://github.com/soedinglab/metaeuk"
 inputs:

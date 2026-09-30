@@ -183,7 +183,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101
@@ -206,6 +206,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: '-1'
+      itemSeparator: ','
   - id: pe12
     type:
       - 'null'
@@ -215,6 +216,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --12
+      itemSeparator: ','
   - id: pe2
     type:
       - 'null'
@@ -225,6 +227,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: '-2'
+      itemSeparator: ','
   - id: presets
     type:
       - 'null'
@@ -262,6 +265,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --read
+      itemSeparator: ','
   - id: test
     type:
       - 'null'
@@ -273,7 +277,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: set temp directory
     inputBinding:
       position: 101

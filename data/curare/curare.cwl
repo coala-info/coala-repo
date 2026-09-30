@@ -17,7 +17,7 @@ inputs:
   - id: conda_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'The directory in which conda environments will be created. Relative paths
       will be relative to output folder! (Default: Output_folder)'
     inputBinding:
@@ -95,10 +95,10 @@ inputs:
       prefix: --verbose
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder (will be created if not existing)
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type: Directory

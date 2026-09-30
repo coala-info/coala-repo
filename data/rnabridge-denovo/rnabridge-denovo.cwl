@@ -14,12 +14,17 @@ inputs:
     doc: input read2
     inputBinding:
       position: 2
-outputs:
   - id: output_bridge_sequence
+    type: string
+    doc: output bridge sequence
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_output_bridge_sequence
     type: File
     doc: output bridge sequence
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_bridge_sequence)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnabridge-denovo:1.0.1--hc9558a2_0

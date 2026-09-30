@@ -15,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -a
+      itemSeparator: ','
   - id: catalogue_errors
     type:
       - 'null'

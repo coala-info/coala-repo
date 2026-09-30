@@ -75,14 +75,13 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory name
     inputBinding:
       position: 102
       prefix: --tmpdir
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile
@@ -90,10 +89,11 @@ outputs:
   - id: outfile
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output file name prefix
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: $(inputs.outfile_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

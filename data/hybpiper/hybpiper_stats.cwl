@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybpiper stats
+baseCommand:
+  - hybpiper
+  - stats
 label: hybpiper_stats
 doc: "Sequence type (gene or supercontig) to recover lengths for.\n\nTool homepage:
   https://github.com/mossmatters/HybPiper"

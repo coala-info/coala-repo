@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kcftools_increaseWindow
+baseCommand:
+  - kcftools
+  - increaseWindow
 label: kcftools_increaseWindow
 doc: "Increase the window size of a KCF file by merging windows\n\nTool homepage:
   https://github.com/sivasubramanics/kcftools"
@@ -19,10 +21,10 @@ inputs:
       prefix: --window
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output KCF file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cayman profile
+baseCommand:
+  - cayman
+  - profile
 label: cayman_profile
 doc: "Profile reads against an annotation database and BWA index.\n\nTool homepage:
   https://github.com/zellerlab/cayman"

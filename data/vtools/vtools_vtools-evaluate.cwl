@@ -52,7 +52,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `discordant_vcf_path`
+    doc: Path to output the discordant vcf file
     inputBinding:
       position: 102
       prefix: --discordant-vcf
@@ -60,7 +60,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_path`
+    doc: Path to output stats json file
     inputBinding:
       position: 103
       prefix: --stats

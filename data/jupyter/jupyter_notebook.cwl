@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jupyter_notebook
+baseCommand:
+  - jupyter
+  - notebook
 label: jupyter_notebook
 doc: "The Jupyter HTML Notebook.\n\nThis launches a Tornado based HTML Notebook Server
   that serves up an\nHTML5/Javascript Notebook client.\n\nTool homepage: https://github.com/jakevdp/PythonDataScienceHandbook"

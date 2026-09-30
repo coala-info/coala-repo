@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blue-crab p2s
+baseCommand:
+  - blue-crab
+  - p2s
 label: blue-crab_p2s
 doc: "Convert POD5 -> SLOW5/BLOW5\n\nTool homepage: https://github.com/Psy-Fer/blue-crab"
 inputs:
@@ -38,7 +40,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output to directory
     inputBinding:
       position: 102
@@ -70,10 +72,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'BLOW5, --output S/BLOW5 output to FILE (default: None)'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

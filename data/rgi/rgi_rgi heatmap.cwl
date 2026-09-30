@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rgi heatmap
+baseCommand:
+  - rgi
+  - heatmap
 label: rgi_rgi heatmap
 doc: "Creates a heatmap when given multiple RGI results.\n\nTool homepage: https://card.mcmaster.ca"
 inputs:
@@ -51,6 +53,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+  - id: output_path
+    type: string
+    doc: Name for the output EPS and PNG files.
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -59,7 +67,9 @@ outputs:
     doc: "Name for the output EPS and PNG files.\nThe number of files run will automatically\
       \ \nbe appended to the end of the file name."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0

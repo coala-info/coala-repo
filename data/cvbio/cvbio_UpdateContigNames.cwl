@@ -91,17 +91,17 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for temporary files.
     inputBinding:
       position: 101
       prefix: --tmp-dir
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: The output file.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

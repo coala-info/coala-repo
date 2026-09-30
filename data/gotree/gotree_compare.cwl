@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree compare
+baseCommand:
+  - gotree
+  - compare
 label: gotree_compare
 doc: "Compare full trees, edges, or tips.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:

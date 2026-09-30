@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm_extract
+baseCommand:
+  - groopm
+  - extract
 label: groopm_extract
 doc: "Extract contigs or reads based on bin affiliations\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

@@ -147,10 +147,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `area_file_path`
+    doc: 'filename        : area file'
     inputBinding:
       position: 102
-      prefix: --area-file
+      prefix: -af
   - id: output_file_path
     type:
       - 'null'

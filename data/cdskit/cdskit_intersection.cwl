@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit intersection
+baseCommand:
+  - cdskit
+  - intersection
 label: cdskit_intersection
 doc: "Performs intersection operations on CDS sequences.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:
@@ -82,7 +84,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile2_path`
+    doc: 'default=seqfile2.out: Output sequence file 2.'
     inputBinding:
       position: 103
       prefix: --outfile2
@@ -90,7 +92,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outgff_path`
+    doc: 'default=out.gff: Output gff file.'
     inputBinding:
       position: 104
       prefix: --outgff

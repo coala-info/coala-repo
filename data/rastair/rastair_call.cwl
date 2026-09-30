@@ -350,7 +350,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bed_path`
     inputBinding:
       position: 103
       prefix: --bed
@@ -358,7 +357,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_path`
     inputBinding:
       position: 104
       prefix: --vcf

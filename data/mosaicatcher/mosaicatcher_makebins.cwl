@@ -46,7 +46,7 @@ inputs:
       prefix: --window
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: output file for bins
     inputBinding:
       position: 103
       prefix: --out

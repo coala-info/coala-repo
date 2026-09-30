@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastkit_format
+baseCommand:
+  - fastkit
+  - format
 label: fastkit_format
 doc: "Reformat FASTA files in preparation for tool execution.\n\nTool homepage: https://github.com/neoformit/fastkit"
 inputs:

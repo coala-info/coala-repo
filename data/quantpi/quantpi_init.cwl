@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: quantpi_init
+baseCommand:
+  - quantpi
+  - init
 label: quantpi_init
 doc: "Initialize a quantpi project.\n\nTool homepage: https://github.com/ohmeta/quantpi"
 inputs:

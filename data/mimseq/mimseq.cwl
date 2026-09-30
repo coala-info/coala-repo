@@ -19,6 +19,7 @@ inputs:
       0.97.
     inputBinding:
       position: 102
+      prefix: --cluster-id
   - id: control_condition
     type: string
     doc: Name of control/wild-type condition as per user defined group specified
@@ -27,6 +28,7 @@ inputs:
       results are always in the form mutant/treatment vs WT/control. REQUIRED
     inputBinding:
       position: 102
+      prefix: --control-condition
   - id: crosstalks
     type:
       - 'null'
@@ -35,6 +37,7 @@ inputs:
       Full details of this method in: https://doi.org/10.1093/nar/gkac1185'
     inputBinding:
       position: 102
+      prefix: --crosstalks
   - id: deconv_cov_ratio
     type:
       - 'null'
@@ -45,6 +48,7 @@ inputs:
       reduction required for deconvolution).
     inputBinding:
       position: 102
+      prefix: --deconv-cov-ratio
   - id: double_cca
     type:
       - 'null'
@@ -53,6 +57,7 @@ inputs:
       that this will alter the output of the CCA analysis pipeline.
     inputBinding:
       position: 102
+      prefix: --double-cca
   - id: keep_temp
     type:
       - 'null'
@@ -70,6 +75,7 @@ inputs:
       locally stored data. Warning - this leads to usage of older Modomics data!
     inputBinding:
       position: 102
+      prefix: --local-modomics
   - id: max_mismatches
     type:
       - 'null'
@@ -80,6 +86,7 @@ inputs:
       GSNAP; see GSNAP help for more info.
     inputBinding:
       position: 102
+      prefix: --max-mismatches
   - id: max_multi
     type:
       - 'null'
@@ -144,6 +151,7 @@ inputs:
       Default is enabled.
     inputBinding:
       position: 102
+      prefix: --no-cca-analysis
   - id: no_cluster
     type:
       - 'null'
@@ -152,6 +160,7 @@ inputs:
       drastically reduces the rate of multi-mapping reads. Default is enabled.
     inputBinding:
       position: 102
+      prefix: --no-cluster
   - id: no_snp_tolerance
     type:
       - 'null'
@@ -160,10 +169,11 @@ inputs:
       from Modomics are mapped as SNPs. Default is enabled.
     inputBinding:
       position: 102
+      prefix: --no-snp-tolerance
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory. Default is current directory. Cannot be an existing 
       directory.
     inputBinding:
@@ -179,6 +189,7 @@ inputs:
       down-regulated tRNAs, respectively. Default p-adj <= 0.05
     inputBinding:
       position: 102
+      prefix: --p-adj
   - id: plastid_trnas
     type:
       - 'null'
@@ -199,6 +210,7 @@ inputs:
       for all eukaryotes.
     inputBinding:
       position: 102
+      prefix: --posttrans-mod-off
   - id: pretRNAs
     type:
       - 'null'
@@ -209,6 +221,7 @@ inputs:
       reads.
     inputBinding:
       position: 102
+      prefix: --pretRNAs
   - id: remap
     type:
       - 'null'
@@ -234,6 +247,7 @@ inputs:
       this should be relatively small to prohibit misalignment.
     inputBinding:
       position: 102
+      prefix: --remap-mismatches
   - id: species
     type:
       - 'null'
@@ -251,6 +265,7 @@ inputs:
     doc: Set processor threads to use during read alignment and read counting.
     inputBinding:
       position: 102
+      prefix: --threads
   - id: trnaout
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tag_sum
+baseCommand:
+  - tag
+  - sum
 label: tag_sum
 doc: "Briefly summarize a GFF3 file\n\nTool homepage: https://github.com/standage/tag/"
 inputs:

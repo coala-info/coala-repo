@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxpasta merge
+baseCommand:
+  - taxpasta
+  - merge
 label: taxpasta_merge
 doc: "Standardise and merge two or more taxonomic profiles.\n\nTool homepage: https://github.com/taxprofiler/taxpasta"
 inputs:
@@ -21,6 +23,7 @@ inputs:
       identifiers separated by semi-colons.
     inputBinding:
       position: 102
+      prefix: --add-id-lineage
   - id: add_lineage
     type:
       - 'null'
@@ -29,6 +32,7 @@ inputs:
       separated by semi-colons.
     inputBinding:
       position: 102
+      prefix: --add-lineage
   - id: add_name
     type:
       - 'null'
@@ -36,6 +40,7 @@ inputs:
     doc: Add the taxon name to the output.
     inputBinding:
       position: 102
+      prefix: --add-name
   - id: add_rank
     type:
       - 'null'
@@ -43,6 +48,7 @@ inputs:
     doc: Add the taxon rank to the output.
     inputBinding:
       position: 102
+      prefix: --add-rank
   - id: add_rank_lineage
     type:
       - 'null'
@@ -51,6 +57,7 @@ inputs:
       ranks separated by semi-colons.
     inputBinding:
       position: 102
+      prefix: --add-rank-lineage
   - id: ignore_errors
     type:
       - 'null'
@@ -59,6 +66,7 @@ inputs:
       must be at least two profiles without errors to merge.
     inputBinding:
       position: 102
+      prefix: --ignore-errors
   - id: output_format
     type:
       - 'null'
@@ -69,6 +77,7 @@ inputs:
       detection.
     inputBinding:
       position: 102
+      prefix: --output-format
   - id: output_mode
     type:
       - 'null'
@@ -119,6 +128,7 @@ inputs:
       it doesn't seem like a problem we can generally solve here.
     inputBinding:
       position: 102
+      prefix: --summarise-at
   - id: taxonomy
     type:
       - 'null'
@@ -127,9 +137,10 @@ inputs:
       and names.dmp are required. A merged.dmp file is optional.
     inputBinding:
       position: 102
+      prefix: --taxonomy
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: PATH                The desired output  │
     inputBinding:
       position: 103
       prefix: --output

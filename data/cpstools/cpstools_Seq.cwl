@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools Seq
+baseCommand:
+  - cpstools
+  - Seq
 label: cpstools_Seq
 doc: "Sequence manipulation tool\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

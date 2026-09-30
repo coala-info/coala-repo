@@ -87,6 +87,7 @@ inputs:
       <--bin-complexity-cutoff 2>, masks it.
     inputBinding:
       position: 101
+      prefix: --bin-complexity-cutoff
   - id: bubble_step
     type:
       - 'null'
@@ -95,6 +96,7 @@ inputs:
       to the ending node. Default: 40'
     inputBinding:
       position: 101
+      prefix: --bubble-step
   - id: ctg_min_length
     type:
       - 'null'
@@ -102,6 +104,7 @@ inputs:
     doc: Min length of contigs to be output, 5000
     inputBinding:
       position: 101
+      prefix: --ctg-min-length
   - id: ctg_min_nodes
     type:
       - 'null'
@@ -109,6 +112,7 @@ inputs:
     doc: Min num of nodes in a contig to be ouput, 3
     inputBinding:
       position: 101
+      prefix: --ctg-min-nodes
   - id: drop_low_cov_edges
     type:
       - 'null'
@@ -116,6 +120,7 @@ inputs:
     doc: Don't attempt to rescue low coverage edges
     inputBinding:
       position: 101
+      prefix: --drop-low-cov-edges
   - id: dump_kbm
     type:
       - 'null'
@@ -123,6 +128,7 @@ inputs:
     doc: Dump kbm index into file for loaded by `kbm` or `wtdbg`
     inputBinding:
       position: 101
+      prefix: --dump-kbm
   - id: dump_seqs
     type:
       - 'null'
@@ -131,6 +137,7 @@ inputs:
       `kbm` or `wtdbg`
     inputBinding:
       position: 101
+      prefix: --dump-seqs
   - id: edge_max_span
     type:
       - 'null'
@@ -138,6 +145,7 @@ inputs:
     doc: Program will build edges of length no large than 1024
     inputBinding:
       position: 101
+      prefix: --edge-max-span
   - id: edge_min
     type:
       - 'null'
@@ -153,6 +161,7 @@ inputs:
     doc: Select nodes from error-free-sequences only.
     inputBinding:
       position: 101
+      prefix: --err-free-nodes
   - id: err_free_seq
     type:
       - 'null'
@@ -163,6 +172,7 @@ inputs:
       to perform assembly somehow act as long-reads scaffolding
     inputBinding:
       position: 101
+      prefix: --err-free-seq
   - id: force_overwrite
     type:
       - 'null'
@@ -181,8 +191,9 @@ inputs:
       prefix: --genome-size
   - id: input_reads
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Long reads sequences file (REQUIRED; can be multiple)
     inputBinding:
       position: 101
@@ -194,6 +205,7 @@ inputs:
     doc: In graph clean, `wtdbg` normally masks isolated (orphaned) nodes
     inputBinding:
       position: 101
+      prefix: --keep-isolated-nodes
   - id: keep_multiple_alignment_parts
     type:
       - 'null'
@@ -202,6 +214,7 @@ inputs:
       after chainning. This option will disable it, and keep multiple
     inputBinding:
       position: 101
+      prefix: --keep-multiple-alignment-parts
   - id: kmer_depth_max
     type:
       - 'null'
@@ -249,6 +262,7 @@ inputs:
     doc: Limit the input sequences to at most <int> M bp. Usually for test
     inputBinding:
       position: 101
+      prefix: --limit-input
   - id: load_alignments
     type:
       - 'null'
@@ -260,6 +274,7 @@ inputs:
       building kbm index"
     inputBinding:
       position: 101
+      prefix: --load-alignments
   - id: load_clips
     type:
       - 'null'
@@ -268,6 +283,7 @@ inputs:
       `wtdbg`'s <--prefix>.clps
     inputBinding:
       position: 101
+      prefix: --load-clips
   - id: load_kbm
     type:
       - 'null'
@@ -276,6 +292,7 @@ inputs:
       time-consumed, loading kbm-index from already dumped file.
     inputBinding:
       position: 101
+      prefix: --load-kbm
   - id: load_nodes
     type:
       - 'null'
@@ -285,6 +302,7 @@ inputs:
       `wtdbg`'s <--prefix>.1.nodes
     inputBinding:
       position: 101
+      prefix: --load-nodes
   - id: load_seqs
     type:
       - 'null'
@@ -293,6 +311,7 @@ inputs:
       rebuild index in process's RAM.
     inputBinding:
       position: 101
+      prefix: --load-seqs
   - id: minimal_output
     type:
       - 'null'
@@ -300,6 +319,7 @@ inputs:
     doc: Will generate as less output files (<--prefix>.*) as it can
     inputBinding:
       position: 101
+      prefix: --minimal-output
   - id: no_chainning_clip
     type:
       - 'null'
@@ -307,6 +327,7 @@ inputs:
     doc: Defaultly, performs alignments chainning in read clipping
     inputBinding:
       position: 101
+      prefix: --no-chainning-clip
   - id: no_local_graph_analysis
     type:
       - 'null'
@@ -316,6 +337,7 @@ inputs:
       whether to mask it. The analysis aims to find repetitive nodes
     inputBinding:
       position: 101
+      prefix: --no-local-graph-analysis
   - id: no_read_clip
     type:
       - 'null'
@@ -326,6 +348,7 @@ inputs:
       `wtdbg` will use them in the final linking of unitigs
     inputBinding:
       position: 101
+      prefix: --no-read-clip
   - id: no_read_length_sort
     type:
       - 'null'
@@ -334,6 +357,7 @@ inputs:
       reads affects the generating of nodes in selecting important intervals
     inputBinding:
       position: 101
+      prefix: --no-read-length-sort
   - id: node_drop
     type:
       - 'null'
@@ -342,6 +366,7 @@ inputs:
       with previous generated node
     inputBinding:
       position: 101
+      prefix: --node-drop
   - id: node_len
     type:
       - 'null'
@@ -351,6 +376,7 @@ inputs:
       selecting).
     inputBinding:
       position: 101
+      prefix: --node-len
   - id: node_matched_bins
     type:
       - 'null'
@@ -358,6 +384,7 @@ inputs:
     doc: Min matched bins in a node, default:1
     inputBinding:
       position: 101
+      prefix: --node-matched-bins
   - id: node_max
     type:
       - 'null'
@@ -366,6 +393,7 @@ inputs:
       Default: 200, more than 200 reads contain this node'
     inputBinding:
       position: 101
+      prefix: --node-max
   - id: node_min
     type:
       - 'null'
@@ -374,6 +402,7 @@ inputs:
       value is automaticly the same with --edge-min.
     inputBinding:
       position: 101
+      prefix: --node-min
   - id: node_ovl
     type:
       - 'null'
@@ -382,8 +411,9 @@ inputs:
       in selecting best nodes representing reads in graph
     inputBinding:
       position: 101
+      prefix: --node-ovl
   - id: output_prefix
-    type: string
+    type: string?
     doc: Prefix of output files (REQUIRED)
     inputBinding:
       position: 101
@@ -412,6 +442,7 @@ inputs:
       reads.'
     inputBinding:
       position: 101
+      prefix: --rdcov-filter
   - id: rdname_filter
     type:
       - 'null'
@@ -420,6 +451,7 @@ inputs:
       want to filter reads by yourself, please also set -X 0
     inputBinding:
       position: 101
+      prefix: --rdname-filter
   - id: rdname_includeonly
     type:
       - 'null'
@@ -427,6 +459,7 @@ inputs:
     doc: Reverse manner with --rdname-filter
     inputBinding:
       position: 101
+      prefix: --rdname-includeonly
   - id: read_depth_cutoff
     type:
       - 'null'
@@ -507,6 +540,7 @@ inputs:
       S0000000001
     inputBinding:
       position: 101
+      prefix: --tidy-name
   - id: tidy_reads
     type:
       - 'null'
@@ -523,6 +557,7 @@ inputs:
     doc: Max step to search a tip, 10
     inputBinding:
       position: 101
+      prefix: --tip-step
   - id: ttr_cutoff_depth
     type:
       - 'null'
@@ -533,6 +568,7 @@ inputs:
       0.5>. set --ttr-cutoff-depth 0 to disable ttr masking'
     inputBinding:
       position: 101
+      prefix: --ttr-cutoff-depth
   - id: ttr_cutoff_ratio
     type:
       - 'null'
@@ -543,6 +579,7 @@ inputs:
       0.5>. set --ttr-cutoff-depth 0 to disable ttr masking'
     inputBinding:
       position: 101
+      prefix: --ttr-cutoff-ratio
   - id: verbose
     type:
       - 'null'

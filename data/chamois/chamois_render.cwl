@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_render
+baseCommand:
+  - chamois
+  - render
 label: chamois_render
 doc: "Render probabilities from a predictor.\n\nTool homepage: https://chamois.readthedocs.io/"
 inputs:

@@ -52,7 +52,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101
@@ -66,7 +66,7 @@ inputs:
       position: 101
       prefix: --raven
   - id: reads
-    type: File
+    type: File?
     doc: Path to long reads
     inputBinding:
       position: 101

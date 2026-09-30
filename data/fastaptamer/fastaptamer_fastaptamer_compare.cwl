@@ -15,13 +15,13 @@ doc: "FASTAptamer-Compare facilitates statistical analysis of two populations by
   MUST come from FASTAptamer-Count output files.\n\nTool homepage: http://burkelab.missouri.edu/fastaptamer.html"
 inputs:
   - id: input_file_x
-    type: File
+    type: File?
     doc: Input file (from FASTAptamer-Count)
     inputBinding:
       position: 101
       prefix: -x
   - id: input_file_y
-    type: File
+    type: File?
     doc: Input file (from FASTAptamer-Count)
     inputBinding:
       position: 101

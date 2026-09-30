@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sinto_tagtotag
+baseCommand:
+  - sinto
+  - tagtotag
 label: sinto_tagtotag
 doc: "Copies BAM entries to a new file while copying a read tag to another read tag
   and optionally deleting the originating tag.\n\nTool homepage: https://timoast.github.io/sinto/"
@@ -41,10 +43,10 @@ inputs:
       prefix: --to
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: " Output SAM/BAM file, '-' outputs to stdout (default '-')"
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadbit describe
+baseCommand:
+  - tadbit
+  - describe
 label: tadbit_describe
 doc: "Describe jobs and results in a given working directory\n\nTool homepage: http://sgt.cnag.cat/3dg/tadbit/"
 inputs:
@@ -90,7 +92,6 @@ inputs:
       prefix: --workdir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -138,10 +138,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
-      prefix: --outfile
+      prefix: -outfile
 outputs:
   - id: output_file
     type:

@@ -85,7 +85,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for storing intermediate files; default is system directory 
       for temporary files
     inputBinding:
@@ -103,10 +103,11 @@ inputs:
       prefix: --uncompressed-chunks
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' output file name; if not provided, the result is written to a file with
+      .sorted.bam extension'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

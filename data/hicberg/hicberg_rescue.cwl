@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg rescue
+baseCommand:
+  - hicberg
+  - rescue
 label: hicberg_rescue
 doc: "Reallocate ambiguous reads to the most plausible position according to\n  model.\n\
   \nTool homepage: https://github.com/sebgra/hicberg"
@@ -36,10 +38,10 @@ inputs:
       prefix: --mode
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder to save results.
     inputBinding:
       position: 103
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

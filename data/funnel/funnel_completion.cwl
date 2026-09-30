@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: funnel_completion
+baseCommand:
+  - funnel
+  - completion
 label: funnel_completion
 doc: "Generate shell completion code\n\nTool homepage: https://ohsu-comp-bio.github.io/funnel/"
 inputs:

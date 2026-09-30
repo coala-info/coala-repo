@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmer-db all2all
+baseCommand:
+  - kmer-db
+  - all2all
 label: kmer-db_all2all
 doc: "Counting common k-mers for all the samples in the database\n\nTool homepage:
   https://github.com/refresh-bio/kmer-db"

@@ -241,10 +241,11 @@ outputs:
   - id: output_basename
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Base filename to use for output files within the output directory.
     outputBinding:
-      glob: $(inputs.output_basename_path)
+      glob: $(inputs.output_basename_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

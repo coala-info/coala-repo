@@ -55,8 +55,8 @@ inputs:
       position: 103
       prefix: --variants
   - id: json_matches_path
-    type: string
-    doc: Output or path parameter `json_matches_path`
+    type: string?
+    doc: Write the output to a JSON file called matches.json
     inputBinding:
       position: 104
       prefix: --json-matches

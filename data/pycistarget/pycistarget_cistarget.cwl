@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pycistarget cistarget
+baseCommand:
+  - pycistarget
+  - cistarget
 label: pycistarget_cistarget
 doc: "Run motif enrichment analysis using the cisTarget algorithm.\n\nTool homepage:
   https://github.com/aertslab/pycistarget"
@@ -24,6 +26,7 @@ inputs:
     doc: "Which annotations to use for annotation motifs to TFs.\n               \
       \         Defaults to: Direct_annot Motif_similarity_annot\n               \
       \         Orthology_annot"
+    default:
       - Direct_annot
       - Motif_similarity_annot
       - Orthology_annot
@@ -149,12 +152,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write_html
+  - id: output_folder_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output_folder
 outputs:
   - id: output_folder
     type: Directory
     doc: Path to the folder in which to write results.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycistarget:1.1--pyhdfd78af_0

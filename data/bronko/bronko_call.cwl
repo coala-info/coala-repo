@@ -244,7 +244,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Folder to output all resulting files [default: bronko_output]'
     inputBinding:
       position: 102
       prefix: --output

@@ -154,10 +154,10 @@ inputs:
       prefix: --windowLength
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: '<DIR>   Output directory [default: .]'
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: --outDir
 outputs:
   - id: out_dir
     type:

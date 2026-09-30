@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cuna_train
+baseCommand:
+  - cuna
+  - train
 label: cuna_train
 doc: "Train a CUNA model.\n\nTool homepage: https://github.com/iris1901/CUNA"
 inputs:

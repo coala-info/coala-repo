@@ -22,6 +22,7 @@ inputs:
     doc: output single file with wig headers and fixed step size
     inputBinding:
       position: 103
+      prefix: -fixed
   - id: name
     type:
       - 'null'
@@ -29,6 +30,8 @@ inputs:
     doc: restrict output to just this sequence name
     inputBinding:
       position: 103
+      prefix: -name=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

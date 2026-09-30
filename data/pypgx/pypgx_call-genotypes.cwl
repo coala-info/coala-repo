@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx call-genotypes
+baseCommand:
+  - pypgx
+  - call-genotypes
 label: pypgx_call-genotypes
 doc: "Call genotypes for target gene.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

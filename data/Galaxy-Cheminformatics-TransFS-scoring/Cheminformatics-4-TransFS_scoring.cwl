@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'This workflow generates binding scores that correlate well with binding affinities using an additional tool TransFS, developed at Oxford University. More info can be found at https://covid19.galaxyproject.org/cheminformatics/'
 inputs:
   0_Input Dataset:

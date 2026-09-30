@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsearch_add
+baseCommand:
+  - gsearch
+  - add
 label: gsearch_add
 doc: "Add new genome files to a pre-built HNSW graph database\n\nTool homepage: https://github.com/jean-pierreBoth/gsearch"
 inputs:

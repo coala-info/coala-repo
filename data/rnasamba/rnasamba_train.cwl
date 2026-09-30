@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnasamba_train
+baseCommand:
+  - rnasamba
+  - train
 label: rnasamba_train
 doc: "Train a new classification model.\n\nTool homepage: https://github.com/apcamargo/RNAsamba"
 inputs:

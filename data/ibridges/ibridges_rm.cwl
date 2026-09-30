@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges_rm
+baseCommand:
+  - ibridges
+  - rm
 label: ibridges_rm
 doc: "Remove collection or data object.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

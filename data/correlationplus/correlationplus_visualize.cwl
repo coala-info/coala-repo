@@ -80,10 +80,10 @@ inputs:
       prefix: -p
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ': This will be your output file. Output figures are in png format. (Optional)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -19,6 +19,7 @@ inputs:
     doc: 'disable gapped alignments between stacks (default: use gapped alignments).'
     inputBinding:
       position: 101
+      prefix: --disable-gapped
   - id: in_dir
     type: Directory
     doc: path to the directory containing Stacks files.
@@ -33,6 +34,7 @@ inputs:
       (automatically calculated by default).
     inputBinding:
       position: 101
+      prefix: --k-len
   - id: max_gaps
     type:
       - 'null'
@@ -40,6 +42,7 @@ inputs:
     doc: 'number of gaps allowed between stacks before merging (default: 2).'
     inputBinding:
       position: 101
+      prefix: --max-gaps
   - id: min_aln_len
     type:
       - 'null'
@@ -47,6 +50,7 @@ inputs:
     doc: 'minimum length of aligned sequence in a gapped alignment (default: 0.80).'
     inputBinding:
       position: 101
+      prefix: --min-aln-len
   - id: num_mismatches
     type:
       - 'null'
@@ -77,6 +81,7 @@ inputs:
     doc: report query loci that match more than one catalog locus.
     inputBinding:
       position: 101
+      prefix: --report-mmatches
   - id: sample_prefix
     type:
       - 'null'
@@ -88,10 +93,10 @@ inputs:
       prefix: -s
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: ': output path to write results.'
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: --outpath
 outputs:
   - id: output_path
     type: Directory

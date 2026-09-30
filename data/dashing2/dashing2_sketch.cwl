@@ -99,6 +99,7 @@ inputs:
       fixed memory usage.
     inputBinding:
       position: 102
+      prefix: --countmin-size
   - id: distance
     type:
       - 'null'
@@ -115,6 +116,7 @@ inputs:
       pass.'
     inputBinding:
       position: 102
+      prefix: --downsample
   - id: enable_protein
     type:
       - 'null'
@@ -131,6 +133,7 @@ inputs:
       the entropy of the k-mer itself.
     inputBinding:
       position: 102
+      prefix: --entmin
   - id: fastcmp
     type:
       - 'null'
@@ -181,6 +184,7 @@ inputs:
     doc: Skip k-mers in this file when sketching other files.
     inputBinding:
       position: 102
+      prefix: --filterset
   - id: full_setsketch
     type:
       - 'null'
@@ -369,6 +373,7 @@ inputs:
       k-mers are encoded directly if a k-mer type can represent it.
     inputBinding:
       position: 102
+      prefix: --seed
   - id: seq
     type:
       - 'null'
@@ -438,6 +443,7 @@ inputs:
       than the k-mer length.
     inputBinding:
       position: 102
+      prefix: --spacing
   - id: symmetric_containment
     type:
       - 'null'
@@ -486,7 +492,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cmpout_path`
     inputBinding:
       position: 103
       prefix: --cmpout
@@ -494,7 +499,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 104
       prefix: --outfile

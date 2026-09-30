@@ -66,11 +66,11 @@ inputs:
       position: 102
       prefix: --outliers
   - id: plot_file_path
-    type: string
-    doc: Output or path parameter `plot_file_path`
+    type: string?
+    doc: Plot to this file (.pdf or .png). If multiple sequence files
     inputBinding:
       position: 103
-      prefix: --plot-file
+      prefix: --plot
 outputs:
   - id: plot_file
     type:

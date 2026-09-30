@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe finalize_assembly
+baseCommand:
+  - haphpipe
+  - finalize_assembly
 label: haphpipe_finalize_assembly
 doc: "Finalize assembly by mapping reads to consensus and fixing consensus.\n\nTool
   homepage: https://github.com/gwcbi/haphpipe"
@@ -72,7 +74,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

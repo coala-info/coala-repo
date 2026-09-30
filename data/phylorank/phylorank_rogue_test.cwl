@@ -16,6 +16,11 @@ inputs:
     doc: File containing taxonomy information
     inputBinding:
       position: 2
+  - id: output_dir
+    type: string
+    doc: Directory to write output files
+    inputBinding:
+      position: 3
   - id: decorate
     type:
       - 'null'
@@ -33,11 +38,11 @@ inputs:
       position: 103
       prefix: --outgroup_taxon
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: Directory to write output files
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lra_global
+baseCommand:
+  - lra
+  - global
 label: lra_global
 doc: "Index global reference for aligning reads or contigs\n\nTool homepage: https://github.com/ChaissonLab/LRA"
 inputs:

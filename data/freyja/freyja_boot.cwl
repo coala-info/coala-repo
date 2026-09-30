@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja boot
+baseCommand:
+  - freyja
+  - boot
 label: freyja_boot
 doc: "Perform bootstrapping method for freyja using VARIANTS and DEPTHS\n\nTool homepage:
   https://github.com/andersen-lab/Freyja"

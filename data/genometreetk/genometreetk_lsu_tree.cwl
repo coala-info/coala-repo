@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk lsu_tree
+baseCommand:
+  - genometreetk
+  - lsu_tree
 label: genometreetk_lsu_tree
 doc: "Infer 23S tree spanning GTDB genomes.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
@@ -15,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 3

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: owl_profile
+baseCommand:
+  - owl
+  - profile
 label: owl_profile
 doc: "Profile a BAM file\n\nTool homepage: https://github.com/PacificBiosciences/owl"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isorefiner trans_struct_wf
+baseCommand:
+  - isorefiner
+  - trans_struct_wf
 label: isorefiner_trans_struct_wf
 doc: "This tool refines transcript structures based on reads and reference annotation.\n\
   \nTool homepage: https://github.com/rkajitani/IsoRefiner"
@@ -43,10 +45,9 @@ inputs:
       prefix: --work_dir
   - id: out_gtf_path
     type: string
-    doc: Output or path parameter `out_gtf_path`
     inputBinding:
       position: 102
-      prefix: --out-gtf
+      prefix: --out_gtf
 outputs:
   - id: out_gtf
     type:

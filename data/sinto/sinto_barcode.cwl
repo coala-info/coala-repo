@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sinto_barcode
+baseCommand:
+  - sinto
+  - barcode
 label: sinto_barcode
 doc: "Add cell barcode sequences to read names in FASTQ file.\n\nTool homepage: https://timoast.github.io/sinto/"
 inputs:

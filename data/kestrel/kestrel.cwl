@@ -628,18 +628,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hapout_file_path`
+    doc: ' Set haplotype output file name.'
     inputBinding:
       position: 103
-      prefix: --hapout-file
+      prefix: --hapout
   - id: out_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
+    doc: ' Set output file name.'
     inputBinding:
       position: 104
-      prefix: --out-file
+      prefix: --out
 outputs:
   - id: out_file
     type:

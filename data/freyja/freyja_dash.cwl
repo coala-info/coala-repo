@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja_dash
+baseCommand:
+  - freyja
+  - dash
 label: freyja_dash
 doc: "Generate an interactive dashboard from Freyja results.\n\nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:

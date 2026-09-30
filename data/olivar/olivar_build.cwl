@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: olivar_build
+baseCommand:
+  - olivar
+  - build
 label: olivar_build
 doc: "Build an Olivar reference file from a FASTA sequence and/or an MSA.\n\nTool
   homepage: https://gitlab.com/treangenlab/olivar"
@@ -61,7 +63,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory (output to current directory by default).
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vembrane tag
+baseCommand:
+  - vembrane
+  - tag
 label: vembrane_tag
 doc: "Flag records by adding a tag to their FILTER field based on one or more expressions.
   This is a non-destructive alternative to `filter`, as it keeps all records.\n\n\
@@ -102,9 +104,8 @@ inputs:
       prefix: --overwrite-number-info
   - id: tag
     type:
-      - 'null'
-      - type: array
-        items: string
+      type: array
+      items: string
     doc: "Tag records using the FILTER field. Note: tag names cannot contain `;` or
       whitespace and must not be '0'. Example: `--tag q_above_30=\"not (QUAL<=30)\"\
       `"
@@ -125,11 +126,11 @@ inputs:
       position: 102
       prefix: --tag-mode
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: ' Output file, if not specified, output is written to STDOUT. (default: -)'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

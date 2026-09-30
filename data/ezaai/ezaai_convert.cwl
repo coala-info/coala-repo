@@ -37,17 +37,17 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Custom temporary directory
     inputBinding:
       position: 101
       prefix: -tmp
   - id: output_db_path
     type: string
-    doc: Output or path parameter `output_db_path`
+    doc: Output protein DB
     inputBinding:
       position: 102
-      prefix: --output-db
+      prefix: -o
 outputs:
   - id: output_db
     type: File

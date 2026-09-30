@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: contigtax format
+baseCommand:
+  - contigtax
+  - format
 label: contigtax_format
 doc: "Reformat a protein fasta file for contigtax.\n\nTool homepage: https://github.com/NBISweden/contigtax"
 inputs:
@@ -54,7 +56,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for writing fasta files
     inputBinding:
       position: 103

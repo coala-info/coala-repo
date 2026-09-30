@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: telescope assign
+baseCommand:
+  - telescope
+  - assign
 label: telescope_test
 doc: "Assigns reads to genomic features.\n\nTool homepage: https://github.com/mlbendall/telescope"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyani-plus list-runs
+baseCommand:
+  - pyani-plus
+  - list-runs
 label: pyani-plus_list-runs
 doc: "List the runs defined in a given pyANI-plus SQLite3 database.\n\nTool homepage:
   https://github.com/pyani-plus/pyani-plus"

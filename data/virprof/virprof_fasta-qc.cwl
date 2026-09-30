@@ -31,7 +31,7 @@ inputs:
       prefix: --in-fasta
   - id: out_csv_path
     type: string
-    doc: Output or path parameter `out_csv_path`
+    doc: Output CSV file for scores  [required]
     inputBinding:
       position: 102
       prefix: --out-csv

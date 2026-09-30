@@ -78,7 +78,6 @@ inputs:
       prefix: --where-column
   - id: out_metadata_path
     type: string
-    doc: Output or path parameter `out_metadata_path`
     inputBinding:
       position: 102
       prefix: --out-metadata

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virprof index-tree
+baseCommand:
+  - virprof
+  - index-tree
 label: virprof_index-tree
 doc: "Parse NCBI taxonomy from dump files and write tree to binary\n\nTool homepage:
   https://github.com/seiboldlab/virprof"
@@ -21,10 +23,10 @@ inputs:
       prefix: --ncbi-taxonomy
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: Output binary  [required]
     inputBinding:
       position: 102
-      prefix: --output-filename
+      prefix: --out
 outputs:
   - id: output_filename
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: easypqp_convertsage
+baseCommand:
+  - easypqp
+  - convertsage
 label: easypqp_convertsage
 doc: "Convert Sage Search results for EasyPQP\n\nTool homepage: https://github.com/grosenberger/easypqp"
 inputs:

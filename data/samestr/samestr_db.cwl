@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samestr_db
+baseCommand:
+  - samestr
+  - db
 label: samestr_db
 doc: "Database check arguments:\n\nTool homepage: https://github.com/danielpodlesny/samestr/"
 inputs:
@@ -65,7 +67,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory.
     inputBinding:
       position: 101

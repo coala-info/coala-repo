@@ -30,10 +30,10 @@ inputs:
       prefix: --res
   - id: out_png_path
     type: string
-    doc: Output or path parameter `out_png_path`
+    doc: File path where dotplot PNG will be saved (required)
     inputBinding:
       position: 102
-      prefix: --out-png
+      prefix: --out_png
 outputs:
   - id: out_png
     type: File

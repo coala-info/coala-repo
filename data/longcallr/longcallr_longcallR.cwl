@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: longcallr_longcallR
+baseCommand: longcallR
 label: longcallr_longcallR
 doc: "A Rust tool for SNP calling and haplotype phasing with long RNA-seq reads.\n\
   \nTool homepage: https://github.com/huangnengCSU/longcallR"

@@ -8,10 +8,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: -i
+        separate: true
     doc: Input FASTA file (can be used multiple times).
     inputBinding:
       position: 101
-      prefix: -i
   - id: intersection_file
     type:
       - 'null'

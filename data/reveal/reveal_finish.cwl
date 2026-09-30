@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal finish
+baseCommand:
+  - reveal
+  - finish
 label: reveal_finish
 doc: "Finish a draft assembly by ordering and orienting contigs with respect to a
   finished reference assembly.\n\nTool homepage: https://github.com/hakimel/reveal.js"

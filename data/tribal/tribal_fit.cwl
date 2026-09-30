@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tribal fit
+baseCommand:
+  - tribal
+  - fit
 label: tribal_fit
 doc: "Fit B cell lineage trees\n\nTool homepage: https://github.com/elkebir-group/TRIBAL"
 inputs:
@@ -109,7 +111,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pickle_path`
+    doc: path where the output dictionary of LineageTree lists
     inputBinding:
       position: 102
       prefix: --pickle
@@ -117,7 +119,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `transmat_infer_path`
     inputBinding:
       position: 103
       prefix: --transmat-infer
@@ -125,7 +126,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_results_path`
     inputBinding:
       position: 104
       prefix: --write-results

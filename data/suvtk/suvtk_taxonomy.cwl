@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: suvtk taxonomy
+baseCommand:
+  - suvtk
+  - taxonomy
 label: suvtk_taxonomy
 doc: "This command uses MMseqs2 to assign taxonomy to sequences using protein sequences
   from ICTV taxa in the nr database.\n\nTool homepage: https://github.com/LanderDC/suvtk"
@@ -35,7 +37,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output directory  [required]
     inputBinding:
       position: 102
       prefix: --output

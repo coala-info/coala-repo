@@ -52,10 +52,10 @@ inputs:
       prefix: --verbose
   - id: outputfile_path
     type: string
-    doc: Output or path parameter `outputfile_path`
+    doc: save file to <out-file> instead of STDOUT
     inputBinding:
       position: 102
-      prefix: --outputfile
+      prefix: --output
 outputs:
   - id: outputfile
     type:

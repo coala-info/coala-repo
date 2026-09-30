@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: constava dihedrals
+baseCommand:
+  - constava
+  - dihedrals
 label: constava_dihedrals
 doc: "The `constava dihedrals` submodule is used to extract the backbone dihedrals
   needed for the analysis from conformational ensembles. By default the results are
@@ -59,7 +61,7 @@ inputs:
       prefix: --trajectory
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'CSV file to write dihedral information to. (default: dihedrals.csv)'
     inputBinding:
       position: 102
       prefix: --output

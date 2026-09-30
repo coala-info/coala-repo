@@ -114,9 +114,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Path to dbSNP VCF file, activates dbSNP annotation
     secondaryFiles:
       - .tbi?
-    doc: Path to dbSNP VCF file, activates dbSNP annotation
     inputBinding:
       position: 101
       prefix: --dbsnp-vcf
@@ -364,10 +364,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Path to FAI-indexed reference FASTA file, required for 
       dbSNP/ExAC/UK10K-based annotation
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref-fasta
@@ -503,12 +503,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --very-verbose
+  - id: output_vcf_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type: File
     doc: Path to output VCF file
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0

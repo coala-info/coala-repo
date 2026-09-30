@@ -40,7 +40,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_ancestor_path`
+    doc: Path to write ancestral adjacencies to.
     inputBinding:
       position: 102
       prefix: --write-ancestor
@@ -48,7 +48,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_measure_path`
+    doc: Path to write the carp measure to.
     inputBinding:
       position: 103
       prefix: --write-measure

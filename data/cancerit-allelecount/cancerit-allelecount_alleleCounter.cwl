@@ -90,7 +90,7 @@ inputs:
       prefix: --required-flag
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path write output file.
     inputBinding:
       position: 102
       prefix: --output-file

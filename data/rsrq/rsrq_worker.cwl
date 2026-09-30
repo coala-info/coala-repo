@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rsrq worker
+baseCommand:
+  - rsrq
+  - worker
 label: rsrq_worker
 doc: "Spawns worker processes to consume jobs from a queue\n\nTool homepage: https://github.com/aaronmussig/rsrq"
 inputs:

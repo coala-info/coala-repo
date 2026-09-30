@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc fa-filter
+baseCommand:
+  - fuc
+  - fa-filter
 label: fuc_fa-filter
 doc: "Filter sequence records in a FASTA file.\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:

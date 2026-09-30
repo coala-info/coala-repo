@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groot get
+baseCommand:
+  - groot
+  - get
 label: groot_get
 doc: "Download a pre-clustered ARG database\n\nTool homepage: https://github.com/will-rowe/groot"
 inputs:
@@ -40,7 +42,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to save the database to
     inputBinding:
       position: 101

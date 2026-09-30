@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: easypqp openswath-assay-generator
+baseCommand:
+  - easypqp
+  - openswath-assay-generator
 label: easypqp_openswath-assay-generator
 doc: "Generates filtered and optimized assays for OpenSwathWorflow\n\nTool homepage:
   https://github.com/grosenberger/easypqp"
@@ -204,7 +206,7 @@ inputs:
       prefix: --unimod_file
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: "Output file (valid formats: 'tsv', 'pqp',"
     inputBinding:
       position: 102
       prefix: --out

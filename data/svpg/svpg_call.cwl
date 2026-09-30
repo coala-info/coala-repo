@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svpg_call
+baseCommand:
+  - svpg
+  - call
 label: svpg_call
 doc: "Call structural variants using SVPG\n\nTool homepage: https://github.com/coopsor/SVPG"
 inputs:
@@ -154,14 +156,14 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify the working directory to store output files.
     inputBinding:
       position: 101
       prefix: --working_dir
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: VCF output file name
     inputBinding:
       position: 102
       prefix: --out

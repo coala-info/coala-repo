@@ -44,7 +44,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory
     inputBinding:
       position: 103
@@ -68,7 +68,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to directory for temporary files
     inputBinding:
       position: 103

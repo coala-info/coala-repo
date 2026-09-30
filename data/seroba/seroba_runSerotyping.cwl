@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seroba runSerotyping
+baseCommand:
+  - seroba
+  - runSerotyping
 label: seroba_runSerotyping
 doc: "identify serotype of your input data\n\nTool homepage: https://github.com/sanger-pathogens/seroba"
 inputs:

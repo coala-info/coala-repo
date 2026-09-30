@@ -31,7 +31,8 @@ inputs:
     doc: don't actually load database, just create tab file
     inputBinding:
       position: 103
-      prefix: -tabFile
+      prefix: -tabFile=
+      separate: false
   - id: table
     type:
       - 'null'
@@ -39,7 +40,8 @@ inputs:
     doc: use a different suffix other than the default (rmsk)
     inputBinding:
       position: 103
-      prefix: -table
+      prefix: -table=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

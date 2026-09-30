@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux predict-peptide-ions
+baseCommand:
+  - crux
+  - predict-peptide-ions
 label: crux_predict-peptide-ions
 doc: "Predict theoretical peptide ions.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

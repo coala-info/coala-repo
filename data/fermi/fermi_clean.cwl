@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi_clean
+baseCommand:
+  - fermi
+  - clean
 label: fermi_clean
 doc: "Clean a de Bruijn graph\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini update
+baseCommand:
+  - gemini
+  - update
 label: gemini_update
 doc: "Update GEMINI database and associated tools.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

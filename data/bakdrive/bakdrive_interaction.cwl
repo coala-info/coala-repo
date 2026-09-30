@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bakdrive_interaction
+baseCommand:
+  - bakdrive
+  - interaction
 label: bakdrive_interaction
 doc: "Performs interaction analysis based on taxonomic classification and metabolic
   models.\n\nTool homepage: https://gitlab.com/treangenlab/bakdrive"
@@ -13,7 +15,7 @@ inputs:
   - id: flag
     type:
       - 'null'
-      - boolean
+      - string
     doc: Calculate growth rate
     inputBinding:
       position: 102
@@ -44,7 +46,6 @@ inputs:
       prefix: --percentage
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

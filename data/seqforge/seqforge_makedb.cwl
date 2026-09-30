@@ -40,7 +40,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify temporary directory
     inputBinding:
       position: 101

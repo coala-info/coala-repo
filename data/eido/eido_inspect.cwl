@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eido_inspect
+baseCommand:
+  - eido
+  - inspect
 label: eido_inspect
 doc: "Inspect a PEP\n\nTool homepage: https://github.com/mayneyao/eidos"
 inputs:

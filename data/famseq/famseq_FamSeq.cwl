@@ -140,10 +140,9 @@ inputs:
       prefix: -vcfFile
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -output
 outputs:
   - id: output
     type:

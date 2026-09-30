@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blobtools_nodesdb
+baseCommand:
+  - blobtools
+  - nodesdb
 label: blobtools_nodesdb
 doc: "NCBI nodes.dmp and names.dmp files are required to build the database.\n\nTool
   homepage: https://blobtools.readme.io/docs/what-is-blobtools"

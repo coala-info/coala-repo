@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngsderive encoding
+baseCommand:
+  - ngsderive
+  - encoding
 label: ngsderive_encoding
 doc: "Encodes sequencing files.\n\nTool homepage: https://github.com/claymcleod/ngsderive"
 inputs:

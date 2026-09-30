@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bftools_xmlvalid
+baseCommand: xmlvalid
 label: bftools_xmlvalid
 doc: "Validates an XML file against a schema.\n\nTool homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html"
 inputs:

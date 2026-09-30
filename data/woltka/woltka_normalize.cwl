@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: woltka normalize
+baseCommand:
+  - woltka
+  - normalize
 label: woltka_normalize
 doc: "Normalize a profile to fractions and/or by feature sizes.\n\nTool homepage:
   https://github.com/qiyunzhu/woltka"
@@ -39,10 +41,10 @@ inputs:
       prefix: --sizes
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to output profile.  [required]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

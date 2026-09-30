@@ -86,10 +86,11 @@ inputs:
       prefix: -G
   - id: output_frozen_path
     type: string
-    doc: Output or path parameter `output_frozen_path`
+    doc: ndicate to output the frozen_file and all parameters into file 
+      Seq2C.frozen.txt
     inputBinding:
       position: 104
-      prefix: --output-frozen
+      prefix: -Z
 outputs:
   - id: output_frozen
     type:

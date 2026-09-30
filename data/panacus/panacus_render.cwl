@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panacus render
+baseCommand:
+  - panacus
+  - render
 label: panacus_render
 doc: "Render an html report from one or more JSON result files\n\nTool homepage: https://github.com/marschall-lab/panacus"
 inputs:

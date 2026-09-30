@@ -12,6 +12,7 @@ inputs:
     doc: FASTA or FASTQ input files.
     inputBinding:
       position: 1
+      prefix: --infile
   - id: database_path
     type:
       - 'null'
@@ -80,17 +81,17 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Temporary directory for storage of the results from\nthe external software."
     inputBinding:
       position: 102
       prefix: --tmp_dir
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: ' Path to blast output'
     inputBinding:
       position: 103
-      prefix: --output-path
+      prefix: --outputPath
 outputs:
   - id: output_path
     type:

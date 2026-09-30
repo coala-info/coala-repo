@@ -27,7 +27,6 @@ inputs:
       prefix: --mapq-score
   - id: secondary_file_path
     type: string
-    doc: Output or path parameter `secondary_file_path`
     inputBinding:
       position: 104
       prefix: --secondary-file

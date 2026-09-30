@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk_extract
+baseCommand:
+  - fastafunk
+  - extract
 label: fastafunk_extract
 doc: "Extracts sequences from FASTA files based on metadata and tree information.\n\
   \nTool homepage: https://github.com/cov-ert/fastafunk"
@@ -49,7 +51,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_fasta_path`
     inputBinding:
       position: 105
       prefix: --out-fasta
@@ -57,7 +58,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reject_fasta_path`
     inputBinding:
       position: 106
       prefix: --reject-fasta

@@ -76,9 +76,9 @@ inputs:
       prefix: --min-variant-gap
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -127,7 +127,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_debug_path`
     inputBinding:
       position: 102
       prefix: --output-debug
@@ -135,15 +134,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_summary_path`
     inputBinding:
       position: 103
       prefix: --output-summary
   - id: output_vcfs_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_vcfs_path`
+    type: string
     inputBinding:
       position: 104
       prefix: --output-vcfs

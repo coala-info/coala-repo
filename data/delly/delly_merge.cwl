@@ -103,7 +103,7 @@ inputs:
       prefix: --vaf
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Merged SV BCF output file
     inputBinding:
       position: 103
       prefix: --outfile

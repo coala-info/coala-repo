@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin_info
+baseCommand:
+  - ppanggolin
+  - info
 label: ppanggolin_info
 doc: "Show information about a pangenome.\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
 inputs:

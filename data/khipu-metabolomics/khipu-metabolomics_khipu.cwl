@@ -71,10 +71,11 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

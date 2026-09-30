@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rabies_preprocess
+baseCommand:
+  - rabies
+  - preprocess
 label: rabies_preprocess
 doc: "Apply preprocessing with only EPI scans. Commonspace registration is executed
   directly using the corrected EPI 3D reference images. The commonspace registration
@@ -82,7 +84,6 @@ inputs:
       fUS images with intensity outliers. * winsorize_upper_bound: the upper bound
       for the antsRegistration winsorize-image-intensities option, useful for fUS
       images with intensity outliers."
-      apply=false,stages=rigid-affine-nlin,masking=false,brain_extraction=false,keep_mask_after_extract=false,template_registration=SyN,winsorize_lower_bound=0.0,winsorize_upper_bound=1.0
     inputBinding:
       position: 103
       prefix: --anat_robust_inho_cor
@@ -168,7 +169,6 @@ inputs:
       registration: Specify a registration script. *** Rigid: conducts only rigid
       registration. *** Affine: conducts Rigid then Affine registration. *** SyN:
       conducts Rigid, Affine then non-linear registration. *** no_reg: skip registration."
-      masking=false,brain_extraction=false,keep_mask_after_extract=false,registration=SyN,winsorize_lower_bound=0.0,winsorize_upper_bound=1.0
     inputBinding:
       position: 103
       prefix: --bold2anat_coreg
@@ -262,7 +262,6 @@ inputs:
       winsorize-image-intensities option, useful for fUS images with intensity outliers.
       * winsorize_upper_bound: the upper bound for the antsRegistration winsorize-image-intensities
       option, useful for fUS images with intensity outliers."
-      stages=rigid-affine-nlin,masking=false,brain_extraction=false,keep_mask_after_extract=false,template_registration=SyN,fast_commonspace=false,winsorize_lower_bound=0.0,winsorize_upper_bound=1.0
     inputBinding:
       position: 103
       prefix: --commonspace_reg

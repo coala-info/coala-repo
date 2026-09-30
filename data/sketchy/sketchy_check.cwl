@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchy check
+baseCommand:
+  - sketchy
+  - check
 label: sketchy_check
 doc: "Check match between sketch and genotype file\n\nTool homepage: https://github.com/esteinig/sketchy"
 inputs:

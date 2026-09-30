@@ -148,7 +148,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_excel_path`
     inputBinding:
       position: 102
       prefix: --output-excel
@@ -156,7 +155,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tab_path`
     inputBinding:
       position: 103
       prefix: --output-tab

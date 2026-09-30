@@ -9,7 +9,7 @@ inputs:
   - id: detail
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Will output detail in files? Default: 0(no).'
     inputBinding:
       position: 101
@@ -47,6 +47,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --inputs
+      itemSeparator: ','
   - id: input_pattern
     type:
       - 'null'
@@ -109,7 +110,7 @@ inputs:
   - id: seq
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'sequencing_summary.txt only? Default: 1(yes).'
     inputBinding:
       position: 101
@@ -132,10 +133,10 @@ inputs:
       prefix: --threads
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' The output folder.'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --outputfolder
 outputs:
   - id: output_folder
     type:

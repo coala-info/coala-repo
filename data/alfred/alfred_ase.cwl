@@ -45,9 +45,9 @@ inputs:
       prefix: --phased
   - id: reference
     type: File
+    doc: reference fasta file
     secondaryFiles:
       - .fai
-    doc: reference fasta file
     inputBinding:
       position: 102
       prefix: --reference
@@ -67,10 +67,10 @@ inputs:
       prefix: --vcffile
   - id: ase_output_path
     type: string
-    doc: Output or path parameter `ase_output_path`
+    doc: allele-specific output file
     inputBinding:
       position: 103
-      prefix: --ase-output
+      prefix: --ase
 outputs:
   - id: ase_output
     type:

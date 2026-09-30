@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq trim_contigs
+baseCommand:
+  - fastaq
+  - trim_contigs
 label: fastaq_trim_contigs
 doc: "Trims a set number of bases off the end of every contig, so gaps get bigger
   and contig ends are removed. Bases are replaced with Ns. Any sequence that ends
@@ -11,6 +13,11 @@ inputs:
     doc: Name of input file
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output file
+    inputBinding:
+      position: 2
   - id: trim_number
     type:
       - 'null'
@@ -20,11 +27,11 @@ inputs:
       position: 102
       prefix: --trim_number
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

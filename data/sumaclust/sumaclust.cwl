@@ -141,26 +141,29 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fasta_output_file_path`
+    doc: '###   : Output in FASTA format is written to file ### instead of standard
+      output.'
     inputBinding:
       position: 103
-      prefix: --fasta-output-file
+      prefix: -F
   - id: otu_map_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `otu_map_output_path`
+    doc: '###   : Output of the OTU map (observation map) is activated, and written
+      to file ###.'
     inputBinding:
       position: 104
-      prefix: --otu-map-output
+      prefix: -O
   - id: otu_table_biom_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `otu_table_biom_output_path`
+    doc: '###   : Output of the OTU table in BIOM format is activated, and written
+      to file ###.'
     inputBinding:
       position: 105
-      prefix: --otu-table-biom-output
+      prefix: -B
 outputs:
   - id: otu_table_biom_output
     type:

@@ -26,22 +26,26 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --bulk
+        separate: true
     doc: "FASTQ or BAM file of mutant bulk. If specifying\n                     FASTQ,
       separate paired-end files with a comma,\n                     e.g., -b fastq1,fastq2.
       This option can be\n                     used multiple times."
     inputBinding:
       position: 101
-      prefix: --bulk
   - id: cultivar
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --cultivar
+        separate: true
     doc: "FASTQ or BAM file of cultivar. If specifying\n                     FASTQ,
       separate paired-end files with a comma,\n                     e.g., -c fastq1,fastq2.
       This option can be\n                     used multiple times."
     inputBinding:
       position: 101
-      prefix: --cultivar
   - id: dot_color
     type:
       - 'null'
@@ -119,9 +123,9 @@ inputs:
       prefix: --N-rep
   - id: reference_fasta
     type: File
+    doc: Reference FASTA file.
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file.
     inputBinding:
       position: 101
       prefix: --ref
@@ -182,10 +186,10 @@ inputs:
       prefix: --window
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: '[-T] [-e <DATABASE>]'
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: -n
 outputs:
   - id: out_dir
     type: Directory

@@ -180,10 +180,10 @@ inputs:
       prefix: -D
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: output_filename_to_send_to
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: -d
 outputs:
   - id: output_filename
     type:

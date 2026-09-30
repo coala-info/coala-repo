@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vg pack
+baseCommand:
+  - vg
+  - pack
 label: vg_pack
 doc: "Compresses alignments into coverage packs.\n\nTool homepage: https://github.com/vgteam/vg"
 inputs:
@@ -129,7 +131,7 @@ inputs:
       prefix: --xg
   - id: packs_out_path
     type: string
-    doc: Output or path parameter `packs_out_path`
+    doc: write compressed coverage packs to this output file
     inputBinding:
       position: 102
       prefix: --packs-out

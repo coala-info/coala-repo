@@ -89,7 +89,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: output folder
     inputBinding:
       position: 101

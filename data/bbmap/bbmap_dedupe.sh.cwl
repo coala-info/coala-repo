@@ -72,7 +72,8 @@ inputs:
       ratio of at most this.
     inputBinding:
       position: 101
-      prefix: depthratio
+      prefix: depthratio=
+      separate: false
   - id: exact
     type:
       - 'null'
@@ -123,7 +124,8 @@ inputs:
       0-based).
     inputBinding:
       position: 101
-      prefix: forcetrimleft
+      prefix: forcetrimleft=
+      separate: false
   - id: forcetrimright
     type:
       - 'null'
@@ -132,7 +134,8 @@ inputs:
       0-based).
     inputBinding:
       position: 101
-      prefix: forcetrimright
+      prefix: forcetrimright=
+      separate: false
   - id: hashns
     type:
       - 'null'
@@ -148,7 +151,9 @@ inputs:
     doc: A single file or a comma-delimited list of files.
     inputBinding:
       position: 101
-      prefix: in
+      prefix: in=
+      itemSeparator: ','
+      separate: false
   - id: interleaved
     type:
       - 'null'
@@ -156,7 +161,8 @@ inputs:
     doc: If true, forces fastq input to be paired and interleaved.
     inputBinding:
       position: 101
-      prefix: interleaved
+      prefix: interleaved=
+      separate: false
   - id: k
     type:
       - 'null'
@@ -164,7 +170,8 @@ inputs:
     doc: Seed length used for finding containments and overlaps.
     inputBinding:
       position: 101
-      prefix: k
+      prefix: k=
+      separate: false
   - id: maxedits
     type:
       - 'null'
@@ -172,7 +179,8 @@ inputs:
     doc: Allow up to this many edits (subs or indels).
     inputBinding:
       position: 101
-      prefix: maxedits
+      prefix: maxedits=
+      separate: false
   - id: maxsubs
     type:
       - 'null'
@@ -180,7 +188,8 @@ inputs:
     doc: Allow up to this many mismatches (substitutions only, no indels).
     inputBinding:
       position: 101
-      prefix: maxsubs
+      prefix: maxsubs=
+      separate: false
   - id: mergedelimiter
     type:
       - 'null'
@@ -188,7 +197,8 @@ inputs:
     doc: Delimiter between merged headers.
     inputBinding:
       position: 101
-      prefix: mergedelimiter
+      prefix: mergedelimiter=
+      separate: false
   - id: mergenames
     type:
       - 'null'
@@ -204,7 +214,8 @@ inputs:
     doc: Do not output clusters smaller than this.
     inputBinding:
       position: 101
-      prefix: minclustersize
+      prefix: minclustersize=
+      separate: false
   - id: minidentity
     type:
       - 'null'
@@ -212,7 +223,8 @@ inputs:
     doc: Absorb contained sequences with percent identity of at least this.
     inputBinding:
       position: 101
-      prefix: minidentity
+      prefix: minidentity=
+      separate: false
   - id: minlengthpercent
     type:
       - 'null'
@@ -221,7 +233,8 @@ inputs:
       to be absorbed.
     inputBinding:
       position: 101
-      prefix: minlengthpercent
+      prefix: minlengthpercent=
+      separate: false
   - id: minoverlap
     type:
       - 'null'
@@ -229,7 +242,8 @@ inputs:
     doc: Overlap must be at least this long to cluster and merge.
     inputBinding:
       position: 101
-      prefix: minoverlap
+      prefix: minoverlap=
+      separate: false
   - id: minoverlappercent
     type:
       - 'null'
@@ -238,7 +252,8 @@ inputs:
       cluster and merge.
     inputBinding:
       position: 101
-      prefix: minoverlappercent
+      prefix: minoverlappercent=
+      separate: false
   - id: minscaf
     type:
       - 'null'
@@ -246,7 +261,8 @@ inputs:
     doc: Ignore contigs/scaffolds shorter than this.
     inputBinding:
       position: 101
-      prefix: minscaf
+      prefix: minscaf=
+      separate: false
   - id: mst
     type:
       - 'null'
@@ -262,7 +278,8 @@ inputs:
     doc: Number of prefixes/suffixes to index per contig.
     inputBinding:
       position: 101
-      prefix: numaffixmaps
+      prefix: numaffixmaps=
+      separate: false
   - id: numbergraphnodes
     type:
       - 'null'
@@ -327,7 +344,8 @@ inputs:
     doc: Set to qtrim=rl to trim leading and trailing Ns.
     inputBinding:
       position: 101
-      prefix: qtrim
+      prefix: qtrim=
+      separate: false
   - id: removecycles
     type:
       - 'null'
@@ -367,7 +385,8 @@ inputs:
     doc: Sort output (length, quality, name, id).
     inputBinding:
       position: 101
-      prefix: sort
+      prefix: sort=
+      separate: false
   - id: storename
     type:
       - 'null'
@@ -391,7 +410,8 @@ inputs:
     doc: Only process reads whose ((ID%subsetcount)==subset).
     inputBinding:
       position: 101
-      prefix: subset
+      prefix: subset=
+      separate: false
   - id: subsetcount
     type:
       - 'null'
@@ -399,7 +419,8 @@ inputs:
     doc: Number of subsets used to process the data; higher uses less memory.
     inputBinding:
       position: 101
-      prefix: subsetcount
+      prefix: subsetcount=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -407,7 +428,8 @@ inputs:
     doc: Set number of threads to use; default is number of logical processors.
     inputBinding:
       position: 101
-      prefix: threads
+      prefix: threads=
+      separate: false
   - id: touppercase
     type:
       - 'null'
@@ -423,7 +445,8 @@ inputs:
     doc: Quality trim level.
     inputBinding:
       position: 101
-      prefix: trimq
+      prefix: trimq=
+      separate: false
   - id: uniquenames
     type:
       - 'null'
@@ -457,7 +480,8 @@ inputs:
     doc: Set to 1 (lowest) through 9 (max) to change compression level.
     inputBinding:
       position: 101
-      prefix: ziplevel
+      prefix: ziplevel=
+      separate: false
   - id: csf_path
     type:
       - 'null'
@@ -465,7 +489,8 @@ inputs:
     doc: Output or path parameter `csf_path`
     inputBinding:
       position: 102
-      prefix: --csf
+      prefix: csf=
+      separate: false
   - id: dot_path
     type:
       - 'null'
@@ -473,15 +498,17 @@ inputs:
     doc: Output or path parameter `dot_path`
     inputBinding:
       position: 103
-      prefix: --dot
+      prefix: dot=
+      separate: false
   - id: out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: This flag will cause the process to exit if an out-of-memory exception 
+      occurs.  Requires Java 8u92+.
     inputBinding:
       position: 104
-      prefix: --out
+      prefix: -eoom
   - id: outd_path
     type:
       - 'null'
@@ -489,7 +516,8 @@ inputs:
     doc: Output or path parameter `outd_path`
     inputBinding:
       position: 105
-      prefix: --outd
+      prefix: outd=
+      separate: false
   - id: pattern_path
     type:
       - 'null'
@@ -497,7 +525,8 @@ inputs:
     doc: Output or path parameter `pattern_path`
     inputBinding:
       position: 106
-      prefix: --pattern
+      prefix: pattern=
+      separate: false
 outputs:
   - id: out
     type:

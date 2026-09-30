@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_reverse
+baseCommand:
+  - smof
+  - reverse
 label: smof_reverse
 doc: "Reverse the letters in each sequence. The complement is NOT taken unless the
   -c flag is set. The extended nucleotide alphabet is supported.\n\nTool homepage:

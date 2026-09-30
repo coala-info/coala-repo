@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dx-cwl run-workflow
+baseCommand:
+  - dx-cwl
+  - run-workflow
 label: dx-cwl_run-workflow
 doc: "Runs a CWL workflow on the DNAnexus platform.\n\nTool homepage: https://github.com/dnanexus/dx-cwl"
 inputs:

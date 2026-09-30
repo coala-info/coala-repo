@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmertools_ctr
+baseCommand:
+  - kmertools
+  - ctr
 label: kmertools_ctr
 doc: "Count k-mers\n\nTool homepage: https://github.com/anuradhawick/kmertools"
 inputs:
@@ -44,7 +46,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

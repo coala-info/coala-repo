@@ -213,11 +213,11 @@ inputs:
       position: 101
       prefix: --wrap
   - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+    type: string?
+    doc: save output files to <directory>, instead of the input
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type:

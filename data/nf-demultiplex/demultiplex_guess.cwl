@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: demultiplex guess
+baseCommand:
+  - demultiplex
+  - guess
 label: demultiplex_guess
 doc: "Retrieve the most frequent barcodes.\n\nTool homepage: https://github.com/jfjlaros/demultiplex"
 inputs:

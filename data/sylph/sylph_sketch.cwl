@@ -153,7 +153,7 @@ inputs:
   - id: sample_output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for sample sketches
     inputBinding:
       position: 102

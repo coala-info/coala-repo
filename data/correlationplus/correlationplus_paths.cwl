@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: correlationplus paths
+baseCommand:
+  - correlationplus
+  - paths
 label: correlationplus_paths
 doc: "A Python package to calculate, visualize and analyze protein correlation maps.\n\
   \nTool homepage: https://github.com/tekpinar/correlationplus"
@@ -69,10 +71,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ': This will be your output file. Output figures are in png format. (Optional)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

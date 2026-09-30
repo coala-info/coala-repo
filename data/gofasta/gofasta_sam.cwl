@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gofasta sam
+baseCommand:
+  - gofasta
+  - sam
 label: gofasta_sam
 doc: "Do things with sam files\n\nTool homepage: https://github.com/cov-ert/gofasta"
 inputs:

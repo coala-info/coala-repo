@@ -95,7 +95,7 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store intermediate and final results
     inputBinding:
       position: 101

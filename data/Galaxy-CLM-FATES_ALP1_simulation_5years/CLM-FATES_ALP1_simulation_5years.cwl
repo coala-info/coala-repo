@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: CLM-FATES_
-  ALP1 simulation (5 years)'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: CLM-FATES_ ALP1 simulation (5 years)'
 inputs:
   CLM-FATES restart file:
     format: data

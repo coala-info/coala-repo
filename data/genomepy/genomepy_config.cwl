@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomepy config
+baseCommand:
+  - genomepy
+  - config
 label: genomepy_config
 doc: "Manage configuration\n\nTool homepage: https://github.com/vanheeringen-lab/genomepy"
 inputs:

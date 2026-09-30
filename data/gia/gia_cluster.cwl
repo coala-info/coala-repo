@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia_cluster
+baseCommand:
+  - gia
+  - cluster
 label: gia_cluster
 doc: "Annotates the intervals of a BED file with their Cluster ID\n\nTool homepage:
   https://github.com/noamteyssier/gia"
@@ -55,7 +57,6 @@ inputs:
       prefix: --sorted
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

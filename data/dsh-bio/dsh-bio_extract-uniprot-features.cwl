@@ -20,6 +20,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --feature-types
+      itemSeparator: ','
   - id: include_comments
     type:
       - 'null'

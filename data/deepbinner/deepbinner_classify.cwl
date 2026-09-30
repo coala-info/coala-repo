@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbinner classify
+baseCommand:
+  - deepbinner
+  - classify
 label: deepbinner_classify
 doc: "Classify fast5 reads\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench optex
+baseCommand:
+  - rbpbench
+  - optex
 label: rbpbench_optex
 doc: "rbpbench optex\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:

@@ -183,42 +183,42 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bed_path`
+    doc: <file>       Output BED file for reads/fragments/intervals
     inputBinding:
       position: 102
-      prefix: --output-bed
+      prefix: -b
   - id: output_bedgraph_p_q_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bedgraph_p_q_path`
+    doc: <file>       Output bedgraph-ish file for p/q values
     inputBinding:
       position: 103
-      prefix: --output-bedgraph-p-q
+      prefix: -f
   - id: output_bedgraph_pileups_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bedgraph_pileups_path`
+    doc: <file>       Output bedgraph-ish file for pileups and p-values
     inputBinding:
       position: 104
-      prefix: --output-bedgraph-pileups
+      prefix: -k
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: <file>       Output peak file (in ENCODE narrowPeak format)
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
   - id: output_pcr_duplicates_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_pcr_duplicates_path`
+    doc: <file>       Output file for PCR duplicates (only with -r)
     inputBinding:
       position: 106
-      prefix: --output-pcr-duplicates
+      prefix: -R
 outputs:
   - id: output_file
     type: File

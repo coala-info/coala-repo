@@ -66,7 +66,8 @@ inputs:
       protein.
     inputBinding:
       position: 103
-      prefix: -suffix
+      prefix: -suffix=
+      separate: false
   - id: swap_in
     type:
       - 'null'
@@ -95,18 +96,20 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `map_info_file_path`
+    doc: =file - output a file with information about each mapping.
     inputBinding:
       position: 104
-      prefix: --map-info-file
+      prefix: -mapInfo=
+      separate: false
   - id: mapping_psls_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mapping_psls_file_path`
+    doc: =pslFile - write mapping alignments that were used in
     inputBinding:
       position: 105
-      prefix: --mapping-psls-file
+      prefix: -mappingPsls=
+      separate: false
 outputs:
   - id: out_psl
     type: File

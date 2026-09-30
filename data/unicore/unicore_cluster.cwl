@@ -17,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: tmp_directory
-    type: Directory
+    type: string
     doc: Temp directory
     inputBinding:
       position: 3

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx fit_predict
+baseCommand:
+  - metafx
+  - fit_predict
 label: metafx_fit_predict
 doc: "Machine Learning methods to train classification model based on extracted features
   and immediately apply it to classify new samples\n\nTool homepage: https://github.com/ctlab/metafx"

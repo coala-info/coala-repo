@@ -80,6 +80,7 @@ inputs:
     doc: File format option
     inputBinding:
       position: 104
+      prefix: -file_format
   - id: file_layout
     type:
       - 'null'
@@ -151,6 +152,7 @@ inputs:
     doc: Read type option
     inputBinding:
       position: 104
+      prefix: -read_type
   - id: reference
     type:
       - 'null'

@@ -133,7 +133,7 @@ inputs:
       position: 102
       prefix: -I
   - id: output_path
-    type: string
+    type: string?
     doc: direct the output to a file named OUTPUT (default=stdout)
     inputBinding:
       position: 103

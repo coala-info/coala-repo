@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tracs_combine
+baseCommand:
+  - tracs
+  - combine
 label: tracs_combine
 doc: "Combine runs of TRACS'm align ready for distance estimation\n\nTool homepage:
   https://github.com/gtonkinhill/tracs"
@@ -32,10 +34,9 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

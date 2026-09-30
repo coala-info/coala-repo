@@ -49,7 +49,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Custom temporary directory
     inputBinding:
       position: 101

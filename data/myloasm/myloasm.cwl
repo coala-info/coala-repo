@@ -161,7 +161,7 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'Output directory for results; created if it does not exist [default: myloasm-out]'
     inputBinding:
       position: 103
       prefix: --output-dir

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools winner
+baseCommand:
+  - poretools
+  - winner
 label: poretools_winner
 doc: "Reports the winner read from each FAST5 file.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

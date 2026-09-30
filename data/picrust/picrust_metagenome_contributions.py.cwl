@@ -57,6 +57,7 @@ inputs:
       format (with otu as SampleIds and traits as ObservationIds)
     inputBinding:
       position: 101
+      prefix: --load_precalc_file_in_biom
   - id: suppress_subset_loading
     type:
       - 'null'
@@ -67,6 +68,7 @@ inputs:
       cost of more memory usage)
     inputBinding:
       position: 101
+      prefix: --suppress_subset_loading
   - id: type_of_prediction
     type:
       - 'null'
@@ -85,10 +87,9 @@ inputs:
       prefix: --verbose
   - id: output_fp_path
     type: string
-    doc: Output or path parameter `output_fp_path`
     inputBinding:
       position: 102
-      prefix: --output-fp
+      prefix: --output_fp
 outputs:
   - id: output_fp
     type: File

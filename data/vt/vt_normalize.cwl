@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt normalize
+baseCommand:
+  - vt
+  - normalize
 label: vt_normalize
 doc: "normalizes variants in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:

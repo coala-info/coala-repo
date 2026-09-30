@@ -963,6 +963,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --merge-model
+      itemSeparator: ','
   - id: merge_model_usage
     type:
       - 'null'
@@ -988,6 +989,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --merge-rate
+      itemSeparator: ','
   - id: merge_rate_usage
     type:
       - 'null'
@@ -1120,6 +1122,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mset
+      itemSeparator: ','
   - id: mset_restriction
     type:
       - 'null'

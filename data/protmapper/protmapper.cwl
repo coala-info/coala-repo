@@ -14,6 +14,13 @@ inputs:
       fourth, a site position on the protein.
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Path to the output file to be generated. Each line of the output file 
+      corresponds to a line in the input file. Each line represents a mapped 
+      site produced by Protmapper.
+    inputBinding:
+      position: 2
   - id: no_isoform_mapping
     type:
       - 'null'
@@ -54,13 +61,13 @@ inputs:
       position: 102
       prefix: --peptide
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Path to the output file to be generated. Each line of the output file 
       corresponds to a line in the input file. Each line represents a mapped 
       site produced by Protmapper.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/protmapper:0.0.29--pyhdfd78af_0

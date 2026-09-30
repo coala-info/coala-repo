@@ -28,7 +28,6 @@ inputs:
       prefix: --parameter-cut-off
   - id: output_hmnqc_xlsx_path
     type: string
-    doc: Output or path parameter `output_hmnqc_xlsx_path`
     inputBinding:
       position: 102
       prefix: --output-hmnqc-xlsx

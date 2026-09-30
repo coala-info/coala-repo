@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mitoz assemble
+baseCommand:
+  - mitoz
+  - assemble
 label: mitoz_assemble
 doc: "Mitochondrial genome assembly from input fastq files.\n\nTool homepage: https://github.com/linzhi2013/MitoZ"
 inputs:
@@ -196,7 +198,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set temp directory for megahit if necessary (See 
       https://github.com/linzhi2013/MitoZ/issues/176)
     inputBinding:

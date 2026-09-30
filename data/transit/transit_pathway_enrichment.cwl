@@ -118,6 +118,7 @@ inputs:
       from resampling).'
     inputBinding:
       position: 104
+      prefix: -ranking
   - id: topk
     type:
       - 'null'
@@ -126,6 +127,7 @@ inputs:
       regardless of cutoff (can combine with -focusLFC).
     inputBinding:
       position: 104
+      prefix: -topk
 outputs:
   - id: output_file
     type: File

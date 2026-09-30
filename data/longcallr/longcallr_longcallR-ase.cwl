@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: longcallr_longcallR-ase
+baseCommand: longcallR-ase
 label: longcallr_longcallR-ase
 doc: "Performs allele-specific expression analysis using LongcallR.\n\nTool homepage:
   https://github.com/huangnengCSU/longcallR"
@@ -77,16 +77,18 @@ inputs:
       prefix: --vcf3
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: prefix of output file
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      type: array
+      items: File
     doc: prefix of output file
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

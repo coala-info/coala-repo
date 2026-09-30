@@ -213,30 +213,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --tree-file
-  - id: cladogram_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `cladogram_path`
-    inputBinding:
-      position: 104
-      prefix: --cladogram
-  - id: cluster_list_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `cluster_list_path`
-    inputBinding:
-      position: 105
-      prefix: --cluster-list
-  - id: cluster_oligos_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `cluster_oligos_path`
-    inputBinding:
-      position: 106
-      prefix: --cluster-oligos
   - id: fasta_out_path
     type:
       - 'null'
@@ -245,38 +221,6 @@ inputs:
     inputBinding:
       position: 107
       prefix: --fasta-out
-  - id: fold_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `fold_path`
-    inputBinding:
-      position: 108
-      prefix: --fold
-  - id: gff_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `gff_path`
-    inputBinding:
-      position: 109
-      prefix: --gff
-  - id: lineage_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `lineage_path`
-    inputBinding:
-      position: 110
-      prefix: --lineage
-  - id: match_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `match_output_path`
-    inputBinding:
-      position: 111
-      prefix: --match-output
   - id: newick_out_path
     type:
       - 'null'
@@ -285,46 +229,100 @@ inputs:
     inputBinding:
       position: 112
       prefix: --newick-out
+  - id: cladogram_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 113
+      prefix: --cladogram
+  - id: cluster_list_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 114
+      prefix: --cluster-list=
+      separate: false
+  - id: cluster_oligos_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 115
+      prefix: --cluster-oligos=
+      separate: false
+  - id: fold_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 116
+      prefix: --fold=
+      separate: false
+  - id: gff_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 117
+      prefix: --gff=
+      separate: false
+  - id: lineage_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 118
+      prefix: --lineage=
+      separate: false
+  - id: match_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 119
+      prefix: --match-output
   - id: node_list_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `node_list_path`
     inputBinding:
-      position: 113
-      prefix: --node-list
+      position: 120
+      prefix: --node-list=
+      separate: false
   - id: positions_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `positions_path`
     inputBinding:
-      position: 114
-      prefix: --positions
+      position: 121
+      prefix: --positions=
+      separate: false
   - id: ranges_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ranges_path`
     inputBinding:
-      position: 115
-      prefix: --ranges
+      position: 122
+      prefix: --ranges=
+      separate: false
   - id: strings_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `strings_path`
     inputBinding:
-      position: 116
-      prefix: --strings
+      position: 123
+      prefix: --strings=
+      separate: false
   - id: time_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `time_path`
     inputBinding:
-      position: 117
-      prefix: --time
+      position: 124
+      prefix: --time=
+      separate: false
 outputs:
   - id: strings
     type:

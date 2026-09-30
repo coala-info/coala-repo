@@ -89,7 +89,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

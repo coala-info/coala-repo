@@ -126,10 +126,10 @@ inputs:
       prefix: -vertical
   - id: mtzout_path
     type: string
-    doc: Output or path parameter `mtzout_path`
+    doc: Output best and difference map coefficients to MTZ files
     inputBinding:
       position: 102
-      prefix: --mtzout
+      prefix: -mtzout
 outputs:
   - id: mtzout
     type:

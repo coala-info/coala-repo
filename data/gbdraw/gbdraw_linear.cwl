@@ -280,7 +280,7 @@ inputs:
   - id: qualifier_priority
     type:
       - 'null'
-      - string
+      - File
     doc: "Path to a TSV file defining qualifier priority for\n                   \
       \     labels (optional)"
     inputBinding:

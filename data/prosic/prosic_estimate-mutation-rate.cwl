@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prosic estimate-mutation-rate
+baseCommand:
+  - prosic
+  - estimate-mutation-rate
 label: prosic_estimate-mutation-rate
 doc: "Estimate the effective mutation rate of a tumor sample from a VCF/BCF with candidate
   variants from STDIN.\n\nTool homepage: https://prosic.github.io"

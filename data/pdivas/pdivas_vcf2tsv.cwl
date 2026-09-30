@@ -14,10 +14,10 @@ inputs:
       prefix: -I
   - id: output_tsv_path
     type: string
-    doc: Output or path parameter `output_tsv_path`
+    doc: output.tsv        The path to output tsv file name and pass
     inputBinding:
       position: 102
-      prefix: --output-tsv
+      prefix: -O
 outputs:
   - id: output_tsv
     type: File

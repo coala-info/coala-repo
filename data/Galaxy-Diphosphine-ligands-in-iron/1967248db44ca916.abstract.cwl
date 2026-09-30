@@ -30,71 +30,92 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: A data
-    out: []
+    out:
+    - athena_project_file
   '8':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: B data
-    out: []
+    out:
+    - athena_project_file
   '9':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: C data
-    out: []
+    out:
+    - athena_project_file
   '10':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: D data
-    out: []
+    out:
+    - athena_project_file
   '11':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: Fe Metal
-    out: []
+    out:
+    - athena_project_file
   '12':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: FeBr
-    out: []
+    out:
+    - athena_project_file
   '13':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 7a
-    out: []
+    out:
+    - athena_project_file
   '14':
     run:
       class: Operation

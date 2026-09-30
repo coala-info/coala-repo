@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bigsi build
+baseCommand:
+  - bigsi
+  - build
 label: bigsi_build
 doc: "Build a BIGSI index.\n\nTool homepage: https://github.com/Phelimb/BIGSI"
 inputs:
@@ -30,7 +32,7 @@ inputs:
   - id: index_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store the index
     inputBinding:
       position: 102

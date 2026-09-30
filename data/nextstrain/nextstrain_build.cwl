@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextstrain build
+baseCommand:
+  - nextstrain
+  - build
 label: nextstrain_build
 doc: "Runs a pathogen build in the Nextstrain build environment.\n\nTool homepage:
   https://nextstrain.org"
@@ -35,6 +37,7 @@ inputs:
     doc: Launch jobs on AWS Batch instead of running locally
     inputBinding:
       position: 103
+      prefix: --aws-batch
   - id: cpus
     type:
       - 'null'
@@ -92,6 +95,7 @@ inputs:
     doc: Run the build in the native ambient environment
     inputBinding:
       position: 103
+      prefix: --native
   - id: no_download
     type:
       - 'null'

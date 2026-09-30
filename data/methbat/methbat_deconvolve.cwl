@@ -28,7 +28,7 @@ inputs:
       prefix: --min-active
   - id: output_estimate_path
     type: string
-    doc: Output or path parameter `output_estimate_path`
+    doc: Output summary file from deconvolution estimates (JSON)
     inputBinding:
       position: 102
       prefix: --output-estimate

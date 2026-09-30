@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert bed2wiggle
+baseCommand:
+  - bioconvert
+  - bed2wiggle
 label: bioconvert_bed2wiggle
 doc: "Convert file from '('BED',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

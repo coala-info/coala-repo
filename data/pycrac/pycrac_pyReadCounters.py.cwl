@@ -256,7 +256,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `discarded_path`
+    doc: prints the lines from the alignments file that were
     inputBinding:
       position: 102
       prefix: --discarded
@@ -264,15 +264,14 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output_file
   - id: zip_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `zip_path`
+    doc: use this option to compress all the output files in a
     inputBinding:
       position: 104
       prefix: --zip

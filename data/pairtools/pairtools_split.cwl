@@ -58,7 +58,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_pairs_path`
+    doc: output pairs file. If the path ends with .gz or .lz4,
     inputBinding:
       position: 103
       prefix: --output-pairs
@@ -66,7 +66,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sam_path`
+    doc: output sam file. If the path ends with .bam, the output
     inputBinding:
       position: 104
       prefix: --output-sam

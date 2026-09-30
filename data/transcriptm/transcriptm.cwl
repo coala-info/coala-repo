@@ -13,16 +13,19 @@ inputs:
       format)'
     inputBinding:
       position: 1
+      prefix: --paired_end
   - id: metaG_contigs
     type: File
     doc: All contigs from the reference metagenome in a fasta file
     inputBinding:
       position: 2
+      prefix: --metaG_contigs
   - id: dir_bins
     type: Directory
     doc: Directory which contains several annotated population genomes (bins)
     inputBinding:
       position: 3
+      prefix: --dir_bins
   - id: adapters
     type:
       - 'null'
@@ -30,6 +33,7 @@ inputs:
     doc: Type of adapters to clip
     inputBinding:
       position: 104
+      prefix: --adapters
   - id: crop
     type:
       - 'null'
@@ -37,6 +41,7 @@ inputs:
     doc: Cut read to a specific length
     inputBinding:
       position: 104
+      prefix: --crop
   - id: db_path
     type:
       - 'null'
@@ -44,6 +49,7 @@ inputs:
     doc: Directory which contains the TranscriptM databases
     inputBinding:
       position: 104
+      prefix: --db_path
   - id: headcrop
     type:
       - 'null'
@@ -51,6 +57,7 @@ inputs:
     doc: Cut specified number of bases from start of read
     inputBinding:
       position: 104
+      prefix: --headcrop
   - id: log_file
     type:
       - 'null'
@@ -66,6 +73,7 @@ inputs:
     doc: Minimum average quality score for 4 bp windows
     inputBinding:
       position: 104
+      prefix: --min_avg_qc
   - id: min_len
     type:
       - 'null'
@@ -73,6 +81,7 @@ inputs:
     doc: Minimum required length of read
     inputBinding:
       position: 104
+      prefix: --min_len
   - id: min_qc
     type:
       - 'null'
@@ -80,6 +89,7 @@ inputs:
     doc: Minimum quality score for leading and trailing bases
     inputBinding:
       position: 104
+      prefix: --min_qc
   - id: no_mapping_filter
     type:
       - 'null'
@@ -87,13 +97,15 @@ inputs:
     doc: Do not adjust the mapping stringency by filtering alignments
     inputBinding:
       position: 104
+      prefix: --no_mapping_filter
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 104
+      prefix: --output_dir
   - id: path_db_smr
     type:
       - 'null'
@@ -101,6 +113,7 @@ inputs:
     doc: Path to databases and index
     inputBinding:
       position: 104
+      prefix: --path_db_smr
   - id: percentage_aln
     type:
       - 'null'
@@ -108,6 +121,7 @@ inputs:
     doc: Minimum allowable percentage read bases mapped
     inputBinding:
       position: 104
+      prefix: --percentage_aln
   - id: percentage_id
     type:
       - 'null'
@@ -115,6 +129,7 @@ inputs:
     doc: Minimum allowable percentage base identity of a mapped read
     inputBinding:
       position: 104
+      prefix: --percentage_id
   - id: phred
     type:
       - 'null'
@@ -122,6 +137,7 @@ inputs:
     doc: Quality encoding
     inputBinding:
       position: 104
+      prefix: --phred
   - id: threads
     type:
       - 'null'
@@ -129,6 +145,7 @@ inputs:
     doc: Number of threads to use
     inputBinding:
       position: 104
+      prefix: --threads
   - id: verbose
     type:
       - 'null'
@@ -144,6 +161,7 @@ inputs:
     doc: Working directory
     inputBinding:
       position: 104
+      prefix: --working_dir
 outputs:
   - id: stdout
     type: stdout

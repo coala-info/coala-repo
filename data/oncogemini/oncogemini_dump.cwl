@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini dump
+baseCommand:
+  - oncogemini
+  - dump
 label: oncogemini_dump
 doc: "Dump data from the oncogemini database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

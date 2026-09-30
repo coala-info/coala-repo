@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanomonsv insert_classify
+baseCommand:
+  - nanomonsv
+  - insert_classify
 label: nanomonsv_insert_classify
 doc: "Classify SVs based on LINE1 insertion\n\nTool homepage: https://github.com/friend1ws/nanomonsv"
 inputs:
@@ -9,21 +11,26 @@ inputs:
     doc: Path to nanomonsv get result file
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Path to output file
+    inputBinding:
+      position: 2
   - id: reference_fa
     type: File
     doc: Path to the reference genome sequence
     inputBinding:
-      position: 2
+      position: 3
   - id: gencode_gtf_gz
     type: File
     doc: Path to GFT file for transcript
     inputBinding:
-      position: 3
+      position: 4
   - id: line1_db
     type: File
     doc: Path to LINE1 position file
     inputBinding:
-      position: 4
+      position: 5
   - id: debug
     type:
       - 'null'
@@ -33,11 +40,11 @@ inputs:
       position: 105
       prefix: --debug
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: Path to output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanomonsv:0.8.1--pyhdfd78af_0

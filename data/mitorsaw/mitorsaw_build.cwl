@@ -1,14 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mitorsaw_build
+baseCommand:
+  - mitorsaw
+  - build
 label: mitorsaw_build
 doc: "Download and build the mitochondria database\n\nTool homepage: https://github.com/PacificBiosciences/mitorsaw"
 inputs:
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -23,7 +25,7 @@ inputs:
       prefix: --verbose
   - id: output_db_path
     type: string
-    doc: Output or path parameter `output_db_path`
+    doc: Output database location (JSON)
     inputBinding:
       position: 102
       prefix: --output-db

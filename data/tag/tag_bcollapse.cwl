@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tag bcollapse
+baseCommand:
+  - tag
+  - bcollapse
 label: tag_bcollapse
 doc: "Collapse overlapping features in GFF3 files into loci.\n\nTool homepage: https://github.com/standage/tag/"
 inputs:
@@ -47,10 +49,10 @@ inputs:
       prefix: --relax
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: write output in GFF3 to FILE; default is terminal
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

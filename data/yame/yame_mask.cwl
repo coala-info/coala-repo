@@ -35,10 +35,10 @@ inputs:
       prefix: -v
   - id: output_cx_file_path
     type: string
-    doc: Output or path parameter `output_cx_file_path`
+    doc: output cx file name. if missing, output to stdout without index.
     inputBinding:
       position: 104
-      prefix: --output-cx-file
+      prefix: -o
 outputs:
   - id: output_cx_file
     type:

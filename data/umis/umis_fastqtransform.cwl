@@ -83,7 +83,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fastq1out_path`
     inputBinding:
       position: 107
       prefix: --fastq1out
@@ -91,7 +90,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fastq2out_path`
     inputBinding:
       position: 108
       prefix: --fastq2out

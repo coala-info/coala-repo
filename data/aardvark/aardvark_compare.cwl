@@ -81,9 +81,9 @@ inputs:
       prefix: --query-vcf
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -138,15 +138,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_debug_path`
+    doc: Optional output debug folder
     inputBinding:
       position: 102
       prefix: --output-debug
   - id: output_dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_path`
+    type: string
+    doc: Output directory containing summary and VCFs
     inputBinding:
       position: 103
       prefix: --output-dir

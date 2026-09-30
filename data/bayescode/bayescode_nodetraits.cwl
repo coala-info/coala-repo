@@ -48,7 +48,7 @@ inputs:
       position: 102
       prefix: --traitsfile
   - id: tree
-    type: string
+    type: File
     doc: File path to the tree (NHX format).
     inputBinding:
       position: 102

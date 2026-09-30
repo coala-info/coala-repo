@@ -182,10 +182,10 @@ inputs:
       prefix: -q
   - id: output_tree_path
     type: string
-    doc: Output or path parameter `output_tree_path`
+    doc: output tree                                     [null]
     inputBinding:
       position: 103
-      prefix: --output-tree
+      prefix: -o
 outputs:
   - id: output_tree
     type:

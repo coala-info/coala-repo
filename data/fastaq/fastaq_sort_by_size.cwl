@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq sort_by_size
+baseCommand:
+  - fastaq
+  - sort_by_size
 label: fastaq_sort_by_size
 doc: "Sorts sequences in length order\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Name of input file
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output file
+    inputBinding:
+      position: 2
   - id: reverse
     type:
       - 'null'
@@ -18,11 +25,11 @@ inputs:
       position: 102
       prefix: --reverse
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: elastic-blast submit
+baseCommand:
+  - elastic-blast
+  - submit
 label: elastic-blast_submit
 doc: "Submit a BLAST search to ElasticBLAST\n\nTool homepage: https://pypi.org/project/elastic-blast/"
 inputs:

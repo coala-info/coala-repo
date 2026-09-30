@@ -270,7 +270,7 @@ inputs:
       prefix: --user-provided-loss-prob
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: Path to where trace file will be written in
     inputBinding:
       position: 102
       prefix: --out-file

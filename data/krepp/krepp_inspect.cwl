@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: krepp inspect
+baseCommand:
+  - krepp
+  - inspect
 label: krepp_inspect
 doc: "Display statistics and information for a given index.\n\nTool homepage: https://github.com/bo1929/krepp"
 inputs:

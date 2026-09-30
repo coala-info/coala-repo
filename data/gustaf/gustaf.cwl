@@ -313,18 +313,20 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gff_output_file_path`
+    doc: ' Name of gff breakpoint output file. Valid filetypes are: .txt and .gff.
+      Default: breakpoints.gff.'
     inputBinding:
       position: 104
-      prefix: --gff-output-file
+      prefix: -gff
   - id: vcf_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_output_file_path`
+    doc: ' Name of vcf breakpoint output file. Valid filetypes are: .vcf and .txt.
+      Default: breakpoints.vcf.'
     inputBinding:
       position: 105
-      prefix: --vcf-output-file
+      prefix: -vcf
 outputs:
   - id: gff_output_file
     type:

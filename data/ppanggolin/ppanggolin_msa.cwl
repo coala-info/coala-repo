@@ -107,7 +107,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for storing temporary files
     inputBinding:
       position: 101
@@ -140,7 +140,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

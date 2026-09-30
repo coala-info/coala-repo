@@ -56,10 +56,10 @@ inputs:
       prefix: --thresh_p_ranksum
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' The output file of gene information. e.g. xxx.csv [required]'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

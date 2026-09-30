@@ -240,26 +240,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `export_output_folder_path`
     inputBinding:
       position: 103
-      prefix: --export-output-folder
+      prefix: --export_output_folder
   - id: output_csv_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_csv_path`
     inputBinding:
       position: 104
-      prefix: --output-csv
+      prefix: --output_csv
   - id: pep_fasta_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pep_fasta_out_path`
     inputBinding:
       position: 105
-      prefix: --pep-fasta-out
+      prefix: --pep_fasta_out
 outputs:
   - id: output_csv
     type:

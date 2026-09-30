@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: beamspy annotate-compounds
+baseCommand:
+  - beamspy
+  - annotate-compounds
 label: beamspy_annotate-compounds
 doc: "Annotate compounds using a peaklist and a database.\n\nTool homepage: https://github.com/computational-metabolomics/beamspy"
 inputs:

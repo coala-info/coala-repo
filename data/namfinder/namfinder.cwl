@@ -6,9 +6,9 @@ doc: "namfinder 0.1.2\n\nTool homepage: https://github.com/ksahlin/namfinder"
 inputs:
   - id: reference
     type: File
+    doc: Reference in FASTA format
     secondaryFiles:
       - .fai
-    doc: Reference in FASTA format
     inputBinding:
       position: 1
   - id: reads1
@@ -162,10 +162,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '[PATH]     redirect output to file [stdout]'
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

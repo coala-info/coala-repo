@@ -198,7 +198,7 @@ inputs:
       prefix: --trim-length
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Directory path to store output including
     inputBinding:
       position: 102
       prefix: --output-dir

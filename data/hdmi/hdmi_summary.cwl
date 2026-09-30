@@ -30,7 +30,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for merged files
     inputBinding:
       position: 101

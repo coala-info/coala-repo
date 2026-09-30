@@ -82,7 +82,7 @@ inputs:
       position: 101
       prefix: --nprocs
   - id: output_dir
-    type: Directory
+    type: string
     doc: The output directory
     inputBinding:
       position: 101
@@ -190,7 +190,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: If specified, the directory where to store the temporary files.
     inputBinding:
       position: 101

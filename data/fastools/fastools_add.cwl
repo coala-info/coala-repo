@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_add
+baseCommand:
+  - fastools
+  - add
 label: fastools_add
 doc: "Add a sequence to the 5' end of each read in a FASTQ file.\n\nTool homepage:
   https://git.lumc.nl/j.f.j.laros/fastools"
@@ -10,11 +12,16 @@ inputs:
     doc: input file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output file
+    inputBinding:
+      position: 2
   - id: seq
     type: string
     doc: a sequence (str)
     inputBinding:
-      position: 2
+      position: 3
   - id: quality
     type:
       - 'null'
@@ -24,11 +31,11 @@ inputs:
       position: 103
       prefix: -q
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastools:1.1.5--pyh7cba7a3_0

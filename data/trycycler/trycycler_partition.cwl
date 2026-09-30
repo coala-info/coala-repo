@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trycycler partition
+baseCommand:
+  - trycycler
+  - partition
 label: trycycler_partition
 doc: "partition reads by cluster\n\nTool homepage: https://github.com/rrwick/Trycycler"
 inputs:

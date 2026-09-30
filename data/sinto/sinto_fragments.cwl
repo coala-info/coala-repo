@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sinto fragments
+baseCommand:
+  - sinto
+  - fragments
 label: sinto_fragments
 doc: "Create ATAC-seq fragment file from BAM file\n\nTool homepage: https://timoast.github.io/sinto/"
 inputs:
@@ -124,10 +126,11 @@ inputs:
       prefix: --use_chrom
   - id: fragments_output_path
     type: string
-    doc: Output or path parameter `fragments_output_path`
+    doc: ' Name and path for output fragments file. Note that the output is not sorted
+      or compressed. To sort the output file use sort -k 1,1 -k2,2n'
     inputBinding:
       position: 102
-      prefix: --fragments-output
+      prefix: --fragments
 outputs:
   - id: fragments_output
     type: File

@@ -149,17 +149,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vntr_id
+      itemSeparator: ','
   - id: working_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory for creating temporary files needed for computation
     inputBinding:
       position: 101
       prefix: --working_directory
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: file to write results. adVNTR writes output to stdout if oufile is not
     inputBinding:
       position: 102
       prefix: --outfile

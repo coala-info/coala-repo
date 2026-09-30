@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe_ec_reads
+baseCommand:
+  - haphpipe
+  - ec_reads
 label: haphpipe_ec_reads
 doc: "Extracts reads from FASTQ files based on various criteria.\n\nTool homepage:
   https://github.com/gwcbi/haphpipe"
@@ -64,7 +66,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

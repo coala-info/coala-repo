@@ -52,7 +52,8 @@ inputs:
     doc: Print various types of debugging information.
     inputBinding:
       position: 102
-      prefix: --debug
+      prefix: --debug=
+      separate: false
   - id: debug_info
     type:
       - 'null'
@@ -116,7 +117,8 @@ inputs:
     doc: Allow N jobs at once; infinite jobs with no arg.
     inputBinding:
       position: 102
-      prefix: --jobs
+      prefix: --jobs=
+      separate: false
   - id: jobserver_style
     type:
       - 'null'
@@ -148,7 +150,8 @@ inputs:
     doc: Don't start multiple jobs unless load is below N.
     inputBinding:
       position: 102
-      prefix: --load-average
+      prefix: --load-average=
+      separate: false
   - id: makefile
     type:
       - 'null'
@@ -164,7 +167,8 @@ inputs:
     doc: Don't start multiple jobs unless load is below N.
     inputBinding:
       position: 102
-      prefix: --max-load
+      prefix: --max-load=
+      separate: false
   - id: new_file
     type:
       - 'null'
@@ -228,7 +232,8 @@ inputs:
     doc: Synchronize output of parallel jobs by TYPE.
     inputBinding:
       position: 102
-      prefix: --output-sync
+      prefix: --output-sync=
+      separate: false
   - id: print_data_base
     type:
       - 'null'
@@ -276,7 +281,8 @@ inputs:
     doc: Perform shuffle of prerequisites and goals.
     inputBinding:
       position: 102
-      prefix: --shuffle
+      prefix: --shuffle=
+      separate: false
   - id: silent
     type:
       - 'null'

@@ -22,6 +22,7 @@ inputs:
       https://raw.githubusercontent.com/maxibor/sam2lca/master/data/acc2tax.json
     inputBinding:
       position: 101
+      prefix: --acc2tax_json
   - id: taxo_merged
     type:
       - 'null'
@@ -30,6 +31,7 @@ inputs:
       custom taxonomy database (non ncbi or gtdb)
     inputBinding:
       position: 101
+      prefix: --taxo_merged
   - id: taxo_names
     type:
       - 'null'
@@ -38,6 +40,7 @@ inputs:
       taxonomy database (non ncbi or gtdb)
     inputBinding:
       position: 101
+      prefix: --taxo_names
   - id: taxo_nodes
     type:
       - 'null'
@@ -46,6 +49,7 @@ inputs:
       taxonomy database (non ncbi or gtdb)
     inputBinding:
       position: 101
+      prefix: --taxo_nodes
   - id: taxonomy
     type:
       - 'null'

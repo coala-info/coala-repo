@@ -51,7 +51,7 @@ inputs:
   - id: independent_assembly
     type:
       - 'null'
-      - boolean
+      - string
     doc: Independent (de novo) assembly i.e Targets used to recruit reads for de
       novo assembly, not guide/seed reference-based assemblies (-i 1 = yes 
       (default), 0 = no, optional)

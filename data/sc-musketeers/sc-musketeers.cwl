@@ -579,7 +579,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - boolean
+      - string
     doc: Verbose output
     inputBinding:
       position: 103
@@ -602,10 +602,10 @@ inputs:
       prefix: --weight_decay
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: The output directory
     inputBinding:
       position: 104
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type:

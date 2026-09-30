@@ -145,7 +145,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Output directory.Default will be\n                                     \
       \                                    \"matam_assembly\""
     inputBinding:

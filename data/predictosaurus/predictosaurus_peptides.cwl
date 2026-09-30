@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predictosaurus peptides
+baseCommand:
+  - predictosaurus
+  - peptides
 label: predictosaurus_peptides
 doc: "Output all distinct peptides from the given features to a fastq file per given
   CDS in the feature file\n\nTool homepage: https://github.com/fxwiegand/predictosaurus"
@@ -60,9 +62,9 @@ inputs:
       prefix: --min-event-prob
   - id: reference
     type: File
+    doc: Path to reference genome fasta file
     secondaryFiles:
       - .fai
-    doc: Path to reference genome fasta file
     inputBinding:
       position: 101
       prefix: --reference
@@ -81,7 +83,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

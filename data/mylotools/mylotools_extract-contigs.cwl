@@ -24,7 +24,7 @@ inputs:
       position: 101
       prefix: --min-contig-length
   - id: output_folder
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

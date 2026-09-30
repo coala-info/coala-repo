@@ -57,6 +57,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --inputs
+      itemSeparator: ','
   - id: log
     type:
       - 'null'
@@ -125,7 +126,6 @@ inputs:
       prefix: --udqual
   - id: outputfolder_path
     type: string
-    doc: Output or path parameter `outputfolder_path`
     inputBinding:
       position: 102
       prefix: --outputfolder

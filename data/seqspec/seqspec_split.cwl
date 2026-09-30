@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec split
+baseCommand:
+  - seqspec
+  - split
 label: seqspec_split
 doc: "Split seqspec file into one file per modality.\n\nTool homepage: https://github.com/sbooeshaghi/seqspec"
 inputs:
@@ -11,7 +13,7 @@ inputs:
       position: 1
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output files
     inputBinding:
       position: 101
       prefix: --output

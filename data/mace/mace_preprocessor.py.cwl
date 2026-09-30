@@ -30,6 +30,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --inputFile
+      itemSeparator: ','
   - id: kmer_size
     type:
       - 'null'

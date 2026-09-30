@@ -130,7 +130,7 @@ inputs:
   - id: list_only_pathways
     type:
       - 'null'
-      - boolean
+      - string
     doc: Only list pathways found for keyword
     inputBinding:
       position: 102
@@ -156,7 +156,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to directory, where output files will be saved
     inputBinding:
       position: 102
@@ -205,7 +205,7 @@ inputs:
   - id: strict_candidate_handling
     type:
       - 'null'
-      - boolean
+      - string
     doc: Strict candidate reaction handling (do _not_ use pathway completeness, 
       key kenzymes and operon structure to infere if imcomplete pathway could be
       still present)
@@ -224,7 +224,7 @@ inputs:
   - id: temp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set user-defined temporary folder
     inputBinding:
       position: 102

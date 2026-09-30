@@ -14,12 +14,12 @@ doc: "Simulate a diploid genome by creating a copy of a haploid genome with hete
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: FASTA file containing the reference genome. It may be compressed 
       (gzip). It may contain multiple sequences (scaffolds or chromosomes), each
       marked with a separate FASTA tag line. If '-' is specified, the reference 
       sequence is read from stdin, but it must be uncompressed.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 1
   - id: indel_rate
@@ -105,7 +105,6 @@ inputs:
       prefix: --transition-to-transversion-ratio
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
       prefix: --output-file

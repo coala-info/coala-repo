@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamdam_krona
+baseCommand:
+  - bamdam
+  - krona
 label: bamdam_krona
 doc: "Generate Krona plots from BAM data.\n\nTool homepage: https://github.com/bdesanctis/bamdam"
 inputs:
@@ -51,10 +53,10 @@ inputs:
       prefix: --minreads
   - id: out_xml_path
     type: string
-    doc: Output or path parameter `out_xml_path`
+    doc: 'Path to output xml file name (default: out.xml)'
     inputBinding:
       position: 102
-      prefix: --out-xml
+      prefix: --out_xml
 outputs:
   - id: out_xml
     type:

@@ -64,18 +64,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `distance_output_path`
+    doc: Output file for the distance matrix. [default stdout]
     inputBinding:
       position: 103
-      prefix: --distance-output
+      prefix: --distance
   - id: kernel_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `kernel_output_path`
+    doc: Output file for the kernel matrix. [default None]
     inputBinding:
       position: 104
-      prefix: --kernel-output
+      prefix: --kernel
 outputs:
   - id: kernel_output
     type:

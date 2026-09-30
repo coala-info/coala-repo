@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi_score
+baseCommand:
+  - tsumugi
+  - score
 label: tsumugi_score
 doc: "Filter genes based on the similarity score per KO or shared between KO pairs.\n\
   \nTool homepage: https://github.com/akikuno/TSUMUGI-dev"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kcftools kcf2tsv
+baseCommand:
+  - kcftools
+  - kcf2tsv
 label: kcftools_kcf2tsv
 doc: "Convert KCF file to TSV file (IBSpy like)\n\nTool homepage: https://github.com/sivasubramanics/kcftools"
 inputs:
@@ -20,16 +22,18 @@ inputs:
       prefix: --sample
   - id: output_file_prefix_path
     type: string
-    doc: Output or path parameter `output_file_prefix_path`
+    doc: Output file name Prefix
     inputBinding:
       position: 102
-      prefix: --output-file-prefix
+      prefix: --output
 outputs:
   - id: output_file_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Output file name Prefix
     outputBinding:
-      glob: $(inputs.output_file_prefix_path)
+      glob: $(inputs.output_file_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

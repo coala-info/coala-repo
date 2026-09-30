@@ -112,7 +112,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for temporary files.
     inputBinding:
       position: 101

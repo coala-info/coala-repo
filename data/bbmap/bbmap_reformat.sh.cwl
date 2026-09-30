@@ -21,7 +21,8 @@ inputs:
     doc: Ignore fasta reads shorter than this
     inputBinding:
       position: 101
-      prefix: fastaminlen
+      prefix: fastaminlen=
+      separate: false
   - id: fasta_read_len
     type:
       - 'null'
@@ -30,7 +31,8 @@ inputs:
       this length
     inputBinding:
       position: 101
-      prefix: fastareadlen
+      prefix: fastareadlen=
+      separate: false
   - id: fasta_wrap
     type:
       - 'null'
@@ -38,7 +40,8 @@ inputs:
     doc: Length of lines in fasta output
     inputBinding:
       position: 101
-      prefix: fastawrap
+      prefix: fastawrap=
+      separate: false
   - id: input_file
     type: File
     doc: Input file
@@ -77,7 +80,8 @@ inputs:
       discarded
     inputBinding:
       position: 101
-      prefix: minavgquality
+      prefix: minavgquality=
+      separate: false
   - id: min_length
     type:
       - 'null'
@@ -85,7 +89,8 @@ inputs:
     doc: Reads shorter than this after trimming will be discarded
     inputBinding:
       position: 101
-      prefix: minlength
+      prefix: minlength=
+      separate: false
   - id: min_mapq
     type:
       - 'null'
@@ -93,7 +98,8 @@ inputs:
     doc: If non-negative, toss reads with mapq under this
     inputBinding:
       position: 101
-      prefix: minmapq
+      prefix: minmapq=
+      separate: false
   - id: overwrite
     type:
       - 'null'
@@ -109,7 +115,8 @@ inputs:
     doc: Quality value used for fasta to fastq reformatting
     inputBinding:
       position: 101
-      prefix: qfake
+      prefix: qfake=
+      separate: false
   - id: quality_file_in
     type:
       - 'null'
@@ -117,7 +124,8 @@ inputs:
     doc: Read qualities from this qual file for 'in'
     inputBinding:
       position: 101
-      prefix: qfin
+      prefix: qfin=
+      separate: false
   - id: quality_file_in2
     type:
       - 'null'
@@ -125,7 +133,8 @@ inputs:
     doc: Read qualities from this qual file for 'in2'
     inputBinding:
       position: 101
-      prefix: qfin2
+      prefix: qfin2=
+      separate: false
   - id: quality_in
     type:
       - 'null'
@@ -134,7 +143,8 @@ inputs:
       auto
     inputBinding:
       position: 101
-      prefix: qin
+      prefix: qin=
+      separate: false
   - id: quality_out
     type:
       - 'null'
@@ -143,7 +153,8 @@ inputs:
       auto
     inputBinding:
       position: 101
-      prefix: qout
+      prefix: qout=
+      separate: false
   - id: quality_trim
     type:
       - 'null'
@@ -151,7 +162,8 @@ inputs:
     doc: Trim read ends to remove bases with quality below trimq (t, f, r, l, w)
     inputBinding:
       position: 101
-      prefix: qtrim
+      prefix: qtrim=
+      separate: false
   - id: reads
     type:
       - 'null'
@@ -159,7 +171,8 @@ inputs:
     doc: Set to a positive number to only process this many INPUT reads
     inputBinding:
       position: 101
-      prefix: reads
+      prefix: reads=
+      separate: false
   - id: reference
     type:
       - 'null'
@@ -169,7 +182,8 @@ inputs:
     doc: Optional reference fasta for sam processing
     inputBinding:
       position: 101
-      prefix: ref
+      prefix: ref=
+      separate: false
   - id: reverse_complement
     type:
       - 'null'
@@ -185,7 +199,8 @@ inputs:
     doc: Randomly output only this fraction of reads
     inputBinding:
       position: 101
-      prefix: samplerate
+      prefix: samplerate=
+      separate: false
   - id: trim_quality
     type:
       - 'null'
@@ -193,7 +208,8 @@ inputs:
     doc: Regions with average quality BELOW this will be trimmed
     inputBinding:
       position: 101
-      prefix: trimq
+      prefix: trimq=
+      separate: false
   - id: verify_paired
     type:
       - 'null'
@@ -209,7 +225,8 @@ inputs:
     doc: Set compression level, 1 (low) to 9 (max)
     inputBinding:
       position: 101
-      prefix: zl
+      prefix: zl=
+      separate: false
   - id: base_hist_path
     type:
       - 'null'

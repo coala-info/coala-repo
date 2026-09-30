@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refinem taxon_filter
+baseCommand:
+  - refinem
+  - taxon_filter
 label: refinem_taxon_filter
 doc: "Identify scaffolds with divergent taxonomic classification.\n\nTool homepage:
   http://pypi.python.org/pypi/refinem/"
@@ -10,6 +12,11 @@ inputs:
     doc: directory with results of taxon_profile command
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: file indicating divergent scaffolds
+    inputBinding:
+      position: 2
   - id: common_taxa
     type:
       - 'null'
@@ -83,11 +90,11 @@ inputs:
       position: 102
       prefix: --trusted_scaffold
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: file indicating divergent scaffolds
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refinem:0.1.2--pyh3252c3a_0

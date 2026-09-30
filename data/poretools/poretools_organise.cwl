@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_organise
+baseCommand:
+  - poretools
+  - organise
 label: poretools_organise
 doc: "Organise FAST5 files into a directory structure.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:
@@ -12,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: destination_directory
-    type: Directory
+    type: string
     doc: The destination directory.
     inputBinding:
       position: 2

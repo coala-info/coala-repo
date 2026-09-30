@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: binchicken iterate
+baseCommand:
+  - binchicken
+  - iterate
 label: binchicken_iterate
 doc: "Iterate through binning and assembly strategies.\n\nTool homepage: https://github.com/aroneys/binchicken"
 inputs:
@@ -204,7 +206,7 @@ inputs:
   - id: coassemble_output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for coassembly.
     inputBinding:
       position: 101
@@ -694,7 +696,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for intermediate files.
     inputBinding:
       position: 101
@@ -724,8 +726,7 @@ inputs:
       position: 101
       prefix: --unmapping-min-appraised
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

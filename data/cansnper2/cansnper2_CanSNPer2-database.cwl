@@ -11,6 +11,7 @@ inputs:
     doc: CanSNPer snp source file
     inputBinding:
       position: 101
+      prefix: --annotation
   - id: create
     type:
       - 'null'
@@ -18,8 +19,9 @@ inputs:
     doc: Create new database!
     inputBinding:
       position: 101
+      prefix: --create
   - id: database
-    type: string
+    type: string?
     doc: CanSNPer2 database name
     inputBinding:
       position: 101
@@ -31,6 +33,7 @@ inputs:
     doc: print debug info
     inputBinding:
       position: 101
+      prefix: --debug
   - id: export
     type:
       - 'null'
@@ -39,6 +42,7 @@ inputs:
       file)"
     inputBinding:
       position: 101
+      prefix: --export
   - id: export_format
     type:
       - 'null'
@@ -46,6 +50,7 @@ inputs:
     doc: Select output format [tab, newick]
     inputBinding:
       position: 101
+      prefix: --export_format
   - id: logs
     type:
       - 'null'
@@ -53,6 +58,7 @@ inputs:
     doc: Specify log directory
     inputBinding:
       position: 101
+      prefix: --logs
   - id: mod_file
     type:
       - 'null'
@@ -60,6 +66,7 @@ inputs:
     doc: File with modifications/update to the tree
     inputBinding:
       position: 101
+      prefix: --mod_file
   - id: parent
     type:
       - 'null'
@@ -67,6 +74,7 @@ inputs:
     doc: "Node (or nodes matching tree file) from which to\n                     update/replace/remove"
     inputBinding:
       position: 101
+      prefix: --parent
   - id: references
     type:
       - 'null'
@@ -74,6 +82,7 @@ inputs:
     doc: File containing all reference genomes listed
     inputBinding:
       position: 101
+      prefix: --references
   - id: remove
     type:
       - 'null'
@@ -82,6 +91,7 @@ inputs:
       \         from node"
     inputBinding:
       position: 101
+      prefix: --remove
   - id: replace
     type:
       - 'null'
@@ -89,6 +99,7 @@ inputs:
     doc: replace node
     inputBinding:
       position: 101
+      prefix: --replace
   - id: source_type
     type:
       - 'null'
@@ -96,6 +107,7 @@ inputs:
     doc: Select source file type
     inputBinding:
       position: 101
+      prefix: --source_type
   - id: supress
     type:
       - 'null'
@@ -103,13 +115,15 @@ inputs:
     doc: supress warnings
     inputBinding:
       position: 101
+      prefix: --supress
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify tmp directory default (/tmp)
     inputBinding:
       position: 101
+      prefix: --tmpdir
   - id: tree
     type:
       - 'null'
@@ -117,6 +131,7 @@ inputs:
     doc: CanSNPer tree source file
     inputBinding:
       position: 101
+      prefix: --tree
   - id: verbose
     type:
       - 'null'
@@ -124,9 +139,9 @@ inputs:
     doc: print process info, default no output
     inputBinding:
       position: 101
+      prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

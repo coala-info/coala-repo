@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakedeploy_pin-conda-envs
+baseCommand:
+  - snakedeploy
+  - pin-conda-envs
 label: snakedeploy_pin-conda-envs
 doc: "Pin/lock given conda environment definition files (in YAML format) into a list
   of explicit package URLs including checksums, stored in a file <prefix>.<platform>.pin.txt

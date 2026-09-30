@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: peakachu consensus_peak
+baseCommand:
+  - peakachu
+  - consensus_peak
 label: peakachu_consensus_peak
 doc: "Length of the region around peak centers for plotting consensus peaks\n\nTool
   homepage: https://github.com/tbischler/PEAKachu"

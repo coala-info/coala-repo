@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmapper_filter
+baseCommand:
+  - taxmapper
+  - filter
 label: taxmapper_filter
 doc: "Filter taxonomy mapping file based on various thresholds.\n\nTool homepage:
   https://bitbucket.org/dbeisser/taxmapper"
@@ -54,10 +56,10 @@ inputs:
       prefix: --tax
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output file [default: taxa_filtered.tsv]'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

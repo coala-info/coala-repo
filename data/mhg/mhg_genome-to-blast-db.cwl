@@ -17,7 +17,7 @@ inputs:
   - id: database
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store blast nucleotide databases for each sequence in 
       genome directory. By default write to current folder 'blastn_db'
     inputBinding:
@@ -48,7 +48,7 @@ inputs:
   - id: query
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder storing all blastn queries in xml format. By defualt 
       write to current folder 'blastn_against_bank'
     inputBinding:

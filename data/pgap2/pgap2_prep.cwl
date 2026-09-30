@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pgap2_prep
+baseCommand:
+  - pgap2
+  - prep
 label: pgap2_prep
 doc: "Prepares input data for pgap2.\n\nTool homepage: https://github.com/bucongfan/PGAP2"
 inputs:
@@ -170,7 +172,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

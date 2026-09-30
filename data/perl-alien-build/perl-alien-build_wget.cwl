@@ -111,10 +111,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: Log messages to FILE
     inputBinding:
       position: 103
-      prefix: --log-file
+      prefix: -o
   - id: output_document_path
     type:
       - 'null'

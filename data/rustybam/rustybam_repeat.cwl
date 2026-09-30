@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam repeat
+baseCommand:
+  - rustybam
+  - repeat
 label: rustybam_repeat
 doc: "Report the longest exact repeat length at every position in a fasta\n\nTool
   homepage: https://github.com/mrvollger/rustybam"

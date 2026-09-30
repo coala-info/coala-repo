@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini loh
+baseCommand:
+  - oncogemini
+  - loh
 label: oncogemini_loh
 doc: "Filter and query LOH variants from a database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

@@ -63,15 +63,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `failed_out_path`
+    doc: Write ids of failed trimmed reads to this file
     inputBinding:
       position: 102
       prefix: --failed-out
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
+    doc: Output folder path for trimmed reads
     inputBinding:
       position: 103
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: constava analyze
+baseCommand:
+  - constava
+  - analyze
 label: constava_analyze
 doc: "The `constava analyze` submodule analyzes the provided backbone dihedral angles
   and infers the propensities for each residue to reside in a given conformational
@@ -134,10 +136,10 @@ inputs:
       prefix: --window-series
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' The file to write the results to.'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

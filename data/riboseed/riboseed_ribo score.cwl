@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribo score
+baseCommand:
+  - ribo
+  - score
 label: riboseed_ribo score
 doc: "This does some simple blasting to detect correctness of riboSeed results\n\n\
   Tool homepage: https://github.com/nickp60/riboSeed"
@@ -57,11 +59,17 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Logger writes debug to file in output dir; this sets verbosity level sent
-      to stderr. 1 = debug(), 2 = info(), 3 = warning(), 4 = error() and 5 = critical();
+    doc: Logger writes debug to file in output dir; this sets verbosity level 
+      sent to stderr. 1 = debug(), 2 = info(), 3 = warning(), 4 = error() and 5 
+      = critical();
     inputBinding:
       position: 102
       prefix: --verbosity
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -69,7 +77,9 @@ outputs:
       - Directory
     doc: directory in which to place the output files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboseed:0.4.90--py_0

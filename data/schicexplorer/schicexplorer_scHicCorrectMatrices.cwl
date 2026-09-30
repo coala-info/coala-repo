@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: schicexplorer_scHicCorrectMatrices
+baseCommand: scHicCorrectMatrices
 label: schicexplorer_scHicCorrectMatrices
 doc: "Correct each matrix of the given scool matrix with KR correction.\n\nTool homepage:
   https://github.com/joachimwolff/scHiCExplorer"
@@ -21,10 +21,11 @@ inputs:
       prefix: --threads
   - id: out_file_name_path
     type: string
-    doc: Output or path parameter `out_file_name_path`
+    doc: ' File name to save the resulting matrix, please add the scool prefix. (default:
+      None)'
     inputBinding:
       position: 102
-      prefix: --out-file-name
+      prefix: --outFileName
 outputs:
   - id: out_file_name
     type: File

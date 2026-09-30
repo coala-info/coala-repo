@@ -19,6 +19,7 @@ inputs:
     doc: Scorefile paths
     inputBinding:
       position: 1
+      prefix: --scorefiles
   - id: batch_size
     type:
       - 'null'
@@ -91,7 +92,6 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

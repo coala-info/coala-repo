@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: instanovo predict
+baseCommand:
+  - instanovo
+  - predict
 label: instanovo_predict
 doc: "Run predictions with InstaNovo and optionally refine with InstaNovo+.\nFirst
   with the transformer-based InstaNovo model and then optionally refine\nthem with
@@ -34,7 +36,7 @@ inputs:
   - id: data_path
     type:
       - 'null'
-      - string
+      - File
     doc: Path to input data file
     inputBinding:
       position: 102
@@ -95,7 +97,7 @@ inputs:
       prefix: --with-refinement
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: FILE  Path to output file.   │
     inputBinding:
       position: 103
       prefix: --output-path

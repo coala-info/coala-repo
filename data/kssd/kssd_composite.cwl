@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kssd composite
+baseCommand:
+  - kssd
+  - composite
 label: kssd_composite
 doc: "The composite doc prefix.\n\nTool homepage: https://github.com/yhg926/public_kssd"
 inputs:
@@ -26,7 +28,7 @@ inputs:
       prefix: --threads
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output path
     inputBinding:
       position: 102
       prefix: --outfile

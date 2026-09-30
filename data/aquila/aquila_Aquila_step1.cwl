@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python3 Aquila_step1
+baseCommand:
+  - python3
+  - Aquila_step1
 label: aquila_Aquila_step1
 doc: "Aquila_step1 tool for assembly\n\nTool homepage: https://github.com/maiziex/Aquila"
 inputs:
@@ -85,7 +87,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store assembly results
     inputBinding:
       position: 101

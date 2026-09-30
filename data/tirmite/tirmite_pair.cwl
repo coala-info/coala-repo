@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tirmite_pair
+baseCommand:
+  - tirmite
+  - pair
 label: tirmite_pair
 doc: "Pair precomputed nhmmer hits for transposon detection\n\nTool homepage: https://github.com/Adamtaranto/TIRmite"
 inputs:
@@ -128,7 +130,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101
@@ -184,7 +186,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Base directory for temporary files.
     inputBinding:
       position: 101

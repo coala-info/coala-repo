@@ -19,11 +19,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --csq-column
+          separate: true
     doc: CSQ sub-field(s) to extract (in addition to gene, impact, transcript). 
       may be specified multiple times.
     inputBinding:
       position: 102
-      prefix: --csq-column
   - id: csq_field
     type:
       - 'null'
@@ -37,11 +39,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --gene-description
+          separate: true
     doc: tab-separated lookup of gene (column 1) to description (column 2) to 
       add to output. the gene is case-sensitive. can be specified multiple times
     inputBinding:
       position: 102
-      prefix: --gene-description
   - id: impact_order
     type:
       - 'null'
@@ -72,14 +76,16 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample-field
+          separate: true
     doc: INFO field(s) that contains list of samples that have passed previous 
       filters. can be specified multiple times.
     inputBinding:
       position: 102
-      prefix: --sample-field
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'path to output tab-separated file (default: /dev/stdout)'
     inputBinding:
       position: 103
       prefix: --out

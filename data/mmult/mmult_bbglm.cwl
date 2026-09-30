@@ -18,6 +18,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chrom
+          separate: true
     doc: 'A specific chromosome for analysis. Can be specified multiple times for
       multiple chromosomes. The size can be encoded for a chromosome. For example,
       `-c chr1:248956422 -c chr2:242193529`. The size can be used to split a chromosome
@@ -25,7 +28,6 @@ inputs:
       files.'
     inputBinding:
       position: 101
-      prefix: --chrom
   - id: length
     type:
       - 'null'
@@ -44,6 +46,7 @@ inputs:
     doc: Maximum distance between consecutive DMCs for DMR.
     inputBinding:
       position: 101
+      prefix: --maxdistdmcs
   - id: methfile
     type:
       type: array
@@ -70,6 +73,7 @@ inputs:
     doc: Minimum number ofDMCs in a DMR.
     inputBinding:
       position: 101
+      prefix: --mindmc
   - id: nominaldiff
     type:
       - 'null'
@@ -77,6 +81,7 @@ inputs:
     doc: Nominal methylation difference threshold for DMC.
     inputBinding:
       position: 101
+      prefix: --nominaldiff
   - id: qval
     type:
       - 'null'
@@ -84,6 +89,7 @@ inputs:
     doc: Q-value threshold for DMC.
     inputBinding:
       position: 101
+      prefix: --qval
   - id: readthreads
     type:
       - 'null'
@@ -94,7 +100,7 @@ inputs:
       prefix: --readthreads
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file.
     inputBinding:
       position: 102
       prefix: --outfile

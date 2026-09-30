@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mdmcleaner refdb_contams
+baseCommand:
+  - mdmcleaner
+  - refdb_contams
 label: mdmcleaner_refdb_contams
 doc: "Analyze the ambiguity report file to identify and manage contaminants in a reference
   database.\n\nTool homepage: https://github.com/KIT-IBG-5/mdmcleaner"

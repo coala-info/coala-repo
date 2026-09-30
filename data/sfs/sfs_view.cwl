@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sfs_view
+baseCommand:
+  - sfs
+  - view
 label: sfs_view
 doc: "Format, marginalize, project, and convert SFS.\n\nTool homepage: https://github.com/malthesr/sfs"
 inputs:
@@ -36,6 +38,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --marginalize-remove
+      itemSeparator: ','
   - id: mask_monomorphic
     type:
       - 'null'
@@ -87,6 +90,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --project-individuals
+      itemSeparator: ','
   - id: project_shape
     type:
       - 'null'
@@ -123,10 +127,10 @@ inputs:
       prefix: --verbose
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: ' Output path.'
     inputBinding:
       position: 103
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type:

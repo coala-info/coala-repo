@@ -224,7 +224,7 @@ inputs:
       position: 101
       prefix: --test_mode
   - id: path_out_path
-    type: string
+    type: string?
     doc: Path to the output directory
     inputBinding:
       position: 102

@@ -12,11 +12,13 @@ inputs:
     doc: FASTA or FASTQ files to do MLST on.
     inputBinding:
       position: 1
+      prefix: --infile
   - id: species
     type: string
     doc: species database used for MLST prediction
     inputBinding:
       position: 2
+      prefix: --species
   - id: database
     type:
       - 'null'
@@ -65,7 +67,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 103
@@ -81,7 +83,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for storage of the results from the external 
       software.
     inputBinding:

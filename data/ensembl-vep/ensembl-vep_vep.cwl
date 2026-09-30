@@ -11,6 +11,7 @@ inputs:
     doc: Use cache
     inputBinding:
       position: 101
+      prefix: --cache
   - id: database
     type:
       - 'null'
@@ -18,6 +19,7 @@ inputs:
     doc: Use database
     inputBinding:
       position: 101
+      prefix: --database
   - id: everything
     type:
       - 'null'
@@ -58,6 +60,7 @@ inputs:
     doc: Run in offline mode
     inputBinding:
       position: 101
+      prefix: --offline
   - id: species
     type:
       - 'null'
@@ -68,10 +71,9 @@ inputs:
       prefix: --species
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: output_file
     type:

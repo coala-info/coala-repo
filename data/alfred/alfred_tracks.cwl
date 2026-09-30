@@ -53,7 +53,7 @@ inputs:
       prefix: --resolution
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: track file
     inputBinding:
       position: 103
       prefix: --outfile

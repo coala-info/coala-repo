@@ -103,7 +103,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: optional output directory
     inputBinding:
       position: 101

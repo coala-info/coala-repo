@@ -64,11 +64,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --mapper
+          separate: true
     doc: Mapper algorithm to use while aligning reads. This option can be used 
       multiple times. Options = ['bwa', 'bwa2', 'bowtie2']
     inputBinding:
       position: 101
-      prefix: --mapper
   - id: msi
     type:
       - 'null'
@@ -98,10 +100,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tumor_sample
+          separate: true
     doc: Path to tumor sample. This option can be used multiple times.
     inputBinding:
       position: 101
-      prefix: --tumor_sample
   - id: tumor_sample_name
     type:
       - 'null'
@@ -115,14 +119,16 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --variant_caller
+          separate: true
     doc: Variant caller algorithm to use for variant detection. This option can 
       be used multiple times, Options = ['mutect2','varscan2','haplotype 
       caller','octopus','strelka','somaticsniper','vardict', 'deepvariant']
     inputBinding:
       position: 101
-      prefix: --variant_caller
   - id: workdir
-    type: Directory
+    type: string
     doc: Directory that outputs will be saved
     inputBinding:
       position: 101

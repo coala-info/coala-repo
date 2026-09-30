@@ -31,6 +31,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control
+      itemSeparator: ','
   - id: diag
     type:
       - 'null'
@@ -305,6 +306,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --treatment
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'
@@ -325,7 +327,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `wig_path`
     inputBinding:
       position: 103
       prefix: --wig
@@ -333,7 +334,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_read_probs_path`
+    doc: Write out all final reads, including their alignment
     inputBinding:
       position: 104
       prefix: --write-read-probs

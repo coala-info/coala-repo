@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamdam_plotdamage
+baseCommand:
+  - bamdam
+  - plotdamage
 label: bamdam_plotdamage
 doc: "Plot damage patterns from substitution files.\n\nTool homepage: https://github.com/bdesanctis/bamdam"
 inputs:
@@ -46,7 +48,7 @@ inputs:
       prefix: --ymax
   - id: outplot_path
     type: string
-    doc: Output or path parameter `outplot_path`
+    doc: Filename for the output plot, ending in .png or .pdf
     inputBinding:
       position: 102
       prefix: --outplot

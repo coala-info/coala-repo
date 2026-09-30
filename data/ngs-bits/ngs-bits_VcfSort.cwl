@@ -54,10 +54,10 @@ inputs:
       prefix: -qual
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output variant list in VCF or VCF.GZ format.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type: File

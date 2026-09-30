@@ -280,10 +280,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `transcript_fragments_path`
+    doc: file to which the assembled non-full-length transcripts will be written
+      to
     inputBinding:
       position: 103
-      prefix: --transcript-fragments
+      prefix: --transcript_fragments
 outputs:
   - id: output_gtf
     type: File

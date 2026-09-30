@@ -334,7 +334,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to a temporary directory to write to. Defaults to outputdir/tmp
     inputBinding:
       position: 101
@@ -365,7 +365,6 @@ inputs:
       prefix: --write_contig_data
   - id: outputdir_path
     type: string
-    doc: Output or path parameter `outputdir_path`
     inputBinding:
       position: 102
       prefix: --outputdir

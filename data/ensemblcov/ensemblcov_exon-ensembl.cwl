@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ensemblcov exon-ensembl
+baseCommand:
+  - ensemblcov
+  - exon-ensembl
 label: ensemblcov_exon-ensembl
 doc: "Generates exon-ensembl coverage data.\n\nTool homepage: https://github.com/IBCHgenomic/ensemlcov"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja_filter
+baseCommand:
+  - freyja
+  - filter
 label: freyja_filter
 doc: "Excludes reads from INPUT_BAM containing one or more QUERY_MUTATIONS between
   MIN_SITE and MAX_SITE (genomic coordinates)\n\nTool homepage: https://github.com/andersen-lab/Freyja"

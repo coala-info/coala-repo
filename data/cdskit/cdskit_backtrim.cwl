@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_backtrim
+baseCommand:
+  - cdskit
+  - backtrim
 label: cdskit_backtrim
 doc: "Backtrim CDS alignments to match trimmed amino acid alignments.\n\nTool homepage:
   https://github.com/kfuku52/cdskit"

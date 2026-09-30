@@ -38,16 +38,18 @@ inputs:
       prefix: --taxon
   - id: prefix_path
     type: string
-    doc: Output or path parameter `prefix_path`
+    doc: prefix for output file(-s)
     inputBinding:
       position: 102
       prefix: --prefix
 outputs:
   - id: prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: prefix for output file(-s)
     outputBinding:
-      glob: $(inputs.prefix_path)
+      glob: $(inputs.prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

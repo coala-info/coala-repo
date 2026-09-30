@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pgap2_add
+baseCommand:
+  - pgap2
+  - add
 label: pgap2_add
 doc: "Add new sequences to an existing PGAP2 analysis.\n\nTool homepage: https://github.com/bucongfan/PGAP2"
 inputs:
@@ -79,7 +81,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

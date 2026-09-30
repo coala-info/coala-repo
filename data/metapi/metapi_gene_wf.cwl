@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metapi_gene_wf
+baseCommand:
+  - metapi
+  - gene_wf
 label: metapi_gene_wf
 doc: "Pipeline end point. Allowed values are prepare_reads_all, raw_fastqc_all, raw_report_all,
   raw_all, trimming_sickle_all, trimming_fastp_all, trimming_trimmomatic_all, trimming_report_all,

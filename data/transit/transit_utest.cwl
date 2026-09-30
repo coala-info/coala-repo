@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transit_utest
+baseCommand:
+  - transit
+  - utest
 label: transit_utest
 doc: "Performs differential analysis of transcription-associated sequencing data.\n\
   \nTool homepage: http://github.com/mad-lab/transit"
@@ -12,6 +14,7 @@ inputs:
     doc: Comma-separated .wig control files
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: experimental_files
     type:
       type: array
@@ -19,6 +22,7 @@ inputs:
     doc: Comma-separated .wig experimental files
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: annotation_file
     type: File
     doc: Annotation .prot_table or GFF3 file

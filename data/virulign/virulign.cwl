@@ -77,7 +77,7 @@ inputs:
   - id: nt_debug_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for nucleotide debug output
     inputBinding:
       position: 103

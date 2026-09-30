@@ -67,23 +67,22 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference FASTA file for indel normalization
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file for indel normalization
     inputBinding:
       position: 101
       prefix: --reference
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for analysis.
     inputBinding:
       position: 101
       prefix: --tempdir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

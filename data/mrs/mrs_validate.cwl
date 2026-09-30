@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs validate
+baseCommand:
+  - mrs
+  - validate
 label: mrs_validate
 doc: "Validate MRS data\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

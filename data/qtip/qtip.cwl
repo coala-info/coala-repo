@@ -358,7 +358,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Write temporary files to this directory; when None: uses environment variables
       like TMPDIR, TEMP, etc'
     inputBinding:
@@ -376,7 +376,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: 'Try both with and without including the tool-predicted MAPQ as a feature;
+    doc: Try both with and without including the tool-predicted MAPQ as a 
+      feature;
     inputBinding:
       position: 101
       prefix: --try-include-mapq
@@ -423,6 +424,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-precise-mapq
+  - id: output_directory_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-directory
+  - id: vanilla_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --vanilla-output
 outputs:
   - id: output_directory
     type:
@@ -430,14 +445,16 @@ outputs:
       - Directory
     doc: Write outputs to this directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: vanilla_output
     type:
       - 'null'
       - File
     doc: Only write final SAM file; suppress all other output
     outputBinding:
-      glob: $(inputs.vanilla_output)
+      glob: $(inputs.vanilla_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qtip:1.6.2--py36_0

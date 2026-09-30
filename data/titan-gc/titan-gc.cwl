@@ -21,7 +21,7 @@ inputs:
       position: 101
       prefix: --cromwell_jar
   - id: inputs
-    type: string
+    type: string?
     doc: The JSON file to be used with Cromwell for inputs.
     inputBinding:
       position: 101
@@ -35,7 +35,7 @@ inputs:
       position: 101
       prefix: --options
   - id: outdir
-    type: string
+    type: string?
     doc: Output directory to store the final results in.
     inputBinding:
       position: 101

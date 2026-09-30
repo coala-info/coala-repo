@@ -169,7 +169,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: name output directory
     inputBinding:
       position: 101

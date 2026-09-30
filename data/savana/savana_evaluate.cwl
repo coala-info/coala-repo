@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savana evaluate
+baseCommand:
+  - savana
+  - evaluate
 label: savana_evaluate
 doc: "Evaluate VCF files by comparing them against reference VCFs and adding labels
   to the INFO field.\n\nTool homepage: https://github.com/cortes-ciriano-lab/savana"
@@ -76,7 +78,6 @@ inputs:
       prefix: --stats
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

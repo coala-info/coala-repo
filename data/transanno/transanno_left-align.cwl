@@ -25,7 +25,7 @@ inputs:
       prefix: --original
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output chain file
     inputBinding:
       position: 103
       prefix: --output

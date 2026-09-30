@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam add-rg
+baseCommand:
+  - rustybam
+  - add-rg
 label: rustybam_add-rg
 doc: "Add RG lines from a source BAM file to the BAM from stdin to the BAM going to
   stdout\n\nTool homepage: https://github.com/mrvollger/rustybam"

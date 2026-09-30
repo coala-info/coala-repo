@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refinem ssu_erroneous
+baseCommand:
+  - refinem
+  - ssu_erroneous
 label: refinem_ssu_erroneous
 doc: "Identify scaffolds with erroneous 16S rRNA genes.\n\nTool homepage: http://pypi.python.org/pypi/refinem/"
 inputs:
@@ -25,7 +27,7 @@ inputs:
     inputBinding:
       position: 4
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 5

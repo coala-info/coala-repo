@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: moni ms
+baseCommand:
+  - moni
+  - ms
 label: moni_ms
 doc: "Moni tool for sequence matching\n\nTool homepage: https://github.com/maxrossi91/moni"
 inputs:

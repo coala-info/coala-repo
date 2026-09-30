@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools LSRs
+baseCommand:
+  - cpstools
+  - LSRs
 label: cpstools_LSRs
 doc: "Process GenBank files for LSRs\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

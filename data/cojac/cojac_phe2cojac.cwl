@@ -23,10 +23,10 @@ inputs:
       prefix: --shortname
   - id: out_yaml_path
     type: string
-    doc: Output or path parameter `out_yaml_path`
+    doc: write cojac variant to a YAML file instead of printing
     inputBinding:
       position: 103
-      prefix: --out-yaml
+      prefix: --yaml
 outputs:
   - id: out_yaml
     type:

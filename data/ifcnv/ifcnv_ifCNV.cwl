@@ -1,13 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ifcnv_ifCNV
+baseCommand: ifCNV
 label: ifcnv_ifCNV
 doc: "ifCNV\n\nTool homepage: https://github.com/SimCab-CHU/ifCNV"
 inputs:
   - id: auto_open
     type:
       - 'null'
-      - boolean
+      - string
     doc: A boolean
     inputBinding:
       position: 101
@@ -115,7 +115,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - boolean
+      - string
     doc: A boolean
     inputBinding:
       position: 101
@@ -124,18 +124,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_report_path`
+    doc: ' Path to the output report'
     inputBinding:
       position: 102
-      prefix: --output-report
+      prefix: --output
   - id: reads_matrix_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reads_matrix_output_path`
+    doc: ' A path to a file to export the reads matrix as a .tsv file'
     inputBinding:
       position: 103
-      prefix: --reads-matrix-output
+      prefix: -rm
 outputs:
   - id: output_report
     type: File

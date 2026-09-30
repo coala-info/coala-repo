@@ -666,6 +666,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -=
+      separate: false
   - id: write_buffer_size_mb
     type:
       - 'null'
@@ -684,10 +685,13 @@ inputs:
       prefix: -is
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: filename  output alignments to filename in SAM or BAM format, depending
+      on the file extension or explicit type specifier (see below).  Use a dash 
+      with an explicit type specifier to write to stdout, so for example -o -sam
+      - would write SAM output to stdout
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

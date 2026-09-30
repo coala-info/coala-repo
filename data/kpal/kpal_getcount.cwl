@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_getcount
+baseCommand:
+  - kpal
+  - getcount
 label: kpal_getcount
 doc: "Retrieve the counts in k-mer profiles for a particular word.\n\nTool homepage:
   https://github.com/LUMC/kPAL"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pysradb metadata
+baseCommand:
+  - pysradb
+  - metadata
 label: pysradb_metadata
 doc: "Retrieve metadata for given SRP IDs.\n\nTool homepage: https://github.com/saketkc/pysradb"
 inputs:
@@ -44,7 +46,7 @@ inputs:
       position: 102
       prefix: --expand
   - id: saveto_path
-    type: string
+    type: string?
     doc: Save metadata dataframe to file
     inputBinding:
       position: 103

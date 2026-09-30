@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cuna_merge
+baseCommand:
+  - cuna
+  - merge
 label: cuna_merge
 doc: "Merge per-read modification calls.\n\nTool homepage: https://github.com/iris1901/CUNA"
 inputs:

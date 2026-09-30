@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grzctl encrypt
+baseCommand:
+  - grzctl
+  - encrypt
 label: grzctl_encrypt
 doc: "Encrypt a submission.\n\nTool homepage: https://github.com/BfArM-MVH/grz-tools"
 inputs:

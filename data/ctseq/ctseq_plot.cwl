@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ctseq_plot
+baseCommand:
+  - ctseq
+  - plot
 label: ctseq_plot
 doc: "Generate plots from CT-seq data.\n\nTool homepage: https://github.com/ryanhmiller/ctseq"
 inputs:

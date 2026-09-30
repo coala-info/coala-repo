@@ -46,7 +46,7 @@ inputs:
       position: 102
       prefix: -b
   - id: output_directory
-    type: Directory
+    type: string
     doc: specify output directory [required]
     inputBinding:
       position: 102

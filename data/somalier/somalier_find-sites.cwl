@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: somalier_find-sites
+baseCommand:
+  - somalier
+  - find-sites
 label: somalier_find-sites
 doc: "Finds sites from a VCF file based on various criteria.\n\nTool homepage: https://github.com/brentp/somalier"
 inputs:
@@ -78,7 +80,7 @@ inputs:
       prefix: --snp-dist
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: 'path to output vcf containing sites (default: sites.vcf.gz)'
     inputBinding:
       position: 103
       prefix: --output-vcf

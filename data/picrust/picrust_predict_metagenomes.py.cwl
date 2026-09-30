@@ -145,10 +145,9 @@ inputs:
       prefix: --with_confidence
   - id: output_metagenome_table_path
     type: string
-    doc: Output or path parameter `output_metagenome_table_path`
     inputBinding:
       position: 102
-      prefix: --output-metagenome-table
+      prefix: --output_metagenome_table
 outputs:
   - id: output_metagenome_table
     type: File

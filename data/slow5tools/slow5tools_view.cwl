@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slow5tools_view
+baseCommand:
+  - slow5tools
+  - view
 label: slow5tools_view
 doc: "View a slow5 as blow5 FILE and vice versa.\n\nTool homepage: https://github.com/hasindu2008/slow5tools"
 inputs:
@@ -62,10 +64,10 @@ inputs:
       prefix: --to
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output to FILE [stdout]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

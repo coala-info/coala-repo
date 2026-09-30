@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi groom
+baseCommand:
+  - odgi
+  - groom
 label: odgi_groom
 doc: "Harmonize node orientations.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

@@ -22,7 +22,7 @@ inputs:
   - id: xenium_sample
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the input JSON file
     inputBinding:
       position: 102
@@ -30,7 +30,7 @@ inputs:
   - id: xenium_sample_lite
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the input JSON file
     inputBinding:
       position: 102

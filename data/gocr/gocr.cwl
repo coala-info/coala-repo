@@ -109,18 +109,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logging_file_path`
+    doc: name   - logging file (redirection of stderr)
     inputBinding:
       position: 103
-      prefix: --logging-file
+      prefix: -e
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: name   - output file  (redirection of stdout)
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

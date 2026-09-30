@@ -101,10 +101,10 @@ inputs:
       prefix: --threads
   - id: out_fastq_path
     type: string
-    doc: Output or path parameter `out_fastq_path`
+    doc: TEXT                    Analysis output folder  │
     inputBinding:
       position: 102
-      prefix: --out-fastq
+      prefix: --out_fastq
 outputs:
   - id: out_fastq
     type:

@@ -118,7 +118,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile
@@ -126,7 +125,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `qcfile_path`
     inputBinding:
       position: 103
       prefix: --qcfile

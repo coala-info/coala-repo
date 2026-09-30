@@ -91,10 +91,11 @@ outputs:
   - id: prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix for all output files
     outputBinding:
-      glob: $(inputs.prefix_path)
+      glob: $(inputs.prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

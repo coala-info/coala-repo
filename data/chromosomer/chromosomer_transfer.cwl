@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chromosomer_transfer
+baseCommand:
+  - chromosomer
+  - transfer
 label: chromosomer_transfer
 doc: "Transfer annotated genomic features from fragments to their assembly.\n\nTool
   homepage: https://github.com/gtamazian/chromosomer"
@@ -15,6 +17,11 @@ inputs:
     doc: a file of annotated genome features
     inputBinding:
       position: 2
+  - id: output
+    type: string
+    doc: an output file of the transfered annotation
+    inputBinding:
+      position: 3
   - id: format
     type:
       - 'null'
@@ -24,11 +31,11 @@ inputs:
       position: 103
       prefix: --format
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: an output file of the transfered annotation
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chromosomer:0.1.4a--py27_1

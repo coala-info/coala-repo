@@ -11,11 +11,16 @@ inputs:
     doc: input files path
     inputBinding:
       position: 1
+  - id: output_dir
+    type: string
+    doc: output file path
+    inputBinding:
+      position: 2
   - id: project_name
     type: string
     doc: project name
     inputBinding:
-      position: 2
+      position: 3
   - id: config_file
     type:
       - 'null'
@@ -57,11 +62,11 @@ inputs:
       position: 103
       prefix: --title
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: output file path
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paplot:0.5.6--pyh5e36f6f_0

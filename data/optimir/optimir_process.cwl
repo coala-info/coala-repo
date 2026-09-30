@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: optimir_process
+baseCommand:
+  - optimir
+  - process
 label: optimir_process
 doc: "Processes sequencing data to identify and analyze microRNAs.\n\nTool homepage:
   https://github.com/FlorianThibord/OptimiR"
@@ -133,7 +135,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Full path of the directory where output files are generated
     inputBinding:
       position: 101

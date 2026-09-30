@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw plot_genome_location
+baseCommand:
+  - nanoraw
+  - plot_genome_location
 label: nanoraw_plot_genome_location
 doc: "Plot signal at specified genomic locations.\n\nTool homepage: https://github.com/marcus1487/nanoraw"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: genome_locations
     type:
       type: array
@@ -20,6 +23,7 @@ inputs:
       applicable for all applications)
     inputBinding:
       position: 2
+      prefix: --genome-locations
   - id: basecall_subgroups
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanopolish phase-reads
+baseCommand:
+  - nanopolish
+  - phase-reads
 label: nanopolish_phase-reads
 doc: "Output a BAM file where each record shows the combination of alleles from variants.vcf
   that each read supports. variants.vcf can be any VCF file but only SNPs will be

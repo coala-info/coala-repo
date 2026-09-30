@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch ensg
+baseCommand:
+  - msstitch
+  - ensg
 label: msstitch_ensg
 doc: "Stitches together isobaric quantification data from PSMs and other sources.\n\
   \nTool homepage: https://github.com/lehtiolab/msstitch"
@@ -216,10 +218,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_dir
     type:

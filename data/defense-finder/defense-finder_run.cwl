@@ -83,7 +83,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The target directory where to store the results.
     inputBinding:
       position: 102

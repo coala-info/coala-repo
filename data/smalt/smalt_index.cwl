@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smalt_index
+baseCommand:
+  - smalt
+  - index
 label: smalt_index
 doc: "Index a reference genome for SMALT alignment.\n\nTool homepage: https://github.com/roquie/smalte"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: philosopher msfragger
+baseCommand:
+  - philosopher
+  - msfragger
 label: philosopher_msfragger
 doc: "MSFragger is a fast and accurate mass spectrometry data analysis tool for peptide
   identification.\n\nTool homepage: https://github.com/Nesvilab/philosopher"

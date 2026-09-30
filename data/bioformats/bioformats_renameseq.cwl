@@ -17,6 +17,11 @@ inputs:
     doc: a file to change sequence names in
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: an output file with renamed sequences
+    inputBinding:
+      position: 3
   - id: column
     type:
       - 'null'
@@ -68,11 +73,11 @@ inputs:
       position: 103
       prefix: --separator
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: an output file with renamed sequences
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

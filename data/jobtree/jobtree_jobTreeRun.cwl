@@ -97,7 +97,7 @@ inputs:
   - id: job_tree
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory in which to place job management files and the global 
       accessed temporary file directories(this needs to be globally accessible 
       by all machines running jobs). If you pass an existing directory it will 

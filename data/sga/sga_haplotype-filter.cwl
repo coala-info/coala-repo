@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga_haplotype-filter
+baseCommand:
+  - sga
+  - haplotype-filter
 label: sga_haplotype-filter
 doc: "Remove haplotypes and their associated variants from a data set.\n\nTool homepage:
   https://github.com/jts/sga"
@@ -57,7 +59,7 @@ inputs:
       prefix: --verbose
   - id: out_prefix_path
     type: string
-    doc: Output or path parameter `out_prefix_path`
+    doc: write the passed haplotypes and variants to STR.vcf and STR.fa
     inputBinding:
       position: 104
       prefix: --out-prefix

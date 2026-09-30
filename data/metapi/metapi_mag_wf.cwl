@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metapi mag_wf
+baseCommand:
+  - metapi
+  - mag_wf
 label: metapi_mag_wf
 doc: "Metagenomic MAG workflow\n\nTool homepage: https://github.com/ohmeta/metapi"
 inputs:

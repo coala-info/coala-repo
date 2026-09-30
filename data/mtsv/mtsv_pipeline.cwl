@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtsv_pipeline
+baseCommand:
+  - mtsv
+  - pipeline
 label: mtsv_pipeline
 doc: "Additional Snakemake commands may also be provided\n\nTool homepage: https://github.com/FofanovLab/MTSv"
 inputs:
@@ -12,6 +14,7 @@ inputs:
       working dir.
     inputBinding:
       position: 1
+      prefix: --fastq
   - id: binning_mode
     type:
       - 'null'
@@ -169,7 +172,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory to place output.
     inputBinding:
       position: 102

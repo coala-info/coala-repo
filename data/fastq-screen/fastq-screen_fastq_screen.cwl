@@ -186,7 +186,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a directory in which to save output files. If no directory is 
       specified then output files are saved in the current working directory.
     inputBinding:

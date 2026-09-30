@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: YOLO - Tail
-  analysis training workflow'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: YOLO - Tail analysis training workflow'
 inputs:
   0_Input Dataset Collection:
     format: data

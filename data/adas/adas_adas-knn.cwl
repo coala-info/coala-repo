@@ -20,7 +20,7 @@ inputs:
       prefix: --k-nearest-neighbors
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output path to write the neighbor list (sequence IDs)
     inputBinding:
       position: 102
       prefix: --output

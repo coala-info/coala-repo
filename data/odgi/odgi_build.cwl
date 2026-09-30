@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi build
+baseCommand:
+  - odgi
+  - build
 label: odgi_build
 doc: "Construct a dynamic succinct variation graph in ODGI format from a GFAv1.\n\n\
   Tool homepage: https://github.com/vgteam/odgi"

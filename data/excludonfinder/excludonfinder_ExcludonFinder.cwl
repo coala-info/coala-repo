@@ -58,9 +58,9 @@ inputs:
       prefix: '-2'
   - id: reference_fasta
     type: File
+    doc: Reference genome in FASTA format
     secondaryFiles:
       - .fai
-    doc: Reference genome in FASTA format
     inputBinding:
       position: 101
       prefix: -f
@@ -74,10 +74,10 @@ inputs:
       prefix: -j
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'Supply a custom output dir (default: ./output)'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type:

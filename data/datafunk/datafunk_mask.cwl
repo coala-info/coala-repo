@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: datafunk mask
+baseCommand:
+  - datafunk
+  - mask
 label: datafunk_mask
 doc: "mask regions of a fasta file using information in an external file\n\nTool homepage:
   https://github.com/cov-ert/datafunk"
@@ -19,7 +21,6 @@ inputs:
       prefix: --mask-file
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 102
       prefix: --output-fasta

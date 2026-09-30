@@ -13,6 +13,11 @@ inputs:
     doc: Input MAF file.
     inputBinding:
       position: 1
+  - id: out
+    type: string
+    doc: Output image file.
+    inputBinding:
+      position: 2
   - id: count
     type:
       - 'null'
@@ -57,11 +62,11 @@ inputs:
       position: 102
       prefix: --ticklabels_fontsize
 outputs:
-  - id: out
+  - id: out_out
     type: File
     doc: Output image file.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fuc:0.38.0--pyh7e72e81_0

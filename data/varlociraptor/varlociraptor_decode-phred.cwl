@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlociraptor decode-phred
+baseCommand:
+  - varlociraptor
+  - decode-phred
 label: varlociraptor_decode-phred
 doc: "Decode PHRED-scaled values to human readable probabilities.\n\nTool homepage:
   https://varlociraptor.github.io"

@@ -136,7 +136,7 @@ inputs:
       prefix: --verbose
   - id: filename_path
     type: string
-    doc: Output or path parameter `filename_path`
+    doc: name of directory/file to write to
     inputBinding:
       position: 102
       prefix: --filename

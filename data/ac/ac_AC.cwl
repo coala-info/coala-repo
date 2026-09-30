@@ -7,11 +7,12 @@ inputs:
   - id: input_files
     type:
       type: array
-      items: string
+      items: File
     doc: File to compress (last argument). For more files use splitting ":" 
       characters.
     inputBinding:
-      position: 1
+      position: 200
+      itemSeparator: ':'
   - id: compression_level
     type:
       - 'null'
@@ -82,23 +83,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
-  - id: create_iae_file_path
-    type: string
-    doc: Output or path parameter `create_iae_file_path`
-    inputBinding:
-      position: 103
-      prefix: --create-iae-file
-outputs:
-  - id: create_iae_file
+  - id: create_iae
     type:
       - 'null'
-      - File
+      - boolean
+    doc: Create a file with the extension .iae holding the information content.
+    inputBinding:
+      position: 103
+      prefix: -e
+outputs:
+  - id: compressed_files
+    type: File[]
+    doc: Compressed files, one <target>.co per input file.
+    outputBinding:
+      glob: '*.co'
+  - id: create_iae_file
+    type: File[]
     doc: it creates a file with the extension ".iae" with the respective 
       information content.
     outputBinding:
-      glob: $(inputs.create_iae_file_path)
+      glob: '*.iae'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ac:1.1--h503566f_6

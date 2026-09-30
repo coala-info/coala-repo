@@ -131,7 +131,7 @@ inputs:
       position: 101
       prefix: --norefcheck
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory to create
     inputBinding:
       position: 101

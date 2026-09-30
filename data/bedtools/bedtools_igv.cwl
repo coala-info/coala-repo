@@ -30,7 +30,7 @@ inputs:
       position: 101
       prefix: -i
   - id: output_path
-    type: string
+    type: string?
     doc: The full path to which the IGV snapshots should be written.
     inputBinding:
       position: 101

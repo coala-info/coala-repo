@@ -26,22 +26,26 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --bulk1
+        separate: true
     doc: "FASTQ or BAM file of bulk 1. If specifying\n                     FASTQ,
       separate paired-end files with a comma,\n                     e.g., -b1 fastq1,fastq2.
       This option can be\n                     used multiple times."
     inputBinding:
       position: 101
-      prefix: --bulk1
   - id: bulk2
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --bulk2
+        separate: true
     doc: "FASTQ or BAM file of bulk 2. If specifying\n                     FASTQ,
       separate paired-end files with a comma,\n                     e.g., -b2 fastq1,fastq2.
       This option can be\n                     used multiple times."
     inputBinding:
       position: 101
-      prefix: --bulk2
   - id: dot_colors
     type:
       - 'null'
@@ -135,12 +139,14 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --parent
+        separate: true
     doc: "FASTQ or BAM file of the parent. If specifying\n                     FASTQ,
       separate paired-end files with a comma,\n                     e.g., -p fastq1,fastq2.
       This option can be\n                     used multiple times."
     inputBinding:
       position: 101
-      prefix: --parent
   - id: ref
     type: File
     doc: Reference FASTA file.
@@ -204,10 +210,9 @@ inputs:
       prefix: --window
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: -b2
 outputs:
   - id: out_dir
     type: Directory

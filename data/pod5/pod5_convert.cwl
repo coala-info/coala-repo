@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5_convert
+baseCommand:
+  - pod5
+  - convert
 label: pod5_convert
 doc: "File conversion tools\n\nTool homepage: https://github.com/nanoporetech/pod5-file-format"
 inputs:

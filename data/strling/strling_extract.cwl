@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strling_extract
+baseCommand:
+  - strling
+  - extract
 label: strling_extract
 doc: "Extract STRs from BAM file\n\nTool homepage: https://github.com/quinlan-lab/STRling"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: path to bam file
     inputBinding:
       position: 1
+  - id: bin
+    type: string
+    doc: path bin to output bin file to be created
+    inputBinding:
+      position: 2
   - id: fasta
     type: File
     doc: path to fasta file (required for CRAM)
@@ -48,11 +55,11 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: bin
+  - id: out_bin
     type: File
     doc: path bin to output bin file to be created
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.bin)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strling:0.6.0--h7b50bb2_0

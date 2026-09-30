@@ -15,6 +15,7 @@ inputs:
     doc: Program's configuration (registry) data file
     inputBinding:
       position: 101
+      prefix: -conffile
   - id: data_mode
     type:
       - 'null'
@@ -41,6 +42,7 @@ inputs:
     doc: 'Dry run the application: do nothing, only test all preconditions'
     inputBinding:
       position: 101
+      prefix: -dryrun
   - id: evalue
     type:
       - 'null'
@@ -89,15 +91,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 102
-      prefix: --logfile
+      prefix: -logfile
   - id: outfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

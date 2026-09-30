@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqnado pipeline
+baseCommand:
+  - seqnado
+  - pipeline
 label: seqnado_pipeline
 doc: "Run the data processing pipeline for ASSAY (Snakemake under the hood). Any additional
   arguments are passed to Snakemake (e.g., `seqnado pipeline rna -n` for dry-run,

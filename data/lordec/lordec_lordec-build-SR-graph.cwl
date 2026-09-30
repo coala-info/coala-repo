@@ -18,7 +18,7 @@ inputs:
   - id: gatb_graph_temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: GATB graph creation temporary files directory
     inputBinding:
       position: 101

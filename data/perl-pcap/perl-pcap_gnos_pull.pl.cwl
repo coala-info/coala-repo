@@ -67,7 +67,7 @@ inputs:
       prefix: --url
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: (-o)  Where to save jsonl and resulting GNOS downloads
     inputBinding:
       position: 102
       prefix: --outdir

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast_solve
+baseCommand:
+  - mrpast
+  - solve
 label: mrpast_solve
 doc: "The solver input JSON files. The output filenames will be derived from the input
   filenames.\n\nTool homepage: https://aprilweilab.github.io/"

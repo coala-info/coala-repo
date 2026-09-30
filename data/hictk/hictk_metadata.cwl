@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk metadata
+baseCommand:
+  - hictk
+  - metadata
 label: hictk_metadata
 doc: "Print file metadata to stdout.\n\nTool homepage: https://github.com/paulsengroup/hictk"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem pipe
+baseCommand:
+  - singlem
+  - pipe
 label: singlem_pipe
 doc: "Generate a taxonomic profile or OTU table from raw sequences\n\nTool homepage:
   https://github.com/wwood/singlem"
@@ -390,7 +392,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `archive_otu_table_path`
     inputBinding:
       position: 102
       prefix: --archive-otu-table
@@ -398,7 +399,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `otu_table_path`
     inputBinding:
       position: 103
       prefix: --otu-table
@@ -406,7 +406,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_jplace_path`
     inputBinding:
       position: 104
       prefix: --output-jplace
@@ -414,7 +413,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `taxonomic_profile_path`
     inputBinding:
       position: 105
       prefix: --taxonomic-profile
@@ -422,7 +420,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `taxonomic_profile_krona_path`
     inputBinding:
       position: 106
       prefix: --taxonomic-profile-krona

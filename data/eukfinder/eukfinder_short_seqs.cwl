@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukfinder short_seqs
+baseCommand:
+  - eukfinder
+  - short_seqs
 label: eukfinder_short_seqs
 doc: "optional arguments:\n  -h, --help            show this help message and exit\n\
   \nRequired arguments:\n  Description\n\nTool homepage: https://github.com/RogerLab/Eukfinder"
@@ -123,7 +125,7 @@ inputs:
   - id: taxonomy_update
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Set to True the first time the program is used.\n                      \
       \  Otherwise set to False"
     inputBinding:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mylotools report
+baseCommand:
+  - mylotools
+  - report
 label: mylotools_report
 doc: "Generate a report from Myloasm assembly files.\n\nTool homepage: https://github.com/bluenote-1577/mylotools"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnftools mason2rnf
+baseCommand:
+  - rnftools
+  - mason2rnf
 label: rnftools_mason2rnf
 doc: "Convert a Mason SAM file to RNF-FASTQ.\n\nTool homepage: http://karel-brinda.github.io/rnftools"
 inputs:
@@ -44,10 +46,10 @@ inputs:
       prefix: --simulator-name
   - id: rnf_fastq_file_path
     type: string
-    doc: Output or path parameter `rnf_fastq_file_path`
+    doc: Output FASTQ file (- for standard output).
     inputBinding:
       position: 102
-      prefix: --rnf-fastq-file
+      prefix: --rnf-fastq
 outputs:
   - id: rnf_fastq_file
     type: File

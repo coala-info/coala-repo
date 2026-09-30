@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd install
+baseCommand:
+  - ggd
+  - install
 label: ggd_install
 doc: "Install a ggd data package into the current or specified conda environment\n\
   \nTool homepage: https://github.com/gogetdata/ggd-cli"

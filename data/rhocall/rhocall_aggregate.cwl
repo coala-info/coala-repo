@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rhocall aggregate
+baseCommand:
+  - rhocall
+  - aggregate
 label: rhocall_aggregate
 doc: "Aggregate runs of autozygosity from rhofile into windowed rho BED file.\nAccepts
   a bcftools roh style TSV-file with CHR,POS,AZ,QUAL.\n\nTool homepage: https://github.com/dnil/rhocall"
@@ -27,10 +29,9 @@ inputs:
       prefix: --verbose
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

@@ -26,7 +26,8 @@ inputs:
     doc: maximum chain size allowed without breaking
     inputBinding:
       position: 104
-      prefix: -maxChain
+      prefix: -maxChain=
+      separate: false
   - id: max_gap
     type:
       - 'null'
@@ -34,7 +35,8 @@ inputs:
     doc: maximum gap sized allowed without breaking
     inputBinding:
       position: 104
-      prefix: -maxGap
+      prefix: -maxGap=
+      separate: false
   - id: min_id
     type:
       - 'null'
@@ -42,7 +44,8 @@ inputs:
     doc: minimum percentage ID within blocks
     inputBinding:
       position: 104
-      prefix: -minId
+      prefix: -minId=
+      separate: false
   - id: min_score
     type:
       - 'null'
@@ -50,7 +53,8 @@ inputs:
     doc: minimum score of chain
     inputBinding:
       position: 104
-      prefix: -minScore
+      prefix: -minScore=
+      separate: false
   - id: output_bed
     type:
       - 'null'

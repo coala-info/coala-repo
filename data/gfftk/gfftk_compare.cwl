@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfftk_compare
+baseCommand:
+  - gfftk
+  - compare
 label: gfftk_compare
 doc: "compare two GFF3 annotations of a genome.\n\nTool homepage: https://github.com/nextgenusfs/gfftk"
 inputs:
@@ -26,15 +28,14 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    doc: query annotation in GFF3 format
     secondaryFiles:
       - .fai
-    doc: query annotation in GFF3 format
     inputBinding:
       position: 101
       prefix: --reference
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

@@ -11,6 +11,11 @@ inputs:
     doc: List of paths to standardized VCFS
     inputBinding:
       position: 1
+  - id: fout
+    type: string
+    doc: Clustered VCF.
+    inputBinding:
+      position: 2
   - id: blacklist
     type:
       - 'null'
@@ -114,11 +119,11 @@ inputs:
       position: 102
       prefix: --svtypes
 outputs:
-  - id: fout
+  - id: out_fout
     type: File
     doc: Clustered VCF.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.fout)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

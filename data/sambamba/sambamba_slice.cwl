@@ -37,7 +37,6 @@ inputs:
       prefix: --regions
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 104
       prefix: --output-filename

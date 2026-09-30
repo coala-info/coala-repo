@@ -108,14 +108,13 @@ inputs:
       position: 101
       prefix: --vcf
   - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    type: string?
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
-    type: Directory
+    type: Directory?
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir_path)

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy unzip
+baseCommand:
+  - dimspy
+  - unzip
 label: dimspy_unzip
 doc: "Unzip a dimspy file.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
@@ -12,7 +14,6 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

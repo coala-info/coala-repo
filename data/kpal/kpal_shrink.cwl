@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal shrink
+baseCommand:
+  - kpal
+  - shrink
 label: kpal_shrink
 doc: "Shrink k-mer profiles, effectively reducing k.\n\nTool homepage: https://github.com/LUMC/kPAL"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: input k-mer profile file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output k-mer profile file
+    inputBinding:
+      position: 2
   - id: factor
     type:
       - 'null'
@@ -28,11 +35,11 @@ inputs:
       position: 102
       prefix: --profiles
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output k-mer profile file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpal:2.1.1--py27_0

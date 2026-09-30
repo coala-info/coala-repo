@@ -89,14 +89,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --t2
-  - id: ofile_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `ofile_path`
-    inputBinding:
-      position: 102
-      prefix: --ofile
   - id: outdir_path
     type:
       - 'null'
@@ -105,6 +97,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --outdir
+  - id: ofile_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --ofile
 outputs:
   - id: outdir
     type:

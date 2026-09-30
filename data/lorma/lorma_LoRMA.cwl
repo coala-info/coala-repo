@@ -56,18 +56,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `discarded_reads_file_path`
+    doc: '(1 arg) :    output file for discarded reads'
     inputBinding:
       position: 102
-      prefix: --discarded-reads-file
+      prefix: -discarded
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: '(1 arg) :    output file for corrected reads'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: discarded_reads_file
     type: File

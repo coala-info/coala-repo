@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar RNA-Bloom.jar
+baseCommand:
+  - java
+  - -jar
+  - RNA-Bloom.jar
 label: rnabloom
 doc: "RNA-Bloom v2.0.1\n\nTool homepage: https://github.com/bcgsc/RNA-Bloom"
 inputs:
@@ -304,7 +307,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101

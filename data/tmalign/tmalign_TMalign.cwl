@@ -249,10 +249,11 @@ outputs:
   - id: output_superposition_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output the superposition to 'TM_sup*'
     outputBinding:
-      glob: $(inputs.output_superposition_prefix_path)
+      glob: $(inputs.output_superposition_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -35,7 +35,8 @@ inputs:
     doc: input filename (standard input if unset)
     inputBinding:
       position: 101
-      prefix: I
+      prefix: I=
+      separate: false
   - id: inputformat
     type:
       - 'null'
@@ -43,7 +44,8 @@ inputs:
     doc: input format (bam,cram,maussam,sam,sbam)
     inputBinding:
       position: 101
-      prefix: inputformat
+      prefix: inputformat=
+      separate: false
   - id: inputthreads
     type:
       - 'null'
@@ -51,7 +53,8 @@ inputs:
     doc: 'input helper threads (for inputformat=bam only, default: 1)'
     inputBinding:
       position: 101
-      prefix: inputthreads
+      prefix: inputthreads=
+      separate: false
   - id: md5
     type:
       - 'null'
@@ -67,7 +70,8 @@ inputs:
     doc: file name for md5 check sum
     inputBinding:
       position: 101
-      prefix: md5filename
+      prefix: md5filename=
+      separate: false
   - id: outputformat
     type:
       - 'null'
@@ -75,7 +79,8 @@ inputs:
     doc: output format (bam,cram,sam, passthrough=1 only)
     inputBinding:
       position: 101
-      prefix: outputformat
+      prefix: outputformat=
+      separate: false
   - id: outputthreads
     type:
       - 'null'
@@ -84,7 +89,8 @@ inputs:
       only)'
     inputBinding:
       position: 101
-      prefix: outputthreads
+      prefix: outputthreads=
+      separate: false
   - id: passthrough
     type:
       - 'null'
@@ -101,7 +107,8 @@ inputs:
       input only)
     inputBinding:
       position: 101
-      prefix: range
+      prefix: range=
+      separate: false
   - id: reference
     type:
       - 'null'
@@ -111,7 +118,8 @@ inputs:
     doc: reference FastA (.fai file required, for cram i/o only)
     inputBinding:
       position: 101
-      prefix: reference
+      prefix: reference=
+      separate: false
   - id: tmpfile
     type:
       - 'null'
@@ -120,7 +128,8 @@ inputs:
       index=1 only)'
     inputBinding:
       position: 101
-      prefix: tmpfile
+      prefix: tmpfile=
+      separate: false
   - id: verbose
     type:
       - 'null'

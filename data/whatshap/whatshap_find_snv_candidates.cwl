@@ -84,7 +84,6 @@ inputs:
       prefix: --sample
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

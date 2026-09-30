@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmapper_map
+baseCommand:
+  - taxmapper
+  - map
 label: taxmapper_map
 doc: "Map reads to taxa\n\nTool homepage: https://bitbucket.org/dbeisser/taxmapper"
 inputs:
@@ -44,10 +46,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output file [default: taxa.tsv]'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

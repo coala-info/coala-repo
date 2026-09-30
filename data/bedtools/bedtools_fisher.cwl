@@ -47,17 +47,13 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input bed/gff/vcf file A
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input bed/gff/vcf file B
     inputBinding:
       position: 101
@@ -97,13 +93,13 @@ inputs:
       position: 101
       prefix: -nonamecheck
   - id: overlap_fraction_a
-    type: float
+    type: float?
     doc: Minimum overlap required as a fraction of A.
     inputBinding:
       position: 101
       prefix: -f
   - id: overlap_fraction_b
-    type: float
+    type: float?
     doc: Minimum overlap required as a fraction of B.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unitem unanimous
+baseCommand:
+  - unitem
+  - unanimous
 label: unitem_unanimous
 doc: "Unanimous bin filtering across multiple binning methods.\n\nTool homepage: https://github.com/dparks1134/UniteM"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 2

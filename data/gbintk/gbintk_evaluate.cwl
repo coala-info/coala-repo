@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gbintk evaluate
+baseCommand:
+  - gbintk
+  - evaluate
 label: gbintk_evaluate
 doc: "Evaluate the binning results given a ground truth\n\nTool homepage: https://github.com/metagentools/gbintk"
 inputs:
@@ -26,7 +28,7 @@ inputs:
       position: 101
       prefix: --groundtruth
   - id: output
-    type: Directory
+    type: string
     doc: path to the output folder
     inputBinding:
       position: 101

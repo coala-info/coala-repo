@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: drprg index
+baseCommand:
+  - drprg
+  - index
 label: drprg_index
 doc: "Download and interact with indices\n\nTool homepage: https://github.com/mbhall88/drprg"
 inputs:

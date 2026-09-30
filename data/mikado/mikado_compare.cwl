@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Mikado compare
+baseCommand:
+  - Mikado
+  - compare
 label: mikado_compare
 doc: "Compare predictions to a reference annotation.\n\nTool homepage: https://github.com/lucventurini/mikado"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kingfisher_extract
+baseCommand:
+  - kingfisher
+  - extract
 label: kingfisher_extract
 doc: "Extract .sra format files into FASTQ or FASTA format, compressed or uncompressed.\n\
   \nTool homepage: https://github.com/wwood/kingfisher-download"
@@ -40,7 +42,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory to write to
     inputBinding:
       position: 101

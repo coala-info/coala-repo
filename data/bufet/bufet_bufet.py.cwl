@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python bufet.py
+baseCommand:
+  - python
+  - bufet.py
 label: bufet_bufet.py
 doc: "Run BUFET analysis\n\nTool homepage: https://github.com/diwis/BUFET/"
 inputs:
@@ -121,10 +123,10 @@ inputs:
       prefix: --miRanda
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ': path to the output file (overwritten if it exists)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: output_file
     type:

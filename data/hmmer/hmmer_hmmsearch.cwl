@@ -246,37 +246,36 @@ inputs:
     inputBinding:
       position: 104
       prefix: --alignment-output
-  - id: domtblout_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `domtblout_path`
-    inputBinding:
-      position: 105
-      prefix: --domtblout
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ': direct output to file <f>, not stdout'
     inputBinding:
       position: 106
-      prefix: --output-file
+      prefix: -o
+  - id: domtblout_path
+    type:
+      - 'null'
+      - string
+    doc: ': save parseable table of per-domain hits to file <f>'
+    inputBinding:
+      position: 107
+      prefix: --domtblout
   - id: pfamtblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pfamtblout_path`
     inputBinding:
-      position: 107
+      position: 108
       prefix: --pfamtblout
   - id: tblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tblout_path`
+    doc: ': save parseable table of per-sequence hits to file <f>'
     inputBinding:
-      position: 108
+      position: 109
       prefix: --tblout
 outputs:
   - id: output_file

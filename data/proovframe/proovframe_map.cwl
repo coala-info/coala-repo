@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: proovframe_map
+baseCommand:
+  - proovframe
+  - map
 label: proovframe_map
 doc: "For consensus sequences with rather low expected error rates\nand if your reference
   database has a good represention of similar\nsequences, you might want to switch
@@ -98,7 +100,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 105
       prefix: --out

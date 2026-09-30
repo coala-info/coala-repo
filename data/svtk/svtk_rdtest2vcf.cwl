@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk_rdtest2vcf
+baseCommand:
+  - svtk
+  - rdtest2vcf
 label: svtk_rdtest2vcf
 doc: "Convert an RdTest-formatted bed to the standard VCF format.\n\nTool homepage:
   https://github.com/talkowski-lab/svtk"
@@ -15,6 +17,12 @@ inputs:
     doc: List of all samples present in variant callset.
     inputBinding:
       position: 2
+  - id: fout
+    type: string
+    doc: Standardized VCF. Will be compressed with bgzip and tabix indexed if 
+      filename ends with .gz
+    inputBinding:
+      position: 3
   - id: contigs
     type:
       - 'null'
@@ -25,12 +33,12 @@ inputs:
       position: 103
       prefix: --contigs
 outputs:
-  - id: fout
+  - id: out_fout
     type: File
     doc: Standardized VCF. Will be compressed with bgzip and tabix indexed if 
       filename ends with .gz
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.fout)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

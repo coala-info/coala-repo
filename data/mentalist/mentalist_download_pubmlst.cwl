@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mentalist download_pubmlst
+baseCommand:
+  - mentalist
+  - download_pubmlst
 label: mentalist_download_pubmlst
 doc: "Download a scheme from PubMLST and create a kmer database.\n\nTool homepage:
   https://github.com/WGS-TB/MentaLiST"
@@ -18,7 +20,7 @@ inputs:
       position: 101
       prefix: -k
   - id: output
-    type: Directory
+    type: string
     doc: Output folder for the scheme Fasta files.
     inputBinding:
       position: 101

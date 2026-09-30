@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur write-file
+baseCommand:
+  - augur
+  - write-file
 label: augur_write-file
 doc: "Writes data to a file.\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:

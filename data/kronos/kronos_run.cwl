@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kronos run
+baseCommand:
+  - kronos
+  - run
 label: kronos_run
 doc: "run kronos-made pipelines with optional initialization\n\nTool homepage: https://github.com/jtaghiyar/kronos"
 inputs:

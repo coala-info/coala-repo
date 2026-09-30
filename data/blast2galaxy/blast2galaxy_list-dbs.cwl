@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blast2galaxy list-dbs
+baseCommand:
+  - blast2galaxy
+  - list-dbs
 label: blast2galaxy_list-dbs
 doc: "list available databases of a BLAST+ or DIAMOND tool installed on a Galaxy server\n\
   \nTool homepage: https://github.com/IPK-BIT/blast2galaxy"

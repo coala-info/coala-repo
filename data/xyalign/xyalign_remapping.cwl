@@ -44,7 +44,7 @@ inputs:
   - id: bwa_index
     type:
       - 'null'
-      - boolean
+      - string
     doc: If True, index with BWA during PREPARE_REFERENCE. Only relevantwhen 
       running the PREPARE_REFERENCE module by itself. Default is False.
     inputBinding:
@@ -149,7 +149,7 @@ inputs:
   - id: homogenize_read_balance
     type:
       - 'null'
-      - boolean
+      - string
     doc: If True, read balance values will be transformed by subtracting each 
       value from 1. For example, 0.25 and 0.75 would be treated equivalently. 
       Default is False.
@@ -168,7 +168,7 @@ inputs:
   - id: include_fixed
     type:
       - 'null'
-      - boolean
+      - string
     doc: Default is False, which removes read balances less than or equal to 
       0.05 and equal to 1.0 for histogram plotting. True will include all 
       values. Extreme values removed by default because they often swamp out the
@@ -696,10 +696,9 @@ inputs:
       prefix: --y_present
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory

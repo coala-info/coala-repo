@@ -11,6 +11,7 @@ inputs:
     doc: comma-separated list of files with ref sequences
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: ebwt_outfile_base
     type: string
     doc: write Ebwt data to files with this dir/basename

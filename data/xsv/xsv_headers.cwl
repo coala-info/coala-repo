@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_headers
+baseCommand:
+  - xsv
+  - headers
 label: xsv_headers
 doc: "Prints the fields of the first row in the CSV data.\n\nTool homepage: https://github.com/BurntSushi/xsv"
 inputs:

@@ -57,10 +57,10 @@ inputs:
       prefix: -l
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to a file. If provided, an output index (.cxi)
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

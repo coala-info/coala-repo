@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: humanfilt run
+baseCommand:
+  - humanfilt
+  - run
 label: humanfilt_run
 doc: "Run humanfilt\n\nTool homepage: https://github.com/jprehn-lab/humanfilt"
 inputs:
@@ -73,18 +75,12 @@ inputs:
       position: 101
       prefix: --trim-quality
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
     inputBinding:
       position: 102
       prefix: --output
   - id: report_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `report_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --report

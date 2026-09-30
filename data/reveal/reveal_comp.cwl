@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal comp
+baseCommand:
+  - reveal
+  - comp
 label: reveal_comp
 doc: "Reverse complement the graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:

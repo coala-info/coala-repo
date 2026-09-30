@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm explore
+baseCommand:
+  - groopm
+  - explore
 label: groopm_explore
 doc: "Exploration mode [binpoints, binids, allcontigs, unbinnedcontigs, binnedcontigs,
   binassignments, compare, sidebyside, together]\n\nTool homepage: https://ecogenomics.github.io/GroopM/"

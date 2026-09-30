@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bcbio-rnaseq summarize
+baseCommand:
+  - bcbio-rnaseq
+  - summarize
 label: bcbio-rnaseq_summarize
 doc: "Summarize RNA-Seq analysis results from a bcbio project.\n\nTool homepage: https://github.com/hbc/bcbioRNASeq"
 inputs:

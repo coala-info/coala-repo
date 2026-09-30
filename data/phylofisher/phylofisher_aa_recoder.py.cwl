@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --in_format
   - id: input_matrix
-    type: File
+    type: File?
     doc: Path to input matrix for recoding.
     inputBinding:
       position: 101
@@ -32,7 +32,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to user-defined output directory
     inputBinding:
       position: 101

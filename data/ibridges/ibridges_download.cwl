@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges download
+baseCommand:
+  - ibridges
+  - download
 label: ibridges_download
 doc: "Download a data object or collection from an iRODS server.\n\nTool homepage:
   https://github.com/iBridges-for-iRODS/iBridges"

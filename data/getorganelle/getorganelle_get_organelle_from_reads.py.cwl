@@ -549,6 +549,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -u
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'
@@ -620,10 +621,10 @@ inputs:
       prefix: --zip-files
   - id: output_base_path
     type: string
-    doc: Output or path parameter `output_base_path`
+    doc: Output directory. Overwriting files if directory
     inputBinding:
       position: 102
-      prefix: --output-base
+      prefix: -o
 outputs:
   - id: output_base
     type: Directory

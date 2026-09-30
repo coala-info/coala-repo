@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie compare
+baseCommand:
+  - refgenie
+  - compare
 label: refgenie_compare
 doc: "Compare two genomes.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

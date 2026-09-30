@@ -187,22 +187,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -unknown
-  - id: dist_out_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `dist_out_path`
-    inputBinding:
-      position: 102
-      prefix: --dist-out
-  - id: msa_out_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `msa_out_path`
-    inputBinding:
-      position: 103
-      prefix: --msa-out
   - id: out_path
     type:
       - 'null'
@@ -211,6 +195,20 @@ inputs:
     inputBinding:
       position: 104
       prefix: --out
+  - id: dist_out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: -dist-out
+  - id: msa_out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: -msa-out
 outputs:
   - id: msa_out
     type:

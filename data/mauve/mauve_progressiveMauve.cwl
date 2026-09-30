@@ -249,7 +249,7 @@ inputs:
   - id: scratch_path_1
     type:
       - 'null'
-      - Directory
+      - string
     doc: Designate a path that can be used for temporary data storage. Two or 
       more paths should be specified.
     inputBinding:
@@ -258,7 +258,7 @@ inputs:
   - id: scratch_path_2
     type:
       - 'null'
-      - Directory
+      - string
     doc: Designate a path that can be used for temporary data storage. Two or 
       more paths should be specified.
     inputBinding:
@@ -324,7 +324,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `backbone_output_path`
     inputBinding:
       position: 104
       prefix: --backbone-output
@@ -332,7 +331,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Prints to screen by default
     inputBinding:
       position: 105
       prefix: --output
@@ -340,7 +339,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_guide_tree_path`
     inputBinding:
       position: 106
       prefix: --output-guide-tree

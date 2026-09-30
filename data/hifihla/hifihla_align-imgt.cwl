@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hifihla align-imgt
+baseCommand:
+  - hifihla
+  - align-imgt
 label: hifihla_align-imgt
 doc: "Align queries to IMGT/HLA genomic accession sequences\n\nTool homepage: https://github.com/PacificBiosciences/hifihla"
 inputs:

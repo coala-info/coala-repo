@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: enasearch_get_filter_fields
+baseCommand:
+  - enasearch
+  - get_filter_fields
 label: enasearch_get_filter_fields
 doc: "Get the filter fields of a result to build a query.\n\n  This function returns
   the fields that can be used to build a query on a\n  result on ENA. Each field is

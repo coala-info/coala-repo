@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sqt_randomseq
+baseCommand:
+  - sqt
+  - randomseq
 label: sqt_randomseq
 doc: "Generate random sequences in FASTA format\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
 inputs:

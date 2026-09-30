@@ -67,10 +67,10 @@ inputs:
       prefix: --split_by_filter_column
   - id: output_db_path
     type: string
-    doc: Output or path parameter `output_db_path`
+    doc: Protein database including all the mutations
     inputBinding:
       position: 102
-      prefix: --output-db
+      prefix: --output_db
 outputs:
   - id: output_db
     type:

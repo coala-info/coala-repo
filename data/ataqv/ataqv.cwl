@@ -174,7 +174,6 @@ inputs:
       prefix: --verbose
   - id: metrics_file_path
     type: string
-    doc: Output or path parameter `metrics_file_path`
     inputBinding:
       position: 104
       prefix: --metrics-file

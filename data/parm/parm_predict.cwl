@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: parm predict
+baseCommand:
+  - parm
+  - predict
 label: parm_predict
 doc: "Promoter Activity Regulatory Model\n\nTool homepage: https://github.com/vansteensellab/PARM"
 inputs:

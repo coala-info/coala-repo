@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: verticall_matrix
+baseCommand:
+  - verticall
+  - matrix
 label: verticall_matrix
 doc: "produce a PHYLIP distance matrix\n\nTool homepage: https://github.com/rrwick/Verticall"
 inputs:

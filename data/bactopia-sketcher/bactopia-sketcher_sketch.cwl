@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash sketch dna
+baseCommand:
+  - sourmash
+  - sketch
+  - dna
 label: bactopia-sketcher_sketch
 doc: "The 'sketch dna' command reads in DNA sequences and outputs DNA sketches.\n\n\
   Tool homepage: https://bactopia.github.io/"
@@ -90,7 +93,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output
@@ -98,7 +100,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 104
       prefix: --output-dir

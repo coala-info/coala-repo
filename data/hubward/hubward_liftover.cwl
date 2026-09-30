@@ -14,6 +14,11 @@ inputs:
     doc: Single study to liftover
     inputBinding:
       position: 1
+  - id: newdir
+    type: string
+    doc: Destination directory
+    inputBinding:
+      position: 2
   - id: from_assembly
     type:
       - 'null'
@@ -31,11 +36,11 @@ inputs:
       position: 102
       prefix: --to_assembly
 outputs:
-  - id: newdir
+  - id: out_newdir
     type: Directory
     doc: Destination directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.newdir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hubward:0.2.2--py27_1

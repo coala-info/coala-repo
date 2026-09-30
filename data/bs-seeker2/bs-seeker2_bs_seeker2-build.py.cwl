@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bs_seeker2_bs_seeker2-build.py
+baseCommand: bs_seeker2-build.py
 label: bs-seeker2_bs_seeker2-build.py
 doc: "Build index for BS-Seeker2\n\nTool homepage: http://pellegrini.mcdb.ucla.edu/BS_Seeker2/"
 inputs:

@@ -51,11 +51,11 @@ inputs:
       position: 102
       prefix: -v
   - id: save_parse_tree_as_png_path
-    type: string
-    doc: Output or path parameter `save_parse_tree_as_png_path`
+    type: string?
+    doc: save the parse tree as a PNG image (pydot required!)
     inputBinding:
       position: 103
-      prefix: --save-parse-tree-as-png
+      prefix: -i
 outputs:
   - id: save_parse_tree_as_png
     type:

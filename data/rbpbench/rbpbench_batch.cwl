@@ -23,7 +23,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_folder
-    type: Directory
+    type: string
     doc: Batch job results output folder
     inputBinding:
       position: 3

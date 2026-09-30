@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_split2
+baseCommand:
+  - seqkit
+  - split2
 label: seqkit_split2
 doc: "split sequences into files by part size or number of parts\n\nTool homepage:
   https://github.com/shenwei356/seqkit"
@@ -126,7 +128,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory (default value is $infile.split)
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal plot
+baseCommand:
+  - reveal
+  - plot
 label: reveal_plot
 doc: "Generate mumplot for two fasta files.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:

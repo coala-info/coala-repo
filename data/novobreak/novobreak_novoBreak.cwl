@@ -36,9 +36,9 @@ inputs:
       prefix: -g
   - id: reference
     type: File
+    doc: Reference file in fasta format
     secondaryFiles:
       - .fai
-    doc: Reference file in fasta format
     inputBinding:
       position: 101
       prefix: -r
@@ -50,10 +50,10 @@ inputs:
       prefix: -i
   - id: output_kmer_path
     type: string
-    doc: Output or path parameter `output_kmer_path`
+    doc: Output kmer
     inputBinding:
       position: 102
-      prefix: --output-kmer
+      prefix: -o
 outputs:
   - id: output_kmer
     type: File

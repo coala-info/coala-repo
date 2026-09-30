@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kipoi ls
+baseCommand:
+  - kipoi
+  - ls
 label: kipoi_ls
 doc: "Lists available models\n\nTool homepage: https://github.com/kipoi/kipoi"
 inputs:

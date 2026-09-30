@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmindex merge
+baseCommand:
+  - kmindex
+  - merge
 label: kmindex_merge
 doc: "Merge sub-indexes.\n\nTool homepage: https://github.com/tlemane/kmindex"
 inputs:
@@ -64,6 +66,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --to-merge
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'

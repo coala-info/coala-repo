@@ -19,7 +19,7 @@ inputs:
       position: 102
       prefix: --quality
   - id: outdir_path
-    type: string
+    type: string?
     doc: Specify directory in which output has to be created.
     inputBinding:
       position: 103

@@ -74,8 +74,7 @@ inputs:
       position: 101
       prefix: --sample-name
   - id: dump_path
-    type: string
-    doc: Output or path parameter `dump_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --dump

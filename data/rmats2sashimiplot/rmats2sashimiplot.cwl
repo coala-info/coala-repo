@@ -147,7 +147,7 @@ inputs:
       position: 101
       prefix: --no-text-background
   - id: output_dir
-    type: Directory
+    type: string
     doc: The output directory.
     inputBinding:
       position: 101

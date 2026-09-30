@@ -22,7 +22,7 @@ inputs:
       prefix: --sort
   - id: output_pangenome_file_path
     type: string
-    doc: Output or path parameter `output_pangenome_file_path`
+    doc: output pangenome file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-pangenome-file

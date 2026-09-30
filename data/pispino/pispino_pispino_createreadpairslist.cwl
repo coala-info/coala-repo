@@ -46,11 +46,11 @@ inputs:
       position: 101
       prefix: --label-reindex-c
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: Name of output list file.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -56,7 +56,7 @@ inputs:
       prefix: --min-zscore
   - id: output_comparison_path
     type: string
-    doc: Output or path parameter `output_comparison_path`
+    doc: Output comparison file (CSV/TSV)
     inputBinding:
       position: 102
       prefix: --output-comparison

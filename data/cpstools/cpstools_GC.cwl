@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools GC
+baseCommand:
+  - cpstools
+  - GC
 label: cpstools_GC
 doc: "GC content calculation for genbank/fasta files\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools abort
+baseCommand:
+  - cromwell-tools
+  - abort
 label: cromwell-tools_abort
 doc: "Request Cromwell to abort a running workflow by UUID.\n\nTool homepage: http://github.com/broadinstitute/cromwell-tools"
 inputs:

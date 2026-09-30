@@ -50,7 +50,8 @@ inputs:
       in the 0-1 interval.
     inputBinding:
       position: 101
-      prefix: -lc_dust
+      prefix: -lc_dust=
+      separate: false
   - id: lc_entropy
     type:
       - 'null'
@@ -59,7 +60,8 @@ inputs:
       the 0-1 interval.
     inputBinding:
       position: 101
-      prefix: -lc_entropy
+      prefix: -lc_entropy=
+      separate: false
   - id: max_gc
     type:
       - 'null'
@@ -198,7 +200,8 @@ inputs:
       [float].
     inputBinding:
       position: 101
-      prefix: -trim_qual_left
+      prefix: -trim_qual_left=
+      separate: false
   - id: trim_qual_right
     type:
       - 'null'
@@ -207,7 +210,8 @@ inputs:
       the mean quality of the last -trim_qual_window bases is less than [float].
     inputBinding:
       position: 101
-      prefix: -trim_qual_right
+      prefix: -trim_qual_right=
+      separate: false
   - id: trim_qual_rule
     type:
       - 'null'
@@ -284,50 +288,44 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_bad_path`
     inputBinding:
       position: 102
-      prefix: --out-bad
+      prefix: -out_bad
   - id: out_bad2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_bad2_path`
     inputBinding:
       position: 103
-      prefix: --out-bad2
+      prefix: -out_bad2
   - id: out_good_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_good_path`
     inputBinding:
       position: 104
-      prefix: --out-good
+      prefix: -out_good
   - id: out_good2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_good2_path`
     inputBinding:
       position: 105
-      prefix: --out-good2
+      prefix: -out_good2
   - id: out_single_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_single_path`
     inputBinding:
       position: 106
-      prefix: --out-single
+      prefix: -out_single
   - id: out_single2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_single2_path`
     inputBinding:
       position: 107
-      prefix: --out-single2
+      prefix: -out_single2
 outputs:
   - id: out_good
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_tabular
+baseCommand:
+  - poretools
+  - tabular
 label: poretools_tabular
 doc: "Report FASTA entries from FAST5 files.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

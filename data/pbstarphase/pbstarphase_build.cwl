@@ -16,9 +16,9 @@ inputs:
       prefix: --build-options
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -33,7 +33,7 @@ inputs:
       prefix: --verbose
   - id: output_db_path
     type: string
-    doc: Output or path parameter `output_db_path`
+    doc: Output database location (JSON)
     inputBinding:
       position: 102
       prefix: --output-db

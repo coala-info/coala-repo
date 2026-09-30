@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmyphage install
+baseCommand:
+  - taxmyphage
+  - install
 label: taxmyphage_install
 doc: "Install taxmyphage databases and dependencies.\n\nTool homepage: https://github.com/amillard/tax_myPHAGE"
 inputs:

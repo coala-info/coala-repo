@@ -22,7 +22,7 @@ inputs:
     doc: Genefuse, json file
     inputBinding:
       position: 101
-      prefix: --input-genefuse_json
+      prefix: --input-genefuse-json
   - id: input_hmnfusion_bed
     type:
       - 'null'
@@ -51,7 +51,6 @@ inputs:
       prefix: --name
   - id: output_hmnfusion_vcf_path
     type: string
-    doc: Output or path parameter `output_hmnfusion_vcf_path`
     inputBinding:
       position: 102
       prefix: --output-hmnfusion-vcf

@@ -76,7 +76,7 @@ inputs:
   - id: dir_out
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to output directory, defaults to "results-cerberus" in current 
       directory.
     inputBinding:
@@ -85,7 +85,7 @@ inputs:
   - id: dir_out
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to output directory, defaults to "results-cerberus" in current 
       directory.
     inputBinding:

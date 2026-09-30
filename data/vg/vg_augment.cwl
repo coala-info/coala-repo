@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vg augment
+baseCommand:
+  - vg
+  - augment
 label: vg_augment
 doc: "Embed GAM alignments into a graph to facilitate variant calling\n\nTool homepage:
   https://github.com/vgteam/vg"
@@ -151,18 +153,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignment_out_file_path`
+    doc: save augmented GAM reads
     inputBinding:
       position: 104
-      prefix: --alignment-out-file
+      prefix: --alignment-out
   - id: translation_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `translation_file_path`
+    doc: save translations from augmented back to base graph
     inputBinding:
       position: 105
-      prefix: --translation-file
+      prefix: --translation
 outputs:
   - id: augmented_graph_vg_file
     type:

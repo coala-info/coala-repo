@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tb-profiler profile
+baseCommand:
+  - tb-profiler
+  - profile
 label: tb-profiler_profile
 doc: "Profile TB samples\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
 inputs:
@@ -321,7 +323,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 101

@@ -69,7 +69,6 @@ inputs:
       prefix: --verbosity
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
       prefix: --output-directory

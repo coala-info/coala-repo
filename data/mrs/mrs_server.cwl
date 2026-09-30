@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_server
+baseCommand:
+  - mrs
+  - server
 label: mrs_server
 doc: "\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

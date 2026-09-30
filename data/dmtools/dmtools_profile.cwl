@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools_profile
+baseCommand:
+  - dmtools
+  - profile
 label: dmtools_profile
 doc: "Calculate the methylation matrix mode of every region or gene.\n\nTool homepage:
   https://github.com/ZhouQiangwei/dmtools"
@@ -124,10 +126,10 @@ inputs:
       prefix: -p
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file [stdout]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

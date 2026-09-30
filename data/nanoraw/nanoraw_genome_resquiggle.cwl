@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw genome_resquiggle
+baseCommand:
+  - nanoraw
+  - genome_resquiggle
 label: nanoraw_genome_resquiggle
 doc: "Resquiggle raw signal data to a reference genome.\n\nTool homepage: https://github.com/marcus1487/nanoraw"
 inputs:

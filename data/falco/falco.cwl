@@ -66,7 +66,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: '[IGNORED: FALCO DOES NOT CREATE TMP FILES] Selects a directory to be used
       for temporary files.'
     inputBinding:
@@ -222,15 +222,14 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `data_filename_path`
+    doc: '[Falco only] Specify filename for FastQC'
     inputBinding:
       position: 103
-      prefix: --data-filename
+      prefix: -data-filename
   - id: outdir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 104
       prefix: --outdir
@@ -238,18 +237,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_filename_path`
+    doc: '[Falco only] Specify filename for FastQC'
     inputBinding:
       position: 105
-      prefix: --report-filename
+      prefix: -report-filename
   - id: summary_filename_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_filename_path`
+    doc: '[Falco only] Specify filename for the short'
     inputBinding:
       position: 106
-      prefix: --summary-filename
+      prefix: -summary-filename
 outputs:
   - id: outdir
     type:

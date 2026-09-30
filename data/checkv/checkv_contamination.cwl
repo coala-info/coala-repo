@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: checkv contamination
+baseCommand:
+  - checkv
+  - contamination
 label: checkv_contamination
 doc: "Estimate host contamination for integrated proviruses\n\nTool homepage: https://bitbucket.org/berkeleylab/checkv"
 inputs:
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 2

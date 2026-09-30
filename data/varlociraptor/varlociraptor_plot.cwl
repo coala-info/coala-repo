@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlociraptor plot
+baseCommand:
+  - varlociraptor
+  - plot
 label: varlociraptor_plot
 doc: "Create plots\n\nTool homepage: https://varlociraptor.github.io"
 inputs:

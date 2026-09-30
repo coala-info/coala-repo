@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isorefiner_map
+baseCommand:
+  - isorefiner
+  - map
 label: isorefiner_map
 doc: "Map reads to a reference genome using minimap2 and sort the output.\n\nTool
   homepage: https://github.com/rkajitani/IsoRefiner"

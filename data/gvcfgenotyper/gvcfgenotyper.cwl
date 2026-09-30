@@ -37,9 +37,9 @@ inputs:
       prefix: --output-type
   - id: reference_fasta
     type: File
+    doc: reference sequence
     secondaryFiles:
       - .fai
-    doc: reference sequence
     inputBinding:
       position: 101
       prefix: --fasta-ref
@@ -53,7 +53,7 @@ inputs:
       prefix: --region
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file name [stdout]
     inputBinding:
       position: 102
       prefix: --output-file

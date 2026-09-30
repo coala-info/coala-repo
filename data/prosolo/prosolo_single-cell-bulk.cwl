@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prosolo single-cell-bulk
+baseCommand:
+  - prosolo
+  - single-cell-bulk
 label: prosolo_single-cell-bulk
 doc: "Call somatic and germline variants from a single cell-bulk sample pair and a
   VCF/BCF with candidate variants.\n\nTool homepage: https://github.com/PROSIC/prosolo/tree/v0.2.0"
@@ -17,10 +19,10 @@ inputs:
       position: 2
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: FASTA file with reference genome. Has to be indexed with samtools 
       faidx.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 3
   - id: bulk_max_n
@@ -174,7 +176,7 @@ inputs:
       prefix: --spurious-insext-rate
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: BCF file that shall contain the results (if omitted, write to STDOUT).
     inputBinding:
       position: 105
       prefix: --output

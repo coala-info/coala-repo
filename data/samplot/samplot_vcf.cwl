@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samplot_vcf
+baseCommand:
+  - samplot
+  - vcf
 label: samplot_vcf
 doc: "Plots structural variants from VCF and BAM/CRAM files.\n\nTool homepage: https://github.com/ryanlayer/samplot"
 inputs:

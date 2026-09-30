@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ensemblcov_gtf-annotate-generate
+baseCommand:
+  - ensemblcov
+  - gtf-annotate-generate
 label: ensemblcov_gtf-annotate-generate
 doc: "Generate annotations from GTF files.\n\nTool homepage: https://github.com/IBCHgenomic/ensemlcov"
 inputs:

@@ -117,7 +117,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 107
@@ -209,10 +209,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_filename_path`
+    doc: output file name of report
     inputBinding:
       position: 109
-      prefix: --report-filename
+      prefix: --filename
 outputs:
   - id: archive_file
     type:

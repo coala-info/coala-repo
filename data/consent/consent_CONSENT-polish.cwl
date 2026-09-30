@@ -85,7 +85,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path where to store the temporary files
     inputBinding:
       position: 101
@@ -108,7 +108,6 @@ inputs:
       prefix: --windowSize
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

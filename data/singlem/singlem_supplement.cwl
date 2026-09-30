@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem supplement
+baseCommand:
+  - singlem
+  - supplement
 label: singlem_supplement
 doc: "Create a new metapackage from a vanilla one plus new genomes\n\nTool homepage:
   https://github.com/wwood/singlem"
@@ -229,7 +231,6 @@ inputs:
       prefix: --working-directory
   - id: output_taxonomies_path
     type: string
-    doc: Output or path parameter `output_taxonomies_path`
     inputBinding:
       position: 102
       prefix: --output-taxonomies

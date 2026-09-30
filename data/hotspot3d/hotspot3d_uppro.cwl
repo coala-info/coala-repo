@@ -76,7 +76,7 @@ inputs:
       prefix: --pdb-file-dir
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory of proximity files
     inputBinding:
       position: 102
       prefix: --output-dir

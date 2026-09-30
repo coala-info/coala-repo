@@ -21,7 +21,8 @@ inputs:
     doc: directory for converted data (must contain hash.csv)
     inputBinding:
       position: 101
-      prefix: -d
+      prefix: -d=
+      separate: false
   - id: evalue_threshold
     type:
       - 'null'
@@ -29,7 +30,8 @@ inputs:
     doc: e-value threshold for BLAST hits
     inputBinding:
       position: 101
-      prefix: -e
+      prefix: -e=
+      separate: false
   - id: query_id_index
     type:
       - 'null'
@@ -37,7 +39,8 @@ inputs:
     doc: index of the sequence ID field for the BLAST query
     inputBinding:
       position: 101
-      prefix: -q
+      prefix: -q=
+      separate: false
   - id: self_blast_dir
     type:
       - 'null'
@@ -45,7 +48,8 @@ inputs:
     doc: directory with the self-BLAST results
     inputBinding:
       position: 101
-      prefix: -s
+      prefix: -s=
+      separate: false
   - id: symmetrize_hits
     type:
       - 'null'
@@ -62,7 +66,8 @@ inputs:
     doc: index of the sequence ID field for the BLAST target
     inputBinding:
       position: 101
-      prefix: -t
+      prefix: -t=
+      separate: false
   - id: unfiltered_blast_dir
     type:
       - 'null'
@@ -70,7 +75,8 @@ inputs:
     doc: directory with the unfiltered BLAST results
     inputBinding:
       position: 101
-      prefix: -u
+      prefix: -u=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -81,10 +87,11 @@ inputs:
       prefix: -v
   - id: filtered_blast_dir_path
     type: string
-    doc: Output or path parameter `filtered_blast_dir_path`
+    doc: "=dfilt\tdirectory with the filtered BLAST results (default ./blaf)"
     inputBinding:
       position: 102
-      prefix: --filtered-blast-dir
+      prefix: -f=
+      separate: false
 outputs:
   - id: filtered_blast_dir
     type:

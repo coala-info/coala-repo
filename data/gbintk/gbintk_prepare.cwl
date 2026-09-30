@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gbintk prepare
+baseCommand:
+  - gbintk
+  - prepare
 label: gbintk_prepare
 doc: "Format the initial binning result from an existing binning tool\n\nTool homepage:
   https://github.com/metagentools/gbintk"

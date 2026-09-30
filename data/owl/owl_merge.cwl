@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: owl_merge
+baseCommand:
+  - owl
+  - merge
 label: owl_merge
 doc: "Merge multiple profiles\n\nTool homepage: https://github.com/PacificBiosciences/owl"
 inputs:

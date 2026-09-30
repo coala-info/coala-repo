@@ -125,7 +125,6 @@ inputs:
       prefix: --tombo-model-filename
   - id: statistics_file_basename_path
     type: string
-    doc: Output or path parameter `statistics_file_basename_path`
     inputBinding:
       position: 102
       prefix: --statistics-file-basename

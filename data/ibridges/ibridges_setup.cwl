@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges_setup
+baseCommand:
+  - ibridges
+  - setup
 label: ibridges_setup
 doc: "Use templates to create an iRODS environment json.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:
@@ -29,7 +31,7 @@ inputs:
       prefix: --overwrite
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Store the environment to a file.
     inputBinding:
       position: 103
       prefix: --output

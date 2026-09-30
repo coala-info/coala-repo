@@ -18,12 +18,17 @@ inputs:
     doc: Mapped genome file
     inputBinding:
       position: 2
-outputs:
   - id: output
+    type: string
+    doc: Output SNP matrix file
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_output
     type: File
     doc: Output SNP matrix file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainest:1.2.4--py35_0

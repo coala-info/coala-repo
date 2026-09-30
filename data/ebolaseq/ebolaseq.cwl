@@ -62,7 +62,7 @@ inputs:
       position: 101
       prefix: --metadata
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory for results
     inputBinding:
       position: 101

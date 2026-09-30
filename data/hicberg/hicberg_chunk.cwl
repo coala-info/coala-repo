@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg chunk
+baseCommand:
+  - hicberg
+  - chunk
 label: hicberg_chunk
 doc: "Chunk provided inputs in a desired number of pieces.\n\nTool homepage: https://github.com/sebgra/hicberg"
 inputs:
@@ -25,7 +27,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder to save the chunks.
     inputBinding:
       position: 103

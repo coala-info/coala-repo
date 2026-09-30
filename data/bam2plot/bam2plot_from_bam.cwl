@@ -113,7 +113,6 @@ inputs:
       prefix: --zoom
   - id: outpath_path
     type: string
-    doc: Output or path parameter `outpath_path`
     inputBinding:
       position: 103
       prefix: --outpath

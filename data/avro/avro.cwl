@@ -13,7 +13,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write generated Java classes to
     inputBinding:
       position: 102

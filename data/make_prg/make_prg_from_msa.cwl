@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: make_prg from_msa
+baseCommand:
+  - make_prg
+  - from_msa
 label: make_prg_from_msa
 doc: "Creates a PRG from a Multiple Sequence Alignment.\n\nTool homepage: https://github.com/rmcolq/make_prg"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler cp
+baseCommand:
+  - cooler
+  - cp
 label: cooler_cp
 doc: "Copy a cooler from one file to another or within the same file.\n\nTool homepage:
   https://github.com/open2c/cooler"

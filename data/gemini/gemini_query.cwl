@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini query
+baseCommand:
+  - gemini
+  - query
 label: gemini_query
 doc: "Query the GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

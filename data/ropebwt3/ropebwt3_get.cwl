@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ropebwt3_get
+baseCommand:
+  - ropebwt3
+  - get
 label: ropebwt3_get
 doc: "Get sequences from an FMR index\n\nTool homepage: https://github.com/lh3/ropebwt3"
 inputs:

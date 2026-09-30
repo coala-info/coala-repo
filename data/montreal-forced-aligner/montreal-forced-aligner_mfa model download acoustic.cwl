@@ -12,7 +12,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory to save the acoustic model to. Defaults to the MFA data 
       directory.
     inputBinding:

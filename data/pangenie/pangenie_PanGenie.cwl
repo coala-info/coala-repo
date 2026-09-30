@@ -81,9 +81,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: 'reference genome in FASTA format. NOTE: INPUT FASTA FILE MUST NOT BE COMPRESSED.'
     secondaryFiles:
       - .fai
-    doc: 'reference genome in FASTA format. NOTE: INPUT FASTA FILE MUST NOT BE COMPRESSED.'
     inputBinding:
       position: 101
       prefix: -r
@@ -156,18 +156,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
+    doc: 'prefix of the output files. NOTE: the given path must not include non-existent
+      folders (default: result).'
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: -o
   - id: write_sampled_panel_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_sampled_panel_path`
+    doc: write sampled panel to additional output VCF.
     inputBinding:
       position: 103
-      prefix: --write-sampled-panel
+      prefix: -d
 outputs:
   - id: write_sampled_panel
     type:
@@ -177,11 +178,13 @@ outputs:
     outputBinding:
       glob: $(inputs.write_sampled_panel_path)
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: 'prefix of the output files. NOTE: the given path must not include non-existent
       folders'
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

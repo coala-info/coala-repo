@@ -422,7 +422,8 @@ inputs:
       matrices as temporary files on disk?
     inputBinding:
       position: 101
-      prefix: --PCA_saveMemory
+      prefix: --PCA_saveMemory=
+      separate: false
   - id: posterior_files
     type:
       - 'null'
@@ -488,9 +489,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference FASTA file (MUST have .fai index file)
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file (MUST have .fai index file)
     inputBinding:
       position: 101
       prefix: --referenceFASTA
@@ -593,23 +594,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `normalize_output_path`
+    doc: Normalized read-depth matrix output file (default=`-')
     inputBinding:
       position: 102
-      prefix: --normalize-output
+      prefix: --normalizeOutput
   - id: output_matrix_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_matrix_path`
+    doc: Read-depth matrix output file  (default=`-')
     inputBinding:
       position: 103
-      prefix: --output-matrix
+      prefix: --outputMatrix
   - id: vcf_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_path`
+    doc: Genotyped CNV output VCF file  (default=`-')
     inputBinding:
       position: 104
       prefix: --vcf

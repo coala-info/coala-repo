@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dammit annotate
+baseCommand:
+  - dammit
+  - annotate
 label: dammit_annotate
 doc: "The main annotation pipeline. Calculates assembly stats; runs BUSCO; runs LAST
   against OrthoDB (and optionally uniref90), HMMER against Pfam, Inferal against Rfam,
@@ -117,7 +119,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory. By default this will be the name of the transcriptome
       file with `.dammit` appended
     inputBinding:

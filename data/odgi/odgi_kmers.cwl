@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi kmers
+baseCommand:
+  - odgi
+  - kmers
 label: odgi_kmers
 doc: "Display and characterize the kmer space of a graph.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

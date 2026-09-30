@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: verticall repair
+baseCommand:
+  - verticall
+  - repair
 label: verticall_repair
 doc: "repair assembly for use in Verticall\n\nTool homepage: https://github.com/rrwick/Verticall"
 inputs:

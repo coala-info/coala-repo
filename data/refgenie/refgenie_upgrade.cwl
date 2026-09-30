@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie upgrade
+baseCommand:
+  - refgenie
+  - upgrade
 label: refgenie_upgrade
 doc: "Upgrade config. This will alter the files on disk.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

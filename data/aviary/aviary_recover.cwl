@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aviary recover
+baseCommand:
+- aviary
+- recover
 label: aviary_recover
 doc: "The aviary binning pipeline\n\nTool homepage: https://github.com/rhysnewell/aviary/"
 inputs:
@@ -93,7 +95,6 @@ inputs:
       If performing assembly and multiple files are provided then only the first file
       will be used for assembly. If no longreads are provided then all samples will
       be co-assembled with megahit or metaspades depending on the --coassemble parameter'
-      - none
     inputBinding:
       position: 101
       prefix: --coupled
@@ -225,7 +226,6 @@ inputs:
       and multiple files are provided then only the first file will be used for assembly.
       If no longreads are provided then all samples will be co-assembled with megahit
       or metaspades depending on the --coassemble parameter'
-      - none
     inputBinding:
       position: 101
       prefix: --interleaved
@@ -277,7 +277,6 @@ inputs:
     doc: 'A space separated list of long-read read files. NOTE: The first file will
       be used for assembly unless --coassemble is set to True. Then all files will
       be used.'
-      - none
     inputBinding:
       position: 101
       prefix: --longreads
@@ -406,7 +405,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -420,7 +419,6 @@ inputs:
       and multiple files are provided then only the first file will be used for assembly.
       If no longreads are provided then all samples will be co-assembled with megahit
       or metaspades depending on the --coassemble parameter'
-      - none
     inputBinding:
       position: 101
       prefix: --pe-1
@@ -433,7 +431,6 @@ inputs:
       and multiple files are provided then only the first file will be used for assembly.
       If no longreads are provided then all samples will be co-assembled with megahit
       or metaspades depending on the --coassemble parameter'
-      - none
     inputBinding:
       position: 101
       prefix: --pe-2
@@ -602,7 +599,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location that will be treated used for temporary files. If 
       none is specified, the TMPDIR environment variable will be used. Can be 
       configured within the `configure` subcommand

@@ -14,7 +14,7 @@ inputs:
       prefix: --input-vcf-path
   - id: output_sample_file_path
     type: string
-    doc: Output or path parameter `output_sample_file_path`
+    doc: output sample file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-sample-file

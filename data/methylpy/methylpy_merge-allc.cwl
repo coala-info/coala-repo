@@ -17,7 +17,7 @@ inputs:
   - id: compress_output
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicating whether to compress (by gzip) the final output
     inputBinding:
       position: 101
@@ -43,14 +43,13 @@ inputs:
   - id: skip_snp_info
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicating whether to skip the merging of SNP information
     inputBinding:
       position: 101
       prefix: --skip-snp-info
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

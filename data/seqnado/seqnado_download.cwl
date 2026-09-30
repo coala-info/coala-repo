@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqnado download
+baseCommand:
+  - seqnado
+  - download
 label: seqnado_download
 doc: "Download FASTQ files from GEO/SRA using a metadata TSV file and optionally generate
   a design file.\n\nTool homepage: https://alsmith151.github.io/SeqNado/"
@@ -64,7 +66,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `design_output_path`
+    doc: PATH                  Output path for design   │
     inputBinding:
       position: 103
       prefix: --design-output
@@ -72,7 +74,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outdir_path`
+    doc: PATH                  Output directory for     │
     inputBinding:
       position: 104
       prefix: --outdir

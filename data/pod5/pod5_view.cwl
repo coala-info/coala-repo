@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5_view
+baseCommand:
+  - pod5
+  - view
 label: pod5_view
 doc: "Write contents of some pod5 file(s) as a table to stdout or --output if given.\n\
   \nTool homepage: https://github.com/nanoporetech/pod5-file-format"
@@ -87,7 +89,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

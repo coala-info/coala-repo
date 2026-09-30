@@ -18,6 +18,7 @@ inputs:
     doc: library type of the sample
     inputBinding:
       position: 101
+      prefix: --library_type
   - id: max_num_cigar
     type:
       - 'null'
@@ -25,6 +26,7 @@ inputs:
     doc: ignore reads with CIGAR size larger than this value
     inputBinding:
       position: 101
+      prefix: --max_num_cigar
   - id: min_bundle_gap
     type:
       - 'null'
@@ -32,6 +34,7 @@ inputs:
     doc: minimum distances required to start a new bundle
     inputBinding:
       position: 101
+      prefix: --min_bundle_gap
   - id: min_flank_length
     type:
       - 'null'
@@ -39,6 +42,7 @@ inputs:
     doc: minimum match length in each side for a spliced read
     inputBinding:
       position: 101
+      prefix: --min_flank_length
   - id: min_mapping_quality
     type:
       - 'null'
@@ -46,6 +50,7 @@ inputs:
     doc: ignore reads with mapping quality less than this value
     inputBinding:
       position: 101
+      prefix: --min_mapping_quality
   - id: min_num_hits_in_bundle
     type:
       - 'null'
@@ -53,6 +58,7 @@ inputs:
     doc: minimum number of reads required in a bundle
     inputBinding:
       position: 101
+      prefix: --min_num_hits_in_bundle
   - id: min_single_exon_coverage
     type:
       - 'null'
@@ -60,6 +66,7 @@ inputs:
     doc: minimum coverage required for a single-exon transcript
     inputBinding:
       position: 101
+      prefix: --min_single_exon_coverage
   - id: min_splice_bundary_hits
     type:
       - 'null'
@@ -67,6 +74,7 @@ inputs:
     doc: minimum number of spliced reads required for a junction
     inputBinding:
       position: 101
+      prefix: --min_splice_bundary_hits
   - id: min_transcript_coverage
     type:
       - 'null'
@@ -74,6 +82,7 @@ inputs:
     doc: minimum coverage required for a multi-exon transcript
     inputBinding:
       position: 101
+      prefix: --min_transcript_coverage
   - id: min_transcript_length_base
     type:
       - 'null'
@@ -82,6 +91,7 @@ inputs:
       + --min_transcript_length_increase * num-of-exons'
     inputBinding:
       position: 101
+      prefix: --min_transcript_length_base
   - id: min_transcript_length_increase
     type:
       - 'null'
@@ -89,6 +99,7 @@ inputs:
     doc: 'default: 50'
     inputBinding:
       position: 101
+      prefix: --min_transcript_length_increase
   - id: verbose
     type:
       - 'null'
@@ -96,6 +107,7 @@ inputs:
     doc: '0: quiet; 1: one line for each graph; 2: with details'
     inputBinding:
       position: 101
+      prefix: --verbose
   - id: output_gtf_path
     type: string
     doc: Output or path parameter `output_gtf_path`

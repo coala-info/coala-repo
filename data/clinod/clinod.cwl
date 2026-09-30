@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar clinod-1.3.jar
+baseCommand:
+  - java
+  - -jar
+  - clinod-1.3.jar
 label: clinod
 doc: "Nucleolar localization sequence Detector\n\nTool homepage: https://github.com/RogerioAP/Clinodonto-Soft"
 inputs:
@@ -19,7 +22,8 @@ inputs:
       3) Local directory path'
     inputBinding:
       position: 101
-      prefix: -bm
+      prefix: -bm=
+      separate: false
   - id: clean_sequence
     type:
       - 'null'
@@ -40,7 +44,8 @@ inputs:
       list of FASTA formatted sequences.
     inputBinding:
       position: 101
-      prefix: -in
+      prefix: -in=
+      separate: false
   - id: number_of_threads
     type:
       - 'null'
@@ -52,7 +57,8 @@ inputs:
       available on the computer.
     inputBinding:
       position: 101
-      prefix: -t
+      prefix: -t=
+      separate: false
   - id: output_format
     type:
       - 'null'
@@ -61,7 +67,8 @@ inputs:
       SHORT and MINIMAL (case sensitive)
     inputBinding:
       position: 101
-      prefix: -f
+      prefix: -f=
+      separate: false
   - id: suppress_no_nols
     type:
       - 'null'
@@ -74,7 +81,7 @@ inputs:
   - id: working_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: optional, defaults to the system temp directory (defined by the 
       "java.io.tmpdir" environmental variable) If the directory does not exist, 
       it will be created. However the parent directory must exist. For example 
@@ -86,7 +93,8 @@ inputs:
       be overridden. environmental variable)
     inputBinding:
       position: 101
-      prefix: -d
+      prefix: -d=
+      separate: false
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`

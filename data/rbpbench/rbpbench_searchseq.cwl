@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench searchseq
+baseCommand:
+  - rbpbench
+  - searchseq
 label: rbpbench_searchseq
 doc: "Search for sequence motifs in DNA/RNA sequences.\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:
@@ -246,7 +248,7 @@ inputs:
       position: 101
       prefix: --motifs
   - id: output_folder
-    type: Directory
+    type: string
     doc: Results output folder
     inputBinding:
       position: 101

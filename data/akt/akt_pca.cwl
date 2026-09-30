@@ -142,7 +142,7 @@ inputs:
       prefix: --weight
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output vcf
     inputBinding:
       position: 103
       prefix: --output

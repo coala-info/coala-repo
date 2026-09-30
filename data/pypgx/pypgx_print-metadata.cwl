@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx print-metadata
+baseCommand:
+  - pypgx
+  - print-metadata
 label: pypgx_print-metadata
 doc: "Print the metadata of specified archive.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

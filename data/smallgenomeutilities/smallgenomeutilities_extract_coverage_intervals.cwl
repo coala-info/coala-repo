@@ -50,6 +50,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --names
+      itemSeparator: ','
   - id: no_shorah
     type:
       - 'null'
@@ -114,7 +115,6 @@ inputs:
       prefix: --window-shift
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

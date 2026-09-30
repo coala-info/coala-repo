@@ -9,9 +9,9 @@ doc: "AGC (Assembled Genomes Compressor) - Create a compressed archive from asse
 inputs:
   - id: reference_fasta
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 1
   - id: input_fastas
@@ -113,10 +113,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '- output to file (default: output is sent to stdout)'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

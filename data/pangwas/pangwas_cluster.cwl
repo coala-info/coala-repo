@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas_cluster
+baseCommand:
+  - pangwas
+  - cluster
 label: pangwas_cluster
 doc: "Cluster nucleotide sequences with mmseqs.\n\nTakes as input a FASTA file of
   sequences for clustering. Calls MMSeqs2 \nto cluster sequences and identify a representative
@@ -34,7 +36,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101
@@ -58,7 +60,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Tmp directory
     inputBinding:
       position: 101

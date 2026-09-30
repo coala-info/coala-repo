@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metacache build+query
+baseCommand:
+  - metacache
+  - build+query
 label: metacache_build+query
 doc: "Builds and queries a sequence cache.\n\nTool homepage: https://github.com/muellan/metacache"
 inputs:

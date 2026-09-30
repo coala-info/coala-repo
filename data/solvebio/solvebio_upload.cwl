@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio upload
+baseCommand:
+  - solvebio
+  - upload
 label: solvebio_upload
 doc: "Upload local files or directories to SolveBio.\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

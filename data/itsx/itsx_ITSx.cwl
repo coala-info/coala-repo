@@ -318,7 +318,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Custom directory to put the temporary files in
     inputBinding:
       position: 101
@@ -360,10 +360,10 @@ inputs:
       prefix: --stdin
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '{file} : Base for the names of output file(s)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

@@ -96,7 +96,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `rfile_path`
+    doc: PREFIX of filename of R script for drawing
     inputBinding:
       position: 103
       prefix: --rfile
@@ -112,11 +112,12 @@ outputs:
   - id: rfile
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: PREFIX of filename of R script for drawing X-correlation figure. 
       DEFAULT:'predictd' and R file will be predicted_model.R
     outputBinding:
-      glob: $(inputs.rfile_path)
+      glob: $(inputs.rfile_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

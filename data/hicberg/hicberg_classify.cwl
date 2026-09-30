@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg classify
+baseCommand:
+  - hicberg
+  - classify
 label: hicberg_classify
 doc: "Perform classification of Hi-C reads (pairs). 3 groups wil be defined and 2
   alignment files (.bam) will be created per group:\n\n  - Unmapped read pairs (group
@@ -18,10 +20,10 @@ inputs:
       prefix: --mapq
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder to save results.
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

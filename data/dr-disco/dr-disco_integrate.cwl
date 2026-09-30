@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dr-disco integrate
+baseCommand:
+  - dr-disco
+  - integrate
 label: dr-disco_integrate
 doc: "Integrates gene annotation and reference sequences for fusion gene estimation
   and classification.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
@@ -10,6 +12,11 @@ inputs:
     doc: Input table file
     inputBinding:
       position: 1
+  - id: table_output_file
+    type: string
+    doc: Output table file
+    inputBinding:
+      position: 2
   - id: fasta
     type:
       - 'null'
@@ -29,11 +36,11 @@ inputs:
       position: 102
       prefix: --gtf
 outputs:
-  - id: table_output_file
+  - id: out_table_output_file
     type: File
     doc: Output table file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.table_output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0

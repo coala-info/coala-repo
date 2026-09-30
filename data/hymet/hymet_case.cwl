@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hymet_case
+baseCommand:
+  - hymet
+  - case
 label: hymet_case
 doc: "Run a case study with HYMET.\n\nTool homepage: https://github.com/inesbmartins02/HYMET"
 inputs:
@@ -61,8 +63,8 @@ inputs:
       position: 102
       prefix: --threads
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
+    doc: Output root directory
     inputBinding:
       position: 103
       prefix: --out

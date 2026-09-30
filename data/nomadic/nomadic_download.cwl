@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nomadic download
+baseCommand:
+  - nomadic
+  - download
 label: nomadic_download
 doc: "Download target reference genome by specifying a `reference_name`, or download
   all available genomes with the `--all` flag\n\nTool homepage: https://jasonahendry.github.io/nomadic/"

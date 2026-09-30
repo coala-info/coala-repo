@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vg index
+baseCommand:
+  - vg
+  - index
 label: vg_index
 doc: "Creates an index on the specified graph or graphs. All graphs indexed must already
   be in a joint ID space.\n\nTool homepage: https://github.com/vgteam/vg"
@@ -98,7 +100,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: use DIR for temporary files
     inputBinding:
       position: 102
@@ -148,7 +150,7 @@ inputs:
       prefix: --xg-name
   - id: gcsa_out_path
     type: string
-    doc: Output or path parameter `gcsa_out_path`
+    doc: output GCSA2 (FILE) & LCP (FILE.lcp) indexes
     inputBinding:
       position: 103
       prefix: --gcsa-out

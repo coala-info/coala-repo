@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gecco predict
+baseCommand:
+  - gecco
+  - predict
 label: gecco_predict
 doc: "Predicts gene clusters and domain annotations.\n\nTool homepage: https://gecco.embl.de/"
 inputs:

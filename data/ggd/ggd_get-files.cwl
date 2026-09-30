@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd_get-files
+baseCommand:
+  - ggd
+  - get-files
 label: ggd_get-files
 doc: "Get a list of file(s) for a specific installed ggd package\n\nTool homepage:
   https://github.com/gogetdata/ggd-cli"

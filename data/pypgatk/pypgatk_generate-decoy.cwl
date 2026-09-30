@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pgatk generate-decoy
+baseCommand:
+  - pgatk
+  - generate-decoy
 label: pypgatk_generate-decoy
 doc: "Generate decoy protein sequences for a target protein database.\n\nTool homepage:
   http://github.com/bigbio/py-pgatk"
@@ -145,10 +147,10 @@ inputs:
       prefix: --temp_file
   - id: output_database_path
     type: string
-    doc: Output or path parameter `output_database_path`
+    doc: Output file for decoy database
     inputBinding:
       position: 102
-      prefix: --output-database
+      prefix: --output_database
 outputs:
   - id: output_database
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bcbio-rnaseq simulate
+baseCommand:
+  - bcbio-rnaseq
+  - simulate
 label: bcbio-rnaseq_simulate
 doc: "Simulate RNA-Seq data\n\nTool homepage: https://github.com/hbc/bcbioRNASeq"
 inputs:
@@ -29,7 +31,7 @@ inputs:
       position: 101
       prefix: --num-genes
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

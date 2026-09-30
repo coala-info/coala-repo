@@ -19,6 +19,7 @@ inputs:
       identifiers separated by semi-colons.
     inputBinding:
       position: 102
+      prefix: --add-id-lineage
   - id: add_lineage
     type:
       - 'null'
@@ -27,6 +28,7 @@ inputs:
       separated by semi-colons.
     inputBinding:
       position: 102
+      prefix: --add-lineage
   - id: add_name
     type:
       - 'null'
@@ -34,6 +36,7 @@ inputs:
     doc: Add the taxon name to the output.
     inputBinding:
       position: 102
+      prefix: --add-name
   - id: add_rank
     type:
       - 'null'
@@ -41,6 +44,7 @@ inputs:
     doc: Add the taxon rank to the output.
     inputBinding:
       position: 102
+      prefix: --add-rank
   - id: add_rank_lineage
     type:
       - 'null'
@@ -49,6 +53,7 @@ inputs:
       ranks separated by semi-colons.
     inputBinding:
       position: 102
+      prefix: --add-rank-lineage
   - id: output_format
     type:
       - 'null'
@@ -59,6 +64,7 @@ inputs:
       detection.
     inputBinding:
       position: 102
+      prefix: --output-format
   - id: profiler
     type: string
     doc: The taxonomic profiler used.
@@ -88,9 +94,10 @@ inputs:
       and names.dmp are required. A merged.dmp file is optional.
     inputBinding:
       position: 102
+      prefix: --taxonomy
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: PATH                  The desired output    │
     inputBinding:
       position: 103
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomepy_plugin
+baseCommand:
+  - genomepy
+  - plugin
 label: genomepy_plugin
 doc: "Enable or disable plugins.\n\nTool homepage: https://github.com/vanheeringen-lab/genomepy"
 inputs:

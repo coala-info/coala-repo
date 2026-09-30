@@ -70,7 +70,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Temporary directory (default: tmp)'
     inputBinding:
       position: 102

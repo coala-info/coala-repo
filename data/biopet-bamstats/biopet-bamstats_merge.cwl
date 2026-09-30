@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - biopet
-  - bamstats
+  - biopet-bamstats
   - merge
 label: biopet-bamstats_merge
 doc: "Merge bamstats files into a single file.\n\nTool homepage: https://github.com/biopet/bamstats"
@@ -26,10 +25,10 @@ inputs:
       prefix: --log_level
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output file'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outputFile
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cobs compact-construct-combine
+baseCommand:
+  - cobs
+  - compact-construct-combine
 label: cobs_compact-construct-combine
 doc: "Constructs and combines compact indexes from input directory to output file.\n\
   \nTool homepage: https://panthema.net/cobs"
@@ -10,6 +12,11 @@ inputs:
     doc: path to the input directory
     inputBinding:
       position: 1
+  - id: out_file
+    type: string
+    doc: path to the output file
+    inputBinding:
+      position: 2
   - id: page_size
     type:
       - 'null'
@@ -19,11 +26,11 @@ inputs:
       position: 102
       prefix: --page-size
 outputs:
-  - id: out_file
+  - id: out_out_file
     type: File
     doc: path to the output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

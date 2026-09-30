@@ -100,7 +100,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary folder to use for intermediate files
     inputBinding:
       position: 101

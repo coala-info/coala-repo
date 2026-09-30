@@ -27,7 +27,8 @@ inputs:
       second.
     inputBinding:
       position: 102
-      prefix: -retries
+      prefix: -retries=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

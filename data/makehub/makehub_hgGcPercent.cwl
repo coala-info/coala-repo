@@ -22,7 +22,8 @@ inputs:
       bedRegionsOut
     inputBinding:
       position: 103
-      prefix: -bedRegionIn
+      prefix: -bedRegionIn=
+      separate: false
   - id: chromosome
     type:
       - 'null'
@@ -30,7 +31,8 @@ inputs:
     doc: Process only chrN from the nibDir
     inputBinding:
       position: 103
-      prefix: -chr
+      prefix: -chr=
+      separate: false
   - id: do_gaps
     type:
       - 'null'
@@ -70,7 +72,8 @@ inputs:
     doc: Overlap windows by N bases
     inputBinding:
       position: 103
-      prefix: -overlap
+      prefix: -overlap=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -78,7 +81,8 @@ inputs:
     doc: Display details to stderr during processing
     inputBinding:
       position: 103
-      prefix: -verbose
+      prefix: -verbose=
+      separate: false
   - id: wig_out
     type:
       - 'null'
@@ -94,7 +98,8 @@ inputs:
     doc: Change windows size
     inputBinding:
       position: 103
-      prefix: -win
+      prefix: -win=
+      separate: false
   - id: bed_region_out_path
     type:
       - 'null'

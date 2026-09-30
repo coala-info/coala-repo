@@ -79,8 +79,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_prefix_path
-    type: string
-    doc: Output or path parameter `output_prefix_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -88,11 +87,12 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix used for all file output. If the prefix includes a directory, 
       the directory must already exist
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

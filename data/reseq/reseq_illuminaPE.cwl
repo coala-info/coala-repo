@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reseq illuminaPE
+baseCommand:
+  - reseq
+  - illuminaPE
 label: reseq_illuminaPE
 doc: "ReSeq version 1.1 in illuminaPE mode\n\nTool homepage: https://github.com/schmeing/ReSeq/tree/devel"
 inputs:
@@ -299,10 +301,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_sys_error_path`
+    doc: arg                   Write the randomly drawn systematic errors to 
+      file in fastq format (seq=dominant error, qual=error percentage)
     inputBinding:
       position: 104
-      prefix: --write-sys-error
+      prefix: --writeSysError
 outputs:
   - id: stats_out
     type:

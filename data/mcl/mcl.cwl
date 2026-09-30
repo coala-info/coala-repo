@@ -457,26 +457,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: use this directory for output
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -odir
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: '!  write output to file <fname>'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
   - id: write_expanded_graph_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_expanded_graph_file_path`
+    doc: file name to write expanded graph to
     inputBinding:
       position: 104
-      prefix: --write-expanded-graph-file
+      prefix: -write-expanded
 outputs:
   - id: output_file
     type:

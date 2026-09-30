@@ -230,15 +230,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output to file [stdout]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
   - id: skip_ultra_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `skip_ultra_path`
+    doc: skip ultra long reads and write those entries to the bam file provided 
+      as the argument
     inputBinding:
       position: 103
       prefix: --skip-ultra

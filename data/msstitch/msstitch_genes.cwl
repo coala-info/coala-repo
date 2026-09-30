@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch_genes
+baseCommand:
+  - msstitch
+  - genes
 label: msstitch_genes
 doc: "Processes gene-related data, likely from mass spectrometry experiments, for
   quantification and analysis.\n\nTool homepage: https://github.com/lehtiolab/msstitch"
@@ -216,10 +218,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_dir
     type:

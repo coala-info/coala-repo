@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastx_extract
+baseCommand:
+  - pyfastx
+  - extract
 label: pyfastx_extract
 doc: "Extract sequences from FASTA/FASTQ files.\n\nTool homepage: https://github.com/lmdu/pyfastx"
 inputs:
@@ -52,11 +54,11 @@ inputs:
       position: 103
       prefix: --sequential-read
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: 'str, --out-file str output file, default: output to stdout'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

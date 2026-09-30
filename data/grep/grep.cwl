@@ -84,7 +84,8 @@ inputs:
       'never', or 'auto'
     inputBinding:
       position: 103
-      prefix: --color
+      prefix: --color=
+      separate: false
   - id: colour
     type:
       - 'null'
@@ -93,7 +94,8 @@ inputs:
       'never', or 'auto'
     inputBinding:
       position: 103
-      prefix: --colour
+      prefix: --colour=
+      separate: false
   - id: context
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanomonsv_get
+baseCommand:
+  - nanomonsv
+  - get
 label: nanomonsv_get
 doc: "nanomonsv get is a subcommand of nanomonsv. It processes tumor and control BAM/CRAM
   files to identify structural variants.\n\nTool homepage: https://github.com/friend1ws/nanomonsv"

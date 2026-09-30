@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_descr
+baseCommand:
+  - fastools
+  - descr
 label: fastools_descr
 doc: "Return the description of all records in a FASTA file.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:

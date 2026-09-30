@@ -84,7 +84,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_path`
+    doc: '[optional] the trimming information of each amplicon [default: Summary.ampcount]'
     inputBinding:
       position: 102
       prefix: --summary
@@ -92,7 +92,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `trim1_path`
+    doc: '[required] the trimmed read1 of fastq file'
     inputBinding:
       position: 103
       prefix: --trim1
@@ -100,7 +100,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `trim2_path`
+    doc: '[optional] the trimmed read2 of fastq file (paired-end seqtype)'
     inputBinding:
       position: 104
       prefix: --trim2

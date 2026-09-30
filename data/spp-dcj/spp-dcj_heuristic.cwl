@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spp-dcj_heuristic
+baseCommand:
+  - spp-dcj
+  - heuristic
 label: spp-dcj_heuristic
 doc: "heuristic\n\nTool homepage: https://github.com/codialab/spp-dcj"
 inputs:

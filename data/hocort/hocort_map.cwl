@@ -31,7 +31,6 @@ inputs:
       prefix: --quiet
   - id: log_file_path
     type: string
-    doc: Output or path parameter `log_file_path`
     inputBinding:
       position: 103
       prefix: --log-file

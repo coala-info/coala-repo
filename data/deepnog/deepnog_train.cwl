@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepnog train
+baseCommand:
+  - deepnog
+  - train
 label: deepnog_train
 doc: "Train a DeepNOG model.\n\nTool homepage: https://github.com/univieCUBE/deepnog"
 inputs:

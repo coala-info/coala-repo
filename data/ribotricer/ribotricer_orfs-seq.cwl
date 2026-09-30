@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotricer orfs-seq
+baseCommand:
+  - ribotricer
+  - orfs-seq
 label: ribotricer_orfs-seq
 doc: "Generate sequence for ORFs in ribotricer's index\n\nTool homepage: https://github.com/smithlabcode/ribotricer"
 inputs:
   - id: fasta
-    type: string
+    type: File
     doc: Path to FASTA file
     inputBinding:
       position: 101
@@ -27,7 +29,7 @@ inputs:
       prefix: --ribotricer_index
   - id: saveto_path
     type: string
-    doc: Output or path parameter `saveto_path`
+    doc: Path to output file  [required]
     inputBinding:
       position: 102
       prefix: --saveto

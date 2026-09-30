@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svaba run
+baseCommand:
+  - svaba
+  - run
 label: svaba_run
 doc: "SV and indel detection using rolling SGA assembly and BWA-MEM realignment\n\n\
   Tool homepage: https://github.com/walaj/svaba"

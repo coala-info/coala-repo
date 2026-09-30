@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nimnexus_trim
+baseCommand:
+  - nimnexus
+  - trim
 label: nimnexus_trim
 doc: "Trim the fastq reads\n\nTool homepage: https://github.com/avsecz/nimnexus"
 inputs:

@@ -16,6 +16,12 @@ inputs:
       IMPORTANT: the type of input needs to be specified with --input_type'
     inputBinding:
       position: 1
+  - id: output_file
+    type: string?
+    doc: the tab-separated output file of the predicted taxon relative 
+      abundances [stdout if not present]
+    inputBinding:
+      position: 2
   - id: add_viruses
     type:
       - 'null'
@@ -386,14 +392,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use_group_representative
-  - id: biom_output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `biom_output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --biom-output-file
   - id: output_file_opt_path
     type:
       - 'null'
@@ -402,15 +400,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: --output-file-opt
+  - id: biom_output_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --biom_output_file
 outputs:
-  - id: output_file
+  - id: out_output_file
     type:
       - 'null'
       - File
     doc: the tab-separated output file of the predicted taxon relative 
       abundances [stdout if not present]
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
   - id: output_file_opt
     type:
       - 'null'

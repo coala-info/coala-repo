@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit_shuffle
+baseCommand:
+  - nwkit
+  - shuffle
 label: nwkit_shuffle
 doc: "Shuffle newick trees\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

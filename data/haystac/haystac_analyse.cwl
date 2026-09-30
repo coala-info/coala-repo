@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haystac analyse
+baseCommand:
+  - haystac
+  - analyse
 label: haystac_analyse
 doc: "Analyse a sample against a database\n\nTool homepage: https://github.com/antonisdim/haystac"
 inputs:
@@ -127,7 +129,7 @@ inputs:
       prefix: --unlock
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to the analysis output directory
     inputBinding:
       position: 102
       prefix: --output

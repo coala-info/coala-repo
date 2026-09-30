@@ -15,7 +15,7 @@ inputs:
   - id: doc
     type:
       - 'null'
-      - boolean
+      - string
     doc: run depth of coverage on all files?
     inputBinding:
       position: 101
@@ -39,7 +39,7 @@ inputs:
   - id: keep
     type:
       - 'null'
-      - boolean
+      - string
     doc: keep temp files?
     inputBinding:
       position: 101
@@ -56,7 +56,7 @@ inputs:
   - id: only_subs
     type:
       - 'null'
-      - boolean
+      - string
     doc: Only run sub-sample routine and exit?
     inputBinding:
       position: 101
@@ -100,7 +100,7 @@ inputs:
   - id: subsample
     type:
       - 'null'
-      - boolean
+      - string
     doc: Run subsample routine?
     inputBinding:
       position: 101
@@ -108,7 +108,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory for GATK analysis
     inputBinding:
       position: 101

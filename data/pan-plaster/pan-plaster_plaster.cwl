@@ -89,14 +89,13 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save nucmer outputs.
     inputBinding:
       position: 102
       prefix: --work-dir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

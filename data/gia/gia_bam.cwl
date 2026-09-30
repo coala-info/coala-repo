@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia bam
+baseCommand:
+  - gia
+  - bam
 label: gia_bam
 doc: "BAM-centric commands\n\nTool homepage: https://github.com/noamteyssier/gia"
 inputs:

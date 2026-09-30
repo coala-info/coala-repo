@@ -139,10 +139,9 @@ inputs:
       prefix: --verbose
   - id: output_report_path_path
     type: string
-    doc: Output or path parameter `output_report_path_path`
     inputBinding:
       position: 103
-      prefix: --output-report-path
+      prefix: --output_report_path
 outputs:
   - id: output_report_path
     type:

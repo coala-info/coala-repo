@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mitoz_filter
+baseCommand:
+  - mitoz
+  - filter
 label: mitoz_filter
 doc: "Filter input fastq reads.\n\nTool homepage: https://github.com/linzhi2013/MitoZ"
 inputs:

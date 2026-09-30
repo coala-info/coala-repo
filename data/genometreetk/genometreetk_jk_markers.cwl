@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk jk_markers
+baseCommand:
+  - genometreetk
+  - jk_markers
 label: genometreetk_jk_markers
 doc: "Jackknife marker genes.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
@@ -25,7 +27,7 @@ inputs:
     inputBinding:
       position: 4
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory)
     inputBinding:
       position: 5

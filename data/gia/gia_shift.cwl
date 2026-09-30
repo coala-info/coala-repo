@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia shift
+baseCommand:
+  - gia
+  - shift
 label: gia_shift
 doc: "Shifts the intervals of a BED file by a specified amount\n\nTool homepage: https://github.com/noamteyssier/gia"
 inputs:
@@ -69,11 +71,11 @@ inputs:
       position: 101
       prefix: --percent
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -11,12 +11,17 @@ inputs:
     doc: Input taxonomy file
     inputBinding:
       position: 1
-outputs:
   - id: output_file
+    type: string
+    doc: Output file for taxon statistics
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_output_file
     type: File
     doc: Output file for taxon statistics
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

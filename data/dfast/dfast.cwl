@@ -226,7 +226,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

@@ -47,7 +47,7 @@ inputs:
       prefix: --nproc
   - id: out_prefix_path
     type: string
-    doc: Output or path parameter `out_prefix_path`
+    doc: Save virtual 4C track as a BED-like file. Contact
     inputBinding:
       position: 104
       prefix: --out-prefix

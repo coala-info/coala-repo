@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isorefiner_trim
+baseCommand:
+  - isorefiner
+  - trim
 label: isorefiner_trim
 doc: "Trim reads using Porechop_ABI\n\nTool homepage: https://github.com/rkajitani/IsoRefiner"
 inputs:

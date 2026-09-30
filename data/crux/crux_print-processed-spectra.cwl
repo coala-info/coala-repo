@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux print-processed-spectra
+baseCommand:
+  - crux
+  - print-processed-spectra
 label: crux_print-processed-spectra
 doc: "Parse fragmentation spectra from MS2 files and write processed spectra to an
   output file.\n\nTool homepage: https://github.com/redbadger/crux"
@@ -18,6 +20,7 @@ inputs:
     doc: Specify the output units for processed spectra.
     inputBinding:
       position: 102
+      prefix: --output-units
   - id: overwrite
     type:
       - 'null'
@@ -26,6 +29,7 @@ inputs:
       if false.
     inputBinding:
       position: 102
+      prefix: --overwrite
   - id: parameter_file
     type:
       - 'null'
@@ -33,6 +37,7 @@ inputs:
     doc: A file containing parameters.
     inputBinding:
       position: 102
+      prefix: --parameter-file
   - id: spectrum_parser
     type:
       - 'null'
@@ -40,6 +45,7 @@ inputs:
     doc: Specify the parser to use for reading in MS/MS spectra.
     inputBinding:
       position: 102
+      prefix: --spectrum-parser
   - id: stop_after
     type:
       - 'null'
@@ -47,6 +53,7 @@ inputs:
     doc: Stop after the specified pre-processing step.
     inputBinding:
       position: 102
+      prefix: --stop-after
   - id: use_z_line
     type:
       - 'null'
@@ -55,6 +62,7 @@ inputs:
       precursor mass information from the "S" line or the "Z" line.
     inputBinding:
       position: 102
+      prefix: --use-z-line
   - id: verbosity
     type:
       - 'null'
@@ -65,6 +73,7 @@ inputs:
       information, 50-debug info, 60-detailed debug info.'
     inputBinding:
       position: 102
+      prefix: --verbosity
 outputs:
   - id: output_file
     type: File

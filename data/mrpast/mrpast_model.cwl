@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast model
+baseCommand:
+  - mrpast
+  - model
 label: mrpast_model
 doc: "Builds and manipulates demographic models.\n\nTool homepage: https://aprilweilab.github.io/"
 inputs:
@@ -18,8 +20,7 @@ inputs:
       position: 102
       prefix: --debug
   - id: to_demes_path
-    type: string
-    doc: Output or path parameter `to_demes_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --to-demes

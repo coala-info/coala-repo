@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: syngap evi
+baseCommand:
+  - syngap
+  - evi
 label: syngap_evi
 doc: "Calculate EVI (Expression Variation Index) for gene pairs.\n\nTool homepage:
   https://github.com/yanyew/SynGAP"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smafa makedb
+baseCommand:
+  - smafa
+  - makedb
 label: smafa_makedb
 doc: "Generate a searchable database\n\nTool homepage: https://github.com/wwood/smafa"
 inputs:
@@ -28,10 +30,10 @@ inputs:
       prefix: --verbose
   - id: database_file_path
     type: string
-    doc: Output or path parameter `database_file_path`
+    doc: Output DB filename [required]
     inputBinding:
       position: 102
-      prefix: --database-file
+      prefix: --database
 outputs:
   - id: database_file
     type: File

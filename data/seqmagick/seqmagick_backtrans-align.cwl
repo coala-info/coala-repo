@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqmagick backtrans-align
+baseCommand:
+  - seqmagick
+  - backtrans-align
 label: seqmagick_backtrans-align
 doc: "Given a protein alignment and unaligned nucleotides, align the nucleotides using
   the protein alignment. Protein and nucleotide sequence files must contain the same
@@ -33,11 +35,12 @@ inputs:
       position: 103
       prefix: --translation-table
   - id: destination_file_path
-    type: string
-    doc: Output or path parameter `destination_file_path`
+    type: string?
+    doc: 'destination_file, --out-file destination_file Output destination. Default:
+      STDOUT'
     inputBinding:
       position: 104
-      prefix: --destination-file
+      prefix: -o
 outputs:
   - id: destination_file
     type:

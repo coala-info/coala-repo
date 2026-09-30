@@ -42,7 +42,7 @@ inputs:
       position: 103
       prefix: --min-support
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to save the created clade files.
     inputBinding:
       position: 103

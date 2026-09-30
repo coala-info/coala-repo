@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmyphage mash
+baseCommand:
+  - taxmyphage
+  - mash
 label: taxmyphage_mash
 doc: "Performs MASH comparison for phage classification.\n\nTool homepage: https://github.com/amillard/tax_myPHAGE"
 inputs:
@@ -62,7 +64,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output directory.
     inputBinding:
       position: 102

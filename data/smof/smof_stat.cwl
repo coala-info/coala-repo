@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_stat
+baseCommand:
+  - smof
+  - stat
 label: smof_stat
 doc: "The default action is to count the lengths of all sequences and output summary
   statistics including: 1) the number of sequences, 2) the number of characters, 3)

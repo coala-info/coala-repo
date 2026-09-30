@@ -38,10 +38,10 @@ inputs:
       prefix: --remove
   - id: out_gfa_path
     type: string
-    doc: Output or path parameter `out_gfa_path`
+    doc: Output GFA file (required)
     inputBinding:
       position: 102
-      prefix: --out-gfa
+      prefix: --out_gfa
 outputs:
   - id: out_gfa
     type: File

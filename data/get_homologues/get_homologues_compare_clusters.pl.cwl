@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -d
+      itemSeparator: ','
   - id: include_list
     type:
       - 'null'

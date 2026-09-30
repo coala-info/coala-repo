@@ -38,10 +38,9 @@ inputs:
       prefix: --threads
   - id: autocycler_dir_path
     type: string
-    doc: Output or path parameter `autocycler_dir_path`
     inputBinding:
       position: 102
-      prefix: --autocycler-dir
+      prefix: --autocycler_dir
 outputs:
   - id: autocycler_dir
     type: Directory

@@ -148,11 +148,13 @@ inputs:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: --verbosity
+          separate: true
     doc: Determines verbosity of the processing, can be specified multiple times
       -vvv
     inputBinding:
       position: 102
-      prefix: --verbosity
   - id: with_track_line
     type:
       - 'null'

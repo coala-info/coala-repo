@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas_extract
+baseCommand:
+  - pangwas
+  - extract
 label: pangwas_extract
 doc: "Extract sequences and annotations from GFF files.\n\nTakes as input a GFF annotations
   file. If sequences are not included, a FASTA\nof genomic contigs must also be provided.
@@ -40,7 +42,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101

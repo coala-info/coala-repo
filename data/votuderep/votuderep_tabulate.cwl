@@ -60,16 +60,18 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --strip
+          separate: true
     doc: Remove this string from sample names (can be used multiple times)
     inputBinding:
       position: 102
-      prefix: --strip
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'FILE       Output CSV file (default: STDOUT)             │'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -14,11 +14,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --expansion-target
+          separate: true
     doc: Name of object to be expanded; can be used multiple times. If not 
       listed, will attempt to expand all root derivations
     inputBinding:
       position: 102
-      prefix: --expansion-target
   - id: file_type
     type:
       - 'null'
@@ -37,10 +39,9 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

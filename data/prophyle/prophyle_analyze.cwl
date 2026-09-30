@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophyle analyze
+baseCommand:
+  - prophyle
+  - analyze
 label: prophyle_analyze
 doc: "Analyze classified reads based on an index directory or phylogenetic tree.\n\
   \nTool homepage: https://github.com/karel-brinda/prophyle"

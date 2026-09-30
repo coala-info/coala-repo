@@ -182,7 +182,7 @@ inputs:
   - id: output_tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory for temporary files
     inputBinding:
       position: 101
@@ -281,18 +281,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
+    doc: output directory  [default '.']
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -out-dir
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: "(1 arg) :    output file  [default '']"
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type:

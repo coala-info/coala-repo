@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools validate
+baseCommand:
+  - primalbedtools
+  - validate
 label: primalbedtools_validate
 doc: "Validate a BED file against a reference FASTA file.\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

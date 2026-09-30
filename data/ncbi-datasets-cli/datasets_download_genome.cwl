@@ -44,6 +44,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chromosomes
+      itemSeparator: ','
   - id: dehydrated
     type:
       - 'null'

@@ -94,6 +94,7 @@ inputs:
     doc: barcode is provded in FASTQ header (Illumina i5 and i7 reads).
     inputBinding:
       position: 101
+      prefix: --index-index
   - id: index_inline
     type:
       - 'null'
@@ -103,6 +104,7 @@ inputs:
       paired-end data).
     inputBinding:
       position: 101
+      prefix: --index-inline
   - id: index_null
     type:
       - 'null'
@@ -110,6 +112,7 @@ inputs:
     doc: barcode is provded in FASTQ header (Illumina i5 or i7 read).
     inputBinding:
       position: 101
+      prefix: --index-null
   - id: inline_index
     type:
       - 'null'
@@ -118,6 +121,7 @@ inputs:
       header (from either i5 or i7 read).
     inputBinding:
       position: 101
+      prefix: --inline-index
   - id: inline_inline
     type:
       - 'null'
@@ -125,6 +129,7 @@ inputs:
     doc: barcode is inline with sequence, occurs on single and paired-end read.
     inputBinding:
       position: 101
+      prefix: --inline-inline
   - id: inline_null
     type:
       - 'null'
@@ -133,6 +138,7 @@ inputs:
       (default).
     inputBinding:
       position: 101
+      prefix: --inline-null
   - id: input_dir
     type:
       - 'null'
@@ -226,6 +232,7 @@ inputs:
       read are provided).
     inputBinding:
       position: 101
+      prefix: --null-index
   - id: output_type
     type:
       - 'null'

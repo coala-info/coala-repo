@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: foldseek easy-rbh
+baseCommand:
+  - foldseek
+  - easy-rbh
 label: foldseek_easy-rbh
 doc: "By Eli Levy Karin & Martin Steinegger <martin.steinegger@snu.ac.kr>\n\nTool
   homepage: https://github.com/steineggerlab/foldseek"
@@ -16,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 3
@@ -264,7 +266,6 @@ inputs:
       \                                 qset,qsetid,tset,tsetid,taxid,taxname,taxlineage,\n\
       \                                 lddt,lddtfull,qca,tca,t,u,qtmscore,ttmscore,alntmscore,rmsd,prob\n\
       \                                 complexqtmscore,complexttmscore,complexu,complext,complexassignid"
-      query,target,fident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits
     inputBinding:
       position: 104
       prefix: --format-output

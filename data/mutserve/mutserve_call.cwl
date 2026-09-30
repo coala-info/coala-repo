@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mutserve call
+baseCommand:
+  - mutserve
+  - call
 label: mutserve_call
 doc: "Call homoplasmic and heteroplasmic positions.\n\nTool homepage: https://github.com/seppinho/mutserve"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dnaapler largest
+baseCommand:
+  - dnaapler
+  - largest
 label: dnaapler_largest
 doc: "Finds the largest contig in a FASTA or GFA file.\n\nTool homepage: https://github.com/gbouras13/dnaapler"
 inputs:
@@ -21,7 +23,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

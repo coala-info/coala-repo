@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panisa_ISFinder_search.py
+baseCommand: ISFinder_search.py
 label: panisa_ISFinder_search.py
 doc: "automate search IS homology in ISFinder from panISa output\n\nTool homepage:
   https://github.com/bvalot/panISa"
@@ -52,7 +52,6 @@ inputs:
       prefix: --remove
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

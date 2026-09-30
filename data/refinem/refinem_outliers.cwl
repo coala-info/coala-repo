@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refinem_outliers
+baseCommand:
+  - refinem
+  - outliers
 label: refinem_outliers
 doc: "Identify scaffolds with divergent genomic characteristics.\n\nTool homepage:
   http://pypi.python.org/pypi/refinem/"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 2

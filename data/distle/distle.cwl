@@ -9,6 +9,11 @@ inputs:
     doc: The input file or '-' for stdin
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: The output file or '-' for stdout
+    inputBinding:
+      position: 2
   - id: input_format
     type:
       - 'null'
@@ -104,11 +109,11 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: The output file or '-' for stdout
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/distle:0.3.0--h54198d6_1

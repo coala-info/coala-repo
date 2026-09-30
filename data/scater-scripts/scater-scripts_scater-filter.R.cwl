@@ -46,6 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --high-cell-thresholds
+      itemSeparator: ','
   - id: high_feature_thresholds
     type:
       - 'null'
@@ -55,6 +56,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --high-feature-thresholds
+      itemSeparator: ','
   - id: input_object_file
     type: File
     doc: A serialized SingleCellExperiment object file in RDS format.
@@ -70,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --low-cell-thresholds
+      itemSeparator: ','
   - id: low_feature_thresholds
     type:
       - 'null'
@@ -79,6 +82,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --low-feature-thresholds
+      itemSeparator: ','
   - id: subset_cell_variables
     type:
       - 'null'
@@ -89,6 +93,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subset-cell-variables
+      itemSeparator: ','
   - id: subset_feature_variables
     type:
       - 'null'
@@ -99,11 +104,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subset-feature-variables
+      itemSeparator: ','
   - id: output_cellselect_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cellselect_file_path`
     inputBinding:
       position: 102
       prefix: --output-cellselect-file
@@ -111,7 +116,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_featureselect_file_path`
     inputBinding:
       position: 103
       prefix: --output-featureselect-file
@@ -119,7 +123,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 104
       prefix: --output-object-file

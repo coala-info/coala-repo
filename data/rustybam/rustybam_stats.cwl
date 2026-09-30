@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam stats
+baseCommand:
+  - rustybam
+  - stats
 label: rustybam_stats
 doc: "Get percent identity stats from a sam/bam/cram or PAF. Requires =/X operations
   in the CIGAR string!\n\nTool homepage: https://github.com/mrvollger/rustybam"

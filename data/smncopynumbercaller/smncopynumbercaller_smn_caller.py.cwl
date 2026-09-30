@@ -26,7 +26,7 @@ inputs:
       position: 101
       prefix: --manifest
   - id: outDir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

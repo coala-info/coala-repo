@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unicore_config
+baseCommand:
+  - unicore
+  - config
 label: unicore_config
 doc: "Runtime environment configuration\n\nTool homepage: https://github.com/steineggerlab/unicore"
 inputs:

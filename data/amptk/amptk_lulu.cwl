@@ -59,7 +59,7 @@ inputs:
       prefix: --otu_table
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output folder basename
     inputBinding:
       position: 102
       prefix: --out

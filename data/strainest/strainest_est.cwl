@@ -17,6 +17,11 @@ inputs:
     doc: BAM file
     inputBinding:
       position: 2
+  - id: output
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 3
   - id: max_depth_percentile
     type:
       - 'null'
@@ -82,7 +87,7 @@ outputs:
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainest:1.2.4--py35_0

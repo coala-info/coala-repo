@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextstrain_deploy
+baseCommand:
+  - nextstrain
+  - deploy
 label: nextstrain_deploy
 doc: "Uploads (deploys) a set of built pathogen JSON data files or Markdown narratives
   to a remote source.\n\nTool homepage: https://nextstrain.org"

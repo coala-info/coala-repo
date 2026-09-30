@@ -144,7 +144,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Normalization method for Hi-C data (NONE, VC, VC_SQRT, KR, SCALE, etc.),
+    doc: 'Normalization method for Hi-C data (NONE, VC, VC_SQRT, KR, SCALE, etc.),'
     inputBinding:
       position: 101
       prefix: --normalization
@@ -159,7 +159,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory, default: ./'
     inputBinding:
       position: 101

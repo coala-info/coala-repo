@@ -29,7 +29,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Filename for output
     inputBinding:
       position: 104
       prefix: --output

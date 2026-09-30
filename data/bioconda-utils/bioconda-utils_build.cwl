@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconda-utils build
+baseCommand:
+  - bioconda-utils
+  - build
 label: bioconda-utils_build
 doc: "Build packages for Bioconda.\n\nTool homepage: http://bioconda.github.io/build-system.html"
 inputs:

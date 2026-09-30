@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk_combine
+baseCommand:
+  - genometreetk
+  - combine
 label: genometreetk_combine
 doc: "Combine all support values into a single tree.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:

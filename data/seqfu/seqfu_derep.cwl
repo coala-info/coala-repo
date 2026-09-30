@@ -111,10 +111,10 @@ inputs:
       prefix: --verbose
   - id: json_file_path
     type: string
-    doc: Output or path parameter `json_file_path`
+    doc: Save dereplication metadata to JSON file
     inputBinding:
       position: 103
-      prefix: --json-file
+      prefix: --json
 outputs:
   - id: json_file
     type:

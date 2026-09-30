@@ -32,7 +32,7 @@ inputs:
       position: 101
       prefix: -e
   - id: genome
-    type: File
+    type: File?
     doc: Provide a genome file to enforce consistent chromosome sort order 
       across input files. Only applies when used with -sorted option.
     inputBinding:
@@ -47,18 +47,14 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Information from B is mapped onto the intervals in this file. Supports 
       BED/GFF/VCF.
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File containing intervals to be mapped onto A. Supports BED/GFF/VCF.
     inputBinding:
       position: 101
@@ -116,13 +112,13 @@ inputs:
       position: 101
       prefix: -bed
   - id: overlap_fraction_a
-    type: float
+    type: float?
     doc: Minimum overlap required as a fraction of A.
     inputBinding:
       position: 101
       prefix: -f
   - id: overlap_fraction_b
-    type: float
+    type: float?
     doc: Minimum overlap required as a fraction of B.
     inputBinding:
       position: 101

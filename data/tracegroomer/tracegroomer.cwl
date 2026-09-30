@@ -123,10 +123,9 @@ inputs:
       prefix: --use_internal_standard
   - id: output_files_extension_path
     type: string
-    doc: Output or path parameter `output_files_extension_path`
     inputBinding:
       position: 102
-      prefix: --output-files-extension
+      prefix: --output_files_extension
 outputs:
   - id: output_files_extension
     type:

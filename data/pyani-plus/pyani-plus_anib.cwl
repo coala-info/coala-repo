@@ -19,6 +19,7 @@ inputs:
     doc: Create database if does not exist.
     inputBinding:
       position: 102
+      prefix: --create-db
   - id: database
     type: File
     doc: Path to pyANI-plus SQLite3 database.
@@ -33,6 +34,7 @@ inputs:
       file).
     inputBinding:
       position: 102
+      prefix: --debug
   - id: executor
     type:
       - 'null'
@@ -40,6 +42,7 @@ inputs:
     doc: How should the internal tools be run?
     inputBinding:
       position: 102
+      prefix: --executor
   - id: fragsize
     type:
       - 'null'
@@ -47,6 +50,7 @@ inputs:
     doc: Comparison method fragment size.
     inputBinding:
       position: 102
+      prefix: --fragsize
   - id: log
     type:
       - 'null'
@@ -55,6 +59,7 @@ inputs:
       for the local executor, but otherwise "pyani-plus.log".
     inputBinding:
       position: 102
+      prefix: --log
   - id: run_name
     type:
       - 'null'
@@ -65,7 +70,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for intermediate files, which for debugging purposes 
       will not be deleted. For clusters this must be on a shared drive. Default 
       behaviour is to use a system specified temporary directory (specific to 
@@ -75,7 +80,7 @@ inputs:
   - id: wtemp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for temporary workflow coordination files, which for 
       debugging purposes will not be deleted. For clusters this must be on a 
       shared drive. Default behaviour is to use a system specified temporary 

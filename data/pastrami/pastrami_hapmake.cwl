@@ -8,7 +8,7 @@ doc: "Generate haplotype blocks based on genetic maps and SNP constraints\n\nToo
   homepage: https://github.com/healthdisparities/pastrami"
 inputs:
   - id: map_dir
-    type: Directory
+    type: Directory?
     doc: 'Directory containing genetic maps: chr1.map, chr2.map, etc'
     inputBinding:
       position: 101
@@ -57,7 +57,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `haplotypes_path`
     inputBinding:
       position: 102
       prefix: --haplotypes
@@ -65,7 +64,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
     inputBinding:
       position: 103
       prefix: --log-file

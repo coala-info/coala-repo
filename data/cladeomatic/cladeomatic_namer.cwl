@@ -18,7 +18,7 @@ inputs:
       prefix: --in_scheme
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: 'Output file for updated scheme (default: None)'
     inputBinding:
       position: 102
       prefix: --outfile

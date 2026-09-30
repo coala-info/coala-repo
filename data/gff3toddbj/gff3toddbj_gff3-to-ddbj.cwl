@@ -71,10 +71,10 @@ inputs:
       prefix: --transl_table
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Specify annotation file name as output'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

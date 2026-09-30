@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: contigtax_assign
+baseCommand:
+  - contigtax
+  - assign
 label: contigtax_assign
 doc: "Assigns taxonomy to contigs based on Diamond blastx results.\n\nTool homepage:
   https://github.com/NBISweden/contigtax"
@@ -135,7 +137,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `blobout_path`
+    doc: Output hits.tsv table compatible with blobtools
     inputBinding:
       position: 104
       prefix: --blobout
@@ -143,7 +145,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `taxidout_path`
+    doc: Write output with taxonomy ids instead of taxonomy
     inputBinding:
       position: 105
       prefix: --taxidout

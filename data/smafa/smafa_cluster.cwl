@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smafa cluster
+baseCommand:
+  - smafa
+  - cluster
 label: smafa_cluster
 doc: "Cluster sequences by similarity\n\nTool homepage: https://github.com/wwood/smafa"
 inputs:

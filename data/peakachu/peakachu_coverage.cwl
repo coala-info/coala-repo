@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: peakachu coverage
+baseCommand:
+  - peakachu
+  - coverage
 label: peakachu_coverage
 doc: "Calculate coverage for a project folder.\n\nTool homepage: https://github.com/tbischler/PEAKachu"
 inputs:

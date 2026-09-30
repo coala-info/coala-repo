@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eagle convert
+baseCommand:
+  - eagle
+  - convert
 label: eagle_convert
 doc: "Convert VCF files to other formats.\n\nTool homepage: https://bitbucket.org/christopherschroeder/eagle"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: outdir
-    type: Directory
+    type: string
     doc: the output directory
     inputBinding:
       position: 2

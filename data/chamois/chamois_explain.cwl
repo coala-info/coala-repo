@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_explain
+baseCommand:
+  - chamois
+  - explain
 label: chamois_explain
 doc: "Explain which domains contribute to a class prediction.\n\nTool homepage: https://chamois.readthedocs.io/"
 inputs:

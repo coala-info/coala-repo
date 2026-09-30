@@ -18,10 +18,10 @@ inputs:
       prefix: --input
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: The path to the output VCF file.
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: --output
 outputs:
   - id: output_vcf
     type: File

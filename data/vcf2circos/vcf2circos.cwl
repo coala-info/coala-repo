@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python vcf2circos.py
+baseCommand:
+  - python
+  - vcf2circos.py
 label: vcf2circos
 doc: "vcf2circos is a tool to visualize VCF files in a circular genome plot.\n\nTool
   homepage: https://github.com/bioinfo-chru-strasbourg/vcf2circos"
@@ -33,18 +35,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `export_file_path`
+    doc: " Export file. Format is 'json'. Generate json file from VCF input file"
     inputBinding:
       position: 102
-      prefix: --export-file
+      prefix: --export
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: " Output file. Format will be autodetected from file path. Supported format:
+      'png', 'jpg', 'jpeg', 'webp', 'svg', 'pdf', 'eps', 'json'"
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

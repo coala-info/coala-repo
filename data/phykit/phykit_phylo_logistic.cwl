@@ -36,6 +36,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --predictor
+      itemSeparator: ','
   - id: method
     type:
       - 'null'

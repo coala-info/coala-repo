@@ -311,7 +311,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ddl_path`
+    doc: Output ddl text into file F
     inputBinding:
       position: 103
       prefix: --ddl
@@ -319,7 +319,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Output raw data into file F
     inputBinding:
       position: 104
       prefix: --output

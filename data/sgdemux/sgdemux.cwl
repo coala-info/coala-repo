@@ -208,7 +208,6 @@ inputs:
       prefix: --writer-threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
       prefix: --output-dir

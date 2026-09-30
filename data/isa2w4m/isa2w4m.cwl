@@ -42,7 +42,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set output directory. Default is "."
     inputBinding:
       position: 101

@@ -51,10 +51,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --info-exclude
+          separate: true
     doc: don't save this field to the database. May be specified multiple times.
     inputBinding:
       position: 104
-      prefix: --info-exclude
   - id: legacy_compression
     type:
       - 'null'

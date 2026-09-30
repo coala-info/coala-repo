@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: konezumiaid_preprocess
+baseCommand:
+  - konezumiaid
+  - preprocess
 label: konezumiaid_preprocess
 doc: "Preprocesses data for konezumiaid.\n\nTool homepage: https://github.com/aki2274/KOnezumi-AID"
 inputs:

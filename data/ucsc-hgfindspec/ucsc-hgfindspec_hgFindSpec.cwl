@@ -36,7 +36,8 @@ inputs:
     doc: Specify a file name to use other than trackDb.ra for the ra files.
     inputBinding:
       position: 106
-      prefix: -raName
+      prefix: -raName=
+      separate: false
   - id: release
     type:
       - 'null'
@@ -44,7 +45,8 @@ inputs:
     doc: Include trackDb entries with this release tag only.
     inputBinding:
       position: 106
-      prefix: -release
+      prefix: -release=
+      separate: false
   - id: strict
     type:
       - 'null'

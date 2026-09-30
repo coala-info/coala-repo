@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cellxgene launch
+baseCommand:
+  - cellxgene
+  - launch
 label: cellxgene_launch
 doc: "Launch the cellxgene data viewer. This web app lets you explore single-cell
   expression data. Data must be in a format that cellxgene expects. Read the \"getting
@@ -34,7 +36,7 @@ inputs:
   - id: annotations_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory of where to save output annotations; filename will be 
       specified in the application. Incompatible with --annotations-file and 
       --gene-sets-file.
@@ -207,7 +209,7 @@ inputs:
   - id: user_generated_data_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory of where to save output annotations; filename will be 
       specified in the application. Incompatible with --annotations-file and 
       --gene-sets-file.

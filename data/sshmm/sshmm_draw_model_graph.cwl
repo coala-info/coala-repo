@@ -16,12 +16,17 @@ inputs:
       number can be found in the verbose log file.
     inputBinding:
       position: 2
-outputs:
   - id: output
+    type: string
+    doc: model graph output
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_output
     type: File
     doc: model graph output
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sshmm:1.0.7--py27_0

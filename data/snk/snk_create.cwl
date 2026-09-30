@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snk create
+baseCommand:
+  - snk
+  - create
 label: snk_create
 doc: "Create a default snk.yaml project that can be installed with snk\n\nTool homepage:
   https://snk.wytamma.com"

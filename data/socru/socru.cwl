@@ -108,26 +108,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output_file
   - id: output_operon_directions_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_operon_directions_file_path`
     inputBinding:
       position: 105
-      prefix: --output-operon-directions-file
+      prefix: --output_operon_directions_file
   - id: output_plot_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_plot_file_path`
     inputBinding:
       position: 106
-      prefix: --output-plot-file
+      prefix: --output_plot_file
 outputs:
   - id: output_file
     type:

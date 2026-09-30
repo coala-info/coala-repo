@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi explode
+baseCommand:
+  - odgi
+  - explode
 label: odgi_explode
 doc: "Breaks a graph into connected components storing each component in its own file.\n\
   \nTool homepage: https://github.com/vgteam/odgi"

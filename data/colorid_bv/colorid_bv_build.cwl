@@ -72,7 +72,6 @@ inputs:
       prefix: --threads
   - id: bigsi_path
     type: string
-    doc: Output or path parameter `bigsi_path`
     inputBinding:
       position: 102
       prefix: --bigsi

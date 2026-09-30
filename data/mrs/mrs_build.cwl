@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs build
+baseCommand:
+  - mrs
+  - build
 label: mrs_build
 doc: "Build a databank\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

@@ -141,7 +141,7 @@ inputs:
   - id: seeds
     type:
       - 'null'
-      - string
+      - File
     doc: Input file with seeds
     inputBinding:
       position: 101
@@ -186,31 +186,31 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `connected_reads_path`
+    doc: File for connected paired reads [string]
     inputBinding:
       position: 102
-      prefix: --connected-reads
+      prefix: --connected_reads
   - id: contigs_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `contigs_out_path`
+    doc: Output file for contigs (stdout if not
     inputBinding:
       position: 103
-      prefix: --contigs-out
+      prefix: --contigs_out
   - id: dbg_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dbg_out_path`
+    doc: Output kmer file [string]
     inputBinding:
       position: 104
-      prefix: --dbg-out
+      prefix: --dbg_out
   - id: hist_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hist_path`
+    doc: File for histogram [string]
     inputBinding:
       position: 105
       prefix: --hist

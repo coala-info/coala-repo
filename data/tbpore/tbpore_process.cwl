@@ -103,7 +103,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify where to write all (tbpore) temporary files.
     inputBinding:
       position: 102

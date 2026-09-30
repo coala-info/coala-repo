@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strling_pull_region
+baseCommand:
+  - strling
+  - pull_region
 label: strling_pull_region
 doc: "Extracts a region from a BAM file.\n\nTool homepage: https://github.com/quinlan-lab/STRling"
 inputs:
@@ -24,7 +26,6 @@ inputs:
       prefix: --fasta
   - id: output_bam_path
     type: string
-    doc: Output or path parameter `output_bam_path`
     inputBinding:
       position: 104
       prefix: --output-bam

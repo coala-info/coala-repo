@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kat cold
+baseCommand:
+  - kat
+  - cold
 label: kat_cold
 doc: "COntig Length and Duplication analysis tool\n\nCalculates median read k-mer
   coverage, assembly k-mer coverage and GC% across each sequence in the provided assembly.

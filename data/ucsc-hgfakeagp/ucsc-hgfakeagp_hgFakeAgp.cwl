@@ -9,6 +9,11 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+  - id: output_agp
+    type: string
+    doc: Output AGP file
+    inputBinding:
+      position: 2
   - id: min_contig_gap
     type:
       - 'null'
@@ -16,7 +21,8 @@ inputs:
     doc: Minimum size for a gap between contigs.
     inputBinding:
       position: 102
-      prefix: -minContigGap
+      prefix: -minContigGap=
+      separate: false
   - id: min_scaffold_gap
     type:
       - 'null'
@@ -24,7 +30,8 @@ inputs:
     doc: Min size for a gap between scaffolds.
     inputBinding:
       position: 102
-      prefix: -minScaffoldGap
+      prefix: -minScaffoldGap=
+      separate: false
   - id: single_contigs
     type:
       - 'null'
@@ -35,11 +42,11 @@ inputs:
       position: 102
       prefix: -singleContigs
 outputs:
-  - id: output_agp
+  - id: out_output_agp
     type: File
     doc: Output AGP file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_agp)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-hgfakeagp:482--h0b57e2e_0

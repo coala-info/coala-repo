@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsearch request
+baseCommand:
+  - gsearch
+  - request
 label: gsearch_request
 doc: "Request nearest neighbors of query genomes against a pre-built HNSW graph database/index\n\
   \nTool homepage: https://github.com/jean-pierreBoth/gsearch"

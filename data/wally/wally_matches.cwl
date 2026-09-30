@@ -109,18 +109,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_output_file_path`
+    doc: plot output file
     inputBinding:
       position: 103
-      prefix: --plot-output-file
+      prefix: --outfile
   - id: sequence_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sequence_output_file_path`
+    doc: sequence output file [optional]
     inputBinding:
       position: 104
-      prefix: --sequence-output-file
+      prefix: --seqfile
 outputs:
   - id: sequence_output_file
     type:

@@ -189,7 +189,6 @@ inputs:
       - File
     doc: 'MinPath mapfile. The default mapfile maps MetaCyc reactions to prokaryotic
       pathways (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/metacyc_pathways_structured_filtered_v24.txt).'
-      /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/metacyc_pathways_structured_filtered_v24.txt
     inputBinding:
       position: 101
       prefix: --pathway_map
@@ -242,7 +241,6 @@ inputs:
       - Directory
     doc: 'Directory containing reference sequence files (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/bacteria/bac_ref).
       Please see the online documentation for how to name the files in this directory.'
-      /usr/local/lib/python3.12/site-packages/picrust2/default_files/bacteria/bac_ref
     inputBinding:
       position: 101
       prefix: --ref_dir1
@@ -252,7 +250,6 @@ inputs:
       - Directory
     doc: 'Directory containing reference sequence files (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/archaea/arc_ref).
       Please see the online documentation for how to name the files in this directory.'
-      /usr/local/lib/python3.12/site-packages/picrust2/default_files/archaea/arc_ref
     inputBinding:
       position: 101
       prefix: --ref_dir2
@@ -262,7 +259,6 @@ inputs:
       - File
     doc: 'Mapfile of ids to regroup gene families to before running MinPath. The default
       mapfile is for regrouping EC numbers to MetaCyc reactions (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/ec_level4_to_metacyc_rxn_new.tsv).'
-      /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/ec_level4_to_metacyc_rxn_new.tsv
     inputBinding:
       position: 101
       prefix: --regroup_map
@@ -330,12 +326,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wide_table
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output folder for final files.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picrust2:2.6.3--pyhdfd78af_1

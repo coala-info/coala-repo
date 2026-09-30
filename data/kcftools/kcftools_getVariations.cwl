@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kcftools getVariations
+baseCommand:
+  - kcftools
+  - getVariations
 label: kcftools_getVariations
 doc: "Screen for reference kmers that are not present in the KMC database, and detect
   variation\n\nTool homepage: https://github.com/sivasubramanics/kcftools"
@@ -59,9 +61,9 @@ inputs:
       prefix: --min-k-count
   - id: reference
     type: File
+    doc: Reference file name
     secondaryFiles:
       - .fai
-    doc: Reference file name
     inputBinding:
       position: 101
       prefix: --reference
@@ -105,7 +107,7 @@ inputs:
       prefix: --window
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file name
     inputBinding:
       position: 102
       prefix: --output

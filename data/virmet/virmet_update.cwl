@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virmet update
+baseCommand:
+  - virmet
+  - update
 label: virmet_update
 doc: "Update the Virmet database.\n\nTool homepage: https://github.com/medvir/VirMet"
 inputs:

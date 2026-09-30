@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie tag
+baseCommand:
+  - refgenie
+  - tag
 label: refgenie_tag
 doc: "Tag an asset.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

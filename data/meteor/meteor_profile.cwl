@@ -83,10 +83,9 @@ inputs:
       prefix: --seed
   - id: profiled_sample_dir_path
     type: string
-    doc: Output or path parameter `profiled_sample_dir_path`
     inputBinding:
       position: 102
-      prefix: --profiled-sample-dir
+      prefix: -o
 outputs:
   - id: profiled_sample_dir
     type: Directory

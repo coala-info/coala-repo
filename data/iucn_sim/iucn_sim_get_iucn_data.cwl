@@ -29,7 +29,7 @@ inputs:
       position: 101
       prefix: --no_online_sync
   - id: outdir
-    type: Directory
+    type: string
     doc: Provide path to outdir where results will be saved.
     inputBinding:
       position: 101
@@ -62,7 +62,7 @@ inputs:
       position: 101
       prefix: --reference_rank
   - id: target_species_list
-    type: File
+    type: File?
     doc: File containing the list of species that you want to simulate future 
       extinctions for. In case you have generation length (GL) data available, 
       provide the file containing the GL data for each species here (including 

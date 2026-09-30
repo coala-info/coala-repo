@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seroba createDBs
+baseCommand:
+  - seroba
+  - createDBs
 label: seroba_createDBs
 doc: "Creates a Database for kmc and ariba\n\nTool homepage: https://github.com/sanger-pathogens/seroba"
 inputs:
   - id: database_dir
-    type: Directory
+    type: string
     doc: output directory for kmc and ariba Database
     inputBinding:
       position: 1

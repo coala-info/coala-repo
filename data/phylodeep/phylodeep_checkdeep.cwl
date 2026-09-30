@@ -25,10 +25,9 @@ inputs:
       prefix: --tree_file
   - id: outputfile_png_path
     type: string
-    doc: Output or path parameter `outputfile_png_path`
     inputBinding:
       position: 102
-      prefix: --outputfile-png
+      prefix: --outputfile_png
 outputs:
   - id: outputfile_png
     type: File

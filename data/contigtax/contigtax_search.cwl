@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: contigtax search
+baseCommand:
+  - contigtax
+  - search
 label: contigtax_search
 doc: "Search for contigs in a Diamond database and assign taxonomy.\n\nTool homepage:
   https://github.com/NBISweden/contigtax"
@@ -15,6 +17,11 @@ inputs:
     doc: Diamond database file
     inputBinding:
       position: 2
+  - id: outfile
+    type: string
+    doc: Diamond output file
+    inputBinding:
+      position: 3
   - id: blocksize
     type:
       - 'null'
@@ -78,7 +85,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 103
@@ -93,11 +100,11 @@ inputs:
       position: 103
       prefix: --top
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Diamond output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0

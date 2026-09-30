@@ -99,7 +99,7 @@ inputs:
       prefix: --setQual
   - id: bed_path
     type: string
-    doc: Output or path parameter `bed_path`
+    doc: File name in which the simulated reads will be saved in BED format
     inputBinding:
       position: 103
       prefix: --bed

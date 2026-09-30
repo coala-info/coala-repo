@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia complement
+baseCommand:
+  - gia
+  - complement
 label: gia_complement
 doc: "Generates the complement of a BED file\n\nThis reports the regions that are
   not covered by the input BED file but excludes regions preceding the first interval
@@ -68,10 +70,10 @@ inputs:
       prefix: --stream
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

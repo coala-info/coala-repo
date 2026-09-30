@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eagle interface
+baseCommand:
+  - eagle
+  - interface
 label: eagle_interface
 doc: "Starts the EAGLE web interface.\n\nTool homepage: https://bitbucket.org/christopherschroeder/eagle"
 inputs:

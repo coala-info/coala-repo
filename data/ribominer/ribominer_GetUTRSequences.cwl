@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python GetUTRSequences
+baseCommand:
+  - python
+  - GetUTRSequences
 label: ribominer_GetUTRSequences
 doc: "Get UTR sequences from transcript and coordinate files.\n\nTool homepage: https://github.com/xryanglab/RiboMiner"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama annotation
+baseCommand:
+  - panorama
+  - annotation
 label: panorama_annotation
 doc: "Perform annotation of pangenomes using various sources like tables or HMM profiles.\n\
   \nTool homepage: https://github.com/labgem/panorama"
@@ -128,7 +130,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to temporary directory, defaults path is /tmp/panorama
     inputBinding:
       position: 101
@@ -154,7 +156,6 @@ inputs:
       prefix: --Z
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

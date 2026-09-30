@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur translate
+baseCommand:
+  - augur
+  - translate
 label: augur_translate
 doc: "Translate gene regions from nucleotides to amino acids. Translates nucleotide\n\
   sequences of nodes in a tree to amino acids for gene regions of the annotated\n\
@@ -28,9 +30,9 @@ inputs:
       prefix: --genes
   - id: reference_sequence
     type: File
+    doc: GenBank or GFF file containing the annotation
     secondaryFiles:
       - .fai
-    doc: GenBank or GFF file containing the annotation
     inputBinding:
       position: 101
       prefix: --reference-sequence
@@ -44,9 +46,7 @@ inputs:
       position: 101
       prefix: --skip-validation
   - id: tree
-    type:
-      - 'null'
-      - File
+    type: File
     doc: prebuilt Newick -- no tree will be built if provided
     inputBinding:
       position: 101
@@ -76,7 +76,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignment_output_path`
     inputBinding:
       position: 102
       prefix: --alignment-output
@@ -84,7 +83,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_node_data_path`
     inputBinding:
       position: 103
       prefix: --output-node-data
@@ -92,7 +90,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_reference_output_path`
     inputBinding:
       position: 104
       prefix: --vcf-reference-output

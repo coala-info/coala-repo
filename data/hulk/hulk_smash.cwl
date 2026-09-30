@@ -72,22 +72,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sketchDir
-  - id: log_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `log_path`
-    inputBinding:
-      position: 102
-      prefix: --log
   - id: out_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
+    doc: string   directory and basename for saving the outfile(s) (default 
+      "./hulk-20260224171627")
     inputBinding:
       position: 103
-      prefix: --out-file
+      prefix: --outFile
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: filename for log file, if omitted then STDOUT used by default
+    inputBinding:
+      position: 104
+      prefix: --log
 outputs:
   - id: log
     type:

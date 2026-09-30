@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd check-recipe
+baseCommand:
+  - ggd
+  - check-recipe
 label: ggd_check-recipe
 doc: "Convert a ggd recipe created from `ggd make-recipe` into a data package. Test
   both ggd data recipe and data package\n\nTool homepage: https://github.com/gogetdata/ggd-cli"

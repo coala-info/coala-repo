@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy_mouse2human_eset
+baseCommand:
+  - iobrpy
+  - mouse2human_eset
 label: iobrpy_mouse2human_eset
 doc: "Convert mouse gene symbols to human gene symbols.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:

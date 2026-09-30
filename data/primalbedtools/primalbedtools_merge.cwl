@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools_merge
+baseCommand:
+  - primalbedtools
+  - merge
 label: primalbedtools_merge
 doc: "Merge overlapping intervals in a BED file.\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin context
+baseCommand:
+  - ppanggolin
+  - context
 label: ppanggolin_context
 doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
   team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
@@ -123,7 +125,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for storing temporary files
     inputBinding:
       position: 101
@@ -169,7 +171,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: log output file
     inputBinding:
       position: 102
       prefix: --log
@@ -177,7 +179,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

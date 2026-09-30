@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tirmite_seed
+baseCommand:
+  - tirmite
+  - seed
 label: tirmite_seed
 doc: "Build HMM models from seed sequences for TIRmite\n\nTool homepage: https://github.com/Adamtaranto/TIRmite"
 inputs:
@@ -84,7 +86,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for results
     inputBinding:
       position: 101
@@ -109,7 +111,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Directory for temporary files (default: system temp)'
     inputBinding:
       position: 101

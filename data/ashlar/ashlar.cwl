@@ -135,10 +135,14 @@ inputs:
       prefix: --tile-size
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: ' Output file. If PATH ends in .ome.tif a pyramidal OME- TIFF will be written.
+      If PATH ends in just .tif and includes {cycle} and {channel} placeholders, a
+      series of single-channel plain TIFF files will be written. If PATH starts with
+      a relative or absolute path to another directory, that directory must already
+      exist. (default: ashlar_output.ome.tif)'
     inputBinding:
       position: 103
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type:

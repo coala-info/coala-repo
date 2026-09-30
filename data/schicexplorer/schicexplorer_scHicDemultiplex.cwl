@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: schicexplorer_scHicDemultiplex
+baseCommand: scHicDemultiplex
 label: schicexplorer_scHicDemultiplex
 doc: "scHicDemultiplex demultiplexes fastq files from Nagano 2017: \"Cell-cycle dynamics
   of chromosomal organization at single-cell resolution\" according their barcodes
@@ -37,7 +37,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path of folder to save the demultiplexed files
     inputBinding:
       position: 101

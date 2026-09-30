@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: viguno query
+baseCommand:
+  - viguno
+  - query
 label: viguno_query
 doc: "Prepare values for `query`\n\nTool homepage: https://github.com/bihealth/viguno"
 inputs:

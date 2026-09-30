@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv frequency
+baseCommand:
+  - xsv
+  - frequency
 label: xsv_frequency
 doc: "Compute a frequency table on CSV data.\n\nTool homepage: https://github.com/BurntSushi/xsv"
 inputs:
@@ -78,10 +80,10 @@ inputs:
       prefix: --select
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

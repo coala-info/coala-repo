@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools task_runtime
+baseCommand:
+  - cromwell-tools
+  - task_runtime
 label: cromwell-tools_task_runtime
 doc: "Output tsv breakdown of task runtimes by execution event categories\n\nTool
   homepage: http://github.com/broadinstitute/cromwell-tools"

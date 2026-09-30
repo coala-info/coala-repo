@@ -44,11 +44,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --library-attribute
+          separate: true
     doc: Specify an attribute to add to the library metadata section. May be 
       repeated.
     inputBinding:
       position: 102
-      prefix: --library-attribute
 outputs:
   - id: outpath
     type: File

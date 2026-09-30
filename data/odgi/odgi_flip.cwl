@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_flip
+baseCommand:
+  - odgi
+  - flip
 label: odgi_flip
 doc: "Flip (reverse complement) paths to match the graph.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:
@@ -46,7 +48,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the sorted dynamic succinct
     inputBinding:
       position: 102
       prefix: --out

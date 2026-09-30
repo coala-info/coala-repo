@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lusstr config
+baseCommand:
+  - lusstr
+  - config
 label: lusstr_config
 doc: "Create config file for running STR pipeline\n\nTool homepage: https://www.github.com/bioforensics/lusSTR"
 inputs:
@@ -163,11 +165,11 @@ inputs:
       position: 101
       prefix: --workdir
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: Output file/directory name
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --out
 outputs:
   - id: output
     type:

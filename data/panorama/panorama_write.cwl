@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama write
+baseCommand:
+  - panorama
+  - write
 label: panorama_write
 doc: "Write annotation/metadata assigned to gene families in pangenomes\n\nTool homepage:
   https://github.com/labgem/panorama"
@@ -99,7 +101,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

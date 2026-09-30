@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: funnel storage
+baseCommand:
+  - funnel
+  - storage
 label: funnel_storage
 doc: "Access storage via Funnel's client libraries.\n\nTool homepage: https://ohsu-comp-bio.github.io/funnel/"
 inputs:

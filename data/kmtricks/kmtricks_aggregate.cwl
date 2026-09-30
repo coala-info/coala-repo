@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks aggregate
+baseCommand:
+  - kmtricks
+  - aggregate
 label: kmtricks_aggregate
 doc: "Aggregate partition files.\n\nTool homepage: https://github.com/tlemane/kmtricks"
 inputs:
@@ -92,7 +94,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: '- output path. {stdout}'
     inputBinding:
       position: 102
       prefix: --output

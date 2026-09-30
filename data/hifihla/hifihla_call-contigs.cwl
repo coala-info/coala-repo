@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hifihla call-contigs
+baseCommand:
+  - hifihla
+  - call-contigs
 label: hifihla_call-contigs
 doc: "Extract HLA loci from assembled MHC contigs & call star alleles on extracted
   sequences\n\nTool homepage: https://github.com/PacificBiosciences/hifihla"
@@ -81,7 +83,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory [deprecated]
     inputBinding:
       position: 101

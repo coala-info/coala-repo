@@ -9,7 +9,7 @@ inputs:
   - id: add_chr_prefix
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicates whether to add "chr" in the input allc file to match 
       chromosome names in genome sequence file. This option overrides 
       --remove-chr-prefix.
@@ -17,7 +17,7 @@ inputs:
       position: 101
       prefix: --add-chr-prefix
   - id: allc_file
-    type: File
+    type: File?
     doc: input allc file to be converted to bigwig format
     inputBinding:
       position: 101
@@ -92,17 +92,17 @@ inputs:
       prefix: --path-to-wigToBigWig
   - id: ref_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: string indicating the path to a fasta file containing the genome 
       sequences
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref-fasta
   - id: remove_chr_prefix
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicates whether to remove "chr" in the chromosome names in 
       genome sequence file to match chromosome names in input allc file.
     inputBinding:
@@ -110,7 +110,6 @@ inputs:
       prefix: --remove-chr-prefix
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

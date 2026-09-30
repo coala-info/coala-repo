@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof md5sum
+baseCommand:
+  - smof
+  - md5sum
 label: smof_md5sum
 doc: "Concatenates all headers and sequences and calculates the md5sum for the resulting
   string.\n\nTool homepage: https://github.com/incertae-sedis/smof"

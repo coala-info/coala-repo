@@ -34,7 +34,8 @@ inputs:
       none, off, numbered, t, existing, nil, simple, never'
     inputBinding:
       position: 103
-      prefix: --backup
+      prefix: --backup=
+      separate: false
   - id: context
     type:
       - 'null'
@@ -130,7 +131,8 @@ inputs:
     doc: control which existing files are updated; UPDATE={all,none,none-fail,older(default)}
     inputBinding:
       position: 103
-      prefix: --update
+      prefix: --update=
+      separate: false
   - id: update_older
     type:
       - 'null'

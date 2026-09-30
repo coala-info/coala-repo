@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'The tutorial for this workflow can be found on [Galaxy Training Network](https://training.galaxyproject.org/training-material/topics/climate/tutorials/climate-101/tutorial.html)'
 inputs:
   tg_ens_mean_0_1deg_reg_v20_0e_Paris_daily_csv:

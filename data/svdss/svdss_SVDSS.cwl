@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svdss_SVDSS
+baseCommand: SVDSS
 label: svdss_SVDSS
 doc: "SVDSS [index|smooth|search|call]\n\nTool homepage: https://github.com/Parsoa/SVDSS"
 inputs:

@@ -22,7 +22,7 @@ inputs:
       prefix: --input-fastq-path
   - id: output_text_file_path
     type: string
-    doc: Output or path parameter `output_text_file_path`
+    doc: output text file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-text-file

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pilea rebuild
+baseCommand:
+  - pilea
+  - rebuild
 label: pilea_rebuild
 doc: "Rebuilds a sketch database.\n\nTool homepage: https://github.com/xinehc/pilea"
 inputs:
@@ -13,7 +15,7 @@ inputs:
       position: 101
       prefix: --kmer
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi sort
+baseCommand:
+  - odgi
+  - sort
 label: odgi_sort
 doc: "Apply different kind of sorting algorithms to a graph. The most prominent one
   is the PG-SGD sorting algorithm.\n\nTool homepage: https://github.com/vgteam/odgi"
@@ -347,7 +349,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 101

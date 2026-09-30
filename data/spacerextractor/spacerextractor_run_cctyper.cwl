@@ -65,7 +65,7 @@ inputs:
       position: 101
       prefix: --quiet
   - id: working_dir
-    type: Directory
+    type: string
     doc: Output folder where CRISPRCas Typer results will be stored (will be 
       created if it does not exist)
     inputBinding:

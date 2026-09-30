@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamm_parse
+baseCommand:
+  - bamm
+  - parse
 label: bamm_parse
 doc: "get bamfile type and/or coverage profiles and/or linking reads\n\nTool homepage:
   https://github.com/Ecogenomics/BamM"
@@ -12,6 +14,7 @@ inputs:
     doc: bam files to parse
     inputBinding:
       position: 1
+      prefix: --bamfiles
   - id: base_quality
     type:
       - 'null'
@@ -107,7 +110,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coverages_path`
     inputBinding:
       position: 103
       prefix: --coverages
@@ -115,7 +117,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `inserts_path`
     inputBinding:
       position: 104
       prefix: --inserts
@@ -123,7 +124,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `links_path`
     inputBinding:
       position: 105
       prefix: --links

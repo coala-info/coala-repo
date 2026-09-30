@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igda-script_getbambyregion_dir
+baseCommand: getbambyregion_dir
 label: igda-script_getbambyregion_dir
 doc: "Get BAM files by region within a directory\n\nTool homepage: https://github.com/zhixingfeng/shell"
 inputs:

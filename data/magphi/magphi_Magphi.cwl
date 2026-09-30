@@ -76,7 +76,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Give path to output folder [default: current folder]'
     inputBinding:
       position: 101

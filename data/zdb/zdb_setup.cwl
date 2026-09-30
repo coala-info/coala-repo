@@ -24,7 +24,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory where to store the reference databases
     inputBinding:
       position: 101

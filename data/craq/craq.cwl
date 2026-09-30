@@ -189,10 +189,10 @@ inputs:
       prefix: --thread
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'User-specified output directory. Default: ./output'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

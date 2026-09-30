@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio download
+baseCommand:
+  - solvebio
+  - download
 label: solvebio_download
 doc: "Downloads files from SolveBio.\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

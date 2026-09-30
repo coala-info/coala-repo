@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux tide-index
+baseCommand:
+  - crux
+  - tide-index
 label: crux_tide-index
 doc: "Create a peptide index for the tide search engine.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

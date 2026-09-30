@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools amplicon
+baseCommand:
+  - primalbedtools
+  - amplicon
 label: primalbedtools_amplicon
 doc: "Primertrim the amplicons\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

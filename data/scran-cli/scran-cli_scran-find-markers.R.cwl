@@ -56,7 +56,6 @@ inputs:
       prefix: --subset_row
   - id: output_markers_path
     type: string
-    doc: Output or path parameter `output_markers_path`
     inputBinding:
       position: 102
       prefix: --output-markers

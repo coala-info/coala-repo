@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: syngap initdb
+baseCommand:
+  - syngap
+  - initdb
 label: syngap_initdb
 doc: "Initialize a new syngap database by importing a masterdb.\n\nTool homepage:
   https://github.com/yanyew/SynGAP"

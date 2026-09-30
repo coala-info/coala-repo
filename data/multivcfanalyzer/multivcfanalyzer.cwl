@@ -25,7 +25,7 @@ inputs:
     inputBinding:
       position: 3
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 4

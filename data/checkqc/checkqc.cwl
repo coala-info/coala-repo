@@ -25,11 +25,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --downgrade-errors
+          separate: true
     doc: Downgrade errors to warnings for a specific handler, can be used 
       multiple times
     inputBinding:
       position: 102
-      prefix: --downgrade-errors
   - id: json
     type:
       - 'null'

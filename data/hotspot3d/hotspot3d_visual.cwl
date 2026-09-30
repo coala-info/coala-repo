@@ -142,7 +142,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory for multiple PyMol scripts, current working directory
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -150,7 +150,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output filename for single PyMol script, default: hotspot3d.visual.pml'
     inputBinding:
       position: 103
       prefix: --output-file

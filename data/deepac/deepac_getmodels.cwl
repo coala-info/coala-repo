@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac_getmodels
+baseCommand:
+  - deepac
+  - getmodels
 label: deepac_getmodels
 doc: "Rebuilds or fetches deep learning models for deep-AMR.\n\nTool homepage: https://gitlab.com/rki_bioinformatics/DeePaC"
 inputs:

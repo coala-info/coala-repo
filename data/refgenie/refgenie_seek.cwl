@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie seek
+baseCommand:
+  - refgenie
+  - seek
 label: refgenie_seek
 doc: "Get the path to a local asset.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

@@ -337,7 +337,6 @@ inputs:
       prefix: -w
   - id: archive_path
     type: string
-    doc: Output or path parameter `archive_path`
     inputBinding:
       position: 103
       prefix: --archive

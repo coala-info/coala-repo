@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq fasta_to_fastq
+baseCommand:
+  - fastaq
+  - fasta_to_fastq
 label: fastaq_fasta_to_fastq
 doc: "Convert FASTA and .qual to FASTQ\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:

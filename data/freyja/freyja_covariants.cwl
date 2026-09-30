@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja_covariants
+baseCommand:
+  - freyja
+  - covariants
 label: freyja_covariants
 doc: "Calls physically linked mutations in BAM_FILE using coVar (https://github.com/andersen-lab/covar)\n\
   \nTool homepage: https://github.com/andersen-lab/Freyja"

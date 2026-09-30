@@ -11,6 +11,7 @@ inputs:
     doc: Paired end reads for analysing (can be gzipped)
     inputBinding:
       position: 1
+      prefix: --reads
   - id: queries
     type:
       type: array
@@ -19,6 +20,7 @@ inputs:
       mapped to.'
     inputBinding:
       position: 2
+      prefix: --queries
   - id: reference
     type:
       type: array
@@ -26,6 +28,7 @@ inputs:
     doc: Reference genome for typing against in genbank format
     inputBinding:
       position: 3
+      prefix: --reference
   - id: help_all
     type:
       - 'null'

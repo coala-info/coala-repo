@@ -91,6 +91,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --select_attributes
+      itemSeparator: ','
   - id: select_features
     type:
       - 'null'
@@ -100,6 +101,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --select_features
+      itemSeparator: ','
   - id: separator
     type:
       - 'null'

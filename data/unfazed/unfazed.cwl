@@ -233,7 +233,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: outfile_path
-    type: string
+    type: string?
     doc: 'name for output file. Defaults to stdout (default:'
     inputBinding:
       position: 102

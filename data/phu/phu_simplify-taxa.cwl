@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phu simplify-taxa
+baseCommand:
+  - phu
+  - simplify-taxa
 label: phu_simplify-taxa
 doc: "Simplify vContact taxonomy prediction columns into compact lineage codes.\n\n\
   Tool homepage: https://github.com/camilogarciabotero/phu"
@@ -37,7 +39,7 @@ inputs:
       prefix: --sep
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: PATH  Output file path (.csv or .tsv) [required]   │
     inputBinding:
       position: 102
       prefix: --output-file

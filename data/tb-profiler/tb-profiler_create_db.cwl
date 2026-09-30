@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tb-profiler create_db
+baseCommand:
+  - tb-profiler
+  - create_db
 label: tb-profiler_create_db
 doc: "Create a database for tb-profiler\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
 inputs:
@@ -185,7 +187,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 101

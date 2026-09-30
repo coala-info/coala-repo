@@ -90,8 +90,8 @@ inputs:
       position: 101
       prefix: --verbose
   - id: log_path
-    type: string
-    doc: Output or path parameter `log_path`
+    type: string?
+    doc: log output file
     inputBinding:
       position: 102
       prefix: --log

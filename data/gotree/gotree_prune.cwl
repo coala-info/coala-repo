@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree prune
+baseCommand:
+  - gotree
+  - prune
 label: gotree_prune
 doc: "This tool removes tips of the input reference tree that : \n\n1) Are not present
   in the compared tree (--comp <other tree>) if any or\n2) Are present in the given
@@ -92,7 +94,7 @@ inputs:
       prefix: --tipfile
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output tree (default "stdout")
     inputBinding:
       position: 103
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jellyfish_histo
+baseCommand:
+  - jellyfish
+  - histo
 label: jellyfish_histo
 doc: "Create an histogram of k-mer occurrences\n\nTool homepage: http://www.genome.umd.edu/jellyfish.html"
 inputs:
@@ -59,10 +61,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

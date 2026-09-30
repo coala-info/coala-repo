@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash_tax
+baseCommand:
+  - sourmash
+  - tax
 label: sourmash_tax
 doc: "Integrate taxonomy information based on 'gather' results\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
 inputs:

@@ -19,8 +19,8 @@ inputs:
       position: 101
       prefix: --kmer
   - id: summary_path
-    type: string
-    doc: Output or path parameter `summary_path`
+    type: string?
+    doc: Creates an output file for usage with MultiQC under the given path.
     inputBinding:
       position: 102
       prefix: --summary

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl_bootstrap
+baseCommand:
+  - gretl
+  - bootstrap
 label: gretl_bootstrap
 doc: "Bootstrap approach\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:
@@ -50,7 +52,7 @@ inputs:
       prefix: --threads
   - id: meta_output_path
     type: string
-    doc: Output or path parameter `meta_output_path`
+    doc: Output meta file
     inputBinding:
       position: 102
       prefix: --meta-output

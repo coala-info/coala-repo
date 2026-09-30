@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench_searchrna
+baseCommand:
+  - rbpbench
+  - searchrna
 label: rbpbench_searchrna
 doc: "Search for RNA-binding protein (RBP) motifs in transcript sites.\n\nTool homepage:
   https://github.com/michauhl/RBPBench"
@@ -495,7 +497,7 @@ inputs:
       position: 101
       prefix: --motifs
   - id: output_dir
-    type: Directory
+    type: string
     doc: Results output folder
     inputBinding:
       position: 101

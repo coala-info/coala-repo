@@ -54,13 +54,13 @@ inputs:
       position: 101
       prefix: --ignored-sequence-prefix-length
   - id: input_forward
-    type: string
+    type: File
     doc: Input forward FASTQ file
     inputBinding:
       position: 101
       prefix: --input-forward
   - id: input_reverse
-    type: string
+    type: File
     doc: Input reverse FASTQ file
     inputBinding:
       position: 101

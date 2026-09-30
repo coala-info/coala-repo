@@ -20,7 +20,7 @@ inputs:
   - id: exclude_components
     type:
       - 'null'
-      - boolean
+      - string
     doc: Exclude component features from output
     inputBinding:
       position: 103
@@ -55,7 +55,7 @@ inputs:
   - id: ignore_strand
     type:
       - 'null'
-      - boolean
+      - string
     doc: Ignore strand, merge feature regardless of strand
     inputBinding:
       position: 103

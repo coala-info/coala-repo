@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kitsune dmatrix
+baseCommand:
+  - kitsune
+  - dmatrix
 label: kitsune_dmatrix
 doc: "Create a dmatrix for XGBoost\n\nTool homepage: https://github.com/natapol/kitsune"
 inputs:

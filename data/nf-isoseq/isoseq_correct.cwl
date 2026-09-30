@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq correct
+baseCommand:
+  - isoseq
+  - correct
 label: isoseq_correct
 doc: "Correct group barcodes given a barcode truth set\n\nTool homepage: https://github.com/PacificBiosciences/pbbioconda"
 inputs:

@@ -29,18 +29,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_out_path`
+    doc: REQUIRED Summary of variant checks will be written here (TSV format)
     inputBinding:
       position: 104
-      prefix: --summary-out
+      prefix: --summaryOut
   - id: vcf_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_out_path`
+    doc: If provided, will write variants that pass checks to this file
     inputBinding:
       position: 105
-      prefix: --vcf-out
+      prefix: --vcfOut
 outputs:
   - id: summary_out
     type: File

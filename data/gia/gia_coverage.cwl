@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia_coverage
+baseCommand:
+  - gia
+  - coverage
 label: gia_coverage
 doc: "Calculates the coverage of intervals in Set A by intervals in Set B\n\nTool
   homepage: https://github.com/noamteyssier/gia"
@@ -109,7 +111,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

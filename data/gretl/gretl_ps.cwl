@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl_ps
+baseCommand:
+  - gretl
+  - ps
 label: gretl_ps
 doc: "How much core, soft and private genome is in each sample?\n\nTool homepage:
   https://github.com/moinsebi/gretl"
@@ -29,7 +31,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output
     inputBinding:
       position: 102
       prefix: --output

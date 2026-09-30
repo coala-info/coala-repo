@@ -7,7 +7,7 @@ label: fsnviz_star-fusion
 doc: "Plots output of STAR-Fusion.\n\nTool homepage: https://github.com/bow/fsnviz"
 inputs:
   - id: input
-    type: string
+    type: File
     doc: Input file for STAR-Fusion plots
     inputBinding:
       position: 1

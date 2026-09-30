@@ -48,6 +48,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --groups
+      itemSeparator: ','
   - id: users
     type:
       - 'null'
@@ -57,6 +58,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --users
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

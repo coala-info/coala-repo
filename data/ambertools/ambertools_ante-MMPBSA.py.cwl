@@ -53,7 +53,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `complex_prmtop_path`
     inputBinding:
       position: 102
       prefix: --complex-prmtop
@@ -61,7 +60,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ligand_prmtop_path`
     inputBinding:
       position: 103
       prefix: --ligand-prmtop
@@ -69,7 +67,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `receptor_prmtop_path`
     inputBinding:
       position: 104
       prefix: --receptor-prmtop

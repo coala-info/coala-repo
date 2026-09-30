@@ -45,11 +45,13 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      type: array
+      items: File
     doc: Prefix for the output files consisting of a NUMPY and a TEXT version of
       the clustering result.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

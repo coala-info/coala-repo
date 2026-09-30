@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi stepindex
+baseCommand:
+  - odgi
+  - stepindex
 label: odgi_stepindex
 doc: "Generate a step index from a given graph. If no output file is provided via
   *-o, --out*, the index will be directly written to *INPUT_GRAPH.stpidx*.\n\nTool

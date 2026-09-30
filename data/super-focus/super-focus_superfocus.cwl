@@ -24,7 +24,7 @@ inputs:
   - id: amino_acid
     type:
       - 'null'
-      - boolean
+      - string
     doc: "amino acid input; 0 nucleotides; 1 amino acids\n                       \
       \ (default 0)."
     inputBinding:
@@ -58,7 +58,7 @@ inputs:
   - id: fast
     type:
       - 'null'
-      - boolean
+      - string
     doc: "runs RAPSearch2 or DIAMOND on fast mode - 0 (False) /\n                \
       \        1 (True) (default: 1)."
     inputBinding:
@@ -67,7 +67,7 @@ inputs:
   - id: focus
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'runs FOCUS; 1 does run; 0 does not run: default 0.'
     inputBinding:
       position: 101
@@ -108,7 +108,7 @@ inputs:
   - id: normalise_output
     type:
       - 'null'
-      - boolean
+      - string
     doc: "normalises each query counts based on number of hits;\n                \
       \        0 doesn't normalize; 1 normalizes (default: 1)."
     inputBinding:
@@ -146,7 +146,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify an alternate temporary directory to use
     inputBinding:
       position: 101

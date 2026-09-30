@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msisensor-rna detection
+baseCommand:
+  - msisensor-rna
+  - detection
 label: msisensor-rna_detection
 doc: "Microsatellite instability detection.\n\nTool homepage: https://github.com/xjtu-omics/msisensor-rna"
 inputs:
@@ -19,23 +21,24 @@ inputs:
   - id: run_directly
     type:
       - 'null'
-      - boolean
+      - string
     doc: Run the program directly without any Confirm.
     inputBinding:
       position: 101
       prefix: --run_directly
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      type: array
+      items: File
     doc: The path of output file prefix.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

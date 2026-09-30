@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blobtools seqfilter
+baseCommand:
+  - blobtools
+  - seqfilter
 label: blobtools_seqfilter
 doc: "Filter sequences from a FASTA file based on a list of headers.\n\nTool homepage:
   https://blobtools.readme.io/docs/what-is-blobtools"

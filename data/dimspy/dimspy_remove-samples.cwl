@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy remove-samples
+baseCommand:
+  - dimspy
+  - remove-samples
 label: dimspy_remove-samples
 doc: "Removes samples from a peak matrix or peaklist object.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
@@ -21,7 +23,6 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -63,7 +63,7 @@ inputs:
       prefix: --to_json
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Specify path to outfile
     inputBinding:
       position: 102
       prefix: --outfile

@@ -98,9 +98,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: reference-guided assembly (optional)
     secondaryFiles:
       - .fai
-    doc: reference-guided assembly (optional)
     inputBinding:
       position: 102
       prefix: --reference
@@ -114,7 +114,7 @@ inputs:
       prefix: --trim
   - id: outprefix_path
     type: string
-    doc: Output or path parameter `outprefix_path`
+    doc: output prefix
     inputBinding:
       position: 103
       prefix: --outprefix
@@ -122,10 +122,11 @@ outputs:
   - id: outprefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output prefix
     outputBinding:
-      glob: $(inputs.outprefix_path)
+      glob: $(inputs.outprefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

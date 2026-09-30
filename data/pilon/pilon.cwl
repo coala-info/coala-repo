@@ -258,7 +258,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `changes_path`
     inputBinding:
       position: 102
       prefix: --changes
@@ -266,7 +265,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 103
       prefix: --outdir
@@ -274,7 +272,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tracks_path`
     inputBinding:
       position: 104
       prefix: --tracks
@@ -282,7 +279,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_path`
     inputBinding:
       position: 105
       prefix: --vcf

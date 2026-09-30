@@ -69,18 +69,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output file'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
   - id: report_json_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_json_file_path`
+    doc: ' Write JSON metrics report'
     inputBinding:
       position: 104
-      prefix: --report-json-file
+      prefix: --report-json
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dpcstruct primarycluster
+baseCommand:
+  - dpcstruct
+  - primarycluster
 label: dpcstruct_primarycluster
 doc: "Identifies primary clusters given a set of query proteins.\n\nTool homepage:
   https://github.com/RitAreaSciencePark/DPCstruct"
@@ -19,10 +21,10 @@ inputs:
       prefix: -t
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: output filename
     inputBinding:
       position: 102
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type: File

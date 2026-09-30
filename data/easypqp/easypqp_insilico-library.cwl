@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: easypqp_insilico-library
+baseCommand:
+  - easypqp
+  - insilico-library
 label: easypqp_insilico-library
 doc: "Generate In-Silico Predicted Library\n\nTool homepage: https://github.com/grosenberger/easypqp"
 inputs:
@@ -267,10 +269,10 @@ inputs:
       prefix: --write_report
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file for the generated library.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: output_file
     type:

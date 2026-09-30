@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools restrict
+baseCommand:
+  - fastools
+  - restrict
 label: fastools_restrict
 doc: "Fragment a genome with restriction enzymes.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:

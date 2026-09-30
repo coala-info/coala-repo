@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_annotate_variants
+baseCommand:
+  - vt
+  - annotate_variants
 label: vt_annotate_variants
 doc: "annotates variants in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:
@@ -51,18 +53,18 @@ inputs:
       prefix: -m
   - id: reference_fasta
     type: File
+    doc: reference sequence fasta file
     secondaryFiles:
       - .fai
-    doc: reference sequence fasta file
     inputBinding:
       position: 102
       prefix: -r
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: output VCF file [-]
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

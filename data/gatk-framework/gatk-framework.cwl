@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar gatk-framework.jar
+baseCommand:
+  - java
+  - -jar
+  - gatk-framework.jar
 label: gatk-framework
 doc: "The Genome Analysis Toolkit (GATK) v3.6-24-g59fd391\n\nTool homepage: https://gatk.broadinstitute.org/"
 inputs:

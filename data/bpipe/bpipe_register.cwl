@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bpipe register
+baseCommand:
+  - bpipe
+  - register
 label: bpipe_register
 doc: "Register a pipeline with Bpipe\n\nTool homepage: http://docs.bpipe.org/"
 inputs:

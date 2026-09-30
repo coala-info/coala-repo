@@ -120,7 +120,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output folder prefix (default: ./result)'
     inputBinding:
       position: 101
@@ -169,7 +169,7 @@ inputs:
   - id: ul_tmp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Temporary folder for ultralong ONT read analysis (default: ./tmp)'
     inputBinding:
       position: 101

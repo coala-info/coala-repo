@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux get-ms2-spectrum
+baseCommand:
+  - crux
+  - get-ms2-spectrum
 label: crux_get-ms2-spectrum
 doc: "Parse fragmentation spectra from MS2 files.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

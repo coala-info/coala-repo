@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kssd shuffle
+baseCommand:
+  - kssd
+  - shuffle
 label: kssd_shuffle
 doc: "The shuffle doc prefix.\n\nTool homepage: https://github.com/yhg926/public_kssd"
 inputs:

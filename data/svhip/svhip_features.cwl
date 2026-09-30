@@ -23,7 +23,7 @@ inputs:
   - id: reverse
     type:
       - 'null'
-      - boolean
+      - string
     doc: Also scan the reverse complement when calculating features.
     inputBinding:
       position: 101
@@ -31,7 +31,7 @@ inputs:
   - id: stdout
     type:
       - 'null'
-      - boolean
+      - string
     doc: Set the --stdout flag to False if you do not want to have output 
       printed to screen as well. This feature is mostly for manual redirection 
       to files.
@@ -50,7 +50,6 @@ inputs:
       prefix: --tree
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile

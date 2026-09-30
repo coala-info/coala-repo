@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_encode
+baseCommand:
+  - unikmer
+  - encode
 label: unikmer_encode
 doc: "Encode plain k-mer texts to integers\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

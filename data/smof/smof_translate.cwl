@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_translate
+baseCommand:
+  - smof
+  - translate
 label: smof_translate
 doc: "Translate DNA sequences to protein sequences using the standard genetic code.
   Ambiguous codons are translated as 'X'. Trailing characters are ignored. Gaps are

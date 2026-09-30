@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blobtk_taxonomy
+baseCommand:
+  - blobtk
+  - taxonomy
 label: blobtk_taxonomy
 doc: "Process a taxonomy and lookup lineages, or start the API server with --api\n\
   \nTool homepage: https://github.com/genomehubs/blobtk"
@@ -91,7 +93,6 @@ inputs:
       prefix: --xref-label
   - id: taxdump_out_path
     type: string
-    doc: Output or path parameter `taxdump_out_path`
     inputBinding:
       position: 102
       prefix: --taxdump-out

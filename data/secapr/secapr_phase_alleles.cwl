@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr_phase_alleles
+baseCommand:
+  - secapr
+  - phase_alleles
 label: secapr_phase_alleles
 doc: "Phase remapped reads form reference-based assembly into two separate alleles.
   Then produce consensus sequence for each allele.\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"

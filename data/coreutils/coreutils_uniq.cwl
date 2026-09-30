@@ -19,7 +19,8 @@ inputs:
     doc: like -D, but allow separating groups with an empty line; METHOD={none(default),prepend,separate}
     inputBinding:
       position: 102
-      prefix: --all-repeated
+      prefix: --all-repeated=
+      separate: false
   - id: check_chars
     type:
       - 'null'
@@ -43,7 +44,8 @@ inputs:
     doc: show all items, separating groups with an empty line; METHOD={separate(default),prepend,append,both}
     inputBinding:
       position: 102
-      prefix: --group
+      prefix: --group=
+      separate: false
   - id: ignore_case
     type:
       - 'null'

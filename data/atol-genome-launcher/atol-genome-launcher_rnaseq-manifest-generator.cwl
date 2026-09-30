@@ -9,6 +9,11 @@ inputs:
     doc: Data Mapper organism_grouping_key
     inputBinding:
       position: 1
+  - id: manifest
+    type: string
+    doc: Path to output the manifest
+    inputBinding:
+      position: 2
   - id: packages
     type: string
     doc: Mapped Packages CSV. FIXME. Should be JSON.
@@ -22,11 +27,11 @@ inputs:
       position: 102
       prefix: --resources
 outputs:
-  - id: manifest
+  - id: out_manifest
     type: File
     doc: Path to output the manifest
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.manifest)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atol-genome-launcher:0.4.1--pyhdfd78af_0

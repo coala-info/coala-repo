@@ -27,7 +27,7 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Folder path to write split output files to.
     inputBinding:
       position: 102
       prefix: --output

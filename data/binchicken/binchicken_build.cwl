@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: binchen_build
+baseCommand:
+  - binchicken
+  - build
 label: binchicken_build
 doc: "Create dependency environments\n\nTool homepage: https://github.com/aroneys/binchicken"
 inputs:
@@ -98,7 +100,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -166,7 +168,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to temporary directory.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast confidence
+baseCommand:
+  - mrpast
+  - confidence
 label: mrpast_confidence
 doc: "Solve for all bootstrapped samples instead of using GIM (theoretical).\n\nTool
   homepage: https://aprilweilab.github.io/"

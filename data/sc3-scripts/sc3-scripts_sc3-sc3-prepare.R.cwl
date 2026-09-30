@@ -124,7 +124,6 @@ inputs:
       prefix: --svm-train-inds
   - id: output_object_file_path
     type: string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 102
       prefix: --output-object-file

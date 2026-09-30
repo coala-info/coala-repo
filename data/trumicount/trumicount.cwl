@@ -237,7 +237,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_counts_path`
+    doc: write bias-corrected per-group counts and models to FILE
     inputBinding:
       position: 102
       prefix: --output-counts
@@ -245,7 +245,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_final_umis_path`
+    doc: write strand-combined and filtered UMIs to FILE
     inputBinding:
       position: 103
       prefix: --output-final-umis
@@ -253,7 +253,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_genewise_fits_path`
+    doc: obsolete name for --output-groupwise-fits
     inputBinding:
       position: 104
       prefix: --output-genewise-fits
@@ -261,7 +261,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_groupwise_fits_path`
+    doc: write group-wise model details to FILE
     inputBinding:
       position: 105
       prefix: --output-groupwise-fits
@@ -269,7 +269,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_plots_path`
+    doc: write diagnostic plots in PDF format to PLOT
     inputBinding:
       position: 106
       prefix: --output-plots
@@ -277,7 +277,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_readdist_path`
+    doc: write global reads/UMI distribution (before and after filtering) to 
+      FILE
     inputBinding:
       position: 107
       prefix: --output-readdist
@@ -285,7 +286,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_umis_path`
     inputBinding:
       position: 108
       prefix: --output-umis

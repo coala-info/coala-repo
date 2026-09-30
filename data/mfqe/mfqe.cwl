@@ -61,7 +61,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fasta_files_path`
     inputBinding:
       position: 102
       prefix: --output-fasta-files
@@ -69,7 +68,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fastq_files_path`
     inputBinding:
       position: 103
       prefix: --output-fastq-files

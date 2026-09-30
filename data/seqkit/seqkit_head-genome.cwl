@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_head-genome
+baseCommand:
+  - seqkit
+  - head-genome
 label: seqkit_head-genome
 doc: "print sequences of the first genome with common prefixes in name\n\nTool homepage:
   https://github.com/shenwei356/seqkit"
@@ -100,7 +102,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

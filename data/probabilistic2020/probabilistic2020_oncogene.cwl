@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: probabilistic2020 oncogene
+baseCommand:
+  - probabilistic2020
+  - oncogene
 label: probabilistic2020_oncogene
 doc: "Find statsitically significant oncogene-like genes. Evaluates clustering of
   missense mutations and high in silico pathogenicity scores for missense mutations.\n\
@@ -132,7 +134,6 @@ inputs:
       prefix: --use-unmapped
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

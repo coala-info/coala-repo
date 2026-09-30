@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga graph-concordance
+baseCommand:
+  - sga
+  - graph-concordance
 label: sga_graph-concordance
 doc: "Count read support for variants in a vcf file\n\nTool homepage: https://github.com/jts/sga"
 inputs:

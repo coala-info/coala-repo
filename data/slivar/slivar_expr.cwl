@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slivar expr
+baseCommand:
+  - slivar
+  - expr
 label: slivar_expr
 doc: "Evaluate expressions on VCF/BCF files.\n\nTool homepage: https://github.com/brentp/slivar"
 inputs:
@@ -123,7 +125,7 @@ inputs:
       prefix: --vcf
   - id: out_vcf_path
     type: string
-    doc: Output or path parameter `out_vcf_path`
+    doc: 'path to output VCF/BCF (default: /dev/stdout)'
     inputBinding:
       position: 102
       prefix: --out-vcf

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbgc train
+baseCommand:
+  - deepbgc
+  - train
 label: deepbgc_train
 doc: "Train a BGC detector/classifier on a set of BGC samples.\n\nTool homepage: https://github.com/Merck/DeepBGC"
 inputs:
@@ -78,7 +80,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

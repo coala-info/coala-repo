@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prosic call-tumor-normal
+baseCommand:
+  - prosic
+  - call-tumor-normal
 label: prosic_call-tumor-normal
 doc: "Call somatic and germline variants from a tumor-normal sample pair and a VCF/BCF
   with candidate variants.\n\nTool homepage: https://prosic.github.io"
@@ -17,10 +19,10 @@ inputs:
       position: 2
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: FASTA file with reference genome. Has to be indexed with samtools 
       faidx.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 3
   - id: candidates
@@ -216,7 +218,7 @@ inputs:
       prefix: --spurious-isize-rate
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: BCF file that shall contain the results (if omitted, write to STDOUT).
     inputBinding:
       position: 105
       prefix: --output

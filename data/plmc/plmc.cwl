@@ -110,10 +110,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `couplings_file_path`
+    doc: Save coupling scores to file (text)
     inputBinding:
       position: 103
-      prefix: --couplings-file
+      prefix: --couplings
   - id: output_param_file_path
     type:
       - 'null'
@@ -126,7 +126,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_weights_path`
+    doc: weightsfile     Save sequence weights to file (text)
     inputBinding:
       position: 105
       prefix: --save-weights

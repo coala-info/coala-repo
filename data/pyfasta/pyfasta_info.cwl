@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfasta_info
+baseCommand:
+  - pyfasta
+  - info
 label: pyfasta_info
 doc: "Print headers and lengths of the given fasta file in order of length.\n\nTool
   homepage: https://github.com/brentp/pyfasta"

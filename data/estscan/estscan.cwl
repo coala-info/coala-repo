@@ -148,10 +148,11 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: send output to file.  - means stdout.  If both -t and -o specify 
+      stdout, only proteins will be written.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

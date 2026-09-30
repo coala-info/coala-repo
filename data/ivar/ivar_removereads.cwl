@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ivar_removereads
+baseCommand:
+  - ivar
+  - removereads
 label: ivar_removereads
 doc: "This step is used only for amplicon-based sequencing.\n\nTool homepage: https://andersen-lab.github.io/ivar/html/"
 inputs:

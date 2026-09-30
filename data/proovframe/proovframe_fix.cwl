@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: proovframe_fix
+baseCommand:
+  - proovframe
+  - fix
 label: proovframe_fix
 doc: "Fixes frameshifts in sequences based on Diamond output.\n\nTool homepage: https://github.com/thackl/proovframe"
 inputs:
@@ -41,7 +43,6 @@ inputs:
       prefix: --no-stop-masking
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 104
       prefix: --out

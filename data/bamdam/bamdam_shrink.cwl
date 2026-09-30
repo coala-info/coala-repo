@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamdam shrink
+baseCommand:
+  - bamdam
+  - shrink
 label: bamdam_shrink
 doc: "Shrinks an LCA file and its corresponding BAM file by filtering nodes and alignments.\n\
   \nTool homepage: https://github.com/bdesanctis/bamdam"
@@ -90,17 +92,13 @@ inputs:
       position: 101
       prefix: --upto
   - id: out_bam_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Path to the short output BAM file (required)
     inputBinding:
       position: 102
       prefix: --out_bam
   - id: out_lca_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Path to the short output LCA file (required)
     inputBinding:
       position: 103

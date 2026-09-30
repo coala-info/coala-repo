@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: make_prg update
+baseCommand:
+  - make_prg
+  - update
 label: make_prg_update
 doc: "Updates a PRG database with new sequences.\n\nTool homepage: https://github.com/rmcolq/make_prg"
 inputs:

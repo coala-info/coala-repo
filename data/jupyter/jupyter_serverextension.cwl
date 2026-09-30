@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jupyter serverextension
+baseCommand:
+  - jupyter
+  - serverextension
 label: jupyter_serverextension
 doc: "Work with Jupyter server extensions\n\nTool homepage: https://github.com/jakevdp/PythonDataScienceHandbook"
 inputs:

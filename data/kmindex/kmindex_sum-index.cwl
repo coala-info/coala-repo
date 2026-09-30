@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmindex_sum-index
+baseCommand:
+  - kmindex
+  - sum-index
 label: kmindex_sum-index
 doc: "Make a lightweight summarized index, at query time, reports only the number
   samples containing each k-mer. (experimental)\n\nTool homepage: https://github.com/tlemane/kmindex"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kcftools_getAttributes
+baseCommand:
+  - kcftools
+  - getAttributes
 label: kcftools_getAttributes
 doc: "Extract attributes from KCF files\n\nTool homepage: https://github.com/sivasubramanics/kcftools"
 inputs:
@@ -27,16 +29,18 @@ inputs:
       prefix: --input
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name prefix
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
-    type: File
+    type:
+      type: array
+      items: File
     doc: Output file name prefix
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

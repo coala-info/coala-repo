@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plannotate batch
+baseCommand:
+  - plannotate
+  - batch
 label: plannotate_batch
 doc: "Annotates engineered DNA sequences, primarily plasmids. Accepts a FASTA or GenBank
   file and outputs a GenBank file with annotations, as well as an optional interactive
@@ -72,7 +74,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: location of output folder.
     inputBinding:
       position: 101

@@ -98,7 +98,6 @@ inputs:
       prefix: --spacing-z-planes
   - id: output_boundaries_path
     type: string
-    doc: Output or path parameter `output_boundaries_path`
     inputBinding:
       position: 102
       prefix: --output-boundaries

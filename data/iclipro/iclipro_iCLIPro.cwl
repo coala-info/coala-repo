@@ -55,7 +55,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: output folder (default is cwd - current working directory)
     inputBinding:
       position: 102

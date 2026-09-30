@@ -15,6 +15,11 @@ inputs:
     doc: Query file (.fa, .nib, or .2bit) or a list of these files
     inputBinding:
       position: 2
+  - id: output_psl
+    type: string
+    doc: Name of the output file
+    inputBinding:
+      position: 3
   - id: database_type
     type:
       - 'null'
@@ -22,7 +27,8 @@ inputs:
     doc: 'Database type: dna, prot, or dnax'
     inputBinding:
       position: 103
-      prefix: -t
+      prefix: -t=
+      separate: false
   - id: dots
     type:
       - 'null'
@@ -30,7 +36,8 @@ inputs:
     doc: Output dot every N sequences to show program's progress
     inputBinding:
       position: 103
-      prefix: -dots
+      prefix: -dots=
+      separate: false
   - id: extend_through_n
     type:
       - 'null'
@@ -64,7 +71,8 @@ inputs:
     doc: 'Mask out repeats. Types: lower, upper, out, file.out'
     inputBinding:
       position: 103
-      prefix: -mask
+      prefix: -mask=
+      separate: false
   - id: max_gap
     type:
       - 'null'
@@ -72,7 +80,8 @@ inputs:
     doc: Sets the size of maximum gap between tiles in a clump
     inputBinding:
       position: 103
-      prefix: -maxGap
+      prefix: -maxGap=
+      separate: false
   - id: max_intron
     type:
       - 'null'
@@ -80,7 +89,8 @@ inputs:
     doc: Sets maximum intron size
     inputBinding:
       position: 103
-      prefix: -maxIntron
+      prefix: -maxIntron=
+      separate: false
   - id: min_identity
     type:
       - 'null'
@@ -89,7 +99,8 @@ inputs:
       nucleotide, 25 for protein
     inputBinding:
       position: 103
-      prefix: -minIdentity
+      prefix: -minIdentity=
+      separate: false
   - id: min_match
     type:
       - 'null'
@@ -98,7 +109,8 @@ inputs:
       protein
     inputBinding:
       position: 103
-      prefix: -minMatch
+      prefix: -minMatch=
+      separate: false
   - id: min_rep_divergence
     type:
       - 'null'
@@ -106,7 +118,8 @@ inputs:
     doc: Minimum percent divergence of repeats to allow them to be unmasked
     inputBinding:
       position: 103
-      prefix: -minRepDivergence
+      prefix: -minRepDivergence=
+      separate: false
   - id: min_score
     type:
       - 'null'
@@ -114,7 +127,8 @@ inputs:
     doc: Sets minimum score
     inputBinding:
       position: 103
-      prefix: -minScore
+      prefix: -minScore=
+      separate: false
   - id: no_head
     type:
       - 'null'
@@ -139,7 +153,8 @@ inputs:
       alignment
     inputBinding:
       position: 103
-      prefix: -oneOff
+      prefix: -oneOff=
+      separate: false
   - id: ooc
     type:
       - 'null'
@@ -147,7 +162,8 @@ inputs:
     doc: Use overused tile file N.ooc. N should correspond to the tileSize
     inputBinding:
       position: 103
-      prefix: -ooc
+      prefix: -ooc=
+      separate: false
   - id: out_format
     type:
       - 'null'
@@ -156,7 +172,8 @@ inputs:
       blast8, blast9)
     inputBinding:
       position: 103
-      prefix: -out
+      prefix: -out=
+      separate: false
   - id: prot
     type:
       - 'null'
@@ -172,7 +189,8 @@ inputs:
     doc: Mask out repeats in query sequence
     inputBinding:
       position: 103
-      prefix: -qMask
+      prefix: -qMask=
+      separate: false
   - id: query_type
     type:
       - 'null'
@@ -180,7 +198,8 @@ inputs:
     doc: 'Query type: dna, rna, prot, dnax, or rnax'
     inputBinding:
       position: 103
-      prefix: -q
+      prefix: -q=
+      separate: false
   - id: rep_match
     type:
       - 'null'
@@ -189,7 +208,8 @@ inputs:
       overused
     inputBinding:
       position: 103
-      prefix: -repMatch
+      prefix: -repMatch=
+      separate: false
   - id: repeats
     type:
       - 'null'
@@ -198,7 +218,8 @@ inputs:
       reported separately
     inputBinding:
       position: 103
-      prefix: -repeats
+      prefix: -repeats=
+      separate: false
   - id: step_size
     type:
       - 'null'
@@ -206,7 +227,8 @@ inputs:
     doc: Spacing between tiles. Default is tileSize
     inputBinding:
       position: 103
-      prefix: -stepSize
+      prefix: -stepSize=
+      separate: false
   - id: tile_size
     type:
       - 'null'
@@ -215,7 +237,8 @@ inputs:
       DNA and 5 for protein
     inputBinding:
       position: 103
-      prefix: -tileSize
+      prefix: -tileSize=
+      separate: false
   - id: trim_hard_a
     type:
       - 'null'
@@ -236,16 +259,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `make_ooc_path`
+    doc: .ooc Make overused tile file. Target needs to be complete genome.
     inputBinding:
       position: 104
-      prefix: --make-ooc
+      prefix: -makeOoc=
+      separate: false
 outputs:
   - id: output
     type: File
     doc: Name of the output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_psl)'
   - id: make_ooc
     type:
       - 'null'

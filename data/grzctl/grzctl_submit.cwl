@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grzctl submit
+baseCommand:
+  - grzctl
+  - submit
 label: grzctl_submit
 doc: "Validate, encrypt, and then upload.\n\n  This is a convenience command that
   performs the following steps in order: 1.\n  Validate the submission 2. Encrypt

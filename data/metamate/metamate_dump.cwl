@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metamate dump
+baseCommand:
+  - metamate
+  - dump
 label: metamate_dump
 doc: "Dump filtered ASVs based on specifications.\n\nTool homepage: https://github.com/tjcreedy/metamate"
 inputs:

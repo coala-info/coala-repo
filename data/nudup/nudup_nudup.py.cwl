@@ -76,7 +76,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for reading and writing to temporary files and named pipes
     inputBinding:
       position: 102

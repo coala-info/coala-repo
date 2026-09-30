@@ -21,7 +21,7 @@ inputs:
     inputBinding:
       position: 3
   - id: build_output
-    type: Directory
+    type: string
     doc: directory where results should be written
     inputBinding:
       position: 104

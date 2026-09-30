@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: muat predict
+baseCommand:
+  - muat
+  - predict
 label: muat_predict
 doc: "Predicts variants from sequencing data.\n\nTool homepage: https://github.com/primasanjaya/muat"
 inputs:

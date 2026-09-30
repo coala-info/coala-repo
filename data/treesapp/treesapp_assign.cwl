@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp_assign
+baseCommand:
+  - treesapp
+  - assign
 label: treesapp_assign
 doc: "Classify sequences through evolutionary placement.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:

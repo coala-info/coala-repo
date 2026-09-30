@@ -10,7 +10,7 @@ doc: "Pipeline for the preparation of a CLIP-Seq dataset in BED format. The pipe
   \nTool homepage: https://github.molgen.mpg.de/heller/ssHMM"
 inputs:
   - id: working_dir
-    type: Directory
+    type: string
     doc: working/output directory
     inputBinding:
       position: 1

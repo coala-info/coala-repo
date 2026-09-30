@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_grep
+baseCommand:
+  - unikmer
+  - grep
 label: unikmer_grep
 doc: "Search k-mers from binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:
@@ -106,7 +108,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101

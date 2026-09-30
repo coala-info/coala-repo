@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit drop
+baseCommand:
+  - nwkit
+  - drop
 label: nwkit_drop
 doc: "Drop nodes from a newick tree.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

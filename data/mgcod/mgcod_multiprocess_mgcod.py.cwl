@@ -79,7 +79,7 @@ inputs:
   - id: path_to_mgm_predictions
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where to save MGM predictions so that they can be re-used. If
       path does not exist, it will be created.
     inputBinding:
@@ -143,18 +143,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `path_to_output_path`
     inputBinding:
       position: 103
-      prefix: --path-to-output
+      prefix: --path_to_output
   - id: path_to_plots_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `path_to_plots_path`
     inputBinding:
       position: 104
-      prefix: --path-to-plots
+      prefix: --path_to_plots
 outputs:
   - id: path_to_output
     type:

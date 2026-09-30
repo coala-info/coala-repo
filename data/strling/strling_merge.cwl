@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strling merge
+baseCommand:
+  - strling
+  - merge
 label: strling_merge
 doc: "Merge bin files previously created by `strling extract`\n\nTool homepage: https://github.com/quinlan-lab/STRling"
 inputs:

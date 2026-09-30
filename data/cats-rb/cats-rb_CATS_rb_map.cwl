@@ -88,10 +88,10 @@ inputs:
       prefix: -T
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: ': Mapping output directory name, default: TRANSCRIPTOME_CATS_rb_map'
     inputBinding:
       position: 104
-      prefix: --output-directory
+      prefix: -D
 outputs:
   - id: output_directory
     type:

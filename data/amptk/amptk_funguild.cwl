@@ -27,10 +27,10 @@ inputs:
       prefix: --input
   - id: output_otu_table_path
     type: string
-    doc: Output or path parameter `output_otu_table_path`
+    doc: Output OTU table with Guild annotations
     inputBinding:
       position: 102
-      prefix: --output-otu-table
+      prefix: --out
 outputs:
   - id: output_otu_table
     type:

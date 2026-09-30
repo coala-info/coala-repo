@@ -14,7 +14,7 @@ inputs:
       prefix: --input-gaf-path
   - id: output_gaf_file_path
     type: string
-    doc: Output or path parameter `output_gaf_file_path`
+    doc: output GAF file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-gaf-file

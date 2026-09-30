@@ -289,7 +289,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory
     inputBinding:
       position: 101
@@ -330,26 +330,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `abundance_output_prefix_path`
+    doc: File for abundance output(prefix).
     inputBinding:
       position: 102
-      prefix: --abundance-output-prefix
+      prefix: --ouput
   - id: classified_output_prefix_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `classified_output_prefix_path`
+    doc: File for alignment output(prefix).
     inputBinding:
       position: 103
-      prefix: --classified-output-prefix
+      prefix: --classified-out
   - id: report_output_prefix_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_output_prefix_path`
+    doc: File for read classification(binning) output(prefix).
     inputBinding:
       position: 104
-      prefix: --report-output-prefix
+      prefix: --report
 outputs:
   - id: classified_output_prefix
     type:

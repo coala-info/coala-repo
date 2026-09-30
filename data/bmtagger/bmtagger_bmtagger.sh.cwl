@@ -111,7 +111,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory
     inputBinding:
       position: 101

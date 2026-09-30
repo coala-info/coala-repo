@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory for split files
     inputBinding:
       position: 2

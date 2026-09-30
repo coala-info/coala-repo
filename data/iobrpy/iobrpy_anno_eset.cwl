@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy anno_eset
+baseCommand:
+  - iobrpy
+  - anno_eset
 label: iobrpy_anno_eset
 doc: "Annotates an expression set with gene/probe information.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -68,10 +70,9 @@ inputs:
       prefix: --symbol
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type: File

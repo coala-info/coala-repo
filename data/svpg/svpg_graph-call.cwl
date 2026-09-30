@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svpg_graph-call
+baseCommand:
+  - svpg
+  - graph-call
 label: svpg_graph-call
 doc: "Call structural variants (SVs) on a pangenome graph.\n\nTool homepage: https://github.com/coopsor/SVPG"
 inputs:
@@ -137,14 +139,14 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify the working directory to store output files.
     inputBinding:
       position: 101
       prefix: --working_dir
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Specify the output file name.
     inputBinding:
       position: 102
       prefix: --out

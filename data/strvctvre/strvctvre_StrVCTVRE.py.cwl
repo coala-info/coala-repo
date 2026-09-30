@@ -48,10 +48,10 @@ inputs:
       prefix: --phyloP
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: path/to/output/file, --output /path/to/output/file Output file path
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxadb_download
+baseCommand:
+  - taxadb
+  - download
 label: taxadb_download
 doc: "download the files required to create the database\n\nTool homepage: https://github.com/HadrienG/taxadb"
 inputs:
@@ -13,7 +15,7 @@ inputs:
       position: 101
       prefix: --force
   - id: outdir
-    type: Directory
+    type: string
     doc: Output Directory
     inputBinding:
       position: 101

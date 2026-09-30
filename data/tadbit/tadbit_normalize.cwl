@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadbit normalize
+baseCommand:
+  - tadbit
+  - normalize
 label: tadbit_normalize
 doc: "normalize Hi-C data and generates array of biases\n\nTool homepage: http://sgt.cnag.cat/3dg/tadbit/"
 inputs:
@@ -79,6 +81,7 @@ inputs:
       self-circle, 2: dangling-end, 3: error, 4: extra dangling-end, 5: too close
       from RES, 6: too short, 7: too large, 8: over-represented, 9: duplicated, 10:
       random breaks, 11: trans-chromosomic"
+    default:
       - 1
       - 2
       - 3

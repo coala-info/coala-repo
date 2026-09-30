@@ -13,6 +13,7 @@ inputs:
     doc: List of fasta/genbank files to use as input
     inputBinding:
       position: 1
+      prefix: --fasta_files
   - id: add_fasta_labels
     type:
       - 'null'
@@ -194,14 +195,14 @@ inputs:
       position: 102
       prefix: --svg_pan_zoom_location
   - id: working_directory
-    type: Directory
+    type: string
     doc: Folder to write intermediate files.
     inputBinding:
       position: 102
       prefix: --working_directory
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Location to write output.
     inputBinding:
       position: 103
       prefix: --out

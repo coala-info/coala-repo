@@ -305,10 +305,10 @@ inputs:
       prefix: -v
   - id: output_sam_path
     type: string
-    doc: Output or path parameter `output_sam_path`
+    doc: Output SAM file name
     inputBinding:
       position: 105
-      prefix: --output-sam
+      prefix: -o
 outputs:
   - id: output_sam
     type:

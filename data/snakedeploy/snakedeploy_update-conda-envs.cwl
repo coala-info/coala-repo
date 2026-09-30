@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakedeploy update-conda-envs
+baseCommand:
+  - snakedeploy
+  - update-conda-envs
 label: snakedeploy_update-conda-envs
 doc: "Update given conda environment definition files (in YAML format) so that all
   contained packages are set to the latest feasible versions.\n\nTool homepage: https://github.com/snakemake/snakedeploy"

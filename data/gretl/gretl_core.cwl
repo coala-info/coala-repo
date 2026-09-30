@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl_core
+baseCommand:
+  - gretl
+  - core
 label: gretl_core
 doc: "General graph similarity statistics\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:
@@ -36,7 +38,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output
     inputBinding:
       position: 102
       prefix: --output

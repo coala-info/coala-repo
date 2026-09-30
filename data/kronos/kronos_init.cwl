@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kronos_init
+baseCommand:
+  - kronos
+  - init
 label: kronos_init
 doc: "initialize a pipeline from a given config file\n\nTool homepage: https://github.com/jtaghiyar/kronos"
 inputs:

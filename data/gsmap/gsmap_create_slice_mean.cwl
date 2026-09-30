@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsMap create_slice_mean
+baseCommand:
+  - gsMap
+  - create_slice_mean
 label: gsmap_create_slice_mean
 doc: "Calculates the mean expression for each slice across specified samples.\n\n\
   Tool homepage: https://github.com/LeonSong1995/gsMap"
@@ -12,10 +14,9 @@ inputs:
     doc: List of sample names to process. Provide as a space-separated list.
     inputBinding:
       position: 1
+      prefix: --sample_name_list
   - id: data_layer
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Data layer for gene expression (e.g., "count", "counts", "log1p").
     inputBinding:
       position: 102
@@ -49,10 +50,9 @@ inputs:
       prefix: --homolog_file
   - id: slice_mean_output_file_path
     type: string
-    doc: Output or path parameter `slice_mean_output_file_path`
     inputBinding:
       position: 103
-      prefix: --slice-mean-output-file
+      prefix: --slice_mean_output_file
 outputs:
   - id: slice_mean_output_file
     type: File

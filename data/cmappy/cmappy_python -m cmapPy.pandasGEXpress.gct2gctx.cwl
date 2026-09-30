@@ -40,6 +40,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -verbose
+  - id: output_filepath_path
+    type: string?
+    inputBinding:
+      position: 102
+      prefix: -output_filepath
 outputs:
   - id: output_filepath
     type:
@@ -48,7 +53,9 @@ outputs:
     doc: out path/name for output gctx file. Default is just to modify the 
       extension
     outputBinding:
-      glob: $(inputs.output_filepath)
+      glob: $(inputs.output_filepath_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8

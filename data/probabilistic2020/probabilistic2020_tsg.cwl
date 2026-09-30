@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: probabilistic2020 tsg
+baseCommand:
+  - probabilistic2020
+  - tsg
 label: probabilistic2020_tsg
 doc: "Find statistically significant Tumor Suppressor-like genes. Evaluates for a
   higher proportion of inactivating mutations than expected.\n\nTool homepage: https://github.com/KarchinLab/probabilistic2020"
@@ -114,7 +116,6 @@ inputs:
       prefix: --use-unmapped
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

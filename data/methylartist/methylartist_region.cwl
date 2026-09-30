@@ -542,7 +542,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile
@@ -550,10 +549,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `segment_csv_path`
     inputBinding:
       position: 103
-      prefix: --segment-csv
+      prefix: --segment_csv
 outputs:
   - id: outfile
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kanpig trio
+baseCommand:
+  - kanpig
+  - trio
 label: kanpig_trio
 doc: "Trio SV Genotyping\n\nTool homepage: https://github.com/ACEnglish/kanpig"
 inputs:
@@ -331,11 +333,11 @@ inputs:
       position: 101
       prefix: --XYploidy-bed
   - id: output_vcf_path
-    type: string
-    doc: Output or path parameter `output_vcf_path`
+    type: string?
+    doc: ' Output VCF (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: --out
 outputs:
   - id: output_vcf
     type:

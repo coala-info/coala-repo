@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr clean_reads
+baseCommand:
+  - secapr
+  - clean_reads
 label: secapr_clean_reads
 doc: "Clean and trim raw Illumina read files\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler csort
+baseCommand:
+  - cooler
+  - csort
 label: cooler_csort
 doc: "Sort and index a contact list.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
@@ -114,10 +116,10 @@ inputs:
       prefix: --zero-based
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output gzip file
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

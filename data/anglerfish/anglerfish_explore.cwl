@@ -90,7 +90,7 @@ inputs:
       prefix: --use-existing
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: 'TEXT     Output directory [default: None] │'
     inputBinding:
       position: 102
       prefix: --outdir

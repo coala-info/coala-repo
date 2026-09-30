@@ -238,7 +238,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files when working off disk.
     inputBinding:
       position: 102
@@ -321,7 +321,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cc_chp_out_dir_path`
     inputBinding:
       position: 103
       prefix: --cc-chp-out-dir
@@ -329,7 +328,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cc_md_chp_out_dir_path`
     inputBinding:
       position: 104
       prefix: --cc-md-chp-out-dir
@@ -337,7 +335,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
     inputBinding:
       position: 105
       prefix: --log-file
@@ -345,7 +342,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 106
       prefix: --out-dir
@@ -353,7 +349,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_file_path`
     inputBinding:
       position: 107
       prefix: --report-file
@@ -361,7 +356,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `xda_chp_out_dir_path`
     inputBinding:
       position: 108
       prefix: --xda-chp-out-dir

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_sample
+baseCommand:
+  - xsv
+  - sample
 label: xsv_sample
 doc: "Randomly samples CSV data uniformly using memory proportional to the size of
   the sample.\n\nTool homepage: https://github.com/BurntSushi/xsv"
@@ -37,10 +39,10 @@ inputs:
       prefix: --no-headers
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -5,7 +5,7 @@ label: shiver_shiver_init.sh
 doc: "Initialises shiver files.\n\nTool homepage: https://github.com/ChrisHIV/shiver"
 inputs:
   - id: output_directory
-    type: Directory
+    type: string
     doc: an output directory for the initialisation files.
     inputBinding:
       position: 1

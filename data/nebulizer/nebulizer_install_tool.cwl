@@ -26,6 +26,7 @@ inputs:
     doc: Install tools specified in TSV_FILE.
     inputBinding:
       position: 103
+      prefix: --file
   - id: install_repository_dependencies
     type:
       - 'null'
@@ -33,6 +34,7 @@ inputs:
     doc: Install repository dependencies via the toolshed, if any are defined.
     inputBinding:
       position: 103
+      prefix: --install-repository-dependencies
   - id: install_resolver_dependencies
     type:
       - 'null'
@@ -41,6 +43,7 @@ inputs:
       (e.g. conda).
     inputBinding:
       position: 103
+      prefix: --install-resolver-dependencies
   - id: install_tool_dependencies
     type:
       - 'null'
@@ -48,6 +51,7 @@ inputs:
     doc: Install tool dependencies via the toolshed, if any are defined.
     inputBinding:
       position: 103
+      prefix: --install-tool-dependencies
   - id: no_wait
     type:
       - 'null'
@@ -55,6 +59,7 @@ inputs:
     doc: Don't wait for lengthy tool installations to complete.
     inputBinding:
       position: 103
+      prefix: --no-wait
   - id: timeout
     type:
       - 'null'
@@ -62,6 +67,7 @@ inputs:
     doc: Wait up to TIMEOUT seconds for tool installations to complete.
     inputBinding:
       position: 103
+      prefix: --timeout
   - id: tool_panel_section
     type:
       - 'null'
@@ -71,6 +77,7 @@ inputs:
       tool will be installed at the top-level i.e. not in any section.
     inputBinding:
       position: 103
+      prefix: --tool-panel-section
   - id: yes
     type:
       - 'null'

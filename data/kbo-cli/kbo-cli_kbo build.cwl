@@ -61,7 +61,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Build on temporary disk space at this path instead of in-memory.
     inputBinding:
       position: 102

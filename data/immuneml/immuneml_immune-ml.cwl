@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: result_path
-    type: Directory
+    type: string
     doc: Output directory path.
     inputBinding:
       position: 2

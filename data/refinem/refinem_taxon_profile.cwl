@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refinem taxon_profile
+baseCommand:
+  - refinem
+  - taxon_profile
 label: refinem_taxon_profile
 doc: "Generate taxonomic profile of genes across scaffolds within a genome.\n\nTool
   homepage: http://pypi.python.org/pypi/refinem/"
@@ -26,7 +28,7 @@ inputs:
     inputBinding:
       position: 4
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 5
@@ -90,7 +92,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify alternative directory for temporary files
     inputBinding:
       position: 106

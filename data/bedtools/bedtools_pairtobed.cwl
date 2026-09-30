@@ -7,16 +7,14 @@ label: bedtools_pairtobed
 doc: Report overlaps between a BEDPE file and a BED/GFF/VCF file.
 inputs:
   - id: abam
-    type: File
+    type: File?
     doc: The A input file is in BAM format. Output will be BAM as well. Replaces
       -a.
     inputBinding:
       position: 101
       prefix: -abam
   - id: bedpe_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The A input file in BEDPE format.
     inputBinding:
       position: 101
@@ -48,15 +46,13 @@ inputs:
       position: 101
       prefix: -ed
   - id: min_overlap_fraction
-    type: float
+    type: float?
     doc: Minimum overlap required as fraction of A (e.g. 0.05).
     inputBinding:
       position: 101
       prefix: -f
   - id: overlap_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The B input file (BED/GFF/VCF format).
     inputBinding:
       position: 101

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pipits_pipits_createreadpairslist
+baseCommand: pipits_createreadpairslist
 label: pipits_pipits_createreadpairslist
 doc: "Creates a read pairs list file for PIPITS from a directory of FASTQ files.\n\
   \nTool homepage: https://github.com/hsgweon/pipits"
@@ -70,7 +70,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Name of the output list file [default:'
     inputBinding:
       position: 102
       prefix: --output

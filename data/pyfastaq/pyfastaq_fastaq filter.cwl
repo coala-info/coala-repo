@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastaq_fastaq filter
+baseCommand:
+  - pyfastaq_fastaq
+  - filter
 label: pyfastaq_fastaq filter
 doc: "Filter FASTA/FASTQ files based on various criteria.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
@@ -26,6 +28,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --discard-ids
+      itemSeparator: ','
   - id: discard_qual_above
     type:
       - 'null'
@@ -1070,6 +1073,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --keep-ids
+      itemSeparator: ','
   - id: keep_qual_above
     type:
       - 'null'

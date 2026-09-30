@@ -15,7 +15,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory (defaults to current directory)
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: baktfold install
+baseCommand:
+  - baktfold
+  - install
 label: baktfold_install
 doc: "Installs ProstT5 model and baktfold database\n\nTool homepage: https://github.com/gbouras13/baktfold"
 inputs:

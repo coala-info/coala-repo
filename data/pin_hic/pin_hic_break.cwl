@@ -36,18 +36,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: STR      output directory [.]
     inputBinding:
       position: 104
-      prefix: --output-directory
+      prefix: -O
   - id: output_prefix_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
+    doc: STR      output file prefix [scaffs.bk]
     inputBinding:
       position: 105
-      prefix: --output-prefix
+      prefix: -p
 outputs:
   - id: output_directory
     type:
@@ -59,10 +59,11 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

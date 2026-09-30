@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal realign
+baseCommand:
+  - reveal
+  - realign
 label: reveal_realign
 doc: "Realign between two nodes in the graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:
@@ -76,11 +78,11 @@ inputs:
       position: 104
       prefix: -c
   - id: outfile_path
-    type: string
-    doc: Output or path parameter `outfile_path`
+    type: string?
+    doc: File to which realigned graph is to be written.
     inputBinding:
       position: 105
-      prefix: --outfile
+      prefix: -o
 outputs:
   - id: outfile
     type:

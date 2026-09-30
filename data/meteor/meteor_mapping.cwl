@@ -91,7 +91,7 @@ inputs:
   - id: tmp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where temporary files (e.g. cram) are stored
     inputBinding:
       position: 101
@@ -106,10 +106,10 @@ inputs:
       prefix: --trim
   - id: mapping_dir_path
     type: string
-    doc: Output or path parameter `mapping_dir_path`
+    doc: Directory where mapping and raw gene counts of the sample are saved.
     inputBinding:
       position: 102
-      prefix: --mapping-dir
+      prefix: -o
 outputs:
   - id: mapping_dir
     type: Directory

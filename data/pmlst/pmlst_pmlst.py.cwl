@@ -11,6 +11,7 @@ inputs:
     doc: FASTA or FASTQ files to do pMLST on.
     inputBinding:
       position: 1
+      prefix: --infile
   - id: database
     type:
       - 'null'
@@ -41,7 +42,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 102
@@ -63,7 +64,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for storage of the results from the external 
       software.
     inputBinding:

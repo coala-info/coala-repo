@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg_profile-pro
+baseCommand:
+  - ufcg
+  - profile-pro
 label: ufcg_profile-pro
 doc: "Extract UFCG profile from Fungal proteome\n\nTool homepage: https://ufcg.steineggerlab.com"
 inputs:
@@ -86,7 +88,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write the temporary files
     inputBinding:
       position: 101

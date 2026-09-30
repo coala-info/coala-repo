@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wisecondorx_convert
+baseCommand:
+  - wisecondorx
+  - convert
 label: wisecondorx_convert
 doc: "Convert and filter a aligned reads to .npz\n\nTool homepage: https://github.com/CenterForMedicalGeneticsGhent/wisecondorX"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: aligned reads input for conversion
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Output .npz file
+    inputBinding:
+      position: 2
   - id: binsize
     type:
       - 'null'
@@ -36,11 +43,11 @@ inputs:
       position: 102
       prefix: --reference
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Output .npz file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wisecondorx:1.2.9--pyhdfd78af_0

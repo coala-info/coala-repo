@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast simulate
+baseCommand:
+  - mrpast
+  - simulate
 label: mrpast_mrpast simulate
 doc: "Simulate demographic histories using mr.py.\n\nTool homepage: https://aprilweilab.github.io/"
 inputs:

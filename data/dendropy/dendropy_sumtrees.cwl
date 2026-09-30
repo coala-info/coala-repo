@@ -413,7 +413,6 @@ inputs:
       prefix: --weighted-trees
   - id: output_tree_filepath_path
     type: string
-    doc: Output or path parameter `output_tree_filepath_path`
     inputBinding:
       position: 103
       prefix: --output-tree-filepath

@@ -211,7 +211,7 @@ inputs:
       prefix: --window
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: 'write result to FILE [default: stdout]'
     inputBinding:
       position: 102
       prefix: --outfile

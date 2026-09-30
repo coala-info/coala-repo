@@ -148,7 +148,6 @@ inputs:
       prefix: --use-model-cache
   - id: output_h5ad_file_path
     type: string
-    doc: Output or path parameter `output_h5ad_file_path`
     inputBinding:
       position: 103
       prefix: --output-h5ad-file

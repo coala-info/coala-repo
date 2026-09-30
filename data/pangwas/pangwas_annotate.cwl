@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas_annotate
+baseCommand:
+  - pangwas
+  - annotate
 label: pangwas_annotate
 doc: "Annotate genomic assemblies with bakta.\n\nTakes as input a FASTA file of genomic
   assemblies. Outputs a GFF file\nof annotations, among many other formats from bakta.\n\
@@ -48,13 +50,13 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory.
     inputBinding:
       position: 101
       prefix: --tmp
   - id: outdir_path
-    type: string
+    type: string?
     doc: 'Output directory. (default: .)'
     inputBinding:
       position: 102

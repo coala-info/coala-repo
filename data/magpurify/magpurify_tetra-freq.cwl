@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: magpurify tetra-freq
+baseCommand:
+  - magpurify
+  - tetra-freq
 label: magpurify_tetra-freq
 doc: "Find contigs with outlier tetranucleotide frequency.\n\nTool homepage: https://github.com/snayfach/MAGpurify"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: out
-    type: Directory
+    type: string
     doc: Output directory to store results and intermediate files
     inputBinding:
       position: 2

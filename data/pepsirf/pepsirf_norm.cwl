@@ -35,6 +35,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --negative_names
+      itemSeparator: ','
   - id: normalize_approach
     type:
       - 'null'
@@ -66,7 +67,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 102
       prefix: --logfile
@@ -74,7 +74,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Name for the output file. The output is formatted in the same way the 
+      input file provided with 'peptide_scores' (i.e., a score matrix with 
+      samples on the columns and scores for a certain peptide on the rows). The 
+      score for each peptide in the output has been normalized in the manner 
+      specified.
     inputBinding:
       position: 103
       prefix: --output

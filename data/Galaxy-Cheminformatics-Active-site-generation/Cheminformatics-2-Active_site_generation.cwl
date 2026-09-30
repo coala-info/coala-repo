@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'This workflow generates a file describing the active site of the protein for each of the fragment screening crystal structures using rDock s rbcavity. It also creates a single hybrid molecule that contains all the ligands - the "frankenstein" ligand. More info can be found at https://covid19.galaxyproject.org/cheminformatics/'
 inputs:
   Mpro-x0195_0_apo-desolv_pdb:

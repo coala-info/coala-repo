@@ -149,7 +149,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Puts temporary files in the following directory (does not remove 
       temporary files after finishing). Otherwise, creates a temporary 
       directory.
@@ -158,7 +158,6 @@ inputs:
       prefix: --tmp-dir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -36,6 +36,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --input
+      itemSeparator: ','
   - id: input_compression
     type:
       - 'null'

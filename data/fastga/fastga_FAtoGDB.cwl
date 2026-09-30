@@ -49,10 +49,10 @@ inputs:
       prefix: -v
   - id: log_file_path
     type: string
-    doc: Output or path parameter `log_file_path`
+    doc: ': Output log to specified file.'
     inputBinding:
       position: 106
-      prefix: --log-file
+      prefix: -L
 outputs:
   - id: log_file
     type:

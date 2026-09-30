@@ -90,7 +90,7 @@ inputs:
       prefix: --mismatch
   - id: alignment_path
     type: string
-    doc: Output or path parameter `alignment_path`
+    doc: vertical/horizontal alignment
     inputBinding:
       position: 104
       prefix: --alignment

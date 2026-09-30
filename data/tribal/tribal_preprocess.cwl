@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tribal_preprocess
+baseCommand:
+  - tribal
+  - preprocess
 label: tribal_preprocess
 doc: "Preprocesses sequencing data for tribal analysis.\n\nTool homepage: https://github.com/elkebir-group/TRIBAL"
 inputs:
@@ -65,7 +67,7 @@ inputs:
       prefix: --verbose
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: path to where pickled clonotype dictionary input
     inputBinding:
       position: 102
       prefix: --out

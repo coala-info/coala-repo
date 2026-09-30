@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem query
+baseCommand:
+  - singlem
+  - query
 label: singlem_query
 doc: "Find closely related sequences in a SingleM database.\n\nTool homepage: https://github.com/wwood/singlem"
 inputs:

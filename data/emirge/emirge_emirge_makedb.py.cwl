@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: emirge_emirge_makedb.py
+baseCommand: emirge_makedb.py
 label: emirge_emirge_makedb.py
 doc: "emirge_makedb.py creates a reference database and the necessay indices for use
   by EMIRGE from an rRNA reference database. Without extra parameters, emirge_makedb.py
@@ -84,7 +84,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory for temporary files
     inputBinding:
       position: 101

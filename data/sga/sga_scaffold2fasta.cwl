@@ -123,7 +123,7 @@ inputs:
       prefix: --write-unplaced
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: 'write the scaffolds to FILE (default: scaffolds.fa)'
     inputBinding:
       position: 103
       prefix: --outfile

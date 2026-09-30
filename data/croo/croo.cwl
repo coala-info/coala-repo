@@ -90,7 +90,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "LOCAL temporary cache directory. All temporary files\n                 \
       \       for auto-inter-storage transfer will be stored here.\n             \
       \           You can clean it up but will lose all cached files so\n        \
@@ -157,7 +157,7 @@ inputs:
       position: 102
       prefix: --use-presigned-url-s3
   - id: out_dir_path
-    type: string
+    type: string?
     doc: Output directory/bucket (LOCAL OR REMOTE). This can be
     inputBinding:
       position: 103

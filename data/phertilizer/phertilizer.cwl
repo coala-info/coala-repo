@@ -146,30 +146,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --mut_lookup
-  - id: pred_cell_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `pred_cell_path`
-    inputBinding:
-      position: 104
-      prefix: --pred-cell
-  - id: pred_event_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `pred_event_path`
-    inputBinding:
-      position: 105
-      prefix: --pred-event
-  - id: pred_mut_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `pred_mut_path`
-    inputBinding:
-      position: 106
-      prefix: --pred-mut
   - id: tree_path2
     type:
       - 'null'
@@ -199,6 +175,27 @@ inputs:
     inputBinding:
       position: 110
       prefix: --tree_pickle
+  - id: pred_cell_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 111
+      prefix: --pred_cell
+  - id: pred_event_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 112
+      prefix: --pred_event
+  - id: pred_mut_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 113
+      prefix: --pred-mut
 outputs:
   - id: pred_mut
     type:

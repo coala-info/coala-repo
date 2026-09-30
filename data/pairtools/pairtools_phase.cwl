@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pairtools_phase
+baseCommand:
+  - pairtools
+  - phase
 label: pairtools_phase
 doc: "Phase pairs mapped to a diploid genome. Diploid genome is the genome with\n\
   two set of the chromosome variants, where each chromosome has one of two\nsuffixes
@@ -113,10 +115,10 @@ inputs:
       prefix: --tag-mode
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file. If the path ends with .gz or
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

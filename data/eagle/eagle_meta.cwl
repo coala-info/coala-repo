@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eagle meta
+baseCommand:
+  - eagle
+  - meta
 label: eagle_meta
 doc: "Manage meta information for eagle-data-files.\n\nTool homepage: https://bitbucket.org/christopherschroeder/eagle"
 inputs:

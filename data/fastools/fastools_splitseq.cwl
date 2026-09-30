@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools splitseq
+baseCommand:
+  - fastools
+  - splitseq
 label: fastools_splitseq
 doc: "Split a FASTA/FASTQ file based on containing part of the sequence\n\nTool homepage:
   https://git.lumc.nl/j.f.j.laros/fastools"

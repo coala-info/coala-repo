@@ -89,10 +89,10 @@ inputs:
       prefix: --skip_k_2
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: ' Output directory where results will be saved.'
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type: Directory

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transcov generate-end-length
+baseCommand:
+  - transcov
+  - generate-end-length
 label: transcov_generate-end-length
 doc: "Generate end-length distributions from BAM and BED files.\n\nTool homepage:
   https://github.com/hogfeldt/transcov"

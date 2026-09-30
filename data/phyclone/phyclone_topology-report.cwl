@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyclone_topology-report
+baseCommand:
+  - phyclone
+  - topology-report
 label: phyclone_topology-report
 doc: "Build topology report.\n\nTool homepage: https://github.com/Roth-Lab/PhyClone"
 inputs:
@@ -23,7 +25,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
+    doc: Path/filename to where topology report will
     inputBinding:
       position: 102
       prefix: --out-file
@@ -31,7 +33,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `topologies_archive_path`
+    doc: To produce the results tables and newick
     inputBinding:
       position: 103
       prefix: --topologies-archive

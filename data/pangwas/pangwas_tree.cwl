@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas tree
+baseCommand:
+  - pangwas
+  - tree
 label: pangwas_tree
 doc: "Estimate a maximum-likelihood tree with IQ-TREE.\n\nTakes as input a multiple
   sequence alignment in FASTA format. If a SNP\nalignment is provided, an optional
@@ -27,7 +29,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101

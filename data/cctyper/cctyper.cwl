@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output
-    type: Directory
+    type: string
     doc: Prefix for output directory
     inputBinding:
       position: 2

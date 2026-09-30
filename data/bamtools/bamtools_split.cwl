@@ -79,20 +79,20 @@ inputs:
       prefix: -tagPrefix
   - id: stub_path
     type: string
-    doc: Output or path parameter `stub_path`
     inputBinding:
       position: 102
-      prefix: --stub
+      prefix: -stub
 outputs:
   - id: stub
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: prefix stub for output BAM files (default behavior is to use input 
       filename, without .bam extension, as stub). If input is stdin and no stub 
       provided, a timestamp is generated as the stub.
     outputBinding:
-      glob: $(inputs.stub_path)
+      glob: $(inputs.stub_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

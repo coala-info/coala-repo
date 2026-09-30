@@ -32,7 +32,7 @@ inputs:
       position: 101
       prefix: -k
   - id: output_dir
-    type: Directory
+    type: string
     doc: Name of output folder. Resulting graph will be stored there.
     inputBinding:
       position: 101

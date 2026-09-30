@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini update
+baseCommand:
+  - oncogemini
+  - update
 label: oncogemini_update
 doc: "Update oncogemini and its dependencies.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

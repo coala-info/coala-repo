@@ -104,10 +104,10 @@ inputs:
       prefix: --temperature
   - id: graphml_file_path
     type: string
-    doc: Output or path parameter `graphml_file_path`
+    doc: ' Write a graphml file with the given filename.'
     inputBinding:
       position: 102
-      prefix: --graphml-file
+      prefix: --graphml
 outputs:
   - id: graphml_file
     type:

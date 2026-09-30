@@ -62,6 +62,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --cutoffs
+      itemSeparator: ','
   - id: edge
     type:
       - 'null'

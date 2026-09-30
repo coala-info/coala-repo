@@ -7,9 +7,9 @@ doc: "Runs the full tbtamr pipeline, including mutAMR for VCF generation and BWA
 inputs:
   - id: reference_fasta
     type: File
+    doc: Reference FASTA file for BWA indexing
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file for BWA indexing
     inputBinding:
       position: 1
   - id: input_reads_1
@@ -346,7 +346,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for samtools operations
     inputBinding:
       position: 104
@@ -405,10 +405,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sam_file_path`
+    doc: sam file to output results to [stdout]
     inputBinding:
       position: 106
-      prefix: --output-sam-file
+      prefix: -o
   - id: output_vcf_file_path
     type:
       - 'null'

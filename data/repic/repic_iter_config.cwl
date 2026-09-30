@@ -83,11 +83,10 @@ inputs:
       position: 108
       prefix: --topaz_model
   - id: out_file_path_path
-    type: string
-    doc: Output or path parameter `out_file_path_path`
+    type: string?
     inputBinding:
       position: 109
-      prefix: --out-file-path
+      prefix: --out_file_path
 outputs:
   - id: out_file_path
     type:

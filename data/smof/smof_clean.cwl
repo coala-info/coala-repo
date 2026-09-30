@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_clean
+baseCommand:
+  - smof
+  - clean
 label: smof_clean
 doc: "Remove all space within the sequences and write them in even columns (default
   width of 80 characters). Case and all characters (except whitespace) are preserved

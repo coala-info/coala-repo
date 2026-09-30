@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pybel post
+baseCommand:
+  - pybel
+  - post
 label: pybel_post
 doc: "Upload a graph to BEL Commons.\n\nTool homepage: https://pybel.readthedocs.io"
 inputs:

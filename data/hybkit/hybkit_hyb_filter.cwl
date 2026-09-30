@@ -71,6 +71,7 @@ inputs:
       between hybrecord and foldrecord sequences is greater than FoldRecord "allowed_mismatches"
       setting; "energy_mismatch": Error when a mismatch exists between HybRecord and
       FoldRecord energy values.'
+    default:
       - hybrecord_indel
       - foldrecord_nofold
       - max_mismatch
@@ -235,6 +236,7 @@ inputs:
       - type: array
         items: string
     doc: '"seg_type" fields identifying a miRNA'
+    default:
       - miRNA
       - microRNA
     inputBinding:

@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phlame tree
+baseCommand:
+  - phlame
+  - tree
 label: phlame_tree
 doc: "Builds a phylogenetic tree from mutation data.\n\nTool homepage: https://github.com/quevan/phlame"
 inputs:
   - id: input_mutation_table
-    type: File
+    type: File?
     doc: Path to input candidate mutation table.
     inputBinding:
       position: 101
@@ -93,6 +95,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outgroup
+      itemSeparator: ','
   - id: remove_recombination
     type:
       - 'null'
@@ -121,18 +124,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_phylip_path`
+    doc: Path to output phylip file.
     inputBinding:
       position: 102
-      prefix: --output-phylip
+      prefix: -p
   - id: output_tree_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_path`
+    doc: Path to output tree.
     inputBinding:
       position: 103
-      prefix: --output-tree
+      prefix: -o
 outputs:
   - id: output_tree
     type:

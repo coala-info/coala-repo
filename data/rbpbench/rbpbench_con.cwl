@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench con
+baseCommand:
+  - rbpbench
+  - con
 label: rbpbench_con
 doc: "Compares conservation scores between two sets of genomic sites.\n\nTool homepage:
   https://github.com/michauhl/RBPBench"
@@ -91,10 +93,10 @@ inputs:
       prefix: --wrs-mode
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: str             Results output folder
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --out
 outputs:
   - id: output_folder
     type: Directory

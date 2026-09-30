@@ -84,7 +84,7 @@ inputs:
       position: 101
       prefix: --mode
   - id: positive_control
-    type: File
+    type: File?
     doc: Path to positive control - REQUIRED if running for MDU service
     inputBinding:
       position: 101

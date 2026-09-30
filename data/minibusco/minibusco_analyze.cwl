@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minibusco_analyze
+baseCommand:
+  - minibusco
+  - analyze
 label: minibusco_analyze
 doc: "Miniprot output gff file\n\nTool homepage: https://github.com/huangnengCSU/minibusco"
 inputs:
@@ -103,10 +105,9 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory

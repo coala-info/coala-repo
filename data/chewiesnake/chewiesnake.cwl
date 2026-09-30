@@ -235,7 +235,7 @@ inputs:
   - id: shovill_tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Fast temporary directory (default: "")'
     inputBinding:
       position: 101
@@ -285,7 +285,7 @@ inputs:
       position: 101
       prefix: --use_conda
   - id: working_directory
-    type: Directory
+    type: string
     doc: Working directory where results are saved
     inputBinding:
       position: 101

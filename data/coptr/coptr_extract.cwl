@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: coptr_extract
+baseCommand:
+  - coptr
+  - extract
 label: coptr_extract
 doc: "Extract coverage maps from BAM files.\n\nTool homepage: https://github.com/tyjo/coptr"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Folder with BAM files.
     inputBinding:
       position: 1
+  - id: out_folder
+    type: string
+    doc: Folder to store coverage maps.
+    inputBinding:
+      position: 2
   - id: bt2_k
     type:
       - 'null'
@@ -36,11 +43,11 @@ inputs:
       position: 102
       prefix: --ref-genome-regex
 outputs:
-  - id: out_folder
+  - id: out_out_folder
     type: Directory
     doc: Folder to store coverage maps.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_folder)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3

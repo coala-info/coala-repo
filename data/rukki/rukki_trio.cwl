@@ -275,7 +275,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `final_assign_path`
     inputBinding:
       position: 102
       prefix: --final-assign
@@ -283,7 +282,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `init_assign_path`
     inputBinding:
       position: 103
       prefix: --init-assign
@@ -291,7 +289,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `refined_assign_path`
     inputBinding:
       position: 104
       prefix: --refined-assign

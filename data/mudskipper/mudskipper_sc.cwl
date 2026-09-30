@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mudskipper sc
+baseCommand:
+  - mudskipper
+  - sc
 label: mudskipper_sc
 doc: "Convert alignment of single-cell RNA-Seq reads against genome to alignment against
   transcriptome.\n\nTool homepage: https://github.com/OceanGenomics/mudskipper"
@@ -70,7 +72,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output file name (or directory name when --rad is passed)
     inputBinding:
       position: 102
       prefix: --out

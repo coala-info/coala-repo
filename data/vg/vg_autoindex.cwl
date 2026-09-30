@@ -101,7 +101,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory to use for intermediate files
     inputBinding:
       position: 101

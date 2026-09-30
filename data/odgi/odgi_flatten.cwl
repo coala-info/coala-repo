@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi flatten
+baseCommand:
+  - odgi
+  - flatten
 label: odgi_flatten
 doc: "Generate linearizations of a graph.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:
@@ -41,7 +43,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bed_path`
+    doc: Write the mapping between graph paths
     inputBinding:
       position: 102
       prefix: --bed
@@ -49,7 +51,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fasta_path`
+    doc: Write the concatenated node sequences
     inputBinding:
       position: 103
       prefix: --fasta

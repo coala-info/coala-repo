@@ -6,22 +6,27 @@ baseCommand:
 label: maq_csmap2nt
 doc: "Convert cs.map to nt.map\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:
+  - id: out_nt_map
+    type: string
+    doc: Output nt.map file
+    inputBinding:
+      position: 1
   - id: input_ref_nt_bfa
     type: File
     doc: Input ref.nt.bfa file
     inputBinding:
-      position: 1
+      position: 2
   - id: input_cs_map
     type: File
     doc: Input cs.map file
     inputBinding:
-      position: 2
+      position: 3
 outputs:
   - id: output_nt_map
     type: File
     doc: Output nt.map file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_nt_map)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1

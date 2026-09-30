@@ -273,7 +273,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where the results should be written. This folder will be 
       created if needed.
     inputBinding:

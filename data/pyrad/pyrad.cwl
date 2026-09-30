@@ -7,7 +7,7 @@ inputs:
   - id: dtest
     type:
       - 'null'
-      - string
+      - File
     doc: "input file for D-test of introgression,\n              can iterate over
       multiple samples"
     inputBinding:

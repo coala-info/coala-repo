@@ -202,18 +202,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_forward_path`
+    doc: Forward output gzipped FASTQ file.
     inputBinding:
       position: 102
-      prefix: --output-forward
+      prefix: -out1
   - id: output_reverse_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_reverse_path`
+    doc: Reverse output gzipped FASTQ file.
     inputBinding:
       position: 103
-      prefix: --output-reverse
+      prefix: -out2
 outputs:
   - id: output_forward
     type: File

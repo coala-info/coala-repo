@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: funnel run
+baseCommand:
+  - funnel
+  - run
 label: funnel_run
 doc: "Run a task.\n\nTool homepage: https://ohsu-comp-bio.github.io/funnel/"
 inputs:
@@ -202,38 +204,37 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zone
-  - id: out_dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_dir_path`
-    inputBinding:
-      position: 103
-      prefix: --out-dir
   - id: out_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
+    doc: Output file e.g. varname=/path/to/output.txt
     inputBinding:
       position: 104
-      prefix: --out-file
+      prefix: --out
   - id: stderr_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stderr_file_path`
+    doc: File to write to stderr of the command.
     inputBinding:
       position: 105
-      prefix: --stderr-file
+      prefix: --stderr
   - id: stdout_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stdout_file_path`
+    doc: File to write to stdout of the command.
     inputBinding:
       position: 106
-      prefix: --stdout-file
+      prefix: --stdout
+  - id: out_dir_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --out-dir
 outputs:
   - id: out_file
     type:

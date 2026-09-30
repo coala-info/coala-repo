@@ -8,9 +8,9 @@ doc: "Run the SNP/indel genotyping pipeline.\n\nTool homepage: https://github.co
 inputs:
   - id: reference_fasta
     type: File
+    doc: Reference genome in FASTA format.
     secondaryFiles:
       - .fai
-    doc: Reference genome in FASTA format.
     inputBinding:
       position: 1
   - id: advanced_options
@@ -161,10 +161,11 @@ inputs:
       prefix: --vverbose
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: '=value or -Ovalue [default: results] Output directory. Results will be written
+      in <output>/<contig>/<region>.vcf.gz'
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type:

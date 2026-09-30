@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench_info
+baseCommand:
+  - rbpbench
+  - info
 label: rbpbench_info
 doc: "Show information about RBPBench motif databases.\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:

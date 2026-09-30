@@ -45,10 +45,9 @@ inputs:
       prefix: --verbose
   - id: output_fp_path
     type: string
-    doc: Output or path parameter `output_fp_path`
     inputBinding:
       position: 102
-      prefix: --output-fp
+      prefix: --output_fp
 outputs:
   - id: output_fp
     type: File

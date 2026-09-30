@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savont_classify
+baseCommand:
+  - savont
+  - classify
 label: savont_classify
 doc: "Classify ASVs against a reference database and generate taxonomy abundance table
   at species/genus level\n\nTool homepage: https://github.com/bluenote-1577/savont"
@@ -36,7 +38,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for classification results.
     inputBinding:
       position: 101

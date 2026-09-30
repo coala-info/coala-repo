@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: verticall pairwise
+baseCommand:
+  - verticall
+  - pairwise
 label: verticall_pairwise
 doc: "pairwise analysis of assemblies\n\nTool homepage: https://github.com/rrwick/Verticall"
 inputs:

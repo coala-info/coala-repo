@@ -12,6 +12,11 @@ inputs:
     doc: Input BWT file
     inputBinding:
       position: 1
+  - id: out_sa
+    type: string
+    doc: Output suffix array file
+    inputBinding:
+      position: 2
   - id: sampling_interval
     type:
       - 'null'
@@ -25,7 +30,7 @@ outputs:
     type: File
     doc: Output suffix array file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_sa)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0

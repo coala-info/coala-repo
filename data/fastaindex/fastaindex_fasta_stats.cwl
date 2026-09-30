@@ -23,10 +23,10 @@ inputs:
       prefix: --verbose
   - id: output_stream_path
     type: string
-    doc: Output or path parameter `output_stream_path`
+    doc: "output stream\t [stdout]"
     inputBinding:
       position: 102
-      prefix: --output-stream
+      prefix: --out
 outputs:
   - id: output_stream
     type:

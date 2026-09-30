@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: recontig make-mapping
+baseCommand:
+  - recontig
+  - make-mapping
 label: recontig_make-mapping
 doc: "make a contig conversion file from two fasta files\n\nTool homepage: https://github.com/blachlylab/recontig"
 inputs:
@@ -49,10 +51,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: name of file out (default is - for stdout)
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

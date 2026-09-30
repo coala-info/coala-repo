@@ -18,7 +18,8 @@ inputs:
       this allows polyAs to be excluded from the coverage calculation.
     inputBinding:
       position: 102
-      prefix: -coverQSizes
+      prefix: -coverQSizes=
+      separate: false
   - id: ignore_ns
     type:
       - 'null'
@@ -42,7 +43,8 @@ inputs:
     doc: Minimum alignment ratio.
     inputBinding:
       position: 102
-      prefix: -minAli
+      prefix: -minAli=
+      separate: false
   - id: min_cover
     type:
       - 'null'
@@ -50,7 +52,8 @@ inputs:
     doc: Minimum coverage to output.
     inputBinding:
       position: 102
-      prefix: -minCover
+      prefix: -minCover=
+      separate: false
   - id: min_near_top_size
     type:
       - 'null'
@@ -58,7 +61,8 @@ inputs:
     doc: Minimum size of alignment that is near top for alignment to be kept.
     inputBinding:
       position: 102
-      prefix: -minNearTopSize
+      prefix: -minNearTopSize=
+      separate: false
   - id: near_top
     type:
       - 'null'
@@ -66,7 +70,8 @@ inputs:
     doc: How much can deviate from top and be taken.
     inputBinding:
       position: 102
-      prefix: -nearTop
+      prefix: -nearTop=
+      separate: false
   - id: no_introns
     type:
       - 'null'

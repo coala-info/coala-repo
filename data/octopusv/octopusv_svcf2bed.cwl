@@ -22,7 +22,7 @@ inputs:
       prefix: --minimal
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: PATH  Output BED file. [required]                  │
     inputBinding:
       position: 102
       prefix: --output-file

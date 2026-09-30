@@ -182,9 +182,9 @@ inputs:
       prefix: --preset
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -223,7 +223,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `blocks_file_path`
     inputBinding:
       position: 102
       prefix: --blocks-file
@@ -231,7 +230,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `haplotag_file_path`
     inputBinding:
       position: 103
       prefix: --haplotag-file
@@ -239,15 +237,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bam_path`
     inputBinding:
       position: 104
       prefix: --output-bam
   - id: output_vcf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_vcf_path`
+    type: string
     inputBinding:
       position: 105
       prefix: --output-vcf
@@ -255,7 +249,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_path`
     inputBinding:
       position: 106
       prefix: --stats-file
@@ -263,7 +256,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_file_path`
     inputBinding:
       position: 107
       prefix: --summary-file

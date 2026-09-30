@@ -364,10 +364,10 @@ inputs:
       prefix: --unsorted
   - id: bigwig_output_path
     type: string
-    doc: Output or path parameter `bigwig_output_path`
+    doc: Output coverage as BigWig file(s).  Writes to <prefix>.bw
     inputBinding:
       position: 103
-      prefix: --bigwig-output
+      prefix: --bigwig
 outputs:
   - id: bigwig_output
     type:

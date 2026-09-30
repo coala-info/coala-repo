@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx_combine-results
+baseCommand:
+  - pypgx
+  - combine-results
 label: pypgx_combine-results
 doc: "Combine various results for target gene.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

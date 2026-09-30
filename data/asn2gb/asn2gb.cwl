@@ -181,18 +181,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: Log file [File Out]  Optional
     inputBinding:
       position: 102
-      prefix: --log-file
+      prefix: -l
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output File Name [File Out]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

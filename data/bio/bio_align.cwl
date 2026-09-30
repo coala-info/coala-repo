@@ -118,10 +118,10 @@ inputs:
       prefix: --all
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: output vcf file
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: --vcf
 outputs:
   - id: output_vcf
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac convert
+baseCommand:
+  - deepac
+  - convert
 label: deepac_convert
 doc: "Convert a trained deepac model to a format suitable for inference.\n\nTool homepage:
   https://gitlab.com/rki_bioinformatics/DeePaC"

@@ -35,7 +35,7 @@ inputs:
       prefix: --reads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'Base output name (default: None)'
     inputBinding:
       position: 102
       prefix: --out

@@ -47,10 +47,10 @@ inputs:
       prefix: --trash
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to output (filtered) VCF file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

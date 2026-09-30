@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: optimir libprep
+baseCommand:
+  - optimir
+  - libprep
 label: optimir_libprep
 doc: "Prepare reference libraries for OptimiR.\n\nTool homepage: https://github.com/FlorianThibord/OptimiR"
 inputs:
@@ -40,7 +42,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Full path of the directory where output files are generated
     inputBinding:
       position: 101

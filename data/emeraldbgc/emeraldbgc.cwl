@@ -63,7 +63,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 102

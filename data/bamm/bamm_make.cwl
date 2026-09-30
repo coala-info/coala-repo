@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamm make
+baseCommand:
+  - bamm
+  - make
 label: bamm_make
 doc: "make a BAM/TAM file (sorted + indexed)\n\nTool homepage: https://github.com/Ecogenomics/BamM"
 inputs:
@@ -158,7 +160,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory for working with BAM files (default do not use)
     inputBinding:
       position: 101

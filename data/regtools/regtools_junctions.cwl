@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: regtools junctions
+baseCommand:
+  - regtools
+  - junctions
 label: regtools_junctions
 doc: "Identify exon-exon junctions from alignments or annotate junctions.\n\nTool
   homepage: https://github.com/griffithlab/regtools/"

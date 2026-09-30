@@ -72,11 +72,11 @@ inputs:
       position: 101
       prefix: --transfer_learning
   - id: file_pred_out_path
-    type: string
-    doc: Output or path parameter `file_pred_out_path`
+    type: string?
+    doc: path to write output file with predictions
     inputBinding:
       position: 102
-      prefix: --file-pred-out
+      prefix: --file_pred_out
 outputs:
   - id: file_pred_out
     type:

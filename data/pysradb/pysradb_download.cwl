@@ -24,7 +24,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save downloaded files. Defaults to the current directory.
     inputBinding:
       position: 102

@@ -132,7 +132,7 @@ inputs:
       prefix: --tagging-policy
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file. SAM or BAM file to write marked records to. [required]
     inputBinding:
       position: 102
       prefix: --output

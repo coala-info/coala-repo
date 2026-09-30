@@ -29,8 +29,8 @@ inputs:
       position: 102
       prefix: --index
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: location to save sample data ['sample_data.csv']
     inputBinding:
       position: 103
       prefix: --output

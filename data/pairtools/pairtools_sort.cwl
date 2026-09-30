@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pairtools_sort
+baseCommand:
+  - pairtools
+  - sort
 label: pairtools_sort
 doc: "Sort a .pairs/.pairsam file.\n\nSort pairs in the lexicographic order along
   chrom1 and chrom2, in the\nnumeric order along pos1 and pos2 and in the lexicographic

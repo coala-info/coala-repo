@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chromosomer assemble
+baseCommand:
+  - chromosomer
+  - assemble
 label: chromosomer_assemble
 doc: "Get the FASTA file of assembled chromosomes.\n\nTool homepage: https://github.com/gtamazian/chromosomer"
 inputs:
@@ -14,6 +16,11 @@ inputs:
     doc: a FASTA file of fragment sequences to be assembled
     inputBinding:
       position: 2
+  - id: output_fasta
+    type: string
+    doc: the output FASTA file of the assembled chromosome sequences
+    inputBinding:
+      position: 3
   - id: save_soft_mask
     type:
       - 'null'
@@ -23,11 +30,11 @@ inputs:
       position: 103
       prefix: --save_soft_mask
 outputs:
-  - id: output_fasta
+  - id: out_output_fasta
     type: File
     doc: the output FASTA file of the assembled chromosome sequences
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_fasta)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chromosomer:0.1.4a--py27_1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dammit migrate
+baseCommand:
+  - dammit
+  - migrate
 label: dammit_migrate
 doc: "Migrate dammit databases to a new location or format.\n\nTool homepage: http://dib-lab.github.io/dammit/"
 inputs:

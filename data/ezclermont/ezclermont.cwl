@@ -39,7 +39,7 @@ inputs:
       position: 102
       prefix: --no_partial
   - id: logfile_path
-    type: string
+    type: string?
     doc: send log messages to logfile instead stderr
     inputBinding:
       position: 103

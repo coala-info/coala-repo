@@ -76,7 +76,7 @@ inputs:
   - id: include_weights
     type:
       - 'null'
-      - boolean
+      - string
     doc: Include weights of each KO when doing KM assignment (default = True)
     inputBinding:
       position: 101
@@ -96,7 +96,7 @@ inputs:
       position: 101
       prefix: --meta
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output folder
     inputBinding:
       position: 101

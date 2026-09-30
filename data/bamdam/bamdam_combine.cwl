@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamdam_combine
+baseCommand:
+  - bamdam
+  - combine
 label: bamdam_combine
 doc: "Combine multiple bamdam compute output TSV files into a single file.\n\nTool
   homepage: https://github.com/bdesanctis/bamdam"
@@ -40,10 +42,10 @@ inputs:
       prefix: --minreads
   - id: out_tsv_path
     type: string
-    doc: Output or path parameter `out_tsv_path`
+    doc: 'Path to output tsv file name (default: combined.tsv)'
     inputBinding:
       position: 102
-      prefix: --out-tsv
+      prefix: --out_tsv
 outputs:
   - id: out_tsv
     type:

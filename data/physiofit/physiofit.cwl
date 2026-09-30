@@ -57,26 +57,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_config_path`
     inputBinding:
       position: 102
-      prefix: --output-config
+      prefix: --output_config
   - id: output_recap_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_recap_path`
     inputBinding:
       position: 103
-      prefix: --output-recap
+      prefix: --output_recap
   - id: output_zip_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_zip_path`
     inputBinding:
       position: 104
-      prefix: --output-zip
+      prefix: --output_zip
 outputs:
   - id: output_config
     type:

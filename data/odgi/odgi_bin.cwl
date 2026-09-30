@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi bin
+baseCommand:
+  - odgi
+  - bin
 label: odgi_bin
 doc: "Binning of pangenome sequence and path information in the graph.\n\nTool homepage:
   https://github.com/vgteam/odgi"

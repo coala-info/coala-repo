@@ -136,7 +136,6 @@ inputs:
       prefix: --verbose
   - id: origins_file_path
     type: string
-    doc: Output or path parameter `origins_file_path`
     inputBinding:
       position: 102
       prefix: --origins-file

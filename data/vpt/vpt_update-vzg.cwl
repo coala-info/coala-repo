@@ -54,14 +54,13 @@ inputs:
   - id: temp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path for temporary folder for unzipping vzg file.
     inputBinding:
       position: 101
       prefix: --temp-path
   - id: output_vzg_path
     type: string
-    doc: Output or path parameter `output_vzg_path`
     inputBinding:
       position: 102
       prefix: --output-vzg

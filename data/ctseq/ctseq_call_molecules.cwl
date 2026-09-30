@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ctseq call_molecules
+baseCommand:
+  - ctseq
+  - call_molecules
 label: ctseq_call_molecules
 doc: "Call methylation states for molecules based on UMIs and consensus threshold.\n\
   \nTool homepage: https://github.com/ryanhmiller/ctseq"

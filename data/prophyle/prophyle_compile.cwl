@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophyle_compile
+baseCommand:
+  - prophyle
+  - compile
 label: prophyle_compile
 doc: "Compile prophyle database\n\nTool homepage: https://github.com/karel-brinda/prophyle"
 inputs:

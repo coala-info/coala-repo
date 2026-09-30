@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: foldseek easy-multimercluster
+baseCommand:
+  - foldseek
+  - easy-multimercluster
 label: foldseek_easy-multimercluster
 doc: "By Seongeun Kim <seamustard52@gmail.com> & Sooyoung Cha <ellen2g77@gmail.com>\n\
   \nTool homepage: https://github.com/steineggerlab/foldseek"
@@ -18,7 +20,7 @@ inputs:
     inputBinding:
       position: 2
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 3

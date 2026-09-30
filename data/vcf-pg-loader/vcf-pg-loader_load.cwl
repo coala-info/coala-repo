@@ -183,7 +183,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: Write log to file          │
     inputBinding:
       position: 103
       prefix: --log
@@ -191,7 +191,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_path`
+    doc: PATH     Write JSON report to file  │
     inputBinding:
       position: 104
       prefix: --report

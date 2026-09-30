@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconda-utils duplicates
+baseCommand:
+  - bioconda-utils
+  - duplicates
 label: bioconda-utils_duplicates
 doc: "Detect packages in bioconda that have duplicates in the other defined channels.\n\
   \nTool homepage: http://bioconda.github.io/build-system.html"

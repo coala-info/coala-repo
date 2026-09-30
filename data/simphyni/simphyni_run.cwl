@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: simphyni run
+baseCommand:
+  - simphyni
+  - run
 label: simphyni_run
 doc: "Run the simphyni analysis pipeline.\n\nTool homepage: https://github.com/jpeyemi/SimPhyNI"
 inputs:
@@ -63,7 +65,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Main output directory (Default: simphyni_outs)'
     inputBinding:
       position: 102
@@ -122,7 +124,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Temporary directory for intermediate files (Default: tmp)'
     inputBinding:
       position: 102

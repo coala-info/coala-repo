@@ -8,7 +8,7 @@ inputs:
   - id: bycol
     type:
       - 'null'
-      - boolean
+      - string
     doc: A logical scalar indicating whether downsampling should be performed on
       a column-by-column basis.
     inputBinding:
@@ -31,7 +31,6 @@ inputs:
       prefix: --prop
   - id: output_object_file_path
     type: string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 102
       prefix: --output-object-file

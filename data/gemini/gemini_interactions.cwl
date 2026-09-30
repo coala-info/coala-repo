@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini interactions
+baseCommand:
+  - gemini
+  - interactions
 label: gemini_interactions
 doc: "Query gemini database for interactions\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
@@ -24,7 +26,7 @@ inputs:
     doc: Gene to be used as a root in BFS/shortest_path
     inputBinding:
       position: 102
-      prefix: --gene
+      prefix: -g
   - id: radius
     type:
       - 'null'
@@ -32,7 +34,7 @@ inputs:
     doc: 'Set filter for BFS: valid numbers starting from 0'
     inputBinding:
       position: 102
-      prefix: --radius
+      prefix: -r
   - id: var
     type:
       - 'null'

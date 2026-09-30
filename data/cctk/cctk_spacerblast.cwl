@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk_spacerblast
+baseCommand:
+  - cctk
+  - spacerblast
 label: cctk_spacerblast
 doc: "Finds protospacers in a blast database that match a given set of spacers.\n\n\
   Tool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
@@ -136,7 +138,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `no_pam_out_path`
     inputBinding:
       position: 102
       prefix: --no-pam-out
@@ -144,7 +145,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 103
       prefix: --out

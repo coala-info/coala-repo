@@ -81,18 +81,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `nucleotide_fasta_out_path`
+    doc: ' Output nucleotide FASTA file of reported nucleotide sequences'
     inputBinding:
       position: 102
-      prefix: --nucleotide-fasta-out
+      prefix: --nucleotide_output
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Write output to OUTPUT_FILE instead of STDOUT'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

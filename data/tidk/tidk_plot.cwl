@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tidk_plot
+baseCommand:
+  - tidk
+  - plot
 label: tidk_plot
 doc: "SVG plot of TSV generated from tidk search.\n\nTool homepage: https://github.com/tolkit/telomeric-identifier"
 inputs:
@@ -43,8 +45,8 @@ inputs:
       position: 101
       prefix: --width
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: 'Output filename for the SVG (without extension) [default: tidk-plot]'
     inputBinding:
       position: 102
       prefix: --output

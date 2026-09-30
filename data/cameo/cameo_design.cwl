@@ -128,10 +128,10 @@ inputs:
       prefix: --pathway-prediction-timeout
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: Output filename. Multiple output files can
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

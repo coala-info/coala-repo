@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw plot_max_coverage
+baseCommand:
+  - nanoraw
+  - plot_max_coverage
 label: nanoraw_plot_max_coverage
 doc: "Plots the maximum coverage of Nanopore reads across genomic regions.\n\nTool
   homepage: https://github.com/marcus1487/nanoraw"
@@ -12,6 +14,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: basecall_subgroups
     type:
       - 'null'

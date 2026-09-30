@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench compare
+baseCommand:
+  - rbpbench
+  - compare
 label: rbpbench_compare
 doc: "Compare motif search results from rbpbench.\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:

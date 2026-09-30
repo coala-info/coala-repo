@@ -569,7 +569,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set directory for temporary files
     inputBinding:
       position: 101

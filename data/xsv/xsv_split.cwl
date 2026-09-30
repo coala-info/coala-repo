@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_split
+baseCommand:
+  - xsv
+  - split
 label: xsv_split
 doc: "Splits the given CSV data into chunks.\n\nTool homepage: https://github.com/BurntSushi/xsv"
 inputs:
   - id: outdir
-    type: Directory
+    type: string
     doc: The directory where the files are written
     inputBinding:
       position: 1
@@ -54,10 +56,10 @@ inputs:
       prefix: --size
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

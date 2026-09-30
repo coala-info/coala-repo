@@ -113,26 +113,29 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alias_file_path`
+    doc: Create an alias file with this name use the gifile arg (below) if set 
+      to calculate db size use the BLAST db specified with -i (above) [File Out]  
+      Optional
     inputBinding:
       position: 102
-      prefix: --alias-file
+      prefix: -L
   - id: binary_gifile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `binary_gifile_path`
+    doc: Binary Gifile produced from the Gifile specified above [File Out]  
+      Optional
     inputBinding:
       position: 103
-      prefix: --binary-gifile
+      prefix: -B
   - id: logfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
+    doc: 'Logfile name: [File Out]  Optional'
     inputBinding:
       position: 104
-      prefix: --logfile
+      prefix: -l
 outputs:
   - id: logfile
     type:

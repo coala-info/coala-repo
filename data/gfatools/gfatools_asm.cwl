@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfatools_asm
+baseCommand:
+  - gfatools
+  - asm
 label: gfatools_asm
 doc: "Perform assembly operations on a GFA graph.\n\nTool homepage: https://github.com/lh3/gfatools"
 inputs:

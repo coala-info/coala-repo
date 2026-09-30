@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc maf-vcf2maf
+baseCommand:
+  - fuc
+  - maf-vcf2maf
 label: fuc_maf-vcf2maf
 doc: "Convert a VCF file to a MAF file.\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:

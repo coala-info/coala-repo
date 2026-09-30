@@ -17,6 +17,11 @@ inputs:
     doc: Contig to evaluate
     inputBinding:
       position: 2
+  - id: cov_out
+    type: string
+    doc: Output bed file of raw coverage
+    inputBinding:
+      position: 3
   - id: binsize
     type:
       - 'null'
@@ -78,16 +83,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `norm_out_path`
     inputBinding:
       position: 104
-      prefix: --norm-out
+      prefix: --norm_out
 outputs:
-  - id: cov_out
+  - id: out_cov_out
     type: File
     doc: Output bed file of raw coverage
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.cov_out)'
   - id: norm_out
     type:
       - 'null'

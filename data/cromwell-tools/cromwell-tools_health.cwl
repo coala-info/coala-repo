@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools health
+baseCommand:
+  - cromwell-tools
+  - health
 label: cromwell-tools_health
 doc: "Check that cromwell is running and that provided authentication is valid.\n\n\
   Tool homepage: http://github.com/broadinstitute/cromwell-tools"

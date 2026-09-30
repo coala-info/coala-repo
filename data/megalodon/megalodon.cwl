@@ -85,7 +85,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store output results.
     inputBinding:
       position: 102
@@ -111,6 +111,7 @@ inputs:
       sequence for model training (FASTA)\n                        Default: ['basecalls']\n\
       \                        Note that all outputs are unsorted unless noted in
       the output filename."
+    default:
       - basecalls
     inputBinding:
       position: 102

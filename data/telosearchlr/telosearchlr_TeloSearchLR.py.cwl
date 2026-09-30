@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python /usr/local/bin/TeloSearchLR.py
+baseCommand:
+  - python
+  - /usr/local/bin/TeloSearchLR.py
 label: telosearchlr_TeloSearchLR.py
 doc: "TELOomeric repeat motif SEARCH using Long Reads\n\nTool homepage: https://github.com/gchchung/TeloSearchLR"
 inputs:

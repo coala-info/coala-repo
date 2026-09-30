@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy deside
+baseCommand:
+  - iobrpy
+  - deside
 label: iobrpy_deside
 doc: "Predicts cell fractions from gene expression data using a DeSide model.\n\n\
   Tool homepage: https://github.com/IOBR/IOBRpy"
@@ -69,7 +71,7 @@ inputs:
   - id: result_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save result plots
     inputBinding:
       position: 101
@@ -100,7 +102,6 @@ inputs:
       prefix: --transpose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

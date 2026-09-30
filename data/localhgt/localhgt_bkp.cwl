@@ -7,13 +7,13 @@ label: localhgt_bkp
 doc: "Detect HGT breakpoints from metagenomic sequencing data.\n\nTool homepage: https://github.com/samtools/samtools"
 inputs:
   - id: fq1
-    type: File
+    type: File?
     doc: Uncompressed fastq 1 file.
     inputBinding:
       position: 101
       prefix: --fq1
   - id: fq2
-    type: File
+    type: File?
     doc: Uncompressed fastq 2 file.
     inputBinding:
       position: 101
@@ -76,7 +76,7 @@ inputs:
       position: 101
       prefix: -e
   - id: reference_file
-    type: File
+    type: File?
     doc: Uncompressed reference file, which contains the representative genome 
       of each concerned bacteria.
     inputBinding:
@@ -99,7 +99,7 @@ inputs:
       position: 101
       prefix: -a
   - id: sample_name
-    type: string
+    type: string?
     doc: Sample name.
     inputBinding:
       position: 101
@@ -139,14 +139,14 @@ inputs:
       position: 101
       prefix: --use_kmer
   - id: output_folder_path
-    type: string
-    doc: Output or path parameter `output_folder_path`
+    type: string?
+    doc: "\b             <str> Output folder. (default: ./)"
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: -o
 outputs:
   - id: output_folder
-    type: Directory
+    type: Directory?
     doc: Output folder.
     outputBinding:
       glob: $(inputs.output_folder_path)

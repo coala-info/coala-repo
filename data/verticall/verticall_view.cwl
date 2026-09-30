@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: verticall view
+baseCommand:
+  - verticall
+  - view
 label: verticall_view
 doc: "view plots for a single assembly pair\n\nTool homepage: https://github.com/rrwick/Verticall"
 inputs:

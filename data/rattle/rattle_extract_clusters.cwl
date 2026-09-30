@@ -45,7 +45,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'output folder for fastx files (default: .)'
     inputBinding:
       position: 101

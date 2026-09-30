@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: whatshap phase
+baseCommand:
+  - whatshap
+  - phase
 label: whatshap_phase
 doc: "Phase variants in a VCF with the WhatsHap algorithm\n\nTool homepage: https://whatshap.readthedocs.io"
 inputs:
@@ -38,11 +40,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chromosome
+          separate: true
     doc: Name of chromosome to phase. If not given, all chromosomes in the input
       VCF are phased. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --chromosome
   - id: default_gq
     type:
       - 'null'
@@ -226,10 +230,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Reference file. Must be accompanied by .fai index (create with samtools
       faidx)
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 103
       prefix: --reference
@@ -248,11 +252,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
+          separate: true
     doc: Name of a sample to phase. If not given, all samples in the input VCF 
       are phased. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --sample
   - id: supplementary_distance
     type:
       - 'null'
@@ -299,10 +305,11 @@ inputs:
       prefix: --use-supplementary
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output VCF file. Add .gz to the file name to get compressed output. If
+      omitted, use standard output.'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

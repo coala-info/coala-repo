@@ -46,7 +46,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_bins_path`
+    doc: Output list of created bins
     inputBinding:
       position: 103
       prefix: --out-bins

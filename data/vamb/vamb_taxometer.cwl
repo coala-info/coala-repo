@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vamb taxometer
+baseCommand:
+  - vamb
+  - taxometer
 label: vamb_taxometer
 doc: "Refine taxonomy using composition and abundance information.\n\nTool homepage:
   https://github.com/RasmussenLab/vamb"
@@ -84,7 +86,7 @@ inputs:
       prefix: -p
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: Output directory to create
     inputBinding:
       position: 102
       prefix: --outdir

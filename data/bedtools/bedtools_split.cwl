@@ -41,10 +41,11 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output BED file prefix.
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

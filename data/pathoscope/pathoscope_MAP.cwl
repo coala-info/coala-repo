@@ -32,6 +32,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -filterAlignFiles
+      itemSeparator: ','
   - id: filter_align_params
     type:
       - 'null'
@@ -50,6 +51,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -filterIndexPrefixes
+      itemSeparator: ','
   - id: filter_ref_files
     type:
       - 'null'
@@ -59,6 +61,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -filterRefFiles
+      itemSeparator: ','
   - id: index_dir
     type:
       - 'null'
@@ -109,6 +112,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -targetAlignFiles
+      itemSeparator: ','
   - id: target_align_params
     type:
       - 'null'
@@ -126,6 +130,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -targetIndexPrefixes
+      itemSeparator: ','
   - id: target_ref_files
     type:
       - 'null'
@@ -135,22 +140,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: -targetRefFiles
+      itemSeparator: ','
   - id: out_align_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_align_path`
+    doc: ' Output Alignment File Name (Default=outalign.sam)'
     inputBinding:
       position: 102
-      prefix: --out-align
+      prefix: -outAlign
   - id: out_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_dir_path`
+    doc: Output Directory (Default=. (current directory))
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: -outDir
 outputs:
   - id: out_dir
     type:

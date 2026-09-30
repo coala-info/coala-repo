@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trimnami run
+baseCommand:
+  - trimnami
+  - run
 label: trimnami_run
 doc: "Run Trimnami\n\nTool homepage: https://github.com/beardymcjohnface/Trimnami"
 inputs:

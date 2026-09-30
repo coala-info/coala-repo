@@ -6,7 +6,7 @@ doc: "IVA is a de novo assembler for the de novo assembly of genomes from short 
   \nTool homepage: https://github.com/sanger-pathogens/iva"
 inputs:
   - id: output_directory
-    type: Directory
+    type: string
     doc: Name of output directory (must not already exist)
     inputBinding:
       position: 1

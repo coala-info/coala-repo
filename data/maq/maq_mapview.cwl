@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq mapview
+baseCommand:
+  - maq
+  - mapview
 label: maq_mapview
 doc: "View alignments in a map file\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:
@@ -17,6 +19,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -b
+      separate: false
   - id: no_header
     type:
       - 'null'

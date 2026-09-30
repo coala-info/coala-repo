@@ -166,8 +166,7 @@ inputs:
       position: 102
       prefix: --threshold_pct
   - id: export_tsv_path
-    type: string
-    doc: Output or path parameter `export_tsv_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --export-tsv

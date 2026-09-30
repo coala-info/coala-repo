@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bohra init-databases
+baseCommand:
+  - bohra
+  - init-databases
 label: bohra_init-databases
 doc: "Download and/or setup required databases.\n\nTool homepage: https://github.com/kristyhoran/bohra"
 inputs:

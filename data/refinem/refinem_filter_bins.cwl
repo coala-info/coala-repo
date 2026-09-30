@@ -16,6 +16,11 @@ inputs:
     doc: file specifying scaffolds to remove
     inputBinding:
       position: 2
+  - id: output_dir
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 3
   - id: genome_ext
     type:
       - 'null'
@@ -41,11 +46,11 @@ inputs:
       position: 103
       prefix: --silent
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refinem:0.1.2--pyh3252c3a_0

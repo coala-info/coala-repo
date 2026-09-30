@@ -41,7 +41,6 @@ inputs:
       prefix: --input
   - id: sanitize_outdir_path
     type: string
-    doc: Output or path parameter `sanitize_outdir_path`
     inputBinding:
       position: 102
       prefix: --sanitize-outdir

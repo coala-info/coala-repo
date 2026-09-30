@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges_meta-add
+baseCommand:
+  - ibridges
+  - meta-add
 label: ibridges_meta-add
 doc: "Add a metadata item to a collection or data object.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

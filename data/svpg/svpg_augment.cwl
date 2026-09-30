@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svpg_augment
+baseCommand:
+  - svpg
+  - augment
 label: svpg_augment
 doc: "Augment a pangenome graph with SV calls from sequencing reads.\n\nTool homepage:
   https://github.com/coopsor/SVPG"
@@ -86,7 +88,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify the working directory to store output files.
     inputBinding:
       position: 101
@@ -95,7 +97,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: Augmented GFA output file name
     inputBinding:
       position: 102
       prefix: --out
@@ -103,10 +105,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_out_path`
+    doc: VCF output file name
     inputBinding:
       position: 103
-      prefix: --vcf-out
+      prefix: --vcf_out
 outputs:
   - id: out
     type:

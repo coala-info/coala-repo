@@ -274,10 +274,10 @@ inputs:
       to be lz4 compressed
     inputBinding:
       position: 101
-      prefix: --write-assignment-probs
+      prefix: --write-assignment-probs=
+      separate: false
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

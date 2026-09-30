@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_smooth
+baseCommand:
+  - kpal
+  - smooth
 label: kpal_smooth
 doc: "Smooth two profiles by collapsing sub-profiles. If the files contain more than
   one profile, they are linked by name and processed pairwise.\n\nTool homepage: https://github.com/LUMC/kPAL"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree graft
+baseCommand:
+  - gotree
+  - graft
 label: gotree_graft
 doc: "Graft a tree t2 on a tree t1, at the position of a given tip.\nThe root of t2
   will replace the given tip of t2.\n\nTool homepage: https://github.com/fredericlemoine/gotree"

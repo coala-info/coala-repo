@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadbit segment
+baseCommand:
+  - tadbit
+  - segment
 label: tadbit_segment
 doc: "Finds TAD or compartment segmentation in Hi-C data.\n\nTool homepage: http://sgt.cnag.cat/3dg/tadbit/"
 inputs:
@@ -70,6 +72,7 @@ inputs:
       2: dangling-end, 3: error, 4: extra dangling-end, 5: too close from RES, 6:
       too short, 7: too large, 8: over-represented, 9: duplicated, 10: random breaks,
       11: trans-chromosomic"
+    default:
       - 1
       - 2
       - 3

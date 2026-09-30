@@ -52,6 +52,7 @@ inputs:
         items: string
     doc: "hex color for neutral, gain, and loss CNVs on chromosome\n             \
       \           ideograms respectively separated by space"
+    default:
       - '#a6a6a6'
       - '#990000'
       - '#000099'

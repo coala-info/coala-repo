@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit convert
+baseCommand:
+  - seqkit
+  - convert
 label: seqkit_convert
 doc: "convert FASTQ quality encoding between Sanger, Solexa and Illumina\n\nTool homepage:
   https://github.com/shenwei356/seqkit"
@@ -149,7 +151,7 @@ inputs:
       prefix: --to
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

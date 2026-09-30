@@ -88,7 +88,8 @@ inputs:
       and stacking homo-polymer indels. Format: matchScore,misMatchPenalty,gapOpenPenalty,gapExtPenalty,minimumSoftClip'
     inputBinding:
       position: 103
-      prefix: --realign
+      prefix: --realign=
+      separate: false
   - id: snp_report_path
     type:
       - 'null'

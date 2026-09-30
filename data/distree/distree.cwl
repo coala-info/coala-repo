@@ -44,7 +44,7 @@ inputs:
       prefix: --topology
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to write the TSV output file (defaults to stdout)
     inputBinding:
       position: 103
       prefix: --output

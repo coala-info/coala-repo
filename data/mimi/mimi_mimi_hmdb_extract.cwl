@@ -37,7 +37,7 @@ inputs:
       prefix: --xml
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Output TSV file path (default: metabolites.tsv)'
     inputBinding:
       position: 102
       prefix: --output

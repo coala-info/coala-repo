@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snaptools index-genome
+baseCommand:
+  - snaptools
+  - index-genome
 label: snaptools_index-genome
 doc: "Builds genome index for snaptools.\n\nTool homepage: https://github.com/r3fang/SnapTools.git"
 inputs:

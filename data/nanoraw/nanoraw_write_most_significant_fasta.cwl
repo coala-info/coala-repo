@@ -13,6 +13,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: fast5_basedirs2
     type:
       type: array
@@ -20,6 +21,7 @@ inputs:
     doc: Second set of directories containing fast5 files to compare.
     inputBinding:
       position: 2
+      prefix: --fast5-basedirs2
   - id: basecall_subgroups
     type:
       - 'null'

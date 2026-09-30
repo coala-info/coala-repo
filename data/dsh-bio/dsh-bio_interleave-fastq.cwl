@@ -21,7 +21,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `paired_file_path`
+    doc: output interleaved paired FASTQ file [required]
     inputBinding:
       position: 102
       prefix: --paired-file
@@ -29,7 +29,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unpaired_file_path`
+    doc: output unpaired FASTQ file [required]
     inputBinding:
       position: 103
       prefix: --unpaired-file

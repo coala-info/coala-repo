@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msisensor2 msi
+baseCommand:
+  - msisensor2
+  - msi
 label: msisensor2_msi
 doc: "Calculate MSI score from BAM files\n\nTool homepage: https://github.com/niu-lab/msisensor2"
 inputs:
@@ -150,10 +152,10 @@ inputs:
       prefix: -t
   - id: output_distribution_file_path
     type: string
-    doc: Output or path parameter `output_distribution_file_path`
+    doc: <string>   output distribution file
     inputBinding:
       position: 102
-      prefix: --output-distribution-file
+      prefix: -o
 outputs:
   - id: output_distribution_file
     type: File

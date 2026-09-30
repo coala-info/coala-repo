@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lexicmap index
+baseCommand:
+  - lexicmap
+  - index
 label: lexicmap_index
 doc: "Generate an index from FASTA/Q sequences\n\nTool homepage: https://github.com/shenwei356/LexicMap"
 inputs:
@@ -155,7 +157,7 @@ inputs:
       position: 101
       prefix: --no-desert-filling
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output LexicMap index directory.
     inputBinding:
       position: 101

@@ -65,7 +65,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `atom_scores_file_path`
+    doc: file path to output atom scores
     inputBinding:
       position: 103
       prefix: --atom-scores-file
@@ -73,7 +73,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `residue_scores_file_path`
+    doc: file path to output residue scores
     inputBinding:
       position: 104
       prefix: --residue-scores-file

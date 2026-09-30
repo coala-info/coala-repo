@@ -36,7 +36,7 @@ inputs:
       prefix: --klength
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'Output file name. [default: counter_output.npy]'
     inputBinding:
       position: 102
       prefix: --out

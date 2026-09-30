@@ -122,7 +122,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: FILE     Output file path.                        │
     inputBinding:
       position: 103
       prefix: --output-file

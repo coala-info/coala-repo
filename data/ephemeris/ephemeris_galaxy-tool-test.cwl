@@ -244,7 +244,7 @@ inputs:
       prefix: --with-reference-data
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: directory to dump outputs to
     inputBinding:
       position: 102
       prefix: --output

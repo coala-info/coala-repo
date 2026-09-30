@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlociraptor estimate
+baseCommand:
+  - varlociraptor
+  - estimate
 label: varlociraptor_estimate
 doc: "Perform estimations.\n\nTool homepage: https://varlociraptor.github.io"
 inputs:

@@ -79,7 +79,7 @@ inputs:
       prefix: --remove-none
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: output file for counts
     inputBinding:
       position: 103
       prefix: --out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pantools remove_nodes
+baseCommand:
+  - pantools
+  - remove_nodes
 label: pantools_remove_nodes
 doc: "Remove a selection of nodes and their relationships from the pangenome.\n\n\
   Tool homepage: https://git.wur.nl/bioinformatics/pantools"

@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: -a
   - id: bedpe_b
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The second BEDPE file.
     inputBinding:
       position: 101
@@ -30,7 +28,7 @@ inputs:
       position: 101
       prefix: -is
   - id: min_overlap_fraction
-    type: float
+    type: float?
     doc: Minimum overlap required as fraction of A (e.g. 0.05). Default is 1E-9 
       (effectively 1bp).
     inputBinding:

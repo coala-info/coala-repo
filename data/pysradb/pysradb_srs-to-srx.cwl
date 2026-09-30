@@ -38,11 +38,11 @@ inputs:
       position: 102
       prefix: --expand
   - id: save_to_path
-    type: string
-    doc: Output or path parameter `save_to_path`
+    type: string?
+    doc: Save output to file
     inputBinding:
       position: 103
-      prefix: --save-to
+      prefix: --saveto
 outputs:
   - id: save_to
     type:

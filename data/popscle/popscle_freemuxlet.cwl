@@ -163,18 +163,19 @@ inputs:
       prefix: --verbose
   - id: out_prefix_path
     type: string
-    doc: Output or path parameter `out_prefix_path`
+    doc: '[STR: ]             : Output file prefix'
     inputBinding:
       position: 102
-      prefix: --out-prefix
+      prefix: --out
 outputs:
   - id: out_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

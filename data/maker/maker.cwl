@@ -57,7 +57,7 @@ inputs:
   - id: TMP
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify temporary directory to use.
     inputBinding:
       position: 104

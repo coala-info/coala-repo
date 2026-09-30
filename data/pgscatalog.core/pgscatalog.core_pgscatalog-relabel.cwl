@@ -46,7 +46,7 @@ inputs:
       position: 101
       prefix: --maps
   - id: outdir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101

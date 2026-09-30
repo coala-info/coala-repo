@@ -28,7 +28,8 @@ inputs:
     doc: A selection of genomes excluded from the removal of annotations.
     inputBinding:
       position: 102
-      prefix: -e
+      prefix: -e=
+      separate: false
   - id: include
     type:
       - 'null'
@@ -36,7 +37,8 @@ inputs:
     doc: A selection of genomes for which all annotations will be removed.
     inputBinding:
       position: 102
-      prefix: -i
+      prefix: -i=
+      separate: false
   - id: selection_file
     type:
       - 'null'

@@ -78,7 +78,7 @@ inputs:
       prefix: --subseq_range
   - id: file_path
     type: string
-    doc: Output or path parameter `file_path`
+    doc: File to save the content of the search (used with
     inputBinding:
       position: 102
       prefix: --file

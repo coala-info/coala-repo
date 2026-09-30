@@ -16,6 +16,11 @@ inputs:
     doc: file indicating taxonomy of extant taxa
     inputBinding:
       position: 2
+  - id: output_tree
+    type: string
+    doc: decorated tree
+    inputBinding:
+      position: 3
   - id: gtdb_metadata
     type:
       - 'null'
@@ -74,11 +79,11 @@ inputs:
       position: 103
       prefix: --viral
 outputs:
-  - id: output_tree
+  - id: out_output_tree
     type: File
     doc: decorated tree
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_tree)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

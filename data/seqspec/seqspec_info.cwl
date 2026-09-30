@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec_info
+baseCommand:
+  - seqspec
+  - info
 label: seqspec_info
 doc: "Get information about spec.\n\nTool homepage: https://github.com/sbooeshaghi/seqspec"
 inputs:
@@ -27,7 +29,7 @@ inputs:
       prefix: --key
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file
     inputBinding:
       position: 103
       prefix: --output

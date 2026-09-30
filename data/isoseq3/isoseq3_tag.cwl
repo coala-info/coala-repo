@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq tag
+baseCommand:
+  - isoseq
+  - tag
 label: isoseq3_tag
 doc: "Remove cell barcodes and UMIs from FL reads and generate tagged FL transcripts
   (FL to FLT)\n\nTool homepage: https://github.com/PacificBiosciences/IsoSeq3"
@@ -10,6 +12,11 @@ inputs:
     doc: Input cDNA demuxed BAM or ConsensusReadSet XML
     inputBinding:
       position: 1
+  - id: flt_bam
+    type: string
+    doc: Output FLT BAM or ConsensusReadSet XML
+    inputBinding:
+      position: 2
   - id: design
     type:
       - 'null'
@@ -60,11 +67,11 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: flt_bam
+  - id: out_flt_bam
     type: File
     doc: Output FLT BAM or ConsensusReadSet XML
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.flt_bam)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoseq3:4.0.0--h9ee0642_0

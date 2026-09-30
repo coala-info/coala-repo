@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_validate
+baseCommand:
+  - chamois
+  - validate
 label: chamois_validate
 doc: "Validate a chamois model\n\nTool homepage: https://chamois.readthedocs.io/"
 inputs:
@@ -80,14 +82,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --model
-  - id: metrics_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `metrics_path`
-    inputBinding:
-      position: 102
-      prefix: --metrics
   - id: output_path
     type:
       - 'null'
@@ -96,13 +90,21 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output
+  - id: metrics_path
+    type:
+      - 'null'
+      - string
+    doc: The path to an optional metrics file to write in
+    inputBinding:
+      position: 104
+      prefix: --metrics
   - id: report_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_path`
+    doc: An optional file where to generate a label-wise
     inputBinding:
-      position: 104
+      position: 105
       prefix: --report
 outputs:
   - id: output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm merge
+baseCommand:
+  - groopm
+  - merge
 label: groopm_merge
 doc: "Merge BAM files based on a database of alignments.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

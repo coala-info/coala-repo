@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg pipeline
+baseCommand:
+  - hicberg
+  - pipeline
 label: hicberg_pipeline
 doc: "Hi-C pipeline to generate enhanced contact matrix from fastq files.\n\nTool
   homepage: https://github.com/sebgra/hicberg"
@@ -161,10 +163,10 @@ inputs:
       prefix: --rate
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder to save results.
     inputBinding:
       position: 105
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

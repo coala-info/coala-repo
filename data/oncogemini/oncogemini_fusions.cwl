@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini fusions
+baseCommand:
+  - oncogemini
+  - fusions
 label: oncogemini_fusions
 doc: "Query the database for fusions.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

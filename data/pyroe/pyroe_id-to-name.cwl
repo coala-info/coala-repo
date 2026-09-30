@@ -12,6 +12,11 @@ inputs:
     doc: The GTF input file.
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: The path to where the output tsv file will be written.
+    inputBinding:
+      position: 2
   - id: format
     type:
       - 'null'
@@ -23,11 +28,11 @@ inputs:
       position: 102
       prefix: --format
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: The path to where the output tsv file will be written.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0

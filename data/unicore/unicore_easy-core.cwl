@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unicore easy-core
+baseCommand:
+  - unicore
+  - easy-core
 label: unicore_easy-core
 doc: "Easy core gene phylogeny workflow, from fasta files to phylogenetic tree\n\n\
   Tool homepage: https://github.com/steineggerlab/unicore"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output
-    type: Directory
+    type: string
     doc: Output directory where all results will be saved
     inputBinding:
       position: 2
@@ -21,7 +23,7 @@ inputs:
     inputBinding:
       position: 3
   - id: tmp
-    type: Directory
+    type: string
     doc: tmp directory
     inputBinding:
       position: 4

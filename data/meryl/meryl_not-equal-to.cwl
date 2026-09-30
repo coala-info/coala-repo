@@ -98,7 +98,8 @@ inputs:
     doc: Expect N mers in the input (optional; for precise memory sizing).
     inputBinding:
       position: 115
-      prefix: n
+      prefix: n=
+      separate: false
   - id: kmer_size
     type:
       - 'null'
@@ -106,7 +107,8 @@ inputs:
     doc: Create mers of size K bases (mandatory for count operations).
     inputBinding:
       position: 115
-      prefix: k
+      prefix: k=
+      separate: false
   - id: memory
     type:
       - 'null'

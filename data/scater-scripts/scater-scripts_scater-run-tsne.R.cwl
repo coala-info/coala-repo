@@ -69,7 +69,7 @@ inputs:
   - id: pca
     type:
       - 'null'
-      - boolean
+      - string
     doc: Logical scalar passed to Rtsne, indicating whether an initial PCA step 
       should be performed. This is ignored if use_dimred is specified.
     inputBinding:
@@ -105,7 +105,6 @@ inputs:
       prefix: --use-dimred
   - id: output_object_file_path
     type: string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 102
       prefix: --output-object-file

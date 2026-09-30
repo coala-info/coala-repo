@@ -126,18 +126,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
+    doc: output file [-]
     inputBinding:
       position: 104
-      prefix: --outfile
+      prefix: -outfile
   - id: stats_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_path`
+    doc: map statistics file (YAML)
     inputBinding:
       position: 105
-      prefix: --stats
+      prefix: -stats
 outputs:
   - id: outfile
     type:

@@ -174,10 +174,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Reference sequence the reads were aligned against. To enable output of 
       deletion SV sequences, this parameter must be set.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -218,7 +218,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where temporary files are written, must exist. If it doesn't,
       default path is used
     inputBinding:
@@ -228,7 +228,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `snf_path`
     inputBinding:
       position: 102
       prefix: --snf
@@ -236,7 +235,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_path`
     inputBinding:
       position: 103
       prefix: --vcf

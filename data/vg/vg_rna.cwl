@@ -163,7 +163,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_fasta_path`
+    doc: write pantranscriptome transcript sequences to here
     inputBinding:
       position: 103
       prefix: --write-fasta
@@ -171,7 +171,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_gbwt_path`
+    doc: write pantranscriptome transcript paths as GBWT
     inputBinding:
       position: 104
       prefix: --write-gbwt
@@ -179,7 +179,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_hap_gbwt_path`
+    doc: write input haplotypes as a GBWT
     inputBinding:
       position: 105
       prefix: --write-hap-gbwt
@@ -187,7 +187,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_info_path`
+    doc: write pantranscriptome transcript info table as TSV
     inputBinding:
       position: 106
       prefix: --write-info

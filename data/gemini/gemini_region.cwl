@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini_region
+baseCommand:
+  - gemini
+  - region
 label: gemini_region
 doc: "Query regions in a GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

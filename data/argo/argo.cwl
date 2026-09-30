@@ -147,10 +147,10 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'Output folder. (default: None)'
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

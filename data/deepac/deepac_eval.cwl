@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac eval
+baseCommand:
+  - deepac
+  - eval
 label: deepac_eval
 doc: "Evaluate deep-AC models.\n\nTool homepage: https://gitlab.com/rki_bioinformatics/DeePaC"
 inputs:

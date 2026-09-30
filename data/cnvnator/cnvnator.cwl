@@ -241,14 +241,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -view
-  - id: cptrees_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `cptrees_path`
-    inputBinding:
-      position: 102
-      prefix: --cptrees
   - id: pe_output_file_path
     type:
       - 'null'
@@ -257,6 +249,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --pe-output-file
+  - id: cptrees_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: -cptrees
 outputs:
   - id: pe_output_file
     type:

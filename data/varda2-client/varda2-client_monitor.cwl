@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varda2-client monitor
+baseCommand:
+  - varda2-client
+  - monitor
 label: varda2-client_monitor
 doc: "Monitor tasks\n\nTool homepage: https://github.com/varda/varda2-client"
 inputs:

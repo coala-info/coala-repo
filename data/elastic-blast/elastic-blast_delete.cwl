@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: elastic-blast delete
+baseCommand:
+  - elastic-blast
+  - delete
 label: elastic-blast_delete
 doc: "Deletes an ElasticBLAST job.\n\nTool homepage: https://pypi.org/project/elastic-blast/"
 inputs:

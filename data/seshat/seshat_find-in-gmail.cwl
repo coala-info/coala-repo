@@ -36,16 +36,18 @@ inputs:
       prefix: --wait-for
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: The output path prefix for writing annotations.
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --output
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: The output path prefix for writing annotations.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

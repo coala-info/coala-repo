@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: delly filter
+baseCommand:
+  - delly
+  - filter
 label: delly_filter
 doc: "Filter SV calls in a BCF file\n\nTool homepage: https://github.com/dellytools/delly"
 inputs:
@@ -123,7 +125,7 @@ inputs:
       prefix: --tag
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Filtered SV BCF output file
     inputBinding:
       position: 103
       prefix: --outfile

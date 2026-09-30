@@ -63,7 +63,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder for HTML report and raw data.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy batch_salmon
+baseCommand:
+  - iobrpy
+  - batch_salmon
 label: iobrpy_batch_salmon
 doc: "Run Salmon in batch mode on multiple samples.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -50,10 +52,10 @@ inputs:
       prefix: --suffix1
   - id: path_out_path
     type: string
-    doc: Output or path parameter `path_out_path`
+    doc: Output directory for per-sample results
     inputBinding:
       position: 102
-      prefix: --path-out
+      prefix: --path_out
 outputs:
   - id: path_out
     type: Directory

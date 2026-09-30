@@ -39,9 +39,9 @@ inputs:
       prefix: --positive_bams
   - id: reference
     type: File
+    doc: FASTA file with the reference to which reads where mapped
     secondaryFiles:
       - .fai
-    doc: FASTA file with the reference to which reads where mapped
     inputBinding:
       position: 101
       prefix: --reference
@@ -69,10 +69,9 @@ inputs:
       prefix: --vcf
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory

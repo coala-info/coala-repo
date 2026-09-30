@@ -337,10 +337,10 @@ inputs:
       prefix: -t
   - id: results_file_path
     type: string
-    doc: Output or path parameter `results_file_path`
+    doc: ':  write results to file'
     inputBinding:
       position: 105
-      prefix: --results-file
+      prefix: -O
 outputs:
   - id: results_file
     type:

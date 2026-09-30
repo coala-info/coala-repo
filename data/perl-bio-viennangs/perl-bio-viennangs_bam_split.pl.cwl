@@ -33,7 +33,7 @@ inputs:
   - id: bwdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory name for resulting bigWig files. This directory is created as
       subdirectory of the output directory.
     inputBinding:
@@ -99,7 +99,6 @@ inputs:
       prefix: --uniq
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

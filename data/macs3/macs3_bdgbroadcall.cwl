@@ -81,7 +81,7 @@ inputs:
       position: 101
       prefix: --ofile
   - id: outdir
-    type: Directory
+    type: string
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     inputBinding:

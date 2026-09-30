@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlinker_variant-trefanno
+baseCommand:
+  - varlinker
+  - variant-trefanno
 label: varlinker_variant-trefanno
 doc: "extract the annotation of the specific ref allele\n\nTool homepage: https://github.com/IBCHgenomic/varlinker"
 inputs:

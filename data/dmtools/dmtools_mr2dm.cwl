@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools mr2dm
+baseCommand:
+  - dmtools
+  - mr2dm
 label: dmtools_mr2dm
 doc: "Convert methylation ratio files to DM format.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
@@ -34,6 +36,7 @@ inputs:
       bedsimple, default ALL
     inputBinding:
       position: 101
+      prefix: --fcontext
   - id: file_format
     type:
       - 'null'
@@ -64,6 +67,7 @@ inputs:
     doc: CG/CHG/CHH/C, needed when bedmethyl format, default C
     inputBinding:
       position: 101
+      prefix: --pcontext
   - id: print_context
     type:
       - 'null'
@@ -114,10 +118,10 @@ inputs:
       prefix: --sort
   - id: output_dm_file_path
     type: string
-    doc: Output or path parameter `output_dm_file_path`
+    doc: output DM file
     inputBinding:
       position: 102
-      prefix: --output-dm-file
+      prefix: --outdm
 outputs:
   - id: output_dm_file
     type: File

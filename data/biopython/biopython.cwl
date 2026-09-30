@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: docker run
+baseCommand:
+  - docker
+  - run
 label: biopython
 doc: "Run a Docker container for Biopython.\n\nTool homepage: http://www.biopython.org/"
 inputs:

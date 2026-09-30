@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strainge_view
+baseCommand:
+  - strainge
+  - view
 label: strainge_view
 doc: "View call statistics stored in a HDF5 file and output results to different file
   formats\n\nTool homepage: The package home page"
@@ -44,13 +46,15 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tracks
+          separate: true
     doc: "Write track files that can be visualized in a genome viewer, use this option
       multiple times to generate multiple track types. Use 'all' to generate all tracks.
       Available track types: coverage, callable, multimapped, lowmq, bad, high_coverage,
       gaps"
     inputBinding:
       position: 102
-      prefix: --tracks
   - id: verbose_vcf_level
     type:
       - 'null'
@@ -65,18 +69,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_file_path`
+    doc: ' Output a TSV with a summary of variant calling statistics to the given
+      file.'
     inputBinding:
       position: 103
-      prefix: --summary-file
+      prefix: --summary
   - id: vcf_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_file_path`
+    doc: Output a VCF file with SNP's. Please be aware that we
     inputBinding:
       position: 104
-      prefix: --vcf-file
+      prefix: --vcf
 outputs:
   - id: summary_file
     type:

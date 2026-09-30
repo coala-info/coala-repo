@@ -149,7 +149,7 @@ inputs:
   - id: wd
     type:
       - 'null'
-      - Directory
+      - string
     doc: Working directory to use/create when merging
     inputBinding:
       position: 102

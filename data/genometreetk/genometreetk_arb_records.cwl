@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk arb_records
+baseCommand:
+  - genometreetk
+  - arb_records
 label: genometreetk_arb_records
 doc: "Create an ARB records file from GTDB metadata.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: metadata file for all genomes in the GTDB
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: output file with ARB records
+    inputBinding:
+      position: 2
   - id: genome_list
     type:
       - 'null'
@@ -42,11 +49,11 @@ inputs:
       position: 102
       prefix: --taxonomy_file
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: output file with ARB records
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

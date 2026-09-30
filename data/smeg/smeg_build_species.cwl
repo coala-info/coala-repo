@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smeg_build_species
+baseCommand:
+  - smeg
+  - build_species
 label: smeg_build_species
 doc: "Builds a species database for SMEG.\n\nTool homepage: https://github.com/ohlab/SMEG"
 inputs:
@@ -51,7 +53,7 @@ inputs:
       position: 101
       prefix: -k
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

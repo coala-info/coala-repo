@@ -227,10 +227,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_gtf_dir_path`
+    doc: 'existing directory for individual transcripts, default: N/A'
     inputBinding:
       position: 103
-      prefix: --output-gtf-dir
+      prefix: --output_gtf_dir
 outputs:
   - id: output_gtf
     type: File

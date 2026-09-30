@@ -38,8 +38,7 @@ inputs:
       position: 101
       prefix: --seq-path
   - id: export_path_path
-    type: string
-    doc: Output or path parameter `export_path_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --export-path

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_num
+baseCommand:
+  - unikmer
+  - num
 label: unikmer_num
 doc: "Quickly inspect the number of k-mers in binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

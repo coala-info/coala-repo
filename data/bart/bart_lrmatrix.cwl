@@ -88,10 +88,10 @@ inputs:
       prefix: -k
   - id: denoised_output_path
     type: string
-    doc: Output or path parameter `denoised_output_path`
+    doc: "out2      \tsummed over all non-noise scales to create a denoised output."
     inputBinding:
       position: 104
-      prefix: --denoised-output
+      prefix: -o
 outputs:
   - id: denoised_output
     type:

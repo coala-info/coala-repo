@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_sniff
+baseCommand:
+  - smof
+  - sniff
 label: smof_sniff
 doc: "Identifies the sequence type and aids in diagnostics.\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:

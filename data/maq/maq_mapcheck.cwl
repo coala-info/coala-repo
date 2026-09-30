@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq_mapcheck
+baseCommand:
+  - maq
+  - mapcheck
 label: maq_mapcheck
 doc: "Check mapping quality of reads.\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:

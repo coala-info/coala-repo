@@ -42,18 +42,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_out_path`
     inputBinding:
       position: 103
-      prefix: --csv-out
+      prefix: --csv_out
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: output_file
     type:

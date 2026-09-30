@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srahunter download
+baseCommand:
+  - srahunter
+  - download
 label: srahunter_download
 doc: "Download SRA data and convert it to FASTQ format.\n\nTool homepage: https://github.com/GitEnricoNeko/srahunter"
 inputs:
@@ -35,8 +37,7 @@ inputs:
       position: 101
       prefix: -t
   - id: outdir_path
-    type: string
-    doc: Output or path parameter `outdir_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --outdir

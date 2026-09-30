@@ -20,7 +20,7 @@ inputs:
     inputBinding:
       position: 3
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 4
@@ -237,7 +237,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for the alignment files
     inputBinding:
       position: 105

@@ -147,6 +147,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --colors
+      itemSeparator: ','
   - id: ladderize
     type:
       - 'null'

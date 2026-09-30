@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fba_count
+baseCommand:
+  - fba
+  - count
 label: fba_count
 doc: "Count UMIs per feature per cell (UMI deduplication), powered by UMI-tools (Smith,
   T., et al. 2017). Take the output of `extract` or `filter` as input.\n\nTool homepage:
@@ -62,10 +64,10 @@ inputs:
       prefix: --umi_start
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' specify an output file'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

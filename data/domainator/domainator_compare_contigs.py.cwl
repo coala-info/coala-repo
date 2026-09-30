@@ -27,7 +27,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: 'only annotate contigs with ids in this list. Additive with --contigs_file.
+    doc: 'only annotate contigs with ids in this list. Additive with --contigs_file.'
     inputBinding:
       position: 101
       prefix: --contigs

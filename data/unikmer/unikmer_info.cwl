@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_info
+baseCommand:
+  - unikmer
+  - info
 label: unikmer_info
 doc: "Information of binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

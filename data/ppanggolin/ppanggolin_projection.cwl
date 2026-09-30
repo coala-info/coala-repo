@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin projection
+baseCommand:
+  - ppanggolin
+  - projection
 label: ppanggolin_projection
 doc: "Project pangenome annotations onto input genomes.\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
 inputs:
@@ -22,7 +24,7 @@ inputs:
       position: 101
       prefix: --add_sequences
   - id: anno
-    type: File
+    type: File?
     doc: Specify an annotation file in GFF/GBFF format for the genome you wish 
       to annotate. Alternatively, you can provide a tab-separated file listing 
       genome names alongside their respective annotation filepaths, with one 
@@ -102,7 +104,7 @@ inputs:
       position: 101
       prefix: --fast
   - id: fasta
-    type: File
+    type: File?
     doc: Specify a FASTA file containing the genomic sequences of the genome(s) 
       you wish to annotate, or provide a tab-separated file listing genome names
       alongside their respective FASTA filepaths, with one line per genome.
@@ -244,7 +246,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for storing temporary files
     inputBinding:
       position: 101
@@ -269,7 +271,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

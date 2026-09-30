@@ -68,7 +68,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to directory, where output files will be saved
     inputBinding:
       position: 102

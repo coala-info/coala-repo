@@ -596,15 +596,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: "{nexus,newick,phylip,nexml}, --output-tree-format {nexus,newick,phylip,nexml}
+      Format of the output tree file (if not specifed, defaults to input format, if
+      this has been explicitly specified, or 'nexus' otherwise)."
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -F
   - id: output_tree_filepath_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_filepath_path`
     inputBinding:
       position: 104
       prefix: --output-tree-filepath

@@ -13,6 +13,11 @@ inputs:
     doc: Path to all reference data files (e.g. path/to/reference/*.npz)
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Path and filename for the reference output (e.g. path/to/myref.npz)
+    inputBinding:
+      position: 2
   - id: binsize
     type:
       - 'null'
@@ -64,11 +69,11 @@ inputs:
       position: 102
       prefix: --yfrac
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Path and filename for the reference output (e.g. path/to/myref.npz)
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wisecondorx:1.2.9--pyhdfd78af_0

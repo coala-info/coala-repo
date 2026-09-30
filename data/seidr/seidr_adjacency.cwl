@@ -59,7 +59,7 @@ inputs:
       prefix: --precision
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 103
       prefix: --out-file

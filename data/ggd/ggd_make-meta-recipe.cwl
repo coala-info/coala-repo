@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd make-meta-recipe
+baseCommand:
+  - ggd
+  - make-meta-recipe
 label: ggd_make-meta-recipe
 doc: "Make a ggd data meta-recipe\n\nTool homepage: https://github.com/gogetdata/ggd-cli"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: authors
-    type: string
+    type: string?
     doc: The author(s) of the data metarecipe being created, (This recipe)
     inputBinding:
       position: 102

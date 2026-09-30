@@ -74,9 +74,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --refFasta
@@ -98,7 +98,6 @@ inputs:
       prefix: --verbose
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

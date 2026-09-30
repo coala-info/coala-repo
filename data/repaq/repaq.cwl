@@ -57,7 +57,7 @@ inputs:
   - id: input_file1
     type:
       - 'null'
-      - string
+      - File
     doc: input file name
     inputBinding:
       position: 101
@@ -123,14 +123,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verify
-  - id: json_compare_result_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `json_compare_result_path`
-    inputBinding:
-      position: 102
-      prefix: --json-compare-result
   - id: output_file1_path
     type:
       - 'null'
@@ -147,6 +139,13 @@ inputs:
     inputBinding:
       position: 104
       prefix: --output-file2
+  - id: json_compare_result_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --json_compare_result
 outputs:
   - id: output_file1
     type:

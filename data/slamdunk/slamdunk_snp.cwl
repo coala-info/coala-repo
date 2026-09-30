@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slamdunk snp
+baseCommand:
+  - slamdunk
+  - snp
 label: slamdunk_snp
 doc: "Call SNPs from BAM files.\n\nTool homepage: http://t-neumann.github.io/slamdunk"
 inputs:
@@ -21,9 +23,9 @@ inputs:
       prefix: --min-coverage
   - id: reference
     type: File
+    doc: Reference fasta file
     secondaryFiles:
       - .fai
-    doc: Reference fasta file
     inputBinding:
       position: 102
       prefix: --reference
@@ -45,10 +47,10 @@ inputs:
       prefix: --var-fraction
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: ' Output directory for mapped BAM files.'
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --outputDir
 outputs:
   - id: output_dir
     type: Directory

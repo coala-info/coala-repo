@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pairtools sample
+baseCommand:
+  - pairtools
+  - sample
 label: pairtools_sample
 doc: "Select a random subset of pairs in a pairs file.\n\nTool homepage: https://github.com/mirnylab/pairtools"
 inputs:
@@ -66,10 +68,10 @@ inputs:
       prefix: --seed
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file. If the path ends with .gz or .lz4, the
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

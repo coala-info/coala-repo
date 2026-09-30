@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybpiper paralog_retriever
+baseCommand:
+  - hybpiper
+  - paralog_retriever
 label: hybpiper_paralog_retriever
 doc: "Extracts paralogous genes from HybPiper output.\n\nTool homepage: https://github.com/mossmatters/HybPiper"
 inputs:
@@ -21,7 +23,7 @@ inputs:
   - id: fasta_dir_all
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify directory for output FASTA files (ALL).
     inputBinding:
       position: 102
@@ -29,7 +31,7 @@ inputs:
   - id: fasta_dir_no_chimeras
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify directory for output FASTA files (no putative chimeric 
       sequences).
     inputBinding:

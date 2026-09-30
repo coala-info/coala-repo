@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bigscape_dereplicate
+baseCommand:
+  - bigscape
+  - dereplicate
 label: bigscape_dereplicate
 doc: "Dereplicate mode - BiG-SCAPE performs a pairwise comparison of BGCs based on
   the protein sequence comparison tool sourmash, clusters them based on a similarity
@@ -97,7 +99,7 @@ inputs:
       position: 101
       prefix: --log-path
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory for all BiG-SCAPE results files.
     inputBinding:
       position: 101

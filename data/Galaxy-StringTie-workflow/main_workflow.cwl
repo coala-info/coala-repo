@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Copy of
-  Genome-wide alternative splicing analysis'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Copy of Genome-wide alternative splicing analysis'
 inputs:
   Genome annotation:
     format: data

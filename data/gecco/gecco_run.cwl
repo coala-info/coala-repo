@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gecco run
+baseCommand:
+  - gecco
+  - run
 label: gecco_run
 doc: "Run gecco gene calling and cluster detection\n\nTool homepage: https://gecco.embl.de/"
 inputs:
@@ -164,7 +166,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory in which to write the output files.
     inputBinding:
       position: 101

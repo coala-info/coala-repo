@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_get
+baseCommand:
+  - fastools
+  - get
 label: fastools_get
 doc: "Retrieve a reference sequence and find the location of a specific gene.\n\n\
   Tool homepage: https://git.lumc.nl/j.f.j.laros/fastools"

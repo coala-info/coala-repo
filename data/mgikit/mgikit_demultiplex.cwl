@@ -309,26 +309,28 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path_path`
+    doc: ' Path to the output log, instead of writing to the stdout. [default: ]'
     inputBinding:
       position: 102
-      prefix: --log-path
+      prefix: --log
   - id: output_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
+    doc: ' Path to the output folder. If not provided, the output will be written
+      at mgiKit_ followed by current data and time. [default: ]'
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output
   - id: reports_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reports_dir_path`
+    doc: ' Prefix of report file. If not provided, the output will be written at output_
+      followed by current data and time. [default: ]'
     inputBinding:
       position: 104
-      prefix: --reports-dir
+      prefix: --reports
 outputs:
   - id: output_dir
     type:

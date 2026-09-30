@@ -233,7 +233,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_pog_path`
+    doc: dump final alignment graph to FILE (.pdf/.png) [Null]
     inputBinding:
       position: 103
       prefix: --out-pog
@@ -241,7 +241,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: output to FILE [stdout]
     inputBinding:
       position: 104
       prefix: --output

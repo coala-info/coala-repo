@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomad find-proviruses
+baseCommand:
+  - genomad
+  - find-proviruses
 label: genomad_find-proviruses
 doc: "Find integrated viruses within the sequences in INPUT file using the geNomad
   markers (located in the DATABASE directory) and write the results to the OUTPUT
@@ -12,11 +14,16 @@ inputs:
     doc: Input file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 2
   - id: database
     type: Directory
     doc: Directory containing geNomad markers
     inputBinding:
-      position: 2
+      position: 3
   - id: cleanup
     type:
       - 'null'
@@ -170,11 +177,11 @@ inputs:
       position: 103
       prefix: --verbose
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0

@@ -265,7 +265,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - Directory
+      - string
     doc: output folder path
     inputBinding:
       position: 101
@@ -392,7 +392,7 @@ inputs:
   - id: super_recall
     type:
       - 'null'
-      - boolean
+      - string
     doc: Super recall mode - after calling normal CNVs it tries to find CNVs 
       with any length that are better than pre-specified threshold
     inputBinding:

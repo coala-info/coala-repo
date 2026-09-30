@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virsorter run
+baseCommand:
+  - virsorter
+  - run
 label: virsorter_run
 doc: "Runs the virsorter main function to classify viral sequences\n\nTool homepage:
   https://github.com/simroux/VirSorter"
@@ -239,7 +241,7 @@ inputs:
       position: 103
       prefix: --viral-gene-required
   - id: working_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 103

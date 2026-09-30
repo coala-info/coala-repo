@@ -61,18 +61,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_dir_path`
+    doc: Directory for new sequence files to be written to.
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --outDir
   - id: out_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
+    doc: ' Write reciprocal BLAST pairs to this file.'
     inputBinding:
       position: 103
-      prefix: --out-file
+      prefix: --outFile
 outputs:
   - id: out_file
     type:

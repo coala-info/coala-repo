@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast process
+baseCommand:
+  - mrpast
+  - process
 label: mrpast_process
 doc: "Process MRPAST model and ARG files.\n\nTool homepage: https://aprilweilab.github.io/"
 inputs:
@@ -70,6 +72,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --leave-out
+      itemSeparator: ','
   - id: map_pops
     type:
       - 'null'
@@ -188,8 +191,7 @@ inputs:
       position: 103
       prefix: --verbose
   - id: out_dir_path
-    type: string
-    doc: Output or path parameter `out_dir_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --out-dir

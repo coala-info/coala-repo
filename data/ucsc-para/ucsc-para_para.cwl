@@ -42,13 +42,14 @@ inputs:
   - id: batch
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify the directory path that is used to store the batch control 
       files. The directory is created if it doesn't exist. If used, this option 
       must be specified on all para commands for the batch.
     inputBinding:
       position: 106
-      prefix: -batch
+      prefix: -batch=
+      separate: false
   - id: cpu
     type:
       - 'null'
@@ -56,7 +57,8 @@ inputs:
     doc: Number of CPUs used by the jobs.
     inputBinding:
       position: 106
-      prefix: -cpu
+      prefix: -cpu=
+      separate: false
   - id: delay_time
     type:
       - 'null'
@@ -65,7 +67,8 @@ inputs:
       load at startup.
     inputBinding:
       position: 106
-      prefix: -delayTime
+      prefix: -delayTime=
+      separate: false
   - id: job_cwd
     type:
       - 'null'
@@ -74,7 +77,8 @@ inputs:
       each job. It defaults to the directory where para is run.
     inputBinding:
       position: 106
-      prefix: -jobCwd
+      prefix: -jobCwd=
+      separate: false
   - id: kill_time
     type:
       - 'null'
@@ -82,7 +86,8 @@ inputs:
     doc: Number of minutes hung job runs before push kills it.
     inputBinding:
       position: 106
-      prefix: -killTime
+      prefix: -killTime=
+      separate: false
   - id: max_job
     type:
       - 'null'
@@ -91,7 +96,8 @@ inputs:
       example 10 or 'unlimited'. Default unlimited displays as -1.
     inputBinding:
       position: 106
-      prefix: -maxJob
+      prefix: -maxJob=
+      separate: false
   - id: max_push
     type:
       - 'null'
@@ -99,7 +105,8 @@ inputs:
     doc: Maximum number of jobs to queue.
     inputBinding:
       position: 106
-      prefix: -maxPush
+      prefix: -maxPush=
+      separate: false
   - id: max_queue
     type:
       - 'null'
@@ -107,7 +114,8 @@ inputs:
     doc: Number of jobs to allow on parasol queue.
     inputBinding:
       position: 106
-      prefix: -maxQueue
+      prefix: -maxQueue=
+      separate: false
   - id: min_push
     type:
       - 'null'
@@ -115,7 +123,8 @@ inputs:
     doc: Minimum number of jobs to queue. Overrides maxQueue.
     inputBinding:
       position: 106
-      prefix: -minPush
+      prefix: -minPush=
+      separate: false
   - id: priority
     type:
       - 'null'
@@ -124,7 +133,8 @@ inputs:
       batch priority to a specific numeric value - default 10.
     inputBinding:
       position: 106
-      prefix: -priority
+      prefix: -priority=
+      separate: false
   - id: ram
     type:
       - 'null'
@@ -133,7 +143,8 @@ inputs:
       t,g,m,k for tera, giga, mega, kilo. e.g. 4g = 4 Gigabytes.
     inputBinding:
       position: 106
-      prefix: -ram
+      prefix: -ram=
+      separate: false
   - id: retries
     type:
       - 'null'
@@ -141,7 +152,8 @@ inputs:
     doc: Number of retries per job.
     inputBinding:
       position: 106
-      prefix: -retries
+      prefix: -retries=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -149,7 +161,8 @@ inputs:
     doc: Set verbosity level.
     inputBinding:
       position: 106
-      prefix: -verbose
+      prefix: -verbose=
+      separate: false
   - id: warn_time
     type:
       - 'null'
@@ -157,7 +170,8 @@ inputs:
     doc: Number of minutes job runs before hang warning.
     inputBinding:
       position: 106
-      prefix: -warnTime
+      prefix: -warnTime=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

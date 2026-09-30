@@ -185,6 +185,7 @@ inputs:
     doc: Maximum distance for N trimming
     inputBinding:
       position: 103
+      prefix: --ntrimdist
   - id: numcpus
     type:
       - 'null'
@@ -305,7 +306,6 @@ inputs:
       prefix: -w
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 104
       prefix: --outdir

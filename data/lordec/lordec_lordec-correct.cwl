@@ -59,7 +59,7 @@ inputs:
   - id: out_tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: GATB graph creation temporary files directory
     inputBinding:
       position: 101
@@ -106,18 +106,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `corrected_read_file_path`
     inputBinding:
       position: 102
-      prefix: --corrected-read-file
+      prefix: --corrected_read_file
   - id: stat_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stat_file_path`
     inputBinding:
       position: 103
-      prefix: --stat-file
+      prefix: --stat_file
 outputs:
   - id: corrected_read_file
     type: File

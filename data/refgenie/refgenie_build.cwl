@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie build
+baseCommand:
+  - refgenie
+  - build
 label: refgenie_build
 doc: "Build genome assets.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

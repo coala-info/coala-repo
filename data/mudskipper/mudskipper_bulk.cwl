@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mudskipper bulk
+baseCommand:
+  - mudskipper
+  - bulk
 label: mudskipper_bulk
 doc: "Convert alignment of bulk RNA-Seq reads against genome to alignment against
   transcriptome.\n\nTool homepage: https://github.com/OceanGenomics/mudskipper"
@@ -49,7 +51,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output file name
     inputBinding:
       position: 102
       prefix: --out

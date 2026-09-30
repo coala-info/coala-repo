@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cherri eval
+baseCommand:
+  - cherri
+  - eval
 label: cherri_eval
 doc: "Evaluate RRIs using a trained model.\n\nTool homepage: https://github.com/BackofenLab/Cherri"
 inputs:
@@ -104,10 +106,9 @@ inputs:
       prefix: --use_structure
   - id: out_path_path
     type: string
-    doc: Output or path parameter `out_path_path`
     inputBinding:
       position: 102
-      prefix: --out-path
+      prefix: --out_path
 outputs:
   - id: out_path
     type: Directory

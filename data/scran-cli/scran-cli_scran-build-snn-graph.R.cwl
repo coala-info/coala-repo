@@ -43,7 +43,7 @@ inputs:
       position: 101
       prefix: --k-value
   - id: shared
-    type: boolean
+    type: string
     doc: Logical specifying wether to compute a Shared NN Graph (if shared=TRUE)
       or a kNN Graph(if shared=FALSE).
     inputBinding:
@@ -61,7 +61,7 @@ inputs:
   - id: transposed
     type:
       - 'null'
-      - boolean
+      - string
     doc: A logical scalar indicating whether x is transposed (i.e., rows are 
       cells).
     inputBinding:
@@ -87,7 +87,6 @@ inputs:
       prefix: --use-dimred
   - id: output_igraph_object_path
     type: string
-    doc: Output or path parameter `output_igraph_object_path`
     inputBinding:
       position: 102
       prefix: --output-igraph-object

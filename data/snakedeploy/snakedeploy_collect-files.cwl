@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakedeploy collect-files
+baseCommand:
+  - snakedeploy
+  - collect-files
 label: snakedeploy_collect-files
 doc: "Collect files into a tabular structure, given input from STDIN formats glob
   patterns defined in a config sheet.\n\nTool homepage: https://github.com/snakemake/snakedeploy"

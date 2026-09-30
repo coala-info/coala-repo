@@ -63,7 +63,7 @@ inputs:
       position: 101
       prefix: --keep-dup
   - id: outdir
-    type: string
+    type: string?
     doc: If specified all output files will be written to that directory.
     inputBinding:
       position: 101

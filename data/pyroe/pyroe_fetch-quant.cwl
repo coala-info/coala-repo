@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyroe fetch-quant
+baseCommand:
+  - pyroe
+  - fetch-quant
 label: pyroe_fetch-quant
 doc: "The ids of the datasets to fetch\n\nTool homepage: https://github.com/COMBINE-lab/pyroe"
 inputs:

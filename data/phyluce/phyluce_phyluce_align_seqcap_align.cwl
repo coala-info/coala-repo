@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyluce_phyluce_align_seqcap_align
+baseCommand: phyluce_align_seqcap_align
 label: phyluce_phyluce_align_seqcap_align
 doc: "Align and possibly trim records in a monolithic UCE FASTA file with MAFFT or
   MUSCLE\n\nTool homepage: https://github.com/faircloth-lab/phyluce"

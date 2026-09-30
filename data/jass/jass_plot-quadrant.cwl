@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jass plot-quadrant
+baseCommand:
+  - jass
+  - plot-quadrant
 label: jass_plot-quadrant
 doc: "Generates a quadrant plot from a worktable.\n\nTool homepage: http://statistical-genetics.pages.pasteur.fr/jass/"
 inputs:
@@ -20,7 +22,6 @@ inputs:
       prefix: --worktable-path
   - id: plot_path_path
     type: string
-    doc: Output or path parameter `plot_path_path`
     inputBinding:
       position: 102
       prefix: --plot-path

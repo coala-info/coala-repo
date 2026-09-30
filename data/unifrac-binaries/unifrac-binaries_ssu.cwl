@@ -47,6 +47,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -c
+      itemSeparator: ','
   - id: grouping_file
     type:
       - 'null'

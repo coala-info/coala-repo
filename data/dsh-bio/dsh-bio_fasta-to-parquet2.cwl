@@ -38,7 +38,6 @@ inputs:
       prefix: --transaction-size
   - id: output_parquet_file_path
     type: string
-    doc: Output or path parameter `output_parquet_file_path`
     inputBinding:
       position: 102
       prefix: --output-parquet-file

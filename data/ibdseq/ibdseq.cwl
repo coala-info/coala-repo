@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar ibdseq.jar
+baseCommand:
+  - java
+  - -jar
+  - ibdseq.jar
 label: ibdseq
 doc: Calculates Identity By Descent (IBD) segments between individuals in a VCF 
   file.

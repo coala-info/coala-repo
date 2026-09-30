@@ -190,7 +190,7 @@ inputs:
       position: 101
       prefix: --output_aln
   - id: output_path
-    type: Directory
+    type: string
     doc: Output directory. If it doesn't exist, it will be created.
     inputBinding:
       position: 101

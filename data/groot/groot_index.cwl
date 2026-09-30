@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groot index
+baseCommand:
+  - groot
+  - index
 label: groot_index
 doc: "Convert a set of clustered reference sequences to variation graphs and then
   index them\n\nTool homepage: https://github.com/will-rowe/groot"
@@ -86,10 +88,10 @@ inputs:
       prefix: --windowSize
   - id: index_dir_path
     type: string
-    doc: Output or path parameter `index_dir_path`
+    doc: string   directory for to write/read the GROOT index files
     inputBinding:
       position: 102
-      prefix: --index-dir
+      prefix: --indexDir
 outputs:
   - id: index_dir
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: itero assemble
+baseCommand:
+  - itero
+  - assemble
 label: itero_assemble
 doc: "Assemble cleaned/trimmed sequencing reads.\n\nTool homepage: https://github.com/faircloth-lab/itero"
 inputs:

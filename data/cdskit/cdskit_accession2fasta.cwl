@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit accession2fasta
+baseCommand:
+  - cdskit
+  - accession2fasta
 label: cdskit_accession2fasta
 doc: "Convert NCBI accession numbers to FASTA sequences.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

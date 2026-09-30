@@ -52,7 +52,8 @@ inputs:
     doc: list of files to confirm existance of bigDataUrl files
     inputBinding:
       position: 106
-      prefix: -gbdbList
+      prefix: -gbdbList=
+      separate: false
   - id: no_html_check
     type:
       - 'null'
@@ -68,7 +69,8 @@ inputs:
     doc: "Specify a file name to use other than trackDb.ra\n   for the ra files."
     inputBinding:
       position: 106
-      prefix: -raName
+      prefix: -raName=
+      separate: false
   - id: release
     type:
       - 'null'
@@ -76,7 +78,8 @@ inputs:
     doc: Include trackDb entries with this release tag only.
     inputBinding:
       position: 106
-      prefix: -release
+      prefix: -release=
+      separate: false
   - id: settings
     type:
       - 'null'

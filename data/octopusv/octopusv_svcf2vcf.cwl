@@ -14,7 +14,7 @@ inputs:
       prefix: --input-file
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: PATH  Output VCF file. [required]                  │
     inputBinding:
       position: 102
       prefix: --output-file

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtsv binning
+baseCommand:
+  - mtsv
+  - binning
 label: mtsv_binning
 doc: "Additional Snakemake commands may also be provided\n\nTool homepage: https://github.com/FofanovLab/MTSv"
 inputs:
@@ -95,7 +97,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory to place output.
     inputBinding:
       position: 101
@@ -104,18 +106,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `binning_outpath_path`
     inputBinding:
       position: 102
-      prefix: --binning-outpath
+      prefix: --binning_outpath
   - id: merge_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `merge_file_path`
     inputBinding:
       position: 103
-      prefix: --merge-file
+      prefix: --merge_file
 outputs:
   - id: binning_outpath
     type:

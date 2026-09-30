@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnasamba classify
+baseCommand:
+  - rnasamba
+  - classify
 label: rnasamba_classify
 doc: "Classify sequences from a input FASTA file.\n\nTool homepage: https://github.com/apcamargo/RNAsamba"
 inputs:
@@ -33,10 +35,9 @@ inputs:
       prefix: --verbose
   - id: protein_fasta_path
     type: string
-    doc: Output or path parameter `protein_fasta_path`
     inputBinding:
       position: 105
-      prefix: --protein-fasta
+      prefix: --protein_fasta
 outputs:
   - id: protein_fasta
     type:

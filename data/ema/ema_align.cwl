@@ -95,10 +95,10 @@ inputs:
       prefix: -t
   - id: output_sam_file_path
     type: string
-    doc: Output or path parameter `output_sam_file_path`
+    doc: ': output SAM file [stdout]'
     inputBinding:
       position: 103
-      prefix: --output-sam-file
+      prefix: -o
 outputs:
   - id: output_sam_file
     type:

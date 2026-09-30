@@ -9,17 +9,20 @@ inputs:
     doc: NCBI nodes.dmp file from taxdump
     inputBinding:
       position: 1
+      prefix: --nodes
   - id: names
     type: File
     doc: NCBI names.dmp file from taxdump
     inputBinding:
       position: 2
+      prefix: --names
   - id: taxids_to_busco_dataset_mapping
     type: File
     doc: BUSCO placement file from 
       https://busco-data.ezlab.org/v5/data/placement_files/
     inputBinding:
       position: 3
+      prefix: --taxids_to_busco_dataset_mapping
   - id: cache_dir
     type:
       - 'null'
@@ -128,14 +131,6 @@ inputs:
     inputBinding:
       position: 109
       prefix: --mapping_log
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 110
-      prefix: --output
   - id: raw_field_usage_path
     type:
       - 'null'
@@ -164,6 +159,13 @@ inputs:
     inputBinding:
       position: 114
       prefix: --unused_field_counts
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 115
+      prefix: --output
 outputs:
   - id: output
     type:

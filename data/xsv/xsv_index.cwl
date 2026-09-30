@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_index
+baseCommand:
+  - xsv
+  - index
 label: xsv_index
 doc: "Creates an index of the given CSV data, which can make other operations like
   slicing, splitting and gathering statistics much faster.\n\nTool homepage: https://github.com/BurntSushi/xsv"
@@ -20,10 +22,10 @@ inputs:
       prefix: --delimiter
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write index to <file> instead of <input>.idx.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

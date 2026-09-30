@@ -14,7 +14,6 @@ inputs:
       prefix: --worktable-path
   - id: plot_path_path
     type: string
-    doc: Output or path parameter `plot_path_path`
     inputBinding:
       position: 102
       prefix: --plot-path

@@ -36,7 +36,6 @@ inputs:
       prefix: --top-labels-num
   - id: output_table_path
     type: string
-    doc: Output or path parameter `output_table_path`
     inputBinding:
       position: 102
       prefix: --output-table

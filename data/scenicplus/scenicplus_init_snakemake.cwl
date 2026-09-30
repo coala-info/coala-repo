@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scenicplus init_snakemake
+baseCommand:
+  - scenicplus
+  - init_snakemake
 label: scenicplus_init_snakemake
 doc: "Initialize ScenicPlus project for Snakemake\n\nTool homepage: https://github.com/aertslab/scenicplus"
 inputs:
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory for the project initialization
     inputBinding:
       position: 101

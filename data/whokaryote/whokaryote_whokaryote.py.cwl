@@ -42,7 +42,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify the path to your preferred output directory. No / at the end.
     inputBinding:
       position: 101

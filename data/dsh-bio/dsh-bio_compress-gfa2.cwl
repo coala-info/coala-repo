@@ -14,7 +14,7 @@ inputs:
       prefix: --input-gfa2-path
   - id: output_gfa2_file_path
     type: string
-    doc: Output or path parameter `output_gfa2_file_path`
+    doc: output GFA 2.0 file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-gfa2-file

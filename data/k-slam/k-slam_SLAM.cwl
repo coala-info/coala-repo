@@ -125,7 +125,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: write to this file instead of stdout
     inputBinding:
       position: 104
       prefix: --output-file
@@ -133,7 +133,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sam_file_path`
+    doc: write SAM output to this file
     inputBinding:
       position: 105
       prefix: --sam-file

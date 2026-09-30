@@ -130,7 +130,7 @@ inputs:
       prefix: --trimRight2
   - id: outprefix_path
     type: string
-    doc: Output or path parameter `outprefix_path`
+    doc: output prefix
     inputBinding:
       position: 104
       prefix: --outprefix
@@ -138,10 +138,11 @@ outputs:
   - id: outprefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output prefix
     outputBinding:
-      glob: $(inputs.outprefix_path)
+      glob: $(inputs.outprefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

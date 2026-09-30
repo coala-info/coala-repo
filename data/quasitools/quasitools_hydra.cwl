@@ -180,10 +180,10 @@ inputs:
       prefix: --trim_reads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: '[required]'
     inputBinding:
       position: 104
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory

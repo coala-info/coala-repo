@@ -50,6 +50,7 @@ inputs:
       info header of this script, not the VCF file's header.
     inputBinding:
       position: 102
+      prefix: --header
   - id: min_depth_score
     type:
       - 'null'
@@ -76,6 +77,7 @@ inputs:
       the run info header of this script, not the VCF file's header.
     inputBinding:
       position: 102
+      prefix: --no-header
   - id: sample_groups
     type:
       - 'null'

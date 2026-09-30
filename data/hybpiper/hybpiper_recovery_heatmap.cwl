@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybpiper recovery_heatmap
+baseCommand:
+  - hybpiper
+  - recovery_heatmap
 label: hybpiper_recovery_heatmap
 doc: "Generates a heatmap of recovery based on sequence lengths.\n\nTool homepage:
   https://github.com/mossmatters/HybPiper"

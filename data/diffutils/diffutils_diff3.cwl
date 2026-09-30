@@ -48,10 +48,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --label
+          separate: true
     doc: use LABEL instead of file name (can be repeated up to three times)
     inputBinding:
       position: 104
-      prefix: --label
   - id: merge
     type:
       - 'null'

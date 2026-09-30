@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smalt_map
+baseCommand:
+  - smalt
+  - map
 label: smalt_map
 doc: "Map reads to an index\n\nTool homepage: https://github.com/roquie/smalte"
 inputs:
@@ -169,7 +171,7 @@ inputs:
   - id: temp_files_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write temporary files do specified directory.
     inputBinding:
       position: 104

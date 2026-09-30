@@ -41,6 +41,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --credits
+      itemSeparator: ','
   - id: email
     type:
       - 'null'
@@ -73,7 +74,6 @@ inputs:
       prefix: --test-code
   - id: output_fp_path
     type: string
-    doc: Output or path parameter `output_fp_path`
     inputBinding:
       position: 102
       prefix: --output-fp

@@ -90,18 +90,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_r1_path`
+    doc: ' Path to FastQ output file for R1.'
     inputBinding:
       position: 102
-      prefix: --out-r1
+      prefix: --out
   - id: out_r2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_r2_path`
+    doc: ' Path to FastQ output file for R2.'
     inputBinding:
       position: 103
-      prefix: --out-r2
+      prefix: --out2
 outputs:
   - id: out_r1
     type:

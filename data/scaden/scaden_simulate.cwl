@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scaden simulate
+baseCommand:
+  - scaden
+  - simulate
 label: scaden_simulate
 doc: "Create artificial bulk RNA-seq data from scRNA-seq dataset(s)\n\nTool homepage:
   https://github.com/KevinMenden/scaden"

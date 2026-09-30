@@ -87,7 +87,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Write output to FILE
     inputBinding:
       position: 103
       prefix: --output

@@ -110,6 +110,7 @@ inputs:
     doc: do not merge output files (only for extraction mode)
     inputBinding:
       position: 104
+      prefix: --no-merge
   - id: overwrite
     type:
       - 'null'
@@ -159,6 +160,7 @@ inputs:
     doc: skip PDB with with discontinuous residues (only batch compression)
     inputBinding:
       position: 104
+      prefix: --skip-discontinuous
   - id: threads
     type:
       - 'null'

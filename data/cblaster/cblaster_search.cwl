@@ -302,7 +302,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `binary_path`
+    doc: Generate a binary table.
     inputBinding:
       position: 102
       prefix: --binary
@@ -310,23 +310,22 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `blast_file_path`
     inputBinding:
       position: 103
-      prefix: --blast-file
+      prefix: --blast_file
   - id: ipg_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ipg_file_path`
+    doc: Save IPG table to file (only if --mode remote)
     inputBinding:
       position: 104
-      prefix: --ipg-file
+      prefix: --ipg_file
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Write results to file
     inputBinding:
       position: 105
       prefix: --output
@@ -334,7 +333,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_path`
+    doc: Generate a cblaster plot. If this argument is
     inputBinding:
       position: 106
       prefix: --plot
@@ -342,7 +341,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `recompute_path`
     inputBinding:
       position: 107
       prefix: --recompute

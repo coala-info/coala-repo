@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: skmer_reference
+baseCommand:
+  - skmer
+  - reference
 label: skmer_reference
 doc: "Process a library of reference genome-skims or assemblies\n\nTool homepage:
   https://github.com/shahab-sarmashghi/Skmer"

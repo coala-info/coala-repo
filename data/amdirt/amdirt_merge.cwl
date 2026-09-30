@@ -39,7 +39,7 @@ inputs:
       prefix: --table_type
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: 'path to sample output table file  [default:'
     inputBinding:
       position: 103
       prefix: --outdir

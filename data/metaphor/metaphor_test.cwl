@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaphor_test
+baseCommand:
+  - metaphor
+  - test
 label: metaphor_test
 doc: "Run Metaphor tests.\n\nTool homepage: https://github.com/vinisalazar/metaphor"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmer-db one2all
+baseCommand:
+  - kmer-db
+  - one2all
 label: kmer-db_one2all
 doc: "Counting common kmers between single sample and all the samples in the database\n\
   \nTool homepage: https://github.com/refresh-bio/kmer-db"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqnado config
+baseCommand:
+  - seqnado
+  - config
 label: seqnado_config
 doc: "Configure seqnado settings.\n\nTool homepage: https://alsmith151.github.io/SeqNado/"
 inputs:

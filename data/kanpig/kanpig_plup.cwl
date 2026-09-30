@@ -48,9 +48,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference file for CRAMs
     secondaryFiles:
       - .fai
-    doc: Reference file for CRAMs
     inputBinding:
       position: 101
       prefix: --reference
@@ -79,8 +79,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: 'Output plup (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102
       prefix: --output

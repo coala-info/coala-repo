@@ -17,6 +17,12 @@ inputs:
       to allow random access.
     inputBinding:
       position: 2
+  - id: imported_variants
+    type: string
+    doc: Output archive file with the semantic type VcfFrame[Imported] or 
+      VcfFrame[Consolidated].
+    inputBinding:
+      position: 3
   - id: assembly
     type:
       - 'null'
@@ -60,12 +66,12 @@ inputs:
       position: 103
       prefix: --samples
 outputs:
-  - id: imported_variants
+  - id: out_imported_variants
     type: File
     doc: Output archive file with the semantic type VcfFrame[Imported] or 
       VcfFrame[Consolidated].
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.imported_variants)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

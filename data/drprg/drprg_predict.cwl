@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: drprg predict
+baseCommand:
+  - drprg
+  - predict
 label: drprg_predict
 doc: "Predict drug resistance\n\nTool homepage: https://github.com/mbhall88/drprg"
 inputs:
@@ -122,7 +124,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to place output
     inputBinding:
       position: 101

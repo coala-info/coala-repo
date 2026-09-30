@@ -95,10 +95,10 @@ inputs:
       prefix: --verbose
   - id: index_path_path
     type: string
-    doc: Output or path parameter `index_path_path`
+    doc: Path to save the index table
     inputBinding:
       position: 102
-      prefix: --index-path
+      prefix: --index
 outputs:
   - id: index_path
     type: Directory

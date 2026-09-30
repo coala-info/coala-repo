@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hic2cool convert
+baseCommand:
+  - hic2cool
+  - convert
 label: hic2cool_convert
 doc: "convert a hic file to a cooler file\n\nTool homepage: https://github.com/4dn-dcic/hic2cool"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: hic input file path
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: cooler output file path
+    inputBinding:
+      position: 2
   - id: nproc
     type:
       - 'null'
@@ -46,11 +53,11 @@ inputs:
       position: 102
       prefix: --warnings
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: cooler output file path
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hic2cool:1.0.1--pyh7cba7a3_0

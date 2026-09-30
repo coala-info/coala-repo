@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar EgaDemoClient.jar
+baseCommand:
+  - java
+  - -jar
+  - EgaDemoClient.jar
 label: ega2
 doc: "EGA client for uploading and downloading data.\n\nTool homepage: https://ega-archive.org/download/downloader-quickguide-v2"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxonkit name2taxid
+baseCommand:
+  - taxonkit
+  - name2taxid
 label: taxonkit_name2taxid
 doc: "Convert taxon names to TaxIds\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:

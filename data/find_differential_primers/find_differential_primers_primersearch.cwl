@@ -27,10 +27,10 @@ inputs:
       prefix: -seqall
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: outfile    [*.primersearch] Whitehead primer3_core
     inputBinding:
       position: 102
-      prefix: --outfile
+      prefix: -outfile
 outputs:
   - id: outfile
     type:

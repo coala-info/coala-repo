@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wdltool graph
+baseCommand:
+  - wdltool
+  - graph
 label: wdltool_graph
 doc: "Generate a graphviz DOT representation of a WDL workflow.\n\nTool homepage:
   https://github.com/broadinstitute/wdltool"

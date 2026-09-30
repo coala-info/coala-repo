@@ -104,7 +104,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `anno_path`
+    doc: output annotation VCF/BCF file
     inputBinding:
       position: 103
       prefix: --anno
@@ -112,7 +112,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

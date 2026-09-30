@@ -15,7 +15,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory for results (default: current directory)'
     inputBinding:
       position: 101

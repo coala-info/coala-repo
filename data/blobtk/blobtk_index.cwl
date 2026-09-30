@@ -60,7 +60,7 @@ inputs:
       prefix: --window-size
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output schema file name
     inputBinding:
       position: 102
       prefix: --out

@@ -114,7 +114,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write output files to this directory.
     inputBinding:
       position: 101

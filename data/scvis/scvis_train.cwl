@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scvis train
+baseCommand:
+  - scvis
+  - train
 label: scvis_train
 doc: "Train a scVIS model.\n\nTool homepage: https://bitbucket.org/jerry00/scvis-dev/commits/all"
 inputs:
@@ -67,7 +69,7 @@ inputs:
       position: 101
       prefix: --verbose_interval
   - id: out_dir_path
-    type: string
+    type: string?
     doc: Path for output files
     inputBinding:
       position: 102

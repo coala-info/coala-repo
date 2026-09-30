@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_compute_features
+baseCommand:
+  - vt
+  - compute_features
 label: vt_compute_features
 doc: "Compute features for variants.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:
@@ -43,10 +45,10 @@ inputs:
       prefix: -s
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output VCF/VCF.GZ/BCF file [-]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

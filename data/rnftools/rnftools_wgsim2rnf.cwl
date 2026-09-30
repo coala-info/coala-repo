@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnftools wgsim2rnf
+baseCommand:
+  - rnftools
+  - wgsim2rnf
 label: rnftools_wgsim2rnf
 doc: "Convert WgSim FASTQ files to RNF-FASTQ.\n\nTool homepage: http://karel-brinda.github.io/rnftools"
 inputs:
@@ -43,7 +45,7 @@ inputs:
       prefix: --wgsim-fastq-2
   - id: rnf_fastq_path
     type: string
-    doc: Output or path parameter `rnf_fastq_path`
+    doc: Output FASTQ file (- for standard output).
     inputBinding:
       position: 102
       prefix: --rnf-fastq

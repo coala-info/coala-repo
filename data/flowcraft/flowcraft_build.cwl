@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: flowcraft build
+baseCommand:
+  - flowcraft
+  - build
 label: flowcraft_build
 doc: "Build a pipeline using flowcraft.\n\nTool homepage: https://github.com/assemblerflow/flowcraft"
 inputs:
@@ -97,7 +99,7 @@ inputs:
     doc: Provide a name for your pipeline.
     inputBinding:
       position: 101
-      prefix: --pipeline-name
+      prefix: -n
   - id: pipeline_only
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk constrain
+baseCommand:
+  - cctk
+  - constrain
 label: cctk_constrain
 doc: "Control run behaviour and plotting elements for tree analysis.\n\nTool homepage:
   https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
@@ -228,7 +230,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `colour_scheme_outfile_path`
     inputBinding:
       position: 102
       prefix: --colour-scheme-outfile
@@ -236,7 +237,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_plot_path`
     inputBinding:
       position: 103
       prefix: --out-plot
@@ -244,7 +244,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_arrays_path`
+    doc: file to store analyzed arrays and hypothetical ancestors
     inputBinding:
       position: 104
       prefix: --output-arrays

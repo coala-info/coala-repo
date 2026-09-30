@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm highlight
+baseCommand:
+  - groopm
+  - highlight
 label: groopm_highlight
 doc: "Highlight contigs in a groopm database.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predictosaurus build
+baseCommand:
+  - predictosaurus
+  - build
 label: predictosaurus_build
 doc: "Build a full variant graph out of VCF files and store it\n\nTool homepage: https://github.com/fxwiegand/predictosaurus"
 inputs:
@@ -46,7 +48,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

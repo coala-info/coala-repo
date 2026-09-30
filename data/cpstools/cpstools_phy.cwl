@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools phy
+baseCommand:
+  - cpstools
+  - phy
 label: cpstools_phy
 doc: "Phylogenetic analysis tools\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

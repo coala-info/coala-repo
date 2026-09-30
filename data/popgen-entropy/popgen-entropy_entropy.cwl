@@ -150,10 +150,10 @@ inputs:
       prefix: -t
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: format outfile with .hdf5 suffix [default = mcmcout.hdf5]
     inputBinding:
       position: 102
-      prefix: --outfile
+      prefix: -o
 outputs:
   - id: outfile
     type:

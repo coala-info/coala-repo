@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5_repack
+baseCommand:
+  - pod5
+  - repack
 label: pod5_repack
 doc: "Repack a pod5 files into a single output\n\nTool homepage: https://github.com/nanoporetech/pod5-file-format"
 inputs:
@@ -37,7 +39,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

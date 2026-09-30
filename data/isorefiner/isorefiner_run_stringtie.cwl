@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isorefiner run_stringtie
+baseCommand:
+  - isorefiner
+  - run_stringtie
 label: isorefiner_run_stringtie
 doc: "Run StringTie to assemble transcripts\n\nTool homepage: https://github.com/rkajitani/IsoRefiner"
 inputs:
@@ -16,6 +18,7 @@ inputs:
     doc: Reference genome annotation (GTF, mandatory)
     inputBinding:
       position: 2
+      prefix: --ref_gtf
   - id: genome
     type:
       - 'null'
@@ -50,10 +53,9 @@ inputs:
       prefix: --work_dir
   - id: out_gtf_path
     type: string
-    doc: Output or path parameter `out_gtf_path`
     inputBinding:
       position: 104
-      prefix: --out-gtf
+      prefix: --out_gtf
 outputs:
   - id: out_gtf
     type:

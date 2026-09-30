@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/get_homologues_get_homologues-est.pl
+baseCommand: get_homologues-est.pl
 label: get_homologues_get_homologues-est.pl
 doc: "This program uses BLASTN/HMMER to define clusters of 'orthologous' transcripts
   and pan/core-trancriptome sets. Different algorithm choices are available and search

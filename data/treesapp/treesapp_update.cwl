@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp_update
+baseCommand:
+  - treesapp
+  - update
 label: treesapp_update
 doc: "Update a reference package with assigned sequences.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:
@@ -151,7 +153,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to an output directory
     inputBinding:
       position: 103

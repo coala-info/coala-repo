@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pysradb pmc-to-identifiers
+baseCommand:
+  - pysradb
+  - pmc-to-identifiers
 label: pysradb_pmc-to-identifiers
 doc: "Convert PMC IDs to accession identifiers.\n\nTool homepage: https://github.com/saketkc/pysradb"
 inputs:
@@ -12,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: saveto_path
-    type: string
+    type: string?
     doc: Save metadata dataframe to file
     inputBinding:
       position: 101

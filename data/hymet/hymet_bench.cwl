@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hymet_bench
+baseCommand:
+  - hymet
+  - bench
 label: hymet_bench
 doc: "Run the HYMET benchmark pipeline.\n\nTool homepage: https://github.com/inesbmartins02/HYMET"
 inputs:

@@ -119,7 +119,7 @@ inputs:
       prefix: --view_url
   - id: file_path
     type: string
-    doc: Output or path parameter `file_path`
+    doc: (Optional) File to export the entry content
     inputBinding:
       position: 102
       prefix: --file

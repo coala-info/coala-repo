@@ -182,7 +182,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files (default, ".")
     inputBinding:
       position: 103

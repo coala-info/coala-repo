@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slow5tools split
+baseCommand:
+  - slow5tools
+  - split
 label: slow5tools_split
 doc: "Split a single a SLOW5/BLOW5 file into multiple separate files.\n\nTool homepage:
   https://github.com/hasindu2008/slow5tools"
@@ -80,7 +82,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output to directory
     inputBinding:
       position: 102

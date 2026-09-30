@@ -234,7 +234,7 @@ inputs:
       prefix: --use-conda
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Output directory  [default: hybracter_out]'
     inputBinding:
       position: 103
       prefix: --output

@@ -33,34 +33,22 @@ inputs:
       position: 102
       prefix: --svlen
   - id: output_new_bed_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_new_bed_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --output-new-bed
   - id: output_new_vcf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_new_vcf_path`
+    type: string
     inputBinding:
       position: 104
       prefix: --output-new-vcf
   - id: output_original_bed_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_original_bed_path`
+    type: string
     inputBinding:
       position: 105
       prefix: --output-original-bed
   - id: output_original_vcf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_original_vcf_path`
+    type: string
     inputBinding:
       position: 106
       prefix: --output-original-vcf

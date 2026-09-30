@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snp2cell contrast-scores
+baseCommand:
+  - snp2cell
+  - contrast-scores
 label: snp2cell_contrast-scores
 doc: "Add a new score that is a contrast of two scores, propagate it across the network
   and calculate statistics based on random permutations.\n\nTool homepage: https://github.com/Teichlab/snp2cell"

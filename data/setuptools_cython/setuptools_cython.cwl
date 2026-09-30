@@ -77,7 +77,8 @@ inputs:
     doc: Generate a main() function that embeds the Python interpreter.
     inputBinding:
       position: 102
-      prefix: --embed
+      prefix: --embed=
+      separate: false
   - id: embed_positions
     type:
       - 'null'
@@ -114,7 +115,7 @@ inputs:
   - id: gdb_outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify gdb debug information output directory. Implies --gdb.
     inputBinding:
       position: 102
@@ -213,7 +214,7 @@ inputs:
       prefix: --working
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Specify name of generated C file
     inputBinding:
       position: 103
       prefix: --output-file

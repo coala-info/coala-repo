@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jupyter_kernelspec
+baseCommand:
+  - jupyter
+  - kernelspec
 label: jupyter_kernelspec
 doc: "Manage Jupyter kernel specifications.\n\nTool homepage: https://github.com/jakevdp/PythonDataScienceHandbook"
 inputs:

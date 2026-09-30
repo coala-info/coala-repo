@@ -34,7 +34,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save the output counts and plots.
     inputBinding:
       position: 102

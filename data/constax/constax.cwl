@@ -199,7 +199,7 @@ inputs:
   - id: rdp_path
     type:
       - 'null'
-      - string
+      - File
     doc: Path to RDP classifier.jar file
     inputBinding:
       position: 101
@@ -255,7 +255,6 @@ inputs:
       prefix: --utax_path
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

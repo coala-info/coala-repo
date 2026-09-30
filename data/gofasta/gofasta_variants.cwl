@@ -82,7 +82,7 @@ inputs:
       prefix: --threshold
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Name of the file of variants to write (default "stdout")
     inputBinding:
       position: 102
       prefix: --outfile

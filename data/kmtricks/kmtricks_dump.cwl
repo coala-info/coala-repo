@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks dump
+baseCommand:
+  - kmtricks
+  - dump
 label: kmtricks_dump
 doc: "Dump kmtricks's files in human readable format.\n\nTool homepage: https://github.com/tlemane/kmtricks"
 inputs:
@@ -34,7 +36,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

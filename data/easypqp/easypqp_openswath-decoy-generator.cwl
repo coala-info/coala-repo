@@ -195,10 +195,10 @@ inputs:
       prefix: --switchKR
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: 'Output file to be converted to.  [default:'
     inputBinding:
       position: 102
-      prefix: --out-file
+      prefix: --out
 outputs:
   - id: out_file
     type:

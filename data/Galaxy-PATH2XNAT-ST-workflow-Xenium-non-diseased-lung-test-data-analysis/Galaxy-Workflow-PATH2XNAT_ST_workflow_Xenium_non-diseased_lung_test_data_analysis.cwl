@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: PATH2XNAT
-  ST workflow Xenium non-diseased lung test data analysis'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: PATH2XNAT ST workflow Xenium non-diseased lung test data analysis'
 inputs:
   Non_diseased_lung_minimal_RDS:
     format: data

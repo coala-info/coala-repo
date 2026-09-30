@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'Analysis of S-protein polymorphism. This workflow includes: obtaining coding sequences of S proteins from a diverse group of coronaviruses and generating amino acid alignments to assess conservation of the polymorphic location. More info can be found at https://covid19.galaxyproject.org/genomics/'
 inputs:
   0_Input Dataset:

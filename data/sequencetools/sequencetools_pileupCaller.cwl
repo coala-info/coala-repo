@@ -129,6 +129,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sampleNames
+      itemSeparator: ','
   - id: sample_pop_name
     type:
       - 'null'
@@ -208,23 +209,31 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `eigenstrat_out_path`
+    doc: " Set Eigenstrat as output format. Specify the filenames for the EigenStrat
+      SNP, IND and GENO file outputs: <FILE_PREFIX>.snp, <FILE_PREFIX>.ind and <FILE_PREFIX>.geno.
+      If not set, output will be FreqSum (Default). Note that freqSum format, described
+      at https://rarecoal-docs.readthedocs.io/en/latest/rarecoal-tools.html#vcf2freqsum,
+      is useful for testing your pipeline, since it's output to standard out"
     inputBinding:
       position: 102
-      prefix: --eigenstrat-out
+      prefix: --eigenstratOut
   - id: plink_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plink_out_path`
+    doc: " Set Plink as output format. Specify the filenames for the Plink BIM, FAM
+      and BED file outputs: <FILE_PREFIX>.bim, <FILE_PREFIX>.fam and <FILE_PREFIX>.bed.
+      If not set, output will be FreqSum (Default). Note that freqSum format, described
+      at https://rarecoal-docs.readthedocs.io/en/latest/rarecoal-tools.html#vcf2freqsum,
+      is useful for testing your pipeline, since it's output to standard out"
     inputBinding:
       position: 103
-      prefix: --plink-out
+      prefix: --plinkOut
   - id: vcf_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_path`
+    doc: output VCF format to stdout
     inputBinding:
       position: 104
       prefix: --vcf

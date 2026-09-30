@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy runall
+baseCommand:
+  - iobrpy
+  - runall
 label: iobrpy_runall
 doc: "Run iobrpy in different modes.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -25,7 +27,7 @@ inputs:
       position: 101
       prefix: --mode
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

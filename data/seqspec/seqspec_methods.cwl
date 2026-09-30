@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec methods
+baseCommand:
+  - seqspec
+  - methods
 label: seqspec_methods
 doc: "Convert seqspec file into methods section.\n\nTool homepage: https://github.com/sbooeshaghi/seqspec"
 inputs:
@@ -17,10 +19,10 @@ inputs:
       prefix: --modality
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

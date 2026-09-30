@@ -94,7 +94,6 @@ inputs:
       prefix: --quantlearn
   - id: outputdirectory_path
     type: string
-    doc: Output or path parameter `outputdirectory_path`
     inputBinding:
       position: 102
       prefix: --outputdirectory

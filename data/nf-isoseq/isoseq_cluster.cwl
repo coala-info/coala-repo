@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq cluster
+baseCommand:
+  - isoseq
+  - cluster
 label: isoseq_cluster
 doc: "Cluster FLNC reads and generate transcripts (FLNC to TRANSCRIPTS)\n\nTool homepage:
   https://github.com/PacificBiosciences/pbbioconda"

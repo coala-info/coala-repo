@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamkit_bamcleanheader.py
+baseCommand: bamcleanheader.py
 label: bamkit_bamcleanheader.py
 doc: "remove illegal and malformed fields from a BAM file's header\n\nTool homepage:
   https://github.com/hall-lab/bamkit"

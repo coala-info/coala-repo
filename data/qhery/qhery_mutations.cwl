@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qhery_mutations
+baseCommand:
+  - qhery
+  - mutations
 label: qhery_mutations
 doc: "Analyze mutations using the qhery tool.\n\nTool homepage: http://github.com/mjsull/qhery/"
 inputs:

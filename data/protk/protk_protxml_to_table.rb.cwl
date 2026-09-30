@@ -27,7 +27,7 @@ inputs:
       prefix: --invert-probabilities
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: An explicitly named output file.
     inputBinding:
       position: 103
       prefix: --output

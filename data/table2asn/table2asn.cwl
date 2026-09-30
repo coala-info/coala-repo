@@ -299,13 +299,15 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -l
+          separate: true
     doc: 'Add type of evidence used to assert linkage across assembly gaps. May be
       used multiple times. Must be one of the following: paired-ends, align-genus,
       align-xgenus, align-trnscpt, within-clone, clone-contig, map, strobe, unspecified,
       pcr, proximity-ligation'
     inputBinding:
       position: 101
-      prefix: -l
   - id: linkage_evidence_file
     type:
       - 'null'
@@ -595,30 +597,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --cleanup-log-file
-  - id: logfile_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `logfile_path`
-    inputBinding:
-      position: 103
-      prefix: --logfile
-  - id: logxml_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `logxml_path`
-    inputBinding:
-      position: 104
-      prefix: --logxml
-  - id: outdir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `outdir_path`
-    inputBinding:
-      position: 105
-      prefix: --outdir
   - id: output_file_path
     type:
       - 'null'
@@ -627,6 +605,27 @@ inputs:
     inputBinding:
       position: 106
       prefix: --output-file
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: -logfile
+  - id: logxml_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: -logxml
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 109
+      prefix: -outdir
 outputs:
   - id: outdir
     type:

@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grid_single
+baseCommand:
+  - grid
+  - single
 label: grid_single
 doc: "Processes single-end sequencing data or SAM alignment files.\n\nTool homepage:
   https://github.com/ohlab/GRiD"
 inputs:
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

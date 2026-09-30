@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd list
+baseCommand:
+  - ggd
+  - list
 label: ggd_list
 doc: "Get a list of ggd data packages installed in the current or specified conda
   prefix/environment.\n\nTool homepage: https://github.com/gogetdata/ggd-cli"

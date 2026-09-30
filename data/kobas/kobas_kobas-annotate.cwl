@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kobas_kobas-annotate
+baseCommand: kobas-annotate
 label: kobas_kobas-annotate
 doc: "Annotate input sequences with functional information.\n\nTool homepage: http://kobas.cbi.pku.edu.cn"
 inputs:
@@ -141,7 +141,6 @@ inputs:
       prefix: --species
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile

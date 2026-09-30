@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsearch_ann
+baseCommand:
+  - gsearch
+  - ann
 label: gsearch_ann
 doc: "Approximate Nearest Neighbor Embedding using UMAP-like algorithm\n\nTool homepage:
   https://github.com/jean-pierreBoth/gsearch"

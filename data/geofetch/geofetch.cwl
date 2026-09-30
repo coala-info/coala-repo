@@ -180,7 +180,7 @@ inputs:
   - id: metadata_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify an absolute folder location to store metadata. No subfolder 
       will be added. Overrides value of --metadata-root.
     inputBinding:
@@ -189,7 +189,7 @@ inputs:
   - id: metadata_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a parent folder location to store metadata. The project name 
       will be added as a subfolder
     inputBinding:

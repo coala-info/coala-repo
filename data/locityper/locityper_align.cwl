@@ -30,6 +30,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --backbone
+      itemSeparator: ','
   - id: gap_extend_penalty
     type:
       - 'null'
@@ -87,6 +88,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pairs
+      itemSeparator: ','
   - id: pairs_file
     type:
       - 'null'
@@ -106,7 +108,7 @@ inputs:
   - id: temp_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Prefix for temporary files (for multiple threads).
     inputBinding:
       position: 101
@@ -130,10 +132,10 @@ inputs:
       prefix: --thresh-div
   - id: output_paf_path
     type: string
-    doc: Output or path parameter `output_paf_path`
+    doc: Output PAF[.gz] file.
     inputBinding:
       position: 102
-      prefix: --output-paf
+      prefix: --output
 outputs:
   - id: output_paf
     type: File

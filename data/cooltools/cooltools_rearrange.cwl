@@ -12,6 +12,11 @@ inputs:
     doc: .cool file (or URI) with data to rearrange.
     inputBinding:
       position: 1
+  - id: out_path
+    type: string
+    doc: .cool file (or URI) to save the rearrange data.
+    inputBinding:
+      position: 2
   - id: assembly
     type:
       - 'null'
@@ -67,11 +72,11 @@ inputs:
       position: 102
       prefix: --view
 outputs:
-  - id: out_path
+  - id: out_out_path
     type: File
     doc: .cool file (or URI) to save the rearrange data.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: telescope resume
+baseCommand:
+  - telescope
+  - resume
 label: telescope_resume
 doc: "Resume a previous telescope run\n\nTool homepage: https://github.com/mlbendall/telescope"
 inputs:
@@ -60,7 +62,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 102

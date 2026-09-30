@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini_roh
+baseCommand:
+  - oncogemini
+  - roh
 label: oncogemini_roh
 doc: "Finds regions of homozygosity (ROH) in a database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
@@ -67,6 +69,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -s
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

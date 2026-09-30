@@ -83,7 +83,7 @@ inputs:
   - id: run_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Name of directory to be created where all workflow\nscripts and output will
       be written. Each analysis\nrequires a separate directory."
     inputBinding:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blobtools_map2cov
+baseCommand:
+  - blobtools
+  - map2cov
 label: blobtools_map2cov
 doc: "Map BAM/CAS files to a FASTA assembly to calculate coverage.\n\nTool homepage:
   https://blobtools.readme.io/docs/what-is-blobtools"

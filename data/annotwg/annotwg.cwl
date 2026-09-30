@@ -72,9 +72,9 @@ inputs:
       prefix: --output-format
   - id: reference
     type: File
+    doc: indexed fasta genome reference (.fai or .dict format)
     secondaryFiles:
       - .fai
-    doc: indexed fasta genome reference (.fai or .dict format)
     inputBinding:
       position: 101
       prefix: --reference
@@ -89,7 +89,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to annotWG temporary directory
     inputBinding:
       position: 101
@@ -110,7 +110,6 @@ inputs:
       prefix: --vcf
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

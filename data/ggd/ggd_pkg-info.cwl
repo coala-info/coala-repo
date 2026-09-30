@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd pkg-info
+baseCommand:
+  - ggd
+  - pkg-info
 label: ggd_pkg-info
 doc: "Get the information for a specific ggd data package installed in the current\n\
   conda environment\n\nTool homepage: https://github.com/gogetdata/ggd-cli"

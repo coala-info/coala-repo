@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: riboraptor export-bed-fasta
+baseCommand:
+  - riboraptor
+  - export-bed-fasta
 label: riboraptor_export-bed-fasta
 doc: "Export gene level fasta from specified bed regions\n\nTool homepage: https://github.com/saketkc/riboraptor"
 inputs:
@@ -48,10 +50,10 @@ inputs:
       prefix: --region_bed
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Path to write output
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --prefix
 outputs:
   - id: output_prefix
     type:

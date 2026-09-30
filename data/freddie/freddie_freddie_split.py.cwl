@@ -14,6 +14,7 @@ inputs:
       gzip
     inputBinding:
       position: 1
+      prefix: --reads
   - id: bam
     type: File
     doc: Path to sorted and indexed BAM file of reads. Assumes splice aligner is
@@ -41,7 +42,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Path to output directory. Default: freddie_split/'
     inputBinding:
       position: 102

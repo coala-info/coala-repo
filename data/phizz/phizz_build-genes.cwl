@@ -18,6 +18,7 @@ inputs:
     doc: Database name
     inputBinding:
       position: 102
+      prefix: --db_name
   - id: path
     type:
       - 'null'
@@ -25,6 +26,7 @@ inputs:
     doc: Path to store the database
     inputBinding:
       position: 102
+      prefix: --path
 outputs:
   - id: stdout
     type: stdout

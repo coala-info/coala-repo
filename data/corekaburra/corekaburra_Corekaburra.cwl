@@ -78,10 +78,11 @@ inputs:
       prefix: --quiet
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: 'path/to/output, --output path/to/output Path to where output files will
+      be placed [default: current folder]'
     inputBinding:
       position: 104
-      prefix: --output-path
+      prefix: -o
 outputs:
   - id: output_path
     type:

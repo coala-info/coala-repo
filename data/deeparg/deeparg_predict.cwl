@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deeparg predict
+baseCommand:
+  - deeparg
+  - predict
 label: deeparg_predict
 doc: "Predicts antimicrobial resistance genes from sequence data.\n\nTool homepage:
   https://bitbucket.org/gusphdproj/deeparg-ss/"
@@ -87,7 +89,6 @@ inputs:
       prefix: --type
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbinner refine
+baseCommand:
+  - deepbinner
+  - refine
 label: deepbinner_refine
 doc: "Refine the training set\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:

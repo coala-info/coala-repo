@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophyle_classify
+baseCommand:
+  - prophyle
+  - classify
 label: prophyle_classify
 doc: "Classify reads based on a prophyle index.\n\nTool homepage: https://github.com/karel-brinda/prophyle"
 inputs:

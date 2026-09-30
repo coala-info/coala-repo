@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini x_linked_recessive
+baseCommand:
+  - gemini
+  - x_linked_recessive
 label: gemini_x_linked_recessive
 doc: "Find X-linked recessive variants\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

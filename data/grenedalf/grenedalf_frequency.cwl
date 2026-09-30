@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grenedalf frequency
+baseCommand:
+  - grenedalf
+  - frequency
 label: grenedalf_frequency
 doc: "Create a table with per-sample and/or total base counts and/or frequencies at
   positions in the genome.\n\nTool homepage: https://github.com/lczech/grenedalf"
@@ -553,7 +555,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write files to
     inputBinding:
       position: 101

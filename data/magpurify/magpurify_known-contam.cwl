@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: magpurify known-contam
+baseCommand:
+  - magpurify
+  - known-contam
 label: magpurify_known-contam
 doc: "Find contigs that match a database of known contaminants.\n\nTool homepage:
   https://github.com/snayfach/MAGpurify"
@@ -10,6 +12,11 @@ inputs:
     doc: Path to input genome in FASTA format
     inputBinding:
       position: 1
+  - id: out
+    type: string
+    doc: Output directory to store results and intermediate files
+    inputBinding:
+      position: 2
   - id: db
     type:
       - 'null'
@@ -52,11 +59,11 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
-  - id: out
+  - id: out_out
     type: Directory
     doc: Output directory to store results and intermediate files
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/magpurify:2.1.2--pyhdfd78af_2

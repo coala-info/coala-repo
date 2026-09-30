@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini actionable_mutations
+baseCommand:
+  - gemini
+  - actionable_mutations
 label: gemini_actionable_mutations
 doc: "Query the database for actionable mutations.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

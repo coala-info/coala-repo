@@ -72,11 +72,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exc
+          separate: true
     doc: 'name pattern to exclude as motif; may be repeated; default: all motifs are
       used'
     inputBinding:
       position: 103
-      prefix: --exc
   - id: flip
     type:
       - 'null'
@@ -91,11 +93,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --inc
+          separate: true
     doc: 'name pattern to select as motif; may be repeated; default: all motifs are
       used'
     inputBinding:
       position: 103
-      prefix: --inc
   - id: local
     type:
       - 'null'

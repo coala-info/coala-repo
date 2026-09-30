@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kfilt filter
+baseCommand:
+  - kfilt
+  - filter
 label: kfilt_filter
 doc: "Filter FASTA/FASTQ reads using hybrid index with Bloom filter quick rejection.\n\
   \nTool homepage: https://github.com/davidebolo1993/kfilt"
@@ -103,7 +105,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdbtk ani_rep
+baseCommand:
+  - gtdbtk
+  - ani_rep
 label: gtdbtk_ani_rep
 doc: "Calculate ANI scores between genomes and assign them to species clusters.\n\n\
   Tool homepage: http://pypi.python.org/pypi/gtdbtk/"
@@ -61,7 +63,7 @@ inputs:
   - id: skani_sketch_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to store skani sketch db for reference genomes to reuse 
       across runs.If not provided, a temporary directory will be used. If 
       provided for the first time, the sketch db will be created in this 
@@ -72,7 +74,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify alternative directory for temporary files
     inputBinding:
       position: 101

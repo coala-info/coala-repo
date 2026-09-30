@@ -124,14 +124,14 @@ inputs:
       position: 101
       prefix: -v
   - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    type: string?
+    doc: '[REQUIRED] Directory to output results.'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
-    type: Directory
+    type: Directory?
     doc: Directory to output results.
     outputBinding:
       glob: $(inputs.output_dir_path)

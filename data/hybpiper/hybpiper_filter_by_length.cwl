@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybpiper filter_by_length
+baseCommand:
+  - hybpiper
+  - filter_by_length
 label: hybpiper_filter_by_length
 doc: "Filters sequences based on length criteria.\n\nTool homepage: https://github.com/mossmatters/HybPiper"
 inputs:
@@ -74,10 +76,9 @@ inputs:
       prefix: --sequence_dir
   - id: filtered_dir_path
     type: string
-    doc: Output or path parameter `filtered_dir_path`
     inputBinding:
       position: 103
-      prefix: --filtered-dir
+      prefix: --filtered_dir
 outputs:
   - id: filtered_dir
     type:

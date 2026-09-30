@@ -15,7 +15,7 @@ inputs:
   - id: annot
     type:
       - 'null'
-      - string
+      - File
     doc: Path to annotation file in gff3 format. If included, shows amino acid 
       mutations.
     inputBinding:
@@ -24,7 +24,7 @@ inputs:
   - id: barcodes
     type:
       - 'null'
-      - string
+      - File
     doc: Path to custom barcode file
     inputBinding:
       position: 102

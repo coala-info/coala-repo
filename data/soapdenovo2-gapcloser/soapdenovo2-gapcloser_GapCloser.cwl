@@ -5,13 +5,13 @@ label: soapdenovo2-gapcloser_GapCloser
 doc: GapCloser is a tool for closing gaps in assembled sequences.
 inputs:
   - id: input_library_info_file
-    type: string
+    type: File
     doc: input library info file name
     inputBinding:
       position: 101
       prefix: -b
   - id: input_scaffold_file
-    type: string
+    type: File
     doc: input scaffold file name
     inputBinding:
       position: 101

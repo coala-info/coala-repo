@@ -57,7 +57,6 @@ inputs:
       prefix: --quiet
   - id: histogram_path
     type: string
-    doc: Output or path parameter `histogram_path`
     inputBinding:
       position: 102
       prefix: --histogram

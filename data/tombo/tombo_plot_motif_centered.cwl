@@ -61,9 +61,9 @@ inputs:
       prefix: --fast5-basedirs
   - id: genome_fasta
     type: File
+    doc: FASTA file used to re-squiggle. For faster sequence access.
     secondaryFiles:
       - .fai
-    doc: FASTA file used to re-squiggle. For faster sequence access.
     inputBinding:
       position: 101
       prefix: --genome-fasta
@@ -141,7 +141,6 @@ inputs:
       prefix: --tombo-model-filename
   - id: pdf_filename_path
     type: string
-    doc: Output or path parameter `pdf_filename_path`
     inputBinding:
       position: 102
       prefix: --pdf-filename

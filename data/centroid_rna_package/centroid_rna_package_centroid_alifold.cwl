@@ -154,7 +154,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: specify filename to output predicted secondary
     inputBinding:
       position: 104
       prefix: --output
@@ -162,7 +162,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `posteriors_output_path`
     inputBinding:
       position: 105
       prefix: --posteriors-output

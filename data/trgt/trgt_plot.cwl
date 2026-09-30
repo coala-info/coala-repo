@@ -105,7 +105,6 @@ inputs:
       prefix: --verbose
   - id: image_path
     type: string
-    doc: Output or path parameter `image_path`
     inputBinding:
       position: 102
       prefix: --image

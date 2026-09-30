@@ -46,9 +46,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: FASTA file used to re-squiggle. For faster sequence access.
     secondaryFiles:
       - .fai
-    doc: FASTA file used to re-squiggle. For faster sequence access.
     inputBinding:
       position: 101
       prefix: --genome-fasta
@@ -111,7 +111,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pdf_filename_path`
     inputBinding:
       position: 102
       prefix: --pdf-filename
@@ -119,7 +118,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `r_data_filename_path`
     inputBinding:
       position: 103
       prefix: --r-data-filename

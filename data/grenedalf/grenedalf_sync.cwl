@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grenedalf sync
+baseCommand:
+  - grenedalf
+  - sync
 label: grenedalf_sync
 doc: "Create a sync file that lists per-sample base counts at each position in the
   genome.\n\nTool homepage: https://github.com/lczech/grenedalf"
@@ -747,7 +749,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write files to
     inputBinding:
       position: 101

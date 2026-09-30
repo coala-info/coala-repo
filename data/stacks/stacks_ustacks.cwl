@@ -13,6 +13,7 @@ inputs:
       homozygote, either 0.1, 0.05 (default), 0.01, or 0.001.
     inputBinding:
       position: 101
+      prefix: --alpha
   - id: bc_err_freq
     type:
       - 'null'
@@ -20,6 +21,7 @@ inputs:
     doc: specify the barcode error frequency, between 0 and 1.0.
     inputBinding:
       position: 101
+      prefix: --bc-err-freq
   - id: bound_high
     type:
       - 'null'
@@ -27,6 +29,7 @@ inputs:
     doc: upper bound for epsilon, the error rate, between 0 and 1.0
     inputBinding:
       position: 101
+      prefix: --bound-high
   - id: bound_low
     type:
       - 'null'
@@ -34,6 +37,7 @@ inputs:
     doc: lower bound for epsilon, the error rate, between 0 and 1.0
     inputBinding:
       position: 101
+      prefix: --bound-low
   - id: deleverage
     type:
       - 'null'
@@ -41,6 +45,7 @@ inputs:
     doc: enable the Deleveraging algorithm, used for resolving over merged tags.
     inputBinding:
       position: 101
+      prefix: --deleverage
   - id: disable_gapped
     type:
       - 'null'
@@ -49,6 +54,7 @@ inputs:
       enabled).'
     inputBinding:
       position: 101
+      prefix: --disable-gapped
   - id: disable_haplotype_calling
     type:
       - 'null'
@@ -65,6 +71,7 @@ inputs:
       ustacks perfers raw input reads of uniform length).'
     inputBinding:
       position: 101
+      prefix: --force-diff-len
   - id: high_cov_thres
     type:
       - 'null'
@@ -96,6 +103,7 @@ inputs:
       calculated by default).
     inputBinding:
       position: 101
+      prefix: --k-len
   - id: keep_high_cov
     type:
       - 'null'
@@ -104,6 +112,7 @@ inputs:
       errors.
     inputBinding:
       position: 101
+      prefix: --keep-high-cov
   - id: max_dist
     type:
       - 'null'
@@ -119,6 +128,7 @@ inputs:
     doc: number of gaps allowed between stacks before merging
     inputBinding:
       position: 101
+      prefix: --max-gaps
   - id: max_locus_stacks
     type:
       - 'null'
@@ -126,6 +136,7 @@ inputs:
     doc: maximum number of stacks at a single de novo locus
     inputBinding:
       position: 101
+      prefix: --max-locus-stacks
   - id: max_secondary_align_dist
     type:
       - 'null'
@@ -141,6 +152,7 @@ inputs:
     doc: minimum length of aligned sequence in a gapped alignment
     inputBinding:
       position: 101
+      prefix: --min-aln-len
   - id: min_reads
     type:
       - 'null'
@@ -156,6 +168,7 @@ inputs:
     doc: either 'snp' (default), 'bounded', or 'fixed'
     inputBinding:
       position: 101
+      prefix: --model-type
   - id: num_threads
     type:
       - 'null'
@@ -182,7 +195,6 @@ inputs:
       prefix: --name
   - id: out_path_path
     type: string
-    doc: Output or path parameter `out_path_path`
     inputBinding:
       position: 102
       prefix: --out-path

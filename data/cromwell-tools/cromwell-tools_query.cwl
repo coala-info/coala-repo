@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools query
+baseCommand:
+  - cromwell-tools
+  - query
 label: cromwell-tools_query
 doc: "Query for workflows.\n\nTool homepage: http://github.com/broadinstitute/cromwell-tools"
 inputs:

@@ -198,10 +198,10 @@ inputs:
       prefix: --taxidlist
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output file (stdout)
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --out
 outputs:
   - id: output
     type:

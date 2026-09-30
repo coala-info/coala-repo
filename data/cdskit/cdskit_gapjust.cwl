@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_gapjust
+baseCommand:
+  - cdskit
+  - gapjust
 label: cdskit_gapjust
 doc: "Adjusts gap lengths in sequences.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:
@@ -79,7 +81,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outgff_path`
+    doc: 'default=out.gff: Output gff file.'
     inputBinding:
       position: 103
       prefix: --outgff

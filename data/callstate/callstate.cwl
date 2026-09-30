@@ -90,22 +90,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
-  - id: base_depth_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `base_depth_output_path`
-    inputBinding:
-      position: 104
-      prefix: --base-depth-output
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: The output BED file
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: --output
+  - id: base_depth_output_path
+    type:
+      - 'null'
+      - string
+    doc: If a file name is given, per-base depth will be written to this file
+    inputBinding:
+      position: 106
+      prefix: --base-depth-output
 outputs:
   - id: output_file
     type:

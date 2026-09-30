@@ -124,7 +124,7 @@ inputs:
       position: 102
       prefix: --splice
   - id: outfile_path
-    type: string
+    type: string?
     doc: Output file name
     inputBinding:
       position: 103

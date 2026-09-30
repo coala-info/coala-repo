@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metawrap quant_bins
+baseCommand:
+  - metawrap
+  - quant_bins
 label: metawrap_quant_bins
 doc: "Quantify abundance of bins in metagenomic datasets\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:

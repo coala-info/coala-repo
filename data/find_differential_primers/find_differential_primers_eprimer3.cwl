@@ -33,6 +33,7 @@ inputs:
       PRIMERS. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -dnaconc
   - id: excludedregion
     type:
       - 'null'
@@ -46,6 +47,7 @@ inputs:
       primers in the 7 bases starting at 401 and the 3 bases at 68.
     inputBinding:
       position: 102
+      prefix: -excludedregion
   - id: explainflag
     type:
       - 'null'
@@ -56,6 +58,7 @@ inputs:
       examined, and statistics on the number discarded for various reasons.
     inputBinding:
       position: 102
+      prefix: -explainflag
   - id: fileflag
     type:
       - 'null'
@@ -69,6 +72,7 @@ inputs:
       which lists all acceptable internal oligos.
     inputBinding:
       position: 102
+      prefix: -fileflag
   - id: firstbaseindex
     type:
       - 'null'
@@ -81,6 +85,7 @@ inputs:
       primer file flag is set.) (Any integer value)
     inputBinding:
       position: 102
+      prefix: -firstbaseindex
   - id: forwardinput
     type:
       - 'null'
@@ -90,6 +95,7 @@ inputs:
       SEQUENCE. (Any string)
     inputBinding:
       position: 102
+      prefix: -forwardinput
   - id: gcclamp
     type:
       - 'null'
@@ -99,6 +105,7 @@ inputs:
       internal oligo if one is requested.) (Integer 0 or more)
     inputBinding:
       position: 102
+      prefix: -gcclamp
   - id: hybridprobe
     type:
       - 'null'
@@ -107,6 +114,7 @@ inputs:
       (hyb probe) to detect the PCR product after amplification.
     inputBinding:
       position: 102
+      prefix: -hybridprobe
   - id: includedregion
     type:
       - 'null'
@@ -118,6 +126,7 @@ inputs:
       consider, and (end) is the last in the primer-picking region.
     inputBinding:
       position: 102
+      prefix: -includedregion
   - id: maxdifftm
     type:
       - 'null'
@@ -126,6 +135,7 @@ inputs:
       temperatures of the forward and reverse primers. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -maxdifftm
   - id: maxendstability
     type:
       - 'null'
@@ -142,6 +152,7 @@ inputs:
       Press, Totowa NJ). (Number up to 1000.000)"
     inputBinding:
       position: 102
+      prefix: -maxendstability
   - id: maxgc
     type:
       - 'null'
@@ -150,6 +161,7 @@ inputs:
       Primer. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -maxgc
   - id: maxmispriming
     type:
       - 'null'
@@ -158,6 +170,7 @@ inputs:
       MISPRIMING-LIBRARY. (Number up to 9999.990)
     inputBinding:
       position: 102
+      prefix: -maxmispriming
   - id: maxpolyx
     type:
       - 'null'
@@ -166,6 +179,7 @@ inputs:
       for example AAAAAA. (Integer 0 or more)
     inputBinding:
       position: 102
+      prefix: -maxpolyx
   - id: maxsize
     type:
       - 'null'
@@ -176,6 +190,7 @@ inputs:
       to 35)
     inputBinding:
       position: 102
+      prefix: -maxsize
   - id: maxtm
     type:
       - 'null'
@@ -184,6 +199,7 @@ inputs:
       (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -maxtm
   - id: mingc
     type:
       - 'null'
@@ -192,6 +208,7 @@ inputs:
       value)
     inputBinding:
       position: 102
+      prefix: -mingc
   - id: minsize
     type:
       - 'null'
@@ -200,6 +217,7 @@ inputs:
       than or equal to MAX-SIZE. (Integer 1 or more)
     inputBinding:
       position: 102
+      prefix: -minsize
   - id: mintm
     type:
       - 'null'
@@ -208,6 +226,7 @@ inputs:
       (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -mintm
   - id: mishyblibraryfile
     type:
       - 'null'
@@ -237,6 +256,7 @@ inputs:
       that no library should be used.
     inputBinding:
       position: 102
+      prefix: -mishyblibraryfile
   - id: mispriminglibraryfile
     type:
       - 'null'
@@ -266,6 +286,7 @@ inputs:
       value for this parameter indicates that no repeat library should be used.
     inputBinding:
       position: 102
+      prefix: -mispriminglibraryfile
   - id: numnsaccepted
     type:
       - 'null'
@@ -274,6 +295,7 @@ inputs:
       or more)
     inputBinding:
       position: 102
+      prefix: -numnsaccepted
   - id: numreturn
     type:
       - 'null'
@@ -284,6 +306,7 @@ inputs:
       parameter to a large value will increase running time. (Integer 0 or more)"
     inputBinding:
       position: 102
+      prefix: -numreturn
   - id: oanyself
     type:
       - 'null'
@@ -300,6 +323,7 @@ inputs:
       local alignment between two oligos. (Number up to 9999.990)
     inputBinding:
       position: 102
+      prefix: -oanyself
   - id: odnaconc
     type:
       - 'null'
@@ -308,6 +332,7 @@ inputs:
       hybridization. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -odnaconc
   - id: oendself
     type:
       - 'null'
@@ -325,6 +350,7 @@ inputs:
       set at least as high as INTERNAL-OLIGO-SELF-ANY. (Number up to 9999.990)
     inputBinding:
       position: 102
+      prefix: -oendself
   - id: oexcludedregion
     type:
       - 'null'
@@ -336,6 +362,7 @@ inputs:
       for internal oligos.
     inputBinding:
       position: 102
+      prefix: -oexcludedregion
   - id: ogcmax
     type:
       - 'null'
@@ -344,6 +371,7 @@ inputs:
       generated by Primer. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -ogcmax
   - id: ogcmin
     type:
       - 'null'
@@ -352,6 +380,7 @@ inputs:
       numeric value)
     inputBinding:
       position: 102
+      prefix: -ogcmin
   - id: ogcopt
     type:
       - 'null'
@@ -359,6 +388,7 @@ inputs:
     doc: Internal oligo optimum GC percent. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -ogcopt
   - id: ogcpercent
     type:
       - 'null'
@@ -366,6 +396,7 @@ inputs:
     doc: Primer optimum GC percent. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -ogcpercent
   - id: oligoinput
     type:
       - 'null'
@@ -374,6 +405,7 @@ inputs:
       forward and reverse primers. Must be a substring of SEQUENCE. (Any string)
     inputBinding:
       position: 102
+      prefix: -oligoinput
   - id: omaxsize
     type:
       - 'null'
@@ -384,6 +416,7 @@ inputs:
       to 35)
     inputBinding:
       position: 102
+      prefix: -omaxsize
   - id: ominsize
     type:
       - 'null'
@@ -392,6 +425,7 @@ inputs:
       and less than or equal to INTERNAL-OLIGO-MAX-SIZE. (Integer 0 or more)
     inputBinding:
       position: 102
+      prefix: -ominsize
   - id: omishybmax
     type:
       - 'null'
@@ -401,6 +435,7 @@ inputs:
       INTERNAL-OLIGO-MISHYB-LIBRARY. (Number up to 9999.990)
     inputBinding:
       position: 102
+      prefix: -omishybmax
   - id: opolyxmax
     type:
       - 'null'
@@ -409,6 +444,7 @@ inputs:
       repeat, for example AAAAAA. (Integer 0 or more)
     inputBinding:
       position: 102
+      prefix: -opolyxmax
   - id: optsize
     type:
       - 'null'
@@ -417,6 +453,7 @@ inputs:
       pick primers close to this length. (Integer 0 or more)
     inputBinding:
       position: 102
+      prefix: -optsize
   - id: opttm
     type:
       - 'null'
@@ -430,6 +467,7 @@ inputs:
       background discussion. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -opttm
   - id: osaltconc
     type:
       - 'null'
@@ -439,6 +477,7 @@ inputs:
       melting temperatures. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -osaltconc
   - id: osizeopt
     type:
       - 'null'
@@ -447,6 +486,7 @@ inputs:
       to pick primers close to this length. (Integer 0 or more)
     inputBinding:
       position: 102
+      prefix: -osizeopt
   - id: otmmax
     type:
       - 'null'
@@ -455,6 +495,7 @@ inputs:
       (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -otmmax
   - id: otmmin
     type:
       - 'null'
@@ -463,6 +504,7 @@ inputs:
       (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -otmmin
   - id: otmopt
     type:
       - 'null'
@@ -476,6 +518,7 @@ inputs:
       background discussion. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -otmopt
   - id: pairmaxmispriming
     type:
       - 'null'
@@ -485,6 +528,7 @@ inputs:
       MISPRIMING-LIBRARY. (Number up to 9999.990)
     inputBinding:
       position: 102
+      prefix: -pairmaxmispriming
   - id: pickanyway
     type:
       - 'null'
@@ -493,6 +537,7 @@ inputs:
       INTERNAL-OLIGO-INPUT violates specific constraints.
     inputBinding:
       position: 102
+      prefix: -pickanyway
   - id: prange
     type:
       - 'null'
@@ -511,6 +556,7 @@ inputs:
       primers in a subsequent range.
     inputBinding:
       position: 102
+      prefix: -prange
   - id: primer
     type:
       - 'null'
@@ -526,6 +572,7 @@ inputs:
       optimum product size. (Integer 0 or more)
     inputBinding:
       position: 102
+      prefix: -psizeopt
   - id: ptmmax
     type:
       - 'null'
@@ -549,6 +596,7 @@ inputs:
       not give you the Tm under hybridization conditions. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -ptmmax
   - id: ptmmin
     type:
       - 'null'
@@ -558,6 +606,7 @@ inputs:
       details. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -ptmmin
   - id: ptmopt
     type:
       - 'null'
@@ -566,6 +615,7 @@ inputs:
       there is no optimum temperature. (Any numeric value)
     inputBinding:
       position: 102
+      prefix: -ptmopt
   - id: reverseinput
     type:
       - 'null'
@@ -575,6 +625,7 @@ inputs:
       reverse strand of SEQUENCE. (Any string)
     inputBinding:
       position: 102
+      prefix: -reverseinput
   - id: saltconc
     type:
       - 'null'
@@ -584,6 +635,7 @@ inputs:
       value)
     inputBinding:
       position: 102
+      prefix: -saltconc
   - id: selfany
     type:
       - 'null'
@@ -603,6 +655,7 @@ inputs:
       (Number from 0.000 to 9999.990)
     inputBinding:
       position: 102
+      prefix: -selfany
   - id: selfend
     type:
       - 'null'
@@ -627,6 +680,7 @@ inputs:
       0.000 or more)
     inputBinding:
       position: 102
+      prefix: -selfend
   - id: targetregion
     type:
       - 'null'
@@ -639,6 +693,7 @@ inputs:
       requires primers to surround the 2 bases at positions 50 and 51.
     inputBinding:
       position: 102
+      prefix: -targetregion
   - id: task
     type:
       - 'null'
@@ -649,12 +704,13 @@ inputs:
       reverse primer only); 4 (No primers needed))"
     inputBinding:
       position: 102
+      prefix: -task
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: outfile    [*.eprimer3] Whitehead primer3_core program
     inputBinding:
       position: 103
-      prefix: --outfile
+      prefix: -outfile
 outputs:
   - id: outfile
     type:

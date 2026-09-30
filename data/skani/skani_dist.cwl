@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: skani dist
+baseCommand:
+  - skani
+  - dist
 label: skani_dist
 doc: "Compute ANI for queries against references fasta files or pre-computed sketch
   files.\n\nTool homepage: https://github.com/bluenote-1577/skani"
@@ -257,10 +259,10 @@ inputs:
       prefix: --ri
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output file name; rewrites file by default [default: output'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

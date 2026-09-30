@@ -78,7 +78,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory to write individual fastq files to.
     inputBinding:
       position: 101

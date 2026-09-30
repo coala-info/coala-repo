@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srf-n-trf motifs
+baseCommand:
+  - srf-n-trf
+  - motifs
 label: srf-n-trf_motifs
 doc: "Fasta file of srf detected motifs\n\nTool homepage: https://github.com/koisland/srf-n-trf"
 inputs:
@@ -46,8 +48,9 @@ inputs:
       position: 101
       prefix: --sizes
   - id: outfile_path
-    type: string
-    doc: Output or path parameter `outfile_path`
+    type: string?
+    doc: Output fasta file filtered to only motifs composed of monomers of given
+      size
     inputBinding:
       position: 102
       prefix: --outfile

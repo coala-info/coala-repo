@@ -15,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --attributes
+      itemSeparator: ','
   - id: config
     type:
       - 'null'
@@ -64,8 +65,7 @@ inputs:
       position: 101
       prefix: --thresholds
   - id: outdir_path
-    type: string
-    doc: Output or path parameter `outdir_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --outdir

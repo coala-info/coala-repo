@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deacon index
+baseCommand:
+  - deacon
+  - index
 label: deacon_index
 doc: "Build, inspect, compose and fetch minimizer indexes\n\nTool homepage: https://github.com/bede/deacon"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg build-matrix
+baseCommand:
+  - hicberg
+  - build-matrix
 label: hicberg_build-matrix
 doc: "Create matrix (.cool) from pairs files.\n\nTool homepage: https://github.com/sebgra/hicberg"
 inputs:
@@ -23,10 +25,10 @@ inputs:
       prefix: --recover
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder to save results.
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

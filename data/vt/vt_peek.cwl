@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_peek
+baseCommand:
+  - vt
+  - peek
 label: vt_peek
 doc: "Summarizes the variants in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:
@@ -36,7 +38,7 @@ inputs:
   - id: output_latex_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output latex directory
     inputBinding:
       position: 102

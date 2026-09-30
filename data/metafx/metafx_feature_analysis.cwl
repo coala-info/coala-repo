@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx feature_analysis
+baseCommand:
+  - metafx
+  - feature_analysis
 label: metafx_feature_analysis
 doc: "MetaFX feature_analysis module – pipeline to build de Bruijn graphs for samples
   with selected feature and visualize them in BandageNG (https://github.com/ctlab/BandageNG)\n\

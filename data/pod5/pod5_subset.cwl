@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5 subset
+baseCommand:
+  - pod5
+  - subset
 label: pod5_subset
 doc: "Given one or more pod5 input files, take subsets of reads into one or more pod5
   output files by a user-supplied mapping.\n\nTool homepage: https://github.com/nanoporetech/pod5-file-format"
@@ -65,7 +67,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Destination directory to write outputs
     inputBinding:
       position: 102

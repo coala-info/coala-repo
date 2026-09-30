@@ -455,7 +455,7 @@ inputs:
       position: 101
       prefix: --truncation-threshold
   - id: out_path
-    type: string
+    type: string?
     doc: Output directory
     inputBinding:
       position: 102

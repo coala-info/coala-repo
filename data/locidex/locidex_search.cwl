@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locidex_search
+baseCommand:
+  - locidex
+  - search
 label: locidex_search
 doc: "Query set of Loci/Genes against a database to produce a sequence store for downstream
   processing\n\nTool homepage: https://pypi.org/project/locidex/"

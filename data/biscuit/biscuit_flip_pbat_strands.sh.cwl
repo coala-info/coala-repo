@@ -10,6 +10,11 @@ inputs:
     doc: input BAM to flip strands
     inputBinding:
       position: 1
+  - id: out_bam
+    type: string
+    doc: output BAM to write flipped reads to
+    inputBinding:
+      position: 2
   - id: region
     type:
       - 'null'
@@ -19,11 +24,11 @@ inputs:
       position: 102
       prefix: --region
 outputs:
-  - id: out_bam
+  - id: out_out_bam
     type: File
     doc: output BAM to write flipped reads to
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_bam)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

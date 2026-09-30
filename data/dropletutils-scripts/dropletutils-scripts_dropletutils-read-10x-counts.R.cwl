@@ -34,6 +34,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --metadata-columns
+      itemSeparator: ','
   - id: metadata_files
     type:
       - 'null'
@@ -45,6 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --metadata-files
+      itemSeparator: ','
   - id: samples
     type:
       - 'null'
@@ -59,9 +61,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --samples
+      itemSeparator: ','
   - id: output_object_file_path
     type: string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 102
       prefix: --output-object-file

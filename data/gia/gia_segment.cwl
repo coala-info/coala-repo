@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia segment
+baseCommand:
+  - gia
+  - segment
 label: gia_segment
 doc: "Segments a BED file into non-overlapping regions\n\nTool homepage: https://github.com/noamteyssier/gia"
 inputs:
@@ -56,7 +58,6 @@ inputs:
       prefix: --sorted
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

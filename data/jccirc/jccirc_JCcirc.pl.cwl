@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl cFLSeq.pl
+baseCommand:
+  - perl
+  - cFLSeq.pl
 label: jccirc_JCcirc.pl
 doc: "CIRCSeq (circRNA sequence)\n\nTool homepage: https://github.com/cbbzhang/JCcirc"
 inputs:
@@ -34,6 +36,7 @@ inputs:
       2, the larger number means stricter).
     inputBinding:
       position: 101
+      prefix: --difference
   - id: genome_file
     type: File
     doc: "FASTA file of all reference sequences. Please make sure this file is\nthe
@@ -54,6 +57,7 @@ inputs:
     doc: RNA-Seq data, read_1 (paired end, fastq format).
     inputBinding:
       position: 101
+      prefix: --read1
   - id: read2
     type:
       - 'null'
@@ -61,6 +65,7 @@ inputs:
     doc: RNA-Seq data, read_1 (paired end, fastq format).
     inputBinding:
       position: 101
+      prefix: --read2
   - id: threads
     type:
       - 'null'

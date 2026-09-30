@@ -99,10 +99,10 @@ inputs:
       prefix: -T
   - id: pdf_output_path
     type: string
-    doc: Output or path parameter `pdf_output_path`
+    doc: ": make PDF output (requires '[e]ps[to|2]pdf')"
     inputBinding:
       position: 104
-      prefix: --pdf-output
+      prefix: -p
 outputs:
   - id: pdf_output
     type:

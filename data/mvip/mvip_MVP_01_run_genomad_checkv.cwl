@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_01_run_genomad_checkv
+baseCommand:
+  - mvip
+  - MVP_01_run_genomad_checkv
 label: mvip_MVP_01_run_genomad_checkv
 doc: "Run geNomad and CheckV.\n\nTool homepage: https://gitlab.com/ccoclet/mvp"
 inputs:
@@ -77,6 +79,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample_group
+      itemSeparator: ','
   - id: skip_modify_assemblies
     type:
       - 'null'

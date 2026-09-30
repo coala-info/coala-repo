@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy estimate
+baseCommand:
+  - iobrpy
+  - estimate
 label: iobrpy_estimate
 doc: "Estimate gene expression levels from raw count matrices.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -20,10 +22,9 @@ inputs:
       prefix: --platform
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type: File

@@ -204,15 +204,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `counts_output_path`
     inputBinding:
       position: 104
-      prefix: --counts-output
+      prefix: --counts_output
   - id: samout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `samout_path`
     inputBinding:
       position: 105
       prefix: --samout

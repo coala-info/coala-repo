@@ -90,10 +90,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Reference file. Must be accompanied by .fai index (create with samtools
       faidx)
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 103
       prefix: --reference
@@ -115,11 +115,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
+          separate: true
     doc: Name of a sample to phase. If not given, all samples in the input VCF 
       are phased. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --sample
   - id: skip_missing_contigs
     type:
       - 'null'
@@ -152,7 +154,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output
@@ -160,7 +161,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_haplotag_list_path`
     inputBinding:
       position: 105
       prefix: --output-haplotag-list

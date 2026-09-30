@@ -33,39 +33,44 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `col_sums_path`
+    doc: Name of a file to which the sum of column scores should be written. 
+      Output will be a tab-delimited file with a header. The first entry in each
+      column will be the name of the sample, and the second will be the sum of 
+      the peptide/probe scores for the sample.
     inputBinding:
       position: 102
-      prefix: --col-sums
+      prefix: --col_sums
   - id: get_avgs_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `get_avgs_path`
     inputBinding:
       position: 103
-      prefix: --get-avgs
+      prefix: --get_avgs
   - id: get_probes_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `get_probes_path`
+    doc: Name of a file to which peptide/probe names (i.e., row names) should be
+      written. Output will be in the form of a file with no header, one 
+      peptide/probe name per line.
     inputBinding:
       position: 104
-      prefix: --get-probes
+      prefix: --get_probes
   - id: get_samples_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `get_samples_path`
+    doc: Name of a file to which sample names (i.e., column headers) should be 
+      written. Output will be in the form of a file with no header, one sample 
+      name per line.
     inputBinding:
       position: 105
-      prefix: --get-samples
+      prefix: --get_samples
   - id: logfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 106
       prefix: --logfile

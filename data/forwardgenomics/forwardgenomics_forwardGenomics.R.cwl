@@ -127,10 +127,11 @@ inputs:
       prefix: --weights
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: = filename Output file that will contain the element ID and the 
+      P-values from the methods.
     inputBinding:
       position: 102
-      prefix: --out-file
+      prefix: --outFile
 outputs:
   - id: out_file
     type: File

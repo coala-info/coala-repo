@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: repic_run_ilp
+baseCommand:
+  - repic
+  - run_ilp
 label: repic_run_ilp
 doc: "Run the ILP solver to find the optimal particle configuration.\n\nTool homepage:
   https://github.com/ccameron/REPIC"

@@ -87,44 +87,47 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `atcgmap_outfile_path`
+    doc: 'Filename for ATCGmap file. Ex: output.ATCGmap, or output.ATCGmap.gz. Can
+      be overwritten by "-o".'
     inputBinding:
       position: 102
-      prefix: --atcgmap-outfile
+      prefix: --ATCGmap
   - id: cgmap_outfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cgmap_outfile_path`
+    doc: 'Filename for CGmap file. Ex: output.CGmap, or output.CGmap.gz. Can be overwritten
+      by "-o".'
     inputBinding:
       position: 103
-      prefix: --cgmap-outfile
-  - id: output_prefix_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_prefix_path`
-    inputBinding:
-      position: 104
-      prefix: --output-prefix
+      prefix: --CGmap
   - id: wig_outfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `wig_outfile_path`
+    doc: 'Filename for wig file. Ex: output.wig, or output.wig.gz. Can be overwritten
+      by "-o".'
     inputBinding:
       position: 105
-      prefix: --wig-outfile
+      prefix: --wig
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: The output prefix to create ATCGmap and wiggle files. Three files 
       (ATCGmap, CGmap, wig) will be generated if specified. Omit this if only to
       generate specific format.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
   - id: wig_outfile
     type:
       - 'null'

@@ -68,26 +68,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: "Output qcML file. If unset, writes to STDOUT. Default value: ''"
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
   - id: out1_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out1_path`
+    doc: If set, writes merged forward FASTQs to this file (gzipped).
     inputBinding:
       position: 103
-      prefix: --out1
+      prefix: -out1
   - id: out2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out2_path`
+    doc: If set, writes merged reverse FASTQs to this file (gzipped)
     inputBinding:
       position: 104
-      prefix: --out2
+      prefix: -out2
 outputs:
   - id: out
     type:

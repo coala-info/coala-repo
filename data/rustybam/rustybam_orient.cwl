@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam orient
+baseCommand:
+  - rustybam
+  - orient
 label: rustybam_orient
 doc: "Orient paf records so that most of the bases are in the forward direction.\n\
   \nOptionally scaffold the queriers so that there is one query per target.\n\nTool

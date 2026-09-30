@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virsorter_train-feature
+baseCommand:
+  - virsorter
+  - train-feature
 label: virsorter_train-feature
 doc: "Training features for customized classifier.\n\nExecutes a snakemake workflow
   to do the following: 1) prepare random DNA\nfragments from viral and nonviral genome
@@ -103,7 +105,7 @@ inputs:
       position: 101
       prefix: --use-conda-off
   - id: working_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101

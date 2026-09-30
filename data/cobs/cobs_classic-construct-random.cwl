@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cobs classic-construct-random
+baseCommand:
+  - cobs
+  - classic-construct-random
 label: cobs_classic-construct-random
 doc: "Constructs a random COBS index.\n\nTool homepage: https://panthema.net/cobs"
 inputs:

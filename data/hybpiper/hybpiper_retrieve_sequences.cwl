@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybpiper retrieve_sequences
+baseCommand:
+  - hybpiper
+  - retrieve_sequences
 label: hybpiper_retrieve_sequences
 doc: "Type of sequence to extract.\n\nTool homepage: https://github.com/mossmatters/HybPiper"
 inputs:
@@ -21,7 +23,7 @@ inputs:
   - id: fasta_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify directory for output FASTA files.
     inputBinding:
       position: 102

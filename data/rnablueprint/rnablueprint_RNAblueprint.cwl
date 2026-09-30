@@ -24,7 +24,7 @@ inputs:
       position: 101
       prefix: --graphml
   - id: input_file
-    type: string
+    type: File
     doc: 'input file which contains the structures, sequence constraints and the start
       sequence. structures: secondary structures in dot-bracket notation. one structure
       per input line. sequence constraints: Permanent sequence constraints in IUPAC
@@ -73,10 +73,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'output file for writing the sequences (default:'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

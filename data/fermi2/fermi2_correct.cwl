@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2 correct
+baseCommand:
+  - fermi2
+  - correct
 label: fermi2_correct
 doc: "Correct sequencing errors in reads using an FMD index.\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

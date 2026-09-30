@@ -44,7 +44,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output dir (default: current dir/VirStrain_Out)'
     inputBinding:
       position: 101

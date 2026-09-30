@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tracs_cluster
+baseCommand:
+  - tracs
+  - cluster
 label: tracs_cluster
 doc: "Groups samples into putative transmission clusters using single linkage clustering\n\
   \nTool homepage: https://github.com/gtonkinhill/tracs"
@@ -36,10 +38,9 @@ inputs:
       prefix: --threshold
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

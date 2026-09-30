@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tag gff3
+baseCommand:
+  - tag
+  - gff3
 label: tag_gff3
 doc: "Processes GFF3 files.\n\nTool homepage: https://github.com/standage/tag/"
 inputs:
@@ -43,10 +45,10 @@ inputs:
       prefix: --sorted
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: write output in GFF3 format to FILE; default is
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges alias
+baseCommand:
+  - ibridges
+  - alias
 label: ibridges_alias
 doc: "Print existing aliases or create new ones.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

@@ -53,7 +53,7 @@ inputs:
   - id: logdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write logfiles to
     inputBinding:
       position: 101
@@ -88,7 +88,6 @@ inputs:
       prefix: --maturedir
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

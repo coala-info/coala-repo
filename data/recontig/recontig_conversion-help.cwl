@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: recontig_conversion-help
+baseCommand:
+  - recontig
+  - conversion-help
 label: recontig_conversion-help
 doc: "check availiable conversions for a specified build from dpryan79's github\n\n\
   Tool homepage: https://github.com/blachlylab/recontig"

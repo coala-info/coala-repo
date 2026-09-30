@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdbtk classify
+baseCommand:
+  - gtdbtk
+  - classify
 label: gtdbtk_classify
 doc: "Classify genomes using GTDB-Tk\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
@@ -76,7 +78,7 @@ inputs:
       position: 101
       prefix: --min_af
   - id: out_dir
-    type: Directory
+    type: string
     doc: directory to output files
     inputBinding:
       position: 101
@@ -116,7 +118,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify alternative directory for temporary files
     inputBinding:
       position: 101

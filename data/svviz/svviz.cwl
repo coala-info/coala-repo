@@ -45,7 +45,7 @@ inputs:
       - float
     doc: 'minimum difference in scores between ref alignment score and alt alignment
       score to be assigned to one allele (use an integer to specify a hard score difference
-      threshold, or a float to specify a score difference relative to the read size;
+      threshold, or a float to specify a score difference relative to the read size;'
     inputBinding:
       position: 104
       prefix: --aln-score-delta
@@ -65,11 +65,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
+          separate: true
     doc: sorted, indexed bam file containing reads of interest to plot; can be 
       specified multiple times to load multiple samples
     inputBinding:
       position: 104
-      prefix: --bam
   - id: context
     type:
       - 'null'

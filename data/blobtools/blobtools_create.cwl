@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blobtools create
+baseCommand:
+  - blobtools
+  - create
 label: blobtools_create
 doc: "Create a BlobDB from FASTA and associated data files.\n\nTool homepage: https://blobtools.readme.io/docs/what-is-blobtools"
 inputs:
@@ -9,10 +11,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
+          separate: true
     doc: BAM file(s), can be specified multiple times
     inputBinding:
       position: 101
-      prefix: --bam
   - id: calculate_cov
     type:
       - 'null'
@@ -27,20 +31,24 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --cas
+          separate: true
     doc: CAS file(s) (requires clc_mapping_info in $PATH), can be specified 
       multiple times
     inputBinding:
       position: 101
-      prefix: --cas
   - id: cov_files
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --cov
+          separate: true
     doc: COV file(s), can be specified multiple times
     inputBinding:
       position: 101
-      prefix: --cov
   - id: fasta_type
     type:
       - 'null'
@@ -56,11 +64,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --hitsfile
+          separate: true
     doc: Hits file in format (qseqid\ttaxid\tbitscore) (e.g. BLAST output 
       "--outfmt '6 qseqid staxids bitscore'"). Can be specified multiple times
     inputBinding:
       position: 101
-      prefix: --hitsfile
   - id: infile
     type: File
     doc: FASTA file of assembly. Headers are split at whitespaces.

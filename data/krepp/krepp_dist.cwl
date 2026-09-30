@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: krepp dist
+baseCommand:
+  - krepp
+  - dist
 label: krepp_dist
 doc: "Estimate distances of queries to genomes in an index.\n\nTool homepage: https://github.com/bo1929/krepp"
 inputs:
@@ -100,7 +102,7 @@ inputs:
       prefix: --summarize
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: Write output to a file at <path>. [stdout]
     inputBinding:
       position: 102
       prefix: --output-path

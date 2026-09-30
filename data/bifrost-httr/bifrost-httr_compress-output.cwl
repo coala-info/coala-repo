@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bifrost-httr compress-output
+baseCommand:
+  - bifrost-httr
+  - compress-output
 label: bifrost-httr_compress-output
 doc: "Compress intermediate output into a single pandas DataFrame.\n\nTool homepage:
   https://github.com/seqera-services/bifrost-httr"
@@ -45,7 +47,7 @@ inputs:
       prefix: --test_substance
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to the output json  [required]
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar RAPPAS.jar
+baseCommand:
+  - java
+  - -jar
+  - RAPPAS.jar
 label: rappas
 doc: "Rapid Alignment-free Phylogenetic Placement via Ancestral Sequences\n\nTool
   homepage: https://github.com/blinard-BIOINFO/RAPPAS"
@@ -307,7 +310,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Working directory for temp files. (b|p phase)
     inputBinding:
       position: 101

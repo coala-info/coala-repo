@@ -29,10 +29,10 @@ inputs:
       prefix: --input
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: File path to store the result.
     inputBinding:
       position: 104
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

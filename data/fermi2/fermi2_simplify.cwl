@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2 simplify
+baseCommand:
+  - fermi2
+  - simplify
 label: fermi2_simplify
 doc: "Simplify a MAG graph\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

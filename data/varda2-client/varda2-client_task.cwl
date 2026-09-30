@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varda2-client task
+baseCommand:
+  - varda2-client
+  - task
 label: varda2-client_task
 doc: "\nTool homepage: https://github.com/varda/varda2-client"
 inputs:

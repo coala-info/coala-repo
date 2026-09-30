@@ -42,7 +42,6 @@ inputs:
       prefix: --vcf
   - id: outvcf_path
     type: string
-    doc: Output or path parameter `outvcf_path`
     inputBinding:
       position: 103
       prefix: --outvcf

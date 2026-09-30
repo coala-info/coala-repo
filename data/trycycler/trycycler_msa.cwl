@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trycycler msa
+baseCommand:
+  - trycycler
+  - msa
 label: trycycler_msa
 doc: "multiple sequence alignment\n\nTool homepage: https://github.com/rrwick/Trycycler"
 inputs:

@@ -136,7 +136,7 @@ inputs:
       position: 102
       prefix: --normal-phased-vcf
   - id: out_dir_plots
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 102

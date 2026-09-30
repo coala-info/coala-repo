@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refinem call_genes
+baseCommand:
+  - refinem
+  - call_genes
 label: refinem_call_genes
 doc: "Identify genes within genomes.\n\nTool homepage: http://pypi.python.org/pypi/refinem/"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 2

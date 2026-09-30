@@ -109,7 +109,7 @@ inputs:
       prefix: --verbosity
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: A .hap file containing haplotypes and their
     inputBinding:
       position: 105
       prefix: --output

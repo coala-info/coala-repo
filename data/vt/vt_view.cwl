@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_view
+baseCommand:
+  - vt
+  - view
 label: vt_view
 doc: "Views a VCF or BCF or VCF.GZ file.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:

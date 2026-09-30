@@ -22,7 +22,8 @@ inputs:
     doc: Merge reads with nn score above this value.
     inputBinding:
       position: 101
-      prefix: cutoff
+      prefix: cutoff=
+      separate: false
   - id: extend
     type:
       - 'null'
@@ -30,7 +31,8 @@ inputs:
     doc: Extend reads to the right this much before merging.
     inputBinding:
       position: 101
-      prefix: extend
+      prefix: extend=
+      separate: false
   - id: extra
     type:
       - 'null'
@@ -40,7 +42,9 @@ inputs:
       counting.
     inputBinding:
       position: 101
-      prefix: extra
+      prefix: extra=
+      itemSeparator: ','
+      separate: false
   - id: forcetrimleft
     type:
       - 'null'
@@ -48,7 +52,8 @@ inputs:
     doc: If nonzero, trim left bases of the read to this position.
     inputBinding:
       position: 101
-      prefix: forcetrimleft
+      prefix: forcetrimleft=
+      separate: false
   - id: forcetrimright
     type:
       - 'null'
@@ -56,13 +61,15 @@ inputs:
     doc: If nonzero, trim right bases of the read after this position.
     inputBinding:
       position: 101
-      prefix: forcetrimright
+      prefix: forcetrimright=
+      separate: false
   - id: in
     type: File
     doc: Primary input. 'in2' will specify a second file.
     inputBinding:
       position: 101
-      prefix: in
+      prefix: in=
+      separate: false
   - id: in2
     type:
       - 'null'
@@ -79,7 +86,8 @@ inputs:
       input file as interleaved.
     inputBinding:
       position: 101
-      prefix: interleaved
+      prefix: interleaved=
+      separate: false
   - id: k
     type:
       - 'null'
@@ -87,7 +95,8 @@ inputs:
     doc: Kmer length.
     inputBinding:
       position: 101
-      prefix: k
+      prefix: k=
+      separate: false
   - id: maxexpectederrors
     type:
       - 'null'
@@ -96,7 +105,8 @@ inputs:
       not be attempted to be merged.
     inputBinding:
       position: 101
-      prefix: maxexpectederrors
+      prefix: maxexpectederrors=
+      separate: false
   - id: maxlength
     type:
       - 'null'
@@ -104,7 +114,8 @@ inputs:
     doc: Reads with longer insert sizes will be discarded.
     inputBinding:
       position: 101
-      prefix: maxlength
+      prefix: maxlength=
+      separate: false
   - id: merge
     type:
       - 'null'
@@ -121,7 +132,8 @@ inputs:
       merged.
     inputBinding:
       position: 101
-      prefix: minavgquality
+      prefix: minavgquality=
+      separate: false
   - id: mininsert
     type:
       - 'null'
@@ -129,7 +141,8 @@ inputs:
     doc: Minimum insert size to merge reads.
     inputBinding:
       position: 101
-      prefix: mininsert
+      prefix: mininsert=
+      separate: false
   - id: minlength
     type:
       - 'null'
@@ -137,7 +150,8 @@ inputs:
     doc: Reads shorter than this after trimming will be discarded.
     inputBinding:
       position: 101
-      prefix: minlength
+      prefix: minlength=
+      separate: false
   - id: minoverlap
     type:
       - 'null'
@@ -145,7 +159,8 @@ inputs:
     doc: Minimum number of overlapping bases to allow merging.
     inputBinding:
       position: 101
-      prefix: minoverlap
+      prefix: minoverlap=
+      separate: false
   - id: mix
     type:
       - 'null'
@@ -187,7 +202,8 @@ inputs:
       l.'
     inputBinding:
       position: 101
-      prefix: qtrim
+      prefix: qtrim=
+      separate: false
   - id: reads
     type:
       - 'null'
@@ -195,7 +211,8 @@ inputs:
     doc: Quit after this many read pairs (-1 means all).
     inputBinding:
       position: 101
-      prefix: reads
+      prefix: reads=
+      separate: false
   - id: showhiststats
     type:
       - 'null'
@@ -228,7 +245,8 @@ inputs:
     doc: Trim quality threshold. This may be a comma-delimited list.
     inputBinding:
       position: 101
-      prefix: trimq
+      prefix: trimq=
+      separate: false
   - id: ziplevel
     type:
       - 'null'
@@ -236,7 +254,8 @@ inputs:
     doc: Set to 1 (lowest) through 9 (max) to change compression level.
     inputBinding:
       position: 101
-      prefix: ziplevel
+      prefix: ziplevel=
+      separate: false
   - id: ihist_path
     type:
       - 'null'
@@ -244,15 +263,17 @@ inputs:
     doc: Output or path parameter `ihist_path`
     inputBinding:
       position: 102
-      prefix: --ihist
+      prefix: ihist=
+      separate: false
   - id: out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: This flag will cause the process to exit if an out-of-memory exception 
+      occurs.  Requires Java 8u92+.
     inputBinding:
       position: 103
-      prefix: --out
+      prefix: -eoom
   - id: out2_path
     type:
       - 'null'
@@ -268,7 +289,8 @@ inputs:
     doc: Output or path parameter `outadapter_path`
     inputBinding:
       position: 105
-      prefix: --outadapter
+      prefix: outadapter=
+      separate: false
   - id: outc_path
     type:
       - 'null'
@@ -276,7 +298,8 @@ inputs:
     doc: Output or path parameter `outc_path`
     inputBinding:
       position: 106
-      prefix: --outc
+      prefix: outc=
+      separate: false
   - id: outinsert_path
     type:
       - 'null'
@@ -284,7 +307,8 @@ inputs:
     doc: Output or path parameter `outinsert_path`
     inputBinding:
       position: 107
-      prefix: --outinsert
+      prefix: outinsert=
+      separate: false
   - id: outu_path
     type:
       - 'null'
@@ -292,7 +316,8 @@ inputs:
     doc: Output or path parameter `outu_path`
     inputBinding:
       position: 108
-      prefix: --outu
+      prefix: outu=
+      separate: false
   - id: outu2_path
     type:
       - 'null'

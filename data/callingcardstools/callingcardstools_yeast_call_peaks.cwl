@@ -11,6 +11,7 @@ inputs:
     doc: paths to the experiment data files.
     inputBinding:
       position: 1
+      prefix: --experiment_data_paths
   - id: background_data_path
     type: File
     doc: path to the background data file.
@@ -104,11 +105,10 @@ inputs:
       position: 102
       prefix: --unified_chr_convention
   - id: output_path_path
-    type: string
-    doc: Output or path parameter `output_path_path`
+    type: string?
     inputBinding:
       position: 103
-      prefix: --output-path
+      prefix: --output_path
 outputs:
   - id: output_path
     type:

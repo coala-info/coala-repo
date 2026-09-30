@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngsderive endedness
+baseCommand:
+  - ngsderive
+  - endedness
 label: ngsderive_endedness
 doc: "Derive the endedness of Next-Generation Sequencing files.\n\nTool homepage:
   https://github.com/claymcleod/ngsderive"
@@ -84,7 +86,6 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

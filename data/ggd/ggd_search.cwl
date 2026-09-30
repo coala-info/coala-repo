@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd search
+baseCommand:
+  - ggd
+  - search
 label: ggd_search
 doc: "Search for available ggd data packages. Results are filtered by match score
   from high to low. (Only 5 results will be reported unless the -dn flag is changed)\n\

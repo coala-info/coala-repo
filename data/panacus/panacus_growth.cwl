@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panacus_growth
+baseCommand:
+  - panacus
+  - growth
 label: panacus_growth
 doc: "Calculate growth curve from coverage histogram\n\nTool homepage: https://github.com/marschall-lab/panacus"
 inputs:
@@ -25,6 +27,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --coverage
+      itemSeparator: ','
   - id: exclude
     type:
       - 'null'
@@ -88,6 +91,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quorum
+      itemSeparator: ','
   - id: subset
     type:
       - 'null'

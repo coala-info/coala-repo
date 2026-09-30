@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: coptr_map
+baseCommand:
+  - coptr
+  - map
 label: coptr_map
 doc: "Map reads to a database index.\n\nTool homepage: https://github.com/tyjo/coptr"
 inputs:
@@ -15,6 +17,11 @@ inputs:
       extension for each fastq must be one of [.fastq, .fq, .fastq.gz, fq.gz]
     inputBinding:
       position: 2
+  - id: out_folder
+    type: string
+    doc: Folder to save mapped reads. BAM files are output here.
+    inputBinding:
+      position: 3
   - id: bt2_k
     type:
       - 'null'
@@ -41,11 +48,11 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
-  - id: out_folder
+  - id: out_out_folder
     type: Directory
     doc: Folder to save mapped reads. BAM files are output here.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_folder)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3

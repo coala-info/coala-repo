@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_lenfilt
+baseCommand:
+  - fastools
+  - lenfilt
 label: fastools_lenfilt
 doc: "Split a FASTA/FASTQ file on length.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:

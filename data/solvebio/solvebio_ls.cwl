@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio ls
+baseCommand:
+  - solvebio
+  - ls
 label: solvebio_ls
 doc: "List files and folders in the SolveBio vault\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

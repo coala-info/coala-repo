@@ -355,10 +355,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_bgen_snps_path`
+    doc: arg         output file for assoc stats at BGEN-format genotypes
     inputBinding:
       position: 103
-      prefix: --stats-file-bgen-snps
+      prefix: --statsFileBgenSnps
   - id: stats_file_dosage2_snps_path
     type:
       - 'null'
@@ -371,10 +371,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_dosage_snps_path`
+    doc: arg       output file for assoc stats at dosage format genotypes
     inputBinding:
       position: 105
-      prefix: --stats-file-dosage-snps
+      prefix: --statsFileDosageSnps
   - id: stats_file_impute2_snps_path
     type:
       - 'null'

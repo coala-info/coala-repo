@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samestr_filter
+baseCommand:
+  - samestr
+  - filter
 label: samestr_filter
 doc: "Filter SNV profiles based on various criteria.\n\nTool homepage: https://github.com/danielpodlesny/samestr/"
 inputs:
@@ -81,9 +83,7 @@ inputs:
       position: 103
       prefix: --keep-poly
   - id: marker_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to MetaPhlAn or mOTUs clade marker database.
     inputBinding:
       position: 103
@@ -125,7 +125,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory.
     inputBinding:
       position: 103

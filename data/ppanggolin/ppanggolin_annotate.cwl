@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin annotate
+baseCommand:
+  - ppanggolin
+  - annotate
 label: ppanggolin_annotate
 doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
   team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
@@ -15,7 +17,7 @@ inputs:
       position: 101
       prefix: --allow_overlap
   - id: anno
-    type: File
+    type: File?
     doc: A tab-separated file listing the genome names, and the gff/gbff 
       filepath of its annotations (the files can be compressed with gzip). One 
       line per genome. If this is provided, those annotations will be used.
@@ -55,7 +57,7 @@ inputs:
       position: 101
       prefix: --disable_prog_bar
   - id: fasta
-    type: File
+    type: File?
     doc: A tab-separated file listing the genome names, and the fasta filepath 
       of its genomic sequence(s) (the fastas can be compressed with gzip). One 
       line per genome.
@@ -107,7 +109,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for storing temporary files
     inputBinding:
       position: 101
@@ -140,7 +142,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

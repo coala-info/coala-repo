@@ -18,7 +18,8 @@ inputs:
     doc: only get one with ID number matching N
     inputBinding:
       position: 102
-      prefix: -id
+      prefix: -id=
+      separate: false
   - id: long_format
     type:
       - 'null'
@@ -34,7 +35,8 @@ inputs:
     doc: restrict to those scoring less than N
     inputBinding:
       position: 102
-      prefix: -maxScore
+      prefix: -maxScore=
+      separate: false
   - id: min_gapless
     type:
       - 'null'
@@ -42,7 +44,8 @@ inputs:
     doc: pass those with minimum gapless block of at least N
     inputBinding:
       position: 102
-      prefix: -minGapless
+      prefix: -minGapless=
+      separate: false
   - id: min_score
     type:
       - 'null'
@@ -50,7 +53,8 @@ inputs:
     doc: restrict to those scoring at least N
     inputBinding:
       position: 102
-      prefix: -minScore
+      prefix: -minScore=
+      separate: false
   - id: no_hap
     type:
       - 'null'
@@ -74,7 +78,8 @@ inputs:
     doc: restrict to those with qEnd less than N
     inputBinding:
       position: 102
-      prefix: -qEndMax
+      prefix: -qEndMax=
+      separate: false
   - id: q_end_min
     type:
       - 'null'
@@ -82,7 +87,8 @@ inputs:
     doc: restrict to those with qEnd at least N
     inputBinding:
       position: 102
-      prefix: -qEndMin
+      prefix: -qEndMin=
+      separate: false
   - id: q_max_gap
     type:
       - 'null'
@@ -90,7 +96,8 @@ inputs:
     doc: pass those with maximum gap size no larger than N
     inputBinding:
       position: 102
-      prefix: -qMaxGap
+      prefix: -qMaxGap=
+      separate: false
   - id: q_max_size
     type:
       - 'null'
@@ -98,7 +105,8 @@ inputs:
     doc: maximum size of spanned query region
     inputBinding:
       position: 102
-      prefix: -qMaxSize
+      prefix: -qMaxSize=
+      separate: false
   - id: q_min_gap
     type:
       - 'null'
@@ -106,7 +114,8 @@ inputs:
     doc: pass those with minimum gap size of at least N
     inputBinding:
       position: 102
-      prefix: -qMinGap
+      prefix: -qMinGap=
+      separate: false
   - id: q_min_size
     type:
       - 'null'
@@ -114,7 +123,8 @@ inputs:
     doc: minimum size of spanned query region
     inputBinding:
       position: 102
-      prefix: -qMinSize
+      prefix: -qMinSize=
+      separate: false
   - id: q_overlap_end
     type:
       - 'null'
@@ -122,7 +132,8 @@ inputs:
     doc: restrict to those where the query overlaps a region ending here
     inputBinding:
       position: 102
-      prefix: -qOverlapEnd
+      prefix: -qOverlapEnd=
+      separate: false
   - id: q_overlap_start
     type:
       - 'null'
@@ -130,7 +141,8 @@ inputs:
     doc: restrict to those where the query overlaps a region starting here
     inputBinding:
       position: 102
-      prefix: -qOverlapStart
+      prefix: -qOverlapStart=
+      separate: false
   - id: q_start_max
     type:
       - 'null'
@@ -138,7 +150,8 @@ inputs:
     doc: restrict to those with qStart less than N
     inputBinding:
       position: 102
-      prefix: -qStartMax
+      prefix: -qStartMax=
+      separate: false
   - id: q_start_min
     type:
       - 'null'
@@ -146,7 +159,8 @@ inputs:
     doc: restrict to those with qStart at least N
     inputBinding:
       position: 102
-      prefix: -qStartMin
+      prefix: -qStartMin=
+      separate: false
   - id: restrict_query_named
     type:
       - 'null'
@@ -155,7 +169,8 @@ inputs:
     doc: restrict query side sequence to those named
     inputBinding:
       position: 102
-      prefix: -q
+      prefix: -q=
+      separate: false
   - id: restrict_query_not_named
     type:
       - 'null'
@@ -164,7 +179,8 @@ inputs:
     doc: restrict query side sequence to those not named
     inputBinding:
       position: 102
-      prefix: -notQ
+      prefix: -notQ=
+      separate: false
   - id: restrict_target_named
     type:
       - 'null'
@@ -173,7 +189,8 @@ inputs:
     doc: restrict target side sequence to those named
     inputBinding:
       position: 102
-      prefix: -t
+      prefix: -t=
+      separate: false
   - id: restrict_target_not_named
     type:
       - 'null'
@@ -182,7 +199,8 @@ inputs:
     doc: restrict target side sequence to those not named
     inputBinding:
       position: 102
-      prefix: -notT
+      prefix: -notT=
+      separate: false
   - id: strand
     type:
       - 'null'
@@ -190,7 +208,8 @@ inputs:
     doc: restrict strand (to + or -)
     inputBinding:
       position: 102
-      prefix: -strand
+      prefix: -strand=
+      separate: false
   - id: t_end_max
     type:
       - 'null'
@@ -198,7 +217,8 @@ inputs:
     doc: restrict to those with tEnd less than N
     inputBinding:
       position: 102
-      prefix: -tEndMax
+      prefix: -tEndMax=
+      separate: false
   - id: t_end_min
     type:
       - 'null'
@@ -206,7 +226,8 @@ inputs:
     doc: restrict to those with tEnd at least N
     inputBinding:
       position: 102
-      prefix: -tEndMin
+      prefix: -tEndMin=
+      separate: false
   - id: t_max_gap
     type:
       - 'null'
@@ -214,7 +235,8 @@ inputs:
     doc: pass those with maximum gap size no larger than N
     inputBinding:
       position: 102
-      prefix: -tMaxGap
+      prefix: -tMaxGap=
+      separate: false
   - id: t_max_size
     type:
       - 'null'
@@ -222,7 +244,8 @@ inputs:
     doc: maximum size of spanned target region
     inputBinding:
       position: 102
-      prefix: -tMaxSize
+      prefix: -tMaxSize=
+      separate: false
   - id: t_min_gap
     type:
       - 'null'
@@ -230,7 +253,8 @@ inputs:
     doc: pass those with minimum gap size of at least N
     inputBinding:
       position: 102
-      prefix: -tMinGap
+      prefix: -tMinGap=
+      separate: false
   - id: t_min_size
     type:
       - 'null'
@@ -238,7 +262,8 @@ inputs:
     doc: minimum size of spanned target region
     inputBinding:
       position: 102
-      prefix: -tMinSize
+      prefix: -tMinSize=
+      separate: false
   - id: t_overlap_end
     type:
       - 'null'
@@ -246,7 +271,8 @@ inputs:
     doc: restrict to those where the target overlaps a region ending here
     inputBinding:
       position: 102
-      prefix: -tOverlapEnd
+      prefix: -tOverlapEnd=
+      separate: false
   - id: t_overlap_start
     type:
       - 'null'
@@ -254,7 +280,8 @@ inputs:
     doc: restrict to those where the target overlaps a region starting here
     inputBinding:
       position: 102
-      prefix: -tOverlapStart
+      prefix: -tOverlapStart=
+      separate: false
   - id: t_start_max
     type:
       - 'null'
@@ -262,7 +289,8 @@ inputs:
     doc: restrict to those with tStart less than N
     inputBinding:
       position: 102
-      prefix: -tStartMax
+      prefix: -tStartMax=
+      separate: false
   - id: t_start_min
     type:
       - 'null'
@@ -270,7 +298,8 @@ inputs:
     doc: restrict to those with tStart at least N
     inputBinding:
       position: 102
-      prefix: -tStartMin
+      prefix: -tStartMin=
+      separate: false
   - id: zero_gap
     type:
       - 'null'

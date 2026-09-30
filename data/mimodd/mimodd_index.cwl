@@ -69,10 +69,12 @@ inputs:
       prefix: --verbose
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: ' specifies the location at which to save the index (default: save the index
+      alongside the input file as <input file>.<INDEX_TYPE> for indices of type "fai"
+      and "bai", or in a directory <input file>.snap_index)'
     inputBinding:
       position: 104
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type:

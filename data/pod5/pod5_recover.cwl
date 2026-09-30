@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5_recover
+baseCommand:
+  - pod5
+  - recover
 label: pod5_recover
 doc: "Attempt to recover pod5 files. Recovered files are written to sibling files
   with the '_recovered.pod5` suffix\n\nTool homepage: https://github.com/nanoporetech/pod5-file-format"

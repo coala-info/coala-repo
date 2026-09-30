@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit head
+baseCommand:
+  - seqkit
+  - head
 label: seqkit_head
 doc: "print the first N FASTA/Q records, or leading records whose total length >=
   L\n\nTool homepage: https://github.com/shenwei356/seqkit"
@@ -109,7 +111,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

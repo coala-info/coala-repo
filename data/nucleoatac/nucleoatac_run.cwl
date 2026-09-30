@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nucleoatac run
+baseCommand:
+  - nucleoatac
+  - run
 label: nucleoatac_run
 doc: "Run the nucleoatac pipeline\n\nTool homepage: http://nucleoatac.readthedocs.io/en/latest/"
 inputs:

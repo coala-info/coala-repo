@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hymet artifacts
+baseCommand:
+  - hymet
+  - artifacts
 label: hymet_artifacts
 doc: "Show commands without executing them\n\nTool homepage: https://github.com/inesbmartins02/HYMET"
 inputs:

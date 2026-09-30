@@ -9,7 +9,8 @@ inputs:
     doc: number of hours old to qualify for drop. N can be a float.
     inputBinding:
       position: 101
-      prefix: -age
+      prefix: -age=
+      separate: false
   - id: db
     type:
       - 'null'
@@ -17,7 +18,8 @@ inputs:
     doc: Specify a database to work with, default is customTrash.
     inputBinding:
       position: 101
-      prefix: -db
+      prefix: -db=
+      separate: false
   - id: del_lost_table
     type:
       - 'null'
@@ -43,7 +45,8 @@ inputs:
       is to drop all expired tables
     inputBinding:
       position: 101
-      prefix: -dropLimit
+      prefix: -dropLimit=
+      separate: false
   - id: ext_del
     type:
       - 'null'
@@ -96,7 +99,8 @@ inputs:
       information for all tables.
     inputBinding:
       position: 101
-      prefix: -verbose
+      prefix: -verbose=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

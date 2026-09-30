@@ -12,12 +12,17 @@ inputs:
     doc: Input tab-delimited text file
     inputBinding:
       position: 1
-outputs:
   - id: out_fq
+    type: string
+    doc: Output FASTQ file
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_out_fq
     type: File
     doc: Output FASTQ file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_fq)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqtk:0.28--h5ca1c30_0

@@ -147,9 +147,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference sequence file.
     secondaryFiles:
       - .fai
-    doc: Reference sequence file.
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -228,10 +228,10 @@ inputs:
       prefix: --VERBOSITY
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: The output BAM, written with new Gene/Exon tag  Required.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --OUTPUT
 outputs:
   - id: output_file
     type: File

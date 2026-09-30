@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wgatools_validate
+baseCommand:
+  - wgatools
+  - validate
 label: wgatools_validate
 doc: "Validate and fix query&target position in PAF file by CIGAR\n\nTool homepage:
   https://github.com/wjwei-handsome/wgatools"
@@ -48,7 +50,8 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: 'Output file ("-" for stdout), file name ending in .gz/.bz2/.xz will be compressed
+      automatically [default: -]'
     inputBinding:
       position: 103
       prefix: --outfile

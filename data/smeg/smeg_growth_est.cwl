@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smeg_growth_est
+baseCommand:
+  - smeg
+  - growth_est
 label: smeg_growth_est
 doc: "Estimate growth rate of bacterial populations from sequencing reads.\n\nTool
   homepage: https://github.com/ohlab/SMEG"
@@ -55,7 +57,7 @@ inputs:
       position: 101
       prefix: -u
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

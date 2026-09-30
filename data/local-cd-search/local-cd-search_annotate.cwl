@@ -11,11 +11,16 @@ inputs:
     doc: Input file
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 2
   - id: db_dir
     type: Directory
     doc: Database directory
     inputBinding:
-      position: 2
+      position: 3
   - id: data_mode
     type:
       - 'null'
@@ -77,7 +82,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store intermediate files. If not specified, temporary 
       files will be deleted after execution.
     inputBinding:
@@ -87,16 +92,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sites_output_path`
+    doc: PATH                Path to write functional site        │
     inputBinding:
       position: 104
       prefix: --sites-output
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
   - id: sites_output
     type:
       - 'null'

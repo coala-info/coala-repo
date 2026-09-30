@@ -126,7 +126,7 @@ inputs:
   - id: redirect_tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: redirect temporary output to this location (useful in case you are 
       running MITObim on an NFS mount)
     inputBinding:

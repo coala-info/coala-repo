@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: VGP genome
-  profile analysis'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: VGP genome profile analysis'
 inputs:
   Collection of Pacbio Data:
     doc: Collection of Pacbio Data in fastq format.
@@ -11,20 +10,24 @@ outputs: {}
 steps:
   1_Input parameter:
     in: {}
-    out: []
+    out:
+    - output
     run:
       class: Operation
-      id: null
       inputs: {}
-      outputs: {}
+      outputs:
+        output:
+          type: Any
   2_Input parameter:
     in: {}
-    out: []
+    out:
+    - output
     run:
       class: Operation
-      id: null
       inputs: {}
-      outputs: {}
+      outputs:
+        output:
+          type: Any
   3_Meryl:
     in:
       operation_type|input_reads: Collection of Pacbio Data

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gget_search
+baseCommand:
+  - gget
+  - search
 label: gget_search
 doc: "Fetch gene and transcript IDs from Ensembl using free-form search terms.\n\n\
   Tool homepage: https://github.com/pachterlab/gget"
@@ -111,7 +113,8 @@ inputs:
       prefix: --searchwords
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Path to the file the results will be saved in, e.g. 
+      path/to/directory/results.json.
     inputBinding:
       position: 103
       prefix: --out

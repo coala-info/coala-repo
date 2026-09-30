@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: garnett-cli_garnett_check_markers.R
+baseCommand: garnett_check_markers.R
 label: garnett-cli_garnett_check_markers.R
 doc: "Check marker genes for cell types.\n\nTool homepage: https://github.com/ebi-gene-expression-group/garnett-cli"
 inputs:
@@ -105,7 +105,6 @@ inputs:
       prefix: --use-tf-idf
   - id: marker_output_path_path
     type: string
-    doc: Output or path parameter `marker_output_path_path`
     inputBinding:
       position: 102
       prefix: --marker-output-path

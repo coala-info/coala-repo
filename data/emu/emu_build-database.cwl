@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: emu build-database
+baseCommand:
+  - emu
+  - build-database
 label: emu_build-database
 doc: "Builds a custom database for EMU.\n\nTool homepage: https://gitlab.com/treangenlab/emu"
 inputs:

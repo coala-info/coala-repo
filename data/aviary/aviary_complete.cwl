@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aviary complete
+baseCommand:
+- aviary
+- complete
 label: aviary_complete
 doc: "Performs all steps in the Aviary pipeline. Assembly > Binning > Refinement >
   Annotation > Diversity\n\nTool homepage: https://github.com/rhysnewell/aviary/"
@@ -404,7 +406,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -589,7 +591,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location that will be treated used for temporary files. If 
       none is specified, the TMPDIR environment variable will be used. Can be 
       configured within the `configure` subcommand

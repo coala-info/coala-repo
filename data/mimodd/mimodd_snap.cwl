@@ -294,18 +294,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `idx_out_dir_path`
+    doc: DIR   name of the index directory to be created; if given, the index 
+      directory will be permanent, otherwise a temporary directory will be used
     inputBinding:
       position: 105
-      prefix: --idx-out-dir
+      prefix: --idx-out
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' name of the output file (required)'
     inputBinding:
       position: 106
-      prefix: --output-file
+      prefix: --ofile
 outputs:
   - id: output_file
     type: File

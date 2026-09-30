@@ -248,7 +248,7 @@ inputs:
   - id: directory_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: save files to PREFIX/..
     inputBinding:
       position: 102
@@ -1148,7 +1148,7 @@ inputs:
   - id: warc_tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: location for temporary files created by the WARC writer
     inputBinding:
       position: 102
@@ -1157,7 +1157,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_document_path`
+    doc: write documents to FILE
     inputBinding:
       position: 103
       prefix: --output-document
@@ -1165,7 +1165,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_cookies_path`
+    doc: save cookies to FILE after session
     inputBinding:
       position: 104
       prefix: --save-cookies
@@ -1173,7 +1173,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `warc_file_path`
+    doc: save request/response data to a .warc.gz file
     inputBinding:
       position: 105
       prefix: --warc-file

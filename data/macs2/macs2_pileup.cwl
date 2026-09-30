@@ -67,10 +67,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output bedGraph file name. If not specified, will write to standard output.
+      REQUIRED.'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --ofile
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sfs_fold
+baseCommand:
+  - sfs
+  - fold
 label: sfs_fold
 doc: "Tools for working with site frequency spectra\n\nTool homepage: https://github.com/malthesr/sfs"
 inputs:
@@ -56,7 +58,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

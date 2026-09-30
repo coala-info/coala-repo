@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rdrpcatch_scan
+baseCommand:
+  - rdrpcatch
+  - scan
 label: rdrpcatch_scan
 doc: "Scan sequences for RdRps.\n\nTool homepage: https://github.com/dimitris-karapliafis/RdRpCATCH"
 inputs:
@@ -173,7 +175,7 @@ inputs:
       prefix: --zvalue
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: DIRECTORY   Path to the output directory. │
     inputBinding:
       position: 102
       prefix: --output

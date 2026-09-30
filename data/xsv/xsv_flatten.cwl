@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_flatten
+baseCommand:
+  - xsv
+  - flatten
 label: xsv_flatten
 doc: "Prints flattened records such that fields are labeled separated by a new line.
   This mode is particularly useful for viewing one record at a time. Each record is

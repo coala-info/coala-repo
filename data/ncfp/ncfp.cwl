@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: outdirname
-    type: Directory
+    type: string
     doc: output directory for sequence files
     inputBinding:
       position: 2

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fmsi_index
+baseCommand:
+  - fmsi
+  - index
 label: fmsi_index
 doc: "Index a masked superstring for fmsi.\n\nTool homepage: https://github.com/OndrejSladky/fmsi"
 inputs:

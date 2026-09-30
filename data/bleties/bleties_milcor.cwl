@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bleties milcor
+baseCommand:
+  - bleties
+  - milcor
 label: bleties_milcor
 doc: "MILCOR - Method of IES Long-read CORrelation\n\nTool homepage: https://github.com/Swart-lab/bleties"
 inputs:

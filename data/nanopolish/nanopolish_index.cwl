@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanopolish index
+baseCommand:
+  - nanopolish
+  - index
 label: nanopolish_index
 doc: "Build an index mapping from basecalled reads to the signals measured by the
   sequencer\n\nTool homepage: https://github.com/jts/nanopolish"
@@ -15,11 +17,13 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --directory
+          separate: true
     doc: path to the directory containing the raw ONT signal files. This option 
       can be given multiple times.
     inputBinding:
       position: 102
-      prefix: --directory
   - id: sequencing_summary
     type:
       - 'null'

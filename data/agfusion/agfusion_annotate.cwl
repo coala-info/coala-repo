@@ -177,7 +177,7 @@ inputs:
       prefix: --WT
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Directory to save results
     inputBinding:
       position: 102
       prefix: --out

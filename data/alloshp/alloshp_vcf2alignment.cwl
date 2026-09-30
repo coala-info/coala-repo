@@ -63,18 +63,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_msa_path`
+    doc: 'output MSA file name                            (optional, example: -o out.fasta)'
     inputBinding:
       position: 102
-      prefix: --output-msa
+      prefix: -o
   - id: report_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_file_path`
+    doc: 'output report file name, 1-based coordinates    (example: -l vcf.report.log.gz)'
     inputBinding:
       position: 103
-      prefix: --report-file
+      prefix: -l
 outputs:
   - id: report_file
     type: File

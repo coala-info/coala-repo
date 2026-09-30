@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnftools et2roc
+baseCommand:
+  - rnftools
+  - et2roc
 label: rnftools_et2roc
 doc: "todo\n\nTool homepage: http://karel-brinda.github.io/rnftools"
 inputs:
@@ -12,10 +14,10 @@ inputs:
       prefix: --et
   - id: output_roc_file_path
     type: string
-    doc: Output or path parameter `output_roc_file_path`
+    doc: Output ROC file (evaluated reads, - for standard output).
     inputBinding:
       position: 102
-      prefix: --output-roc-file
+      prefix: --roc
 outputs:
   - id: output_roc_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: darkprofiler_run
+baseCommand:
+  - darkprofiler
+  - run
 label: darkprofiler_run
 doc: "Run darkprofiler\n\nTool homepage: https://pypi.org/project/darkprofiler/"
 inputs:
@@ -15,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 3

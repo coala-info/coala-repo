@@ -69,10 +69,9 @@ inputs:
       prefix: --verbose
   - id: out_tree_path
     type: string
-    doc: Output or path parameter `out_tree_path`
     inputBinding:
       position: 102
-      prefix: --out-tree
+      prefix: --out_tree
 outputs:
   - id: out_tree
     type: File

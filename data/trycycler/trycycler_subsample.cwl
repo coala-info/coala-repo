@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trycycler subsample
+baseCommand:
+  - trycycler
+  - subsample
 label: trycycler_subsample
 doc: "subsample a long-read set\n\nTool homepage: https://github.com/rrwick/Trycycler"
 inputs:
@@ -29,7 +31,7 @@ inputs:
       position: 101
       prefix: --min_read_depth
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

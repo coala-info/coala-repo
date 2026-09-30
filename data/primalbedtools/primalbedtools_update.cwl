@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools update
+baseCommand:
+  - primalbedtools
+  - update
 label: primalbedtools_update
 doc: "Update BED file\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

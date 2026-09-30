@@ -14,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: directory to write output files
     inputBinding:
       position: 2
@@ -193,7 +193,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify an alternative directory for temporary files
     inputBinding:
       position: 103

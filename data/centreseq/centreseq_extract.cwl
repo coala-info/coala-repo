@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: centreseq extract
+baseCommand:
+  - centreseq
+  - extract
 label: centreseq_extract
 doc: "Given the path to the centreseq core directory and the ID of a cluster representative,
   will create a multi-FASTA containing the sequences for all members of that cluster.
@@ -19,7 +21,7 @@ inputs:
       position: 101
       prefix: --indir
   - id: outdir
-    type: Directory
+    type: string
     doc: Root directory to store all output files
     inputBinding:
       position: 101

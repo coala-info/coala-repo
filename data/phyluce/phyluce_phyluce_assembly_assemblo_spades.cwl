@@ -45,7 +45,7 @@ inputs:
       position: 101
       prefix: --log-path
   - id: output
-    type: Directory
+    type: string
     doc: The directory in which to store the assembly data
     inputBinding:
       position: 101

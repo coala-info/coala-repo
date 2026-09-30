@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: emu abundance
+baseCommand:
+  - emu
+  - abundance
 label: emu_abundance
 doc: "Calculate species abundance from sequence data.\n\nTool homepage: https://gitlab.com/treangenlab/emu"
 inputs:
@@ -111,7 +113,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory name [./results]
     inputBinding:
       position: 102

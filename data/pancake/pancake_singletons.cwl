@@ -85,14 +85,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ref_genome
-  - id: bed_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `bed_file_path`
-    inputBinding:
-      position: 102
-      prefix: --bed-file
   - id: output_dir_path
     type:
       - 'null'
@@ -101,6 +93,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output-dir
+  - id: bed_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --bed_file
 outputs:
   - id: output_dir
     type:

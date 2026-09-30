@@ -154,9 +154,9 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    doc: Path to the reference genome (FASTA/Q, can be gzipped)
     secondaryFiles:
       - .fai
-    doc: Path to the reference genome (FASTA/Q, can be gzipped)
     inputBinding:
       position: 101
       prefix: --reference
@@ -298,7 +298,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

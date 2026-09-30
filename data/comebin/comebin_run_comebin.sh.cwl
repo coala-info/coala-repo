@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bash run_comebin.sh
+baseCommand:
+  - bash
+  - run_comebin.sh
 label: comebin_run_comebin.sh
 doc: "COMEBin version: 1.0.4\n\nTool homepage: https://github.com/ziyewang/COMEBin"
 inputs:

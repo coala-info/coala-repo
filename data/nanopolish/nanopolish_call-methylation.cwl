@@ -122,7 +122,7 @@ inputs:
       prefix: --watch-write-bam
   - id: modbam_output_name_path
     type: string
-    doc: Output or path parameter `modbam_output_name_path`
+    doc: 'write the results as tags in FILE (default: tsv output)'
     inputBinding:
       position: 102
       prefix: --modbam-output-name

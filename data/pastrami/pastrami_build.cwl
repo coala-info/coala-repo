@@ -8,7 +8,7 @@ doc: "Build reference copying matrices and pickle files for PASTRAMI\n\nTool hom
   https://github.com/healthdisparities/pastrami"
 inputs:
   - id: haplotypes
-    type: File
+    type: File?
     doc: File of haplotype positions
     inputBinding:
       position: 101
@@ -30,7 +30,7 @@ inputs:
       position: 101
       prefix: --per-individual
   - id: reference_prefix
-    type: string
+    type: string?
     doc: Prefix for the reference TPED/TFAM input files
     inputBinding:
       position: 101
@@ -55,7 +55,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reference_out_path`
+    doc: The reference copying matrix output
     inputBinding:
       position: 102
       prefix: --reference-out
@@ -63,7 +63,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reference_pickle_out_path`
+    doc: The reference pickle file output
     inputBinding:
       position: 103
       prefix: --reference-pickle-out

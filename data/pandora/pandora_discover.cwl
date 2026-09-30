@@ -224,7 +224,7 @@ inputs:
       prefix: -w
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: 'Directory to write output files to [default: "pandora_discover"]'
     inputBinding:
       position: 104
       prefix: --outdir

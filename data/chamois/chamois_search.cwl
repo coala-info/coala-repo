@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_search
+baseCommand:
+  - chamois
+  - search
 label: chamois_search
 doc: "Searches a compound class catalog for predicted chemical classes.\n\nTool homepage:
   https://chamois.readthedocs.io/"
@@ -41,14 +43,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --render
-  - id: distance_matrix_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `distance_matrix_path`
-    inputBinding:
-      position: 102
-      prefix: --distance-matrix
   - id: output_path
     type:
       - 'null'
@@ -57,6 +51,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output
+  - id: distance_matrix_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --distance-matrix
 outputs:
   - id: output
     type:

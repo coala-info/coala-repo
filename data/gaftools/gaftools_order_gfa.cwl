@@ -42,7 +42,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output Directory to store all the GFA and CSV files. Default location 
       is a "out" folder from the directory of execution.
     inputBinding:

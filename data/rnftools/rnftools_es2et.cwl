@@ -14,10 +14,10 @@ inputs:
       prefix: --es
   - id: output_et_file_path
     type: string
-    doc: Output or path parameter `output_et_file_path`
+    doc: Output ET file (evaluated read tuples, - for standard
     inputBinding:
       position: 102
-      prefix: --output-et-file
+      prefix: --et
 outputs:
   - id: output_et_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pysradb geo-matrix
+baseCommand:
+  - pysradb
+  - geo-matrix
 label: pysradb_geo-matrix
 doc: "Generates a matrix from GEO accession data.\n\nTool homepage: https://github.com/saketkc/pysradb"
 inputs:
@@ -13,7 +15,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

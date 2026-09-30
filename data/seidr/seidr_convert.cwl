@@ -80,7 +80,7 @@ inputs:
       prefix: --to
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 102
       prefix: --outfile

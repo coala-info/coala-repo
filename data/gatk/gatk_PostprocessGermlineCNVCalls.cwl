@@ -68,7 +68,7 @@ inputs:
     doc: If true, adds a command line header line to created VCF files.
     inputBinding:
       position: 101
-      prefix: --add-output-vcf_command_line
+      prefix: --add-output-vcf-command-line
   - id: allosomal_contig
     type:
       - 'null'
@@ -413,7 +413,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to use.
     inputBinding:
       position: 101

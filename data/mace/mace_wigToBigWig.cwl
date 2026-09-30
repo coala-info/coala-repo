@@ -16,6 +16,11 @@ inputs:
     doc: 'A two-column file/URL: <chromosome name> <size in bases>'
     inputBinding:
       position: 2
+  - id: out_bw
+    type: string
+    doc: Output indexed big wig file
+    inputBinding:
+      position: 3
   - id: block_size
     type:
       - 'null'
@@ -23,7 +28,8 @@ inputs:
     doc: Number of items to bundle in r-tree.
     inputBinding:
       position: 103
-      prefix: -blockSize
+      prefix: -blockSize=
+      separate: false
   - id: clip
     type:
       - 'null'
@@ -48,7 +54,8 @@ inputs:
     doc: Number of data points bundled at lowest level.
     inputBinding:
       position: 103
-      prefix: -itemsPerSlot
+      prefix: -itemsPerSlot=
+      separate: false
   - id: keep_all_chromosomes
     type:
       - 'null'
@@ -70,7 +77,7 @@ outputs:
     type: File
     doc: Output indexed big wig file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_bw)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mace:1.2--py27h99da42f_0

@@ -94,7 +94,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Writable folder for output files (default: ./maracluster_output).'
     inputBinding:
       position: 102
@@ -207,34 +207,36 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `perc_out_path`
+    doc: Tab delimited percolator output file containing peptides and qvalues. 
+      This is meant for annotation of the clusterfile.
     inputBinding:
       position: 103
-      prefix: --perc-out
+      prefix: --percOut
   - id: pval_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pval_out_path`
+    doc: File where p-values will be written to.
     inputBinding:
       position: 104
-      prefix: --pval-out
+      prefix: --pvalOut
   - id: pvec_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pvec_out_path`
+    doc: Output file basename for p-values vectors.
     inputBinding:
       position: 105
-      prefix: --pvec-out
+      prefix: --pvecOut
   - id: spec_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `spec_out_path`
+    doc: Output file for the consensus spectra. Can be in any format supported 
+      by ProteoWizard (e.g. ms2, mzML).
     inputBinding:
       position: 106
-      prefix: --spec-out
+      prefix: --specOut
 outputs:
   - id: spec_out
     type:
@@ -247,10 +249,11 @@ outputs:
   - id: pvec_out
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output file basename for p-values vectors.
     outputBinding:
-      glob: $(inputs.pvec_out_path)
+      glob: $(inputs.pvec_out_path)*
   - id: pval_out
     type:
       - 'null'

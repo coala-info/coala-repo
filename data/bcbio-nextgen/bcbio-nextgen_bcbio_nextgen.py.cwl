@@ -73,11 +73,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --resources
+          separate: true
     doc: Cluster specific resources specifications. Can be specified multiple 
       times. Supports SGE, Torque, LSF and SLURM parameters.
     inputBinding:
       position: 104
-      prefix: --resources
   - id: retries
     type:
       - 'null'

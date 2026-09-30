@@ -195,7 +195,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: Log file name.
     inputBinding:
       position: 102
       prefix: --log
@@ -203,7 +203,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `uchimealns_path`
+    doc: help
     inputBinding:
       position: 103
       prefix: --uchimealns
@@ -211,7 +211,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `uchimeout_path`
+    doc: help
     inputBinding:
       position: 104
       prefix: --uchimeout

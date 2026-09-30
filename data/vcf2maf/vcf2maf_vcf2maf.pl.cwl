@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl vcf2maf_vcf2maf.pl
+baseCommand:
+  - perl
+  - vcf2maf_vcf2maf.pl
 label: vcf2maf_vcf2maf.pl
 doc: "Converts VCF files to MAF format.\n\nTool homepage: https://github.com/mskcc/vcf2maf"
 inputs:
@@ -45,10 +47,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Reference FASTA file 
       ~/.vep/homo_sapiens/112_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref-fasta
@@ -108,7 +110,6 @@ inputs:
       prefix: --verbose
   - id: output_maf_path
     type: string
-    doc: Output or path parameter `output_maf_path`
     inputBinding:
       position: 102
       prefix: --output-maf

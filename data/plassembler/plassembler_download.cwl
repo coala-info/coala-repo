@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plassembler download
+baseCommand:
+  - plassembler
+  - download
 label: plassembler_download
 doc: "Downloads Plassembler DB\n\nTool homepage: https://github.com/gbouras13/plassembler"
 inputs:

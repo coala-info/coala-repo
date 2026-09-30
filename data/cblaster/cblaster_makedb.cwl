@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cblaster_makedb
+baseCommand:
+  - cblaster
+  - makedb
 label: cblaster_makedb
 doc: "Generate local databases from genome files\n\nTool homepage: https://github.com/gamcil/cblaster"
 inputs:

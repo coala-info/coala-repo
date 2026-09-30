@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini roh
+baseCommand:
+  - gemini
+  - roh
 label: gemini_roh
 doc: "Finds regions of homozygosity (ROH) in a VCF file.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

@@ -78,17 +78,20 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -sourcePrefix=pre
+          separate: true
     doc: only process entries where the source name has the specified prefix. 
       May be repeated.
     inputBinding:
       position: 103
-      prefix: -sourcePrefix=pre
   - id: info_out_file_path
     type: string
-    doc: Output or path parameter `info_out_file_path`
+    doc: =file - write a file with information on each transcript
     inputBinding:
       position: 104
-      prefix: --info-out-file
+      prefix: -infoOut=
+      separate: false
 outputs:
   - id: info_out_file
     type:

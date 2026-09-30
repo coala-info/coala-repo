@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_showbalance
+baseCommand:
+  - kpal
+  - showbalance
 label: kpal_showbalance
 doc: "Show the balance of k-mer profiles.\n\nTool homepage: https://github.com/LUMC/kPAL"
 inputs:

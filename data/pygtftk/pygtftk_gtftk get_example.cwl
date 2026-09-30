@@ -82,7 +82,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Keep all temporary files into this folder.
     inputBinding:
       position: 101

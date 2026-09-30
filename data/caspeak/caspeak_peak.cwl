@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: caspeak_peak
+baseCommand:
+  - caspeak
+  - peak
 label: caspeak_peak
 doc: "Detects peaks of mobile element insertions in sequencing data.\n\nTool homepage:
   https://github.com/Rye-lxy/CasPeak"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ov_gui
+baseCommand:
+  - ov
+  - gui
 label: oakvar_ov gui
 doc: "OakVar graphical user interface\n\nTool homepage: http://www.oakvar.com"
 inputs:

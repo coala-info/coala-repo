@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pgap2 main
+baseCommand:
+  - pgap2
+  - main
 label: pgap2_main
 doc: "Main entry point for pgap2.\n\nTool homepage: https://github.com/bucongfan/PGAP2"
 inputs:
@@ -180,7 +182,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

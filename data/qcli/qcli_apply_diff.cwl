@@ -27,7 +27,8 @@ inputs:
       default)
     inputBinding:
       position: 102
-      prefix: --color
+      prefix: --color=
+      separate: false
   - id: context
     type:
       - 'null'
@@ -35,7 +36,8 @@ inputs:
     doc: output NUM (default 3) lines of copied context
     inputBinding:
       position: 102
-      prefix: --context
+      prefix: --context=
+      separate: false
   - id: ed
     type:
       - 'null'
@@ -177,10 +179,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --label
+          separate: true
     doc: use LABEL instead of file name and timestamp (can be repeated)
     inputBinding:
       position: 102
-      prefix: --label
   - id: left_column
     type:
       - 'null'
@@ -389,7 +393,8 @@ inputs:
     doc: output NUM (default 3) lines of unified context
     inputBinding:
       position: 102
-      prefix: --unified
+      prefix: --unified=
+      separate: false
   - id: width
     type:
       - 'null'

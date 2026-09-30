@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy replicate-filter
+baseCommand:
+  - dimspy
+  - replicate-filter
 label: dimspy_replicate-filter
 doc: "Filters peaklists based on replicate information.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
@@ -70,7 +72,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
@@ -78,7 +79,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_path`
     inputBinding:
       position: 103
       prefix: --report

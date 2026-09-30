@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxonkit lineage
+baseCommand:
+  - taxonkit
+  - lineage
 label: taxonkit_lineage
 doc: "Query taxonomic lineage of given TaxIds\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
@@ -111,7 +113,7 @@ inputs:
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 103
       prefix: --out-file

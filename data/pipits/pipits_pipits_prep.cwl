@@ -56,7 +56,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output results
     inputBinding:
       position: 101

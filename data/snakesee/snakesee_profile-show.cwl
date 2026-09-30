@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakesee profile-show
+baseCommand:
+  - snakesee
+  - profile-show
 label: snakesee_profile-show
 doc: "Display contents of a timing profile.\n\nTool homepage: https://github.com/nh13/snakesee"
 inputs:

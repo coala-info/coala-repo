@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fmsi export
+baseCommand:
+  - fmsi
+  - export
 label: fmsi_export
 doc: "Export data from an FMS index.\n\nTool homepage: https://github.com/OndrejSladky/fmsi"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smafa_query
+baseCommand:
+  - smafa
+  - query
 label: smafa_query
 doc: "This command searches a database for query sequences. The database must be generated
   with the `makedb` command. The query sequences can be in FASTA or FASTQ format.

@@ -410,7 +410,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Override default temporary directory
     inputBinding:
       position: 102

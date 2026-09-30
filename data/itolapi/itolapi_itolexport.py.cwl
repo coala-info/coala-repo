@@ -20,6 +20,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dataset_list
+      itemSeparator: ','
   - id: format
     type: string
     doc: Output format (pdf, svg, eps, ps, png, jpg, nexus, newick)

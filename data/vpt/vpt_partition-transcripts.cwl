@@ -42,7 +42,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_entity_by_gene_path`
     inputBinding:
       position: 102
       prefix: --output-entity-by-gene
@@ -50,7 +49,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_transcripts_path`
     inputBinding:
       position: 103
       prefix: --output-transcripts

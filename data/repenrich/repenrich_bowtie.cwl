@@ -17,6 +17,7 @@ inputs:
     doc: Comma-separated list of files containing unpaired reads
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: all_alignments
     type:
       - 'null'
@@ -146,6 +147,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --1
+      itemSeparator: ','
   - id: mates2
     type:
       - 'null'
@@ -155,6 +157,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --2
+      itemSeparator: ','
   - id: max_alignments_per_read
     type:
       - 'null'
@@ -357,6 +360,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --12
+      itemSeparator: ','
   - id: reads_interleaved
     type:
       - 'null'

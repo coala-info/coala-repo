@@ -94,6 +94,7 @@ inputs:
     doc: Space-delimited parameters to be passed to minimap2. Default is "-a --end-bonus 5 --eqx -N 50 -p 0.5".
     inputBinding:
       prefix: -mm2_options =
+      separate: false
   min_coverage:
     type: float?
     label: minimum alignment coverage

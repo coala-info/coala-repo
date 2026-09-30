@@ -92,18 +92,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
   - id: target_reads_bams_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `target_reads_bams_path`
     inputBinding:
       position: 103
-      prefix: --target-reads-bams
+      prefix: --target_reads_bams
 outputs:
   - id: output_file
     type: File

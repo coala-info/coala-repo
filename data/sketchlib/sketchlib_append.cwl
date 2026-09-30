@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchlib_append
+baseCommand:
+  - sketchlib
+  - append
 label: sketchlib_append
 doc: "Append new genomes to be sketched to an existing sketch database\n\nTool homepage:
   https://github.com/bacpop/sketchlib.rust"
@@ -25,6 +27,7 @@ inputs:
     doc: Treat every sequence in an input file as a new sample (aa only)
     inputBinding:
       position: 103
+      prefix: --concat-fasta
   - id: file_list
     type:
       - 'null'
@@ -43,6 +46,7 @@ inputs:
       T,S; N with D,E"
     inputBinding:
       position: 103
+      prefix: --level
   - id: min_count
     type:
       - 'null'
@@ -50,6 +54,7 @@ inputs:
     doc: Minimum k-mer count (with reads)
     inputBinding:
       position: 103
+      prefix: --min-count
   - id: min_qual
     type:
       - 'null'
@@ -57,6 +62,7 @@ inputs:
     doc: Minimum k-mer quality (with reads)
     inputBinding:
       position: 103
+      prefix: --min-qual
   - id: quiet
     type:
       - 'null'
@@ -64,6 +70,7 @@ inputs:
     doc: Don't show any messages
     inputBinding:
       position: 103
+      prefix: --quiet
   - id: single_strand
     type:
       - 'null'
@@ -71,6 +78,7 @@ inputs:
     doc: Ignore reverse complement (all contigs are oriented along same strand)
     inputBinding:
       position: 103
+      prefix: --single-strand
   - id: threads
     type:
       - 'null'
@@ -78,6 +86,7 @@ inputs:
     doc: Number of CPU threads
     inputBinding:
       position: 103
+      prefix: --threads
   - id: verbose
     type:
       - 'null'
@@ -88,10 +97,9 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
     type: File

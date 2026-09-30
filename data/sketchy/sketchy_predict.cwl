@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchy predict
+baseCommand:
+  - sketchy
+  - predict
 label: sketchy_predict
 doc: "Predict genotypes from reads or read streams\n\nTool homepage: https://github.com/esteinig/sketchy"
 inputs:

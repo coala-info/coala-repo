@@ -13,6 +13,7 @@ inputs:
     doc: A list of paths of target genomic variants (.bim format)
     inputBinding:
       position: 1
+      prefix: --target
   - id: chrom
     type:
       - 'null'
@@ -139,7 +140,7 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: <Required> Output directory
     inputBinding:
       position: 103
       prefix: --outdir

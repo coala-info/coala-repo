@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukcc define_set
+baseCommand:
+  - eukcc
+  - define_set
 label: eukcc_define_set
 doc: "Define sets of genomes based on marker prevalence.\n\nTool homepage: https://github.com/Finn-Lab/EukCC/"
 inputs:
@@ -76,8 +78,7 @@ inputs:
       position: 102
       prefix: --threads
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --out

@@ -30,10 +30,10 @@ inputs:
       prefix: --codonPoses
   - id: out_aln_path
     type: string
-    doc: Output or path parameter `out_aln_path`
+    doc: output file name
     inputBinding:
       position: 102
-      prefix: --out-aln
+      prefix: --outAln
 outputs:
   - id: out_aln
     type: File

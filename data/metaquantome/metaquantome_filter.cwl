@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaquantome filter
+baseCommand:
+  - metaquantome
+  - filter
 label: metaquantome_filter
 doc: "The filter module is the second step in the metaQuantome analysis workflow.
   The purpose of the filter module is to filter expanded terms to those that are representative
@@ -100,7 +102,7 @@ inputs:
       prefix: --samps
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file
     inputBinding:
       position: 102
       prefix: --outfile

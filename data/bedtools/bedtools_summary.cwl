@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: -g
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input intervals file (bed/gff/vcf/bam)
     inputBinding:
       position: 101

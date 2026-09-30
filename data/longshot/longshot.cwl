@@ -294,7 +294,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: output VCF file with called variants.
     inputBinding:
       position: 102
       prefix: --out
@@ -302,10 +302,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_bam_path`
+    doc: Write new bam file with haplotype tags (HP:i:1 and HP:i:2) for reads
     inputBinding:
       position: 103
-      prefix: --out-bam
+      prefix: --out_bam
 outputs:
   - id: out
     type: File

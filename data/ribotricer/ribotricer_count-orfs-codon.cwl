@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotricer count-orfs-codon
+baseCommand:
+  - ribotricer
+  - count-orfs-codon
 label: ribotricer_count-orfs-codon
 doc: "Count reads for detected ORFs at codon level\n\nTool homepage: https://github.com/smithlabcode/ribotricer"
 inputs:

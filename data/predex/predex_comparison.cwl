@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predex comparison
+baseCommand:
+  - predex
+  - comparison
 label: predex_comparison
 doc: "Perform comparisons between samples based on a design matrix and a specified
   column.\n\nTool homepage: https://github.com/tomkuipers1402/predex"
@@ -19,7 +21,7 @@ inputs:
       prefix: --design
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output directory (default = current)
     inputBinding:
       position: 102
       prefix: --output

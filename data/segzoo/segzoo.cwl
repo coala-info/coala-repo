@@ -61,7 +61,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory to store all the results
     inputBinding:
       position: 102

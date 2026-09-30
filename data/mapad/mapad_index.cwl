@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mapad_index
+baseCommand:
+  - mapad
+  - index
 label: mapad_index
 doc: "Indexes a genome file\n\nTool homepage: https://github.com/mpieva/mapAD"
 inputs:

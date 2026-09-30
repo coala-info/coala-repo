@@ -16,6 +16,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -exclude
+          separate: true
     doc: File pattern to exclude from error checking (can be specified multiple 
       times)
       - .git
@@ -25,7 +28,6 @@ inputs:
       - work
     inputBinding:
       position: 102
-      prefix: -exclude
   - id: format
     type:
       - 'null'

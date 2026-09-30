@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_trim_ends
+baseCommand:
+  - fastaq
+  - trim_ends
 label: fastaq_trim_ends
 doc: "Trim fixed number of bases of start and/or end of every sequence\n\nTool homepage:
   https://github.com/sanger-pathogens/Fastaq"

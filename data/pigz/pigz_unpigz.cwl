@@ -272,7 +272,6 @@ inputs:
       prefix: --zlib
   - id: stdout_path
     type: string
-    doc: Output or path parameter `stdout_path`
     inputBinding:
       position: 103
       prefix: --stdout

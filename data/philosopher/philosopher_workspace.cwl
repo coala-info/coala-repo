@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: philosopher workspace
+baseCommand:
+  - philosopher
+  - workspace
 label: philosopher_workspace
 doc: "Manage the experiment workspace for the analysis\n\nTool homepage: https://github.com/Nesvilab/philosopher"
 inputs:

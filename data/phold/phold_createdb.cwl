@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold_createdb
+baseCommand:
+  - phold
+  - createdb
 label: phold_createdb
 doc: "Creates foldseek DB from AA FASTA and 3Di FASTA input files\n\nTool homepage:
   https://github.com/gbouras13/phold"
@@ -28,7 +30,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

@@ -9,6 +9,11 @@ inputs:
     doc: Boundary mesh to skeletonize
     inputBinding:
       position: 1
+  - id: output_skeleton_vtk
+    type: string
+    doc: Where to output the skeleton
+    inputBinding:
+      position: 2
   - id: compute_geodesic
     type:
       - 'null'
@@ -212,7 +217,7 @@ outputs:
     type: File
     doc: Where to output the skeleton
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_skeleton_vtk)'
   - id: output_thickness_image
     type:
       - 'null'

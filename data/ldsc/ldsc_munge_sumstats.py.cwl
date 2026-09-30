@@ -72,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ignore
+      itemSeparator: ','
   - id: info
     type:
       - 'null'
@@ -90,6 +91,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --info-list
+      itemSeparator: ','
   - id: info_min
     type:
       - 'null'

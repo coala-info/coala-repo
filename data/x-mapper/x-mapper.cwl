@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar x-mapper.jar
+baseCommand:
+  - java
+  - -jar
+  - x-mapper.jar
 label: x-mapper
 doc: "Aligns genomic sequences quickly and accurately using relatively high amounts
   of memory\n\nTool homepage: https://github.com/mathjeff/mapper"
@@ -452,7 +455,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_ancestor_path`
     inputBinding:
       position: 102
       prefix: --out-ancestor
@@ -460,7 +462,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_mutations_path`
     inputBinding:
       position: 103
       prefix: --out-mutations
@@ -468,7 +469,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_refs_map_count_path`
     inputBinding:
       position: 104
       prefix: --out-refs-map-count
@@ -476,7 +476,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_sam_path`
     inputBinding:
       position: 105
       prefix: --out-sam
@@ -484,7 +483,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_unaligned_path`
     inputBinding:
       position: 106
       prefix: --out-unaligned
@@ -492,7 +490,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_vcf_path`
     inputBinding:
       position: 107
       prefix: --out-vcf

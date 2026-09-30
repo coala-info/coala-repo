@@ -6,9 +6,9 @@ doc: "Align protein sequences to a reference database.\n\nTool homepage: https:/
 inputs:
   - id: reference_fasta
     type: File
+    doc: Reference protein FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference protein FASTA file
     inputBinding:
       position: 1
   - id: query_fasta
@@ -314,10 +314,10 @@ inputs:
       prefix: -C
   - id: save_index_to_file_path
     type: string
-    doc: Output or path parameter `save_index_to_file_path`
+    doc: save index to FILE []
     inputBinding:
       position: 105
-      prefix: --save-index-to-file
+      prefix: -d
 outputs:
   - id: save_index_to_file
     type:

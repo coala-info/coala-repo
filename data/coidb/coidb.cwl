@@ -40,7 +40,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for job execution.
     inputBinding:
       position: 101

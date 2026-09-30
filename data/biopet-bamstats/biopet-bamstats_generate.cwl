@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - biopet
-  - bamstats
+  - biopet-bamstats
   - generate
 label: biopet-bamstats_generate
 doc: "Generate statistics for a BAM file, including information about mapping quality,
@@ -43,9 +42,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Fasta file of reference
     secondaryFiles:
       - .fai
-    doc: Fasta file of reference
     inputBinding:
       position: 101
       prefix: --reference
@@ -69,10 +68,10 @@ inputs:
       prefix: --tsvOutputs
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: ' Output directory'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --outputDir
 outputs:
   - id: output_dir
     type: Directory

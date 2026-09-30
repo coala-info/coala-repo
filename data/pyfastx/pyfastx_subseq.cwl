@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastx_subseq
+baseCommand:
+  - pyfastx
+  - subseq
 label: pyfastx_subseq
 doc: "Extract subsequences from FASTA/FASTQ files.\n\nTool homepage: https://github.com/lmdu/pyfastx"
 inputs:
@@ -37,7 +39,6 @@ inputs:
       prefix: --region-file
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 104
       prefix: --out-file

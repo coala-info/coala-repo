@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --background_bam_files
+      itemSeparator: ','
   - id: genomic_region
     type:
       - 'null'
@@ -76,6 +77,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --target_bam_files
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'

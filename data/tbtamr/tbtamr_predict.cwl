@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tbtamr predict
+baseCommand:
+  - tbtamr
+  - predict
 label: tbtamr_predict
 doc: "Predict resistance profiles and lineages from VCF files.\n\nTool homepage: https://github.com/MDU-PHL/tbtamr"
 inputs:
@@ -95,7 +97,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: temp directory to use
     inputBinding:
       position: 101

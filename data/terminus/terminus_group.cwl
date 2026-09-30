@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: terminus group
+baseCommand:
+  - terminus
+  - group
 label: terminus_group
 doc: "perform per-sample grouping of transcripts; required prior to consensus collapse.\n\
   \nTool homepage: https://github.com/COMBINE-lab/terminus"
@@ -40,16 +42,18 @@ inputs:
       prefix: --tolerance
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: prefix where output would be written
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type: File
+    type:
+      type: array
+      items: File
     doc: prefix where output would be written
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

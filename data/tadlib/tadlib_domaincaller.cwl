@@ -56,15 +56,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `di_output_path`
     inputBinding:
       position: 102
-      prefix: --di-output
+      prefix: --DI-output
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

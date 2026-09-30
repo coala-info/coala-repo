@@ -48,7 +48,7 @@ inputs:
   - id: temp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Auxiliary directory for temporary files.
     inputBinding:
       position: 101

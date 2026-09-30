@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux make-pin
+baseCommand:
+  - crux
+  - make-pin
 label: crux_make-pin
 doc: "Creates a pin file from one or more input files containing peptide-spectrum
   matches (PSMs).\n\nTool homepage: https://github.com/redbadger/crux"
@@ -48,7 +50,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the directory where output files will be created.
     inputBinding:
       position: 102
@@ -91,7 +93,6 @@ inputs:
       prefix: --verbosity
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
       prefix: --output-file

@@ -119,7 +119,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outmatrix_path`
+    doc: "''   If specified, will write a distance matrix"
     inputBinding:
       position: 103
       prefix: --outmatrix
@@ -127,7 +127,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outtree_path`
+    doc: If specified, the tree will be written to
     inputBinding:
       position: 104
       prefix: --outtree

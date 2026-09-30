@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmcp index
+baseCommand:
+  - kmcp
+  - index
 label: kmcp_index
 doc: "Construct a database from k-mer files\n\nTool homepage: https://github.com/shenwei356/kmcp"
 inputs:
@@ -153,7 +155,6 @@ inputs:
       prefix: --threads
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
       prefix: --out-dir

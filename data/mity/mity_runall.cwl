@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mity runall
+baseCommand:
+  - mity
+  - runall
 label: mity_runall
 doc: "Run the MITY pipeline on a list of BAM/CRAM files.\n\nTool homepage: https://github.com/KCCG/mity"
 inputs:
@@ -135,7 +137,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Output files will be saved in OUTPUT_DIR. Default: '.'"
     inputBinding:
       position: 102

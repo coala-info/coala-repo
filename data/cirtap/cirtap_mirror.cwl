@@ -8,7 +8,7 @@ doc: "Mirror all data from ftp.patricbrc.org in the specified DB_DIR\n\nTool hom
   https://github.com/MGXlab/cirtap/"
 inputs:
   - id: db_dir
-    type: Directory
+    type: string
     doc: Directory to store mirrored data
     inputBinding:
       position: 1
@@ -23,7 +23,7 @@ inputs:
   - id: cache_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where cirtap will store some info for its execution. 
       Subsequent executions rely on it so be careful when you delete
     inputBinding:

@@ -120,7 +120,6 @@ inputs:
       prefix: --tombo-model-filename
   - id: pdf_filename_path
     type: string
-    doc: Output or path parameter `pdf_filename_path`
     inputBinding:
       position: 102
       prefix: --pdf-filename

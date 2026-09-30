@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dinf train
+baseCommand:
+  - dinf
+  - train
 label: dinf_train
 doc: "Train a discriminator.\n\nTool homepage: https://github.com/RacimoLab/dinf"
 inputs:
@@ -84,7 +86,6 @@ inputs:
       prefix: --verbose
   - id: discriminator_path
     type: string
-    doc: Output or path parameter `discriminator_path`
     inputBinding:
       position: 102
       prefix: --discriminator

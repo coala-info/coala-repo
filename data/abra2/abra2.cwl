@@ -99,6 +99,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --in
+      itemSeparator: ','
   - id: junctions
     type:
       - 'null'
@@ -278,9 +279,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Genome reference location
     secondaryFiles:
       - .fai
-    doc: Genome reference location
     inputBinding:
       position: 101
       prefix: --ref
@@ -380,7 +381,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set the temp directory (overrides java.io.tmpdir)
     inputBinding:
       position: 101
@@ -409,22 +410,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ws
+  - id: output_files_path
+    type:
+      type: array
+      items: string
+    doc: Output SAM or BAM files, separated by comma.
+    inputBinding:
+      position: 102
+      prefix: --out
+      itemSeparator: ','
   - id: contigs_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `contigs_output_path`
-    inputBinding:
-      position: 102
-      prefix: --contigs-output
-  - id: output_files_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_files_path`
+    doc: Optional file to which assembled contigs are written.
     inputBinding:
       position: 103
-      prefix: --output-files
+      prefix: --contigs
 outputs:
   - id: contigs_output
     type:
@@ -434,7 +436,7 @@ outputs:
     outputBinding:
       glob: $(inputs.contigs_output_path)
   - id: output_files
-    type: File
+    type: File[]
     doc: Required list of output sam or bam file(s) separated by comma
     outputBinding:
       glob: $(inputs.output_files_path)

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vembrane filter
+baseCommand:
+  - vembrane
+  - filter
 label: vembrane_filter
 doc: "Filter VCF/BCF records and annotations based on a user-defined Python\nexpression.Only
   records for which the expression evaluates to True are kept.\n\nTool homepage: https://github.com/vembrane/vembrane"
@@ -134,8 +136,7 @@ inputs:
       position: 103
       prefix: --statistics
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --output

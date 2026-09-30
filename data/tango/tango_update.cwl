@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tango update
+baseCommand:
+  - tango
+  - update
 label: tango_update
 doc: "Updates a prot.accession2taxid.gz file based on a mapping of sequence IDs.\n\
   \nTool homepage: https://github.com/johnne/tango"

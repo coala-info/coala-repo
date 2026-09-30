@@ -47,7 +47,7 @@ inputs:
     position: 102
     prefix: --samples-list
 - id: temp_prefix
-  type: Directory?
+  type: string?
   doc: Ignored; was template for temporary file name
   inputBinding:
     position: 102

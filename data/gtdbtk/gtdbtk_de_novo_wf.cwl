@@ -170,7 +170,7 @@ inputs:
       position: 101
       prefix: --no_support
   - id: out_dir
-    type: Directory
+    type: string
     doc: directory to output files
     inputBinding:
       position: 101
@@ -227,7 +227,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'specify alternative directory for temporary files (default: /tmp)'
     inputBinding:
       position: 101

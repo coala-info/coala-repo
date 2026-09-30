@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tirmite legacy
+baseCommand:
+  - tirmite
+  - legacy
 label: tirmite_legacy
 doc: "Map HMM models of transposon termini to genomic sequences\n\nTool homepage:
   https://github.com/Adamtaranto/TIRmite"
@@ -237,7 +239,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Base directory for temporary files. Uses system temp\nif not specified."
     inputBinding:
       position: 101
@@ -251,7 +253,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: outdir_path
-    type: string
+    type: string?
     doc: All output files will be written to this directory.
     inputBinding:
       position: 102

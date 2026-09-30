@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locidex_format
+baseCommand:
+  - locidex
+  - format
 label: locidex_format
 doc: "Format fasta files from other MLST databases for use with locidex build\n\n\
   Tool homepage: https://pypi.org/project/locidex/"
@@ -63,7 +65,7 @@ inputs:
   - id: translation_table
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101

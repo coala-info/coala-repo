@@ -88,10 +88,10 @@ inputs:
       prefix: --targetGenesFile
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: 'Output folder name to save results [default: OutputResults]'
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: --outputPath
 outputs:
   - id: output_path
     type:

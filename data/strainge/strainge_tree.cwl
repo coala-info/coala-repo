@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strainge tree
+baseCommand:
+  - strainge
+  - tree
 label: strainge_tree
 doc: "Build an approximate phylogenetic tree based on a given distance matrix, using
   neighbour joining.\nBecause our pairwise distances are pretty rough (especially
@@ -14,7 +16,6 @@ inputs:
       position: 1
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 101
       prefix: --output

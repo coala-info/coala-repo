@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar wdltool.jar
+baseCommand:
+  - java
+  - -jar
+  - wdltool.jar
 label: wdltool_highlight
 doc: "Performs various operations on WDL files.\n\nTool homepage: https://github.com/broadinstitute/wdltool"
 inputs:

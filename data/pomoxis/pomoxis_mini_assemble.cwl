@@ -48,7 +48,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'output folder (default: assm).'
     inputBinding:
       position: 101

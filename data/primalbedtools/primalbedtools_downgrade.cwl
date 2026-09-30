@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools downgrade
+baseCommand:
+  - primalbedtools
+  - downgrade
 label: primalbedtools_downgrade
 doc: "Downgrades a BED file to a simpler format.\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

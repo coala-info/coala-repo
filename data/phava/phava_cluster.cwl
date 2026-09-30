@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phava cluster
+baseCommand:
+  - phava
+  - cluster
 label: phava_cluster
 doc: "Cluster PhaVa database\n\nTool homepage: https://github.com/patrickwest/PhaVa"
 inputs:

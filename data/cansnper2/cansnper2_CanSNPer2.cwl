@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: database
-    type: string
+    type: string?
     doc: CanSNP database
     inputBinding:
       position: 102
@@ -158,7 +158,7 @@ inputs:
       prefix: --workdir
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: Output directory
     inputBinding:
       position: 103
       prefix: --outdir

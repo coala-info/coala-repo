@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash_storage
+baseCommand:
+  - sourmash
+  - storage
 label: sourmash_storage
 doc: "Storage utilities\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
 inputs:

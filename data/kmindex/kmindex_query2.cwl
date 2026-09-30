@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmindex_query2
+baseCommand:
+  - kmindex
+  - query2
 label: kmindex_query2
 doc: "To be used instead of kmindex query when many sub-indexes are registered, i.e.
   hundreds or thousands.\n\nTool homepage: https://github.com/tlemane/kmindex"
@@ -76,7 +78,6 @@ inputs:
       prefix: --zvalue
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -74,6 +74,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --regions
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'

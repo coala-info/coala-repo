@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tango assign
+baseCommand:
+  - tango
+  - assign
 label: tango_assign
 doc: "Assigns taxonomy to Diamond blastx results.\n\nTool homepage: https://github.com/johnne/tango"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Diamond blastx results
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 2
   - id: assignranks
     type:
       - 'null'
@@ -130,7 +137,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `blobout_path`
+    doc: Output hits.tsv table compatible with blobtools
     inputBinding:
       position: 103
       prefix: --blobout
@@ -138,16 +145,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `taxidout_path`
+    doc: Write output with taxonomy ids instead of taxonomy
     inputBinding:
       position: 104
       prefix: --taxidout
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
   - id: blobout
     type:
       - 'null'

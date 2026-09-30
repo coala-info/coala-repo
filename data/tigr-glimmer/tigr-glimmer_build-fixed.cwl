@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tigr-glimmer_build-fixed
+baseCommand: /usr/lib/tigr-glimmer/build-fixed
 label: tigr-glimmer_build-fixed
 doc: Read sequences from stdin and output to stdout the fixed-length 
   interpolated context model built from them

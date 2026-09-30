@@ -106,18 +106,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: output directory name to store all results
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -o
   - id: output_prediction_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prediction_file_path`
+    doc: output file name to store prediction results
     inputBinding:
       position: 103
-      prefix: --output-prediction-file
+      prefix: -p
 outputs:
   - id: output_prediction_file
     type:

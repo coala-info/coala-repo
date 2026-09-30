@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_05_create_vOTU_table
+baseCommand:
+  - mvip
+  - MVP_05_create_vOTU_table
 label: mvip_MVP_05_create_vOTU_table
 doc: "Merge all the CoverM output tables and create a set of viral OTU tables based
   on the cutoffs (i.e., horizontal coverage) and filtration mode (i.e., conservative

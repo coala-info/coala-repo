@@ -45,7 +45,7 @@ inputs:
   - id: keep_non_parallel
     type:
       - 'null'
-      - boolean
+      - string
     doc: Keep rearrangements that are not parallel in result (consistent with 
       phylogenetic tree).
     inputBinding:
@@ -79,7 +79,7 @@ inputs:
   - id: visualize_neighbours
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use module for visualizing neighbours.
     inputBinding:
       position: 101
@@ -87,14 +87,13 @@ inputs:
   - id: which_chr
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use information about in which chromosome block is located.
     inputBinding:
       position: 101
       prefix: --which_chr
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

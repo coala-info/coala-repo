@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi extract
+baseCommand:
+  - odgi
+  - extract
 label: odgi_extract
 doc: "Extract subgraphs or parts of a graph defined by query criteria.\n\nTool homepage:
   https://github.com/vgteam/odgi"

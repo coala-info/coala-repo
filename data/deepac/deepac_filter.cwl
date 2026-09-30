@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac filter
+baseCommand:
+  - deepac
+  - filter
 label: deepac_filter
 doc: "Filter predictions based on thresholds and classes.\n\nTool homepage: https://gitlab.com/rki_bioinformatics/DeePaC"
 inputs:
@@ -91,7 +93,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `neg_output_path`
     inputBinding:
       position: 104
       prefix: --neg-output
@@ -99,7 +100,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 105
       prefix: --output
@@ -107,7 +107,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `undef_output_path`
     inputBinding:
       position: 106
       prefix: --undef-output

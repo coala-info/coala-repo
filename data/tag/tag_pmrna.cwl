@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tag pmrna
+baseCommand:
+  - tag
+  - pmrna
 label: tag_pmrna
 doc: "Parses and processes a GFF3 file for pmRNA analysis.\n\nTool homepage: https://github.com/standage/tag/"
 inputs:

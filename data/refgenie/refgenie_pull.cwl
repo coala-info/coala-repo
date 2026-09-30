@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie pull
+baseCommand:
+  - refgenie
+  - pull
 label: refgenie_pull
 doc: "Download assets.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

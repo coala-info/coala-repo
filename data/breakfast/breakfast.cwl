@@ -77,7 +77,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for all output files
     inputBinding:
       position: 101

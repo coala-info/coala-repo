@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomedata_genomedata-close-data
+baseCommand: genomedata-close-data
 label: genomedata_genomedata-close-data
 doc: "Compute summary statistics for data in Genomedata archive and ready for accessing.\n\
   \nTool homepage: http://genomedata.hoffmanlab.org"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler_makebins
+baseCommand:
+  - cooler
+  - makebins
 label: cooler_makebins
 doc: "Generate fixed-width genomic bins.\n\n  Output a genome segmentation at a fixed
   resolution as a BED file.\n\nTool homepage: https://github.com/open2c/cooler"
@@ -34,7 +36,7 @@ inputs:
       prefix: --rel-ids
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output file (defaults to stdout)
     inputBinding:
       position: 104
       prefix: --out

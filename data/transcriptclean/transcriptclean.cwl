@@ -99,10 +99,12 @@ inputs:
       prefix: --outprefix
 outputs:
   - id: outprefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Prefix for output files.
     outputBinding:
-      glob: $(inputs.outprefix_path)
+      glob: $(inputs.outprefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

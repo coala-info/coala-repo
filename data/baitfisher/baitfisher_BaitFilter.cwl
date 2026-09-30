@@ -140,10 +140,9 @@ inputs:
       prefix: --verbosity
   - id: output_bait_file_path
     type: string
-    doc: Output or path parameter `output_bait_file_path`
     inputBinding:
       position: 102
-      prefix: --output-bait-file
+      prefix: --output-bait-file-name
 outputs:
   - id: output_bait_file
     type:

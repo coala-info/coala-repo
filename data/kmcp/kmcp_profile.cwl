@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmcp profile
+baseCommand:
+  - kmcp
+  - profile
 label: kmcp_profile
 doc: "Generate the taxonomic profile from search results\n\nTool homepage: https://github.com/shenwei356/kmcp"
 inputs:
@@ -314,7 +316,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `binning_result_path`
     inputBinding:
       position: 103
       prefix: --binning-result
@@ -322,7 +323,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cami_report_path`
     inputBinding:
       position: 104
       prefix: --cami-report
@@ -330,7 +330,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `debug_path`
+    doc: ► Debug output file.
     inputBinding:
       position: 105
       prefix: --debug
@@ -338,7 +338,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: ► Log file.
     inputBinding:
       position: 106
       prefix: --log
@@ -346,7 +346,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `metaphlan_report_path`
     inputBinding:
       position: 107
       prefix: --metaphlan-report
@@ -354,7 +353,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 108
       prefix: --out-file

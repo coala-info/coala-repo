@@ -11,6 +11,11 @@ inputs:
     doc: Input BWT file
     inputBinding:
       position: 1
+  - id: out_sa
+    type: string
+    doc: Output suffix array file
+    inputBinding:
+      position: 2
   - id: interval
     type:
       - 'null'
@@ -24,7 +29,7 @@ outputs:
     type: File
     doc: Output suffix array file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_sa)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-aln-interactive:0.7.18--h577a1d6_2

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx colored
+baseCommand:
+  - metafx
+  - colored
 label: metafx_colored
 doc: "supervised feature extraction using group-colored de Bruijn graph\n\nTool homepage:
   https://github.com/ctlab/metafx"

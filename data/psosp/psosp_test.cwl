@@ -18,17 +18,13 @@ inputs:
       position: 102
       prefix: --checkv_db
   - id: host_faa
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Host protein FASTA file (FAA)
     inputBinding:
       position: 102
       prefix: --host_faa
   - id: host_fasta
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Host FASTA file
     inputBinding:
       position: 102

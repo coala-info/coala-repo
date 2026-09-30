@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_update
+baseCommand:
+  - mrs
+  - update
 label: mrs_update
 doc: "Update the mrs databank.\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

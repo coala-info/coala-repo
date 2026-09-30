@@ -185,7 +185,7 @@ inputs:
       position: 101
       prefix: --outfile_appendix
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

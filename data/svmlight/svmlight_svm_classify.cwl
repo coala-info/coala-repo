@@ -15,6 +15,11 @@ inputs:
     doc: File containing the trained SVM model
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: File to write the classification results to
+    inputBinding:
+      position: 3
   - id: output_format
     type:
       - 'null'
@@ -32,11 +37,11 @@ inputs:
       position: 103
       prefix: -v
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: File to write the classification results to
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svmlight:6.02--h7b50bb2_8

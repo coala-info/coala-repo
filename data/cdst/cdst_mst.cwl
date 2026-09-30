@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdst mst
+baseCommand:
+  - cdst
+  - mst
 label: cdst_mst
 doc: "Compute the Minimum Spanning Tree (MST) of a difference matrix.\n\nTool homepage:
   https://github.com/l1-mh/CDST"

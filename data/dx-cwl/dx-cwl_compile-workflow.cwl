@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dx-cwl compile-workflow
+baseCommand:
+  - dx-cwl
+  - compile-workflow
 label: dx-cwl_compile-workflow
 doc: "Compile a CWL workflow to a DNAnexus workflow.\n\nTool homepage: https://github.com/dnanexus/dx-cwl"
 inputs:
@@ -44,7 +46,7 @@ inputs:
   - id: rootdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Root directory to place CWL workflow, tools, and resources
     inputBinding:
       position: 102

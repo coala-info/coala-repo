@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur frequencies
+baseCommand:
+  - augur
+  - frequencies
 label: augur_frequencies
 doc: "infer frequencies of mutations or clades\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:
@@ -232,8 +234,7 @@ inputs:
       position: 101
       prefix: --wide-bandwidth
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

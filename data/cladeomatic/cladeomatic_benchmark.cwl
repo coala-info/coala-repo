@@ -32,7 +32,7 @@ inputs:
       position: 101
       prefix: --in_var
   - id: outdir
-    type: Directory
+    type: string
     doc: Output Directory to put results
     inputBinding:
       position: 101

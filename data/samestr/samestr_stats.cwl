@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samestr_stats
+baseCommand:
+  - samestr
+  - stats
 label: samestr_stats
 doc: "Report statistics on SNV profiles.\n\nTool homepage: https://github.com/danielpodlesny/samestr/"
 inputs:
@@ -43,7 +45,7 @@ inputs:
       position: 103
       prefix: --nprocs
   - id: output_dir_path
-    type: string
+    type: string?
     doc: 'Path to output directory. (default: out_db/)'
     inputBinding:
       position: 104

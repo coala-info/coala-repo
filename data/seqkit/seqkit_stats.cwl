@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_stats
+baseCommand:
+  - seqkit
+  - stats
 label: seqkit_stats
 doc: "simple statistics of FASTA/Q files\n\nTool homepage: https://github.com/shenwei356/seqkit"
 inputs:
@@ -157,7 +159,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

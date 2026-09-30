@@ -28,7 +28,8 @@ inputs:
     doc: just do a single chromosome. Don't delete old tables.
     inputBinding:
       position: 104
-      prefix: -chrom
+      prefix: -chrom=
+      separate: false
   - id: chrom_lst
     type:
       - 'null'
@@ -36,7 +37,8 @@ inputs:
     doc: chromosomes subdirs are named in chrom.lst (1, 2, ...)
     inputBinding:
       position: 104
-      prefix: -chromLst
+      prefix: -chromLst=
+      separate: false
   - id: no_gl
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cblaster_config
+baseCommand:
+  - cblaster
+  - config
 label: cblaster_config
 doc: "Configure cblaster (e.g. for setting NCBI e-mail addresses or API keys)\n\n\
   Tool homepage: https://github.com/gamcil/cblaster"

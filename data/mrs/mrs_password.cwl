@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_password
+baseCommand:
+  - mrs
+  - password
 label: mrs_password
 doc: "Modify user password information\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama compare_systems
+baseCommand:
+  - panorama
+  - compare_systems
 label: panorama_compare_systems
 doc: "Compare genomic systems among pangenomes using GFRR metrics\n\nTool homepage:
   https://github.com/labgem/panorama"
@@ -386,7 +388,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files.
     inputBinding:
       position: 101
@@ -402,7 +404,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

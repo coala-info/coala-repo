@@ -33,7 +33,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 101
@@ -230,7 +230,7 @@ inputs:
   - id: parallel_tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files used by multiprocessing
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: syngap_eviplot
+baseCommand:
+  - syngap
+  - eviplot
 label: syngap_eviplot
 doc: "Generate an EVI plot from a tab-divided EVI file.\n\nTool homepage: https://github.com/yanyew/SynGAP"
 inputs:
@@ -44,7 +46,7 @@ inputs:
       prefix: --highlightid
   - id: outgraph_path
     type: string
-    doc: Output or path parameter `outgraph_path`
+    doc: The output graph file (output format determined by the
     inputBinding:
       position: 102
       prefix: --outgraph

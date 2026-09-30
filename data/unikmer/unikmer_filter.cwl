@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer filter
+baseCommand:
+  - unikmer
+  - filter
 label: unikmer_filter
 doc: "Filter out low-complexity k-mers (experimental)\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

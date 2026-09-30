@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga_gen-ssa
+baseCommand:
+  - sga
+  - gen-ssa
 label: sga_gen-ssa
 doc: "Build a sampled suffix array for the reads in READSFILE using the BWT\n\nTool
   homepage: https://github.com/jts/sga"

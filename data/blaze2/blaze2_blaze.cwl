@@ -179,7 +179,6 @@ inputs:
       prefix: --umi-len
   - id: output_fastq_path
     type: string
-    doc: Output or path parameter `output_fastq_path`
     inputBinding:
       position: 103
       prefix: --output-fastq

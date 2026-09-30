@@ -433,26 +433,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bed_path`
+    doc: ' Output file to write crosslink sites. Valid filetype is: .bed.'
     inputBinding:
       position: 102
-      prefix: --output-bed
+      prefix: --out
   - id: output_parameters_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_parameters_path`
+    doc: ' Output file to write learned parameters.'
     inputBinding:
       position: 103
-      prefix: --output-parameters
+      prefix: --par
   - id: output_regions_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_regions_path`
+    doc: ' Output file to write binding regions. Valid filetype is: .bed.'
     inputBinding:
       position: 104
-      prefix: --output-regions
+      prefix: -or
 outputs:
   - id: output_bed
     type: File

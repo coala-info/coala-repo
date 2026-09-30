@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file:  VGP HiFi
-  phased assembly with hifiasm and HiC data'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file:  VGP HiFi phased assembly with hifiasm and HiC data'
 inputs:
   HiC forward reads:
     format: data
@@ -378,8 +377,7 @@ steps:
   25_gfastats:
     in:
       input_file: 10_Hifiasm/hic_balanced_contig_hap2_graph
-      mode_condition|statistics_condition|expected_genomesize: 22_Parse parameter
-        value/integer_param
+      mode_condition|statistics_condition|expected_genomesize: 22_Parse parameter value/integer_param
     out:
     - stats
     run:
@@ -399,8 +397,7 @@ steps:
   26_gfastats:
     in:
       input_file: 10_Hifiasm/hic_balanced_contig_hap1_graph
-      mode_condition|statistics_condition|expected_genomesize: 22_Parse parameter
-        value/integer_param
+      mode_condition|statistics_condition|expected_genomesize: 22_Parse parameter value/integer_param
     out:
     - stats
     run:
@@ -419,28 +416,34 @@ steps:
           type: File
   2_Input parameter:
     in: {}
-    out: []
+    out:
+    - output
     run:
       class: Operation
-      id: null
       inputs: {}
-      outputs: {}
+      outputs:
+        output:
+          type: Any
   3_Input parameter:
     in: {}
-    out: []
+    out:
+    - output
     run:
       class: Operation
-      id: null
       inputs: {}
-      outputs: {}
+      outputs:
+        output:
+          type: Any
   4_Input parameter:
     in: {}
-    out: []
+    out:
+    - output
     run:
       class: Operation
-      id: null
       inputs: {}
-      outputs: {}
+      outputs:
+        output:
+          type: Any
   7_Meryl:
     in:
       operation_type|input_meryldb_02: Meryl Database

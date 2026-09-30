@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree download
+baseCommand:
+  - gotree
+  - download
 label: gotree_download
 doc: "Download trees or images from different servers (itol, ncbi taxonomy)\n\nTool
   homepage: https://github.com/fredericlemoine/gotree"

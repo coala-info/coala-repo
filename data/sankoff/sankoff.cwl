@@ -94,7 +94,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_as_path`
+    doc: print sequences of ancestral and leaf
     inputBinding:
       position: 102
       prefix: --out-as
@@ -102,7 +102,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_tree_path`
+    doc: The tree to this file. Some times it is
     inputBinding:
       position: 103
       prefix: --out-tree

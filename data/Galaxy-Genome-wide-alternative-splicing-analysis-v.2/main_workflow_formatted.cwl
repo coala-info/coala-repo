@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 class: Workflow
 doc: |-
   Abstract CWL Automatically generated from the Galaxy workflow file: Genome-wide alternative splicing analysis: human
@@ -985,11 +985,13 @@ steps:
   4_Input parameter:
     in: {}
     run:
-      id:
       class: Operation
       inputs: {}
-      outputs: {}
-    out: []
+      outputs:
+        output:
+          type: Any
+    out:
+    - output
   50_Remove beginning:
     in:
       input: 48_CPAT/orf_seqs_prob_best
@@ -1143,8 +1145,10 @@ steps:
   5_Input parameter:
     in: {}
     run:
-      id:
       class: Operation
       inputs: {}
-      outputs: {}
-    out: []
+      outputs:
+        output:
+          type: Any
+    out:
+    - output

@@ -11,11 +11,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
+          separate: true
     doc: Input alignment file in BAM format, can be specified multiple times; 
       required for HLA diplotyping
     inputBinding:
       position: 101
-      prefix: --bam
   - id: database
     type: File
     doc: Input database file (JSON)
@@ -128,9 +130,9 @@ inputs:
       prefix: --normalize-d6-only
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -168,10 +170,8 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_calls_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_calls_path`
+    type: string
+    doc: Output diplotype call file (JSON)
     inputBinding:
       position: 102
       prefix: --output-calls
@@ -179,7 +179,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_debug_path`
+    doc: Optional output debug folder
     inputBinding:
       position: 103
       prefix: --output-debug
@@ -187,7 +187,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pharmcat_tsv_path`
+    doc: Output file that can be provided to PharmCAT for further call 
+      interpretation
     inputBinding:
       position: 104
       prefix: --pharmcat-tsv

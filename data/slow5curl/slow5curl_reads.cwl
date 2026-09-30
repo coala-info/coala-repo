@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slow5curl_reads
+baseCommand:
+  - slow5curl
+  - reads
 label: slow5curl_reads
 doc: "Prints the reads in a remote BLOW5 file.\n\nTool homepage: https://github.com/BonsonW/slow5curl"
 inputs:

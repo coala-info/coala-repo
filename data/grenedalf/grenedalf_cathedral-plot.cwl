@@ -149,7 +149,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write files to
     inputBinding:
       position: 101

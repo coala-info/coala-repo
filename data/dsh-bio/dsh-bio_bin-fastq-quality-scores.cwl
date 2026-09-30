@@ -14,7 +14,7 @@ inputs:
       prefix: --input-fastq-path
   - id: output_fastq_file_path
     type: string
-    doc: Output or path parameter `output_fastq_file_path`
+    doc: output FASTQ file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-fastq-file

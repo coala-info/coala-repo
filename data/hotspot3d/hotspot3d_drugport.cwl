@@ -14,7 +14,7 @@ inputs:
       prefix: --pdb-file-dir
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output file of drugport parsing, default: drugport_results'
     inputBinding:
       position: 102
       prefix: --output-file

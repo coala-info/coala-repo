@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: newmap_track
+baseCommand:
+  - newmap
+  - track
 label: newmap_track
 doc: "Calculate mappability values based on read length and unique count files.\n\n\
   Tool homepage: https://github.com/hoffmangroup/newmap"
@@ -31,7 +33,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `multi_read_path`
     inputBinding:
       position: 104
       prefix: --multi-read
@@ -39,7 +40,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `single_read_path`
     inputBinding:
       position: 105
       prefix: --single-read

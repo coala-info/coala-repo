@@ -63,17 +63,17 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write temporary files to DIR
     inputBinding:
       position: 102
       prefix: -T
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to FILE rather than standard output
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastutils_revcomp
+baseCommand:
+  - fastutils
+  - revcomp
 label: fastutils_revcomp
 doc: "Reverse complement sequences in FASTA/Q format.\n\nTool homepage: https://github.com/haghshenas/fastutils"
 inputs:
@@ -46,10 +48,10 @@ inputs:
       prefix: --comment
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file [stdout]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aviary diversity
+baseCommand:
+- aviary
+- diversity
 label: aviary_diversity
 doc: "Perform strain diversity analysis\n\nTool homepage: https://github.com/rhysnewell/aviary/"
 inputs:
@@ -420,7 +422,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -514,6 +516,7 @@ inputs:
         items: string
     doc: "Specify which kinds of modifications will trigger rules to rerun (default:
       ['mtime'])"
+    default:
       - mtime
     inputBinding:
       position: 101
@@ -606,7 +609,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location that will be treated used for temporary files. If 
       none is specified, the TMPDIR environment variable will be used. Can be 
       configured within the `configure` subcommand

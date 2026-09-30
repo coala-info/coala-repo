@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy mv-sample-filter
+baseCommand:
+  - dimspy
+  - mv-sample-filter
 label: dimspy_mv-sample-filter
 doc: "Filters samples based on the maximum fraction of missing values.\n\nTool homepage:
   https://github.com/computational-metabolomics/dimspy"
@@ -21,7 +23,6 @@ inputs:
       prefix: --max-fraction
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

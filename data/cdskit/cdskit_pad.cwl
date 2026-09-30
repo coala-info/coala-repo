@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_pad
+baseCommand:
+  - cdskit
+  - pad
 label: cdskit_pad
 doc: "Pad CDS sequences to be multiples of three.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

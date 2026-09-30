@@ -88,7 +88,7 @@ inputs:
       prefix: --thread
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: Output folder.
     inputBinding:
       position: 102
       prefix: --outdir

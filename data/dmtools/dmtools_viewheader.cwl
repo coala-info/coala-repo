@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools_viewheader
+baseCommand:
+  - dmtools
+  - viewheader
 label: dmtools_viewheader
 doc: "View header of a DM file\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:

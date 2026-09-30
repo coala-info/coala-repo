@@ -48,10 +48,10 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '{file} : Output file'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jass create-inittable
+baseCommand:
+  - jass
+  - create-inittable
 label: jass_create-inittable
 doc: "Creates an initial table for JASS based on input data and configuration.\n\n\
   Tool homepage: http://statistical-genetics.pages.pasteur.fr/jass/"

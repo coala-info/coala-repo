@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hymet_ablation
+baseCommand:
+  - hymet
+  - ablation
 label: hymet_ablation
 doc: "Ablate samples using HYMET\n\nTool homepage: https://github.com/inesbmartins02/HYMET"
 inputs:
@@ -93,8 +95,8 @@ inputs:
       position: 102
       prefix: --threads
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
+    doc: Output directory for ablation results
     inputBinding:
       position: 103
       prefix: --out

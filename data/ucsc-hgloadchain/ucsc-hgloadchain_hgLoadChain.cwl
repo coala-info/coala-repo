@@ -67,7 +67,8 @@ inputs:
     doc: Prepend "xxx" to query name
     inputBinding:
       position: 104
-      prefix: -qPrefix
+      prefix: -qPrefix=
+      separate: false
   - id: sql_table
     type:
       - 'null'
@@ -75,7 +76,8 @@ inputs:
     doc: Create table from .sql file
     inputBinding:
       position: 104
-      prefix: -sqlTable
+      prefix: -sqlTable=
+      separate: false
   - id: test
     type:
       - 'null'

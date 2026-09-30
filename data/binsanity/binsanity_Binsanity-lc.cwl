@@ -107,10 +107,11 @@ inputs:
       prefix: -x
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: utput Directory   Give a name to the directory BinSanity results will 
+      be output in [Default:'BINSANITY-RESULTS']
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
     type: Directory

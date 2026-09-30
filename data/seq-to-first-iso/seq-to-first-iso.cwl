@@ -30,7 +30,6 @@ inputs:
       prefix: --unlabelled-aa
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 105
       prefix: --output

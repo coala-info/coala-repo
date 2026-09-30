@@ -52,11 +52,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --gene
+          separate: true
     doc: Target gene name, prefix (ending with '*'), or matrix (starting with 
       '#'). Can be specified multiple times.
     inputBinding:
       position: 101
-      prefix: --gene
   - id: genes_file
     type:
       - 'null'
@@ -117,9 +119,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference FASTA for reading CRAM files.
     secondaryFiles:
       - .fai
-    doc: Reference FASTA for reading CRAM files.
     inputBinding:
       position: 101
       prefix: -T
@@ -157,14 +159,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 102
-      prefix: --output
   - id: outputs_list_path
     type:
       - 'null'
@@ -173,6 +167,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --outputs-list
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: 'Output file (append if file exits, default: stdout)'
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:

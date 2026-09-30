@@ -176,6 +176,7 @@ inputs:
     doc: 'Cleanup conda packages after creating environments. In case of `tarballs`
       mode, will clean up all downloaded package tarballs. In case of `cache` mode,
       will additionally clean up unused package caches. (default: tarballs)'
+    default:
       - tarballs
     inputBinding:
       position: 102
@@ -1379,7 +1380,7 @@ inputs:
   - id: shadow_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a directory in which the `shadow` directory is created. If not 
       supplied, the value is set to the `.snakemake` directory relative to the 
       working directory.
@@ -1401,6 +1402,7 @@ inputs:
       by NFS but input and output files will be handled exclusively by the storage
       provider. (default: input-output persistence software-deployment source-cache
       sources storage-local-copies)'
+    default:
       - input-output
       - persistence
       - software-deployment

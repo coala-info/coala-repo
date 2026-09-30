@@ -46,7 +46,6 @@ inputs:
       prefix: --summary-col
   - id: updated_marker_file_path
     type: string
-    doc: Output or path parameter `updated_marker_file_path`
     inputBinding:
       position: 102
       prefix: --updated-marker-file

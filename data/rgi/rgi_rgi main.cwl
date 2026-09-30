@@ -117,12 +117,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --split_prodigal_jobs
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output_file
 outputs:
   - id: output_file
     type: File
     doc: output folder and base filename
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0

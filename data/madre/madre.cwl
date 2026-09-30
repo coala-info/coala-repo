@@ -37,7 +37,7 @@ inputs:
       position: 101
       prefix: --min_contig_len
   - id: out_folder
-    type: Directory
+    type: string
     doc: Path to the output folder.
     inputBinding:
       position: 101
@@ -75,7 +75,7 @@ inputs:
   - id: use_myloasm
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use Myloasm assembler tool instead of metaFlye/metaMDBG.
     inputBinding:
       position: 101

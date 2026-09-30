@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yame_pack
+baseCommand:
+  - yame
+  - pack
 label: yame_pack
 doc: "Pack tab-delimited text into a compressed cx file.\n\nTool homepage: https://github.com/zhou-lab/YAME"
 inputs:

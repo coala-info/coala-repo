@@ -31,6 +31,7 @@ inputs:
     doc: allows DNA sequences in FASTA format
     inputBinding:
       position: 102
+      prefix: -fasta
   - id: from_pos
     type:
       - 'null'
@@ -78,6 +79,7 @@ inputs:
     doc: if specified, the repetition sequences will not be output
     inputBinding:
       position: 102
+      prefix: -noprint
   - id: resolution
     type:
       - 'null'

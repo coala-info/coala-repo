@@ -30,21 +30,25 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --annotate-default
+          separate: true
     doc: Specify default values for annotations. Can be specified multiple 
       times. E.g. -d 'name1:value1' -d 'name2:value2'
     inputBinding:
       position: 103
-      prefix: --annotate-default
   - id: annotate_manual
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --annotate-manual
+          separate: true
     doc: Specify annotations to override. Can be specified multiple times. E.g. 
       -a 'name1:value1' -a 'name2:value2'
     inputBinding:
       position: 103
-      prefix: --annotate-manual
   - id: cache_url
     type:
       - 'null'

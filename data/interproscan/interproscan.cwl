@@ -14,6 +14,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --applications
+      itemSeparator: ','
   - id: cpu
     type:
       - 'null'
@@ -40,6 +41,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --formats
+      itemSeparator: ','
   - id: goterms
     type:
       - 'null'
@@ -73,7 +75,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to be used for temporary files.
     inputBinding:
       position: 101
@@ -98,11 +100,12 @@ outputs:
   - id: output_file_base
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Optional output file base name. If not provided, the input file name is
       used.
     outputBinding:
-      glob: $(inputs.output_file_base_path)
+      glob: $(inputs.output_file_base_path)*
   - id: outfile
     type:
       - 'null'

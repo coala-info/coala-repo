@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophex query
+baseCommand:
+  - prophex
+  - query
 label: prophex_query
 doc: "Query a prophex index\n\nTool homepage: https://github.com/prophyle/prophex"
 inputs:

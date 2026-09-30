@@ -212,7 +212,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory. If not specified, will use the current 
       directory.
     inputBinding:

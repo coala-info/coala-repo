@@ -79,7 +79,7 @@ inputs:
       position: 102
       prefix: --vcf
   - id: output_csv_path
-    type: string
+    type: string?
     inputBinding:
       position: 103
       prefix: --output-csv

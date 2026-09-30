@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yasma_download
+baseCommand:
+  - yasma
+  - download
 label: yasma_download
 doc: "Download libraries from the NCBI SRA using their SRR code\n\nTool homepage:
   https://github.com/NateyJay/YASMA"

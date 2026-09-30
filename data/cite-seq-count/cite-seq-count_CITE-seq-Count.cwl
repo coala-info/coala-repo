@@ -157,18 +157,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' Results will be written to this folder'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output
   - id: unmapped_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unmapped_file_path`
     inputBinding:
       position: 103
-      prefix: --unmapped-file
+      prefix: --unmapped-tags
 outputs:
   - id: output_folder
     type:

@@ -11,6 +11,11 @@ inputs:
     doc: The input 2bit file
     inputBinding:
       position: 1
+  - id: out_fa
+    type: string
+    doc: The output fasta file
+    inputBinding:
+      position: 2
   - id: bed
     type:
       - 'null'
@@ -88,7 +93,7 @@ outputs:
     type: File
     doc: The output fasta file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_fa)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1

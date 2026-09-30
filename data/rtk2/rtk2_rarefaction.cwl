@@ -59,10 +59,10 @@ inputs:
       prefix: -t
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: path to a output directory
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
     type: Directory

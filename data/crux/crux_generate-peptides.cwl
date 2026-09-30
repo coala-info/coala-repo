@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux generate-peptides
+baseCommand:
+  - crux
+  - generate-peptides
 label: crux_generate-peptides
 doc: "Generate peptides from a protein FASTA file.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

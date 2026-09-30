@@ -37,7 +37,7 @@ inputs:
   - id: archivedir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Configure where to put the fastq_pass files, default\n                 \
       \       in the output directory."
     inputBinding:
@@ -267,7 +267,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory. Default: `analysis-2022-XX-YY`'
     inputBinding:
       position: 101
@@ -287,7 +287,6 @@ inputs:
       - boolean
     doc: "Overwrite output directory. Default: append an\n                       \
       \ incrementing number if <-o/--outdir> already exists"
-      already exists"
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -332,7 +331,7 @@ inputs:
   - id: publishdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Output publish directory. Default: `analysis-2022-XX-\n                \
       \        YY`"
     inputBinding:
@@ -435,7 +434,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Specify where you want the temp stuff to go. Default:\n                \
       \        `$TMPDIR`"
     inputBinding:

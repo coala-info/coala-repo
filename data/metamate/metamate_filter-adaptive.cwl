@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metamate filter-adaptive
+baseCommand:
+  - metamate
+  - filter-adaptive
 label: metamate_filter-adaptive
 doc: "adaptive filtering arguments\n\nTool homepage: https://github.com/tjcreedy/metamate"
 inputs:

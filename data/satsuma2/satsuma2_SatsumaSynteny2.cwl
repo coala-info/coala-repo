@@ -117,7 +117,7 @@ inputs:
       position: 101
       prefix: -old_seed
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101

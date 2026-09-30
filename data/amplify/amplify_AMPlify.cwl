@@ -48,10 +48,9 @@ inputs:
       prefix: --sub_model
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type:

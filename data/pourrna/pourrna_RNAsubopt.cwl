@@ -43,7 +43,8 @@ inputs:
     doc: Calculate structures subject to constraints.
     inputBinding:
       position: 101
-      prefix: --constraint
+      prefix: --constraint=
+      separate: false
   - id: dangles
     type:
       - 'null'
@@ -270,10 +271,11 @@ inputs:
       prefix: --zuker
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Print output to file instead of stdout
     inputBinding:
       position: 102
-      prefix: --outfile
+      prefix: --outfile=
+      separate: false
 outputs:
   - id: outfile
     type:

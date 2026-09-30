@@ -210,18 +210,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `barcode_counts_file_path`
+    doc: write number of reads per barcode to FILE
     inputBinding:
       position: 103
-      prefix: --barcode-counts-file
-  - id: dist_tsv_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `dist_tsv_path`
-    inputBinding:
-      position: 104
-      prefix: --dist-tsv
+      prefix: --barcode-counts
   - id: graph_file_path
     type:
       - 'null'
@@ -230,14 +222,6 @@ inputs:
     inputBinding:
       position: 105
       prefix: --graph-file
-  - id: samples_tsv_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `samples_tsv_path`
-    inputBinding:
-      position: 106
-      prefix: --samples-tsv
   - id: tsv_output_path
     type:
       - 'null'
@@ -246,6 +230,22 @@ inputs:
     inputBinding:
       position: 107
       prefix: --tsv-output
+  - id: dist_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: write min/max distance estimates to FILE
+    inputBinding:
+      position: 108
+      prefix: --dist_tsv
+  - id: samples_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: write intra-contig distance/barcode samples to FILE
+    inputBinding:
+      position: 109
+      prefix: --samples_tsv
 outputs:
   - id: graph_file
     type:

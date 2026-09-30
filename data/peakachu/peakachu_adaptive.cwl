@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: peakachu adaptive
+baseCommand:
+  - peakachu
+  - adaptive
 label: peakachu_adaptive
 doc: "Adaptive peak calling for ChIP-seq data.\n\nTool homepage: https://github.com/tbischler/PEAKachu"
 inputs:
@@ -159,10 +161,9 @@ inputs:
       prefix: --sub_features
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output_folder
 outputs:
   - id: output_folder
     type:

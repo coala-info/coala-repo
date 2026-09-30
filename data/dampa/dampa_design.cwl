@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dampa design
+baseCommand:
+  - dampa
+  - design
 label: dampa_design
 doc: "Design probes for pangenomes\n\nTool homepage: https://github.com/MultipathogenGenomics/dampa"
 inputs:
@@ -152,7 +154,7 @@ inputs:
   - id: outputfolder
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to output folder
     inputBinding:
       position: 101

@@ -13,6 +13,7 @@ inputs:
     doc: The inclusion targets in FASTA format.
     inputBinding:
       position: 1
+      prefix: --inclusion
   - id: exclusion
     type:
       type: array
@@ -20,6 +21,7 @@ inputs:
     doc: The exclusion targets in FASTA format.
     inputBinding:
       position: 2
+      prefix: --exclusion
   - id: reference
     type:
       - 'null'

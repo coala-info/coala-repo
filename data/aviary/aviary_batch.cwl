@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aviary batch
+baseCommand:
+  - aviary
+  - batch
 label: aviary_batch
 doc: "Performs all steps in the Aviary pipeline on a batch file. Each line in the
   batch file is processed separately and then clustered using aviary. (Assembly >
@@ -18,6 +20,7 @@ inputs:
       "" if using a comma separated batch file) within the specific read column.
     inputBinding:
       position: 1
+      prefix: --batch_file
   - id: ani
     type:
       - 'null'
@@ -45,6 +48,7 @@ inputs:
       conda environments is built.
     inputBinding:
       position: 102
+      prefix: --build
   - id: checkm2_db_path
     type:
       - 'null'
@@ -95,6 +99,7 @@ inputs:
       (see `--snakemake-profile`).
     inputBinding:
       position: 102
+      prefix: --cluster-retries
   - id: coassemble
     type:
       - 'null'
@@ -124,6 +129,7 @@ inputs:
       NOTE: tmpdir is handled by the `tmpdir` command line parameter.'
     inputBinding:
       position: 102
+      prefix: --default-resources
   - id: disable_adapter_trimming
     type:
       - 'null'
@@ -141,6 +147,7 @@ inputs:
       databases
     inputBinding:
       position: 102
+      prefix: --download
   - id: dry_run
     type:
       - 'null'
@@ -403,7 +410,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102
@@ -574,6 +581,7 @@ inputs:
       Please make sure your additional commands don't clash."
     inputBinding:
       position: 102
+      prefix: --snakemake-cmds
   - id: snakemake_profile
     type:
       - 'null'
@@ -586,10 +594,11 @@ inputs:
       requires cluster, cluster-status, jobs, cluster-cancel.
     inputBinding:
       position: 102
+      prefix: --snakemake-profile
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location that will be treated used for temporary files. If 
       none is specified, the TMPDIR environment variable will be used. Can be 
       configured within the `configure` subcommand

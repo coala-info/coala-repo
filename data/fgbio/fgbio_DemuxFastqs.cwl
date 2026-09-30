@@ -228,7 +228,7 @@ inputs:
       position: 101
       prefix: --omit-fastq-read-numbers
   - id: output
-    type: Directory
+    type: string
     doc: The output directory in which to place sample BAMs.
     inputBinding:
       position: 101

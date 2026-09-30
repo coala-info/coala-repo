@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools chromstats
+baseCommand:
+  - dmtools
+  - chromstats
 label: dmtools_chromstats
 doc: "Calculate chromosome methylation statistics from DM files.\n\nTool homepage:
   https://github.com/ZhouQiangwei/dmtools"
@@ -75,10 +77,10 @@ inputs:
       prefix: --stepmove
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file [stdout]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

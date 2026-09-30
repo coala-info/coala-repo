@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haptools simgenotype
+baseCommand:
+  - haptools
+  - simgenotype
 label: haptools_simgenotype
 doc: "Simulate admixed genomes under a pre-defined model.\n\nTool homepage: https://github.com/cast-genomics/haptools"
 inputs:

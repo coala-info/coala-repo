@@ -18,6 +18,7 @@ inputs:
         items: float
     doc: "Parameters for the function determining the parameter n for the chi^2 distribution:
       m, b, z for 'm*x + b' if x < z and 'm*z + b' for x >=z"
+    default:
       - 0.00189237136
       - 2.5394497
       - 5500
@@ -31,6 +32,7 @@ inputs:
         items: float
     doc: "Parameters for the curve determining the parameter scale for the chi^2 distribution:
       m,b, z, c, a for 'm*x + b' if x <= z and 'c * x^-a' if x > z"
+    default:
       - 0.01214
       - -5.12
       - 675
@@ -112,9 +114,7 @@ inputs:
       - type: array
         items: float
     doc: Parameters for normal distributed noise added to quality increase sqare
-      root function
-      - 0
-      - 0.2
+      root function - 0 - 0.2
     inputBinding:
       position: 102
       prefix: --norm-params
@@ -209,6 +209,7 @@ inputs:
         items: float
     doc: "Parameters for the sqare root function for the quality increase: a, b for
       'sqrt(x+a) - b'"
+    default:
       - 0.5
       - 0.2247
     inputBinding:
@@ -232,6 +233,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --without-ns
+  - id: sam_output_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --sam-output
 outputs:
   - id: sam_output
     type:
@@ -240,7 +246,9 @@ outputs:
     doc: Save the alignments in a sam-file at SAM_OUTPUT. By default, use 
       OUTPUT_PREFIX.sam.
     outputBinding:
-      glob: $(inputs.sam_output)
+      glob: $(inputs.sam_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/simlord:1.0.4--py39hbcbf7aa_5

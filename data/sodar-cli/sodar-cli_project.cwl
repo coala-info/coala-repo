@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sodar-cli project
+baseCommand:
+  - sodar-cli
+  - project
 label: sodar-cli_project
 doc: "Manage SODAR projects.\n\nTool homepage: https://github.com/bihealth/sodar-cli"
 inputs:

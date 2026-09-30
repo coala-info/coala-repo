@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnavirhost classify_order
+baseCommand:
+  - rnavirhost
+  - classify_order
 label: rnavirhost_classify_order
 doc: "Classifier query viruses at order level\n\nTool homepage: https://github.com/GreyGuoweiChen/VirHost.git"
 inputs:
@@ -12,7 +14,6 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

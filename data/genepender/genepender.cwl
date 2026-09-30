@@ -38,7 +38,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Root output folder, source folder otherwise
     inputBinding:
       position: 103

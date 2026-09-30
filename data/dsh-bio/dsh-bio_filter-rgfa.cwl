@@ -78,7 +78,7 @@ inputs:
       prefix: --script
   - id: output_rgfa_file_path
     type: string
-    doc: Output or path parameter `output_rgfa_file_path`
+    doc: output rGFA file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-rgfa-file

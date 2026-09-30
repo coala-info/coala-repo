@@ -30,8 +30,7 @@ inputs:
       position: 101
       prefix: --top-n
   - id: read_pattern_out_path
-    type: string
-    doc: Output or path parameter `read_pattern_out_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --read-pattern-out

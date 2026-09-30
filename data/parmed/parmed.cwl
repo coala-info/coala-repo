@@ -45,11 +45,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input
+          separate: true
     doc: Script with ParmEd commands to execute. Default reads from stdin. Can 
       be specified multiple times to process multiple input files.
     inputBinding:
       position: 103
-      prefix: --input
   - id: no_splash
     type:
       - 'null'
@@ -71,11 +73,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --parm
+          separate: true
     doc: List of topology files to load into ParmEd. Can be specified multiple 
       times to process multiple topologies.
     inputBinding:
       position: 103
-      prefix: --parm
   - id: prompt
     type:
       - 'null'
@@ -104,7 +108,6 @@ inputs:
       prefix: --strict
   - id: logfile_path
     type: string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 104
       prefix: --logfile

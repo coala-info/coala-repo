@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem metapackage
+baseCommand:
+  - singlem
+  - metapackage
 label: singlem_metapackage
 doc: "Create or describe a metapackage (i.e. set of SingleM packages)\n\nTool homepage:
   https://github.com/wwood/singlem"

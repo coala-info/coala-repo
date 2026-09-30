@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: philosopher comet
+baseCommand:
+  - philosopher
+  - comet
 label: philosopher_comet
 doc: "Run comet\n\nTool homepage: https://github.com/Nesvilab/philosopher"
 inputs:

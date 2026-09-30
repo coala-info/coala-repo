@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_predict
+baseCommand:
+  - chamois
+  - predict
 label: chamois_predict
 doc: "Predicts BGC classes and associated domains.\n\nTool homepage: https://chamois.readthedocs.io/"
 inputs:

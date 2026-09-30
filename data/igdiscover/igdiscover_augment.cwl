@@ -35,7 +35,7 @@ inputs:
       position: 103
       prefix: --sequence-type
   - id: stats_path
-    type: string
+    type: string?
     doc: Write statistics in JSON format to FILE
     inputBinding:
       position: 104

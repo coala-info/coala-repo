@@ -39,7 +39,7 @@ inputs:
       position: 101
       prefix: -chrThenSizeD
   - id: faidx_file
-    type: File
+    type: File?
     doc: Sort according to the chromosomes declared in "names.txt"
     inputBinding:
       position: 101
@@ -61,9 +61,7 @@ inputs:
       position: 101
       prefix: -header
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input bed/gff/vcf file
     inputBinding:
       position: 101

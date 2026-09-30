@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bam
+      itemSeparator: ','
   - id: disc_weight
     type:
       - 'null'
@@ -75,9 +76,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Indexed reference FASTA file (recommended for reading CRAM files)
     secondaryFiles:
       - .fai
-    doc: Indexed reference FASTA file (recommended for reading CRAM files)
     inputBinding:
       position: 101
       prefix: --ref_fasta
@@ -109,18 +110,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: --output_vcf
   - id: write_alignment_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_alignment_path`
     inputBinding:
       position: 103
-      prefix: --write-alignment
+      prefix: --write_alignment
 outputs:
   - id: output_vcf
     type:

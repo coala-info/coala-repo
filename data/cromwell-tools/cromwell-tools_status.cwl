@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools status
+baseCommand:
+  - cromwell-tools
+  - status
 label: cromwell-tools_status
 doc: "Get the status of one or more workflows.\n\nTool homepage: http://github.com/broadinstitute/cromwell-tools"
 inputs:

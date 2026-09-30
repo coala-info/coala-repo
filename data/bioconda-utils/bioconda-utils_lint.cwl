@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconda-utils lint
+baseCommand:
+  - bioconda-utils
+  - lint
 label: bioconda-utils_lint
 doc: "Lint recipes\n\nTool homepage: http://bioconda.github.io/build-system.html"
 inputs:

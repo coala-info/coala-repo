@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfftk_consensus
+baseCommand:
+  - gfftk
+  - consensus
 label: gfftk_consensus
 doc: "EvidenceModeler-like tool to generate consensus gene predictions. All gene models
   are loaded and sorted into loci based on genomic location, in each locus the gene
@@ -141,7 +143,7 @@ inputs:
       prefix: --weights
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: output in GFF3 format
     inputBinding:
       position: 102
       prefix: --out

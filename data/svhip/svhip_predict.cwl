@@ -15,7 +15,7 @@ inputs:
   - id: gtf
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Set to True if you want overlapping annotations to be merged and written
       as GTF file. IMPORTANT: Requires genomic coordinates in input.'
     inputBinding:
@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: --model-path
   - id: outfile
-    type: Directory
+    type: string
     doc: Name for the output directory (Required).
     inputBinding:
       position: 101
@@ -46,7 +46,7 @@ inputs:
   - id: probability
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Set to True if you want class probabilities assigned in final output. Warning:
       Requires model to be trained with probability flag.'
     inputBinding:

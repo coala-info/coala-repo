@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_filter
+baseCommand:
+  - smof
+  - filter
 label: smof_filter
 doc: "Prints every entry by default. You may add one or more criteria to filter the\n\
   results (e.g. `smof filter -s 200 -l 100 -c 'GC > .5'` will print only\nsequences

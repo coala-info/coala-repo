@@ -48,10 +48,10 @@ inputs:
       prefix: --rename
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Name of output file to write to (instead of the default STDOUT)
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

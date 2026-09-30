@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fq_generate
+baseCommand:
+  - fq
+  - generate
 label: fq_generate
 doc: "Generates a random FASTQ file pair\n\nTool homepage: https://github.com/stjude-rust-labs/fq"
 inputs:

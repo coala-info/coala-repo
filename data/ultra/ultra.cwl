@@ -449,10 +449,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file path
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

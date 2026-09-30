@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samestr compare
+baseCommand:
+  - samestr
+  - compare
 label: samestr_compare
 doc: "Compare SNV profiles between samples.\n\nTool homepage: https://github.com/danielpodlesny/samestr/"
 inputs:
@@ -44,9 +46,7 @@ inputs:
       position: 103
       prefix: --dominant-variants-msa
   - id: marker_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to MetaPhlAn or mOTUs clade marker database.
     inputBinding:
       position: 103
@@ -60,7 +60,7 @@ inputs:
       position: 103
       prefix: --nprocs
   - id: output_dir_path
-    type: string
+    type: string?
     doc: 'Path to output directory. (default: out_db/)'
     inputBinding:
       position: 104

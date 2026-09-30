@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gmx dump
+baseCommand:
+  - gmx
+  - dump
 label: gromacs_mddb_gmx dump
 doc: "Reads a run input file (.tpr), a trajectory (.trr/.xtc/tng), an energy file
   (.edr), a checkpoint file (.cpt) or topology file (.top) and prints that to standard

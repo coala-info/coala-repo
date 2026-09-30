@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gappa edit
+baseCommand:
+  - gappa
+  - edit
 label: gappa_edit
 doc: "Commands for editing and manipulating files like jplace, fasta or newick.\n\n\
   Tool homepage: https://github.com/lczech/gappa"

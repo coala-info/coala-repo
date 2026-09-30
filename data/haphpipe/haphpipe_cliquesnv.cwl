@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe cliquesnv
+baseCommand:
+  - haphpipe
+  - cliquesnv
 label: haphpipe_cliquesnv
 doc: "Haphpipe tool for CliqueSNV analysis.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -104,7 +106,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

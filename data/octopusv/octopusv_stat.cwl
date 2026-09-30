@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: octopusv_stat
+baseCommand:
+  - octopusv
+  - stat
 label: octopusv_stat
 doc: "Analyze a single SVCF file and generate comprehensive statistics.\n\nTool homepage:
   https://github.com/ylab-hi/octopusV"
@@ -36,7 +38,7 @@ inputs:
       prefix: --report
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: PATH     Output file for statistics. [required]    │
     inputBinding:
       position: 103
       prefix: --output-file

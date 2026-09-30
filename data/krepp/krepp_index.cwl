@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: krepp index
+baseCommand:
+  - krepp
+  - index
 label: krepp_index
 doc: "Build an index from k-mers of reference genomes.\n\nTool homepage: https://github.com/bo1929/krepp"
 inputs:

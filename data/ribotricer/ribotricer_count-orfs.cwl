@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotricer count-orfs
+baseCommand:
+  - ribotricer
+  - count-orfs
 label: ribotricer_count-orfs
 doc: "Count reads for detected ORFs at gene level\n\nTool homepage: https://github.com/smithlabcode/ribotricer"
 inputs:

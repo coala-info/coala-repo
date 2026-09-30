@@ -84,10 +84,10 @@ inputs:
       prefix: -v
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
+    doc: filename(with path) of the output fasta (required
     inputBinding:
       position: 102
-      prefix: --output-fasta
+      prefix: -o
 outputs:
   - id: output_fasta
     type: File

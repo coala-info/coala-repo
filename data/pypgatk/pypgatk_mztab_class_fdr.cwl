@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgatk_mztab_class_fdr
+baseCommand:
+  - pypgatk
+  - mztab_class_fdr
 label: pypgatk_mztab_class_fdr
 doc: "Filter peptides by global-fdr and class-fdr\n\nTool homepage: http://github.com/bigbio/py-pgatk"
 inputs:
@@ -56,10 +58,10 @@ inputs:
       prefix: --peptide_groups_prefix
   - id: outfile_name_path
     type: string
-    doc: Output or path parameter `outfile_name_path`
+    doc: The file name of the psm table filtered by
     inputBinding:
       position: 102
-      prefix: --outfile-name
+      prefix: --outfile_name
 outputs:
   - id: outfile_name
     type:

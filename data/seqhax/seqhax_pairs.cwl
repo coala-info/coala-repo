@@ -39,18 +39,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_broken_paired_path`
+    doc: '"Broken paired" output, all reads'
     inputBinding:
       position: 104
-      prefix: --output-broken-paired
+      prefix: -b
   - id: output_interleaved_pairs_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_interleaved_pairs_path`
+    doc: Interleaved pairs-only output
     inputBinding:
       position: 105
-      prefix: --output-interleaved-pairs
+      prefix: -p
   - id: output_mate_1_path
     type:
       - 'null'
@@ -71,26 +71,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_statistics_path`
+    doc: Output statistics to FILE.
     inputBinding:
       position: 108
-      prefix: --output-statistics
+      prefix: -y
   - id: output_strict_interleaved_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_strict_interleaved_path`
+    doc: '"Strict interleaved" output, all reads'
     inputBinding:
       position: 109
-      prefix: --output-strict-interleaved
+      prefix: -s
   - id: output_unpaired_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_unpaired_path`
+    doc: Unpaired read output
     inputBinding:
       position: 110
-      prefix: --output-unpaired
+      prefix: -u
 outputs:
   - id: output_mate_1
     type:

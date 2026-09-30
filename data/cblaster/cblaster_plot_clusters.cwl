@@ -58,7 +58,7 @@ inputs:
       prefix: --score_threshold
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Location were to store the plot file.
     inputBinding:
       position: 103
       prefix: --output

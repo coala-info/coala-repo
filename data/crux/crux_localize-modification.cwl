@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux localize-modification
+baseCommand:
+  - crux
+  - localize-modification
 label: crux_localize-modification
 doc: "Localize modifications in PSM files.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:
@@ -30,7 +32,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the directory where output files will be created.
     inputBinding:
       position: 102

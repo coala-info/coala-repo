@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: auspice convert
+baseCommand:
+  - auspice
+  - convert
 label: auspice_convert
 doc: "Convert auspice dataset JSON file(s) to the most up-to-date schema (currently
   v2). Note that in auspice v2.x, \"auspice view\" will convert v1 JSONs to v2 for
@@ -24,7 +26,7 @@ inputs:
       prefix: --v1 META TREE
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: File to write output to
     inputBinding:
       position: 102
       prefix: --output

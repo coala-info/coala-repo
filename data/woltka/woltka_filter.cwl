@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: woltka filter
+baseCommand:
+  - woltka
+  - filter
 label: woltka_filter
 doc: "Filter a profile by per-sample abundance.\n\nTool homepage: https://github.com/qiyunzhu/woltka"
 inputs:
@@ -28,10 +30,10 @@ inputs:
       prefix: --min-percent
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to output profile.  [required]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfasta_split
+baseCommand:
+  - pyfasta
+  - split
 label: pyfasta_split
 doc: "split a fasta file into separated files.\n\nTool homepage: https://github.com/brentp/pyfasta"
 inputs:

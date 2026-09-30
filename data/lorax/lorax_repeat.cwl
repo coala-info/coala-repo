@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lorax repeat
+baseCommand:
+  - lorax
+  - repeat
 label: lorax_repeat
 doc: "Finds tandem repeats in a reference genome.\n\nTool homepage: https://github.com/tobiasrausch/lorax"
 inputs:
@@ -60,10 +62,10 @@ inputs:
       prefix: --window
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --outfile
 outputs:
   - id: output_file
     type:

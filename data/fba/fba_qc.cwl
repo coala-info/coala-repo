@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fba qc
+baseCommand:
+  - fba
+  - qc
 label: fba_qc
 doc: "Generate diagnostic information. If `-1` is omitted, bulk mode is enabled and
   only read 2 will be analyzed.\n\nTool homepage: https://github.com/jlduan/fba"
@@ -74,7 +76,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify a output directory. Default (./qc)
     inputBinding:
       position: 101

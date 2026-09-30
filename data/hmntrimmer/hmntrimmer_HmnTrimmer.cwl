@@ -113,30 +113,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-fastq-discard
-  - id: output_fastq_forward_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_fastq_forward_path`
-    inputBinding:
-      position: 103
-      prefix: --output-fastq-forward
-  - id: output_fastq_interleaved_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_fastq_interleaved_path`
-    inputBinding:
-      position: 104
-      prefix: --output-fastq-interleaved
-  - id: output_fastq_reverse_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_fastq_reverse_path`
-    inputBinding:
-      position: 105
-      prefix: --output-fastq-reverse
   - id: output_report_path
     type:
       - 'null'
@@ -144,6 +120,27 @@ inputs:
     inputBinding:
       position: 106
       prefix: --output-report
+  - id: output_fastq_forward_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --output-fastq-forward
+  - id: output_fastq_interleaved_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: --output-fastq-interleaved
+  - id: output_fastq_reverse_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 109
+      prefix: --output-fastq-reverse
 outputs:
   - id: output_fastq_forward
     type:

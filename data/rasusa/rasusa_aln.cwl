@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rasusa aln
+baseCommand:
+  - rasusa
+  - aln
 label: rasusa_aln
 doc: "Randomly subsample alignments to a specified depth of coverage\n\nTool homepage:
   https://github.com/mbhall88/rasusa"
@@ -68,11 +70,12 @@ inputs:
       position: 102
       prefix: --swap-distance
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: ' Path to the output subsampled alignment file. Defaults to stdout (same
+      format as input)'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

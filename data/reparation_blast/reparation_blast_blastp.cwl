@@ -391,14 +391,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -xdrop_ungap
-  - id: export_search_strategy_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `export_search_strategy_path`
-    inputBinding:
-      position: 102
-      prefix: --export-search-strategy
   - id: output_file_path
     type:
       - 'null'
@@ -407,6 +399,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output-file
+  - id: export_search_strategy_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: -export_search_strategy
 outputs:
   - id: export_search_strategy
     type:

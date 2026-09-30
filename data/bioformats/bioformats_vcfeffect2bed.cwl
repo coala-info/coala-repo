@@ -12,6 +12,11 @@ inputs:
     doc: an snpEff-annotated VCF file
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: the output BED3+ file of sample effects
+    inputBinding:
+      position: 2
   - id: genotypes
     type:
       - 'null'
@@ -40,11 +45,11 @@ inputs:
       position: 102
       prefix: --impacts
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: the output BED3+ file of sample effects
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

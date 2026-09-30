@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq enumerate_names
+baseCommand:
+  - fastaq
+  - enumerate_names
 label: fastaq_enumerate_names
 doc: "Renames sequences in a file, calling them 1,2,3... etc\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Name of fasta/q file to be read
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output fasta/q file
+    inputBinding:
+      position: 2
   - id: keep_suffix
     type:
       - 'null'
@@ -42,11 +49,11 @@ inputs:
       position: 102
       prefix: --suffix
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output fasta/q file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

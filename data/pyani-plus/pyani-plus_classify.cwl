@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyani-plus classify
+baseCommand:
+  - pyani-plus
+  - classify
 label: pyani-plus_classify
 doc: "Classify genomes into clusters based on ANI results.\n\nTool homepage: https://github.com/pyani-plus/pyani-plus"
 inputs:
@@ -87,7 +89,7 @@ inputs:
       prefix: --vertical-line
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: DIRECTORY            Output directory. Created if     │
     inputBinding:
       position: 102
       prefix: --outdir

@@ -59,22 +59,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-size
-  - id: o_prefix_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `o_prefix_path`
-    inputBinding:
-      position: 102
-      prefix: --o-prefix
-  - id: ofile_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `ofile_path`
-    inputBinding:
-      position: 103
-      prefix: --ofile
   - id: outdir_path
     type:
       - 'null'
@@ -83,6 +67,21 @@ inputs:
     inputBinding:
       position: 104
       prefix: --outdir
+  - id: o_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output file prefix. Mutually exclusive with
+    inputBinding:
+      position: 105
+      prefix: --o-prefix
+  - id: ofile_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --ofile
 outputs:
   - id: outdir
     type:

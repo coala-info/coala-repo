@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python endorS.py
+baseCommand:
+  - python
+  - endorS.py
 label: endorspy
 doc: "endorS.py calculates percent on target (aka Endogenous DNA) from samtools flagstat
   files and print to screen. The percent on target reported will be different depending
@@ -56,10 +58,11 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '[OUTPUT] specify a file format for an output file. Options: <json> for a
+      MultiQC json output. Default: none'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

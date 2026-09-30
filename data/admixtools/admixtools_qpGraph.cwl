@@ -66,22 +66,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -z
-  - id: graph_dot_name_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `graph_dot_name_path`
-    inputBinding:
-      position: 103
-      prefix: --graph-dot-name
   - id: out_graph_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_graph_path`
+    doc: Use this name as the output graph.
+    inputBinding:
+      position: 103
+      prefix: -o
+  - id: graph_dot_name_path
+    type:
+      - 'null'
+      - string
+    doc: Use this name for the graph dot file.
     inputBinding:
       position: 104
-      prefix: --out-graph
+      prefix: -d
 outputs:
   - id: out_graph
     type:

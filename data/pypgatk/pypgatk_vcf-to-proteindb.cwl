@@ -183,10 +183,10 @@ inputs:
       prefix: --vcf
   - id: output_proteindb_path
     type: string
-    doc: Output or path parameter `output_proteindb_path`
+    doc: Output file name, exits if already exists
     inputBinding:
       position: 102
-      prefix: --output-proteindb
+      prefix: --output_proteindb
 outputs:
   - id: output_proteindb
     type:

@@ -56,7 +56,6 @@ inputs:
       prefix: --pval-threshold
   - id: garnett_marker_file_path
     type: string
-    doc: Output or path parameter `garnett_marker_file_path`
     inputBinding:
       position: 102
       prefix: --garnett-marker-file

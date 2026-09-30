@@ -12,6 +12,12 @@ inputs:
     doc: The final report .tsv file to filter
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Output .tsv file containing list of filtered epitopes based on coverage
+      and expression values
+    inputBinding:
+      position: 2
   - id: expn_val
     type:
       - 'null'
@@ -71,12 +77,12 @@ inputs:
       position: 102
       prefix: --trna-vaf
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: Output .tsv file containing list of filtered epitopes based on coverage
       and expression values
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pvacseq:4.0.10--py36_0

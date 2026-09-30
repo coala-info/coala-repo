@@ -17,6 +17,7 @@ inputs:
     doc: Comma-separated list of files containing unpaired reads
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: all_alignments
     type:
       - 'null'
@@ -154,6 +155,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --1
+      itemSeparator: ','
   - id: mates2
     type:
       - 'null'
@@ -163,6 +165,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --2
+      itemSeparator: ','
   - id: max_alignments
     type:
       - 'null'
@@ -349,6 +352,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --12
+      itemSeparator: ','
   - id: reads_interleaved
     type:
       - 'null'
@@ -570,26 +574,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aligned_reads_file_path`
+    doc: write aligned reads/pairs to file(s) <fname>
     inputBinding:
       position: 104
-      prefix: --aligned-reads-file
+      prefix: --al
   - id: max_reads_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `max_reads_file_path`
+    doc: write reads/pairs over -m limit to file(s) <fname>
     inputBinding:
       position: 105
-      prefix: --max-reads-file
+      prefix: --max
   - id: unaligned_reads_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unaligned_reads_file_path`
+    doc: write unaligned reads/pairs to file(s) <fname>
     inputBinding:
       position: 106
-      prefix: --unaligned-reads-file
+      prefix: --un
 outputs:
   - id: hit_file
     type:

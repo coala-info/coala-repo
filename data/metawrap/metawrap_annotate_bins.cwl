@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metawrap annotate_bins
+baseCommand:
+  - metawrap
+  - annotate_bins
 label: metawrap_annotate_bins
 doc: "Annotates metagenomic bins.\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:

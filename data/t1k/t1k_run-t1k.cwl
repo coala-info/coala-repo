@@ -115,7 +115,7 @@ inputs:
       position: 101
       prefix: -c
   - id: interleaved_file
-    type: string
+    type: File
     doc: path to interleaved read file
     inputBinding:
       position: 101
@@ -155,7 +155,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: the directory for output files.
     inputBinding:
       position: 101
@@ -258,7 +258,7 @@ inputs:
       position: 101
       prefix: --relaxIntronAlign
   - id: single_end_file
-    type: string
+    type: File
     doc: path to single-end read file
     inputBinding:
       position: 101

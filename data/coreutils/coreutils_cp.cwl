@@ -42,7 +42,8 @@ inputs:
     doc: make a backup of each existing destination file; accepts CONTROL
     inputBinding:
       position: 102
-      prefix: --backup
+      prefix: --backup=
+      separate: false
   - id: context
     type:
       - 'null'
@@ -50,7 +51,8 @@ inputs:
     doc: set the SELinux or SMACK security context to CTX
     inputBinding:
       position: 102
-      prefix: --context
+      prefix: --context=
+      separate: false
   - id: context_default
     type:
       - 'null'
@@ -187,7 +189,8 @@ inputs:
     doc: preserve the specified attributes (ATTR_LIST)
     inputBinding:
       position: 102
-      prefix: --preserve
+      prefix: --preserve=
+      separate: false
   - id: preserve_default
     type:
       - 'null'
@@ -211,7 +214,8 @@ inputs:
     doc: control clone/CoW copies (always, auto, never)
     inputBinding:
       position: 102
-      prefix: --reflink
+      prefix: --reflink=
+      separate: false
   - id: remove_destination
     type:
       - 'null'
@@ -259,7 +263,8 @@ inputs:
     doc: control which existing files are updated (all, none, none-fail, older)
     inputBinding:
       position: 102
-      prefix: --update
+      prefix: --update=
+      separate: false
   - id: update_older
     type:
       - 'null'
@@ -280,7 +285,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `target_directory_path`
+    doc: copy all SOURCE arguments into DIRECTORY
     inputBinding:
       position: 103
       prefix: --target-directory

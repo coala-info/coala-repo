@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk merge
+baseCommand:
+  - hictk
+  - merge
 label: hictk_merge
 doc: "Merge multiple Cooler or .hic files into a single file.\n\nTool homepage: https://github.com/paulsengroup/hictk"
 inputs:
@@ -93,7 +95,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to a folder where to store temporary data.
     inputBinding:
       position: 102
@@ -108,7 +110,6 @@ inputs:
       prefix: --verbosity
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
       prefix: --output-file

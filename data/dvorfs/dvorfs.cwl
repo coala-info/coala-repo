@@ -139,7 +139,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101
@@ -179,7 +179,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory in which DVORFS will save files during a run
     inputBinding:
       position: 101

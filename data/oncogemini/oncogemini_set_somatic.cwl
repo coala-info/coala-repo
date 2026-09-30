@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini set_somatic
+baseCommand:
+  - oncogemini
+  - set_somatic
 label: oncogemini_set_somatic
 doc: "Set somatic status for variants in a database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie init
+baseCommand:
+  - refgenie
+  - init
 label: refgenie_init
 doc: "Initialize a genome configuration.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

@@ -102,7 +102,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Build on temporary disk space at this path instead of in-memory.
     inputBinding:
       position: 102
@@ -122,6 +122,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Write output to a file instead of printing.
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -129,7 +135,9 @@ outputs:
       - File
     doc: Write output to a file instead of printing.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kbo-cli:0.2.1--h4349ce8_0

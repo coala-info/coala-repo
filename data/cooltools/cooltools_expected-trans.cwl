@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooltools expected-trans
+baseCommand:
+  - cooltools
+  - expected-trans
 label: cooltools_expected-trans
 doc: "Calculate expected Hi-C signal for trans regions of chromosomal interaction
   map: average of interactions in a rectangular block defined by a pair of regions,

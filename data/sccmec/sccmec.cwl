@@ -53,7 +53,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write output
     inputBinding:
       position: 101

@@ -94,7 +94,8 @@ inputs:
       is omitted.
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --output=
+      separate: false
   - id: portability
     type:
       - 'null'

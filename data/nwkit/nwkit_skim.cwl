@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit_skim
+baseCommand:
+  - nwkit
+  - skim
 label: nwkit_skim
 doc: "Prunes a newick tree based on trait data.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

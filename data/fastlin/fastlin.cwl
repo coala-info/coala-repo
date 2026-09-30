@@ -57,8 +57,8 @@ inputs:
       position: 101
       prefix: --nb-threads
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: 'output file [out_fastlin.txt] [default: out_fastlin.txt]'
     inputBinding:
       position: 102
       prefix: --output

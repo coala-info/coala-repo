@@ -213,7 +213,7 @@ inputs:
   - id: shared_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory in which the alignment files are stored. If not specified it 
       is created inside the main output directory.
     inputBinding:
@@ -248,7 +248,6 @@ inputs:
       prefix: --update-input-names
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
       prefix: --output-directory

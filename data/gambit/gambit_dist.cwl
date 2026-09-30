@@ -60,10 +60,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -q
+          separate: true
     doc: Query genome(s) (may be used multiple times).
     inputBinding:
       position: 101
-      prefix: -q
   - id: query_list_file
     type:
       - 'null'
@@ -93,10 +95,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -r
+          separate: true
     doc: Reference genome (may be used multiple times).
     inputBinding:
       position: 101
-      prefix: -r
   - id: reference_list_file
     type:
       - 'null'
@@ -131,10 +135,10 @@ inputs:
       prefix: --use-db
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file.  [required]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

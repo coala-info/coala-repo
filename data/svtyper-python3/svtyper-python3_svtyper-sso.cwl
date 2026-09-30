@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bam
+      itemSeparator: ','
   - id: batch_size
     type:
       - 'null'

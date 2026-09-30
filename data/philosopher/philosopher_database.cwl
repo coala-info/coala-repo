@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: philosopher database
+baseCommand:
+  - philosopher
+  - database
 label: philosopher_database
 doc: "Process a database for peptide identification.\n\nTool homepage: https://github.com/Nesvilab/philosopher"
 inputs:

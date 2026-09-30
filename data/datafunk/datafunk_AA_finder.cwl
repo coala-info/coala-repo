@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: datafunk AA_finder
+baseCommand:
+  - datafunk
+  - AA_finder
 label: datafunk_AA_finder
 doc: "Query a codon position for amino acids\n\nTool homepage: https://github.com/cov-ert/datafunk"
 inputs:
@@ -19,7 +21,6 @@ inputs:
       prefix: --input-fasta
   - id: genotypes_table_path
     type: string
-    doc: Output or path parameter `genotypes_table_path`
     inputBinding:
       position: 102
       prefix: --genotypes-table

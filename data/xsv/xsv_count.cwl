@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_count
+baseCommand:
+  - xsv
+  - count
 label: xsv_count
 doc: "Prints a count of the number of records in the CSV data.\n\nTool homepage: https://github.com/BurntSushi/xsv"
 inputs:

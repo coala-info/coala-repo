@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: querynator query-api-cgi
+baseCommand:
+  - querynator
+  - query-api-cgi
 label: querynator_query-api-cgi
 doc: "Query the CGI API\n\nTool homepage: https://github.com/qbic-pipelines/querynator"
 inputs:

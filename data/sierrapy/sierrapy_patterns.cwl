@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sierrapy_patterns
+baseCommand:
+  - sierrapy
+  - patterns
 label: sierrapy_patterns
 doc: "Run drug resistance and other analysis for one or more files contains lines
   of PR, RT and/or IN mutations based on HIV-1 type B consensus. Each line is treated
@@ -87,10 +89,10 @@ inputs:
       prefix: --virus
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: File path to store the JSON result.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

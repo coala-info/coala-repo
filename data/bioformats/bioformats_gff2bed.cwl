@@ -16,6 +16,11 @@ inputs:
     doc: type of features to be processed
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: the output file in the BED format
+    inputBinding:
+      position: 3
   - id: attributes
     type:
       - 'null'
@@ -66,11 +71,11 @@ inputs:
       position: 103
       prefix: --parent_tag
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: the output file in the BED format
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

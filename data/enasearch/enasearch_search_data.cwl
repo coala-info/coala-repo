@@ -36,6 +36,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fields
+      itemSeparator: ','
   - id: free_text_search
     type:
       - 'null'
@@ -86,9 +87,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sortfields
+      itemSeparator: ','
   - id: file_path
     type: string
-    doc: Output or path parameter `file_path`
+    doc: File to save the content of the search (used with
     inputBinding:
       position: 102
       prefix: --file

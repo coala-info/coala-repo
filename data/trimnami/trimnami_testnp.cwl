@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trimnami testnp
+baseCommand:
+  - trimnami
+  - testnp
 label: trimnami_testnp
 doc: "Test Trimnami with the test LR dataset and test host\n\nTool homepage: https://github.com/beardymcjohnface/Trimnami"
 inputs:

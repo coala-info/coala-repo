@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq bcstats
+baseCommand:
+  - isoseq
+  - bcstats
 label: isoseq_bcstats
 doc: "Generates stats for group barcodes and (optionally) molecular barcodes\n\nTool
   homepage: https://github.com/PacificBiosciences/pbbioconda"

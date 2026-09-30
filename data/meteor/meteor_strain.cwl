@@ -107,17 +107,17 @@ inputs:
   - id: tmp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the directory where temporary files are stored
     inputBinding:
       position: 101
       prefix: --tmp
   - id: strain_dir_path
     type: string
-    doc: Output or path parameter `strain_dir_path`
+    doc: Path to output directory.
     inputBinding:
       position: 102
-      prefix: --strain-dir
+      prefix: -o
 outputs:
   - id: strain_dir
     type: Directory

@@ -76,10 +76,10 @@ inputs:
       prefix: -v
   - id: given_structure_output_path
     type: string
-    doc: Output or path parameter `given_structure_output_path`
+    doc: ': Output of given structure in ordered pairs (needed for comppair)'
     inputBinding:
       position: 103
-      prefix: --given-structure-output
+      prefix: -s
 outputs:
   - id: given_structure_output
     type: File

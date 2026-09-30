@@ -157,7 +157,7 @@ inputs:
       prefix: --tabular
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

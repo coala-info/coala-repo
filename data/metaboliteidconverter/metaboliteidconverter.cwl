@@ -11,6 +11,7 @@ inputs:
     doc: use this if the input file has database names on the first line
     inputBinding:
       position: 101
+      prefix: -headers
   - id: in_db
     type: string
     doc: Input database to convert from.
@@ -40,10 +41,10 @@ inputs:
       position: 101
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: ': [Required] Output file name.'
     inputBinding:
       position: 102
-      prefix: --out-file
+      prefix: -outFile
 outputs:
   - id: out_file
     type: File

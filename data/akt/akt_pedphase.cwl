@@ -45,7 +45,7 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file name [stdout]
     inputBinding:
       position: 103
       prefix: --output-file

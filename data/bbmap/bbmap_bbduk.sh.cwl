@@ -24,7 +24,8 @@ inputs:
     doc: Maximum edit distance from ref kmers (subs and indels).
     inputBinding:
       position: 101
-      prefix: editdistance
+      prefix: editdistance=
+      separate: false
   - id: hammingdistance
     type:
       - 'null'
@@ -32,13 +33,15 @@ inputs:
     doc: Maximum Hamming distance for ref kmers (subs only).
     inputBinding:
       position: 101
-      prefix: hammingdistance
+      prefix: hammingdistance=
+      separate: false
   - id: in
     type: File
     doc: Main input. in=stdin.fq will pipe from stdin.
     inputBinding:
       position: 101
-      prefix: in
+      prefix: in=
+      separate: false
   - id: in2
     type:
       - 'null'
@@ -46,7 +49,8 @@ inputs:
     doc: Input for 2nd read of pairs in a different file.
     inputBinding:
       position: 101
-      prefix: in2
+      prefix: in2=
+      separate: false
   - id: interleaved
     type:
       - 'null'
@@ -54,7 +58,8 @@ inputs:
     doc: t/f overrides interleaved autodetection.
     inputBinding:
       position: 101
-      prefix: interleaved
+      prefix: interleaved=
+      separate: false
   - id: k
     type:
       - 'null'
@@ -62,7 +67,8 @@ inputs:
     doc: Kmer length used for finding contaminants.
     inputBinding:
       position: 101
-      prefix: k
+      prefix: k=
+      separate: false
   - id: ktrim
     type:
       - 'null'
@@ -70,7 +76,8 @@ inputs:
     doc: Trim reads to remove bases matching reference kmers (f, r, l).
     inputBinding:
       position: 101
-      prefix: ktrim
+      prefix: ktrim=
+      separate: false
   - id: literal
     type:
       - 'null'
@@ -79,7 +86,9 @@ inputs:
     doc: Comma-delimited list of literal reference sequences.
     inputBinding:
       position: 101
-      prefix: literal
+      prefix: literal=
+      itemSeparator: ','
+      separate: false
   - id: maskmiddle
     type:
       - 'null'
@@ -87,7 +96,8 @@ inputs:
     doc: Treat the middle base of a kmer as a wildcard.
     inputBinding:
       position: 101
-      prefix: maskmiddle
+      prefix: maskmiddle=
+      separate: false
   - id: minavgquality
     type:
       - 'null'
@@ -96,7 +106,8 @@ inputs:
       discarded.
     inputBinding:
       position: 101
-      prefix: minavgquality
+      prefix: minavgquality=
+      separate: false
   - id: mink
     type:
       - 'null'
@@ -104,7 +115,8 @@ inputs:
     doc: Look for shorter kmers at read tips down to this length.
     inputBinding:
       position: 101
-      prefix: mink
+      prefix: mink=
+      separate: false
   - id: minlength
     type:
       - 'null'
@@ -112,7 +124,8 @@ inputs:
     doc: Reads shorter than this after trimming will be discarded.
     inputBinding:
       position: 101
-      prefix: minlength
+      prefix: minlength=
+      separate: false
   - id: overwrite
     type:
       - 'null'
@@ -128,7 +141,8 @@ inputs:
     doc: 'Input quality offset: 33 (Sanger), 64, or auto.'
     inputBinding:
       position: 101
-      prefix: qin
+      prefix: qin=
+      separate: false
   - id: qtrim
     type:
       - 'null'
@@ -137,7 +151,8 @@ inputs:
       w).
     inputBinding:
       position: 101
-      prefix: qtrim
+      prefix: qtrim=
+      separate: false
   - id: rcomp
     type:
       - 'null'
@@ -153,7 +168,8 @@ inputs:
     doc: If positive, quit after processing X reads or pairs.
     inputBinding:
       position: 101
-      prefix: reads
+      prefix: reads=
+      separate: false
   - id: ref
     type:
       - 'null'
@@ -163,7 +179,9 @@ inputs:
       artifacts, phix, etc).
     inputBinding:
       position: 101
-      prefix: ref
+      prefix: ref=
+      itemSeparator: ','
+      separate: false
   - id: samplerate
     type:
       - 'null'
@@ -171,7 +189,8 @@ inputs:
     doc: Set lower to only process a fraction of input reads.
     inputBinding:
       position: 101
-      prefix: samplerate
+      prefix: samplerate=
+      separate: false
   - id: samref
     type:
       - 'null'
@@ -179,7 +198,8 @@ inputs:
     doc: Optional reference fasta for processing sam files.
     inputBinding:
       position: 101
-      prefix: samref
+      prefix: samref=
+      separate: false
   - id: tbo
     type:
       - 'null'
@@ -195,7 +215,8 @@ inputs:
     doc: Set number of threads to use.
     inputBinding:
       position: 101
-      prefix: threads
+      prefix: threads=
+      separate: false
   - id: touppercase
     type:
       - 'null'
@@ -220,7 +241,8 @@ inputs:
     doc: Regions with average quality BELOW this will be trimmed.
     inputBinding:
       position: 101
-      prefix: trimq
+      prefix: trimq=
+      separate: false
   - id: ziplevel
     type:
       - 'null'
@@ -228,7 +250,8 @@ inputs:
     doc: Compression level; 1 (min) through 9 (max).
     inputBinding:
       position: 101
-      prefix: ziplevel
+      prefix: ziplevel=
+      separate: false
   - id: bhist_path
     type:
       - 'null'
@@ -236,7 +259,8 @@ inputs:
     doc: Output or path parameter `bhist_path`
     inputBinding:
       position: 102
-      prefix: --bhist
+      prefix: bhist=
+      separate: false
   - id: gchist_path
     type:
       - 'null'
@@ -244,7 +268,8 @@ inputs:
     doc: Output or path parameter `gchist_path`
     inputBinding:
       position: 103
-      prefix: --gchist
+      prefix: gchist=
+      separate: false
   - id: lhist_path
     type:
       - 'null'
@@ -252,15 +277,17 @@ inputs:
     doc: Output or path parameter `lhist_path`
     inputBinding:
       position: 104
-      prefix: --lhist
+      prefix: lhist=
+      separate: false
   - id: out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: This flag will cause the process to exit if an out-of-memory exception 
+      occurs.  Requires Java 8u92+.
     inputBinding:
       position: 105
-      prefix: --out
+      prefix: -eoom
   - id: out2_path
     type:
       - 'null'
@@ -268,7 +295,8 @@ inputs:
     doc: Output or path parameter `out2_path`
     inputBinding:
       position: 106
-      prefix: --out2
+      prefix: out2=
+      separate: false
   - id: outm_path
     type:
       - 'null'
@@ -276,7 +304,8 @@ inputs:
     doc: Output or path parameter `outm_path`
     inputBinding:
       position: 107
-      prefix: --outm
+      prefix: outm=
+      separate: false
   - id: outm2_path
     type:
       - 'null'
@@ -284,7 +313,8 @@ inputs:
     doc: Output or path parameter `outm2_path`
     inputBinding:
       position: 108
-      prefix: --outm2
+      prefix: outm2=
+      separate: false
   - id: outs_path
     type:
       - 'null'
@@ -292,7 +322,8 @@ inputs:
     doc: Output or path parameter `outs_path`
     inputBinding:
       position: 109
-      prefix: --outs
+      prefix: outs=
+      separate: false
   - id: qhist_path
     type:
       - 'null'
@@ -300,7 +331,8 @@ inputs:
     doc: Output or path parameter `qhist_path`
     inputBinding:
       position: 110
-      prefix: --qhist
+      prefix: qhist=
+      separate: false
   - id: refstats_path
     type:
       - 'null'
@@ -308,7 +340,8 @@ inputs:
     doc: Output or path parameter `refstats_path`
     inputBinding:
       position: 111
-      prefix: --refstats
+      prefix: refstats=
+      separate: false
   - id: rpkm_path
     type:
       - 'null'
@@ -316,7 +349,8 @@ inputs:
     doc: Output or path parameter `rpkm_path`
     inputBinding:
       position: 112
-      prefix: --rpkm
+      prefix: rpkm=
+      separate: false
   - id: stats_path
     type:
       - 'null'
@@ -324,7 +358,8 @@ inputs:
     doc: Output or path parameter `stats_path`
     inputBinding:
       position: 113
-      prefix: --stats
+      prefix: stats=
+      separate: false
 outputs:
   - id: out
     type:

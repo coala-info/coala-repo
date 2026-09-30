@@ -360,10 +360,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `discarded_reads_file_path`
+    doc: ': capture discarded reads to a file.'
     inputBinding:
       position: 102
-      prefix: --discarded-reads-file
+      prefix: --discards
   - id: output_directory_path
     type:
       - 'null'

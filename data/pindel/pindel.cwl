@@ -368,32 +368,31 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `name_of_logfile_path`
     inputBinding:
       position: 102
-      prefix: --name-of-logfile
+      prefix: --name_of_logfile
   - id: output_of_breakdancer_events_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_of_breakdancer_events_path`
     inputBinding:
       position: 103
-      prefix: --output-of-breakdancer-events
+      prefix: --output_of_breakdancer_events
   - id: output_prefix_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
     inputBinding:
       position: 104
       prefix: --output-prefix
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Output prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
   - id: output_of_breakdancer_events
     type:
       - 'null'

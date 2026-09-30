@@ -71,7 +71,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to put temporary files. use './' to indicate current 
       directory
     inputBinding:
@@ -107,7 +107,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: 'output file name base for FLAIR quantify (default:'
     inputBinding:
       position: 102
       prefix: --output
@@ -115,10 +115,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bam_path`
+    doc: whether to output bam file of reads aligned to correct
     inputBinding:
       position: 103
-      prefix: --output-bam
+      prefix: --output_bam
 outputs:
   - id: output
     type:

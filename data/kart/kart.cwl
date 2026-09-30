@@ -79,10 +79,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sam_path`
+    doc: alignment filename in SAM format [output.sam]
     inputBinding:
       position: 103
-      prefix: --output-sam
+      prefix: -o
 outputs:
   - id: output_sam
     type:

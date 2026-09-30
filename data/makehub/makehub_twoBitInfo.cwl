@@ -10,6 +10,11 @@ inputs:
       path:seq1,seq2,seqN...
     inputBinding:
       position: 1
+  - id: output_tab
+    type: string
+    doc: 'Output tab-separated file. Columns: seqName size'
+    inputBinding:
+      position: 2
   - id: mask_bed
     type:
       - 'null'
@@ -43,13 +48,14 @@ inputs:
     doc: place to put cache for remote bigBed/bigWigs
     inputBinding:
       position: 102
-      prefix: -udcDir
+      prefix: -udcDir=
+      separate: false
 outputs:
-  - id: output_tab
+  - id: out_output_tab
     type: File
     doc: 'Output tab-separated file. Columns: seqName size'
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_tab)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1

@@ -49,10 +49,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 107
-      prefix: --output-vcf
+      prefix: --output_vcf
 outputs:
   - id: output_vcf
     type:

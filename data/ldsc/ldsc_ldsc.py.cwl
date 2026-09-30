@@ -61,6 +61,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cts-bin
+      itemSeparator: ','
   - id: cts_breaks
     type:
       - 'null'
@@ -410,6 +411,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rg
+      itemSeparator: ','
   - id: samp_prev
     type:
       - 'null'

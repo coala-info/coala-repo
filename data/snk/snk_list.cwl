@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snk list
+baseCommand:
+  - snk
+  - list
 label: snk_list
 doc: "List the installed workflows.\n\nTool homepage: https://snk.wytamma.com"
 inputs:

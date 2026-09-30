@@ -151,7 +151,7 @@ inputs:
       position: 101
       prefix: --mismatch
   - id: output_dir
-    type: Directory
+    type: string
     doc: directory to write output files
     inputBinding:
       position: 101
@@ -264,7 +264,7 @@ inputs:
   - id: scratch_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to write temp files
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi run
+baseCommand:
+  - tsumugi
+  - run
 label: tsumugi_run
 doc: "TSUMUGI pipeline for analyzing IMPC statistical results and generating phenotype-disease
   associations.\n\nTool homepage: https://github.com/akikuno/TSUMUGI-dev"
@@ -26,7 +28,7 @@ inputs:
       position: 101
       prefix: --mp_obo
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory for TSUMUGI results. All generated files (intermediate
       and final results) will be saved here.
     inputBinding:

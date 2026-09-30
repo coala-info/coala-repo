@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ntm-profiler collate
+baseCommand:
+  - ntm-profiler
+  - collate
 label: ntm-profiler_collate
 doc: "Collate results from ntm-profiler runs.\n\nTool homepage: https://github.com/jodyphelan/NTM-Profiler"
 inputs:
@@ -104,7 +106,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to process all files
     inputBinding:
       position: 101

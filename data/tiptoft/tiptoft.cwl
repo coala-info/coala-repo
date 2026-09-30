@@ -25,6 +25,7 @@ inputs:
     doc: Flanking region around a block to use for mapping
     inputBinding:
       position: 102
+      prefix: --margin
   - id: max_gap
     type:
       - 'null'
@@ -33,6 +34,7 @@ inputs:
       k-mer size
     inputBinding:
       position: 102
+      prefix: --max_gap
   - id: max_kmer_count
     type:
       - 'null'
@@ -40,6 +42,7 @@ inputs:
     doc: Exclude k-mers which occur more than this number of times in a sequence
     inputBinding:
       position: 102
+      prefix: --max_kmer_count
   - id: min_block_size
     type:
       - 'null'
@@ -47,6 +50,7 @@ inputs:
     doc: Minimum block size in bases
     inputBinding:
       position: 102
+      prefix: --min_block_size
   - id: min_fasta_hits
     type:
       - 'null'
@@ -62,6 +66,7 @@ inputs:
     doc: Minimum No. of kmers matching a read in 1st pass
     inputBinding:
       position: 102
+      prefix: --min_kmers_for_onex_pass
   - id: min_perc_coverage
     type:
       - 'null'
@@ -77,6 +82,7 @@ inputs:
     doc: Dont filter out lower coverage genes from same group
     inputBinding:
       position: 102
+      prefix: --no_gene_filter
   - id: no_hc_compression
     type:
       - 'null'
@@ -84,6 +90,7 @@ inputs:
     doc: Turn off homoploymer compression of k-mers
     inputBinding:
       position: 102
+      prefix: --no_hc_compression
   - id: plasmid_data
     type:
       - 'null'
@@ -113,18 +120,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `filtered_reads_file_path`
     inputBinding:
       position: 103
-      prefix: --filtered-reads-file
+      prefix: --filtered_reads_file
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: filtered_reads_file
     type:

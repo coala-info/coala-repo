@@ -467,10 +467,9 @@ inputs:
       prefix: -xdrop_ungap
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
 outputs:
   - id: out
     type:

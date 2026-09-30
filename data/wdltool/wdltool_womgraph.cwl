@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wdltool womgraph
+baseCommand:
+  - wdltool
+  - womgraph
 label: wdltool_womgraph
 doc: "Generate a DOT graph of a WDL workflow or CWL document.\n\nTool homepage: https://github.com/broadinstitute/wdltool"
 inputs:
@@ -38,11 +40,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --inputs
+          separate: true
     doc: JSON file(s) containing workflow inputs. Can be specified multiple 
       times.
     inputBinding:
       position: 102
-      prefix: --inputs
   - id: layout
     type:
       - 'null'

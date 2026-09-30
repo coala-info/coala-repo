@@ -166,7 +166,7 @@ inputs:
       position: 101
       prefix: --xmin
   - id: outfolder_path
-    type: string
+    type: string?
     inputBinding:
       position: 102
       prefix: --outfolder

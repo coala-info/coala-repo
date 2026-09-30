@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth call_freqt
+baseCommand:
+  - ccsmeth
+  - call_freqt
 label: ccsmeth_call_freqt
 doc: "call frequency of modifications at genome level from per_readsite text files\n\
   \nTool homepage: https://github.com/PengNi/ccsmeth"
@@ -48,12 +50,14 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --input_path
+        separate: true
     doc: an output file from call_mods/call_modifications.py, or a directory 
       contains a bunch of output files. this arg is in "append" mode, can be 
       used multiple times
     inputBinding:
       position: 101
-      prefix: --input_path
   - id: mod_loc
     type:
       - 'null'
@@ -127,10 +131,9 @@ inputs:
       prefix: --threads
   - id: result_file_path
     type: string
-    doc: Output or path parameter `result_file_path`
     inputBinding:
       position: 102
-      prefix: --result-file
+      prefix: --result_file
 outputs:
   - id: result_file
     type: File

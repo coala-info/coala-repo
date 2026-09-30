@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python bwameth.py
+baseCommand:
+  - python
+  - bwameth.py
 label: bwameth_bwameth.py
 doc: "map bisulfite converted reads to an insilico converted genome using bwa mem.\n\
   \nTool homepage: https://github.com/brentp/bwa-meth"
@@ -13,6 +15,7 @@ inputs:
       a_R2.fastq,b_R2.fastq note that the order must be maintained."
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: read_group
     type:
       - 'null'

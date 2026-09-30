@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe multiple_align
+baseCommand:
+  - haphpipe
+  - multiple_align
 label: haphpipe_multiple_align
 doc: "Aligns multiple sequences using MAFFT.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -249,7 +251,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -370,10 +372,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_align_path`
     inputBinding:
       position: 103
-      prefix: --out-align
+      prefix: --out_align
 outputs:
   - id: out_align
     type:

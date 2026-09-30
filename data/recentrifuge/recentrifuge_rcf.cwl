@@ -255,20 +255,23 @@ inputs:
       prefix: --threads
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: ' output prefix; if not given, it will be inferred from input files; an HTML
+      filename is still accepted for backwards compatibility with legacy --outhtml
+      option'
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --outprefix
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output prefix; if not given, it will be inferred from input files; an 
       HTML filename is still accepted for backwards compatibility with legacy 
       --outhtml option
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -83,7 +83,6 @@ inputs:
       prefix: --quality-threshold
   - id: save_patterns_path
     type: string
-    doc: Output or path parameter `save_patterns_path`
     inputBinding:
       position: 104
       prefix: --save-patterns

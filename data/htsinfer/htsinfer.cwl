@@ -79,7 +79,7 @@ inputs:
       adapter
     inputBinding:
       position: 102
-      prefix: --read-layout-min_frequency_ratio
+      prefix: --read-layout-min-frequency-ratio
   - id: read_layout_min_match_percentage
     type:
       - 'null'
@@ -130,7 +130,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to directory where temporary output is written to
     inputBinding:
       position: 102
@@ -162,7 +162,7 @@ inputs:
       position: 102
       prefix: --verbosity
   - id: output_directory_path
-    type: string
+    type: string?
     inputBinding:
       position: 103
       prefix: --output-directory

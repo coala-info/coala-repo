@@ -54,9 +54,9 @@ inputs:
       prefix: --min_quality
   - id: reference
     type: File
+    doc: Reference genome FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference genome FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -77,8 +77,9 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: Optional output file path. If not provided, output will be printed to 
+      stdout
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_cat
+baseCommand:
+  - xsv
+  - cat
 label: xsv_cat
 doc: "Concatenates CSV data by column or by row.\n\nTool homepage: https://github.com/BurntSushi/xsv"
 inputs:
@@ -45,10 +47,10 @@ inputs:
       prefix: --pad
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

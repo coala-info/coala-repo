@@ -77,10 +77,10 @@ inputs:
       prefix: --uniq_union
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: specify the output directory.
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: --outdir
 outputs:
   - id: output_directory
     type:

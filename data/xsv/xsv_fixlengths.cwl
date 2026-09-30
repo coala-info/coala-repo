@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_fixlengths
+baseCommand:
+  - xsv
+  - fixlengths
 label: xsv_fixlengths
 doc: "Transforms CSV data so that all records have the same length. The length is
   the length of the longest record in the data. Records with smaller lengths are padded
@@ -37,10 +39,10 @@ inputs:
       prefix: --length
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

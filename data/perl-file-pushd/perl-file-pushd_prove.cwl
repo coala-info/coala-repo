@@ -51,6 +51,7 @@ inputs:
     doc: Show the X/Y test count when not verbose (default)
     inputBinding:
       position: 102
+      prefix: --count
   - id: directives
     type:
       - 'null'
@@ -58,6 +59,7 @@ inputs:
     doc: Only show results with TODO or SKIP directives.
     inputBinding:
       position: 102
+      prefix: --directives
   - id: dry
     type:
       - 'null'
@@ -113,6 +115,7 @@ inputs:
     doc: Ignore exit status from test scripts.
     inputBinding:
       position: 102
+      prefix: --ignore-exit
   - id: jobs
     type:
       - 'null'
@@ -169,6 +172,7 @@ inputs:
     doc: Do not color test output.
     inputBinding:
       position: 102
+      prefix: --nocolor
   - id: nocount
     type:
       - 'null'
@@ -176,6 +180,7 @@ inputs:
     doc: Disable the X/Y test count.
     inputBinding:
       position: 102
+      prefix: --nocount
   - id: normalize
     type:
       - 'null'
@@ -183,6 +188,7 @@ inputs:
     doc: Normalize TAP output in verbose output
     inputBinding:
       position: 102
+      prefix: --normalize
   - id: parse
     type:
       - 'null'
@@ -222,6 +228,7 @@ inputs:
     doc: Run the tests in reverse order.
     inputBinding:
       position: 102
+      prefix: --reverse
   - id: rules
     type:
       - 'null'
@@ -285,6 +292,7 @@ inputs:
     doc: Print elapsed time after each test.
     inputBinding:
       position: 102
+      prefix: --timer
   - id: trap
     type:
       - 'null'
@@ -292,6 +300,7 @@ inputs:
     doc: Trap Ctrl-C and print summary on interrupt.
     inputBinding:
       position: 102
+      prefix: --trap
   - id: verbose
     type:
       - 'null'

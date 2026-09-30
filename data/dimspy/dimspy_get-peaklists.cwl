@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy get-peaklists
+baseCommand:
+  - dimspy
+  - get-peaklists
 label: dimspy_get-peaklists
 doc: "Get peaklists from HDF5 files.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
@@ -15,7 +17,6 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

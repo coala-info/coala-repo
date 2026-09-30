@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savana train
+baseCommand:
+  - savana
+  - train
 label: savana_train
 doc: "Train the model to predict germline and somatic variants (GERMLINE label must
   be present)\n\nTool homepage: https://github.com/cortes-ciriano-lab/savana"
@@ -23,7 +25,7 @@ inputs:
       position: 101
       prefix: --load_matrix
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory (can exist but must be empty)
     inputBinding:
       position: 101
@@ -78,11 +80,10 @@ inputs:
       position: 101
       prefix: --vcfs
   - id: save_matrix_path
-    type: string
-    doc: Output or path parameter `save_matrix_path`
+    type: string?
     inputBinding:
       position: 102
-      prefix: --save-matrix
+      prefix: --save_matrix
 outputs:
   - id: save_matrix
     type:

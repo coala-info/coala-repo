@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cellxgene prepare
+baseCommand:
+  - cellxgene
+  - prepare
 label: cellxgene_prepare
 doc: "Preprocess data for use with cellxgene. This tool runs a series of scanpy\n\
   routines for preparing a dataset for use with cellxgene. It loads data from\ndifferent
@@ -114,10 +116,10 @@ inputs:
       prefix: --sparse
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: Save a new file to filename.
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

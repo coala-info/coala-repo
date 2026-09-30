@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash index
+baseCommand:
+  - sourmash
+  - index
 label: sourmash_index
 doc: "Create an on-disk database of signatures that can be searched quickly & in low
   memory. All signatures must be scaled, and must be the same k-mer size and molecule

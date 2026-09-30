@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scaden_example
+baseCommand:
+  - scaden
+  - example
 label: scaden_example
 doc: "Generate an example dataset\n\nTool homepage: https://github.com/KevinMenden/scaden"
 inputs:
@@ -23,7 +25,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

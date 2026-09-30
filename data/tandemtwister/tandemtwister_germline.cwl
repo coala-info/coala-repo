@@ -132,9 +132,9 @@ inputs:
       prefix: --reads_type
   - id: reference_fasta
     type: File
+    doc: Reference FASTA file (.fa / .fna)
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file (.fa / .fna)
     inputBinding:
       position: 101
       prefix: --ref
@@ -212,18 +212,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
   - id: output_file_statistics_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_statistics_path`
+    doc: Optional phasing summary output file
     inputBinding:
       position: 103
-      prefix: --output-file-statistics
+      prefix: --output_file_statistics
 outputs:
   - id: output_file
     type: File

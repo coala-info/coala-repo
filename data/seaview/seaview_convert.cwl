@@ -36,6 +36,7 @@ inputs:
       seaview's default alignment algorithm
     inputBinding:
       position: 102
+      prefix: -align_algo
   - id: align_at_protein_level
     type:
       - 'null'
@@ -44,6 +45,7 @@ inputs:
       level.
     inputBinding:
       position: 102
+      prefix: -align_at_protein_level
   - id: align_extra_opts
     type:
       - 'null'
@@ -51,6 +53,7 @@ inputs:
     doc: additional options to use when running the alignment algorithm
     inputBinding:
       position: 102
+      prefix: -align_extra_opts
   - id: align_output_format
     type:
       - 'null'
@@ -66,6 +69,7 @@ inputs:
     doc: writes n bootstrap replicates of the input alignment to the output file
     inputBinding:
       position: 102
+      prefix: -bootstrap
   - id: build_tree
     type:
       - 'null'
@@ -83,6 +87,7 @@ inputs:
       name)
     inputBinding:
       position: 102
+      prefix: -by_rank
   - id: concatenate
     type:
       - 'null'
@@ -117,6 +122,7 @@ inputs:
       endpoints are expressed as in this example: 10-200,305,310-342)'
     inputBinding:
       position: 102
+      prefix: -def_site_selection
   - id: def_species_group
     type:
       - 'null'
@@ -125,6 +131,7 @@ inputs:
       are expressed with their ranks as in this example: 3-8,12,19)'
     inputBinding:
       position: 102
+      prefix: -def_species_group
   - id: del_gap_only_sites
     type:
       - 'null'
@@ -132,6 +139,7 @@ inputs:
     doc: remove all gap-only sites from alignment (don't use the -sites option)
     inputBinding:
       position: 102
+      prefix: -del_gap_only_sites
   - id: distance
     type:
       - 'null'
@@ -140,6 +148,7 @@ inputs:
       K2P, logdet, Ka, Ks, Poisson or Kimura)
     inputBinding:
       position: 102
+      prefix: -distance
   - id: distance_matrix
     type:
       - 'null'
@@ -148,6 +157,7 @@ inputs:
       distances
     inputBinding:
       position: 102
+      prefix: -distance_matrix
   - id: fast
     type:
       - 'null'
@@ -171,6 +181,7 @@ inputs:
     doc: encode gaps as unknown character state (parsimony only)
     inputBinding:
       position: 102
+      prefix: -gaps_as_unknown
   - id: gblocks
     type:
       - 'null'
@@ -179,6 +190,7 @@ inputs:
       the Gblocks program (requires the nexus or mase output formats)
     inputBinding:
       position: 102
+      prefix: -gblocks
   - id: gblocks_allow_gaps
     type:
       - 'null'
@@ -218,6 +230,7 @@ inputs:
     doc: jumble sequence order n times (parsimony only)
     inputBinding:
       position: 102
+      prefix: -jumbles
   - id: no_terminal_stop
     type:
       - 'null'
@@ -225,6 +238,7 @@ inputs:
     doc: translate terminal stop codons as a gap (with -translate option)
     inputBinding:
       position: 102
+      prefix: -no_terminal_stop
   - id: nogaps
     type:
       - 'null'
@@ -232,6 +246,7 @@ inputs:
     doc: remove all gap-containing sites before computations
     inputBinding:
       position: 102
+      prefix: -nogaps
   - id: output_format
     type:
       - 'null'
@@ -240,6 +255,7 @@ inputs:
       fasta, or nexus)
     inputBinding:
       position: 102
+      prefix: -output_format
   - id: parsimony
     type:
       - 'null'
@@ -247,6 +263,7 @@ inputs:
     doc: compute the tree by the parsimony method
     inputBinding:
       position: 102
+      prefix: -parsimony
   - id: record_partition
     type:
       - 'null'
@@ -255,6 +272,7 @@ inputs:
       concatenate
     inputBinding:
       position: 102
+      prefix: -record_partition
   - id: replicates
     type:
       - 'null'
@@ -262,6 +280,7 @@ inputs:
     doc: use n bootstrap replicates to compute tree branch support
     inputBinding:
       position: 102
+      prefix: -replicates
   - id: search
     type:
       - 'null'
@@ -270,6 +289,7 @@ inputs:
       parsimony only)
     inputBinding:
       position: 102
+      prefix: -search
   - id: sites
     type:
       - 'null'
@@ -277,6 +297,7 @@ inputs:
     doc: use the named selection of sites from the input alignment
     inputBinding:
       position: 102
+      prefix: -sites
   - id: species
     type:
       - 'null'
@@ -284,6 +305,7 @@ inputs:
     doc: use the named group of species from the input alignment
     inputBinding:
       position: 102
+      prefix: -species
   - id: translate
     type:
       - 'null'
@@ -292,6 +314,7 @@ inputs:
       -sites)
     inputBinding:
       position: 102
+      prefix: -translate
   - id: align_output_file_path
     type:
       - 'null'

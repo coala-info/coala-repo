@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi mp
+baseCommand:
+  - tsumugi
+  - mp
 label: tsumugi_mp
 doc: "Filter gene pairs based on Mammalian Phenotype ontology terms and annotations.\n\
   \nTool homepage: https://github.com/akikuno/TSUMUGI-dev"

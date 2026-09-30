@@ -32,7 +32,7 @@ inputs:
   - id: outputdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory. Defaults to the current working directory (PWD).
     inputBinding:
       position: 6

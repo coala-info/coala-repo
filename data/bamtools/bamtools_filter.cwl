@@ -204,10 +204,10 @@ inputs:
       prefix: -tag
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: the output BAM file [stdout]
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
 outputs:
   - id: out
     type:

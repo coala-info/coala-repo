@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr graphstats
+baseCommand:
+  - seidr
+  - graphstats
 label: seidr_graphstats
 doc: "Calculate graph level network statistics\n\nTool homepage: https://github.com/bschiffthaler/seidr"
 inputs:
@@ -27,7 +29,7 @@ inputs:
       prefix: --index
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 103
       prefix: --outfile

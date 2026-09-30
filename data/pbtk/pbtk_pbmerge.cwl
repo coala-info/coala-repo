@@ -31,10 +31,10 @@ inputs:
       prefix: --num-threads
   - id: output_bam_path
     type: string
-    doc: Output or path parameter `output_bam_path`
+    doc: STR   Output BAM filename. Writes to stdout if not provided.
     inputBinding:
       position: 103
-      prefix: --output-bam
+      prefix: -o
 outputs:
   - id: output_bam
     type:

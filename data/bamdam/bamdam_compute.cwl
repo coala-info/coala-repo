@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamdam_compute
+baseCommand:
+  - bamdam
+  - compute
 label: bamdam_compute
 doc: "Compute statistics from BAM and LCA files.\n\nTool homepage: https://github.com/bdesanctis/bamdam"
 inputs:
@@ -67,26 +69,21 @@ inputs:
       position: 101
       prefix: --upto
   - id: out_subs_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_subs_path`
+    type: string
+    doc: Path to the output subs file (required)
     inputBinding:
       position: 102
-      prefix: --out-subs
+      prefix: --out_subs
   - id: out_tsv_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_tsv_path`
+    type: string
+    doc: Path to the output tsv file (required)
     inputBinding:
       position: 103
-      prefix: --out-tsv
+      prefix: --out_tsv
   - id: plotdupdust_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plotdupdust_path`
     inputBinding:
       position: 104
       prefix: --plotdupdust

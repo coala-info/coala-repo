@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor venn
+baseCommand:
+  - surpyvor
+  - venn
 label: surpyvor_venn
 doc: "Generate Venn diagrams of structural variants from multiple VCF files.\n\nTool
   homepage: https://github.com/wdecoster/surpyvor"
@@ -58,7 +60,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `keepmerged_path`
     inputBinding:
       position: 102
       prefix: --keepmerged
@@ -66,7 +67,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plotout_path`
+    doc: Name of output plot
     inputBinding:
       position: 103
       prefix: --plotout

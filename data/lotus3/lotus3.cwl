@@ -15,6 +15,7 @@ inputs:
       activate ITS specific postfiltering steps.
     inputBinding:
       position: 101
+      prefix: -amplicon_type
   - id: backmap_id
     type:
       - 'null'
@@ -22,6 +23,7 @@ inputs:
     doc: '%id cutoff for backmapping mid-qual reads onto OTUs/zOTUs/ASVs'
     inputBinding:
       position: 101
+      prefix: -backmap_id
   - id: barcode_file
     type:
       - 'null'
@@ -56,6 +58,7 @@ inputs:
     doc: Skew in chimeric fragment abundance (uchime option).
     inputBinding:
       position: 101
+      prefix: -chim_skew
   - id: clustering_algorithm
     type:
       - 'null'
@@ -80,6 +83,7 @@ inputs:
     doc: Add chimeras to count up OTUs/ASVs.
     inputBinding:
       position: 101
+      prefix: -count_chimeras
   - id: create_map_file
     type:
       - 'null'
@@ -171,6 +175,7 @@ inputs:
       deactivate.
     inputBinding:
       position: 101
+      prefix: -itsx_partial
   - id: keep_offtargets
     type:
       - 'null'
@@ -233,6 +238,7 @@ inputs:
       their occurrence.
     inputBinding:
       position: 101
+      prefix: -lulu
   - id: mapping_file
     type: File
     doc: Mapping file
@@ -283,6 +289,7 @@ inputs:
     doc: Confidence thresshold for RDP.
     inputBinding:
       position: 101
+      prefix: -rdp_thr
   - id: read_overlap
     type:
       - 'null'
@@ -359,6 +366,7 @@ inputs:
     doc: Confidence thresshold for SINTAX.
     inputBinding:
       position: 101
+      prefix: -sintax_thr
   - id: swarm_distance
     type:
       - 'null'
@@ -366,6 +374,7 @@ inputs:
     doc: Clustering distance for OTUs when using swarm clustering.
     inputBinding:
       position: 101
+      prefix: -swarm_distance
   - id: tax4ref_db
     type:
       - 'null'
@@ -404,6 +413,7 @@ inputs:
       annotation, (eukarya) eukaryotic (18S/23S) annotation.
     inputBinding:
       position: 101
+      prefix: -tax_group
   - id: tax_only_file
     type:
       - 'null'
@@ -424,7 +434,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory used to save intermediate results.
     inputBinding:
       position: 101
@@ -465,6 +475,7 @@ inputs:
       (3) to not even printing errors (0).
     inputBinding:
       position: 101
+      prefix: -verbosity
   - id: xtalk
     type:
       - 'null'
@@ -473,12 +484,14 @@ inputs:
       usearch.
     inputBinding:
       position: 101
+      prefix: -xtalk
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: '(1) save extra tmp files like chimeric OTUs or the raw blast output in extra
+      dir. (0) do not save these. (Default: 0)'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -keepTmpFiles
 outputs:
   - id: output_dir
     type: Directory

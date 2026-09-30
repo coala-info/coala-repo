@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastx_stat
+baseCommand:
+  - pyfastx
+  - stat
 label: pyfastx_stat
 doc: "Show statistics for fasta or fastq files.\n\nTool homepage: https://github.com/lmdu/pyfastx"
 inputs:

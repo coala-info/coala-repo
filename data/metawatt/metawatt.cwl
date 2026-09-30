@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar MetaWatt-3.5.3
+baseCommand:
+  - java
+  - -jar
+  - MetaWatt-3.5.3
 label: metawatt
 doc: "Metawatt version 3.5.3\n\nTool homepage: https://github.com/edhelas/metawatt"
 inputs:
@@ -48,7 +51,7 @@ inputs:
   - id: temp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: temp folder used
     inputBinding:
       position: 101

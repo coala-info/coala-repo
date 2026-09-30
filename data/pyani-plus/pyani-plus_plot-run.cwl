@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: --log
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory. Created if does not already exist.
     inputBinding:
       position: 101

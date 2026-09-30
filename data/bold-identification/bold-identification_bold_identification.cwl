@@ -48,7 +48,7 @@ inputs:
       position: 101
       prefix: -D
   - id: input_file
-    type: string
+    type: File
     doc: input file name
     inputBinding:
       position: 101

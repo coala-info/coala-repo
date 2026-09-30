@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mantis build
+baseCommand:
+  - mantis
+  - build
 label: mantis_build
 doc: "Build a CQF (Compressed Quotient Filter) from input filters.\n\nTool homepage:
   https://github.com/splatlab/mantis"

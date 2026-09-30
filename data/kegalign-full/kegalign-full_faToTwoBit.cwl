@@ -27,7 +27,8 @@ inputs:
     doc: add XX. to start of sequence name in 2bit.
     inputBinding:
       position: 102
-      prefix: -namePrefix
+      prefix: -namePrefix=
+      separate: false
   - id: no_mask
     type:
       - 'null'

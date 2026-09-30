@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur_read-file
+baseCommand:
+  - augur
+  - read-file
 label: augur_read-file
 doc: "Read one or more files like Augur, with transparent optimized decompression
   and universal newlines. Supported compression formats: gzip (.gz), bzip2 (.bz2),

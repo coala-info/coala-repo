@@ -12,6 +12,7 @@ inputs:
     doc: Treatment (pull-down) file(s) in (b/gzipped) bed/bedpe format.
     inputBinding:
       position: 1
+      prefix: --treatment
   - id: control
     type:
       type: array
@@ -19,6 +20,7 @@ inputs:
     doc: Control (input) file(s) in (b/gzipped) bed/bedpe format.
     inputBinding:
       position: 2
+      prefix: --control
   - id: bed
     type:
       - 'null'
@@ -174,8 +176,7 @@ inputs:
       position: 103
       prefix: --window-size
   - id: outfile_path
-    type: string
-    doc: Output or path parameter `outfile_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --outfile

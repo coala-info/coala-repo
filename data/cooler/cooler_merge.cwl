@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler merge
+baseCommand:
+  - cooler
+  - merge
 label: cooler_merge
 doc: "Merge multiple coolers with identical axes.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:

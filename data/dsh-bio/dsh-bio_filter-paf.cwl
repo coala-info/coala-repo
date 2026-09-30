@@ -56,7 +56,7 @@ inputs:
       prefix: --target
   - id: output_paf_file_path
     type: string
-    doc: Output or path parameter `output_paf_file_path`
+    doc: output PAF file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-paf-file

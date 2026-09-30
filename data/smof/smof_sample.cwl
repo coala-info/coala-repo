@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof sample
+baseCommand:
+  - smof
+  - sample
 label: smof_sample
 doc: "Randomly sample entries. `sample` reads the entire file into memory, so should
   not be used for extremely large files.\n\nTool homepage: https://github.com/incertae-sedis/smof"

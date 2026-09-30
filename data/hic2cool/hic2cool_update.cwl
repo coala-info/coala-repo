@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hic2cool update
+baseCommand:
+  - hic2cool
+  - update
 label: hic2cool_update
 doc: "update a cooler file produced by hic2cool\n\nTool homepage: https://github.com/4dn-dcic/hic2cool"
 inputs:
@@ -28,7 +30,6 @@ inputs:
       prefix: --warnings
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

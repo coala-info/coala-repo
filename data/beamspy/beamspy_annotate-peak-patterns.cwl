@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: beamspy annotate-peak-patterns
+baseCommand:
+  - beamspy
+  - annotate-peak-patterns
 label: beamspy_annotate-peak-patterns
 doc: "Annotate peaks with adducts, isotopes, oligomers, and neutral losses.\n\nTool
   homepage: https://github.com/computational-metabolomics/beamspy"
@@ -107,7 +109,7 @@ inputs:
       prefix: --ppm
   - id: db_path
     type: string
-    doc: Output or path parameter `db_path`
+    doc: Sqlite database to write results.
     inputBinding:
       position: 102
       prefix: --db

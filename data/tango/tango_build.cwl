@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tango build
+baseCommand:
+  - tango
+  - build
 label: tango_build
 doc: "Builds the Tango database.\n\nTool homepage: https://github.com/johnne/tango"
 inputs:

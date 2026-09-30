@@ -18,7 +18,7 @@ inputs:
       position: 101
       prefix: --in-subseq
   - id: output_path
-    type: string
+    type: string?
     doc: Output repaired FASTQ file.
     inputBinding:
       position: 102

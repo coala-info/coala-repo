@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr find_target_contigs
+baseCommand:
+  - secapr
+  - find_target_contigs
 label: secapr_find_target_contigs
 doc: "Extract the contigs that match the reference database\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"
 inputs:

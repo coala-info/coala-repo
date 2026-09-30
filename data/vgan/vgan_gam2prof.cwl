@@ -22,10 +22,10 @@ inputs:
       prefix: -l
   - id: output_prof_file_path
     type: string
-    doc: Output or path parameter `output_prof_file_path`
+    doc: 'Path for output prof-file (default: stdout)'
     inputBinding:
       position: 102
-      prefix: --output-prof-file
+      prefix: -p
 outputs:
   - id: output_prof_file
     type:

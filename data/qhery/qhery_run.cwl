@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qhery run
+baseCommand:
+  - qhery
+  - run
 label: qhery_run
 doc: "Run the QHERY pipeline.\n\nTool homepage: http://github.com/mjsull/qhery/"
 inputs:

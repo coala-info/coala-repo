@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal_bubbles
+baseCommand:
+  - reveal
+  - bubbles
 label: reveal_bubbles
 doc: "Extract all bubbles from the graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:
@@ -17,7 +19,7 @@ inputs:
       system or reference.
     inputBinding:
       position: 102
-      prefix: --reference
+      prefix: -r
 outputs:
   - id: stdout
     type: stdout

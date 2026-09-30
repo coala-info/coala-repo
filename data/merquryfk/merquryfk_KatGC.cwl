@@ -9,6 +9,11 @@ inputs:
     doc: Source file (optionally with .ktab extension)
     inputBinding:
       position: 1
+  - id: out
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 2
   - id: draw_contour_map
     type:
       - 'null'
@@ -87,7 +92,7 @@ outputs:
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merquryfk:1.2--h71df26d_1

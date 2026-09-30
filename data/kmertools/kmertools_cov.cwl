@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmertools_cov
+baseCommand:
+  - kmertools
+  - cov
 label: kmertools_cov
 doc: "Generates coverage histogram based on the reads\n\nTool homepage: https://github.com/anuradhawick/kmertools"
 inputs:

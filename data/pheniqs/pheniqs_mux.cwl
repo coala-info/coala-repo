@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pheniqs mux
+baseCommand:
+  - pheniqs
+  - mux
 label: pheniqs_mux
 doc: "Multiplex and Demultiplex annotated DNA sequence reads\n\nTool homepage: http://biosails.github.io/pheniqs"
 inputs:
@@ -89,10 +91,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input
+          separate: true
     doc: Path to an input file. May be repeated.
     inputBinding:
       position: 101
-      prefix: --input
   - id: leading_segment_index
     type:
       - 'null'
@@ -138,10 +142,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --output
+          separate: true
     doc: Path to an output file. May be repeated.
     inputBinding:
       position: 101
-      prefix: --output
   - id: output_format
     type:
       - 'null'

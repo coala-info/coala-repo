@@ -39,7 +39,7 @@ inputs:
   - id: dir_icite_py
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write PMID iCite information into directory which contains temporary 
       working files
     inputBinding:

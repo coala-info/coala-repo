@@ -139,14 +139,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: --variants
-  - id: json_matches_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `json_matches_path`
-    inputBinding:
-      position: 105
-      prefix: --json-matches
   - id: json_output_path
     type:
       - 'null'
@@ -155,29 +147,38 @@ inputs:
     inputBinding:
       position: 106
       prefix: --json-output
-  - id: write_gzip_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `write_gzip_path`
-    inputBinding:
-      position: 107
-      prefix: --write-gzip
   - id: write_sql_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_sql_path`
+    doc: ' Write matching records to SQLite database, along with length of the sequence
+      field (length), percent GC content (GC), percent GC content as an integer (GC_int),
+      number of unique tetranucleotides in the sequence (nTN), percent tetranucleotide
+      frequency within the sequence (TNF), and average quality score for the sequence
+      field (average_quality)'
     inputBinding:
       position: 108
-      prefix: --write-sql
+      prefix: --writeSQL
+  - id: json_matches_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 109
+      prefix: --json-matches
+  - id: write_gzip_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 110
+      prefix: --write-gzip
   - id: write_zstd_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_zstd_path`
     inputBinding:
-      position: 109
+      position: 111
       prefix: --write-zstd
 outputs:
   - id: write_gzip

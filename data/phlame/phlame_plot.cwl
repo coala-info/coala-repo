@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phlame_plot
+baseCommand:
+  - phlame
+  - plot
 label: phlame_plot
 doc: "Generate informative output plots from lineage classification.\n\nTool homepage:
   https://github.com/quevan/phlame"

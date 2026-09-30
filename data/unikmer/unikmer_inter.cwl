@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_inter
+baseCommand:
+  - unikmer
+  - inter
 label: unikmer_inter
 doc: "Intersection of k-mers in multiple binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof wc
+baseCommand:
+  - smof
+  - wc
 label: smof_wc
 doc: "Outputs the total number of entries and the total sequence length (TAB\n delimited).\n\
   \nTool homepage: https://github.com/incertae-sedis/smof"

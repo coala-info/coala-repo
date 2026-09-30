@@ -54,10 +54,10 @@ inputs:
       prefix: --warningsAreErrors
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: The output file. Specifying none writes the output
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

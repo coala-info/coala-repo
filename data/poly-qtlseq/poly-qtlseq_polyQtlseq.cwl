@@ -192,9 +192,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference sequence file.
     secondaryFiles:
       - .fai
-    doc: Reference sequence file.
     inputBinding:
       position: 101
       prefix: --refSeq
@@ -256,10 +256,10 @@ inputs:
       prefix: --xStep
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Output Directory.
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --outputDir
 outputs:
   - id: output_directory
     type:

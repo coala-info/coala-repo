@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python GetProteinCodingSequence
+baseCommand:
+  - python
+  - GetProteinCodingSequence
 label: ribominer_GetProteinCodingSequence
 doc: "Extracts protein-coding sequences based on specified coordinates.\n\nTool homepage:
   https://github.com/xryanglab/RiboMiner"

@@ -59,8 +59,7 @@ inputs:
       position: 101
       prefix: --sizes
   - id: outfile_path
-    type: string
-    doc: Output or path parameter `outfile_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --outfile

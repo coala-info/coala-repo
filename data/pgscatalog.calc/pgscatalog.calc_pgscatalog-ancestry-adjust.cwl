@@ -15,6 +15,7 @@ inputs:
     doc: Principal components path (output from fraposa_pgsc)
     inputBinding:
       position: 1
+      prefix: --ref_pcs
   - id: target_pcs
     type:
       type: array
@@ -22,11 +23,13 @@ inputs:
     doc: Principal components path (output from fraposa_pgsc)
     inputBinding:
       position: 2
+      prefix: --target_pcs
   - id: psam
     type: File
     doc: Reference sample information file path in plink2 psam format)
     inputBinding:
       position: 3
+      prefix: --psam
   - id: agg_scores
     type:
       - 'null'
@@ -115,7 +118,7 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: <Required> Output directory
     inputBinding:
       position: 105
       prefix: --outdir

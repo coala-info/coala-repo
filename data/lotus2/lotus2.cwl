@@ -14,6 +14,7 @@ inputs:
       postfiltering steps. (Default: SSU)'
     inputBinding:
       position: 101
+      prefix: -amplicon_type
   - id: backmap_id
     type:
       - 'null'
@@ -22,6 +23,7 @@ inputs:
       0.97 or 0.99 for ASVs/zOTUs)'
     inputBinding:
       position: 101
+      prefix: -backmap_id
   - id: barcode
     type:
       - 'null'
@@ -49,6 +51,7 @@ inputs:
     doc: 'Mapping_file: only checks mapping file and exists.'
     inputBinding:
       position: 101
+      prefix: -check_map
   - id: chim_skew
     type:
       - 'null'
@@ -56,6 +59,7 @@ inputs:
     doc: 'Skew in chimeric fragment abundance (uchime option). (Default: 2)'
     inputBinding:
       position: 101
+      prefix: -chim_skew
   - id: clustering_algorithm
     type:
       - 'null'
@@ -80,6 +84,7 @@ inputs:
     doc: 'Add chimeras to count up OTUs/ASVs. (Default: F)'
     inputBinding:
       position: 101
+      prefix: -count_chimeras
   - id: create_map
     type:
       - 'null'
@@ -88,6 +93,7 @@ inputs:
       input (-i) dir. E.g. lotus2 -create_map mymap.txt -i /home/dir_with_demultiplex_fastq'
     inputBinding:
       position: 101
+      prefix: -create_map
   - id: deactivate_chimera_check
     type:
       - 'null'
@@ -170,6 +176,7 @@ inputs:
       (Default: 0)'
     inputBinding:
       position: 101
+      prefix: -itsx_partial
   - id: keep_offtargets
     type:
       - 'null'
@@ -226,6 +233,7 @@ inputs:
       be installed to be useable with LotuS2 in the future.
     inputBinding:
       position: 101
+      prefix: -link_usearch
   - id: lulu
     type:
       - 'null'
@@ -234,6 +242,7 @@ inputs:
       occurrence. (Default: 1)'
     inputBinding:
       position: 101
+      prefix: -lulu
   - id: mapping_file
     type: File
     doc: Mapping file
@@ -276,6 +285,7 @@ inputs:
     doc: 'Confidence thresshold for RDP. (Default: 0.8)'
     inputBinding:
       position: 101
+      prefix: -rdp_thr
   - id: read_overlap
     type:
       - 'null'
@@ -362,6 +372,7 @@ inputs:
     doc: 'Confidence thresshold for SINTAX. (Default: 0.8)'
     inputBinding:
       position: 101
+      prefix: -sintax_thr
   - id: swarm_distance
     type:
       - 'null'
@@ -369,6 +380,7 @@ inputs:
     doc: 'Clustering distance for OTUs when using swarm clustering. (Default: 1)'
     inputBinding:
       position: 101
+      prefix: -swarm_distance
   - id: tax4ref_db
     type:
       - 'null'
@@ -407,6 +419,7 @@ inputs:
       (eukarya) eukaryotic (18S/23S) annotation. (Default: bacteria)'
     inputBinding:
       position: 101
+      prefix: -tax_group
   - id: tax_only
     type:
       - 'null'
@@ -426,7 +439,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'temporary directory used to save intermediate results. (Default: <outputDir>/tmpDir)'
     inputBinding:
       position: 101
@@ -467,6 +480,7 @@ inputs:
       to not even printing errors (0). (Default: 1)'
     inputBinding:
       position: 101
+      prefix: -verbosity
   - id: xtalk
     type:
       - 'null'
@@ -475,12 +489,14 @@ inputs:
       (Default: 0)'
     inputBinding:
       position: 101
+      prefix: -xtalk
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: '(1) save extra tmp files like chimeric OTUs or the raw blast output in extra
+      dir. (0) do not save these. (Default: 0)'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -keepTmpFiles
 outputs:
   - id: output_dir
     type: Directory

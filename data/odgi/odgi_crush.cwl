@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_crush
+baseCommand:
+  - odgi
+  - crush
 label: odgi_crush
 doc: "Replaces runs of Ns with single Ns (for example, ANNNT becomes ANT).\n\nTool
   homepage: https://github.com/vgteam/odgi"
@@ -31,7 +33,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the N-crushed succinct variation
     inputBinding:
       position: 102
       prefix: --out

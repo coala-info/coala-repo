@@ -131,18 +131,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_informative_path`
+    doc: Output IGV file containing informative variants.
     inputBinding:
       position: 102
-      prefix: --output-informative
+      prefix: -out_informative
   - id: output_tsv_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tsv_path`
+    doc: Output TSV file containing the detected UPDs.
     inputBinding:
       position: 103
-      prefix: --output-tsv
+      prefix: -out
 outputs:
   - id: output_tsv
     type: File

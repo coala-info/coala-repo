@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locidex_extract
+baseCommand:
+  - locidex
+  - extract
 label: locidex_extract
 doc: "Extract loci from a genome based on a locidex database\n\nTool homepage: https://pypi.org/project/locidex/"
 inputs:

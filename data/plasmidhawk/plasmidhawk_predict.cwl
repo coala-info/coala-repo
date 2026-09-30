@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plasmidhawk_predict
+baseCommand:
+  - plasmidhawk
+  - predict
 label: plasmidhawk_predict
 doc: "Choose prediction mode (max, supermax, correct), default max. supermax is max
   mode, but output top 50 labs\n\nTool homepage: https://gitlab.com/treangenlab/plasmidhawk"
@@ -72,7 +74,6 @@ inputs:
       prefix: --work-dir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 106
       prefix: --output

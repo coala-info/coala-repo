@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dnaapler all
+baseCommand:
+  - dnaapler
+  - all
 label: dnaapler_all
 doc: "Run dnaapler on all contigs in the input file.\n\nTool homepage: https://github.com/gbouras13/dnaapler"
 inputs:
@@ -67,7 +69,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

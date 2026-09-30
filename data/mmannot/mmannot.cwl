@@ -130,10 +130,10 @@ inputs:
       prefix: -d
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'output: output file (default: stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

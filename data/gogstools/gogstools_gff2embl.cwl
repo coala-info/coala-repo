@@ -9,6 +9,11 @@ inputs:
     doc: The gff to read from
     inputBinding:
       position: 1
+  - id: out
+    type: string?
+    doc: The output embl file, ready for submission to EBI ENA
+    inputBinding:
+      position: 2
   - id: description
     type: string
     doc: Description of the project
@@ -126,7 +131,7 @@ outputs:
       - File
     doc: The output embl file, ready for submission to EBI ENA
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gogstools:0.1.2--py310hdfd78af_0

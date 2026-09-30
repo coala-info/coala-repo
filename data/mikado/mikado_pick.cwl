@@ -88,6 +88,7 @@ inputs:
         items: int
     doc: 'Range into which intron lengths should fall, as a couple of integers. Transcripts
       with intron lengths outside of this range will be penalised. Default: (60, 900)'
+    default:
       - 60
       - 900
     inputBinding:
@@ -232,7 +233,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory. Default: current working directory'
     inputBinding:
       position: 102

@@ -138,7 +138,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write the output to.
     inputBinding:
       position: 101

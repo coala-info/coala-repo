@@ -192,18 +192,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_anchors_file_path`
+    doc: FILE    output anchors file
     inputBinding:
       position: 102
-      prefix: --output-anchors-file
+      prefix: -n
   - id: output_bed_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bed_path`
+    doc: FILE    output the sequence alignment method used for each 
+      anchor/inter-anchor region, in bed format
     inputBinding:
       position: 103
-      prefix: --output-bed
+      prefix: -b
   - id: output_fragmentation_maf_path
     type:
       - 'null'

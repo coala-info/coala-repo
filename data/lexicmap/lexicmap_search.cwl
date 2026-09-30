@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lexicmap search
+baseCommand:
+  - lexicmap
+  - search
 label: lexicmap_search
 doc: "Search sequences against an index\n\nTool homepage: https://github.com/shenwei356/LexicMap"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi build
+baseCommand:
+  - fermi
+  - build
 label: fermi_build
 doc: "Build an FM-index for a FASTA file.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
 inputs:
@@ -59,10 +61,10 @@ inputs:
       prefix: -l
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file name [null]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

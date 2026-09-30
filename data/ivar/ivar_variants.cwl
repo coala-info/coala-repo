@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ivar_variants
+baseCommand:
+  - ivar
+  - variants
 label: ivar_variants
 doc: "Call variants from a mpileup file\n\nTool homepage: https://andersen-lab.github.io/ivar/html/"
 inputs:

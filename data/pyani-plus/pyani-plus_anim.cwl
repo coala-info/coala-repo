@@ -19,6 +19,7 @@ inputs:
     doc: Create database if does not exist.
     inputBinding:
       position: 102
+      prefix: --create-db
   - id: database
     type: File
     doc: Path to pyani-plus SQLite3 database.
@@ -33,6 +34,7 @@ inputs:
       file).
     inputBinding:
       position: 102
+      prefix: --debug
   - id: executor
     type:
       - 'null'
@@ -40,6 +42,7 @@ inputs:
     doc: How should the internal tools be run?
     inputBinding:
       position: 102
+      prefix: --executor
   - id: log
     type:
       - 'null'
@@ -48,6 +51,7 @@ inputs:
       for the local executor, but otherwise "pyani-plus.log".
     inputBinding:
       position: 102
+      prefix: --log
   - id: mode
     type:
       - 'null'
@@ -55,6 +59,7 @@ inputs:
     doc: Nucmer mode for ANIm.
     inputBinding:
       position: 102
+      prefix: --mode
   - id: name
     type:
       - 'null'
@@ -62,20 +67,22 @@ inputs:
     doc: Run name.
     inputBinding:
       position: 102
+      prefix: --name
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for intermediate files, which for debugging purposes 
       will not be deleted. For clusters this must be on a shared drive. Default 
       behaviour is to use a system specified temporary directory (specific to 
       the compute-node when using a cluster) and remove this afterwards.
     inputBinding:
       position: 102
+      prefix: --temp
   - id: wtemp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for temporary workflow coordination files, which for 
       debugging purposes will not be deleted. For clusters this must be on a 
       shared drive. Default behaviour is to use a system specified temporary 
@@ -83,6 +90,7 @@ inputs:
       present direct (for clusters), and remove this afterwards.
     inputBinding:
       position: 102
+      prefix: --wtemp
 outputs:
   - id: stdout
     type: stdout

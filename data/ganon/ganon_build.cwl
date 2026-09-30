@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ganon build
+baseCommand:
+  - ganon
+  - build
 label: ganon_build
 doc: "Build a Ganon database\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:
@@ -166,6 +168,7 @@ inputs:
       - type: array
         items: string
     doc: "Source to download [refseq, genbank] (default: ['refseq'])"
+    default:
       - refseq
     inputBinding:
       position: 101

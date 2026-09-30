@@ -69,18 +69,12 @@ inputs:
       position: 101
       prefix: --log
   - id: output_fasta_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_fasta_path`
+    type: string
     inputBinding:
       position: 102
       prefix: --output-fasta
   - id: output_metadata_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_metadata_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --output-metadata

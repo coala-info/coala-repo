@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fba kallisto_wrapper
+baseCommand:
+  - fba
+  - kallisto_wrapper
 label: fba_kallisto_wrapper
 doc: "Deploy kallisto/bustools for feature barcoding quantification (just a wrapper)
   (Bray, N.L., et al. 2016).\n\nTool homepage: https://github.com/jlduan/fba"
@@ -14,7 +16,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify a temp directory. Default (./kallisto)
     inputBinding:
       position: 101
@@ -55,7 +57,6 @@ inputs:
       prefix: --whitelist
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

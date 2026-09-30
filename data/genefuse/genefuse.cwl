@@ -77,7 +77,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `html_path`
     inputBinding:
       position: 102
       prefix: --html
@@ -85,7 +84,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `json_path`
     inputBinding:
       position: 103
       prefix: --json

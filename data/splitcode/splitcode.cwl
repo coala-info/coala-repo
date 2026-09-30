@@ -642,7 +642,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outb_path`
     inputBinding:
       position: 103
       prefix: --outb
@@ -650,7 +649,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output
@@ -658,7 +656,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unassigned_path`
     inputBinding:
       position: 105
       prefix: --unassigned

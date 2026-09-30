@@ -21,7 +21,8 @@ inputs:
     doc: An option with a placeholder value
     inputBinding:
       position: 103
-      prefix: -xxx
+      prefix: -xxx=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

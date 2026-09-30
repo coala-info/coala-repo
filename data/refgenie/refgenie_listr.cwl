@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie_listr
+baseCommand:
+  - refgenie
+  - listr
 label: refgenie_listr
 doc: "Remote refgenie assets\n\nTool homepage: http://refgenie.databio.org"
 inputs:

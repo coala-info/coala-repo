@@ -85,6 +85,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --label-subtree
+          separate: true
     doc: Add a label to the subtree of the named node. If the node name is 
       followed by a "+" sign, then the branch leading to that node is included 
       in the subtree. This may be used multiple times to add more than one 
@@ -94,7 +97,6 @@ inputs:
       re-rooting, and re-naming options are applied.
     inputBinding:
       position: 102
-      prefix: --label-subtree
   - id: merge
     type:
       - 'null'

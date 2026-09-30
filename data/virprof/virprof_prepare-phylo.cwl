@@ -135,14 +135,16 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --species
+          separate: true
     doc: Species to fetch sequences for. May be specified multiple times. If 
       given, species names will not be autodetected from input fasta file names
     inputBinding:
       position: 102
-      prefix: --species
   - id: out_fasta_path
     type: string
-    doc: Output or path parameter `out_fasta_path`
+    doc: Output FASTA file for alignment+treeing
     inputBinding:
       position: 103
       prefix: --out-fasta

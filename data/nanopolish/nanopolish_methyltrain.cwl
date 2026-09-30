@@ -138,7 +138,7 @@ inputs:
       prefix: --verbose
   - id: out_fofn_path
     type: string
-    doc: Output or path parameter `out_fofn_path`
+    doc: write the names of the output models into FILE
     inputBinding:
       position: 102
       prefix: --out-fofn

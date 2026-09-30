@@ -19,6 +19,7 @@ inputs:
       within that clade to be deleted.
     inputBinding:
       position: 2
+      itemSeparator: ','
 outputs:
   - id: output_nwk
     type: File

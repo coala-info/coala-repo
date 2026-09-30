@@ -79,7 +79,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
@@ -87,7 +86,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_gff3_path`
     inputBinding:
       position: 103
       prefix: --output-gff3
@@ -95,7 +93,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_orf_path`
     inputBinding:
       position: 104
       prefix: --output-orf

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mylotools_strain-viz
+baseCommand:
+  - mylotools
+  - strain-viz
 label: mylotools_strain-viz
 doc: "Generate a visualization of contig relationships based on read overlaps.\n\n\
   Tool homepage: https://github.com/bluenote-1577/mylotools"
@@ -37,7 +39,7 @@ inputs:
       position: 102
       prefix: --overlaps
   - id: output_path
-    type: string
+    type: string?
     doc: Output directory for report files
     inputBinding:
       position: 103

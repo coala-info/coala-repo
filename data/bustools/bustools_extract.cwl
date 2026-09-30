@@ -29,6 +29,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fastq
+      itemSeparator: ','
   - id: include
     type:
       - 'null'
@@ -47,7 +48,6 @@ inputs:
       prefix: --nFastqs
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

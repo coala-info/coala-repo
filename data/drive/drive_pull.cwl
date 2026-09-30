@@ -71,7 +71,7 @@ inputs:
   - id: exports_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to place exports
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree_rotate
+baseCommand:
+  - gotree
+  - rotate
 label: gotree_rotate
 doc: "Rotates children of internal nodes by different means.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:
@@ -38,7 +40,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Rotated tree output file (default "stdout")
     inputBinding:
       position: 102
       prefix: --output

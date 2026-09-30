@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy sample-filter
+baseCommand:
+  - dimspy
+  - sample-filter
 label: dimspy_sample-filter
 doc: "Apply sample filter to a peak matrix.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
@@ -54,7 +56,6 @@ inputs:
       prefix: --within
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngsderive junction-annotation
+baseCommand:
+  - ngsderive
+  - junction-annotation
 label: ngsderive_junction-annotation
 doc: "Annotate junctions from NGS files based on a gene model.\n\nTool homepage: https://github.com/claymcleod/ngsderive"
 inputs:
@@ -56,7 +58,7 @@ inputs:
   - id: junction_files_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write annotated junction files to.
     inputBinding:
       position: 102
@@ -95,7 +97,6 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popins2 genotype
+baseCommand:
+  - popins2
+  - genotype
 label: popins2_genotype
 doc: "Computes genotype likelihoods for a sample for all insertions given in the input
   VCF file by aligning all reads, which are mapped to the reference genome around

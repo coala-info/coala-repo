@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaquantome db
+baseCommand:
+  - metaquantome
+  - db
 label: metaquantome_db
 doc: "metaQuantome uses freely available bioinformatic databases to expand your set
   of direct annotations. For most cases, all 3 databases can be downloaded (the default).\n\

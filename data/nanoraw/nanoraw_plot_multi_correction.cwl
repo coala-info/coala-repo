@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw plot_multi_correction
+baseCommand:
+  - nanoraw
+  - plot_multi_correction
 label: nanoraw_plot_multi_correction
 doc: "Plot signal at specified genomic locations.\n\nTool homepage: https://github.com/marcus1487/nanoraw"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: basecall_subgroups
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini_stats
+baseCommand:
+  - gemini
+  - stats
 label: gemini_stats
 doc: "Report statistics about variants in a GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

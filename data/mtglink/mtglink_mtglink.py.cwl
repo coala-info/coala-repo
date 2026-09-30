@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtglink_mtglink.py
+baseCommand: mtglink.py
 label: mtglink_mtglink.py
 doc: "Local assembly with linked read data, using either a De Bruijn Graph (DBG) algorithm
   or an Iterative Read Overlap (IRO) algorithm\n\nTool homepage: https://github.com/anne-gcd/MTG-Link"

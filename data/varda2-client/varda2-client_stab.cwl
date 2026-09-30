@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varda2-client stab
+baseCommand:
+  - varda2-client
+  - stab
 label: varda2-client_stab
 doc: "Get stabilized sequence for a given region\n\nTool homepage: https://github.com/varda/varda2-client"
 inputs:

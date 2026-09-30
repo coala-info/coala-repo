@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk_split
+baseCommand:
+  - fastafunk
+  - split
 label: fastafunk_split
 doc: "Split a FASTA file into multiple FASTA files based on metadata.\n\nTool homepage:
   https://github.com/cov-ert/fastafunk"
@@ -34,9 +36,7 @@ inputs:
       position: 101
       prefix: --index-column
   - id: index_field
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Field(s) in the fasta header to match the metadata (else matches column
       names)
     inputBinding:
@@ -73,7 +73,7 @@ inputs:
   - id: out_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: A directory for output FASTA files
     inputBinding:
       position: 101

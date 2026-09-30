@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit bam
+baseCommand:
+  - seqkit
+  - bam
 label: seqkit_bam
 doc: "monitoring and online histograms of BAM record features\n\nTool homepage: https://github.com/shenwei356/seqkit"
 inputs:
@@ -12,6 +14,7 @@ inputs:
       seqkit guesses the sequence type (0 for whole seq)
     inputBinding:
       position: 101
+      prefix: --alphabet-guess-seq-length
   - id: bins
     type:
       - 'null'
@@ -36,6 +39,7 @@ inputs:
       the range and default value for each format
     inputBinding:
       position: 101
+      prefix: --compress-level
   - id: count_file
     type:
       - 'null'
@@ -107,6 +111,7 @@ inputs:
     doc: FASTA head is NCBI-style, e.g. >gi|110645304|ref|NC_002516.2| Pseud...
     inputBinding:
       position: 101
+      prefix: --id-ncbi
   - id: id_regexp
     type:
       - 'null'
@@ -114,6 +119,7 @@ inputs:
     doc: regular expression for parsing ID
     inputBinding:
       position: 101
+      prefix: --id-regexp
   - id: idx_count
     type:
       - 'null'
@@ -211,6 +217,7 @@ inputs:
     doc: be quiet and do not show extra information
     inputBinding:
       position: 101
+      prefix: --quiet
   - id: quiet_mode
     type:
       - 'null'
@@ -268,6 +275,7 @@ inputs:
       files do exist
     inputBinding:
       position: 101
+      prefix: --skip-file-check
   - id: stat
     type:
       - 'null'
@@ -304,26 +312,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `img_file_path`
+    doc: save histogram to this PDF/image file
     inputBinding:
       position: 102
-      prefix: --img-file
-  - id: out_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_file_path`
-    inputBinding:
-      position: 103
-      prefix: --out-file
+      prefix: --img
   - id: top_bam_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `top_bam_file_path`
+    doc: save the top -? records to this bam file
     inputBinding:
       position: 104
-      prefix: --top-bam-file
+      prefix: --top-bam
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
+    inputBinding:
+      position: 105
+      prefix: --out-file
 outputs:
   - id: img_file
     type:

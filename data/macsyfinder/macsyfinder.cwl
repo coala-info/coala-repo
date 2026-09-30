@@ -128,6 +128,9 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --inter-gene-max-space
+          separate: true
     doc: "Co-localization criterion: maximum number of components non-matched by a
       profile allowed between two matched components for them to be considered contiguous.
       Option only meaningful for 'ordered' datasets. The first value must name a model,
@@ -136,7 +139,6 @@ inputs:
       20"
     inputBinding:
       position: 101
-      prefix: --inter-gene-max-space
   - id: list_models
     type:
       - 'null'
@@ -158,18 +160,23 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --max-nb-genes
+          separate: true
     doc: 'The maximal number of genes to consider a system as full. The first value
       must correspond to a model name, the second value to an integer. This option
       can be repeated several times: "--max-nb-genes TXSS/T2SS 5 --max-nb-genes TXSS/Flagellum
       10"'
     inputBinding:
       position: 101
-      prefix: --max-nb-genes
   - id: min_genes_required
     type:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --min-genes-required
+          separate: true
     doc: "The minimal number of genes required for model assessment (includes both
       'mandatory' and 'accessory' components). The first value must correspond to
       a model fully qualified name, the second value to an integer. This option can
@@ -177,19 +184,20 @@ inputs:
       TXSS/Flagellum 10"
     inputBinding:
       position: 101
-      prefix: --min-genes-required
   - id: min_mandatory_genes_required
     type:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --min-mandatory-genes-required
+          separate: true
     doc: 'The minimal number of mandatory genes required for model assessment. The
       first value must correspond to a model fully qualified name, the second value
       to an integer. This option can be repeated several times: "--min-mandatory-genes-required
       TXSS/T2SS 15 --min-mandatory-genes-required TXSS/Flagellum 10"'
     inputBinding:
       position: 101
-      prefix: --min-mandatory-genes-required
   - id: models
     type:
       - 'null'

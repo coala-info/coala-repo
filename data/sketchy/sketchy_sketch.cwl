@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchy sketch
+baseCommand:
+  - sketchy
+  - sketch
 label: sketchy_sketch
 doc: "Create a sketch from input sequences\n\nTool homepage: https://github.com/esteinig/sketchy"
 inputs:
@@ -47,7 +49,7 @@ inputs:
       prefix: --sketch-size
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output sketch file path
     inputBinding:
       position: 102
       prefix: --output

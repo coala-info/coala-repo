@@ -76,7 +76,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Optional: Provide a name. This name will be a directory output files are
       written to. Name can be a directory path, but doesn't have to be."
     inputBinding:

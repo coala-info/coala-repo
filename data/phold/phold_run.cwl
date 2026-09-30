@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold_run
+baseCommand:
+  - phold
+  - run
 label: phold_run
 doc: "phold predict then comapare all in one - GPU recommended\n\nTool homepage: https://github.com/gbouras13/phold"
 inputs:
@@ -141,7 +143,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

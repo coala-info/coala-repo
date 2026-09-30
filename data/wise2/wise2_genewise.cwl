@@ -97,6 +97,7 @@ inputs:
     doc: drop into dynamite dp matrix debugger
     inputBinding:
       position: 103
+      prefix: -dydebug
   - id: dynamic_memory_kbytes
     type:
       - 'null'
@@ -188,6 +189,7 @@ inputs:
     doc: print out debugging of heuristics on stdout
     inputBinding:
       position: 103
+      prefix: -gwdebug
   - id: init_policy
     type:
       - 'null'
@@ -283,6 +285,7 @@ inputs:
     doc: print PackAln after debugger run if used
     inputBinding:
       position: 103
+      prefix: -paldebug
   - id: phase_help
     type:
       - 'null'
@@ -290,6 +293,7 @@ inputs:
     doc: prints longer help on phase file and exits
     inputBinding:
       position: 103
+      prefix: -phase_help
   - id: phase_intron_file
     type:
       - 'null'
@@ -486,6 +490,7 @@ inputs:
     doc: make just gtag splice sites (default is gtag, ie no model)
     inputBinding:
       position: 103
+      prefix: -splice_gtag
   - id: splice_gtag_prob
     type:
       - 'null'
@@ -493,6 +498,7 @@ inputs:
     doc: probability for gt/ag
     inputBinding:
       position: 103
+      prefix: -splice_gtag_prob
   - id: splice_max_collar
     type:
       - 'null'
@@ -500,6 +506,7 @@ inputs:
     doc: maximum Bits value for a splice site
     inputBinding:
       position: 103
+      prefix: -splice_max_collar
   - id: splice_min_collar
     type:
       - 'null'
@@ -507,6 +514,7 @@ inputs:
     doc: minimum Bits value for a splice site
     inputBinding:
       position: 103
+      prefix: -splice_min_collar
   - id: splice_score_offset
     type:
       - 'null'
@@ -514,6 +522,7 @@ inputs:
     doc: score offset for splice sites
     inputBinding:
       position: 103
+      prefix: -splice_score_offset
   - id: splice_type
     type:
       - 'null'

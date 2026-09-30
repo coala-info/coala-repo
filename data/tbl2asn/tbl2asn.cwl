@@ -362,26 +362,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cleanup_log_file_path`
+    doc: Cleanup Log File [File Out]  Optional
     inputBinding:
       position: 102
-      prefix: --cleanup-log-file
+      prefix: -z
   - id: discrepancy_report_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `discrepancy_report_output_file_path`
+    doc: Discrepancy Report Output File [File Out]  Optional
     inputBinding:
       position: 103
-      prefix: --discrepancy-report-output-file
+      prefix: -Z
   - id: single_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `single_output_file_path`
+    doc: Single Output File [File Out]  Optional
     inputBinding:
       position: 104
-      prefix: --single-output-file
+      prefix: -o
 outputs:
   - id: single_output_file
     type:

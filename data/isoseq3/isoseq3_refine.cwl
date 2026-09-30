@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq refine
+baseCommand:
+  - isoseq
+  - refine
 label: isoseq3_refine
 doc: "Remove polyA and concatemers from FL reads and generate FLNC transcripts (FL
   to FLNC)\n\nTool homepage: https://github.com/PacificBiosciences/IsoSeq3"

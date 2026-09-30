@@ -29,6 +29,7 @@ inputs:
     doc: area1 area2 area3
     inputBinding:
       position: 104
+      prefix: -alignment
   - id: bracket
     type:
       - 'null'
@@ -37,6 +38,7 @@ inputs:
     doc: window_size max_avg_error
     inputBinding:
       position: 104
+      prefix: -bracket
   - id: cdna
     type:
       - 'null'
@@ -44,6 +46,7 @@ inputs:
     doc: minimum_span maximum_error initial_search_range
     inputBinding:
       position: 104
+      prefix: -cdna
   - id: debug
     type:
       - 'null'
@@ -51,6 +54,7 @@ inputs:
     doc: filename
     inputBinding:
       position: 104
+      prefix: -debug
   - id: error
     type:
       - 'null'
@@ -59,6 +63,7 @@ inputs:
     doc: max_avg_error max_error_at_ends
     inputBinding:
       position: 104
+      prefix: -error
   - id: inform_me
     type:
       - 'null'
@@ -66,6 +71,7 @@ inputs:
     doc: Inform the user
     inputBinding:
       position: 104
+      prefix: -inform_me
   - id: keep
     type:
       - 'null'
@@ -73,6 +79,7 @@ inputs:
     doc: Keep intermediate files
     inputBinding:
       position: 104
+      prefix: -keep
   - id: minimum
     type:
       - 'null'
@@ -80,6 +87,7 @@ inputs:
     doc: good_sequence_length
     inputBinding:
       position: 104
+      prefix: -minimum
   - id: pass_along
     type:
       - 'null'
@@ -88,6 +96,7 @@ inputs:
     doc: min_value max_value med_value
     inputBinding:
       position: 104
+      prefix: -pass_along
   - id: quiet
     type:
       - 'null'
@@ -95,6 +104,7 @@ inputs:
     doc: Suppress output
     inputBinding:
       position: 104
+      prefix: -quiet
   - id: range
     type:
       - 'null'
@@ -103,6 +113,7 @@ inputs:
     doc: area1 area2 area3
     inputBinding:
       position: 104
+      prefix: -range
   - id: size
     type:
       - 'null'
@@ -110,6 +121,7 @@ inputs:
     doc: vector_tag_size
     inputBinding:
       position: 104
+      prefix: -size
   - id: threshold
     type:
       - 'null'
@@ -117,6 +129,7 @@ inputs:
     doc: vector_cutoff
     inputBinding:
       position: 104
+      prefix: -threshold
   - id: vector
     type:
       - 'null'
@@ -125,6 +138,7 @@ inputs:
     doc: vector_sequence_file splice_site_file
     inputBinding:
       position: 104
+      prefix: -vector
   - id: window
     type:
       - 'null'
@@ -133,6 +147,7 @@ inputs:
     doc: window_size max_avg_error [window_size max_avg_error ...]
     inputBinding:
       position: 104
+      prefix: -window
   - id: xtra
     type:
       - 'null'
@@ -140,12 +155,12 @@ inputs:
     doc: cpu_threads
     inputBinding:
       position: 104
+      prefix: -xtra
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 105
-      prefix: --output
+      prefix: -output
 outputs:
   - id: output
     type:

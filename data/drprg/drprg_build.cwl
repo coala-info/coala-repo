@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: drprg build
+baseCommand:
+  - drprg
+  - build
 label: drprg_build
 doc: "Build an index to predict resistance from\n\nTool homepage: https://github.com/mbhall88/drprg"
 inputs:
@@ -166,11 +168,11 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+    type: string?
+    doc: ' Directory to place output'
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --outdir
 outputs:
   - id: output_directory
     type:

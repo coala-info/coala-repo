@@ -114,7 +114,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the working directory (Optional). An isolated sandbox 
       directory for storing all the temporary files will be created in the 
       working directory. This sandbox directory will only persist during the 
@@ -125,10 +125,9 @@ inputs:
       prefix: --working_dir
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools IR
+baseCommand:
+  - cpstools
+  - IR
 label: cpstools_IR
 doc: "\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

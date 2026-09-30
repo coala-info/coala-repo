@@ -68,7 +68,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: If specified all output files will be written to that directory.
     inputBinding:
       position: 101
@@ -91,10 +91,12 @@ inputs:
       prefix: --tsize
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output BED file name. If not specified, will write to standard output.
+      Note, if the input format is BAMPE or BEDPE, the output will be in BEDPE format.
+      DEFAULT: stdout'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --ofile
 outputs:
   - id: output_file
     type:

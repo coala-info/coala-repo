@@ -29,11 +29,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --config
+          separate: true
     doc: A configuration file, specifying additional OPTIONS and/or NAMES. This 
       option may be repeated.
     inputBinding:
       position: 103
-      prefix: --config
   - id: css
     type:
       - 'null'
@@ -165,6 +167,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --graph
+          separate: true
     doc: 'Include graphs of type GRAPHTYPE in the generated output. Graphs are generated
       using the Graphviz dot executable. If this executable is not on the path, then
       use --dotpath to specify its location. This option may be repeated to include
@@ -172,7 +177,6 @@ inputs:
       callgraph, umlclasstree.'
     inputBinding:
       position: 103
-      prefix: --graph
   - id: graph_font
     type:
       - 'null'
@@ -441,7 +445,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

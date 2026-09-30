@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: terminus collapse
+baseCommand:
+  - terminus
+  - collapse
 label: terminus_collapse
 doc: "analyze a collection of per-sample groups, and produce a consensus grouping.\n\
   \nTool homepage: https://github.com/COMBINE-lab/terminus"
@@ -32,16 +34,18 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: prefix where output would be written
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type: File
+    type:
+      type: array
+      items: File
     doc: prefix where output would be written
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

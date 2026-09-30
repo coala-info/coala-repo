@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench searchlongrna
+baseCommand:
+  - rbpbench
+  - searchlongrna
 label: rbpbench_searchlongrna
 doc: "Search for RBP motifs in long RNA sequences.\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:
@@ -512,7 +514,6 @@ inputs:
       prefix: --user-rbp-id
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

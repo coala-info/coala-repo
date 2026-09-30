@@ -208,7 +208,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `barriers_like_output_path`
     inputBinding:
       position: 102
       prefix: --barriers-like-output
@@ -216,7 +215,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `binary_rates_file_path`
     inputBinding:
       position: 103
       prefix: --binary-rates-file
@@ -224,7 +222,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `binary_rates_file_sparse_path`
     inputBinding:
       position: 104
       prefix: --binary-rates-file-sparse
@@ -232,7 +229,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dot_plot_path`
+    doc: If provided, the dotPlot will be written to the
     inputBinding:
       position: 105
       prefix: --dot-plot
@@ -240,7 +237,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dot_plot_per_basin_path`
     inputBinding:
       position: 106
       prefix: --dot-plot-per-basin
@@ -248,7 +244,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `energy_file_path`
+    doc: File to store all energies.
     inputBinding:
       position: 107
       prefix: --energy-file
@@ -256,7 +252,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `partition_functions_path`
     inputBinding:
       position: 108
       prefix: --partition-functions
@@ -264,7 +259,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `saddle_file_path`
+    doc: Store all saddles in a CSV file.
     inputBinding:
       position: 109
       prefix: --saddle-file
@@ -272,7 +267,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `transition_prob_path`
+    doc: If provided, the transition probability matrix
     inputBinding:
       position: 110
       prefix: --transition-prob

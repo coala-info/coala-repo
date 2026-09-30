@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virmet covplot
+baseCommand:
+  - virmet
+  - covplot
 label: virmet_covplot
 doc: "Generate coverage plots for viral genomes.\n\nTool homepage: https://github.com/medvir/VirMet"
 inputs:
@@ -45,7 +47,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save the output plots.
     inputBinding:
       position: 101

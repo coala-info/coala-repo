@@ -15,7 +15,7 @@ inputs:
   - id: ref_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output dir.
     inputBinding:
       position: 101

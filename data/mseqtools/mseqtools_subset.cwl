@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mseqtools_subset
+baseCommand:
+  - mseqtools
+  - subset
 label: mseqtools_subset
 doc: "Subset a fasta/fastq file based on a list of identifiers.\n\nTool homepage:
   https://github.com/arumugamlab/mseqtools"
@@ -52,10 +54,10 @@ inputs:
       prefix: --window
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file (gzipped)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

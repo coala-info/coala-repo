@@ -75,18 +75,18 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference genome FASTA file.
     secondaryFiles:
       - .fai
-    doc: Reference genome FASTA file.
     inputBinding:
       position: 101
       prefix: --ref_fasta
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory.
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

@@ -16,6 +16,7 @@ inputs:
     doc: Enable/disable ANSI console logging
     inputBinding:
       position: 102
+      prefix: -ansi-log
   - id: bucket_dir
     type:
       - 'null'
@@ -23,6 +24,7 @@ inputs:
     doc: Remote bucket where intermediate result files are stored
     inputBinding:
       position: 102
+      prefix: -bucket-dir
   - id: cache
     type:
       - 'null'
@@ -30,6 +32,7 @@ inputs:
     doc: Enable/disable processes caching
     inputBinding:
       position: 102
+      prefix: -cache
   - id: deep
     type:
       - 'null'
@@ -45,6 +48,7 @@ inputs:
     doc: Prevent the cancellation of child jobs on execution termination
     inputBinding:
       position: 102
+      prefix: -disable-jobs-cancellation
   - id: dump_channels
     type:
       - 'null'
@@ -52,6 +56,7 @@ inputs:
     doc: Dump channels for debugging purpose
     inputBinding:
       position: 102
+      prefix: -dump-channels
   - id: dump_hashes
     type:
       - 'null'
@@ -59,6 +64,7 @@ inputs:
     doc: Dump task hash keys for debugging purpose
     inputBinding:
       position: 102
+      prefix: -dump-hashes
   - id: entry
     type:
       - 'null'
@@ -66,6 +72,7 @@ inputs:
     doc: Entry workflow name to be executed
     inputBinding:
       position: 102
+      prefix: -entry
   - id: env_var
     type:
       - 'null'
@@ -96,6 +103,7 @@ inputs:
     doc: Pull latest changes before run
     inputBinding:
       position: 102
+      prefix: -latest
   - id: lib
     type:
       - 'null'
@@ -111,6 +119,7 @@ inputs:
       repository
     inputBinding:
       position: 102
+      prefix: -main-script
   - id: name
     type:
       - 'null'
@@ -118,6 +127,7 @@ inputs:
     doc: Assign a mnemonic name to the a pipeline run
     inputBinding:
       position: 102
+      prefix: -name
   - id: offline
     type:
       - 'null'
@@ -125,6 +135,7 @@ inputs:
     doc: Do not check for remote project updates
     inputBinding:
       position: 102
+      prefix: -offline
   - id: params_file
     type:
       - 'null'
@@ -132,6 +143,7 @@ inputs:
     doc: Load script parameters from a JSON/YAML file
     inputBinding:
       position: 102
+      prefix: -params-file
   - id: plugins
     type:
       - 'null'
@@ -140,6 +152,7 @@ inputs:
     doc: Specify the plugins to be applied for this run e.g. nf-amazon,nf-tower
     inputBinding:
       position: 102
+      prefix: -plugins
   - id: preview
     type:
       - 'null'
@@ -147,6 +160,7 @@ inputs:
     doc: Run the workflow script skipping the execution of all processes
     inputBinding:
       position: 102
+      prefix: -preview
   - id: process
     type:
       - 'null'
@@ -162,6 +176,7 @@ inputs:
     doc: Choose a configuration profile
     inputBinding:
       position: 102
+      prefix: -profile
   - id: queue_size
     type:
       - 'null'
@@ -179,6 +194,7 @@ inputs:
       executions that was stopped by an error
     inputBinding:
       position: 102
+      prefix: -resume
   - id: revision
     type:
       - 'null'
@@ -203,6 +219,7 @@ inputs:
     doc: Test a script function with the name specified
     inputBinding:
       position: 102
+      prefix: -test
   - id: user
     type:
       - 'null'
@@ -210,6 +227,7 @@ inputs:
     doc: Private repository user name
     inputBinding:
       position: 102
+      prefix: -user
   - id: with_apptainer
     type:
       - 'null'
@@ -217,6 +235,7 @@ inputs:
     doc: Enable process execution in a Apptainer container
     inputBinding:
       position: 102
+      prefix: -with-apptainer
   - id: with_charliecloud
     type:
       - 'null'
@@ -224,6 +243,7 @@ inputs:
     doc: Enable process execution in a Charliecloud container runtime
     inputBinding:
       position: 102
+      prefix: -with-charliecloud
   - id: with_cloudcache
     type:
       - 'null'
@@ -231,6 +251,7 @@ inputs:
     doc: Enable the use of object storage bucket as storage for cache meta-data
     inputBinding:
       position: 102
+      prefix: -with-cloudcache
   - id: with_conda
     type:
       - 'null'
@@ -239,6 +260,7 @@ inputs:
       .yml|.yaml suffix)
     inputBinding:
       position: 102
+      prefix: -with-conda
   - id: with_dag
     type:
       - 'null'
@@ -246,6 +268,7 @@ inputs:
     doc: Create pipeline DAG file
     inputBinding:
       position: 102
+      prefix: -with-dag
   - id: with_docker
     type:
       - 'null'
@@ -253,6 +276,7 @@ inputs:
     doc: Enable process execution in a Docker container
     inputBinding:
       position: 102
+      prefix: -with-docker
   - id: with_notification
     type:
       - 'null'
@@ -270,6 +294,7 @@ inputs:
     doc: Enable process execution in a Podman container
     inputBinding:
       position: 102
+      prefix: -with-podman
   - id: with_report
     type:
       - 'null'
@@ -277,6 +302,7 @@ inputs:
     doc: Create processes execution html report
     inputBinding:
       position: 102
+      prefix: -with-report
   - id: with_singularity
     type:
       - 'null'
@@ -284,6 +310,7 @@ inputs:
     doc: Enable process execution in a Singularity container
     inputBinding:
       position: 102
+      prefix: -with-singularity
   - id: with_spack
     type:
       - 'null'
@@ -292,6 +319,7 @@ inputs:
       .yaml suffix)
     inputBinding:
       position: 102
+      prefix: -with-spack
   - id: with_timeline
     type:
       - 'null'
@@ -299,6 +327,7 @@ inputs:
     doc: Create processes execution timeline file
     inputBinding:
       position: 102
+      prefix: -with-timeline
   - id: with_tower
     type:
       - 'null'
@@ -306,6 +335,7 @@ inputs:
     doc: Monitor workflow execution with Seqera Tower service
     inputBinding:
       position: 102
+      prefix: -with-tower
   - id: with_trace
     type:
       - 'null'
@@ -313,6 +343,7 @@ inputs:
     doc: Create processes execution tracing file
     inputBinding:
       position: 102
+      prefix: -with-trace
   - id: with_weblog
     type:
       - 'null'
@@ -320,6 +351,7 @@ inputs:
     doc: Send workflow status messages via HTTP to target URL
     inputBinding:
       position: 102
+      prefix: -with-weblog
   - id: without_conda
     type:
       - 'null'
@@ -327,6 +359,7 @@ inputs:
     doc: Disable the use of Conda environments
     inputBinding:
       position: 102
+      prefix: -without-conda
   - id: without_docker
     type:
       - 'null'
@@ -334,6 +367,7 @@ inputs:
     doc: Disable process execution with Docker
     inputBinding:
       position: 102
+      prefix: -without-docker
   - id: without_podman
     type:
       - 'null'
@@ -341,6 +375,7 @@ inputs:
     doc: Disable process execution in a Podman container
     inputBinding:
       position: 102
+      prefix: -without-podman
   - id: without_spack
     type:
       - 'null'
@@ -348,6 +383,7 @@ inputs:
     doc: Disable the use of Spack environments
     inputBinding:
       position: 102
+      prefix: -without-spack
   - id: work_dir
     type:
       - 'null'

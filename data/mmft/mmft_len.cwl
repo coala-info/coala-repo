@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_len
+baseCommand:
+  - mmft
+  - len
 label: mmft_len
 doc: "Calculate lengths of fasta file records.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

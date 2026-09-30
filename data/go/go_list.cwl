@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go list
+baseCommand:
+  - go
+  - list
 label: go_list
 doc: "List packages or modules\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

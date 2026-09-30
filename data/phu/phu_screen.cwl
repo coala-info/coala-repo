@@ -21,6 +21,7 @@ inputs:
     doc: 'How to combine hits from multiple HMMs: any|all|threshold'
     inputBinding:
       position: 102
+      prefix: --combine-mode
   - id: hmm_mode
     type:
       - 'null'
@@ -29,6 +30,7 @@ inputs:
       HMMs)"
     inputBinding:
       position: 102
+      prefix: --hmm-mode
   - id: input_contigs
     type: File
     doc: Input contigs FASTA
@@ -58,6 +60,7 @@ inputs:
     doc: Maximum independent E-value to keep a domain hit
     inputBinding:
       position: 102
+      prefix: --max-evalue
   - id: min_bitscore
     type:
       - 'null'
@@ -65,6 +68,7 @@ inputs:
     doc: Minimum bitscore to keep a domain hit
     inputBinding:
       position: 102
+      prefix: --min-bitscore
   - id: min_gene_len
     type:
       - 'null'
@@ -72,6 +76,7 @@ inputs:
     doc: Minimum gene length for pyrodigal (nt)
     inputBinding:
       position: 102
+      prefix: --min-gene-len
   - id: min_hmm_hits
     type:
       - 'null'
@@ -79,6 +84,7 @@ inputs:
     doc: Minimum number of HMMs that must hit a contig (for threshold mode)
     inputBinding:
       position: 102
+      prefix: --min-hmm-hits
   - id: mode
     type:
       - 'null'
@@ -86,6 +92,7 @@ inputs:
     doc: 'pyrodigal mode: meta|single'
     inputBinding:
       position: 102
+      prefix: --mode
   - id: no_keep_domtbl
     type:
       - 'null'
@@ -122,7 +129,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102
@@ -165,6 +172,7 @@ inputs:
     doc: NCBI translation table for coding sequences
     inputBinding:
       position: 102
+      prefix: --ttable
 outputs:
   - id: stdout
     type: stdout

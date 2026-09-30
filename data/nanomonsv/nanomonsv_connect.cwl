@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanomonsv_connect
+baseCommand:
+  - nanomonsv
+  - connect
 label: nanomonsv_connect
 doc: "Connects SVs from different reads based on their positions and support.\n\n\
   Tool homepage: https://github.com/friend1ws/nanomonsv"

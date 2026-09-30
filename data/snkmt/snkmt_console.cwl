@@ -11,11 +11,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --db-path
+          separate: true
     doc: Path to a snkmt database. Can be specified multiple times to monitor 
       multiple databases.
     inputBinding:
       position: 101
-      prefix: --db-path
 outputs:
   - id: stdout
     type: stdout

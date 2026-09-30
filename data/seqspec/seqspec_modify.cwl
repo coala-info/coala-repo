@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec_modify
+baseCommand:
+  - seqspec
+  - modify
 label: seqspec_modify
 doc: "Modify attributes of various elements in a seqspec file using JSON objects.\n\
   \nTool homepage: https://github.com/sbooeshaghi/seqspec"
@@ -34,7 +36,7 @@ inputs:
       prefix: --selector
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file
     inputBinding:
       position: 103
       prefix: --output

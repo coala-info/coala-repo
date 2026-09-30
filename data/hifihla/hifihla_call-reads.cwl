@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hifihla call-reads
+baseCommand:
+  - hifihla
+  - call-reads
 label: hifihla_call-reads
 doc: "Call HLA loci from an aligned BAM of HiFi reads\n\nTool homepage: https://github.com/PacificBiosciences/hifihla"
 inputs:
@@ -125,8 +127,8 @@ inputs:
       position: 101
       prefix: --verbose
   - id: outdir_path
-    type: string
-    doc: Output or path parameter `outdir_path`
+    type: string?
+    doc: Output directory [deprecated]
     inputBinding:
       position: 102
       prefix: --outdir

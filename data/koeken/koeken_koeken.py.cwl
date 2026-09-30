@@ -117,7 +117,7 @@ inputs:
   - id: subclassid
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to place all the files.
     inputBinding:
       position: 101
@@ -132,10 +132,9 @@ inputs:
       prefix: --subject
   - id: outputdir_path
     type: string
-    doc: Output or path parameter `outputdir_path`
     inputBinding:
       position: 102
-      prefix: --outputdir
+      prefix: --output
 outputs:
   - id: outputdir
     type: Directory

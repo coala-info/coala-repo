@@ -32,6 +32,7 @@ inputs:
     doc: Write logging information in this file
     inputBinding:
       position: 102
+      prefix: --logfile
   - id: loglevel
     type:
       - 'null'
@@ -39,6 +40,7 @@ inputs:
     doc: Define loglevel
     inputBinding:
       position: 102
+      prefix: --loglevel
   - id: ncbi_db
     type:
       - 'null'
@@ -46,6 +48,7 @@ inputs:
     doc: Path to the taxa.sqlite created by ete3
     inputBinding:
       position: 102
+      prefix: --ncbi-db
   - id: thresh
     type:
       - 'null'
@@ -55,6 +58,7 @@ inputs:
       thresh
     inputBinding:
       position: 102
+      prefix: --thresh
 outputs:
   - id: stdout
     type: stdout

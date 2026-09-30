@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmcp search
+baseCommand:
+  - kmcp
+  - search
 label: kmcp_search
 doc: "Search sequences against a database\n\nTool homepage: https://github.com/shenwei356/kmcp"
 inputs:
@@ -251,7 +253,7 @@ inputs:
       prefix: --use-filename
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: ► Out file, supports and recommends a ".gz" suffix ("-" for
     inputBinding:
       position: 105
       prefix: --out-file

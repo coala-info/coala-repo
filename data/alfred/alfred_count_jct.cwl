@@ -62,7 +62,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outinter_path`
+    doc: inter-gene exon-exon junction reads
     inputBinding:
       position: 103
       prefix: --outinter
@@ -70,7 +70,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outintra_path`
+    doc: intra-gene exon-exon junction reads
     inputBinding:
       position: 104
       prefix: --outintra
@@ -78,7 +78,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outnovel_path`
+    doc: output file for not annotated
     inputBinding:
       position: 105
       prefix: --outnovel

@@ -51,7 +51,7 @@ inputs:
   - id: confindr_use_rmlst
     type:
       - 'null'
-      - boolean
+      - string
     doc: Restrict ConFindR to use only rMLST-derived databases, even when 
       cgMLST-derived exist
     inputBinding:
@@ -102,7 +102,7 @@ inputs:
   - id: forceall
     type:
       - 'null'
-      - boolean
+      - string
     doc: Snakemake force. Force recalculation of all steps
     inputBinding:
       position: 101
@@ -284,7 +284,7 @@ inputs:
       position: 101
       prefix: --run_name
   - id: sample_list
-    type: File
+    type: File?
     doc: List of samples to analyze, as a three column tsv file with columns 
       sample and fastq paths. Can be generated with provided script 
       create_sampleSheet.sh
@@ -343,7 +343,7 @@ inputs:
   - id: shovill_tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Fast temporary directory
     inputBinding:
       position: 101
@@ -424,7 +424,7 @@ inputs:
       position: 101
       prefix: --use_conda
   - id: working_directory
-    type: Directory
+    type: string?
     doc: Working directory where results are saved
     inputBinding:
       position: 101

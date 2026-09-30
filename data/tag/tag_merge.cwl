@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tag merge
+baseCommand:
+  - tag
+  - merge
 label: tag_merge
 doc: "Merges multiple GFF3 files into a single GFF3 file.\n\nTool homepage: https://github.com/standage/tag/"
 inputs:
@@ -21,10 +23,10 @@ inputs:
       prefix: --relax
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: write output in GFF3 to FILE; default is terminal
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotish quality
+baseCommand:
+  - ribotish
+  - quality
 label: ribotish_quality
 doc: "Quality control for Riboseq data.\n\nTool homepage: https://github.com/zhpn1024/ribotish"
 inputs:

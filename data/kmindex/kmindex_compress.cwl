@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmindex compress
+baseCommand:
+  - kmindex
+  - compress
 label: kmindex_compress
 doc: "Compress index.\n\nTool homepage: https://github.com/tlemane/kmindex"
 inputs:

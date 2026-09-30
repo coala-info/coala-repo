@@ -176,10 +176,10 @@ inputs:
       prefix: --umi_prefix
   - id: html_report_path
     type: string
-    doc: Output or path parameter `html_report_path`
+    doc: the html format report file name (string [=gencore.html])
     inputBinding:
       position: 102
-      prefix: --html-report
+      prefix: --html
 outputs:
   - id: html_report
     type:

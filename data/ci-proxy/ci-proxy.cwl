@@ -527,7 +527,7 @@ inputs:
   - id: worker_tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: A directory to use for the worker heartbeat temporary file.
     inputBinding:
       position: 102

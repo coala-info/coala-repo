@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vembrane annotate
+baseCommand:
+  - vembrane
+  - annotate
 label: vembrane_annotate
 doc: "Add new INFO field annotations to a VCF/BCF from other data sources, using a
   configuration file.\n\nTool homepage: https://github.com/vembrane/vembrane"
@@ -114,8 +116,7 @@ inputs:
       position: 103
       prefix: --overwrite-number-info
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --output

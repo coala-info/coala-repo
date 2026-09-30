@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomepy install
+baseCommand:
+  - genomepy
+  - install
 label: genomepy_install
 doc: "Install a genome & run active plugins.\n\nTool homepage: https://github.com/vanheeringen-lab/genomepy"
 inputs:
@@ -52,7 +54,7 @@ inputs:
   - id: genomes_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: create output directory here
     inputBinding:
       position: 102

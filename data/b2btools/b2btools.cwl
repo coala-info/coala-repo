@@ -94,34 +94,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `distribution_json_file_path`
     inputBinding:
       position: 102
-      prefix: --distribution-json-file
+      prefix: --distribution_json_file
   - id: distribution_tabular_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `distribution_tabular_file_path`
     inputBinding:
       position: 103
-      prefix: --distribution-tabular-file
+      prefix: --distribution_tabular_file
   - id: output_json_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_json_file_path`
     inputBinding:
       position: 104
-      prefix: --output-json-file
+      prefix: --output_json_file
   - id: output_tabular_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tabular_file_path`
     inputBinding:
       position: 105
-      prefix: --output-tabular-file
+      prefix: --output_tabular_file
 outputs:
   - id: output_json_file
     type: File

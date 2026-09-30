@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmapper_run
+baseCommand:
+  - taxmapper
+  - run
 label: taxmapper_run
 doc: "Run Taxmapper\n\nTool homepage: https://bitbucket.org/dbeisser/taxmapper"
 inputs:
@@ -24,7 +26,7 @@ inputs:
   - id: reverse
     type:
       - 'null'
-      - boolean
+      - string
     doc: Reads also contain reverse read
     inputBinding:
       position: 101
@@ -47,10 +49,9 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --out
 outputs:
   - id: output
     type:

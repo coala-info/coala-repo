@@ -121,7 +121,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 102
@@ -163,7 +163,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify where you want the temp stuff to go.
     inputBinding:
       position: 102

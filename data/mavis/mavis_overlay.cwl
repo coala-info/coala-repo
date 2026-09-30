@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mavis overlay
+baseCommand:
+  - mavis
+  - overlay
 label: mavis_overlay
 doc: "Draws a gene and its surrounding genomic context, including read depth plots
   and markers.\n\nTool homepage: https://github.com/bcgsc/mavis.git"
@@ -61,7 +63,6 @@ inputs:
       prefix: --read_depth_plot
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

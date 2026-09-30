@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tidk find
+baseCommand:
+  - tidk
+  - find
 label: tidk_find
 doc: "Supply the name of a clade your organsim belongs to, and this submodule will
   find all telomeric repeat matches for that clade.\n\nTool homepage: https://github.com/tolkit/telomeric-identifier"
@@ -46,7 +48,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dir_path`
+    doc: Output directory to write files to
     inputBinding:
       position: 103
       prefix: --dir
@@ -54,7 +56,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Output filename for the TSVs (without extension)
     inputBinding:
       position: 104
       prefix: --output

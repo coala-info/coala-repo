@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kingfisher_annotate
+baseCommand:
+  - kingfisher
+  - annotate
 label: kingfisher_annotate
 doc: "Annotate runs by their metadata e.g. number of sequenced bases, BioSample attributes,
   etc.\n\nTool homepage: https://github.com/wwood/kingfisher-download"
@@ -83,7 +85,6 @@ inputs:
       prefix: --run-identifiers-list
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

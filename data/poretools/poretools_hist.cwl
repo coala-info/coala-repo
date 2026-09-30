@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_hist
+baseCommand:
+  - poretools
+  - hist
 label: poretools_hist
 doc: "Generate histograms of read lengths from FAST5 files.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:
@@ -60,8 +62,8 @@ inputs:
       position: 102
       prefix: --watch
   - id: saveas_path
-    type: string
-    doc: Output or path parameter `saveas_path`
+    type: string?
+    doc: Save the plot to a file.
     inputBinding:
       position: 103
       prefix: --saveas

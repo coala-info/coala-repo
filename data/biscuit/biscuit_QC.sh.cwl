@@ -67,7 +67,6 @@ inputs:
       prefix: --vcf
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 106
       prefix: --outdir

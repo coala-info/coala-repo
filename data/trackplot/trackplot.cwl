@@ -455,7 +455,7 @@ inputs:
   - id: plots
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to directory where to save the backend plot data and logs
     inputBinding:
       position: 101
@@ -613,7 +613,7 @@ inputs:
       samples
     inputBinding:
       position: 101
-      prefix: --show-mean-junction_num
+      prefix: --show-mean-junction-num
   - id: show_row_names
     type:
       - 'null'

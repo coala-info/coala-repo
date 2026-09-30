@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strainge_stats
+baseCommand:
+  - strainge
+  - stats
 label: strainge_stats
 doc: "Obtain statistics about a given k-mer set.\n\nTool homepage: The package home
   page"
@@ -44,7 +46,6 @@ inputs:
       prefix: -k
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

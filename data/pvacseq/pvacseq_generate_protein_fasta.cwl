@@ -18,6 +18,11 @@ inputs:
     doc: Length of the peptide sequence to use when creating the FASTA.
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: The output fasta file
+    inputBinding:
+      position: 3
   - id: downstream_sequence_length
     type:
       - 'null'
@@ -29,11 +34,11 @@ inputs:
       position: 103
       prefix: --downstream-sequence-length
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: The output fasta file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pvacseq:4.0.10--py36_0

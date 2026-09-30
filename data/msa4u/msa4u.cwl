@@ -84,18 +84,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignment_output_filename_path`
+    doc: ' Alignment output filename. (used only if input is unaligned sequences)
+      [default: auto; based on input file name]'
     inputBinding:
       position: 102
-      prefix: --alignment-output-filename
+      prefix: -o-aln
   - id: visualisation_output_filename_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `visualisation_output_filename_path`
+    doc: ' Aligment visualisation filename. [default: auto; based on input file name]'
     inputBinding:
       position: 103
-      prefix: --visualisation-output-filename
+      prefix: -o
 outputs:
   - id: alignment_output_filename
     type:

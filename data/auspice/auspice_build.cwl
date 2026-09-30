@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: auspice build
+baseCommand:
+  - auspice
+  - build
 label: auspice_build
 doc: "Build the client source code bundle. For development, you may want to use \"\
   auspice develop\" which recompiles code on the fly as changes are made. You may

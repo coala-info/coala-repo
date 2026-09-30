@@ -105,6 +105,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fields
+      itemSeparator: ','
   - id: flat_hash
     type:
       - 'null'
@@ -438,7 +439,7 @@ inputs:
   - id: to_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Destination folder for transferred files
     inputBinding:
       position: 101
@@ -517,7 +518,7 @@ inputs:
       prefix: --version-check-days
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Destination for results (String)
     inputBinding:
       position: 102
       prefix: --output

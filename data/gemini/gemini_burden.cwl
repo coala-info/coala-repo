@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini_burden
+baseCommand:
+  - gemini
+  - burden
 label: gemini_burden
 doc: "Calculate burden statistics for variants in a GEMINI database.\n\nTool homepage:
   https://github.com/arq5x/gemini"

@@ -12,6 +12,7 @@ inputs:
     doc: Alignment BAMs
     inputBinding:
       position: 1
+      prefix: --bams
   - id: chromosomes
     type:
       - 'null'
@@ -20,6 +21,7 @@ inputs:
     doc: List of chromosomes to process
     inputBinding:
       position: 2
+      prefix: --chromosomes
   - id: bplib
     type:
       - 'null'

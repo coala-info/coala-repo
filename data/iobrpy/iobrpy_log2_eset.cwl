@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy log2_eset
+baseCommand:
+  - iobrpy
+  - log2_eset
 label: iobrpy_log2_eset
 doc: "Applies log2(x+1) transformation to an expression set matrix.\n\nTool homepage:
   https://github.com/IOBR/IOBRpy"
@@ -14,10 +16,11 @@ inputs:
       prefix: --input
   - id: output_matrix_path
     type: string
-    doc: Output or path parameter `output_matrix_path`
+    doc: ' Path to save the log2(x+1) matrix. Extension selects delimiter (.csv/.tsv
+      or mirror input).'
     inputBinding:
       position: 102
-      prefix: --output-matrix
+      prefix: --output
 outputs:
   - id: output_matrix
     type: File

@@ -133,6 +133,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --names
+      itemSeparator: ','
   - id: project
     type:
       - 'null'
@@ -219,7 +220,6 @@ inputs:
       prefix: --filenames
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

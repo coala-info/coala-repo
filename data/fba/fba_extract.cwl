@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fba_extract
+baseCommand:
+  - fba
+  - extract
 label: fba_extract
 doc: "Extract cell and feature barcodes from paired fastq files. For single cell assays,
   read 1 usually contains cell partitioning and UMI information, and read 2 contains
@@ -93,7 +95,6 @@ inputs:
       prefix: --whitelist
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

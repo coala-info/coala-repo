@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: impg_lace
+baseCommand:
+  - impg
+  - lace
 label: impg_lace
 doc: "Lace files together (graphs or VCFs)\n\nTool homepage: https://github.com/pangenome/impg"
 inputs:
@@ -50,10 +52,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Reference (FASTA or AGC) file for validating contig lengths in VCF 
       files
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -88,7 +90,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files
     inputBinding:
       position: 101
@@ -111,7 +113,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file path
     inputBinding:
       position: 102
       prefix: --output

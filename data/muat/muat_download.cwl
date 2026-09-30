@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: muat download
+baseCommand:
+  - muat
+  - download
 label: muat_download
 doc: "Download datasets.\n\nTool homepage: https://github.com/primasanjaya/muat"
 inputs:

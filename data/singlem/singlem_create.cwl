@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem create
+baseCommand:
+  - singlem
+  - create
 label: singlem_create
 doc: "Create a SingleM package.\n\nTool homepage: https://github.com/wwood/singlem"
 inputs:
@@ -13,6 +15,7 @@ inputs:
       \         multiple domains must be space separated."
     inputBinding:
       position: 1
+      prefix: --target-domains
   - id: debug
     type:
       - 'null'
@@ -84,7 +87,6 @@ inputs:
       prefix: --window-size
   - id: output_singlem_package_path
     type: string
-    doc: Output or path parameter `output_singlem_package_path`
     inputBinding:
       position: 103
       prefix: --output-singlem-package

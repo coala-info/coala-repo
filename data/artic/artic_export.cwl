@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: artic export
+baseCommand:
+  - artic
+  - export
 label: artic_export
 doc: "Export artic results to various formats.\n\nTool homepage: https://github.com/artic-network/fieldbioinformatics"
 inputs:
@@ -20,6 +22,11 @@ inputs:
     type: Directory
     inputBinding:
       position: 4
+  - id: output_directory
+    type: string
+    doc: output_directory (output path)
+    inputBinding:
+      position: 5
   - id: quiet
     type:
       - 'null'
@@ -29,10 +36,10 @@ inputs:
       position: 105
       prefix: --quiet
 outputs:
-  - id: output_directory
+  - id: out_output_directory
     type: Directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_directory)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/artic:1.8.5--pyhdfd78af_0

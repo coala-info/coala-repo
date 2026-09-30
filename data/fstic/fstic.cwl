@@ -57,9 +57,9 @@ inputs:
       prefix: --normalize
   - id: reference
     type: File
+    doc: Reference FASTA file (required for all inputs).
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file (required for all inputs).
     inputBinding:
       position: 101
       prefix: --reference
@@ -108,10 +108,10 @@ inputs:
       prefix: --workers
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name for the distance matrix.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

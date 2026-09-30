@@ -199,7 +199,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 104
       prefix: --output-directory
@@ -207,7 +206,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
     inputBinding:
       position: 105
       prefix: --output-prefix
@@ -215,10 +213,11 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
   - id: output_directory
     type:
       - 'null'

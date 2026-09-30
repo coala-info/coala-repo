@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdbtk convert_to_species
+baseCommand:
+  - gtdbtk
+  - convert_to_species
 label: gtdbtk_convert_to_species
 doc: "Convert a tree to a species-resolved tree.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
@@ -38,10 +40,9 @@ inputs:
       prefix: --input_tree
   - id: output_tree_path
     type: string
-    doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 102
-      prefix: --output-tree
+      prefix: --output_tree
 outputs:
   - id: output_tree
     type: File

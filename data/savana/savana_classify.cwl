@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savana classify
+baseCommand:
+  - savana
+  - classify
 label: savana_classify
 doc: "Classify variants in a VCF file.\n\nTool homepage: https://github.com/cortes-ciriano-lab/savana"
 inputs:
@@ -123,15 +125,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `germline_output_path`
     inputBinding:
       position: 102
-      prefix: --germline-output
+      prefix: --germline_output
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --output
@@ -139,10 +137,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `somatic_output_path`
     inputBinding:
       position: 104
-      prefix: --somatic-output
+      prefix: --somatic_output
 outputs:
   - id: output
     type: File

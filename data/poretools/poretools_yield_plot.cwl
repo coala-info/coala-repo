@@ -54,8 +54,8 @@ inputs:
       position: 102
       prefix: --theme-bw
   - id: saveas_path
-    type: string
-    doc: Output or path parameter `saveas_path`
+    type: string?
+    doc: Save the plot to a file. Extension (.pdf or .png) drives
     inputBinding:
       position: 103
       prefix: --saveas

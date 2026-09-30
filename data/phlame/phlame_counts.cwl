@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phlame_counts
+baseCommand:
+  - phlame
+  - counts
 label: phlame_counts
 doc: "Calculate phlame counts from BAM file.\n\nTool homepage: https://github.com/quevan/phlame"
 inputs:
@@ -11,19 +13,17 @@ inputs:
       position: 101
       prefix: -i
   - id: reference_genome
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to reference genome.
     inputBinding:
       position: 101
       prefix: -r
   - id: output_counts_path
     type: string
-    doc: Output or path parameter `output_counts_path`
+    doc: Path to output counts file.
     inputBinding:
       position: 102
-      prefix: --output-counts
+      prefix: -o
 outputs:
   - id: output_counts
     type: File

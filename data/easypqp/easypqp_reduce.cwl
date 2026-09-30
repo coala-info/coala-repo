@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: easypqp_reduce
+baseCommand:
+  - easypqp
+  - reduce
 label: easypqp_reduce
 doc: "Reduce PQP files for OpenSWATH linear and non-linear alignment\n\nTool homepage:
   https://github.com/grosenberger/easypqp"
@@ -29,7 +31,7 @@ inputs:
       prefix: --peptides
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output PQP file.  [required]
     inputBinding:
       position: 102
       prefix: --out

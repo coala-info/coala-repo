@@ -49,7 +49,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save the demultiplexed FASTQ files.
     inputBinding:
       position: 103

@@ -17,6 +17,11 @@ inputs:
     doc: 'Tabix indexed file of split counts. Columns: chrom,pos,clip,count,sample'
     inputBinding:
       position: 2
+  - id: fout
+    type: string
+    doc: Output table of most significant start/endpositions.
+    inputBinding:
+      position: 3
   - id: background
     type:
       - 'null'
@@ -70,11 +75,11 @@ inputs:
       position: 103
       prefix: --window
 outputs:
-  - id: fout
+  - id: out_fout
     type: File
     doc: Output table of most significant start/endpositions.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.fout)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

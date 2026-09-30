@@ -40,7 +40,7 @@ inputs:
   - id: split_records
     type:
       - 'null'
-      - boolean
+      - string
     doc: Split records into seperate files
     inputBinding:
       position: 104

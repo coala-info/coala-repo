@@ -12,10 +12,15 @@ inputs:
     inputBinding:
       position: 1
   - id: out_dir
-    type: Directory
+    type: string
     doc: path to the output directory
     inputBinding:
       position: 2
+  - id: out_file
+    type: string
+    doc: path to the output file
+    inputBinding:
+      position: 3
   - id: keep_temporary
     type:
       - 'null'
@@ -41,11 +46,11 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
-  - id: out_file
+  - id: out_out_file
     type: File
     doc: path to the output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mageck_count
+baseCommand:
+  - mageck
+  - count
 label: mageck_count
 doc: "Count reads for MAGeCK analysis.\n\nTool homepage: http://mageck.sourceforge.net"
 inputs:
@@ -36,7 +38,7 @@ inputs:
   - id: count_pair
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Report all valid alignments per read or pair (default: False).'
     inputBinding:
       position: 101
@@ -151,6 +153,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample-label
+      itemSeparator: ','
   - id: sgrna_len
     type:
       - 'null'

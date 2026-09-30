@@ -12,6 +12,11 @@ inputs:
     doc: input tree to calculate branch length distributions
     inputBinding:
       position: 1
+  - id: output_dir
+    type: string
+    doc: desired output directory for generated files
+    inputBinding:
+      position: 2
   - id: min_children
     type:
       - 'null'
@@ -38,11 +43,11 @@ inputs:
       position: 102
       prefix: --trusted_taxa_file
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: desired output directory for generated files
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

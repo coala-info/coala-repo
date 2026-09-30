@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trycycler cluster
+baseCommand:
+  - trycycler
+  - cluster
 label: trycycler_cluster
 doc: "cluster contigs by similarity\n\nTool homepage: https://github.com/rrwick/Trycycler"
 inputs:
@@ -40,7 +42,7 @@ inputs:
       position: 101
       prefix: --min_contig_len
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

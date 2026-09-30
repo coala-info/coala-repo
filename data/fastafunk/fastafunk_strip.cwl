@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk_strip
+baseCommand:
+  - fastafunk
+  - strip
 label: fastafunk_strip
 doc: "Strip sequences from FASTA files.\n\nTool homepage: https://github.com/cov-ert/fastafunk"
 inputs:
@@ -70,8 +72,7 @@ inputs:
       position: 101
       prefix: --missing
   - id: out_fasta_path
-    type: string
-    doc: Output or path parameter `out_fasta_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --out-fasta

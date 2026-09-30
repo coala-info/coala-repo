@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga rewrite-evidence-bam
+baseCommand:
+  - sga
+  - rewrite-evidence-bam
 label: sga_rewrite-evidence-bam
 doc: "Discard mate-pair alignments from a BAM file that are potentially erroneous\n\
   \nTool homepage: https://github.com/jts/sga"
@@ -34,7 +36,7 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: write the new BAM file to F
     inputBinding:
       position: 103
       prefix: --outfile

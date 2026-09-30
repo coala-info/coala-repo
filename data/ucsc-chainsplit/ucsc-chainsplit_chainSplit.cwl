@@ -5,7 +5,7 @@ label: ucsc-chainsplit_chainSplit
 doc: "Split chains by target or query sequence\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 1

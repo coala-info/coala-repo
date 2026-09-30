@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges_meta-list
+baseCommand:
+  - ibridges
+  - meta-list
 label: ibridges_meta-list
 doc: "List the metadata of a data object or collection on iRODS.\n\nTool homepage:
   https://github.com/iBridges-for-iRODS/iBridges"

@@ -29,6 +29,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --enzyme
+      itemSeparator: ','
   - id: figdir
     type:
       - 'null'

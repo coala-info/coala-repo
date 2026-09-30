@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: baktfold run
+baseCommand:
+  - baktfold
+  - run
 label: baktfold_run
 doc: "baktfold predict then comapare all in one - GPU recommended\n\nTool homepage:
   https://github.com/gbouras13/baktfold"
@@ -123,7 +125,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

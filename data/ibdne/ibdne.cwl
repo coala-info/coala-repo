@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar ibdne.04Sep15.e78.jar
+baseCommand:
+  - java
+  - -jar
+  - ibdne.04Sep15.e78.jar
 label: ibdne
 doc: "Calculates Identity By Descent (IBD) segments between individuals.\n\nTool homepage:
   https://github.com/hennlab/AS-IBDNe"
@@ -25,7 +28,8 @@ inputs:
     doc: PLINK-format genetic map with cM distances
     inputBinding:
       position: 102
-      prefix: map
+      prefix: map=
+      separate: false
   - id: max_generations
     type:
       - 'null'
@@ -33,7 +37,8 @@ inputs:
     doc: Max number of generations before present (default depends on minibd)
     inputBinding:
       position: 102
-      prefix: gmax
+      prefix: gmax=
+      separate: false
   - id: min_ibd_length
     type:
       - 'null'
@@ -41,7 +46,8 @@ inputs:
     doc: Minimum cM length of an IBD segment
     inputBinding:
       position: 102
-      prefix: minibd
+      prefix: minibd=
+      separate: false
   - id: min_region_length
     type:
       - 'null'
@@ -49,7 +55,8 @@ inputs:
     doc: Minimum cM length of a continuous region
     inputBinding:
       position: 102
-      prefix: minregion
+      prefix: minregion=
+      separate: false
   - id: num_bootstrap_samples
     type:
       - 'null'
@@ -65,7 +72,8 @@ inputs:
     doc: Number of iterations
     inputBinding:
       position: 102
-      prefix: nits
+      prefix: nits=
+      separate: false
   - id: num_random_starts
     type:
       - 'null'
@@ -73,7 +81,8 @@ inputs:
     doc: Number of random starts
     inputBinding:
       position: 102
-      prefix: nstarts
+      prefix: nstarts=
+      separate: false
   - id: num_threads
     type:
       - 'null'
@@ -81,13 +90,15 @@ inputs:
     doc: Number of computational threads
     inputBinding:
       position: 102
-      prefix: nthreads
+      prefix: nthreads=
+      separate: false
   - id: output_prefix
     type: string
     doc: Output file prefix
     inputBinding:
       position: 102
-      prefix: out
+      prefix: out=
+      separate: false
   - id: random_seed
     type:
       - 'null'
@@ -95,7 +106,8 @@ inputs:
     doc: Seed for random number generator
     inputBinding:
       position: 102
-      prefix: seed
+      prefix: seed=
+      separate: false
   - id: trim_ends
     type:
       - 'null'
@@ -103,7 +115,8 @@ inputs:
     doc: cM to trim from ends of each region
     inputBinding:
       position: 102
-      prefix: trim
+      prefix: trim=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

@@ -37,11 +37,13 @@ inputs:
       prefix: --out-prefix
 outputs:
   - id: out_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Prefix for output files (e.g., results will be saved to 
       <out_prefix>.predictions.csv)
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

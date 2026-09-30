@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mdmcleaner_clean
+baseCommand:
+  - mdmcleaner
+  - clean
 label: mdmcleaner_clean
 doc: "Clean input fastas of genomes and/or bins.\n\nTool homepage: https://github.com/KIT-IBG-5/mdmcleaner"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: input fastas of genomes and/or bins
     inputBinding:
       position: 1
+      prefix: --input_fastas
   - id: blacklist_file
     type:
       - 'null'
@@ -77,7 +80,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: output-folder for MDMcleaner results.
     inputBinding:
       position: 102

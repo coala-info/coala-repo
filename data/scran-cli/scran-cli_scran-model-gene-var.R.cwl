@@ -35,7 +35,7 @@ inputs:
   - id: equiweight
     type:
       - 'null'
-      - boolean
+      - string
     doc: A logical scalar indicating whether statistics from each block should 
       be given equal weight. Otherwise, each block is weighted according to its 
       number of cells. Only used if block is specified.
@@ -68,7 +68,7 @@ inputs:
   - id: parametric
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'A logical scalar indicating whether a parametric fit should be attempted.
       f parametric=TRUE, a non-linear curve of the form: y = ax/(x^n + b) s fitted
       to the variances against the means.'
@@ -95,7 +95,6 @@ inputs:
       prefix: --subset-row
   - id: output_geneVar_table_path
     type: string
-    doc: Output or path parameter `output_geneVar_table_path`
     inputBinding:
       position: 102
       prefix: --output-geneVar-table

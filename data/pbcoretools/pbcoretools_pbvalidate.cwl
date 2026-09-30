@@ -95,10 +95,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Path to optional reference FASTA file, used for additional validation 
       of mapped BAM records
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference
@@ -147,15 +147,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alarms_out_path`
+    doc: 'alarms.json for errors (default: None)'
     inputBinding:
       position: 103
-      prefix: --alarms-out
+      prefix: --alarms
   - id: log_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: Write the log to file. Default(None) will write to
     inputBinding:
       position: 104
       prefix: --log-file
@@ -163,7 +163,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `xunit_out_path`
     inputBinding:
       position: 105
       prefix: --xunit-out

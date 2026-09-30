@@ -434,11 +434,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --strip-suffix
+          separate: true
     doc: Remove this suffix from read names if present. Can be given multiple 
       times.
     inputBinding:
       position: 103
-      prefix: --strip-suffix
   - id: suffix
     type:
       - 'null'
@@ -502,30 +504,6 @@ inputs:
     inputBinding:
       position: 106
       prefix: --json
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 107
-      prefix: --output
-  - id: paired_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `paired_output_path`
-    inputBinding:
-      position: 108
-      prefix: --paired-output
-  - id: rest_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `rest_file_path`
-    inputBinding:
-      position: 109
-      prefix: --rest-file
   - id: too_long_output_path
     type:
       - 'null'
@@ -576,6 +554,27 @@ inputs:
     inputBinding:
       position: 116
       prefix: --wildcard-file
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 117
+      prefix: --output
+  - id: paired_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 118
+      prefix: --paired-output
+  - id: rest_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 119
+      prefix: --rest-file
 outputs:
   - id: json
     type:

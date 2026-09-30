@@ -567,26 +567,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_arcmatch_scores_file_path`
+    doc: Write arcmatch scores (don't align!)
     inputBinding:
       position: 107
-      prefix: --write-arcmatch-scores-file
+      prefix: --write-arcmatch-scores
   - id: write_match_probs_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_match_probs_file_path`
+    doc: Write match probs to file (don't
     inputBinding:
       position: 108
-      prefix: --write-match-probs-file
+      prefix: --write-match-probs
   - id: write_trace_probs_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_trace_probs_file_path`
+    doc: Write trace probs to file (don't
     inputBinding:
       position: 109
-      prefix: --write-trace-probs-file
+      prefix: --write-trace-probs
 outputs:
   - id: clustal_output_file
     type:

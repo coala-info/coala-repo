@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groot align
+baseCommand:
+  - groot
+  - align
 label: groot_align
 doc: "Sketch sequences, align to references and weight variation graphs\n\nTool homepage:
   https://github.com/will-rowe/groot"
@@ -34,7 +36,7 @@ inputs:
   - id: graph_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to save variation graphs to
     inputBinding:
       position: 101

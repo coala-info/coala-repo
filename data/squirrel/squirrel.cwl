@@ -107,7 +107,7 @@ inputs:
   - id: epi2me_outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for report paths in epi2me.
     inputBinding:
       position: 102
@@ -189,7 +189,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 102
@@ -264,7 +264,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify where you want the temp stuff to go.
     inputBinding:
       position: 102

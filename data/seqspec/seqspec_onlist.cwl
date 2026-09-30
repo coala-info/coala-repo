@@ -42,7 +42,7 @@ inputs:
       prefix: --selector
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file (required for download/join operations)
     inputBinding:
       position: 103
       prefix: --output

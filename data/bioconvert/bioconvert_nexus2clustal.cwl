@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert nexus2clustal
+baseCommand:
+  - bioconvert
+  - nexus2clustal
 label: bioconvert_nexus2clustal
 doc: "Convert file from '(NEXUS,)' to '(CLUSTAL,)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

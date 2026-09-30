@@ -61,10 +61,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exc
+          separate: true
     doc: name pattern to exclude as motif; may be repeated
     inputBinding:
       position: 101
-      prefix: --exc
   - id: hold_out_fraction
     type:
       - 'null'
@@ -78,10 +80,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --inc
+          separate: true
     doc: name pattern to select as motif; may be repeated
     inputBinding:
       position: 101
-      prefix: --inc
   - id: motif_pseudocount
     type:
       - 'null'
@@ -94,10 +98,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --m
+        separate: true
     doc: motif file name (may be repeated)
     inputBinding:
       position: 101
-      prefix: --m
   - id: no_pgc
     type:
       - 'null'
@@ -188,14 +194,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
-  - id: output_dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 102
-      prefix: --output-dir
   - id: output_dir_overwrite_path
     type:
       - 'null'
@@ -204,6 +202,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output-dir-overwrite
+  - id: output_dir_path
+    type:
+      - 'null'
+      - string
+    doc: "output directory; default: 'sea_out'"
+    inputBinding:
+      position: 104
+      prefix: --o
 outputs:
   - id: output_dir
     type:

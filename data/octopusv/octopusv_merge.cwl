@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: octopusv_merge
+baseCommand:
+  - octopusv
+  - merge
 label: octopusv_merge
 doc: "Merge multiple SVCF files based on specified strategy with consistent SOURCES
   and SAMPLE ordering.\n\nTool homepage: https://github.com/ylab-hi/octopusV"
@@ -175,7 +177,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: PATH     Output file for merged SV      │
     inputBinding:
       position: 103
       prefix: --output-file
@@ -183,7 +185,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `upsetr_output_path`
+    doc: Output path for UpSet plot. If │
     inputBinding:
       position: 104
       prefix: --upsetr-output

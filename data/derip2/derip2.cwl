@@ -95,7 +95,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for deRIP'd sequence files to be written to.
     inputBinding:
       position: 101

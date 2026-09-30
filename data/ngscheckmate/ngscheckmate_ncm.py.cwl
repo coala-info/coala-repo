@@ -76,10 +76,11 @@ inputs:
       prefix: --VCF
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: output_dir, --outdir output_dir directory name for temp and output 
+      files
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -O
 outputs:
   - id: output_dir
     type:

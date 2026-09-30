@@ -5,7 +5,7 @@ label: splash
 doc: "Welcome to SPLASH Version: 2.11.0\n\nTool homepage: https://github.com/refresh-bio/splash"
 inputs:
   - id: input_file
-    type: string
+    type: File
     doc: 'path to the file where input samples are defined, the format is: per each
       line {sample_name}<space>{path}, path is a fastq[.gz] file in case of non-10X
       and txt file for 10X/Visium where the content of text file is {first_file.fastq[.gz]},{second_file.fastq[.gz]}
@@ -549,7 +549,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to a directory where temporary files will be stored
     inputBinding:
       position: 102

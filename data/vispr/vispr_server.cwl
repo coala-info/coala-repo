@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vispr_server
+baseCommand:
+  - vispr
+  - server
 label: vispr_server
 doc: "Start the VISPR server.\n\nTool homepage: https://bitbucket.org/liulab/vispr"
 inputs:

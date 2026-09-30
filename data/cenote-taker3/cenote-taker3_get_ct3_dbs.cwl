@@ -17,7 +17,7 @@ inputs:
   - id: hallmark_tax
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101
@@ -25,7 +25,7 @@ inputs:
   - id: hhcdd
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101
@@ -33,7 +33,7 @@ inputs:
   - id: hhpdb
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101
@@ -41,7 +41,7 @@ inputs:
   - id: hhpfam
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101
@@ -57,13 +57,13 @@ inputs:
   - id: mmseqs_cdd
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101
       prefix: --mmseqs_cdd
   - id: output_directory
-    type: Directory
+    type: string
     doc: output directory when database will be downloaded
     inputBinding:
       position: 101
@@ -71,7 +71,7 @@ inputs:
   - id: refseq_tax
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: guidescan_enumerate
+baseCommand:
+  - guidescan
+  - enumerate
 label: guidescan_enumerate
 doc: "Enumerates off-targets against a reference.\n\nTool homepage: https://github.com/pritykinlab/guidescan-cli"
 inputs:
@@ -99,7 +101,7 @@ inputs:
       prefix: --threshold
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file.
     inputBinding:
       position: 103
       prefix: --output

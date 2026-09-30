@@ -70,17 +70,20 @@ inputs:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: --verbose
+          separate: true
     doc: Set verbosity level of screen output. Flag can be given multiple times 
       (up to 2) to gradually increase output to debugging mode.
     inputBinding:
       position: 101
-      prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Write the generated model to a pickled file, that can be loaded gain using
+      `constava analyze --load-model`'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi similarity
+baseCommand:
+  - odgi
+  - similarity
 label: odgi_similarity
 doc: "Provides a sparse similarity matrix for paths or groups of paths. Each line
   prints in a tab-delimited format to stdout.\n\nTool homepage: https://github.com/vgteam/odgi"

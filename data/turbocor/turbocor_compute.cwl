@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: turbocor compute
+baseCommand:
+  - turbocor
+  - compute
 label: turbocor_compute
 doc: "Compute entries of a thresholded correlation matrix. Output to an HDF5 file.\n\
   \nTool homepage: https://github.com/dcjones/turbocor"

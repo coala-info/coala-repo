@@ -336,10 +336,10 @@ inputs:
       position: 102
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: outfile  write output to an outfile
     inputBinding:
       position: 103
-      prefix: --outfile
+      prefix: -o
 outputs:
   - id: outfile
     type:

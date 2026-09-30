@@ -85,10 +85,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: name of output file [stdout]
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
   - id: stats_output_path
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor_merge
+baseCommand:
+  - surpyvor
+  - merge
 label: surpyvor_merge
 doc: "Merge VCF files from multiple callers.\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: vcf files to merge
     inputBinding:
       position: 1
+      prefix: --variants
   - id: callers
     type:
       - 'null'
@@ -69,7 +72,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

@@ -35,9 +35,9 @@ inputs:
       prefix: --flip
   - id: genome_fasta
     type: File
+    doc: Genome FASTA file
     secondaryFiles:
       - .fai
-    doc: Genome FASTA file
     inputBinding:
       position: 103
       prefix: --genome
@@ -121,10 +121,10 @@ inputs:
       prefix: --reglist
   - id: sequence_output_file_path
     type: string
-    doc: Output or path parameter `sequence_output_file_path`
+    doc: sequence output file [optional]
     inputBinding:
       position: 104
-      prefix: --sequence-output-file
+      prefix: --seqfile
 outputs:
   - id: sequence_output_file
     type:

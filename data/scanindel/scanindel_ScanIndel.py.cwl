@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python ScanIndel.py
+baseCommand:
+  - python
+  - ScanIndel.py
 label: scanindel_ScanIndel.py
 doc: "ScanIndel is a tool for indel calling.\n\nTool homepage: https://github.com/cauyrd/ScanIndel"
 inputs:
@@ -114,7 +116,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: setting the output directory
     inputBinding:
       position: 103

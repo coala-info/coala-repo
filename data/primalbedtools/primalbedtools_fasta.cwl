@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools fasta
+baseCommand:
+  - primalbedtools
+  - fasta
 label: primalbedtools_fasta
 doc: "Convert BED file to FASTA format\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

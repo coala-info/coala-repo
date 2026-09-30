@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomepy_annotation
+baseCommand:
+  - genomepy
+  - annotation
 label: genomepy_annotation
 doc: "Quickly inspect the metadata of each GTF annotation available for the given
   genome.\n\nTool homepage: https://github.com/vanheeringen-lab/genomepy"

@@ -186,9 +186,9 @@ inputs:
       prefix: --path-sequence-matching
   - id: reference
     type: File
+    doc: Reference genome fasta file.
     secondaryFiles:
       - .fai
-    doc: Reference genome fasta file.
     inputBinding:
       position: 101
       prefix: --reference
@@ -246,7 +246,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name. Will output to
     inputBinding:
       position: 102
       prefix: --output-file
@@ -254,7 +254,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder path. paragraph
     inputBinding:
       position: 103
       prefix: --output-folder

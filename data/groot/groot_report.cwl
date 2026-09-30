@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groot report
+baseCommand:
+  - groot
+  - report
 label: groot_report
 doc: "Generate a report from the output of groot align.\n\nTool homepage: https://github.com/will-rowe/groot"
 inputs:

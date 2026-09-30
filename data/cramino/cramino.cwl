@@ -47,9 +47,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: reference for decompressing cram
     secondaryFiles:
       - .fai
-    doc: reference for decompressing cram
     inputBinding:
       position: 102
       prefix: --reference
@@ -90,7 +90,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `arrow_path`
+    doc: Write data to an arrow format file
     inputBinding:
       position: 103
       prefix: --arrow
@@ -98,7 +98,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hist_path`
+    doc: If histograms have to be generated (optionally specify output file)
     inputBinding:
       position: 104
       prefix: --hist
@@ -106,7 +106,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hist_count_path`
+    doc: Output histogram bin counts in TSV format (optionally specify output 
+      file)
     inputBinding:
       position: 105
       prefix: --hist-count

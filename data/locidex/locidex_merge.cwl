@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locidex_merge
+baseCommand:
+  - locidex
+  - merge
 label: locidex_merge
 doc: "Merge a set of gene profiles into a standard profile format\n\nTool homepage:
   https://pypi.org/project/locidex/"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_events
+baseCommand:
+  - poretools
+  - events
 label: poretools_events
 doc: "Report pre-basecalled events\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

@@ -75,7 +75,7 @@ inputs:
       position: 101
       prefix: --kraken_quick
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory path, required
     inputBinding:
       position: 101

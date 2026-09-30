@@ -78,9 +78,9 @@ inputs:
       prefix: --pratio
   - id: reference
     type: File
+    doc: (gzipped) fasta or wildtype ab1 file
     secondaryFiles:
       - .fai
-    doc: (gzipped) fasta or wildtype ab1 file
     inputBinding:
       position: 102
       prefix: --reference
@@ -118,7 +118,7 @@ inputs:
       prefix: --trimRight
   - id: outprefix_path
     type: string
-    doc: Output or path parameter `outprefix_path`
+    doc: output prefix
     inputBinding:
       position: 103
       prefix: --outprefix
@@ -126,10 +126,11 @@ outputs:
   - id: outprefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output prefix
     outputBinding:
-      glob: $(inputs.outprefix_path)
+      glob: $(inputs.outprefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

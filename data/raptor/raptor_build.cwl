@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: raptor build
+baseCommand:
+  - raptor
+  - build
 label: raptor_build
 doc: "Constructs a Raptor index.\n\nTool homepage: https://github.com/seqan/raptor"
 inputs:
@@ -113,7 +115,6 @@ inputs:
       prefix: --window
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: ANN=
+      separate: false
   - id: aux
     type:
       - 'null'
@@ -21,6 +22,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: AUX=
+      separate: false
   - id: lab_fr
     type:
       - 'null'
@@ -29,6 +31,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: LAB_FR=
+      separate: false
   - id: lc
     type:
       - 'null'
@@ -37,6 +40,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: LC=
+      separate: false
   - id: max
     type:
       - 'null'
@@ -45,6 +49,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: MAX=
+      separate: false
   - id: max_as
     type:
       - 'null'
@@ -53,6 +58,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: MAX_AS=
+      separate: false
   - id: max_lp
     type:
       - 'null'
@@ -61,6 +67,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: MAX_LP=
+      separate: false
   - id: maxbp
     type:
       - 'null'
@@ -69,6 +76,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: MAXBP=
+      separate: false
   - id: mg_conc
     type:
       - 'null'
@@ -77,6 +85,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: MG_CONC=
+      separate: false
   - id: mode
     type:
       - 'null'
@@ -85,6 +94,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: MODE=
+      separate: false
   - id: na
     type:
       - 'null'
@@ -93,6 +103,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: NA=
+      separate: false
   - id: na_conc
     type:
       - 'null'
@@ -101,6 +112,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: NA_CONC=
+      separate: false
   - id: p
     type:
       - 'null'
@@ -109,6 +121,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: P=
+      separate: false
   - id: reuse
     type:
       - 'null'
@@ -117,6 +130,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: REUSE=
+      separate: false
   - id: rot_ang
     type:
       - 'null'
@@ -125,6 +139,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: ROT_ANG=
+      separate: false
   - id: run_type
     type:
       - 'null'
@@ -133,12 +148,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: RUN_TYPE=
+      separate: false
   - id: seq
     type: File
     doc: Input sequence file name
     inputBinding:
       position: 101
       prefix: SEQ=
+      separate: false
   - id: start
     type:
       - 'null'
@@ -147,6 +164,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: START=
+      separate: false
   - id: stop
     type:
       - 'null'
@@ -155,6 +173,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: STOP=
+      separate: false
   - id: t
     type:
       - 'null'
@@ -163,6 +182,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: T=
+      separate: false
   - id: w
     type:
       - 'null'
@@ -171,6 +191,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: W=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia_spacing
+baseCommand:
+  - gia
+  - spacing
 label: gia_spacing
 doc: "Calculates the spacing between intervals in a BED file\n\nTool homepage: https://github.com/noamteyssier/gia"
 inputs:
@@ -54,7 +56,6 @@ inputs:
       prefix: --is-sorted
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

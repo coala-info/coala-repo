@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: merfishtools est-error-rates
+baseCommand:
+  - merfishtools
+  - est-error-rates
 label: merfishtools_est-error-rates
 doc: "Estimate 0-1 and 1-0 error rates.\n\nTool homepage: https://merfishtools.github.io"
 inputs:

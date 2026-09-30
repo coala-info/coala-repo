@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_annotate
+baseCommand:
+  - chamois
+  - annotate
 label: chamois_annotate
 doc: "Annotate BGC sequences with protein domains and gene features.\n\nTool homepage:
   https://chamois.readthedocs.io/"

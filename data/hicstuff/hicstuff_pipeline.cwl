@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicstuff_pipeline
+baseCommand:
+  - hicstuff
+  - pipeline
 label: hicstuff_pipeline
 doc: "Whole (end-to-end) contact map generation command\n\nTool homepage: https://github.com/koszullab/hicstuff"
 inputs:
@@ -161,7 +163,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory. Defaults to the current directory.
     inputBinding:
       position: 103
@@ -242,7 +244,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for storing intermediary BED files and temporary sort files. 
       Defaults to the output directory.
     inputBinding:

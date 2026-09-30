@@ -15,7 +15,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101
@@ -37,7 +37,7 @@ inputs:
       position: 101
       prefix: --prefix
   - id: tree
-    type: File
+    type: File?
     doc: Path to phylogenetic tree.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virprof_blastbin
+baseCommand:
+  - virprof
+  - blastbin
 label: virprof_blastbin
 doc: "Merge and classify contigs based on BLAST search results\n\nTool homepage: https://github.com/seiboldlab/virprof"
 inputs:
@@ -158,7 +160,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_features_path`
+    doc: Output CSV file containing reference feature
     inputBinding:
       position: 103
       prefix: --out-features
@@ -166,7 +168,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_hits_path`
+    doc: Output CSV file containining contig details
     inputBinding:
       position: 104
       prefix: --out-hits

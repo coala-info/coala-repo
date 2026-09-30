@@ -13,7 +13,7 @@ inputs:
       position: 101
       prefix: --no-split
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory to store downloaded files
     inputBinding:
       position: 101

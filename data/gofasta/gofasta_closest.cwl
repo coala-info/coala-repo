@@ -62,7 +62,7 @@ inputs:
       prefix: --threads
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: The output file to write (default "stdout")
     inputBinding:
       position: 102
       prefix: --outfile

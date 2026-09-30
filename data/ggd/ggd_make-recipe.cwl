@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd make-recipe
+baseCommand:
+  - ggd
+  - make-recipe
 label: ggd_make-recipe
 doc: "Make a ggd data recipe from a bash script\n\nTool homepage: https://github.com/gogetdata/ggd-cli"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: authors
-    type: string
+    type: string?
     doc: The author(s) of the data recipe being created, (This recipe)
     inputBinding:
       position: 102

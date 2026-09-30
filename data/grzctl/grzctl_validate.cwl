@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grzctl validate
+baseCommand:
+  - grzctl
+  - validate
 label: grzctl_validate
 doc: "Validate the submission.\n\n  This validates the submission by checking its
   checksums, as well\n  as performing basic sanity checks on the supplied metadata.

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyqi make-optparse
+baseCommand:
+  - pyqi
+  - make-optparse
 label: pyqi_make-optparse
 doc: "Construct and stub out the basic optparse configuration for a given Command.
   This template provides comments and examples of what to fill in.\n\nTool homepage:
@@ -51,6 +53,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --credits
+      itemSeparator: ','
   - id: email
     type:
       - 'null'
@@ -69,7 +72,6 @@ inputs:
       prefix: --license
   - id: output_fp_path
     type: string
-    doc: Output or path parameter `output_fp_path`
     inputBinding:
       position: 102
       prefix: --output-fp

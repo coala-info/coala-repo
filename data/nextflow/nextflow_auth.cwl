@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextflow auth
+baseCommand:
+  - nextflow
+  - auth
 label: nextflow_auth
 doc: "Manage Seqera Platform authentication\n\nTool homepage: https://github.com/nextflow-io/nextflow"
 inputs:

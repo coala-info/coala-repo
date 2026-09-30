@@ -141,11 +141,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --resources
+          separate: true
     doc: Cluster specific resources specifications. Can be specified multiple 
       times. Supports SGE, Torque, LSF and SLURM parameters.
     inputBinding:
       position: 102
-      prefix: --resources
   - id: reuse
     type:
       - 'null'
@@ -188,7 +190,6 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103
       prefix: --output-dir

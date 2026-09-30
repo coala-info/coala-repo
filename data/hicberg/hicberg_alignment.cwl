@@ -12,12 +12,12 @@ inputs:
     inputBinding:
       position: 1
   - id: input1
-    type: string
+    type: File
     doc: Input file 1
     inputBinding:
       position: 2
   - id: input2
-    type: string
+    type: File
     doc: Input file 2
     inputBinding:
       position: 3
@@ -49,7 +49,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder to save results. If not set, the current directory is 
       used.
     inputBinding:

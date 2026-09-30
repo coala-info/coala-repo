@@ -77,6 +77,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --read1
+      itemSeparator: ','
   - id: read2
     type:
       - 'null'
@@ -122,7 +123,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

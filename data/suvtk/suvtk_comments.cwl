@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: suvtk_comments
+baseCommand:
+  - suvtk
+  - comments
 label: suvtk_comments
 doc: "Generate a structured comment file based on MIUVIG standards.\n\nTool homepage:
   https://github.com/LanderDC/suvtk"
@@ -40,7 +42,7 @@ inputs:
       prefix: --taxonomy
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output filename.  [required]
     inputBinding:
       position: 102
       prefix: --output

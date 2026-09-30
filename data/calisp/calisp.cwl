@@ -71,7 +71,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_file_path
-    type: string
+    type: string?
     inputBinding:
       position: 102
       prefix: --output_file

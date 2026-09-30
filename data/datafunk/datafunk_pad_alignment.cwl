@@ -18,11 +18,13 @@ inputs:
     doc: Number of gaps to add to the left of each sequence
     inputBinding:
       position: 101
+      prefix: --left-pad
   - id: right_pad
     type: int
     doc: Number of gaps to add to the right of each sequence
     inputBinding:
       position: 101
+      prefix: --right-pad
   - id: stdout
     type:
       - 'null'
@@ -30,6 +32,7 @@ inputs:
     doc: Write output to stdout instead of a file
     inputBinding:
       position: 101
+      prefix: --stdout
   - id: output_fasta_path
     type: string
     doc: Output or path parameter `output_fasta_path`

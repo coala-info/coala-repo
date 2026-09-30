@@ -86,7 +86,7 @@ inputs:
       position: 101
       prefix: --vcf
   - id: output_path
-    type: string
+    type: string?
     doc: Location and name for output file.
     inputBinding:
       position: 102

@@ -137,7 +137,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: output path, location for sv2 output directories
     inputBinding:
       position: 101
@@ -157,6 +157,7 @@ inputs:
     doc: GC content normalization for pcr free sequences
     inputBinding:
       position: 101
+      prefix: -pcrfree
   - id: ped_files
     type:
       type: array
@@ -192,7 +193,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 101

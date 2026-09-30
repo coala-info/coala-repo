@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam suns
+baseCommand:
+  - rustybam
+  - suns
 label: rustybam_suns
 doc: "Extract the intervals in a genome (fasta) that are made up of SUNs\n\nTool homepage:
   https://github.com/mrvollger/rustybam"

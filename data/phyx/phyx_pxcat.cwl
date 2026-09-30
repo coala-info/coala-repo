@@ -51,7 +51,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outf_path`
+    doc: output sequence file, STOUT otherwise
     inputBinding:
       position: 103
       prefix: --outf
@@ -59,7 +59,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `partf_path`
+    doc: output partition file, none otherwise
     inputBinding:
       position: 104
       prefix: --partf

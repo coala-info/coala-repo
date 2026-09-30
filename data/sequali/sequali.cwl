@@ -186,7 +186,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 107
       prefix: --outdir

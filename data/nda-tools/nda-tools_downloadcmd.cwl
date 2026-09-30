@@ -26,7 +26,7 @@ inputs:
   - id: download_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Enter an alternate full directory path where you would like your files 
       to be saved. The default is ~/NDA/nda-tools/<package-id>
     inputBinding:
@@ -205,7 +205,6 @@ inputs:
       prefix: --verify
   - id: s3_destination_path
     type: string
-    doc: Output or path parameter `s3_destination_path`
     inputBinding:
       position: 103
       prefix: --s3-destination

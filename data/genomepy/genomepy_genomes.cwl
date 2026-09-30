@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomepy_genomes
+baseCommand:
+  - genomepy
+  - genomes
 label: genomepy_genomes
 doc: "List all available genomes.\n\n  Returns the metadata of each found genome,
   including the availability of a\n  gene annotation. For UCSC, up to 4 gene annotation

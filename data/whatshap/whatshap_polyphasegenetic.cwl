@@ -22,11 +22,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chromosome
+          separate: true
     doc: Name of chromosome to phase. If not given, all chromosomes in the input
       VCF are phased. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --chromosome
   - id: complexity_support
     type:
       - 'null'
@@ -82,11 +84,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
+          separate: true
     doc: Name of a sample to phase. If not given, all samples in the input VCF 
       are phased. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --sample
   - id: scoring_window
     type:
       - 'null'
@@ -106,7 +110,6 @@ inputs:
       prefix: --tag
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

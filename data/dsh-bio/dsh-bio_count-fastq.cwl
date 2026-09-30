@@ -22,7 +22,7 @@ inputs:
       prefix: --input-fastq-path
   - id: output_count_file_path
     type: string
-    doc: Output or path parameter `output_count_file_path`
+    doc: output count file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-count-file

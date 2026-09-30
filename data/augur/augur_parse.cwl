@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur_parse
+baseCommand:
+  - augur
+  - parse
 label: augur_parse
 doc: "Parse delimited fields from FASTA sequence names into a TSV and FASTA file.\n\
   \nTool homepage: https://github.com/nextstrain/augur"
@@ -58,16 +60,12 @@ inputs:
       position: 101
       prefix: --sequences
   - id: output_metadata_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output-metadata
   - id: output_sequences_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --output-sequences

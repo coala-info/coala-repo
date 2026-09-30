@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metamate_find
+baseCommand:
+  - metamate
+  - find
 label: metamate_find
 doc: "find arguments:\n\nTool homepage: https://github.com/tjcreedy/metamate"
 inputs:

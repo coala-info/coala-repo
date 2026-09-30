@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: datafunk phylotype_consensus
+baseCommand:
+  - datafunk
+  - phylotype_consensus
 label: datafunk_phylotype_consensus
 doc: "Splits a fasta file into phylotypes based on metadata and clade definitions,
   and generates consensus sequences.\n\nTool homepage: https://github.com/cov-ert/datafunk"
@@ -33,7 +35,6 @@ inputs:
       prefix: --verbose
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 102
       prefix: --output-folder

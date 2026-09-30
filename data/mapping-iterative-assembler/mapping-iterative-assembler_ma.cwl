@@ -21,7 +21,7 @@ inputs:
   - id: color_format_6_output
     type:
       - 'null'
-      - boolean
+      - string
     doc: Color format 6 output -> don't pipe this output to file!
     inputBinding:
       position: 102

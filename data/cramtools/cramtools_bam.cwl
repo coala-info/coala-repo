@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cramtools bam
+baseCommand:
+  - cramtools
+  - bam
 label: cramtools_bam
 doc: "A tool to process CRAM files, including conversion to BAM, decryption, and tag
   calculation.\n\nTool homepage: https://github.com/enasequence/cramtools"
@@ -165,7 +167,7 @@ inputs:
       prefix: --sync-bam-output
   - id: output_bam_file_path
     type: string
-    doc: Output or path parameter `output_bam_file_path`
+    doc: The path to the output BAM file.
     inputBinding:
       position: 103
       prefix: --output-bam-file

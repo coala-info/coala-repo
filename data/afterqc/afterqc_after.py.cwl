@@ -258,7 +258,7 @@ inputs:
   - id: store_overlap
     type:
       - 'null'
-      - boolean
+      - string
     doc: specify whether store only overlapped bases of the good reads
     inputBinding:
       position: 101
@@ -301,42 +301,37 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bad_output_folder_path`
     inputBinding:
       position: 102
-      prefix: --bad-output-folder
+      prefix: --bad_output_folder
   - id: debubble_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `debubble_dir_path`
     inputBinding:
       position: 103
-      prefix: --debubble-dir
+      prefix: --debubble_dir
   - id: good_output_folder_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `good_output_folder_path`
     inputBinding:
       position: 104
-      prefix: --good-output-folder
+      prefix: --good_output_folder
   - id: overlap_output_folder_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `overlap_output_folder_path`
     inputBinding:
       position: 105
-      prefix: --overlap-output-folder
+      prefix: --overlap_output_folder
   - id: report_output_folder_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_output_folder_path`
     inputBinding:
       position: 106
-      prefix: --report-output-folder
+      prefix: --report_output_folder
 outputs:
   - id: good_output_folder
     type:

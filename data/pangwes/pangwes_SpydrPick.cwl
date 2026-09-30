@@ -267,15 +267,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aracne_output_file_path`
+    doc: ' The ARACNE output filename. This is a binary file for "plot.r".'
     inputBinding:
       position: 103
-      prefix: --aracne-output-file
+      prefix: --aracne-outputfile
   - id: output_alignment_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_alignment_path`
+    doc: Write alignment to file.
     inputBinding:
       position: 104
       prefix: --output-alignment
@@ -283,7 +283,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_filtered_alignment_path`
+    doc: Write filtered alignment to file.
     inputBinding:
       position: 105
       prefix: --output-filtered-alignment
@@ -291,7 +291,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sample_distance_matrix_path`
+    doc: Output triangular sample-sample Hamming
     inputBinding:
       position: 106
       prefix: --output-sample-distance-matrix
@@ -299,7 +299,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sample_weights_path`
+    doc: Output sample weights.
     inputBinding:
       position: 107
       prefix: --output-sample-weights
@@ -307,7 +307,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_state_frequencies_path`
+    doc: Write column-wise state frequencies to
     inputBinding:
       position: 108
       prefix: --output-state-frequencies

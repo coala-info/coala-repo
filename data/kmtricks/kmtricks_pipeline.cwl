@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks pipeline
+baseCommand:
+  - kmtricks
+  - pipeline
 label: kmtricks_pipeline
 doc: "run all the steps, repart -> superk -> count -> merge\n\nTool homepage: https://github.com/tlemane/kmtricks"
 inputs:

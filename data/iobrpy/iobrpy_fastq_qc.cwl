@@ -54,10 +54,9 @@ inputs:
       prefix: --suffix1
   - id: path2_fastp_path
     type: string
-    doc: Output or path parameter `path2_fastp_path`
     inputBinding:
       position: 102
-      prefix: --path2-fastp
+      prefix: --path2_fastp
 outputs:
   - id: path2_fastp
     type: Directory

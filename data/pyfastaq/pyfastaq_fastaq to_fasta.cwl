@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastaq_fastaq to_fasta
+baseCommand:
+  - pyfastaq_fastaq
+  - to_fasta
 label: pyfastaq_fastaq to_fasta
 doc: "Convert FASTA to FASTA format.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:

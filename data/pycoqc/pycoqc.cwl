@@ -61,7 +61,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for plots and reports
     inputBinding:
       position: 102

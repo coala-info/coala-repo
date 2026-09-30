@@ -38,7 +38,7 @@ inputs:
       prefix: --script
   - id: output_bed_file_path
     type: string
-    doc: Output or path parameter `output_bed_file_path`
+    doc: output BED file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-bed-file

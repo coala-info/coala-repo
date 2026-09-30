@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2 assemble
+baseCommand:
+  - fermi2
+  - assemble
 label: fermi2_assemble
 doc: "Assemble reads into contigs\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

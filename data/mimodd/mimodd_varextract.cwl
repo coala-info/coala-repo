@@ -36,10 +36,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' redirect the output (variant sites) to the specified file (default: stdout)'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --ofile
 outputs:
   - id: output_file
     type:

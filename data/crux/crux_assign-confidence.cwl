@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux assign-confidence
+baseCommand:
+  - crux
+  - assign-confidence
 label: crux_assign-confidence
 doc: "Assign confidence estimates to peptide-spectrum matches (PSMs).\n\nTool homepage:
   https://github.com/redbadger/crux"
@@ -79,7 +81,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the directory where output files will be created.
     inputBinding:
       position: 102

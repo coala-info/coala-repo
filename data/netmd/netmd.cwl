@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python3 main.py
+baseCommand:
+  - python3
+  - main.py
 label: netmd
 doc: "Parser testing\n\nTool homepage: https://github.com/mazzalab/NetMD"
 inputs:

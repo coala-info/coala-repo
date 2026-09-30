@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smalt_sample
+baseCommand:
+  - smalt
+  - sample
 label: smalt_sample
 doc: "Sample reads from query files based on an index.\n\nTool homepage: https://github.com/roquie/smalte"
 inputs:
@@ -56,7 +58,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write temporary files to specified directory
     inputBinding:
       position: 104
@@ -71,10 +73,10 @@ inputs:
       prefix: -n
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '[STR] Write output to specified file (default: stdout).'
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

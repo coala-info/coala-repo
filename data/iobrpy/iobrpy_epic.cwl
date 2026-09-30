@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy epic
+baseCommand:
+  - iobrpy
+  - epic
 label: iobrpy_epic
 doc: "EPIC deconvolution tool\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -20,7 +22,6 @@ inputs:
       prefix: --reference
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

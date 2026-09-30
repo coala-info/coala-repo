@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: proksee evaluate
+baseCommand:
+  - proksee
+  - evaluate
 label: proksee_evaluate
 doc: "Evaluate assembly quality\n\nTool homepage: https://github.com/proksee-project/proksee-cmd"
 inputs:
@@ -20,10 +22,10 @@ inputs:
       prefix: --species
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: '[required]'
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type: Directory

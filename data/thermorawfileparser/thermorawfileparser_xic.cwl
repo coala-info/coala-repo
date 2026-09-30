@@ -66,22 +66,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --warningsAreErrors
-  - id: output_directory_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_directory_path`
-    inputBinding:
-      position: 102
-      prefix: --output-directory
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: The output file. Specify this or an output
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
+  - id: output_directory_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --output_directory
 outputs:
   - id: output_file
     type:

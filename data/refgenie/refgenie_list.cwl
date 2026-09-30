@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie list
+baseCommand:
+  - refgenie
+  - list
 label: refgenie_list
 doc: "List available local assets.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

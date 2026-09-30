@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2_sub
+baseCommand:
+  - fermi2
+  - sub
 label: fermi2_sub
 doc: "Subsample reads from a RLD file.\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

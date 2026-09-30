@@ -17,7 +17,7 @@ inputs:
       position: 101
       prefix: --genome
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

@@ -126,10 +126,14 @@ inputs:
       prefix: --write-zstd
   - id: write_sql_path
     type: string
-    doc: Output or path parameter `write_sql_path`
+    doc: ' Write matching records to SQLite database, along with length of the sequence
+      field (length), percent GC content (GC), percent GC content as an integer (GC_int),
+      number of unique tetranucleotides in the sequence (nTN), percent tetranucleotide
+      frequency within the sequence (TNF), and average quality score for the sequence
+      field (average_quality)'
     inputBinding:
       position: 105
-      prefix: --write-sql
+      prefix: --writeSQL
 outputs:
   - id: write_sql
     type:

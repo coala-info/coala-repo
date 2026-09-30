@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yasma_inputs
+baseCommand:
+  - yasma
+  - inputs
 label: yasma_inputs
 doc: "Initialize a project and log inputs for later analyses\n\nTool homepage: https://github.com/NateyJay/YASMA"
 inputs:

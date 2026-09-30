@@ -16,7 +16,7 @@ inputs:
       position: 101
       prefix: --bipartiteName
   - id: bipartite_path
-    type: Directory
+    type: string
     doc: Output path to save the bipartite
     inputBinding:
       position: 101
@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: --networksName
   - id: networks_path
-    type: Directory
+    type: string
     doc: Output path to save the network
     inputBinding:
       position: 101
@@ -46,7 +46,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output path name (for complementary output files)
     inputBinding:
       position: 101

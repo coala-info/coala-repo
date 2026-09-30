@@ -36,7 +36,7 @@ inputs:
       position: 101
       prefix: -k
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

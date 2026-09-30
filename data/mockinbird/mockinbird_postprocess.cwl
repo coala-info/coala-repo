@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory - will be created if it does not exist
     inputBinding:
       position: 2

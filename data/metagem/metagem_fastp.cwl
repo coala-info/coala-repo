@@ -255,6 +255,7 @@ inputs:
     doc: specify the file to store reads that cannot pass the filters.
     inputBinding:
       position: 101
+      prefix: --failed_out
   - id: filter_by_index1
     type:
       - 'null'
@@ -315,6 +316,7 @@ inputs:
       specified by --merge. Disabled by default.
     inputBinding:
       position: 101
+      prefix: --include_unmerged
   - id: interleaved_in
     type:
       - 'null'
@@ -389,6 +391,7 @@ inputs:
       specify --stdout to stream the merged output
     inputBinding:
       position: 101
+      prefix: --merged_out
   - id: n_base_limit
     type:
       - 'null'
@@ -436,6 +439,7 @@ inputs:
       mismatched base.
     inputBinding:
       position: 101
+      prefix: --overlapped_out
   - id: overrepresentation_analysis
     type:
       - 'null'
@@ -661,6 +665,7 @@ inputs:
       unpaired1. Default is to discard it.
     inputBinding:
       position: 101
+      prefix: --unpaired1
   - id: unpaired2
     type:
       - 'null'
@@ -670,6 +675,7 @@ inputs:
       unpaired reads will be written to this same file.
     inputBinding:
       position: 101
+      prefix: --unpaired2
   - id: unqualified_percent_limit
     type:
       - 'null'
@@ -692,7 +698,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `html_path`
     inputBinding:
       position: 102
       prefix: --html
@@ -700,7 +705,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `json_path`
     inputBinding:
       position: 103
       prefix: --json
@@ -708,7 +712,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out1_path`
     inputBinding:
       position: 104
       prefix: --out1
@@ -716,7 +719,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out2_path`
     inputBinding:
       position: 105
       prefix: --out2

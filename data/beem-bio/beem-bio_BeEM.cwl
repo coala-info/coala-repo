@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: beem-bio_BeEM
+baseCommand: BeEM
 label: beem-bio_BeEM
 doc: "convert PDBx/mmCIF format input file 'input.cif' to Best Effort/Minimal PDB
   files. Output results to *-pdb-bundle*\n\nTool homepage: https://github.com/kad-ecoli/BeEM"
@@ -17,7 +17,8 @@ inputs:
     doc: how to handle expanded chemical component ID >3 characters
     inputBinding:
       position: 102
-      prefix: -ccd5
+      prefix: -ccd5=
+      separate: false
   - id: chain_id_map_format
     type:
       - 'null'
@@ -25,7 +26,8 @@ inputs:
     doc: format of chain ID mapping file
     inputBinding:
       position: 102
-      prefix: -idmap
+      prefix: -idmap=
+      separate: false
   - id: chains_to_output
     type:
       - 'null'
@@ -35,7 +37,8 @@ inputs:
       to output all chains"
     inputBinding:
       position: 102
-      prefix: -chain
+      prefix: -chain=
+      separate: false
   - id: convert_dbref
     type:
       - 'null'
@@ -43,7 +46,8 @@ inputs:
     doc: whether to convert dbref record
     inputBinding:
       position: 102
-      prefix: -dbref
+      prefix: -dbref=
+      separate: false
   - id: convert_seqres
     type:
       - 'null'
@@ -51,7 +55,8 @@ inputs:
     doc: whether to convert SEQRES record
     inputBinding:
       position: 102
-      prefix: -seqres
+      prefix: -seqres=
+      separate: false
   - id: gzip_compression
     type:
       - 'null'
@@ -59,7 +64,8 @@ inputs:
     doc: whether to perform gzip compression
     inputBinding:
       position: 102
-      prefix: -gzip
+      prefix: -gzip=
+      separate: false
   - id: max_atoms
     type:
       - 'null'
@@ -68,7 +74,8 @@ inputs:
       \    no limit on number of atoms if maxatom<=0"
     inputBinding:
       position: 102
-      prefix: -maxatom
+      prefix: -maxatom=
+      separate: false
   - id: output_format
     type:
       - 'null'
@@ -76,7 +83,8 @@ inputs:
     doc: output format
     inputBinding:
       position: 102
-      prefix: -outfmt
+      prefix: -outfmt=
+      separate: false
   - id: output_prefix
     type:
       - 'null'
@@ -84,7 +92,8 @@ inputs:
     doc: prefix of output file.
     inputBinding:
       position: 102
-      prefix: -p
+      prefix: -p=
+      separate: false
   - id: uppercase_header
     type:
       - 'null'
@@ -92,7 +101,8 @@ inputs:
     doc: whether to convert PDB header text to upper case
     inputBinding:
       position: 102
-      prefix: -upper
+      prefix: -upper=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

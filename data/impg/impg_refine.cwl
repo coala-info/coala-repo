@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: impg_refine
+baseCommand:
+  - impg
+  - refine
 label: impg_refine
 doc: "Refine loci to maximize the number of samples that span both ends of the region\n\
   \nTool homepage: https://github.com/pangenome/impg"
@@ -191,7 +193,6 @@ inputs:
       prefix: --verbose
   - id: support_output_path
     type: string
-    doc: Output or path parameter `support_output_path`
     inputBinding:
       position: 102
       prefix: --support-output

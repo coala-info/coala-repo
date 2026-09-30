@@ -75,14 +75,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vg_orient
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
   - id: vg_output_dir_path
     type:
       - 'null'
@@ -90,6 +82,13 @@ inputs:
     inputBinding:
       position: 104
       prefix: --vg_output_dir
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --output
 outputs:
   - id: output
     type:

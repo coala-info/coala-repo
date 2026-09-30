@@ -31,7 +31,7 @@ inputs:
       prefix: --model
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output directory for psap prediction results
     inputBinding:
       position: 102
       prefix: --out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unicore createdb
+baseCommand:
+  - unicore
+  - createdb
 label: unicore_createdb
 doc: "Create Foldseek database from amino acid sequences\n\nTool homepage: https://github.com/steineggerlab/unicore"
 inputs:
@@ -9,11 +11,16 @@ inputs:
     doc: Input directory with fasta files or a single fasta file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output foldseek database
+    inputBinding:
+      position: 2
   - id: model
     type: string
     doc: ProstT5 model
     inputBinding:
-      position: 2
+      position: 3
   - id: afdb_lookup
     type:
       - 'null'
@@ -80,11 +87,11 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: Output foldseek database
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unicore:1.1.1--h7ef3eeb_0

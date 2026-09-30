@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas collect
+baseCommand:
+  - pangwas
+  - collect
 label: pangwas_collect
 doc: "Collect extracted sequences from multiple samples into one file.\n\nTakes as
   input multiple TSV files from extract, which can be supplied \nas either space separate
@@ -11,7 +13,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101

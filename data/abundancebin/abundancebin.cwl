@@ -60,11 +60,13 @@ inputs:
       position: 101
       prefix: -RECURSIVE_CLASSIFICATION
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: 'Output file (default: the input file name with .log appended).'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: output_file
     type:

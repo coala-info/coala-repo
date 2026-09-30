@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks combine
+baseCommand:
+  - kmtricks
+  - combine
 label: kmtricks_combine
 doc: "Combine kmtricks's matrices (support kmer/hash matrices).\n\nTool homepage:
   https://github.com/tlemane/kmtricks"
@@ -37,7 +39,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

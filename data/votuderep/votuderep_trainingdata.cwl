@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: votuderep trainingdata
+baseCommand:
+  - votuderep
+  - trainingdata
 label: votuderep_trainingdata
 doc: "Download training dataset from the internet. Uses a registry (DATASETS) of named
   datasets, each containing a set of {url, path} items. Adds new datasets by extending
@@ -16,7 +18,7 @@ inputs:
       prefix: --name
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: 'TEXT  Where to put the output files [default: ./ebame-virome/] │'
     inputBinding:
       position: 102
       prefix: --outdir

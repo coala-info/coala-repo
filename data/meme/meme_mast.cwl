@@ -135,19 +135,23 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: -mi
+          separate: true
     doc: use only motif(s) numbered <m> (overrides -mev); can be repeated
     inputBinding:
       position: 103
-      prefix: -mi
   - id: motif_name
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -m
+          separate: true
     doc: use only motif(s) named <id> (overrides -mev); can be repeated
     inputBinding:
       position: 103
-      prefix: -m
   - id: no_html
     type:
       - 'null'

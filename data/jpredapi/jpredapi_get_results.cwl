@@ -62,10 +62,10 @@ inputs:
       prefix: --wait
   - id: results_path_path
     type: string
-    doc: Output or path parameter `results_path_path`
+    doc: Path to directory where to save archive with results.
     inputBinding:
       position: 102
-      prefix: --results-path
+      prefix: --results
 outputs:
   - id: results_path
     type:

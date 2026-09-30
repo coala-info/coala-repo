@@ -315,10 +315,12 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      type: array
+      items: File
     doc: Prefix for srst2 output files
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

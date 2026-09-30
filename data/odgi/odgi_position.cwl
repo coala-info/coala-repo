@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_position
+baseCommand:
+  - odgi
+  - position
 label: odgi_position
 doc: "Find, translate, and liftover graph and path positions between graphs. Results
   are printed to stdout.\n\nTool homepage: https://github.com/vgteam/odgi"

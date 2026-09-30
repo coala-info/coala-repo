@@ -9,9 +9,9 @@ doc: "Extract epiread information from a BAM file using a reference genome.\n\nT
 inputs:
   - id: reference_fasta
     type: File
+    doc: Reference genome FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference genome FASTA file
     inputBinding:
       position: 1
   - id: input_bam
@@ -214,10 +214,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file [stdout]
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

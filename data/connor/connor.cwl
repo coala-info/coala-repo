@@ -11,6 +11,11 @@ inputs:
     doc: path to input BAM
     inputBinding:
       position: 1
+  - id: output_bam
+    type: string
+    doc: path to deduplicated output BAM
+    inputBinding:
+      position: 2
   - id: consensus_freq_threshold
     type:
       - 'null'
@@ -88,11 +93,11 @@ inputs:
       position: 103
       prefix: --annotated_output_bam
 outputs:
-  - id: output_bam
+  - id: out_output_bam
     type: File
     doc: path to deduplicated output BAM
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_bam)'
   - id: annotated_output_bam
     type:
       - 'null'

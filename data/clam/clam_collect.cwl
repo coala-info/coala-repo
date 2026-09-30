@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clam collect
+baseCommand:
+  - clam
+  - collect
 label: clam_collect
 doc: "Collect depth from multiple files into a Zarr store\n\nTool homepage: https://github.com/cademirch/clam"
 inputs:
@@ -29,6 +31,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --exclude
+      itemSeparator: ','
   - id: exclude_file
     type:
       - 'null'
@@ -55,6 +58,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --include
+      itemSeparator: ','
   - id: include_file
     type:
       - 'null'
@@ -103,7 +107,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

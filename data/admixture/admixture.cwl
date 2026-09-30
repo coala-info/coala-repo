@@ -38,7 +38,8 @@ inputs:
     doc: set major convergence criterion (for point estimation)
     inputBinding:
       position: 103
-      prefix: -C
+      prefix: -C=
+      separate: false
   - id: method
     type:
       - 'null'
@@ -54,7 +55,8 @@ inputs:
     doc: set minor convergence criterion (for bootstrap and CV reestimates)
     inputBinding:
       position: 103
-      prefix: -c
+      prefix: -c=
+      separate: false
   - id: seed
     type:
       - 'null'
@@ -71,6 +73,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -j
+      separate: false
 outputs:
   - id: stdout
     type: stdout

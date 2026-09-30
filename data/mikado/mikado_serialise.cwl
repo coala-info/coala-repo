@@ -162,10 +162,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --orfs
+      itemSeparator: ','
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory. Default: current working directory'
     inputBinding:
       position: 102
@@ -243,6 +244,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --transcripts
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'
@@ -265,6 +267,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xml
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

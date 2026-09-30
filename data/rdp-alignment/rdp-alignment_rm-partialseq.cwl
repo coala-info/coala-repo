@@ -44,7 +44,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignment_out_path`
+    doc: The output file containing the pairwise alignment
     inputBinding:
       position: 104
       prefix: --alignment-out

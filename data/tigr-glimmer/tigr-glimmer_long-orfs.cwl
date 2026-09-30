@@ -10,6 +10,11 @@ inputs:
     doc: Input DNA sequence file
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Output file for ORFs coordinates, or '-' for standard output
+    inputBinding:
+      position: 2
   - id: entropy_cutoff
     type:
       - 'null'
@@ -120,11 +125,11 @@ inputs:
       position: 102
       prefix: --without_stops
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: Output file for ORFs coordinates, or '-' for standard output
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1

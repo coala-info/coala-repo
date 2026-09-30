@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cramtools index
+baseCommand:
+  - cramtools
+  - index
 label: cramtools_index
 doc: "Index a BAM or CRAM file using cramtools.\n\nTool homepage: https://github.com/enasequence/cramtools"
 inputs:
@@ -31,7 +33,7 @@ inputs:
       prefix: --log-level
   - id: index_file_path
     type: string
-    doc: Output or path parameter `index_file_path`
+    doc: Write index to this file.
     inputBinding:
       position: 102
       prefix: --index-file

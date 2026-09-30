@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: caspeak_valid
+baseCommand:
+  - caspeak
+  - valid
 label: caspeak_valid
 doc: "Validate peaks\n\nTool homepage: https://github.com/Rye-lxy/CasPeak"
 inputs:

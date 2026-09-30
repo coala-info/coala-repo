@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spp-dcj sol2adj
+baseCommand:
+  - spp-dcj
+  - sol2adj
 label: spp-dcj_sol2adj
 doc: "Converts a GUROBI solution file to an adjacency list representation.\n\nTool
   homepage: https://github.com/codialab/spp-dcj"

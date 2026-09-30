@@ -28,8 +28,7 @@ inputs:
       position: 102
       prefix: --download
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --output

@@ -52,7 +52,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: the output directory for all output and temporary files
     inputBinding:
       position: 101

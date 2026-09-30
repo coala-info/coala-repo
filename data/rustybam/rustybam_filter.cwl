@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam filter
+baseCommand:
+  - rustybam
+  - filter
 label: rustybam_filter
 doc: "Filter PAF records in various ways\n\nTool homepage: https://github.com/mrvollger/rustybam"
 inputs:

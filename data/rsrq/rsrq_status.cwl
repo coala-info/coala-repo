@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rsrq status
+baseCommand:
+  - rsrq
+  - status
 label: rsrq_status
 doc: "Check the status of all objects in the Redis database\n\nTool homepage: https://github.com/aaronmussig/rsrq"
 inputs:

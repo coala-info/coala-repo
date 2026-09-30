@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_raw2fa
+baseCommand:
+  - fastools
+  - raw2fa
 label: fastools_raw2fa
 doc: "Make a FASTA file from a raw sequence.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:
@@ -9,22 +11,27 @@ inputs:
     doc: input file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output file
+    inputBinding:
+      position: 2
   - id: accno
     type: string
     doc: accession number
     inputBinding:
-      position: 2
+      position: 3
   - id: descr
     type: string
     doc: description of the DNA sequence
     inputBinding:
-      position: 3
+      position: 4
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastools:1.1.5--pyh7cba7a3_0

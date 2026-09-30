@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mageck mle
+baseCommand:
+  - mageck
+  - mle
 label: mageck_mle
 doc: "Maximum Likelihood Estimation (MLE) module for MAGeCK.\n\nTool homepage: http://mageck.sourceforge.net"
 inputs:

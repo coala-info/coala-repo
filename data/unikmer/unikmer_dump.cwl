@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer dump
+baseCommand:
+  - unikmer
+  - dump
 label: unikmer_dump
 doc: "Convert plain k-mer text to binary format\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

@@ -191,26 +191,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfa_seq_fa_path`
+    doc: '# Save all the final sequences ( original range + extension ) #   to a file.'
     inputBinding:
       position: 102
-      prefix: --outfa-seq-fa
+      prefix: -outfa
   - id: outmat_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outmat_file_path`
+    doc: '# Dump the dp matrix paths to a file for debugging.'
     inputBinding:
       position: 103
-      prefix: --outmat-file
+      prefix: -outmat
   - id: outtsv_final_tsv_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outtsv_final_tsv_path`
+    doc: '# Save the final sequence ranges to a TSV file.'
     inputBinding:
       position: 104
-      prefix: --outtsv-final-tsv
+      prefix: -outtsv
 outputs:
   - id: outtsv_final_tsv
     type:

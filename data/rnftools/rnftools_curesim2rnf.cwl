@@ -29,7 +29,7 @@ inputs:
       prefix: --genome-id
   - id: rnf_fastq_path
     type: string
-    doc: Output or path parameter `rnf_fastq_path`
+    doc: Output FASTQ file (- for standard output).
     inputBinding:
       position: 102
       prefix: --rnf-fastq

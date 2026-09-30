@@ -15,6 +15,11 @@ inputs:
     doc: A CSV file with the header "ParentId,ChildId".
     inputBinding:
       position: 2
+  - id: output
+    type: string
+    doc: Output image filepath. The format must support alpha channels.
+    inputBinding:
+      position: 3
   - id: absolute
     type:
       - 'null'
@@ -98,11 +103,11 @@ inputs:
       position: 103
       prefix: --width
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Output image filepath. The format must support alpha channels.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfish:1.0.3--pyh7cba7a3_0

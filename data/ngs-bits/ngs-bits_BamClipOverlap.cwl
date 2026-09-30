@@ -77,10 +77,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output BAM file.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type: File

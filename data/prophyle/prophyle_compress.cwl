@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophyle compress
+baseCommand:
+  - prophyle
+  - compress
 label: prophyle_compress
 doc: "Compresses a prophyle index directory into a tar.gz archive.\n\nTool homepage:
   https://github.com/karel-brinda/prophyle"

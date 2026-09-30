@@ -36,10 +36,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
+    doc: Output FASTA file with variable sites
     inputBinding:
       position: 102
       prefix: --output
@@ -47,7 +45,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_output_path`
+    doc: Output VCF file (optional)
     inputBinding:
       position: 103
       prefix: --vcf-output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi procbed
+baseCommand:
+  - odgi
+  - procbed
 label: odgi_procbed
 doc: "Intersect and adjust BED interval into PanSN-defined path subranges. Lift BED
   files into graphs produced by odgi extract. Uses path range information in the path

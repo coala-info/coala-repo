@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin write_pangenome
+baseCommand:
+  - ppanggolin
+  - write_pangenome
 label: ppanggolin_write_pangenome
 doc: "Write pangenome data to various formats.\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
 inputs:
@@ -205,7 +207,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

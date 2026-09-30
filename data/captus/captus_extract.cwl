@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: captus extract
+baseCommand:
+  - captus
+  - extract
 label: captus_extract
 doc: "Captus-assembly: Extract; recover markers from FASTA assemblies\n\nTool homepage:
   https://github.com/edgardomortiz/Captus"
@@ -139,7 +141,7 @@ inputs:
   - id: cl_tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Where to create the temporary directory 'captus_mmseqs_tmp' for 
       MMseqs2. Clustering can become slow when done on external drives, set this
       location to a fast, preferably local, drive

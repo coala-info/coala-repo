@@ -149,27 +149,25 @@ inputs:
       position: 102
       prefix: -verbose
   - id: output_prefix_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_prefix_path`
+    type: string
+    doc: Output file prefix.
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: -o
   - id: write_locations_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_locations_path`
+    doc: Write locations here.
     inputBinding:
       position: 104
-      prefix: --write-locations
+      prefix: -loc
 outputs:
   - id: output_prefix
-    type: File
+    type: File[]
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
   - id: write_locations
     type:
       - 'null'

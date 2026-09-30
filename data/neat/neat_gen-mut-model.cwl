@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: neat_gen-mut-model
+baseCommand:
+  - neat
+  - gen-mut-model
 label: neat_gen-mut-model
 doc: "Generate mutation model from a pickle or BED file and user input.\n\nTool homepage:
   https://github.com/ncsa/NEAT/"
@@ -86,10 +88,9 @@ inputs:
       prefix: --skip_common
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 104
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

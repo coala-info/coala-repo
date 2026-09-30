@@ -30,7 +30,7 @@ inputs:
     doc: Connection timeout duration in seconds
     inputBinding:
       position: 101
-      prefix: --connect_timeout
+      prefix: -cto
   - id: curl_path
     type:
       - 'null'
@@ -82,10 +82,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --email
+          separate: true
     doc: Add emails to share a collection (can be used multiple times)
     inputBinding:
       position: 101
-      prefix: --email
+      prefix: -email
   - id: file_description
     type:
       - 'null'
@@ -155,10 +158,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --keyvalue
+          separate: true
     doc: Add key:value pairs to the collection (can be used multiple times)
     inputBinding:
       position: 101
-      prefix: --keyvalue
+      prefix: -keyvalue
   - id: list
     type:
       - 'null'
@@ -371,7 +377,7 @@ inputs:
     doc: Overide default and set new webservices url
     inputBinding:
       position: 101
-      prefix: --url
+      prefix: -url
   - id: user_name
     type:
       - 'null'

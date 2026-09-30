@@ -740,6 +740,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outSAMattrRGline
+      itemSeparator: ','
   - id: out_sam_attributes
     type:
       - 'null'
@@ -1029,7 +1030,7 @@ inputs:
   - id: out_tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "path to a directory that will be used as temporary by STAR. All contents
       of this directory will be removed!\n            - the temp directory will default
       to outFileNamePrefix_STARtmp"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hic2cool extract-norms
+baseCommand:
+  - hic2cool
+  - extract-norms
 label: hic2cool_extract-norms
 doc: "extract normalization vectors from a cooler file and add them to a cooler file\n\
   \nTool homepage: https://github.com/4dn-dcic/hic2cool"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: coptr_index
+baseCommand:
+  - coptr
+  - index
 label: coptr_index
 doc: "Index a reference FASTA file for use with coptr.\n\nTool homepage: https://github.com/tyjo/coptr"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse_introns
+baseCommand:
+  - bedparse
+  - introns
 label: bedparse_introns
 doc: "Report BED12 lines corresponding to the introns of each transcript. Unspliced
   transcripts are not reported.\n\nTool homepage: https://github.com/tleonardi/bedparse"

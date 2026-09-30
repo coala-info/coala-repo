@@ -39,7 +39,7 @@ inputs:
   - id: groupby_sample
     type:
       - 'null'
-      - boolean
+      - string
     doc: Should results from the mock community key be examined per sample 
       (True), or as one whole community (False)
     inputBinding:

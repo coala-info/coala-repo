@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: impg_stats
+baseCommand:
+  - impg
+  - stats
 label: impg_stats
 doc: "Print alignment statistics\n\nTool homepage: https://github.com/pangenome/impg"
 inputs:

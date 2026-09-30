@@ -135,7 +135,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
       prefix: --output-path
@@ -143,7 +142,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `train_probs_plot_path`
     inputBinding:
       position: 103
       prefix: --train-probs-plot

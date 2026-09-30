@@ -312,10 +312,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aligned_reads_output_path`
+    doc: write unpaired reads that aligned at least once to <path>
     inputBinding:
       position: 104
-      prefix: --aligned-reads-output
+      prefix: --al
   - id: conc_pairs_bz2_output_path
     type:
       - 'null'
@@ -344,10 +344,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `metrics_file_path`
+    doc: send metrics to file at <path> (off)
     inputBinding:
       position: 108
-      prefix: --metrics-file
+      prefix: --met-file
   - id: output_file_path
     type:
       - 'null'
@@ -356,14 +356,6 @@ inputs:
     inputBinding:
       position: 109
       prefix: --output-file
-  - id: report_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `report_file_path`
-    inputBinding:
-      position: 110
-      prefix: --report-file
   - id: unaligned_reads_bz2_output_path
     type:
       - 'null'
@@ -412,6 +404,13 @@ inputs:
     inputBinding:
       position: 116
       prefix: --unconc-pairs-output
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 117
+      prefix: --report-file
 outputs:
   - id: output_file
     type:

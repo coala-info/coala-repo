@@ -65,7 +65,7 @@ inputs:
       position: 101
       prefix: -i
   - id: max_distance
-    type: int
+    type: int?
     doc: Maximum distance between features allowed for features to be merged. 
       Negative values enforce the number of b.p. required for overlap.
     inputBinding:

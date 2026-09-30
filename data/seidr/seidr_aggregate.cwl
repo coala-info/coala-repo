@@ -41,7 +41,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store temporary data
     inputBinding:
       position: 101
@@ -56,7 +56,6 @@ inputs:
       prefix: --threads
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile

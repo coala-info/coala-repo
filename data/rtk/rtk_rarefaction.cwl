@@ -50,7 +50,7 @@ inputs:
       position: 102
       prefix: -w
   - id: output
-    type: Directory
+    type: string
     doc: path to a output directory
     inputBinding:
       position: 102

@@ -19,7 +19,8 @@ inputs:
       score]'
     inputBinding:
       position: 102
-      prefix: -alpha
+      prefix: -alpha=
+      separate: false
   - id: binpath
     type:
       - 'null'
@@ -28,7 +29,8 @@ inputs:
       globally (this should not be needed)
     inputBinding:
       position: 102
-      prefix: -binpath
+      prefix: -binpath=
+      separate: false
   - id: blast_program
     type:
       - 'null'
@@ -51,7 +53,8 @@ inputs:
       https://github.com/soedinglab/MMseqs2"
     inputBinding:
       position: 102
-      prefix: -p
+      prefix: -p=
+      separate: false
   - id: checkfasta
     type:
       - 'null'
@@ -81,7 +84,8 @@ inputs:
       not calculated'
     inputBinding:
       position: 102
-      prefix: -conn
+      prefix: -conn=
+      separate: false
   - id: core
     type:
       - 'null'
@@ -99,7 +103,8 @@ inputs:
     doc: sets the maximal number of proteins per species for the -core option
     inputBinding:
       position: 102
-      prefix: -coreMaxProt
+      prefix: -coreMaxProt=
+      separate: false
   - id: coverage
     type:
       - 'null'
@@ -109,7 +114,8 @@ inputs:
       where alignment_length_A_B = column 4 of blast outfmt 6 output
     inputBinding:
       position: 102
-      prefix: -cov
+      prefix: -cov=
+      separate: false
   - id: cpus
     type:
       - 'null'
@@ -117,7 +123,8 @@ inputs:
     doc: number of processors to use
     inputBinding:
       position: 102
-      prefix: -cpus
+      prefix: -cpus=
+      separate: false
   - id: cs
     type:
       - 'null'
@@ -125,7 +132,8 @@ inputs:
     doc: 'PoFF: Size of a maximum common substring (MCS) for adjacency matches'
     inputBinding:
       position: 102
-      prefix: -cs
+      prefix: -cs=
+      separate: false
   - id: debug
     type:
       - 'null'
@@ -150,7 +158,8 @@ inputs:
       regions'
     inputBinding:
       position: 102
-      prefix: -dups
+      prefix: -dups=
+      separate: false
   - id: evalue
     type:
       - 'null'
@@ -158,7 +167,8 @@ inputs:
     doc: E-value for blast (column 11 of blast outfmt 6 output)
     inputBinding:
       position: 102
-      prefix: -e
+      prefix: -e=
+      separate: false
   - id: force
     type:
       - 'null'
@@ -193,7 +203,8 @@ inputs:
       outfmt 6 output)
     inputBinding:
       position: 102
-      prefix: -identity
+      prefix: -identity=
+      separate: false
   - id: inproject
     type:
       - 'null'
@@ -204,7 +215,8 @@ inputs:
       files of -step=2
     inputBinding:
       position: 102
-      prefix: -inproject
+      prefix: -inproject=
+      separate: false
   - id: isoform
     type:
       - 'null'
@@ -217,7 +229,8 @@ inputs:
       files) trinity -> using '_iX' suffix For more information have a look at: https://gitlab.com/paulklemm_PHD/proteinortho/-/wikis/FAQ#how-does-the-isoform-work"
     inputBinding:
       position: 102
-      prefix: -isoform
+      prefix: -isoform=
+      separate: false
   - id: jobs
     type:
       - 'null'
@@ -229,7 +242,8 @@ inputs:
       -step=2 on PC two finally run with -step=3 to finalize'
     inputBinding:
       position: 102
-      prefix: -jobs
+      prefix: -jobs=
+      separate: false
   - id: keep
     type:
       - 'null'
@@ -252,7 +266,8 @@ inputs:
       Disable with 0
     inputBinding:
       position: 102
-      prefix: -maxnodes
+      prefix: -maxnodes=
+      separate: false
   - id: nograph
     type:
       - 'null'
@@ -286,7 +301,8 @@ inputs:
     doc: prefix for all result file names
     inputBinding:
       position: 102
-      prefix: -project
+      prefix: -project=
+      separate: false
   - id: pseudo_reciprocal_blast
     type:
       - 'null'
@@ -304,7 +320,8 @@ inputs:
       between proteins of same length [default:disabled]
     inputBinding:
       position: 102
-      prefix: -range
+      prefix: -range=
+      separate: false
   - id: selfblast
     type:
       - 'null'
@@ -330,7 +347,8 @@ inputs:
       boundaries of -e, -cov, ...) are reported'
     inputBinding:
       position: 102
-      prefix: -sim
+      prefix: -sim=
+      separate: false
   - id: singles
     type:
       - 'null'
@@ -347,7 +365,8 @@ inputs:
       is set)\n                3 -> clustering\n                0 -> all"
     inputBinding:
       position: 102
-      prefix: -step
+      prefix: -step=
+      separate: false
   - id: subpara_blast
     type:
       - 'null'
@@ -356,7 +375,8 @@ inputs:
       no' or -subparaBlast='--more-sensitive' for diamond
     inputBinding:
       position: 102
-      prefix: -subparaBlast
+      prefix: -subparaBlast=
+      separate: false
   - id: subpara_make_blast
     type:
       - 'null'
@@ -364,7 +384,8 @@ inputs:
     doc: additional parameters for the database generation
     inputBinding:
       position: 102
-      prefix: -subparaMakeBlast
+      prefix: -subparaMakeBlast=
+      separate: false
   - id: synteny
     type:
       - 'null'
@@ -380,11 +401,12 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: path for temporary files
     inputBinding:
       position: 102
-      prefix: -temp
+      prefix: -temp=
+      separate: false
   - id: threads_per_process
     type:
       - 'null'
@@ -394,7 +416,8 @@ inputs:
       total of 8 cores.
     inputBinding:
       position: 102
-      prefix: -threads_per_process
+      prefix: -threads_per_process=
+      separate: false
   - id: xml
     type:
       - 'null'

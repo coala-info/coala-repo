@@ -78,11 +78,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --neg-taxa
+          separate: true
     doc: Non-target NCBI taxonomy name / ID. Must be exact match. Repeat the 
       option to pass multiple values (-n <tax1> -n <tax2> ...).
     inputBinding:
       position: 101
-      prefix: --neg-taxa
   - id: no_blast
     type:
       - 'null'
@@ -128,7 +130,7 @@ inputs:
   - id: prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path prefix for the output directory. Use the current directory by 
       default.
     inputBinding:
@@ -174,11 +176,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tar-taxa
+          separate: true
     doc: Target NCBI taxonomy name / ID. Must be exact match. Repeat the option 
       to pass multiple values (-t <tax1> -t <tax2> ...).
     inputBinding:
       position: 101
-      prefix: --tar-taxa
   - id: threads
     type:
       - 'null'

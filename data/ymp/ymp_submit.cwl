@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ymp submit
+baseCommand:
+  - ymp
+  - submit
 label: ymp_submit
 doc: "Build target(s) on cluster\n\nTool homepage: https://ymp.readthedocs.io"
 inputs:
@@ -233,7 +235,7 @@ inputs:
   - id: shadow_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to place data for shadowed rules
     inputBinding:
       position: 102

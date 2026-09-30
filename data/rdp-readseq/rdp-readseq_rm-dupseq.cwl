@@ -36,7 +36,7 @@ inputs:
       prefix: --duplicates
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: output fasta file
     inputBinding:
       position: 102
       prefix: --outfile

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: emu combine-outputs
+baseCommand:
+  - emu
+  - combine-outputs
 label: emu_combine-outputs
 doc: "Combines Emu output files into a single table.\n\nTool homepage: https://gitlab.com/treangenlab/emu"
 inputs:

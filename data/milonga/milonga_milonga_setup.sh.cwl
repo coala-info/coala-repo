@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bash /usr/local/opt/milonga/scripts/milonga_setup.sh
+baseCommand:
+  - bash
+  - /usr/local/opt/milonga/scripts/milonga_setup.sh
 label: milonga_milonga_setup.sh
 doc: "This script completes the installation of the MiLongA pipeline. The openssl
   library is required for hashing the downloaded files.\nfor MiLongA installations

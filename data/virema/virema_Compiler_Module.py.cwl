@@ -66,7 +66,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Enter a directory name that all compiled output files will be saved in.
     inputBinding:
       position: 102

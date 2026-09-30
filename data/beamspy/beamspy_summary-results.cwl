@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: beamspy summary-results
+baseCommand:
+  - beamspy
+  - summary-results
 label: beamspy_summary-results
 doc: "Generates a summary of BEAMSpy results.\n\nTool homepage: https://github.com/computational-metabolomics/beamspy"
 inputs:
@@ -69,7 +71,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
@@ -77,7 +78,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pdf_path`
+    doc: Output pdf file for the summary plots
     inputBinding:
       position: 103
       prefix: --pdf

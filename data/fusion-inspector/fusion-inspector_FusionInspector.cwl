@@ -133,7 +133,7 @@ inputs:
       position: 101
       prefix: --include_Trinity
   - id: left_fq
-    type: File
+    type: File?
     doc: left (or single) fastq file
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw plot_motif_centered
+baseCommand:
+  - nanoraw
+  - plot_motif_centered
 label: nanoraw_plot_motif_centered
 doc: "Plot motif centered regions and statistic distributions at each genomic base
   in the region.\n\nTool homepage: https://github.com/marcus1487/nanoraw"
@@ -12,6 +14,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: motif
     type: string
     doc: A motif to plot the most significant regions genomic regions as well as
@@ -19,6 +22,7 @@ inputs:
       single letter codes.
     inputBinding:
       position: 2
+      prefix: --motif
   - id: genome_fasta
     type: File
     secondaryFiles:
@@ -26,6 +30,7 @@ inputs:
     doc: FASTA file used to map reads with "genome_resquiggle" command.
     inputBinding:
       position: 3
+      prefix: --genome-fasta
   - id: basecall_subgroups
     type:
       - 'null'

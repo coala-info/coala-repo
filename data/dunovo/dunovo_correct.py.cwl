@@ -196,7 +196,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: Print log messages to this file instead of to stderr.
     inputBinding:
       position: 105
       prefix: --log
@@ -204,7 +204,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `visualize_path`
     inputBinding:
       position: 106
       prefix: --visualize

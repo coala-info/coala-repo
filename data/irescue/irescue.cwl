@@ -114,7 +114,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory name (default: irescue_out).'
     inputBinding:
       position: 101

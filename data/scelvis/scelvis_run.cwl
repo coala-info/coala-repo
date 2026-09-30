@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scelvis_run
+baseCommand:
+  - scelvis
+  - run
 label: scelvis_run
 doc: "Run the scelvis server.\n\nTool homepage: https://github.com/bihealth/scelvis"
 inputs:
@@ -154,7 +156,7 @@ inputs:
   - id: irods_ssl_verify_server
     type:
       - 'null'
-      - boolean
+      - string
     doc: IRODS setting
     inputBinding:
       position: 101
@@ -187,7 +189,7 @@ inputs:
   - id: upload_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for visualization uploads, default is to create temporary 
       directory
     inputBinding:

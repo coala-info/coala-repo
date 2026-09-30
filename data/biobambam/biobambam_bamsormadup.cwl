@@ -70,7 +70,8 @@ inputs:
     doc: metrics file, stderr if unset
     inputBinding:
       position: 101
-      prefix: M
+      prefix: M=
+      separate: false
   - id: numerical
     type:
       - 'null'

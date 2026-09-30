@@ -167,10 +167,10 @@ inputs:
       prefix: --WindowSize
   - id: output_dir_name_path
     type: string
-    doc: Output or path parameter `output_dir_name_path`
+    doc: ' Output directory name, used to define the project name'
     inputBinding:
       position: 102
-      prefix: --output-dir-name
+      prefix: --OutputDirName
 outputs:
   - id: output_dir_name
     type:

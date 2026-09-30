@@ -212,7 +212,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory [default: .]'
     inputBinding:
       position: 101

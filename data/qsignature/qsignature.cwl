@@ -171,6 +171,7 @@ inputs:
     doc: enable verbose output (class, gc, jni)
     inputBinding:
       position: 104
+      prefix: -verbose
 outputs:
   - id: stdout
     type: stdout

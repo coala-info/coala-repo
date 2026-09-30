@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bigsi-v0.3.1 merge
+baseCommand:
+  - bigsi
+  - merge
 label: bigsi_merge
 doc: "\nTool homepage: https://github.com/Phelimb/BIGSI"
 inputs:

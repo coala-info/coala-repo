@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: riboraptor export-gene-coverages
+baseCommand:
+  - riboraptor
+  - export-gene-coverages
 label: riboraptor_export-gene-coverages
 doc: "Export gene level coverage for all genes for given region\n\nTool homepage:
   https://github.com/saketkc/riboraptor"

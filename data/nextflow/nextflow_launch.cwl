@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextflow launch
+baseCommand:
+  - nextflow
+  - launch
 label: nextflow_launch
 doc: "Launch a workflow in Seqera Platform\n\nTool homepage: https://github.com/nextflow-io/nextflow"
 inputs:

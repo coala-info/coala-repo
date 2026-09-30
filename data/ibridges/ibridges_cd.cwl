@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges cd
+baseCommand:
+  - ibridges
+  - cd
 label: ibridges_cd
 doc: "Change current working collection for the iRODS server.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

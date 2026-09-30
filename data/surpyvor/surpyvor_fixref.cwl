@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor_fixref
+baseCommand:
+  - surpyvor
+  - fixref
 label: surpyvor_fixref
 doc: "Fixes reference sequences in a VCF file.\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:

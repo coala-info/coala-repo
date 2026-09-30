@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python /usr/local/bin/quast
+baseCommand:
+  - python
+  - /usr/local/bin/quast
 label: quast
 doc: "Quality Assessment Tool for Genome Assemblies\n\nTool homepage: http://quast.sourceforge.net/"
 inputs:
@@ -41,6 +43,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --bam
+      itemSeparator: ','
   - id: circos
     type:
       - 'null'
@@ -373,7 +376,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store all result files
     inputBinding:
       position: 102
@@ -472,6 +475,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sam
+      itemSeparator: ','
   - id: scaffold_gap_max_size
     type:
       - 'null'

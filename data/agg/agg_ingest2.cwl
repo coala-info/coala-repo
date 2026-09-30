@@ -31,10 +31,10 @@ inputs:
       prefix: --thread
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: agg will output output_prefix.bcf and output_prefix.dpt
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: --output
 outputs:
   - id: output_prefix
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_cat
+baseCommand:
+  - fastools
+  - cat
 label: fastools_cat
 doc: "Return the sequence content of a FASTA file.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:

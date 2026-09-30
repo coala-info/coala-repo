@@ -471,7 +471,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The folder used to store temporary files [default is the OS dependent 
       tmp dir]
     inputBinding:
@@ -502,22 +502,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vsc_breadth
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-  - id: samout_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `samout_path`
-    inputBinding:
-      position: 104
-      prefix: --samout
   - id: subsampling_output_path
     type:
       - 'null'
@@ -533,6 +517,20 @@ inputs:
     inputBinding:
       position: 106
       prefix: --vsc_out
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --output_file
+  - id: samout_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: --samout
 outputs:
   - id: output_file
     type:

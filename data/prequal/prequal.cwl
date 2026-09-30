@@ -17,6 +17,7 @@ inputs:
       a core region is defined [DEFAULT 3]"
     inputBinding:
       position: 102
+      prefix: -corerun
   - id: filterjoin
     type:
       - 'null'
@@ -25,6 +26,7 @@ inputs:
       [DEFAULT X = 10]
     inputBinding:
       position: 102
+      prefix: -filterjoin
   - id: filterthresh
     type:
       - 'null'
@@ -33,6 +35,7 @@ inputs:
       = 0.994]\n\t\t\t(range 0.0 - 1.0). DEFAULT filtering option with threshold"
     inputBinding:
       position: 102
+      prefix: -filterthresh
   - id: nofilterlist
     type:
       - 'null'
@@ -41,6 +44,7 @@ inputs:
       be filtered. In X one name per line."
     inputBinding:
       position: 102
+      prefix: -nofilterlist
   - id: pptype
     type:
       - 'null'
@@ -51,6 +55,7 @@ inputs:
       Y longest sequences [Y = 10]"
     inputBinding:
       position: 102
+      prefix: -pptype
   - id: pptype_y
     type:
       - 'null'

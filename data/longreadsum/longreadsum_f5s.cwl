@@ -56,6 +56,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --inputs
+      itemSeparator: ','
   - id: log
     type:
       - 'null'
@@ -106,6 +107,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --read_ids
+      itemSeparator: ','
   - id: seed
     type:
       - 'null'
@@ -124,10 +126,10 @@ inputs:
       prefix: --threads
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' The output folder.'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --outputfolder
 outputs:
   - id: output_folder
     type:

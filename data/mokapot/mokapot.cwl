@@ -46,7 +46,7 @@ inputs:
   - id: dest_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "The directory in which to write the result files.\nDefaults to the current
       working directory"
     inputBinding:

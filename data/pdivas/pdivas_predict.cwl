@@ -24,10 +24,10 @@ inputs:
       prefix: -I
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: output.vcf/vcf.gz  The path to output vcf(.gz) file name and pass
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: -O
 outputs:
   - id: output_vcf
     type: File

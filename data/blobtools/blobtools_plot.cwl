@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blobtools_plot
+baseCommand:
+  - blobtools
+  - plot
 label: blobtools_plot
 doc: "Plotting tool for BlobDB files.\n\nTool homepage: https://blobtools.readme.io/docs/what-is-blobtools"
 inputs:
@@ -217,7 +219,7 @@ inputs:
       prefix: --taxrule
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output prefix
     inputBinding:
       position: 102
       prefix: --out
@@ -225,10 +227,11 @@ outputs:
   - id: out
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output prefix
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

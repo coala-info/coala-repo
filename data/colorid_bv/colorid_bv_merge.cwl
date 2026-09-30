@@ -20,10 +20,10 @@ inputs:
       prefix: --index_2
   - id: out_bigsi_path
     type: string
-    doc: Output or path parameter `out_bigsi_path`
+    doc: name output index
     inputBinding:
       position: 102
-      prefix: --out-bigsi
+      prefix: --out_bigsi
 outputs:
   - id: out_bigsi
     type: File

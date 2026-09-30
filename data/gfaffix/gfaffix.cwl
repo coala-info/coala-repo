@@ -48,26 +48,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_affixes_path`
     inputBinding:
       position: 103
-      prefix: --output-affixes
+      prefix: --output_affixes
   - id: output_refined_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_refined_path`
     inputBinding:
       position: 104
-      prefix: --output-refined
+      prefix: --output_refined
   - id: output_transformation_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_transformation_path`
     inputBinding:
       position: 105
-      prefix: --output-transformation
+      prefix: --output_transformation
 outputs:
   - id: output_refined
     type:

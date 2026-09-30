@@ -13,6 +13,11 @@ inputs:
     doc: genome fasta file
     inputBinding:
       position: 1
+  - id: abismal_index_file
+    type: string
+    doc: abismal index file
+    inputBinding:
+      position: 2
   - id: about
     type:
       - 'null'
@@ -46,11 +51,11 @@ inputs:
       position: 102
       prefix: -verbose
 outputs:
-  - id: abismal_index_file
+  - id: out_abismal_index_file
     type: File
     doc: abismal index file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.abismal_index_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abismal:3.3.0--h077b44d_0

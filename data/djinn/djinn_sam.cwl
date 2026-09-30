@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: djinn sam
+baseCommand:
+  - djinn
+  - sam
 label: djinn_sam
 doc: "SAM/BAM file conversions and modifications\n\nTool homepage: https://github.com/pdimens/djinn"
 inputs:

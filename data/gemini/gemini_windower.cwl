@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini windower
+baseCommand:
+  - gemini
+  - windower
 label: gemini_windower
 doc: "Window a database for analysis.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

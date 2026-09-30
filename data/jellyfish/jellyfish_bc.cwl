@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jellyfish bc
+baseCommand:
+  - jellyfish
+  - bc
 label: jellyfish_bc
 doc: "Create a bloom filter from the input k-mers\n\nTool homepage: http://www.genome.umd.edu/jellyfish.html"
 inputs:

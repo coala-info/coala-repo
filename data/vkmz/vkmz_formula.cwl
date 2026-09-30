@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vkmz formula
+baseCommand:
+  - vkmz
+  - formula
 label: vkmz_formula
 doc: "Parses a tabular formula file and outputs results in various formats.\n\nTool
   homepage: https://github.com/HegemanLab/VKMZ"
@@ -85,7 +87,6 @@ inputs:
       prefix: --sql
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

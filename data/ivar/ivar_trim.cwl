@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ivar trim
+baseCommand:
+  - ivar
+  - trim
 label: ivar_trim
 doc: "Trim primers and quality from aligned reads in a BAM file.\n\nTool homepage:
   https://andersen-lab.github.io/ivar/html/"

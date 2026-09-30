@@ -147,7 +147,7 @@ inputs:
   - id: temp_dir_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to where temporary directory containing all temp files are 
       created, by default uses the current working directory as the base.
     inputBinding:
@@ -155,10 +155,10 @@ inputs:
       prefix: --tempDirRoot
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' File in which to write results'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --outputFile
 outputs:
   - id: output_file
     type:

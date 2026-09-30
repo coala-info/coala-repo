@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: omamer_info
+baseCommand:
+  - omamer
+  - info
 label: omamer_info
 doc: "Show metadata about an existing omamer database\n\nTool homepage: https://github.com/DessimozLab/omamer"
 inputs:

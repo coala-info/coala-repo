@@ -15,6 +15,11 @@ inputs:
     doc: Input directory w/ ranked lists for hosts
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: Output file name
+    inputBinding:
+      position: 3
   - id: k
     type:
       - 'null'
@@ -42,11 +47,11 @@ inputs:
       position: 103
       prefix: --p
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: Output file name
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phirbo:1.0--hdfd78af_1

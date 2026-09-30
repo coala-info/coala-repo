@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor upset
+baseCommand:
+  - surpyvor
+  - upset
 label: surpyvor_upset
 doc: "Generate upset plots for structural variants\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -62,8 +64,8 @@ inputs:
       position: 101
       prefix: --verbose
   - id: plotout_path
-    type: string
-    doc: Output or path parameter `plotout_path`
+    type: string?
+    doc: Name of output plot
     inputBinding:
       position: 102
       prefix: --plotout

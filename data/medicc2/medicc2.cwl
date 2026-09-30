@@ -11,7 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: a path to the output folder
     inputBinding:
       position: 2

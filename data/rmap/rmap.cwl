@@ -77,18 +77,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ambiguous_reads_file_path`
+    doc: file to write names of ambiguously mapped reads
     inputBinding:
       position: 103
-      prefix: --ambiguous-reads-file
+      prefix: -ambiguous
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output file name
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: output_file
     type:

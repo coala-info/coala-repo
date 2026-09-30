@@ -102,16 +102,17 @@ inputs:
       prefix: --samples
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      type: array
+      items: File
     doc: Path prefix to use for all output files
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

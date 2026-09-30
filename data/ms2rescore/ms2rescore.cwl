@@ -87,7 +87,7 @@ inputs:
       prefix: --write-report
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: Path and stem for output file names
     inputBinding:
       position: 102
       prefix: --output-path

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold_proteins-compare
+baseCommand:
+  - phold
+  - proteins-compare
 label: phold_proteins-compare
 doc: "Runs Foldseek vs phold db on proteins input\n\nTool homepage: https://github.com/gbouras13/phold"
 inputs:
@@ -173,7 +175,7 @@ inputs:
       prefix: --ultra_sensitive
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Output directory   [default: output_phold]'
     inputBinding:
       position: 102
       prefix: --output

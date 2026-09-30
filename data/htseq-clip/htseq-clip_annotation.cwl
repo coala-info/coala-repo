@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: htseq-clip annotation
+baseCommand:
+  - htseq-clip
+  - annotation
 label: htseq-clip_annotation
 doc: "annotation: flattens (to BED format) the given annotation file (in GFF format)\n\
   \nTool homepage: https://github.com/EMBL-Hentze-group/htseq-clip"
@@ -61,11 +63,12 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: 'output file, --output output file output file (.bed[.gz], default: print
+      to console)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_split
+baseCommand:
+  - cdskit
+  - split
 label: cdskit_split
 doc: "Split CDS sequences into multiple files based on sequence identifiers.\n\nTool
   homepage: https://github.com/kfuku52/cdskit"

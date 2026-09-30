@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savont asv
+baseCommand:
+  - savont
+  - asv
 label: savont_asv
 doc: "Cluster long reads of >~ 98% accuracy into ASVs (Amplicon Sequence Variants)\n\
   \nTool homepage: https://github.com/bluenote-1577/savont"
@@ -110,7 +112,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for results (created if it does not exist)
     inputBinding:
       position: 102

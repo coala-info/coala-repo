@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: outrigger validate
+baseCommand:
+  - outrigger
+  - validate
 label: outrigger_validate
 doc: "Validate splice site sequences against a genome.\n\nTool homepage: https://yeolab.github.io/outrigger"
 inputs:
@@ -60,7 +62,6 @@ inputs:
       prefix: --valid-splice-sites
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

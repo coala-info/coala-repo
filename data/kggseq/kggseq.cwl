@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar kggseq.jar
+baseCommand:
+  - java
+  - -jar
+  - kggseq.jar
 label: kggseq
 doc: "KGGSeq: a tool for annotating and prioritizing genetic variants.\n\nTool homepage:
   http://grass.cgs.hku.hk/limx/kggseq/"
@@ -27,6 +30,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --databases
+      itemSeparator: ','
   - id: disease_config
     type:
       - 'null'
@@ -44,6 +48,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --diseases
+      itemSeparator: ','
   - id: filter_config
     type:
       - 'null'
@@ -85,6 +90,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --pathways
+      itemSeparator: ','
   - id: population_frequencies
     type:
       - 'null'
@@ -94,6 +100,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --popfreq
+      itemSeparator: ','
   - id: population_frequency_config
     type:
       - 'null'

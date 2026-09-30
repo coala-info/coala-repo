@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbgc prepare
+baseCommand:
+  - deepbgc
+  - prepare
 label: deepbgc_prepare
 doc: "Prepare genomic sequence by annotating proteins and Pfam domains.\n\nTool homepage:
   https://github.com/Merck/DeepBGC"
@@ -46,7 +48,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_gbk_path`
     inputBinding:
       position: 103
       prefix: --output-gbk
@@ -54,7 +55,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tsv_path`
     inputBinding:
       position: 104
       prefix: --output-tsv

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit mark
+baseCommand:
+  - nwkit
+  - mark
 label: nwkit_mark
 doc: "Mark nodes in a Newick tree based on a pattern and target type.\n\nTool homepage:
   https://github.com/kfuku52/nwkit"

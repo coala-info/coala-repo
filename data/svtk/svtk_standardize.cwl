@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk standardize
+baseCommand:
+  - svtk
+  - standardize
 label: svtk_standardize
 doc: "Standardize a VCF of SV calls.\n\nTool homepage: https://github.com/talkowski-lab/svtk"
 inputs:
@@ -9,11 +11,16 @@ inputs:
     doc: Raw VCF.
     inputBinding:
       position: 1
+  - id: fout
+    type: string
+    doc: Standardized VCF.
+    inputBinding:
+      position: 2
   - id: source
     type: string
     doc: Source algorithm. [delly,lumpy,manta,wham,melt]
     inputBinding:
-      position: 2
+      position: 3
   - id: call_null_sites
     type:
       - 'null'
@@ -63,18 +70,18 @@ inputs:
   - id: standardizer
     type:
       - 'null'
-      - string
+      - File
     doc: "Path to python file with custom standardizer\n                        definition.
       (Not yet supported.)"
     inputBinding:
       position: 103
       prefix: --standardizer
 outputs:
-  - id: fout
+  - id: out_fout
     type: File
     doc: Standardized VCF.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.fout)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clipcontext_lst
+baseCommand:
+  - clipcontext
+  - lst
 label: clipcontext_lst
 doc: "Accept only transcripts with length >= --min-len (default: False)\n\nTool homepage:
   https://github.com/BackofenLab/CLIPcontext"

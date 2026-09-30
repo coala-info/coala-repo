@@ -49,6 +49,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --statuses
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'

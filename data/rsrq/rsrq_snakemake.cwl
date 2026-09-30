@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rsrq snakemake
+baseCommand:
+  - rsrq
+  - snakemake
 label: rsrq_snakemake
 doc: "Commands that can be issued by Snakemake for cluster execution\n\nTool homepage:
   https://github.com/aaronmussig/rsrq"

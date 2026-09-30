@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lusstr_strs
+baseCommand:
+  - lusstr
+  - strs
 label: lusstr_strs
 doc: "Running the STR pipeline\n\nTool homepage: https://www.github.com/bioforensics/lusSTR"
 inputs:

@@ -116,7 +116,7 @@ inputs:
   - id: genbank
     type:
       - 'null'
-      - boolean
+      - string
     doc: Make GenBank files (.gbf, .sqn, .fsa, .tbl, .cmt, etc)?
     inputBinding:
       position: 101
@@ -311,7 +311,7 @@ inputs:
   - id: wrap
     type:
       - 'null'
-      - boolean
+      - string
     doc: Wrap/rotate DTR/circular contigs so the start codon of an ORF is the 
       first nucleotide in the contig/genome
     inputBinding:

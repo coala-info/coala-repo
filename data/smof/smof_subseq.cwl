@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_subseq
+baseCommand:
+  - smof
+  - subseq
 label: smof_subseq
 doc: "Extract subsequences from FASTA files, optionally with reverse complement, GFF
   input, or coloring.\n\nTool homepage: https://github.com/incertae-sedis/smof"

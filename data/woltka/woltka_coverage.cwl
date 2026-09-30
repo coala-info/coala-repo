@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: woltka_coverage
+baseCommand:
+  - woltka
+  - coverage
 label: woltka_coverage
 doc: "Calculate per-sample coverage of feature groups.\n\nTool homepage: https://github.com/qiyunzhu/woltka"
 inputs:
@@ -44,10 +46,10 @@ inputs:
       prefix: --threshold
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to output coverage table.  [required]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smafa_count
+baseCommand:
+  - smafa
+  - count
 label: smafa_count
 doc: "Print the number of reads/bases in a possibly gzipped FASTX file\n\nTool homepage:
   https://github.com/wwood/smafa"

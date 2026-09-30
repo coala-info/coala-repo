@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: radtk_cat
+baseCommand:
+  - radtk
+  - cat
 label: radtk_cat
 doc: "concatenate the records in a sequence of RAD files\n\nTool homepage: https://github.com/COMBINE-lab/radtk"
 inputs:
@@ -12,7 +14,7 @@ inputs:
       prefix: --inputs
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output RAD file
     inputBinding:
       position: 102
       prefix: --output

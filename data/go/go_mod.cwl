@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go mod
+baseCommand:
+  - go
+  - mod
 label: go_mod
 doc: "Provides access to operations on modules.\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

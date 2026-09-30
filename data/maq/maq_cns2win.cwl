@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq cns2win
+baseCommand:
+  - maq
+  - cns2win
 label: maq_cns2win
 doc: "Convert consensus sequences to windowed format.\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:

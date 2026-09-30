@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadbit map
+baseCommand:
+  - tadbit
+  - map
 label: tadbit_map
 doc: "Map Hi-C reads and organize results in an output working directory\n\nTool homepage:
   http://sgt.cnag.cat/3dg/tadbit/"
@@ -189,7 +191,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to a temporary directory (default next to "workdir" directory)
     inputBinding:
       position: 101
@@ -218,7 +220,7 @@ inputs:
       position: 101
       prefix: --windows
   - id: workdir
-    type: Directory
+    type: string
     doc: path to an output folder.
     inputBinding:
       position: 101

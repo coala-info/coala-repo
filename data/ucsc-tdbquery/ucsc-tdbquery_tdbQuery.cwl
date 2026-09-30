@@ -25,7 +25,8 @@ inputs:
     doc: Complain if longLabels are over N characters
     inputBinding:
       position: 102
-      prefix: -longLabelLength
+      prefix: -longLabelLength=
+      separate: false
   - id: no_blank
     type:
       - 'null'
@@ -57,7 +58,8 @@ inputs:
     doc: Include trackDb entries with this release tag only.
     inputBinding:
       position: 102
-      prefix: -release
+      prefix: -release=
+      separate: false
   - id: root_dir
     type:
       - 'null'
@@ -65,7 +67,8 @@ inputs:
     doc: Sets the root directory of the trackDb.ra directory hierarchy
     inputBinding:
       position: 102
-      prefix: -root
+      prefix: -root=
+      separate: false
   - id: short_label_length
     type:
       - 'null'
@@ -73,7 +76,8 @@ inputs:
     doc: Complain if shortLabels are over N characters
     inputBinding:
       position: 102
-      prefix: -shortLabelLength
+      prefix: -shortLabelLength=
+      separate: false
   - id: strict
     type:
       - 'null'

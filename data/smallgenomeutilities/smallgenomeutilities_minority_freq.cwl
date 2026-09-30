@@ -39,11 +39,11 @@ inputs:
       prefix: -c
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Either a fasta file containing a reference sequence or the reference 
       name of the region/chromosome of interest. The latter is expected if a 
       region is specified
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference
@@ -88,11 +88,11 @@ inputs:
       position: 102
       prefix: -d
   - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+    type: string?
+    doc: 'Output directory (default: /)'
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pybda_sample
+baseCommand:
+  - pybda
+  - sample
 label: pybda_sample
 doc: "Subsample a data set down to a specified fraction from a CONFIG in a SPARK session.\n\
   \nTool homepage: https://github.com/cbg-ethz/pybda"

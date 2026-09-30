@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2 occflt
+baseCommand:
+  - fermi2
+  - occflt
 label: fermi2_occflt
 doc: "Filter reads based on occurrence count.\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

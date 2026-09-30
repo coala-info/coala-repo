@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaeuk easy-predict
+baseCommand:
+  - metaeuk
+  - easy-predict
 label: metaeuk_easy-predict
 doc: "Combines the following MetaEuk modules into a single step: predictexons, reduceredundancy
   and unitesetstofasta\n\nTool homepage: https://github.com/soedinglab/metaeuk"
@@ -16,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 3

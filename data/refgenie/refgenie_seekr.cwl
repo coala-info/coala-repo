@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie seekr
+baseCommand:
+  - refgenie
+  - seekr
 label: refgenie_seekr
 doc: "Get the path to a remote asset.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

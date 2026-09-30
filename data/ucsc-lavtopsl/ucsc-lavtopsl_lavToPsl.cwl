@@ -25,7 +25,8 @@ inputs:
       matched by a score line.
     inputBinding:
       position: 102
-      prefix: -scoreFile
+      prefix: -scoreFile=
+      separate: false
   - id: target_strand
     type:
       - 'null'
@@ -33,7 +34,8 @@ inputs:
     doc: set the target strand to c (default is no strand)
     inputBinding:
       position: 102
-      prefix: -target-strand
+      prefix: -target-strand=
+      separate: false
 outputs:
   - id: output_psl
     type: File

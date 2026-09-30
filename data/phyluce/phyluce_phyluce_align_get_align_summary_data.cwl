@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyluce_phyluce_align_get_align_summary_data
+baseCommand: phyluce_align_get_align_summary_data
 label: phyluce_phyluce_align_get_align_summary_data
 doc: "Compute summary statistics for alignments in parallel\n\nTool homepage: https://github.com/faircloth-lab/phyluce"
 inputs:
@@ -52,8 +52,7 @@ inputs:
       position: 101
       prefix: --verbosity
   - id: output_stats_path
-    type: string
-    doc: Output or path parameter `output_stats_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output-stats

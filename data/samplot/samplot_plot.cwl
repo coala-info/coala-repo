@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samplot_plot
+baseCommand:
+  - samplot
+  - plot
 label: samplot_plot
 doc: "Plot BAM/CRAM files\n\nTool homepage: https://github.com/ryanlayer/samplot"
 inputs:
@@ -208,7 +210,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Output directory name. Defaults to working dir.\n                      \
       \  Ignored if --output_file is set"
     inputBinding:
@@ -243,9 +245,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference file for CRAM, required if CRAM files used
     secondaryFiles:
       - .fai
-    doc: Reference file for CRAM, required if CRAM files used
     inputBinding:
       position: 101
       prefix: --reference
@@ -363,10 +365,9 @@ inputs:
       prefix: --zoom
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: output_file
     type:

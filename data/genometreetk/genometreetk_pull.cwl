@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk_pull
+baseCommand:
+  - genometreetk
+  - pull
 label: genometreetk_pull
 doc: "Create taxonomy file from a decorated tree.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: decorated tree
     inputBinding:
       position: 1
+  - id: output_taxonomy
+    type: string
+    doc: output taxonomy file
+    inputBinding:
+      position: 2
   - id: no_validation
     type:
       - 'null'
@@ -26,11 +33,11 @@ inputs:
       position: 102
       prefix: --silent
 outputs:
-  - id: output_taxonomy
+  - id: out_output_taxonomy
     type: File
     doc: output taxonomy file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_taxonomy)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

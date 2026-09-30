@@ -40,14 +40,13 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory
     inputBinding:
       position: 101
       prefix: --tmpdir
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

@@ -7,7 +7,7 @@ inputs:
   - id: barcode_file
     type:
       - 'null'
-      - string
+      - File
     doc: path to the barcode file
     inputBinding:
       position: 101
@@ -15,7 +15,7 @@ inputs:
   - id: barcode_translate
     type:
       - 'null'
-      - string
+      - File
     doc: path to the barcode translation file.
     inputBinding:
       position: 101
@@ -23,7 +23,7 @@ inputs:
   - id: barcode_whitelist
     type:
       - 'null'
-      - string
+      - File
     doc: path to the barcode whitelist file.
     inputBinding:
       position: 101
@@ -144,7 +144,7 @@ inputs:
   - id: umi_file
     type:
       - 'null'
-      - string
+      - File
     doc: path to the UMI file
     inputBinding:
       position: 101

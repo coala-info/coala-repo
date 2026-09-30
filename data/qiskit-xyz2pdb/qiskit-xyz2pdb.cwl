@@ -29,7 +29,7 @@ inputs:
   - id: out_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output folder
     inputBinding:
       position: 101

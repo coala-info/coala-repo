@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_qualdist
+baseCommand:
+  - poretools
+  - qualdist
 label: poretools_qualdist
 doc: "Calculate and plot quality score distribution for Nanopore sequencing data.\n\
   \nTool homepage: https://github.com/arq5x/poretools"

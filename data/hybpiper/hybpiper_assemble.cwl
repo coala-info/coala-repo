@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybpiper assemble
+baseCommand:
+  - hybpiper
+  - assemble
 label: hybpiper_assemble
 doc: "HybPiper is a pipeline for assembling target-capture data.\n\nTool homepage:
   https://github.com/mossmatters/HybPiper"
@@ -286,7 +288,7 @@ inputs:
   - id: hybpiper_output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder for HybPiper output. Default is None.
     inputBinding:
       position: 101

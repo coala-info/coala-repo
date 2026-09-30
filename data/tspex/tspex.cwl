@@ -10,13 +10,18 @@ inputs:
     doc: Expression matrix file in the TSV, CSV or Excel formats.
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Output TSV file containing tissue-specificity values.
+    inputBinding:
+      position: 2
   - id: method
     type: string
     doc: 'Tissue-specificity metric. Allowed values are: "counts", "tau", "gini",
       "simpson", "shannon_specificity", "roku_specificity", "tsi", "zscore", "spm",
       "spm_dpm", "js_specificity", "js_specificity_dpm".'
     inputBinding:
-      position: 2
+      position: 3
   - id: disable_transformation
     type:
       - 'null'
@@ -46,11 +51,11 @@ inputs:
       position: 103
       prefix: --threshold
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: Output TSV file containing tissue-specificity values.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tspex:0.6.3--pyhdfd78af_0

@@ -9,7 +9,7 @@ doc: HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq
   open chromatin regions.
 inputs:
   - id: barcodes
-    type: File
+    type: File?
     doc: A plain text file containing the barcodes for the fragment file while 
       the format is 'FRAG'.
     inputBinding:
@@ -153,7 +153,7 @@ inputs:
       position: 101
       prefix: --minlen
   - id: model
-    type: File
+    type: File?
     doc: A JSON file generated from previous HMMRATAC run to use instead of 
       creating new one.
     inputBinding:
@@ -185,7 +185,7 @@ inputs:
       position: 101
       prefix: --no-fragem
   - id: outdir
-    type: string
+    type: string?
     doc: If specified all output files will be written to that directory.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi paths
+baseCommand:
+  - odgi
+  - paths
 label: odgi_paths
 doc: "Interrogate the embedded paths of a graph. Does not print anything to stdout
   by default!\n\nTool homepage: https://github.com/vgteam/odgi"
@@ -194,7 +196,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the dynamic succinct variation
     inputBinding:
       position: 102
       prefix: --out

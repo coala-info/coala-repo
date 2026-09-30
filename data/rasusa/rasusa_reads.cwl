@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rasusa_reads
+baseCommand:
+  - rasusa
+  - reads
 label: rasusa_reads
 doc: "Randomly subsample reads\n\nTool homepage: https://github.com/mbhall88/rasusa"
 inputs:

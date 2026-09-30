@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory for the index
     inputBinding:
       position: 2

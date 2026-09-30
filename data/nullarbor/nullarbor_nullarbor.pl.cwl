@@ -143,7 +143,7 @@ inputs:
       position: 101
       prefix: --no-prefill
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output folder
     inputBinding:
       position: 101

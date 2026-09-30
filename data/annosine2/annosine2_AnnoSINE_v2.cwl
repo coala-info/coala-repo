@@ -17,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_filename
-    type: Directory
+    type: string
     doc: output files path
     inputBinding:
       position: 3
@@ -150,7 +150,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The temp dir used by paf2blast6 script. If not set, will use /tmp 
       folder automatically.
     inputBinding:

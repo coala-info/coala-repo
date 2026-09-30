@@ -136,7 +136,7 @@ inputs:
       prefix: --window-mb
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: File containing the chunks for phasing and
     inputBinding:
       position: 102
       prefix: --output

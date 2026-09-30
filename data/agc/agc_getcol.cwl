@@ -62,10 +62,10 @@ inputs:
       prefix: -r
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: '- output to files at path (default: output is sent to stdout)'
     inputBinding:
       position: 103
-      prefix: --output-path
+      prefix: -o
 outputs:
   - id: output_path
     type:

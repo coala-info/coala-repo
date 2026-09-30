@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clipcontext g2t
+baseCommand:
+  - clipcontext
+  - g2t
 label: clipcontext_g2t
 doc: "Map genomic regions to transcripts and extract context sequences.\n\nTool homepage:
   https://github.com/BackofenLab/CLIPcontext"
@@ -136,10 +138,10 @@ inputs:
       prefix: --tr
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: str             Output results folder
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --out
 outputs:
   - id: output_folder
     type: Directory

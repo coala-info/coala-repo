@@ -72,18 +72,14 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_matrix_path`
     inputBinding:
       position: 102
-      prefix: --output-matrix
+      prefix: --output_matrix
   - id: output_tree_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_tree_path`
+    type: string
     inputBinding:
       position: 103
-      prefix: --output-tree
+      prefix: --output_tree
 outputs:
   - id: output_matrix
     type:

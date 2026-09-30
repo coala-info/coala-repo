@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw_plot_motif_with_stats
+baseCommand:
+  - nanoraw
+  - plot_motif_with_stats
 label: nanoraw_plot_motif_with_stats
 doc: "Plot motif statistics\n\nTool homepage: https://github.com/marcus1487/nanoraw"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: fast5_basedirs2
     type:
       type: array
@@ -18,6 +21,7 @@ inputs:
     doc: Second set of directories containing fast5 files to compare.
     inputBinding:
       position: 2
+      prefix: --fast5-basedirs2
   - id: motif
     type: string
     doc: A motif to plot the most significant regions genomic regions as well as
@@ -25,6 +29,7 @@ inputs:
       single letter codes.
     inputBinding:
       position: 3
+      prefix: --motif
   - id: basecall_subgroups
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hifihla call-consensus
+baseCommand:
+  - hifihla
+  - call-consensus
 label: hifihla_call-consensus
 doc: "Call HLA Star (*) alleles from consensus sequences\n\nTool homepage: https://github.com/PacificBiosciences/hifihla"
 inputs:
@@ -62,7 +64,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory [deprecated]
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextstrain check-setup
+baseCommand:
+  - nextstrain
+  - check-setup
 label: nextstrain_check-setup
 doc: "Checks your local setup to see if you have a supported build environment.\n\n\
   Tool homepage: https://nextstrain.org"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cyrcular plot
+baseCommand:
+  - cyrcular
+  - plot
 label: cyrcular_plot
 doc: "Generates a circular plot from BAM data.\n\nTool homepage: https://github.com/tedil/cyrcular"
 inputs:
@@ -43,8 +45,7 @@ inputs:
       position: 102
       prefix: --threads
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --output

@@ -40,8 +40,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: gtf_out_path
-    type: string
-    doc: Output or path parameter `gtf_out_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --gtf-out

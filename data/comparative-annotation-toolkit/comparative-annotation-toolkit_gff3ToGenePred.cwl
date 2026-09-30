@@ -36,7 +36,8 @@ inputs:
       column
     inputBinding:
       position: 102
-      prefix: -geneNameAttr
+      prefix: -geneNameAttr=
+      separate: false
   - id: honor_start_stop_codons
     type:
       - 'null'
@@ -54,7 +55,8 @@ inputs:
       will allow an unlimited number of errors.
     inputBinding:
       position: 102
-      prefix: -maxConvertErrors
+      prefix: -maxConvertErrors=
+      separate: false
   - id: max_parse_errors
     type:
       - 'null'
@@ -63,7 +65,8 @@ inputs:
       allow an unlimited number of errors.
     inputBinding:
       position: 102
-      prefix: -maxParseErrors
+      prefix: -maxParseErrors=
+      separate: false
   - id: process_all_gene_children
     type:
       - 'null'
@@ -90,7 +93,8 @@ inputs:
       column
     inputBinding:
       position: 102
-      prefix: -rnaNameAttr
+      prefix: -rnaNameAttr=
+      separate: false
   - id: use_name
     type:
       - 'null'
@@ -111,26 +115,31 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `attrs_out_path`
+    doc: =file - output attributes of mRNA record to file.  These are 
+      per-genePred row,
     inputBinding:
       position: 103
-      prefix: --attrs-out
+      prefix: -attrsOut=
+      separate: false
   - id: bad_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bad_path`
+    doc: =file   - output genepreds that fail checks to file
     inputBinding:
       position: 104
-      prefix: --bad
+      prefix: -bad=
+      separate: false
   - id: unprocessed_roots_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unprocessed_roots_out_path`
+    doc: =file - output GFF3 root records that were not used.  This will not be 
+      a
     inputBinding:
       position: 105
-      prefix: --unprocessed-roots-out
+      prefix: -unprocessedRootsOut=
+      separate: false
 outputs:
   - id: output_gp
     type: File

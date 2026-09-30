@@ -72,10 +72,10 @@ inputs:
       prefix: --sigfile
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: File path to write to. If omitted will write to stdout.
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

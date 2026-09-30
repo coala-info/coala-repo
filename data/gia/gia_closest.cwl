@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia closest
+baseCommand:
+  - gia
+  - closest
 label: gia_closest
 doc: "Finds the closest interval in a secondary BED file for all intervals in a primary
   BED file\n\nTool homepage: https://github.com/noamteyssier/gia"
@@ -76,10 +78,10 @@ inputs:
       prefix: --upstream
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -81,30 +81,34 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshhold_file
-  - id: enrichment_failure_reason_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `enrichment_failure_reason_path`
-    inputBinding:
-      position: 102
-      prefix: --enrichment-failure-reason
-  - id: logfile_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `logfile_path`
-    inputBinding:
-      position: 103
-      prefix: --logfile
   - id: output_directory_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: Directory name to which output files will be written. An output file 
+      will be generated for each sample with at least one enriched peptide. This
+      directory will be created by the module.
     inputBinding:
       position: 104
-      prefix: --output-directory
+      prefix: --output
+  - id: enrichment_failure_reason_path
+    type:
+      - 'null'
+      - string
+    doc: 'For each sample set that does not result in the generation of an enriched
+      peptide file, a row of two tab-delimited columns is provided: the first column
+      contains the replicate names (comma-delimited) and the second column provides
+      the reason why the sample did not result in an enriched peptide file.'
+    inputBinding:
+      position: 105
+      prefix: --enrichment_failure_reason
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --logfile
 outputs:
   - id: enrichment_failure_reason
     type:

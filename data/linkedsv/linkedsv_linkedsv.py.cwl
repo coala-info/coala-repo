@@ -86,7 +86,7 @@ inputs:
       position: 101
       prefix: --n_thread
   - id: output_directory
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101

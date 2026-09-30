@@ -15,7 +15,7 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: path to output file, format and compression of input is preserved
     inputBinding:
       position: 102
       prefix: --output

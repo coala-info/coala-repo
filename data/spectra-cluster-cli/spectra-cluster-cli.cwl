@@ -15,7 +15,7 @@ inputs:
   - id: binary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory used to store intermediate binary files
     inputBinding:
       position: 102

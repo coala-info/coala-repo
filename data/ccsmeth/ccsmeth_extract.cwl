@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth_extract
+baseCommand:
+  - ccsmeth
+  - extract
 label: ccsmeth_extract
 doc: "extract features from hifi reads.\n\nTool homepage: https://github.com/PengNi/ccsmeth"
 inputs:
@@ -171,8 +173,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

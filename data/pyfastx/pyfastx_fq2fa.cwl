@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastx fq2fa
+baseCommand:
+  - pyfastx
+  - fq2fa
 label: pyfastx_fq2fa
 doc: "Converts FASTQ to FASTA format.\n\nTool homepage: https://github.com/lmdu/pyfastx"
 inputs:
@@ -10,11 +12,11 @@ inputs:
     inputBinding:
       position: 1
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: 'str, --out-file str output file, default: output to stdout'
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

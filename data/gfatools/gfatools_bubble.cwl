@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfatools bubble
+baseCommand:
+  - gfatools
+  - bubble
 label: gfatools_bubble
 doc: "Extract bubbles from a GFA graph.\n\nTool homepage: https://github.com/lh3/gfatools"
 inputs:

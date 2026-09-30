@@ -62,7 +62,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 102
       prefix: --logfile
@@ -70,7 +69,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Name for the output score matrix file. The output will be in the form 
+      of the input, but with only the specified values (samplenames or peptides)
+      found in the namelists.
     inputBinding:
       position: 103
       prefix: --output

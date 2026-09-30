@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadrep characterize
+baseCommand:
+  - tadrep
+  - characterize
 label: tadrep_characterize
 doc: "Import json file from a given database path into working directory\n\nTool homepage:
   https://github.com/oschwengers/tadrep"

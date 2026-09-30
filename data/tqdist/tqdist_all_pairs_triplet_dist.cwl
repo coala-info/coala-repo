@@ -11,6 +11,12 @@ inputs:
       should be on a separate line, with identical leaf labels across all trees.
     inputBinding:
       position: 1
+  - id: filename
+    type: string
+    doc: The file to which the output is written. If not specified, output is 
+      written to stdout.
+    inputBinding:
+      position: 2
 outputs:
   - id: output_filename
     type:
@@ -19,7 +25,7 @@ outputs:
     doc: The file to which the output is written. If not specified, output is 
       written to stdout.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.filename)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1

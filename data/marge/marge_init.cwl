@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: marge init
+baseCommand:
+  - marge
+  - init
 label: marge_init
 doc: "MARGE is a free software to predict key regulated genes and cis-regulatory regions
   in human or mouse.\n\nTool homepage: http://cistrome.org/MARGE"

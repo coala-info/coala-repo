@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: salmon_index
+baseCommand:
+  - salmon
+  - index
 label: salmon_index
 doc: "Creates a salmon index.\n\nTool homepage: https://github.com/COMBINE-lab/salmon"
 inputs:
@@ -110,7 +112,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory location that will be used for TwoPaCo temporary files; 
       it will be created if need be and be removed prior to indexing completion.
       The default value will cause a (temporary) subdirectory of the salmon 

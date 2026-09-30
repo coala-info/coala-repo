@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mavis_pairing
+baseCommand:
+  - mavis
+  - pairing
 label: mavis_pairing
 doc: "Mavis pairing tool\n\nTool homepage: https://github.com/bcgsc/mavis.git"
 inputs:

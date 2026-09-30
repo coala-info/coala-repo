@@ -52,14 +52,14 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files
     inputBinding:
       position: 101
       prefix: --tmp
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: FILE     Output FASTA file with dereplicated vOTUs        │
     inputBinding:
       position: 102
       prefix: --output

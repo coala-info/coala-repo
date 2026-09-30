@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp_purity
+baseCommand:
+  - treesapp
+  - purity
 label: treesapp_purity
 doc: "Validate the functional purity of a reference package.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:
@@ -65,7 +67,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to an output directory
     inputBinding:
       position: 103

@@ -46,11 +46,11 @@ inputs:
       position: 101
       prefix: --type
   - id: out_dir_path
-    type: string
-    doc: Output or path parameter `out_dir_path`
+    type: string?
+    doc: 'output file dir default: ../data/test_input/'
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type:

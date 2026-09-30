@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locidex build
+baseCommand:
+  - locidex
+  - build
 label: locidex_build
 doc: "Build a locidex database\n\nTool homepage: https://pypi.org/project/locidex/"
 inputs:

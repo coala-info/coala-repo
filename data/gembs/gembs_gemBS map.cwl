@@ -178,7 +178,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary folder to perform sorting operations.
     inputBinding:
       position: 101

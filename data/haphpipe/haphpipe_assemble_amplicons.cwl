@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe assemble_amplicons
+baseCommand:
+  - haphpipe
+  - assemble_amplicons
 label: haphpipe_assemble_amplicons
 doc: "Assemble amplicons using HAPHPipe.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -45,7 +47,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

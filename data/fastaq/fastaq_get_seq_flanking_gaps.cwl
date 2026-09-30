@@ -11,6 +11,11 @@ inputs:
     doc: Name of input file
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output file
+    inputBinding:
+      position: 2
   - id: left
     type:
       - 'null'
@@ -28,11 +33,11 @@ inputs:
       position: 102
       prefix: --right
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

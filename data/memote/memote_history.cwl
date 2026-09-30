@@ -38,12 +38,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclusive
+          separate: true
     doc: The name of a test or test module to be run exclusively. All other 
       tests are skipped. This option can be used multiple times and takes 
       precedence over '--skip'.
     inputBinding:
       position: 104
-      prefix: --exclusive
   - id: location
     type:
       - 'null'
@@ -83,11 +85,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --skip
+          separate: true
     doc: The name of a test or test module to be skipped. This option can be 
       used multiple times.
     inputBinding:
       position: 104
-      prefix: --skip
   - id: solver
     type:
       - 'null'

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikseq_writeBloom.pl
+baseCommand: writeBloom.pl
 label: unikseq_writeBloom.pl
 doc: "Writes a bloom filter from sequences.\n\nTool homepage: https://github.com/bcgsc/unikseq"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_reverse
+baseCommand:
+  - mmft
+  - reverse
 label: mmft_reverse
 doc: "Reverse complement each record in an input fasta\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

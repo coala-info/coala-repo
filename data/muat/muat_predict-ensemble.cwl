@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: muat_predict-ensemble
+baseCommand:
+  - muat
+  - predict-ensemble
 label: muat_predict-ensemble
 doc: "Predicts variants using an ensemble of models.\n\nTool homepage: https://github.com/primasanjaya/muat"
 inputs:

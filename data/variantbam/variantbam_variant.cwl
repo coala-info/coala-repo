@@ -180,9 +180,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Path to reference. Required for reading/writing CRAM
     secondaryFiles:
       - .fai
-    doc: Path to reference. Required for reading/writing CRAM
     inputBinding:
       position: 102
       prefix: --reference
@@ -248,10 +248,10 @@ inputs:
       prefix: --write-trimmed
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file to write to (BAM/SAM/CRAM) file instead of stdout
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

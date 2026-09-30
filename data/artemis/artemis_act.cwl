@@ -27,7 +27,8 @@ inputs:
     doc: For sequence 'X' open one or more BAM, CRAM, VCF, or BCF files
     inputBinding:
       position: 104
-      prefix: -DbamX
+      prefix: -DbamX=
+      separate: false
   - id: black_belt_mode
     type:
       - 'null'
@@ -35,7 +36,8 @@ inputs:
     doc: Keep warning messages to a minimum
     inputBinding:
       position: 104
-      prefix: -Dblack_belt_mode
+      prefix: -Dblack_belt_mode=
+      separate: false
   - id: chado
     type:
       - 'null'
@@ -52,7 +54,8 @@ inputs:
     doc: Get ACT to open this CHADO database
     inputBinding:
       position: 104
-      prefix: -Dchado
+      prefix: -Dchado=
+      separate: false
   - id: loguserplot_x
     type:
       - 'null'
@@ -61,7 +64,8 @@ inputs:
     doc: For sequence 'X' open one or more userplots, take log(data)
     inputBinding:
       position: 104
-      prefix: -DloguserplotX
+      prefix: -DloguserplotX=
+      separate: false
   - id: options_file
     type:
       - 'null'
@@ -86,7 +90,8 @@ inputs:
     doc: For sequence 'X' open one or more userplots
     inputBinding:
       position: 104
-      prefix: -DuserplotX
+      prefix: -DuserplotX=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

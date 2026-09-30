@@ -128,8 +128,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: outdir_path
-    type: string
-    doc: Output or path parameter `outdir_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --outdir

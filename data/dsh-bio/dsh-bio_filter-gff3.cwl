@@ -46,7 +46,7 @@ inputs:
       prefix: --script
   - id: output_gff3_file_path
     type: string
-    doc: Output or path parameter `output_gff3_file_path`
+    doc: output GFF3 file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-gff3-file

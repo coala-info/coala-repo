@@ -114,10 +114,10 @@ inputs:
       prefix: --verbose
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: '[FILENAME], --output [FILENAME] Compressed/decompressed output filename.'
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdbtk identify
+baseCommand:
+  - gtdbtk
+  - identify
 label: gtdbtk_identify
 doc: "Identify GTDB-Tk classifications for genomes.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
@@ -70,7 +72,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify alternative directory for temporary files
     inputBinding:
       position: 101

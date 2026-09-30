@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnftools merge
+baseCommand:
+  - rnftools
+  - merge
 label: rnftools_merge
 doc: "todo\n\nTool homepage: http://karel-brinda.github.io/rnftools"
 inputs:
@@ -21,16 +23,18 @@ inputs:
       prefix: -m
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: out            output prefix
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: output prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

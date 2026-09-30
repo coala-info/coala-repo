@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_to_fasta
+baseCommand:
+  - fastaq
+  - to_fasta
 label: fastaq_to_fasta
 doc: "Converts a variety of input formats to nicely formatted FASTA format\n\nTool
   homepage: https://github.com/sanger-pathogens/Fastaq"
@@ -10,6 +12,11 @@ inputs:
     doc: Name of input file. Can be any of FASTA, FASTQ, GFF3, EMBL, GBK, Phylip
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output file
+    inputBinding:
+      position: 2
   - id: check_unique
     type:
       - 'null'
@@ -36,11 +43,11 @@ inputs:
       position: 102
       prefix: --strip_after_whitespace
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

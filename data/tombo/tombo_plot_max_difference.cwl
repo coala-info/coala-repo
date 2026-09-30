@@ -87,7 +87,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pdf_filename_path`
     inputBinding:
       position: 102
       prefix: --pdf-filename
@@ -95,7 +94,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sequences_filename_path`
     inputBinding:
       position: 103
       prefix: --sequences-filename

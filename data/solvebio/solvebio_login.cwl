@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio login
+baseCommand:
+  - solvebio
+  - login
 label: solvebio_login
 doc: "Log in to SolveBio\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

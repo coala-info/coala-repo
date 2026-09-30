@@ -145,6 +145,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --out
+      itemSeparator: ','
   - id: out_mode
     type:
       - 'null'

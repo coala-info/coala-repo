@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igda-script_split_range
+baseCommand: split_range
 label: igda-script_split_range
 doc: "Splits a range into segments.\n\nTool homepage: https://github.com/zhixingfeng/shell"
 inputs:

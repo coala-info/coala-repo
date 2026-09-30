@@ -95,7 +95,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where the temporary working repository will be created. This 
       directory will be deleted after JAMM is done
     inputBinding:

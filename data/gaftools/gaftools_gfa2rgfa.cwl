@@ -44,11 +44,12 @@ inputs:
       position: 102
       prefix: --seqfile
   - id: output_rgfa_path
-    type: string
-    doc: Output or path parameter `output_rgfa_path`
+    type: string?
+    doc: rGFA         Output rGFA (bgzipped if the file ends with .gz). If 
+      omitted, use standard output.
     inputBinding:
       position: 103
-      prefix: --output-rgfa
+      prefix: --output
 outputs:
   - id: output_rgfa
     type:

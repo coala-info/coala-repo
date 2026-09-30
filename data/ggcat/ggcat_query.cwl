@@ -122,7 +122,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files
     inputBinding:
       position: 103

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grenedalf diversity
+baseCommand:
+  - grenedalf
+  - diversity
 label: grenedalf_diversity
 doc: "Compute pool-sequencing corrected diversity measures Theta Pi, Theta Watterson,
   and Tajima's D.\n\nTool homepage: https://github.com/lczech/grenedalf"
@@ -700,7 +702,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write files to
     inputBinding:
       position: 101

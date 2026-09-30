@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini stats
+baseCommand:
+  - oncogemini
+  - stats
 label: oncogemini_stats
 doc: "Report statistics from the database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

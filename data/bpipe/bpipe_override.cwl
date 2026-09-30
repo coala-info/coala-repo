@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bpipe override
+baseCommand:
+  - bpipe
+  - override
 label: bpipe_override
 doc: "Override specified check to force it to pass\n\nTool homepage: http://docs.bpipe.org/"
 inputs:

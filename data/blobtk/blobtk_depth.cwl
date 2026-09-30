@@ -48,10 +48,10 @@ inputs:
       prefix: --list
   - id: output_bed_file_path
     type: string
-    doc: Output or path parameter `output_bed_file_path`
+    doc: Output bed file name
     inputBinding:
       position: 102
-      prefix: --output-bed-file
+      prefix: --bed
 outputs:
   - id: output_bed_file
     type:

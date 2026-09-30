@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go install
+baseCommand:
+  - go
+  - install
 label: go_install
 doc: "Install packages and dependencies\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

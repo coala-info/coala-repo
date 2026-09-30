@@ -211,11 +211,11 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Either a file in the reference directory where the fasta file for the 
       database is located, or a directory containing multiple fasta files that 
       constitute the database.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --ref_fasta
@@ -251,7 +251,7 @@ inputs:
   - id: scratch
     type:
       - 'null'
-      - Directory
+      - string
     doc: The scratch location to store intermediate files.
     inputBinding:
       position: 102
@@ -299,10 +299,9 @@ inputs:
       prefix: --use_salmon_counts
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type:

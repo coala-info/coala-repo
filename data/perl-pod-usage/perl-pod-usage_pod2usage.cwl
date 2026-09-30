@@ -59,10 +59,12 @@ inputs:
       prefix: -verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: outfile The output file to print to. If the special names "-" or ">&1" 
+      or ">&STDOUT" are used then standard output is used. If ">&2" or 
+      ">&STDERR" is used then standard error is used.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: output_file
     type:

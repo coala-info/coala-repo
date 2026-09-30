@@ -31,7 +31,6 @@ inputs:
       prefix: --row-group-size
   - id: output_feature_file_path
     type: string
-    doc: Output or path parameter `output_feature_file_path`
     inputBinding:
       position: 102
       prefix: --output-feature-file

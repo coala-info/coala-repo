@@ -49,7 +49,7 @@ inputs:
   - id: logscale
     type:
       - 'null'
-      - boolean
+      - string
     doc: Flag that decides if a logarithmic scale should be used for the 
       hyperparameter grid. If set, a log base can be set with --logbase.
     inputBinding:
@@ -166,7 +166,6 @@ inputs:
       prefix: --structure
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile

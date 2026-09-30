@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools_KaKs
+baseCommand:
+  - cpstools
+  - KaKs
 label: cpstools_KaKs
 doc: "KaKs calculator\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mitoz_findmitoscaf
+baseCommand:
+  - mitoz
+  - findmitoscaf
 label: mitoz_findmitoscaf
 doc: "Search for mitochondrial sequences from input fasta file.\n\nTool homepage:
   https://github.com/linzhi2013/MitoZ"

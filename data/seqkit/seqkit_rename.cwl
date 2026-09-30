@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_rename
+baseCommand:
+  - seqkit
+  - rename
 label: seqkit_rename
 doc: "Rename duplicated IDs\n\nTool homepage: https://github.com/shenwei356/seqkit"
 inputs:
@@ -12,6 +14,7 @@ inputs:
       seqkit guesses the sequence type (0 for whole seq)
     inputBinding:
       position: 101
+      prefix: --alphabet-guess-seq-length
   - id: by_name
     type:
       - 'null'
@@ -28,6 +31,7 @@ inputs:
       the range and default value for each format
     inputBinding:
       position: 101
+      prefix: --compress-level
   - id: force
     type:
       - 'null'
@@ -43,6 +47,7 @@ inputs:
     doc: FASTA head is NCBI-style, e.g. >gi|110645304|ref|NC_002516.2| Pseud...
     inputBinding:
       position: 101
+      prefix: --id-ncbi
   - id: id_regexp
     type:
       - 'null'
@@ -50,6 +55,7 @@ inputs:
     doc: regular expression for parsing ID
     inputBinding:
       position: 101
+      prefix: --id-regexp
   - id: infile_list
     type:
       - 'null'
@@ -79,7 +85,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101
@@ -91,6 +97,7 @@ inputs:
     doc: be quiet and do not show extra information
     inputBinding:
       position: 101
+      prefix: --quiet
   - id: rename_1st_rec
     type:
       - 'null'
@@ -124,6 +131,7 @@ inputs:
       files do exist
     inputBinding:
       position: 101
+      prefix: --skip-file-check
   - id: start_num
     type:
       - 'null'
@@ -143,7 +151,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

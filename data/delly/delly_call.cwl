@@ -146,15 +146,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dump_sv_reads_file_path`
+    doc: gzipped output file for SV-reads
     inputBinding:
       position: 105
-      prefix: --dump-sv-reads-file
+      prefix: --dump
   - id: outfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
+    doc: BCF output file
     inputBinding:
       position: 106
       prefix: --outfile

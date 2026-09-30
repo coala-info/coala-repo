@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_caf_to_fastq
+baseCommand:
+  - fastaq
+  - caf_to_fastq
 label: fastaq_caf_to_fastq
 doc: "Converts CAF file to FASTQ format\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Name of input CAF file.
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output FASTQ file
+    inputBinding:
+      position: 2
   - id: clip
     type:
       - 'null'
@@ -27,11 +34,11 @@ inputs:
       position: 102
       prefix: --min_length
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output FASTQ file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

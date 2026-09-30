@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srahunter metadata
+baseCommand:
+  - srahunter
+  - metadata
 label: srahunter_metadata
 doc: "Accession list from SRA (file path)\n\nTool homepage: https://github.com/GitEnricoNeko/srahunter"
 inputs:

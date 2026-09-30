@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer sort
+baseCommand:
+  - unikmer
+  - sort
 label: unikmer_sort
 doc: "Sort k-mers to reduce the file size and accelerate downstream analysis\n\nTool
   homepage: https://github.com/shenwei356/unikmer"

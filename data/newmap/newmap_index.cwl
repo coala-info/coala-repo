@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: newmap_index
+baseCommand:
+  - newmap
+  - index
 label: newmap_index
 doc: "Create an index for a FASTA file.\n\nTool homepage: https://github.com/hoffmangroup/newmap"
 inputs:
@@ -28,11 +30,12 @@ inputs:
       position: 102
       prefix: --seed-length
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: " Filename of the index file to write. (default: fasta_file with the extension
+      changed to '.awfmi')"
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

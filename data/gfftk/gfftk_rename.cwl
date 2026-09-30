@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfftk_rename
+baseCommand:
+  - gfftk
+  - rename
 label: gfftk_rename
 doc: "rename gene models in GFF3 annotation file. Script will sort genes by contig
   and location and then rename using --locus-tag, ie PREFIX_000001.\n\nTool homepage:
@@ -34,7 +36,6 @@ inputs:
       prefix: --numbering
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

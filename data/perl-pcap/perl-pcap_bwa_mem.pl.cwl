@@ -98,9 +98,9 @@ inputs:
       prefix: -process
   - id: reference
     type: File
+    doc: Path to reference genome file *.fa[.gz]
     secondaryFiles:
       - .fai
-    doc: Path to reference genome file *.fa[.gz]
     inputBinding:
       position: 102
       prefix: -reference
@@ -126,10 +126,10 @@ inputs:
       prefix: -threads
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: Folder to output result to.
     inputBinding:
       position: 103
-      prefix: --outdir
+      prefix: -outdir
 outputs:
   - id: outdir
     type: Directory

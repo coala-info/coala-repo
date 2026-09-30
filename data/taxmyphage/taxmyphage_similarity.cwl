@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmyphage similarity
+baseCommand:
+  - taxmyphage
+  - similarity
 label: taxmyphage_similarity
 doc: "Compares phage genomes and generates similarity reports.\n\nTool homepage: https://github.com/amillard/tax_myPHAGE"
 inputs:
@@ -68,7 +70,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output directory.
     inputBinding:
       position: 101

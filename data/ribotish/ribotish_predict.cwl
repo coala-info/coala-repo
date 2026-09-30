@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotish_predict
+baseCommand:
+  - ribotish
+  - predict
 label: ribotish_predict
 doc: "Predicts ORFs using riboseq data.\n\nTool homepage: https://github.com/zhpn1024/ribotish"
 inputs:

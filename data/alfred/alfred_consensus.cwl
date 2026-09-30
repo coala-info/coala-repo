@@ -127,7 +127,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignment_path`
+    doc: vertical/horizontal alignment
     inputBinding:
       position: 103
       prefix: --alignment
@@ -135,7 +135,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `consensus_path`
+    doc: consensus
     inputBinding:
       position: 104
       prefix: --consensus

@@ -182,7 +182,7 @@ inputs:
       prefix: --transcript
   - id: prefix_path
     type: string
-    doc: Output or path parameter `prefix_path`
+    doc: prefix of output files (sd).
     inputBinding:
       position: 102
       prefix: --prefix
@@ -190,10 +190,11 @@ outputs:
   - id: prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.prefix_path)
+      glob: $(inputs.prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

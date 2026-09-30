@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: traindir
-    type: Directory
+    type: string
     doc: Directory to save training artifacts
     inputBinding:
       position: 2
@@ -116,7 +116,7 @@ inputs:
   - id: observations
     type:
       - 'null'
-      - Directory
+      - string
     doc: DEPRECATED - temp files are now used and recommended. Previously would 
       use or create observations in DIR
     inputBinding:

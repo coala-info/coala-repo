@@ -38,7 +38,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 103
       prefix: --logfile
@@ -46,10 +45,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `result_dir_path`
     inputBinding:
       position: 104
-      prefix: --result-dir
+      prefix: --result_dir
 outputs:
   - id: logfile
     type:

@@ -14,7 +14,7 @@ inputs:
       position: 1
   - id: log_path
     type: string
-    doc: Output or path parameter `log_path`
+    doc: 'Log file path [default: segul.log]'
     inputBinding:
       position: 101
       prefix: --log

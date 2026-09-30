@@ -21,9 +21,9 @@ inputs:
       prefix: --quality
   - id: reference
     type: File
+    doc: reference fasta file (required)
     secondaryFiles:
       - .fai
-    doc: reference fasta file (required)
     inputBinding:
       position: 102
       prefix: --reference
@@ -37,10 +37,10 @@ inputs:
       prefix: --wsize
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' output file'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --outfile
 outputs:
   - id: output_file
     type:

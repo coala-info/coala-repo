@@ -107,7 +107,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for images. Not required by all workflows.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_printseq
+baseCommand:
+  - cdskit
+  - printseq
 label: cdskit_printseq
 doc: "Print sequences from a sequence file.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

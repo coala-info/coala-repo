@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr align_sequences
+baseCommand:
+  - secapr
+  - align_sequences
 label: secapr_align_sequences
 doc: "Create multiple sequence alignments from sequence collections\n\nTool homepage:
   https://github.com/AntonelliLab/seqcap_processor"
@@ -116,7 +118,7 @@ inputs:
       prefix: --window_size
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: The directory in which to store the resulting
     inputBinding:
       position: 102
       prefix: --outdir

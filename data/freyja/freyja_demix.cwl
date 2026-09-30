@@ -44,7 +44,7 @@ inputs:
   - id: barcodes
     type:
       - 'null'
-      - string
+      - File
     doc: Path to custom barcode file
     inputBinding:
       position: 103

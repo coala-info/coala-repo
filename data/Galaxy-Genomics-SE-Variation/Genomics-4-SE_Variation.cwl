@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'Analysis of variation within individual COVID-19 samples using Illumina Single End data. More info can be found at https://covid19.galaxyproject.org/genomics/'
 inputs:
   0_Input Dataset Collection:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft split
+baseCommand:
+  - mmft
+  - split
 label: mmft_split
 doc: "Split a fasta into multiple files based on record count.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:
@@ -21,7 +23,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for split files. Default is current working directory.
     inputBinding:
       position: 102

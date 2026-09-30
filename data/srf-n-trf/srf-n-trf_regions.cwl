@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srf-n-trf_regions
+baseCommand:
+  - srf-n-trf
+  - regions
 label: srf-n-trf_regions
 doc: "Generates regions based on TRF output, merging and filtering based on monomer
   composition and distance.\n\nTool homepage: https://github.com/koisland/srf-n-trf"
@@ -47,8 +49,9 @@ inputs:
       position: 101
       prefix: --sizes
   - id: outfile_path
-    type: string
-    doc: Output or path parameter `outfile_path`
+    type: string?
+    doc: "Output BED9 file with columns: `chrom, st, end, comma-delimited_monomers,
+      0, strand, st, end, '0,0,0'`"
     inputBinding:
       position: 102
       prefix: --outfile

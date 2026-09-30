@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: checkv_quality_summary
+baseCommand:
+  - checkv
+  - quality_summary
 label: checkv_quality_summary
 doc: "Summarize results across modules\n\nTool homepage: https://bitbucket.org/berkeleylab/checkv"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Input viral sequences in FASTA format
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 2
   - id: quiet
     type:
       - 'null'
@@ -26,11 +33,11 @@ inputs:
       position: 102
       prefix: --remove_tmp
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkv:1.0.3--pyhdfd78af_0

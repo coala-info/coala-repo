@@ -114,7 +114,7 @@ inputs:
   - id: temp_dir_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to where temporary directory containing all temp files are 
       created.
     inputBinding:
@@ -133,18 +133,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fetch_entire_job_store_path`
+    doc: ' Copy all job store files into a local directory. (default: None)'
     inputBinding:
       position: 103
-      prefix: --fetch-entire-job-store
+      prefix: --fetchEntireJobStore
   - id: log_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: 'File to log in. (default: None)'
     inputBinding:
       position: 104
-      prefix: --log-file
+      prefix: --logFile
 outputs:
   - id: fetch_entire_job_store
     type:

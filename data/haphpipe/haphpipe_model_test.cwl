@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe model_test
+baseCommand:
+  - haphpipe
+  - model_test
 label: haphpipe_model_test
 doc: "ModelTest-NG wrapper for HAPHpipe\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -80,7 +82,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -169,7 +171,7 @@ inputs:
       position: 101
       prefix: --utree
   - id: logfile_path
-    type: string
+    type: string?
     doc: Append console output to this file
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur_traits
+baseCommand:
+  - augur
+  - traits
 label: augur_traits
 doc: "Infer ancestral traits based on a tree.\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:
@@ -96,8 +98,7 @@ inputs:
       position: 101
       prefix: --weights
   - id: output_node_data_path
-    type: string
-    doc: Output or path parameter `output_node_data_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output-node-data

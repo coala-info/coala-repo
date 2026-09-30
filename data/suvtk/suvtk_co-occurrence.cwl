@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: suvtk_co-occurrence
+baseCommand:
+  - suvtk
+  - co-occurrence
 label: suvtk_co-occurrence
 doc: "Identify co-occurring sequences in an abundance table based on specified\n \
   \ thresholds.\n\n  This function reads an abundance table, filters contigs based

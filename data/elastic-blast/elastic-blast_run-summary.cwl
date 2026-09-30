@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: elastic-blast run-summary
+baseCommand:
+  - elastic-blast
+  - run-summary
 label: elastic-blast_run-summary
 doc: "Show a summary of the ElasticBLAST run.\n\nTool homepage: https://pypi.org/project/elastic-blast/"
 inputs:
@@ -86,7 +88,7 @@ inputs:
       prefix: --results
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Output file, default: stdout'
     inputBinding:
       position: 102
       prefix: --output

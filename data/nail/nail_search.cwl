@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nail search
+baseCommand:
+  - nail
+  - search
 label: nail_search
 doc: "Run nail's protein search pipeline\n\nTool homepage: https://github.com/TravisWheelerLab/nail"
 inputs:
@@ -179,7 +181,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory where intermediate files will be placed
     inputBinding:
       position: 103
@@ -188,7 +190,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ali_out_path`
+    doc: The file where alignment output will be written
     inputBinding:
       position: 104
       prefix: --ali-out
@@ -196,7 +198,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `seeds_out_path`
+    doc: The file where alignment seeds will be written
     inputBinding:
       position: 105
       prefix: --seeds-out
@@ -204,7 +206,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tbl_out_path`
+    doc: 'The file where tabular output will be written [default: results.tbl]'
     inputBinding:
       position: 106
       prefix: --tbl-out

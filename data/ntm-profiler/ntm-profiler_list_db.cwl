@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ntm-profiler list_db
+baseCommand:
+  - ntm-profiler
+  - list_db
 label: ntm-profiler_list_db
 doc: "List available databases\n\nTool homepage: https://github.com/jodyphelan/NTM-Profiler"
 inputs:
@@ -47,7 +49,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to process all files
     inputBinding:
       position: 101

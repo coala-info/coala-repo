@@ -54,7 +54,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: tmp dir
     inputBinding:
       position: 102
@@ -77,10 +77,10 @@ inputs:
       prefix: -V
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: newick output [-]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

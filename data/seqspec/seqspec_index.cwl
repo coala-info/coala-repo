@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec index
+baseCommand:
+  - seqspec
+  - index
 label: seqspec_index
 doc: "Identify the position of elements in a spec for use in downstream tools.\n\n\
   Tool homepage: https://github.com/sbooeshaghi/seqspec"
@@ -57,10 +59,10 @@ inputs:
       prefix: --tool
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: merfishtools exp
+baseCommand:
+  - merfishtools
+  - exp
 label: merfishtools_exp
 doc: "Estimate expressions for each feature (e.g. gene or transcript) in each cell.\n\
   \nTool homepage: https://merfishtools.github.io"
@@ -76,18 +78,21 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `estimate_output_path`
+    doc: 'Path to write expected value and standard deviation estimates of expression
+      to. Output is formatted into columns: cell, feature, expected value, standard
+      deviation'
     inputBinding:
       position: 104
-      prefix: --estimate-output
+      prefix: --estimate
   - id: stats_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_output_path`
+    doc: 'Path to write global statistics per cell to. Output is formatted into columns:
+      cell, noise-rate'
     inputBinding:
       position: 105
-      prefix: --stats-output
+      prefix: --stats
 outputs:
   - id: estimate_output
     type:

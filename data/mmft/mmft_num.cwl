@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_num
+baseCommand:
+  - mmft
+  - num
 label: mmft_num
 doc: "Calculate number and total base count of fasta file records.\n\nTool homepage:
   https://github.com/ARU-life-sciences/mmft"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk pd_clade
+baseCommand:
+  - genometreetk
+  - pd_clade
 label: genometreetk_pd_clade
 doc: "Calculate phylogenetic diversity of named groups.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
@@ -14,6 +16,11 @@ inputs:
     doc: list of ingroup taxa, one per line, to calculated PD over
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: output file
+    inputBinding:
+      position: 3
   - id: silent
     type:
       - 'null'
@@ -23,11 +30,11 @@ inputs:
       position: 103
       prefix: --silent
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

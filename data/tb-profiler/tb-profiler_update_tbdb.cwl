@@ -73,7 +73,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: artic minion
+baseCommand:
+  - artic
+  - minion
 label: artic_minion
 doc: "ARTIC pipeline for MinION data\n\nTool homepage: https://github.com/artic-network/fieldbioinformatics"
 inputs:

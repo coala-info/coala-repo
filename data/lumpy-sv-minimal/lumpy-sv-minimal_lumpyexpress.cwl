@@ -31,6 +31,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -D
+      itemSeparator: ','
   - id: exclude_bed_file
     type:
       - 'null'
@@ -47,6 +48,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -B
+      itemSeparator: ','
   - id: keep_temporary_files
     type:
       - 'null'
@@ -88,10 +90,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -S
+      itemSeparator: ','
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: temp directory
     inputBinding:
       position: 101
@@ -114,10 +117,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file [fullBam.bam.vcf]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

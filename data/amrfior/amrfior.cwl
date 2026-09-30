@@ -127,7 +127,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to temporary to place input FASTA/Q file(s) for faster IO during 
       BLAST - Path will also be used for all temporary files
     inputBinding:

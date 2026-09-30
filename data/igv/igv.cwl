@@ -29,6 +29,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --coverageFile
+      itemSeparator: ','
   - id: data_server_url
     type:
       - 'null'
@@ -79,6 +80,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --indexFile
+      itemSeparator: ','
   - id: locus
     type:
       - 'null'
@@ -113,6 +115,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --name
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

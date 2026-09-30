@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lorax_pct
+baseCommand:
+  - lorax
+  - pct
 label: lorax_pct
 doc: "Calculate and output statistics about the alignment of a sample to a reference
   genome or pan-genome graph.\n\nTool homepage: https://github.com/tobiasrausch/lorax"
@@ -17,15 +19,15 @@ inputs:
       position: 2
   - id: reference
     type: File
+    doc: genome fasta file
     secondaryFiles:
       - .fai
-    doc: genome fasta file
     inputBinding:
       position: 103
       prefix: --reference
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: output statistics
     inputBinding:
       position: 104
       prefix: --outfile

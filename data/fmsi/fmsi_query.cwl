@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fmsi query
+baseCommand:
+  - fmsi
+  - query
 label: fmsi_query
 doc: "Query an FMSI index.\n\nTool homepage: https://github.com/OndrejSladky/fmsi"
 inputs:

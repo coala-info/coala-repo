@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: leviosam_bed
+baseCommand:
+  - leviosam
+  - bed
 label: leviosam_bed
 doc: "Lift over a BED file\n\nTool homepage: https://github.com/alshai/levioSAM"
 inputs:

@@ -71,7 +71,7 @@ inputs:
       prefix: --part-size
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: '- Specify output directory.'
     inputBinding:
       position: 103
       prefix: --out-dir

@@ -14,10 +14,10 @@ inputs:
       position: 1
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '- output to file (default: output is sent to stdout)'
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

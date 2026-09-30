@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges_search
+baseCommand:
+  - ibridges
+  - search
 label: ibridges_search
 doc: "Search for dataobjects and collections.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

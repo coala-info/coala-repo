@@ -107,15 +107,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output file. If the path ends with .gz or
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
   - id: output_rest_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_rest_path`
+    doc: output file for pairs of other types.  If
     inputBinding:
       position: 105
       prefix: --output-rest

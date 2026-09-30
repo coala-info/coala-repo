@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/lorma_lorma.sh
+baseCommand: lorma.sh
 label: lorma_lorma.sh
 doc: "Processes FASTA files with LoRDEC steps.\n\nTool homepage: https://www.cs.helsinki.fi/u/lmsalmel/LoRMA/"
 inputs:
@@ -26,6 +26,7 @@ inputs:
     doc: Number of friends
     inputBinding:
       position: 102
+      prefix: -friends
   - id: k
     type:
       - 'null'
@@ -56,6 +57,7 @@ inputs:
     doc: Start value for processing
     inputBinding:
       position: 102
+      prefix: -start
   - id: step
     type:
       - 'null'
@@ -63,6 +65,7 @@ inputs:
     doc: Step size for processing
     inputBinding:
       position: 102
+      prefix: -step
   - id: threads
     type:
       - 'null'
@@ -70,6 +73,7 @@ inputs:
     doc: Number of threads to use
     inputBinding:
       position: 102
+      prefix: -threads
 outputs:
   - id: stdout
     type: stdout

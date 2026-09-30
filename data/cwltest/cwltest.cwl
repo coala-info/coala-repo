@@ -157,7 +157,7 @@ inputs:
       position: 102
       prefix: --verbose
   - id: junit_xml_path
-    type: string
+    type: string?
     inputBinding:
       position: 103
       prefix: --junit-xml

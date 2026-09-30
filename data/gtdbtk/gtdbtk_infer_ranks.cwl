@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdbtk infer_ranks
+baseCommand:
+  - gtdbtk
+  - infer_ranks
 label: gtdbtk_infer_ranks
 doc: "Root the input tree at the specified ingroup taxon and output the rooted tree.\n\
   \nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
@@ -29,17 +31,16 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify alternative directory for temporary files
     inputBinding:
       position: 101
       prefix: --tmpdir
   - id: output_tree_path
     type: string
-    doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 102
-      prefix: --output-tree
+      prefix: --output_tree
 outputs:
   - id: output_tree
     type: File

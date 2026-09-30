@@ -53,7 +53,7 @@ inputs:
       prefix: --window
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: JSON file with calculated distances stored by node
     inputBinding:
       position: 102
       prefix: --output

@@ -19,6 +19,11 @@ inputs:
     doc: Query sizes file
     inputBinding:
       position: 3
+  - id: out_chain
+    type: string
+    doc: Output chain file
+    inputBinding:
+      position: 4
   - id: dots
     type:
       - 'null'
@@ -49,7 +54,7 @@ outputs:
     type: File
     doc: Output chain file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_chain)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chainprenet:482--h0b57e2e_0

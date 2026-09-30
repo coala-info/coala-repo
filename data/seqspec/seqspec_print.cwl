@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec_print
+baseCommand:
+  - seqspec
+  - print
 label: seqspec_print
 doc: "Print sequence and/or library structure as ascii, png, or html.\n\nTool homepage:
   https://github.com/sbooeshaghi/seqspec"
@@ -20,7 +22,7 @@ inputs:
       prefix: --format
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file
     inputBinding:
       position: 103
       prefix: --output

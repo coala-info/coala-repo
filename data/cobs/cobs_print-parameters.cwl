@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cobs print-parameters
+baseCommand:
+  - cobs
+  - print-parameters
 label: cobs_print-parameters
 doc: "Prints parameters for COBS.\n\nTool homepage: https://panthema.net/cobs"
 inputs:

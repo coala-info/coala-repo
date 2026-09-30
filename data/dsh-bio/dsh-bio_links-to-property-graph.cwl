@@ -14,7 +14,7 @@ inputs:
       prefix: --input-gfa1-path
   - id: output_edges_file_path
     type: string
-    doc: Output or path parameter `output_edges_file_path`
+    doc: output property graph CSV format file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-edges-file

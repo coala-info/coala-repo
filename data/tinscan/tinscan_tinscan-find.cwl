@@ -75,7 +75,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Optional: Directory to write output to.'
     inputBinding:
       position: 101

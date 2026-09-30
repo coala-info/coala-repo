@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl nwindow
+baseCommand:
+  - gretl
+  - nwindow
 label: gretl_nwindow
 doc: "Extending from a single node\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:
@@ -44,7 +46,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output
     inputBinding:
       position: 102
       prefix: --output

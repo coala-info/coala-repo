@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq_map
+baseCommand:
+  - maq
+  - map
 label: maq_map
 doc: "Map reads to a reference genome\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:

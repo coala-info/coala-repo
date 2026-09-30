@@ -25,6 +25,7 @@ inputs:
       is expected.
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: assembly_fasta_file
     type: File
     doc: A multi-FASTA file contains the assembly used for calculating RSEM-EVAL
@@ -42,6 +43,7 @@ inputs:
       format is expected.
     inputBinding:
       position: 4
+      itemSeparator: ','
   - id: sample_name
     type: string
     doc: The name of the sample analyzed. All output files are prefixed by this 

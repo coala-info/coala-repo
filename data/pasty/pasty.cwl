@@ -38,7 +38,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write output
     inputBinding:
       position: 101

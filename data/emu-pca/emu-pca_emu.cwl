@@ -118,18 +118,19 @@ inputs:
       prefix: --tole
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: ' Prefix output name'
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --out
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix output name
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

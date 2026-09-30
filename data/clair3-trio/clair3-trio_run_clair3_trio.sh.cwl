@@ -84,7 +84,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: 'Call variants on all contigs, otherwise call in chr{1..22,X,Y} and {1..22,X,Y},
+    doc: Call variants on all contigs, otherwise call in chr{1..22,X,Y} and 
+      {1..22,X,Y},
     inputBinding:
       position: 101
       prefix: --include_all_ctgs
@@ -288,12 +289,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --whatshap
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: VCF/GVCF output directory.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clair3-trio:0.7--py39hd649744_2

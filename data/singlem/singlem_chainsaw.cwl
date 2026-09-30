@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem chainsaw
+baseCommand:
+  - singlem
+  - chainsaw
 label: singlem_chainsaw
 doc: "Remove tree information and trim unaligned sequences from a SingleM package
   (expert mode)\n\nTool homepage: https://github.com/wwood/singlem"
@@ -61,7 +63,6 @@ inputs:
       prefix: --sequence-prefix
   - id: output_singlem_package_path
     type: string
-    doc: Output or path parameter `output_singlem_package_path`
     inputBinding:
       position: 102
       prefix: --output-singlem-package

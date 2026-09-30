@@ -49,7 +49,7 @@ inputs:
       prefix: --word-size
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Redirect output to file instead of stdout
     inputBinding:
       position: 104
       prefix: --out

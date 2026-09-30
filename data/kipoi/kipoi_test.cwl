@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kipoi test
+baseCommand:
+  - kipoi
+  - test
 label: kipoi_test
 doc: "script to test model zoo submissions. Example usage: `kipoi test\nmodel/directory`,
   where `model/directory` is the path to a directory\ncontaining a model.yaml file.\n\
@@ -57,7 +59,6 @@ inputs:
       prefix: --source
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

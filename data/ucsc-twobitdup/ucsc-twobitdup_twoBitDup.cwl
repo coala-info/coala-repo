@@ -17,13 +17,15 @@ inputs:
     doc: place to put cache for remote bigBed/bigWigs
     inputBinding:
       position: 102
-      prefix: -udcDir
+      prefix: -udcDir=
+      separate: false
   - id: key_list_path
     type: string
-    doc: Output or path parameter `key_list_path`
+    doc: '=file - file to write a key list, two columns: md5sum and sequenceName'
     inputBinding:
       position: 103
-      prefix: --key-list
+      prefix: -keyList=
+      separate: false
 outputs:
   - id: key_list
     type:

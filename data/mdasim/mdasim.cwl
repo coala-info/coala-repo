@@ -119,16 +119,19 @@ inputs:
       prefix: --verbose
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: '= output files prefix , `Amplicons.fasta` will be appended to the prefix
+      (default: out)'
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --output
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: output files prefix , `Amplicons.fasta` will be appended to the prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

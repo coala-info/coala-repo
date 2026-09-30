@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools times
+baseCommand:
+  - poretools
+  - times
 label: poretools_times
 doc: "Extract timing information from FAST5 files.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

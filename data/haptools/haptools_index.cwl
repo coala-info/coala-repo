@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haptools index
+baseCommand:
+  - haptools
+  - index
 label: haptools_index
 doc: "Takes in an unsorted .hap file and outputs it as a .gz and a .tbi file\n\nTool
   homepage: https://github.com/cast-genomics/haptools"
@@ -36,7 +38,7 @@ inputs:
       prefix: --verbosity
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: A .hap file containing sorted and indexed
     inputBinding:
       position: 103
       prefix: --output

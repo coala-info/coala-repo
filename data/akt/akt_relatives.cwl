@@ -39,7 +39,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `prefix_path`
+    doc: output file prefix (out)
     inputBinding:
       position: 104
       prefix: --prefix
@@ -54,10 +54,11 @@ outputs:
   - id: prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.prefix_path)
+      glob: $(inputs.prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -12,10 +12,10 @@ inputs:
       prefix: --input
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Name for the output directory (Required).'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outfile
 outputs:
   - id: output_file
     type: Directory

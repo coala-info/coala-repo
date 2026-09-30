@@ -104,7 +104,7 @@ inputs:
   - id: temp_dir_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to where temporary directory containing all temp files are 
       created, by default generates a fresh tmp dir with 
       'tempfile.gettempdir()'.
@@ -115,18 +115,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: 'File to log in. (default: None)'
     inputBinding:
       position: 104
-      prefix: --log-file
+      prefix: --logFile
   - id: retrieve_task_directory_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `retrieve_task_directory_path`
     inputBinding:
       position: 105
-      prefix: --retrieve-task-directory
+      prefix: --retrieveTaskDirectory
 outputs:
   - id: retrieve_task_directory
     type:

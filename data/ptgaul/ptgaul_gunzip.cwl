@@ -38,10 +38,10 @@ inputs:
       prefix: -t
   - id: stdout_path
     type: string
-    doc: Output or path parameter `stdout_path`
+    doc: Write to stdout
     inputBinding:
       position: 103
-      prefix: --stdout
+      prefix: -c
 outputs:
   - id: stdout
     type:

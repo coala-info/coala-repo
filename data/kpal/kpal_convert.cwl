@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_convert
+baseCommand:
+  - kpal
+  - convert
 label: kpal_convert
 doc: "Save k-mer profiles from files in the old plaintext format (used by kPAL versions
   < 1.0.0) to a k-mer profile file in the current HDF5 format.\n\nTool homepage: https://github.com/LUMC/kPAL"

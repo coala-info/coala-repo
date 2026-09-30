@@ -206,10 +206,10 @@ inputs:
       prefix: --transcripts
   - id: html_results_path
     type: string
-    doc: Output or path parameter `html_results_path`
+    doc: Main HTML file where results will be displayed
     inputBinding:
       position: 102
-      prefix: --html-results
+      prefix: --html
 outputs:
   - id: html_results
     type: File

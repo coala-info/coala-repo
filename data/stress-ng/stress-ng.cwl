@@ -4769,7 +4769,7 @@ inputs:
   - id: temp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify path for temporary directories and files
     inputBinding:
       position: 101

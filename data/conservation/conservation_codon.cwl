@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: conservation_codon
+baseCommand:
+  - conservation
+  - codon
 label: conservation_codon
 doc: "Codon conservation analysis from Pfam domains and CDS sequences.\n\nTool homepage:
   https://github.com/hanjunlee21/conservation"

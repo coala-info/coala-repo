@@ -55,7 +55,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `faa_path`
+    doc: Convert to locus gene protein sequences in fasta format
     inputBinding:
       position: 104
       prefix: --faa
@@ -63,7 +63,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ffn_path`
+    doc: Convert to locus gene nucleotide sequences in fasta format
     inputBinding:
       position: 105
       prefix: --ffn
@@ -71,7 +71,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fna_path`
+    doc: Convert to locus nucleotide sequences in fasta format
     inputBinding:
       position: 106
       prefix: --fna

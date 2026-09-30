@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: badread_qscore_model
+baseCommand:
+  - badread
+  - qscore_model
 label: badread_qscore_model
 doc: "Build a Badread qscore model\n\nTool homepage: https://github.com/rrwick/Badread"
 inputs:

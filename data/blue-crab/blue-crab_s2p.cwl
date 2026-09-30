@@ -24,7 +24,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output to directory
     inputBinding:
       position: 102
@@ -40,10 +40,10 @@ inputs:
       prefix: --retain
   - id: output_pod5_path
     type: string
-    doc: Output or path parameter `output_pod5_path`
+    doc: ' output to FILE (default: None)'
     inputBinding:
       position: 103
-      prefix: --output-pod5
+      prefix: --output
 outputs:
   - id: output_pod5
     type:

@@ -169,10 +169,10 @@ inputs:
       prefix: -z
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: file to output results to instead of stdout
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -f
 outputs:
   - id: output_file
     type:

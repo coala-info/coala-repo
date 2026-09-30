@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yasma_jbrowse
+baseCommand:
+  - yasma
+  - jbrowse
 label: yasma_jbrowse
 doc: "Build coverage and config files for jbrowse2\n\nTool homepage: https://github.com/NateyJay/YASMA"
 inputs:

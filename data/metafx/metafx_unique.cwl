@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx unique
+baseCommand:
+  - metafx
+  - unique
 label: metafx_unique
 doc: "supervised feature extraction using group-specific k-mers\n\nTool homepage:
   https://github.com/ctlab/metafx"

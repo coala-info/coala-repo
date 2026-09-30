@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strainge_cluster
+baseCommand:
+  - strainge
+  - cluster
 label: strainge_cluster
 doc: "Group k-mer sets that are very similar to each other together.\n\nTool homepage:
   The package home page"
@@ -71,7 +73,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `clusters_out_path`
+    doc: Output an optional tab separated file with all
     inputBinding:
       position: 103
       prefix: --clusters-out
@@ -79,7 +81,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

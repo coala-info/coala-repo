@@ -103,23 +103,21 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cluster_tsv_path`
     inputBinding:
       position: 102
-      prefix: --cluster-tsv
+      prefix: --cluster_tsv
   - id: color_table_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `color_table_out_path`
     inputBinding:
       position: 103
-      prefix: --color-table-out
+      prefix: --color_table_out
   - id: xgmml_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `xgmml_path`
+    doc: 'write a cytoscape xgmml file of the projection. (default: None)'
     inputBinding:
       position: 104
       prefix: --xgmml

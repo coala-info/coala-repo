@@ -131,11 +131,12 @@ outputs:
   - id: output_basename
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: 'outfile basename: [SE] <name>.fastq[.gz] or [PE] <name>.{1,2,S}.fastq[.gz];
       .gz is added when using option -z'
     outputBinding:
-      glob: $(inputs.output_basename_path)
+      glob: $(inputs.output_basename_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

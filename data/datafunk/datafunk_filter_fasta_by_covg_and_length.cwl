@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: datafunk filter_fasta_by_covg_and_length
+baseCommand:
+  - datafunk
+  - filter_fasta_by_covg_and_length
 label: datafunk_filter_fasta_by_covg_and_length
 doc: "Filters a FASTA file based on coverage and length thresholds.\n\nTool homepage:
   https://github.com/cov-ert/datafunk"
@@ -45,7 +47,6 @@ inputs:
       prefix: --verbose
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 103
       prefix: --output-fasta

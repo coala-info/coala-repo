@@ -30,9 +30,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: reference file used during alignment
     secondaryFiles:
       - .fai
-    doc: reference file used during alignment
     inputBinding:
       position: 102
       prefix: --ref
@@ -63,10 +63,10 @@ inputs:
       prefix: --verbose
   - id: output_sam_path
     type: string
-    doc: Output or path parameter `output_sam_path`
+    doc: file to write merged read-pairs to
     inputBinding:
       position: 103
-      prefix: --output-sam
+      prefix: --output
 outputs:
   - id: output_sam
     type:

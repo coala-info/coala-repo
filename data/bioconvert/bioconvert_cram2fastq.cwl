@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert cram2fastq
+baseCommand:
+  - bioconvert
+  - cram2fastq
 label: bioconvert_cram2fastq
 doc: "Convert file from '('CRAM',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

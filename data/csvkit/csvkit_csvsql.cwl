@@ -205,22 +205,26 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --engine-option
+          separate: true
     doc: A keyword argument to SQLAlchemy's create_engine(), as a 
       space-separated pair. This option can be specified multiple times.
     inputBinding:
       position: 102
-      prefix: --engine-option
   - id: query
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --query
+          separate: true
     doc: Execute one or more SQL queries delimited by --sql-delimiter, and 
       output the result of the last query as CSV. QUERY may be a filename. 
       --query may be specified multiple times.
     inputBinding:
       position: 102
-      prefix: --query
   - id: insert
     type:
       - 'null'

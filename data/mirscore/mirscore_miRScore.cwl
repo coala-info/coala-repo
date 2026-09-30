@@ -47,7 +47,7 @@ inputs:
       position: 101
       prefix: -mm
   - id: n
-    type: string
+    type: string?
     doc: Results file name
     inputBinding:
       position: 101
@@ -86,11 +86,11 @@ inputs:
       position: 101
       prefix: -trimkey
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
+    doc: output directory
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
 outputs:
   - id: out
     type:

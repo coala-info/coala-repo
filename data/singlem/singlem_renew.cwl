@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem renew
+baseCommand:
+  - singlem
+  - renew
 label: singlem_renew
 doc: "Reannotate an OTU table with an updated taxonomy\n\nTool homepage: https://github.com/wwood/singlem"
 inputs:
@@ -61,7 +63,6 @@ inputs:
     doc: "Performance-type arguments to use when calling 'diamond blastx' during the
       taxonomy assignment step. [default: use setting defined in metapackage when
       set, otherwise use '--block-size 0.5 --target-indexed -c1']"
-      '--block-size 0.5 --target-indexed -c1'
     inputBinding:
       position: 101
       prefix: --diamond-taxonomy-assignment-performance-parameters
@@ -268,6 +269,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --translation-table
+  - id: output_jplace_path
+    type: string?
+    inputBinding:
+      position: 102
+      prefix: --output-jplace
 outputs:
   - id: output_jplace
     type:
@@ -277,7 +283,9 @@ outputs:
       with this string, each with one entry per OTU. Requires 'pplacer' as the --assignment_method
       [default: unused]"
     outputBinding:
-      glob: $(inputs.output_jplace)
+      glob: $(inputs.output_jplace_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

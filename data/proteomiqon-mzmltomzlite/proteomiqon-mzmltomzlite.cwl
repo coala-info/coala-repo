@@ -22,7 +22,7 @@ inputs:
       position: 101
       prefix: --log-level
   - id: output_directory
-    type: Directory
+    type: string
     doc: specify output directory
     inputBinding:
       position: 101

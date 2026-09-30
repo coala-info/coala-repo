@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: impg index
+baseCommand:
+  - impg
+  - index
 label: impg_index
 doc: "Create an IMPG index\n\nTool homepage: https://github.com/pangenome/impg"
 inputs:

@@ -104,7 +104,7 @@ inputs:
       position: 101
       prefix: --weights
   - id: outdir_path
-    type: string
+    type: string?
     doc: directory to write the output to
     inputBinding:
       position: 102

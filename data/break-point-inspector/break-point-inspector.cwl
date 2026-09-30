@@ -42,26 +42,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: -output_vcf
   - id: ref_slice_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ref_slice_path`
     inputBinding:
       position: 103
-      prefix: --ref-slice
+      prefix: -ref_slice
   - id: tumor_slice_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tumor_slice_path`
     inputBinding:
       position: 104
-      prefix: --tumor-slice
+      prefix: -tumor_slice
 outputs:
   - id: output_vcf
     type:

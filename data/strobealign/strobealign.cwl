@@ -6,9 +6,9 @@ doc: "strobealign 0.17.0\n\nTool homepage: https://github.com/ksahlin/StrobeAlig
 inputs:
   - id: reference
     type: File
+    doc: Reference in FASTA format
     secondaryFiles:
       - .fai
-    doc: Reference in FASTA format
     inputBinding:
       position: 1
   - id: reads1
@@ -292,11 +292,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --rg
+          separate: true
     doc: 'Add read group metadata to SAM header (can be specified multiple times).
       Example: SM:samplename'
     inputBinding:
       position: 104
-      prefix: --rg
   - id: rg_id
     type:
       - 'null'
@@ -393,10 +395,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '[PATH]     redirect output to file [stdout]'
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

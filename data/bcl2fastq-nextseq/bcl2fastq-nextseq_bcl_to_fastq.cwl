@@ -21,6 +21,7 @@ inputs:
     doc: number of allowed mismatches per index
     inputBinding:
       position: 102
+      prefix: --barcode-mismatches
   - id: delay
     type:
       - 'null'
@@ -30,6 +31,7 @@ inputs:
       \       for a run to complete"
     inputBinding:
       position: 102
+      prefix: --delay
   - id: determine
     type:
       - 'null'
@@ -39,6 +41,7 @@ inputs:
       with best"
     inputBinding:
       position: 102
+      prefix: --determine
   - id: input_dir
     type:
       - 'null'
@@ -55,6 +58,7 @@ inputs:
     doc: save Undetermined reads
     inputBinding:
       position: 102
+      prefix: --keep-tmp
   - id: loading
     type:
       - 'null'
@@ -62,6 +66,7 @@ inputs:
     doc: number of threads used for loading BCL data
     inputBinding:
       position: 102
+      prefix: --loading
   - id: no_cleanup
     type:
       - 'null'
@@ -70,6 +75,7 @@ inputs:
       \      output and do not delete undetermined files"
     inputBinding:
       position: 102
+      prefix: --no-cleanup
   - id: no_wait
     type:
       - 'null'
@@ -78,6 +84,7 @@ inputs:
       status"
     inputBinding:
       position: 102
+      prefix: --no-wait
   - id: output_dir
     type:
       - 'null'
@@ -95,6 +102,7 @@ inputs:
       \       directory"
     inputBinding:
       position: 102
+      prefix: --overwrite
   - id: processing
     type:
       - 'null'
@@ -103,6 +111,7 @@ inputs:
       data"
     inputBinding:
       position: 102
+      prefix: --processing
   - id: reverse_complement
     type:
       - 'null'
@@ -110,6 +119,7 @@ inputs:
     doc: reverse complement index 2 of the sample sheet
     inputBinding:
       position: 102
+      prefix: --reverse-complement
   - id: runfolder_dir
     type:
       - 'null'
@@ -125,6 +135,7 @@ inputs:
     doc: "file path to sample sheet; default is\n                                RUNFOLDER-DIR/SampleSheet.csv"
     inputBinding:
       position: 102
+      prefix: --sample-sheet
   - id: writing
     type:
       - 'null'
@@ -132,6 +143,7 @@ inputs:
     doc: number of threads used for writing FASTQ data
     inputBinding:
       position: 102
+      prefix: --writing
 outputs:
   - id: stdout
     type: stdout

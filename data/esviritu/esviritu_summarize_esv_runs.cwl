@@ -12,7 +12,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save output files
     inputBinding:
       position: 102

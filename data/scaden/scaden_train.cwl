@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scaden train
+baseCommand:
+  - scaden
+  - train
 label: scaden_train
 doc: "Train a Scaden model\n\nTool homepage: https://github.com/KevinMenden/scaden"
 inputs:

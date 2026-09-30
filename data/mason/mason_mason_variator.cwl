@@ -266,7 +266,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_fasta_path`
     inputBinding:
       position: 104
       prefix: --out-fasta
@@ -274,7 +273,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_vcf_path`
     inputBinding:
       position: 105
       prefix: --out-vcf

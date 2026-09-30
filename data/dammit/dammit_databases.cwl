@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dammit databases
+baseCommand:
+  - dammit
+  - databases
 label: dammit_databases
 doc: "Check for databases and optionally download and prepare them for use. By default,
   only check their status.\n\nTool homepage: http://dib-lab.github.io/dammit/"

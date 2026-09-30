@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl knotinframe
+baseCommand:
+  - perl
+  - knotinframe
 label: knotinframe
 doc: "predict ribosomal -1 frameshift sites with a simple pseudoknot as secondary
   structure in DNA and RNA sequences. The prediction is based on a comparison between
@@ -117,10 +119,11 @@ inputs:
       prefix: --windowSize
   - id: varna_output_file_path
     type: string
-    doc: Output or path parameter `varna_output_file_path`
+    doc: ': Provide a file name to which a HTML formatted version of the output should
+      be saved in.'
     inputBinding:
       position: 103
-      prefix: --varna-output-file
+      prefix: --varna
 outputs:
   - id: varna_output_file
     type:

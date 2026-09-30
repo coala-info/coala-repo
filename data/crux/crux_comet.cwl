@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux comet
+baseCommand:
+  - crux
+  - comet
 label: crux_comet
 doc: "Comet is a widely used open-source tandem mass spectrometry search algorithm.\n\
   \nTool homepage: https://github.com/redbadger/crux"
@@ -501,7 +503,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the directory where output files will be created.
     inputBinding:
       position: 103

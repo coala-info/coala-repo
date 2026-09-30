@@ -158,7 +158,7 @@ inputs:
   - id: out_tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory for temporary files
     inputBinding:
       position: 101
@@ -199,26 +199,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: "(1 arg) :    output file  [default '']"
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
   - id: out_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_dir_path`
+    doc: output directory  [default '.']
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: -out-dir
   - id: solid_kmers_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `solid_kmers_out_path`
+    doc: output file for solid kmers  [default '']
     inputBinding:
       position: 104
-      prefix: --solid-kmers-out
+      prefix: -solid-kmers-out
 outputs:
   - id: solid_kmers_out
     type:

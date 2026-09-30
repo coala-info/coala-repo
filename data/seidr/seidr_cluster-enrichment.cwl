@@ -61,7 +61,7 @@ inputs:
       prefix: --min-members
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 104
       prefix: --outfile

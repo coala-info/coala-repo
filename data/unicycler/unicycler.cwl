@@ -99,7 +99,7 @@ inputs:
       prefix: --verbosity
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output directory (required)
     inputBinding:
       position: 102
       prefix: --out

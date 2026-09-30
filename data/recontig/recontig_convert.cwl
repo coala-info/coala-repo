@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: recontig convert
+baseCommand:
+  - recontig
+  - convert
 label: recontig_convert
 doc: "remap contig names for different bioinformatics file types.\n\nTool homepage:
   https://github.com/blachlylab/recontig"
 inputs:
   - id: input_file
-    type: string
+    type: File
     doc: Input file
     inputBinding:
       position: 1
@@ -101,7 +103,6 @@ inputs:
       prefix: --verbose
   - id: ejected_output_path
     type: string
-    doc: Output or path parameter `ejected_output_path`
     inputBinding:
       position: 103
       prefix: --ejected-output

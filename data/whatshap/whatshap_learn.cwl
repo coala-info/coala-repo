@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: whatshap learn
+baseCommand:
+  - whatshap
+  - learn
 label: whatshap_learn
 doc: "Generate sequencing technology specific error profiles\n\nTool homepage: https://whatshap.readthedocs.io"
 inputs:
@@ -24,9 +26,9 @@ inputs:
       prefix: --kmer
   - id: reference
     type: File
+    doc: Reference genome
     secondaryFiles:
       - .fai
-    doc: Reference genome
     inputBinding:
       position: 103
       prefix: --reference
@@ -40,7 +42,6 @@ inputs:
       prefix: --window
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

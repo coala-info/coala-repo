@@ -74,7 +74,6 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

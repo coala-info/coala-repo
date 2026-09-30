@@ -20,10 +20,10 @@ inputs:
       prefix: --file
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Output directory (will contains logs and saved files)
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output-dir
 outputs:
   - id: output_directory
     type: Directory

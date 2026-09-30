@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk_prune
+baseCommand:
+  - genometreetk
+  - prune
 label: genometreetk_prune
 doc: "Prune tree to a specific set of extant taxa.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
@@ -14,6 +16,11 @@ inputs:
     doc: input file specify taxa to retain
     inputBinding:
       position: 2
+  - id: output_tree
+    type: string
+    doc: pruned output tree
+    inputBinding:
+      position: 3
   - id: silent
     type:
       - 'null'
@@ -23,11 +30,11 @@ inputs:
       position: 103
       prefix: --silent
 outputs:
-  - id: output_tree
+  - id: out_output_tree
     type: File
     doc: pruned output tree
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_tree)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

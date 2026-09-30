@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bleties_insert
+baseCommand:
+  - bleties
+  - insert
 label: bleties_insert
 doc: "Insert - Insert/Remove IESs to/from MAC reference sequence\n\nTool homepage:
   https://github.com/Swart-lab/bleties"

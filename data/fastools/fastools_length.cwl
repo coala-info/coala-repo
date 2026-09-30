@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_length
+baseCommand:
+  - fastools
+  - length
 label: fastools_length
 doc: "Report the lengths of all FASTA records in a file.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:

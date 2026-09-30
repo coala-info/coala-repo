@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaeuk_unitesetstofasta
+baseCommand:
+  - metaeuk
+  - unitesetstofasta
 label: metaeuk_unitesetstofasta
 doc: "By Eli Levy Karin <eli.levy.karin@gmail.com>\n\nTool homepage: https://github.com/soedinglab/metaeuk"
 inputs:

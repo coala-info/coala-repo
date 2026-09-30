@@ -33,7 +33,6 @@ inputs:
       prefix: --overwrite
   - id: output_metadata_path
     type: string
-    doc: Output or path parameter `output_metadata_path`
     inputBinding:
       position: 102
       prefix: --output-metadata

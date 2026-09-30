@@ -36,7 +36,7 @@ inputs:
       position: 102
       prefix: --normalize
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to save the estimation results.
     inputBinding:
       position: 102

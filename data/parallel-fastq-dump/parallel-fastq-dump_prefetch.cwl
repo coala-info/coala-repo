@@ -150,7 +150,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 103
       prefix: --output-directory
@@ -158,7 +157,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Write file to <file> when downloading
     inputBinding:
       position: 104
       prefix: --output-file

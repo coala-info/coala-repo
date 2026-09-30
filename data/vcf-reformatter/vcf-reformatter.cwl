@@ -50,7 +50,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory (default: current directory)'
     inputBinding:
       position: 102

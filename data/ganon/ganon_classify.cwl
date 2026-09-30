@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ganon classify
+baseCommand:
+  - ganon
+  - classify
 label: ganon_classify
 doc: "Classify reads against a database.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:

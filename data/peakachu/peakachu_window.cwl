@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: peakachu window
+baseCommand:
+  - peakachu
+  - window
 label: peakachu_window
 doc: "peakachu window\n\nTool homepage: https://github.com/tbischler/PEAKachu"
 inputs:
@@ -162,10 +164,9 @@ inputs:
       prefix: --window_size
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output_folder
 outputs:
   - id: output_folder
     type:

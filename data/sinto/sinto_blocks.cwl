@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sinto_blocks
+baseCommand:
+  - sinto
+  - blocks
 label: sinto_blocks
 doc: "Create scRNA-seq block file from BAM file\n\nTool homepage: https://timoast.github.io/sinto/"
 inputs:
@@ -76,10 +78,10 @@ inputs:
       prefix: --umitag
   - id: blocks_file_path
     type: string
-    doc: Output or path parameter `blocks_file_path`
+    doc: Name and path for output blocks file. Note that the
     inputBinding:
       position: 102
-      prefix: --blocks-file
+      prefix: --blocks
 outputs:
   - id: blocks_file
     type: File

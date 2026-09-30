@@ -43,7 +43,7 @@ inputs:
       prefix: --info-fields
   - id: html_path
     type: string
-    doc: Output or path parameter `html_path`
+    doc: 'path to output file (default: slivar-ddc.html)'
     inputBinding:
       position: 104
       prefix: --html

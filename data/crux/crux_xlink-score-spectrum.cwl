@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux xlink-score-spectrum
+baseCommand:
+  - crux
+  - xlink-score-spectrum
 label: crux_xlink-score-spectrum
 doc: "Score cross-linked peptides based on their mass spectrum.\n\nTool homepage:
   https://github.com/redbadger/crux"

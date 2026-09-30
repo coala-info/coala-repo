@@ -85,7 +85,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to dir for temp files
     inputBinding:
       position: 101
@@ -100,10 +100,10 @@ inputs:
       prefix: -g
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: 'output folder                       (optional, default: speciesA.speciesB)'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: -o
 outputs:
   - id: output_folder
     type:

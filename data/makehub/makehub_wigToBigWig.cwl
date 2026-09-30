@@ -16,6 +16,11 @@ inputs:
     doc: 'A two-column file/URL: <chromosome name> <size in bases>'
     inputBinding:
       position: 2
+  - id: out_bw
+    type: string
+    doc: Output indexed big wig file
+    inputBinding:
+      position: 3
   - id: block_size
     type:
       - 'null'
@@ -71,7 +76,7 @@ outputs:
     type: File
     doc: Output indexed big wig file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_bw)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1

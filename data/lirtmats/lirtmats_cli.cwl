@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lirtmats cli
+baseCommand:
+  - lirtmats
+  - cli
 label: lirtmats_cli
 doc: "Executing lirtmats version 1.0.0.\n\nTool homepage: https://pypi.org/project/lirtmats/"
 inputs:

@@ -64,7 +64,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Full path to output directory. Default is working directory.
     inputBinding:
       position: 101

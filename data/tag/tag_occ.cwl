@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tag occ
+baseCommand:
+  - tag
+  - occ
 label: tag_occ
 doc: "Extracts features of a given type from a GFF3 file.\n\nTool homepage: https://github.com/standage/tag/"
 inputs:

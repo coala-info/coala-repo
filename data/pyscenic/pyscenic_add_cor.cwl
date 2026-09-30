@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyscenic add_cor
+baseCommand:
+  - pyscenic
+  - add_cor
 label: pyscenic_add_cor
 doc: "Add correlation information to GRN adjacencies.\n\nTool homepage: https://github.com/aertslab/pySCENIC"
 inputs:
@@ -117,7 +119,6 @@ inputs:
       prefix: --transpose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

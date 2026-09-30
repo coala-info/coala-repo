@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama_info
+baseCommand:
+  - panorama
+  - info
 label: panorama_info
 doc: "Extract status, content, parameters, and metadata information from pangenome
   HDF5 files and export as interactive HTML reports.\n\nTool homepage: https://github.com/labgem/panorama"
@@ -65,7 +67,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

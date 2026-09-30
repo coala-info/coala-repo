@@ -127,7 +127,7 @@ inputs:
   - id: query
     type:
       - 'null'
-      - string
+      - File
     doc: Path to a GTF query file with transcripts to which CDSs are to be 
       ported
     inputBinding:

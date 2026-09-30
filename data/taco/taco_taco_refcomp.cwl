@@ -43,7 +43,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for reference comparison output
     inputBinding:
       position: 101

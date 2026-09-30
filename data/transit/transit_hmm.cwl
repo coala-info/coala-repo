@@ -14,6 +14,7 @@ inputs:
     doc: comma-separated .wig files
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: annotation_file
     type: File
     doc: .prot_table or GFF3 annotation file

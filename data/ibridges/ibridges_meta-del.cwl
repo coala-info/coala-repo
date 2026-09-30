@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges meta-del
+baseCommand:
+  - ibridges
+  - meta-del
 label: ibridges_meta-del
 doc: "Delete metadata for one collection or data object.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

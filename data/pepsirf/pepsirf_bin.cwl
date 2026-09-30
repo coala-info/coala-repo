@@ -42,7 +42,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 102
       prefix: --logfile
@@ -50,7 +49,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Name for the output bins file. This file will contain one bin per line 
+      and each bin will be a tab-delimited list of the names of the peptides in 
+      the bin.
     inputBinding:
       position: 103
       prefix: --output

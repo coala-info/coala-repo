@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spacedust_createsetdb
+baseCommand:
+  - spacedust
+  - createsetdb
 label: spacedust_createsetdb
 doc: "Creates a database for spacedust.\n\nTool homepage: https://github.com/soedinglab/spacedust"
 inputs:
@@ -13,7 +15,7 @@ inputs:
     inputBinding:
       position: 1
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory for intermediate files.
     inputBinding:
       position: 2

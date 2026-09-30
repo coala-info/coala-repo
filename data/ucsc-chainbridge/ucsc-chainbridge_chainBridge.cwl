@@ -20,6 +20,11 @@ inputs:
     doc: Query 2bit file
     inputBinding:
       position: 3
+  - id: out_chain
+    type: string
+    doc: Output chain file
+    inputBinding:
+      position: 4
   - id: linear_gap
     type:
       - 'null'
@@ -29,7 +34,8 @@ inputs:
       linearGap tab delimited file.
     inputBinding:
       position: 104
-      prefix: -linearGap
+      prefix: -linearGap=
+      separate: false
   - id: max_gap
     type:
       - 'null'
@@ -37,7 +43,8 @@ inputs:
     doc: Maximum size of double-sided gap to try to bridge
     inputBinding:
       position: 104
-      prefix: -maxGap
+      prefix: -maxGap=
+      separate: false
   - id: score_scheme
     type:
       - 'null'
@@ -45,13 +52,14 @@ inputs:
     doc: Read the scoring matrix from a blastz-format file
     inputBinding:
       position: 104
-      prefix: -scoreScheme
+      prefix: -scoreScheme=
+      separate: false
 outputs:
   - id: output_chain
     type: File
     doc: Output chain file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_chain)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chainbridge:377--h199ee4e_0

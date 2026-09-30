@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl EDTA.pl
+baseCommand:
+  - perl
+  - EDTA.pl
 label: edta_EDTA.pl
 doc: "Extensive de-novo TE Annotator that generates a high-quality structure-based
   TE library.\n\nTool homepage: https://github.com/oushujun/EDTA"
@@ -191,7 +193,6 @@ inputs:
       prefix: --u
   - id: rmout_path
     type: string
-    doc: Output or path parameter `rmout_path`
     inputBinding:
       position: 102
       prefix: --rmout

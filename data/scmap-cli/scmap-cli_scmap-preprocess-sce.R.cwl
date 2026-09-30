@@ -12,7 +12,6 @@ inputs:
       prefix: --input-object
   - id: output_sce_object_path
     type: string
-    doc: Output or path parameter `output_sce_object_path`
     inputBinding:
       position: 102
       prefix: --output-sce-object

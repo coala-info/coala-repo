@@ -76,7 +76,7 @@ inputs:
       prefix: --score_threshold
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output directory for the clusters
     inputBinding:
       position: 103
       prefix: --output

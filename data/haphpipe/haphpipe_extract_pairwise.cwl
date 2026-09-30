@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe extract_pairwise
+baseCommand:
+  - haphpipe
+  - extract_pairwise
 label: haphpipe_extract_pairwise
 doc: "Extract pairwise alignment information from a JSON file.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -37,8 +39,8 @@ inputs:
       position: 101
       prefix: --refreg
   - id: outfile_path
-    type: string
-    doc: Output or path parameter `outfile_path`
+    type: string?
+    doc: Output file. Default is stdout
     inputBinding:
       position: 102
       prefix: --outfile

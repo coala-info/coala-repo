@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pymlst_configure
+baseCommand:
+  - pymlst
+  - configure
 label: pymlst_configure
 doc: "Configure executables paths and log level.\n\nTool homepage: https://github.com/bvalot/pyMLST.git"
 inputs:

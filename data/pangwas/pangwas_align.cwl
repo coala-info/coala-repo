@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas_align
+baseCommand:
+  - pangwas
+  - align
 label: pangwas_align
 doc: "Align clusters using mafft and create a pangenome alignment.\n\nTakes as input
   the clusters from summarize and the sequence regions\nfrom collect. Outputs multiple
@@ -46,7 +48,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: outdir_path
-    type: string
+    type: string?
     doc: 'Output directory. (default: .)'
     inputBinding:
       position: 102

@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar hap-ibd.jar
+baseCommand:
+  - java
+  - -jar
+  - hap-ibd.jar
 label: hap-ibd
 doc: "Finds segments of identity-by-descent (IBD) between individuals in a VCF file.\n\
   \nTool homepage: https://github.com/browning-lab/hap-ibd"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vembrane sort
+baseCommand:
+  - vembrane
+  - sort
 label: vembrane_sort
 doc: "Sort VCF/BCF records by one or multiple Python expressions that encode keys
   for the desired order. This feature is primarily meant to prioritizing records for
@@ -138,11 +140,11 @@ inputs:
       position: 103
       prefix: --preserve-annotation-order
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: ' Output file, if not specified, output is written to STDOUT. (default: -)'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

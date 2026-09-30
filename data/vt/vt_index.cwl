@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_index
+baseCommand:
+  - vt
+  - index
 label: vt_index
 doc: "Indexes a VCF.GZ or BCF file.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbinner realtime
+baseCommand:
+  - deepbinner
+  - realtime
 label: deepbinner_realtime
 doc: "Sort fast5 files during sequencing\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:
@@ -129,10 +131,10 @@ inputs:
       prefix: --start_model
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: Directory to output binned fast5 files
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type: Directory

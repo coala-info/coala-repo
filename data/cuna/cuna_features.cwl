@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cuna_features
+baseCommand:
+  - cuna
+  - features
 label: cuna_features
 doc: "Extracts features from sequencing data.\n\nTool homepage: https://github.com/iris1901/CUNA"
 inputs:
@@ -28,9 +30,7 @@ inputs:
       position: 101
       prefix: --div_threshold
   - id: file_type
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Signal file format
     inputBinding:
       position: 101
@@ -86,9 +86,7 @@ inputs:
       position: 101
       prefix: --ref
   - id: seq_type
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Specify DNA sequencing only
     inputBinding:
       position: 101

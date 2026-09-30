@@ -16,7 +16,7 @@ inputs:
   - id: compress_output
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicating whether to compress (by gzip) the final output
     inputBinding:
       position: 101
@@ -40,7 +40,7 @@ inputs:
   - id: remove_chr_prefix
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicates whether to remove in the final output the "chr" 
       prefix in the chromosome name
     inputBinding:
@@ -81,8 +81,7 @@ inputs:
       position: 101
       prefix: --unmethylated-control
   - id: path_to_output_path
-    type: string
-    doc: Output or path parameter `path_to_output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --path-to-output

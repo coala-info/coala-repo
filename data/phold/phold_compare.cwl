@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold compare
+baseCommand:
+  - phold
+  - compare
 label: phold_compare
 doc: "Runs Foldseek vs phold db\n\nTool homepage: https://github.com/gbouras13/phold"
 inputs:

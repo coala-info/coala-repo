@@ -85,7 +85,7 @@ inputs:
   - id: results
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to directory where to save archive with results.
     inputBinding:
       position: 101

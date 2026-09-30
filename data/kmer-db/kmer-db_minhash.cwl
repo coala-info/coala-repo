@@ -63,7 +63,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: 'preserve strand instead of taking canonical k-mers (allowed only in nt alphabet;
+    doc: 'preserve strand instead of taking canonical k-mers (allowed only in nt alphabet;'
     inputBinding:
       position: 102
       prefix: -preserve-strand

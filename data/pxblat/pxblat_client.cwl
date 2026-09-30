@@ -27,6 +27,11 @@ inputs:
     doc: Fasta format file. May contain multiple records
     inputBinding:
       position: 4
+  - id: outpsl
+    type: string
+    doc: where to put the output
+    inputBinding:
+      position: 5
   - id: dots
     type:
       - 'null'
@@ -119,11 +124,11 @@ inputs:
       position: 105
       prefix: --type
 outputs:
-  - id: outpsl
+  - id: out_outpsl
     type: File
     doc: where to put the output
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outpsl)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1

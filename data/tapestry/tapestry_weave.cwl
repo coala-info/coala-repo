@@ -54,7 +54,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to write output, default weave_output
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bigsi-v0.3.1 search
+baseCommand:
+  - bigsi
+  - search
 label: bigsi_search
 doc: "Search for a sequence\n\nTool homepage: https://github.com/Phelimb/BIGSI"
 inputs:

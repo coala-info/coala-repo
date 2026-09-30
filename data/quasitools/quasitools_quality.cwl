@@ -76,7 +76,7 @@ inputs:
       position: 103
       prefix: --min_read_qual
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 103

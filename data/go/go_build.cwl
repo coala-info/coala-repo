@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go build
+baseCommand:
+  - go
+  - build
 label: go_build
 doc: "Builds the specified packages and their dependencies.\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

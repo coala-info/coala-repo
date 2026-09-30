@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert gz2dsrc
+baseCommand:
+  - bioconvert
+  - gz2dsrc
 label: bioconvert_gz2dsrc
 doc: "Convert file from '('GZ',)' to '('DSRC',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

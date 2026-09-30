@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal align
+baseCommand:
+  - reveal
+  - align
 label: reveal_align
 doc: "Construct a population graph from input genomes or other graphs.\n\nTool homepage:
   https://github.com/hakimel/reveal.js"

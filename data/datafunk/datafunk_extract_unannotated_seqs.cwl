@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: datafunk extract_unannotated_seqs
+baseCommand:
+  - datafunk
+  - extract_unannotated_seqs
 label: datafunk_extract_unannotated_seqs
 doc: "extract sequences with an empty cell in a specified cell in a metadata table\n\
   \nTool homepage: https://github.com/cov-ert/datafunk"
@@ -45,7 +47,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 102
       prefix: --output-fasta
@@ -53,7 +54,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_metadata_path`
     inputBinding:
       position: 103
       prefix: --output-metadata
@@ -61,7 +61,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 104
       prefix: --output-tree

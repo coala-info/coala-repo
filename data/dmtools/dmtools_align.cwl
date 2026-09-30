@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools align
+baseCommand:
+  - dmtools
+  - align
 label: dmtools_align
 doc: "Align reads to a genome.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
@@ -62,18 +64,19 @@ inputs:
       prefix: -p
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Prefix of bam output file
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --out
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of bam output file
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

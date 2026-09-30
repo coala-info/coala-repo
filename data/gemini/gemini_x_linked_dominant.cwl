@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini x_linked_dominant
+baseCommand:
+  - gemini
+  - x_linked_dominant
 label: gemini_x_linked_dominant
 doc: "Identify candidate variants for X-linked dominant inheritance.\n\nTool homepage:
   https://github.com/arq5x/gemini"

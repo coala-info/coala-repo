@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: syngap triple
+baseCommand:
+  - syngap
+  - triple
 label: syngap_triple
 doc: "Compare three species genomes and their annotations.\n\nTool homepage: https://github.com/yanyew/SynGAP"
 inputs:

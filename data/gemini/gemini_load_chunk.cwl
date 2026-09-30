@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini_load_chunk
+baseCommand:
+  - gemini
+  - load_chunk
 label: gemini_load_chunk
 doc: "Load a VCF file into a GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
@@ -103,7 +105,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Local (non-NFS) temp directory to use for working around SQLite locking
       issues on NFS drives.
     inputBinding:

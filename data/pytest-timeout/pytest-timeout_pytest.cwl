@@ -27,7 +27,7 @@ inputs:
   - id: basetemp
     type:
       - 'null'
-      - Directory
+      - string
     doc: base temporary directory for this test run.
     inputBinding:
       position: 102
@@ -174,7 +174,7 @@ inputs:
       have names assigned directly to them."
     inputBinding:
       position: 102
-      prefix: --expression
+      prefix: -k
   - id: failed_first
     type:
       - 'null'
@@ -253,7 +253,7 @@ inputs:
       mark2'."
     inputBinding:
       position: 102
-      prefix: --markexpr
+      prefix: -m
   - id: maxfail
     type:
       - 'null'
@@ -474,7 +474,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `junit_xml_path`
+    doc: create junit-xml style report file at given path.
     inputBinding:
       position: 103
       prefix: --junit-xml
@@ -482,7 +482,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `result_log_path`
+    doc: DEPRECATED path for machine-readable result log.
     inputBinding:
       position: 104
       prefix: --result-log

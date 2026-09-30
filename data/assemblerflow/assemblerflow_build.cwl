@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: assemblerflow_build
+baseCommand:
+  - assemblerflow
+  - build
 label: assemblerflow_build
 doc: "Build a pipeline for assemblerflow.\n\nTool homepage: https://github.com/ODiogoSilva/assemblerflow"
 inputs:
@@ -43,7 +45,7 @@ inputs:
     doc: Provide a name for your pipeline.
     inputBinding:
       position: 101
-      prefix: --pipeline-name
+      prefix: -n
   - id: pipeline_only
     type:
       - 'null'

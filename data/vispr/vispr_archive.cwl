@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vispr archive
+baseCommand:
+  - vispr
+  - archive
 label: vispr_archive
 doc: "Create a compressed archive for easy distribution of a given config file with
   all referenced files.\n\nTool homepage: https://bitbucket.org/liulab/vispr"

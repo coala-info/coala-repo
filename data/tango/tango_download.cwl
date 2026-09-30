@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tango download
+baseCommand:
+  - tango
+  - download
 label: tango_download
 doc: "Download databases for tango.\n\nTool homepage: https://github.com/johnne/tango"
 inputs:
@@ -14,7 +16,7 @@ inputs:
   - id: download_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write files to this directory. Defaults to db name in current 
       directory. Will be created if missing.
     inputBinding:
@@ -56,7 +58,7 @@ inputs:
   - id: taxdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store NCBI taxdump files. Defaults to 'taxonomy/' in 
       current directory
     inputBinding:
@@ -65,7 +67,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for downloading files
     inputBinding:
       position: 102

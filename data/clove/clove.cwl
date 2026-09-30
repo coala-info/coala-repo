@@ -40,10 +40,10 @@ inputs:
       prefix: -r
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: '[default: CLOVE.vcf]'
     inputBinding:
       position: 102
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type: File

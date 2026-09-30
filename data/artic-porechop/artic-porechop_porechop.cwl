@@ -271,15 +271,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `barcode_dir_path`
     inputBinding:
       position: 102
-      prefix: --barcode-dir
+      prefix: --barcode_dir
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

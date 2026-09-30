@@ -112,6 +112,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --scores
+          separate: true
     doc: Experimental setting (specific for SARS-CoV-2)! Specify scores to be 
       added to the plot by providing a CSV file containing scores, along with 
       its column for amino-acid positions, its column for scores, and 
@@ -120,7 +123,6 @@ inputs:
       scores.
     inputBinding:
       position: 102
-      prefix: --scores
   - id: sort
     type:
       - 'null'

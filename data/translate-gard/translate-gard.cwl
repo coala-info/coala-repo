@@ -18,10 +18,10 @@ inputs:
       prefix: -j
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: output filename                         [required]
     inputBinding:
       position: 102
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type: File

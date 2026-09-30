@@ -60,7 +60,7 @@ inputs:
       [default=200]"
     inputBinding:
       position: 101
-      prefix: --max_cov
+      prefix: -m
   - id: name_scheme
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
       used for all\nprimers.[default=artic_nCoV_scheme_v5.3.2]"
     inputBinding:
       position: 101
-      prefix: --name_scheme
+      prefix: -n
   - id: primers
     type: File
     doc: "Path to primer bed-file (primer-names must adhere to a\nconsistent naming
@@ -108,7 +108,7 @@ inputs:
     doc: "Specify long-read sequencing technology (ont/pb).\n[default=ont]"
     inputBinding:
       position: 101
-      prefix: --seq_tec
+      prefix: -s
   - id: set_margins
     type:
       - 'null'

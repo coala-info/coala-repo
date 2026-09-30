@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snk install
+baseCommand:
+  - snk
+  - install
 label: snk_install
 doc: "Install a workflow.\n\nTool homepage: https://snk.wytamma.com"
 inputs:

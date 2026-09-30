@@ -231,15 +231,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output CSV containing matches to this file
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
   - id: save_matches_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_matches_path`
+    doc: save all matching signatures from the databases to the
     inputBinding:
       position: 105
       prefix: --save-matches
@@ -247,7 +247,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_matching_hashes_path`
     inputBinding:
       position: 106
       prefix: --save-matching-hashes
@@ -255,7 +254,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_unmatched_hashes_path`
     inputBinding:
       position: 107
       prefix: --save-unmatched-hashes

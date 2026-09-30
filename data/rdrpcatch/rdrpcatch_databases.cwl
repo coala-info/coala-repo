@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rdrpcatch databases
+baseCommand:
+  - rdrpcatch
+  - databases
 label: rdrpcatch_databases
 doc: "Download & update RdRpCATCH databases. If databases are already installed in
   the specified directory, it will check for updates and download the latest version

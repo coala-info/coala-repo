@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux stat-column
+baseCommand:
+  - crux
+  - stat-column
 label: crux_stat-column
 doc: "Extracts a column from a tab-delimited file.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

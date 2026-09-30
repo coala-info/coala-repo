@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gaftools_view
+baseCommand:
+  - gaftools
+  - view
 label: gaftools_view
 doc: "View, subset or convert a GAF file (GAF file should be indexed first, using
   gaftools index).\n\nThe view command allows subsetting the GAF file based on node
@@ -61,7 +63,6 @@ inputs:
       prefix: --region
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

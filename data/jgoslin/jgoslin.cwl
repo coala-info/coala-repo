@@ -42,10 +42,10 @@ inputs:
       prefix: --stripWhitespace
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to file 'goslin-out.tsv' instead of to std out.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outputFile
 outputs:
   - id: output_file
     type:

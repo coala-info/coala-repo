@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phlame makedb
+baseCommand:
+  - phlame
+  - makedb
 label: phlame_makedb
 doc: "Build a phlame classifier database.\n\nTool homepage: https://github.com/quevan/phlame"
 inputs:
@@ -124,6 +126,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outgroup
+      itemSeparator: ','
   - id: qual
     type:
       - 'null'
@@ -133,13 +136,11 @@ inputs:
       position: 101
       prefix: --qual
   - id: output_clades_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_clades_path`
+    type: string
+    doc: Path to output clades file (required).
     inputBinding:
       position: 102
-      prefix: --output-clades
+      prefix: -p
   - id: output_db_path
     type:
       - 'null'
@@ -152,10 +153,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_path`
+    doc: Path to output tree labelled with clade names.
     inputBinding:
       position: 104
-      prefix: --output-tree
+      prefix: -y
 outputs:
   - id: output_db
     type: File

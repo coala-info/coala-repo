@@ -38,9 +38,9 @@ inputs:
       prefix: --min-base-quality
   - id: reference
     type: File
+    doc: reference sequences in FASTA format (can be gzipped)
     secondaryFiles:
       - .fai
-    doc: reference sequences in FASTA format (can be gzipped)
     inputBinding:
       position: 101
       prefix: --reference
@@ -86,7 +86,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out1_path`
     inputBinding:
       position: 102
       prefix: --out1
@@ -94,7 +93,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out2_path`
     inputBinding:
       position: 103
       prefix: --out2

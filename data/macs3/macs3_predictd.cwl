@@ -74,13 +74,13 @@ inputs:
       position: 101
       prefix: --mfold
   - id: outdir
-    type: string
+    type: string?
     doc: If specified all output files will be written to that directory.
     inputBinding:
       position: 101
       prefix: --outdir
   - id: rfile
-    type: string
+    type: string?
     doc: PREFIX of filename of R script for drawing X-correlation figure.
     inputBinding:
       position: 101
@@ -104,10 +104,11 @@ outputs:
   - id: output_rfile
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: PREFIX of filename of R script for drawing X-correlation figure.
     outputBinding:
-      glob: $(inputs.rfile)
+      glob: $(inputs.rfile)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

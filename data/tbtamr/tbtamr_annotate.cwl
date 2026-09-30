@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tbtamr_annotate
+baseCommand:
+  - tbtamr
+  - annotate
 label: tbtamr_annotate
 doc: "Annotate a BAM file with sequence ID and VCF information.\n\nTool homepage:
   https://github.com/MDU-PHL/tbtamr"

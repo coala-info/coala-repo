@@ -17,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 3
@@ -179,7 +179,7 @@ inputs:
   - id: local_tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path where some of the temporary files will be created
     inputBinding:
       position: 104

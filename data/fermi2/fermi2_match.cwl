@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2_match
+baseCommand:
+  - fermi2
+  - match
 label: fermi2_match
 doc: "Finds SMEMs (Maximal Exact Matches) in a sequence file against an index.\n\n\
   Tool homepage: https://github.com/lh3/fermi2"

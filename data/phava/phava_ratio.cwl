@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phava ratio
+baseCommand:
+  - phava
+  - ratio
 label: phava_ratio
 doc: "Run the pipeline with short reads instead of long reads\n\nTool homepage: https://github.com/patrickwest/PhaVa"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk resolve
+baseCommand:
+  - svtk
+  - resolve
 label: svtk_resolve
 doc: "Resolve complex SV from inversion/translocation breakpoints and CNV intervals.\n\
   \nTool homepage: https://github.com/talkowski-lab/svtk"
@@ -72,7 +74,7 @@ inputs:
   - id: quiet
     type:
       - 'null'
-      - boolean
+      - string
     doc: Disable progress logging to stderr.
     inputBinding:
       position: 103

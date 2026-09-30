@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5_merge
+baseCommand:
+  - pod5
+  - merge
 label: pod5_merge
 doc: "Merge multiple pod5 files\n\nTool homepage: https://github.com/nanoporetech/pod5-file-format"
 inputs:
@@ -53,7 +55,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

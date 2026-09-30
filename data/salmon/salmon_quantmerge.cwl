@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: salmon_quantmerge
+baseCommand:
+  - salmon
+  - quantmerge
 label: salmon_quantmerge
 doc: "Merge multiple quantification results into a single file.\n\nTool homepage:
   https://github.com/COMBINE-lab/salmon"
@@ -50,7 +52,7 @@ inputs:
       prefix: --quants
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output quantification file.
     inputBinding:
       position: 102
       prefix: --output

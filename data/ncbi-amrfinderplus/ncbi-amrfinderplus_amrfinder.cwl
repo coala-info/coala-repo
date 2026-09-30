@@ -245,38 +245,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --update
-  - id: nucleotide_flank5_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `nucleotide_flank5_output_path`
-    inputBinding:
-      position: 102
-      prefix: --nucleotide-flank5-output
-  - id: nucleotide_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `nucleotide_output_path`
-    inputBinding:
-      position: 103
-      prefix: --nucleotide-output
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Write output to OUTPUT_FILE instead of STDOUT'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
+  - id: nucleotide_flank5_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --nucleotide_flank5_output
+  - id: nucleotide_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --nucleotide_output
   - id: protein_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `protein_output_path`
     inputBinding:
-      position: 105
-      prefix: --protein-output
+      position: 107
+      prefix: --protein_output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx predict
+baseCommand:
+  - metafx
+  - predict
 label: metafx_predict
 doc: "MetaFX predict module – Machine Learning methods to classify new samples based
   on pre-trained model\n\nTool homepage: https://github.com/ctlab/metafx"

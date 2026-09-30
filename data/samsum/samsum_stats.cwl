@@ -41,10 +41,10 @@ inputs:
       prefix: --multireads
   - id: ref_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: "Path to the reference file used to generate the\n                      \
       \  SAM/BAM file."
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref_fasta
@@ -77,10 +77,9 @@ inputs:
       prefix: --verbose
   - id: output_table_path
     type: string
-    doc: Output or path parameter `output_table_path`
     inputBinding:
       position: 102
-      prefix: --output-table
+      prefix: --output_table
 outputs:
   - id: output_table
     type:

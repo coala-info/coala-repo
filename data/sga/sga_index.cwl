@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga index
+baseCommand:
+  - sga
+  - index
 label: sga_index
 doc: "Index the reads in READSFILE using a suffixarray/bwt\n\nTool homepage: https://github.com/jts/sga"
 inputs:

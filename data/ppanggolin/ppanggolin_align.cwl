@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin align
+baseCommand:
+  - ppanggolin
+  - align
 label: ppanggolin_align
 doc: "Align sequences (nucleotides or amino acids) on the pangenome gene families.\n\
   \nTool homepage: https://github.com/labgem/PPanGGOLiN"
@@ -122,7 +124,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for storing temporary files
     inputBinding:
       position: 101
@@ -155,7 +157,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

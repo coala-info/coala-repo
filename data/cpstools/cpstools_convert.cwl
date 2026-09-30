@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools convert
+baseCommand:
+  - cpstools
+  - convert
 label: cpstools_convert
 doc: "Convert genbank format files to other formats.\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

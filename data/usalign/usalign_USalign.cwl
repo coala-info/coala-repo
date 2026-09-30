@@ -82,6 +82,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -chain1
+      itemSeparator: ','
   - id: chains_structure2
     type:
       - 'null'
@@ -93,6 +94,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -chain2
+      itemSeparator: ','
   - id: do_not_perform_superposition
     type:
       - 'null'
@@ -155,6 +157,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -model1
+      itemSeparator: ','
   - id: models_structure2
     type:
       - 'null'
@@ -165,6 +168,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -model2
+      itemSeparator: ','
   - id: molecule_type
     type:
       - 'null'
@@ -327,10 +331,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_superposed_structure1_path`
+    doc: 'Output superposed structure1 to sup.* for PyMOL viewing. $ USalign structure1.pdb
+      structure2.pdb -o sup $ pymol -d @sup.pml                # C-alpha trace aligned
+      region $ pymol -d @sup_all.pml            # C-alpha trace whole chain $ pymol
+      -d @sup_atm.pml            # full-atom aligned region $ pymol -d @sup_all_atm.pml        #
+      full-atom whole chain $ pymol -d @sup_all_atm_lig.pml    # full-atom with all
+      molecules'
     inputBinding:
       position: 105
-      prefix: --output-superposed-structure1
+      prefix: -o
   - id: output_superposed_structure1_chimerax_path
     type:
       - 'null'
@@ -343,10 +352,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_superposed_structure1_rasmol_path`
+    doc: 'Output superposed structure1 to sup.* for RasMol viewing. $ USalign structure1.pdb
+      structure2.pdb -rasmol sup $ rasmol -script sup               # C-alpha trace
+      aligned region $ rasmol -script sup_all           # C-alpha trace whole chain
+      $ rasmol -script sup_atm           # full-atom aligned region $ rasmol -script
+      sup_all_atm       # full-atom whole chain $ rasmol -script sup_all_atm_lig   #
+      full-atom with all molecules'
     inputBinding:
       position: 107
-      prefix: --output-superposed-structure1-rasmol
+      prefix: -rasmol
 outputs:
   - id: output_superposed_structure1
     type:

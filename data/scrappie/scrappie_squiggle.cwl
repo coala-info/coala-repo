@@ -69,10 +69,10 @@ inputs:
       prefix: --rescale
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write to file rather than stdout
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

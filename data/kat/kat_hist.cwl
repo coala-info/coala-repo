@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kat_hist
+baseCommand:
+  - kat
+  - hist
 label: kat_hist
 doc: "Create an histogram of k-mer occurrences from the input.\n\nTool homepage: https://github.com/TGAC/KAT"
 inputs:

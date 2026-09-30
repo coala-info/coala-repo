@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum alternate allele read count (in at least one sample), corresponds
-      to freebayes parameter -C
+    doc: Minimum alternate allele read count (in at least one sample), 
+      corresponds to freebayes parameter -C
     inputBinding:
       position: 101
       prefix: --alternate-count
@@ -19,8 +19,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum alternate allele read fraction (in at least one sample), corresponds
-      to freebayes parameter -F
+    doc: Minimum alternate allele read fraction (in at least one sample), 
+      corresponds to freebayes parameter -F
     inputBinding:
       position: 101
       prefix: --alternate-fraction
@@ -28,8 +28,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Instead of using Parascopy paralog-specific copy number values, use copy
-      number from the input file with columns "chrom start end samples copy_num".
+    doc: Instead of using Parascopy paralog-specific copy number values, use 
+      copy number from the input file with columns "chrom start end samples 
+      copy_num".
     inputBinding:
       position: 101
       prefix: --assume-cn
@@ -38,9 +39,8 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Ignore observations with low base quality (first for SNPs, second for indels)
-      - 10
-      - 10
+    doc: Ignore observations with low base quality (first for SNPs, second for 
+      indels) - 10 - 10
     inputBinding:
       position: 101
       prefix: --base-qual
@@ -66,6 +66,7 @@ inputs:
       - type: array
         items: float
     doc: 'Two error rates: first for SNPs, second for indels'
+    default:
       - 0.01
       - 0.01
     inputBinding:
@@ -108,9 +109,7 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Min and max variant read depth
-      - 3
-      - 2000
+    doc: Min and max variant read depth - 3 - 2000
     inputBinding:
       position: 101
       prefix: --limit-depth
@@ -118,8 +117,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Based solely on allelic read depth, ignore pooled genotypes with probabilities
-      under 10^<float>
+    doc: Based solely on allelic read depth, ignore pooled genotypes with 
+      probabilities under 10^<float>
     inputBinding:
       position: 101
       prefix: --limit-pooled
@@ -127,7 +126,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Skip SNVs that do not overlap PSVs and have Freebayes quality under <float>
+    doc: Skip SNVs that do not overlap PSVs and have Freebayes quality under 
+      <float>
     inputBinding:
       position: 101
       prefix: --limit-qual
@@ -151,8 +151,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Use at most <int> best alleles (set 0 to all), corresponds to freebayes parameter
-      -n
+    doc: Use at most <int> best alleles (set 0 to all), corresponds to freebayes
+      parameter -n
     inputBinding:
       position: 101
       prefix: --n-alleles
@@ -160,8 +160,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Penalize possible paired-read alignment positions in case they do not match
-      second read alignment position (log10 penalty)
+    doc: Penalize possible paired-read alignment positions in case they do not 
+      match second read alignment position (log10 penalty)
     inputBinding:
       position: 101
       prefix: --no-mate-penalty
@@ -175,8 +175,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Use all PSVs (even unreliable) if they have a reference paralog-specific
-      genotype (genotype quality >= <float>)
+    doc: Use all PSVs (even unreliable) if they have a reference 
+      paralog-specific genotype (genotype quality >= <float>)
     inputBinding:
       position: 101
       prefix: --psv-ref-gt
@@ -211,7 +211,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Limit the analysis to the provided sample names or files with sample names.
+    doc: Limit the analysis to the provided sample names or files with sample 
+      names.
     inputBinding:
       position: 101
       prefix: --samples
@@ -269,6 +270,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unpaired-bias
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -276,7 +282,9 @@ outputs:
       - Directory
     doc: Output directory. Required if -i or -I arguments were used.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

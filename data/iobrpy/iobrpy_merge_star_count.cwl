@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy_merge_star_count
+baseCommand:
+  - iobrpy
+  - merge_star_count
 label: iobrpy_merge_star_count
 doc: "Merge STAR counts from multiple samples.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:

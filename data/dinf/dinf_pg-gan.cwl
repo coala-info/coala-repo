@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dinf pg-gan
+baseCommand:
+  - dinf
+  - pg-gan
 label: dinf_pg-gan
 doc: "PG-GAN style simulated annealing.\n\nTool homepage: https://github.com/RacimoLab/dinf"
 inputs:
@@ -59,7 +61,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder to output results. If not specified, the current directory will 
       be used.
     inputBinding:

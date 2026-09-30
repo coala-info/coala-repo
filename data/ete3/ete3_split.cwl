@@ -22,7 +22,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where the new tree files will be saved. Defaults to the 
       current directory.
     inputBinding:

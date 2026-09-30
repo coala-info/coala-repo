@@ -148,10 +148,10 @@ inputs:
       prefix: --zip
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Directory to write output files
     inputBinding:
       position: 104
-      prefix: --output-directory
+      prefix: --outdir
 outputs:
   - id: output_directory
     type:

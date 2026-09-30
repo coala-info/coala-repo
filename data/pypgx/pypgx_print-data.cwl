@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx print-data
+baseCommand:
+  - pypgx
+  - print-data
 label: pypgx_print-data
 doc: "Print the main data of specified archive.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

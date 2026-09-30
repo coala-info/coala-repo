@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crocodeel plot_conta
+baseCommand:
+  - crocodeel
+  - plot_conta
 label: crocodeel_plot_conta
 doc: "Generate scatterplots for contamination events.\n\nTool homepage: https://github.com/metagenopolis/crocodeel"
 inputs:

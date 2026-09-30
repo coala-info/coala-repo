@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scvis_map
+baseCommand:
+  - scvis
+  - map
 label: scvis_map
 doc: "Map new data to a pretrained scvis model.\n\nTool homepage: https://bitbucket.org/jerry00/scvis-dev/commits/all"
 inputs:
@@ -37,7 +39,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path for output files
     inputBinding:
       position: 101

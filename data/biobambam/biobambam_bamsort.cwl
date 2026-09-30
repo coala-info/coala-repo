@@ -12,7 +12,8 @@ inputs:
       ignored for fixmate=0, disabled by default)
     inputBinding:
       position: 101
-      prefix: adddupmarksupport
+      prefix: adddupmarksupport=
+      separate: false
   - id: block_size_mb
     type:
       - 'null'
@@ -20,7 +21,8 @@ inputs:
     doc: size of internal memory buffer used for sorting in MiB
     inputBinding:
       position: 101
-      prefix: blockmb
+      prefix: blockmb=
+      separate: false
   - id: calculate_md_nm
     type:
       - 'null'
@@ -28,7 +30,8 @@ inputs:
     doc: calculate MD and NM aux fields (for coordinate sorted output only)
     inputBinding:
       position: 101
-      prefix: calmdnm
+      prefix: calmdnm=
+      separate: false
   - id: calculate_md_nm_reference
     type:
       - 'null'
@@ -36,7 +39,8 @@ inputs:
     doc: reference for calculating MD and NM aux fields (calmdnm=1 only)
     inputBinding:
       position: 101
-      prefix: calmdnmreference
+      prefix: calmdnmreference=
+      separate: false
   - id: compression_level
     type:
       - 'null'
@@ -45,7 +49,8 @@ inputs:
       (1=fast,2=2,3=3,4=4,5=5,6=6,7=7,8=8,9=best,10=10,11=11,12=12)
     inputBinding:
       position: 101
-      prefix: level
+      prefix: level=
+      separate: false
   - id: create_index
     type:
       - 'null'
@@ -53,7 +58,8 @@ inputs:
     doc: 'create BAM index (default: 0)'
     inputBinding:
       position: 101
-      prefix: index
+      prefix: index=
+      separate: false
   - id: create_md5
     type:
       - 'null'
@@ -61,7 +67,8 @@ inputs:
     doc: 'create md5 check sum (default: 0)'
     inputBinding:
       position: 101
-      prefix: md5
+      prefix: md5=
+      separate: false
   - id: disable_validation
     type:
       - 'null'
@@ -69,7 +76,8 @@ inputs:
     doc: disable input validation (default is 0)
     inputBinding:
       position: 101
-      prefix: disablevalidation
+      prefix: disablevalidation=
+      separate: false
   - id: fix_mates
     type:
       - 'null'
@@ -78,7 +86,8 @@ inputs:
       default)
     inputBinding:
       position: 101
-      prefix: fixmates
+      prefix: fixmates=
+      separate: false
   - id: hash_algorithm
     type:
       - 'null'
@@ -86,7 +95,8 @@ inputs:
     doc: 'hash used for producing bamseqchksum type checksums (default: crc32prod)'
     inputBinding:
       position: 101
-      prefix: hash
+      prefix: hash=
+      separate: false
   - id: index_filename
     type:
       - 'null'
@@ -94,7 +104,8 @@ inputs:
     doc: file name for BAM index file
     inputBinding:
       position: 101
-      prefix: indexfilename
+      prefix: indexfilename=
+      separate: false
   - id: input_file
     type:
       - 'null'
@@ -102,7 +113,8 @@ inputs:
     doc: input filename (standard input if unset)
     inputBinding:
       position: 101
-      prefix: I
+      prefix: I=
+      separate: false
   - id: input_format
     type:
       - 'null'
@@ -110,7 +122,8 @@ inputs:
     doc: input format (bam,cram,maussam,sam,sbam)
     inputBinding:
       position: 101
-      prefix: inputformat
+      prefix: inputformat=
+      separate: false
   - id: input_threads
     type:
       - 'null'
@@ -118,7 +131,8 @@ inputs:
     doc: 'input helper threads (for inputformat=bam only, default: 1)'
     inputBinding:
       position: 101
-      prefix: inputthreads
+      prefix: inputthreads=
+      separate: false
   - id: mark_duplicates
     type:
       - 'null'
@@ -127,7 +141,8 @@ inputs:
       sorted, disabled by default)
     inputBinding:
       position: 101
-      prefix: markduplicates
+      prefix: markduplicates=
+      separate: false
   - id: md5_filename
     type:
       - 'null'
@@ -135,7 +150,8 @@ inputs:
     doc: file name for md5 check sum
     inputBinding:
       position: 101
-      prefix: md5filename
+      prefix: md5filename=
+      separate: false
   - id: nucleotide_tag
     type:
       - 'null'
@@ -151,7 +167,8 @@ inputs:
     doc: output format (bam,cram,sam)
     inputBinding:
       position: 101
-      prefix: outputformat
+      prefix: outputformat=
+      separate: false
   - id: output_threads
     type:
       - 'null'
@@ -159,7 +176,8 @@ inputs:
     doc: 'output helper threads (for outputformat=bam only, default: 1)'
     inputBinding:
       position: 101
-      prefix: outputthreads
+      prefix: outputthreads=
+      separate: false
   - id: range
     type:
       - 'null'
@@ -168,7 +186,8 @@ inputs:
       input only)
     inputBinding:
       position: 101
-      prefix: range
+      prefix: range=
+      separate: false
   - id: recompute_md_nm_indeterminate_only
     type:
       - 'null'
@@ -177,7 +196,8 @@ inputs:
       (calmdnm=1 only)
     inputBinding:
       position: 101
-      prefix: calmdnmrecompindetonly
+      prefix: calmdnmrecompindetonly=
+      separate: false
   - id: reference
     type:
       - 'null'
@@ -187,7 +207,8 @@ inputs:
     doc: reference FastA (.fai file required, for cram i/o only)
     inputBinding:
       position: 101
-      prefix: reference
+      prefix: reference=
+      separate: false
   - id: remove_duplicates
     type:
       - 'null'
@@ -196,7 +217,8 @@ inputs:
       sorted, disabled by default)
     inputBinding:
       position: 101
-      prefix: rmdup
+      prefix: rmdup=
+      separate: false
   - id: sort_tag
     type:
       - 'null'
@@ -204,7 +226,8 @@ inputs:
     doc: tag used by SO=tag (no default)
     inputBinding:
       position: 101
-      prefix: sorttag
+      prefix: sorttag=
+      separate: false
   - id: sort_threads
     type:
       - 'null'
@@ -212,7 +235,8 @@ inputs:
     doc: 'threads used for sorting (default: 1)'
     inputBinding:
       position: 101
-      prefix: sortthreads
+      prefix: sortthreads=
+      separate: false
   - id: sorting_order
     type:
       - 'null'
@@ -221,7 +245,8 @@ inputs:
       or queryname_lexicographic)
     inputBinding:
       position: 101
-      prefix: SO
+      prefix: SO=
+      separate: false
   - id: streaming
     type:
       - 'null'
@@ -229,7 +254,8 @@ inputs:
     doc: do not open input files multiple times when set
     inputBinding:
       position: 101
-      prefix: streaming
+      prefix: streaming=
+      separate: false
   - id: tag_for_dup_marking
     type:
       - 'null'
@@ -237,7 +263,8 @@ inputs:
     doc: aux field id for tag string extraction (adddupmarksupport=1 only)
     inputBinding:
       position: 101
-      prefix: tag
+      prefix: tag=
+      separate: false
   - id: tmp_file_prefix
     type:
       - 'null'
@@ -245,7 +272,8 @@ inputs:
     doc: 'prefix for temporary files, default: create files in current directory'
     inputBinding:
       position: 101
-      prefix: tmpfile
+      prefix: tmpfile=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -253,7 +281,8 @@ inputs:
     doc: print progress report
     inputBinding:
       position: 101
-      prefix: verbose
+      prefix: verbose=
+      separate: false
   - id: warn_change_md_nm
     type:
       - 'null'
@@ -261,7 +290,8 @@ inputs:
     doc: warn when changing existing MD/NM fields (calmdnm=1 only)
     inputBinding:
       position: 101
-      prefix: calmdnmwarnchange
+      prefix: calmdnmwarnchange=
+      separate: false
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`

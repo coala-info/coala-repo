@@ -22,7 +22,7 @@ inputs:
       prefix: --input-gfa1-path
   - id: output_gfa1_file_path
     type: string
-    doc: Output or path parameter `output_gfa1_file_path`
+    doc: output GFA 1.0 file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-gfa1-file

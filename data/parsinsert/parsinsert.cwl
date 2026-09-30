@@ -78,18 +78,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: '[-|<log file>]         - create log file (default is ParsInsert.log)'
     inputBinding:
       position: 103
-      prefix: --log-file
+      prefix: -l
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: '- output taxonomy for each insert sequence to this file (default: PI_Results.log)'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

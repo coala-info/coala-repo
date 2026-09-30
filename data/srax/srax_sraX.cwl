@@ -104,10 +104,11 @@ inputs:
       prefix: --user_sq
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: "output\tDirectory to store obtained results [/path/to/output_dir]. While
+      not"
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type:

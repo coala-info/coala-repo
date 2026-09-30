@@ -15,6 +15,11 @@ inputs:
     doc: Input data file
     inputBinding:
       position: 2
+  - id: outputfile
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 3
   - id: burnin_iterations
     type:
       - 'null'
@@ -74,6 +79,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -a
+      itemSeparator: ','
   - id: pre_burnin_iterations
     type:
       - 'null'
@@ -157,11 +163,11 @@ inputs:
       position: 103
       prefix: -v
 outputs:
-  - id: outputfile
+  - id: out_outputfile
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outputfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/clonalorigin:v1.0-3-deb_cv1

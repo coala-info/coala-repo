@@ -57,7 +57,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to a temporary directory
     inputBinding:
       position: 101

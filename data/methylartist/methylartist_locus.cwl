@@ -661,7 +661,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile
@@ -669,10 +668,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `smoothed_csv_path`
     inputBinding:
       position: 103
-      prefix: --smoothed-csv
+      prefix: --smoothed_csv
 outputs:
   - id: outfile
     type:

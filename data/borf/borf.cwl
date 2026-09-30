@@ -60,10 +60,9 @@ inputs:
       prefix: --upstream_incomplete_length
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 103
-      prefix: --output-path
+      prefix: --output_path
 outputs:
   - id: output_path
     type:

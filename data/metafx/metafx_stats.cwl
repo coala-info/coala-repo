@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx stats
+baseCommand:
+  - metafx
+  - stats
 label: metafx_stats
 doc: "supervised feature extraction using statistically significant k-mers\n\nTool
   homepage: https://github.com/ctlab/metafx"

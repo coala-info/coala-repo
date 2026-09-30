@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: flowcraft inspect
+baseCommand:
+  - flowcraft
+  - inspect
 label: flowcraft_inspect
 doc: "Inspect Nextflow runs\n\nTool homepage: https://github.com/assemblerflow/flowcraft"
 inputs:

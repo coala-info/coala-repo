@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem_trim_package_hmms
+baseCommand:
+  - singlem
+  - trim_package_hmms
 label: singlem_trim_package_hmms
 doc: "Trim the width of HMMs to increase speed (expert mode)\n\nTool homepage: https://github.com/wwood/singlem"
 inputs:
@@ -52,7 +54,6 @@ inputs:
       prefix: --quiet
   - id: output_singlem_package_path
     type: string
-    doc: Output or path parameter `output_singlem_package_path`
     inputBinding:
       position: 102
       prefix: --output-singlem-package

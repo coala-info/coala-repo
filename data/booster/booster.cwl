@@ -63,23 +63,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ': Output file (optional) with normalized support values, default : stdout'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
   - id: output_raw_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_raw_path`
+    doc: ': Output file (optional) with raw support values in the form of id|avgdist|depth,
+      default : none'
     inputBinding:
       position: 103
-      prefix: --output-raw
+      prefix: --out-raw
   - id: stat_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stat_file_path`
     inputBinding:
       position: 104
       prefix: --stat-file

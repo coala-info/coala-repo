@@ -13,7 +13,7 @@ inputs:
       prefix: --inbam
   - id: outbam_path
     type: string
-    doc: Output or path parameter `outbam_path`
+    doc: '[required]'
     inputBinding:
       position: 102
       prefix: --outbam

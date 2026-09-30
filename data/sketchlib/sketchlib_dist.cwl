@@ -93,10 +93,10 @@ inputs:
       prefix: --verbose
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: ' Output filename (omit to output to stdout)'
     inputBinding:
       position: 104
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type:

@@ -188,7 +188,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bam_path`
     inputBinding:
       position: 105
       prefix: --bam
@@ -196,7 +195,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gff_path`
     inputBinding:
       position: 106
       prefix: --gff

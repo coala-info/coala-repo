@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx plot-vcf-read-depth
+baseCommand:
+  - pypgx
+  - plot-vcf-read-depth
 label: pypgx_plot-vcf-read-depth
 doc: "Plot read depth profile with VCF data.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

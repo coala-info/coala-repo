@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree unroot
+baseCommand:
+  - gotree
+  - unroot
 label: gotree_unroot
 doc: "Unroot input tree.\n\nIf the tree is already unrooted does nothing\nOtherwise
   places the root on a trifurcated node and removes\nold root.\nbr length : Take the
@@ -40,10 +42,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Collapsed tree output file (default "stdout")
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

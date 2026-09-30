@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs dump
+baseCommand:
+  - mrs
+  - dump
 label: mrs_dump
 doc: "Dump mrs data\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

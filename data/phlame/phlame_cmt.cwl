@@ -32,10 +32,10 @@ inputs:
       prefix: -s
   - id: output_cmt_path
     type: string
-    doc: Output or path parameter `output_cmt_path`
+    doc: Path to output compressedCMT file (required).
     inputBinding:
       position: 102
-      prefix: --output-cmt
+      prefix: -o
 outputs:
   - id: output_cmt
     type: File

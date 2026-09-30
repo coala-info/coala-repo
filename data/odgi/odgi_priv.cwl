@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi priv
+baseCommand:
+  - odgi
+  - priv
 label: odgi_priv
 doc: "Differentially private sampling of graph subpaths. Apply the exponential mechanism
   to randomly sample shared sub-haplotypes with a given ε, target coverage, and minimum
@@ -74,7 +76,7 @@ inputs:
       prefix: --write-haps
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the graph with sub-paths sampled
     inputBinding:
       position: 102
       prefix: --out

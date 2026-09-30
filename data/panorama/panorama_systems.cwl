@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama systems
+baseCommand:
+  - panorama
+  - systems
 label: panorama_systems
 doc: "PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE
   LICENSE AGREEMENT\n\nTool homepage: https://github.com/labgem/panorama"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mhpl8r seq
+baseCommand:
+  - mhpl8r
+  - seq
 label: microhapulator_mhpl8r seq
 doc: "Simulate paired-end Illumina MiSeq sequencing of the given profile(s)\n\nTool
   homepage: https://github.com/bioforensics/MicroHapulator/"
@@ -49,6 +51,11 @@ inputs:
     inputBinding:
       position: 104
       prefix: --seeds
+  - id: out_path
+    type: string
+    inputBinding:
+      position: 105
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -60,7 +67,9 @@ outputs:
       files; by default, reads are interleaved and written to the terminal 
       (standard output)
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/microhapulator:0.8.4--pyhdfd78af_0

@@ -5,7 +5,7 @@ label: plasmidid_download_plasmid_database.py
 doc: "Download up to date plasmid database from ncbi ftp\n\nTool homepage: https://github.com/BU-ISCIII/plasmidID"
 inputs:
   - id: output
-    type: Directory
+    type: string
     doc: Output directory to extract plasmid database
     inputBinding:
       position: 101

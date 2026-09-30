@@ -464,6 +464,7 @@ inputs:
       - type: array
         items: string
     doc: '(default: subject session acquisition run)'
+    default:
       - subject
       - session
       - acquisition
@@ -477,6 +478,7 @@ inputs:
       - type: array
         items: string
     doc: '(default: subject session acquisition run)'
+    default:
       - subject
       - session
       - acquisition
@@ -490,6 +492,7 @@ inputs:
       - type: array
         items: string
     doc: '(default: subject session hemi acquisition run)'
+    default:
       - subject
       - session
       - hemi
@@ -504,6 +507,7 @@ inputs:
       - type: array
         items: string
     doc: '(default: subject session hemi acquisition run)'
+    default:
       - subject
       - session
       - hemi
@@ -518,6 +522,7 @@ inputs:
       - type: array
         items: string
     doc: '(default: subject session)'
+    default:
       - subject
       - session
     inputBinding:
@@ -526,7 +531,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder for storing working files. If not specified, will be in "work/" 
       subfolder in the output folder. You can also use environment variables 
       when setting the workdir, e.g. --workdir '$SLURM_TMPDIR'.

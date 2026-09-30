@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: darkprofiler download
+baseCommand:
+  - darkprofiler
+  - download
 label: darkprofiler_download
 doc: "Download reference genome assemblies for darkprofiler.\n\nTool homepage: https://pypi.org/project/darkprofiler/"
 inputs:

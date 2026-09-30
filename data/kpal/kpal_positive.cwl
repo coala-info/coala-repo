@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_positive
+baseCommand:
+  - kpal
+  - positive
 label: kpal_positive
 doc: "Only keep counts that are positive in both k-mer profiles. If the files contain
   more than one profile, they are linked by name and processed pairwise.\n\nTool homepage:

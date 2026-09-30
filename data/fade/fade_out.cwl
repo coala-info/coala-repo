@@ -33,7 +33,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bam_path`
     inputBinding:
       position: 103
       prefix: --bam
@@ -41,7 +40,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ubam_path`
     inputBinding:
       position: 104
       prefix: --ubam

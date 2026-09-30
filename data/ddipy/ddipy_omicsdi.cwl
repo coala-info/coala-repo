@@ -29,7 +29,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory when downloading files
     inputBinding:
       position: 102

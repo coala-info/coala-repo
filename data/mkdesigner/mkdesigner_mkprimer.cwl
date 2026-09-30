@@ -13,6 +13,7 @@ inputs:
       considered to be non-specific.\n                        default: 60.0 (sec)"
     inputBinding:
       position: 101
+      prefix: --blast_timeout
   - id: cpu
     type:
       - 'null'
@@ -20,6 +21,7 @@ inputs:
     doc: Number of CPUs to use.
     inputBinding:
       position: 101
+      prefix: --cpu
   - id: limit
     type:
       - 'null'
@@ -39,6 +41,7 @@ inputs:
       \          default: 5"
     inputBinding:
       position: 101
+      prefix: --margin
   - id: max_prodlen
     type:
       - 'null'
@@ -46,6 +49,7 @@ inputs:
     doc: "Maximam PCR product length.\n                        default: 280"
     inputBinding:
       position: 101
+      prefix: --max_prodlen
   - id: maxdep
     type:
       - 'null'
@@ -54,6 +58,7 @@ inputs:
       valid mutations\n                        default: 200"
     inputBinding:
       position: 101
+      prefix: --maxdep
   - id: min_prodlen
     type:
       - 'null'
@@ -61,6 +66,7 @@ inputs:
     doc: 'Minimum PCR product length.default: 150'
     inputBinding:
       position: 101
+      prefix: --min_prodlen
   - id: mindep
     type:
       - 'null'
@@ -69,6 +75,7 @@ inputs:
       valid mutations\n                        default: 2"
     inputBinding:
       position: 101
+      prefix: --mindep
   - id: mismatch_allowed
     type:
       - 'null'
@@ -77,6 +84,7 @@ inputs:
       in specificity check.\n                        default: 5"
     inputBinding:
       position: 101
+      prefix: --mismatch_allowed
   - id: mismatch_allowed_3_terminal
     type:
       - 'null'
@@ -86,26 +94,31 @@ inputs:
       \                        default: 1"
     inputBinding:
       position: 101
+      prefix: --mismatch_allowed_3_terminal
   - id: name1
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --name1
+        separate: true
     doc: "Variety name 1.\n                        Must match VCF column names.\n\
       \                        This parameter can be specified multiple times to design
       common markers for multiple varieties."
     inputBinding:
       position: 101
-      prefix: --name1
   - id: name2
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --name2
+        separate: true
     doc: "Variety name 2.\n                        Must match VCF column names.\n\
       \                        This parameter can be specified multiple times to design
       common markers for multiple varieties."
     inputBinding:
       position: 101
-      prefix: --name2
   - id: opt_prodlen
     type:
       - 'null'
@@ -113,6 +126,7 @@ inputs:
     doc: "Optical PCR product length.\n                        default: 180"
     inputBinding:
       position: 101
+      prefix: --opt_prodlen
   - id: output_name
     type: string
     doc: "Identical name (must be unique).\n                        This will be stem
@@ -127,6 +141,7 @@ inputs:
     doc: "Maximum primer size\n                        default: 26"
     inputBinding:
       position: 101
+      prefix: --primer_max_size
   - id: primer_min_size
     type:
       - 'null'
@@ -134,6 +149,7 @@ inputs:
     doc: "Minimum primer size\n                        default: 18"
     inputBinding:
       position: 101
+      prefix: --primer_min_size
   - id: primer_num_consider
     type:
       - 'null'
@@ -142,6 +158,7 @@ inputs:
       \ default: 3"
     inputBinding:
       position: 101
+      prefix: --primer_num_consider
   - id: primer_opt_size
     type:
       - 'null'
@@ -149,6 +166,7 @@ inputs:
     doc: "Optical primer size\n                        default: 20"
     inputBinding:
       position: 101
+      prefix: --primer_opt_size
   - id: ref
     type: File
     doc: Reference fasta.
@@ -163,18 +181,21 @@ inputs:
       \                    default: 140"
     inputBinding:
       position: 101
+      prefix: --search_span
   - id: target_position
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --target
+          separate: true
     doc: "Target position where primers designed/\n                        e.g. \"\
       chr01:1000000-3500000\"\n                        If not specified, the program
       process whole genome.\n                        This parameter can be specified
       multiple times."
     inputBinding:
       position: 101
-      prefix: --target
   - id: unintended_prod_size_allowed
     type:
       - 'null'
@@ -184,6 +205,7 @@ inputs:
       \         default: 4000"
     inputBinding:
       position: 101
+      prefix: --unintended_prod_size_allowed
   - id: variant_type
     type: string
     doc: "Type of variants.\n                        SNP or INDEL are supported."

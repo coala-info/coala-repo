@@ -97,7 +97,6 @@ inputs:
       prefix: --workers
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
       prefix: --output-file

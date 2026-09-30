@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse filter
+baseCommand:
+  - bedparse
+  - filter
 label: bedparse_filter
 doc: "Filters a BED file based on an annotation. BED entries with a name (i.e. col4)
   that appears in the specified column of the annotation are printed to stdout. For

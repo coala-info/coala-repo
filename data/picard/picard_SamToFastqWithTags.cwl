@@ -32,6 +32,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --SEQUENCE_TAG_GROUP
+      itemSeparator: ','
   - id: arguments_file
     type:
       - 'null'
@@ -183,6 +184,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --QUALITY_TAG_GROUP
+      itemSeparator: ','
   - id: quiet
     type:
       - 'null'
@@ -267,6 +269,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --TAG_GROUP_SEPERATOR
+      itemSeparator: ','
   - id: tmp_dir
     type:
       - 'null'

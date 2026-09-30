@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm split
+baseCommand:
+  - groopm
+  - split
 label: groopm_split
 doc: "Split a database into parts\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

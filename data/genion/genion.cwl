@@ -87,7 +87,7 @@ inputs:
       prefix: --transcriptome-self-align
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output path for an existing path
     inputBinding:
       position: 102
       prefix: --output

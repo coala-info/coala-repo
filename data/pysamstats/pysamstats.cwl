@@ -229,7 +229,7 @@ inputs:
       prefix: --zero-based
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file. If not provided, write to stdout.
     inputBinding:
       position: 103
       prefix: --output

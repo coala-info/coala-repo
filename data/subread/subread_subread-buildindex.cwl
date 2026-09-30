@@ -54,10 +54,12 @@ inputs:
       prefix: --output-basename
 outputs:
   - id: output_basename
-    type: File
+    type:
+      type: array
+      items: File
     doc: Base name of the index to be created
     outputBinding:
-      glob: $(inputs.output_basename_path)
+      glob: $(inputs.output_basename_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

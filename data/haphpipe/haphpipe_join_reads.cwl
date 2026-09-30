@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe join_reads
+baseCommand:
+  - haphpipe
+  - join_reads
 label: haphpipe_join_reads
 doc: "Joins paired-end reads using FLASH.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -91,7 +93,7 @@ inputs:
       position: 101
       prefix: --quiet
   - id: outdir_path
-    type: string
+    type: string?
     doc: 'Output directory (default: .)'
     inputBinding:
       position: 102

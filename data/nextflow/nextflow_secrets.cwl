@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextflow secrets
+baseCommand:
+  - nextflow
+  - secrets
 label: nextflow_secrets
 doc: "Manage pipeline secrets\n\nTool homepage: https://github.com/nextflow-io/nextflow"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_overlap
+baseCommand:
+  - odgi
+  - overlap
 label: odgi_overlap
 doc: "Find the paths touched by given input paths.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

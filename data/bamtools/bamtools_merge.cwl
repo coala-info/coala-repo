@@ -43,10 +43,10 @@ inputs:
       prefix: -region
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: the output BAM file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type:

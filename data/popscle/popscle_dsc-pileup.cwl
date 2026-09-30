@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popscle_dsc-pileup
+baseCommand:
+  - popscle
+  - dsc-pileup
 label: popscle_dsc-pileup
 doc: "Produce pileup of dsc-RNAseq\n\nTool homepage: https://github.com/statgen/popscle"
 inputs:
@@ -163,7 +165,7 @@ inputs:
       prefix: --vcf-verbose
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: '[STR: ]             : Output file prefix'
     inputBinding:
       position: 102
       prefix: --out
@@ -171,10 +173,11 @@ outputs:
   - id: out
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

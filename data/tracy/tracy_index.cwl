@@ -8,14 +8,14 @@ doc: "Index a genome for tracy\n\nTool homepage: https://github.com/gear-genomic
 inputs:
   - id: genome_fasta
     type: File
+    doc: Input genome fasta file (e.g., genome.fa.gz)
     secondaryFiles:
       - .fai
-    doc: Input genome fasta file (e.g., genome.fa.gz)
     inputBinding:
       position: 1
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output file
     inputBinding:
       position: 101
       prefix: --output

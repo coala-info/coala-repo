@@ -167,7 +167,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: Keep track of filtered and assigned contigs in given file [stderr]
     inputBinding:
       position: 102
       prefix: --log
@@ -175,7 +175,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_contig_map_path`
+    doc: Output rgfa node -> contig map to this file
     inputBinding:
       position: 103
       prefix: --output-contig-map
@@ -183,7 +183,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
+    doc: All output files will be of the form <PREFIX><contig>.paf/.fa_contigs
     inputBinding:
       position: 104
       prefix: --output-prefix
@@ -191,10 +191,11 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: All output files will be of the form <PREFIX><contig>.paf/.fa_contigs
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
   - id: output_contig_map
     type:
       - 'null'

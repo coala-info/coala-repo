@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refinem_genome_stats
+baseCommand:
+  - refinem
+  - genome_stats
 label: refinem_genome_stats
 doc: "Calculate statistics for genomes.\n\nTool homepage: http://pypi.python.org/pypi/refinem/"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: file with statistics for each scaffold
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: output file with genome statistics
+    inputBinding:
+      position: 2
   - id: cpus
     type:
       - 'null'
@@ -26,11 +33,11 @@ inputs:
       position: 102
       prefix: --silent
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: output file with genome statistics
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refinem:0.1.2--pyh3252c3a_0

@@ -20,6 +20,11 @@ inputs:
     doc: the list of paths to control bam files
     inputBinding:
       position: 3
+  - id: output_vcf
+    type: string
+    doc: the path to the output
+    inputBinding:
+      position: 4
   - id: base_qual_thres
     type:
       - 'null'
@@ -86,11 +91,11 @@ inputs:
       position: 104
       prefix: -t
 outputs:
-  - id: output_vcf
+  - id: out_output_vcf
     type: File
     doc: the path to the output
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_vcf)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ebfilter:0.2.2--pyh5ca1d4c_0

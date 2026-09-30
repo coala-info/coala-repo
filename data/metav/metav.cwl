@@ -43,7 +43,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: 'specify three e-values threshold used to output the viral reads (or contigs),
+    doc: 'specify three e-values threshold used to output the viral reads (or contigs),'
     inputBinding:
       position: 101
       prefix: -oe

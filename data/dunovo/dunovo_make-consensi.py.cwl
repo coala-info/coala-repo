@@ -186,30 +186,32 @@ inputs:
     inputBinding:
       position: 104
       prefix: --duplexes-2-fa
-  - id: log_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `log_path`
-    inputBinding:
-      position: 105
-      prefix: --log
   - id: sscs1_fa_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sscs1_fa_path`
+    doc: 'sscs_1.fa     Save the single-strand consensus sequences (mate 1) in this
+      file (FASTA format). Warning: This will be overwritten if it exists!'
     inputBinding:
       position: 106
-      prefix: --sscs1-fa
+      prefix: --sscs1
   - id: sscs2_fa_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sscs2_fa_path`
+    doc: 'sscs_2.fa     Save the single-strand consensus sequences (mate 2) in this
+      file (FASTA format). Warning: This will be overwritten if it exists!'
     inputBinding:
       position: 107
-      prefix: --sscs2-fa
+      prefix: --sscs2
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Print log messages to this file instead of to
+    inputBinding:
+      position: 108
+      prefix: --log
 outputs:
   - id: duplexes_1_fa
     type:

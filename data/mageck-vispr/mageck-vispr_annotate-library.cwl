@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mageck-vispr annotate-library
+baseCommand:
+  - mageck-vispr
+  - annotate-library
 label: mageck-vispr_annotate-library
 doc: "MAGeCK-VISPR is a comprehensive quality control, analysis and visualization
   pipeline for CRISPR/Cas9 screens.\n\nTool homepage: https://bitbucket.org/liulab/mageck-vispr"

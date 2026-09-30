@@ -108,42 +108,42 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `clonal_genealogy_file_path`
+    doc: Export clonal genealogy to given file
     inputBinding:
       position: 102
-      prefix: --clonal-genealogy-file
+      prefix: -c
   - id: dot_graph_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dot_graph_file_path`
+    doc: Export DOT graph to given file
     inputBinding:
       position: 103
-      prefix: --dot-graph-file
+      prefix: -d
   - id: external_recombinant_break_log_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `external_recombinant_break_log_path`
+    doc: Write log file of external recombinant break interval locations
     inputBinding:
       position: 104
-      prefix: --external-recombinant-break-log
+      prefix: -f
   - id: internal_recombinant_break_log_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `internal_recombinant_break_log_path`
+    doc: Write log file of internal recombinant break interval locations
     inputBinding:
       position: 105
-      prefix: --internal-recombinant-break-log
+      prefix: -b
   - id: local_trees_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `local_trees_file_path`
+    doc: Export local trees to given file
     inputBinding:
       position: 106
-      prefix: --local-trees-file
+      prefix: -l
   - id: output_file_path
     type:
       - 'null'

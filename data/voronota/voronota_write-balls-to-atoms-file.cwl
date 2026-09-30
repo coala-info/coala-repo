@@ -32,12 +32,12 @@ inputs:
     doc: file path to input template for B-factor insertions
     inputBinding:
       position: 102
-      prefix: --pdb_output_template
+      prefix: --pdb-output-template
   - id: pdb_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pdb_output_path`
+    doc: file path to output query result in PDB format
     inputBinding:
       position: 103
       prefix: --pdb-output

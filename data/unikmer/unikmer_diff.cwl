@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer diff
+baseCommand:
+  - unikmer
+  - diff
 label: unikmer_diff
 doc: "Set difference of k-mers in multiple binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

@@ -27,7 +27,8 @@ inputs:
     doc: Size of bins in ixx.
     inputBinding:
       position: 104
-      prefix: -binSize
+      prefix: -binSize=
+      separate: false
   - id: max_word_length
     type:
       - 'null'
@@ -36,7 +37,8 @@ inputs:
       are ignored and will not appear in index or be searchable.
     inputBinding:
       position: 104
-      prefix: -maxWordLength
+      prefix: -maxWordLength=
+      separate: false
   - id: prefix_size
     type:
       - 'null'
@@ -44,7 +46,8 @@ inputs:
     doc: Size of prefix to index on in ixx.
     inputBinding:
       position: 104
-      prefix: -prefixSize
+      prefix: -prefixSize=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

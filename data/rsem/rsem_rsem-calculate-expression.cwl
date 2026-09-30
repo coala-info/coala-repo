@@ -24,6 +24,7 @@ inputs:
       is expected.
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: downstream_read_files
     type:
       - 'null'
@@ -35,6 +36,7 @@ inputs:
       format is expected.
     inputBinding:
       position: 3
+      itemSeparator: ','
   - id: reference_name
     type: string
     doc: The name of the reference used. The user must have run 

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: traitar_show
+baseCommand:
+  - traitar
+  - show
 label: traitar_show
 doc: "show features important for classification\n\nTool homepage: http://github.com/aweimann/traitar"
 inputs:

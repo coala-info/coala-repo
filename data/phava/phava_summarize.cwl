@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phava summarize
+baseCommand:
+  - phava
+  - summarize
 label: phava_summarize
 doc: "Directory where data and output are stored\n\nTool homepage: https://github.com/patrickwest/PhaVa"
 inputs:

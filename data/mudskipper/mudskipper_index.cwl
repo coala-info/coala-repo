@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mudskipper index
+baseCommand:
+  - mudskipper
+  - index
 label: mudskipper_index
 doc: "Parse the GTF and build an index to make later runs faster.\n\nTool homepage:
   https://github.com/OceanGenomics/mudskipper"
 inputs:
   - id: dir_index
-    type: Directory
+    type: string
     doc: Output index directory name
     inputBinding:
       position: 101

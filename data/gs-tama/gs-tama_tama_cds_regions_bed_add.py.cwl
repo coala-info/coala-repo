@@ -7,19 +7,19 @@ doc: "This script uses data from the blastp parse file and the original annotati
   https://github.com/sguizard/gs-tama"
 inputs:
   - id: annotation_bed_file
-    type: File
+    type: File?
     doc: Annotation bed file (required)
     inputBinding:
       position: 101
       prefix: -a
   - id: blastp_parse_file
-    type: File
+    type: File?
     doc: Blastp parse file (required)
     inputBinding:
       position: 101
       prefix: -p
   - id: fasta_annotation_file
-    type: File
+    type: File?
     doc: Fasta for annotation file (required)
     inputBinding:
       position: 101
@@ -27,7 +27,7 @@ inputs:
   - id: include_stop_codon
     type:
       - 'null'
-      - boolean
+      - string
     doc: Include stop codon in CDS region (include_stop), default is to remove 
       stop codon from CDS region
     inputBinding:
@@ -42,14 +42,14 @@ inputs:
       position: 101
       prefix: -d
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: Output file name (required)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
-    type: File
+    type: File?
     doc: Output file name (required)
     outputBinding:
       glob: $(inputs.output_file_path)

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wipertools_fastqscatter
+baseCommand:
+  - wipertools
+  - fastqscatter
 label: wipertools_fastqscatter
 doc: "Split a FASTQ file into multiple smaller files.\n\nTool homepage: https://github.com/mazzalab/fastqwiper"
 inputs:
@@ -48,10 +50,9 @@ inputs:
       prefix: --suffix
   - id: out_folder_path
     type: string
-    doc: Output or path parameter `out_folder_path`
     inputBinding:
       position: 102
-      prefix: --out-folder
+      prefix: --out_folder
 outputs:
   - id: out_folder
     type:

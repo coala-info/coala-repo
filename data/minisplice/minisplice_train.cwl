@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minisplice_train
+baseCommand:
+  - minisplice
+  - train
 label: minisplice_train
 doc: "Train a model for minisplice\n\nTool homepage: https://github.com/lh3/minisplice"
 inputs:
@@ -99,10 +101,10 @@ inputs:
       prefix: -t
   - id: output_model_path
     type: string
-    doc: Output or path parameter `output_model_path`
+    doc: output model []
     inputBinding:
       position: 103
-      prefix: --output-model
+      prefix: -o
 outputs:
   - id: output_model
     type:

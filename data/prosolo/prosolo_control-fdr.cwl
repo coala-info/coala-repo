@@ -21,6 +21,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --events
+      itemSeparator: ','
   - id: fdr
     type:
       - 'null'
@@ -53,10 +54,11 @@ inputs:
       prefix: --var
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: BCF file that contains the filtered results (if omitted, write to 
+      STDOUT).
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

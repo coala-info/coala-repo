@@ -49,7 +49,7 @@ inputs:
       position: 101
       prefix: --logFile
   - id: output_path
-    type: string
+    type: string?
     doc: 'Output file path. (default: None)'
     inputBinding:
       position: 102

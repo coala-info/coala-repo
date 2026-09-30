@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clipcontext_int
+baseCommand:
+  - clipcontext
+  - int
 label: clipcontext_int
 doc: "CLIP peak regions overlapping with introns output BED file\n\nTool homepage:
   https://github.com/BackofenLab/CLIPcontext"
@@ -67,10 +69,11 @@ inputs:
       prefix: --tr
   - id: output_bed_file_path
     type: string
-    doc: Output or path parameter `output_bed_file_path`
+    doc: str             CLIP peak regions overlapping with introns output BED 
+      file
     inputBinding:
       position: 102
-      prefix: --output-bed-file
+      prefix: --out
 outputs:
   - id: output_bed_file
     type: File

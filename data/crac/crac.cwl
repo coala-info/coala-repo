@@ -98,15 +98,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sam_path`
+    doc: set SAM output filename or print on STDOUT with "-o -" argument
     inputBinding:
       position: 102
-      prefix: --output-sam
+      prefix: --sam
   - id: summary_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_path`
+    doc: set output summary file with some statistics about mapping and 
+      classification
     inputBinding:
       position: 103
       prefix: --summary

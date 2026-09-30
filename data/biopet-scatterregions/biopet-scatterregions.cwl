@@ -49,9 +49,9 @@ inputs:
       prefix: --notSplitContigs
   - id: reference_fasta
     type: File
+    doc: Reference fasta file, (dict file should be next to it)
     secondaryFiles:
       - .fai
-    doc: Reference fasta file, (dict file should be next to it)
     inputBinding:
       position: 101
       prefix: --referenceFasta
@@ -73,10 +73,10 @@ inputs:
       prefix: --scatterSize
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --outputDir
 outputs:
   - id: output_dir
     type: Directory

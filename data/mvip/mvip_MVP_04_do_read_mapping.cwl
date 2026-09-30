@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_04_do_read_mapping
+baseCommand:
+  - mvip
+  - MVP_04_do_read_mapping
 label: mvip_MVP_04_do_read_mapping
 doc: "Run CoverM to calculate coverage based on read mapping, using the sorted BAM
   files sorted by reference, and return to one tabular file per sample.\n\nTool homepage:
@@ -56,6 +58,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample_group
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'

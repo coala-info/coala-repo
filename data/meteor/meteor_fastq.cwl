@@ -33,10 +33,10 @@ inputs:
       prefix: -p
   - id: fastq_dir_path
     type: string
-    doc: Output or path parameter `fastq_dir_path`
+    doc: Directory where the fastq repository is created.
     inputBinding:
       position: 102
-      prefix: --fastq-dir
+      prefix: -o
 outputs:
   - id: fastq_dir
     type: Directory

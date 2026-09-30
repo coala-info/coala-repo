@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ropebwt3 suffix
+baseCommand:
+  - ropebwt3
+  - suffix
 label: ropebwt3_suffix
 doc: "Build suffix array and BWT for a FASTA file.\n\nTool homepage: https://github.com/lh3/ropebwt3"
 inputs:

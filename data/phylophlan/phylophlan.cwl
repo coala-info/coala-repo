@@ -73,7 +73,7 @@ inputs:
   - id: data_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the folder where to store the intermediate files, default is 
       "tmp" inside the project's output folder
     inputBinding:
@@ -267,7 +267,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output folder where to save the results
     inputBinding:
       position: 101

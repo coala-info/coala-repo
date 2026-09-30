@@ -179,9 +179,9 @@ inputs:
       prefix: --pindel_output_root
   - id: reference
     type: File
+    doc: The name of the file containing the reference genome
     secondaryFiles:
       - .fai
-    doc: The name of the file containing the reference genome
     inputBinding:
       position: 101
       prefix: --reference
@@ -224,7 +224,6 @@ inputs:
       prefix: --window_size
   - id: vcf_path
     type: string
-    doc: Output or path parameter `vcf_path`
     inputBinding:
       position: 102
       prefix: --vcf

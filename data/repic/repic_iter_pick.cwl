@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: repic_iter_pick
+baseCommand:
+  - repic
+  - iter_pick
 label: repic_iter_pick
 doc: "Iteratively pick particles based on a configuration file.\n\nTool homepage:
   https://github.com/ccameron/REPIC"
@@ -45,11 +47,10 @@ inputs:
       position: 104
       prefix: --semi_auto
   - id: out_file_path_path
-    type: string
-    doc: Output or path parameter `out_file_path_path`
+    type: string?
     inputBinding:
       position: 105
-      prefix: --out-file-path
+      prefix: --out_file_path
 outputs:
   - id: out_file_path
     type:

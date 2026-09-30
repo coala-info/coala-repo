@@ -46,7 +46,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save the output files.
     inputBinding:
       position: 102

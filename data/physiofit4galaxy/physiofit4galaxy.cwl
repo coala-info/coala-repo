@@ -114,34 +114,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_config_path`
     inputBinding:
       position: 102
-      prefix: --output-config
+      prefix: --output_config
   - id: output_fluxes_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fluxes_path`
     inputBinding:
       position: 103
-      prefix: --output-fluxes
+      prefix: --output_fluxes
   - id: output_pdf_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_pdf_path`
     inputBinding:
       position: 104
-      prefix: --output-pdf
+      prefix: --output_pdf
   - id: output_stats_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_stats_path`
     inputBinding:
       position: 105
-      prefix: --output-stats
+      prefix: --output_stats
 outputs:
   - id: output_pdf
     type:

@@ -39,7 +39,7 @@ inputs:
       prefix: --gtf
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output results in this file instead of stdout
     inputBinding:
       position: 103
       prefix: --out

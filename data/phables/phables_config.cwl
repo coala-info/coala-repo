@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phables config
+baseCommand:
+  - phables
+  - config
 label: phables_config
 doc: "Copy system default config to phables.out/config.yaml\n\nTool homepage: https://github.com/Vini2/phables"
 inputs:

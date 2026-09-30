@@ -48,7 +48,7 @@ inputs:
       prefix: --sample_meta
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: 'Output Directory to put results (default: None)'
     inputBinding:
       position: 102
       prefix: --outfile

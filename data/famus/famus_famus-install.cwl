@@ -31,7 +31,7 @@ inputs:
   - id: log_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save logs.
     inputBinding:
       position: 101
@@ -45,7 +45,7 @@ inputs:
   - id: models_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save the installed models to
     inputBinding:
       position: 101

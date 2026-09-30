@@ -23,17 +23,17 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Custom temporary directory
     inputBinding:
       position: 101
       prefix: -tmp
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
+    doc: Output FASTA file
     inputBinding:
       position: 102
-      prefix: --output-fasta
+      prefix: -o
 outputs:
   - id: output_fasta
     type: File

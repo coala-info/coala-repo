@@ -107,7 +107,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_result_path`
+    doc: Path to save the result plot                            │
     inputBinding:
       position: 102
       prefix: --plot-result
@@ -115,7 +115,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_fasta_path`
+    doc: Path to save the output fasta file (requires            │
     inputBinding:
       position: 103
       prefix: --save-fasta
@@ -123,7 +123,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_result_path`
+    doc: Path to save the result table (csv) file. If not set,   │
     inputBinding:
       position: 104
       prefix: --save-result

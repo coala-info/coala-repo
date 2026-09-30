@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minnow simulate
+baseCommand:
+  - minnow
+  - simulate
 label: minnow_simulate
 doc: "Simulate single-cell RNA-seq data\n\nTool homepage: https://github.com/COMBINE-lab/minnow"
 inputs:

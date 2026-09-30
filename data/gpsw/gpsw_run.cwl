@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gpsw_run
+baseCommand:
+  - gpsw
+  - run
 label: gpsw_run
 doc: "Run the GPSW pipeline and create report.\n\nTool homepage: https://github.com/niekwit/gps-orfeome"
 inputs:

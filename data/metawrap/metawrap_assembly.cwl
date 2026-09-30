@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metawrap assembly
+baseCommand:
+  - metawrap
+  - assembly
 label: metawrap_assembly
 doc: "Assemble reads into contigs\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:
@@ -21,7 +23,7 @@ inputs:
       position: 101
       prefix: -l
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101

@@ -166,6 +166,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --graph
+          separate: true
     doc: 'Include graphs of type GRAPHTYPE in the generated output. Graphs are generated
       using the Graphviz dot executable. If this executable is not on the path, then
       use --dotpath to specify its location. This option may be repeated to include
@@ -173,7 +176,6 @@ inputs:
       callgraph, umlclasstree.'
     inputBinding:
       position: 103
-      prefix: --graph
   - id: graph_font
     type:
       - 'null'
@@ -292,7 +294,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The output directory. If PATH does not exist, then it will be created.
     inputBinding:
       position: 103

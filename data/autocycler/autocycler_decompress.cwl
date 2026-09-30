@@ -16,18 +16,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_dir_path`
+    doc: Directory where decompressed sequences will be saved (either -o or -f
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
   - id: out_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
+    doc: FASTA file where decompressed sequences will be saved (either -o or -f
     inputBinding:
       position: 103
-      prefix: --out-file
+      prefix: --out_file
 outputs:
   - id: out_dir
     type:

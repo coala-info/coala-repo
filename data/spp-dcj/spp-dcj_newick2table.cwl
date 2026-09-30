@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spp-dcj newick2table
+baseCommand:
+  - spp-dcj
+  - newick2table
 label: spp-dcj_newick2table
 doc: "Converts a Newick tree to a table format.\n\nTool homepage: https://github.com/codialab/spp-dcj"
 inputs:

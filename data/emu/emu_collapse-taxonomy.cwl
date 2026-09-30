@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: emu collapse-taxonomy
+baseCommand:
+  - emu
+  - collapse-taxonomy
 label: emu_collapse-taxonomy
 doc: "Collapse taxonomic ranks in emu output.\n\nTool homepage: https://gitlab.com/treangenlab/emu"
 inputs:

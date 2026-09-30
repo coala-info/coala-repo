@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: knock-knock install-example-data
+baseCommand:
+  - knock-knock
+  - install-example-data
 label: knock-knock_install-example-data
 doc: "Installs example data for a knock-knock project.\n\nTool homepage: https://github.com/jeffhussmann/knock-knock"
 inputs:

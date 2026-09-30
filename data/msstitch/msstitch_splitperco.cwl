@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch splitperco
+baseCommand:
+  - msstitch
+  - splitperco
 label: msstitch_splitperco
 doc: "Split peptides based on protein headers.\n\nTool homepage: https://github.com/lehtiolab/msstitch"
 inputs:
@@ -22,11 +24,11 @@ inputs:
       position: 101
       prefix: --protheaders
   - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+    type: string?
+    doc: Directory to output in
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -d
 outputs:
   - id: output_directory
     type:

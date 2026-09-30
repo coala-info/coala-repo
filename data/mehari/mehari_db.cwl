@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mehari db
+baseCommand:
+  - mehari
+  - db
 label: mehari_db
 doc: "Database-related commands\n\nTool homepage: https://github.com/bihealth/mehari"
 inputs:

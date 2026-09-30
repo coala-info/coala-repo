@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phava create
+baseCommand:
+  - phava
+  - create
 label: phava_create
 doc: "Create PhaVa data structures\n\nTool homepage: https://github.com/patrickwest/PhaVa"
 inputs:

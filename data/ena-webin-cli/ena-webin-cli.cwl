@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar webin-cli-9.0.3.jar
+baseCommand:
+  - java
+  - -jar
+  - webin-cli-9.0.3.jar
 label: ena-webin-cli
 doc: "Validate and submit files to ENA using the Webin submission service. Use the
   -fields option to see supported manifest fields for all contexts or for a specific
@@ -55,7 +58,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Root directory for any output files written in 
       <context>/<name>/<validate,process,submit> directory structure. By default
       the manifest file directory is used as the output directory. The <name> is
@@ -71,7 +74,8 @@ inputs:
     doc: Webin submission account password.
     inputBinding:
       position: 101
-      prefix: --password
+      prefix: -password=
+      separate: false
   - id: password_env
     type:
       - 'null'

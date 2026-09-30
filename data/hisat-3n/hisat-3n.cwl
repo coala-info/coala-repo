@@ -136,6 +136,7 @@ inputs:
     doc: 'Same as: --no-repeat-index'
     inputBinding:
       position: 102
+      prefix: --fast
   - id: ff_mates
     type:
       - 'null'
@@ -167,6 +168,7 @@ inputs:
     doc: qualities encoded as space-delimited integers
     inputBinding:
       position: 102
+      prefix: --int-quals
   - id: known_splicesite_infile
     type:
       - 'null'
@@ -491,6 +493,7 @@ inputs:
     doc: qualities are Phred+33 (default)
     inputBinding:
       position: 102
+      prefix: --phred33
   - id: phred64
     type:
       - 'null'
@@ -498,6 +501,7 @@ inputs:
     doc: qualities are Phred+64
     inputBinding:
       position: 102
+      prefix: --phred64
   - id: qc_filter
     type:
       - 'null'
@@ -659,6 +663,7 @@ inputs:
     doc: 'Same as: --bowtie2-dp 1 -k 30 --score-min L,0,-0.5'
     inputBinding:
       position: 102
+      prefix: --sensitive
   - id: sequences_as_strings
     type:
       - 'null'
@@ -803,14 +808,7 @@ inputs:
     doc: 'Same as: --bowtie2-dp 2 -k 50 --score-min L,0,-1'
     inputBinding:
       position: 102
-  - id: novel_splicesite_outfile_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `novel_splicesite_outfile_path`
-    inputBinding:
-      position: 103
-      prefix: --novel-splicesite-outfile
+      prefix: --very-sensitive
   - id: sam_output_path
     type:
       - 'null'
@@ -819,6 +817,14 @@ inputs:
     inputBinding:
       position: 104
       prefix: --sam-output
+  - id: novel_splicesite_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: report a list of splice sites
+    inputBinding:
+      position: 105
+      prefix: --novel-splicesite-outfile
 outputs:
   - id: sam_output
     type:

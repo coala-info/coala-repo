@@ -82,6 +82,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --effect-size-odr
+      itemSeparator: ','
   - id: genome_length
     type:
       - 'null'
@@ -160,7 +161,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output directory
     inputBinding:
       position: 101

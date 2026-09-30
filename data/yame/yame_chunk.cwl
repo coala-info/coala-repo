@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory for chunks
     inputBinding:
       position: 2

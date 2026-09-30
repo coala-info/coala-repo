@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp evaluate
+baseCommand:
+  - treesapp
+  - evaluate
 label: treesapp_evaluate
 doc: "Evaluate classification performance using clade-exclusion analysis.\n\nTool
   homepage: https://github.com/hallamlab/TreeSAPP"

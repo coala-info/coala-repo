@@ -248,8 +248,7 @@ inputs:
       position: 101
       prefix: --window_size_transporter
   - id: log_path
-    type: string
-    doc: Output or path parameter `log_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --log

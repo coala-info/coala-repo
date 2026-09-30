@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fq_filter
+baseCommand:
+  - fq
+  - filter
 label: fq_filter
 doc: "Filters a FASTQ file\n\nTool homepage: https://github.com/stjude-rust-labs/fq"
 inputs:
@@ -31,7 +33,6 @@ inputs:
       prefix: --sequence-pattern
   - id: dsts_path
     type: string
-    doc: Output or path parameter `dsts_path`
     inputBinding:
       position: 103
       prefix: --dsts

@@ -47,10 +47,10 @@ inputs:
       prefix: -min
   - id: output_gfa_file_path
     type: string
-    doc: Output or path parameter `output_gfa_file_path`
+    doc: Name of the output GFA file
     inputBinding:
       position: 102
-      prefix: --output-gfa-file
+      prefix: -out
 outputs:
   - id: output_gfa_file
     type: File

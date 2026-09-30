@@ -33,7 +33,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for storing output files
     inputBinding:
       position: 101

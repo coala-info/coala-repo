@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe pairwise_align
+baseCommand:
+  - haphpipe
+  - pairwise_align
 label: haphpipe_pairwise_align
 doc: "Perform pairwise alignment of assembled amplicons to a reference genome.\n\n\
   Tool homepage: https://github.com/gwcbi/haphpipe"
@@ -38,7 +40,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

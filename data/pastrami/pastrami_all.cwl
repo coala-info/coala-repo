@@ -72,13 +72,13 @@ inputs:
       position: 101
       prefix: --pop-group
   - id: query_prefix
-    type: string
+    type: string?
     doc: Prefix for the query TPED/TFAM input files
     inputBinding:
       position: 101
       prefix: --query-prefix
   - id: reference_prefix
-    type: string
+    type: string?
     doc: Prefix for the reference TPED/TFAM input files
     inputBinding:
       position: 101
@@ -103,7 +103,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
     inputBinding:
       position: 102
       prefix: --log-file
@@ -111,7 +110,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_prefix_path`
     inputBinding:
       position: 103
       prefix: --out-prefix
@@ -119,11 +117,12 @@ outputs:
   - id: out_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: 'Output prefix for creating following sets of files: .pickle, _query.tsv,
       .tsv, .fam, _fractions.Q, _paintings.Q, _estimates.Q, _fine_grain_estimates.Q'
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path)*
   - id: log_file
     type:
       - 'null'

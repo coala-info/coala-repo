@@ -47,16 +47,15 @@ inputs:
       prefix: --min-num-ch
   - id: ref_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: string indicating the path to a fasta file containing the sequences you
       used for mapping
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref-fasta
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

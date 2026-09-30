@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr backbone
+baseCommand:
+  - seidr
+  - backbone
 label: seidr_backbone
 doc: "Determine noisy network backbone scores. Optionally filter on these scores.\n\
   \nTool homepage: https://github.com/bschiffthaler/seidr"
@@ -38,14 +40,14 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store temporary data
     inputBinding:
       position: 102
       prefix: --tempdir
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 103
       prefix: --out-file

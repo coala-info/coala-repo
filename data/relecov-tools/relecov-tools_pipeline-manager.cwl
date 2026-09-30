@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: relecov-tools pipeline-manager
+baseCommand:
+  - relecov-tools
+  - pipeline-manager
 label: relecov-tools_pipeline-manager
 doc: "Create the symbolic links for the samples which are validated to prepare for
   bioinformatics pipeline execution.\n\nTool homepage: https://github.com/BU-ISCIII/relecov-tools"
@@ -43,10 +45,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

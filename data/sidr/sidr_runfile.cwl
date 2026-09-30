@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sidr_runfile
+baseCommand:
+  - sidr
+  - runfile
 label: sidr_runfile
 doc: "Runs a custom analysis using pre-computed data from BBMap or other\nsources.\n\
   \nInput data will be read for all variables which will be used to construct\na Decision

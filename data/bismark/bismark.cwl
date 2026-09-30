@@ -257,6 +257,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: '-1'
+      itemSeparator: ','
   - id: mates2
     type:
       - 'null'
@@ -269,6 +270,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: '-2'
+      itemSeparator: ','
   - id: max_insert_size
     type:
       - 'null'
@@ -734,7 +736,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write temporary files to this directory instead of into the same 
       directory as the input files. If the specified folder does not exist, 
       Bismark will attempt to create it first. The path to the temporary folder 
@@ -767,10 +769,11 @@ inputs:
       prefix: --upto
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Write all output files into this directory. By default the output files
+      will be written into
     inputBinding:
       position: 104
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

@@ -15,6 +15,11 @@ inputs:
     doc: Input chain file
     inputBinding:
       position: 2
+  - id: out_chain
+    type: string
+    doc: Output chain file
+    inputBinding:
+      position: 3
   - id: skip_missing
     type:
       - 'null'
@@ -39,7 +44,8 @@ inputs:
     doc: Restrict output to particular type in net file
     inputBinding:
       position: 103
-      prefix: -type
+      prefix: -type=
+      separate: false
   - id: whole_chains
     type:
       - 'null'
@@ -53,16 +59,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gap_output_file_path`
+    doc: =gap.tab - Output gap sizes to file
     inputBinding:
       position: 104
-      prefix: --gap-output-file
+      prefix: -gapOut=
+      separate: false
 outputs:
   - id: output_chain
     type: File
     doc: Output chain file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_chain)'
   - id: gap_output_file
     type:
       - 'null'

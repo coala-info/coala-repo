@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit_root
+baseCommand:
+  - nwkit
+  - root
 label: nwkit_root
 doc: "Root a newick tree.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

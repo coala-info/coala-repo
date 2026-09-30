@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukcc folder
+baseCommand:
+  - eukcc
+  - folder
 label: eukcc_folder
 doc: "eukcc folder: error: the following arguments are required: binfolder\n\nTool
   homepage: https://github.com/Finn-Lab/EukCC/"
@@ -99,8 +101,7 @@ inputs:
       position: 102
       prefix: --threads_epa
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --out

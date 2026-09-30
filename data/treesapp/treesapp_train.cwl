@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp_train
+baseCommand:
+  - treesapp
+  - train
 label: treesapp_train
 doc: "Model evolutionary distances across taxonomic ranks.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: skmer subsample
+baseCommand:
+  - skmer
+  - subsample
 label: skmer_subsample
 doc: "Performs subsample on a library of reference genome-skims or assemblies\n\n\
   Tool homepage: https://github.com/shahab-sarmashghi/Skmer"
@@ -59,7 +61,7 @@ inputs:
     doc: Directory of output for subsample replicates.
     inputBinding:
       position: 102
-      prefix: --sub
+      prefix: -sub
   - id: save_sketches
     type:
       - 'null'

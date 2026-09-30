@@ -81,7 +81,7 @@ inputs:
       position: 101
       prefix: --minimap2-params
   - id: output
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

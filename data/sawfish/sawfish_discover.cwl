@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sawfish discover
+baseCommand:
+  - sawfish
+  - discover
 label: sawfish_discover
 doc: "Discover SV candidate alleles in one sample\n\nTool homepage: https://github.com/PacificBiosciences/sawfish"
 inputs:

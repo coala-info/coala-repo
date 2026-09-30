@@ -11,6 +11,11 @@ inputs:
     doc: Input archive file.
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output archive file.
+    inputBinding:
+      position: 2
   - id: samples
     type:
       type: array
@@ -19,7 +24,7 @@ inputs:
       text file (.txt, .tsv, .csv, or .list) containing one sample per line. 
       Alternatively, you can provide a list of samples.
     inputBinding:
-      position: 2
+      position: 3
   - id: exclude
     type:
       - 'null'
@@ -29,11 +34,11 @@ inputs:
       position: 103
       prefix: --exclude
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Output archive file.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: correlationplus calculate
+baseCommand:
+  - correlationplus
+  - calculate
 label: correlationplus_calculate
 doc: "A Python package to calculate, visualize and analyze protein correlation maps.\n\
   \nTool homepage: https://github.com/tekpinar/correlationplus"
@@ -79,10 +81,10 @@ inputs:
       prefix: -f
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ': This will be your output data file. Default is DCC.dat. (Optional)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

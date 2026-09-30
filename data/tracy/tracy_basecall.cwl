@@ -61,7 +61,7 @@ inputs:
       prefix: --trimRight
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: basecalling output
     inputBinding:
       position: 103
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm_dump
+baseCommand:
+  - groopm
+  - dump
 label: groopm_dump
 doc: "Dump data from a groopm database.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:
@@ -36,7 +38,6 @@ inputs:
       prefix: --separator
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

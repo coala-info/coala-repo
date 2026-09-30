@@ -62,7 +62,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `correlation_path`
     inputBinding:
       position: 102
       prefix: --correlation
@@ -70,7 +69,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `covariance_path`
     inputBinding:
       position: 103
       prefix: --covariance

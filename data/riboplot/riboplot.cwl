@@ -70,18 +70,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `html_file_path`
     inputBinding:
       position: 102
-      prefix: --html-file
+      prefix: --html_file
   - id: output_path_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 103
-      prefix: --output-path
+      prefix: --output_path
 outputs:
   - id: html_file
     type:

@@ -99,7 +99,8 @@ inputs:
     doc: switch to ultra fast compression level
     inputBinding:
       position: 102
-      prefix: --fast
+      prefix: --fast=
+      separate: false
   - id: force
     type:
       - 'null'
@@ -139,7 +140,8 @@ inputs:
     doc: enable long distance matching with given window log
     inputBinding:
       position: 102
-      prefix: --long
+      prefix: --long=
+      separate: false
   - id: max_dict
     type:
       - 'null'

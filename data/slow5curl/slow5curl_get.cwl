@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slow5curl_get
+baseCommand:
+  - slow5curl
+  - get
 label: slow5curl_get
 doc: "Display the read entry for each specified READ_ID from a blow5 file. If READ_ID
   is not specified, a newline separated list of read ids will be read from the standard
@@ -112,10 +114,10 @@ inputs:
       prefix: --wait
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'output contents to FILE (.slow5 or .blow5 extensions) [default: stdout]'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

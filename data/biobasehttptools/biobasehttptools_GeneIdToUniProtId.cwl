@@ -23,6 +23,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --geneids
+      itemSeparator: ','
   - id: quiet
     type:
       - 'null'

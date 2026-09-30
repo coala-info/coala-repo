@@ -49,7 +49,8 @@ inputs:
     doc: Specify the Git executable path
     inputBinding:
       position: 103
-      prefix: --exec-path
+      prefix: --exec-path=
+      separate: false
   - id: git_dir
     type:
       - 'null'

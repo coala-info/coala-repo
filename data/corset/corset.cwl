@@ -25,6 +25,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -d
+      itemSeparator: ','
   - id: grouping
     type:
       - 'null'
@@ -118,19 +119,21 @@ inputs:
       prefix: -I
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: 'Prefix for the output filenames. The output files will be of the form <prefix>-counts.txt
+      and <prefix>-clusters.txt. Default filenames are: counts.txt and clusters.txt'
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: -p
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix for the output filenames. The output files will be of the form 
       <prefix>-counts.txt and <prefix>-clusters.txt.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

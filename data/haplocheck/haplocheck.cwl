@@ -19,10 +19,10 @@ inputs:
       prefix: --raw
   - id: output_report_path
     type: string
-    doc: Output or path parameter `output_report_path`
+    doc: Output report
     inputBinding:
       position: 103
-      prefix: --output-report
+      prefix: --out
 outputs:
   - id: output_report
     type: File

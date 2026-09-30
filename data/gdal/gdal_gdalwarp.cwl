@@ -166,6 +166,7 @@ inputs:
     doc: Order of the polynomial transformation (default is 3).
     inputBinding:
       position: 102
+      prefix: -order
   - id: output_dataset_options
     type:
       - 'null'

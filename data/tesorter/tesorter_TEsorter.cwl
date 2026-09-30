@@ -162,7 +162,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 102
@@ -174,7 +174,7 @@ inputs:
     doc: overlap size of windows
     inputBinding:
       position: 102
-      prefix: --win_ovl
+      prefix: -win_ovl
   - id: win_size
     type:
       - 'null'
@@ -182,7 +182,7 @@ inputs:
     doc: window size of chunking genome sequences
     inputBinding:
       position: 102
-      prefix: --win_size
+      prefix: -win_size
 outputs:
   - id: stdout
     type: stdout

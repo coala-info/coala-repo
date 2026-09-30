@@ -29,7 +29,7 @@ inputs:
   - id: tmp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: a directory to store temporary files. If not given, snaptools will 
       automatically generate a temporary location to store temporary files.
     inputBinding:
@@ -38,7 +38,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates output the progress.
     inputBinding:
       position: 101

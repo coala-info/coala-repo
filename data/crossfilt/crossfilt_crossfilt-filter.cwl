@@ -28,11 +28,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tag
+          separate: true
     doc: Tag values to compare. Can be specified multiple times to compare 
       multiple tags.
     inputBinding:
       position: 103
-      prefix: --tag
   - id: threads
     type:
       - 'null'

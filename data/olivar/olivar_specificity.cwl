@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: olivar_specificity
+baseCommand:
+  - olivar
+  - specificity
 label: olivar_specificity
 doc: "Calculate primer specificity using BLAST.\n\nTool homepage: https://gitlab.com/treangenlab/olivar"
 inputs:
@@ -62,8 +64,7 @@ inputs:
       position: 102
       prefix: --title
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --output

@@ -16,7 +16,8 @@ inputs:
     doc: Number of CPUs to use - default 1.
     inputBinding:
       position: 102
-      prefix: -cpu
+      prefix: -cpu=
+      separate: false
   - id: debug
     type:
       - 'null'
@@ -33,7 +34,8 @@ inputs:
     doc: add environment variable to jobs.  Maybe repeated.
     inputBinding:
       position: 102
-      prefix: -env
+      prefix: -env=
+      separate: false
   - id: hub
     type:
       - 'null'
@@ -41,7 +43,8 @@ inputs:
     doc: Restrict access to connections from hub.
     inputBinding:
       position: 102
-      prefix: -hub
+      prefix: -hub=
+      separate: false
   - id: log_facility
     type:
       - 'null'
@@ -49,7 +52,8 @@ inputs:
     doc: Log to the specified syslog facility - default local0.
     inputBinding:
       position: 102
-      prefix: -logFacility
+      prefix: -logFacility=
+      separate: false
   - id: log_file
     type:
       - 'null'
@@ -57,7 +61,8 @@ inputs:
     doc: Log to file instead of syslog.
     inputBinding:
       position: 102
-      prefix: -log
+      prefix: -log=
+      separate: false
   - id: log_min_priority
     type:
       - 'null'
@@ -65,7 +70,8 @@ inputs:
     doc: minimum syslog priority to log, also filters file logging.
     inputBinding:
       position: 102
-      prefix: -logMinPriority
+      prefix: -logMinPriority=
+      separate: false
   - id: random_delay
     type:
       - 'null'
@@ -76,7 +82,8 @@ inputs:
       Default 5000.
     inputBinding:
       position: 102
-      prefix: -randomDelay
+      prefix: -randomDelay=
+      separate: false
   - id: sys_path
     type:
       - 'null'
@@ -84,7 +91,8 @@ inputs:
     doc: System dirs to add to path.
     inputBinding:
       position: 102
-      prefix: -sysPath
+      prefix: -sysPath=
+      separate: false
   - id: umask
     type:
       - 'null'
@@ -92,7 +100,8 @@ inputs:
     doc: Set umask to run under - default 002.
     inputBinding:
       position: 102
-      prefix: -umask
+      prefix: -umask=
+      separate: false
   - id: user_path
     type:
       - 'null'
@@ -100,7 +109,8 @@ inputs:
     doc: User dirs to add to path.
     inputBinding:
       position: 102
-      prefix: -userPath
+      prefix: -userPath=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

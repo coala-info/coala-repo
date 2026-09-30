@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yacrd extract
+baseCommand:
+  - yacrd
+  - extract
 label: yacrd_extract
 doc: "Record mark as chimeric or NotCovered is extract\n\nTool homepage: https://github.com/natir/yacrd"
 inputs:
@@ -13,7 +15,7 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: path to output file, format and compression of input is preserved
     inputBinding:
       position: 102
       prefix: --output

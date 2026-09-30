@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isorefiner_refine
+baseCommand:
+  - isorefiner
+  - refine
 label: isorefiner_refine
 doc: "Refine transcript isoform structures based on reads and reference annotation.\n\
   \nTool homepage: https://github.com/rkajitani/IsoRefiner"
@@ -83,10 +85,9 @@ inputs:
       prefix: --work_dir
   - id: out_gtf_path
     type: string
-    doc: Output or path parameter `out_gtf_path`
     inputBinding:
       position: 102
-      prefix: --out-gtf
+      prefix: --out_gtf
 outputs:
   - id: out_gtf
     type:

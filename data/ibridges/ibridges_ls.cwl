@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges_ls
+baseCommand:
+  - ibridges
+  - ls
 label: ibridges_ls
 doc: "List a collection on iRODS.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

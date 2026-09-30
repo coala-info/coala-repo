@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phlame_classify
+baseCommand:
+  - phlame
+  - classify
 label: phlame_classify
 doc: "Classify lineages from bam files.\n\nTool homepage: https://github.com/quevan/phlame"
 inputs:
@@ -11,9 +13,7 @@ inputs:
       position: 101
       prefix: -c
   - id: inference_algorithm
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Inference algorithm to use. Defaults to 'mle'
     inputBinding:
       position: 101
@@ -91,18 +91,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_data_path`
+    doc: Path to output data file (required).
     inputBinding:
       position: 102
-      prefix: --output-data
+      prefix: -p
   - id: output_frequencies_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_frequencies_path`
+    type: string
+    doc: Path to output frequencies file (required).
     inputBinding:
       position: 103
-      prefix: --output-frequencies
+      prefix: -o
 outputs:
   - id: output_frequencies
     type: File

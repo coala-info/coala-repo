@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: compleasm_list
+baseCommand:
+  - compleasm
+  - list
 label: compleasm_list
 doc: "List BUSCO lineages\n\nTool homepage: https://github.com/huangnengCSU/compleasm"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast init
+baseCommand:
+  - mrpast
+  - init
 label: mrpast_init
 doc: "Initialize a mrpast model.\n\nTool homepage: https://aprilweilab.github.io/"
 inputs:

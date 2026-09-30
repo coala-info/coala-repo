@@ -735,29 +735,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --very-verbose
-  - id: out_alignment_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_alignment_path`
-    inputBinding:
-      position: 102
-      prefix: --out-alignment
   - id: out_left_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_left_path`
+    doc: ' Output of single-end/left end reads. Valid filetypes are: .sam[.*], .raw[.*],
+      .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*], .faa[.*],
+      .fa[.*], and .bam, where * is any of the following extensions: gz, bz2, and
+      bgzf for transparent (de)compression.'
     inputBinding:
       position: 103
-      prefix: --out-left
+      prefix: --out
+  - id: out_alignment_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --out-alignment
   - id: out_right_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_right_path`
     inputBinding:
-      position: 104
+      position: 105
       prefix: --out-right
 outputs:
   - id: out_left

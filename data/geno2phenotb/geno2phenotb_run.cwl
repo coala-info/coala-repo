@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: geno2phenotb run
+baseCommand:
+  - geno2phenotb
+  - run
 label: geno2phenotb_run
 doc: "Run the geno2phenotb pipeline.\n\nTool homepage: https://github.com/msmdev/geno2phenoTB"
 inputs:
@@ -46,10 +48,10 @@ inputs:
       prefix: --skip-mtbseq
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Path to the directory were the final output files shall be stored.
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

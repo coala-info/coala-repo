@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_fmt
+baseCommand:
+  - xsv
+  - fmt
 label: xsv_fmt
 doc: "Formats CSV data with a custom delimiter or CRLF line endings.\n\nTool homepage:
   https://github.com/BurntSushi/xsv"
@@ -71,10 +73,10 @@ inputs:
       prefix: --quote-always
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

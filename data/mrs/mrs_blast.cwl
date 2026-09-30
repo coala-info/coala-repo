@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_blast
+baseCommand:
+  - mrs
+  - blast
 label: mrs_blast
 doc: "Perform BLAST search\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:
@@ -17,10 +19,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --databank
+          separate: true
     doc: Databank(s) in FastA format, can be specified multiple times
     inputBinding:
       position: 101
-      prefix: --databank
   - id: expect
     type:
       - 'null'
@@ -117,10 +121,10 @@ inputs:
       prefix: --word-size
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file, default is stdout
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grenedalf fst
+baseCommand:
+  - grenedalf
+  - fst
 label: grenedalf_fst
 doc: "Compute pool-sequencing corrected measures of FST.\n\nTool homepage: https://github.com/lczech/grenedalf"
 inputs:
@@ -718,7 +720,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write files to
     inputBinding:
       position: 101

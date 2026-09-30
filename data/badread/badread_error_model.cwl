@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: badread error_model
+baseCommand:
+  - badread
+  - error_model
 label: badread_error_model
 doc: "Build a Badread error model\n\nTool homepage: https://github.com/rrwick/Badread"
 inputs:

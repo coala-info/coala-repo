@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dpcstruct prefilters
+baseCommand:
+  - dpcstruct
+  - prefilters
 label: dpcstruct_prefilters
 doc: "Filters alignments based on quality metrics.\n\nTool homepage: https://github.com/RitAreaSciencePark/DPCstruct"
 inputs:

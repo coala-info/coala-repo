@@ -43,7 +43,7 @@ inputs:
   - id: early_stopping
     type:
       - 'null'
-      - boolean
+      - string
     doc: "whether or not to stop training early if validation\n                  \
       \      loss not decreasing"
     inputBinding:
@@ -210,7 +210,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101
@@ -293,7 +293,7 @@ inputs:
   - id: training_resample
     type:
       - 'null'
-      - boolean
+      - string
     doc: "whether or not to add random noise to training target\n                \
       \        data proportional to target error"
     inputBinding:

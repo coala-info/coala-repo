@@ -12,7 +12,6 @@ inputs:
       prefix: --vcf
   - id: html_path
     type: string
-    doc: Output or path parameter `html_path`
     inputBinding:
       position: 102
       prefix: --html

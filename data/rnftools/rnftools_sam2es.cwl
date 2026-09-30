@@ -23,10 +23,10 @@ inputs:
       prefix: --sam
   - id: output_es_file_path
     type: string
-    doc: Output or path parameter `output_es_file_path`
+    doc: Output ES file (evaluated segments, - for standard
     inputBinding:
       position: 102
-      prefix: --output-es-file
+      prefix: --es
 outputs:
   - id: output_es_file
     type: File

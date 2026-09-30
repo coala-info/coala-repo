@@ -103,10 +103,10 @@ inputs:
       prefix: -umt
   - id: output_bam_path
     type: string
-    doc: Output or path parameter `output_bam_path`
+    doc: the output BAM file [stdout]
     inputBinding:
       position: 102
-      prefix: --output-bam
+      prefix: -out
 outputs:
   - id: output_bam
     type:

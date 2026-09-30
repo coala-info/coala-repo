@@ -8,19 +8,19 @@ doc: "Aggregate Pastrami ancestry estimates based on population groupings\n\nToo
   homepage: https://github.com/healthdisparities/pastrami"
 inputs:
   - id: pastrami_fam
-    type: File
+    type: File?
     doc: File containing individual and population mapping in FAM format
     inputBinding:
       position: 101
       prefix: --pastrami-fam
   - id: pastrami_output
-    type: File
+    type: File?
     doc: Output file generated from Pastrami's query subcommand
     inputBinding:
       position: 101
       prefix: --pastrami-output
   - id: pop_group
-    type: File
+    type: File?
     doc: File containing population to group (e.g., tribes to region) mapping
     inputBinding:
       position: 101
@@ -45,7 +45,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
     inputBinding:
       position: 102
       prefix: --log-file
@@ -53,7 +52,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_prefix_path`
     inputBinding:
       position: 103
       prefix: --out-prefix
@@ -61,11 +59,12 @@ outputs:
   - id: out_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: 'Output prefix for ancestry estimates files. Four files are created: <prefix>_fractions.Q,
       <prefix>_paintings.Q, <prefix>_estimates.Q, <prefix>_fine_grain_estimates.Q'
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path)*
   - id: log_file
     type:
       - 'null'

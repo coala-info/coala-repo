@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk minced
+baseCommand:
+  - cctk
+  - minced
 label: cctk_minced
 doc: "Find and process CRISPR arrays using minced.\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
 inputs:
@@ -70,7 +72,6 @@ inputs:
       prefix: --snp-thresh
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

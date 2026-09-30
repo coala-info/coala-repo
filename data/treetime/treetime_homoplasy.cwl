@@ -136,11 +136,11 @@ inputs:
       position: 101
       prefix: --zero-based
   - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+    type: string?
+    doc: directory to write the output to
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --outdir
 outputs:
   - id: output_directory
     type:

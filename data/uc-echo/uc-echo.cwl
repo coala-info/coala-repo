@@ -41,6 +41,7 @@ inputs:
       automatically.
     inputBinding:
       position: 102
+      prefix: --keep_all_files
   - id: kmer
     type:
       - 'null'
@@ -96,6 +97,7 @@ inputs:
     doc: Model selection data set size
     inputBinding:
       position: 102
+      prefix: --model_selection_size
   - id: n_hash_block
     type:
       - 'null'
@@ -123,17 +125,16 @@ inputs:
   - id: tmp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary data directory
     inputBinding:
       position: 102
       prefix: --DD
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

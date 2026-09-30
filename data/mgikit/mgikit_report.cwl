@@ -41,8 +41,8 @@ inputs:
       position: 101
       prefix: --qc-report
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: output directory
     inputBinding:
       position: 102
       prefix: --output

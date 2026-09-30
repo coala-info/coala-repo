@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools exc
+baseCommand:
+  - cpstools
+  - exc
 label: cpstools_exc
 doc: "Extracts gene sequences from a reference genbank file.\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

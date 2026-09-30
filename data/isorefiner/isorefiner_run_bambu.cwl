@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isorefiner run_bambu
+baseCommand:
+  - isorefiner
+  - run_bambu
 label: isorefiner_run_bambu
 doc: "Run Bambu for isoform refinement\n\nTool homepage: https://github.com/rkajitani/IsoRefiner"
 inputs:
@@ -42,10 +44,9 @@ inputs:
       prefix: --work_dir
   - id: out_gtf_path
     type: string
-    doc: Output or path parameter `out_gtf_path`
     inputBinding:
       position: 102
-      prefix: --out-gtf
+      prefix: --out_gtf
 outputs:
   - id: out_gtf
     type:

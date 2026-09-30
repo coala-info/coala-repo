@@ -9,6 +9,11 @@ inputs:
     doc: Reference FASTA file
     inputBinding:
       position: 1
+  - id: out_signal_blow5
+    type: string
+    doc: Output SLOW5/BLOW5 file
+    inputBinding:
+      position: 2
   - id: amp_noise
     type:
       - 'null'
@@ -304,11 +309,11 @@ inputs:
       position: 103
       prefix: --output-file
 outputs:
-  - id: out_signal_blow5
+  - id: out_out_signal_blow5
     type: File
     doc: Output SLOW5/BLOW5 file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_signal_blow5)'
   - id: output_file
     type:
       - 'null'

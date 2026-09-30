@@ -195,7 +195,8 @@ inputs:
     doc: Output the cs tag; STR is 'short' (if absent) or 'long'
     inputBinding:
       position: 104
-      prefix: --cs
+      prefix: --cs=
+      separate: false
   - id: output_ds_tag
     type:
       - 'null'
@@ -311,10 +312,10 @@ inputs:
       prefix: -z
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output alignments to FILE [stdout]
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

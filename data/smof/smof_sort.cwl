@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_sort
+baseCommand:
+  - smof
+  - sort
 label: smof_sort
 doc: "Sorts the entries in a fasta file. By default, it sorts by the header strings.\n\
   `sort` reads the entire file into memory, so should not be used for extremely\n\

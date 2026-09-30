@@ -59,14 +59,13 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory used for temporary results
     inputBinding:
       position: 101
       prefix: --tmpdir
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
       prefix: --output-directory

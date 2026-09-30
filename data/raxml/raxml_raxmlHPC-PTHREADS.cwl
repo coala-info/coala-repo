@@ -765,10 +765,11 @@ inputs:
       prefix: -j
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: FULL (!) path to the directory into which RAxML shall write its output 
+      files
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -w
 outputs:
   - id: output_directory
     type:

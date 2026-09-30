@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minute init
+baseCommand:
+  - minute
+  - init
 label: minute_init
 doc: "Create and initialize a new pipeline directory\n\nTool homepage: https://github.com/NBISweden/minute/"
 inputs:
   - id: directory
-    type: Directory
+    type: string
     doc: New pipeline directory to create
     inputBinding:
       position: 1

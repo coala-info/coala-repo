@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fba_filter
+baseCommand:
+  - fba
+  - filter
 label: fba_filter
 doc: "Filter extracted cell and feature barcodes (output of `extract` or `qc`). Additional
   fragment filter/selection can be applied through `-cb_seq` and/or `-fb_seq`.\n\n\
@@ -114,7 +116,6 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -12,6 +12,7 @@ inputs:
     doc: One or more input FASTA files (e.g., contig1.fa contig2.fa).
     inputBinding:
       position: 1
+      prefix: --input
   - id: evalue
     type:
       - 'null'

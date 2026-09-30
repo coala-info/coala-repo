@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: zdb_run
+baseCommand:
+  - zdb
+  - run
 label: zdb_run
 doc: "Run the analysis pipeline (some analysis may not be available depending on which
   reference databases were setup)\n\nTool homepage: https://github.com/metagenlab/zDB/"
@@ -188,7 +190,6 @@ inputs:
       prefix: --vfdb
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

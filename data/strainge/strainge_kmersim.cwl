@@ -41,12 +41,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --scoring
+          separate: true
     doc: 'The scoring metric to use (default: jaccard). Can be used multiple times
       to include multiple scoring metrics. Choices: jaccard, minsize, meansize, maxsize,
       subset, reference.'
     inputBinding:
       position: 102
-      prefix: --scoring
   - id: threads
     type:
       - 'null'
@@ -57,10 +59,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' File to write the results (default: standard output).'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

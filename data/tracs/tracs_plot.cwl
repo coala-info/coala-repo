@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tracs_plot
+baseCommand:
+  - tracs
+  - plot
 label: tracs_plot
 doc: "Generates plots from a pileup file.\n\nTool homepage: https://github.com/gtonkinhill/tracs"
 inputs:
@@ -85,16 +87,17 @@ inputs:
       prefix: --width
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --prefix
 outputs:
   - id: output_file
-    type: File
+    type:
+      type: array
+      items: File
     doc: prefix of output file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

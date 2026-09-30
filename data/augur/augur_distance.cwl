@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur_distance
+baseCommand:
+  - augur
+  - distance
 label: augur_distance
 doc: "Calculate the distance between sequences across entire genes or at a\npredefined
   subset of sites. Distance calculations require selection of a\ncomparison method
@@ -94,7 +96,7 @@ inputs:
       prefix: --tree
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: JSON file with calculated distances stored by node
     inputBinding:
       position: 102
       prefix: --output

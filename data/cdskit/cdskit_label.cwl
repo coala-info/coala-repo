@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit label
+baseCommand:
+  - cdskit
+  - label
 label: cdskit_label
 doc: "Label sequences in a file.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

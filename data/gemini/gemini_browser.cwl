@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini browser
+baseCommand:
+  - gemini
+  - browser
 label: gemini_browser
 doc: "Launch the Gemini browser\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

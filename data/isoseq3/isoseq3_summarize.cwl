@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq summarize
+baseCommand:
+  - isoseq
+  - summarize
 label: isoseq3_summarize
 doc: "Create barcode overview from transcripts (TRANSCRIPTS to CSV)\n\nTool homepage:
   https://github.com/PacificBiosciences/IsoSeq3"

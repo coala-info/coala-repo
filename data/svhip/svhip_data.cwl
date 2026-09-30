@@ -8,7 +8,7 @@ inputs:
   - id: generate_control
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Flag to determine if a negative set should be auto-generated (Default: False).'
     inputBinding:
       position: 101
@@ -87,7 +87,7 @@ inputs:
   - id: shuffle_control
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Use the column-based shuffling approach provided by the RNAz framework instead
       of SISSIz (Default: False).'
     inputBinding:
@@ -122,10 +122,10 @@ inputs:
       prefix: --window-length
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Name for the output directory (Required).'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outfile
 outputs:
   - id: output_file
     type: Directory

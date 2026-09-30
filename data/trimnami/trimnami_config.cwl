@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trimnami config
+baseCommand:
+  - trimnami
+  - config
 label: trimnami_config
 doc: "Copy the system default config file\n\nTool homepage: https://github.com/beardymcjohnface/Trimnami"
 inputs:
@@ -39,7 +41,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102

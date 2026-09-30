@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur curate
+baseCommand:
+  - augur
+  - curate
 label: augur_curate
 doc: "A suite of commands to help with data curation.\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:

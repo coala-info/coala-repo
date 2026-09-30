@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukfinder long_seqs
+baseCommand:
+  - eukfinder
+  - long_seqs
 label: eukfinder_long_seqs
 doc: "Finds long sequences in a given file and searches them against a database.\n\
   \nTool homepage: https://github.com/RogerLab/Eukfinder"
@@ -90,7 +92,7 @@ inputs:
   - id: taxonomy_update
     type:
       - 'null'
-      - boolean
+      - string
     doc: Set to True the first time the program is used. Otherwise set to False
     inputBinding:
       position: 101

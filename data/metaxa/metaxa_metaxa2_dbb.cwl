@@ -312,12 +312,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --test_sets
+      itemSeparator: ','
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: '{directory} : Directory name for the output files'
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
     type: Directory

@@ -9,6 +9,11 @@ inputs:
     doc: Path to input fasta file
     inputBinding:
       position: 1
+  - id: output_dir
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 2
   - id: chunksize
     type:
       - 'null'
@@ -46,7 +51,7 @@ inputs:
   - id: log_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save logs.
     inputBinding:
       position: 102
@@ -92,11 +97,11 @@ inputs:
       position: 102
       prefix: --no-log
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/famus:0.2.2--py312hdfd78af_0

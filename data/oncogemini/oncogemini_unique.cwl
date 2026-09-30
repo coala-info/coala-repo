@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini_unique
+baseCommand:
+  - oncogemini
+  - unique
 label: oncogemini_unique
 doc: "Identify unique variants in a database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

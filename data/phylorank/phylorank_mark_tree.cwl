@@ -12,6 +12,11 @@ inputs:
     doc: input tree to mark
     inputBinding:
       position: 1
+  - id: output_tree
+    type: string
+    doc: output tree with assigned taxonomic ranks
+    inputBinding:
+      position: 2
   - id: min_length
     type:
       - 'null'
@@ -69,11 +74,11 @@ inputs:
       position: 102
       prefix: --thresholds
 outputs:
-  - id: output_tree
+  - id: out_output_tree
     type: File
     doc: output tree with assigned taxonomic ranks
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_tree)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

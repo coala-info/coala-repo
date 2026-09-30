@@ -79,7 +79,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set directory for temporary files
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PyLOH preprocess
+baseCommand:
+  - PyLOH
+  - preprocess
 label: pyloh_PyLOH.py preprocess
 doc: "Preprocesses BAM files for PyLOH analysis.\n\nTool homepage: https://github.com/uci-cbcl/PyLOH"
 inputs:

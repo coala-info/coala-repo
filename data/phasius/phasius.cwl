@@ -62,7 +62,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: HTML output file name
     inputBinding:
       position: 103
       prefix: --output
@@ -70,7 +70,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_path`
+    doc: summary file
     inputBinding:
       position: 104
       prefix: --summary

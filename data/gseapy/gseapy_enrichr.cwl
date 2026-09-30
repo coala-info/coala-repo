@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gseapy enrichr
+baseCommand:
+  - gseapy
+  - enrichr
 label: gseapy_enrichr
 doc: "Enrichr uses a list of gene names as input.\n\nTool homepage: https://github.com/zqfang/gseapy"
 inputs:
@@ -116,7 +118,6 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

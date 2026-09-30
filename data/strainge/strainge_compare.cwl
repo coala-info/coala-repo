@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strainge_compare
+baseCommand:
+  - strainge
+  - compare
 label: strainge_compare
 doc: "Compare strains and variant calls in two different samples. Reads of both samples
   must be aligned to the same reference.\n\nIt's possible to generate a TSV with summary
@@ -55,7 +57,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `details_out_path`
     inputBinding:
       position: 103
       prefix: --details-out
@@ -63,7 +64,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 104
       prefix: --output-dir
@@ -71,7 +71,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_out_path`
     inputBinding:
       position: 105
       prefix: --summary-out

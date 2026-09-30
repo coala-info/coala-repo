@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux param-medic
+baseCommand:
+  - crux
+  - param-medic
 label: crux_param-medic
 doc: "Parse fragmentation spectra to estimate measurement error.\n\nTool homepage:
   https://github.com/redbadger/crux"

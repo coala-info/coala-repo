@@ -9,12 +9,14 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
+          separate: true
     doc: A sample name and a BAM file. Can be used multiple times to input 
       multiple samples and multiple BAM files. The same sample name can be used 
       multiple times with different BAMs, this will treated as replicates.
     inputBinding:
       position: 101
-      prefix: --bam
   - id: base_call_quality
     type:
       - 'null'
@@ -76,17 +78,22 @@ inputs:
       - 'null'
       - type: array
         items: float
+        inputBinding:
+          prefix: --purity
+          separate: true
     doc: A sample name and a tumor purity value. Can be used multiple times to 
       input multiple samples in combination with --bam. If no purity is provided
       for a given sample the default value is 1.0
     inputBinding:
       position: 101
-      prefix: --purity
   - id: tumor_ploidy
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tumor-ploidy
+          separate: true
     doc: 'A sample name and a tumor ploidy. Can be used multiple times to input multiple
       samples in combination with --bam. The tumor ploidy can be provided as a genome-wide
       value (eg: --tumor-ploidy primary 2) or as local copy numbers in a BED file
@@ -94,7 +101,6 @@ inputs:
       for expected BED format'
     inputBinding:
       position: 101
-      prefix: --tumor-ploidy
   - id: output_vcf_path
     type: string
     inputBinding:

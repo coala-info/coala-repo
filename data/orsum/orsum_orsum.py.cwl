@@ -11,6 +11,7 @@ inputs:
     doc: Paths of the enrichment result files.
     inputBinding:
       position: 1
+      prefix: --files
   - id: file_aliases
     type:
       - 'null'
@@ -68,7 +69,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path for the output result files. If it is not specified, results are 
       written to the current directory.
     inputBinding:

@@ -332,10 +332,10 @@ inputs:
       prefix: -y
   - id: output_alignments_file_path
     type: string
-    doc: Output or path parameter `output_alignments_file_path`
+    doc: Output file of alignments, *
     inputBinding:
       position: 102
-      prefix: --output-alignments-file
+      prefix: -o
 outputs:
   - id: output_alignments_file
     type: File

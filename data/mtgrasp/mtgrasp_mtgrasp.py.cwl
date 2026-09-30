@@ -119,7 +119,7 @@ inputs:
       position: 101
       prefix: --nosubsample
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

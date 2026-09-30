@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: easypqp_targeted-file-converter
+baseCommand:
+  - easypqp
+  - targeted-file-converter
 label: easypqp_targeted-file-converter
 doc: "Convert different spectral libraries / transition files for targeted\nproteomics
   and metabolomics analysis.\n\nCan convert multiple formats to and from TraML (standardized
@@ -53,7 +55,7 @@ inputs:
       prefix: --out_type
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'Output file to be converted to.  [default:'
     inputBinding:
       position: 102
       prefix: --out

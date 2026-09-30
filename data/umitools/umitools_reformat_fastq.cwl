@@ -76,7 +76,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `left_out_path`
     inputBinding:
       position: 102
       prefix: --left-out
@@ -84,7 +83,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `right_out_path`
     inputBinding:
       position: 103
       prefix: --right-out

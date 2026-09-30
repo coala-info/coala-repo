@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia sort
+baseCommand:
+  - gia
+  - sort
 label: gia_sort
 doc: "Sorts a BED file by chromosome, start, and end\n\nTool homepage: https://github.com/noamteyssier/gia"
 inputs:
@@ -54,10 +56,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

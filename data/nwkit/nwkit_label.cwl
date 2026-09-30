@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit label
+baseCommand:
+  - nwkit
+  - label
 label: nwkit_label
 doc: "Label nodes in a Newick tree.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

@@ -77,7 +77,7 @@ inputs:
       position: 101
       prefix: --IdentityThreshold
   - id: input_file
-    type: File
+    type: File?
     doc: Path to Input File
     inputBinding:
       position: 101

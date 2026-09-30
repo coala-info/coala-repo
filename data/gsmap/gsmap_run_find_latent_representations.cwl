@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsMap run_find_latent_representations
+baseCommand:
+  - gsMap
+  - run_find_latent_representations
 label: gsmap_run_find_latent_representations
 doc: "Find latent representations using GAT.\n\nTool homepage: https://github.com/LeonSong1995/gsMap"
 inputs:

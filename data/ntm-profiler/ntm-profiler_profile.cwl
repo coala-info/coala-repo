@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ntm-profiler profile
+baseCommand:
+  - ntm-profiler
+  - profile
 label: ntm-profiler_profile
 doc: "Profile NTM samples\n\nTool homepage: https://github.com/jodyphelan/NTM-Profiler"
 inputs:
@@ -361,7 +363,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to process all files
     inputBinding:
       position: 101

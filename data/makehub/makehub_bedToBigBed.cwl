@@ -98,6 +98,8 @@ inputs:
       -type=bed6 or -type=bed6+ or -type=bed6+3'
     inputBinding:
       position: 103
+      prefix: -type=
+      separate: false
   - id: udc_dir
     type:
       - 'null'

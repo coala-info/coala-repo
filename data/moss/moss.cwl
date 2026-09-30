@@ -110,9 +110,9 @@ inputs:
       prefix: --realigned
   - id: reference
     type: File
+    doc: reference FASTA file
     secondaryFiles:
       - .fai
-    doc: reference FASTA file
     inputBinding:
       position: 101
       prefix: --ref
@@ -140,10 +140,10 @@ inputs:
       prefix: --vcf
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: output VCF file
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: --output
 outputs:
   - id: output_vcf
     type: File

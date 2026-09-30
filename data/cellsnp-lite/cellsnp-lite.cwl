@@ -14,6 +14,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bamFiles
+      itemSeparator: ','
   - id: bam_list
     type:
       - 'null'
@@ -87,6 +88,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sampleFiles
+      itemSeparator: ','
   - id: sample_list
     type:
       - 'null'

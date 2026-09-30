@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vembrane fhir
+baseCommand:
+  - vembrane
+  - fhir
 label: vembrane_fhir
 doc: "Generate FHIR records from VCF/BCF files.\n\nTool homepage: https://github.com/vembrane/vembrane"
 inputs:
@@ -204,8 +206,7 @@ inputs:
       position: 104
       prefix: --url
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 105
       prefix: --output

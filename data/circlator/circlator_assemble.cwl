@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: circlator_assemble
+baseCommand:
+  - circlator
+  - assemble
 label: circlator_assemble
 doc: "Assemble reads using SPAdes/Canu\n\nTool homepage: https://github.com/sanger-pathogens/circlator"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory (must not already exist)
     inputBinding:
       position: 2

@@ -43,10 +43,10 @@ inputs:
       prefix: --recurrent-window-size
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file for counts
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

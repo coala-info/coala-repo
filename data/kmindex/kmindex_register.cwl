@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmindex register
+baseCommand:
+  - kmindex
+  - register
 label: kmindex_register
 doc: "Register index.\n\nTool homepage: https://github.com/tlemane/kmindex"
 inputs:

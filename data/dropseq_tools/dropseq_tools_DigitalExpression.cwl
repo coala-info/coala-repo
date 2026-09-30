@@ -294,9 +294,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference sequence file.
     secondaryFiles:
       - .fai
-    doc: Reference sequence file.
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -386,10 +386,11 @@ inputs:
       prefix: --VERBOSITY
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file of DGE Matrix.  Genes are in rows, cells in columns.  The 
+      first column
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --OUTPUT
 outputs:
   - id: output_file
     type: File

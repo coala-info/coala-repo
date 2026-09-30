@@ -51,18 +51,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_beta_contact_map_file_path`
+    doc: "file:\tWrite predicted beta contact map to file. REQUIRED."
     inputBinding:
       position: 102
-      prefix: --output-beta-contact-map-file
+      prefix: -c
   - id: output_beta_strand_pairing_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_beta_strand_pairing_file_path`
+    doc: "file:\tWrite predicted beta strand pairing to file. REQUIRED."
     inputBinding:
       position: 103
-      prefix: --output-beta-strand-pairing-file
+      prefix: -o
 outputs:
   - id: output_beta_contact_map_file
     type: File

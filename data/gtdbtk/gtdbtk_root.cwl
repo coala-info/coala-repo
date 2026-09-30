@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdbtk_root
+baseCommand:
+  - gtdbtk
+  - root
 label: gtdbtk_root
 doc: "Root a tree using a specified outgroup taxon.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
@@ -45,17 +47,16 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify alternative directory for temporary files
     inputBinding:
       position: 101
       prefix: --tmpdir
   - id: output_tree_path
     type: string
-    doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 102
-      prefix: --output-tree
+      prefix: --output_tree
 outputs:
   - id: output_tree
     type: File

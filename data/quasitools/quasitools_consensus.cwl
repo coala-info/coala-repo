@@ -35,10 +35,9 @@ inputs:
       prefix: --percentage
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 104
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

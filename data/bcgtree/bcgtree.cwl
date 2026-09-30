@@ -25,11 +25,13 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --genome
+        separate: true
     doc: Input genome file(s) in FASTA or GenBank format (can be used multiple 
       times)
     inputBinding:
       position: 101
-      prefix: --genome
   - id: min_genes
     type:
       - 'null'

@@ -1,7 +1,5 @@
 class: Workflow
-label: 'Workflow constructed from history ''''Extracting structural information of
-  Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle
-  immobilization (paper-3'''''
+label: 'Workflow constructed from history ''''Extracting structural information of Au colloids at ultra-dilute concentrations: identification of growth during nanoparticle immobilization (paper-3'''''
 cwlVersion: v1.2
 inputs:
   Compiled_XAS_data_Colloid_and_TiO2_supported_Au.prj:
@@ -14,57 +12,78 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in: {}
-    out: []
+    out:
+    - athena_project_file
   '2':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in: {}
-    out: []
+    out:
+    - athena_project_file
   '3':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in: {}
-    out: []
+    out:
+    - athena_project_file
   '4':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in: {}
-    out: []
+    out:
+    - athena_project_file
   '5':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in: {}
-    out: []
+    out:
+    - athena_project_file
   '6':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in: {}
-    out: []
+    out:
+    - athena_project_file
   '7':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in: {}
-    out: []
+    out:
+    - athena_project_file
   '8':
     run:
       class: Operation

@@ -37,8 +37,7 @@ inputs:
       position: 102
       prefix: --verbose
   - id: log_file_path
-    type: string
-    doc: Output or path parameter `log_file_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --log-file

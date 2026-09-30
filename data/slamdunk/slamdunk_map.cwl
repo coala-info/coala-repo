@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slamdunk_map
+baseCommand:
+  - slamdunk
+  - map
 label: slamdunk_map
 doc: "Map sequencing reads to a reference genome.\n\nTool homepage: http://t-neumann.github.io/slamdunk"
 inputs:
@@ -109,10 +111,10 @@ inputs:
       prefix: --trim-5p
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: ' Output directory for mapped BAM files.'
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --outputDir
 outputs:
   - id: output_dir
     type: Directory

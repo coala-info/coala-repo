@@ -77,18 +77,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
+    doc: output to directory
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --out-dir
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output to FILE [stdout]
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_dir
     type:

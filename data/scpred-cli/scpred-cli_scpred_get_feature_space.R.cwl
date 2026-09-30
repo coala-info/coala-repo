@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scpred-cli_scpred_get_feature_space.R
+baseCommand: scpred_get_feature_space.R
 label: scpred-cli_scpred_get_feature_space.R
 doc: "Get the feature space for scPred\n\nTool homepage: https://github.com/ebi-gene-expression-group/scPred-cli"
 inputs:
@@ -44,7 +44,6 @@ inputs:
       prefix: --significance-threshold
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
       prefix: --output-path

@@ -93,7 +93,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory. Will be removed on successful completion, but 
       likely not if there is an error.
     inputBinding:

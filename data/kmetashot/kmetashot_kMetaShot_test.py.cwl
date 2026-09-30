@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmetashot_kMetaShot_test.py
+baseCommand: kMetaShot_test.py
 label: kmetashot_kMetaShot_test.py
 doc: "kMetaShot installation test\n\nTool homepage: https://github.com/gdefazio/kMetaShot"
 inputs:

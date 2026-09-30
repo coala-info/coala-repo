@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: the directory to where to write the indexed database
     inputBinding:
       position: 2

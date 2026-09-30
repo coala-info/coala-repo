@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cherri train
+baseCommand:
+  - cherri
+  - train
 label: cherri_train
 doc: "Train a Cherri model.\n\nTool homepage: https://github.com/BackofenLab/Cherri"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: List the ChiRA interaction summary file for each replicate
     inputBinding:
       position: 1
+      prefix: --list_of_replicates
   - id: chrom_len_file
     type: File
     doc: "Tabular file containing data in two-column format for each chromosome: 'chrom
@@ -185,10 +188,9 @@ inputs:
       prefix: --use_structure
   - id: out_path_path
     type: string
-    doc: Output or path parameter `out_path_path`
     inputBinding:
       position: 103
-      prefix: --out-path
+      prefix: --out_path
 outputs:
   - id: out_path
     type: Directory

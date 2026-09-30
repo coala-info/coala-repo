@@ -31,6 +31,7 @@ inputs:
     doc: Exit with an error if all regions have insufficient coverage.
     inputBinding:
       position: 103
+      prefix: --all_fail
   - id: any_fail
     type:
       - 'null'
@@ -38,6 +39,7 @@ inputs:
     doc: Exit with an error if any region has insufficient coverage.
     inputBinding:
       position: 103
+      prefix: --any_fail
   - id: coverage
     type:
       - 'null'
@@ -54,6 +56,7 @@ inputs:
       expected value.
     inputBinding:
       position: 103
+      prefix: --force_low_depth
   - id: keep_supplementary
     type:
       - 'null'
@@ -61,6 +64,7 @@ inputs:
     doc: Include supplementary alignments.
     inputBinding:
       position: 103
+      prefix: --keep_supplementary
   - id: keep_unmapped
     type:
       - 'null'
@@ -68,6 +72,7 @@ inputs:
     doc: Include unmapped reads.
     inputBinding:
       position: 103
+      prefix: --keep_unmapped
   - id: length
     type:
       - 'null'
@@ -107,6 +112,7 @@ inputs:
     doc: Use only primary reads.
     inputBinding:
       position: 103
+      prefix: --primary_only
   - id: profile
     type:
       - 'null'

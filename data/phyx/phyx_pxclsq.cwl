@@ -65,7 +65,7 @@ inputs:
       prefix: --verbose
   - id: outf_path
     type: string
-    doc: Output or path parameter `outf_path`
+    doc: output fasta file, STOUT otherwise
     inputBinding:
       position: 102
       prefix: --outf

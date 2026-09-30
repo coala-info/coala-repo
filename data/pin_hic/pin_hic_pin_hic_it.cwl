@@ -149,10 +149,10 @@ inputs:
       prefix: -p
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: STR      output directory [.]
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: -O
 outputs:
   - id: output_directory
     type:

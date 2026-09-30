@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe summary_stats
+baseCommand:
+  - haphpipe
+  - summary_stats
 label: haphpipe_summary_stats
 doc: "Calculate summary statistics for Haplotype Pipeline results.\n\nTool homepage:
   https://github.com/gwcbi/haphpipe"

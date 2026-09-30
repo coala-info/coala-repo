@@ -24,7 +24,8 @@ inputs:
       bedRegionsOut
     inputBinding:
       position: 103
-      prefix: -bedRegionIn
+      prefix: -bedRegionIn=
+      separate: false
   - id: bin_overlap
     type:
       - 'null'
@@ -32,7 +33,8 @@ inputs:
     doc: Bin overlap for generating counts in bin file
     inputBinding:
       position: 103
-      prefix: -binOverlap
+      prefix: -binOverlap=
+      separate: false
   - id: bin_size
     type:
       - 'null'
@@ -40,7 +42,8 @@ inputs:
     doc: Bin size for generating counts in bin file
     inputBinding:
       position: 103
-      prefix: -binSize
+      prefix: -binSize=
+      separate: false
   - id: bitwise_or
     type:
       - 'null'
@@ -56,7 +59,8 @@ inputs:
     doc: Restrict to one chromosome
     inputBinding:
       position: 103
-      prefix: -chrom
+      prefix: -chrom=
+      separate: false
   - id: chrom_size_file
     type:
       - 'null'
@@ -65,7 +69,8 @@ inputs:
       format)
     inputBinding:
       position: 103
-      prefix: -chromSize
+      prefix: -chromSize=
+      separate: false
   - id: count_blocks
     type:
       - 'null'
@@ -89,7 +94,8 @@ inputs:
     doc: Output dot every N chroms (scaffolds) processed
     inputBinding:
       position: 103
-      prefix: -dots
+      prefix: -dots=
+      separate: false
   - id: enrichment
     type:
       - 'null'
@@ -117,7 +123,8 @@ inputs:
       useful for differentiating between alignment gaps and introns.
     inputBinding:
       position: 103
-      prefix: -minFeatureSize
+      prefix: -minFeatureSize=
+      separate: false
   - id: min_size
     type:
       - 'null'
@@ -125,7 +132,8 @@ inputs:
     doc: Minimum size to output
     inputBinding:
       position: 103
-      prefix: -minSize
+      prefix: -minSize=
+      separate: false
   - id: negate_result
     type:
       - 'null'
@@ -165,7 +173,8 @@ inputs:
     doc: Restrict to features matching some sql pattern
     inputBinding:
       position: 103
-      prefix: -where
+      prefix: -where=
+      separate: false
   - id: bed_region_out_path
     type:
       - 'null'
@@ -194,10 +203,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fa_path`
+    doc: =output.fa     Put sequence in intersection into .fa file
     inputBinding:
       position: 107
-      prefix: --output-fa
+      prefix: -fa=
+      separate: false
 outputs:
   - id: output_bed
     type:

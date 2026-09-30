@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odamnet_overlap
+baseCommand:
+  - odamnet
+  - overlap
 label: odamnet_overlap
 doc: "Perform Overlap analysis between genes targeted by chemicals and rare diseases
   pathways.\n\nTool homepage: https://pypi.org/project/ODAMNet/1.1.0/"
@@ -53,7 +55,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder name to save results
     inputBinding:
       position: 101

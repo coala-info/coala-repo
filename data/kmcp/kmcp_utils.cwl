@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmcp utils
+baseCommand:
+  - kmcp
+  - utils
 label: kmcp_utils
 doc: "Some utilities\n\nTool homepage: https://github.com/shenwei356/kmcp"
 inputs:

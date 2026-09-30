@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mylotools plot
+baseCommand:
+  - mylotools
+  - plot
 label: mylotools_plot
 doc: "Plot contig analysis results.\n\nTool homepage: https://github.com/bluenote-1577/mylotools"
 inputs:

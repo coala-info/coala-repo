@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_grep
+baseCommand:
+  - smof
+  - grep
 label: smof_grep
 doc: "Smof grep is based on GNU grep but operates on fasta entries. It allows you
   to extract entries where either the header or the sequence match the search term.

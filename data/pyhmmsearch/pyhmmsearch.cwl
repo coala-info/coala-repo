@@ -46,6 +46,7 @@ inputs:
     doc: No header
     inputBinding:
       position: 101
+      prefix: --no_header
   - id: proteins
     type: File
     doc: path/to/proteins.fasta. stdin does not stream and loads everything into
@@ -94,14 +95,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --domtblout
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
   - id: tblout_path
     type:
       - 'null'
@@ -110,6 +103,13 @@ inputs:
     inputBinding:
       position: 104
       prefix: --tblout
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --output
 outputs:
   - id: output
     type: File

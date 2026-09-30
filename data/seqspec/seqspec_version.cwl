@@ -13,7 +13,7 @@ inputs:
       position: 1
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file
     inputBinding:
       position: 101
       prefix: --output

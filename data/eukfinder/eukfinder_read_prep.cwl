@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukfinder read_prep
+baseCommand:
+  - eukfinder
+  - read_prep
 label: eukfinder_read_prep
 doc: "Description\n\nTool homepage: https://github.com/RogerLab/Eukfinder"
 inputs:

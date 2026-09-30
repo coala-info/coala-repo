@@ -128,7 +128,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_fasta_path`
     inputBinding:
       position: 102
       prefix: --out-fasta
@@ -136,7 +135,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_metadata_path`
     inputBinding:
       position: 103
       prefix: --out-metadata

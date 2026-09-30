@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tidk_search
+baseCommand:
+  - tidk
+  - search
 label: tidk_search
 doc: "Search the input genome with a specific telomeric repeat search string.\n\n\
   Tool homepage: https://github.com/tolkit/telomeric-identifier"
@@ -33,10 +35,8 @@ inputs:
       position: 102
       prefix: --window
   - id: dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `dir_path`
+    type: string
+    doc: Output directory to write files to
     inputBinding:
       position: 103
       prefix: --dir
@@ -44,15 +44,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: Output a log file
     inputBinding:
       position: 104
       prefix: --log
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
+    doc: Output filename for the TSVs (without extension)
     inputBinding:
       position: 105
       prefix: --output

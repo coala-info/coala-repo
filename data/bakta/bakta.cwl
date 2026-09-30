@@ -128,7 +128,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory (default = current working directory)
     inputBinding:
       position: 102
@@ -321,7 +321,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Location for temporary files (default = system dependent auto 
       detection)
     inputBinding:

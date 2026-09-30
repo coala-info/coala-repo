@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dropkick_qc
+baseCommand:
+  - dropkick
+  - qc
 label: dropkick_qc
 doc: "Quality control for single-cell RNA-seq data.\n\nTool homepage: https://github.com/KenLauLab/dropkick"
 inputs:
@@ -36,7 +38,6 @@ inputs:
       prefix: --quietly
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103
       prefix: --output-dir

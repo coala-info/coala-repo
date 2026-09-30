@@ -324,7 +324,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specific directory (absolute path) where to build temporary files
     inputBinding:
       position: 101

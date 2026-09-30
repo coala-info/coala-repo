@@ -119,7 +119,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_barcodes_path`
+    doc: Output cell barcode file. Barcode labels of output matrices. Will have
     inputBinding:
       position: 102
       prefix: --out-barcodes
@@ -127,7 +127,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_matrix_path`
+    doc: 'Output Matrix Market file (.mtx) [default: out_matrix.mtx]'
     inputBinding:
       position: 103
       prefix: --out-matrix
@@ -135,7 +135,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_variants_path`
+    doc: Output variant file. Reports ordered list of variants to help with 
+      loading
     inputBinding:
       position: 104
       prefix: --out-variants
@@ -143,7 +144,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ref_matrix_path`
+    doc: Location to write reference Matrix Market file. Only used if --scoring-
     inputBinding:
       position: 105
       prefix: --ref-matrix

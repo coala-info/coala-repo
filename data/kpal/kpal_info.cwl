@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_info
+baseCommand:
+  - kpal
+  - info
 label: kpal_info
 doc: "Print some information about k-mer profiles.\n\nTool homepage: https://github.com/LUMC/kPAL"
 inputs:

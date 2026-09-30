@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree labels
+baseCommand:
+  - gotree
+  - labels
 label: gotree_labels
 doc: "Lists labels of all tree tips\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:

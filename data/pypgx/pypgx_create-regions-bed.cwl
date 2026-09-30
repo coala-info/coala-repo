@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx create-regions-bed
+baseCommand:
+  - pypgx
+  - create-regions-bed
 label: pypgx_create-regions-bed
 doc: "Create a BED file which contains all regions used by PyPGx.\n\nTool homepage:
   https://github.com/sbslee/pypgx"

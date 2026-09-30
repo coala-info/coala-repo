@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmercamel maskopt
+baseCommand:
+  - kmercamel
+  - maskopt
 label: kmercamel_maskopt
 doc: "Masks a superstring using k-mers.\n\nTool homepage: https://github.com/OndrejSladky/kmercamel/"
 inputs:
@@ -33,10 +35,11 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '- output for the (minone) masked superstring; if not specified, printed
+      to stdout'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

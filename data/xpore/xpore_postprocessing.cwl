@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xpore postprocessing
+baseCommand:
+  - xpore
+  - postprocessing
 label: xpore_postprocessing
 doc: "Performs postprocessing steps for xpore-diffmod output.\n\nTool homepage: https://github.com/GoekeLab/xpore"
 inputs:

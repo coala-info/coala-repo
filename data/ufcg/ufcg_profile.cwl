@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg profile
+baseCommand:
+  - ufcg
+  - profile
 label: ufcg_profile
 doc: "Extract UFCG profile from Fungal whole genome sequences\n\nTool homepage: https://ufcg.steineggerlab.com"
 inputs:
@@ -75,7 +77,7 @@ inputs:
       position: 101
       prefix: --notime
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory to store the result files
     inputBinding:
       position: 101
@@ -91,7 +93,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write the temporary files
     inputBinding:
       position: 101

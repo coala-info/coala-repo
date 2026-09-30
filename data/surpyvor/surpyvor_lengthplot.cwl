@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor lengthplot
+baseCommand:
+  - surpyvor
+  - lengthplot
 label: surpyvor_lengthplot
 doc: "Plot variant lengths from a VCF file.\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -29,7 +31,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `counts_path`
     inputBinding:
       position: 103
       prefix: --counts
@@ -37,7 +38,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plotout_path`
+    doc: output file to write figure to
     inputBinding:
       position: 104
       prefix: --plotout

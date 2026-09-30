@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfasta_extract
+baseCommand:
+  - pyfasta
+  - extract
 label: pyfasta_extract
 doc: "Extract some sequences from a fasta file.\n\nTool homepage: https://github.com/brentp/pyfasta"
 inputs:

@@ -265,7 +265,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dot_file_path`
+    doc: write graph traversals to a DOT file
     inputBinding:
       position: 104
       prefix: --dot-file
@@ -273,7 +273,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gap_file_path`
+    doc: write sealed gaps to FILE
     inputBinding:
       position: 105
       prefix: --gap-file
@@ -281,7 +281,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
+    doc: prefix of output FASTA files [required]
     inputBinding:
       position: 106
       prefix: --output-prefix
@@ -289,7 +289,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `trace_file_path`
+    doc: write graph search stats to FILE
     inputBinding:
       position: 107
       prefix: --trace-file
@@ -302,10 +302,12 @@ outputs:
     outputBinding:
       glob: $(inputs.dot_file_path)
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: prefix of output FASTA files
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
   - id: gap_file
     type:
       - 'null'

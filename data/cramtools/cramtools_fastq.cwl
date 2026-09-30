@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cramtools fastq
+baseCommand:
+  - cramtools
+  - fastq
 label: cramtools_fastq
 doc: "Uncompress CRAM files into FASTQ format.\n\nTool homepage: https://github.com/enasequence/cramtools"
 inputs:
@@ -99,7 +101,9 @@ inputs:
       prefix: --skip-md5-check
   - id: fastq_base_name_path
     type: string
-    doc: Output or path parameter `fastq_base_name_path`
+    doc: "'_number.fastq[.gz] will be appended to this string to obtain output fastq
+      file name. If this parameter is omitted then all reads are printed with no garanteed
+      order."
     inputBinding:
       position: 102
       prefix: --fastq-base-name
@@ -107,12 +111,13 @@ outputs:
   - id: fastq_base_name
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: "'_number.fastq[.gz] will be appended to this string to obtain output fastq
       file name. If this parameter is omitted then all reads are printed with no garanteed
       order."
     outputBinding:
-      glob: $(inputs.fastq_base_name_path)
+      glob: $(inputs.fastq_base_name_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

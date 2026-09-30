@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gunc_run
+baseCommand:
+  - gunc
+  - run
 label: gunc_run
 doc: "Run GUNC analysis\n\nTool homepage: https://github.com/grp-bork/gunc"
 inputs:
@@ -80,7 +82,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output dir. Default: cwd'
     inputBinding:
       position: 101
@@ -96,7 +98,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Directory to store temp files. Default: cwd'
     inputBinding:
       position: 101

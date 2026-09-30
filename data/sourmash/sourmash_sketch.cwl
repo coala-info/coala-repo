@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash sketch
+baseCommand:
+  - sourmash
+  - sketch
 label: sourmash_sketch
 doc: "Create signatures\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
 inputs:

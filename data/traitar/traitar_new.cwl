@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: traitar new
+baseCommand:
+  - traitar
+  - new
 label: traitar_new
 doc: "create new phenotype model archive\n\nTool homepage: http://github.com/aweimann/traitar"
 inputs:

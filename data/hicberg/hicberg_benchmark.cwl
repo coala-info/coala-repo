@@ -162,10 +162,10 @@ inputs:
       prefix: --trend
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder to save results.
     inputBinding:
       position: 103
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

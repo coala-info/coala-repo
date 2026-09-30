@@ -30,7 +30,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set temporary directory for intermediate files.
     inputBinding:
       position: 102

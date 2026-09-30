@@ -46,21 +46,17 @@ inputs:
       position: 101
       prefix: --test-size
   - id: json_report_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `json_report_file_path`
+    type: string
+    doc: Output JSON file storing classification performance
     inputBinding:
       position: 102
-      prefix: --json-report-file
+      prefix: -r
   - id: model_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `model_file_path`
+    type: string
+    doc: Output file storing the trained Random Forest model
     inputBinding:
       position: 103
-      prefix: --model-file
+      prefix: -m
 outputs:
   - id: model_file
     type: File

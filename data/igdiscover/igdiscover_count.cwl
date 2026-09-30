@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igdiscover count
+baseCommand:
+  - igdiscover
+  - count
 label: igdiscover_count
 doc: "Compute expression counts\n\nTool homepage: https://igdiscover.se/"
 inputs:
@@ -63,8 +65,8 @@ inputs:
       position: 102
       prefix: --gene
   - id: plot_path
-    type: string
-    doc: Output or path parameter `plot_path`
+    type: string?
+    doc: Plot expressions to FILE (PDF or PNG)
     inputBinding:
       position: 103
       prefix: --plot

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sfs_create
+baseCommand:
+  - sfs
+  - create
 label: sfs_create
 doc: "Tools for working with site frequency spectra\n\nTool homepage: https://github.com/malthesr/sfs"
 inputs:
@@ -38,6 +40,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --project-individuals
+      itemSeparator: ','
   - id: project_shape
     type:
       - 'null'
@@ -76,6 +79,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --samples
+      itemSeparator: ','
   - id: samples_file
     type:
       - 'null'

@@ -52,7 +52,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory to store the downloaded file.
     inputBinding:
       position: 102
@@ -236,7 +236,7 @@ inputs:
       prefix: --torrent-file
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: The file name of the downloaded file. It is
     inputBinding:
       position: 103
       prefix: --out

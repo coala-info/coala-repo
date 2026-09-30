@@ -88,7 +88,7 @@ inputs:
       prefix: --verbose
   - id: out_bam_path
     type: string
-    doc: Output or path parameter `out_bam_path`
+    doc: write the filtered reads to FILE
     inputBinding:
       position: 104
       prefix: --out-bam

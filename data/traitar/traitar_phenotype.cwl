@@ -30,7 +30,7 @@ inputs:
     inputBinding:
       position: 4
   - id: output_dir
-    type: Directory
+    type: string
     doc: 'Output directory (default: phenolyzer_output)'
     inputBinding:
       position: 5

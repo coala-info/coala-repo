@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaeuk groupstoacc
+baseCommand:
+  - metaeuk
+  - groupstoacc
 label: metaeuk_groupstoacc
 doc: "Replace the internal contig, target and strand identifiers with accessions from
   the headers\n\nTool homepage: https://github.com/soedinglab/metaeuk"

@@ -88,7 +88,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bed_path`
     inputBinding:
       position: 102
       prefix: --bed
@@ -96,7 +95,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_path`
     inputBinding:
       position: 103
       prefix: --csv
@@ -104,7 +102,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mask_path`
     inputBinding:
       position: 104
       prefix: --mask
@@ -112,7 +109,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_gfa_path`
     inputBinding:
       position: 105
       prefix: --output-gfa
@@ -120,7 +116,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `weights_path`
     inputBinding:
       position: 106
       prefix: --weights

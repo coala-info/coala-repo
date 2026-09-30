@@ -14,11 +14,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --db
+          separate: true
     doc: 'Database(s) to download: genomad_1.9, checkv_1.5, phrogs_4, or all (default:
       all). Can be repeated or comma-separated.'
     inputBinding:
       position: 101
-      prefix: --db
   - id: force
     type:
       - 'null'

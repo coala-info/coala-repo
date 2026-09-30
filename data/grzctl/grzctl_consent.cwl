@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grzctl consent
+baseCommand:
+  - grzctl
+  - consent
 label: grzctl_consent
 doc: "Check if a submission is consented for research.\n\n  Returns 'true' if consented,
   'false' if not. A submission is considered\n  consented if all donors have consented

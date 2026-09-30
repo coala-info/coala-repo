@@ -80,7 +80,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory
     inputBinding:
       position: 101
@@ -95,10 +95,9 @@ inputs:
       prefix: -v
   - id: save_supporting_set_path
     type: string
-    doc: Output or path parameter `save_supporting_set_path`
     inputBinding:
       position: 102
-      prefix: --save-supporting-set
+      prefix: --save_supporting_set
 outputs:
   - id: save_supporting_set
     type:

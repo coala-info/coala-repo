@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: setsimilaritysearch_all_pairs.py
+baseCommand: all_pairs.py
 label: setsimilaritysearch_all_pairs.py
 doc: "Find all pairs of sets with similarities over a given threshold.\n\nTool homepage:
   https://github.com/ekzhu/SetSimilaritySearch"
@@ -18,7 +18,7 @@ inputs:
   - id: reversed_tuple
     type:
       - 'null'
-      - boolean
+      - string
     doc: Whether the input tuples are reversed i.e. (Token SetID).
     inputBinding:
       position: 101

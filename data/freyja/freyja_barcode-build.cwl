@@ -36,7 +36,7 @@ inputs:
       position: 102
       prefix: --min-len
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to save the barcode reference files.
     inputBinding:
       position: 102

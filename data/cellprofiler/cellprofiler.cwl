@@ -41,7 +41,7 @@ inputs:
   - id: conserve_memory
     type:
       - 'null'
-      - boolean
+      - string
     doc: CellProfiler will attempt to release unused memory after each image 
       set.
     inputBinding:
@@ -184,7 +184,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Make this directory the default output folder
     inputBinding:
       position: 102
@@ -249,7 +249,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory. CellProfiler uses this for downloaded image files 
       and for the measurements file, if not specified.
     inputBinding:

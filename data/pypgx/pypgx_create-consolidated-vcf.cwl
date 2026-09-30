@@ -16,12 +16,17 @@ inputs:
     doc: Input archive file with the semantic type VcfFrame[Phased].
     inputBinding:
       position: 2
-outputs:
   - id: consolidated_variants
+    type: string
+    doc: Output archive file with the semantic type VcfFrame[Consolidated].
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_consolidated_variants
     type: File
     doc: Output archive file with the semantic type VcfFrame[Consolidated].
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.consolidated_variants)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

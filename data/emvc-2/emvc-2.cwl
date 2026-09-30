@@ -13,7 +13,7 @@ inputs:
   - id: bypass_dt
     type:
       - 'null'
-      - boolean
+      - string
     doc: Bypass Decision Tree filter
     inputBinding:
       position: 101

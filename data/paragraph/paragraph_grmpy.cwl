@@ -77,7 +77,7 @@ inputs:
     doc: Use kmer aligner.
     inputBinding:
       position: 101
-      prefix: --kmer_sequence_matching
+      prefix: --kmer-sequence-matching
   - id: log_async
     type:
       - 'null'
@@ -134,9 +134,9 @@ inputs:
       prefix: --progress
   - id: reference
     type: File
+    doc: Reference genome fasta file.
     secondaryFiles:
       - .fai
-    doc: Reference genome fasta file.
     inputBinding:
       position: 101
       prefix: --reference
@@ -160,7 +160,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignment_output_folder_path`
+    doc: Output folder for alignments. Note
     inputBinding:
       position: 102
       prefix: --alignment-output-folder
@@ -168,7 +168,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name. Will output to
     inputBinding:
       position: 103
       prefix: --output-file
@@ -176,7 +176,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder path. paragraph will
     inputBinding:
       position: 104
       prefix: --output-folder

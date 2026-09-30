@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm_delete
+baseCommand:
+  - groopm
+  - delete
 label: groopm_delete
 doc: "Delete bins from a groopm database.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

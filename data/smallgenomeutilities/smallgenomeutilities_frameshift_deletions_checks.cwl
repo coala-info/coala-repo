@@ -61,9 +61,9 @@ inputs:
       prefix: --orf1ab
   - id: reference_fasta
     type: File
+    doc: Fasta file containing the reference sequence to compare against
     secondaryFiles:
       - .fai
-    doc: Fasta file containing the reference sequence to compare against
     inputBinding:
       position: 101
       prefix: --reference
@@ -77,10 +77,10 @@ inputs:
       prefix: --zero-based
   - id: output_tsv_path
     type: string
-    doc: Output or path parameter `output_tsv_path`
+    doc: 'Output file (default: /frameshift_deletions_check.tsv)'
     inputBinding:
       position: 102
-      prefix: --output-tsv
+      prefix: --output
 outputs:
   - id: output_tsv
     type:

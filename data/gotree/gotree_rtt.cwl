@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree rtt
+baseCommand:
+  - gotree
+  - rtt
 label: gotree_rtt
 doc: "Compute Root To Tip regression.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:

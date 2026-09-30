@@ -66,11 +66,12 @@ inputs:
       position: 102
       prefix: -V
   - id: output_option_path
-    type: string
-    doc: Output or path parameter `output_option_path`
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 103
-      prefix: --output-option
+      prefix: -o
 outputs:
   - id: output_option
     type:

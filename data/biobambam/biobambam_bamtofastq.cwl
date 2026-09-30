@@ -11,7 +11,8 @@ inputs:
     doc: restore input taken by c18pe option
     inputBinding:
       position: 101
-      prefix: casava18
+      prefix: casava18=
+      separate: false
   - id: colhlog
     type:
       - 'null'
@@ -19,7 +20,8 @@ inputs:
     doc: base 2 logarithm of hash table size used for collation
     inputBinding:
       position: 101
-      prefix: colhlog
+      prefix: colhlog=
+      separate: false
   - id: collate
     type:
       - 'null'
@@ -27,7 +29,8 @@ inputs:
     doc: collate pairs
     inputBinding:
       position: 101
-      prefix: collate
+      prefix: collate=
+      separate: false
   - id: colsbs
     type:
       - 'null'
@@ -35,7 +38,8 @@ inputs:
     doc: size of hash table overflow list in bytes
     inputBinding:
       position: 101
-      prefix: colsbs
+      prefix: colsbs=
+      separate: false
   - id: combs
     type:
       - 'null'
@@ -43,7 +47,8 @@ inputs:
     doc: print some counts after collation based processing
     inputBinding:
       position: 101
-      prefix: combs
+      prefix: combs=
+      separate: false
   - id: compress_output
     type:
       - 'null'
@@ -51,7 +56,8 @@ inputs:
     doc: 'compress output streams in gzip format (default: 0)'
     inputBinding:
       position: 101
-      prefix: gz
+      prefix: gz=
+      separate: false
   - id: compression_level
     type:
       - 'null'
@@ -60,7 +66,8 @@ inputs:
       (1=fast,2=2,3=3,4=4,5=5,6=6,7=7,8=8,9=best,10=10,11=11,12=12)
     inputBinding:
       position: 101
-      prefix: level
+      prefix: level=
+      separate: false
   - id: disable_validation
     type:
       - 'null'
@@ -68,7 +75,8 @@ inputs:
     doc: disable validation of input data
     inputBinding:
       position: 101
-      prefix: disablevalidation
+      prefix: disablevalidation=
+      separate: false
   - id: exclude
     type:
       - 'null'
@@ -76,7 +84,8 @@ inputs:
     doc: exclude alignments matching any of the given flags
     inputBinding:
       position: 101
-      prefix: exclude
+      prefix: exclude=
+      separate: false
   - id: input_buffer_size
     type:
       - 'null'
@@ -84,7 +93,8 @@ inputs:
     doc: size of input buffer
     inputBinding:
       position: 101
-      prefix: inputbuffersize
+      prefix: inputbuffersize=
+      separate: false
   - id: input_filename
     type:
       - 'null'
@@ -92,7 +102,8 @@ inputs:
     doc: 'input filename (default: read file from standard input)'
     inputBinding:
       position: 101
-      prefix: filename
+      prefix: filename=
+      separate: false
   - id: input_format
     type:
       - 'null'
@@ -100,7 +111,8 @@ inputs:
     doc: 'input format: cram, bam or sam'
     inputBinding:
       position: 101
-      prefix: inputformat
+      prefix: inputformat=
+      separate: false
   - id: matched_pairs_first_mates
     type:
       - 'null'
@@ -108,7 +120,8 @@ inputs:
     doc: matched pairs first mates
     inputBinding:
       position: 101
-      prefix: F
+      prefix: F=
+      separate: false
   - id: matched_pairs_second_mates
     type:
       - 'null'
@@ -116,7 +129,8 @@ inputs:
     doc: matched pairs second mates
     inputBinding:
       position: 101
-      prefix: F2
+      prefix: F2=
+      separate: false
   - id: max_output
     type:
       - 'null'
@@ -125,15 +139,17 @@ inputs:
       only)'
     inputBinding:
       position: 101
-      prefix: maxoutput
+      prefix: maxoutput=
+      separate: false
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'directory for output if outputperreadgroup=1 (default: current directory)'
     inputBinding:
       position: 101
-      prefix: outputdir
+      prefix: outputdir=
+      separate: false
   - id: output_fasta
     type:
       - 'null'
@@ -141,7 +157,8 @@ inputs:
     doc: output FastA instead of FastQ
     inputBinding:
       position: 101
-      prefix: fasta
+      prefix: fasta=
+      separate: false
   - id: output_per_read_group
     type:
       - 'null'
@@ -149,7 +166,8 @@ inputs:
     doc: split output per read group (for collate=1 only)
     inputBinding:
       position: 101
-      prefix: outputperreadgroup
+      prefix: outputperreadgroup=
+      separate: false
   - id: output_per_read_group_prefix
     type:
       - 'null'
@@ -158,7 +176,8 @@ inputs:
       collate=1 only)
     inputBinding:
       position: 101
-      prefix: outputperreadgroupprefix
+      prefix: outputperreadgroupprefix=
+      separate: false
   - id: output_per_read_group_rgsm
     type:
       - 'null'
@@ -167,7 +186,8 @@ inputs:
       outputperreadgroup=1 (for collate=1 only)
     inputBinding:
       position: 101
-      prefix: outputperreadgrouprgsm
+      prefix: outputperreadgrouprgsm=
+      separate: false
   - id: output_suffix_F
     type:
       - 'null'
@@ -175,7 +195,8 @@ inputs:
     doc: suffix for F category when outputperreadgroup=1
     inputBinding:
       position: 101
-      prefix: outputperreadgroupsuffixF
+      prefix: outputperreadgroupsuffixF=
+      separate: false
   - id: output_suffix_F2
     type:
       - 'null'
@@ -183,7 +204,8 @@ inputs:
     doc: suffix for F2 category when outputperreadgroup=1
     inputBinding:
       position: 101
-      prefix: outputperreadgroupsuffixF2
+      prefix: outputperreadgroupsuffixF2=
+      separate: false
   - id: output_suffix_O
     type:
       - 'null'
@@ -191,7 +213,8 @@ inputs:
     doc: suffix for O category when outputperreadgroup=1
     inputBinding:
       position: 101
-      prefix: outputperreadgroupsuffixO
+      prefix: outputperreadgroupsuffixO=
+      separate: false
   - id: output_suffix_O2
     type:
       - 'null'
@@ -199,7 +222,8 @@ inputs:
     doc: suffix for O2 category when outputperreadgroup=1
     inputBinding:
       position: 101
-      prefix: outputperreadgroupsuffixO2
+      prefix: outputperreadgroupsuffixO2=
+      separate: false
   - id: output_suffix_S
     type:
       - 'null'
@@ -207,7 +231,8 @@ inputs:
     doc: suffix for S category when outputperreadgroup=1
     inputBinding:
       position: 101
-      prefix: outputperreadgroupsuffixS
+      prefix: outputperreadgroupsuffixS=
+      separate: false
   - id: ranges
     type:
       - 'null'
@@ -215,7 +240,8 @@ inputs:
     doc: 'input ranges (bam and cram input only, default: read complete file)'
     inputBinding:
       position: 101
-      prefix: ranges
+      prefix: ranges=
+      separate: false
   - id: reference
     type:
       - 'null'
@@ -225,7 +251,8 @@ inputs:
     doc: name of reference FastA in case of inputformat=cram
     inputBinding:
       position: 101
-      prefix: reference
+      prefix: reference=
+      separate: false
   - id: single_end
     type:
       - 'null'
@@ -233,7 +260,8 @@ inputs:
     doc: single end
     inputBinding:
       position: 101
-      prefix: S
+      prefix: S=
+      separate: false
   - id: split
     type:
       - 'null'
@@ -242,7 +270,8 @@ inputs:
       split)'
     inputBinding:
       position: 101
-      prefix: split
+      prefix: split=
+      separate: false
   - id: split_prefix
     type:
       - 'null'
@@ -250,7 +279,8 @@ inputs:
     doc: file name prefix if collate=0 and split>0
     inputBinding:
       position: 101
-      prefix: splitprefix
+      prefix: splitprefix=
+      separate: false
   - id: tags
     type:
       - 'null'
@@ -258,7 +288,8 @@ inputs:
     doc: 'list of aux tags to be copied (default: do not copy any aux fields)'
     inputBinding:
       position: 101
-      prefix: tags
+      prefix: tags=
+      separate: false
   - id: temporary_file_name
     type:
       - 'null'
@@ -274,7 +305,8 @@ inputs:
     doc: use OQ field instead of quality field if present (collate={0,1} only)
     inputBinding:
       position: 101
-      prefix: tryoq
+      prefix: tryoq=
+      separate: false
   - id: unmatched_pairs_first_mates
     type:
       - 'null'
@@ -282,7 +314,8 @@ inputs:
     doc: unmatched pairs first mates
     inputBinding:
       position: 101
-      prefix: O
+      prefix: O=
+      separate: false
   - id: unmatched_pairs_second_mates
     type:
       - 'null'
@@ -290,7 +323,8 @@ inputs:
     doc: unmatched pairs second mates
     inputBinding:
       position: 101
-      prefix: O2
+      prefix: O2=
+      separate: false
   - id: wrap_columns
     type:
       - 'null'
@@ -299,7 +333,8 @@ inputs:
       wrap, even numbers only)'
     inputBinding:
       position: 101
-      prefix: cols
+      prefix: cols=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakesee watch
+baseCommand:
+  - snakesee
+  - watch
 label: snakesee_watch
 doc: "Watch a Snakemake workflow in real-time with a TUI dashboard.\n\nTool homepage:
   https://github.com/nh13/snakesee"

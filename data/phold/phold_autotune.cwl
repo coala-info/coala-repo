@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold autotune
+baseCommand:
+  - phold
+  - autotune
 label: phold_autotune
 doc: "Determines optimal batch size for 3Di prediction with your hardware\n\nTool
   homepage: https://github.com/gbouras13/phold"

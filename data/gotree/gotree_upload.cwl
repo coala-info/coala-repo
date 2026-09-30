@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree upload
+baseCommand:
+  - gotree
+  - upload
 label: gotree_upload
 doc: "Upload a tree to a given server\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:

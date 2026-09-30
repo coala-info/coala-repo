@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savana cna
+baseCommand:
+  - savana
+  - cna
 label: savana_cna
 doc: "Copy Number Aberration analysis tool\n\nTool homepage: https://github.com/cortes-ciriano-lab/savana"
 inputs:
@@ -279,7 +281,7 @@ inputs:
       position: 101
       prefix: --normal
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory (can exist but must be empty)
     inputBinding:
       position: 101
@@ -391,7 +393,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory for allele counting temp files (defaults to outdir)
     inputBinding:
       position: 101

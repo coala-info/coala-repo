@@ -66,7 +66,7 @@ inputs:
     doc: Block IO relative weight in range 10-1000, 0 to disable
     inputBinding:
       position: 103
-      prefix: --blkio_weight
+      prefix: --blkio-weight
   - id: blkio_weight_device
     type:
       - 'null'
@@ -75,7 +75,7 @@ inputs:
     doc: Device specific block IO relative weight
     inputBinding:
       position: 103
-      prefix: --blkio_weight-device
+      prefix: --blkio-weight-device
   - id: cleanenv
     type:
       - 'null'
@@ -503,7 +503,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory to be used for /tmp, /var/tmp and $HOME
     inputBinding:
       position: 103

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vclust prefilter
+baseCommand:
+  - vclust
+  - prefilter
 label: vclust_prefilter
 doc: "vclust prefilter\n\nTool homepage: https://github.com/refresh-bio/vclust"
 inputs:
@@ -87,10 +89,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output filename
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type: File

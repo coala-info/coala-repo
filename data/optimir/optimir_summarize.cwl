@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: optimir summarize
+baseCommand:
+  - optimir
+  - summarize
 label: optimir_summarize
 doc: "Summarize optimir results\n\nTool homepage: https://github.com/FlorianThibord/OptimiR"
 inputs:

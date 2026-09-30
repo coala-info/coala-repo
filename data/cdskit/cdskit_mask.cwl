@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_mask
+baseCommand:
+  - cdskit
+  - mask
 label: cdskit_mask
 doc: "Masks codons in a sequence file based on specified criteria.\n\nTool homepage:
   https://github.com/kfuku52/cdskit"

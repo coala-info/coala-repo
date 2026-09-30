@@ -83,8 +83,9 @@ inputs:
       prefix: --gmap_index
   - id: gtf
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: File with gene coordinates (or several files or *.txt file with 
       one-per-line list of GTF / GFF files for meta RNA). We recommend to use 
       files downloaded from GENCODE or Ensembl [GTF/GFF]
@@ -225,10 +226,9 @@ inputs:
       prefix: --upper_threshold
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

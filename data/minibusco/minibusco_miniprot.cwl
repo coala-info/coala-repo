@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minibusco miniprot
+baseCommand:
+  - minibusco
+  - miniprot
 label: minibusco_miniprot
 doc: "Miniprot alignment\n\nTool homepage: https://github.com/huangnengCSU/minibusco"
 inputs:

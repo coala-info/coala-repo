@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor_fixvcf
+baseCommand:
+  - surpyvor
+  - fixvcf
 label: surpyvor_fixvcf
 doc: "Fix problems related to using jasmine\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -33,7 +35,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

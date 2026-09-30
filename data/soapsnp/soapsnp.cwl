@@ -129,9 +129,9 @@ inputs:
       prefix: -z
   - id: reference_sequence
     type: File
+    doc: Reference Sequence in fasta format
     secondaryFiles:
       - .fai
-    doc: Reference Sequence in fasta format
     inputBinding:
       position: 101
       prefix: -d
@@ -195,18 +195,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output consensus file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
   - id: quality_calibration_matrix_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `quality_calibration_matrix_output_path`
+    doc: Output the quality calibration matrix; the matrix can be reused with -I
+      if you rerun the program
     inputBinding:
       position: 103
-      prefix: --quality-calibration-matrix-output
+      prefix: -M
 outputs:
   - id: output_file
     type: File

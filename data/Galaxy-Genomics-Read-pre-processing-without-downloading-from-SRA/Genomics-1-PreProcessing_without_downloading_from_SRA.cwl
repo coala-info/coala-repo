@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'Preprocessing of raw SARS-CoV-2 reads. This workflow contains an alternate starting point to avoid the data to be downloaded from the NCBI SRA. More info can be found at https://covid19.galaxyproject.org/genomics/'
 inputs:
   0_Input Dataset Collection:

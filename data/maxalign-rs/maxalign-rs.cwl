@@ -42,10 +42,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --keep-sequence
+          separate: true
     doc: Sequence to always retain (can be specified multiple times)
     inputBinding:
       position: 102
-      prefix: --keep-sequence
   - id: max_iterations
     type:
       - 'null'
@@ -83,7 +85,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `excluded_sequences_path`
     inputBinding:
       position: 103
       prefix: --excluded-sequences
@@ -91,7 +92,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `retained_sequences_path`
     inputBinding:
       position: 104
       prefix: --retained-sequences

@@ -30,7 +30,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Output directory (default: basename of query sequences FASTA file, plus
       '_unassigned')."
     inputBinding:

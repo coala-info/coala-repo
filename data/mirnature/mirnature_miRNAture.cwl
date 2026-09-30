@@ -156,10 +156,9 @@ inputs:
       prefix: -user_models
   - id: workdir_path
     type: string
-    doc: Output or path parameter `workdir_path`
     inputBinding:
       position: 102
-      prefix: --workdir
+      prefix: -workdir
 outputs:
   - id: workdir
     type:

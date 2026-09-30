@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_query
+baseCommand:
+  - mrs
+  - query
 label: mrs_query
 doc: "Query the MRS databank\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

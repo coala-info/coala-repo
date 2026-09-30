@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sh LR_Gapcloser.sh
+baseCommand:
+  - sh
+  - LR_Gapcloser.sh
 label: lr_gapcloser_LR_Gapcloser.sh
 doc: "Close gaps in scaffolds using long reads.\n\nTool homepage: https://github.com/CAFS-bioinformatics/LR_Gapcloser"
 inputs:
@@ -63,7 +65,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: name of output directory
     inputBinding:
       position: 101

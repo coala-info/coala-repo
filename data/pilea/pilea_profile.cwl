@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pilea profile
+baseCommand:
+  - pilea
+  - profile
 label: pilea_profile
 doc: "Profile genomes from fasta or fastq files.\n\nTool homepage: https://github.com/xinehc/pilea"
 inputs:
@@ -76,7 +78,7 @@ inputs:
       position: 102
       prefix: --min-frac
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 102

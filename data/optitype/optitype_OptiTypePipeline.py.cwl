@@ -47,7 +47,7 @@ inputs:
       position: 101
       prefix: --input
   - id: outdir
-    type: Directory
+    type: string
     doc: Specifies the out directory to which all files should be written.
     inputBinding:
       position: 101

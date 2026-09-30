@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanomotif detect_contamination
+baseCommand:
+  - nanomotif
+  - detect_contamination
 label: nanomotif_detect_contamination
 doc: "Detects contamination in nanopore motif data.\n\nTool homepage: https://pypi.org/project/nanomotif/"
 inputs:

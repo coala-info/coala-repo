@@ -134,11 +134,26 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify an alternative directory for temporary files
     inputBinding:
       position: 103
       prefix: --tmpdir
+  - id: alignment_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --alignment_file
+  - id: file_path
+    type:
+      - 'null'
+      - string
+    doc: 'print results to file (default: stdout)'
+    inputBinding:
+      position: 105
+      prefix: --file
 outputs:
   - id: alignment_file
     type:
@@ -147,14 +162,16 @@ outputs:
     doc: produce file showing alignment of multi-copy genes and their AAI 
       identity
     outputBinding:
-      glob: $(inputs.alignment_file)
+      glob: $(inputs.alignment_file_path)
   - id: file
     type:
       - 'null'
       - File
     doc: 'print results to file (default: stdout)'
     outputBinding:
-      glob: $(inputs.file)
+      glob: $(inputs.file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkm-genome:1.2.4--pyhdfd78af_2

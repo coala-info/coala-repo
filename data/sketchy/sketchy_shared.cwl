@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchy shared
+baseCommand:
+  - sketchy
+  - shared
 label: sketchy_shared
 doc: "Compute shared hashes between two sketches\n\nTool homepage: https://github.com/esteinig/sketchy"
 inputs:

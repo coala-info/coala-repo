@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seroba summary
+baseCommand:
+  - seroba
+  - summary
 label: seroba_summary
 doc: "writes all predictions in one tsv file\n\nTool homepage: https://github.com/sanger-pathogens/seroba"
 inputs:

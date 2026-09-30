@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metapi sync
+baseCommand:
+  - metapi
+  - sync
 label: metapi_sync
 doc: "Sync project to a directory\n\nTool homepage: https://github.com/ohmeta/metapi"
 inputs:

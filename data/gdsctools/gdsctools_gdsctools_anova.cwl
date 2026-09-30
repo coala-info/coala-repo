@@ -85,7 +85,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory where to save images and HTML files.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools submit
+baseCommand:
+  - cromwell-tools
+  - submit
 label: cromwell-tools_submit
 doc: "Submit a WDL workflow on Cromwell.\n\nTool homepage: http://github.com/broadinstitute/cromwell-tools"
 inputs:
@@ -43,7 +45,7 @@ inputs:
   - id: on_hold
     type:
       - 'null'
-      - boolean
+      - string
     doc: Whether to submit the workflow in "On Hold" status.
     inputBinding:
       position: 101
@@ -99,7 +101,7 @@ inputs:
   - id: validate_labels
     type:
       - 'null'
-      - boolean
+      - string
     doc: Whether to validate cromwell labels.
     inputBinding:
       position: 101

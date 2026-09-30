@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transcov collapse
+baseCommand:
+  - transcov
+  - collapse
 label: transcov_collapse
 doc: "\nTool homepage: https://github.com/hogfeldt/transcov"
 inputs:

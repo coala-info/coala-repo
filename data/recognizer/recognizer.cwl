@@ -92,7 +92,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -125,7 +125,7 @@ inputs:
   - id: resources_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for storing databases and other resources
     inputBinding:
       position: 101

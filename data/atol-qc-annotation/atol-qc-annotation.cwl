@@ -57,7 +57,7 @@ inputs:
   - id: logs_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Log output directory. Default: logs are discarded.'
     inputBinding:
       position: 101

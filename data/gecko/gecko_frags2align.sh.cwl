@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gecko_frags2align.sh
+baseCommand: frags2align.sh
 label: gecko_frags2align.sh
 doc: "Converts fragment files to alignment files.\n\nTool homepage: https://github.com/otorreno/gecko"
 inputs:

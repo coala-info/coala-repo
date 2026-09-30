@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy align-samples
+baseCommand:
+  - dimspy
+  - align-samples
 label: dimspy_align-samples
 doc: "Aligns samples by grouping peaks across scans/mass spectra based on mass tolerance.\n\
   \nTool homepage: https://github.com/computational-metabolomics/dimspy"
@@ -48,7 +50,6 @@ inputs:
       prefix: --ppm
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

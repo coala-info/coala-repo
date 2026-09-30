@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: suvtk_features
+baseCommand:
+  - suvtk
+  - features
 label: suvtk_features
 doc: "Create feature tables for sequences from an input fasta file.\n\n  This command
   processes the input sequences to predict open reading frames\n  (ORFs), aligns the
@@ -67,10 +69,10 @@ inputs:
       prefix: --translation-table
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Output directory  [required]
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type: Directory

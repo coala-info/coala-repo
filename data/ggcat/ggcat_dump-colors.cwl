@@ -10,11 +10,16 @@ inputs:
     type: File
     inputBinding:
       position: 1
-outputs:
   - id: output_file
+    type: string
+    doc: output-file (output path)
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_output_file
     type: File
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggcat:2.0.0--ha96b9cd_0

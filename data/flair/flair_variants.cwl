@@ -42,10 +42,9 @@ inputs:
       prefix: --manifest
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --output_prefix
 outputs:
   - id: output_prefix
     type:

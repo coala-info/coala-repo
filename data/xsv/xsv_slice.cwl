@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_slice
+baseCommand:
+  - xsv
+  - slice
 label: xsv_slice
 doc: "Returns the rows in the range specified (starting at 0, half-open interval).
   The range does not include headers.\n\nTool homepage: https://github.com/BurntSushi/xsv"
@@ -63,7 +65,7 @@ inputs:
       prefix: --start
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 103
       prefix: --output

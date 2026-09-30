@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini qc
+baseCommand:
+  - gemini
+  - qc
 label: gemini_qc
 doc: "Run quality control tests on a Gemini database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

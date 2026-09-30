@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench nemo
+baseCommand:
+  - rbpbench
+  - nemo
 label: rbpbench_nemo
 doc: "Nemo subcommand for rbpbench\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:
@@ -456,7 +458,7 @@ inputs:
       position: 101
       prefix: --nemo-pval-thr
   - id: output_folder
-    type: Directory
+    type: string
     doc: Results output folder
     inputBinding:
       position: 101

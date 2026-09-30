@@ -67,7 +67,6 @@ inputs:
       prefix: --region-type
   - id: pdf_filename_path
     type: string
-    doc: Output or path parameter `pdf_filename_path`
     inputBinding:
       position: 102
       prefix: --pdf-filename

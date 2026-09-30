@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi_count
+baseCommand:
+  - tsumugi
+  - count
 label: tsumugi_count
 doc: "Filter genes based on the number of detected phenotypes per KO or shared between
   KO pairs.\n\nTool homepage: https://github.com/akikuno/TSUMUGI-dev"

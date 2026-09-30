@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ropebwt3_stat
+baseCommand:
+  - ropebwt3
+  - stat
 label: ropebwt3_stat
 doc: "Compute statistics for an FMD-index.\n\nTool homepage: https://github.com/lh3/ropebwt3"
 inputs:

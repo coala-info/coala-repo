@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gecco convert
+baseCommand:
+  - gecco
+  - convert
 label: gecco_convert
 doc: "Convert the GenBank records to a different format.\n\nTool homepage: https://gecco.embl.de/"
 inputs:

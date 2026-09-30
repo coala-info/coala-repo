@@ -262,9 +262,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: (r)eference genome (set to ! to pick random one from sequence dir)
     secondaryFiles:
       - .fai
-    doc: (r)eference genome (set to ! to pick random one from sequence dir)
     inputBinding:
       position: 101
       prefix: --reference
@@ -360,7 +360,6 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
       prefix: --output-dir

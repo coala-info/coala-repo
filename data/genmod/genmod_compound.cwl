@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genmod compound
+baseCommand:
+  - genmod
+  - compound
 label: genmod_compound
 doc: "Score compound variants in a vcf file based on their rank score.\n\nTool homepage:
   http://github.com/moonso/genmod"

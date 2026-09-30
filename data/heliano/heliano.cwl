@@ -155,7 +155,6 @@ inputs:
       prefix: --window
   - id: opdir_path
     type: string
-    doc: Output or path parameter `opdir_path`
     inputBinding:
       position: 102
       prefix: --opdir

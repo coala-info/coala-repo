@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler tree
+baseCommand:
+  - cooler
+  - tree
 label: cooler_tree
 doc: "Display a file's data hierarchy.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:

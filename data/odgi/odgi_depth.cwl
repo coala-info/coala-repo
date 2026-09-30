@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_depth
+baseCommand:
+  - odgi
+  - depth
 label: odgi_depth
 doc: "Find the depth of a graph as defined by query criteria. Without specifying any
   non-mandatory options, it prints in a tab-delimited format path, start, end, and

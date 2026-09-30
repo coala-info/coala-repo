@@ -85,10 +85,10 @@ inputs:
       prefix: -threads
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: "Output VCF list. If unset, writes to STDOUT. Default value: ''"
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: -out
 outputs:
   - id: output_vcf
     type:

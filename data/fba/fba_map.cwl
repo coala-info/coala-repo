@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fba_map
+baseCommand:
+  - fba
+  - map
 label: fba_map
 doc: "Quantify enriched transcripts (through hybridization or PCR amplification) from
   parent single cell libraries. Read 1 contains cell partitioning and UMI information,
@@ -59,7 +61,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify a temp directory.
     inputBinding:
       position: 101
@@ -138,7 +140,6 @@ inputs:
       prefix: --whitelist
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

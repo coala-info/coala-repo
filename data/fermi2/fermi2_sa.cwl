@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2 sa
+baseCommand:
+  - fermi2
+  - sa
 label: fermi2_sa
 doc: "Builds a suffix array for an FMD-index.\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

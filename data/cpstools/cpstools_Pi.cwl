@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools Pi
+baseCommand:
+  - cpstools
+  - Pi
 label: cpstools_Pi
 doc: "Calculate pairwise pi values for a set of sequences.\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

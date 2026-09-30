@@ -581,7 +581,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `monitor_cell_polygons_path`
     inputBinding:
       position: 103
       prefix: --monitor-cell-polygons
@@ -589,7 +588,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cell_hulls_path`
     inputBinding:
       position: 104
       prefix: --output-cell-hulls
@@ -597,7 +595,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cell_metadata_path`
     inputBinding:
       position: 105
       prefix: --output-cell-metadata
@@ -605,7 +602,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cell_polygon_layers_path`
     inputBinding:
       position: 106
       prefix: --output-cell-polygon-layers
@@ -613,7 +609,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cell_polygons_path`
     inputBinding:
       position: 107
       prefix: --output-cell-polygons
@@ -621,7 +616,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cell_voxels_path`
     inputBinding:
       position: 108
       prefix: --output-cell-voxels
@@ -629,7 +623,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_expected_counts_path`
     inputBinding:
       position: 109
       prefix: --output-expected-counts
@@ -637,7 +630,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_gene_metadata_path`
     inputBinding:
       position: 110
       prefix: --output-gene-metadata
@@ -645,7 +637,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_maxpost_counts_path`
     inputBinding:
       position: 111
       prefix: --output-maxpost-counts
@@ -653,7 +644,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_metagene_loadings_path`
     inputBinding:
       position: 112
       prefix: --output-metagene-loadings
@@ -661,7 +651,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_metagene_rates_path`
     inputBinding:
       position: 113
       prefix: --output-metagene-rates
@@ -669,7 +658,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_rates_path`
     inputBinding:
       position: 114
       prefix: --output-rates
@@ -677,7 +665,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_transcript_metadata_path`
     inputBinding:
       position: 115
       prefix: --output-transcript-metadata
@@ -685,7 +672,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_union_cell_polygons_path`
     inputBinding:
       position: 116
       prefix: --output-union-cell-polygons

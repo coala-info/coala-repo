@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngsderive strandedness
+baseCommand:
+  - ngsderive
+  - strandedness
 label: ngsderive_strandedness
 doc: "Derive strandedness from NGS files.\n\nTool homepage: https://github.com/claymcleod/ngsderive"
 inputs:
@@ -112,7 +114,6 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

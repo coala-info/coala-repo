@@ -188,7 +188,7 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: 'create the specified output directory overwritting it if it already exists;
+    doc: 'create the specified output directory overwritting it if it already exists;'
     outputBinding:
       glob: $(inputs.output_directory_overwrite)
 hints:

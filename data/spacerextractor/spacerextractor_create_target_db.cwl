@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spacerextractor create_target_db
+baseCommand:
+  - spacerextractor
+  - create_target_db
 label: spacerextractor_create_target_db
 doc: "create a database of potential targets to map spacers to from a fasta file\n\
   \nTool homepage: https://code.jgi.doe.gov/SRoux/spacerextractor"
@@ -45,7 +47,7 @@ inputs:
       position: 101
       prefix: --n_threads
   - id: new_db_dir
-    type: Directory
+    type: string
     doc: Path to the target database folder, will be created or overwritten 
       (with option fr)
     inputBinding:

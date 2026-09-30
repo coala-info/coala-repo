@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kcftools_cohort
+baseCommand:
+  - kcftools
+  - cohort
 label: kcftools_cohort
 doc: "Create a cohort of samples kcf files\n\nTool homepage: https://github.com/sivasubramanics/kcftools"
 inputs:
@@ -23,10 +25,10 @@ inputs:
       prefix: --list
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

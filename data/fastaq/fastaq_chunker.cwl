@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_chunker
+baseCommand:
+  - fastaq
+  - chunker
 label: fastaq_chunker
 doc: "Splits a multi sequence file into separate files. Splits sequences into chunks
   of a fixed size. Aims for chunk_size chunks in each file, but allows a little extra,

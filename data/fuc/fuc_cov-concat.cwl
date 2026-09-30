@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc_cov-concat
+baseCommand:
+  - fuc
+  - cov-concat
 label: fuc_cov-concat
 doc: "Concatenate depth of coverage files.\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:

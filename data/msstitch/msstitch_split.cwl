@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch split
+baseCommand:
+  - msstitch
+  - split
 label: msstitch_split
 doc: "Split an input file based on a specified column or identifier.\n\nTool homepage:
   https://github.com/lehtiolab/msstitch"
@@ -14,7 +16,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output in
     inputBinding:
       position: 101
@@ -28,11 +30,11 @@ inputs:
       position: 101
       prefix: --splitcol
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: Output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

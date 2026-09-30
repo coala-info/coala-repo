@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: beamspy annotate-mf
+baseCommand:
+  - beamspy
+  - annotate-mf
 label: beamspy_annotate-mf
 doc: "Annotate molecular formulas for peaks.\n\nTool homepage: https://github.com/computational-metabolomics/beamspy"
 inputs:

@@ -19,6 +19,11 @@ inputs:
     doc: Species name
     inputBinding:
       position: 3
+  - id: output_fa
+    type: string
+    doc: Output FASTA file
+    inputBinding:
+      position: 4
   - id: filter_file
     type:
       - 'null'
@@ -26,7 +31,8 @@ inputs:
     doc: only read accessions listed in file
     inputBinding:
       position: 104
-      prefix: -filter
+      prefix: -filter=
+      separate: false
   - id: get_ests
     type:
       - 'null'
@@ -36,11 +42,11 @@ inputs:
       position: 104
       prefix: -est
 outputs:
-  - id: output_fa
+  - id: out_output_fa
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_fa)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-hgspeciesrna:482--h0b57e2e_1

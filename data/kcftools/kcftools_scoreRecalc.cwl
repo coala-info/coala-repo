@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kcftools_scoreRecalc
+baseCommand:
+  - kcftools
+  - scoreRecalc
 label: kcftools_scoreRecalc
 doc: "Recalculate scores in a KCF file\n\nTool homepage: https://github.com/sivasubramanics/kcftools"
 inputs:
@@ -36,10 +38,10 @@ inputs:
       prefix: --wt
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output KCF file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

@@ -146,7 +146,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary files directory.
     inputBinding:
       position: 101
@@ -186,7 +186,7 @@ inputs:
       prefix: --window-size
   - id: out_prefix_path
     type: string
-    doc: Output or path parameter `out_prefix_path`
+    doc: Output prefix.
     inputBinding:
       position: 102
       prefix: --out-prefix
@@ -194,10 +194,11 @@ outputs:
   - id: out_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output prefix.
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

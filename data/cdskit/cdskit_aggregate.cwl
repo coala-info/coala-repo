@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_aggregate
+baseCommand:
+  - cdskit
+  - aggregate
 label: cdskit_aggregate
 doc: "Aggregate sequences based on a regular expression.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

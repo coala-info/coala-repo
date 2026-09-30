@@ -13,6 +13,7 @@ inputs:
     doc: List of FASTQ files to be joined
     inputBinding:
       position: 1
+      prefix: --in_fastq
   - id: os
     type:
       - 'null'

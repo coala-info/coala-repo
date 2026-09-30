@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree shuffletips
+baseCommand:
+  - gotree
+  - shuffletips
 label: gotree_shuffletips
 doc: "Shuffle tip names of an input tree.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:
@@ -38,10 +40,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Shuffled tree output file (default "stdout")
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

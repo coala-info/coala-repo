@@ -144,26 +144,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `html_path`
     inputBinding:
       position: 102
-      prefix: --html
+      prefix: -html
   - id: jalview_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `jalview_path`
     inputBinding:
       position: 103
-      prefix: --jalview
+      prefix: -jalview
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
-      prefix: --output
+      prefix: -output
 outputs:
   - id: output
     type:

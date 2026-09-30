@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kanpig gt
+baseCommand:
+  - kanpig
+  - gt
 label: kanpig_gt
 doc: "Germline SV Genotyping\n\nTool homepage: https://github.com/ACEnglish/kanpig"
 inputs:
@@ -194,9 +196,9 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
+    doc: Reference genome
     secondaryFiles:
       - .fai
-    doc: Reference genome
     inputBinding:
       position: 101
       prefix: --reference
@@ -265,8 +267,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
+    doc: 'Output VCF (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102
       prefix: --out

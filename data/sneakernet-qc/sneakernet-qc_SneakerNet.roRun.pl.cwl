@@ -20,6 +20,7 @@ inputs:
     doc: Also create a SampleSheet.csv or samples.tsv as fallback
     inputBinding:
       position: 102
+      prefix: --createsamplesheet
   - id: numcpus
     type:
       - 'null'
@@ -27,20 +28,23 @@ inputs:
     doc: Number of CPUs to use
     inputBinding:
       position: 102
+      prefix: --numcpus
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102
+      prefix: --outdir
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory
     inputBinding:
       position: 102
+      prefix: --tempdir
 outputs:
   - id: stdout
     type: stdout

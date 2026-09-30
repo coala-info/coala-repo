@@ -176,10 +176,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_table_path`
     inputBinding:
       position: 105
-      prefix: --output-table
+      prefix: --output_table
 outputs:
   - id: output_file
     type: File

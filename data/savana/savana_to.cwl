@@ -475,7 +475,7 @@ inputs:
       position: 101
       prefix: --ont
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory (can exist but must be empty)
     inputBinding:
       position: 101
@@ -661,7 +661,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory for allele counting temp files (defaults to outdir)
     inputBinding:
       position: 101
@@ -682,10 +682,9 @@ inputs:
       prefix: --tumour
   - id: somatic_output_path
     type: string
-    doc: Output or path parameter `somatic_output_path`
     inputBinding:
       position: 102
-      prefix: --somatic-output
+      prefix: --somatic_output
 outputs:
   - id: somatic_output
     type:

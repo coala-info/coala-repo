@@ -198,10 +198,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
+    doc: N  specify prefix string for output file names (cap)
     inputBinding:
       position: 104
-      prefix: --output-prefix
+      prefix: -x
 outputs:
   - id: clipping_info_file
     type:
@@ -213,10 +213,11 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: specify prefix string for output file names
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

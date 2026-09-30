@@ -24,7 +24,8 @@ inputs:
     doc: Compiles the assembly to native code
     inputBinding:
       position: 103
-      prefix: --aot
+      prefix: --aot=
+      separate: false
   - id: attach
     type:
       - 'null'
@@ -49,7 +50,8 @@ inputs:
     doc: Enable debugging support, use --help-debug for details
     inputBinding:
       position: 103
-      prefix: --debug
+      prefix: --debug=
+      separate: false
   - id: debugger_agent
     type:
       - 'null'
@@ -114,7 +116,8 @@ inputs:
     doc: Runs in profiling mode with the specified profiler module
     inputBinding:
       position: 103
-      prefix: --profile
+      prefix: --profile=
+      separate: false
   - id: runtime
     type:
       - 'null'
@@ -131,7 +134,8 @@ inputs:
       \                mode is one of cas, core-clr, verifiable or validil"
     inputBinding:
       position: 103
-      prefix: --security
+      prefix: --security=
+      separate: false
   - id: trace
     type:
       - 'null'
@@ -139,7 +143,8 @@ inputs:
     doc: Enable tracing, use --help-trace for details
     inputBinding:
       position: 103
-      prefix: --trace
+      prefix: --trace=
+      separate: false
   - id: verbose
     type:
       - 'null'

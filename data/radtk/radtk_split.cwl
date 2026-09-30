@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: radtk_split
+baseCommand:
+  - radtk
+  - split
 label: radtk_split
 doc: "split an input RAD file into multiple output files\n\nTool homepage: https://github.com/COMBINE-lab/radtk"
 inputs:

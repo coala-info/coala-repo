@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python dreamtools
+baseCommand:
+  - python
+  - dreamtools
 label: dreamtools
 doc: "General Description:\n    You must provide the challenge alias (e.g., D8C1 for
   DREAM8, Challenge 1)\n    and if there were several sub-challenges, you also must

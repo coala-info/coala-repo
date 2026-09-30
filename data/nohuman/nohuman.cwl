@@ -118,18 +118,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_1_path`
     inputBinding:
       position: 103
-      prefix: --output-1
+      prefix: --out1
   - id: output_2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_2_path`
     inputBinding:
       position: 104
-      prefix: --output-2
+      prefix: --out2
 outputs:
   - id: output_1
     type:

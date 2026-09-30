@@ -94,9 +94,9 @@ inputs:
       prefix: --output-aafs
   - id: reference
     type: File
+    doc: Path to reference FASTA file.
     secondaryFiles:
       - .fai
-    doc: Path to reference FASTA file.
     inputBinding:
       position: 101
       prefix: --reference
@@ -142,7 +142,7 @@ inputs:
       prefix: --write-vcf
   - id: output_fingerprint_path
     type: string
-    doc: Output or path parameter `output_fingerprint_path`
+    doc: Path to output .npz file (extension will be
     inputBinding:
       position: 102
       prefix: --output-fingerprint

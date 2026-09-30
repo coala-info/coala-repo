@@ -23,7 +23,7 @@ inputs:
       prefix: --fastq-path
   - id: sequence_length_file_path
     type: string
-    doc: Output or path parameter `sequence_length_file_path`
+    doc: output file of sequence lengths, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --sequence-length-file

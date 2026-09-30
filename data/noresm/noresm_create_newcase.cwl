@@ -121,7 +121,7 @@ inputs:
   - id: output_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Alternative pathname for the directory where case output is written.
     inputBinding:
       position: 101

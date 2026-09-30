@@ -35,12 +35,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chromosome
+          separate: true
     doc: Name of chromosome(s) to process. If not given, all chromosomes in the 
       input VCF are considered. Can be used multiple times and accepts a 
       comma-separated list.
     inputBinding:
       position: 102
-      prefix: --chromosome
   - id: gtf
     type:
       - 'null'
@@ -68,8 +70,8 @@ inputs:
       position: 102
       prefix: --sample
   - id: tsv_path
-    type: string
-    doc: Output or path parameter `tsv_path`
+    type: string?
+    doc: Write statistics in tab-separated value format to FILE
     inputBinding:
       position: 103
       prefix: --tsv

@@ -144,7 +144,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'OPTIONAL PARAMETER: Absolute path to custom folder in which to store temporary
       files. If tmpdir is not specified, isONform will attempt to write the temporary
       files into the tmp folder on your system. It is advised to only use this parameter

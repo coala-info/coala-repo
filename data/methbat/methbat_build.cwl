@@ -16,7 +16,7 @@ inputs:
       prefix: --input-collection
   - id: output_profile_path
     type: string
-    doc: Output or path parameter `output_profile_path`
+    doc: Output background profile (CSV/TSV)
     inputBinding:
       position: 102
       prefix: --output-profile

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ropebwt3_plain2fmd
+baseCommand:
+  - ropebwt3
+  - plain2fmd
 label: ropebwt3_plain2fmd
 doc: "Convert plain text to FM-index\n\nTool homepage: https://github.com/lh3/ropebwt3"
 inputs:

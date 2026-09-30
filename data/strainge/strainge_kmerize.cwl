@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strainge kmerize
+baseCommand:
+  - strainge
+  - kmerize
 label: strainge_kmerize
 doc: "K-merize a given reference sequence or a sample read dataset.\n\nTool homepage:
   The package home page"
@@ -56,7 +58,6 @@ inputs:
       prefix: --prune
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

@@ -60,7 +60,7 @@ inputs:
       position: 102
       prefix: --min-len
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 102

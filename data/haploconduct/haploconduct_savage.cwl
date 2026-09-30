@@ -175,7 +175,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify output directory
     inputBinding:
       position: 101

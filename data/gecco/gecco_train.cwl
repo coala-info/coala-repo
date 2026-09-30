@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gecco_train
+baseCommand:
+  - gecco
+  - train
 label: gecco_train
 doc: "Train a CRF model for domain annotation.\n\nTool homepage: https://gecco.embl.de/"
 inputs:

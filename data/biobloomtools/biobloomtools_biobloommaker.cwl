@@ -158,10 +158,10 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output location of the filter and filter info files.
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas presence_absence
+baseCommand:
+  - pangwas
+  - presence_absence
 label: pangwas_presence_absence
 doc: "Extract presence absence of clusters.\n\nTakes as input a TSV of summarized
   clusters from summarize.\nOutputs an Rtab file of cluster presence/absence.\n\n\
@@ -15,7 +17,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec init
+baseCommand:
+  - seqspec
+  - init
 label: seqspec_init
 doc: "Generate a new *empty* seqspec draft (meta-Regions only).\n\nTool homepage:
   https://github.com/sbooeshaghi/seqspec"
@@ -43,7 +45,7 @@ inputs:
       prefix: --name
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output YAML (default stdout)
     inputBinding:
       position: 102
       prefix: --output

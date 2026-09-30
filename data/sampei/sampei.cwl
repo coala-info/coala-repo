@@ -111,7 +111,6 @@ inputs:
       prefix: --xtandem-xml
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 105
       prefix: --output-directory

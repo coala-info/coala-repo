@@ -172,7 +172,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to temporary directory
     inputBinding:
       position: 101
@@ -196,7 +196,6 @@ inputs:
       prefix: -Z
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

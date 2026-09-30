@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks filter
+baseCommand:
+  - kmtricks
+  - filter
 label: kmtricks_filter
 doc: "Filter existing matrix with a new sample.\n\nTool homepage: https://github.com/tlemane/kmtricks"
 inputs:
@@ -73,7 +75,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: '- output directory.'
     inputBinding:
       position: 102
       prefix: --output

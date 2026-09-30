@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: instanovo convert
+baseCommand:
+  - instanovo
+  - convert
 label: instanovo_convert
 doc: "Convert data to SpectrumDataFrame and save as *.parquet file(s).\n\nTool homepage:
   https://github.com/instadeepai/instanovo"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: target
-    type: Directory
+    type: string
     doc: Target folder to save data shards
     inputBinding:
       position: 2

@@ -185,34 +185,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dump_binary_path`
     inputBinding:
       position: 102
-      prefix: --dump-binary
+      prefix: --dump_binary
   - id: ouput_contigs_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ouput_contigs_path`
     inputBinding:
       position: 103
-      prefix: --ouput-contigs
+      prefix: --ouput_contigs
   - id: ouput_supernodes_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ouput_supernodes_path`
     inputBinding:
       position: 104
-      prefix: --ouput-supernodes
+      prefix: --ouput_supernodes
   - id: output_contigs_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_contigs_path`
     inputBinding:
       position: 105
-      prefix: --output-contigs
+      prefix: --output_contigs
 outputs:
   - id: dump_binary
     type:

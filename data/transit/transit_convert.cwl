@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transit convert
+baseCommand:
+  - transit
+  - convert
 label: transit_convert
 doc: "Convert between different data formats. Please use one of the known methods
   (or see documentation to add a new one).\n\nTool homepage: http://github.com/mad-lab/transit"

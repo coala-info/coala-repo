@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp_colour
+baseCommand:
+  - treesapp
+  - colour
 label: treesapp_colour
 doc: "Generates colour style and strip files for visualizing a reference package's
   phylogeny in iTOL based on taxonomic or phenotypic data.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
@@ -97,10 +99,9 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

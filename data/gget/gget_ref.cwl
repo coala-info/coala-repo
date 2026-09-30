@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gget_ref
+baseCommand:
+  - gget
+  - ref
 label: gget_ref
 doc: "Fetch FTPs for reference genomes and annotations by species.\n\nTool homepage:
   https://github.com/pachterlab/gget"
@@ -105,7 +107,8 @@ inputs:
       prefix: --which
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Path to the file the results will be saved in, e.g. 
+      path/to/directory/results.json.
     inputBinding:
       position: 103
       prefix: --out

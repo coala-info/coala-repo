@@ -144,9 +144,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: reference genome in FASTA format (can be gzipped)
     secondaryFiles:
       - .fai
-    doc: reference genome in FASTA format (can be gzipped)
     inputBinding:
       position: 101
       prefix: --reference
@@ -210,7 +210,6 @@ inputs:
       prefix: --yaml
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

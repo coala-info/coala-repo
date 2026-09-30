@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk unwrap
+baseCommand:
+  - fastafunk
+  - unwrap
 label: fastafunk_unwrap
 doc: "Unwraps multi-line FASTA files into single-line sequences.\n\nTool homepage:
   https://github.com/cov-ert/fastafunk"
@@ -30,8 +32,7 @@ inputs:
       position: 102
       prefix: --verbose
   - id: out_fasta_path
-    type: string
-    doc: Output or path parameter `out_fasta_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --out-fasta

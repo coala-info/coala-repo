@@ -115,7 +115,7 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: 'write the qc-passed reads to FILE (default: READSFILE.filter.pass.fa)'
     inputBinding:
       position: 103
       prefix: --outfile

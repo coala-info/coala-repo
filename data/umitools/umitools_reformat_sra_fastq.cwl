@@ -59,7 +59,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
@@ -67,7 +66,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pcr_duplicate_path`
     inputBinding:
       position: 103
       prefix: --pcr-duplicate
@@ -75,7 +73,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reads_with_improper_umi_path`
     inputBinding:
       position: 104
       prefix: --reads-with-improper-umi

@@ -13,6 +13,7 @@ inputs:
     doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
     inputBinding:
       position: 101
+      prefix: --format
   - id: input_tree
     type:
       - 'null'
@@ -28,6 +29,7 @@ inputs:
     doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
     inputBinding:
       position: 101
+      prefix: --seed
   - id: threads
     type:
       - 'null'
@@ -38,10 +40,10 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Cleared tree output file (default "stdout")
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

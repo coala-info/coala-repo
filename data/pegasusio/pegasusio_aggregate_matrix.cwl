@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pegasusio aggregate_matrix
+baseCommand:
+  - pegasusio
+  - aggregate_matrix
 label: pegasusio_aggregate_matrix
 doc: "Aggregate multiple single-modality or multi-modality data into one big MultimodalData
   object and write it back to disk as a zipped Zarr file.\n\nTool homepage: https://github.com/klarman-cell-observatory/pegasusio"

@@ -304,7 +304,6 @@ inputs:
       prefix: --values
   - id: output_html_path
     type: string
-    doc: Output or path parameter `output_html_path`
     inputBinding:
       position: 102
       prefix: --output-html

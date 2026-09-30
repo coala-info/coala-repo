@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt paste
+baseCommand:
+  - vt
+  - paste
 label: vt_paste
 doc: "Pastes VCF files like the unix paste functions. This is used after the per sample
   genotyping step in vt.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
@@ -30,10 +32,10 @@ inputs:
       prefix: -p
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: output VCF file [-]
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

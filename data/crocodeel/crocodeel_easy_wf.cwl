@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crocodeel easy_wf
+baseCommand:
+  - crocodeel
+  - easy_wf
 label: crocodeel_easy_wf
 doc: "Detects and quantifies contamination events in metagenomic samples.\n\nTool
   homepage: https://github.com/metagenopolis/crocodeel"
@@ -42,16 +44,12 @@ inputs:
       position: 101
       prefix: -s2
   - id: contamination_events_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: -c
   - id: pdf_report_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output PDF file with scatterplots for all
     inputBinding:
       position: 103

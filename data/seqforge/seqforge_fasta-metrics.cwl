@@ -33,14 +33,14 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a temporary directory
     inputBinding:
       position: 101
       prefix: --temp-dir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Optional name for CSV summary (default: fasta_metrics_summary.csv)'
     inputBinding:
       position: 102
       prefix: --output

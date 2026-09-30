@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc ngs-m2
+baseCommand:
+  - fuc
+  - ngs-m2
 label: fuc_ngs-m2
 doc: "Pipeline for somatic short variant discovery.\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:
@@ -15,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 3

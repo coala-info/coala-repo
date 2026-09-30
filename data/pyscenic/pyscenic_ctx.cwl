@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyscenic_ctx
+baseCommand:
+  - pyscenic
+  - ctx
 label: pyscenic_ctx
 doc: "Enrich motifs in modules and generate regulons.\n\nTool homepage: https://github.com/aertslab/pySCENIC"
 inputs:
@@ -218,7 +220,6 @@ inputs:
       prefix: --transpose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

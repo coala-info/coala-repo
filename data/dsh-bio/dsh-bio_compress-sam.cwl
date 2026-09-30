@@ -14,7 +14,7 @@ inputs:
       prefix: --input-sam-path
   - id: output_sam_file_path
     type: string
-    doc: Output or path parameter `output_sam_file_path`
+    doc: output SAM file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-sam-file

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe ph_parser
+baseCommand:
+  - haphpipe
+  - ph_parser
 label: haphpipe_ph_parser
 doc: "Parses the output of PredictHaplo to create a FASTA file of haplotypes.\n\n\
   Tool homepage: https://github.com/gwcbi/haphpipe"
@@ -30,7 +32,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101

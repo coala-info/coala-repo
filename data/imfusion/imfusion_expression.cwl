@@ -15,9 +15,9 @@ inputs:
       prefix: --paired
   - id: reference
     type: File
+    doc: Reference genome
     secondaryFiles:
       - .fai
-    doc: Reference genome
     inputBinding:
       position: 101
       prefix: --reference
@@ -36,8 +36,7 @@ inputs:
       position: 101
       prefix: --stranded
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

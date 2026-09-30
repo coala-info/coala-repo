@@ -123,7 +123,7 @@ inputs:
       position: 101
       prefix: --normal
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory (can exist but must be empty)
     inputBinding:
       position: 101

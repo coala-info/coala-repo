@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmindex sum-query
+baseCommand:
+  - kmindex
+  - sum-query
 label: kmindex_sum-query
 doc: "Query a summarized index. (experimental)\n\nTool homepage: https://github.com/tlemane/kmindex"
 inputs:
@@ -51,7 +53,6 @@ inputs:
       prefix: --zvalue
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

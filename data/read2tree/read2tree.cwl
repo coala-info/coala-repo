@@ -13,6 +13,7 @@ inputs:
     doc: Reads to be mapped to reference. If paired end add separated by space.
     inputBinding:
       position: 1
+      prefix: --reads
   - id: coverage
     type:
       - 'null'
@@ -87,7 +88,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory.
     inputBinding:
       position: 102
@@ -156,9 +157,7 @@ inputs:
       position: 102
       prefix: --species_name
   - id: standalone_path
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to oma standalone directory.
     inputBinding:
       position: 102

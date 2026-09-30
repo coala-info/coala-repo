@@ -12,6 +12,7 @@ inputs:
     doc: FASTA file(s) of adaptors. Multiple adaptor files can be used.
     inputBinding:
       position: 101
+      prefix: --adaptors
   - id: dry_run
     type:
       - 'null'
@@ -35,6 +36,7 @@ inputs:
     doc: Amount of RAM in GB.
     inputBinding:
       position: 101
+      prefix: --mem_gb
   - id: no_keep_intermediate_files
     type:
       - 'null'
@@ -64,6 +66,7 @@ inputs:
     doc: Directory containing the read files
     inputBinding:
       position: 101
+      prefix: --read_directory
   - id: restart_times
     type:
       - 'null'
@@ -71,11 +74,13 @@ inputs:
     doc: number of times to restart failing jobs
     inputBinding:
       position: 101
+      prefix: --restart_times
   - id: sample_data
     type: File
     doc: Sample csv (see README)
     inputBinding:
       position: 101
+      prefix: --sample_data
   - id: threads
     type:
       - 'null'
@@ -83,6 +88,7 @@ inputs:
     doc: Number of threads.
     inputBinding:
       position: 101
+      prefix: --threads
   - id: trimq
     type:
       - 'null'
@@ -91,6 +97,7 @@ inputs:
       enabled
     inputBinding:
       position: 101
+      prefix: --trimq
   - id: outdir_path
     type: string
     doc: Output directory

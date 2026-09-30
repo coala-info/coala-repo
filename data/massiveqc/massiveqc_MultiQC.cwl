@@ -33,7 +33,7 @@ inputs:
   - id: fastq_screen_config
     type:
       - 'null'
-      - string
+      - File
     doc: "Path to the fastq_screen conf file, can be download\n                  \
       \      from fastq_screen website"
     inputBinding:
@@ -42,7 +42,7 @@ inputs:
   - id: gtf
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the GTF file with annotations
     inputBinding:
       position: 101
@@ -56,7 +56,7 @@ inputs:
       position: 101
       prefix: --ht2-idx
   - id: input
-    type: string
+    type: File
     doc: Input file, containing two columns srx and srr
     inputBinding:
       position: 101
@@ -89,7 +89,7 @@ inputs:
   - id: ref_flat
     type:
       - 'null'
-      - string
+      - File
     doc: Path to refflat file
     inputBinding:
       position: 101
@@ -137,7 +137,6 @@ inputs:
       prefix: --workers
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

@@ -72,7 +72,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'python function to modify header lines e.g: "lambda x: x.split("|")[0]".
+    doc: 'python function to modify header lines e.g: "lambda x: x.split("|")[0]".'
     inputBinding:
       position: 103
       prefix: --header-function

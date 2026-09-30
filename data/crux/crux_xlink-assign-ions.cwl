@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux xlink-assign-ions
+baseCommand:
+  - crux
+  - xlink-assign-ions
 label: crux_xlink-assign-ions
 doc: "Assigns cross-linked peptides to MS/MS spectra.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

@@ -144,7 +144,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outputfile_img_path`
+    doc: Output file. Format must be compatible with
     inputBinding:
       position: 102
       prefix: --outputfile-img
@@ -152,7 +152,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outputfile_tabl_path`
+    doc: 'Output file. Default : None.'
     inputBinding:
       position: 103
       prefix: --outputfile-tabl

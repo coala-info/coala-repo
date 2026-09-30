@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg create-folder
+baseCommand:
+  - hicberg
+  - create-folder
 label: hicberg_create-folder
 doc: "Create a folder to save results. Folder will be set as <output>/<name>.\n\n\
   Tool homepage: https://github.com/sebgra/hicberg"
@@ -24,7 +26,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder to save results. If not set, the current directory is 
       used.
     inputBinding:

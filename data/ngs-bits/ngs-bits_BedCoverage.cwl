@@ -108,10 +108,10 @@ inputs:
       prefix: --tdx
   - id: output_bed_file_path
     type: string
-    doc: Output or path parameter `output_bed_file_path`
+    doc: "Output BED file. If unset, writes to STDOUT. Default value: ''"
     inputBinding:
       position: 102
-      prefix: --output-bed-file
+      prefix: -out
 outputs:
   - id: output_bed_file
     type:

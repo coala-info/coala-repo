@@ -8,7 +8,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output dir
     inputBinding:
       position: 101

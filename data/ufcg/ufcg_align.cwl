@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg_align
+baseCommand:
+  - ufcg
+  - align
 label: ufcg_align
 doc: "Align genes and provide multiple sequence alignments from UFCG profiles\n\n\
   Tool homepage: https://ufcg.steineggerlab.com"

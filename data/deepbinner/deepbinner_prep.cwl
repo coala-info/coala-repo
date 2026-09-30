@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbinner prep
+baseCommand:
+  - deepbinner
+  - prep
 label: deepbinner_prep
 doc: "Prepare training data\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:

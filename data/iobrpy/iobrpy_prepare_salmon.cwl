@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy_prepare_salmon
+baseCommand:
+  - iobrpy
+  - prepare_salmon
 label: iobrpy_prepare_salmon
 doc: "Prepare a TPM matrix from Salmon output.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -28,10 +30,9 @@ inputs:
       prefix: --return_feature
   - id: output_matrix_path
     type: string
-    doc: Output or path parameter `output_matrix_path`
     inputBinding:
       position: 102
-      prefix: --output-matrix
+      prefix: --output
 outputs:
   - id: output_matrix
     type: File

@@ -154,6 +154,7 @@ inputs:
   inputBinding:
     position: 103
     prefix: --keep-tag
+    itemSeparator: ','
 - id: library
   type:
   - 'null'
@@ -278,6 +279,7 @@ inputs:
   inputBinding:
     position: 103
     prefix: --remove-tag
+    itemSeparator: ','
 - id: require_flags
   type:
   - 'null'

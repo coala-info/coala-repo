@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_scat
+baseCommand:
+  - seqkit
+  - scat
 label: seqkit_scat
 doc: "real time recursive concatenation and streaming of fastx files\n\nTool homepage:
   https://github.com/shenwei356/seqkit"
@@ -188,7 +190,7 @@ inputs:
       prefix: --wait-pid
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

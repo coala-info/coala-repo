@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popins2 place-splitalign
+baseCommand:
+  - popins2
+  - place-splitalign
 label: popins2_place-splitalign
 doc: "Contig placing by split-read alignment.\n\nTool homepage: https://github.com/kehrlab/PopIns2"
 inputs:

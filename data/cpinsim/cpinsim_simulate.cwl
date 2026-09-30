@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpinsim simulate
+baseCommand:
+  - cpinsim
+  - simulate
 label: cpinsim_simulate
 doc: "Simulates protein interaction networks.\n\nTool homepage: https://github.com/BiancaStoecker/cpinsim"
 inputs:
@@ -65,7 +67,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_graph_path`
     inputBinding:
       position: 103
       prefix: --output-graph
@@ -73,7 +74,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_log_path`
     inputBinding:
       position: 104
       prefix: --output-log

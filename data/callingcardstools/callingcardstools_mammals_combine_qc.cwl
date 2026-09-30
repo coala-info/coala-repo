@@ -12,6 +12,7 @@ inputs:
     doc: A list of pickled Qbed objects
     inputBinding:
       position: 1
+      prefix: --qbed_list
   - id: barcodeQcCounter_list
     type:
       type: array
@@ -19,6 +20,7 @@ inputs:
     doc: A list of pickled BarcodeQcCounter objects
     inputBinding:
       position: 2
+      prefix: --barcodeQcCounter_list
   - id: filename
     type:
       - 'null'

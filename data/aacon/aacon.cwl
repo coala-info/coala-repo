@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - aacon.jar
+baseCommand: aacon
 label: aacon
 doc: "AA Conservation calculates conservation of amino acids in multiple sequence
   alignments using 17 different conservation scores and the SMERFS scoring algorithm.\n\
@@ -18,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -f=
+      separate: false
   - id: gap_characters
     type:
       - 'null'
@@ -28,12 +26,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: -g=
+      separate: false
+      itemSeparator: ','
   - id: input_file
     type: File
     doc: Full path to the input FASTA or Clustal alignment file.
     inputBinding:
       position: 101
       prefix: -i=
+      separate: false
   - id: methods
     type:
       - 'null'
@@ -44,6 +45,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: -m=
+      separate: false
+      itemSeparator: ','
   - id: normalize
     type:
       - 'null'
@@ -60,6 +63,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -smerfsCS=
+      separate: false
   - id: smerfs_gap_threshold
     type:
       - 'null'
@@ -68,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -smerfsGT=
+      separate: false
   - id: smerfs_window_width
     type:
       - 'null'
@@ -76,6 +81,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -smerfsWW=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -84,22 +90,26 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t=
+      separate: false
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Full path to the output file. Without it, results go to standard out.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o=
+      separate: false
   - id: stats_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_path`
+    doc: Full path to a file where program execution details are listed. Without
+      it, no execution statistics are produced.
     inputBinding:
       position: 103
-      prefix: --stats-file
+      prefix: -d=
+      separate: false
 outputs:
   - id: output_file
     type:

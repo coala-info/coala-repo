@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg tidy
+baseCommand:
+  - hicberg
+  - tidy
 label: hicberg_tidy
 doc: "Tidy output folder.\n\nTool homepage: https://github.com/sebgra/hicberg"
 inputs:
   - id: output_folder
-    type: Directory
+    type: string
     doc: Output folder to save results.
     inputBinding:
       position: 101

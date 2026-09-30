@@ -19,7 +19,8 @@ inputs:
     doc: position of bootstrap values in tree display (node OR branch)
     inputBinding:
       position: 101
-      prefix: -BOOTLABELS
+      prefix: -BOOTLABELS=
+      separate: false
   - id: bootstrap
     type:
       - 'null'
@@ -43,7 +44,8 @@ inputs:
     doc: NJ or UPGMA
     inputBinding:
       position: 101
-      prefix: -CLUSTERING
+      prefix: -CLUSTERING=
+      separate: false
   - id: convert
     type:
       - 'null'
@@ -59,7 +61,8 @@ inputs:
     doc: DNA weight matrix=IUB, CLUSTALW or filename
     inputBinding:
       position: 101
-      prefix: -DNAMATRIX
+      prefix: -DNAMATRIX=
+      separate: false
   - id: endgaps
     type:
       - 'null'
@@ -75,7 +78,8 @@ inputs:
     doc: gap separation pen. range
     inputBinding:
       position: 101
-      prefix: -GAPDIST
+      prefix: -GAPDIST=
+      separate: false
   - id: gapext
     type:
       - 'null'
@@ -83,7 +87,8 @@ inputs:
     doc: gap extension penalty
     inputBinding:
       position: 101
-      prefix: -GAPEXT
+      prefix: -GAPEXT=
+      separate: false
   - id: gapopen
     type:
       - 'null'
@@ -91,7 +96,8 @@ inputs:
     doc: gap opening penalty
     inputBinding:
       position: 101
-      prefix: -GAPOPEN
+      prefix: -GAPOPEN=
+      separate: false
   - id: helixendin
     type:
       - 'null'
@@ -99,7 +105,8 @@ inputs:
     doc: number of residues inside helix to be treated as terminal
     inputBinding:
       position: 101
-      prefix: -HELIXENDIN
+      prefix: -HELIXENDIN=
+      separate: false
   - id: helixendout
     type:
       - 'null'
@@ -107,7 +114,8 @@ inputs:
     doc: number of residues outside helix to be treated as terminal
     inputBinding:
       position: 101
-      prefix: -HELIXENDOUT
+      prefix: -HELIXENDOUT=
+      separate: false
   - id: helixgap
     type:
       - 'null'
@@ -115,7 +123,8 @@ inputs:
     doc: gap penalty for helix core residues
     inputBinding:
       position: 101
-      prefix: -HELIXGAP
+      prefix: -HELIXGAP=
+      separate: false
   - id: hgapresidues
     type:
       - 'null'
@@ -123,7 +132,8 @@ inputs:
     doc: list hydrophilic res.
     inputBinding:
       position: 101
-      prefix: -HGAPRESIDUES
+      prefix: -HGAPRESIDUES=
+      separate: false
   - id: infile
     type:
       - 'null'
@@ -131,7 +141,8 @@ inputs:
     doc: input sequences.
     inputBinding:
       position: 101
-      prefix: -INFILE
+      prefix: -INFILE=
+      separate: false
   - id: interactive
     type:
       - 'null'
@@ -147,7 +158,8 @@ inputs:
     doc: NONE or TREE or ALIGNMENT
     inputBinding:
       position: 101
-      prefix: -ITERATION
+      prefix: -ITERATION=
+      separate: false
   - id: kimura
     type:
       - 'null'
@@ -163,7 +175,8 @@ inputs:
     doc: word size
     inputBinding:
       position: 101
-      prefix: -KTUPLE
+      prefix: -KTUPLE=
+      separate: false
   - id: loopgap
     type:
       - 'null'
@@ -171,7 +184,8 @@ inputs:
     doc: gap penalty for loop regions
     inputBinding:
       position: 101
-      prefix: -LOOPGAP
+      prefix: -LOOPGAP=
+      separate: false
   - id: matrix
     type:
       - 'null'
@@ -179,7 +193,8 @@ inputs:
     doc: Protein weight matrix=BLOSUM, PAM, GONNET, ID or filename
     inputBinding:
       position: 101
-      prefix: -MATRIX
+      prefix: -MATRIX=
+      separate: false
   - id: maxdiv
     type:
       - 'null'
@@ -187,7 +202,8 @@ inputs:
     doc: '% ident. for delay'
     inputBinding:
       position: 101
-      prefix: -MAXDIV
+      prefix: -MAXDIV=
+      separate: false
   - id: maxseqlen
     type:
       - 'null'
@@ -195,7 +211,8 @@ inputs:
     doc: maximum allowed input sequence length
     inputBinding:
       position: 101
-      prefix: -MAXSEQLEN
+      prefix: -MAXSEQLEN=
+      separate: false
   - id: negative
     type:
       - 'null'
@@ -251,7 +268,8 @@ inputs:
     doc: maximum number of iterations to perform
     inputBinding:
       position: 101
-      prefix: -NUMITER
+      prefix: -NUMITER=
+      separate: false
   - id: outorder
     type:
       - 'null'
@@ -259,7 +277,8 @@ inputs:
     doc: INPUT or ALIGNED
     inputBinding:
       position: 101
-      prefix: -OUTORDER
+      prefix: -OUTORDER=
+      separate: false
   - id: output
     type:
       - 'null'
@@ -267,7 +286,8 @@ inputs:
     doc: CLUSTAL(default), GCG, GDE, PHYLIP, PIR, NEXUS and FASTA
     inputBinding:
       position: 101
-      prefix: -OUTPUT
+      prefix: -OUTPUT=
+      separate: false
   - id: outputtree
     type:
       - 'null'
@@ -275,7 +295,8 @@ inputs:
     doc: nj OR phylip OR dist OR nexus
     inputBinding:
       position: 101
-      prefix: -OUTPUTTREE
+      prefix: -OUTPUTTREE=
+      separate: false
   - id: pairgap
     type:
       - 'null'
@@ -283,7 +304,8 @@ inputs:
     doc: gap penalty
     inputBinding:
       position: 101
-      prefix: -PAIRGAP
+      prefix: -PAIRGAP=
+      separate: false
   - id: pim
     type:
       - 'null'
@@ -307,7 +329,8 @@ inputs:
     doc: profiles (old alignment).
     inputBinding:
       position: 101
-      prefix: -PROFILE1
+      prefix: -PROFILE1=
+      separate: false
   - id: profile2
     type:
       - 'null'
@@ -315,7 +338,8 @@ inputs:
     doc: profiles (old alignment).
     inputBinding:
       position: 101
-      prefix: -PROFILE2
+      prefix: -PROFILE2=
+      separate: false
   - id: pwdnamatrix
     type:
       - 'null'
@@ -323,7 +347,8 @@ inputs:
     doc: DNA weight matrix=IUB, CLUSTALW or filename
     inputBinding:
       position: 101
-      prefix: -PWDNAMATRIX
+      prefix: -PWDNAMATRIX=
+      separate: false
   - id: pwgapext
     type:
       - 'null'
@@ -331,7 +356,8 @@ inputs:
     doc: gap opening penalty
     inputBinding:
       position: 101
-      prefix: -PWGAPEXT
+      prefix: -PWGAPEXT=
+      separate: false
   - id: pwgapopen
     type:
       - 'null'
@@ -339,7 +365,8 @@ inputs:
     doc: gap opening penalty
     inputBinding:
       position: 101
-      prefix: -PWGAPOPEN
+      prefix: -PWGAPOPEN=
+      separate: false
   - id: pwmatrix
     type:
       - 'null'
@@ -347,7 +374,8 @@ inputs:
     doc: Protein weight matrix=BLOSUM, PAM, GONNET, ID or filename
     inputBinding:
       position: 101
-      prefix: -PWMATRIX
+      prefix: -PWMATRIX=
+      separate: false
   - id: quicktree
     type:
       - 'null'
@@ -371,7 +399,8 @@ inputs:
     doc: sequence range to write starting m to m+n
     inputBinding:
       position: 101
-      prefix: -RANGE
+      prefix: -RANGE=
+      separate: false
   - id: score
     type:
       - 'null'
@@ -387,7 +416,8 @@ inputs:
     doc: output in alignment file (STRUCTURE or MASK or BOTH or NONE)
     inputBinding:
       position: 101
-      prefix: -SECSTROUT
+      prefix: -SECSTROUT=
+      separate: false
   - id: seed
     type:
       - 'null'
@@ -395,7 +425,8 @@ inputs:
     doc: seed number for bootstraps.
     inputBinding:
       position: 101
-      prefix: -SEED
+      prefix: -SEED=
+      separate: false
   - id: seqno_range
     type:
       - 'null'
@@ -403,7 +434,8 @@ inputs:
     doc: 'OFF or ON (NEW: for all output formats)'
     inputBinding:
       position: 101
-      prefix: -SEQNO_RANGE
+      prefix: -SEQNO_RANGE=
+      separate: false
   - id: seqnos
     type:
       - 'null'
@@ -411,7 +443,8 @@ inputs:
     doc: OFF or ON (for Clustal output only)
     inputBinding:
       position: 101
-      prefix: -SEQNOS
+      prefix: -SEQNOS=
+      separate: false
   - id: sequences
     type:
       - 'null'
@@ -427,7 +460,8 @@ inputs:
     doc: number of residues inside strand to be treated as terminal
     inputBinding:
       position: 101
-      prefix: -STRANDENDIN
+      prefix: -STRANDENDIN=
+      separate: false
   - id: strandendout
     type:
       - 'null'
@@ -435,7 +469,8 @@ inputs:
     doc: number of residues outside strand to be treated as terminal
     inputBinding:
       position: 101
-      prefix: -STRANDENDOUT
+      prefix: -STRANDENDOUT=
+      separate: false
   - id: strandgap
     type:
       - 'null'
@@ -443,7 +478,8 @@ inputs:
     doc: gap penalty for strand core residues
     inputBinding:
       position: 101
-      prefix: -STRANDGAP
+      prefix: -STRANDGAP=
+      separate: false
   - id: terminalgap
     type:
       - 'null'
@@ -451,7 +487,8 @@ inputs:
     doc: gap penalty for structure termini
     inputBinding:
       position: 101
-      prefix: -TERMINALGAP
+      prefix: -TERMINALGAP=
+      separate: false
   - id: topdiags
     type:
       - 'null'
@@ -459,7 +496,8 @@ inputs:
     doc: number of best diags.
     inputBinding:
       position: 101
-      prefix: -TOPDIAGS
+      prefix: -TOPDIAGS=
+      separate: false
   - id: tossgaps
     type:
       - 'null'
@@ -475,7 +513,8 @@ inputs:
     doc: transitions weighting
     inputBinding:
       position: 101
-      prefix: -TRANSWEIGHT
+      prefix: -TRANSWEIGHT=
+      separate: false
   - id: tree
     type:
       - 'null'
@@ -491,7 +530,8 @@ inputs:
     doc: PROTEIN or DNA sequences
     inputBinding:
       position: 101
-      prefix: -TYPE
+      prefix: -TYPE=
+      separate: false
   - id: usetree
     type:
       - 'null'
@@ -499,7 +539,8 @@ inputs:
     doc: file for old guide tree
     inputBinding:
       position: 101
-      prefix: -USETREE
+      prefix: -USETREE=
+      separate: false
   - id: usetree1
     type:
       - 'null'
@@ -507,7 +548,8 @@ inputs:
     doc: file for old guide tree for profile1
     inputBinding:
       position: 101
-      prefix: -USETREE1
+      prefix: -USETREE1=
+      separate: false
   - id: usetree2
     type:
       - 'null'
@@ -515,7 +557,8 @@ inputs:
     doc: file for old guide tree for profile2
     inputBinding:
       position: 101
-      prefix: -USETREE2
+      prefix: -USETREE2=
+      separate: false
   - id: window
     type:
       - 'null'
@@ -523,47 +566,53 @@ inputs:
     doc: window around best diags.
     inputBinding:
       position: 101
-      prefix: -WINDOW
+      prefix: -WINDOW=
+      separate: false
   - id: newtree_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `newtree_path`
+    doc: :file for new guide tree
     inputBinding:
       position: 102
-      prefix: --newtree
+      prefix: -NEWTREE=
+      separate: false
   - id: newtree1_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `newtree1_path`
+    doc: :file for new guide tree for profile1
     inputBinding:
       position: 103
-      prefix: --newtree1
+      prefix: -NEWTREE1=
+      separate: false
   - id: newtree2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `newtree2_path`
+    doc: :file for new guide tree for profile2
     inputBinding:
       position: 104
-      prefix: --newtree2
+      prefix: -NEWTREE2=
+      separate: false
   - id: outfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
+    doc: :sequence alignment file name
     inputBinding:
       position: 105
-      prefix: --outfile
+      prefix: -OUTFILE=
+      separate: false
   - id: stats_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_path`
+    doc: :Log some alignents statistics to file
     inputBinding:
       position: 106
-      prefix: --stats
+      prefix: -STATS=
+      separate: false
 outputs:
   - id: outfile
     type:

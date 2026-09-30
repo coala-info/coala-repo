@@ -10,6 +10,13 @@ inputs:
     doc: 'Input file: file containing (absolute) file names of training genomes.'
     inputBinding:
       position: 1
+  - id: out_file
+    type: string
+    doc: Output training database/reference file (in HDF5 format). An additional
+      file (ending in .tst) will also be created in the same directory with the 
+      same base name.
+    inputBinding:
+      position: 2
   - id: k_size
     type:
       - 'null'
@@ -51,13 +58,13 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: out_file
+  - id: out_out_file
     type: File
     doc: Output training database/reference file (in HDF5 format). An additional
       file (ending in .tst) will also be created in the same directory with the 
       same base name.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmash:0.5.2--pyh5e36f6f_0

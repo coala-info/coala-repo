@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor varcount
+baseCommand:
+  - surpyvor
+  - varcount
 label: surpyvor_varcount
 doc: "VCF to plot from\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -21,7 +23,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `countsout_path`
     inputBinding:
       position: 103
       prefix: --countsout
@@ -29,7 +30,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plotout_path`
+    doc: output file to write figure to
     inputBinding:
       position: 104
       prefix: --plotout

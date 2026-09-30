@@ -43,23 +43,22 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `basecnt_tsv_path`
+    doc: ' bases count table output file'
     inputBinding:
       position: 103
-      prefix: --basecnt-tsv
+      prefix: --basecnt
   - id: coverage_tsv_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coverage_tsv_path`
+    doc: ' coverage table output file'
     inputBinding:
       position: 104
-      prefix: --coverage-tsv
+      prefix: --coverage
   - id: stats_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_path`
     inputBinding:
       position: 105
       prefix: --stats

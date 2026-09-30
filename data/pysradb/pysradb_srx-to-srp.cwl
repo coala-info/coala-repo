@@ -39,7 +39,7 @@ inputs:
       position: 102
       prefix: --desc
   - id: saveto_path
-    type: string
+    type: string?
     doc: Save metadata dataframe to file
     inputBinding:
       position: 103

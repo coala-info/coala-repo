@@ -92,7 +92,7 @@ inputs:
       prefix: --use-mtx
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: output directory where quantification results will be written
     inputBinding:
       position: 102
       prefix: --output-dir

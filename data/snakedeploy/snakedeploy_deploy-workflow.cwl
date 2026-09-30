@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakedeploy deploy-workflow
+baseCommand:
+  - snakedeploy
+  - deploy-workflow
 label: snakedeploy_deploy-workflow
 doc: "Deploy a workflow from a git repository.\n\nTool homepage: https://github.com/snakemake/snakedeploy"
 inputs:

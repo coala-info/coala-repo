@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools_bw
+baseCommand:
+  - dmtools
+  - bw
 label: dmtools_bw
 doc: "Convert DM file to bigwig format.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:

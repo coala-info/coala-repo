@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtsv readprep
+baseCommand:
+  - mtsv
+  - readprep
 label: mtsv_readprep
 doc: "Additional Snakemake commands may also be provided\n\nTool homepage: https://github.com/FofanovLab/MTSv"
 inputs:
@@ -12,6 +14,7 @@ inputs:
       working dir.
     inputBinding:
       position: 1
+      prefix: --fastq
   - id: config
     type:
       - 'null'
@@ -67,7 +70,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory to place output.
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja aggregate
+baseCommand:
+  - freyja
+  - aggregate
 label: freyja_aggregate
 doc: "Aggregates all demix data in RESULTS directory\n\nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:

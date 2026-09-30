@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_concat
+baseCommand:
+  - unikmer
+  - concat
 label: unikmer_concat
 doc: "Concatenate multiple binary files without removing duplicates\n\nTool homepage:
   https://github.com/shenwei356/unikmer"

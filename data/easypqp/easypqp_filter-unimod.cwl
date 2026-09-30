@@ -50,6 +50,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unimod_ids
+      itemSeparator: ','
   - id: unimod_mods
     type:
       - 'null'
@@ -59,6 +60,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unimod_mods
+      itemSeparator: ','
 outputs:
   - id: output_pqp
     type: File

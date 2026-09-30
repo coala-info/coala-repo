@@ -136,8 +136,7 @@ inputs:
       position: 101
       prefix: --txt
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

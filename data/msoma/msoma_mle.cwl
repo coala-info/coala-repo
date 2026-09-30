@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msoma_mle
+baseCommand:
+  - msoma
+  - mle
 label: msoma_mle
 doc: "Calculate p-values for each locus using maximum likelihood estimation from counts
   file\n\nTool homepage: https://github.com/AkeyLab/mSOMA"
@@ -20,18 +22,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alpha_beta_output_path`
+    doc: Output file to write alpha and beta parameter
     inputBinding:
       position: 103
-      prefix: --alpha-beta-output
+      prefix: --ab
   - id: output_path_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path_path`
+    doc: Path to write p-value output file  [required]
     inputBinding:
       position: 104
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type: File

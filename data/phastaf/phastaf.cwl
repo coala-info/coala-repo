@@ -68,7 +68,7 @@ inputs:
       position: 102
       prefix: --mingenes
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output folder
     inputBinding:
       position: 102

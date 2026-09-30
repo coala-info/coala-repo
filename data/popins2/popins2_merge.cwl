@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popins2 merge
+baseCommand:
+  - popins2
+  - merge
 label: popins2_merge
 doc: "Build or read a colored and compacted de Bruijn Graph (CCDBG) and generate supercontigs.\n\
   \nTool homepage: https://github.com/kehrlab/PopIns2"

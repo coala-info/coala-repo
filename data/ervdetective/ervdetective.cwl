@@ -47,7 +47,7 @@ inputs:
       position: 101
       prefix: --gag
   - id: host_genome
-    type: File
+    type: File?
     doc: The file-path of host genome sequence, the suffix is generally *.fna, 
       *.fas, *.fasta.
     inputBinding:
@@ -174,11 +174,11 @@ inputs:
       position: 101
       prefix: -n
   - id: output_folder_path
-    type: string
-    doc: Output or path parameter `output_folder_path`
+    type: string?
+    doc: The path of output folder to store all the results.
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: -o
 outputs:
   - id: output_folder
     type:

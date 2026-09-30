@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mzspeclib index
+baseCommand:
+  - mzspeclib
+  - index
 label: mzspeclib_index
 doc: "Build an external on-disk SQL-based index for the spectral library\n\nTool homepage:
   https://github.com/HUPO-PSI/mzSpecLib"
 inputs:
   - id: inpath
-    type: string
+    type: File
     doc: Path to the input spectral library file
     inputBinding:
       position: 1

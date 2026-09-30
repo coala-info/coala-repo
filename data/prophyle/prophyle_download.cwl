@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophyle download
+baseCommand:
+  - prophyle
+  - download
 label: prophyle_download
 doc: "Download genomic libraries and associated data.\n\nTool homepage: https://github.com/karel-brinda/prophyle"
 inputs:

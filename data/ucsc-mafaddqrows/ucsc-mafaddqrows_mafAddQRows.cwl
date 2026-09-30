@@ -15,6 +15,11 @@ inputs:
     doc: Input MAF file
     inputBinding:
       position: 2
+  - id: out_maf
+    type: string
+    doc: Output MAF file
+    inputBinding:
+      position: 3
   - id: divisor
     type:
       - 'null'
@@ -24,11 +29,11 @@ inputs:
       position: 103
       prefix: --divisor
 outputs:
-  - id: out_maf
+  - id: out_out_maf
     type: File
     doc: Output MAF file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_maf)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-mafaddqrows:482--h0b57e2e_0

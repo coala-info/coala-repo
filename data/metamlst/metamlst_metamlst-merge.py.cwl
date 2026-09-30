@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metamlst_metamlst-merge.py
+baseCommand: metamlst-merge.py
 label: metamlst_metamlst-merge.py
 doc: "Detects the MLST profiles from a collection of intermediate files from MetaMLST.py\n\
   \nTool homepage: https://github.com/SegataLab/metamlst"
@@ -32,6 +32,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -j
+      itemSeparator: ','
   - id: filter_species
     type:
       - 'null'
@@ -42,6 +43,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --filter
+      itemSeparator: ','
   - id: group_by_st
     type:
       - 'null'
@@ -67,7 +69,7 @@ inputs:
       allele.
     inputBinding:
       position: 102
-      prefix: --ed
+      prefix: -z
   - id: metadata_path
     type:
       - 'null'

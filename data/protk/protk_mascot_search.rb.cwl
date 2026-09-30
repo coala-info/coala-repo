@@ -148,7 +148,7 @@ inputs:
     doc: Precursor ion mass tolerance units (ppm or Da).
     inputBinding:
       position: 102
-      prefix: --precursor_ion_tol-units
+      prefix: --precursor-ion-tol-units
   - id: proxy
     type:
       - 'null'
@@ -224,10 +224,10 @@ inputs:
       prefix: --var-mods
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: An explicitly named output file.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

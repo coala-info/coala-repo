@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama compare_spots
+baseCommand:
+  - panorama
+  - compare_spots
 label: panorama_compare_spots
 doc: "Compare and identify conserved spots across multiple pangenomes. This analysis
   identifies genomic regions that are conserved across different pangenomes based
@@ -276,7 +278,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Directory for temporary files. Default: /tmp'
     inputBinding:
       position: 101
@@ -292,7 +294,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

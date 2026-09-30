@@ -11,12 +11,17 @@ inputs:
     doc: Input archive file with the semantic type SampleTable[Genotypes].
     inputBinding:
       position: 1
-outputs:
   - id: phenotypes
+    type: string
+    doc: Output archive file with the semantic type SampleTable[Phenotypes].
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_phenotypes
     type: File
     doc: Output archive file with the semantic type SampleTable[Phenotypes].
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.phenotypes)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

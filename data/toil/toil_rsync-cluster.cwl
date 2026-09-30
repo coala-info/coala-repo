@@ -120,7 +120,7 @@ inputs:
   - id: temp_dir_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to where temporary directory containing all temp files are 
       created.
     inputBinding:

@@ -292,7 +292,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to a writable temporary directory. Directory will be created if it
       does not exists.
     inputBinding:
@@ -335,7 +335,6 @@ inputs:
       prefix: --window_size
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx compare-genotypes
+baseCommand:
+  - pypgx
+  - compare-genotypes
 label: pypgx_compare-genotypes
 doc: "Calculate concordance between two genotype results.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

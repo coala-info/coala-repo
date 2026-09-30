@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pytransaln_align
+baseCommand:
+  - pytransaln
+  - align
 label: pytransaln_align
 doc: "Align nucleotide sequences and translate them to amino acids, handling reading
   frames and stop codons.\n\nTool homepage: https://github.com/monagrland/pytransaln"

@@ -187,18 +187,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_output_path`
     inputBinding:
       position: 102
-      prefix: --csv-output
+      prefix: --csv_output
   - id: fasta_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fasta_output_path`
     inputBinding:
       position: 103
-      prefix: --fasta-output
+      prefix: --fasta_output
 outputs:
   - id: csv_output
     type:

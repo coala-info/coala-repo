@@ -71,6 +71,7 @@ inputs:
       between hybrecord and foldrecord sequences is greater than FoldRecord "allowed_mismatches"
       setting; "energy_mismatch": Error when a mismatch exists between HybRecord and
       FoldRecord energy values.'
+    default:
       - hybrecord_indel
       - foldrecord_nofold
       - max_mismatch
@@ -155,6 +156,7 @@ inputs:
       - type: array
         items: string
     doc: '"seg_type" fields identifying a miRNA'
+    default:
       - miRNA
       - microRNA
     inputBinding:
@@ -216,6 +218,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: out_hyb_path
+    type: string
+    inputBinding:
+      position: 104
+      prefix: --out_hyb
 outputs:
   - id: out_hyb
     type:
@@ -227,7 +234,9 @@ outputs:
       naming options (--out_dir, --out_suffix), which are ignored if 
       -o/--out_hyb is provided.
     outputBinding:
-      glob: $(inputs.out_hyb)
+      glob: $(inputs.out_hyb_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybkit:0.3.6--pyhdfd78af_0

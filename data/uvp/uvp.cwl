@@ -82,9 +82,9 @@ inputs:
       prefix: --name
   - id: reference
     type: File
+    doc: Reference genome in FASTA format.
     secondaryFiles:
       - .fai
-    doc: Reference genome in FASTA format.
     inputBinding:
       position: 101
       prefix: --reference
@@ -114,7 +114,6 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

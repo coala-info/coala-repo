@@ -26,7 +26,7 @@ inputs:
       position: 101
       prefix: --organism_fasta
   - id: output_dir
-    type: Directory
+    type: string
     doc: Absolute path to the output directory for storing generated genome 
       files.
     inputBinding:

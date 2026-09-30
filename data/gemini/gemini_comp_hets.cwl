@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini comp_hets
+baseCommand:
+  - gemini
+  - comp_hets
 label: gemini_comp_hets
 doc: "Find compound heterozygous variants.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

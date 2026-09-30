@@ -69,7 +69,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_hmnfusion_vcf_path`
     inputBinding:
       position: 103
       prefix: --output-hmnfusion-vcf

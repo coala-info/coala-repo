@@ -72,7 +72,7 @@ inputs:
     doc: Debug step no (-1 to disable). In range [-1..inf].
     inputBinding:
       position: 101
-      prefix: --debug-step_no
+      prefix: --debug-step-no
   - id: fragment_default_orientation
     type:
       - 'null'
@@ -400,7 +400,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 103
       prefix: --output-fasta
@@ -408,7 +407,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_mapping_path`
     inputBinding:
       position: 104
       prefix: --output-mapping

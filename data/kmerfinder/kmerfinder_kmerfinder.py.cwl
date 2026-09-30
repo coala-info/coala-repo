@@ -80,10 +80,9 @@ inputs:
       prefix: --tax
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output_folder
 outputs:
   - id: output_folder
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx estimate-phase-beagle
+baseCommand:
+  - pypgx
+  - estimate-phase-beagle
 label: pypgx_estimate-phase-beagle
 doc: "Estimate haplotype phase of observed variants with the Beagle program.\n\nTool
   homepage: https://github.com/sbslee/pypgx"
@@ -12,6 +14,11 @@ inputs:
       or removed as necessary to match the reference VCF's contig names.
     inputBinding:
       position: 1
+  - id: phased_variants
+    type: string
+    doc: Output archive file with the semantic type VcfFrame[Phased].
+    inputBinding:
+      position: 2
   - id: impute
     type:
       - 'null'
@@ -31,11 +38,11 @@ inputs:
       position: 102
       prefix: --panel
 outputs:
-  - id: phased_variants
+  - id: out_phased_variants
     type: File
     doc: Output archive file with the semantic type VcfFrame[Phased].
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.phased_variants)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

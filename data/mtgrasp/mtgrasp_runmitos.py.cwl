@@ -207,7 +207,7 @@ inputs:
       position: 101
       prefix: --oril
   - id: output_directory
-    type: Directory
+    type: string
     doc: the directory where the output is written.
     inputBinding:
       position: 101

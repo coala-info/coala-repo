@@ -54,7 +54,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `closest_cells_similarities_text_file_path`
     inputBinding:
       position: 102
       prefix: --closest-cells-similarities-text-file
@@ -62,7 +61,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `closest_cells_text_file_path`
     inputBinding:
       position: 103
       prefix: --closest-cells-text-file
@@ -70,7 +68,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_clusters_text_file_path`
     inputBinding:
       position: 104
       prefix: --output-clusters-text-file
@@ -78,7 +75,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 105
       prefix: --output-object-file

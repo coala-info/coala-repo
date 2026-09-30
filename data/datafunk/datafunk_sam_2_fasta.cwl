@@ -57,9 +57,9 @@ inputs:
       prefix: --prefix-ref
   - id: reference_fasta
     type: File
+    doc: reference
     secondaryFiles:
       - .fai
-    doc: reference
     inputBinding:
       position: 101
       prefix: --reference
@@ -87,7 +87,6 @@ inputs:
       prefix: --trim
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 102
       prefix: --output-fasta

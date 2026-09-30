@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler digest
+baseCommand:
+  - cooler
+  - digest
 label: cooler_digest
 doc: "Generate fragment-delimited genomic bins.\n\nOutput a genome segmentation of
   restriction fragments as a BED file.\n\nTool homepage: https://github.com/open2c/cooler"
@@ -40,7 +42,7 @@ inputs:
       prefix: --rel-ids
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output file (defaults to stdout)
     inputBinding:
       position: 105
       prefix: --out

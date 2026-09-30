@@ -149,9 +149,9 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
+    doc: reference genome in fasta format
     secondaryFiles:
       - .fai
-    doc: reference genome in fasta format
     inputBinding:
       position: 101
       prefix: --reference
@@ -165,7 +165,7 @@ inputs:
       prefix: --thread
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: directory to output data (default = '.')
     inputBinding:
       position: 102
       prefix: --out

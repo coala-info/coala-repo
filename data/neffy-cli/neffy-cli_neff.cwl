@@ -54,6 +54,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --file
+      itemSeparator: ','
   - id: format
     type:
       - 'null'
@@ -63,6 +64,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --format
+      itemSeparator: ','
   - id: gap_cutoff
     type:
       - 'null'

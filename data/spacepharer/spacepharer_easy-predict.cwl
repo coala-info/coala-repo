@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spacepharer easy-predict
+baseCommand:
+  - spacepharer
+  - easy-predict
 label: spacepharer_easy-predict
 doc: "By Ruoshi Zhang <ruoshi.zhang@mpibpc.mpg.de>\n\nTool homepage: https://github.com/soedinglab/spacepharer"
 inputs:
@@ -17,7 +19,7 @@ inputs:
     inputBinding:
       position: 2
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 3

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbinner balance
+baseCommand:
+  - deepbinner
+  - balance
 label: deepbinner_balance
 doc: "Select balanced training set\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:

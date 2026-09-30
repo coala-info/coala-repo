@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predictosaurus plot
+baseCommand:
+  - predictosaurus
+  - plot
 label: predictosaurus_plot
 doc: "Create visualizations and output HTML, TSV, or Vega specs\n\nTool homepage:
   https://github.com/fxwiegand/predictosaurus"
@@ -20,7 +22,8 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to the output TSV file containing the predicted scores per 
+      transcript
     inputBinding:
       position: 102
       prefix: --output

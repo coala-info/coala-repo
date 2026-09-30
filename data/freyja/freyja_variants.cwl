@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja_variants
+baseCommand:
+  - freyja
+  - variants
 label: freyja_variants
 doc: "Perform variant calling using samtools and iVar on a BAMFILE\n\nTool homepage:
   https://github.com/andersen-lab/Freyja"
@@ -54,7 +56,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `depths_path`
+    doc: Sequencing depth output file
     inputBinding:
       position: 103
       prefix: --depths
@@ -62,7 +64,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `variants_path`
+    doc: Variant calling output file
     inputBinding:
       position: 104
       prefix: --variants

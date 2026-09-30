@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_select
+baseCommand:
+  - xsv
+  - select
 label: xsv_select
 doc: "Select columns from CSV data efficiently.\n\nThis command lets you manipulate
   the columns in CSV data. You can re-order\nthem, duplicate them or drop them. Columns
@@ -41,10 +43,10 @@ inputs:
       prefix: --no-headers
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -355,7 +355,7 @@ inputs:
   - id: tmp_base
     type:
       - 'null'
-      - Directory
+      - string
     doc: temp file directory
     inputBinding:
       position: 103
@@ -386,7 +386,7 @@ inputs:
       prefix: --write-index
   - id: scaffold_out_path
     type: string
-    doc: Output or path parameter `scaffold_out_path`
+    doc: output scaffold mappings to FILE
     inputBinding:
       position: 104
       prefix: --scaffold-out

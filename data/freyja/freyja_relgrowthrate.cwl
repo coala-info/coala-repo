@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja_relgrowthrate
+baseCommand:
+  - freyja
+  - relgrowthrate
 label: freyja_relgrowthrate
 doc: "Calculates relative growth rates for each lineage using AGG_RESULTS and METADATA\n\
   \nTool homepage: https://github.com/andersen-lab/Freyja"

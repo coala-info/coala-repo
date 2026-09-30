@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe assemble_scaffold
+baseCommand:
+  - haphpipe
+  - assemble_scaffold
 label: haphpipe_assemble_scaffold
 doc: "Assemble and scaffold contigs using a reference genome.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -37,7 +39,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

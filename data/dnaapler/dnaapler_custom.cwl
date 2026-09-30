@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dnaapler_custom
+baseCommand:
+  - dnaapler
+  - custom
 label: dnaapler_custom
 doc: "Custom reorientation of sequences using a custom MMseqs2 database.\n\nTool homepage:
   https://github.com/gbouras13/dnaapler"
@@ -46,7 +48,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

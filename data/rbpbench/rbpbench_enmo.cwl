@@ -447,7 +447,7 @@ inputs:
       position: 101
       prefix: --motif-sim-thr
   - id: output_dir
-    type: Directory
+    type: string
     doc: Results output folder
     inputBinding:
       position: 101

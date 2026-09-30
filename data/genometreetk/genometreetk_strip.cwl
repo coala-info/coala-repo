@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk strip
+baseCommand:
+  - genometreetk
+  - strip
 label: genometreetk_strip
 doc: "Remove taxonomic labels from a tree.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: tree to strip
     inputBinding:
       position: 1
+  - id: output_tree
+    type: string
+    doc: output tree
+    inputBinding:
+      position: 2
   - id: silent
     type:
       - 'null'
@@ -18,11 +25,11 @@ inputs:
       position: 102
       prefix: --silent
 outputs:
-  - id: output_tree
+  - id: out_output_tree
     type: File
     doc: output tree
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_tree)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

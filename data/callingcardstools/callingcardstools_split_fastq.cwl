@@ -21,7 +21,7 @@ inputs:
   - id: output_dirpath
     type:
       - 'null'
-      - Directory
+      - string
     doc: a path to a directory where the output files will be output. Defaults 
       to the current directory
     inputBinding:

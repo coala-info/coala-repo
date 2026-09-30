@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slamdunk all
+baseCommand:
+  - slamdunk
+  - all
 label: slamdunk_all
 doc: "Run SLAM-seq analysis\n\nTool homepage: http://t-neumann.github.io/slamdunk"
 inputs:
@@ -203,10 +205,10 @@ inputs:
       prefix: --vcf
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: ' Output directory for slamdunk run.'
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --outputDir
 outputs:
   - id: output_dir
     type: Directory

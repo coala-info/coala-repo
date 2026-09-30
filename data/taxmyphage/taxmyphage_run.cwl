@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmyphage run
+baseCommand:
+  - taxmyphage
+  - run
 label: taxmyphage_run
 doc: "Run taxmyphage analysis\n\nTool homepage: https://github.com/amillard/tax_myPHAGE"
 inputs:
@@ -88,7 +90,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output directory.
     inputBinding:
       position: 102

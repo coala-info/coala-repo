@@ -51,9 +51,9 @@ inputs:
       prefix: --max_len
   - id: reference
     type: File
+    doc: reference genome
     secondaryFiles:
       - .fai
-    doc: reference genome
     inputBinding:
       position: 101
       prefix: --reference
@@ -81,10 +81,9 @@ inputs:
       prefix: --vcf_truth
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

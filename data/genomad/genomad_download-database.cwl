@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomad download-database
+baseCommand:
+  - genomad
+  - download-database
 label: genomad_download-database
 doc: "Download the latest version of geNomad's database and save it in the DESTINATION
   directory.\n\nTool homepage: https://portal.nersc.gov/genomad/"
 inputs:
   - id: destination
-    type: Directory
+    type: string
     doc: The directory to save the database in.
     inputBinding:
       position: 1

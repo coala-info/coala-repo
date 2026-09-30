@@ -83,7 +83,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cluster_definition_path`
     inputBinding:
       position: 102
       prefix: --output-cluster-definition
@@ -91,7 +90,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_representative_fasta_directory_path`
     inputBinding:
       position: 103
       prefix: --output-representative-fasta-directory

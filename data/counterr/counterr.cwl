@@ -138,7 +138,7 @@ inputs:
       position: 101
       prefix: -num_pts_max
   - id: output_dir
-    type: Directory
+    type: string
     doc: the output directory for figures and stats
     inputBinding:
       position: 101

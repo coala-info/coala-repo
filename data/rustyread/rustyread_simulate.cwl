@@ -103,9 +103,9 @@ inputs:
       prefix: --random_reads
   - id: reference
     type: File
+    doc: Path to reference fasta (can be gzipped, bzip2ped, xzped)
     secondaryFiles:
       - .fai
-    doc: Path to reference fasta (can be gzipped, bzip2ped, xzped)
     inputBinding:
       position: 101
       prefix: --reference
@@ -146,10 +146,9 @@ inputs:
       prefix: --start_adapter_seq
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type:

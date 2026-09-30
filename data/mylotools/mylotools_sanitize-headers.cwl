@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mylotools sanitize-headers
+baseCommand:
+  - mylotools
+  - sanitize-headers
 label: mylotools_sanitize-headers
 doc: "Sanitize FASTA headers\n\nTool homepage: https://github.com/bluenote-1577/mylotools"
 inputs:

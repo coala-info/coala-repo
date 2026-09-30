@@ -13,6 +13,7 @@ inputs:
     doc: Input tree file(s)
     inputBinding:
       position: 1
+      prefix: --trees
   - id: alignments
     type:
       type: array
@@ -20,11 +21,13 @@ inputs:
     doc: Alignment file(s)
     inputBinding:
       position: 2
+      prefix: --alignments
   - id: mccs
     type: File
     doc: Maximum clade credibility file
     inputBinding:
       position: 3
+      prefix: --mccs
   - id: aln
     type:
       - 'null'
@@ -360,7 +363,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_rtt_path`
+    doc: filename to save the plot to. Suffix will determine
     inputBinding:
       position: 106
       prefix: --plot-rtt
@@ -368,7 +371,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_tree_path`
     inputBinding:
       position: 107
       prefix: --plot-tree

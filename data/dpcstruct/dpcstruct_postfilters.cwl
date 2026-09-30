@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dpcstruct_postfilters
+baseCommand:
+  - dpcstruct
+  - postfilters
 label: dpcstruct_postfilters
 doc: "filters the results produced by traceback.cc.\n\nTool homepage: https://github.com/RitAreaSciencePark/DPCstruct"
 inputs:
@@ -12,10 +14,10 @@ inputs:
       prefix: -i
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: output filename
     inputBinding:
       position: 102
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type: File

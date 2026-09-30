@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakebids boutiques
+baseCommand:
+  - snakebids
+  - boutiques
 label: snakebids_boutiques
 doc: "Generate a Boutiques descriptor for a Snakebids app.\n\nTool homepage: https://github.com/khanlab/snakebids"
 inputs:

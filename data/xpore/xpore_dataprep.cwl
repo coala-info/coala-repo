@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xpore_dataprep
+baseCommand:
+  - xpore
+  - dataprep
 label: xpore_dataprep
 doc: "Prepares data for xpore analysis.\n\nTool homepage: https://github.com/GoekeLab/xpore"
 inputs:
@@ -44,7 +46,7 @@ inputs:
       position: 101
       prefix: --n_processes
   - id: out_dir
-    type: Directory
+    type: string
     doc: output directory.
     inputBinding:
       position: 101

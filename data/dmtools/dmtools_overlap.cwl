@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools overlap
+baseCommand:
+  - dmtools
+  - overlap
 label: dmtools_overlap
 doc: "Calculate overlap between two DM files.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:

@@ -79,7 +79,7 @@ inputs:
   - id: printseq
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify directory to save extracted porA/fetA/porB or BAST allele 
       sequences
     inputBinding:

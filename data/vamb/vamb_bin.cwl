@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vamb bin
+baseCommand:
+  - vamb
+  - bin
 label: vamb_bin
 doc: "Binning module of VAMB\n\nTool homepage: https://github.com/RasmussenLab/vamb"
 inputs:

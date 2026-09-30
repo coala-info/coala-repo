@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi sub
+baseCommand:
+  - fermi
+  - sub
 label: fermi_sub
 doc: "Usage: fermi sub [-c] [-t nThreads] <in.fmd> <array.bits>\n\nTool homepage:
   https://github.com/quantumlib/OpenFermion"

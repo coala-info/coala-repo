@@ -120,9 +120,9 @@ inputs:
       prefix: --raw_edit_distance
   - id: reference
     type: File
+    doc: reference path
     secondaryFiles:
       - .fai
-    doc: reference path
     inputBinding:
       position: 101
       prefix: --reference
@@ -137,14 +137,13 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory of work, store temp files
     inputBinding:
       position: 101
       prefix: --work_dir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -24,7 +24,8 @@ inputs:
     doc: Open all BAM, CRAM, VCF or BCF files in multiple (n > 1) panels
     inputBinding:
       position: 103
-      prefix: -DbamClone
+      prefix: -DbamClone=
+      separate: false
   - id: bam_files
     type:
       - 'null'
@@ -33,7 +34,8 @@ inputs:
     doc: Open one or more BAM, CRAM, VCF or BCF files
     inputBinding:
       position: 103
-      prefix: -Dbam
+      prefix: -Dbam=
+      separate: false
   - id: bam_separate_panels
     type:
       - 'null'
@@ -42,7 +44,8 @@ inputs:
     doc: Open BAM, CRAM, VCF or BCF files in separate panels
     inputBinding:
       position: 103
-      prefix: -Dbam[1,2,..]
+      prefix: -Dbam[1,2,..]=
+      separate: false
   - id: black_belt_mode
     type:
       - 'null'
@@ -50,7 +53,8 @@ inputs:
     doc: Keep warning messages to a minimum
     inputBinding:
       position: 103
-      prefix: -Dblack_belt_mode
+      prefix: -Dblack_belt_mode=
+      separate: false
   - id: chado
     type:
       - 'null'
@@ -67,7 +71,8 @@ inputs:
     doc: Get Artemis to open this CHADO database
     inputBinding:
       position: 103
-      prefix: -Dchado
+      prefix: -Dchado=
+      separate: false
   - id: loguserplot
     type:
       - 'null'
@@ -76,7 +81,8 @@ inputs:
     doc: Open one or more userplots, take log(data)
     inputBinding:
       position: 103
-      prefix: -Dloguserplot
+      prefix: -Dloguserplot=
+      separate: false
   - id: offset
     type:
       - 'null'
@@ -84,7 +90,8 @@ inputs:
     doc: Open viewer at base position XXX
     inputBinding:
       position: 103
-      prefix: -Doffset
+      prefix: -Doffset=
+      separate: false
   - id: options_file
     type:
       - 'null'
@@ -116,7 +123,8 @@ inputs:
     doc: Hide/show forward frame lines
     inputBinding:
       position: 103
-      prefix: -Dshow_forward_lines
+      prefix: -Dshow_forward_lines=
+      separate: false
   - id: show_reverse_lines
     type:
       - 'null'
@@ -124,7 +132,8 @@ inputs:
     doc: Hide/show reverse frame lines
     inputBinding:
       position: 103
-      prefix: -Dshow_reverse_lines
+      prefix: -Dshow_reverse_lines=
+      separate: false
   - id: show_snp_plot
     type:
       - 'null'
@@ -149,7 +158,8 @@ inputs:
     doc: Open one or more userplots
     inputBinding:
       position: 103
-      prefix: -Duserplot
+      prefix: -Duserplot=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

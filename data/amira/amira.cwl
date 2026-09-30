@@ -218,7 +218,7 @@ inputs:
       position: 101
       prefix: --species
   - id: output_path
-    type: string
+    type: string?
     doc: Directory for Amira outputs (default=amira_output).
     inputBinding:
       position: 102

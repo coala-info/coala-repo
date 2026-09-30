@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio tag
+baseCommand:
+  - solvebio
+  - tag
 label: solvebio_tag
 doc: "Apply tag updates to files, folders, or datasets.\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

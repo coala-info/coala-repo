@@ -13,11 +13,13 @@ inputs:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: --verbose
+          separate: true
     doc: Set verbosity level of screen output. Flag can be given multiple times 
       (up to 2) to gradually increase output to debugging mode.
     inputBinding:
       position: 101
-      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

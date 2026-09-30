@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio shell
+baseCommand:
+  - solvebio
+  - shell
 label: solvebio_shell
 doc: "Interactive SolveBio shell\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

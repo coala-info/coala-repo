@@ -265,22 +265,21 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threshold
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 104
-      prefix: --output
   - id: save_matches_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `save_matches_path`
+    doc: output matching signatures to the specified file
     inputBinding:
       position: 105
       prefix: --save-matches
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output
 outputs:
   - id: save_matches
     type:

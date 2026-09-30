@@ -35,6 +35,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -d
+      itemSeparator: ','
   - id: error_percentage
     type:
       - 'null'
@@ -119,6 +120,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'

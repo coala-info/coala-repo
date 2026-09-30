@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit_transfer
+baseCommand:
+  - nwkit
+  - transfer
 label: nwkit_transfer
 doc: "Transfer information between two Newick trees.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

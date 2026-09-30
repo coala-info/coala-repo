@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virmet fetch
+baseCommand:
+  - virmet
+  - fetch
 label: virmet_fetch
 doc: "Fetch viral, human, bacterial, fungal, or bovine databases.\n\nTool homepage:
   https://github.com/medvir/VirMet"

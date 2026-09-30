@@ -30,9 +30,7 @@ inputs:
       position: 101
       prefix: -header
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The BED/GFF/VCF entry to be slopped.
     inputBinding:
       position: 101

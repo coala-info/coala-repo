@@ -28,10 +28,10 @@ inputs:
       prefix: -validate
   - id: output_json_file_path
     type: string
-    doc: Output or path parameter `output_json_file_path`
+    doc: ': [Required] Output json file name.'
     inputBinding:
       position: 102
-      prefix: --output-json-file
+      prefix: -outFile
 outputs:
   - id: output_json_file
     type: File

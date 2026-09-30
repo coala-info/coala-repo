@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: skmer_query
+baseCommand:
+  - skmer
+  - query
 label: skmer_query
 doc: "Compare an input genome-skim or assembly against a reference library\n\nTool
   homepage: https://github.com/shahab-sarmashghi/Skmer"

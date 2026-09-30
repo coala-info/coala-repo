@@ -100,18 +100,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `indicator_probabilities_file_path`
+    doc: output indicator probabilities for each sequence and motif to this file
     inputBinding:
       position: 103
-      prefix: --indicator-probabilities-file
+      prefix: -indicators
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: 'output file name (default: stdout)'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: output_file
     type:

@@ -19,7 +19,7 @@ inputs:
     inputBinding:
       position: 2
   - id: outdir
-    type: Directory
+    type: string
     doc: Name of output directory
     inputBinding:
       position: 3

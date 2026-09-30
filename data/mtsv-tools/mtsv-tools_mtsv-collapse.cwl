@@ -46,7 +46,7 @@ inputs:
       prefix: -v
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to write combined outupt file to.
     inputBinding:
       position: 103
       prefix: --output

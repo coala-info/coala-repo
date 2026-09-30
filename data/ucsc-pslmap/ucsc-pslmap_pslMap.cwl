@@ -40,7 +40,8 @@ inputs:
       after swapping if -swapIn is supplied.
     inputBinding:
       position: 103
-      prefix: -inType
+      prefix: -inType=
+      separate: false
   - id: keep_translated
     type:
       - 'null'
@@ -68,7 +69,8 @@ inputs:
       swapping if -swapMap is supplied.
     inputBinding:
       position: 103
-      prefix: -mapType
+      prefix: -mapType=
+      separate: false
   - id: simplify_mapping_ids
     type:
       - 'null'
@@ -88,7 +90,8 @@ inputs:
       protein.
     inputBinding:
       position: 103
-      prefix: -suffix
+      prefix: -suffix=
+      separate: false
   - id: swap_in
     type:
       - 'null'
@@ -120,23 +123,26 @@ inputs:
     doc: verbose output
     inputBinding:
       position: 103
-      prefix: -verbose
+      prefix: -verbose=
+      separate: false
   - id: map_info_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `map_info_file_path`
+    doc: =file - output a file with information about each mapping.
     inputBinding:
       position: 104
-      prefix: --map-info-file
+      prefix: -mapInfo=
+      separate: false
   - id: mapping_psls_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mapping_psls_path`
+    doc: =pslFile - write mapping alignments that were used in
     inputBinding:
       position: 105
-      prefix: --mapping-psls
+      prefix: -mappingPsls=
+      separate: false
 outputs:
   - id: out_psl
     type: File

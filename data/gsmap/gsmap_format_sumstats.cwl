@@ -49,9 +49,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Path to reference dnsnp file
     secondaryFiles:
       - .tbi?
-    doc: Path to reference dnsnp file
     inputBinding:
       position: 101
       prefix: --dbsnp
@@ -177,7 +177,7 @@ inputs:
       prefix: --z
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'Path to save the formatted gwas data (default: None)'
     inputBinding:
       position: 102
       prefix: --out

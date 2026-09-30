@@ -14,6 +14,11 @@ inputs:
     doc: CCS BAM.
     inputBinding:
       position: 2
+  - id: out_bam
+    type: string
+    doc: Aligned subreads to CCS BAM.
+    inputBinding:
+      position: 3
   - id: chunk
     type:
       - 'null'
@@ -68,7 +73,7 @@ outputs:
     type: File
     doc: Aligned subreads to CCS BAM.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_bam)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/actc:0.6.1--h9ee0642_0

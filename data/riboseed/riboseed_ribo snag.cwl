@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribo snag
+baseCommand:
+  - ribo
+  - snag
 label: riboseed_ribo snag
 doc: "Use to extract regions of interest based on supplied Locus tags and evaluate
   the extracted regions\n\nTool homepage: https://github.com/nickp60/riboSeed"
@@ -117,7 +119,7 @@ inputs:
       position: 103
       prefix: --no_revcomp
   - id: output_directory
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 103

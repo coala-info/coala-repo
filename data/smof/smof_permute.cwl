@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_permute
+baseCommand:
+  - smof
+  - permute
 label: smof_permute
 doc: "Randomly order letters in each sequence. The --word-size option allows random
   ordering of words of the given size. The --start-offset and --end-offset options

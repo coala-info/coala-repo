@@ -73,7 +73,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     inputBinding:

@@ -16,12 +16,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --delete
+          separate: true
     doc: 'Delete the given bases from the given sequence. Format same as samtools
       view: name:start-end. This option can be used multiple times (once for each
       region to delete). Overlapping coords will be merged before deleting'
     inputBinding:
       position: 102
-      prefix: --delete
   - id: delete_range
     type:
       - 'null'
@@ -36,12 +38,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --insert
+          separate: true
     doc: Insert a random string of bases at the given position. Format is 
       name:position:number_to_add. Bases are added after the position. This 
       option can be used multiple times
     inputBinding:
       position: 102
-      prefix: --insert
   - id: insert_range
     type:
       - 'null'

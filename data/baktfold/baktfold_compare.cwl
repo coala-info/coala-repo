@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: baktfold compare
+baseCommand:
+  - baktfold
+  - compare
 label: baktfold_compare
 doc: "Runs Foldseek vs baktfold db\n\nTool homepage: https://github.com/gbouras13/baktfold"
 inputs:

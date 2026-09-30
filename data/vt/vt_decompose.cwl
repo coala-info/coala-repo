@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt decompose
+baseCommand:
+  - vt
+  - decompose
 label: vt_decompose
 doc: "decomposes multiallelic variants into biallelic in a VCF file.\n\nTool homepage:
   https://github.com/Aikoyori/ProgrammingVTuberLogos"
@@ -36,10 +38,10 @@ inputs:
       prefix: -s
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: output VCF file [-]
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

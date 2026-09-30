@@ -75,7 +75,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to directory for tmp files.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varvamp qpcr
+baseCommand:
+  - varvamp
+  - qpcr
 label: varvamp_qpcr
 doc: "Performs qPCR primer and probe design.\n\nTool homepage: https://github.com/jonas-fuchs/varVAMP"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 2

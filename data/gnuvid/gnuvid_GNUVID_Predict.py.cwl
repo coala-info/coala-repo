@@ -69,7 +69,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder and prefix to be created for results
     inputBinding:
       position: 102

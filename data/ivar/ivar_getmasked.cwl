@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ivar_getmasked
+baseCommand:
+  - ivar
+  - getmasked
 label: ivar_getmasked
 doc: "This step is used only for amplicon-based sequencing.\n\nTool homepage: https://andersen-lab.github.io/ivar/html/"
 inputs:

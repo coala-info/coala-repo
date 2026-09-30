@@ -1,22 +1,19 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: VGP hybrid
-  scaffolding with Bionano optical maps'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: VGP hybrid scaffolding with Bionano optical maps'
 inputs:
   Bionano Data:
     doc: Bionano data in Cmap format.
     format: data
     type: File
   'Conflict resolution files ':
-    doc: 'Input a conflict resolution file indicating which NGS and BioNano conflicting
-      contigs to be cut [optional] (-M)
+    doc: 'Input a conflict resolution file indicating which NGS and BioNano conflicting contigs to be cut [optional] (-M)
 
       '
     format: data
     type: File
   Estimated genome size - Parameter File:
-    doc: Parameter file generated in the VGP Hifiasm workflow. Estimated reference
-      genome size (in bp) for computing NGx statistics
+    doc: Parameter file generated in the VGP Hifiasm workflow. Estimated reference genome size (in bp) for computing NGx statistics
     format: data
     type: File
   Hifiasm Purged Assembly:
@@ -70,12 +67,14 @@ steps:
           type: File
   3_Input parameter:
     in: {}
-    out: []
+    out:
+    - output
     run:
       class: Operation
-      id: null
       inputs: {}
-      outputs: {}
+      outputs:
+        output:
+          type: Any
   6_Parse parameter value:
     in:
       input1: Estimated genome size - Parameter File

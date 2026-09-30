@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp_create
+baseCommand:
+  - treesapp
+  - create
 label: treesapp_create
 doc: "Create a reference package for TreeSAPP.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:
@@ -18,6 +20,7 @@ inputs:
       Examples are 'McrA', 'DsrAB', and 'p_amoA'."
     inputBinding:
       position: 2
+      prefix: --refpkg_name
   - id: accession_to_lineage_file
     type:
       - 'null'
@@ -186,7 +189,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to an output directory
     inputBinding:
       position: 103

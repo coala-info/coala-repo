@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rabies analysis
+baseCommand:
+  - rabies
+  - analysis
 label: rabies_analysis
 doc: "Performs various neuroimaging analysis tasks, including confound correction,
   data diagnosis, dual regression, and neural prior recovery.\n\nTool homepage: https://github.com/CoBrALab/RABIES"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: path for analysis outputs.
     inputBinding:
       position: 2
@@ -160,7 +162,6 @@ inputs:
       2. *** Must provide a float. * max_iter: Maximum number of iterations. *** Must
       provide an integer. * compute_max: select 'true' to visualize all iterations
       until max_iter in the report. *** Specify 'true' or 'false'."
-      apply=false,window_size=5,min_prior_corr=0.5,diff_thresh=0.03,max_iter=20,compute_max=false
     inputBinding:
       position: 103
       prefix: --optimize_NPR
@@ -198,6 +199,7 @@ inputs:
       IMPORTANT: index counting starts at 0 (i.e. the first component is selected
       with 0, not 1) SYNTAX: Note that the syntax should follow the example of '--prior_bold_idx
       5 12 19', and not '--prior_bold_idx [5, 12, 19]'."
+    default:
       - 5
       - 12
       - 19
@@ -214,6 +216,7 @@ inputs:
       index counting starts at 0 (i.e. the first component is selected with 0, not
       1) SYNTAX: Note that the syntax should follow the example of '--prior_bold_idx
       5 12 19', and not '--prior_bold_idx [5, 12, 19]'."
+    default:
       - 0
       - 2
       - 6

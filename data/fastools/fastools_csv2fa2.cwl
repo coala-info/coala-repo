@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools csv2fa2
+baseCommand:
+  - fastools
+  - csv2fa2
 label: fastools_csv2fa2
 doc: "Convert a CSV file to two FASTA files.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:

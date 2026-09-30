@@ -17,11 +17,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --dict
+          separate: true
     doc: Dictionary file containing restraints for residues in this specific 
       target, can be specified multiple times.
     inputBinding:
       position: 102
-      prefix: --dict
   - id: verbose
     type:
       - 'null'
@@ -34,7 +36,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: Write log to this file
     inputBinding:
       position: 103
       prefix: --log

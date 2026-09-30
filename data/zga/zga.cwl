@@ -12,6 +12,7 @@ inputs:
     doc: Mate pair forward reads. SPAdes only
     inputBinding:
       position: 1
+      prefix: --mp-1
   - id: mp_2
     type:
       - 'null'
@@ -20,6 +21,7 @@ inputs:
     doc: Mate pair forward reads. SPAdes only
     inputBinding:
       position: 2
+      prefix: --mp-2
   - id: nanopore
     type:
       - 'null'
@@ -28,6 +30,7 @@ inputs:
     doc: Nanopore reads. Space-separated if multiple.
     inputBinding:
       position: 3
+      prefix: --nanopore
   - id: pacbio
     type:
       - 'null'
@@ -36,6 +39,7 @@ inputs:
     doc: PacBio reads. Space-separated if multiple.
     inputBinding:
       position: 4
+      prefix: --pacbio
   - id: pe_1
     type:
       - 'null'
@@ -45,6 +49,7 @@ inputs:
       multiple.
     inputBinding:
       position: 5
+      prefix: --pe-1
   - id: pe_2
     type:
       - 'null'
@@ -54,6 +59,7 @@ inputs:
       multiple.
     inputBinding:
       position: 6
+      prefix: --pe-2
   - id: pe_merged
     type:
       - 'null'
@@ -62,6 +68,7 @@ inputs:
     doc: FASTQ file(s) with merged overlapped paired-end reads
     inputBinding:
       position: 7
+      prefix: --pe-merged
   - id: single_end
     type:
       - 'null'
@@ -70,6 +77,7 @@ inputs:
     doc: FASTQ file(s) with unpaired or single-end reads
     inputBinding:
       position: 8
+      prefix: --single-end
   - id: adapters
     type:
       - 'null'
@@ -354,7 +362,7 @@ inputs:
       position: 109
       prefix: --normalize-kmer-cov
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 109

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec upgrade
+baseCommand:
+  - seqspec
+  - upgrade
 label: seqspec_upgrade
 doc: "Upgrade seqspec file from older versions to the current version.\n\nTool homepage:
   https://github.com/sbooeshaghi/seqspec"
@@ -12,7 +14,7 @@ inputs:
       position: 1
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file
     inputBinding:
       position: 101
       prefix: --output

@@ -37,7 +37,7 @@ inputs:
       position: 102
       prefix: --quiet
   - id: outdir_path
-    type: string
+    type: string?
     inputBinding:
       position: 103
       prefix: --outdir

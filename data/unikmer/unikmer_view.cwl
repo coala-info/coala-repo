@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_view
+baseCommand:
+  - unikmer
+  - view
 label: unikmer_view
 doc: "Read and output binary format to plain text\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:
@@ -147,7 +149,7 @@ inputs:
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg_download
+baseCommand:
+  - ufcg
+  - download
 label: ufcg_download
 doc: "List or download resources\n\nTool homepage: https://ufcg.steineggerlab.com"
 inputs:

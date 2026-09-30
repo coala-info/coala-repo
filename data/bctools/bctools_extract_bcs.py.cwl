@@ -54,15 +54,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_bc_fasta_path`
     inputBinding:
       position: 104
-      prefix: --out-bc-fasta
+      prefix: --bcs
   - id: outfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 105
       prefix: --outfile

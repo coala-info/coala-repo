@@ -159,7 +159,7 @@ inputs:
       position: 101
       prefix: -nb-cores
   - id: output_tmp_dir
-    type: Directory
+    type: string
     doc: output directory for temporary files
     inputBinding:
       position: 101

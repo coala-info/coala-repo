@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi sex
+baseCommand:
+  - tsumugi
+  - sex
 label: tsumugi_sex
 doc: "Keep or drop annotations based on sexual dimorphism.\n\nTool homepage: https://github.com/akikuno/TSUMUGI-dev"
 inputs:

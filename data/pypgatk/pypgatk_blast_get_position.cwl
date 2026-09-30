@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgatk blast_get_position
+baseCommand:
+  - pypgatk
+  - blast_get_position
 label: pypgatk_blast_get_position
 doc: "Get the position of peptides in a reference database.\n\nTool homepage: http://github.com/bigbio/py-pgatk"
 inputs:

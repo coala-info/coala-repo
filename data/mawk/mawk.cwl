@@ -84,7 +84,8 @@ inputs:
     doc: set initial random seed.
     inputBinding:
       position: 103
-      prefix: -W random
+      prefix: -W random=
+      separate: false
   - id: sprintf_buffer_size
     type:
       - 'null'
@@ -92,7 +93,8 @@ inputs:
     doc: adjust size of sprintf buffer.
     inputBinding:
       position: 103
-      prefix: -W sprintf
+      prefix: -W sprintf=
+      separate: false
   - id: variable_assignment
     type:
       - 'null'

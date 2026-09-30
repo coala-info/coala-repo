@@ -30,15 +30,14 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `invariant_counts_path`
     inputBinding:
       position: 103
-      prefix: --invariant-counts
+      prefix: --invariant_counts
   - id: table_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `table_path`
+    doc: Create a table with per-site information
     inputBinding:
       position: 104
       prefix: --table

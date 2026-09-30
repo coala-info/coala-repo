@@ -83,7 +83,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to dir for temp file
     inputBinding:
       position: 101
@@ -92,18 +92,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fasta_path`
+    doc: 'output FASTA file name                  (example: -o out.fasta)'
     inputBinding:
       position: 102
-      prefix: --output-fasta
+      prefix: -o
   - id: output_vcf_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_vcf_path`
+    doc: 'output VCF file name                    (optional, coordinates from -r genome,
+      example: -f out.vcf)'
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -V
 outputs:
   - id: output_fasta
     type: File

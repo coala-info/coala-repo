@@ -29,10 +29,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --gene
+          separate: true
     doc: 'Plot GENE. Can be given multiple times. Default: Plot all genes.'
     inputBinding:
       position: 103
-      prefix: --gene
   - id: ignore_j
     type:
       - 'null'

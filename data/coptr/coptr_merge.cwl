@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: coptr_merge
+baseCommand:
+  - coptr
+  - merge
 label: coptr_merge
 doc: "Merges multiple BAM files into a single BAM file.\n\nTool homepage: https://github.com/tyjo/coptr"
 inputs:
@@ -13,12 +15,17 @@ inputs:
       sequencing, since this is used downstream.
     inputBinding:
       position: 1
-outputs:
   - id: out_bam
+    type: string
+    doc: Path to merged BAM.
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_out_bam
     type: File
     doc: Path to merged BAM.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_bam)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3

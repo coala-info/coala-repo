@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sr2silo_submit-to-loculus
+baseCommand:
+  - sr2silo
+  - submit-to-loculus
 label: sr2silo_submit-to-loculus
 doc: "Upload processed file to S3 and submit to SILO/Loculus.\n\nTool homepage: https://github.com/cbg-ethz/sr2silo"
 inputs:

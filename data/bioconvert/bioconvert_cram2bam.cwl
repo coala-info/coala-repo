@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert cram2bam
+baseCommand:
+  - bioconvert
+  - cram2bam
 label: bioconvert_cram2bam
 doc: "Convert file from '('CRAM',)' to '('BAM',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

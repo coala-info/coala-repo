@@ -105,7 +105,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Working directory where the files are to be written
     inputBinding:
       position: 101

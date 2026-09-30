@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pairtools parse
+baseCommand:
+  - pairtools
+  - parse
 label: pairtools_parse
 doc: "Find ligation pairs in .sam data, make .pairs. SAM_PATH : an input .sam/.bam
   file with paired-end sequence alignments of Hi-C molecules. If the path ends with
@@ -28,6 +30,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --add-columns
+      itemSeparator: ','
   - id: add_pair_index
     type:
       - 'null'
@@ -207,14 +210,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output
-  - id: output_parsed_alignments_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_parsed_alignments_path`
-    inputBinding:
-      position: 104
-      prefix: --output-parsed-alignments
   - id: output_stats_path
     type:
       - 'null'
@@ -223,6 +218,13 @@ inputs:
     inputBinding:
       position: 105
       prefix: --output-stats
+  - id: output_parsed_alignments_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output-parsed-alignments
 outputs:
   - id: output
     type:

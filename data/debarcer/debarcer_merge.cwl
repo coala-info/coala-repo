@@ -23,7 +23,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory where subdirectories are created
     inputBinding:
       position: 101

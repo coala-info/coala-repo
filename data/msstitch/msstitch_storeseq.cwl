@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch storeseq
+baseCommand:
+  - msstitch
+  - storeseq
 label: msstitch_storeseq
 doc: "Store sequence information\n\nTool homepage: https://github.com/lehtiolab/msstitch"
 inputs:
@@ -103,11 +105,11 @@ inputs:
       position: 101
       prefix: --nterm-meth-loss
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: Output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

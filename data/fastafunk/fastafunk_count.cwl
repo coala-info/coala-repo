@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk_count
+baseCommand:
+  - fastafunk
+  - count
 label: fastafunk_count
 doc: "Count sequences based on metadata groupings.\n\nTool homepage: https://github.com/cov-ert/fastafunk"
 inputs:

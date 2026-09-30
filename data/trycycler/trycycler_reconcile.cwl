@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trycycler reconcile
+baseCommand:
+  - trycycler
+  - reconcile
 label: trycycler_reconcile
 doc: "reconcile contig sequences\n\nTool homepage: https://github.com/rrwick/Trycycler"
 inputs:

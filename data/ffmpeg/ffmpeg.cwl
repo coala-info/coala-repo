@@ -103,6 +103,7 @@ inputs:
     doc: show available decoders
     inputBinding:
       position: 104
+      prefix: -decoders
   - id: demuxers
     type:
       - 'null'
@@ -110,6 +111,7 @@ inputs:
     doc: show available demuxers
     inputBinding:
       position: 104
+      prefix: -demuxers
   - id: devices
     type:
       - 'null'
@@ -117,6 +119,7 @@ inputs:
     doc: show available devices
     inputBinding:
       position: 104
+      prefix: -devices
   - id: disable_audio
     type:
       - 'null'
@@ -156,6 +159,7 @@ inputs:
     doc: show available encoders
     inputBinding:
       position: 104
+      prefix: -encoders
   - id: filter_graph
     type:
       - 'null'
@@ -171,6 +175,7 @@ inputs:
     doc: show available filters
     inputBinding:
       position: 104
+      prefix: -filters
   - id: format
     type:
       - 'null'
@@ -196,6 +201,7 @@ inputs:
     doc: show standard channel layouts
     inputBinding:
       position: 104
+      prefix: -layouts
   - id: license
     type:
       - 'null'
@@ -228,6 +234,7 @@ inputs:
     doc: show available muxers
     inputBinding:
       position: 104
+      prefix: -muxers
   - id: no_overwrite
     type:
       - 'null'
@@ -259,6 +266,7 @@ inputs:
     doc: show available audio sample formats
     inputBinding:
       position: 104
+      prefix: -sample_fmts
   - id: scodec
     type:
       - 'null'
@@ -282,6 +290,7 @@ inputs:
     doc: print progress report during encoding
     inputBinding:
       position: 104
+      prefix: -stats
   - id: stop_time
     type:
       - 'null'

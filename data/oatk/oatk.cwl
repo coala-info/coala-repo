@@ -223,7 +223,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory
     inputBinding:
       position: 102
@@ -271,18 +271,19 @@ inputs:
       prefix: --weak-cross
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: prefix of output files [./oatk.asm]
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

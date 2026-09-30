@@ -22,9 +22,7 @@ inputs:
       position: 101
       prefix: -bedOut
   - id: fasta
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input FASTA file
     secondaryFiles:
       - .fai?
@@ -73,7 +71,7 @@ inputs:
       position: 101
       prefix: -name+
   - id: output
-    type: string
+    type: string?
     doc: Output file (opt., default is STDOUT)
     inputBinding:
       position: 101

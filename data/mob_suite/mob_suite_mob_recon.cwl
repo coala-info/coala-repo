@@ -207,7 +207,7 @@ inputs:
       position: 101
       prefix: --num_threads
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output Directory to put results
     inputBinding:
       position: 101

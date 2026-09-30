@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varvamp_single
+baseCommand:
+  - varvamp
+  - single
 label: varvamp_single
 doc: "Performs primer design and amplicon prediction for a single input alignment.\n\
   \nTool homepage: https://github.com/jonas-fuchs/varVAMP"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 2

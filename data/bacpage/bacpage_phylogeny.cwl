@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bacpage phylogeny
+baseCommand:
+  - bacpage
+  - phylogeny
 label: bacpage_phylogeny
 doc: "Reconstructs maximum likelihood phylogeny from consensus sequences.\n\nTool
   homepage: https://github.com/CholGen/bacpage"

@@ -49,10 +49,10 @@ inputs:
       prefix: --relax
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: write output in GFF3 to FILE; default is terminal
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

@@ -35,7 +35,7 @@ inputs:
       status
     inputBinding:
       position: 101
-      prefix: --max-unmethylated_combined
+      prefix: --max-unmethylated-combined
   - id: min_asm_abs_delta_mean
     type:
       - 'null'
@@ -82,7 +82,7 @@ inputs:
       prefix: --min-weakasm-abs-delta-mean
   - id: output_report_path
     type: string
-    doc: Output or path parameter `output_report_path`
+    doc: Output report file (CSV/TSV)
     inputBinding:
       position: 102
       prefix: --output-report

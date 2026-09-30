@@ -103,11 +103,11 @@ inputs:
       position: 101
       prefix: -g
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: ':  Specify output file (default writes to stdout).'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

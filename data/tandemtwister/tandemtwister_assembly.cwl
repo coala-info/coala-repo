@@ -36,9 +36,9 @@ inputs:
       prefix: --reads_type
   - id: reference_fasta
     type: File
+    doc: Reference FASTA file (.fa / .fna)
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file (.fa / .fna)
     inputBinding:
       position: 101
       prefix: --ref
@@ -66,10 +66,9 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: output_file
     type: File

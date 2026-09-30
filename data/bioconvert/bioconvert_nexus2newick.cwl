@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert nexus2newick
+baseCommand:
+  - bioconvert
+  - nexus2newick
 label: bioconvert_nexus2newick
 doc: "Convert file from '('NEXUS',)' to '('NEWICK',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

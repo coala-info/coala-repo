@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metacache query
+baseCommand:
+  - metacache
+  - query
 label: metacache_query
 doc: "Query a metacache database with sequence files or directories.\n\nTool homepage:
   https://github.com/muellan/metacache"

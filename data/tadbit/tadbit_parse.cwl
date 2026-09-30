@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadbit parse
+baseCommand:
+  - tadbit
+  - parse
 label: tadbit_parse
 doc: "Parse mapped Hi-C reads and get the intersection\n\nTool homepage: http://sgt.cnag.cat/3dg/tadbit/"
 inputs:

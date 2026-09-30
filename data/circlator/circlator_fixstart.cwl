@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: circlator_fixstart
+baseCommand:
+  - circlator
+  - fixstart
 label: circlator_fixstart
 doc: "Change start point of each sequence in assembly\n\nTool homepage: https://github.com/sanger-pathogens/circlator"
 inputs:

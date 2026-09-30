@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predex_annotation
+baseCommand:
+  - predex
+  - annotation
 label: predex_annotation
 doc: "Perform annotation using predex.\n\nTool homepage: https://github.com/tomkuipers1402/predex"
 inputs:
@@ -26,7 +28,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output directory (default = current)
     inputBinding:
       position: 102
       prefix: --output

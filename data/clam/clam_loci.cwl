@@ -32,6 +32,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --exclude
+      itemSeparator: ','
   - id: exclude_file
     type:
       - 'null'
@@ -58,6 +59,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --include
+      itemSeparator: ','
   - id: include_file
     type:
       - 'null'
@@ -163,7 +165,6 @@ inputs:
       prefix: --thresholds-file
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

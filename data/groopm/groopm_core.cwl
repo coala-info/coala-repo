@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm core
+baseCommand:
+  - groopm
+  - core
 label: groopm_core
 doc: "Load saved data and make bin cores\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

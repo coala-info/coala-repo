@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga_preprocess
+baseCommand:
+  - sga
+  - preprocess
 label: sga_preprocess
 doc: "Prepare READS1, READS2, ... data files for assembly\n\nTool homepage: https://github.com/jts/sga"
 inputs:
@@ -181,7 +183,7 @@ inputs:
       prefix: --verbose
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'write the reads to FILE (default: stdout)'
     inputBinding:
       position: 104
       prefix: --out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msamtools_coverage
+baseCommand:
+  - msamtools
+  - coverage
 label: msamtools_coverage
 doc: "Produces per-position sequence coverage information for all reference sequences\n\
   in the BAM file. Output is similar to old-style quality files from the Sanger \n\
@@ -55,10 +57,10 @@ inputs:
       prefix: --wordsize
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: name of output file (required)
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

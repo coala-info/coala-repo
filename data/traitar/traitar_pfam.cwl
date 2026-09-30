@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: traitar pfam
+baseCommand:
+  - traitar
+  - pfam
 label: traitar_pfam
 doc: "Download and uncompress pfam files.\nThe files are required for gene annotation.\n\
   \nTool homepage: http://github.com/aweimann/traitar"

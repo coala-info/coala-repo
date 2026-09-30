@@ -71,7 +71,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `read_forward_path`
+    doc: Name Read Forward output (required)
     inputBinding:
       position: 102
       prefix: --read-forward
@@ -79,7 +79,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `read_reverse_path`
+    doc: Name Read Reverse output (required)
     inputBinding:
       position: 103
       prefix: --read-reverse

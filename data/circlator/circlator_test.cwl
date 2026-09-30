@@ -7,7 +7,7 @@ label: circlator_test
 doc: "Run Circlator on a small test dataset\n\nTool homepage: https://github.com/sanger-pathogens/circlator"
 inputs:
   - id: outdir
-    type: Directory
+    type: string
     doc: Name of output directory
     inputBinding:
       position: 1

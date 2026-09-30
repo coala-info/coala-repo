@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_heaps
+baseCommand:
+  - odgi
+  - heaps
 label: odgi_heaps
 doc: "Extract matrix of path pangenome coverage permutations for power law regression.\n\
   \nTool homepage: https://github.com/vgteam/odgi"

@@ -17,43 +17,50 @@ inputs:
     doc: number of parallel jobs/cores used for the SNP calling
     inputBinding:
       position: 101
-      prefix: --jobs
+      prefix: jobs=
+      separate: false
   - id: max_cov
     type: string
     doc: Either the maximum coverage percentile to be computed or an input file
     inputBinding:
       position: 101
-      prefix: --max-cov
+      prefix: max-cov=
+      separate: false
   - id: min_count
     type: int
     doc: minimum alternative allele count across all populations pooled
     inputBinding:
       position: 101
-      prefix: --min-count
+      prefix: min-count=
+      separate: false
   - id: min_cov
     type: int
     doc: sample-wise minimum coverage
     inputBinding:
       position: 101
-      prefix: --min-cov
+      prefix: min-cov=
+      separate: false
   - id: min_freq
     type: float
     doc: minimum alternative allele frequency across all populations pooled
     inputBinding:
       position: 101
-      prefix: --min-freq
+      prefix: min-freq=
+      separate: false
   - id: miss_frac
     type: float
     doc: maximum allowed fraction of samples not fullfilling all parameters
     inputBinding:
       position: 101
-      prefix: --miss-frac
+      prefix: miss-frac=
+      separate: false
   - id: mpileup
     type: File
     doc: The input mpileup
     inputBinding:
       position: 101
-      prefix: --mpileup
+      prefix: mpileup=
+      separate: false
   - id: names
     type: string
     doc: A comma separated list of samples names according to the order in the 
@@ -66,7 +73,8 @@ inputs:
     doc: The output prefix
     inputBinding:
       position: 101
-      prefix: --output
+      prefix: output=
+      separate: false
   - id: reference
     type: File
     secondaryFiles:
@@ -74,7 +82,8 @@ inputs:
     doc: The reference FASTA file
     inputBinding:
       position: 101
-      prefix: --reference
+      prefix: reference=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

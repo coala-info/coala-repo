@@ -64,7 +64,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `contributions_file_path`
+    doc: file path to output contact types contributions
     inputBinding:
       position: 103
       prefix: --contributions-file
@@ -72,7 +72,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `potential_file_path`
+    doc: file path to output potential values
     inputBinding:
       position: 104
       prefix: --potential-file
@@ -80,7 +80,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `probabilities_file_path`
+    doc: file path to output observed and expected probabilities
     inputBinding:
       position: 105
       prefix: --probabilities-file
@@ -88,7 +88,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `single_areas_file_path`
+    doc: file path to output single type total areas
     inputBinding:
       position: 106
       prefix: --single-areas-file

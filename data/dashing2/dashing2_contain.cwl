@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dashing2 contain
+baseCommand:
+  - dashing2
+  - contain
 label: dashing2_contain
 doc: "This application is inspired by mash screen.\n\nTool homepage: https://github.com/dnbaker/dashing2"
 inputs:

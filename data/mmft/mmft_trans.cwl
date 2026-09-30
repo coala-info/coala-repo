@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_trans
+baseCommand:
+  - mmft
+  - trans
 label: mmft_trans
 doc: "Translate a fasta into all six frames.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

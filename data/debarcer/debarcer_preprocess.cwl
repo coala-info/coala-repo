@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: debarcer.py preprocess
+baseCommand:
+  - debarcer.py
+  - preprocess
 label: debarcer_preprocess
 doc: "Preprocess FASTQ files for debarcer.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
 inputs:
@@ -15,7 +17,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory. Available from command or config
     inputBinding:
       position: 101

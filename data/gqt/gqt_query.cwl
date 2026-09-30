@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gqt query
+baseCommand:
+  - gqt
+  - query
 label: gqt_query
 doc: "A GQT query returns a set of variants that meet some number of population and
   genotype conditions. Conditions are specified by a population query and genotype
@@ -92,7 +94,7 @@ inputs:
   - id: tmp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: tmp direcory name for remote files
     inputBinding:
       position: 101

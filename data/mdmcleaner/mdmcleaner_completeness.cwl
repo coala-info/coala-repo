@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mdmcleaner completeness
+baseCommand:
+  - mdmcleaner
+  - completeness
 label: mdmcleaner_completeness
 doc: "Completeness analysis for mdmcleaner\n\nTool homepage: https://github.com/KIT-IBG-5/mdmcleaner"
 inputs:

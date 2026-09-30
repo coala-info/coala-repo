@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: neat_model-fraglen
+baseCommand:
+  - neat
+  - model-fraglen
 label: neat_model-fraglen
 doc: "Generate fragment length model from a BAM or SAM file_list.\n\nTool homepage:
   https://github.com/ncsa/NEAT/"
@@ -39,10 +41,9 @@ inputs:
       prefix: --prefix
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

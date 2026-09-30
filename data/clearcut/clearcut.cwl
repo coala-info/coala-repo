@@ -146,14 +146,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: matrixout_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `matrixout_path`
-    inputBinding:
-      position: 102
-      prefix: --matrixout
   - id: outfilename_path
     type:
       - 'null'
@@ -162,6 +154,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --outfilename
+  - id: matrixout_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --matrixout
 outputs:
   - id: outfilename
     type: File

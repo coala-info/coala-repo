@@ -23,7 +23,7 @@ inputs:
       prefix: --labels
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output directory to store annotated data frame in .csv
     inputBinding:
       position: 102
       prefix: --out

@@ -120,9 +120,9 @@ inputs:
       prefix: --palette
   - id: reference
     type: File
+    doc: Reference genome (FASTA or GenBank)
     secondaryFiles:
       - .fai
-    doc: Reference genome (FASTA or GenBank)
     inputBinding:
       position: 101
       prefix: --reference
@@ -170,7 +170,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

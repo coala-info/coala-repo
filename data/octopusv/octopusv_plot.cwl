@@ -13,16 +13,18 @@ inputs:
       position: 1
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: PATH  Output prefix for plot files. [required]   │
     inputBinding:
       position: 101
       prefix: --output-prefix
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Output prefix for plot files.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

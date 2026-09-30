@@ -159,7 +159,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outputdir_path`
     inputBinding:
       position: 102
       prefix: --outputdir
@@ -167,7 +166,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outputdirc_path`
     inputBinding:
       position: 103
       prefix: --outputdirc

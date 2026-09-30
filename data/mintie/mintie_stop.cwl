@@ -65,6 +65,7 @@ inputs:
     doc: Delete files after archiving
     inputBinding:
       position: 106
+      prefix: --delete
   - id: environment
     type:
       - 'null'
@@ -108,7 +109,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 106
@@ -206,10 +207,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_filename_path`
+    doc: output file name of report
     inputBinding:
       position: 108
-      prefix: --report-filename
+      prefix: --filename
 outputs:
   - id: archive_file
     type: File

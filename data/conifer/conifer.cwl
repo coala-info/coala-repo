@@ -51,7 +51,6 @@ inputs:
       prefix: --rtl
   - id: summary_path
     type: string
-    doc: Output or path parameter `summary_path`
     inputBinding:
       position: 102
       prefix: --summary

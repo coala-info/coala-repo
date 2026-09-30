@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: somaticseq_single
+baseCommand:
+  - somaticseq
+  - single
 label: somaticseq_single
 doc: "SomaticSeq single mode\n\nTool homepage: http://bioinform.github.io/somaticseq/"
 inputs:

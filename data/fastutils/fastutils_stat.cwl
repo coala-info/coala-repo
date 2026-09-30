@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastutils_stat
+baseCommand:
+  - fastutils
+  - stat
 label: fastutils_stat
 doc: "Compute statistics for fasta/q files.\n\nTool homepage: https://github.com/haghshenas/fastutils"
 inputs:
@@ -30,10 +32,10 @@ inputs:
       prefix: --minLen
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file [stdout]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

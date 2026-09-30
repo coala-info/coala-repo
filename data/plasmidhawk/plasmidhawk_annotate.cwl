@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plasmidhawk annotate
+baseCommand:
+  - plasmidhawk
+  - annotate
 label: plasmidhawk_annotate
 doc: "Annotates plasmid metadata based on fragment metadata and plasmid ordering information.\n\
   \nTool homepage: https://gitlab.com/treangenlab/plasmidhawk"
@@ -17,7 +19,6 @@ inputs:
       position: 2
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 101
       prefix: --output
@@ -25,10 +26,11 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

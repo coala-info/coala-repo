@@ -23,10 +23,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --headers
+          separate: true
     doc: 'HTTP headers in format "Key: Value" (can be used multiple times)'
     inputBinding:
       position: 103
-      prefix: --headers
   - id: cookies
     type:
       - 'null'
@@ -65,10 +67,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --params
+          separate: true
     doc: Query parameters in format "key=value" (can be used multiple times)
     inputBinding:
       position: 103
-      prefix: --params
   - id: follow_redirects
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr index
+baseCommand:
+  - seidr
+  - index
 label: seidr_index
 doc: "Create index for SeidrFiles\n\nTool homepage: https://github.com/bschiffthaler/seidr"
 inputs:

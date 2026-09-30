@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gseapy replot
+baseCommand:
+  - gseapy
+  - replot
 label: gseapy_replot
 doc: "Reproduce GSEA figures from GSEA desktop results directory.\n\nTool homepage:
   https://github.com/zqfang/gseapy"

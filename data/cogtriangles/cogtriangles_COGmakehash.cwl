@@ -11,7 +11,8 @@ inputs:
     doc: input file (list of IDs)
     inputBinding:
       position: 101
-      prefix: -i
+      prefix: -i=
+      separate: false
   - id: name_field_index
     type:
       - 'null'
@@ -19,7 +20,8 @@ inputs:
     doc: index of the name field in the input file (1-based)
     inputBinding:
       position: 101
-      prefix: -n
+      prefix: -n=
+      separate: false
   - id: separator_char
     type:
       - 'null'
@@ -27,13 +29,15 @@ inputs:
     doc: separator character
     inputBinding:
       position: 101
-      prefix: -s
+      prefix: -s=
+      separate: false
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: "=dout\t\toutput directory (creates hash.csv, default ./conv)"
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -o=
+      separate: false
 outputs:
   - id: output_directory
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./hera quant
+baseCommand:
+  - ./hera
+  - quant
 label: hera_quant
 doc: "Hera is a program developed by BioTuring for RNA-Seq analysis.\n\nTool homepage:
   https://github.com/bioturing/hera"
@@ -55,7 +57,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 104

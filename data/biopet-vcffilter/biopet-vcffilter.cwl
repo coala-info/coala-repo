@@ -246,18 +246,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `inverted_output_vcf_path`
+    doc: ' inverted output vcf file'
     inputBinding:
       position: 102
-      prefix: --inverted-output-vcf
+      prefix: --invertedOutputVcf
   - id: output_vcf_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_vcf_path`
+    doc: Output vcf file
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: --outputVcf
 outputs:
   - id: output_vcf
     type: File

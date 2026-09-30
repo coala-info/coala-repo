@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx slice-bam
+baseCommand:
+  - pypgx
+  - slice-bam
 label: pypgx_slice-bam
 doc: "Slice BAM file for all genes used by PyPGx.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Input BAM file. It must be already indexed to allow random access.
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output BAM file.
+    inputBinding:
+      position: 2
   - id: assembly
     type:
       - 'null'
@@ -35,11 +42,11 @@ inputs:
       position: 102
       prefix: --genes
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Output BAM file.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

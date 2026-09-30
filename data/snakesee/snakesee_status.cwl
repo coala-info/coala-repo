@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakesee status
+baseCommand:
+  - snakesee
+  - status
 label: snakesee_status
 doc: "Show a one-time status snapshot (non-interactive).\n\nUseful for scripting or
   quick checks.\n\nTool homepage: https://github.com/nh13/snakesee"

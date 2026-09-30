@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cuna detect
+baseCommand:
+  - cuna
+  - detect
 label: cuna_detect
 doc: "Detect modifications using a trained model.\n\nTool homepage: https://github.com/iris1901/CUNA"
 inputs:
@@ -82,9 +84,8 @@ inputs:
       prefix: --model
   - id: motif
     type:
-      - 'null'
-      - type: array
-        items: string
+      type: array
+      items: string
     doc: 'Motif to detect. Format: "<MOTIF> <INDEX>". Example: "T 0" to detect modifications
       on T.'
     inputBinding:

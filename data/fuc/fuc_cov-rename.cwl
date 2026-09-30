@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc_cov-rename
+baseCommand:
+  - fuc
+  - cov-rename
 label: fuc_cov-rename
 doc: "Rename the samples in a depth of coverage file.\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:

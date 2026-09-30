@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks count
+baseCommand:
+  - kmtricks
+  - count
 label: kmtricks_count
 doc: "Count k-mers/hashes in partitions.\n\nTool homepage: https://github.com/tlemane/kmtricks"
 inputs:

@@ -141,30 +141,30 @@ inputs:
     inputBinding:
       position: 104
       prefix: --yes
-  - id: autoarchive_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `autoarchive_path`
-    inputBinding:
-      position: 105
-      prefix: --autoarchive
   - id: output_directory_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: output directory
     inputBinding:
       position: 106
-      prefix: --output-directory
+      prefix: --dir
   - id: report_filename_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_filename_path`
+    doc: output file name of report
     inputBinding:
       position: 107
-      prefix: --report-filename
+      prefix: --filename
+  - id: autoarchive_path
+    type:
+      - 'null'
+      - string
+    doc: clean up all internal files after run into given archive
+    inputBinding:
+      position: 108
+      prefix: --autoarchive
 outputs:
   - id: autoarchive
     type:

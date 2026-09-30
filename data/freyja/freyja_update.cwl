@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja update
+baseCommand:
+  - freyja
+  - update
 label: freyja_update
 doc: "Update to the most recent barcodes and curated lineage data\n\nTool homepage:
   https://github.com/andersen-lab/Freyja"
@@ -24,7 +26,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory to save updated files.if this option is used, the 
       barcodes are onlydownloaded to the directory specified.
     inputBinding:

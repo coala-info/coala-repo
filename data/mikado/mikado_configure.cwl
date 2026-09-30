@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mikado configure
+baseCommand:
+  - mikado
+  - configure
 label: mikado_configure
 doc: "Configuration utility for Mikado\n\nTool homepage: https://github.com/lucventurini/mikado"
 inputs:
@@ -146,6 +148,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gff
+      itemSeparator: ','
   - id: intron_range
     type:
       - 'null'
@@ -296,7 +299,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Destination directory for the output.
     inputBinding:
       position: 102

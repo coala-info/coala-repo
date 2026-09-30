@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc ngs-pon
+baseCommand:
+  - fuc
+  - ngs-pon
 label: fuc_ngs-pon
 doc: "Pipeline for constructing a panel of normals (PoN).\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:
@@ -15,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 3

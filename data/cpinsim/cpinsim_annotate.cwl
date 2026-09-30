@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpinsim_annotate
+baseCommand:
+  - cpinsim
+  - annotate
 label: cpinsim_annotate
 doc: "Annotates interaction, competition, and allosteric effect files based on provided
   constraints and network information.\n\nTool homepage: https://github.com/BiancaStoecker/cpinsim"
@@ -47,26 +49,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_allosterics_path`
     inputBinding:
       position: 102
-      prefix: --output-allosterics
+      prefix: --output_allosterics
   - id: output_competitions_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_competitions_path`
     inputBinding:
       position: 103
-      prefix: --output-competitions
+      prefix: --output_competitions
   - id: output_interactions_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_interactions_path`
     inputBinding:
       position: 104
-      prefix: --output-interactions
+      prefix: --output_interactions
 outputs:
   - id: output_interactions
     type:

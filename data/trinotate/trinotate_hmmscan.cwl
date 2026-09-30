@@ -222,37 +222,36 @@ inputs:
     inputBinding:
       position: 103
       prefix: --F2
-  - id: domtblout_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `domtblout_path`
-    inputBinding:
-      position: 104
-      prefix: --domtblout
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ': direct output to file <f>, not stdout'
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
+  - id: domtblout_path
+    type:
+      - 'null'
+      - string
+    doc: ': save parseable table of per-domain hits to file <f>'
+    inputBinding:
+      position: 106
+      prefix: --domtblout
   - id: pfamtblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pfamtblout_path`
     inputBinding:
-      position: 106
+      position: 107
       prefix: --pfamtblout
   - id: tblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tblout_path`
+    doc: ': save parseable table of per-sequence hits to file <f>'
     inputBinding:
-      position: 107
+      position: 108
       prefix: --tblout
 outputs:
   - id: output_file

@@ -18,11 +18,13 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: -d
+          separate: true
     doc: path to the directory containing fast5 files. This option can be given 
       multiple times.
     inputBinding:
       position: 102
-      prefix: -d
   - id: iop
     type:
       - 'null'

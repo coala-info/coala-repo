@@ -510,7 +510,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory to be used for /tmp, /var/tmp and $HOME
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eido_validate
+baseCommand:
+  - eido
+  - validate
 label: eido_validate
 doc: "Validate a PEP or its components\n\nTool homepage: https://github.com/mayneyao/eidos"
 inputs:

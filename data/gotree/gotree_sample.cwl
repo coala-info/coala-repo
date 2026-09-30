@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree sample
+baseCommand:
+  - gotree
+  - sample
 label: gotree_sample
 doc: "Takes a subsample of the set of trees from the input file.\n\nTool homepage:
   https://github.com/fredericlemoine/gotree"
@@ -55,7 +57,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output trees (default "stdout")
     inputBinding:
       position: 102
       prefix: --output

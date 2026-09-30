@@ -18,18 +18,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ouput_comparaison_table_path`
     inputBinding:
       position: 102
-      prefix: --ouput-comparaison-table
+      prefix: --ouput_comparaison_table
   - id: ouput_contingency_table_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ouput_contingency_table_path`
     inputBinding:
       position: 103
-      prefix: --ouput-contingency-table
+      prefix: --ouput_contingency_table
 outputs:
   - id: ouput_contingency_table
     type: File

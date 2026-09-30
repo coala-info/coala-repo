@@ -120,10 +120,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tree_file_path`
+    doc: name for tree toplogy file
     inputBinding:
       position: 105
-      prefix: --tree-file
+      prefix: --out
 outputs:
   - id: output_tree_file
     type:

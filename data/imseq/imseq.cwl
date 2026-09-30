@@ -227,9 +227,9 @@ inputs:
       prefix: --qual-clust
   - id: reference
     type: File
+    doc: FASTA file with gene segment reference sequences.
     secondaryFiles:
       - .fai
-    doc: FASTA file with gene segment reference sequences.
     inputBinding:
       position: 104
       prefix: --reference
@@ -321,14 +321,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: --with-alleles
-  - id: barcode_stats_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `barcode_stats_path`
-    inputBinding:
-      position: 105
-      prefix: --barcode-stats
   - id: out_path
     type:
       - 'null'
@@ -336,45 +328,47 @@ inputs:
     inputBinding:
       position: 106
       prefix: --out
+  - id: barcode_stats_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --barcode-stats
   - id: out_amino_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_amino_path`
     inputBinding:
-      position: 107
+      position: 108
       prefix: --out-amino
   - id: out_amino_bc_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_amino_bc_path`
     inputBinding:
-      position: 108
+      position: 109
       prefix: --out-amino-bc
   - id: out_nuc_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_nuc_path`
     inputBinding:
-      position: 109
+      position: 110
       prefix: --out-nuc
   - id: out_nuc_bc_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_nuc_bc_path`
     inputBinding:
-      position: 110
+      position: 111
       prefix: --out-nuc-bc
   - id: reject_log_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reject_log_path`
     inputBinding:
-      position: 111
+      position: 112
       prefix: --reject-log
 outputs:
   - id: out_amino

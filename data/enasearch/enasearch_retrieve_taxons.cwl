@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: enasearch retrieve_taxons
+baseCommand:
+  - enasearch
+  - retrieve_taxons
 label: enasearch_retrieve_taxons
 doc: "Retrieve data from the ENA Taxon Portal.\n\n  This function retrieves data (other
   than taxon) from ENA by:\n\n  - Formatting the ids to query then on the Taxon Portal
@@ -87,7 +89,7 @@ inputs:
       prefix: --subseq_range
   - id: file_path
     type: string
-    doc: Output or path parameter `file_path`
+    doc: File to save the content of the search (used with
     inputBinding:
       position: 102
       prefix: --file

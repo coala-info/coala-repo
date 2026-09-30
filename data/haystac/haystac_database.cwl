@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haystac database
+baseCommand:
+  - haystac
+  - database
 label: haystac_database
 doc: "Build a database of target species\n\nTool homepage: https://github.com/antonisdim/haystac"
 inputs:
@@ -189,7 +191,7 @@ inputs:
       prefix: --unlock
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to the database output directory
     inputBinding:
       position: 102
       prefix: --output

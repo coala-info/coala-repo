@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bakdrive fmt_donor
+baseCommand:
+  - bakdrive
+  - fmt_donor
 label: bakdrive_fmt_donor
 doc: "Input disease and donor sample file addresses\n\nTool homepage: https://gitlab.com/treangenlab/bakdrive"
 inputs:
@@ -43,7 +45,6 @@ inputs:
       prefix: --strength
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

@@ -65,10 +65,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: reference sequence used to encode CRAM file, recommended if reading 
       CRAM
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference
@@ -92,7 +92,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `discordant_path`
+    doc: output discordant reads to this file in BAM
     inputBinding:
       position: 103
       prefix: --discordant
@@ -100,7 +100,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `splitter_path`
+    doc: output split reads to this file in BAM format
     inputBinding:
       position: 104
       prefix: --splitter

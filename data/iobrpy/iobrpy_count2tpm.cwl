@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy_count2tpm
+baseCommand:
+  - iobrpy
+  - count2tpm
 label: iobrpy_count2tpm
 doc: "Convert gene counts to TPM (Transcripts Per Million)\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -84,10 +86,9 @@ inputs:
       prefix: --remove_version
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: --output
 outputs:
   - id: output_path
     type: File

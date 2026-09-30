@@ -25,6 +25,7 @@ inputs:
       guesses the sequence type (0 for whole seq)"
     inputBinding:
       position: 101
+      prefix: --alphabet-guess-seq-length
   - id: compress_level
     type:
       - 'null'
@@ -33,6 +34,7 @@ inputs:
       the range and default value for each format"
     inputBinding:
       position: 101
+      prefix: --compress-level
   - id: format
     type:
       - 'null'
@@ -48,6 +50,7 @@ inputs:
     doc: "FASTA head is NCBI-style, e.g. >gi|110645304|ref|NC_002516.2|\nPseud..."
     inputBinding:
       position: 101
+      prefix: --id-ncbi
   - id: id_regexp
     type:
       - 'null'
@@ -55,6 +58,7 @@ inputs:
     doc: regular expression for parsing ID
     inputBinding:
       position: 101
+      prefix: --id-regexp
   - id: infile_list
     type:
       - 'null'
@@ -103,6 +107,7 @@ inputs:
     doc: be quiet and do not show extra information
     inputBinding:
       position: 101
+      prefix: --quiet
   - id: seq_type
     type:
       - 'null'
@@ -120,6 +125,7 @@ inputs:
       do exist"
     inputBinding:
       position: 101
+      prefix: --skip-file-check
   - id: threads
     type:
       - 'null'
@@ -130,7 +136,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

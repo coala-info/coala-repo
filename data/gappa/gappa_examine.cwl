@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gappa examine
+baseCommand:
+  - gappa
+  - examine
 label: gappa_examine
 doc: "Commands for examining, visualizing, and tabulating information in placement
   data.\n\nTool homepage: https://github.com/lczech/gappa"

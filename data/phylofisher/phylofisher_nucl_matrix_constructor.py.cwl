@@ -56,10 +56,10 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'Path to user-defined output directory Default: ./nucl_matrix_constructor_out_<M.D.Y>'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type:

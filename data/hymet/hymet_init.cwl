@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hymet_init
+baseCommand:
+  - hymet
+  - init
 label: hymet_init
 doc: "Initialize hymet project\n\nTool homepage: https://github.com/inesbmartins02/HYMET"
 inputs:

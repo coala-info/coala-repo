@@ -455,10 +455,10 @@ inputs:
       prefix: -Xplor
   - id: dumpatoms_file_path
     type: string
-    doc: Output or path parameter `dumpatoms_file_path`
+    doc: dump the atoms, along with extra information about them, to FILE
     inputBinding:
       position: 104
-      prefix: --dumpatoms-file
+      prefix: -DUMPATOMS
 outputs:
   - id: dumpatoms_file
     type:

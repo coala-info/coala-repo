@@ -106,7 +106,8 @@ inputs:
     doc: Expect N mers in the input (optional; for precise memory sizing).
     inputBinding:
       position: 113
-      prefix: n
+      prefix: n=
+      separate: false
   - id: kmer_size
     type:
       - 'null'
@@ -114,7 +115,8 @@ inputs:
     doc: Create mers of size K bases (mandatory for count operations).
     inputBinding:
       position: 113
-      prefix: k
+      prefix: k=
+      separate: false
   - id: memory_limit
     type:
       - 'null'
@@ -122,7 +124,8 @@ inputs:
     doc: Use no more than (about) M GB memory.
     inputBinding:
       position: 113
-      prefix: memory
+      prefix: memory=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -130,7 +133,8 @@ inputs:
     doc: Use no more than T threads.
     inputBinding:
       position: 113
-      prefix: threads
+      prefix: threads=
+      separate: false
   - id: output_database_path
     type: string
     doc: Output or path parameter `output_database_path`

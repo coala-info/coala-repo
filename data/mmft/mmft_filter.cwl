@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_filter
+baseCommand:
+  - mmft
+  - filter
 label: mmft_filter
 doc: "Filter sequences on a file of ID's\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

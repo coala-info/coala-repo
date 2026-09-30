@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaquantome expand
+baseCommand:
+  - metaquantome
+  - expand
 label: metaquantome_expand
 doc: "The expand module is the first analysis step in the metaQuantome analysis workflow,
   and can be run to analyze function, taxonomy, or function and taxonomy together.\n\
@@ -159,7 +161,7 @@ inputs:
       prefix: --tax_file
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file
     inputBinding:
       position: 102
       prefix: --outfile

@@ -98,7 +98,8 @@ inputs:
     doc: input file, stdin if unset
     inputBinding:
       position: 101
-      prefix: I
+      prefix: I=
+      separate: false
   - id: input_format
     type:
       - 'null'
@@ -127,7 +128,8 @@ inputs:
     doc: metrics file, stderr if unset
     inputBinding:
       position: 101
-      prefix: M
+      prefix: M=
+      separate: false
   - id: mod
     type:
       - 'null'

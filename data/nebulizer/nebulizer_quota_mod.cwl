@@ -30,6 +30,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --add-groups
+      itemSeparator: ','
   - id: add_users
     type:
       - 'null'
@@ -40,6 +41,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --add-users
+      itemSeparator: ','
   - id: default_for
     type:
       - 'null'
@@ -84,6 +86,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --remove-groups
+      itemSeparator: ','
   - id: remove_users
     type:
       - 'null'
@@ -94,6 +97,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --remove-users
+      itemSeparator: ','
   - id: undelete
     type:
       - 'null'

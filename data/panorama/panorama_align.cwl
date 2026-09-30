@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama align
+baseCommand:
+  - panorama
+  - align
 label: panorama_align
 doc: "Perform sequence alignment between pangenome gene families using MMseqs2 with
   support for both inter-pangenome and all-against-all alignment modes.\n\nTool homepage:
@@ -94,7 +96,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files.
     inputBinding:
       position: 101
@@ -110,10 +112,10 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'Output directory where alignment results will be written (default: None)'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

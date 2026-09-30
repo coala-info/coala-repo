@@ -54,8 +54,8 @@ inputs:
       position: 103
       prefix: --mismatches
   - id: summary_path
-    type: string
-    doc: Output or path parameter `summary_path`
+    type: string?
+    doc: Write summary table to FILE
     inputBinding:
       position: 104
       prefix: --summary

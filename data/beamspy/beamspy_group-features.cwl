@@ -67,7 +67,6 @@ inputs:
       prefix: --pvalue-threshold
   - id: gml_file_path
     type: string
-    doc: Output or path parameter `gml_file_path`
     inputBinding:
       position: 102
       prefix: --gml-file

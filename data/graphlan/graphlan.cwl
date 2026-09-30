@@ -10,6 +10,12 @@ inputs:
     doc: the input tree in PhyloXML format
     inputBinding:
       position: 1
+  - id: output_image
+    type: string
+    doc: 'the output image, the format is guessed from the extension unless --format
+      is given. Available file formats are: png, pdf, ps, eps, svg'
+    inputBinding:
+      position: 2
   - id: avoid_reordering
     type:
       - 'null'
@@ -57,7 +63,7 @@ inputs:
   - id: positions
     type:
       - 'null'
-      - boolean
+      - string
     doc: set whether the absolute position of the points should be reported on 
       the standard output. The two cohordinates are r and theta
     inputBinding:
@@ -74,18 +80,18 @@ inputs:
   - id: warnings
     type:
       - 'null'
-      - boolean
+      - string
     doc: set whether warning messages should be reported or not (default 1)
     inputBinding:
       position: 102
       prefix: --warnings
 outputs:
-  - id: output_image
+  - id: out_output_image
     type: File
     doc: 'the output image, the format is guessed from the extension unless --format
       is given. Available file formats are: png, pdf, ps, eps, svg'
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_image)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/graphlan:v1.1.3-1-deb_cv1

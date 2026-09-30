@@ -21,47 +21,71 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file_collection:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: Washcoat Athena project file from paper
-    out: []
+    out:
+    - athena_project_file_collection
   '5':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file_collection:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 20g ash Athena project file from paper
-    out: []
+    out:
+    - athena_project_file_collection
   '6':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        out_dir:
+          type: Any
+        out_csv:
+          type: Any
     in:
       format|structure_file:
         source: PdO cif file
-    out: []
+    out:
+    - out_dir
+    - out_csv
   '7':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        out_csv:
+          type: Any
+        out_dir:
+          type: Any
     in:
       format|structure_file:
         source: Pd cif file
-    out: []
+    out:
+    - out_csv
+    - out_dir
   '8':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        gds_csv:
+          type: Any
+        sp_csv:
+          type: Any
+        merged_directories:
+          type: Any
     in:
       feff_outputs_0|paths_zip:
         source: 6/out_dir
@@ -71,7 +95,10 @@ steps:
         source: 7/out_dir
       feff_outputs_0|paths_file:
         source: 6/out_csv
-    out: []
+    out:
+    - gds_csv
+    - sp_csv
+    - merged_directories
   '9':
     run:
       class: Operation

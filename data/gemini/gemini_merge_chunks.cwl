@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini merge_chunks
+baseCommand:
+  - gemini
+  - merge_chunks
 label: gemini_merge_chunks
 doc: "Merge multiple chunked databases into a single database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
@@ -49,7 +51,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Local (non-NFS) temp directory to use for working around SQLite locking
       issues on NFS drives.
     inputBinding:

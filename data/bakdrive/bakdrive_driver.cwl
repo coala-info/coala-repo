@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bakdrive driver
+baseCommand:
+  - bakdrive
+  - driver
 label: bakdrive_driver
 doc: "Input folder of bacteria interaction networks\n\nTool homepage: https://gitlab.com/treangenlab/bakdrive"
 inputs:
@@ -12,7 +14,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output file folder
     inputBinding:
       position: 102

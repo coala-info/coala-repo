@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vembrane_table
+baseCommand:
+  - vembrane
+  - table
 label: vembrane_table
 doc: "Convert VCF/BCF records to tabular format.\n\nTool homepage: https://github.com/vembrane/vembrane"
 inputs:
@@ -154,8 +156,7 @@ inputs:
       position: 103
       prefix: --wide
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --output

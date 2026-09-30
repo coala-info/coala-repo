@@ -66,7 +66,7 @@ inputs:
       position: 101
       prefix: --yes
   - id: outfolder_path
-    type: string
+    type: string?
     inputBinding:
       position: 102
       prefix: --outfolder

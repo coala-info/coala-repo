@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dnaapler archaea
+baseCommand:
+  - dnaapler
+  - archaea
 label: dnaapler_archaea
 doc: "Run dnaapler on archaea genomes\n\nTool homepage: https://github.com/gbouras13/dnaapler"
 inputs:
@@ -61,10 +63,10 @@ inputs:
       prefix: --threads
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: 'Output directory   [default: output.dnaapler]'
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type:

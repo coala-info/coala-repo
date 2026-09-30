@@ -30,10 +30,10 @@ inputs:
       prefix: -l
   - id: output_table_path
     type: string
-    doc: Output or path parameter `output_table_path`
+    doc: output table
     inputBinding:
       position: 102
-      prefix: --output-table
+      prefix: -o
 outputs:
   - id: output_table
     type: File

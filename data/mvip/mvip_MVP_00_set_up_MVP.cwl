@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_00_set_up_MVP
+baseCommand:
+  - mvip
+  - MVP_00_set_up_MVP
 label: mvip_MVP_00_set_up_MVP
 doc: "Check for any potential errors/issues in the metadata and the sequencing/read
   files, create all the directories that MVP needs, and install the latest versions

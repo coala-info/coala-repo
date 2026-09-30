@@ -290,7 +290,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Custom directory to put the temporary files in
     inputBinding:
       position: 101
@@ -329,10 +329,10 @@ inputs:
       prefix: --usearch
   - id: output_base_path
     type: string
-    doc: Output or path parameter `output_base_path`
+    doc: '{file} : Base for the names of output file(s)'
     inputBinding:
       position: 102
-      prefix: --output-base
+      prefix: -o
 outputs:
   - id: output_base
     type: File

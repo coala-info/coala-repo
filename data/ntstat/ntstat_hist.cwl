@@ -87,7 +87,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fit_gif_path`
+    doc: path to output model fit history animation
     inputBinding:
       position: 103
       prefix: --fit-gif
@@ -95,7 +95,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_path`
+    doc: path to output plot
     inputBinding:
       position: 104
       prefix: --plot
@@ -103,7 +103,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `probs_path`
+    doc: path to output probabilities in csv format
     inputBinding:
       position: 105
       prefix: --probs

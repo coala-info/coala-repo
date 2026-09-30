@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bacpage_assemble
+baseCommand:
+  - bacpage
+  - assemble
 label: bacpage_assemble
 doc: "Assembles consensus sequence from raw sequencing reads.\n\nTool homepage: https://github.com/CholGen/bacpage"
 inputs:

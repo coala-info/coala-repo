@@ -37,7 +37,6 @@ inputs:
       prefix: --threads
   - id: outFileName_path
     type: string
-    doc: Output or path parameter `outFileName_path`
     inputBinding:
       position: 102
       prefix: --outFileName

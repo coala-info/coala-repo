@@ -263,7 +263,7 @@ inputs:
       prefix: --vcf
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Prefix of the output file name
     inputBinding:
       position: 102
       prefix: --output-file
@@ -271,10 +271,11 @@ outputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of the output file name
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

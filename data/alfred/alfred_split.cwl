@@ -38,9 +38,9 @@ inputs:
       prefix: --map-qual
   - id: reference
     type: File
+    doc: reference fasta file
     secondaryFiles:
       - .fai
-    doc: reference fasta file
     inputBinding:
       position: 102
       prefix: --reference
@@ -60,7 +60,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hap1_path`
+    doc: haplotype1 output file
     inputBinding:
       position: 103
       prefix: --hap1
@@ -68,7 +68,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hap2_path`
+    doc: haplotype2 output file
     inputBinding:
       position: 104
       prefix: --hap2

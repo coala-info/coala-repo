@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mavis_summary
+baseCommand:
+  - mavis
+  - summary
 label: mavis_summary
 doc: "Summarize MAVIS results.\n\nTool homepage: https://github.com/bcgsc/mavis.git"
 inputs:
@@ -35,7 +37,6 @@ inputs:
       prefix: --log_level
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mash paste
+baseCommand:
+  - mash
+  - paste
 label: mash_paste
 doc: "Create a single sketch file from multiple sketch files.\n\nTool homepage: https://github.com/marbl/Mash"
 inputs:

@@ -159,7 +159,7 @@ inputs:
       prefix: --unmatched-repl
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 103
       prefix: --out-file

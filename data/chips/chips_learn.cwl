@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chips learn
+baseCommand:
+  - chips
+  - learn
 label: chips_learn
 doc: "Learn parameters from a ChIP dataset.\n\nTool homepage: https://github.com/gymreklab/chips"
 inputs:

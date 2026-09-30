@@ -50,7 +50,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: output folder
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ldhelmet max_lk
+baseCommand:
+  - ldhelmet
+  - max_lk
 label: ldhelmet_max_lk
 doc: "Maximum likelihood estimation of recombination rate\n\nTool homepage: http://sourceforge.net/projects/ldhelmet/"
 inputs:

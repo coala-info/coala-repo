@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_union
+baseCommand:
+  - unikmer
+  - union
 label: unikmer_union
 doc: "Union of k-mers in multiple binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

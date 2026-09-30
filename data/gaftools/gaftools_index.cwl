@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gaftools_index
+baseCommand:
+  - gaftools
+  - index
 label: gaftools_index
 doc: "Index a GAF file for the view functionality.\n\nTool homepage: https://github.com/marschall-lab/gaftools"
 inputs:
@@ -16,10 +18,10 @@ inputs:
       position: 2
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output GAF View Index (GVI) file. Default: <GAF file>.gvi'
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

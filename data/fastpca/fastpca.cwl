@@ -96,7 +96,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cov_path`
+    doc: 'output (optional): file for covariance matrix'
     inputBinding:
       position: 102
       prefix: --cov
@@ -104,7 +104,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `proj_path`
+    doc: 'output (optional): file for projected data'
     inputBinding:
       position: 103
       prefix: --proj
@@ -112,7 +112,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_path`
+    doc: 'output (optional): mean values, sigmas and'
     inputBinding:
       position: 104
       prefix: --stats
@@ -120,7 +120,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `val_path`
+    doc: 'output (optional): file for eigenvalues'
     inputBinding:
       position: 105
       prefix: --val
@@ -128,7 +128,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vec_path`
+    doc: 'output (optional): file for eigenvectors'
     inputBinding:
       position: 106
       prefix: --vec

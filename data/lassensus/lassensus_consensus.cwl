@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lassensus consensus
+baseCommand:
+  - lassensus
+  - consensus
 label: lassensus_consensus
 doc: "Consensus calling pipeline\n\nTool homepage: https://github.com/DaanJansen94/lassensus"
 inputs:
@@ -44,10 +46,9 @@ inputs:
       prefix: --min_quality
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory

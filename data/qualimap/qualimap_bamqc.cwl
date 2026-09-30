@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qualimap bamqc
+baseCommand:
+  - qualimap
+  - bamqc
 label: qualimap_bamqc
 doc: "Performs a quality control analysis on BAM files.\n\nTool homepage: http://qualimap.bioinfo.cipf.es/"
 inputs:
@@ -150,15 +152,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file for PDF report (default value is report.pdf).
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -outfile
   - id: output_genome_coverage_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_genome_coverage_path`
+    doc: File to save per base non-zero coverage.
     inputBinding:
       position: 104
       prefix: --output-genome-coverage

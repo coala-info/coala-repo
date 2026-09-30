@@ -213,69 +213,62 @@ inputs:
     inputBinding:
       position: 105
       prefix: --weight
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output file name.  Prints to screen by default
+    inputBinding:
+      position: 111
+      prefix: --output
   - id: alignment_output_dir_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignment_output_dir_path`
     inputBinding:
-      position: 106
+      position: 112
       prefix: --alignment-output-dir
   - id: backbone_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `backbone_output_path`
     inputBinding:
-      position: 107
+      position: 113
       prefix: --backbone-output
   - id: coverage_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coverage_output_path`
     inputBinding:
-      position: 108
+      position: 114
       prefix: --coverage-output
   - id: island_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `island_output_path`
     inputBinding:
-      position: 109
+      position: 115
       prefix: --island-output
   - id: output_alignment_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_alignment_path`
     inputBinding:
-      position: 110
+      position: 116
       prefix: --output-alignment
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 111
-      prefix: --output-file
   - id: output_guide_tree_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_guide_tree_path`
     inputBinding:
-      position: 112
+      position: 117
       prefix: --output-guide-tree
   - id: permutation_matrix_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `permutation_matrix_output_path`
     inputBinding:
-      position: 113
+      position: 118
       prefix: --permutation-matrix-output
 outputs:
   - id: output_file

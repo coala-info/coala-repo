@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac test
+baseCommand:
+  - deepac
+  - test
 label: deepac_test
 doc: "Test the deepac tool\n\nTool homepage: https://gitlab.com/rki_bioinformatics/DeePaC"
 inputs:

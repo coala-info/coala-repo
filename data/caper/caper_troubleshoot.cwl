@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: caper troubleshoot
+baseCommand:
+  - caper
+  - troubleshoot
 label: caper_troubleshoot
 doc: "List of workflow IDs to find matching workflows to commit a specified action
   (list, metadata and abort). Wildcards (* and ?) are allowed.\n\nTool homepage: https://github.com/ENCODE-DCC/caper"
@@ -17,7 +19,7 @@ inputs:
   - id: aws_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for aws backend. e.g. 
       s3://my-bucket/caper-cache-dir.
     inputBinding:
@@ -42,7 +44,7 @@ inputs:
   - id: gcp_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for gcp backend. e.g. 
       gs://my-bucket/caper-cache-dir.
     inputBinding:
@@ -70,7 +72,7 @@ inputs:
   - id: local_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store Cromwell's intermediate backend files. 
       These files include backend.conf, workflow_opts.json, imports.zip. and 
       localized input JSON files due to deepcopying (recursive localization). 

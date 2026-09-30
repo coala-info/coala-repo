@@ -229,10 +229,9 @@ inputs:
       prefix: --verbose
   - id: db_output_path
     type: string
-    doc: Output or path parameter `db_output_path`
     inputBinding:
       position: 103
-      prefix: --db-output
+      prefix: --db_output
 outputs:
   - id: db_output
     type:

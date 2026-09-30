@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+      itemSeparator: ','
   - id: max_threads_50_percent_capacity
     type:
       - 'null'
@@ -52,10 +53,12 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Path of the output file. This is optional. If not provided then output files
+      will be generated in the same path as that of source file (default: output-
+      files)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

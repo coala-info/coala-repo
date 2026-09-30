@@ -19,7 +19,8 @@ inputs:
       prefix: --rGFA
   - id: out_lengths_path
     type: string
-    doc: Output or path parameter `out_lengths_path`
+    doc: Output lengths of all minigraph sequences in given file (can be passed 
+      to gaf2paf)
     inputBinding:
       position: 103
       prefix: --out-lengths

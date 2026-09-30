@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges sync
+baseCommand:
+  - ibridges
+  - sync
 label: ibridges_sync
 doc: "Synchronize files/directories between local and remote.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

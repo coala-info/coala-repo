@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locityper_target
+baseCommand:
+  - locityper
+  - target
 label: locityper_target
 doc: "Adds target locus/loci to the database.\n\nTool homepage: https://github.com/tprodanov/locityper"
 inputs:
   - id: database
-    type: Directory
+    type: string
     doc: Output database directory.
     inputBinding:
       position: 101

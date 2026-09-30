@@ -244,10 +244,10 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: file to write output to instead of stdout
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -f
 outputs:
   - id: output_file
     type:

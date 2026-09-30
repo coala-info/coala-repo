@@ -49,7 +49,6 @@ inputs:
       prefix: --stdout
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 102
       prefix: --output-fasta

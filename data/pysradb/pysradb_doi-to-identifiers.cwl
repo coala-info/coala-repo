@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pysradb doi-to-identifiers
+baseCommand:
+  - pysradb
+  - doi-to-identifiers
 label: pysradb_doi-to-identifiers
 doc: "Convert DOI(s) to SRA/GEO identifiers.\n\nTool homepage: https://github.com/saketkc/pysradb"
 inputs:
@@ -12,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: saveto_path
-    type: string
+    type: string?
     doc: Save metadata dataframe to file
     inputBinding:
       position: 101

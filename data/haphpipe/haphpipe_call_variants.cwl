@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe call_variants
+baseCommand:
+  - haphpipe
+  - call_variants
 label: haphpipe_call_variants
 doc: "Call variants using HaplotypeCaller.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -61,7 +63,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

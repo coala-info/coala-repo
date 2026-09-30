@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: enasearch retrieve_analysis_report
+baseCommand:
+  - enasearch
+  - retrieve_analysis_report
 label: enasearch_retrieve_analysis_report
 doc: "Retrieve analysis report from ENA.\n\nThe output can be redirected to a file
   and directly display to the\nstandard output given the display chosen.\n\nTool homepage:
@@ -25,9 +27,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fields
+      itemSeparator: ','
   - id: file_path
     type: string
-    doc: Output or path parameter `file_path`
+    doc: File to save the report
     inputBinding:
       position: 102
       prefix: --file

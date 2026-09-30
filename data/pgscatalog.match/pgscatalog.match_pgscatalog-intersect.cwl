@@ -33,7 +33,7 @@ inputs:
       position: 101
       prefix: --maf_target
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem data
+baseCommand:
+  - singlem
+  - data
 label: singlem_data
 doc: "Download reference metapackage data\n\nTool homepage: https://github.com/wwood/singlem"
 inputs:
@@ -29,7 +31,7 @@ inputs:
       position: 101
       prefix: --full-help-roff
   - id: output_directory
-    type: Directory
+    type: string?
     doc: Output directory [required unless SINGLEM_METAPACKAGE_PATH is 
       specified]
     inputBinding:

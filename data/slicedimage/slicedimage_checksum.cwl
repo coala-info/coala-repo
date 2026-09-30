@@ -12,6 +12,11 @@ inputs:
     doc: URL for the source partition file
     inputBinding:
       position: 1
+  - id: out_path
+    type: string
+    doc: Path to write partition file with checksums
+    inputBinding:
+      position: 2
   - id: pretty
     type:
       - 'null'
@@ -21,11 +26,11 @@ inputs:
       position: 102
       prefix: --pretty
 outputs:
-  - id: out_path
+  - id: out_out_path
     type: File
     doc: Path to write partition file with checksums
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slicedimage:3.1.2--py_0

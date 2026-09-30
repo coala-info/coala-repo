@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl_block
+baseCommand:
+  - gretl
+  - block
 label: gretl_block
 doc: "Statistics on pangenome blocks\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:
@@ -76,7 +78,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file name
     inputBinding:
       position: 102
       prefix: --output

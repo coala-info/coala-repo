@@ -11,6 +11,7 @@ inputs:
     doc: allow variants in the same sample to be merged
     inputBinding:
       position: 101
+      prefix: --allow_intrasample
   - id: bam_list
     type:
       - 'null'
@@ -26,6 +27,7 @@ inputs:
       threshold of each variant
     inputBinding:
       position: 101
+      prefix: --centroid_merging
   - id: chr_norm_file
     type:
       - 'null'
@@ -41,6 +43,7 @@ inputs:
     doc: require every group to have each pair within in it be mergeable
     inputBinding:
       position: 101
+      prefix: --clique_merging
   - id: comma_filelist
     type:
       - 'null'
@@ -48,6 +51,7 @@ inputs:
     doc: input VCFs are given comma-separated instead of providing a txt file
     inputBinding:
       position: 101
+      prefix: --comma_filelist
   - id: default_zero_genotype
     type:
       - 'null'
@@ -56,6 +60,7 @@ inputs:
       variant is absent
     inputBinding:
       position: 101
+      prefix: --default_zero_genotype
   - id: dup_to_ins
     type:
       - 'null'
@@ -64,6 +69,7 @@ inputs:
       back
     inputBinding:
       position: 101
+      prefix: --dup_to_ins
   - id: file_list
     type: File
     doc: a file listing paths to unzipped VCF files to merge (on separate lines)
@@ -84,6 +90,7 @@ inputs:
       the inputs
     inputBinding:
       position: 101
+      prefix: --ignore_merged_inputs
   - id: ignore_strand
     type:
       - 'null'
@@ -91,6 +98,7 @@ inputs:
     doc: allow variants with different strands to be merged
     inputBinding:
       position: 101
+      prefix: --ignore_strand
   - id: ignore_type
     type:
       - 'null'
@@ -98,6 +106,7 @@ inputs:
     doc: allow variants with different types to be merged
     inputBinding:
       position: 101
+      prefix: --ignore_type
   - id: iris_args
     type:
       - 'null'
@@ -128,6 +137,7 @@ inputs:
       across samples)
     inputBinding:
       position: 101
+      prefix: --keep_var_ids
   - id: leave_breakpoints
     type:
       - 'null'
@@ -135,6 +145,7 @@ inputs:
     doc: leave breakpoints as they are even if they are inconsistent
     inputBinding:
       position: 101
+      prefix: --leave_breakpoints
   - id: mark_specific
     type:
       - 'null'
@@ -143,6 +154,7 @@ inputs:
       specific
     inputBinding:
       position: 101
+      prefix: --mark_specific
   - id: max_dist
     type:
       - 'null'
@@ -202,6 +214,7 @@ inputs:
       thresholds
     inputBinding:
       position: 101
+      prefix: --non_mutual_distance
   - id: nonlinear_dist
     type:
       - 'null'
@@ -210,6 +223,7 @@ inputs:
       instead
     inputBinding:
       position: 101
+      prefix: --nonlinear_dist
   - id: normalize_chrs
     type:
       - 'null'
@@ -218,6 +232,7 @@ inputs:
       default)
     inputBinding:
       position: 101
+      prefix: --normalize_chrs
   - id: normalize_type
     type:
       - 'null'
@@ -225,6 +240,7 @@ inputs:
     doc: convert all variants to INS/DEL/DUP/INV/TRA
     inputBinding:
       position: 101
+      prefix: --normalize_type
   - id: out_dir
     type:
       - 'null'
@@ -240,6 +256,7 @@ inputs:
       they came from
     inputBinding:
       position: 101
+      prefix: --output_genotypes
   - id: postprocess_only
     type:
       - 'null'
@@ -248,6 +265,7 @@ inputs:
       pre-processing
     inputBinding:
       position: 101
+      prefix: --postprocess_only
   - id: pre_normalize
     type:
       - 'null'
@@ -255,6 +273,7 @@ inputs:
     doc: run type normalization before merging
     inputBinding:
       position: 101
+      prefix: --pre_normalize
   - id: preprocess_only
     type:
       - 'null'
@@ -263,6 +282,7 @@ inputs:
       post-processing
     inputBinding:
       position: 101
+      prefix: --preprocess_only
   - id: require_first_sample
     type:
       - 'null'
@@ -271,6 +291,7 @@ inputs:
       sample
     inputBinding:
       position: 101
+      prefix: --require_first_sample
   - id: run_iris
     type:
       - 'null'
@@ -278,6 +299,7 @@ inputs:
     doc: run Iris before merging for refining the sequences of insertions
     inputBinding:
       position: 101
+      prefix: --run_iris
   - id: sample_dists
     type:
       - 'null'
@@ -322,6 +344,7 @@ inputs:
     doc: use edit distance for comparing insertion sequences instead of Jaccard
     inputBinding:
       position: 101
+      prefix: --use_edit_dist
   - id: use_end
     type:
       - 'null'
@@ -330,6 +353,7 @@ inputs:
       length
     inputBinding:
       position: 101
+      prefix: --use_end
   - id: out_file_path
     type: string
     doc: Output or path parameter `out_file_path`

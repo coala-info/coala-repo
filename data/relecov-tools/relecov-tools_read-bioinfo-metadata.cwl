@@ -25,7 +25,7 @@ inputs:
   - id: json_schema_file
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the JSON Schema file used for validation
     inputBinding:
       position: 101
@@ -56,10 +56,9 @@ inputs:
       prefix: --update
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

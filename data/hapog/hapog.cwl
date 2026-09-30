@@ -69,19 +69,23 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --pe1
+          separate: true
     doc: Fastq.gz paired-end file (pair 1, can be given multiple times)
     inputBinding:
       position: 101
-      prefix: --pe1
   - id: pe2
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --pe2
+          separate: true
     doc: Fastq.gz paired-end file (pair 2, can be given multiple times)
     inputBinding:
       position: 101
-      prefix: --pe2
   - id: samtools_mem
     type:
       - 'null'
@@ -99,11 +103,11 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    type: string?
+    doc: ' Output directory name'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type:

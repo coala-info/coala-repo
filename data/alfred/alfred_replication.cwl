@@ -34,9 +34,9 @@ inputs:
       prefix: --qual
   - id: reference
     type: File
+    doc: reference fasta file (required)
     secondaryFiles:
       - .fai
-    doc: reference fasta file (required)
     inputBinding:
       position: 104
       prefix: --reference
@@ -58,16 +58,18 @@ inputs:
       prefix: --window
   - id: outprefix_path
     type: string
-    doc: Output or path parameter `outprefix_path`
+    doc: output file prefix
     inputBinding:
       position: 105
       prefix: --outprefix
 outputs:
   - id: outprefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.outprefix_path)
+      glob: $(inputs.outprefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

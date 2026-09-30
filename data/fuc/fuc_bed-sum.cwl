@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc_bed-sum
+baseCommand:
+  - fuc
+  - bed-sum
 label: fuc_bed-sum
 doc: "Summarize a BED file.\n\nThis command will compute various summary statistics
   for a BED file. The\nreturned statistics include the total numbers of probes and

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq groupdedup
+baseCommand:
+  - isoseq
+  - groupdedup
 label: isoseq_groupdedup
 doc: "Deduplicate PCR artifacts grouped by cell barcode (barcode-sorted FLTNC to DEDUP)\n\
   \nTool homepage: https://github.com/PacificBiosciences/pbbioconda"

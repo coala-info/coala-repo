@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mlstdb_fetch
+baseCommand:
+  - mlstdb
+  - fetch
 label: mlstdb_fetch
 doc: "This tool downloads MLST scheme information from BIGSdb databases. It will automatically
   handle authentication and save the results.\n\nTool homepage: https://github.com/himal2007/mlstdb"

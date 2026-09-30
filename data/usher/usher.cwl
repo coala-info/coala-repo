@@ -78,7 +78,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory to dump output and log files
     inputBinding:
       position: 101
@@ -189,7 +189,6 @@ inputs:
       prefix: --write-uncondensed-final-tree
   - id: save_mutation_annotated_tree_path
     type: string
-    doc: Output or path parameter `save_mutation_annotated_tree_path`
     inputBinding:
       position: 102
       prefix: --save-mutation-annotated-tree

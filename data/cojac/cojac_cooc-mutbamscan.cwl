@@ -221,14 +221,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --json
-  - id: out_amplicons_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_amplicons_path`
-    inputBinding:
-      position: 103
-      prefix: --out-amplicons
   - id: out_amplicons_yaml_path
     type:
       - 'null'
@@ -237,14 +229,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: --out-amplicons-yaml
-  - id: tsv_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `tsv_path`
-    inputBinding:
-      position: 105
-      prefix: --tsv
   - id: yaml_path
     type:
       - 'null'
@@ -253,6 +237,21 @@ inputs:
     inputBinding:
       position: 106
       prefix: --yaml
+  - id: out_amplicons_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --out-amplicons
+  - id: tsv_path
+    type:
+      - 'null'
+      - string
+    doc: output results to a (raw) tsv file
+    inputBinding:
+      position: 108
+      prefix: --tsv
 outputs:
   - id: out_amplicons
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cramtools cram
+baseCommand:
+  - cramtools
+  - cram
 label: cramtools_cram
 doc: "CRAM compression tool for converting BAM/SAM to CRAM\n\nTool homepage: https://github.com/enasequence/cramtools"
 inputs:
@@ -122,7 +124,7 @@ inputs:
       prefix: --reference-fasta-file
   - id: output_cram_file_path
     type: string
-    doc: Output or path parameter `output_cram_file_path`
+    doc: The path for the output CRAM file. Omit if standard output (pipe).
     inputBinding:
       position: 102
       prefix: --output-cram-file

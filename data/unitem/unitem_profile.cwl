@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unitem profile
+baseCommand:
+  - unitem
+  - profile
 label: unitem_profile
 doc: "Identify marker genes and calculate assembly statistics.\n\nTool homepage: https://github.com/dparks1134/UniteM"
 inputs:
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 1

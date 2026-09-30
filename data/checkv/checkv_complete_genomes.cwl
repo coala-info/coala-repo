@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: checkv_complete_genomes
+baseCommand:
+  - checkv
+  - complete_genomes
 label: checkv_complete_genomes
 doc: "Identify complete genomes based on terminal repeats and flanking host regions\n\
   \nTool homepage: https://bitbucket.org/berkeleylab/checkv"
@@ -11,6 +13,11 @@ inputs:
       supported)
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 2
   - id: kmer_max_freq
     type:
       - 'null'
@@ -63,11 +70,11 @@ inputs:
       position: 102
       prefix: --tr_min_len
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkv:1.0.3--pyhdfd78af_0

@@ -32,7 +32,7 @@ inputs:
       position: 101
       prefix: --build
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory to store downloaded files
     inputBinding:
       position: 101

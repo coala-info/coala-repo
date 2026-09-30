@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python3 Aquila_step2
+baseCommand:
+  - python3
+  - Aquila_step2
 label: aquila_Aquila_step2
 doc: "Aquila_step2\n\nTool homepage: https://github.com/maiziex/Aquila"
 inputs:
@@ -46,7 +48,7 @@ inputs:
       position: 101
       prefix: --num_threads_spades
   - id: out_dir
-    type: Directory
+    type: string
     doc: Directory to store assembly results
     inputBinding:
       position: 101

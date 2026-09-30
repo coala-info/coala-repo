@@ -14,6 +14,11 @@ inputs:
     doc: The path to the file to convert.
     inputBinding:
       position: 1
+  - id: output_file
+    type: string?
+    doc: The path where the result will be stored.
+    inputBinding:
+      position: 2
   - id: allow_indirect_conversion
     type:
       - 'null'
@@ -156,13 +161,13 @@ inputs:
       position: 102
       prefix: --verbosity
 outputs:
-  - id: output_file
+  - id: out_output_file
     type:
       - 'null'
       - File
     doc: The path where the result will be stored.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3

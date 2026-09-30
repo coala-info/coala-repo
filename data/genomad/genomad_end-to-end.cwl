@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomad end-to-end
+baseCommand:
+  - genomad
+  - end-to-end
 label: genomad_end-to-end
 doc: "Takes an INPUT file (FASTA format) and executes all modules of the geNomad pipeline
   for plasmid and virus identification. Output files are written in the OUTPUT directory.
@@ -14,11 +16,16 @@ inputs:
     doc: INPUT file (FASTA format)
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: OUTPUT directory
+    inputBinding:
+      position: 2
   - id: database
     type: Directory
     doc: Local copy of geNomad's database (DATABASE directory)
     inputBinding:
-      position: 2
+      position: 3
   - id: cleanup
     type:
       - 'null'
@@ -26,6 +33,7 @@ inputs:
     doc: Delete intermediate files after execution.
     inputBinding:
       position: 103
+      prefix: --cleanup
   - id: composition
     type:
       - 'null'
@@ -33,6 +41,7 @@ inputs:
     doc: Method for estimating sample composition. (auto|metagenome|virome)
     inputBinding:
       position: 103
+      prefix: --composition
   - id: conservative
     type:
       - 'null'
@@ -43,6 +52,7 @@ inputs:
       containing only sequences whose classification is strongly supported.
     inputBinding:
       position: 103
+      prefix: --conservative
   - id: disable_find_proviruses
     type:
       - 'null'
@@ -50,6 +60,7 @@ inputs:
     doc: Skip the execution of the find-proviruses module.
     inputBinding:
       position: 103
+      prefix: --disable-find-proviruses
   - id: disable_nn_classification
     type:
       - 'null'
@@ -58,6 +69,7 @@ inputs:
       aggregated-classification modules.
     inputBinding:
       position: 103
+      prefix: --disable-nn-classification
   - id: enable_score_calibration
     type:
       - 'null'
@@ -65,6 +77,7 @@ inputs:
     doc: Execute the score-calibration module.
     inputBinding:
       position: 103
+      prefix: --enable-score-calibration
   - id: force_auto
     type:
       - 'null'
@@ -72,6 +85,7 @@ inputs:
     doc: Force automatic composition estimation regardless of the sample size.
     inputBinding:
       position: 103
+      prefix: --force-auto
   - id: full_ictv_lineage
     type:
       - 'null'
@@ -82,6 +96,7 @@ inputs:
       only shown if --lenient-taxonomy is also used.
     inputBinding:
       position: 103
+      prefix: --full-ictv-lineage
   - id: lenient_taxonomy
     type:
       - 'null'
@@ -91,6 +106,7 @@ inputs:
       ranks are only shown if --full-ictv-lineage is also used.
     inputBinding:
       position: 103
+      prefix: --lenient-taxonomy
   - id: max_fdr
     type:
       - 'null'
@@ -99,6 +115,7 @@ inputs:
       the scores were not calibrated.
     inputBinding:
       position: 103
+      prefix: --max-fdr
   - id: max_uscg
     type:
       - 'null'
@@ -109,6 +126,7 @@ inputs:
       option will be ignored if the annotation module was not executed.
     inputBinding:
       position: 103
+      prefix: --max-uscg
   - id: min_number_genes
     type:
       - 'null'
@@ -117,6 +135,7 @@ inputs:
       classification as a plasmid or virus.
     inputBinding:
       position: 103
+      prefix: --min-number-genes
   - id: min_plasmid_hallmarks
     type:
       - 'null'
@@ -125,6 +144,7 @@ inputs:
       option will be ignored if the annotation module was not executed.
     inputBinding:
       position: 103
+      prefix: --min-plasmid-hallmarks
   - id: min_plasmid_hallmarks_short_seqs
     type:
       - 'null'
@@ -133,6 +153,7 @@ inputs:
       This option will be ignored if the annotation module was not executed.
     inputBinding:
       position: 103
+      prefix: --min-plasmid-hallmarks-short-seqs
   - id: min_plasmid_marker_enrichment
     type:
       - 'null'
@@ -144,6 +165,7 @@ inputs:
       annotation module was not executed.
     inputBinding:
       position: 103
+      prefix: --min-plasmid-marker-enrichment
   - id: min_score
     type:
       - 'null'
@@ -151,6 +173,7 @@ inputs:
     doc: Minimum score to flag a sequence as virus or plasmid.
     inputBinding:
       position: 103
+      prefix: --min-score
   - id: min_virus_hallmarks
     type:
       - 'null'
@@ -159,6 +182,7 @@ inputs:
       option will be ignored if the annotation module was not executed.
     inputBinding:
       position: 103
+      prefix: --min-virus-hallmarks
   - id: min_virus_hallmarks_short_seqs
     type:
       - 'null'
@@ -167,6 +191,7 @@ inputs:
       This option will be ignored if the annotation module was not executed.
     inputBinding:
       position: 103
+      prefix: --min-virus-hallmarks-short-seqs
   - id: min_virus_marker_enrichment
     type:
       - 'null'
@@ -178,6 +203,7 @@ inputs:
       annotation module was not executed.
     inputBinding:
       position: 103
+      prefix: --min-virus-marker-enrichment
   - id: quiet
     type:
       - 'null'
@@ -195,6 +221,7 @@ inputs:
       filters.
     inputBinding:
       position: 103
+      prefix: --relaxed
   - id: restart
     type:
       - 'null'
@@ -202,6 +229,7 @@ inputs:
     doc: Overwrite existing intermediate files.
     inputBinding:
       position: 103
+      prefix: --restart
   - id: sensitivity
     type:
       - 'null'
@@ -218,6 +246,7 @@ inputs:
     doc: Disable provirus boundary extension using nearby integrases.
     inputBinding:
       position: 103
+      prefix: --skip-integrase-identification
   - id: skip_trna_identification
     type:
       - 'null'
@@ -225,6 +254,7 @@ inputs:
     doc: Disable provirus boundary extension using nearby tRNAs.
     inputBinding:
       position: 103
+      prefix: --skip-trna-identification
   - id: splits
     type:
       - 'null'
@@ -234,6 +264,7 @@ inputs:
       try to increase the number of splits.
     inputBinding:
       position: 103
+      prefix: --splits
   - id: threads
     type:
       - 'null'
@@ -251,11 +282,11 @@ inputs:
       position: 103
       prefix: -v
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: OUTPUT directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0

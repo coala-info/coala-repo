@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mageck pathway
+baseCommand:
+  - mageck
+  - pathway
 label: mageck_pathway
 doc: "Pathway enrichment analysis.\n\nTool homepage: http://mageck.sourceforge.net"
 inputs:

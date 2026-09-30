@@ -78,7 +78,7 @@ inputs:
   - id: plot_output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for output plot
     inputBinding:
       position: 101
@@ -102,7 +102,7 @@ inputs:
   - id: snp_output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for SNP output
     inputBinding:
       position: 101

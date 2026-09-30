@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kfilt build
+baseCommand:
+  - kfilt
+  - build
 label: kfilt_build
 doc: "Build a fast hybrid index (Bloom filter + hash table + BK-tree) for efficient
   k-mer matching\n\nTool homepage: https://github.com/davidebolo1993/kfilt"
@@ -23,10 +25,10 @@ inputs:
       prefix: --kmers
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output index file (default "kfilt.idx")
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

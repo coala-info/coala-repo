@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pycistarget dem
+baseCommand:
+  - pycistarget
+  - dem
 label: pycistarget_dem
 doc: "dem\n\nTool homepage: https://github.com/aertslab/pycistarget"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Path(s) to bed file(s) to use as background regions.
     inputBinding:
       position: 1
+      prefix: --background_beds
   - id: foreground_beds
     type:
       type: array
@@ -18,6 +21,7 @@ inputs:
     doc: Path(s) to bed file(s) to use as foreground regions.
     inputBinding:
       position: 2
+      prefix: --foreground_beds
   - id: adjpval_thr
     type:
       - 'null'
@@ -47,6 +51,7 @@ inputs:
     doc: "Which annotations to use for annotation motifs to TFs.\n               \
       \         Defaults to: Direct_annot Motif_similarity_annot\n               \
       \         Orthology_annot"
+    default:
       - Direct_annot
       - Motif_similarity_annot
       - Orthology_annot
@@ -212,12 +217,19 @@ inputs:
     inputBinding:
       position: 103
       prefix: --write_html
+  - id: output_folder_path
+    type: string
+    inputBinding:
+      position: 104
+      prefix: --output_folder
 outputs:
   - id: output_folder
     type: Directory
     doc: Path to the folder in which to write results.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycistarget:1.1--pyhdfd78af_0

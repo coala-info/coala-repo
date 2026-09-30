@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini gene_wise
+baseCommand:
+  - gemini
+  - gene_wise
 label: gemini_gene_wise
 doc: "Perform gene-wise analysis on a GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

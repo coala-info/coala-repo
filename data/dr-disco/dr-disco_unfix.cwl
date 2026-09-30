@@ -11,20 +11,25 @@ inputs:
     doc: Input alignment file
     inputBinding:
       position: 1
+  - id: output_alignment_file
+    type: string
+    doc: Output alignment file
+    inputBinding:
+      position: 2
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path in which temp files are stored
     inputBinding:
       position: 102
       prefix: --temp-dir
 outputs:
-  - id: output_alignment_file
+  - id: out_output_alignment_file
     type: File
     doc: Output alignment file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_alignment_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0

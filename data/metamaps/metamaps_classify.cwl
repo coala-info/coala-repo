@@ -11,7 +11,7 @@ inputs:
       position: 101
       prefix: --DB
   - id: mappings
-    type: string
+    type: File
     doc: Path to mappings file
     inputBinding:
       position: 101

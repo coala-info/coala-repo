@@ -7,7 +7,7 @@ doc: "Oncofuse.jar is a tool for analyzing fusion genes. It takes an input file,
   https://github.com/mikessh/oncofuse"
 inputs:
   - id: input_file
-    type: string
+    type: File
     doc: Input file for analysis
     inputBinding:
       position: 1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Rscript batch_correction_docker_wrapper.R
+baseCommand:
+  - Rscript
+  - batch_correction_docker_wrapper.R
 label: batchcorrection_batch_correction_wrapper.r
 doc: "Wrapper script for batch correction, can delegate to different underlying scripts
   based on options.\n\nTool homepage: https://github.com/carpenter-singh-lab/2023_Arevalo_NatComm_BatchCorrection"

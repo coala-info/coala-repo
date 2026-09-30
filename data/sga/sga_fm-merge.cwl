@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga fm-merge
+baseCommand:
+  - sga
+  - fm-merge
 label: sga_fm-merge
 doc: "Merge unambiguously sequences from the READSFILE using the FM-index. This program
   requires filter to be run before it and rmdup to be run after.\n\nTool homepage:
@@ -45,7 +47,7 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: 'write the merged sequences to FILE (default: basename.merged.fa)'
     inputBinding:
       position: 103
       prefix: --outfile

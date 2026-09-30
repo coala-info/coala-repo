@@ -25,7 +25,7 @@ inputs:
       prefix: --symetric
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: -o fname for a dump in fname.bson
     inputBinding:
       position: 103
       prefix: --output

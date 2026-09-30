@@ -11,12 +11,17 @@ inputs:
     doc: Input .bfq file
     inputBinding:
       position: 1
+  - id: out_fastq
+    type: string
+    doc: Output .fastq file
+    inputBinding:
+      position: 2
 outputs:
   - id: output_fastq
     type: File
     doc: Output .fastq file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_fastq)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1

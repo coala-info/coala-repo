@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vclust_align
+baseCommand:
+  - vclust
+  - align
 label: vclust_align
 doc: "Align genome pairs\n\nTool homepage: https://github.com/refresh-bio/vclust"
 inputs:
@@ -154,22 +156,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
-  - id: out_aln_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_aln_path`
-    inputBinding:
-      position: 102
-      prefix: --out-aln
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output filename
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
+  - id: out_aln_path
+    type:
+      - 'null'
+      - string
+    doc: Write alignments to the tsv <file>
+    inputBinding:
+      position: 104
+      prefix: --out-aln
 outputs:
   - id: output_file
     type: File

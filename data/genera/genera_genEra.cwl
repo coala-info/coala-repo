@@ -261,7 +261,7 @@ inputs:
   - id: temporary_files_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Alternative path where you would like to store the temporary files as well
       as the DIAMOND/Foldseek results (warning: genEra will generate HUGE temporary
       files) (default: the files will be stored in a tmp_[RAMDOMNUM]/ directory created

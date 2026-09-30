@@ -174,9 +174,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference sequence file.
     secondaryFiles:
       - .fai
-    doc: Reference sequence file.
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -258,26 +258,28 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output BAM file with cell barcodes collapsed.  Default value: null.'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --OUTPUT
   - id: output_report_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_report_path`
+    doc: Output report detailing which barcodes were merged, and what the 
+      position of the
     inputBinding:
       position: 103
-      prefix: --output-report
+      prefix: --OUTPUT_REPORT
   - id: output_summary_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_summary_path`
+    doc: Output the number of substitutions found at each base, from intended 
+      sequence to neighbor
     inputBinding:
       position: 104
-      prefix: --output-summary
+      prefix: --OUTPUT_SUMMARY
 outputs:
   - id: output_file
     type:

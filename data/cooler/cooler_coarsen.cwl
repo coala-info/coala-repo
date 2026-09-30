@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler coarsen
+baseCommand:
+  - cooler
+  - coarsen
 label: cooler_coarsen
 doc: "Coarsen a cooler to a lower resolution.\n\nWorks by pooling *k*-by-*k* neighborhoods
   of pixels and aggregating. Each\nchromosomal block is coarsened individually.\n\n\
@@ -62,7 +64,7 @@ inputs:
       prefix: --nproc
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output file or URI  [required]
     inputBinding:
       position: 103
       prefix: --out

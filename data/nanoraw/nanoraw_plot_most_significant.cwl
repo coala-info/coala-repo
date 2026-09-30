@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw plot_most_significant
+baseCommand:
+  - nanoraw
+  - plot_most_significant
 label: nanoraw_plot_most_significant
 doc: "Plot regions with significant differences in signal level between two sets of
   FAST5 files.\n\nTool homepage: https://github.com/marcus1487/nanoraw"
@@ -12,6 +14,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: fast5_basedirs2
     type:
       type: array
@@ -19,6 +22,7 @@ inputs:
     doc: Second set of directories containing fast5 files to compare.
     inputBinding:
       position: 2
+      prefix: --fast5-basedirs2
   - id: basecall_subgroups
     type:
       - 'null'

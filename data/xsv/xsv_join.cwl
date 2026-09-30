@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_join
+baseCommand:
+  - xsv
+  - join
 label: xsv_join
 doc: "Joins two sets of CSV data on the specified columns.\n\nTool homepage: https://github.com/BurntSushi/xsv"
 inputs:
@@ -107,10 +109,10 @@ inputs:
       prefix: --right
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 106
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

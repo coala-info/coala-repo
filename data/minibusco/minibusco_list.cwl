@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minibusco list
+baseCommand:
+  - minibusco
+  - list
 label: minibusco_list
 doc: "List BUSCO lineages\n\nTool homepage: https://github.com/huangnengCSU/minibusco"
 inputs:

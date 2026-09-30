@@ -16,6 +16,7 @@ inputs:
       whether the '--gtf' option is used.
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: reference_name
     type: string
     doc: The name of the reference used. RSEM will generate several 

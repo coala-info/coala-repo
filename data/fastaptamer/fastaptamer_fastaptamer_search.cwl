@@ -17,18 +17,22 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: -i
+        separate: true
     doc: Input file; can be used multiple times. REQUIRED.
     inputBinding:
       position: 101
-      prefix: -i
   - id: patterns
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: -p
+        separate: true
     doc: Sequence pattern to search for; can be used multiple times. REQUIRED.
     inputBinding:
       position: 101
-      prefix: -p
   - id: quiet
     type:
       - 'null'

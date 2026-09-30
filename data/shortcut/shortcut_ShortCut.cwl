@@ -85,18 +85,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: output directory
     inputBinding:
       position: 103
-      prefix: --out
+      prefix: -out
   - id: ssout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ssout_path`
     inputBinding:
       position: 104
-      prefix: --ssout
+      prefix: -ssout
 outputs:
   - id: out
     type:

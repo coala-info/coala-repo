@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgatk dnaseq-to-proteindb
+baseCommand:
+  - pypgatk
+  - dnaseq-to-proteindb
 label: pypgatk_dnaseq-to-proteindb
 doc: "Configuration to perform conversion between ENSEMBL Files\n\nTool homepage:
   http://github.com/bigbio/py-pgatk"
@@ -56,7 +58,7 @@ inputs:
   - id: input_fasta
     type:
       - 'null'
-      - string
+      - File
     doc: Path to sequences fasta
     inputBinding:
       position: 101
@@ -113,10 +115,10 @@ inputs:
       prefix: --translation_table
   - id: output_proteindb_path
     type: string
-    doc: Output or path parameter `output_proteindb_path`
+    doc: Output file name, exits if already exists
     inputBinding:
       position: 102
-      prefix: --output-proteindb
+      prefix: --output_proteindb
 outputs:
   - id: output_proteindb
     type:

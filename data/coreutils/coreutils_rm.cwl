@@ -36,7 +36,8 @@ inputs:
       prompt always'
     inputBinding:
       position: 102
-      prefix: --interactive
+      prefix: --interactive=
+      separate: false
   - id: no_preserve_root
     type:
       - 'null'
@@ -62,7 +63,8 @@ inputs:
       on a separate device from its parent
     inputBinding:
       position: 102
-      prefix: --preserve-root
+      prefix: --preserve-root=
+      separate: false
   - id: prompt_always
     type:
       - 'null'

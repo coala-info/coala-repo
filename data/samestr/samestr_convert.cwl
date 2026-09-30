@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samestr convert
+baseCommand:
+  - samestr
+  - convert
 label: samestr_convert
 doc: "Convert MetaPhlAn or mOTUs marker alignments to a standardized format.\n\nTool
   homepage: https://github.com/danielpodlesny/samestr/"
@@ -87,7 +89,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory.
     inputBinding:
       position: 102
@@ -120,7 +122,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to temporary directory
     inputBinding:
       position: 102

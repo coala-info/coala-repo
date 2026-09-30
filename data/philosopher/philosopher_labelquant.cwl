@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: philosopher labelquant
+baseCommand:
+  - philosopher
+  - labelquant
 label: philosopher_labelquant
 doc: "Quantify isobaric labeling experiments.\n\nTool homepage: https://github.com/Nesvilab/philosopher"
 inputs:

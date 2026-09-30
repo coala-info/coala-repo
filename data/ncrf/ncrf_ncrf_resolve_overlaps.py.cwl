@@ -22,7 +22,7 @@ inputs:
       prefix: --head
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: file to write overlap groups to; see discussion of
     inputBinding:
       position: 103
       prefix: --out

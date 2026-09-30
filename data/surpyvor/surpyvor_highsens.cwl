@@ -13,6 +13,7 @@ inputs:
     doc: vcf files to merge
     inputBinding:
       position: 1
+      prefix: --variants
   - id: distance
     type:
       - 'null'
@@ -39,7 +40,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

@@ -72,10 +72,10 @@ inputs:
       prefix: --trim
   - id: output_alignment_path
     type: string
-    doc: Output or path parameter `output_alignment_path`
+    doc: ': output alignment to file <f>, not stdout'
     inputBinding:
       position: 104
-      prefix: --output-alignment
+      prefix: -o
 outputs:
   - id: output_alignment
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia_merge
+baseCommand:
+  - gia
+  - merge
 label: gia_merge
 doc: "Merges intervals of a BED file with overlapping regions\n\nTool homepage: https://github.com/noamteyssier/gia"
 inputs:
@@ -92,10 +94,10 @@ inputs:
       prefix: --stream
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

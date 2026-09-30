@@ -24,7 +24,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory (overrides config value)
     inputBinding:
       position: 101

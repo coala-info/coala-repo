@@ -56,7 +56,6 @@ inputs:
       prefix: --threads
   - id: out_path_path
     type: string
-    doc: Output or path parameter `out_path_path`
     inputBinding:
       position: 102
       prefix: --out-path

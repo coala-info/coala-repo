@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dicey search
+baseCommand:
+  - dicey
+  - search
 label: dicey_search
 doc: "Generic options:\n\nTool homepage: https://github.com/gear-genomics/dicey"
 inputs:
@@ -161,7 +163,7 @@ inputs:
       prefix: --pruneprimer
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: output file
     inputBinding:
       position: 103
       prefix: --outfile

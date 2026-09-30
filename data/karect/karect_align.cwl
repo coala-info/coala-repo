@@ -20,6 +20,7 @@ inputs:
     doc: a tool to correct assembly reads from fasta/fastq files.
     inputBinding:
       position: 101
+      prefix: -correct
   - id: eval
     type:
       - 'null'

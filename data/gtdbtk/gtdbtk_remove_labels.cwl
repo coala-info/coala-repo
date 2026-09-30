@@ -22,10 +22,9 @@ inputs:
       prefix: --input_tree
   - id: output_tree_path
     type: string
-    doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 102
-      prefix: --output-tree
+      prefix: --output_tree
 outputs:
   - id: output_tree
     type: File

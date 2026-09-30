@@ -14,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: out_dir
-    type: Directory
+    type: string
     doc: path to output directory (WARNING - script will delete directory if it 
       exists)
     inputBinding:

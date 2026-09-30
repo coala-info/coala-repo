@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk validate
+baseCommand:
+  - hictk
+  - validate
 label: hictk_validate
 doc: "Validate .hic and Cooler files.\n\nTool homepage: https://github.com/paulsengroup/hictk"
 inputs:

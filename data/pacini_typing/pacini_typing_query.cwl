@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Pacini-typing query
+baseCommand:
+  - Pacini-typing
+  - query
 label: pacini_typing_query
 doc: "Query the Pacini database with sequencing reads.\n\nTool homepage: https://github.com/RIVM-bioinformatics/Pacini-typing"
 inputs:
@@ -36,10 +38,11 @@ inputs:
       prefix: --single
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'utput, --output Output Output file to store the results. Specify an output
+      file: -o output'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

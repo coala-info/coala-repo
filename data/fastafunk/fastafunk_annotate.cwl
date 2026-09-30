@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk_annotate
+baseCommand:
+  - fastafunk
+  - annotate
 label: fastafunk_annotate
 doc: "Annotates FASTA sequences with metadata based on matching IDs.\n\nTool homepage:
   https://github.com/cov-ert/fastafunk"
@@ -75,7 +77,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_fasta_path`
     inputBinding:
       position: 103
       prefix: --out-fasta
@@ -83,7 +84,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_metadata_path`
     inputBinding:
       position: 104
       prefix: --out-metadata

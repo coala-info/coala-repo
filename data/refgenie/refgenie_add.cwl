@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie_add
+baseCommand:
+  - refgenie
+  - add
 label: refgenie_add
 doc: "Add local asset to the config file.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

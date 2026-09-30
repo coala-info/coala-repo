@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepnog_infer
+baseCommand:
+  - deepnog
+  - infer
 label: deepnog_infer
 doc: "Infer orthologous groups for protein sequences.\n\nTool homepage: https://github.com/univieCUBE/deepnog"
 inputs:
@@ -122,10 +124,10 @@ inputs:
       prefix: --weights
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: Store orthologous group predictions to outputfile. Per
     inputBinding:
       position: 103
-      prefix: --out-file
+      prefix: --out
 outputs:
   - id: out_file
     type:

@@ -219,11 +219,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --p0
+          separate: true
     doc: 'Set initial population of state <int> to <double>. Can be given multiple
       times. (NOTE: sum of <double> must equal 1)'
     inputBinding:
       position: 102
-      prefix: --p0
   - id: quiet
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hint cnv
+baseCommand:
+  - hint
+  - cnv
 label: hint_cnv
 doc: "prediction of copy number information, as well as segmentation from Hi-C.\n\n\
   Tool homepage: https://github.com/suwangbio/HiNT_py3"
@@ -75,7 +77,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output directory, where you want to store all the output 
       files, if not set, the current directory will be used
     inputBinding:

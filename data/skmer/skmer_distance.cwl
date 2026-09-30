@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: skmer_distance
+baseCommand:
+  - skmer
+  - distance
 label: skmer_distance
 doc: "Compute the distance matrix for a processed library\n\nTool homepage: https://github.com/shahab-sarmashghi/Skmer"
 inputs:

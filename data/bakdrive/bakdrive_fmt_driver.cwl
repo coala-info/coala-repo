@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bakdrive_fmt_driver
+baseCommand:
+  - bakdrive
+  - fmt_driver
 label: bakdrive_fmt_driver
 doc: "Format driver species and their interactions for metabolic modeling.\n\nTool
   homepage: https://gitlab.com/treangenlab/bakdrive"
@@ -60,7 +62,6 @@ inputs:
       prefix: --strength
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

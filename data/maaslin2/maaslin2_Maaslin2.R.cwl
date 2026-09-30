@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_folder
-    type: Directory
+    type: string
     doc: Output folder for results.
     inputBinding:
       position: 3
@@ -113,7 +113,7 @@ inputs:
   - id: plot_heatmap
     type:
       - 'null'
-      - boolean
+      - string
     doc: Generate a heatmap for the significant associations
     inputBinding:
       position: 104
@@ -121,7 +121,7 @@ inputs:
   - id: plot_scatter
     type:
       - 'null'
-      - boolean
+      - string
     doc: Generate scatter plots for the significant associations
     inputBinding:
       position: 104
@@ -147,7 +147,7 @@ inputs:
   - id: save_models
     type:
       - 'null'
-      - boolean
+      - string
     doc: Return the full model outputs and save to an RData file
     inputBinding:
       position: 104
@@ -155,7 +155,7 @@ inputs:
   - id: save_scatter
     type:
       - 'null'
-      - boolean
+      - string
     doc: Save all scatter plot ggplot objects to an RData file
     inputBinding:
       position: 104
@@ -163,7 +163,7 @@ inputs:
   - id: standardize
     type:
       - 'null'
-      - boolean
+      - string
     doc: Apply z-score so continuous metadata are on the same scale
     inputBinding:
       position: 104

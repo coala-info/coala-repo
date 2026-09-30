@@ -22,6 +22,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --methdata
+      itemSeparator: ','
   - id: modname
     type:
       - 'null'

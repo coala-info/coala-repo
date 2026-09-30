@@ -1,6 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -cp readseq.jar run
+baseCommand:
+  - java
+  - -cp
+  - readseq.jar
+  - run
 label: readseq
 doc: "Read & reformat biosequences, Java command-line version\n\nTool homepage: http://iubio.bio.indiana.edu/soft/molbio/readseq/java/"
 inputs:
@@ -67,7 +71,8 @@ inputs:
       (flags=nodoc,noid,nolen,nocrc)
     inputBinding:
       position: 102
-      prefix: -compare
+      prefix: -compare=
+      separate: false
   - id: degap
     type:
       - 'null'
@@ -75,7 +80,8 @@ inputs:
     doc: remove gap symbols
     inputBinding:
       position: 102
-      prefix: -degap
+      prefix: -degap=
+      separate: false
   - id: extract_features
     type:
       - 'null'
@@ -91,7 +97,8 @@ inputs:
     doc: extract all features, sequence from given base range
     inputBinding:
       position: 102
-      prefix: -extract
+      prefix: -extract=
+      separate: false
   - id: gap_count
     type:
       - 'null'
@@ -107,7 +114,8 @@ inputs:
     doc: include selected document fields in output
     inputBinding:
       position: 102
-      prefix: -field
+      prefix: -field=
+      separate: false
   - id: indent_tab
     type:
       - 'null'
@@ -115,7 +123,8 @@ inputs:
     doc: left indent
     inputBinding:
       position: 102
-      prefix: -tab
+      prefix: -tab=
+      separate: false
   - id: input_format
     type:
       - 'null'
@@ -156,7 +165,8 @@ inputs:
     doc: use match base for 2..n species
     inputBinding:
       position: 102
-      prefix: -match
+      prefix: -match=
+      separate: false
   - id: name_left
     type:
       - 'null'
@@ -172,7 +182,8 @@ inputs:
     doc: name on right side [=max width]
     inputBinding:
       position: 102
-      prefix: -nameright
+      prefix: -nameright=
+      separate: false
   - id: name_top
     type:
       - 'null'
@@ -228,7 +239,8 @@ inputs:
     doc: combine features (fff,gff) and sequence files to one output
     inputBinding:
       position: 102
-      prefix: -pair
+      prefix: -pair=
+      separate: false
   - id: pipe
     type:
       - 'null'
@@ -252,7 +264,8 @@ inputs:
     doc: remove selected document fields from output
     inputBinding:
       position: 102
-      prefix: -nofield
+      prefix: -nofield=
+      separate: false
   - id: reverse_complement
     type:
       - 'null'
@@ -276,7 +289,8 @@ inputs:
     doc: extract subrange of sequence for feature locations
     inputBinding:
       position: 102
-      prefix: -subrange
+      prefix: -subrange=
+      separate: false
   - id: translate
     type:
       - 'null'
@@ -292,7 +306,8 @@ inputs:
     doc: split features,sequence from one input to two files
     inputBinding:
       position: 102
-      prefix: -unpair
+      prefix: -unpair=
+      separate: false
   - id: verbose
     type:
       - 'null'

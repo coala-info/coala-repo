@@ -35,7 +35,7 @@ inputs:
     position: 104
     prefix: --output-type
 - id: temp_dir
-  type: Directory?
+  type: string?
   doc: Temporary files
   inputBinding:
     position: 105
@@ -45,7 +45,8 @@ inputs:
   doc: Automatically index the output files
   inputBinding:
     position: 106
-    prefix: --write-index
+    prefix: --write-index=
+    separate: false
 outputs:
 - id: output_output_file
   type: File

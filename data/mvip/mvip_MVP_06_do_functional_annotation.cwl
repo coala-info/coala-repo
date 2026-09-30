@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip MVP_06_do_functional_annotation
+baseCommand:
+  - mvip
+  - MVP_06_do_functional_annotation
 label: mvip_MVP_06_do_functional_annotation
 doc: "Functional annotation of protein sequences against multiple databases.\n\nTool
   homepage: https://gitlab.com/ccoclet/mvp"
@@ -36,6 +38,7 @@ inputs:
     doc: flag to delete unwanted files
     inputBinding:
       position: 101
+      prefix: --delete_files
   - id: dram
     type:
       - 'null'
@@ -52,6 +55,7 @@ inputs:
       use for functional annotation.
     inputBinding:
       position: 101
+      prefix: --fasta_files
   - id: force_ads
     type:
       - 'null'

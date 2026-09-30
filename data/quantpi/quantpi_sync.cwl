@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: quantpi_sync
+baseCommand:
+  - quantpi
+  - sync
 label: quantpi_sync
 doc: "Sync project data to a directory.\n\nTool homepage: https://github.com/ohmeta/quantpi"
 inputs:
@@ -58,7 +60,7 @@ inputs:
       prefix: --workdir
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: sync to a directory
     inputBinding:
       position: 104
       prefix: --outdir

@@ -109,7 +109,6 @@ inputs:
       prefix: --trace
   - id: sample_output_directory_path
     type: string
-    doc: Output or path parameter `sample_output_directory_path`
     inputBinding:
       position: 102
       prefix: --sample-output-directory

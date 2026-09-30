@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bpipe_checks
+baseCommand:
+  - bpipe
+  - checks
 label: bpipe_checks
 doc: "Check Report\n\nTool homepage: http://docs.bpipe.org/"
 inputs:

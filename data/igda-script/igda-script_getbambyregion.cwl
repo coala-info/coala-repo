@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igda-script_getbambyregion
+baseCommand: getbambyregion
 label: igda-script_getbambyregion
 doc: "Extract BAM alignments within a specified genomic region.\n\nTool homepage:
   https://github.com/zhixingfeng/shell"

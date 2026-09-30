@@ -5,7 +5,7 @@ label: digestiflow-demux
 doc: "Run demultiplexing for Digestiflow\n\nTool homepage: https://github.com/bihealth/digestiflow-demux"
 inputs:
   - id: out_dir
-    type: Directory
+    type: string
     doc: Path to output directory
     inputBinding:
       position: 1
@@ -188,7 +188,7 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory (instead of using temporary one)
     inputBinding:
       position: 103

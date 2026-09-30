@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plassembler assembled
+baseCommand:
+  - plassembler
+  - assembled
 label: plassembler_assembled
 doc: "Runs assembled mode\n\nTool homepage: https://github.com/gbouras13/plassembler"
 inputs:
@@ -99,7 +101,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write the output to.
     inputBinding:
       position: 101

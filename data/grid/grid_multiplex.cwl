@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grid multiplex
+baseCommand:
+  - grid
+  - multiplex
 label: grid_multiplex
 doc: "Multiplexing tool for grid data.\n\nTool homepage: https://github.com/ohlab/GRiD"
 inputs:
@@ -35,7 +37,7 @@ inputs:
       position: 101
       prefix: -m
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

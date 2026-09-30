@@ -89,7 +89,7 @@ inputs:
   - id: results_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Results directory
     inputBinding:
       position: 102

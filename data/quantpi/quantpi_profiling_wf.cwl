@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: quantpi_profiling_wf
+baseCommand:
+  - quantpi
+  - profiling_wf
 label: quantpi_profiling_wf
 doc: "Pipeline end point.\n\nTool homepage: https://github.com/ohmeta/quantpi"
 inputs:

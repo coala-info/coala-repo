@@ -33,7 +33,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the unchopped dynamic succinct
     inputBinding:
       position: 102
       prefix: --out

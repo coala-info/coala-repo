@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq tag
+baseCommand:
+  - isoseq
+  - tag
 label: isoseq_tag
 doc: "Remove cell barcodes and UMIs from FL reads and generate tagged FL transcripts
   (FL to FLT)\n\nTool homepage: https://github.com/PacificBiosciences/pbbioconda"

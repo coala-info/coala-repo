@@ -43,7 +43,7 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: 'PATH  Directory to write output [default: ./]                 │'
     inputBinding:
       position: 102
       prefix: --outdir

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi draw
+baseCommand:
+  - odgi
+  - draw
 label: odgi_draw
 doc: "Draw previously-determined 2D layouts of the graph with diverse annotations.\n\
   \nTool homepage: https://github.com/vgteam/odgi"
@@ -133,7 +135,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `png_path`
+    doc: Write a rasterized PNG rendering to
     inputBinding:
       position: 102
       prefix: --png
@@ -141,7 +143,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `svg_path`
+    doc: Write an SVG rendering to this FILE.
     inputBinding:
       position: 103
       prefix: --svg
@@ -149,7 +151,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tsv_path`
+    doc: Write the TSV layout plus displayed
     inputBinding:
       position: 104
       prefix: --tsv

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transcov_preprocess
+baseCommand:
+  - transcov
+  - preprocess
 label: transcov_preprocess
 doc: "Preprocess annotation file for TransCov\n\nTool homepage: https://github.com/hogfeldt/transcov"
 inputs:

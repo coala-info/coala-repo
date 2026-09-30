@@ -7,7 +7,7 @@ inputs:
   - id: analysis_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Working directory for storing temporary results
     inputBinding:
       position: 101
@@ -278,10 +278,9 @@ inputs:
       prefix: --sample_id
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 102
-      prefix: --out-file
+      prefix: --out_file
 outputs:
   - id: out_file
     type: File

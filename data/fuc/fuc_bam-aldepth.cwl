@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc_bam-aldepth
+baseCommand:
+  - fuc
+  - bam-aldepth
 label: fuc_bam-aldepth
 doc: "Count allelic depth from a BAM file.\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:

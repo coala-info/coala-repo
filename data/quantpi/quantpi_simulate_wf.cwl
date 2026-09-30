@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: quantpi simulate_wf
+baseCommand:
+  - quantpi
+  - simulate_wf
 label: quantpi_simulate_wf
 doc: "Pipeline for simulating data with quantpi\n\nTool homepage: https://github.com/ohmeta/quantpi"
 inputs:

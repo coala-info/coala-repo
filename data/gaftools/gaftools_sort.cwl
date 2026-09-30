@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gaftools_sort
+baseCommand:
+  - gaftools
+  - sort
 label: gaftools_sort
 doc: "Sort the GAF alignments using BO and NO tags of the corresponding graph.\n\n\
   Tool homepage: https://github.com/marschall-lab/gaftools"
@@ -27,8 +29,8 @@ inputs:
       position: 103
       prefix: --outind
   - id: outgaf_path
-    type: string
-    doc: Output or path parameter `outgaf_path`
+    type: string?
+    doc: Output GAF (bgzipped if the file ends with .gz). If
     inputBinding:
       position: 104
       prefix: --outgaf

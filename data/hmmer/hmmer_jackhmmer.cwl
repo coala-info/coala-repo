@@ -455,45 +455,44 @@ inputs:
     inputBinding:
       position: 104
       prefix: --alignment-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: ': direct output to file <f>, not stdout'
+    inputBinding:
+      position: 108
+      prefix: -o
   - id: chkali_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `chkali_path`
+    doc: ': save alignment checkpoints to files <f>-<iteration>.sto'
     inputBinding:
-      position: 105
+      position: 109
       prefix: --chkali
   - id: chkhmm_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `chkhmm_path`
+    doc: ': save HMM checkpoints to files <f>-<iteration>.hmm'
     inputBinding:
-      position: 106
+      position: 110
       prefix: --chkhmm
   - id: domtblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `domtblout_path`
     inputBinding:
-      position: 107
+      position: 111
       prefix: --domtblout
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 108
-      prefix: --output-file
   - id: tblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tblout_path`
+    doc: ': save parseable table of per-sequence hits to file <f>'
     inputBinding:
-      position: 109
+      position: 112
       prefix: --tblout
 outputs:
   - id: output_file

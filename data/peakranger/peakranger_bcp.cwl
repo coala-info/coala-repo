@@ -36,6 +36,7 @@ inputs:
     doc: 'the format of the data file, can be one of : bowtie, sam, bam and bed'
     inputBinding:
       position: 101
+      prefix: --format
   - id: gene_annot_file
     type:
       - 'null'
@@ -43,6 +44,7 @@ inputs:
     doc: the gene annotation file
     inputBinding:
       position: 101
+      prefix: --gene_annot_file
   - id: generate_reports
     type:
       - 'null'
@@ -82,12 +84,13 @@ inputs:
     doc: sliding window size
     inputBinding:
       position: 101
+      prefix: --win_size
   - id: output_location_path
     type: string
-    doc: Output or path parameter `output_location_path`
+    doc: the output location
     inputBinding:
       position: 102
-      prefix: --output-location
+      prefix: --output
 outputs:
   - id: output_location
     type:

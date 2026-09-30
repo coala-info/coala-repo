@@ -41,7 +41,7 @@ inputs:
       prefix: --num_aa
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output File
     inputBinding:
       position: 102
       prefix: --output

@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: chrom
-    type: File
+    type: File?
     doc: file or dir of chroms (FASTA format; .fa suffix)
     inputBinding:
       position: 102
@@ -40,11 +40,11 @@ inputs:
       position: 102
       prefix: -verbose
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: 'Name of output file (default: stdout)'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: output_file
     type:

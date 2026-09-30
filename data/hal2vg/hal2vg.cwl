@@ -72,6 +72,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --targetGenomes
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

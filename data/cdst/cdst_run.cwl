@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdst_run
+baseCommand:
+  - cdst
+  - run
 label: cdst_run
 doc: "Run CDS analysis pipeline\n\nTool homepage: https://github.com/l1-mh/CDST"
 inputs:

@@ -100,10 +100,11 @@ inputs:
       prefix: --truncate
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: Output the quasispecies distance or similarity matrix in CSV format in 
+      a file.
     inputBinding:
       position: 104
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

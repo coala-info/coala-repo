@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vg construct
+baseCommand:
+  - vg
+  - construct
 label: vg_construct
 doc: "Construct a variation graph from reference and variant calls or a multiple sequence
   alignment.\n\nTool homepage: https://github.com/vgteam/vg"

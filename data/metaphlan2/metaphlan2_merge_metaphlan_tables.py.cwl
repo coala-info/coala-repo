@@ -13,11 +13,11 @@ inputs:
     inputBinding:
       position: 1
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: output.txt  Name of output file in which joined tables are saved
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

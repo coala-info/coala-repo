@@ -14,7 +14,7 @@ inputs:
       prefix: --input-vcf-path
   - id: output_pedigree_file_path
     type: string
-    doc: Output or path parameter `output_pedigree_file_path`
+    doc: output pedigree file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-pedigree-file

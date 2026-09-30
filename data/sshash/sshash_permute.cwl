@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sshash permute
+baseCommand:
+  - sshash
+  - permute
 label: sshash_permute
 doc: "Permute the order of sequences in a FASTA file.\n\nTool homepage: https://github.com/jermp/sshash"
 inputs:

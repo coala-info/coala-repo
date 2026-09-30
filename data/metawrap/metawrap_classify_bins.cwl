@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metawrap classify_bins
+baseCommand:
+  - metawrap
+  - classify_bins
 label: metawrap_classify_bins
 doc: "Classify bins\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:

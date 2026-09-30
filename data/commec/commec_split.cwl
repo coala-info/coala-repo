@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: commec_split
+baseCommand:
+  - commec
+  - split
 label: commec_split
 doc: "Split a multi-record FASTA file into individual files, one for each record\n\
   \nTool homepage: https://github.com/ibbis-screening/common-mechanism"

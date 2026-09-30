@@ -62,10 +62,10 @@ inputs:
       prefix: --verbose
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
+    doc: Specify the path to a file for storing the phenomizer output.
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

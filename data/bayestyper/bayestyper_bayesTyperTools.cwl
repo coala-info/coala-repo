@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bayestyper_bayesTyperTools
+baseCommand: bayesTyperTools
 label: bayestyper_bayesTyperTools
 doc: "BayesTyperTools (v1.5 )\n\nTool homepage: https://github.com/bioinformatics-centre/BayesTyper"
 inputs:

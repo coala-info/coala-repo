@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg_convert
+baseCommand:
+  - ufcg
+  - convert
 label: ufcg_convert
 doc: "Convert core gene profile into a FASTA file\n\nTool homepage: https://ufcg.steineggerlab.com"
 inputs:

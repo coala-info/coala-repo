@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools qualpos
+baseCommand:
+  - poretools
+  - qualpos
 label: poretools_qualpos
 doc: "Analyze read quality and position in FAST5 files.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

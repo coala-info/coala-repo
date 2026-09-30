@@ -987,7 +987,7 @@ inputs:
   - id: scratch_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: If provided, particle stacks will be copied to this local scratch disk 
       prior to refinement.
     inputBinding:

@@ -54,7 +54,6 @@ inputs:
     doc: "Space-separeted list of chromosomes between apices\n(default: \"chr1 chr2
       chr3 chr4 chr5 chr6 chr7 chr8\nchr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16
       chr17\nchr18 chr19 chr20 chr21 chr22\")"
-      chr14 chr15 chr16 chr17\nchr18 chr19 chr20 chr21 chr22"
     inputBinding:
       position: 101
       prefix: --chromosomes

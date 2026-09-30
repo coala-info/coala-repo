@@ -389,14 +389,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -word_size
-  - id: out_unaligned_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `out_unaligned_path`
-    inputBinding:
-      position: 102
-      prefix: --out-unaligned
   - id: output_file_path
     type:
       - 'null'
@@ -405,6 +397,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output-file
+  - id: out_unaligned_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: -out_unaligned
 outputs:
   - id: output_file
     type:

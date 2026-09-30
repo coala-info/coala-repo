@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr assemble_reads
+baseCommand:
+  - secapr
+  - assemble_reads
 label: secapr_assemble_reads
 doc: "Assemble trimmed Illumina read files (fastq)\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"
 inputs:

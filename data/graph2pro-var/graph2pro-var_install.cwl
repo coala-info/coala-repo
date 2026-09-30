@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: destination
-    type: Directory
+    type: string
     doc: Destination directory
     inputBinding:
       position: 2

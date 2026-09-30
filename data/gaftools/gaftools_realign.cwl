@@ -32,10 +32,11 @@ inputs:
       prefix: --cores
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output GAF file (bgzipped if the file ends with .gz). If omitted, use standard
+      output.'
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

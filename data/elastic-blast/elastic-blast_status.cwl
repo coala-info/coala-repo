@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: elastic-blast status
+baseCommand:
+  - elastic-blast
+  - status
 label: elastic-blast_status
 doc: "Check the status of an ElasticBLAST job.\n\nTool homepage: https://pypi.org/project/elastic-blast/"
 inputs:

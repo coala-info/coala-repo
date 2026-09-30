@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchlib_inverted
+baseCommand:
+  - sketchlib
+  - inverted
 label: sketchlib_inverted
 doc: "Building and querying with inverted indices (.ski)\n\nTool homepage: https://github.com/bacpop/sketchlib.rust"
 inputs:

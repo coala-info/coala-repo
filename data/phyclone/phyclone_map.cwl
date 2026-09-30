@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyclone_map
+baseCommand:
+  - phyclone
+  - map
 label: phyclone_map
 doc: "Build MAP results.\n\nTool homepage: https://github.com/Roth-Lab/PhyClone"
 inputs:

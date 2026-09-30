@@ -77,7 +77,8 @@ inputs:
     doc: seed to use for random shuffle.
     inputBinding:
       position: 102
-      prefix: --seed
+      prefix: --seed=
+      separate: false
   - id: seq
     type:
       - 'null'
@@ -89,7 +90,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: write temporary files here, instead of $TMPDIR, or /tmp
     inputBinding:
       position: 102

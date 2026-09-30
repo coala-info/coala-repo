@@ -68,8 +68,7 @@ inputs:
       position: 104
       prefix: --is_bed
   - id: nfragmentsfile1_path
-    type: string
-    doc: Output or path parameter `nfragmentsfile1_path`
+    type: string?
     inputBinding:
       position: 105
       prefix: --nfragmentsfile1

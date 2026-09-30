@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlociraptor preprocess
+baseCommand:
+  - varlociraptor
+  - preprocess
 label: varlociraptor_preprocess
 doc: "Preprocess variants\n\nTool homepage: https://varlociraptor.github.io"
 inputs:

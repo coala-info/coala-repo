@@ -34,10 +34,10 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output filename for the merged sketch
     inputBinding:
       position: 104
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
     type: File

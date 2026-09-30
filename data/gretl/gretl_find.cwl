@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl find
+baseCommand:
+  - gretl
+  - find
 label: gretl_find
 doc: "Find features in the graph and return a BED file for further analysis\n\nTool
   homepage: https://github.com/moinsebi/gretl"
@@ -26,7 +28,7 @@ inputs:
       prefix: --length
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file
     inputBinding:
       position: 102
       prefix: --output

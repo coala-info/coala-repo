@@ -97,18 +97,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: -- output file path
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
   - id: sweep_output_csv_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sweep_output_csv_path`
+    doc: -- sweep output csv file name
     inputBinding:
       position: 103
-      prefix: --sweep-output-csv
+      prefix: -O
 outputs:
   - id: output_file
     type:

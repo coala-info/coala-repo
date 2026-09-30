@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmcp_merge
+baseCommand:
+  - kmcp
+  - merge
 label: kmcp_merge
 doc: "Merge search results from multiple databases\n\nTool homepage: https://github.com/shenwei356/kmcp"
 inputs:
@@ -79,7 +81,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
     inputBinding:
       position: 103
       prefix: --out-file

@@ -224,7 +224,7 @@ inputs:
       position: 101
       prefix: --variant_window_size
   - id: output_path
-    type: string
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

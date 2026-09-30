@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ensemblcov gene-ensembl
+baseCommand:
+  - ensemblcov
+  - gene-ensembl
 label: ensemblcov_gene-ensembl
 doc: "For more information, try '--help'.\n\nTool homepage: https://github.com/IBCHgenomic/ensemlcov"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ConSplice constraint
+baseCommand:
+  - ConSplice
+  - constraint
 label: consplice_constraint
 doc: "Module to generate genic or regional\nsplicing constraint using patterns of\n\
   purifying selection and evidence of\nalternative splicing\n\nTool homepage: https://github.com/mikecormier/ConSplice"

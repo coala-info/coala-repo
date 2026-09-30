@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadtool plot
+baseCommand:
+  - tadtool
+  - plot
 label: tadtool_plot
 doc: "Main interactive TADtool plotting window\n\nTool homepage: https://github.com/vaquerizaslab/tadtool"
 inputs:

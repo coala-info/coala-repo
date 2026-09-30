@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jass create-project-data
+baseCommand:
+  - jass
+  - create-project-data
 label: jass_create-project-data
 doc: "Create project data for JASS\n\nTool homepage: http://statistical-genetics.pages.pasteur.fr/jass/"
 inputs:
@@ -11,11 +13,13 @@ inputs:
     doc: list of selected phenotypes
     inputBinding:
       position: 1
+      prefix: --phenotypes
   - id: worktable_path
     type: File
     doc: path to the worktable file to generate
     inputBinding:
       position: 2
+      prefix: --worktable-path
   - id: chromosome_number
     type:
       - 'null'
@@ -84,7 +88,7 @@ inputs:
   - id: post_filtering
     type:
       - 'null'
-      - boolean
+      - string
     doc: If a filtering to remove outlier will be applied (in this case the 
       result of SNPs considered aberant will not appear in the worktable)
     inputBinding:
@@ -134,7 +138,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_file_path_path`
     inputBinding:
       position: 104
       prefix: --csv-file-path
@@ -142,7 +145,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `manhattan_plot_path_path`
     inputBinding:
       position: 105
       prefix: --manhattan-plot-path
@@ -150,7 +152,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `qq_plot_path_path`
     inputBinding:
       position: 106
       prefix: --qq-plot-path
@@ -158,7 +159,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `quadrant_plot_path_path`
     inputBinding:
       position: 107
       prefix: --quadrant-plot-path
@@ -166,7 +166,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `zoom_plot_path_path`
     inputBinding:
       position: 108
       prefix: --zoom-plot-path

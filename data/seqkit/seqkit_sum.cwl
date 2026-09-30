@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit sum
+baseCommand:
+  - seqkit
+  - sum
 label: seqkit_sum
 doc: "compute message digest for all sequences in FASTA/Q files\n\nTool homepage:
   https://github.com/shenwei356/seqkit"
@@ -22,6 +24,7 @@ inputs:
       seqkit guesses the sequence type (0 for whole seq)
     inputBinding:
       position: 101
+      prefix: --alphabet-guess-seq-length
   - id: basename
     type:
       - 'null'
@@ -46,6 +49,7 @@ inputs:
       the range and default value for each format
     inputBinding:
       position: 101
+      prefix: --compress-level
   - id: gap_letters
     type:
       - 'null'
@@ -61,6 +65,7 @@ inputs:
     doc: FASTA head is NCBI-style, e.g. >gi|110645304|ref|NC_002516.2| Pseud...
     inputBinding:
       position: 101
+      prefix: --id-ncbi
   - id: id_regexp
     type:
       - 'null'
@@ -68,6 +73,7 @@ inputs:
     doc: regular expression for parsing ID
     inputBinding:
       position: 101
+      prefix: --id-regexp
   - id: infile_list
     type:
       - 'null'
@@ -100,6 +106,7 @@ inputs:
     doc: be quiet and do not show extra information
     inputBinding:
       position: 101
+      prefix: --quiet
   - id: remove_gaps
     type:
       - 'null'
@@ -115,6 +122,7 @@ inputs:
     doc: convert RNA to DNA
     inputBinding:
       position: 101
+      prefix: --rna2dna
   - id: seq_type
     type:
       - 'null'
@@ -141,6 +149,7 @@ inputs:
       files do exist
     inputBinding:
       position: 101
+      prefix: --skip-file-check
   - id: threads
     type:
       - 'null'
@@ -151,7 +160,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

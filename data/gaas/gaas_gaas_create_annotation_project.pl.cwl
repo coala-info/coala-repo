@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl /usr/local/bin/gaas_create_annotation_project.pl
+baseCommand:
+  - perl
+  - /usr/local/bin/gaas_create_annotation_project.pl
 label: gaas_gaas_create_annotation_project.pl
 doc: "A fasta file for genome assembly must be provided (-g)\n\nTool homepage: https://github.com/NBISweden/GAAS"
 inputs:

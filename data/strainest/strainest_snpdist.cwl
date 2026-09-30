@@ -17,12 +17,17 @@ inputs:
     doc: File to store computed distances
     inputBinding:
       position: 2
+  - id: hist
+    type: string
+    doc: File to store the distances histogram
+    inputBinding:
+      position: 3
 outputs:
   - id: histogram_file
     type: File
     doc: File to store the distances histogram
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.hist)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainest:1.2.4--py35_0

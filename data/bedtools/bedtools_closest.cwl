@@ -52,7 +52,7 @@ inputs:
       position: 101
       prefix: -fu
   - id: genome_file
-    type: File
+    type: File?
     doc: Provide a genome file to enforce consistent chromosome sort order 
       across input files. Only applies when used with -sorted option.
     inputBinding:
@@ -94,18 +94,15 @@ inputs:
       position: 101
       prefix: -iu
   - id: input_a
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input BED/GFF/VCF file A
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Input BED/GFF/VCF file(s) B (database)
     inputBinding:
       position: 101
@@ -127,13 +124,13 @@ inputs:
       position: 101
       prefix: -k
   - id: min_overlap_a
-    type: float
+    type: float?
     doc: Minimum overlap required as a fraction of A.
     inputBinding:
       position: 101
       prefix: -f
   - id: min_overlap_b
-    type: float
+    type: float?
     doc: Minimum overlap required as a fraction of B.
     inputBinding:
       position: 101

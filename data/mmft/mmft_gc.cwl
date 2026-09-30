@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_gc
+baseCommand:
+  - mmft
+  - gc
 label: mmft_gc
 doc: "Calculate GC content of fasta file records.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

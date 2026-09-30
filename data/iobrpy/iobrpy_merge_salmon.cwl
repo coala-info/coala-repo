@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy_merge_salmon
+baseCommand:
+  - iobrpy
+  - merge_salmon
 label: iobrpy_merge_salmon
 doc: "Merge Salmon quant.sf files from multiple runs.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:

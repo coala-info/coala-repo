@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio create-dataset
+baseCommand:
+  - solvebio
+  - create-dataset
 label: solvebio_create-dataset
 doc: "Create a new dataset\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

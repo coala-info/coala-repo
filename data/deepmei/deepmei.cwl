@@ -54,9 +54,9 @@ inputs:
       prefix: --min-shift
   - id: reference_fasta
     type: File
+    doc: reference.fa is required
     secondaryFiles:
       - .fai
-    doc: reference.fa is required
     inputBinding:
       position: 103
   - id: threads
@@ -69,10 +69,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write index to FILE [alternative to <out.index> in args]
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

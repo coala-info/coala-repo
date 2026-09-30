@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: telescope assign
+baseCommand:
+  - telescope
+  - assign
 label: telescope_assign
 doc: "Reassign ambiguous fragments that map to repetitive elements\n\nTool homepage:
   https://github.com/mlbendall/telescope"
@@ -105,7 +107,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 103

@@ -8,7 +8,7 @@ doc: "Query a reference pickle with TPED/TFAM input files to generate copying ma
   \ \nTool homepage: https://github.com/healthdisparities/pastrami"
 inputs:
   - id: query_prefix
-    type: string
+    type: string?
     doc: Prefix for the query TPED/TFAM input files
     inputBinding:
       position: 101
@@ -41,7 +41,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `combined_out_path`
+    doc: The combined reference/query copying matrix output
     inputBinding:
       position: 102
       prefix: --combined-out
@@ -49,7 +49,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
     inputBinding:
       position: 103
       prefix: --log-file
@@ -57,7 +56,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `query_out_path`
+    doc: The query copying matrix output
     inputBinding:
       position: 104
       prefix: --query-out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: geno2phenotb test
+baseCommand:
+  - geno2phenotb
+  - test
 label: geno2phenotb_test
 doc: "Test the installation of geno2phenoTB.\n\nTool homepage: https://github.com/msmdev/geno2phenoTB"
 inputs:

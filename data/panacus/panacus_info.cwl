@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panacus_info
+baseCommand:
+  - panacus
+  - info
 label: panacus_info
 doc: "Return general graph and paths info\n\nTool homepage: https://github.com/marschall-lab/panacus"
 inputs:

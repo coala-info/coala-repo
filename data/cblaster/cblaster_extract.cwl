@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cblaster extract
+baseCommand:
+  - cblaster
+  - extract
 label: cblaster_extract
 doc: "Extract information from session files\n\nTool homepage: https://github.com/gamcil/cblaster"
 inputs:
@@ -62,7 +64,7 @@ inputs:
       prefix: --scaffolds
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file name
     inputBinding:
       position: 103
       prefix: --output

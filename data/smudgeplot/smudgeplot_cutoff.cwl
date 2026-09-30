@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smudgeplot cutoff
+baseCommand:
+  - smudgeplot
+  - cutoff
 label: smudgeplot_cutoff
 doc: "Calculate meaningful values for lower kmer histogram cutoff.\n\nTool homepage:
   https://github.com/KamilSJaron/smudgeplot"

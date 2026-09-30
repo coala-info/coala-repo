@@ -62,7 +62,7 @@ inputs:
       position: 101
       prefix: --minsize
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory name
     inputBinding:
       position: 101

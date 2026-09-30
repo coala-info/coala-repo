@@ -68,7 +68,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_csv_path`
     inputBinding:
       position: 102
       prefix: --out-csv
@@ -76,7 +75,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

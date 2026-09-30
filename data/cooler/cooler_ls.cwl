@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler_ls
+baseCommand:
+  - cooler
+  - ls
 label: cooler_ls
 doc: "List all coolers inside a file.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:

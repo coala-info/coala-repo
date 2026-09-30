@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msamtools profile
+baseCommand:
+  - msamtools
+  - profile
 label: msamtools_profile
 doc: "Produces an abundance profile of all reference sequences in a BAM file based
   on the number of read-pairs (inserts) mapping to each reference sequence.\n\nTool
@@ -87,10 +89,10 @@ inputs:
       prefix: --pandas
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: name of output file (required)
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

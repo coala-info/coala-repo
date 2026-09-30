@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqmagick extract-ids
+baseCommand:
+  - seqmagick
+  - extract-ids
 label: seqmagick_extract-ids
 doc: "Extract the sequence IDs from a file\n\nTool homepage: http://github.com/fhcrc/seqmagick"
 inputs:
@@ -20,14 +22,13 @@ inputs:
   - id: input_format
     type:
       - 'null'
-      - string
+      - File
     doc: Input format for sequence file
     inputBinding:
       position: 102
       prefix: --input-format
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
       prefix: --output-file

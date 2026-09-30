@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qualimap comp-counts
+baseCommand:
+  - qualimap
+  - comp-counts
 label: qualimap_comp-counts
 doc: "QualiMap v.2.3\n\nTool homepage: http://qualimap.bioinfo.cipf.es/"
 inputs:
@@ -73,10 +75,10 @@ inputs:
       prefix: --sorted
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file of coverage report.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clipcontext_t2g
+baseCommand:
+  - clipcontext
+  - t2g
 label: clipcontext_t2g
 doc: "Processes transcript regions BED file with genomic annotations and sequences
   to extract context sequences and generate reports.\n\nTool homepage: https://github.com/BackofenLab/CLIPcontext"
@@ -49,7 +51,7 @@ inputs:
       position: 101
       prefix: --min-len
   - id: output_folder
-    type: Directory
+    type: string
     doc: Output results folder
     inputBinding:
       position: 101

@@ -97,7 +97,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'type of query sequences [u/U:unknown, n/N:nucleotide, a/A:amino acid, q/Q:fastq,
+    doc: 'type of query sequences [u/U:unknown, n/N:nucleotide, a/A:amino acid, q/Q:fastq,'
     inputBinding:
       position: 101
       prefix: -t

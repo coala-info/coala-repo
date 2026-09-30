@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert csv2tsv
+baseCommand:
+  - bioconvert
+  - csv2tsv
 label: bioconvert_csv2tsv
 doc: "Convert file from '('CSV',)' to '('TSV',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

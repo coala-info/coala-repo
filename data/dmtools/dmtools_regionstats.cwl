@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools regionstats
+baseCommand:
+  - dmtools
+  - regionstats
 label: dmtools_regionstats
 doc: "Calculate methylation statistics for regions in a DM file.\n\nTool homepage:
   https://github.com/ZhouQiangwei/dmtools"

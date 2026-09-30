@@ -53,7 +53,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory to place output.
     inputBinding:
       position: 101
@@ -62,18 +62,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `signature_file_path`
     inputBinding:
       position: 102
-      prefix: --signature-file
+      prefix: --signature_file
   - id: summary_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_file_path`
     inputBinding:
       position: 103
-      prefix: --summary-file
+      prefix: --summary_file
 outputs:
   - id: signature_file
     type:

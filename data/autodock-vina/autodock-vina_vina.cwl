@@ -127,7 +127,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: optionally, write log file
     inputBinding:
       position: 102
       prefix: --log
@@ -135,7 +135,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: output models (PDBQT), the default is chosen based
     inputBinding:
       position: 103
       prefix: --out

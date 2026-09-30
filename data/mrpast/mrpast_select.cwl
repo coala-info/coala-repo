@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast select
+baseCommand:
+  - mrpast
+  - select
 label: mrpast_select
 doc: "Selects the best model based on AIC from multiple solver outputs.\n\nTool homepage:
   https://aprilweilab.github.io/"

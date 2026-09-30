@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_min
+baseCommand:
+  - mmft
+  - min
 label: mmft_min
 doc: "Return the lexicographically minimal rotation of fasta file record sequences.\n\
   \nTool homepage: https://github.com/ARU-life-sciences/mmft"

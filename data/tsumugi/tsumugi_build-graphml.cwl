@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi build-graphml
+baseCommand:
+  - tsumugi
+  - build-graphml
 label: tsumugi_build-graphml
 doc: "Builds a graphml file from pairwise and genewise similarity annotations.\n\n\
   Tool homepage: https://github.com/akikuno/TSUMUGI-dev"

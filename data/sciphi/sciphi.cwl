@@ -309,18 +309,19 @@ inputs:
       prefix: --zyg
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: arg                 Prefix of output files.
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

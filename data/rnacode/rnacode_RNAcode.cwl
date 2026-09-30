@@ -7,7 +7,7 @@ inputs:
   - id: input_file
     type:
       - 'null'
-      - string
+      - File
     doc: Input file
     inputBinding:
       position: 1
@@ -54,7 +54,7 @@ inputs:
   - id: eps_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to put eps-files
     inputBinding:
       position: 102

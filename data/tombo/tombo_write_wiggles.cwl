@@ -71,7 +71,6 @@ inputs:
       prefix: --wiggle-types
   - id: wiggle_basename_path
     type: string
-    doc: Output or path parameter `wiggle_basename_path`
     inputBinding:
       position: 102
       prefix: --wiggle-basename
@@ -79,11 +78,12 @@ outputs:
   - id: wiggle_basename
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Basename for output wiggle files. Two files (plus and minus strand) 
       will be produced for each --wiggle-types supplied.
     outputBinding:
-      glob: $(inputs.wiggle_basename_path)
+      glob: $(inputs.wiggle_basename_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

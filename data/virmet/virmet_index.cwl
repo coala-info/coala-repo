@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virmet_index
+baseCommand:
+  - virmet
+  - index
 label: virmet_index
 doc: "Builds indexes for various databases used by Virmet.\n\nTool homepage: https://github.com/medvir/VirMet"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: compleasm miniprot
+baseCommand:
+  - compleasm
+  - miniprot
 label: compleasm_miniprot
 doc: "Miniprot alignment\n\nTool homepage: https://github.com/huangnengCSU/compleasm"
 inputs:
@@ -42,7 +44,6 @@ inputs:
       prefix: --threads
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

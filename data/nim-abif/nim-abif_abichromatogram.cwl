@@ -68,10 +68,10 @@ inputs:
       prefix: --width
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output SVG file (default: chromatogram.svg)'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

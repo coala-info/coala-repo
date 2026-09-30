@@ -16,7 +16,7 @@ inputs:
     doc: Local gene annotation (refGene.txt) file.
     inputBinding:
       position: 101
-      prefix: --annotation
+      prefix: -a
   - id: clean
     type:
       - 'null'
@@ -41,7 +41,7 @@ inputs:
     doc: Local genome sequences file(s) in FASTA format.
     inputBinding:
       position: 101
-      prefix: --fasta
+      prefix: -i
   - id: install
     type:
       - 'null'
@@ -108,7 +108,6 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
       prefix: --output-dir

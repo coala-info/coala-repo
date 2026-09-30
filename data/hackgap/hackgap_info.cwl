@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hackgap_info
+baseCommand:
+  - hackgap
+  - info
 label: hackgap_info
 doc: "Prints information about a hash table.\n\nTool homepage: https://gitlab.com/rahmannlab/hackgap"
 inputs:
@@ -69,7 +71,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `export_path`
     inputBinding:
       position: 104
       prefix: --export
@@ -77,7 +78,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outprefix_path`
     inputBinding:
       position: 105
       prefix: --outprefix
@@ -85,19 +85,21 @@ outputs:
   - id: outprefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: file name prefix of exported data, extended by 
       .{key,chc.val}.{txt,data}.
     outputBinding:
-      glob: $(inputs.outprefix_path)
+      glob: $(inputs.outprefix_path)*
   - id: export
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: file name prefix of exported data, extended by 
       .{key,chc.val}.{txt,data}.
     outputBinding:
-      glob: $(inputs.export_path)
+      glob: $(inputs.export_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

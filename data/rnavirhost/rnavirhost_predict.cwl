@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnavirhost predict
+baseCommand:
+  - rnavirhost
+  - predict
 label: rnavirhost_predict
 doc: "Predict hosts of the query viruses\n\nTool homepage: https://github.com/GreyGuoweiChen/VirHost.git"
 inputs:
@@ -11,17 +13,17 @@ inputs:
       position: 101
       prefix: --input
   - id: taxa_file
-    type: File
+    type: File?
     doc: The virus order taxa of query sequences. (.csv)
     inputBinding:
       position: 101
       prefix: --taxa
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: ' The output directory，including the output and intermediate file.'
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type: Directory

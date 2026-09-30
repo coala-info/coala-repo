@@ -49,7 +49,7 @@ inputs:
       prefix: --log-level
   - id: destination_file_path
     type: string
-    doc: Output or path parameter `destination_file_path`
+    doc: Destination file.
     inputBinding:
       position: 102
       prefix: --destination-file

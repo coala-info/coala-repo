@@ -23,9 +23,9 @@ inputs:
       prefix: --mode
   - id: reference
     type: File
+    doc: The indexed FASTA reference sequence file
     secondaryFiles:
       - .fai
-    doc: The indexed FASTA reference sequence file
     inputBinding:
       position: 101
       prefix: --reference
@@ -45,7 +45,7 @@ inputs:
       prefix: --skip-non-variants
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Output VCF file or stream [default: /dev/stdout]'
     inputBinding:
       position: 102
       prefix: --output

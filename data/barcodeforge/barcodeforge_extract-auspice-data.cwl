@@ -33,18 +33,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_metadata_path_path`
+    doc: Path to save the metadata table (TSV         │
     inputBinding:
       position: 103
-      prefix: --output-metadata-path
+      prefix: --output_metadata_path
   - id: output_tree_path_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_path_path`
+    doc: Path to save the tree in Newick format.      │
     inputBinding:
       position: 104
-      prefix: --output-tree-path
+      prefix: --output_tree_path
 outputs:
   - id: output_metadata_path
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mash_taxscreen
+baseCommand:
+  - mash
+  - taxscreen
 label: mash_taxscreen
 doc: "Create Kraken-style taxonomic report based on how well query sequences are contained
   within a pool of sequences. The queries must be formatted as a single Mash sketch

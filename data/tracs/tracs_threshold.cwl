@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tracs_threshold
+baseCommand:
+  - tracs
+  - threshold
 label: tracs_threshold
 doc: "Estimates transmission thresholds.\n\nTool homepage: https://github.com/gtonkinhill/tracs"
 inputs:
@@ -28,10 +30,9 @@ inputs:
       prefix: --distant
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

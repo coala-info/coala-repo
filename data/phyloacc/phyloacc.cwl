@@ -13,7 +13,7 @@ inputs:
       FASTA format. One of -a/-b or -d is REQUIRED.
     inputBinding:
       position: 101
-      prefix: --aln-dir
+      prefix: -d
   - id: aln_file
     type:
       - 'null'
@@ -23,7 +23,7 @@ inputs:
       REQUIRED.
     inputBinding:
       position: 101
-      prefix: --aln-file
+      prefix: -a
   - id: appendlog
     type:
       - 'null'
@@ -40,7 +40,7 @@ inputs:
     doc: The number of loci to run per batch.
     inputBinding:
       position: 101
-      prefix: --batch-size
+      prefix: -batch
   - id: bed_file
     type:
       - 'null'
@@ -49,7 +49,7 @@ inputs:
       file. -a must also be specified. One of -a/-b or -d is REQUIRED.
     inputBinding:
       position: 101
-      prefix: --bed-file
+      prefix: -b
   - id: burnin
     type:
       - 'null'
@@ -57,7 +57,7 @@ inputs:
     doc: The number of steps to be discarded in the Markov chain as burnin.
     inputBinding:
       position: 101
-      prefix: --burnin
+      prefix: -burnin
   - id: chain
     type:
       - 'null'
@@ -65,7 +65,7 @@ inputs:
     doc: The number of chains.
     inputBinding:
       position: 101
-      prefix: --chain
+      prefix: -chain
   - id: cluster_mem
     type:
       - 'null'
@@ -73,7 +73,7 @@ inputs:
     doc: The max memory for each job in MB.
     inputBinding:
       position: 101
-      prefix: --cluster-mem
+      prefix: -mem
   - id: cluster_nodes
     type:
       - 'null'
@@ -81,7 +81,7 @@ inputs:
     doc: The number of nodes on the specified partition to submit jobs to.
     inputBinding:
       position: 101
-      prefix: --cluster-nodes
+      prefix: -nodes
   - id: cluster_part
     type:
       - 'null'
@@ -90,7 +90,7 @@ inputs:
       run PhyloAcc jobs.
     inputBinding:
       position: 101
-      prefix: --cluster-part
+      prefix: -part
   - id: cluster_time
     type:
       - 'null'
@@ -98,7 +98,7 @@ inputs:
     doc: The time in minutes to give each job.
     inputBinding:
       position: 101
-      prefix: --cluster-time
+      prefix: -time
   - id: coal_cmd
     type:
       - 'null'
@@ -137,7 +137,7 @@ inputs:
       -t or -g will be placed in this category.
     inputBinding:
       position: 101
-      prefix: --conserved
+      prefix: -c
   - id: depcheck
     type:
       - 'null'
@@ -173,7 +173,7 @@ inputs:
       the input bed file. -a and -b must also be specified.
     inputBinding:
       position: 101
-      prefix: --id-file
+      prefix: -i
   - id: info
     type:
       - 'null'
@@ -190,7 +190,7 @@ inputs:
     doc: The path to the IQ-Tree executable for making gene trees with --theta.
     inputBinding:
       position: 101
-      prefix: --iqtree-path
+      prefix: -iqtree-path
   - id: label_nodes
     type:
       - 'null'
@@ -216,7 +216,7 @@ inputs:
     doc: The total number of steps in the Markov chain.
     inputBinding:
       position: 101
-      prefix: --mcmc
+      prefix: -mcmc
   - id: mod_file
     type:
       - 'null'
@@ -225,7 +225,7 @@ inputs:
       with branch lengths as output from phyloFit. REQUIRED.
     inputBinding:
       position: 101
-      prefix: --mod-file
+      prefix: -m
   - id: num_jobs
     type:
       - 'null'
@@ -234,7 +234,7 @@ inputs:
       equal to the total processes for PhyloAcc (-p).
     inputBinding:
       position: 101
-      prefix: --num-jobs
+      prefix: -j
   - id: num_procs
     type:
       - 'null'
@@ -242,16 +242,16 @@ inputs:
     doc: The number of processes that this script should use.
     inputBinding:
       position: 101
-      prefix: --num-procs
+      prefix: -n
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Desired output directory. This will be created for you if it doesn't 
       exist.
     inputBinding:
       position: 101
-      prefix: --out-dir
+      prefix: -o
   - id: outgroup
     type:
       - 'null'
@@ -260,7 +260,7 @@ inputs:
       multiple labels separated by semi-colons (;).
     inputBinding:
       position: 101
-      prefix: --outgroup
+      prefix: -g
   - id: overwrite
     type:
       - 'null'
@@ -301,7 +301,7 @@ inputs:
     doc: The number of processes to use for each batch of PhyloAcc.
     inputBinding:
       position: 101
-      prefix: --procs-per-batch
+      prefix: -p
   - id: quiet
     type:
       - 'null'
@@ -321,7 +321,7 @@ inputs:
       model on all other loci.'
     inputBinding:
       position: 101
-      prefix: --run-mode
+      prefix: -r
   - id: scf_branch_cutoff
     type:
       - 'null'
@@ -375,7 +375,7 @@ inputs:
       multiple labels separated by semi-colons (;). REQUIRED.
     inputBinding:
       position: 101
-      prefix: --targets
+      prefix: -t
   - id: testcmd
     type:
       - 'null'
@@ -406,7 +406,7 @@ inputs:
       scaled by this as mcmc*thin
     inputBinding:
       position: 101
-      prefix: --thin
+      prefix: -thin
 outputs:
   - id: stdout
     type: stdout

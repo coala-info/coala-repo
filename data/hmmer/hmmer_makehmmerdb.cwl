@@ -10,6 +10,11 @@ inputs:
     doc: Input sequence file
     inputBinding:
       position: 1
+  - id: binaryfile
+    type: string
+    doc: Output HMMER binary-formatted database file
+    inputBinding:
+      position: 2
   - id: bin_length
     type:
       - 'null'
@@ -43,11 +48,11 @@ inputs:
       position: 102
       prefix: --sa_freq
 outputs:
-  - id: binaryfile
+  - id: out_binaryfile
     type: File
     doc: Output HMMER binary-formatted database file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.binaryfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmer:3.4--hb6cb901_4

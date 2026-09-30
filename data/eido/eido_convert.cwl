@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eido_convert
+baseCommand:
+  - eido
+  - convert
 label: eido_convert
 doc: "Convert PEP format using filters\n\nTool homepage: https://github.com/mayneyao/eidos"
 inputs:

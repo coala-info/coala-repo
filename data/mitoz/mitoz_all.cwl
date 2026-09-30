@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mitoz all
+baseCommand:
+  - mitoz
+  - all
 label: mitoz_all
 doc: "Run all steps for mitochondrial genome anlysis from input fastq files.\n\nTool
   homepage: https://github.com/linzhi2013/MitoZ"

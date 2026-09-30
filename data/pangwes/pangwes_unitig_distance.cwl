@@ -177,7 +177,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_outliers_path`
+    doc: Output a list of outliers and outlier statistics.
     inputBinding:
       position: 102
       prefix: --output-outliers
@@ -185,7 +185,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_stem_path`
+    doc: Path for output files (without extension).
     inputBinding:
       position: 103
       prefix: --output-stem

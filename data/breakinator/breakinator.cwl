@@ -103,8 +103,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
+    doc: 'Output file name [default: breakinator_out.txt]'
     inputBinding:
       position: 102
       prefix: --out

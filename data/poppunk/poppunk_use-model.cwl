@@ -542,10 +542,11 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix for output files
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

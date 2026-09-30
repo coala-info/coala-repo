@@ -159,7 +159,7 @@ inputs:
       position: 101
       prefix: --no-splits
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101
@@ -281,7 +281,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 101

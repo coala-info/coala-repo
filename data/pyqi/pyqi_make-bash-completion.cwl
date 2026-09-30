@@ -21,7 +21,6 @@ inputs:
       prefix: --driver-name
   - id: output_fp_path
     type: string
-    doc: Output or path parameter `output_fp_path`
     inputBinding:
       position: 102
       prefix: --output-fp

@@ -20,7 +20,7 @@ inputs:
     doc: 'P-value for branch length Erlang test. Default: 0=off'
     inputBinding:
       position: 101
-      prefix: --brlen_pv
+      prefix: -P
   - id: conf_cutoff
     type:
       - 'null'
@@ -28,7 +28,7 @@ inputs:
     doc: 'Confidence cut-off between 0 and 1. Default: 0'
     inputBinding:
       position: 101
-      prefix: --conf_cutoff
+      prefix: -C
   - id: config_fname
     type:
       - 'null'
@@ -36,7 +36,7 @@ inputs:
     doc: Config file name.
     inputBinding:
       position: 101
-      prefix: --config_fname
+      prefix: -c
   - id: debug_mode
     type:
       - 'null'
@@ -62,7 +62,7 @@ inputs:
       file as input instead. This could\nbe also a directory with *.jplace files."
     inputBinding:
       position: 101
-      prefix: --final_jplace_fname
+      prefix: -J
   - id: jplace_fname
     type:
       - 'null'
@@ -72,7 +72,7 @@ inputs:
       file as input instead. This could\nbe also a directory with *.jplace files."
     inputBinding:
       position: 101
-      prefix: --jplace_fname
+      prefix: -j
   - id: method
     type:
       - 'null'
@@ -94,7 +94,7 @@ inputs:
       assignments."
     inputBinding:
       position: 101
-      prefix: --min_lhw
+      prefix: -l
   - id: num_threads
     type:
       - 'null'
@@ -102,15 +102,15 @@ inputs:
     doc: 'Specify the number of CPUs (default: 20)'
     inputBinding:
       position: 101
-      prefix: --num_threads
+      prefix: -T
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory (default: current).'
     inputBinding:
       position: 101
-      prefix: --output_dir
+      prefix: -o
   - id: output_name
     type:
       - 'null'
@@ -119,7 +119,7 @@ inputs:
       file name without extension)"
     inputBinding:
       position: 101
-      prefix: --output_name
+      prefix: -n
   - id: rand_seed
     type:
       - 'null'
@@ -127,7 +127,7 @@ inputs:
     doc: 'Random seed to be used with RAxML. Default: 12345'
     inputBinding:
       position: 101
-      prefix: --rand_seed
+      prefix: -p
   - id: rank_test
     type:
       - 'null'
@@ -143,7 +143,7 @@ inputs:
     doc: "Specify the reference alignment and taxonomy in\nrefjson format."
     inputBinding:
       position: 101
-      prefix: --ref_fname
+      prefix: -r
   - id: rep_num
     type:
       - 'null'
@@ -152,7 +152,7 @@ inputs:
       Default: 1"
     inputBinding:
       position: 101
-      prefix: --rep_num
+      prefix: -N
   - id: resume
     type:
       - 'null'
@@ -171,7 +171,7 @@ inputs:
       Please enter one name per line;\nseparate groups with an empty line."
     inputBinding:
       position: 101
-      prefix: --synonym_fname
+      prefix: -Y
   - id: taxonomic_code
     type: string
     doc: "Taxonomic code: BAC(teriological), BOT(anical),\nZOO(logical), VIR(ological)"
@@ -187,7 +187,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files.
     inputBinding:
       position: 101

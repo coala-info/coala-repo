@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini_amend
+baseCommand:
+  - oncogemini
+  - amend
 label: oncogemini_amend
 doc: "Amend a database with new sample information.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

@@ -47,7 +47,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory to save RGB tif files
     inputBinding:
       position: 101

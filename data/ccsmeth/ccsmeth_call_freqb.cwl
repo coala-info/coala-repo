@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth_call_freqb
+baseCommand:
+  - ccsmeth
+  - call_freqb
 label: ccsmeth_call_freqb
 doc: "call frequency of modifications at genome level from modbam.bam file\n\nTool
   homepage: https://github.com/PengNi/ccsmeth"
@@ -284,16 +286,17 @@ inputs:
       prefix: --tseed
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      type: array
+      items: File
     doc: prefix of output file to save the results
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -208,7 +208,7 @@ inputs:
       position: 101
       prefix: --workflow
   - id: output_root_path
-    type: string
+    type: string?
     inputBinding:
       position: 102
       prefix: --output-root

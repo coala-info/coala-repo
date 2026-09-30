@@ -20,6 +20,11 @@ inputs:
     doc: Input BED file
     inputBinding:
       position: 3
+  - id: out_maf
+    type: string
+    doc: Output MAF file
+    inputBinding:
+      position: 4
   - id: bed12
     type:
       - 'null'
@@ -43,7 +48,8 @@ inputs:
     doc: File with list of databases/organisms in order
     inputBinding:
       position: 104
-      prefix: -orgs
+      prefix: -orgs=
+      separate: false
   - id: ref_coords
     type:
       - 'null'
@@ -70,11 +76,11 @@ inputs:
       position: 104
       prefix: -txStarts
 outputs:
-  - id: out_maf
+  - id: out_out_maf
     type: File
     doc: Output MAF file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_maf)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-maffrags:482--h0b57e2e_0

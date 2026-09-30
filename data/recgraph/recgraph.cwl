@@ -120,10 +120,10 @@ inputs:
       prefix: --rec-band-width
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: 'Output alignment file [default: "standard output"]'
     inputBinding:
       position: 104
-      prefix: --out-file
+      prefix: --out_file
 outputs:
   - id: out_file
     type:

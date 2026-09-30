@@ -82,7 +82,7 @@ inputs:
       prefix: --show-completion
   - id: target_path
     type: string
-    doc: Output or path parameter `target_path`
+    doc: The target file to create   │
     inputBinding:
       position: 102
       prefix: --target

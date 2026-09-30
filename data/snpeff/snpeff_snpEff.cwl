@@ -397,11 +397,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -notag
+          separate: true
     doc: Filter out transcript having a tag 'tagName'. This option can be used 
       multiple times.
     inputBinding:
       position: 104
-      prefix: -notag
   - id: no_upstream
     type:
       - 'null'
@@ -540,11 +542,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -tag
+          separate: true
     doc: Only use transcript having a tag 'tagName'. This option can be used 
       multiple times.
     inputBinding:
       position: 104
-      prefix: -tag
   - id: up_down_stream_len
     type:
       - 'null'

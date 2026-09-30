@@ -63,9 +63,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference genome FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference genome FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -85,6 +85,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -x
+  - id: output_directory_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -92,7 +97,9 @@ outputs:
       - Directory
     doc: Directory to save output files
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lorikeet-genome:0.8.2--h8e1a5b0_0

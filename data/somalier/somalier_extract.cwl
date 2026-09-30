@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: somalier_extract
+baseCommand:
+  - somalier
+  - extract
 label: somalier_extract
 doc: "extract genotype-like information for a single-sample at selected sites\n\n\
   Tool homepage: https://github.com/brentp/somalier"
@@ -22,7 +24,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to output directory
     inputBinding:
       position: 102

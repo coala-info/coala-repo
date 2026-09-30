@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio logout
+baseCommand:
+  - solvebio
+  - logout
 label: solvebio_logout
 doc: "Logs out of the SolveBio CLI.\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

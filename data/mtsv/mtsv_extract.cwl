@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtsv extract
+baseCommand:
+  - mtsv
+  - extract
 label: mtsv_extract
 doc: "Extracts reads based on taxonomic IDs and other criteria.\n\nTool homepage:
   https://github.com/FofanovLab/MTSv"
@@ -12,10 +14,11 @@ inputs:
     doc: List of species to extract. (Space separated).
     inputBinding:
       position: 1
+      prefix: --taxids
   - id: by_sample
     type:
       - 'null'
-      - boolean
+      - string
     doc: Breakdown extracted queries by sample.
     inputBinding:
       position: 102
@@ -32,7 +35,7 @@ inputs:
   - id: descendants
     type:
       - 'null'
-      - boolean
+      - string
     doc: Include all descendant taxa in extracted queries. Queries may be 
       extracted before roll up, so by default, descendant taxa will be included 
       in search if a higher level taxid is provided. If False (F), only exact 
@@ -78,7 +81,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory to place output.
     inputBinding:
       position: 102

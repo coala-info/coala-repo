@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicstuff_filter
+baseCommand:
+  - hicstuff
+  - filter
 label: hicstuff_filter
 doc: "Filters spurious 3C events such as loops and uncuts from the library based on
   a minimum distance threshold automatically estimated from the library by default.
@@ -12,6 +14,11 @@ inputs:
       of their restriction fragment and their strands.
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Path to the filtered file, in the same format as the input.
+    inputBinding:
+      position: 2
   - id: interactive
     type:
       - 'null'
@@ -49,16 +56,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `figdir_path`
+    doc: Path to the output figure directory.
     inputBinding:
       position: 103
       prefix: --figdir
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Path to the filtered file, in the same format as the input.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
   - id: figdir
     type:
       - 'null'

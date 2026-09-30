@@ -21,6 +21,11 @@ inputs:
       across datasets, is just below this number
     inputBinding:
       position: 2
+  - id: param_vals_tsv
+    type: string
+    doc: Path to TSV file in which to output optimal parameter values
+    inputBinding:
+      position: 3
   - id: dataset_weights_tsv
     type:
       - 'null'
@@ -85,11 +90,11 @@ inputs:
       position: 103
       prefix: --verbose
 outputs:
-  - id: param_vals_tsv
+  - id: out_param_vals_tsv
     type: File
     doc: Path to TSV file in which to output optimal parameter values
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.param_vals_tsv)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/catch:1.5.2--pyhdfd78af_0

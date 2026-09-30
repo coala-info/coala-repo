@@ -25,17 +25,17 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output to directory
     inputBinding:
       position: 102
       prefix: --out-dir
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output to FILE [stdout]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_train
+baseCommand:
+  - chamois
+  - train
 label: chamois_train
 doc: "Train a predictor model using feature and class tables.\n\nTool homepage: https://chamois.readthedocs.io/"
 inputs:
@@ -96,14 +98,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variance
-  - id: metrics_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `metrics_path`
-    inputBinding:
-      position: 102
-      prefix: --metrics
   - id: output_path
     type:
       - 'null'
@@ -112,6 +106,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output
+  - id: metrics_path
+    type:
+      - 'null'
+      - string
+    doc: The path to an optional metrics file to write in
+    inputBinding:
+      position: 104
+      prefix: --metrics
 outputs:
   - id: output
     type: File

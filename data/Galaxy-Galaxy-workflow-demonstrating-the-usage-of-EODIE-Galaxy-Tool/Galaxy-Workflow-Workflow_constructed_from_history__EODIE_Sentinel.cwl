@@ -1,21 +1,17 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Workflow
-  constructed from history ''EODIE Sentinel'''
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Workflow constructed from history ''EODIE Sentinel'''
 inputs:
   S2B_MSIL2A_20200626T095029_N0214_R079_T34VFN_20200626T123234_tar:
-    doc: Sentinel2 input data. This input dataset corresponds to the data itself while
-      sentinel2_tiles_world would be the corresponding shapefile for the tile.
+    doc: Sentinel2 input data. This input dataset corresponds to the data itself while sentinel2_tiles_world would be the corresponding shapefile for the tile.
     format: data
     type: File
   sentinel2_tiles_world:
-    doc: This input dataset corresponds to the Sentinel-2 tile shapefile, originally
-      provided by https://fromgistors.blogspot.com/2016/10/how-to-identify-sentinel-2-granule.html,
+    doc: This input dataset corresponds to the Sentinel-2 tile shapefile, originally provided by https://fromgistors.blogspot.com/2016/10/how-to-identify-sentinel-2-granule.html,
     format: data
     type: File
   test_parcels_32635:
-    doc: This input dataset is a shapefile corresponding the the area of interest
-      e.g. on which statistics such as NDVI will be computed.
+    doc: This input dataset is a shapefile corresponding the the area of interest e.g. on which statistics such as NDVI will be computed.
     format: data
     type: File
 outputs: {}

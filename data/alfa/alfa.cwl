@@ -106,7 +106,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to store pybedtools files.
     inputBinding:
       position: 101
@@ -133,7 +133,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pdf_path`
     inputBinding:
       position: 103
       prefix: --pdf
@@ -141,7 +140,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `png_path`
     inputBinding:
       position: 104
       prefix: --png
@@ -149,7 +147,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `svg_path`
     inputBinding:
       position: 105
       prefix: --svg

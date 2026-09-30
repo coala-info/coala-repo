@@ -141,10 +141,10 @@ inputs:
       prefix: -var_min_q
   - id: output_tsv_path
     type: string
-    doc: Output or path parameter `output_tsv_path`
+    doc: Output TSV file with ROH regions.
     inputBinding:
       position: 102
-      prefix: --output-tsv
+      prefix: -out
 outputs:
   - id: output_tsv
     type: File

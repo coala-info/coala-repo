@@ -35,7 +35,6 @@ inputs:
       prefix: --return-raw-output
   - id: prediction_output_path
     type: string
-    doc: Output or path parameter `prediction_output_path`
     inputBinding:
       position: 102
       prefix: --prediction-output

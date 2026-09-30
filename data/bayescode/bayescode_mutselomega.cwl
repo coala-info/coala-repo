@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: alignment
-    type: string
+    type: File
     doc: File path to alignment (PHYLIP format).
     inputBinding:
       position: 102
@@ -108,7 +108,7 @@ inputs:
       position: 102
       prefix: --profiles
   - id: tree
-    type: string
+    type: File
     doc: File path to the tree (NHX format).
     inputBinding:
       position: 102

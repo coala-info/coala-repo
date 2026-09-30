@@ -54,7 +54,7 @@ inputs:
       prefix: --verbose
   - id: db_path
     type: string
-    doc: Output or path parameter `db_path`
+    doc: database file
     inputBinding:
       position: 102
       prefix: --db

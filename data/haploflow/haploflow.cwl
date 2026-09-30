@@ -121,7 +121,7 @@ inputs:
       prefix: --two-strain
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: folder for output, will be created if not
     inputBinding:
       position: 102
       prefix: --out

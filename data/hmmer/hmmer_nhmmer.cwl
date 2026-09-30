@@ -360,45 +360,44 @@ inputs:
     inputBinding:
       position: 104
       prefix: --alignment-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: ': direct output to file <f>, not stdout'
+    inputBinding:
+      position: 108
+      prefix: -o
   - id: aliscoresout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aliscoresout_path`
     inputBinding:
-      position: 105
+      position: 109
       prefix: --aliscoresout
   - id: dfamtblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dfamtblout_path`
+    doc: ': save table of hits to file, in Dfam format <f>'
     inputBinding:
-      position: 106
+      position: 110
       prefix: --dfamtblout
   - id: hmmout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hmmout_path`
+    doc: ': if input is alignment(s), write produced hmms to file <f>'
     inputBinding:
-      position: 107
+      position: 111
       prefix: --hmmout
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 108
-      prefix: --output-file
   - id: tblout_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tblout_path`
+    doc: ': save parseable table of hits to file <f>'
     inputBinding:
-      position: 109
+      position: 112
       prefix: --tblout
 outputs:
   - id: output_file

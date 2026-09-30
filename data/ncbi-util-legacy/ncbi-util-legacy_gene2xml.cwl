@@ -80,18 +80,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Single Output File [File Out]  Optional
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
   - id: path_for_results_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `path_for_results_path`
+    doc: Path for Results [String]  Optional
     inputBinding:
       position: 103
-      prefix: --path-for-results
+      prefix: -r
 outputs:
   - id: path_for_results
     type:

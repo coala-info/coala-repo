@@ -35,7 +35,7 @@ inputs:
       prefix: --verbose
   - id: dotfile_path
     type: string
-    doc: Output or path parameter `dotfile_path`
+    doc: Save graphviz graph (dot format)
     inputBinding:
       position: 103
       prefix: --dotfile

@@ -18,7 +18,7 @@ inputs:
   - id: aws_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for aws backend. e.g. 
       s3://my-bucket/caper-cache-dir.
     inputBinding:
@@ -43,7 +43,7 @@ inputs:
   - id: gcp_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for gcp backend. e.g. 
       gs://my-bucket/caper-cache-dir.
     inputBinding:
@@ -79,7 +79,7 @@ inputs:
   - id: local_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store Cromwell's intermediate backend files. 
       These files include backend.conf, workflow_opts.json, imports.zip. and 
       localized input JSON files due to deepcopying (recursive localization). 
@@ -141,7 +141,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store Cromwell's intermediate backend files. 
       These files include backend.conf, workflow_opts.json, imports.zip. and 
       localized input JSON files due to deepcopying (recursive localization). 
@@ -154,7 +154,7 @@ inputs:
   - id: tmp_gcs_bucket
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for gcp backend. e.g. 
       gs://my-bucket/caper-cache-dir.
     inputBinding:
@@ -163,7 +163,7 @@ inputs:
   - id: tmp_s3_bucket
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for aws backend. e.g. 
       s3://my-bucket/caper-cache-dir.
     inputBinding:

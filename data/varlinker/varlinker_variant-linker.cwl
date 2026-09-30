@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlinker variant-linker
+baseCommand:
+  - varlinker
+  - variant-linker
 label: varlinker_variant-linker
 doc: "Links variants across different datasets.\n\nTool homepage: https://github.com/IBCHgenomic/varlinker"
 inputs:

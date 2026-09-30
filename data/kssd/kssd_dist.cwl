@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kssd dist
+baseCommand:
+  - kssd
+  - dist
 label: kssd_dist
 doc: "The dist doc prefix.\n\nTool homepage: https://github.com/yhg926/public_kssd"
 inputs:
@@ -165,7 +167,7 @@ inputs:
       prefix: --threadN
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: folder path for results files.
     inputBinding:
       position: 103
       prefix: --outdir

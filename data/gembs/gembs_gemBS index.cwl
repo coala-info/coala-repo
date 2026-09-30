@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemBS index
+baseCommand:
+  - gemBS
+  - index
 label: gembs_gemBS index
 doc: "Reference indexing for Bisulfite GEM mapping Generates by default a file called
   reference.BS.gem (GEM Index), reference.BS.info (Information about the index process)

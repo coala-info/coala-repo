@@ -21,7 +21,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store Aquila assembly results, default = 
       ./Assembly_results
     inputBinding:

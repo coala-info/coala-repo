@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler dump
+baseCommand:
+  - cooler
+  - dump
 label: cooler_dump
 doc: "Dump a cooler's data to a text stream.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
@@ -165,7 +167,7 @@ inputs:
       prefix: --table
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output text file If .gz extension is
     inputBinding:
       position: 103
       prefix: --out

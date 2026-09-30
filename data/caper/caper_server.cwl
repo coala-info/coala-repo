@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: caper server
+baseCommand:
+  - caper
+  - server
 label: caper_server
 doc: "Start Caper server\n\nTool homepage: https://github.com/ENCODE-DCC/caper"
 inputs:
@@ -15,7 +17,7 @@ inputs:
   - id: aws_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for aws backend. e.g. 
       s3://my-bucket/caper-cache-dir.
     inputBinding:
@@ -133,7 +135,7 @@ inputs:
   - id: gcp_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store cached files for gcp backend. e.g. 
       gs://my-bucket/caper-cache-dir.
     inputBinding:
@@ -219,7 +221,7 @@ inputs:
   - id: local_loc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store Cromwell's intermediate backend files. 
       These files include backend.conf, workflow_opts.json, imports.zip. and 
       localized input JSON files due to deepcopying (recursive localization). 
@@ -232,7 +234,7 @@ inputs:
   - id: local_out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory path for local backend. Cloud backends (gcp, aws) use 
       different output directories. For gcp, define --gcp-out-dir. For aws, 
       define --aws- out-dir.
@@ -398,7 +400,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aws_out_dir_path`
     inputBinding:
       position: 102
       prefix: --aws-out-dir
@@ -406,7 +407,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gcp_out_dir_path`
     inputBinding:
       position: 103
       prefix: --gcp-out-dir

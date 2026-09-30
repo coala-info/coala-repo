@@ -11,7 +11,8 @@ inputs:
     doc: Artemis environment setting
     inputBinding:
       position: 101
-      prefix: -Dartemis.environment
+      prefix: -Dartemis.environment=
+      separate: false
   - id: jdbc_drivers
     type:
       - 'null'
@@ -19,7 +20,8 @@ inputs:
     doc: JDBC drivers to use
     inputBinding:
       position: 101
-      prefix: -Djdbc.drivers
+      prefix: -Djdbc.drivers=
+      separate: false
   - id: max_heap_size
     type:
       - 'null'

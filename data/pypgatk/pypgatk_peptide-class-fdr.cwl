@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgatk peptide-class-fdr
+baseCommand:
+  - pypgatk
+  - peptide-class-fdr
 label: pypgatk_peptide-class-fdr
 doc: "The peptide_class_fdr allows to filter the peptide psm files (IdXML files) using
   two different FDR threshold types: - Global FDR - Global FDR + Peptide Class FDR
@@ -40,7 +42,7 @@ inputs:
   - id: input_file
     type:
       - 'null'
-      - string
+      - File
     doc: input file with the peptides and proteins
     inputBinding:
       position: 101
@@ -89,7 +91,7 @@ inputs:
       prefix: --psm-pep-fdr-cutoff
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: idxml from openms with filtered peptides and
     inputBinding:
       position: 102
       prefix: --output-file

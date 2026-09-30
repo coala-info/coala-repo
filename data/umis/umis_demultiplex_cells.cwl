@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: umis demultiplex_cells
+baseCommand:
+  - umis
+  - demultiplex_cells
 label: umis_demultiplex_cells
 doc: "Demultiplex a fastqtransformed FASTQ file into a FASTQ file for each cell.\n\
   \nTool homepage: https://github.com/vals/umis"
@@ -29,7 +31,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102

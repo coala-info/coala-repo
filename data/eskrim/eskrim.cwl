@@ -65,7 +65,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store the jellyfish database
     inputBinding:
       position: 102
@@ -79,9 +79,7 @@ inputs:
       position: 103
       prefix: -o
   - id: output_stats_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: OUTPUT_STATS_FILE with kmer richness estimates
     inputBinding:
       position: 104

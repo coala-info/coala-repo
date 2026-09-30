@@ -80,9 +80,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Completed assembly FASTA file as reference genome
     secondaryFiles:
       - .fai
-    doc: Completed assembly FASTA file as reference genome
     inputBinding:
       position: 101
       prefix: --reference
@@ -96,10 +96,10 @@ inputs:
       prefix: --tandem_repeats
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: utput path, --outdir Output path Output directory
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: -dir
 outputs:
   - id: output_path
     type: Directory

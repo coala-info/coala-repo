@@ -57,7 +57,6 @@ inputs:
       prefix: --nn-test-samples
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
     inputBinding:
       position: 103
       prefix: --output-prefix
@@ -65,10 +64,11 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: prefix for output files
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

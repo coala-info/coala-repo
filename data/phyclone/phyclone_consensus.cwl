@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyclone consensus
+baseCommand:
+  - phyclone
+  - consensus
 label: phyclone_consensus
 doc: "Build consensus results.\n\nTool homepage: https://github.com/Roth-Lab/PhyClone"
 inputs:

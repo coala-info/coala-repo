@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools metadata
+baseCommand:
+  - poretools
+  - metadata
 label: poretools_metadata
 doc: "Report metadata from FAST5 files.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

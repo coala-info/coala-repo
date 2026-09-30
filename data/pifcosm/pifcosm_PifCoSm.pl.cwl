@@ -259,7 +259,7 @@ inputs:
   - id: path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path for output or working files
     inputBinding:
       position: 102
@@ -405,18 +405,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_name_path`
     inputBinding:
       position: 103
-      prefix: --out-file-name
+      prefix: --out_file_name
   - id: partition_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `partition_file_path`
     inputBinding:
       position: 104
-      prefix: --partition-file
+      prefix: --partition_file
 outputs:
   - id: out_file_name
     type:

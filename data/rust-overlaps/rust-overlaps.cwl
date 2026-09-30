@@ -10,16 +10,21 @@ inputs:
     doc: Path to the input fasta file
     inputBinding:
       position: 1
+  - id: out_path
+    type: string
+    doc: Path of desired output file
+    inputBinding:
+      position: 2
   - id: err_rate
     type: float
     doc: The max rate of errors in an overlap
     inputBinding:
-      position: 2
+      position: 3
   - id: thresh
     type: int
     doc: Shortest allowed length of an overlap
     inputBinding:
-      position: 3
+      position: 4
   - id: edit_distance
     type:
       - 'null'
@@ -113,11 +118,11 @@ inputs:
       position: 104
       prefix: --worker_threads
 outputs:
-  - id: out_path
+  - id: out_out_path
     type: File
     doc: Path of desired output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-overlaps:0.1.1--h577a1d6_10

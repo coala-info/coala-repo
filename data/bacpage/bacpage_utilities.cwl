@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bacpage utilities
+baseCommand:
+  - bacpage
+  - utilities
 label: bacpage_utilities
 doc: "Available utilities:\n  One of the following utilities must be specified:\n\n\
   Tool homepage: https://github.com/CholGen/bacpage"

@@ -54,10 +54,10 @@ inputs:
       prefix: -use
   - id: xml_path_path
     type: string
-    doc: Output or path parameter `xml_path_path`
+    doc: =path to xml file where result should be saved
     inputBinding:
       position: 104
-      prefix: --xml-path
+      prefix: -xml
 outputs:
   - id: xml_path
     type:

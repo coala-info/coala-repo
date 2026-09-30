@@ -57,7 +57,7 @@ inputs:
       position: 101
       prefix: --no_recombination_filter
   - id: output_directory
-    type: Directory
+    type: string
     doc: Path to the output directory. A directory will be created if one does 
       not exist.
     inputBinding:

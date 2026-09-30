@@ -199,7 +199,6 @@ inputs:
       prefix: --tabs
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 102
       prefix: --out-file

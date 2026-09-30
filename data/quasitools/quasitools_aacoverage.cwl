@@ -18,9 +18,9 @@ inputs:
       position: 1
   - id: reference_fasta
     type: File
+    doc: REFERENCE in FASTA format
     secondaryFiles:
       - .fai
-    doc: REFERENCE in FASTA format
     inputBinding:
       position: 2
   - id: bed4_file
@@ -31,10 +31,9 @@ inputs:
       position: 3
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 101
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

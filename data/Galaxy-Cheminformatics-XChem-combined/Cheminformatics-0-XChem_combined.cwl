@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'This workflow is used for the virtual screening of the SARS-CoV-2 main protease (de.NBI-cloud, STFC). It includes Charge enumeration, Generation of 3D conformations, Preparation of active site for docking using rDock, Docking, Scoring and Selection of compounds available. More info can be found at https://covid19.galaxyproject.org/cheminformatics/'
 inputs:
   0_Input Dataset:
@@ -21,7 +21,8 @@ steps:
       Active site: 1_Input Dataset
       Receptor: 0_Input Dataset
       input_ligands: 2_Input Dataset Collection
-    out: []
+    out:
+    - Docked_Ligands
     run:
       class: Operation
       id: a70961d36bd03ade
@@ -35,12 +36,15 @@ steps:
         input_ligands:
           format: Any
           type: File
-      outputs: {}
+      outputs:
+        Docked_Ligands:
+          type: Any
   5_XChem TransFS Scoring:
     in:
       1:Input dataset collection: 4_XChem Docking/Docked_Ligands
       Protein (PDB): 0_Input Dataset
-    out: []
+    out:
+    - 4output
     run:
       class: Operation
       id: a1b8269b09176b2f
@@ -51,7 +55,9 @@ steps:
         Protein (PDB):
           format: Any
           type: File
-      outputs: {}
+      outputs:
+        4output:
+          type: Any
   6_XChem SuCOS Scoring:
     in:
       ligands to score: 5_XChem TransFS Scoring/4output

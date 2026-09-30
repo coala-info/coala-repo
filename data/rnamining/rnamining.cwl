@@ -20,7 +20,7 @@ inputs:
       position: 101
       prefix: --organism_name
   - id: output_folder
-    type: Directory
+    type: string
     doc: The output folder
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: necat.pl bridge
+baseCommand:
+  - necat.pl
+  - bridge
 label: necat_bridge
 doc: "bridge contigs\n\nTool homepage: https://github.com/xiaochuanle/NECAT"
 inputs:

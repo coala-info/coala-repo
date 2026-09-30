@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bigscape cluster
+baseCommand:
+  - bigscape
+  - cluster
 label: bigscape_cluster
 doc: "Clustering mode - BiG-SCAPE performs clustering of BGCs into GCFs. For a more
   comprehensive help menu and tutorials see GitHub Wiki.\n\nTool homepage: https://github.com/medema-group/BiG-SCAPE"
@@ -334,7 +336,7 @@ inputs:
       position: 101
       prefix: --no-trees
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory for all BiG-SCAPE results files.
     inputBinding:
       position: 101

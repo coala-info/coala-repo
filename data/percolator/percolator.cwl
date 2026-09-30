@@ -374,7 +374,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `decoy_results_peptides_path`
+    doc: Output tab delimited results for decoy
     inputBinding:
       position: 103
       prefix: --decoy-results-peptides
@@ -382,7 +382,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `decoy_results_proteins_path`
+    doc: Output tab delimited results for decoy
     inputBinding:
       position: 104
       prefix: --decoy-results-proteins
@@ -390,7 +390,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `decoy_results_psms_path`
+    doc: Output tab delimited results for decoy
     inputBinding:
       position: 105
       prefix: --decoy-results-psms
@@ -398,7 +398,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pepxml_output_path`
+    doc: Write a rudimentary pepXML file with
     inputBinding:
       position: 106
       prefix: --pepxml-output
@@ -406,7 +406,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `results_peptides_path`
+    doc: Output tab delimited results of peptides
     inputBinding:
       position: 107
       prefix: --results-peptides
@@ -414,7 +414,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `results_proteins_path`
+    doc: Output tab delimited results of proteins
     inputBinding:
       position: 108
       prefix: --results-proteins
@@ -422,7 +422,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `results_psms_path`
+    doc: Output tab delimited results of PSMs to
     inputBinding:
       position: 109
       prefix: --results-psms
@@ -430,7 +430,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tab_out_path`
+    doc: Output computed features to given file
     inputBinding:
       position: 110
       prefix: --tab-out
@@ -438,7 +438,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `weights_path`
+    doc: Output final weights to the given file
     inputBinding:
       position: 111
       prefix: --weights
@@ -446,7 +446,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `xmloutput_path`
+    doc: Path to xml-output (pout) file.
     inputBinding:
       position: 112
       prefix: --xmloutput

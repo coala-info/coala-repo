@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchlib sketch
+baseCommand:
+  - sketchlib
+  - sketch
 label: sketchlib_sketch
 doc: "Create sketches from input data\n\nTool homepage: https://github.com/bacpop/sketchlib.rust"
 inputs:

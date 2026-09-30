@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: philosopher report
+baseCommand:
+  - philosopher
+  - report
 label: philosopher_report
 doc: "Generate reports from philosopher runs.\n\nTool homepage: https://github.com/Nesvilab/philosopher"
 inputs:

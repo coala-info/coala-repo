@@ -46,7 +46,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 102

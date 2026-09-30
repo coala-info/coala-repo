@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yame_unpack
+baseCommand:
+  - yame
+  - unpack
 label: yame_unpack
 doc: "Print selected records from a .cx file as a tab-delimited table.\nEach output
   row is a genomic row index; each output column is a selected sample/record.\n\n\

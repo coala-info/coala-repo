@@ -168,7 +168,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: '- output file name'
     inputBinding:
       position: 103
       prefix: --out
@@ -176,7 +176,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_alignment_path`
     inputBinding:
       position: 104
       prefix: --out-alignment
@@ -184,7 +183,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_ids_path`
+    doc: '- output file name for ids file (optional)'
     inputBinding:
       position: 105
       prefix: --out-ids

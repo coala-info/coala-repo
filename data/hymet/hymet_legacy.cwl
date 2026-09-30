@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl /usr/local/share/hymet/main.pl
+baseCommand:
+  - perl
+  - /usr/local/share/hymet/main.pl
 label: hymet_legacy
 doc: "HYMET now ships with a unified CLI (bin/hymet). For batch runs try:\n      \
   \ bin/hymet run --contigs /path/to/sample.fna --out /path/to/out --threads 8\n \

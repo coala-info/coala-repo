@@ -55,7 +55,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory
     inputBinding:
       position: 102
@@ -78,10 +78,10 @@ inputs:
       prefix: --verbose
   - id: output_artifact_path
     type: string
-    doc: Output or path parameter `output_artifact_path`
+    doc: Output artifact (required)
     inputBinding:
       position: 103
-      prefix: --output-artifact
+      prefix: --output
 outputs:
   - id: output_artifact
     type: File

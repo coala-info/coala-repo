@@ -34,9 +34,9 @@ inputs:
       prefix: --maf_target
   - id: reference
     type: File
+    doc: path/to/REFERENCE/pvar
     secondaryFiles:
       - .fai
-    doc: path/to/REFERENCE/pvar
     inputBinding:
       position: 101
       prefix: --reference
@@ -67,7 +67,7 @@ inputs:
       prefix: --geno_miss
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: <Required> Output directory
     inputBinding:
       position: 102
       prefix: --outdir

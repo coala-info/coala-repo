@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aviary annotate
+baseCommand:
+- aviary
+- annotate
 label: aviary_annotate
 doc: "Annotate a given set of MAGs using EggNOG, GTDB-tk, and Checkm2\n\nTool homepage:
   https://github.com/rhysnewell/aviary/"
@@ -242,7 +244,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -338,7 +340,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location that will be treated used for temporary files. If 
       none is specified, the TMPDIR environment variable will be used. Can be 
       configured within the `configure` subcommand

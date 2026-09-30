@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth_align_hifi
+baseCommand:
+  - ccsmeth
+  - align_hifi
 label: ccsmeth_align_hifi
 doc: "align hifi reads using pbmm2/minimap2/bwa, default pbmm2\n\nTool homepage: https://github.com/PengNi/ccsmeth"
 inputs:
@@ -97,8 +99,7 @@ inputs:
       position: 101
       prefix: --minimap2
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

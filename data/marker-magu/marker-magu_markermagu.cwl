@@ -48,7 +48,7 @@ inputs:
   - id: filter_seqs
     type:
       - 'null'
-      - boolean
+      - string
     doc: True or False. Remove reads aligning to sequences at 
       filter_seqs/filter_seqs.fna ?
     inputBinding:
@@ -57,7 +57,7 @@ inputs:
   - id: keep
     type:
       - 'null'
-      - boolean
+      - string
     doc: True of False. Keep the intermediate files, located in the temporary 
       directory? These can add up, so it is not recommended if space is a 
       concern.
@@ -67,7 +67,7 @@ inputs:
   - id: qual
     type:
       - 'null'
-      - boolean
+      - string
     doc: True or False. Remove low-quality reads with fastp?
     inputBinding:
       position: 101
@@ -90,17 +90,16 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path of temporary directory.
     inputBinding:
       position: 101
       prefix: --temp
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory

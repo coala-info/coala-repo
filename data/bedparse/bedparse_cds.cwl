@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse_cds
+baseCommand:
+  - bedparse
+  - cds
 label: bedparse_cds
 doc: "Report the CDS of each coding transcript (i.e. transcripts with distinct\nvalues
   of thickStart and thickEnd). Transcripts without CDS are not reported.\n\nTool homepage:

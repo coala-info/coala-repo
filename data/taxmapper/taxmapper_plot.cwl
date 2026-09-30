@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmapper_plot
+baseCommand:
+  - taxmapper
+  - plot
 label: taxmapper_plot
 doc: "Plotting tool for taxonomic data.\n\nTool homepage: https://bitbucket.org/dbeisser/taxmapper"
 inputs:
@@ -27,7 +29,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `counts_path`
     inputBinding:
       position: 102
       prefix: --counts
@@ -35,7 +36,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `freq_path`
+    doc: Output file 1, taxon matrix with normalized
     inputBinding:
       position: 103
       prefix: --freq
@@ -43,7 +44,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_path`
+    doc: Output file 3, stacked barplot of total count
     inputBinding:
       position: 104
       prefix: --plot

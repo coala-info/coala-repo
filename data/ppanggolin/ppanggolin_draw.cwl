@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin draw
+baseCommand:
+  - ppanggolin
+  - draw
 label: ppanggolin_draw
 doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
   team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
@@ -132,7 +134,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

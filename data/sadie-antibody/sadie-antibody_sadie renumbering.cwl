@@ -79,6 +79,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_path
+    type: string
+    doc: The output file, type is inferred from
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -86,7 +92,9 @@ outputs:
       - File
     doc: The output file, type is inferred from extensions
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sadie-antibody:2.0.0--pyhdfd78af_0

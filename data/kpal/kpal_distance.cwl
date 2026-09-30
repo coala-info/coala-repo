@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_distance
+baseCommand:
+  - kpal
+  - distance
 label: kpal_distance
 doc: "Calculate the distance between two k-mer profiles. If the files contain more
   than one profile, they are linked by name and processed pairwise.\n\nTool homepage:

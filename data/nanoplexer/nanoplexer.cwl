@@ -97,7 +97,7 @@ inputs:
       position: 102
       prefix: -M
   - id: output_path
-    type: Directory
+    type: string
     doc: Output path
     inputBinding:
       position: 102

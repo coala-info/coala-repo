@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jupyter nbextension
+baseCommand:
+  - jupyter
+  - nbextension
 label: jupyter_nbextension
 doc: "Work with Jupyter notebook extensions\n\nTool homepage: https://github.com/jakevdp/PythonDataScienceHandbook"
 inputs:

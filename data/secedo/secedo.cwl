@@ -102,7 +102,7 @@ inputs:
   - id: labels_file
     type:
       - 'null'
-      - string
+      - File
     doc: Input file containing labels
     inputBinding:
       position: 101

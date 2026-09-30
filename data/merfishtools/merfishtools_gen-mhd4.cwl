@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: merfishtools gen-mhd4
+baseCommand:
+  - merfishtools
+  - gen-mhd4
 label: merfishtools_gen-mhd4
 doc: "Generate MERFISH MHD4 codebook with given parameters.\n\nTool homepage: https://merfishtools.github.io"
 inputs:

@@ -14,6 +14,7 @@ inputs:
       by an underscore
     inputBinding:
       position: 1
+      prefix: --input
   - id: aspect
     type:
       - 'null'
@@ -228,7 +229,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_path`
     inputBinding:
       position: 104
       prefix: --report

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_fx2tab
+baseCommand:
+  - seqkit
+  - fx2tab
 label: seqkit_fx2tab
 doc: "convert FASTA/Q to tabular format, and provide various information,\nlike sequence
   length, GC content/GC skew.\n\nTool homepage: https://github.com/shenwei356/seqkit"
@@ -22,6 +24,7 @@ inputs:
       whole seq)"
     inputBinding:
       position: 101
+      prefix: --alphabet-guess-seq-length
   - id: avg_qual
     type:
       - 'null'
@@ -68,6 +71,7 @@ inputs:
       format"
     inputBinding:
       position: 101
+      prefix: --compress-level
   - id: gc
     type:
       - 'null'
@@ -100,6 +104,7 @@ inputs:
       \                                Pseud..."
     inputBinding:
       position: 101
+      prefix: --id-ncbi
   - id: id_regexp
     type:
       - 'null'
@@ -107,6 +112,7 @@ inputs:
     doc: regular expression for parsing ID
     inputBinding:
       position: 101
+      prefix: --id-regexp
   - id: infile_list
     type:
       - 'null'
@@ -171,6 +177,7 @@ inputs:
     doc: be quiet and do not show extra information
     inputBinding:
       position: 101
+      prefix: --quiet
   - id: seq_hash
     type:
       - 'null'
@@ -208,7 +215,7 @@ inputs:
       prefix: -j
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

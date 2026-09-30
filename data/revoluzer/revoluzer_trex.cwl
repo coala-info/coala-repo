@@ -76,10 +76,10 @@ inputs:
       prefix: -w
   - id: dot_output_file_path
     type: string
-    doc: Output or path parameter `dot_output_file_path`
+    doc: 'file: file for dot output'
     inputBinding:
       position: 102
-      prefix: --dot-output-file
+      prefix: -d
 outputs:
   - id: dot_output_file
     type:

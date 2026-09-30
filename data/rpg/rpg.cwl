@@ -126,10 +126,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Optional result file to output result peptides.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outputfile
 outputs:
   - id: output_file
     type:

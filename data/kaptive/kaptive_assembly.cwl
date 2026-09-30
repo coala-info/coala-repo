@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kaptive assembly
+baseCommand:
+  - kaptive
+  - assembly
 label: kaptive_assembly
 doc: "In silico serotyping of assemblies\n\nTool homepage: https://kaptive.readthedocs.io/en/latest"
 inputs:
@@ -166,18 +168,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output file to write/append tabular results to (default: stdout)'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
   - id: scores_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `scores_file_path`
+    doc: '[]      Dump locus score matrix to tsv (typing will not be performed!) Optionally
+      choose file (can be existing) (default: stdout)'
     inputBinding:
       position: 105
-      prefix: --scores-file
+      prefix: --scores
 outputs:
   - id: output_file
     type:

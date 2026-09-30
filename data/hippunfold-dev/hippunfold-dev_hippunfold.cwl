@@ -516,7 +516,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder for storing working files. If not specified, will be in "work/" 
       subfolder in the output folder. You can also use environment variables 
       when setting the workdir, e.g. --workdir '$SLURM_TMPDIR'.

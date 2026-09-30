@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: caspeak_align
+baseCommand:
+  - caspeak
+  - align
 label: caspeak_align
 doc: "Aligns reads to a reference genome, considering MEI insertions.\n\nTool homepage:
   https://github.com/Rye-lxy/CasPeak"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: magpurify conspecific
+baseCommand:
+  - magpurify
+  - conspecific
 label: magpurify_conspecific
 doc: "Find contigs that fail to align to closely related genomes.\n\nTool homepage:
   https://github.com/snayfach/MAGpurify"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: out
-    type: Directory
+    type: string
     doc: Output directory to store results and intermediate files
     inputBinding:
       position: 2

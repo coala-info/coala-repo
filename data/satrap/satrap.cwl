@@ -215,7 +215,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set the temporary directory where results will be saved [tmp/].
     inputBinding:
       position: 101

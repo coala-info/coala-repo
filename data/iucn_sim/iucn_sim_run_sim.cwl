@@ -78,7 +78,7 @@ inputs:
       position: 101
       prefix: --n_years
   - id: outdir
-    type: Directory
+    type: string
     doc: Provide path to outdir where results will be saved.
     inputBinding:
       position: 101

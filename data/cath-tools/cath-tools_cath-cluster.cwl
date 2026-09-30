@@ -49,7 +49,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `clust_spans_to_file_path`
+    doc: Write links that form spanning trees for each cluster to file <file> 
+      (or '-' for stdout)
     inputBinding:
       position: 103
       prefix: --clust-spans-to-file
@@ -57,7 +58,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `clusters_to_file_path`
+    doc: Write the clustering to file <file> (or '-' for stdout)
     inputBinding:
       position: 104
       prefix: --clusters-to-file
@@ -65,7 +66,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `merges_to_file_path`
+    doc: Write the ordered list of merges to file <file> (or '-' for stdout)
     inputBinding:
       position: 105
       prefix: --merges-to-file
@@ -73,7 +74,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reps_to_file_path`
+    doc: Write the list of representatives to file <file> (or '-' for stdout)
     inputBinding:
       position: 106
       prefix: --reps-to-file

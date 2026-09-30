@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svim alignment
+baseCommand:
+  - svim
+  - alignment
 label: svim_alignment
 doc: "SVIM alignment\n\nTool homepage: https://github.com/eldariont/svim"
 inputs:

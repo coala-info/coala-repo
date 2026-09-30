@@ -191,10 +191,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `append_a3m_file_path`
+    doc: append query alignment in a3m (-aa3m) or PSI-BLAST format (-apsi )to 
+      file (default=none)
     inputBinding:
       position: 102
-      prefix: --append-a3m-file
+      prefix: -aa3m
   - id: output_a3m_file_path
     type:
       - 'null'

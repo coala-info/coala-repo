@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dropkick run
+baseCommand:
+  - dropkick
+  - run
 label: dropkick_run
 doc: "Run dropkick to identify ambient RNA in single-cell data.\n\nTool homepage:
   https://github.com/KenLauLab/dropkick"
@@ -113,7 +115,6 @@ inputs:
       prefix: --thresh-methods
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103
       prefix: --output-dir

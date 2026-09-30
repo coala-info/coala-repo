@@ -281,7 +281,7 @@ inputs:
       or a database loaded in a server, db.hmm:host:port (see hmm_server.py)'
     inputBinding:
       position: 101
-      prefix: --hmmer_db_prefix
+      prefix: --database
   - id: index_chunks
     type:
       - 'null'
@@ -527,7 +527,7 @@ inputs:
   - id: scratch_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write output files in a temporary scratch dir, move them to the final 
       output dir when finished. Speed up large computations using network file 
       systems.
@@ -669,7 +669,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Where temporary files are created. Better if this is a local disk.
     inputBinding:
       position: 101

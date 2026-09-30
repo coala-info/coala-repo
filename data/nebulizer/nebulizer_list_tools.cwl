@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nebulizer list_tools
+baseCommand:
+  - nebulizer
+  - list_tools
 label: nebulizer_list_tools
 doc: "List information about tools and installed tool repositories.\n\nTool homepage:
   https://github.com/pjbriggs/nebulizer"

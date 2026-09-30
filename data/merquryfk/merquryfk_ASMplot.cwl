@@ -125,7 +125,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Place all temporary files in directory -P.
     inputBinding:
       position: 105

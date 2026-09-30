@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cblaster gne
+baseCommand:
+  - cblaster
+  - gne
 label: cblaster_gne
 doc: "Gene neighbourhood estimation.\nRepeatedly recomputes homologue clusters with
   different --gap values.\n\nTool homepage: https://github.com/gamcil/cblaster"
@@ -69,7 +71,7 @@ inputs:
       prefix: --scale
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Write results to file
     inputBinding:
       position: 103
       prefix: --output

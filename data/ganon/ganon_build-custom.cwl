@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ganon build-custom
+baseCommand:
+  - ganon
+  - build-custom
 label: ganon_build-custom
 doc: "Build a custom Ganon database.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:

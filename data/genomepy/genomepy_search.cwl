@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomepy_search
+baseCommand:
+  - genomepy
+  - search
 label: genomepy_search
 doc: "Search for genomes that contain TERM in their name, description, accession (must
   start with GCA_ or GCF_) or taxonomy (start).\n\nSearch is case-insensitive, name/description

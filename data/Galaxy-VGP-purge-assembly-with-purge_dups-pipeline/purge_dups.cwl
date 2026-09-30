@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: VGP purge
-  assembly with purge_dups pipeline'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: VGP purge assembly with purge_dups pipeline'
 inputs:
   Genomescope model parameters:
     format: data
@@ -15,8 +14,7 @@ inputs:
     format: data
     type: File
   Pacbio Reads Collection - Trimmed:
-    doc: Collection of trimmed reads (from cutadapt in the Hifiasm workflow) in fastq
-      format.
+    doc: Collection of trimmed reads (from cutadapt in the Hifiasm workflow) in fastq format.
     format: data
     type: File
 outputs: {}

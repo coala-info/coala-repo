@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_head
+baseCommand:
+  - smof
+  - head
 label: smof_head
 doc: "`smof head` is modeled after GNU tail and follows the same basic conventions
   except it is entry-based rather than line-based. By default, `smof head` outputs

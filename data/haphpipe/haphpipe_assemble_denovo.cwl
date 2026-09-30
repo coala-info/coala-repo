@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe assemble_denovo
+baseCommand:
+  - haphpipe
+  - assemble_denovo
 label: haphpipe_assemble_denovo
 doc: "De novo assembly using Haphpipe\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -71,7 +73,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

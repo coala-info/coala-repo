@@ -800,7 +800,7 @@ inputs:
   - id: local_storage_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Specify prefix for storing local copies of storage files and folders (e.g.
       local scratch disk). Environment variables will be expanded. (default: .snakemake/storage)'
     inputBinding:
@@ -1062,7 +1062,7 @@ inputs:
   - id: remote_job_local_storage_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Specify prefix for storing local copies of storage files and folders (e.g.
       local scratch disk) in case of remote jobs (e.g. cluster or cloud jobs). Environment
       variables will be expanded within the remote job. (default: .snakemake/storage)'
@@ -1371,7 +1371,7 @@ inputs:
   - id: shadow_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a directory in which the `shadow` directory is created. If not 
       supplied, the value is set to the `.snakemake` directory relative to the 
       working directory.

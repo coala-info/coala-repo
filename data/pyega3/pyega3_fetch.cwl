@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyega3 fetch
+baseCommand:
+  - pyega3
+  - fetch
 label: pyega3_fetch
 doc: "Fetch data from EGA.\n\nTool homepage: https://github.com/EGA-archive/ega-download-client"
 inputs:

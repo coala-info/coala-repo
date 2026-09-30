@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam seq-stats
+baseCommand:
+  - rustybam
+  - seq-stats
 label: rustybam_seq-stats
 doc: "Calculate summary statistics from fasta/q, sam, bam, or bed files. e.g. N50,
   mean, quantiles\n\nTool homepage: https://github.com/mrvollger/rustybam"

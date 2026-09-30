@@ -164,7 +164,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder to store outputs
     inputBinding:
       position: 101
@@ -180,7 +180,7 @@ inputs:
   - id: resources_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store resources of UPIMAPI
     inputBinding:
       position: 101
@@ -261,7 +261,6 @@ inputs:
       prefix: --to-db
   - id: output_table_path
     type: string
-    doc: Output or path parameter `output_table_path`
     inputBinding:
       position: 102
       prefix: --output-table

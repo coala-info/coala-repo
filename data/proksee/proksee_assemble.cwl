@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: proksee assemble
+baseCommand:
+  - proksee
+  - assemble
 label: proksee_assemble
 doc: "Assemble reads into a genome.\n\nTool homepage: https://github.com/proksee-project/proksee-cmd"
 inputs:
@@ -45,10 +47,10 @@ inputs:
       prefix: --species
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: '[required]'
     inputBinding:
       position: 104
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type: Directory

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg_prune
+baseCommand:
+  - ufcg
+  - prune
 label: ufcg_prune
 doc: "Fix UFCG tree labels or get a single gene tree\n\nTool homepage: https://ufcg.steineggerlab.com"
 inputs:
@@ -20,7 +22,7 @@ inputs:
       position: 101
       prefix: -g
   - id: input_file
-    type: string
+    type: File
     doc: Input .trm file provided by tree module
     inputBinding:
       position: 101

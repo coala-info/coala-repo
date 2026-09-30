@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem seqs
+baseCommand:
+  - singlem
+  - seqs
 label: singlem_seqs
 doc: "Find the best window position for a SingleM package\n\nTool homepage: https://github.com/wwood/singlem"
 inputs:

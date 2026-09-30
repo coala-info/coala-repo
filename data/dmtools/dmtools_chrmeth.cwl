@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools chrmeth
+baseCommand:
+  - dmtools
+  - chrmeth
 label: dmtools_chrmeth
 doc: "Calculates chromosome methylation statistics from a DM file.\n\nTool homepage:
   https://github.com/ZhouQiangwei/dmtools"
@@ -21,10 +23,10 @@ inputs:
       prefix: -i
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ensemblcov threaded-auto
+baseCommand:
+  - ensemblcov
+  - threaded-auto
 label: ensemblcov_threaded-auto
 doc: "threaded version of ensembl auto gene conversion\n\nTool homepage: https://github.com/IBCHgenomic/ensemlcov"
 inputs:

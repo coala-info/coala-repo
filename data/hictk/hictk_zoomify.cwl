@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk zoomify
+baseCommand:
+  - hictk
+  - zoomify
 label: hictk_zoomify
 doc: "Convert single-resolution Cooler and .hic files to multi-resolution by coarsening.\n\
   \nTool homepage: https://github.com/paulsengroup/hictk"
@@ -116,7 +118,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to a folder where to store temporary data.
     inputBinding:
       position: 103

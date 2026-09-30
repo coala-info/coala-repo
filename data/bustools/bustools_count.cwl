@@ -80,7 +80,6 @@ inputs:
       prefix: --umi-gene
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

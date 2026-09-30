@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfatools_blacklist
+baseCommand:
+  - gfatools
+  - blacklist
 label: gfatools_blacklist
 doc: "Identify and output regions from a GFA graph that are considered 'blacklisted'.\n\
   \nTool homepage: https://github.com/lh3/gfatools"

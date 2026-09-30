@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mash sketch
+baseCommand:
+  - mash
+  - sketch
 label: mash_sketch
 doc: "Create a sketch file, which is a reduced representation of a sequence or set
   of sequences (based on min-hashes) that can be used for fast distance estimations.
@@ -182,19 +184,21 @@ inputs:
       prefix: -w
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Output prefix (first input file used if unspecified). The suffix '.msh'
+      will be appended.
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output prefix (first input file used if unspecified). The suffix '.msh'
       will be appended.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

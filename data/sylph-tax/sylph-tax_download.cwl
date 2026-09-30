@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sylph-tax download
+baseCommand:
+  - sylph-tax
+  - download
 label: sylph-tax_download
 doc: "Download taxonomy metadata\n\nTool homepage: https://github.com/bluenote-1577/sylph-tax"
 inputs:

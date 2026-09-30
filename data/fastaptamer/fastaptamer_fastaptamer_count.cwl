@@ -17,7 +17,7 @@ inputs:
       position: 101
       prefix: -f
   - id: input_file
-    type: File
+    type: File?
     doc: input file. REQUIRED (FASTQ unless -f specified).
     inputBinding:
       position: 101

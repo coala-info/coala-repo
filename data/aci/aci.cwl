@@ -54,7 +54,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'custom directory for temporary files (default: system tmp)'
     inputBinding:
       position: 101

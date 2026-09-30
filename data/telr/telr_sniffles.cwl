@@ -248,18 +248,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bedpe_output_path`
+    doc: ' bedpe output file name []'
     inputBinding:
       position: 102
-      prefix: --bedpe-output
+      prefix: --bedpe
   - id: vcf_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vcf_output_path`
+    doc: ' VCF output file name []'
     inputBinding:
       position: 103
-      prefix: --vcf-output
+      prefix: --vcf
 outputs:
   - id: vcf_output
     type:

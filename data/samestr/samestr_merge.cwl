@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samestr_merge
+baseCommand:
+  - samestr
+  - merge
 label: samestr_merge
 doc: "Merge SNV profiles from multiple samples.\n\nTool homepage: https://github.com/danielpodlesny/samestr/"
 inputs:
@@ -49,7 +51,7 @@ inputs:
       position: 101
       prefix: --nprocs
   - id: output_dir_path
-    type: string
+    type: string?
     doc: 'Path to output directory. (default: out_db/)'
     inputBinding:
       position: 102

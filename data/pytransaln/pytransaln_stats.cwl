@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pytransaln_stats
+baseCommand:
+  - pytransaln
+  - stats
 label: pytransaln_stats
 doc: "Calculate statistics from translated alignments.\n\nTool homepage: https://github.com/monagrland/pytransaln"
 inputs:
@@ -32,42 +34,37 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_mqc_hmm_path`
     inputBinding:
       position: 102
-      prefix: --out-mqc-hmm
+      prefix: --out_mqc_hmm
   - id: out_mqc_mins_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_mqc_mins_path`
     inputBinding:
       position: 103
-      prefix: --out-mqc-mins
+      prefix: --out_mqc_mins
   - id: out_mqc_spf_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_mqc_spf_path`
     inputBinding:
       position: 104
-      prefix: --out-mqc-spf
+      prefix: --out_mqc_spf
   - id: out_screened_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_screened_path`
     inputBinding:
       position: 105
-      prefix: --out-screened
+      prefix: --out_screened
   - id: out_stats_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_stats_path`
     inputBinding:
       position: 106
-      prefix: --out-stats
+      prefix: --out_stats
 outputs:
   - id: out_mqc_hmm
     type:

@@ -369,18 +369,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_realigned_bam_path`
+    doc: output BAM file with realigned reads
     inputBinding:
       position: 102
-      prefix: --output-realigned-bam
+      prefix: --outputRealignedBAM
   - id: process_realigned_bam_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `process_realigned_bam_path`
+    doc: arg             ABSOLUTE path to script to process realigned BAM file
     inputBinding:
       position: 103
-      prefix: --process-realigned-bam
+      prefix: --processRealignedBAM
 outputs:
   - id: output_realigned_bam
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mlstdb update
+baseCommand:
+  - mlstdb
+  - update
 label: mlstdb_update
 doc: "Update MLST schemes and create BLAST database.\n\nDownloads MLST schemes from
   the specified input file and creates a BLAST\ndatabase from the downloaded sequences.

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vkmz w4m-xcms
+baseCommand:
+  - vkmz
+  - w4m-xcms
 label: vkmz_w4m-xcms
 doc: "Process XCMS data with various metadata and output options.\n\nTool homepage:
   https://github.com/HegemanLab/VKMZ"
@@ -103,7 +105,6 @@ inputs:
       prefix: --variable-metadata
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

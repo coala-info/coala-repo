@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_100_summarize_outputs
+baseCommand:
+  - mvip
+  - MVP_100_summarize_outputs
 label: mvip_MVP_100_summarize_outputs
 doc: "Summarize outputs and create figures.\n\nTool homepage: https://gitlab.com/ccoclet/mvp"
 inputs:

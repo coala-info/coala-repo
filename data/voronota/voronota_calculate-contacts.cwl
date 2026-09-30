@@ -93,7 +93,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `old_contacts_output_path`
+    doc: file path to output spherical contacts
     inputBinding:
       position: 103
       prefix: --old-contacts-output
@@ -101,7 +101,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `volumes_output_path`
+    doc: file path to output constrained cells volumes
     inputBinding:
       position: 104
       prefix: --volumes-output

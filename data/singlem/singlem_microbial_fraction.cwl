@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem microbial_fraction
+baseCommand:
+  - singlem
+  - microbial_fraction
 label: singlem_microbial_fraction
 doc: "Estimate the fraction of reads from a metagenome that are assigned to Bacteria
   and Archaea compared to e.g. eukaryote or phage. Also estimate average genome size.
@@ -109,7 +111,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_per_taxon_read_fractions_path`
     inputBinding:
       position: 102
       prefix: --output-per-taxon-read-fractions
@@ -117,7 +118,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tsv_path`
     inputBinding:
       position: 103
       prefix: --output-tsv

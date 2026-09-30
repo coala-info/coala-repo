@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar SNVerIndividual.jar
+baseCommand:
+  - java
+  - -jar
+  - SNVerIndividual.jar
 label: snver
 doc: "SNVerIndividual Usage\n\nTool homepage: http://snver.sourceforge.net/"
 inputs:

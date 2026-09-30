@@ -63,19 +63,21 @@ inputs:
       prefix: --with-biosample-prefix
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Prefix of output filenames, '-' implies streaming. Streaming not 
+      supported with
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: --output
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of output filenames, '-' implies streaming. Streaming not 
       supported with compression nor with split_barcodes
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

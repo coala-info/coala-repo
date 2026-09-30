@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp abundance
+baseCommand:
+  - treesapp
+  - abundance
 label: treesapp_abundance
 doc: "Calculate query sequence abundances from read coverage.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:

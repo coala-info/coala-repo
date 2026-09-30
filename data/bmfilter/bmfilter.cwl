@@ -176,10 +176,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --read-1
+          separate: true
     doc: Fasta or fastq (for -q1) file with reads, may be repeated
     inputBinding:
       position: 101
-      prefix: --read-1
   - id: read_2
     type:
       - 'null'
@@ -228,13 +230,15 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --word-bitmask
+          separate: true
     doc: Word bitmask file (may be repeated)
     inputBinding:
       position: 101
-      prefix: --word-bitmask
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: -o ''          Output base name (suffixes will be added to it)
     inputBinding:
       position: 102
       prefix: --output
@@ -242,10 +246,11 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output base name (suffixes will be added to it)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur merge
+baseCommand:
+  - augur
+  - merge
 label: augur_merge
 doc: "Merge two or more datasets into one. Datasets can consist of metadata and/or
   sequence files. If both are provided, the order and file contents are used independently.\n\

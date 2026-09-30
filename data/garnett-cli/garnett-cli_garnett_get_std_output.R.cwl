@@ -38,7 +38,6 @@ inputs:
       prefix: --predicted-cell-type-field
   - id: output_file_path_path
     type: string
-    doc: Output or path parameter `output_file_path_path`
     inputBinding:
       position: 102
       prefix: --output-file-path

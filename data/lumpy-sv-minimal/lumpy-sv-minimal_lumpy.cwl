@@ -96,7 +96,7 @@ inputs:
   - id: temp_file_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: temp file prefix, must be to a writeable directory
     inputBinding:
       position: 101

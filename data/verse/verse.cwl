@@ -295,10 +295,12 @@ inputs:
       prefix: -s
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Give the general name of the output file, e.g., 'Sample_A'. The summary
+      file will be named 'Sample_A.summary.txt.' The file containing gene counts
+      will be named 'Sample_A.exon.txt', 'Sample_A.intron.txt', etc.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

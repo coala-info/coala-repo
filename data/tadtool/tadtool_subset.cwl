@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadtool_subset
+baseCommand:
+  - tadtool
+  - subset
 label: tadtool_subset
 doc: "Reduce a matrix to a smaller region.\n\nTool homepage: https://github.com/vaquerizaslab/tadtool"
 inputs:

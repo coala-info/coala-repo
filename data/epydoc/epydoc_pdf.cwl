@@ -167,13 +167,15 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --graph
+          separate: true
     doc: 'Include graphs of type GRAPHTYPE in the generated output. Graphs are generated
       using the Graphviz dot executable. This option may be repeated to include multiple
       graph types in the output. GRAPHTYPE should be one of: all, classtree, callgraph,
       umlclasstree.'
     inputBinding:
       position: 103
-      prefix: --graph
   - id: graph_font
     type:
       - 'null'

@@ -26,12 +26,14 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --custom-tests
+          separate: true
     doc: A path to a directory containing custom test modules. Please refer to 
       the documentation for more information on how to write custom tests 
       (memote.readthedocs.io). This option can be specified multiple times.
     inputBinding:
       position: 102
-      prefix: --custom-tests
   - id: deployment
     type:
       - 'null'
@@ -45,12 +47,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclusive
+          separate: true
     doc: The name of a test or test module to be run exclusively. All other 
       tests are skipped. This option can be used multiple times and takes 
       precedence over '--skip'.
     inputBinding:
       position: 102
-      prefix: --exclusive
   - id: experimental
     type:
       - 'null'
@@ -100,11 +104,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --skip
+          separate: true
     doc: The name of a test or test module to be skipped. This option can be 
       used multiple times.
     inputBinding:
       position: 102
-      prefix: --skip
   - id: skip_unchanged
     type:
       - 'null'
@@ -131,7 +137,7 @@ inputs:
       prefix: --solver-timeout
   - id: filename_path
     type: string
-    doc: Output or path parameter `filename_path`
+    doc: Path for the collected results as JSON.
     inputBinding:
       position: 103
       prefix: --filename

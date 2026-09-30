@@ -77,7 +77,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Matplotlib color map from which palette will be made (e.g. 'Blues','autumn','Set1';
+    doc: "Matplotlib color map from which palette will be made (e.g. 'Blues','autumn','Set1';"
     inputBinding:
       position: 103
       prefix: --cmap

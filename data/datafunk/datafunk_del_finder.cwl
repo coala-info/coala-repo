@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: datafunk del_finder
+baseCommand:
+  - datafunk
+  - del_finder
 label: datafunk_del_finder
 doc: "Query an alignment position for deletions\n\nTool homepage: https://github.com/cov-ert/datafunk"
 inputs:
@@ -31,7 +33,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `genotypes_table_path`
     inputBinding:
       position: 102
       prefix: --genotypes-table
@@ -39,7 +40,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 103
       prefix: --output-fasta

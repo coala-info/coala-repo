@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jass create-worktable
+baseCommand:
+  - jass
+  - create-worktable
 label: jass_create-worktable
 doc: "Create a worktable for JASS analysis.\n\nTool homepage: http://statistical-genetics.pages.pasteur.fr/jass/"
 inputs:
@@ -11,11 +13,13 @@ inputs:
     doc: list of selected phenotypes
     inputBinding:
       position: 1
+      prefix: --phenotypes
   - id: worktable_path
     type: File
     doc: path to the worktable file to generate
     inputBinding:
       position: 2
+      prefix: --worktable-path
   - id: chromosome_number
     type:
       - 'null'
@@ -132,7 +136,6 @@ inputs:
       prefix: --sumz
   - id: csv_file_path_path
     type: string
-    doc: Output or path parameter `csv_file_path_path`
     inputBinding:
       position: 104
       prefix: --csv-file-path

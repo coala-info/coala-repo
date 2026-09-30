@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybracter_config
+baseCommand:
+  - hybracter
+  - config
 label: hybracter_config
 doc: "Copy the system default config file\n\nTool homepage: https://github.com/gbouras13/hybracter"
 inputs:
@@ -160,7 +162,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102

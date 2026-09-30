@@ -75,9 +75,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: The reference fasta file.
     secondaryFiles:
       - .fai
-    doc: The reference fasta file.
     inputBinding:
       position: 101
       prefix: --reference
@@ -106,14 +106,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transparent
-  - id: output_base_name_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_base_name_path`
-    inputBinding:
-      position: 102
-      prefix: --output-base-name
   - id: path_path
     type:
       - 'null'
@@ -122,15 +114,23 @@ inputs:
     inputBinding:
       position: 103
       prefix: --path
+  - id: output_base_name_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --output-base-name
 outputs:
   - id: output_base_name
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Specify a base name for the output file( s). The input file base name 
       is the default.
     outputBinding:
-      glob: $(inputs.output_base_name_path)
+      glob: $(inputs.output_base_name_path)*
   - id: path
     type:
       - 'null'

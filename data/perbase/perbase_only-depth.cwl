@@ -143,9 +143,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Indexed reference fasta, set if using CRAM
     secondaryFiles:
       - .fai
-    doc: Indexed reference fasta, set if using CRAM
     inputBinding:
       position: 102
       prefix: --ref-fasta
@@ -176,7 +176,6 @@ inputs:
       prefix: --zero-base
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

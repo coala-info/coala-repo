@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_mutate
+baseCommand:
+  - seqkit
+  - mutate
 label: seqkit_mutate
 doc: "edit sequence (point mutation, insertion, deletion)\n\nTool homepage: https://github.com/shenwei356/seqkit"
 inputs:
@@ -115,6 +117,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pattern
+      itemSeparator: ','
   - id: pattern_file
     type:
       - 'null'
@@ -179,7 +182,7 @@ inputs:
       prefix: --use-regexp
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

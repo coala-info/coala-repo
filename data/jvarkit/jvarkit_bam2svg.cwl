@@ -91,10 +91,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Indexed fasta Reference file. This file must be indexed with samtools 
       faidx and with picard/gatk CreateSequenceDictionary or samtools dict
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference
@@ -134,7 +134,6 @@ inputs:
       prefix: --width
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

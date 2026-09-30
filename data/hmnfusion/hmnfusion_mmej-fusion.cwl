@@ -64,10 +64,7 @@ inputs:
       position: 102
       prefix: --output-hmnfusion-json
   - id: output_hmnfusion_xlsx_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_hmnfusion_xlsx_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --output-hmnfusion-xlsx

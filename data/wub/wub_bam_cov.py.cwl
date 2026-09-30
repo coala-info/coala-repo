@@ -27,9 +27,9 @@ inputs:
       prefix: -Q
   - id: reference
     type: File
+    doc: Reference fasta.
     secondaryFiles:
       - .fai
-    doc: Reference fasta.
     inputBinding:
       position: 102
       prefix: -f
@@ -42,11 +42,11 @@ inputs:
       position: 102
       prefix: -c
   - id: output_tsv_path
-    type: string
-    doc: Output or path parameter `output_tsv_path`
+    type: string?
+    doc: tsv        Output TSV (bam_cov.tsv).
     inputBinding:
       position: 103
-      prefix: --output-tsv
+      prefix: -t
 outputs:
   - id: output_tsv
     type:

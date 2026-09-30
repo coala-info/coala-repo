@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert bam2json
+baseCommand:
+  - bioconvert
+  - bam2json
 label: bioconvert_bam2json
 doc: "Convert file from '('BAM',)' to '('JSON',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

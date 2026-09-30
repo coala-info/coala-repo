@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: longcallr_longcallR-asj
+baseCommand: longcallR-asj
 label: longcallr_longcallR-asj
 doc: "longcallR-asj\n\nTool homepage: https://github.com/huangnengCSU/longcallR"
 inputs:
@@ -38,6 +38,7 @@ inputs:
       - type: array
         items: string
     doc: "Gene types to be analyzed. Default is\n[\"protein_coding\", \"lncRNA\"]"
+    default:
       - protein_coding
       - lncRNA
     inputBinding:

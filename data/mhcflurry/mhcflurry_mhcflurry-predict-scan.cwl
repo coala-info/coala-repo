@@ -51,7 +51,6 @@ inputs:
       - Directory
     doc: "Directory containing presentation models.Default: /roo\nt/.local/share/mhcflurry/4/2.2.0/models_class1_present\n\
       ation/models"
-      /root/.local/share/mhcflurry/4/2.2.0/models_class1_presentation/models
     inputBinding:
       position: 102
       prefix: --models
@@ -162,6 +161,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threshold-processing-score
+  - id: out_path
+    type: string?
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -169,7 +173,9 @@ outputs:
       - File
     doc: Output CSV
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mhcflurry:2.1.5--pyh7e72e81_0

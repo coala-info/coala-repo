@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk dump
+baseCommand:
+  - hictk
+  - dump
 label: hictk_dump
 doc: "Read interactions and other kinds of data from .hic and Cooler files and write
   them to stdout.\n\nTool homepage: https://github.com/paulsengroup/hictk"

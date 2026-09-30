@@ -12,6 +12,11 @@ inputs:
     doc: a VCF file
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: the output BED3+ file of genotype counts
+    inputBinding:
+      position: 2
   - id: individuals
     type:
       - 'null'
@@ -21,11 +26,11 @@ inputs:
       position: 102
       prefix: --individuals
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: the output BED3+ file of genotype counts
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

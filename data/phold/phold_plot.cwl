@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold_plot
+baseCommand:
+  - phold
+  - plot
 label: phold_plot
 doc: "Creates Phold Circular Genome Plots\n\nTool homepage: https://github.com/gbouras13/phold"
 inputs:
@@ -87,7 +89,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory to store phold plots
     inputBinding:
       position: 101

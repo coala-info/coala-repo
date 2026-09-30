@@ -66,7 +66,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: output folder
     inputBinding:
       position: 101

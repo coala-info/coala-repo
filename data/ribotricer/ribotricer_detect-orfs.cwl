@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotricer detect-orfs
+baseCommand:
+  - ribotricer
+  - detect-orfs
 label: ribotricer_detect-orfs
 doc: "Detect translating ORFs from BAM file\n\nTool homepage: https://github.com/smithlabcode/ribotricer"
 inputs:

@@ -23,7 +23,7 @@ inputs:
       prefix: --labels
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output directory to store trained RandomForest
     inputBinding:
       position: 102
       prefix: --out

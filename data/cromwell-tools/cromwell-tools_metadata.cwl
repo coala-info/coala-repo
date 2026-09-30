@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools metadata
+baseCommand:
+  - cromwell-tools
+  - metadata
 label: cromwell-tools_metadata
 doc: "Retrieve the workflow and call-level metadata for a specified workflow by UUID.\n\
   \nTool homepage: http://github.com/broadinstitute/cromwell-tools"
@@ -18,7 +20,7 @@ inputs:
   - id: expand_sub_workflows
     type:
       - 'null'
-      - boolean
+      - string
     doc: When true, metadata for sub workflows will be fetched and inserted 
       automatically in the metadata response.
     inputBinding:

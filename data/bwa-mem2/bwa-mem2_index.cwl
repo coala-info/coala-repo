@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bwa-mem2 index
+baseCommand:
+  - bwa-mem2
+  - index
 label: bwa-mem2_index
 doc: "Build index for BWA-MEM2\n\nTool homepage: https://github.com/bwa-mem2/bwa-mem2"
 inputs:

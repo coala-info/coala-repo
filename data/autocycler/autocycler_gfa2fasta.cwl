@@ -14,10 +14,10 @@ inputs:
       prefix: --in_gfa
   - id: out_fasta_path
     type: string
-    doc: Output or path parameter `out_fasta_path`
+    doc: Output FASTA file (required)
     inputBinding:
       position: 102
-      prefix: --out-fasta
+      prefix: --out_fasta
 outputs:
   - id: out_fasta
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk_evolve
+baseCommand:
+  - cctk
+  - evolve
 label: cctk_evolve
 doc: "Run a simulation of array evolution and plot the resulting tree.\n\nTool homepage:
   https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
@@ -126,7 +128,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory.
     inputBinding:
       position: 101

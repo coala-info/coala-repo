@@ -35,7 +35,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `atom_scores_file_path`
+    doc: file path to output atom scores
     inputBinding:
       position: 103
       prefix: --atom-scores-file
@@ -43,7 +43,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `inter_atom_scores_file_path`
+    doc: file path to output inter-atom scores
     inputBinding:
       position: 104
       prefix: --inter-atom-scores-file

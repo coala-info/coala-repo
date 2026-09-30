@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdst_generate
+baseCommand:
+  - cdst
+  - generate
 label: cdst_generate
 doc: "Generate CDS files\n\nTool homepage: https://github.com/l1-mh/CDST"
 inputs:

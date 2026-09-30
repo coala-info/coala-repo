@@ -21,10 +21,10 @@ inputs:
       prefix: --schemeVersion
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: The directory to write the scheme and reference sequence to
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: --outDir
 outputs:
   - id: out_dir
     type:

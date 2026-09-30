@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnaprot gp
+baseCommand:
+  - rnaprot
+  - gp
 label: rnaprot_gp
 doc: "Predicts RBP binding sites using a trained model.\n\nTool homepage: https://github.com/BackofenLab/RNAProt"
 inputs:

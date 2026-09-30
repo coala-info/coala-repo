@@ -82,10 +82,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outputfile_path`
     inputBinding:
       position: 103
-      prefix: --outputfile
+      prefix: --ofile
 outputs:
   - id: outputfile
     type:

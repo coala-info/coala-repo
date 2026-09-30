@@ -124,7 +124,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to keep temporary files. If specified, the temp files will be
       kept
     inputBinding:

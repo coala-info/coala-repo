@@ -16,6 +16,11 @@ inputs:
     doc: genome to be modified
     inputBinding:
       position: 2
+  - id: output_genome
+    type: string
+    doc: modified genome
+    inputBinding:
+      position: 3
   - id: add
     type:
       - 'null'
@@ -59,11 +64,11 @@ inputs:
       position: 103
       prefix: --silent
 outputs:
-  - id: output_genome
+  - id: out_output_genome
     type: File
     doc: modified genome
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_genome)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refinem:0.1.2--pyh3252c3a_0

@@ -106,15 +106,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bed_file_path`
     inputBinding:
       position: 102
-      prefix: --bed-file
+      prefix: --bed_file
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

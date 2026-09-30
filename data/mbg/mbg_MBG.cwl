@@ -35,6 +35,7 @@ inputs:
     doc: Error masking
     inputBinding:
       position: 101
+      prefix: --error-masking
   - id: hpc_variant_onecopy_coverage
     type:
       - 'null'
@@ -185,15 +186,14 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_graph_path`
+    doc: Output graph (required)
     inputBinding:
       position: 102
-      prefix: --output-graph
+      prefix: --out
   - id: output_homology_map_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_homology_map_path`
     inputBinding:
       position: 103
       prefix: --output-homology-map
@@ -201,7 +201,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sequence_paths_path`
     inputBinding:
       position: 104
       prefix: --output-sequence-paths

@@ -39,7 +39,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write output files to this directory.
     inputBinding:
       position: 101
@@ -119,7 +119,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: outfile_path
-    type: string
+    type: string?
     doc: Name of alignment result file.
     inputBinding:
       position: 102

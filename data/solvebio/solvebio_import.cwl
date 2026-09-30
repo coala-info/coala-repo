@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: solvebio import
+baseCommand:
+  - solvebio
+  - import
 label: solvebio_import
 doc: "Import files into SolveBio datasets.\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:

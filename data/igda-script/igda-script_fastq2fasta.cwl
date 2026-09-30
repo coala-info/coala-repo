@@ -9,12 +9,17 @@ inputs:
     doc: Input FASTQ file
     inputBinding:
       position: 1
-outputs:
   - id: fastafile
+    type: string
+    doc: Output FASTA file
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_fastafile
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.fastafile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0

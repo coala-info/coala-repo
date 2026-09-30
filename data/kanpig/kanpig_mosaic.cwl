@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kanpig mosaic
+baseCommand:
+  - kanpig
+  - mosaic
 label: kanpig_mosaic
 doc: "Mosaic SV Genotyping\n\nTool homepage: https://github.com/ACEnglish/kanpig"
 inputs:
@@ -215,16 +217,18 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --reads
+          separate: true
     doc: Reads to genotype (indexed .bam, .cram, or .plup.gz; can be specified 
       multiple times)
     inputBinding:
       position: 101
-      prefix: --reads
   - id: reference
     type: File
+    doc: Reference genome
     secondaryFiles:
       - .fai
-    doc: Reference genome
     inputBinding:
       position: 101
       prefix: --reference
@@ -241,11 +245,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
+          separate: true
     doc: Output VCF sample names (one per `--reads`; can be specified multiple 
       times)
     inputBinding:
       position: 101
-      prefix: --sample
   - id: seqsim
     type:
       - 'null'
@@ -303,8 +309,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
+    doc: 'Output VCF (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102
       prefix: --out

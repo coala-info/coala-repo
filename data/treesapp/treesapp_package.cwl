@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp package
+baseCommand:
+  - treesapp
+  - package
 label: treesapp_package
 doc: "Facilitate operations on reference packages\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:

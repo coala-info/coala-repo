@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crussmap_bed
+baseCommand:
+  - crussmap
+  - bed
 label: crussmap_bed
 doc: "Converts BED file. Regions mapped to multiple locations to the new assembly
   will be split\n\nTool homepage: https://github.com/wjwei-handsome/crussmap"
@@ -31,7 +33,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: output bed file path, if not set, output to STDOUT
     inputBinding:
       position: 102
       prefix: --output
@@ -39,7 +41,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unmap_path`
+    doc: unmapped bed file path, if not set, output to STDOUT
     inputBinding:
       position: 103
       prefix: --unmap

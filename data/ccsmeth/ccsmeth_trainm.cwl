@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth trainm
+baseCommand:
+  - ccsmeth
+  - trainm
 label: ccsmeth_trainm
 doc: "[EXPERIMENTAL]train a model using multi gpus\n\nTool homepage: https://github.com/PengNi/ccsmeth"
 inputs:

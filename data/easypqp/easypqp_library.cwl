@@ -242,7 +242,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
+    doc: Output TSV peptide query parameter file.
     inputBinding:
       position: 103
       prefix: --out
@@ -250,18 +250,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `peptide_plot_path`
+    doc: 'Output peptide-level PDF report.  [default:'
     inputBinding:
       position: 104
-      prefix: --peptide-plot
+      prefix: --peptide_plot
   - id: protein_plot_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `protein_plot_path`
+    doc: 'Output protein-level PDF report.  [default:'
     inputBinding:
       position: 105
-      prefix: --protein-plot
+      prefix: --protein_plot
 outputs:
   - id: out
     type: File

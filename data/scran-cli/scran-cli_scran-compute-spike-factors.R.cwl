@@ -16,7 +16,7 @@ inputs:
   - id: general_use
     type:
       - 'null'
-      - boolean
+      - string
     doc: A logical scalar indicating whether the size factors should be stored 
       for general use by all genes.
     inputBinding:
@@ -38,7 +38,6 @@ inputs:
       prefix: --type
   - id: output_sce_object_path
     type: string
-    doc: Output or path parameter `output_sce_object_path`
     inputBinding:
       position: 102
       prefix: --output-sce-object

@@ -151,7 +151,7 @@ inputs:
       prefix: --verbosity
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: A TSV file containing simulated phenotypes
     inputBinding:
       position: 104
       prefix: --output

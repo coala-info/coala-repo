@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: htseq-clip count
+baseCommand:
+  - htseq-clip
+  - count
 label: htseq-clip_count
 doc: "counts the number of crosslink/deletion/insertion sites\n\nTool homepage: https://github.com/EMBL-Hentze-group/htseq-clip"
 inputs:
@@ -34,7 +36,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'temp. directory path to copy files (default: None, use system tmp directory)'
     inputBinding:
       position: 101
@@ -58,11 +60,12 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: 'output file, --output output file output count file (.txt[.gz], default:
+      print to console)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

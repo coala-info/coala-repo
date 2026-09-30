@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl /usr/local/bin/QuickMIRSeq.pl
+baseCommand:
+  - perl
+  - /usr/local/bin/QuickMIRSeq.pl
 label: quickmirseq_QuickMIRSeq.pl
 doc: "QuickMIRSeq.pl\n\nTool homepage: https://sourceforge.net/projects/quickmirseq/"
 inputs:

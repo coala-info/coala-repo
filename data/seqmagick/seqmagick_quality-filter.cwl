@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqmagick quality-filter
+baseCommand:
+  - seqmagick
+  - quality-filter
 label: seqmagick_quality-filter
 doc: "Filter reads based on quality scores\n\nTool homepage: http://github.com/fhcrc/seqmagick"
 inputs:
@@ -157,7 +159,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `details_out_path`
     inputBinding:
       position: 104
       prefix: --details-out
@@ -165,7 +166,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `map_out_path`
+    doc: Path to write sequence_id,sample_id pairs
     inputBinding:
       position: 105
       prefix: --map-out
@@ -173,7 +174,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_out_path`
     inputBinding:
       position: 106
       prefix: --report-out

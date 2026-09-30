@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalscheme multiplex
+baseCommand:
+  - primalscheme
+  - multiplex
 label: primalscheme_multiplex
 doc: "Design a multiplex PCR scheme.\n\nTool homepage: https://github.com/aresti/primalscheme"
 inputs:
@@ -87,7 +89,7 @@ inputs:
   - id: outpath
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory.
     inputBinding:
       position: 102

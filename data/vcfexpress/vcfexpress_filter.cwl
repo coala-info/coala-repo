@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vcfexpress_filter
+baseCommand:
+  - vcfexpress
+  - filter
 label: vcfexpress_filter
 doc: "Filter a VCF/BCF and optionally print by template expression. If no template
   is given the output will be VCF/BCF\n\nTool homepage: https://github.com/brentp/vcfexpress/"
@@ -57,7 +59,6 @@ inputs:
       prefix: --template
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

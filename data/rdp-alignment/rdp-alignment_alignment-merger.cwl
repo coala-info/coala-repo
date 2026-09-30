@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java AlignmentMerger
+baseCommand:
+  - java
+  - AlignmentMerger
 label: rdp-alignment_alignment-merger
 doc: "This program reads in all the files from the input directory and merges the
   alignment into one single file\n\nTool homepage: https://github.com/AlbertoMartinPerez/Sequence_Analyzer_automations"

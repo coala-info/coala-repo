@@ -133,34 +133,39 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `discordant_file_path`
+    doc: FILE Output discordant read pairs to this file. [no discordant file 
+      output]
     inputBinding:
       position: 102
-      prefix: --discordant-file
+      prefix: --discordantFile
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: FILE Output sam file for all input alignments [stdout].
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
   - id: splitter_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `splitter_file_path`
+    doc: FILE Output split reads to this file abiding by paramaters below. [no 
+      splitter file output]
     inputBinding:
       position: 104
-      prefix: --splitter-file
+      prefix: --splitterFile
   - id: unmapped_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unmapped_file_path`
+    doc: FILE Output unmapped/clipped reads as FASTQ to this file abiding by 
+      parameters below. [no unmapped file output]. Requires soft clipping in 
+      input file.  Will output FASTQ if QUAL information available, otherwise 
+      FASTA.
     inputBinding:
       position: 105
-      prefix: --unmapped-file
+      prefix: --unmappedFile
 outputs:
   - id: output_file
     type:

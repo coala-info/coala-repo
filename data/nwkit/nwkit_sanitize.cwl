@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit sanitize
+baseCommand:
+  - nwkit
+  - sanitize
 label: nwkit_sanitize
 doc: "Sanitize a Newick tree file.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

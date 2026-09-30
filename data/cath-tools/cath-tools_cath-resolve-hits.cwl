@@ -34,11 +34,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --filter-query-id
+          separate: true
     doc: Ignore all input data except that for query protein(s) <id> (may be 
       specified multiple times for multiple query proteins)
     inputBinding:
       position: 102
-      prefix: --filter-query-id
   - id: high_scores_preference
     type:
       - 'null'
@@ -199,7 +201,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `export_css_file_path`
+    doc: Export the CSS used in the HTML output to <file> (or '-' for stdout)
     inputBinding:
       position: 103
       prefix: --export-css-file
@@ -207,7 +209,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `hits_text_to_file_path`
+    doc: Write the resolved hits in plain text to file <file>
     inputBinding:
       position: 104
       prefix: --hits-text-to-file
@@ -215,7 +217,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `html_output_to_file_path`
+    doc: Write the results as HTML to file <file> (or '-' for stdout)
     inputBinding:
       position: 105
       prefix: --html-output-to-file
@@ -223,7 +225,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `json_output_to_file_path`
+    doc: Write the results as JSON to file <file> (or '-' for stdout)
     inputBinding:
       position: 106
       prefix: --json-output-to-file
@@ -231,7 +233,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summarise_to_file_path`
+    doc: Write a brief text summary of the input data to file <file> (or '-' for
+      stdout)
     inputBinding:
       position: 107
       prefix: --summarise-to-file

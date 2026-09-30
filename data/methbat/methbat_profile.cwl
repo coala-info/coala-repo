@@ -106,16 +106,18 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --profile-label
+          separate: true
     doc: Specify the label from the background profile to compare against, can 
       be specified multiple times
     inputBinding:
       position: 101
-      prefix: --profile-label
   - id: output_asm_bed_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_asm_bed_path`
+    doc: Optional output BED file with individual ASM CpG loci
     inputBinding:
       position: 102
       prefix: --output-asm-bed
@@ -123,7 +125,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_region_profile_path`
+    doc: Optional output CpG aggregation file (CSV/TSV)
     inputBinding:
       position: 103
       prefix: --output-region-profile

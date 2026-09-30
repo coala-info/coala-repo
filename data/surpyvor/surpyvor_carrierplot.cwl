@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor_carrierplot
+baseCommand:
+  - surpyvor
+  - carrierplot
 label: surpyvor_carrierplot
 doc: "Plot carrier plots from VCF files.\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -18,8 +20,8 @@ inputs:
       position: 102
       prefix: --verbose
   - id: plotout_path
-    type: string
-    doc: Output or path parameter `plotout_path`
+    type: string?
+    doc: output file to write figure to
     inputBinding:
       position: 103
       prefix: --plotout

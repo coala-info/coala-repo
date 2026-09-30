@@ -221,7 +221,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Optional directory to store temp files.
     inputBinding:
       position: 101

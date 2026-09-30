@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq split_by_base_count
+baseCommand:
+  - fastaq
+  - split_by_base_count
 label: fastaq_split_by_base_count
 doc: "Splits a multi sequence file into separate files. Does not split sequences.\n\
   Puts up to max_bases into each split file. The exception is that any sequence\n\

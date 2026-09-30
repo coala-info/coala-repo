@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromshell_list
+baseCommand:
+  - cromshell
+  - list
 label: cromshell_list
 doc: "List the status of workflows.\n\nTool homepage: https://github.com/broadinstitute/cromshell"
 inputs:

@@ -156,10 +156,10 @@ inputs:
       prefix: -Z
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: FILE         Output vcf file.
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

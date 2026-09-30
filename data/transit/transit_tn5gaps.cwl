@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transit_tn5gaps
+baseCommand:
+  - transit
+  - tn5gaps
 label: transit_tn5gaps
 doc: "Identify transposon insertion sites and their genomic context.\n\nTool homepage:
   http://github.com/mad-lab/transit"
@@ -12,6 +14,7 @@ inputs:
     doc: Comma-separated .wig files containing read counts.
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: annotation_file
     type: File
     doc: Annotation file (.prot_table or GFF3).

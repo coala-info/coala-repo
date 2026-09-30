@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse_join
+baseCommand:
+  - bedparse
+  - join
 label: bedparse_join
 doc: "Adds the content of an annotation file to a BED file as extra columns. The two
   files are joined by matching the BED Name field (column 4) with a user-specified

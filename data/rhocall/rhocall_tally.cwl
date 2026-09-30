@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rhocall tally
+baseCommand:
+  - rhocall
+  - tally
 label: rhocall_tally
 doc: "Tally runs of autozygosity from rhofile. Accepts a bcftools roh style TSV-file
   with CHR,POS,AZ,QUAL.\n\nTool homepage: https://github.com/dnil/rhocall"
@@ -36,10 +38,9 @@ inputs:
       prefix: --verbose
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: --output
 outputs:
   - id: output_filename
     type:

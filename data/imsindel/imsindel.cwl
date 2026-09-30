@@ -144,7 +144,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outd_path`
     inputBinding:
       position: 102
       prefix: --outd
@@ -152,7 +151,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_consensus_seq_path`
     inputBinding:
       position: 103
       prefix: --output-consensus-seq

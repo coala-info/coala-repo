@@ -597,7 +597,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to use.
     inputBinding:
       position: 101
@@ -627,8 +627,7 @@ inputs:
       position: 101
       prefix: --unmapping-min-appraised
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

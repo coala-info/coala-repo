@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_cat
+baseCommand:
+  - vt
+  - cat
 label: vt_cat
 doc: "Concatenate VCF files. Individuals must be in the same order.\n\nTool homepage:
   https://github.com/Aikoyori/ProgrammingVTuberLogos"
@@ -78,10 +80,10 @@ inputs:
       prefix: -w
   - id: output_vcf_file_path
     type: string
-    doc: Output or path parameter `output_vcf_file_path`
+    doc: output VCF file [-]
     inputBinding:
       position: 103
-      prefix: --output-vcf-file
+      prefix: -o
 outputs:
   - id: output_vcf_file
     type:

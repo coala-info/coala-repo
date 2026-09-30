@@ -39,7 +39,7 @@ inputs:
   - id: dirout
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory, default is this directory.
     inputBinding:
       position: 102

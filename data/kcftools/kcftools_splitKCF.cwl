@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kcftools_splitKCF
+baseCommand:
+  - kcftools
+  - splitKCF
 label: kcftools_splitKCF
 doc: "Split KCF file for each chromosome\n\nTool homepage: https://github.com/sivasubramanics/kcftools"
 inputs:
@@ -20,10 +22,10 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

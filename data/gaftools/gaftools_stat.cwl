@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gaftools_stat
+baseCommand:
+  - gaftools
+  - stat
 label: gaftools_stat
 doc: "Calculate statistics of the given GAF file.\n\nTool homepage: https://github.com/marschall-lab/gaftools"
 inputs:
@@ -19,7 +21,6 @@ inputs:
       prefix: --cigar
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

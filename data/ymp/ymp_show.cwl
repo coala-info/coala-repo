@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ymp_show
+baseCommand:
+  - ymp
+  - show
 label: ymp_show
 doc: "Show configuration properties\n\nTool homepage: https://ymp.readthedocs.io"
 inputs:

@@ -191,18 +191,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dump_file_path`
+    doc: Dump annotated events to HDF5 file
     inputBinding:
       position: 103
-      prefix: --dump-file
+      prefix: --dump
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Write to file rather than stdout
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: dump_file
     type:

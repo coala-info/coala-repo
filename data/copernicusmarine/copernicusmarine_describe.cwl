@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: copernicusmarine describe
+baseCommand:
+  - copernicusmarine
+  - describe
 label: copernicusmarine_describe
 doc: "Retrieve and parse the metadata information from the Copernicus Marine catalogue.\n\
   \nTool homepage: https://github.com/pepijn-devries/CopernicusMarine"

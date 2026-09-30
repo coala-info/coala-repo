@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem prokaryotic_fraction
+baseCommand:
+  - singlem
+  - prokaryotic_fraction
 label: singlem_prokaryotic_fraction
 doc: "Estimate the fraction of reads from a metagenome that are assigned to Bacteria
   and Archaea compared to e.g. eukaryote or phage. Also estimate average genome size.\n\
@@ -91,7 +93,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_per_taxon_read_fractions_path`
     inputBinding:
       position: 102
       prefix: --output-per-taxon-read-fractions
@@ -99,7 +100,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tsv_path`
     inputBinding:
       position: 103
       prefix: --output-tsv

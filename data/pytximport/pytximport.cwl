@@ -142,10 +142,9 @@ inputs:
       prefix: --transcript-gene-map
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: --output_path
 outputs:
   - id: output_path
     type: Directory

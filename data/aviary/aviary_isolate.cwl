@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aviary isolate
+baseCommand:
+  - aviary
+  - isolate
 label: aviary_isolate
 doc: "Step-down hybrid assembly using long and short reads, or assembly using only
   short or long reads.\n\nTool homepage: https://github.com/rhysnewell/aviary/"
@@ -504,7 +506,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location that will be treated used for temporary files. If 
       none is specified, the TMPDIR environment variable will be used. Can be 
       configured within the `configure` subcommand
@@ -531,7 +533,6 @@ inputs:
       prefix: --workflow
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

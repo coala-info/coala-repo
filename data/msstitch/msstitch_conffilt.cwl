@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch conffilt
+baseCommand:
+  - msstitch
+  - conffilt
 label: msstitch_conffilt
 doc: "Applies confidence filtering to PSM data.\n\nTool homepage: https://github.com/lehtiolab/msstitch"
 inputs:
@@ -44,7 +46,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output in
     inputBinding:
       position: 101
@@ -61,11 +63,11 @@ inputs:
       position: 101
       prefix: --unroll
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: Output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

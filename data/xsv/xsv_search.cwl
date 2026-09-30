@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_search
+baseCommand:
+  - xsv
+  - search
 label: xsv_search
 doc: "Filters CSV data by whether the given regex matches a row.\n\nTool homepage:
   https://github.com/BurntSushi/xsv"
@@ -61,10 +63,10 @@ inputs:
       prefix: --select
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

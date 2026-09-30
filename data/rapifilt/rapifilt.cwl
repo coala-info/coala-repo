@@ -103,10 +103,10 @@ inputs:
       prefix: -w
   - id: output_fastq_file_path
     type: string
-    doc: Output or path parameter `output_fastq_file_path`
+    doc: Desired fastq output file. If not specified to stdout
     inputBinding:
       position: 102
-      prefix: --output-fastq-file
+      prefix: -o
 outputs:
   - id: output_fastq_file
     type:

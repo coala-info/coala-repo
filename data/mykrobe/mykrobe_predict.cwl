@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mykrobe predict
+baseCommand:
+  - mykrobe
+  - predict
 label: mykrobe_predict
 doc: "Predicts antimicrobial resistance from sequencing data.\n\nTool homepage: https://github.com/iqbal-lab/Mykrobe-predictor"
 inputs:
@@ -295,7 +297,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write temporary files to
     inputBinding:
       position: 101
@@ -311,7 +313,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

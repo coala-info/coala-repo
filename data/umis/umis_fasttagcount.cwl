@@ -12,6 +12,11 @@ inputs:
     doc: SAM file
     inputBinding:
       position: 1
+  - id: out
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 2
   - id: cb_cutoff
     type:
       - 'null'
@@ -97,7 +102,7 @@ outputs:
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

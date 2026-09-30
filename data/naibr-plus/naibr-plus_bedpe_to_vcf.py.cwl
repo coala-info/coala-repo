@@ -33,7 +33,6 @@ inputs:
       prefix: --sample-name
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 103
       prefix: --output-vcf

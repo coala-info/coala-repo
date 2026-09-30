@@ -149,10 +149,10 @@ inputs:
       prefix: --use_supplementary
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' output file.'
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

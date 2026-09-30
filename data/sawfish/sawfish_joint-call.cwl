@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sawfish joint-call
+baseCommand:
+  - sawfish
+  - joint-call
 label: sawfish_joint-call
 doc: "Merge and genotype SVs from one or more samples, given the discover command
   results from each\n\nTool homepage: https://github.com/PacificBiosciences/sawfish"
@@ -80,11 +82,13 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --sample
+          separate: true
     doc: Sample discover-mode results directory (required). Can be specified 
       multiple times to joint call over multiple samples
     inputBinding:
       position: 101
-      prefix: --sample
   - id: skip_sample_input_check
     type:
       - 'null'

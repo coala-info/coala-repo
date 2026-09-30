@@ -58,7 +58,7 @@ inputs:
       position: 101
       prefix: --ignore
   - id: output_directory
-    type: Directory
+    type: string
     doc: A directory to output the collection of links.
     inputBinding:
       position: 101

@@ -53,7 +53,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output
@@ -61,7 +60,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_h1_path`
+    doc: Output haplotype 1 reads to FILE (.gz supported)
     inputBinding:
       position: 105
       prefix: --output-h1
@@ -69,7 +68,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_h2_path`
+    doc: Output haplotype 2 reads to FILE (.gz supported)
     inputBinding:
       position: 106
       prefix: --output-h2
@@ -77,7 +76,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_untagged_path`
     inputBinding:
       position: 107
       prefix: --output-untagged
@@ -85,7 +83,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `read_lengths_histogram_path`
     inputBinding:
       position: 108
       prefix: --read-lengths-histogram

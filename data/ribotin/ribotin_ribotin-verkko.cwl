@@ -112,7 +112,7 @@ inputs:
   - id: output_folder_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder prefix
     inputBinding:
       position: 101
@@ -161,7 +161,7 @@ inputs:
   - id: ul_tmp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary folder for ultralong ONT read analysis
     inputBinding:
       position: 101

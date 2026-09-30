@@ -55,6 +55,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --gc_range
+      itemSeparator: ','
   - id: ingroup
     type: File
     doc: ingroup filename or a file pattern inside double-quotes (eg. "*.gbff")
@@ -120,19 +121,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tm_range
+      itemSeparator: ','
   - id: bed_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bed_file_path`
     inputBinding:
       position: 102
-      prefix: --bed-file
+      prefix: --bed_file
   - id: out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 103
       prefix: --out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd predict-path
+baseCommand:
+  - ggd
+  - predict-path
 label: ggd_predict-path
 doc: "Get a predicted install file path for a data package before it is installed.
   (Use for workflows, such as Snakemake)\n\nTool homepage: https://github.com/gogetdata/ggd-cli"

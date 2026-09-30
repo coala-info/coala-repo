@@ -19,7 +19,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_dir
-    type: Directory
+    type: string
     doc: directory to write output files
     inputBinding:
       position: 3

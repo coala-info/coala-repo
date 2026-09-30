@@ -147,7 +147,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `alignhits_path`
+    doc: Write multiple alignment of hits in PSI format to file
     inputBinding:
       position: 102
       prefix: --alignhits
@@ -155,7 +155,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file with search results (def=stdout)
     inputBinding:
       position: 103
       prefix: --outfile

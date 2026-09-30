@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk shuffle
+baseCommand:
+  - fastafunk
+  - shuffle
 label: fastafunk_shuffle
 doc: "Shuffle FASTA sequences based on metadata.\n\nTool homepage: https://github.com/cov-ert/fastafunk"
 inputs:
@@ -29,7 +31,6 @@ inputs:
       prefix: --verbose
   - id: out_metadata_path
     type: string
-    doc: Output or path parameter `out_metadata_path`
     inputBinding:
       position: 102
       prefix: --out-metadata

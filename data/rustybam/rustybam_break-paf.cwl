@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam break-paf
+baseCommand:
+  - rustybam
+  - break-paf
 label: rustybam_break-paf
 doc: "Break PAF records with large indels into multiple records (useful for SafFire)\n\
   \nTool homepage: https://github.com/mrvollger/rustybam"

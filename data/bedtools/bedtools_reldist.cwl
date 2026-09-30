@@ -21,9 +21,7 @@ inputs:
       position: 101
       prefix: -a
   - id: input_b
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input feature file B (bed/gff/vcf)
     inputBinding:
       position: 101

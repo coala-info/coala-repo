@@ -87,36 +87,36 @@ inputs:
     type:
       - 'null'
       - File
+    doc: reference file
     secondaryFiles:
       - .fai
-    doc: reference file
     inputBinding:
       position: 102
       prefix: --reference
+  - id: position_output_path
+    type:
+      - 'null'
+      - string
+    doc: gzipped output file of motif hits
+    inputBinding:
+      position: 105
+      prefix: --position
   - id: outfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
+    doc: annotated peaks output
     inputBinding:
-      position: 103
+      position: 106
       prefix: --outfile
   - id: outgene_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outgene_path`
+    doc: gene/motif-level output
     inputBinding:
-      position: 104
+      position: 107
       prefix: --outgene
-  - id: position_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `position_output_path`
-    inputBinding:
-      position: 105
-      prefix: --position-output
 outputs:
   - id: outgene
     type:

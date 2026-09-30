@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lorax extract
+baseCommand:
+  - lorax
+  - extract
 label: lorax_extract
 doc: "Extracts reads from a BAM file based on a list of reads and a reference genome.\n\
   \nTool homepage: https://github.com/tobiasrausch/lorax"
@@ -48,7 +50,6 @@ inputs:
       prefix: --reads
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

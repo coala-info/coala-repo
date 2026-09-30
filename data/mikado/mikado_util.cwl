@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Mikado util
+baseCommand:
+  - Mikado
+  - util
 label: mikado_util
 doc: "Mikado util\n\nTool homepage: https://github.com/lucventurini/mikado"
 inputs:

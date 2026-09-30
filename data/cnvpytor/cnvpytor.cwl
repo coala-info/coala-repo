@@ -676,18 +676,18 @@ inputs:
       prefix: --view
   - id: plot_output_file_path
     type: string
-    doc: Output or path parameter `plot_output_file_path`
     inputBinding:
       position: 102
-      prefix: --plot-output-file
+      prefix: --plot_output_file
 outputs:
   - id: plot_output_file
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output filename prefix and extension
     outputBinding:
-      glob: $(inputs.plot_output_file_path)
+      glob: $(inputs.plot_output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

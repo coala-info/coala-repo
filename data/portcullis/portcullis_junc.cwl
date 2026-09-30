@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: portcullis_junc
+baseCommand:
+  - portcullis
+  - junc
 label: portcullis_junc
 doc: "Analyses all potential junctions found in the input BAM file.\n\nTool homepage:
   https://github.com/maplesond/portcullis"

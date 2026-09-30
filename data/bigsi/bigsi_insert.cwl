@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bigsi-v0.3.1 insert
+baseCommand:
+  - bigsi
+  - insert
 label: bigsi_insert
 doc: "Inserts a bloom filter into the graph e.g. bigsi insert ERR1010211.bloom\nERR1010211\n\
   \nTool homepage: https://github.com/Phelimb/BIGSI"

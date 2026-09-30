@@ -464,7 +464,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 104
       prefix: --out
@@ -472,7 +471,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unaligned_path`
     inputBinding:
       position: 105
       prefix: --unaligned

@@ -80,7 +80,6 @@ inputs:
       prefix: --workflow-root
   - id: metadata_output_path
     type: string
-    doc: Output or path parameter `metadata_output_path`
     inputBinding:
       position: 104
       prefix: --metadata-output

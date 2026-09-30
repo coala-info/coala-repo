@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2_count
+baseCommand:
+  - fermi2
+  - count
 label: fermi2_count
 doc: "Count k-mers in an FMD index\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

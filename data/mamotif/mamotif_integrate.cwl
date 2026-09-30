@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mamotif integrate
+baseCommand:
+  - mamotif
+  - integrate
 label: mamotif_integrate
 doc: "Run the integration module with MAnorm and MotifScan results.\n\nThis command
   is used when users have already got the MAnorm and MotifScan \nresults, and only
@@ -78,7 +80,6 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
       prefix: --output-dir

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mity_call
+baseCommand:
+  - mity
+  - call
 label: mity_call
 doc: "BAM / CRAM files to run the analysis on. If --bam-file-list is included, this
   argument is the file containing the list of bam/cram files.\n\nTool homepage: https://github.com/KCCG/mity"
@@ -103,7 +105,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Output files will be saved in OUTPUT_DIR. Default: '.'"
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primers score
+baseCommand:
+  - primers
+  - score
 label: primers_score
 doc: "Score primers based on amplification and off-target binding.\n\nTool homepage:
   https://github.com/Lattice-Automation/primers"

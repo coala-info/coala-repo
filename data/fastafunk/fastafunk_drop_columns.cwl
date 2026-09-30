@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk drop_columns
+baseCommand:
+  - fastafunk
+  - drop_columns
 label: fastafunk_drop_columns
 doc: "Drop columns from a metadata table.\n\nTool homepage: https://github.com/cov-ert/fastafunk"
 inputs:
@@ -38,7 +40,6 @@ inputs:
       prefix: --verbose
   - id: out_metadata_path
     type: string
-    doc: Output or path parameter `out_metadata_path`
     inputBinding:
       position: 102
       prefix: --out-metadata

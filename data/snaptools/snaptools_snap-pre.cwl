@@ -46,7 +46,7 @@ inputs:
   - id: keep_chrm
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates whether to keep fragments mapped to chrM. If set
       Fasle, fragments aligned to the mitochondrial sequence will be filtered.
     inputBinding:
@@ -55,7 +55,7 @@ inputs:
   - id: keep_discordant
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates whether to keep discordant read pairs.
     inputBinding:
       position: 101
@@ -63,7 +63,7 @@ inputs:
   - id: keep_secondary
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates whether to keep secondary alignments. If False, 
       secondary alignments will be filtered. If True, a secondary alignments 
       will be treated as fragments just single-end.
@@ -73,7 +73,7 @@ inputs:
   - id: keep_single
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'a boolen tag indicates whether to keep those reads whose mates are not mapped
       or missing. If False, unpaired reads will be filtered. If True, unpaired reads
       will be simply treated as a fragment. Note: for single-end such as scTHS-seq,
@@ -133,7 +133,7 @@ inputs:
   - id: overwrite
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates whether to overwrite the matrix session if it 
       already exists.
     inputBinding:
@@ -142,7 +142,7 @@ inputs:
   - id: qc_file
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates whether to create a master qc file. This .qc 
       file contains basic quality control metrics at the bulk level. Quality 
       control is only estimated by selected barcodes only.
@@ -152,7 +152,7 @@ inputs:
   - id: tmp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: a directory to store temporary files. If not given, snaptools will 
       automatically generate a temporary location to store temporary files.
     inputBinding:
@@ -161,14 +161,13 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates output the progress.
     inputBinding:
       position: 101
       prefix: --verbose
   - id: output_snap_path
     type: string
-    doc: Output or path parameter `output_snap_path`
     inputBinding:
       position: 102
       prefix: --output-snap

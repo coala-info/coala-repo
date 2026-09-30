@@ -57,7 +57,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder name to save results
     inputBinding:
       position: 101

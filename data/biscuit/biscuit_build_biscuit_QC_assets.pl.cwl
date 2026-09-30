@@ -17,9 +17,9 @@ inputs:
       prefix: --include
   - id: reference
     type: File
+    doc: reference input genome in FASTA format
     secondaryFiles:
       - .fai
-    doc: reference input genome in FASTA format
     inputBinding:
       position: 101
       prefix: --ref
@@ -33,7 +33,6 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

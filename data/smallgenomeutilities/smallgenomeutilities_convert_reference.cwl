@@ -56,11 +56,11 @@ inputs:
       position: 101
       prefix: -v
   - id: output_sam_bam_path
-    type: string
-    doc: Output or path parameter `output_sam_bam_path`
+    type: string?
+    doc: output   Output SAM/BAM file
     inputBinding:
       position: 102
-      prefix: --output-sam-bam
+      prefix: -o
 outputs:
   - id: output_sam_bam
     type:

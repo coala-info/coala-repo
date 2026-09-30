@@ -11,6 +11,11 @@ inputs:
     doc: input FASTQ/FASTA path (gzipped or not)
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: archive path
+    inputBinding:
+      position: 2
   - id: anchor_len
     type:
       - 'null'
@@ -236,11 +241,11 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: archive path
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colord:1.1.0--h9ee0642_0

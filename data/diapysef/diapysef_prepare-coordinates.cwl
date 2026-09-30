@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: diapysef prepare-coordinates
+baseCommand:
+  - diapysef
+  - prepare-coordinates
 label: diapysef_prepare-coordinates
 doc: "Generate peptide coordinates for targeted extraction of DIA-PASEF data\n\nTool
   homepage: https://github.com/Roestlab/dia-pasef"

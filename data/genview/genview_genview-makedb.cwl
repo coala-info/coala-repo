@@ -112,7 +112,7 @@ inputs:
       position: 101
       prefix: --subject_coverage
   - id: target_directory
-    type: Directory
+    type: string
     doc: path to output directory
     inputBinding:
       position: 101

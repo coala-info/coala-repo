@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: contigtax update
+baseCommand:
+  - contigtax
+  - update
 label: contigtax_update
 doc: "Update a prot.accession2taxid.gz file with new sequence IDs.\n\nTool homepage:
   https://github.com/NBISweden/contigtax"

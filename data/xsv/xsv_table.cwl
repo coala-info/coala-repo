@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xsv_table
+baseCommand:
+  - xsv
+  - table
 label: xsv_table
 doc: "Outputs CSV data as a table with columns in alignment.\n\nTool homepage: https://github.com/BurntSushi/xsv"
 inputs:
@@ -47,7 +49,7 @@ inputs:
       prefix: --width
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 103
       prefix: --output

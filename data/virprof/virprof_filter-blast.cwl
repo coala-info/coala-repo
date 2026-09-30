@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virprof filter-blast
+baseCommand:
+  - virprof
+  - filter-blast
 label: virprof_filter-blast
 doc: "Filter sequences based on blast hits\n\nTool homepage: https://github.com/seiboldlab/virprof"
 inputs:

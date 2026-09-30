@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mavis_setup
+baseCommand:
+  - mavis
+  - setup
 label: mavis_setup
 doc: "Setup Mavis\n\nTool homepage: https://github.com/bcgsc/mavis.git"
 inputs:
@@ -28,7 +30,6 @@ inputs:
       prefix: --log_level
   - id: outputfile_path
     type: string
-    doc: Output or path parameter `outputfile_path`
     inputBinding:
       position: 102
       prefix: --outputfile

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msamtools_summary
+baseCommand:
+  - msamtools
+  - summary
 label: msamtools_summary
 doc: "Prints summary of alignments in the given BAM/SAM file. By default, it prints
   a summary line per alignment entry in the file. The summary is a tab-delimited line

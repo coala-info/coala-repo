@@ -626,7 +626,7 @@ inputs:
   - id: seqfile
     type:
       - 'null'
-      - string
+      - File
     doc: Path of the sequence file for analysis.
     inputBinding:
       position: 101

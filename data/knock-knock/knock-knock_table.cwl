@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: knock-knock table
+baseCommand:
+  - knock-knock
+  - table
 label: knock-knock_table
 doc: "Generates a table of knock-knock results.\n\nTool homepage: https://github.com/jeffhussmann/knock-knock"
 inputs:

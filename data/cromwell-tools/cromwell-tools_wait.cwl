@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cromwell-tools wait
+baseCommand:
+  - cromwell-tools
+  - wait
 label: cromwell-tools_wait
 doc: "Wait for one or more running workflow to finish.\n\nTool homepage: http://github.com/broadinstitute/cromwell-tools"
 inputs:

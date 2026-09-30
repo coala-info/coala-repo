@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gunc merge_checkm
+baseCommand:
+  - gunc
+  - merge_checkm
 label: gunc_merge_checkm
 doc: "Merge GUNC and CheckM results\n\nTool homepage: https://github.com/grp-bork/gunc"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python OutputTranscriptInfo
+baseCommand:
+  - python
+  - OutputTranscriptInfo
 label: ribominer_OutputTranscriptInfo
 doc: "Output transcript information.\n\nTool homepage: https://github.com/xryanglab/RiboMiner"
 inputs:
@@ -27,18 +29,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_all_transcripts_path`
+    doc: ' All transcripts information.'
     inputBinding:
       position: 102
-      prefix: --output-all-transcripts
+      prefix: --output-all-transcrpts
   - id: output_longest_transcripts_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_longest_transcripts_path`
+    doc: ' Longest transcripts information.'
     inputBinding:
       position: 103
-      prefix: --output-longest-transcripts
+      prefix: --output-longest-transcrpts
 outputs:
   - id: output_longest_transcripts
     type:

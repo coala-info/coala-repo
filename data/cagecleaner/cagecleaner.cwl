@@ -26,6 +26,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bypass_organisms
+      itemSeparator: ','
   - id: bypass_scaffolds
     type:
       - 'null'
@@ -36,6 +37,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bypass_scaffolds
+      itemSeparator: ','
   - id: cores
     type:
       - 'null'
@@ -72,6 +74,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --exclude_scaffolds
+      itemSeparator: ','
   - id: genome_dir
     type:
       - 'null'
@@ -158,7 +161,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to store temporary files
     inputBinding:
       position: 101
@@ -173,10 +176,9 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type:

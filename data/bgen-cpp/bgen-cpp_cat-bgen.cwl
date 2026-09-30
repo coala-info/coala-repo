@@ -44,10 +44,10 @@ inputs:
       prefix: -set-free-data
   - id: output_bgen_file_path
     type: string
-    doc: Output or path parameter `output_bgen_file_path`
+    doc: ': Path of bgen file to output.'
     inputBinding:
       position: 102
-      prefix: --output-bgen-file
+      prefix: -og
 outputs:
   - id: output_bgen_file
     type:

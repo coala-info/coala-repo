@@ -125,7 +125,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Keep all temporary files into this folder.
     inputBinding:
       position: 101
@@ -154,6 +154,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-message-to-file
+  - id: outputfile_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --outputfile
 outputs:
   - id: outputfile
     type:
@@ -161,7 +166,9 @@ outputs:
       - File
     doc: Output FASTA file.
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: $(inputs.outputfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pygtftk:1.6.2--py39heed1e64_5

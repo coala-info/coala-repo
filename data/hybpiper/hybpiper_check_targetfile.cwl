@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hybpiper check_targetfile
+baseCommand:
+  - hybpiper
+  - check_targetfile
 label: hybpiper_check_targetfile
 doc: "Check target files for issues such as stop codons and low complexity regions.\n\
   \nTool homepage: https://github.com/mossmatters/HybPiper"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq filter
+baseCommand:
+  - fastaq
+  - filter
 label: fastaq_filter
 doc: "Filters a sequence file by sequence length and/or by name matching a regular
   expression\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
@@ -10,6 +12,11 @@ inputs:
     doc: Name of input file to be filtered
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output file
+    inputBinding:
+      position: 2
   - id: both_mates_pass
     type:
       - 'null'
@@ -73,16 +80,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mate_out_path`
+    doc: Name of mates output file
     inputBinding:
       position: 103
-      prefix: --mate-out
+      prefix: --mate_out
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
   - id: mate_out
     type:
       - 'null'

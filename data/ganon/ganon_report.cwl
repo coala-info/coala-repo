@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ganon report
+baseCommand:
+  - ganon
+  - report
 label: ganon_report
 doc: "Report generation from Ganon classification results.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:

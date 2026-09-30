@@ -2,17 +2,17 @@ class: Workflow
 label: LaMnO3 Catalytic Behaviour
 cwlVersion: v1.2
 inputs:
-  'Upload: Figure 2-5_ Mn_K_edge_LMOA_time_series.prj':
-    id: 'Upload: Figure 2-5_ Mn_K_edge_LMOA_time_series.prj'
-    type: File
-  'Upload: Figure 2-5_ La_L3_edge_LMOA_time_series.prj':
-    id: 'Upload: Figure 2-5_ La_L3_edge_LMOA_time_series.prj'
-    type: File
   mp-565203_Mn2O3.cif:
     id: mp-565203_Mn2O3.cif
     type: File
   1667441.cif:
     id: 1667441.cif
+    type: File
+  'Upload_ Figure 2-5_ Mn_K_edge_LMOA_time_series.prj':
+    id: 'Upload_ Figure 2-5_ Mn_K_edge_LMOA_time_series.prj'
+    type: File
+  'Upload_ Figure 2-5_ La_L3_edge_LMOA_time_series.prj':
+    id: 'Upload_ Figure 2-5_ La_L3_edge_LMOA_time_series.prj'
     type: File
 outputs: {}
 steps:
@@ -21,51 +21,72 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file_collection:
+          type: Any
     in:
       merge_inputs|format|dat_file:
-        source: 'Upload: Figure 2-5_ Mn_K_edge_LMOA_time_series.prj'
-    out: []
+        source: 'Upload_ Figure 2-5_ Mn_K_edge_LMOA_time_series.prj'
+    out:
+    - athena_project_file_collection
   '5':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
-        source: 'Upload: Figure 2-5_ Mn_K_edge_LMOA_time_series.prj'
-    out: []
+        source: 'Upload_ Figure 2-5_ Mn_K_edge_LMOA_time_series.prj'
+    out:
+    - athena_project_file
   '6':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file_collection:
+          type: Any
     in:
       merge_inputs|format|dat_file:
-        source: 'Upload: Figure 2-5_ La_L3_edge_LMOA_time_series.prj'
-    out: []
+        source: 'Upload_ Figure 2-5_ La_L3_edge_LMOA_time_series.prj'
+    out:
+    - athena_project_file_collection
   '7':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        out_dir:
+          type: Any
+        out_csv:
+          type: Any
     in:
       format|structure_file:
         source: mp-565203_Mn2O3.cif
-    out: []
+    out:
+    - out_dir
+    - out_csv
   '8':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        out_dir:
+          type: Any
+        out_csv:
+          type: Any
     in:
       format|structure_file:
         source: 1667441.cif
-    out: []
+    out:
+    - out_dir
+    - out_csv
   '9':
     run:
       class: Operation
@@ -111,25 +132,37 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        gds_csv:
+          type: Any
+        sp_csv:
+          type: Any
     in:
       feff_outputs_0|paths_zip:
         source: 7/out_dir
       feff_outputs_0|paths_file:
         source: 7/out_csv
-    out: []
+    out:
+    - gds_csv
+    - sp_csv
   '14':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        gds_csv:
+          type: Any
+        sp_csv:
+          type: Any
     in:
       feff_outputs_0|paths_zip:
         source: 8/out_dir
       feff_outputs_0|paths_file:
         source: 8/out_csv
-    out: []
+    out:
+    - gds_csv
+    - sp_csv
   '15':
     run:
       class: Operation

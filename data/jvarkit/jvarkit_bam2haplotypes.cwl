@@ -93,7 +93,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: tmp working directory.
     inputBinding:
       position: 102

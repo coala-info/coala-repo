@@ -88,7 +88,7 @@ inputs:
       position: 101
       prefix: --gtf
   - id: input_genes_file
-    type: File
+    type: File?
     doc: Supply file with gene IDs (one ID per row) to define which genes to use
       as target genes in GO enrichment analysis (GOA)
     inputBinding:
@@ -114,10 +114,10 @@ inputs:
       prefix: --sort-js-mode
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: str             Results output folder
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --out
 outputs:
   - id: output_folder
     type: Directory

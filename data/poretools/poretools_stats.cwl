@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_stats
+baseCommand:
+  - poretools
+  - stats
 label: poretools_stats
 doc: "Calculate and report statistics from FAST5 files.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

@@ -91,7 +91,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `only_regions_path`
     inputBinding:
       position: 102
       prefix: --only-regions
@@ -99,7 +98,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

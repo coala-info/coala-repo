@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth call_hifi
+baseCommand:
+  - ccsmeth
+  - call_hifi
 label: ccsmeth_call_hifi
 doc: "call hifi reads with kinetics from subreads.bam using CCS, save in bam/sam format.\n\
   \nTool homepage: https://github.com/PengNi/ccsmeth"
@@ -72,8 +74,7 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

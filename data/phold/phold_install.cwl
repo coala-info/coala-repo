@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold_install
+baseCommand:
+  - phold
+  - install
 label: phold_install
 doc: "Installs ProstT5 model and phold database\n\nTool homepage: https://github.com/gbouras13/phold"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq cluster2
+baseCommand:
+  - isoseq
+  - cluster2
 label: isoseq3_cluster2
 doc: "Cluster FLNC reads and generate transcripts, much faster than \"cluster\" (FLNC
   to TRANSCRIPTS)\n\nTool homepage: https://github.com/PacificBiosciences/IsoSeq3"
@@ -58,7 +60,7 @@ inputs:
       prefix: --sort-threads
   - id: write_bam_path
     type: string
-    doc: Output or path parameter `write_bam_path`
+    doc: Write annotated BAM file.
     inputBinding:
       position: 104
       prefix: --write-bam

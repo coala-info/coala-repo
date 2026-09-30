@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scrubby scrub-reads
+baseCommand:
+  - scrubby
+  - scrub-reads
 label: scrubby_scrub-reads
 doc: "Clean sequence reads by removing background taxa (Kraken2) or aligning reads
   (Minimap2)\n\nTool homepage: https://github.com/esteinig/scrubby"
@@ -177,7 +179,6 @@ inputs:
       prefix: --workdir
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

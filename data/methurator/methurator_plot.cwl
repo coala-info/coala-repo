@@ -23,7 +23,7 @@ inputs:
       prefix: --verbose
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: Default output directory. (PATH)                              │
     inputBinding:
       position: 102
       prefix: --outdir

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: get_homologues_get_homologues.pl
+baseCommand: get_homologues.pl
 label: get_homologues_get_homologues.pl
 doc: "This program uses BLAST (and optionally HMMER/Pfam) to define clusters of 'orthologous'
   genomic sequences and pan/core-genome gene sets. Several algorithms are available

@@ -28,11 +28,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --ccd-dict
+          separate: true
     doc: Dictionary file containing information in CCD format for residues in 
       this specific target, can be specified multiple times.
     inputBinding:
       position: 103
-      prefix: --ccd-dict
   - id: compounds
     type:
       - 'null'
@@ -142,11 +144,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --restraint-dict
+          separate: true
     doc: File containing restraints for residues in this specific target, can be
       specified multiple times.
     inputBinding:
       position: 103
-      prefix: --restraint-dict
   - id: sampling_rate
     type:
       - 'null'
@@ -183,10 +187,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Write output to this file instead of stdout
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output
     type:

@@ -57,10 +57,9 @@ inputs:
       prefix: --verbose
   - id: output_otu_fp_path
     type: string
-    doc: Output or path parameter `output_otu_fp_path`
     inputBinding:
       position: 102
-      prefix: --output-otu-fp
+      prefix: --output_otu_fp
 outputs:
   - id: output_otu_fp
     type: File

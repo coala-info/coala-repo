@@ -98,7 +98,7 @@ inputs:
       model is provided the default DNA or RNA tombo model will be used.
     inputBinding:
       position: 101
-      prefix: --tombo_model-filename
+      prefix: --tombo-model-filename
 outputs:
   - id: stdout
     type: stdout

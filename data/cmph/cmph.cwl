@@ -50,10 +50,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -f
+          separate: true
     doc: 'hash function (may be used multiple times) - valid values are: jenkins'
     inputBinding:
       position: 102
-      prefix: -f
   - id: keys_per_bin
     type:
       - 'null'
@@ -90,7 +92,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary directory used in BRZ algorithm
     inputBinding:
       position: 102
@@ -100,10 +102,12 @@ inputs:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: -v
+          separate: true
     doc: increase verbosity (may be used multiple times)
     inputBinding:
       position: 102
-      prefix: -v
   - id: mph_file_path
     type: string
     doc: Output or path parameter `mph_file_path`

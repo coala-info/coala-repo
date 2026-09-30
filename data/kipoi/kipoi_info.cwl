@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kipoi_info
+baseCommand:
+  - kipoi
+  - info
 label: kipoi_info
 doc: "Prints dataloader keyword arguments.\n\nTool homepage: https://github.com/kipoi/kipoi"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur filter
+baseCommand:
+  - augur
+  - filter
 label: augur_filter
 doc: "Filter and subsample a sequence set. SeqKit is used behind the scenes to handle
   FASTA files, but this should be considered an implementation detail that may change
@@ -325,30 +327,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subsample-seed
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 102
-      prefix: --output
-  - id: output_group_by_sizes_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_group_by_sizes_path`
-    inputBinding:
-      position: 103
-      prefix: --output-group-by-sizes
-  - id: output_log_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_log_path`
-    inputBinding:
-      position: 104
-      prefix: --output-log
   - id: output_metadata_path
     type:
       - 'null'
@@ -363,13 +341,34 @@ inputs:
     inputBinding:
       position: 106
       prefix: --output-sequences
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: alias to --output-sequences
+    inputBinding:
+      position: 107
+      prefix: --output
+  - id: output_group_by_sizes_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: --output-group-by-sizes
+  - id: output_log_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 109
+      prefix: --output-log
   - id: output_strains_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_strains_path`
     inputBinding:
-      position: 107
+      position: 110
       prefix: --output-strains
 outputs:
   - id: output_sequences

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bakdrive_fmt_only
+baseCommand:
+  - bakdrive
+  - fmt_only
 label: bakdrive_fmt_only
 doc: "Format input files for bakdrive.\n\nTool homepage: https://gitlab.com/treangenlab/bakdrive"
 inputs:
@@ -27,7 +29,6 @@ inputs:
       prefix: --strength
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output
@@ -35,10 +36,11 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

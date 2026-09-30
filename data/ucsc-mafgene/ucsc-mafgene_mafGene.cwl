@@ -36,7 +36,8 @@ inputs:
     doc: name of chromosome from which to grab genes
     inputBinding:
       position: 106
-      prefix: -chrom
+      prefix: -chrom=
+      separate: false
   - id: delay
     type:
       - 'null'
@@ -44,7 +45,8 @@ inputs:
     doc: delay N seconds between genes (default 0)
     inputBinding:
       position: 106
-      prefix: -delay
+      prefix: -delay=
+      separate: false
   - id: exons
     type:
       - 'null'
@@ -60,7 +62,8 @@ inputs:
     doc: name of bed file with genes and positions
     inputBinding:
       position: 106
-      prefix: -geneBeds
+      prefix: -geneBeds=
+      separate: false
   - id: gene_list
     type:
       - 'null'
@@ -68,7 +71,8 @@ inputs:
     doc: name of file with list of genes
     inputBinding:
       position: 106
-      prefix: -geneList
+      prefix: -geneList=
+      separate: false
   - id: gene_name
     type:
       - 'null'
@@ -76,7 +80,8 @@ inputs:
     doc: name of gene as it appears in genePred
     inputBinding:
       position: 106
-      prefix: -geneName
+      prefix: -geneName=
+      separate: false
   - id: include_utr
     type:
       - 'null'
@@ -108,7 +113,8 @@ inputs:
     doc: use 2bit file to fill in spaces in the alignment instead of database
     inputBinding:
       position: 106
-      prefix: -twoBit
+      prefix: -twoBit=
+      separate: false
   - id: uniq_aa
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tracs_align
+baseCommand:
+  - tracs
+  - align
 label: tracs_align
 doc: "Uses sourmash to identify reference genomes within a read set and then aligns
   reads to each reference using minimap2\n\nTool homepage: https://github.com/gtonkinhill/tracs"
@@ -153,10 +155,9 @@ inputs:
       prefix: --trim
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

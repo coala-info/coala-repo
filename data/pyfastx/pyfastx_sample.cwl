@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastx_sample
+baseCommand:
+  - pyfastx
+  - sample
 label: pyfastx_sample
 doc: "Sample sequences from a FASTA or FASTQ file.\n\nTool homepage: https://github.com/lmdu/pyfastx"
 inputs:
@@ -44,10 +46,10 @@ inputs:
       prefix: --sequential-read
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'str, --out-file str output file, default: output to stdout'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

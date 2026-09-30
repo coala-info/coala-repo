@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popins2 place-finish
+baseCommand:
+  - popins2
+  - place-finish
 label: popins2_place-finish
 doc: "Combining breakpoint positions from split-read alignment.\n\nTool homepage:
   https://github.com/kehrlab/PopIns2"

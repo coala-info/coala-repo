@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --aaf-bins
+      itemSeparator: ','
   - id: aaf_file
     type:
       - 'null'
@@ -137,6 +138,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --catCovarList
+      itemSeparator: ','
   - id: cc12
     type:
       - 'null'
@@ -170,6 +172,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chrList
+      itemSeparator: ','
   - id: compute_all
     type:
       - 'null'
@@ -222,6 +225,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --covarColList
+      itemSeparator: ','
   - id: covar_file
     type:
       - 'null'
@@ -248,6 +252,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --eventColList
+      itemSeparator: ','
   - id: exclude
     type:
       - 'null'
@@ -266,6 +271,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --exclude-setlist
+      itemSeparator: ','
   - id: exclude_sets
     type:
       - 'null'
@@ -293,6 +299,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --extract-setlist
+      itemSeparator: ','
   - id: extract_sets
     type:
       - 'null'
@@ -457,6 +464,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --l1-phenoList
+      itemSeparator: ','
   - id: loocv
     type:
       - 'null'
@@ -591,6 +599,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --phenoColList
+      itemSeparator: ','
   - id: pheno_file
     type:
       - 'null'
@@ -824,6 +833,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vc-tests
+      itemSeparator: ','
   - id: weights_col
     type:
       - 'null'

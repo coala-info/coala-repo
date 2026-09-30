@@ -14,6 +14,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chip1
+      itemSeparator: ','
   - id: chip2
     type:
       - 'null'
@@ -23,6 +24,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chip2
+      itemSeparator: ','
   - id: diff
     type:
       - 'null'
@@ -48,6 +50,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input1
+      itemSeparator: ','
   - id: input2
     type:
       - 'null'
@@ -57,6 +60,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input2
+      itemSeparator: ','
   - id: input_directory
     type:
       - 'null'
@@ -141,7 +145,6 @@ inputs:
       prefix: --windowsize
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
       prefix: --output-directory

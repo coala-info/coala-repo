@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophex index
+baseCommand:
+  - prophex
+  - index
 label: prophex_index
 doc: "Constructs index for prophex\n\nTool homepage: https://github.com/prophyle/prophex"
 inputs:

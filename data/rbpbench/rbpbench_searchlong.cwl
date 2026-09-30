@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench searchlong
+baseCommand:
+  - rbpbench
+  - searchlong
 label: rbpbench_searchlong
 doc: "Search for RBP motifs in genomic regions.\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:
@@ -244,7 +246,7 @@ inputs:
       position: 101
       prefix: --motifs
   - id: output_folder
-    type: Directory
+    type: string
     doc: Results output folder
     inputBinding:
       position: 101

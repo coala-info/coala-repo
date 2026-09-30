@@ -60,10 +60,10 @@ inputs:
       prefix: --min-oea-sum
   - id: out_file_name_path
     type: string
-    doc: Output or path parameter `out_file_name_path`
+    doc: Output file name.
     inputBinding:
       position: 102
-      prefix: --out-file-name
+      prefix: -o
 outputs:
   - id: out_file_name
     type: File

@@ -119,7 +119,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory name. Default: grampa-[current date]-[current time]'
     inputBinding:
       position: 101

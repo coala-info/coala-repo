@@ -21,271 +21,352 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: He_after_reduction.prj
-    out: []
+    out:
+    - athena_project_file
   100C PdO:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: reaction-100C.prj
-    out: []
+    out:
+    - athena_project_file
   100C Pd foil:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: reaction-100C.prj
-    out: []
+    out:
+    - athena_project_file
   100C position 0:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: reaction-100C.prj
-    out: []
+    out:
+    - athena_project_file
   100C position 8:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: reaction-100C.prj
-    out: []
+    out:
+    - athena_project_file
   175C PdO:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C Pd foil:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 8:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 0:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 1:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 2:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 3:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 4:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 5:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 6:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   175C position 7:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 175C.prj
-    out: []
+    out:
+    - athena_project_file
   300C PdO:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C Pd foil:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 0:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 8:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 1:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 2:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 3:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 4:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 5:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 6:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   300C position 7:
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 300C.prj
-    out: []
+    out:
+    - athena_project_file
   After reduction:
     run:
       class: Operation

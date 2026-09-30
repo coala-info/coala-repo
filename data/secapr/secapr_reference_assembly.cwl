@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr reference_assembly
+baseCommand:
+  - secapr
+  - reference_assembly
 label: secapr_reference_assembly
 doc: "Create new reference library and map raw reads against the library (reference-based
   assembly)\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"

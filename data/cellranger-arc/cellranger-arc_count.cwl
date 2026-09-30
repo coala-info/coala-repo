@@ -30,9 +30,7 @@ inputs:
       position: 101
       prefix: --reference
   - id: libraries
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to 3-column CSV file defining the paths to ATAC and gene 
       expression FASTQ data generated with the Chromium Single Cell Multiome 
       ATAC + Gene Expression solution.

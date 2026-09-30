@@ -17,6 +17,7 @@ inputs:
     doc: barcode filename (full path)
     inputBinding:
       position: 2
+      prefix: --barcode_details
   - id: log_level
     type:
       - 'null'
@@ -28,7 +29,7 @@ inputs:
   - id: output_dirpath
     type:
       - 'null'
-      - Directory
+      - string
     doc: a path to a directory where the output files will be output. Defaults 
       to the current directory
     inputBinding:

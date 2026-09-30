@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_tension
+baseCommand:
+  - odgi
+  - tension
 label: odgi_tension
 doc: "evaluate the tension of a graph helping to locate structural variants and abnormalities\n\
   \nTool homepage: https://github.com/vgteam/odgi"

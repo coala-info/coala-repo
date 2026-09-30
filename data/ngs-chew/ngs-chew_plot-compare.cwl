@@ -11,6 +11,11 @@ inputs:
     doc: Output from 'ngs-chew compare'.
     inputBinding:
       position: 1
+  - id: out_html
+    type: string
+    doc: Output HTML file.
+    inputBinding:
+      position: 2
   - id: title
     type:
       - 'null'
@@ -20,11 +25,11 @@ inputs:
       position: 102
       prefix: --title
 outputs:
-  - id: out_html
+  - id: out_out_html
     type: File
     doc: Output HTML file.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_html)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-chew:0.9.4--pyhdfd78af_0

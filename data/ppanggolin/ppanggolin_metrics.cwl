@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin metrics
+baseCommand:
+  - ppanggolin
+  - metrics
 label: ppanggolin_metrics
 doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
   team, and distributed under the CeCILL Free Software License Agreement.\n\nTool

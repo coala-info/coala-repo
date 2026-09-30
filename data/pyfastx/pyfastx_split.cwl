@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastx split
+baseCommand:
+  - pyfastx
+  - split
 label: pyfastx_split
 doc: "Split a fasta or fastq file into multiple smaller files.\n\nTool homepage: https://github.com/lmdu/pyfastx"
 inputs:
@@ -20,7 +22,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory, default is current folder
     inputBinding:
       position: 102

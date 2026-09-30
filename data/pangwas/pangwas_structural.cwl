@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas structural
+baseCommand:
+  - pangwas
+  - structural
 label: pangwas_structural
 doc: "Extract structural variants from cluster alignments.\n\nTakes as input the summarized
   clusters and their individual alignments.\nOutputs an Rtab file of structural variants.\n\
@@ -37,7 +39,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101

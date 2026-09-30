@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pairtools_parse2
+baseCommand:
+  - pairtools
+  - parse2
 label: pairtools_parse2
 doc: "Extracts pairs from .sam/.bam data with complex walks, make .pairs. SAM_PATH
   : an input .sam/.bam file with paired-end or single-end sequence alignments of Hi-C
@@ -30,6 +32,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --add-columns
+      itemSeparator: ','
   - id: add_pair_index
     type:
       - 'null'
@@ -311,18 +314,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output file with pairs.  If the path ends
     inputBinding:
       position: 103
-      prefix: --output-file
-  - id: output_parsed_alignments_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_parsed_alignments_path`
-    inputBinding:
-      position: 104
-      prefix: --output-parsed-alignments
+      prefix: --output
   - id: output_stats_path
     type:
       - 'null'
@@ -331,6 +326,13 @@ inputs:
     inputBinding:
       position: 105
       prefix: --output-stats
+  - id: output_parsed_alignments_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output-parsed-alignments
 outputs:
   - id: output_file
     type:

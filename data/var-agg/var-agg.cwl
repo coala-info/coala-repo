@@ -65,10 +65,11 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '>          Path to output VCF/BCF file to create. Will also write out a
+      CSI/TBI index.'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

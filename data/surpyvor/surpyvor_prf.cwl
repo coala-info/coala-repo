@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor prf
+baseCommand:
+  - surpyvor
+  - prf
 label: surpyvor_prf
 doc: "Calculate performance metrics for structural variant calls.\n\nTool homepage:
   https://github.com/wdecoster/surpyvor"
@@ -83,8 +85,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: keepmerged_path
-    type: string
-    doc: Output or path parameter `keepmerged_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --keepmerged

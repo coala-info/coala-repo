@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth_call_mods
+baseCommand:
+  - ccsmeth
+  - call_mods
 label: ccsmeth_call_mods
 doc: "call modifications\n\nTool homepage: https://github.com/PengNi/ccsmeth"
 inputs:
@@ -101,7 +103,7 @@ inputs:
   - id: is_map
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using mapping features, yes or no, default no. Effects both MODEL 
       input and feature EXTRACTION, only works in EXTRACTION-ALIGN-MODE
     inputBinding:
@@ -110,7 +112,7 @@ inputs:
   - id: is_npass
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using num_pass features, yes or no, default yes
     inputBinding:
       position: 101
@@ -118,7 +120,7 @@ inputs:
   - id: is_sn
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using signal-to-noise-ratio features, yes or no, default no. Effects
       both MODEL input and feature EXTRACTION
     inputBinding:
@@ -127,7 +129,7 @@ inputs:
   - id: is_stds
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using std features, yes or no, default no
     inputBinding:
       position: 101
@@ -277,7 +279,7 @@ inputs:
   - id: skip_unmapped
     type:
       - 'null'
-      - boolean
+      - string
     doc: if skipping unmapped sites in reads, yes or no, default yes
     inputBinding:
       position: 101
@@ -318,17 +320,18 @@ inputs:
       prefix: --use_compile
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      type: array
+      items: File
     doc: the prefix of output files to save the predicted results. output files 
       will be [--output].per_readsite.tsv/.modbam.bam
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

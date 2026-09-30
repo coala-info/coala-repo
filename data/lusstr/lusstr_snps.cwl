@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lusstr snps
+baseCommand:
+  - lusstr
+  - snps
 label: lusstr_snps
 doc: "Running the SNP pipeline\n\nTool homepage: https://www.github.com/bioforensics/lusSTR"
 inputs:

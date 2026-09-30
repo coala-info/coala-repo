@@ -86,9 +86,9 @@ inputs:
       prefix: --no-index
   - id: reference
     type: File
+    doc: Reference FASTA file. Must be indexed with FAIDX.
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file. Must be indexed with FAIDX.
     inputBinding:
       position: 101
       prefix: --reference
@@ -122,10 +122,10 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: DIR    Output directory.
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

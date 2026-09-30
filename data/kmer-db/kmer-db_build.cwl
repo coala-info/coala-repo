@@ -25,6 +25,7 @@ inputs:
       acid reduced to 6 symbols as proposed by Dayhoff: STPAG,NDEQ,HRK,MILV,FYW,C'
     inputBinding:
       position: 102
+      prefix: -alphabet
   - id: extend
     type:
       - 'null'
@@ -32,6 +33,7 @@ inputs:
     doc: extend the existing database with new samples
     inputBinding:
       position: 102
+      prefix: -extend
   - id: fraction
     type:
       - 'null'
@@ -47,6 +49,7 @@ inputs:
     doc: Build database from KMC k-mers
     inputBinding:
       position: 102
+      prefix: -from-kmers
   - id: from_minhash
     type:
       - 'null'
@@ -54,6 +57,7 @@ inputs:
     doc: Build database from minhashed k-mers
     inputBinding:
       position: 102
+      prefix: -from-minhash
   - id: kmer_length
     type:
       - 'null'
@@ -70,13 +74,15 @@ inputs:
     doc: each sequence in a FASTA file is treated as a separate sample
     inputBinding:
       position: 102
+      prefix: -multisample-fasta
   - id: preserve_strand
     type:
       - 'null'
       - boolean
-    doc: 'preserve strand instead of taking canonical k-mers (allowed only in nt alphabet;
+    doc: 'preserve strand instead of taking canonical k-mers (allowed only in nt alphabet;'
     inputBinding:
       position: 102
+      prefix: -preserve-strand
   - id: threads
     type:
       - 'null'

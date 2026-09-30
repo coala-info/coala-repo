@@ -44,7 +44,8 @@ inputs:
     doc: Sets type field for exons to specific value
     inputBinding:
       position: 104
-      prefix: -exon
+      prefix: -exon=
+      separate: false
   - id: force_utr
     type:
       - 'null'
@@ -103,10 +104,12 @@ inputs:
       prefix: -requireCDS
   - id: output_gene_pred_file_path
     type: string
-    doc: Output or path parameter `output_gene_pred_file_path`
+    doc: =gpfile  write output, in genePred format, instead of loading table. 
+      Database is ignored.
     inputBinding:
       position: 105
-      prefix: --output-gene-pred-file
+      prefix: -out=
+      separate: false
 outputs:
   - id: output_gene_pred_file
     type:

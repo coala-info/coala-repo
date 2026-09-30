@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfatools view
+baseCommand:
+  - gfatools
+  - view
 label: gfatools_view
 doc: "View and subset GFA graphs\n\nTool homepage: https://github.com/lh3/gfatools"
 inputs:

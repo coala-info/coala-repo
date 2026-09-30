@@ -138,7 +138,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `genemap_path`
+    doc: print a mapping from each gene annotation to its
     inputBinding:
       position: 103
       prefix: --genemap
@@ -146,7 +146,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ilens_path`
+    doc: create a file with the lengths of each intergenic
     inputBinding:
       position: 104
       prefix: --ilens
@@ -154,7 +154,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
+    doc: name of file to which results will be written;
     inputBinding:
       position: 105
       prefix: --outfile
@@ -162,7 +162,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `transmap_path`
+    doc: print a mapping from each transcript annotation
     inputBinding:
       position: 106
       prefix: --transmap

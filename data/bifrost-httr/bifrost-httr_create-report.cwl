@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bifrost-httr create-report
+baseCommand:
+  - bifrost-httr
+  - create-report
 label: bifrost-httr_create-report
 doc: "Create Bifrost HTTR reports using MultiQC.\n\nTool homepage: https://github.com/seqera-services/bifrost-httr"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi pathindex
+baseCommand:
+  - odgi
+  - pathindex
 label: odgi_pathindex
 doc: "Create a path index for a given graph.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:
@@ -29,7 +31,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the succinct variation graph
     inputBinding:
       position: 102
       prefix: --out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur_measurements
+baseCommand:
+  - augur
+  - measurements
 label: augur_measurements
 doc: "Create JSON files suitable for visualization within the measurements panel of
   Auspice.\n\nTool homepage: https://github.com/nextstrain/augur"

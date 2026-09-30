@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfftk_sanitize
+baseCommand:
+  - gfftk
+  - sanitize
 label: gfftk_sanitize
 doc: "sanitize GFF3 file, load GFF3 and output cleaned up GFF3 output.\n\nTool homepage:
   https://github.com/nextgenusfs/gfftk"
@@ -38,10 +40,10 @@ inputs:
       prefix: --url-encode
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'write santized GFF3 output to file (default: stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

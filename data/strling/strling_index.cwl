@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: str index
+baseCommand:
+  - str
+  - index
 label: strling_index
 doc: "Index a FASTA file for STR analysis.\n\nTool homepage: https://github.com/quinlan-lab/STRling"
 inputs:
@@ -19,7 +21,6 @@ inputs:
       prefix: --proportion-repeat
   - id: genome_repeats_path
     type: string
-    doc: Output or path parameter `genome_repeats_path`
     inputBinding:
       position: 103
       prefix: --genome-repeats

@@ -17,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 3

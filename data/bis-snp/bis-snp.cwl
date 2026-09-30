@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar BisSNP-1.0.1.jar
+baseCommand:
+  - java
+  - -jar
+  - BisSNP-1.0.1.jar
 label: bis-snp
 doc: "The BisSNP-1.0.1, Compiled 2018/02/19 05:43:50\nBased on The Genome Analysis
   Toolkit (GATK) v3.8-1-0-gf15c1c3ef (prebuild GATK package could be download here:

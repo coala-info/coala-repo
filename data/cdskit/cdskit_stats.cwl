@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_stats
+baseCommand:
+  - cdskit
+  - stats
 label: cdskit_stats
 doc: "Calculate statistics for CDS sequences.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

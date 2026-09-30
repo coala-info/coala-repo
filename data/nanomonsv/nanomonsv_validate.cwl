@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanomonsv validate
+baseCommand:
+  - nanomonsv
+  - validate
 label: nanomonsv_validate
 doc: "Validate SV calls using BAM files and reference genome.\n\nTool homepage: https://github.com/friend1ws/nanomonsv"
 inputs:
@@ -14,11 +16,16 @@ inputs:
     doc: Path to tumor BAM file
     inputBinding:
       position: 2
+  - id: output
+    type: string
+    doc: Path to output file
+    inputBinding:
+      position: 3
   - id: reference_fa
     type: File
     doc: Path to the reference genome sequence
     inputBinding:
-      position: 3
+      position: 4
   - id: control_bam
     type:
       - 'null'
@@ -96,11 +103,11 @@ inputs:
       position: 104
       prefix: --var_read_min_mapq
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Path to output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanomonsv:0.8.1--pyhdfd78af_0

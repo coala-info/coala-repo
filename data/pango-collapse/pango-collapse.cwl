@@ -77,12 +77,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --parent
+          separate: true
     doc: Parental lineage to collapse up to. Can be used multiple times to 
       collapse to multiple lineages. If --collapse-file is supplied parents will
       be appended to the file.
     inputBinding:
       position: 102
-      prefix: --parent
   - id: strict
     type:
       - 'null'
@@ -103,7 +105,7 @@ inputs:
       prefix: --tsv
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: FILE  Path to output CSV/TSV with Lineage      │
     inputBinding:
       position: 103
       prefix: --output

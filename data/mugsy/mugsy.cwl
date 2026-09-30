@@ -80,7 +80,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory used to store output and temporary files. Must be a absolute 
       path
     inputBinding:

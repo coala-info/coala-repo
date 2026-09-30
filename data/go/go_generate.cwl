@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go generate
+baseCommand:
+  - go
+  - generate
 label: go_generate
 doc: "Run 'go help generate' for details.\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

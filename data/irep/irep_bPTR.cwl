@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -f
+      itemSeparator: ','
   - id: mapping_file
     type:
       - 'null'
@@ -61,6 +62,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: traitar annotate
+baseCommand:
+  - traitar
+  - annotate
 label: traitar_annotate
 doc: "Annotate genomes\n\nTool homepage: http://github.com/aweimann/traitar"
 inputs:
@@ -28,7 +30,7 @@ inputs:
     inputBinding:
       position: 4
   - id: output_dir
-    type: Directory
+    type: string
     doc: 'Output directory (default: phenolyzer_output)'
     inputBinding:
       position: 5

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq capillary_to_pairs
+baseCommand:
+  - fastaq
+  - capillary_to_pairs
 label: fastaq_capillary_to_pairs
 doc: "Given a file of capillary reads, makes an interleaved file of read pairs (where
   more than read from same ligation, takes the longest read) and a file of unpaired

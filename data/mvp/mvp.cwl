@@ -28,9 +28,9 @@ inputs:
       prefix: --motif-list
   - id: reference
     type: File
+    doc: reference sequence in fasta format
     secondaryFiles:
       - .fai
-    doc: reference sequence in fasta format
     inputBinding:
       position: 102
       prefix: --reference
@@ -44,7 +44,6 @@ inputs:
       prefix: --sequence-type
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

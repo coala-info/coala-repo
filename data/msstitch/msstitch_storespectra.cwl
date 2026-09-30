@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch storespectra
+baseCommand:
+  - msstitch
+  - storespectra
 label: msstitch_storespectra
 doc: "Stores spectra from mzML files into a database.\n\nTool homepage: https://github.com/lehtiolab/msstitch"
 inputs:
@@ -23,9 +25,8 @@ inputs:
       prefix: --in-memory
   - id: setnames
     type:
-      - 'null'
-      - type: array
-        items: string
+      type: array
+      items: string
     doc: Names of biological sets. Can be specified with quotation marks if 
       spaces are used
     inputBinding:
@@ -33,9 +34,8 @@ inputs:
       prefix: --setnames
   - id: spectra
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Spectra files in mzML format. Multiple files can be specified, if order
       is important, e.g. when matching them with quant data, the order will be 
       their input order at the command line.
@@ -43,7 +43,7 @@ inputs:
       position: 101
       prefix: --spectra
   - id: outfile_path
-    type: string
+    type: string?
     doc: Output file
     inputBinding:
       position: 102

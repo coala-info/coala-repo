@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dr-disco detect
+baseCommand:
+  - dr-disco
+  - detect
 label: dr-disco_detect
 doc: "Detects potential discoidin domains in BAM input files.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Input BAM file
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 2
   - id: min_e_score
     type:
       - 'null'
@@ -19,11 +26,11 @@ inputs:
       position: 102
       prefix: --min-e-score
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0

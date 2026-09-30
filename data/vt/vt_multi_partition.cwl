@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt multi_partition
+baseCommand:
+  - vt
+  - multi_partition
 label: vt_multi_partition
 doc: "partition variants from any number of data sets.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:

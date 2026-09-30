@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert gz2bz2
+baseCommand:
+  - bioconvert
+  - gz2bz2
 label: bioconvert_gz2bz2
 doc: "Convert file from '('GZ',)' to '('BZ2',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

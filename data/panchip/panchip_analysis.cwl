@@ -16,6 +16,11 @@ inputs:
     doc: Input directory wherein peak sets in the format of .bed files are located.
     inputBinding:
       position: 2
+  - id: output_directory
+    type: string
+    doc: Output directory wherein output files will be stored.
+    inputBinding:
+      position: 3
   - id: repeats
     type:
       - 'null'
@@ -33,11 +38,11 @@ inputs:
       position: 103
       prefix: -t
 outputs:
-  - id: output_directory
+  - id: out_output_directory
     type: Directory
     doc: Output directory wherein output files will be stored.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_directory)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panchip:3.0.14--py312h7e72e81_0

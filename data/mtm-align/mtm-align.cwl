@@ -18,10 +18,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: The output directory to save the results (the default is 
+      './mTM_result')
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -outdir
   - id: output_filename_path
     type:
       - 'null'

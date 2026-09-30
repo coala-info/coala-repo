@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: captus align
+baseCommand:
+  - captus
+  - align
 label: captus_align
 doc: "Captus-assembly: Align; collect, align, and curate aligned markers\n\nTool homepage:
   https://github.com/edgardomortiz/Captus"

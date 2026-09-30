@@ -10,11 +10,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chrom
+          separate: true
     doc: 'One specific-chromosome for analysis. Can be specified multiple times for
       multiple chromosomes. Default: all chromosomes appear in methylation BED files.'
     inputBinding:
       position: 101
-      prefix: --chrom
   - id: maxdistvmcs
     type:
       - 'null'
@@ -57,6 +59,7 @@ inputs:
     doc: 'Minimum samples for a CpG. Default: 5.'
     inputBinding:
       position: 101
+      prefix: --minsample
   - id: nme
     type:
       - 'null'
@@ -96,6 +99,7 @@ inputs:
     doc: VMC file.
     inputBinding:
       position: 101
+      prefix: --vmcfile
   - id: vmrmethod
     type:
       - 'null'
@@ -120,9 +124,10 @@ inputs:
     doc: VMR file by genome scan.
     inputBinding:
       position: 101
+      prefix: --windowfile
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file.
     inputBinding:
       position: 102
       prefix: --outfile

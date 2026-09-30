@@ -62,7 +62,6 @@ inputs:
       prefix: --tailtrim
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile

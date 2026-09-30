@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: recycler_make_fasta_from_fastg.py
+baseCommand: make_fasta_from_fastg.py
 label: recycler_make_fasta_from_fastg.py
 doc: "make_fasta_from_fastg converts fastg assembly graph to fasta format\n\nTool
   homepage: https://github.com/Shamir-Lab/Recycler"
@@ -13,7 +13,6 @@ inputs:
       prefix: --graph
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -149,7 +149,6 @@ inputs:
       - string
     doc: "seed pattern-12of19(1110100110010101111)/14of22(1110101\n              \
       \          100110010101111)/an arbitrary pattern of 1s, 0s, and Ts"
-      \ 100110010101111)/an arbitrary pattern of 1s, 0s, and Ts"
     inputBinding:
       position: 103
       prefix: --seed
@@ -212,6 +211,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --ydrop
+  - id: output_path
+    type: string
+    doc: output filename
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -219,7 +224,9 @@ outputs:
       - File
     doc: output filename
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kegalign-full:0.1.2.8--hdfd78af_0

@@ -48,6 +48,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --genes
+      itemSeparator: ','
   - id: in_order
     type:
       - 'null'
@@ -194,6 +195,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-selection
+      itemSeparator: ','
   - id: penalty_gap_extend
     type:
       - 'null'
@@ -337,7 +339,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_all_path`
     inputBinding:
       position: 103
       prefix: --output-all
@@ -345,7 +346,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_errors_path`
     inputBinding:
       position: 104
       prefix: --output-errors
@@ -353,7 +353,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 105
       prefix: --output-fasta
@@ -361,7 +360,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_insertions_path`
     inputBinding:
       position: 106
       prefix: --output-insertions
@@ -369,7 +367,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_translations_path`
     inputBinding:
       position: 107
       prefix: --output-translations

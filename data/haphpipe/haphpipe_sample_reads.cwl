@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe sample_reads
+baseCommand:
+  - haphpipe
+  - sample_reads
 label: haphpipe_sample_reads
 doc: "Sample reads from fastq files.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -66,7 +68,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

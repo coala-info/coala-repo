@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dicey_padlock
+baseCommand:
+  - dicey
+  - padlock
 label: dicey_padlock
 doc: "Probes for one gene, one transcript, a set of genes, or custom FASTA input.\n\
   \nTool homepage: https://github.com/gear-genomics/dicey"
@@ -92,6 +94,7 @@ inputs:
     doc: temperature for entropie and entalpie calculation in Celsius
     inputBinding:
       position: 105
+      prefix: --enttemp
   - id: gc_max
     type:
       - 'null'
@@ -215,10 +218,10 @@ inputs:
       prefix: --hamming
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file
     inputBinding:
       position: 106
-      prefix: --output-file
+      prefix: --outfile
 outputs:
   - id: output_file
     type:

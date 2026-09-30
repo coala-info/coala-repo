@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: schicexplorer_scHicNormalize
+baseCommand: scHicNormalize
 label: schicexplorer_scHicNormalize
 doc: "Normalize scHi-C matrices.\n\nTool homepage: https://github.com/joachimwolff/scHiCExplorer"
 inputs:
@@ -56,10 +56,10 @@ inputs:
       prefix: --value
   - id: out_file_name_path
     type: string
-    doc: Output or path parameter `out_file_name_path`
+    doc: ' File name of the normalized scool matrix. (default: None)'
     inputBinding:
       position: 102
-      prefix: --out-file-name
+      prefix: --outFileName
 outputs:
   - id: out_file_name
     type: File

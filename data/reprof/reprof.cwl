@@ -33,10 +33,12 @@ inputs:
       prefix: --mutations
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Either an output file or a directory. If not provided or a directory, the
+      suffix of the input filename (i.e. .fasta or .blastPsiMat) is replaced to create
+      an output filename.'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

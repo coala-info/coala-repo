@@ -9,6 +9,11 @@ inputs:
     doc: Input BAM, FASTX, or DataSet XML
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output BAM or FASTX (same as input format)
+    inputBinding:
+      position: 2
   - id: downsample
     type:
       - 'null'
@@ -105,11 +110,11 @@ inputs:
       position: 102
       prefix: --show-all
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: Output BAM or FASTX (same as input format)
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbtk:3.5.0--h9ee0642_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie_id
+baseCommand:
+  - refgenie
+  - id
 label: refgenie_id
 doc: "Return the asset digest.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

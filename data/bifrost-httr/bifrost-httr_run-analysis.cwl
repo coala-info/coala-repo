@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bifrost-httr run-analysis
+baseCommand:
+  - bifrost-httr
+  - run-analysis
 label: bifrost-httr_run-analysis
 doc: "Run concentration-response analysis on BIFROST data files.\n\nTool homepage:
   https://github.com/seqera-services/bifrost-httr"
@@ -31,7 +33,7 @@ inputs:
       position: 101
       prefix: --n-cores
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to store outputs
     inputBinding:
       position: 101

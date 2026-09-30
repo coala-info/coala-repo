@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: impg query
+baseCommand:
+  - impg
+  - query
 label: impg_query
 doc: "Query overlaps in the alignment\n\nTool homepage: https://github.com/pangenome/impg"
 inputs:

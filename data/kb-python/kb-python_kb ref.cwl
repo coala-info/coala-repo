@@ -13,6 +13,7 @@ inputs:
     doc: Genomic FASTA file(s), comma-delimited
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: gtf
     type:
       - 'null'
@@ -21,6 +22,7 @@ inputs:
     doc: Reference GTF file(s), comma-delimited [not required with --aa]
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: feature
     type:
       - 'null'
@@ -67,11 +69,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclude-attribute
+          separate: true
     doc: Only process GTF entires that do not have the provided KEY:VALUE 
       attribute. May be specified multiple times.
     inputBinding:
       position: 104
-      prefix: --exclude-attribute
   - id: fasta1
     type: File
     doc: '[Optional with -d] Path to the cDNA FASTA (standard, nac) or mismatch FASTA
@@ -93,11 +97,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --include-attribute
+          separate: true
     doc: Only process GTF entries that have the provided KEY:VALUE attribute. 
       May be specified multiple times.
     inputBinding:
       position: 104
-      prefix: --include-attribute
   - id: index
     type: File
     doc: Path to the kallisto index to be constructed.
@@ -186,7 +192,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Override default temporary directory
     inputBinding:
       position: 104

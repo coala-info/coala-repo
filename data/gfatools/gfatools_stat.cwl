@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfatools_stat
+baseCommand:
+  - gfatools
+  - stat
 label: gfatools_stat
 doc: "Print statistics about a GFA file.\n\nTool homepage: https://github.com/lh3/gfatools"
 inputs:

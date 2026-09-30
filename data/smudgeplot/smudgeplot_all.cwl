@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smudgeplot all
+baseCommand:
+  - smudgeplot
+  - all
 label: smudgeplot_all
 doc: "Runs all the steps (with default options).\n\nTool homepage: https://github.com/KamilSJaron/smudgeplot"
 inputs:

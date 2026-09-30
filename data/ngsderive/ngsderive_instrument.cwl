@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngsderive instrument
+baseCommand:
+  - ngsderive
+  - instrument
 label: ngsderive_instrument
 doc: "Process Next-generation sequencing files (BAM or FASTQ) to derive instrument
   information.\n\nTool homepage: https://github.com/claymcleod/ngsderive"
@@ -39,7 +41,6 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

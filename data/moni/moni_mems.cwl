@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: moni mems
+baseCommand:
+  - moni
+  - mems
 label: moni_mems
 doc: "Find maximal exact matches (MEMs) between a query and a reference genome.\n\n\
   Tool homepage: https://github.com/maxrossi91/moni"

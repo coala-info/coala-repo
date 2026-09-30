@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaquantome viz
+baseCommand:
+  - metaquantome
+  - viz
 label: metaquantome_viz
 doc: "The viz module is the final step in the metaQuantome analysis workflow. The
   available visualizations are:\n-bar plot\n-volcano plot\n-heatmap\n-PCA plot\nPlease
@@ -236,10 +238,8 @@ inputs:
       position: 101
       prefix: --width
   - id: img_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `img_path`
+    type: string
+    doc: Path to the PNG image file (must end in ".png").
     inputBinding:
       position: 102
       prefix: --img
@@ -247,7 +247,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tabfile_path`
+    doc: Optional. File to write plot table to.
     inputBinding:
       position: 103
       prefix: --tabfile

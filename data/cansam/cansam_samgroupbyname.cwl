@@ -37,10 +37,10 @@ inputs:
       prefix: -p
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write to FILE rather than standard output
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -439,7 +439,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
@@ -447,10 +446,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: --output_directory
 outputs:
   - id: output
     type: File

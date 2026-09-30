@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_to_perfect_reads
+baseCommand:
+  - fastaq
+  - to_perfect_reads
 label: fastaq_to_perfect_reads
 doc: "Makes perfect paired end fastq reads from a sequence file, with insert sizes
   sampled from a normal distribution. Read orientation is innies. Output is an interleaved
@@ -51,10 +53,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `fragments_filename_path`
+    doc: Write FASTA sequences of fragments (i.e. read pairs plus sequences in 
+      between them) to the given filename
     inputBinding:
       position: 107
-      prefix: --fragments-filename
+      prefix: --fragments
 outputs:
   - id: outfile
     type: File

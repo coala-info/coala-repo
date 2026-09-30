@@ -22,9 +22,9 @@ inputs:
       prefix: --LargeReference
   - id: reference
     type: File
+    doc: Host Reference fasta or fasta.gz file
     secondaryFiles:
       - .fai
-    doc: Host Reference fasta or fasta.gz file
     inputBinding:
       position: 101
       prefix: --Reference
@@ -38,10 +38,10 @@ inputs:
       prefix: --threads
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' Output Folder. Default is ~/dehost_output/dehost_2026-02-25'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --OutputFolder
 outputs:
   - id: output_folder
     type:

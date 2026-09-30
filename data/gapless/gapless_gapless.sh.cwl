@@ -29,7 +29,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory (improved assembly is written to gapless.fa in this 
       directory)
     inputBinding:

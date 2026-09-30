@@ -36,10 +36,9 @@ inputs:
       prefix: --virus_fasta
   - id: working_dir_path
     type: string
-    doc: Output or path parameter `working_dir_path`
     inputBinding:
       position: 102
-      prefix: --working-dir
+      prefix: --working_dir
 outputs:
   - id: working_dir
     type: Directory

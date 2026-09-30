@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: auspice develop
+baseCommand:
+  - auspice
+  - develop
 label: auspice_develop
 doc: "Launch auspice in development mode. This runs a local server and uses \nhot-reloading
   to allow automatic updating as you edit the code. NOTE: there \nis a speed penalty

@@ -54,7 +54,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output matrix file
     inputBinding:
       position: 102
       prefix: --out

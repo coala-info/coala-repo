@@ -46,7 +46,6 @@ inputs:
       prefix: --overwrite
   - id: output_csv_path
     type: string
-    doc: Output or path parameter `output_csv_path`
     inputBinding:
       position: 102
       prefix: --output-csv

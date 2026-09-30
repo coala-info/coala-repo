@@ -350,9 +350,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: reference fasta filename for VCF/BCF writing (optional)
     secondaryFiles:
       - .fai
-    doc: reference fasta filename for VCF/BCF writing (optional)
     inputBinding:
       position: 101
       prefix: -referenceFasta
@@ -452,22 +452,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -subsites
-  - id: haps_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `haps_path`
-    inputBinding:
-      position: 102
-      prefix: --haps
-  - id: write_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `write_path`
-    inputBinding:
-      position: 103
-      prefix: --write
   - id: write_all_path
     type:
       - 'null'
@@ -480,10 +464,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_bcf_path`
+    doc: " write VCF or BCF; uncompressed or bgzip (Gz) compressed file; '-' for stdout"
     inputBinding:
       position: 105
-      prefix: --write-bcf
+      prefix: -writeVcf
   - id: write_bcf_gz_path
     type:
       - 'null'
@@ -496,34 +480,34 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_dosage_path`
+    doc: write .pbwt and if present .sites, .samples, .missing, .dosage
     inputBinding:
       position: 107
-      prefix: --write-dosage
+      prefix: -writeAll
   - id: write_gen_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_gen_path`
+    doc: write impute2 gen file; '-' for stdout
     inputBinding:
       position: 108
-      prefix: --write-gen
+      prefix: -writeGen
   - id: write_impute_haps_g_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_impute_haps_g_path`
+    doc: write haplotype file for IMPUTE -known_haps_g
     inputBinding:
       position: 109
-      prefix: --write-impute-haps-g
+      prefix: -writeImputeHapsG
   - id: write_impute_ref_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_impute_ref_path`
+    doc: write .imputeHaps and .imputeLegend
     inputBinding:
       position: 110
-      prefix: --write-impute-ref
+      prefix: -writeImputeRef
   - id: write_missing_path
     type:
       - 'null'
@@ -536,42 +520,43 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_phase_path`
+    doc: write FineSTRUCTURE/ChromoPainter input format (Impute/ShapeIT output 
+      format) phase file
     inputBinding:
       position: 112
-      prefix: --write-phase
+      prefix: -writePhase
   - id: write_reverse_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_reverse_path`
+    doc: write reverse file; '-' for stdout
     inputBinding:
       position: 113
-      prefix: --write-reverse
+      prefix: -writeReverse
   - id: write_samples_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_samples_path`
+    doc: write samples file; '-' for stdout
     inputBinding:
       position: 114
-      prefix: --write-samples
+      prefix: -writeSamples
   - id: write_sites_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_sites_path`
+    doc: write sites file; '-' for stdout
     inputBinding:
       position: 115
-      prefix: --write-sites
+      prefix: -writeSites
   - id: write_transpose_haplotypes_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_transpose_haplotypes_path`
+    doc: write transposed haplotype file (one hap per row); '-' for stdout
     inputBinding:
       position: 116
-      prefix: --write-transpose-haplotypes
+      prefix: -writeTransposeHaplotypes
   - id: write_vcf_path
     type:
       - 'null'
@@ -588,6 +573,22 @@ inputs:
     inputBinding:
       position: 118
       prefix: --write-vcf-gz
+  - id: haps_path
+    type:
+      - 'null'
+      - string
+    doc: write haplotype file; '-' for stdout
+    inputBinding:
+      position: 119
+      prefix: -haps
+  - id: write_path
+    type:
+      - 'null'
+      - string
+    doc: write pbwt file; '-' for stdout
+    inputBinding:
+      position: 120
+      prefix: -write
 outputs:
   - id: write
     type:

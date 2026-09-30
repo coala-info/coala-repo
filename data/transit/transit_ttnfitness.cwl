@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transit_ttnfitness
+baseCommand:
+  - transit
+  - ttnfitness
 label: transit_ttnfitness
 doc: "Calculates fitness based on transit data.\n\nTool homepage: http://github.com/mad-lab/transit"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Comma-separated .wig files
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: annotation_prot_table
     type: File
     doc: Annotation .prot_table file

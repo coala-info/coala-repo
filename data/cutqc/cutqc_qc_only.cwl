@@ -52,7 +52,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Selects a directory to be used for temporary files written when 
       generating report images. Defaults to system temp directory if not 
       specified.

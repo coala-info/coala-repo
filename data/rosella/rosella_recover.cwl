@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rosella recover
+baseCommand:
+  - rosella
+  - recover
 label: rosella_recover
 doc: "Recover MAGs from contigs using UMAP and HDBSCAN clustering.\n\nTool homepage:
   https://github.com/rhysnewell/rosella.git"
@@ -333,7 +335,6 @@ inputs:
       prefix: --verbose
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
       prefix: --output-directory

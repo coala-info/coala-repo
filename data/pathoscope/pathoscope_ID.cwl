@@ -94,11 +94,11 @@ inputs:
       position: 101
       prefix: -thetaPrior
   - id: out_dir_path
-    type: string
-    doc: Output or path parameter `out_dir_path`
+    type: string?
+    doc: Output Directory (Default=. (current directory))
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: -outDir
 outputs:
   - id: out_dir
     type:

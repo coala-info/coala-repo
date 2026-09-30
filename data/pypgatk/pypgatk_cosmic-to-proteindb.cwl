@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgatk cosmic-to-proteindb
+baseCommand:
+  - pypgatk
+  - cosmic-to-proteindb
 label: pypgatk_cosmic-to-proteindb
 doc: "Convert COSMIC mutation data to a protein database.\n\nTool homepage: http://github.com/bigbio/py-pgatk"
 inputs:
@@ -57,10 +59,10 @@ inputs:
       prefix: --split_by_filter_column
   - id: output_db_path
     type: string
-    doc: Output or path parameter `output_db_path`
+    doc: Protein database including all the mutations
     inputBinding:
       position: 102
-      prefix: --output-db
+      prefix: --output_db
 outputs:
   - id: output_db
     type:

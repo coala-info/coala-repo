@@ -143,9 +143,9 @@ inputs:
       prefix: --ploidy-sensitivity
   - id: reference_fasta
     type: File
+    doc: Reference fasta for the BAM file.
     secondaryFiles:
       - .fai
-    doc: Reference fasta for the BAM file.
     inputBinding:
       position: 101
       prefix: -r
@@ -198,7 +198,7 @@ inputs:
       prefix: -v
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'Output folder. (default: floria_out_dir)'
     inputBinding:
       position: 102
       prefix: --output-dir

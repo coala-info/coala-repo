@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samestr_extract
+baseCommand:
+  - samestr
+  - extract
 label: samestr_extract
 doc: "Extracts marker sequences from input FASTA files based on a specified clade
   and database.\n\nTool homepage: https://github.com/danielpodlesny/samestr/"
@@ -19,6 +21,7 @@ inputs:
       ref_mOTU_v3_00095 for mOTUs]
     inputBinding:
       position: 2
+      prefix: --clade
   - id: aln_program
     type:
       - 'null'
@@ -61,7 +64,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output directory.
     inputBinding:
       position: 103
@@ -77,7 +80,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to temporary directory
     inputBinding:
       position: 103

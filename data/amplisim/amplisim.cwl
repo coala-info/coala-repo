@@ -7,9 +7,9 @@ doc: "a program to simulate amplicon sequences from a reference genome\n\nTool h
 inputs:
   - id: reference
     type: File
+    doc: Reference genome
     secondaryFiles:
       - .fai
-    doc: Reference genome
     inputBinding:
       position: 1
   - id: primers
@@ -52,7 +52,7 @@ inputs:
       prefix: --seed
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output to FILE instead of standard output
     inputBinding:
       position: 104
       prefix: --output

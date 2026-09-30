@@ -67,6 +67,7 @@ inputs:
     doc: Enable verbose output
     inputBinding:
       position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

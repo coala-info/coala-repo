@@ -11,12 +11,13 @@ inputs:
     doc: Show all EMBOSS version information fields
     inputBinding:
       position: 101
+      prefix: -full
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: '[stdout] EMBOSS version output file'
     inputBinding:
       position: 102
-      prefix: --outfile
+      prefix: -outfile
 outputs:
   - id: outfile
     type:

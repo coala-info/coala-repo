@@ -107,7 +107,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
+    doc: (Optional) Write log to this file.
     inputBinding:
       position: 102
       prefix: --logfile
@@ -115,7 +115,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Location for output JSON file.
     inputBinding:
       position: 103
       prefix: --output

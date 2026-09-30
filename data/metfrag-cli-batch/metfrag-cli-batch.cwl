@@ -42,7 +42,7 @@ inputs:
       position: 102
       prefix: --num-threads
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to store the results.
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pairtools_markasdup
+baseCommand:
+  - pairtools
+  - markasdup
 label: pairtools_markasdup
 doc: "Tag all pairs in the input file as duplicates.\n\n  Change the type of all pairs
   inside a .pairs/.pairsam file to DD. If sam\n  entries are present, change the pair

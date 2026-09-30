@@ -170,7 +170,7 @@ inputs:
   - id: output_profile_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path for output prof-file
     inputBinding:
       position: 101
@@ -186,7 +186,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges tree
+baseCommand:
+  - ibridges
+  - tree
 label: ibridges_tree
 doc: "Show collection/directory tree.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

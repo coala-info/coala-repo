@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aviary cluster
+baseCommand:
+  - aviary
+  - cluster
 label: aviary_cluster
 doc: "Clusters previous aviary runs together and performsdereplication using Galah\n\
   \nTool homepage: https://github.com/rhysnewell/aviary/"
@@ -22,6 +24,7 @@ inputs:
       - complete_cluster
     inputBinding:
       position: 2
+      prefix: --workflow
   - id: ani
     type:
       - 'null'
@@ -157,7 +160,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 103
@@ -244,7 +247,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location that will be treated used for temporary files. If 
       none is specified, the TMPDIR environment variable will be used. Can be 
       configured within the `configure` subcommand

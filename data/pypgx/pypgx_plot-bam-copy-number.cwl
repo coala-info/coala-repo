@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx plot-bam-copy-number
+baseCommand:
+  - pypgx
+  - plot-bam-copy-number
 label: pypgx_plot-bam-copy-number
 doc: "Plot copy number profile from CovFrame[CopyNumber].\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

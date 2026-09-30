@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: checkv update_database
+baseCommand:
+  - checkv
+  - update_database
 label: checkv_update_database
 doc: "Update CheckV's database with your own complete genomes\n\nTool homepage: https://bitbucket.org/berkeleylab/checkv"
 inputs:

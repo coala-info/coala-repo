@@ -217,15 +217,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_vcf_path`
     inputBinding:
       position: 102
-      prefix: --out-vcf
+      prefix: --out_vcf
   - id: pos_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pos_path`
     inputBinding:
       position: 103
       prefix: --pos

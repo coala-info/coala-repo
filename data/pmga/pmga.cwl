@@ -29,7 +29,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output results to
     inputBinding:
       position: 102

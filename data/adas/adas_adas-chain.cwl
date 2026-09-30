@@ -12,9 +12,9 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -28,7 +28,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output path to write the results (SAM format)
     inputBinding:
       position: 102
       prefix: --output

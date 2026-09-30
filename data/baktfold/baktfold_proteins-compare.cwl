@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: baktfold proteins-compare
+baseCommand:
+  - baktfold
+  - proteins-compare
 label: baktfold_proteins-compare
 doc: "Runs Foldseek vs baktfold db on proteins input\n\nTool homepage: https://github.com/gbouras13/baktfold"
 inputs:

@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Workflow
-  with Copernicus Essential Climate Variable - select and plot'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Workflow with Copernicus Essential Climate Variable - select and plot'
 inputs: {}
 outputs: {}
 steps:

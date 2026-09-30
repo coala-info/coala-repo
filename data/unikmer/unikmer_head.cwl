@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_head
+baseCommand:
+  - unikmer
+  - head
 label: unikmer_head
 doc: "Extract the first N k-mers\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python -m fwdpy11
+baseCommand:
+  - python
+  - -m
+  - fwdpy11
 label: fwdpy11
 doc: "Helper script for fwdpy11.\n\nTool homepage: https://github.com/molpopgen/fwdpy11"
 inputs:

@@ -102,18 +102,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_json_report_path`
+    doc: Path to emit output JSON report. [/dev/stderr]
     inputBinding:
       position: 103
-      prefix: --output-json-report
+      prefix: --json
   - id: output_tsv_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tsv_path`
+    doc: Output tsv of stats for input BAM files. [/dev/stdout]
     inputBinding:
       position: 104
-      prefix: --output-tsv
+      prefix: --output
 outputs:
   - id: output_tsv
     type:

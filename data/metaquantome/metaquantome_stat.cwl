@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaquantome stat
+baseCommand:
+  - metaquantome
+  - stat
 label: metaquantome_stat
 doc: "The stat module is the third step in the metaQuantome analysis workflow. The
   purpose of the stat module is to perform differential expression analysis between
@@ -55,7 +57,7 @@ inputs:
   - id: parametric
     type:
       - 'null'
-      - boolean
+      - string
     doc: Choose the type of test. If --parametric True is provided,then a 
       standard t-test is performed. If --parametric False (the default) is 
       provided, then a Wilcoxon test is performed.
@@ -73,7 +75,7 @@ inputs:
       prefix: --samps
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file
     inputBinding:
       position: 102
       prefix: --outfile

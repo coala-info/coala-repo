@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: circlator_get_dnaa
+baseCommand:
+  - circlator
+  - get_dnaa
 label: circlator_get_dnaa
 doc: "Downloads and filters a file of dnaA (or other) genes from uniprot\n\nTool homepage:
   https://github.com/sanger-pathogens/circlator"

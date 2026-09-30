@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq indelpe
+baseCommand:
+  - maq
+  - indelpe
 label: maq_indelpe
 doc: "Estimate indel polymorphism rate\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:

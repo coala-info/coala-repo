@@ -18,6 +18,7 @@ inputs:
       midpoint outgroup.
     inputBinding:
       position: 2
+      itemSeparator: ','
 outputs:
   - id: output_nwk
     type: File

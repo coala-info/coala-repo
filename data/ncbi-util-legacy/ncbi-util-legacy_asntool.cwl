@@ -22,6 +22,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -M
+      itemSeparator: ','
   - id: binary_value_file_in
     type:
       - 'null'
@@ -192,66 +193,67 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `base_for_generated_filename_path`
+    doc: Base for filename, without extensions, for generated objects and code 
+      [File Out]  Optional
     inputBinding:
       position: 104
-      prefix: --base-for-generated-filename
+      prefix: -B
   - id: binary_value_file_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `binary_value_file_out_path`
+    doc: Binary Value File [File Out]  Optional
     inputBinding:
       position: 105
-      prefix: --binary-value-file-out
+      prefix: -e
   - id: debugging_filename_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `debugging_filename_path`
+    doc: Debugging filename [File Out]  Optional
     inputBinding:
       position: 106
-      prefix: --debugging-filename
+      prefix: -S
   - id: header_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `header_file_path`
+    doc: Header File [File Out]  Optional
     inputBinding:
       position: 107
-      prefix: --header-file
+      prefix: -o
   - id: loader_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `loader_file_path`
+    doc: Loader File [File Out]  Optional
     inputBinding:
       position: 108
-      prefix: --loader-file
+      prefix: -l
   - id: print_value_file_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `print_value_file_out_path`
+    doc: Print Value File [File Out]  Optional
     inputBinding:
       position: 109
-      prefix: --print-value-file-out
+      prefix: -p
   - id: xml_data_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `xml_data_file_path`
+    doc: XML Data File [File Out]  Optional
     inputBinding:
       position: 110
-      prefix: --xml-data-file
+      prefix: -x
   - id: xml_dtd_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `xml_dtd_file_path`
+    doc: XML DTD File
     inputBinding:
       position: 111
-      prefix: --xml-dtd-file
+      prefix: -X
 outputs:
   - id: asn1_module_file_out
     type:

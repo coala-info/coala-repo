@@ -184,7 +184,7 @@ inputs:
       prefix: --uuid
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Write to file rather than stdout
     inputBinding:
       position: 103
       prefix: --output

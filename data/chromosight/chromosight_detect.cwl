@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chromosight detect
+baseCommand:
+  - chromosight
+  - detect
 label: chromosight_detect
 doc: "Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact
   maps with pattern matching.\n\nTool homepage: https://github.com/koszullab/chromosight"

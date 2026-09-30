@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt annotate_regions
+baseCommand:
+  - vt
+  - annotate_regions
 label: vt_annotate_regions
 doc: "annotates regions in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:
@@ -61,10 +63,10 @@ inputs:
       prefix: -r
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: output VCF file [-]
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

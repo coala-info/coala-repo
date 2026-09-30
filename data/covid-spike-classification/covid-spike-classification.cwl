@@ -37,9 +37,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference FASTA file to use
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file to use
     inputBinding:
       position: 102
       prefix: --reference
@@ -78,7 +78,6 @@ inputs:
       prefix: --zip-results
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 103
       prefix: --outdir

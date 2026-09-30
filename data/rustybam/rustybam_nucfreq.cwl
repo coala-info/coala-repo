@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam nucfreq
+baseCommand:
+  - rustybam
+  - nucfreq
 label: rustybam_nucfreq
 doc: "Get the frequencies of each bp at each position\n\nTool homepage: https://github.com/mrvollger/rustybam"
 inputs:

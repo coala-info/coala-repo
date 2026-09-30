@@ -262,7 +262,7 @@ inputs:
   - id: tmp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: The temporary directory where all the outputs files and directories 
       will be written. Default is directory 'tmp' in the output directory 
       specified with '--output'.
@@ -271,10 +271,9 @@ inputs:
       prefix: --tmp
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type:

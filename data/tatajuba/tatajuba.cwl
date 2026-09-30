@@ -101,7 +101,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory, or 'random' for generating random dir name
     inputBinding:
       position: 102

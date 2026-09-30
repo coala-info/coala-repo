@@ -26,7 +26,7 @@ inputs:
   - id: extra_info
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean to indicate whether to generate two output extra files with the
       total basecalls and covered sites in each of the regions.
     inputBinding:
@@ -35,14 +35,14 @@ inputs:
   - id: input_no_header
     type:
       - 'null'
-      - boolean
+      - string
     doc: Indicating whether input tsv file contains a header. If this is set to 
       True, a header will be automatically generated in the output file.
     inputBinding:
       position: 101
       prefix: --input-no-header
   - id: input_tsv_file
-    type: File
+    type: File?
     doc: A tab-separate file that specifies genomic intervals. The file contains
       a header. First three columns are required to be chromosome, start and 
       end, which are 1-based coordinates.
@@ -97,7 +97,6 @@ inputs:
       prefix: --samples
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

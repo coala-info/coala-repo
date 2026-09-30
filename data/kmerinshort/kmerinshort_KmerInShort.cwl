@@ -11,6 +11,7 @@ inputs:
     doc: do not reverse kmers, count forward and reverse complement separately
     inputBinding:
       position: 101
+      prefix: -dont-reverse
   - id: freq
     type:
       - 'null'
@@ -18,6 +19,7 @@ inputs:
     doc: output frequency
     inputBinding:
       position: 101
+      prefix: -freq
   - id: input_file
     type: File
     doc: input file
@@ -37,6 +39,7 @@ inputs:
     doc: file with kmer values
     inputBinding:
       position: 101
+      prefix: -kval
   - id: nb_cores
     type:
       - 'null'
@@ -44,6 +47,7 @@ inputs:
     doc: number of cores
     inputBinding:
       position: 101
+      prefix: -nb-cores
   - id: offset
     type:
       - 'null'
@@ -51,6 +55,7 @@ inputs:
     doc: starting offset
     inputBinding:
       position: 101
+      prefix: -offset
   - id: per_seq
     type:
       - 'null'
@@ -65,6 +70,7 @@ inputs:
     doc: step
     inputBinding:
       position: 101
+      prefix: -step
   - id: verbose
     type:
       - 'null'
@@ -72,12 +78,13 @@ inputs:
     doc: verbosity level
     inputBinding:
       position: 101
+      prefix: -verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: one output file and count per fasta sequence
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -perSeq
 outputs:
   - id: output_file
     type:

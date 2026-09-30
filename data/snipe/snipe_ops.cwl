@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snipe_ops
+baseCommand:
+  - snipe
+  - ops
 label: snipe_ops
 doc: "Perform operations on SnipeSig signatures.\n\nTool homepage: https://github.com/snipe-bio/snipe"
 inputs:

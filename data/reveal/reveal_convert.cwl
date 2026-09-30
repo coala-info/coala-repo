@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal convert
+baseCommand:
+  - reveal
+  - convert
 label: reveal_convert
 doc: "Convert gfa graph to gml.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:

@@ -13,6 +13,7 @@ inputs:
     doc: Number of mis-matches allowed in index
     inputBinding:
       position: 101
+      prefix: --barcode_mismatch
   - id: cleanup
     type:
       - 'null'
@@ -28,6 +29,7 @@ inputs:
     doc: 'Number of CPUs. Default: auto'
     inputBinding:
       position: 101
+      prefix: --cpus
   - id: full_length
     type:
       - 'null'
@@ -65,6 +67,7 @@ inputs:
     doc: Software to use for PE read merging
     inputBinding:
       position: 101
+      prefix: --merge_method
   - id: min_len
     type:
       - 'null'
@@ -72,10 +75,11 @@ inputs:
     doc: Minimum read length to keep
     inputBinding:
       position: 101
+      prefix: --min_len
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Name for output folder
     inputBinding:
       position: 101
@@ -95,6 +99,7 @@ inputs:
     doc: Number of mis-matches in primer
     inputBinding:
       position: 101
+      prefix: --primer_mismatch
   - id: read_length
     type:
       - 'null'
@@ -102,6 +107,7 @@ inputs:
     doc: Read length, i.e. 2 x 300 bp = 300
     inputBinding:
       position: 101
+      prefix: --read_length
   - id: reads
     type:
       - 'null'
@@ -109,6 +115,7 @@ inputs:
     doc: PE or forward reads
     inputBinding:
       position: 101
+      prefix: --reads
   - id: require_primer
     type:
       - 'null'
@@ -116,6 +123,7 @@ inputs:
     doc: Require Fwd primer to be present
     inputBinding:
       position: 101
+      prefix: --require_primer
   - id: rescue_forward
     type:
       - 'null'
@@ -123,6 +131,7 @@ inputs:
     doc: Rescue Not-merged forward reads
     inputBinding:
       position: 101
+      prefix: --rescue_forward
   - id: rev_primer
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk convert
+baseCommand:
+  - hictk
+  - convert
 label: hictk_convert
 doc: "Convert Hi-C files between different formats.\n\nTool homepage: https://github.com/paulsengroup/hictk"
 inputs:
@@ -120,7 +122,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path where to store temporary files.
     inputBinding:
       position: 102

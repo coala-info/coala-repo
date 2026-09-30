@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi squeeze
+baseCommand:
+  - odgi
+  - squeeze
 label: odgi_squeeze
 doc: "Squeezes multiple graphs in ODGI format into the same file in ODGI format.\n\
   \nTool homepage: https://github.com/vgteam/odgi"
@@ -49,7 +51,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Store all the input graphs in this
     inputBinding:
       position: 102
       prefix: --out

@@ -173,9 +173,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference sequence file.
     secondaryFiles:
       - .fai
-    doc: Reference sequence file.
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -273,18 +273,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: The output BAM file  Required.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --OUTPUT
   - id: output_summary_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_summary_path`
+    doc: 'The output summary statistics  Default value: null.'
     inputBinding:
       position: 103
-      prefix: --output-summary
+      prefix: --OUTPUT_SUMMARY
 outputs:
   - id: output_file
     type: File

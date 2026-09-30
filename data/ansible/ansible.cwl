@@ -254,7 +254,7 @@ inputs:
       prefix: --verbose
   - id: tree_path
     type: string
-    doc: Output or path parameter `tree_path`
+    doc: log output to this directory
     inputBinding:
       position: 103
       prefix: --tree

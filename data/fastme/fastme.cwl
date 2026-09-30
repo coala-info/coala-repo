@@ -200,34 +200,38 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bootstrap_trees_file_path`
+    doc: "\e[00;04moutput bootstrap trees file\e[00;01m, --output_boot=\e[00;04moutput
+      bootstrap trees file\e[00;00m"
     inputBinding:
       position: 102
-      prefix: --output-bootstrap-trees-file
+      prefix: -B
   - id: output_information_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_information_file_path`
+    doc: "\e[00;04moutput information file\e[00;01m, --output_info=\e[00;04moutput
+      information file\e[00;00m"
     inputBinding:
       position: 103
-      prefix: --output-information-file
+      prefix: -I
   - id: output_matrix_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_matrix_file_path`
+    doc: "\e[00;04moutput matrix file\e[00;01m, --output_matrix=\e[00;04moutput matrix
+      file\e[00;00m"
     inputBinding:
       position: 104
-      prefix: --output-matrix-file
+      prefix: -O
   - id: output_tree_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_file_path`
+    doc: "\e[00;04moutput tree file\e[00;01m, --output_tree=\e[00;04moutput tree file\e\
+      [00;00m"
     inputBinding:
       position: 105
-      prefix: --output-tree-file
+      prefix: -o
 outputs:
   - id: output_tree_file
     type:

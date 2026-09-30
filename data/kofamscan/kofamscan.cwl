@@ -69,7 +69,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for HMMER output
     inputBinding:
       position: 102

@@ -22,7 +22,7 @@ inputs:
     inputBinding:
       position: 2
   - id: temporary_directory
-    type: Directory
+    type: string
     doc: Temporary directory for intermediate files
     inputBinding:
       position: 3
@@ -71,7 +71,7 @@ inputs:
   - id: ancient_damage
     type:
       - 'null'
-      - string
+      - File
     doc: Path to damage matrix (ancient)
     inputBinding:
       position: 104

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi contrast
+baseCommand:
+  - fermi
+  - contrast
 label: fermi_contrast
 doc: "Contrast two FMD-index based genomes.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
 inputs:

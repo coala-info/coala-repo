@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie unsubscribe
+baseCommand:
+  - refgenie
+  - unsubscribe
 label: refgenie_unsubscribe
 doc: "Remove a refgenieserver URL from the config.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

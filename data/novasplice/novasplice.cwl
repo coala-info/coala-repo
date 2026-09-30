@@ -19,7 +19,7 @@ inputs:
   - id: intermediate_files_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to output folder that will hold intermediate files generated, not 
       specific to the provided vcf. Especially useful when running NovaSplice on
       a large number of VCFs that all come from the same reference and make use 
@@ -38,7 +38,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output folder to dump simdigree's output to. Default is 
       working directory under /novasplice_output
     inputBinding:
@@ -63,7 +63,7 @@ inputs:
   - id: temp_files_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Full path to an alternative directory to use for temp files. Default is
       /tmp
     inputBinding:

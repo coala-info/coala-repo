@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hymet truth
+baseCommand:
+  - hymet
+  - truth
 label: hymet_truth
 doc: "Build Zymo mock community truth tables\n\nTool homepage: https://github.com/inesbmartins02/HYMET"
 inputs:

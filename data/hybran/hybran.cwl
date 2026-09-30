@@ -15,6 +15,7 @@ inputs:
       genomes desired to be annotated. FASTA format required.
     inputBinding:
       position: 1
+      prefix: --genomes
   - id: references
     type:
       type: array
@@ -23,6 +24,7 @@ inputs:
       files of reference annotations to transfer.
     inputBinding:
       position: 2
+      prefix: --references
   - id: blast_min_coverage
     type:
       - 'null'
@@ -217,7 +219,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output all new annotation files.
     inputBinding:
       position: 103

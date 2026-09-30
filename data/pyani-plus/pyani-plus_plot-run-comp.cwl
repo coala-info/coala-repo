@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyani-plus plot-run-comp
+baseCommand:
+  - pyani-plus
+  - plot-run-comp
 label: pyani-plus_plot-run-comp
 doc: "Plot comparisons between multiple runs.\n\nTool homepage: https://github.com/pyani-plus/pyani-plus"
 inputs:
@@ -44,7 +46,7 @@ inputs:
       prefix: --run-ids
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: DIRECTORY             Output directory. Created if    │
     inputBinding:
       position: 102
       prefix: --outdir

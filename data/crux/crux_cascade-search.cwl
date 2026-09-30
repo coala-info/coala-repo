@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux cascade-search
+baseCommand:
+  - crux
+  - cascade-search
 label: crux_cascade-search
 doc: "Searches spectra against a series of databases in a cascade.\n\nTool homepage:
   https://github.com/redbadger/crux"
@@ -271,7 +273,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the directory where output files will be created.
     inputBinding:
       position: 103

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strling call
+baseCommand:
+  - strling
+  - call
 label: strling_call
 doc: "Call STR alleles from BAM files.\n\nTool homepage: https://github.com/quinlan-lab/STRling"
 inputs:

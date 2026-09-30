@@ -13,16 +13,14 @@ inputs:
       position: 101
       prefix: -fq
   - id: fastq_2
-    type: string
+    type: string?
     doc: FASTQ for second end. Used if BAM contains paired-end data. BAM should 
       be sorted by query name if creating paired FASTQ.
     inputBinding:
       position: 101
       prefix: -fq2
   - id: input_bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input BAM file
     inputBinding:
       position: 101

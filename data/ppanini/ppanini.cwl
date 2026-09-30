@@ -68,7 +68,6 @@ inputs:
       prefix: --uniref2go
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
     inputBinding:
       position: 102
       prefix: --output-folder

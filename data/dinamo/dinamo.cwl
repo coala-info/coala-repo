@@ -67,7 +67,8 @@ inputs:
       prefix: --threshold
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ': Output the meme file to the desired path (has no effect when -p option
+      is used)'
     inputBinding:
       position: 102
       prefix: --output-file

@@ -103,7 +103,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to the output directory
     inputBinding:
       position: 102
@@ -168,7 +168,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Temporary directory to use (default: $TMPDIR in the environment or /tmp)'
     inputBinding:
       position: 102
@@ -182,7 +182,7 @@ inputs:
       position: 102
       prefix: -V
   - id: output_file_path
-    type: string
+    type: string?
     inputBinding:
       position: 103
       prefix: --file-output

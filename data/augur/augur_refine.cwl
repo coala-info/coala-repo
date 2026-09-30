@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur refine
+baseCommand:
+  - augur
+  - refine
 label: augur_refine
 doc: "Refine an initial tree using sequence metadata.\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:
@@ -283,7 +285,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_node_data_path`
     inputBinding:
       position: 102
       prefix: --output-node-data
@@ -291,7 +292,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 103
       prefix: --output-tree

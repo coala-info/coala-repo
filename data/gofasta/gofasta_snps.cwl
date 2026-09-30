@@ -32,9 +32,9 @@ inputs:
       prefix: --query
   - id: reference
     type: File
+    doc: Reference sequence, in fasta format
     secondaryFiles:
       - .fai
-    doc: Reference sequence, in fasta format
     inputBinding:
       position: 101
       prefix: --reference
@@ -49,7 +49,7 @@ inputs:
       prefix: --threshold
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output to write (default "stdout")
     inputBinding:
       position: 102
       prefix: --outfile

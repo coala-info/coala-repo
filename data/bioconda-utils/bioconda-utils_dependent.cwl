@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconda-utils dependent
+baseCommand:
+  - bioconda-utils
+  - dependent
 label: bioconda-utils_dependent
 doc: "Print recipes dependent on a package\n\nTool homepage: http://bioconda.github.io/build-system.html"
 inputs:

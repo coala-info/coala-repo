@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: capcruncher alignments
+baseCommand:
+  - capcruncher
+  - alignments
 label: capcruncher_alignments
 doc: "Alignment annotation, identification and deduplication.\n\nTool homepage: https://github.com/sims-lab/CapCruncher.git"
 inputs:

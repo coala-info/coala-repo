@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Population
-  and community metrics calculation from Biodiversity data'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Population and community metrics calculation from Biodiversity data'
 inputs:
   0_Input Dataset:
     format: data

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools index
+baseCommand:
+  - poretools
+  - index
 label: poretools_index
 doc: "Index FAST5 files for faster access.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:

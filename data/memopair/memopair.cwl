@@ -6,9 +6,9 @@ doc: "Methylation Motif Pairs\n\nTool homepage: https://github.com/SorenHeidelba
 inputs:
   - id: reference
     type: File
+    doc: File path to the fasta file with references
     secondaryFiles:
       - .fai
-    doc: File path to the fasta file with references
     inputBinding:
       position: 1
   - id: pileup
@@ -59,7 +59,7 @@ inputs:
       prefix: --verbosity
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'Output file path [default: memopair]'
     inputBinding:
       position: 105
       prefix: --out

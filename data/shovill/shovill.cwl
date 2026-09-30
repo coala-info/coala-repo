@@ -125,7 +125,7 @@ inputs:
       position: 101
       prefix: --opts
   - id: outdir
-    type: Directory
+    type: string
     doc: Output folder
     inputBinding:
       position: 101
@@ -161,7 +161,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Fast temporary directory (blank=AUTO)
     inputBinding:
       position: 101

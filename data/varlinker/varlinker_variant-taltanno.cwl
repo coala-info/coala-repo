@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlinker_variant-taltanno
+baseCommand:
+  - varlinker
+  - variant-taltanno
 label: varlinker_variant-taltanno
 doc: "extract the annotation of the specific alt allele\n\nTool homepage: https://github.com/IBCHgenomic/varlinker"
 inputs:

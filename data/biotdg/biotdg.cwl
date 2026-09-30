@@ -64,9 +64,9 @@ inputs:
       prefix: --read-length
   - id: reference
     type: File
+    doc: Reference genome for the sample.
     secondaryFiles:
       - .fai
-    doc: Reference genome for the sample.
     inputBinding:
       position: 101
       prefix: --reference
@@ -84,7 +84,6 @@ inputs:
       prefix: --vcf
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
       prefix: --output-dir

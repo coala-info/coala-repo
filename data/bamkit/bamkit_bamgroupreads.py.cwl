@@ -53,6 +53,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --readgroup
+      itemSeparator: ','
   - id: reset_dups
     type:
       - 'null'

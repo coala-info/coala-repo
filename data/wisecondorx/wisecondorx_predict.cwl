@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wisecondorx predict
+baseCommand:
+  - wisecondorx
+  - predict
 label: wisecondorx_predict
 doc: "Find copy number aberrations\n\nTool homepage: https://github.com/CenterForMedicalGeneticsGhent/wisecondorX"
 inputs:

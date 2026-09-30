@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pycistopic topic_modeling
+baseCommand:
+  - pycistopic
+  - topic_modeling
 label: pycistopic_topic_modeling
 doc: "Topic modeling for pycisTopic\n\nTool homepage: https://github.com/aertslab/pycistopic"
 inputs:

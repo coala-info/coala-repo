@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gpsw_fetch
+baseCommand:
+  - gpsw
+  - fetch
 label: gpsw_fetch
 doc: "Fetch GPSW code from a specific release from https://github.com/niekwit/gps-orfeome.\n\
   \nTool homepage: https://github.com/niekwit/gps-orfeome"

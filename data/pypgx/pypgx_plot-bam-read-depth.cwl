@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx plot-bam-read-depth
+baseCommand:
+  - pypgx
+  - plot-bam-read-depth
 label: pypgx_plot-bam-read-depth
 doc: "Plot read depth profile with BAM data.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:

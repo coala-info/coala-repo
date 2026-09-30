@@ -157,7 +157,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder
     inputBinding:
       position: 102

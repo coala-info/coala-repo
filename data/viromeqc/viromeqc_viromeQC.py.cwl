@@ -124,7 +124,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary Directory override (default is the system temp directory)
     inputBinding:
       position: 101
@@ -139,7 +139,6 @@ inputs:
       prefix: --zenodo
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

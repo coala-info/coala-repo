@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sopa convert
+baseCommand:
+  - sopa
+  - convert
 label: sopa_convert
 doc: "Read any technology data as a SpatialData object and save it as a `.zarr` directory.\n\
   \nTool homepage: https://gustaveroussy.github.io/sopa"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi view
+baseCommand:
+  - odgi
+  - view
 label: odgi_view
 doc: "Project a graph into other formats.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

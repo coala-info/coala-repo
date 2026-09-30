@@ -149,9 +149,9 @@ inputs:
       prefix: --read-length
   - id: reference_sequence
     type: File
+    doc: Reference genome fasta file.
     secondaryFiles:
       - .fai
-    doc: Reference genome fasta file.
     inputBinding:
       position: 101
       prefix: --reference-sequence
@@ -166,7 +166,7 @@ inputs:
   - id: scratch_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temp files
     inputBinding:
       position: 101
@@ -207,7 +207,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
+    doc: Write logging information into file rather than to
     inputBinding:
       position: 102
       prefix: --logfile
@@ -215,7 +215,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

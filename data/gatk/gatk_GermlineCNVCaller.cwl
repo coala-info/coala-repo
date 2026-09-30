@@ -202,7 +202,7 @@ inputs:
     doc: Enable discovery of bias factors.
     inputBinding:
       position: 101
-      prefix: --enable-bias_factors
+      prefix: --enable-bias-factors
   - id: exclude_intervals
     type:
       - 'null'
@@ -487,7 +487,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to use.
     inputBinding:
       position: 101

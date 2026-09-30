@@ -62,7 +62,7 @@ inputs:
       prefix: --window-size
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: coverage output file
     inputBinding:
       position: 103
       prefix: --outfile

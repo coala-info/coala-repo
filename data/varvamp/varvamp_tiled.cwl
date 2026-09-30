@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varvamp_tiled
+baseCommand:
+  - varvamp
+  - tiled
 label: varvamp_tiled
 doc: "Performs primer design and amplicon tiling for variant calling.\n\nTool homepage:
   https://github.com/jonas-fuchs/varVAMP"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to save the output files
     inputBinding:
       position: 2

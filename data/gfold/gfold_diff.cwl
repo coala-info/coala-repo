@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfold_diff
+baseCommand:
+  - gfold
+  - diff
 label: gfold_diff
 doc: "Generalized fold change for ranking differentially expressed genes from RNA-seq
   data.\n\nTool homepage: https://github.com/nickgerace/gfold"

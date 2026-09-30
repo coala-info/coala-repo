@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slivar compound-hets
+baseCommand:
+  - slivar
+  - compound-hets
 label: slivar_compound-hets
 doc: "find compound-hets in trios from pre-filtered variants\n\nTool homepage: https://github.com/brentp/slivar"
 inputs:
@@ -26,12 +28,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample-field
+          separate: true
     doc: optional INFO field(s) that contains list of samples (kids) that have 
       passed previous filters. can be specified multiple times. this is needed 
       for multi-family VCFs
     inputBinding:
       position: 101
-      prefix: --sample-field
   - id: skip
     type:
       - 'null'
@@ -51,7 +55,7 @@ inputs:
       prefix: --vcf
   - id: out_vcf_path
     type: string
-    doc: Output or path parameter `out_vcf_path`
+    doc: 'path to output VCF/BCF (default: /dev/stdout)'
     inputBinding:
       position: 102
       prefix: --out-vcf

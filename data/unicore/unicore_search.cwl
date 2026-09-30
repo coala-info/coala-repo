@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unicore_search
+baseCommand:
+  - unicore
+  - search
 label: unicore_search
 doc: "Search Foldseek database against reference database\n\nTool homepage: https://github.com/steineggerlab/unicore"
 inputs:
@@ -20,7 +22,7 @@ inputs:
     inputBinding:
       position: 3
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temp directory
     inputBinding:
       position: 4

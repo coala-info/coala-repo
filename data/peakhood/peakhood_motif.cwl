@@ -55,7 +55,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out
@@ -63,7 +62,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_out_path`
     inputBinding:
       position: 103
       prefix: --stats-out

@@ -56,7 +56,7 @@ inputs:
   - id: work_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the working directory where ExaML will write its output 
       files
     inputBinding:

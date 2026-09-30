@@ -26,6 +26,11 @@ inputs:
     doc: GTDB metadata for taxa in tree
     inputBinding:
       position: 4
+  - id: output_dir
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 5
   - id: keep_unclassified
     type:
       - 'null'
@@ -59,11 +64,11 @@ inputs:
       position: 105
       prefix: --taxa_to_retain
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

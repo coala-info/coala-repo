@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metamlst_metamlst-index.py
+baseCommand: metamlst-index.py
 label: metamlst_metamlst-index.py
 doc: "Builds and manages the MetaMLST SQLite Databases\n\nTool homepage: https://github.com/SegataLab/metamlst"
 inputs:
@@ -79,6 +79,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sequences
+      itemSeparator: ','
   - id: typings
     type:
       - 'null'

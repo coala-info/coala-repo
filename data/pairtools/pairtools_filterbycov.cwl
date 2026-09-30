@@ -169,14 +169,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unmapped-chrom
-  - id: output_highcov_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_highcov_path`
-    inputBinding:
-      position: 103
-      prefix: --output-highcov
   - id: output_lowcov_path
     type:
       - 'null'
@@ -201,6 +193,14 @@ inputs:
     inputBinding:
       position: 106
       prefix: --output-unmapped
+  - id: output_highcov_path
+    type:
+      - 'null'
+      - string
+    doc: output file for pairs from high coverage
+    inputBinding:
+      position: 107
+      prefix: --output-highcov
 outputs:
   - id: output_lowcov
     type:

@@ -188,7 +188,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `image_path`
+    doc: save histogram to this PDF/image file
     inputBinding:
       position: 102
       prefix: --image
@@ -196,7 +196,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 103
       prefix: --out-file

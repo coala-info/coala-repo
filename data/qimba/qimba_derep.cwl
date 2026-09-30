@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qimba_derep
+baseCommand:
+  - qimba
+  - derep
 label: qimba_derep
 doc: "Dereplicate FASTA sequences using USEARCH.\n\n  This command identifies and
   collapses identical sequences, keeping track\n  of their abundance in the sequence

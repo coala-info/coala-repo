@@ -64,7 +64,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Force a temporary directory path to each plugin
     inputBinding:
       position: 102

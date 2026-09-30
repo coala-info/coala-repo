@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sirius login
+baseCommand:
+  - sirius
+  - login
 label: sirius-csifingerid_sirius login
 doc: "Allows a user to login for SIRIUS Webservices (e.g. CSI:FingerID or CANOPUS)
   and securely store a personal access token.\n\nTool homepage: https://bio.informatik.uni-jena.de/software/sirius/"

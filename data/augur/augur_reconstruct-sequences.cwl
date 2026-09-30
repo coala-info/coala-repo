@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur reconstruct-sequences
+baseCommand:
+  - augur
+  - reconstruct-sequences
 label: augur_reconstruct-sequences
 doc: "Reconstruct alignments from mutations inferred on the tree\n\nTool homepage:
   https://github.com/nextstrain/augur"
@@ -44,8 +46,7 @@ inputs:
       position: 101
       prefix: --vcf-aa-reference
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

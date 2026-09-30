@@ -28,6 +28,7 @@ inputs:
     doc: write a heavier output
     inputBinding:
       position: 101
+      prefix: --details
   - id: gt_alpha
     type:
       - 'null'
@@ -35,6 +36,7 @@ inputs:
     doc: 'alpha threshold for calling genotypes (default: 0.05)'
     inputBinding:
       position: 101
+      prefix: --gt-alpha
   - id: ignore_pe_reads
     type:
       - 'null'
@@ -42,6 +44,7 @@ inputs:
     doc: ignore paired-end reads even if present in the input
     inputBinding:
       position: 101
+      prefix: --ignore-pe-reads
   - id: kmer_length
     type:
       - 'null'
@@ -49,6 +52,7 @@ inputs:
     doc: 'kmer length for the de Bruijn graph (default: 31, max. 31)'
     inputBinding:
       position: 101
+      prefix: --kmer-length
   - id: max_clipped
     type:
       - 'null'
@@ -56,6 +60,7 @@ inputs:
     doc: 'maximum soft-clipping level, in fraction of read length (default: 0.20)'
     inputBinding:
       position: 101
+      prefix: --max-clipped
   - id: max_debruijn_reads
     type:
       - 'null'
@@ -63,6 +68,7 @@ inputs:
     doc: 'maximum number of reads to use in the de Bruijn graph (default: 1000)'
     inputBinding:
       position: 101
+      prefix: --max-debruijn-reads
   - id: max_insert_len
     type:
       - 'null'
@@ -70,6 +76,7 @@ inputs:
     doc: 'maximum allowed sequencing insert length (default: 1000)'
     inputBinding:
       position: 101
+      prefix: --max-insert-len
   - id: methyl_status
     type:
       - 'null'
@@ -78,6 +85,7 @@ inputs:
       bases.
     inputBinding:
       position: 101
+      prefix: --methyl-status
   - id: min_kmer_cov
     type:
       - 'null'
@@ -85,6 +93,7 @@ inputs:
     doc: 'minimum coverage to consider a kmer (default: 2)'
     inputBinding:
       position: 101
+      prefix: --min-kmer-cov
   - id: min_mapq
     type:
       - 'null'
@@ -92,6 +101,7 @@ inputs:
     doc: 'minimum PHRED-scaled mapping quality to consider a read (default: 10)'
     inputBinding:
       position: 101
+      prefix: --min-mapq
   - id: model
     type:
       - 'null'
@@ -100,6 +110,7 @@ inputs:
       (default), marukihigh, or snp
     inputBinding:
       position: 101
+      prefix: --model
   - id: phasing_cooccurrences_thr_range
     type:
       - 'null'
@@ -108,6 +119,7 @@ inputs:
       of allele cooccurrences for SNP phasing (default: 1,2)'
     inputBinding:
       position: 101
+      prefix: --phasing-cooccurrences-thr-range
   - id: phasing_dont_prune_hets
     type:
       - 'null'
@@ -115,6 +127,7 @@ inputs:
     doc: don't try to ignore dubious heterozygote genotypes during phasing
     inputBinding:
       position: 101
+      prefix: --phasing-dont-prune-hets
   - id: popmap
     type: File
     doc: path to a population map giving the list of samples
@@ -129,6 +142,7 @@ inputs:
       same insert length (implies --rm-unpaired-reads)
     inputBinding:
       position: 101
+      prefix: --rm-pcr-duplicates
   - id: rm_unpaired_reads
     type:
       - 'null'
@@ -136,6 +150,7 @@ inputs:
     doc: discard unpaired reads
     inputBinding:
       position: 101
+      prefix: --rm-unpaired-reads
   - id: stacks_dir
     type:
       - 'null'
@@ -170,6 +185,7 @@ inputs:
       were READ1's)
     inputBinding:
       position: 101
+      prefix: --unpaired
   - id: var_alpha
     type:
       - 'null'
@@ -177,6 +193,7 @@ inputs:
     doc: 'alpha threshold for discovering SNPs (default: 0.01 for marukilow)'
     inputBinding:
       position: 101
+      prefix: --var-alpha
   - id: write_alignments
     type:
       - 'null'
@@ -184,6 +201,7 @@ inputs:
     doc: save read alignments (heavy BAM files)
     inputBinding:
       position: 101
+      prefix: --write-alignments
   - id: out_dir_path
     type: string
     doc: Output or path parameter `out_dir_path`

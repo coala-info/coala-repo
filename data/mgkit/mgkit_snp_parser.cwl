@@ -77,9 +77,9 @@ inputs:
       prefix: --quiet
   - id: reference
     type: File
+    doc: Fasta file with the GFF Reference
     secondaryFiles:
       - .fai
-    doc: Fasta file with the GFF Reference
     inputBinding:
       position: 101
       prefix: --reference
@@ -105,7 +105,6 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

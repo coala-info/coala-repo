@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: omamer_search
+baseCommand:
+  - omamer
+  - search
 label: omamer_search
 doc: "Search for protein sequences, given in FASTA format, against an existing database.\n\
   \nTool homepage: https://github.com/DessimozLab/omamer"
@@ -104,7 +106,7 @@ inputs:
       prefix: --top_n_fams
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Path to output. If not set, defaults to stdout
     inputBinding:
       position: 102
       prefix: --out

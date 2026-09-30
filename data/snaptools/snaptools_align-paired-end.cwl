@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snaptools align-paired-end
+baseCommand:
+  - snaptools
+  - align-paired-end
 label: snaptools_align-paired-end
 doc: "Align paired-end FASTQ files to a reference genome.\n\nTool homepage: https://github.com/r3fang/SnapTools.git"
 inputs:
@@ -27,7 +29,7 @@ inputs:
   - id: if_sort
     type:
       - 'null'
-      - boolean
+      - string
     doc: weather to sort the bam file based on the read name
     inputBinding:
       position: 101
@@ -73,7 +75,7 @@ inputs:
   - id: overwrite
     type:
       - 'null'
-      - boolean
+      - string
     doc: whether to overwrite the output file if it already exists
     inputBinding:
       position: 101
@@ -100,7 +102,7 @@ inputs:
   - id: tmp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to store temporary files. If not given, snaptools will 
       automaticallygenerate a temporary location to store temporary files
     inputBinding:
@@ -109,14 +111,13 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - boolean
+      - string
     doc: a boolen tag indicates output the progress.
     inputBinding:
       position: 101
       prefix: --verbose
   - id: output_bam_path
     type: string
-    doc: Output or path parameter `output_bam_path`
     inputBinding:
       position: 102
       prefix: --output-bam

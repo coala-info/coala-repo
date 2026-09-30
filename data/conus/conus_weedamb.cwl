@@ -12,10 +12,10 @@ inputs:
       position: 1
   - id: save_ambiguous_path
     type: string
-    doc: Output or path parameter `save_ambiguous_path`
+    doc: ': save ambiguous sequences to this file'
     inputBinding:
       position: 101
-      prefix: --save-ambiguous
+      prefix: -s
 outputs:
   - id: save_ambiguous
     type:

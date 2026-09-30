@@ -48,10 +48,10 @@ inputs:
       prefix: --virus
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: File path to store the JSON result.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

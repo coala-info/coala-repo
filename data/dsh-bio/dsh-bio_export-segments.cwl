@@ -30,7 +30,7 @@ inputs:
       prefix: --line-width
   - id: output_fasta_file_path
     type: string
-    doc: Output or path parameter `output_fasta_file_path`
+    doc: output FASTA file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-fasta-file

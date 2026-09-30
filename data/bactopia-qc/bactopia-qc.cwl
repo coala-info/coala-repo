@@ -18,6 +18,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: ain=
+      separate: false
   - id: cp
     type:
       - 'null'
@@ -38,12 +39,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: in=
+      separate: false
   - id: input_r2
     type: File
     doc: Input file for read 2
     inputBinding:
       position: 102
       prefix: in2=
+      separate: false
   - id: xmx
     type:
       - 'null'

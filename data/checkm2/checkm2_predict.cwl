@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: checkm2 predict
+baseCommand:
+  - checkm2
+  - predict
 label: checkm2_predict
 doc: "Predict the completeness and contamination of genome bins in a folder.\n\nTool
   homepage: https://github.com/chklovski/CheckM2"
@@ -12,6 +14,7 @@ inputs:
     doc: Path to folder containing MAGs or list of MAGS to be analyzed
     inputBinding:
       position: 1
+      prefix: --input
   - id: allmodels
     type:
       - 'null'
@@ -148,7 +151,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify an alternative directory for temporary files
     inputBinding:
       position: 102

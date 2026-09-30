@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Investigation
-  of lockdown effect on air quality between January 2019 to May 2021: RELIANCE DS1-GC0-SC3'''
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Investigation of lockdown effect on air quality between January 2019 to May 2021: RELIANCE DS1-GC0-SC3'''
 inputs: {}
 outputs: {}
 steps:

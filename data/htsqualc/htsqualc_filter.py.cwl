@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: htsqualc_filter.py
+baseCommand: filter.py
 label: htsqualc_filter.py
 doc: "Quality control analysis of single and paired-end sequence data\n\nTool homepage:
   https://reneshbedre.github.io/blog/htseqqc.html"
@@ -24,10 +24,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --adp
+      itemSeparator: ','
   - id: compress
     type:
       - 'null'
-      - boolean
+      - string
     doc: Compress (.gz) the filtered FASTQ output [True|False]
     inputBinding:
       position: 101

@@ -17,10 +17,9 @@ inputs:
       position: 1
   - id: output_filename_path
     type: string
-    doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 101
-      prefix: --output-filename
+      prefix: --output_filename
 outputs:
   - id: output_filename
     type: File

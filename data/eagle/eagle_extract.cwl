@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eagle_extract
+baseCommand:
+  - eagle
+  - extract
 label: eagle_extract
 doc: "Extracts regions from BAM/SAM/CRAM files based on a capture kit file.\n\nTool
   homepage: https://bitbucket.org/christopherschroeder/eagle"
@@ -24,11 +26,11 @@ inputs:
       position: 103
       prefix: --samplerate
   - id: write_stats_to_file_path
-    type: string
-    doc: Output or path parameter `write_stats_to_file_path`
+    type: string?
+    doc: directly write the stats to this eagle file
     inputBinding:
       position: 104
-      prefix: --write-stats-to-file
+      prefix: -w
 outputs:
   - id: write_stats_to_file
     type:

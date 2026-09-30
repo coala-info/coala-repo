@@ -121,22 +121,21 @@ inputs:
     inputBinding:
       position: 103
       prefix: '-32'
-  - id: compile_index_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `compile_index_path`
-    inputBinding:
-      position: 104
-      prefix: --compile-index
   - id: write_binary_database_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_binary_database_path`
+    doc: '- write binary database to file'
     inputBinding:
       position: 105
-      prefix: --write-binary-database
+      prefix: -w
+  - id: compile_index_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --compile_index
 outputs:
   - id: write_binary_database
     type:

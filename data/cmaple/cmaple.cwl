@@ -272,7 +272,7 @@ inputs:
       prefix: --zero-branch-supp
   - id: out_aln_path
     type: string
-    doc: Output or path parameter `out_aln_path`
+    doc: Write the input alignment to a file in
     inputBinding:
       position: 102
       prefix: --out-aln

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smudgeplot plot
+baseCommand:
+  - smudgeplot
+  - plot
 label: smudgeplot_plot
 doc: "Generate 2d histogram; infer ploidy and plot a smudgeplot.\n\nTool homepage:
   https://github.com/KamilSJaron/smudgeplot"

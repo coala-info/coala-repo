@@ -112,18 +112,19 @@ inputs:
       prefix: -u
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: prefix       Prefix for output filenames.
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: -n
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix for output filenames.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_stats
+baseCommand:
+  - odgi
+  - stats
 label: odgi_stats
 doc: "Metrics describing a variation graph and its path relationship.\n\nTool homepage:
   https://github.com/vgteam/odgi"

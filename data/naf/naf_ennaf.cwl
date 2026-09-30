@@ -110,7 +110,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Use DIR as temporary directory
     inputBinding:
       position: 102
@@ -149,10 +149,10 @@ inputs:
       prefix: -c
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '- Write compressed output to FILE'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

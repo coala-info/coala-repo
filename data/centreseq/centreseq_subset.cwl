@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: centreseq_subset
+baseCommand:
+  - centreseq
+  - subset
 label: centreseq_subset
 doc: "Given an input text file of Sample IDs and a summary report, will return a filtered
   version of the summary report for clusters that belong exclusively in the input
@@ -22,7 +24,7 @@ inputs:
       prefix: --summary-report
   - id: outpath_path
     type: string
-    doc: Output or path parameter `outpath_path`
+    doc: Path to desired output file. If no value is
     inputBinding:
       position: 102
       prefix: --outpath

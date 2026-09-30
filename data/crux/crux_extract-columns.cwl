@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux extract-columns
+baseCommand:
+  - crux
+  - extract-columns
 label: crux_extract-columns
 doc: "Extracts specified columns from a tab-delimited file.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

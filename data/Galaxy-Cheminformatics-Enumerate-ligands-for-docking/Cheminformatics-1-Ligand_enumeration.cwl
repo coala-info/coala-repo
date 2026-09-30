@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'This workflow is used form the preparation of protein and ligands for docking. More info can be found at https://covid19.galaxyproject.org/cheminformatics/'
 inputs:
   0_Input Dataset:

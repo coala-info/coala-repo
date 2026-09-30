@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: votuderep filter
+baseCommand:
+  - votuderep
+  - filter
 label: votuderep_filter
 doc: "Filter FASTA file using CheckV quality metrics.\n\nTool homepage: https://github.com/quadram-institute-bioscience/votuderep"
 inputs:
@@ -21,6 +23,7 @@ inputs:
     doc: Only keep contigs with checkv_quality == 'Complete'
     inputBinding:
       position: 103
+      prefix: --complete
   - id: exclude_undetermined
     type:
       - 'null'
@@ -28,6 +31,7 @@ inputs:
     doc: Exclude contigs with checkv_quality == 'Not-determined'
     inputBinding:
       position: 103
+      prefix: --exclude-undetermined
   - id: max_contam
     type:
       - 'null'
@@ -35,6 +39,7 @@ inputs:
     doc: Maximum contamination percentage
     inputBinding:
       position: 103
+      prefix: --max-contam
   - id: max_len
     type:
       - 'null'
@@ -42,6 +47,7 @@ inputs:
     doc: Maximum contig length (0 = unlimited)
     inputBinding:
       position: 103
+      prefix: --max-len
   - id: min_completeness
     type:
       - 'null'
@@ -66,6 +72,7 @@ inputs:
       or high (High/Complete)'
     inputBinding:
       position: 103
+      prefix: --min-quality
   - id: no_warnings
     type:
       - 'null'
@@ -73,6 +80,7 @@ inputs:
     doc: Only keep contigs with no warnings
     inputBinding:
       position: 103
+      prefix: --no-warnings
   - id: provirus
     type:
       - 'null'
@@ -80,12 +88,13 @@ inputs:
     doc: Only select proviruses (provirus == 'Yes')
     inputBinding:
       position: 103
+      prefix: --provirus
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: FILE               Output FASTA file          │
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

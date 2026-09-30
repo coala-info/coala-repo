@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: binchicken update
+baseCommand:
+  - binchicken
+  - update
 label: binchicken_update
 doc: "Update binchicken's databases and configurations.\n\nTool homepage: https://github.com/aroneys/binchicken"
 inputs:
@@ -344,7 +346,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for intermediate files.
     inputBinding:
       position: 101
@@ -377,7 +379,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemble_binned_path`
     inputBinding:
       position: 102
       prefix: --coassemble-binned
@@ -385,7 +386,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemble_elusive_clusters_path`
     inputBinding:
       position: 103
       prefix: --coassemble-elusive-clusters
@@ -393,7 +393,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemble_elusive_edges_path`
     inputBinding:
       position: 104
       prefix: --coassemble-elusive-edges
@@ -401,7 +400,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemble_output_path`
     inputBinding:
       position: 105
       prefix: --coassemble-output
@@ -409,7 +407,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemble_summary_path`
     inputBinding:
       position: 106
       prefix: --coassemble-summary
@@ -417,7 +414,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemble_targets_path`
     inputBinding:
       position: 107
       prefix: --coassemble-targets
@@ -425,7 +421,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemble_unbinned_path`
     inputBinding:
       position: 108
       prefix: --coassemble-unbinned
@@ -433,7 +428,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coassemblies_path`
     inputBinding:
       position: 109
       prefix: --coassemblies
@@ -441,7 +435,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 110
       prefix: --output

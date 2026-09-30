@@ -85,7 +85,7 @@ inputs:
   - id: midfolder
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Midfolder for intermediate files. (optional)\n    This folder will be created
       within the --outpth to store intermediate files."
     inputBinding:
@@ -174,7 +174,6 @@ inputs:
       prefix: --tree
   - id: outpth_path
     type: string
-    doc: Output or path parameter `outpth_path`
     inputBinding:
       position: 102
       prefix: --outpth

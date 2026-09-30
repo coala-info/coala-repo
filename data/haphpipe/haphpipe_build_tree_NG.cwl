@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe build_tree_NG
+baseCommand:
+  - haphpipe
+  - build_tree_NG
 label: haphpipe_build_tree_NG
 doc: "Build phylogenetic trees using RAxML-NG\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -162,7 +164,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

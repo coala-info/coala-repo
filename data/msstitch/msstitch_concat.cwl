@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch_concat
+baseCommand:
+  - msstitch
+  - concat
 label: msstitch_concat
 doc: "Concatenates multiple msstitch files.\n\nTool homepage: https://github.com/lehtiolab/msstitch"
 inputs:
@@ -14,17 +16,17 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output in
     inputBinding:
       position: 102
       prefix: --output-dir
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: Output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

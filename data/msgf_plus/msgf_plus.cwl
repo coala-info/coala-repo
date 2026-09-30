@@ -1,6 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -Xmx3500M -jar MSGFPlus.jar
+baseCommand:
+  - java
+  - -Xmx3500M
+  - -jar
+  - MSGFPlus.jar
 label: msgf_plus
 doc: "MS-GF+ Release (v2024.03.26) (26 March 2024)\n\nTool homepage: https://msgfplus.github.io/"
 inputs:

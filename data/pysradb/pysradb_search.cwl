@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pysradb search
+baseCommand:
+  - pysradb
+  - search
 label: pysradb_search
 doc: "Search for data in SRA, ENA, or GEO databases.\n\nTool homepage: https://github.com/saketkc/pysradb"
 inputs:
@@ -210,10 +212,10 @@ inputs:
       prefix: --verbosity
   - id: save_to_path
     type: string
-    doc: Output or path parameter `save_to_path`
+    doc: Save search result dataframe to file
     inputBinding:
       position: 102
-      prefix: --save-to
+      prefix: --saveto
 outputs:
   - id: save_to
     type:

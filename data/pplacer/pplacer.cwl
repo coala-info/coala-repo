@@ -227,7 +227,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify the directory to write place files to.
     inputBinding:
       position: 102
@@ -382,10 +382,10 @@ inputs:
       prefix: --write-pre-masked
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Specify the output file name
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

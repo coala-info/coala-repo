@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: muat_preprocess
+baseCommand:
+  - muat
+  - preprocess
 label: muat_preprocess
 doc: "Preprocess VCF, SomAgg VCF, or TSV files with specified genome build and optional
   dictionaries.\n\nTool homepage: https://github.com/primasanjaya/muat"
@@ -12,6 +14,7 @@ inputs:
     doc: Input file paths.
     inputBinding:
       position: 1
+      prefix: --input-filepath
   - id: ges_dictionary_filepath
     type:
       - 'null'

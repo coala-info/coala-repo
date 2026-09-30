@@ -93,10 +93,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --var
+          separate: true
     doc: Variance signature file path. Can be used multiple times.
     inputBinding:
       position: 101
-      prefix: --var
   - id: ychr
     type:
       - 'null'
@@ -107,7 +109,7 @@ inputs:
       prefix: --ychr
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output TSV file for QC results.  [required]
     inputBinding:
       position: 102
       prefix: --output

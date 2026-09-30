@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reseq replaceN
+baseCommand:
+  - reseq
+  - replaceN
 label: reseq_replaceN
 doc: "Replace Ns in reference sequences\n\nTool homepage: https://github.com/schmeing/ReSeq/tree/devel"
 inputs:

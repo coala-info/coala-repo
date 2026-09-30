@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi_pe2cofq
+baseCommand:
+  - fermi
+  - pe2cofq
 label: fermi_pe2cofq
 doc: "Convert paired-end FASTQ to COFF format\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
 inputs:

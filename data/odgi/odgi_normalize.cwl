@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi normalize
+baseCommand:
+  - odgi
+  - normalize
 label: odgi_normalize
 doc: "Compact unitigs and simplify redundant furcations.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

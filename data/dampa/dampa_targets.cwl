@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dampa targets
+baseCommand:
+  - dampa
+  - targets
 label: dampa_targets
 doc: "Generates target sequences based on a dampa design JSON file.\n\nTool homepage:
   https://github.com/MultipathogenGenomics/dampa"
@@ -31,7 +33,7 @@ inputs:
   - id: outputfolder
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to output folder
     inputBinding:
       position: 101

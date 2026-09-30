@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: protk_make_decoy.rb
+baseCommand: make_decoy.rb
 label: protk_make_decoy.rb
 doc: "Create a decoy database from real protein sequences.\n\nTool homepage: https://github.com/iracooke/protk"
 inputs:
@@ -52,7 +52,7 @@ inputs:
       prefix: --reverse-only
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: An explicitly named output file.
     inputBinding:
       position: 103
       prefix: --output

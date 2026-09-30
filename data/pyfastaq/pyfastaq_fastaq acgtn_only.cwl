@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastaq_fastaq acgtn_only
+baseCommand:
+  - pyfastaq_fastaq
+  - acgtn_only
 label: pyfastaq_fastaq acgtn_only
 doc: "Filter FASTA/FASTQ sequences to only include ACGTN characters.\n\nTool homepage:
   https://github.com/sanger-pathogens/Fastaq"

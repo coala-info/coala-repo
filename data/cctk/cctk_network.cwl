@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk network
+baseCommand:
+  - cctk
+  - network
 label: cctk_network
 doc: "Builds a network of CRISPR arrays based on shared spacers.\n\nTool homepage:
   https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
@@ -22,7 +24,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory path.
     inputBinding:
       position: 101

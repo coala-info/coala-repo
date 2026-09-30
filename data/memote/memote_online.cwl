@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: memote online
+baseCommand:
+  - memote
+  - online
 label: memote_online
 doc: "Upload the repository to GitHub and create a gh-pages branch.\n\nTool homepage:
   https://memote.readthedocs.io/"

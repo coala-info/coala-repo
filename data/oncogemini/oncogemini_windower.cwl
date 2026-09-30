@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini windower
+baseCommand:
+  - oncogemini
+  - windower
 label: oncogemini_windower
 doc: "Windowing tool for oncogemini\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

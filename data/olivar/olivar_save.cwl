@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: olivar save
+baseCommand:
+  - olivar
+  - save
 label: olivar_save
 doc: "Saves an Olivar design to a file.\n\nTool homepage: https://gitlab.com/treangenlab/olivar"
 inputs:
@@ -10,8 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 101
       prefix: --output

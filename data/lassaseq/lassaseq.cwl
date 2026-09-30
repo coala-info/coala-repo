@@ -87,7 +87,7 @@ inputs:
       position: 101
       prefix: --metadata
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory for sequences
     inputBinding:
       position: 101

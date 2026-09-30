@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar luciphor2.jar
+baseCommand:
+  - java
+  - -jar
+  - luciphor2.jar
 label: luciphor2
 doc: "JAVA-based version of Luciphor\n\nTool homepage: http://luciphor2.sourceforge.net/"
 inputs:

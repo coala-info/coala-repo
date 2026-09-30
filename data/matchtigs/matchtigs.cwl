@@ -153,7 +153,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `eulertigs_fa_out_path`
     inputBinding:
       position: 102
       prefix: --eulertigs-fa-out
@@ -161,7 +160,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `eulertigs_gfa_out_path`
     inputBinding:
       position: 103
       prefix: --eulertigs-gfa-out
@@ -169,7 +167,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `greedytigs_duplication_bitvector_out_path`
     inputBinding:
       position: 104
       prefix: --greedytigs-duplication-bitvector-out
@@ -177,7 +174,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `greedytigs_fa_out_path`
     inputBinding:
       position: 105
       prefix: --greedytigs-fa-out
@@ -185,7 +181,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `greedytigs_gfa_out_path`
     inputBinding:
       position: 106
       prefix: --greedytigs-gfa-out
@@ -193,7 +188,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `matchtigs_duplication_bitvector_out_path`
     inputBinding:
       position: 107
       prefix: --matchtigs-duplication-bitvector-out
@@ -201,7 +195,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `matchtigs_fa_out_path`
     inputBinding:
       position: 108
       prefix: --matchtigs-fa-out
@@ -209,7 +202,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `matchtigs_gfa_out_path`
     inputBinding:
       position: 109
       prefix: --matchtigs-gfa-out
@@ -217,7 +209,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pathtigs_fa_out_path`
     inputBinding:
       position: 110
       prefix: --pathtigs-fa-out
@@ -225,7 +216,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pathtigs_gfa_out_path`
     inputBinding:
       position: 111
       prefix: --pathtigs-gfa-out

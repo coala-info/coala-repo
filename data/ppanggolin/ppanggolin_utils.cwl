@@ -8,7 +8,7 @@ doc: "Generate a config file with default values for the given subcommand.\n\nTo
   homepage: https://github.com/labgem/PPanGGOLiN"
 inputs:
   - id: default_config
-    type: string
+    type: string?
     doc: Generate a config file with default values for the given subcommand.
     inputBinding:
       position: 101

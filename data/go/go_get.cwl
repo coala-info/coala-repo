@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go get
+baseCommand:
+  - go
+  - get
 label: go_get
 doc: "Run 'go help get' for details.\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

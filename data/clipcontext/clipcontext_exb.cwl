@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clipcontext exb
+baseCommand:
+  - clipcontext
+  - exb
 label: clipcontext_exb
 doc: "CLIP peak regions near exon borders output BED file\n\nTool homepage: https://github.com/BackofenLab/CLIPcontext"
 inputs:
@@ -66,10 +68,10 @@ inputs:
       prefix: --tr
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: str       CLIP peak regions near exon borders output BED file
     inputBinding:
       position: 102
-      prefix: --out-file
+      prefix: --out
 outputs:
   - id: out_file
     type: File

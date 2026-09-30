@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: somalier_relate
+baseCommand:
+  - somalier
+  - relate
 label: somalier_relate
 doc: "calculate relatedness among samples from extracted, genotype-like information\n\
   \nTool homepage: https://github.com/brentp/somalier"

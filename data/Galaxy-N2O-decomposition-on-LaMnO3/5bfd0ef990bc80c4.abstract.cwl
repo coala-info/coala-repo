@@ -22,21 +22,27 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file_collection:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: Figure_1_XANES_time_series.prj
-    out: []
+    out:
+    - athena_project_file_collection
   '3':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file_collection:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: Figure_1_XANES_time_series.prj
-    out: []
+    out:
+    - athena_project_file_collection
   '4':
     run:
       class: Operation

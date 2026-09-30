@@ -142,7 +142,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store temporary data
     inputBinding:
       position: 102
@@ -165,7 +165,7 @@ inputs:
       prefix: --threshold-rank
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 103
       prefix: --outfile

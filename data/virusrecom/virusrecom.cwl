@@ -219,7 +219,7 @@ inputs:
       position: 101
       prefix: -y
   - id: outdir_path
-    type: string
+    type: string?
     doc: Output directory to store all results.
     inputBinding:
       position: 102

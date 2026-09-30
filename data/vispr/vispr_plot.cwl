@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vispr plot
+baseCommand:
+  - vispr
+  - plot
 label: vispr_plot
 doc: "Plotting tool for vispr\n\nTool homepage: https://bitbucket.org/liulab/vispr"
 inputs:

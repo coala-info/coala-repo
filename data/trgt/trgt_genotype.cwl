@@ -126,16 +126,18 @@ inputs:
       prefix: --verbose
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Prefix for output files (.vcf.gz and .spanning.bam)
     inputBinding:
       position: 102
       prefix: --output-prefix
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Prefix for output files (.vcf.gz and .spanning.bam)
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

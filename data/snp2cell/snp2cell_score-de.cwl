@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snp2cell score-de
+baseCommand:
+  - snp2cell
+  - score-de
 label: snp2cell_score-de
 doc: "Add an anndata object to the s2c object, find differentially expressed genes
   and propagate the gene scores across the network. Then the DE scores and previously
@@ -41,6 +43,7 @@ inputs:
     doc: method for DE calculation
     inputBinding:
       position: 104
+      prefix: --method
   - id: n_cpu
     type:
       - 'null'
@@ -81,6 +84,7 @@ inputs:
       rest
     inputBinding:
       position: 104
+      prefix: --reference
   - id: run_lognorm
     type:
       - 'null'

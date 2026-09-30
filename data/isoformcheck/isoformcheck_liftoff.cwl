@@ -11,9 +11,9 @@ inputs:
       position: 1
   - id: reference
     type: File
+    doc: reference fasta genome to lift genes from
     secondaryFiles:
       - .fai
-    doc: reference fasta genome to lift genes from
     inputBinding:
       position: 2
   - id: annotate_cds_status
@@ -132,7 +132,7 @@ inputs:
   - id: intermediate_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: name of directory to save intermediate fasta and SAM files; default is 
       "intermediate_files"
     inputBinding:
@@ -228,18 +228,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: write output to FILE in same format as input; by default, output is 
+      written to terminal (stdout)
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
   - id: unmapped_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unmapped_file_path`
+    doc: write unmapped features to FILE; default is "unmapped_features.txt"
     inputBinding:
       position: 105
-      prefix: --unmapped-file
+      prefix: -u
 outputs:
   - id: output_file
     type:

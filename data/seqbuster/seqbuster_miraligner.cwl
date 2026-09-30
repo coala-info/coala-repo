@@ -92,10 +92,10 @@ inputs:
       prefix: -trim
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: ' output'
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
     type: File

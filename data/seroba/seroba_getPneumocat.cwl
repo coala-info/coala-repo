@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seroba getPneumocat
+baseCommand:
+  - seroba
+  - getPneumocat
 label: seroba_getPneumocat
 doc: "Downlaods PneumoCat and build an tsv formated meta data file out of it\n\nTool
   homepage: https://github.com/sanger-pathogens/seroba"
 inputs:
   - id: database_dir
-    type: Directory
+    type: string
     doc: output directory for PneumoCat Database
     inputBinding:
       position: 1

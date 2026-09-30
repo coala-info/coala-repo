@@ -168,7 +168,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: PATH  The directory where the staged hub and        │
     inputBinding:
       position: 102
       prefix: --output
@@ -176,7 +176,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `template_path`
+    doc: PATH  Create a template metadata file at the        │
     inputBinding:
       position: 103
       prefix: --template

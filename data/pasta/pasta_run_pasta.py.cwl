@@ -316,7 +316,7 @@ inputs:
   - id: temporaries
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory that will be the parent for this job's temporary file
     inputBinding:
       position: 102
@@ -384,7 +384,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `exportconfig_path`
     inputBinding:
       position: 103
       prefix: --exportconfig
@@ -392,7 +391,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 104
       prefix: --output-directory
@@ -400,7 +398,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `timesfile_path`
     inputBinding:
       position: 105
       prefix: --timesfile

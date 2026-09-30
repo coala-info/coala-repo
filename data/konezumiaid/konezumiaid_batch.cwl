@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: konezumiaid batch
+baseCommand:
+  - konezumiaid
+  - batch
 label: konezumiaid_batch
 doc: "\nTool homepage: https://github.com/aki2274/KOnezumi-AID"
 inputs:

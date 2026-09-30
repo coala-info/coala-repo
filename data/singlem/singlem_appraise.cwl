@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem appraise
+baseCommand:
+  - singlem
+  - appraise
 label: singlem_appraise
 doc: "How much of the metagenome do the genomes or assembly represent?\n\nTool homepage:
   https://github.com/wwood/singlem"
@@ -179,7 +181,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_assembled_otu_table_path`
     inputBinding:
       position: 102
       prefix: --output-assembled-otu-table
@@ -187,7 +188,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_binned_otu_table_path`
     inputBinding:
       position: 103
       prefix: --output-binned-otu-table
@@ -195,7 +195,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_unaccounted_for_otu_table_path`
     inputBinding:
       position: 104
       prefix: --output-unaccounted-for-otu-table
@@ -203,7 +202,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_unbinned_otu_table_path`
     inputBinding:
       position: 105
       prefix: --output-unbinned-otu-table

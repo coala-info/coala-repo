@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pgap2 post
+baseCommand:
+  - pgap2
+  - post
 label: pgap2_post
 doc: "Performs post-processing analysis on pangenome data.\n\nTool homepage: https://github.com/bucongfan/PGAP2"
 inputs:

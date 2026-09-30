@@ -11,6 +11,7 @@ inputs:
     doc: Haplotyping all paths
     inputBinding:
       position: 101
+      prefix: --all
   - id: allele_frequencies
     type:
       - 'null'
@@ -26,6 +27,7 @@ inputs:
     doc: VC Linkage ascertainment
     inputBinding:
       position: 101
+      prefix: --ascertainment
   - id: assoc
     type:
       - 'null'
@@ -33,6 +35,7 @@ inputs:
     doc: Association analysis
     inputBinding:
       position: 101
+      prefix: --assoc
   - id: best
     type:
       - 'null'
@@ -40,6 +43,7 @@ inputs:
     doc: Haplotyping best path
     inputBinding:
       position: 101
+      prefix: --best
   - id: bits
     type:
       - 'null'
@@ -47,6 +51,7 @@ inputs:
     doc: Limits bits for internal calculations
     inputBinding:
       position: 101
+      prefix: --bits
   - id: cfreq
     type:
       - 'null'
@@ -54,6 +59,7 @@ inputs:
     doc: LD Clusters conditional frequencies
     inputBinding:
       position: 101
+      prefix: --cfreq
   - id: clusters
     type:
       - 'null'
@@ -62,6 +68,7 @@ inputs:
     doc: LD Clusters specification
     inputBinding:
       position: 101
+      prefix: --clusters
   - id: custom
     type:
       - 'null'
@@ -69,6 +76,7 @@ inputs:
     doc: Association custom analysis covariate table
     inputBinding:
       position: 101
+      prefix: --custom
   - id: data_file
     type:
       - 'null'
@@ -84,6 +92,7 @@ inputs:
     doc: NPL Linkage deviates calculation
     inputBinding:
       position: 101
+      prefix: --deviates
   - id: distance
     type:
       - 'null'
@@ -91,6 +100,7 @@ inputs:
     doc: LD Clusters distance
     inputBinding:
       position: 101
+      prefix: --distance
   - id: error
     type:
       - 'null'
@@ -98,6 +108,7 @@ inputs:
     doc: General error reporting
     inputBinding:
       position: 101
+      prefix: --error
   - id: exp
     type:
       - 'null'
@@ -105,6 +116,7 @@ inputs:
     doc: NPL Linkage expected values
     inputBinding:
       position: 101
+      prefix: --exp
   - id: extended
     type:
       - 'null'
@@ -112,6 +124,7 @@ inputs:
     doc: IBD States extended output
     inputBinding:
       position: 101
+      prefix: --extended
   - id: fastAssoc
     type:
       - 'null'
@@ -119,6 +132,7 @@ inputs:
     doc: Association fast analysis
     inputBinding:
       position: 101
+      prefix: --fastAssoc
   - id: filter
     type:
       - 'null'
@@ -126,6 +140,7 @@ inputs:
     doc: Association filter
     inputBinding:
       position: 101
+      prefix: --filter
   - id: founders
     type:
       - 'null'
@@ -133,6 +148,7 @@ inputs:
     doc: Haplotyping founder paths
     inputBinding:
       position: 101
+      prefix: --founders
   - id: frequencies
     type:
       - 'null'
@@ -140,6 +156,7 @@ inputs:
     doc: Output allele frequencies
     inputBinding:
       position: 101
+      prefix: --frequencies
   - id: grid
     type:
       - 'null'
@@ -147,6 +164,7 @@ inputs:
     doc: Positions grid search
     inputBinding:
       position: 101
+      prefix: --grid
   - id: horizontal
     type:
       - 'null'
@@ -154,6 +172,7 @@ inputs:
     doc: Haplotyping horizontal paths
     inputBinding:
       position: 101
+      prefix: --horizontal
   - id: ibd
     type:
       - 'null'
@@ -161,6 +180,7 @@ inputs:
     doc: IBD States calculation
     inputBinding:
       position: 101
+      prefix: --ibd
   - id: infer
     type:
       - 'null'
@@ -168,6 +188,7 @@ inputs:
     doc: Association inference
     inputBinding:
       position: 101
+      prefix: --infer
   - id: information
     type:
       - 'null'
@@ -175,6 +196,7 @@ inputs:
     doc: General information reporting
     inputBinding:
       position: 101
+      prefix: --information
   - id: kinship
     type:
       - 'null'
@@ -182,6 +204,7 @@ inputs:
     doc: IBD States kinship calculation
     inputBinding:
       position: 101
+      prefix: --kinship
   - id: likelihood
     type:
       - 'null'
@@ -189,6 +212,7 @@ inputs:
     doc: General likelihood reporting
     inputBinding:
       position: 101
+      prefix: --likelihood
   - id: map_file
     type:
       - 'null'
@@ -204,6 +228,7 @@ inputs:
     doc: Output marker names
     inputBinding:
       position: 101
+      prefix: --markerNames
   - id: matrices
     type:
       - 'null'
@@ -211,6 +236,7 @@ inputs:
     doc: IBD States matrices output
     inputBinding:
       position: 101
+      prefix: --matrices
   - id: maxStep
     type:
       - 'null'
@@ -218,6 +244,7 @@ inputs:
     doc: Positions maximum step size
     inputBinding:
       position: 101
+      prefix: --maxStep
   - id: megabytes
     type:
       - 'null'
@@ -225,6 +252,7 @@ inputs:
     doc: Limits memory usage in megabytes
     inputBinding:
       position: 101
+      prefix: --megabytes
   - id: minStep
     type:
       - 'null'
@@ -232,6 +260,7 @@ inputs:
     doc: Positions minimum step size
     inputBinding:
       position: 101
+      prefix: --minStep
   - id: minutes
     type:
       - 'null'
@@ -239,6 +268,7 @@ inputs:
     doc: Limits runtime in minutes
     inputBinding:
       position: 101
+      prefix: --minutes
   - id: missing_value_code
     type:
       - 'null'
@@ -254,6 +284,7 @@ inputs:
     doc: General model parameter table
     inputBinding:
       position: 101
+      prefix: --model
   - id: noCoupleBits
     type:
       - 'null'
@@ -261,6 +292,7 @@ inputs:
     doc: Performance disable couple bits
     inputBinding:
       position: 101
+      prefix: --noCoupleBits
   - id: npl
     type:
       - 'null'
@@ -268,6 +300,7 @@ inputs:
     doc: NPL Linkage calculation
     inputBinding:
       position: 101
+      prefix: --npl
   - id: one
     type:
       - 'null'
@@ -275,6 +308,7 @@ inputs:
     doc: Recombination one crossover
     inputBinding:
       position: 101
+      prefix: --one
   - id: pairs
     type:
       - 'null'
@@ -282,6 +316,7 @@ inputs:
     doc: NPL Linkage pairs analysis
     inputBinding:
       position: 101
+      prefix: --pairs
   - id: pdf
     type:
       - 'null'
@@ -289,6 +324,7 @@ inputs:
     doc: Output PDF plots
     inputBinding:
       position: 101
+      prefix: --pdf
   - id: pedigree_file
     type:
       - 'null'
@@ -304,6 +340,7 @@ inputs:
     doc: Output per family results
     inputBinding:
       position: 101
+      prefix: --perFamily
   - id: prefix
     type:
       - 'null'
@@ -311,6 +348,7 @@ inputs:
     doc: Output file prefix
     inputBinding:
       position: 101
+      prefix: --prefix
   - id: qtl
     type:
       - 'null'
@@ -318,6 +356,7 @@ inputs:
     doc: NPL Linkage QTL analysis
     inputBinding:
       position: 101
+      prefix: --qtl
   - id: quiet
     type:
       - 'null'
@@ -325,6 +364,7 @@ inputs:
     doc: Output quiet mode
     inputBinding:
       position: 101
+      prefix: --quiet
   - id: random_seed
     type:
       - 'null'
@@ -340,6 +380,7 @@ inputs:
     doc: Simulation number of reruns
     inputBinding:
       position: 101
+      prefix: --reruns
   - id: rsq
     type:
       - 'null'
@@ -347,6 +388,7 @@ inputs:
     doc: LD Clusters R-squared threshold
     inputBinding:
       position: 101
+      prefix: --rsq
   - id: sample
     type:
       - 'null'
@@ -354,6 +396,7 @@ inputs:
     doc: Haplotyping sample paths
     inputBinding:
       position: 101
+      prefix: --sample
   - id: save
     type:
       - 'null'
@@ -361,6 +404,7 @@ inputs:
     doc: Simulation save file
     inputBinding:
       position: 101
+      prefix: --save
   - id: select
     type:
       - 'null'
@@ -368,6 +412,7 @@ inputs:
     doc: IBD States selection
     inputBinding:
       position: 101
+      prefix: --select
   - id: simulate
     type:
       - 'null'
@@ -375,6 +420,7 @@ inputs:
     doc: Simulation mode
     inputBinding:
       position: 101
+      prefix: --simulate
   - id: singlepoint
     type:
       - 'null'
@@ -382,6 +428,7 @@ inputs:
     doc: Recombination singlepoint analysis
     inputBinding:
       position: 101
+      prefix: --singlepoint
   - id: smallSwap
     type:
       - 'null'
@@ -389,6 +436,7 @@ inputs:
     doc: Performance small swap data
     inputBinding:
       position: 101
+      prefix: --smallSwap
   - id: start
     type:
       - 'null'
@@ -396,6 +444,7 @@ inputs:
     doc: Positions start position
     inputBinding:
       position: 101
+      prefix: --start
   - id: steps
     type:
       - 'null'
@@ -403,6 +452,7 @@ inputs:
     doc: Positions by steps
     inputBinding:
       position: 101
+      prefix: --steps
   - id: stop
     type:
       - 'null'
@@ -410,6 +460,7 @@ inputs:
     doc: Positions stop position
     inputBinding:
       position: 101
+      prefix: --stop
   - id: swap
     type:
       - 'null'
@@ -417,6 +468,7 @@ inputs:
     doc: Performance swap data
     inputBinding:
       position: 101
+      prefix: --swap
   - id: tabulate
     type:
       - 'null'
@@ -424,6 +476,7 @@ inputs:
     doc: Output tabulated results
     inputBinding:
       position: 101
+      prefix: --tabulate
   - id: three
     type:
       - 'null'
@@ -431,6 +484,7 @@ inputs:
     doc: Recombination three crossovers
     inputBinding:
       position: 101
+      prefix: --three
   - id: trait
     type:
       - 'null'
@@ -439,6 +493,7 @@ inputs:
     doc: Simulation trait specification
     inputBinding:
       position: 101
+      prefix: --trait
   - id: trim
     type:
       - 'null'
@@ -446,6 +501,7 @@ inputs:
     doc: Performance trim
     inputBinding:
       position: 101
+      prefix: --trim
   - id: two
     type:
       - 'null'
@@ -453,6 +509,7 @@ inputs:
     doc: Recombination two crossovers
     inputBinding:
       position: 101
+      prefix: --two
   - id: unlinked
     type:
       - 'null'
@@ -460,6 +517,7 @@ inputs:
     doc: VC Linkage unlinked parameter
     inputBinding:
       position: 101
+      prefix: --unlinked
   - id: useCovariates
     type:
       - 'null'
@@ -467,6 +525,7 @@ inputs:
     doc: VC Linkage use covariates
     inputBinding:
       position: 101
+      prefix: --useCovariates
   - id: vc
     type:
       - 'null'
@@ -474,6 +533,7 @@ inputs:
     doc: VC Linkage analysis
     inputBinding:
       position: 101
+      prefix: --vc
   - id: zero
     type:
       - 'null'
@@ -481,6 +541,7 @@ inputs:
     doc: Recombination zero crossovers
     inputBinding:
       position: 101
+      prefix: --zero
 outputs:
   - id: stdout
     type: stdout

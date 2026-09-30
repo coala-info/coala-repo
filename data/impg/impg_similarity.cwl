@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: impg similarity
+baseCommand:
+  - impg
+  - similarity
 label: impg_similarity
 doc: "Compute pairwise similarity between sequences in a region\n\nTool homepage:
   https://github.com/pangenome/impg"

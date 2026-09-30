@@ -84,11 +84,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tomtom-m
+          separate: true
     doc: 'Use only query motifs with a specified ID, may be repeated (TOMTOM option:
       -m) file'
     inputBinding:
       position: 101
-      prefix: --tomtom-m
   - id: tomtom_min_overlap
     type:
       - 'null'
@@ -119,10 +121,10 @@ inputs:
       prefix: --tomtom-thresh
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: str             Results output folder
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --out
 outputs:
   - id: output_folder
     type: Directory

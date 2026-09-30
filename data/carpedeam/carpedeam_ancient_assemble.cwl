@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: carpedeam ancient_assemble
+baseCommand:
+  - carpedeam
+  - ancient_assemble
 label: carpedeam_ancient_assemble
 doc: "By Louis Kraft <lokraf@dtu.dk>\n\nTool homepage: https://github.com/LouisPwr/CarpeDeam"
 inputs:
@@ -12,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 2
@@ -52,7 +54,7 @@ inputs:
   - id: ancient_damage
     type:
       - 'null'
-      - string
+      - File
     doc: Path to damage matrix (ancient)
     inputBinding:
       position: 103

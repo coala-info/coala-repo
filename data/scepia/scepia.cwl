@@ -53,7 +53,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save results
     inputBinding:
       position: 102

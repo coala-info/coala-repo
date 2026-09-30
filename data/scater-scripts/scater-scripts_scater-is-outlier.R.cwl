@@ -7,7 +7,7 @@ inputs:
   - id: log_transform
     type:
       - 'null'
-      - boolean
+      - string
     doc: logical, should the values of the metric be transformed to the log10 
       scale before computing median-absolute-deviation for outlier detection?
     inputBinding:
@@ -52,7 +52,6 @@ inputs:
       prefix: --type
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

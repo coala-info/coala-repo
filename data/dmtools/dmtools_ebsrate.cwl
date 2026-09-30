@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools ebsrate
+baseCommand:
+  - dmtools
+  - ebsrate
 label: dmtools_ebsrate
 doc: "Calculate bisulfite conversion rate from DM file.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
@@ -29,10 +31,10 @@ inputs:
       prefix: -i
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

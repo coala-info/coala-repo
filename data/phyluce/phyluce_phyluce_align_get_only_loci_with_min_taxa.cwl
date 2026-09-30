@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyluce_phyluce_align_get_only_loci_with_min_taxa
+baseCommand: phyluce_align_get_only_loci_with_min_taxa
 label: phyluce_phyluce_align_get_only_loci_with_min_taxa
 doc: "Screen a directory of alignments, only returning those containing >= --percent
   of taxa\n\nTool homepage: https://github.com/faircloth-lab/phyluce"

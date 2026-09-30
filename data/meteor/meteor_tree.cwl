@@ -56,7 +56,7 @@ inputs:
   - id: tmp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the directory where temporary files are stored
     inputBinding:
       position: 101
@@ -79,10 +79,10 @@ inputs:
       prefix: -w
   - id: tree_dir_path
     type: string
-    doc: Output or path parameter `tree_dir_path`
+    doc: Path to output directory.
     inputBinding:
       position: 102
-      prefix: --tree-dir
+      prefix: -o
 outputs:
   - id: tree_dir
     type: Directory

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi_splitfa
+baseCommand:
+  - fermi
+  - splitfa
 label: fermi_splitfa
 doc: "Split a FASTQ file into multiple FASTA files.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
 inputs:

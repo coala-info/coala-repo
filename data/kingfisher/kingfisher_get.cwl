@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kingfisher get
+baseCommand:
+  - kingfisher
+  - get
 label: kingfisher_get
 doc: "Download data from ENA or SRA.\n\nTool homepage: https://github.com/wwood/kingfisher-download"
 inputs:

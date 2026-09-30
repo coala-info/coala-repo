@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac_explain
+baseCommand:
+  - deepac
+  - explain
 label: deepac_explain
 doc: "DeePaC explain subcommands. See command --help for details.\n\nTool homepage:
   https://gitlab.com/rki_bioinformatics/DeePaC"

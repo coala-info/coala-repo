@@ -18,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: base
-    type: Directory
+    type: string
     doc: Directory for the results (and intermediate files)
     inputBinding:
       position: 3

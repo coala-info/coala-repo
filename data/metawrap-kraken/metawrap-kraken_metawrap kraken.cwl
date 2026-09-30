@@ -38,7 +38,7 @@ inputs:
       position: 104
       prefix: --no-preload
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 104

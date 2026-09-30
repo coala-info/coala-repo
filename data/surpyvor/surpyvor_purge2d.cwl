@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor purge2d
+baseCommand:
+  - surpyvor
+  - purge2d
 label: surpyvor_purge2d
 doc: "Filter alignments from a BAM file.\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -19,7 +21,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

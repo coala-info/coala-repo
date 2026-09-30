@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrs_vacuum
+baseCommand:
+  - mrs
+  - vacuum
 label: mrs_vacuum
 doc: "mrs vacuum\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl_id2int
+baseCommand:
+  - gretl
+  - id2int
 label: gretl_id2int
 doc: "Convert node identifier to numeric values (not sorted)\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:
@@ -22,7 +24,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dict_path`
+    doc: Write a dictionary for Old->New identifiers in this file.
     inputBinding:
       position: 102
       prefix: --dict
@@ -30,7 +32,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Output file name
     inputBinding:
       position: 103
       prefix: --output

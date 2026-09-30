@@ -35,7 +35,7 @@ inputs:
   - id: sort_temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "The temporary file directory that sort should use.\n    Will be passed directly
       to the sort command's -T option."
     inputBinding:

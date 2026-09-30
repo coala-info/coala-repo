@@ -191,7 +191,7 @@ inputs:
       position: 102
       prefix: --nt-content
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 102

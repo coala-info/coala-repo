@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukfinder read_prep_env
+baseCommand:
+  - eukfinder
+  - read_prep_env
 label: eukfinder_read_prep_env
 doc: "Prepare environment for eukfinder\n\nTool homepage: https://github.com/RogerLab/Eukfinder"
 inputs:

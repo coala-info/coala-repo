@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq pileup
+baseCommand:
+  - maq
+  - pileup
 label: maq_pileup
 doc: "Generate pileup from Maq alignments\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:

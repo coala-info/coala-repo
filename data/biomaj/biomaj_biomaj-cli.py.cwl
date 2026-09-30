@@ -54,6 +54,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --formats
+      itemSeparator: ','
   - id: freeze
     type:
       - 'null'
@@ -226,6 +227,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --types
+      itemSeparator: ','
   - id: unfreeze
     type:
       - 'null'

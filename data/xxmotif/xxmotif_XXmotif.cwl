@@ -5,7 +5,7 @@ label: xxmotif_XXmotif
 doc: "XXmotif version 1.6\n\nTool homepage: https://github.com/soedinglab/xxmotif"
 inputs:
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory for all results
     inputBinding:
       position: 1

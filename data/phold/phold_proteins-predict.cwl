@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phold_proteins-predict
+baseCommand:
+  - phold
+  - proteins-predict
 label: phold_proteins-predict
 doc: "Runs ProstT5 on a multiFASTA input - GPU recommended\n\nTool homepage: https://github.com/gbouras13/phold"
 inputs:
@@ -83,7 +85,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

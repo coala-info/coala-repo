@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanomonsv parse
+baseCommand:
+  - nanomonsv
+  - parse
 label: nanomonsv_parse
 doc: "Parse alignment files to identify structural variants.\n\nTool homepage: https://github.com/friend1ws/nanomonsv"
 inputs:

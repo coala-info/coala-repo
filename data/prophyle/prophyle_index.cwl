@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophyle_index
+baseCommand:
+  - prophyle
+  - index
 label: prophyle_index
 doc: "Index phylogenetic trees for efficient querying.\n\nTool homepage: https://github.com/karel-brinda/prophyle"
 inputs:

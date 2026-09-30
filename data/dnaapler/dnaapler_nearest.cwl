@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dnaapler nearest
+baseCommand:
+  - dnaapler
+  - nearest
 label: dnaapler_nearest
 doc: "Find the nearest reference genome for each input sequence.\n\nTool homepage:
   https://github.com/gbouras13/dnaapler"
@@ -22,7 +24,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

@@ -25,7 +25,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `comparison_table_path`
     inputBinding:
       position: 101
       prefix: --comparison-table
@@ -33,7 +32,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `confusion_matrix_path`
     inputBinding:
       position: 102
       prefix: --confusion-matrix

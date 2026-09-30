@@ -1,7 +1,6 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
-doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Workflow
-  for running a fully coupled CESM B1850 f19_g17'
+cwlVersion: v1.2
+doc: 'Abstract CWL Automatically generated from the Galaxy workflow file: Workflow for running a fully coupled CESM B1850 f19_g17'
 inputs:
   inputdata_cesm_2_1_3_B1850_f19_g17_tar:
     doc: Input dataset for running this version of the fully coupled CESM model.

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler ln
+baseCommand:
+  - cooler
+  - ln
 label: cooler_ln
 doc: "Create a hard link to a cooler (rather than a true copy) in the same file.\n\
   \  Also supports soft links (in the same file) or external links (different\n  files).\n\

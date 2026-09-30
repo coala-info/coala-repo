@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks_merge
+baseCommand:
+  - kmtricks
+  - merge
 label: kmtricks_merge
 doc: "Merge partitions.\n\nTool homepage: https://github.com/tlemane/kmtricks"
 inputs:

@@ -118,18 +118,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' redirect the output to the specified file (default: stdout)'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --ofile
   - id: summary_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_file_path`
+    doc: generate a results summary file of the specified name
     inputBinding:
       position: 105
-      prefix: --summary-file
+      prefix: --stats
 outputs:
   - id: output_file
     type:

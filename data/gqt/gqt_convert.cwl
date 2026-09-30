@@ -54,7 +54,7 @@ inputs:
   - id: tmp_working_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Tmp working directory
     inputBinding:
       position: 102
@@ -63,42 +63,42 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bim_output_file_path`
+    doc: BIM output file name (opt.)
     inputBinding:
       position: 103
-      prefix: --bim-output-file
+      prefix: -B
   - id: gqt_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gqt_output_file_path`
+    doc: GQT output file name (opt.)
     inputBinding:
       position: 104
-      prefix: --gqt-output-file
+      prefix: -G
   - id: off_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `off_output_file_path`
+    doc: OFF output file name (opt.)
     inputBinding:
       position: 105
-      prefix: --off-output-file
+      prefix: -O
   - id: ped_db_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ped_db_output_file_path`
+    doc: PED DB output file name (opt.)
     inputBinding:
       position: 106
-      prefix: --ped-db-output-file
+      prefix: -D
   - id: vid_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `vid_output_file_path`
+    doc: VID output file name (opt.)
     inputBinding:
       position: 107
-      prefix: --vid-output-file
+      prefix: -V
 outputs:
   - id: gqt_output_file
     type:

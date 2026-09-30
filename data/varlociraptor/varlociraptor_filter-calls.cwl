@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlociraptor filter-calls
+baseCommand:
+  - varlociraptor
+  - filter-calls
 label: varlociraptor_filter-calls
 doc: "Filter calls by either controlling the false discovery rate (FDR) at given level,
   or by posterior odds against the given events.\n\nTool homepage: https://varlociraptor.github.io"

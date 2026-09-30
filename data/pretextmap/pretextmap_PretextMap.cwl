@@ -47,6 +47,7 @@ inputs:
     doc: Minimum mapping quality
     inputBinding:
       position: 102
+      prefix: --mapq
   - id: sortby
     type:
       - 'null'
@@ -54,6 +55,7 @@ inputs:
     doc: Sort by length, name, or nosort
     inputBinding:
       position: 102
+      prefix: --sortby
   - id: sortorder
     type:
       - 'null'
@@ -61,6 +63,7 @@ inputs:
     doc: 'Sort order: descend or ascend'
     inputBinding:
       position: 102
+      prefix: --sortorder
   - id: thirdparty
     type:
       - 'null'

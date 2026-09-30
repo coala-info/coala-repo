@@ -256,14 +256,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: --export-cwl
-  - id: report_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `report_path`
-    inputBinding:
-      position: 105
-      prefix: --report
   - id: stats_path
     type:
       - 'null'
@@ -272,6 +264,13 @@ inputs:
     inputBinding:
       position: 106
       prefix: --stats
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --report
 outputs:
   - id: report
     type:

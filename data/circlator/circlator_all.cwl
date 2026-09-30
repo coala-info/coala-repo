@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: circlator all
+baseCommand:
+  - circlator
+  - all
 label: circlator_all
 doc: "Run mapreads, bam2reads, assemble, merge, clean, fixstart\n\nTool homepage:
   https://github.com/sanger-pathogens/circlator"
@@ -16,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_directory
-    type: Directory
+    type: string
     doc: Name of output directory (must not already exist)
     inputBinding:
       position: 3

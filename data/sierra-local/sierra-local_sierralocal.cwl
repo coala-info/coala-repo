@@ -79,7 +79,7 @@ inputs:
   - id: updater_outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to folder to store updated files from updater
     inputBinding:
       position: 102
@@ -93,7 +93,7 @@ inputs:
       position: 102
       prefix: -xml
   - id: outfile_path
-    type: string
+    type: string?
     doc: Output filename.
     inputBinding:
       position: 103

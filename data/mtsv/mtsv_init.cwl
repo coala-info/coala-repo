@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtsv init
+baseCommand:
+  - mtsv
+  - init
 label: mtsv_init
 doc: "Initialize mtsv project\n\nTool homepage: https://github.com/FofanovLab/MTSv"
 inputs:
@@ -15,7 +17,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory to place output.
     inputBinding:
       position: 101

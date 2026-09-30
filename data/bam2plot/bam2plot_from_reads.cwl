@@ -48,9 +48,9 @@ inputs:
       prefix: --read_2
   - id: reference
     type: File
+    doc: Reference fasta
     secondaryFiles:
       - .fai
-    doc: Reference fasta
     inputBinding:
       position: 102
       prefix: --reference
@@ -64,10 +64,9 @@ inputs:
       prefix: --rolling_window
   - id: out_folder_path
     type: string
-    doc: Output or path parameter `out_folder_path`
     inputBinding:
       position: 103
-      prefix: --out-folder
+      prefix: --out_folder
 outputs:
   - id: out_folder
     type: Directory

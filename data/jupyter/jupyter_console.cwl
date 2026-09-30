@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jupyter_console
+baseCommand:
+  - jupyter
+  - console
 label: jupyter_console
 doc: "The Jupyter terminal-based Console.\n\nThis launches a Console application inside
   a terminal.\n\nThe Console supports various extra features beyond the traditional

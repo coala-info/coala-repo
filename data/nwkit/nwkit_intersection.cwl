@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit intersection
+baseCommand:
+  - nwkit
+  - intersection
 label: nwkit_intersection
 doc: "Computes the intersection of two phylogenetic trees.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:
@@ -91,7 +93,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `seqout_path`
+    doc: 'default=: Output sequence file.'
     inputBinding:
       position: 103
       prefix: --seqout

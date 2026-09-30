@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi exact
+baseCommand:
+  - fermi
+  - exact
 label: fermi_exact
 doc: "Exact algorithm for sequence alignment\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
 inputs:

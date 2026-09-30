@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dinf_check
+baseCommand:
+  - dinf
+  - check
 label: dinf_check
 doc: "Basic dinf_model health checks.\n\nChecks that the target and generator functions
   work and return the\nsame feature shapes and dtypes.\n\nTool homepage: https://github.com/RacimoLab/dinf"

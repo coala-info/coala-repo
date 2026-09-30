@@ -60,10 +60,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: '[PATH] output .cx file name. If missing, write to stdout (no index will
+      be written).'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_cx_file
     type:

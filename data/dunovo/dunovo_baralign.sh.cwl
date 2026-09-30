@@ -12,7 +12,7 @@ inputs:
   - id: refdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory to put the reference file ("barcodes.fa") and its index 
       files in.
     inputBinding:

@@ -46,6 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ctbam
+      itemSeparator: ','
   - id: dss
     type:
       - 'null'
@@ -154,7 +155,6 @@ inputs:
       prefix: --ref
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile

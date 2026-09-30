@@ -145,8 +145,7 @@ inputs:
       position: 102
       prefix: --prediction-column-prefix
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --out

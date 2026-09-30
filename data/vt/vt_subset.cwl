@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_subset
+baseCommand:
+  - vt
+  - subset
 label: vt_subset
 doc: "Subsets a VCF file to a set of variants that are polymorphic on a selected set
   of individuals.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"

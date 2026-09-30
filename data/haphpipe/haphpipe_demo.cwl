@@ -1,13 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe_demo
+baseCommand:
+  - haphpipe
+  - demo
 label: haphpipe_demo
 doc: "Runs a demo of HAPHPipe.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

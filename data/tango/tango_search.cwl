@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tango search
+baseCommand:
+  - tango
+  - search
 label: tango_search
 doc: "Search for query sequences in a Diamond database.\n\nTool homepage: https://github.com/johnne/tango"
 inputs:
@@ -14,6 +16,11 @@ inputs:
     doc: Diamond database file
     inputBinding:
       position: 2
+  - id: outfile
+    type: string
+    doc: Diamond output file
+    inputBinding:
+      position: 3
   - id: blocksize
     type:
       - 'null'
@@ -68,7 +75,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 103
@@ -83,11 +90,11 @@ inputs:
       position: 103
       prefix: --top
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Diamond output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tango:0.5.7--py_0

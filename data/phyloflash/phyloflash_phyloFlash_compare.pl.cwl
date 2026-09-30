@@ -84,6 +84,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --csv
+      itemSeparator: ','
   - id: displaytaxa
     type:
       - 'null'
@@ -188,6 +189,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zip
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

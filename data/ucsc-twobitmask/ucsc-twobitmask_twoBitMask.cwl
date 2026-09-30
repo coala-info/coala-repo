@@ -30,7 +30,8 @@ inputs:
     doc: Type of maskFile is XXX (bed or out).
     inputBinding:
       position: 103
-      prefix: -type
+      prefix: -type=
+      separate: false
 outputs:
   - id: output_file
     type: File

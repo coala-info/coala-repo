@@ -5,7 +5,7 @@ label: phylofisher_taxon_collapser.py
 doc: "Collapses dataset entries into a single taxon\n\nTool homepage: https://github.com/TheBrownLab/PhyloFisher"
 inputs:
   - id: input_taxa
-    type: File
+    type: File?
     doc: "A .tsv containing a Unique ID, long name, higher taxonomy, lower taxonomy,
       and a list of Unique IDs to collapse\n                                  for
       each chimera with one on each line."

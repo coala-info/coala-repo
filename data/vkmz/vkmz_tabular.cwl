@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vkmz_tabular
+baseCommand:
+  - vkmz
+  - tabular
 label: vkmz_tabular
 doc: "Parses tabular files for mass spectrometry data.\n\nTool homepage: https://github.com/HegemanLab/VKMZ"
 inputs:
@@ -21,9 +23,7 @@ inputs:
       position: 101
       prefix: --database
   - id: error
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Mass error of MS data in parts-per-million
     inputBinding:
       position: 101
@@ -92,7 +92,6 @@ inputs:
       prefix: --sql
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

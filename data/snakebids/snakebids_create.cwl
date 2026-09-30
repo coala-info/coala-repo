@@ -1,13 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakebids_create
+baseCommand:
+  - snakebids
+  - create
 label: snakebids_create
 doc: "Create a new snakebids project.\n\nTool homepage: https://github.com/khanlab/snakebids"
 inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to create the snakebids project in.
     inputBinding:
       position: 1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur tree
+baseCommand:
+  - augur
+  - tree
 label: augur_tree
 doc: "Build a tree using a variety of methods. IQ-TREE specific: Strain names with
   spaces are modified to remove all characters after (and including) the first space.\n\
@@ -85,8 +87,7 @@ inputs:
       position: 101
       prefix: --vcf-reference
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

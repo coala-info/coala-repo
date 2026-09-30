@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi unitig
+baseCommand:
+  - odgi
+  - unitig
 label: odgi_unitig
 doc: "Output unitigs of the graph.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

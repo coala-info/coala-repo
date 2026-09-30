@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slivar make-gnotate
+baseCommand:
+  - slivar
+  - make-gnotate
 label: slivar_make-gnotate
 doc: "Create gnotate files from VCFs\n\nTool homepage: https://github.com/brentp/slivar"
 inputs:

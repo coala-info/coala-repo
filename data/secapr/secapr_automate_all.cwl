@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr automate_all
+baseCommand:
+  - secapr
+  - automate_all
 label: secapr_automate_all
 doc: "This script automates the complete secapr pipeline, producing MSAs (allele,
   contig and BAM-consensus) from FASTQ files\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"

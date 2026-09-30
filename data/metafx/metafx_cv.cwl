@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx cv
+baseCommand:
+  - metafx
+  - cv
 label: metafx_cv
 doc: "Machine Learning methods to train classification model based on extracted features
   and check accuracy via cross-validation\n\nTool homepage: https://github.com/ctlab/metafx"

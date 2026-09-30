@@ -57,6 +57,7 @@ inputs:
       details.
     inputBinding:
       position: 104
+      prefix: -import
   - id: new_settings
     type:
       - 'null'

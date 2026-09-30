@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: verticall summary
+baseCommand:
+  - verticall
+  - summary
 label: verticall_summary
 doc: "summarise regions for one assembly\n\nTool homepage: https://github.com/rrwick/Verticall"
 inputs:

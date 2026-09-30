@@ -45,7 +45,6 @@ inputs:
       prefix: --spacer-low
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

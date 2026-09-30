@@ -127,10 +127,10 @@ inputs:
       prefix: -V
   - id: out_folder_path
     type: string
-    doc: Output or path parameter `out_folder_path`
+    doc: out_folder -  output folder
     inputBinding:
       position: 102
-      prefix: --out-folder
+      prefix: -o
 outputs:
   - id: out_folder
     type:

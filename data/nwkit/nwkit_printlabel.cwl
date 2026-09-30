@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit printlabel
+baseCommand:
+  - nwkit
+  - printlabel
 label: nwkit_printlabel
 doc: "Print labels from a newick tree based on a pattern.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

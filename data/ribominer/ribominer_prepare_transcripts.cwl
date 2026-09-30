@@ -7,9 +7,9 @@ doc: "This script is designed for preparing transcripts annotation files.\n\nToo
 inputs:
   - id: genome_fasta
     type: File
+    doc: The genome sequences file in fasta format.
     secondaryFiles:
       - .fai
-    doc: The genome sequences file in fasta format.
     inputBinding:
       position: 101
       prefix: --fasta
@@ -22,10 +22,9 @@ inputs:
       prefix: --gtf
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type: Directory

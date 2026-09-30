@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi2_diff
+baseCommand:
+  - fermi2
+  - diff
 label: fermi2_diff
 doc: "Compares two rld files.\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:

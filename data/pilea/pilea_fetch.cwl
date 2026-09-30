@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pilea fetch
+baseCommand:
+  - pilea
+  - fetch
 label: pilea_fetch
 doc: "Fetch data from Pilea.\n\nTool homepage: https://github.com/xinehc/pilea"
 inputs:
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 101

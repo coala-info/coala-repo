@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_tagcount
+baseCommand:
+  - fastools
+  - tagcount
 label: fastools_tagcount
 doc: "Count tags in a FASTA file.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:
@@ -21,7 +23,7 @@ inputs:
     doc: amount of mismatches allowed
     inputBinding:
       position: 103
-      prefix: --mismatches
+      prefix: -m
 outputs:
   - id: stdout
     type: stdout

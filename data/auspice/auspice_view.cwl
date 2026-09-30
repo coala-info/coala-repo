@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: auspice view
+baseCommand:
+  - auspice
+  - view
 label: auspice_view
 doc: "Launch a local server to view locally available datasets & narratives. The handlers
   for (auspice) client requests can be overridden here (see documentation for more

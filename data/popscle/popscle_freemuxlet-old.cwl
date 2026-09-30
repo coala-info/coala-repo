@@ -65,7 +65,7 @@ inputs:
   - id: init_cluster
     type:
       - 'null'
-      - string
+      - File
     doc: Input file containing the initial cluster information
     inputBinding:
       position: 101
@@ -148,7 +148,7 @@ inputs:
       prefix: --verbose
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: '[STR: ]             : Output file prefix'
     inputBinding:
       position: 102
       prefix: --out
@@ -156,10 +156,11 @@ outputs:
   - id: out
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

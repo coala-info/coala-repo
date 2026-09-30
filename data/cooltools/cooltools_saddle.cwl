@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooltools saddle
+baseCommand:
+  - cooltools
+  - saddle
 label: cooltools_saddle
 doc: "Calculate saddle statistics and generate saddle plots for an arbitrary signal
   track on the genomic bins of a contact matrix.\n\nTool homepage: https://github.com/mirnylab/cooltools"

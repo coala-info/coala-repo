@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: themis profile
+baseCommand:
+  - themis
+  - profile
 label: themis_profile
 doc: "Profile microbial communities using a compressed de Bruijn graph.\n\nTool homepage:
   https://github.com/xujialupaoli/Themis"

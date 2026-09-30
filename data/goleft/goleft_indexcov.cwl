@@ -20,7 +20,7 @@ inputs:
       position: 102
       prefix: --chrom
   - id: directory
-    type: Directory
+    type: string
     doc: directory for output files
     inputBinding:
       position: 102

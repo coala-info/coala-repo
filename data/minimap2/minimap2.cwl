@@ -254,7 +254,8 @@ inputs:
     doc: output the cs tag; STR is 'short' (if absent) or 'long'
     inputBinding:
       position: 103
-      prefix: --cs
+      prefix: --cs=
+      separate: false
   - id: ds_tag
     type:
       - 'null'

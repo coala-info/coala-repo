@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukcc single
+baseCommand:
+  - eukcc
+  - single
 label: eukcc_single
 doc: "eukcc single: error: the following arguments are required: fasta\n\nTool homepage:
   https://github.com/Finn-Lab/EukCC/"
@@ -197,8 +199,7 @@ inputs:
       position: 102
       prefix: --use_placement
   - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --out

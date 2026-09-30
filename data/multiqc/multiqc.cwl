@@ -452,7 +452,7 @@ inputs:
       prefix: --zip-data-dir
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: Create report in the specified output directory.      │
     inputBinding:
       position: 103
       prefix: --outdir

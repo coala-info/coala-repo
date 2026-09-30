@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: enasearch_get_sortable_fields
+baseCommand:
+  - enasearch
+  - get_sortable_fields
 label: enasearch_get_sortable_fields
 doc: "Get the fields of a result that can sorted.\n\n  This function returns the fields
   that can be used to sort the output of a\n  query for a result on ENA. Each field

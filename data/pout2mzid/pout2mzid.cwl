@@ -48,7 +48,7 @@ inputs:
   - id: outputdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Sets the output directory if none exist, it will be created.
     inputBinding:
       position: 101

@@ -87,10 +87,10 @@ inputs:
       prefix: --threads
   - id: out_file_name_path
     type: string
-    doc: Output or path parameter `out_file_name_path`
+    doc: ' File name to save the resulting cluster profile. (default: consensus_matrices.png)'
     inputBinding:
       position: 102
-      prefix: --out-file-name
+      prefix: --outFileName
 outputs:
   - id: out_file_name
     type:

@@ -108,14 +108,14 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to create temporary files
     inputBinding:
       position: 101
       prefix: --working-dir
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file name
     inputBinding:
       position: 102
       prefix: --output-file

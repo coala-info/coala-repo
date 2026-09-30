@@ -33,6 +33,7 @@ inputs:
     doc: Check if ngless version or any used modules have been deprecated
     inputBinding:
       position: 104
+      prefix: --check-deprecation
   - id: check_install
     type:
       - 'null'
@@ -40,6 +41,7 @@ inputs:
     doc: Check if ngless is correctly installed
     inputBinding:
       position: 104
+      prefix: --check-install
   - id: color
     type:
       - 'null'
@@ -56,6 +58,7 @@ inputs:
     doc: Configuration files to parse
     inputBinding:
       position: 104
+      prefix: --config-file
   - id: create_report
     type:
       - 'null'
@@ -63,6 +66,7 @@ inputs:
     doc: create the report directory
     inputBinding:
       position: 104
+      prefix: --create-report
   - id: debug
     type:
       - 'null'
@@ -70,6 +74,7 @@ inputs:
     doc: Debug level
     inputBinding:
       position: 104
+      prefix: --debug
   - id: download_demo
     type:
       - 'null'
@@ -77,6 +82,7 @@ inputs:
     doc: Download a demo dataset by name
     inputBinding:
       position: 104
+      prefix: --download-demo
   - id: download_file
     type:
       - 'null'
@@ -84,6 +90,7 @@ inputs:
     doc: Download a file
     inputBinding:
       position: 104
+      prefix: --download-file
   - id: download_url
     type:
       - 'null'
@@ -91,6 +98,7 @@ inputs:
     doc: URL of the file to download
     inputBinding:
       position: 104
+      prefix: --download-url
   - id: experimental_features
     type:
       - 'null'
@@ -98,6 +106,7 @@ inputs:
     doc: Whether to allow the use of experimental features
     inputBinding:
       position: 104
+      prefix: --experimental-features
   - id: export_cwl
     type:
       - 'null'
@@ -105,6 +114,7 @@ inputs:
     doc: File to write CWL wrapper of given script
     inputBinding:
       position: 104
+      prefix: --export-cwl
   - id: export_json
     type:
       - 'null'
@@ -112,10 +122,11 @@ inputs:
     doc: File to write JSON representation of script to
     inputBinding:
       position: 104
+      prefix: --export-json
   - id: html_report_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: name of output directory
     inputBinding:
       position: 104
@@ -127,6 +138,7 @@ inputs:
     doc: Index path (directory where indices are stored)
     inputBinding:
       position: 104
+      prefix: --index-path
   - id: install_reference_data
     type:
       - 'null'
@@ -134,6 +146,7 @@ inputs:
     doc: Install reference data
     inputBinding:
       position: 104
+      prefix: --install-reference-data
   - id: keep_temporary_files
     type:
       - 'null'
@@ -141,6 +154,7 @@ inputs:
     doc: Whether to keep temporary files (default is delete them)
     inputBinding:
       position: 104
+      prefix: --keep-temporary-files
   - id: local_file
     type:
       - 'null'
@@ -148,6 +162,7 @@ inputs:
     doc: Local path to save the downloaded file
     inputBinding:
       position: 104
+      prefix: --local-file
   - id: no_create_report
     type:
       - 'null'
@@ -155,6 +170,7 @@ inputs:
     doc: opposite of --create-report
     inputBinding:
       position: 104
+      prefix: --no-create-report
   - id: no_header
     type:
       - 'null'
@@ -162,6 +178,7 @@ inputs:
     doc: Do not print copyright information
     inputBinding:
       position: 104
+      prefix: --no-header
   - id: no_keep_temporary_files
     type:
       - 'null'
@@ -169,6 +186,7 @@ inputs:
     doc: opposite of --keep-temporary-files
     inputBinding:
       position: 104
+      prefix: --no-keep-temporary-files
   - id: no_strict_threads
     type:
       - 'null'
@@ -176,6 +194,7 @@ inputs:
     doc: opposite of --strict-threads
     inputBinding:
       position: 104
+      prefix: --no-strict-threads
   - id: no_trace
     type:
       - 'null'
@@ -183,6 +202,7 @@ inputs:
     doc: opposite of --trace
     inputBinding:
       position: 104
+      prefix: --no-trace
   - id: print_last
     type:
       - 'null'
@@ -198,6 +218,7 @@ inputs:
     doc: Print the path of an executable
     inputBinding:
       position: 104
+      prefix: --print-path
   - id: quiet
     type:
       - 'null'
@@ -221,6 +242,7 @@ inputs:
     doc: Deprecated. Use --search-path instead
     inputBinding:
       position: 104
+      prefix: --search-dir
   - id: search_path
     type:
       - 'null'
@@ -228,6 +250,7 @@ inputs:
     doc: Reference search directories (replace <references> in script)
     inputBinding:
       position: 104
+      prefix: --search-path
   - id: strict_threads
     type:
       - 'null'
@@ -236,6 +259,7 @@ inputs:
       occasionally, use more threads than specified)
     inputBinding:
       position: 104
+      prefix: --strict-threads
   - id: subsample
     type:
       - 'null'
@@ -243,10 +267,11 @@ inputs:
     doc: 'Subsample mode: quickly test a pipeline by discarding 99% of the input'
     inputBinding:
       position: 104
+      prefix: --subsample
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where to store temporary files
     inputBinding:
       position: 104
@@ -266,6 +291,7 @@ inputs:
     doc: Set highest verbosity mode
     inputBinding:
       position: 104
+      prefix: --trace
   - id: validate_only
     type:
       - 'null'

@@ -22,7 +22,7 @@ inputs:
   - id: dir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: By default, intermediate files (likelihoods.bcf, calls.bcf, and 
       calls.normalized.bcf) will be stored in a temporary directory, which is 
       automatically deleted after creating final VCF. If you provide a directory

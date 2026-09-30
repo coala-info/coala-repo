@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash gather
+baseCommand:
+  - sourmash
+  - gather
 label: sourmash_gather
 doc: "Selects the best reference genomes to use for a metagenome analysis, by finding
   the smallest set of non-overlapping matches to the query in a database. This is
@@ -320,10 +322,10 @@ inputs:
       prefix: --threshold-bp
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output CSV containing matches to this file
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm_refine
+baseCommand:
+  - groopm
+  - refine
 label: groopm_refine
 doc: "Merge similar bins and split chimeric ones\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

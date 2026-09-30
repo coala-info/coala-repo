@@ -255,10 +255,11 @@ inputs:
       prefix: -V
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: <str>   output alignment file, BSP/SAM/BAM format, if omitted, the 
+      output will be written to STDOUT in SAM format.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

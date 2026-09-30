@@ -32,7 +32,7 @@ inputs:
   - id: folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder to save downloaded files from Ridom/Spa server
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nf-core test-datasets
+baseCommand:
+  - nf-core
+  - test-datasets
 label: nf-core_test-datasets
 doc: "Commands to manage nf-core test datasets.\n\nTool homepage: http://nf-co.re/"
 inputs:

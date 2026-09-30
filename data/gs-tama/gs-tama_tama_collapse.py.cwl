@@ -37,7 +37,7 @@ inputs:
       position: 101
       prefix: -m
   - id: genome_fasta_file
-    type: File
+    type: File?
     doc: Genome fasta file (required)
     inputBinding:
       position: 101
@@ -79,7 +79,7 @@ inputs:
       position: 101
       prefix: -d
   - id: output_prefix
-    type: string
+    type: string?
     doc: Output prefix (required)
     inputBinding:
       position: 101
@@ -103,7 +103,7 @@ inputs:
   - id: print_version
     type:
       - 'null'
-      - boolean
+      - string
     doc: Prints out version date and exits.
     inputBinding:
       position: 101
@@ -127,7 +127,7 @@ inputs:
       position: 101
       prefix: -ses
   - id: sorted_sam_file
-    type: File
+    type: File?
     doc: Sorted sam file (required)
     inputBinding:
       position: 101
@@ -151,7 +151,7 @@ inputs:
   - id: use_bam
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use BAM instead of SAM
     inputBinding:
       position: 101

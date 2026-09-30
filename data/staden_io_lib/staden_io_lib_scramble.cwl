@@ -216,10 +216,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bam_index_path`
+    doc: Output Bam index when bam input(file.gzi)
     inputBinding:
       position: 103
-      prefix: --output-bam-index
+      prefix: -G
 outputs:
   - id: output_file
     type:

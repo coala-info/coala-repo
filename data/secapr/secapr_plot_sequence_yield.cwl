@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr plot_sequence_yield
+baseCommand:
+  - secapr
+  - plot_sequence_yield
 label: secapr_plot_sequence_yield
 doc: "Plot overview of extracted sequences\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"
 inputs:

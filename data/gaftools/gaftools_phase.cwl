@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gaftools_phase
+baseCommand:
+  - gaftools
+  - phase
 label: gaftools_phase
 doc: "Add phasing information to the GAF file from a haplotag TSV file.\n\nThe script
   uses the TSV file containing the haplotag information generated from WhatsHap's
@@ -20,7 +22,6 @@ inputs:
       position: 2
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 101
       prefix: --output

@@ -70,7 +70,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_accs_path`
     inputBinding:
       position: 102
       prefix: --out-accs
@@ -78,7 +77,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_fasta_path`
     inputBinding:
       position: 103
       prefix: --out-fasta
@@ -86,7 +84,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_gb_path`
     inputBinding:
       position: 104
       prefix: --out-gb

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: magpurify gc-content
+baseCommand:
+  - magpurify
+  - gc-content
 label: magpurify_gc-content
 doc: "Find contigs with outlier GC content.\n\nTool homepage: https://github.com/snayfach/MAGpurify"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Path to input genome in FASTA format
     inputBinding:
       position: 1
+  - id: out
+    type: string
+    doc: Output directory to store results and intermediate files
+    inputBinding:
+      position: 2
   - id: cutoff
     type:
       - 'null'
@@ -26,11 +33,11 @@ inputs:
       position: 102
       prefix: --weighted-mean
 outputs:
-  - id: out
+  - id: out_out
     type: Directory
     doc: Output directory to store results and intermediate files
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/magpurify:2.1.2--pyhdfd78af_2

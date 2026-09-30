@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fq subsample
+baseCommand:
+  - fq
+  - subsample
 label: fq_subsample
 doc: "Outputs a subset of records\n\nTool homepage: https://github.com/stjude-rust-labs/fq"
 inputs:
@@ -45,7 +47,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `r1_dst_path`
+    doc: Read 1 destination. Output will be gzipped if ends in `.gz`
     inputBinding:
       position: 104
       prefix: --r1-dst
@@ -53,7 +55,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `r2_dst_path`
+    doc: Read 2 destination. Output will be gzipped if ends in `.gz`
     inputBinding:
       position: 105
       prefix: --r2-dst

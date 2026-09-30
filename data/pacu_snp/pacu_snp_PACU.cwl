@@ -118,9 +118,9 @@ inputs:
       prefix: --ref-bed
   - id: ref_fasta
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --ref-fasta
@@ -150,9 +150,7 @@ inputs:
       position: 101
       prefix: --use-mega
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output BAM file
     inputBinding:
       position: 102
@@ -161,7 +159,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_html_path`
     inputBinding:
       position: 103
       prefix: --output-html

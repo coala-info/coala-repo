@@ -135,9 +135,9 @@ inputs:
       prefix: --preset
   - id: reference_fasta
     type: File
+    doc: Reference fasta file
     secondaryFiles:
       - .fai
-    doc: Reference fasta file
     inputBinding:
       position: 101
       prefix: --reference-fasta
@@ -215,8 +215,8 @@ inputs:
       position: 101
       prefix: --vcf-file
   - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    type: string?
+    doc: 'Output directory [default: devider_output]'
     inputBinding:
       position: 102
       prefix: --output-dir

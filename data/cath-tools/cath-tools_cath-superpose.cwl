@@ -38,13 +38,15 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --align-regions
+          separate: true
     doc: 'Handle region(s) as the alignment part of the structure. May be specified
       multiple times, in correspondence with the structures. Format is: D[5inwB02]251-348:B,408-416A:B
       (Put <regions> in quotes to prevent the square brackets confusing your shell
       ("No match"))'
     inputBinding:
       position: 104
-      prefix: --align-regions
   - id: aln_to_cath_aln_file
     type:
       - 'null'
@@ -120,7 +122,7 @@ inputs:
   - id: do_the_ssaps
     type:
       - 'null'
-      - Directory
+      - string
     doc: Do the required SSAPs in directory; use results as with 
       --ssap-scores-infile. Use a suitable temp directory if none is specified
     inputBinding:
@@ -175,10 +177,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --pdb-infile
+          separate: true
     doc: Read PDB from file (may be specified multiple times)
     inputBinding:
       position: 104
-      prefix: --pdb-infile
   - id: pdbs_from_stdin
     type:
       - 'null'
@@ -288,7 +292,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_json_file_path`
+    doc: Write the superposition to JSON superposition file
     inputBinding:
       position: 105
       prefix: --sup-to-json-file
@@ -296,7 +300,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_pdb_file_path`
+    doc: Write the superposed structures to a single PDB file arg, separated 
+      using faked chain codes
     inputBinding:
       position: 106
       prefix: --sup-to-pdb-file
@@ -304,7 +309,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_pdb_files_dir_path`
+    doc: Write the superposed structures to separate PDB files in directory arg
     inputBinding:
       position: 107
       prefix: --sup-to-pdb-files-dir
@@ -312,7 +317,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_pymol_file_path`
+    doc: Write the superposition to a PyMOL script arg
     inputBinding:
       position: 108
       prefix: --sup-to-pymol-file
@@ -320,7 +325,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_stdout_path`
+    doc: Print the superposed structures to stdout, separated using faked chain 
+      codes
     inputBinding:
       position: 109
       prefix: --sup-to-stdout

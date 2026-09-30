@@ -27,18 +27,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `combined_output_file_path`
+    doc: ' Combined output file'
     inputBinding:
       position: 102
-      prefix: --combined-output-file
+      prefix: --combinedOutputFile
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output file'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --outputFile
 outputs:
   - id: output_file
     type:

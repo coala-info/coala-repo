@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: out_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 2
@@ -30,7 +30,8 @@ inputs:
     doc: Use the Nth column value
     inputBinding:
       position: 103
-      prefix: -col
+      prefix: -col=
+      separate: false
   - id: ending
     type:
       - 'null'
@@ -38,7 +39,8 @@ inputs:
     doc: 'Use XXX as the dot-suffix of split files (default: taken from source).'
     inputBinding:
       position: 103
-      prefix: -ending
+      prefix: -ending=
+      separate: false
   - id: head
     type:
       - 'null'
@@ -46,7 +48,8 @@ inputs:
     doc: Put head in front of each output
     inputBinding:
       position: 103
-      prefix: -head
+      prefix: -head=
+      separate: false
   - id: tab
     type:
       - 'null'
@@ -62,7 +65,8 @@ inputs:
     doc: Put tail at end of each output
     inputBinding:
       position: 103
-      prefix: -tail
+      prefix: -tail=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

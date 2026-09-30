@@ -210,7 +210,7 @@ inputs:
       prefix: --write-fasta-bins
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: PATH     Output directory.    │
     inputBinding:
       position: 102
       prefix: --outdir

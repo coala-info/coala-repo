@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert abi2fastq
+baseCommand:
+  - bioconvert
+  - abi2fastq
 label: bioconvert_abi2fastq
 doc: "Convert file from '('ABI',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

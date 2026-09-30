@@ -24,18 +24,20 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_inserts_path`
+    doc: If provided, will write primer scheme inserts as BED (exluding primer 
+      sequences)
     inputBinding:
       position: 103
-      prefix: --output-inserts
+      prefix: --outputInserts
   - id: output_primer_seqs_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_primer_seqs_path`
+    doc: If provided, will write primer sequences as multiFASTA (requires 
+      --refSeq to be provided)
     inputBinding:
       position: 104
-      prefix: --output-primer-seqs
+      prefix: --outputPrimerSeqs
 outputs:
   - id: output_primer_seqs
     type:

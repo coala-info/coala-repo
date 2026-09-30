@@ -29,15 +29,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `failed_path`
+    doc: Failed BED output path
     inputBinding:
       position: 103
       prefix: --failed
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
+    doc: BED output path (unsorted)
     inputBinding:
       position: 104
       prefix: --output

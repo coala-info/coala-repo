@@ -20,7 +20,7 @@ inputs:
       prefix: --template
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file path. The file extension determines the
     inputBinding:
       position: 102
       prefix: --output

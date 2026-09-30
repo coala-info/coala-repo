@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sylph-tax taxprof
+baseCommand:
+  - sylph-tax
+  - taxprof
 label: sylph-tax_taxprof
 doc: "Generates a taxonomy profile from SYLPH result files.\n\nTool homepage: https://github.com/bluenote-1577/sylph-tax"
 inputs:

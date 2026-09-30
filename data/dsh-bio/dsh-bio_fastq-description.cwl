@@ -22,7 +22,7 @@ inputs:
       prefix: --fastq-path
   - id: description_file_path
     type: string
-    doc: Output or path parameter `description_file_path`
+    doc: output file of description lines, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --description-file

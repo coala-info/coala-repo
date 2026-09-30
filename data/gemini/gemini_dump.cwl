@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini dump
+baseCommand:
+  - gemini
+  - dump
 label: gemini_dump
 doc: "Report all rows/columns from the variants table.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

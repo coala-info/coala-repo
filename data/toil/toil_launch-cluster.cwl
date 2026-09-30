@@ -216,7 +216,7 @@ inputs:
   - id: temp_dir_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to where temporary directory containing all temp files are 
       created.
     inputBinding:
@@ -256,11 +256,11 @@ inputs:
       position: 102
       prefix: --zone
   - id: log_file_path
-    type: string
-    doc: Output or path parameter `log_file_path`
+    type: string?
+    doc: 'File to log in. (default: None)'
     inputBinding:
       position: 103
-      prefix: --log-file
+      prefix: --logFile
 outputs:
   - id: log_file
     type:

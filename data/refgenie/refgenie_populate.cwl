@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie populate
+baseCommand:
+  - refgenie
+  - populate
 label: refgenie_populate
 doc: "Populate registry paths with local paths.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

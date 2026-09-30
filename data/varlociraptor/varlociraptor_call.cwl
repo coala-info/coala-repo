@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlociraptor call
+baseCommand:
+  - varlociraptor
+  - call
 label: varlociraptor_call
 doc: "Call variants.\n\nTool homepage: https://varlociraptor.github.io"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench searchregex
+baseCommand:
+  - rbpbench
+  - searchregex
 label: rbpbench_searchregex
 doc: "Search for DNA/RNA motifs using regular expressions in FASTA or BED files.\n\
   \nTool homepage: https://github.com/michauhl/RBPBench"
@@ -114,10 +116,10 @@ inputs:
       prefix: --regex-spacer-min
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: str             Results output folder
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --out
 outputs:
   - id: output_folder
     type: Directory

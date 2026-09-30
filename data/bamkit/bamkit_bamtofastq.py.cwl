@@ -39,10 +39,10 @@ inputs:
       prefix: --rename
   - id: header_file_path
     type: string
-    doc: Output or path parameter `header_file_path`
+    doc: ' Write BAM header to file'
     inputBinding:
       position: 103
-      prefix: --header-file
+      prefix: --header
 outputs:
   - id: header_file
     type:

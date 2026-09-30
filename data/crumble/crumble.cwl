@@ -352,10 +352,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bed_path`
+    doc: out.bed        Output suspicious regions to out.bed []
     inputBinding:
       position: 103
-      prefix: --output-bed
+      prefix: -b
 outputs:
   - id: output_file
     type: File

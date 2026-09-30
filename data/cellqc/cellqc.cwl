@@ -59,7 +59,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101
@@ -75,7 +75,7 @@ inputs:
   - id: samplefile
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the sample file
     inputBinding:
       position: 101

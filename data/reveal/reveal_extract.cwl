@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal extract
+baseCommand:
+  - reveal
+  - extract
 label: reveal_extract
 doc: "Extract the input sequence from a graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:

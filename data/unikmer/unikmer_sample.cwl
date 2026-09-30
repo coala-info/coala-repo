@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_sample
+baseCommand:
+  - unikmer
+  - sample
 label: unikmer_sample
 doc: "Sample k-mers from binary files.\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

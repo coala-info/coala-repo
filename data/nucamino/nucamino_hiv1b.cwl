@@ -98,7 +98,7 @@ inputs:
       prefix: --stop-codon-penalty
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output destination of the
     inputBinding:
       position: 102
       prefix: --output

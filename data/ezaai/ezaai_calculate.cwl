@@ -93,7 +93,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Custom temporary directory
     inputBinding:
       position: 101
@@ -110,18 +110,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mtx_output_path`
+    doc: Path to write a Matrix Market formatted output
     inputBinding:
       position: 103
-      prefix: --mtx-output
+      prefix: -mtx
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Output result file
     inputBinding:
       position: 104
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
     type: File

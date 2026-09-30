@@ -9,6 +9,7 @@ inputs:
     doc: Query file (fastq or fasta)
     inputBinding:
       position: 1
+      prefix: --query
   - id: AMR_module_only
     type:
       - 'null'
@@ -19,7 +20,7 @@ inputs:
   - id: RAM_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary folder in RAM
     inputBinding:
       position: 102
@@ -789,7 +790,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder
     inputBinding:
       position: 102
@@ -1093,7 +1094,7 @@ inputs:
   - id: temp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: temporary folder
     inputBinding:
       position: 102

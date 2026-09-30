@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal merge
+baseCommand:
+  - reveal
+  - merge
 label: reveal_merge
 doc: "Combine multiple gfa graphs into a single gfa graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:
@@ -22,10 +24,11 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of the file to which merged graph is written.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -100,7 +100,7 @@ inputs:
       prefix: --zmin
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Save the image of the contact matrix to a
     inputBinding:
       position: 104
       prefix: --out

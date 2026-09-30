@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit_constrain
+baseCommand:
+  - nwkit
+  - constrain
 label: nwkit_constrain
 doc: "Constrain a newick tree based on taxonomic information.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

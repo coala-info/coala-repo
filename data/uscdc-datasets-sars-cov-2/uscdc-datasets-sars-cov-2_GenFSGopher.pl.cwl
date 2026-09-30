@@ -60,7 +60,7 @@ inputs:
       position: 102
       prefix: --numcpus
   - id: output_directory
-    type: Directory
+    type: string
     doc: The output directory
     inputBinding:
       position: 102
@@ -77,7 +77,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Choose a different temp directory than the system default
     inputBinding:
       position: 102

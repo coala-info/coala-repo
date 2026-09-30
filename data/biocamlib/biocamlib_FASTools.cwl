@@ -161,7 +161,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
@@ -169,7 +168,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `paired_end_output_path`
     inputBinding:
       position: 103
       prefix: --paired-end-output

@@ -34,11 +34,15 @@ inputs:
       alignments under --ssap-scores-infile and --do-the-ssaps"
     inputBinding:
       position: 104
+      prefix: --align-refining
   - id: align_regions
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --align-regions
+          separate: true
     doc: 'Handle region(s) as the alignment part of the structure. May be specified
       multiple times, in correspondence with the structures. Format is: D[5inwB02]251-348:B,408-416A:B
       (Put <regions> in quotes to prevent the square brackets confusing your shell
@@ -52,6 +56,7 @@ inputs:
     doc: '[EXPERIMENTAL] Print the alignment to stdout in CATH alignment format'
     inputBinding:
       position: 104
+      prefix: --aln-to-cath-aln-stdout
   - id: aln_to_fasta_stdout
     type:
       - 'null'
@@ -59,6 +64,7 @@ inputs:
     doc: Print the alignment to stdout in FASTA format
     inputBinding:
       position: 104
+      prefix: --aln-to-fasta-stdout
   - id: aln_to_html_stdout
     type:
       - 'null'
@@ -66,6 +72,7 @@ inputs:
     doc: Print the alignment to stdout as HTML
     inputBinding:
       position: 104
+      prefix: --aln-to-html-stdout
   - id: aln_to_ssap_stdout
     type:
       - 'null'
@@ -73,6 +80,7 @@ inputs:
     doc: Print the alignment to stdout as SSAP
     inputBinding:
       position: 104
+      prefix: --aln-to-ssap-stdout
   - id: cora_aln_infile
     type:
       - 'null'
@@ -80,14 +88,16 @@ inputs:
     doc: Read CORA alignment from file
     inputBinding:
       position: 104
+      prefix: --cora-aln-infile
   - id: do_the_ssaps
     type:
       - 'null'
-      - Directory
+      - string
     doc: Do the required SSAPs in directory; use results as with 
       --ssap-scores-infile. Use a suitable temp directory if none is specified
     inputBinding:
       position: 104
+      prefix: --do-the-ssaps
   - id: fasta_aln_infile
     type:
       - 'null'
@@ -95,6 +105,7 @@ inputs:
     doc: Read FASTA alignment from file
     inputBinding:
       position: 104
+      prefix: --fasta-aln-infile
   - id: gradient_colour_alignment
     type:
       - 'null'
@@ -103,6 +114,7 @@ inputs:
       red)
     inputBinding:
       position: 104
+      prefix: --gradient-colour-alignment
   - id: id
     type:
       - 'null'
@@ -111,6 +123,7 @@ inputs:
     doc: Structure ids
     inputBinding:
       position: 104
+      prefix: --id
   - id: normalise_scores
     type:
       - 'null'
@@ -120,11 +133,15 @@ inputs:
       --show-scores-if-present)
     inputBinding:
       position: 104
+      prefix: --normalise-scores
   - id: pdb_infile
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --pdb-infile
+          separate: true
     doc: Read PDB from file (may be specified multiple times)
     inputBinding:
       position: 104
@@ -135,6 +152,7 @@ inputs:
     doc: 'Read PDBs from stdin (separated by line: "END   ")'
     inputBinding:
       position: 104
+      prefix: --pdbs-from-stdin
   - id: pymol_program
     type:
       - 'null'
@@ -143,6 +161,7 @@ inputs:
       full path
     inputBinding:
       position: 104
+      prefix: --pymol-program
   - id: res_name_align
     type:
       - 'null'
@@ -151,6 +170,7 @@ inputs:
       multiple models of the same structure)
     inputBinding:
       position: 104
+      prefix: --res-name-align
   - id: scores_to_equivs
     type:
       - 'null'
@@ -160,6 +180,7 @@ inputs:
       --gradient-colour-alignment and --show-scores-if-present)
     inputBinding:
       position: 104
+      prefix: --scores-to-equivs
   - id: show_scores_if_present
     type:
       - 'null'
@@ -167,6 +188,7 @@ inputs:
     doc: Show the alignment scores (use with gradient-colour-alignment)
     inputBinding:
       position: 104
+      prefix: --show-scores-if-present
   - id: ssap_aln_infile
     type:
       - 'null'
@@ -174,6 +196,7 @@ inputs:
     doc: Read SSAP alignment from file
     inputBinding:
       position: 104
+      prefix: --ssap-aln-infile
   - id: ssap_scores_infile
     type:
       - 'null'
@@ -182,6 +205,7 @@ inputs:
       all .list alignment files in same directory
     inputBinding:
       position: 104
+      prefix: --ssap-scores-infile
   - id: sup_to_pymol
     type:
       - 'null'
@@ -189,6 +213,7 @@ inputs:
     doc: Start up PyMOL for viewing the superposition
     inputBinding:
       position: 104
+      prefix: --sup-to-pymol
   - id: sup_to_stdout
     type:
       - 'null'
@@ -197,6 +222,7 @@ inputs:
       codes
     inputBinding:
       position: 104
+      prefix: --sup-to-stdout
   - id: viewer_colours
     type:
       - 'null'
@@ -206,11 +232,12 @@ inputs:
       when it runs out of colours)'
     inputBinding:
       position: 104
+      prefix: --viewer-colours
   - id: aln_to_cath_aln_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aln_to_cath_aln_file_path`
+    doc: '[EXPERIMENTAL] Write the alignment to a CATH alignment file'
     inputBinding:
       position: 105
       prefix: --aln-to-cath-aln-file
@@ -218,7 +245,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aln_to_fasta_file_path`
+    doc: Write the alignment to a FASTA file
     inputBinding:
       position: 106
       prefix: --aln-to-fasta-file
@@ -226,7 +253,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aln_to_html_file_path`
+    doc: Write the alignment to a HTML file
     inputBinding:
       position: 107
       prefix: --aln-to-html-file
@@ -234,7 +261,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aln_to_ssap_file_path`
+    doc: Write the alignment to a SSAP file
     inputBinding:
       position: 108
       prefix: --aln-to-ssap-file
@@ -242,7 +269,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_json_file_path`
+    doc: Write the superposition to JSON superposition file
     inputBinding:
       position: 109
       prefix: --sup-to-json-file
@@ -250,7 +277,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_pdb_file_path`
+    doc: Write the superposed structures to a single PDB file arg, separated 
+      using faked chain codes
     inputBinding:
       position: 110
       prefix: --sup-to-pdb-file
@@ -258,7 +286,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_pdb_files_dir_path`
+    doc: Write the superposed structures to separate PDB files in directory arg
     inputBinding:
       position: 111
       prefix: --sup-to-pdb-files-dir
@@ -266,7 +294,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sup_to_pymol_file_path`
+    doc: Write the superposition to a PyMOL script arg
     inputBinding:
       position: 112
       prefix: --sup-to-pymol-file

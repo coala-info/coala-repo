@@ -17,6 +17,7 @@ inputs:
     doc: FASTA format MSA of the same genomes (one sequence per genome)
     inputBinding:
       position: 102
+      prefix: --alignment
   - id: create_db
     type:
       - 'null'
@@ -24,6 +25,7 @@ inputs:
     doc: Create database if does not exist.
     inputBinding:
       position: 102
+      prefix: --create-db
   - id: database
     type: File
     doc: Path to pyANI-plus SQLite3 database.
@@ -38,6 +40,7 @@ inputs:
       file).
     inputBinding:
       position: 102
+      prefix: --debug
   - id: executor
     type:
       - 'null'
@@ -45,6 +48,7 @@ inputs:
     doc: How should the internal tools be run?
     inputBinding:
       position: 102
+      prefix: --executor
   - id: label
     type:
       - 'null'
@@ -52,6 +56,7 @@ inputs:
     doc: How are the sequences in the MSA labelled vs the FASTA genomes?
     inputBinding:
       position: 102
+      prefix: --label
   - id: log_file
     type:
       - 'null'
@@ -70,7 +75,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for intermediate files, which for debugging purposes 
       will not be deleted. For clusters this must be on a shared drive. Default 
       behaviour is to use a system specified temporary directory (specific to 
@@ -80,7 +85,7 @@ inputs:
   - id: wtemp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for temporary workflow coordination files, which for 
       debugging purposes will not be deleted. For clusters this must be on a 
       shared drive. Default behaviour is to use a system specified temporary 

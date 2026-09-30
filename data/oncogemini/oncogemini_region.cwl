@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini region
+baseCommand:
+  - oncogemini
+  - region
 label: oncogemini_region
 doc: "Query oncogemini database for regions or genes.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

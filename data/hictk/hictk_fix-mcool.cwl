@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk fix-mcool
+baseCommand:
+  - hictk
+  - fix-mcool
 label: hictk_fix-mcool
 doc: "Fix corrupted .mcool files.\n\nTool homepage: https://github.com/paulsengroup/hictk"
 inputs:
@@ -72,7 +74,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to a folder where to store temporary data.
     inputBinding:
       position: 102

@@ -38,10 +38,10 @@ inputs:
       prefix: -ps
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: ': detailed output into file'
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
     type:

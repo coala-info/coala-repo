@@ -16,6 +16,11 @@ inputs:
     doc: taxonomy file for inferring RED outliers
     inputBinding:
       position: 2
+  - id: output_dir
+    type: string
+    doc: desired output directory for generated files
+    inputBinding:
+      position: 3
   - id: dpi
     type:
       - 'null'
@@ -155,11 +160,11 @@ inputs:
       position: 103
       prefix: --viral
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: desired output directory for generated files
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

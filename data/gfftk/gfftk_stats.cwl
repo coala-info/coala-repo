@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfftk_stats
+baseCommand:
+  - gfftk
+  - stats
 label: gfftk_stats
 doc: "parse annotation GFF3/tbl and output summary statistics.\n\nTool homepage: https://github.com/nextgenusfs/gfftk"
 inputs:
@@ -34,7 +36,6 @@ inputs:
       prefix: --input-format
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

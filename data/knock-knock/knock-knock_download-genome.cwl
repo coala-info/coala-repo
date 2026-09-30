@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: knock-knock download-genome
+baseCommand:
+  - knock-knock
+  - download-genome
 label: knock-knock_download-genome
 doc: "Download a genome and its associated annotations.\n\nTool homepage: https://github.com/jeffhussmann/knock-knock"
 inputs:

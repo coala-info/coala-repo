@@ -67,10 +67,10 @@ inputs:
       prefix: --verbose
   - id: output_summary_path
     type: string
-    doc: Output or path parameter `output_summary_path`
+    doc: Output for summary file.
     inputBinding:
       position: 104
-      prefix: --output-summary
+      prefix: --output
 outputs:
   - id: output_summary
     type:

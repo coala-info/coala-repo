@@ -272,14 +272,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --title_font_size
-  - id: annotation_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `annotation_path`
-    inputBinding:
-      position: 102
-      prefix: --annotation
   - id: out_table_path
     type:
       - 'null'
@@ -287,13 +279,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --out_table
+  - id: annotation_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --annotation
   - id: tree_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tree_path`
+    doc: Output filename where save the input tree for GraPhlAn
     inputBinding:
-      position: 104
+      position: 105
       prefix: --tree
 outputs:
   - id: tree

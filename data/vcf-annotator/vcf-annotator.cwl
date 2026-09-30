@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_path
-    type: string
+    type: string?
     doc: File to write VCF output to (Default STDOUT).
     inputBinding:
       position: 101

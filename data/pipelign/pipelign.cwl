@@ -100,7 +100,7 @@ inputs:
       position: 101
       prefix: --merge
   - id: out_dir
-    type: Directory
+    type: string
     doc: Name for output directory to hold intermediate files
     inputBinding:
       position: 101
@@ -142,10 +142,10 @@ inputs:
       prefix: --thread
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' FASTA formatted output alignment file'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outFile
 outputs:
   - id: output_file
     type: File

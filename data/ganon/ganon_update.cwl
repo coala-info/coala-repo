@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ganon_update
+baseCommand:
+  - ganon
+  - update
 label: ganon_update
 doc: "Update an existing Ganon database.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:

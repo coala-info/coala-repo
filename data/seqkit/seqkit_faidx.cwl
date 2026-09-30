@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_faidx
+baseCommand:
+  - seqkit
+  - faidx
 label: seqkit_faidx
 doc: "create the FASTA index file and extract subsequences\n\nTool homepage: https://github.com/shenwei356/seqkit"
 inputs:
@@ -154,7 +156,7 @@ inputs:
       prefix: --use-regexp
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 104
       prefix: --out-file

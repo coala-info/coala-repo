@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hint tl
+baseCommand:
+  - hint
+  - tl
 label: hint_tl
 doc: "interchromosomal translocations and breakpoints detection from Hi-C inter-chromosomal
   interaction matrices.\n\nTool homepage: https://github.com/suwangbio/HiNT_py3"
@@ -99,7 +101,6 @@ inputs:
       prefix: --threads
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

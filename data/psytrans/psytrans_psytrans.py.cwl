@@ -126,7 +126,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Location (prefix) of the temporary directory
     inputBinding:
       position: 102
@@ -141,10 +141,10 @@ inputs:
       prefix: --verbose
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: ' Name of optional output directory'
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: --outDir
 outputs:
   - id: out_dir
     type:

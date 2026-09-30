@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_parsegb
+baseCommand:
+  - cdskit
+  - parsegb
 label: cdskit_parsegb
 doc: "Parse GenBank files.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

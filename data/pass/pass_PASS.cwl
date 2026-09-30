@@ -140,18 +140,19 @@ inputs:
       prefix: -j
   - id: output_basename_path
     type: string
-    doc: Output or path parameter `output_basename_path`
+    doc: Basename for your output files (optional)
     inputBinding:
       position: 102
-      prefix: --output-basename
+      prefix: -b
 outputs:
   - id: output_basename
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Basename for your output files
     outputBinding:
-      glob: $(inputs.output_basename_path)
+      glob: $(inputs.output_basename_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

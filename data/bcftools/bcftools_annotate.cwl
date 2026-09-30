@@ -58,11 +58,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --header-line
+          separate: true
     doc: Header line which should be appended to the VCF header, can be given 
       multiple times
     inputBinding:
       position: 102
-      prefix: --header-line
   - id: header_lines
     type:
       - 'null'
@@ -240,7 +242,8 @@ inputs:
     doc: Automatically index the output files [off]
     inputBinding:
       position: 102
-      prefix: --write-index
+      prefix: --write-index=
+      separate: false
 outputs:
   - id: output_output
     type:

@@ -56,7 +56,7 @@ inputs:
   - id: scratch_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: "scratch directory path (mustn't already exist; default: ./GLnexus.DB)"
     inputBinding:
       position: 102

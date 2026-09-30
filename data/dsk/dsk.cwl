@@ -135,7 +135,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101
@@ -143,7 +143,7 @@ inputs:
   - id: out_tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory for temporary files
     inputBinding:
       position: 101

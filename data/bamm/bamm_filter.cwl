@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamm filter
+baseCommand:
+  - bamm
+  - filter
 label: bamm_filter
 doc: "Apply stringency filter to Bam file reads\n\nTool homepage: https://github.com/Ecogenomics/BamM"
 inputs:
@@ -76,10 +78,9 @@ inputs:
       prefix: --use_supplementary
   - id: out_folder_path
     type: string
-    doc: Output or path parameter `out_folder_path`
     inputBinding:
       position: 102
-      prefix: --out-folder
+      prefix: --out_folder
 outputs:
   - id: out_folder
     type:

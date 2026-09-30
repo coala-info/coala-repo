@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxonkit reformat
+baseCommand:
+  - taxonkit
+  - reformat
 label: taxonkit_reformat
 doc: "Reformat lineage in canonical ranks\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
@@ -276,7 +278,7 @@ inputs:
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

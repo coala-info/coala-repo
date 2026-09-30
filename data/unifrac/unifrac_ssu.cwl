@@ -47,6 +47,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -c
+      itemSeparator: ','
   - id: grouping_file
     type:
       - 'null'
@@ -209,10 +210,10 @@ inputs:
       prefix: --vaw
   - id: output_distance_matrix_path
     type: string
-    doc: Output or path parameter `output_distance_matrix_path`
+    doc: The output distance matrix.
     inputBinding:
       position: 102
-      prefix: --output-distance-matrix
+      prefix: -o
 outputs:
   - id: output_distance_matrix
     type: File

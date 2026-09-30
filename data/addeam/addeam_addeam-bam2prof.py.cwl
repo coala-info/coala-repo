@@ -196,22 +196,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -threads
-  - id: hpc_dry_run_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `hpc_dry_run_path`
-    inputBinding:
-      position: 103
-      prefix: --hpc-dry-run
   - id: output_directory_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_directory_path`
+    doc: Output directory.
+    inputBinding:
+      position: 103
+      prefix: -o
+  - id: hpc_dry_run_path
+    type:
+      - 'null'
+      - string
+    doc: 'Dry run: write the execution commands to this file.'
     inputBinding:
       position: 104
-      prefix: --output-directory
+      prefix: -hpc
 outputs:
   - id: output_directory
     type:

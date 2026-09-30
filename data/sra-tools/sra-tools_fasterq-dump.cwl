@@ -57,7 +57,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: where to put temp. files
     inputBinding:
       position: 102

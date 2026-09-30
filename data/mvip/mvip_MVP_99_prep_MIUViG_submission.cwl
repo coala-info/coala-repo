@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_99_prep_MIUViG_submission
+baseCommand:
+  - mvip
+  - MVP_99_prep_MIUViG_submission
 label: mvip_MVP_99_prep_MIUViG_submission
 doc: "Additional module to assist with submitting metagenome-assembled viral genome(s)
   to GenBank, including MIUViG metadata.\n\nTool homepage: https://gitlab.com/ccoclet/mvp"

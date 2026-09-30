@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ensemblcov differentialexpression
+baseCommand:
+  - ensemblcov
+  - differentialexpression
 label: ensemblcov_differentialexpression
 doc: "id convert from differential expression\n\nTool homepage: https://github.com/IBCHgenomic/ensemlcov"
 inputs:

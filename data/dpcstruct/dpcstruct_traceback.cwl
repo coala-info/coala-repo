@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dpcstruct_traceback
+baseCommand:
+  - dpcstruct
+  - traceback
 label: dpcstruct_traceback
 doc: "Assign a metacluster label to each domain inside a primary cluster.\n\nTool
   homepage: https://github.com/RitAreaSciencePark/DPCstruct"

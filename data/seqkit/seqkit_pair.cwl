@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit pair
+baseCommand:
+  - seqkit
+  - pair
 label: seqkit_pair
 doc: "match up paired-end reads from two fastq files\n\nTool homepage: https://github.com/shenwei356/seqkit"
 inputs:
@@ -68,7 +70,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101
@@ -134,7 +136,7 @@ inputs:
       prefix: --threads
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

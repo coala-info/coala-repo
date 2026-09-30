@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: demultiplex match
+baseCommand:
+  - demultiplex
+  - match
 label: demultiplex_match
 doc: "Demultiplex reads based on barcode matching.\n\nTool homepage: https://github.com/jfjlaros/demultiplex"
 inputs:

@@ -15,7 +15,7 @@ inputs:
     inputBinding:
       position: 1
   - id: working_directory
-    type: Directory
+    type: string
     doc: Working directory for temporary files
     inputBinding:
       position: 2

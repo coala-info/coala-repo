@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gappa analyze
+baseCommand:
+  - gappa
+  - analyze
 label: gappa_analyze
 doc: "Commands for analyzing and comparing placement data, that is, finding differences
   and patterns.\n\nTool homepage: https://github.com/lczech/gappa"

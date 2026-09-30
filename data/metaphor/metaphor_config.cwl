@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaphor config
+baseCommand:
+  - metaphor
+  - config
 label: metaphor_config
 doc: "Metaphor configuration commands.\n\nTool homepage: https://github.com/vinisalazar/metaphor"
 inputs:

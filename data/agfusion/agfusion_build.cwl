@@ -35,7 +35,7 @@ inputs:
       prefix: --species
   - id: dir_path
     type: string
-    doc: Output or path parameter `dir_path`
+    doc: Directory to write database file to.
     inputBinding:
       position: 102
       prefix: --dir

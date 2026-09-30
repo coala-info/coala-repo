@@ -161,10 +161,10 @@ inputs:
       prefix: -nb-cores
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: '(1 arg) :    output directory for result files [Default: ./mtg_results]'
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -out
 outputs:
   - id: output_directory
     type:

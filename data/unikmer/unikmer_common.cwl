@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer_common
+baseCommand:
+  - unikmer
+  - common
 label: unikmer_common
 doc: "Find k-mers shared by most of the binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

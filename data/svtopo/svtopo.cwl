@@ -33,7 +33,7 @@ inputs:
       position: 101
       prefix: --prefix
   - id: svtopo_dir
-    type: Directory
+    type: string
     doc: Output directory path
     inputBinding:
       position: 101

@@ -87,7 +87,7 @@ inputs:
       prefix: --unique
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 103
       prefix: --outfile

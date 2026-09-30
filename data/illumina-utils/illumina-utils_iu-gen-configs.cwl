@@ -38,7 +38,6 @@ inputs:
       prefix: --r2-prefix
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103
       prefix: --output-dir

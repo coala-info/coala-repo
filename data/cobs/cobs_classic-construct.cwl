@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cobs classic-construct
+baseCommand:
+  - cobs
+  - classic-construct
 label: cobs_classic-construct
 doc: "Constructs a COBS index for a given input directory or file.\n\nTool homepage:
   https://panthema.net/cobs"
@@ -10,6 +12,11 @@ inputs:
     doc: path to the input directory or file
     inputBinding:
       position: 1
+  - id: out_file
+    type: string
+    doc: path to the output .cobs_classic index file
+    inputBinding:
+      position: 2
   - id: clobber
     type:
       - 'null'
@@ -108,11 +115,11 @@ inputs:
       position: 102
       prefix: --tmp-path
 outputs:
-  - id: out_file
+  - id: out_out_file
     type: File
     doc: path to the output .cobs_classic index file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

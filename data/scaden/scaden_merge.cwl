@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scaden_merge
+baseCommand:
+  - scaden
+  - merge
 label: scaden_merge
 doc: "Merge simulated datasets into on training dataset\n\nTool homepage: https://github.com/KevinMenden/scaden"
 inputs:
@@ -21,6 +23,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --files
+      itemSeparator: ','
   - id: output_prefix
     type:
       - 'null'

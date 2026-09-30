@@ -70,9 +70,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: path to reference fasta
     secondaryFiles:
       - .fai
-    doc: path to reference fasta
     inputBinding:
       position: 102
       prefix: --reference
@@ -94,7 +94,7 @@ inputs:
       prefix: --windowsize
   - id: prefix_path
     type: string
-    doc: Output or path parameter `prefix_path`
+    doc: prefix for output files depth.bed and callable.bed
     inputBinding:
       position: 103
       prefix: --prefix
@@ -102,10 +102,11 @@ outputs:
   - id: prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: prefix for output files depth.bed and callable.bed
     outputBinding:
-      glob: $(inputs.prefix_path)
+      glob: $(inputs.prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

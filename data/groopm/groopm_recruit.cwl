@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm recruit
+baseCommand:
+  - groopm
+  - recruit
 label: groopm_recruit
 doc: "Recruit more contigs into existing bins\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

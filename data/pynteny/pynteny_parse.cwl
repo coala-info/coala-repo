@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pynteny parse
+baseCommand:
+  - pynteny
+  - parse
 label: pynteny_parse
 doc: "Translate synteny structure with gene symbols into one with\nHMM groups, according
   to provided HMM database.\n\nTool homepage: http://github.com/robaina/Pynteny"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tgv download
+baseCommand:
+  - tgv
+  - download
 label: tgv_download
 doc: "Download command\n\nTool homepage: https://github.com/zeqianli/tgv"
 inputs:

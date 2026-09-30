@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nucleoatac merge
+baseCommand:
+  - nucleoatac
+  - merge
 label: nucleoatac_merge
 doc: "Merge nucleosome occupancy and position files.\n\nTool homepage: http://nucleoatac.readthedocs.io/en/latest/"
 inputs:
@@ -34,19 +36,20 @@ inputs:
       position: 101
       prefix: --occpeaks
   - id: out_basename_path
-    type: string
-    doc: Output or path parameter `out_basename_path`
+    type: string?
+    doc: out_basename    output file basename
     inputBinding:
       position: 102
-      prefix: --out-basename
+      prefix: --out
 outputs:
   - id: out_basename
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output file basename
     outputBinding:
-      glob: $(inputs.out_basename_path)
+      glob: $(inputs.out_basename_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

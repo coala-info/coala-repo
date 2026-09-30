@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: datafunk bootstrap
+baseCommand:
+  - datafunk
+  - bootstrap
 label: datafunk_bootstrap
 doc: "bootstrap an alignment\n\nTool homepage: https://github.com/cov-ert/datafunk"
 inputs:

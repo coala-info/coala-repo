@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_merge
+baseCommand:
+  - kpal
+  - merge
 label: kpal_merge
 doc: "Merge k-mer profiles. If the files contain more than one profile, they are linked
   by name and merged pairwise. The resulting profile name is set to that of the original
@@ -16,6 +18,11 @@ inputs:
     doc: input k-mer profile file (right)
     inputBinding:
       position: 2
+  - id: output
+    type: string
+    doc: output k-mer profile file
+    inputBinding:
+      position: 3
   - id: custom_merger
     type:
       - 'null'
@@ -54,11 +61,11 @@ inputs:
       position: 103
       prefix: --profiles-right
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output k-mer profile file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpal:2.1.1--py27_0

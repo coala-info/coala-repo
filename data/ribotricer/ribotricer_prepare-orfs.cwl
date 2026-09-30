@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotricer prepare-orfs
+baseCommand:
+  - ribotricer
+  - prepare-orfs
 label: ribotricer_prepare-orfs
 doc: "Extract candidate ORFS based on GTF and FASTA files\n\nTool homepage: https://github.com/smithlabcode/ribotricer"
 inputs:

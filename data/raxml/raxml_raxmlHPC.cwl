@@ -320,10 +320,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -o
+      itemSeparator: ','
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: FULL (!) path to the directory into which RAxML shall write its output 
       files
     inputBinding:

@@ -17,12 +17,17 @@ inputs:
     doc: Second input FASTQ file
     inputBinding:
       position: 2
-outputs:
   - id: out_fq
+    type: string
+    doc: Output FASTQ file. Use '-' for STDOUT.
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_out_fq
     type: File
     doc: Output FASTQ file. Use '-' for STDOUT.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_fq)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqtk:0.28--h5ca1c30_0

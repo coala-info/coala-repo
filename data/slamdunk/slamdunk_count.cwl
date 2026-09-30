@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: slamdunk_count
+baseCommand:
+  - slamdunk
+  - count
 label: slamdunk_count
 doc: "Count T>C conversions in BAM files.\n\nTool homepage: http://t-neumann.github.io/slamdunk"
 inputs:
@@ -43,9 +45,9 @@ inputs:
       prefix: --min-base-qual
   - id: reference
     type: File
+    doc: Reference fasta file
     secondaryFiles:
       - .fai
-    doc: Reference fasta file
     inputBinding:
       position: 102
       prefix: --reference
@@ -75,10 +77,10 @@ inputs:
       prefix: --vcf
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: ' Output directory for mapped BAM files.'
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --outputDir
 outputs:
   - id: output_dir
     type: Directory

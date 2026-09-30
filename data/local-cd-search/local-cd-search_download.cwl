@@ -8,7 +8,7 @@ doc: "Download one or more PSSM databases and CDD metadata into DB_DIR.\n\nTool 
   https://github.com/apcamargo/local-cd-search"
 inputs:
   - id: db_dir
-    type: Directory
+    type: string
     doc: Directory to store downloaded databases
     inputBinding:
       position: 1

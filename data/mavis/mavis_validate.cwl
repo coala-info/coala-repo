@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mavis_validate
+baseCommand:
+  - mavis
+  - validate
 label: mavis_validate
 doc: "Validate MAVIS inputs and outputs.\n\nTool homepage: https://github.com/bcgsc/mavis.git"
 inputs:
@@ -12,9 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: config
-    type:
-      - 'null'
-      - File
+    type: File
     doc: path to the JSON config file
     inputBinding:
       position: 102
@@ -43,7 +43,6 @@ inputs:
       prefix: --log_level
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

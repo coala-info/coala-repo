@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snp2cell score-snp
+baseCommand:
+  - snp2cell
+  - score-snp
 label: snp2cell_score-snp
 doc: "Add fGWAS scores for network nodes based on GWAS summary statistics. Then propagate
   the scores across the network and calculate statistics based on random permutations.
@@ -68,7 +70,6 @@ inputs:
       prefix: --save-key
   - id: output_table_path
     type: string
-    doc: Output or path parameter `output_table_path`
     inputBinding:
       position: 105
       prefix: --output-table

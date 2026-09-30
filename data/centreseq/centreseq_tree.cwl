@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: centreseq_tree
+baseCommand:
+  - centreseq
+  - tree
 label: centreseq_tree
 doc: "Processes centreseq core output files to produce files that can be fed into
   phylogenetic tree building software.\n\nTool homepage: https://github.com/bfssi-forest-dussault/centreseq"

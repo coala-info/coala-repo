@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar GOEnrichment.jar
+baseCommand:
+  - java
+  - -jar
+  - GOEnrichment.jar
 label: goenrichment
 doc: "GOEnrichment analyses a set of gene products for GO term enrichment\n\nTool
   homepage: https://github.com/DanFaria/GOEnrichment"

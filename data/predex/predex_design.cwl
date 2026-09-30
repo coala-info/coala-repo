@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predex_design
+baseCommand:
+  - predex
+  - design
 label: predex_design
 doc: "Design experiment based on input count matrix.\n\nTool homepage: https://github.com/tomkuipers1402/predex"
 inputs:
@@ -13,7 +15,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

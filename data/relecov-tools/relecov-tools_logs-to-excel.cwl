@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: relecov-tools logs-to-excel
+baseCommand:
+  - relecov-tools
+  - logs-to-excel
 label: relecov-tools_logs-to-excel
 doc: "Creates a merged xlsx and Json report from all the log summary jsons given as
   input\n\nTool homepage: https://github.com/BU-ISCIII/relecov-tools"
@@ -24,10 +26,9 @@ inputs:
       prefix: --lab_code
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

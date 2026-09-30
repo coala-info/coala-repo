@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi viz
+baseCommand:
+  - odgi
+  - viz
 label: odgi_viz
 doc: "Visualize a variation graph in 1D.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

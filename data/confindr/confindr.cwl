@@ -154,7 +154,7 @@ inputs:
   - id: tmp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: If your ConFindr databases are in a location you don't have write 
       access to, you can enter this option to specify a temporary directory to 
       put genus-specific databases to.

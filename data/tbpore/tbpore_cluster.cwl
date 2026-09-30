@@ -41,7 +41,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to place output files
     inputBinding:
       position: 102
@@ -65,7 +65,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify where to write all (tbpore) temporary files.
     inputBinding:
       position: 102

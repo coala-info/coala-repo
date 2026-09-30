@@ -17,6 +17,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chrom
+          separate: true
     doc: 'A specific chromosome for analysis. Can be specified multiple times for
       multiple chromosomes. The size can be encoded for a chromosome. For example,
       `-c chr1:248956422 -c chr2:242193529`. The size can be used to split a chromosome
@@ -24,7 +27,6 @@ inputs:
       files.'
     inputBinding:
       position: 101
-      prefix: --chrom
   - id: compfile
     type:
       - 'null'
@@ -98,7 +100,7 @@ inputs:
       prefix: --numthreads
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file.
     inputBinding:
       position: 102
       prefix: --outfile

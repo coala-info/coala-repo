@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fqtk_demux
+baseCommand:
+  - fqtk
+  - demux
 label: fqtk_demux
 doc: "Performs sample demultiplexing on FASTQs.\n\nTool homepage: https://github.com/fulcrumgenomics/fqtk"
 inputs:

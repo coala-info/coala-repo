@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_count
+baseCommand:
+  - kpal
+  - count
 label: kpal_count
 doc: "Make k-mer profiles from FASTA files.\n\nTool homepage: https://github.com/LUMC/kPAL"
 inputs:

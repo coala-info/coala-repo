@@ -85,15 +85,14 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `evolutionary_csv_path`
     inputBinding:
       position: 102
-      prefix: --evolutionary-csv
+      prefix: --evolutionary_csv
   - id: mafs_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mafs_path`
+    doc: If provided, write a CSV file with MAF/p-value tables
     inputBinding:
       position: 103
       prefix: --mafs
@@ -101,7 +100,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

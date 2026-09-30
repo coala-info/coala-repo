@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr locus_selection
+baseCommand:
+  - secapr
+  - locus_selection
 label: secapr_locus_selection
 doc: "Extract the n loci with the best read-coverage from you reference-based assembly
   (bam-files)\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"

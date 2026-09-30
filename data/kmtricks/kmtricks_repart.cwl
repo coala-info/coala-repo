@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmtricks_repart
+baseCommand:
+  - kmtricks
+  - repart
 label: kmtricks_repart
 doc: "Compute minimizer repartition.\n\nTool homepage: https://github.com/tlemane/kmtricks"
 inputs:

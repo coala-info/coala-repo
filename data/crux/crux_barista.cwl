@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux barista
+baseCommand:
+  - crux
+  - barista
 label: crux_barista
 doc: "Barista is a tool for identifying peptides from tandem mass spectra.\n\nTool
   homepage: https://github.com/redbadger/crux"
@@ -104,7 +106,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the directory where output files will be created.
     inputBinding:
       position: 104

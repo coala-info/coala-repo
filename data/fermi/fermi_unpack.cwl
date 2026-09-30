@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi_unpack
+baseCommand:
+  - fermi
+  - unpack
 label: fermi_unpack
 doc: "Unpack a BWT sequence file\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
 inputs:

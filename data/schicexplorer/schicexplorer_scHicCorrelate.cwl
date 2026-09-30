@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: schicexplorer_scHicCorrelate
+baseCommand: scHicCorrelate
 label: schicexplorer_scHicCorrelate
 doc: "Computes pairwise correlations between Hi-C matrices data. The correlation is
   computed taking the values from each pair of matrices and discarding values that

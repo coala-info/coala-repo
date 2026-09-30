@@ -65,9 +65,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: FASTA with reference genome
     secondaryFiles:
       - .fai
-    doc: FASTA with reference genome
     inputBinding:
       position: 101
       prefix: --reference
@@ -91,7 +91,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: Log to a file instead of stderr.
     inputBinding:
       position: 102
       prefix: --log-file
@@ -99,7 +99,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Output file name. Will output to stdout
     inputBinding:
       position: 103
       prefix: --output
@@ -107,7 +107,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bins_path`
+    doc: Output binned coverage in tsv format.
     inputBinding:
       position: 104
       prefix: --output-bins

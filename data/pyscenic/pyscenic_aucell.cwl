@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyscenic_aucell
+baseCommand:
+  - pyscenic
+  - aucell
 label: pyscenic_aucell
 doc: "Calculate AUC for each cell and each gene signature.\n\nTool homepage: https://github.com/aertslab/pySCENIC"
 inputs:
@@ -108,7 +110,6 @@ inputs:
       prefix: --weights
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

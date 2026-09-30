@@ -148,6 +148,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --update-info
+  - id: index_file_path
+    type: string
+    inputBinding:
+      position: 104
+      prefix: --index-file
 outputs:
   - id: index_file
     type:
@@ -155,7 +160,9 @@ outputs:
       - File
     doc: Specifies index output file (SAV output only)
     outputBinding:
-      glob: $(inputs.index_file)
+      glob: $(inputs.index_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savvy:2.1.0--h5b0a936_4

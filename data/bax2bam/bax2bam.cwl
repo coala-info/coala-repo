@@ -106,15 +106,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Prefix of output filenames. Movie name will be used if no prefix 
+      provided
     inputBinding:
       position: 103
-      prefix: --output-prefix
+      prefix: -o
   - id: output_xml_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_xml_path`
     inputBinding:
       position: 104
       prefix: --output-xml
@@ -122,11 +122,12 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of output filenames. Movie name will be used if no prefix 
       provided
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
   - id: output_xml
     type:
       - 'null'

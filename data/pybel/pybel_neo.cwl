@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pybel neo
+baseCommand:
+  - pybel
+  - neo
 label: pybel_neo
 doc: "Upload to neo4j.\n\nTool homepage: https://pybel.readthedocs.io"
 inputs:

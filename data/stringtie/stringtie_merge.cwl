@@ -89,10 +89,10 @@ inputs:
       prefix: -T
   - id: output_gtf_path
     type: string
-    doc: Output or path parameter `output_gtf_path`
+    doc: output file name for the merged transcripts GTF
     inputBinding:
       position: 103
-      prefix: --output-gtf
+      prefix: -o
 outputs:
   - id: output_gtf
     type:

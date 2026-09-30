@@ -22,15 +22,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dropped_path`
+    doc: Write dropped read annotation to this file
     inputBinding:
       position: 102
       prefix: --dropped
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
+    doc: Output filtered file path
     inputBinding:
       position: 103
       prefix: --output

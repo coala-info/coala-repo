@@ -168,10 +168,10 @@ inputs:
       prefix: --trace
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output file name; rewrites file by default [default: output'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

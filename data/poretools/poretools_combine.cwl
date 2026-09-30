@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poretools_combine
+baseCommand:
+  - poretools
+  - combine
 label: poretools_combine
 doc: "Combine FAST5 files into a TAR archive.\n\nTool homepage: https://github.com/arq5x/poretools"
 inputs:
@@ -21,10 +23,10 @@ inputs:
       prefix: --quiet
   - id: output_tar_path
     type: string
-    doc: Output or path parameter `output_tar_path`
+    doc: The name of the output TAR archive for the set of FAST5 files.
     inputBinding:
       position: 103
-      prefix: --output-tar
+      prefix: -o
 outputs:
   - id: output_tar
     type: File

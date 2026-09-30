@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdst hc
+baseCommand:
+  - cdst
+  - hc
 label: cdst_hc
 doc: "Performs hierarchical clustering on a difference matrix.\n\nTool homepage: https://github.com/l1-mh/CDST"
 inputs:

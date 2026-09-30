@@ -70,7 +70,7 @@ inputs:
     doc: Percentage-of-samples parameter for the extreme-count filter.
     inputBinding:
       position: 101
-      prefix: --extreme-count-filter-percentage_of_samples
+      prefix: --extreme-count-filter-percentage-of-samples
   - id: gatk_config_file
     type:
       - 'null'
@@ -215,7 +215,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to use.
     inputBinding:
       position: 101

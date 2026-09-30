@@ -77,6 +77,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --text-metadata
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -84,7 +89,9 @@ outputs:
       - File
     doc: Output JSON file. See documentation for description of file format.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gembs:3.5.5_IHEC--py39h6859054_8

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler attrs
+baseCommand:
+  - cooler
+  - attrs
 label: cooler_attrs
 doc: "Display a file's attribute hierarchy.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:

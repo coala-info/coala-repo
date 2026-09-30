@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: shmlast crbl
+baseCommand:
+  - shmlast
+  - crbl
 label: shmlast_crbl
 doc: "Run Conditional Reciprocal Best Hits between the query and database.\n\nTool
   homepage: https://github.com/camillescott/shmlast"
@@ -59,7 +61,6 @@ inputs:
       prefix: --query
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

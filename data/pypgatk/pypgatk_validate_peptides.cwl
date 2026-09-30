@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgatk validate_peptides
+baseCommand:
+  - pypgatk
+  - validate_peptides
 label: pypgatk_validate_peptides
 doc: "Validate peptides using the pypgatk pipeline.\n\nTool homepage: http://github.com/bigbio/py-pgatk"
 inputs:
@@ -73,10 +75,10 @@ inputs:
       prefix: --relative
   - id: outfile_name_path
     type: string
-    doc: Output or path parameter `outfile_name_path`
+    doc: Output file for the results
     inputBinding:
       position: 102
-      prefix: --outfile-name
+      prefix: --outfile_name
 outputs:
   - id: outfile_name
     type:

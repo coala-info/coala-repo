@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: intervene upset
+baseCommand:
+  - intervene
+  - upset
 label: intervene_upset
 doc: "Create UpSet diagram after intersection of genomic regions in (BED/GTF/GFF)
   or list sets.\n\nTool homepage: https://github.com/asntech/intervene"
@@ -188,7 +190,6 @@ inputs:
       prefix: --type
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

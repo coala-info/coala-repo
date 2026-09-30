@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit_coverage
+baseCommand:
+  - finaletoolkit
+  - coverage
 label: finaletoolkit_coverage
 doc: "Calculates fragmentation coverage over intervals defined in a BED file based
   on alignment data from a BAM/CRAM/Fragment file.\n\nTool homepage: https://github.com/epifluidlab/FinaleToolkit"
@@ -84,7 +86,6 @@ inputs:
       prefix: --workers
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
       prefix: --output-file

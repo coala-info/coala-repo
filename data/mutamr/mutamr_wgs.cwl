@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mutamr_wgs
+baseCommand:
+  - mutamr
+  - wgs
 label: mutamr_wgs
 doc: "Run mutamr for whole genome sequencing data.\n\nTool homepage: https://github.com/MDU-PHL/mutamr"
 inputs:
@@ -106,7 +108,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: temp directory to use
     inputBinding:
       position: 101

@@ -528,18 +528,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `weights_file_path`
+    doc: Output final weights to given file
     inputBinding:
       position: 110
-      prefix: --weights-file
+      prefix: --weights
   - id: xml_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `xml_output_file_path`
+    doc: Path to xml-output (pout) file.
     inputBinding:
       position: 111
-      prefix: --xml-output-file
+      prefix: --xmloutput
 outputs:
   - id: xml_output_file
     type:

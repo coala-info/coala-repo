@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chamois_cv
+baseCommand:
+  - chamois
+  - cv
 label: chamois_cv
 doc: "Train a predictor and evaluate it using cross-validation.\n\nTool homepage:
   https://chamois.readthedocs.io/"
@@ -113,22 +115,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variance
-  - id: best_model_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `best_model_path`
-    inputBinding:
-      position: 102
-      prefix: --best-model
-  - id: metrics_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `metrics_path`
-    inputBinding:
-      position: 103
-      prefix: --metrics
   - id: output_path
     type:
       - 'null'
@@ -137,13 +123,28 @@ inputs:
     inputBinding:
       position: 104
       prefix: --output
+  - id: best_model_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --best-model
+  - id: metrics_path
+    type:
+      - 'null'
+      - string
+    doc: The path to an optional metrics file to write in
+    inputBinding:
+      position: 106
+      prefix: --metrics
   - id: report_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_path`
+    doc: An optional file where to generate a label-wise
     inputBinding:
-      position: 105
+      position: 107
       prefix: --report
 outputs:
   - id: output

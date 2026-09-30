@@ -84,9 +84,9 @@ inputs:
       prefix: --quiet
   - id: reference
     type: File
+    doc: Input Reference genome in FASTA format
     secondaryFiles:
       - .fai
-    doc: Input Reference genome in FASTA format
     inputBinding:
       position: 101
       prefix: --reference
@@ -119,7 +119,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `export_primers_path`
+    doc: Output BED file with found primer
     inputBinding:
       position: 102
       prefix: --export-primers
@@ -127,7 +127,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Output (FastQ) file with cleaned
     inputBinding:
       position: 103
       prefix: --output

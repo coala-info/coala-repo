@@ -125,17 +125,17 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Custom temporary folder for merged intermediates.
     inputBinding:
       position: 102
       prefix: --tmpdir
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file. If the path ends with .gz/.lz4,
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

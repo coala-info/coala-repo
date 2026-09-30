@@ -25,7 +25,7 @@ inputs:
       prefix: --in_bam_list
   - id: outplot_path
     type: string
-    doc: Output or path parameter `outplot_path`
+    doc: Filename for the output plot, ending in .png or .pdf
     inputBinding:
       position: 102
       prefix: --outplot

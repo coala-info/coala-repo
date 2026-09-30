@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketchy info
+baseCommand:
+  - sketchy
+  - info
 label: sketchy_info
 doc: "List sketch genome order, sketch build parameters\n\nTool homepage: https://github.com/esteinig/sketchy"
 inputs:

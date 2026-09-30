@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python mir_PREFeR.py
+baseCommand:
+  - python
+  - mir_PREFeR.py
 label: mir-prefer_miR_PREFeR.py
 doc: "miR-PREFeR is a tool for predicting miRNAs.\n\nTool homepage: https://github.com/hangelwen/miR-PREFeR"
 inputs:

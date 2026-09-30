@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bohra_generate-input
+baseCommand:
+  - bohra
+  - generate-input
 label: bohra_generate-input
 doc: "Generare input files for the Bohra pipeline.\n\nTool homepage: https://github.com/kristyhoran/bohra"
 inputs:
@@ -15,7 +17,7 @@ inputs:
   - id: isolate_ids
     type:
       - 'null'
-      - string
+      - File
     doc: Path to a file containing at least one column 'Isolate' with isolate 
       names. Optionally add 'species' and other columns you wish to use for 
       further annotation of trees.

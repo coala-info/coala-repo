@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locidex_report
+baseCommand:
+  - locidex
+  - report
 label: locidex_report
 doc: "Filter a sequence store and produce and extract of blast results and gene profile\n\
   \nTool homepage: https://pypi.org/project/locidex/"
@@ -119,7 +121,7 @@ inputs:
   - id: translation_table
     type:
       - 'null'
-      - Directory
+      - string
     doc: output directory
     inputBinding:
       position: 101

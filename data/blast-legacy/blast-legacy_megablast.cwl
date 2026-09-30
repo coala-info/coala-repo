@@ -336,18 +336,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `masked_query_output_path`
+    doc: Masked query output, must be used in conjunction with -D 2 option [File
+      Out]  Optional
     inputBinding:
       position: 103
-      prefix: --masked-query-output
+      prefix: -Q
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: BLAST report Output File [File Out]  Optional
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

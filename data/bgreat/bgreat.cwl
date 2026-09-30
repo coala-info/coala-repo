@@ -159,10 +159,10 @@ inputs:
       prefix: -u
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file (paths)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -f
 outputs:
   - id: output_file
     type:

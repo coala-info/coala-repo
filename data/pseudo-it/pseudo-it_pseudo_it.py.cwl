@@ -290,7 +290,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Some programs write files to a temporary directory. If your default tmp
       dir is size limited, specify a new one here, or just specifiy 'tmp-pi-out'
       to have a folder called 'tmp' created and used within the main output 
@@ -308,7 +308,7 @@ inputs:
       position: 101
       prefix: -vcf
   - id: out_dest_path
-    type: string
+    type: string?
     doc: Desired output directory. This will be created for you
     inputBinding:
       position: 102

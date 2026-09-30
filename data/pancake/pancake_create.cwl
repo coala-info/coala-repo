@@ -62,11 +62,10 @@ inputs:
       position: 101
       prefix: --sequences
   - id: pan_file_path
-    type: string
-    doc: Output or path parameter `pan_file_path`
+    type: string?
     inputBinding:
       position: 102
-      prefix: --pan-file
+      prefix: --pan_file
 outputs:
   - id: pan_file
     type:

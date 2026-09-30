@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tag pep2nuc
+baseCommand:
+  - tag
+  - pep2nuc
 label: tag_pep2nuc
 doc: "Converts protein-coordinate GFF3 features to their corresponding nucleotide
   coordinates in a genome-coordinate GFF3 file.\n\nTool homepage: https://github.com/standage/tag/"
@@ -35,10 +37,10 @@ inputs:
       prefix: --keep-prot
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: file to which output will be written; by default,
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

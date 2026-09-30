@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ctseq analyze
+baseCommand:
+  - ctseq
+  - analyze
 label: ctseq_analyze
 doc: "Analyze sequencing data from ctseq.\n\nTool homepage: https://github.com/ryanhmiller/ctseq"
 inputs:

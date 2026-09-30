@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chromosomer fragmentmap
+baseCommand:
+  - chromosomer
+  - fragmentmap
 label: chromosomer_fragmentmap
 doc: "Construct a fragment map from fragment alignments to reference chromosomes.\n\
   \nTool homepage: https://github.com/gtamazian/chromosomer"
@@ -21,6 +23,11 @@ inputs:
       using the 'chromosomer fastalength' tool
     inputBinding:
       position: 3
+  - id: output_map
+    type: string
+    doc: an output fragment map file name
+    inputBinding:
+      position: 4
   - id: ratio_threshold
     type:
       - 'null'
@@ -39,11 +46,11 @@ inputs:
       position: 104
       prefix: --shrink_gaps
 outputs:
-  - id: output_map
+  - id: out_output_map
     type: File
     doc: an output fragment map file name
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_map)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chromosomer:0.1.4a--py27_1

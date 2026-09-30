@@ -44,6 +44,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ignore-modules
+      itemSeparator: ','
   - id: list_formatters
     type:
       - 'null'

@@ -16,6 +16,11 @@ inputs:
     doc: a file with the sequence order
     inputBinding:
       position: 2
+  - id: output
+    type: string
+    doc: an output FASTA file of reordered sequences
+    inputBinding:
+      position: 3
   - id: ignore_missing
     type:
       - 'null'
@@ -26,11 +31,11 @@ inputs:
       position: 103
       prefix: --ignore_missing
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: an output FASTA file of reordered sequences
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

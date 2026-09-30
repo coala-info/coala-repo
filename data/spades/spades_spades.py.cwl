@@ -342,7 +342,7 @@ inputs:
       position: 101
       prefix: --only-error-correction
   - id: output_dir
-    type: Directory
+    type: string
     doc: directory to store all the resulting files (required)
     inputBinding:
       position: 101
@@ -511,7 +511,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files.
     inputBinding:
       position: 101

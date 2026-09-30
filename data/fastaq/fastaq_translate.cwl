@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq translate
+baseCommand:
+  - fastaq
+  - translate
 label: fastaq_translate
 doc: "Translates all sequences in input file. Output is always FASTA format\n\nTool
   homepage: https://github.com/sanger-pathogens/Fastaq"
@@ -10,6 +12,11 @@ inputs:
     doc: Name of file to be translated
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output FASTA file
+    inputBinding:
+      position: 2
   - id: frame
     type:
       - 'null'
@@ -19,11 +26,11 @@ inputs:
       position: 102
       prefix: --frame
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

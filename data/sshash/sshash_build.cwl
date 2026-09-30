@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sshash_build
+baseCommand:
+  - sshash
+  - build
 label: sshash_build
 doc: "Build a shash index from a FASTA file.\n\nTool homepage: https://github.com/jermp/sshash"
 inputs:

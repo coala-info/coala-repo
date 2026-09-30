@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_merge
+baseCommand:
+  - mmft
+  - merge
 label: mmft_merge
 doc: "Merge sequence records within/between fasta files into a single fasta record.\n\
   \nTool homepage: https://github.com/ARU-life-sciences/mmft"

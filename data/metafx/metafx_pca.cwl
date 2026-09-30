@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx pca
+baseCommand:
+  - metafx
+  - pca
 label: metafx_pca
 doc: "PCA dimensionality reduction and visualisation of samples based on extracted
   features\n\nTool homepage: https://github.com/ctlab/metafx"

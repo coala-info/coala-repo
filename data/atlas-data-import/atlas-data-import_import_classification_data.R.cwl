@@ -68,7 +68,7 @@ inputs:
   - id: sdrf_output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output path for imported SDRF files directory
     inputBinding:
       position: 101

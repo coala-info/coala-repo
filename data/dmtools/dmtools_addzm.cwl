@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools_addzm
+baseCommand:
+  - dmtools
+  - addzm
 label: dmtools_addzm
 doc: "add zoom levels for dm\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
@@ -71,10 +73,10 @@ inputs:
       prefix: --strand
   - id: output_dm_file_path
     type: string
-    doc: Output or path parameter `output_dm_file_path`
+    doc: output dm file
     inputBinding:
       position: 102
-      prefix: --output-dm-file
+      prefix: -o
 outputs:
   - id: output_dm_file
     type:

@@ -16,9 +16,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Path to the input genome FASTA file.
     secondaryFiles:
       - .fai
-    doc: Path to the input genome FASTA file.
     inputBinding:
       position: 101
       prefix: --input
@@ -32,7 +32,6 @@ inputs:
       prefix: --nt-genes
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

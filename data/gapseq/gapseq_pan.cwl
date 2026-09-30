@@ -25,6 +25,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --models_path
+      itemSeparator: ','
   - id: only_binary_rxn_tbl
     type:
       - 'null'
@@ -37,7 +38,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to directory, where output files will be saved
     inputBinding:
       position: 101
@@ -63,6 +64,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rxn.weights.files_path
+      itemSeparator: ','
   - id: rxnxgene_tables_path
     type:
       - 'null'

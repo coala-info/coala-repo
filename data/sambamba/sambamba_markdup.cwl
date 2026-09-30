@@ -85,7 +85,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify directory for temporary files
     inputBinding:
       position: 102

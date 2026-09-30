@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconda-utils list-build-failures
+baseCommand:
+  - bioconda-utils
+  - list-build-failures
 label: bioconda-utils_list-build-failures
 doc: "List recipes with build failure records\n\nTool homepage: http://bioconda.github.io/build-system.html"
 inputs:

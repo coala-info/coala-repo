@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: memote new
+baseCommand:
+  - memote
+  - new
 label: memote_new
 doc: "Create a suitable model repository structure from a template.\n\nTool homepage:
   https://memote.readthedocs.io/"

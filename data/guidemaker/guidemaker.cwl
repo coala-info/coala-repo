@@ -164,7 +164,7 @@ inputs:
       position: 101
       prefix: --lsr
   - id: outdir
-    type: Directory
+    type: string
     doc: The directory for data output
     inputBinding:
       position: 101
@@ -213,7 +213,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The temp file directory
     inputBinding:
       position: 101

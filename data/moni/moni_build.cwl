@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: moni build
+baseCommand:
+  - moni
+  - build
 label: moni_build
 doc: "Builds a reference index for the moni tool.\n\nTool homepage: https://github.com/maxrossi91/moni"
 inputs:
@@ -54,9 +56,9 @@ inputs:
       prefix: -f
   - id: reference
     type: File
+    doc: reference file name
     secondaryFiles:
       - .fai
-    doc: reference file name
     inputBinding:
       position: 101
       prefix: --reference
@@ -86,7 +88,6 @@ inputs:
       prefix: --wsize
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

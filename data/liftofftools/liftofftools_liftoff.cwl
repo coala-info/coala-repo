@@ -25,6 +25,7 @@ inputs:
     doc: Calculate edit distance
     inputBinding:
       position: 102
+      prefix: -edit-distance
   - id: fasta_file
     type:
       - 'null'
@@ -40,6 +41,7 @@ inputs:
     doc: Force overwrite
     inputBinding:
       position: 102
+      prefix: -force
   - id: infer_genes
     type:
       - 'null'
@@ -47,6 +49,7 @@ inputs:
     doc: Infer genes
     inputBinding:
       position: 102
+      prefix: -infer-genes
   - id: mmseqs_params
     type:
       - 'null'
@@ -54,6 +57,7 @@ inputs:
     doc: MMseqs parameters
     inputBinding:
       position: 102
+      prefix: -mmseqs_params
   - id: mmseqs_path
     type:
       - 'null'
@@ -61,10 +65,11 @@ inputs:
     doc: Path to MMseqs executable
     inputBinding:
       position: 102
+      prefix: -mmseqs_path
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102

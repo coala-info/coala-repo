@@ -44,10 +44,10 @@ inputs:
       prefix: --threads
   - id: cdf_file_path
     type: string
-    doc: Output or path parameter `cdf_file_path`
+    doc: Path to write CDFs of log2 fold changes to.
     inputBinding:
       position: 104
-      prefix: --cdf-file
+      prefix: --cdf
 outputs:
   - id: cdf_file
     type:

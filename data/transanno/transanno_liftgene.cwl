@@ -26,18 +26,14 @@ inputs:
       position: 102
       prefix: --format
   - id: failed_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `failed_path`
+    type: string
+    doc: Failed to liftOver GFF3/GTF output path
     inputBinding:
       position: 103
       prefix: --failed
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
+    doc: GFF3/GTF output path (unsorted)
     inputBinding:
       position: 104
       prefix: --output

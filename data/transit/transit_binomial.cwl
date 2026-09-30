@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transit_binomial
+baseCommand:
+  - transit
+  - binomial
 label: transit_binomial
 doc: "Performs binomial transit analysis.\n\nTool homepage: http://github.com/mad-lab/transit"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Comma-separated .wig files
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: annotation_file
     type: File
     doc: Annotation .prot_table or GFF3 file

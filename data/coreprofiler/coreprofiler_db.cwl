@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: coreprofiler db
+baseCommand:
+  - coreprofiler
+  - db
 label: coreprofiler_db
 doc: "Database handling specific arguments.\n\nTool homepage: https://gitlab.com/ifb-elixirfr/abromics"
 inputs:

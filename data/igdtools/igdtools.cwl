@@ -224,10 +224,10 @@ inputs:
       prefix: --update-indiv-ids
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: The output file to produce.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

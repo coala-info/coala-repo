@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mageck_plot
+baseCommand:
+  - mageck
+  - plot
 label: mageck_plot
 doc: "Plotting function for MAGeCK\n\nTool homepage: http://mageck.sourceforge.net"
 inputs:

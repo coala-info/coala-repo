@@ -315,7 +315,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `axt_path`
+    doc: create an output file in AXT format.
     inputBinding:
       position: 104
       prefix: --axt
@@ -323,7 +323,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `maf_path`
+    doc: create an output file in MAF format.
     inputBinding:
       position: 105
       prefix: --maf
@@ -331,7 +331,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: specify output alignment file;  otherwise alignments
     inputBinding:
       position: 106
       prefix: --output
@@ -339,7 +339,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `rdotplot_path`
+    doc: create an output file suitable for plotting in R.
     inputBinding:
       position: 107
       prefix: --rdotplot

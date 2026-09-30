@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur import
+baseCommand:
+  - augur
+  - import
 label: augur_import
 doc: "Import analyses into augur pipeline from other systems\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:

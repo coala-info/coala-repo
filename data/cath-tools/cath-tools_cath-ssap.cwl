@@ -19,13 +19,15 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --align-regions
+          separate: true
     doc: 'Handle region(s) <regions> as the alignment part of the structure. May be
       specified multiple times, in correspondence with the structures. Format is:
       D[5inwB02]251-348:B,408-416A:B (Put <regions> in quotes to prevent the square
       brackets confusing your shell ("No match"))'
     inputBinding:
       position: 103
-      prefix: --align-regions
   - id: aligndir
     type:
       - 'null'
@@ -276,7 +278,7 @@ inputs:
       prefix: --xmlsup
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: '[DEPRECATED] Output scores to <file> rather than to stdout'
     inputBinding:
       position: 104
       prefix: --outfile

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pairtools dedup
+baseCommand:
+  - pairtools
+  - dedup
 label: pairtools_dedup
 doc: "Find and remove PCR/optical duplicates.\n\nTool homepage: https://github.com/mirnylab/pairtools"
 inputs:
@@ -327,10 +329,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output file for pairs after duplicate
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: --output
   - id: output_stats_path
     type:
       - 'null'

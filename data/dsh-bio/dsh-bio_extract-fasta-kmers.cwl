@@ -52,7 +52,7 @@ inputs:
       prefix: --upstream-length
   - id: output_kmer_file_path
     type: string
-    doc: Output or path parameter `output_kmer_file_path`
+    doc: output kmer file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-kmer-file

@@ -45,7 +45,7 @@ inputs:
   - id: do_the_ssaps
     type:
       - 'null'
-      - Directory
+      - string
     doc: Do the required SSAPs in directory; use results as with 
       --ssap-scores-infile. Use a suitable temp directory if none is specified
     inputBinding:
@@ -64,10 +64,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --pdb-infile
+          separate: true
     doc: Read PDB from file (may be specified multiple times)
     inputBinding:
       position: 104
-      prefix: --pdb-infile
   - id: pdbs_from_stdin
     type:
       - 'null'

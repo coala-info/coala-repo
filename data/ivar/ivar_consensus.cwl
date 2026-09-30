@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ivar_consensus
+baseCommand:
+  - ivar
+  - consensus
 label: ivar_consensus
 doc: "Generates a consensus sequence from pileup data.\n\nTool homepage: https://andersen-lab.github.io/ivar/html/"
 inputs:

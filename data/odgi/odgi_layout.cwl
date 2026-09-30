@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi layout
+baseCommand:
+  - odgi
+  - layout
 label: odgi_layout
 doc: "Establish 2D layouts of the graph using path-guided stochastic gradient descent.
   The graph must be sorted and id-compacted.\n\nTool homepage: https://github.com/vgteam/odgi"
@@ -174,7 +176,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 101

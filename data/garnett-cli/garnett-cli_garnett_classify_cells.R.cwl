@@ -51,7 +51,7 @@ inputs:
   - id: plot_output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: output path for the t-SNE plots. In case --cluster-extend tag is 
       provided, two plots will be made. If no path is provided, plots will not 
       be produced.
@@ -79,7 +79,6 @@ inputs:
       prefix: --verbose
   - id: cds_output_obj_path
     type: string
-    doc: Output or path parameter `cds_output_obj_path`
     inputBinding:
       position: 102
       prefix: --cds-output-obj

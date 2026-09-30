@@ -34,6 +34,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -heavy=
+      separate: false
   - id: input_file
     type:
       - 'null'
@@ -42,6 +43,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -input=
+      separate: false
   - id: sleep
     type:
       - 'null'
@@ -50,12 +52,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -sleep=
+      separate: false
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Make some output in file as well.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -output=
+      separate: false
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast_show
+baseCommand:
+  - mrpast
+  - show
 label: mrpast_show
 doc: "Show results from mrpast solver.\n\nTool homepage: https://aprilweilab.github.io/"
 inputs:

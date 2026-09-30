@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deacon server
+baseCommand:
+  - deacon
+  - server
 label: deacon_server
 doc: "Start/stop a server process for reduced latency filtering\n\nTool homepage:
   https://github.com/bede/deacon"

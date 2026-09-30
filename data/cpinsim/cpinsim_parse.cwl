@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpinsim_parse
+baseCommand:
+  - cpinsim
+  - parse
 label: cpinsim_parse
 doc: "Parse protein interaction data from various file formats.\n\nTool homepage:
   https://github.com/BiancaStoecker/cpinsim"
@@ -33,8 +35,7 @@ inputs:
       position: 101
       prefix: --interactions_without_constraints
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

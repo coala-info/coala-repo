@@ -168,8 +168,7 @@ inputs:
       position: 101
       prefix: --worker-index
   - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output-dir

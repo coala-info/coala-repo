@@ -55,7 +55,6 @@ inputs:
       prefix: --taxonomy-format
   - id: schema_path
     type: string
-    doc: Output or path parameter `schema_path`
     inputBinding:
       position: 102
       prefix: --schema

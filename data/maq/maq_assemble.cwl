@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq_assemble
+baseCommand:
+  - maq
+  - assemble
 label: maq_assemble
 doc: "Assemble genome sequences\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:

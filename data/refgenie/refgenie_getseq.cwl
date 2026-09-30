@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie getseq
+baseCommand:
+  - refgenie
+  - getseq
 label: refgenie_getseq
 doc: "Get sequences from a genome.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

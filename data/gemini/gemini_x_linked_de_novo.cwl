@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini x_linked_de_novo
+baseCommand:
+  - gemini
+  - x_linked_de_novo
 label: gemini_x_linked_de_novo
 doc: "Find X-linked de novo variants\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

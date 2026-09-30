@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr sample
+baseCommand:
+  - seidr
+  - sample
 label: seidr_sample
 doc: "Sample edges from a SeidrFile\n\nTool homepage: https://github.com/bschiffthaler/seidr"
 inputs:
@@ -52,7 +54,7 @@ inputs:
       prefix: --replacement
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 102
       prefix: --outfile

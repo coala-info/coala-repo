@@ -36,19 +36,21 @@ inputs:
       prefix: -sn
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: '[output prefix]. This value will override corresponding value in properties
+      file.'
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: -out
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output prefix. This value will override corresponding value in 
       properties file.
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

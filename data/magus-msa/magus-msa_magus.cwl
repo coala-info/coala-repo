@@ -24,7 +24,7 @@ inputs:
   - id: constrain
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Constrain MAGUS to respect subalignments (true or\n                    \
       \    false)"
     inputBinding:
@@ -59,7 +59,7 @@ inputs:
   - id: graph_build_hmm_extend
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Extend the alignment graph MAFFT backbones with hmmer\n                \
       \        (true or false)"
     inputBinding:
@@ -77,7 +77,7 @@ inputs:
   - id: graph_build_restrict
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Prevent the alignment graph from adding edges that\n                   \
       \     violate subalignments (true or false)"
     inputBinding:
@@ -104,7 +104,7 @@ inputs:
   - id: graph_trace_optimize
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Run an optimization step on the graph trace (true or\n                 \
       \       false)"
     inputBinding:
@@ -171,7 +171,7 @@ inputs:
   - id: only_guide_tree
     type:
       - 'null'
-      - boolean
+      - string
     doc: Only output the guide tree (true or false)
     inputBinding:
       position: 101
@@ -188,7 +188,7 @@ inputs:
   - id: recurse
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Allow MAGUS to recurse on large subsets (true or\n                     \
       \   false)"
     inputBinding:
@@ -237,7 +237,6 @@ inputs:
       prefix: --directory
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdst_matrix
+baseCommand:
+  - cdst
+  - matrix
 label: cdst_matrix
 doc: "Generate a matrix from JSON input.\n\nTool homepage: https://github.com/l1-mh/CDST"
 inputs:
@@ -20,10 +22,10 @@ inputs:
       prefix: --verbose
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Output directory
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type: Directory

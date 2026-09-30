@@ -175,10 +175,10 @@ inputs:
       prefix: --writeBinStats
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Path to directory for output (required)
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --outputDir
 outputs:
   - id: output_dir
     type: Directory

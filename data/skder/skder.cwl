@@ -106,7 +106,7 @@ inputs:
       position: 101
       prefix: --minimal_n50
   - id: output_directory
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 101

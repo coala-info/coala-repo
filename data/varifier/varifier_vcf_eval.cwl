@@ -22,7 +22,7 @@ inputs:
     inputBinding:
       position: 3
   - id: outdir
-    type: Directory
+    type: string
     doc: Name of output directory
     inputBinding:
       position: 4
@@ -58,6 +58,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --filter_pass
+      itemSeparator: ','
   - id: flank_length
     type:
       - 'null'

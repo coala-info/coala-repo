@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: -g
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input bed/gff/vcf file
     inputBinding:
       position: 101
@@ -37,13 +35,10 @@ inputs:
       position: 101
       prefix: -ubam
 outputs:
-  - id: output_uncompressed_bam
-    type:
-      - 'null'
-      - File
-    doc: Write uncompressed BAM output. Default writes compressed BAM.
-    outputBinding:
-      glob: $(inputs.uncompressed_bam)
+  - id: output_bam
+    type: stdout
+    doc: BAM written to standard output (uncompressed with -ubam)
+stdout: bedtools_bedpetobam.bam
 requirements:
   - class: InlineJavascriptRequirement
 hints:

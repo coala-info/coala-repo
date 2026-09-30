@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_07_do_binning
+baseCommand:
+  - mvip
+  - MVP_07_do_binning
 label: mvip_MVP_07_do_binning
 doc: "Run vRhyme for binning virus genomes and return outputs.\n\nTool homepage: https://gitlab.com/ccoclet/mvp"
 inputs:

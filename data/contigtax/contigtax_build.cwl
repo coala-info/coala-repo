@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: contigtax build
+baseCommand:
+  - contigtax
+  - build
 label: contigtax_build
 doc: "Builds a Diamond database and taxon mapping for contigs.\n\nTool homepage: https://github.com/NBISweden/contigtax"
 inputs:

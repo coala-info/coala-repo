@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextstrain_remote
+baseCommand:
+  - nextstrain
+  - remote
 label: nextstrain_remote
 doc: "Upload, download, and manage Nextstrain files on remote sources.\n\nTool homepage:
   https://nextstrain.org"

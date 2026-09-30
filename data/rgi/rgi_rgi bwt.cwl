@@ -75,7 +75,7 @@ inputs:
   - id: mapped
     type:
       - 'null'
-      - boolean
+      - string
     doc: filter reads based on mapped reads (default=False)
     inputBinding:
       position: 101
@@ -83,7 +83,7 @@ inputs:
   - id: mapq
     type:
       - 'null'
-      - boolean
+      - string
     doc: filter reads based on MAPQ score (default=False)
     inputBinding:
       position: 101
@@ -110,6 +110,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output_file
 outputs:
   - id: output_file
     type:
@@ -117,7 +122,9 @@ outputs:
       - File
     doc: name of output filename(s)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minibusco run
+baseCommand:
+  - minibusco
+  - run
 label: minibusco_run
 doc: "Run BUSCO analysis with Minibosco\n\nTool homepage: https://github.com/huangnengCSU/minibusco"
 inputs:
@@ -110,7 +112,7 @@ inputs:
       position: 101
       prefix: --mode
   - id: output_dir
-    type: Directory
+    type: string
     doc: The output folder.
     inputBinding:
       position: 101

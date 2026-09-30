@@ -127,7 +127,7 @@ inputs:
       position: 101
       prefix: -H
   - id: input_file
-    type: string
+    type: File
     doc: Input file, layout from wtlay
     inputBinding:
       position: 101
@@ -246,10 +246,10 @@ inputs:
       prefix: -y
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file, consensus sequences, [STDOUT]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

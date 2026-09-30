@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hictk load
+baseCommand:
+  - hictk
+  - load
 label: hictk_load
 doc: "Build .cool and .hic files from interactions in various text formats.\n\nTool
   homepage: https://github.com/paulsengroup/hictk"
@@ -178,7 +180,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to a folder where to store temporary data.
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: knock-knock parallel
+baseCommand:
+  - knock-knock
+  - parallel
 label: knock-knock_parallel
 doc: "Run knock-knock in parallel across multiple samples.\n\nTool homepage: https://github.com/jeffhussmann/knock-knock"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haptools transform
+baseCommand:
+  - haptools
+  - transform
 label: haptools_transform
 doc: "Creates a VCF composed of haplotypes\n\nTool homepage: https://github.com/cast-genomics/haptools"
 inputs:
@@ -105,10 +107,10 @@ inputs:
       prefix: --verbosity
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: A VCF file containing haplotype 'genotypes'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: flowcraft_report
+baseCommand:
+  - flowcraft
+  - report
 label: flowcraft_report
 doc: "Generate a report from pipeline execution data.\n\nTool homepage: https://github.com/assemblerflow/flowcraft"
 inputs:

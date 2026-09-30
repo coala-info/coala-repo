@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: folddisco query
+baseCommand:
+  - folddisco
+  - query
 label: folddisco_query
 doc: "Search for patterns in PDB files using an index.\n\nTool homepage: https://github.com/steineggerlab/folddisco"
 inputs:
@@ -13,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --angle
+      itemSeparator: ','
   - id: ca_distance_threshold
     type:
       - 'null'
@@ -65,6 +68,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --distance
+      itemSeparator: ','
   - id: freq_filter
     type:
       - 'null'
@@ -282,10 +286,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file path [stdout]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mitorsaw_haplotype
+baseCommand:
+  - mitorsaw
+  - haplotype
 label: mitorsaw_haplotype
 doc: "Run the haplotyper on a dataset\n\nTool homepage: https://github.com/PacificBiosciences/mitorsaw"
 inputs:
@@ -8,10 +10,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --bam
+        separate: true
     doc: Input alignment file in BAM format, can be specified multiple times
     inputBinding:
       position: 101
-      prefix: --bam
   - id: database
     type:
       - 'null'
@@ -46,9 +50,9 @@ inputs:
       prefix: --minimum-read-count
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -73,7 +77,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_debug_path`
+    doc: Optional output debug folder
     inputBinding:
       position: 102
       prefix: --output-debug
@@ -81,15 +85,13 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_hap_stats_path`
+    doc: Optional haplotype stats
     inputBinding:
       position: 103
       prefix: --output-hap-stats
   - id: output_vcf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_vcf_path`
+    type: string
+    doc: Output variant call file (VCF)
     inputBinding:
       position: 104
       prefix: --output-vcf

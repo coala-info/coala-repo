@@ -22,7 +22,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save disassembled files
     inputBinding:
       position: 102

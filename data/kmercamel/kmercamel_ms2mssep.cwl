@@ -15,18 +15,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_mask_file_path`
+    doc: '- output file with mask'
     inputBinding:
       position: 101
-      prefix: --output-mask-file
+      prefix: -m
   - id: output_superstring_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_superstring_file_path`
+    doc: '- output file with superstring'
     inputBinding:
       position: 102
-      prefix: --output-superstring-file
+      prefix: -s
 outputs:
   - id: output_mask_file
     type:

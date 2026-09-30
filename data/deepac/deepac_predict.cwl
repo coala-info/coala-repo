@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac_predict
+baseCommand:
+  - deepac
+  - predict
 label: deepac_predict
 doc: "Predicts the presence of bacteriophages in DNA sequences.\n\nTool homepage:
   https://gitlab.com/rki_bioinformatics/DeePaC"
@@ -118,7 +120,6 @@ inputs:
       prefix: --array
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

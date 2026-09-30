@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit_info
+baseCommand:
+  - nwkit
+  - info
 label: nwkit_info
 doc: "Show information about a newick file.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

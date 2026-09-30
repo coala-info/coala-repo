@@ -53,10 +53,10 @@ inputs:
       prefix: -d
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: STR      output file [stdout]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

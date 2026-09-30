@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: itol_config text_label
+baseCommand:
+  - itol_config
+  - text_label
 label: itol-config_text_label
 doc: "Generates an iTOL text label configuration file from a CSV file.\n\nTool homepage:
   https://github.com/jodyphelan/itol-config"
@@ -29,7 +31,7 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file name for the iTOL configuration file
     inputBinding:
       position: 102
       prefix: --output

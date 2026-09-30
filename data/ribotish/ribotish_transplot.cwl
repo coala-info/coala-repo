@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotish_transplot
+baseCommand:
+  - ribotish
+  - transplot
 label: ribotish_transplot
 doc: "Plotting tool for riboseq and rnaseq data aligned to transcripts.\n\nTool homepage:
   https://github.com/zhpn1024/ribotish"
@@ -221,7 +223,7 @@ inputs:
       position: 101
       prefix: --ymax
   - id: output_path
-    type: string
+    type: string?
     doc: 'Output data file (default: ribobampath[:-4]+'
     inputBinding:
       position: 102

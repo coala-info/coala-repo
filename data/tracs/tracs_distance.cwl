@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tracs_distance
+baseCommand:
+  - tracs
+  - distance
 label: tracs_distance
 doc: "Estimates pairwise SNP and transmission distances between each pair of samples
   aligned to the same reference genome.\n\nTool homepage: https://github.com/gtonkinhill/tracs"
@@ -99,10 +101,9 @@ inputs:
       prefix: --trans_threshold
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

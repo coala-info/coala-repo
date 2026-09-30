@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: debarcer.py bed
+baseCommand:
+  - debarcer.py
+  - bed
 label: debarcer_bed
 doc: "Generate a BED file from a BAM file, identifying genomic intervals based on
   read depth.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
@@ -52,10 +54,9 @@ inputs:
       prefix: --Stepper
   - id: bedfile_path
     type: string
-    doc: Output or path parameter `bedfile_path`
     inputBinding:
       position: 102
-      prefix: --bedfile
+      prefix: --Bedfile
 outputs:
   - id: bedfile
     type: File

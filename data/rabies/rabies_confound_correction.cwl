@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rabies confound_correction
+baseCommand:
+  - rabies
+  - confound_correction
 label: rabies_confound_correction
 doc: "Conduct confound correction and analysis in native space.\n\nTool homepage:
   https://github.com/CoBrALab/RABIES"
@@ -11,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: path for confound correction output directory.
     inputBinding:
       position: 2
@@ -82,7 +84,6 @@ inputs:
       Can set a minimum number of timepoints remaining after frame censoring. If the
       threshold is not met, an empty file is generated and the scan is not considered
       in further steps."
-      FD_censoring=false,FD_threshold=0.05,DVARS_censoring=false,minimum_timepoint=3
     inputBinding:
       position: 103
       prefix: --frame_censoring

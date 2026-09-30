@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin rgp_cluster
+baseCommand:
+  - ppanggolin
+  - rgp_cluster
 label: ppanggolin_rgp_cluster
 doc: "Cluster RGPs based on gene repertoire relatedness.\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
 inputs:
@@ -142,7 +144,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

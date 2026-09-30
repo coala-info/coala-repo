@@ -45,6 +45,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ignore-samples
+      itemSeparator: ','
   - id: input_vi
     type:
       - 'null'
@@ -65,6 +66,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --keep-samples
+      itemSeparator: ','
   - id: keep_temp_files
     type:
       - 'null'
@@ -151,7 +153,7 @@ inputs:
       position: 102
       prefix: --no-merge
   - id: out
-    type: Directory
+    type: string
     doc: "Output directory name; must not be already\nexisting"
     inputBinding:
       position: 102

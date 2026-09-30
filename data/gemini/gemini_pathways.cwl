@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini pathways
+baseCommand:
+  - gemini
+  - pathways
 label: gemini_pathways
 doc: "Report pathways for indivs/genes/sites with LoF variants\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gdc-client upload
+baseCommand:
+  - gdc-client
+  - upload
 label: gdc-client_upload
 doc: "Upload files to the GDC.\n\nTool homepage: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool"
 inputs:

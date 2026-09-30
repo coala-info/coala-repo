@@ -72,10 +72,10 @@ inputs:
       prefix: --store
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Specify output file name to store the coverage in a
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

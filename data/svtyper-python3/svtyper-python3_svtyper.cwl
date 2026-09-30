@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bam
+      itemSeparator: ','
   - id: disc_weight
     type:
       - 'null'

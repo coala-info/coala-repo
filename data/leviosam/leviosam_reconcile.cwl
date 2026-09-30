@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: leviosam reconcile
+baseCommand:
+  - leviosam
+  - reconcile
 label: leviosam_reconcile
 doc: "Reconcile multiple BAM files into a single BAM file.\n\nTool homepage: https://github.com/alshai/levioSAM"
 inputs:
@@ -31,10 +33,10 @@ inputs:
       prefix: -r
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to the output SAM/BAM file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

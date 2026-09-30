@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genomad marker-classification
+baseCommand:
+  - genomad
+  - marker-classification
 label: genomad_marker-classification
 doc: "Classify the sequences in the INPUT file (FASTA format) based on the presence
   of geNomad markers (located in the DATABASE directory) and write the results to
@@ -12,11 +14,16 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output directory for results
+    inputBinding:
+      position: 2
   - id: database
     type: Directory
     doc: Directory containing geNomad markers
     inputBinding:
-      position: 2
+      position: 3
   - id: quiet
     type:
       - 'null'
@@ -50,11 +57,11 @@ inputs:
       position: 103
       prefix: --verbose
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: Output directory for results
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0

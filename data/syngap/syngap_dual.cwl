@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: syngap dual
+baseCommand:
+  - syngap
+  - dual
 label: syngap_dual
 doc: "Compare two species' genomes and annotations.\n\nTool homepage: https://github.com/yanyew/SynGAP"
 inputs:

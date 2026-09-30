@@ -522,7 +522,6 @@ inputs:
       prefix: --window-size
   - id: cmpout_path
     type: string
-    doc: Output or path parameter `cmpout_path`
     inputBinding:
       position: 104
       prefix: --cmpout

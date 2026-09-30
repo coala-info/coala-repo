@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmcp version
+baseCommand:
+  - kmcp
+  - version
 label: kmcp_version
 doc: "Print version information and check for update\n\nTool homepage: https://github.com/shenwei356/kmcp"
 inputs:

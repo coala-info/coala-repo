@@ -12,6 +12,11 @@ inputs:
     doc: a BED file
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: an output file
+    inputBinding:
+      position: 2
   - id: description
     type:
       - 'null'
@@ -37,11 +42,11 @@ inputs:
       position: 102
       prefix: --name
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: an output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

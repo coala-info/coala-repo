@@ -623,9 +623,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    doc: "dbSNP or ClinVar VCF file for variant\n                        annotating/filtering."
     secondaryFiles:
       - .tbi?
-    doc: "dbSNP or ClinVar VCF file for variant\n                        annotating/filtering."
     inputBinding:
       position: 101
       prefix: --dbsnp
@@ -634,9 +634,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    doc: "dbSNP or ClinVar VCF file for variant\n                        annotating/filtering."
     secondaryFiles:
       - .tbi?
-    doc: "dbSNP or ClinVar VCF file for variant\n                        annotating/filtering."
     inputBinding:
       position: 101
       prefix: --dbsnp
@@ -2419,6 +2419,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf_filter
+      itemSeparator: ','
   - id: vcf_filter
     type:
       - 'null'
@@ -2439,6 +2440,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -vcf_filter
+      itemSeparator: ','
   - id: vep_af
     type:
       - 'null'
@@ -2470,7 +2472,6 @@ inputs:
       prefix: --vep_af
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

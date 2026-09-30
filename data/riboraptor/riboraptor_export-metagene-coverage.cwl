@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: riboraptor export-metagene-coverage
+baseCommand:
+  - riboraptor
+  - export-metagene-coverage
 label: riboraptor_export-metagene-coverage
 doc: "Export metagene coverage for given region\n\nTool homepage: https://github.com/saketkc/riboraptor"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe trim_reads
+baseCommand:
+  - haphpipe
+  - trim_reads
 label: haphpipe_trim_reads
 doc: "Trims adapter sequences and low-quality bases from FASTQ files.\n\nTool homepage:
   https://github.com/gwcbi/haphpipe"
@@ -72,7 +74,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

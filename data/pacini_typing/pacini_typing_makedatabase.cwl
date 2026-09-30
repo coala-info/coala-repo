@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Pacini-typing makedatabase
+baseCommand:
+  - Pacini-typing
+  - makedatabase
 label: pacini_typing_makedatabase
 doc: "Builds a reference database for Pacini typing.\n\nTool homepage: https://github.com/RIVM-bioinformatics/Pacini-typing"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi server
+baseCommand:
+  - odgi
+  - server
 label: odgi_server
 doc: "Start a basic HTTP server with a given path index file to go from *path:position*
   to *pangenome:position* very efficiently.\n\nTool homepage: https://github.com/vgteam/odgi"

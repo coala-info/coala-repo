@@ -39,11 +39,13 @@ inputs:
     type:
       type: array
       items: int
+      inputBinding:
+        prefix: --LANE
+        separate: true
     doc: Lane number. This can be specified multiple times. Reads with the same 
       index in multiple lanes will be added to the same output file.
     inputBinding:
       position: 101
-      prefix: --LANE
   - id: read_structure
     type: string
     doc: A description of the logical structure of clusters in an Illumina Run 

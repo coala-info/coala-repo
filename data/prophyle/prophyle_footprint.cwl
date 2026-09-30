@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prophyle_footprint
+baseCommand:
+  - prophyle
+  - footprint
 label: prophyle_footprint
 doc: "Calculate footprint of prophages in a genome.\n\nTool homepage: https://github.com/karel-brinda/prophyle"
 inputs:

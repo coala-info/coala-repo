@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxonkit profile2cami
+baseCommand:
+  - taxonkit
+  - profile2cami
 label: taxonkit_profile2cami
 doc: "Convert metagenomic profile table to CAMI format\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
@@ -114,7 +116,7 @@ inputs:
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

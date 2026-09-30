@@ -232,7 +232,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to your temporary directory
     inputBinding:
       position: 101
@@ -275,10 +275,10 @@ inputs:
       prefix: --XSteve
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' The name of output file [INFILE.bs(se|pe|rrbs)]'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

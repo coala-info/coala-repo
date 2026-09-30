@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: funnel aws
+baseCommand:
+  - funnel
+  - aws
 label: funnel_aws
 doc: "Development utilities for creating funnel resources on AWS\n\nTool homepage:
   https://ohsu-comp-bio.github.io/funnel/"

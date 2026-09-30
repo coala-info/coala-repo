@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam_bed-length
+baseCommand:
+  - rustybam
+  - bed-length
 label: rustybam_bed-length
 doc: "Count the number of bases in a bed file\n\nTool homepage: https://github.com/mrvollger/rustybam"
 inputs:

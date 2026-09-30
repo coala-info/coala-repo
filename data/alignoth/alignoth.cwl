@@ -124,9 +124,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Path to the reference fasta file
     secondaryFiles:
       - .fai
-    doc: Path to the reference fasta file
     inputBinding:
       position: 101
       prefix: --reference
@@ -152,7 +152,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coverage_output_path`
     inputBinding:
       position: 102
       prefix: --coverage-output
@@ -160,7 +159,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `highlight_data_output_path`
     inputBinding:
       position: 103
       prefix: --highlight-data-output
@@ -168,7 +166,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output
@@ -176,7 +173,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `read_data_output_path`
     inputBinding:
       position: 105
       prefix: --read-data-output
@@ -184,7 +180,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ref_data_output_path`
     inputBinding:
       position: 106
       prefix: --ref-data-output
@@ -192,7 +187,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `spec_output_path`
     inputBinding:
       position: 107
       prefix: --spec-output

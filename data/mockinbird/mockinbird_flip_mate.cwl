@@ -12,12 +12,17 @@ inputs:
     doc: path to paired-end bam file
     inputBinding:
       position: 1
-outputs:
   - id: output_bam
+    type: string
+    doc: path to output bam file
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_output_bam
     type: File
     doc: path to output bam file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_bam)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mockinbird:1.0.0a1--py38he5da3d1_7

@@ -54,10 +54,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --mdd
+          separate: true
     doc: Metadata domain to report. Can be specified multiple times or 'all'.
     inputBinding:
       position: 102
-      prefix: --mdd
   - id: mm
     type:
       - 'null'
@@ -111,11 +113,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --oo
+          separate: true
     doc: Format-specific dataset opening option. Can be specified multiple 
       times.
     inputBinding:
       position: 102
-      prefix: --oo
   - id: proj4
     type:
       - 'null'

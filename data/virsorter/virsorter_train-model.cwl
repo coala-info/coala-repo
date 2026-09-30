@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virsorter train-model
+baseCommand:
+  - virsorter
+  - train-model
 label: virsorter_train-model
 doc: "Training customized classifier model.\n\nTool homepage: https://github.com/simroux/VirSorter"
 inputs:
@@ -51,7 +53,7 @@ inputs:
       position: 102
       prefix: --viral-ftrfile
   - id: working_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 102

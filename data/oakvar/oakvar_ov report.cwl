@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ov report
+baseCommand:
+  - ov
+  - report
 label: oakvar_ov report
 doc: "Generate reports from a job\n\nTool homepage: http://www.oakvar.com"
 inputs:
@@ -188,6 +190,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --user
+  - id: output_dir_path
+    type: string?
+    doc: directory for output files
+    inputBinding:
+      position: 103
+      prefix: -d
 outputs:
   - id: output_dir
     type:
@@ -195,7 +203,9 @@ outputs:
       - Directory
     doc: directory for output files
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oakvar:2.12.25--pyhdfd78af_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga_merge
+baseCommand:
+  - sga
+  - merge
 label: sga_merge
 doc: "Merge the sequence files READS1, READS2 into a single file/index\n\nTool homepage:
   https://github.com/jts/sga"

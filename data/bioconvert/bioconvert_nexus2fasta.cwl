@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert nexus2fasta
+baseCommand:
+  - bioconvert
+  - nexus2fasta
 label: bioconvert_nexus2fasta
 doc: "Convert file from '('NEXUS',)' to '('FASTA',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

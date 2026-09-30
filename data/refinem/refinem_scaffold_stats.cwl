@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refinem scaffold_stats
+baseCommand:
+  - refinem
+  - scaffold_stats
 label: refinem_scaffold_stats
 doc: "Calculate statistics for scaffolds.\n\nTool homepage: http://pypi.python.org/pypi/refinem/"
 inputs:
@@ -15,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 3

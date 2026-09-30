@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur align
+baseCommand:
+  - augur
+  - align
 label: augur_align
 doc: "Align multiple nucleotide sequences from FASTA. The \"N\" character is treated
   as missing or ambiguous sites, so aligning amino acid sequences is not supported.\n\
@@ -70,10 +72,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Add this reference sequence to the dataset & strip insertions relative 
       to this. Use if the reference is NOT already in the input sequences
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference-sequence
@@ -86,8 +88,7 @@ inputs:
       position: 102
       prefix: --remove-reference
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --output

@@ -47,10 +47,9 @@ inputs:
       prefix: --low-ram
   - id: database_path
     type: string
-    doc: Output or path parameter `database_path`
     inputBinding:
       position: 102
-      prefix: --database
+      prefix: --db
 outputs:
   - id: database
     type: File

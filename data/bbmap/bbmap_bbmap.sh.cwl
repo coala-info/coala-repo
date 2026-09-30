@@ -12,7 +12,8 @@ inputs:
       index (unless using 'nodisk').
     inputBinding:
       position: 101
-      prefix: ref
+      prefix: ref=
+      separate: false
   - id: input
     type:
       - 'null'
@@ -20,7 +21,8 @@ inputs:
     doc: Primary reads input; required parameter for mapping.
     inputBinding:
       position: 101
-      prefix: in
+      prefix: in=
+      separate: false
   - id: input2
     type:
       - 'null'
@@ -28,25 +30,29 @@ inputs:
     doc: For paired reads in two files.
     inputBinding:
       position: 101
-      prefix: in2
+      prefix: in2=
+      separate: false
   - id: output
     type: string
     doc: Write all reads to this file.
     inputBinding:
       position: 101
-      prefix: out
+      prefix: out=
+      separate: false
   - id: output_unmapped
     type: string
     doc: Write only unmapped reads to this file.
     inputBinding:
       position: 101
-      prefix: outu
+      prefix: outu=
+      separate: false
   - id: output_mapped
     type: string
     doc: Write only mapped reads to this file.
     inputBinding:
       position: 101
-      prefix: outm
+      prefix: outm=
+      separate: false
   - id: nodisk
     type:
       - 'null'
@@ -63,7 +69,8 @@ inputs:
     doc: Unique numeric ID for multiple references in the same directory.
     inputBinding:
       position: 101
-      prefix: build
+      prefix: build=
+      separate: false
   - id: kmer_length
     type:
       - 'null'
@@ -71,7 +78,8 @@ inputs:
     doc: Kmer length, range 8-15.
     inputBinding:
       position: 101
-      prefix: k
+      prefix: k=
+      separate: false
   - id: path
     type:
       - 'null'
@@ -79,7 +87,8 @@ inputs:
     doc: Specify the location to write the index.
     inputBinding:
       position: 101
-      prefix: path
+      prefix: path=
+      separate: false
   - id: use_modulo
     type:
       - 'null'
@@ -104,7 +113,8 @@ inputs:
       mapping.
     inputBinding:
       position: 101
-      prefix: interleaved
+      prefix: interleaved=
+      separate: false
   - id: fasta_read_length
     type:
       - 'null'
@@ -112,7 +122,8 @@ inputs:
     doc: Break up FASTA reads longer than this.
     inputBinding:
       position: 101
-      prefix: fastareadlen
+      prefix: fastareadlen=
+      separate: false
   - id: unpigz
     type:
       - 'null'
@@ -136,7 +147,8 @@ inputs:
     doc: Only process the first N reads.
     inputBinding:
       position: 101
-      prefix: reads
+      prefix: reads=
+      separate: false
   - id: samplerate
     type:
       - 'null'
@@ -144,7 +156,8 @@ inputs:
     doc: Randomly select fraction of reads for mapping.
     inputBinding:
       position: 101
-      prefix: samplerate
+      prefix: samplerate=
+      separate: false
   - id: skipreads
     type:
       - 'null'
@@ -152,7 +165,8 @@ inputs:
     doc: Skip the first N reads.
     inputBinding:
       position: 101
-      prefix: skipreads
+      prefix: skipreads=
+      separate: false
   - id: fast
     type:
       - 'null'
@@ -176,7 +190,8 @@ inputs:
     doc: Don't look for indels longer than this.
     inputBinding:
       position: 101
-      prefix: maxindel
+      prefix: maxindel=
+      separate: false
   - id: min_identity
     type:
       - 'null'
@@ -184,7 +199,8 @@ inputs:
     doc: Approximate minimum alignment identity to look for.
     inputBinding:
       position: 101
-      prefix: minid
+      prefix: minid=
+      separate: false
   - id: local
     type:
       - 'null'
@@ -200,7 +216,8 @@ inputs:
     doc: Set to number of threads desired.
     inputBinding:
       position: 101
-      prefix: threads
+      prefix: threads=
+      separate: false
   - id: ambiguous
     type:
       - 'null'
@@ -208,7 +225,8 @@ inputs:
     doc: Set behavior on ambiguously-mapped reads (best, toss, random, all).
     inputBinding:
       position: 101
-      prefix: ambiguous
+      prefix: ambiguous=
+      separate: false
   - id: quality_in
     type:
       - 'null'
@@ -216,7 +234,8 @@ inputs:
     doc: Input quality value ASCII offset (33 or 64).
     inputBinding:
       position: 101
-      prefix: qin
+      prefix: qin=
+      separate: false
   - id: quality_trim
     type:
       - 'null'
@@ -224,13 +243,15 @@ inputs:
     doc: Quality-trim ends before mapping (f, l, r, lr).
     inputBinding:
       position: 101
-      prefix: qtrim
+      prefix: qtrim=
+      separate: false
   - id: bam_script
     type: string
     doc: Write a shell script to turn sam output into sorted, indexed bam.
     inputBinding:
       position: 101
-      prefix: bamscript
+      prefix: bamscript=
+      separate: false
   - id: ordered
     type:
       - 'null'
@@ -252,19 +273,22 @@ inputs:
     doc: Statistics on how many reads mapped to which scaffold.
     inputBinding:
       position: 101
-      prefix: scafstats
+      prefix: scafstats=
+      separate: false
   - id: covstats
     type: string
     doc: Per-scaffold coverage info.
     inputBinding:
       position: 101
-      prefix: covstats
+      prefix: covstats=
+      separate: false
   - id: rpkm
     type: string
     doc: Per-scaffold RPKM/FPKM counts.
     inputBinding:
       position: 101
-      prefix: rpkm
+      prefix: rpkm=
+      separate: false
 outputs:
   - id: output_output
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk_remove
+baseCommand:
+  - fastafunk
+  - remove
 label: fastafunk_remove
 doc: "Removes sequences from FASTA files based on metadata.\n\nTool homepage: https://github.com/cov-ert/fastafunk"
 inputs:
@@ -36,8 +38,7 @@ inputs:
       position: 103
       prefix: --verbose
   - id: out_fasta_path
-    type: string
-    doc: Output or path parameter `out_fasta_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --out-fasta

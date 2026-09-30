@@ -24,7 +24,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Working directory [default: use a temporary directory]'
     inputBinding:
       position: 102
@@ -77,19 +77,20 @@ inputs:
       position: 102
       prefix: --threads
   - id: out_prefix_path
-    type: string
-    doc: Output or path parameter `out_prefix_path`
+    type: string?
+    doc: Output prefix (required for all tasks except genome_size)
     inputBinding:
       position: 103
-      prefix: --out-prefix
+      prefix: --out_prefix
 outputs:
   - id: out_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output prefix (required for all tasks except genome_size)
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

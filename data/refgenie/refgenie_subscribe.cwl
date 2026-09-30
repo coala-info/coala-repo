@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie subscribe
+baseCommand:
+  - refgenie
+  - subscribe
 label: refgenie_subscribe
 doc: "Add a refgenieserver URL to the config.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

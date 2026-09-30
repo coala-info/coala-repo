@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: badread_plot
+baseCommand:
+  - badread
+  - plot
 label: badread_plot
 doc: "View read identities over a sliding window\n\nTool homepage: https://github.com/rrwick/Badread"
 inputs:

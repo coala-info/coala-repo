@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft regex
+baseCommand:
+  - mmft
+  - regex
 label: mmft_regex
 doc: "Extract fasta records using regex on headers.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

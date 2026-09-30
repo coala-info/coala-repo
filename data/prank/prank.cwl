@@ -16,7 +16,8 @@ inputs:
     doc: Min. sequence length for anchoring
     inputBinding:
       position: 102
-      prefix: -anchorskip
+      prefix: -anchorskip=
+      separate: false
   - id: codon
     type:
       - 'null'
@@ -40,7 +41,8 @@ inputs:
     doc: DNA sequence file for backtranslation of protein alignment
     inputBinding:
       position: 102
-      prefix: -dna
+      prefix: -dna=
+      separate: false
   - id: dnafreqs
     type:
       - 'null'
@@ -48,7 +50,8 @@ inputs:
     doc: DNA frequencies ACGT
     inputBinding:
       position: 102
-      prefix: -dnafreqs
+      prefix: -dnafreqs=
+      separate: false
   - id: fixedbranches
     type:
       - 'null'
@@ -56,7 +59,8 @@ inputs:
     doc: Use fixed branch lengths
     inputBinding:
       position: 102
-      prefix: -fixedbranches
+      prefix: -fixedbranches=
+      separate: false
   - id: force_skip_insertions
     type:
       - 'null'
@@ -80,7 +84,8 @@ inputs:
     doc: Gap extension probability
     inputBinding:
       position: 102
-      prefix: -gapext
+      prefix: -gapext=
+      separate: false
   - id: gaprate
     type:
       - 'null'
@@ -88,7 +93,8 @@ inputs:
     doc: Gap opening rate
     inputBinding:
       position: 102
-      prefix: -gaprate
+      prefix: -gaprate=
+      separate: false
   - id: indelscore
     type:
       - 'null'
@@ -96,7 +102,8 @@ inputs:
     doc: Indel penalties for alignment score (1,2,3,>3)
     inputBinding:
       position: 102
-      prefix: -indelscore
+      prefix: -indelscore=
+      separate: false
   - id: iterate
     type:
       - 'null'
@@ -104,7 +111,8 @@ inputs:
     doc: Rounds of re-alignment iteration
     inputBinding:
       position: 102
-      prefix: -iterate
+      prefix: -iterate=
+      separate: false
   - id: kappa
     type:
       - 'null'
@@ -112,7 +120,8 @@ inputs:
     doc: TS/TV rate ratio
     inputBinding:
       position: 102
-      prefix: -kappa
+      prefix: -kappa=
+      separate: false
   - id: keep
     type:
       - 'null'
@@ -128,7 +137,8 @@ inputs:
     doc: Set maximum branch length
     inputBinding:
       position: 102
-      prefix: -maxbranches
+      prefix: -maxbranches=
+      separate: false
   - id: mergedist
     type:
       - 'null'
@@ -136,7 +146,8 @@ inputs:
     doc: Merge distance (if no tree provided)
     inputBinding:
       position: 102
-      prefix: -mergedist
+      prefix: -mergedist=
+      separate: false
   - id: model_file
     type:
       - 'null'
@@ -144,7 +155,8 @@ inputs:
     doc: Model file
     inputBinding:
       position: 102
-      prefix: -m
+      prefix: -m=
+      separate: false
   - id: mttranslate
     type:
       - 'null'
@@ -200,7 +212,8 @@ inputs:
     doc: Output format ('fasta', 'phylipi', 'phylips', 'paml', 'nexus')
     inputBinding:
       position: 102
-      prefix: -f
+      prefix: -f=
+      separate: false
   - id: prunedata
     type:
       - 'null'
@@ -224,7 +237,8 @@ inputs:
     doc: Expected pairwise distance for computing guide tree
     inputBinding:
       position: 102
-      prefix: -pwdist
+      prefix: -pwdist=
+      separate: false
   - id: quiet
     type:
       - 'null'
@@ -248,7 +262,8 @@ inputs:
     doc: Pur/pyr rate ratio
     inputBinding:
       position: 102
-      prefix: -rho
+      prefix: -rho=
+      separate: false
   - id: scalebranches
     type:
       - 'null'
@@ -256,7 +271,8 @@ inputs:
     doc: Scale branch lengths
     inputBinding:
       position: 102
-      prefix: -scalebranches
+      prefix: -scalebranches=
+      separate: false
   - id: scoremafft
     type:
       - 'null'
@@ -272,7 +288,8 @@ inputs:
     doc: Set random number seed
     inputBinding:
       position: 102
-      prefix: -seed
+      prefix: -seed=
+      separate: false
   - id: sequence_file_1
     type:
       - 'null'
@@ -280,7 +297,8 @@ inputs:
     doc: Sequence file 1 (in FASTA format)
     inputBinding:
       position: 102
-      prefix: -d1
+      prefix: -d1=
+      separate: false
   - id: sequence_file_2
     type:
       - 'null'
@@ -288,7 +306,8 @@ inputs:
     doc: Sequence file 2 (in FASTA format)
     inputBinding:
       position: 102
-      prefix: -d2
+      prefix: -d2=
+      separate: false
   - id: shortnames
     type:
       - 'null'
@@ -384,7 +403,8 @@ inputs:
     doc: Tree file
     inputBinding:
       position: 102
-      prefix: -t
+      prefix: -t=
+      separate: false
   - id: tree_file_1
     type:
       - 'null'
@@ -392,7 +412,8 @@ inputs:
     doc: Tree file 1 (if not provided, generate NJ tree)
     inputBinding:
       position: 102
-      prefix: -t1
+      prefix: -t1=
+      separate: false
   - id: tree_file_2
     type:
       - 'null'
@@ -400,7 +421,8 @@ inputs:
     doc: Tree file 2 (if not provided, generate NJ tree)
     inputBinding:
       position: 102
-      prefix: -t2
+      prefix: -t2=
+      separate: false
   - id: tree_string
     type:
       - 'null'
@@ -408,7 +430,8 @@ inputs:
     doc: Tree in newick format; in double quotes
     inputBinding:
       position: 102
-      prefix: -tree
+      prefix: -tree=
+      separate: false
   - id: treeonly
     type:
       - 'null'
@@ -451,10 +474,11 @@ inputs:
       prefix: -verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: "=output_file [default: 'output']"
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o=
+      separate: false
 outputs:
   - id: output_file
     type:

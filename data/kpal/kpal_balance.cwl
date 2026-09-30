@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal balance
+baseCommand:
+  - kpal
+  - balance
 label: kpal_balance
 doc: "Balance k-mer profiles.\n\nTool homepage: https://github.com/LUMC/kPAL"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: input k-mer profile file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output k-mer profile file
+    inputBinding:
+      position: 2
   - id: profiles
     type:
       - 'null'
@@ -19,11 +26,11 @@ inputs:
       position: 102
       prefix: --profiles
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output k-mer profile file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpal:2.1.1--py27_0

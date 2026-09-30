@@ -124,11 +124,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --glob
+          separate: true
     doc: "Glob expressions for files, it can be used multiple times. (e.g., -g '*.txt'
       -g '*.pdf'). Default: all files."
     inputBinding:
       position: 102
-      prefix: --glob
   - id: max_http_retries
     type:
       - 'null'

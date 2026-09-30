@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: krepp sketch
+baseCommand:
+  - krepp
+  - sketch
 label: krepp_sketch
 doc: "Create a sketch from k-mers in a single FASTA/FASTQ file.\n\nTool homepage:
   https://github.com/bo1929/krepp"
@@ -85,7 +87,6 @@ inputs:
       prefix: --win-len
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
     inputBinding:
       position: 102
       prefix: --output-path

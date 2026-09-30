@@ -20,10 +20,9 @@ inputs:
       prefix: --repset_fp
   - id: repset_out_fp_path
     type: string
-    doc: Output or path parameter `repset_out_fp_path`
     inputBinding:
       position: 102
-      prefix: --repset-out-fp
+      prefix: --repset_out_fp
 outputs:
   - id: repset_out_fp
     type:

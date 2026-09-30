@@ -76,10 +76,9 @@ inputs:
       prefix: --source
   - id: out_pth_path
     type: string
-    doc: Output or path parameter `out_pth_path`
     inputBinding:
       position: 102
-      prefix: --out-pth
+      prefix: --out_pth
 outputs:
   - id: out_pth
     type:

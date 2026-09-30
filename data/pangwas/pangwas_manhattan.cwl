@@ -128,7 +128,7 @@ inputs:
       position: 101
       prefix: --ymax
   - id: outdir_path
-    type: string
+    type: string?
     doc: 'Output directory. (default: .)'
     inputBinding:
       position: 102

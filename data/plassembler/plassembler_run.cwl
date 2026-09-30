@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plassembler run
+baseCommand:
+  - plassembler
+  - run
 label: plassembler_run
 doc: "Runs Plassembler\n\nTool homepage: https://github.com/gbouras13/plassembler"
 inputs:

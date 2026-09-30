@@ -1,13 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cojac generate-sigs-nextstrains
+baseCommand:
+  - cojac
+  - generate-sigs-nextstrains
 label: cojac_generate-sigs-nextstrains
 doc: "Generating a list of variants from nextstrain\n\nTool homepage: https://github.com/cbg-ethz/cojac"
 inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The output directory for the YAML files
     inputBinding:
       position: 101

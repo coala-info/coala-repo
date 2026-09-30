@@ -17,7 +17,8 @@ inputs:
     doc: output statments to add url to table
     inputBinding:
       position: 102
-      prefix: -addHub
+      prefix: -addHub=
+      separate: false
   - id: udc_dir
     type:
       - 'null'
@@ -25,7 +26,8 @@ inputs:
     doc: place to put cache for remote bigBed/bigWigs
     inputBinding:
       position: 102
-      prefix: -udcDir
+      prefix: -udcDir=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

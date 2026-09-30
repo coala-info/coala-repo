@@ -23,7 +23,6 @@ inputs:
       prefix: --sorted_depth
   - id: outputdir_path
     type: string
-    doc: Output or path parameter `outputdir_path`
     inputBinding:
       position: 102
       prefix: --outputdir

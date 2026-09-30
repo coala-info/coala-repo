@@ -119,7 +119,6 @@ inputs:
       prefix: --trimBases
   - id: figure_path
     type: string
-    doc: Output or path parameter `figure_path`
     inputBinding:
       position: 102
       prefix: --figure

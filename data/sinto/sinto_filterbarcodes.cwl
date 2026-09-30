@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sinto_filterbarcodes
+baseCommand:
+  - sinto
+  - filterbarcodes
 label: sinto_filterbarcodes
 doc: "Filter reads based on input list of cell barcodes\n\nTool homepage: https://timoast.github.io/sinto/"
 inputs:
@@ -45,7 +47,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output file directory
     inputBinding:
       position: 101

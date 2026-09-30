@@ -223,7 +223,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'output (multi-arg) : provide a file name for'
     inputBinding:
       position: 102
       prefix: --out

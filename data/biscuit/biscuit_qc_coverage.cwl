@@ -9,9 +9,9 @@ doc: "BISCUIT QC coverage tool for calculating coverage statistics from BAM file
 inputs:
   - id: reference_fasta
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 1
   - id: cpgs_bed
@@ -114,18 +114,19 @@ inputs:
       prefix: -T
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Prefix for output file names
     inputBinding:
       position: 105
-      prefix: --output-prefix
+      prefix: -P
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix for output file names
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

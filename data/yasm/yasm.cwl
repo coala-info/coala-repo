@@ -279,18 +279,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `map_file_path`
+    doc: name of map-file output
     inputBinding:
       position: 103
-      prefix: --map-file
+      prefix: --mapfile
   - id: object_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `object_file_path`
+    doc: name of object-file output
     inputBinding:
       position: 104
-      prefix: --object-file
+      prefix: --objfile
   - id: object_file_short_path
     type:
       - 'null'
@@ -303,10 +303,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `redirect_error_file_path`
+    doc: redirect error messages to file
     inputBinding:
       position: 106
-      prefix: --redirect-error-file
+      prefix: -E
 outputs:
   - id: object_file
     type:

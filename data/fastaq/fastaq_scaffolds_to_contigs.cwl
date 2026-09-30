@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_scaffolds_to_contigs
+baseCommand:
+  - fastaq
+  - scaffolds_to_contigs
 label: fastaq_scaffolds_to_contigs
 doc: "Creates a file of contigs from a file of scaffolds - i.e. breaks at every gap\n\
   in the input\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
@@ -10,6 +12,11 @@ inputs:
     doc: Name of input file
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Name of output contigs file
+    inputBinding:
+      position: 2
   - id: number_contigs
     type:
       - 'null'
@@ -20,11 +27,11 @@ inputs:
       position: 102
       prefix: --number_contigs
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output contigs file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

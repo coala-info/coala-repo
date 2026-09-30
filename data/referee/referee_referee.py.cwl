@@ -85,7 +85,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "An output directory for all files associated with this\n               \
       \      run. Will be created if it doesn't exist."
     inputBinding:

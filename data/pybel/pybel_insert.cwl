@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pybel insert
+baseCommand:
+  - pybel
+  - insert
 label: pybel_insert
 doc: "Insert molecules into a database.\n\nTool homepage: https://pybel.readthedocs.io"
 inputs:

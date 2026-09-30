@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi_genes
+baseCommand:
+  - tsumugi
+  - genes
 label: tsumugi_genes
 doc: "Filter annotations based on gene symbols or gene pairs.\n\nTool homepage: https://github.com/akikuno/TSUMUGI-dev"
 inputs:

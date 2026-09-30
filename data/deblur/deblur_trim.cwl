@@ -11,6 +11,11 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+  - id: output_fp
+    type: string
+    doc: Output FASTA file
+    inputBinding:
+      position: 2
   - id: log_file
     type:
       - 'null'
@@ -34,11 +39,11 @@ inputs:
       position: 102
       prefix: --trim-length
 outputs:
-  - id: output_fp
+  - id: out_output_fp
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_fp)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deblur:1.1.1--pyhdfd78af_0

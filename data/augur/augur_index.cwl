@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur index
+baseCommand:
+  - augur
+  - index
 label: augur_index
 doc: "Count occurrence of bases in a set of sequences.\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:
@@ -21,7 +23,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

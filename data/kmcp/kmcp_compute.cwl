@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmcp compute
+baseCommand:
+  - kmcp
+  - compute
 label: kmcp_compute
 doc: "Generate k-mers (sketches) from FASTA/Q sequences\n\nTool homepage: https://github.com/shenwei356/kmcp"
 inputs:
@@ -187,7 +189,7 @@ inputs:
       prefix: --threads
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: ► Output directory.
     inputBinding:
       position: 103
       prefix: --out-dir

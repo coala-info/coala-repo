@@ -29,7 +29,7 @@ inputs:
       position: 101
       prefix: --nthread
   - id: output
-    type: Directory
+    type: string
     doc: Output directory, 'results' by default
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: panorama cluster
+baseCommand:
+  - panorama
+  - cluster
 label: panorama_cluster
 doc: "Perform gene family clustering across multiple pangenomes using MMseqs2 with
   support for both fast (linclust) and sensitive (cluster) clustering methods.\n\n\
@@ -170,7 +172,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for temporary files.
     inputBinding:
       position: 101
@@ -186,10 +188,10 @@ inputs:
       prefix: --verbose
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'Output directory where clustering results will be written (default: None)'
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

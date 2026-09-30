@@ -270,7 +270,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `clustering_out_path`
+    doc: Clustering output file
     inputBinding:
       position: 102
       prefix: --clustering-out
@@ -278,7 +278,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `distmat_out_path`
+    doc: Pairwise distance matrix output file
     inputBinding:
       position: 103
       prefix: --distmat-out
@@ -286,7 +286,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `guidetree_out_path`
+    doc: Guide tree output file
     inputBinding:
       position: 104
       prefix: --guidetree-out
@@ -294,7 +294,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_path`
+    doc: Log all non-essential output to this file
     inputBinding:
       position: 105
       prefix: --log
@@ -302,7 +302,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 106
       prefix: --outfile
@@ -310,7 +309,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `posterior_out_path`
+    doc: Posterior probability output file
     inputBinding:
       position: 107
       prefix: --posterior-out

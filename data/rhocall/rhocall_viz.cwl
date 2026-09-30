@@ -155,10 +155,10 @@ inputs:
       prefix: --window
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: Output directory. The files will be named
     inputBinding:
       position: 103
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type: Directory

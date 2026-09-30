@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savont download
+baseCommand:
+  - savont
+  - download
 label: savont_download
 doc: "Download reference databases for savont (EMU or SILVA)\n\nTool homepage: https://github.com/bluenote-1577/savont"
 inputs:

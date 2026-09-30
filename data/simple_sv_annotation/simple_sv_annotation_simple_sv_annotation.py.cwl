@@ -44,8 +44,7 @@ inputs:
       position: 102
       prefix: --known_fusion_promiscuous
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --output

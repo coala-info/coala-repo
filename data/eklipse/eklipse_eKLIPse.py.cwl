@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python eKLIPse
+baseCommand:
+  - python
+  - eKLIPse
 label: eklipse_eKLIPse.py
 doc: "eKLIPse: a tool for identifying circular DNA breakpoints\n\nTool homepage: https://github.com/dooguypapua/eKLIPse"
 inputs:
@@ -117,7 +119,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory path
     inputBinding:
       position: 101
@@ -179,7 +181,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory path
     inputBinding:
       position: 101

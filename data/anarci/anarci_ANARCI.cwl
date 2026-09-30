@@ -93,7 +93,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
       prefix: --outfile
@@ -101,10 +100,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_hits_path`
     inputBinding:
       position: 103
-      prefix: --outfile-hits
+      prefix: --outfile_hits
 outputs:
   - id: outfile
     type:

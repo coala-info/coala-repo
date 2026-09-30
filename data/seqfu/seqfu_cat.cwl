@@ -320,7 +320,7 @@ inputs:
       prefix: --zero-pad
   - id: report_path
     type: string
-    doc: Output or path parameter `report_path`
+    doc: Save a report to FILE (original name, new name)
     inputBinding:
       position: 103
       prefix: --report

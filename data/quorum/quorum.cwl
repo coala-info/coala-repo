@@ -22,6 +22,7 @@ inputs:
     doc: Numer of good kmer in a row for anchor
     inputBinding:
       position: 102
+      prefix: --anchor
   - id: anchor_count
     type:
       - 'null'
@@ -29,6 +30,7 @@ inputs:
     doc: Minimum count for an anchor kmer
     inputBinding:
       position: 102
+      prefix: --anchor-count
   - id: contaminant
     type:
       - 'null'
@@ -36,6 +38,7 @@ inputs:
     doc: Contaminant sequences
     inputBinding:
       position: 102
+      prefix: --contaminant
   - id: debug
     type:
       - 'null'
@@ -83,6 +86,7 @@ inputs:
     doc: Minimum count for a k-mer to be good
     inputBinding:
       position: 102
+      prefix: --min-count
   - id: min_q_char
     type:
       - 'null'
@@ -130,6 +134,7 @@ inputs:
     doc: Number of bases to skip to find anchor kmer
     inputBinding:
       position: 102
+      prefix: --skip
   - id: threads
     type:
       - 'null'
@@ -145,6 +150,7 @@ inputs:
     doc: Trim sequences with contaminant mers
     inputBinding:
       position: 102
+      prefix: --trim-contaminant
   - id: window
     type:
       - 'null'

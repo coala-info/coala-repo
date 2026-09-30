@@ -17,7 +17,7 @@ inputs:
       position: 101
       prefix: --model
   - id: output_folder
-    type: Directory
+    type: string
     doc: "Directory to store the trained model, logs, and\npredictions."
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree_annotate
+baseCommand:
+  - gotree
+  - annotate
 label: gotree_annotate
 doc: "Annotates internal branches of a tree with given data.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:
@@ -71,10 +73,10 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Resolved tree(s) output file (default "stdout")
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

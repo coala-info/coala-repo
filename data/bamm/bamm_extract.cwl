@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamm_extract
+baseCommand:
+  - bamm
+  - extract
 label: bamm_extract
 doc: "Extract reads which hit the given references\n\nTool homepage: https://github.com/Ecogenomics/BamM"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: bam files to parse
     inputBinding:
       position: 1
+      prefix: --bamfiles
   - id: groups
     type:
       type: array
@@ -19,6 +22,7 @@ inputs:
       format
     inputBinding:
       position: 2
+      prefix: --groups
   - id: headers_only
     type:
       - 'null'

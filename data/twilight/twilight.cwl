@@ -260,7 +260,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for storing temporary files.
     inputBinding:
       position: 101
@@ -325,10 +325,10 @@ inputs:
       prefix: --xdrop
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name (required).
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

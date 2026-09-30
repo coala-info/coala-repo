@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chips simreads
+baseCommand:
+  - chips
+  - simreads
 label: chips_simreads
 doc: "Simulate ChIP-seq reads for a set of peaks.\n\nTool homepage: https://github.com/gymreklab/chips"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_to_tiling_bam
+baseCommand:
+  - fastaq
+  - to_tiling_bam
 label: fastaq_to_tiling_bam
 doc: "Takes a sequence file. Makes a BAM file containing perfect (unpaired) reads
   tiling the whole genome\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
@@ -25,6 +27,11 @@ inputs:
     doc: Prefix of read names
     inputBinding:
       position: 4
+  - id: outfile
+    type: string
+    doc: Name of output BAM file
+    inputBinding:
+      position: 5
   - id: qual_char
     type:
       - 'null'
@@ -42,11 +49,11 @@ inputs:
       position: 105
       prefix: --read_group
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Name of output BAM file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

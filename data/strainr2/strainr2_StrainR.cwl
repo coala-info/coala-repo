@@ -87,7 +87,8 @@ inputs:
       prefix: --weightedpercentile
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: ': path to your output directory to contain normalized abundances [Default
+      = current directory]'
     inputBinding:
       position: 102
       prefix: --outdir

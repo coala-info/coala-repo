@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia join
+baseCommand:
+  - gia
+  - join
 label: gia_join
 doc: "Joins two BED files\n\nTool homepage: https://github.com/noamteyssier/gia"
 inputs:
@@ -105,10 +107,10 @@ inputs:
       prefix: --strandedness
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

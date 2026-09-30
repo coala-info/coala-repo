@@ -111,7 +111,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to place output files. Default = .
     inputBinding:
       position: 101

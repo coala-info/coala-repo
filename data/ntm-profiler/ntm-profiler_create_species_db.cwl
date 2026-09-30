@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ntm-profiler create_species_db
+baseCommand:
+  - ntm-profiler
+  - create_species_db
 label: ntm-profiler_create_species_db
 doc: "Create a species database for ntm-profiler.\n\nTool homepage: https://github.com/jodyphelan/NTM-Profiler"
 inputs:
@@ -130,7 +132,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to process all files
     inputBinding:
       position: 101

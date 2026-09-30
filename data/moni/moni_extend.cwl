@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: moni extend
+baseCommand:
+  - moni
+  - extend
 label: moni_extend
 doc: "Extend query patterns against a reference index.\n\nTool homepage: https://github.com/maxrossi91/moni"
 inputs:
@@ -82,7 +84,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

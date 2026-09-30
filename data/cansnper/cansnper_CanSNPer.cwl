@@ -154,7 +154,7 @@ inputs:
   - id: tmp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: where temporary files are stored
     inputBinding:
       position: 101

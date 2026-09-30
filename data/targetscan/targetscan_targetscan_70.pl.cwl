@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: targetscan_targetscan_70.pl
+baseCommand: targetscan_70.pl
 label: targetscan_targetscan_70.pl
 doc: "Search for predicted miRNA targets using the modified TargetScanS algorithm.\n\
   \nTool homepage: https://www.targetscan.org/vert_80/"
@@ -15,12 +15,17 @@ inputs:
     doc: Aligned UTRs
     inputBinding:
       position: 2
+  - id: predictedtargetsoutputfile
+    type: string
+    doc: Lists sites using alignment coordinates (MSA and UTR)
+    inputBinding:
+      position: 3
 outputs:
   - id: predicted_targets_output_file
     type: File
     doc: Lists sites using alignment coordinates (MSA and UTR)
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.predictedtargetsoutputfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/targetscan:7.0--pl5321hdfd78af_0

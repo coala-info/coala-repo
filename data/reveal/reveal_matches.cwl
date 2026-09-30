@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: reveal_matches
+baseCommand:
+  - reveal
+  - matches
 label: reveal_matches
 doc: "Outputs all (multi) m(u/e)ms.\n\nTool homepage: https://github.com/hakimel/reveal.js"
 inputs:

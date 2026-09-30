@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools_bodystats
+baseCommand:
+  - dmtools
+  - bodystats
 label: dmtools_bodystats
 doc: "Calculate DNA methylation level of upstream and downstream N-bp window.\n\n\
   Tool homepage: https://github.com/ZhouQiangwei/dmtools"
@@ -16,7 +18,7 @@ inputs:
       - 'null'
       - int
     doc: "[0/1/2/3/4] context for show, 0 represent 'C/ALL' context, 1 'CG' context,
-      2 'CHG' context, 3 'CHH' context, 4 calculate and print strand meth level seperately,
+      2 'CHG' context, 3 'CHH' context, 4 calculate and print strand meth level seperately,"
     inputBinding:
       position: 101
       prefix: --context

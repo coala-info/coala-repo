@@ -1,13 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: humanfilt setup
+baseCommand:
+  - humanfilt
+  - setup
 label: humanfilt_setup
 doc: "Setup humanfilt references.\n\nTool homepage: https://github.com/jprehn-lab/humanfilt"
 inputs:
   - id: data_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Destination directory for references
     inputBinding:
       position: 101

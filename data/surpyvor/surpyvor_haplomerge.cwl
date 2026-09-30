@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: surpyvor_haplomerge
+baseCommand:
+  - surpyvor
+  - haplomerge
 label: surpyvor_haplomerge
 doc: "Merge VCF files from multiple callers.\n\nTool homepage: https://github.com/wdecoster/surpyvor"
 inputs:
@@ -78,7 +80,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

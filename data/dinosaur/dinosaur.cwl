@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar Dinosaur-1.2.0.jar
+baseCommand:
+  - java
+  - -jar
+  - Dinosaur-1.2.0.jar
 label: dinosaur
 doc: "Analyze MzML files for isotope patterns.\n\nTool homepage: https://github.com/fickludd/dinosaur"
 inputs:

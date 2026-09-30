@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smudgeplot hetmers
+baseCommand:
+  - smudgeplot
+  - hetmers
 label: smudgeplot_hetmers
 doc: "Calculate unique kmer pairs from FastK k-mer database.\n\nTool homepage: https://github.com/KamilSJaron/smudgeplot"
 inputs:
@@ -36,7 +38,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where all temporary files will be stored
     inputBinding:
       position: 102

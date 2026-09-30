@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phava variation_wf
+baseCommand:
+  - phava
+  - variation_wf
 label: phava_variation_wf
 doc: "PhaVa variation workflow\n\nTool homepage: https://github.com/patrickwest/PhaVa"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools SSRs
+baseCommand:
+  - cpstools
+  - SSRs
 label: cpstools_SSRs
 doc: "Find Simple Sequence Repeats (SSRs) in GenBank files.\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:

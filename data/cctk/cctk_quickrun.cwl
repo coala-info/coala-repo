@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk quickrun
+baseCommand:
+  - cctk
+  - quickrun
 label: cctk_quickrun
 doc: "Runs the cctk pipeline on a directory of genome fastas.\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
 inputs:
@@ -20,7 +22,6 @@ inputs:
       prefix: --max-cluster
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
       prefix: --outdir

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pybel_serialize
+baseCommand:
+  - pybel
+  - serialize
 label: pybel_serialize
 doc: "Serialize a graph to a file.\n\nTool homepage: https://pybel.readthedocs.io"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg tree
+baseCommand:
+  - ufcg
+  - tree
 label: ufcg_tree
 doc: "Reconstruct the phylogenetic relationship with UFCG profiles\n\nTool homepage:
   https://ufcg.steineggerlab.com"

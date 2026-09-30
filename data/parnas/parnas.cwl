@@ -163,18 +163,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `color_out_path_path`
+    doc: PARNAS will save a colored tree, where the chosen representatives are 
+      highlighted and the tree is color- partitioned respective to the 
+      representatives. If prior centers are specified, they (and the subtrees 
+      they represent) will be colored red.
     inputBinding:
       position: 103
-      prefix: --color-out-path
+      prefix: --color
   - id: diversity_csv_path_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `diversity_csv_path_path`
+    doc: Save diversity scores for all k (number of representatives) from 2 to 
+      n. Can be used to choose the right number of representatives for a 
+      dataset.
     inputBinding:
       position: 104
-      prefix: --diversity-csv-path
+      prefix: --diversity
   - id: sample_tree_path_path
     type:
       - 'null'

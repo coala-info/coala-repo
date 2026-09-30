@@ -58,7 +58,7 @@ inputs:
   - id: output_cov_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output coverage dir. Generates wig or bigwig files per region.
     inputBinding:
       position: 101
@@ -66,7 +66,7 @@ inputs:
   - id: output_plot_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output plot dir.
     inputBinding:
       position: 101
@@ -115,10 +115,9 @@ inputs:
       prefix: --ylim
   - id: output_misasm_path
     type: string
-    doc: Output or path parameter `output_misasm_path`
     inputBinding:
       position: 102
-      prefix: --output-misasm
+      prefix: --output_misasm
 outputs:
   - id: output_misasm
     type:

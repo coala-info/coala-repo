@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: zamp db
+baseCommand:
+  - zamp
+  - db
 label: zamp_db
 doc: "Prepare database files for zAMP\n\nTool homepage: https://github.com/metagenlab/zAMP/"
 inputs:

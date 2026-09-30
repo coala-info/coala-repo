@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ganon_table
+baseCommand:
+  - ganon
+  - table
 label: ganon_table
 doc: "Create a table from Ganon report files.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:
@@ -183,7 +185,6 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
       prefix: --output-file

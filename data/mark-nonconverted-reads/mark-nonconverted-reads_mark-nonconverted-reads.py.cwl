@@ -39,7 +39,7 @@ inputs:
       position: 101
       prefix: --reference
   - id: out_path
-    type: string
+    type: string?
     doc: Name for output sam file [default = stdout]
     inputBinding:
       position: 102

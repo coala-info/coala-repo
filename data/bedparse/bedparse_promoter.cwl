@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse_promoter
+baseCommand:
+  - bedparse
+  - promoter
 label: bedparse_promoter
 doc: "Report the promoter of each transcript, defined as a fixed interval around its
   start.\n\nTool homepage: https://github.com/tleonardi/bedparse"

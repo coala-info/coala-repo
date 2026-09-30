@@ -138,7 +138,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a temporary directory (default = /tmp/)
     inputBinding:
       position: 101

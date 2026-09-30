@@ -38,7 +38,8 @@ inputs:
       in a directory. Using -outDirDepth=3 would produce ./1/2/3/outRoot123.maf.
     inputBinding:
       position: 104
-      prefix: -outDirDepth
+      prefix: -outDirDepth=
+      separate: false
   - id: use_full_sequence_name
     type:
       - 'null'
@@ -62,7 +63,8 @@ inputs:
       e.g. both chroms and scaffolds.'
     inputBinding:
       position: 104
-      prefix: -useHashedName
+      prefix: -useHashedName=
+      separate: false
   - id: use_sequence_name
     type:
       - 'null'

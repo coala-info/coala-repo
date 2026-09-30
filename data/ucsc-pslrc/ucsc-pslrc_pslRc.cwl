@@ -9,12 +9,17 @@ inputs:
     doc: Input PSL file
     inputBinding:
       position: 1
+  - id: outpsl
+    type: string
+    doc: Output PSL file
+    inputBinding:
+      position: 2
 outputs:
   - id: outPsl
     type: File
     doc: Output PSL file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outpsl)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-pslrc:482--h0b57e2e_0

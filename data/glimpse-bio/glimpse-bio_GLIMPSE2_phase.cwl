@@ -335,9 +335,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Haplotype reference in VCF/BCF or binary format
     secondaryFiles:
       - .fai
-    doc: Haplotype reference in VCF/BCF or binary format
     inputBinding:
       position: 101
       prefix: --reference
@@ -405,7 +405,7 @@ inputs:
       prefix: --use-gl-indels
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Phased and imputed haplotypes in
     inputBinding:
       position: 102
       prefix: --output

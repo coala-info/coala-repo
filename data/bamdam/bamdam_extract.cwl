@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamdam_extract
+baseCommand:
+  - bamdam
+  - extract
 label: bamdam_extract
 doc: "Extracts reads from a BAM file based on taxonomic information.\n\nTool homepage:
   https://github.com/bdesanctis/bamdam"

@@ -28,18 +28,17 @@ inputs:
       prefix: --processes
   - id: reference
     type: File
+    doc: Path to HDF5 file containing reference
     secondaryFiles:
       - .fai
-    doc: Path to HDF5 file containing reference
     inputBinding:
       position: 101
       prefix: --reference
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type:

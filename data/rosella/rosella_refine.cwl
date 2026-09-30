@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rosella refine
+baseCommand:
+  - rosella
+  - refine
 label: rosella_refine
 doc: "Refine MAGs using UMAP and HDBSCAN clustering.\n\nTool homepage: https://github.com/rhysnewell/rosella.git"
 inputs:
@@ -327,7 +329,6 @@ inputs:
       prefix: --verbose
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
       prefix: --output-directory

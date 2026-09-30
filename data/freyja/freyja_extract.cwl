@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja_extract
+baseCommand:
+  - freyja
+  - extract
 label: freyja_extract
 doc: "Extracts reads from INPUT_BAM containing one or more QUERY_MUTATIONS\n\nTool
   homepage: https://github.com/andersen-lab/Freyja"

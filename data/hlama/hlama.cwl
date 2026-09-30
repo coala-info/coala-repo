@@ -66,7 +66,7 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to create the Snakefile in
     inputBinding:
       position: 101

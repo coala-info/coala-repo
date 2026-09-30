@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux tide-search
+baseCommand:
+  - crux
+  - tide-search
 label: crux_tide-search
 doc: "Search for peptides in mass spectrometry data using the Tide algorithm.\n\n\
   Tool homepage: https://github.com/redbadger/crux"

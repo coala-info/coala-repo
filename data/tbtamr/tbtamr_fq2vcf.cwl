@@ -6,9 +6,9 @@ doc: "Generates a VCF file from FASTQ reads using mutAMR.\n\nTool homepage: http
 inputs:
   - id: reference_fasta
     type: File
+    doc: Path to the reference FASTA file.
     secondaryFiles:
       - .fai
-    doc: Path to the reference FASTA file.
     inputBinding:
       position: 1
   - id: append_fasta_fastq_comment
@@ -178,7 +178,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store output files.
     inputBinding:
       position: 102
@@ -405,10 +405,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_sam_file_path`
+    doc: sam file to output results to [stdout]
     inputBinding:
       position: 104
-      prefix: --output-sam-file
+      prefix: -o
 outputs:
   - id: output_sam_file
     type:

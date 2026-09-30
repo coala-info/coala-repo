@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc ngs-fq2bam
+baseCommand:
+  - fuc
+  - ngs-fq2bam
 label: fuc_ngs-fq2bam
 doc: "Pipeline for converting FASTQ files to analysis-ready BAM files.\n\nTool homepage:
   https://github.com/sbslee/fuc"
@@ -16,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 3

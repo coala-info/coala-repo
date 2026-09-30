@@ -94,7 +94,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pdf_filename_path`
     inputBinding:
       position: 102
       prefix: --pdf-filename
@@ -102,7 +101,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `r_data_filename_path`
     inputBinding:
       position: 103
       prefix: --r-data-filename

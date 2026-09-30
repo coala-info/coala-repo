@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyroe_convert
+baseCommand:
+  - pyroe
+  - convert
 label: pyroe_convert
 doc: "Convert quantification data to various formats.\n\nTool homepage: https://github.com/COMBINE-lab/pyroe"
 inputs:

@@ -106,7 +106,6 @@ inputs:
       prefix: --sequence
   - id: logname_path
     type: string
-    doc: Output or path parameter `logname_path`
     inputBinding:
       position: 105
       prefix: --logname

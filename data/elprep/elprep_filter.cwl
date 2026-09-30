@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: elprep filter
+baseCommand:
+  - elprep
+  - filter
 label: elprep_filter
 doc: "Filter SAM/BAM/CRAM files.\n\nTool homepage: https://github.com/ExaScience/elprep"
 inputs:

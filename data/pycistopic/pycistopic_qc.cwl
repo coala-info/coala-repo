@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pycistopic qc
+baseCommand:
+  - pycistopic
+  - qc
 label: pycistopic_qc
 doc: "QC for scATAC-seq data.\n\nTool homepage: https://github.com/aertslab/pycistopic"
 inputs:

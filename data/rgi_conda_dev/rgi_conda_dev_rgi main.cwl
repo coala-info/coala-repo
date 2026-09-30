@@ -94,6 +94,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output_file
 outputs:
   - id: output_file
     type:
@@ -101,7 +106,9 @@ outputs:
       - File
     doc: Output JSON file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rgi_conda_dev:3.1.2--py27_1

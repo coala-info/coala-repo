@@ -37,10 +37,11 @@ inputs:
       prefix: --threads
   - id: out_file_name_path
     type: string
-    doc: Output or path parameter `out_file_name_path`
+    doc: " File name to save the resulting matrix. The output is also a .scool file.
+      But don't add the suffix. (default: None)"
     inputBinding:
       position: 102
-      prefix: --out-file-name
+      prefix: --outFileName
 outputs:
   - id: out_file_name
     type: File

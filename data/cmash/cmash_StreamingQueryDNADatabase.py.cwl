@@ -16,13 +16,18 @@ inputs:
       MakeStreamingDNADatabase.py
     inputBinding:
       position: 2
+  - id: out_file
+    type: string
+    doc: Output csv file with the containment indices.
+    inputBinding:
+      position: 3
   - id: range
     type: string
     doc: Range of k-mer sizes in the formate <start>-<end>-<increment>. So 
       5-10-2 means [5, 7, 9]. If <end> is larger than the k-mer sizeof the 
       training data, this will automatically be reduced.
     inputBinding:
-      position: 3
+      position: 4
   - id: containment_threshold
     type:
       - 'null'
@@ -95,11 +100,11 @@ inputs:
       position: 104
       prefix: --verbose
 outputs:
-  - id: out_file
+  - id: out_out_file
     type: File
     doc: Output csv file with the containment indices.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmash:0.5.2--pyh5e36f6f_0

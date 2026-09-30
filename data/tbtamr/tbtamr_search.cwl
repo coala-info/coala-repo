@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tbtamr_search
+baseCommand:
+  - tbtamr
+  - search
 label: tbtamr_search
 doc: "Search for variants in a catalog.\n\nTool homepage: https://github.com/MDU-PHL/tbtamr"
 inputs:

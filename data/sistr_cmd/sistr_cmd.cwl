@@ -64,7 +64,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Base directory for temporary files.
     inputBinding:
       position: 101

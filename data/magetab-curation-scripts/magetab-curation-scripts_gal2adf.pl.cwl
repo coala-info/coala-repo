@@ -22,34 +22,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `error_log_file_path`
     inputBinding:
       position: 102
-      prefix: --error-log-file
+      prefix: -e
   - id: output_adf_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_adf_file_path`
     inputBinding:
       position: 103
-      prefix: --output-adf-file
+      prefix: -a
   - id: output_database_id_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_database_id_file_path`
     inputBinding:
       position: 104
-      prefix: --output-database-id-file
+      prefix: -d
   - id: warning_log_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `warning_log_file_path`
     inputBinding:
       position: 105
-      prefix: --warning-log-file
+      prefix: -w
 outputs:
   - id: output_adf_file
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl /usr/local/bin/revertransseq.pl
+baseCommand:
+  - perl
+  - /usr/local/bin/revertransseq.pl
 label: phyloaln_revertransseq.pl
 doc: "Used the aligned translated sequences in a file as blueprint to aligned nucleotide
   sequences, which means reverse-translation.\n\nTool homepage: https://github.com/huangyh45/PhyloAln"
@@ -56,10 +58,10 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output aligned nucleotide sequences file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

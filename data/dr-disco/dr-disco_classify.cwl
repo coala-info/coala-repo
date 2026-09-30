@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dr-disco classify
+baseCommand:
+  - dr-disco
+  - classify
 label: dr-disco_classify
 doc: "Classify junctions based on alignment data.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Input table file containing junction data.
     inputBinding:
       position: 1
+  - id: table_output_file
+    type: string
+    doc: Output table file for classified junctions.
+    inputBinding:
+      position: 2
   - id: blacklist_junctions
     type:
       - 'null'
@@ -55,11 +62,11 @@ inputs:
       position: 102
       prefix: --only-valid
 outputs:
-  - id: table_output_file
+  - id: out_table_output_file
     type: File
     doc: Output table file for classified junctions.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.table_output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0

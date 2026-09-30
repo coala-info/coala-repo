@@ -91,7 +91,7 @@ inputs:
       prefix: --type-ignore
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: PATH     Output directory for         │
     inputBinding:
       position: 104
       prefix: --output-dir

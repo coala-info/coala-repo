@@ -13,7 +13,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store temporary data
     inputBinding:
       position: 102

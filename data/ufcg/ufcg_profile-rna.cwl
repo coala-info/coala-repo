@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ufcg profile-rna
+baseCommand:
+  - ufcg
+  - profile-rna
 label: ufcg_profile-rna
 doc: "Extract UFCG profile from Fungal RNA-seq reads\n\nTool homepage: https://ufcg.steineggerlab.com"
 inputs:
@@ -95,7 +97,7 @@ inputs:
   - id: temp_write_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write the temporary files
     inputBinding:
       position: 101

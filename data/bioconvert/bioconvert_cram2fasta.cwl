@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioconvert cram2fasta
+baseCommand:
+  - bioconvert
+  - cram2fasta
 label: bioconvert_cram2fasta
 doc: "Convert file from '('CRAM',)' to '('FASTA',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"

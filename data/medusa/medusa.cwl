@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar medusa.jar
+baseCommand:
+  - java
+  - -jar
+  - medusa.jar
 label: medusa
 doc: "Medusa version 1.6\n\nTool homepage: https://github.com/combogenomics/medusa"
 inputs:

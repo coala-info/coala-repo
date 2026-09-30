@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: merfishtools multidiffexp
+baseCommand:
+  - merfishtools
+  - multidiffexp
 label: merfishtools_multidiffexp
 doc: "Test for differential expression between multiple groups of cells.\n\nTool homepage:
   https://merfishtools.github.io"
@@ -39,10 +41,10 @@ inputs:
       prefix: --threads
   - id: cdf_file_path
     type: string
-    doc: Output or path parameter `cdf_file_path`
+    doc: Path to write CDFs of CVs to.
     inputBinding:
       position: 103
-      prefix: --cdf-file
+      prefix: --cdf
 outputs:
   - id: cdf_file
     type:

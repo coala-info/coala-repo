@@ -531,7 +531,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify a directory for all output files
     inputBinding:
       position: 102

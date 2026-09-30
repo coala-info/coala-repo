@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq cluster2
+baseCommand:
+  - isoseq
+  - cluster2
 label: isoseq_cluster2
 doc: "Cluster FLNC reads and generate transcripts, much faster than \"cluster\" (FLNC
   to TRANSCRIPTS)\n\nTool homepage: https://github.com/PacificBiosciences/pbbioconda"

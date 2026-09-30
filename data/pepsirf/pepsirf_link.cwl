@@ -66,7 +66,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 102
       prefix: --logfile
@@ -74,7 +73,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: 'Name of the file to which output is written. Output will be in the form
+      of a tab-delimited file with a header. Each entry/row will be of the form: peptide_name
+      TAB id:score,id:score, and so on. By default, "score" is defined as the number
+      of shared kmers.'
     inputBinding:
       position: 103
       prefix: --output

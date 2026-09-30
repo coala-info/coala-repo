@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kssd_reverse
+baseCommand:
+  - kssd
+  - reverse
 label: kssd_reverse
 doc: "The reverse doc prefix.\n\nTool homepage: https://github.com/yhg926/public_kssd"
 inputs:
@@ -35,7 +37,7 @@ inputs:
       prefix: --threads
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: path for recovered k-mer files.
     inputBinding:
       position: 103
       prefix: --outdir

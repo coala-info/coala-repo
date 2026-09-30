@@ -30,7 +30,7 @@ inputs:
     inputBinding:
       position: 103
   - id: assembly_directory
-    type: Directory
+    type: string
     doc: Assembly directory for output files
     inputBinding:
       position: 103
@@ -118,6 +118,7 @@ inputs:
     doc: Use Nanopore reads
     inputBinding:
       position: 103
+      prefix: -nanopore
   - id: pacbio
     type:
       - 'null'
@@ -125,6 +126,7 @@ inputs:
     doc: Use PacBio reads
     inputBinding:
       position: 103
+      prefix: -pacbio
   - id: pacbio_hifi
     type:
       - 'null'
@@ -132,6 +134,7 @@ inputs:
     doc: Use PacBio HiFi reads
     inputBinding:
       position: 103
+      prefix: -pacbio-hifi
   - id: raw_error_rate
     type:
       - 'null'

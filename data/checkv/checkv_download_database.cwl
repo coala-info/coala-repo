@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: checkv_download_database
+baseCommand:
+  - checkv
+  - download_database
 label: checkv_download_database
 doc: "Download the latest version of CheckV's database\n\nTool homepage: https://bitbucket.org/berkeleylab/checkv"
 inputs:

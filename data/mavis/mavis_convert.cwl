@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mavis_convert
+baseCommand:
+  - mavis
+  - convert
 label: mavis_convert
 doc: "Convert structural variant calls from various callers into a common format.\n\
   \nTool homepage: https://github.com/bcgsc/mavis.git"
@@ -13,11 +15,13 @@ inputs:
       assumption.
     inputBinding:
       position: 101
+      prefix: --assume_no_untemplated
   - id: file_type
     type: string
     doc: Indicates the input file type to be parsed
     inputBinding:
       position: 101
+      prefix: --file_type
   - id: inputs
     type:
       type: array
@@ -50,9 +54,9 @@ inputs:
       specificity.
     inputBinding:
       position: 101
+      prefix: --strand_specific
   - id: outputfile_path
     type: string
-    doc: Output or path parameter `outputfile_path`
     inputBinding:
       position: 102
       prefix: --outputfile

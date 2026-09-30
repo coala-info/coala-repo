@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kipoi_get-example
+baseCommand:
+  - kipoi
+  - get-example
 label: kipoi_get-example
 doc: "Get example files\n\nTool homepage: https://github.com/kipoi/kipoi"
 inputs:
@@ -22,7 +24,6 @@ inputs:
       prefix: --source
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

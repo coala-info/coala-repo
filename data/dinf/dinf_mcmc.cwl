@@ -45,7 +45,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder to output results. If not specified, the current directory will 
       be used.
     inputBinding:

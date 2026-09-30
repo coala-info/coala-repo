@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gunc_plot
+baseCommand:
+  - gunc
+  - plot
 label: gunc_plot
 doc: "Plotting tool for GUNC results.\n\nTool homepage: https://github.com/grp-bork/gunc"
 inputs:
@@ -60,10 +62,9 @@ inputs:
       prefix: --verbose
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type:

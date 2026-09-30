@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit subtree
+baseCommand:
+  - nwkit
+  - subtree
 label: nwkit_subtree
 doc: "Extract subtrees from a Newick file.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:
@@ -43,6 +45,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --leaves
+      itemSeparator: ','
   - id: left_leaf
     type:
       - 'null'

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locidex manifest
+baseCommand:
+  - locidex
+  - manifest
 label: locidex_manifest
 doc: "Create a multi-database folder manifest\n\nTool homepage: https://pypi.org/project/locidex/"
 inputs:

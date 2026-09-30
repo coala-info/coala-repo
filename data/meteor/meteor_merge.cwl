@@ -72,10 +72,10 @@ inputs:
       prefix: -b
   - id: merging_dir_path
     type: string
-    doc: Output or path parameter `merging_dir_path`
+    doc: Directory where the merged abundance tables are saved.
     inputBinding:
       position: 102
-      prefix: --merging-dir
+      prefix: -o
 outputs:
   - id: merging_dir
     type: Directory

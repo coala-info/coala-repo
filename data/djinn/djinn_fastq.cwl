@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: djinn fastq
+baseCommand:
+  - djinn
+  - fastq
 label: djinn_fastq
 doc: "FASTQ file conversions and modifications\n\nTool homepage: https://github.com/pdimens/djinn"
 inputs:

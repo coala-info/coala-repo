@@ -109,7 +109,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: name for the output directory. Defaults to 'PlastEDMA_results'
     inputBinding:
       position: 101

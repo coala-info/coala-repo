@@ -89,7 +89,8 @@ inputs:
       (default: 1,3,11,4,8)'
     inputBinding:
       position: 103
-      prefix: --realign
+      prefix: --realign=
+      separate: false
   - id: snp_report_path
     type:
       - 'null'

@@ -14,6 +14,7 @@ inputs:
       for (paired-end) bampe and sampe formats. Mixing file formats is allowed.'
     inputBinding:
       position: 1
+      prefix: --treatment
   - id: control
     type:
       - 'null'
@@ -24,6 +25,7 @@ inputs:
       (paired-end) bampe and sampe formats. Mixing file formats is allowed.'
     inputBinding:
       position: 2
+      prefix: --control
   - id: genome
     type:
       - 'null'
@@ -204,8 +206,7 @@ inputs:
       position: 103
       prefix: --required-flag
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --output

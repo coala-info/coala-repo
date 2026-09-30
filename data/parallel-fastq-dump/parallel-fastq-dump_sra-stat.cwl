@@ -134,7 +134,7 @@ inputs:
       prefix: --xml
   - id: xml_log_path
     type: string
-    doc: Output or path parameter `xml_log_path`
+    doc: produce XML-formatted log file
     inputBinding:
       position: 103
       prefix: --xml-log

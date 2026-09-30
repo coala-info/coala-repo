@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haphpipe align_reads
+baseCommand:
+  - haphpipe
+  - align_reads
 label: haphpipe_align_reads
 doc: "Align reads to a reference genome using Bowtie2.\n\nTool homepage: https://github.com/gwcbi/haphpipe"
 inputs:
@@ -87,7 +89,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

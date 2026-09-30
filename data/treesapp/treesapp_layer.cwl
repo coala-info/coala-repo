@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treesapp layer
+baseCommand:
+  - treesapp
+  - layer
 label: treesapp_layer
 doc: "This script adds extra feature annotations, such as Subgroup and Metabolic Pathway,
   to an existing classification table made by treesapp assign. A new column is bound

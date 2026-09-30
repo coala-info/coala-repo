@@ -55,7 +55,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a temporary directory (default = /tmp/)
     inputBinding:
       position: 101
@@ -70,7 +70,6 @@ inputs:
       prefix: --threads
   - id: output_fasta_path
     type: string
-    doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 102
       prefix: --output-fasta

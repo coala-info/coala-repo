@@ -347,18 +347,23 @@ inputs:
       prefix: -h
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: 'activate PALADIN reporting using STR as an output file prefix.  Files generated
+      as follows: STR.sam - alignment data (will not be sent to stdout) STR_uniprot.tsv
+      - Tab delimited UniProt report (normal alignment mode) STR_uniprot_primary.tsv
+      - Tab delimited UniProt report, primary alignments (all alignments mode) STR_uniprot_secondary.tsv
+      - Tab delimited UniProt report, secondary alignments (all alignments mode)'
     inputBinding:
       position: 104
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: activate PALADIN reporting using STR as an output file prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

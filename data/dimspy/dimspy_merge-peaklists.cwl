@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dimspy merge-peaklists
+baseCommand:
+  - dimspy
+  - merge-peaklists
 label: dimspy_merge-peaklists
 doc: "Merge peaklists from multiple HDF5 files.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
@@ -24,7 +26,6 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

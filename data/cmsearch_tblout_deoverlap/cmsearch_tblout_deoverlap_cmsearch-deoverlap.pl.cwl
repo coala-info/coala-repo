@@ -137,7 +137,6 @@ inputs:
       prefix: -v
   - id: overlapout_path
     type: string
-    doc: Output or path parameter `overlapout_path`
     inputBinding:
       position: 103
       prefix: --overlapout

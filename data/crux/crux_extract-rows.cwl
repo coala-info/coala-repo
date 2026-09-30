@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux extract-rows
+baseCommand:
+  - crux
+  - extract-rows
 label: crux_extract-rows
 doc: "Extract rows from a TSV file based on a column value.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:

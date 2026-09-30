@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxadb_create
+baseCommand:
+  - taxadb
+  - create
 label: taxadb_create
 doc: "build the database\n\nTool homepage: https://github.com/HadrienG/taxadb"
 inputs:

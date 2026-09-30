@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini_load
+baseCommand:
+  - gemini
+  - load
 label: gemini_load
 doc: "Load variants and annotations from a VCF file into a GEMINI database.\n\nTool
   homepage: https://github.com/arq5x/gemini"
@@ -117,7 +119,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory for storing intermediate files when loading in parallel.
     inputBinding:
       position: 102
@@ -131,7 +133,7 @@ inputs:
       position: 102
       prefix: --test-mode
   - id: vcf_file
-    type: File
+    type: File?
     doc: The VCF file to be loaded.
     inputBinding:
       position: 102

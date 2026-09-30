@@ -21,9 +21,9 @@ inputs:
       prefix: --input
   - id: reference
     type: File
+    doc: Reference sequence in FASTA format
     secondaryFiles:
       - .fai
-    doc: Reference sequence in FASTA format
     inputBinding:
       position: 101
       prefix: --reference
@@ -37,7 +37,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output CSV file with distances between each pair of samples
     inputBinding:
       position: 102
       prefix: --output

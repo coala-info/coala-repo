@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastkit validate
+baseCommand:
+  - fastkit
+  - validate
 label: fastkit_validate
 doc: "Validate FASTA files in preparation for tool execution.\n\nThese functions should
   not alter contents but only raise exceptions or return\nboolean values to communicate

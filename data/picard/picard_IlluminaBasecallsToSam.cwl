@@ -29,10 +29,12 @@ inputs:
     type:
       type: array
       items: int
+      inputBinding:
+        prefix: --LANE
+        separate: true
     doc: Lane number. This can be specified multiple times.
     inputBinding:
       position: 101
-      prefix: --LANE
   - id: library_params
     type:
       - 'null'

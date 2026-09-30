@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nf-core pipelines
+baseCommand:
+  - nf-core
+  - pipelines
 label: nf-core_pipelines
 doc: "Commands to manage nf-core pipelines.\n\nTool homepage: http://nf-co.re/"
 inputs:

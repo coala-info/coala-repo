@@ -6,20 +6,20 @@ doc: "This script uses the ORF/NMD output bed file and filters to have only 1\nt
   per gene\n\nTool homepage: https://github.com/sguizard/gs-tama"
 inputs:
   - id: bed_file
-    type: File
+    type: File?
     doc: bed file (required)
     inputBinding:
       position: 101
       prefix: -b
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: Output file name (required)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
-    type: File
+    type: File?
     doc: Output file name (required)
     outputBinding:
       glob: $(inputs.output_file_path)

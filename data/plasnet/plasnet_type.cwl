@@ -18,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to save the output
     inputBinding:
       position: 3

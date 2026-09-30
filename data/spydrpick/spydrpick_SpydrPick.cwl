@@ -295,10 +295,9 @@ inputs:
       prefix: --verbose
   - id: outputfile_path
     type: string
-    doc: Output or path parameter `outputfile_path`
     inputBinding:
       position: 103
-      prefix: --outputfile
+      prefix: --aracne-outputfile
 outputs:
   - id: outputfile
     type:

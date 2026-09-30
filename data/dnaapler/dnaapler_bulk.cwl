@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dnaapler bulk
+baseCommand:
+  - dnaapler
+  - bulk
 label: dnaapler_bulk
 doc: "Reorient sequences in bulk\n\nTool homepage: https://github.com/gbouras13/dnaapler"
 inputs:
@@ -48,7 +50,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

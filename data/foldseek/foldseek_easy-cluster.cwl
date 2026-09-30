@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: foldseek easy-cluster
+baseCommand:
+  - foldseek
+  - easy-cluster
 label: foldseek_easy-cluster
 doc: "By Martin Steinegger <martin.steinegger@snu.ac.kr>\n\nTool homepage: https://github.com/steineggerlab/foldseek"
 inputs:
@@ -17,7 +19,7 @@ inputs:
     inputBinding:
       position: 2
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 3

@@ -400,7 +400,7 @@ inputs:
       prefix: --wrapper
   - id: dest_path
     type: string
-    doc: Output or path parameter `dest_path`
+    doc: Destination directory
     inputBinding:
       position: 103
       prefix: --dest

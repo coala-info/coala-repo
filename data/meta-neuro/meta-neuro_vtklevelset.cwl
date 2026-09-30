@@ -10,11 +10,16 @@ inputs:
     doc: Input image file defining the level set.
     inputBinding:
       position: 1
+  - id: output_vtk
+    type: string
+    doc: Output VTK file for the generated mesh.
+    inputBinding:
+      position: 2
   - id: threshold
     type: float
     doc: The threshold value to define the level set surface.
     inputBinding:
-      position: 2
+      position: 3
   - id: apply_clean_filter
     type:
       - 'null'
@@ -81,11 +86,11 @@ inputs:
       position: 103
       prefix: '-2'
 outputs:
-  - id: output_vtk
+  - id: out_output_vtk
     type: File
     doc: Output VTK file for the generated mesh.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_vtk)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meta-neuro:2.0.1--py313h47f2c4e_0

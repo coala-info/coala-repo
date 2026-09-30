@@ -574,7 +574,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: create temporary files in directory DIR
     inputBinding:
       position: 103
@@ -631,7 +631,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: log what we're doing to the specified FILE
     inputBinding:
       position: 104
       prefix: --log-file
@@ -639,7 +639,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_batch_path`
+    doc: write a batched update to FILE
     inputBinding:
       position: 105
       prefix: --write-batch

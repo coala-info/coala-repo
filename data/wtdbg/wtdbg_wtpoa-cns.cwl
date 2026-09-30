@@ -234,10 +234,10 @@ inputs:
       prefix: -u
   - id: output_files_path
     type: string
-    doc: Output or path parameter `output_files_path`
+    doc: Output files, [STDOUT]
     inputBinding:
       position: 102
-      prefix: --output-files
+      prefix: -o
 outputs:
   - id: output_files
     type:

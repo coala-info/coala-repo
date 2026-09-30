@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: centreseq core
+baseCommand:
+  - centreseq
+  - core
 label: centreseq_core
 doc: "Given an input directory containing any number of assemblies (.fasta), centreseq
   core will 1) annotate the genomes with Prokka, 2) perform self- clustering on each

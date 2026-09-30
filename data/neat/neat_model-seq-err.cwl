@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: neat model-seq-err
+baseCommand:
+  - neat
+  - model-seq-err
 label: neat_model-seq-err
 doc: "Generate sequencing error model from a FASTQ, BAM, or SAM file_list.\n\nTool
   homepage: https://github.com/ncsa/NEAT/"
@@ -60,10 +62,9 @@ inputs:
       prefix: -Q
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:

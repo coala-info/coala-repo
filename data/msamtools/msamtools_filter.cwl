@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msamtools_filter
+baseCommand:
+  - msamtools
+  - filter
 label: msamtools_filter
 doc: "Filter alignments from BAM/SAM files.\n\nTool homepage: https://github.com/arumugamlab/msamtools"
 inputs:

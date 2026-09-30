@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnaprot predict
+baseCommand:
+  - rnaprot
+  - predict
 label: rnaprot_predict
 doc: "Predict binding sites on longer sequences using moving window predictions\n\n\
   Tool homepage: https://github.com/BackofenLab/RNAProt"

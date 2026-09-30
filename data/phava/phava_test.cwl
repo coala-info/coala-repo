@@ -88,18 +88,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 106
-      prefix: --outfile
+      prefix: -outfile
   - id: outseq_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `outseq_path`
     inputBinding:
       position: 107
-      prefix: --outseq
+      prefix: -outseq
 outputs:
   - id: outfile
     type:

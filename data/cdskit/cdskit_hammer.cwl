@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdskit_hammer
+baseCommand:
+  - cdskit
+  - hammer
 label: cdskit_hammer
 doc: "Hammer sequences to remove gaps and ambiguous bases.\n\nTool homepage: https://github.com/kfuku52/cdskit"
 inputs:

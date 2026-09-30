@@ -69,26 +69,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output file (BED format)
     inputBinding:
       position: 103
-      prefix: --output-file
-  - id: params_out_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `params_out_path`
-    inputBinding:
-      position: 104
-      prefix: --params-out
+      prefix: -out
   - id: scores_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `scores_output_path`
+    doc: output file for posterior scores
     inputBinding:
       position: 105
-      prefix: --scores-output
+      prefix: -scores
+  - id: params_out_path
+    type:
+      - 'null'
+      - string
+    doc: HMM parameters file
+    inputBinding:
+      position: 106
+      prefix: -params-out
 outputs:
   - id: output_file
     type:

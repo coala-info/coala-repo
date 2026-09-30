@@ -69,7 +69,6 @@ inputs:
       prefix: --scion_annotation_name
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

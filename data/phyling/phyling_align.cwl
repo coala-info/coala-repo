@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyling align
+baseCommand:
+  - phyling
+  - align
 label: phyling_align
 doc: "Perform multiple sequence alignment (MSA) on orthologous sequences that match
   the hmm markers across samples.\n\nTool homepage: https://github.com/stajichlab/Phyling"
@@ -77,7 +79,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

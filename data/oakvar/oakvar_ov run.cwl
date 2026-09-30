@@ -28,7 +28,7 @@ inputs:
       \             added. Use '-a all' to run all installed annotators."
     inputBinding:
       position: 102
-      prefix: --annotators
+      prefix: -a
   - id: annotators_replace
     type:
       - 'null'
@@ -40,7 +40,7 @@ inputs:
       \             priority over -a."
     inputBinding:
       position: 102
-      prefix: --annotators-replace
+      prefix: -A
   - id: clean_run
     type:
       - 'null'
@@ -108,11 +108,11 @@ inputs:
     doc: modules to exclude
     inputBinding:
       position: 102
-      prefix: --excludes
+      prefix: -e
   - id: filter
     type:
       - 'null'
-      - string
+      - File
     doc: Path to a filter file
     inputBinding:
       position: 102
@@ -183,7 +183,7 @@ inputs:
     doc: Job ID for server version
     inputBinding:
       position: 102
-      prefix: --job-name
+      prefix: -j
   - id: keep_liftover_failed
     type:
       - 'null'
@@ -233,7 +233,7 @@ inputs:
     doc: Mapper module name or mapper module directory
     inputBinding:
       position: 102
-      prefix: --mapper-name
+      prefix: -m
   - id: module_options
     type:
       - 'null'
@@ -276,7 +276,7 @@ inputs:
     doc: directory for output files
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -d
   - id: package
     type:
       - 'null'
@@ -295,7 +295,7 @@ inputs:
       \  conditions."
     inputBinding:
       position: 102
-      prefix: --postaggregators
+      prefix: -p
   - id: preparers
     type:
       - 'null'
@@ -305,7 +305,7 @@ inputs:
       \       be run in the given order."
     inputBinding:
       position: 102
-      prefix: --preparers
+      prefix: --pp
   - id: primary_transcript
     type:
       - 'null'
@@ -325,7 +325,7 @@ inputs:
     doc: Reporter types or reporter module directories
     inputBinding:
       position: 102
-      prefix: --report-types
+      prefix: -t
   - id: run_name
     type:
       - 'null'
@@ -334,7 +334,7 @@ inputs:
     doc: name of oakvar run
     inputBinding:
       position: 102
-      prefix: --run-name
+      prefix: -n
   - id: separate_sample
     type:
       - 'null'

@@ -70,14 +70,14 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: hpc blast temp directory
     inputBinding:
       position: 102
       prefix: --tempdir
   - id: log_path
     type: string
-    doc: Output or path parameter `log_path`
+    doc: append hpc-blast log info to file, sys.stdout by
     inputBinding:
       position: 103
       prefix: --log

@@ -18,11 +18,15 @@ inputs:
     doc: Input archive file with the semantic type SampleTable[CNVCalls].
     inputBinding:
       position: 2
+  - id: cnv_caller
+    type: string
+    doc: Output archive file with the semantic type Model[CNV].
+    inputBinding:
+      position: 3
   - id: comparison_table_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `comparison_table_path`
     inputBinding:
       position: 101
       prefix: --comparison-table
@@ -30,16 +34,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `confusion_matrix_path`
     inputBinding:
       position: 102
       prefix: --confusion-matrix
 outputs:
-  - id: cnv_caller
+  - id: out_cnv_caller
     type: File
     doc: Output archive file with the semantic type Model[CNV].
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.cnv_caller)'
   - id: confusion_matrix
     type:
       - 'null'

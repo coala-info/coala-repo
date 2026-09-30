@@ -80,7 +80,7 @@ inputs:
   - id: temp_dir_root
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to where temporary directory containing all temp files are 
       created, by default uses the current working directory as the base.
     inputBinding:

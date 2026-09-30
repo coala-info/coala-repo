@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svim_reads
+baseCommand:
+  - svim
+  - reads
 label: svim_reads
 doc: "SVIM is a structural variant caller for long reads.\n\nTool homepage: https://github.com/eldariont/svim"
 inputs:

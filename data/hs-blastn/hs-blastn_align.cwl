@@ -164,10 +164,10 @@ inputs:
       prefix: -xdrop_ungap
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: ' Output file name Default = standard output'
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
 outputs:
   - id: out
     type:

@@ -28,7 +28,7 @@ inputs:
   - id: compress_output
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicating whether to compress (by gzip) the final output
     inputBinding:
       position: 101
@@ -96,7 +96,6 @@ inputs:
       prefix: --num-procs
   - id: output_files_path
     type: string
-    doc: Output or path parameter `output_files_path`
     inputBinding:
       position: 102
       prefix: --output-files

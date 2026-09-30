@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sylph inspect
+baseCommand:
+  - sylph
+  - inspect
 label: sylph_inspect
 doc: "Inspect sketched .syldb and .sylsp files\n\nTool homepage: https://github.com/bluenote-1577/sylph"
 inputs:
@@ -13,7 +15,7 @@ inputs:
       position: 1
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output to this file (YAML format). [default: stdout]'
     inputBinding:
       position: 101
       prefix: --output-file

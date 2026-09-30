@@ -18,6 +18,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fields
+      itemSeparator: ','
   - id: order
     type:
       - 'null'

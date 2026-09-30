@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadbit merge
+baseCommand:
+  - tadbit
+  - merge
 label: tadbit_merge
 doc: "load two working directories with different Hi-C data samples and merges them
   into a new working directory generating some statistics\n\nTool homepage: http://sgt.cnag.cat/3dg/tadbit/"
@@ -59,6 +61,7 @@ inputs:
       self-circle, 2: dangling-end, 3: error, 4: extra dangling-end, 5: too close
       from RES, 6: too short, 7: too large, 8: over-represented, 9: duplicated, 10:
       random breaks, 11: trans-chromosomic"
+    default:
       - 1
       - 2
       - 3
@@ -113,7 +116,7 @@ inputs:
       position: 101
       prefix: --norm
   - id: output_folder
-    type: Directory
+    type: string
     doc: path to a new output folder
     inputBinding:
       position: 101

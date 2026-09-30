@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hackgap countwith
+baseCommand:
+  - hackgap
+  - countwith
 label: hackgap_countwith
 doc: "Count k-mers in files using an existing index.\n\nTool homepage: https://gitlab.com/rahmannlab/hackgap"
 inputs:
@@ -46,17 +48,18 @@ inputs:
       prefix: --threads-split
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --out
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: path/prefix of output file with k-mer count hash (required; use 
       '/dev/null' or 'null' or 'none' to avoid output)
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

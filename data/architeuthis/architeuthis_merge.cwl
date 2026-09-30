@@ -16,7 +16,7 @@ inputs:
       prefix: --db
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: The output filename. (default "merged.csv")
     inputBinding:
       position: 102
       prefix: --out

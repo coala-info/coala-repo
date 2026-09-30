@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakedeploy update-snakemake-wrappers
+baseCommand:
+  - snakedeploy
+  - update-snakemake-wrappers
 label: snakedeploy_update-snakemake-wrappers
 doc: "Update all snakemake wrappers in given Snakefiles to their latest versions.\n\
   \nTool homepage: https://github.com/snakemake/snakedeploy"

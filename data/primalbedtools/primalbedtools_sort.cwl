@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools_sort
+baseCommand:
+  - primalbedtools
+  - sort
 label: primalbedtools_sort
 doc: "Sort a BED file\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

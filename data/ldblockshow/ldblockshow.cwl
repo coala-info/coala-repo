@@ -83,10 +83,12 @@ inputs:
       prefix: --output-prefix
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: Output prefix for result files
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

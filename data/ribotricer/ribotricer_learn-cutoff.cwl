@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotricer learn-cutoff
+baseCommand:
+  - ribotricer
+  - learn-cutoff
 label: ribotricer_learn-cutoff
 doc: "Learn phase score cutoff from BAM/TSV file\n\nTool homepage: https://github.com/smithlabcode/ribotricer"
 inputs:
@@ -51,6 +53,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ribo_bams
+      itemSeparator: ','
   - id: ribo_tsvs
     type:
       - 'null'
@@ -60,6 +63,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ribo_tsvs
+      itemSeparator: ','
   - id: ribotricer_index
     type: File
     doc: Path to the index file of ribotricer This file should be generated 
@@ -76,6 +80,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rna_bams
+      itemSeparator: ','
   - id: rna_tsvs
     type:
       - 'null'
@@ -85,6 +90,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rna_tsvs
+      itemSeparator: ','
   - id: sampling_ratio
     type:
       - 'null'

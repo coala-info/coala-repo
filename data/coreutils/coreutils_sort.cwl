@@ -237,7 +237,7 @@ inputs:
       prefix: --zero-terminated
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: write result to FILE instead of standard output
     inputBinding:
       position: 103
       prefix: --output

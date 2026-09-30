@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux subtract-index
+baseCommand:
+  - crux
+  - subtract-index
 label: crux_subtract-index
 doc: "A new peptide index containing all peptides that occur in the first index but
   not the second.\n\nTool homepage: https://github.com/redbadger/crux"

@@ -94,10 +94,10 @@ inputs:
       prefix: -V
   - id: save_model_path
     type: string
-    doc: Output or path parameter `save_model_path`
+    doc: ': save model file to <file>'
     inputBinding:
       position: 103
-      prefix: --save-model
+      prefix: -s
 outputs:
   - id: save_model
     type:

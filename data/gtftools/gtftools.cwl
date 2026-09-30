@@ -64,7 +64,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `exon_path`
+    doc: output file name for exon coordination of splice
     inputBinding:
       position: 103
       prefix: --exon
@@ -72,7 +72,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gene_path`
+    doc: output file name for gene coordinates and names. If
     inputBinding:
       position: 104
       prefix: --gene
@@ -80,31 +80,27 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gene_length_path`
     inputBinding:
       position: 105
-      prefix: --gene-length
+      prefix: --gene_length
   - id: independent_intron_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `independent_intron_path`
     inputBinding:
       position: 106
-      prefix: --independent-intron
+      prefix: --independent_intron
   - id: intergenic_region_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `intergenic_region_path`
     inputBinding:
       position: 107
-      prefix: --intergenic-region
+      prefix: --intergenic_region
   - id: intron_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `intron_path`
     inputBinding:
       position: 108
       prefix: --intron
@@ -112,7 +108,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `isoform_path`
     inputBinding:
       position: 109
       prefix: --isoform
@@ -120,50 +115,46 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `isoform_length_path`
     inputBinding:
       position: 110
-      prefix: --isoform-length
+      prefix: --isoform_length
   - id: masked_intron_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `masked_intron_path`
     inputBinding:
       position: 111
-      prefix: --masked-intron
+      prefix: --masked_intron
   - id: merged_exon_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `merged_exon_path`
     inputBinding:
       position: 112
-      prefix: --merged-exon
+      prefix: --merged_exon
   - id: splice_site_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `splice_site_path`
     inputBinding:
       position: 113
-      prefix: --splice-site
+      prefix: --splice_site
   - id: tss_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tss_path`
+    doc: output file name for a region flanking transcription
     inputBinding:
       position: 114
-      prefix: --tss
+      prefix: --TSS
   - id: utr_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `utr_path`
+    doc: output file name for UTR regions
     inputBinding:
       position: 115
-      prefix: --utr
+      prefix: --UTR
 outputs:
   - id: merged_exon
     type:

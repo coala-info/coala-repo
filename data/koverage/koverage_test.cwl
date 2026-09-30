@@ -1452,7 +1452,7 @@ inputs:
   - id: shadow_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a directory in which the 'shadow' directory is created. If not 
       supplied, the value is set to the '.snakemake' directory relative to the 
       working directory.

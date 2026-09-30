@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wisecondorx gender
+baseCommand:
+  - wisecondorx
+  - gender
 label: wisecondorx_gender
 doc: "Returns the gender of a .npz resulting from convert, based on a Gaussian mixture
   model trained during the newref phase\n\nTool homepage: https://github.com/CenterForMedicalGeneticsGhent/wisecondorX"

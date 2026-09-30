@@ -88,7 +88,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `drawing_for_chimera_path`
+    doc: file path to output drawing as chimera bild script
     inputBinding:
       position: 103
       prefix: --drawing-for-chimera
@@ -96,7 +96,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `drawing_for_jmol_path`
+    doc: file path to output drawing as jmol script
     inputBinding:
       position: 104
       prefix: --drawing-for-jmol
@@ -104,7 +104,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `drawing_for_pymol_path`
+    doc: file path to output drawing as pymol script
     inputBinding:
       position: 105
       prefix: --drawing-for-pymol
@@ -112,7 +112,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `drawing_for_scenejs_path`
+    doc: file path to output drawing as scenejs script
     inputBinding:
       position: 106
       prefix: --drawing-for-scenejs

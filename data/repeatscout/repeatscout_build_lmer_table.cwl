@@ -41,10 +41,9 @@ inputs:
       prefix: -v
   - id: freq_path
     type: string
-    doc: Output or path parameter `freq_path`
     inputBinding:
       position: 102
-      prefix: --freq
+      prefix: -freq
 outputs:
   - id: freq
     type: File

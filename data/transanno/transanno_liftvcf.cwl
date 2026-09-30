@@ -129,18 +129,12 @@ inputs:
       position: 101
       prefix: --vcf
   - id: fail_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `fail_path`
+    type: string
     inputBinding:
       position: 102
       prefix: --fail
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --output

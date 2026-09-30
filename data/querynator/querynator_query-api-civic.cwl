@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: querynator query-api-civic
+baseCommand:
+  - querynator
+  - query-api-civic
 label: querynator_query-api-civic
 doc: "Query the Civic API for variants in a VCF file.\n\nTool homepage: https://github.com/qbic-pipelines/querynator"
 inputs:

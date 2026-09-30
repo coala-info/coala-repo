@@ -60,7 +60,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/1)
     inputBinding:
       position: 101
-      prefix: --input_p1
+      prefix: -p1
   - id: input_p2
     type:
       - 'null'
@@ -68,7 +68,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/2)
     inputBinding:
       position: 101
-      prefix: --input_p2
+      prefix: -p2
   - id: input_s
     type:
       - 'null'
@@ -76,7 +76,7 @@ inputs:
     doc: path to input fastq containing single-end reads
     inputBinding:
       position: 101
-      prefix: --input_s
+      prefix: -s
   - id: insert_size
     type: int
     doc: mean insert size for paired-end input

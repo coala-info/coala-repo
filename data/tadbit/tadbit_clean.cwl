@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tadbit_clean
+baseCommand:
+  - tadbit
+  - clean
 label: tadbit_clean
 doc: "Delete jobs and results of a given list of jobids in a given directories\n\n\
   Tool homepage: http://sgt.cnag.cat/3dg/tadbit/"

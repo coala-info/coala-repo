@@ -103,11 +103,11 @@ inputs:
       position: 102
       prefix: --verbose
   - id: log_file_path
-    type: string
-    doc: Output or path parameter `log_file_path`
+    type: string?
+    doc: Log file. Default {prefix}[_/]caller.log
     inputBinding:
       position: 103
-      prefix: --log-file
+      prefix: --logFile
 outputs:
   - id: log_file
     type:

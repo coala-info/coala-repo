@@ -377,7 +377,8 @@ inputs:
     doc: Automatically index the output files [off]
     inputBinding:
       position: 103
-      prefix: --write-index
+      prefix: --write-index=
+      separate: false
 outputs:
   - id: output_output_file
     type:

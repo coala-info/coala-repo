@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin spot
+baseCommand:
+  - ppanggolin
+  - spot
 label: ppanggolin_spot
 doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
   team, and distributed under the CeCILL Free Software License Agreement.\n\nFor genomic
@@ -104,7 +106,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

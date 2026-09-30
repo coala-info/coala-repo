@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges init
+baseCommand:
+  - ibridges
+  - init
 label: ibridges_init
 doc: "Create a cached password for future use.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

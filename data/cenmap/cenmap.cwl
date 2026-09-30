@@ -102,13 +102,13 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Path to reference assembly used to rename and reorient contigs. 
       Defaults to CHM13 v2.0 and assumes contig names are exact matches to 
       --chromosomes. If not provided and --chromosomes set to 'none', no 
       reference chromosome mapping is performed. Avoid changing unless you know 
       what you're doing.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -138,7 +138,6 @@ inputs:
       prefix: --workflow-profile
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
       prefix: --output-dir

@@ -78,10 +78,10 @@ inputs:
       prefix: --suffix
   - id: read_list_output_path
     type: string
-    doc: Output or path parameter `read_list_output_path`
+    doc: Path to output list of read IDs
     inputBinding:
       position: 102
-      prefix: --read-list-output
+      prefix: --read-list
 outputs:
   - id: read_list_output
     type:

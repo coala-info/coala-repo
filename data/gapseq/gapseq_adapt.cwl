@@ -48,7 +48,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Path to directory, where output files will be saved (default: current directory)'
     inputBinding:
       position: 101

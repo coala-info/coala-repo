@@ -65,34 +65,35 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_art_paired_end_path`
+    doc: "[out]\t\tOutput reads as ART (unzipped fasta) (Default: /dev/null) with
+      wrap-around for paired-end mode"
     inputBinding:
       position: 103
-      prefix: --output-art-paired-end
+      prefix: -artp
   - id: output_art_single_end_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_art_single_end_path`
+    doc: 'Output single-end reads as ART (unzipped fasta) (Default: /dev/null)'
     inputBinding:
       position: 104
-      prefix: --output-art-single-end
+      prefix: -arts
   - id: output_forward_read_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_forward_read_path`
+    doc: "[out fwdr]\tOutput forward read as zipped fasta (Default: )"
     inputBinding:
       position: 105
-      prefix: --output-forward-read
+      prefix: -fr
   - id: output_reverse_read_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_reverse_read_path`
+    doc: "[out rwdr]\tOutput reverse read as zipped fasta (Default: /dev/null)"
     inputBinding:
       position: 106
-      prefix: --output-reverse-read
+      prefix: -rr
   - id: read_bam_output_paired_end_path
     type:
       - 'null'

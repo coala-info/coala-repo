@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools_stats
+baseCommand:
+  - dmtools
+  - stats
 label: dmtools_stats
 doc: "Calculate statistics from DM files.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
@@ -81,10 +83,10 @@ inputs:
       prefix: --tc
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file [stdout]
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

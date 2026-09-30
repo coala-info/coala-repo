@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hymet_run
+baseCommand:
+  - hymet
+  - run
 label: hymet_run
 doc: "Run HYMET with specified inputs and options.\n\nTool homepage: https://github.com/inesbmartins02/HYMET"
 inputs:
@@ -86,7 +88,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output directory
     inputBinding:
       position: 102
       prefix: --out

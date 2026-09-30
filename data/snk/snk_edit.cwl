@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snk edit
+baseCommand:
+  - snk
+  - edit
 label: snk_edit
 doc: "Access the snk.yaml configuration file for a workflow.\n\nTool homepage: https://snk.wytamma.com"
 inputs:

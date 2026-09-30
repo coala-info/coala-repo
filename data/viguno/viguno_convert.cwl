@@ -32,7 +32,7 @@ inputs:
       prefix: --verbose
   - id: path_out_bin_path
     type: string
-    doc: Output or path parameter `path_out_bin_path`
+    doc: Path to the output binary file
     inputBinding:
       position: 102
       prefix: --path-out-bin

@@ -15,6 +15,7 @@ inputs:
     doc: Comma-separated .wig control files
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: experimental_files
     type:
       type: array
@@ -22,6 +23,7 @@ inputs:
     doc: Comma-separated .wig experimental files
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: annotation_file
     type: File
     doc: Annotation .prot_table or GFF3 file

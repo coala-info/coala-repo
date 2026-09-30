@@ -224,7 +224,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `chains_summary_output_path`
+    doc: file path to output chains summary
     inputBinding:
       position: 103
       prefix: --chains-summary-output
@@ -232,7 +232,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `ref_seq_alignment_path`
+    doc: file path to output alignment with reference
     inputBinding:
       position: 104
       prefix: --ref-seq-alignment
@@ -240,7 +240,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `seq_output_path`
+    doc: file path to output query result sequence string
     inputBinding:
       position: 105
       prefix: --seq-output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gemini annotate
+baseCommand:
+  - gemini
+  - annotate
 label: gemini_annotate
 doc: "Annotate a gemini database with information from a TABIX'ed BED file.\n\nTool
   homepage: https://github.com/arq5x/gemini"

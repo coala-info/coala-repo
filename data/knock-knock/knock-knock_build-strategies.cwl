@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: knock-knock build-strategies
+baseCommand:
+  - knock-knock
+  - build-strategies
 label: knock-knock_build-strategies
 doc: "Builds strategies for a project.\n\nTool homepage: https://github.com/jeffhussmann/knock-knock"
 inputs:

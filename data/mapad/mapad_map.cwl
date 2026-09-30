@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mapad map
+baseCommand:
+  - mapad
+  - map
 label: mapad_map
 doc: "Maps reads to an indexed genome\n\nTool homepage: https://github.com/mpieva/mapAD"
 inputs:
@@ -205,7 +207,7 @@ inputs:
       prefix: -v
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output BAM file
     inputBinding:
       position: 102
       prefix: --output

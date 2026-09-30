@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mdmcleaner acc2taxpath
+baseCommand:
+  - mdmcleaner
+  - acc2taxpath
 label: mdmcleaner_acc2taxpath
 doc: "Convert accessions to taxonomic paths.\n\nTool homepage: https://github.com/KIT-IBG-5/mdmcleaner"
 inputs:

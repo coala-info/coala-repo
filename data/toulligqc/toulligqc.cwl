@@ -156,14 +156,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --data-report-path
-  - id: html_report_path_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `html_report_path_path`
-    inputBinding:
-      position: 103
-      prefix: --html-report-path
   - id: images_directory_path
     type:
       - 'null'
@@ -178,6 +170,13 @@ inputs:
     inputBinding:
       position: 105
       prefix: --output-directory
+  - id: html_report_path_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --html-report-path
 outputs:
   - id: output_directory
     type:

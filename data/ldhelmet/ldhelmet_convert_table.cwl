@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ldhelmet_convert_table
+baseCommand:
+  - ldhelmet
+  - convert_table
 label: ldhelmet_convert_table
 doc: "Converts LDhat style tables to a format suitable for LDhelmet.\n\nTool homepage:
   http://sourceforge.net/projects/ldhelmet/"
@@ -22,10 +24,10 @@ inputs:
       prefix: --input_table
   - id: output_table_path
     type: string
-    doc: Output or path parameter `output_table_path`
+    doc: Name for output file.
     inputBinding:
       position: 102
-      prefix: --output-table
+      prefix: --output_table
 outputs:
   - id: output_table
     type: File

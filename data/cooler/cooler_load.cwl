@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler load
+baseCommand:
+  - cooler
+  - load
 label: cooler_load
 doc: "Create a cooler from a pre-binned matrix.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
@@ -166,7 +168,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Create temporary files in a specified directory. Pass ``-`` to use the 
       platform default temp dir.
     inputBinding:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree_divide
+baseCommand:
+  - gotree
+  - divide
 label: gotree_divide
 doc: "Divide an input tree file into several tree files\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:

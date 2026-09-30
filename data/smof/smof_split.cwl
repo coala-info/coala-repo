@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_split
+baseCommand:
+  - smof
+  - split
 label: smof_split
 doc: "Breaks a multiple sequence fasta file into several smaller files.\n\nTool homepage:
   https://github.com/incertae-sedis/smof"

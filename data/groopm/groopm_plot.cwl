@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm_plot
+baseCommand:
+  - groopm
+  - plot
 label: groopm_plot
 doc: "Plotting tool for groopm\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

@@ -139,7 +139,6 @@ inputs:
       prefix: -w
   - id: outfolder_path
     type: string
-    doc: Output or path parameter `outfolder_path`
     inputBinding:
       position: 102
       prefix: --outfolder

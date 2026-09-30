@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: badread_simulate
+baseCommand:
+  - badread
+  - simulate
 label: badread_simulate
 doc: "Generate fake long reads\n\nTool homepage: https://github.com/rrwick/Badread"
 inputs:

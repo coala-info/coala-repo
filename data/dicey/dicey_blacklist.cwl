@@ -19,10 +19,10 @@ inputs:
       prefix: --blacklist
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: gzipped output file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --outfile
 outputs:
   - id: output_file
     type:

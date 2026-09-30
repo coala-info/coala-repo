@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qualimap multi-bamqc
+baseCommand:
+  - qualimap
+  - multi-bamqc
 label: qualimap_multi-bamqc
 doc: "Multi-sample BAM quality control analysis\n\nTool homepage: http://qualimap.bioinfo.cipf.es/"
 inputs:
@@ -33,7 +35,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder for HTML report and raw data.
     inputBinding:
       position: 101

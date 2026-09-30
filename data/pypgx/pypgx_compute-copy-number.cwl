@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx compute-copy-number
+baseCommand:
+  - pypgx
+  - compute-copy-number
 label: pypgx_compute-copy-number
 doc: "Compute copy number from read depth for target gene.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:
@@ -14,6 +16,11 @@ inputs:
     doc: Input archive file with the semantic type SampleTable[Statistics].
     inputBinding:
       position: 2
+  - id: copy_number
+    type: string
+    doc: Output archive file with the semantic type CovFrame[CopyNumber].
+    inputBinding:
+      position: 3
   - id: samples_without_sv
     type:
       - 'null'
@@ -24,11 +31,11 @@ inputs:
       position: 103
       prefix: --samples-without-sv
 outputs:
-  - id: copy_number
+  - id: out_copy_number
     type: File
     doc: Output archive file with the semantic type CovFrame[CopyNumber].
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.copy_number)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

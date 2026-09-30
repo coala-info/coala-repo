@@ -119,7 +119,7 @@ inputs:
       position: 101
       prefix: --vcf
   - id: out_path
-    type: string
+    type: string?
     doc: output file (default = the prefix of the input vcf)
     inputBinding:
       position: 102

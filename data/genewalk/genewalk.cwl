@@ -20,7 +20,7 @@ inputs:
   - id: base_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'The base folder used to store GeneWalk temporary and result files for a
       given project. Default: /root/genewalk'
     inputBinding:
@@ -125,7 +125,7 @@ inputs:
   - id: save_dw
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'If True, the full DeepWalk object for each repeat is saved in the project
       folder. This can be useful for debugging but the files are typically very large.
       Default: False'

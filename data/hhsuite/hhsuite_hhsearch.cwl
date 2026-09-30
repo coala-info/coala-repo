@@ -571,10 +571,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `all_alignments_tabular_file_path`
+    doc: <file> write all alignments in tabular layout to file
     inputBinding:
       position: 102
-      prefix: --all-alignments-tabular-file
+      prefix: -atab
   - id: output_a3m_file_path
     type:
       - 'null'
@@ -595,10 +595,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fasta_format_path`
+    doc: write pairwise alignments in FASTA xor A2M (-Oa2m) xor A3M (-Oa3m) 
+      format
     inputBinding:
       position: 105
-      prefix: --output-fasta-format
+      prefix: -Ofas
   - id: output_file_path
     type:
       - 'null'
@@ -627,10 +628,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `scores_file_path`
+    doc: write scores for all pairwise comparisons to file
     inputBinding:
       position: 109
-      prefix: --scores-file
+      prefix: -scores
 outputs:
   - id: output_file
     type:

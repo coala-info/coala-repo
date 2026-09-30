@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grzctl download
+baseCommand:
+  - grzctl
+  - download
 label: grzctl_download
 doc: "Download a submission from a GRZ.\n\nTool homepage: https://github.com/BfArM-MVH/grz-tools"
 inputs:

@@ -206,7 +206,7 @@ inputs:
       prefix: --with_score
   - id: prefix_path
     type: string
-    doc: Output or path parameter `prefix_path`
+    doc: Output prefix to use. Otherwise will output to current
     inputBinding:
       position: 103
       prefix: --prefix
@@ -214,10 +214,11 @@ outputs:
   - id: prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output prefix to use. Otherwise will output to current directory.
     outputBinding:
-      glob: $(inputs.prefix_path)
+      glob: $(inputs.prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

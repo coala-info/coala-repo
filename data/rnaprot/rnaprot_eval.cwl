@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnaprot eval
+baseCommand:
+  - rnaprot
+  - eval
 label: rnaprot_eval
 doc: "Evaluation of trained models\n\nTool homepage: https://github.com/BackofenLab/RNAProt"
 inputs:

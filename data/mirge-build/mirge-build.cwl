@@ -18,7 +18,7 @@ inputs:
       position: 102
       prefix: --force
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to store the built database.
     inputBinding:
       position: 102

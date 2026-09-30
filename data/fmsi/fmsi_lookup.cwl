@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fmsi_lookup
+baseCommand:
+  - fmsi
+  - lookup
 label: fmsi_lookup
 doc: "Look up sequences in an FMSI index.\n\nTool homepage: https://github.com/OndrejSladky/fmsi"
 inputs:

@@ -56,7 +56,7 @@ inputs:
       position: 101
       prefix: --trees
   - id: output_directory
-    type: Directory
+    type: string
     doc: output directory name to store all results
     inputBinding:
       position: 101

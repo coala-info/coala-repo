@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nf-core modules
+baseCommand:
+  - nf-core
+  - modules
 label: nf-core_modules
 doc: "Commands to manage Nextflow DSL2 modules (tool wrappers).\n\nTool homepage:
   http://nf-co.re/"

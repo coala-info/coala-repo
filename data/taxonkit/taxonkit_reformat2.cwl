@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxonkit reformat2
+baseCommand:
+  - taxonkit
+  - reformat2
 label: taxonkit_reformat2
 doc: "Reformat lineage in chosen ranks, allowing more ranks than 'reformat'\n\nTool
   homepage: https://github.com/shenwei356/taxonkit"
@@ -12,6 +14,7 @@ inputs:
     doc: directory containing nodes.dmp and names.dmp
     inputBinding:
       position: 101
+      prefix: --data-dir
   - id: format
     type:
       - 'null'
@@ -28,6 +31,7 @@ inputs:
       for every line of output
     inputBinding:
       position: 101
+      prefix: --line-buffered
   - id: miss_rank_repl
     type:
       - 'null'
@@ -94,9 +98,10 @@ inputs:
     doc: print verbose information
     inputBinding:
       position: 101
+      prefix: --verbose
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

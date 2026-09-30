@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nebulizer_list_keys
+baseCommand:
+  - nebulizer
+  - list_keys
 label: nebulizer_list_keys
 doc: "List stored Galaxy API key aliases.\n\n  Prints a list of stored aliases with
   the associated Galaxy URLs;\n  optionally also show the API key string.\n\nTool

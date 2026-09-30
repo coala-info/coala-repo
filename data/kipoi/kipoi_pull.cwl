@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kipoi pull
+baseCommand:
+  - kipoi
+  - pull
 label: kipoi_pull
 doc: "Downloads the directory associated with the model.\n\nTool homepage: https://github.com/kipoi/kipoi"
 inputs:

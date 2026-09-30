@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tb-profiler lineage
+baseCommand:
+  - tb-profiler
+  - lineage
 label: tb-profiler_lineage
 doc: "Lineage profiling for Mycobacterium tuberculosis\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
 inputs:
@@ -102,7 +104,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 101

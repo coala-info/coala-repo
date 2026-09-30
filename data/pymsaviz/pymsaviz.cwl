@@ -124,7 +124,7 @@ inputs:
       prefix: --wrap_space_size
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output MSA visualization file (*.png|*.jpg|*.svg|*.pdf)
     inputBinding:
       position: 102
       prefix: --outfile

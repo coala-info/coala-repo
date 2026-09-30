@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtsv analyze
+baseCommand:
+  - mtsv
+  - analyze
 label: mtsv_analyze
 doc: "Additional Snakemake commands may also be provided\n\nTool homepage: https://github.com/FofanovLab/MTSv"
 inputs:
@@ -60,7 +62,7 @@ inputs:
   - id: use_database
     type:
       - 'null'
-      - boolean
+      - string
     doc: "If (T)rue, use previously calculated expected values\nwhere available. If
       (F)alse, all expected values will\nbe recalculated and used to update the database."
     inputBinding:
@@ -69,7 +71,7 @@ inputs:
   - id: working_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify working directory to place output.
     inputBinding:
       position: 101
@@ -78,18 +80,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `analysis_file_path`
     inputBinding:
       position: 102
-      prefix: --analysis-file
+      prefix: --analysis_file
   - id: summary_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_file_path`
     inputBinding:
       position: 103
-      prefix: --summary-file
+      prefix: --summary_file
 outputs:
   - id: analysis_file
     type:

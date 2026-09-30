@@ -93,10 +93,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_align_file_path`
+    doc: ': the output motif structural alignment in stockholm format'
     inputBinding:
       position: 103
-      prefix: --output-align-file
+      prefix: -o
 outputs:
   - id: cmfile_output
     type: File

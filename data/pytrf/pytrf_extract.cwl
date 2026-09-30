@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pytrf_extract
+baseCommand:
+  - pytrf
+  - extract
 label: pytrf_extract
 doc: "Extracts sequences from fasta or fastq files based on repeat information.\n\n\
   Tool homepage: https://github.com/lmdu/pytrf"
@@ -34,7 +36,6 @@ inputs:
       prefix: --repeat-file
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 103
       prefix: --out-file

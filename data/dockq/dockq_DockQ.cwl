@@ -98,8 +98,7 @@ inputs:
       position: 103
       prefix: --verbose
   - id: json_path
-    type: string
-    doc: Output or path parameter `json_path`
+    type: string?
     inputBinding:
       position: 104
       prefix: --json

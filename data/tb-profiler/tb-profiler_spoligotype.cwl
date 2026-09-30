@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tb-profiler spoligotype
+baseCommand:
+  - tb-profiler
+  - spoligotype
 label: tb-profiler_spoligotype
 doc: "Spoligotyping analysis for TBProfiler\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
 inputs:
@@ -128,7 +130,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 101

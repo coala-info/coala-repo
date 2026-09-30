@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transit_rankproduct
+baseCommand:
+  - transit
+  - rankproduct
 label: transit_rankproduct
 doc: "Performs rank product analysis for differential gene expression between control
   and experimental samples.\n\nTool homepage: http://github.com/mad-lab/transit"
@@ -12,6 +14,7 @@ inputs:
     doc: Comma-separated list of .wig control files
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: experimental_files
     type:
       type: array
@@ -19,6 +22,7 @@ inputs:
     doc: Comma-separated list of .wig experimental files
     inputBinding:
       position: 2
+      itemSeparator: ','
   - id: annotation_file
     type: File
     doc: Annotation file (.prot_table or GFF3)

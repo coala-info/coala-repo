@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msstitch perco2psm
+baseCommand:
+  - msstitch
+  - perco2psm
 label: msstitch_perco2psm
 doc: "Converts Percolator output to PSM table format.\n\nTool homepage: https://github.com/lehtiolab/msstitch"
 inputs:
@@ -72,10 +74,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_dir
     type:

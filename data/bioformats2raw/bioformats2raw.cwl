@@ -68,7 +68,8 @@ inputs:
     doc: Separate set of readers to include
     inputBinding:
       position: 102
-      prefix: --extra-readers
+      prefix: --extra-readers=
+      separate: false
   - id: fill_value
     type:
       - 'null'
@@ -93,7 +94,8 @@ inputs:
       and ALL.
     inputBinding:
       position: 102
-      prefix: --log-level
+      prefix: --log-level=
+      separate: false
   - id: max_cached_tiles
     type:
       - 'null'
@@ -203,7 +205,8 @@ inputs:
     doc: Reader-specific options, in format key=value[, key2=value2]
     inputBinding:
       position: 102
-      prefix: --options
+      prefix: --options=
+      separate: false
   - id: resolutions
     type:
       - 'null'
@@ -228,7 +231,9 @@ inputs:
     doc: Comma-separated list of series indexes to convert
     inputBinding:
       position: 102
-      prefix: --series
+      prefix: --series=
+      itemSeparator: ','
+      separate: false
   - id: target_min_size
     type:
       - 'null'

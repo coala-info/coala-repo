@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gia_window
+baseCommand:
+  - gia
+  - window
 label: gia_window
 doc: "Finds all the overlapping intervals in Set B after adding a window around all
   intervals in Set A\n\nTool homepage: https://github.com/noamteyssier/gia"
@@ -102,7 +104,6 @@ inputs:
       prefix: --stranded
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

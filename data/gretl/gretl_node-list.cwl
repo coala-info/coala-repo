@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl_node-list
+baseCommand:
+  - gretl
+  - node-list
 label: gretl_node-list
 doc: "Statistics for each node\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:
@@ -38,7 +40,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output
     inputBinding:
       position: 102
       prefix: --output

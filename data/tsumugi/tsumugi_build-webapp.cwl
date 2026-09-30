@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tsumugi build-webapp
+baseCommand:
+  - tsumugi
+  - build-webapp
 label: tsumugi_build-webapp
 doc: "Builds a web application for visualizing Tsumugi results.\n\nTool homepage:
   https://github.com/akikuno/TSUMUGI-dev"
@@ -12,7 +14,7 @@ inputs:
       position: 101
       prefix: --genewise_annotations
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory
     inputBinding:
       position: 101

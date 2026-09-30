@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnaprot gt
+baseCommand:
+  - rnaprot
+  - gt
 label: rnaprot_gt
 doc: "Generate training data for RNA binding protein motif discovery.\n\nTool homepage:
   https://github.com/BackofenLab/RNAProt"

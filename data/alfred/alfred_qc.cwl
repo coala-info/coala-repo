@@ -45,9 +45,9 @@ inputs:
       prefix: --rg
   - id: reference
     type: File
+    doc: reference fasta file (required)
     secondaryFiles:
       - .fai
-    doc: reference fasta file (required)
     inputBinding:
       position: 102
       prefix: --reference
@@ -79,18 +79,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `json_output_path`
+    doc: gzipped json output file
     inputBinding:
       position: 103
-      prefix: --json-output
+      prefix: --jsonout
   - id: tsv_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tsv_output_path`
+    doc: gzipped tsv output file
     inputBinding:
       position: 104
-      prefix: --tsv-output
+      prefix: --outfile
 outputs:
   - id: json_output
     type: File

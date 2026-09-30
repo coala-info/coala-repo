@@ -14,6 +14,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chip
+      itemSeparator: ','
   - id: file_type
     type:
       - 'null'
@@ -31,6 +32,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+      itemSeparator: ','
   - id: narrow_peak_boundary
     type:
       - 'null'

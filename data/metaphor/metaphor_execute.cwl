@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaphor execute
+baseCommand:
+  - metaphor
+  - execute
 label: metaphor_execute
 doc: "Execute a Metaphor workflow.\n\nTool homepage: https://github.com/vinisalazar/metaphor"
 inputs:

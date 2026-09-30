@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dampa eval
+baseCommand:
+  - dampa
+  - eval
 label: dampa_eval
 doc: "Check probe coverage against genomes or capture files.\n\nTool homepage: https://github.com/MultipathogenGenomics/dampa"
 inputs:
@@ -85,7 +87,7 @@ inputs:
   - id: outputfolder
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to output folder
     inputBinding:
       position: 101

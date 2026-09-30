@@ -33,7 +33,7 @@ inputs:
   - id: fast_em
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Allow early termination in EM calculation when noise\n                 \
       \       is sufficiently small."
     inputBinding:
@@ -61,7 +61,7 @@ inputs:
   - id: log2_scale
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Input abundances are in log scale (True) or linear\n                   \
       \     scale (False)"
     inputBinding:
@@ -116,7 +116,7 @@ inputs:
   - id: use_unique_peptides
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use unique peptides only
     inputBinding:
       position: 101
@@ -141,10 +141,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: "Path to output file (writing in TSV format). (default: <_io.TextIOWrapper
+      name='<stdout>' mode='w' encoding='utf-8'>)"
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type:

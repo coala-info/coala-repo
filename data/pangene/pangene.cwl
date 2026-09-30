@@ -182,10 +182,11 @@ inputs:
       prefix: -w
   - id: output_bed_path
     type: string
-    doc: Output or path parameter `output_bed_path`
+    doc: output 12-column BED where STR is walk, raw or flag [walk]
     inputBinding:
       position: 103
-      prefix: --output-bed
+      prefix: --bed=
+      separate: false
 outputs:
   - id: output_bed
     type:

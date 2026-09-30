@@ -258,6 +258,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --default-adapters
+      itemSeparator: ','
   - id: description
     type:
       - 'null'
@@ -861,7 +862,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where the temporary files will be stored (matches, unsorted 
       alignments, etc.)
     inputBinding:
@@ -880,6 +881,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tiles
+      itemSeparator: ','
   - id: tls
     type:
       - 'null'
@@ -943,7 +945,7 @@ inputs:
       prefix: --verbosity
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Directory where the final
     inputBinding:
       position: 102
       prefix: --output-directory

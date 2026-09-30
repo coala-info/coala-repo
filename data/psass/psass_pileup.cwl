@@ -26,15 +26,15 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Reference file in fasta format, required with CRAM input files
     secondaryFiles:
       - .fai
-    doc: Reference file in fasta format, required with CRAM input files
     inputBinding:
       position: 102
       prefix: --reference
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: TEXT         Write to an output file instead of stdout
     inputBinding:
       position: 103
       prefix: --output-file

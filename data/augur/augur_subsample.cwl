@@ -128,14 +128,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --skip-checks
-  - id: output_log_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_log_path`
-    inputBinding:
-      position: 102
-      prefix: --output-log
   - id: output_metadata_path
     type:
       - 'null'
@@ -150,6 +142,13 @@ inputs:
     inputBinding:
       position: 104
       prefix: --output-sequences
+  - id: output_log_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --output-log
 outputs:
   - id: output_metadata
     type:

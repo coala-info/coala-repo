@@ -16,6 +16,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --custom
+      itemSeparator: ','
   - id: loci
     type:
       - 'null'
@@ -26,6 +27,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --loci
+      itemSeparator: ','
   - id: reads
     type: File
     doc: Input reads that will be mapped on a reference locus. They should 
@@ -52,7 +54,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory to store intermediate files like indexes or bam 
       files.
     inputBinding:
@@ -60,10 +62,9 @@ inputs:
       prefix: --tmpdir
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory

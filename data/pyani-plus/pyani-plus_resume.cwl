@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyani-plus resume
+baseCommand:
+  - pyani-plus
+  - resume
 label: pyani-plus_resume
 doc: "Resume any (partial) run already logged in the database.\n\nIf the run was already
   complete, this should have no effect.\nAny missing pairwise comparisons will be
@@ -60,7 +62,7 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for intermediate files, which for debugging purposes 
       will not be deleted. For clusters this must be on a shared drive. Default 
       behaviour is to use a system specified temporary directory (specific to 
@@ -71,7 +73,7 @@ inputs:
   - id: wtemp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for temporary workflow coordination files, which for 
       debugging purposes will not be deleted. For clusters this must be on a 
       shared drive. Default behaviour is to use a system specified temporary 

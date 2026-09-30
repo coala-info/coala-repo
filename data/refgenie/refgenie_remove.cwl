@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: refgenie remove
+baseCommand:
+  - refgenie
+  - remove
 label: refgenie_remove
 doc: "Remove a local asset.\n\nTool homepage: http://refgenie.databio.org"
 inputs:

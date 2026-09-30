@@ -153,18 +153,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_file_path`
+    doc: File to store MIGMAP report. Will
     inputBinding:
       position: 104
-      prefix: --report-file
+      prefix: --report
   - id: unmapped_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unmapped_output_path`
+    doc: Output unmapped reads in specified
     inputBinding:
       position: 105
-      prefix: --unmapped-output
+      prefix: --unmapped
 outputs:
   - id: report_file
     type:

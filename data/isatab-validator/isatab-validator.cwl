@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_directory
-    type: Directory
+    type: string
     doc: Path to the directory where validation reports will be saved.
     inputBinding:
       position: 2

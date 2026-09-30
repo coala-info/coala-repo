@@ -73,11 +73,11 @@ inputs:
       position: 102
       prefix: --v-shm-threshold
   - id: members_file_path
-    type: string
-    doc: Output or path parameter `members_file_path`
+    type: string?
+    doc: Write member table to FILE
     inputBinding:
       position: 103
-      prefix: --members-file
+      prefix: --members
 outputs:
   - id: members_file
     type:

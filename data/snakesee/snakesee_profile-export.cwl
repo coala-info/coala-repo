@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakesee profile-export
+baseCommand:
+  - snakesee
+  - profile-export
 label: snakesee_profile-export
 doc: "Export timing profile from workflow metadata.\n\nCreates a portable JSON file
   containing historical timing data that can\nbe shared across machines or used to
@@ -23,7 +25,7 @@ inputs:
       prefix: --merge
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file path. Defaults to .snakesee-profile.json in workflow_dir.
     inputBinding:
       position: 103
       prefix: --output

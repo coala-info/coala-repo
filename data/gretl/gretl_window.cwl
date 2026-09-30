@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl window
+baseCommand:
+  - gretl
+  - window
 label: gretl_window
 doc: "Sliding window analysis (path-centric)\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:
@@ -61,7 +63,7 @@ inputs:
       prefix: --window-size
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output
     inputBinding:
       position: 102
       prefix: --output

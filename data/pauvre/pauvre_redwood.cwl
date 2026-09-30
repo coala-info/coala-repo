@@ -150,7 +150,6 @@ inputs:
       prefix: --transparent
   - id: output_base_name_path
     type: string
-    doc: Output or path parameter `output_base_name_path`
     inputBinding:
       position: 102
       prefix: --output-base-name
@@ -158,11 +157,12 @@ outputs:
   - id: output_base_name
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Specify a base name for the output file(s). The input file base name is
       the default.
     outputBinding:
-      glob: $(inputs.output_base_name_path)
+      glob: $(inputs.output_base_name_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

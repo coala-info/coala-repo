@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: parm_mutagenesis
+baseCommand:
+  - parm
+  - mutagenesis
 label: parm_mutagenesis
 doc: "Promoter Activity Regulatory Model\n\nTool homepage: https://github.com/vansteensellab/PARM"
 inputs:

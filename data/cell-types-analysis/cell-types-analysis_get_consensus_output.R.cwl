@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cell-types-analysis_get_consensus_output.R
+baseCommand: get_consensus_output.R
 label: cell-types-analysis_get_consensus_output.R
 doc: "Generates consensus output for cell type analysis.\n\nTool homepage: https://github.com/ebi-gene-expression-group/cell-types-analysis"
 inputs:
@@ -110,7 +110,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `raw_table_output_path_path`
     inputBinding:
       position: 102
       prefix: --raw-table-output-path
@@ -118,7 +117,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_table_output_path_path`
     inputBinding:
       position: 103
       prefix: --summary-table-output-path

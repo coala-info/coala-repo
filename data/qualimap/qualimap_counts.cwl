@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qualimap counts
+baseCommand:
+  - qualimap
+  - counts
 label: qualimap_counts
 doc: "QualiMap v.2.3\n\nTool homepage: http://qualimap.bioinfo.cipf.es/"
 inputs:
@@ -33,7 +35,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder for HTML report and raw data.
     inputBinding:
       position: 101
@@ -74,10 +76,9 @@ inputs:
       prefix: --threshold
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 102
-      prefix: --outfile
+      prefix: -outfile
 outputs:
   - id: outfile
     type:

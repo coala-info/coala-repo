@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq sequence_trim
+baseCommand:
+  - fastaq
+  - sequence_trim
 label: fastaq_sequence_trim
 doc: "Trims sequences off the start of all sequences in a pair of sequence files,
   whenever there is a perfect match. Only keeps a read pair if both reads of the pair

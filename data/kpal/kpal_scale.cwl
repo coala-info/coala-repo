@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal scale
+baseCommand:
+  - kpal
+  - scale
 label: kpal_scale
 doc: "Scale two profiles such that the total number of k-mers is equal. If the files
   contain more than one profile, they are linked by name and processed pairwise.\n\

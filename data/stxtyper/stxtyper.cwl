@@ -69,22 +69,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
-  - id: nucleotide_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `nucleotide_output_path`
-    inputBinding:
-      position: 102
-      prefix: --nucleotide-output
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Write output to OUTPUT_FILE instead of STDOUT'
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
+  - id: nucleotide_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --nucleotide_output
 outputs:
   - id: output_file
     type:

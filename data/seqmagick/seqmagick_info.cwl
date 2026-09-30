@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqmagick_info
+baseCommand:
+  - seqmagick
+  - info
 label: seqmagick_info
 doc: "Info action\n\nTool homepage: http://github.com/fhcrc/seqmagick"
 inputs:
@@ -38,8 +40,7 @@ inputs:
       position: 102
       prefix: --threads
   - id: out_file_path
-    type: string
-    doc: Output or path parameter `out_file_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --out-file

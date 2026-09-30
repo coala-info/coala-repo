@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem condense
+baseCommand:
+  - singlem
+  - condense
 label: singlem_condense
 doc: "Combine OTU tables across different markers into a single taxonomic profile.\n\
   \nTool homepage: https://github.com/wwood/singlem"
@@ -90,7 +92,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_after_em_otu_table_path`
     inputBinding:
       position: 102
       prefix: --output-after-em-otu-table
@@ -98,7 +99,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `taxonomic_profile_path`
     inputBinding:
       position: 103
       prefix: --taxonomic-profile
@@ -106,7 +106,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `taxonomic_profile_krona_path`
     inputBinding:
       position: 104
       prefix: --taxonomic-profile-krona

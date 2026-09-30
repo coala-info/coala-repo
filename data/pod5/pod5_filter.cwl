@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5_filter
+baseCommand:
+  - pod5
+  - filter
 label: pod5_filter
 doc: "Take a subset of reads using a list of read_ids from one or more inputs\n\n\
   Tool homepage: https://github.com/nanoporetech/pod5-file-format"
@@ -60,7 +62,6 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

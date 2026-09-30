@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dinf mc
+baseCommand:
+  - dinf
+  - mc
 label: dinf_mc
 doc: "Adversarial Monte Carlo.\n\nTool homepage: https://github.com/RacimoLab/dinf"
 inputs:
@@ -33,7 +35,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder to output results. If not specified, the current directory will 
       be used.
     inputBinding:

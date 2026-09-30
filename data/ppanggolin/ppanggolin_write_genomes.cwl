@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ppanggolin write_genomes
+baseCommand:
+  - ppanggolin
+  - write_genomes
 label: ppanggolin_write_genomes
 doc: "Write genomes from a pangenome analysis.\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
 inputs:
@@ -155,7 +157,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

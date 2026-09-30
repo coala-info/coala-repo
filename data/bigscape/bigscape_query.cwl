@@ -253,7 +253,7 @@ inputs:
       position: 101
       prefix: --no-trees
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory for all BiG-SCAPE results files.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmertools min
+baseCommand:
+  - kmertools
+  - min
 label: kmertools_min
 doc: "Bin reads using minimisers\n\nTool homepage: https://github.com/anuradhawick/kmertools"
 inputs:
@@ -47,7 +49,6 @@ inputs:
       prefix: --w-size
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

@@ -122,7 +122,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save FASTA files, reports, and final multi-FASTA
     inputBinding:
       position: 101

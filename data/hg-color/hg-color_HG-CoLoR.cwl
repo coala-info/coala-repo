@@ -116,24 +116,25 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path where to store the directory containing temporary files
     inputBinding:
       position: 101
       prefix: --tmpdir
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type: File
+    type:
+      type: array
+      items: File
     doc: Prefix of the fasta files where to output the corrected, trim and split
       long reads.
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

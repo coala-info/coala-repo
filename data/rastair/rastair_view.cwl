@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rastair_view
+baseCommand:
+  - rastair
+  - view
 label: rastair_view
 doc: "View internal format as JSON lines\n\nTool homepage: https://bitbucket.org/bsblabludwig/rastair/src/v0.8.2/"
 inputs:
@@ -21,7 +23,6 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

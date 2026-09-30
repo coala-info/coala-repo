@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lassensus reference-selection
+baseCommand:
+  - lassensus
+  - reference-selection
 label: lassensus_reference-selection
 doc: "Selects the best reference genome from a directory of input FASTQ files based
   on various criteria.\n\nTool homepage: https://github.com/DaanJansen94/lassensus"
@@ -62,10 +64,9 @@ inputs:
       prefix: --ref_reads
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory

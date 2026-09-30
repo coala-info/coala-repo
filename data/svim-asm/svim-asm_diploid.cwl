@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svim-asm diploid
+baseCommand:
+  - svim-asm
+  - diploid
 label: svim-asm_diploid
 doc: "SVIM-ASM is a tool for structural variant detection in diploid genomes.\n\n\
   Tool homepage: https://github.com/eldariont/svim-asm"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trycycler_consensus
+baseCommand:
+  - trycycler
+  - consensus
 label: trycycler_consensus
 doc: "derive a consensus sequence\n\nTool homepage: https://github.com/rrwick/Trycycler"
 inputs:

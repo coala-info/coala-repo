@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jupyter_nbconvert
+baseCommand:
+  - jupyter
+  - nbconvert
 label: jupyter_nbconvert
 doc: "This application is used to convert notebook files (*.ipynb) to various other\n\
   formats.\n\nTool homepage: https://github.com/jakevdp/PythonDataScienceHandbook"
@@ -93,7 +95,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Directory to write output to.  Leave blank to output to the current\n  \
       \  directory"
     inputBinding:

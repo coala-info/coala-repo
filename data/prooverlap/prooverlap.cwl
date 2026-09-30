@@ -180,6 +180,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --targets
+      itemSeparator: ','
   - id: test_at_gc
     type:
       - 'null'
@@ -207,7 +208,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for storing intermediate files. Default is current 
       working directory
     inputBinding:
@@ -233,17 +234,13 @@ inputs:
       position: 101
       prefix: --WeightRanking
   - id: outdir_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Full path to output directory to store tables for
     inputBinding:
       position: 102
       prefix: --outdir
   - id: outfile_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Full path to the output file to store final results in
     inputBinding:
       position: 103

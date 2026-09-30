@@ -33,10 +33,10 @@ inputs:
       prefix: --unsorted
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: the output folder. Has to be specified if input is
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

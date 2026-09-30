@@ -68,10 +68,10 @@ inputs:
       prefix: -threads
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: output directory
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -out
 outputs:
   - id: output_directory
     type: Directory

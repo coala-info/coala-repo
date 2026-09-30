@@ -170,7 +170,7 @@ inputs:
     doc: read from a fast5 dump file or not
     inputBinding:
       position: 101
-      prefix: --read_dump
+      prefix: --read-dump
   - id: reads
     type: File
     doc: fastq/fasta read file
@@ -304,15 +304,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: output to file [stdout]
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: -o
   - id: summary_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_path`
+    doc: summarise the alignment of each read/strand in FILE
     inputBinding:
       position: 103
       prefix: --summary

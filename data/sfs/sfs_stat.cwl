@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sfs_stat
+baseCommand:
+  - sfs
+  - stat
 label: sfs_stat
 doc: "Tools for working with site frequency spectra\n\nTool homepage: https://github.com/malthesr/sfs"
 inputs:

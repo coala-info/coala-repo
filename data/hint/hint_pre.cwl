@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hint pre
+baseCommand:
+  - hint
+  - pre
 label: hint_pre
 doc: "Preprocessing Hi-C data, alignment, create contact matrices, and normalization.\n\
   \nTool homepage: https://github.com/suwangbio/HiNT_py3"
@@ -74,7 +76,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output directory, where you want to store all the output 
       files, if not set, the current directory will be used
     inputBinding:

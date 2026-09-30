@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haptools_clump
+baseCommand:
+  - haptools
+  - clump
 label: haptools_clump
 doc: "Performs clumping on datasets with SNPs, SNPs and STRs, and STRs. Clumping is
   the process of identifying SNPs or STRs that are highly correlated with one another

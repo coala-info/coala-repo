@@ -100,13 +100,13 @@ inputs:
   - id: only_split
     type:
       - 'null'
-      - boolean
+      - string
     doc: Do not run stRainy, only split long gfa unitigs
     inputBinding:
       position: 101
       prefix: --only-split
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101

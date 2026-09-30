@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_chop
+baseCommand:
+  - odgi
+  - chop
 label: odgi_chop
 doc: "Divide nodes into smaller pieces preserving node topology and order.\n\nTool
   homepage: https://github.com/vgteam/odgi"
@@ -46,7 +48,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the chopped succinct variation
     inputBinding:
       position: 102
       prefix: --out

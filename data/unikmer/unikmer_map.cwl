@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer map
+baseCommand:
+  - unikmer
+  - map
 label: unikmer_map
 doc: "Mapping k-mers back to the genome and extract successive regions/subsequences\n\
   \nTool homepage: https://github.com/shenwei356/unikmer"

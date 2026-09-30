@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scaden process
+baseCommand:
+  - scaden
+  - process
 label: scaden_process
 doc: "Process a dataset for training\n\nTool homepage: https://github.com/KevinMenden/scaden"
 inputs:
@@ -26,10 +28,10 @@ inputs:
       prefix: --var_cutoff
   - id: processed_path_path
     type: string
-    doc: Output or path parameter `processed_path_path`
+    doc: Path of processed file. Must end with .h5ad
     inputBinding:
       position: 104
-      prefix: --processed-path
+      prefix: --processed_path
 outputs:
   - id: processed_path
     type:

@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: temporary_dir
-    type: Directory
+    type: string
     doc: Directory for temporary files
     inputBinding:
       position: 2

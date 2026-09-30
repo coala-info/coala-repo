@@ -8,13 +8,13 @@ doc: "FASTAptamer-Cluster uses the Levenshtein algorithm to cluster together seq
   Tool homepage: http://burkelab.missouri.edu/fastaptamer.html"
 inputs:
   - id: edit_distance
-    type: int
+    type: int?
     doc: Edit distance for clustering sequences. REQUIRED.
     inputBinding:
       position: 101
       prefix: -d
   - id: input_file
-    type: File
+    type: File?
     doc: Input file from FASTAptamer-Count. REQUIRED.
     inputBinding:
       position: 101

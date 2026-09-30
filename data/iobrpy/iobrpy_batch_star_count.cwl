@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iobrpy batch_star_count
+baseCommand:
+  - iobrpy
+  - batch_star_count
 label: iobrpy_batch_star_count
 doc: "Run STAR aligner in batches for multiple samples.\n\nTool homepage: https://github.com/IOBR/IOBRpy"
 inputs:
@@ -42,10 +44,10 @@ inputs:
       prefix: --suffix1
   - id: path_out_path
     type: string
-    doc: Output or path parameter `path_out_path`
+    doc: Output folder for STAR results
     inputBinding:
       position: 102
-      prefix: --path-out
+      prefix: --path_out
 outputs:
   - id: path_out
     type: Directory

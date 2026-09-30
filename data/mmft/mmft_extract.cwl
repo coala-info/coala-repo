@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_extract
+baseCommand:
+  - mmft
+  - extract
 label: mmft_extract
 doc: "Extract (sub)sequence within a fasta file record.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:

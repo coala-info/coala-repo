@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mity_merge
+baseCommand:
+  - mity
+  - merge
 label: mity_merge
 doc: "Merge MITY and nuclear VCF files.\n\nTool homepage: https://github.com/KCCG/mity"
 inputs:
@@ -35,7 +37,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output files will be saved in OUTPUT_DIR.
     inputBinding:
       position: 101

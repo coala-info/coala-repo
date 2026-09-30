@@ -16,6 +16,11 @@ inputs:
     doc: Input SAV file
     inputBinding:
       position: 2
+  - id: out_sav
+    type: string
+    doc: Output SAV file
+    inputBinding:
+      position: 3
   - id: sample_ids_file
     type: File
     doc: Path to file containing list of sample IDs that will replace existing 
@@ -28,7 +33,7 @@ outputs:
     type: File
     doc: Output SAV file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_sav)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savvy:2.1.0--h5b0a936_4

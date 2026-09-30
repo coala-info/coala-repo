@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snk uninstall
+baseCommand:
+  - snk
+  - uninstall
 label: snk_uninstall
 doc: "Uninstall a workflow.\n\nTool homepage: https://snk.wytamma.com"
 inputs:

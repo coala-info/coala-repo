@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spp-dcj ilp
+baseCommand:
+  - spp-dcj
+  - ilp
 label: spp-dcj_ilp
 doc: "Solves the Double-Cut-and-Join problem using Integer Linear Programming.\n\n\
   Tool homepage: https://github.com/codialab/spp-dcj"
@@ -102,10 +104,9 @@ inputs:
       prefix: --warm-start-sol
   - id: output_id_mapping_path
     type: string
-    doc: Output or path parameter `output_id_mapping_path`
     inputBinding:
       position: 104
-      prefix: --output-id-mapping
+      prefix: --output_id_mapping
 outputs:
   - id: output_id_mapping
     type:

@@ -39,10 +39,10 @@ inputs:
       prefix: --exclude
   - id: new_metadata_csv_path
     type: string
-    doc: Output or path parameter `new_metadata_csv_path`
+    doc: metadata.csv, --output-metadata NEW_metadata.csv New csv file to write
     inputBinding:
       position: 102
-      prefix: --new-metadata-csv
+      prefix: -o
 outputs:
   - id: new_metadata_csv
     type: File

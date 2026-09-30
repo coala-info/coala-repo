@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tinscan_tinscan-prep
+baseCommand: tinscan-prep
 label: tinscan_tinscan-prep
 doc: "Split multifasta genome files into directories for A and B genomes.\n\nTool
   homepage: https://github.com/Adamtaranto/TE-insertion-scanner"

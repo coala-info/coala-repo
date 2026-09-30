@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccsmeth train
+baseCommand:
+  - ccsmeth
+  - train
 label: ccsmeth_train
 doc: "train a model, need two independent datasets for training and validating\n\n\
   Tool homepage: https://github.com/PengNi/ccsmeth"
@@ -76,7 +78,7 @@ inputs:
   - id: is_map
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using mapping features, yes or no
     inputBinding:
       position: 101
@@ -84,7 +86,7 @@ inputs:
   - id: is_npass
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using num_pass features, yes or no
     inputBinding:
       position: 101
@@ -92,7 +94,7 @@ inputs:
   - id: is_sn
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using signal-to-noise-ratio features, yes or no
     inputBinding:
       position: 101
@@ -100,7 +102,7 @@ inputs:
   - id: is_stds
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using std features, yes or no
     inputBinding:
       position: 101
@@ -184,7 +186,7 @@ inputs:
       position: 101
       prefix: --min_epoch_num
   - id: model_dir
-    type: Directory
+    type: string
     doc: Directory to save the trained model
     inputBinding:
       position: 101
@@ -254,7 +256,7 @@ inputs:
   - id: use_compile
     type:
       - 'null'
-      - boolean
+      - string
     doc: if using torch.compile, yes or no ('yes' only works in pytorch>=2.0)
     inputBinding:
       position: 101

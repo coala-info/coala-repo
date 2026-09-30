@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_folder
-    type: Directory
+    type: string
     doc: Folder to store the output files.
     inputBinding:
       position: 2

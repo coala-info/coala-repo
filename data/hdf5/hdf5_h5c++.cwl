@@ -35,7 +35,8 @@ inputs:
     doc: Prefix directory to find HDF5 lib/ and include/ subdirectories
     inputBinding:
       position: 102
-      prefix: -prefix
+      prefix: -prefix=
+      separate: false
   - id: shlib
     type:
       - 'null'

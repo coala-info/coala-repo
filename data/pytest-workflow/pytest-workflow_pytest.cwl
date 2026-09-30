@@ -5,7 +5,7 @@ label: pytest-workflow_pytest
 doc: "pytest: a plugin for pytest to manage workflows\n\nTool homepage: https://github.com/LUMC/pytest-workflow"
 inputs:
   - id: basetemp
-    type: Directory
+    type: string
     doc: Base directory for temporary files, not in pytest's current working 
       directory.
     inputBinding:

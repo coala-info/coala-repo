@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem_summarise
+baseCommand:
+  - singlem
+  - summarise
 label: singlem_summarise
 doc: "Summarise single-cell RNA-seq data\n\nTool homepage: https://github.com/wwood/singlem"
 inputs:
@@ -34,7 +36,7 @@ inputs:
       position: 102
       prefix: --n-top-genes
   - id: output_dir
-    type: Directory
+    type: string
     doc: Directory to save the summary files
     inputBinding:
       position: 102

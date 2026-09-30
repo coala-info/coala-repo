@@ -112,7 +112,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write output files to this directory.
     inputBinding:
       position: 101
@@ -215,7 +215,7 @@ inputs:
       position: 101
       prefix: --writeTRF
   - id: gffout_path
-    type: string
+    type: string?
     doc: Name of GFF3 annotation file.
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi panpos
+baseCommand:
+  - odgi
+  - panpos
 label: odgi_panpos
 doc: "Get the pangenome position of a given path and nucleotide position (1-based).\n\
   \nTool homepage: https://github.com/vgteam/odgi"

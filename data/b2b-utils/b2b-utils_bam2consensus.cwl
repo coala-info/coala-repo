@@ -66,10 +66,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bedgraph_file_path`
+    doc: ' Path to write coverage file to (as bedgraph)'
     inputBinding:
       position: 102
-      prefix: --bedgraph-file
+      prefix: --bedgraph
   - id: consensus_file_path
     type:
       - 'null'
@@ -82,10 +82,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `table_file_path`
+    doc: ' Path to write coverage file to (as tab-separated table)'
     inputBinding:
       position: 104
-      prefix: --table-file
+      prefix: --table
 outputs:
   - id: consensus_file
     type: File

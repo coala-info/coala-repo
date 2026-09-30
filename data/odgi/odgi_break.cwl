@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi break
+baseCommand:
+  - odgi
+  - break
 label: odgi_break
 doc: "Break cycles in the graph and drop its paths.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:
@@ -63,7 +65,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Write the broken graph in ODGI format
     inputBinding:
       position: 102
       prefix: --out

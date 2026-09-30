@@ -27,6 +27,11 @@ inputs:
     doc: Input/control bam file
     inputBinding:
       position: 4
+  - id: output_dir
+    type: string
+    doc: output directory, will be created if not existing.
+    inputBinding:
+      position: 5
   - id: bin_size
     type:
       - 'null'
@@ -99,11 +104,11 @@ inputs:
       position: 105
       prefix: --write-log-ratios
 outputs:
-  - id: output_dir
+  - id: out_output_dir
     type: Directory
     doc: output directory, will be created if not existing.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/edd:1.1.19--py27hc1659b7_0

@@ -13,6 +13,7 @@ inputs:
     doc: Fasta files with the MLST scheme
     inputBinding:
       position: 1
+      prefix: --fasta_files
   - id: k
     type: int
     doc: Kmer size

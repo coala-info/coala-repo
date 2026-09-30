@@ -16,7 +16,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cell_polygons_path`
     inputBinding:
       position: 101
       prefix: --output-cell-polygons
@@ -24,7 +23,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_transcript_metadata_path`
     inputBinding:
       position: 102
       prefix: --output-transcript-metadata

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_matrix
+baseCommand:
+  - odgi
+  - matrix
 label: odgi_matrix
 doc: "Write the graph topology in sparse matrix format.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:

@@ -99,10 +99,10 @@ inputs:
       prefix: --verbose
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' The folder containing output data the script wilp generate.'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --outputFolder
 outputs:
   - id: output_folder
     type:

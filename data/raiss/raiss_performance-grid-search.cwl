@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: raiss performance-grid-search
+baseCommand:
+  - raiss
+  - performance-grid-search
 label: raiss_performance-grid-search
 doc: "Performs a grid search for RAISS performance tuning.\n\nTool homepage: http://statistical-genetics.pages.pasteur.fr/raiss/"
 inputs:
@@ -18,7 +20,7 @@ inputs:
       position: 101
       prefix: --harmonized-folder
   - id: imputed_folder
-    type: Directory
+    type: string
     doc: folder to store imputed files
     inputBinding:
       position: 101

@@ -43,16 +43,14 @@ inputs:
       position: 101
       prefix: -chromFirst
   - id: exclude
-    type: File
+    type: File?
     doc: A BED/GFF/VCF file of coordinates in which features in -i should not be
       placed (e.g. gaps.bed).
     inputBinding:
       position: 101
       prefix: -excl
   - id: genome
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'A genome file (tab delimited: <chromName><TAB><chromSize>).'
     inputBinding:
       position: 101
@@ -67,9 +65,7 @@ inputs:
       position: 101
       prefix: -incl
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: A BED/GFF/VCF file of features to be shuffled.
     inputBinding:
       position: 101

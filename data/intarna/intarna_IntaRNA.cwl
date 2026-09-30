@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: intarna_IntaRNA
+baseCommand: IntaRNA
 label: intarna_IntaRNA
 doc: "IntaRNA predicts RNA-RNA interactions.\n\nTool homepage: https://github.com/BackofenLab/IntaRNA"
 inputs:
@@ -223,7 +223,7 @@ inputs:
       prefix: --threads
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'output (multi-arg) : provide a file name for'
     inputBinding:
       position: 102
       prefix: --out

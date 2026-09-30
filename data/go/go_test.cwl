@@ -181,7 +181,8 @@ inputs:
     doc: Run only those benchmarks matching a regular expression.
     inputBinding:
       position: 102
-      prefix: -bench
+      prefix: -bench=
+      separate: false
   - id: run_count
     type:
       - 'null'
@@ -189,7 +190,8 @@ inputs:
     doc: Run each test and benchmark n times (default 1).
     inputBinding:
       position: 102
-      prefix: -count
+      prefix: -count=
+      separate: false
   - id: run_tests
     type:
       - 'null'
@@ -197,7 +199,8 @@ inputs:
     doc: Run only those tests and examples matching the regular expression.
     inputBinding:
       position: 102
-      prefix: -run
+      prefix: -run=
+      separate: false
   - id: short_run
     type:
       - 'null'
@@ -235,26 +238,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `block_profile_file_path`
+    doc: block.out Write a goroutine blocking profile to the specified file when
+      all tests are complete. Writes test binary as -c would.
     inputBinding:
       position: 103
-      prefix: --block-profile-file
+      prefix: -blockprofile
   - id: coverage_profile_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `coverage_profile_file_path`
+    doc: cover.out Write a coverage profile to the file after all tests have 
+      passed. Sets -cover.
     inputBinding:
       position: 104
-      prefix: --coverage-profile-file
+      prefix: -coverprofile
   - id: cpu_profile_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cpu_profile_file_path`
+    doc: cpu.out Write a CPU profile to the specified file before exiting. 
+      Writes test binary as -c would.
     inputBinding:
       position: 105
-      prefix: --cpu-profile-file
+      prefix: -cpuprofile=
+      separate: false
   - id: memory_profile_file_path
     type:
       - 'null'
@@ -267,18 +274,20 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mutex_profile_file_path`
+    doc: mutex.out Write a mutex contention profile to the specified file when 
+      all tests are complete. Writes test binary as -c would.
     inputBinding:
       position: 107
-      prefix: --mutex-profile-file
+      prefix: -mutexprofile
   - id: trace_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `trace_file_path`
+    doc: trace.out Write an execution trace to the specified file before 
+      exiting.
     inputBinding:
       position: 108
-      prefix: --trace-file
+      prefix: -trace
 outputs:
   - id: block_profile_file
     type:

@@ -21,7 +21,7 @@ inputs:
       position: 101
       prefix: --sorted_sam_file
   - id: outf_path
-    type: string
+    type: string?
     doc: Output file name to store alignment statistics. The
     inputBinding:
       position: 102

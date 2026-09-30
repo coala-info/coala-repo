@@ -15,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: bedOut=
+      separate: false
   - id: chrom_div
     type:
       - 'null'
@@ -23,6 +24,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: chromDiv=
+      separate: false
   - id: chrom_splitted
     type:
       - 'null'
@@ -32,6 +34,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: chromSplitted=
+      separate: false
   - id: context
     type:
       - 'null'
@@ -40,6 +43,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: context=
+      separate: false
   - id: del_dup
     type:
       - 'null'
@@ -48,6 +52,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: delDup=
+      separate: false
   - id: first_ignor
     type:
       - 'null'
@@ -56,6 +61,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: FirstIgnor=
+      separate: false
   - id: flag_c
     type:
       type: array
@@ -64,6 +70,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: flagC=
+      separate: false
+      itemSeparator: ','
   - id: flag_w
     type:
       type: array
@@ -72,12 +80,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: flagW=
+      separate: false
+      itemSeparator: ','
   - id: in_dir
     type: Directory
     doc: alignments' directory
     inputBinding:
       position: 101
       prefix: inDir=
+      separate: false
   - id: last_ignor
     type:
       - 'null'
@@ -86,6 +97,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: LastIgnor=
+      separate: false
   - id: max_pval
     type:
       - 'null'
@@ -94,6 +106,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: maxPval=
+      separate: false
   - id: max_strand_bias
     type:
       - 'null'
@@ -102,6 +115,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: maxStrandBias=
+      separate: false
   - id: mem_num_reads
     type:
       - 'null'
@@ -110,6 +124,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: memNumReads=
+      separate: false
   - id: meth_non_cpgs
     type:
       - 'null'
@@ -119,6 +134,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: methNonCpGs=
+      separate: false
   - id: min_depth_meth
     type:
       - 'null'
@@ -128,6 +144,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: minDepthMeth=
+      separate: false
   - id: min_depth_snv
     type:
       - 'null'
@@ -137,6 +154,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: minDepthSNV=
+      separate: false
   - id: min_q
     type:
       - 'null'
@@ -145,6 +163,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: minQ=
+      separate: false
   - id: pe_overlap
     type:
       - 'null'
@@ -154,6 +173,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: peOverlap=
+      separate: false
   - id: qscore
     type:
       - 'null'
@@ -163,12 +183,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: qscore=
+      separate: false
   - id: seq
     type: File
     doc: sequences directory or multifasta single file
     inputBinding:
       position: 101
       prefix: seq=
+      separate: false
   - id: sim_dup_pb
     type:
       - 'null'
@@ -177,6 +199,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: simDupPb=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -185,6 +208,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: p=
+      separate: false
   - id: var_fraction
     type:
       - 'null'
@@ -193,6 +217,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: varFraction=
+      separate: false
   - id: wig_out
     type:
       - 'null'
@@ -201,6 +226,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: wigOut=
+      separate: false
   - id: out_dir_path
     type: string
     doc: Output or path parameter `out_dir_path`

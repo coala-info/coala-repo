@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast_polarize
+baseCommand:
+  - mrpast
+  - polarize
 label: mrpast_polarize
 doc: "Polarize VCF file based on ancestral FASTA file.\n\nTool homepage: https://aprilweilab.github.io/"
 inputs:

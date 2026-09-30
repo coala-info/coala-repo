@@ -33,7 +33,7 @@ inputs:
   - id: log_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save logs.
     inputBinding:
       position: 101

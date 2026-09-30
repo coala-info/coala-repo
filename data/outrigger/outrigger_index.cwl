@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: outrigger_index
+baseCommand:
+  - outrigger
+  - index
 label: outrigger_index
 doc: "Build an index of alternative splicing events from splice junction data.\n\n\
   Tool homepage: https://yeolab.github.io/outrigger"
@@ -149,10 +151,12 @@ inputs:
       prefix: --splice-types
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' Name of the folder where you saved the output from "outrigger index" (default
+      is ./outrigger_output, which is relative to the directory where you called the
+      program)". You will need this file for the next step, "outrigger psi"'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

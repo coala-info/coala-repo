@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqnado_tools
+baseCommand:
+  - seqnado
+  - tools
 label: seqnado_tools
 doc: "Available Tools in SeqNado Pipeline\n\nTool homepage: https://alsmith151.github.io/SeqNado/"
 inputs:

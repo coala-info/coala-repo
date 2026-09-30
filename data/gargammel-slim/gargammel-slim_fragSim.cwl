@@ -127,7 +127,7 @@ inputs:
   - id: temporary_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Use this directory as the temporary dir for zipped files
     inputBinding:
       position: 102
@@ -152,18 +152,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bam_file_path`
+    doc: "[bam out]\t\t\tWrite output as a BAM file (default: fasta in stdout)"
     inputBinding:
       position: 103
-      prefix: --output-bam-file
+      prefix: -b
   - id: output_zipped_fasta_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_zipped_fasta_file_path`
+    doc: "[fasta out]\t\t\tWrite output as a zipped fasta (default: fasta in stdout)"
     inputBinding:
       position: 104
-      prefix: --output-zipped-fasta-file
+      prefix: -o
 outputs:
   - id: output_bam_file
     type:

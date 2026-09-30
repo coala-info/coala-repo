@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: python PneumoCaT.py
+baseCommand:
+  - python
+  - PneumoCaT.py
 label: pneumocat_PneumoCaT.py
 doc: "PneumoCaT.py\n\nTool homepage: https://github.com/phe-bioinformatics/pneumocat/archive/v1.1.tar.gz"
 inputs:
@@ -23,19 +25,19 @@ inputs:
       position: 101
       prefix: --cleanup
   - id: fastq_1
-    type: File
+    type: File?
     doc: Fastq file pair 1 [REQUIRED - OPTION 2]
     inputBinding:
       position: 101
       prefix: --fastq_1
   - id: fastq_2
-    type: File
+    type: File?
     doc: Fastq file pair 2 [REQUIRED - OPTION 2]
     inputBinding:
       position: 101
       prefix: --fastq_2
   - id: input_directory
-    type: Directory
+    type: Directory?
     doc: please provide the path to the directory contains the fastq files 
       [REQUIRED - OPTION 1]
     inputBinding:

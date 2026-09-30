@@ -18,91 +18,118 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 100C_Helium.prj
-    out: []
+    out:
+    - athena_project_file
   '4':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 100C_Helium.prj
-    out: []
+    out:
+    - athena_project_file
   '5':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 100C_Helium.prj
-    out: []
+    out:
+    - athena_project_file
   '6':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 280C_without_H2.prj
-    out: []
+    out:
+    - athena_project_file
   '7':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 280C_without_H2.prj
-    out: []
+    out:
+    - athena_project_file
   '8':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 280C_without_H2.prj
-    out: []
+    out:
+    - athena_project_file
   '9':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 280C_with_H2.prj
-    out: []
+    out:
+    - athena_project_file
   '10':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 280C_with_H2.prj
-    out: []
+    out:
+    - athena_project_file
   '11':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|dat_file:
         source: 280C_with_H2.prj
-    out: []
+    out:
+    - athena_project_file
   '12':
     run:
       class: Operation

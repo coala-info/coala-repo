@@ -9,17 +9,22 @@ inputs:
     doc: Input file
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 2
   - id: minlength
     type: int
     doc: Minimum length of components to keep
     inputBinding:
-      position: 2
+      position: 3
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minys:1.1--hc9558a2_1

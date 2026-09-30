@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit prune
+baseCommand:
+  - nwkit
+  - prune
 label: nwkit_prune
 doc: "Prune leaves from a newick tree based on a pattern.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

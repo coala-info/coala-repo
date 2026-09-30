@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicberg build-pairs
+baseCommand:
+  - hicberg
+  - build-pairs
 label: hicberg_build-pairs
 doc: "Create pair files from a pair of alignment files.\n\nTool homepage: https://github.com/sebgra/hicberg"
 inputs:
@@ -15,10 +17,10 @@ inputs:
       prefix: --recover
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: Output folder to save results.
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --output
 outputs:
   - id: output_folder
     type:

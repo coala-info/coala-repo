@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pilea_index
+baseCommand:
+  - pilea
+  - index
 label: pilea_index
 doc: "Index fasta files for Pilea.\n\nTool homepage: https://github.com/xinehc/pilea"
 inputs:
@@ -37,7 +39,7 @@ inputs:
       position: 102
       prefix: --kmer
   - id: outdir
-    type: Directory
+    type: string
     doc: Output directory.
     inputBinding:
       position: 102

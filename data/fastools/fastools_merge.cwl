@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastools_merge
+baseCommand:
+  - fastools
+  - merge
 label: fastools_merge
 doc: "Merge two FASTA files.\n\nTool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:
@@ -18,7 +20,7 @@ inputs:
     doc: Add 'N's between the reads
     inputBinding:
       position: 102
-      prefix: --fill
+      prefix: -f
 outputs:
   - id: output_file
     type: File

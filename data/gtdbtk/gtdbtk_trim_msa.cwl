@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdbtk trim_msa
+baseCommand:
+  - gtdbtk
+  - trim_msa
 label: gtdbtk_trim_msa
 doc: "Trims an MSA based on a mask file or reference mask.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
@@ -32,7 +34,7 @@ inputs:
       prefix: --untrimmed_msa
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output file
     inputBinding:
       position: 102
       prefix: --output

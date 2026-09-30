@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wipertools reportgather
+baseCommand:
+  - wipertools
+  - reportgather
 label: wipertools_reportgather
 doc: "Gathers multiple report files into a single final report.\n\nTool homepage:
   https://github.com/mazzalab/fastqwiper"
@@ -15,10 +17,9 @@ inputs:
       prefix: --reports
   - id: final_report_path
     type: string
-    doc: Output or path parameter `final_report_path`
     inputBinding:
       position: 102
-      prefix: --final-report
+      prefix: --final_report
 outputs:
   - id: final_report
     type: File

@@ -54,10 +54,10 @@ inputs:
       prefix: --no_local
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference fasta file of naive CDR3 amino acid sequences used for 
       estimation of significant k-mers.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -86,7 +86,6 @@ inputs:
       prefix: --use_structural_boundaries
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

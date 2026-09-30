@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: HDMI index
+baseCommand:
+  - HDMI
+  - index
 label: hdmi_index
 doc: "Index a genome for HDMI analysis.\n\nTool homepage: https://github.com/HaoranPeng21/HDMI"
 inputs:

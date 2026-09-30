@@ -25,7 +25,7 @@ inputs:
   - id: reindex
     type:
       - 'null'
-      - boolean
+      - string
     doc: Boolean indicating whether to index allc files whose index files 
       already exist.
     inputBinding:

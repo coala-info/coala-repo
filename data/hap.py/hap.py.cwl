@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Haplotype Comparison
+baseCommand:
+  - Haplotype
+  - Comparison
 label: hap.py
 doc: "Haplotype Comparison\n\nTool homepage: https://github.com/Illumina/hap.py"
 inputs:
@@ -383,7 +385,7 @@ inputs:
   - id: scratch_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for scratch files.
     inputBinding:
       position: 102

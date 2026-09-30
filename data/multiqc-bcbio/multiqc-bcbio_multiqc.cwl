@@ -197,7 +197,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Create report in the specified output directory.
     inputBinding:
       position: 102

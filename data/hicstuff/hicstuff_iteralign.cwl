@@ -48,7 +48,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Temporary directory. Defaults to current\n                             \
       \    directory."
     inputBinding:
@@ -65,7 +65,7 @@ inputs:
       prefix: --threads
   - id: out_bam_path
     type: string
-    doc: Output or path parameter `out_bam_path`
+    doc: Path where the alignment will be written in
     inputBinding:
       position: 103
       prefix: --out-bam

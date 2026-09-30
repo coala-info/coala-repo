@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: digestiflow-cli ingest
+baseCommand:
+  - digestiflow-cli
+  - ingest
 label: digestiflow-cli_ingest
 doc: "Analyze an Illumina flow cell directory\n\nTool homepage: https://github.com/bihealth/digestiflow-cli"
 inputs:

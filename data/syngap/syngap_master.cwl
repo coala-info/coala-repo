@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: syngap master
+baseCommand:
+  - syngap
+  - master
 label: syngap_master
 doc: "This tool appears to be a master script for processing genomic data, likely
   involving species comparison and annotation.\n\nTool homepage: https://github.com/yanyew/SynGAP"

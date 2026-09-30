@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxmapper_count
+baseCommand:
+  - taxmapper
+  - count
 label: taxmapper_count
 doc: "Count taxa based on a filtered taxonomy mapping file.\n\nTool homepage: https://bitbucket.org/dbeisser/taxmapper"
 inputs:
@@ -14,18 +16,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output1_path`
+    doc: Output file 1, counted taxa for first taxonomic
     inputBinding:
       position: 102
-      prefix: --output1
+      prefix: --out1
   - id: output2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output2_path`
+    doc: Output file 2, counted taxa for second taxonomic
     inputBinding:
       position: 103
-      prefix: --output2
+      prefix: --out2
 outputs:
   - id: output1
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msisensor_scan
+baseCommand:
+  - msisensor
+  - scan
 label: msisensor_scan
 doc: "Scan for homopolymers and microsatellites in a reference genome.\n\nTool homepage:
   https://github.com/ding-lab/msisensor"
@@ -61,10 +63,10 @@ inputs:
       prefix: -d
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: <string>   output homopolymer and microsatelittes file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

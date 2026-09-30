@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk_count-svtypes
+baseCommand:
+  - svtk
+  - count-svtypes
 label: svtk_count-svtypes
 doc: "Count the instances of each SVTYPE observed in each sample in a VCF.\n\nTool
   homepage: https://github.com/talkowski-lab/svtk"

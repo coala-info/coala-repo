@@ -72,7 +72,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The output directory. If not exists, it will be created
     inputBinding:
       position: 101

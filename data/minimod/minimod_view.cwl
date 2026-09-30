@@ -9,9 +9,9 @@ doc: "View modifications in reads using a reference genome and BAM file\n\nTool 
 inputs:
   - id: reference_fasta
     type: File
+    doc: Reference genome FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference genome FASTA file
     inputBinding:
       position: 1
   - id: reads_bam
@@ -101,10 +101,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file [stdout]
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

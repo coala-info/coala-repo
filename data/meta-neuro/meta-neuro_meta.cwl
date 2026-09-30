@@ -16,7 +16,7 @@ inputs:
   - id: extract
     type:
       - 'null'
-      - boolean
+      - string
     doc: Extract largest connected set in bundle mesh
     inputBinding:
       position: 101
@@ -24,7 +24,7 @@ inputs:
   - id: fill
     type:
       - 'null'
-      - boolean
+      - string
     doc: Fill holes in bundle mesh
     inputBinding:
       position: 101

@@ -80,16 +80,17 @@ inputs:
       prefix: --target_sv_type
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: -output_prefix
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: output prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

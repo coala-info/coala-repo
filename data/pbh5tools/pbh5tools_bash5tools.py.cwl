@@ -74,19 +74,20 @@ inputs:
       position: 102
       prefix: --verbose
   - id: out_file_prefix_path
-    type: string
-    doc: Output or path parameter `out_file_prefix_path`
+    type: string?
+    doc: ' output filename prefix [None]'
     inputBinding:
       position: 103
-      prefix: --out-file-prefix
+      prefix: --outFilePrefix
 outputs:
   - id: out_file_prefix
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output filename prefix
     outputBinding:
-      glob: $(inputs.out_file_prefix_path)
+      glob: $(inputs.out_file_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

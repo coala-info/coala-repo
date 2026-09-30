@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: compleasm download
+baseCommand:
+  - compleasm
+  - download
 label: compleasm_download
 doc: "Download BUSCO lineages.\n\nTool homepage: https://github.com/huangnengCSU/compleasm"
 inputs:
@@ -15,7 +17,7 @@ inputs:
   - id: library_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: The destination folder to store the downloaded lineage files.If not 
       specified, a folder named "mb_downloads" will be created on the current 
       running path.

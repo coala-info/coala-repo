@@ -35,6 +35,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --readgroup
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

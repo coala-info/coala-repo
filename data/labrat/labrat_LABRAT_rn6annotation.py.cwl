@@ -53,6 +53,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reads1
+      itemSeparator: ','
   - id: reads2
     type:
       - 'null'
@@ -62,6 +63,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reads2
+      itemSeparator: ','
   - id: salmondir
     type:
       - 'null'
@@ -89,6 +91,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --samplename
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'

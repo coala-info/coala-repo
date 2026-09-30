@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iucn_sim transition_rates
+baseCommand:
+  - iucn_sim
+  - transition_rates
 label: iucn_sim_transition_rates
 doc: "MCMC-estimation of status transition rates from IUCN record\n\nTool homepage:
   https://github.com/tobiashofmann88/iucn_extinction_simulator"
@@ -98,7 +100,7 @@ inputs:
       prefix: --species_specific_regression
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: Provide path to outdir where results will be saved.
     inputBinding:
       position: 102
       prefix: --outdir

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mrpast sim2vcf
+baseCommand:
+  - mrpast
+  - sim2vcf
 label: mrpast_sim2vcf
 doc: "Convert .trees files to VCF format.\n\nTool homepage: https://aprilweilab.github.io/"
 inputs:

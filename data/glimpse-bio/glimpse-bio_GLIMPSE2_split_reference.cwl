@@ -49,9 +49,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Haplotype reference panel in VCF/BCF format
     secondaryFiles:
       - .fai
-    doc: Haplotype reference panel in VCF/BCF format
     inputBinding:
       position: 101
       prefix: --reference
@@ -81,7 +81,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Prefix of the output file (region and
     inputBinding:
       position: 102
       prefix: --output
@@ -89,11 +89,12 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Prefix of the output file (region and extension are automatically 
       added)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

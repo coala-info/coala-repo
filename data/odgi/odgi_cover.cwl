@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_cover
+baseCommand:
+  - odgi
+  - cover
 label: odgi_cover
 doc: "Cover the graph with paths.\n\nTool homepage: https://github.com/vgteam/odgi"
 inputs:
@@ -87,7 +89,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_node_depth_path`
+    doc: Write the node depth at the end of the
     inputBinding:
       position: 103
       prefix: --write-node-depth

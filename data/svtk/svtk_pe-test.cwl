@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk pe-test
+baseCommand:
+  - svtk
+  - pe-test
 label: svtk_pe-test
 doc: "Calculate enrichment of discordant pairs at SV breakpoints.\n\nTool homepage:
   https://github.com/talkowski-lab/svtk"
@@ -15,6 +17,11 @@ inputs:
     doc: Table of discordant pair coordinates.
     inputBinding:
       position: 2
+  - id: fout
+    type: string
+    doc: Output table of PE counts.
+    inputBinding:
+      position: 3
   - id: background
     type:
       - 'null'
@@ -75,11 +82,11 @@ inputs:
       position: 103
       prefix: --window-out
 outputs:
-  - id: fout
+  - id: out_fout
     type: File
     doc: Output table of PE counts.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.fout)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

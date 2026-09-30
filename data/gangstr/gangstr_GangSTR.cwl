@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bam
+      itemSeparator: ','
   - id: bam_samps
     type:
       - 'null'
@@ -39,6 +40,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --coverage
+      itemSeparator: ','
   - id: enclweight
     type:
       - 'null'
@@ -90,6 +92,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --insertmean
+      itemSeparator: ','
   - id: insertsdev
     type:
       - 'null'
@@ -100,6 +103,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --insertsdev
+      itemSeparator: ','
   - id: max_proc_read
     type:
       - 'null'

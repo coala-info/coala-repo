@@ -63,7 +63,7 @@ inputs:
       position: 101
       prefix: -o
   - id: single_readfiles
-    type: File
+    type: File?
     doc: input fasta read files. Several read files must be concatenated
     inputBinding:
       position: 101

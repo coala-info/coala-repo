@@ -1,14 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: protk_sixframe.rb
+baseCommand: sixframe.rb
 label: protk_sixframe.rb
 doc: "Create a sixframe translation of a genome.\n\nTool homepage: https://github.com/iracooke/protk"
 inputs:
   - id: genome_fasta
     type: File
+    doc: Input genome fasta file
     secondaryFiles:
       - .fai
-    doc: Input genome fasta file
     inputBinding:
       position: 1
   - id: coords
@@ -53,7 +53,7 @@ inputs:
       prefix: --strip-header
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: An explicitly named output file.
     inputBinding:
       position: 103
       prefix: --output

@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar cgview.jar
+baseCommand:
+  - java
+  - -jar
+  - cgview.jar
 label: cgview
 doc: "Generates graphical representations of circular genomes.\n\nTool homepage: http://wishart.biology.ualberta.ca/cgview/"
 inputs:

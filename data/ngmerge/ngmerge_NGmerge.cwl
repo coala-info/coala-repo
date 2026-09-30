@@ -189,18 +189,21 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `failed_stitching_file_path`
+    doc: <file>       FASTQ files for reads that failed stitching (output as 
+      <file>_1.fastq and <file>_2.fastq)
     inputBinding:
       position: 102
-      prefix: --failed-stitching-file
+      prefix: -f
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: "<file>       Output FASTQ file(s): - in 'stitch' mode (def.), the file of
+      merged reads - in 'adapter-removal' mode (-a) or 'validate' mode (-r), the output
+      files will be <file>_1.fastq and <file>_2.fastq"
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crux pipeline
+baseCommand:
+  - crux
+  - pipeline
 label: crux_pipeline
 doc: "Run the Crux pipeline for peptide identification.\n\nTool homepage: https://github.com/redbadger/crux"
 inputs:
@@ -984,7 +986,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The name of the directory where output files will be created.
     inputBinding:
       position: 103

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pod5_update
+baseCommand:
+  - pod5
+  - update
 label: pod5_update
 doc: "Update a pod5 files to the latest available version\n\nTool homepage: https://github.com/nanoporetech/pod5-file-format"
 inputs:
@@ -20,7 +22,7 @@ inputs:
       position: 102
       prefix: --force-overwrite
   - id: output
-    type: Directory
+    type: string
     doc: Output directory for updated pod5 files
     inputBinding:
       position: 102

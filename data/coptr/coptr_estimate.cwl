@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: coptr_estimate
+baseCommand:
+  - coptr
+  - estimate
 label: coptr_estimate
 doc: "Estimate PTR table from coverage maps.\n\nTool homepage: https://github.com/tyjo/coptr"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gotree_merge
+baseCommand:
+  - gotree
+  - merge
 label: gotree_merge
 doc: "Merges two rooted trees by adding a new root connecting two former roots.\n\n\
   Tool homepage: https://github.com/fredericlemoine/gotree"
@@ -47,10 +49,10 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Merged tree output file (default "stdout")
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

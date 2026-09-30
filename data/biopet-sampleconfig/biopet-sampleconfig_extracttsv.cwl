@@ -52,18 +52,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `json_output_path`
+    doc: json output file
     inputBinding:
       position: 102
-      prefix: --json-output
+      prefix: --jsonOutput
   - id: tsv_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `tsv_output_path`
+    doc: tsv output file
     inputBinding:
       position: 103
-      prefix: --tsv-output
+      prefix: --tsvOutput
 outputs:
   - id: json_output
     type:

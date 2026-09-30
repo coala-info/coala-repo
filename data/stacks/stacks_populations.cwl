@@ -300,7 +300,7 @@ inputs:
       position: 101
       prefix: --ordered-export
   - id: out_path
-    type: Directory
+    type: string
     doc: path to a directory where to write the output files. (Required by -V; 
       otherwise defaults to value of -P.)
     inputBinding:

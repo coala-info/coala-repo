@@ -228,7 +228,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: DCC temporary directory
     inputBinding:
       position: 102

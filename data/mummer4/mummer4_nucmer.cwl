@@ -9,9 +9,9 @@ doc: "generates nucleotide alignments between two mutli-FASTA input files. The o
 inputs:
   - id: reference
     type: File
+    doc: Reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Reference FASTA file
     inputBinding:
       position: 1
   - id: query
@@ -183,26 +183,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `delta_file_path`
+    doc: Output delta file to PATH (instead of PREFIX.delta)
     inputBinding:
       position: 104
-      prefix: --delta-file
+      prefix: --delta
   - id: sam_long_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sam_long_file_path`
+    doc: Output SAM file to PATH, long format
     inputBinding:
       position: 105
-      prefix: --sam-long-file
+      prefix: --sam-long
   - id: sam_short_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sam_short_file_path`
+    doc: Output SAM file to PATH, short format
     inputBinding:
       position: 106
-      prefix: --sam-short-file
+      prefix: --sam-short
 outputs:
   - id: delta_file
     type:

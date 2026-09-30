@@ -233,22 +233,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thres
-  - id: figure1_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `figure1_path`
-    inputBinding:
-      position: 102
-      prefix: --figure1
-  - id: figure2_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `figure2_path`
-    inputBinding:
-      position: 103
-      prefix: --figure2
   - id: mmc_out_path
     type:
       - 'null'
@@ -273,6 +257,20 @@ inputs:
     inputBinding:
       position: 106
       prefix: --spls-out
+  - id: figure1_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --figure1
+  - id: figure2_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: --figure2
 outputs:
   - id: figure1
     type: File

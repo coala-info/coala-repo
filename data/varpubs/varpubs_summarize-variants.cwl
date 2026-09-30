@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: var pubs summarize-variants
+baseCommand:
+  - var
+  - pubs
+  - summarize-variants
 label: varpubs_summarize-variants
 doc: "SummarizeArgs ['args']: Command-line arguments for summarizing PubMed articles
   related to variants.\n\nTool homepage: https://github.com/koesterlab/varpubs"
@@ -77,7 +80,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output
@@ -85,10 +87,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_cache_path`
     inputBinding:
       position: 103
-      prefix: --output-cache
+      prefix: --output_cache
 outputs:
   - id: output
     type:

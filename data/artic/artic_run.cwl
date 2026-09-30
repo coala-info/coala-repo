@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: artic_run
+baseCommand:
+  - artic
+  - run
 label: artic_run
 doc: "Run the artic pipeline\n\nTool homepage: https://github.com/artic-network/fieldbioinformatics"
 inputs:

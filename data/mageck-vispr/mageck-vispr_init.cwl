@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mageck-vispr init
+baseCommand:
+  - mageck-vispr
+  - init
 label: mageck-vispr_init
 doc: "MAGeCK-VISPR is a comprehensive quality control, analysis and visualization
   pipeline for CRISPR/Cas9 screens.\n\nTool homepage: https://bitbucket.org/liulab/mageck-vispr"

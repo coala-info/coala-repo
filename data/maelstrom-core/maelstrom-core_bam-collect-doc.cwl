@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maelstrom-core bam-collect-doc
+baseCommand:
+  - maelstrom-core
+  - bam-collect-doc
 label: maelstrom-core_bam-collect-doc
 doc: "Create contigs with synthetic sequence\n\nTool homepage: https://github.com/bihealth/maelstrom-core"
 inputs:
@@ -54,9 +56,9 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Path to reference FASTA file
     secondaryFiles:
       - .fai
-    doc: Path to reference FASTA file
     inputBinding:
       position: 101
       prefix: --reference
@@ -87,7 +89,6 @@ inputs:
       prefix: --window-length
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

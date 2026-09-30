@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: protk_manage_db.rb
+baseCommand: manage_db.rb
 label: protk_manage_db.rb
 doc: "Manage named protein databases.\n\nTool homepage: https://github.com/iracooke/protk"
 inputs:

@@ -12,27 +12,32 @@ inputs:
     doc: input file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output file
+    inputBinding:
+      position: 2
   - id: accno
     type: string
     doc: accession number
     inputBinding:
-      position: 2
+      position: 3
   - id: first
     type: int
     doc: first base of the selection (int)
     inputBinding:
-      position: 3
+      position: 4
   - id: last
     type: int
     doc: last base of the selection (int)
     inputBinding:
-      position: 4
+      position: 5
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastools:1.1.5--pyh7cba7a3_0

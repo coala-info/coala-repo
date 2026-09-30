@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rbpbench dist
+baseCommand:
+  - rbpbench
+  - dist
 label: rbpbench_dist
 doc: "Distribution plot results output folder\n\nTool homepage: https://github.com/michauhl/RBPBench"
 inputs:
@@ -57,10 +59,10 @@ inputs:
       prefix: --plot-pdf
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: str          Distribution plot results output folder
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --out
 outputs:
   - id: output_folder
     type: Directory

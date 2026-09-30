@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bleties miltel
+baseCommand:
+  - bleties
+  - miltel
 label: bleties_miltel
 doc: "MILTEL - Method of Long-read Telomere detection\n\nTool homepage: https://github.com/Swart-lab/bleties"
 inputs:

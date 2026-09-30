@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: strainge plot
+baseCommand:
+  - strainge
+  - plot
 label: strainge_plot
 doc: "Generate plots for a given k-mer set.\n\nTool homepage: The package home page"
 inputs:
@@ -19,7 +21,6 @@ inputs:
       prefix: --plot-type
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output

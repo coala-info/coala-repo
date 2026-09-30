@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec build
+baseCommand:
+  - seqspec
+  - build
 label: seqspec_build
 doc: "Generate a complete seqspec with natural language.\n\nTool homepage: https://github.com/sbooeshaghi/seqspec"
 inputs:
@@ -36,6 +38,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --modalities
+      itemSeparator: ','
   - id: name
     type: string
     doc: Assay name
@@ -61,7 +64,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output YAML (default stdout)
     inputBinding:
       position: 102
       prefix: --output

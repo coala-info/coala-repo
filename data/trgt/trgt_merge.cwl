@@ -141,7 +141,7 @@ inputs:
       prefix: --write-index
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Write output to a file [standard output]
     inputBinding:
       position: 102
       prefix: --output

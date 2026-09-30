@@ -25,7 +25,8 @@ inputs:
     doc: Exclude sequences named in file which has one sequence name per line
     inputBinding:
       position: 102
-      prefix: -excludeFile
+      prefix: -excludeFile=
+      separate: false
   - id: include_no_alt_n
     type:
       - 'null'
@@ -52,7 +53,8 @@ inputs:
       https://github.com/W-L/ProblematicSites_SARS-CoV2/raw/master/problematic_sites_sarsCov2.vcf)
     inputBinding:
       position: 102
-      prefix: -maskSites
+      prefix: -maskSites=
+      separate: false
   - id: max_diff
     type:
       - 'null'
@@ -61,7 +63,8 @@ inputs:
       -windowSize is used, sequences are masked accordingly first)
     inputBinding:
       position: 102
-      prefix: -maxDiff
+      prefix: -maxDiff=
+      separate: false
   - id: min_ac
     type:
       - 'null'
@@ -69,7 +72,8 @@ inputs:
     doc: Ignore alternate alleles observed fewer than N times
     inputBinding:
       position: 102
-      prefix: -minAc
+      prefix: -minAc=
+      separate: false
   - id: min_af
     type:
       - 'null'
@@ -77,7 +81,8 @@ inputs:
     doc: Ignore alternate alleles observed in less than F of non-N bases
     inputBinding:
       position: 102
-      prefix: -minAf
+      prefix: -minAf=
+      separate: false
   - id: min_ambig_in_window
     type:
       - 'null'
@@ -86,7 +91,8 @@ inputs:
       this many N, ambiguous or gap characters within the window. (default: 2)'
     inputBinding:
       position: 102
-      prefix: -minAmbigInWindow
+      prefix: -minAmbigInWindow=
+      separate: false
   - id: no_genotypes
     type:
       - 'null'
@@ -103,7 +109,8 @@ inputs:
       first sequence in faFile)'
     inputBinding:
       position: 102
-      prefix: -ref
+      prefix: -ref=
+      separate: false
   - id: resolve_ambiguous
     type:
       - 'null'
@@ -121,7 +128,8 @@ inputs:
     doc: Add N bases to each position (for trimmed alignments)
     inputBinding:
       position: 102
-      prefix: -startOffset
+      prefix: -startOffset=
+      separate: false
   - id: vcf_chrom
     type:
       - 'null'
@@ -129,7 +137,8 @@ inputs:
     doc: 'Use seqName for the CHROM column in VCF (default: ref sequence)'
     inputBinding:
       position: 102
-      prefix: -vcfChrom
+      prefix: -vcfChrom=
+      separate: false
   - id: window_size
     type:
       - 'null'
@@ -140,7 +149,8 @@ inputs:
       -windowSize=7 for same results.
     inputBinding:
       position: 102
-      prefix: -windowSize
+      prefix: -windowSize=
+      separate: false
 outputs:
   - id: output_vcf
     type: File

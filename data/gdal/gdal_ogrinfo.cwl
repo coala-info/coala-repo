@@ -33,6 +33,7 @@ inputs:
     doc: SQL dialect to use.
     inputBinding:
       position: 103
+      prefix: -dialect
   - id: fid
     type:
       - 'null'
@@ -47,6 +48,8 @@ inputs:
     doc: Control whether to list fields (YES/NO).
     inputBinding:
       position: 103
+      prefix: -fields=
+      separate: false
   - id: geom
     type:
       - 'null'
@@ -54,6 +57,8 @@ inputs:
     doc: Control whether to list geometry (YES/NO/SUMMARY).
     inputBinding:
       position: 103
+      prefix: -geom=
+      separate: false
   - id: geomfield
     type:
       - 'null'
@@ -61,6 +66,7 @@ inputs:
     doc: Use the specified geometry field.
     inputBinding:
       position: 103
+      prefix: -geomfield
   - id: list_metadata
     type:
       - 'null'
@@ -140,6 +146,7 @@ inputs:
     doc: Filter features by spatial extent (xmin ymin xmax ymax).
     inputBinding:
       position: 103
+      prefix: -spat
   - id: sql
     type:
       - 'null'
@@ -162,6 +169,7 @@ inputs:
     doc: Filter features using a WHERE clause.
     inputBinding:
       position: 103
+      prefix: -where
 outputs:
   - id: stdout
     type: stdout

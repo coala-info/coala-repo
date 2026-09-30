@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gfftk_convert
+baseCommand:
+  - gfftk
+  - convert
 label: gfftk_convert
 doc: "convert GFF3/tbl format into another format [output gff3, gtf, tbl, gbff, fasta,
   combined]\n\nTool homepage: https://github.com/nextgenusfs/gfftk"
@@ -103,7 +105,6 @@ inputs:
       prefix: --url-encode
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
       prefix: --out

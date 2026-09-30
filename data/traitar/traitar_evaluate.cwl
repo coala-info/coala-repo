@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: traitar_evaluate
+baseCommand:
+  - traitar
+  - evaluate
 label: traitar_evaluate
 doc: "compare Traitar predictions against a given standard of truth\n\nTool homepage:
   http://github.com/aweimann/traitar"
@@ -15,6 +17,11 @@ inputs:
     doc: phenotype matrix with standard of truth
     inputBinding:
       position: 2
+  - id: out
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 3
   - id: are_pt_ids
     type:
       - 'null'
@@ -42,11 +49,11 @@ inputs:
       position: 103
       prefix: --phenotype_archive
 outputs:
-  - id: out
+  - id: out_out
     type: Directory
     doc: output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/traitar:3.0.1--pyhdfd78af_0

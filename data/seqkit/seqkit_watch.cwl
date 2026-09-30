@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit_watch
+baseCommand:
+  - seqkit
+  - watch
 label: seqkit_watch
 doc: "monitoring and online histograms of sequence features\n\nTool homepage: https://github.com/shenwei356/seqkit"
 inputs:
@@ -195,7 +197,7 @@ inputs:
       prefix: --validate-seq
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

@@ -14,6 +14,8 @@ inputs:
       comma-separated list of files, or a directory
     inputBinding:
       position: 1
+      itemSeparator: ','
+      prefix: --input
   - id: cores
     type:
       - 'null'

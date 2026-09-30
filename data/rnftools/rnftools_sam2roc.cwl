@@ -23,10 +23,10 @@ inputs:
       prefix: --sam
   - id: roc_file_path
     type: string
-    doc: Output or path parameter `roc_file_path`
+    doc: Output ROC file (- for standard output).
     inputBinding:
       position: 102
-      prefix: --roc-file
+      prefix: --roc
 outputs:
   - id: roc_file
     type: File

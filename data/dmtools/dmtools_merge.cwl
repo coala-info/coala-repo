@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools_merge
+baseCommand:
+  - dmtools
+  - merge
 label: dmtools_merge
 doc: "Merge multiple DM files\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
@@ -54,10 +56,10 @@ inputs:
       prefix: --outformat
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

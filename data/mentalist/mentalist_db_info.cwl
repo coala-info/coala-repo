@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mentalist db_info
+baseCommand:
+  - mentalist
+  - db_info
 label: mentalist_db_info
 doc: "MentaLiST kmer database information\n\nTool homepage: https://github.com/WGS-TB/MentaLiST"
 inputs:

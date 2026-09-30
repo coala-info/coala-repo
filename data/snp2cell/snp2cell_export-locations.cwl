@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snp2cell export-locations
+baseCommand:
+  - snp2cell
+  - export-locations
 label: snp2cell_export-locations
 doc: "Save the genomic locations of network nodes in the s2c object to a tsv file.\n\
   \nTool homepage: https://github.com/Teichlab/snp2cell"
@@ -23,7 +25,7 @@ inputs:
       prefix: --pos2gene
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: PATH  output path for regions                            │
     inputBinding:
       position: 103
       prefix: --output

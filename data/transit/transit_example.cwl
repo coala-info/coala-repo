@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transit_example
+baseCommand:
+  - transit
+  - example
 label: transit_example
 doc: "Generates an example configuration for Transit1.\n\nTool homepage: http://github.com/mad-lab/transit"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Comma-separated .wig files
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: annotation_prot_table
     type: File
     doc: Annotation .prot_table file

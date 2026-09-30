@@ -11,6 +11,11 @@ inputs:
     doc: Input VCF file to be annotated
     inputBinding:
       position: 1
+  - id: output_vcf
+    type: string
+    doc: Output annotated VCF file
+    inputBinding:
+      position: 2
   - id: basic
     type:
       - 'null'
@@ -58,16 +63,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_path`
     inputBinding:
       position: 103
       prefix: --csv
 outputs:
-  - id: output_vcf
+  - id: out_output_vcf
     type: File
     doc: Output annotated VCF file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_vcf)'
   - id: csv
     type:
       - 'null'

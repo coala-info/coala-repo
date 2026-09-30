@@ -44,7 +44,7 @@ inputs:
       prefix: --log-level
   - id: out_bam_path
     type: string
-    doc: Output or path parameter `out_bam_path`
+    doc: Output BAM.
     inputBinding:
       position: 102
       prefix: --out-bam

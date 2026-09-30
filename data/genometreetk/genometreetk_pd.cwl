@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk pd
+baseCommand:
+  - genometreetk
+  - pd
 label: genometreetk_pd
 doc: "Calculate phylogenetic diversity of specified taxa.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:

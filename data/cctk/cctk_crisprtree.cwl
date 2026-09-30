@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk crisprtree
+baseCommand:
+  - cctk
+  - crisprtree
 label: cctk_crisprtree
 doc: "Builds a CRISPR array phylogenetic tree.\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
 inputs:
@@ -239,7 +241,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `colour_scheme_outfile_path`
     inputBinding:
       position: 103
       prefix: --colour-scheme-outfile
@@ -247,7 +248,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 104
       prefix: --out-file
@@ -255,7 +255,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_arrays_path`
+    doc: file to store analyzed arrays and hypothetical ancestors
     inputBinding:
       position: 105
       prefix: --output-arrays

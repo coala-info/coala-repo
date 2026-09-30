@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip_MVP_02_filter_genomad_checkv
+baseCommand:
+  - mvip
+  - MVP_02_filter_genomad_checkv
 label: mvip_MVP_02_filter_genomad_checkv
 doc: "Merge and filter geNomad and CheckV outputs.\n\nTool homepage: https://gitlab.com/ccoclet/mvp"
 inputs:
@@ -30,6 +32,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample_group
+      itemSeparator: ','
   - id: viral_min_genes
     type:
       - 'null'

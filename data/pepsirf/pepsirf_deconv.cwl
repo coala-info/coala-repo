@@ -134,7 +134,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 102
       prefix: --logfile
@@ -142,7 +141,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
       prefix: --output
@@ -150,18 +148,31 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `peptide_assignment_map_path`
+    doc: Optional output. If specified, a map detailing which peptides were 
+      assigned to which taxa will be written. If this module is run in batch 
+      mode, this will be used as a directory name for the peptide maps to be 
+      stored. Maps will be tab-delimited files with the first column being 
+      peptide names; the second column containing a comma-separated list of taxa
+      to which the peptide was assigned; the third column will be a list of the 
+      taxa with which the peptide originally shared a kmer. Note that the second
+      column will only contain multiple values in the event of a tie.
     inputBinding:
       position: 104
-      prefix: --peptide-assignment-map
+      prefix: --peptide_assignment_map
   - id: scores_per_round_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `scores_per_round_path`
+    doc: Optional. Name of directory to write counts/scores to after every 
+      round. If included, the counts and scores for all remaining taxa will be 
+      recorded after every round. Filenames will be written in the format 
+      '$dir/round_x', where x is the round number. The original scores will be 
+      written to '$dir/round_0'. A new file will be written to the directory 
+      after each subsequent round. If this flag is included and the specified 
+      directory exists, the program will exit with an error.
     inputBinding:
       position: 105
-      prefix: --scores-per-round
+      prefix: --scores_per_round
 outputs:
   - id: output
     type:

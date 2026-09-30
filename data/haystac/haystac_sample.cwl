@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haystac_sample
+baseCommand:
+  - haystac
+  - sample
 label: haystac_sample
 doc: "Prepare a sample for analysis\n\nTool homepage: https://github.com/antonisdim/haystac"
 inputs:
@@ -94,7 +96,7 @@ inputs:
       prefix: --unlock
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to the sample output directory
     inputBinding:
       position: 102
       prefix: --output

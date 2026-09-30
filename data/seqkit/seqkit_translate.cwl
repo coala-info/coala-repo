@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqkit translate
+baseCommand:
+  - seqkit
+  - translate
 label: seqkit_translate
 doc: "translate DNA/RNA to protein sequence (supporting ambiguous bases)\n\nTool homepage:
   https://github.com/shenwei356/seqkit"
@@ -195,7 +197,7 @@ inputs:
       prefix: --trim
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
     inputBinding:
       position: 102
       prefix: --out-file

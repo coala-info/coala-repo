@@ -9,6 +9,11 @@ inputs:
     doc: Put the input fasta directory
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Put the output directory
+    inputBinding:
+      position: 2
   - id: db
     type:
       - 'null'
@@ -30,7 +35,7 @@ inputs:
   - id: mode
     type:
       - 'null'
-      - boolean
+      - string
     doc: True or False. If you want to calculate contamination value of 
       simulation data, set this value True
     inputBinding:
@@ -55,7 +60,7 @@ inputs:
   - id: skip_feature_table
     type:
       - 'null'
-      - boolean
+      - string
     doc: If you set True, skip features prediction step.
     inputBinding:
       position: 102
@@ -63,7 +68,7 @@ inputs:
   - id: skip_lgb_step
     type:
       - 'null'
-      - boolean
+      - string
     doc: If you set True, skip contamination prediction step.
     inputBinding:
       position: 102
@@ -89,7 +94,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set the path of temporary file directory
     inputBinding:
       position: 102
@@ -103,11 +108,11 @@ inputs:
       position: 102
       prefix: --translate_table
 outputs:
-  - id: output
+  - id: out_output
     type: Directory
     doc: Put the output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vclean:0.2.1--pyhdfd78af_0

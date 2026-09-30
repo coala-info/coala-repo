@@ -20,7 +20,8 @@ inputs:
     doc: Show the offending line (and n surrounding lines)
     inputBinding:
       position: 102
-      prefix: --context
+      prefix: --context=
+      separate: false
   - id: no_errors
     type:
       - 'null'

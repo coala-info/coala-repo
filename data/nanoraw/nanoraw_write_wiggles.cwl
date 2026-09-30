@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw_write_wiggles
+baseCommand:
+  - nanoraw
+  - write_wiggles
 label: nanoraw_write_wiggles
 doc: "Write wiggle files for Nanopore data.\n\nTool homepage: https://github.com/marcus1487/nanoraw"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: basecall_subgroups
     type:
       - 'null'

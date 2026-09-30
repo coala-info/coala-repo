@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: htseq-clip extract
+baseCommand:
+  - htseq-clip
+  - extract
 label: htseq-clip_extract
 doc: "extracts crosslink sites, insertions or deletions\n\nTool homepage: https://github.com/EMBL-Hentze-group/htseq-clip"
 inputs:
@@ -111,7 +113,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Path to create and store temp files (default behavior: use folder from "--output"
       parameter)'
     inputBinding:
@@ -126,11 +128,11 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: 'output file, --output output file output file (.bed, default: print to console)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

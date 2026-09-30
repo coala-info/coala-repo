@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: -bed
   - id: fasta_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input FASTA file
     secondaryFiles:
       - .fai?

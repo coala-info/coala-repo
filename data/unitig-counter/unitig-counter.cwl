@@ -31,7 +31,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the folder where the final and temporary files will be stored.
     inputBinding:
       position: 101

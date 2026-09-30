@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotish tisdiff
+baseCommand:
+  - ribotish
+  - tisdiff
 label: ribotish_tisdiff
 doc: "Compares TIS usage between two groups of samples.\n\nTool homepage: https://github.com/zhpn1024/ribotish"
 inputs:
@@ -176,7 +178,7 @@ inputs:
     doc: Group 1 TIS enriched riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: --tis1bampaths
+      prefix: -a
   - id: tis1_labels
     type:
       - 'null'
@@ -270,9 +272,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'Output data file (default: ribobampath[:-4]+'
     inputBinding:
       position: 102
@@ -281,18 +281,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_ma_path`
+    doc: TIS normalization MA plot output pdf file
     inputBinding:
       position: 103
-      prefix: --plot-ma
+      prefix: --plotma
   - id: plot_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `plot_output_path`
+    doc: Scatter plot output pdf file
     inputBinding:
       position: 104
-      prefix: --plot-output
+      prefix: --plotout
 outputs:
   - id: output
     type: File

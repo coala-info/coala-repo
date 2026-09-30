@@ -34,7 +34,6 @@ inputs:
       - int
     doc: "average fragment length for single end reads. For\n                    \
       \    paired-end, estimated from the input alignment file."
-      single-end, ignored by default.
     inputBinding:
       position: 103
       prefix: --fragmentLength
@@ -99,7 +98,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for output files.
     inputBinding:
       position: 103

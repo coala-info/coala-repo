@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_uniq
+baseCommand:
+  - vt
+  - uniq
 label: vt_uniq
 doc: "Drops duplicate variants that appear later in the the VCF file.\n\nTool homepage:
   https://github.com/Aikoyori/ProgrammingVTuberLogos"

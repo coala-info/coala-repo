@@ -171,23 +171,34 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aa_counts_path`
+    doc: Name for an output file that will contain aggregated aa-level counts. 
+      This is relevant when peptides from a designed library have multiple 
+      different nt-level encodings. If this option is included without the 
+      '--translate_aggregates' flag, names of sequences in the file supplied by 
+      the "--library flag" MUST be of the form ID-NUM, where ID can contain any 
+      characters except '-', and NUM represents the id of this encoding. ID and 
+      NUM MUST be separated by a single dash '-' character. For example, suppose
+      we have TG1_1-1 and TG1_1-2 in our library, which says that we generated 
+      two encodings for the TG1_1 peptide. The "--aa_counts" file will have a 
+      single TG1_1 entry, with per sample counts that are the sum of the counts 
+      from TG1_1-1 and TG1_1-2.
     inputBinding:
       position: 102
-      prefix: --aa-counts
+      prefix: --aa_counts
   - id: diagnostic_info_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `diagnostic_info_path`
+    doc: 'Include this flag with an output file name to collect diagnostic information
+      on read pair matches in map. The file will be formatted with tab delimited lines
+      "samplename  # index pair matches  # matches to any variable region".'
     inputBinding:
       position: 103
-      prefix: --diagnostic-info
+      prefix: --diagnostic_info
   - id: logfile_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 104
       prefix: --logfile
@@ -195,7 +206,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: Name for the output counts file. This output file will be tab-delimited
+      and will contain a header row. The first column will contain probe/peptide
+      names. Each subsequent column will contain probe/peptide counts for a 
+      sample, with one column per sample.
     inputBinding:
       position: 105
       prefix: --output
@@ -203,26 +217,33 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `replicate_info_path`
+    doc: 'Include this flag with an output file name to provide a more thorough summary
+      of replicates in the sample list in an output file. The information will be
+      tab-delimited with two headers: "Sample Name" and "Number of Replicates".'
     inputBinding:
       position: 106
-      prefix: --replicate-info
+      prefix: --replicate_info
   - id: trunc_info_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `trunc_info_output_path`
+    doc: Name of directory to output truncated sequence information. This will 
+      include outputs for unqiue sequences, non-unqiue sequences, and the new 
+      fasta-formatted file.
     inputBinding:
       position: 107
-      prefix: --trunc-info-output
+      prefix: --trunc_info_output
   - id: unmapped_reads_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unmapped_reads_output_path`
+    doc: Include this flag with a .fastq output file name to create a single 
+      output fastq file containing all of the reads that have not been mapped to
+      a sample/peptide (i.e., all of those thatwould not be included in any of 
+      the files created by the -q option).
     inputBinding:
       position: 108
-      prefix: --unmapped-reads-output
+      prefix: --unmapped_reads_output
 outputs:
   - id: output
     type:

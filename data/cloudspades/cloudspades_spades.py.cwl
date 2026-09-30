@@ -308,7 +308,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 101
@@ -339,10 +339,10 @@ inputs:
       prefix: --untrusted-contigs
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: directory to store all the resulting files (required)
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type: Directory

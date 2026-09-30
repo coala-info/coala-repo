@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: freyja_plot
+baseCommand:
+  - freyja
+  - plot
 label: freyja_plot
 doc: "Create plot from AGG_RESULTS\n\nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:

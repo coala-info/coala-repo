@@ -264,7 +264,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'the size of the sliding window to evaluate the mean quality for N masking(5~1000000),
+    doc: 'the size of the sliding window to evaluate the mean quality for N masking(5~1000000),'
     inputBinding:
       position: 101
       prefix: --mask_window_size

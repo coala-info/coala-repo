@@ -41,6 +41,7 @@ inputs:
     doc: Infer genes
     inputBinding:
       position: 102
+      prefix: -infer-genes
   - id: mmseqs_params
     type:
       - 'null'
@@ -60,7 +61,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 102

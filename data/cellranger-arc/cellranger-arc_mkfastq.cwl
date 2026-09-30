@@ -110,6 +110,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --lanes
+      itemSeparator: ','
   - id: use_bases_mask
     type:
       - 'null'

@@ -28,8 +28,7 @@ inputs:
       position: 101
       prefix: --scheme_name
   - id: outdir_path
-    type: string
-    doc: Output or path parameter `outdir_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --outdir

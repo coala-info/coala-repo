@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: enasearch_get_returnable_fields
+baseCommand:
+  - enasearch
+  - get_returnable_fields
 label: enasearch_get_returnable_fields
 doc: "Get the fields extractable for a result.\n\n  This function returns the fields
   as a list.\n\nTool homepage: http://bebatut.fr/enasearch/"

@@ -38,7 +38,8 @@ inputs:
       accuracy is computed from the pair probabilities
     inputBinding:
       position: 101
-      prefix: --MEA
+      prefix: --MEA=
+      separate: false
   - id: no_closing_gu
     type:
       - 'null'
@@ -104,7 +105,8 @@ inputs:
     doc: Calculate the partition function and base pairing probability matrix.
     inputBinding:
       position: 101
-      prefix: --partfunc
+      prefix: --partfunc=
+      separate: false
   - id: temp
     type:
       - 'null'

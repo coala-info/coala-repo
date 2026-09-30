@@ -228,18 +228,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `print_site_lnl_path`
     inputBinding:
       position: 102
-      prefix: --print-site-lnl
+      prefix: --print_site_lnl
   - id: print_trace_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `print_trace_path`
     inputBinding:
       position: 103
-      prefix: --print-trace
+      prefix: --print_trace
 outputs:
   - id: print_site_lnl
     type:

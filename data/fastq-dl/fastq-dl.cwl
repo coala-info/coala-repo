@@ -77,7 +77,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output downloads to.
     inputBinding:
       position: 101

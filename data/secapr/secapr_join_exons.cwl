@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: secapr join_exons
+baseCommand:
+  - secapr
+  - join_exons
 label: secapr_join_exons
 doc: "Join exon-alignment files belonging to the same gene\n\nTool homepage: https://github.com/AntonelliLab/seqcap_processor"
 inputs:

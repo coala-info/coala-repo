@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: longreadsum rrms
+baseCommand:
+  - longreadsum
+  - rrms
 label: longreadsum_rrms
 doc: "Extracts read information based on a CSV file and BAM input.\n\nTool homepage:
   https://github.com/WGLab/LongReadSum"
@@ -65,6 +67,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --inputs
+      itemSeparator: ','
   - id: log
     type:
       - 'null'
@@ -125,10 +128,10 @@ inputs:
       prefix: --threads
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' The output folder.'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --outputfolder
 outputs:
   - id: output_folder
     type:

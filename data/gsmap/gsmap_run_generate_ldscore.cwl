@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsMap run_generate_ldscore
+baseCommand:
+  - gsMap
+  - run_generate_ldscore
 label: gsmap_run_generate_ldscore
 doc: "Generate LD scores for a given sample, chromosome, and genotype data.\n\nTool
   homepage: https://github.com/LeonSong1995/gsMap"

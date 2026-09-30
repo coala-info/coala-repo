@@ -210,10 +210,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `filtered_alignment_path`
+    doc: Filename where alignment will be written that are filtered (too short, 
+      unpaired)
     inputBinding:
       position: 102
-      prefix: --filtered-alignment
+      prefix: --wrong
   - id: output_alignment_path
     type:
       - 'null'

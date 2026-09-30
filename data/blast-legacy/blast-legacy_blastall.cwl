@@ -352,18 +352,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: BLAST report Output File [File Out]  Optional
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
   - id: seqalign_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `seqalign_file_path`
+    doc: SeqAlign file [File Out]  Optional
     inputBinding:
       position: 103
-      prefix: --seqalign-file
+      prefix: -O
 outputs:
   - id: output_file
     type:

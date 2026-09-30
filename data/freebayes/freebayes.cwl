@@ -124,7 +124,7 @@ inputs:
       - 'null'
       - string
     doc: 'Limit posterior integration to samples where the second-best genotype likelihood
-      is no more than log(N) from the highest genotype likelihood for the sample.
+      is no more than log(N) from the highest genotype likelihood for the sample.'
     inputBinding:
       position: 102
       prefix: --genotype-variant-threshold
@@ -132,7 +132,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Integrate no deeper than the Nth best genotype by likelihood when genotyping.
+    doc: 'Integrate no deeper than the Nth best genotype by likelihood when genotyping.'
     inputBinding:
       position: 102
       prefix: --genotyping-max-banddepth
@@ -218,7 +218,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Downsample per-sample coverage to this level if greater than this coverage.
+    doc: 'Downsample per-sample coverage to this level if greater than this coverage.'
     inputBinding:
       position: 102
       prefix: --limit-coverage

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbinner bin
+baseCommand:
+  - deepbinner
+  - bin
 label: deepbinner_bin
 doc: "Bin fasta/q reads\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:
@@ -19,10 +21,10 @@ inputs:
       prefix: --reads
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    doc: Directory to output binned read files
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out_dir
 outputs:
   - id: out_dir
     type: Directory

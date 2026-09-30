@@ -211,7 +211,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the output folder to save the model outputs
     inputBinding:
       position: 101

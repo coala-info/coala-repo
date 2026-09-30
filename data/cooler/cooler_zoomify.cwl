@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler zoomify
+baseCommand:
+  - cooler
+  - zoomify
 label: cooler_zoomify
 doc: "Generate a multi-resolution cooler file by coarsening.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
@@ -87,7 +89,7 @@ inputs:
       prefix: --resolutions
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output file or URI
     inputBinding:
       position: 103
       prefix: --out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oncogemini bottleneck
+baseCommand:
+  - oncogemini
+  - bottleneck
 label: oncogemini_bottleneck
 doc: "Analyze bottleneck in cancer evolution\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:

@@ -22,7 +22,8 @@ inputs:
     doc: Comment to appear at top of generated code files
     inputBinding:
       position: 103
-      prefix: -comment
+      prefix: -comment=
+      separate: false
   - id: generate_main
     type:
       - 'null'
@@ -54,7 +55,8 @@ inputs:
     doc: Prefix to add to structure names. By default same as root
     inputBinding:
       position: 103
-      prefix: -prefix
+      prefix: -prefix=
+      separate: false
   - id: text_field_name
     type:
       - 'null'
@@ -62,7 +64,8 @@ inputs:
     doc: what to name text between start/end tags
     inputBinding:
       position: 103
-      prefix: -textField
+      prefix: -textField=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gunc_summarise
+baseCommand:
+  - gunc
+  - summarise
 label: gunc_summarise
 doc: "Summarize GUNC results.\n\nTool homepage: https://github.com/grp-bork/gunc"
 inputs:
@@ -35,10 +37,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: File in which to write outputfile with added score.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output_file
 outputs:
   - id: output_file
     type: File

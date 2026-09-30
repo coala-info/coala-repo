@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mykrobe_panels
+baseCommand:
+  - mykrobe
+  - panels
 label: mykrobe_panels
 doc: "Manage mykrobe panels\n\nTool homepage: https://github.com/iqbal-lab/Mykrobe-predictor"
 inputs:

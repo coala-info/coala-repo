@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: olivar_sensitivity
+baseCommand:
+  - olivar
+  - sensitivity
 label: olivar_sensitivity
 doc: "Check the sensitivity of existing primer pools against an MSA of target sequences,
   and visualize the MSA and primer alignments.\n\nTool homepage: https://gitlab.com/treangenlab/olivar"

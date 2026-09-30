@@ -23,8 +23,7 @@ inputs:
       position: 101
       prefix: --input-sample-vcf
   - id: output_hmnfusion_xlsx_path
-    type: string
-    doc: Output or path parameter `output_hmnfusion_xlsx_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output-hmnfusion-xlsx

@@ -327,34 +327,35 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_labels_file_path`
+    doc: 'Output labelling results to tab-separated FILE (use with -v or -i) [default:
+      ""]'
     inputBinding:
       position: 103
-      prefix: --out-labels-file
+      prefix: --out-labels
   - id: out_vcf_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_vcf_file_path`
+    doc: 'Output labelling results to vcf FILE (the -v option is required) [default:
+      ""]'
     inputBinding:
       position: 104
-      prefix: --out-vcf-file
-  - id: outdir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `outdir_path`
-    inputBinding:
-      position: 105
-      prefix: --outdir
+      prefix: --out-vcf
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output single image to file
     inputBinding:
       position: 106
-      prefix: --output-file
+      prefix: --file
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --outdir
 outputs:
   - id: outdir
     type:

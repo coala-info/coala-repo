@@ -79,7 +79,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     inputBinding:
@@ -87,7 +87,6 @@ inputs:
       prefix: --outdir
   - id: ofile_path
     type: string
-    doc: Output or path parameter `ofile_path`
     inputBinding:
       position: 102
       prefix: --ofile

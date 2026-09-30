@@ -41,7 +41,7 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'Output SAM/BAM/CRAM file or stream [default: /dev/stdout]'
     inputBinding:
       position: 102
       prefix: --output

@@ -11,6 +11,7 @@ inputs:
     doc: 'Assembler: spades skesa megahit velvet'
     inputBinding:
       position: 101
+      prefix: --assembler
   - id: cpus
     type:
       - 'null'
@@ -18,6 +19,7 @@ inputs:
     doc: Number of CPUs to use (0=ALL)
     inputBinding:
       position: 101
+      prefix: --cpus
   - id: depth
     type:
       - 'null'
@@ -25,6 +27,7 @@ inputs:
     doc: Sub-sample --R1/--R2 to this depth. Disable with --depth 0
     inputBinding:
       position: 101
+      prefix: --depth
   - id: force
     type:
       - 'null'
@@ -32,6 +35,7 @@ inputs:
     doc: Force overwite of existing output folder
     inputBinding:
       position: 101
+      prefix: --force
   - id: genome_size
     type:
       - 'null'
@@ -46,6 +50,7 @@ inputs:
     doc: Keep intermediate files
     inputBinding:
       position: 101
+      prefix: --keepfiles
   - id: kmers
     type:
       - 'null'
@@ -53,6 +58,7 @@ inputs:
     doc: K-mers to use <blank=AUTO>
     inputBinding:
       position: 101
+      prefix: --kmers
   - id: mincov
     type:
       - 'null'
@@ -60,6 +66,7 @@ inputs:
     doc: Minimum contig coverage <0=AUTO>
     inputBinding:
       position: 101
+      prefix: --mincov
   - id: minlen
     type:
       - 'null'
@@ -67,6 +74,7 @@ inputs:
     doc: Minimum contig length <0=AUTO>
     inputBinding:
       position: 101
+      prefix: --minlen
   - id: namefmt
     type:
       - 'null'
@@ -74,6 +82,7 @@ inputs:
     doc: Format of contig FASTA IDs in 'printf' style
     inputBinding:
       position: 101
+      prefix: --namefmt
   - id: nocorr
     type:
       - 'null'
@@ -81,6 +90,7 @@ inputs:
     doc: Disable post-assembly correction
     inputBinding:
       position: 101
+      prefix: --nocorr
   - id: noreadcorr
     type:
       - 'null'
@@ -88,6 +98,7 @@ inputs:
     doc: Disable read error correction
     inputBinding:
       position: 101
+      prefix: --noreadcorr
   - id: opts
     type:
       - 'null'
@@ -95,11 +106,13 @@ inputs:
     doc: "Extra assembler options in quotes eg. spades: '--sc' ..."
     inputBinding:
       position: 101
+      prefix: --opts
   - id: outdir
-    type: Directory
+    type: string
     doc: Output folder
     inputBinding:
       position: 101
+      prefix: --outdir
   - id: ram
     type:
       - 'null'
@@ -107,6 +120,7 @@ inputs:
     doc: Try to keep RAM usage below this many GB
     inputBinding:
       position: 101
+      prefix: --ram
   - id: single_end_reads
     type: File
     doc: Single-end reads
@@ -116,10 +130,11 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Fast temporary directory
     inputBinding:
       position: 101
+      prefix: --tmpdir
   - id: trim
     type:
       - 'null'
@@ -127,6 +142,7 @@ inputs:
     doc: Enable adaptor trimming
     inputBinding:
       position: 101
+      prefix: --trim
 outputs:
   - id: stdout
     type: stdout

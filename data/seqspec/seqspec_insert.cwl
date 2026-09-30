@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec_insert
+baseCommand:
+  - seqspec
+  - insert
 label: seqspec_insert
 doc: "Draft spec to modify\n\nTool homepage: https://github.com/sbooeshaghi/seqspec"
 inputs:
@@ -38,7 +40,7 @@ inputs:
       prefix: --selector
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Write updated spec (default stdout)
     inputBinding:
       position: 103
       prefix: --output

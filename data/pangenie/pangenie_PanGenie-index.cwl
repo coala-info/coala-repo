@@ -43,17 +43,20 @@ inputs:
       prefix: -v
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: 'prefix of the output files. NOTE: the given path must not include non-existent
+      folders.'
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
-    type: File
+    type:
+      type: array
+      items: File
     doc: 'prefix of the output files. NOTE: the given path must not include non-existent
       folders.'
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

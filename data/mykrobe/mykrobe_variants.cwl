@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mykrobe_variants
+baseCommand:
+  - mykrobe
+  - variants
 label: mykrobe_variants
 doc: "mykrobe variants\n\nTool homepage: https://github.com/iqbal-lab/Mykrobe-predictor"
 inputs:

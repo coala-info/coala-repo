@@ -22,6 +22,11 @@ inputs:
     doc: The input BAM file.
     inputBinding:
       position: 3
+  - id: bam_output_file
+    type: string
+    doc: The output BAM file.
+    inputBinding:
+      position: 4
   - id: restrict_to_targeted_chromosomes
     type:
       - 'null'
@@ -32,11 +37,11 @@ inputs:
       position: 104
       prefix: --restrict-to-targeted-chromosomes
 outputs:
-  - id: bam_output_file
+  - id: out_bam_output_file
     type: File
     doc: The output BAM file.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.bam_output_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0

@@ -169,7 +169,8 @@ inputs:
     doc: output the cs tag; STR is 'short' (if absent) or 'long'
     inputBinding:
       position: 103
-      prefix: --cs
+      prefix: --cs=
+      separate: false
   - id: output_md_tag
     type:
       - 'null'
@@ -288,18 +289,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `dump_index_path`
+    doc: dump index to FILE []
     inputBinding:
       position: 104
-      prefix: --dump-index
+      prefix: -d
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output alignments to FILE [stdout]
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: dump_index
     type:

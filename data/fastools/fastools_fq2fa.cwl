@@ -11,12 +11,17 @@ inputs:
     doc: input file
     inputBinding:
       position: 1
-outputs:
   - id: output
+    type: string
+    doc: output file
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_output
     type: File
     doc: output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastools:1.1.5--pyh7cba7a3_0

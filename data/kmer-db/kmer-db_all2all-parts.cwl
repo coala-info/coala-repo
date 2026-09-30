@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmer-db all2all-parts
+baseCommand:
+  - kmer-db
+  - all2all-parts
 label: kmer-db_all2all-parts
 doc: "Counting common k-mers for all the samples in the database parts (sparse computation)\n\
   \nTool homepage: https://github.com/refresh-bio/kmer-db"

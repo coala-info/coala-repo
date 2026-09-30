@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: odgi_tips
+baseCommand:
+  - odgi
+  - tips
 label: odgi_tips
 doc: "Identifying break point positions relative to given query (reference) path(s)
   of all the tips in the graph or of tips of given path(s). Prints BED records to
@@ -103,10 +105,11 @@ inputs:
       prefix: --threads
   - id: not_visited_tsv_file_path
     type: string
-    doc: Output or path parameter `not_visited_tsv_file_path`
+    doc: =[FILE]          Write target path(s) that do not visit the query 
+      path(s) to this FILE.
     inputBinding:
       position: 102
-      prefix: --not-visited-tsv-file
+      prefix: --not-visited-tsv
 outputs:
   - id: not_visited_tsv_file
     type:

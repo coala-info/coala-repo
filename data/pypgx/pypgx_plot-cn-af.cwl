@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pypgx plot-cn-af
+baseCommand:
+  - pypgx
+  - plot-cn-af
 label: pypgx_plot-cn-af
 doc: "Plot both copy number profile and allele fraction profile in one figure.\n\n\
   Tool homepage: https://github.com/sbslee/pypgx"

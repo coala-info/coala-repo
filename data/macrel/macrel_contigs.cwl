@@ -160,7 +160,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Temporary directory to use (default: $TMPDIR in the environment or /tmp)'
     inputBinding:
       position: 102

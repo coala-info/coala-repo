@@ -29,7 +29,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: target base directory for reference-data. may not be the current 
       working directory. Needs >100GB space!
     inputBinding:

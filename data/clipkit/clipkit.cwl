@@ -135,18 +135,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_name_path`
+    doc: output file name
     inputBinding:
       position: 103
-      prefix: --output-file-name
+      prefix: --output
   - id: report_json_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_json_path`
+    doc: write run summary as JSON
     inputBinding:
       position: 104
-      prefix: --report-json
+      prefix: --report_json
 outputs:
   - id: output_file_name
     type:

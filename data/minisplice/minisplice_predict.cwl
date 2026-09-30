@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minisplice predict
+baseCommand:
+  - minisplice
+  - predict
 label: minisplice_predict
 doc: "Predict splice sites\n\nTool homepage: https://github.com/lh3/minisplice"
 inputs:

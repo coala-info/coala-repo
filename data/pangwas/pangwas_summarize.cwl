@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwas_summarize
+baseCommand:
+  - pangwas
+  - summarize
 label: pangwas_summarize
 doc: "Summarize clusters according to their annotations.\n\nTakes as input the TSV
   table from collect, and the clusters table from \neither cluster or defrag. Outputs
@@ -33,7 +35,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory.
     inputBinding:
       position: 101

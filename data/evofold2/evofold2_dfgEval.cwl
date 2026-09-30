@@ -115,10 +115,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `exp_file_path`
+    doc: arg                         Calculate expectancies and output to file
     inputBinding:
       position: 104
-      prefix: --exp-file
+      prefix: --expFile
   - id: mps_file_path
     type:
       - 'null'

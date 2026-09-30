@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastx_index
+baseCommand:
+  - pyfastx
+  - index
 label: pyfastx_index
 doc: "Build index for fasta or fastq files\n\nTool homepage: https://github.com/lmdu/pyfastx"
 inputs:

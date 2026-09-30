@@ -11,6 +11,11 @@ inputs:
     doc: Input cooler path or URI.
     inputBinding:
       position: 1
+  - id: out_path
+    type: string
+    doc: Output cooler path or URI.
+    inputBinding:
+      position: 2
   - id: chunksize
     type:
       - 'null'
@@ -70,11 +75,11 @@ inputs:
       position: 102
       prefix: --nproc
 outputs:
-  - id: out_path
+  - id: out_out_path
     type: File
     doc: Output cooler path or URI.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3

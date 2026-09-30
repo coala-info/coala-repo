@@ -168,7 +168,7 @@ inputs:
       prefix: --threads
   - id: cut_points_output_path
     type: string
-    doc: Output or path parameter `cut_points_output_path`
+    doc: Emit node identifiers where segment
     inputBinding:
       position: 102
       prefix: --cut-points-output

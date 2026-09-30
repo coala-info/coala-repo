@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gecco annotate
+baseCommand:
+  - gecco
+  - annotate
 label: gecco_annotate
 doc: "Annotate genomic sequences with genes and protein domains.\n\nTool homepage:
   https://gecco.embl.de/"
@@ -111,7 +113,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory in which to write the output files.
     inputBinding:
       position: 101

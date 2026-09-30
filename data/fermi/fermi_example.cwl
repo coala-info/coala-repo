@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermi example
+baseCommand:
+  - fermi
+  - example
 label: fermi_example
 doc: "Usage: fermi example [-ceU] [-k ecKmer] [-l utgKmer] <in.fq>\n\nTool homepage:
   https://github.com/quantumlib/OpenFermion"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mentalist call
+baseCommand:
+  - mentalist
+  - call
 label: mentalist_call
 doc: "Calls alleles on a given MLST database. You can create a custom DB with 'create_db'
   or other MentaLiST functions that download schemes from pubmlst, cgmlst.org or Enterobase.\n\
@@ -84,10 +86,10 @@ inputs:
       prefix: --sample_input_file
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file with MLST call
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

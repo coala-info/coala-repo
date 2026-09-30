@@ -73,7 +73,7 @@ inputs:
       coordinate-sorted BAM file.
     inputBinding:
       position: 101
-      prefix: --create-output-bam-splitting_index
+      prefix: --create-output-bam-splitting-index
   - id: create_output_variant_index
     type:
       - 'null'
@@ -212,7 +212,7 @@ inputs:
   - id: output_shard_tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: when writing a bam, in single sharded mode this directory to write the 
       temporary intermediate output shards
     inputBinding:
@@ -317,7 +317,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to use.
     inputBinding:
       position: 101

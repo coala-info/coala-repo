@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mentalist download_cgmlst
+baseCommand:
+  - mentalist
+  - download_cgmlst
 label: mentalist_download_cgmlst
 doc: "Download a cgMLST scheme from the cgMLST finder database.\n\nTool homepage:
   https://github.com/WGS-TB/MentaLiST"
@@ -18,7 +20,7 @@ inputs:
       position: 101
       prefix: -k
   - id: output
-    type: Directory
+    type: string
     doc: Output folder for the scheme Fasta files.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nwkit dist
+baseCommand:
+  - nwkit
+  - dist
 label: nwkit_dist
 doc: "Calculate distances between two Newick trees.\n\nTool homepage: https://github.com/kfuku52/nwkit"
 inputs:

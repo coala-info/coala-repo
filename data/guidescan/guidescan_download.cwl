@@ -25,7 +25,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output Directory
     inputBinding:
       position: 101

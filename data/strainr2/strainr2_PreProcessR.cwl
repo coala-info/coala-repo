@@ -22,7 +22,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to your output directory
     inputBinding:
       position: 101

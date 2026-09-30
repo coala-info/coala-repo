@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dmtools index
+baseCommand:
+  - dmtools
+  - index
 label: dmtools_index
 doc: "Index a genome for dmtools.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scelvis_convert
+baseCommand:
+  - scelvis
+  - convert
 label: scelvis_convert
 doc: "Convert scELVIS output to .h5ad format.\n\nTool homepage: https://github.com/bihealth/scelvis"
 inputs:
@@ -85,10 +87,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Path to the .h5ad file to write to'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

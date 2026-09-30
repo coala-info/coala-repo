@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq_cns2fq
+baseCommand:
+  - maq
+  - cns2fq
 label: maq_cns2fq
 doc: "Convert consensus sequence to FASTQ format.\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:

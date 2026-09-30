@@ -13,6 +13,7 @@ inputs:
     doc: input fasta(s). May be gzip-compressed
     inputBinding:
       position: 1
+      prefix: --input_fastas
   - id: config_file
     type:
       - 'null'
@@ -42,7 +43,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory (will be created if it does not exist).
     inputBinding:
       position: 102

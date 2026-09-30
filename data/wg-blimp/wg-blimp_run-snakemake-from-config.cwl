@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wg-blimp run-snakemake-from-config
+baseCommand:
+  - wg-blimp
+  - run-snakemake-from-config
 label: wg-blimp_run-snakemake-from-config
 doc: "Run the snakemake pipeline using a config file.\n\nTool homepage: https://github.com/MarWoes/wg-blimp"
 inputs:

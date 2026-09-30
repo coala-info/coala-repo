@@ -28,7 +28,7 @@ inputs:
   - id: dedup
     type:
       - 'null'
-      - boolean
+      - string
     doc: True or False. Remove PCR duplicates during fastp preprocessing? This 
       can reduce processing time and provide more accurate abundance estimates.
     inputBinding:
@@ -48,7 +48,7 @@ inputs:
   - id: filter_seqs
     type:
       - 'null'
-      - boolean
+      - string
     doc: True or False. Remove reads aligning to sequences at 
       filter_seqs/filter_seqs.fna ?
     inputBinding:
@@ -57,7 +57,7 @@ inputs:
   - id: keep
     type:
       - 'null'
-      - boolean
+      - string
     doc: True of False. Keep the intermediate files located in the temporary 
       directory? These can add up, so it is not recommended if space is a 
       concern.
@@ -74,7 +74,7 @@ inputs:
       position: 101
       prefix: --minimap2-K
   - id: output_dir
-    type: Directory
+    type: string
     doc: Output directory name (not a path). Will be created if it does not 
       exist. Can be shared with other samples. No space characters, please. See 
       also --working_directory to create at another path.
@@ -84,7 +84,7 @@ inputs:
   - id: qual
     type:
       - 'null'
-      - boolean
+      - string
     doc: True or False. Remove low-quality reads with fastp?
     inputBinding:
       position: 101
@@ -134,7 +134,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path of temporary directory. Default is {OUTPUT_DIR}/{SAMPLE}_temp/
     inputBinding:
       position: 101

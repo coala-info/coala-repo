@@ -75,10 +75,10 @@ inputs:
       prefix: --numWorkers
   - id: log_file_path
     type: string
-    doc: Output or path parameter `log_file_path`
+    doc: string         where to write the server log (if unset, STDERR used)
     inputBinding:
       position: 102
-      prefix: --log-file
+      prefix: --logFile
 outputs:
   - id: log_file
     type:

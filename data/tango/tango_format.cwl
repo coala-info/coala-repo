@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tango format
+baseCommand:
+  - tango
+  - format
 label: tango_format
 doc: "Reformat protein fasta files.\n\nTool homepage: https://github.com/johnne/tango"
 inputs:
@@ -54,7 +56,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temporary directory for writing fasta files
     inputBinding:
       position: 103

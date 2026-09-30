@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: quasitools complexity
+baseCommand:
+  - quasitools
+  - complexity
 label: quasitools_complexity
 doc: "Reports the per-amplicon (fasta) or k-mer complexity of the pileup, for each
   k-mer position in the reference complexity (bam and reference) of a quasispecies

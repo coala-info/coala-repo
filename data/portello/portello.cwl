@@ -75,18 +75,12 @@ inputs:
       position: 101
       prefix: --threads
   - id: remapped_read_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `remapped_read_output_path`
+    type: string
     inputBinding:
       position: 102
       prefix: --remapped-read-output
   - id: unassembled_read_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `unassembled_read_output_path`
+    type: string
     inputBinding:
       position: 103
       prefix: --unassembled-read-output

@@ -198,38 +198,39 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: "[file]\t\tOutput of the mapped sequences in SAM or BAM format. The default
+      is \"stdout\" (standard output) in SAM format."
+    inputBinding:
+      position: 104
+      prefix: -o
   - id: mapstats_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mapstats_path`
     inputBinding:
-      position: 102
+      position: 105
       prefix: --mapstats
   - id: methy_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `methy_out_path`
+    doc: Output the intermediate methylation result files, instead of SAM or BAM
+      files.
     inputBinding:
-      position: 103
-      prefix: --methy-out
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 104
-      prefix: --output
+      position: 106
+      prefix: --methy_out
   - id: unmapped_out_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `unmapped_out_path`
+    doc: Report unmapped reads.
     inputBinding:
-      position: 105
-      prefix: --unmapped-out
+      position: 107
+      prefix: --unmapped_out
 outputs:
   - id: output
     type:

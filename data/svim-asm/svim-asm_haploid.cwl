@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svim-asm haploid
+baseCommand:
+  - svim-asm
+  - haploid
 label: svim-asm_haploid
 doc: "SVIM-ASM is a tool for structural variant detection in assemblies. This is the
   haploid mode.\n\nTool homepage: https://github.com/eldariont/svim-asm"

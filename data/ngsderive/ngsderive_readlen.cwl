@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngsderive readlen
+baseCommand:
+  - ngsderive
+  - readlen
 label: ngsderive_readlen
 doc: "Derives read length distribution from sequencing files.\n\nTool homepage: https://github.com/claymcleod/ngsderive"
 inputs:
@@ -47,7 +49,6 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
       prefix: --outfile

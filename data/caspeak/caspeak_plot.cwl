@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: caspeak_plot
+baseCommand:
+  - caspeak
+  - plot
 label: caspeak_plot
 doc: "Plot MAF files\n\nTool homepage: https://github.com/Rye-lxy/CasPeak"
 inputs:

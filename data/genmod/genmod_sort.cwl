@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genmod_sort
+baseCommand:
+  - genmod
+  - sort
 label: genmod_sort
 doc: "Sort a VCF file based on rank score.\n\nTool homepage: http://github.com/moonso/genmod"
 inputs:

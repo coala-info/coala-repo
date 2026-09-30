@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mageck test
+baseCommand:
+  - mageck
+  - test
 label: mageck_test
 doc: "Perform differential analysis of CRISPR screens.\n\nTool homepage: http://mageck.sourceforge.net"
 inputs:
@@ -72,6 +74,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-id
+      itemSeparator: ','
   - id: control_sgrna
     type:
       - 'null'
@@ -223,6 +226,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --treatment-id
+      itemSeparator: ','
   - id: variance_estimation_samples
     type:
       - 'null'
@@ -233,6 +237,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variance-estimation-samples
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

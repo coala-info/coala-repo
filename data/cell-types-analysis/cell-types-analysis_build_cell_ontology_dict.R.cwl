@@ -52,7 +52,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dict_path_path`
     inputBinding:
       position: 102
       prefix: --output-dict-path
@@ -60,7 +59,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_text_path_path`
     inputBinding:
       position: 103
       prefix: --output-text-path

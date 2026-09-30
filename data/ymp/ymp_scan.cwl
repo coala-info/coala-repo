@@ -56,7 +56,6 @@ inputs:
       prefix: --verbose
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
     inputBinding:
       position: 103
       prefix: --out

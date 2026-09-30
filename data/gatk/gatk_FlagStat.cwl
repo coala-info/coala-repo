@@ -298,7 +298,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp directory to use.
     inputBinding:
       position: 101

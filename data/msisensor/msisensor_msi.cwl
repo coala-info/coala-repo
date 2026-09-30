@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msisensor msi
+baseCommand:
+  - msisensor
+  - msi
 label: msisensor_msi
 doc: "Calculate MSI score and distribution\n\nTool homepage: https://github.com/ding-lab/msisensor"
 inputs:
@@ -145,10 +147,10 @@ inputs:
       prefix: -t
   - id: output_distribution_file_path
     type: string
-    doc: Output or path parameter `output_distribution_file_path`
+    doc: <string>   output distribution file
     inputBinding:
       position: 102
-      prefix: --output-distribution-file
+      prefix: -o
 outputs:
   - id: output_distribution_file
     type: File

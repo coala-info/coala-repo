@@ -13,7 +13,8 @@ inputs:
     doc: Bits per cell in bloom filter; must be 2, 4, 8, 16, or 32.
     inputBinding:
       position: 101
-      prefix: bits
+      prefix: bits=
+      separate: false
   - id: build_passes
     type:
       - 'null'
@@ -22,7 +23,8 @@ inputs:
       low-depth kmers
     inputBinding:
       position: 101
-      prefix: buildpasses
+      prefix: buildpasses=
+      separate: false
   - id: error_correction
     type:
       - 'null'
@@ -49,7 +51,8 @@ inputs:
       output
     inputBinding:
       position: 101
-      prefix: extra
+      prefix: extra=
+      separate: false
   - id: fasta_read_length
     type:
       - 'null'
@@ -57,7 +60,8 @@ inputs:
     doc: Break up FASTA reads longer than this
     inputBinding:
       position: 101
-      prefix: fastareadlen
+      prefix: fastareadlen=
+      separate: false
   - id: hashes
     type:
       - 'null'
@@ -65,13 +69,15 @@ inputs:
     doc: Number of times each kmer is hashed and stored.
     inputBinding:
       position: 101
-      prefix: hashes
+      prefix: hashes=
+      separate: false
   - id: input_file
     type: File
     doc: Primary input. Use in2 for paired reads in a second file
     inputBinding:
       position: 101
-      prefix: in
+      prefix: in=
+      separate: false
   - id: input_file_2
     type:
       - 'null'
@@ -79,7 +85,8 @@ inputs:
     doc: Second input file for paired reads in two files
     inputBinding:
       position: 101
-      prefix: in2
+      prefix: in2=
+      separate: false
   - id: interleaved
     type:
       - 'null'
@@ -88,7 +95,8 @@ inputs:
       autodetection of the input file as paired interleaved.
     inputBinding:
       position: 101
-      prefix: interleaved
+      prefix: interleaved=
+      separate: false
   - id: java_memory
     type:
       - 'null'
@@ -113,7 +121,8 @@ inputs:
     doc: Kmer length
     inputBinding:
       position: 101
-      prefix: k
+      prefix: k=
+      separate: false
   - id: kmer_sample
     type:
       - 'null'
@@ -121,7 +130,8 @@ inputs:
     doc: Process every nth kmer, and skip the rest
     inputBinding:
       position: 101
-      prefix: kmersample
+      prefix: kmersample=
+      separate: false
   - id: max_depth
     type:
       - 'null'
@@ -129,7 +139,8 @@ inputs:
     doc: Reads will not be downsampled when below this depth
     inputBinding:
       position: 101
-      prefix: maxdepth
+      prefix: maxdepth=
+      separate: false
   - id: min_depth
     type:
       - 'null'
@@ -138,7 +149,8 @@ inputs:
       calculating the depth of a read.
     inputBinding:
       position: 101
-      prefix: mindepth
+      prefix: mindepth=
+      separate: false
   - id: min_good_kmers
     type:
       - 'null'
@@ -146,7 +158,8 @@ inputs:
     doc: Reads must have at least this many kmers over min depth to be retained.
     inputBinding:
       position: 101
-      prefix: minkmers
+      prefix: minkmers=
+      separate: false
   - id: min_probability
     type:
       - 'null'
@@ -154,7 +167,8 @@ inputs:
     doc: Ignore kmers with overall probability of correctness below this
     inputBinding:
       position: 101
-      prefix: minprob
+      prefix: minprob=
+      separate: false
   - id: min_quality
     type:
       - 'null'
@@ -162,7 +176,8 @@ inputs:
     doc: Ignore kmers containing bases with quality below this
     inputBinding:
       position: 101
-      prefix: minq
+      prefix: minq=
+      separate: false
   - id: passes
     type:
       - 'null'
@@ -170,7 +185,8 @@ inputs:
     doc: 1 pass is the basic mode. 2 passes (default) allows greater accuracy.
     inputBinding:
       position: 101
-      prefix: passes
+      prefix: passes=
+      separate: false
   - id: percentile
     type:
       - 'null'
@@ -179,7 +195,8 @@ inputs:
       depth
     inputBinding:
       position: 101
-      prefix: percentile
+      prefix: percentile=
+      separate: false
   - id: prefilter
     type:
       - 'null'
@@ -195,7 +212,8 @@ inputs:
     doc: Bits per cell in prefilter.
     inputBinding:
       position: 101
-      prefix: prefilterbits
+      prefix: prefilterbits=
+      separate: false
   - id: prefilter_size
     type:
       - 'null'
@@ -203,7 +221,8 @@ inputs:
     doc: Fraction of memory to allocate to prefilter.
     inputBinding:
       position: 101
-      prefix: prefiltersize
+      prefix: prefiltersize=
+      separate: false
   - id: prehashes
     type:
       - 'null'
@@ -211,7 +230,8 @@ inputs:
     doc: Number of hashes for prefilter.
     inputBinding:
       position: 101
-      prefix: prehashes
+      prefix: prehashes=
+      separate: false
   - id: quality_in
     type:
       - 'null'
@@ -220,7 +240,8 @@ inputs:
       auto.
     inputBinding:
       position: 101
-      prefix: qin
+      prefix: qin=
+      separate: false
   - id: quality_out
     type:
       - 'null'
@@ -229,7 +250,8 @@ inputs:
       auto.
     inputBinding:
       position: 101
-      prefix: qout
+      prefix: qout=
+      separate: false
   - id: read_sample
     type:
       - 'null'
@@ -237,7 +259,8 @@ inputs:
     doc: Process every nth read, and skip the rest
     inputBinding:
       position: 101
-      prefix: readsample
+      prefix: readsample=
+      separate: false
   - id: reads_to_process
     type:
       - 'null'
@@ -245,7 +268,8 @@ inputs:
     doc: Only process this number of reads, then quit (-1 means all)
     inputBinding:
       position: 101
-      prefix: reads
+      prefix: reads=
+      separate: false
   - id: remove_duplicate_kmers
     type:
       - 'null'
@@ -277,7 +301,8 @@ inputs:
     doc: Use at most this many reads when building the hashtable (-1 means all)
     inputBinding:
       position: 101
-      prefix: tablereads
+      prefix: tablereads=
+      separate: false
   - id: target_depth
     type:
       - 'null'
@@ -285,11 +310,12 @@ inputs:
     doc: Target normalization depth.
     inputBinding:
       position: 101
-      prefix: target
+      prefix: target=
+      separate: false
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: This will specify a directory for temp files (only needed for multipass
       runs).
     inputBinding:
@@ -302,7 +328,8 @@ inputs:
     doc: Spawn exactly X hashing threads
     inputBinding:
       position: 101
-      prefix: threads
+      prefix: threads=
+      separate: false
   - id: use_temp_directory
     type:
       - 'null'

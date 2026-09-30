@@ -37,7 +37,7 @@ inputs:
   - id: blacklistfile
     type:
       - 'null'
-      - string
+      - File
     doc: path to the blacklist file
     inputBinding:
       position: 101

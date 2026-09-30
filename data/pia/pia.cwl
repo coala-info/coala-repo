@@ -49,7 +49,7 @@ inputs:
       prefix: --threads
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: output file name (e.g. intermediate PIA file)
     inputBinding:
       position: 103
       prefix: --outfile

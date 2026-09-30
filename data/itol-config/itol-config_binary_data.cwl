@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: itol_config binary_data
+baseCommand:
+  - itol_config
+  - binary_data
 label: itol-config_binary_data
 doc: "Generates an iTOL configuration file for binary data from a CSV input.\n\nTool
   homepage: https://github.com/jodyphelan/itol-config"
@@ -38,7 +40,7 @@ inputs:
       prefix: --symbol
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output file name for the iTOL configuration file
     inputBinding:
       position: 102
       prefix: --output

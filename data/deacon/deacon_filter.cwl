@@ -118,7 +118,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 105
       prefix: --output
@@ -126,7 +125,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output2_path`
     inputBinding:
       position: 106
       prefix: --output2
@@ -134,7 +132,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_path`
     inputBinding:
       position: 107
       prefix: --summary

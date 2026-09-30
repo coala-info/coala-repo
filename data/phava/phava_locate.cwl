@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phava_locate
+baseCommand:
+  - phava
+  - locate
 label: phava_locate
 doc: "Directory where data and output are stored *** USE THE SAME WORK DIRECTORY FOR
   ALL PHAVA OPERATIONS ***\n\nTool homepage: https://github.com/patrickwest/PhaVa"

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: perl /usr/local/bin/connect.pl
+baseCommand:
+  - perl
+  - /usr/local/bin/connect.pl
 label: phyloaln_connect.pl
 doc: "Concatenate multiple alignments into a matrix.\n\nTool homepage: https://github.com/huangyh45/PhyloAln"
 inputs:
@@ -86,10 +88,10 @@ inputs:
       prefix: -l
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output concatenated FASTA alignment file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

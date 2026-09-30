@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler mv
+baseCommand:
+  - cooler
+  - mv
 label: cooler_mv
 doc: "Rename a cooler within the same file.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:

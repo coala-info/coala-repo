@@ -229,7 +229,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for temporary files
     inputBinding:
       position: 102
@@ -277,7 +277,7 @@ inputs:
       prefix: --xdrop
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: output file
     inputBinding:
       position: 103
       prefix: --out

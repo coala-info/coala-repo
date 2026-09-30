@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepbinner train
+baseCommand:
+  - deepbinner
+  - train
 label: deepbinner_train
 doc: "Train the neural network\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:
@@ -58,10 +60,10 @@ inputs:
       prefix: --val
   - id: model_out_path
     type: string
-    doc: Output or path parameter `model_out_path`
+    doc: Filename for the trained model
     inputBinding:
       position: 102
-      prefix: --model-out
+      prefix: --model_out
 outputs:
   - id: model_out
     type: File

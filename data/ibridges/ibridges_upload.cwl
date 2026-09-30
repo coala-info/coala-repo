@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ibridges_upload
+baseCommand:
+  - ibridges
+  - upload
 label: ibridges_upload
 doc: "Upload a data object or collection to an iRODS server.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:

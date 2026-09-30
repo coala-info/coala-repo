@@ -532,30 +532,14 @@ inputs:
     inputBinding:
       position: 104
       prefix: --assoc-tdt
-  - id: check_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `check_path`
-    inputBinding:
-      position: 105
-      prefix: --check
   - id: compressed_png_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `compressed_png_path`
+    doc: Outputs compressed LD display to <fileroot>.LD.PNG
     inputBinding:
       position: 106
-      prefix: --compressed-png
-  - id: dprime_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `dprime_path`
-    inputBinding:
-      position: 107
-      prefix: --dprime
+      prefix: -compressedpng
   - id: ind_check_path
     type:
       - 'null'
@@ -572,22 +556,14 @@ inputs:
     inputBinding:
       position: 109
       prefix: --male-hets
-  - id: mendel_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `mendel_path`
-    inputBinding:
-      position: 110
-      prefix: --mendel
   - id: pairwise_tagging_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pairwise_tagging_path`
+    doc: Generates pairwise tagging information in <fileroot>.TAGS and .TESTS
     inputBinding:
       position: 111
-      prefix: --pairwise-tagging
+      prefix: -pairwiseTagging
   - id: perm_tests_path
     type:
       - 'null'
@@ -600,18 +576,39 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `png_path`
+    doc: Outputs LD display to <fileroot>.LD.PNG
     inputBinding:
       position: 113
-      prefix: --png
+      prefix: -png
   - id: svg_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `svg_path`
+    doc: Outputs svg format LD display to <fileroot>.LD.SVG
     inputBinding:
       position: 114
-      prefix: --svg
+      prefix: -svg
+  - id: check_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 115
+      prefix: -check
+  - id: dprime_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 116
+      prefix: -dprime
+  - id: mendel_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 117
+      prefix: -mendel
 outputs:
   - id: dprime
     type:

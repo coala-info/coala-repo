@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sr2silo process-from-vpipe
+baseCommand:
+  - sr2silo
+  - process-from-vpipe
 label: sr2silo_process-from-vpipe
 doc: "V-PIPE to SILO conversion with amino acids and special metadata. Processing
   only - use 'submit-to-loculus' command to upload and submit to SILO.\n\nTool homepage:
@@ -90,7 +92,7 @@ inputs:
       prefix: --timeline-file
   - id: output_fp_path
     type: string
-    doc: Output or path parameter `output_fp_path`
+    doc: PATH  Path to the output    │
     inputBinding:
       position: 102
       prefix: --output-fp

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metawrap blobology
+baseCommand:
+  - metawrap
+  - blobology
 label: metawrap_blobology
 doc: "Run blobology on assembly and reads\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:
@@ -38,7 +40,7 @@ inputs:
       position: 104
       prefix: --bins
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 104

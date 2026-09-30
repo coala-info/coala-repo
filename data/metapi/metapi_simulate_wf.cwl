@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metapi simulate
+baseCommand:
+  - metapi
+  - simulate
 label: metapi_simulate_wf
 doc: "Pipeline end point. Allowed values are simulate_all, all (default: all)\n\n\
   Tool homepage: https://github.com/ohmeta/metapi"

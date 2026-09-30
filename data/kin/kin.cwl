@@ -45,10 +45,9 @@ inputs:
       prefix: --threshold
   - id: output_location_path
     type: string
-    doc: Output or path parameter `output_location_path`
     inputBinding:
       position: 102
-      prefix: --output-location
+      prefix: --output_location
 outputs:
   - id: output_location
     type: Directory

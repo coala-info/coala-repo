@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt_sort
+baseCommand:
+  - vt
+  - sort
 label: vt_sort
 doc: "Sorts a VCF or BCF or VCF.GZ file.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
 inputs:
@@ -38,10 +40,10 @@ inputs:
       prefix: -m
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output VCF/VCF.GZ/BCF file [-]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

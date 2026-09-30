@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mockinbird_preprocess
+baseCommand:
+  - mockinbird
+  - preprocess
 label: mockinbird_preprocess
 doc: "start preprocessing pipeline using a config script\n\nTool homepage: https://github.com/soedinglab/mockinbird"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory - will be created if it does not exist
     inputBinding:
       position: 2

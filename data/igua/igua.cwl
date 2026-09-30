@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: docker run
+baseCommand:
+  - docker
+  - run
 label: igua
 doc: "Run a Docker container for the igua tool.\n\nTool homepage: https://github.com/zellerlab/IGUA"
 inputs:

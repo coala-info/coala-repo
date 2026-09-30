@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jass extract-tsv
+baseCommand:
+  - jass
+  - extract-tsv
 label: jass_extract-tsv
 doc: "Extracts data from an HDF5 table to a TSV file.\n\nTool homepage: http://statistical-genetics.pages.pasteur.fr/jass/"
 inputs:

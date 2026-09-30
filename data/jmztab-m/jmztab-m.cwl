@@ -59,10 +59,11 @@ inputs:
       prefix: --level
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Example: -o "output.txt". Record validation messages into outfile. If not
+      set, print validation messages to stdout/stderr.'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --outFile
 outputs:
   - id: output_file
     type:

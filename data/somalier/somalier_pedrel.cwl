@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: somalier_pedrel
+baseCommand:
+  - somalier
+  - pedrel
 label: somalier_pedrel
 doc: "report pairwise relationships from pedigree file\n\nTool homepage: https://github.com/brentp/somalier"
 inputs:
@@ -19,7 +21,7 @@ inputs:
       prefix: --min-relatedness
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: 'output file path (default: stdout)'
     inputBinding:
       position: 103
       prefix: --output

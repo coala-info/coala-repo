@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakedeploy scaffold-snakemake-plugin
+baseCommand:
+  - snakedeploy
+  - scaffold-snakemake-plugin
 label: snakedeploy_scaffold-snakemake-plugin
 doc: "Scaffold a snakemake plugin by adding recommended dependencies and code snippets.\n\
   \nTool homepage: https://github.com/snakemake/snakedeploy"

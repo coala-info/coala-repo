@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar JRONN_JAR_NAME
+baseCommand:
+  - java
+  - -jar
+  - JRONN_JAR_NAME
 label: jronn
 doc: "JRONN is a Java implementation of RONN. JRONN is based on RONN and uses the
   same model data, therefore gives the same predictions. Main motivation behind JRONN
@@ -14,13 +17,15 @@ inputs:
     doc: the value of disorder
     inputBinding:
       position: 101
-      prefix: -d
+      prefix: -d=
+      separate: false
   - id: input_file
     type: File
     doc: Input file can contain one or more FASTA formatted sequences.
     inputBinding:
       position: 101
-      prefix: -i
+      prefix: -i=
+      separate: false
   - id: output_format
     type:
       - 'null'
@@ -31,7 +36,8 @@ inputs:
       the sequence. Letters and values separated by tabulation in this case.
     inputBinding:
       position: 101
-      prefix: -f
+      prefix: -f=
+      separate: false
   - id: statistics_file
     type:
       - 'null'
@@ -39,7 +45,8 @@ inputs:
     doc: the file name to write execution statistics to.
     inputBinding:
       position: 101
-      prefix: -s
+      prefix: -s=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -49,13 +56,15 @@ inputs:
       (2 x num_of_cores)
     inputBinding:
       position: 101
-      prefix: -n
+      prefix: -n=
+      separate: false
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: =output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o=
+      separate: false
 outputs:
   - id: output_file
     type:

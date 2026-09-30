@@ -157,7 +157,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to write results to.
     inputBinding:
       position: 101

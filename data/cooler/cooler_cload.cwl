@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cooler cload
+baseCommand:
+  - cooler
+  - cload
 label: cooler_cload
 doc: "Create a cooler from genomic pairs and bins.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:

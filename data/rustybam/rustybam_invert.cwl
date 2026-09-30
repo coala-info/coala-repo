@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam invert
+baseCommand:
+  - rustybam
+  - invert
 label: rustybam_invert
 doc: "Invert the target and query sequences in a PAF along with the CIGAR string\n\
   \nTool homepage: https://github.com/mrvollger/rustybam"

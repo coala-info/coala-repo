@@ -101,10 +101,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_distances_path`
+    doc: '- output file containing distances (default dist.dat)'
     inputBinding:
       position: 102
-      prefix: --output-distances
+      prefix: -od
   - id: output_gromos_path
     type:
       - 'null'
@@ -117,10 +117,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_pdb_path`
+    doc: '- output structure in PDB file format (default dist.pdb)'
     inputBinding:
       position: 104
-      prefix: --output-pdb
+      prefix: -op
 outputs:
   - id: output_pdb
     type:

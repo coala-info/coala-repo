@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: debarcer.py collapse
+baseCommand:
+  - debarcer.py
+  - collapse
 label: debarcer_collapse
 doc: "Collapse UMIs based on various criteria.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
 inputs:
@@ -79,9 +81,9 @@ inputs:
       prefix: --Position
   - id: reference
     type: File
+    doc: Path to the refeence genome
     secondaryFiles:
       - .fai
-    doc: Path to the refeence genome
     inputBinding:
       position: 101
       prefix: --Reference
@@ -127,10 +129,9 @@ inputs:
       prefix: --Umi
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
     inputBinding:
       position: 102
-      prefix: --outdir
+      prefix: --Outdir
 outputs:
   - id: outdir
     type:

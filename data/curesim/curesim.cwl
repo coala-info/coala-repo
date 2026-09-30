@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar simulator.jar
+baseCommand:
+  - java
+  - -jar
+  - simulator.jar
 label: curesim
 doc: "CuReSim version 1.3\n\nTool homepage: https://github.com/BenKearns/CureSim"
 inputs:
@@ -115,11 +118,11 @@ inputs:
       position: 101
       prefix: -v
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type: string?
+    doc: "file_name \t [facultative] name of output fastq file [output.fastq]"
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

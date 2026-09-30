@@ -109,7 +109,7 @@ inputs:
       position: 102
       prefix: --reads
   - id: ref
-    type: string
+    type: File
     doc: Input reference fasta file
     inputBinding:
       position: 102

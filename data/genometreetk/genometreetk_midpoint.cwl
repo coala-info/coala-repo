@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genometreetk midpoint
+baseCommand:
+  - genometreetk
+  - midpoint
 label: genometreetk_midpoint
 doc: "Reroot tree at midpoint.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:

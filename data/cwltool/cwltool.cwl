@@ -285,7 +285,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory, default current directory
     inputBinding:
       position: 103

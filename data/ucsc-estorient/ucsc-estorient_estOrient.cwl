@@ -28,7 +28,8 @@ inputs:
     doc: Process this chromosome, maybe repeated
     inputBinding:
       position: 104
-      prefix: -chrom
+      prefix: -chrom=
+      separate: false
   - id: disoriented_psl
     type:
       - 'null'
@@ -36,7 +37,8 @@ inputs:
     doc: Output ESTs that where orientation can't be determined to this file.
     inputBinding:
       position: 104
-      prefix: -disoriented
+      prefix: -disoriented=
+      separate: false
   - id: est_orient_info_file
     type:
       - 'null'
@@ -47,7 +49,8 @@ inputs:
       in the gbCdnaInfo table and db can be `no'.
     inputBinding:
       position: 104
-      prefix: -estOrientInfo
+      prefix: -estOrientInfo=
+      separate: false
   - id: file_input
     type:
       - 'null'

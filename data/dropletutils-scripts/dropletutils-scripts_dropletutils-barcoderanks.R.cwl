@@ -30,7 +30,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_object_file_path`
     inputBinding:
       position: 102
       prefix: --output-object-file
@@ -38,7 +37,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_png_file_path`
     inputBinding:
       position: 103
       prefix: --output-png-file

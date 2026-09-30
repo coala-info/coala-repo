@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vt annotate_1000g
+baseCommand:
+  - vt
+  - annotate_1000g
 label: vt_annotate_1000g
 doc: "annotates variants that are present in 1000 Genomes variant set\n\nTool homepage:
   https://github.com/Aikoyori/ProgrammingVTuberLogos"

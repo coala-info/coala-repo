@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyling filter
+baseCommand:
+  - phyling
+  - filter
 label: phyling_filter
 doc: "Filter the multiple sequence alignment (MSA) results for tree module.\n\nTool
   homepage: https://github.com/stajichlab/Phyling"
@@ -60,10 +62,11 @@ inputs:
       prefix: --verbose
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: 'directory Output directory of the treeness.tsv and selected MSAs (default:
+      phyling-tree-[YYYYMMDD-HHMMSS] (UTC timestamp))'
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --output
 outputs:
   - id: output_directory
     type:

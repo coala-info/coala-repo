@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: verticall mask
+baseCommand:
+  - verticall
+  - mask
 label: verticall_mask
 doc: "mask horizontal regions from a whole-genome pseudo-alignment\n\nTool homepage:
   https://github.com/rrwick/Verticall"
@@ -101,10 +103,9 @@ inputs:
       prefix: --vertical_colour
   - id: out_alignment_path
     type: string
-    doc: Output or path parameter `out_alignment_path`
     inputBinding:
       position: 102
-      prefix: --out-alignment
+      prefix: --out_alignment
 outputs:
   - id: out_alignment
     type: File

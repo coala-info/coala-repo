@@ -460,7 +460,7 @@ inputs:
       prefix: --ylabel
   - id: fout_path
     type: string
-    doc: Output or path parameter `fout_path`
+    doc: 'Output file (default: stdout)'
     inputBinding:
       position: 103
       prefix: --fout

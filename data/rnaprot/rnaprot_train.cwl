@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnaprot_train
+baseCommand:
+  - rnaprot
+  - train
 label: rnaprot_train
 doc: "Model training\n\nTool homepage: https://github.com/BackofenLab/RNAProt"
 inputs:

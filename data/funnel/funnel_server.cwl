@@ -146,11 +146,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --EventWriters
+          separate: true
     doc: Name of an event writer backend to use. This flag can be used multiple 
       times
     inputBinding:
       position: 102
-      prefix: --EventWriters
   - id: google_storage_disabled
     type:
       - 'null'
@@ -196,10 +198,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --Kafka.Servers
+          separate: true
     doc: Address of a Kafka server. This flag can be used multiple times
     inputBinding:
       position: 102
-      prefix: --Kafka.Servers
   - id: kafka_topic
     type:
       - 'null'
@@ -213,11 +217,13 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --LocalStorage.AllowedDirs
+          separate: true
     doc: Directories Funnel is allowed to access. This flag can be used multiple
       times
     inputBinding:
       position: 102
-      prefix: --LocalStorage.AllowedDirs
   - id: local_storage_disabled
     type:
       - 'null'
@@ -247,10 +253,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --MongoDB.Addrs
+          separate: true
     doc: Address of a MongoDB seed server. This flag can be used multiple times
     inputBinding:
       position: 102
-      prefix: --MongoDB.Addrs
   - id: mongo_db_database
     type:
       - 'null'
@@ -485,10 +493,10 @@ inputs:
       prefix: --Worker.WorkDir
   - id: logger_output_file_path
     type: string
-    doc: Output or path parameter `logger_output_file_path`
+    doc: string             File path to write logs to
     inputBinding:
       position: 103
-      prefix: --logger-output-file
+      prefix: --Logger.OutputFile
 outputs:
   - id: logger_output_file
     type:

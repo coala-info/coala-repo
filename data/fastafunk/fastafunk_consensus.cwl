@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastafunk consensus
+baseCommand:
+  - fastafunk
+  - consensus
 label: fastafunk_consensus
 doc: "Generates consensus sequences from a FASTA file based on metadata.\n\nTool homepage:
   https://github.com/cov-ert/fastafunk"
@@ -62,8 +64,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: out_fasta_path
-    type: string
-    doc: Output or path parameter `out_fasta_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --out-fasta

@@ -144,10 +144,12 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_path`
+    doc: '[=<filename>] write bloom filter stats to a text file (if no filename is
+      given this is derived from the bloom filter filename)'
     inputBinding:
       position: 104
-      prefix: --stats-file
+      prefix: --stats=
+      separate: false
 outputs:
   - id: output_filename
     type:

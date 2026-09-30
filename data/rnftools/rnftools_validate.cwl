@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnftools validate
+baseCommand:
+  - rnftools
+  - validate
 label: rnftools_validate
 doc: "Validate RNF names in a FASTQ file.\n\nTool homepage: http://karel-brinda.github.io/rnftools"
 inputs:

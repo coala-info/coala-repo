@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: barcodeforge barcode
+baseCommand:
+  - barcodeforge
+  - barcode
 label: barcodeforge_barcode
 doc: "Process barcode data, including VCF generation, tree formatting, USHER placement,
   matUtils annotation, and matUtils extraction.\n\nTool homepage: https://github.com/andersen-lab/BarcodeForge"

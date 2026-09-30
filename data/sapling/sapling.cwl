@@ -106,11 +106,11 @@ inputs:
       position: 101
       prefix: --use_clusters
   - id: output_filename_path
-    type: string
-    doc: Output or path parameter `output_filename_path`
+    type: string?
+    doc: 'Output filename to store trees and frequencies (default: STDOUT)'
     inputBinding:
       position: 102
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type:

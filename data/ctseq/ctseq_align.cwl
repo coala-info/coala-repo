@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ctseq_align
+baseCommand:
+  - ctseq
+  - align
 label: ctseq_align
 doc: "Aligns sequencing reads to a reference genome and prepares methylation calls.\n\
   \nTool homepage: https://github.com/ryanhmiller/ctseq"

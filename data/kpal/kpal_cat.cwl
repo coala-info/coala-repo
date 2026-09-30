@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_cat
+baseCommand:
+  - kpal
+  - cat
 label: kpal_cat
 doc: "Save k-mer profiles from several files to one k-mer profile file.\n\nTool homepage:
   https://github.com/LUMC/kPAL"
@@ -12,6 +14,11 @@ inputs:
     doc: input k-mer profile file
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output k-mer profile file
+    inputBinding:
+      position: 2
   - id: prefixes
     type:
       - 'null'
@@ -31,11 +38,11 @@ inputs:
       position: 102
       prefix: --profiles
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output k-mer profile file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpal:2.1.1--py27_0

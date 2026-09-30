@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: flexsweep simulator
+baseCommand:
+  - flexsweep
+  - simulator
 label: flexsweep_simulator
 doc: "Run the discoal Simulator with user-specified parameters.\n\nTool homepage:
   https://github.com/jmurga/flexsweep"
 inputs:
   - id: demes
-    type: string
+    type: File
     doc: Path to the demes YAML file describing demography.
     inputBinding:
       position: 101
@@ -55,7 +57,7 @@ inputs:
       position: 101
       prefix: --num_simulations
   - id: output_folder
-    type: Directory
+    type: string
     doc: Directory where simulation outputs will be saved.
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tb-profiler list_db
+baseCommand:
+  - tb-profiler
+  - list_db
 label: tb-profiler_list_db
 doc: "List available databases\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
 inputs:
@@ -31,7 +33,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Temp firectory to process all files
     inputBinding:
       position: 101

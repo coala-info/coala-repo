@@ -106,10 +106,10 @@ inputs:
       prefix: -r
   - id: output_sam_path
     type: string
-    doc: Output or path parameter `output_sam_path`
+    doc: sam file to output results to [stdout]
     inputBinding:
       position: 107
-      prefix: --output-sam
+      prefix: -f
 outputs:
   - id: output_sam
     type:

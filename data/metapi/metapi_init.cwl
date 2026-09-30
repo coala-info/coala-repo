@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metapi init
+baseCommand:
+  - metapi
+  - init
 label: metapi_init
 doc: "Initialize a metapi project.\n\nTool homepage: https://github.com/ohmeta/metapi"
 inputs:

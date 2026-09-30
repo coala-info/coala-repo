@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sylph-tax merge
+baseCommand:
+  - sylph-tax
+  - merge
 label: sylph-tax_merge
 doc: "Merge multiple sylph-tax taxonomy files into a single TSV table.\n\nTool homepage:
   https://github.com/bluenote-1577/sylph-tax"
@@ -20,7 +22,7 @@ inputs:
       prefix: --column
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Name of the tsv table to output
     inputBinding:
       position: 103
       prefix: --output

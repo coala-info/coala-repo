@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: var pubs deploy-db
+baseCommand:
+  - var
+  - pubs
+  - deploy-db
 label: varpubs_deploy-db
 doc: "DeployDBArgs ['args']: Command-line arguments for deploying the PubMed variant
   database.\n\nTool homepage: https://github.com/koesterlab/varpubs"

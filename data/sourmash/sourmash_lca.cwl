@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sourmash_lca
+baseCommand:
+  - sourmash
+  - lca
 label: sourmash_lca
 doc: "Taxonomic utilities\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
 inputs:

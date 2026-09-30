@@ -6,32 +6,26 @@ doc: "HOPS (Heuristic Operations for Pathogen Screening) is a tool for screening
   analyzing ancient DNA data.\n\nTool homepage: https://github.com/rhuebler/HOPS/"
 inputs:
   - id: config_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to Config File
     inputBinding:
       position: 101
       prefix: --configFile
   - id: input
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Specify input directory or files valid option depend on mode
     inputBinding:
       position: 101
       prefix: --input
   - id: mode
-    type:
-      - 'null'
-      - string
+    type: string
     doc: HOPS Mode to run accpeted full, malt, maltex, post
     inputBinding:
       position: 101
       prefix: --mode
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Specify out directory
     inputBinding:
       position: 102
       prefix: --output

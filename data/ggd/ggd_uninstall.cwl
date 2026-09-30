@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ggd uninstall
+baseCommand:
+  - ggd
+  - uninstall
 label: ggd_uninstall
 doc: "Use ggd to uninstall a ggd data package installed in the current conda environment\n\
   \nTool homepage: https://github.com/gogetdata/ggd-cli"

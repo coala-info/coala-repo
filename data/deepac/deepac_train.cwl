@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepac train
+baseCommand:
+  - deepac
+  - train
 label: deepac_train
 doc: "Train a deep learning model for DNA classification.\n\nTool homepage: https://gitlab.com/rki_bioinformatics/DeePaC"
 inputs:

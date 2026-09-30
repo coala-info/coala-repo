@@ -43,7 +43,7 @@ inputs:
       prefix: --species
   - id: dir_path
     type: string
-    doc: Output or path parameter `dir_path`
+    doc: (Optional) Directory to the database will be
     inputBinding:
       position: 102
       prefix: --dir

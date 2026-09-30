@@ -45,7 +45,7 @@ inputs:
       position: 101
       prefix: --nodeptherror
   - id: output_dir
-    type: Directory
+    type: string
     doc: An output directory
     inputBinding:
       position: 101

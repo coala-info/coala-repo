@@ -822,10 +822,12 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_blasttab_path`
+    doc: "write result in tabular BLAST format (compatible to -m 8 or -outfmt 6 output)
+      1      2      3           4         5        6      8    9      10   11   12
+      'query target #match/tLen #mismatch #gapOpen qstart qend tstart tend eval score'"
     inputBinding:
       position: 104
-      prefix: --output-blasttab
+      prefix: -blasttab
   - id: output_fasta_path
     type:
       - 'null'
@@ -870,10 +872,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `scores_file_path`
+    doc: write scores for all pairwise comparisons to file
     inputBinding:
       position: 110
-      prefix: --scores-file
+      prefix: -scores
 outputs:
   - id: output_standard
     type:

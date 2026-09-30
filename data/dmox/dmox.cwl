@@ -163,7 +163,7 @@ inputs:
       position: 101
       prefix: --rx
   - id: samples
-    type: Directory
+    type: string
     doc: Desired output folder for the resulting sample files. Created if 
       missing
     inputBinding:

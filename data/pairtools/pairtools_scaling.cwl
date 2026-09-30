@@ -23,6 +23,7 @@ inputs:
       \      lower memory footprint."
     inputBinding:
       position: 102
+      prefix: --chunksize
   - id: cmd_in
     type:
       - 'null'
@@ -35,6 +36,7 @@ inputs:
       \               pbgzip -dc -n 3"
     inputBinding:
       position: 102
+      prefix: --cmd-in
   - id: cmd_out
     type:
       - 'null'
@@ -46,6 +48,7 @@ inputs:
       \                 stdout. EXAMPLE: pbgzip -c -n 8"
     inputBinding:
       position: 102
+      prefix: --cmd-out
   - id: dist_range
     type:
       - 'null'
@@ -54,6 +57,7 @@ inputs:
     doc: Distance range. - 1 - 1000000000
     inputBinding:
       position: 102
+      prefix: --dist-range
   - id: n_dist_bins_decade
     type:
       - 'null'
@@ -63,6 +67,7 @@ inputs:
       \             difference."
     inputBinding:
       position: 102
+      prefix: --n-dist-bins-decade
   - id: nproc_in
     type:
       - 'null'
@@ -71,6 +76,7 @@ inputs:
       \         input decompressing command."
     inputBinding:
       position: 102
+      prefix: --nproc-in
   - id: nproc_out
     type:
       - 'null'
@@ -79,6 +85,7 @@ inputs:
       \         output compressing command."
     inputBinding:
       position: 102
+      prefix: --nproc-out
   - id: regions_file
     type:
       - 'null'
@@ -92,10 +99,10 @@ inputs:
       prefix: --view
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output .tsv file with summary.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

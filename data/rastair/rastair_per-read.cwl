@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rastair per-read
+baseCommand:
+  - rastair
+  - per-read
 label: rastair_per-read
 doc: "Call methylation per-read\nThis will produce a bed file that list the methylation
   status of all CpGs in every read that overlaps a CpG, plus some other metadata\n\
@@ -147,8 +149,7 @@ inputs:
       position: 102
       prefix: --verbose
   - id: bed_path
-    type: string
-    doc: Output or path parameter `bed_path`
+    type: string?
     inputBinding:
       position: 103
       prefix: --bed

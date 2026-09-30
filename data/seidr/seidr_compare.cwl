@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr compare
+baseCommand:
+  - seidr
+  - compare
 label: seidr_compare
 doc: "Compare edges or nodes in two networks.\n\nTool homepage: https://github.com/bschiffthaler/seidr"
 inputs:
@@ -49,7 +51,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store temporary data
     inputBinding:
       position: 103
@@ -64,7 +66,7 @@ inputs:
       prefix: --translate
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: Output file name ['-' for stdout]
     inputBinding:
       position: 104
       prefix: --outfile

@@ -118,18 +118,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output count file
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
   - id: phases_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `phases_file_path`
+    doc: output phased reads into a file
     inputBinding:
       position: 105
-      prefix: --phases-file
+      prefix: --phases
   - id: sce_file_path
     type:
       - 'null'

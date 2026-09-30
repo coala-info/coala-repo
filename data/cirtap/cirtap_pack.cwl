@@ -37,7 +37,7 @@ inputs:
       prefix: --loglevel
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output gzipped file to write. For now only gzip
     inputBinding:
       position: 102
       prefix: --output

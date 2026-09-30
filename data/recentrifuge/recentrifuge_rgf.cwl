@@ -144,7 +144,6 @@ inputs:
       prefix: --threads
   - id: outhtml_path
     type: string
-    doc: Output or path parameter `outhtml_path`
     inputBinding:
       position: 102
       prefix: --outhtml

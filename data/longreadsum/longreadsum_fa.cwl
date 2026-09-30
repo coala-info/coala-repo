@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: longreadsum fa
+baseCommand:
+  - longreadsum
+  - fa
 label: longreadsum_fa
 doc: "Summarize long read data from FASTA files.\n\nTool homepage: https://github.com/WGLab/LongReadSum"
 inputs:
@@ -112,10 +114,10 @@ inputs:
       prefix: --threads
   - id: output_folder_path
     type: string
-    doc: Output or path parameter `output_folder_path`
+    doc: ' The output folder.'
     inputBinding:
       position: 102
-      prefix: --output-folder
+      prefix: --outputfolder
 outputs:
   - id: output_folder
     type:

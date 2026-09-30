@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gempipe derive
+baseCommand:
+  - gempipe
+  - derive
 label: gempipe_derive
 doc: "gempipe v1.38.5. Full documentation available at\nhttps://gempipe.readthedocs.io/en/latest/index.html.
   Please cite: \"Lazzari G.,\nFelis G. E., Salvetti E., Calgaro M., Di Cesare F.,
@@ -124,7 +126,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Main output directory (will be created if not\n                       existing)."
     inputBinding:
       position: 101

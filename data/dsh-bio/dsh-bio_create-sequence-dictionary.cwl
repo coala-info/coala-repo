@@ -22,7 +22,7 @@ inputs:
       prefix: --url
   - id: output_sequence_dictionary_file_path
     type: string
-    doc: Output or path parameter `output_sequence_dictionary_file_path`
+    doc: output SequenceDictionary .dict file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-sequence-dictionary-file

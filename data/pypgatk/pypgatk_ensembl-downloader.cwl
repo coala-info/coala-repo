@@ -43,7 +43,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory for the peptide databases
     inputBinding:
       position: 101

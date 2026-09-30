@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur_mask
+baseCommand:
+  - augur
+  - mask
 label: augur_mask
 doc: "Mask specified sites from a VCF or FASTA file.\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:
@@ -61,8 +63,7 @@ inputs:
       position: 101
       prefix: --sequences
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
     inputBinding:
       position: 102
       prefix: --output

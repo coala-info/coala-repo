@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cpstools depth
+baseCommand:
+  - cpstools
+  - depth
 label: cpstools_depth
 doc: "Calculate sequencing depth for paired-end reads against a reference genome.\n\
   \nTool homepage: https://github.com/Xwb7533/CPStools"
@@ -22,7 +24,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

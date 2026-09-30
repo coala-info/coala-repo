@@ -37,10 +37,10 @@ inputs:
       prefix: --server
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'outfile, --output=outfile Specify the output file. Default: standard output'
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

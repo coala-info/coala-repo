@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaeuk taxtocontig
+baseCommand:
+  - metaeuk
+  - taxtocontig
 label: metaeuk_taxtocontig
 doc: "By Eli Levy Karin <eli.levy.karin@gmail.com>\n\nTool homepage: https://github.com/soedinglab/metaeuk"
 inputs:
@@ -25,7 +27,7 @@ inputs:
     inputBinding:
       position: 4
   - id: tmp_dir
-    type: Directory
+    type: string
     doc: Temporary directory
     inputBinding:
       position: 5

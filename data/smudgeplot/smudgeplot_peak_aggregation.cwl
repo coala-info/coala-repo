@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smudgeplot peak_aggregation
+baseCommand:
+  - smudgeplot
+  - peak_aggregation
 label: smudgeplot_peak_aggregation
 doc: "Aggregates smudges using local aggregation algorithm.\n\nTool homepage: https://github.com/KamilSJaron/smudgeplot"
 inputs:

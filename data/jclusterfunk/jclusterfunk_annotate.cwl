@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jclusterfunk annotate
+baseCommand:
+  - jclusterfunk
+  - annotate
 label: jclusterfunk_annotate
 doc: "Annotate tips and nodes from a metadata table.\n\nTool homepage: https://github.com/snake-flu/jclusterfunk"
 inputs:
@@ -92,10 +94,10 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

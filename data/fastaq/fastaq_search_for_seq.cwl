@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq_search_for_seq
+baseCommand:
+  - fastaq
+  - search_for_seq
 label: fastaq_search_for_seq
 doc: "Searches for an exact match on a given string and its reverse complement, in
   every sequence of input sequence file. Case insensitive. Guaranteed to find all
@@ -11,17 +13,22 @@ inputs:
     doc: Name of input file
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: 'Name of outputfile. Tab-delimited output: sequence name, position, strand'
+    inputBinding:
+      position: 2
   - id: search_string
     type: string
     doc: String to search for in the sequences
     inputBinding:
-      position: 2
+      position: 3
 outputs:
-  - id: outfile
+  - id: out_outfile
     type: File
     doc: 'Name of outputfile. Tab-delimited output: sequence name, position, strand'
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.outfile)'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

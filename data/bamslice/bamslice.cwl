@@ -34,8 +34,8 @@ inputs:
       position: 101
       prefix: --start-offset
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: 'Output file (default: stdout)'
     inputBinding:
       position: 102
       prefix: --output

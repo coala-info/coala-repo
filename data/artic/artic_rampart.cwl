@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: artic rampart
+baseCommand:
+  - artic
+  - rampart
 label: artic_rampart
 doc: "RAMPART is a tool for the analysis of sequencing data from pathogen surveillance.\n\
   \nTool homepage: https://github.com/artic-network/fieldbioinformatics"

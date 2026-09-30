@@ -750,7 +750,7 @@ inputs:
   - id: workingdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set path to working directory. In the working directory results and 
       temporary files are stored
     inputBinding:

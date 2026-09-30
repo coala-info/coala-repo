@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: groopm_parse
+baseCommand:
+  - groopm
+  - parse
 label: groopm_parse
 doc: "Parse raw data and save to disk\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:

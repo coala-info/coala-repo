@@ -86,9 +86,9 @@ inputs:
       prefix: --prior
   - id: reference
     type: File
+    doc: reference to align to
     secondaryFiles:
       - .fai
-    doc: reference to align to
     inputBinding:
       position: 101
       prefix: --reference
@@ -119,7 +119,6 @@ inputs:
       prefix: --threshold
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

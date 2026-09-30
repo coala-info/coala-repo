@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: outrigger psi
+baseCommand:
+  - outrigger
+  - psi
 label: outrigger_psi
 doc: "Calculate PSI scores\n\nTool homepage: https://yeolab.github.io/outrigger"
 inputs:
@@ -140,7 +142,6 @@ inputs:
       prefix: --uneven-coverage-multiplier
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

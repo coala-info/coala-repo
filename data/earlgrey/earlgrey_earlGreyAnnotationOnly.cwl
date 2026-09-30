@@ -14,9 +14,9 @@ inputs:
       prefix: -d
   - id: genome_fasta
     type: File
+    doc: genome.fasta
     secondaryFiles:
       - .fai
-    doc: genome.fasta
     inputBinding:
       position: 101
       prefix: -g
@@ -66,10 +66,10 @@ inputs:
       prefix: -t
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: == output directory
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
     type: Directory

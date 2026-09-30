@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw plot_max_difference
+baseCommand:
+  - nanoraw
+  - plot_max_difference
 label: nanoraw_plot_max_difference
 doc: "Plotting the maximum difference between two sets of fast5 files.\n\nTool homepage:
   https://github.com/marcus1487/nanoraw"

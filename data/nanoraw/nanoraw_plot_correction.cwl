@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanoraw plot_correction
+baseCommand:
+  - nanoraw
+  - plot_correction
 label: nanoraw_plot_correction
 doc: "Plotting tool for Nanopore genome correction.\n\nTool homepage: https://github.com/marcus1487/nanoraw"
 inputs:
@@ -11,6 +13,7 @@ inputs:
     doc: Directories containing fast5 files.
     inputBinding:
       position: 1
+      prefix: --fast5-basedirs
   - id: basecall_subgroup
     type:
       - 'null'

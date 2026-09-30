@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: segway posterior
+baseCommand:
+  - segway
+  - posterior
 label: segway_posterior
 doc: "Compute posterior probabilities for Segway segmentation.\n\nTool homepage: http://segway.hoffmanlab.org/"
 inputs:
@@ -15,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: annotatedir
-    type: Directory
+    type: string
     doc: Directory to store annotations
     inputBinding:
       position: 3
@@ -83,18 +85,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bed_file_path`
+    doc: create identification BED track in FILE (default
     inputBinding:
       position: 105
-      prefix: --bed-file
+      prefix: --bed
   - id: big_bed_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `big_bed_file_path`
+    doc: specify layered bigBed filename
     inputBinding:
       position: 106
-      prefix: --big-bed-file
+      prefix: --bigBed
 outputs:
   - id: bed_file
     type:

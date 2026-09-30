@@ -77,7 +77,8 @@ inputs:
       specified
     inputBinding:
       position: 102
-      prefix: --header
+      prefix: --header=
+      separate: false
   - id: invalid
     type:
       - 'null'

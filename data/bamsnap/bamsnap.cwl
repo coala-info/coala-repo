@@ -785,10 +785,10 @@ inputs:
       prefix: -zipout
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: output file or title of output file
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -out
 outputs:
   - id: output
     type:

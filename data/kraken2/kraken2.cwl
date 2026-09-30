@@ -145,10 +145,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_file_path`
+    doc: Print a report with aggregrate counts/clade to file
     inputBinding:
       position: 105
-      prefix: --report-file
+      prefix: --report
   - id: unclassified_out_path
     type:
       - 'null'

@@ -55,7 +55,7 @@ inputs:
       prefix: --script
   - id: output_vcf_file_path
     type: string
-    doc: Output or path parameter `output_vcf_file_path`
+    doc: output VCF file, default stdout [optional]
     inputBinding:
       position: 102
       prefix: --output-vcf-file

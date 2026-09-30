@@ -40,9 +40,7 @@ inputs:
       position: 101
       prefix: -abam
   - id: input_b
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The B input file (bed/gff/vcf).
     inputBinding:
       position: 101

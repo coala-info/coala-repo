@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_uniq
+baseCommand:
+  - smof
+  - uniq
 label: smof_uniq
 doc: "Emulates the GNU uniq command. Two entries are considered equivalent only if
   their sequences AND headers are exactly equal. Newlines are ignored but all comparisons
@@ -75,10 +77,10 @@ inputs:
       prefix: --unpack
   - id: removed_file_path
     type: string
-    doc: Output or path parameter `removed_file_path`
+    doc: With -f, store removed sequences in FILE
     inputBinding:
       position: 103
-      prefix: --removed-file
+      prefix: --removed
 outputs:
   - id: removed_file
     type:

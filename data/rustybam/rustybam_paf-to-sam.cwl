@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rustybam paf-to-sam
+baseCommand:
+  - rustybam
+  - paf-to-sam
 label: rustybam_paf-to-sam
 doc: "Convert a PAF file into a SAM file. Warning, all alignments will be marked as
   primary!\n\nTool homepage: https://github.com/mrvollger/rustybam"

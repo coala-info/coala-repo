@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: muat train
+baseCommand:
+  - muat
+  - train
 label: muat_train
 doc: "Train a model\n\nTool homepage: https://github.com/primasanjaya/muat"
 inputs:

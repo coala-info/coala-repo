@@ -35,7 +35,7 @@ inputs:
       position: 102
       prefix: --file-separator
   - id: outdir
-    type: Directory
+    type: string?
     doc: Output directory
     inputBinding:
       position: 102

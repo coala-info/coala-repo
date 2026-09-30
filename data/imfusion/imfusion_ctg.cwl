@@ -63,9 +63,9 @@ inputs:
       prefix: --pattern
   - id: reference
     type: File
+    doc: Reference genome file
     secondaryFiles:
       - .fai
-    doc: Reference genome file
     inputBinding:
       position: 101
       prefix: --reference
@@ -88,7 +88,6 @@ inputs:
       prefix: --window
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

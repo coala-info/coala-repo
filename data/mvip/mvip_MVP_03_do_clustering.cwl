@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mvip MVP_03_do_clustering
+baseCommand:
+  - mvip
+  - MVP_03_do_clustering
 label: mvip_MVP_03_do_clustering
 doc: "Sequence clustering based on pairwise ANI.\n\nTool homepage: https://gitlab.com/ccoclet/mvp"
 inputs:

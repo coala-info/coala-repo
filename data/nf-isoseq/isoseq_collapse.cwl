@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isoseq collapse
+baseCommand:
+  - isoseq
+  - collapse
 label: isoseq_collapse
 doc: "Collapse transcripts based on genomic mapping\n\nTool homepage: https://github.com/PacificBiosciences/pbbioconda"
 inputs:

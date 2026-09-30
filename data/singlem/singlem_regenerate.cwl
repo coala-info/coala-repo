@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: singlem regenerate
+baseCommand:
+  - singlem
+  - regenerate
 label: singlem_regenerate
 doc: "Update a SingleM package with new sequences and taxonomy (expert mode).\n\n\
   Tool homepage: https://github.com/wwood/singlem"
@@ -10,12 +12,14 @@ inputs:
     doc: all on-target amino acid sequences fasta file for new package
     inputBinding:
       position: 1
+      prefix: --input-sequences
   - id: input_taxonomy
     type: File
     doc: tab-separated sequence ID to taxonomy file of on-target sequence 
       taxonomy
     inputBinding:
       position: 2
+      prefix: --input-taxonomy
   - id: candidate_decoy_sequences
     type:
       - 'null'
@@ -131,7 +135,6 @@ inputs:
       prefix: --window-position
   - id: output_singlem_package_path
     type: string
-    doc: Output or path parameter `output_singlem_package_path`
     inputBinding:
       position: 104
       prefix: --output-singlem-package

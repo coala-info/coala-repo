@@ -27,6 +27,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --attachments
+      itemSeparator: ','
   - id: auth
     type:
       - 'null'

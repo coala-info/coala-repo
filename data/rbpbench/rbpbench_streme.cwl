@@ -22,7 +22,7 @@ inputs:
       position: 101
       prefix: --neg-in
   - id: output_folder
-    type: Directory
+    type: string
     doc: Results output folder
     inputBinding:
       position: 101

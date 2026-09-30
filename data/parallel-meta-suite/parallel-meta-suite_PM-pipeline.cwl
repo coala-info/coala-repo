@@ -23,7 +23,7 @@ inputs:
   - id: chimera_removal
     type:
       - 'null'
-      - boolean
+      - string
     doc: Chimera removal, T(rue) or F(alse)
     inputBinding:
       position: 101
@@ -39,7 +39,7 @@ inputs:
   - id: functional_analysis
     type:
       - 'null'
-      - boolean
+      - string
     doc: Functional analysis, T(rue) or F(alse)
     inputBinding:
       position: 101
@@ -95,7 +95,7 @@ inputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output path
     inputBinding:
       position: 101

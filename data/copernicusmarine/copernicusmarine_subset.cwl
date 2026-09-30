@@ -301,11 +301,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --platform-id
+          separate: true
     doc: Specify platform ID. Can be used multiple times. Only available for 
       platform chunked datasets.
     inputBinding:
       position: 101
-      prefix: --platform-id
   - id: raise_if_updating
     type:
       - 'null'
@@ -383,10 +385,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --variable
+          separate: true
     doc: Specify dataset variable. Can be used multiple times.
     inputBinding:
       position: 101
-      prefix: --variable
   - id: vertical_axis
     type:
       - 'null'
@@ -399,7 +403,7 @@ inputs:
       prefix: --vertical-axis
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: The destination folder for the downloaded
     inputBinding:
       position: 102
       prefix: --output-directory

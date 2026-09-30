@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cirtap collect
+baseCommand:
+  - cirtap
+  - collect
 label: cirtap_collect
 doc: "Create sequence sets based on the installed files\n\nTool homepage: https://github.com/MGXlab/cirtap/"
 inputs:
@@ -10,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_path
-    type: Directory
+    type: string
     doc: Path to output directory
     inputBinding:
       position: 2

@@ -106,10 +106,11 @@ inputs:
       prefix: --tdx
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: "Output TSV file - one line per input BAM/CRAM file. If unset, writes to
+      STDOUT. Default value: ''"
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type:

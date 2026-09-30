@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ctseq_add_umis
+baseCommand:
+  - ctseq
+  - add_umis
 label: ctseq_add_umis
 doc: "Add UMIs to fastq files.\n\nTool homepage: https://github.com/ryanhmiller/ctseq"
 inputs:

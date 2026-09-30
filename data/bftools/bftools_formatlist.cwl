@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bftools_formatlist
+baseCommand: formatlist
 label: bftools_formatlist
 doc: "List supported image formats\n\nTool homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html"
 inputs:

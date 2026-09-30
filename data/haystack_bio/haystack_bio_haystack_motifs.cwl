@@ -176,7 +176,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Output directory (default: current directory)'
     inputBinding:
       position: 103
@@ -200,7 +200,7 @@ inputs:
   - id: temp_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Directory to store temporary files (default: /tmp)'
     inputBinding:
       position: 103

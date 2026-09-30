@@ -56,10 +56,10 @@ inputs:
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: Output or path parameter `out_file_path`
+    doc: The pdf file name to save the plots to.
     inputBinding:
       position: 102
-      prefix: --out-file
+      prefix: --out
 outputs:
   - id: out_file
     type: File

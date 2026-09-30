@@ -57,7 +57,7 @@ inputs:
       position: 106
       prefix: -assemble
   - id: assembly_directory
-    type: Directory
+    type: string
     doc: Assembly directory where output files will be placed
     inputBinding:
       position: 106

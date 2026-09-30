@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: whatshap genotype
+baseCommand:
+  - whatshap
+  - genotype
 label: whatshap_genotype
 doc: "Genotype variants\n\nRuns only the genotyping algorithm. Genotype Likelihoods
   are computed using the\nforward backward algorithm.\n\nTool homepage: https://whatshap.readthedocs.io"
@@ -32,11 +34,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chromosome
+          separate: true
     doc: Name of chromosome to genotyped. If not given, all chromosomes in the 
       input VCF are genotyped. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --chromosome
   - id: constant
     type:
       - 'null'
@@ -211,10 +215,10 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Reference file. Provide this to detect alleles through re-alignment. If
       no index (.fai) exists, it will be created
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 103
       prefix: --reference
@@ -223,11 +227,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
+          separate: true
     doc: Name of a sample to genotype. If not given, all samples in the input 
       VCF are genotyped. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --sample
   - id: use_kmerald
     type:
       - 'null'
@@ -246,7 +252,6 @@ inputs:
       prefix: --use-ped-samples
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 104
       prefix: --output

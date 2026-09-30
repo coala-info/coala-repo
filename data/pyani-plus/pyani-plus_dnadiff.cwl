@@ -63,7 +63,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for intermediate files, which for debugging purposes 
       will not be deleted. For clusters this must be on a shared drive. Default 
       behaviour is to use a system specified temporary directory (specific to 
@@ -74,7 +74,7 @@ inputs:
   - id: wtemp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to use for temporary workflow coordination files, which for 
       debugging purposes will not be deleted. For clusters this must be on a 
       shared drive. Default behaviour is to use a system specified temporary 

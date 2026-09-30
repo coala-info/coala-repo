@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: augur ancestral
+baseCommand:
+  - augur
+  - ancestral
 label: augur_ancestral
 doc: "Infer ancestral sequences based on a tree. The ancestral sequences are inferred
   using TreeTime. Each internal node gets assigned a nucleotide sequence that maximizes
@@ -143,14 +145,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf-reference
-  - id: output_node_data_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_node_data_path`
-    inputBinding:
-      position: 102
-      prefix: --output-node-data
   - id: output_sequences_path
     type:
       - 'null'
@@ -158,21 +152,26 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output-sequences
+  - id: output_node_data_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --output-node-data
   - id: output_translations_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_translations_path`
     inputBinding:
-      position: 104
+      position: 105
       prefix: --output-translations
   - id: output_vcf_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_vcf_path`
     inputBinding:
-      position: 105
+      position: 106
       prefix: --output-vcf
 outputs:
   - id: output_node_data

@@ -15,6 +15,11 @@ inputs:
     doc: The location where all data is stored
     inputBinding:
       position: 1
+  - id: output_index
+    type: string
+    doc: The files to write all the info in
+    inputBinding:
+      position: 2
   - id: jobs
     type:
       - 'null'
@@ -41,11 +46,11 @@ inputs:
       position: 102
       prefix: --loglevel
 outputs:
-  - id: output_index
+  - id: out_output_index
     type: File
     doc: The files to write all the info in
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_index)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cirtap:0.3.1--pyh5e36f6f_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sga overlap
+baseCommand:
+  - sga
+  - overlap
 label: sga_overlap
 doc: "Compute pairwise overlap between all the sequences in READS\n\nTool homepage:
   https://github.com/jts/sga"

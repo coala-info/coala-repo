@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar PGDSpider3-cli.jar
+baseCommand:
+  - java
+  - -jar
+  - PGDSpider3-cli.jar
 label: pgdspider_PGDSpider3-cli.jar
 doc: "PGDSpider is a data conversion tool for population genetic and genomics programs.\n\
   \ \nTool homepage: http://www.cmpg.unibe.ch/software/PGDSpider/"

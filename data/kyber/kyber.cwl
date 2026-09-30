@@ -63,8 +63,8 @@ inputs:
       position: 102
       prefix: --ubam
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type: string?
+    doc: 'Output file name [default: accuracy_heatmap.png]'
     inputBinding:
       position: 103
       prefix: --output

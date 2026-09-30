@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: blast2galaxy list-tools
+baseCommand:
+  - blast2galaxy
+  - list-tools
 label: blast2galaxy_list-tools
 doc: "list available and compatible BLAST+ and DIAMOND tools installed on a Galaxy
   server\n\nTool homepage: https://github.com/IPK-BIT/blast2galaxy"

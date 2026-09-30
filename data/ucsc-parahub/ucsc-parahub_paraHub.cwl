@@ -27,7 +27,8 @@ inputs:
     doc: Number of ram units in a job has no specified ram usage.
     inputBinding:
       position: 102
-      prefix: -defaultJobRam
+      prefix: -defaultJobRam=
+      separate: false
   - id: job_check_period
     type:
       - 'null'
@@ -35,7 +36,8 @@ inputs:
     doc: Minutes between checking on job
     inputBinding:
       position: 102
-      prefix: -jobCheckPeriod
+      prefix: -jobCheckPeriod=
+      separate: false
   - id: log_facility
     type:
       - 'null'
@@ -43,7 +45,8 @@ inputs:
     doc: Log to the specified syslog facility
     inputBinding:
       position: 102
-      prefix: -logFacility
+      prefix: -logFacility=
+      separate: false
   - id: log_file
     type:
       - 'null'
@@ -51,7 +54,8 @@ inputs:
     doc: Log to file instead of syslog.
     inputBinding:
       position: 102
-      prefix: -log
+      prefix: -log=
+      separate: false
   - id: log_min_priority
     type:
       - 'null'
@@ -59,7 +63,8 @@ inputs:
     doc: minimum syslog priority to log, also filters file logging.
     inputBinding:
       position: 102
-      prefix: -logMinPriority
+      prefix: -logMinPriority=
+      separate: false
   - id: machine_check_period
     type:
       - 'null'
@@ -67,7 +72,8 @@ inputs:
     doc: Minutes between checking on machine
     inputBinding:
       position: 102
-      prefix: -machineCheckPeriod
+      prefix: -machineCheckPeriod=
+      separate: false
   - id: next_job_id
     type:
       - 'null'
@@ -75,7 +81,8 @@ inputs:
     doc: Starting job ID number.
     inputBinding:
       position: 102
-      prefix: -nextJobId
+      prefix: -nextJobId=
+      separate: false
   - id: no_resume
     type:
       - 'null'
@@ -93,7 +100,8 @@ inputs:
       t,g,m,k for tera, giga, mega, kilo. e.g. 4g = 4 Gigabytes.
     inputBinding:
       position: 102
-      prefix: -ramUnit
+      prefix: -ramUnit=
+      separate: false
   - id: spokes
     type:
       - 'null'
@@ -101,7 +109,8 @@ inputs:
     doc: Number of processes that feed jobs to nodes
     inputBinding:
       position: 102
-      prefix: -spokes
+      prefix: -spokes=
+      separate: false
   - id: subnet
     type:
       - 'null'
@@ -111,7 +120,8 @@ inputs:
       subnets in CIDR notation.
     inputBinding:
       position: 102
-      prefix: -subnet
+      prefix: -subnet=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

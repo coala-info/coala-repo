@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: compleasm run
+baseCommand:
+  - compleasm
+  - run
 label: compleasm_run
 doc: "Run the compleasm analysis.\n\nTool homepage: https://github.com/huangnengCSU/compleasm"
 inputs:
@@ -104,7 +106,7 @@ inputs:
       position: 101
       prefix: --odb
   - id: output_dir
-    type: Directory
+    type: string
     doc: The output folder.
     inputBinding:
       position: 101

@@ -16,7 +16,7 @@ inputs:
     doc: Proportion of sink sample in unknown.
     inputBinding:
       position: 102
-      prefix: --alpha
+      prefix: -a
   - id: dim
     type:
       - 'null'
@@ -24,7 +24,7 @@ inputs:
     doc: Number of dimensions to retain for dimension reduction.
     inputBinding:
       position: 102
-      prefix: --dim
+      prefix: -di
   - id: distance
     type:
       - 'null'
@@ -32,7 +32,7 @@ inputs:
     doc: Distance method. (unweighted_unifrac | weighted_unifrac)
     inputBinding:
       position: 102
-      prefix: --distance
+      prefix: -dt
   - id: embed
     type:
       - 'null'
@@ -40,7 +40,7 @@ inputs:
     doc: Output embedding csv file.
     inputBinding:
       position: 102
-      prefix: --embed
+      prefix: -e
   - id: kfold
     type:
       - 'null'
@@ -48,7 +48,7 @@ inputs:
     doc: Number of fold for K-fold cross validation in parameter optimization.
     inputBinding:
       position: 102
-      prefix: --kfold
+      prefix: -k
   - id: labels
     type:
       - 'null'
@@ -56,7 +56,7 @@ inputs:
     doc: Path to labels csv file.
     inputBinding:
       position: 102
-      prefix: --labels
+      prefix: -l
   - id: method
     type:
       - 'null'
@@ -64,7 +64,7 @@ inputs:
     doc: Embedding Method. TSNE, MDS, or UMAP.
     inputBinding:
       position: 102
-      prefix: --method
+      prefix: -me
   - id: neighbors
     type:
       - 'null'
@@ -72,7 +72,7 @@ inputs:
     doc: Numbers of neigbors if KNN ML classication (integer or 'all').
     inputBinding:
       position: 102
-      prefix: --neighbors
+      prefix: -kne
   - id: normalization
     type:
       - 'null'
@@ -80,7 +80,7 @@ inputs:
     doc: Normalization method (RLE | Subsample | GMPR | None).
     inputBinding:
       position: 102
-      prefix: --normalization
+      prefix: -n
   - id: output
     type:
       - 'null'
@@ -88,7 +88,7 @@ inputs:
     doc: Output file basename.
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: -o
   - id: seed
     type:
       - 'null'
@@ -96,7 +96,7 @@ inputs:
     doc: Seed for random generator.
     inputBinding:
       position: 102
-      prefix: --seed
+      prefix: -se
   - id: sources
     type:
       - 'null'
@@ -104,7 +104,7 @@ inputs:
     doc: Path to source csv file.
     inputBinding:
       position: 102
-      prefix: --sources
+      prefix: -s
   - id: tax_rank
     type:
       - 'null'
@@ -112,7 +112,7 @@ inputs:
     doc: Taxonomic rank to use for Unifrac distances.
     inputBinding:
       position: 102
-      prefix: --tax_rank
+      prefix: -r
   - id: threads
     type:
       - 'null'
@@ -120,7 +120,7 @@ inputs:
     doc: Number of threads for parallel processing.
     inputBinding:
       position: 102
-      prefix: --threads
+      prefix: -t
   - id: weights
     type:
       - 'null'
@@ -128,7 +128,7 @@ inputs:
     doc: Sample weight function for KNN prediction (distance | uniform).
     inputBinding:
       position: 102
-      prefix: --weights
+      prefix: -kw
 outputs:
   - id: stdout
     type: stdout

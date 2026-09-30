@@ -14,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: saveto_path
-    type: string
+    type: string?
     doc: Save metadata dataframe to file
     inputBinding:
       position: 101

@@ -197,50 +197,50 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `boundary_file_path`
+    doc: domain boundary file
     inputBinding:
       position: 103
-      prefix: --boundary-file
+      prefix: -boundary
   - id: boundary_score_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `boundary_score_file_path`
+    doc: boundary transition scores file
     inputBinding:
       position: 104
-      prefix: --boundary-score-file
+      prefix: -boundary-score
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: domain output file
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -out
   - id: param_out_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `param_out_file_path`
+    doc: Output parameters file
     inputBinding:
       position: 106
-      prefix: --param-out-file
+      prefix: -param-out
   - id: readcount_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `readcount_file_path`
+    doc: readcounts file
     inputBinding:
       position: 107
-      prefix: --readcount-file
+      prefix: -readcount
   - id: score_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `score_file_path`
+    doc: Posterior scores file
     inputBinding:
       position: 108
-      prefix: --score-file
+      prefix: -score
 outputs:
   - id: output_file
     type:

@@ -91,7 +91,7 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output folder for partition files
     inputBinding:
       position: 101

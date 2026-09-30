@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primalbedtools csv
+baseCommand:
+  - primalbedtools
+  - csv
 label: primalbedtools_csv
 doc: "Convert a BED file to CSV format.\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:

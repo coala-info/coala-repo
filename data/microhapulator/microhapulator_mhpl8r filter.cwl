@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mhpl8r filter
+baseCommand:
+  - mhpl8r
+  - filter
 label: microhapulator_mhpl8r filter
 doc: "Apply static and/or dynamic thresholds to distinguish true and false haplotypes.
   Thresholds are applied to the haplotype read counts of a raw typing result. Static

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gmsc-mapper createdb
+baseCommand:
+  - gmsc-mapper
+  - createdb
 label: gmsc-mapper_createdb
 doc: "Create a database for GMSC.\n\nTool homepage: https://github.com/BigDataBiology/GMSC-mapper"
 inputs:
@@ -26,7 +28,6 @@ inputs:
       prefix: -i
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
     inputBinding:
       position: 102
       prefix: --output

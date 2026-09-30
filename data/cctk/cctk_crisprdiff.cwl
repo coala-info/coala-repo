@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cctk crisprdiff
+baseCommand:
+  - cctk
+  - crisprdiff
 label: cctk_crisprdiff
 doc: "Control run behaviour\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
 inputs:
@@ -127,7 +129,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `colour_scheme_outfile_path`
     inputBinding:
       position: 103
       prefix: --colour-scheme-outfile
@@ -135,7 +136,6 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 104
       prefix: --out-file

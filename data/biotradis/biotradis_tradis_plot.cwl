@@ -20,18 +20,19 @@ inputs:
       prefix: -m
   - id: output_base_name_path
     type: string
-    doc: Output or path parameter `output_base_name_path`
+    doc: ': output base name for plot (optional. default: tradis.plot)'
     inputBinding:
       position: 102
-      prefix: --output-base-name
+      prefix: -o
 outputs:
   - id: output_base_name
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: output base name for plot
     outputBinding:
-      glob: $(inputs.output_base_name_path)
+      glob: $(inputs.output_base_name_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

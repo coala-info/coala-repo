@@ -27,6 +27,7 @@ inputs:
     doc: Function for calculating aggregate signal.
     inputBinding:
       position: 103
+      prefix: --aggregate
   - id: clr_weight_name
     type:
       - 'null'
@@ -34,14 +35,16 @@ inputs:
     doc: Use balancing weight with this name.
     inputBinding:
       position: 103
+      prefix: --clr-weight-name
   - id: expected
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the expected table. If provided, outputs OOE pileup. if not 
       provided, outputs regular pileup.
     inputBinding:
       position: 103
+      prefix: --expected
   - id: features_format
     type:
       - 'null'
@@ -49,6 +52,7 @@ inputs:
     doc: Input features format.
     inputBinding:
       position: 103
+      prefix: --features-format
   - id: flank
     type:
       - 'null'
@@ -56,6 +60,7 @@ inputs:
     doc: Size of flanks.
     inputBinding:
       position: 103
+      prefix: --flank
   - id: ignore_diags
     type:
       - 'null'
@@ -80,6 +85,7 @@ inputs:
     doc: Type of output.
     inputBinding:
       position: 103
+      prefix: --out-format
   - id: store_snips
     type:
       - 'null'
@@ -108,7 +114,7 @@ inputs:
       prefix: --view
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Save output pileup as NPZ/HDF5 file.
     inputBinding:
       position: 104
       prefix: --out

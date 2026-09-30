@@ -62,7 +62,7 @@ inputs:
       position: 101
       prefix: -c
   - id: output_dir
-    type: Directory
+    type: string
     doc: output directory
     inputBinding:
       position: 101

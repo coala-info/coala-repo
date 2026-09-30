@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: baktfold predict
+baseCommand:
+  - baktfold
+  - predict
 label: baktfold_predict
 doc: "Uses ProstT5 to predict 3Di tokens - GPU recommended\n\nTool homepage: https://github.com/gbouras13/baktfold"
 inputs:
@@ -63,7 +65,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory
     inputBinding:
       position: 101

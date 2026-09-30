@@ -15,6 +15,11 @@ inputs:
     doc: Training/reference data (HDF5 file created by MakeTrainingDatabase.py)
     inputBinding:
       position: 2
+  - id: out_csv
+    type: string
+    doc: Output CSV file
+    inputBinding:
+      position: 3
   - id: base_name
     type:
       - 'null'
@@ -84,11 +89,11 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
-  - id: out_csv
+  - id: out_out_csv
     type: File
     doc: Output CSV file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_csv)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmash:0.5.2--pyh5e36f6f_0

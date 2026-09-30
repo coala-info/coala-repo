@@ -57,161 +57,209 @@ steps:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172091_MoOx_Al2O3_1.dat
-    out: []
+    out:
+    - athena_project_file
   '17':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172137_MoOx_Al2O3_actif_42.dat
-    out: []
+    out:
+    - athena_project_file
   '18':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172179_MoOx_Al2O3_actif_84.dat
-    out: []
+    out:
+    - athena_project_file
   '19':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172097_MoOx_Al2O3_actif_2.dat
-    out: []
+    out:
+    - athena_project_file
   '20':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172098_MoOx_Al2O3_actif_3.dat
-    out: []
+    out:
+    - athena_project_file
   '21':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172099_MoOx_Al2O3_actif_4.dat
-    out: []
+    out:
+    - athena_project_file
   '22':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172102_MoOx_Al2O3_actif_7.dat
-    out: []
+    out:
+    - athena_project_file
   '23':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172103_MoOx_Al2O3_actif_8.dat
-    out: []
+    out:
+    - athena_project_file
   '24':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172104_MoOx_Al2O3_actif_9.dat
-    out: []
+    out:
+    - athena_project_file
   '25':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172105_MoOx_Al2O3_actif_10.dat
-    out: []
+    out:
+    - athena_project_file
   '26':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172231_MoOx_Al2O3_actif_136.dat
-    out: []
+    out:
+    - athena_project_file
   '27':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172232_MoOx_Al2O3_actif_137.dat
-    out: []
+    out:
+    - athena_project_file
   '28':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172233_MoOx_Al2O3_actif_138.dat
-    out: []
+    out:
+    - athena_project_file
   '29':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172234_MoOx_Al2O3_actif_139.dat
-    out: []
+    out:
+    - athena_project_file
   '30':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172235_MoOx_Al2O3_actif_140.dat
-    out: []
+    out:
+    - athena_project_file
   '31':
     run:
       class: Operation
       doc: ''
       inputs: {}
-      outputs: {}
+      outputs:
+        athena_project_file:
+          type: Any
     in:
       merge_inputs|format|is_zipped|dat_file:
         source: 172236_MoOx_Al2O3_actif_141.dat
-    out: []
+    out:
+    - athena_project_file
   '32':
     run:
       class: Operation

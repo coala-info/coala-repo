@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kpal_stats
+baseCommand:
+  - kpal
+  - stats
 label: kpal_stats
 doc: "Show the mean and standard deviation of k-mer profiles.\n\nTool homepage: https://github.com/LUMC/kPAL"
 inputs:

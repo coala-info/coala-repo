@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spacerextractor download_database
+baseCommand:
+  - spacerextractor
+  - download_database
 label: spacerextractor_download_database
 doc: "extract spacers from metagenomic reads using a database of known repeats\n\n\
   Tool homepage: https://code.jgi.doe.gov/SRoux/spacerextractor"

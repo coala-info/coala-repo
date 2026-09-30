@@ -173,11 +173,11 @@ inputs:
       position: 101
       prefix: --us
   - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+    type: string?
+    doc: The full path to the output directory
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --o
 outputs:
   - id: output_directory
     type:

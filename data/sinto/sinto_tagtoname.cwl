@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sinto_tagtoname
+baseCommand:
+  - sinto
+  - tagtoname
 label: sinto_tagtoname
 doc: "Copy cell barcode sequences from tag to read names. Cell barcodes will be added
   as a readname prefix, followed by \":\"\n\nTool homepage: https://timoast.github.io/sinto/"
@@ -29,10 +31,10 @@ inputs:
       prefix: --tag
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: " Output SAM/BAM file, '-' outputs to stdout (default '-')"
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

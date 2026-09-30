@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unicore gene-tree
+baseCommand:
+  - unicore
+  - gene-tree
 label: unicore_gene-tree
 doc: "Infer phylogenetic tree of each core structures\n\nTool homepage: https://github.com/steineggerlab/unicore"
 inputs:

@@ -154,10 +154,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --extra-headers
+          separate: true
     doc: 'Extra headers in format "Key: Value" (can be used multiple times)'
     inputBinding:
       position: 103
-      prefix: --extra-headers
   - id: ai_targeted
     type:
       - 'null'

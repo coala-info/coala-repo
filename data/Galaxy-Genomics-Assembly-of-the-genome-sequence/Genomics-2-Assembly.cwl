@@ -1,5 +1,5 @@
 class: Workflow
-cwlVersion: v1.2.0-dev2
+cwlVersion: v1.2
 doc: 'This workflow uses Illumina and Oxford Nanopore reads that were pre-processed to remove human-derived sequences. Two assembly tools are used: spades and unicycler. In addition to assemblies (actual sequences) the two tools produce assembly graphs that can be used for visualization of assembly with bandage. More info can be found at https://covid19.galaxyproject.org/genomics/'
 inputs:
   0_Input Dataset:

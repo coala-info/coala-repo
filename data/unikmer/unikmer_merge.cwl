@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unikmer merge
+baseCommand:
+  - unikmer
+  - merge
 label: unikmer_merge
 doc: "Merge k-mers from sorted chunk files\n\nTool homepage: https://github.com/shenwei356/unikmer"
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go run
+baseCommand:
+  - go
+  - run
 label: go_run
 doc: "Run a Go program\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

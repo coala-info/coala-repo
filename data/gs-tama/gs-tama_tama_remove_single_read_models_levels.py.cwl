@@ -50,7 +50,7 @@ inputs:
       position: 101
       prefix: -s
   - id: output_prefix
-    type: string
+    type: string?
     doc: Output prefix (required)
     inputBinding:
       position: 101

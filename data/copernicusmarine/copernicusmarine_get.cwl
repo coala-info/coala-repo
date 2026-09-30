@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: copernicusmarine_get
+baseCommand:
+  - copernicusmarine
+  - get
 label: copernicusmarine_get
 doc: "Download originally produced data files.\n\nTool homepage: https://github.com/pepijn-devries/CopernicusMarine"
 inputs:
@@ -151,7 +153,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: The destination folder for the downloaded files. Default is the current
       directory.
     inputBinding:

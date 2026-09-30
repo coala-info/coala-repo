@@ -69,7 +69,7 @@ inputs:
   - id: temp_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder used for temporary files.
     inputBinding:
       position: 101

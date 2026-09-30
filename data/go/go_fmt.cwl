@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: go fmt
+baseCommand:
+  - go
+  - fmt
 label: go_fmt
 doc: "Format Go programs\n\nTool homepage: https://github.com/avelino/awesome-go"
 inputs:

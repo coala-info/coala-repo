@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: primers create
+baseCommand:
+  - primers
+  - create
 label: primers_create
 doc: "create primers to amplify this sequence\n\nTool homepage: https://github.com/Lattice-Automation/primers"
 inputs:

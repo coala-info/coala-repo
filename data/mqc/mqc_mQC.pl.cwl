@@ -115,7 +115,7 @@ inputs:
   - id: outfolder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'the folder to store the output files (default: work_dir/mQC_output)'
     inputBinding:
       position: 101
@@ -173,7 +173,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'temporary folder for storing temporary files of mappingQC (default: work_dir/tmp)'
     inputBinding:
       position: 101

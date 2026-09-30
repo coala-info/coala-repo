@@ -31,9 +31,7 @@ inputs:
       position: 101
       prefix: --reference
   - id: csv
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to CSV file enumerating 'cellranger-arc count' outputs required 
       for aggregation.
     inputBinding:

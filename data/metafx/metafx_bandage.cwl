@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metafx bandage
+baseCommand:
+  - metafx
+  - bandage
 label: metafx_bandage
 doc: "MetaFX bandage module – Machine Learning methods to train classifier and prepare
   for visualisation in Bandage (https://github.com/ctlab/BandageNG)\n\nTool homepage:

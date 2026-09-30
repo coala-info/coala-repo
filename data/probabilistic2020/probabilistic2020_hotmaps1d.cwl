@@ -50,7 +50,7 @@ inputs:
   - id: null_distr_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to directory to save empirical null distribution
     inputBinding:
       position: 101
@@ -133,10 +133,10 @@ inputs:
       prefix: --window
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: ' Output text file of probabilistic 20/20 results'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

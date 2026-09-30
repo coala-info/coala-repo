@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: commec flag
+baseCommand:
+  - commec
+  - flag
 label: commec_flag
 doc: "Parse all .screen, or .json files in a directory and create CSVs of flags raised\n\
   \nTool homepage: https://github.com/ibbis-screening/common-mechanism"

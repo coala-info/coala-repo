@@ -153,7 +153,6 @@ inputs:
       prefix: --verbose
   - id: folder_path
     type: string
-    doc: Output or path parameter `folder_path`
     inputBinding:
       position: 102
       prefix: --folder

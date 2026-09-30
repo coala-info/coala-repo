@@ -1,6 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -jar womtool.jar
+baseCommand:
+  - java
+  - -jar
+  - womtool.jar
 label: womtool_validate
 doc: "A tool for validating and manipulating WDL workflows.\n\nTool homepage: https://cromwell.readthedocs.io/en/develop/WOMtool/"
 inputs:

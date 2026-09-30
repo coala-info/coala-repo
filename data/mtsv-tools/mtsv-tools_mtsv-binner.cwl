@@ -131,10 +131,10 @@ inputs:
       prefix: -v
   - id: results_path_path
     type: string
-    doc: Output or path parameter `results_path_path`
+    doc: Path to write results file.
     inputBinding:
       position: 102
-      prefix: --results-path
+      prefix: --results
 outputs:
   - id: results_path
     type:

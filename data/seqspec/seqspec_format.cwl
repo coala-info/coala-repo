@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqspec format
+baseCommand:
+  - seqspec
+  - format
 label: seqspec_format
 doc: "Automatically fill in missing fields in the spec.\n\nTool homepage: https://github.com/sbooeshaghi/seqspec"
 inputs:
@@ -11,7 +13,7 @@ inputs:
       position: 1
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Path to output file
     inputBinding:
       position: 101
       prefix: --output

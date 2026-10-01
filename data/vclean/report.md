@@ -1,7 +1,6 @@
 # vclean CWL Generation Report
 
-## vclean_run
-
+## vclean
 ### Tool Description
 Run vClean
 

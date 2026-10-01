@@ -189,8 +189,7 @@ Options:
 ```
 
 
-## quasitools_using
-
+## quasitools
 ### Tool Description
 A command-line tool for manipulating and analyzing quasigenomes.
 

@@ -153,8 +153,7 @@ For more information, try '--help'.
 ```
 
 
-## viguno_Print
-
+## viguno
 ### Tool Description
 A tool for processing and analyzing biological sequences.
 

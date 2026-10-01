@@ -1,7 +1,6 @@
 # kaptive CWL Generation Report
 
-## kaptive_In
-
+## kaptive
 ### Tool Description
 In silico serotyping
 

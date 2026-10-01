@@ -246,8 +246,7 @@ Common arguments:
 ```
 
 
-## haystac_Command
-
+## haystac
 ### Tool Description
 The haystac commands are:
 

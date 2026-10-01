@@ -173,8 +173,7 @@ SEVERE [Feb 24,2026 01:48] [IgvTools] java.awt.HeadlessException
 ```
 
 
-## igvtools_See
-
+## igvtools
 ### Tool Description
 IGV Tools is a set of utilities for preprocessing and manipulating genomic data files.
 

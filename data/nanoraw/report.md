@@ -1200,8 +1200,7 @@ Miscellaneous Arguments:
 ```
 
 
-## nanoraw_Additional
-
+## nanoraw
 ### Tool Description
 nanoraw: error: invalid choice: 'Additional' (choose from 'genome_resquiggle', 'plot_max_coverage', 'plot_genome_location', 'plot_motif_centered', 'plot_max_difference', 'plot_most_significant', 'plot_motif_with_stats', 'plot_correction', 'plot_multi_correction', 'cluster_most_significant', 'plot_kmer', 'write_most_significant_fasta', 'write_wiggles')
 

@@ -1,7 +1,6 @@
 # bwtk CWL Generation Report
 
-## bwtk_help
-
+## bwtk
 ### Tool Description
 A tool for manipulating bigWig files.
 

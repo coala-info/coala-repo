@@ -1,7 +1,6 @@
 # rustyread CWL Generation Report
 
-## rustyread_help
-
+## rustyread
 ### Tool Description
 A long read simulator based on badread idea and model
 

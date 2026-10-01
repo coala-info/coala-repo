@@ -36,8 +36,7 @@ pyani: error: argument {download,index,createdb,anim,anib,aniblastall,fastani,re
 ```
 
 
-## pyani_additional
-
+## pyani
 ### Tool Description
 pyani: a Python package for ANI analysis
 

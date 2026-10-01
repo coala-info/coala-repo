@@ -183,8 +183,7 @@ options:
 ```
 
 
-## skmer_Run
-
+## skmer
 ### Tool Description
 skmer: error: argument {commands}: invalid choice: 'Run' (choose from 'reference', 'subsample', 'correct', 'distance', 'query')
 

@@ -284,8 +284,7 @@ optional arguments:
 ```
 
 
-## peakachu_on
-
+## peakachu
 ### Tool Description
 peakachu: error: invalid choice: 'on' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
 

@@ -133,8 +133,7 @@ For more information, try '--help'.
 ```
 
 
-## varfish-server-worker_Print
-
+## varfish-server-worker
 ### Tool Description
 varfish-server-worker
 

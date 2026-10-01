@@ -1,7 +1,6 @@
 # metacache CWL Generation Report
 
-## metacache_help
-
+## metacache
 ### Tool Description
 MetaCache  Copyright (C) 2016-2026  André Müller & Robin Kobus
 This program comes with ABSOLUTELY NO WARRANTY.

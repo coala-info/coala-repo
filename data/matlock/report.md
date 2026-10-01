@@ -1,7 +1,6 @@
 # matlock CWL Generation Report
 
-## matlock_The
-
+## matlock
 ### Tool Description
 matlock <command> [options]
 

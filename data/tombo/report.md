@@ -1682,8 +1682,7 @@ Miscellaneous Arguments:
 ```
 
 
-## tombo_Additional
-
+## tombo
 ### Tool Description
 Tombo is a suite of tools primarily for the identification of modified nucleotides from nanopore sequencing data.
 

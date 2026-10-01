@@ -153,8 +153,7 @@ contains multiallelic sites, we recommend decomposing your VCF
 ```
 
 
-## gqt_on
-
+## gqt
 ### Tool Description
 gqt, v1.1.3
 

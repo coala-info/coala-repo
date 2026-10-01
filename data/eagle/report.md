@@ -121,8 +121,7 @@ optional arguments:
 ```
 
 
-## eagle_files
-
+## eagle
 ### Tool Description
 A command-line tool with subcommands for various operations.
 

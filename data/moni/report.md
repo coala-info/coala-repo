@@ -1,7 +1,6 @@
 # moni CWL Generation Report
 
-## moni_valid
-
+## moni
 ### Tool Description
 moni: error: argument {build,ms,mems,extend}: invalid choice: 'valid' (choose from 'build', 'ms', 'mems', 'extend')
 

@@ -193,8 +193,7 @@ Options:
 ```
 
 
-## cellxgene_for
-
+## cellxgene
 ### Tool Description
 Command-line interface for cellxgene
 

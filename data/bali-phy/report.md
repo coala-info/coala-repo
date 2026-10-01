@@ -1,7 +1,6 @@
 # bali-phy CWL Generation Report
 
-## bali-phy_help
-
+## bali-phy
 ### Tool Description
 Bayesian Inference of Alignment and Phylogeny
 

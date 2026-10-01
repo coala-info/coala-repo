@@ -1,7 +1,6 @@
 # scrubby CWL Generation Report
 
-## scrubby_help
-
+## scrubby
 ### Tool Description
 Scrubby command-line application
 

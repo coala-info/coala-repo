@@ -1,7 +1,6 @@
 # gdc-client CWL Generation Report
 
-## gdc-client_for
-
+## gdc-client
 ### Tool Description
 The Genomic Data Commons Command Line Client
 

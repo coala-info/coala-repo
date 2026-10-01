@@ -1,7 +1,6 @@
 # circtools CWL Generation Report
 
-## circtools_command
-
+## circtools
 ### Tool Description
 a modular, python-based framework for circRNA-related tools that unifies several functions in single command line driven software.
 

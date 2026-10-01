@@ -90,8 +90,7 @@ MISC:
 ```
 
 
-## skani_options
-
+## skani
 ### Tool Description
 skani
 

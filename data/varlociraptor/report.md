@@ -132,8 +132,7 @@ SUBCOMMANDS:
 ```
 
 
-## varlociraptor_by
-
+## varlociraptor
 ### Tool Description
 varlociraptor
 

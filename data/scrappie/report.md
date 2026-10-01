@@ -55,8 +55,7 @@ Report bugs to <tim.massingham@nanoporetech.com>.
 ```
 
 
-## scrappie_help
-
+## scrappie
 ### Tool Description
 Scrappie is a technology demonstrator for the Oxford Nanopore Technologies Limited Research Algorithms group.
 

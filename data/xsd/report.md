@@ -1,7 +1,6 @@
 # xsd CWL Generation Report
 
-## xsd_help
-
+## xsd
 ### Tool Description
 xsd is a command-line tool for generating code from XML Schema Definitions (XSD).
 

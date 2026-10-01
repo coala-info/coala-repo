@@ -360,8 +360,7 @@ options:
 ```
 
 
-## gsmap_Generate
-
+## gsmap
 ### Tool Description
 gsMap: error: argument subcommand: invalid choice: 'Generate' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
 

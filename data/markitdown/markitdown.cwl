@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ""
+baseCommand: markitdown
 label: markitdown
 doc: "Convert various file formats to markdown.\n\nTool homepage: https://github.com/microsoft/markitdown"
 inputs:

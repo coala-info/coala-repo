@@ -22,7 +22,7 @@ inputs:
       'off' to turn off)"
     inputBinding:
       position: 101
-      prefix: --allresult ALLRESULT
+      prefix: --allresult
   - id: alt_codons
     type:
       - 'null'
@@ -30,7 +30,7 @@ inputs:
     doc: Use provided alternative start codons, comma seperated, eg. CTG,GTG,ACG
     inputBinding:
       position: 101
-      prefix: --altcodons ALTCODONS
+      prefix: --altcodons
   - id: alternative_gene_path
     type:
       - 'null'
@@ -39,7 +39,7 @@ inputs:
       estimation instead of -g gene file
     inputBinding:
       position: 101
-      prefix: -a AGENEPATH
+      prefix: -a
   - id: alternative_start_codons
     type:
       - 'null'
@@ -65,7 +65,7 @@ inputs:
       same as chr ids in bam/fasta files
     inputBinding:
       position: 101
-      prefix: --chrmap CHRMAP
+      prefix: --chrmap
   - id: compatible_mis
     type:
       - 'null'
@@ -73,7 +73,7 @@ inputs:
     doc: 'Missed bases allowed in reads compatibility check (default: 2)'
     inputBinding:
       position: 101
-      prefix: --compatiblemis COMPATIBLEMIS
+      prefix: --compatiblemis
   - id: enrich_test
     type:
       - 'null'
@@ -89,7 +89,7 @@ inputs:
     doc: 'Output TIS background estimation result (default: tisBackground.txt)'
     inputBinding:
       position: 101
-      prefix: -e ESTPATH
+      prefix: -e
   - id: fisher_p_value_threshold
     type:
       - 'null'
@@ -97,7 +97,7 @@ inputs:
     doc: Fisher's p value threshold
     inputBinding:
       position: 101
-      prefix: --fspth FSPTH
+      prefix: --fspth
   - id: fisher_q_value_threshold
     type:
       - 'null'
@@ -105,7 +105,7 @@ inputs:
     doc: Fisher's FDR q value threshold
     inputBinding:
       position: 101
-      prefix: --fsqth FSQTH
+      prefix: --fsqth
   - id: frame_best
     type:
       - 'null'
@@ -129,7 +129,7 @@ inputs:
     doc: 'Frame p value threshold (default: 0.05)'
     inputBinding:
       position: 101
-      prefix: --fpth FPTH
+      prefix: --fpth
   - id: gene_filter
     type:
       - 'null'
@@ -137,7 +137,7 @@ inputs:
     doc: Only process given genes
     inputBinding:
       position: 101
-      prefix: --genefilter GENEFILTER
+      prefix: --genefilter
   - id: gene_format
     type:
       - 'null'
@@ -145,19 +145,19 @@ inputs:
     doc: 'Gene annotation file format (gtf, bed, gpd, gff, default: auto)'
     inputBinding:
       position: 101
-      prefix: --geneformat GENEFORMAT
+      prefix: --geneformat
   - id: gene_path
     type: string
     doc: Gene annotation file for ORF prediction
     inputBinding:
       position: 101
-      prefix: -g GENEPATH
+      prefix: -g
   - id: genome_fasta_path
     type: File
     doc: Genome fasta file
     inputBinding:
       position: 101
-      prefix: -f GENOMEFAPATH
+      prefix: -f
   - id: harr
     type:
       - 'null'
@@ -173,7 +173,7 @@ inputs:
     doc: 'Flanking region for harr data, in codons (default: 15)'
     inputBinding:
       position: 101
-      prefix: --harrwidth HARRWIDTH
+      prefix: --harrwidth
   - id: igenomepos
     type:
       - 'null'
@@ -189,7 +189,7 @@ inputs:
     doc: Input background estimation result file instead of instant estimation
     inputBinding:
       position: 101
-      prefix: -s INESTPATH
+      prefix: -s
   - id: in_frame_count
     type:
       - 'null'
@@ -206,7 +206,7 @@ inputs:
       reads, save time for re-running
     inputBinding:
       position: 101
-      prefix: --inprofile INPROFILE
+      prefix: --inprofile
   - id: input
     type:
       - 'null'
@@ -215,7 +215,7 @@ inputs:
       open)'
     inputBinding:
       position: 101
-      prefix: -i INPUT
+      prefix: -i
   - id: longest
     type:
       - 'null'
@@ -231,7 +231,7 @@ inputs:
     doc: 'Max NH value allowed for bam alignments (default: 5)'
     inputBinding:
       position: 101
-      prefix: --maxNH MAXNH
+      prefix: --maxNH
   - id: min_aa_length
     type:
       - 'null'
@@ -239,7 +239,7 @@ inputs:
     doc: 'Min amino acid length of candidate ORF (default: 6)'
     inputBinding:
       position: 101
-      prefix: --minaalen MINAALEN
+      prefix: --minaalen
   - id: min_map_q
     type:
       - 'null'
@@ -247,7 +247,7 @@ inputs:
     doc: 'Min MapQ value required for bam alignments (default: 1)'
     inputBinding:
       position: 101
-      prefix: --minMapQ MINMAPQ
+      prefix: --minMapQ
   - id: min_p_value_threshold
     type:
       - 'null'
@@ -256,7 +256,7 @@ inputs:
       (default: 0.05)'
     inputBinding:
       position: 101
-      prefix: --minpth MINPTH
+      prefix: --minpth
   - id: no_compatible_junctions
     type:
       - 'null'
@@ -272,7 +272,7 @@ inputs:
     doc: 'Group transcript according to TIS reads density quantile (default: 10)'
     inputBinding:
       position: 101
-      prefix: --nparts NPARTS
+      prefix: --nparts
   - id: num_processes
     type:
       - 'null'
@@ -296,7 +296,7 @@ inputs:
     doc: Ordinary riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: -b RIBOBAMPATHS
+      prefix: -b
   - id: ribo_para
     type:
       - 'null'
@@ -304,7 +304,7 @@ inputs:
     doc: Input offset parameter files for -b bam files
     inputBinding:
       position: 101
-      prefix: --ribopara RIBOPARA
+      prefix: --ribopara
   - id: secondary_alignments
     type:
       - 'null'
@@ -328,7 +328,7 @@ inputs:
     doc: TIS enriched riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: -t TISBAMPATHS
+      prefix: -t
   - id: tis_p_value_threshold
     type:
       - 'null'
@@ -336,7 +336,7 @@ inputs:
     doc: 'TIS p value threshold (default: 0.05)'
     inputBinding:
       position: 101
-      prefix: --tpth TPTH
+      prefix: --tpth
   - id: tis_para
     type:
       - 'null'
@@ -344,7 +344,7 @@ inputs:
     doc: Input offset parameter files for -t bam files
     inputBinding:
       position: 101
-      prefix: --tispara TISPARA
+      prefix: --tispara
   - id: tis_to_ribo
     type:
       - 'null'
@@ -360,7 +360,7 @@ inputs:
     doc: Output RPF P-site profile for each transcript
     inputBinding:
       position: 101
-      prefix: --transprofile TRANSPROFILE
+      prefix: --transprofile
   - id: verbose
     type:
       - 'null'

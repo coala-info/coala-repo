@@ -264,7 +264,7 @@ inputs:
     doc: See -S 1
     inputBinding:
       position: 101
-      prefix: --kmer-subsampling
+      prefix: --kmer-subampling
   - id: limit_input
     type:
       - 'null'

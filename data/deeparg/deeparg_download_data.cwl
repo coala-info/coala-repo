@@ -13,7 +13,7 @@ inputs:
     doc: Path to save the downloaded data
     inputBinding:
       position: 101
-      prefix: --output-path
+      prefix: -o
 outputs:
   - id: stdout
     type: stdout

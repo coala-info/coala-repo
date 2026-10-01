@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: SVDB-2.8.4
+baseCommand: svdb
 label: svdb
 doc: "use the build module to construct databases, use the query module to query the
   database usign vcf files, or use the hist module to generate histograms\n\nTool

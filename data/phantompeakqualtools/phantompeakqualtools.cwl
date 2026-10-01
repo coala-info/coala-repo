@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - Rscript
   - run_spp.R
 label: phantompeakqualtools
 doc: "Computes strand cross-correlation, NSC, RSC and estimates fragment length for

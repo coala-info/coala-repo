@@ -51,15 +51,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --distinguish-query-ends
-  - id: distinguish_query_ends
-    type:
-      - 'null'
-      - float
-    doc: When detecting indels, only consider the middle <fraction> of each 
-      query
-    inputBinding:
-      position: 101
-      prefix: --distinguish-query-ends
   - id: extend_indel_penalty
     type:
       - 'null'
@@ -78,16 +69,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --indel-continue-threshold
-  - id: indel_continue_threshold_supporting_depth_fraction
-    type:
-      - 'null'
-      - float
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report it as a continuation of an insertion or 
-      deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-continue-threshold
   - id: indel_continue_threshold_total_depth
     type:
       - 'null'
@@ -98,32 +79,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --indel-continue-threshold
-  - id: indel_continue_threshold_total_depth
-    type:
-      - 'null'
-      - int
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report it as a continuation of an insertion or 
-      deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-continue-threshold
   - id: indel_start_threshold_supporting_depth_fraction
     type:
       - 'null'
       - float
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report support for the start of an insertion or 
-      deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-start-threshold
-  - id: indel_start_threshold_supporting_depth_fraction
-    type:
-      - 'null'
-      - float
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report it as the start of an insertion or 
       deletion
     inputBinding:
       position: 101
@@ -138,40 +99,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --indel-start-threshold
-  - id: indel_start_threshold_total_depth
-    type:
-      - 'null'
-      - int
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report it as the start of an insertion or 
-      deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-start-threshold
   - id: indel_threshold_supporting_depth_frequency
     type:
       - 'null'
       - float
-    doc: Alias for --indel-start-threshold <min total depth> <min supporting 
-      depth frequency> and --indel-continue-threshold <min total depth> <min 
-      supporting depth frequency>
-    inputBinding:
-      position: 101
-      prefix: --indel-threshold
-  - id: indel_threshold_supporting_depth_frequency
-    type:
-      - 'null'
-      - float
-    doc: Alias for --indel-start-threshold <min total depth> <min supporting 
-      depth frequency> and --indel-continue-threshold <min total depth> <min 
-      supporting depth frequency>
-    inputBinding:
-      position: 101
-      prefix: --indel-threshold
-  - id: indel_threshold_total_depth
-    type:
-      - 'null'
-      - int
     doc: Alias for --indel-start-threshold <min total depth> <min supporting 
       depth frequency> and --indel-continue-threshold <min total depth> <min 
       supporting depth frequency>
@@ -334,30 +265,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --snp-threshold
-  - id: snp_threshold_supporting_depth_fraction
-    type:
-      - 'null'
-      - float
-    doc: The minimum total depth and minimum supporting depth fraction required 
-      at a position to report it as a point mutation
-    inputBinding:
-      position: 101
-      prefix: --snp-threshold
   - id: snp_threshold_total_depth
     type:
       - 'null'
       - int
     doc: The minimum total depth and minimum supporting depth fraction required 
       at a position to report the support for the mutation
-    inputBinding:
-      position: 101
-      prefix: --snp-threshold
-  - id: snp_threshold_total_depth
-    type:
-      - 'null'
-      - int
-    doc: The minimum total depth and minimum supporting depth fraction required 
-      at a position to report it as a point mutation
     inputBinding:
       position: 101
       prefix: --snp-threshold
@@ -398,16 +311,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf-exclude-non-mutations
-  - id: vcf_omit_support_reads
-    type:
-      - 'null'
-      - boolean
-    doc: By default, the vcf file has a column showing one or more supporting 
-      reads for each variant. If set, the output vcf file will hide the 
-      supporting reads for each variant.
-    inputBinding:
-      position: 101
-      prefix: --vcf-omit-support-reads
   - id: vcf_omit_support_reads
     type:
       - 'null'

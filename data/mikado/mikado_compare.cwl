@@ -69,7 +69,7 @@ inputs:
     doc: Log file
     inputBinding:
       position: 101
-      prefix: --log
+      prefix: -l
   - id: no_feature_type
     type:
       - 'null'
@@ -109,7 +109,7 @@ inputs:
     doc: Prediction file (GTF/GFF3)
     inputBinding:
       position: 101
-      prefix: --prediction
+      prefix: -p
   - id: processes
     type:
       - 'null'
@@ -117,7 +117,7 @@ inputs:
     doc: Number of processes to use
     inputBinding:
       position: 101
-      prefix: --processes
+      prefix: -x
   - id: quiet
     type:
       - 'null'
@@ -171,7 +171,7 @@ inputs:
     doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -o
 outputs:
   - id: out
     type:

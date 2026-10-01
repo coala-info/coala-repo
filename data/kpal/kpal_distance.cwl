@@ -56,7 +56,7 @@ inputs:
     doc: choose distance function
     inputBinding:
       position: 103
-      prefix: --distance
+      prefix: -D
   - id: pairwise_distance_function
     type:
       - 'null'
@@ -64,7 +64,7 @@ inputs:
     doc: paiwise distance function for the multiset distance
     inputBinding:
       position: 103
-      prefix: --pairwise-distance
+      prefix: -P
   - id: positive
     type:
       - 'null'

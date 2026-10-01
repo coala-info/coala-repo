@@ -21,7 +21,7 @@ inputs:
     doc: Output or path parameter `out_location_path`
     inputBinding:
       position: 102
-      prefix: --out-location
+      prefix: -o
 outputs:
   - id: out_location
     type: File

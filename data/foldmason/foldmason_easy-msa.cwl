@@ -23,7 +23,7 @@ inputs:
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 3
+      position: 4
   - id: bitfactor_3di
     type:
       - 'null'
@@ -406,12 +406,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --write-mapping
+  - id: alignment_file_path
+    type: string
+    doc: Output alignment file
+    inputBinding:
+      position: 3
 outputs:
   - id: alignment_file
     type: File
     doc: Output alignment file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.alignment_file_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/foldmason:4.dd3c235--h5021889_0

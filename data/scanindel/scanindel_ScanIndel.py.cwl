@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - ScanIndel.py
 label: scanindel_ScanIndel.py
 doc: "ScanIndel is a tool for indel calling.\n\nTool homepage: https://github.com/cauyrd/ScanIndel"

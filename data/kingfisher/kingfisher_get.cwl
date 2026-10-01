@@ -70,7 +70,7 @@ inputs:
     doc: Bioprojects to download
     inputBinding:
       position: 101
-      prefix: --bioprojects
+      prefix: -p
   - id: check_md5sums
     type:
       - 'null'
@@ -102,7 +102,7 @@ inputs:
     doc: Number of threads for extraction
     inputBinding:
       position: 101
-      prefix: --extraction-threads
+      prefix: -t
   - id: file_format
     type:
       - 'null'
@@ -208,7 +208,7 @@ inputs:
     doc: Run identifiers to download
     inputBinding:
       position: 101
-      prefix: --run-identifiers
+      prefix: -r
   - id: run_identifiers_list
     type:
       - 'null'

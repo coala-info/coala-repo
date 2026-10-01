@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
-  - vcf2circos.py
+  - vcf2circos
 label: vcf2circos
 doc: "vcf2circos is a tool to visualize VCF files in a circular genome plot.\n\nTool
   homepage: https://github.com/bioinfo-chru-strasbourg/vcf2circos"

@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - seq2c_lr2gene.pl
+  - lr2gene.pl
 label: seq2c_lr2gene.pl
 doc: "The lr2gene.pl program will convert a coverage file to copy number profile.
   The default parameters are designed for detecting such aberrations for high tumor

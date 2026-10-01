@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - HLAProfiler.pl
 label: hlaprofiler_HLAProfiler.pl
 doc: "A tool for predicting HLA types using NGS Paired-end sequencing data.\n\nTool

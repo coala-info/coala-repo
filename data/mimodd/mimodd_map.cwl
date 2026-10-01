@@ -74,7 +74,7 @@ inputs:
       caution on carefully filtered variant lists only!
     inputBinding:
       position: 103
-      prefix: --infer, --infer-missing
+      prefix: --infer
   - id: loess_colors
     type:
       - 'null'

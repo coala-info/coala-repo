@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
-  - NOVOLoci0.5.pl
+  - novoloci
 label: novoloci
 doc: "NOVOLoci tool for processing genomic data.\n\nTool homepage: https://github.com/ndierckx/NOVOLoci"
 inputs:

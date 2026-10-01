@@ -21,7 +21,7 @@ inputs:
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 3
+      position: 4
   - id: add_backtrace
     type:
       - 'null'
@@ -978,12 +978,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --zdrop
+  - id: predictions_fasta_path
+    type: string
+    doc: Output predictions FASTA file
+    inputBinding:
+      position: 3
 outputs:
   - id: predictions_fasta
     type: File
     doc: Output predictions FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.predictions_fasta_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

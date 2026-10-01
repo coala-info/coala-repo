@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - EDTA.pl
 label: edta_EDTA.pl
 doc: "Extensive de-novo TE Annotator that generates a high-quality structure-based

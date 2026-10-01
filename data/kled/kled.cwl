@@ -99,7 +99,7 @@ inputs:
     doc: Min length endurance clustering parameter for deletions.
     inputBinding:
       position: 102
-      prefix: --DelClusterMinLengthEndurance
+      prefix: --DelClusterMinLengthEdurance
   - id: del_cluster_near_range
     type:
       - 'null'
@@ -260,7 +260,7 @@ inputs:
     doc: Min length endurance clustering parameter for duplications.
     inputBinding:
       position: 102
-      prefix: --DupClusterMinLengthEndurance
+      prefix: --DupClusterMinLengthEdurance
   - id: dup_cluster_near_range
     type:
       - 'null'
@@ -431,7 +431,7 @@ inputs:
     doc: Min length endurance clustering parameter for insertions.
     inputBinding:
       position: 102
-      prefix: --InsClusterMinLengthEndurance
+      prefix: --InsClusterMinLengthEdurance
   - id: ins_cluster_near_range
     type:
       - 'null'
@@ -608,7 +608,7 @@ inputs:
     doc: Min length endurance clustering parameter for inversions.
     inputBinding:
       position: 102
-      prefix: --InvClusterMinLengthEndurance
+      prefix: --InvClusterMinLengthEdurance
   - id: inv_cluster_near_range
     type:
       - 'null'

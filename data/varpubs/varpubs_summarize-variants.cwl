@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - var
-  - pubs
+  - varpubs
   - summarize-variants
 label: varpubs_summarize-variants
 doc: "SummarizeArgs ['args']: Command-line arguments for summarizing PubMed articles

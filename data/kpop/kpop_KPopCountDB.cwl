@@ -55,17 +55,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --selection-combination-criterion
-  - id: combination_criterion
-    type:
-      - 'null'
-      - string
-    doc: set the criterion used to combine the k-mer frequencies of selected 
-      spectra. To avoid rounding issues, each k-mer frequency is also rescaled 
-      by the largest normalization across spectra ('mean' averages frequencies 
-      across spectra; 'median' computes the median across spectra)
-    inputBinding:
-      position: 101
-      prefix: --combination-criterion
   - id: compute_distances
     type:
       - 'null'
@@ -78,18 +67,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --distances
-  - id: compute_distances
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: select two sets of spectra from the register and compute and output 
-      distances between all possible pairs (metadata fields must match the 
-      regexps specified in the selector; an empty metadata field makes the 
-      regexp match labels. The result will have extension .KPopDMatrix)
-    inputBinding:
-      position: 101
-      prefix: --compute-distances
   - id: compute_spectral_distances
     type:
       - 'null'
@@ -120,15 +97,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --distance
-  - id: distance_function
-    type:
-      - 'null'
-      - string
-    doc: set the function to be used when computing distances. The parameter for
-      'minkowski()' is the power (default='euclidean')
-    inputBinding:
-      position: 101
-      prefix: --distance-function
   - id: empty
     type:
       - 'null'
@@ -174,22 +142,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --distance-normalize
-  - id: normalize_distances
-    type:
-      - 'null'
-      - boolean
-    doc: whether spectra should be normalized prior to computing distances
-    inputBinding:
-      position: 101
-      prefix: --normalize-distances
-  - id: normalize_distances
-    type:
-      - 'null'
-      - boolean
-    doc: whether spectra should be normalized prior to computing distances
-    inputBinding:
-      position: 101
-      prefix: --distance-normalization
   - id: selection_clear
     type:
       - 'null'
@@ -238,18 +190,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --regexps
-  - id: selection_from_regexps
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: put into the selection register the labels of the spectra whose 
-      metadata fields match the specified regexps and where regexps are defined 
-      according to <https://ocaml.org/api/Str.html>. An empty metadata field 
-      makes the regexp match labels
-    inputBinding:
-      position: 101
-      prefix: --selection-from-regexps
   - id: selection_negate
     type:
       - 'null'
@@ -375,14 +315,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --table-transform
-  - id: table_transform
-    type:
-      - 'null'
-      - string
-    doc: transformation to apply to table elements before outputting them
-    inputBinding:
-      position: 101
-      prefix: --table-transformation
   - id: table_transpose
     type:
       - 'null'

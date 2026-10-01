@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
-  - vcf2maf_vcf2maf.pl
+  - vcf2maf.pl
 label: vcf2maf_vcf2maf.pl
 doc: "Converts VCF files to MAF format.\n\nTool homepage: https://github.com/mskcc/vcf2maf"
 inputs:

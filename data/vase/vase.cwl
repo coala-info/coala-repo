@@ -46,21 +46,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --biallelic
-  - id: biallelic
-    type:
-      - 'null'
-      - boolean
-    doc: "Identify variants matching a recessive inheritance\n                   \
-      \     pattern in cases present in the PED file specified\n                 \
-      \       by the --ped argument. Input must be VEP\n                        annotated.
-      If the --csq argument is given, only\n                        variants/alleles
-      resulting in the given functional\n                        consequences will
-      be used to identify qualifying\n                        variants/alleles, otherwise
-      the default set of\n                        VEP consequences (see --csq argument
-      for details)\n                        will be used."
-    inputBinding:
-      position: 101
-      prefix: -biallelic
   - id: biotypes
     type:
       - 'null'
@@ -100,16 +85,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --biotypes
-  - id: build
-    type:
-      - 'null'
-      - string
-    doc: "dbSNP build version cutoff. For use with --dbsnp\n                     \
-      \   files. Alleles/variants present in this dbSNP\n                        build
-      or earlier will be filtered from input.\n                        from your input."
-    inputBinding:
-      position: 101
-      prefix: --build
   - id: build
     type:
       - 'null'
@@ -171,22 +146,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cadd_files
-  - id: cadd_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: "One or more tabix indexed CADD annotation files\n                      \
-      \  (such as those found at\n                        http://cadd.gs.washington.edu/download).
-      Variants\n                        in your input that match any scored variant
-      in\n                        these files will have the CADD RawScore and PHRED\n\
-      \                        values added to the INFO field, one per ALT\n     \
-      \                   allele. Alleles/variants can be filtered on these\n    \
-      \                    scores using the --cadd_phred or --cadd_raw\n         \
-      \               options."
-    inputBinding:
-      position: 101
-      prefix: -cadd_files
   - id: cadd_phred
     type:
       - 'null'
@@ -222,20 +181,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --canonical
-  - id: cases
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "One or more sample IDs to treat as cases. Default\n                    \
-      \    behaviour is to retain variants/alleles present in\n                  \
-      \      all of these samples as long as they are not\n                      \
-      \  present in any sample specified using the\n                        '--controls'
-      option. This behaviour can be\n                        adjusted using other
-      options detailed below."
-    inputBinding:
-      position: 101
-      prefix: --cases
   - id: cases
     type:
       - 'null'
@@ -294,32 +239,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --clinvar_path
-  - id: clinvar_path
-    type:
-      - 'null'
-      - boolean
-    doc: "Retain variants with ClinVar 'likely pathogenic'\n                     \
-      \   or 'pathogenic' flags regardless of frequency or\n                     \
-      \   other settings provided to other Annotation File\n                     \
-      \   Arguments. This requires one of the files\n                        provided
-      to --dbsnp to have CLNSIG annotations\n                        from ClinVar."
-    inputBinding:
-      position: 101
-      prefix: --clinvar_path
-  - id: confirm_control_gts
-    type:
-      - 'null'
-      - boolean
-    doc: "If using the --controls argument, also filter\n                        variants
-      if any control sample is either a no-call\n                        or fails
-      specified genotype quality, depth or\n                        allele balance
-      thresholds. If used in conjunction\n                        with the --n_controls
-      option, control samples with\n                        no-call genotypes or genotypes
-      failing the above\n                        thresholds will be counted towards
-      the number of\n                        controls with an allele/variant."
-    inputBinding:
-      position: 101
-      prefix: --confirm_control_gts
   - id: confirm_control_gts
     type:
       - 'null'
@@ -348,20 +267,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control_dp
-  - id: control_dp
-    type:
-      - 'null'
-      - int
-    doc: "Minimum depth threshold for\n                        parents/unaffecteds/controls
-      when filtering\n                        variants. Defaults to the same value
-      as --dp but\n                        you may wish to set this to a lower value
-      if, for\n                        example, you require less evidence from\n \
-      \                       controls/unaffected in order to filter a variant\n \
-      \                       or from parental genotype calls when confirming\n  \
-      \                      a potential de novo variant."
-    inputBinding:
-      position: 101
-      prefix: -con_dp
   - id: control_duphold_del_dhffc
     type:
       - 'null'
@@ -377,37 +282,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control_duphold_del_dhffc
-  - id: control_duphold_del_dhffc
-    type:
-      - 'null'
-      - float
-    doc: "Maximum fold-change for deletion calls relative to\n                   \
-      \     flanking regions as annotated by duphold for\n                       \
-      \ parent/unaffected/control sample het/homozygous\n                        alternative
-      calls. Defaults to the same value as\n                        --duphold_del_dhffc
-      but you may wish to set this\n                        to a higher value if,
-      for example, you require\n                        less evidence from controls/unaffected
-      in order to\n                        filter a variant or from parental genotype
-      calls\n                        when confirming a potential de novo variant."
-    inputBinding:
-      position: 101
-      prefix: --control_duphold_del_dhffc
-  - id: control_duphold_dup_dhbfc
-    type:
-      - 'null'
-      - float
-    doc: "Minimum fold-change for duplication calls relative\n                   \
-      \     to flanking regions as annotated by duphold for\n                    \
-      \    parent/unaffected/control sample het/homozygous\n                     \
-      \   alternative calls. Defaults to the same value as\n                     \
-      \   --duphold_dup_dhbfc but you may wish to set this\n                     \
-      \   to a lower value if, for example, you require\n                        less
-      evidence from controls/unaffected in order to\n                        filter
-      a variant or from parental genotype calls\n                        when confirming
-      a potential de novo variant."
-    inputBinding:
-      position: 101
-      prefix: --control_duphold_dup_dhbfc
   - id: control_duphold_dup_dhbfc
     type:
       - 'null'
@@ -438,20 +312,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control_gq
-  - id: control_gq
-    type:
-      - 'null'
-      - int
-    doc: "Minimum genotype quality score threshold for\n                        parents/unaffecteds/controls
-      when filtering\n                        variants. Defaults to the same value
-      as --gq but\n                        you may wish to set this to a lower value
-      if, for\n                        example, you require less evidence from\n \
-      \                       controls/unaffected in order to filter a variant\n \
-      \                       or from parental genotype calls when confirming\n  \
-      \                      a potential de novo variant."
-    inputBinding:
-      position: 101
-      prefix: -con_gq
   - id: control_het_ab
     type:
       - 'null'
@@ -467,21 +327,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control_het_ab
-  - id: control_het_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for heterozygous\n                     \
-      \   genotypes. Heterozygous sample genotype calls\n                        with
-      a ratio of the alternate allele vs total\n                        depth lower
-      than this threshold will be treated as\n                        no-calls. Defaults
-      to the same as --het_ab but\n                        you may wish to set this
-      to a lower value if, for\n                        example, you require less
-      evidence from\n                        controls/unaffected in order to filter
-      a variant."
-    inputBinding:
-      position: 101
-      prefix: -con_het_ab
   - id: control_hom_ab
     type:
       - 'null'
@@ -497,21 +342,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control_hom_ab
-  - id: control_hom_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for homozygous\n                       \
-      \ genotypes. Homozygous sample genotype calls\n                        with
-      a ratio of the alternate allele vs total\n                        depth lower
-      than this threshold will be treated as\n                        no-calls. Defaults
-      to the same as --hom_ab but\n                        you may wish to set this
-      to a lower value if, for\n                        example, you require less
-      evidence from\n                        controls/unaffected in order to filter
-      a variant."
-    inputBinding:
-      position: 101
-      prefix: -con_hom_ab
   - id: control_max_dp
     type:
       - 'null'
@@ -522,16 +352,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control_max_dp
-  - id: control_max_dp
-    type:
-      - 'null'
-      - int
-    doc: "Maximum depth threshold for\n                        parents/unaffecteds/controls
-      when filtering\n                        variants. Defaults to the same value
-      as --max_dp."
-    inputBinding:
-      position: 101
-      prefix: -con_max_dp
   - id: control_max_ref_ab
     type:
       - 'null'
@@ -545,31 +365,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control_max_ref_ab
-  - id: control_max_ref_ab
-    type:
-      - 'null'
-      - float
-    doc: "Maximum genotype allele balance for\n                        parents/unaffecteds/controls
-      with reference (0/0)\n                        genotypes when filtering variants.
-      If you wish to\n                        count/exclude variants where controls/unaffecteds\n\
-      \                        are called as homozygous reference but still have a\n\
-      \                        low proportion of ALT alleles specify a suitable\n\
-      \                        cutoff here."
-    inputBinding:
-      position: 101
-      prefix: -con_max_ref_ab
-  - id: controls
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "One or more sample IDs to treat as controls.\n                        Default
-      behaviour is to filter variants/alleles\n                        present in
-      any of these samples. This behaviour\n                        can be adjusted
-      using other options detailed\n                        below."
-    inputBinding:
-      position: 101
-      prefix: --controls
   - id: controls
     type:
       - 'null'
@@ -629,17 +424,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dbsnp
-  - id: dbsnp
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: "dbSNP or ClinVar VCF file for variant\n                        annotating/filtering."
-    secondaryFiles:
-      - .tbi?
-    inputBinding:
-      position: 101
-      prefix: --dbsnp
   - id: de_novo
     type:
       - 'null'
@@ -651,17 +435,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --de_novo
-  - id: de_novo
-    type:
-      - 'null'
-      - boolean
-    doc: "Idenfify apparent de novo variants in cases\n                        present
-      in the PED file specified by the --ped\n                        argument. This
-      requires that at least one\n                        parent-child trio exists
-      in the given PED file."
-    inputBinding:
-      position: 101
-      prefix: -de_novo
   - id: debug
     type:
       - 'null'
@@ -670,24 +443,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: Output debugging level information to STDERR.
-    inputBinding:
-      position: 101
-      prefix: --debug
-  - id: dng_vcf
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: "One or more VCFs created by DeNovoGear for adding\n                    \
-      \    PP_DNM and PP_NULL fields to sample calls."
-    inputBinding:
-      position: 101
-      prefix: --dng_vcf
   - id: dng_vcf
     type:
       - 'null'
@@ -708,16 +463,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dominant
-  - id: dominant
-    type:
-      - 'null'
-      - boolean
-    doc: "Idenfify variants segregating in manner matching\n                     \
-      \   dominant inheritance in cases present in the PED\n                     \
-      \   file specified by the --ped argument."
-    inputBinding:
-      position: 101
-      prefix: -dominant
   - id: dp
     type:
       - 'null'
@@ -728,27 +473,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dp
-  - id: dp
-    type:
-      - 'null'
-      - int
-    doc: "Minimum genotype depth threshold. Sample genotype\n                    \
-      \    calls with a read depth lower than this threshold\n                   \
-      \     will be treated as no-calls. Default = 0."
-    inputBinding:
-      position: 101
-      prefix: -dp
-  - id: duphold_del_dhffc
-    type:
-      - 'null'
-      - float
-    doc: "Maximum fold-change for deletion calls relative to\n                   \
-      \     flanking regions as annotated by duphold\n                        (https://github.com/brentp/duphold).
-      Deletion\n                        calls will be filtered if the DHFFC annotation\n\
-      \                        from duphold is greater than this value."
-    inputBinding:
-      position: 101
-      prefix: --duphold_del_dhffc
   - id: duphold_del_dhffc
     type:
       - 'null'
@@ -771,30 +495,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --duphold_dup_dhbfc
-  - id: duphold_dup_dhbfc
-    type:
-      - 'null'
-      - float
-    doc: "Minimum fold-change for duplication calls relative\n                   \
-      \     to flanking regions as annotated by duphold\n                        (https://github.com/brentp/duphold).
-      Duplication\n                        calls will be filtered if the DHBFC annotation\n\
-      \                        from duphold is less than this value."
-    inputBinding:
-      position: 101
-      prefix: --duphold_dup_dhbfc
-  - id: exac
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: "gnomAD/ExAC file for variant annotating/filtering\n                    \
-      \    using population allele frequencies. By default\n                     \
-      \   allele frequencies from AFR, AMR, EAS, FIN, NFE\n                      \
-      \  and SAS populations are used. Populations to use\n                      \
-      \  can be chosen with the --gnomad_pops argument."
-    inputBinding:
-      position: 101
-      prefix: --exac
   - id: exac
     type:
       - 'null'
@@ -863,32 +563,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --filter_known
-  - id: filter_known
-    type:
-      - 'null'
-      - boolean
-    doc: "Filter any allele/variant present in any of the\n                      \
-      \  files supplied to --gnomad, --dbsnp or\n                        --vcf_filter
-      arguments, or if using '--csq' if any\n                        allele frequency
-      is recorded for any of VEP's AF\n                        annotations. This will
-      also filter\n                        alleles/variants if an annotation from
-      --gnomad or\n                        --dbsnp is present from a previous run
-      unless the\n                        --ignore_existing_annotations option is
-      given."
-    inputBinding:
-      position: 101
-      prefix: --filter_known
-  - id: filter_novel
-    type:
-      - 'null'
-      - boolean
-    doc: "Filter any allele/variant NOT present in\n                        any of
-      the files supplied to --gnomad or --dbsnp or\n                        --vcf_filter
-      arguments, or if using '--csq' if no\n                        allele frequency
-      is recorded for any of VEP's AF\n                        annotations."
-    inputBinding:
-      position: 101
-      prefix: --filter_novel
   - id: filter_novel
     type:
       - 'null'
@@ -957,22 +631,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --freq
-  - id: freq
-    type:
-      - 'null'
-      - float
-    doc: "Allele frequency cutoff (between 0 and 1). Used\n                      \
-      \  for extenal allele frequency sources such as\n                        --dbsnp
-      or --gnomad files. Alleles/variants with\n                        an allele
-      frequency equal to or greater than\n                        this value in these
-      sources will be filtered\n                        from your input. VEP annotated
-      allele frequencies\n                        will also be used for filtering
-      if '--csq' or\n                        '--impact' options are used (annotations
-      from VEP\n                        v90 or higher required). This can be disabled
-      with\n                        the --no_vep_freq option."
-    inputBinding:
-      position: 101
-      prefix: --freq
   - id: g2p
     type:
       - 'null'
@@ -1001,19 +659,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --gene_bed
-  - id: gnomad
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: "gnomAD/ExAC file for variant annotating/filtering\n                    \
-      \    using population allele frequencies. By default\n                     \
-      \   allele frequencies from AFR, AMR, EAS, FIN, NFE\n                      \
-      \  and SAS populations are used. Populations to use\n                      \
-      \  can be chosen with the --gnomad_pops argument."
-    inputBinding:
-      position: 101
-      prefix: --gnomad
   - id: gnomad
     type:
       - 'null'
@@ -1059,16 +704,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --gq
-  - id: gq
-    type:
-      - 'null'
-      - int
-    doc: "Minimum genotype quality score threshold. Sample\n                     \
-      \   genotype calls with a score lower than this\n                        threshold
-      will be treated as no-calls.\n                        Default = 20."
-    inputBinding:
-      position: 101
-      prefix: -gq
   - id: het_ab
     type:
       - 'null'
@@ -1081,18 +716,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --het_ab
-  - id: het_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for heterozygous\n                     \
-      \   genotypes. Heterozygous sample genotype calls\n                        with
-      a ratio of the alternate allele vs total\n                        depth lower
-      than this threshold will be treated as\n                        no-calls. Default
-      = 0."
-    inputBinding:
-      position: 101
-      prefix: -het_ab
   - id: hom_ab
     type:
       - 'null'
@@ -1105,18 +728,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hom_ab
-  - id: hom_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for homozygous\n                       \
-      \ genotypes. Homozygous sample genotype calls\n                        with
-      a ratio of the alternate allele vs total\n                        depth lower
-      than this threshold will be treated as\n                        no-calls. Default
-      = 0."
-    inputBinding:
-      position: 101
-      prefix: -hom_ab
   - id: ignore_existing
     type:
       - 'null'
@@ -1129,18 +740,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -ignore_existing
-  - id: ignore_existing_annotations
-    type:
-      - 'null'
-      - boolean
-    doc: "Ignore previously added annotations from\n                        dbSNP/gnomAD/CADD
-      files that may be present in the\n                        input VCF. Default
-      behaviour is to use these\n                        annotations for filtering
-      if present and the\n                        relevant arguments (e.g. --freq)
-      are given."
-    inputBinding:
-      position: 101
-      prefix: --ignore_existing_annotations
   - id: ignore_existing_annotations
     type:
       - 'null'
@@ -1246,15 +845,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --log_progress
-  - id: log_progress
-    type:
-      - 'null'
-      - boolean
-    doc: "Use logging output for progress rather than wiping\n                   \
-      \     progress line after each update."
-    inputBinding:
-      position: 101
-      prefix: -log_progress
   - id: max_alt_alleles
     type:
       - 'null'
@@ -1276,16 +866,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --max_build
-  - id: max_build
-    type:
-      - 'null'
-      - string
-    doc: "Maximum dbSNP build version cutoff. For use with\n                     \
-      \   --dbsnp files. Alleles/variants present in dbSNP\n                     \
-      \   builds later than this version will be filtered."
-    inputBinding:
-      position: 101
-      prefix: --max_build
   - id: max_dp
     type:
       - 'null'
@@ -1297,17 +877,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --max_dp
-  - id: max_dp
-    type:
-      - 'null'
-      - int
-    doc: "Maximum genotype depth threshold. Sample genotype\n                    \
-      \    calls with a read depth higher than this threshold\n                  \
-      \      will be treated as no-calls. Default = 0 (i.e. not\n                \
-      \        used)."
-    inputBinding:
-      position: 101
-      prefix: -max_dp
   - id: max_freq
     type:
       - 'null'
@@ -1324,16 +893,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --max_freq
-  - id: max_gnomad_homozygotes
-    type:
-      - 'null'
-      - int
-    doc: "Filter alleles if the total number of homozygotes\n                    \
-      \    or hemizygotes in any provided gnomAD VCF is\n                        greater
-      than this value."
-    inputBinding:
-      position: 101
-      prefix: --max_gnomad_homozygotes
   - id: max_gnomad_homozygotes
     type:
       - 'null'
@@ -1384,32 +943,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min_families
-  - id: min_families
-    type:
-      - 'null'
-      - int
-    doc: "Minimum number of families (or unrelated samples)\n                    \
-      \    required to contain a qualifying dominant/de novo\n                   \
-      \     or biallelic combination of variants in a feature\n                  \
-      \      before they are output. Default = 1."
-    inputBinding:
-      position: 101
-      prefix: -min_families
-  - id: min_freq
-    type:
-      - 'null'
-      - float
-    doc: "Minimum allele frequency cutoff (between 0 and 1).\n                   \
-      \     Used for extenal allele frequency sources such as\n                  \
-      \      --dbsnp or --gnomad files. Alleles/variants with\n                  \
-      \      a frequency lower than this value will be filtered.\n               \
-      \         VEP annotated allele frequencies will also be used\n             \
-      \           for filtering if '--csq' option is used (VEP v90\n             \
-      \           or higher required). This can be disabled with the\n           \
-      \             --no_vep_freq option."
-    inputBinding:
-      position: 101
-      prefix: --min_freq
   - id: min_freq
     type:
       - 'null'
@@ -1475,17 +1008,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --missing_splice_ai_scores
-  - id: missing_splice_ai_scores
-    type:
-      - 'null'
-      - File
-    doc: "Filename to output variants that are not found in\n                    \
-      \    SpliceAI annotation files. Output will be gzip\n                      \
-      \  compressed VCFs suitable for scoring with the\n                        SpliceAI
-      program\n                        (https://github.com/Illumina/SpliceAI)."
-    inputBinding:
-      position: 101
-      prefix: --missing_splice_ai_scores
   - id: n_cases
     type:
       - 'null'
@@ -1496,16 +1018,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --n_cases
-  - id: n_cases
-    type:
-      - 'null'
-      - int
-    doc: "Instead of requiring a variant to be present in\n                      \
-      \  ALL samples specified by --cases, require at least\n                    \
-      \    this many cases."
-    inputBinding:
-      position: 101
-      prefix: -n_cases
   - id: n_controls
     type:
       - 'null'
@@ -1517,17 +1029,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --n_controls
-  - id: n_controls
-    type:
-      - 'null'
-      - int
-    doc: "Instead of filtering an allele/variant if present\n                    \
-      \    in ANY sample specified by --controls, require at\n                   \
-      \     least this many controls to carry a variant before\n                 \
-      \       it is filtered."
-    inputBinding:
-      position: 101
-      prefix: -n_controls
   - id: no_conflicted
     type:
       - 'null'
@@ -1539,14 +1040,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no_conflicted
-  - id: no_progress
-    type:
-      - 'null'
-      - boolean
-    doc: Do not output progress information to STDERR.
-    inputBinding:
-      position: 101
-      prefix: --no_progress
   - id: no_progress
     type:
       - 'null'
@@ -1574,15 +1067,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no_warnings
-  - id: no_warnings
-    type:
-      - 'null'
-      - boolean
-    doc: "Do not output INFO or WARN messages to\n                        STDERR.
-      Only program ending errors will appear."
-    inputBinding:
-      position: 101
-      prefix: --no_warnings
   - id: pass_filters
     type:
       - 'null'
@@ -1592,18 +1076,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pass_filters
-  - id: path
-    type:
-      - 'null'
-      - boolean
-    doc: "Retain variants with ClinVar 'likely pathogenic'\n                     \
-      \   or 'pathogenic' flags regardless of frequency or\n                     \
-      \   other settings provided to other Annotation File\n                     \
-      \   Arguments. This requires one of the files\n                        provided
-      to --dbsnp to have CLNSIG annotations\n                        from ClinVar."
-    inputBinding:
-      position: 101
-      prefix: -path
   - id: path
     type:
       - 'null'
@@ -1655,42 +1127,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ped
-  - id: ped
-    type:
-      - 'null'
-      - File
-    doc: "A ped file containing information about samples in\n                   \
-      \     your VCF for use for filtering on affectation\n                      \
-      \  status and inheritance patterns.\n\n                        A PED file is
-      a white-space (space or tab) \n                        delimited file with the
-      first six mandatory\n                        columns:\n                    \
-      \    \n                             Family ID\n                            \
-      \ Individual ID\n                             Paternal ID\n                \
-      \             Maternal ID\n                             Sex (1=male; 2=female;
-      other=unknown)\n                             Phenotype\n                   \
-      \     \n                        Affection status should be coded:\n        \
-      \                \n                            -9 missing\n                \
-      \             0 missing\n                             1 unaffected\n       \
-      \                      2 affected\n                        \n              \
-      \          All individuals of interest, including parents,\n               \
-      \         should be specified in this file so that\n                       \
-      \ affectation status can be read and dominant versus\n                     \
-      \   recessive/de novo inheritance models can be\n                        inferred."
-    inputBinding:
-      position: 101
-      prefix: --ped
-  - id: prioritise_cadd
-    type:
-      - 'null'
-      - boolean
-    doc: "If using --cadd_phred or --cadd_raw cutoffs,\n                        filter
-      variants below threshold even if they meet\n                        SpliceAI
-      delta cutoffs. Default behaviour is to\n                        retain variants
-      if they meet --splice_ai_min_delta\n                        irrespective of
-      CADD cutoffs."
-    inputBinding:
-      position: 101
-      prefix: --prioritise_cadd
   - id: prioritise_cadd
     type:
       - 'null'
@@ -1711,14 +1147,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --prog_interval
-  - id: prog_interval
-    type:
-      - 'null'
-      - int
-    doc: "Report progress information every N variants.\n                        Default=1000."
-    inputBinding:
-      position: 101
-      prefix: --prog_interval
   - id: quiet
     type:
       - 'null'
@@ -1728,30 +1156,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: "Do not output INFO messages to STDERR. Warnings\n                      \
-      \  will still be shown."
-    inputBinding:
-      position: 101
-      prefix: --quiet
-  - id: recessive
-    type:
-      - 'null'
-      - boolean
-    doc: "Identify variants matching a recessive inheritance\n                   \
-      \     pattern in cases present in the PED file specified\n                 \
-      \       by the --ped argument. Input must be VEP\n                        annotated.
-      If the --csq argument is given, only\n                        variants/alleles
-      resulting in the given functional\n                        consequences will
-      be used to identify qualifying\n                        variants/alleles, otherwise
-      the default set of\n                        VEP consequences (see --csq argument
-      for details)\n                        will be used."
-    inputBinding:
-      position: 101
-      prefix: --recessive
   - id: recessive
     type:
       - 'null'
@@ -1825,35 +1229,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seg_controls
-  - id: seg_controls
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "One or more sample IDs to treat as controls for\n                      \
-      \  segregation analysis only. Useful if you want to\n                      \
-      \  specify controls to use for rejecting compound\n                        heterozygous
-      combinations of variants or\n                        homozygous variants when
-      using --biallelic option.\n                        Unlike the --controls option,
-      alleles/variants\n                        present in these samples will only
-      be used for\n                        filtering when looking at inheritance patterns
-      in\n                        families present in a PED file or samples\n    \
-      \                    specified with --singleton_recessive or\n             \
-      \           --singleton_dominant options. This option is not\n             \
-      \           necessary if your unaffected samples are already\n             \
-      \           present in your PED file specified with --ped."
-    inputBinding:
-      position: 101
-      prefix: -seg_controls
-  - id: silent
-    type:
-      - 'null'
-      - boolean
-    doc: "Equivalent to specifying both '--no_progress' and\n                    \
-      \    '--no_warnings' options."
-    inputBinding:
-      position: 101
-      prefix: --silent
   - id: silent
     type:
       - 'null'
@@ -1874,17 +1249,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --singleton_dominant
-  - id: singleton_dominant
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "One or more samples to treat as unrelated\n                        individuals
-      and identify variants matching a\n                        dominant inheritance
-      pattern."
-    inputBinding:
-      position: 101
-      prefix: -singleton_dominant
   - id: singleton_recessive
     type:
       - 'null'
@@ -1896,17 +1260,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --singleton_recessive
-  - id: singleton_recessive
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "One or more samples to treat as unrelated\n                        individuals
-      and identify variants matching a\n                        recessive inheritance
-      pattern."
-    inputBinding:
-      position: 101
-      prefix: -singleton_recessive
   - id: snpeff
     type:
       - 'null'
@@ -1925,16 +1278,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --splice_ai_max_delta
-  - id: splice_ai_max_delta
-    type:
-      - 'null'
-      - float
-    doc: "Same as --splice_ai_min_delta but\n                        alleles/consequences
-      will be retained only if\n                        all SpliceAI delta scores
-      are equal to or below\n                        this threshold."
-    inputBinding:
-      position: 101
-      prefix: -splice_ai_max_delta
   - id: splice_ai_min_delta
     type:
       - 'null'
@@ -1956,27 +1299,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --splice_ai_min_delta
-  - id: splice_ai_min_delta
-    type:
-      - 'null'
-      - float
-    doc: "Retain alleles/consequences with a SpliceAI delta\n                    \
-      \    score equal to or greater than this threshold. If\n                   \
-      \     using filtering on VEP consequence (--csq or\n                       \
-      \ --impact options) VEP consequences for genes\n                        with
-      symbols matching the SpliceAI gene symbol\n                        annotation
-      will be marked for retention also (e.g.\n                        if using segregation
-      filtering). Note that allele\n                        frequency filters will
-      still be applied.\n\n                        If used in conjunction with --csq
-      or --impact\n                        options, variants that match the specified\n\
-      \                        --csq/--impact classes will be retained\n         \
-      \               irrespective of SpliceAI delta score, while\n              \
-      \          variants not matching specified --csq/--impact\n                \
-      \        classes will be retained if they meet the SpliceAI\n              \
-      \          delta score threshold."
-    inputBinding:
-      position: 101
-      prefix: -splice_ai_min_delta
   - id: splice_ai_vcfs
     type:
       - 'null'
@@ -1994,23 +1316,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --splice_ai_vcfs
-  - id: splice_ai_vcfs
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: "One or more tabix indexed VCFs containing SpliceAI\n                   \
-      \     delta scores with which to filter or annotate\n                      \
-      \  records. SpliceAI INFO fields must be present in\n                      \
-      \  the format produced for pre-scored variants as\n                        downloaded
-      from Jaganathan et al. Cell (2018) or\n                        else as generated
-      by the SpliceAI program\n                        (https://github.com/Illumina/SpliceAI).\n\
-      \                        Alleles/variants can be retained on these scores\n\
-      \                        using the --splice_ai_min_delta or\n              \
-      \          --splice_ai_max_delta options."
-    inputBinding:
-      position: 101
-      prefix: -splice_ai_vcfs
   - id: splice_filter_unpredicted
     type:
       - 'null'
@@ -2075,18 +1380,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --strict_recessive
-  - id: strict_recessive
-    type:
-      - 'null'
-      - boolean
-    doc: "When using the --biallelic/--recessive option,\n                       \
-      \ for any affected sample with parents, require\n                        confirmation
-      of parental genotypes. If either\n                        parent genotype is
-      a no-call or fails genotype\n                        filters then a potential
-      biallelic variant will be\n                        ignored."
-    inputBinding:
-      position: 101
-      prefix: --strict_recessive
   - id: sv_control_dp
     type:
       - 'null'
@@ -2101,20 +1394,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_control_dp
-  - id: sv_control_dp
-    type:
-      - 'null'
-      - int
-    doc: "Minimum supporting read threshold for\n                        parents/unaffecteds/controls
-      when filtering\n                        structural variants. Defaults to the
-      same value as\n                        --sv_dp but you may wish to set this
-      to a lower\n                        value if, for example, you require less
-      evidence\n                        from controls/unaffected in order to filter
-      a\n                        variant or from parental genotype calls when\n  \
-      \                      confirming a potential de novo variant."
-    inputBinding:
-      position: 101
-      prefix: -sv_con_dp
   - id: sv_control_gq
     type:
       - 'null'
@@ -2129,20 +1408,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_control_gq
-  - id: sv_control_gq
-    type:
-      - 'null'
-      - int
-    doc: "Minimum genotype quality score threshold for\n                        parents/unaffecteds/controls
-      when filtering\n                        structural variants. Defaults to the
-      same value as\n                        --sv_gq but you may wish to set this
-      to a lower\n                        value if, for example, you require less
-      evidence\n                        from controls/unaffected in order to filter
-      a\n                        variant or from parental genotype calls when\n  \
-      \                      confirming a potential de novo variant."
-    inputBinding:
-      position: 101
-      prefix: -sv_con_gq
   - id: sv_control_het_ab
     type:
       - 'null'
@@ -2159,22 +1424,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_control_het_ab
-  - id: sv_control_het_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for heterozygous\n                     \
-      \   genotypes for structural variants. Heterozygous\n                      \
-      \  sample genotype calls with a ratio of the\n                        reads
-      supporting the alternate allele vs total\n                        supporting
-      reads depth lower than this threshold\n                        will be treated
-      as no-calls. Defaults to the same\n                        as --sv_het_ab but
-      you may wish to set this to a\n                        lower value if, for example,
-      you require less\n                        evidence from controls/unaffected
-      in order to\n                        filter a variant."
-    inputBinding:
-      position: 101
-      prefix: -sv_con_het_ab
   - id: sv_control_hom_ab
     type:
       - 'null'
@@ -2191,22 +1440,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_control_hom_ab
-  - id: sv_control_hom_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for homozygous\n                       \
-      \ genotypes for structural variants. Homozygous\n                        sample
-      genotype calls with a ratio of the\n                        reads supporting
-      the alternate allele vs total\n                        supporting reads depth
-      lower than this threshold\n                        will be treated as no-calls.
-      Defaults to the same\n                        as --sv_hom_ab but you may wish
-      to set this to a\n                        lower value if, for example, you require
-      less\n                        evidence from controls/unaffected in order to\n\
-      \                        filter a variant."
-    inputBinding:
-      position: 101
-      prefix: -sv_con_hom_ab
   - id: sv_control_max_dp
     type:
       - 'null'
@@ -2217,16 +1450,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_control_max_dp
-  - id: sv_control_max_dp
-    type:
-      - 'null'
-      - int
-    doc: "Maximum supporting read threshold for\n                        parents/unaffecteds/controls
-      when filtering\n                        structural variants. Defaults to the
-      same value as\n                        --sv_max_dp."
-    inputBinding:
-      position: 101
-      prefix: -sv_con_max_dp
   - id: sv_control_max_ref_ab
     type:
       - 'null'
@@ -2240,19 +1463,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_control_max_ref_ab
-  - id: sv_control_max_ref_ab
-    type:
-      - 'null'
-      - float
-    doc: "Maximum genotype allele balance for\n                        parents/unaffecteds/controls
-      with reference (0/0)\n                        genotypes when filtering structural
-      variants. If\n                        you wish to count/exclude variants where\n\
-      \                        controls/unaffecteds are called as homozygous\n   \
-      \                     reference but still have a low proportion of ALT\n   \
-      \                     alleles specify a suitable cutoff here."
-    inputBinding:
-      position: 101
-      prefix: -sv_con_max_ref_ab
   - id: sv_dp
     type:
       - 'null'
@@ -2264,17 +1474,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_dp
-  - id: sv_dp
-    type:
-      - 'null'
-      - int
-    doc: "Minimum genotype 'depth' threshold for structural\n                    \
-      \    variants. Sample genotype calls with fewer than\n                     \
-      \   this nunmber of supporting reads will be treated\n                     \
-      \   as no-calls. Default = 0."
-    inputBinding:
-      position: 101
-      prefix: -sv_dp
   - id: sv_gq
     type:
       - 'null'
@@ -2286,17 +1485,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_gq
-  - id: sv_gq
-    type:
-      - 'null'
-      - int
-    doc: "Minimum genotype quality score threshold for\n                        structural
-      variants. Sample genotype calls with a\n                        score lower
-      than this threshold will be treated as\n                        no-calls. Default
-      = 20."
-    inputBinding:
-      position: 101
-      prefix: -sv_gq
   - id: sv_het_ab
     type:
       - 'null'
@@ -2310,19 +1498,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_het_ab
-  - id: sv_het_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for heterozygous\n                     \
-      \   genotypes for structural variants. Heterozygous\n                      \
-      \  sample genotype calls with a ratio of reads\n                        supporting
-      the alternate allele vs total\n                        supporting reads lower
-      than this threshold will\n                        be treated as no-calls. Default
-      = 0."
-    inputBinding:
-      position: 101
-      prefix: -sv_het_ab
   - id: sv_hom_ab
     type:
       - 'null'
@@ -2336,19 +1511,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_hom_ab
-  - id: sv_hom_ab
-    type:
-      - 'null'
-      - float
-    doc: "Minimum genotype allele balance for homozygous\n                       \
-      \ genotypes for structural variants. Homozygous\n                        sample
-      genotype calls with a ratio of reads\n                        supporting the
-      alternate allele vs total\n                        supporting reads lower than
-      this threshold will\n                        be treated as no-calls. Default
-      = 0."
-    inputBinding:
-      position: 101
-      prefix: -sv_hom_ab
   - id: sv_max_dp
     type:
       - 'null'
@@ -2360,17 +1522,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sv_max_dp
-  - id: sv_max_dp
-    type:
-      - 'null'
-      - int
-    doc: "Maximum genotype 'depth' threshold for structural\n                    \
-      \    variants. Sample genotype calls with more than\n                      \
-      \  this nunmber of supporting reads will be treated\n                      \
-      \  as no-calls. Default = 0 (i.e. not used)."
-    inputBinding:
-      position: 101
-      prefix: -sv_max_dp
   - id: var_types
     type:
       - 'null'
@@ -2419,27 +1570,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf_filter
-      itemSeparator: ','
-  - id: vcf_filter
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "VCF file(s) and name(s) to use in INFO fields\n                        for
-      frequency annotation and/or filtering. Each\n                        file and
-      its associated annotation ID should be\n                        given in pairs
-      separated with commas. INFO fields\n                        will be added to
-      your output for the AN and AF\n                        fields with the field
-      names of VASE_<ID>_AN and\n                        VASE_<ID>_AF. If --freq or
-      --min_freq arguments\n                        are set then matching variants
-      in your input will\n                        be filtered using AF values found
-      in these files.\n\n                        You may also add additonal INFO fields
-      to extract\n                        and annotate your matching variants with
-      by\n                        including additional comma-separated fields after\n\
-      \                        the ID."
-    inputBinding:
-      position: 101
-      prefix: -vcf_filter
       itemSeparator: ','
   - id: vep_af
     type:

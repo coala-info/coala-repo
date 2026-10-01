@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - var
-  - pubs
+  - varpubs
   - update-cache
 label: varpubs_update-cache
 doc: "UpdateCacheArgs ['args']: Arguments for updating the cache.\n\nTool homepage:

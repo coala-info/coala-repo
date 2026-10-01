@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - monophylizer.pl
 label: perl-bio-monophylizer_monophylizer.pl
 doc: "A tool to analyze monophyly in phylogenetic trees, supporting various formats

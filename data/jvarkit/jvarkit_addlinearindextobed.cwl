@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: addlinearindextobed
+baseCommand:
+  - jvarkit
+  - addlinearindextobed
 label: jvarkit_addlinearindextobed
 doc: "Add linear index to BED file\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

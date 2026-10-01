@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - bufet.py
 label: bufet_bufet.py
 doc: "Run BUFET analysis\n\nTool homepage: https://github.com/diwis/BUFET/"

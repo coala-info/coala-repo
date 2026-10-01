@@ -63,7 +63,7 @@ inputs:
     doc: output directory
     inputBinding:
       position: 103
-      prefix: --output_directory
+      prefix: -d
   - id: report_file
     type:
       - 'null'

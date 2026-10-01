@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bam2raster
+baseCommand:
+  - jvarkit
+  - bam2raster
 label: jvarkit_bam2raster
 doc: "Create raster images from BAM files.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

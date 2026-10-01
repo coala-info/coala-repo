@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamcmpcoverage
+baseCommand:
+  - jvarkit
+  - bamcmpcoverage
 label: jvarkit_bamcmpcoverage
 doc: "Calculate coverage statistics for BAM files.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

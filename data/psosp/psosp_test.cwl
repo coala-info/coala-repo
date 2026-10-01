@@ -16,7 +16,7 @@ inputs:
     doc: CheckV database directory
     inputBinding:
       position: 102
-      prefix: --checkv_db
+      prefix: -db
   - id: host_faa
     type: File
     doc: Host protein FASTA file (FAA)
@@ -44,7 +44,7 @@ inputs:
     doc: Virus FASTA file
     inputBinding:
       position: 102
-      prefix: --virus_fasta
+      prefix: -vf
   - id: working_dir
     type:
       - 'null'
@@ -52,7 +52,7 @@ inputs:
     doc: Working directory
     inputBinding:
       position: 102
-      prefix: --working_dir
+      prefix: -wd
 outputs:
   - id: stdout
     type: stdout

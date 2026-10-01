@@ -337,14 +337,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -reference_file
-  - id: reference_file
-    type: File
-    doc: FASTA file that contains the input reference sequences (full genomes, 
-      16S rRNA genes, transcripts, proteins...) or '-' to read them from the 
-      standard input.
-    inputBinding:
-      position: 101
-      prefix: -genome_file
   - id: shared_perc
     type:
       - 'null'

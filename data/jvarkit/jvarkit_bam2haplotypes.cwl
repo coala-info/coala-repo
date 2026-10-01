@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jvarkit_bam2haplotypes
+baseCommand:
+  - jvarkit
+  - bam2haplotypes
 label: jvarkit_bam2haplotypes
 doc: "Create haplotypes from BAM files based on variants in a VCF file.\n\nTool homepage:
   https://github.com/lindenb/jvarkit"

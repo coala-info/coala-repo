@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - MethylExtract.pl
 label: methylextract_MethylExtract.pl
 doc: "MethylExtract is a tool for cytosine methylation profiling and SNV calling from

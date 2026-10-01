@@ -151,14 +151,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -lcase_masking
-  - id: lcase_masking
-    type:
-      - 'null'
-      - boolean
-    doc: Use lower case filtering in query and subject sequence(s)?
-    inputBinding:
-      position: 101
-      prefix: -lcase_masking
   - id: line_length
     type:
       - 'null'

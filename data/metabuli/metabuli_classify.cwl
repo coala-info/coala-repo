@@ -22,7 +22,7 @@ inputs:
     type: string
     doc: job ID
     inputBinding:
-      position: 3
+      position: 4
   - id: accession_level
     type:
       - 'null'
@@ -178,12 +178,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --validate-input
+  - id: output_directory_path
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 3
 outputs:
   - id: output_directory
     type: Directory
     doc: output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_directory_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metabuli:1.1.1--pl5321h0bb26bb_0

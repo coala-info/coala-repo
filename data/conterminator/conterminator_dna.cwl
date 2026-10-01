@@ -20,7 +20,7 @@ inputs:
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 3
+      position: 4
   - id: add_backtrace
     type:
       - 'null'
@@ -453,12 +453,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --wrapped-scoring
+  - id: result_path
+    type: string
+    doc: Output result file
+    inputBinding:
+      position: 3
 outputs:
   - id: result
     type: File
     doc: Output result file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.result_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/conterminator:1.c74b5--h9cf7dee_0

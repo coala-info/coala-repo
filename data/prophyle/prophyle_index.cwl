@@ -26,7 +26,7 @@ inputs:
     doc: advanced configuration (a JSON dictionary)
     inputBinding:
       position: 103
-      prefix: --advanced-config
+      prefix: -c
   - id: autocomplete_tree
     type:
       - 'null'

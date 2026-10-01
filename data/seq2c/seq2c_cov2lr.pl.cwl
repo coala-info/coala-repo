@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - cov2lr.pl
 label: seq2c_cov2lr.pl
 doc: "The cov2lr.pl program will convert a coverage file to copy number profile.\n\

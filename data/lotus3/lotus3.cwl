@@ -358,7 +358,7 @@ inputs:
     doc: SDM option file, defaults to "configs/sdm_miSeq.txt" in current dir.
     inputBinding:
       position: 101
-      prefix: -s|sdmopt
+      prefix: -s
   - id: sintax_thr
     type:
       - 'null'

@@ -790,7 +790,7 @@ inputs:
       machines)
     inputBinding:
       position: 101
-      prefix: -j
+      prefix: --j
   - id: offset_range_pixels
     type:
       - 'null'

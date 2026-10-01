@@ -13,7 +13,7 @@ inputs:
     doc: convert an SBT to use a different back end.
     inputBinding:
       position: 101
-      prefix: sourmash_storage_convert
+      prefix: convert
 outputs:
   - id: stdout
     type: stdout

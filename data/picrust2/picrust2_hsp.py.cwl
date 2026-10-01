@@ -28,7 +28,7 @@ inputs:
     doc: Path to the functional database.
     inputBinding:
       position: 101
-      prefix: --database
+      prefix: -db
   - id: edge_exponent
     type:
       - 'null'
@@ -36,7 +36,7 @@ inputs:
     doc: Exponent for edge weighting in the phylogenetic tree.
     inputBinding:
       position: 101
-      prefix: --edge_exponent
+      prefix: -e
   - id: marker_type
     type:
       - 'null'
@@ -78,7 +78,7 @@ inputs:
     doc: Number of parallel processes to use.
     inputBinding:
       position: 101
-      prefix: --processes
+      prefix: -p
   - id: reference
     type:
       - 'null'
@@ -88,7 +88,7 @@ inputs:
       - .fai
     inputBinding:
       position: 101
-      prefix: --reference
+      prefix: -r
   - id: seed
     type:
       - 'null'

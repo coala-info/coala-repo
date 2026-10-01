@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python3
-  - transit.py
+  - transit
   - anova
 label: transit_anova
 doc: "Performs ANOVA analysis on combined wig files based on samples metadata and

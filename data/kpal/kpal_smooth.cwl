@@ -53,7 +53,7 @@ inputs:
     doc: summary function for dynamic smoothing
     inputBinding:
       position: 103
-      prefix: --summary
+      prefix: -s
   - id: threshold
     type:
       - 'null'

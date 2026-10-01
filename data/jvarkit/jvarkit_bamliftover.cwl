@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamliftover
+baseCommand:
+  - jvarkit
+  - bamliftover
 label: jvarkit_bamliftover
 doc: "LiftOver BAM/SAM/CRAM files to a new reference genome.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

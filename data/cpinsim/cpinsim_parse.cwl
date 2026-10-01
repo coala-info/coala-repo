@@ -15,7 +15,7 @@ inputs:
     doc: Files containing the annotated allosteric effects.
     inputBinding:
       position: 101
-      prefix: --allosteric_effects ALLOSTERIC_EFFECTS
+      prefix: --allosteric_effects
   - id: competitions
     type:
       - 'null'

@@ -83,7 +83,7 @@ inputs:
       option)"
     inputBinding:
       position: 101
-      prefix: --method
+      prefix: -m
   - id: min_lhw
     type:
       - 'null'
@@ -177,7 +177,7 @@ inputs:
     doc: "Taxonomic code: BAC(teriological), BOT(anical),\nZOO(logical), VIR(ological)"
     inputBinding:
       position: 101
-      prefix: --taxonomic_code
+      prefix: -x
   - id: taxonomy
     type: File
     doc: Reference taxonomy file.

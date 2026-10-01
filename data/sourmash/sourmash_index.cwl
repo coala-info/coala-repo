@@ -108,7 +108,7 @@ inputs:
     doc: do not choose hydrophobic-polar-encoded amino acid signatures
     inputBinding:
       position: 103
-      prefix: --no-hp, --no-hydrophobic-polar
+      prefix: --no-hp
   - id: no_nucleotide
     type:
       - 'null'
@@ -116,7 +116,7 @@ inputs:
     doc: do not choose a nucleotide signature
     inputBinding:
       position: 103
-      prefix: --no-dna, --no-rna, --no-nucleotide
+      prefix: --no-dna
   - id: no_protein
     type:
       - 'null'
@@ -132,7 +132,7 @@ inputs:
     doc: do not choose skipmer (m1n3) signatures
     inputBinding:
       position: 103
-      prefix: --no-skipm1n3, --no-skipmer-m1n3
+      prefix: --no-skipm1n3
   - id: no_skipmer_m2n3
     type:
       - 'null'
@@ -140,7 +140,7 @@ inputs:
     doc: do not choose skipmer (m2n3) signatures
     inputBinding:
       position: 103
-      prefix: --no-skipm2n3, --no-skipmer-m2n3
+      prefix: --no-skipm2n3
   - id: nucleotide
     type:
       - 'null'
@@ -148,7 +148,7 @@ inputs:
     doc: 'choose a nucleotide signature (default: True)'
     inputBinding:
       position: 103
-      prefix: --dna, --rna, --nucleotide
+      prefix: --dna
   - id: picklist
     type:
       - 'null'
@@ -196,7 +196,7 @@ inputs:
     doc: choose skipmer (m1n3) signatures
     inputBinding:
       position: 103
-      prefix: --skipm1n3, --skipmer-m1n3
+      prefix: --skipm1n3
   - id: skipmer_m2n3
     type:
       - 'null'
@@ -204,7 +204,7 @@ inputs:
     doc: choose skipmer (m2n3) signatures
     inputBinding:
       position: 103
-      prefix: --skipm2n3, --skipmer-m2n3
+      prefix: --skipm2n3
   - id: sparseness
     type:
       - 'null'

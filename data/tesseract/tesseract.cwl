@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ""
+baseCommand: tesseract
 label: tesseract
 doc: Tesseract Open Source OCR Engine
 inputs:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jvarkit_bam2xml
+baseCommand:
+  - jvarkit
+  - bam2xml
 label: jvarkit_bam2xml
 doc: "Convert BAM to XML\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

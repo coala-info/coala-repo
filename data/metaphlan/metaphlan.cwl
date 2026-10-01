@@ -30,7 +30,7 @@ inputs:
       present in the sample (threshold at 1.0 if not differently specified with --pres_th'
     inputBinding:
       position: 102
-      prefix: --analysis_type
+      prefix: -t
   - id: avoid_disqm
     type:
       - 'null'

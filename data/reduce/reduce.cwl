@@ -76,7 +76,7 @@ inputs:
     doc: File to search for het info
     inputBinding:
       position: 103
-      prefix: -DB "filename"
+      prefix: -DB
   - id: density
     type:
       - 'null'
@@ -108,7 +108,7 @@ inputs:
     doc: If given, file specifies orientations for adjustable groups
     inputBinding:
       position: 103
-      prefix: -FIX "filename"
+      prefix: -FIX
   - id: flip
     type:
       - 'null'
@@ -420,7 +420,7 @@ inputs:
     doc: Assign chainID based on segment identifier field
     inputBinding:
       position: 103
-      prefix: -SEGIDmap "seg,c..."
+      prefix: -SEGIDmap
   - id: showscore
     type:
       - 'null'

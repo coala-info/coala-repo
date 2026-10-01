@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -0-based
-  - id: _based
+  - id: opt_1_based
     type:
       - 'null'
       - boolean

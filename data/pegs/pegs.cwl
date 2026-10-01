@@ -122,7 +122,7 @@ inputs:
     doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: -o
   - id: xlsx_path
     type:
       - 'null'
@@ -130,7 +130,7 @@ inputs:
     doc: Output or path parameter `xlsx_path`
     inputBinding:
       position: 104
-      prefix: --xlsx
+      prefix: -x
 outputs:
   - id: output_directory
     type:

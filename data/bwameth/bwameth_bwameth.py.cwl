@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - bwameth.py
 label: bwameth_bwameth.py
 doc: "map bisulfite converted reads to an insilico converted genome using bwa mem.\n\

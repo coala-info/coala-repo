@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - Rscript
-  - batch_correction_docker_wrapper.R
+  - /files/batch_correction/batch_correction_docker_wrapper.R
 label: batch_brb_batch_correction_all_loess_wrapper.r
 doc: "Wrapper script for batch correction, with options to use LOESS-based methods.\n\
   \nTool homepage: https://github.com/erin-r-butterfield/batch_brb"

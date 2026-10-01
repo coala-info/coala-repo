@@ -144,14 +144,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --hdr_pad
-  - id: header_pad
-    type:
-      - 'null'
-      - int
-    doc: Pad NetCDF output header with nbr bytes
-    inputBinding:
-      position: 103
-      prefix: --header_pad
   - id: ignore_time_bounds
     type:
       - 'null'

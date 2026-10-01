@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bam2sql
+baseCommand:
+  - jvarkit
+  - bam2sql
 label: jvarkit_bam2sql
 doc: "Convert BAM files to SQL\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

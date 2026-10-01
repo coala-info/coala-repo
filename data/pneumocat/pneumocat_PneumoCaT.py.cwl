@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - PneumoCaT.py
 label: pneumocat_PneumoCaT.py
 doc: "PneumoCaT.py\n\nTool homepage: https://github.com/phe-bioinformatics/pneumocat/archive/v1.1.tar.gz"

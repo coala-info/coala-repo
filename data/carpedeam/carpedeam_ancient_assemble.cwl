@@ -17,7 +17,7 @@ inputs:
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 2
+      position: 3
   - id: add_backtrace
     type:
       - 'null'
@@ -610,12 +610,17 @@ inputs:
     inputBinding:
       position: 103
       prefix: --zdrop
+  - id: fasta_file
+    type: string
+    doc: Output FASTA file
+    inputBinding:
+      position: 2
 outputs:
   - id: output_fasta_file
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.fasta_file)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carpedeam:1.0.1--hd6d6fdc_0

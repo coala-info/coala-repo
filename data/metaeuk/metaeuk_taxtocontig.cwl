@@ -30,7 +30,7 @@ inputs:
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 5
+      position: 6
   - id: add_backtrace
     type:
       - 'null'
@@ -926,12 +926,17 @@ inputs:
     inputBinding:
       position: 106
       prefix: --zdrop
+  - id: tax_result_path
+    type: string
+    doc: Output tax result file
+    inputBinding:
+      position: 5
 outputs:
   - id: tax_result
     type: File
     doc: Output tax result file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.tax_result_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

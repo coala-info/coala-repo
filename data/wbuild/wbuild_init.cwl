@@ -5,15 +5,7 @@ baseCommand:
   - init
 label: wbuild_init
 doc: "Initialize the repository with wbuild.\n\nTool homepage: https://github.com/gagneurlab/wBuild"
-inputs:
-  - id: prepare_wbuild
-    type:
-      - 'null'
-      - boolean
-    doc: This will prepare wBuild in the current project
-    inputBinding:
-      position: 101
-      prefix: --prepare-wbuild
+inputs: []
 outputs:
   - id: stdout
     type: stdout

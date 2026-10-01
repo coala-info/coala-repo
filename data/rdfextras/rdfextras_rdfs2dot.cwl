@@ -59,14 +59,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-attributes-as-nodes
-  - id: no_attributes_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent attributes as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-attributes-as-nodes
   - id: no_blank_nodes
     type:
       - 'null'
@@ -99,14 +91,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-blank-nodes-as-links
-  - id: no_blank_nodes_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent blank nodes as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-blank-nodes-as-nodes
   - id: no_blank_nodes_as_nodes
     type:
       - 'null'
@@ -155,14 +139,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-classes-as-nodes
-  - id: no_classes_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent classes as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-classes-as-nodes
   - id: no_comments
     type:
       - 'null'
@@ -203,14 +179,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-comments-as-nodes
-  - id: no_comments_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent comments as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-comments-as-nodes
   - id: no_edges
     type:
       - 'null'
@@ -243,14 +211,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-edges-as-links
-  - id: no_edges_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent edges as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-edges-as-nodes
   - id: no_edges_as_nodes
     type:
       - 'null'
@@ -307,14 +267,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-links-as-nodes
-  - id: no_links_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent links as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-links-as-nodes
   - id: no_literals
     type:
       - 'null'
@@ -347,14 +299,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-literals-as-links
-  - id: no_literals_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent literals as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-literals-as-nodes
   - id: no_literals_as_nodes
     type:
       - 'null'
@@ -411,14 +355,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-nodes-as-nodes
-  - id: no_nodes_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent nodes as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-nodes-as-nodes
   - id: no_properties
     type:
       - 'null'
@@ -435,14 +371,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-properties-as-attributes
-  - id: no_properties_as_edges
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent properties as edges
-    inputBinding:
-      position: 102
-      prefix: --no-properties-as-edges
   - id: no_properties_as_edges
     type:
       - 'null'
@@ -499,14 +427,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-types-as-links
-  - id: no_types_as_nodes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not represent types as nodes
-    inputBinding:
-      position: 102
-      prefix: --no-types-as-nodes
   - id: no_types_as_nodes
     type:
       - 'null'

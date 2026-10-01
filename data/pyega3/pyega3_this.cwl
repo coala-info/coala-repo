@@ -18,14 +18,14 @@ inputs:
       - File
     inputBinding:
       position: 102
-      prefix: --config-file
+      prefix: -cf
   - id: connections
     type:
       - 'null'
       - int
     inputBinding:
       position: 102
-      prefix: --connections
+      prefix: -c
   - id: debug
     type:
       - 'null'
@@ -46,14 +46,14 @@ inputs:
       - int
     inputBinding:
       position: 102
-      prefix: --max-slice-size
+      prefix: -ms
   - id: server_file
     type:
       - 'null'
       - File
     inputBinding:
       position: 102
-      prefix: --server-file
+      prefix: -sf
   - id: test_mode
     type:
       - 'null'

@@ -21,7 +21,7 @@ inputs:
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 3
+      position: 4
   - id: add_backtrace
     type:
       - 'null'
@@ -965,12 +965,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --zdrop
+  - id: output
+    type: string
+    doc: Output file in TSV format
+    inputBinding:
+      position: 3
 outputs:
   - id: output_tsv
     type: File
     doc: Output file in TSV format
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spacedust:2.e56c505--hd6d6fdc_0

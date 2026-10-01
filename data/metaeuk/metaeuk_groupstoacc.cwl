@@ -38,12 +38,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: -v
+  - id: pred_to_call_info_tsv
+    type: string
+    doc: Output prediction to call info TSV file
+    inputBinding:
+      position: 4
 outputs:
   - id: predToCallInfoTSV
     type: File
     doc: Output prediction to call info TSV file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.pred_to_call_info_tsv)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

@@ -93,7 +93,7 @@ inputs:
     doc: Treat source trees as rooted.
     inputBinding:
       position: 102
-      prefix: --force-rooted, --rooted
+      prefix: --force-rooted
   - id: force_unrooted
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: Treat source trees as unrooted.
     inputBinding:
       position: 102
-      prefix: --force-unrooted, --unrooted
+      prefix: --force-unrooted
   - id: ignore_missing_support
     type:
       - 'null'
@@ -119,7 +119,7 @@ inputs:
       if it is known).
     inputBinding:
       position: 102
-      prefix: --input-format, --source-format
+      prefix: --input-format
   - id: labels
     type:
       - 'null'
@@ -162,8 +162,7 @@ inputs:
       specified.
     inputBinding:
       position: 102
-      prefix: --min-clade-freq, --min-freq, --min-split-freq, 
-        --min-consensus-freq
+      prefix: --min-clade-freq
   - id: multiprocessing
     type:
       - 'null'
@@ -183,7 +182,7 @@ inputs:
       and execution details.
     inputBinding:
       position: 102
-      prefix: --no-analysis-metainformation, --no-meta-comments
+      prefix: --no-analysis-metainformation
   - id: no_taxa_block
     type:
       - 'null'
@@ -289,7 +288,7 @@ inputs:
       is: 'mean-length'."
     inputBinding:
       position: 102
-      prefix: --set-edges, --edges
+      prefix: --set-edges
   - id: set_outgroup
     type:
       - 'null'
@@ -307,7 +306,7 @@ inputs:
       (distances from tips).
     inputBinding:
       position: 102
-      prefix: --summarize-node-ages, --ultrametric, --node-ages
+      prefix: --summarize-node-ages
   - id: summary_target
     type:
       - 'null'
@@ -333,7 +332,7 @@ inputs:
       statistcs, etc.
     inputBinding:
       position: 102
-      prefix: --suppress-annotations, --no-annotations
+      prefix: --suppress-annotations
   - id: target_tree_filepath
     type:
       - 'null'
@@ -363,7 +362,7 @@ inputs:
       issues.
     inputBinding:
       position: 102
-      prefix: --taxon-name-filepath, --taxon-names-filepath
+      prefix: --taxon-name-filepath
   - id: tip_ages
     type:
       - 'null'
@@ -373,7 +372,7 @@ inputs:
       taxon omitted from the data, an age of 0.0 will be assumed.
     inputBinding:
       position: 102
-      prefix: --tip-ages, --tip-ages-filepath
+      prefix: --tip-ages
   - id: tip_ages_format
     type:
       - 'null'
@@ -399,8 +398,7 @@ inputs:
       '0' to disable validation)."
     inputBinding:
       position: 102
-      prefix: --ultrametricity-precision, --edge-weight-epsilon, 
-        --branch-length-epsilon
+      prefix: --ultrametricity-precision
   - id: weighted_trees
     type:
       - 'null'

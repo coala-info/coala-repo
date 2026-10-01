@@ -20,7 +20,7 @@ inputs:
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 3
+      position: 4
   - id: add_backtrace
     type:
       - 'null'
@@ -932,12 +932,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --zdrop
+  - id: called_exons_db_path
+    type: string
+    doc: Output called exons database
+    inputBinding:
+      position: 3
 outputs:
   - id: called_exons_db
     type: Directory
     doc: Output called exons database
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.called_exons_db_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

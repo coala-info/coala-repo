@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
-  - cFLSeq.pl
+  - JCcirc.pl
 label: jccirc_JCcirc.pl
 doc: "CIRCSeq (circRNA sequence)\n\nTool homepage: https://github.com/cbbzhang/JCcirc"
 inputs:

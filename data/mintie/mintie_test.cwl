@@ -113,7 +113,7 @@ inputs:
     doc: Number of lines to display in the log.
     inputBinding:
       position: 108
-      prefix: --lines
+      prefix: -n
   - id: memory
     type:
       - 'null'

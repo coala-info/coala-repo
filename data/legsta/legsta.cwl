@@ -26,15 +26,15 @@ inputs:
     doc: SBT database folder (default '/usr/local/db').
     inputBinding:
       position: 102
-      prefix: --dbdir=s
+      prefix: --dbdir
   - id: debug
     type:
       - 'null'
-      - string
+      - boolean
     doc: Verbose debug output to stderr (default '0').
     inputBinding:
       position: 102
-      prefix: --debug+
+      prefix: --debug
   - id: noheader
     type:
       - 'null'

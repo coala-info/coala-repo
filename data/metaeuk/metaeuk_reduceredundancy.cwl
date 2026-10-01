@@ -45,17 +45,27 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: predictions_exons_db_path
+    type: string
+    doc: Output predictionsExonsDB
+    inputBinding:
+      position: 2
+  - id: pred_to_call_path
+    type: string
+    doc: Output predToCall
+    inputBinding:
+      position: 3
 outputs:
   - id: predictions_exons_db
     type: File
     doc: Output predictionsExonsDB
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.predictions_exons_db_path)'
   - id: pred_to_call
     type: File
     doc: Output predToCall
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.pred_to_call_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

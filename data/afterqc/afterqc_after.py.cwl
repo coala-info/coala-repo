@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - after.py
 label: afterqc_after.py
 doc: "Automatic Filtering, Trimming, Error Removing and Quality Control for Illumina

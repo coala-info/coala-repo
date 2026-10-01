@@ -12,7 +12,7 @@ inputs:
     doc: Turn on velvet's read tracking and amos file output.
     inputBinding:
       position: 101
-      prefix: --amosfile!
+      prefix: --amosfile
   - id: dir_final
     type:
       - 'null'
@@ -122,7 +122,7 @@ inputs:
     doc: The file section of the velveth command line.
     inputBinding:
       position: 101
-      prefix: --f|velvethfiles
+      prefix: --velvethfiles
   - id: verbose
     type:
       - 'null'
@@ -130,7 +130,7 @@ inputs:
     doc: Verbose logging, includes all velvet output in the logfile.
     inputBinding:
       position: 101
-      prefix: --verbose+
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

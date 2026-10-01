@@ -85,7 +85,7 @@ inputs:
     doc: special work-around options
     inputBinding:
       position: 101
-      prefix: --quirk [noStar]
+      prefix: --quirk
   - id: quirk
     type:
       - 'null'

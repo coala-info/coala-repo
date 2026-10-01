@@ -397,14 +397,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -genome
-  - id: genome
-    type:
-      - 'null'
-      - boolean
-    doc: Request genome data
-    inputBinding:
-      position: 101
-      prefix: -genome
   - id: genome_accession
     type:
       - 'null'

@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - PifCoSm.pl
 label: pifcosm_PifCoSm.pl
 doc: "PifCoSm (Phylogenetic Information for Community Systematics) is a tool for parsing

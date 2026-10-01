@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - peakzilla.py
 label: peakzilla_peakzilla.py
 doc: "Identify peaks from ChIP-seq data using a model-based approach.\n\nTool homepage:

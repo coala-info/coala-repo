@@ -28,14 +28,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --alignwidth
-  - id: alignwidth
-    type:
-      - 'null'
-      - int
-    doc: width of alignment in uchimealn output
-    inputBinding:
-      position: 101
-      prefix: --alignwidth
   - id: allpairs_global
     type:
       - 'null'
@@ -52,30 +44,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --alnout
-  - id: alnout
-    type:
-      - 'null'
-      - File
-    doc: filename for human-readable alignment output
-    inputBinding:
-      position: 101
-      prefix: --alnout
-  - id: alnout
-    type:
-      - 'null'
-      - File
-    doc: filename for human-readable alignment output
-    inputBinding:
-      position: 101
-      prefix: --alnout
-  - id: biomout
-    type:
-      - 'null'
-      - File
-    doc: filename for OTU table output in biom 1.0 format
-    inputBinding:
-      position: 101
-      prefix: --biomout
   - id: biomout
     type:
       - 'null'
@@ -116,14 +84,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --centroids
-  - id: chimeras
-    type:
-      - 'null'
-      - string
-    doc: output chimeric sequences to file
-    inputBinding:
-      position: 101
-      prefix: --chimeras
   - id: chimeras
     type:
       - 'null'
@@ -268,51 +228,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --db
-  - id: db
-    type:
-      - 'null'
-      - File
-    doc: database of sequences in correct orientation
-    inputBinding:
-      position: 101
-      prefix: --db
-  - id: db
-    type:
-      - 'null'
-      - File
-    doc: FASTA or UDB database (only FASTA for search_exact)
-    inputBinding:
-      position: 101
-      prefix: --db
-  - id: db
-    type:
-      - 'null'
-      - File
-    doc: taxonomic reference db in given FASTA or UDB file
-    inputBinding:
-      position: 101
-      prefix: --db
   - id: dbmask
     type:
       - 'null'
       - string
     doc: mask db seqs with dust, soft or no method
-    inputBinding:
-      position: 101
-      prefix: --dbmask
-  - id: dbmask
-    type:
-      - 'null'
-      - string
-    doc: mask db with dust, soft or no method
-    inputBinding:
-      position: 101
-      prefix: --dbmask
-  - id: dbmask
-    type:
-      - 'null'
-      - string
-    doc: mask db with dust, soft or no method
     inputBinding:
       position: 101
       prefix: --dbmask
@@ -428,70 +348,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - string
-    doc: output to specified FASTA file
-    inputBinding:
-      position: 101
-      prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - File
-    doc: FASTA output filename for oriented sequences
-    inputBinding:
-      position: 101
-      prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - File
-    doc: FASTA output filename for joined sequences
-    inputBinding:
-      position: 101
-      prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - File
-    doc: FASTA output filename for merged sequences
-    inputBinding:
-      position: 101
-      prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - File
-    doc: FASTA filename for fragments on forward strand
-    inputBinding:
-      position: 101
-      prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - File
-    doc: FASTA output filename
-    inputBinding:
-      position: 101
-      prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - File
-    doc: output subsampled sequences to FASTA file
-    inputBinding:
-      position: 101
-      prefix: --fastaout
-  - id: fastaout
-    type:
-      - 'null'
-      - File
-    doc: FASTA filename for passed sequences
-    inputBinding:
-      position: 101
-      prefix: --fastaout
   - id: fastaout_discarded
     type:
       - 'null'
@@ -500,35 +356,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastaout_discarded
-  - id: fastaout_discarded
-    type:
-      - 'null'
-      - File
-    doc: output non-subsampled sequences to FASTA file
-    inputBinding:
-      position: 101
-      prefix: --fastaout_discarded
-  - id: fastaout_discarded
-    type:
-      - 'null'
-      - File
-    doc: FASTA filename for discarded sequences
-    inputBinding:
-      position: 101
-      prefix: --fastaout_discarded
   - id: fastaout_discarded_rev
     type:
       - 'null'
       - File
     doc: FASTA filename for non-matching, reverse compl.
-    inputBinding:
-      position: 101
-      prefix: --fastaout_discarded_rev
-  - id: fastaout_discarded_rev
-    type:
-      - 'null'
-      - File
-    doc: FASTA filename for discarded reverse sequences
     inputBinding:
       position: 101
       prefix: --fastaout_discarded_rev
@@ -556,14 +388,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastaout_rev
-  - id: fastaout_rev
-    type:
-      - 'null'
-      - File
-    doc: FASTA filename for passed reverse sequences
-    inputBinding:
-      position: 101
-      prefix: --fastaout_rev
   - id: fastapairs
     type:
       - 'null'
@@ -588,78 +412,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq_ascii
-  - id: fastq_ascii
-    type:
-      - 'null'
-      - int
-    doc: FASTQ input quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_ascii
-  - id: fastq_ascii
-    type:
-      - 'null'
-      - int
-    doc: FASTQ input quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_ascii
-  - id: fastq_ascii
-    type:
-      - 'null'
-      - int
-    doc: FASTQ input quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_ascii
-  - id: fastq_ascii
-    type:
-      - 'null'
-      - int
-    doc: FASTQ input quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_ascii
-  - id: fastq_ascii
-    type:
-      - 'null'
-      - int
-    doc: FASTQ input quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_ascii
-  - id: fastq_ascii
-    type:
-      - 'null'
-      - int
-    doc: FASTQ input quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_ascii
-  - id: fastq_ascii
-    type:
-      - 'null'
-      - int
-    doc: FASTQ input quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_ascii
-  - id: fastq_asciiout
-    type:
-      - 'null'
-      - int
-    doc: FASTQ output quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_asciiout
-  - id: fastq_asciiout
-    type:
-      - 'null'
-      - int
-    doc: FASTQ output quality score ASCII base char
-    inputBinding:
-      position: 101
-      prefix: --fastq_asciiout
   - id: fastq_asciiout
     type:
       - 'null'
@@ -748,14 +500,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq_maxee
-  - id: fastq_maxee
-    type:
-      - 'null'
-      - float
-    doc: discard if expected error value is higher
-    inputBinding:
-      position: 101
-      prefix: --fastq_maxee
   - id: fastq_maxee_rate
     type:
       - 'null'
@@ -788,14 +532,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq_maxns
-  - id: fastq_maxns
-    type:
-      - 'null'
-      - int
-    doc: discard if number of N's is higher
-    inputBinding:
-      position: 101
-      prefix: --fastq_maxns
   - id: fastq_mergepairs
     type:
       - 'null'
@@ -809,14 +545,6 @@ inputs:
       - 'null'
       - int
     doc: minimum input read length after truncation
-    inputBinding:
-      position: 101
-      prefix: --fastq_minlen
-  - id: fastq_minlen
-    type:
-      - 'null'
-      - int
-    doc: discard if length of sequence is shorter
     inputBinding:
       position: 101
       prefix: --fastq_minlen
@@ -860,94 +588,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq_qmax
-  - id: fastq_qmax
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmax
-  - id: fastq_qmax
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmax
-  - id: fastq_qmax
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmax
-  - id: fastq_qmax
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmax
-  - id: fastq_qmax
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmax
-  - id: fastq_qmax
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmax
-  - id: fastq_qmax
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmax
-  - id: fastq_qmaxout
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ output
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmaxout
-  - id: fastq_qmaxout
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ output
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmaxout
-  - id: fastq_qmaxout
-    type:
-      - 'null'
-      - int
-    doc: fake quality score for FASTQ output
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmaxout
-  - id: fastq_qmaxout
-    type:
-      - 'null'
-      - int
-    doc: maximum base quality value for FASTQ output
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmaxout
   - id: fastq_qmaxout
     type:
       - 'null'
@@ -964,86 +604,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq_qmin
-  - id: fastq_qmin
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmin
-  - id: fastq_qmin
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmin
-  - id: fastq_qmin
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmin
-  - id: fastq_qmin
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmin
-  - id: fastq_qmin
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmin
-  - id: fastq_qmin
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmin
-  - id: fastq_qmin
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ input
-    inputBinding:
-      position: 101
-      prefix: --fastq_qmin
-  - id: fastq_qminout
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ output
-    inputBinding:
-      position: 101
-      prefix: --fastq_qminout
-  - id: fastq_qminout
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ output
-    inputBinding:
-      position: 101
-      prefix: --fastq_qminout
-  - id: fastq_qminout
-    type:
-      - 'null'
-      - int
-    doc: minimum base quality value for FASTQ output
-    inputBinding:
-      position: 101
-      prefix: --fastq_qminout
   - id: fastq_qminout
     type:
       - 'null'
@@ -1124,14 +684,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq_truncqual
-  - id: fastq_truncqual
-    type:
-      - 'null'
-      - int
-    doc: truncate to given minimum base quality
-    inputBinding:
-      position: 101
-      prefix: --fastq_truncqual
   - id: fastqout
     type:
       - 'null'
@@ -1140,99 +692,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - string
-    doc: output FASTQ file (for fastx_uniques)
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: FASTQ output filename for converted sequences
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: FASTQ output filename for converted sequences
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - string
-    doc: output to specified FASTQ file
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: FASTQ output filenamr for oriented sequences
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: FASTQ output filename for joined sequences
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: FASTQ output filename for merged sequences
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: FASTQ output filename
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: output subsampled sequences to FASTQ file
-    inputBinding:
-      position: 101
-      prefix: --fastqout
-  - id: fastqout
-    type:
-      - 'null'
-      - File
-    doc: FASTQ filename for passed sequences
-    inputBinding:
-      position: 101
-      prefix: --fastqout
   - id: fastqout_discarded
     type:
       - 'null'
       - File
     doc: output non-subsampled sequences to FASTQ file
-    inputBinding:
-      position: 101
-      prefix: --fastqout_discarded
-  - id: fastqout_discarded
-    type:
-      - 'null'
-      - File
-    doc: FASTQ filename for discarded sequences
     inputBinding:
       position: 101
       prefix: --fastqout_discarded
@@ -1348,30 +812,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hardmask
-  - id: hardmask
-    type:
-      - 'null'
-      - boolean
-    doc: mask by replacing with N instead of lower case
-    inputBinding:
-      position: 101
-      prefix: --hardmask
-  - id: hardmask
-    type:
-      - 'null'
-      - boolean
-    doc: mask by replacing with N instead of lower case
-    inputBinding:
-      position: 101
-      prefix: --hardmask
-  - id: hardmask
-    type:
-      - 'null'
-      - boolean
-    doc: mask by replacing with N instead of lower case
-    inputBinding:
-      position: 101
-      prefix: --hardmask
   - id: id
     type:
       - 'null'
@@ -1380,22 +820,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --id
-  - id: id
-    type:
-      - 'null'
-      - float
-    doc: reject if identity lower
-    inputBinding:
-      position: 101
-      prefix: --id
-  - id: iddef
-    type:
-      - 'null'
-      - int
-    doc: id definition, 0-4=CD-HIT,all,int,MBL,BLAST
-    inputBinding:
-      position: 101
-      prefix: --iddef
   - id: iddef
     type:
       - 'null'
@@ -1444,14 +868,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --label_suffix
-  - id: label_suffix
-    type:
-      - 'null'
-      - string
-    doc: label to append to identifier in the output
-    inputBinding:
-      position: 101
-      prefix: --label_suffix
   - id: lca_cutoff
     type:
       - 'null'
@@ -1489,14 +905,6 @@ inputs:
       - 'null'
       - File
     doc: write messages, timing and memory info to file
-    inputBinding:
-      position: 101
-      prefix: --log
-  - id: log
-    type:
-      - 'null'
-      - string
-    doc: output file for fastq_stats statistics
     inputBinding:
       position: 101
       prefix: --log
@@ -1620,14 +1028,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --maxsize
-  - id: maxsize
-    type:
-      - 'null'
-      - int
-    doc: discard if abundance of sequence is above
-    inputBinding:
-      position: 101
-      prefix: --maxsize
   - id: maxsizeratio
     type:
       - 'null'
@@ -1732,22 +1132,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --minsize
-  - id: minsize
-    type:
-      - 'null'
-      - int
-    doc: minimum abundance for sortbysize
-    inputBinding:
-      position: 101
-      prefix: --minsize
-  - id: minsize
-    type:
-      - 'null'
-      - int
-    doc: discard if abundance of sequence is below
-    inputBinding:
-      position: 101
-      prefix: --minsize
   - id: minsizeratio
     type:
       - 'null'
@@ -1804,14 +1188,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mothur_shared_out
-  - id: mothur_shared_out
-    type:
-      - 'null'
-      - File
-    doc: filename for OTU table output in mothur format
-    inputBinding:
-      position: 101
-      prefix: --mothur_shared_out
   - id: msaout
     type:
       - 'null'
@@ -1844,27 +1220,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nonchimeras
-  - id: nonchimeras
-    type:
-      - 'null'
-      - File
-    doc: output non-chimeric sequences to file
-    inputBinding:
-      position: 101
-      prefix: --nonchimeras
   - id: notmatched
     type:
       - 'null'
       - string
     doc: output filename for undetermined sequences
-    inputBinding:
-      position: 101
-      prefix: --notmatched
-  - id: notmatched
-    type:
-      - 'null'
-      - File
-    doc: FASTA file for non-matching query sequences
     inputBinding:
       position: 101
       prefix: --notmatched
@@ -1892,51 +1252,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --otutabout
-  - id: otutabout
-    type:
-      - 'null'
-      - File
-    doc: filename for OTU table output in classic format
-    inputBinding:
-      position: 101
-      prefix: --otutabout
   - id: output
     type:
       - 'null'
       - string
     doc: output FASTA file (not for fastx_uniques)
-    inputBinding:
-      position: 101
-      prefix: --output
-  - id: output
-    type:
-      - 'null'
-      - string
-    doc: output file for fastq_eestats(2) statistics
-    inputBinding:
-      position: 101
-      prefix: --output
-  - id: output
-    type:
-      - 'null'
-      - string
-    doc: output to specified FASTA file
-    inputBinding:
-      position: 101
-      prefix: --output
-  - id: output
-    type:
-      - 'null'
-      - string
-    doc: output to specified FASTA file
-    inputBinding:
-      position: 101
-      prefix: --output
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: UDB or FASTA output file
     inputBinding:
       position: 101
       prefix: --output
@@ -1972,38 +1292,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --qmask
-  - id: qmask
-    type:
-      - 'null'
-      - string
-    doc: mask seqs with dust, soft or no method
-    inputBinding:
-      position: 101
-      prefix: --qmask
-  - id: qmask
-    type:
-      - 'null'
-      - string
-    doc: mask seqs with dust, soft or no method
-    inputBinding:
-      position: 101
-      prefix: --qmask
-  - id: qmask
-    type:
-      - 'null'
-      - string
-    doc: mask query with dust, soft or no method
-    inputBinding:
-      position: 101
-      prefix: --qmask
-  - id: qmask
-    type:
-      - 'null'
-      - string
-    doc: mask query with dust, soft or no method
-    inputBinding:
-      position: 101
-      prefix: --qmask
   - id: query_cov
     type:
       - 'null'
@@ -2028,22 +1316,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --randseed
-  - id: randseed
-    type:
-      - 'null'
-      - int
-    doc: seed for PRNG, zero to use random data source
-    inputBinding:
-      position: 101
-      prefix: --randseed
-  - id: randseed
-    type:
-      - 'null'
-      - int
-    doc: seed for PRNG, zero to use random data source
-    inputBinding:
-      position: 101
-      prefix: --randseed
   - id: relabel
     type:
       - 'null'
@@ -2052,102 +1324,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --relabel
-  - id: relabel
-    type:
-      - 'null'
-      - string
-    doc: relabel nonchimeras with this prefix string
-    inputBinding:
-      position: 101
-      prefix: --relabel
-  - id: relabel
-    type:
-      - 'null'
-      - string
-    doc: relabel centroids with this prefix string
-    inputBinding:
-      position: 101
-      prefix: --relabel
-  - id: relabel
-    type:
-      - 'null'
-      - string
-    doc: relabel with this prefix string
-    inputBinding:
-      position: 101
-      prefix: --relabel
-  - id: relabel
-    type:
-      - 'null'
-      - string
-    doc: relabel sequences with this prefix string
-    inputBinding:
-      position: 101
-      prefix: --relabel
-  - id: relabel
-    type:
-      - 'null'
-      - string
-    doc: relabel sequences with this prefix string
-    inputBinding:
-      position: 101
-      prefix: --relabel
-  - id: relabel
-    type:
-      - 'null'
-      - string
-    doc: relabel filtered sequences with given prefix
-    inputBinding:
-      position: 101
-      prefix: --relabel
-  - id: relabel_keep
-    type:
-      - 'null'
-      - boolean
-    doc: keep the old label after the new when relabelling
-    inputBinding:
-      position: 101
-      prefix: --relabel_keep
-  - id: relabel_keep
-    type:
-      - 'null'
-      - boolean
-    doc: keep the old label after the new when relabelling
-    inputBinding:
-      position: 101
-      prefix: --relabel_keep
-  - id: relabel_keep
-    type:
-      - 'null'
-      - boolean
-    doc: keep the old label after the new when relabelling
-    inputBinding:
-      position: 101
-      prefix: --relabel_keep
-  - id: relabel_keep
-    type:
-      - 'null'
-      - boolean
-    doc: keep the old label after the new when relabelling
-    inputBinding:
-      position: 101
-      prefix: --relabel_keep
-  - id: relabel_keep
-    type:
-      - 'null'
-      - boolean
-    doc: keep the old label after the new when relabelling
-    inputBinding:
-      position: 101
-      prefix: --relabel_keep
-  - id: relabel_keep
-    type:
-      - 'null'
-      - boolean
-    doc: keep the old label after the new when relabelling
-    inputBinding:
-      position: 101
-      prefix: --relabel_keep
   - id: relabel_keep
     type:
       - 'null'
@@ -2164,102 +1340,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --relabel_md5
-  - id: relabel_md5
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with md5 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_md5
-  - id: relabel_md5
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with md5 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_md5
-  - id: relabel_md5
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with md5 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_md5
-  - id: relabel_md5
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with md5 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_md5
-  - id: relabel_md5
-    type:
-      - 'null'
-      - boolean
-    doc: relabel sequences with md5 digest
-    inputBinding:
-      position: 101
-      prefix: --relabel_md5
-  - id: relabel_md5
-    type:
-      - 'null'
-      - boolean
-    doc: relabel filtered sequences with md5 digest
-    inputBinding:
-      position: 101
-      prefix: --relabel_md5
-  - id: relabel_self
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with the sequence itself as label
-    inputBinding:
-      position: 101
-      prefix: --relabel_self
-  - id: relabel_self
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with the sequence itself as label
-    inputBinding:
-      position: 101
-      prefix: --relabel_self
-  - id: relabel_self
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with the sequence itself as label
-    inputBinding:
-      position: 101
-      prefix: --relabel_self
-  - id: relabel_self
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with the sequence itself as label
-    inputBinding:
-      position: 101
-      prefix: --relabel_self
-  - id: relabel_self
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with the sequence itself as label
-    inputBinding:
-      position: 101
-      prefix: --relabel_self
-  - id: relabel_self
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with the sequence itself as label
-    inputBinding:
-      position: 101
-      prefix: --relabel_self
   - id: relabel_self
     type:
       - 'null'
@@ -2273,54 +1353,6 @@ inputs:
       - 'null'
       - boolean
     doc: relabel with sha1 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_sha1
-  - id: relabel_sha1
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with sha1 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_sha1
-  - id: relabel_sha1
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with sha1 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_sha1
-  - id: relabel_sha1
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with sha1 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_sha1
-  - id: relabel_sha1
-    type:
-      - 'null'
-      - boolean
-    doc: relabel with sha1 digest of normalized sequence
-    inputBinding:
-      position: 101
-      prefix: --relabel_sha1
-  - id: relabel_sha1
-    type:
-      - 'null'
-      - boolean
-    doc: relabel sequences with sha1 digest
-    inputBinding:
-      position: 101
-      prefix: --relabel_sha1
-  - id: relabel_sha1
-    type:
-      - 'null'
-      - boolean
-    doc: relabel filtered sequences with sha1 digest
     inputBinding:
       position: 101
       prefix: --relabel_sha1
@@ -2337,22 +1369,6 @@ inputs:
       - 'null'
       - File
     doc: specify FASTQ file with reverse reads
-    inputBinding:
-      position: 101
-      prefix: --reverse
-  - id: reverse
-    type:
-      - 'null'
-      - File
-    doc: specify FASTQ file with reverse reads
-    inputBinding:
-      position: 101
-      prefix: --reverse
-  - id: reverse
-    type:
-      - 'null'
-      - File
-    doc: FASTQ file with other end of paired-end reads
     inputBinding:
       position: 101
       prefix: --reverse
@@ -2420,27 +1436,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --self
-  - id: self
-    type:
-      - 'null'
-      - boolean
-    doc: reject if labels identical
-    inputBinding:
-      position: 101
-      prefix: --self
   - id: selfid
     type:
       - 'null'
       - boolean
     doc: exclude identical sequences for --uchime_ref
-    inputBinding:
-      position: 101
-      prefix: --selfid
-  - id: selfid
-    type:
-      - 'null'
-      - boolean
-    doc: reject if sequences identical
     inputBinding:
       position: 101
       prefix: --selfid
@@ -2500,46 +1500,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sizein
-  - id: sizein
-    type:
-      - 'null'
-      - boolean
-    doc: propagate abundance annotation from input
-    inputBinding:
-      position: 101
-      prefix: --sizein
-  - id: sizein
-    type:
-      - 'null'
-      - boolean
-    doc: propagate abundance annotation from input
-    inputBinding:
-      position: 101
-      prefix: --sizein
-  - id: sizein
-    type:
-      - 'null'
-      - boolean
-    doc: propagate abundance annotation from input
-    inputBinding:
-      position: 101
-      prefix: --sizein
-  - id: sizein
-    type:
-      - 'null'
-      - boolean
-    doc: propagate abundance annotation from input
-    inputBinding:
-      position: 101
-      prefix: --sizein
-  - id: sizein
-    type:
-      - 'null'
-      - boolean
-    doc: consider abundance info from input, do not ignore
-    inputBinding:
-      position: 101
-      prefix: --sizein
   - id: sizeorder
     type:
       - 'null'
@@ -2548,62 +1508,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sizeorder
-  - id: sizeout
-    type:
-      - 'null'
-      - boolean
-    doc: include abundance information when relabelling
-    inputBinding:
-      position: 101
-      prefix: --sizeout
-  - id: sizeout
-    type:
-      - 'null'
-      - boolean
-    doc: include abundance information when relabelling
-    inputBinding:
-      position: 101
-      prefix: --sizeout
-  - id: sizeout
-    type:
-      - 'null'
-      - boolean
-    doc: write cluster abundances to centroid file
-    inputBinding:
-      position: 101
-      prefix: --sizeout
-  - id: sizeout
-    type:
-      - 'null'
-      - boolean
-    doc: write abundance annotation to output
-    inputBinding:
-      position: 101
-      prefix: --sizeout
-  - id: sizeout
-    type:
-      - 'null'
-      - boolean
-    doc: write abundance information to dbmatched file
-    inputBinding:
-      position: 101
-      prefix: --sizeout
-  - id: sizeout
-    type:
-      - 'null'
-      - boolean
-    doc: include abundance information when relabelling
-    inputBinding:
-      position: 101
-      prefix: --sizeout
-  - id: sizeout
-    type:
-      - 'null'
-      - boolean
-    doc: update abundance information in output
-    inputBinding:
-      position: 101
-      prefix: --sizeout
   - id: sizeout
     type:
       - 'null'
@@ -2644,51 +1548,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --strand
-  - id: strand
-    type:
-      - 'null'
-      - string
-    doc: dereplicate plus or both strands
-    inputBinding:
-      position: 101
-      prefix: --strand
-  - id: strand
-    type:
-      - 'null'
-      - string
-    doc: search plus or both strands
-    inputBinding:
-      position: 101
-      prefix: --strand
   - id: tabbedout
     type:
       - 'null'
       - File
     doc: output chimera info to tab-separated file
-    inputBinding:
-      position: 101
-      prefix: --tabbedout
-  - id: tabbedout
-    type:
-      - 'null'
-      - File
-    doc: write cluster info to tsv file for fastx_uniques
-    inputBinding:
-      position: 101
-      prefix: --tabbedout
-  - id: tabbedout
-    type:
-      - 'null'
-      - string
-    doc: output filename for result information
-    inputBinding:
-      position: 101
-      prefix: --tabbedout
-  - id: tabbedout
-    type:
-      - 'null'
-      - string
-    doc: write results to given tab-delimited file
     inputBinding:
       position: 101
       prefix: --tabbedout
@@ -2724,35 +1588,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --topn
-  - id: topn
-    type:
-      - 'null'
-      - int
-    doc: output just first n sequences
-    inputBinding:
-      position: 101
-      prefix: --topn
   - id: uc
     type:
       - 'null'
       - File
     doc: specify filename for UCLUST-like output
-    inputBinding:
-      position: 101
-      prefix: --uc
-  - id: uc
-    type:
-      - 'null'
-      - File
-    doc: filename for UCLUST-like dereplication output
-    inputBinding:
-      position: 101
-      prefix: --uc
-  - id: uc
-    type:
-      - 'null'
-      - File
-    doc: filename for UCLUST-like output
     inputBinding:
       position: 101
       prefix: --uc
@@ -2900,30 +1740,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wordlength
-  - id: wordlength
-    type:
-      - 'null'
-      - int
-    doc: length of words for database index 3-15
-    inputBinding:
-      position: 101
-      prefix: --wordlength
-  - id: wordlength
-    type:
-      - 'null'
-      - int
-    doc: length of words for database index 3-15
-    inputBinding:
-      position: 101
-      prefix: --wordlength
-  - id: xee
-    type:
-      - 'null'
-      - boolean
-    doc: remove expected errors (ee) info from output
-    inputBinding:
-      position: 101
-      prefix: --xee
   - id: xee
     type:
       - 'null'
@@ -2940,54 +1756,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xn
-  - id: xsize
-    type:
-      - 'null'
-      - boolean
-    doc: strip abundance information in output
-    inputBinding:
-      position: 101
-      prefix: --xsize
-  - id: xsize
-    type:
-      - 'null'
-      - boolean
-    doc: strip abundance information in output
-    inputBinding:
-      position: 101
-      prefix: --xsize
-  - id: xsize
-    type:
-      - 'null'
-      - boolean
-    doc: strip abundance information in output
-    inputBinding:
-      position: 101
-      prefix: --xsize
-  - id: xsize
-    type:
-      - 'null'
-      - boolean
-    doc: strip abundance information in derep output
-    inputBinding:
-      position: 101
-      prefix: --xsize
-  - id: xsize
-    type:
-      - 'null'
-      - boolean
-    doc: strip abundance information in output
-    inputBinding:
-      position: 101
-      prefix: --xsize
-  - id: xsize
-    type:
-      - 'null'
-      - boolean
-    doc: strip abundance information in output
-    inputBinding:
-      position: 101
-      prefix: --xsize
   - id: xsize
     type:
       - 'null'

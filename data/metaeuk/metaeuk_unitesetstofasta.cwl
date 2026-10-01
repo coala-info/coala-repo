@@ -95,12 +95,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --write-frag-coords
+  - id: united_exons_fasta_path
+    type: string
+    doc: unitedExonsFasta
+    inputBinding:
+      position: 4
 outputs:
   - id: united_exons_fasta
     type: File
     doc: unitedExonsFasta
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.united_exons_fasta_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

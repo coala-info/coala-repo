@@ -84,7 +84,7 @@ inputs:
       BWA.
     inputBinding:
       position: 102
-      prefix: --insert-header-string-or-file
+      prefix: -H
   - id: insert_size_distribution
     type:
       - 'null'
@@ -174,7 +174,7 @@ inputs:
       in XA in BWA.
     inputBinding:
       position: 102
-      prefix: --output-all-hits-XA
+      prefix: -h
   - id: output_directory
     type:
       - 'null'

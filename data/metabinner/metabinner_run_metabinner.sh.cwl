@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bash
   - run_metabinner.sh
 label: metabinner_run_metabinner.sh
 doc: "Run the MetaBinner pipeline\n\nTool homepage: https://github.com/ziyewang/MetaBinner"

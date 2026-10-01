@@ -24,14 +24,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: -c
-  - id: cs
-    type:
-      - 'null'
-      - boolean
-    doc: Output compressed RLD file.
-    inputBinding:
-      position: 103
-      prefix: -s
   - id: threads
     type:
       - 'null'

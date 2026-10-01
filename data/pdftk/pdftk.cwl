@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ""
+baseCommand: pdftk
 label: pdftk
 doc: A handy tool for manipulating PDF documents, including merging, splitting, 
   rotating, encrypting, and filling forms.

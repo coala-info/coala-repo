@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bammatrix
+baseCommand:
+  - jvarkit
+  - bammatrix
 label: jvarkit_bammatrix
 doc: "Create a matrix of read counts per region.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

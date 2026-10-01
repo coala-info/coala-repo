@@ -36,7 +36,7 @@ inputs:
     doc: Number of processes to use for parallel computation.
     inputBinding:
       position: 101
-      prefix: --processes
+      prefix: -p
   - id: reference_tree
     type:
       - 'null'

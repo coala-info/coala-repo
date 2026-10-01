@@ -1,8 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
-  - endorS.py
+  - endorspy
 label: endorspy
 doc: "endorS.py calculates percent on target (aka Endogenous DNA) from samtools flagstat
   files and print to screen. The percent on target reported will be different depending

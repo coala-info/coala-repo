@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ""
+baseCommand: pandoc
 label: pandoc
 doc: "Pandoc is a Haskell library for converting from one markup format to another,
   and a command-line tool that uses this library.\n\nTool homepage: https://github.com/jgm/pandoc"

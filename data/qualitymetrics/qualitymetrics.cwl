@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - Rscript
-  - qualitymetrics_wrapper.R
+  - /files/qualitymetrics/qualitymetrics_wrapper.R
 label: qualitymetrics
 doc: "Wrapper script for quality metrics calculation.\n\nTool homepage: https://github.com/SteinmetzLab/qualityMetrics"
 inputs:

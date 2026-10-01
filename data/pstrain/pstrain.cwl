@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python3
   - PStrain.py
 label: pstrain
 doc: "PStrain: profile strains in shotgun metagenomic sequencing reads.\n\nTool homepage:

@@ -582,7 +582,7 @@ inputs:
     doc: Verbose mode. Will output variant calling process.
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: -y
   - id: zero_based_coordinates
     type:
       - 'null'

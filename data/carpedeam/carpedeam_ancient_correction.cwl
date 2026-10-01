@@ -147,12 +147,17 @@ inputs:
     inputBinding:
       position: 103
       prefix: -v
+  - id: repr_seq_db_path
+    type: string
+    doc: Output representative sequence database
+    inputBinding:
+      position: 3
 outputs:
   - id: repr_seq_db
     type: File
     doc: Output representative sequence database
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.repr_seq_db_path)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carpedeam:1.0.1--hd6d6fdc_0

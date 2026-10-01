@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: backlocate
+baseCommand:
+  - jvarkit
+  - backlocate
 label: jvarkit_backlocate
 doc: "Backlocate sequences to genomic coordinates.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:

@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - maf2maf.pl
 label: vcf2maf_maf2maf.pl
 doc: "Converts MAF files to a VEP-annotated MAF.\n\nTool homepage: https://github.com/mskcc/vcf2maf"

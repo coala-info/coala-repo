@@ -82,15 +82,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dir-out
-  - id: dir_out
-    type:
-      - 'null'
-      - string
-    doc: path to output directory, defaults to "results-cerberus" in current 
-      directory.
-    inputBinding:
-      position: 101
-      prefix: --dir_out
   - id: download
     type:
       - 'null'

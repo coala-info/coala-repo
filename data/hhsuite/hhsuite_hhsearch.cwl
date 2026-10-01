@@ -21,7 +21,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -glob
-  - id: alignment_mode
+  - id: loc
     type:
       - 'null'
       - boolean
@@ -376,7 +376,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -notags
-  - id: neutralize_tags
+  - id: tags
     type:
       - 'null'
       - boolean

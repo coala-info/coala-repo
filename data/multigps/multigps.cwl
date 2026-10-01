@@ -185,7 +185,7 @@ inputs:
     doc: max. model update rounds
     inputBinding:
       position: 101
-      prefix: -r
+      prefix: --r
   - id: medianscale
     type:
       - 'null'
@@ -387,7 +387,7 @@ inputs:
     doc: Q-value minimum
     inputBinding:
       position: 101
-      prefix: -q
+      prefix: --q
   - id: regressionscale
     type:
       - 'null'

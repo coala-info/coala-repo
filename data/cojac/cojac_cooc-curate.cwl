@@ -119,7 +119,7 @@ inputs:
     doc: special work-around options
     inputBinding:
       position: 102
-      prefix: --quirk [noStar]
+      prefix: --quirk
   - id: url
     type:
       - 'null'

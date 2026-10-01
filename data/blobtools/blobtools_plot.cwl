@@ -119,14 +119,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --multiplot
-  - id: multiplot
-    type:
-      - 'null'
-      - boolean
-    doc: Multi-plot. Print blobplot for each (taxonomic) group separately
-    inputBinding:
-      position: 101
-      prefix: --multiplot
   - id: noblobs
     type:
       - 'null'

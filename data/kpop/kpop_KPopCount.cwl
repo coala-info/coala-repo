@@ -34,14 +34,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --k-mer-size
-  - id: k_mer_length
-    type:
-      - 'null'
-      - int
-    doc: "k-mer length\n    (must be positive, and <= 30 for DNA or <= 12 for protein)"
-    inputBinding:
-      position: 101
-      prefix: --k-mer-length
   - id: max_results_size
     type:
       - 'null'

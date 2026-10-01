@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - PRScs.py
 label: prscs_PRScs.py
 doc: "PRS-CS: a polygenic prediction method that infers posterior SNP effect sizes

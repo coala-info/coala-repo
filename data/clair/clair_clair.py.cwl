@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
   - clair.py
 label: clair_clair.py
 doc: "Clair submodule invocator\n\nTool homepage: https://github.com/HKU-BAL/Clair"

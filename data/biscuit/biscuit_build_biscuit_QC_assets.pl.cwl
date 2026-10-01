@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - perl
   - build_biscuit_QC_assets.pl
 label: biscuit_build_biscuit_QC_assets.pl
 doc: "Build biscuit QC assets from a reference genome.\n\nTool homepage: https://github.com/huishenlab/biscuit"

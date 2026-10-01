@@ -313,6 +313,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Output directory [default: .]'
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gottcha2:2.2.0--pyhdfd78af_0

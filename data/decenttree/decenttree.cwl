@@ -194,7 +194,7 @@ inputs:
     doc: Output or path parameter `out_path`
     inputBinding:
       position: 104
-      prefix: --out
+      prefix: -out
   - id: dist_out_path
     type:
       - 'null'

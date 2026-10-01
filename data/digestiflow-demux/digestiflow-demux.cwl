@@ -197,6 +197,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to output directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/digestiflow-demux:0.5.3--pyhdfd78af_0

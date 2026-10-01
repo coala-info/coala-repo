@@ -211,6 +211,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: title_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name of the output directory.
+    outputBinding:
+      glob: $(inputs.title)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqwin:0.2.2--pyhdfd78af_1

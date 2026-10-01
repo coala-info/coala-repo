@@ -239,6 +239,14 @@ outputs:
       the README page."
     outputBinding:
       glob: $(inputs.s3_destination_path)
+  - id: download_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Enter an alternate full directory path where you would like your files 
+      to be saved. The default is ~/NDA/nda-tools/<package-id>
+    outputBinding:
+      glob: $(inputs.download_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

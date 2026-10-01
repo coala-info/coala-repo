@@ -192,6 +192,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mitoz:3.6--pyhdfd78af_1

@@ -48,6 +48,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: New pipeline directory to create
+    outputBinding:
+      glob: $(inputs.directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minute:0.12.1--pyhdfd78af_1

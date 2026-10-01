@@ -95,6 +95,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/komb:1.0--py310h590eda1_5

@@ -37,6 +37,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: the output directory
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eagle:0.9.4.6--pyh5ca1d4c_0

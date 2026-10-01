@@ -115,6 +115,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output
+    outputBinding:
+      glob: $(inputs.output)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hat-phasing:0.1.8--pyh5e36f6f_0

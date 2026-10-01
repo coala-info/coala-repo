@@ -72,6 +72,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory to save RGB tif files
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mindagap:0.0.2--pyhdfd78af_1

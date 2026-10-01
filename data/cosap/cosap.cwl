@@ -137,6 +137,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: workdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory that outputs will be saved
+    outputBinding:
+      glob: $(inputs.workdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cosap:0.1.0--pyh026a95a_0

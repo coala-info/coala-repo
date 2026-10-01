@@ -116,7 +116,7 @@ inputs:
       \        with 'linespoints' instead of 'lines'"
     inputBinding:
       position: 102
-      prefix: --no-color
+      prefix: --nocolor
   - id: no_coverage
     type:
       - 'null'
@@ -124,7 +124,7 @@ inputs:
     doc: Generate a reference coverage plot (default for .tiling)
     inputBinding:
       position: 102
-      prefix: --no-coverage
+      prefix: --nocoverage
   - id: prefix
     type:
       - 'null'
@@ -224,6 +224,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0

@@ -205,6 +205,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in name
+    outputBinding:
+      glob: $(inputs.name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnachipintegrator:3.0.0--pyh7cba7a3_0

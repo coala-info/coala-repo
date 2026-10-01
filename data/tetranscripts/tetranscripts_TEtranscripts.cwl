@@ -175,6 +175,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for output files.
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tetranscripts:2.2.3--pyh7cba7a3_0

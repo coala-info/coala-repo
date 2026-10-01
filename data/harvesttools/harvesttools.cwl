@@ -119,7 +119,7 @@ inputs:
   - id: output_xmfa_alignment_file
     type:
       - 'null'
-      - File
+      - string
     doc: output xmfa alignment file
     inputBinding:
       position: 101
@@ -210,6 +210,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_xmfa_alignment_file_out
+    type:
+      - 'null'
+      - File
+    doc: output xmfa alignment file
+    outputBinding:
+      glob: $(inputs.output_xmfa_alignment_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/harvesttools:1.3--ha9fde67_0

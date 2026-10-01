@@ -429,6 +429,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the output folder where to save the results
+    outputBinding:
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylophlan:3.2.1--pyhdfd78af_0

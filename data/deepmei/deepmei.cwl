@@ -16,7 +16,7 @@ inputs:
   - id: output_index
     type:
       - 'null'
-      - File
+      - string
     doc: Output index file name
     inputBinding:
       position: 2
@@ -81,6 +81,13 @@ outputs:
     doc: Write index to FILE [alternative to <out.index> in args]
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_index_out
+    type:
+      - 'null'
+      - File
+    doc: Output index file name
+    outputBinding:
+      glob: $(inputs.output_index)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

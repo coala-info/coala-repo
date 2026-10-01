@@ -65,6 +65,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/discasm:0.1.3--py27pl5.22.0_0

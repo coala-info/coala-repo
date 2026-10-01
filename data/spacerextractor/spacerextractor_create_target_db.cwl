@@ -73,6 +73,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: new_db_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the target database folder, will be created or overwritten 
+      (with option fr)
+    outputBinding:
+      glob: $(inputs.new_db_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spacerextractor:0.9.8--pyhdfd78af_0

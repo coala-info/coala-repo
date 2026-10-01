@@ -7,8 +7,15 @@ label: bwa-mem2_mem
 doc: "Align sequences to the reference genome.\n\nTool homepage: https://github.com/bwa-mem2/bwa-mem2"
 inputs:
   - id: idxbase
-    type: string
-    doc: The prefix of the BWA index
+    type: File
+    doc: The bwa-mem2 index, given as the file named like the index prefix (for example
+      ref.fa); the .0123, .amb, .ann, .bwt.2bit.64 and .pac files must sit beside it
+    secondaryFiles:
+      - '.0123'
+      - .amb
+      - .ann
+      - .bwt.2bit.64
+      - .pac
     inputBinding:
       position: 1
   - id: in1_fq

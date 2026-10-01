@@ -508,6 +508,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: root_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory file root
+    outputBinding:
+      glob: $(inputs.root)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crisprlungo:0.1.14--py310h086e186_0

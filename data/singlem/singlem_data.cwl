@@ -58,6 +58,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory [required unless SINGLEM_METAPACKAGE_PATH is 
+      specified]
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

@@ -30,6 +30,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Root directory to store all output files
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centreseq:0.3.8--py_0

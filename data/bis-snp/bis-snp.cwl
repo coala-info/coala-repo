@@ -263,7 +263,7 @@ inputs:
       missing"
     inputBinding:
       position: 101
-      prefix: --writeFullFormat
+      prefix: -writeFullFormat
   - id: no_cmdline_in_header
     type:
       - 'null'
@@ -467,7 +467,7 @@ inputs:
     doc: "Use the JDK Deflater instead \nof the IntelDeflater for \nwriting BAMs"
     inputBinding:
       position: 101
-      prefix: --jdk_deflater
+      prefix: -jdk_deflater
   - id: use_jdk_inflater
     type:
       - 'null'
@@ -475,7 +475,7 @@ inputs:
     doc: "Use the JDK Inflater instead \nof the IntelInflater for \nreading BAMs"
     inputBinding:
       position: 101
-      prefix: --jdk_inflater
+      prefix: -jdk_inflater
   - id: use_original_qualities
     type:
       - 'null'

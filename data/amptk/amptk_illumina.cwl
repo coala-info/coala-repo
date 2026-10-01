@@ -168,6 +168,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name for output folder
+    outputBinding:
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

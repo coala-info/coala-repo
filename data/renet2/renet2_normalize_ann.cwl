@@ -15,7 +15,7 @@ inputs:
   - id: out_f
     type:
       - 'null'
-      - File
+      - string
     doc: output file
     inputBinding:
       position: 101
@@ -24,6 +24,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_f_out
+    type:
+      - 'null'
+      - File
+    doc: output file
+    outputBinding:
+      glob: $(inputs.out_f)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/renet2:1.2--py_0

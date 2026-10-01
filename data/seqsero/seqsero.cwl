@@ -41,6 +41,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory name, if not set, the output directory would be 
+      'SeqSero_result_'+time stamp+one random number
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/seqsero:v1.0.1dfsg-1-deb_cv1

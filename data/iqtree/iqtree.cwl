@@ -2062,6 +2062,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iqtree:3.0.1--h503566f_0

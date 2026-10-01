@@ -32,7 +32,7 @@ inputs:
     doc: specifies the seed for random number generator
     inputBinding:
       position: 101
-      prefix: --seed
+      prefix: -seed
   - id: sequence
     type: string
     doc: specifies the sequence

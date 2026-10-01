@@ -404,6 +404,13 @@ outputs:
     doc: Cleanup Log File
     outputBinding:
       glob: $(inputs.cleanup_log_file_path)
+  - id: path_for_results_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path for Results
+    outputBinding:
+      glob: $(inputs.path_for_results)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

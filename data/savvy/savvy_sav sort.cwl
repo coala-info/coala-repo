@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - savvy
   - sav
   - sort
 label: savvy_sav sort

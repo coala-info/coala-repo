@@ -208,6 +208,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory, by default is the current directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plasmidid:1.6.5--hdfd78af_0

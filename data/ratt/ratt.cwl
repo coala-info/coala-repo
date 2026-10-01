@@ -68,6 +68,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in result_prefix
+    outputBinding:
+      glob: $(inputs.result_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ratt:1.1.0--hdfd78af_0

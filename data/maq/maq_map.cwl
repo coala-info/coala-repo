@@ -7,7 +7,7 @@ label: maq_map
 doc: "Map reads to a reference genome\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:
   - id: output_map
-    type: File
+    type: string
     doc: Output map file
     inputBinding:
       position: 1
@@ -160,6 +160,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_map_out
+    type:
+      - 'null'
+      - File
+    doc: Output map file
+    outputBinding:
+      glob: $(inputs.output_map)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1

@@ -194,6 +194,13 @@ outputs:
     doc: path to the output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to the output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

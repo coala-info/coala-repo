@@ -249,6 +249,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: a path to the output folder
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/medicc2:1.1.2--py310h8ea774a_1

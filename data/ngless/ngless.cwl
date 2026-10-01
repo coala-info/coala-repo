@@ -320,6 +320,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: html_report_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: name of output directory
+    outputBinding:
+      glob: $(inputs.html_report_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngless:1.5.0--h9ee0642_0

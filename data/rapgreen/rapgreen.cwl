@@ -172,50 +172,50 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gene_tree_nhx_file_path`
+    doc: gene_tree_nhx_file
     inputBinding:
       position: 102
-      prefix: --gene-tree-nhx-file
+      prefix: -nhx
   - id: gene_tree_phyloxml_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `gene_tree_phyloxml_file_path`
+    doc: gene_tree_phyloxml_file
     inputBinding:
       position: 103
-      prefix: --gene-tree-phyloxml-file
+      prefix: -phyloxml
   - id: output_gene_tree_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_gene_tree_file_path`
+    doc: gene_tree_file
     inputBinding:
       position: 104
-      prefix: --output-gene-tree-file
+      prefix: -og
   - id: output_species_tree_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_species_tree_file_path`
+    doc: species_tree_file
     inputBinding:
       position: 105
-      prefix: --output-species-tree-file
+      prefix: -os
   - id: reconciled_tree_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `reconciled_tree_file_path`
+    doc: reconciled_tree_file
     inputBinding:
       position: 106
-      prefix: --reconciled-tree-file
+      prefix: -or
   - id: stats_gene_tree_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_gene_tree_file_path`
+    doc: gene_tree_file
     inputBinding:
       position: 107
-      prefix: --stats-gene-tree-file
+      prefix: -stats
 outputs:
   - id: gene_tree_nhx_file
     type:

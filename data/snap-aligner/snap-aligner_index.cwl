@@ -219,6 +219,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for the index
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snap-aligner:2.0.5--h077b44d_2

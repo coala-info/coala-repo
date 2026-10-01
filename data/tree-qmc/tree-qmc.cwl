@@ -108,7 +108,7 @@ inputs:
     doc: File with individual/leaf names (1st col) mapped to species (2nd col)
     inputBinding:
       position: 101
-      prefix: --mapping
+      prefix: -mapping
   - id: max
     type:
       - 'null'

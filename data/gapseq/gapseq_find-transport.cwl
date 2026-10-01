@@ -94,6 +94,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to directory, where output files will be saved
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gapseq:1.4.0--h9ee0642_1

@@ -191,6 +191,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: assembly_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in assembly_prefix
+    outputBinding:
+      glob: $(inputs.assembly_prefix)*
+  - id: assembly_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Assembly directory where output files will be placed
+    outputBinding:
+      glob: $(inputs.assembly_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/canu:2.3--h3fb4750_2

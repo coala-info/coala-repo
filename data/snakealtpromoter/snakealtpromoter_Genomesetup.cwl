@@ -44,6 +44,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Absolute path to the output directory for storing generated genome 
+      files.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snakealtpromoter:1.0.5--pyhdfd78af_0

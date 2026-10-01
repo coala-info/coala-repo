@@ -102,6 +102,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: logs_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Log output directory. Default: logs are discarded.'
+    outputBinding:
+      glob: $(inputs.logs_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

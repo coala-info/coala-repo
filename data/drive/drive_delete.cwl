@@ -11,7 +11,7 @@ inputs:
     doc: allows trashing hidden paths
     inputBinding:
       position: 101
-      prefix: --hidden
+      prefix: -hidden
   - id: id
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: delete by id instead of path
     inputBinding:
       position: 101
-      prefix: --id
+      prefix: -id
   - id: matches
     type:
       - 'null'
@@ -27,7 +27,7 @@ inputs:
     doc: search by prefix and delete
     inputBinding:
       position: 101
-      prefix: --matches
+      prefix: -matches
   - id: no_prompt
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: disables the prompt
     inputBinding:
       position: 101
-      prefix: --no-prompt
+      prefix: -no-prompt
   - id: quiet
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: if set, do not log anything but errors
     inputBinding:
       position: 101
-      prefix: --quiet
+      prefix: -quiet
 outputs:
   - id: stdout
     type: stdout

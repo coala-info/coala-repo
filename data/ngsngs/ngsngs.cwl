@@ -842,6 +842,27 @@ outputs:
     doc: output file name
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: dump_vcf_fasta_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in dump_vcf_fasta_prefix
+    outputBinding:
+      glob: $(inputs.dump_vcf_fasta_prefix)*
+  - id: dump_vcf_fasta_prefix_option_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in dump_vcf_fasta_prefix_option
+    outputBinding:
+      glob: $(inputs.dump_vcf_fasta_prefix_option)*
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

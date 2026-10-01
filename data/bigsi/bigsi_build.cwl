@@ -81,6 +81,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store the index
+    outputBinding:
+      glob: $(inputs.index_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bigsi:0.3.1--py_0

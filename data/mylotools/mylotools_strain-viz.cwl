@@ -48,7 +48,7 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - Directory
     doc: Output file for the visualization PNG, PDF, SVG, etc.
     outputBinding:
       glob: $(inputs.output_path)

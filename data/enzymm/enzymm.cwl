@@ -158,6 +158,13 @@ outputs:
     doc: Output tsv file to which results should get written
     outputBinding:
       glob: $(inputs.output_path)
+  - id: pdbs_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory to which results should get written
+    outputBinding:
+      glob: $(inputs.pdbs)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

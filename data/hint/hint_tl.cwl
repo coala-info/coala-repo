@@ -113,6 +113,13 @@ outputs:
       files, if not set, the current directory will be used
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in name
+    outputBinding:
+      glob: $(inputs.name)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

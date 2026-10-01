@@ -547,6 +547,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: hybpiper_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder for HybPiper output. Default is None.
+    outputBinding:
+      glob: $(inputs.hybpiper_output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

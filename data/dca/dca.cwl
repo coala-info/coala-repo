@@ -348,6 +348,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outputdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The path of the output directory
+    outputBinding:
+      glob: $(inputs.outputdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dca:0.3.4--pyhdfd78af_0

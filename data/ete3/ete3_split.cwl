@@ -48,6 +48,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory where the new tree files will be saved. Defaults to the 
+      current directory.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ete3:3.1.2

@@ -136,6 +136,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_name_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name for the output directory to create
+    outputBinding:
+      glob: $(inputs.output_directory_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bali-phy:4.1--py314hedd121d_0

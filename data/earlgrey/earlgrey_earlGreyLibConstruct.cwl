@@ -69,7 +69,7 @@ inputs:
     doc: Directory where RepeatMasker libraries are located.
     inputBinding:
       position: 101
-      prefix: --libdir
+      prefix: -libdir
   - id: partition_range
     type:
       - 'null'

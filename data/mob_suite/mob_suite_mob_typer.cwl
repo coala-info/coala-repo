@@ -15,7 +15,7 @@ inputs:
   - id: biomarker_report_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for biomarker blast results
     inputBinding:
       position: 101
@@ -54,7 +54,7 @@ inputs:
   - id: mge_report_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for MGE results
     inputBinding:
       position: 101
@@ -287,6 +287,20 @@ outputs:
     doc: Output file to write results
     outputBinding:
       glob: $(inputs.out_file_path)
+  - id: biomarker_report_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for biomarker blast results
+    outputBinding:
+      glob: $(inputs.biomarker_report_file)
+  - id: mge_report_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for MGE results
+    outputBinding:
+      glob: $(inputs.mge_report_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

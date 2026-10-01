@@ -51,6 +51,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output
+    outputBinding:
+      glob: $(inputs.output)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rd-analyzer:1.01--hdfd78af_0

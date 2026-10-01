@@ -91,6 +91,13 @@ outputs:
     doc: directory to output files
     outputBinding:
       glob: $(inputs.out_dir_path)
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -275,6 +275,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Make this directory the default output folder
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cellprofiler:4.2.8--pyhdfd78af_0

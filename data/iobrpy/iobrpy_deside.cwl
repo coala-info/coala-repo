@@ -111,6 +111,13 @@ outputs:
     doc: Output CSV for predicted cell fractions
     outputBinding:
       glob: $(inputs.output_path)
+  - id: result_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save result plots
+    outputBinding:
+      glob: $(inputs.result_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -10,15 +10,6 @@ inputs:
     doc: The command to run (e.g., tree, qa, lineage_wf)
     inputBinding:
       position: 1
-  - id: checkm_data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Specify the location of CheckM database files. Use 'checkm data setRoot
-      <checkm_data_dir>' to set this.
-    inputBinding:
-      position: 102
-      prefix: --checkm_data_dir
 outputs:
   - id: stdout
     type: stdout

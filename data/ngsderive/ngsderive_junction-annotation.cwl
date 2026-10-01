@@ -108,6 +108,13 @@ outputs:
     doc: Write to filename rather than standard out.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: junction_files_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to write annotated junction files to.
+    outputBinding:
+      glob: $(inputs.junction_files_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

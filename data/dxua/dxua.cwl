@@ -218,6 +218,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name of the destination folder
+    outputBinding:
+      glob: $(inputs.folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dxua:1.5.31--0

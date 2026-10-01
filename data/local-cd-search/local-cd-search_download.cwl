@@ -40,6 +40,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: db_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store downloaded databases
+    outputBinding:
+      glob: $(inputs.db_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/local-cd-search:0.3.1--pyhdfd78af_0

@@ -13,7 +13,7 @@ inputs:
     doc: Number of allowed gaps for an interval.
     inputBinding:
       position: 101
-      prefix: --allowed_gaps
+      prefix: -G
   - id: bed_fname
     type: string
     doc: Path to the input BED.
@@ -44,6 +44,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/leviosam:5.2.1--h4ac6f70_2

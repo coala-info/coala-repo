@@ -194,6 +194,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Output folder prefix (default: ./result)'
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribotin:1.5--h077b44d_0

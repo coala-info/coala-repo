@@ -11,7 +11,7 @@ inputs:
     doc: all the starred files
     inputBinding:
       position: 101
-      prefix: --all
+      prefix: -all
   - id: decryption_password
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: decryption password
     inputBinding:
       position: 101
-      prefix: --decryption-password
+      prefix: -decryption-password
   - id: depth
     type:
       - 'null'
@@ -27,7 +27,7 @@ inputs:
     doc: max traversal depth
     inputBinding:
       position: 101
-      prefix: --depth
+      prefix: -depth
   - id: desktop_links
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: allows docs + sheets to be pulled as .desktop files or URL linked files
     inputBinding:
       position: 101
-      prefix: --desktop-links
+      prefix: -desktop-links
   - id: directories
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: pull only directories
     inputBinding:
       position: 101
-      prefix: --directories
+      prefix: -directories
   - id: exclude_ops
     type:
       - 'null'
@@ -51,7 +51,7 @@ inputs:
     doc: exclude operations
     inputBinding:
       position: 101
-      prefix: --exclude-ops
+      prefix: -exclude-ops
   - id: explicitly_export
     type:
       - 'null'
@@ -59,7 +59,7 @@ inputs:
     doc: explicitly pull exports
     inputBinding:
       position: 101
-      prefix: --explicitly-export
+      prefix: -explicitly-export
   - id: export
     type:
       - 'null'
@@ -67,7 +67,7 @@ inputs:
     doc: comma separated list of formats to export your docs + sheets files
     inputBinding:
       position: 101
-      prefix: --export
+      prefix: -export
   - id: exports_dir
     type:
       - 'null'
@@ -75,7 +75,7 @@ inputs:
     doc: directory to place exports
     inputBinding:
       position: 101
-      prefix: --exports-dir
+      prefix: -exports-dir
   - id: files
     type:
       - 'null'
@@ -83,7 +83,7 @@ inputs:
     doc: pull only files
     inputBinding:
       position: 101
-      prefix: --files
+      prefix: -files
   - id: fix_clashes
     type:
       - 'null'
@@ -91,7 +91,7 @@ inputs:
     doc: fix clashes by renaming or trashing files
     inputBinding:
       position: 101
-      prefix: --fix-clashes
+      prefix: -fix-clashes
   - id: force
     type:
       - 'null'
@@ -99,7 +99,7 @@ inputs:
     doc: forces a pull even if no changes present
     inputBinding:
       position: 101
-      prefix: --force
+      prefix: -force
   - id: hidden
     type:
       - 'null'
@@ -107,7 +107,7 @@ inputs:
     doc: allows pulling of hidden paths
     inputBinding:
       position: 101
-      prefix: --hidden
+      prefix: -hidden
   - id: id
     type:
       - 'null'
@@ -115,7 +115,7 @@ inputs:
     doc: pull by id instead of path
     inputBinding:
       position: 101
-      prefix: --id
+      prefix: -id
   - id: ignore_checksum
     type:
       - 'null'
@@ -124,7 +124,7 @@ inputs:
       * when you are low on bandwidth e.g SSHFS. * Are on a low power device'
     inputBinding:
       position: 101
-      prefix: --ignore-checksum
+      prefix: -ignore-checksum
   - id: ignore_conflict
     type:
       - 'null'
@@ -132,7 +132,7 @@ inputs:
     doc: turns off the conflict resolution safety
     inputBinding:
       position: 101
-      prefix: --ignore-conflict
+      prefix: -ignore-conflict
   - id: ignore_name_clashes
     type:
       - 'null'
@@ -140,7 +140,7 @@ inputs:
     doc: ignore name clashes
     inputBinding:
       position: 101
-      prefix: --ignore-name-clashes
+      prefix: -ignore-name-clashes
   - id: matches
     type:
       - 'null'
@@ -148,7 +148,7 @@ inputs:
     doc: search by prefix
     inputBinding:
       position: 101
-      prefix: --matches
+      prefix: -matches
   - id: no_clobber
     type:
       - 'null'
@@ -156,7 +156,7 @@ inputs:
     doc: prevents overwriting of old content
     inputBinding:
       position: 101
-      prefix: --no-clobber
+      prefix: -no-clobber
   - id: no_prompt
     type:
       - 'null'
@@ -164,7 +164,7 @@ inputs:
     doc: shows no prompt before applying the pull action
     inputBinding:
       position: 101
-      prefix: --no-prompt
+      prefix: -no-prompt
   - id: piped
     type:
       - 'null'
@@ -172,7 +172,7 @@ inputs:
     doc: get content in from standard input (stdin)
     inputBinding:
       position: 101
-      prefix: --piped
+      prefix: -piped
   - id: quiet
     type:
       - 'null'
@@ -180,7 +180,7 @@ inputs:
     doc: if set, do not log anything but errors
     inputBinding:
       position: 101
-      prefix: --quiet
+      prefix: -quiet
   - id: recursive
     type:
       - 'null'
@@ -188,7 +188,7 @@ inputs:
     doc: performs the pull action recursively
     inputBinding:
       position: 101
-      prefix: --recursive
+      prefix: -recursive
   - id: retry_count
     type:
       - 'null'
@@ -196,7 +196,7 @@ inputs:
     doc: max number of retries for exponential backoff
     inputBinding:
       position: 101
-      prefix: --retry-count
+      prefix: -retry-count
   - id: same_exports_dir
     type:
       - 'null'
@@ -204,7 +204,7 @@ inputs:
     doc: exports are put in the same directory
     inputBinding:
       position: 101
-      prefix: --same-exports-dir
+      prefix: -same-exports-dir
   - id: skip_mime
     type:
       - 'null'
@@ -212,7 +212,7 @@ inputs:
     doc: skip elements with mimeTypes derived from these extensions
     inputBinding:
       position: 101
-      prefix: --skip-mime
+      prefix: -skip-mime
   - id: starred
     type:
       - 'null'
@@ -220,7 +220,7 @@ inputs:
     doc: operate only on starred files
     inputBinding:
       position: 101
-      prefix: --starred
+      prefix: -starred
   - id: trashed
     type:
       - 'null'
@@ -228,7 +228,7 @@ inputs:
     doc: pull content in the trash
     inputBinding:
       position: 101
-      prefix: --trashed
+      prefix: -trashed
   - id: verbose
     type:
       - 'null'
@@ -236,11 +236,18 @@ inputs:
     doc: show step by step information verbosely
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: -verbose
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: exports_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory to place exports
+    outputBinding:
+      glob: $(inputs.exports_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/drive:0.3.9--0

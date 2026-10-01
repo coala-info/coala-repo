@@ -40,6 +40,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

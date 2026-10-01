@@ -98,6 +98,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory (will be created if it does not exist)
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spacerextractor:0.9.8--pyhdfd78af_0

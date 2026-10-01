@@ -8,7 +8,7 @@ doc: "Prepare a depth of coverage file for all target genes with SV from BAM fil
   \nTool homepage: https://github.com/sbslee/pypgx"
 inputs:
   - id: depth_of_coverage
-    type: File
+    type: string
     doc: Output archive file with the semantic type CovFrame[DepthOfCoverage].
     inputBinding:
       position: 1
@@ -61,6 +61,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: depth_of_coverage_out
+    type:
+      - 'null'
+      - File
+    doc: Output archive file with the semantic type CovFrame[DepthOfCoverage].
+    outputBinding:
+      glob: $(inputs.depth_of_coverage)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

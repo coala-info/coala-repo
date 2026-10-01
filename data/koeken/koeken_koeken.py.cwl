@@ -142,6 +142,13 @@ outputs:
       exist, the program will create it.
     outputBinding:
       glob: $(inputs.outputdir_path)
+  - id: subclassid_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to place all the files.
+    outputBinding:
+      glob: $(inputs.subclassid)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

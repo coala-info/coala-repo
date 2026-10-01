@@ -306,6 +306,13 @@ outputs:
     doc: output file name
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: save_index_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in save_index_prefix
+    outputBinding:
+      glob: $(inputs.save_index_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -19,6 +19,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_file_prefix
+    outputBinding:
+      glob: $(inputs.output_file_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/equirep:1.0.0--h9948957_0

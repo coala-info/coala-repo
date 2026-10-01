@@ -52,7 +52,7 @@ inputs:
     doc: The name or filename of an XSLT transform
     inputBinding:
       position: 102
-      prefix: --xslt
+      prefix: -xslt
 outputs:
   - id: stdout
     type: stdout

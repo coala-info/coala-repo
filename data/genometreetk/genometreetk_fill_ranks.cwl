@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_taxonomy
-    type: File
+    type: string
     doc: output taxonomy file
     inputBinding:
       position: 2
@@ -28,6 +28,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_taxonomy_out
+    type:
+      - 'null'
+      - File
+    doc: output taxonomy file
+    outputBinding:
+      glob: $(inputs.output_taxonomy)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

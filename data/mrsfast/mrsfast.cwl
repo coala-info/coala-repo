@@ -220,7 +220,7 @@ inputs:
   - id: unmapped_reads_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output unmapped reads in file. This file will be generated in all 
       mapping mode.
     inputBinding:
@@ -236,10 +236,10 @@ inputs:
       prefix: --ws
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'file Output the mapping record into file (default: output.sam)'
     inputBinding:
       position: 106
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -248,6 +248,14 @@ outputs:
     doc: Output the mapping record into file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: unmapped_reads_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output unmapped reads in file. This file will be generated in all 
+      mapping mode.
+    outputBinding:
+      glob: $(inputs.unmapped_reads_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -269,6 +269,13 @@ outputs:
       This is meant for annotation of the clusterfile.
     outputBinding:
       glob: $(inputs.perc_out_path)
+  - id: output_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Writable folder for output files (default: ./maracluster_output).'
+    outputBinding:
+      glob: $(inputs.output_folder)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

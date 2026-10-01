@@ -76,6 +76,13 @@ outputs:
     doc: FASTQ file to save reads that do not match any barcode.
     outputBinding:
       glob: $(inputs.unmatched_output_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save the demultiplexed FASTQ files.
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

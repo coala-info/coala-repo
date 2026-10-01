@@ -99,6 +99,13 @@ outputs:
     doc: Directory for output
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: logdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to write logfiles to
+    outputBinding:
+      glob: $(inputs.logdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -40,6 +40,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory, default is current folder
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastx:2.3.0--py312h4711d71_1

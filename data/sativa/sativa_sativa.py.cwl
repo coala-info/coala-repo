@@ -12,7 +12,7 @@ inputs:
       their IDs must correspond to those in\ntaxonomy file."
     inputBinding:
       position: 101
-      prefix: --alignment
+      prefix: -s
   - id: brlen_pv
     type:
       - 'null'
@@ -44,7 +44,7 @@ inputs:
     doc: Debug mode, intermediate files will not be cleaned up.
     inputBinding:
       position: 101
-      prefix: --debug
+      prefix: -debug
   - id: enable_memory_saving
     type:
       - 'null'
@@ -52,7 +52,7 @@ inputs:
     doc: "Enable RAxML memory saving (useful for large and gappy\nalignments)."
     inputBinding:
       position: 101
-      prefix: --enable_memory_saving
+      prefix: -S
   - id: final_jplace_fname
     type:
       - 'null'
@@ -135,7 +135,7 @@ inputs:
     doc: Test for misplaced higher ranks.
     inputBinding:
       position: 101
-      prefix: --ranktest
+      prefix: -ranktest
   - id: ref_fname
     type:
       - 'null'
@@ -162,7 +162,7 @@ inputs:
       -n\noption."
     inputBinding:
       position: 101
-      prefix: --resume
+      prefix: -R
   - id: synonym_fname
     type:
       - 'null'
@@ -183,7 +183,7 @@ inputs:
     doc: Reference taxonomy file.
     inputBinding:
       position: 101
-      prefix: --taxonomy
+      prefix: -t
   - id: tmpdir
     type:
       - 'null'
@@ -191,7 +191,7 @@ inputs:
     doc: Directory for temporary files.
     inputBinding:
       position: 101
-      prefix: --tmpdir
+      prefix: -tmpdir
   - id: verbose
     type:
       - 'null'
@@ -199,11 +199,18 @@ inputs:
     doc: Print additional info messages to the console.
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Output directory (default: current).'
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sativa:0.9.3--py312h031d066_0

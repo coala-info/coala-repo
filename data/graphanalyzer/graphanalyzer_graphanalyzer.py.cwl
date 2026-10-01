@@ -80,6 +80,13 @@ outputs:
     doc: Path to the output directory
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: suffix_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Suffix to append to every file produced in the output directory
+    outputBinding:
+      glob: $(inputs.suffix)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -218,6 +218,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output path
+    outputBinding:
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parallel-meta-suite:1.0--h7d875b9_1

@@ -123,7 +123,7 @@ inputs:
     doc: Number of genes to keep in each component.
     inputBinding:
       position: 101
-      prefix: --keepX
+      prefix: -keepX
   - id: met_anno
     type:
       - 'null'
@@ -232,7 +232,7 @@ inputs:
     doc: Threshold to cut the sPLS output file.
     inputBinding:
       position: 101
-      prefix: --thres
+      prefix: -thres
   - id: mmc_out_path
     type:
       - 'null'

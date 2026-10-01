@@ -220,7 +220,7 @@ inputs:
       <dir_icite>/PMID.txt
     inputBinding:
       position: 102
-      prefix: --O
+      prefix: -O
   - id: outfile_path
     type: string
     inputBinding:

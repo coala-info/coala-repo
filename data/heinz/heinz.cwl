@@ -46,7 +46,7 @@ inputs:
     doc: Specifies fdr
     inputBinding:
       position: 101
-      prefix: --FDR
+      prefix: -FDR
   - id: formulation
     type:
       - 'null'

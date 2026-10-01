@@ -216,6 +216,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_root_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Alternative pathname for the directory where case output is written.
+    outputBinding:
+      glob: $(inputs.output_root)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/noresm:2.0.2--py37pl5321h736fc29_1

@@ -192,6 +192,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory name
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/captus:1.6.3--pyh05cac1d_0

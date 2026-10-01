@@ -79,6 +79,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: read1_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in read1_prefix
+    outputBinding:
+      glob: $(inputs.read1_prefix)*
+  - id: read2_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in read2_prefix
+    outputBinding:
+      glob: $(inputs.read2_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dicey:0.3.4--h4d20210_0

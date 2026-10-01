@@ -30,7 +30,7 @@ inputs:
   - id: phasing_bed_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output BED file containing phasing blocks with id. (requires parameter 
       '-longread')
     inputBinding:
@@ -75,6 +75,14 @@ outputs:
     doc: Output qcML file. If unset, writes to STDOUT.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: phasing_bed_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output BED file containing phasing blocks with id. (requires parameter 
+      '-longread')
+    outputBinding:
+      glob: $(inputs.phasing_bed_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

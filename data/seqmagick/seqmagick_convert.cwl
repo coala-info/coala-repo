@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: dest_file
-    type: File
+    type: string
     doc: Output file
     inputBinding:
       position: 2
@@ -386,6 +386,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dest_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file
+    outputBinding:
+      glob: $(inputs.dest_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqmagick:0.8.6--pyhdfd78af_0

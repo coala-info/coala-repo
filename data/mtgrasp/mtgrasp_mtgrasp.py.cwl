@@ -195,6 +195,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtgrasp:1.1.8--py312h7e72e81_0

@@ -115,6 +115,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory, where output files should be saved.
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/needle:1.0.1--h6dccd9a_3

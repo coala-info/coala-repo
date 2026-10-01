@@ -574,6 +574,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: FULL (!) path to the directory into which RAxML shall write its output 
+      files
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/raxml:8.2.13--h7b50bb2_3

@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - vcfkit
   - vk
   - filter
 label: vcfkit_vk filter

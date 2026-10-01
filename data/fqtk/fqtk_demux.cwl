@@ -108,6 +108,13 @@ outputs:
     doc: The output directory into which to write per-sample FASTQs
     outputBinding:
       glob: $(inputs.output_path)
+  - id: unmatched_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in unmatched_prefix
+    outputBinding:
+      glob: $(inputs.unmatched_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

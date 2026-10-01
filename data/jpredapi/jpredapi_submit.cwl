@@ -126,6 +126,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to directory where to save archive with results.
+    outputBinding:
+      glob: $(inputs.results)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jpredapi:1.5.6--py_0

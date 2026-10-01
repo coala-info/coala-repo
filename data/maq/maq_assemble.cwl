@@ -7,7 +7,7 @@ label: maq_assemble
 doc: "Assemble genome sequences\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:
   - id: output_cns
-    type: File
+    type: string
     doc: Output consensus sequence file
     inputBinding:
       position: 1
@@ -89,6 +89,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_cns_out
+    type:
+      - 'null'
+      - File
+    doc: Output consensus sequence file
+    outputBinding:
+      glob: $(inputs.output_cns)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1

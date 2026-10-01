@@ -81,6 +81,14 @@ outputs:
       ends in ".bam". If not given, it will be printed to stdout in SAM format.
     outputBinding:
       glob: '*.out'
+  - id: refdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory to put the reference file ("barcodes.fa") and its index 
+      files in.
+    outputBinding:
+      glob: $(inputs.refdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4

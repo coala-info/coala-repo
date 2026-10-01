@@ -189,6 +189,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fasta_dir_all_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify directory for output FASTA files (ALL).
+    outputBinding:
+      glob: $(inputs.fasta_dir_all)
+  - id: fasta_dir_no_chimeras_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify directory for output FASTA files (no putative chimeric 
+      sequences).
+    outputBinding:
+      glob: $(inputs.fasta_dir_no_chimeras)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

@@ -29,7 +29,7 @@ inputs:
     doc: srs_def
     inputBinding:
       position: 104
-      prefix: --a_srs
+      prefix: -a_srs
   - id: addfields
     type:
       - 'null'
@@ -37,7 +37,7 @@ inputs:
     doc: add fields
     inputBinding:
       position: 104
-      prefix: --addfields
+      prefix: -addfields
   - id: append
     type:
       - 'null'
@@ -45,7 +45,7 @@ inputs:
     doc: append
     inputBinding:
       position: 104
-      prefix: --append
+      prefix: -append
   - id: clipdst
     type:
       - 'null'
@@ -53,7 +53,7 @@ inputs:
     doc: '[xmin ymin xmax ymax]|WKT|datasource'
     inputBinding:
       position: 104
-      prefix: --clipdst
+      prefix: -clipdst
   - id: clipdstlayer
     type:
       - 'null'
@@ -61,7 +61,7 @@ inputs:
     doc: layer
     inputBinding:
       position: 104
-      prefix: --clipdstlayer
+      prefix: -clipdstlayer
   - id: clipdstsql
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
     doc: sql_statement
     inputBinding:
       position: 104
-      prefix: --clipdstsql
+      prefix: -clipdstsql
   - id: clipdstwhere
     type:
       - 'null'
@@ -77,7 +77,7 @@ inputs:
     doc: expression
     inputBinding:
       position: 104
-      prefix: --clipdstwhere
+      prefix: -clipdstwhere
   - id: clipsrc
     type:
       - 'null'
@@ -85,7 +85,7 @@ inputs:
     doc: '[xmin ymin xmax ymax]|WKT|datasource|spat_extent'
     inputBinding:
       position: 104
-      prefix: --clipsrc
+      prefix: -clipsrc
   - id: clipsrclayer
     type:
       - 'null'
@@ -93,7 +93,7 @@ inputs:
     doc: layer
     inputBinding:
       position: 104
-      prefix: --clipsrclayer
+      prefix: -clipsrclayer
   - id: clipsrcsql
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: sql_statement
     inputBinding:
       position: 104
-      prefix: --clipsrcsql
+      prefix: -clipsrcsql
   - id: clipsrcwhere
     type:
       - 'null'
@@ -109,7 +109,7 @@ inputs:
     doc: expression
     inputBinding:
       position: 104
-      prefix: --clipsrcwhere
+      prefix: -clipsrcwhere
   - id: datelineoffset
     type:
       - 'null'
@@ -117,7 +117,7 @@ inputs:
     doc: val
     inputBinding:
       position: 104
-      prefix: --datelineoffset
+      prefix: -datelineoffset
   - id: dialect
     type:
       - 'null'
@@ -125,7 +125,7 @@ inputs:
     doc: dialect
     inputBinding:
       position: 104
-      prefix: --dialect
+      prefix: -dialect
   - id: dim
     type:
       - 'null'
@@ -133,7 +133,7 @@ inputs:
     doc: XY|XYZ|XYM|XYZM|layer_dim
     inputBinding:
       position: 104
-      prefix: --dim
+      prefix: -dim
   - id: doo
     type:
       - 'null'
@@ -142,7 +142,7 @@ inputs:
     doc: NAME=VALUE
     inputBinding:
       position: 104
-      prefix: --doo
+      prefix: -doo
   - id: ds_transaction
     type:
       - 'null'
@@ -150,7 +150,7 @@ inputs:
     doc: Use data source transaction
     inputBinding:
       position: 104
-      prefix: --ds_transaction
+      prefix: -ds_transaction
   - id: dsco
     type:
       - 'null'
@@ -159,7 +159,7 @@ inputs:
     doc: NAME=VALUE
     inputBinding:
       position: 104
-      prefix: --dsco
+      prefix: -dsco
   - id: explodecollections
     type:
       - 'null'
@@ -167,7 +167,7 @@ inputs:
     doc: explode collections
     inputBinding:
       position: 104
-      prefix: --explodecollections
+      prefix: -explodecollections
   - id: fid
     type:
       - 'null'
@@ -175,7 +175,7 @@ inputs:
     doc: FID
     inputBinding:
       position: 104
-      prefix: --fid
+      prefix: -fid
   - id: fieldTypeToString
     type:
       - 'null'
@@ -183,7 +183,7 @@ inputs:
     doc: All|(type1[,type2]*)
     inputBinding:
       position: 104
-      prefix: --fieldTypeToString
+      prefix: -fieldTypeToString
   - id: fieldmap
     type:
       - 'null'
@@ -191,7 +191,7 @@ inputs:
     doc: identity | index1[,index2]*
     inputBinding:
       position: 104
-      prefix: --fieldmap
+      prefix: -fieldmap
   - id: forceNullable
     type:
       - 'null'
@@ -199,7 +199,7 @@ inputs:
     doc: force nullable
     inputBinding:
       position: 104
-      prefix: --forceNullable
+      prefix: -forceNullable
   - id: format
     type:
       - 'null'
@@ -207,7 +207,7 @@ inputs:
     doc: format_name
     inputBinding:
       position: 104
-      prefix: --f
+      prefix: -f
   - id: gcp
     type:
       - 'null'
@@ -216,7 +216,7 @@ inputs:
     doc: ungeoref_x ungeoref_y georef_x georef_y [elevation]
     inputBinding:
       position: 104
-      prefix: --gcp
+      prefix: -gcp
   - id: geomfield
     type:
       - 'null'
@@ -224,7 +224,7 @@ inputs:
     doc: field
     inputBinding:
       position: 104
-      prefix: --geomfield
+      prefix: -geomfield
   - id: gt
     type:
       - 'null'
@@ -232,7 +232,7 @@ inputs:
     doc: n
     inputBinding:
       position: 104
-      prefix: --gt
+      prefix: -gt
   - id: lco
     type:
       - 'null'
@@ -241,7 +241,7 @@ inputs:
     doc: NAME=VALUE
     inputBinding:
       position: 104
-      prefix: --lco
+      prefix: -lco
   - id: limit
     type:
       - 'null'
@@ -249,7 +249,7 @@ inputs:
     doc: nb_features
     inputBinding:
       position: 104
-      prefix: --limit
+      prefix: -limit
   - id: mapFieldType
     type:
       - 'null'
@@ -257,7 +257,7 @@ inputs:
     doc: srctype|All=dsttype[,srctype2=dsttype2]*
     inputBinding:
       position: 104
-      prefix: --mapFieldType
+      prefix: -mapFieldType
   - id: maxsubfields
     type:
       - 'null'
@@ -265,7 +265,7 @@ inputs:
     doc: val
     inputBinding:
       position: 104
-      prefix: --maxsubfields
+      prefix: -maxsubfields
   - id: mo
     type:
       - 'null'
@@ -274,7 +274,7 @@ inputs:
     doc: '"META-TAG=VALUE"'
     inputBinding:
       position: 104
-      prefix: --mo
+      prefix: -mo
   - id: nln
     type:
       - 'null'
@@ -282,7 +282,7 @@ inputs:
     doc: name
     inputBinding:
       position: 104
-      prefix: --nln
+      prefix: -nln
   - id: nlt
     type:
       - 'null'
@@ -290,7 +290,7 @@ inputs:
     doc: type|PROMOTE_TO_MULTI|CONVERT_TO_LINEAR|CONVERT_TO_CURVE
     inputBinding:
       position: 104
-      prefix: --nlt
+      prefix: -nlt
   - id: noNativeData
     type:
       - 'null'
@@ -298,7 +298,7 @@ inputs:
     doc: no native data
     inputBinding:
       position: 104
-      prefix: --noNativeData
+      prefix: -noNativeData
   - id: nomd
     type:
       - 'null'
@@ -306,7 +306,7 @@ inputs:
     doc: no metadata
     inputBinding:
       position: 104
-      prefix: --nomd
+      prefix: -nomd
   - id: oo
     type:
       - 'null'
@@ -315,7 +315,7 @@ inputs:
     doc: NAME=VALUE
     inputBinding:
       position: 104
-      prefix: --oo
+      prefix: -oo
   - id: order
     type:
       - 'null'
@@ -323,7 +323,7 @@ inputs:
     doc: n
     inputBinding:
       position: 104
-      prefix: --order
+      prefix: -order
   - id: overwrite
     type:
       - 'null'
@@ -331,7 +331,7 @@ inputs:
     doc: overwrite
     inputBinding:
       position: 104
-      prefix: --overwrite
+      prefix: -overwrite
   - id: preserve_fid
     type:
       - 'null'
@@ -339,7 +339,7 @@ inputs:
     doc: preserve fid
     inputBinding:
       position: 104
-      prefix: --preserve_fid
+      prefix: -preserve_fid
   - id: progress
     type:
       - 'null'
@@ -347,7 +347,7 @@ inputs:
     doc: progress
     inputBinding:
       position: 104
-      prefix: --progress
+      prefix: -progress
   - id: relaxedFieldNameMatch
     type:
       - 'null'
@@ -355,7 +355,7 @@ inputs:
     doc: relaxed field name match
     inputBinding:
       position: 104
-      prefix: --relaxedFieldNameMatch
+      prefix: -relaxedFieldNameMatch
   - id: s_srs
     type:
       - 'null'
@@ -363,7 +363,7 @@ inputs:
     doc: srs_def
     inputBinding:
       position: 104
-      prefix: --s_srs
+      prefix: -s_srs
   - id: segmentize
     type:
       - 'null'
@@ -371,7 +371,7 @@ inputs:
     doc: max_dist
     inputBinding:
       position: 104
-      prefix: --segmentize
+      prefix: -segmentize
   - id: select_fields
     type:
       - 'null'
@@ -379,7 +379,7 @@ inputs:
     doc: field_list
     inputBinding:
       position: 104
-      prefix: --select
+      prefix: -select
   - id: simplify
     type:
       - 'null'
@@ -387,7 +387,7 @@ inputs:
     doc: tolerance
     inputBinding:
       position: 104
-      prefix: --simplify
+      prefix: -simplify
   - id: skip_failures
     type:
       - 'null'
@@ -395,7 +395,7 @@ inputs:
     doc: skip failures
     inputBinding:
       position: 104
-      prefix: --skipfailures
+      prefix: -skipfailures
   - id: spat
     type:
       - 'null'
@@ -403,7 +403,7 @@ inputs:
     doc: xmin ymin xmax ymax
     inputBinding:
       position: 104
-      prefix: --spat
+      prefix: -spat
   - id: spat_srs
     type:
       - 'null'
@@ -411,7 +411,7 @@ inputs:
     doc: srs_def
     inputBinding:
       position: 104
-      prefix: --spat_srs
+      prefix: -spat_srs
   - id: splitlistfields
     type:
       - 'null'
@@ -419,7 +419,7 @@ inputs:
     doc: split list fields
     inputBinding:
       position: 104
-      prefix: --splitlistfields
+      prefix: -splitlistfields
   - id: sql
     type:
       - 'null'
@@ -427,7 +427,7 @@ inputs:
     doc: sql statement|@filename
     inputBinding:
       position: 104
-      prefix: --sql
+      prefix: -sql
   - id: t_srs
     type:
       - 'null'
@@ -435,7 +435,7 @@ inputs:
     doc: srs_def
     inputBinding:
       position: 104
-      prefix: --t_srs
+      prefix: -t_srs
   - id: tps
     type:
       - 'null'
@@ -443,7 +443,7 @@ inputs:
     doc: Use TPS transformation
     inputBinding:
       position: 104
-      prefix: --tps
+      prefix: -tps
   - id: unsetDefault
     type:
       - 'null'
@@ -451,7 +451,7 @@ inputs:
     doc: unset default
     inputBinding:
       position: 104
-      prefix: --unsetDefault
+      prefix: -unsetDefault
   - id: unsetFid
     type:
       - 'null'
@@ -459,7 +459,7 @@ inputs:
     doc: unset FID
     inputBinding:
       position: 104
-      prefix: --unsetFid
+      prefix: -unsetFid
   - id: unsetFieldWidth
     type:
       - 'null'
@@ -467,7 +467,7 @@ inputs:
     doc: unset field width
     inputBinding:
       position: 104
-      prefix: --unsetFieldWidth
+      prefix: -unsetFieldWidth
   - id: update
     type:
       - 'null'
@@ -475,7 +475,7 @@ inputs:
     doc: update
     inputBinding:
       position: 104
-      prefix: --update
+      prefix: -update
   - id: where
     type:
       - 'null'
@@ -483,7 +483,7 @@ inputs:
     doc: restricted_where|@filename
     inputBinding:
       position: 104
-      prefix: --where
+      prefix: -where
   - id: wrapdateline
     type:
       - 'null'
@@ -491,7 +491,7 @@ inputs:
     doc: wrap dateline
     inputBinding:
       position: 104
-      prefix: --wrapdateline
+      prefix: -wrapdateline
   - id: zfield
     type:
       - 'null'
@@ -499,7 +499,7 @@ inputs:
     doc: field_name
     inputBinding:
       position: 104
-      prefix: --zfield
+      prefix: -zfield
 outputs:
   - id: stdout
     type: stdout

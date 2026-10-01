@@ -20,7 +20,7 @@ inputs:
     doc: Directory to output in
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -d
   - id: output_file_path
     type: string?
     doc: Output file
@@ -35,6 +35,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to output in
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

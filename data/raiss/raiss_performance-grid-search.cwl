@@ -73,6 +73,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: imputed_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: folder to store imputed files
+    outputBinding:
+      glob: $(inputs.imputed_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/raiss:4.0.1--pyhdfd78af_0

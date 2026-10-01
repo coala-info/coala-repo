@@ -173,6 +173,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to write output to. Leave blank to output to the current 
+      directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/jupyter:phenomenal-v387f29b6ca83_cv0.4.12

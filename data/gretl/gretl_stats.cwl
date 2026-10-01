@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gretl-stats
+baseCommand:
+  - gretl
+  - stats
 label: gretl_stats
 doc: "Basic graph statistics for a single graph\n\nTool homepage: https://github.com/moinsebi/gretl"
 inputs:

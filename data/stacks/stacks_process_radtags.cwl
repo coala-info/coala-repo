@@ -387,6 +387,13 @@ outputs:
     doc: Capture discarded reads to a file.
     outputBinding:
       glob: $(inputs.discarded_reads_file_path)
+  - id: output_basename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_basename
+    outputBinding:
+      glob: $(inputs.output_basename)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

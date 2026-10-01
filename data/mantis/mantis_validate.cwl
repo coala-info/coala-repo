@@ -142,6 +142,13 @@ outputs:
     doc: Where to write query output.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: build_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory where results should be written
+    outputBinding:
+      glob: $(inputs.build_output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

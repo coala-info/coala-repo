@@ -127,7 +127,7 @@ inputs:
       to the same one of the server, which corresponds to a sensitivity of ~8.
     inputBinding:
       position: 104
-      prefix: --s
+      prefix: -s
   - id: threads
     type:
       - 'null'

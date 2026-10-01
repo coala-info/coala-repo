@@ -24,14 +24,14 @@ inputs:
     doc: DIR
     inputBinding:
       position: 102
-      prefix: --dir
+      prefix: -dir
   - id: edit_distance
     type:
       - 'null'
       - boolean
     inputBinding:
       position: 102
-      prefix: --edit-distance
+      prefix: -edit-distance
   - id: f
     type:
       - 'null'
@@ -46,14 +46,14 @@ inputs:
       - boolean
     inputBinding:
       position: 102
-      prefix: --force
+      prefix: -force
   - id: infer_genes
     type:
       - 'null'
       - boolean
     inputBinding:
       position: 102
-      prefix: --infer-genes
+      prefix: -infer-genes
   - id: mmseqs_params
     type:
       - 'null'
@@ -61,7 +61,7 @@ inputs:
     doc: STR
     inputBinding:
       position: 102
-      prefix: --mmseqs_params
+      prefix: -mmseqs_params
   - id: mmseqs_path
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
     doc: MMSEQS_PATH
     inputBinding:
       position: 102
-      prefix: --mmseqs_path
+      prefix: -mmseqs_path
   - id: r
     type: string
     doc: R
@@ -83,7 +83,7 @@ inputs:
     doc: R_SORT
     inputBinding:
       position: 102
-      prefix: --r-sort
+      prefix: -r-sort
   - id: rg
     type: string
     doc: GFF/GTF or DB
@@ -103,7 +103,7 @@ inputs:
     doc: T_SORT
     inputBinding:
       position: 102
-      prefix: --t-sort
+      prefix: -t-sort
   - id: tg
     type: string
     doc: GFF/GTF or DB

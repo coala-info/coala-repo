@@ -40,6 +40,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: destination_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory to save the database in.
+    outputBinding:
+      glob: $(inputs.destination)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0

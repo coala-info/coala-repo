@@ -222,6 +222,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder for partition files
+    outputBinding:
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/impg:0.3.3--hdb3fbb7_0

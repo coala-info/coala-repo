@@ -106,6 +106,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory where to store the reference databases
+    outputBinding:
+      glob: $(inputs.dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/zdb:1.3.11--hdfd78af_0

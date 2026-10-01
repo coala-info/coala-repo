@@ -51,12 +51,18 @@ inputs:
     inputBinding:
       position: 104
       prefix: --out-fasta
+  - id: out_metadata_path
+    type: string
+    doc: A CSV file (else writes to stdout)
+    inputBinding:
+      position: 102
+      prefix: --out-metadata
 outputs:
   - id: out_metadata
     type: File
     doc: A CSV file (else writes to stdout)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_metadata_path)
   - id: out_fasta
     type:
       - 'null'

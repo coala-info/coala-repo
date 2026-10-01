@@ -80,6 +80,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: filename_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in filename_prefix
+    outputBinding:
+      glob: $(inputs.filename_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcflatten:0.5.2--1

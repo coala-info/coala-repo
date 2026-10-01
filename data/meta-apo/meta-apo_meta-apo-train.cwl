@@ -49,7 +49,7 @@ inputs:
   - id: output_mode_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output mode file
     inputBinding:
       position: 101
@@ -58,6 +58,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_mode_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output mode file
+    outputBinding:
+      glob: $(inputs.output_mode_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meta-apo:1.1--h9f5acd7_4

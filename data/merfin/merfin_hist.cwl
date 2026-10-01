@@ -131,6 +131,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output
+    outputBinding:
+      glob: $(inputs.output)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfin:1.0--h9948957_3

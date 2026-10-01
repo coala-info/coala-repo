@@ -191,6 +191,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to output directory.
+    outputBinding:
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/read2tree:2.0.1--pyhdfd78af_0

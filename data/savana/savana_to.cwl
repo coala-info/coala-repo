@@ -693,6 +693,13 @@ outputs:
     doc: Output VCF with only PASS somatic variants
     outputBinding:
       glob: $(inputs.somatic_output_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory (can exist but must be empty)
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

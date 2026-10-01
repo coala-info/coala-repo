@@ -22,13 +22,13 @@ inputs:
       M, R. If no pattern is specified, all allowed patterns will be enumerated.'
     inputBinding:
       position: 103
-      prefix: --m
+      prefix: -m
   - id: color_map_file
     type: string
     doc: Color map file
     inputBinding:
       position: 103
-      prefix: --c
+      prefix: -c
   - id: export_ilp
     type:
       - 'null'
@@ -36,7 +36,7 @@ inputs:
     doc: Export ILP
     inputBinding:
       position: 103
-      prefix: --e
+      prefix: -e
   - id: gurobi_logging
     type:
       - 'null'
@@ -44,7 +44,7 @@ inputs:
     doc: Gurobi logging
     inputBinding:
       position: 103
-      prefix: --log
+      prefix: -log
   - id: migration_graphs_file
     type:
       - 'null'
@@ -52,7 +52,7 @@ inputs:
     doc: Optional file with migration graphs
     inputBinding:
       position: 103
-      prefix: --G
+      prefix: -G
   - id: output_prefix
     type:
       - 'null'
@@ -60,7 +60,7 @@ inputs:
     doc: Output prefix
     inputBinding:
       position: 103
-      prefix: --o
+      prefix: -o
   - id: output_search_graph
     type:
       - 'null'
@@ -68,13 +68,13 @@ inputs:
     doc: Output search graph
     inputBinding:
       position: 103
-      prefix: --g
+      prefix: -g
   - id: primary_anatomical_site
     type: string
     doc: Primary anatomical site
     inputBinding:
       position: 103
-      prefix: --p
+      prefix: -p
   - id: threads
     type:
       - 'null'
@@ -82,7 +82,7 @@ inputs:
     doc: Number of threads
     inputBinding:
       position: 103
-      prefix: --t
+      prefix: -t
   - id: time_limit
     type:
       - 'null'
@@ -90,7 +90,7 @@ inputs:
     doc: Time limit in seconds
     inputBinding:
       position: 103
-      prefix: --l
+      prefix: -l
   - id: ub_gamma
     type:
       - 'null'
@@ -98,7 +98,7 @@ inputs:
     doc: Upper bound on the comigration number
     inputBinding:
       position: 103
-      prefix: --UB_gamma
+      prefix: -UB_gamma
   - id: ub_mu
     type:
       - 'null'
@@ -106,7 +106,7 @@ inputs:
     doc: Upper bound on the migration number
     inputBinding:
       position: 103
-      prefix: --UB_mu
+      prefix: -UB_mu
   - id: ub_sigma
     type:
       - 'null'
@@ -114,7 +114,7 @@ inputs:
     doc: Upper bound on the seeding site number
     inputBinding:
       position: 103
-      prefix: --UB_sigma
+      prefix: -UB_sigma
   - id: use_old_ilp
     type:
       - 'null'
@@ -122,11 +122,18 @@ inputs:
     doc: Use old ILP (typically much slower)
     inputBinding:
       position: 103
-      prefix: --OLD
+      prefix: -OLD
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/machina:1.2--h21ec9f0_7

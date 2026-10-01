@@ -23,6 +23,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outfiles_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outfiles_prefix
+    outputBinding:
+      glob: $(inputs.outfiles_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

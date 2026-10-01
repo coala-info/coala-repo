@@ -110,6 +110,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: "Optional: Provide a name. This name will be a directory output files are
+      written to. Name can be a directory path, but doesn't have to be."
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vsnp3:3.33--hdfd78af_0

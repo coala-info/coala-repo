@@ -22,7 +22,7 @@ inputs:
   - id: descentfile
     type:
       - 'null'
-      - File
+      - string
     doc: Output descent file
     inputBinding:
       position: 104
@@ -30,7 +30,7 @@ inputs:
   - id: haplofile
     type:
       - 'null'
-      - File
+      - string
     doc: Output haplotype file
     inputBinding:
       position: 104
@@ -38,7 +38,7 @@ inputs:
   - id: lodfile
     type:
       - 'null'
-      - File
+      - string
     doc: Output LOD file
     inputBinding:
       position: 104
@@ -47,6 +47,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: descentfile_out
+    type:
+      - 'null'
+      - File
+    doc: Output descent file
+    outputBinding:
+      glob: $(inputs.descentfile)
+  - id: haplofile_out
+    type:
+      - 'null'
+      - File
+    doc: Output haplotype file
+    outputBinding:
+      glob: $(inputs.haplofile)
+  - id: lodfile_out
+    type:
+      - 'null'
+      - File
+    doc: Output LOD file
+    outputBinding:
+      glob: $(inputs.lodfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/linkage2allegro:2017.3--py35_0

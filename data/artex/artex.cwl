@@ -96,6 +96,13 @@ outputs:
     doc: Output file for variant calls (e.g., VCF).
     outputBinding:
       glob: $(inputs.output_path)
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

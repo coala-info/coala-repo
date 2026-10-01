@@ -159,6 +159,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_base_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_base_name
+    outputBinding:
+      glob: $(inputs.output_base_name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

@@ -107,6 +107,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fasta_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify directory for output FASTA files.
+    outputBinding:
+      glob: $(inputs.fasta_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

@@ -19,13 +19,13 @@ inputs:
     doc: Input mapping file in BAM format.
     inputBinding:
       position: 101
-      prefix: --bam
+      prefix: -bam
   - id: gtf
     type: File
     doc: Annotations file in Ensembl GTF format.
     inputBinding:
       position: 101
-      prefix: --gtf
+      prefix: -gtf
   - id: num_pr_bases
     type:
       - 'null'
@@ -50,11 +50,11 @@ inputs:
       HTML).
     inputBinding:
       position: 101
-      prefix: --outformat
+      prefix: -outformat
   - id: output_counts_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for computed counts. If only name of the file is provided, 
       then the file will be saved in the output folder.
     inputBinding:
@@ -67,15 +67,15 @@ inputs:
     doc: Output folder for HTML report and raw data.
     inputBinding:
       position: 101
-      prefix: --outdir
+      prefix: -outdir
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for PDF report
     inputBinding:
       position: 101
-      prefix: --outfile
+      prefix: -outfile
   - id: paired_end
     type:
       - 'null'
@@ -108,6 +108,28 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_counts_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for computed counts. If only name of the file is provided, 
+      then the file will be saved in the output folder.
+    outputBinding:
+      glob: $(inputs.output_counts_file)
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for PDF report
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder for HTML report and raw data.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

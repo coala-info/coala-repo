@@ -156,6 +156,36 @@ outputs:
     doc: Output file path (optional)
     outputBinding:
       glob: $(inputs.output_path)
+  - id: chain_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in chain_name
+    outputBinding:
+      glob: $(inputs.chain_name)*
+  - id: chain_omega_dir
+    type:
+      - 'null'
+      - Directory
+    doc: A second chain ran with the option --freeomega and --flatfitness to 
+      obtain the classical ω-based codon model (Muse & Gaut). These two chains 
+      allow to compute posterior of ω, ω₀, ωᴬ=ω-ω₀ and p(ωᴬ>0) for each site and
+      at the gene level. Results are written in {chain_name}.omegaA.tsv by 
+      default (optionally use the --output argument to specify a different 
+      output path).
+    outputBinding:
+      glob: $(inputs.chain_omega)
+  - id: omega_threshold_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Threshold to compute the mean posterior probability that ω⁎ (or ω if 
+      option `flatfitness` is used in `mutselomega`) is greater than a given 
+      value (1.0 to test for adaptation). Results are written in 
+      {chain_name}.omegappgt{omega_pp}.tsv by default (optionally use the 
+      --output argument to specify a different output path).
+    outputBinding:
+      glob: $(inputs.omega_threshold)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -119,6 +119,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_file_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in result_file_prefix
+    outputBinding:
+      glob: $(inputs.result_file_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/metastudent:v2.0.1-6-deb_cv1

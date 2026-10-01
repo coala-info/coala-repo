@@ -333,6 +333,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dir_out_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to output directory, defaults to "results-cerberus" in current 
+      directory.
+    outputBinding:
+      glob: $(inputs.dir_out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cerberus-x:1.5.0--pyhdfd78af_0

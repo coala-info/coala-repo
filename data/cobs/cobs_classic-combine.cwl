@@ -51,6 +51,13 @@ outputs:
     doc: path to the output file
     outputBinding:
       glob: '$(inputs.out_file)'
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to the output directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

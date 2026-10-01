@@ -28,6 +28,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_or_bfq_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix_or_bfq
+    outputBinding:
+      glob: $(inputs.output_prefix_or_bfq)*
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1

@@ -30,6 +30,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in project
+    outputBinding:
+      glob: $(inputs.project)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0

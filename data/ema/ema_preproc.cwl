@@ -77,6 +77,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: specify output directory [required]
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ema:0.7.0--h5ca1c30_2

@@ -39,7 +39,7 @@ inputs:
     doc: Output folder for HTML report and raw data.
     inputBinding:
       position: 101
-      prefix: --outdir
+      prefix: -outdir
   - id: outformat
     type:
       - 'null'
@@ -48,7 +48,7 @@ inputs:
       HTML).
     inputBinding:
       position: 101
-      prefix: --outformat
+      prefix: -outformat
   - id: rscriptpath
     type:
       - 'null'
@@ -87,6 +87,13 @@ outputs:
     doc: Output file for PDF report (default value is report.pdf).
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder for HTML report and raw data.
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

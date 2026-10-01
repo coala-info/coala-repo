@@ -179,6 +179,14 @@ outputs:
     doc: Path to log file
     outputBinding:
       glob: $(inputs.logfile_path)
+  - id: path_to_mgm_predictions_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory where to save MGM predictions so that they can be re-used. If
+      path does not exist, it will be created.
+    outputBinding:
+      glob: $(inputs.path_to_mgm_predictions)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

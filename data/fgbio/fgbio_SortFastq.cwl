@@ -58,7 +58,7 @@ inputs:
   - id: output_fastq
     type:
       - 'null'
-      - File
+      - string
     doc: Output fastq file.
     inputBinding:
       position: 101
@@ -83,6 +83,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_fastq_out
+    type:
+      - 'null'
+      - File
+    doc: Output fastq file.
+    outputBinding:
+      glob: $(inputs.output_fastq)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0

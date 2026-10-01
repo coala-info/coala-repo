@@ -38,6 +38,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: destination_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The destination directory.
+    outputBinding:
+      glob: $(inputs.destination_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poretools:0.6.1a0--py27_0

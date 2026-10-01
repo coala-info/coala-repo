@@ -257,6 +257,14 @@ outputs:
     doc: The directory in which the results will be stored.
     outputBinding:
       glob: $(inputs.output_directory_path)
+  - id: shared_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory in which the alignment files are stored. If not specified it 
+      is created inside the main output directory.
+    outputBinding:
+      glob: $(inputs.shared_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

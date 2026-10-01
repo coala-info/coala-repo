@@ -106,6 +106,13 @@ outputs:
     doc: Output filename.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: updater_outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to folder to store updated files from updater
+    outputBinding:
+      glob: $(inputs.updater_outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

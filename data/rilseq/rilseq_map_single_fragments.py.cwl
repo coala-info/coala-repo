@@ -152,6 +152,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dirout_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory, default is this directory.
+    outputBinding:
+      glob: $(inputs.dirout)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rilseq:0.82--pyhdfd78af_0

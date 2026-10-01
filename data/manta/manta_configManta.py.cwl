@@ -118,6 +118,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: run_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name of directory to be created where all workflow scripts and output 
+      will be written. Each analysis requires a separate directory.
+    outputBinding:
+      glob: $(inputs.run_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/manta:1.6.0--py27h9948957_6

@@ -25,7 +25,7 @@ inputs:
     doc: Calculate edit distance
     inputBinding:
       position: 102
-      prefix: --edit-distance
+      prefix: -edit-distance
   - id: force
     type:
       - 'null'
@@ -33,7 +33,7 @@ inputs:
     doc: Force overwrite
     inputBinding:
       position: 102
-      prefix: --force
+      prefix: -force
   - id: infer_genes
     type:
       - 'null'
@@ -49,7 +49,7 @@ inputs:
     doc: Parameters for mmseqs
     inputBinding:
       position: 102
-      prefix: --mmseqs_params
+      prefix: -mmseqs_params
   - id: mmseqs_path
     type:
       - 'null'
@@ -57,7 +57,7 @@ inputs:
     doc: Path to mmseqs executable
     inputBinding:
       position: 102
-      prefix: --mmseqs_path
+      prefix: -mmseqs_path
   - id: output_directory
     type:
       - 'null'
@@ -65,7 +65,7 @@ inputs:
     doc: Output directory
     inputBinding:
       position: 102
-      prefix: --dir
+      prefix: -dir
   - id: reference_genome
     type: string
     doc: Reference genome
@@ -85,7 +85,7 @@ inputs:
     doc: Sort reference genome by
     inputBinding:
       position: 102
-      prefix: --r-sort
+      prefix: -r-sort
   - id: target_genome
     type: string
     doc: Target genome (GFF/GTF or DB)
@@ -105,7 +105,7 @@ inputs:
     doc: Sort target genome by
     inputBinding:
       position: 102
-      prefix: --t-sort
+      prefix: -t-sort
   - id: verbose
     type:
       - 'null'
@@ -118,6 +118,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/liftofftools:0.4.4--pyhdfd78af_0

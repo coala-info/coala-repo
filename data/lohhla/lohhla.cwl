@@ -84,6 +84,13 @@ outputs:
     doc: Output VCF file name for HLA genotypes.
     outputBinding:
       glob: $(inputs.output_vcf_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory to store results.
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

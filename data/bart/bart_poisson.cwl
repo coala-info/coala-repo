@@ -5,7 +5,7 @@ label: bart_poisson
 doc: "Computes Poisson-disc sampling pattern.\n\nTool homepage: https://github.com/tomdstanton/bart"
 inputs:
   - id: outfile
-    type: File
+    type: string
     doc: Output file name
     inputBinding:
       position: 1
@@ -77,6 +77,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outfile_out
+    type:
+      - 'null'
+      - File
+    doc: Output file name
+    outputBinding:
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1

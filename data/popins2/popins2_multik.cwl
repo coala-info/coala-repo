@@ -57,6 +57,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outputfile_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outputfile_prefix
+    outputBinding:
+      glob: $(inputs.outputfile_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/popins2:0.13.0--h077b44d_0

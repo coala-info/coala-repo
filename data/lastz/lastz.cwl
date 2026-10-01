@@ -174,7 +174,7 @@ inputs:
     doc: involve entropy in filtering high scoring pairs (default is "entropy")
     inputBinding:
       position: 103
-      prefix: --no-entropy
+      prefix: --noentropy
   - id: no_gapped
     type:
       - 'null'
@@ -183,7 +183,7 @@ inputs:
       alignment is performed)
     inputBinding:
       position: 103
-      prefix: --no-gapped
+      prefix: --nogapped
   - id: no_gfextend
     type:
       - 'null'
@@ -192,7 +192,7 @@ inputs:
       is performed)
     inputBinding:
       position: 103
-      prefix: --no-gfextend
+      prefix: --nogfextend
   - id: no_transition
     type:
       - 'null'
@@ -201,7 +201,7 @@ inputs:
       allowed)
     inputBinding:
       position: 103
-      prefix: --no-transition
+      prefix: --notransition
   - id: nomirror
     type:
       - 'null'

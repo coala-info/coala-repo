@@ -163,6 +163,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save FASTA files, reports, and final multi-FASTA
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refseq-plasmid-dl:0.1.0--pyhdfd78af_0

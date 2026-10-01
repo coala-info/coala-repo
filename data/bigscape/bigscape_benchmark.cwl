@@ -34,7 +34,7 @@ inputs:
   - id: log_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to output log file.
     inputBinding:
       position: 101
@@ -67,6 +67,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_path_out
+    type:
+      - 'null'
+      - File
+    doc: Path to output log file.
+    outputBinding:
+      glob: $(inputs.log_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for all BiG-SCAPE results files.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bigscape:2.0.2--pyhdfd78af_0

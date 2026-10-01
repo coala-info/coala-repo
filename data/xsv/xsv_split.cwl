@@ -68,6 +68,13 @@ outputs:
     doc: Write output to <file> instead of stdout.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory where the files are written
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

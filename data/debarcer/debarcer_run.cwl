@@ -282,6 +282,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory where subdirectories are created
+    outputBinding:
+      glob: $(inputs.outdir)
+  - id: sample_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Sample name to appear to report. Optional, use Output directory 
+      basename if not provided
+    outputBinding:
+      glob: $(inputs.sample)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/debarcer:2.1.4--pyhdfd78af_2

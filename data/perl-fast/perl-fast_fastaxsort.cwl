@@ -75,7 +75,7 @@ inputs:
     doc: Taxa are sorted using sequence identifiers (default uses whole descriptions)
     inputBinding:
       position: 104
-      prefix: --identifier
+      prefix: --indentifier
   - id: index
     type:
       - 'null'

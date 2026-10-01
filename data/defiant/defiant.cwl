@@ -39,7 +39,7 @@ inputs:
       any arguments.
     inputBinding:
       position: 102
-      prefix: --debug
+      prefix: -debug
   - id: fdr_method
     type:
       - 'null'
@@ -64,7 +64,7 @@ inputs:
       `library(gplots)` will work.
     inputBinding:
       position: 102
-      prefix: --heatmap
+      prefix: -heatmap
   - id: include_random_chromosomes
     type:
       - 'null'

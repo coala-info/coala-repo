@@ -7,7 +7,7 @@ label: pypgx_combine-results
 doc: "Combine various results for target gene.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:
   - id: results
-    type: File
+    type: string
     doc: Output archive file with the semantic type SampleTable[Results].
     inputBinding:
       position: 1
@@ -47,6 +47,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_out
+    type:
+      - 'null'
+      - File
+    doc: Output archive file with the semantic type SampleTable[Results].
+    outputBinding:
+      glob: $(inputs.results)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

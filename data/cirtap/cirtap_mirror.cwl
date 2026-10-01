@@ -110,6 +110,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: db_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store mirrored data
+    outputBinding:
+      glob: $(inputs.db_dir)
+  - id: cache_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory where cirtap will store some info for its execution. 
+      Subsequent executions rely on it so be careful when you delete
+    outputBinding:
+      glob: $(inputs.cache_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cirtap:0.3.1--pyh5e36f6f_0

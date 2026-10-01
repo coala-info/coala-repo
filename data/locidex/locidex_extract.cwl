@@ -203,6 +203,20 @@ outputs:
     doc: Output directory to put results
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: protein_coding_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.protein_coding)
+  - id: translation_table_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.translation_table)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

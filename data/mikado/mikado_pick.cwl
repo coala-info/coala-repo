@@ -180,7 +180,7 @@ inputs:
   - id: monoloci_out
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for monoloci
     inputBinding:
       position: 102
@@ -399,7 +399,7 @@ inputs:
   - id: subloci_out
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for sub-loci
     inputBinding:
       position: 102
@@ -416,6 +416,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: monoloci_out_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for monoloci
+    outputBinding:
+      glob: $(inputs.monoloci_out)
+  - id: subloci_out_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for sub-loci
+    outputBinding:
+      glob: $(inputs.subloci_out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2

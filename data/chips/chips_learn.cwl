@@ -112,6 +112,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outprefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outprefix
+    outputBinding:
+      glob: $(inputs.outprefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chips:2.4--h43eeafb_7

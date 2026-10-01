@@ -33,7 +33,7 @@ inputs:
     doc: Calculate edit distance
     inputBinding:
       position: 102
-      prefix: --edit-distance
+      prefix: -edit-distance
   - id: force
     type:
       - 'null'
@@ -41,7 +41,7 @@ inputs:
     doc: Force overwrite of existing files
     inputBinding:
       position: 102
-      prefix: --force
+      prefix: -force
   - id: infer_genes
     type:
       - 'null'
@@ -49,7 +49,7 @@ inputs:
     doc: Infer genes from alignments
     inputBinding:
       position: 102
-      prefix: --infer-genes
+      prefix: -infer-genes
   - id: mmseqs_params
     type:
       - 'null'
@@ -57,7 +57,7 @@ inputs:
     doc: Parameters for MMseqs2
     inputBinding:
       position: 102
-      prefix: --mmseqs_params
+      prefix: -mmseqs_params
   - id: mmseqs_path
     type:
       - 'null'
@@ -65,7 +65,7 @@ inputs:
     doc: Path to MMseqs2 executable
     inputBinding:
       position: 102
-      prefix: --mmseqs_path
+      prefix: -mmseqs_path
   - id: output_directory
     type:
       - 'null'
@@ -126,6 +126,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/liftofftools:0.4.4--pyhdfd78af_0

@@ -297,6 +297,13 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: experiment_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in experiment_name
+    outputBinding:
+      glob: $(inputs.experiment_name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboseed:0.4.90--py_0

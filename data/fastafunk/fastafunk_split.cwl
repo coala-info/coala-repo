@@ -90,6 +90,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: A directory for output FASTA files
+    outputBinding:
+      glob: $(inputs.out_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastafunk:0.1.2--pyh5e36f6f_0

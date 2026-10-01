@@ -236,7 +236,7 @@ inputs:
       errors. See the MIDesigner or BarCrawl programs to generate MID sequences.
     inputBinding:
       position: 101
-      prefix: -multiplex_mids
+      prefix: -mi
   - id: mutation_dist
     type:
       - 'null'
@@ -380,6 +380,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: base_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in base_name
+    outputBinding:
+      glob: $(inputs.base_name)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory where the results should be written. This folder will be 
+      created if needed.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/grinder:v0.5.4-5-deb_cv1

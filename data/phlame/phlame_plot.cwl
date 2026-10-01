@@ -12,13 +12,13 @@ inputs:
     doc: Path to input data file (required).
     inputBinding:
       position: 101
-      prefix: --d
+      prefix: -d
   - id: input_frequencies
     type: File
     doc: Path to input frequencies file (required).
     inputBinding:
       position: 101
-      prefix: --f
+      prefix: -f
   - id: max_pi
     type:
       - 'null'

@@ -29,7 +29,7 @@ inputs:
     doc: Generates just the maker_bopts.ctl file.
     inputBinding:
       position: 104
-      prefix: --BOPTS
+      prefix: -BOPTS
   - id: CTL
     type:
       - 'null'
@@ -37,7 +37,7 @@ inputs:
     doc: Generate empty control files in the current directory.
     inputBinding:
       position: 104
-      prefix: --CTL
+      prefix: -CTL
   - id: EXE
     type:
       - 'null'
@@ -45,7 +45,7 @@ inputs:
     doc: Generates just the maker_exe.ctl file.
     inputBinding:
       position: 104
-      prefix: --EXE
+      prefix: -EXE
   - id: OPTS
     type:
       - 'null'
@@ -53,7 +53,7 @@ inputs:
     doc: Generates just the maker_opts.ctl file.
     inputBinding:
       position: 104
-      prefix: --OPTS
+      prefix: -OPTS
   - id: TMP
     type:
       - 'null'
@@ -61,7 +61,7 @@ inputs:
     doc: Specify temporary directory to use.
     inputBinding:
       position: 104
-      prefix: --TMP
+      prefix: -TMP
   - id: again
     type:
       - 'null'
@@ -70,7 +70,7 @@ inputs:
       changed. Does not delete old analyses.
     inputBinding:
       position: 104
-      prefix: --again
+      prefix: -again
   - id: base
     type:
       - 'null'
@@ -79,7 +79,7 @@ inputs:
       genome file name by default.
     inputBinding:
       position: 104
-      prefix: --base
+      prefix: -base
   - id: cpus
     type:
       - 'null'
@@ -88,7 +88,7 @@ inputs:
       not for MPI!'
     inputBinding:
       position: 104
-      prefix: --cpus
+      prefix: -cpus
   - id: datastore
     type:
       - 'null'
@@ -97,7 +97,7 @@ inputs:
       by default.
     inputBinding:
       position: 104
-      prefix: --datastore
+      prefix: -datastore
   - id: dsindex
     type:
       - 'null'
@@ -106,7 +106,7 @@ inputs:
       run settings have changed on contigs
     inputBinding:
       position: 104
-      prefix: --dsindex
+      prefix: -dsindex
   - id: force
     type:
       - 'null'
@@ -115,7 +115,7 @@ inputs:
       require all blast analyses to be rerun.
     inputBinding:
       position: 104
-      prefix: --force
+      prefix: -force
   - id: genome
     type:
       - 'null'
@@ -123,7 +123,7 @@ inputs:
     doc: Overrides the genome file path in the control files
     inputBinding:
       position: 104
-      prefix: --genome
+      prefix: -genome
   - id: mwas_server_control
     type:
       - 'null'
@@ -132,7 +132,7 @@ inputs:
       RESTART'
     inputBinding:
       position: 104
-      prefix: --MWAS
+      prefix: -MWAS
   - id: nodatastore
     type:
       - 'null'
@@ -149,7 +149,7 @@ inputs:
       race conditions if running in parallel.
     inputBinding:
       position: 104
-      prefix: --nolock
+      prefix: -nolock
   - id: old_struct
     type:
       - 'null'
@@ -157,7 +157,7 @@ inputs:
     doc: Use the old directory styles (MAKER 2.26 and lower)
     inputBinding:
       position: 104
-      prefix: --old_struct
+      prefix: -old_struct
   - id: qq
     type:
       - 'null'
@@ -165,7 +165,7 @@ inputs:
     doc: Even more quiet. There are no status messages.
     inputBinding:
       position: 104
-      prefix: --qq
+      prefix: -qq
   - id: quiet
     type:
       - 'null'
@@ -173,7 +173,7 @@ inputs:
     doc: Regular quiet. Only a handful of status messages.
     inputBinding:
       position: 104
-      prefix: --quiet
+      prefix: -quiet
   - id: repeat_masking_off
     type:
       - 'null'
@@ -181,7 +181,7 @@ inputs:
     doc: Turns all repeat masking options off.
     inputBinding:
       position: 104
-      prefix: --RM_off
+      prefix: -RM_off
   - id: tries
     type:
       - 'null'
@@ -189,7 +189,7 @@ inputs:
     doc: Run contigs up to the specified number of tries.
     inputBinding:
       position: 104
-      prefix: --tries
+      prefix: -tries
 outputs:
   - id: stdout
     type: stdout

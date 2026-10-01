@@ -133,6 +133,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: wiggle_basename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in wiggle_basename
+    outputBinding:
+      glob: $(inputs.wiggle_basename)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanoraw:0.5--py27r3.3.2_0

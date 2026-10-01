@@ -9,9 +9,15 @@ doc: "Burrows-Wheeler Alignment Tool, MEM algorithm for long-read alignment\n\nT
 inputs:
   - id: idxbase
     type: File
-    doc: Index basename
+    doc: The bwa index, given as its .bwt file (for example ref.fa.bwt from bwa index) or
+      as the file named like the index prefix (for example ref.fa); the .amb, .ann,
+      .bwt, .pac and .sa files must sit beside it
+    secondaryFiles:
+      - pattern: "${ var b = self.basename.replace(/\\.bwt$/, ''); var s = ['.amb', '.ann', '.pac', '.sa']; if (b === self.basename) { s.push('.bwt'); } return s.map(function (e) { return b + e; }); }"
+        required: true
     inputBinding:
       position: 1
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: in1_fq
     type: File
     doc: Input FASTQ file 1

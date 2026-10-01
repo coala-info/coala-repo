@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pgatk
+  - pypgatk
   - generate-decoy
 label: pypgatk_generate-decoy
 doc: "Generate decoy protein sequences for a target protein database.\n\nTool homepage:

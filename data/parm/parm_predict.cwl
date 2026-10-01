@@ -103,7 +103,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type: Directory
     doc: Path to the output file where the predictions will be saved. Output is 
       a tab-separated file with the sequence, header, and the predicted score.
     outputBinding:

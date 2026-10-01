@@ -79,6 +79,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path for the output result files. If it is not specified, results are 
+      written to the current directory.
+    outputBinding:
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orsum:1.8.0--hdfd78af_0

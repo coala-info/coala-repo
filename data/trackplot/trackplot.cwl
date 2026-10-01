@@ -756,6 +756,13 @@ outputs:
     doc: Path to output graph file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: plots_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The path to directory where to save the backend plot data and logs
+    outputBinding:
+      glob: $(inputs.plots)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

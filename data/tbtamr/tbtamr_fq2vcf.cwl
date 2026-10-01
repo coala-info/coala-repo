@@ -18,7 +18,7 @@ inputs:
     doc: Append FASTA/FASTQ comment to SAM output in BWA.
     inputBinding:
       position: 102
-      prefix: --append-fasta-fastq-comment
+      prefix: -C
   - id: band_width
     type:
       - 'null'
@@ -42,7 +42,7 @@ inputs:
     doc: Don't modify mapQ of supplementary alignments in BWA.
     inputBinding:
       position: 102
-      prefix: --dont-modify-mapq-supplementary
+      prefix: -q
   - id: drop_chains_fraction
     type:
       - 'null'
@@ -51,7 +51,7 @@ inputs:
       chain in BWA.
     inputBinding:
       position: 102
-      prefix: --drop-chains-fraction
+      prefix: -D
   - id: end_clipping_penalty
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: Mark shorter split hits as secondary in BWA.
     inputBinding:
       position: 102
-      prefix: --mark-shorter-split-hits-secondary
+      prefix: -M
   - id: match_score
     type:
       - 'null'
@@ -165,7 +165,7 @@ inputs:
     doc: Output all alignments for SE or unpaired PE in BWA.
     inputBinding:
       position: 102
-      prefix: --output-all-alignments-SE-PE
+      prefix: -a
   - id: output_all_hits_XA
     type:
       - 'null'
@@ -190,7 +190,7 @@ inputs:
     doc: Output the reference FASTA header in the XR tag in BWA.
     inputBinding:
       position: 102
-      prefix: --output-reference-header-XR
+      prefix: -V
   - id: output_xb_instead_of_xa
     type:
       - 'null'
@@ -207,7 +207,7 @@ inputs:
     doc: Process INT input bases in each batch regardless of nThreads in BWA.
     inputBinding:
       position: 102
-      prefix: --process-input-bases-batch
+      prefix: -K
   - id: read_group_header
     type:
       - 'null'
@@ -319,7 +319,7 @@ inputs:
     doc: Skip mate rescue in BWA.
     inputBinding:
       position: 102
-      prefix: --skip-mate-rescue
+      prefix: -S
   - id: skip_pairing
     type:
       - 'null'
@@ -327,7 +327,7 @@ inputs:
     doc: Skip pairing; mate rescue performed unless -S also in use in BWA.
     inputBinding:
       position: 102
-      prefix: --skip-pairing
+      prefix: -P
   - id: skip_seeds_occurrence
     type:
       - 'null'
@@ -384,7 +384,7 @@ inputs:
     doc: Use soft clipping for supplementary alignments in BWA.
     inputBinding:
       position: 102
-      prefix: --use-soft-clipping-supplementary
+      prefix: -Y
   - id: verbosity_level
     type:
       - 'null'
@@ -424,6 +424,13 @@ outputs:
     doc: Output BAM file name.
     outputBinding:
       glob: $(inputs.output_bam_file_path)
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store output files.
+    outputBinding:
+      glob: $(inputs.output_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

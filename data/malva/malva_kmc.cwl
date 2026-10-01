@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_file_name
-    type: File
+    type: string
     doc: output file name
     inputBinding:
       position: 3
@@ -175,6 +175,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_name_out
+    type:
+      - 'null'
+      - File
+    doc: output file name
+    outputBinding:
+      glob: $(inputs.output_file_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/malva:2.0.0--h7071971_4

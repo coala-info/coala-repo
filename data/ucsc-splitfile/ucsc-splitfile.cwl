@@ -23,6 +23,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_root_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_root
+    outputBinding:
+      glob: $(inputs.out_root)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-splitfile:482--h0b57e2e_0

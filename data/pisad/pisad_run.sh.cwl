@@ -119,6 +119,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: plot_output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for output plot
+    outputBinding:
+      glob: $(inputs.plot_output_dir)
+  - id: snp_output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for SNP output
+    outputBinding:
+      glob: $(inputs.snp_output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0

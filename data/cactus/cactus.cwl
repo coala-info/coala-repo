@@ -22,7 +22,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_hal
-    type: File
+    type: string
     doc: Output HAL file
     inputBinding:
       position: 3
@@ -598,6 +598,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_hal_out
+    type:
+      - 'null'
+      - File
+    doc: Output HAL file
+    outputBinding:
+      glob: $(inputs.output_hal)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus:2019.03.01--py27hdbcaa40_0

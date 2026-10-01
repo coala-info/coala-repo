@@ -11,7 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_word_index
-    type: File
+    type: string
     doc: Output word index file
     inputBinding:
       position: 2
@@ -52,6 +52,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_word_index_out
+    type:
+      - 'null'
+      - File
+    doc: Output word index file
+    outputBinding:
+      glob: $(inputs.output_word_index)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1

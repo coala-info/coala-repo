@@ -57,6 +57,13 @@ outputs:
     doc: Path to the output directory
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: filename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in filename
+    outputBinding:
+      glob: $(inputs.filename)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

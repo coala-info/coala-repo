@@ -300,6 +300,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outbase_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outbase
+    outputBinding:
+      glob: $(inputs.outbase)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plastid:0.6.1--py38h7d1810a_2

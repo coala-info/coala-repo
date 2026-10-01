@@ -65,6 +65,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outfile_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name for the output directory (Required).
+    outputBinding:
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svhip:1.0.9--hdfd78af_0

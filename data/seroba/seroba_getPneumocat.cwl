@@ -16,6 +16,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory for PneumoCat Database
+    outputBinding:
+      glob: $(inputs.database_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seroba:1.0.2--pyhdfd78af_1

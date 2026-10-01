@@ -406,6 +406,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Results output directory.
+    outputBinding:
+      glob: $(inputs.results)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colabfold:1.5.5--pyh7cba7a3_2

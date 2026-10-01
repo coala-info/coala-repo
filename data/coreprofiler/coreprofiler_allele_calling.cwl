@@ -110,13 +110,11 @@ inputs:
       position: 101
       prefix: --verbose
   - id: out_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `out_path`
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
   - id: outfa_path
     type:
       - 'null'

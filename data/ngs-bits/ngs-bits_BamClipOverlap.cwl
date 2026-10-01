@@ -11,7 +11,7 @@ inputs:
     doc: Turn off indel detection in overlap.
     inputBinding:
       position: 101
-      prefix: --ignore_indels
+      prefix: -ignore_indels
   - id: input_file
     type: File
     doc: Input BAM/CRAM file. Needs to be sorted by name.
@@ -25,7 +25,7 @@ inputs:
     doc: Set base to N if mismatch is found in overlapping reads.
     inputBinding:
       position: 101
-      prefix: --overlap_mismatch_basen
+      prefix: -overlap_mismatch_basen
   - id: overlap_mismatch_baseq
     type:
       - 'null'
@@ -33,7 +33,7 @@ inputs:
     doc: Reduce base quality if mismatch is found in overlapping reads.
     inputBinding:
       position: 101
-      prefix: --overlap_mismatch_baseq
+      prefix: -overlap_mismatch_baseq
   - id: overlap_mismatch_mapq
     type:
       - 'null'
@@ -42,7 +42,7 @@ inputs:
       reads.
     inputBinding:
       position: 101
-      prefix: --overlap_mismatch_mapq
+      prefix: -overlap_mismatch_mapq
   - id: overlap_mismatch_remove
     type:
       - 'null'
@@ -50,7 +50,7 @@ inputs:
     doc: Remove pair if mismatch is found in overlapping reads.
     inputBinding:
       position: 101
-      prefix: --overlap_mismatch_remove
+      prefix: -overlap_mismatch_remove
   - id: reference_genome
     type:
       - 'null'

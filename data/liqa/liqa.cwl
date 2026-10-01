@@ -9,7 +9,7 @@ inputs:
     doc: task to perform
     inputBinding:
       position: 101
-      prefix: --task
+      prefix: -task
 outputs:
   - id: stdout
     type: stdout

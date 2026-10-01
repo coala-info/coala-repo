@@ -25,7 +25,7 @@ inputs:
       position: 101
       prefix: --data_dir
   - id: file
-    type: File
+    type: string
     doc: Output file from metaquantome expand.
     inputBinding:
       position: 101
@@ -85,6 +85,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file from metaquantome expand.
+    outputBinding:
+      glob: $(inputs.file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

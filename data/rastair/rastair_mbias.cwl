@@ -83,6 +83,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rastair:2.0.0--h03e3cfe_0

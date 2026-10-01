@@ -138,6 +138,13 @@ outputs:
     doc: Output file to put results
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: translation_table_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.translation_table)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

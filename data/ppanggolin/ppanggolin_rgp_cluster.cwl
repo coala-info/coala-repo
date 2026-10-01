@@ -155,6 +155,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_path)
+  - id: basename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in basename
+    outputBinding:
+      glob: $(inputs.basename)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

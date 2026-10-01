@@ -19,7 +19,8 @@ inputs:
       chromInfo table in specified db.
     inputBinding:
       position: 102
-      prefix: --chromSizes
+      prefix: -chromSizes=
+      separate: false
   - id: database
     type:
       - 'null'
@@ -28,7 +29,8 @@ inputs:
       perhaps the table to check.
     inputBinding:
       position: 102
-      prefix: --db
+      prefix: -db=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

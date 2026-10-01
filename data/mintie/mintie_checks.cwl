@@ -228,6 +228,13 @@ outputs:
     doc: Output file name of report
     outputBinding:
       glob: $(inputs.report_filename_path)
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

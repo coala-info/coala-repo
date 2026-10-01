@@ -126,6 +126,20 @@ outputs:
     doc: Output bed file with misassembled regions.
     outputBinding:
       glob: $(inputs.output_misasm_path)
+  - id: output_cov_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output coverage dir. Generates wig or bigwig files per region.
+    outputBinding:
+      glob: $(inputs.output_cov_dir)
+  - id: output_plot_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output plot dir.
+    outputBinding:
+      glob: $(inputs.output_plot_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

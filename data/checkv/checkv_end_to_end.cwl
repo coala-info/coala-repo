@@ -34,7 +34,7 @@ inputs:
       is used
     inputBinding:
       position: 102
-      prefix: --reference_database_path
+      prefix: -d
   - id: remove_tmp
     type:
       - 'null'

@@ -91,7 +91,7 @@ inputs:
     doc: Enable "epsilon" processing for the output coordinates.
     inputBinding:
       position: 102
-      prefix: --eco
+      prefix: -eco
   - id: epo
     type:
       - 'null'
@@ -99,7 +99,7 @@ inputs:
     doc: Enable "epsilon" processing for the source window.
     inputBinding:
       position: 102
-      prefix: --epo
+      prefix: -epo
   - id: expand
     type:
       - 'null'
@@ -116,7 +116,7 @@ inputs:
     doc: Apply an exponent to the bands.
     inputBinding:
       position: 102
-      prefix: --exponent
+      prefix: -exponent
   - id: format
     type:
       - 'null'
@@ -159,7 +159,7 @@ inputs:
     doc: Do not copy raster attribute table.
     inputBinding:
       position: 102
-      prefix: --norat
+      prefix: -norat
   - id: oo
     type:
       - 'null'
@@ -227,7 +227,7 @@ inputs:
     doc: Scale the bands to the given range.
     inputBinding:
       position: 102
-      prefix: --scale
+      prefix: -scale
   - id: sds
     type:
       - 'null'
@@ -252,7 +252,7 @@ inputs:
     doc: Compute statistics for the output bands.
     inputBinding:
       position: 102
-      prefix: --stats
+      prefix: -stats
   - id: strict
     type:
       - 'null'
@@ -261,7 +261,7 @@ inputs:
       will be an error.
     inputBinding:
       position: 102
-      prefix: --strict
+      prefix: -strict
   - id: tr
     type:
       - 'null'
@@ -279,7 +279,7 @@ inputs:
       item.
     inputBinding:
       position: 102
-      prefix: --unscale
+      prefix: -unscale
 outputs:
   - id: dst_dataset
     type: File

@@ -11,7 +11,7 @@ inputs:
     doc: The width of the bin. Default is 1000bp.
     inputBinding:
       position: 101
-      prefix: --b
+      prefix: -b
   - id: chrom_info_file
     type: File
     doc: ChromInfo.txt. If you get an out of bounds error when uploading a bed 
@@ -21,7 +21,7 @@ inputs:
       sizes in the second column.
     inputBinding:
       position: 101
-      prefix: --g
+      prefix: -g
   - id: control_reads
     type:
       - 'null'
@@ -30,7 +30,7 @@ inputs:
       to speicfy BED format. BAM format is the default.
     inputBinding:
       position: 101
-      prefix: --c
+      prefix: -c
   - id: control_reads_binned
     type:
       - 'null'
@@ -39,7 +39,7 @@ inputs:
       with this option and they will be used directly.
     inputBinding:
       position: 101
-      prefix: --C
+      prefix: -C
   - id: input_is_bed
     type:
       - 'null'
@@ -49,7 +49,7 @@ inputs:
       as a stand alone program if you have a more complicated set up.'
     inputBinding:
       position: 101
-      prefix: --B
+      prefix: -B
   - id: min_mapq
     type:
       - 'null'
@@ -57,7 +57,7 @@ inputs:
     doc: The minimum MAPQ score. Default is 30.
     inputBinding:
       position: 101
-      prefix: --q
+      prefix: -q
   - id: min_posterior
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
       is 0; everything is merged by default.'
     inputBinding:
       position: 101
-      prefix: --p
+      prefix: -p
   - id: output_prefix
     type: string
     doc: 'hiddenDomains generates four or five files with names that start with OutputPrefix.
@@ -84,14 +84,14 @@ inputs:
       per bin.'
     inputBinding:
       position: 101
-      prefix: --o
+      prefix: -o
   - id: treatment_reads
     type: File
     doc: A BED or BAM file that contains aligned read reads. Use the -B option 
       to speicfy BED format. BAM format is the default.
     inputBinding:
       position: 101
-      prefix: --t
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

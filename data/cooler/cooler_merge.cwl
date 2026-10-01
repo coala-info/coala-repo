@@ -7,7 +7,7 @@ label: cooler_merge
 doc: "Merge multiple coolers with identical axes.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
   - id: out_path
-    type: File
+    type: string
     doc: Output file path or URI.
     inputBinding:
       position: 1
@@ -51,6 +51,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_path_out
+    type:
+      - 'null'
+      - File
+    doc: Output file path or URI.
+    outputBinding:
+      glob: $(inputs.out_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

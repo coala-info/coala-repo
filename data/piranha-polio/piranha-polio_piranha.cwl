@@ -480,6 +480,35 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+  - id: archivedir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Configure where to put the fastq_pass files, default in the output 
+      directory.
+    outputBinding:
+      glob: $(inputs.archivedir)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Output directory. Default: `analysis-2022-XX-YY`'
+    outputBinding:
+      glob: $(inputs.outdir)
+  - id: publishdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Output publish directory. Default: `analysis-2022-XX- YY`'
+    outputBinding:
+      glob: $(inputs.publishdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/piranha-polio:1.5.3--pyhdfd78af_0

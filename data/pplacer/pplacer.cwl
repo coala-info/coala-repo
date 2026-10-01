@@ -394,6 +394,13 @@ outputs:
     doc: Specify the output file name
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify the directory to write place files to.
+    outputBinding:
+      glob: $(inputs.output_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

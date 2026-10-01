@@ -188,6 +188,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory.
+    outputBinding:
+      glob: $(inputs.outdir)
+  - id: workdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory in which DVORFS will save files during a run
+    outputBinding:
+      glob: $(inputs.workdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dvorfs:1.0.1--pyhdfd78af_0

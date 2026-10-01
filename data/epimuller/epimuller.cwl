@@ -225,6 +225,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: folder for output
+    outputBinding:
+      glob: $(inputs.out_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/epimuller:0.0.8--pyhdfd78af_0

@@ -65,6 +65,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: target_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Target folder to save data shards
+    outputBinding:
+      glob: $(inputs.target)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/instanovo:1.2.2--pyhdfd78af_1

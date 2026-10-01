@@ -164,7 +164,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/1)
     inputBinding:
       position: 101
-      prefix: --p1
+      prefix: -p1
   - id: paired_end_reads_2
     type:
       - 'null'
@@ -172,7 +172,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/2)
     inputBinding:
       position: 101
-      prefix: --p2
+      prefix: -p2
   - id: ref_guided_mode
     type:
       - 'null'
@@ -206,7 +206,7 @@ inputs:
     doc: path to input fastq containing single-end reads
     inputBinding:
       position: 101
-      prefix: --s
+      prefix: -s
   - id: stddev
     type: float
     doc: standard deviation of insert size for paired-end input

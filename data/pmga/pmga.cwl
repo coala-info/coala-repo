@@ -79,6 +79,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to output results to
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pmga:3.0.2--hdfd78af_0

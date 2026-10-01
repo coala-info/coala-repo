@@ -72,7 +72,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/1)
     inputBinding:
       position: 101
-      prefix: --p1
+      prefix: -p1
   - id: input_p2
     type:
       - 'null'
@@ -80,7 +80,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/2)
     inputBinding:
       position: 101
-      prefix: --p2
+      prefix: -p2
   - id: input_s
     type:
       - 'null'
@@ -88,7 +88,7 @@ inputs:
     doc: path to input fastq containing single-end reads
     inputBinding:
       position: 101
-      prefix: --s
+      prefix: -s
   - id: keep_branches
     type:
       - 'null'
@@ -251,6 +251,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: specify output directory
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savage:0.4.2--py27h3e4de3e_0

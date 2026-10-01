@@ -8,7 +8,7 @@ doc: "Retrieve a reference sequence and find the location of a specific gene.\n\
   Tool homepage: https://git.lumc.nl/j.f.j.laros/fastools"
 inputs:
   - id: output
-    type: File
+    type: string
     doc: output file
     inputBinding:
       position: 1
@@ -50,6 +50,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_out
+    type:
+      - 'null'
+      - File
+    doc: output file
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastools:1.1.5--pyh7cba7a3_0

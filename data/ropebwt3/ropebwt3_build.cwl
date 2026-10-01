@@ -94,7 +94,7 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: output to FILE
     inputBinding:
       position: 102
@@ -159,6 +159,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: output to FILE
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ropebwt3:3.10--h577a1d6_0

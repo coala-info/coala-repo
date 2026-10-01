@@ -46,6 +46,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioinfokit:2.1.3--pyh7cba7a3_0

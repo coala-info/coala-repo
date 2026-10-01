@@ -111,6 +111,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: kmc_output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in kmc_output_prefix
+    outputBinding:
+      glob: $(inputs.kmc_output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/malva:2.0.0--h7071971_4

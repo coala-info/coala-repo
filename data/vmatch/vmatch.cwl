@@ -11,7 +11,7 @@ inputs:
     doc: specify that query sequences must match completely
     inputBinding:
       position: 101
-      prefix: --complete
+      prefix: -complete
   - id: direct_matches
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: compute direct matches (default)
     inputBinding:
       position: 101
-      prefix: --d
+      prefix: -d
   - id: edit_distance
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: specify the xdrop value for edit distance extension
     inputBinding:
       position: 101
-      prefix: --exdrop
+      prefix: -exdrop
   - id: evalue
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: specify the maximum E-value of a match
     inputBinding:
       position: 101
-      prefix: --evalue
+      prefix: -evalue
   - id: hamming_distance
     type:
       - 'null'
@@ -59,7 +59,7 @@ inputs:
     doc: specify the xdrop value for hamming distance extension
     inputBinding:
       position: 101
-      prefix: --hxdrop
+      prefix: -hxdrop
   - id: least_score
     type:
       - 'null'
@@ -67,7 +67,7 @@ inputs:
     doc: specify the minimum score of a match
     inputBinding:
       position: 101
-      prefix: --leastscore
+      prefix: -leastscore
   - id: match_length
     type:
       - 'null'
@@ -83,7 +83,7 @@ inputs:
     doc: specify minimum identity of match in range [1..100%]
     inputBinding:
       position: 101
-      prefix: --identity
+      prefix: -identity
   - id: online
     type:
       - 'null'
@@ -91,7 +91,7 @@ inputs:
     doc: run algorithms online without using the index
     inputBinding:
       position: 101
-      prefix: --online
+      prefix: -online
   - id: palindromic_matches
     type:
       - 'null'
@@ -99,7 +99,7 @@ inputs:
     doc: compute palindromic (i.e. reverse complemented matches)
     inputBinding:
       position: 101
-      prefix: --p
+      prefix: -p
   - id: queries
     type:
       - 'null'
@@ -123,7 +123,7 @@ inputs:
     doc: show sequence description of match
     inputBinding:
       position: 101
-      prefix: --showdesc
+      prefix: -showdesc
   - id: verbose
     type:
       - 'null'

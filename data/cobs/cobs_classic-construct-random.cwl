@@ -7,7 +7,7 @@ label: cobs_classic-construct-random
 doc: "Constructs a random COBS index.\n\nTool homepage: https://panthema.net/cobs"
 inputs:
   - id: out_file
-    type: File
+    type: string
     doc: path to the output file
     inputBinding:
       position: 1
@@ -55,6 +55,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_file_out
+    type:
+      - 'null'
+      - File
+    doc: path to the output file
+    outputBinding:
+      glob: $(inputs.out_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

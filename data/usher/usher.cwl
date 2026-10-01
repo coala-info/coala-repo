@@ -200,6 +200,13 @@ outputs:
     doc: Save output mutation-annotated tree object to the specified filename
     outputBinding:
       glob: $(inputs.save_mutation_annotated_tree_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory to dump output and log files
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -228,6 +228,13 @@ outputs:
     doc: Name of GFF3 annotation file. If not set, suppress output.
     outputBinding:
       glob: $(inputs.gffout_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Write output files to this directory.
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

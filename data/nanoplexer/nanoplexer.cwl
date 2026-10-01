@@ -83,7 +83,7 @@ inputs:
   - id: output_log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output log file
     inputBinding:
       position: 102
@@ -122,6 +122,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_log_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output log file
+    outputBinding:
+      glob: $(inputs.output_log_file)
+  - id: output_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output path
+    outputBinding:
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanoplexer:0.1.2--h7132678_2

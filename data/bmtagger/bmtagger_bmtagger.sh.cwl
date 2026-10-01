@@ -12,11 +12,11 @@ inputs:
     doc: Accession identifier
     inputBinding:
       position: 101
-      prefix: --A
+      prefix: -A
   - id: blacklist
     type:
       - 'null'
-      - File
+      - string
     doc: Output blacklist file
     inputBinding:
       position: 101
@@ -120,6 +120,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: blacklist_out
+    type:
+      - 'null'
+      - File
+    doc: Output blacklist file
+    outputBinding:
+      glob: $(inputs.blacklist)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bmtagger:3.101--3

@@ -390,6 +390,13 @@ outputs:
     doc: Name for log file (output)
     outputBinding:
       glob: $(inputs.logfile_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

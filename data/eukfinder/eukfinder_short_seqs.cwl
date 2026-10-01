@@ -149,6 +149,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_name
+    outputBinding:
+      glob: $(inputs.out_name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eukfinder:1.2.4--py36h503566f_0

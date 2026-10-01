@@ -105,6 +105,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: printseq_dir
+    type:
+      - 'null'
+      - Directory
+    doc: specify directory to save extracted porA/fetA/porB or BAST allele 
+      sequences
+    outputBinding:
+      glob: $(inputs.printseq)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meningotype:0.8.5--pyhdfd78af_1

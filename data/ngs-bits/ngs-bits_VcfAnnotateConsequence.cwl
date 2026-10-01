@@ -14,7 +14,7 @@ inputs:
       'RefSeq'/'BestRefSeq' origin for Refseq.
     inputBinding:
       position: 101
-      prefix: --all
+      prefix: -all
   - id: block_size
     type:
       - 'null'
@@ -38,7 +38,7 @@ inputs:
     doc: Enable debug output
     inputBinding:
       position: 101
-      prefix: --debug
+      prefix: -debug
   - id: gff_file
     type: File
     doc: Ensembl-style GFF file with transcripts, e.g. from 
@@ -100,7 +100,7 @@ inputs:
     doc: Skip genes that do not have a HGNC identifier.
     inputBinding:
       position: 101
-      prefix: --skip_not_hgnc
+      prefix: -skip_not_hgnc
   - id: splice_region_exon_boundary
     type:
       - 'null'

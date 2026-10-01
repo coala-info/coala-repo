@@ -133,6 +133,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: bin_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in bin_prefix
+    outputBinding:
+      glob: $(inputs.bin_prefix)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unitem:1.2.6--pyhdfd78af_0

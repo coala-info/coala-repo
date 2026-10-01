@@ -11,7 +11,7 @@ inputs:
     doc: FRD Correction on the P-Values
     inputBinding:
       position: 101
-      prefix: --fdr
+      prefix: -fdr
   - id: gene_key
     type:
       - 'null'

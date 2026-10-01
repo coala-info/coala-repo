@@ -55,7 +55,7 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - Directory
     doc: Filename to save filtered associations table (not saved by default)
     outputBinding:
       glob: $(inputs.output_path)

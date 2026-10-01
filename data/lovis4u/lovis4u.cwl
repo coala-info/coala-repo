@@ -398,7 +398,7 @@ inputs:
     doc: Run hmmscan search for additional functional annotation.
     inputBinding:
       position: 101
-      prefix: --hmmscan
+      prefix: -hmmscan
   - id: scale_line_track
     type:
       - 'null'
@@ -543,6 +543,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Output dir name. It will be created if it does not exist. [default: lovis4u_{current_date};
+      e.g. uorf4u_2022_07_25-20_41]'
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lovis4u:0.1.7--pyh7e72e81_0

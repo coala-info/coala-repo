@@ -98,6 +98,13 @@ outputs:
     doc: output file
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

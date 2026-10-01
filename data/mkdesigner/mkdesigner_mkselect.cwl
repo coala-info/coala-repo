@@ -78,6 +78,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_stem_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Identical name (must be unique). This will be stem of output directory 
+      name.
+    outputBinding:
+      glob: $(inputs.output_stem)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mkdesigner:0.5.3--pyhdfd78af_0

@@ -60,7 +60,7 @@ inputs:
     doc: Gene annotation file
     inputBinding:
       position: 101
-      prefix: --genepath
+      prefix: -g
   - id: input_tis_p_threshold
     type:
       - 'null'
@@ -206,7 +206,7 @@ inputs:
     doc: Group 2 TIS enriched riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: --tis2bampaths
+      prefix: -b
   - id: tis2_labels
     type:
       - 'null'

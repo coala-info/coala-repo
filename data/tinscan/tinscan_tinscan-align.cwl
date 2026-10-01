@@ -88,6 +88,13 @@ outputs:
     doc: Name of alignment result file.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Write output files to this directory.
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

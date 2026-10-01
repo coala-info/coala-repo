@@ -476,6 +476,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to a directory where to write the output files. (Required by -V; 
+      otherwise defaults to value of -P.)
+    outputBinding:
+      glob: $(inputs.out_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

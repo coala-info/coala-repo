@@ -161,7 +161,7 @@ inputs:
   - id: summarize_distances_file
     type:
       - 'null'
-      - File
+      - string
     doc: summarize the distances present in the distance register and write the 
       result to the specified tabular file. File extension is automatically 
       assigned (will be .KPopSummary.txt)
@@ -189,6 +189,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: summarize_distances_file_out
+    type:
+      - 'null'
+      - File
+    doc: summarize the distances present in the distance register and write the 
+      result to the specified tabular file. File extension is automatically 
+      assigned (will be .KPopSummary.txt)
+    outputBinding:
+      glob: $(inputs.summarize_distances_file)
+  - id: compute_and_summarize_distances_args_dir
+    type:
+      - 'null'
+      - Directory
+    doc: compute distances between all the vectors present in the twisted 
+      register and all the vectors present in the specified twisted binary file 
+      (which must have extension .KPopTwisted) using the metric provided by the 
+      twister present in the twister register; summarize them and write the 
+      result to the specified tabular file. File extension is automatically 
+      assigned (will be .KPopSummary.txt)
+    outputBinding:
+      glob: $(inputs.compute_and_summarize_distances_args)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpop:1.1.1--h9ee0642_1

@@ -5,7 +5,7 @@ label: haplomap_ghmap
 doc: "Output gene-summaried results by default.\n\nTool homepage: https://github.com/zqfang/haplomap"
 inputs:
   - id: blocks
-    type: File
+    type: string
     doc: The output file from (eblocks -o)
     inputBinding:
       position: 101
@@ -121,6 +121,13 @@ outputs:
     doc: Output gene-summaried results by default.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: blocks_out
+    type:
+      - 'null'
+      - File
+    doc: The output file from (eblocks -o)
+    outputBinding:
+      glob: $(inputs.blocks)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

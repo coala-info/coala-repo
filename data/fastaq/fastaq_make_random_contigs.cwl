@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - freq
+  - fastaq
   - make_random_contigs
 label: fastaq_make_random_contigs
 doc: "Makes a multi-FASTA file of random sequences, all of the same length. Each base

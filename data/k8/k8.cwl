@@ -4600,6 +4600,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dump_wasm_module_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory to dump wasm modules to
+    outputBinding:
+      glob: $(inputs.dump_wasm_module_path)
+  - id: trace_turbo_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory to dump generated TurboFan IR to
+    outputBinding:
+      glob: $(inputs.trace_turbo_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/k8:1.2--he8db53b_6

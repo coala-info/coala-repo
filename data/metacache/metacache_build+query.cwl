@@ -14,7 +14,7 @@ inputs:
     doc: Sequence file or directory for queries
     inputBinding:
       position: 101
-      prefix: --query
+      prefix: -query
   - id: targets
     type:
       type: array
@@ -22,7 +22,7 @@ inputs:
     doc: Sequence file or directory for targets
     inputBinding:
       position: 101
-      prefix: --targets
+      prefix: -targets
 outputs:
   - id: stdout
     type: stdout

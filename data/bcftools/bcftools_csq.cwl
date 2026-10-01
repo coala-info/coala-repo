@@ -57,7 +57,7 @@ inputs:
   doc: GFF3 annotation file
   inputBinding:
     position: 102
-    prefix: --gff
+    prefix: --gff-annot
 - id: include
   type: string?
   doc: Select sites for which the expression is true

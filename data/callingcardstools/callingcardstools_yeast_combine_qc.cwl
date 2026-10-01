@@ -47,6 +47,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: output_dirpath_dir
+    type:
+      - 'null'
+      - Directory
+    doc: a path to a directory where the output files will be output. Defaults 
+      to the current directory
+    outputBinding:
+      glob: $(inputs.output_dirpath)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

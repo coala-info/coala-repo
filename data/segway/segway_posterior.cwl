@@ -112,6 +112,13 @@ outputs:
     doc: specify layered bigBed filename
     outputBinding:
       glob: $(inputs.big_bed_file_path)
+  - id: annotatedir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store annotations
+    outputBinding:
+      glob: $(inputs.annotatedir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

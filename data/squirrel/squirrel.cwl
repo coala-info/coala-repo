@@ -306,6 +306,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: epi2me_outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for report paths in epi2me.
+    outputBinding:
+      glob: $(inputs.epi2me_outdir)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory.
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/squirrel:1.3.2--pyhdfd78af_0

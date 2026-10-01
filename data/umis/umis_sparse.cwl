@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: sparse_file
-    type: File
+    type: string
     doc: Output sparse matrix file
     inputBinding:
       position: 2
@@ -21,6 +21,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sparse_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output sparse matrix file
+    outputBinding:
+      glob: $(inputs.sparse_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

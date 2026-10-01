@@ -5,7 +5,7 @@ label: maq_glfgen
 doc: "Generate GLF file from maq assembly\n\nTool homepage: https://github.com/maqetta/maqetta"
 inputs:
   - id: output_cns
-    type: File
+    type: string
     doc: Output consensus file
     inputBinding:
       position: 1
@@ -87,6 +87,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_cns_out
+    type:
+      - 'null'
+      - File
+    doc: Output consensus file
+    outputBinding:
+      glob: $(inputs.output_cns)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1

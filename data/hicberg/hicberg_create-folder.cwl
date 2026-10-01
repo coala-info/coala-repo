@@ -36,6 +36,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: name_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name of the output folder to create. If not set, 'sample' is used.
+    outputBinding:
+      glob: $(inputs.name)
+  - id: output_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder to save results. If not set, the current directory is 
+      used.
+    outputBinding:
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicberg:1.0.1--py312hcf36b3e_0

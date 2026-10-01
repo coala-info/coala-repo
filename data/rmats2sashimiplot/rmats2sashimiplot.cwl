@@ -25,7 +25,7 @@ inputs:
       Coordinate and annotation input)
     inputBinding:
       position: 101
-      prefix: --c
+      prefix: -c
   - id: event_type
     type:
       - 'null'
@@ -44,7 +44,7 @@ inputs:
     doc: The rMATS output event file (Only if using rMATS event input)
     inputBinding:
       position: 101
-      prefix: --e
+      prefix: -e
   - id: exon_scale
     type:
       - 'null'
@@ -151,7 +151,7 @@ inputs:
     doc: The output directory.
     inputBinding:
       position: 101
-      prefix: --o
+      prefix: -o
   - id: remove_event_chr_prefix
     type:
       - 'null'
@@ -200,6 +200,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The output directory.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rmats2sashimiplot:3.0.0--py39hdff8610_2

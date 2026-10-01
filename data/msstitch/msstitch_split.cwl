@@ -43,6 +43,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to output in
+    outputBinding:
+      glob: $(inputs.output_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

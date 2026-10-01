@@ -50,6 +50,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sort_js_mode_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
+      copy .js file to plots output folder. 3: include .js code in HTML'
+    outputBinding:
+      glob: $(inputs.sort_js_mode)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rbpbench:1.1.0--pyhdfd78af_0

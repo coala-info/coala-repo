@@ -156,6 +156,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: target_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to output directory
+    outputBinding:
+      glob: $(inputs.target_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genview:0.2--pyhdfd78af_0

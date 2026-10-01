@@ -187,6 +187,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outprefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outprefix
+    outputBinding:
+      glob: $(inputs.outprefix)*
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/circlator:v1.5.5-3-deb_cv1

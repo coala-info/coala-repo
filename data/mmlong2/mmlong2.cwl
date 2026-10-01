@@ -358,6 +358,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for database installation
+    outputBinding:
+      glob: $(inputs.database_dir)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory name
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mmlong2:1.2.1--hdfd78af_1

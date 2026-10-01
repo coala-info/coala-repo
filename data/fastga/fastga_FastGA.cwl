@@ -64,7 +64,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output log to specified file.
     inputBinding:
       position: 106
@@ -201,6 +201,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output log to specified file.
+    outputBinding:
+      glob: $(inputs.log_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0

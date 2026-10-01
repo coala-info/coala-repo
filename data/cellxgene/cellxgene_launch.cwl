@@ -237,6 +237,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: annotations_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory of where to save output annotations; filename will be 
+      specified in the application. Incompatible with --annotations-file and 
+      --gene-sets-file.
+    outputBinding:
+      glob: $(inputs.annotations_dir)
+  - id: user_generated_data_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory of where to save output annotations; filename will be 
+      specified in the application. Incompatible with --annotations-file and 
+      --gene-sets-file.
+    outputBinding:
+      glob: $(inputs.user_generated_data_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cellxgene:1.3.0--pyhdfd78af_0

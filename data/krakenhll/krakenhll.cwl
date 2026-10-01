@@ -109,7 +109,7 @@ inputs:
       position: 102
       prefix: --quick
   - id: report_file
-    type: File
+    type: string
     doc: Output file for the report
     inputBinding:
       position: 102
@@ -174,6 +174,13 @@ outputs:
     doc: 'Print output to filename (default: stdout); "off" will suppress normal output'
     outputBinding:
       glob: $(inputs.output_path)
+  - id: report_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for the report
+    outputBinding:
+      glob: $(inputs.report_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

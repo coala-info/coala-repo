@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - vcfkit
   - vk
   - rename
 label: vcfkit_vk rename

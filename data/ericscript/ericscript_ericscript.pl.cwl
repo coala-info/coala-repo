@@ -296,7 +296,7 @@ inputs:
       ntrim=0 to don't trim reads.
     inputBinding:
       position: 103
-      prefix: --ntrim
+      prefix: -ntrim
   - id: use_bwa_aln
     type:
       - 'null'

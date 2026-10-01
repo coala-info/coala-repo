@@ -102,6 +102,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Set output directory. Default is "."
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/isa2w4m:phenomenal-v1.1.0_cv1.4.11

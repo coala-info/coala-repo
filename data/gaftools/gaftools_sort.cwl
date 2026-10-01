@@ -21,7 +21,7 @@ inputs:
   - id: outind
     type:
       - 'null'
-      - File
+      - string
     doc: Output GAF Sorting Index file. When --outgaf is not given, no index is 
       created. If it is given and --outind is not specified, it will have same 
       file name with .gsi extension)
@@ -43,6 +43,15 @@ outputs:
       standard output.
     outputBinding:
       glob: $(inputs.outgaf_path)
+  - id: outind_out
+    type:
+      - 'null'
+      - File
+    doc: Output GAF Sorting Index file. When --outgaf is not given, no index is 
+      created. If it is given and --outind is not specified, it will have same 
+      file name with .gsi extension)
+    outputBinding:
+      glob: $(inputs.outind)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

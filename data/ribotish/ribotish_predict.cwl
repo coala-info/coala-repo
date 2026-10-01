@@ -39,7 +39,7 @@ inputs:
       estimation instead of -g gene file
     inputBinding:
       position: 101
-      prefix: --a AGENEPATH
+      prefix: -a AGENEPATH
   - id: alternative_start_codons
     type:
       - 'null'
@@ -89,7 +89,7 @@ inputs:
     doc: 'Output TIS background estimation result (default: tisBackground.txt)'
     inputBinding:
       position: 101
-      prefix: --e ESTPATH
+      prefix: -e ESTPATH
   - id: fisher_p_value_threshold
     type:
       - 'null'
@@ -151,13 +151,13 @@ inputs:
     doc: Gene annotation file for ORF prediction
     inputBinding:
       position: 101
-      prefix: --g GENEPATH
+      prefix: -g GENEPATH
   - id: genome_fasta_path
     type: File
     doc: Genome fasta file
     inputBinding:
       position: 101
-      prefix: --f GENOMEFAPATH
+      prefix: -f GENOMEFAPATH
   - id: harr
     type:
       - 'null'
@@ -189,7 +189,7 @@ inputs:
     doc: Input background estimation result file instead of instant estimation
     inputBinding:
       position: 101
-      prefix: --s INESTPATH
+      prefix: -s INESTPATH
   - id: in_frame_count
     type:
       - 'null'
@@ -215,7 +215,7 @@ inputs:
       open)'
     inputBinding:
       position: 101
-      prefix: --i INPUT
+      prefix: -i INPUT
   - id: longest
     type:
       - 'null'
@@ -296,7 +296,7 @@ inputs:
     doc: Ordinary riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: --b RIBOBAMPATHS
+      prefix: -b RIBOBAMPATHS
   - id: ribo_para
     type:
       - 'null'
@@ -328,7 +328,7 @@ inputs:
     doc: TIS enriched riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: --t TISBAMPATHS
+      prefix: -t TISBAMPATHS
   - id: tis_p_value_threshold
     type:
       - 'null'

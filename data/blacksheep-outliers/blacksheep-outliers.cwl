@@ -57,6 +57,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blacksheep-outliers:0.0.8--py_0

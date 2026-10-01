@@ -44,6 +44,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to output directory (WARNING - script will delete directory if it 
+      exists)
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repic:1.0.0--pyhdfd78af_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: canu
+baseCommand:
+  - canu
+  - -trim-assemble
 label: canu_trim-assemble
 doc: "Canu is a de novo assembler for long, noisy reads. It is designed to assemble
   genomes from PacBio, Nanopore, and other long-read technologies. It can also be

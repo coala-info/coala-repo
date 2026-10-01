@@ -17,7 +17,7 @@ inputs:
       Only possible for geojson and parquet input formats.
     inputBinding:
       position: 101
-      prefix: --convert-to-3d
+      prefix: --convert-to-3D
   - id: entity_fusion_strategy
     type:
       - 'null'

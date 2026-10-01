@@ -39,7 +39,7 @@ inputs:
   - id: stats_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file with k-mer statistics.
     inputBinding:
       position: 101
@@ -58,6 +58,13 @@ outputs:
     doc: Output FASTA file (if used, must be used as many times as -i).
     outputBinding:
       glob: $(inputs.output_files_path)
+  - id: stats_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file with k-mer statistics.
+    outputBinding:
+      glob: $(inputs.stats_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

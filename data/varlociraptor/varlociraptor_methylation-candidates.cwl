@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varlociraptor-methylation-candidates
+baseCommand:
+  - varlociraptor
+  - methylation-candidates
 label: varlociraptor_methylation-candidates
 doc: "Generate BCF with methylation candidates\n\nTool homepage: https://varlociraptor.github.io"
 inputs:
@@ -9,6 +11,11 @@ inputs:
     doc: Input FASTA File
     inputBinding:
       position: 1
+  - id: output_bcf
+    type: string
+    doc: Output BCF File
+    inputBinding:
+      position: 2
   - id: motifs
     type:
       - 'null'
@@ -25,7 +32,7 @@ outputs:
     type: File
     doc: Output BCF File
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_bcf)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varlociraptor:8.9.5--h24073b4_0

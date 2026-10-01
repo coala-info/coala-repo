@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_file
-    type: File
+    type: string
     doc: Output file. Format determined from extension.
     inputBinding:
       position: 2
@@ -199,6 +199,13 @@ outputs:
     doc: Path to write sequence_id,sample_id pairs
     outputBinding:
       glob: $(inputs.map_out_path)
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file. Format determined from extension.
+    outputBinding:
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

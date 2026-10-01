@@ -19,7 +19,7 @@ inputs:
     doc: restriction enzyme (use multiple times for more enzymes)
     inputBinding:
       position: 102
-      prefix: --restriction_enzyme
+      prefix: -r
 outputs:
   - id: stdout
     type: stdout

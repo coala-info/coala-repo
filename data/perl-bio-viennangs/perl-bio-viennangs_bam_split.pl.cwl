@@ -110,6 +110,14 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_path)
+  - id: bwdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory name for resulting bigWig files. This directory is created as
+      subdirectory of the output directory.
+    outputBinding:
+      glob: $(inputs.bwdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

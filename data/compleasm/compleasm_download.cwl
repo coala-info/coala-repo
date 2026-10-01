@@ -36,6 +36,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: library_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The destination folder to store the downloaded lineage files.If not 
+      specified, a folder named "mb_downloads" will be created on the current 
+      running path.
+    outputBinding:
+      glob: $(inputs.library_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/compleasm:0.2.7--pyh7e72e81_1

@@ -7,7 +7,7 @@ label: rnasamba_classify
 doc: "Classify sequences from a input FASTA file.\n\nTool homepage: https://github.com/apcamargo/RNAsamba"
 inputs:
   - id: output_file
-    type: File
+    type: string
     doc: output TSV file containing the results of the classification.
     inputBinding:
       position: 1
@@ -47,6 +47,13 @@ outputs:
       coding ORFs.
     outputBinding:
       glob: $(inputs.protein_fasta_path)
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: output TSV file containing the results of the classification.
+    outputBinding:
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

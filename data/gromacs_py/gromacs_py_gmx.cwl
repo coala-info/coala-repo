@@ -12,7 +12,7 @@ inputs:
     doc: Write backups if output files exist
     inputBinding:
       position: 101
-      prefix: --no-backup
+      prefix: -nobackup
   - id: copyright
     type:
       - 'null'
@@ -20,7 +20,7 @@ inputs:
     doc: Print copyright information on startup
     inputBinding:
       position: 101
-      prefix: --no-copyright
+      prefix: -nocopyright
   - id: nice
     type:
       - 'null'
@@ -36,7 +36,7 @@ inputs:
     doc: Do not print common startup info or quotes
     inputBinding:
       position: 101
-      prefix: --no-quiet
+      prefix: -noquiet
 outputs:
   - id: stdout
     type: stdout

@@ -47,7 +47,7 @@ inputs:
   - id: alnout
     type:
       - 'null'
-      - File
+      - string
     doc: output chimera alignments to file
     inputBinding:
       position: 101
@@ -119,7 +119,7 @@ inputs:
   - id: chimeras
     type:
       - 'null'
-      - File
+      - string
     doc: output chimeric sequences to file
     inputBinding:
       position: 101
@@ -127,7 +127,7 @@ inputs:
   - id: chimeras
     type:
       - 'null'
-      - File
+      - string
     doc: output chimeric sequences to file
     inputBinding:
       position: 101
@@ -423,7 +423,7 @@ inputs:
   - id: fastaout
     type:
       - 'null'
-      - File
+      - string
     doc: output FASTA file (for fastx_uniques)
     inputBinding:
       position: 101
@@ -431,7 +431,7 @@ inputs:
   - id: fastaout
     type:
       - 'null'
-      - File
+      - string
     doc: output to specified FASTA file
     inputBinding:
       position: 101
@@ -1143,7 +1143,7 @@ inputs:
   - id: fastqout
     type:
       - 'null'
-      - File
+      - string
     doc: output FASTQ file (for fastx_uniques)
     inputBinding:
       position: 101
@@ -1167,7 +1167,7 @@ inputs:
   - id: fastqout
     type:
       - 'null'
-      - File
+      - string
     doc: output to specified FASTQ file
     inputBinding:
       position: 101
@@ -1495,7 +1495,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: output file for fastq_stats statistics
     inputBinding:
       position: 101
@@ -1855,7 +1855,7 @@ inputs:
   - id: notmatched
     type:
       - 'null'
-      - File
+      - string
     doc: output filename for undetermined sequences
     inputBinding:
       position: 101
@@ -1903,7 +1903,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - File
+      - string
     doc: output FASTA file (not for fastx_uniques)
     inputBinding:
       position: 101
@@ -1911,7 +1911,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - File
+      - string
     doc: output file for fastq_eestats(2) statistics
     inputBinding:
       position: 101
@@ -1919,7 +1919,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - File
+      - string
     doc: output to specified FASTA file
     inputBinding:
       position: 101
@@ -1927,7 +1927,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - File
+      - string
     doc: output to specified FASTA file
     inputBinding:
       position: 101
@@ -2679,7 +2679,7 @@ inputs:
   - id: tabbedout
     type:
       - 'null'
-      - File
+      - string
     doc: output filename for result information
     inputBinding:
       position: 101
@@ -2687,7 +2687,7 @@ inputs:
   - id: tabbedout
     type:
       - 'null'
-      - File
+      - string
     doc: write results to given tab-delimited file
     inputBinding:
       position: 101
@@ -2799,7 +2799,7 @@ inputs:
   - id: uchimealns
     type:
       - 'null'
-      - File
+      - string
     doc: output chimera alignments to file
     inputBinding:
       position: 101
@@ -2823,7 +2823,7 @@ inputs:
   - id: udb2fasta
     type:
       - 'null'
-      - File
+      - string
     doc: output FASTA file from given UDB file
     inputBinding:
       position: 101
@@ -3000,6 +3000,76 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: alnout_out
+    type:
+      - 'null'
+      - File
+    doc: output chimera alignments to file
+    outputBinding:
+      glob: $(inputs.alnout)
+  - id: chimeras_out
+    type:
+      - 'null'
+      - File
+    doc: output chimeric sequences to file
+    outputBinding:
+      glob: $(inputs.chimeras)
+  - id: fastaout_out
+    type:
+      - 'null'
+      - File
+    doc: output FASTA file (for fastx_uniques)
+    outputBinding:
+      glob: $(inputs.fastaout)
+  - id: fastqout_out
+    type:
+      - 'null'
+      - File
+    doc: output FASTQ file (for fastx_uniques)
+    outputBinding:
+      glob: $(inputs.fastqout)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: output file for fastq_stats statistics
+    outputBinding:
+      glob: $(inputs.log)
+  - id: notmatched_out
+    type:
+      - 'null'
+      - File
+    doc: output filename for undetermined sequences
+    outputBinding:
+      glob: $(inputs.notmatched)
+  - id: output_out
+    type:
+      - 'null'
+      - File
+    doc: output FASTA file (not for fastx_uniques)
+    outputBinding:
+      glob: $(inputs.output)
+  - id: tabbedout_out
+    type:
+      - 'null'
+      - File
+    doc: output filename for result information
+    outputBinding:
+      glob: $(inputs.tabbedout)
+  - id: uchimealns_out
+    type:
+      - 'null'
+      - File
+    doc: output chimera alignments to file
+    outputBinding:
+      glob: $(inputs.uchimealns)
+  - id: udb2fasta_out
+    type:
+      - 'null'
+      - File
+    doc: output FASTA file from given UDB file
+    outputBinding:
+      glob: $(inputs.udb2fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vsearch:2.30.4--hd6d6fdc_0

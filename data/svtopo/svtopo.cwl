@@ -66,6 +66,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: svtopo_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory path
+    outputBinding:
+      glob: $(inputs.svtopo_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtopo:0.3.0--h9ee0642_0

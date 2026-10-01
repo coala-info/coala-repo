@@ -43,6 +43,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_format_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Write the file in the given format
+    outputBinding:
+      glob: $(inputs.output_format)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-json-xs:4.04--pl5321h9948957_0

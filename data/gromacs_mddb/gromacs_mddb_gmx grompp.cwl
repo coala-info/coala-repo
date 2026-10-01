@@ -62,28 +62,28 @@ inputs:
       - boolean
     inputBinding:
       position: 101
-      prefix: --no-rmvsbds
+      prefix: -normvsbds
   - id: no_renumber_atomtypes
     type:
       - 'null'
       - boolean
     inputBinding:
       position: 101
-      prefix: --no-renum
+      prefix: -norenum
   - id: no_set_zero_defaults
     type:
       - 'null'
       - boolean
     inputBinding:
       position: 101
-      prefix: --no-zero
+      prefix: -nozero
   - id: no_verbose
     type:
       - 'null'
       - boolean
     inputBinding:
       position: 101
-      prefix: --no-v
+      prefix: -nov
   - id: qmmm_input
     type:
       - 'null'
@@ -106,14 +106,14 @@ inputs:
       - boolean
     inputBinding:
       position: 101
-      prefix: --rmvsbds
+      prefix: -rmvsbds
   - id: renumber_atomtypes
     type:
       - 'null'
       - boolean
     inputBinding:
       position: 101
-      prefix: --renum
+      prefix: -renum
   - id: restraint_structure_a
     type:
       - 'null'
@@ -136,7 +136,7 @@ inputs:
       - boolean
     inputBinding:
       position: 101
-      prefix: --zero
+      prefix: -zero
   - id: time
     type:
       - 'null'
@@ -166,7 +166,7 @@ inputs:
       - boolean
     inputBinding:
       position: 101
-      prefix: --v
+      prefix: -v
 outputs:
   - id: output_mdp
     type:

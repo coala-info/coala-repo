@@ -47,7 +47,7 @@ inputs:
     doc: "add number prefix to sequence names: 'name', '1:name' '2:name' etc"
     inputBinding:
       position: 106
-      prefix: --num
+      prefix: -num
   - id: keep_solvent_accessibility
     type:
       - 'null'
@@ -55,7 +55,7 @@ inputs:
     doc: do not remove solvent accessibility sequences (beginning with >sa_)
     inputBinding:
       position: 106
-      prefix: --sa
+      prefix: -sa
   - id: lowercase_residues
     type:
       - 'null'
@@ -115,7 +115,7 @@ inputs:
     doc: remove secondary structure sequences (beginning with >ss_)
     inputBinding:
       position: 106
-      prefix: --noss
+      prefix: -noss
   - id: residues_per_line
     type:
       - 'null'

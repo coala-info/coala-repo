@@ -36,7 +36,7 @@ inputs:
     doc: Show symbols with package docs even if package is a command.
     inputBinding:
       position: 103
-      prefix: --cmd
+      prefix: -cmd
   - id: show_unexported
     type:
       - 'null'

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: divider
+baseCommand: devider
 label: devider
 doc: "Long-read haplotyping for diverse small sequences (e.g. viruses, genes).\n\n\
   Tool homepage: https://github.com/bluenote-1577/devider"

@@ -11,7 +11,7 @@ inputs:
     doc: emails to share the file to
     inputBinding:
       position: 101
-      prefix: --emails
+      prefix: -emails
   - id: id
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: share by id instead of path
     inputBinding:
       position: 101
-      prefix: --id
+      prefix: -id
   - id: message
     type:
       - 'null'
@@ -27,7 +27,7 @@ inputs:
     doc: message to send receipients
     inputBinding:
       position: 101
-      prefix: --message
+      prefix: -message
   - id: no_prompt
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: disables the prompt
     inputBinding:
       position: 101
-      prefix: --no-prompt
+      prefix: -no-prompt
   - id: notify
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: toggle whether to notify receipients about share
     inputBinding:
       position: 101
-      prefix: --notify
+      prefix: -notify
   - id: quiet
     type:
       - 'null'
@@ -51,7 +51,7 @@ inputs:
     doc: if set, do not log anything but errors
     inputBinding:
       position: 101
-      prefix: --quiet
+      prefix: -quiet
   - id: role
     type:
       - 'null'
@@ -60,7 +60,7 @@ inputs:
       reader.\n\t* writer.\n\t* commenter."
     inputBinding:
       position: 101
-      prefix: --role
+      prefix: -role
   - id: type
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
       * user.\n\t* domain.\n\t* group"
     inputBinding:
       position: 101
-      prefix: --type
+      prefix: -type
   - id: verbose
     type:
       - 'null'
@@ -77,7 +77,7 @@ inputs:
     doc: show step by step information verbosely
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: -verbose
   - id: with_link
     type:
       - 'null'
@@ -85,7 +85,7 @@ inputs:
     doc: turn off file indexing so that only those with the link can view it
     inputBinding:
       position: 101
-      prefix: --with-link
+      prefix: -with-link
 outputs:
   - id: stdout
     type: stdout

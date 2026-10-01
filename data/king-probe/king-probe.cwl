@@ -388,7 +388,7 @@ inputs:
     doc: Include dots to water (default).
     inputBinding:
       position: 105
-      prefix: -WATERS
+      prefix: -WATers
   - id: keep_nonselected
     type:
       - 'null'
@@ -604,7 +604,7 @@ inputs:
     doc: 'Single intersection: src -> targ.'
     inputBinding:
       position: 105
-      prefix: -ONCe
+      prefix: -ONce
   - id: onedot_each
     type:
       - 'null'

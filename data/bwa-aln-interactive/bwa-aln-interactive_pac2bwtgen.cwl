@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bwtgen
+baseCommand:
+  - bwa
+  - pac2bwtgen
 label: bwa-aln-interactive_pac2bwtgen
 doc: "Generate a BWT (Burrows-Wheeler Transform) from a PAC file.\n\nTool homepage:
   https://github.com/fulcrumgenomics/bwa-aln-interactive"

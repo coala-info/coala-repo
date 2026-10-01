@@ -209,6 +209,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outfolder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'the folder to store the output files (default: work_dir/mQC_output)'
+    outputBinding:
+      glob: $(inputs.outfolder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mqc:1.10--py27pl5.22.0r3.4.1_0

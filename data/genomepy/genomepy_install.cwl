@@ -172,6 +172,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: genomes_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: create output directory here
+    outputBinding:
+      glob: $(inputs.genomes_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomepy:0.16.3--pyh7e72e81_0

@@ -11,7 +11,7 @@ inputs:
     doc: 'Best Hit algorithm overhang value (recommended value: 0.1)'
     inputBinding:
       position: 101
-      prefix: --best_hit_overhang
+      prefix: -best_hit_overhang
   - id: best_hit_score_edge
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: 'Best Hit algorithm score edge value (recommended value: 0.1)'
     inputBinding:
       position: 101
-      prefix: --best_hit_score_edge
+      prefix: -best_hit_score_edge
   - id: culling_limit
     type:
       - 'null'
@@ -28,7 +28,7 @@ inputs:
       higher-scoring hits, delete the hit
     inputBinding:
       position: 101
-      prefix: --culling_limit
+      prefix: -culling_limit
   - id: db
     type:
       - 'null'
@@ -36,7 +36,7 @@ inputs:
     doc: BLAST database name
     inputBinding:
       position: 101
-      prefix: --db
+      prefix: -db
   - id: db_hard_mask
     type:
       - 'null'
@@ -44,7 +44,7 @@ inputs:
     doc: Filtering algorithm ID to apply to the BLAST database as hard masking
     inputBinding:
       position: 101
-      prefix: --db_hard_mask
+      prefix: -db_hard_mask
   - id: db_soft_mask
     type:
       - 'null'
@@ -52,7 +52,7 @@ inputs:
     doc: Filtering algorithm ID to apply to the BLAST database as soft masking
     inputBinding:
       position: 101
-      prefix: --db_soft_mask
+      prefix: -db_soft_mask
   - id: dbsize
     type:
       - 'null'
@@ -60,7 +60,7 @@ inputs:
     doc: Effective length of the database
     inputBinding:
       position: 101
-      prefix: --dbsize
+      prefix: -dbsize
   - id: dust
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
       'no' to disable)"
     inputBinding:
       position: 101
-      prefix: --dust
+      prefix: -dust
   - id: entrez_query
     type:
       - 'null'
@@ -77,7 +77,7 @@ inputs:
     doc: Restrict search with the given Entrez query
     inputBinding:
       position: 101
-      prefix: --entrez_query
+      prefix: -entrez_query
   - id: evalue
     type:
       - 'null'
@@ -85,7 +85,7 @@ inputs:
     doc: Expectation value (E) threshold for saving hits.
     inputBinding:
       position: 101
-      prefix: --evalue
+      prefix: -evalue
   - id: filtering_db
     type:
       - 'null'
@@ -93,7 +93,7 @@ inputs:
     doc: 'BLAST database containing filtering elements (i.e.: repeats)'
     inputBinding:
       position: 101
-      prefix: --filtering_db
+      prefix: -filtering_db
   - id: gapextend
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: Cost to extend a gap
     inputBinding:
       position: 101
-      prefix: --gapextend
+      prefix: -gapextend
   - id: gapopen
     type:
       - 'null'
@@ -109,7 +109,7 @@ inputs:
     doc: Cost to open a gap
     inputBinding:
       position: 101
-      prefix: --gapopen
+      prefix: -gapopen
   - id: gilist
     type:
       - 'null'
@@ -117,7 +117,7 @@ inputs:
     doc: Restrict search of database to list of GIs
     inputBinding:
       position: 101
-      prefix: --gilist
+      prefix: -gilist
   - id: html
     type:
       - 'null'
@@ -125,7 +125,7 @@ inputs:
     doc: Produce HTML output?
     inputBinding:
       position: 101
-      prefix: --html
+      prefix: -html
   - id: import_search_strategy
     type:
       - 'null'
@@ -133,7 +133,7 @@ inputs:
     doc: Search strategy to use
     inputBinding:
       position: 101
-      prefix: --import_search_strategy
+      prefix: -import_search_strategy
   - id: index_name
     type:
       - 'null'
@@ -142,7 +142,7 @@ inputs:
       indices)
     inputBinding:
       position: 101
-      prefix: --index_name
+      prefix: -index_name
   - id: lcase_masking
     type:
       - 'null'
@@ -150,7 +150,7 @@ inputs:
     doc: Use lower case filtering in query and subject sequence(s)?
     inputBinding:
       position: 101
-      prefix: --lcase_masking
+      prefix: -lcase_masking
   - id: lcase_masking
     type:
       - 'null'
@@ -158,7 +158,7 @@ inputs:
     doc: Use lower case filtering in query and subject sequence(s)?
     inputBinding:
       position: 101
-      prefix: --lcase_masking
+      prefix: -lcase_masking
   - id: line_length
     type:
       - 'null'
@@ -166,7 +166,7 @@ inputs:
     doc: Line length for formatting alignments
     inputBinding:
       position: 101
-      prefix: --line_length
+      prefix: -line_length
   - id: max_hsps
     type:
       - 'null'
@@ -174,7 +174,7 @@ inputs:
     doc: Set maximum number of HSPs per subject sequence to save for each query
     inputBinding:
       position: 101
-      prefix: --max_hsps
+      prefix: -max_hsps
   - id: max_target_seqs
     type:
       - 'null'
@@ -182,7 +182,7 @@ inputs:
     doc: Maximum number of aligned sequences to keep
     inputBinding:
       position: 101
-      prefix: --max_target_seqs
+      prefix: -max_target_seqs
   - id: min_raw_gapped_score
     type:
       - 'null'
@@ -191,7 +191,7 @@ inputs:
       and traceback stages
     inputBinding:
       position: 101
-      prefix: --min_raw_gapped_score
+      prefix: -min_raw_gapped_score
   - id: mt_mode
     type:
       - 'null'
@@ -199,7 +199,7 @@ inputs:
     doc: Multi-thread mode to use in BLAST search
     inputBinding:
       position: 101
-      prefix: --mt_mode
+      prefix: -mt_mode
   - id: negative_gilist
     type:
       - 'null'
@@ -207,7 +207,7 @@ inputs:
     doc: Restrict search of database to everything except the specified GIs
     inputBinding:
       position: 101
-      prefix: --negative_gilist
+      prefix: -negative_gilist
   - id: negative_seqidlist
     type:
       - 'null'
@@ -215,7 +215,7 @@ inputs:
     doc: Restrict search of database to everything except the specified SeqIDs
     inputBinding:
       position: 101
-      prefix: --negative_seqidlist
+      prefix: -negative_seqidlist
   - id: negative_taxidlist
     type:
       - 'null'
@@ -224,7 +224,7 @@ inputs:
       IDs and their descendants
     inputBinding:
       position: 101
-      prefix: --negative_taxidlist
+      prefix: -negative_taxidlist
   - id: negative_taxids
     type:
       - 'null'
@@ -233,7 +233,7 @@ inputs:
       IDs and their descendants (multiple IDs delimited by ',')
     inputBinding:
       position: 101
-      prefix: --negative_taxids
+      prefix: -negative_taxids
   - id: no_greedy
     type:
       - 'null'
@@ -241,7 +241,7 @@ inputs:
     doc: Use non-greedy dynamic programming extension
     inputBinding:
       position: 101
-      prefix: --no_greedy
+      prefix: -no_greedy
   - id: no_taxid_expansion
     type:
       - 'null'
@@ -250,7 +250,7 @@ inputs:
       IDs
     inputBinding:
       position: 101
-      prefix: --no_taxid_expansion
+      prefix: -no_taxid_expansion
   - id: num_alignments
     type:
       - 'null'
@@ -258,7 +258,7 @@ inputs:
     doc: Number of database sequences to show alignments for
     inputBinding:
       position: 101
-      prefix: --num_alignments
+      prefix: -num_alignments
   - id: num_descriptions
     type:
       - 'null'
@@ -266,7 +266,7 @@ inputs:
     doc: Number of database sequences to show one-line descriptions for
     inputBinding:
       position: 101
-      prefix: --num_descriptions
+      prefix: -num_descriptions
   - id: num_threads
     type:
       - 'null'
@@ -274,7 +274,7 @@ inputs:
     doc: Number of threads (CPUs) to use in the BLAST search
     inputBinding:
       position: 101
-      prefix: --num_threads
+      prefix: -num_threads
   - id: off_diagonal_range
     type:
       - 'null'
@@ -282,7 +282,7 @@ inputs:
     doc: Number of off-diagonals to search for the 2nd hit, use 0 to turn off
     inputBinding:
       position: 101
-      prefix: --off_diagonal_range
+      prefix: -off_diagonal_range
   - id: outfmt
     type:
       - 'null'
@@ -290,7 +290,7 @@ inputs:
     doc: alignment view options
     inputBinding:
       position: 101
-      prefix: --outfmt
+      prefix: -outfmt
   - id: parse_deflines
     type:
       - 'null'
@@ -298,7 +298,7 @@ inputs:
     doc: Should the query and subject defline(s) be parsed?
     inputBinding:
       position: 101
-      prefix: --parse_deflines
+      prefix: -parse_deflines
   - id: penalty
     type:
       - 'null'
@@ -306,7 +306,7 @@ inputs:
     doc: Penalty for a nucleotide mismatch
     inputBinding:
       position: 101
-      prefix: --penalty
+      prefix: -penalty
   - id: perc_identity
     type:
       - 'null'
@@ -314,7 +314,7 @@ inputs:
     doc: Percent identity
     inputBinding:
       position: 101
-      prefix: --perc_identity
+      prefix: -perc_identity
   - id: qcov_hsp_perc
     type:
       - 'null'
@@ -322,7 +322,7 @@ inputs:
     doc: Percent query coverage per hsp
     inputBinding:
       position: 101
-      prefix: --qcov_hsp_perc
+      prefix: -qcov_hsp_perc
   - id: query
     type:
       - 'null'
@@ -330,7 +330,7 @@ inputs:
     doc: Input file name
     inputBinding:
       position: 101
-      prefix: --query
+      prefix: -query
   - id: query_loc
     type:
       - 'null'
@@ -338,7 +338,7 @@ inputs:
     doc: 'Location on the query sequence in 1-based offsets (Format: start-stop)'
     inputBinding:
       position: 101
-      prefix: --query_loc
+      prefix: -query_loc
   - id: remote
     type:
       - 'null'
@@ -346,7 +346,7 @@ inputs:
     doc: Execute search remotely?
     inputBinding:
       position: 101
-      prefix: --remote
+      prefix: -remote
   - id: reward
     type:
       - 'null'
@@ -354,7 +354,7 @@ inputs:
     doc: Reward for a nucleotide match
     inputBinding:
       position: 101
-      prefix: --reward
+      prefix: -reward
   - id: searchsp
     type:
       - 'null'
@@ -362,7 +362,7 @@ inputs:
     doc: Effective length of the search space
     inputBinding:
       position: 101
-      prefix: --searchsp
+      prefix: -searchsp
   - id: seqidlist
     type:
       - 'null'
@@ -370,7 +370,7 @@ inputs:
     doc: Restrict search of database to list of SeqIDs
     inputBinding:
       position: 101
-      prefix: --seqidlist
+      prefix: -seqidlist
   - id: show_gis
     type:
       - 'null'
@@ -378,7 +378,7 @@ inputs:
     doc: Show NCBI GIs in deflines?
     inputBinding:
       position: 101
-      prefix: --show_gis
+      prefix: -show_gis
   - id: soft_masking
     type:
       - 'null'
@@ -386,7 +386,7 @@ inputs:
     doc: Apply filtering locations as soft masks
     inputBinding:
       position: 101
-      prefix: --soft_masking
+      prefix: -soft_masking
   - id: sorthits
     type:
       - 'null'
@@ -394,7 +394,7 @@ inputs:
     doc: Sorting option for hits
     inputBinding:
       position: 101
-      prefix: --sorthits
+      prefix: -sorthits
   - id: sorthsps
     type:
       - 'null'
@@ -402,7 +402,7 @@ inputs:
     doc: Sorting option for hps
     inputBinding:
       position: 101
-      prefix: --sorthsps
+      prefix: -sorthsps
   - id: strand
     type:
       - 'null'
@@ -410,7 +410,7 @@ inputs:
     doc: Query strand(s) to search against database/subject
     inputBinding:
       position: 101
-      prefix: --strand
+      prefix: -strand
   - id: subject
     type:
       - 'null'
@@ -418,7 +418,7 @@ inputs:
     doc: Subject sequence(s) to search
     inputBinding:
       position: 101
-      prefix: --subject
+      prefix: -subject
   - id: subject_besthit
     type:
       - 'null'
@@ -426,7 +426,7 @@ inputs:
     doc: Turn on best hit per subject sequence
     inputBinding:
       position: 101
-      prefix: --subject_besthit
+      prefix: -subject_besthit
   - id: subject_loc
     type:
       - 'null'
@@ -434,7 +434,7 @@ inputs:
     doc: 'Location on the subject sequence in 1-based offsets (Format: start-stop)'
     inputBinding:
       position: 101
-      prefix: --subject_loc
+      prefix: -subject_loc
   - id: task
     type:
       - 'null'
@@ -442,7 +442,7 @@ inputs:
     doc: Task to execute
     inputBinding:
       position: 101
-      prefix: --task
+      prefix: -task
   - id: taxidlist
     type:
       - 'null'
@@ -451,7 +451,7 @@ inputs:
       and their descendants
     inputBinding:
       position: 101
-      prefix: --taxidlist
+      prefix: -taxidlist
   - id: taxids
     type:
       - 'null'
@@ -460,7 +460,7 @@ inputs:
       and their descendants (multiple IDs delimited by ',')
     inputBinding:
       position: 101
-      prefix: --taxids
+      prefix: -taxids
   - id: template_length
     type:
       - 'null'
@@ -468,7 +468,7 @@ inputs:
     doc: Discontiguous MegaBLAST template length
     inputBinding:
       position: 101
-      prefix: --template_length
+      prefix: -template_length
   - id: template_type
     type:
       - 'null'
@@ -476,7 +476,7 @@ inputs:
     doc: Discontiguous MegaBLAST template type
     inputBinding:
       position: 101
-      prefix: --template_type
+      prefix: -template_type
   - id: use_index
     type:
       - 'null'
@@ -484,7 +484,7 @@ inputs:
     doc: Use MegaBLAST database index
     inputBinding:
       position: 101
-      prefix: --use_index
+      prefix: -use_index
   - id: window_masker_db
     type:
       - 'null'
@@ -492,7 +492,7 @@ inputs:
     doc: Enable WindowMasker filtering using this repeats database.
     inputBinding:
       position: 101
-      prefix: --window_masker_db
+      prefix: -window_masker_db
   - id: window_masker_taxid
     type:
       - 'null'
@@ -500,7 +500,7 @@ inputs:
     doc: Enable WindowMasker filtering using a Taxonomic ID
     inputBinding:
       position: 101
-      prefix: --window_masker_taxid
+      prefix: -window_masker_taxid
   - id: window_size
     type:
       - 'null'
@@ -508,7 +508,7 @@ inputs:
     doc: Multiple hits window size, use 0 to specify 1-hit algorithm
     inputBinding:
       position: 101
-      prefix: --window_size
+      prefix: -window_size
   - id: word_size
     type:
       - 'null'
@@ -516,7 +516,7 @@ inputs:
     doc: Word size for wordfinder algorithm (length of best perfect match)
     inputBinding:
       position: 101
-      prefix: --word_size
+      prefix: -word_size
   - id: xdrop_gap
     type:
       - 'null'
@@ -524,7 +524,7 @@ inputs:
     doc: X-dropoff value (in bits) for preliminary gapped extensions
     inputBinding:
       position: 101
-      prefix: --xdrop_gap
+      prefix: -xdrop_gap
   - id: xdrop_gap_final
     type:
       - 'null'
@@ -532,7 +532,7 @@ inputs:
     doc: X-dropoff value (in bits) for final gapped alignment
     inputBinding:
       position: 101
-      prefix: --xdrop_gap_final
+      prefix: -xdrop_gap_final
   - id: xdrop_ungap
     type:
       - 'null'
@@ -540,7 +540,7 @@ inputs:
     doc: X-dropoff value (in bits) for ungapped extensions
     inputBinding:
       position: 101
-      prefix: --xdrop_ungap
+      prefix: -xdrop_ungap
   - id: out_path
     type:
       - 'null'

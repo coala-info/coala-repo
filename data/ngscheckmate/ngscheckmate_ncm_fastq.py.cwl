@@ -119,6 +119,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_filename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_filename
+    outputBinding:
+      glob: $(inputs.output_filename)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: An output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngscheckmate:1.0.1--py312pl5321h577a1d6_4

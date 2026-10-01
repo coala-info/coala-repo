@@ -57,7 +57,7 @@ inputs:
   - id: empirical_output
     type:
       - 'null'
-      - File
+      - string
     doc: Output path for empirical dosages
     inputBinding:
       position: 103
@@ -138,7 +138,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - File
+      - string
     doc: Output path
     inputBinding:
       position: 103
@@ -206,7 +206,7 @@ inputs:
   - id: sites
     type:
       - 'null'
-      - File
+      - string
     doc: Output path for sites-only file
     inputBinding:
       position: 103
@@ -282,6 +282,27 @@ outputs:
     doc: Compresses VCF to MVCF
     outputBinding:
       glob: $(inputs.compress_reference_output_path)
+  - id: empirical_output_out
+    type:
+      - 'null'
+      - File
+    doc: Output path for empirical dosages
+    outputBinding:
+      glob: $(inputs.empirical_output)
+  - id: output_out
+    type:
+      - 'null'
+      - File
+    doc: Output path
+    outputBinding:
+      glob: $(inputs.output)
+  - id: sites_out
+    type:
+      - 'null'
+      - File
+    doc: Output path for sites-only file
+    outputBinding:
+      glob: $(inputs.sites)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

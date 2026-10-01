@@ -61,7 +61,7 @@ inputs:
       position: 101
       prefix: --input-images
   - id: input_metadata
-    type: File
+    type: string
     doc: Path to the output csv file where the entity metadata will be stored.
     inputBinding:
       position: 101
@@ -171,6 +171,13 @@ outputs:
       will be saved.
     outputBinding:
       glob: $(inputs.output_clustering_path)
+  - id: input_metadata_out
+    type:
+      - 'null'
+      - File
+    doc: Path to the output csv file where the entity metadata will be stored.
+    outputBinding:
+      glob: $(inputs.input_metadata)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

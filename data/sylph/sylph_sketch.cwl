@@ -195,6 +195,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sample_output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for sample sketches
+    outputBinding:
+      glob: $(inputs.sample_output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sylph:0.9.0--ha6fb395_0

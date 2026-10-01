@@ -33,7 +33,7 @@ inputs:
       is used
     inputBinding:
       position: 102
-      prefix: --reference-database-path
+      prefix: -d
   - id: restart
     type:
       - 'null'
@@ -50,7 +50,7 @@ inputs:
     doc: Number of threads to use for prodigal-gv and DIAMOND
     inputBinding:
       position: 102
-      prefix: --threads
+      prefix: -t
 outputs:
   - id: out_output
     type: Directory

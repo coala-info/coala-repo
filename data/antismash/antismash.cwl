@@ -237,6 +237,13 @@ outputs:
     doc: Directory to write results to.
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: output_basename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_basename
+    outputBinding:
+      glob: $(inputs.output_basename)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1117,6 +1117,14 @@ outputs:
     doc: output GAM file
     outputBinding:
       glob: '*.out'
+  - id: output_basename_dir
+    type:
+      - 'null'
+      - Directory
+    doc: write output to a GAM file with the given prefix for each setting 
+      combination
+    outputBinding:
+      glob: $(inputs.output_basename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0

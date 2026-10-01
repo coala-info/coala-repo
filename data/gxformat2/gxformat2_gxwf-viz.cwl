@@ -17,7 +17,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - File
+      - string
     doc: output viz path (.json/.html)
     inputBinding:
       position: 2
@@ -25,6 +25,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_out
+    type:
+      - 'null'
+      - File
+    doc: output viz path (.json/.html)
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gxformat2:0.22.0--pyhdfd78af_0

@@ -157,6 +157,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_file
+    outputBinding:
+      glob: $(inputs.output_file)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bleties:0.1.11--pyhdfd78af_0

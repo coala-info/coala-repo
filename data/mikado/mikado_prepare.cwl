@@ -103,7 +103,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - File
+      - string
     doc: 'Output file. Default: mikado_prepared.gtf.'
     inputBinding:
       position: 102
@@ -111,7 +111,7 @@ inputs:
   - id: out_fasta
     type:
       - 'null'
-      - File
+      - string
     doc: 'Output file. Default: mikado_prepared.fasta.'
     inputBinding:
       position: 102
@@ -227,6 +227,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_out
+    type:
+      - 'null'
+      - File
+    doc: 'Output file. Default: mikado_prepared.gtf.'
+    outputBinding:
+      glob: $(inputs.out)
+  - id: out_fasta_out
+    type:
+      - 'null'
+      - File
+    doc: 'Output file. Default: mikado_prepared.fasta.'
+    outputBinding:
+      glob: $(inputs.out_fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2

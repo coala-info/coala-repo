@@ -28,7 +28,7 @@ inputs:
   - id: output_asmi
     type:
       - 'null'
-      - File
+      - string
     doc: Output file (optionally with .asmi suffix)
     inputBinding:
       position: 4
@@ -158,6 +158,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_asmi_out
+    type:
+      - 'null'
+      - File
+    doc: Output file (optionally with .asmi suffix)
+    outputBinding:
+      glob: $(inputs.output_asmi)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merquryfk:1.2--h71df26d_1

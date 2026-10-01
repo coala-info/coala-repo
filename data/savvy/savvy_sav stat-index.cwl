@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - savvy
   - sav
   - stat-index
 label: savvy_sav stat-index

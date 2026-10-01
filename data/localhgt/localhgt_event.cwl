@@ -31,7 +31,7 @@ inputs:
       position: 101
       prefix: -m
   - id: output_file
-    type: File?
+    type: string?
     doc: Output file to save all inferred HGT events.
     inputBinding:
       position: 101
@@ -48,6 +48,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file to save all inferred HGT events.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/localhgt:1.0.1--h9948957_3

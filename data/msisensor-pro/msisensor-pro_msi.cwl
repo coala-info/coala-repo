@@ -140,6 +140,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output path (Ending with a slash is not allowed.)
+    outputBinding:
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msisensor-pro:1.3.0--hd979922_1

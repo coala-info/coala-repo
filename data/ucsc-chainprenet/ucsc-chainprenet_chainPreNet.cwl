@@ -31,7 +31,8 @@ inputs:
     doc: output a dot every so often
     inputBinding:
       position: 104
-      prefix: --dots
+      prefix: -dots=
+      separate: false
   - id: include_hap
     type:
       - 'null'
@@ -40,7 +41,7 @@ inputs:
       are excluded from nets as being haplotype pseudochromosomes
     inputBinding:
       position: 104
-      prefix: --inclHap
+      prefix: -inclHap
   - id: pad
     type:
       - 'null'
@@ -48,7 +49,8 @@ inputs:
     doc: extra to pad around blocks to decrease trash
     inputBinding:
       position: 104
-      prefix: --pad
+      prefix: -pad=
+      separate: false
 outputs:
   - id: output_chain
     type: File

@@ -16,7 +16,7 @@ inputs:
     doc: Report checksum of the file
     inputBinding:
       position: 102
-      prefix: --checksum
+      prefix: -checksum
   - id: compute_histogram
     type:
       - 'null'
@@ -24,7 +24,7 @@ inputs:
     doc: Compute and display histogram for each band
     inputBinding:
       position: 102
-      prefix: --hist
+      prefix: -hist
   - id: compute_stats
     type:
       - 'null'
@@ -32,7 +32,7 @@ inputs:
     doc: Compute and display statistics for each band
     inputBinding:
       position: 102
-      prefix: --stats
+      prefix: -stats
   - id: json
     type:
       - 'null'
@@ -40,7 +40,7 @@ inputs:
     doc: Output in JSON format
     inputBinding:
       position: 102
-      prefix: --json
+      prefix: -json
   - id: list_mdd
     type:
       - 'null'
@@ -48,7 +48,7 @@ inputs:
     doc: List all metadata domains
     inputBinding:
       position: 102
-      prefix: --listmdd
+      prefix: -listmdd
   - id: mdd
     type:
       - 'null'
@@ -67,7 +67,7 @@ inputs:
     doc: Report minimum/maximum pixel values
     inputBinding:
       position: 102
-      prefix: --mm
+      prefix: -mm
   - id: no_ct
     type:
       - 'null'
@@ -75,7 +75,7 @@ inputs:
     doc: Do not report Color Table
     inputBinding:
       position: 102
-      prefix: --noct
+      prefix: -noct
   - id: no_fl
     type:
       - 'null'
@@ -83,7 +83,7 @@ inputs:
     doc: Do not report File List
     inputBinding:
       position: 102
-      prefix: --nofl
+      prefix: -nofl
   - id: no_gcp
     type:
       - 'null'
@@ -91,7 +91,7 @@ inputs:
     doc: Do not report Georeferencing Control Points
     inputBinding:
       position: 102
-      prefix: --nogcp
+      prefix: -nogcp
   - id: no_md
     type:
       - 'null'
@@ -99,7 +99,7 @@ inputs:
     doc: Do not report metadata
     inputBinding:
       position: 102
-      prefix: --nomd
+      prefix: -nomd
   - id: no_rat
     type:
       - 'null'
@@ -107,7 +107,7 @@ inputs:
     doc: Do not report Raster Attribute Table
     inputBinding:
       position: 102
-      prefix: --norat
+      prefix: -norat
   - id: options
     type:
       - 'null'
@@ -127,7 +127,7 @@ inputs:
     doc: Report projection in Proj4 format
     inputBinding:
       position: 102
-      prefix: --proj4
+      prefix: -proj4
   - id: subdataset
     type:
       - 'null'
@@ -135,7 +135,7 @@ inputs:
     doc: Select a subdataset to report on
     inputBinding:
       position: 102
-      prefix: --sd
+      prefix: -sd
 outputs:
   - id: stdout
     type: stdout

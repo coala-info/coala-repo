@@ -297,6 +297,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_out_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix_out
+    outputBinding:
+      glob: $(inputs.prefix_out)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmcloser:1.6.2--0

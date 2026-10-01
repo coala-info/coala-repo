@@ -442,6 +442,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output folder path
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clincnv:1.19.1--hdfd78af_0

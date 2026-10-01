@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: gene_pred_file
-    type: File
+    type: string
     doc: Output genePred file
     inputBinding:
       position: 2
@@ -100,6 +100,13 @@ outputs:
     doc: write a file with information on each transcript
     outputBinding:
       glob: $(inputs.info_out_file_path)
+  - id: gene_pred_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output genePred file
+    outputBinding:
+      glob: $(inputs.gene_pred_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

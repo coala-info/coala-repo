@@ -127,6 +127,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_output_file_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix_output_file
+    outputBinding:
+      glob: $(inputs.prefix_output_file)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snver:0.5.3--0

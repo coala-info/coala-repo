@@ -631,7 +631,7 @@ inputs:
     doc: Number of CPU-cores used (all by default)
     inputBinding:
       position: 104
-      prefix: -t
+      prefix: --threads
   - id: tmalign_fast
     type:
       - 'null'

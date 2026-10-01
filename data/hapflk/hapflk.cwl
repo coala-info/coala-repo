@@ -11,7 +11,7 @@ inputs:
     doc: PLINK bfile prefix (bim,fam,bed)
     inputBinding:
       position: 101
-      prefix: --bfilePREFIX
+      prefix: --bfile
   - id: chr
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: PLINK file prefix (ped,map)
     inputBinding:
       position: 101
-      prefix: --filePREFIX
+      prefix: --file
   - id: from_pos
     type:
       - 'null'
@@ -205,6 +205,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hapflk:1.3.0--py27_0

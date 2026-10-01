@@ -104,6 +104,13 @@ outputs:
     doc: Path where pin file will be written instead of make-pin.pin.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The name of the directory where output files will be created.
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -288,6 +288,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory. Default is current directory. Cannot be an existing 
+      directory.
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimseq:1.3.11--pyhdfd78af_0

@@ -124,7 +124,7 @@ inputs:
   - id: output_newick
     type:
       - 'null'
-      - File
+      - string
     doc: Output Newick file
     inputBinding:
       position: 101
@@ -175,6 +175,13 @@ outputs:
     doc: Output metadata table path
     outputBinding:
       glob: $(inputs.output_metadata_table_path)
+  - id: output_newick_out
+    type:
+      - 'null'
+      - File
+    doc: Output Newick file
+    outputBinding:
+      glob: $(inputs.output_newick)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

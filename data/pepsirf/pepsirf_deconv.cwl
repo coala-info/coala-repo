@@ -205,6 +205,14 @@ outputs:
     doc: Designated file to which the module's processes are logged.
     outputBinding:
       glob: $(inputs.logfile_path)
+  - id: outfile_suffix_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Used for batch mode only. When specified, the name of each file written
+      to the output directory will have this suffix.
+    outputBinding:
+      glob: $(inputs.outfile_suffix)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

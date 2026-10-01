@@ -77,6 +77,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: link_or_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The destination link name or directory
+    outputBinding:
+      glob: $(inputs.link_or_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/art:2016.06.05--h0704011_13

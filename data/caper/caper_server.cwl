@@ -426,6 +426,15 @@ outputs:
       s3://my-bucket/my-output.
     outputBinding:
       glob: $(inputs.aws_out_dir_path)
+  - id: local_out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory path for local backend. Cloud backends (gcp, aws) use 
+      different output directories. For gcp, define --gcp-out-dir. For aws, 
+      define --aws- out-dir.
+    outputBinding:
+      glob: $(inputs.local_out_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

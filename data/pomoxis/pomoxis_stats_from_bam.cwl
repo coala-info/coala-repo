@@ -36,7 +36,7 @@ inputs:
   - id: summary
     type:
       - 'null'
-      - File
+      - string
     doc: Output summary to file instead of stderr.
     inputBinding:
       position: 102
@@ -62,6 +62,13 @@ outputs:
     doc: Output alignment stats to file instead of stdout.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: summary_out
+    type:
+      - 'null'
+      - File
+    doc: Output summary to file instead of stderr.
+    outputBinding:
+      glob: $(inputs.summary)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -80,6 +80,13 @@ outputs:
       index but not the second.
     outputBinding:
       glob: '*.out'
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The name of the directory where output files will be created.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

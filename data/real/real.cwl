@@ -13,7 +13,7 @@ inputs:
     doc: filtering level for equal hits 0-4
     inputBinding:
       position: 101
-      prefix: --filter_level
+      prefix: -filter_level
   - id: gc_composition_bias
     type:
       - 'null'
@@ -21,7 +21,7 @@ inputs:
     doc: composition bias
     inputBinding:
       position: 101
-      prefix: --gc
+      prefix: -gc
   - id: gc_mutability_bias
     type:
       - 'null'
@@ -29,7 +29,7 @@ inputs:
     doc: mutability bias of G&C
     inputBinding:
       position: 101
-      prefix: --gcmut_bias
+      prefix: -gcmut_bias
   - id: matching_threads
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: sequence similarity
     inputBinding:
       position: 101
-      prefix: --similarity
+      prefix: -similarity
   - id: text_file
     type: File
     doc: text file name
@@ -115,7 +115,7 @@ inputs:
     doc: transitions fraction of mutations
     inputBinding:
       position: 101
-      prefix: --trans
+      prefix: -trans
   - id: unique_match
     type:
       - 'null'

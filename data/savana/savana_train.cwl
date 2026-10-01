@@ -92,6 +92,13 @@ outputs:
     doc: Output pickle file for data matrix of VCFs
     outputBinding:
       glob: $(inputs.save_matrix_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory (can exist but must be empty)
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -7,7 +7,7 @@ label: pypgx_call-genotypes
 doc: "Call genotypes for target gene.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:
   - id: genotypes
-    type: File
+    type: string
     doc: Output archive file with the semantic type SampleTable[Genotypes].
     inputBinding:
       position: 1
@@ -31,6 +31,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: genotypes_out
+    type:
+      - 'null'
+      - File
+    doc: Output archive file with the semantic type SampleTable[Genotypes].
+    outputBinding:
+      glob: $(inputs.genotypes)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

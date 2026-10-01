@@ -114,7 +114,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type: Directory
     doc: The path to the output file you want to create.
     outputBinding:
       glob: $(inputs.output_path)

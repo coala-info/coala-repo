@@ -32,6 +32,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: data_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Destination directory for references
+    outputBinding:
+      glob: $(inputs.data_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/humanfilt:1.0.0--pyhdfd78af_0

@@ -78,6 +78,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specifies the out directory to which all files should be written.
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/optitype:1.3.5--hdfd78af_3

@@ -11,7 +11,7 @@ inputs:
     doc: Mapping file in BAM format
     inputBinding:
       position: 101
-      prefix: --bam
+      prefix: -bam
   - id: counting_algorithm
     type:
       - 'null'
@@ -28,7 +28,7 @@ inputs:
       the same ID will be aggregated as part of the same feature. Default: gene_id.'
     inputBinding:
       position: 101
-      prefix: --id
+      prefix: -id
   - id: gtf_type
     type:
       - 'null'
@@ -37,7 +37,7 @@ inputs:
       Other types will be ignored. Default: exon'
     inputBinding:
       position: 101
-      prefix: --type
+      prefix: -type
   - id: paired_end
     type:
       - 'null'
@@ -53,7 +53,7 @@ inputs:
       counting is based on attributes, otherwise based on feature name
     inputBinding:
       position: 101
-      prefix: --gtf
+      prefix: -gtf
   - id: sequencing_protocol
     type:
       - 'null'

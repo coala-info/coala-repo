@@ -49,7 +49,7 @@ inputs:
     doc: input is genome sequences
     inputBinding:
       position: 102
-      prefix: --genome
+      prefix: -genome
   - id: hmm_database
     type:
       - 'null'
@@ -187,6 +187,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tesorter:1.5.1--pyhdfd78af_0

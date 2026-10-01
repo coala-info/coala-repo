@@ -67,6 +67,13 @@ outputs:
     doc: output pdf file
     outputBinding:
       glob: $(inputs.output_pdf_path)
+  - id: output_latex_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output latex directory
+    outputBinding:
+      glob: $(inputs.output_latex_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -17,7 +17,7 @@ inputs:
     doc: Output file.
     inputBinding:
       position: 101
-      prefix: --output
+      prefix: -output
   - id: url
     type: string
     doc: URL of htsget endpoint.

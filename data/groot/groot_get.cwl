@@ -67,6 +67,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory to save the database to
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groot:1.1.2--h047eeb3_7

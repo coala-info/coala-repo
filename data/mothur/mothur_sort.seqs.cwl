@@ -36,7 +36,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: The name of the log file to write output to.
     inputBinding:
       position: 102
@@ -55,6 +55,13 @@ outputs:
     doc: The name of the output file where sorted sequences will be written.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: logfile_out
+    type:
+      - 'null'
+      - File
+    doc: The name of the log file to write output to.
+    outputBinding:
+      glob: $(inputs.logfile)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

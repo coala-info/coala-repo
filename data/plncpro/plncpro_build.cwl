@@ -54,7 +54,7 @@ inputs:
     doc: number of trees
     inputBinding:
       position: 101
-      prefix: --trees
+      prefix: -k
   - id: output_directory
     type: string
     doc: output directory name to store all results
@@ -119,6 +119,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory name to store all results
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0

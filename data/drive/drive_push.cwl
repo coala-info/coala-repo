@@ -11,7 +11,7 @@ inputs:
     doc: allows pushing of hidden paths
     inputBinding:
       position: 101
-      prefix: --hidden
+      prefix: -hidden
   - id: allow_mounted_paths
     type:
       - 'null'
@@ -27,7 +27,7 @@ inputs:
     doc: the mimeType you are trying to coerce this file to be
     inputBinding:
       position: 101
-      prefix: --coerced-mime
+      prefix: -coerced-mime
   - id: convert
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: toggles conversion of the file to its appropriate Google Doc format
     inputBinding:
       position: 101
-      prefix: --convert
+      prefix: -convert
   - id: depth
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: max traversal depth
     inputBinding:
       position: 101
-      prefix: --depth
+      prefix: -depth
   - id: destination
     type:
       - 'null'
@@ -51,7 +51,7 @@ inputs:
     doc: specify the final destination of the contents of an operation
     inputBinding:
       position: 101
-      prefix: --destination
+      prefix: -destination
   - id: encryption_password
     type:
       - 'null'
@@ -59,7 +59,7 @@ inputs:
     doc: encryption password
     inputBinding:
       position: 101
-      prefix: --encryption-password
+      prefix: -encryption-password
   - id: exclude_ops
     type:
       - 'null'
@@ -67,7 +67,7 @@ inputs:
     doc: exclude operations
     inputBinding:
       position: 101
-      prefix: --exclude-ops
+      prefix: -exclude-ops
   - id: fix_clashes
     type:
       - 'null'
@@ -75,7 +75,7 @@ inputs:
     doc: fix clashes by renaming or trashing files
     inputBinding:
       position: 101
-      prefix: --fix-clashes
+      prefix: -fix-clashes
   - id: force
     type:
       - 'null'
@@ -83,7 +83,7 @@ inputs:
     doc: forces a push even if no changes present
     inputBinding:
       position: 101
-      prefix: --force
+      prefix: -force
   - id: ignore_checksum
     type:
       - 'null'
@@ -93,7 +93,7 @@ inputs:
       true)'
     inputBinding:
       position: 101
-      prefix: --ignore-checksum
+      prefix: -ignore-checksum
   - id: ignore_conflict
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: turns off the conflict resolution safety
     inputBinding:
       position: 101
-      prefix: --ignore-conflict
+      prefix: -ignore-conflict
   - id: ignore_name_clashes
     type:
       - 'null'
@@ -109,7 +109,7 @@ inputs:
     doc: ignore name clashes
     inputBinding:
       position: 101
-      prefix: --ignore-name-clashes
+      prefix: -ignore-name-clashes
   - id: no_clobber
     type:
       - 'null'
@@ -117,7 +117,7 @@ inputs:
     doc: prevents overwriting of old content
     inputBinding:
       position: 101
-      prefix: --no-clobber
+      prefix: -no-clobber
   - id: no_prompt
     type:
       - 'null'
@@ -125,7 +125,7 @@ inputs:
     doc: shows no prompt before applying the push action
     inputBinding:
       position: 101
-      prefix: --no-prompt
+      prefix: -no-prompt
   - id: ocr
     type:
       - 'null'
@@ -133,7 +133,7 @@ inputs:
     doc: if true, attempt OCR on gif, jpg, pdf and png uploads
     inputBinding:
       position: 101
-      prefix: --ocr
+      prefix: -ocr
   - id: piped
     type:
       - 'null'
@@ -141,7 +141,7 @@ inputs:
     doc: get content in from standard input (stdin)
     inputBinding:
       position: 101
-      prefix: --piped
+      prefix: -piped
   - id: push_only_directories
     type:
       - 'null'
@@ -149,7 +149,7 @@ inputs:
     doc: push only directories
     inputBinding:
       position: 101
-      prefix: --directories
+      prefix: -directories
   - id: push_only_files
     type:
       - 'null'
@@ -157,7 +157,7 @@ inputs:
     doc: push only files
     inputBinding:
       position: 101
-      prefix: --files
+      prefix: -files
   - id: quiet
     type:
       - 'null'
@@ -165,7 +165,7 @@ inputs:
     doc: if set, do not log anything but errors
     inputBinding:
       position: 101
-      prefix: --quiet
+      prefix: -quiet
   - id: recursive
     type:
       - 'null'
@@ -173,7 +173,7 @@ inputs:
     doc: performs the push action recursively (default true)
     inputBinding:
       position: 101
-      prefix: --recursive
+      prefix: -recursive
   - id: retry_count
     type:
       - 'null'
@@ -181,7 +181,7 @@ inputs:
     doc: max number of retries for exponential backoff
     inputBinding:
       position: 101
-      prefix: --retry-count
+      prefix: -retry-count
   - id: skip_mime
     type:
       - 'null'
@@ -189,7 +189,7 @@ inputs:
     doc: skip elements with mimeTypes derived from these extensions
     inputBinding:
       position: 101
-      prefix: --skip-mime
+      prefix: -skip-mime
   - id: verbose
     type:
       - 'null'
@@ -197,7 +197,7 @@ inputs:
     doc: show step by step information verbosely
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: -verbose
 outputs:
   - id: stdout
     type: stdout

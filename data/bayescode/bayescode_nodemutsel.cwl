@@ -171,6 +171,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: chain_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in chain_name
+    outputBinding:
+      glob: $(inputs.chain_name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bayescode:1.3.4--h9948957_0

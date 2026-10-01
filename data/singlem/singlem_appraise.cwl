@@ -121,7 +121,7 @@ inputs:
   - id: plot
     type:
       - 'null'
-      - File
+      - string
     doc: "Output plot SVG filename (marker chosen automatically\nunless --plot-marker
       is also specified)"
     inputBinding:
@@ -234,6 +234,14 @@ outputs:
     doc: Output OTU table of populations not accounted for
     outputBinding:
       glob: $(inputs.output_unaccounted_for_otu_table_path)
+  - id: plot_out
+    type:
+      - 'null'
+      - File
+    doc: Output plot SVG filename (marker chosen automatically unless 
+      --plot-marker is also specified)
+    outputBinding:
+      glob: $(inputs.plot)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

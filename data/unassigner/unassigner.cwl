@@ -85,6 +85,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: "Output directory (default: basename of query sequences FASTA file, plus
+      '_unassigned')."
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unassigner:1.1.0--pyh7e72e81_0

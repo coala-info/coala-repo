@@ -25,7 +25,7 @@ inputs:
     doc: Directory for intermediate files
     inputBinding:
       position: 102
-      prefix: --dir
+      prefix: -dir
   - id: edit_distance
     type:
       - 'null'
@@ -33,7 +33,7 @@ inputs:
     doc: Calculate edit distance
     inputBinding:
       position: 102
-      prefix: --edit-distance
+      prefix: -edit-distance
   - id: force
     type:
       - 'null'
@@ -41,7 +41,7 @@ inputs:
     doc: Force overwrite of existing files
     inputBinding:
       position: 102
-      prefix: --force
+      prefix: -force
   - id: infer_genes
     type:
       - 'null'
@@ -49,7 +49,7 @@ inputs:
     doc: Infer genes
     inputBinding:
       position: 102
-      prefix: --infer-genes
+      prefix: -infer-genes
   - id: mmseqs_params
     type:
       - 'null'
@@ -57,7 +57,7 @@ inputs:
     doc: Parameters to pass to mmseqs
     inputBinding:
       position: 102
-      prefix: --mmseqs_params
+      prefix: -mmseqs_params
   - id: mmseqs_path
     type:
       - 'null'
@@ -65,7 +65,7 @@ inputs:
     doc: Path to mmseqs executable
     inputBinding:
       position: 102
-      prefix: --mmseqs_path
+      prefix: -mmseqs_path
   - id: reference_genome
     type: string
     doc: Reference genome
@@ -85,7 +85,7 @@ inputs:
     doc: Sort reference genome by this key
     inputBinding:
       position: 102
-      prefix: --r-sort
+      prefix: -r-sort
   - id: target_genome
     type: string
     doc: Target genome (GFF/GTF or DB)
@@ -105,7 +105,7 @@ inputs:
     doc: Sort target genome by this key
     inputBinding:
       position: 102
-      prefix: --t-sort
+      prefix: -t-sort
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`

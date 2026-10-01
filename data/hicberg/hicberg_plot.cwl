@@ -29,7 +29,7 @@ outputs:
   - id: output_folder
     type:
       - 'null'
-      - File
+      - Directory
     doc: Output folder to save results.
     outputBinding:
       glob: $(inputs.output_folder_path)

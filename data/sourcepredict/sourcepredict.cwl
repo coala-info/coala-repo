@@ -36,7 +36,7 @@ inputs:
   - id: embed
     type:
       - 'null'
-      - File
+      - string
     doc: Output embedding csv file.
     inputBinding:
       position: 102
@@ -133,6 +133,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output
+    outputBinding:
+      glob: $(inputs.output)*
+  - id: embed_out
+    type:
+      - 'null'
+      - File
+    doc: Output embedding csv file.
+    outputBinding:
+      glob: $(inputs.embed)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourcepredict:0.5.1--pyhdfd78af_0

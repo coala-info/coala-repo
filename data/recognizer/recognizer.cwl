@@ -177,6 +177,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
+  - id: resources_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for storing databases and other resources
+    outputBinding:
+      glob: $(inputs.resources_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recognizer:1.11.1--hdfd78af_0

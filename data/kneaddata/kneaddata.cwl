@@ -347,6 +347,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory to write output files
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kneaddata:0.12.4--pyhdfd78af_0

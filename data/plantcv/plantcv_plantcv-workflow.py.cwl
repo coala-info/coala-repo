@@ -73,7 +73,7 @@ inputs:
       position: 101
       prefix: --dir
   - id: json_output
-    type: File
+    type: string
     doc: Output database file name.
     inputBinding:
       position: 101
@@ -140,6 +140,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: json_output_out
+    type:
+      - 'null'
+      - File
+    doc: Output database file name.
+    outputBinding:
+      glob: $(inputs.json_output)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for images. Not required by all workflows.
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plantcv:3.8.0--py_0

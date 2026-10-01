@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_file
-    type: File
+    type: string
     doc: Output path. When zoomifying Cooler files, providing a single 
       resolution through --resolutions and specifying --no-copy-base-resolution,
       the output file will be in .cool format.
@@ -135,6 +135,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output path. When zoomifying Cooler files, providing a single 
+      resolution through --resolutions and specifying --no-copy-base-resolution,
+      the output file will be in .cool format.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0

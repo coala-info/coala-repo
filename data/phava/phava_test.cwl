@@ -27,7 +27,7 @@ inputs:
     doc: Gap penalty for einverted.
     inputBinding:
       position: 104
-      prefix: --gap
+      prefix: -gap
   - id: match
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: Match score for einverted.
     inputBinding:
       position: 104
-      prefix: --match
+      prefix: -match
   - id: maxrepeat
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: Maximum repeat length for einverted.
     inputBinding:
       position: 104
-      prefix: --maxrepeat
+      prefix: -maxrepeat
   - id: minimap2_threads
     type:
       - 'null'
@@ -59,7 +59,7 @@ inputs:
     doc: Mismatch penalty for einverted (e.g., -9 or -15).
     inputBinding:
       position: 104
-      prefix: --mismatch
+      prefix: -mismatch
   - id: sequence
     type:
       - 'null'
@@ -67,7 +67,7 @@ inputs:
     doc: Input nucleotide sequence file for einverted.
     inputBinding:
       position: 104
-      prefix: --sequence
+      prefix: -sequence
   - id: threshold
     type:
       - 'null'
@@ -75,7 +75,7 @@ inputs:
     doc: Threshold for einverted (e.g., 51 or 75).
     inputBinding:
       position: 104
-      prefix: --threshold
+      prefix: -threshold
   - id: minimap2_output_path
     type:
       - 'null'

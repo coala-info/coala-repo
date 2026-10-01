@@ -207,6 +207,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: suffix_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Appends a suffix to the reference output folder.
+    outputBinding:
+      glob: $(inputs.suffix)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/realphy:1.13--hdfd78af_1

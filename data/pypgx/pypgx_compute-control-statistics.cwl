@@ -14,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: control_statistics
-    type: File
+    type: string
     doc: Output archive file with the semantic type SampleTable[Statistics].
     inputBinding:
       position: 2
@@ -47,6 +47,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: control_statistics_out
+    type:
+      - 'null'
+      - File
+    doc: Output archive file with the semantic type SampleTable[Statistics].
+    outputBinding:
+      glob: $(inputs.control_statistics)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

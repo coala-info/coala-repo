@@ -17,7 +17,7 @@ inputs:
   - id: big_genomes
     type:
       - 'null'
-      - File
+      - string
     doc: 'Out file of skipped files with $total_bases + ($num_contigs - 1) * $contig_interval
       >= -g/--max-genome. The second column is one of the skip types: no_valid_seqs,
       too_large_genome, too_many_seqs.'
@@ -266,6 +266,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: big_genomes_out
+    type:
+      - 'null'
+      - File
+    doc: 'Out file of skipped files with $total_bases + ($num_contigs - 1) * $contig_interval
+      >= -g/--max-genome. The second column is one of the skip types: no_valid_seqs,
+      too_large_genome, too_many_seqs.'
+    outputBinding:
+      glob: $(inputs.big_genomes)
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output LexicMap index directory.
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1

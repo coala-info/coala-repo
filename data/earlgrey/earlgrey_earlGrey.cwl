@@ -12,7 +12,7 @@ inputs:
     doc: Directory for abblast.
     inputBinding:
       position: 101
-      prefix: --abblast_dir
+      prefix: -abblast_dir
   - id: configure_script
     type:
       - 'null'
@@ -28,7 +28,7 @@ inputs:
     doc: Directory for crossmatch.
     inputBinding:
       position: 101
-      prefix: --crossmatch_dir
+      prefix: -crossmatch_dir
   - id: default_search_engine
     type:
       - 'null'
@@ -36,7 +36,7 @@ inputs:
     doc: Default search engine for RepeatMasker.
     inputBinding:
       position: 101
-      prefix: --default_search_engine
+      prefix: -default_search_engine
   - id: dfam_partitions
     type:
       - 'null'
@@ -53,7 +53,7 @@ inputs:
     doc: Directory for hmmer.
     inputBinding:
       position: 101
-      prefix: --hmmer_dir
+      prefix: -hmmer_dir
   - id: repeatmasker_libdir
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
     doc: Directory for rmblast.
     inputBinding:
       position: 101
-      prefix: --rmblast_dir
+      prefix: -rmblast_dir
   - id: trf_program
     type:
       - 'null'

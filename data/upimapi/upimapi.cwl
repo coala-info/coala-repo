@@ -273,6 +273,13 @@ outputs:
       override 'output' parameter just for that specific file
     outputBinding:
       glob: $(inputs.output_table_path)
+  - id: resources_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store resources of UPIMAPI
+    outputBinding:
+      glob: $(inputs.resources_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

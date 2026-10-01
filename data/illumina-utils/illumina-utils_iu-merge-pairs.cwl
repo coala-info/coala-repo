@@ -161,7 +161,7 @@ inputs:
       `filter-merged-reads`.
     inputBinding:
       position: 102
-      prefix: --p-value-threshold
+      prefix: -P
   - id: report_r1_prefix
     type:
       - 'null'
@@ -212,6 +212,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_file_prefix
+    outputBinding:
+      glob: $(inputs.output_file_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0

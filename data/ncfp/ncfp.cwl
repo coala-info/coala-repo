@@ -127,6 +127,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdirname_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory for sequence files
+    outputBinding:
+      glob: $(inputs.outdirname)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncfp:0.2.0--py_0

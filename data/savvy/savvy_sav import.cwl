@@ -16,7 +16,7 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file (vcf, vcf.gz, or sav)
     inputBinding:
       position: 2
@@ -161,6 +161,13 @@ outputs:
     doc: Specifies index output file (SAV output only)
     outputBinding:
       glob: $(inputs.index_file_path)
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file (vcf, vcf.gz, or sav)
+    outputBinding:
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -71,6 +71,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory for output files
+    outputBinding:
+      glob: $(inputs.directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/goleft:0.2.6--he881be0_1

@@ -260,6 +260,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stats_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in stats_prefix
+    outputBinding:
+      glob: $(inputs.stats_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

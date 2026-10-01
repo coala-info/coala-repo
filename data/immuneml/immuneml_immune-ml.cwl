@@ -36,6 +36,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory path.
+    outputBinding:
+      glob: $(inputs.result_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/immuneml:3.0.17--pyhdfd78af_0

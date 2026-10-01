@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 2
   - id: out_psl
-    type: File
+    type: string
     doc: Output PSL file
     inputBinding:
       position: 3
@@ -89,6 +89,13 @@ outputs:
     doc: Write information about each EST to this tab separated file
     outputBinding:
       glob: $(inputs.info_file_path)
+  - id: out_psl_out
+    type:
+      - 'null'
+      - File
+    doc: Output PSL file
+    outputBinding:
+      glob: $(inputs.out_psl)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

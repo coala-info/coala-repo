@@ -37,7 +37,7 @@ inputs:
       compressed)
     inputBinding:
       position: 101
-      prefix: --compress
+      prefix: -compress
   - id: baq
     type:
       - 'null'

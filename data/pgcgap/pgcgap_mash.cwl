@@ -797,6 +797,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: hout_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for hybrid assembly
+    outputBinding:
+      glob: $(inputs.hout)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1

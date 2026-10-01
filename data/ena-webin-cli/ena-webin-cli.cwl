@@ -19,19 +19,21 @@ inputs:
       variable.
     inputBinding:
       position: 101
-      prefix: --ascp
+      prefix: -ascp
   - id: center_name
     type: string
     doc: Mandatory center name for broker accounts.
     inputBinding:
       position: 101
-      prefix: --centerName
+      prefix: -centerName=
+      separate: false
   - id: context
     type: string
     doc: 'Submission type: genome, transcriptome, sequence, polysample, reads, taxrefset'
     inputBinding:
       position: 101
-      prefix: --context
+      prefix: -context=
+      separate: false
   - id: fields
     type:
       - 'null'
@@ -39,7 +41,7 @@ inputs:
     doc: Show manifest fields for all contexts or for the given -context.
     inputBinding:
       position: 101
-      prefix: --fields
+      prefix: -fields
   - id: input_dir
     type:
       - 'null'
@@ -48,13 +50,15 @@ inputs:
       the current working directory is used as the input directory.
     inputBinding:
       position: 101
-      prefix: --inputDir
+      prefix: -inputDir=
+      separate: false
   - id: manifest
     type: File
     doc: Manifest text file containing file and metadata fields.
     inputBinding:
       position: 101
-      prefix: --manifest
+      prefix: -manifest=
+      separate: false
   - id: output_dir
     type:
       - 'null'
@@ -66,7 +70,8 @@ inputs:
       in the <validate> sub-directory.
     inputBinding:
       position: 101
-      prefix: --outputDir
+      prefix: -outputDir=
+      separate: false
   - id: password
     type:
       - 'null'
@@ -83,7 +88,8 @@ inputs:
     doc: Environment variable containing the Webin submission account password.
     inputBinding:
       position: 101
-      prefix: --passwordEnv
+      prefix: -passwordEnv=
+      separate: false
   - id: password_file
     type:
       - 'null'
@@ -91,7 +97,8 @@ inputs:
     doc: File containing the Webin submission account password.
     inputBinding:
       position: 101
-      prefix: --passwordFile
+      prefix: -passwordFile=
+      separate: false
   - id: sample_update
     type:
       - 'null'
@@ -99,7 +106,7 @@ inputs:
     doc: Update the submitted sample if it already exists.
     inputBinding:
       position: 101
-      prefix: --sampleUpdate
+      prefix: -sampleUpdate
   - id: submit
     type:
       - 'null'
@@ -107,7 +114,7 @@ inputs:
     doc: Validate, upload and submit files.
     inputBinding:
       position: 101
-      prefix: --submit
+      prefix: -submit
   - id: test
     type:
       - 'null'
@@ -115,7 +122,7 @@ inputs:
     doc: Use the test submission service.
     inputBinding:
       position: 101
-      prefix: --test
+      prefix: -test
   - id: user_name
     type:
       - 'null'
@@ -123,7 +130,8 @@ inputs:
     doc: Webin submission account name or e-mail address.
     inputBinding:
       position: 101
-      prefix: --userName
+      prefix: -userName=
+      separate: false
   - id: validate
     type:
       - 'null'
@@ -131,7 +139,7 @@ inputs:
     doc: Validate files without uploading or submitting them.
     inputBinding:
       position: 101
-      prefix: --validate
+      prefix: -validate
   - id: validate_files
     type:
       - 'null'
@@ -140,11 +148,22 @@ inputs:
       without having to provide metadata.
     inputBinding:
       position: 101
-      prefix: --validateFiles
+      prefix: -validateFiles
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Root directory for any output files written in 
+      <context>/<name>/<validate,process,submit> directory structure. By default
+      the manifest file directory is used as the output directory. The <name> is
+      the unique name from the manifest file. The validation reports are written
+      in the <validate> sub-directory.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ena-webin-cli:9.0.3--hdfd78af_0

@@ -76,6 +76,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: download_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Write files to this directory. Defaults to db name in current 
+      directory. Will be created if missing.
+    outputBinding:
+      glob: $(inputs.download_directory)
+  - id: taxdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store NCBI taxdump files. Defaults to 'taxonomy/' in 
+      current directory
+    outputBinding:
+      glob: $(inputs.taxdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tango:0.5.7--py_0

@@ -288,6 +288,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: metadata_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify an absolute folder location to store metadata. No subfolder 
+      will be added. Overrides value of --metadata-root.
+    outputBinding:
+      glob: $(inputs.metadata_folder)
+  - id: metadata_root_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify a parent folder location to store metadata. The project name 
+      will be added as a subfolder
+    outputBinding:
+      glob: $(inputs.metadata_root)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/geofetch:0.12.10--pyhdfd78af_0

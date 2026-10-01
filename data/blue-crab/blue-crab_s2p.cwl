@@ -52,6 +52,13 @@ outputs:
     doc: output to FILE
     outputBinding:
       glob: $(inputs.output_pod5_path)
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output to directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

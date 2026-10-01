@@ -116,7 +116,7 @@ inputs:
     doc: show estimated RAM usage for graphs with <int> nodes
     inputBinding:
       position: 101
-      prefix: --how-much-ram
+      prefix: -how-much-ram
   - id: estimated_sparse_matrix_vector_overhead
     type:
       - 'null'

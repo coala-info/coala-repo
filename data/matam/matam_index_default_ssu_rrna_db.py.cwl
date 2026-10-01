@@ -24,6 +24,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: ref_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output dir.
+    outputBinding:
+      glob: $(inputs.ref_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/matam:1.6.2--haf24da9_0

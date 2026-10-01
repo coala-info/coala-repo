@@ -7,7 +7,7 @@ label: pypgx_create-input-vcf
 doc: "Call SNVs/indels from BAM files for all target genes.\n\nTool homepage: https://github.com/sbslee/pypgx"
 inputs:
   - id: vcf
-    type: File
+    type: string
     doc: Output VCF file. It must have .vcf.gz as suffix.
     inputBinding:
       position: 1
@@ -75,6 +75,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: vcf_out
+    type:
+      - 'null'
+      - File
+    doc: Output VCF file. It must have .vcf.gz as suffix.
+    outputBinding:
+      glob: $(inputs.vcf)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

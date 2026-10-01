@@ -21,7 +21,7 @@ inputs:
       applicable
     inputBinding:
       position: 102
-      prefix: --t
+      prefix: -t
   - id: base_error_rate
     type:
       - 'null'
@@ -29,7 +29,7 @@ inputs:
     doc: Base error rate. By default, the error rate is automatically estimated.
     inputBinding:
       position: 102
-      prefix: --e
+      prefix: -e
   - id: kmer_length
     type:
       - 'null'
@@ -37,7 +37,7 @@ inputs:
     doc: K-mer length [1-31].
     inputBinding:
       position: 102
-      prefix: --k
+      prefix: -k
   - id: max_processors
     type:
       - 'null'
@@ -45,7 +45,7 @@ inputs:
     doc: Max number of processors to use [1-20].
     inputBinding:
       position: 102
-      prefix: --p
+      prefix: -p
   - id: num_replicates
     type:
       - 'null'
@@ -53,7 +53,7 @@ inputs:
     doc: Number of subsampled replicates.
     inputBinding:
       position: 102
-      prefix: --b
+      prefix: -b
   - id: output_dir
     type:
       - 'null'
@@ -69,7 +69,7 @@ inputs:
     doc: Save sketches.
     inputBinding:
       position: 102
-      prefix: --msh
+      prefix: -msh
   - id: save_subsampled_skims
     type:
       - 'null'
@@ -77,7 +77,7 @@ inputs:
     doc: Save subsampled genome-skims.
     inputBinding:
       position: 102
-      prefix: --fa
+      prefix: -fa
   - id: sketch_size
     type:
       - 'null'
@@ -85,7 +85,7 @@ inputs:
     doc: Sketch size.
     inputBinding:
       position: 102
-      prefix: --s
+      prefix: -s
   - id: sketching_seed
     type:
       - 'null'
@@ -93,7 +93,7 @@ inputs:
     doc: Sketching random seed.
     inputBinding:
       position: 102
-      prefix: --S
+      prefix: -S
   - id: start_index
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: Start index of subsampled replicate (eg 5 for dir rep5).
     inputBinding:
       position: 102
-      prefix: --i
+      prefix: -i
   - id: subsampling_exponent
     type:
       - 'null'
@@ -109,7 +109,7 @@ inputs:
     doc: Exponent value for subsampling.
     inputBinding:
       position: 102
-      prefix: --c
+      prefix: -c
 outputs:
   - id: stdout
     type: stdout

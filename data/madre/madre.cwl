@@ -84,6 +84,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the output folder.
+    outputBinding:
+      glob: $(inputs.out_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/madre:0.0.5--pyhdfd78af_0

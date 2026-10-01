@@ -7,7 +7,7 @@ label: fiona_fio load
 doc: "Load features from JSON to a file in another format.\n\nTool homepage: https://github.com/Toblerity/Fiona"
 inputs:
   - id: output
-    type: File
+    type: string
     doc: Output file
     inputBinding:
       position: 1
@@ -54,6 +54,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_out
+    type:
+      - 'null'
+      - File
+    doc: Output file
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fiona:1.8.6

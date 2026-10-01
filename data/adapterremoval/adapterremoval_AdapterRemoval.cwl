@@ -500,6 +500,13 @@ outputs:
       options
     outputBinding:
       glob: $(inputs.discarded_path)
+  - id: basename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in basename
+    outputBinding:
+      glob: $(inputs.basename)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

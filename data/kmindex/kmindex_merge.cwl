@@ -79,6 +79,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: new_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output path.
+    outputBinding:
+      glob: $(inputs.new_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmindex:0.6.0--h668145b_1

@@ -90,6 +90,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_prefix
+    outputBinding:
+      glob: $(inputs.out_prefix)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory [deprecated]
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hifihla:0.3.1--hdfd78af_0

@@ -79,6 +79,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in index
+    outputBinding:
+      glob: $(inputs.index)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metamaps:0.1.98102e9--h21ec9f0_2

@@ -84,6 +84,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_name
+    outputBinding:
+      glob: $(inputs.output_name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ms2pip:4.1.0--py312h0fa9677_2

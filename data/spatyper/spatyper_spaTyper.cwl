@@ -84,6 +84,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder to save downloaded files from Ridom/Spa server
+    outputBinding:
+      glob: $(inputs.folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spatyper:0.3.3--pyhdfd78af_3

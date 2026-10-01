@@ -190,6 +190,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_format_or_file_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output format or file/directory for compress/decompress/rmsd
+    outputBinding:
+      glob: $(inputs.output_format_or_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/foldcomp:1.0.0--h7f5d12c_0

@@ -33,7 +33,7 @@ inputs:
     doc: write this value as meta information
     inputBinding:
       position: 103
-      prefix: --s
+      prefix: -s
   - id: storelist
     type:
       - 'null'

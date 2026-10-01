@@ -143,6 +143,13 @@ outputs:
     doc: Output text file of probabilistic 20/20 results
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: null_distr_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to directory to save empirical null distribution
+    outputBinding:
+      glob: $(inputs.null_distr_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

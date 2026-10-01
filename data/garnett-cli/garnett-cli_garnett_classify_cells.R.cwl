@@ -90,6 +90,15 @@ outputs:
     doc: Output path for cds object holding predicted labels on query data
     outputBinding:
       glob: $(inputs.cds_output_obj_path)
+  - id: plot_output_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output path for the t-SNE plots. In case --cluster-extend tag is 
+      provided, two plots will be made. If no path is provided, plots will not 
+      be produced.
+    outputBinding:
+      glob: $(inputs.plot_output_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

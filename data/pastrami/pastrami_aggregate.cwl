@@ -14,7 +14,7 @@ inputs:
       position: 101
       prefix: --pastrami-fam
   - id: pastrami_output
-    type: File?
+    type: string?
     doc: Output file generated from Pastrami's query subcommand
     inputBinding:
       position: 101
@@ -72,6 +72,13 @@ outputs:
     doc: File containing log information
     outputBinding:
       glob: $(inputs.log_file_path)
+  - id: pastrami_output_out
+    type:
+      - 'null'
+      - File
+    doc: Output file generated from Pastrami's query subcommand
+    outputBinding:
+      glob: $(inputs.pastrami_output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

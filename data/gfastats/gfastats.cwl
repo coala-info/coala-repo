@@ -246,6 +246,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_format_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Outputs selected sequences. If more than the extension is provided the 
+      output is written to the specified file (e.g. out.fasta.gz). Multiple file
+      outputs can be given at once.
+    outputBinding:
+      glob: $(inputs.out_format)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gfastats:1.3.11--h077b44d_0

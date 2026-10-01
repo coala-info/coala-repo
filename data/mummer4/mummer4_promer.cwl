@@ -154,7 +154,7 @@ inputs:
     doc: Toggle the creation of the delta file
     inputBinding:
       position: 103
-      prefix: --no-delta
+      prefix: --nodelta
   - id: no_extend
     type:
       - 'null'
@@ -162,7 +162,7 @@ inputs:
     doc: Toggle the cluster extension step
     inputBinding:
       position: 103
-      prefix: --no-extend
+      prefix: --noextend
   - id: no_optimize
     type:
       - 'null'
@@ -172,7 +172,7 @@ inputs:
       score instead of terminating the alignment at the end of the sequence
     inputBinding:
       position: 103
-      prefix: --no-optimize
+      prefix: --nooptimize
   - id: optimize
     type:
       - 'null'
@@ -195,6 +195,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0

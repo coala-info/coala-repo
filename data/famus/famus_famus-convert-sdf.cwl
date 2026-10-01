@@ -66,6 +66,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save logs.
+    outputBinding:
+      glob: $(inputs.log_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/famus:0.2.2--py312hdfd78af_0

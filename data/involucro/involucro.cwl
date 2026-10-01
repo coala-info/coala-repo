@@ -19,7 +19,7 @@ inputs:
     doc: Set the URL of the Docker instance
     inputBinding:
       position: 101
-      prefix: --host
+      prefix: -host
   - id: evaluate_script
     type:
       - 'null'

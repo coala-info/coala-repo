@@ -21,7 +21,7 @@ inputs:
     doc: Align the full query sequence (mix of local/global)
     inputBinding:
       position: 103
-      prefix: --query
+      prefix: -query
   - id: gap_decay
     type:
       - 'null'
@@ -53,7 +53,7 @@ inputs:
     doc: Perform a global alignment (experimental)
     inputBinding:
       position: 103
-      prefix: --global
+      prefix: -global
   - id: match_score
     type:
       - 'null'
@@ -77,7 +77,7 @@ inputs:
     doc: Write a summary files of match locations (tab-delimited)
     inputBinding:
       position: 103
-      prefix: --summary
+      prefix: -summary
   - id: use_regions
     type:
       - 'null'
@@ -85,7 +85,7 @@ inputs:
     doc: Use regions for coordinates if included in FASTA ref
     inputBinding:
       position: 103
-      prefix: --useregion
+      prefix: -useregion
   - id: wrap
     type:
       - 'null'

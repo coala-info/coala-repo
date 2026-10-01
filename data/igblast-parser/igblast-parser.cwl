@@ -20,6 +20,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_filename_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_filename_prefix
+    outputBinding:
+      glob: $(inputs.out_filename_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igblast-parser:0.0.4--py39hf95cd2a_6

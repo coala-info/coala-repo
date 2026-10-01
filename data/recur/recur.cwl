@@ -120,6 +120,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Results directory
+    outputBinding:
+      glob: $(inputs.results_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recur:1.0.0--pyhdfd78af_0

@@ -31,7 +31,7 @@ inputs:
       indel analysis (default is 3)
     inputBinding:
       position: 101
-      prefix: --hm
+      prefix: -hm
   - id: output_dir
     type:
       - 'null'
@@ -39,15 +39,15 @@ inputs:
     doc: Output folder for HTML report and raw data.
     inputBinding:
       position: 101
-      prefix: --outdir
+      prefix: -outdir
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for PDF report (default value is report.pdf).
     inputBinding:
       position: 101
-      prefix: --outfile
+      prefix: -outfile
   - id: output_format
     type:
       - 'null'
@@ -56,7 +56,7 @@ inputs:
       HTML).
     inputBinding:
       position: 101
-      prefix: --outformat
+      prefix: -outformat
   - id: paint_chromosome_limits
     type:
       - 'null'
@@ -72,7 +72,7 @@ inputs:
     doc: Only for -r mode. Number of reads analyzed in a chunk (default is 1000)
     inputBinding:
       position: 101
-      prefix: --nr
+      prefix: -nr
   - id: run_bamqc
     type:
       - 'null'
@@ -99,11 +99,25 @@ inputs:
     doc: Only for -r mode. Number of windows (default is 400)
     inputBinding:
       position: 101
-      prefix: --nw
+      prefix: -nw
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for PDF report (default value is report.pdf).
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder for HTML report and raw data.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

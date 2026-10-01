@@ -220,7 +220,8 @@ inputs:
     doc: force specified contrast remapping
     inputBinding:
       position: 101
-      prefix: --cw
+      prefix: -cw=
+      separate: false
   - id: force_mosaic
     type:
       - 'null'
@@ -236,7 +237,8 @@ inputs:
     doc: force slope/intercept rescaling
     inputBinding:
       position: 101
-      prefix: --si
+      prefix: -si=
+      separate: false
   - id: force_window_center_width
     type:
       - 'null'
@@ -244,7 +246,8 @@ inputs:
     doc: force window center/width contrast
     inputBinding:
       position: 101
-      prefix: --cw
+      prefix: -cw=
+      separate: false
   - id: hack_acrtags
     type:
       - 'null'

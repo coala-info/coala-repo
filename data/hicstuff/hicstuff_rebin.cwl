@@ -62,6 +62,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_prefix
+    outputBinding:
+      glob: $(inputs.out_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0

@@ -11,7 +11,7 @@ inputs:
     doc: codon usage table file path
     inputBinding:
       position: 101
-      prefix: --codon_usage_table
+      prefix: -c
   - id: energy_params_dir
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: directory to energy parameters
     inputBinding:
       position: 101
-      prefix: --directory
+      prefix: -d
   - id: input_file
     type:
       - 'null'
@@ -27,7 +27,7 @@ inputs:
     doc: input file path
     inputBinding:
       position: 101
-      prefix: --input
+      prefix: -i
   - id: input_rna_file
     type:
       - 'null'
@@ -35,7 +35,7 @@ inputs:
     doc: input rna file path
     inputBinding:
       position: 101
-      prefix: --input_rna
+      prefix: -r
   - id: lambda
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: lambda value for balancing MFE and CAI
     inputBinding:
       position: 101
-      prefix: --lambda
+      prefix: -l
   - id: min_gap_nussinov
     type:
       - 'null'
@@ -51,7 +51,7 @@ inputs:
     doc: minimum gap allowed in Nussinov
     inputBinding:
       position: 101
-      prefix: --min_gap
+      prefix: -g
   - id: mode
     type:
       - 'null'
@@ -60,7 +60,7 @@ inputs:
       lambda sweep
     inputBinding:
       position: 101
-      prefix: --mode
+      prefix: -s
   - id: model
     type:
       - 'null'
@@ -68,7 +68,7 @@ inputs:
     doc: 0 for Nussinov-based model, 1 for Zuker-based model, -1 for Evaluation
     inputBinding:
       position: 101
-      prefix: --model
+      prefix: -m
   - id: sweep_increment
     type:
       - 'null'
@@ -76,7 +76,7 @@ inputs:
     doc: sweep increment for lambda sweep
     inputBinding:
       position: 101
-      prefix: --sweep_increment
+      prefix: -a
   - id: threshold_tau1
     type:
       - 'null'
@@ -84,7 +84,7 @@ inputs:
     doc: threshold tau1
     inputBinding:
       position: 101
-      prefix: --threshold_tau1
+      prefix: -t
   - id: threshold_tau2
     type:
       - 'null'
@@ -92,7 +92,7 @@ inputs:
     doc: threshold tau2
     inputBinding:
       position: 101
-      prefix: --threshold_tau2
+      prefix: -p
   - id: output_file_path
     type:
       - 'null'

@@ -235,7 +235,7 @@ inputs:
   - id: rnames
     type:
       - 'null'
-      - File
+      - string
     doc: Output RNAMES file
     inputBinding:
       position: 101
@@ -322,6 +322,13 @@ outputs:
     doc: Output VCF (unsorted, uncompressed)
     outputBinding:
       glob: $(inputs.out_path)
+  - id: rnames_out
+    type:
+      - 'null'
+      - File
+    doc: Output RNAMES file
+    outputBinding:
+      glob: $(inputs.rnames)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

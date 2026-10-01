@@ -345,6 +345,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output Directory to put results
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mob_suite:3.1.9--pyhdfd78af_1

@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - ' fuc'
+  - fuc
   - vcf-vep
 label: fuc_vcf-vep
 doc: "Filter a VCF file by annotations from Ensembl VEP.\n\nTool homepage: https://github.com/sbslee/fuc"

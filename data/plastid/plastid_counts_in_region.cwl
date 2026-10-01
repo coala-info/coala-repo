@@ -7,7 +7,7 @@ doc: "Count the number of read alignments covering regions of interest in the ge
   \nTool homepage: http://plastid.readthedocs.io/en/latest/"
 inputs:
   - id: outfile
-    type: File
+    type: string
     doc: Output filename
     inputBinding:
       position: 1
@@ -331,6 +331,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outfile_out
+    type:
+      - 'null'
+      - File
+    doc: Output filename
+    outputBinding:
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plastid:0.6.1--py38h7d1810a_2

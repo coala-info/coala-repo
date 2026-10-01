@@ -94,6 +94,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: graph_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory to save variation graphs to
+    outputBinding:
+      glob: $(inputs.graph_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groot:1.1.2--h047eeb3_7

@@ -61,7 +61,7 @@ inputs:
     doc: threshold for the summary function
     inputBinding:
       position: 103
-      prefix: --threshold
+      prefix: -t
 outputs:
   - id: output_left
     type: File

@@ -226,6 +226,13 @@ outputs:
     doc: Specify name of generated C file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: gdb_outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify gdb debug information output directory. Implies --gdb.
+    outputBinding:
+      glob: $(inputs.gdb_outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

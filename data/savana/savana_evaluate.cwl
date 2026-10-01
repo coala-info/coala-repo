@@ -71,7 +71,7 @@ inputs:
   - id: stats
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for statistics on comparison if desired
     inputBinding:
       position: 101
@@ -87,6 +87,13 @@ outputs:
     doc: Output VCF with LABEL added to INFO
     outputBinding:
       glob: $(inputs.output_path)
+  - id: stats_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for statistics on comparison if desired
+    outputBinding:
+      glob: $(inputs.stats)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

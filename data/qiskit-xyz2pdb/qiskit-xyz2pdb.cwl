@@ -46,6 +46,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the output folder
+    outputBinding:
+      glob: $(inputs.out_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qiskit-xyz2pdb:0.1.2--pyhca03a8a_0

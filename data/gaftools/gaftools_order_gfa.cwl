@@ -70,6 +70,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output Directory to store all the GFA and CSV files. Default location 
+      is a "out" folder from the directory of execution.
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gaftools:1.3.1--pyhdfd78af_0

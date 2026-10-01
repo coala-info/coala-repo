@@ -119,7 +119,7 @@ inputs:
   - id: out
     type:
       - 'null'
-      - File
+      - string
     doc: output file
     inputBinding:
       position: 101
@@ -159,7 +159,7 @@ inputs:
   - id: solid_kmers_out
     type:
       - 'null'
-      - File
+      - string
     doc: output file for solid kmers (only when constructing a graph)
     inputBinding:
       position: 101
@@ -202,6 +202,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_out
+    type:
+      - 'null'
+      - File
+    doc: output file
+    outputBinding:
+      glob: $(inputs.out)
+  - id: solid_kmers_out_out
+    type:
+      - 'null'
+      - File
+    doc: output file for solid kmers (only when constructing a graph)
+    outputBinding:
+      glob: $(inputs.solid_kmers_out)
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsk:2.3.3--h5ca1c30_7

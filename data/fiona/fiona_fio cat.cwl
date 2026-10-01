@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - fiona
   - fio
   - cat
 label: fiona_fio cat

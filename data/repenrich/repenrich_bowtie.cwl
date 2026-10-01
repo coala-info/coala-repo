@@ -146,7 +146,7 @@ inputs:
     doc: Comma-separated list of files containing upstream mates
     inputBinding:
       position: 103
-      prefix: --1
+      prefix: '-1'
       itemSeparator: ','
   - id: mates2
     type:
@@ -156,7 +156,7 @@ inputs:
     doc: Comma-separated list of files containing downstream mates
     inputBinding:
       position: 103
-      prefix: --2
+      prefix: '-2'
       itemSeparator: ','
   - id: max_alignments_per_read
     type:

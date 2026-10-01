@@ -163,7 +163,7 @@ inputs:
   - id: qc_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output a qc file that contains information about BAM
     inputBinding:
       position: 102
@@ -260,6 +260,13 @@ outputs:
     doc: Output file to write to (BAM/SAM/CRAM) file instead of stdout
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: qc_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output a qc file that contains information about BAM
+    outputBinding:
+      glob: $(inputs.qc_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

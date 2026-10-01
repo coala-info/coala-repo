@@ -111,6 +111,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in name
+    outputBinding:
+      glob: $(inputs.name)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the output directory, where you want to store all the output 
+      files, if not set, the current directory will be used
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hint:2.2.8--py_1

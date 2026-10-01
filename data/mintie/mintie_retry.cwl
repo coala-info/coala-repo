@@ -152,7 +152,7 @@ inputs:
   - id: report_filename
     type:
       - 'null'
-      - File
+      - string
     doc: Output file name of report.
     inputBinding:
       position: 107
@@ -226,6 +226,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: report_filename_out
+    type:
+      - 'null'
+      - File
+    doc: Output file name of report.
+    outputBinding:
+      glob: $(inputs.report_filename)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mintie:0.4.3--hdfd78af_0

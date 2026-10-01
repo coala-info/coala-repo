@@ -66,6 +66,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outputprefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outputprefix
+    outputBinding:
+      glob: $(inputs.outputprefix)*
+  - id: outputfolder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to output folder
+    outputBinding:
+      glob: $(inputs.outputfolder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dampa:0.2.0--pyhdfd78af_0

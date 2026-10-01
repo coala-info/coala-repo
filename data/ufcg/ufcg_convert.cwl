@@ -77,10 +77,10 @@ inputs:
       prefix: --verbose
   - id: fasta_path
     type: string
-    doc: Output or path parameter `fasta_path`
+    doc: Output FASTA file
     inputBinding:
       position: 102
-      prefix: --fasta
+      prefix: -o
 outputs:
   - id: fasta
     type: File

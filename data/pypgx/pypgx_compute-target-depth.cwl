@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: read_depth
-    type: File
+    type: string
     doc: Output archive file with the semantic type CovFrame[ReadDepth].
     inputBinding:
       position: 2
@@ -45,6 +45,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: read_depth_out
+    type:
+      - 'null'
+      - File
+    doc: Output archive file with the semantic type CovFrame[ReadDepth].
+    outputBinding:
+      glob: $(inputs.read_depth)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

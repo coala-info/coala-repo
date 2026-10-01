@@ -195,7 +195,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/1)
     inputBinding:
       position: 101
-      prefix: --p1
+      prefix: -p1
   - id: paired_end_reads_2
     type:
       - 'null'
@@ -203,7 +203,7 @@ inputs:
     doc: path to input fastq containing paired-end reads (/2)
     inputBinding:
       position: 101
-      prefix: --p2
+      prefix: -p2
   - id: reference
     type:
       - 'null'
@@ -240,7 +240,7 @@ inputs:
     doc: path to input fastq containing single-end reads
     inputBinding:
       position: 101
-      prefix: --s
+      prefix: -s
   - id: split_num
     type: int
     doc: split the data set into patches s.t. 500 < coverage/split_num < 1000
@@ -251,6 +251,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: specify output directory
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haploconduct:0.2.1--py27h78a066a_0

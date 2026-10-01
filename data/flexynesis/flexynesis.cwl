@@ -376,6 +376,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the output folder to save the model outputs
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexynesis:1.1.7--pyhdfd78af_0

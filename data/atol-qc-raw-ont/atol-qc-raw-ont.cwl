@@ -80,6 +80,13 @@ outputs:
     doc: Combined output in fastq.gz
     outputBinding:
       glob: $(inputs.out_path)
+  - id: logs_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Log output directory. Default: logs are discarded.'
+    outputBinding:
+      glob: $(inputs.logs)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

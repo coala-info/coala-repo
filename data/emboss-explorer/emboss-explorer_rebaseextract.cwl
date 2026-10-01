@@ -13,7 +13,7 @@ inputs:
       prototypes in the withrefm file.
     inputBinding:
       position: 101
-      prefix: --equivalences
+      prefix: -equivalences
   - id: infile
     type: File
     doc: REBASE database withrefm file
@@ -28,7 +28,7 @@ inputs:
       prototypes in the withrefm file.
     inputBinding:
       position: 101
-      prefix: --noequivalences
+      prefix: -noequivalences
   - id: protofile
     type: File
     doc: REBASE database proto file

@@ -159,6 +159,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mintie:0.4.3--hdfd78af_0

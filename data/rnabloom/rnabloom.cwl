@@ -46,7 +46,7 @@ inputs:
     doc: count unique k-mers in input reads with ntCard
     inputBinding:
       position: 101
-      prefix: --ntcard
+      prefix: -ntcard
   - id: dbgbf_hash
     type:
       - 'null'
@@ -70,7 +70,7 @@ inputs:
     doc: print debugging information
     inputBinding:
       position: 101
-      prefix: --debug
+      prefix: -debug
   - id: disable_fragment_consistency
     type:
       - 'null'
@@ -78,7 +78,7 @@ inputs:
     doc: turn off assembly consistency with fragment paired k-mers
     inputBinding:
       position: 101
-      prefix: --nofc
+      prefix: -nofc
   - id: error_correction_iterations
     type:
       - 'null'
@@ -102,7 +102,7 @@ inputs:
     doc: extend fragments outward during fragment reconstruction
     inputBinding:
       position: 101
-      prefix: --extend
+      prefix: -extend
   - id: force_overwrite
     type:
       - 'null'
@@ -118,7 +118,7 @@ inputs:
     doc: name prefix in FASTA header for assembled transcripts
     inputBinding:
       position: 101
-      prefix: --prefix
+      prefix: -prefix
   - id: keep_artifacts
     type:
       - 'null'
@@ -126,7 +126,7 @@ inputs:
     doc: keep potential sequencing artifacts
     inputBinding:
       position: 101
-      prefix: --artifact
+      prefix: -artifact
   - id: keep_chimeras
     type:
       - 'null'
@@ -134,7 +134,7 @@ inputs:
     doc: keep potential chimeras
     inputBinding:
       position: 101
-      prefix: --chimera
+      prefix: -chimera
   - id: kmer_size
     type:
       - 'null'
@@ -167,7 +167,7 @@ inputs:
     doc: number of k-mers to look ahead during graph traversal
     inputBinding:
       position: 101
-      prefix: --lookahead
+      prefix: -lookahead
   - id: max_coverage_gradient
     type:
       - 'null'
@@ -191,7 +191,7 @@ inputs:
     doc: maximum size of indels to be collapsed
     inputBinding:
       position: 101
-      prefix: --indel
+      prefix: -indel
   - id: max_mate_distance
     type:
       - 'null'
@@ -199,7 +199,7 @@ inputs:
     doc: maximum distance between read mates
     inputBinding:
       position: 101
-      prefix: --bound
+      prefix: -bound
   - id: max_tip_length
     type:
       - 'null'
@@ -207,7 +207,7 @@ inputs:
     doc: maximum number of bases in a tip
     inputBinding:
       position: 101
-      prefix: --tiplength
+      prefix: -tiplength
   - id: merge_pooled_assemblies
     type:
       - 'null'
@@ -215,7 +215,7 @@ inputs:
     doc: merge pooled assemblies
     inputBinding:
       position: 101
-      prefix: --mergepool
+      prefix: -mergepool
   - id: min_avg_base_quality
     type:
       - 'null'
@@ -239,7 +239,7 @@ inputs:
     doc: minimum number of consecutive k-mer pairs for assembling transcripts
     inputBinding:
       position: 101
-      prefix: --pair
+      prefix: -pair
   - id: min_kmer_coverage
     type:
       - 'null'
@@ -271,7 +271,7 @@ inputs:
     doc: minimum number of overlapping bases between reads
     inputBinding:
       position: 101
-      prefix: --overlap
+      prefix: -overlap
   - id: min_percent_identity
     type:
       - 'null'
@@ -287,7 +287,7 @@ inputs:
     doc: minimum transcript length in output assembly
     inputBinding:
       position: 101
-      prefix: --length
+      prefix: -length
   - id: minimap2_options
     type:
       - 'null'
@@ -392,7 +392,7 @@ inputs:
     doc: sample size for estimating read/fragment lengths
     inputBinding:
       position: 101
-      prefix: --sample
+      prefix: -sample
   - id: save_bloom_filters
     type:
       - 'null'
@@ -400,7 +400,7 @@ inputs:
     doc: save graph (Bloom filters) from stage 1 to disk
     inputBinding:
       position: 101
-      prefix: --savebf
+      prefix: -savebf
   - id: sbf_memory_gb
     type:
       - 'null'
@@ -424,7 +424,7 @@ inputs:
     doc: assemble transcripts in sensitive mode
     inputBinding:
       position: 101
-      prefix: --sensitive
+      prefix: -sensitive
   - id: single_end_forward
     type:
       - 'null'
@@ -448,7 +448,7 @@ inputs:
     doc: skip redundancy reduction for assembled transcripts
     inputBinding:
       position: 101
-      prefix: --norr
+      prefix: -norr
   - id: stranded
     type:
       - 'null'
@@ -465,7 +465,7 @@ inputs:
       are branch-free in the graph
     inputBinding:
       position: 101
-      prefix: --stratum
+      prefix: -stratum
   - id: subsample_long_reads
     type:
       - 'null'
@@ -511,6 +511,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnabloom:2.0.1--hdfd78af_1

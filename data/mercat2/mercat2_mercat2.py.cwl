@@ -100,7 +100,7 @@ inputs:
     doc: run Prodigal on fasta files
     inputBinding:
       position: 101
-      prefix: --prod
+      prefix: -prod
   - id: skip_clean
     type:
       - 'null'
@@ -121,6 +121,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder
+    outputBinding:
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mercat2:1.4.1--pyhdfd78af_0

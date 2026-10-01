@@ -114,6 +114,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: working_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.working_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virsorter:2.2.4--pyhdfd78af_2

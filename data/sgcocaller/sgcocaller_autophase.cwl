@@ -304,6 +304,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: phase_output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in phase_output_prefix
+    outputBinding:
+      glob: $(inputs.phase_output_prefix)*
+  - id: out_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_prefix
+    outputBinding:
+      glob: $(inputs.out_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sgcocaller:0.3.9--hda81887_2

@@ -74,7 +74,7 @@ inputs:
   doc: Margin of error for matching primer positions
   inputBinding:
     position: 1
-    prefix: -p
+    prefix: --pos-margin
 - id: reference
   type: File?
   secondaryFiles:
@@ -124,7 +124,7 @@ inputs:
   doc: Use the sample name from the first @RG header line
   inputBinding:
     position: 1
-    prefix: -u
+    prefix: --use-sample-name
 stdout: stats.out
 outputs:
 - id: output_file

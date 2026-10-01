@@ -59,7 +59,7 @@ inputs:
       automatic intron cutout technique
     inputBinding:
       position: 104
-      prefix: --autointroncutout
+      prefix: -autointroncutout
   - id: bssm
     type:
       - 'null'
@@ -68,7 +68,7 @@ inputs:
       variable BSSMDIR
     inputBinding:
       position: 104
-      prefix: --bssm
+      prefix: -bssm
   - id: bzip2_compressed_output
     type:
       - 'null'
@@ -76,7 +76,7 @@ inputs:
     doc: write bzip2 compressed output file
     inputBinding:
       position: 104
-      prefix: --bzip2
+      prefix: -bzip2
   - id: compute_paralogs
     type:
       - 'null'
@@ -84,7 +84,7 @@ inputs:
     doc: compute paralogous genes (different chaining procedure)
     inputBinding:
       position: 104
-      prefix: --paralogs
+      prefix: -paralogs
   - id: enable_intron_cutout
     type:
       - 'null'
@@ -92,7 +92,7 @@ inputs:
     doc: enable the intron cutout technique
     inputBinding:
       position: 104
-      prefix: --introncutout
+      prefix: -introncutout
   - id: force_output
     type:
       - 'null'
@@ -100,7 +100,7 @@ inputs:
     doc: force writing to output file
     inputBinding:
       position: 104
-      prefix: --force
+      prefix: -force
   - id: from_position
     type:
       - 'null'
@@ -109,7 +109,7 @@ inputs:
       counting from 1 on
     inputBinding:
       position: 104
-      prefix: --frompos
+      prefix: -frompos
   - id: gene_seqer2_output
     type:
       - 'null'
@@ -117,7 +117,7 @@ inputs:
     doc: output in old GeneSeqer2 format
     inputBinding:
       position: 104
-      prefix: --gs2out
+      prefix: -gs2out
   - id: gff3_output
     type:
       - 'null'
@@ -125,7 +125,7 @@ inputs:
     doc: show output in GFF3 format
     inputBinding:
       position: 104
-      prefix: --gff3out
+      prefix: -gff3out
   - id: gzip_compressed_output
     type:
       - 'null'
@@ -133,7 +133,7 @@ inputs:
     doc: write gzip compressed output file
     inputBinding:
       position: 104
-      prefix: --gzip
+      prefix: -gzip
   - id: hamming_distance_protein
     type:
       - 'null'
@@ -141,7 +141,7 @@ inputs:
     doc: specify Hamming distance (protein matching)
     inputBinding:
       position: 104
-      prefix: --prhdist
+      prefix: -prhdist
   - id: intermediate_output
     type:
       - 'null'
@@ -151,7 +151,7 @@ inputs:
       ``normal'' XML output instead!
     inputBinding:
       position: 104
-      prefix: --intermediate
+      prefix: -intermediate
   - id: max_gap_width_global_chains
     type:
       - 'null'
@@ -162,7 +162,7 @@ inputs:
       important to set this parameter appropriately!
     inputBinding:
       position: 104
-      prefix: --gcmaxgapwidth
+      prefix: -gcmaxgapwidth
   - id: max_spliced_alignments_per_genomic
     type:
       - 'null'
@@ -171,7 +171,7 @@ inputs:
       to 0 for unlimited number.
     inputBinding:
       position: 104
-      prefix: --first
+      prefix: -first
   - id: md5_fingerprints_as_ids
     type:
       - 'null'
@@ -179,7 +179,7 @@ inputs:
     doc: show MD5 fingerprints as sequence IDs
     inputBinding:
       position: 104
-      prefix: --md5ids
+      prefix: -md5ids
   - id: min_coverage_global_chains
     type:
       - 'null'
@@ -188,7 +188,7 @@ inputs:
       sequence
     inputBinding:
       position: 104
-      prefix: --gcmincoverage
+      prefix: -gcmincoverage
   - id: min_match_length_cdna
     type:
       - 'null'
@@ -196,7 +196,7 @@ inputs:
     doc: specify minimum match length (cDNA matching)
     inputBinding:
       position: 104
-      prefix: --minmatchlen
+      prefix: -minmatchlen
   - id: min_match_length_protein
     type:
       - 'null'
@@ -204,7 +204,7 @@ inputs:
     doc: specify minimum match length (protein matches)
     inputBinding:
       position: 104
-      prefix: --prminmatchlen
+      prefix: -prminmatchlen
   - id: scorematrix
     type:
       - 'null'
@@ -213,7 +213,7 @@ inputs:
       by the environment variable GTHDATADIR
     inputBinding:
       position: 104
-      prefix: --scorematrix
+      prefix: -scorematrix
   - id: seed_length_cdna
     type:
       - 'null'
@@ -221,7 +221,7 @@ inputs:
     doc: specify the seed length (cDNA matching)
     inputBinding:
       position: 104
-      prefix: --seedlength
+      prefix: -seedlength
   - id: seed_length_protein
     type:
       - 'null'
@@ -229,7 +229,7 @@ inputs:
     doc: specify seed length (protein matching)
     inputBinding:
       position: 104
-      prefix: --prseedlength
+      prefix: -prseedlength
   - id: species
     type:
       - 'null'
@@ -239,7 +239,7 @@ inputs:
       "aspergillus" "arabidopsis" "maize" "rice" "medicago"'
     inputBinding:
       position: 104
-      prefix: --species
+      prefix: -species
   - id: to_position
     type:
       - 'null'
@@ -248,7 +248,7 @@ inputs:
       from 1 on
     inputBinding:
       position: 104
-      prefix: --topos
+      prefix: -topos
   - id: translationtable
     type:
       - 'null'
@@ -257,7 +257,7 @@ inputs:
       DP, and output
     inputBinding:
       position: 104
-      prefix: --translationtable
+      prefix: -translationtable
   - id: use_fast_dp
     type:
       - 'null'
@@ -265,7 +265,7 @@ inputs:
     doc: use jump table to increase speed of DP calculation
     inputBinding:
       position: 104
-      prefix: --fastdp
+      prefix: -fastdp
   - id: verbose
     type:
       - 'null'
@@ -281,7 +281,7 @@ inputs:
     doc: analyze only this width of genomic sequence; requires -frompos
     inputBinding:
       position: 104
-      prefix: --width
+      prefix: -width
   - id: xdrop_extension_cdna
     type:
       - 'null'
@@ -289,7 +289,7 @@ inputs:
     doc: specify the Xdrop value for edit distance extension (cDNA matching)
     inputBinding:
       position: 104
-      prefix: --exdrop
+      prefix: -exdrop
   - id: xml_output
     type:
       - 'null'
@@ -297,13 +297,13 @@ inputs:
     doc: show output in XML format
     inputBinding:
       position: 104
-      prefix: --xmlout
+      prefix: -xmlout
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'redirect output to specified file default: undefined'
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

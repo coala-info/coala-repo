@@ -35,7 +35,7 @@ inputs:
   - id: regions
     type:
       - 'null'
-      - File
+      - string
     doc: output recombinant regions to file
     inputBinding:
       position: 102
@@ -103,6 +103,13 @@ outputs:
     doc: draw SVG output of recombinant regions and save as specified file
     outputBinding:
       glob: $(inputs.svg_path)
+  - id: regions_out
+    type:
+      - 'null'
+      - File
+    doc: output recombinant regions to file
+    outputBinding:
+      glob: $(inputs.regions)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -259,6 +259,13 @@ outputs:
     doc: Name of output barcode multiplicity TSV file
     outputBinding:
       glob: $(inputs.barcode_counts_file_path)
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

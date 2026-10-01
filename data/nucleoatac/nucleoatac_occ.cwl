@@ -113,6 +113,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_basename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_basename
+    outputBinding:
+      glob: $(inputs.out_basename)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nucleoatac:0.3.4--py27hf119a78_5

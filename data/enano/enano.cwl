@@ -15,7 +15,7 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for compression or decompression.
     inputBinding:
       position: 2
@@ -50,7 +50,7 @@ inputs:
     doc: To use MAX COMPRESION MODE. Default is FAST MODE.
     inputBinding:
       position: 103
-      prefix: --max_compression
+      prefix: -c
   - id: threads
     type:
       - 'null'
@@ -63,6 +63,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for compression or decompression.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/enano:1.0--h077b44d_7

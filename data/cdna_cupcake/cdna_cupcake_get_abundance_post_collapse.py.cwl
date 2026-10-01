@@ -21,6 +21,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: collapse_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in collapse_prefix
+    outputBinding:
+      glob: $(inputs.collapse_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cdna_cupcake:29.0.0--py310h79ef01b_0

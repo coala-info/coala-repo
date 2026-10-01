@@ -69,6 +69,13 @@ outputs:
     doc: Output axt file
     outputBinding:
       glob: '*.out'
+  - id: target_nib_dir_or_2bit_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Target nib directory or 2bit file
+    outputBinding:
+      glob: $(inputs.target_nib_dir_or_2bit)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chaintoaxt:482--h0b57e2e_0

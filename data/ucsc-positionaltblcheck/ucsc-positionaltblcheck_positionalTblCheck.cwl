@@ -21,7 +21,8 @@ inputs:
     doc: n>=2, print tables as checked
     inputBinding:
       position: 103
-      prefix: --verbose
+      prefix: -verbose=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

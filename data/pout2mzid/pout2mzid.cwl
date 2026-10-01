@@ -82,6 +82,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outputdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Sets the output directory if none exist, it will be created.
+    outputBinding:
+      glob: $(inputs.outputdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pout2mzid:0.3.03--boost1.62_2

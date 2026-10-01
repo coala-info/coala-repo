@@ -16,7 +16,7 @@ inputs:
     doc: Create an array of strings, one for each line
     inputBinding:
       position: 102
-      prefix: --array
+      prefix: -array
   - id: static_variable
     type:
       - 'null'
@@ -24,7 +24,7 @@ inputs:
     doc: Create the variable but put static in front of it.
     inputBinding:
       position: 102
-      prefix: --static
+      prefix: -static
   - id: variable_name
     type:
       - 'null'
@@ -32,7 +32,8 @@ inputs:
     doc: Create a variable with the specified name containing the string.
     inputBinding:
       position: 102
-      prefix: --var
+      prefix: -var=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

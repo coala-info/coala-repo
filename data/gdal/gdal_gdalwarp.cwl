@@ -134,7 +134,7 @@ inputs:
     doc: Use geolocated image transformation.
     inputBinding:
       position: 102
-      prefix: --geoloc
+      prefix: -geoloc
   - id: multi
     type:
       - 'null'
@@ -158,7 +158,7 @@ inputs:
     doc: Do not use vertical shift grid.
     inputBinding:
       position: 102
-      prefix: --novshiftgrid
+      prefix: -novshiftgrid
   - id: order
     type:
       - 'null'
@@ -255,7 +255,7 @@ inputs:
     doc: Use Rational Polynomial Coefficients (RPC) transformation.
     inputBinding:
       position: 102
-      prefix: --rpc
+      prefix: -rpc
   - id: set_color_interpretation
     type:
       - 'null'
@@ -306,7 +306,7 @@ inputs:
     doc: Use Thin Plate Spline transformation.
     inputBinding:
       position: 102
-      prefix: --tps
+      prefix: -tps
   - id: transformer_options
     type:
       - 'null'

@@ -50,6 +50,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: destination_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Destination path to synchronize to (collection on irods server or local
+      directory).
+    outputBinding:
+      glob: $(inputs.destination)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0

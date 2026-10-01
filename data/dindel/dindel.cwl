@@ -396,6 +396,13 @@ outputs:
     doc: ABSOLUTE path to script to process realigned BAM file
     outputBinding:
       glob: $(inputs.process_realigned_bam_path)
+  - id: output_file_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_file
+    outputBinding:
+      glob: $(inputs.output_file)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

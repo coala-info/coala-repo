@@ -54,6 +54,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output
+    outputBinding:
+      glob: $(inputs.output)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0

@@ -92,6 +92,22 @@ outputs:
       containing different blocks
     outputBinding:
       glob: $(inputs.output_path)
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to store blast nucleotide databases for each sequence in 
+      genome directory. By default write to current folder 'blastn_db'
+    outputBinding:
+      glob: $(inputs.database)
+  - id: query_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder storing all blastn queries in xml format. By defualt 
+      write to current folder 'blastn_against_bank'
+    outputBinding:
+      glob: $(inputs.query)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -870,6 +870,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out
+    outputBinding:
+      glob: $(inputs.out)*
+  - id: split_l0_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in split_l0
+    outputBinding:
+      glob: $(inputs.split_l0)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/regenie:4.1.2--he9e75c4_0

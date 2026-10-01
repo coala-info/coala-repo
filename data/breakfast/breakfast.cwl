@@ -160,6 +160,13 @@ outputs:
     doc: Path to Output cached pickle file
     outputBinding:
       glob: $(inputs.output_cache_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for all output files
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

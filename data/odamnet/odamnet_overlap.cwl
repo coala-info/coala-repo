@@ -82,6 +82,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder name to save results
+    outputBinding:
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odamnet:1.1.0--pyhdfd78af_0

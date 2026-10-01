@@ -7,7 +7,7 @@ label: rnasamba_train
 doc: "Train a new classification model.\n\nTool homepage: https://github.com/apcamargo/RNAsamba"
 inputs:
   - id: output_file
-    type: File
+    type: string
     doc: output HDF5 file containing weights of the newly trained RNAsamba 
       network.
     inputBinding:
@@ -61,6 +61,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: output HDF5 file containing weights of the newly trained RNAsamba 
+      network.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasamba:0.2.5--py36h91eb985_1

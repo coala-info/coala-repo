@@ -27,7 +27,7 @@ inputs:
     doc: Comma-separated list of control BAM files
     inputBinding:
       position: 101
-      prefix: --control
+      prefix: -control
   - id: downstream_offset
     type:
       - 'null'
@@ -43,7 +43,7 @@ inputs:
     doc: Name of the experiment
     inputBinding:
       position: 101
-      prefix: --expr
+      prefix: -expr
   - id: fragment_length
     type:
       - 'null'
@@ -59,15 +59,15 @@ inputs:
     doc: Output folder for HTML report and raw data.
     inputBinding:
       position: 101
-      prefix: --outdir
+      prefix: -outdir
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for PDF report
     inputBinding:
       position: 101
-      prefix: --outfile
+      prefix: -outfile
   - id: output_format
     type:
       - 'null'
@@ -76,13 +76,13 @@ inputs:
       HTML).
     inputBinding:
       position: 101
-      prefix: --outformat
+      prefix: -outformat
   - id: regions_file
     type: File
     doc: Path to regions file
     inputBinding:
       position: 101
-      prefix: --regions
+      prefix: -regions
   - id: replicate_names
     type:
       - 'null'
@@ -90,7 +90,7 @@ inputs:
     doc: Comma-separated names of the replicates
     inputBinding:
       position: 101
-      prefix: --name
+      prefix: -name
   - id: rscript_path
     type:
       - 'null'
@@ -105,7 +105,7 @@ inputs:
     doc: Comma-separated list of sample BAM files
     inputBinding:
       position: 101
-      prefix: --sample
+      prefix: -sample
   - id: upstream_offset
     type:
       - 'null'
@@ -121,11 +121,25 @@ inputs:
     doc: 'Visualization type: heatmap or line'
     inputBinding:
       position: 101
-      prefix: --viz
+      prefix: -viz
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for PDF report
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder for HTML report and raw data.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

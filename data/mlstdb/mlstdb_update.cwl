@@ -42,6 +42,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save the downloaded MLST schemes
+    outputBinding:
+      glob: $(inputs.directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mlstdb:0.2.0--pyh7e72e81_0

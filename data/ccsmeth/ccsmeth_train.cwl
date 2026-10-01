@@ -271,6 +271,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: model_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save the trained model
+    outputBinding:
+      glob: $(inputs.model_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ccsmeth:0.5.0--pyhdfd78af_0

@@ -270,7 +270,7 @@ inputs:
     doc: does not copy the xcontrol file at startup
     inputBinding:
       position: 102
-      prefix: --no-copy
+      prefix: --nocopy
   - id: no_restart
     type:
       - 'null'
@@ -278,7 +278,7 @@ inputs:
     doc: does not restart calculation from xtbrestart
     inputBinding:
       position: 102
-      prefix: --no-restart
+      prefix: --norestart
   - id: ohess
     type:
       - 'null'

@@ -19,7 +19,7 @@ inputs:
     inputBinding:
       position: 2
   - id: cool_path
-    type: File
+    type: string
     doc: Output COOL file path or URI.
     inputBinding:
       position: 3
@@ -178,6 +178,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: cool_path_out
+    type:
+      - 'null'
+      - File
+    doc: Output COOL file path or URI.
+    outputBinding:
+      glob: $(inputs.cool_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

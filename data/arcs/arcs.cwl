@@ -282,6 +282,13 @@ outputs:
     doc: write intra-contig distance/barcode samples to FILE
     outputBinding:
       glob: $(inputs.samples_tsv_path)
+  - id: base_name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in base_name
+    outputBinding:
+      glob: $(inputs.base_name)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

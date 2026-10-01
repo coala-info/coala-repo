@@ -210,6 +210,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output path, location for sv2 output directories
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sv2:1.4.3.4--py27h3010b51_2

@@ -135,6 +135,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: dir_final_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The name of the directory to put the final output into.
+    outputBinding:
+      glob: $(inputs.dir_final)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/velvetoptimiser:v2.2.6-2-deb_cv1

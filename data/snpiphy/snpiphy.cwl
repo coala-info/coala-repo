@@ -127,6 +127,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the output directory. A directory will be created if one does 
+      not exist.
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snpiphy:0.5--py_0

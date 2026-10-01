@@ -107,7 +107,7 @@ inputs:
       --theta (Supported programs: ASTRAL).'
     inputBinding:
       position: 101
-      prefix: --coal-path
+      prefix: -coal-path
   - id: coal_tree
     type:
       - 'null'
@@ -118,7 +118,7 @@ inputs:
       --theta must be set.
     inputBinding:
       position: 101
-      prefix: --l
+      prefix: -l
   - id: config_file
     type:
       - 'null'
@@ -276,7 +276,7 @@ inputs:
     doc: The path to the PhyloAcc-GT binary.
     inputBinding:
       position: 101
-      prefix: --gt-path
+      prefix: -gt-path
   - id: phyloacc_opts
     type:
       - 'null'
@@ -285,7 +285,7 @@ inputs:
       delimited list of options: 'OPT1 value;OPT2 value'"
     inputBinding:
       position: 101
-      prefix: --phyloacc
+      prefix: -phyloacc
   - id: phyloacc_st_path
     type:
       - 'null'
@@ -293,7 +293,7 @@ inputs:
     doc: The path to the PhyloAcc-ST binary.
     inputBinding:
       position: 101
-      prefix: --st-path
+      prefix: -st-path
   - id: procs_per_batch
     type:
       - 'null'
@@ -329,7 +329,7 @@ inputs:
     doc: The value of sCF to consider as 'low' for any given branch in a locus.
     inputBinding:
       position: 101
-      prefix: --scf
+      prefix: -scf
   - id: scf_prop
     type:
       - 'null'
@@ -339,7 +339,7 @@ inputs:
       low sCF, this locus will be run with the gene tree model.'
     inputBinding:
       position: 101
-      prefix: --s
+      prefix: -s
   - id: show_options
     type:
       - 'null'
@@ -411,6 +411,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Desired output directory. This will be created for you if it doesn't 
+      exist.
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyloacc:2.4.5--py313h4c9e609_1

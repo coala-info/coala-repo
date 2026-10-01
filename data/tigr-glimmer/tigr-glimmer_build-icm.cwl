@@ -6,7 +6,7 @@ doc: Read sequences from standard input and output to output-file the
   interpolated context model built from them.
 inputs:
   - id: output_file
-    type: File
+    type: string
     doc: output file
     inputBinding:
       position: 1
@@ -77,6 +77,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: output file
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1

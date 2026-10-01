@@ -27,7 +27,8 @@ inputs:
     doc: value to divide Q value by
     inputBinding:
       position: 103
-      prefix: --divisor
+      prefix: -divisor=
+      separate: false
 outputs:
   - id: out_out_maf
     type: File

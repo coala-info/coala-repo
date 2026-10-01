@@ -42,7 +42,7 @@ inputs:
       cache. Required if -m cache
     inputBinding:
       position: 101
-      prefix: --cache_file
+      prefix: --cache
   - id: clean_overlaps
     type:
       - 'null'
@@ -298,7 +298,7 @@ inputs:
       --itype and --translate). Required unless -m no_search.
     inputBinding:
       position: 101
-      prefix: --input_fasta_file
+      prefix: -i
   - id: itype
     type:
       - 'null'
@@ -421,7 +421,7 @@ inputs:
     doc: base name for output files
     inputBinding:
       position: 101
-      prefix: --output_prefix
+      prefix: --output
   - id: overlap_tol
     type:
       - 'null'
@@ -546,7 +546,7 @@ inputs:
       the novel families database (-i is required).'
     inputBinding:
       position: 101
-      prefix: --search_mode
+      prefix: -m
   - id: seed_ortholog_evalue
     type:
       - 'null'
@@ -745,6 +745,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eggnog-mapper:2.1.13--pyhdfd78af_2

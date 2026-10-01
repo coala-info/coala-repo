@@ -216,6 +216,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: samples_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Desired output folder for the resulting sample files. Created if 
+      missing
+    outputBinding:
+      glob: $(inputs.samples)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dmox:0.2.1--h3ab6199_0

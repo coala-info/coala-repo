@@ -66,6 +66,13 @@ outputs:
     doc: Write to FILE rather than standard output
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_format_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Write output in the specified FORMAT
+    outputBinding:
+      glob: $(inputs.output_format)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

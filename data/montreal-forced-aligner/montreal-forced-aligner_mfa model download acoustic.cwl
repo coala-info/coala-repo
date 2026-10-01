@@ -22,6 +22,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory to save the acoustic model to. Defaults to the MFA data 
+      directory.
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/montreal-forced-aligner:3.3.8

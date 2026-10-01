@@ -36,7 +36,7 @@ inputs:
     doc: Kmer Length [5 > int > 30, default=21]
     inputBinding:
       position: 101
-      prefix: --k
+      prefix: -k
   - id: low_mem
     type:
       - 'null'

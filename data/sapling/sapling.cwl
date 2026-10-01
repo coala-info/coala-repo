@@ -52,7 +52,7 @@ inputs:
     doc: Input filename with mutation read counts (use '-' for STDIN)
     inputBinding:
       position: 101
-      prefix: --f
+      prefix: -f
   - id: poly_clonal_root
     type:
       - 'null'
@@ -68,7 +68,7 @@ inputs:
     doc: Regression method
     inputBinding:
       position: 101
-      prefix: --L
+      prefix: -L
   - id: rho
     type:
       - 'null'

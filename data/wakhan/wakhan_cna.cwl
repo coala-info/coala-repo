@@ -225,6 +225,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_dir_plots_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.out_dir_plots)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wakhan:0.4.2--pyhdfd78af_0

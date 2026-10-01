@@ -11,7 +11,7 @@ inputs:
     doc: Specify your apikey at SeedMe.org
     inputBinding:
       position: 101
-      prefix: --apikey
+      prefix: -apikey
   - id: auth_file_path
     type:
       - 'null'
@@ -22,7 +22,7 @@ inputs:
       https://www.seedme.org/user'
     inputBinding:
       position: 101
-      prefix: --auth_path
+      prefix: -auth_path
   - id: connect_timeout
     type:
       - 'null'
@@ -38,7 +38,7 @@ inputs:
     doc: 'Specify absolute path to curl executible (default: environment path)'
     inputBinding:
       position: 101
-      prefix: --curl_path
+      prefix: -curl_path
   - id: delete
     type:
       - 'null'
@@ -49,7 +49,7 @@ inputs:
       node_ids'
     inputBinding:
       position: 101
-      prefix: --delete
+      prefix: -delete
   - id: description
     type:
       - 'null'
@@ -57,7 +57,7 @@ inputs:
     doc: Specify description for the collection
     inputBinding:
       position: 101
-      prefix: --description
+      prefix: -description
   - id: download
     type:
       - 'null'
@@ -68,7 +68,7 @@ inputs:
       ) (default RETRY: 3 ) (default INTERVAL: 60)'
     inputBinding:
       position: 101
-      prefix: --download
+      prefix: -download
   - id: dry_run
     type:
       - 'null'
@@ -76,7 +76,7 @@ inputs:
     doc: Enable dry run execution mode to check all input except authorization
     inputBinding:
       position: 101
-      prefix: --dry_run
+      prefix: -dry_run
   - id: email
     type:
       - 'null'
@@ -96,7 +96,7 @@ inputs:
     doc: Add file description
     inputBinding:
       position: 101
-      prefix: --file_description
+      prefix: -file_description
   - id: file_dont_encode
     type:
       - 'null'
@@ -104,7 +104,7 @@ inputs:
     doc: Do not trigger video transcoding
     inputBinding:
       position: 101
-      prefix: --file_dont_encode
+      prefix: -file_dont_encode
   - id: file_overwrite
     type:
       - 'null'
@@ -112,7 +112,7 @@ inputs:
     doc: Overwrite file if it exists
     inputBinding:
       position: 101
-      prefix: --file_overwrite
+      prefix: -file_overwrite
   - id: file_path
     type:
       - 'null'
@@ -120,7 +120,7 @@ inputs:
     doc: Specify FILE | PATH with * wildcard | DIR
     inputBinding:
       position: 101
-      prefix: --file_path
+      prefix: -file_path
   - id: file_poster_path
     type:
       - 'null'
@@ -128,7 +128,7 @@ inputs:
     doc: Specify FILE PATH
     inputBinding:
       position: 101
-      prefix: --file_poster_path
+      prefix: -file_poster_path
   - id: file_title
     type:
       - 'null'
@@ -136,7 +136,7 @@ inputs:
     doc: Set file title
     inputBinding:
       position: 101
-      prefix: --file_title
+      prefix: -file_title
   - id: file_transcode
     type:
       - 'null'
@@ -144,7 +144,7 @@ inputs:
     doc: Trigger video transcoding to create videos for different devices
     inputBinding:
       position: 101
-      prefix: --file_transcode
+      prefix: -file_transcode
   - id: insecure
     type:
       - 'null'
@@ -152,7 +152,7 @@ inputs:
     doc: Disable SSL communication
     inputBinding:
       position: 101
-      prefix: --insecure
+      prefix: -insecure
   - id: keyvalue
     type:
       - 'null'
@@ -173,7 +173,7 @@ inputs:
       option'
     inputBinding:
       position: 101
-      prefix: --list
+      prefix: -list
   - id: logfile
     type:
       - 'null'
@@ -181,7 +181,7 @@ inputs:
     doc: Appends output to specified log file
     inputBinding:
       position: 101
-      prefix: --logfile
+      prefix: -logfile
   - id: notify
     type:
       - 'null'
@@ -189,7 +189,7 @@ inputs:
     doc: 'Send email to users about a shared collection (default: False)'
     inputBinding:
       position: 101
-      prefix: --notify
+      prefix: -notify
   - id: overwrite
     type:
       - 'null'
@@ -197,7 +197,7 @@ inputs:
     doc: Overwrite existing files, if any
     inputBinding:
       position: 101
-      prefix: --overwrite
+      prefix: -overwrite
   - id: post_method
     type:
       - 'null'
@@ -213,7 +213,7 @@ inputs:
     doc: 'Specify privacy to access the collection (default: private)'
     inputBinding:
       position: 101
-      prefix: --privacy
+      prefix: -privacy
   - id: query
     type:
       - 'null'
@@ -222,7 +222,7 @@ inputs:
       Title)'
     inputBinding:
       position: 101
-      prefix: --query
+      prefix: -query
   - id: read_timeout
     type:
       - 'null'
@@ -230,7 +230,7 @@ inputs:
     doc: Read timeout duration in seconds
     inputBinding:
       position: 101
-      prefix: --read_timeout
+      prefix: -read_timeout
   - id: sequence_description
     type:
       - 'null'
@@ -238,7 +238,7 @@ inputs:
     doc: Add sequence description
     inputBinding:
       position: 101
-      prefix: --sequence_description
+      prefix: -sequence_description
   - id: sequence_encode
     type:
       - 'null'
@@ -246,7 +246,7 @@ inputs:
     doc: Trigger video encoding to create a video from image sequence
     inputBinding:
       position: 101
-      prefix: --sequence_encode
+      prefix: -sequence_encode
   - id: sequence_frame_rate
     type:
       - 'null'
@@ -254,7 +254,7 @@ inputs:
     doc: Specify sequence frame rate for video encoding
     inputBinding:
       position: 101
-      prefix: --sequence_frame_rate
+      prefix: -sequence_frame_rate
   - id: sequence_overwrite
     type:
       - 'null'
@@ -262,7 +262,7 @@ inputs:
     doc: Overwrite sequence if it exists (default:False)
     inputBinding:
       position: 101
-      prefix: --sequence_overwrite
+      prefix: -sequence_overwrite
   - id: sequence_path
     type:
       - 'null'
@@ -270,7 +270,7 @@ inputs:
     doc: Specify DIR | PATH with * wildcard
     inputBinding:
       position: 101
-      prefix: --sequence_path
+      prefix: -sequence_path
   - id: sequence_poster_path
     type:
       - 'null'
@@ -278,7 +278,7 @@ inputs:
     doc: Specify FILE PATH
     inputBinding:
       position: 101
-      prefix: --sequence_poster_path
+      prefix: -sequence_poster_path
   - id: sequence_title
     type:
       - 'null'
@@ -286,7 +286,7 @@ inputs:
     doc: Set sequence title (Required)
     inputBinding:
       position: 101
-      prefix: --sequence_title
+      prefix: -sequence_title
   - id: show_auth_in_curl_commands
     type:
       - 'null'
@@ -294,7 +294,7 @@ inputs:
     doc: Show auth in curl command line options
     inputBinding:
       position: 101
-      prefix: --show_auth_in_curl_commands
+      prefix: -show_auth_in_curl_commands
   - id: show_curl_commands
     type:
       - 'null'
@@ -302,7 +302,7 @@ inputs:
     doc: Show curl command line options
     inputBinding:
       position: 101
-      prefix: --show_curl_commands
+      prefix: -show_curl_commands
   - id: silent
     type:
       - 'null'
@@ -311,7 +311,7 @@ inputs:
       collection creation)
     inputBinding:
       position: 101
-      prefix: --silent
+      prefix: -silent
   - id: ssl_certificate_path
     type:
       - 'null'
@@ -319,7 +319,7 @@ inputs:
     doc: Set path to SSL certificate
     inputBinding:
       position: 101
-      prefix: --cacert
+      prefix: -cacert
   - id: tag
     type:
       - 'null'
@@ -328,7 +328,7 @@ inputs:
     doc: Add tag to the collection (can be used many times)
     inputBinding:
       position: 101
-      prefix: --tag
+      prefix: -tag
   - id: tail
     type:
       - 'null'
@@ -337,7 +337,7 @@ inputs:
       option
     inputBinding:
       position: 101
-      prefix: --tail
+      prefix: -tail
   - id: ticker
     type:
       - 'null'
@@ -345,7 +345,7 @@ inputs:
     doc: Add ticker text upto 128 char to the collection
     inputBinding:
       position: 101
-      prefix: --ticker
+      prefix: -ticker
   - id: title
     type:
       - 'null'
@@ -353,7 +353,7 @@ inputs:
     doc: Specify title for the collection (Required)
     inputBinding:
       position: 101
-      prefix: --title
+      prefix: -title
   - id: transfer_email
     type:
       - 'null'
@@ -361,7 +361,7 @@ inputs:
     doc: Specify email to whom the collection ownership will be transferred
     inputBinding:
       position: 101
-      prefix: --transfer
+      prefix: -transfer
   - id: update_collection_id
     type:
       - 'null'
@@ -369,7 +369,7 @@ inputs:
     doc: Specify collection id for update or query
     inputBinding:
       position: 101
-      prefix: --update
+      prefix: -update
   - id: url
     type:
       - 'null'
@@ -385,7 +385,7 @@ inputs:
     doc: Specify your username at SeedMe.org
     inputBinding:
       position: 101
-      prefix: --user
+      prefix: -user
   - id: verbose
     type:
       - 'null'
@@ -393,7 +393,7 @@ inputs:
     doc: verbosity level
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: -verbose
 outputs:
   - id: stdout
     type: stdout

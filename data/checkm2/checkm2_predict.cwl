@@ -165,12 +165,18 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ttable
+  - id: output_directory_path
+    type: string
+    doc: Path output to folder
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type: Directory
     doc: Path output to folder
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_directory_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkm2:1.1.0--pyh7e72e81_1

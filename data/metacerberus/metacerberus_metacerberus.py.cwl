@@ -332,6 +332,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dir_out_dir
+    type:
+      - 'null'
+      - Directory
+    doc: path to output directory, defaults to "results-metacerberus" in current
+      directory.
+    outputBinding:
+      glob: $(inputs.dir_out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metacerberus:1.4.0--pyhdfd78af_1

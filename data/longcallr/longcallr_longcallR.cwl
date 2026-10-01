@@ -295,6 +295,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output
+    outputBinding:
+      glob: $(inputs.output)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/longcallr:1.12.0--py313ha45639b_1

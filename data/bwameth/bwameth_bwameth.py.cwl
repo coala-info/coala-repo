@@ -28,7 +28,14 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
-    doc: reference fasta
+      - .bwameth.c2t
+      - .bwameth.c2t.amb
+      - .bwameth.c2t.ann
+      - .bwameth.c2t.bwt
+      - .bwameth.c2t.pac
+      - .bwameth.c2t.sa
+    doc: reference fasta, indexed by `bwameth.py index` (the .bwameth.c2t files must sit
+      beside it)
     inputBinding:
       position: 102
       prefix: --reference

@@ -343,6 +343,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outfile_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The standard output file, will be saved in output folder, just give the
+      file name.
+    outputBinding:
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/simscsntree:0.0.9--pyh5e36f6f_0

@@ -37,7 +37,7 @@ inputs:
     inputBinding:
       position: 5
   - id: target_yaml
-    type: File
+    type: string
     doc: Output YAML file name
     inputBinding:
       position: 6
@@ -76,6 +76,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: target_yaml_out
+    type:
+      - 'null'
+      - File
+    doc: Output YAML file name
+    outputBinding:
+      glob: $(inputs.target_yaml)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for the config file
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wg-blimp:0.10.0--pyh5e36f6f_0

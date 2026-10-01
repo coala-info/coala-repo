@@ -32,7 +32,7 @@ inputs:
     doc: List of riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: --b
+      prefix: -b
   - id: colorblind
     type:
       - 'null'
@@ -71,13 +71,13 @@ inputs:
     doc: Gene annotation file
     inputBinding:
       position: 101
-      prefix: --g
+      prefix: -g
   - id: genome_fasta_path
     type: File
     doc: Genome fasta file
     inputBinding:
       position: 101
-      prefix: --f
+      prefix: -f
   - id: labels
     type:
       - 'null'
@@ -86,7 +86,7 @@ inputs:
     doc: Labels for riboseq bam files, comma seperated
     inputBinding:
       position: 101
-      prefix: --l
+      prefix: -l
   - id: mark_peptide
     type:
       - 'null'
@@ -163,7 +163,7 @@ inputs:
     doc: 'Range shown on the transcript, format: start,stop'
     inputBinding:
       position: 101
-      prefix: --r
+      prefix: -r
   - id: rna
     type:
       - 'null'
@@ -206,13 +206,13 @@ inputs:
     doc: Figure size
     inputBinding:
       position: 101
-      prefix: --s
+      prefix: -s
   - id: transcript_id
     type: string
     doc: Transcript id
     inputBinding:
       position: 101
-      prefix: --t
+      prefix: -t
   - id: ymax
     type:
       - 'null'

@@ -249,6 +249,13 @@ outputs:
       directory given in -d option.
     outputBinding:
       glob: $(inputs.out_path)
+  - id: dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory to store the downloaded file.
+    outputBinding:
+      glob: $(inputs.dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

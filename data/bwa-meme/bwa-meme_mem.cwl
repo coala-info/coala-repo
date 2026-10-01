@@ -9,7 +9,23 @@ doc: "BWA-MEME (bwa-mem2) alignment tool using learned or ERT indexes for seedin
 inputs:
   - id: idxbase
     type: File
-    doc: Index basename
+    doc: The BWA-MEME index, given as the file named like the index prefix (for example
+      ref.fa); the bwa-mem2 index files must sit beside it, and the learned-index files
+      (.suffixarray_uint64*) too when -7 is used
+    secondaryFiles:
+      - '.0123'
+      - .amb
+      - .ann
+      - .bwt.2bit.64
+      - .pac
+      - pattern: .suffixarray_uint64
+        required: false
+      - pattern: .suffixarray_uint64_L0_PARAMETERS
+        required: false
+      - pattern: .suffixarray_uint64_L1_PARAMETERS
+        required: false
+      - pattern: .suffixarray_uint64_L2_PARAMETERS
+        required: false
     inputBinding:
       position: 1
   - id: in1_fq

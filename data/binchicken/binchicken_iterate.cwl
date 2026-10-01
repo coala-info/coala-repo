@@ -198,7 +198,7 @@ inputs:
   - id: coassemble_binned
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for binned coassembly results.
     inputBinding:
       position: 101
@@ -214,7 +214,7 @@ inputs:
   - id: coassemble_unbinned
     type:
       - 'null'
-      - File
+      - string
     doc: Output file for unbinned coassembly results.
     inputBinding:
       position: 101
@@ -738,6 +738,27 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: coassemble_binned_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for binned coassembly results.
+    outputBinding:
+      glob: $(inputs.coassemble_binned)
+  - id: coassemble_unbinned_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for unbinned coassembly results.
+    outputBinding:
+      glob: $(inputs.coassemble_unbinned)
+  - id: coassemble_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for coassembly.
+    outputBinding:
+      glob: $(inputs.coassemble_output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -84,7 +84,7 @@ inputs:
   doc: Use neighbour_qual + INT if less than qual
   inputBinding:
     position: 102
-    prefix: --delta-bq
+    prefix: --delta-BQ
 - id: ext_prob
   type:
   - 'null'
@@ -191,7 +191,7 @@ inputs:
   doc: Limit baseQ/BAQ to no more than INT
   inputBinding:
     position: 102
-    prefix: --max-bq
+    prefix: --max-BQ
 - id: max_depth
   type:
   - 'null'

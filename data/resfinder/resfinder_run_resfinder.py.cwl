@@ -259,6 +259,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_path_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory. If it doesn't exist, it will be created.
+    outputBinding:
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/resfinder:4.7.2--pyhdfd78af_0

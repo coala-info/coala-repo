@@ -73,7 +73,7 @@ inputs:
   - id: out_def_json
     type:
       - 'null'
-      - File
+      - string
     doc: "Output definition JSON file for a WDL file\n                        corresponding
       to the specified metadata.json file"
     inputBinding:
@@ -166,11 +166,29 @@ outputs:
   - id: out_dir
     type:
       - 'null'
-      - File
+      - Directory
     doc: "Output directory/bucket (LOCAL OR REMOTE). This can be\n               \
       \         a local path, gs:// or s3://."
     outputBinding:
       glob: $(inputs.out_dir_path)
+  - id: out_def_json_out
+    type:
+      - 'null'
+      - File
+    doc: Output definition JSON file for a WDL file corresponding to the 
+      specified metadata.json file
+    outputBinding:
+      glob: $(inputs.out_def_json)
+  - id: method_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Method to localize files on output directory/bucket. "link" means a 
+      soft-linking and it's for local directory only. Original output files will
+      be kept in Cromwell's output directory. "copy" makes copies of Cromwell's 
+      original outputs
+    outputBinding:
+      glob: $(inputs.method)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

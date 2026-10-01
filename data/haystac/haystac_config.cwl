@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haysac_config
+baseCommand:
+  - haystac
+  - config
 label: haystac_config
 doc: "Configuration options\n\nTool homepage: https://github.com/antonisdim/haystac"
 inputs:

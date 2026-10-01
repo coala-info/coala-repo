@@ -199,6 +199,13 @@ outputs:
       and model preparation
     outputBinding:
       glob: $(inputs.out_path_path)
+  - id: out_name_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name for the output directory, default 'date_Cherri_evaluating_RRIs'.
+    outputBinding:
+      glob: $(inputs.out_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -221,6 +221,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outputprefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outputprefix
+    outputBinding:
+      glob: $(inputs.outputprefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dodge:1.0.1--pyhdfd78af_0

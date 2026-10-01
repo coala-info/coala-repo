@@ -190,6 +190,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: file_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in file_prefix
+    outputBinding:
+      glob: $(inputs.file_prefix)*
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to write files to
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grenedalf:0.6.3--hbefcdb2_0

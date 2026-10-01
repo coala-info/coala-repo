@@ -75,6 +75,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: working_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder where CRISPRCas Typer results will be stored (will be 
+      created if it does not exist)
+    outputBinding:
+      glob: $(inputs.working_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spacerextractor:0.9.8--pyhdfd78af_0

@@ -108,6 +108,13 @@ outputs:
       extension)
     outputBinding:
       glob: $(inputs.output_path)
+  - id: work_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save nucmer outputs.
+    outputBinding:
+      glob: $(inputs.work_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

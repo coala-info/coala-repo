@@ -61,6 +61,13 @@ outputs:
     doc: Output directory (optional)
     outputBinding:
       glob: $(inputs.out_dir_path)
+  - id: save_model_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in save_model
+    outputBinding:
+      glob: $(inputs.save_model)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

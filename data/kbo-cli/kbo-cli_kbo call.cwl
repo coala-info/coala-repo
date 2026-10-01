@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - kbo-cli
   - kbo
   - call
 label: kbo-cli_kbo call

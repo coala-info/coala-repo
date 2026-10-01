@@ -273,6 +273,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: traindir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save training artifacts
+    outputBinding:
+      glob: $(inputs.traindir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/segway:3.0.4--pyh7cba7a3_1

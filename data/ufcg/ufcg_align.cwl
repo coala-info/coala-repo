@@ -112,10 +112,10 @@ inputs:
       prefix: --verbose
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Output directory for alignments
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
     type: Directory

@@ -85,6 +85,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: destination_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Destination directory
+    outputBinding:
+      glob: $(inputs.destination)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graph2pro-var:1.0.0--0

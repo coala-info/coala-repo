@@ -10,33 +10,6 @@ inputs:
     doc: 'Subcommand to run: test, train, or predict'
     inputBinding:
       position: 1
-  - id: predict_class
-    type:
-      - 'null'
-      - boolean
-    doc: Predict the class of a sequence
-    inputBinding:
-      position: 102
-      prefix: --predict
-  - id: test_mode_settings
-    type:
-      - 'null'
-      - boolean
-    doc: Test the prediction function. It will use default settings to test 
-      DeepMicroClass. And output the test result in the current working 
-      directory. The expected result is in 
-      /usr/local/lib/python3.12/site-packages/DeepMicroClass/demo/test.fa_pred_one-hot_hybrid.tsv
-    inputBinding:
-      position: 102
-      prefix: --test
-  - id: train_model
-    type:
-      - 'null'
-      - boolean
-    doc: Train the model
-    inputBinding:
-      position: 102
-      prefix: --train
 outputs:
   - id: stdout
     type: stdout

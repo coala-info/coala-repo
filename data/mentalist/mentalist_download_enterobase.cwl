@@ -7,7 +7,7 @@ label: mentalist_download_enterobase
 doc: "Download scheme data from Enterobase.\n\nTool homepage: https://github.com/WGS-TB/MentaLiST"
 inputs:
   - id: db
-    type: File
+    type: string
     doc: Output file (kmer database)
     inputBinding:
       position: 101
@@ -56,6 +56,13 @@ outputs:
     doc: Output folder for the scheme Fasta files.
     outputBinding:
       glob: $(inputs.output_folder_path)
+  - id: db_out
+    type:
+      - 'null'
+      - File
+    doc: Output file (kmer database)
+    outputBinding:
+      glob: $(inputs.db)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

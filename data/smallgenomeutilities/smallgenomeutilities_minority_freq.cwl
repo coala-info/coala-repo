@@ -46,7 +46,7 @@ inputs:
       - .fai
     inputBinding:
       position: 102
-      prefix: --reference
+      prefix: -r
   - id: sample_identifiers
     type:
       - 'null'

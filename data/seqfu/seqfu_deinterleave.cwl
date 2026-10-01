@@ -67,6 +67,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_basename_dir
+    type:
+      - 'null'
+      - Directory
+    doc: save output to output_R1.fq and output_R2.fq
+    outputBinding:
+      glob: $(inputs.output_basename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0

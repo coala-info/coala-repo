@@ -270,6 +270,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: add_genome_dir
+    type:
+      - 'null'
+      - Directory
+    doc: "Edits the file 'fastq_screen.conf' (in the folder where this script is saved)
+      to add a new genome. Specify the additional genome as a comma separated list:
+      'Database name','Genome path and basename','Notes'"
+    outputBinding:
+      glob: $(inputs.add_genome)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastq-screen:0.16.0--pl5321hdfd78af_0

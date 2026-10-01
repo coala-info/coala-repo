@@ -24,7 +24,7 @@ inputs:
     inputBinding:
       position: 2
   - id: result_directory
-    type: Directory
+    type: string
     doc: "Directory to be created to store results in. If it already exists, abort\n\
       \                   unless option -f is given."
     inputBinding:
@@ -151,6 +151,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to be created to store results in. If it already exists, 
+      abort unless option -f is given.
+    outputBinding:
+      glob: $(inputs.result_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14

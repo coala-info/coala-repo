@@ -20,6 +20,13 @@ outputs:
     doc: Path to save the HTML validation report.
     outputBinding:
       glob: '*.out'
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the directory where validation reports will be saved.
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/isatab-validator:phenomenal-v0.10.0_cv0.7.1.42

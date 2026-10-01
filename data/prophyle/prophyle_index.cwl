@@ -34,7 +34,7 @@ inputs:
     doc: autocomplete tree (names of internal nodes and FASTA paths)
     inputBinding:
       position: 103
-      prefix: --autocomplete-tree
+      prefix: -A
   - id: keep_temporary_files
     type:
       - 'null'
@@ -42,7 +42,7 @@ inputs:
     doc: keep temporary files from k-mer propagation
     inputBinding:
       position: 103
-      prefix: --keep-temporary-files
+      prefix: -T
   - id: kmer_length
     type:
       - 'null'
@@ -58,7 +58,7 @@ inputs:
     doc: directory with the library sequences
     inputBinding:
       position: 103
-      prefix: --library-dir
+      prefix: -g
   - id: log_file
     type:
       - 'null'
@@ -74,7 +74,7 @@ inputs:
     doc: mask repeats/low complexity regions (using DustMasker)
     inputBinding:
       position: 103
-      prefix: --mask-repeats
+      prefix: -M
   - id: no_prefix_for_multiple_trees
     type:
       - 'null'
@@ -82,7 +82,7 @@ inputs:
     doc: do not add prefixes to node names when multiple trees are used
     inputBinding:
       position: 103
-      prefix: --no-prefix-for-multiple-trees
+      prefix: -P
   - id: rewrite_index
     type:
       - 'null'
@@ -90,7 +90,7 @@ inputs:
     doc: rewrite index files if they already exist
     inputBinding:
       position: 103
-      prefix: --rewrite-index
+      prefix: -F
   - id: sampling_rate
     type:
       - 'null'
@@ -98,7 +98,7 @@ inputs:
     doc: rate of sampling of the tree
     inputBinding:
       position: 103
-      prefix: --sampling-rate
+      prefix: -s
   - id: skip_k_lcp
     type:
       - 'null'
@@ -106,7 +106,7 @@ inputs:
     doc: skip k-LCP construction (then restarted search only)
     inputBinding:
       position: 103
-      prefix: --skip-k-lcp
+      prefix: -K
   - id: stop_after_propagation
     type:
       - 'null'
@@ -114,7 +114,7 @@ inputs:
     doc: stop after k-mer propagation (no BWT index construction)
     inputBinding:
       position: 103
-      prefix: --stop-after-propagation
+      prefix: -S
   - id: switch_propagation_off
     type:
       - 'null'
@@ -122,7 +122,7 @@ inputs:
     doc: switch propagation off (only re-assemble leaves)
     inputBinding:
       position: 103
-      prefix: --switch-propagation-off
+      prefix: -R
   - id: threads
     type:
       - 'null'
@@ -130,7 +130,7 @@ inputs:
     doc: number of threads
     inputBinding:
       position: 103
-      prefix: --threads
+      prefix: -j
 outputs:
   - id: stdout
     type: stdout

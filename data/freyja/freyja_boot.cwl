@@ -117,7 +117,7 @@ inputs:
   - id: output_base
     type:
       - 'null'
-      - File
+      - string
     doc: Output file basename
     inputBinding:
       position: 103
@@ -167,6 +167,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_base_out
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Output file basename
+    outputBinding:
+      glob: $(inputs.output_base)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0

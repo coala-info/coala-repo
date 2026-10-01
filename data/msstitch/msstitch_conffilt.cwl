@@ -76,6 +76,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to output in
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

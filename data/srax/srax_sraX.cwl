@@ -62,7 +62,7 @@ inputs:
     doc: Minimum identity cut-off to filter false positives.
     inputBinding:
       position: 101
-      prefix: --id
+      prefix: -id
   - id: msa
     type:
       - 'null'

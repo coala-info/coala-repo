@@ -785,6 +785,18 @@ outputs:
       The path to the output folder can be either relative or absolute.
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: basename_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Write all output to files starting with this base file name. For 
+      example, '--basename foo' would result in the files 'foo.bam' and 
+      'foo_SE_report.txt' (or its paired-end equivalent). Takes precedence over 
+      --prefix. Be advised that you should not use this option in conjunction 
+      with supplying lists of files to be processed consecutively, as all output
+      files will constantly overwrite each other.
+    outputBinding:
+      glob: $(inputs.basename)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

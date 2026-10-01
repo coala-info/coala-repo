@@ -114,6 +114,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: name_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in name
+    outputBinding:
+      glob: $(inputs.name)*
+  - id: outpath_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to output directory.
+    outputBinding:
+      glob: $(inputs.outpath)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/primalscheme:1.4.1--pyh7cba7a3_0

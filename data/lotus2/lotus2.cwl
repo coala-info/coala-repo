@@ -33,7 +33,7 @@ inputs:
       (Default: "")'
     inputBinding:
       position: 101
-      prefix: MID
+      prefix: -MID
   - id: build_phylo
     type:
       - 'null'

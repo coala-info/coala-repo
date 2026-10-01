@@ -71,7 +71,7 @@ inputs:
   - id: output
     type:
       - 'null'
-      - File
+      - string
     doc: "Output filename for html and txt outputs. Required by\n                \
       \        default, but not required for stdout only output."
     inputBinding:
@@ -118,6 +118,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_out
+    type:
+      - 'null'
+      - File
+    doc: Output filename for html and txt outputs. Required by default, but not 
+      required for stdout only output.
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phigaro:2.4.0--pyhdfd78af_0

@@ -107,6 +107,13 @@ outputs:
       format.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: If specified all output files will be written to that directory.
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

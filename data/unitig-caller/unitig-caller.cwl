@@ -128,6 +128,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out
+    outputBinding:
+      glob: $(inputs.out)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unitig-caller:1.3.1--py311heec5c76_1

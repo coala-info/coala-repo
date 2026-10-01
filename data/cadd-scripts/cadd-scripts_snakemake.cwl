@@ -1210,7 +1210,7 @@ inputs:
   - id: runtime_profile
     type:
       - 'null'
-      - File
+      - string
     doc: Profile Snakemake and write the output to FILE. This requires yappi to 
       be installed.
     inputBinding:
@@ -1630,6 +1630,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: runtime_profile_out
+    type:
+      - 'null'
+      - File
+    doc: Profile Snakemake and write the output to FILE. This requires yappi to 
+      be installed.
+    outputBinding:
+      glob: $(inputs.runtime_profile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cadd-scripts:1.7.3--hdfd78af_0

@@ -38,6 +38,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory - will be created if it does not exist
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mockinbird:1.0.0a1--py38he5da3d1_7

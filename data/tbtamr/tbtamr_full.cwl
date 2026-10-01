@@ -310,7 +310,7 @@ inputs:
     doc: number of threads
     inputBinding:
       position: 104
-      prefix: --threads
+      prefix: -t
   - id: threads_samclip
     type:
       - 'null'

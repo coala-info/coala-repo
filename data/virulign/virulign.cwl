@@ -102,6 +102,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: nt_debug_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for nucleotide debug output
+    outputBinding:
+      glob: $(inputs.nt_debug_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virulign:1.1.1--hf316886_6

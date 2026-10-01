@@ -533,6 +533,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: report_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in report_prefix
+    outputBinding:
+      glob: $(inputs.report_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hap.py:0.3.15--py27hcb73b3d_0

@@ -45,7 +45,7 @@ inputs:
     doc: Length of k-mer.
     inputBinding:
       position: 104
-      prefix: --k
+      prefix: -k
   - id: max_length
     type:
       - 'null'

@@ -28,6 +28,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: basename_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in basename
+    outputBinding:
+      glob: $(inputs.basename)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panaln:2.09--h5ca1c30_0

@@ -117,6 +117,13 @@ outputs:
       this also moves the informational messages from stdout to stderr.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

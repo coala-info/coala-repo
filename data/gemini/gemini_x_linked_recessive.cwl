@@ -76,7 +76,7 @@ inputs:
     doc: name of X chrom (if not default 'chrX' or 'X')
     inputBinding:
       position: 102
-      prefix: --X
+      prefix: -X
 outputs:
   - id: stdout
     type: stdout

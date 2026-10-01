@@ -203,6 +203,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+  - id: output_profile_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path for output prof-file
+    outputBinding:
+      glob: $(inputs.output_profile_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vgan:3.1.0--h9ee0642_0

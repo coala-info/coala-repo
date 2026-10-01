@@ -174,6 +174,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory. By default this will be the name of the transcriptome
+      file with `.dammit` appended
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dammit:1.2--pyh5ca1d4c_0

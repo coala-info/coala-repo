@@ -464,7 +464,7 @@ inputs:
       percent of the variance (in the original PCA-ed data)
     inputBinding:
       position: 101
-      prefix: --pve_contrib
+      prefix: --PVE_contrib
   - id: pve_mean_factor
     type:
       - 'null'

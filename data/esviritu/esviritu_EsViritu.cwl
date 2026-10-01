@@ -152,6 +152,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory name (not a path). Will be created if it does not 
+      exist. Can be shared with other samples. No space characters, please. See 
+      also --working_directory to create at another path.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/esviritu:1.1.6--pyhdfd78af_0

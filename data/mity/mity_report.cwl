@@ -99,6 +99,13 @@ outputs:
     doc: Output annotated vcf file
     outputBinding:
       glob: $(inputs.output_annotated_vcf_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output files will be saved in OUTPUT_DIR.
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

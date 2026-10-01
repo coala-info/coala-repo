@@ -117,6 +117,13 @@ outputs:
       preparation as well as the evaluated instances
     outputBinding:
       glob: $(inputs.out_path_path)
+  - id: out_name_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Name for the output directory.
+    outputBinding:
+      glob: $(inputs.out_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

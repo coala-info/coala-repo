@@ -22,7 +22,7 @@ inputs:
     doc: fixed number of mismatches, overrides -m
     inputBinding:
       position: 103
-      prefix: --fixed_mismatches
+      prefix: -M
   - id: indel_penalty
     type:
       - 'null'
@@ -31,7 +31,7 @@ inputs:
       heavily than mismatches
     inputBinding:
       position: 103
-      prefix: --indel_penalty
+      prefix: -n
   - id: json_output
     type:
       - 'null'
@@ -39,7 +39,7 @@ inputs:
     doc: use json format for the output file
     inputBinding:
       position: 103
-      prefix: --json_output
+      prefix: -j
   - id: minimum_allele_count
     type:
       - 'null'
@@ -47,7 +47,7 @@ inputs:
     doc: minimum count per allele
     inputBinding:
       position: 103
-      prefix: --minimum_allele_count
+      prefix: -a
   - id: mismatches_per_nucleotide
     type:
       - 'null'
@@ -55,7 +55,7 @@ inputs:
     doc: mismatches per nucleotide
     inputBinding:
       position: 103
-      prefix: --mismatches_per_nucleotide
+      prefix: -m
   - id: output_directory
     type:
       - 'null'
@@ -71,11 +71,18 @@ inputs:
     doc: name of the report file
     inputBinding:
       position: 103
-      prefix: --report_file
+      prefix: -r
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tssv:1.1.2--py312h0fa9677_6

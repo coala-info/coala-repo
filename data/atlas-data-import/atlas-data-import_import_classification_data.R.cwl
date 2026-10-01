@@ -101,6 +101,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sdrf_output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output path for imported SDRF files directory
+    outputBinding:
+      glob: $(inputs.sdrf_output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas-data-import:0.1.1--hdfd78af_0

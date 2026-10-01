@@ -176,6 +176,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: batch_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Specify the directory path that is used to store the batch control 
+      files. The directory is created if it doesn't exist. If used, this option 
+      must be specified on all para commands for the batch.
+    outputBinding:
+      glob: $(inputs.batch)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-para:469--h664eb37_1

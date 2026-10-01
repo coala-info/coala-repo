@@ -139,6 +139,13 @@ outputs:
       headers) to this file
     outputBinding:
       glob: $(inputs.csv_output_path)
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory for output plots
+    outputBinding:
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

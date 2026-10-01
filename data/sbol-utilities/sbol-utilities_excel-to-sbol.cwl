@@ -54,6 +54,13 @@ outputs:
     doc: Name of SBOL file to be written
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: local_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Local path for Components in output file
+    outputBinding:
+      glob: $(inputs.local)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -82,7 +82,7 @@ inputs:
     doc: number of threads
     inputBinding:
       position: 103
-      prefix: --th
+      prefix: -th
   - id: threshold
     type: float
     doc: consensus threshold (0-1) - higher values result in higher specificity 
@@ -94,6 +94,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varvamp:1.3--pyhdfd78af_0

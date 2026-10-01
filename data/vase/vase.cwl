@@ -1603,7 +1603,7 @@ inputs:
       to --dbsnp to have CLNSIG annotations\n                        from ClinVar."
     inputBinding:
       position: 101
-      prefix: --path
+      prefix: -path
   - id: path
     type:
       - 'null'

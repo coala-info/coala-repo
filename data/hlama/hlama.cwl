@@ -75,6 +75,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: work_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to create the Snakefile in
+    outputBinding:
+      glob: $(inputs.work_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hlama:3.0.1--py35_0

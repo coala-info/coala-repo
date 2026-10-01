@@ -251,7 +251,7 @@ inputs:
   - id: mapping
     type:
       - 'null'
-      - File
+      - string
     doc: Output file where the mapping between final barcode sequences and names
       will be written
     inputBinding:
@@ -682,6 +682,14 @@ outputs:
       (comma-separated)
     outputBinding:
       glob: $(inputs.unassigned_path)
+  - id: mapping_out
+    type:
+      - 'null'
+      - File
+    doc: Output file where the mapping between final barcode sequences and names
+      will be written
+    outputBinding:
+      glob: $(inputs.mapping)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

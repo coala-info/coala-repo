@@ -17,7 +17,7 @@ inputs:
   - id: output_fastq
     type:
       - 'null'
-      - File
+      - string
     doc: Output FASTQ file
     inputBinding:
       position: 3
@@ -122,6 +122,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_fastq_out
+    type:
+      - 'null'
+      - File
+    doc: Output FASTQ file
+    outputBinding:
+      glob: $(inputs.output_fastq)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nim-abif:0.2.0--h7b50bb2_0

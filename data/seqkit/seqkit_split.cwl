@@ -176,7 +176,7 @@ inputs:
   - id: out_file
     type:
       - 'null'
-      - File
+      - string
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     inputBinding:
       position: 101
@@ -237,6 +237,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_file_out
+    type:
+      - 'null'
+      - File
+    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    outputBinding:
+      glob: $(inputs.out_file)
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory (default value is $infile.split)
+    outputBinding:
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1

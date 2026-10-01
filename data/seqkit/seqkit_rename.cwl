@@ -163,6 +163,13 @@ outputs:
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
       glob: $(inputs.out_file_path)
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.out_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

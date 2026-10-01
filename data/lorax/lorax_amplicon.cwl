@@ -89,6 +89,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outprefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in outprefix
+    outputBinding:
+      glob: $(inputs.outprefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lorax:0.5.1--h4d20210_0

@@ -530,6 +530,13 @@ outputs:
     doc: Destination for results (String)
     outputBinding:
       glob: $(inputs.output_path)
+  - id: to_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Destination folder for transferred files
+    outputBinding:
+      glob: $(inputs.to_folder)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

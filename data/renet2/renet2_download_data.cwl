@@ -49,6 +49,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output dir
+    outputBinding:
+      glob: $(inputs.dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/renet2:1.2--py_0

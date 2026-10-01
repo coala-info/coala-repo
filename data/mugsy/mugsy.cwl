@@ -21,7 +21,7 @@ inputs:
       spanning LCB
     inputBinding:
       position: 102
-      prefix: --allownestedlcbs
+      prefix: -allownestedlcbs
   - id: debug_level
     type:
       - 'null'
@@ -29,7 +29,7 @@ inputs:
     doc: debug level. > 2 verbose
     inputBinding:
       position: 102
-      prefix: --debug
+      prefix: -debug
   - id: detect_duplications
     type:
       - 'null'
@@ -47,7 +47,7 @@ inputs:
       (n^2-1/2 searches).
     inputBinding:
       position: 102
-      prefix: --fullsearch
+      prefix: -fullsearch
   - id: max_distance_for_chaining
     type:
       - 'null'
@@ -103,7 +103,7 @@ inputs:
       supported.
     inputBinding:
       position: 102
-      prefix: --plot
+      prefix: -plot
   - id: refine_alignment
     type:
       - 'null'
@@ -119,6 +119,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mugsy:1.2.3--hdfd78af_4

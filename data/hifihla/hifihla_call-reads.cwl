@@ -140,6 +140,13 @@ outputs:
     doc: Output directory [deprecated]
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: out_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in out_prefix
+    outputBinding:
+      glob: $(inputs.out_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -11,7 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: sensitivities
-    type: File
+    type: string
     doc: Output file for sensitivities
     inputBinding:
       position: 2
@@ -132,6 +132,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sensitivities_out
+    type:
+      - 'null'
+      - File
+    doc: Output file for sensitivities
+    outputBinding:
+      glob: $(inputs.sensitivities)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1

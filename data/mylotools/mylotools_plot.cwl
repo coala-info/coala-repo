@@ -71,7 +71,7 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - Directory
     doc: Output HTML file name
     outputBinding:
       glob: $(inputs.output_path)

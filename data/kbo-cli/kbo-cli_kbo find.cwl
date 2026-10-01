@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - kbo-cli
   - kbo
   - find
 label: kbo-cli_kbo find

@@ -151,7 +151,7 @@ inputs:
       option)
     inputBinding:
       position: 101
-      prefix: --minimap2_sensitive
+      prefix: -minimap2_sensitive
   - id: output_prefix
     type:
       - 'null'
@@ -185,7 +185,7 @@ inputs:
     doc: reduce redundant sequences that exactly matche others (default, off)
     inputBinding:
       position: 101
-      prefix: --reduce_redundancy
+      prefix: -reduce_redundancy
   - id: sd_insert_size
     type:
       - 'null'
@@ -214,6 +214,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/greenhill:1.1.0--h663a4a6_3

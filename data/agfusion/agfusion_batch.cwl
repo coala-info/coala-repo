@@ -49,7 +49,7 @@ inputs:
       position: 101
       prefix: --exclude_domain
   - id: file
-    type: File
+    type: string
     doc: Output file from fusion-finding algorithm.
     inputBinding:
       position: 101
@@ -167,6 +167,13 @@ outputs:
     doc: Directory to save results
     outputBinding:
       glob: $(inputs.out_path)
+  - id: file_out
+    type:
+      - 'null'
+      - File
+    doc: Output file from fusion-finding algorithm.
+    outputBinding:
+      glob: $(inputs.file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

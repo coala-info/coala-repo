@@ -149,6 +149,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output database directory.
+    outputBinding:
+      glob: $(inputs.database)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locityper:1.3.4--ha6fb395_0

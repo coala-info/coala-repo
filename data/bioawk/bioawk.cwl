@@ -1,67 +1,76 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioawk
+baseCommand: /usr/local/bin/bioawk
 label: bioawk
-doc: "An extension of standard awk with added support for several common biological
-  data formats (BED, SAM, VCF, GFF, FASTX) and built-in variables.\n\nTool homepage:
-  https://www.gnu.org/software/gawk/"
+doc: BWK awk modified for biological data
 inputs:
-  - id: program
+  - id: prog
     type:
       - 'null'
       - string
-    doc: The bioawk program script (if -f is not specified)
+    doc: Bioawk program string
     inputBinding:
       position: 1
-  - id: input_files
+  - id: files
     type:
       - 'null'
       - type: array
         items: File
-    doc: Input files to process
+    doc: Input file(s)
     inputBinding:
       position: 2
-  - id: assign_variable
+  - id: field_separator
+    type:
+      - 'null'
+      - string
+    doc: Define input field separator
+    inputBinding:
+      position: 103
+      prefix: -F
+  - id: assign_var
     type:
       - 'null'
       - type: array
         items: string
-    doc: Assign a value to a variable (var=val)
+        inputBinding:
+          prefix: -v
+          separate: true
+    doc: Assign value to variable (var=value)
     inputBinding:
       position: 103
-      prefix: -v
   - id: format
     type:
       - 'null'
       - string
-    doc: Specify the input format (e.g., bed, sam, vcf, gff, fastx)
+    doc: Input format (e.g. bed, sam, vcf, gff, fastx)
     inputBinding:
       position: 103
       prefix: -c
-  - id: header
-    type:
-      - 'null'
-      - boolean
-    doc: Retain and parse the header line (for formats like SAM or VCF)
-    inputBinding:
-      position: 103
-      prefix: -H
-  - id: program_file
-    type:
-      - 'null'
-      - File
-    doc: Read the bioawk program source from a file
-    inputBinding:
-      position: 103
-      prefix: -f
   - id: tabs
     type:
       - 'null'
       - boolean
-    doc: Use tabs as the input and output field separator
+    doc: Set input and output field separator to tab
     inputBinding:
       position: 103
       prefix: -t
+      separate: false
+  - id: header
+    type:
+      - 'null'
+      - boolean
+    doc: Retain header (in the first line)
+    inputBinding:
+      position: 103
+      prefix: -H
+  - id: progfile
+    type:
+      - 'null'
+      - File
+    doc: Program file
+    inputBinding:
+      position: 103
+      prefix: -f
 outputs:
   - id: stdout
     type: stdout
@@ -70,3 +79,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioawk:1.0--h7132678_7
 stdout: bioawk.out
+s:url: https://www.gnu.org/software/gawk/
+$namespaces:
+  s: https://schema.org/

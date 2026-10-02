@@ -2,60 +2,81 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: interleave-reads.py
 label: khmer_interleave-reads.py
-doc: "Interleave left and right reads from paired-end sequencing files.\n\nTool homepage:
-  https://khmer.readthedocs.io/"
+doc: Produce interleaved files from R1/R2 paired files
 inputs:
-  - id: left_reads
+  - id: left
     type: File
-    doc: Left (forward) read file
+    doc: Left/R1 paired file
     inputBinding:
       position: 1
-  - id: right_reads
-    type: File
-    doc: Right (reverse) read file
+  - id: right
+    type:
+      - 'null'
+      - File
+    doc: Right/R2 paired file
     inputBinding:
       position: 2
-  - id: bzip2
+  - id: info
     type:
       - 'null'
       - boolean
-    doc: Compress output with bzip2.
+    doc: print citation information
     inputBinding:
       position: 103
-      prefix: --bzip2
+      prefix: --info
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Output filename
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: no_reformat
+    type:
+      - 'null'
+      - boolean
+    doc: Do not reformat read names or enforce consistency
+    inputBinding:
+      position: 103
+      prefix: --no-reformat
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Overwrite output file if it exists
+    inputBinding:
+      position: 103
+      prefix: --force
   - id: gzip
     type:
       - 'null'
       - boolean
-    doc: Compress output with gzip.
+    doc: Compress output using gzip
     inputBinding:
       position: 103
       prefix: --gzip
-  - id: no_force
+  - id: bzip
     type:
       - 'null'
       - boolean
-    doc: Continue even if the output file already exists.
+    doc: Compress output using bzip2
     inputBinding:
       position: 103
-      prefix: --no-force
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 104
-      prefix: --output
+      prefix: --bzip
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
-    doc: The name of the output file. If not specified, output will go to 
-      stdout.
+    doc: Output filename
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khmer:3.0.0a1--py36hfc679d8_0
+s:url: https://khmer.readthedocs.io/
+$namespaces:
+  s: https://schema.org/

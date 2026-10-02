@@ -4,7 +4,7 @@ baseCommand:
   - whatshap
   - split
 label: whatshap_split
-doc: "Split reads by haplotype\n\nTool homepage: https://whatshap.readthedocs.io"
+doc: Split reads by haplotype
 inputs:
   - id: reads
     type: File
@@ -12,7 +12,9 @@ inputs:
     inputBinding:
       position: 1
   - id: list
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Tab-separated list with (at least) two columns <readname> and 
       <haplotype> (can be gzipped). Currently, the haplotypes have to be named 
       H1, H2, etc. (or none). Alternatively, the output of the "haplotag" 
@@ -20,6 +22,39 @@ inputs:
       "--only-largest-block" option (need phaseset and chromosome info).
     inputBinding:
       position: 2
+  - id: output_h1
+    type:
+      - 'null'
+      - string
+    doc: Output haplotype 1 reads to FILE (.gz supported)
+    inputBinding:
+      position: 103
+      prefix: --output-h1
+  - id: output_h2
+    type:
+      - 'null'
+      - string
+    doc: Output haplotype 2 reads to FILE (.gz supported)
+    inputBinding:
+      position: 103
+      prefix: --output-h2
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Output haplotype reads to FILE. Use this option as many times as there 
+      are haplotypes in the input. The first -o is used for H1, second for H2 
+      etc.
+    inputBinding:
+      position: 103
+  - id: output_untagged
+    type:
+      - 'null'
+      - string
+    doc: Output file to write untagged reads to (.gz supported)
+    inputBinding:
+      position: 103
+      prefix: --output-untagged
   - id: add_untagged
     type:
       - 'null'
@@ -28,6 +63,15 @@ inputs:
     inputBinding:
       position: 103
       prefix: --add-untagged
+  - id: only_largest_block
+    type:
+      - 'null'
+      - boolean
+    doc: Only consider reads to be tagged if they belong to the largest phased 
+      block (in terms of read count) on their respective chromosome
+    inputBinding:
+      position: 103
+      prefix: --only-largest-block
   - id: discard_unknown_reads
     type:
       - 'null'
@@ -40,68 +84,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --discard-unknown-reads
-  - id: only_largest_block
+  - id: read_lengths_histogram
     type:
       - 'null'
-      - boolean
-    doc: Only consider reads to be tagged if they belong to the largest phased 
-      block (in terms of read count) on their respective chromosome
+      - string
+    doc: Output file to write read lengths histogram to in tab-separated format.
     inputBinding:
       position: 103
-      prefix: --only-largest-block
-  - id: output_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 104
-      prefix: --output
-  - id: output_h1_path
-    type:
-      - 'null'
-      - string
-    doc: Output haplotype 1 reads to FILE (.gz supported)
-    inputBinding:
-      position: 105
-      prefix: --output-h1
-  - id: output_h2_path
-    type:
-      - 'null'
-      - string
-    doc: Output haplotype 2 reads to FILE (.gz supported)
-    inputBinding:
-      position: 106
-      prefix: --output-h2
-  - id: output_untagged_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 107
-      prefix: --output-untagged
-  - id: read_lengths_histogram_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 108
       prefix: --read-lengths-histogram
 outputs:
-  - id: output_h1
+  - id: output_output_h1
     type:
       - 'null'
       - File
     doc: Output haplotype 1 reads to FILE (.gz supported)
     outputBinding:
-      glob: $(inputs.output_h1_path)
-  - id: output_h2
+      glob: $(inputs.output_h1)
+  - id: output_output_h2
     type:
       - 'null'
       - File
     doc: Output haplotype 2 reads to FILE (.gz supported)
     outputBinding:
-      glob: $(inputs.output_h2_path)
-  - id: output
+      glob: $(inputs.output_h2)
+  - id: output_output
     type:
       - 'null'
       - File
@@ -109,23 +115,26 @@ outputs:
       are haplotypes in the input. The first -o is used for H1, second for H2 
       etc.
     outputBinding:
-      glob: $(inputs.output_path)
-  - id: output_untagged
+      glob: $(inputs.output)
+  - id: output_output_untagged
     type:
       - 'null'
       - File
     doc: Output file to write untagged reads to (.gz supported)
     outputBinding:
-      glob: $(inputs.output_untagged_path)
-  - id: read_lengths_histogram
+      glob: $(inputs.output_untagged)
+  - id: output_read_lengths_histogram
     type:
       - 'null'
       - File
     doc: Output file to write read lengths histogram to in tab-separated format.
     outputBinding:
-      glob: $(inputs.read_lengths_histogram_path)
+      glob: $(inputs.read_lengths_histogram)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0
+s:url: https://whatshap.readthedocs.io
+$namespaces:
+  s: https://schema.org/

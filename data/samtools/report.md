@@ -184,7 +184,7 @@ for more details.
 ## samtools_index
 
 ### Tool Description
-Generate an index for BAM/CRAM files
+Generate index for BAM/CRAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -194,9 +194,6 @@ Generate an index for BAM/CRAM files
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-index: unrecognized option '--help'
 Usage: samtools index -M [-bc] [-m INT] <in1.bam> <in2.bam>...
    or: samtools index [-bc] [-m INT] <in.bam> [out.index]
 Options:
@@ -206,19 +203,11 @@ Options:
   -M                   Interpret all filename arguments as files to be indexed
   -o, --output FILE    Write index to FILE [alternative to <out.index> in args]
   -@, --threads INT    Sets the number of additional threads [0]
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Example job**: `samtools_index_job.json`
-
 ## samtools_calmd
 
 ### Tool Description
-Generate the MD tag and optionally compute BAQ (Base Alignment Quality)
+Generate the MD tag and calculate base alignment quality (BAQ)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -228,9 +217,6 @@ Generate the MD tag and optionally compute BAQ (Base Alignment Quality)
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-calmd: unrecognized option '--help'
 Usage: samtools calmd [-eubrAESQ] <aln.bam> <ref.fasta>
 Options:
   -e       change identical bases to '='
@@ -259,19 +245,11 @@ Options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam, plan:minimal.fa
-- **Example job**: `samtools_calmd_job.json`
-
 ## samtools_fixmate
 
 ### Tool Description
-Fill in mate coordinates, ISIZE and mate related flags from a name-sorted alignment file.
+Fix mate information on name-sorted SAM/BAM/CRAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -281,9 +259,6 @@ Fill in mate coordinates, ISIZE and mate related flags from a name-sorted alignm
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-fixmate: unrecognized option '--help'
 Usage: samtools fixmate <in.nameSrt.bam> <out.nameSrt.bam>
 Options:
   -r           Remove unmapped reads and secondary alignments
@@ -316,17 +291,7 @@ for more details.
 As elsewhere in samtools, use '-' as the filename for stdin/stdout. The input
 file must be grouped by read name (e.g. sorted by name). Coordinated sorted
 input is not accepted.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:tiny.sorted.bam
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `samtools_fixmate_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## samtools_reheader
 
 ### Tool Description
@@ -363,7 +328,7 @@ Options:
 ## samtools_targetcut
 
 ### Tool Description
-Targetcut identifies and cuts target regions from a BAM file, often used for processing Fosmid pool sequencing data.
+Identify and cut target regions in BAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -373,9 +338,6 @@ Targetcut identifies and cuts target regions from a BAM file, often used for pro
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-targetcut: unrecognized option '--help'
 Usage: samtools targetcut [-Q minQ] [-i inPen] [-0 em0] [-1 em1] [-2 em2] <in.bam>
       --input-fmt-option OPT[=VAL]
                Specify a single input file format option in the form
@@ -387,19 +349,11 @@ Usage: samtools targetcut [-Q minQ] [-i inPen] [-0 em0] [-1 em1] [-2 em2] <in.ba
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Example job**: `samtools_targetcut_job.json`
-
 ## samtools_addreplacerg
 
 ### Tool Description
-Adds or replaces read group tags in a SAM, BAM, or CRAM file.
+Adds or replaces read group tags in a BAM/SAM/CRAM file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -409,9 +363,6 @@ Adds or replaces read group tags in a SAM, BAM, or CRAM file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-addreplacerg: unrecognized option '--help'
 Usage: samtools addreplacerg [options] [-r <@RG line> | -R <existing id>] [-m orphan_only|overwrite_all] [-o <output.bam>] <input.bam>
 
 Options:
@@ -443,19 +394,11 @@ Options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.bam
-- **Example job**: `samtools_addreplacerg_job.json`
-
 ## samtools_markdup
 
 ### Tool Description
-Mark duplicate alignments from a coordinate-sorted file that has gone through fixmates. The input file must be coordinate sorted and must have gone through fixmates with the mate scoring option on.
+Mark duplicate alignments in a coordinate-sorted BAM file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -465,10 +408,6 @@ Mark duplicate alignments from a coordinate-sorted file that has gone through fi
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-markdup: unrecognized option '--help'
-
 Usage:  samtools markdup <input.bam> <output.bam>
 
 Option: 
@@ -497,17 +436,28 @@ Option:
   --use-read-groups  Use the read group tags in duplicate matching.
   -t                 Mark primary duplicates with the name of the original in a 'do' tag. Mainly for information and debugging.
   --duplicate-count  Record the original primary read duplication count(include itself) in a 'dc' tag.
-      --input-fmt-optio...
+      --input-fmt-option OPT[=VAL]
+               Specify a single input file format option in the form
+               of OPTION or OPTION=VALUE
+  -O, --output-fmt FORMAT[,OPT[=VAL]]...
+               Specify output format (SAM, BAM, CRAM)
+      --output-fmt-option OPT[=VAL]
+               Specify a single output file format option in the form
+               of OPTION or OPTION=VALUE
+      --reference FILE
+               Reference sequence FASTA FILE [null]
+  -@, --threads INT
+               Number of additional threads to use [0]
+      --write-index
+               Automatically index the output files [off]
+      --verbosity INT
+               Set level of verbosity
+
+See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
+for more details.
+
+The input file must be coordinate sorted and must have gone through fixmates with the mate scoring option on.
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:tiny.sorted.fixmate.bam
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `samtools_markdup_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## samtools_ampliconclip
 
 ### Tool Description
@@ -521,9 +471,6 @@ Soft clips read alignments where they match BED file defined regions. Default cl
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-ampliconclip: unrecognized option '--help'
 Usage: samtools ampliconclip -b BED file <input.bam> -o <output.bam>
 
 Option: 
@@ -557,19 +504,21 @@ Option:
                of OPTION or OPTION=VALUE
       --reference FILE
                Reference sequence FASTA FILE [null]
-  -@...
+  -@, --threads INT
+               Number of additional threads to use [0]
+      --verbosity INT
+               Set level of verbosity
+
+See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
+for more details.
+
+About: Soft clips read alignments where they match BED file defined regions.
+Default clipping is only on the 5' end.
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.bam, local:macs3/output/refined_refinepeak.bed
-- **Example job**: `samtools_ampliconclip_job.json`
-
 ## samtools_collate
 
 ### Tool Description
-Shuffles and groups reads together by name
+collate reads by name
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -579,9 +528,7 @@ Shuffles and groups reads together by name
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-collate: unrecognized option '--help'
+collate: no input filename specified.
 Usage: samtools collate [options...] <in.bam> [<prefix>]
 
 Options:
@@ -613,15 +560,7 @@ Options:
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
   <prefix> is required unless the -o or -O options are used.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:tiny.sorted.bam
-- **Example job**: `samtools_collate_job.json`
-
 ## samtools_cat
 
 ### Tool Description
@@ -635,9 +574,7 @@ Concatenate BAM or CRAM files, first those in <bamlist.fofn>, then those on the 
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-cat: unrecognized option '--help'
+cat: option requires an argument -- 'h'
 Usage: samtools cat [options] <in1.bam>  [... <inN.bam>]
        samtools cat [options] <in1.cram> [... <inN.cram>]
 
@@ -665,19 +602,11 @@ Standard options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: local:merged_2.bam
-- **Example job**: `samtools_cat_job.json`
-
 ## samtools_consensus
 
 ### Tool Description
-Generate consensus sequence from a BAM file
+Produce consensus sequence from BAM/CRAM/SAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -687,9 +616,7 @@ Generate consensus sequence from a BAM file
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-consensus: unrecognized option '--help'
+consensus: option '--h' is ambiguous; possibilities: '--high-MQ' '--het-fract' '--het-only' '--het-scale' '--homopoly-fix' '--homopoly-score' '--homopoly-redux'
 Usage: samtools consensus [options] <in.bam>
 
 Options:
@@ -724,22 +651,37 @@ For default "Bayesian" consensus mode:
       --(no-)adj-qual   Modify quality with local minima [on]
       --(no-)use-MQ     Use mapping quality in calculation [on]
       --(no-)adj-MQ     Modify mapping quality by local NM [on]
-      --NM-halo INT     Size of window fo...
+      --NM-halo INT     Size of window for NM count in --adj-MQ [50]
+      --scale-MQ FLOAT  Scale mapping quality by FLOAT [1.00]
+      --low-MQ  INT     Cap minimum mapping quality [1]
+      --high-MQ INT     Cap maximum mapping quality [60]
+      --P-het FLOAT     Probability of heterozygous site[1.0e-03]
+      --P-indel FLOAT   Probability of indel sites[2.0e-04]
+      --het-scale FLOAT Heterozygous SNP probability multiplier[1.0e+00]
+  -p, --homopoly-fix    Spread low-qual bases to both ends of homopolymers
+      --homopoly-score FLOAT
+                        Qual fraction adjustment for -p option [0.5]
+  -t, --qual-calibration FILE / :config (see man page)
+                        Load quality calibration file
+
+  -X, --config STR      Use pre-defined configuration set. STR from:
+                        hiseq, hifi, r10.4_sup, r10.4_dup and ultima
+
+Global options:
+      --input-fmt-option OPT[=VAL]
+               Specify a single input file format option in the form
+               of OPTION or OPTION=VALUE
+  -T, --reference FILE
+               Reference sequence FASTA FILE [null]
+  -@, --threads INT
+               Number of additional decompression threads to use [0]
+      --verbosity INT
+               Set level of verbosity
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:output.sorted.bam, plan:minimal.fa
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `samtools_consensus_job.json`
-- **Reason (not pass)**: baseCommand 'samtools' not found in container; the image may not provide this executable. CWL generation/validation failed. Original error: INFO /media/qhu/slim/Workspace/cwlagent/.venv/bin/cwltool 3.1.20260108082145
-INFO Resolved '/media
-
 ## samtools_merge
 
 ### Tool Description
-Merge multiple sorted alignment files into one.
+Merge multiple sorted alignment files, producing a single sorted output file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -749,9 +691,7 @@ Merge multiple sorted alignment files into one.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-merge: unrecognized option '--help'
+samtools merge: You must at least specify the output file
 Usage: samtools merge [options] -o <out.bam> [options] <in1.bam> ... <inN.bam>
    or: samtools merge [options] <out.bam> <in1.bam> ... <inN.bam>
 
@@ -790,19 +730,15 @@ Options:
       --write-index
                Automatically index the output files [off]
       --verbosity INT
-    ...
+               Set level of verbosity
+
+See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
+for more details.
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: local:merged_2.bam
-- **Example job**: `samtools_merge_job.json`
-
 ## samtools_mpileup
 
 ### Tool Description
-Generate text pileup from BAM files
+Generate text pileup from BAM, SAM, or CRAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -812,10 +748,6 @@ Generate text pileup from BAM files
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-mpileup: unrecognized option '--help'
-
 Usage: samtools mpileup [options] in1.bam [in2.bam [...]]
 
 Input options:
@@ -847,15 +779,37 @@ Output options:
   -o, --output FILE        write output to FILE [standard output]
   -O, --output-BP          output base positions on reads, current orientation
       --output-BP-5        output base positions on reads, 5' to 3' orientation
-  -M, --output-mods     ...
+  -M, --output-mods        output base modifications
+  -s, --output-MQ          output mapping quality
+      --output-QNAME       output read names
+      --output-extra STR   output extra read fields and read tag values
+      --output-sep CHAR    set the separator character for tag lists [,]
+      --output-empty CHAR  set the no value character for tag lists [*]
+      --no-output-ins      skip insertion sequence after +NUM
+                           Use twice for complete insertion removal
+      --no-output-ins-mods don't display base modifications within insertions
+      --no-output-del      skip deletion sequence after -NUM
+                           Use twice for complete deletion removal
+      --no-output-ends     remove ^MQUAL and $ markup in sequence column
+      --reverse-del        use '#' character for deletions on the reverse strand
+  -a                       output all positions (including zero depth)
+  -a -a (or -aa)           output absolutely all positions, including unused ref. sequences
+
+Generic options:
+      --input-fmt-option OPT[=VAL]
+               Specify a single input file format option in the form
+               of OPTION or OPTION=VALUE
+      --reference FILE
+               Reference sequence FASTA FILE [null]
+      --verbosity INT
+               Set level of verbosity
+
+See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
+for more details.
+
+Note that using "samtools mpileup" to generate BCF or VCF files has been
+removed.  To output these formats, please use "bcftools mpileup" instead.
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Example job**: `samtools_mpileup_job.json`
-
 ## samtools_sort
 
 ### Tool Description
@@ -917,7 +871,6 @@ See https://www.htslib.org/doc/samtools.html#G...
 - **Runtime**: PASS
 - **Data used**: plan:output.bam
 - **Example job**: `samtools_sort_job.json`
-
 ## samtools_split
 
 ### Tool Description
@@ -1038,8 +991,6 @@ Converts a SAM, BAM or CRAM to FASTQ format.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 fastq: unrecognized option '--help'
 Usage: samtools fastq [options...] <in.bam>
 
@@ -1077,15 +1028,58 @@ Options:
   -i           add Illumina Casava 1.8 format entry to header (eg 1:N:0:ATCACG)
   -U, --UMI     add UMI to read name
   --UMI-tag TAG-LIST
-               th...
+               the list of aux tags to search for UMI barcode [RX,OX]
+  -c INT       compression level [0..9] to use when writing bgzf files [1]
+  --i1 FILE    write first index reads to FILE
+  --i2 FILE    write second index reads to FILE
+  --barcode-tag TAG
+               Barcode tag [BC]
+  --quality-tag TAG
+               Quality tag [QT]
+  --index-format STR
+               How to parse barcode and quality tags
+
+      --input-fmt-option OPT[=VAL]
+               Specify a single input file format option in the form
+               of OPTION or OPTION=VALUE
+      --reference FILE
+               Reference sequence FASTA FILE [null]
+  -@, --threads INT
+               Number of additional threads to use [0]
+      --verbosity INT
+               Set level of verbosity
+
+See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
+for more details.
+
+The files will be automatically compressed if the file names have a .gz
+or .bgzf extension.  The input to this program must be collated by name.
+Run 'samtools collate' or 'samtools sort -n' to achieve this.
+
+Reads are designated READ1 if FLAG READ1 is set and READ2 is not set.
+Reads are designated READ2 if FLAG READ1 is not set and READ2 is set.
+Otherwise reads are designated READ_OTHER (both flags set or both flags unset).
+Run 'samtools flags' for more information on flag codes and meanings.
+
+The index-format string describes how to parse the barcode and quality tags.
+It is made up of 'i' or 'n' followed by a length or '*'.  For example:
+   i14i8       The first 14 characters are index 1, the next 8 are index 2
+   n8i14       Ignore the first 8 characters, and use the next 14 for index 1
+
+If the tag contains a separator, then the numeric part can be replaced with
+'*' to mean 'read until the separator or end of tag', for example:
+   i*i*        Break the tag at the separator into index 1 and index 2
+   n*i*        Ignore the left part of the tag until the separator,
+               then use the second part of the tag as index 1
+
+Examples:
+To get just the paired reads in separate files, use:
+   samtools fastq -1 pair1.fq -2 pair2.fq -0 /dev/null -s /dev/null -n in.bam
+
+To get all non-supplementary/secondary reads in a single file, redirect
+the output:
+   samtools fastq in.bam > all_reads.fq
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.bam
-- **Example job**: `samtools_fastq_job.json`
-
 ## samtools_fasta
 
 ### Tool Description
@@ -1099,8 +1093,6 @@ Converts a SAM, BAM or CRAM to FASTA format.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 fasta: unrecognized option '--help'
 Usage: samtools fasta [options...] <in.bam>
 
@@ -1137,19 +1129,59 @@ Options:
   -U, --UMI     add UMI to read name
   --UMI-tag TAG-LIST
                the list of aux tags to search for UMI barcode [RX,OX]
-  -c INT       compression level [0..9] to use when writing bgzf...
+  -c INT       compression level [0..9] to use when writing bgzf files [1]
+  --i1 FILE    write first index reads to FILE
+  --i2 FILE    write second index reads to FILE
+  --barcode-tag TAG
+               Barcode tag [BC]
+  --index-format STR
+               How to parse barcode and quality tags
+
+      --input-fmt-option OPT[=VAL]
+               Specify a single input file format option in the form
+               of OPTION or OPTION=VALUE
+      --reference FILE
+               Reference sequence FASTA FILE [null]
+  -@, --threads INT
+               Number of additional threads to use [0]
+      --verbosity INT
+               Set level of verbosity
+
+See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
+for more details.
+
+The files will be automatically compressed if the file names have a .gz
+or .bgzf extension.  The input to this program must be collated by name.
+Run 'samtools collate' or 'samtools sort -n' to achieve this.
+
+Reads are designated READ1 if FLAG READ1 is set and READ2 is not set.
+Reads are designated READ2 if FLAG READ1 is not set and READ2 is set.
+Otherwise reads are designated READ_OTHER (both flags set or both flags unset).
+Run 'samtools flags' for more information on flag codes and meanings.
+
+The index-format string describes how to parse the barcode and quality tags.
+It is made up of 'i' or 'n' followed by a length or '*'.  For example:
+   i14i8       The first 14 characters are index 1, the next 8 are index 2
+   n8i14       Ignore the first 8 characters, and use the next 14 for index 1
+
+If the tag contains a separator, then the numeric part can be replaced with
+'*' to mean 'read until the separator or end of tag', for example:
+   i*i*        Break the tag at the separator into index 1 and index 2
+   n*i*        Ignore the left part of the tag until the separator,
+               then use the second part of the tag as index 1
+
+Examples:
+To get just the paired reads in separate files, use:
+   samtools fasta -1 pair1.fa -2 pair2.fa -0 /dev/null -s /dev/null -n in.bam
+
+To get all non-supplementary/secondary reads in a single file, redirect
+the output:
+   samtools fasta in.bam > all_reads.fa
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Example job**: `samtools_fasta_job.json`
-
 ## samtools_import
 
 ### Tool Description
-Import FASTQ files into SAM/BAM/CRAM format
+Converts FASTQ files to SAM, BAM, or CRAM format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1159,9 +1191,6 @@ Import FASTQ files into SAM/BAM/CRAM format
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-import: unrecognized option '--help'
 Usage: samtools import [options] [file.fastq ...]
 
 Options:
@@ -1204,15 +1233,7 @@ for more details.
 
 A single fastq file will be interpreted as -s, -0 or -1 depending on
 file contents, and a pair of fastq files as "-1 FILE1 -2 FILE2".
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: none
-- **Example job**: `samtools_import_job.json`
-
 ## samtools_reference
 
 ### Tool Description
@@ -1240,7 +1261,7 @@ Usage: samtools reference [-@ N] [-r region] [-e] [-q] [-o out.fa] [in.cram]
 ## samtools_reset
 
 ### Tool Description
-Reset a SAM/BAM/CRAM file, removing or retaining specific tags and metadata.
+Reset alignment records in SAM/BAM/CRAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1250,8 +1271,6 @@ Reset a SAM/BAM/CRAM file, removing or retaining specific tags and metadata.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 reset: unrecognized option '--help'
 Usage: samtools reset [options]
   -o FILE      Output file
@@ -1272,19 +1291,11 @@ Usage: samtools reset [options]
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.bam
-- **Example job**: `samtools_reset_job.json`
-
 ## samtools_bedcov
 
 ### Tool Description
-Calculate read depth per BED region
+Calculate read coverage across genomic regions specified in a BED file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1294,9 +1305,6 @@ Calculate read depth per BED region
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-bedcov: unrecognized option '--help'
 Usage: samtools bedcov [options] <in.bed> <in1.bam> [...]
 
 Options:
@@ -1321,17 +1329,7 @@ Options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: manifest:macs3/output/refined_refinepeak.bed (Found in project), plan:output.sorted.bam
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `samtools_bedcov_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## samtools_coverage
 
 ### Tool Description
@@ -1399,7 +1397,7 @@ See manpage for additional details.
 ## samtools_depth
 
 ### Tool Description
-Compute the depth of coverage for one or more BAM/SAM/CRAM files.
+Compute depth of coverage for BAM/SAM/CRAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1409,9 +1407,6 @@ Compute the depth of coverage for one or more BAM/SAM/CRAM files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-depth: unrecognized option '--help'
 Usage: samtools depth [options] in.bam [in.bam ...]
 
 Options:
@@ -1450,19 +1445,11 @@ Options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Example job**: `samtools_depth_job.json`
-
 ## samtools_flagstat
 
 ### Tool Description
-Counts the number of alignments for each FLAG type
+Output stats for input BAM file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1472,9 +1459,6 @@ Counts the number of alignments for each FLAG type
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-flagstat: unrecognized option '--help'
 Usage: samtools flagstat [options] <in.bam>
       --input-fmt-option OPT[=VAL]
                Specify a single input file format option in the form
@@ -1488,19 +1472,11 @@ See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
   -O, --output-fmt FORMAT[,OPT[=VAL]]...
                Specify output format (json, tsv)
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Example job**: `samtools_flagstat_job.json`
-
 ## samtools_idxstats
 
 ### Tool Description
-Reports alignment statistics from a BAM index file, including sequence names, sequence lengths, number of mapped reads, and number of unmapped reads.
+Reports alignment summary statistics from a BAM index file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1510,9 +1486,6 @@ Reports alignment statistics from a BAM index file, including sequence names, se
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-idxstats: unrecognized option '--help'
 Usage: samtools idxstats [options] <in.bam>
   -X           Include customized index file
       --input-fmt-option OPT[=VAL]
@@ -1525,15 +1498,7 @@ Usage: samtools idxstats [options] <in.bam>
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Example job**: `samtools_idxstats_job.json`
-
 ## samtools_cram-size
 
 ### Tool Description
@@ -1561,7 +1526,7 @@ Usage: samtools cram_size [-ve] [-o out.size] [in.cram]
 ## samtools_phase
 
 ### Tool Description
-Call and phase heterozygous SNPs
+Call and phase heterozygous SNPs in a BAM file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1571,10 +1536,6 @@ Call and phase heterozygous SNPs
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-phase: unrecognized option '--help'
-
 Usage:   samtools phase [options] <in.bam>
 
 Options: -k INT    block length [13]
@@ -1602,15 +1563,7 @@ Options: -k INT    block length [13]
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:tiny.sorted.bam
-- **Example job**: `samtools_phase_job.json`
-
 ## samtools_stats
 
 ### Tool Description
@@ -1724,7 +1677,7 @@ for more details.
 ## samtools_checksum
 
 ### Tool Description
-Generate checksums for SAM/BAM/CRAM files or merge existing checksum outputs.
+Generate or merge checksums for SAM/BAM/CRAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1734,8 +1687,6 @@ Generate checksums for SAM/BAM/CRAM files or merge existing checksum outputs.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 checksum: unrecognized option '--help'
 Usage: samtools checksum [options] [file.bam ...]
 or     samtools checksum [options] -m [file.chk ...]
@@ -1769,16 +1720,7 @@ Global options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.sorted.bam
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `samtools_checksum_job.json`
-
 ## samtools_flags
 
 ### Tool Description
@@ -1826,7 +1768,7 @@ NAME,...,NAME representing a combination of the following flag names:
 ## samtools_head
 
 ### Tool Description
-Display header and/or alignment record lines from a SAM, BAM, or CRAM file.
+Display header and alignment record lines from a SAM/BAM/CRAM file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1836,9 +1778,7 @@ Display header and/or alignment record lines from a SAM, BAM, or CRAM file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-head: unrecognized option '--help'
+head: option '--headers' requires an argument
 Usage: samtools head [OPTION]... [FILE]
 Options:
   -h, --headers INT   Display INT header lines [all]
@@ -1855,15 +1795,7 @@ Options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:output.bam
-- **Example job**: `samtools_head_job.json`
-
 ## samtools_tview
 
 ### Tool Description
@@ -1877,9 +1809,6 @@ Text alignment viewer
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-tview: unrecognized option '--help'
 Usage: samtools tview [options] <aln.bam> [ref.fasta]
 Options:
    -d display      output as (H)tml or (C)urses or (T)ext 
@@ -1898,17 +1827,7 @@ Options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:output.sorted.bam, plan:minimal.fa
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `samtools_tview_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## samtools_view
 
 ### Tool Description
@@ -1968,7 +1887,7 @@ Filtering options (Only include in output reads that...):
 ## samtools_depad
 
 ### Tool Description
-Convert a padded BAM/SAM file to an unpadded BAM/SAM file
+Convert a padded BAM file to an unpadded BAM file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samtools:1.23--h96c455f_0
@@ -1978,10 +1897,6 @@ Convert a padded BAM/SAM file to an unpadded BAM/SAM file
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-depad: unrecognized option '--help'
-
 Usage:   samtools depad <in.bam>
 
 Options:
@@ -2009,24 +1924,7 @@ Options:
 
 See https://www.htslib.org/doc/samtools.html#GLOBAL_COMMAND_OPTIONS
 for more details.
-Notes:
-
-1. Requires embedded reference sequences (before the reads for that reference),
-   or ideally a FASTA file of the padded reference sequences (via a -T option).
-
-2. Input padded alignment reads' CIGAR strings must not use P or I operators.
-
-
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:output.bam, plan:minimal.fa
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `samtools_depad_job.json`
-- **Reason (not pass)**:                          }
-
 ## samtools_samples
 
 ### Tool Description

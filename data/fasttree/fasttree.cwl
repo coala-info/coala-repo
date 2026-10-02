@@ -1,86 +1,31 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: FastTree
+baseCommand:
+  - FastTree
 label: fasttree
-doc: "FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments
-  of nucleotide or protein sequences.\n\nTool homepage: https://morgannprice.github.io/fasttree"
+doc: FastTree infers approximately-maximum-likelihood phylogenetic trees from 
+  alignments of nucleotide or protein sequences.
 inputs:
   - id: alignment_file
     type:
       - 'null'
       - File
-    doc: Input alignment file (usually FASTA or Phylip format)
+    doc: Alignment file in fasta or phylip interleaved format
     inputBinding:
       position: 1
-  - id: fastest
+  - id: out
     type:
       - 'null'
-      - boolean
-    doc: Use a faster search
+      - string
+    doc: Output tree file
     inputBinding:
       position: 102
-      prefix: -fastest
-  - id: gamma
-    type:
-      - 'null'
-      - boolean
-    doc: Use the Gamma20 likelihood (slower)
-    inputBinding:
-      position: 102
-      prefix: -gamma
-  - id: gtr
-    type:
-      - 'null'
-      - boolean
-    doc: Use the generalized time-reversible model (nucleotides only)
-    inputBinding:
-      position: 102
-      prefix: -gtr
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Save intermediate results to logfile
-    inputBinding:
-      position: 102
-      prefix: -log
-  - id: model_mtr
-    type:
-      - 'null'
-      - boolean
-    doc: Use the Jukes-Cantor + CAT model (default for nucleotides)
-    inputBinding:
-      position: 102
-      prefix: -mtr
-  - id: model_wag
-    type:
-      - 'null'
-      - boolean
-    doc: Use the WAG + CAT model (default for amino acids)
-    inputBinding:
-      position: 102
-      prefix: -wag
-  - id: n_bootstraps
-    type:
-      - 'null'
-      - int
-    doc: Number of bootstrap replicates
-    inputBinding:
-      position: 102
-      prefix: -n
-  - id: no_progress
-    type:
-      - 'null'
-      - boolean
-    doc: Do not write progress to standard error
-    inputBinding:
-      position: 102
-      prefix: -nopr
+      prefix: -out
   - id: nucleotide
     type:
       - 'null'
       - boolean
-    doc: Use nucleotide alignment (default is protein)
+    doc: Nucleotide alignment input
     inputBinding:
       position: 102
       prefix: -nt
@@ -88,23 +33,199 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not write to standard error
+    doc: Suppress reporting information
     inputBinding:
       position: 102
       prefix: -quiet
-  - id: slow
+  - id: no_progress
     type:
       - 'null'
       - boolean
-    doc: Use a more exhaustive search
+    doc: Suppress progress indicator
     inputBinding:
       position: 102
-      prefix: -slow
+      prefix: -nopr
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: Save intermediate trees, settings, and model details
+    inputBinding:
+      position: 102
+      prefix: -log
+  - id: fastest
+    type:
+      - 'null'
+      - boolean
+    doc: Speed up the neighbor joining phase & reduce memory usage (recommended 
+      for >50,000 sequences)
+    inputBinding:
+      position: 102
+      prefix: -fastest
+  - id: num_alignments
+    type:
+      - 'null'
+      - int
+    doc: Analyze multiple alignments (phylip format only) (use for global 
+      bootstrap, with seqboot and CompareToBootstrap.pl)
+    inputBinding:
+      position: 102
+      prefix: -n
+  - id: nosupport
+    type:
+      - 'null'
+      - boolean
+    doc: Do not compute support values
+    inputBinding:
+      position: 102
+      prefix: -nosupport
+  - id: intree
+    type:
+      - 'null'
+      - File
+    doc: Set the starting tree(s)
+    inputBinding:
+      position: 102
+      prefix: -intree
+  - id: intree1
+    type:
+      - 'null'
+      - File
+    doc: Use this starting tree for all the alignments (for faster global 
+      bootstrap on huge alignments)
+    inputBinding:
+      position: 102
+      prefix: -intree1
+  - id: pseudo
+    type:
+      - 'null'
+      - boolean
+    doc: Use pseudocounts (recommended for highly gapped sequences)
+    inputBinding:
+      position: 102
+      prefix: -pseudo
+  - id: gtr
+    type:
+      - 'null'
+      - boolean
+    doc: Generalized time-reversible model (nucleotide alignments only)
+    inputBinding:
+      position: 102
+      prefix: -gtr
+  - id: lg
+    type:
+      - 'null'
+      - boolean
+    doc: Le-Gascuel 2008 model (amino acid alignments only)
+    inputBinding:
+      position: 102
+      prefix: -lg
+  - id: wag
+    type:
+      - 'null'
+      - boolean
+    doc: Whelan-And-Goldman 2001 model (amino acid alignments only)
+    inputBinding:
+      position: 102
+      prefix: -wag
+  - id: quote
+    type:
+      - 'null'
+      - boolean
+    doc: Allow spaces and other restricted characters (but not ' ) in sequence 
+      names and quote names in the output tree (fasta input only; FastTree will 
+      not be able to read these trees back in)
+    inputBinding:
+      position: 102
+      prefix: -quote
+  - id: noml
+    type:
+      - 'null'
+      - boolean
+    doc: Turn off maximum-likelihood
+    inputBinding:
+      position: 102
+      prefix: -noml
+  - id: nome
+    type:
+      - 'null'
+      - boolean
+    doc: Turn off minimum-evolution NNIs and SPRs (recommended if running 
+      additional ML NNIs with -intree)
+    inputBinding:
+      position: 102
+      prefix: -nome
+  - id: mllen
+    type:
+      - 'null'
+      - boolean
+    doc: Used with -nome and -intree to optimize branch lengths for a fixed 
+      topology
+    inputBinding:
+      position: 102
+      prefix: -mllen
+  - id: cat
+    type:
+      - 'null'
+      - int
+    doc: Specify the number of rate categories of sites
+    inputBinding:
+      position: 102
+      prefix: -cat
+  - id: nocat
+    type:
+      - 'null'
+      - boolean
+    doc: Use constant rates
+    inputBinding:
+      position: 102
+      prefix: -nocat
+  - id: gamma
+    type:
+      - 'null'
+      - boolean
+    doc: After optimizing the tree under the CAT approximation, rescale the 
+      lengths to optimize the Gamma20 likelihood
+    inputBinding:
+      position: 102
+      prefix: -gamma
+  - id: constraints
+    type:
+      - 'null'
+      - File
+    doc: Constrain the topology search (constraintAlignment should have 1s or 0s
+      to indicates splits)
+    inputBinding:
+      position: 102
+      prefix: -constraints
+  - id: expert
+    type:
+      - 'null'
+      - boolean
+    doc: See more options
+    inputBinding:
+      position: 102
+      prefix: -expert
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_out
+    type:
+      - 'null'
+      - File
+    doc: Output tree file
+    outputBinding:
+      glob: $(inputs.out)
+  - id: output_log
+    type:
+      - 'null'
+      - File
+    doc: Save intermediate trees, settings, and model details
+    outputBinding:
+      glob: $(inputs.log)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fasttree:2.2.0--h7b50bb2_1
-stdout: fasttree.out
+s:url: https://morgannprice.github.io/fasttree
+$namespaces:
+  s: https://schema.org/

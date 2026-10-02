@@ -3,7 +3,7 @@
 ## ucsc-twobitinfo
 
 ### Tool Description
-Get information about a .2bit file, including sequences and their sizes.
+get information about sequences in a .2bit file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-twobitinfo:482--hdc0a859_0
@@ -11,23 +11,24 @@ Get information about a .2bit file, including sequences and their sizes.
 - **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-twobitinfo/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-twobitinfo/overview
-- **Total Downloads**: 185.5K
-- **Last updated**: 2025-06-19
-- **GitHub**: https://github.com/ucscGenomeBrowser/kent
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ucsc-twobitinfo:482--hdc0a859_0' locally
-482--hdc0a859_0: Pulling from biocontainers/ucsc-twobitinfo
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-de1a1ef68bf6: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob2026608489: no space left on device
+twoBitInfo - get information about sequences in a .2bit file
+usage:
+   twoBitInfo input.2bit output.tab
+options:
+   -maskBed instead of seq sizes, output BED records that define 
+           areas with masked sequence
+   -nBed   instead of seq sizes, output BED records that define 
+           areas with N's in sequence
+   -noNs   outputs the length of each sequence, but does not count Ns 
+   -udcDir=/dir/to/cache - place to put cache for remote bigBed/bigWigs
+Output file has the columns::
+   seqName size
 
-Run 'docker run --help' for more information
+The 2bit file may be specified in the form path:seq or path:seq1,seq2,seqN...
+so that information is returned only on the requested sequence(s).
+If the form path:seq:start-end is used, start-end is ignored.
 ```
-
-
 ## Metadata
 - **Skill**: not generated

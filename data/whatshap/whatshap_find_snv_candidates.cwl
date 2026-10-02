@@ -4,7 +4,7 @@ baseCommand:
   - whatshap
   - find_snv_candidates
 label: whatshap_find_snv_candidates
-doc: "Generate candidate SNP positions.\n\nTool homepage: https://whatshap.readthedocs.io"
+doc: Generate candidate SNP positions.
 inputs:
   - id: ref
     type: File
@@ -12,40 +12,25 @@ inputs:
     inputBinding:
       position: 1
   - id: bam
-    type: File
+    type:
+      - 'null'
+      - File
     doc: BAM file
     inputBinding:
       position: 2
-  - id: chromosome
-    type:
-      - 'null'
-      - string
-    doc: Name of chromosome to process. If not given, all chromosomes are 
-      processed.
-    inputBinding:
-      position: 103
-      prefix: --chromosome
-  - id: illumina
-    type:
-      - 'null'
-      - boolean
-    doc: Input is Illumina. Sets minrel=0.25 and minabs=3.
-    inputBinding:
-      position: 103
-      prefix: --illumina
-  - id: min_abs
+  - id: minabs
     type:
       - 'null'
       - int
-    doc: Minimum absolute ALT depth to call a SNP
+    doc: 'Minimum absolute ALT depth to call a SNP (default: 3).'
     inputBinding:
       position: 103
       prefix: --minabs
-  - id: min_rel
+  - id: minrel
     type:
       - 'null'
       - float
-    doc: Minimum relative ALT depth to call a SNP
+    doc: 'Minimum relative ALT depth to call a SNP (default: 0.25).'
     inputBinding:
       position: 103
       prefix: --minrel
@@ -58,22 +43,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --multi-allelics
-  - id: nanopore
-    type:
-      - 'null'
-      - boolean
-    doc: Input is Nanopore. Sets minrel=0.4 and minabs=3.
-    inputBinding:
-      position: 103
-      prefix: --nanopore
-  - id: pacbio
-    type:
-      - 'null'
-      - boolean
-    doc: Input is PacBio. Sets minrel=0.25 and minabs=3.
-    inputBinding:
-      position: 103
-      prefix: --pacbio
   - id: sample
     type:
       - 'null'
@@ -82,21 +51,60 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sample
-  - id: output_path
-    type: string
+  - id: chromosome
+    type:
+      - 'null'
+      - string
+    doc: Name of chromosome to process. If not given, all chromosomes are 
+      processed.
     inputBinding:
-      position: 104
-      prefix: --output
-outputs:
+      position: 103
+      prefix: --chromosome
   - id: output
+    type:
+      - 'null'
+      - string
+    doc: Output VCF file.
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: pacbio
+    type:
+      - 'null'
+      - boolean
+    doc: Input is PacBio. Sets minrel=0.25 and minabs=3.
+    inputBinding:
+      position: 103
+      prefix: --pacbio
+  - id: nanopore
+    type:
+      - 'null'
+      - boolean
+    doc: Input is Nanopore. Sets minrel=0.4 and minabs=3.
+    inputBinding:
+      position: 103
+      prefix: --nanopore
+  - id: illumina
+    type:
+      - 'null'
+      - boolean
+    doc: Input is Illumina. Sets minrel=0.25 and minabs=3.
+    inputBinding:
+      position: 103
+      prefix: --illumina
+outputs:
+  - id: output_output
     type:
       - 'null'
       - File
     doc: Output VCF file.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0
+s:url: https://whatshap.readthedocs.io
+$namespaces:
+  s: https://schema.org/

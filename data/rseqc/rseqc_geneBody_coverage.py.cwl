@@ -2,51 +2,59 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: geneBody_coverage.py
 label: rseqc_geneBody_coverage.py
-doc: "Calculate the RNA-seq signals coverage over gene body. This tool is used to
-  check if read coverage is uniform and if there is any 5'/3' bias.\n\nTool homepage:
-  https://rseqc.sourceforge.net"
+doc: Calculate the RNA-seq reads coverage over gene body.
 inputs:
-  - id: input_file
+  - id: input_files
     type:
-      type: array
-      items: File
-    doc: Input file(s) in BAM or SAM format. Multiple files can be separated by 
-      comma.
+      - 'null'
+      - string
+    doc: 'Input file(s) in BAM format. "-i" takes these input: 1) a single BAM file.
+      2) "," separated BAM files. 3) directory containing one or more bam files. 4)
+      plain text file containing the path of one or more bam file (Each row is a BAM
+      file path). All BAM files should be sorted and indexed using samtools.'
     inputBinding:
       position: 101
-      prefix: --input-file
-      itemSeparator: ','
+      prefix: --input
+  - id: refgene
+    type: File
+    doc: Reference gene model in bed format.
+    inputBinding:
+      position: 101
+      prefix: --refgene
   - id: minimum_length
     type:
       - 'null'
       - int
-    doc: Minimum mRNA length (bp). mRNA that are shorter than this value will be
+    doc: Minimum mRNA length (bp). mRNA smaller than "min_mRNA_length" will be 
       skipped.
     inputBinding:
       position: 101
-      prefix: --minimum-length
-  - id: refgene
-    type: File
-    doc: Reference gene model in BED format.
+      prefix: --minimum_length
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: Output file format, 'pdf', 'png' or 'jpeg'.
     inputBinding:
       position: 101
-      prefix: --refgene
-  - id: out_prefix_path
+      prefix: --format
+  - id: out_prefix
     type: string
-    doc: Output or path parameter `out_prefix_path`
+    doc: Prefix of output files(s).
     inputBinding:
-      position: 102
+      position: 101
       prefix: --out-prefix
 outputs:
-  - id: out_prefix
-    type:
-      type: array
-      items: File
-    doc: Prefix of output files.
+  - id: output_out_prefix
+    type: File[]
+    doc: Prefix of output files(s).
     outputBinding:
-      glob: $(inputs.out_prefix_path)*
+      glob: $(inputs.out_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rseqc:5.0.4--pyhdfd78af_1
+s:url: https://rseqc.sourceforge.net
+$namespaces:
+  s: https://schema.org/

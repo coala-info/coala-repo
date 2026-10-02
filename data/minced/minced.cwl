@@ -2,93 +2,121 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: minced
 label: minced
-doc: "MinCED is a program to find Clustered Regularly Interspaced Short Palindromic
-  Repeats (CRISPRs) in full genomes or environmental datasets.\n\nTool homepage: https://github.com/ctSkennerton/minced"
+doc: MinCED, a program to find CRISPRs in shotgun DNA sequences or full genomes
 inputs:
-  - id: input_file
+  - id: input_fasta
     type: File
-    doc: Input genome file (FASTA format)
+    doc: Input FASTA file containing shotgun DNA sequences or full genomes
     inputBinding:
       position: 1
+  - id: output_file
+    type:
+      - 'null'
+      - string
+    doc: Output file for CRISPR results
+    inputBinding:
+      position: 2
+  - id: output_gff
+    type:
+      - 'null'
+      - string
+    doc: Output GFF file
+    inputBinding:
+      position: 3
+  - id: search_window_length
+    type:
+      - 'null'
+      - int
+    doc: 'Length of search window used to discover CRISPRs (range: 6-9)'
+    inputBinding:
+      position: 104
+      prefix: -searchWL
+  - id: min_repeats
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of repeats a CRISPR must contain
+    inputBinding:
+      position: 104
+      prefix: -minNR
+  - id: min_repeat_length
+    type:
+      - 'null'
+      - int
+    doc: Minimum length of the CRISPR repeats
+    inputBinding:
+      position: 104
+      prefix: -minRL
+  - id: max_repeat_length
+    type:
+      - 'null'
+      - int
+    doc: Maximum length of the CRISPR repeats
+    inputBinding:
+      position: 104
+      prefix: -maxRL
+  - id: min_spacer_length
+    type:
+      - 'null'
+      - int
+    doc: Minimum length of the CRISPR spacers
+    inputBinding:
+      position: 104
+      prefix: -minSL
+  - id: max_spacer_length
+    type:
+      - 'null'
+      - int
+    doc: Maximum length of the CRISPR spacers
+    inputBinding:
+      position: 104
+      prefix: -maxSL
   - id: gff
     type:
       - 'null'
       - boolean
-    doc: output in GFF format
+    doc: Output summary results in gff format containing only the positions of 
+      the CRISPR arrays
     inputBinding:
-      position: 102
+      position: 104
       prefix: -gff
-  - id: max_rl
+  - id: gff_full
     type:
       - 'null'
-      - int
-    doc: maximum repeat length
+      - boolean
+    doc: Output detailed results in gff format containing positions of CRISPR 
+      arrays and all repeat units
     inputBinding:
-      position: 102
-      prefix: -maxRL
-  - id: max_sl
-    type:
-      - 'null'
-      - int
-    doc: maximum spacer length
-    inputBinding:
-      position: 102
-      prefix: -maxSL
-  - id: min_nr
-    type:
-      - 'null'
-      - int
-    doc: minimum number of repeats
-    inputBinding:
-      position: 102
-      prefix: -minNR
-  - id: min_rl
-    type:
-      - 'null'
-      - int
-    doc: minimum repeat length
-    inputBinding:
-      position: 102
-      prefix: -minRL
-  - id: min_sl
-    type:
-      - 'null'
-      - int
-    doc: minimum spacer length
-    inputBinding:
-      position: 102
-      prefix: -minSL
-  - id: search_wl
-    type:
-      - 'null'
-      - int
-    doc: search window length
-    inputBinding:
-      position: 102
-      prefix: -searchWL
+      position: 104
+      prefix: -gffFull
   - id: spacers
     type:
       - 'null'
       - boolean
-    doc: output spacers in Fasta format
+    doc: Output a fasta formatted file containing the spacers
     inputBinding:
-      position: 102
+      position: 104
       prefix: -spacers
 outputs:
-  - id: output_file
+  - id: out_output_file
     type:
       - 'null'
       - File
-    doc: Output file for CRISPR identification results
+    doc: Output file for CRISPR results
     outputBinding:
-      glob: '*.out'
-  - id: gff_file
+      glob: $(inputs.output_file)
+  - id: out_output_gff
     type:
       - 'null'
       - File
-    doc: Optional GFF output file
+    doc: Output GFF file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_gff)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minced:0.4.2--0
+s:url: https://github.com/ctSkennerton/minced
+$namespaces:
+  s: https://schema.org/

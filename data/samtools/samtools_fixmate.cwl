@@ -1,120 +1,142 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-- samtools
-- fixmate
+  - samtools
+  - fixmate
 label: samtools_fixmate
-doc: |-
-  Fill in mate coordinates, ISIZE and mate related flags from a name-sorted alignment file.
-
-  Tool homepage: https://github.com/samtools/samtools
-requirements:
-- class: InlineJavascriptRequirement
+doc: Fix mate information on name-sorted SAM/BAM/CRAM files
 inputs:
-- id: input_bam
-  type: File
-  doc: Input name-sorted BAM file
-  inputBinding:
-    position: 50
-- id: add_cigar_ct
-  type: boolean?
-  doc: Add template cigar ct tag
-  inputBinding:
-    position: 1
-    prefix: -c
-- id: add_mate_score
-  type: boolean?
-  doc: Add mate score tag
-  inputBinding:
-    position: 1
-    prefix: -m
-- id: disable_fr_check
-  type: boolean?
-  doc: Disable FR proper pair check
-  inputBinding:
-    position: 1
-    prefix: -p
-- id: fix_base_mod_tags
-  type: boolean?
-  doc: Fix base modification tags (MM/ML/MN)
-  inputBinding:
-    position: 1
-    prefix: -M
-- id: input_fmt_option
-  type: string[]?
-  doc: Specify a single input file format option in the form of OPTION or 
-    OPTION=VALUE
-  inputBinding:
-    position: 1
-    prefix: --input-fmt-option
-- id: no_pg
-  type: boolean?
-  doc: do not add a PG line
-  inputBinding:
-    position: 1
-    prefix: --no-PG
-- id: output_fmt
-  type: string?
-  doc: Specify output format (SAM, BAM, CRAM)
-  inputBinding:
-    position: 1
-    prefix: --output-fmt
-- id: output_fmt_option
-  type: string[]?
-  doc: Specify a single output file format option in the form of OPTION or 
-    OPTION=VALUE
-  inputBinding:
-    position: 1
-    prefix: --output-fmt-option
-- id: reference
-  type: File?
-  secondaryFiles:
-    - .fai
-  doc: Reference sequence FASTA FILE [null]
-  inputBinding:
-    position: 1
-    prefix: --reference
-- id: remove_unmapped
-  type: boolean?
-  doc: Remove unmapped reads and secondary alignments
-  inputBinding:
-    position: 1
-    prefix: -r
-- id: sanitize
-  type: string?
-  doc: Sanitize alignment fields [defaults to all types]
-  inputBinding:
-    position: 1
-    prefix: --sanitize
-- id: threads
-  type: int?
-  doc: Number of additional threads to use
-  inputBinding:
-    position: 1
-    prefix: --threads
-- id: uncompressed_output
-  type: boolean?
-  doc: Uncompressed output
-  inputBinding:
-    position: 1
-    prefix: -u
-- id: verbosity
-  type: int?
-  doc: Set level of verbosity
-  inputBinding:
-    position: 1
-    prefix: --verbosity
-arguments:
-- position: 1
-  prefix: -n
-- position: 51
-  valueFrom: $(inputs.input_bam.nameroot).fixmate.bam
+  - id: in_bam
+    type: File
+    doc: Input name-sorted BAM/SAM/CRAM file
+    inputBinding:
+      position: 1
+  - id: out_bam
+    type: string
+    doc: Output name-sorted BAM/SAM/CRAM file
+    inputBinding:
+      position: 2
+  - id: remove_unmapped_and_secondary
+    type:
+      - 'null'
+      - boolean
+    doc: Remove unmapped reads and secondary alignments
+    inputBinding:
+      position: 103
+      prefix: -r
+  - id: disable_fr_pair_check
+    type:
+      - 'null'
+      - boolean
+    doc: Disable FR proper pair check
+    inputBinding:
+      position: 103
+      prefix: -p
+  - id: add_template_cigar
+    type:
+      - 'null'
+      - boolean
+    doc: Add template cigar ct tag
+    inputBinding:
+      position: 103
+      prefix: -c
+  - id: add_mate_score
+    type:
+      - 'null'
+      - boolean
+    doc: Add mate score tag
+    inputBinding:
+      position: 103
+      prefix: -m
+  - id: uncompressed_output
+    type:
+      - 'null'
+      - boolean
+    doc: Uncompressed output
+    inputBinding:
+      position: 103
+      prefix: -u
+  - id: sanitize
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Sanitize alignment fields [defaults to all types]
+    inputBinding:
+      position: 103
+      prefix: --sanitize
+      itemSeparator: ','
+  - id: fix_base_modifications
+    type:
+      - 'null'
+      - boolean
+    doc: Fix base modification tags (MM/ML/MN)
+    inputBinding:
+      position: 103
+      prefix: -M
+  - id: no_pg
+    type:
+      - 'null'
+      - boolean
+    doc: do not add a PG line
+    inputBinding:
+      position: 103
+      prefix: --no-PG
+  - id: input_fmt_option
+    type:
+      - 'null'
+      - string
+    doc: Specify a single input file format option in the form of OPTION or 
+      OPTION=VALUE
+    inputBinding:
+      position: 103
+      prefix: --input-fmt-option
+  - id: output_fmt
+    type:
+      - 'null'
+      - string
+    doc: Specify output format (SAM, BAM, CRAM)
+    inputBinding:
+      position: 103
+      prefix: --output-fmt
+  - id: output_fmt_option
+    type:
+      - 'null'
+      - string
+    doc: Specify a single output file format option in the form of OPTION or 
+      OPTION=VALUE
+    inputBinding:
+      position: 103
+      prefix: --output-fmt-option
+  - id: reference
+    type:
+      - 'null'
+      - File
+    doc: Reference sequence FASTA FILE [null]
+    secondaryFiles:
+      - .fai
+    inputBinding:
+      position: 103
+      prefix: --reference
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of additional threads to use [0]
+    inputBinding:
+      position: 103
+      prefix: --threads
 outputs:
-- id: output_bam
-  type: File
-  doc: Output name-sorted BAM file
-  outputBinding:
-    glob: $(inputs.input_bam.nameroot).fixmate.bam
+  - id: out_out_bam
+    type: File
+    doc: Output name-sorted BAM/SAM/CRAM file
+    outputBinding:
+      glob: $(inputs.out_bam)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
-- class: DockerRequirement
-  dockerPull: quay.io/biocontainers/samtools:1.23--h96c455f_0
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/samtools:1.23--h96c455f_0
+s:url: https://github.com/samtools/samtools
+$namespaces:
+  s: https://schema.org/

@@ -703,13 +703,6 @@ Filter options:
     -x/X, --private/--exclude-private      Select/exclude sites where the non-reference alleles are exclusive (private) to the subset samples
     -W,   --write-index[=FMT]              Automatically index the output files [off]
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_view_job.json`
-
 ## bcftools_call
 
 ### Tool Description

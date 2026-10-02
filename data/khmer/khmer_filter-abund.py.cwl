@@ -1,70 +1,118 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: filter-abund.py
+baseCommand:
+  - filter-abund.py
 label: khmer_filter-abund.py
-doc: "Filter sequences based on abundance using a k-prime countgraph.\n\nTool homepage:
-  https://khmer.readthedocs.io/"
+doc: Trim sequences at a minimum k-mer abundance.
 inputs:
-  - id: input_graph
+  - id: input_count_graph_filename
     type: File
-    doc: The input k-prime countgraph filename.
+    doc: The input k-mer countgraph filename
     inputBinding:
       position: 1
-  - id: input_sequence_files
+  - id: input_sequence_filename
     type:
-      type: array
-      items: File
-    doc: Input sequence filenames.
+      - 'null'
+      - type: array
+        items: File
+    doc: Input FAST[AQ] sequence filename
     inputBinding:
       position: 2
-  - id: cutoff
+  - id: info
     type:
       - 'null'
-      - int
-    doc: Cutoff at which to filter.
+      - boolean
+    doc: print citation information
     inputBinding:
       position: 103
-      prefix: --cutoff
-  - id: normalize_to
-    type:
-      - 'null'
-      - int
-    doc: Normalize coverage to this value.
-    inputBinding:
-      position: 103
-      prefix: --normalize-to
+      prefix: --info
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use.
+    doc: Number of simultaneous threads to execute
     inputBinding:
       position: 103
       prefix: --threads
+  - id: cutoff
+    type:
+      - 'null'
+      - int
+    doc: Trim at k-mers below this abundance.
+    inputBinding:
+      position: 103
+      prefix: --cutoff
   - id: variable_coverage
     type:
       - 'null'
       - boolean
-    doc: Only filter sequences with variable coverage.
+    doc: Only trim low-abundance k-mers from sequences that have high coverage.
     inputBinding:
       position: 103
       prefix: --variable-coverage
-  - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
-    inputBinding:
-      position: 104
-      prefix: --output-directory
-outputs:
-  - id: output_directory
+  - id: normalize_to
     type:
       - 'null'
-      - Directory
-    doc: Output directory for filtered files.
+      - int
+    doc: Base the variable-coverage cutoff on this median k-mer abundance.
+    inputBinding:
+      position: 103
+      prefix: --normalize-to
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Output the trimmed sequences into a single file with the given filename
+      instead of creating a new file for each input file.
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Overwrite output file if it exists
+    inputBinding:
+      position: 103
+      prefix: --force
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: quiet
+    inputBinding:
+      position: 103
+      prefix: --quiet
+  - id: gzip
+    type:
+      - 'null'
+      - boolean
+    doc: Compress output using gzip
+    inputBinding:
+      position: 103
+      prefix: --gzip
+  - id: bzip
+    type:
+      - 'null'
+      - boolean
+    doc: Compress output using bzip2
+    inputBinding:
+      position: 103
+      prefix: --bzip
+outputs:
+  - id: output_output
+    type:
+      - 'null'
+      - File
+    doc: Output the trimmed sequences into a single file with the given filename
+      instead of creating a new file for each input file.
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khmer:3.0.0a1--py36hfc679d8_0
+s:url: https://khmer.readthedocs.io/
+$namespaces:
+  s: https://schema.org/

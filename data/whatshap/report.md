@@ -12,7 +12,7 @@ Compare two or more phased variant files
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/whatshap/overview
-- **Total Downloads**: 222.9K
+- **Total Downloads**: 250.7K
 - **Last updated**: 2025-06-09
 - **GitHub**: https://github.com/whatshap/whatshap
 - **Stars**: N/A
@@ -65,10 +65,8 @@ optional arguments:
                         diploid VCFs.
   --ploidy PLOIDY, -p PLOIDY
                         The ploidy of the sample(s) (default: 2).
-whatshap compare: error: argument -h/--help: ignored explicit argument 'elp'
+whatshap compare: error: the following arguments are required: VCF/BCF
 ```
-
-
 ## whatshap_find_snv_candidates
 
 ### Tool Description
@@ -111,10 +109,8 @@ optional arguments:
   --pacbio              Input is PacBio. Sets minrel=0.25 and minabs=3.
   --nanopore            Input is Nanopore. Sets minrel=0.4 and minabs=3.
   --illumina            Input is Illumina. Sets minrel=0.25 and minabs=3.
-whatshap find_snv_candidates: error: argument -h/--help: ignored explicit argument 'elp'
+whatshap find_snv_candidates: error: the following arguments are required: REF, BAM
 ```
-
-
 ## whatshap_genotype
 
 ### Tool Description
@@ -884,10 +880,8 @@ optional arguments:
   --read-lengths-histogram READ_LENGTHS_HISTOGRAM
                         Output file to write read lengths histogram to in tab-
                         separated format.
-whatshap split: error: argument -h/--help: ignored explicit argument 'elp'
+whatshap split: error: the following arguments are required: READS, LIST
 ```
-
-
 ## whatshap_stats
 
 ### Tool Description
@@ -930,10 +924,8 @@ optional arguments:
                         chromosomes in the input VCF are considered. Can be
                         used multiple times and accepts a comma-separated
                         list.
-whatshap stats: error: argument -h/--help: ignored explicit argument 'elp'
+whatshap stats: error: the following arguments are required: VCF
 ```
-
-
 ## whatshap_unphase
 
 ### Tool Description
@@ -966,9 +958,7 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-whatshap unphase: error: argument -h/--help: ignored explicit argument 'elp'
+whatshap unphase: error: the following arguments are required: VCF
 ```
-
-
 ## Metadata
 - **Skill**: generated

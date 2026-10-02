@@ -1,2440 +1,853 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastp
+baseCommand:
+  - /usr/local/bin/fastp
 label: fastp
-doc: "fastp is a fast all-in-one FASTQ preprocessor.\n\nTool homepage: https://github.com/OpenGene/fastp"
+doc: an ultra-fast all-in-one FASTQ preprocessor
 inputs:
-  - id: input_fastq1
-    type: File
-    doc: Input FASTQ file 1 (unpaired or read 1 of paired-end data)
-    inputBinding:
-      position: 1
-  - id: input_fastq2
+  - id: in1
     type:
       - 'null'
       - File
-    doc: Input FASTQ file 2 (read 2 of paired-end data)
+    doc: read1 input file name
     inputBinding:
-      position: 2
-  - id: adapter_file
+      position: 101
+      prefix: --in1
+  - id: out1
+    type:
+      - 'null'
+      - string
+    doc: read1 output file name
+    inputBinding:
+      position: 101
+      prefix: --out1
+  - id: in2
     type:
       - 'null'
       - File
-    doc: File containing adapter sequences to trim. Each line should be an 
-      adapter sequence.
+    doc: read2 input file name
     inputBinding:
-      position: 103
-      prefix: --adapter_file
-  - id: adapter_file_r2
+      position: 101
+      prefix: --in2
+  - id: out2
     type:
       - 'null'
-      - File
-    doc: File containing adapter sequences for read 2 to trim. Each line should 
-      be an adapter sequence.
+      - string
+    doc: read2 output file name
     inputBinding:
-      position: 103
-      prefix: --adapter_file_r2
+      position: 101
+      prefix: --out2
+  - id: unpaired1
+    type:
+      - 'null'
+      - string
+    doc: for PE input, if read1 passed QC but read2 not, it will be written to 
+      unpaired1. Default is to discard it.
+    inputBinding:
+      position: 101
+      prefix: --unpaired1
+  - id: unpaired2
+    type:
+      - 'null'
+      - string
+    doc: for PE input, if read2 passed QC but read1 not, it will be written to 
+      unpaired2. If --unpaired2 is same as --unpaired1 (default mode), both 
+      unpaired reads will be written to this same file.
+    inputBinding:
+      position: 101
+      prefix: --unpaired2
+  - id: overlapped_out
+    type:
+      - 'null'
+      - string
+    doc: for each read pair, output the overlapped region if it has no any 
+      mismatched base.
+    inputBinding:
+      position: 101
+      prefix: --overlapped_out
+  - id: failed_out
+    type:
+      - 'null'
+      - string
+    doc: specify the file to store reads that cannot pass the filters.
+    inputBinding:
+      position: 101
+      prefix: --failed_out
+  - id: merge
+    type:
+      - 'null'
+      - boolean
+    doc: for paired-end input, merge each pair of reads into a single read if 
+      they are overlapped. The merged reads will be written to the file given by
+      --merged_out, the unmerged reads will be written to the files specified by
+      --out1 and --out2. The merging mode is disabled by default.
+    inputBinding:
+      position: 101
+      prefix: --merge
+  - id: merged_out
+    type:
+      - 'null'
+      - string
+    doc: in the merging mode, specify the file name to store merged output, or 
+      specify --stdout to stream the merged output
+    inputBinding:
+      position: 101
+      prefix: --merged_out
+  - id: include_unmerged
+    type:
+      - 'null'
+      - boolean
+    doc: in the merging mode, write the unmerged or unpaired reads to the file 
+      specified by --merge. Disabled by default.
+    inputBinding:
+      position: 101
+      prefix: --include_unmerged
+  - id: phred64
+    type:
+      - 'null'
+      - boolean
+    doc: indicate the input is using phred64 scoring (it'll be converted to 
+      phred33, so the output will still be phred33)
+    inputBinding:
+      position: 101
+      prefix: --phred64
+  - id: compression
+    type:
+      - 'null'
+      - int
+    doc: compression level for gzip output (1 ~ 9). 1 is fastest, 9 is smallest,
+      default is 4.
+    inputBinding:
+      position: 101
+      prefix: --compression
+  - id: stdin
+    type:
+      - 'null'
+      - boolean
+    doc: input from STDIN. If the STDIN is interleaved paired-end FASTQ, please 
+      also add --interleaved_in.
+    inputBinding:
+      position: 101
+      prefix: --stdin
+  - id: stdout
+    type:
+      - 'null'
+      - boolean
+    doc: stream passing-filters reads to STDOUT. This option will result in 
+      interleaved FASTQ output for paired-end output. Disabled by default.
+    inputBinding:
+      position: 101
+      prefix: --stdout
+  - id: interleaved_in
+    type:
+      - 'null'
+      - boolean
+    doc: indicate that <in1> is an interleaved FASTQ which contains both read1 
+      and read2. Disabled by default.
+    inputBinding:
+      position: 101
+      prefix: --interleaved_in
+  - id: reads_to_process
+    type:
+      - 'null'
+      - int
+    doc: specify how many reads/pairs to be processed. Default 0 means process 
+      all reads.
+    inputBinding:
+      position: 101
+      prefix: --reads_to_process
+  - id: dont_overwrite
+    type:
+      - 'null'
+      - boolean
+    doc: don't overwrite existing files. Overwritting is allowed by default.
+    inputBinding:
+      position: 101
+      prefix: --dont_overwrite
+  - id: fix_mgi_id
+    type:
+      - 'null'
+      - boolean
+    doc: the MGI FASTQ ID format is not compatible with many BAM operation 
+      tools, enable this option to fix it.
+    inputBinding:
+      position: 101
+      prefix: --fix_mgi_id
+  - id: disable_adapter_trimming
+    type:
+      - 'null'
+      - boolean
+    doc: adapter trimming is enabled by default. If this option is specified, 
+      adapter trimming is disabled
+    inputBinding:
+      position: 101
+      prefix: --disable_adapter_trimming
   - id: adapter_sequence
     type:
       - 'null'
       - string
-    doc: Adapter sequence to trim. Can be specified multiple times.
+    doc: the adapter for read1. For SE data, if not specified, the adapter will 
+      be auto-detected. For PE data, this is used if R1/R2 are found not 
+      overlapped.
     inputBinding:
-      position: 103
+      position: 101
       prefix: --adapter_sequence
   - id: adapter_sequence_r2
     type:
       - 'null'
       - string
-    doc: Adapter sequence for read 2 to trim. Can be specified multiple times.
+    doc: the adapter for read2 (PE data only). This is used if R1/R2 are found 
+      not overlapped. If not specified, it will be the same as 
+      <adapter_sequence>
     inputBinding:
-      position: 103
+      position: 101
       prefix: --adapter_sequence_r2
-  - id: cut_back
+  - id: adapter_fasta
     type:
       - 'null'
-      - int
-    doc: Number of bases to cut from the back of reads.
+      - File
+    doc: specify a FASTA file to trim both read1 and read2 (if PE) by all the 
+      sequences in this FASTA file
     inputBinding:
-      position: 103
-      prefix: --cut_back
-  - id: cut_by_quality
-    type:
-      - 'null'
-      - boolean
-    doc: Cut reads by quality.
-    inputBinding:
-      position: 103
-      prefix: --cut_by_quality
-  - id: cut_by_quality_threshold
-    type:
-      - 'null'
-      - int
-    doc: Quality threshold for cutting by quality.
-    inputBinding:
-      position: 103
-      prefix: --cut_by_quality_threshold
-  - id: cut_by_quality_window
-    type:
-      - 'null'
-      - int
-    doc: Window size for cutting by quality.
-    inputBinding:
-      position: 103
-      prefix: --cut_by_quality_window
-  - id: cut_front
-    type:
-      - 'null'
-      - int
-    doc: Number of bases to cut from the front of reads.
-    inputBinding:
-      position: 103
-      prefix: --cut_front
-  - id: cut_mean_quality
-    type:
-      - 'null'
-      - int
-    doc: Cut reads by mean quality. Reads with mean quality below this threshold
-      will be discarded.
-    inputBinding:
-      position: 103
-      prefix: --cut_mean_quality
-  - id: cut_middle_quality
-    type:
-      - 'null'
-      - int
-    doc: Cut reads by middle quality. Reads with middle quality below this 
-      threshold will be discarded.
-    inputBinding:
-      position: 103
-      prefix: --cut_middle_quality
+      position: 101
+      prefix: --adapter_fasta
   - id: detect_adapter_for_pe
     type:
       - 'null'
       - boolean
-    doc: Detect adapter sequences for paired-end data.
+    doc: enable adapter detection for PE data to get ultra-clean data. It takes 
+      more time to find just a little bit more adapters.
     inputBinding:
-      position: 103
+      position: 101
       prefix: --detect_adapter_for_pe
-  - id: detect_adapter_for_se
+  - id: allow_gap_overlap_trimming
     type:
       - 'null'
       - boolean
-    doc: Detect adapter sequences for single-end data.
+    doc: allow up to one gap when trim adapters by overlap analysis for PE data.
+      By default no gap is allowed.
     inputBinding:
-      position: 103
-      prefix: --detect_adapter_for_se
-  - id: disable_adapter_trimming
-    type:
-      - 'null'
-      - boolean
-    doc: Disable adapter trimming.
-    inputBinding:
-      position: 103
-      prefix: --disable_adapter_trimming
-  - id: disable_length_filtering
-    type:
-      - 'null'
-      - boolean
-    doc: Disable length filtering.
-    inputBinding:
-      position: 103
-      prefix: --disable_length_filtering
-  - id: disable_quality_filtering
-    type:
-      - 'null'
-      - boolean
-    doc: Disable quality filtering.
-    inputBinding:
-      position: 103
-      prefix: --disable_quality_filtering
-  - id: disable_trim_poly_g
-    type:
-      - 'null'
-      - boolean
-    doc: Disable trimming of poly-G tails.
-    inputBinding:
-      position: 103
-      prefix: --disable_trim_poly_g
-  - id: disable_trim_poly_t
-    type:
-      - 'null'
-      - boolean
-    doc: Disable trimming of poly-T tails.
-    inputBinding:
-      position: 103
-      prefix: --disable_trim_poly_t
-  - id: filter_by_index
-    type:
-      - 'null'
-      - boolean
-    doc: Filter reads by index.
-    inputBinding:
-      position: 103
-      prefix: --filter_by_index
-  - id: length_limit
+      position: 101
+      prefix: --allow_gap_overlap_trimming
+  - id: dimer_max_len
     type:
       - 'null'
       - int
-    doc: The maximum length of a read after trimming to be kept. Reads longer 
-      than this will be discarded. If set to -1, no length limit is applied.
+    doc: if the read length is less than or equal to this value after adapter 
+      trimming, it is considered an adapter dimer. Requires adapter evidence.
     inputBinding:
-      position: 103
-      prefix: --length_limit
-  - id: length_required
+      position: 101
+      prefix: --dimer_max_len
+  - id: trim_front1
     type:
       - 'null'
       - int
-    doc: The minimum length of a read after trimming to be kept. Reads shorter 
-      than this will be discarded.
+    doc: trimming how many bases in front for read1, default is 0
     inputBinding:
-      position: 103
-      prefix: --length_required
-  - id: low_complexity_filter
-    type:
-      - 'null'
-      - boolean
-    doc: Filter out low-complexity reads.
-    inputBinding:
-      position: 103
-      prefix: --low_complexity_filter
-  - id: max_n
+      position: 101
+      prefix: --trim_front1
+  - id: trim_tail1
     type:
       - 'null'
       - int
-    doc: Maximum number of Ns allowed in a read. Reads with more Ns will be 
-      discarded.
+    doc: trimming how many bases in tail for read1, default is 0
     inputBinding:
-      position: 103
-      prefix: --max_n
-  - id: merge_diff
+      position: 101
+      prefix: --trim_tail1
+  - id: max_len1
     type:
       - 'null'
       - int
-    doc: Maximum difference allowed in merging.
+    doc: if read1 is longer than max_len1, then trim read1 at its tail to make 
+      it as long as max_len1. Default 0 means no limitation
     inputBinding:
-      position: 103
-      prefix: --merge_diff
-  - id: merge_diff_percent
-    type:
-      - 'null'
-      - float
-    doc: Maximum percentage difference allowed in merging.
-    inputBinding:
-      position: 103
-      prefix: --merge_diff_percent
-  - id: merge_len
+      position: 101
+      prefix: --max_len1
+  - id: trim_front2
     type:
       - 'null'
       - int
-    doc: Minimum overlap length for merging.
+    doc: trimming how many bases in front for read2. If it's not specified, it 
+      will follow read1's settings
     inputBinding:
-      position: 103
-      prefix: --merge_len
-  - id: merge_max_len
+      position: 101
+      prefix: --trim_front2
+  - id: trim_tail2
     type:
       - 'null'
       - int
-    doc: Maximum length of merged reads. If set to 0, no limit.
+    doc: trimming how many bases in tail for read2. If it's not specified, it 
+      will follow read1's settings
     inputBinding:
-      position: 103
-      prefix: --merge_max_len
-  - id: merge_only
-    type:
-      - 'null'
-      - boolean
-    doc: Only merge overlapping reads, do not perform other trimming.
-    inputBinding:
-      position: 103
-      prefix: --merge_only
-  - id: merge_window
+      position: 101
+      prefix: --trim_tail2
+  - id: max_len2
     type:
       - 'null'
       - int
-    doc: Window size for merging.
+    doc: if read2 is longer than max_len2, then trim read2 at its tail to make 
+      it as long as max_len2. Default 0 means no limitation. If it's not 
+      specified, it will follow read1's settings
     inputBinding:
-      position: 103
-      prefix: --merge_window
-  - id: no_100q
+      position: 101
+      prefix: --max_len2
+  - id: dedup
     type:
       - 'null'
       - boolean
-    doc: Do not use quality values >= 100.
+    doc: enable deduplication to drop the duplicated reads/pairs
     inputBinding:
-      position: 103
-      prefix: --no_100q
-  - id: no_101q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 101.
-    inputBinding:
-      position: 103
-      prefix: --no_101q
-  - id: no_102q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 102.
-    inputBinding:
-      position: 103
-      prefix: --no_102q
-  - id: no_103q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 103.
-    inputBinding:
-      position: 103
-      prefix: --no_103q
-  - id: no_104q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 104.
-    inputBinding:
-      position: 103
-      prefix: --no_104q
-  - id: no_105q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 105.
-    inputBinding:
-      position: 103
-      prefix: --no_105q
-  - id: no_106q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 106.
-    inputBinding:
-      position: 103
-      prefix: --no_106q
-  - id: no_107q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 107.
-    inputBinding:
-      position: 103
-      prefix: --no_107q
-  - id: no_108q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 108.
-    inputBinding:
-      position: 103
-      prefix: --no_108q
-  - id: no_109q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 109.
-    inputBinding:
-      position: 103
-      prefix: --no_109q
-  - id: no_10q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 10.
-    inputBinding:
-      position: 103
-      prefix: --no_10q
-  - id: no_110q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 110.
-    inputBinding:
-      position: 103
-      prefix: --no_110q
-  - id: no_111q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 111.
-    inputBinding:
-      position: 103
-      prefix: --no_111q
-  - id: no_112q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 112.
-    inputBinding:
-      position: 103
-      prefix: --no_112q
-  - id: no_113q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 113.
-    inputBinding:
-      position: 103
-      prefix: --no_113q
-  - id: no_114q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 114.
-    inputBinding:
-      position: 103
-      prefix: --no_114q
-  - id: no_115q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 115.
-    inputBinding:
-      position: 103
-      prefix: --no_115q
-  - id: no_116q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 116.
-    inputBinding:
-      position: 103
-      prefix: --no_116q
-  - id: no_117q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 117.
-    inputBinding:
-      position: 103
-      prefix: --no_117q
-  - id: no_118q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 118.
-    inputBinding:
-      position: 103
-      prefix: --no_118q
-  - id: no_119q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 119.
-    inputBinding:
-      position: 103
-      prefix: --no_119q
-  - id: no_11q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 11.
-    inputBinding:
-      position: 103
-      prefix: --no_11q
-  - id: no_120q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 120.
-    inputBinding:
-      position: 103
-      prefix: --no_120q
-  - id: no_121q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 121.
-    inputBinding:
-      position: 103
-      prefix: --no_121q
-  - id: no_122q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 122.
-    inputBinding:
-      position: 103
-      prefix: --no_122q
-  - id: no_123q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 123.
-    inputBinding:
-      position: 103
-      prefix: --no_123q
-  - id: no_124q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 124.
-    inputBinding:
-      position: 103
-      prefix: --no_124q
-  - id: no_125q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 125.
-    inputBinding:
-      position: 103
-      prefix: --no_125q
-  - id: no_126q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 126.
-    inputBinding:
-      position: 103
-      prefix: --no_126q
-  - id: no_127q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 127.
-    inputBinding:
-      position: 103
-      prefix: --no_127q
-  - id: no_128
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 128.
-    inputBinding:
-      position: 103
-      prefix: --no_128
-  - id: no_12q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 12.
-    inputBinding:
-      position: 103
-      prefix: --no_12q
-  - id: no_133
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 133.
-    inputBinding:
-      position: 103
-      prefix: --no_133
-  - id: no_137
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 137.
-    inputBinding:
-      position: 103
-      prefix: --no_137
-  - id: no_13q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 13.
-    inputBinding:
-      position: 103
-      prefix: --no_13q
-  - id: no_140
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 140.
-    inputBinding:
-      position: 103
-      prefix: --no_140
-  - id: no_141
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 141.
-    inputBinding:
-      position: 103
-      prefix: --no_141
-  - id: no_142
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 142.
-    inputBinding:
-      position: 103
-      prefix: --no_142
-  - id: no_143
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 143.
-    inputBinding:
-      position: 103
-      prefix: --no_143
-  - id: no_144
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 144.
-    inputBinding:
-      position: 103
-      prefix: --no_144
-  - id: no_145
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 145.
-    inputBinding:
-      position: 103
-      prefix: --no_145
-  - id: no_146
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 146.
-    inputBinding:
-      position: 103
-      prefix: --no_146
-  - id: no_147
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 147.
-    inputBinding:
-      position: 103
-      prefix: --no_147
-  - id: no_148
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 148.
-    inputBinding:
-      position: 103
-      prefix: --no_148
-  - id: no_149
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 149.
-    inputBinding:
-      position: 103
-      prefix: --no_149
-  - id: no_14q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 14.
-    inputBinding:
-      position: 103
-      prefix: --no_14q
-  - id: no_150
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 150.
-    inputBinding:
-      position: 103
-      prefix: --no_150
-  - id: no_151
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 151.
-    inputBinding:
-      position: 103
-      prefix: --no_151
-  - id: no_152
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 152.
-    inputBinding:
-      position: 103
-      prefix: --no_152
-  - id: no_153
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 153.
-    inputBinding:
-      position: 103
-      prefix: --no_153
-  - id: no_154
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 154.
-    inputBinding:
-      position: 103
-      prefix: --no_154
-  - id: no_155
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 155.
-    inputBinding:
-      position: 103
-      prefix: --no_155
-  - id: no_156
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 156.
-    inputBinding:
-      position: 103
-      prefix: --no_156
-  - id: no_157
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 157.
-    inputBinding:
-      position: 103
-      prefix: --no_157
-  - id: no_158
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 158.
-    inputBinding:
-      position: 103
-      prefix: --no_158
-  - id: no_159
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 159.
-    inputBinding:
-      position: 103
-      prefix: --no_159
-  - id: no_15q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 15.
-    inputBinding:
-      position: 103
-      prefix: --no_15q
-  - id: no_160
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 160.
-    inputBinding:
-      position: 103
-      prefix: --no_160
-  - id: no_161
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 161.
-    inputBinding:
-      position: 103
-      prefix: --no_161
-  - id: no_162
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 162.
-    inputBinding:
-      position: 103
-      prefix: --no_162
-  - id: no_163
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 163.
-    inputBinding:
-      position: 103
-      prefix: --no_163
-  - id: no_164
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 164.
-    inputBinding:
-      position: 103
-      prefix: --no_164
-  - id: no_165
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 165.
-    inputBinding:
-      position: 103
-      prefix: --no_165
-  - id: no_166
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 166.
-    inputBinding:
-      position: 103
-      prefix: --no_166
-  - id: no_167
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 167.
-    inputBinding:
-      position: 103
-      prefix: --no_167
-  - id: no_168
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 168.
-    inputBinding:
-      position: 103
-      prefix: --no_168
-  - id: no_169
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 169.
-    inputBinding:
-      position: 103
-      prefix: --no_169
-  - id: no_16q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 16.
-    inputBinding:
-      position: 103
-      prefix: --no_16q
-  - id: no_170
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 170.
-    inputBinding:
-      position: 103
-      prefix: --no_170
-  - id: no_171
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 171.
-    inputBinding:
-      position: 103
-      prefix: --no_171
-  - id: no_172
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 172.
-    inputBinding:
-      position: 103
-      prefix: --no_172
-  - id: no_173
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 173.
-    inputBinding:
-      position: 103
-      prefix: --no_173
-  - id: no_174
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 174.
-    inputBinding:
-      position: 103
-      prefix: --no_174
-  - id: no_175
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 175.
-    inputBinding:
-      position: 103
-      prefix: --no_175
-  - id: no_176
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 176.
-    inputBinding:
-      position: 103
-      prefix: --no_176
-  - id: no_177
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 177.
-    inputBinding:
-      position: 103
-      prefix: --no_177
-  - id: no_178
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 178.
-    inputBinding:
-      position: 103
-      prefix: --no_178
-  - id: no_179
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 179.
-    inputBinding:
-      position: 103
-      prefix: --no_179
-  - id: no_17q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 17.
-    inputBinding:
-      position: 103
-      prefix: --no_17q
-  - id: no_180
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 180.
-    inputBinding:
-      position: 103
-      prefix: --no_180
-  - id: no_181
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 181.
-    inputBinding:
-      position: 103
-      prefix: --no_181
-  - id: no_182
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 182.
-    inputBinding:
-      position: 103
-      prefix: --no_182
-  - id: no_183
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 183.
-    inputBinding:
-      position: 103
-      prefix: --no_183
-  - id: no_184
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 184.
-    inputBinding:
-      position: 103
-      prefix: --no_184
-  - id: no_185
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 185.
-    inputBinding:
-      position: 103
-      prefix: --no_185
-  - id: no_186
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 186.
-    inputBinding:
-      position: 103
-      prefix: --no_186
-  - id: no_187
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 187.
-    inputBinding:
-      position: 103
-      prefix: --no_187
-  - id: no_188
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 188.
-    inputBinding:
-      position: 103
-      prefix: --no_188
-  - id: no_189
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 189.
-    inputBinding:
-      position: 103
-      prefix: --no_189
-  - id: no_18q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 18.
-    inputBinding:
-      position: 103
-      prefix: --no_18q
-  - id: no_190
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 190.
-    inputBinding:
-      position: 103
-      prefix: --no_190
-  - id: no_191
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 191.
-    inputBinding:
-      position: 103
-      prefix: --no_191
-  - id: no_192
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 192.
-    inputBinding:
-      position: 103
-      prefix: --no_192
-  - id: no_193
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 193.
-    inputBinding:
-      position: 103
-      prefix: --no_193
-  - id: no_194
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 194.
-    inputBinding:
-      position: 103
-      prefix: --no_194
-  - id: no_195
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 195.
-    inputBinding:
-      position: 103
-      prefix: --no_195
-  - id: no_196
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 196.
-    inputBinding:
-      position: 103
-      prefix: --no_196
-  - id: no_197
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 197.
-    inputBinding:
-      position: 103
-      prefix: --no_197
-  - id: no_198
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 198.
-    inputBinding:
-      position: 103
-      prefix: --no_198
-  - id: no_199
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 199.
-    inputBinding:
-      position: 103
-      prefix: --no_199
-  - id: no_19q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 19.
-    inputBinding:
-      position: 103
-      prefix: --no_19q
-  - id: no_200
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 200.
-    inputBinding:
-      position: 103
-      prefix: --no_200
-  - id: no_201
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 201.
-    inputBinding:
-      position: 103
-      prefix: --no_201
-  - id: no_202
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 202.
-    inputBinding:
-      position: 103
-      prefix: --no_202
-  - id: no_203
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 203.
-    inputBinding:
-      position: 103
-      prefix: --no_203
-  - id: no_204
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 204.
-    inputBinding:
-      position: 103
-      prefix: --no_204
-  - id: no_205
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 205.
-    inputBinding:
-      position: 103
-      prefix: --no_205
-  - id: no_206
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 206.
-    inputBinding:
-      position: 103
-      prefix: --no_206
-  - id: no_207
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 207.
-    inputBinding:
-      position: 103
-      prefix: --no_207
-  - id: no_208
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 208.
-    inputBinding:
-      position: 103
-      prefix: --no_208
-  - id: no_209
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 209.
-    inputBinding:
-      position: 103
-      prefix: --no_209
-  - id: no_20q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 20.
-    inputBinding:
-      position: 103
-      prefix: --no_20q
-  - id: no_210
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 210.
-    inputBinding:
-      position: 103
-      prefix: --no_210
-  - id: no_211
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 211.
-    inputBinding:
-      position: 103
-      prefix: --no_211
-  - id: no_212
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 212.
-    inputBinding:
-      position: 103
-      prefix: --no_212
-  - id: no_213
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 213.
-    inputBinding:
-      position: 103
-      prefix: --no_213
-  - id: no_214
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 214.
-    inputBinding:
-      position: 103
-      prefix: --no_214
-  - id: no_215
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 215.
-    inputBinding:
-      position: 103
-      prefix: --no_215
-  - id: no_216
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 216.
-    inputBinding:
-      position: 103
-      prefix: --no_216
-  - id: no_217
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 217.
-    inputBinding:
-      position: 103
-      prefix: --no_217
-  - id: no_218
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 218.
-    inputBinding:
-      position: 103
-      prefix: --no_218
-  - id: no_219
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 219.
-    inputBinding:
-      position: 103
-      prefix: --no_219
-  - id: no_21q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 21.
-    inputBinding:
-      position: 103
-      prefix: --no_21q
-  - id: no_220
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 220.
-    inputBinding:
-      position: 103
-      prefix: --no_220
-  - id: no_221
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 221.
-    inputBinding:
-      position: 103
-      prefix: --no_221
-  - id: no_222
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 222.
-    inputBinding:
-      position: 103
-      prefix: --no_222
-  - id: no_223
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 223.
-    inputBinding:
-      position: 103
-      prefix: --no_223
-  - id: no_224
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 224.
-    inputBinding:
-      position: 103
-      prefix: --no_224
-  - id: no_225
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 225.
-    inputBinding:
-      position: 103
-      prefix: --no_225
-  - id: no_226
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 226.
-    inputBinding:
-      position: 103
-      prefix: --no_226
-  - id: no_227
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 227.
-    inputBinding:
-      position: 103
-      prefix: --no_227
-  - id: no_228
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 228.
-    inputBinding:
-      position: 103
-      prefix: --no_228
-  - id: no_229
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 229.
-    inputBinding:
-      position: 103
-      prefix: --no_229
-  - id: no_22q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 22.
-    inputBinding:
-      position: 103
-      prefix: --no_22q
-  - id: no_230
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 230.
-    inputBinding:
-      position: 103
-      prefix: --no_230
-  - id: no_231
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 231.
-    inputBinding:
-      position: 103
-      prefix: --no_231
-  - id: no_232
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 232.
-    inputBinding:
-      position: 103
-      prefix: --no_232
-  - id: no_233
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 233.
-    inputBinding:
-      position: 103
-      prefix: --no_233
-  - id: no_234
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 234.
-    inputBinding:
-      position: 103
-      prefix: --no_234
-  - id: no_235
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 235.
-    inputBinding:
-      position: 103
-      prefix: --no_235
-  - id: no_236
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 236.
-    inputBinding:
-      position: 103
-      prefix: --no_236
-  - id: no_237
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 237.
-    inputBinding:
-      position: 103
-      prefix: --no_237
-  - id: no_238
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 238.
-    inputBinding:
-      position: 103
-      prefix: --no_238
-  - id: no_239
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 239.
-    inputBinding:
-      position: 103
-      prefix: --no_239
-  - id: no_23q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 23.
-    inputBinding:
-      position: 103
-      prefix: --no_23q
-  - id: no_240
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 240.
-    inputBinding:
-      position: 103
-      prefix: --no_240
-  - id: no_241
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 241.
-    inputBinding:
-      position: 103
-      prefix: --no_241
-  - id: no_242
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 242.
-    inputBinding:
-      position: 103
-      prefix: --no_242
-  - id: no_243
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 243.
-    inputBinding:
-      position: 103
-      prefix: --no_243
-  - id: no_244
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 244.
-    inputBinding:
-      position: 103
-      prefix: --no_244
-  - id: no_245
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 245.
-    inputBinding:
-      position: 103
-      prefix: --no_245
-  - id: no_246
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 246.
-    inputBinding:
-      position: 103
-      prefix: --no_246
-  - id: no_247
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 247.
-    inputBinding:
-      position: 103
-      prefix: --no_247
-  - id: no_248
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 248.
-    inputBinding:
-      position: 103
-      prefix: --no_248
-  - id: no_249
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 249.
-    inputBinding:
-      position: 103
-      prefix: --no_249
-  - id: no_24q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 24.
-    inputBinding:
-      position: 103
-      prefix: --no_24q
-  - id: no_250
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 250.
-    inputBinding:
-      position: 103
-      prefix: --no_250
-  - id: no_251
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 251.
-    inputBinding:
-      position: 103
-      prefix: --no_251
-  - id: no_252
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 252.
-    inputBinding:
-      position: 103
-      prefix: --no_252
-  - id: no_253
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 253.
-    inputBinding:
-      position: 103
-      prefix: --no_253
-  - id: no_254
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 254.
-    inputBinding:
-      position: 103
-      prefix: --no_254
-  - id: no_255
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 255.
-    inputBinding:
-      position: 103
-      prefix: --no_255
-  - id: no_25q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 25.
-    inputBinding:
-      position: 103
-      prefix: --no_25q
-  - id: no_26q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 26.
-    inputBinding:
-      position: 103
-      prefix: --no_26q
-  - id: no_27q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 27.
-    inputBinding:
-      position: 103
-      prefix: --no_27q
-  - id: no_28q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 28.
-    inputBinding:
-      position: 103
-      prefix: --no_28q
-  - id: no_29q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 29.
-    inputBinding:
-      position: 103
-      prefix: --no_29q
-  - id: no_30q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 30.
-    inputBinding:
-      position: 103
-      prefix: --no_30q
-  - id: no_31q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 31.
-    inputBinding:
-      position: 103
-      prefix: --no_31q
-  - id: no_32q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 32.
-    inputBinding:
-      position: 103
-      prefix: --no_32q
-  - id: no_33q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 33.
-    inputBinding:
-      position: 103
-      prefix: --no_33q
-  - id: no_34q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 34.
-    inputBinding:
-      position: 103
-      prefix: --no_34q
-  - id: no_35q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 35.
-    inputBinding:
-      position: 103
-      prefix: --no_35q
-  - id: no_36q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 36.
-    inputBinding:
-      position: 103
-      prefix: --no_36q
-  - id: no_37q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 37.
-    inputBinding:
-      position: 103
-      prefix: --no_37q
-  - id: no_38q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 38.
-    inputBinding:
-      position: 103
-      prefix: --no_38q
-  - id: no_39q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 39.
-    inputBinding:
-      position: 103
-      prefix: --no_39q
-  - id: no_40q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 40.
-    inputBinding:
-      position: 103
-      prefix: --no_40q
-  - id: no_41q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 41.
-    inputBinding:
-      position: 103
-      prefix: --no_41q
-  - id: no_42q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 42.
-    inputBinding:
-      position: 103
-      prefix: --no_42q
-  - id: no_43q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 43.
-    inputBinding:
-      position: 103
-      prefix: --no_43q
-  - id: no_44q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 44.
-    inputBinding:
-      position: 103
-      prefix: --no_44q
-  - id: no_45q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 45.
-    inputBinding:
-      position: 103
-      prefix: --no_45q
-  - id: no_46q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 46.
-    inputBinding:
-      position: 103
-      prefix: --no_46q
-  - id: no_47q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 47.
-    inputBinding:
-      position: 103
-      prefix: --no_47q
-  - id: no_48q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 48.
-    inputBinding:
-      position: 103
-      prefix: --no_48q
-  - id: no_49q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 49.
-    inputBinding:
-      position: 103
-      prefix: --no_49q
-  - id: no_50q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 50.
-    inputBinding:
-      position: 103
-      prefix: --no_50q
-  - id: no_51q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 51.
-    inputBinding:
-      position: 103
-      prefix: --no_51q
-  - id: no_52q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 52.
-    inputBinding:
-      position: 103
-      prefix: --no_52q
-  - id: no_53q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 53.
-    inputBinding:
-      position: 103
-      prefix: --no_53q
-  - id: no_54q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 54.
-    inputBinding:
-      position: 103
-      prefix: --no_54q
-  - id: no_55q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 55.
-    inputBinding:
-      position: 103
-      prefix: --no_55q
-  - id: no_56q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 56.
-    inputBinding:
-      position: 103
-      prefix: --no_56q
-  - id: no_57q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 57.
-    inputBinding:
-      position: 103
-      prefix: --no_57q
-  - id: no_58q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 58.
-    inputBinding:
-      position: 103
-      prefix: --no_58q
-  - id: no_59q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 59.
-    inputBinding:
-      position: 103
-      prefix: --no_59q
-  - id: no_5q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 5.
-    inputBinding:
-      position: 103
-      prefix: --no_5q
-  - id: no_60q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 60.
-    inputBinding:
-      position: 103
-      prefix: --no_60q
-  - id: no_61q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 61.
-    inputBinding:
-      position: 103
-      prefix: --no_61q
-  - id: no_62q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 62.
-    inputBinding:
-      position: 103
-      prefix: --no_62q
-  - id: no_63q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 63.
-    inputBinding:
-      position: 103
-      prefix: --no_63q
-  - id: no_64q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 64.
-    inputBinding:
-      position: 103
-      prefix: --no_64q
-  - id: no_65q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 65.
-    inputBinding:
-      position: 103
-      prefix: --no_65q
-  - id: no_66q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 66.
-    inputBinding:
-      position: 103
-      prefix: --no_66q
-  - id: no_67q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 67.
-    inputBinding:
-      position: 103
-      prefix: --no_67q
-  - id: no_68q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 68.
-    inputBinding:
-      position: 103
-      prefix: --no_68q
-  - id: no_69q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 69.
-    inputBinding:
-      position: 103
-      prefix: --no_69q
-  - id: no_6q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 6.
-    inputBinding:
-      position: 103
-      prefix: --no_6q
-  - id: no_70q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 70.
-    inputBinding:
-      position: 103
-      prefix: --no_70q
-  - id: no_71q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 71.
-    inputBinding:
-      position: 103
-      prefix: --no_71q
-  - id: no_72q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 72.
-    inputBinding:
-      position: 103
-      prefix: --no_72q
-  - id: no_73q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 73.
-    inputBinding:
-      position: 103
-      prefix: --no_73q
-  - id: no_74q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 74.
-    inputBinding:
-      position: 103
-      prefix: --no_74q
-  - id: no_75q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 75.
-    inputBinding:
-      position: 103
-      prefix: --no_75q
-  - id: no_76q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 76.
-    inputBinding:
-      position: 103
-      prefix: --no_76q
-  - id: no_77q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 77.
-    inputBinding:
-      position: 103
-      prefix: --no_77q
-  - id: no_78q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 78.
-    inputBinding:
-      position: 103
-      prefix: --no_78q
-  - id: no_79q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 79.
-    inputBinding:
-      position: 103
-      prefix: --no_79q
-  - id: no_7q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 7.
-    inputBinding:
-      position: 103
-      prefix: --no_7q
-  - id: no_80q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 80.
-    inputBinding:
-      position: 103
-      prefix: --no_80q
-  - id: no_81q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 81.
-    inputBinding:
-      position: 103
-      prefix: --no_81q
-  - id: no_82q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 82.
-    inputBinding:
-      position: 103
-      prefix: --no_82q
-  - id: no_83q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 83.
-    inputBinding:
-      position: 103
-      prefix: --no_83q
-  - id: no_84q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 84.
-    inputBinding:
-      position: 103
-      prefix: --no_84q
-  - id: no_85q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 85.
-    inputBinding:
-      position: 103
-      prefix: --no_85q
-  - id: no_86q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 86.
-    inputBinding:
-      position: 103
-      prefix: --no_86q
-  - id: no_87q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 87.
-    inputBinding:
-      position: 103
-      prefix: --no_87q
-  - id: no_88q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 88.
-    inputBinding:
-      position: 103
-      prefix: --no_88q
-  - id: no_89q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 89.
-    inputBinding:
-      position: 103
-      prefix: --no_89q
-  - id: no_8q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 8.
-    inputBinding:
-      position: 103
-      prefix: --no_8q
-  - id: no_90q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 90.
-    inputBinding:
-      position: 103
-      prefix: --no_90q
-  - id: no_91q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 91.
-    inputBinding:
-      position: 103
-      prefix: --no_91q
-  - id: no_92q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 92.
-    inputBinding:
-      position: 103
-      prefix: --no_92q
-  - id: no_93q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 93.
-    inputBinding:
-      position: 103
-      prefix: --no_93q
-  - id: no_94q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 94.
-    inputBinding:
-      position: 103
-      prefix: --no_94q
-  - id: no_95q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 95.
-    inputBinding:
-      position: 103
-      prefix: --no_95q
-  - id: no_96q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 96.
-    inputBinding:
-      position: 103
-      prefix: --no_96q
-  - id: no_97q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 97.
-    inputBinding:
-      position: 103
-      prefix: --no_97q
-  - id: no_98q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 98.
-    inputBinding:
-      position: 103
-      prefix: --no_98q
-  - id: no_99q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 99.
-    inputBinding:
-      position: 103
-      prefix: --no_99q
-  - id: no_9q
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use quality values >= 9.
-    inputBinding:
-      position: 103
-      prefix: --no_9q
-  - id: overlap_diff
+      position: 101
+      prefix: --dedup
+  - id: dup_calc_accuracy
     type:
       - 'null'
       - int
-    doc: Maximum difference allowed in overlap.
+    doc: accuracy level to calculate duplication (1~6), higher level uses more 
+      memory (1G, 2G, 4G, 8G, 16G, 32G). Default 1 for no-dedup mode, and 3 for 
+      dedup mode.
     inputBinding:
-      position: 103
-      prefix: --overlap_diff
-  - id: overlap_diff_percent
-    type:
-      - 'null'
-      - float
-    doc: Maximum percentage difference allowed in overlap.
-    inputBinding:
-      position: 103
-      prefix: --overlap_diff_percent
-  - id: overlap_in_usearch
+      position: 101
+      prefix: --dup_calc_accuracy
+  - id: dont_eval_duplication
     type:
       - 'null'
       - boolean
-    doc: Use Usearch for overlap detection.
+    doc: don't evaluate duplication rate to save time and use less memory.
     inputBinding:
-      position: 103
-      prefix: --overlap_in_usearch
-  - id: overlap_len
-    type:
-      - 'null'
-      - int
-    doc: Minimum overlap length for Usearch.
-    inputBinding:
-      position: 103
-      prefix: --overlap_len
-  - id: overlap_window
-    type:
-      - 'null'
-      - int
-    doc: Window size for overlap detection.
-    inputBinding:
-      position: 103
-      prefix: --overlap_window
-  - id: qualified_quality_threshold
-    type:
-      - 'null'
-      - int
-    doc: The minimum quality score for a base to be considered qualified. Bases 
-      with quality scores below this threshold will be trimmed.
-    inputBinding:
-      position: 103
-      prefix: --qualified_quality_threshold
-  - id: thread
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use.
-    inputBinding:
-      position: 103
-      prefix: --thread
-  - id: trim_back
-    type:
-      - 'null'
-      - int
-    doc: Number of bases to trim from the back of reads.
-    inputBinding:
-      position: 103
-      prefix: --trim_back
-  - id: trim_back_threshold
-    type:
-      - 'null'
-      - int
-    doc: Quality threshold for trimming from the back.
-    inputBinding:
-      position: 103
-      prefix: --trim_back_threshold
-  - id: trim_back_window
-    type:
-      - 'null'
-      - int
-    doc: Window size for trimming from the back.
-    inputBinding:
-      position: 103
-      prefix: --trim_back_window
-  - id: trim_front
-    type:
-      - 'null'
-      - int
-    doc: Number of bases to trim from the front of reads.
-    inputBinding:
-      position: 103
-      prefix: --trim_front
-  - id: trim_front_threshold
-    type:
-      - 'null'
-      - int
-    doc: Quality threshold for trimming from the front.
-    inputBinding:
-      position: 103
-      prefix: --trim_front_threshold
-  - id: trim_front_window
-    type:
-      - 'null'
-      - int
-    doc: Window size for trimming from the front.
-    inputBinding:
-      position: 103
-      prefix: --trim_front_window
+      position: 101
+      prefix: --dont_eval_duplication
   - id: trim_poly_g
     type:
       - 'null'
       - boolean
-    doc: Trim poly-G tails.
+    doc: force polyG tail trimming, by default trimming is automatically enabled
+      for Illumina NextSeq/NovaSeq data
     inputBinding:
-      position: 103
+      position: 101
       prefix: --trim_poly_g
-  - id: trim_poly_t
+  - id: poly_g_min_len
+    type:
+      - 'null'
+      - int
+    doc: the minimum length to detect polyG in the read tail. 10 by default.
+    inputBinding:
+      position: 101
+      prefix: --poly_g_min_len
+  - id: disable_trim_poly_g
     type:
       - 'null'
       - boolean
-    doc: Trim poly-T tails.
+    doc: disable polyG tail trimming, by default trimming is automatically 
+      enabled for Illumina NextSeq/NovaSeq data
     inputBinding:
-      position: 103
-      prefix: --trim_poly_t
+      position: 101
+      prefix: --disable_trim_poly_g
+  - id: trim_poly_x
+    type:
+      - 'null'
+      - boolean
+    doc: enable polyX trimming in 3' ends.
+    inputBinding:
+      position: 101
+      prefix: --trim_poly_x
+  - id: poly_x_min_len
+    type:
+      - 'null'
+      - int
+    doc: the minimum length to detect polyX in the read tail. 10 by default.
+    inputBinding:
+      position: 101
+      prefix: --poly_x_min_len
+  - id: cut_front
+    type:
+      - 'null'
+      - boolean
+    doc: move a sliding window from front (5') to tail, drop the bases in the 
+      window if its mean quality < threshold, stop otherwise.
+    inputBinding:
+      position: 101
+      prefix: --cut_front
+  - id: cut_tail
+    type:
+      - 'null'
+      - boolean
+    doc: move a sliding window from tail (3') to front, drop the bases in the 
+      window if its mean quality < threshold, stop otherwise.
+    inputBinding:
+      position: 101
+      prefix: --cut_tail
+  - id: cut_right
+    type:
+      - 'null'
+      - boolean
+    doc: move a sliding window from front to tail, if meet one window with mean 
+      quality < threshold, drop the bases in the window and the right part, and 
+      then stop.
+    inputBinding:
+      position: 101
+      prefix: --cut_right
+  - id: cut_window_size
+    type:
+      - 'null'
+      - int
+    doc: 'the window size option shared by cut_front, cut_tail or cut_sliding. Range:
+      1~1000, default: 4'
+    inputBinding:
+      position: 101
+      prefix: --cut_window_size
+  - id: cut_mean_quality
+    type:
+      - 'null'
+      - int
+    doc: 'the mean quality requirement option shared by cut_front, cut_tail or cut_sliding.
+      Range: 1~36 default: 20 (Q20)'
+    inputBinding:
+      position: 101
+      prefix: --cut_mean_quality
+  - id: cut_front_window_size
+    type:
+      - 'null'
+      - int
+    doc: the window size option of cut_front, default to cut_window_size if not 
+      specified
+    inputBinding:
+      position: 101
+      prefix: --cut_front_window_size
+  - id: cut_front_mean_quality
+    type:
+      - 'null'
+      - int
+    doc: the mean quality requirement option for cut_front, default to 
+      cut_mean_quality if not specified
+    inputBinding:
+      position: 101
+      prefix: --cut_front_mean_quality
+  - id: cut_tail_window_size
+    type:
+      - 'null'
+      - int
+    doc: the window size option of cut_tail, default to cut_window_size if not 
+      specified
+    inputBinding:
+      position: 101
+      prefix: --cut_tail_window_size
+  - id: cut_tail_mean_quality
+    type:
+      - 'null'
+      - int
+    doc: the mean quality requirement option for cut_tail, default to 
+      cut_mean_quality if not specified
+    inputBinding:
+      position: 101
+      prefix: --cut_tail_mean_quality
+  - id: cut_right_window_size
+    type:
+      - 'null'
+      - int
+    doc: the window size option of cut_right, default to cut_window_size if not 
+      specified
+    inputBinding:
+      position: 101
+      prefix: --cut_right_window_size
+  - id: cut_right_mean_quality
+    type:
+      - 'null'
+      - int
+    doc: the mean quality requirement option for cut_right, default to 
+      cut_mean_quality if not specified
+    inputBinding:
+      position: 101
+      prefix: --cut_right_mean_quality
+  - id: disable_quality_filtering
+    type:
+      - 'null'
+      - boolean
+    doc: quality filtering is enabled by default. If this option is specified, 
+      quality filtering is disabled
+    inputBinding:
+      position: 101
+      prefix: --disable_quality_filtering
+  - id: qualified_quality_phred
+    type:
+      - 'null'
+      - int
+    doc: the quality value that a base is qualified. Default 15 means phred 
+      quality >=Q15 is qualified.
+    inputBinding:
+      position: 101
+      prefix: --qualified_quality_phred
+  - id: unqualified_percent_limit
+    type:
+      - 'null'
+      - int
+    doc: how many percents of bases are allowed to be unqualified (0~100). 
+      Default 40 means 40%
+    inputBinding:
+      position: 101
+      prefix: --unqualified_percent_limit
+  - id: n_base_limit
+    type:
+      - 'null'
+      - int
+    doc: if one read's number of N base is >n_base_limit, then this read/pair is
+      discarded. Default is 5
+    inputBinding:
+      position: 101
+      prefix: --n_base_limit
+  - id: average_qual
+    type:
+      - 'null'
+      - int
+    doc: if one read's average quality score <avg_qual, then this read/pair is 
+      discarded. Default 0 means no requirement
+    inputBinding:
+      position: 101
+      prefix: --average_qual
+  - id: disable_length_filtering
+    type:
+      - 'null'
+      - boolean
+    doc: length filtering is enabled by default. If this option is specified, 
+      length filtering is disabled
+    inputBinding:
+      position: 101
+      prefix: --disable_length_filtering
+  - id: length_required
+    type:
+      - 'null'
+      - int
+    doc: reads shorter than length_required will be discarded, default is 15.
+    inputBinding:
+      position: 101
+      prefix: --length_required
+  - id: length_limit
+    type:
+      - 'null'
+      - int
+    doc: reads longer than length_limit will be discarded, default 0 means no 
+      limitation.
+    inputBinding:
+      position: 101
+      prefix: --length_limit
+  - id: low_complexity_filter
+    type:
+      - 'null'
+      - boolean
+    doc: enable low complexity filter. The complexity is defined as the 
+      percentage of base that is different from its next base (base[i] != 
+      base[i+1]).
+    inputBinding:
+      position: 101
+      prefix: --low_complexity_filter
+  - id: complexity_threshold
+    type: int
+    doc: the threshold for low complexity filter (0~100). Default is 30, which 
+      means 30% complexity is required.
+    inputBinding:
+      position: 101
+      prefix: --complexity_threshold
+  - id: filter_by_index1
+    type:
+      - 'null'
+      - File
+    doc: specify a file contains a list of barcodes of index1 to be filtered 
+      out, one barcode per line
+    inputBinding:
+      position: 101
+      prefix: --filter_by_index1
+  - id: filter_by_index2
+    type:
+      - 'null'
+      - File
+    doc: specify a file contains a list of barcodes of index2 to be filtered 
+      out, one barcode per line
+    inputBinding:
+      position: 101
+      prefix: --filter_by_index2
+  - id: filter_by_index_threshold
+    type:
+      - 'null'
+      - int
+    doc: the allowed difference of index barcode for index filtering, default 0 
+      means completely identical.
+    inputBinding:
+      position: 101
+      prefix: --filter_by_index_threshold
+  - id: correction
+    type:
+      - 'null'
+      - boolean
+    doc: enable base correction in overlapped regions (only for PE data), 
+      default is disabled
+    inputBinding:
+      position: 101
+      prefix: --correction
+  - id: overlap_len_require
+    type:
+      - 'null'
+      - int
+    doc: the minimum length to detect overlapped region of PE reads. This will 
+      affect overlap analysis based PE merge, adapter trimming and correction. 
+      30 by default.
+    inputBinding:
+      position: 101
+      prefix: --overlap_len_require
+  - id: overlap_diff_limit
+    type:
+      - 'null'
+      - int
+    doc: the maximum number of mismatched bases to detect overlapped region of 
+      PE reads. This will affect overlap analysis based PE merge, adapter 
+      trimming and correction. 5 by default.
+    inputBinding:
+      position: 101
+      prefix: --overlap_diff_limit
+  - id: overlap_diff_percent_limit
+    type:
+      - 'null'
+      - int
+    doc: the maximum percentage of mismatched bases to detect overlapped region 
+      of PE reads. This will affect overlap analysis based PE merge, adapter 
+      trimming and correction. Default 20 means 20%.
+    inputBinding:
+      position: 101
+      prefix: --overlap_diff_percent_limit
   - id: umi
     type:
       - 'null'
       - boolean
-    doc: Enable UMI processing.
+    doc: enable unique molecular identifier (UMI) preprocessing
     inputBinding:
-      position: 103
+      position: 101
       prefix: --umi
-  - id: umi_barcode_len
-    type:
-      - 'null'
-      - int
-    doc: Length of UMI barcode.
-    inputBinding:
-      position: 103
-      prefix: --umi_barcode_len
-  - id: umi_barcode_loc
-    type:
-      - 'null'
-      - string
-    doc: Location of UMI barcode (e.g., 'read1_fwd', 'read1_rev', 'read2_fwd', 
-      'read2_rev', 'any').
-    inputBinding:
-      position: 103
-      prefix: --umi_barcode_loc
-  - id: umi_barcode_prefix
-    type:
-      - 'null'
-      - boolean
-    doc: Add UMI barcode as prefix to read name.
-    inputBinding:
-      position: 103
-      prefix: --umi_barcode_prefix
-  - id: umi_len
-    type:
-      - 'null'
-      - int
-    doc: Length of UMI.
-    inputBinding:
-      position: 103
-      prefix: --umi_len
   - id: umi_loc
     type:
       - 'null'
       - string
-    doc: Location of UMI (e.g., 'read1_fwd', 'read1_rev', 'read2_fwd', 
-      'read2_rev', 'any').
+    doc: specify the location of UMI, can be 
+      (index1/index2/read1/read2/per_index/per_read, default is none
     inputBinding:
-      position: 103
+      position: 101
       prefix: --umi_loc
+  - id: umi_len
+    type:
+      - 'null'
+      - int
+    doc: if the UMI is in read1/read2, its length should be provided
+    inputBinding:
+      position: 101
+      prefix: --umi_len
   - id: umi_prefix
     type:
       - 'null'
-      - boolean
-    doc: Add UMI as prefix to read name.
+      - string
+    doc: if specified, an underline will be used to connect prefix and UMI (i.e.
+      prefix=UMI, UMI=AATTCG, final=UMI_AATTCG). No prefix by default
     inputBinding:
-      position: 103
+      position: 101
       prefix: --umi_prefix
-  - id: output_fastq1_path
+  - id: umi_skip
+    type:
+      - 'null'
+      - int
+    doc: if the UMI is in read1/read2, fastp can skip several bases following 
+      UMI, default is 0
+    inputBinding:
+      position: 101
+      prefix: --umi_skip
+  - id: umi_delim
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fastq1_path`
+    doc: 'delimiter to use between the read name and the UMI, default is :'
     inputBinding:
-      position: 104
-      prefix: --output-fastq1
-  - id: output_fastq2_path
+      position: 101
+      prefix: --umi_delim
+  - id: overrepresentation_analysis
+    type:
+      - 'null'
+      - boolean
+    doc: enable overrepresented sequence analysis.
+    inputBinding:
+      position: 101
+      prefix: --overrepresentation_analysis
+  - id: overrepresentation_sampling
+    type:
+      - 'null'
+      - int
+    doc: one in (--overrepresentation_sampling) reads will be computed for 
+      overrepresentation analysis (1~10000), smaller is slower, default is 20.
+    inputBinding:
+      position: 101
+      prefix: --overrepresentation_sampling
+  - id: json
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fastq2_path`
+    doc: the json format report file name
     inputBinding:
-      position: 105
-      prefix: --output-fastq2
-  - id: output_html_path
+      position: 101
+      prefix: --json
+  - id: html
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_html_path`
+    doc: the html format report file name
     inputBinding:
-      position: 106
-      prefix: --output-html
-  - id: output_json_path
+      position: 101
+      prefix: --html
+  - id: report_title
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_json_path`
+    doc: should be quoted with ' or ", default is "fastp report"
     inputBinding:
-      position: 107
-      prefix: --output-json
+      position: 101
+      prefix: --report_title
+  - id: thread
+    type:
+      - 'null'
+      - int
+    doc: worker thread number, default is 3
+    inputBinding:
+      position: 101
+      prefix: --thread
+  - id: split
+    type:
+      - 'null'
+      - int
+    doc: split output by limiting total split file number with this option 
+      (2~999), a sequential number prefix will be added to output name ( 
+      0001.out.fq, 0002.out.fq...), disabled by default
+    inputBinding:
+      position: 101
+      prefix: --split
+  - id: split_by_lines
+    type:
+      - 'null'
+      - int
+    doc: split output by limiting lines of each file with this option(>=1000), a
+      sequential number prefix will be added to output name ( 0001.out.fq, 
+      0002.out.fq...), disabled by default
+    inputBinding:
+      position: 101
+      prefix: --split_by_lines
+  - id: split_prefix_digits
+    type:
+      - 'null'
+      - int
+    doc: the digits for the sequential number padding (1~10), default is 4, so 
+      the filename will be padded as 0001.xxx, 0 to disable padding
+    inputBinding:
+      position: 101
+      prefix: --split_prefix_digits
+  - id: cut_by_quality5
+    type:
+      - 'null'
+      - boolean
+    doc: DEPRECATED, use --cut_front instead.
+    inputBinding:
+      position: 101
+      prefix: --cut_by_quality5
+  - id: cut_by_quality3
+    type:
+      - 'null'
+      - boolean
+    doc: DEPRECATED, use --cut_tail instead.
+    inputBinding:
+      position: 101
+      prefix: --cut_by_quality3
+  - id: cut_by_quality_aggressive
+    type:
+      - 'null'
+      - boolean
+    doc: DEPRECATED, use --cut_right instead.
+    inputBinding:
+      position: 101
+      prefix: --cut_by_quality_aggressive
+  - id: discard_unmerged
+    type:
+      - 'null'
+      - boolean
+    doc: DEPRECATED, no effect now, see the introduction for merging.
+    inputBinding:
+      position: 101
+      prefix: --discard_unmerged
 outputs:
-  - id: output_fastq1
+  - id: output_out1
     type:
       - 'null'
       - File
-    doc: Output FASTQ file 1 (unpaired or read 1 of paired-end data). If not 
-      specified, output to stdout.
+    doc: read1 output file name
     outputBinding:
-      glob: $(inputs.output_fastq1_path)
-  - id: output_fastq2
+      glob: $(inputs.out1)
+  - id: output_out2
     type:
       - 'null'
       - File
-    doc: Output FASTQ file 2 (read 2 of paired-end data). If not specified, 
-      output to stdout.
+    doc: read2 output file name
     outputBinding:
-      glob: $(inputs.output_fastq2_path)
+      glob: $(inputs.out2)
+  - id: output_unpaired1
+    type:
+      - 'null'
+      - File
+    doc: for PE input, if read1 passed QC but read2 not, it will be written to 
+      unpaired1. Default is to discard it.
+    outputBinding:
+      glob: $(inputs.unpaired1)
+  - id: output_unpaired2
+    type:
+      - 'null'
+      - File
+    doc: for PE input, if read2 passed QC but read1 not, it will be written to 
+      unpaired2. If --unpaired2 is same as --unpaired1 (default mode), both 
+      unpaired reads will be written to this same file.
+    outputBinding:
+      glob: $(inputs.unpaired2)
+  - id: output_overlapped_out
+    type:
+      - 'null'
+      - File
+    doc: for each read pair, output the overlapped region if it has no any 
+      mismatched base.
+    outputBinding:
+      glob: $(inputs.overlapped_out)
+  - id: output_failed_out
+    type:
+      - 'null'
+      - File
+    doc: specify the file to store reads that cannot pass the filters.
+    outputBinding:
+      glob: $(inputs.failed_out)
+  - id: output_merged_out
+    type:
+      - 'null'
+      - File
+    doc: in the merging mode, specify the file name to store merged output, or 
+      specify --stdout to stream the merged output
+    outputBinding:
+      glob: $(inputs.merged_out)
   - id: output_json
     type:
       - 'null'
       - File
-    doc: Output JSON report file. If not specified, output to stdout.
+    doc: the json format report file name
     outputBinding:
-      glob: $(inputs.output_json_path)
+      glob: $(inputs.json)
   - id: output_html
     type:
       - 'null'
       - File
-    doc: Output HTML report file. If not specified, output to stdout.
+    doc: the html format report file name
     outputBinding:
-      glob: $(inputs.output_html_path)
+      glob: $(inputs.html)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastp:1.1.0--heae3180_0
+s:url: https://github.com/OpenGene/fastp
+$namespaces:
+  s: https://schema.org/

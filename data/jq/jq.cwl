@@ -1,91 +1,164 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jq
+baseCommand: /usr/local/bin/jq
 label: jq
-doc: "jq is a lightweight and flexible command-line JSON processor.\n\nTool homepage:
-  https://github.com/jquery/jquery"
+doc: jq is a tool for processing JSON inputs, applying the given filter to its 
+  JSON text inputs and producing the filter's results as JSON on standard 
+  output.
 inputs:
   - id: filter
     type: string
-    doc: The filter to apply to the JSON input (e.g., '.')
+    doc: jq filter to apply
     inputBinding:
       position: 1
-  - id: input_files
+  - id: files
     type:
       - 'null'
       - type: array
         items: File
-    doc: JSON files to process. If not specified, jq reads from stdin.
+    doc: JSON input file(s)
     inputBinding:
       position: 2
+  - id: compact_output
+    type:
+      - 'null'
+      - boolean
+    doc: compact instead of pretty-printed output
+    inputBinding:
+      position: 103
+      prefix: -c
+  - id: null_input
+    type:
+      - 'null'
+      - boolean
+    doc: use `null` as the single input value
+    inputBinding:
+      position: 103
+      prefix: -n
+  - id: exit_status
+    type:
+      - 'null'
+      - boolean
+    doc: set the exit status code based on the output
+    inputBinding:
+      position: 103
+      prefix: -e
+  - id: slurp
+    type:
+      - 'null'
+      - boolean
+    doc: read (slurp) all inputs into an array; apply filter to it
+    inputBinding:
+      position: 103
+      prefix: -s
+  - id: raw_output
+    type:
+      - 'null'
+      - boolean
+    doc: output raw strings, not JSON texts
+    inputBinding:
+      position: 103
+      prefix: -r
+  - id: raw_input
+    type:
+      - 'null'
+      - boolean
+    doc: read raw strings, not JSON texts
+    inputBinding:
+      position: 103
+      prefix: -R
+  - id: color_output
+    type:
+      - 'null'
+      - boolean
+    doc: colorize JSON
+    inputBinding:
+      position: 103
+      prefix: -C
+  - id: monochrome_output
+    type:
+      - 'null'
+      - boolean
+    doc: monochrome (don't colorize JSON)
+    inputBinding:
+      position: 103
+      prefix: -M
+  - id: sort_keys
+    type:
+      - 'null'
+      - boolean
+    doc: sort keys of objects on output
+    inputBinding:
+      position: 103
+      prefix: -S
+  - id: tab
+    type:
+      - 'null'
+      - boolean
+    doc: use tabs for indentation
+    inputBinding:
+      position: 103
+      prefix: --tab
   - id: arg
     type:
       - 'null'
       - type: array
         items: string
-    doc: Pass a value to the jq program as a predefined variable ($name).
+        inputBinding:
+          prefix: --arg
+          separate: true
+    doc: set variable $a to value <v>
     inputBinding:
       position: 103
-      prefix: --arg
   - id: argjson
     type:
       - 'null'
       - type: array
         items: string
-    doc: Pass a JSON-encoded value to the jq program as a predefined variable.
+        inputBinding:
+          prefix: --argjson
+          separate: true
+    doc: set variable $a to JSON value <v>
     inputBinding:
       position: 103
-      prefix: --argjson
-  - id: compact_output
-    type:
-      - 'null'
-      - boolean
-    doc: Output each JSON object on a single line.
-    inputBinding:
-      position: 103
-      prefix: --compact-output
-  - id: null_input
-    type:
-      - 'null'
-      - boolean
-    doc: Don't read any input at all; the filter is run once with null as the input.
-    inputBinding:
-      position: 103
-      prefix: --null-input
-  - id: raw_input
-    type:
-      - 'null'
-      - boolean
-    doc: Don't parse the input as JSON; treat each line of text as a string.
-    inputBinding:
-      position: 103
-      prefix: --raw-input
-  - id: raw_output
-    type:
-      - 'null'
-      - boolean
-    doc: If the filter's result is a string, write it directly to stdout rather than
-      as a JSON string.
-    inputBinding:
-      position: 103
-      prefix: --raw-output
-  - id: slurp
-    type:
-      - 'null'
-      - boolean
-    doc: Read the entire input stream into a large array and run the filter just once.
-    inputBinding:
-      position: 103
-      prefix: --slurp
   - id: slurpfile
     type:
       - 'null'
       - type: array
-        items: File
-    doc: Read all JSON objects from a file and bind them to a variable.
+        items: string
+        inputBinding:
+          prefix: --slurpfile
+          separate: true
+    doc: set variable $a to an array of JSON texts read from <f>
     inputBinding:
       position: 103
-      prefix: --slurpfile
+  - id: rawfile
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --rawfile
+          separate: true
+    doc: set variable $a to a string consisting of the contents of <f>
+    inputBinding:
+      position: 103
+  - id: args
+    type:
+      - 'null'
+      - boolean
+    doc: remaining arguments are string arguments, not files
+    inputBinding:
+      position: 103
+      prefix: --args
+  - id: jsonargs
+    type:
+      - 'null'
+      - boolean
+    doc: remaining arguments are JSON arguments, not files
+    inputBinding:
+      position: 103
+      prefix: --jsonargs
 outputs:
   - id: stdout
     type: stdout
@@ -94,3 +167,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jq:1.6
 stdout: jq.out
+s:url: https://github.com/jquery/jquery
+$namespaces:
+  s: https://schema.org/

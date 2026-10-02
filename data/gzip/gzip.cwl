@@ -2,24 +2,24 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gzip
 label: gzip
-doc: "Compress or expand files using Lempel-Ziv coding (LZ77)\n\nTool homepage: https://github.com/bazingagin/npc_gzip"
+doc: Compress or uncompress FILEs (by default, compress FILES in-place).
 inputs:
   - id: files
     type:
       - 'null'
       - type: array
         items: File
-    doc: Files to compress or decompress
+    doc: Files to compress or uncompress
     inputBinding:
       position: 1
-  - id: best
+  - id: stdout
     type:
       - 'null'
       - boolean
-    doc: compress better
+    doc: write on standard output, keep original files unchanged
     inputBinding:
       position: 102
-      prefix: --best
+      prefix: --stdout
   - id: decompress
     type:
       - 'null'
@@ -28,14 +28,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --decompress
-  - id: fast
-    type:
-      - 'null'
-      - boolean
-    doc: compress faster
-    inputBinding:
-      position: 102
-      prefix: --fast
   - id: force
     type:
       - 'null'
@@ -60,22 +52,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --list
-  - id: name
+  - id: license
     type:
       - 'null'
       - boolean
-    doc: save or restore the original name and time stamp
+    doc: display software license
     inputBinding:
       position: 102
-      prefix: --name
+      prefix: --license
   - id: no_name
     type:
       - 'null'
       - boolean
-    doc: do not save or restore the original name and time stamp
+    doc: do not save or restore the original name and timestamp
     inputBinding:
       position: 102
       prefix: --no-name
+  - id: name
+    type:
+      - 'null'
+      - boolean
+    doc: save or restore the original name and timestamp
+    inputBinding:
+      position: 102
+      prefix: --name
   - id: quiet
     type:
       - 'null'
@@ -92,14 +92,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --recursive
-  - id: stdout
+  - id: rsyncable
     type:
       - 'null'
       - boolean
-    doc: write on standard output, keep original files unchanged
+    doc: make rsync-friendly archive
     inputBinding:
       position: 102
-      prefix: --stdout
+      prefix: --rsyncable
   - id: suffix
     type:
       - 'null'
@@ -108,6 +108,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --suffix
+  - id: synchronous
+    type:
+      - 'null'
+      - boolean
+    doc: synchronous output (safer if system crashes, but slower)
+    inputBinding:
+      position: 102
+      prefix: --synchronous
   - id: test
     type:
       - 'null'
@@ -116,14 +124,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --test
-  - id: verbose
+  - id: fast
     type:
       - 'null'
       - boolean
-    doc: verbose mode
+    doc: compress faster
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: --fast
+  - id: best
+    type:
+      - 'null'
+      - boolean
+    doc: compress better
+    inputBinding:
+      position: 102
+      prefix: --best
 outputs:
   - id: stdout
     type: stdout
@@ -132,3 +148,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gzip:1.11
 stdout: gzip.out
+s:url: https://github.com/travist/jsencrypt
+$namespaces:
+  s: https://schema.org/

@@ -2,14 +2,32 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: interop_dumptext
 label: illumina-interop_dumptext
-doc: "Dump Illumina InterOp run metrics into a text format for analysis.\n\nTool homepage:
-  http://illumina.github.io/interop/index.html"
+doc: Dump InterOp metric data as text
 inputs:
   - id: run_folder
     type: Directory
-    doc: Path to the Illumina run folder containing InterOp files.
+    doc: Path to the run folder
     inputBinding:
       position: 1
+  - id: subset
+    type:
+      - 'null'
+      - int
+    doc: Number of metrics to subsample
+    inputBinding:
+      position: 102
+      prefix: --subset
+  - id: metric
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --metric
+          separate: true
+    doc: Name of metric to load, e.g. --metric=Tile to load TileMetricsOut.bin
+    inputBinding:
+      position: 102
 outputs:
   - id: stdout
     type: stdout
@@ -17,4 +35,7 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/illumina-interop:1.9.0--h503566f_0
-stdout: illumina-interop_dumptext.out
+stdout: interop_dumptext.out
+s:url: http://illumina.github.io/interop/index.html
+$namespaces:
+  s: https://schema.org/

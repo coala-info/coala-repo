@@ -3,7 +3,7 @@
 ## snippy
 
 ### Tool Description
-Rapid haploid variant calling and core genome alignment
+fast bacterial variant calling from NGS reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/snippy:4.6.0--hdfd78af_6
@@ -12,19 +12,55 @@ Rapid haploid variant calling and core genome alignment
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snippy/overview
-- **Total Downloads**: 137.9K
+- **Total Downloads**: 153.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tseemann/snippy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/snippy:4.6.0--hdfd78af_6' locally
-4.6.0--hdfd78af_6: Pulling from biocontainers/snippy
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-62d7ac64f9bf: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob3102324386: no space left on device
-
-Run 'docker run --help' for more information
+SYNOPSIS
+  snippy 4.6.0 - fast bacterial variant calling from NGS reads
+USAGE
+  snippy [options] --outdir <dir> --ref <ref> --R1 <R1.fq.gz> --R2 <R2.fq.gz>
+  snippy [options] --outdir <dir> --ref <ref> --ctgs <contigs.fa>
+  snippy [options] --outdir <dir> --ref <ref> --bam <reads.bam>
+GENERAL
+  --help           This help
+  --version        Print version and exit
+  --citation       Print citation for referencing snippy
+  --check          Check dependences are installed then exit (default OFF)
+  --force          Force overwrite of existing output folder (default OFF)
+  --quiet          No screen output (default OFF)
+RESOURCES
+  --cpus N         Maximum number of CPU cores to use (default '8')
+  --ram N          Try and keep RAM under this many GB (default '8')
+  --tmpdir F       Fast temporary storage eg. local SSD (default '/tmp')
+INPUT
+  --reference F    Reference genome. Supports FASTA, GenBank, EMBL (not GFF) (default '')
+  --R1 F           Reads, paired-end R1 (left) (default '')
+  --R2 F           Reads, paired-end R2 (right) (default '')
+  --se F           Single-end reads (default '')
+  --ctgs F         Don't have reads use these contigs (default '')
+  --peil F         Reads, paired-end R1/R2 interleaved (default '')
+  --bam F          Use this BAM file instead of aligning reads (default '')
+  --targets F      Only call SNPs from this BED file (default '')
+  --subsample n.n  Subsample FASTQ to this proportion (default '1')
+OUTPUT
+  --outdir F       Output folder (default '')
+  --prefix F       Prefix for output files (default 'snps')
+  --report         Produce report with visual alignment per variant (default OFF)
+  --cleanup        Remove most files not needed for snippy-core (inc. BAMs!) (default OFF)
+  --rgid F         Use this @RG ID: in the BAM header (default '')
+  --unmapped       Keep unmapped reads in BAM and write FASTQ (default OFF)
+PARAMETERS
+  --mapqual N      Minimum read mapping quality to consider (default '60')
+  --basequal N     Minimum base quality to consider (default '13')
+  --mincov N       Minimum site depth to for calling alleles (default '10')
+  --minfrac n.n    Minumum proportion for variant evidence (0=AUTO) (default '0')
+  --minqual n.n    Minumum QUALITY in VCF column 6 (default '100')
+  --maxsoft N      Maximum soft clipping to allow (default '10')
+  --bwaopt F       Extra BWA MEM options, eg. -x pacbio (default '')
+  --fbopt F        Extra Freebayes options, eg. --theta 1E-6 --read-snp-limit 2 (default '')
+SOURCE
+  https://github.com/tseemann/snippy - Torsten Seemann
 ```
-

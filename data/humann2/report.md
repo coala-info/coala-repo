@@ -43,7 +43,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Converting OCI blobs to SIF format
 FATAL:   Unable to handle docker://quay.io/biocontainers/humann2:2.8.1--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3439869234: no space left on device
 ```
-
 ## humann2_humann2_join_tables
 
 ### Tool Description
@@ -77,4 +76,3 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Converting OCI blobs to SIF format
 FATAL:   Unable to handle docker://quay.io/biocontainers/humann2:2.8.1--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1981155305: no space left on device
 ```
-

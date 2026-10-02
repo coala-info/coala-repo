@@ -77,7 +77,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Converting OCI blobs to SIF format
 FATAL:   Unable to handle docker://quay.io/biocontainers/humann:3.9--py312hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1502521354: no space left on device
 ```
-
 ## humann_humann_regroup_table
 
 ### Tool Description

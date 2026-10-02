@@ -21,8 +21,6 @@ Common transformation of FASTA/FASTQ sequences, including masking, partitioning,
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
 INFO:    Using cached SIF image
 ```
-
-
 ## seqtk_size
 
 ### Tool Description

@@ -1,33 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cat
+baseCommand: /usr/local/bin/cat
 label: coreutils_cat
-doc: "Concatenate FILE(s) to standard output.\n\nTool homepage: https://github.com/uutils/coreutils"
+doc: Concatenate FILE(s) to standard output.
 inputs:
   - id: files
     type:
       - 'null'
       - type: array
         items: File
-    doc: With no FILE, or when FILE is -, read standard input.
+    doc: FILE(s) to concatenate. With no FILE, or when FILE is -, read standard 
+      input.
     inputBinding:
       position: 1
-  - id: number
-    type:
-      - 'null'
-      - boolean
-    doc: number all output lines
-    inputBinding:
-      position: 102
-      prefix: --number
-  - id: number_nonblank
-    type:
-      - 'null'
-      - boolean
-    doc: number nonempty output lines, overrides -n
-    inputBinding:
-      position: 102
-      prefix: --number-nonblank
   - id: show_all
     type:
       - 'null'
@@ -36,6 +21,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --show-all
+  - id: number_nonblank
+    type:
+      - 'null'
+      - boolean
+    doc: number nonempty output lines, overrides -n
+    inputBinding:
+      position: 102
+      prefix: --number-nonblank
+  - id: show_nonprinting_ends
+    type:
+      - 'null'
+      - boolean
+    doc: equivalent to -vE
+    inputBinding:
+      position: 102
+      prefix: -e
   - id: show_ends
     type:
       - 'null'
@@ -44,22 +45,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --show-ends
-  - id: show_nonprinting
+  - id: number
     type:
       - 'null'
       - boolean
-    doc: use ^ and M- notation, except for LFD and TAB
+    doc: number all output lines
     inputBinding:
       position: 102
-      prefix: --show-nonprinting
-  - id: show_tabs
-    type:
-      - 'null'
-      - boolean
-    doc: display TAB characters as ^I
-    inputBinding:
-      position: 102
-      prefix: --show-tabs
+      prefix: --number
   - id: squeeze_blank
     type:
       - 'null'
@@ -68,6 +61,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --squeeze-blank
+  - id: show_nonprinting_tabs
+    type:
+      - 'null'
+      - boolean
+    doc: equivalent to -vT
+    inputBinding:
+      position: 102
+      prefix: -t
+  - id: show_tabs
+    type:
+      - 'null'
+      - boolean
+    doc: display TAB characters as ^I
+    inputBinding:
+      position: 102
+      prefix: --show-tabs
+  - id: ignored
+    type:
+      - 'null'
+      - boolean
+    doc: (ignored)
+    inputBinding:
+      position: 102
+      prefix: -u
+  - id: show_nonprinting
+    type:
+      - 'null'
+      - boolean
+    doc: use ^ and M- notation, except for LFD and TAB
+    inputBinding:
+      position: 102
+      prefix: --show-nonprinting
 outputs:
   - id: stdout
     type: stdout
@@ -75,4 +100,7 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5
-stdout: coreutils_cat.out
+stdout: cat.out
+s:url: https://github.com/uutils/coreutils
+$namespaces:
+  s: https://schema.org/

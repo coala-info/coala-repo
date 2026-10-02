@@ -1,23 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: env
+baseCommand: /usr/local/bin/env
 label: coreutils_env
-doc: "Set each NAME to VALUE in the environment and run COMMAND. If no COMMAND is
-  specified, print the resulting environment.\n\nTool homepage: https://github.com/uutils/coreutils"
+doc: Set each NAME to VALUE in the environment and run COMMAND.
 inputs:
-  - id: env_vars
+  - id: environment_variables
     type:
       - 'null'
       - type: array
         items: string
-    doc: Environment variable definitions in the form NAME=VALUE
+    doc: Set each NAME to VALUE in the environment
     inputBinding:
       position: 1
   - id: command
     type:
       - 'null'
       - string
-    doc: The command to execute
+    doc: Command to run
     inputBinding:
       position: 2
   - id: command_args
@@ -25,25 +24,17 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Arguments to pass to the command
+    doc: Arguments to pass to COMMAND
     inputBinding:
       position: 3
-  - id: chdir
+  - id: argv0
     type:
       - 'null'
-      - Directory
-    doc: change working directory to DIR
+      - string
+    doc: pass ARG as the zeroth argument of COMMAND
     inputBinding:
       position: 104
-      prefix: --chdir
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: print verbose information for each processing step
-    inputBinding:
-      position: 104
-      prefix: --debug
+      prefix: --argv0
   - id: ignore_environment
     type:
       - 'null'
@@ -60,24 +51,80 @@ inputs:
     inputBinding:
       position: 104
       prefix: --null
-  - id: split_string
-    type:
-      - 'null'
-      - string
-    doc: process and split S into separate arguments; used to pass multiple arguments
-      on shebang lines
-    inputBinding:
-      position: 104
-      prefix: --split-string
   - id: unset
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: remove variable from the environment
     inputBinding:
       position: 104
       prefix: --unset
+  - id: chdir
+    type:
+      - 'null'
+      - Directory
+    doc: change working directory to DIR
+    inputBinding:
+      position: 104
+      prefix: --chdir
+  - id: split_string
+    type:
+      - 'null'
+      - string
+    doc: process and split S into separate arguments; used to pass multiple 
+      arguments on shebang lines
+    inputBinding:
+      position: 104
+      prefix: --split-string
+  - id: block_signal
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: block delivery of SIG signal(s) to COMMAND
+    inputBinding:
+      position: 104
+      prefix: --block-signal=
+      separate: false
+      itemSeparator: ','
+  - id: default_signal
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: reset handling of SIG signal(s) to the default
+    inputBinding:
+      position: 104
+      prefix: --default-signal=
+      separate: false
+      itemSeparator: ','
+  - id: ignore_signal
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: set handling of SIG signal(s) to do nothing
+    inputBinding:
+      position: 104
+      prefix: --ignore-signal=
+      separate: false
+      itemSeparator: ','
+  - id: list_signal_handling
+    type:
+      - 'null'
+      - boolean
+    doc: list non default signal handling to stderr
+    inputBinding:
+      position: 104
+      prefix: --list-signal-handling
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: print verbose information for each processing step
+    inputBinding:
+      position: 104
+      prefix: --debug
 outputs:
   - id: stdout
     type: stdout
@@ -85,4 +132,7 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5
-stdout: coreutils_env.out
+stdout: env.out
+s:url: https://github.com/uutils/coreutils
+$namespaces:
+  s: https://schema.org/

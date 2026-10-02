@@ -2,85 +2,116 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gtfToGenePred
 label: ucsc-gtftogenepred
-doc: "Convert a GTF file to a genePred file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: convert a GTF file to a genePred
 inputs:
-  - id: input_gtf
+  - id: gtf
     type: File
     doc: Input GTF file
     inputBinding:
       position: 1
-  - id: all_errors
-    type:
-      - 'null'
-      - boolean
-    doc: Report all errors rather than just the first.
+  - id: gene_pred
+    type: string
+    doc: Output genePred file
     inputBinding:
-      position: 102
-      prefix: -allErrors
+      position: 2
   - id: gene_pred_ext
     type:
       - 'null'
       - boolean
-    doc: Create a genePredExt format file, including frame information and other
-      extra fields.
+    doc: create a extended genePred, including frame information and gene name
     inputBinding:
-      position: 102
+      position: 103
       prefix: -genePredExt
+  - id: all_errors
+    type:
+      - 'null'
+      - boolean
+    doc: skip groups with errors rather than aborting. Useful for getting 
+      infomation about as many errors as possible.
+    inputBinding:
+      position: 103
+      prefix: -allErrors
   - id: ignore_groups_without_exons
     type:
       - 'null'
       - boolean
-    doc: Ignore GTF groups that do not contain any exons.
+    doc: skip groups contain no exons rather than generate an error.
     inputBinding:
-      position: 102
+      position: 103
       prefix: -ignoreGroupsWithoutExons
-  - id: implied_stop
+  - id: info_out
+    type:
+      - 'null'
+      - string
+    doc: write a file with information on each transcript
+    inputBinding:
+      position: 103
+      prefix: -infoOut=
+      separate: false
+  - id: source_prefix
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: -sourcePrefix=
+          separate: false
+    doc: only process entries where the source name has the specified prefix. 
+      May be repeated.
+    inputBinding:
+      position: 103
+  - id: implied_stop_after_cds
     type:
       - 'null'
       - boolean
-    doc: The stop codon is implied and not explicitly defined in the GTF.
+    doc: implied stop codon in after CDS
     inputBinding:
-      position: 102
-      prefix: -impliedStop
+      position: 103
+      prefix: -impliedStopAfterCds
+  - id: simple
+    type:
+      - 'null'
+      - boolean
+    doc: just check column validity, not hierarchy, resulting genePred may be 
+      damaged
+    inputBinding:
+      position: 103
+      prefix: -simple
+  - id: gene_name_as_name2
+    type:
+      - 'null'
+      - boolean
+    doc: if specified, use gene_name for the name2 field instead of gene_id.
+    inputBinding:
+      position: 103
+      prefix: -geneNameAsName2
   - id: include_version
     type:
       - 'null'
       - boolean
-    doc: Include version in the geneId and transcriptId.
-    inputBinding:
-      position: 102
-      prefix: -includeVersion
-  - id: source_out
-    type:
-      - 'null'
-      - boolean
-    doc: Include the source field in the output.
-    inputBinding:
-      position: 102
-      prefix: -sourceOut
-  - id: info_out_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `info_out_path`
+    doc: it gene_version and/or transcript_version attributes exist, include the
+      version in the corresponding identifiers.
     inputBinding:
       position: 103
-      prefix: --info-out
+      prefix: -includeVersion
 outputs:
-  - id: output_genepred
+  - id: out_gene_pred
     type: File
     doc: Output genePred file
     outputBinding:
-      glob: '*.out'
-  - id: info_out
+      glob: $(inputs.gene_pred)
+  - id: output_info_out
     type:
       - 'null'
       - File
-    doc: Write information about the conversion to the specified file.
+    doc: write a file with information on each transcript
     outputBinding:
-      glob: $(inputs.info_out_path)
+      glob: $(inputs.info_out)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-gtftogenepred:482--h0b57e2e_0
+s:url: https://hgdownload.cse.ucsc.edu/admin/exe
+$namespaces:
+  s: https://schema.org/

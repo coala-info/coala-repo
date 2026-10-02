@@ -3,7 +3,7 @@
 ## ucsc-gtftogenepred
 
 ### Tool Description
-Convert a GTF file to a genePred file.
+convert a GTF file to a genePred
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-gtftogenepred:482--h0b57e2e_0
@@ -11,20 +11,28 @@ Convert a GTF file to a genePred file.
 - **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-gtftogenepred/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-gtftogenepred/overview
-- **Total Downloads**: 128.3K
-- **Last updated**: 2025-06-23
-- **GitHub**: https://github.com/ucscGenomeBrowser/kent
-- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-gtftogenepred:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+gtfToGenePred - convert a GTF file to a genePred
+usage:
+   gtfToGenePred gtf genePred
+
+options:
+     -genePredExt - create a extended genePred, including frame
+      information and gene name
+     -allErrors - skip groups with errors rather than aborting.
+      Useful for getting infomation about as many errors as possible.
+     -ignoreGroupsWithoutExons - skip groups contain no exons rather than
+      generate an error.
+     -infoOut=file - write a file with information on each transcript
+     -sourcePrefix=pre - only process entries where the source name has the
+      specified prefix.  May be repeated.
+     -impliedStopAfterCds - implied stop codon in after CDS
+     -simple    - just check column validity, not hierarchy, resulting genePred may be damaged
+     -geneNameAsName2 - if specified, use gene_name for the name2 field
+      instead of gene_id.
+     -includeVersion - it gene_version and/or transcript_version attributes exist, include the version
+      in the corresponding identifiers.
 ```
-
-
 ## Metadata
 - **Skill**: generated

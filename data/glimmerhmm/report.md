@@ -3,7 +3,7 @@
 ## glimmerhmm
 
 ### Tool Description
-GlimmerHMM is a gene finding system based on a Generalized Hidden Markov Model (GHMM).
+GlimmerHMM gene finder for eukaryotic genomes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimmerhmm:3.0.4--pl5321h503566f_10
@@ -12,17 +12,22 @@ GlimmerHMM is a gene finding system based on a Generalized Hidden Markov Model (
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/glimmerhmm/overview
-- **Total Downloads**: 214.7K
+- **Total Downloads**: 247.5K
 - **Last updated**: 2025-09-22
 - **GitHub**: https://github.com/kblin/glimmerhmm
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glimmerhmm:3.0.4--pl5321h503566f_10 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4282939800: no space left on device
+USAGE:  /usr/local/bin/glimmerhmm <genome1-file> <training-dir-for-genome1> [options] 
+Options:
+-p file_name     If protein domain searches are available, read them from file file_name
+-d dir_name      Training directory is specified by dir_name (introduced for compatibility with earlier versions)
+-o file_name     Print output in file_name; if n>1 for top best predictions, output is in file_name.1, file_name.2, ... , file_name.n f
+-n n             Print top n best predictions
+-g               Print output in gff format
+-v               Don't use svm splice site predictions
+-f               Don't make partial gene predictions
+-h               Display the options of the program
 ```
-
-
 ## Metadata
 - **Skill**: generated

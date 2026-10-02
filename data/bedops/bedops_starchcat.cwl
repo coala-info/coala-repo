@@ -2,41 +2,60 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: starchcat
 label: bedops_starchcat
-doc: "Concatenate multiple starch files into a single starch file. Note: The provided
-  input text appears to be a system error log rather than help text; arguments are
-  derived from standard tool documentation.\n\nTool homepage: http://bedops.readthedocs.io"
+doc: Concatenate, update metadata, or recompress lexicographically-sorted, 
+  headerless starch archives, performing a multiset union operation and sending 
+  compressed data to standard output.
 inputs:
-  - id: inputs
+  - id: starch_files
     type:
       type: array
       items: File
-    doc: One or more starch files to concatenate
+    doc: Lexicographically-sorted, headerless starch archive(s). At least one is
+      required.
     inputBinding:
       position: 1
-  - id: header
-    type:
-      - 'null'
-      - boolean
-    doc: Include a header in the output
-    inputBinding:
-      position: 102
-      prefix: --header
   - id: note
     type:
       - 'null'
       - string
-    doc: Append a note to the output archive metadata
+    doc: Append note to output archive metadata (optional).
     inputBinding:
       position: 102
       prefix: --note
-  - id: remap
+  - id: bzip2
     type:
       - 'null'
       - boolean
-    doc: Re-compress the data (useful if input files use different compression parameters)
+    doc: Specify backend compression type (optional, default is bzip2).
     inputBinding:
       position: 102
-      prefix: --remap
+      prefix: --bzip2
+  - id: gzip
+    type:
+      - 'null'
+      - boolean
+    doc: Specify backend compression type.
+    inputBinding:
+      position: 102
+      prefix: --gzip
+  - id: omit_signature
+    type:
+      - 'null'
+      - boolean
+    doc: Skip generating per-chromosome data integrity signature (optional, 
+      default is to generate signature).
+    inputBinding:
+      position: 102
+      prefix: --omit-signature
+  - id: report_progress
+    type:
+      - 'null'
+      - int
+    doc: Report compression progress every N elements per chromosome to standard
+      error stream (optional)
+    inputBinding:
+      position: 102
+      prefix: --report-progress
 outputs:
   - id: stdout
     type: stdout
@@ -44,4 +63,7 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedops:2.4.42--hd6d6fdc_1
-stdout: bedops_starchcat.out
+stdout: starchcat.out
+s:url: http://bedops.readthedocs.io
+$namespaces:
+  s: https://schema.org/

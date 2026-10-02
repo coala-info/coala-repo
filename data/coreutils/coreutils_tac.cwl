@@ -1,16 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tac
+baseCommand: /usr/local/bin/tac
 label: coreutils_tac
-doc: "Write each FILE to standard output, last line first. With no FILE, or when FILE
-  is -, read standard input.\n\nTool homepage: https://github.com/uutils/coreutils"
+doc: Write each FILE to standard output, last line first. With no FILE, or when 
+  FILE is -, read standard input.
 inputs:
-  - id: input_files
+  - id: files
     type:
       - 'null'
       - type: array
         items: File
-    doc: Input files to be processed
+    doc: FILE(s) to write to standard output, last line first.
     inputBinding:
       position: 1
   - id: before
@@ -44,4 +44,7 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5
-stdout: coreutils_tac.out
+stdout: tac.out
+s:url: https://github.com/uutils/coreutils
+$namespaces:
+  s: https://schema.org/

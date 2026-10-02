@@ -3,7 +3,7 @@
 ## busco
 
 ### Tool Description
-BUSCO: Assessing genome assembly and annotation completeness with Benchmarking Universal Single-Copy Orthologs
+Benchmarking Universal Single-Copy Ortholog assessment tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/busco:6.0.0--pyhdfd78af_2
@@ -12,15 +12,73 @@ BUSCO: Assessing genome assembly and annotation completeness with Benchmarking U
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/busco/overview
-- **Total Downloads**: 366.6K
-- **Last updated**: 2025-12-02
+- **Total Downloads**: 458.6K
+- **Last updated**: 2026-08-19
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/37d5f4479dcb002f58b9e52868642cdd54991b209138d8c42d0d381adc8c3b1d: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/busco:6.0.0--pyhdfd78af_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2148299425: no space left on device
-```
+usage: busco -i [SEQUENCE_FILE] -l [LINEAGE] -o [OUTPUT_NAME] -m [MODE] [OTHER OPTIONS]
 
+Welcome to BUSCO 6.0.0: the Benchmarking Universal Single-Copy Ortholog assessment tool.
+For more detailed usage information, please review the README file provided with this distribution and the BUSCO user guide. Visit this page https://gitlab.com/ezlab/busco#how-to-cite-busco to see how to cite BUSCO
+
+optional arguments:
+  -i SEQUENCE_FILE, --in SEQUENCE_FILE
+                        Input sequence file in FASTA format. Can be an assembled genome or transcriptome (DNA), or protein sequences from an annotated gene set. Also possible to use a path to a directory containing multiple input files.
+  -o OUTPUT, --out OUTPUT
+                        Give your analysis run a recognisable short name. Output folders and files will be labelled with this name. The path to the output folder is set with --out_path.
+  -m MODE, --mode MODE  Specify which BUSCO analysis mode to run.
+                        There are three valid modes:
+                        - geno or genome, for genome assemblies (DNA)
+                        - tran or transcriptome, for transcriptome assemblies (DNA)
+                        - prot or proteins, for annotated gene sets (protein)
+  -l LINEAGE, --lineage_dataset LINEAGE
+                        Specify the name of the BUSCO lineage to be used.
+  --augustus            Use augustus gene predictor for eukaryote runs
+  --augustus_parameters "--PARAM1=VALUE1,--PARAM2=VALUE2"
+                        Pass additional arguments to Augustus. All arguments should be contained within a single string with no white space, with each argument separated by a comma.
+  --augustus_species AUGUSTUS_SPECIES
+                        Specify a species for Augustus training.
+  --auto-lineage        Run auto-lineage to find optimum lineage path
+  --auto-lineage-euk    Run auto-placement just on eukaryote tree to find optimum lineage path
+  --auto-lineage-prok   Run auto-lineage just on non-eukaryote trees to find optimum lineage path
+  -c N, --cpu N         Specify the number (N=integer) of threads/cores to use.
+  --config CONFIG_FILE  Provide a config file
+  --contig_break n      Number of contiguous Ns to signify a break between contigs. Default is n=10.
+  --datasets_version DATASETS_VERSION
+                        Specify the version of BUSCO datasets, e.g. odb10, odb12 (default odb12)
+  --download [dataset ...]
+                        Download dataset. Possible values are a specific dataset name, "all", "prokaryota", "eukaryota", or "virus". If used together with other command line arguments, make sure to place this last.
+  --download_base_url DOWNLOAD_BASE_URL
+                        Set the url to the remote BUSCO dataset location
+  --download_path DOWNLOAD_PATH
+                        Specify local filepath for storing BUSCO dataset downloads
+  -e N, --evalue N      E-value cutoff for BLAST searches. Allowed formats, 0.001 or 1e-03 (Default: 1e-03)
+  -f, --force           Force rewriting of existing files. Must be used when output files with the provided name already exist.
+  -h, --help            Show this help message and exit
+  --limit N             How many candidate regions (contig or transcript) to consider per BUSCO (default: 3)
+  --list-datasets [LIST_DATASETS]
+                        Print the list of available BUSCO datasets
+  --long                Optimization Augustus self-training mode (Default: Off); adds considerably to the run time, but can improve results for some non-model organisms
+  --metaeuk             Use Metaeuk gene predictor
+  --metaeuk_parameters "--PARAM1=VALUE1,--PARAM2=VALUE2"
+                        Pass additional arguments to Metaeuk for the first run. All arguments should be contained within a single string with no white space, with each argument separated by a comma.
+  --metaeuk_rerun_parameters "--PARAM1=VALUE1,--PARAM2=VALUE2"
+                        Pass additional arguments to Metaeuk for the second run. All arguments should be contained within a single string with no white space, with each argument separated by a comma.
+  --miniprot            Use Miniprot gene predictor
+  --skip_bbtools        Skip BBTools for assembly statistics
+  --offline             To indicate that BUSCO cannot attempt to download files
+  --opt-out-run-stats   Opt out of data collection. Information on the data collected is available in the user guide.
+  --out_path OUTPUT_PATH
+                        Optional location for results folder, excluding results folder name. Default is current working directory.
+  --plot WORKING_DIRECTORY
+                        Generate a BUSCO summary plot for all short summary files in the given working directory.
+  --plot_percentages    Plot the percentages of BUSCOs instead of the number of BUSCOs. To be used as an option with --plot.
+  -q, --quiet           Disable the info logs, displays only errors
+  -r, --restart         Continue a run that had already partially completed.
+  --scaffold_composition
+                        Writes ACGTN content per scaffold to a file scaffold_composition.txt
+  --tar                 Compress some subdirectories with many files to save space
+  -v, --version         Show this version and exit
+```

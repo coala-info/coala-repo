@@ -2,59 +2,97 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: nibFrag
 label: ucsc-nibfrag
-doc: "Extract sequence from a .nib file. The .nib file is a binary format used by
-  UCSC to store DNA sequences, with 4 bits per base.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: Extract part of a nib file as .fa (all bases/gaps lower case by default)
 inputs:
   - id: nib_file
     type: File
-    doc: The input .nib file.
+    doc: Input nib file
     inputBinding:
       position: 1
   - id: start
     type: int
-    doc: Start position in the nib file (0-based).
+    doc: Start position
     inputBinding:
       position: 2
   - id: end
     type: int
-    doc: End position in the nib file (non-inclusive).
+    doc: End position
     inputBinding:
       position: 3
   - id: strand
     type: string
-    doc: "Strand: '+' or '-'."
+    doc: 'Strand: + (plus) or m (minus)'
     inputBinding:
       position: 4
-  - id: hard_masked
-    type:
-      - 'null'
-      - boolean
-    doc: Use Ns for masked sequence.
+  - id: out_fa
+    type: string
+    doc: Output fasta file
     inputBinding:
-      position: 105
-      prefix: -hardMasked
+      position: 5
   - id: masked
     type:
       - 'null'
       - boolean
-    doc: Use lower case for masked sequence.
+    doc: Use lower-case characters for bases meant to be masked out.
     inputBinding:
-      position: 105
+      position: 106
       prefix: -masked
+  - id: hard_masked
+    type:
+      - 'null'
+      - boolean
+    doc: Use upper-case for not masked-out, and 'N' characters for masked-out 
+      bases.
+    inputBinding:
+      position: 106
+      prefix: -hardMasked
   - id: upper
     type:
       - 'null'
       - boolean
-    doc: Use upper case for all sequence.
+    doc: Use upper-case characters for all bases.
     inputBinding:
-      position: 105
+      position: 106
       prefix: -upper
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: Use given name after '>' in output sequence.
+    inputBinding:
+      position: 106
+      prefix: -name=
+      separate: false
+  - id: db_header
+    type:
+      - 'null'
+      - string
+    doc: Add full database info to the header, with or without -name option.
+    inputBinding:
+      position: 106
+      prefix: -dbHeader=
+      separate: false
+  - id: tba_header
+    type:
+      - 'null'
+      - string
+    doc: Format header for compatibility with tba, takes database name as 
+      argument.
+    inputBinding:
+      position: 106
+      prefix: -tbaHeader=
+      separate: false
 outputs:
-  - id: output_fasta
+  - id: out_out_fa
     type: File
-    doc: The output .fa file.
+    doc: Output fasta file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_fa)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-nibfrag:482--h0b57e2e_0
+s:url: https://hgdownload.cse.ucsc.edu/admin/exe
+$namespaces:
+  s: https://schema.org/

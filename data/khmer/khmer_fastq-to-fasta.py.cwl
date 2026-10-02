@@ -1,40 +1,68 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: khmer_fastq-to-fasta.py
+baseCommand: fastq-to-fasta.py
 label: khmer_fastq-to-fasta.py
-doc: "Convert FASTQ files to FASTA format.\n\nTool homepage: https://khmer.readthedocs.io/"
+doc: Converts FASTQ format (.fq) files to FASTA format (.fa).
 inputs:
-  - id: input_filenames
-    type:
-      type: array
-      items: File
-    doc: Input FASTQ file(s)
+  - id: input_sequence
+    type: File
+    doc: The name of the input FASTQ sequence file.
     inputBinding:
       position: 1
-  - id: no_discard
+  - id: info
     type:
       - 'null'
       - boolean
-    doc: Do not discard sequences containing Ns
+    doc: print citation information
     inputBinding:
       position: 102
-      prefix: --no-discard
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
-outputs:
+      prefix: --info
   - id: output
     type:
       - 'null'
+      - string
+    doc: The name of the output FASTA sequence file.
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: n_keep
+    type:
+      - 'null'
+      - boolean
+    doc: Option to keep reads containing 'N's in input_sequence file. Default is
+      to drop reads
+    inputBinding:
+      position: 102
+      prefix: --n_keep
+  - id: gzip
+    type:
+      - 'null'
+      - boolean
+    doc: Compress output using gzip
+    inputBinding:
+      position: 102
+      prefix: --gzip
+  - id: bzip
+    type:
+      - 'null'
+      - boolean
+    doc: Compress output using bzip2
+    inputBinding:
+      position: 102
+      prefix: --bzip
+outputs:
+  - id: output_output
+    type:
+      - 'null'
       - File
-    doc: Output FASTA file
+    doc: The name of the output FASTA sequence file.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khmer:3.0.0a1--py36hfc679d8_0
+s:url: https://khmer.readthedocs.io/
+$namespaces:
+  s: https://schema.org/

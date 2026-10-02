@@ -2,58 +2,120 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: CRISPRessoAggregate
 label: crispresso2_CRISPRessoAggregate
-doc: "CRISPRessoAggregate is a tool for aggregating and comparing results from multiple
-  CRISPResso2 analysis runs.\n\nTool homepage: https://github.com/pinellolab/CRISPResso2"
+doc: Aggregate CRISPResso2 Runs
 inputs:
-  - id: control_id
-    type:
-      - 'null'
-      - string
-    doc: The ID of the control sample to which other samples will be compared.
-    inputBinding:
-      position: 101
-      prefix: --control_id
-  - id: labels
+  - id: prefix
     type:
       - 'null'
       - type: array
         items: string
-    doc: Labels to use for each input folder in the aggregation plots.
+        inputBinding:
+          prefix: --prefix
+          separate: true
+    doc: Prefix for CRISPResso folders to aggregate (may be specified multiple 
+      times)
     inputBinding:
       position: 101
-      prefix: --labels
-  - id: name
+  - id: suffix
     type:
       - 'null'
       - string
-    doc: Name of the aggregation run.
+    doc: Suffix for CRISPResso folders to aggregate
+    inputBinding:
+      position: 101
+      prefix: --suffix
+  - id: name
+    type: string
+    doc: Output name of the report
     inputBinding:
       position: 101
       prefix: --name
-  - id: outputs
-    type:
-      type: array
-      items: Directory
-    doc: List of output folders from CRISPResso2 runs to be aggregated.
-    inputBinding:
-      position: 101
-      prefix: --outputs
-  - id: output_folder_path
-    type: string
-    doc: Output or path parameter `output_folder_path`
-    inputBinding:
-      position: 102
-      prefix: --output-folder
-outputs:
-  - id: output_folder
+  - id: min_reads_for_inclusion
     type:
       - 'null'
-      - Directory
-    doc: Folder where the aggregated results will be written.
-    outputBinding:
-      glob: $(inputs.output_folder_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - int
+    doc: Minimum number of reads for a run to be included in the run summary
+    inputBinding:
+      position: 101
+      prefix: --min_reads_for_inclusion
+  - id: place_report_in_output_folder
+    type:
+      - 'null'
+      - boolean
+    doc: If true, report will be written inside the CRISPResso output folder. By
+      default, the report will be written one directory up from the report 
+      output.
+    inputBinding:
+      position: 101
+      prefix: --place_report_in_output_folder
+  - id: suppress_report
+    type:
+      - 'null'
+      - boolean
+    doc: Suppress output report
+    inputBinding:
+      position: 101
+      prefix: --suppress_report
+  - id: suppress_plots
+    type:
+      - 'null'
+      - boolean
+    doc: Suppress output plots
+    inputBinding:
+      position: 101
+      prefix: --suppress_plots
+  - id: max_samples_per_summary_plot
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of samples on each page of the pdf report plots. If this
+      number gets above ~150, they will be too big for matplotlib.
+    inputBinding:
+      position: 101
+      prefix: --max_samples_per_summary_plot
+  - id: n_processes
+    type:
+      - 'null'
+      - string
+    doc: Specify the number of processes to use for analysis. Please use with 
+      caution since increasing this parameter will significantly increase the 
+      memory required to run CRISPResso. Can be set to 'max'.
+    inputBinding:
+      position: 101
+      prefix: --n_processes
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Show debug messages
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: halt_on_plot_fail
+    type:
+      - 'null'
+      - boolean
+    doc: Halt execution if a plot fails to generate
+    inputBinding:
+      position: 101
+      prefix: --halt_on_plot_fail
+  - id: use_matplotlib
+    type:
+      - 'null'
+      - boolean
+    doc: Use matplotlib for plotting instead of plotly/d3 when CRISPRessoPro is 
+      installed
+    inputBinding:
+      position: 101
+      prefix: --use_matplotlib
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crispresso2:2.3.3--py39hff726c5_0
+stdout: CRISPRessoAggregate.out
+s:url: https://github.com/pinellolab/CRISPResso2
+$namespaces:
+  s: https://schema.org/

@@ -3,7 +3,7 @@
 ## t_coffee
 
 ### Tool Description
-T-Coffee is a multiple sequence alignment program. It can be used to align protein and nucleic acid sequences. T-Coffee can also be used to align structural information.
+T-COFFEE multiple sequence alignment package
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/t-coffee:13.46.2.7c9e712d--pl5321hb2a3317_0
@@ -12,158 +12,1343 @@ T-Coffee is a multiple sequence alignment program. It can be used to align prote
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/t_coffee/overview
-- **Total Downloads**: 221.2K
+- **Total Downloads**: 231.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jashkenas/coffee-script-tmbundle
 - **Stars**: N/A
 ### Original Help Text
 ```text
-#######   Compiling the list of available methods ... (will take a few seconds)
+PROGRAM: T-COFFEE Version_13.46.2.7c9e712d (2025-10-02 10:50:34 - Revision 374df473 - Build 1167)
+PARAMETER   : -no_error_report
+USAGE       : Limit the maximum memory usage (in Megabytes). 0: no limit
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
 
-#######   Methods For which an Interface is available in T-Coffee
-You must install the packages yourself when required (use the provided address)
-Contact us if you need an extra method to be added [cedric.notredame@gmail.com]
+PARAMETER   : -parameters
+USAGE       : get bottom parameters
+MAX_N_VALUES: 1
+DEFAULT     : NULL OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : R_F
 
-****** Pairwise Sequence Alignment Methods:
---------------------------------------------
-test_pair            built_in                                                   [pg:        t_coffee is  Installed][built_in]
-fast_pair            built_in                                                   [pg:        t_coffee is  Installed][built_in]
-exon3_pair           built_in                                                   [pg:        t_coffee is  Installed][built_in]
-exon2_pair           built_in                                                   [pg:        t_coffee is  Installed][built_in]
-exon_pair            built_in                                                   [pg:        t_coffee is  Installed][built_in]
-blastr_pair          built_in                                                   [pg:        t_coffee is  Installed][built_in]
-promo_pair           built_in                                                   [pg:        t_coffee is  Installed][built_in]
-clean_slow_pair      built_in                                                   [pg:        t_coffee is  Installed][built_in]
-slow_pair            built_in                                                   [pg:        t_coffee is  Installed][built_in]
-hash_pair            built_in                                                   [pg:        t_coffee is  Installed][built_in]
-biphasic_pair        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-proba_prfpair        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-fs_pair              built_in                                                   [pg:        t_coffee is  Installed][built_in]
-proba_pair           built_in                                                   [pg:        t_coffee is  Installed][built_in]
-best_pair4prot       built_in                                                   [pg:        t_coffee is  Installed][built_in]
-best_pair4rna        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-lalign_id_pair       built_in                                                   [pg:        t_coffee is  Installed][built_in]
-fs_lalign_id_pair    built_in                                                   [pg:        t_coffee is  Installed][built_in]
-seq_pair             built_in                                                   [pg:        t_coffee is  Installed][built_in]
-externprofile_pair   built_in                                                   [pg:        t_coffee is  Installed][built_in]
-hh_pair              built_in                                                   [pg:        t_coffee is  Installed][built_in]
-co_pair              built_in                                                   [pg:        t_coffee is  Installed][built_in]
-cwprofile_pair       built_in                                                   [pg:        t_coffee is  Installed][built_in]
-cdna_fast_pair       built_in                                                   [pg:        t_coffee is  Installed][built_in]
-cdna_cfast_pair      built_in                                                   [pg:        t_coffee is  Installed][built_in]
-old_clustalo_pair    http://www.clustal.org/omega/                              [pg:        clustalo is  Installed][/usr/local/bin//clustalo]
-mafftsparsecore_pair http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-dynamic_pair         built_in                                                   [pg:        t_coffee is  Installed][built_in]
-3dcoffee_pair        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-expresso_pair        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-accurate_pair        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-psicoffee_pair       built_in                                                   [pg:        t_coffee is  Installed][built_in]
-clustaloNF_pair      http://www.clustal.org/omega/                              [pg:        clustalo is  Installed][/usr/local/bin//clustalo]
-clustalw2_pair       http://www.clustal.org                                     [pg:       clustalw2 is  Installed][/usr/local/bin//clustalw2]
-clustalw_pair        http://www.clustal.org                                     [pg:        clustalw is  Installed][/usr/local/bin//clustalw]
-uppNF_pair           http://www.cs.utexas.edu/users/phylo/software/upp/         [pg:             upp is NOT Installed][]
-upp_pair             http://www.cs.utexas.edu/users/phylo/software/upp/         [pg:             upp is NOT Installed][]
-msa_pair             https://www.ncbi.nlm.nih.gov/CBBresearch/Schaffer/msa.html [pg:             msa is NOT Installed][]
-dca_pair             https://bibiserv2.cebitec.uni-bielefeld.de/dca             [pg:             dca is NOT Installed][]
-dialigntx_pair       http://dialign-tx.gobics.de/                               [pg:      dialign-tx is  Installed][/usr/local/bin//dialign-tx]
-dialignt_pair        http://dialign-tx.gobics.de/                               [pg:       dialign-t is NOT Installed][]
-poa_pair             http://www.bioinformatics.ucla.edu/poa/                    [pg:             poa is  Installed][/usr/local/bin//poa]
-msaprobs_pair        http://msaprobs.sourceforge.net/homepage.htm#latest        [pg:        msaprobs is NOT Installed][]
-probcons_pair        http://probcons.stanford.edu/                              [pg:        probcons is  Installed][/usr/local/bin//probcons]
-probconsRNA_pair     http://probcons.stanford.edu/                              [pg:     probconsRNA is  Installed][/usr/local/bin//probconsRNA]
-muscle_pair          http://www.drive5.com/muscle/                              [pg:          muscle is  Installed][/usr/local/bin//muscle]
-mus4_pair            http://www.drive5.com/muscle/                              [pg:            mus4 is NOT Installed][]
-t_coffee_pair        http://www.tcoffee.org                                     [pg:        t_coffee is  Installed][/usr/local/bin//t_coffee]
-pcma_pair            http://prodata.swmed.edu/pcma/pcma.php                     [pg:            pcma is NOT Installed][]
-kalign_pair          http://msa.cgb.ki.se                                       [pg:          kalign is  Installed][/usr/local/bin//kalign]
-amap_pair            http://bio.math.berkeley.edu/amap/                         [pg:            amap is NOT Installed][]
-proda_pair           http://proda.stanford.edu                                  [pg:           proda is  Installed][/usr/local/bin//proda]
-prank_pair           http://www.ebi.ac.uk/goldman-srv/prank/                    [pg:           prank is  Installed][/usr/local/bin//prank]
-fsa_pair             http://fsa.sourceforge.net/                                [pg:             fsa is NOT Installed][]
-consan_pair          http://selab.janelia.org/software/consan/                  [pg:           sfold is  Installed][/usr/local/bin//sfold]
-famsa_pair           famsa                                                      [pg:           famsa is  Installed][/usr/local/bin//famsa]
+PARAMETER   : -mode
+USAGE       : specifies a special mode: genome, quickaln, dali, 3dcoffee
+MAX_N_VALUES: 100
+DEFAULT     : unspecified OR HARD_CODED (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
 
-****** Pairwise Structural Alignment Methods:
---------------------------------------------
-align_pdbpair        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-lalign_pdbpair       built_in                                                   [pg:        t_coffee is  Installed][built_in]
-extern_pdbpair       built_in                                                   [pg:        t_coffee is  Installed][built_in]
-thread_pair          built_in                                                   [pg:        t_coffee is  Installed][built_in]
-fugue_pair           http://mizuguchilab.org/fugue/                             [pg:        fugueali is NOT Installed][]
-pdb_pair             built_in                                                   [pg:        t_coffee is  Installed][built_in]
-sap_pair             https://mathbio.crick.ac.uk/wiki/Software#SAP              [pg:             sap is  Installed][/usr/local/bin//sap]
-sara_pair            built_in                                                   [pg:        t_coffee is  Installed][built_in]
-daliweb_pair         built_in                                                   [pg:     dalilite.pl is  Installed][built_in]
-dali_pair            built_in                                                   [pg:     dalilite.pl is  Installed][built_in]
-mustang_pair         http://lcb.infotech.monash.edu.au/mustang/                 [pg:         mustang is  Installed][/usr/local/bin//mustang]
-TMalign_pair         http://zhanglab.ccmb.med.umich.edu/TM-align/TMalign.f      [pg:         TMalign is  Installed][/usr/local/bin//TMalign]
+PARAMETER   : -special_mode
+USAGE       : [DEPRECATED ** -special_mode is deprected use -mode instead]
+MAX_N_VALUES: 100
+DEFAULT     : unspecified OR HARD_CODED (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
 
-****** Multiple Sequence Alignment Methods:
---------------------------------------------
-ktup_msa             built_in                                                   [pg:        t_coffee is  Installed][built_in]
-blastp_msa           ftp://ftp.ncbi.nih.gov/blast/executables/LATEST            [pg: legacy_blast.pl is NOT Installed][]
-old_clustalo_msa     http://www.clustal.org/omega/                              [pg:        clustalo is  Installed][/usr/local/bin//clustalo]
-dynamic_msa          built_in                                                   [pg:        t_coffee is  Installed][built_in]
-3dcoffee_msa         built_in                                                   [pg:        t_coffee is  Installed][built_in]
-expresso_msa         built_in                                                   [pg:        t_coffee is  Installed][built_in]
-accurate_msa         built_in                                                   [pg:        t_coffee is  Installed][built_in]
-psicoffee_msa        built_in                                                   [pg:        t_coffee is  Installed][built_in]
-famsa_msa            https://github.com/refresh-bio/FAMSA                       [pg:           famsa is  Installed][/usr/local/bin//famsa]
-clustalo_msa         http://www.clustal.org/omega/                              [pg:        clustalo is  Installed][/usr/local/bin//clustalo]
-mafft_msa            http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-mafftginsi_msa       http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-mafftfftns1_msa      http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-mafftfftnsi_msa      http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-mafftnwnsi_msa       http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-mafftsparsecore_msa  http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-mafftsparsecore_msa  http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-mafftlinsi_msa       http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-maffteinsi_msa       http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-maffteinsi_pair      http://align.bmr.kyushu-u.ac.jp/mafft/online/server/       [pg:           mafft is  Installed][/usr/local/bin//mafft]
-clustaloNF_msa       http://www.clustal.org/omega/                              [pg:        clustalo is  Installed][/usr/local/bin//clustalo]
-clustalw2_msa        http://www.clustal.org                                     [pg:       clustalw2 is  Installed][/usr/local/bin//clustalw2]
-clustalw_msa         http://www.clustal.org                                     [pg:        clustalw is  Installed][/usr/local/bin//clustalw]
-uppNF_msa            http://www.cs.utexas.edu/users/phylo/software/upp/         [pg:             upp is NOT Installed][]
-upp_msa              http://www.cs.utexas.edu/users/phylo/software/upp/         [pg:             upp is NOT Installed][]
-msa_msa              https://www.ncbi.nlm.nih.gov/CBBresearch/Schaffer/msa.html [pg:             msa is NOT Installed][]
-dca_msa              https://bibiserv2.cebitec.uni-bielefeld.de/dca             [pg:             dca is NOT Installed][]
-dialigntx_msa        http://dialign-tx.gobics.de/                               [pg:      dialign-tx is  Installed][/usr/local/bin//dialign-tx]
-dialignt_msa         http://dialign-tx.gobics.de/                               [pg:       dialign-t is NOT Installed][]
-poa_msa              http://www.bioinformatics.ucla.edu/poa/                    [pg:             poa is  Installed][/usr/local/bin//poa]
-msaprobs_msa         http://msaprobs.sourceforge.net/homepage.htm#latest        [pg:        msaprobs is NOT Installed][]
-probcons_msa         http://probcons.stanford.edu/                              [pg:        probcons is  Installed][/usr/local/bin//probcons]
-probconsRNA_msa      http://probcons.stanford.edu/                              [pg:     probconsRNA is  Installed][/usr/local/bin//probconsRNA]
-muscle_msa           http://www.drive5.com/muscle/                              [pg:          muscle is  Installed][/usr/local/bin//muscle]
-mus4_msa             http://www.drive5.com/muscle/                              [pg:            mus4 is NOT Installed][]
-t_coffee_msa         http://www.tcoffee.org                                     [pg:        t_coffee is  Installed][/usr/local/bin//t_coffee]
-pcma_msa             http://prodata.swmed.edu/pcma/pcma.php                     [pg:            pcma is NOT Installed][]
-kalign_msa           http://msa.cgb.ki.se                                       [pg:          kalign is  Installed][/usr/local/bin//kalign]
-amap_msa             http://bio.math.berkeley.edu/amap/                         [pg:            amap is NOT Installed][]
-proda_msa            http://proda.stanford.edu                                  [pg:           proda is  Installed][/usr/local/bin//proda]
-fsa_msa              http://fsa.sourceforge.net/                                [pg:             fsa is NOT Installed][]
-tblastx_msa          ftp://ftp.ncbi.nih.gov/blast/executables/LATEST            [pg: legacy_blast.pl is NOT Installed][]
-tblastpx_msa         ftp://ftp.ncbi.nih.gov/blast/executables/LATEST            [pg: legacy_blast.pl is NOT Installed][]
-plib_msa             www.tcoffee.org                                            [pg:        t_coffee is  Installed][/usr/local/bin//t_coffee]
-famsa_msa            famsa                                                      [pg:           famsa is  Installed][/usr/local/bin//famsa]
+PARAMETER   : -t_coffee_defaults
+USAGE       : get top parameters
+MAX_N_VALUES: 1
+DEFAULT     : NULL OR NULL (when flag set)
+RANGE       : [any]...[]
+TYPE        : R_F
 
-#######   Prediction Methods available to generate Templates
--------------------------------------------------------------
-RNAplfold            http://www.tbi.univie.ac.at/RNA/                           [pg:       RNAplfold is  Installed][/usr/local/bin//RNAplfold]
-HMMtop               www.enzim.hu/hmmtop/                                       [pg:          hmmtop is NOT Installed][]
-GOR4                 http://mig.jouy.inra.fr/logiciels/gorIV/                   [pg:           gorIV is NOT Installed][]
-wublast_client       built_in                                                   [pg:      wublast.pl is  Installed][built_in]
-blastpgp_client      built_in                                                   [pg:     blastpgp.pl is  Installed][built_in]
-local_ncbiblast      ftp://ftp.ncbi.nih.gov/blast/executables/LATEST            [pg: legacy_blast.pl is NOT Installed][]
+PARAMETER   : -type_only
+USAGE       : exit after checking the type and returning it to the stdout
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
 
+PARAMETER   : -check_type
+USAGE       : Make sure that -type and the real type of the sequences agree
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
 
+PARAMETER   : -type
+USAGE       : PROTEIN, DNA or RNA. Automatically set, but can be forced with this flag
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
 
-All these Methods are supported by T-Coffee, but you HAVE to install them yourself [use the provided address]
+PARAMETER   : -dpa
+USAGE       : Run DPA mode
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
 
+PARAMETER   : -reg
+USAGE       : Run DPA mode
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
 
-These methods were selected because they are freeware opensource, easy to install and well supported
-Contact us if you need an extra method to be added [cedric.notredame@gmail.com]
+PARAMETER   : -plugins
+USAGE       : Set the directory containing the plugins [no if no plugin]
+MAX_N_VALUES: 1
+DEFAULT     : default OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -plugins_order
+USAGE       : first or last. Set the order of the plugins for T-Coffee. First means the plugins are used first. Last means that local installations are used first and the plugins only used if the local installation cannot
+MAX_N_VALUES: 1
+DEFAULT     : last OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -version
+USAGE       : forces the program to output the version number and exit
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -score
+USAGE       : DEPRECATED: use -special_mode evaluate instead 
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -evaluate
+USAGE       : Use -special_mode evaluate for a default behavior 
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -genepred
+USAGE       : Use -special_mode genepred for a default behavior 
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -convert
+USAGE       : forces the program to make a conversion
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -quiet
+USAGE       : Defines the file in which the log output is written
+MAX_N_VALUES: 1
+DEFAULT     : stderr OR /dev/null (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -debug
+USAGE       : 0 [default]: no dump; 1: dump the input, 2: dump input and keep tmp files
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[2]
+TYPE        : D
+
+PARAMETER   : -clean
+USAGE       : Will delete cached data and exit: all, cache, lock, tmp. It is possible to specify a list: cache_lock_tmp
+MAX_N_VALUES: 1
+DEFAULT     : no OR all (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -check_configuration
+USAGE       : checks that the required programs are installed
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -update
+USAGE       : checks the existence of an updated version
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -full_log
+USAGE       : Sets the prefix of all the output files
+MAX_N_VALUES: 1
+DEFAULT     : NULL OR full_log (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -genepred_score
+USAGE       : nsd,tot, <seq_name>
+MAX_N_VALUES: 1
+DEFAULT     : nsd OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -run_name
+USAGE       : Sets the prefix of all the output files
+MAX_N_VALUES: 1
+DEFAULT     : NULL OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -mem_mode
+USAGE       : Deprecated
+MAX_N_VALUES: 1
+DEFAULT     : mem OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -extend
+USAGE       : Do Library Extention On the Fly
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -extend_mode
+USAGE       : Library extension mode
+MAX_N_VALUES: 1
+DEFAULT     : very_fast_triplet OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -max_n_pair
+USAGE       : Indicates the Number of Pairs to Compare when making prf Vs prf. 0<=>every pair 
+MAX_N_VALUES: 1
+DEFAULT     : 10 OR 3 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -seq_name_for_quadruplet
+USAGE       : Indicates which sequence must be used to compute quadruplets
+MAX_N_VALUES: 200
+DEFAULT     : all OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -compact
+USAGE       : Deprecated
+MAX_N_VALUES: 1
+DEFAULT     : default OR default (when flag set)
+RANGE       : [0]...[1]
+TYPE        : S
+
+PARAMETER   : -clean
+USAGE       : Deprecated
+MAX_N_VALUES: 1
+DEFAULT     : no OR shadow (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -do_self
+USAGE       : Make self extension. Used by Mocca
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -do_normalise
+USAGE       : Normalisation factor when computing scores
+MAX_N_VALUES: 1
+DEFAULT     : 1000 OR 1000 (when flag set)
+RANGE       : [-10000]...[10000]
+TYPE        : D
+
+PARAMETER   : -template_file
+USAGE       : List of templates file for the sequences
+MAX_N_VALUES: 1000
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -template_dir_E_
+USAGE       : directory for _E_ templates (_R_ <dir> _P_ <dir>...
+MAX_N_VALUES: 1000
+DEFAULT     : ./ OR ./ (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -setenv
+USAGE       : Declares a parameter variable
+MAX_N_VALUES: 2
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : S
+
+PARAMETER   : -export
+USAGE       : Declares a parameter variable
+MAX_N_VALUES: 2
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : S
+
+PARAMETER   : -template_mode
+USAGE       : List of template procedures
+MAX_N_VALUES: 1000
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -flip
+USAGE       : flip sequences
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 50 (when flag set)
+RANGE       : [0]...[100]
+TYPE        : D
+
+PARAMETER   : -remove_template_file
+USAGE       : Remove all the template files: 0 keep all, 1: only remove the template files 2: remove template files AND template lists 
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -profile_template_file
+USAGE       : List of templates files asscoaciated with profiles
+MAX_N_VALUES: 1000
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -in
+USAGE       : Reads the Ssequences, Mmethods, Llibraries,Xmatrices,Rprofiles,Pstructures,AAlignments
+MAX_N_VALUES: 2000
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -seq
+USAGE       : List of sequences in any acceptable format
+MAX_N_VALUES: 1000
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -aln
+USAGE       : List of sequences in any acceptable format
+MAX_N_VALUES: 1000
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -method_limits
+USAGE       : List of limits for selected methods: method maxnseq maxlen (-1 = nolimit)
+MAX_N_VALUES: 1000
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -method
+USAGE       : List of sequences in any acceptable format
+MAX_N_VALUES: 1000
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -lib
+USAGE       : List of sequences in any acceptable format
+MAX_N_VALUES: 1000
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -profile
+USAGE       : Input one or many MSA that will be treated as profiles
+MAX_N_VALUES: 2000
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -profile1
+USAGE       : Input one profile (ClustalW option)
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -profile2
+USAGE       : Input a profile (ClustalW option)
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -pdb
+USAGE       : Reads/fetch a pdb file: PDBID(PDB_CHAIN)[opt] (FIRST,LAST)[opt],
+MAX_N_VALUES: 200
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -relax_lib
+USAGE       : self extend the library, without adding new positions
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -filter_lib
+USAGE       : Removes from the library every value below the threshold
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 10 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -shrink_lib
+USAGE       : Runks linked_pairwise on the lib to remove every useless diagonal
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -out_lib
+USAGE       : Prompts the program to write the computed library file
+MAX_N_VALUES: 1
+DEFAULT     : no OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -out_lib_mode
+USAGE       : Save the primary or the extended library:[primary|extende]extended_[pair|lib]_[raw|pc]
+MAX_N_VALUES: 1
+DEFAULT     : primary OR extended (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -lib_only
+USAGE       : Only Compute the library
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -outseqweight
+USAGE       : Prompts the program to write the sequuence weight values
+MAX_N_VALUES: 1
+DEFAULT     : no OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -seq_source
+USAGE       : Indicates the files that will be used as sequence sources, important for dpa. With the default mode alignments must be provided with the Sflag as well as tye Aflag if they contribute novel sequences
+MAX_N_VALUES: 1
+DEFAULT     : ANY OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -cosmetic_penalty
+USAGE       : A very low Gap Opening Penalty.It only affects the non stable portions of the alignmnent.Negative values penalize gaps, positive values reward them
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -gapopen
+USAGE       : Gap opening penalty. Must be negative, best matches get a score of 1000
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -gapext
+USAGE       : Gap Extension Penalty. Positive values give rewards to gaps and prevent the alignment of unrelated segments
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -fgapopen
+USAGE       : Deprecated
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -fgapext
+USAGE       : Deprecated
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -nomatch
+USAGE       : Deprecated
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -newtree
+USAGE       : Name of the output guide tree
+MAX_N_VALUES: 1
+DEFAULT     : default OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -tree
+USAGE       : Name of the output guide tree
+MAX_N_VALUES: 1
+DEFAULT     : NO OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -usetree
+USAGE       : Use an existing guide tree
+MAX_N_VALUES: 1
+DEFAULT     : NULL OR NULL (when flag set)
+RANGE       : [any]...[]
+TYPE        : R_F
+
+PARAMETER   : -tree_mode
+USAGE       : nj, upgma, cwph,kmeans
+MAX_N_VALUES: 1
+DEFAULT     : nj OR nj (when flag set)
+RANGE       : [1]...[1]
+TYPE        : S
+
+PARAMETER   : -distance_matrix_mode
+USAGE       : Computation of the distances for the tree: slow, fast, very_fast, ktup
+MAX_N_VALUES: 1
+DEFAULT     : ktup OR idscore (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -distance_matrix_sim_mode
+USAGE       : Choice of the distance measure: <mat>_sim1, _sim2, _sim3, _cov, _gap
+MAX_N_VALUES: 1
+DEFAULT     : idmat_sim1 OR idmat_sim1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -quicktree
+USAGE       : Use distance_matrix_mode=very_fast
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -outfile
+USAGE       : Name of the output alignment
+MAX_N_VALUES: 1
+DEFAULT     : default OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -maximise
+USAGE       : Deprecated
+MAX_N_VALUES: 0
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -output
+USAGE       : Specifies one or many formats that must be output: clustalw_aln, msf_aln, tcs_[residue,column]_[filter,lower][0-9], tcs_[weighted,replicate][Nreplicates],sp_ascii, score_ascii . The file extension is the output format 
+MAX_N_VALUES: 200
+DEFAULT     : aln,html OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -len
+USAGE       : Line Length
+
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 100 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -infile
+USAGE       : input a pre-computed alignment, or a file to reformat
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : R_F
+
+PARAMETER   : -matrix
+USAGE       : Specifies the substitution matrix.
+MAX_N_VALUES: 1
+DEFAULT     : default OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -fs_matrix
+USAGE       : Specifies the substitution matrix used on 3di.
+MAX_N_VALUES: 1
+DEFAULT     : idmat OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -fs_gop
+USAGE       : Must Be Negative
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -fs_gep
+USAGE       : Must Be Negative
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -tg_mode
+USAGE       : 0: Penalise Term gap with gapopen and gapext
+1: gapopen only
+2: No penalty
+
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -profile_mode
+USAGE       : Function used to compute profile2profile scores
+MAX_N_VALUES: 1
+DEFAULT     : cw_profile_profile OR cw_profile_profile (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -profile_comparison
+USAGE       : Method used to compare two profiles: full<N>: compares <every | N best> pair of sequence and every pair of structure if a structure method is used,profile: compares only the profiles.  
+MAX_N_VALUES: 1
+DEFAULT     : profile OR full50 (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -dp_mode
+USAGE       : Type of alignment algorithm used by T-Coffee: gotoh_pair_wise, myers_millers_pair_wise, 
+MAX_N_VALUES: 1
+DEFAULT     : linked_pair_wise OR cfasta_pair_wise (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -ktuple
+USAGE       : Word size when using the heursitic dynamic programming modes fasta_pair_wise and cfasta_pair_wise 
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -ndiag
+USAGE       : Number of diagonals to consider when using the heursitic dynamic programming modes fasta_pair_wise and cfasta_pair_wise
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 10 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -diag_threshold
+USAGE       : ND
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 10 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -diag_mode
+USAGE       : 0: Use the whole Diag
+1: Use the best match
+
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -sim_matrix
+USAGE       : Degenerated matrix used to compute a similarity
+MAX_N_VALUES: 1
+DEFAULT     : vasiliky OR idmat (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -transform
+USAGE       : dna2rna, rna2dna, dna2prot
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -extend_seq
+USAGE       : extend the sequences
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -outorder
+USAGE       : Specifies the order of the sequences in the msa: input or aligned
+MAX_N_VALUES: 1
+DEFAULT     : input OR input (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -inorder
+USAGE       : aligned: sort the sequences in alphabetic order before starting thus making the input order irrelevant but delivering a library in arbitratry order, keep: input order is used in the library but results become input order dependant
+MAX_N_VALUES: 1
+DEFAULT     : aligned OR input (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -seqnos
+USAGE       : Adds Residue Numbers to the MSA
+MAX_N_VALUES: 1
+DEFAULT     : off OR on (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -case
+USAGE       : Causes the case to be: kept:lower:upper.
+MAX_N_VALUES: 1
+DEFAULT     : keep OR upper (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -cpu
+USAGE       : Makes it possible to add a pre-specified amount of cpu time to the measured usage
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -ulimit
+USAGE       : Maximum amount of memory to be used. Kill job otherwise
+MAX_N_VALUES: 1
+DEFAULT     : -1 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -maxnseq
+USAGE       : Maximum number of sequences (-1=no max)
+MAX_N_VALUES: 1
+DEFAULT     : -1 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -maxlen
+USAGE       : Maximum length of a sequence (-1=no max)
+MAX_N_VALUES: 1
+DEFAULT     : -1 OR -1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -sample_dp
+USAGE       : defines the tie breaking strategy (only with gotoh_pair_wise)
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[2]
+TYPE        : D
+
+PARAMETER   : -weight
+USAGE       : Defines the library weight: sim OR  sim_(matrix) OR winsim
+MAX_N_VALUES: 1
+DEFAULT     : default OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -seq_weight
+USAGE       : Defines the sequences weighting scheme t_coffee
+MAX_N_VALUES: 1
+DEFAULT     : no OR t_coffee (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -align
+USAGE       : forces the program to make the alignment
+MAX_N_VALUES: 0
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -mocca
+USAGE       : forces the program to extract domains
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -domain
+USAGE       : forces the program to extract domains
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -start
+USAGE       : start of the master domain in the mocca mode
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -len
+USAGE       : length of the master domain in the mocca mode
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -scale
+USAGE       : Decreases the t_coffee score by Scale, so that non match get negative values
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -mocca_interactive
+USAGE       : Runs Mocca in an interactive manneer
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -method_evaluate_mode
+USAGE       : Specifies which method should be used to evaluate the score at the pairwise level
+MAX_N_VALUES: 1
+DEFAULT     : default OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -color_mode
+USAGE       : Mode used to produce the color output:new (default) or old  
+MAX_N_VALUES: 1
+DEFAULT     : new OR old (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -aln_line_length
+USAGE       : Mode used to produce the color output:t_coffee_fast,t_coffee_slow  
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -evaluate_mode
+USAGE       : Mode used to produce the color output:t_coffee_fast,t_coffee_slow  
+MAX_N_VALUES: 1
+DEFAULT     : triplet OR dali (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -get_type
+USAGE       : forces t_coffee top get the type of the sequences
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -clean_aln
+USAGE       : Forces weak portion of aln to be realigned
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : D
+
+PARAMETER   : -clean_threshold
+USAGE       : Threshold for the portions of the MSA that will are realigned by '-clean_evaluate_mode'. The threshold refers to the CORE score set by '-evaluate_mode'
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -clean_iteration
+USAGE       : Number of rounds for '-clean_aln'
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -clean_evaluate_mode
+USAGE       : Mode used to score residues (see evaluate_mode)
+MAX_N_VALUES: 1
+DEFAULT     : t_coffee_fast OR t_coffee_fast (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -extend_matrix
+USAGE       : Deprecated
+MAX_N_VALUES: 0
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -prot_min_sim
+USAGE       : Minimum similarity between a sequence and its BLAST relatives
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 20 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -prot_max_sim
+USAGE       : Maximum similarity between a sequence and its BLAST relatives
+MAX_N_VALUES: 1
+DEFAULT     : 100 OR 50 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -psiJ
+USAGE       : Defines the number of iteration of psiblast (-j)
+MAX_N_VALUES: 1
+DEFAULT     : 3 OR 3 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -psitrim_mode
+USAGE       : Mode used to trim profiles, regtrim or trim (def)
+MAX_N_VALUES: 1
+DEFAULT     : regtrim OR regtrim (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -psitrim_tree
+USAGE       : Mode used to compute the tree when using regtree to trim profiles (codnd def)
+MAX_N_VALUES: 1
+DEFAULT     : codnd OR codnd (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -psitrim
+USAGE       : Maximum number of sequences to keep when building a profile [0 to keep everything, negative value to keep X%%, positive value to keep X Sequences]
+MAX_N_VALUES: 1
+DEFAULT     : 100 OR 100 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -prot_min_cov
+USAGE       : Minimum coverage of a sequence by its BLAST relatives
+MAX_N_VALUES: 1
+DEFAULT     : 90 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -pdb_type
+USAGE       : d: diffraction, n: nmr, e: em, m:model
+MAX_N_VALUES: 1
+DEFAULT     : d OR d (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -pdb_min_sim
+USAGE       : Minimum similarity between a sequence and its PDB target
+MAX_N_VALUES: 1
+DEFAULT     : 35 OR 35 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -pdb_max_sim
+USAGE       : Maximum similarity between a sequence and its PDB target
+MAX_N_VALUES: 1
+DEFAULT     : 100 OR 0 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -pdb_min_cov
+USAGE       : Minimum coverage of a sequence by its PDB target
+MAX_N_VALUES: 1
+DEFAULT     : 50 OR 25 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -pdb_blast_server
+USAGE       : ND
+MAX_N_VALUES: 1
+DEFAULT     : EBI OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -blast
+USAGE       : ND
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -blast_server
+USAGE       : ND
+MAX_N_VALUES: 1
+DEFAULT     : EBI OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -pdb_db
+USAGE       : Non Redundant PDB database
+MAX_N_VALUES: 1
+DEFAULT     : pdb OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -protein_db
+USAGE       : ND
+MAX_N_VALUES: 1
+DEFAULT     : uniref50 OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -method_log
+USAGE       : ND
+MAX_N_VALUES: 1
+DEFAULT     : no OR default (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -struc_to_use
+USAGE       : Specifies the structures that must be used when combining sequences and structures. The default is to use all the structures.
+MAX_N_VALUES: 200
+DEFAULT     :  OR stdin (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -cache
+USAGE       : Specifies that a cache must be used to save the structures and their comparison, as well as the blast searches.
+available modes are: use,ignore,update,local, directory name
+MAX_N_VALUES: 1
+DEFAULT     : use OR update (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -print_cache
+USAGE       : print the cache dir to stdout and exit
+
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : FL
+
+PARAMETER   : -align_pdb_param_file
+USAGE       : parameter_file
+MAX_N_VALUES: 1
+DEFAULT     : no OR no (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -align_pdb_hasch_mode
+USAGE       : parameter_file
+MAX_N_VALUES: 1
+DEFAULT     : hasch_ca_trace_bubble OR hasch_ca_trace_bubble (when flag set)
+RANGE       : [any]...[]
+TYPE        : W_F
+
+PARAMETER   : -external_aligner
+USAGE       : Use seqan to compute the MSA
+MAX_N_VALUES: 1
+DEFAULT     : NO OR seqan_tcoffee (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -msa_mode
+USAGE       : Algorithm used to compute the MSA: tree | graph
+MAX_N_VALUES: 1
+DEFAULT     : tree OR tree (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -et_mode
+USAGE       : Algorithm used to the et score: id, et, sankoff, sp
+MAX_N_VALUES: 1
+DEFAULT     : et OR et (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -master
+USAGE       : Align all the sequences to the master sequences: file or number
+MAX_N_VALUES: 1
+DEFAULT     : no OR _LONG_n_100_kmeans_ (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -blast_nseq
+USAGE       : Maximum number of querries for BLAST (0: all)
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 0 (when flag set)
+RANGE       : [0]...[]
+TYPE        : D
+
+PARAMETER   : -lalign_n_top
+USAGE       : Number of local alignments reported by the local method (lalign) when building the library
+MAX_N_VALUES: 1
+DEFAULT     : 10 OR 10 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -iterate
+USAGE       : NUmber of iteration on the progressive alignment [0: no iteration, -1: Nseq iterations]
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 100 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -trim
+USAGE       : trim dataset
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -split
+USAGE       : split dataset
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -trimfile
+USAGE       : trim dataset filename
+MAX_N_VALUES: 1
+DEFAULT     : default OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -split
+USAGE       : split dataset
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -split_nseq_thres
+USAGE       : Maximum Number of sequences within a subgroup
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -split_score_thres
+USAGE       : Minimum score within a split dataset
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -check_pdb_status
+USAGE       : Reports the existance of a PDB file
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -clean_seq_name
+USAGE       : Remove Special Char from sequence names
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -seq_to_keep
+USAGE       : File containing the name of the sequences to keep when triming OR a list of names)
+MAX_N_VALUES: 200
+DEFAULT     : NULL OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -dpa_master_aln
+USAGE       : Approximate Alignment: File|method
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -dpa_maxnseq
+USAGE       : Maximum number of sequences to be aligned with DPA
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 50 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -dpa_min_score1
+USAGE       : Minimum percent ID to merge sequences in the approximate alignment
+MAX_N_VALUES: 200
+DEFAULT     :  OR  (when flag set)
+RANGE       : [0]...[100]
+TYPE        : D
+
+PARAMETER   : -dpa_min_score2
+USAGE       : Threshold for aligning a group in the slow double progressive alignment (automatically readjusted)
+MAX_N_VALUES: 200
+DEFAULT     :  OR  (when flag set)
+RANGE       : [0]...[100]
+TYPE        : D
+
+PARAMETER   : -dpa_keep_tmpfile
+USAGE       : Prevents deletion of the tmpfile generated by t_coffee_dpa
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : FL
+
+PARAMETER   : -dpa_debug
+USAGE       : DEbug mode for DPA ( causes dpa tmp files to be kept)
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : D
+
+PARAMETER   : -multi_core
+USAGE       : Multi core: template_jobs_relax_[msa|pairwise]_evaluate
+MAX_N_VALUES: 1
+DEFAULT     : templates_jobs_relax_msa_evaluate OR templates_jobs_relax_msa_evaluate (when flag set)
+RANGE       : [0]...[100]
+TYPE        : S
+
+PARAMETER   : -n_core
+USAGE       : Number of cores to be used by machine [default=1, 0=> all those defined in the environement]
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [0]...[10000]
+TYPE        : D
+
+PARAMETER   : -thread
+USAGE       : Number of cores to be used by machine [default=1, 0=> all those defined in the environement]
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [0]...[10000]
+TYPE        : D
+
+PARAMETER   : -max_n_proc
+USAGE       : Number of cores to be used by machine [default=1, 0=> all those defined in the environement]
+MAX_N_VALUES: 1
+DEFAULT     : 1 OR 1 (when flag set)
+RANGE       : [0]...[10000]
+TYPE        : D
+
+PARAMETER   : -lib_list
+USAGE       : A File that contains every pair/group of sequence to process when computing the lib, Format:<nseq> <index1><index2>
+MAX_N_VALUES: 1
+DEFAULT     :  OR default (when flag set)
+RANGE       : [0]...[100]
+TYPE        : S
+
+PARAMETER   : -prune_lib_mode
+USAGE       : A File that contains every pair/group of sequence to process when computing the lib, Format:<nseq> <index1><index2>
+MAX_N_VALUES: 1
+DEFAULT     : 5 OR 5 (when flag set)
+RANGE       : [0]...[100]
+TYPE        : S
+
+PARAMETER   : -tip
+USAGE       : Controls The Output of A TIP When Computation is over [one,all,none]
+MAX_N_VALUES: 1
+DEFAULT     : none OR all (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -rna_lib
+USAGE       : 
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -no_warning
+USAGE       : Suppresses all Warnings
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : D
+
+PARAMETER   : -run_local_script
+USAGE       : Run Local Script if in current directory
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [0]...[1]
+TYPE        : D
+
+PARAMETER   : -proxy
+USAGE       : proxy used to access to webservices, when required
+MAX_N_VALUES: 1
+DEFAULT     : unset OR   (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -email
+USAGE       : email provided to webservices, when required
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -clean_overaln
+USAGE       : Ratio between overaligned exon id Vs legitimates *100
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR 1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -overaln_param
+USAGE       : Parameters for the overaln
+MAX_N_VALUES: 10
+DEFAULT     : NULL OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -overaln_mode
+USAGE       : lower || uanlaign
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -overaln_model
+USAGE       : fsa1 (no exon boundaries), fsa2 (exon boundaries)
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -overaln_threshold
+USAGE       : Ratio between overaligned exon id Vs legitimates *100
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -overaln_target
+USAGE       : Ratio between overaligned exon id Vs legitimates *100
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -overaln_P1
+USAGE       : Ratio between overaligned exon id Vs legitimates *100
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -overaln_P2
+USAGE       : Ratio between overaligned exon id Vs legitimates *100
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -overaln_P3
+USAGE       : Ratio between overaligned exon id Vs legitimates *100
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -overaln_P4
+USAGE       : Ratio between overaligned exon id Vs legitimates *100
+MAX_N_VALUES: 1
+DEFAULT     : 0 OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
+
+PARAMETER   : -exon_boundaries
+USAGE       : exon_boundaries [EBI boj format]
+MAX_N_VALUES: 1
+DEFAULT     :  OR  (when flag set)
+RANGE       : [any]...[]
+TYPE        : S
+
+PARAMETER   : -display
+USAGE       : Sets the threshold (nseq) for the full display of the groups. -1 results in a full display, and 0 in no display at all
+MAX_N_VALUES: 1
+DEFAULT     : 100 OR -1 (when flag set)
+RANGE       : [any]...[]
+TYPE        : D
 ```
-
-
 ## Metadata
 - **Skill**: generated

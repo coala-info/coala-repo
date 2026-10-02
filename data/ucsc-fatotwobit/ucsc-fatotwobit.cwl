@@ -2,62 +2,74 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: faToTwoBit
 label: ucsc-fatotwobit
-doc: "Convert DNA from fasta to 2bit format.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: Convert DNA from fasta to 2bit format
 inputs:
-  - id: input_fasta
+  - id: in_fa
     type:
       type: array
       items: File
-    doc: One or more input FASTA files
+    doc: Input FASTA file(s)
     inputBinding:
       position: 1
-  - id: ignore_multi
-    type:
-      - 'null'
-      - boolean
-    doc: If there are multiple sequences in a fasta file, only use the first one.
+  - id: out_2bit
+    type: string
+    doc: Output 2bit file
     inputBinding:
-      position: 102
-      prefix: -ignoreMulti
+      position: 2
   - id: long
     type:
       - 'null'
       - boolean
-    doc: Use 64-bit offsets for index. Allow for two-bit files larger than 4Gb. This
-      is not compatible with most other 2bit utilities.
+    doc: use 64-bit offsets for index. Allow for twoBit to contain more than 4Gb
+      of sequence. NOT COMPATIBLE WITH OLDER CODE.
     inputBinding:
-      position: 102
+      position: 103
       prefix: -long
-  - id: no_check
-    type:
-      - 'null'
-      - boolean
-    doc: Skip checking for valid DNA characters.
-    inputBinding:
-      position: 102
-      prefix: -noCheck
   - id: no_mask
     type:
       - 'null'
       - boolean
-    doc: Ignore lower-case masking, make all sequence upper case.
+    doc: Ignore lower-case masking in fa file.
     inputBinding:
-      position: 102
+      position: 103
       prefix: -noMask
-  - id: strip_mask
+  - id: strip_version
     type:
       - 'null'
       - boolean
-    doc: Remove masking, make all sequence upper case.
+    doc: Strip off version number after '.' for GenBank accessions.
     inputBinding:
-      position: 102
-      prefix: -stripMask
+      position: 103
+      prefix: -stripVersion
+  - id: ignore_dups
+    type:
+      - 'null'
+      - boolean
+    doc: Convert first sequence only if there are duplicate sequence names. Use 
+      'twoBitDup' to find duplicate sequences.
+    inputBinding:
+      position: 103
+      prefix: -ignoreDups
+  - id: name_prefix
+    type:
+      - 'null'
+      - string
+    doc: add XX. to start of sequence name in 2bit.
+    inputBinding:
+      position: 103
+      prefix: -namePrefix=
+      separate: false
 outputs:
-  - id: output_file
+  - id: out_out_2bit
     type: File
     doc: Output 2bit file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_2bit)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-fatotwobit:482--hdc0a859_0
+s:url: https://hgdownload.cse.ucsc.edu/admin/exe
+$namespaces:
+  s: https://schema.org/

@@ -4,22 +4,40 @@ baseCommand:
   - whatshap
   - stats
 label: whatshap_stats
-doc: "Print phasing statistics of a single VCF file\n\nTool homepage: https://whatshap.readthedocs.io"
+doc: Print phasing statistics of a single VCF file
 inputs:
   - id: vcf
     type: File
     doc: Phased VCF file
     inputBinding:
       position: 1
+  - id: gtf
+    type:
+      - 'null'
+      - string
+    doc: Write phased blocks as GTF with each block represented as a 'gene'. If 
+      blocks are interleaved or nested, they are split into multiple 'exons'.
+    inputBinding:
+      position: 102
+      prefix: --gtf
   - id: block_list
     type:
       - 'null'
-      - File
+      - string
     doc: Write list of all blocks to FILE (one block per line). 
       Nested/interleaved blocks are not split.
     inputBinding:
       position: 102
       prefix: --block-list
+  - id: sample
+    type:
+      - 'null'
+      - string
+    doc: Name of the sample to process. If not given, use first sample found in 
+      VCF.
+    inputBinding:
+      position: 102
+      prefix: --sample
   - id: chr_lengths
     type:
       - 'null'
@@ -30,6 +48,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --chr-lengths
+  - id: tsv
+    type:
+      - 'null'
+      - string
+    doc: Write statistics in tab-separated value format to FILE
+    inputBinding:
+      position: 102
+      prefix: --tsv
+  - id: only_snvs
+    type:
+      - 'null'
+      - boolean
+    doc: Only process SNVs and ignore all other variants.
+    inputBinding:
+      position: 102
+      prefix: --only-snvs
   - id: chromosome
     type:
       - 'null'
@@ -43,48 +77,35 @@ inputs:
       comma-separated list.
     inputBinding:
       position: 102
-  - id: gtf
+outputs:
+  - id: output_gtf
     type:
       - 'null'
       - File
     doc: Write phased blocks as GTF with each block represented as a 'gene'. If 
       blocks are interleaved or nested, they are split into multiple 'exons'.
-    inputBinding:
-      position: 102
-      prefix: --gtf
-  - id: only_snvs
+    outputBinding:
+      glob: $(inputs.gtf)
+  - id: output_block_list
     type:
       - 'null'
-      - boolean
-    doc: Only process SNVs and ignore all other variants.
-    inputBinding:
-      position: 102
-      prefix: --only-snvs
-  - id: sample
-    type:
-      - 'null'
-      - string
-    doc: Name of the sample to process. If not given, use first sample found in 
-      VCF.
-    inputBinding:
-      position: 102
-      prefix: --sample
-  - id: tsv_path
-    type: string?
-    doc: Write statistics in tab-separated value format to FILE
-    inputBinding:
-      position: 103
-      prefix: --tsv
-outputs:
-  - id: tsv
+      - File
+    doc: Write list of all blocks to FILE (one block per line). 
+      Nested/interleaved blocks are not split.
+    outputBinding:
+      glob: $(inputs.block_list)
+  - id: output_tsv
     type:
       - 'null'
       - File
     doc: Write statistics in tab-separated value format to FILE
     outputBinding:
-      glob: $(inputs.tsv_path)
+      glob: $(inputs.tsv)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0
+s:url: https://whatshap.readthedocs.io
+$namespaces:
+  s: https://schema.org/

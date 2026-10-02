@@ -2,85 +2,192 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: dcm2niix
 label: dcm2niix
-doc: "DICOM to NIfTI converter\n\nTool homepage: https://github.com/rordenlab/dcm2niix"
+doc: Convert DICOM images to NIfTI format
 inputs:
-  - id: input_directory
+  - id: in_folder
     type: Directory
-    doc: Folder containing DICOM files
+    doc: Input directory containing DICOM files
     inputBinding:
       position: 1
-  - id: adjacent_dicoms
-    type:
-      - 'null'
-      - string
-    doc: Adjacent DICOMs (y/n, default n)
-    inputBinding:
-      position: 102
-      prefix: -a
-  - id: bids_sidecar
-    type:
-      - 'null'
-      - string
-    doc: 'BIDS sidecar (y/n/o [only: no NIfTI], default y)'
-    inputBinding:
-      position: 102
-      prefix: -b
   - id: compression_level
     type:
       - 'null'
       - int
-    doc: GZ compression level (1=fastest, 9=smallest, default 6)
+    doc: gz compression level (1=fastest..9=smallest, default 6)
     inputBinding:
       position: 102
       prefix: '-1'
-  - id: filename
+  - id: bids_sidecar
     type:
       - 'null'
       - string
-    doc: Filename format (e.g. %p=protocol, %t=time)
+    doc: 'BIDS sidecar (y/n/o [o=only: no NIfTI], default y)'
+    inputBinding:
+      position: 102
+      prefix: -b
+  - id: anonymize_bids
+    type:
+      - 'null'
+      - string
+    doc: anonymize BIDS (y/n, default y)
+    inputBinding:
+      position: 102
+      prefix: -ba
+  - id: comment
+    type:
+      - 'null'
+      - string
+    doc: comment stored in NIfTI aux_file (up to 24 characters)
+    inputBinding:
+      position: 102
+      prefix: -c
+  - id: search_depth
+    type:
+      - 'null'
+      - int
+    doc: directory search depth. Convert DICOMs in sub-folders of in_folder? 
+      (0..9, default 5)
+    inputBinding:
+      position: 102
+      prefix: -d
+  - id: filename_format
+    type:
+      - 'null'
+      - string
+    doc: filename format (%a=antenna (coil) name, %b=basename, %c=comments, 
+      %d=description, %e=echo number, %f=folder name, %i=ID of patient, 
+      %j=seriesInstanceUID, %k=studyInstanceUID, %m=manufacturer, %n=name of 
+      patient, %p=protocol, %r=instance number, %s=series number, %t=time, 
+      %u=acquisition number, %v=vendor, %x=study ID; %z=sequence name; default 
+      '%f_%p_%t_%s')
     inputBinding:
       position: 102
       prefix: -f
+  - id: generate_defaults
+    type:
+      - 'null'
+      - string
+    doc: 'generate defaults file (y/n/o/i [o=only: reset and write defaults; i=ignore:
+      reset defaults], default n)'
+    inputBinding:
+      position: 102
+      prefix: -g
+  - id: ignore_derived
+    type:
+      - 'null'
+      - string
+    doc: ignore derived, localizer and 2D images (y/n, default n)
+    inputBinding:
+      position: 102
+      prefix: -i
+  - id: lossless_scale
+    type:
+      - 'null'
+      - string
+    doc: losslessly scale 16-bit integers to use dynamic range (y/n, default n)
+    inputBinding:
+      position: 102
+      prefix: -l
+  - id: merge_2d_slices
+    type:
+      - 'null'
+      - string
+    doc: merge 2D slices from same series regardless of study time, echo, coil, 
+      orientation, etc. (y/n, default n)
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: series_number
+    type:
+      - 'null'
+      - type: array
+        items: int
+        inputBinding:
+          prefix: -n
+          separate: true
+    doc: only convert this series number - can be used up to 16 times (default 
+      convert all)
+    inputBinding:
+      position: 102
+  - id: output_dir
+    type:
+      - 'null'
+      - string
+    doc: output directory (omit to save to input folder)
+    inputBinding:
+      position: 102
+      prefix: -o
+  - id: philips_precise_scaling
+    type:
+      - 'null'
+      - string
+    doc: Philips precise float (not display) scaling (y/n, default y)
+    inputBinding:
+      position: 102
+      prefix: -p
+  - id: rename_dicoms
+    type:
+      - 'null'
+      - string
+    doc: rename instead of convert DICOMs (y/n, default n)
+    inputBinding:
+      position: 102
+      prefix: -r
+  - id: single_file_mode
+    type:
+      - 'null'
+      - string
+    doc: single file mode, do not convert other images in folder (y/n, default 
+      n)
+    inputBinding:
+      position: 102
+      prefix: -s
+  - id: text_notes
+    type:
+      - 'null'
+      - string
+    doc: text notes includes private patient details (y/n, default n)
+    inputBinding:
+      position: 102
+      prefix: -t
+  - id: up_to_date_check
+    type:
+      - 'null'
+      - boolean
+    doc: up-to-date check
+    inputBinding:
+      position: 102
+      prefix: -u
+  - id: crop
+    type:
+      - 'null'
+      - string
+    doc: crop (y/n, default n)
+    inputBinding:
+      position: 102
+      prefix: -x
   - id: gz_compress
     type:
       - 'null'
       - string
-    doc: GZ compress images (y/n/i [i=internal], default n)
+    doc: gz compress images (y/i/n/3, default n) [y=pigz, i=internal:miniz, 
+      n=no, 3=no,3D]
     inputBinding:
       position: 102
       prefix: -z
-  - id: merge_2d
-    type:
-      - 'null'
-      - string
-    doc: Merge 2D slices from same series (y/n, default n)
-    inputBinding:
-      position: 102
-      prefix: -m
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Verbose output
-    inputBinding:
-      position: 102
-      prefix: -v
-  - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
-    inputBinding:
-      position: 103
-      prefix: --output-directory
 outputs:
-  - id: output_directory
+  - id: output_output_dir
     type:
       - 'null'
       - Directory
-    doc: Output directory (log default is input directory)
+    doc: output directory (omit to save to input folder)
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/dcm2niix:v1.0.20181125-1-deb_cv1
+s:url: https://github.com/rordenlab/dcm2niix
+$namespaces:
+  s: https://schema.org/

@@ -26,7 +26,5 @@ INFO:    Extracting OCI image...
 2026/02/10 02:26:57  warn rootless{dev/console} creating empty file in place of device 5:1
 FATAL:   Unable to handle docker://quay.io/biocontainers/bazam:1.0.1--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:e831ec7edfabd394716e0d97a9ba5cc1dad08283d6abb5f789703bbea0cbf791: unpack entry: usr/local/jre/lib/amd64/server/libjvm.so: unpack to regular file: short write: write /scratch/21813747/build-temp-3428467364/rootfs/usr/local/jre/lib/amd64/server/libjvm.so: no space left on device
 ```
-
-
 ## Metadata
 - **Skill**: generated

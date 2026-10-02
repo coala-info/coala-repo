@@ -4,7 +4,7 @@ baseCommand:
   - whatshap
   - unphase
 label: whatshap_unphase
-doc: "Remove phasing information from a VCF file\n\nTool homepage: https://whatshap.readthedocs.io"
+doc: Remove phasing information from a VCF file
 inputs:
   - id: vcf
     type: File
@@ -19,3 +19,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0
 stdout: whatshap_unphase.out
+s:url: https://whatshap.readthedocs.io
+$namespaces:
+  s: https://schema.org/

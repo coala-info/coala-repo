@@ -3,7 +3,7 @@
 ## tabix
 
 ### Tool Description
-Generic indexer for TAB-delimited genome position files. (Note: The provided text was an error log; arguments are based on standard tabix usage).
+Generic indexer for TAB-delimited genome position files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tabix:1.11--hdfd78af_0
@@ -12,19 +12,38 @@ Generic indexer for TAB-delimited genome position files. (Note: The provided tex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tabix/overview
-- **Total Downloads**: 372.5K
+- **Total Downloads**: 423.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tabix:1.11--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Version: 1.12
+Usage:   tabix [OPTIONS] [FILE] [REGION [...]]
+
+Indexing Options:
+   -0, --zero-based           coordinates are zero-based
+   -b, --begin INT            column number for region start [4]
+   -c, --comment CHAR         skip comment lines starting with CHAR [null]
+   -C, --csi                  generate CSI index for VCF (default is TBI)
+   -e, --end INT              column number for region end (if no end, set INT to -b) [5]
+   -f, --force                overwrite existing index without asking
+   -m, --min-shift INT        set minimal interval size for CSI indices to 2^INT [14]
+   -p, --preset STR           gff, bed, sam, vcf
+   -s, --sequence INT         column number for sequence names (suppressed by -p) [1]
+   -S, --skip-lines INT       skip first INT lines [0]
+
+Querying and other options:
+   -h, --print-header         print also the header lines
+   -H, --only-header          print only the header lines
+   -l, --list-chroms          list chromosome names
+   -r, --reheader FILE        replace the header with the content of FILE
+   -R, --regions FILE         restrict to regions listed in the file
+   -T, --targets FILE         similar to -R but streams rather than index-jumps
+   -D                         do not download the index file
+       --cache INT            set cache size to INT megabytes (0 disables) [10]
+       --separate-regions     separate the output by corresponding regions
+       --verbosity INT        set verbosity [3]
 ```
-
-
 ## Metadata
 - **Skill**: not generated

@@ -2,28 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: printsextract
 label: emboss_printsextract
-doc: "Extract fingerprints from PRINTS database\n\nTool homepage: http://emboss.open-bio.org/"
+doc: Extract data from PRINTS database for use by pscan
 inputs:
-  - id: dbdir
-    type: Directory
-    doc: PRINTS database directory
+  - id: infile
+    type: File
+    doc: PRINTS database file
     inputBinding:
       position: 101
-      prefix: -dbdir
-  - id: outdir_path
-    type: string
-    doc: Output or path parameter `outdir_path`
-    inputBinding:
-      position: 102
-      prefix: --outdir
+      prefix: -infile
 outputs:
-  - id: outdir
-    type: Directory
-    doc: Output directory
-    outputBinding:
-      glob: $(inputs.outdir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emboss:6.6.0--h0f19ade_14
+stdout: printsextract.out
+s:url: http://emboss.open-bio.org/
+$namespaces:
+  s: https://schema.org/

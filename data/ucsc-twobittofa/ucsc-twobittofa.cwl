@@ -2,67 +2,117 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: twoBitToFa
 label: ucsc-twobittofa
-doc: "Convert all or part of a .2bit file to fasta format.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: Convert all or part of .2bit file to fasta
 inputs:
-  - id: input_2bit
+  - id: input_two_bit
     type: File
-    doc: Input .2bit file
+    doc: input .2bit file (or URL)
     inputBinding:
       position: 1
-  - id: bed
-    type:
-      - 'null'
-      - File
-    doc: Restrict output to regions defined in this BED file
+  - id: output_fa
+    type: string
+    doc: output fasta file
     inputBinding:
-      position: 102
-      prefix: -bed
-  - id: end
-    type:
-      - 'null'
-      - int
-    doc: End at this position (non-inclusive)
-    inputBinding:
-      position: 102
-      prefix: -end
-  - id: no_mask
-    type:
-      - 'null'
-      - boolean
-    doc: Convert masked genomes to upper case
-    inputBinding:
-      position: 102
-      prefix: -noMask
+      position: 2
   - id: seq
     type:
       - 'null'
       - string
-    doc: Restrict to this sequence name
+    doc: Restrict this to just one sequence.
     inputBinding:
-      position: 102
-      prefix: -seq
+      position: 103
+      prefix: -seq=
+      separate: false
   - id: start
     type:
       - 'null'
       - int
-    doc: Start at this position (0-based)
+    doc: Start at given position in sequence (zero-based).
     inputBinding:
-      position: 102
-      prefix: -start
+      position: 103
+      prefix: -start=
+      separate: false
+  - id: end
+    type:
+      - 'null'
+      - int
+    doc: End at given position in sequence (non-inclusive).
+    inputBinding:
+      position: 103
+      prefix: -end=
+      separate: false
+  - id: seq_list
+    type:
+      - 'null'
+      - File
+    doc: File containing list of the desired sequence names in the format 
+      seqSpec[:start-end], e.g. chr1 or chr1:0-189 where coordinates are 
+      half-open zero-based, i.e. [start,end).
+    inputBinding:
+      position: 103
+      prefix: -seqList=
+      separate: false
+  - id: no_mask
+    type:
+      - 'null'
+      - boolean
+    doc: Convert sequence to all upper case.
+    inputBinding:
+      position: 103
+      prefix: -noMask
+  - id: bpt
+    type:
+      - 'null'
+      - File
+    doc: Use bpt index instead of built-in one.
+    inputBinding:
+      position: 103
+      prefix: -bpt=
+      separate: false
+  - id: bed
+    type:
+      - 'null'
+      - File
+    doc: Grab sequences specified by input.bed. Will exclude introns.
+    inputBinding:
+      position: 103
+      prefix: -bed=
+      separate: false
+  - id: bed_pos
+    type:
+      - 'null'
+      - boolean
+    doc: With -bed, use chrom:start-end as the fasta ID in output.fa.
+    inputBinding:
+      position: 103
+      prefix: -bedPos
   - id: udc_dir
     type:
       - 'null'
-      - Directory
-    doc: Directory to put the universal data cache
+      - string
+    doc: Place to put cache for remote bigBed/bigWigs.
     inputBinding:
-      position: 102
-      prefix: -udcDir
+      position: 103
+      prefix: -udcDir=
+      separate: false
 outputs:
-  - id: output_fasta
+  - id: out_output_fa
     type: File
-    doc: Output fasta file
+    doc: output fasta file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_fa)
+  - id: output_udc_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Place to put cache for remote bigBed/bigWigs.
+    outputBinding:
+      glob: $(inputs.udc_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-twobittofa:482--hdc0a859_0
+s:url: https://hgdownload.cse.ucsc.edu/admin/exe
+$namespaces:
+  s: https://schema.org/

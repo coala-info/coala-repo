@@ -2,26 +2,50 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: xsubpp
 label: perl-extutils-parsexs
-doc: "Compiler to convert Perl XS code into C code\n\nTool homepage: https://metacpan.org/pod/ExtUtils::ParseXS"
+doc: Compiler to convert Perl XS code into C code
 inputs:
-  - id: input_file
+  - id: file_xs
     type: File
-    doc: The XS input file to be compiled
+    doc: XS source file to process
     inputBinding:
       position: 1
-  - id: hiertype
+  - id: csuffix
+    type:
+      - 'null'
+      - string
+    doc: Suffix for the generated C source file
+    inputBinding:
+      position: 102
+      prefix: -csuffix
+  - id: except
     type:
       - 'null'
       - boolean
-    doc: Retain hierarchy in keyword names
+    doc: Adds exception handling stubs to C code
     inputBinding:
       position: 102
-      prefix: -hiertype
+      prefix: -except
+  - id: prototypes
+    type:
+      - 'null'
+      - boolean
+    doc: Generate prototypes for C functions
+    inputBinding:
+      position: 102
+      prefix: -prototypes
+  - id: noversioncheck
+    type:
+      - 'null'
+      - boolean
+    doc: Do not check the version of XS against the perl binary
+    inputBinding:
+      position: 102
+      prefix: -noversioncheck
   - id: nolinenumbers
     type:
       - 'null'
       - boolean
-    doc: 'Prevent the generation of #line directives'
+    doc: 'Prevent generation of #line directives in output'
     inputBinding:
       position: 102
       prefix: -nolinenumbers
@@ -33,48 +57,50 @@ inputs:
     inputBinding:
       position: 102
       prefix: -nooptimize
-  - id: noversioncheck
+  - id: noinout
     type:
       - 'null'
       - boolean
-    doc: Disable the XS version check
+    doc: Disable IN/OUT/IN_OUT declarations
     inputBinding:
       position: 102
-      prefix: -noversioncheck
-  - id: prototypes
+      prefix: -noinout
+  - id: noargtypes
     type:
       - 'null'
       - boolean
-    doc: Enable support for Perl prototypes
+    doc: Disable argument types checking
     inputBinding:
       position: 102
-      prefix: -prototypes
+      prefix: -noargtypes
+  - id: strip
+    type:
+      - 'null'
+      - string
+    doc: Strip pattern from function names
+    inputBinding:
+      position: 102
+      prefix: -strip
   - id: typemap
     type:
       - 'null'
       - type: array
         items: File
-    doc: Specify a typemap file to be used
+        inputBinding:
+          prefix: -typemap
+          separate: true
+    doc: Specify typemap mapping file(s)
     inputBinding:
       position: 102
-      prefix: -typemap
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Specify the name of the output C file
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: 
       quay.io/biocontainers/perl-extutils-parsexs:3.61--pl5321hdfd78af_0
+stdout: xsubpp.out
+s:url: https://metacpan.org/pod/ExtUtils::ParseXS
+$namespaces:
+  s: https://schema.org/

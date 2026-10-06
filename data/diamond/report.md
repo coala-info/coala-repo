@@ -41,7 +41,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Error: Missing parameter: database file (--db/-d)
 ```
 
-
 ## diamond_blastp
 
 ### Tool Description
@@ -304,7 +303,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 
 Error: Missing parameter: database file (--db/-d)
 ```
-
 
 ## diamond_blastx
 
@@ -569,7 +567,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Error: Missing parameter: database file (--db/-d)
 ```
 
-
 ## diamond_cluster
 
 ### Tool Description
@@ -641,7 +638,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Error: Missing parameter: --db/-d
 ```
 
-
 ## diamond_linclust
 
 ### Tool Description
@@ -712,7 +708,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 
 Error: Missing parameter: --db/-d
 ```
-
 
 ## diamond_realign
 
@@ -866,7 +861,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Error: Missing parameter: --db/-d
 ```
 
-
 ## diamond_recluster
 
 ### Tool Description
@@ -935,7 +929,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Error: Missing parameter: --db/-d
 ```
 
-
 ## diamond_reassign
 
 ### Tool Description
@@ -1002,7 +995,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 
 Error: Missing parameter: --db/-d
 ```
-
 
 ## diamond_view
 
@@ -1154,7 +1146,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Error: The view command requires a DAA (option -a) input file.
 ```
 
-
 ## diamond_merge-daa
 
 ### Tool Description
@@ -1184,7 +1175,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Initializing... Error: Missing parameter: input files (--in)
 ```
 
-
 ## diamond_getseq
 
 ### Tool Description
@@ -1210,7 +1200,6 @@ Options:
 
 Error: Missing parameter: --db/-d
 ```
-
 
 ## diamond_dbinfo
 
@@ -1239,89 +1228,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 
 Error: Missing parameter: database file (--db/-d)
 ```
-
-
-## diamond_test
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/diamond:2.1.24--hf93d47f_0
-- **Homepage**: https://github.com/bbuchfink/diamond
-- **Package**: https://anaconda.org/channels/bioconda/packages/diamond/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-HitBuffer stress test
-=====================
-Threads = 20
-  Mode: in-memory (membuf) ... PASSED (352000 hits, checksum ok)
-  Mode: disk ... PASSED (352000 hits, checksum ok)
-  Result: 2/2 passed
-=====================
-Queue Stress Test
-=================
-Hardware threads: 20
-
-Test 1: Many producers (19), one consumer
-  Items per producer: 300
-  Total items: 5700
-  Items sent: 5700
-  Items received: 5700
-  Expected checksum: 16242150
-  Received checksum: 16242150
-  Result: PASSED
-
-Test 2: One producer, many consumers (19)
-  Total items: 10000
-  Items sent: 10000
-  Items received: 10000
-  Expected checksum: 49995000
-  Received checksum: 49995000
-  Result: PASSED
-
-=================
-Tests passed: 2/2
-blastp (default)            [ [32mPassed[0;39m ]
-blastp (multithreaded)      [ [32mPassed[0;39m ]
-blastp (blocked)            [ [32mPassed[0;39m ]
-blastp (more-sensitive)     [ [32mPassed[0;39m ]
-blastp (very-sensitive)     [ [32mPassed[0;39m ]
-blastp (ultra-sensitive)    [ [32mPassed[0;39m ]
-blastp (max-hsps)           [ [32mPassed[0;39m ]
-blastp (target-parallel)    [ [32mPassed[0;39m ]
-blastp (query-indexed)      [ [32mPassed[0;39m ]
-blastp (comp-based-stats 0) [ [32mPassed[0;39m ]
-blastp (comp-based-stats 2) [ [32mPassed[0;39m ]
-blastp (comp-based-stats 3) [ [32mPassed[0;39m ]
-blastp (comp-based-stats 4) [ [32mPassed[0;39m ]
-blastp (target seqs)        [ [32mPassed[0;39m ]
-blastp (top)                [ [32mPassed[0;39m ]
-blastp (evalue)             [ [32mPassed[0;39m ]
-blastp (blosum50)           [ [32mPassed[0;39m ]
-blastp (pairwise format)    [ [32mPassed[0;39m ]
-blastp (XML format)         [ [32mPassed[0;39m ]
-blastp (PAF format)         [ [32mPassed[0;39m ]
-
-#Test cases passed: 20/20
-diamond v2.1.24.178 (C) Max Planck Society for the Advancement of Science, Benjamin J. Buchfink, University of Tuebingen
-Documentation, support and updates available at http://www.diamondsearch.org
-Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
-```
-
 
 ## diamond_makeidx
 
@@ -1362,7 +1268,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 Error: Missing parameter: database file (--db/-d).
 ```
 
-
 ## diamond_greedy-vertex-cover
 
 ### Tool Description
@@ -1401,7 +1306,6 @@ Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
 
 Error: Missing parameter: --db/-d
 ```
-
 
 ## Metadata
 - **Skill**: generated

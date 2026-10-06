@@ -33,7 +33,6 @@ options:
   --progress       show progress bars
 ```
 
-
 ## knock-knock_parallel
 
 ### Tool Description
@@ -70,7 +69,6 @@ options:
   --progress            show progress bars
 ```
 
-
 ## knock-knock_table
 
 ### Tool Description
@@ -104,7 +102,6 @@ options:
                         bar
 ```
 
-
 ## knock-knock_build-strategies
 
 ### Tool Description
@@ -129,7 +126,6 @@ options:
   -h, --help  show this help message and exit
 ```
 
-
 ## knock-knock_download-genome
 
 ### Tool Description
@@ -153,7 +149,6 @@ positional arguments:
 options:
   -h, --help   show this help message and exit
 ```
-
 
 ## knock-knock_build-indices
 
@@ -182,7 +177,6 @@ options:
                         number of threads to use
 ```
 
-
 ## knock-knock_install-example-data
 
 ### Tool Description
@@ -206,7 +200,6 @@ options:
   -h, --help  show this help message and exit
 ```
 
-
 ## knock-knock_install
 
 ### Tool Description
@@ -226,7 +219,6 @@ usage: knock-knock [-h] [--version]
 knock-knock: error: argument subcommand: invalid choice: 'install' (choose from 'process-sample', 'parallel', 'table', 'build-strategies', 'download-genome', 'build-indices', 'install-example-data', 'whos-there')
 ```
 
-
 ## knock-knock_directory
 
 ### Tool Description
@@ -245,38 +237,6 @@ usage: knock-knock [-h] [--version]
                    ...
 knock-knock: error: argument subcommand: invalid choice: 'directory' (choose from 'process-sample', 'parallel', 'table', 'build-strategies', 'download-genome', 'build-indices', 'install-example-data', 'whos-there')
 ```
-
-
-## knock-knock_whos-there
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/knock-knock:0.8.0--pyhdfd78af_0
-- **Homepage**: https://github.com/jeffhussmann/knock-knock
-- **Package**: https://anaconda.org/channels/bioconda/packages/knock-knock/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: knock-knock whos-there [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

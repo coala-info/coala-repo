@@ -26,36 +26,3 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-
-## metaplex_Metaplex-calculate-IJR
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metaplex:1.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/NGabry/MetaPlex
-- **Package**: https://anaconda.org/channels/bioconda/packages/metaplex/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/Metaplex-calculate-IJR", line 6, in <module>
-    from metaplex.index_jump import main
-  File "/usr/local/lib/python3.9/site-packages/metaplex/index_jump.py", line 8, in <module>
-    from qiime2 import Artifact
-ModuleNotFoundError: No module named 'qiime2'
-```
-

@@ -38,7 +38,6 @@ Examples:
    paladin index -r3 uniprot_sprot.fasta.gz
 ```
 
-
 ## paladin_prepare
 
 ### Tool Description
@@ -71,7 +70,6 @@ Examples:
    paladin prepare -r2
    paladin prepare -r1 -f uniprot_sprot.fasta.gz
 ```
-
 
 ## paladin_align
 
@@ -164,7 +162,6 @@ Input/output options:
 Note: Please read the man page for detailed description of the command line and options.
 ```
 
-
 ## paladin_shm
 
 ### Tool Description
@@ -188,7 +185,6 @@ Options: -d       destroy all indices in shared memory
          -f FILE  temporary file to reduce peak memory
 ```
 
-
 ## paladin_fa2pac
 
 ### Tool Description
@@ -206,7 +202,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 Usage: bwa fa2pac [-f] <in.fasta> [<out.prefix>]
 ```
-
 
 ## paladin_pac2bwt
 
@@ -226,7 +221,6 @@ INFO:    Using cached SIF image
 Usage: paladin pac2bwt <in.pac> <out.bwt>
 ```
 
-
 ## paladin_bwtupdate
 
 ### Tool Description
@@ -245,7 +239,6 @@ INFO:    Using cached SIF image
 Usage: paladin bwtupdate <the.bwt>
 ```
 
-
 ## paladin_bwt2sa
 
 ### Tool Description
@@ -263,26 +256,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 Usage: paladin bwt2sa [-i 32] <in.bwt> <out.sa>
 ```
-
-
-## paladin_Then
-
-### Tool Description
-The provided text indicates an unrecognized command error for 'paladin then'. No help documentation or arguments were found in the input.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0
-- **Homepage**: https://github.com/ToniWestbrook/paladin
-- **Package**: https://anaconda.org/channels/bioconda/packages/paladin/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-[main] unrecognized command 'Then'
-```
-
 
 ## Metadata
 - **Skill**: generated

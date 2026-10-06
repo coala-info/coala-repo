@@ -1,36 +1,5 @@
 # bioexcel_seqqc CWL Generation Report
 
-## bioexcel_seqqc
-
-### Tool Description
-BioExcel Sequence Quality Control tool (Note: The provided help text contains only system logs and an execution error; no specific usage information or arguments were found in the input).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bioexcel_seqqc:0.6--py_0
-- **Homepage**: https://github.com/bioexcel/bioexcel_seqqc
-- **Package**: https://anaconda.org/channels/bioconda/packages/bioexcel_seqqc/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioexcel_seqqc/overview
-- **Total Downloads**: 6.0K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/bioexcel/bioexcel_seqqc
-- **Stars**: N/A
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/06 22:29:19  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "bioexcel_seqqc": executable file not found in $PATH
-```
-
-
 ## Metadata
 - **Skill**: generated
 

@@ -7,39 +7,6 @@
 | assemblyutility_AssemblyStatistics | PASS |  |
 | assemblyutility_SelectLongestReads | PASS |  |
 
-## assemblyutility
-
-### Tool Description
-FAIL to generate CWL: assemblyutility not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/assemblyutility:20160209--h077b44d_9
-- **Homepage**: https://github.com/yechengxi/AssemblyUtility
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/assemblyutility/overview
-- **Total Downloads**: 10.1K
-- **Last updated**: 2025-08-21
-- **GitHub**: https://github.com/yechengxi/AssemblyUtility
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: assemblyutility not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: assemblyutility not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

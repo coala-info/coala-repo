@@ -37,7 +37,6 @@ Output Options   Description
            -p    Prefix for the output BAM file. If none is specified output will go to std out
 ```
 
-
 ## ivar_variants
 
 ### Tool Description
@@ -67,7 +66,6 @@ Output Options   Description
            -p    (Required) Prefix for the output tsv variant file
 ```
 
-
 ## ivar_filtervariants
 
 ### Tool Description
@@ -91,7 +89,6 @@ Input Options    Description
 Output Options   Description
            -p    (Required) Prefix for the output filtered tsv file
 ```
-
 
 ## ivar_consensus
 
@@ -137,7 +134,6 @@ Output Options   Description
            -i    (Optional) Name of fasta header. By default, the prefix is used to create the fasta header in the following format, Consensus_<prefix>_threshold_<frequency-threshold>_quality_<minimum-quality>_<min-insert-threshold>
 ```
 
-
 ## ivar_getmasked
 
 ### Tool Description
@@ -161,7 +157,6 @@ Input Options    Description
 Output Options   Description
            -p    (Required) Prefix for the output text file
 ```
-
 
 ## ivar_removereads
 
@@ -187,37 +182,6 @@ Input Options    Description
 Output Options   Description
            -p    (Required) Prefix for the output filtered BAM file
 ```
-
-
-## ivar_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ivar:1.4.4--h077b44d_0
-- **Homepage**: https://andersen-lab.github.io/ivar/html/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ivar/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-iVar version 1.4.4
-
-Please raise issues and bug reports at https://github.com/andersen-lab/ivar/
-```
-
 
 ## Metadata
 - **Skill**: generated

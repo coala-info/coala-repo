@@ -36,7 +36,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## ms2pip_correlate
 
 ### Tool Description
@@ -73,7 +72,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## ms2pip_get-training-data
 
 ### Tool Description
@@ -105,7 +103,6 @@ Options:
   -n, --processes INTEGER
   --help                          Show this message and exit.
 ```
-
 
 ## ms2pip_predict-batch
 
@@ -140,7 +137,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## ms2pip_predict-library
 
 ### Tool Description
@@ -174,37 +170,6 @@ Options:
   -n, --processes INTEGER
   --help                          Show this message and exit.
 ```
-
-
-## ms2pip_predict-single
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ms2pip:4.1.0--py312h0fa9677_2
-- **Homepage**: http://compomics.github.io/projects/ms2pip_c
-- **Package**: https://anaconda.org/channels/bioconda/packages/ms2pip/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-MS²PIP (v4.1.0)
-Developed at CompOmics, VIB / Ghent University, Belgium.
-Please cite: Declercq et al. NAR (2023)
-```
-
 
 ## Metadata
 - **Skill**: generated

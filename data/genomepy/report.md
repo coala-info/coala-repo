@@ -34,40 +34,6 @@ Options:
   -h, --help           Show this message and exit.
 ```
 
-
-## genomepy_clean
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genomepy:0.16.3--pyh7e72e81_0
-- **Homepage**: https://github.com/vanheeringen-lab/genomepy
-- **Package**: https://anaconda.org/channels/bioconda/packages/genomepy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: genomepy clean [OPTIONS]
-
-  Remove cached data on providers (e.g. available genomes).
-
-Options:
-  -h, --help  Show this message and exit.
-```
-
-
 ## genomepy_config
 
 ### Tool Description
@@ -94,7 +60,6 @@ Usage: genomepy config [OPTIONS] COMMAND
 Options:
   -h, --help  Show this message and exit.
 ```
-
 
 ## genomepy_genomes
 
@@ -126,7 +91,6 @@ Options:
   -s, --size           show absolute genome size
   -h, --help           Show this message and exit.
 ```
-
 
 ## genomepy_install
 
@@ -183,7 +147,6 @@ Provider specific options:
   -h, --help                      Show this message and exit.
 ```
 
-
 ## genomepy_plugin
 
 ### Tool Description
@@ -210,38 +173,6 @@ Usage: genomepy plugin [OPTIONS] COMMAND [NAME]...
 Options:
   -h, --help  Show this message and exit.
 ```
-
-
-## genomepy_providers
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genomepy:0.16.3--pyh7e72e81_0
-- **Homepage**: https://github.com/vanheeringen-lab/genomepy
-- **Package**: https://anaconda.org/channels/bioconda/packages/genomepy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: genomepy providers [OPTIONS]
-Try 'genomepy providers -h' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## genomepy_search
 
@@ -279,7 +210,6 @@ Options:
   -s, --size           show absolute genome size
   -h, --help           Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

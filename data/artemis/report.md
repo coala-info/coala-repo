@@ -6,8 +6,8 @@
 |---|---|---|
 | artemis_act | Not completed | ACT is an interactive Java GUI genome browser that needs a display and cannot run as a batch job. |
 | artemis_art | Not completed | Artemis is an interactive Java GUI genome browser that needs a display and cannot run as a batch job. |
-| artemis_bamview | Failed | not a usable tool: generated from a JVM start-up log line, with only JVM options and a command name that does not exist. |
 | artemis_dnaplotter | Not completed | DNAPlotter is an interactive Java GUI program that fails headless and cannot run as a batch job. |
+| artemis_writedb_entry | Not completed | writedb_entry exports entries from a Chado PostgreSQL database; no Chado server is available, so the run only logged 'Connection refused'. |
 
 ## artemis_art
 
@@ -104,23 +104,6 @@ HOMEPAGE
 ```
 
 
-## artemis_bamview
-
-### Tool Description
-Starting BamView with arguments
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/artemis:18.2.0--hdfd78af_0
-- **Homepage**: http://sanger-pathogens.github.io/Artemis/
-- **Package**: https://anaconda.org/channels/bioconda/packages/artemis/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Starting BamView with arguments: -mx2g -ms100m -noverify -Djdbc.drivers=org.postgresql.Driver -Dartemis.environment=UNIX  --help
-```
-
-
 ## artemis_dnaplotter
 
 ### Tool Description
@@ -149,6 +132,46 @@ HOMEPAGE
         http://www.sanger.ac.uk/science/tools/dnaplotter/
 ```
 
+
+## artemis_writedb_entry
+
+### Tool Description
+Reads entries from a Chado database and writes them out as EMBL or GFF files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/artemis:18.2.0--hdfd78af_0
+- **Homepage**: http://sanger-pathogens.github.io/Artemis/
+- **Package**: https://anaconda.org/channels/bioconda/packages/artemis/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/artemis/overview
+- **Total Downloads**: 34.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
+
+### Original Help Text
+```text
+openjdk version "11.0.9.1-internal" 2020-11-04 OpenJDK Runtime Environment (build 11.0.9.1-internal+0-adhoc..src) OpenJDK 64-Bit Server VM (build 11.0.9.1-internal+0-adhoc..src, mixed mode)
+Starting writedb_entry with arguments:   -mx2048m -ms20m -Djdbc.drivers=org.postgresql.Driver -Dibatis 
+Using classpath: /usr/local/share/artemis-18.2.0-0/etc/..:/usr/local/share/artemis-18.2.0-0/etc/../target/jars/artemis.jar:/usr/local/share/artemis-18.2.0-0/etc/../dist/artemis.jar
+-h	show help
+-f	[y|n] flatten the gene model, default is y
+-flt	space separated list of qualifiers to ignore (GFF only)
+-i	[y|n] ignore obsolete features, default is y
+-s	space separated list of sequences to read and write out
+-o	[EMBL|GFF] output format, default is EMBL
+Advanced parameters:
+-l	location of EMBL mapping files (qualifier_mapping and key_mapping)
+-z	[y|n] gzip output, default is y
+-a	[y|n] for EMBL submission format change to n, default is y
+-pp	[y|n] read polypeptide domain features, default is n
+-r	[y|n] remove product qualifiers from pseudogene (only for EMBL submission format), default is n
+-c	the URL for your Chado database e.g. server_name:port/database_name?user (if not using default)
+-u	[swing|console|script] the UI mode : run in swing (with popup dialog boxes) mode, run in console mode (choices entered in the console window), or in script mode (all choices default to continue, all parameters passed on command line) 
+-p	the password for connecting to the Chado database
+-fp	 the file path (the folder you want to save the files in)
+-np	[y|n] do not write out private qualifiers, default is y
+```
 
 ## Metadata
 - **Skill**: generated

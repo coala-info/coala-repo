@@ -32,7 +32,6 @@ SolveBio Options:
   --debug               Shows the source of the user credentials
 ```
 
-
 ## solvebio_logout
 
 ### Tool Description
@@ -57,7 +56,6 @@ SolveBio Options:
   --access-token ACCESS_TOKEN
                         Manually provide a SolveBio OAuth2 access token
 ```
-
 
 ## solvebio_whoami
 
@@ -84,54 +82,6 @@ SolveBio Options:
                         Manually provide a SolveBio OAuth2 access token
 ```
 
-
-## solvebio_tutorial
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/solvebio:2.34.0--pyh7e72e81_0
-- **Homepage**: https://github.com/solvebio/solvebio-python
-- **Package**: https://anaconda.org/channels/bioconda/packages/solvebio/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/solvebio", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.14/site-packages/solvebio/cli/main.py", line 541, in main
-    return args.func(args)
-           ~~~~~~~~~^^^^^^
-  File "/usr/local/lib/python3.14/site-packages/solvebio/cli/tutorial.py", line 8, in print_tutorial
-    pager(open(TUTORIAL, 'rb').read())
-    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.14/pydoc.py", line 1673, in pager
-    pager(text, title)
-    ~~~~~^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.14/_pyrepl/pager.py", line 124, in plain_pager
-    sys.stdout.write(plain(escape_stdout(text)))
-                           ~~~~~~~~~~~~~^^^^^^
-  File "/usr/local/lib/python3.14/_pyrepl/pager.py", line 59, in escape_stdout
-    return text.encode(encoding, 'backslashreplace').decode(encoding)
-           ^^^^^^^^^^^
-AttributeError: 'bytes' object has no attribute 'encode'. Did you mean: 'decode'?
-```
-
-
 ## solvebio_shell
 
 ### Tool Description
@@ -156,7 +106,6 @@ SolveBio Options:
   --access-token ACCESS_TOKEN
                         Manually provide a SolveBio OAuth2 access token
 ```
-
 
 ## solvebio_import
 
@@ -225,7 +174,6 @@ SolveBio Options:
                         any files.
 ```
 
-
 ## solvebio_create-dataset
 
 ### Tool Description
@@ -280,7 +228,6 @@ SolveBio Options:
                         Metadata key value pairs in JSON format
   --dry-run             Dry run mode will not create the dataset
 ```
-
 
 ## solvebio_upload
 
@@ -337,7 +284,6 @@ SolveBio Options:
                         multipart uploads. Defaults to 3.
 ```
 
-
 ## solvebio_ls
 
 ### Tool Description
@@ -371,7 +317,6 @@ SolveBio Options:
   --recursive           Recursively list the contents of subdirectories.
   --follow-shortcuts    Resolves shortcuts when listing.
 ```
-
 
 ## solvebio_download
 
@@ -437,7 +382,6 @@ SolveBio Options:
                         system CPUs.
 ```
 
-
 ## solvebio_tag
 
 ### Tool Description
@@ -487,7 +431,6 @@ SolveBio Options:
   --no-input            Automatically accept changes (overrides user prompt)
 ```
 
-
 ## solvebio_queue
 
 ### Tool Description
@@ -522,7 +465,6 @@ Traceback (most recent call last):
     raise SolveError("HTTP request: client is not logged in!")
 solvebio.errors.SolveError: HTTP request: client is not logged in!
 ```
-
 
 ## Metadata
 - **Skill**: generated

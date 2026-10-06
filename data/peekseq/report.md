@@ -1,38 +1,5 @@
 # peekseq CWL Generation Report
 
-## peekseq
-
-### Tool Description
-FAIL to generate CWL: peekseq not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/peekseq:0.0.1--hdfd78af_0
-- **Homepage**: https://github.com/bcgsc/peekseq
-- **Package**: https://anaconda.org/channels/bioconda/packages/peekseq/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/peekseq/overview
-- **Total Downloads**: 1.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/bcgsc/peekseq
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: peekseq not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: peekseq not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

@@ -1,38 +1,5 @@
 # pcaone CWL Generation Report
 
-## pcaone
-
-### Tool Description
-FAIL to generate CWL: pcaone not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pcaone:0.6.0--ha628be3_0
-- **Homepage**: https://github.com/Zilong-Li/PCAone
-- **Package**: https://anaconda.org/channels/bioconda/packages/pcaone/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pcaone/overview
-- **Total Downloads**: 29.8K
-- **Last updated**: 2025-09-22
-- **GitHub**: https://github.com/Zilong-Li/PCAone
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pcaone not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pcaone not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -60,7 +27,6 @@ Usage: 1) use PLINK files as input and apply default window-based RSVD method
        3) compute ancestry adjusted LD matrix and R2
        $ PCAone -b plink -k 2 -D -o adj 
        $ PCAone -B adj.residuals -f adj.mbim -R --ld-bp 1000
-
 
 General options:
   -h, --help                     print all options including hidden advanced options

@@ -42,7 +42,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_pipe
 
 ### Tool Description
@@ -297,7 +296,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_sequences
 
 ### Tool Description
@@ -316,7 +314,6 @@ usage: singlem [-h]
                ...
 singlem: error: argument subparser_name: invalid choice: 'sequences' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
 ```
-
 
 ## singlem_appraise
 
@@ -421,7 +418,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_seqs
 
 ### Tool Description
@@ -462,7 +458,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
 
 ## singlem_makedb
 
@@ -542,38 +537,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
-
-## singlem_table
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'table' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
 
 ## singlem_query
 
@@ -678,7 +641,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_summarise
 
 ### Tool Description
@@ -759,7 +721,6 @@ Traceback (most recent call last):
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
 ValueError: unsupported format character ']' (0x5d) at index 109
 ```
-
 
 ## singlem_prokaryotic_fraction
 
@@ -844,58 +805,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
-## singlem_Estimate
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'Estimate' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
-
-## singlem_are
-
-### Tool Description
-singlem: error: argument subparser_name: invalid choice: 'are' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'are' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
-
 ## singlem_eukaryote
 
 ### Tool Description
@@ -914,7 +823,6 @@ usage: singlem [-h]
                ...
 singlem: error: argument subparser_name: invalid choice: 'eukaryote' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
 ```
-
 
 ## singlem_microbial_fraction
 
@@ -998,7 +906,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
 
 ## singlem_renew
 
@@ -1174,7 +1081,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_create
 
 ### Tool Description
@@ -1241,7 +1147,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_get_tree
 
 ### Tool Description
@@ -1278,7 +1183,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
 
 ## singlem_regenerate
 
@@ -1348,38 +1252,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
-
-## singlem_taxonomy
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'taxonomy' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
 
 ## singlem_metapackage
 
@@ -1467,7 +1339,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_chainsaw
 
 ### Tool Description
@@ -1513,38 +1384,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
-
-## singlem_from
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'from' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
 
 ## singlem_condense
 
@@ -1619,7 +1458,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
-
 ## singlem_single
 
 ### Tool Description
@@ -1638,100 +1476,6 @@ usage: singlem [-h]
                ...
 singlem: error: argument subparser_name: invalid choice: 'single' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
 ```
-
-
-## singlem_can
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'can' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
-
-## singlem_straightforward
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'straightforward' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
-
-## singlem_specifying
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'specifying' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
 
 ## singlem_trim_package_hmms
 
@@ -1773,7 +1517,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
 
 ## singlem_supplement
 
@@ -1897,38 +1640,6 @@ Other general options:
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
 ```
-
-
-## singlem_genomes
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'genomes' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
 
 ## Metadata
 - **Skill**: generated

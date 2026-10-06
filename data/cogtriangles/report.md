@@ -1,38 +1,5 @@
 # cogtriangles CWL Generation Report
 
-## cogtriangles
-
-### Tool Description
-FAIL to generate CWL: cogtriangles not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cogtriangles:2012.04--h9948957_4
-- **Homepage**: https://ftp.ncbi.nih.gov/pub/wolf/COGs/COGsoft/
-- **Package**: https://anaconda.org/channels/bioconda/packages/cogtriangles/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/cogtriangles/overview
-- **Total Downloads**: 4.0K
-- **Last updated**: 2025-06-11
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: cogtriangles not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: cogtriangles not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: not generated
 

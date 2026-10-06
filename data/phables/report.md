@@ -96,7 +96,6 @@ Options:
       print_stages    List available stages
 ```
 
-
 ## phables_install
 
 ### Tool Description
@@ -1176,7 +1175,6 @@ ENVIRONMENT MODULES:
  In general, command-line values override environment variables which override
 defaults.
 ```
-
 
 ## phables_test
 
@@ -2258,7 +2256,6 @@ ENVIRONMENT MODULES:
 defaults.
 ```
 
-
 ## phables_config
 
 ### Tool Description
@@ -2300,69 +2297,6 @@ Traceback (most recent call last):
     s1 = os.stat(f1)
 TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
 ```
-
-
-## phables_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phables:1.5.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vini2/phables
-- **Package**: https://anaconda.org/channels/bioconda/packages/phables/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Please cite phables in your paper using this link:
-https://doi.org/10.1093/bioinformatics/btad586
-
-
-Please consider also citing these dependencies:
-
-Snaketool:
-https://doi.org/10.31219/osf.io/8w5j3
-
-Snakemake:
-https://doi.org/10.12688/f1000research.29032.1
-
-PHROG:
-https://doi.org/10.1093/nargab/lqab067
-
-MMseqs2:
-https://doi.org/10.1038/nbt.3988
-
-Minimap2:
-https://doi.org/10.1093/bioinformatics/bty191
-
-SAMtools:
-https://doi.org/10.1093/bioinformatics/btp352
-
-CoverM
-https://github.com/wwood/CoverM
-
-Koverage
-https://github.com/beardymcjohnface/Koverage
-
-NetworkX
-https://conference.scipy.org/proceedings/scipy2008/paper_2/
-
-Gurobi Optimization
-https://www.gurobi.com/
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -305,29 +305,6 @@ _nextalign() {
 complete -F _nextalign -o bashdefault -o default nextalign
 ```
 
-
-## nextalign_Generate
-
-### Tool Description
-Nextalign is a tool for aligning sequences to a reference genome.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextalign:2.14.0--h9ee0642_1
-- **Homepage**: https://github.com/nextstrain/nextclade/tree/master/packages/nextalign_cli
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextalign/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'Generate' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    nextalign [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
-
 ## nextalign_run
 
 ### Tool Description
@@ -622,51 +599,6 @@ OPTIONS:
     -q, --quiet
             Make console output more quiet. Add multiple occurrences to make output even more quiet
 ```
-
-
-## nextalign_Run
-
-### Tool Description
-nextalign is a command-line tool for aligning sequences to a reference genome.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextalign:2.14.0--h9ee0642_1
-- **Homepage**: https://github.com/nextstrain/nextclade/tree/master/packages/nextalign_cli
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextalign/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'Run' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    nextalign [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
-
-## nextalign_Print
-
-### Tool Description
-nextalign is a tool for aligning Nextclade outputs.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextalign:2.14.0--h9ee0642_1
-- **Homepage**: https://github.com/nextstrain/nextclade/tree/master/packages/nextalign_cli
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextalign/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'Print' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    nextalign [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## Metadata
 - **Skill**: not generated

@@ -1,40 +1,5 @@
 # vembrane CWL Generation Report
 
-## vembrane_valid
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vembrane:2.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/vembrane/vembrane
-- **Package**: https://anaconda.org/channels/bioconda/packages/vembrane/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/vembrane/overview
-- **Total Downloads**: 68.3K
-- **Last updated**: 2025-09-27
-- **GitHub**: https://github.com/vembrane/vembrane
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: vembrane [-h] [--version]
-                {filter,table,annotate,tag,structured,fhir,sort} ...
-vembrane: error: argument command: invalid choice: 'valid' (choose from filter, table, annotate, tag, structured, fhir, sort)
-```
-
-
 ## vembrane_filter
 
 ### Tool Description
@@ -124,7 +89,6 @@ options:
                         Set the backend library. (default: cyvcf2)
 ```
 
-
 ## vembrane_table
 
 ### Tool Description
@@ -213,7 +177,6 @@ options:
                         Set the backend library. (default: cyvcf2)
 ```
 
-
 ## vembrane_annotate
 
 ### Tool Description
@@ -287,37 +250,6 @@ options:
   --backend {cyvcf2,pysam}, -b {cyvcf2,pysam}
                         Set the backend library. (default: cyvcf2)
 ```
-
-
-## vembrane_data
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vembrane:2.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/vembrane/vembrane
-- **Package**: https://anaconda.org/channels/bioconda/packages/vembrane/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: vembrane [-h] [--version]
-                {filter,table,annotate,tag,structured,fhir,sort} ...
-vembrane: error: argument command: invalid choice: 'data' (choose from filter, table, annotate, tag, structured, fhir, sort)
-```
-
 
 ## vembrane_tag
 
@@ -407,37 +339,6 @@ options:
                         Set the backend library. (default: cyvcf2)
 ```
 
-
-## vembrane_without
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vembrane:2.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/vembrane/vembrane
-- **Package**: https://anaconda.org/channels/bioconda/packages/vembrane/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: vembrane [-h] [--version]
-                {filter,table,annotate,tag,structured,fhir,sort} ...
-vembrane: error: argument command: invalid choice: 'without' (choose from filter, table, annotate, tag, structured, fhir, sort)
-```
-
-
 ## vembrane_structured
 
 ### Tool Description
@@ -512,7 +413,6 @@ options:
   --backend {cyvcf2,pysam}, -b {cyvcf2,pysam}
                         Set the backend library. (default: cyvcf2)
 ```
-
 
 ## vembrane_fhir
 
@@ -628,7 +528,6 @@ options:
                         Set the backend library. (default: cyvcf2)
 ```
 
-
 ## vembrane_sort
 
 ### Tool Description
@@ -730,7 +629,6 @@ options:
   --backend {cyvcf2,pysam}, -b {cyvcf2,pysam}
                         Set the backend library. (default: cyvcf2)
 ```
-
 
 ## Metadata
 - **Skill**: generated

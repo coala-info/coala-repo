@@ -23,38 +23,6 @@ usage: moni [-h] [--version] {build,ms,mems,extend} ...
 moni: error: argument {build,ms,mems,extend}: invalid choice: 'valid' (choose from 'build', 'ms', 'mems', 'extend')
 ```
 
-
-## moni_additional
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/moni:0.2.2--py312h9b99d9e_0
-- **Homepage**: https://github.com/maxrossi91/moni
-- **Package**: https://anaconda.org/channels/bioconda/packages/moni/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/bin/moni:7: SyntaxWarning: invalid escape sequence '\/'
-  Description = """
-usage: moni [-h] [--version] {build,ms,mems,extend} ...
-moni: error: argument {build,ms,mems,extend}: invalid choice: 'additional' (choose from 'build', 'ms', 'mems', 'extend')
-```
-
-
 ## moni_build
 
 ### Tool Description
@@ -94,7 +62,6 @@ options:
                         (default: False)
 ```
 
-
 ## moni_ms
 
 ### Tool Description
@@ -123,7 +90,6 @@ options:
   -g GRAMMAR, --grammar GRAMMAR
                         select the grammar [plain, shaped] (default: plain)
 ```
-
 
 ## moni_mems
 
@@ -160,7 +126,6 @@ options:
   -g GRAMMAR, --grammar GRAMMAR
                         select the grammar [plain, shaped] (default: plain)
 ```
-
 
 ## moni_extend
 
@@ -203,7 +168,6 @@ options:
   -E GAPE, --gape GAPE  coma separated gap extension penalty values (default:
                         2,1)
 ```
-
 
 ## Metadata
 - **Skill**: generated

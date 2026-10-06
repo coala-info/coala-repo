@@ -1,36 +1,5 @@
 # braker CWL Generation Report
 
-## braker
-
-### Tool Description
-The provided text does not contain help information as the executable was not found in the environment.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/braker:1.9--1
-- **Homepage**: https://github.com/Gaius-Augustus/BRAKER
-- **Package**: Not found
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/braker/overview
-- **Total Downloads**: 10.5K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/Gaius-Augustus/BRAKER
-- **Stars**: N/A
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 07:32:10  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "braker": executable file not found in $PATH
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -52,10 +21,8 @@ SYNOPSIS
 
 braker.pl [OPTIONS] --genome=genome.fa --bam=rnaseq.bam
 
-
   --genome=genome.fa          fasta file with DNA sequences
   --bam=rnaseq.bam            bam file with spliced alignments from RNA-Seq
-
 
     
     

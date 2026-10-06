@@ -91,7 +91,6 @@ OPTIONAL ARGUMENTS:
      info. Default = 30.
 ```
 
-
 ## crux_tide-index
 
 ### Tool Description
@@ -248,112 +247,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
-
-## crux_for
-
-### Tool Description
-Crux is a suite of tools for analyzing tandem mass spectrometry data.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find for in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
 
 ## crux_tide-search
 
@@ -630,7 +523,6 @@ OPTIONAL ARGUMENTS:
      info. Default = 30.
 ```
 
-
 ## crux_peptide-spectrum
 
 ### Tool Description
@@ -730,11 +622,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_search
 
@@ -835,11 +725,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_index
 
@@ -940,11 +828,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_comet
 
@@ -1283,112 +1169,6 @@ OPTIONAL ARGUMENTS:
      successfully paired in order to attempt to estimate measurement error
      distribution. Default = 100.
 ```
-
-
-## crux_in
-
-### Tool Description
-Supports a variety of commands for mass spectrometry data analysis.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find in in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
 
 ## crux_percolator
 
@@ -1769,7 +1549,6 @@ INFO:
 INFO:
 ```
 
-
 ## crux_rankings
 
 ### Tool Description
@@ -1869,11 +1648,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_q-ranker
 
@@ -1988,7 +1765,6 @@ OPTIONAL ARGUMENTS:
   [--spectrum-parser pwiz|mstoolkit]
      Specify the parser to use for reading in MS/MS spectra. Default = pwiz.
 ```
-
 
 ## crux_barista
 
@@ -2119,7 +1895,6 @@ OPTIONAL ARGUMENTS:
      Specify the parser to use for reading in MS/MS spectra. Default = pwiz.
 ```
 
-
 ## crux_confidence
 
 ### Tool Description
@@ -2219,11 +1994,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_search-for-xlinks
 
@@ -2519,7 +2292,6 @@ OPTIONAL ARGUMENTS:
      info. Default = 30.
 ```
 
-
 ## crux_corresponding
 
 ### Tool Description
@@ -2619,11 +2391,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_scored
 
@@ -2724,11 +2494,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_spectral-counts
 
@@ -2824,7 +2592,6 @@ OPTIONAL ARGUMENTS:
   [--protein-database <string>]
      The name of the file in FASTA format. Default = <empty>.
 ```
-
 
 ## crux_spectral
 
@@ -2925,11 +2692,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_pipeline
 
@@ -3681,192 +3446,6 @@ OPTIONAL ARGUMENTS:
      peptide-level. Default = false.
 ```
 
-
-## crux_and
-
-### Tool Description
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output, then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find and in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
-
 ## crux_cascade-search
 
 ### Tool Description
@@ -4181,7 +3760,6 @@ OPTIONAL ARGUMENTS:
      true.
 ```
 
-
 ## crux_information
 
 ### Tool Description
@@ -4281,11 +3859,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_assign-confidence
 
@@ -4373,7 +3949,6 @@ OPTIONAL ARGUMENTS:
      The fileroot string will be added as a prefix to all output file names.
      Default = <empty>.
 ```
-
 
 ## crux_each
 
@@ -4474,11 +4049,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_make-pin
 
@@ -4542,7 +4115,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
 
 ## crux_file
 
@@ -4643,11 +4215,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_predict-peptide-ions
 
@@ -4706,7 +4276,6 @@ OPTIONAL ARGUMENTS:
      Include in the predicted peaks, b/y ions with the loss of 1 to n water
      molecules. See --nh3 for an example. Default = 0.
 ```
-
 
 ## crux_values
 
@@ -4807,11 +4376,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_hardklor
 
@@ -4995,7 +4562,6 @@ OPTIONAL ARGUMENTS:
      info. Default = 30.
 ```
 
-
 ## crux_high-resolution
 
 ### Tool Description
@@ -5095,11 +4661,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_param-medic
 
@@ -5176,7 +4740,6 @@ OPTIONAL ARGUMENTS:
      successfully paired in order to attempt to estimate measurement error
      distribution. Default = 100.
 ```
-
 
 ## crux_precursor
 
@@ -5277,11 +4840,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_database
 
@@ -5382,11 +4943,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_print-processed-spectra
 
@@ -5438,112 +4997,6 @@ OPTIONAL ARGUMENTS:
      Replace existing files if true or fail when trying to overwrite a file if
      false. Default = false.
 ```
-
-
-## crux_results
-
-### Tool Description
-Crux supports the following primary commands and utility commands.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find results in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
 
 ## crux_generate-peptides
 
@@ -5664,7 +5117,6 @@ OPTIONAL ARGUMENTS:
      info. Default = 30.
 ```
 
-
 ## crux_list
 
 ### Tool Description
@@ -5764,116 +5216,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
-
-## crux_specified
-
-### Tool Description
-Crux is a suite of tools for analyzing mass spectrometry proteomics data.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find specified in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
 
 ## crux_get-ms2-spectrum
 
@@ -5926,7 +5271,6 @@ OPTIONAL ARGUMENTS:
      precursor mass information from the "S" line or the "Z" line.  Default =
      true.
 ```
-
 
 ## crux_then
 
@@ -6027,11 +5371,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_psm-convert
 
@@ -6084,7 +5426,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
 
 ## crux_subtract-index
 
@@ -6140,298 +5481,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
-
-## crux_the
-
-### Tool Description
-Crux is a suite of tools for analyzing mass spectrometry data.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find the in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
-
-## crux_that
-
-### Tool Description
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find that in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
 
 ## crux_xlink-assign-ions
 
@@ -6499,7 +5548,6 @@ OPTIONAL ARGUMENTS:
   [--precision <integer>]
      Set the precision for scores written to sqt and text files. Default = 8.
 ```
-
 
 ## crux_peaks
 
@@ -6600,11 +5648,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_xlink-score-spectrum
 
@@ -6679,7 +5725,6 @@ OPTIONAL ARGUMENTS:
      Consider z-ions in the search? Peak height is 50 (in arbitrary units).
      Default = false.
 ```
-
 
 ## crux_calculate
 
@@ -6780,11 +5825,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_different
 
@@ -6885,11 +5928,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_localize-modification
 
@@ -6939,7 +5980,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
 
 ## crux_along
 
@@ -7040,11 +6080,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_modification
 
@@ -7145,116 +6183,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
-
-## crux_from
-
-### Tool Description
-Crux is a suite of tools for analyzing tandem mass spectrometry data.
-
-### Metadata
-- **Docker Image**: biocontainers/crux:v3.2_cv3
-- **Homepage**: https://github.com/redbadger/crux
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Cannot find from in available applications
- Usage: crux <command> [options] <argument>
-
-crux supports the following primary commands:
-
-  bullseye                 Assign high resolution precursor m/z values to
-                           MS/MS data using the Hardklör algorithm.
-  tide-index               Create an index for all peptides in a fasta file,
-                           for use in subsequent calls to tide-search.
-  tide-search              Search a collection of spectra against a sequence
-                           database, returning a collection of
-                           peptide-spectrum matches (PSMs). This is a fast
-                           search engine but requires that you first build an
-                           index with tide-index.
-  comet                    Search a collection of spectra against a sequence
-                           database, returning a collection of PSMs. This
-                           search engine runs directly on a protein database
-                           in FASTA format.
-  percolator               Re-rank a collection of PSMs using the Percolator
-                           algorithm. Optionally, also produce protein
-                           rankings using the Fido algorithm.
-  q-ranker                 Re-rank a collection of PSMs using the Q-ranker
-                           algorithm.
-  barista                  Rank PSMs, peptides and proteins, assigning a
-                           confidence measure to each identification.
-  search-for-xlinks        Search a collection of spectra against a sequence
-                           database, returning a collection of matches
-                           corresponding to linear and cross-linked peptides
-                           scored by XCorr.
-  spectral-counts          Quantify peptides or proteins using one of three
-                           spectral counting methods.
-  pipeline                 Runs a series of Crux tools on a protein database
-                           and one or more sets of tandem mass spectra.
-  cascade-search           An iterative procedure for incorporating
-                           information about peptide groups into the database
-                           search and confidence estimation procedure.
-  assign-confidence        Assign two types of statistical confidence measures
-                           (q-values and posterior error probabilities) to
-                           each PSM in a given set.
-
-crux supports the following utility commands:
-
-  make-pin                 Given a set of search results files, generate a pin
-                           file for input to crux percolator
-  predict-peptide-ions     Given a peptide and a charge state, predict the m/z
-                           values of the resulting fragment ions.
-  hardklor                 Identify isotopic distributions from
-                           high-resolution mass spectra.
-  param-medic              Examine the spectra in a file to estimate the best
-                           precursor and fragment error tolerances for
-                           database search.
-  print-processed-spectra  Process spectra as for scoring xcorr and print the
-                           results to a file.
-  generate-peptides        Extract from a given set of protein sequences a
-                           list of target and decoy peptides fitting the
-                           specified criteria.
-  get-ms2-spectrum         Extract one or more fragmentation spectra,
-                           specified by scan number, from an MS2 file.
-  version                  Print the Crux version number to standard output,
-                           then exit.
-  psm-convert              Reads in a file containing peptide-spectrum matches
-                           (PSMs) in one of the variety of supported formats
-                           and outputs the same PSMs in a different format
-  subtract-index           This command takes two peptide indices, created by
-                           the tide-index command, and subtracts the second
-                           index from the first. The result is an output index
-                           that contains peptides that appear in the first
-                           index but not the second.
-  xlink-assign-ions        Given a spectrum and a pair of cross-linked
-                           peptides, assign theoretical ion type labels to
-                           peaks in the observed spectrum.
-  xlink-score-spectrum     Given a cross-linked peptide and a spectrum
-                           calculate the corresponding XCorr score a number of
-                           different ways.
-  localize-modification    This command finds, for each peptide-spectrum match
-                           (PSM) in a given set, the most likely location
-                           along the peptide for a post-translational
-                           modification (PTM). The mass of the PTM is inferred
-                           from the difference between the spectrum neutral
-                           mass and the peptide mass.
-  extract-columns          Print specified columns from a tab-delimited file.
-  extract-rows             Print specified rows from a tab-delimited file.
-  stat-column              Collect summary statistics from a column in a
-                           tab-delimited file.
-  sort-by-column           Sorts a tab-delimited file by a column.
-
-
-Options and arguments are specific to each command.
-Type 'crux <command>' for details.
-```
-
 
 ## crux_mass
 
@@ -7355,11 +6286,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_extract-columns
 
@@ -7403,7 +6332,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
 
 ## crux_extract-rows
 
@@ -7456,7 +6384,6 @@ OPTIONAL ARGUMENTS:
      info. Default = 30.
 ```
 
-
 ## crux_stat-column
 
 ### Tool Description
@@ -7501,7 +6428,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
 
 ## crux_tab-delimited
 
@@ -7682,11 +6608,9 @@ crux supports the following utility commands:
                            tab-delimited file.
   sort-by-column           Sorts a tab-delimited file by a column.
 
-
 Options and arguments are specific to each command.
 Type 'crux <command>' for details.
 ```
-
 
 ## crux_sort-by-column
 
@@ -7735,7 +6659,6 @@ OPTIONAL ARGUMENTS:
      execution, 40-more progress information, 50-debug info, 60-detailed debug
      info. Default = 30.
 ```
-
 
 ## Metadata
 - **Skill**: generated

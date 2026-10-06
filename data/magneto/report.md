@@ -1,41 +1,5 @@
 # magneto CWL Generation Report
 
-## magneto_init
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/magneto:1.5.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.univ-nantes.fr/bird_pipeline_registry/magneto
-- **Package**: https://anaconda.org/channels/bioconda/packages/magneto/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/magneto/overview
-- **Total Downloads**: 1.2K
-- **Last updated**: 2026-01-05
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: magneto init [OPTIONS]
-Try 'magneto init --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
-
 ## magneto_run
 
 ### Tool Description

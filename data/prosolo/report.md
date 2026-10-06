@@ -41,7 +41,6 @@ ARGS:
     <BCF>    Calls as provided by prosolo single-cell-bulk.
 ```
 
-
 ## prosolo_estimate-mutation-rate
 
 ### Tool Description
@@ -71,7 +70,6 @@ OPTIONS:
     -f, --min-af <FLOAT>    Minimum allele frequency to consider [0.12].
 ```
 
-
 ## prosolo_variants
 
 ### Tool Description
@@ -92,7 +90,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## prosolo_single-cell-bulk
 
@@ -162,29 +159,6 @@ ARGS:
     <bulk>           BAM file with reads from bulk sample.
     <reference>      FASTA file with reference genome. Has to be indexed with samtools faidx.
 ```
-
-
-## prosolo_with
-
-### Tool Description
-ProSolo is a tool for processing and analyzing single-cell RNA sequencing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prosolo:0.6.1--h2138d71_0
-- **Homepage**: https://github.com/PROSIC/prosolo/tree/v0.2.0
-- **Package**: https://anaconda.org/channels/bioconda/packages/prosolo/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'with' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    prosolo [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## Metadata
 - **Skill**: generated

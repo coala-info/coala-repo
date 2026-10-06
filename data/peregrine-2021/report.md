@@ -1,38 +1,5 @@
 # peregrine-2021 CWL Generation Report
 
-## peregrine-2021
-
-### Tool Description
-FAIL to generate CWL: peregrine-2021 not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/peregrine-2021:0.4.13--ha6fb395_6
-- **Homepage**: https://github.com/cschin/peregrine-2021
-- **Package**: https://anaconda.org/channels/bioconda/packages/peregrine-2021/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/peregrine-2021/overview
-- **Total Downloads**: 8.1K
-- **Last updated**: 2025-09-04
-- **GitHub**: https://github.com/cschin/peregrine-2021
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: peregrine-2021 not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: peregrine-2021 not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

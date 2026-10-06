@@ -38,7 +38,6 @@ Optional argument:
 -e, --ec-max-size=INT       Maximum number of targets in an equivalence class (default: no maximum)
 ```
 
-
 ## kallisto_quant
 
 ### Tool Description
@@ -88,7 +87,6 @@ Optional arguments:
 -t, --threads=INT             Number of threads to use (default: 1)
     --verbose                 Print out progress information every 1M proccessed reads
 ```
-
 
 ## kallisto_quant-tcc
 
@@ -143,7 +141,6 @@ Optional arguments:
     --plaintext               Output plaintext only, not HDF5
 ```
 
-
 ## kallisto_bus
 
 ### Tool Description
@@ -192,7 +189,6 @@ Optional arguments:
                               (optional for --genomebam, but recommended)
     --verbose                 Print out progress information every 1M proccessed reads
 ```
-
 
 ## kallisto_h5dump
 
@@ -372,7 +368,6 @@ usage: h5dump [OPTIONS] files
       h5dump -d /foo -f family fam%05d.h5
 ```
 
-
 ## kallisto_inspect
 
 ### Tool Description
@@ -392,37 +387,5 @@ Usage: kallisto inspect INDEX-file
 
 Optional arguments:
 -t                      Number of threads
-```
-
-
-## kallisto_cite
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kallisto:0.52.0--h13ff97a_0
-- **Homepage**: https://pachterlab.github.io/kallisto
-- **Package**: https://anaconda.org/channels/bioconda/packages/kallisto/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-When using this program in your research, please cite
-
-  Bray, N. L., Pimentel, H., Melsted, P. & Pachter, L.
-  Near-optimal probabilistic RNA-seq quantification, 
-  Nature Biotechnology 34, 525-527(2016), doi:10.1038/nbt.3519
 ```
 

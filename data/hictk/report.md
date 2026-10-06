@@ -1,50 +1,5 @@
 # hictk CWL Generation Report
 
-## hictk_balance
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0
-- **Homepage**: https://github.com/paulsengroup/hictk
-- **Package**: https://anaconda.org/channels/bioconda/packages/hictk/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/hictk/overview
-- **Total Downloads**: 21.8K
-- **Last updated**: 2025-11-13
-- **GitHub**: https://github.com/paulsengroup/hictk
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Balance Hi-C files using ICE, SCALE, or VC. 
-
-
-hictk balance [OPTIONS] SUBCOMMAND
-
-
-OPTIONS:
-  -h,     --help              Print this help message and exit 
-
-SUBCOMMANDS:
-  ice                         Balance Hi-C files using ICE. 
-  scale                       Balance Hi-C files using SCALE. 
-  vc                          Balance Hi-C matrices using VC.
-```
-
-
 ## hictk_convert
 
 ### Tool Description
@@ -60,9 +15,7 @@ Convert Hi-C files between different formats.
 ```text
 Convert Hi-C files between different formats. 
 
-
 hictk convert [OPTIONS] input output
-
 
 POSITIONALS:
   input TEXT:((.[ms]cool) OR (.hic)) AND (NOT .scool) REQUIRED
@@ -112,7 +65,6 @@ OPTIONS:
   -f,     --force             Overwrite existing files (if any).
 ```
 
-
 ## hictk_dump
 
 ### Tool Description
@@ -129,9 +81,7 @@ Read interactions and other kinds of data from .hic and Cooler files and write t
 Read interactions and other kinds of data from .hic and Cooler files and write 
 them to stdout. 
 
-
 hictk dump [OPTIONS] uri
-
 
 POSITIONALS:
   uri TEXT:(.[ms]cool) OR (.hic) REQUIRED
@@ -169,59 +119,6 @@ OPTIONS:
                               Output pixels in BG2 format.
 ```
 
-
-## hictk_files
-
-### Tool Description
-Blazing fast tools to work with .hic and .cool files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0
-- **Homepage**: https://github.com/paulsengroup/hictk
-- **Package**: https://anaconda.org/channels/bioconda/packages/hictk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Blazing fast tools to work with .hic and .cool files. 
-
-
-hictk [OPTIONS] [SUBCOMMANDS]
-
-
-OPTIONS:
-  -h,     --help              Print this help message and exit 
-  -V,     --version           Display program version information and exit 
-[Option Group: help]
-  
-  [At most 1 of the following options are allowed] 
-  
-  
-OPTIONS:
-          --help-cite         Print hictk's citation in Bibtex format and exit. 
-          --help-build-meta   Print information regarding hictk's build options and third-party 
-                              dependencies, and exit. 
-          --help-docs         Print the URL to hictk's documentation and exit. 
-          --help-license      Print the hictk license and exit. 
-          --help-telemetry    Print information regarding telemetry collection and exit. 
-
-SUBCOMMANDS:
-  balance                     Balance Hi-C files using ICE, SCALE, or VC. 
-  convert                     Convert Hi-C files between different formats. 
-  dump                        Read interactions and other kinds of data from .hic and Cooler 
-                              files and write them to stdout. 
-  fix-mcool                   Fix corrupted .mcool files. 
-  load                        Build .cool and .hic files from interactions in various text 
-                              formats. 
-  merge                       Merge multiple Cooler or .hic files into a single file. 
-  metadata                    Print file metadata to stdout. 
-  rename-chromosomes, rename-chromsRename chromosomes found in Cooler files. 
-  validate                    Validate .hic and Cooler files. 
-  zoomify                     Convert single-resolution Cooler and .hic files to 
-                              multi-resolution by coarsening.
-```
-
-
 ## hictk_fix-mcool
 
 ### Tool Description
@@ -237,9 +134,7 @@ Fix corrupted .mcool files.
 ```text
 Fix corrupted .mcool files. 
 
-
 hictk fix-mcool [OPTIONS] input output
-
 
 POSITIONALS:
   input TEXT:.mcool REQUIRED  Path to a corrupted .mcool file. 
@@ -267,7 +162,6 @@ OPTIONS:
   -f,     --force             Overwrite existing files (if any).
 ```
 
-
 ## hictk_load
 
 ### Tool Description
@@ -283,9 +177,7 @@ Build .cool and .hic files from interactions in various text formats.
 ```text
 Build .cool and .hic files from interactions in various text formats. 
 
-
 hictk load [OPTIONS] interactions output-path
-
 
 POSITIONALS:
   interactions TEXT:(FILE) OR ({-}) REQUIRED
@@ -357,7 +249,6 @@ OPTIONS:
                               Set verbosity of output to the console.
 ```
 
-
 ## hictk_merge
 
 ### Tool Description
@@ -373,9 +264,7 @@ Merge multiple Cooler or .hic files into a single file.
 ```text
 Merge multiple Cooler or .hic files into a single file. 
 
-
 hictk merge [OPTIONS] input-files...
-
 
 POSITIONALS:
   input-files TEXT:((.[ms]cool) OR (.hic)) AND (NOT .scool) x 2 REQUIRED
@@ -417,7 +306,6 @@ OPTIONS:
                               Set verbosity of output to the console.
 ```
 
-
 ## hictk_metadata
 
 ### Tool Description
@@ -433,9 +321,7 @@ Print file metadata to stdout.
 ```text
 Print file metadata to stdout. 
 
-
 hictk metadata [OPTIONS] uri
-
 
 POSITIONALS:
   uri TEXT:(.[ms]cool) OR (.hic) REQUIRED
@@ -452,7 +338,6 @@ OPTIONS:
                               multi-resolution or single-cell file.
 ```
 
-
 ## hictk_validate
 
 ### Tool Description
@@ -468,9 +353,7 @@ Validate .hic and Cooler files.
 ```text
 Validate .hic and Cooler files. 
 
-
 hictk validate [OPTIONS] uri
-
 
 POSITIONALS:
   uri TEXT REQUIRED           Path to a .hic or .[ms]cool file (Cooler URI syntax supported). 
@@ -491,7 +374,6 @@ OPTIONS:
                               through exit codes.
 ```
 
-
 ## hictk_zoomify
 
 ### Tool Description
@@ -508,9 +390,7 @@ Convert single-resolution Cooler and .hic files to multi-resolution by coarsenin
 Convert single-resolution Cooler and .hic files to multi-resolution by 
 coarsening. 
 
-
 hictk zoomify [OPTIONS] cooler/hic [m]cool/hic
-
 
 POSITIONALS:
   cooler/hic TEXT:((.[ms]cool) OR (.hic)) AND (NOT .scool) REQUIRED
@@ -553,7 +433,6 @@ OPTIONS:
                               Set verbosity of output to the console.
 ```
 
-
 ## hictk_multi-resolution
 
 ### Tool Description
@@ -569,9 +448,7 @@ Blazing fast tools to work with .hic and .cool files.
 ```text
 Blazing fast tools to work with .hic and .cool files. 
 
-
 hictk [OPTIONS] [SUBCOMMANDS]
-
 
 OPTIONS:
   -h,     --help              Print this help message and exit 
@@ -604,7 +481,6 @@ SUBCOMMANDS:
   zoomify                     Convert single-resolution Cooler and .hic files to 
                               multi-resolution by coarsening.
 ```
-
 
 ## Metadata
 - **Skill**: generated

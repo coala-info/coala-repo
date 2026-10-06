@@ -113,7 +113,6 @@ Input/Output:
           CSV file with blanket rules that describe resistance (or susceptibility). The columns are <variant type>,<gene>,<start>,<end>,<drug(s)>. See the docs for a detailed explanation.
 ```
 
-
 ## drprg_Build
 
 ### Tool Description
@@ -136,7 +135,6 @@ Usage: drprg [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
 
 ## drprg_predict
 
@@ -247,7 +245,6 @@ Filter:
           [default: 0]
 ```
 
-
 ## drprg_Predict
 
 ### Tool Description
@@ -270,7 +267,6 @@ Usage: drprg [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
 
 ## drprg_index
 
@@ -326,70 +322,6 @@ Options:
           Print help (see a summary with '-h')
 ```
 
-
-## drprg_Download
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drprg:0.1.1--h5076881_1
-- **Homepage**: https://github.com/mbhall88/drprg
-- **Package**: https://anaconda.org/channels/bioconda/packages/drprg/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Download'
-
-Usage: drprg [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
-## drprg_Print
-
-### Tool Description
-A command-line tool for managing and processing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drprg:0.1.1--h5076881_1
-- **Homepage**: https://github.com/mbhall88/drprg
-- **Package**: https://anaconda.org/channels/bioconda/packages/drprg/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Print'
-
-Usage: drprg [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
-## drprg_Use
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drprg:0.1.1--h5076881_1
-- **Homepage**: https://github.com/mbhall88/drprg
-- **Package**: https://anaconda.org/channels/bioconda/packages/drprg/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Use'
-
-Usage: drprg [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
 ## drprg_Maximum
 
 ### Tool Description
@@ -409,7 +341,6 @@ Usage: drprg [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
 
 ## Metadata
 - **Skill**: generated

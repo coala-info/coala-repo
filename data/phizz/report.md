@@ -28,7 +28,6 @@ Options:
   --help          Show this message and exit.
 ```
 
-
 ## phizz_delete
 
 ### Tool Description
@@ -45,35 +44,6 @@ Deletes the phizz database.
 [2026-02-25 01:48:25,249] phizz.cli                 INFO     Deleting database /usr/local/lib/python3.7/site-packages/phizz/resources/phizz.db
 [2026-02-25 01:48:25,568] phizz.cli                 INFO     Database /usr/local/lib/python3.7/site-packages/phizz/resources/phizz.db deleted
 ```
-
-
-## phizz_init
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phizz:0.2.3--py_0
-- **Homepage**: https://github.com/moonso/phizz
-- **Package**: https://anaconda.org/channels/bioconda/packages/phizz/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[2026-02-25 01:48:51,070] phizz.cli                 ERROR    Databse already exists in /usr/local/lib/python3.7/site-packages/phizz/resources/phizz.db
-```
-
 
 ## phizz_query
 
@@ -106,7 +76,6 @@ Options:
   --stop INTEGER
   --help                  Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

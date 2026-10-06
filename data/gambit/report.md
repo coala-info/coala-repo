@@ -23,8 +23,6 @@ Usage: gambit dist [OPTIONS]
   Calculate the GAMBIT distances between a set of query geneomes and a set of
   reference genomes.
 
-
-
 Options:
   -k INTEGER                  Number of nucleotides to recognize AFTER prefix.
   -p, --prefix NUCS           K-mer prefix.
@@ -46,7 +44,6 @@ Options:
   --progress / --no-progress  Show/don't show progress meter.
   --help                      Show this message and exit.
 ```
-
 
 ## gambit_query
 
@@ -80,44 +77,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
-## gambit_signatures
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gambit:1.1.0--py39hbcbf7aa_2
-- **Homepage**: https://github.com/jlumpe/gambit
-- **Package**: https://anaconda.org/channels/bioconda/packages/gambit/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: gambit signatures [OPTIONS] COMMAND [ARGS]...
-
-  Create and inspect GAMBIT signature files.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  create  Create k-mer signatures from genome sequences.
-  info    Inspect GAMBIT signature (.gs) files.
-```
-
-
 ## gambit_tree
 
 ### Tool Description
@@ -147,7 +106,6 @@ Options:
   --progress / --no-progress  Show/don't show progress meter.
   --help                      Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

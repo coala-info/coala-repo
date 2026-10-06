@@ -104,7 +104,6 @@ options:
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_illumina2
 
 ### Tool Description
@@ -168,7 +167,6 @@ options:
 
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_illumina3
 
@@ -241,7 +239,6 @@ options:
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_pacbio
 
 ### Tool Description
@@ -282,7 +279,6 @@ options:
 
 Written by Jon Palmer (2020) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_454
 
@@ -350,7 +346,6 @@ options:
 
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_SRA
 
@@ -420,7 +415,6 @@ options:
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_dada2
 
 ### Tool Description
@@ -478,7 +472,6 @@ options:
 
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_pb-dada2
 
@@ -538,7 +531,6 @@ options:
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_unoise2
 
 ### Tool Description
@@ -576,7 +568,6 @@ options:
 
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_unoise3
 
@@ -616,7 +607,6 @@ options:
 
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_cluster_ref
 
@@ -666,7 +656,6 @@ options:
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_lulu
 
 ### Tool Description
@@ -712,7 +701,6 @@ options:
 
 Written by Jon Palmer (2018) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_taxonomy
 
@@ -794,7 +782,6 @@ options:
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_show
 
 ### Tool Description
@@ -825,7 +812,6 @@ options:
 
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_select
 
@@ -862,7 +848,6 @@ options:
 
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_remove
 
@@ -901,7 +886,6 @@ options:
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_sample
 
 ### Tool Description
@@ -928,7 +912,6 @@ options:
 
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_drop
 
@@ -962,7 +945,6 @@ options:
 
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_stats
 
@@ -1011,7 +993,6 @@ options:
 Written by Jon Palmer (2017) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_summarize
 
 ### Tool Description
@@ -1045,7 +1026,6 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'past'
 ```
 
-
 ## amptk_funguild
 
 ### Tool Description
@@ -1070,7 +1050,6 @@ Options:     -i, --input        Input OTU table with Taxonomy (via amptk taxonom
              -o, --out          Output OTU table with Guild annotations
              -u, --url          URL to FUNGuild db. Default: https://mycoportal.org/fdex/services/api/db_return.php?dbReturn=Yes&pp=1
 ```
-
 
 ## amptk_meta
 
@@ -1101,7 +1080,6 @@ options:
 
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_heatmap
 
@@ -1168,7 +1146,6 @@ options:
 
 Written by Jon Palmer (2016) nextgenusfs@gmail.com
 ```
-
 
 ## amptk_SRA-submit
 
@@ -1247,7 +1224,6 @@ options:
 Written by Jon Palmer (2015) nextgenusfs@gmail.com
 ```
 
-
 ## amptk_database
 
 ### Tool Description
@@ -1317,41 +1293,6 @@ options:
 Written by Jon Palmer (2015-2017) nextgenusfs@gmail.com
 ```
 
-
-## amptk_info
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextgenusfs/amptk
-- **Package**: https://anaconda.org/channels/bioconda/packages/amptk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-------------------------------
-Running AMPtk v 1.6.0
-------------------------------
-Taxonomy Databases Installed: /usr/local/lib/python3.10/site-packages/amptk/DB
-------------------------------
-No DB configured, run 'amptk install' or 'amptk database' command.
-------------------------------
-```
-
-
 ## amptk_primers
 
 ### Tool Description
@@ -1394,39 +1335,6 @@ fITS7-ion    AGTGARTCATCGAATCTTTG
 mlCOIintR    GGRGGRTASACSGTTCASCCSGTSCC
 ----------------------------------
 ```
-
-
-## amptk_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextgenusfs/amptk
-- **Package**: https://anaconda.org/channels/bioconda/packages/amptk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Palmer JM, Jusino MA, Banik MT, Lindner DL. 2018. Non-biological synthetic spike-in controls and the
-	AMPtk software pipeline improve mycobiome data. PeerJ 6:e4925; DOI 10.7717/peerj.4925
-
-*** Please also cite the specific tools that you used in AMPtk: ***
-	USEARCH/UPARSE, VSEARCH, DADA2, LULU, etc.
-```
-
 
 ## Metadata
 - **Skill**: generated

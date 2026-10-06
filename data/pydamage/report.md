@@ -24,7 +24,6 @@ Try 'pydamage analyze --help' for help.
 Error: Missing argument 'BAM'.
 ```
 
-
 ## pydamage_filter
 
 ### Tool Description
@@ -47,7 +46,6 @@ Usage: pydamage filter [OPTIONS] CSV
 Options:
   --help  Show this message and exit.
 ```
-
 
 ## pydamage_binplot
 
@@ -73,50 +71,6 @@ Usage: pydamage binplot [OPTIONS] CSV FASTA
 Options:
   --help  Show this message and exit.
 ```
-
-
-## pydamage_cite
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pydamage:1.0--pyhdfd78af_0
-- **Homepage**: https://github.com/maxibor/pydamage
-- **Package**: https://anaconda.org/channels/bioconda/packages/pydamage/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-@article{borry_pydamage_2021,
-    author = {Borry, Maxime and Hübner, Alexander and Rohrlach, Adam B. and Warinner, Christina},
-    doi = {10.7717/peerj.11845},
-    issn = {2167-8359},
-    journal = {PeerJ},
-    language = {en},
-    month = {July},
-    note = {Publisher: PeerJ Inc.},
-    pages = {e11845},
-    shorttitle = {PyDamage},
-    title = {PyDamage: automated ancient damage identification and estimation for contigs in ancient DNA de novo assembly},
-    url = {https://peerj.com/articles/11845},
-    urldate = {2021-07-27},
-    volume = {9},
-    year = {2021}
-}
-```
-
 
 ## Metadata
 - **Skill**: generated

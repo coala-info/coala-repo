@@ -29,7 +29,6 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-
 ## screed_dump_fasta
 
 ### Tool Description
@@ -55,7 +54,6 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-
 ## screed_dump_fastq
 
 ### Tool Description
@@ -80,37 +78,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
-
-## screed_command
-
-### Tool Description
-Available commands: db, dump_fasta, dump_fastq
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/screed:1.0.4--py_0
-- **Homepage**: http://github.com/dib-lab/screed/
-- **Package**: https://anaconda.org/channels/bioconda/packages/screed/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Unrecognized command
-usage: screed <command> [<args>]
-
-Available:
-
-    db <filename>               Creates a screed database.
-    dump_fasta <db> <output>    Convert a screed database to a FASTA file
-    dump_fastq <db> <output>    Convert a screed database to a FASTQ file
-
-positional arguments:
-  command
-
-optional arguments:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

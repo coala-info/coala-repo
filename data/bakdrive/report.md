@@ -4,7 +4,6 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| bakdrive | Failed | not a usable tool: wraps only the sub-command group with boolean sub-command words and no data inputs or outputs. |
 | bakdrive_driver | PASS |  |
 | bakdrive_fmt_donor | PASS |  |
 | bakdrive_fmt_driver | PASS |  |
@@ -185,33 +184,4 @@ optional arguments:
 
 ## Metadata
 - **Skill**: not generated
-
-## bakdrive
-
-### Tool Description
-Bacterial interaction inference using MICOM, Driver nodes detection using MDSM, After-FMT community construction and simulation following the GLV model, Afte-driver species transplantation (ADT) community consturction and simulation following the GLV model, After-FMT or ADT simulation following the GLV model
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bakdrive:1.0.4--hdfd78af_0
-- **Homepage**: https://gitlab.com/treangenlab/bakdrive
-- **Package**: https://anaconda.org/channels/bioconda/packages/bakdrive/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: bakdrive [-h] {interaction,driver,fmt_donor,fmt_driver,fmt_only} ...
-
-positional arguments:
-  {interaction,driver,fmt_donor,fmt_driver,fmt_only}
-                        sub-command help
-    interaction         Bacterial interaction inference using MICOM
-    driver              Driver nodes detection using MDSM
-    fmt_donor           After-FMT community construction and simulation
-                        following the GLV model
-    fmt_driver          Afte-driver species transplantation (ADT) community
-                        consturction and simulation following the GLV model
-    fmt_only            After-FMT or ADT simulation following the GLV model
-
-optional arguments:
-  -h, --help            show this help message and exit
-```
 

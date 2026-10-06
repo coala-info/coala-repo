@@ -6,39 +6,6 @@
 |---|---|---|
 | ampliconsplitter_ampliconsplitter.py | PASS |  |
 
-## ampliconsplitter
-
-### Tool Description
-FAIL to generate CWL: ampliconsplitter not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ampliconsplitter:1.9.22--h9948957_0
-- **Homepage**: https://github.com/RolandFaure/AmpliconSplitter
-- **Package**: https://anaconda.org/channels/bioconda/packages/ampliconsplitter/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ampliconsplitter/overview
-- **Total Downloads**: 354
-- **Last updated**: 2025-07-30
-- **GitHub**: https://github.com/RolandFaure/AmpliconSplitter
-- **Stars**: 0
-### Generation Failed
-
-FAIL to generate CWL: ampliconsplitter not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: ampliconsplitter not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

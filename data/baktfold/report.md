@@ -11,42 +11,6 @@
 | baktfold_proteins-compare | Not completed | needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists. |
 | baktfold_run | Not completed | needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists. |
 
-## baktfold_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/baktfold:0.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/baktfold
-- **Package**: https://anaconda.org/channels/bioconda/packages/baktfold/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/baktfold/overview
-- **Total Downloads**: 124
-- **Last updated**: 2025-11-17
-- **GitHub**: https://github.com/gbouras13/baktfold
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: baktfold citation [OPTIONS]
-Try 'baktfold citation --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
-
 ## baktfold_compare
 
 ### Tool Description
@@ -101,7 +65,6 @@ Options:
   -a, --all-proteins            annotate all proteins (not just hypotheticals)
 ```
 
-
 ## baktfold_install
 
 ### Tool Description
@@ -127,7 +90,6 @@ Options:
                          acceleration
   -t, --threads INTEGER  Number of threads  [default: 1]
 ```
-
 
 ## baktfold_predict
 
@@ -172,7 +134,6 @@ Options:
   -a, --all-proteins             annotate all proteins (not just
                                  hypotheticals)
 ```
-
 
 ## baktfold_proteins
 
@@ -237,7 +198,6 @@ Options:
                                  2 is the description.
 ```
 
-
 ## baktfold_proteins-compare
 
 ### Tool Description
@@ -291,37 +251,6 @@ Options:
                                 Column 1 matches the Foldseek headers, column
                                 2 is the description.
 ```
-
-
-## baktfold_proteins-predict
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/baktfold:0.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/baktfold
-- **Package**: https://anaconda.org/channels/bioconda/packages/baktfold/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: baktfold proteins-predict [OPTIONS]
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## baktfold_run
 
@@ -387,7 +316,6 @@ Options:
   -a, --all-proteins             annotate all proteins (not just
                                  hypotheticals)
 ```
-
 
 ## Metadata
 - **Skill**: generated

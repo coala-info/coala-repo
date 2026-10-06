@@ -31,7 +31,6 @@ optional arguments:
   --debug
 ```
 
-
 ## deepbgc_prepare
 
 ### Tool Description
@@ -79,7 +78,6 @@ required arguments:
   --output-tsv OUTPUT_TSV
                         Output TSV file path
 ```
-
 
 ## deepbgc_pipeline
 
@@ -168,7 +166,6 @@ BGC classification options:
                         DeepBGC classification score threshold for assigning classes to BGCs (default: 0.5)
 ```
 
-
 ## deepbgc_train
 
 ### Tool Description
@@ -219,44 +216,6 @@ optional arguments:
                         Validation sequence file path. Repeat to specify multiple files
   --verbose INT         Verbosity level: 0=none, 1=progress bar, 2=once per epoch (default: 2)
 ```
-
-
-## deepbgc_info
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/deepbgc:0.1.31--pyhca03a8a_0
-- **Homepage**: https://github.com/Merck/DeepBGC
-- **Package**: https://anaconda.org/channels/bioconda/packages/deepbgc/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-_____                  ____    ____   ____ 
- |  _ \  ___  ___ ____ | __ )  / ___) / ___)
- | | \ \/ _ \/ _ \  _ \|  _ \ | |  _ | |    
- | |_/ /  __/  __/ |_) | |_) || |_| || |___ 
- |____/ \___|\___| ___/|____/  \____| \____)
-=================|_|===== version 0.1.31 =====
-WARNING 25/02 07:33:18   Data downloads directory does not exist yet: /root/.local/share/deepbgc/data/common
-WARNING 25/02 07:33:18   Run "deepbgc download" to download all dependencies or set DEEPBGC_DOWNLOADS_DIR env var
-INFO    25/02 07:33:18   Downloads directory for current version does not exist yet: /root/.local/share/deepbgc/data/0.1.0
-INFO    25/02 07:33:18   Run "deepbgc download" to download current models
-```
-
 
 ## Metadata
 - **Skill**: generated

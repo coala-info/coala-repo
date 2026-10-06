@@ -4,7 +4,10 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| alevin-fry_atac | Failed | not a usable tool: it wraps only the 'atac' command group (a subcommand string, no data inputs or outputs); the atac subcommands (generate-permit-list, sort, collate, deduplicate) have no CWL |
+| alevin-fry_atac_collate | Failed | tool bug: alevin-fry 0.11.2 atac collate crashes on a record-count check with the full real RAD file (multi-mapping reads); it runs only when the input holds uniquely mapped reads |
+| alevin-fry_atac_deduplicate | Failed | tool bug: atac deduplicate in alevin-fry 0.11.2 never starts reading the collated RAD file (the reader call is commented out in the source), so it spins forever and leaves map.bed empty. |
+| alevin-fry_atac_generate-permit-list | PASS |  |
+| alevin-fry_atac_sort | PASS |  |
 | alevin-fry_collate | PASS |  |
 | alevin-fry_convert | PASS |  |
 | alevin-fry_generate-permit-list | PASS |  |
@@ -196,10 +199,10 @@ For more information, try '--help'.
 ```
 
 
-## alevin-fry_atac
+## alevin-fry_atac_generate-permit-list
 
 ### Tool Description
-subcommand for processing scATAC-seq RAD files
+Generate a permit list of barcodes from a whitelist file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/alevin-fry:0.11.2--ha6fb395_0
@@ -207,22 +210,132 @@ subcommand for processing scATAC-seq RAD files
 - **Package**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
 - **Validation**: PASS
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
+- **Total Downloads**: 51.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/COMBINE-lab/alevin-fry
+- **Stars**: N/A
 ### Original Help Text
 ```text
-subcommand for processing scATAC-seq RAD files
+Generate a permit list of barcodes from a whitelist file
 
-Usage: alevin-fry atac [COMMAND]
-
-Commands:
-  generate-permit-list  Generate a permit list of barcodes from a whitelist file
-  sort                  Produce coordinate sorted bed file
-  collate               Collate a RAD file with corrected cell barcode
-  deduplicate           Deduplicate the RAD file and output a BED file
-  help                  Print this message or the help of the given subcommand(s)
+Usage: alevin-fry atac generate-permit-list [OPTIONS] --input <INPUT> --output-dir <OUTPUTDIR> <--unfiltered-pl <UNFILTEREDPL>>
 
 Options:
-  -h, --help     Print help
-  -V, --version  Print version
+  -i, --input <INPUT>                 input directory containing the map.rad file
+  -o, --output-dir <OUTPUTDIR>        output directory
+  -t, --threads <THREADS>             number of threads to use for the first phase of permit-list
+                                      generation [default: 8]
+  -u, --unfiltered-pl <UNFILTEREDPL>  uses an unfiltered external permit list
+  -m, --min-reads <MINREADS>          minimum read count threshold; only used with --unfiltered-pl
+                                      [default: 10]
+  -d, --permit-bc-ori <EXPECTEDORI>   the expected orientation of barcodes in the permit list
+                                      [default: rc] [possible values: fw, rc]
+  -h, --help                          Print help
+  -V, --version                       Print version
+```
+
+
+## alevin-fry_atac_sort
+
+### Tool Description
+Produce coordinate sorted bed file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/alevin-fry:0.11.2--ha6fb395_0
+- **Homepage**: https://github.com/COMBINE-lab/alevin-fry
+- **Package**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
+- **Total Downloads**: 51.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/COMBINE-lab/alevin-fry
+- **Stars**: N/A
+### Original Help Text
+```text
+Produce coordinate sorted bed file
+
+Usage: alevin-fry atac sort [OPTIONS] --input-dir <INPUTDIR> --rad-dir <RADDIR>
+
+Options:
+  -i, --input-dir <INPUTDIR>      output directory made by generate-permit-list
+  -r, --rad-dir <RADDIR>          the directory containing the map.rad file which will be sorted
+                                  (typically produced as an output of the mapping)
+  -t, --threads <THREADS>         number of threads to use for processing [default: 16]
+  -c, --compress                  compress the output of the sorted RAD file
+  -m, --max-records <MAXRECORDS>  the maximum number of read records to keep in memory at once
+                                  [default: 30000000]
+  -h, --help                      Print help
+  -V, --version                   Print version
+```
+
+
+## alevin-fry_atac_collate
+
+### Tool Description
+Collate a RAD file with corrected cell barcode
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/alevin-fry:0.11.2--ha6fb395_0
+- **Homepage**: https://github.com/COMBINE-lab/alevin-fry
+- **Package**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
+- **Total Downloads**: 51.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/COMBINE-lab/alevin-fry
+- **Stars**: N/A
+### Original Help Text
+```text
+Collate a RAD file with corrected cell barcode
+
+Usage: alevin-fry atac collate [OPTIONS] --input-dir <INPUTDIR> --rad-dir <RADDIR>
+
+Options:
+  -i, --input-dir <INPUTDIR>      output directory made by generate-permit-list
+  -r, --rad-dir <RADDIR>          the directory containing the map.rad file which will be collated
+                                  (typically produced as an output of the mapping)
+  -t, --threads <THREADS>         number of threads to use for processing [default: 16]
+  -c, --compress                  compress the output collated RAD file
+  -m, --max-records <MAXRECORDS>  the maximum number of read records to keep in memory at once
+                                  [default: 30000000]
+  -h, --help                      Print help
+  -V, --version                   Print version
+```
+
+
+## alevin-fry_atac_deduplicate
+
+### Tool Description
+Deduplicate the RAD file and output a BED file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/alevin-fry:0.11.2--ha6fb395_0
+- **Homepage**: https://github.com/COMBINE-lab/alevin-fry
+- **Package**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/alevin-fry/overview
+- **Total Downloads**: 51.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/COMBINE-lab/alevin-fry
+- **Stars**: N/A
+### Original Help Text
+```text
+Deduplicate the RAD file and output a BED file
+
+Usage: alevin-fry atac deduplicate [OPTIONS] --input-dir <INPUTDIR>
+
+Options:
+  -i, --input-dir <INPUTDIR>         input directory made by generate-permit-list that also contains
+                                     the output of collate
+  -t, --threads <THREADS>            number of threads to use for processing [default: 20]
+  -d, --permit-bc-ori <EXPECTEDORI>  the expected orientation of barcodes in the permit list
+                                     [default: rc] [possible values: fw, rc]
+  -h, --help                         Print help
+  -V, --version                      Print version
 ```
 
 

@@ -27,7 +27,6 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-
 ## gemini_amend
 
 ### Tool Description
@@ -51,7 +50,6 @@ optional arguments:
   --sample sample  New sample information file to load
   --clear          Set all values in this column to NULL before loading.
 ```
-
 
 ## gemini_annotate
 
@@ -98,7 +96,6 @@ optional arguments:
                         is a VCF file
 ```
 
-
 ## gemini_autosomal_dominant
 
 ### Tool Description
@@ -143,7 +140,6 @@ optional arguments:
                         The maximum phred-scaled genotype likelihod (PL)
                         allowed for each sample in a family.
 ```
-
 
 ## gemini_autosomal_recessive
 
@@ -190,7 +186,6 @@ optional arguments:
                         allowed for each sample in a family.
 ```
 
-
 ## gemini_bcolz_index
 
 ### Tool Description
@@ -213,7 +208,6 @@ optional arguments:
   -h, --help   show this help message and exit
   --cols COLS  list of gt columns to index. default is all
 ```
-
 
 ## gemini_browser
 
@@ -239,7 +233,6 @@ optional arguments:
   --host host  Hostname, default: localhost.
   --port port  Port, default: 8088.
 ```
-
 
 ## gemini_burden
 
@@ -282,7 +275,6 @@ optional arguments:
                         included.
   --save_tscores        Save the permuted T-scores to a file.
 ```
-
 
 ## gemini_comp_hets
 
@@ -337,7 +329,6 @@ optional arguments:
                         likely true comp-hets
 ```
 
-
 ## gemini_db_info
 
 ### Tool Description
@@ -359,7 +350,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
 
 ## gemini_de_novo
 
@@ -405,7 +395,6 @@ optional arguments:
                         allowed for each sample in a family.
 ```
 
-
 ## gemini_dump
 
 ### Tool Description
@@ -437,62 +426,6 @@ optional arguments:
   --tfam        Output sample information to TFAM format.
 ```
 
-
-## gemini_examples
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gemini:0.30.2--py27hacb5245_0
-- **Homepage**: https://github.com/arq5x/gemini
-- **Package**: https://anaconda.org/channels/bioconda/packages/gemini/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[load] - load a VCF file into a gemini database:
-   gemini load -v my.vcf my.db
-   gemini load -v my.vcf -t snpEff my.db
-   gemini load -v my.vcf -t VEP my.db
-
-[stats] - report basic statistics about your variants:
-   gemini stats --tstv my.db
-   gemini stats --tstv-coding my.db
-   gemini stats --sfs my.db
-   gemini stats --snp-counts my.db
-
-[query] - explore the database with ad hoc queries:
-   gemini query -q "select * from variants where is_lof = 1 and aaf <= 0.01" my.db
-   gemini query -q "select chrom, pos, gt_bases.NA12878 from variants" my.db
-   gemini query -q "select chrom, pos, in_omim, clin_sigs from variants" my.db
-
-[dump] - convenient "data dumps":
-   gemini dump --variants my.db
-   gemini dump --genotypes my.db
-   gemini dump --samples my.db
-
-[region] - access variants in specific genomic regions:
-   gemini region --reg chr1:100-200 my.db
-   gemini region --gene TP53 my.db
-
-[tools] - there are also many specific tools available
-   1. Find compound heterozygotes.
-     gemini comp_hets my.db
-```
-
-
 ## gemini_fusions
 
 ### Tool Description
@@ -520,7 +453,6 @@ optional arguments:
   --evidence_type STR  The supporting evidence types for the variant ("PE",
                        "SR", or "PE,SR").
 ```
-
 
 ## gemini_gene_wise
 
@@ -558,7 +490,6 @@ optional arguments:
   --columns COLUMNS
 ```
 
-
 ## gemini_interactions
 
 ### Tool Description
@@ -587,7 +518,6 @@ optional arguments:
   --var          var mode: Returns variant info (e.g. impact, biotype) for
                  interacting genes
 ```
-
 
 ## gemini_load
 
@@ -639,7 +569,6 @@ optional arguments:
                         likelihoods
 ```
 
-
 ## gemini_load_chunk
 
 ### Tool Description
@@ -689,7 +618,6 @@ optional arguments:
                        around SQLite locking issues on NFS drives.
 ```
 
-
 ## gemini_lof_interactions
 
 ### Tool Description
@@ -717,7 +645,6 @@ optional arguments:
                  interacting genes
 ```
 
-
 ## gemini_lof_sieve
 
 ### Tool Description
@@ -739,7 +666,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
 
 ## gemini_mendel_errors
 
@@ -785,7 +711,6 @@ optional arguments:
   --only-affected       only consider candidates from affected samples.
 ```
 
-
 ## gemini_merge_chunks
 
 ### Tool Description
@@ -821,7 +746,6 @@ optional arguments:
                         likelihoods
 ```
 
-
 ## gemini_pathways
 
 ### Tool Description
@@ -846,7 +770,6 @@ optional arguments:
   --lof       Report pathways for indivs/genes/sites with LoF variants
 ```
 
-
 ## gemini_qc
 
 ### Tool Description
@@ -870,7 +793,6 @@ optional arguments:
   --mode STRING   What type of QC should be run? [sex]
   --chrom STRING  Which chromosome should the sex test be applied to? [chrX]
 ```
-
 
 ## gemini_query
 
@@ -929,7 +851,6 @@ optional arguments:
                         genotype queries
 ```
 
-
 ## gemini_region
 
 ### Tool Description
@@ -962,7 +883,6 @@ optional arguments:
                     variant.
   --format FORMAT   Format of output (JSON, TPED or default)
 ```
-
 
 ## gemini_roh
 
@@ -1003,7 +923,6 @@ optional arguments:
   -s SAMPLES            Comma separated list of samples to screen for ROHs.
                         e.g S120,S450
 ```
-
 
 ## gemini_set_somatic
 
@@ -1063,7 +982,6 @@ optional arguments:
                         _would_ be set. For testing parameters.
 ```
 
-
 ## gemini_stats
 
 ### Tool Description
@@ -1104,7 +1022,6 @@ optional arguments:
   --gt-filter STRING    Restrictions to apply to genotype values
 ```
 
-
 ## gemini_update
 
 ### Tool Description
@@ -1132,7 +1049,6 @@ optional arguments:
                         include
   --tooldir TOOLDIR     Directory for third party tools (ie /usr/local) update
 ```
-
 
 ## gemini_windower
 
@@ -1163,7 +1079,6 @@ optional arguments:
   -o {mean,median,min,max,collapse}
                         The operation that should be applied to the -t values.
 ```
-
 
 ## gemini_x_linked_de_novo
 
@@ -1205,7 +1120,6 @@ optional arguments:
   --min-gq MIN_GQ       The minimum genotype quality required for each sample
                         in a family (default = 0)
 ```
-
 
 ## gemini_x_linked_dominant
 
@@ -1249,7 +1163,6 @@ optional arguments:
                         in a family (default = 0)
 ```
 
-
 ## gemini_x_linked_recessive
 
 ### Tool Description
@@ -1291,7 +1204,6 @@ optional arguments:
   --min-gq MIN_GQ       The minimum genotype quality required for each sample
                         in a family (default = 0)
 ```
-
 
 ## Metadata
 - **Skill**: generated

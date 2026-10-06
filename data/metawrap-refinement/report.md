@@ -22,7 +22,6 @@ MetaWRAP: A flexible pipeline for genome-resolved metagenomic data analysis. Ple
 -----                                  Please select a proper module of metaWRAP.                                  -----
 ------------------------------------------------------------------------------------------------------------------------
 
-
 MetaWRAP v=1.2
 Usage: metaWRAP [module]
 
@@ -42,33 +41,5 @@ Usage: metaWRAP [module]
 	--help | -h		show this help message
 	--version | -v	show metaWRAP version
 	--show-config	show where the metawrap configuration files are stored
-```
-
-
-## metawrap-refinement_config-metawrap
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metawrap:1.2--0
-- **Homepage**: https://github.com/bxlab/metaWRAP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-refinement/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-exec /usr/local/bin/config-metawrap: exec format error
 ```
 

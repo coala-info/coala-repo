@@ -1,38 +1,5 @@
 # pbtk CWL Generation Report
 
-## pbtk
-
-### Tool Description
-FAIL to generate CWL: pbtk not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pbtk:3.5.0--h9ee0642_0
-- **Homepage**: https://github.com/PacificBiosciences/pbbioconda
-- **Package**: https://anaconda.org/channels/bioconda/packages/pbtk/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pbtk/overview
-- **Total Downloads**: 55.1K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/PacificBiosciences/pbbioconda
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pbtk not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pbtk not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -249,7 +216,6 @@ Filtering:
   -j,--num-threads    INT    Number of threads to use, 0 means autodetection. [0]
   --log-level         STR    Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL). [WARN]
   --log-file          FILE   Log to a file, instead of stderr.
-
 
 Note:
   1. Downsampling is not supported on FASTX files.

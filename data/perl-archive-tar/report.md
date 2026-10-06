@@ -1,38 +1,5 @@
 # perl-archive-tar CWL Generation Report
 
-## perl-archive-tar
-
-### Tool Description
-FAIL to generate CWL: perl-archive-tar not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-archive-tar:3.04--pl5321hdfd78af_0
-- **Homepage**: https://metacpan.org/pod/Archive::Tar
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-archive-tar/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/perl-archive-tar/overview
-- **Total Downloads**: 1.4M
-- **Last updated**: 2025-06-12
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: perl-archive-tar not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: perl-archive-tar not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -184,7 +151,6 @@ ptardiff is a small program that diffs an extracted archive against an unextract
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
 INFO:    Using cached SIF image
 
-
 Usage:  ptardiff ARCHIVE_FILE
         ptardiff -h
 
@@ -198,10 +164,8 @@ Usage:  ptardiff ARCHIVE_FILE
     for a file with the name and diff it against the contents of the
     archive.
 
-
 Options:
     h   Prints this help message
-
 
 Sample Usage:
 
@@ -211,7 +175,6 @@ Sample Usage:
     [...]
 
     $ ptardiff Acme-Buffy-1.3.tar.gz > README.patch
-
 
 See Also:
     tar(1)

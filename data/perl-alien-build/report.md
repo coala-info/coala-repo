@@ -1,38 +1,5 @@
 # perl-alien-build CWL Generation Report
 
-## perl-alien-build
-
-### Tool Description
-FAIL to generate CWL: perl-alien-build not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-alien-build:2.84--pl5321h7b50bb2_1
-- **Homepage**: https://metacpan.org/pod/Alien::Build
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-alien-build/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/perl-alien-build/overview
-- **Total Downloads**: 255.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: perl-alien-build not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: perl-alien-build not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

@@ -74,7 +74,6 @@ options:
   -k, --keep            Keep all intermediate files
 ```
 
-
 ## mity_normalise
 
 ### Tool Description
@@ -116,7 +115,6 @@ options:
   --custom-reference-genome CUSTOM_REFERENCE_GENOME
                         Specify custom reference genome file
 ```
-
 
 ## mity_report
 
@@ -165,7 +163,6 @@ options:
                         Output annotated vcf file
 ```
 
-
 ## mity_merge
 
 ### Tool Description
@@ -197,7 +194,6 @@ options:
   -d, --debug           Enter debug mode
   -k, --keep            Keep all intermediate files
 ```
-
 
 ## mity_runall
 
@@ -286,38 +282,6 @@ options:
   --output-annotated-vcf
                         Output annotated vcf file
 ```
-
-
-## mity_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mity:2.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/KCCG/mity
-- **Package**: https://anaconda.org/channels/bioconda/packages/mity/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: mity version [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

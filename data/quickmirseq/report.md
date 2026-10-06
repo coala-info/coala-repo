@@ -21,31 +21,3 @@ QuickMIRSeq.pl
 Usage: perl /usr/local/bin/QuickMIRSeq.pl id_file configuration_file chunk[optional]
 ```
 
-
-## quickmirseq_QuickMIRSeq-report.sh
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/quickmirseq:1.0.0--hdfd78af_3
-- **Homepage**: https://sourceforge.net/projects/quickmirseq/
-- **Package**: https://anaconda.org/channels/bioconda/packages/quickmirseq/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Please run this script under QuickMIRSeq result folder
-```
-

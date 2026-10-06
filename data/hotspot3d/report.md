@@ -51,7 +51,6 @@ Version: V1.8.2
          For user support please email adamscott@wustl.edu
 ```
 
-
 ## hotspot3d_drugport
 
 ### Tool Description
@@ -75,7 +74,6 @@ Usage: hotspot3d drugport [options]
 
 --help                       this message
 ```
-
 
 ## hotspot3d_uppro
 
@@ -114,7 +112,6 @@ Usage: hotspot3d uppro [options]
 --help                       this message
 ```
 
-
 ## hotspot3d_prep
 
 ### Tool Description
@@ -143,109 +140,8 @@ Usage: hotspot3d prep [options]
 --3d-distance-cutoff               3D distance cutoff (<= Angstroms) for prior, default is 20
 --linear-cutoff                    Linear distance cutoff (> peptides) for prior, default is 0
 
-
 --help                       this message
 ```
-
-
-## hotspot3d_calroi
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
-- **Homepage**: https://github.com/ding-lab/hotspot3d
-- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: hotspot3d calroi [options]
-
-                             REQUIRED
---output-dir                 Output directory of proximity files
-
---help                       this message
-```
-
-
-## hotspot3d_statis
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
-- **Homepage**: https://github.com/ding-lab/hotspot3d
-- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: hotspot3d statis [options]
-
-                             REQUIRED
---output-dir                 Output directory of proximity files
-
---help                       this message
-```
-
-
-## hotspot3d_anno
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
-- **Homepage**: https://github.com/ding-lab/hotspot3d
-- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: hotspot3d anno [options]
-
-                             REQUIRED
---output-dir                 Output directory of proximity files
-
---help                       this message
-```
-
 
 ## hotspot3d_trans
 
@@ -274,40 +170,6 @@ Usage: hotspot3d trans [options]
 --help                       this message
 ```
 
-
-## hotspot3d_cosmic
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
-- **Homepage**: https://github.com/ding-lab/hotspot3d
-- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: hotspot3d cosmic [options]
-
-                             REQUIRED
---output-dir                 Output directory of proximity files
-
---help                       this message
-```
-
-
 ## hotspot3d_prior
 
 ### Tool Description
@@ -333,7 +195,6 @@ Usage: hotspot3d prior [options]
 
 --help                       this message
 ```
-
 
 ## hotspot3d_Analysis
 
@@ -381,7 +242,6 @@ Version: V1.8.2
          For user support please email adamscott@wustl.edu
 ```
 
-
 ## hotspot3d_main
 
 ### Tool Description
@@ -422,7 +282,6 @@ Usage: hotspot3d main [options]
 --help                       this message
 ```
 
-
 ## hotspot3d_search
 
 ### Tool Description
@@ -458,7 +317,6 @@ Usage: hotspot3d search [options]
 
 --help                       this message
 ```
-
 
 ## hotspot3d_cluster
 
@@ -530,12 +388,8 @@ Usage: hotspot3d cluster [options]
 --number-of-runs             Number of density clustering runs to perform before the cluster membership probability being calculated, default: 10
 --probability-cut-off        Clusters will be formed with variants having at least this probability, default: 100
 
-
-
-
 --help                       this message
 ```
-
 
 ## hotspot3d_sigclus
 
@@ -562,7 +416,6 @@ Usage: hotspot3d sigclus [options]
 	--help				This message
 ```
 
-
 ## hotspot3d_summary
 
 ### Tool Description
@@ -586,7 +439,6 @@ Usage: hotspot3d summary [options]
 
 --help                       this message
 ```
-
 
 ## hotspot3d_visual
 
@@ -633,7 +485,6 @@ Usage: hotspot3d visual [options]
 Tip: To run an already created .pml file, run pymol <your output-file>
 ```
 
-
 ## hotspot3d_SUPPORT
 
 ### Tool Description
@@ -679,54 +530,6 @@ Version: V1.8.2
          SUPPORT
          For user support please email adamscott@wustl.edu
 ```
-
-
-## hotspot3d_For
-
-### Tool Description
-3D mutation proximity analysis program.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
-- **Homepage**: https://github.com/ding-lab/hotspot3d
-- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Please give valid sub command ! 
-Program: hotspot3d - 3D mutation proximity analysis program.
-Version: V1.8.2
- Author: Beifang Niu, Adam D Scott, Sohini Sengupta, John Wallis & Amila Weerasinghe
-
-  Usage: hotspot3d <command> [options]
-
-           Preprocessing
-              drugport  --  0) Parse drugport database (OPTIONAL)
-              uppro     --  1) Update proximity files
-              prep      --  2) Run steps 2a-2f of preprocessing
-                  calroi    --  2a) Generate region of interest (ROI) information
-                  statis    --  2b) Calculate p_values for pairs of mutations
-                  anno      --  2c) Add region of interest (ROI) annotation
-                  trans     --  2d) Add transcript annotation 
-                  cosmic    --  2e) Add COSMIC annotation to proximity file
-                  prior     --  2f) Prioritization
-
-           Analysis
-
-              main      --  0) Run steps a-f of analysis (BETA)
-                  search    --  a) 3D mutation proximity searching
-                  cluster   --  b) Determine mutation-mutation and mutation-drug clusters
-                  sigclus   --  c) Determine significance of clusters (BETA)
-                  summary   --  d) Summarize clusters
-                  visual    --  e) Visulization of 3D proximity
-
-           help      --  this message
-
-         SUPPORT
-         For user support please email adamscott@wustl.edu
-```
-
 
 ## Metadata
 - **Skill**: generated

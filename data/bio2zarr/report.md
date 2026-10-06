@@ -4,13 +4,23 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| bio2zarr_plink2zarr | Failed | not a usable tool: wraps only the plink2zarr command group with a free subcommand string and argument list, no data inputs or outputs. |
-| bio2zarr_vcf2zarr | Failed | not a usable tool: wraps only the vcf2zarr command group, with subcommand names as unbound booleans and no data inputs or outputs. |
+| bio2zarr_plink2zarr_convert | PASS |  |
+| bio2zarr_vcf2zarr_convert | PASS |  |
+| bio2zarr_vcf2zarr_dencode_finalise | PASS |  |
+| bio2zarr_vcf2zarr_dencode_init | PASS |  |
+| bio2zarr_vcf2zarr_dencode_partition | PASS |  |
+| bio2zarr_vcf2zarr_dexplode_finalise | PASS |  |
+| bio2zarr_vcf2zarr_dexplode_init | PASS |  |
+| bio2zarr_vcf2zarr_dexplode_partition | PASS |  |
+| bio2zarr_vcf2zarr_encode | PASS |  |
+| bio2zarr_vcf2zarr_explode | PASS |  |
+| bio2zarr_vcf2zarr_inspect | PASS |  |
+| bio2zarr_vcf2zarr_mkschema | PASS |  |
 
-## bio2zarr_vcf2zarr
+## bio2zarr_vcf2zarr_convert
 
 ### Tool Description
-Convert VCF file(s) to VCF Zarr format.
+Convert input VCF(s) directly to VCF Zarr (not recommended for large files).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
@@ -25,37 +35,31 @@ Convert VCF file(s) to VCF Zarr format.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: vcf2zarr [OPTIONS] COMMAND [ARGS]...
+Usage: vcf2zarr convert [OPTIONS] VCFS... ZARR_PATH
 
-  Convert VCF file(s) to VCF Zarr format.
-
-  See the online documentation at https://sgkit-dev.github.io/bio2zarr/
-
-  for more information.
+  Convert input VCF(s) directly to VCF Zarr (not recommended for large files).
 
 Options:
-  --version  Show the version and exit.
-  --help     Show this message and exit.
-
-Commands:
-  convert             Convert input VCF(s) directly to VCF Zarr (not...
-  inspect             Inspect an intermediate columnar format or Zarr path.
-  explode             Convert VCF(s) to intermediate columnar format
-  mkschema            Generate a schema for zarr encoding
-  encode              Convert intermediate columnar format to VCF Zarr.
-  dexplode-init       Initial step for distributed conversion of VCF(s)...
-  dexplode-partition  Convert a VCF partition to intermediate columnar...
-  dexplode-finalise   Final step for distributed conversion of VCF(s) to...
-  dencode-init        Initialise conversion of intermediate format to VCF...
-  dencode-partition   Convert a partition from intermediate columnar...
-  dencode-finalise    Final step for distributed conversion of ICF to VCF...
+  -f, --force                     Force overwriting of existing directories
+  -l, --variants-chunk-size INTEGER
+                                  Chunk size in the variants dimension
+  -w, --samples-chunk-size INTEGER
+                                  Chunk size in the samples dimension
+  -v, --verbose                   Increase verbosity
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  -p, --worker-processes INTEGER  Number of worker processes  [default: 0]
+  --local-alleles / --no-local-alleles
+                                  Use local allele fields to reduce the
+                                  storage requirements of the output.
+                                  [default: no-local-alleles]
+  --help                          Show this message and exit.
 ```
 
-
-## bio2zarr_plink2zarr
+## bio2zarr_vcf2zarr_inspect
 
 ### Tool Description
-Convert plink fileset(s) to VCF Zarr format
+Inspect an intermediate columnar format or Zarr path.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
@@ -63,20 +67,385 @@ Convert plink fileset(s) to VCF Zarr format
 - **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
 - **Validation**: PASS
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: plink2zarr [OPTIONS] COMMAND [ARGS]...
+Usage: vcf2zarr inspect [OPTIONS] PATH
 
-  Convert plink fileset(s) to VCF Zarr format
+  Inspect an intermediate columnar format or Zarr path.
 
 Options:
-  --version  Show the version and exit.
-  --help     Show this message and exit.
-
-Commands:
-  convert  Convert plink fileset to VCF Zarr.
+  -v, --verbose  Increase verbosity
+  --help         Show this message and exit.
 ```
 
+## bio2zarr_vcf2zarr_explode
+
+### Tool Description
+Convert VCF(s) to intermediate columnar format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr explode [OPTIONS] VCFS... ICF_PATH
+
+  Convert VCF(s) to intermediate columnar format
+
+Options:
+  -f, --force                     Force overwriting of existing directories
+  -v, --verbose                   Increase verbosity
+  -c, --column-chunk-size INTEGER
+                                  Approximate uncompressed size of exploded
+                                  column chunks in MiB
+  -C, --compressor [lz4|zstd]     Codec to use for compressing column chunks
+                                  (Default=zstd).
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  -p, --worker-processes INTEGER  Number of worker processes  [default: 0]
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_mkschema
+
+### Tool Description
+Generate a schema for zarr encoding
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr mkschema [OPTIONS] ICF_PATH
+
+  Generate a schema for zarr encoding
+
+Options:
+  -l, --variants-chunk-size INTEGER
+                                  Chunk size in the variants dimension
+  -w, --samples-chunk-size INTEGER
+                                  Chunk size in the samples dimension
+  --local-alleles / --no-local-alleles
+                                  Use local allele fields to reduce the
+                                  storage requirements of the output.
+                                  [default: no-local-alleles]
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_encode
+
+### Tool Description
+Convert intermediate columnar format to VCF Zarr.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr encode [OPTIONS] ICF_PATH ZARR_PATH
+
+  Convert intermediate columnar format to VCF Zarr.
+
+Options:
+  -f, --force                     Force overwriting of existing directories
+  -v, --verbose                   Increase verbosity
+  -s, --schema PATH
+  -l, --variants-chunk-size INTEGER
+                                  Chunk size in the variants dimension
+  -w, --samples-chunk-size INTEGER
+                                  Chunk size in the samples dimension
+  -V, --max-variant-chunks INTEGER
+                                  Truncate the output in the variants
+                                  dimension to have this number of chunks.
+                                  Mainly intended to help with schema tuning.
+  -M, --max-memory TEXT           An approximate bound on overall memory usage
+                                  (e.g. 10G),
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  -p, --worker-processes INTEGER  Number of worker processes  [default: 0]
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_dexplode_init
+
+### Tool Description
+Initial step for distributed conversion of VCF(s) to intermediate columnar format over some number of paritions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr dexplode-init [OPTIONS] VCFS... ICF_PATH
+
+  Initial step for distributed conversion of VCF(s) to intermediate columnar
+  format over some number of paritions.
+
+Options:
+  -n, --num-partitions INTEGER RANGE
+                                  Target number of partitions to split into
+                                  [x>=1]
+  -f, --force                     Force overwriting of existing directories
+  -c, --column-chunk-size INTEGER
+                                  Approximate uncompressed size of exploded
+                                  column chunks in MiB
+  -C, --compressor [lz4|zstd]     Codec to use for compressing column chunks
+                                  (Default=zstd).
+  --json                          Output summary data in JSON format
+  -v, --verbose                   Increase verbosity
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  -p, --worker-processes INTEGER  Number of worker processes  [default: 0]
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_dexplode_partition
+
+### Tool Description
+Convert a VCF partition to intermediate columnar format. Must be called after the ICF path has been initialised with dexplode_init. By default, partition indexes are from 0 to the number of partitions N (returned by dexplode_init), exclusive. If the --one-based option is specifed, partition indexes are in the range 1 to N, inclusive.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr dexplode-partition [OPTIONS] ICF_PATH PARTITION
+
+  Convert a VCF partition to intermediate columnar format. Must be called
+  after the ICF path has been initialised with dexplode_init. By default,
+  partition indexes are from 0 to the number of partitions N (returned by
+  dexplode_init), exclusive. If the --one-based option is specifed, partition
+  indexes are in the range 1 to N, inclusive.
+
+Options:
+  -v, --verbose  Increase verbosity
+  --one-based    Partition indexes are interpreted as one-based
+  --help         Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_dexplode_finalise
+
+### Tool Description
+Final step for distributed conversion of VCF(s) to intermediate columnar format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr dexplode-finalise [OPTIONS] ICF_PATH
+
+  Final step for distributed conversion of VCF(s) to intermediate columnar
+  format.
+
+Options:
+  -v, --verbose  Increase verbosity
+  --help         Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_dencode_init
+
+### Tool Description
+Initialise conversion of intermediate format to VCF Zarr. This will set up the specified ZARR_PATH to perform this conversion over some number of partitions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr dencode-init [OPTIONS] ICF_PATH ZARR_PATH
+
+  Initialise conversion of intermediate format to VCF Zarr. This will set up
+  the specified ZARR_PATH to perform this conversion over some number of
+  partitions.
+
+  The output of this commmand is the actual number of partitions generated
+  (which may be less then the requested number, if there is not sufficient
+  chunks in the variants dimension) and a rough lower-bound on the amount of
+  memory required to encode a partition.
+
+  NOTE: the format of this output will likely change in subsequent releases;
+  it should not be considered machine-readable for now.
+
+Options:
+  -n, --num-partitions INTEGER RANGE
+                                  Target number of partitions to split into
+                                  [x>=1]
+  -f, --force                     Force overwriting of existing directories
+  -s, --schema PATH
+  -l, --variants-chunk-size INTEGER
+                                  Chunk size in the variants dimension
+  -w, --samples-chunk-size INTEGER
+                                  Chunk size in the samples dimension
+  -V, --max-variant-chunks INTEGER
+                                  Truncate the output in the variants
+                                  dimension to have this number of chunks.
+                                  Mainly intended to help with schema tuning.
+  --json                          Output summary data in JSON format
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  -v, --verbose                   Increase verbosity
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_dencode_partition
+
+### Tool Description
+Convert a partition from intermediate columnar format to VCF Zarr. Must be called after the Zarr path has been initialised with dencode_init. By default, partition indexes are from 0 to the number of partitions N (returned by dencode_init), exclusive. If the --one-based option is specifed, partition indexes are in the range 1 to N, inclusive.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr dencode-partition [OPTIONS] ZARR_PATH PARTITION
+
+  Convert a partition from intermediate columnar format to VCF Zarr. Must be
+  called after the Zarr path has been initialised with dencode_init. By
+  default, partition indexes are from 0 to the number of partitions N
+  (returned by dencode_init), exclusive. If the --one-based option is
+  specifed, partition indexes are in the range 1 to N, inclusive.
+
+Options:
+  -v, --verbose  Increase verbosity
+  --one-based    Partition indexes are interpreted as one-based
+  --help         Show this message and exit.
+```
+
+## bio2zarr_vcf2zarr_dencode_finalise
+
+### Tool Description
+Final step for distributed conversion of ICF to VCF Zarr.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcf2zarr dencode-finalise [OPTIONS] ZARR_PATH
+
+  Final step for distributed conversion of ICF to VCF Zarr.
+
+Options:
+  -v, --verbose                   Increase verbosity
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_plink2zarr_convert
+
+### Tool Description
+Convert plink fileset to VCF Zarr. Results are equivalent to `plink1.9 --bfile prefix --keep-allele-order --recode vcf-iid --out tmp` then running `vcf2zarr convert tmp.vcf zarr_path`
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: plink2zarr convert [OPTIONS] IN_PATH ZARR_PATH
+
+  Convert plink fileset to VCF Zarr. Results are equivalent to `plink1.9
+  --bfile prefix --keep-allele-order --recode vcf-iid --out tmp` then running
+  `vcf2zarr convert tmp.vcf zarr_path`
+
+Options:
+  -f, --force                     Force overwriting of existing directories
+  -p, --worker-processes INTEGER  Number of worker processes  [default: 0]
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  -v, --verbose                   Increase verbosity
+  -l, --variants-chunk-size INTEGER
+                                  Chunk size in the variants dimension
+  -w, --samples-chunk-size INTEGER
+                                  Chunk size in the samples dimension
+  --help                          Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

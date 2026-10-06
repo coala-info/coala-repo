@@ -21,7 +21,6 @@ N/A
 Usage: maq fasta2bfa <in.fasta> <out.bfa>
 ```
 
-
 ## maq_fastq2bfq
 
 ### Tool Description
@@ -42,7 +41,6 @@ fastq2bfq: invalid option -- 'l'
 fastq2bfq: invalid option -- 'p'
 Usage: maq fastq2bfq [-n nreads] <in.fastq> <out.prefix>|<out.bfq>
 ```
-
 
 ## maq_map
 
@@ -77,7 +75,6 @@ Options: -1 INT      length of the first read (<=127) [0]
          -c          match in the colorspace
 ```
 
-
 ## maq_mapmerge
 
 ### Tool Description
@@ -93,7 +90,6 @@ Merge multiple map files.
 ```text
 Usage: maq mapmerge <out.map> <in1.map> <in2.map> [...]
 ```
-
 
 ## maq_rmdup
 
@@ -111,7 +107,6 @@ Remove duplicate reads from a maq map file.
 Usage: maq rmdup <output.map> <input.map>
 ```
 
-
 ## maq_indelpe
 
 ### Tool Description
@@ -127,7 +122,6 @@ Estimate indel polymorphism rate
 ```text
 Usage: maq indelpe <in.ref.bfa> <in.aln.map>
 ```
-
 
 ## maq_indelsoa
 
@@ -149,7 +143,6 @@ indelsoa: invalid option -- 'l'
 indelsoa: invalid option -- 'p'
 Usage: maq indelsoa <ref.bfa> <align.map>
 ```
-
 
 ## maq_assemble
 
@@ -176,7 +169,6 @@ Options: -r FLOAT    expected rate of heterozygotes [0.001]
          -p          discard abnormal pairs
 ```
 
-
 ## maq_glfgen
 
 ### Tool Description
@@ -202,7 +194,6 @@ Options: -r FLOAT    expected rate of heterozygotes [0.001]
          -p          discard abnormal pairs
 ```
 
-
 ## maq_sol2sanger
 
 ### Tool Description
@@ -218,7 +209,6 @@ Convert Sanger FASTQ to MAQ FASTQ
 ```text
 Usage: maq sol2sanger <in.fastq> <out.fastq>
 ```
-
 
 ## maq_mapass2maq
 
@@ -236,7 +226,6 @@ Convert mapass2.map to maq.map format
 maq mapass2maq <mapass2.map> <maq.map>
 ```
 
-
 ## maq_bfq2fastq
 
 ### Tool Description
@@ -252,7 +241,6 @@ Convert .bfq files to .fastq files
 ```text
 Usage: maq bfq2fastq <in.bfq> <out.fastq>
 ```
-
 
 ## maq_mapview
 
@@ -274,7 +262,6 @@ mapview: invalid option -- 'l'
 mapview: invalid option -- 'p'
 Usage: maq mapview [-bN] <in.map>
 ```
-
 
 ## maq_mapcheck
 
@@ -298,7 +285,6 @@ Options: -s         use single-end mapping qualities
          -P FILE    polymorphic sites [null]
          -c         print count instead of fraction
 ```
-
 
 ## maq_pileup
 
@@ -326,7 +312,6 @@ Options: -Q INT    maximum sum of errors [60]
          -P        print position on the read
 ```
 
-
 ## maq_cns2fq
 
 ### Tool Description
@@ -347,35 +332,6 @@ Options: -Q INT    minimum mapping quality [40]
          -d INT    minimum read depth [3]
          -D INT    maximum read depth [255]
 ```
-
-
-## maq_cns2snp
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
-- **Homepage**: https://github.com/maqetta/maqetta
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-maq: aux_utils.c:199: ma_cns2snp: Assertion `fp' failed.
-```
-
 
 ## maq_snpreg
 
@@ -398,63 +354,6 @@ Options: -Q INT    minimum mapping quality [40]
          -D INT    maximum read depth [255]
 ```
 
-
-## maq_cns2view
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
-- **Homepage**: https://github.com/maqetta/maqetta
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-maq: aux_utils.c:225: ma_cns2view: Assertion `fp' failed.
-```
-
-
-## maq_cns2ref
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
-- **Homepage**: https://github.com/maqetta/maqetta
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-maq: aux_utils.c:185: ma_cns2ref: Assertion `fp' failed.
-```
-
-
 ## maq_cns2win
 
 ### Tool Description
@@ -473,35 +372,6 @@ cns2win: invalid option -- 'h'
 Usage: maq cns2win [-w 1000] [-b 0] [-e 0] [-c null] [-q 0] <in.cns>
 ```
 
-
-## maq_fasta2csfa
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
-- **Homepage**: https://github.com/maqetta/maqetta
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-maq: fasta2bfa.c:195: ma_fasta2csfa: Assertion `fp_fa' failed.
-```
-
-
 ## maq_csmap2nt
 
 ### Tool Description
@@ -517,7 +387,6 @@ Convert cs.map to nt.map
 ```text
 Usage: maq csmap2nt <out.nt.map> <in.ref.nt.bfa> <in.cs.map>
 ```
-
 
 ## maq_simutrain
 
@@ -535,7 +404,6 @@ Simulate reads from a reference genome.
 Usage: maq simutrain <simupars.dat> <known_reads.fastq>
 ```
 
-
 ## maq_simucns
 
 ### Tool Description
@@ -551,35 +419,6 @@ Simulate consensus sequences from true SNPs.
 ```text
 Usage: maq simucns <in.cns> <in.true.snp>
 ```
-
-
-## maq_simustat
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
-- **Homepage**: https://github.com/maqetta/maqetta
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-maq: simulate.c:473: maq_simustat: Assertion `fp' failed.
-```
-
 
 ## Metadata
 - **Skill**: generated

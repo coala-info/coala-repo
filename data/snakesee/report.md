@@ -67,7 +67,6 @@ options:
                         (default: 7.0)
 ```
 
-
 ## snakesee_status
 
 ### Tool Description
@@ -101,7 +100,6 @@ options:
                         Optional path to a timing profile for bootstrapping estimates.
                         (default: None)
 ```
-
 
 ## snakesee_profile-export
 
@@ -138,7 +136,6 @@ options:
                        (default: False)
 ```
 
-
 ## snakesee_profile-show
 
 ### Tool Description
@@ -162,44 +159,6 @@ positional arguments:
 options:
   -h, --help    show this help message and exit
 ```
-
-
-## snakesee_log-handler-path
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/snakesee:0.6.1--pyhdfd78af_0
-- **Homepage**: https://github.com/nh13/snakesee
-- **Package**: https://anaconda.org/channels/bioconda/packages/snakesee/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: snakesee log-handler-path [-h]
-
-Print the path to the log handler script for Snakemake 8.x.
-
-Use with: snakemake --log-handler-script $(snakesee log-handler-path) --cores 4
-
-This enables real-time job tracking without requiring Snakemake 9+.
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

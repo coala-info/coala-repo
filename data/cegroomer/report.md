@@ -1,34 +1,5 @@
 # cegroomer CWL Generation Report
 
-## cegroomer
-
-### Tool Description
-FAIL to generate CWL: cegroomer not found in Docker image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tracegroomer:0.1.4--pyhdfd78af_0
-- **Homepage**: Not found
-- **Package**: Not found
-- **wiki**: https://github.com/cbib/TraceGroomer/wiki
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-FAIL to generate CWL: cegroomer not found in Docker image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: cegroomer not found in Docker image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

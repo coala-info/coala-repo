@@ -1,107 +1,59 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java
+baseCommand:
+  - bactopia-qc
 label: bactopia-qc
-doc: "Splits paired-end reads into separate files for read 1, read 2, and unpaired
-  reads.\n\nTool homepage: https://bactopia.github.io/"
+doc: "Quality control of Illumina or Oxford Nanopore reads for Bactopia: validate\
+  \ read pairs, remove adapters and PhiX, reduce coverage, and report read statistics.\n\
+  \nUsage: bactopia-qc <PREFIX> <RUNTYPE> <R1> <R2> <GENOME_SIZE_FILE> <OPT1> ...\
+  \ <OPTN>\n\nTool homepage: https://bactopia.github.io/"
 inputs:
-  - id: main_class
+  - id: prefix
     type: string
-    doc: The main Java class to execute
+    doc: Sample name used as the prefix of the output files
     inputBinding:
       position: 1
-  - id: ain
-    type:
-      - 'null'
-      - string
-    doc: Additional input parameter
+  - id: runtype
+    type: string
+    doc: Read type (paired-end, single-end or ont)
     inputBinding:
-      position: 102
-      prefix: ain=
-      separate: false
-  - id: cp
-    type:
-      - 'null'
-      - string
-    doc: Classpath for Java classes
-    inputBinding:
-      position: 102
-  - id: ea
-    type:
-      - 'null'
-      - boolean
-    doc: Enable assertions
-    inputBinding:
-      position: 102
-  - id: input_r1
+      position: 2
+  - id: r1
     type: File
-    doc: Input file for read 1
+    doc: First (or only) FASTQ file, gzip-compressed
     inputBinding:
-      position: 102
-      prefix: in=
-      separate: false
-  - id: input_r2
+      position: 3
+  - id: r2
     type: File
-    doc: Input file for read 2
+    doc: Second FASTQ file of a pair, gzip-compressed
     inputBinding:
-      position: 102
-      prefix: in2=
-      separate: false
-  - id: xmx
+      position: 4
+  - id: genome_size_file
+    type: File
+    doc: Text file whose first line is the genome size
+    inputBinding:
+      position: 5
+  - id: options
     type:
       - 'null'
-      - string
-    doc: Maximum heap size for the Java Virtual Machine
+      - type: array
+        items: string
+    doc: Additional options (OPT1 ... OPTN); the script accepts them but does not
+      use them
     inputBinding:
-      position: 102
-  - id: output_r1_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_r1_path`
-    inputBinding:
-      position: 103
-      prefix: --output-r1
-  - id: output_r2_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_r2_path`
-    inputBinding:
-      position: 104
-      prefix: --output-r2
-  - id: output_singles_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_singles_path`
-    inputBinding:
-      position: 105
-      prefix: --output-singles
+      position: 6
 outputs:
-  - id: output_r1
-    type:
-      - 'null'
-      - File
-    doc: Output file for repaired read 1
+  - id: results
+    type: Directory
+    doc: Cleaned FASTQs, error FASTQs and the summary folder (fastq-scan JSON, FastQC
+      or NanoPlot reports)
     outputBinding:
-      glob: $(inputs.output_r1_path)
-  - id: output_r2
-    type:
-      - 'null'
-      - File
-    doc: Output file for repaired read 2
+      glob: results
+  - id: error_reports
+    type: File[]
+    doc: Error messages written when reads fail a QC step
     outputBinding:
-      glob: $(inputs.output_r2_path)
-  - id: output_singles
-    type:
-      - 'null'
-      - File
-    doc: Output file for unpaired reads
-    outputBinding:
-      glob: $(inputs.output_singles_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.prefix)-*error.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bactopia-qc:1.0.3--hdfd78af_0

@@ -112,7 +112,6 @@ options:
                         and 1e6
 ```
 
-
 ## sourmash_compute
 
 ### Tool Description
@@ -227,7 +226,6 @@ File handling options:
                         first record in the file
   --randomize           shuffle the list of input filenames randomly
 ```
-
 
 ## sourmash_gather
 
@@ -382,7 +380,6 @@ options:
                         and 1e6
 ```
 
-
 ## sourmash_index
 
 ### Tool Description
@@ -468,45 +465,6 @@ options:
                         and 1e6
 ```
 
-
-## sourmash_info
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0
-- **Homepage**: https://github.com/sourmash-bio/sourmash
-- **Package**: https://anaconda.org/channels/bioconda/packages/sourmash/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[K
-== This is sourmash version 4.9.4. ==
-
-[K== Please cite Irber et. al (2024), doi:10.21105/joss.06830. ==
-
-
-[Ksourmash version 4.9.4
-
-[K- loaded from path: /usr/local/lib/python3.13/site-packages/sourmash/cli
-
-[K
-```
-
-
 ## sourmash_plot
 
 ### Tool Description
@@ -552,7 +510,6 @@ options:
                         a CSV file containing label information to use on
                         plot; implies --labels
 ```
-
 
 ## sourmash_prefetch
 
@@ -641,7 +598,6 @@ options:
   --scaled FLOAT        downsample to this scaled; value should be between 100
                         and 1e6
 ```
-
 
 ## sourmash_search
 
@@ -762,7 +718,6 @@ options:
                         and 1e6
 ```
 
-
 ## sourmash_lca
 
 ### Tool Description
@@ -787,7 +742,6 @@ Taxonomic utilities:
 Options:
   -h, --help  show this help message and exit
 ```
-
 
 ## sourmash_sig
 
@@ -830,7 +784,6 @@ Options:
   -h, --help  show this help message and exit
 ```
 
-
 ## sourmash_signature
 
 ### Tool Description
@@ -872,7 +825,6 @@ Options:
   -h, --help  show this help message and exit
 ```
 
-
 ## sourmash_sketch
 
 ### Tool Description
@@ -897,7 +849,6 @@ Options:
   -h, --help  show this help message and exit
 ```
 
-
 ## sourmash_storage
 
 ### Tool Description
@@ -918,7 +869,6 @@ Storage utilities:
 Options:
   -h, --help  show this help message and exit
 ```
-
 
 ## sourmash_tax
 
@@ -945,7 +895,6 @@ Integrate taxonomy information based on 'gather' results:
 Options:
   -h, --help  show this help message and exit
 ```
-
 
 ## Metadata
 - **Skill**: generated

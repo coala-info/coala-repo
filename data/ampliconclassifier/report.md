@@ -6,39 +6,6 @@
 |---|---|---|
 | ampliconclassifier_amplicon_classifier.py | PASS |  |
 
-## ampliconclassifier
-
-### Tool Description
-FAIL to generate CWL: ampliconclassifier not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ampliconclassifier:0.4.14--hdfd78af_0
-- **Homepage**: https://github.com/jluebeck/AmpliconClassifier
-- **Package**: https://anaconda.org/channels/bioconda/packages/ampliconclassifier/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ampliconclassifier/overview
-- **Total Downloads**: 7.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/jluebeck/AmpliconClassifier
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: ampliconclassifier not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: ampliconclassifier not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

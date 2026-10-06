@@ -1,28 +1,5 @@
 # mtsv CWL Generation Report
 
-## mtsv_COMMAND
-
-### Tool Description
-mtsv: error: argument COMMAND: invalid choice: 'COMMAND' (choose from 'init', 'analyze', 'binning', 'readprep', 'summary', 'extract', 'pipeline')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2
-- **Homepage**: https://github.com/FofanovLab/MTSv
-- **Package**: https://anaconda.org/channels/bioconda/packages/mtsv/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/mtsv/overview
-- **Total Downloads**: 23.3K
-- **Last updated**: 2025-09-18
-- **GitHub**: https://github.com/FofanovLab/MTSv
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: mtsv [-h] COMMAND ...
-mtsv: error: argument COMMAND: invalid choice: 'COMMAND' (choose from 'init', 'analyze', 'binning', 'readprep', 'summary', 'extract', 'pipeline')
-```
-
-
 ## mtsv_init
 
 ### Tool Description
@@ -47,7 +24,6 @@ optional arguments:
                         Specify working directory to place output. (default:
                         /)
 ```
-
 
 ## mtsv_analyze
 
@@ -107,7 +83,6 @@ optional arguments:
   -t THREADS, --threads THREADS
                         Number of worker threads to spawn. (default: 4)
 ```
-
 
 ## mtsv_binning
 
@@ -177,7 +152,6 @@ optional arguments:
                         Number of worker threads to spawn. (default: 4)
 ```
 
-
 ## mtsv_readprep
 
 ### Tool Description
@@ -227,7 +201,6 @@ optional arguments:
                         Number of worker threads to spawn. (default: 4)
 ```
 
-
 ## mtsv_coming
 
 ### Tool Description
@@ -244,7 +217,6 @@ mtsv: error: argument COMMAND: invalid choice: 'coming' (choose from 'init', 'an
 usage: mtsv [-h] COMMAND ...
 mtsv: error: argument COMMAND: invalid choice: 'coming' (choose from 'init', 'analyze', 'binning', 'readprep', 'summary', 'extract', 'pipeline')
 ```
-
 
 ## mtsv_summary
 
@@ -300,7 +272,6 @@ optional arguments:
                         Number of worker threads to spawn. (default: 4)
 ```
 
-
 ## mtsv_extract
 
 ### Tool Description
@@ -355,7 +326,6 @@ optional arguments:
   -t THREADS, --threads THREADS
                         Number of worker threads to spawn. (default: 4)
 ```
-
 
 ## mtsv_pipeline
 
@@ -456,7 +426,6 @@ optional arguments:
   -t THREADS, --threads THREADS
                         Number of worker threads to spawn. (default: 4)
 ```
-
 
 ## Metadata
 - **Skill**: generated

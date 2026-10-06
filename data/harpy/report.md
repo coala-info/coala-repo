@@ -31,7 +31,6 @@ Commands:
   strobe  Align sequences to reference genome using strobealign
 ```
 
-
 ## harpy_assembly
 
 ### Tool Description
@@ -100,7 +99,6 @@ Workflow Options:
 Documentation: https://pdimens.github.io/harpy/workflows/assembly
 ```
 
-
 ## harpy_demultiplex
 
 ### Tool Description
@@ -129,7 +127,6 @@ Commands:
   meier2021  Demultiplex FASTQ files haplotagged with the Meier et al. 2021     
              protocol
 ```
-
 
 ## harpy_impute
 
@@ -183,7 +180,6 @@ Workflow Options:
 Documentation: https://pdimens.github.io/harpy/workflows/impute/
 ```
 
-
 ## harpy_metassembly
 
 ### Tool Description
@@ -231,7 +227,6 @@ Workflow Options:
                                                                                 
 Documentation: https://pdimens.github.io/harpy/workflows/metassembly
 ```
-
 
 ## harpy_phase
 
@@ -289,7 +284,6 @@ Workflow Options:
                                                                                 
 Documentation: https://pdimens.github.io/harpy/workflows/phase
 ```
-
 
 ## harpy_qc
 
@@ -349,7 +343,6 @@ Workflow Options:
 Documentation: https://pdimens.github.io/harpy/workflows/qc
 ```
 
-
 ## harpy_simulate
 
 ### Tool Description
@@ -383,7 +376,6 @@ Genomic Variants:
   translocation  Introduce translocations into a genome
 ```
 
-
 ## harpy_snp
 
 ### Tool Description
@@ -408,7 +400,6 @@ Commands:
   freebayes  Call variants using freebayes                                      
   mpileup    Call variants from using bcftools mpileup
 ```
-
 
 ## harpy_sv
 
@@ -443,7 +434,6 @@ Commands:
   naibr      Call structural variants using NAIBR
 ```
 
-
 ## harpy_convert
 
 ### Tool Description
@@ -465,7 +455,6 @@ This module of Harpy has been deprecated and its function has been moved to the
 Djinn package, which should be provided with the standard conda-based Harpy     
 installation.
 ```
-
 
 ## harpy_deconvolve
 
@@ -514,41 +503,6 @@ Workflow Options:
 Documentation: https://pdimens.github.io/harpy/workflows/deconvolve
 ```
 
-
-## harpy_downsample
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: harpy downsample [OPTIONS]                                               
-                                                                                
-[deprecated]                                                                    
-Downsample data by barcode                                                      
-This module of Harpy has been deprecated and its function has been moved to the 
-Djinn package, which should be provided with the standard conda-based Harpy     
-installation.
-```
-
-
 ## harpy_template
 
 ### Tool Description
@@ -578,7 +532,6 @@ HPC Configurations:
   hpc-slurm        Create a template config for SLURM
 ```
 
-
 ## harpy_deps
 
 ### Tool Description
@@ -604,7 +557,6 @@ Commands:
   container  Install workflow dependency containers
 ```
 
-
 ## harpy_diagnose
 
 ### Tool Description
@@ -626,7 +578,6 @@ Commands:
   rule   Directly run the first rule that caused the workflow failure           
   stall  Run the Snakemake debugger to identify why a workflow stalled
 ```
-
 
 ## harpy_resume
 
@@ -665,7 +616,6 @@ Options:
 Documentation: https://pdimens.github.io/harpy/workflows/other
 ```
 
-
 ## harpy_validate
 
 ### Tool Description
@@ -690,7 +640,6 @@ Commands:
   bam    Validate linked-read BAM file format                                   
   fastq  Validate linked-read FASTQ file format
 ```
-
 
 ## harpy_view
 
@@ -719,7 +668,6 @@ Commands:
   snakefile     View/edit a workflow's Snakefile                                
   snakeparams   View/edit a workflow's Snakemake configurations
 ```
-
 
 ## Metadata
 - **Skill**: generated

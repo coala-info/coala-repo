@@ -34,7 +34,6 @@ Commands:
 ERROR: No such option: --h Did you mean --help?
 ```
 
-
 ## bohra_generate-input
 
 ### Tool Description
@@ -64,7 +63,6 @@ Options:
 ERROR: No such option: --h Did you mean --help?
 ```
 
-
 ## bohra_init-databases
 
 ### Tool Description
@@ -88,51 +86,6 @@ Options:
 
 ERROR: No such option: --h Did you mean --help?
 ```
-
-
-## bohra_run
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bohra:3.4.1--pyhdfd78af_0
-- **Homepage**: https://github.com/kristyhoran/bohra
-- **Package**: https://anaconda.org/channels/bioconda/packages/bohra/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: bohra run [OPTIONS] COMMAND [ARGS]...
-
-  Run the Bohra pipeline.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  amr_typing   Help for the amr_typing pipeline.
-  assemble     Help for the assemble pipeline.
-  basic        Help for the basic pipeline.
-  comparative  Help for the comparative pipeline.
-  full         Help for the full pipeline.
-  preview      Help for the preview pipeline.
-  tb           Help for the tb pipeline.
-
-ERROR: No such option: --h Did you mean --help?
-```
-
 
 ## bohra_test
 
@@ -160,51 +113,6 @@ Options:
 
 ERROR: No such option: --h Did you mean --help?
 ```
-
-
-## bohra_utils
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bohra:3.4.1--pyhdfd78af_0
-- **Homepage**: https://github.com/kristyhoran/bohra
-- **Package**: https://anaconda.org/channels/bioconda/packages/bohra/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: bohra utils [OPTIONS] COMMAND [ARGS]...
-
-  Bohra utilities.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  convert-input    Help for convert-input utility.
-  generate-input   Help for generate-input utility.
-  module-info      Help for module-info utility.
-  run-report       Help for run-report utility.
-  show-fields      Help for show-fields utility.
-  tojson           Help for tojson utility.
-  validate-inputs  Help for validate-inputs utility.
-
-ERROR: No such option: --h Did you mean --help?
-```
-
 
 ## Metadata
 - **Skill**: generated

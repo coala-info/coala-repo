@@ -29,38 +29,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
-## dr-disco_the
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0
-- **Homepage**: https://github.com/yhoogstrate/dr-disco
-- **Package**: https://anaconda.org/channels/bioconda/packages/dr-disco/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: dr-disco [OPTIONS] COMMAND [ARGS]...
-Try 'dr-disco --help' for help.
-
-Error: No such command 'the'.
-```
-
-
 ## dr-disco_classify
 
 ### Tool Description
@@ -92,38 +60,6 @@ Options:
   --help                       Show this message and exit.
 ```
 
-
-## dr-disco_rerunning
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0
-- **Homepage**: https://github.com/yhoogstrate/dr-disco
-- **Package**: https://anaconda.org/channels/bioconda/packages/dr-disco/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: dr-disco [OPTIONS] COMMAND [ARGS]...
-Try 'dr-disco --help' for help.
-
-Error: No such command 'rerunning'.
-```
-
-
 ## dr-disco_detect
 
 ### Tool Description
@@ -146,7 +82,6 @@ Options:
   --help                     Show this message and exit.
 ```
 
-
 ## dr-disco_fix
 
 ### Tool Description
@@ -166,7 +101,6 @@ Options:
   -t, --temp-dir PATH  Path in which temp files are stored (default: /tmp)
   --help               Show this message and exit.
 ```
-
 
 ## dr-disco_integrate
 
@@ -190,38 +124,6 @@ Options:
                 junction motifs (FASTA file)
   --help        Show this message and exit.
 ```
-
-
-## dr-disco_to
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0
-- **Homepage**: https://github.com/yhoogstrate/dr-disco
-- **Package**: https://anaconda.org/channels/bioconda/packages/dr-disco/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: dr-disco [OPTIONS] COMMAND [ARGS]...
-Try 'dr-disco --help' for help.
-
-Error: No such command 'to'.
-```
-
 
 ## dr-disco_is-blacklisted
 
@@ -265,7 +167,6 @@ Options:
   --help                      Show this message and exit.
 ```
 
-
 ## dr-disco_logo-sequence
 
 ### Tool Description
@@ -289,7 +190,6 @@ Options:
   --help                         Show this message and exit.
 ```
 
-
 ## dr-disco_after
 
 ### Tool Description
@@ -308,38 +208,6 @@ Try 'dr-disco --help' for help.
 
 Error: No such command 'after'.
 ```
-
-
-## dr-disco_be
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0
-- **Homepage**: https://github.com/yhoogstrate/dr-disco
-- **Package**: https://anaconda.org/channels/bioconda/packages/dr-disco/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: dr-disco [OPTIONS] COMMAND [ARGS]...
-Try 'dr-disco --help' for help.
-
-Error: No such command 'be'.
-```
-
 
 ## dr-disco_subtract
 
@@ -361,7 +229,6 @@ Options:
   --help               Show this message and exit.
 ```
 
-
 ## dr-disco_unfix
 
 ### Tool Description
@@ -381,7 +248,6 @@ Options:
   -t, --temp-dir PATH  Path in which temp files are stored (default: /tmp)
   --help               Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

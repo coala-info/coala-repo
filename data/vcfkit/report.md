@@ -38,7 +38,6 @@ commands:
   vcf2tsv
 ```
 
-
 ## vcfkit_vk genome
 
 ### Tool Description
@@ -63,7 +62,6 @@ options:
   -h --help                   Show this screen.
   --directory=<dir>           Set Genome Directory
 ```
-
 
 ## vcfkit_vk tajima
 
@@ -92,7 +90,6 @@ options:
 command:
   tajima        Calculate Tajima's D
 
-
 output:
     CHROM
     BIN_START
@@ -101,7 +98,6 @@ output:
     N_SNPs
     TajimaD
 ```
-
 
 ## vcfkit_vk calc
 
@@ -128,38 +124,6 @@ options:
   --version                   Show version.
 ```
 
-
-## vcfkit_vk primer
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vcfkit:0.2.9--pyh5bfb8f1_0
-- **Homepage**: https://github.com/AndersenLab/VCF-kit
-- **Package**: https://anaconda.org/channels/bioconda/packages/vcfkit/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/vcfkit/primer.py", line 25, in <module>
-    from logzero import logger
-ModuleNotFoundError: No module named 'logzero'
-```
-
-
 ## vcfkit_vk phylo
 
 ### Tool Description
@@ -182,7 +146,6 @@ options:
   --version                   Show version.
 ```
 
-
 ## vcfkit_vk vcf2tsv
 
 ### Tool Description
@@ -204,7 +167,6 @@ options:
   --version                   Show version.
 ```
 
-
 ## vcfkit_vk rename
 
 ### Tool Description
@@ -225,7 +187,6 @@ options:
   -h --help                   Show this screen.
   --version                   Show version.
 ```
-
 
 ## vcfkit_vk filter
 
@@ -249,38 +210,6 @@ options:
   -h --help                   Show this screen.
   --version                   Show version.
 ```
-
-
-## vcfkit_vk hmm
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vcfkit:0.2.9--pyh5bfb8f1_0
-- **Homepage**: https://github.com/AndersenLab/VCF-kit
-- **Package**: https://anaconda.org/channels/bioconda/packages/vcfkit/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/vcfkit/hmm.py", line 26, in <module>
-    import pomegranate
-ModuleNotFoundError: No module named 'pomegranate'
-```
-
 
 ## Metadata
 - **Skill**: generated

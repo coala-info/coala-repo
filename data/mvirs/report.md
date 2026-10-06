@@ -35,7 +35,6 @@ mvirs: error: the following arguments are required: -f
 2026-02-26 19:07:14,236 INFO: Finishing mVIRs
 ```
 
-
 ## mvirs_mvirs
 
 ### Tool Description
@@ -70,7 +69,6 @@ Command:
             
     test    run mVIRs for a public dataset
 ```
-
 
 ## mvirs_oprs
 
@@ -115,7 +113,6 @@ mvirs: error: the following arguments are required: -f, -r, -db, -o
 2026-02-26 19:07:53,344 INFO: Finishing mVIRs
 ```
 
-
 ## mvirs_alignment
 
 ### Tool Description
@@ -151,7 +148,6 @@ Command:
     test    run mVIRs for a public dataset
 ```
 
-
 ## mvirs_prophages
 
 ### Tool Description
@@ -186,48 +182,6 @@ Command:
             
     test    run mVIRs for a public dataset
 ```
-
-
-## mvirs_test
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mvirs:1.1.1--pyhdfd78af_0
-- **Homepage**: https://github.com/SushiLab/mVIRs
-- **Package**: https://anaconda.org/channels/bioconda/packages/mvirs/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-2026-02-26 19:08:55,867 INFO: Starting mVIRs
-Program: mVIRs - Localisation of inducible prophages using NGS data
-Version: 1.1.1
-Reference: Zünd, Ruscheweyh, et al. 
-High throughput sequencing provides exact genomic locations of inducible 
-prophages and accurate phage-to-host ratios in gut microbial strains. 
-Microbiome (2021). doi:10.1186/s40168-021-01033-w    
-Usage: mvirs test [options]
-
-    Input:
-        -o  PATH   Output folder [Required]
-    
-mvirs: error: the following arguments are required: -o
-2026-02-26 19:08:55,868 INFO: Finishing mVIRs
-```
-
 
 ## Metadata
 - **Skill**: generated

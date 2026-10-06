@@ -33,7 +33,6 @@ Description: Split / count a BAM into multiple BAMs, one BAM per unique BX tag
   -t, --tag                            Split by a tag other than BX (e.g. MI)
 ```
 
-
 ## bxtools_stats
 
 ### Tool Description
@@ -57,7 +56,6 @@ Description: Gather BX-level statistics
   -v, --verbose                        Set verbose output
   -t, --tag                            Collect stats by a tag other than BX (e.g. MI)
 ```
-
 
 ## bxtools_tile
 
@@ -86,26 +84,6 @@ Description: Gather BX counts on tiled ranges
   -t, --tag             Tag other than BX to evaluate (e.g. MI)
 ```
 
-
-## bxtools_group
-
-### Tool Description
-Tool functionality not yet implemented.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bxtools:0.1.0--h13024bc_6
-- **Homepage**: https://github.com/walaj/bxtools
-- **Package**: https://anaconda.org/channels/bioconda/packages/bxtools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-!! NOT YET IMPLEMENTED !!
-```
-
-
 ## bxtools_relabel
 
 ### Tool Description
@@ -130,7 +108,6 @@ Description: Move BX barcodes from BX tag to qname
   -h, --help                           Display this help and exit
 ```
 
-
 ## bxtools_mol
 
 ### Tool Description
@@ -153,7 +130,6 @@ Description: Return span of molecules from 10X data (using MI tag)
   General options
   -v, --verbose         Set verbose output
 ```
-
 
 ## bxtools_convert
 
@@ -179,7 +155,6 @@ Description: Convert a BAM to a BX sorted BAM by switching BX and chromosome
   -k, --keep-tags       Add chromosome tag (CR) and keep other tags. Default: delete all tags
   -t, --tag             Tag to flip for chromosome. Default: BX
 ```
-
 
 ## Metadata
 - **Skill**: generated

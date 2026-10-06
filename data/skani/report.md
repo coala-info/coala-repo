@@ -89,7 +89,6 @@ MISC:
     -v, --debug    Debug level verbosity
 ```
 
-
 ## skani
 ### Tool Description
 skani
@@ -109,7 +108,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## skani_search
 
@@ -174,40 +172,6 @@ MISC:
         --trace    Trace level verbosity
     -v, --debug    Debug level verbosity
 ```
-
-
-## skani_new_sketch_folder
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/skani:0.3.1--ha6fb395_0
-- **Homepage**: https://github.com/bluenote-1577/skani
-- **Package**: https://anaconda.org/channels/bioconda/packages/skani/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: Found argument 'new_sketch_folder' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    skani <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## Metadata
 - **Skill**: generated

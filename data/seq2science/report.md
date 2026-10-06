@@ -35,7 +35,6 @@ options:
   -f, --force  Overwrite existing samples.tsv and config.yaml silently.
 ```
 
-
 ## seq2science_run
 
 ### Tool Description
@@ -103,7 +102,6 @@ options:
                         to debug issues.
 ```
 
-
 ## seq2science_explain
 
 ### Tool Description
@@ -154,78 +152,6 @@ options:
   --debug               For developers "only": prints helpful error messages
                         to debug issues.
 ```
-
-
-## seq2science_clean
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq2science:1.2.4--pyhdfd78af_0
-- **Homepage**: https://vanheeringen-lab.github.io/seq2science
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq2science/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: seq2science clean [-h]
-
-At the start of each workflow run, seq2science starts with installing
-environments for each rule. It also stores the GEO soft files of public
-samples in its cache. These environments can get large and it might be best to
-remove them when you are done with an analysis. seq2science clean will clean
-up these files for you.
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
-## seq2science_docs
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq2science:1.2.4--pyhdfd78af_0
-- **Homepage**: https://vanheeringen-lab.github.io/seq2science
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq2science/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: seq2science docs [-h]
-
-The docs command tries to open your browser and open the docs' webpage, if
-that didn't work it prints the url.
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -109,7 +109,6 @@ Options:
           Print version
 ```
 
-
 ## sawfish_joint-call
 
 ### Tool Description
@@ -183,30 +182,6 @@ Options:
           Print version
 ```
 
-
-## sawfish_Number
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sawfish:2.2.1--h9ee0642_0
-- **Homepage**: https://github.com/PacificBiosciences/sawfish
-- **Package**: https://anaconda.org/channels/bioconda/packages/sawfish/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unexpected argument '--h' found
-
-  tip: a similar argument exists: '--help'
-
-Usage: sawfish --help <COMMAND>
-
-For more information, try '--help'.
-```
-
-
 ## sawfish_Overwrite
 
 ### Tool Description
@@ -229,7 +204,6 @@ Usage: sawfish --help <COMMAND>
 For more information, try '--help'.
 ```
 
-
 ## sawfish_Turn
 
 ### Tool Description
@@ -251,53 +225,6 @@ Usage: sawfish --help <COMMAND>
 
 For more information, try '--help'.
 ```
-
-
-## sawfish_This
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sawfish:2.2.1--h9ee0642_0
-- **Homepage**: https://github.com/PacificBiosciences/sawfish
-- **Package**: https://anaconda.org/channels/bioconda/packages/sawfish/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unexpected argument '--h' found
-
-  tip: a similar argument exists: '--help'
-
-Usage: sawfish --help <COMMAND>
-
-For more information, try '--help'.
-```
-
-
-## sawfish_Print
-
-### Tool Description
-Print help information for sawfish commands.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sawfish:2.2.1--h9ee0642_0
-- **Homepage**: https://github.com/PacificBiosciences/sawfish
-- **Package**: https://anaconda.org/channels/bioconda/packages/sawfish/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unexpected argument '--h' found
-
-  tip: a similar argument exists: '--help'
-
-Usage: sawfish --help <COMMAND>
-
-For more information, try '--help'.
-```
-
 
 ## Metadata
 - **Skill**: generated

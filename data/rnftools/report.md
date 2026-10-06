@@ -1,52 +1,5 @@
 # rnftools CWL Generation Report
 
-## rnftools_publication
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rnftools:0.4.0.0--pyhdfd78af_0
-- **Homepage**: http://karel-brinda.github.io/rnftools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rnftools/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/rnftools/overview
-- **Total Downloads**: 114.7K
-- **Last updated**: 2025-11-12
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
---------------------------------------------------------------------------------------------
-  K. Brinda, V. Boeva, G. Kucherov: RNF: a general framework to evaluate NGS read mappers.
-        Bioinformatics (2016) 32(1): 136-139. [DOI:10.1093/bioinformatics/btv524].
---------------------------------------------------------------------------------------------
-
-@article{rnftools,
-	author  = {B{\v r}inda, Karel AND Boeva, Valentina AND Kucherov, Gregory},
-	title   = {RNF: a general framework to evaluate NGS read mappers},
-	journal = {Bioinformatics},
-	year    = {2016},
-	number  = {1},
-	volume  = {32},
-	pmid    = {26353839},
-	doi     = {10.1093/bioinformatics/btv524}
-}
-```
-
-
 ## rnftools_validate
 
 ### Tool Description
@@ -72,7 +25,6 @@ options:
   -a, --all-occurrences
                         Report all occurrences of warnings and errors.
 ```
-
 
 ## rnftools_liftover
 
@@ -111,7 +63,6 @@ options:
   --output-format str  Output format (SAM/BAM/FASTQ). [autodetect]
 ```
 
-
 ## rnftools_sam2rnf
 
 ### Tool Description
@@ -139,7 +90,6 @@ options:
   -g, --genome-id int   Genome ID in RNF (default: 1).
   -u, --allow-unmapped  Allow unmapped reads.
 ```
-
 
 ## rnftools_art2rnf
 
@@ -175,7 +125,6 @@ options:
                         Name of the simulator (for RNF).
 ```
 
-
 ## rnftools_curesim2rnf
 
 ### Tool Description
@@ -202,7 +151,6 @@ options:
                         input). It can be created using 'samtools faidx'.
   -g, --genome-id int   Genome ID in RNF (default: 1).
 ```
-
 
 ## rnftools_dwgsim2rnf
 
@@ -233,7 +181,6 @@ options:
   -g, --genome-id int   Genome ID in RNF (default: 1).
 ```
 
-
 ## rnftools_mason2rnf
 
 ### Tool Description
@@ -263,7 +210,6 @@ options:
   -n, --simulator-name str
                         Name of the simulator (for RNF).
 ```
-
 
 ## rnftools_wgsim2rnf
 
@@ -296,7 +242,6 @@ options:
   -u, --allow-unmapped  Allow unmapped reads.
 ```
 
-
 ## rnftools_merge
 
 ### Tool Description
@@ -328,7 +273,6 @@ Source RNF-FASTQ files should satisfy the following conditions:
 	   in suffix (for identification of nb of read).
 ```
 
-
 ## rnftools_sam2es
 
 ### Tool Description
@@ -357,7 +301,6 @@ options:
                         important parameter!) (default: 5).
 ```
 
-
 ## rnftools_es2et
 
 ### Tool Description
@@ -382,7 +325,6 @@ options:
                  output).
 ```
 
-
 ## rnftools_et2roc
 
 ### Tool Description
@@ -405,7 +347,6 @@ options:
   -i, --et file   Input ET file (evaluated read tuples, - for standard input).
   -o, --roc file  Output ROC file (evaluated reads, - for standard output).
 ```
-
 
 ## rnftools_sam2roc
 
@@ -433,7 +374,6 @@ options:
                         (i.e., expected) alignment and real alignment (very
                         important parameter!) (default: 5).
 ```
-
 
 ## Metadata
 - **Skill**: generated

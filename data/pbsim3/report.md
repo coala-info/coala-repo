@@ -1,38 +1,5 @@
 # pbsim3 CWL Generation Report
 
-## pbsim3
-
-### Tool Description
-FAIL to generate CWL: pbsim3 not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pbsim3:3.0.5--h9948957_2
-- **Homepage**: https://github.com/yukiteruono/pbsim3
-- **Package**: https://anaconda.org/channels/bioconda/packages/pbsim3/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pbsim3/overview
-- **Total Downloads**: 4.3K
-- **Last updated**: 2025-08-12
-- **GitHub**: https://github.com/yukiteruono/pbsim3
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pbsim3 not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pbsim3 not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

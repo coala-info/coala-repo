@@ -54,7 +54,6 @@ for any corresponding short options.
 Report bugs to <tim.massingham@nanoporetech.com>.
 ```
 
-
 ## scrappie
 ### Tool Description
 Scrappie is a technology demonstrator for the Oxford Nanopore Technologies Limited Research Algorithms group.
@@ -92,45 +91,6 @@ such, may change drastically between releases and breaks backwards
 compatibility.  Newer versions may drop support of current features or change their
 behaviour.
 ```
-
-
-## scrappie_licence
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7
-- **Homepage**: https://github.com/nanoporetech/scrappie
-- **Package**: https://anaconda.org/channels/bioconda/packages/scrappie/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-This software is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
-(c) 2017 Oxford Nanopore Technologies Ltd.
-
-
-
-The vectorised math functions 'src/sse_mathfun.h' are from
-http://gruntthepeon.free.fr/ssemath/ and the original version of this file is
-under the 'zlib' licence.  See the top of 'src/sse_mathfun.h' for details.
-```
-
 
 ## scrappie_raw
 
@@ -184,35 +144,6 @@ for any corresponding short options.
 Report bugs to <tim.massingham@nanoporetech.com>.
 ```
 
-
-## scrappie_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7
-- **Homepage**: https://github.com/nanoporetech/scrappie
-- **Package**: https://anaconda.org/channels/bioconda/packages/scrappie/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-scrappie 1.4.0-
-```
-
-
 ## scrappie_squiggle
 
 ### Tool Description
@@ -245,7 +176,6 @@ for any corresponding short options.
 
 Report bugs to <tim.massingham@nanoporetech.com>.
 ```
-
 
 ## scrappie_mappy
 
@@ -288,7 +218,6 @@ for any corresponding short options.
 Report bugs to <tim.massingham@nanoporetech.com>.
 ```
 
-
 ## scrappie_seqmappy
 
 ### Tool Description
@@ -328,7 +257,6 @@ for any corresponding short options.
 Report bugs to <tim.massingham@nanoporetech.com>.
 ```
 
-
 ## scrappie_event_table
 
 ### Tool Description
@@ -360,7 +288,6 @@ for any corresponding short options.
 
 Report bugs to <tim.massingham@nanoporetech.com>.
 ```
-
 
 ## Metadata
 - **Skill**: generated

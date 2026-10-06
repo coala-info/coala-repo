@@ -44,7 +44,6 @@ vclust deduplicate -i refseq.fna genbank.fna -o nr.fna --add-prefixes
 vclust deduplicate -i refseq.fna genbank.fna -o nr.fna.gz --gzip-out --add-prefixes
 ```
 
-
 ## vclust_prefilter
 
 ### Tool Description
@@ -88,7 +87,6 @@ options:
                             2: Debug
   -h, --help                Show this help message and exit
 ```
-
 
 ## vclust_align
 
@@ -139,7 +137,6 @@ options:
                               2: Debug
   -h, --help                  Show this help message and exit
 ```
-
 
 ## vclust_cluster
 
@@ -195,52 +192,6 @@ options:
                                2: Debug
   -h, --help                   Show this help message and exit
 ```
-
-
-## vclust_info
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vclust:1.3.1--py311he264feb_1
-- **Homepage**: https://github.com/refresh-bio/vclust
-- **Package**: https://anaconda.org/channels/bioconda/packages/vclust/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Vclust version 1.3.1 (Python 3.11.13)
-
-Citation:
-Zielezinski A, Gudys A et al. (2025) 
-Ultrafast and accurate sequence alignment and clustering of viral genomes. 
-Nat Methods. doi: https://doi.org/10.1038/s41592-025-02701-7
-
-Installed at:
-   /usr/local/lib/python3.11/site-packages/vclust.py (49.3 KB)
-   /usr/local/lib/python3.11/site-packages/bin
-
-Binary dependencies:
-   Kmer-db              v2.3.1   (4.0 MB)
-   LZ-ANI               v1.2.3   (3.4 MB)
-   Clusty               v1.2.2   (3.8 MB)
-   mfasta               v1.0.4   (2.8 MB)
-
-[32;1mStatus: ready[0m
-```
-
 
 ## Metadata
 - **Skill**: generated

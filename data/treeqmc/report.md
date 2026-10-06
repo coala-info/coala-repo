@@ -1,38 +1,5 @@
 # treeqmc CWL Generation Report
 
-## treeqmc
-
-### Tool Description
-FAIL to generate CWL: treeqmc not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/treeqmc:3.0.1--hee07fbb_0
-- **Homepage**: https://github.com/molloy-lab/TREE-QMC
-- **Package**: https://anaconda.org/channels/bioconda/packages/treeqmc/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/treeqmc/overview
-- **Total Downloads**: 1.1K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/molloy-lab/TREE-QMC
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: treeqmc not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: treeqmc not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

@@ -56,7 +56,6 @@ optional arguments:
                         Bitscore threshold for determining true homology
 ```
 
-
 ## mhg_genome-to-blast-db
 
 ### Tool Description
@@ -102,45 +101,6 @@ optional arguments:
   -ge GAPEXTEND, --gapextend GAPEXTEND
                         Blastn gap extend penalty, default 2
 ```
-
-
-## mhg_MHG-partition
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mhg:1.1.0--hdfd78af_0
-- **Homepage**: https://github.com/NakhlehLab/Maximal-Homologous-Groups
-- **Package**: https://anaconda.org/channels/bioconda/packages/mhg/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-2026-02-24 21:43:26,049 - root - INFO - start building dataframe containing pairwise blastn calls
-Traceback (most recent call last):
-  File "/usr/local/bin/MHG-partition", line 1516, in <module>
-    blastDf = pd.concat(frames)
-  File "/usr/local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 311, in wrapper
-    return func(*args, **kwargs)
-  File "/usr/local/lib/python3.8/site-packages/pandas/core/reshape/concat.py", line 347, in concat
-    op = _Concatenator(
-  File "/usr/local/lib/python3.8/site-packages/pandas/core/reshape/concat.py", line 404, in __init__
-    raise ValueError("No objects to concatenate")
-ValueError: No objects to concatenate
-```
-
 
 ## Metadata
 - **Skill**: generated

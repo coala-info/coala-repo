@@ -4,54 +4,17 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| architeuthis_completion | Failed | not a usable tool: it wraps the shell autocompletion generator, which takes no data inputs. |
-| architeuthis_mapping | Failed | not a usable tool: it wraps only the mapping command group with a subcommand string and has no data inputs or outputs. |
+| architeuthis_lineage | PASS |  |
+| architeuthis_mapping_filter | PASS |  |
+| architeuthis_mapping_kmers | PASS |  |
+| architeuthis_mapping_score | PASS |  |
+| architeuthis_mapping_summary | PASS |  |
 | architeuthis_merge | PASS |  |
-
-## architeuthis_completion
-
-### Tool Description
-Generate the autocompletion script for the specified shell
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/architeuthis:0.5.0--he881be0_0
-- **Homepage**: https://github.com/cdiener/architeuthis
-- **Package**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
-- **Total Downloads**: 3.8K
-- **Last updated**: 2026-01-30
-- **GitHub**: https://github.com/cdiener/architeuthis
-- **Stars**: N/A
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown shorthand flag: 'e' in -elp
-Usage:
-  architeuthis completion [command]
-
-Available Commands:
-  bash        Generate the autocompletion script for bash
-  fish        Generate the autocompletion script for fish
-  powershell  Generate the autocompletion script for powershell
-  zsh         Generate the autocompletion script for zsh
-
-Flags:
-  -h, --help   help for completion
-
-Global Flags:
-      --db string   path to the Kraken database [optional]
-
-Use "architeuthis completion [command] --help" for more information about a command.
-```
-
 
 ## architeuthis_lineage
 
 ### Tool Description
-A subcommand of the architeuthis tool (Note: The provided input was a runtime error/stack trace rather than help text, so specific arguments could not be extracted).
+Add lineage information to Bracken output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/architeuthis:0.5.0--he881be0_0
@@ -61,60 +24,19 @@ A subcommand of the architeuthis tool (Note: The provided input was a runtime er
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-panic: runtime error: index out of range [0] with length 0
-
-goroutine 1 [running]:
-github.com/cdiener/architeuthis/cmd.init.func3(0x6456524ce4a0, {0x6456524f3760, 0x0, 0x6456522651e6?})
-	github.com/cdiener/architeuthis/cmd/lineage.go:62 +0x36c
-github.com/spf13/cobra.(*Command).execute(0x6456524ce4a0, {0x6456524f3760, 0x0, 0x0})
-	github.com/spf13/cobra@v1.7.0/command.go:944 +0x871
-github.com/spf13/cobra.(*Command).ExecuteC(0x6456524ced40)
-	github.com/spf13/cobra@v1.7.0/command.go:1068 +0x398
-github.com/spf13/cobra.(*Command).Execute(...)
-	github.com/spf13/cobra@v1.7.0/command.go:992
-github.com/cdiener/architeuthis/cmd.Execute()
-	github.com/cdiener/architeuthis/cmd/root.go:42 +0x1a
-main.main()
-	github.com/cdiener/architeuthis/main.go:29 +0x10c
-```
-
-
-## architeuthis_mapping
-
-### Tool Description
-A tool for processing Kraken output, including filtering, k-mer summarization, and scoring.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/architeuthis:0.5.0--he881be0_0
-- **Homepage**: https://github.com/cdiener/architeuthis
-- **Package**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 Error: unknown shorthand flag: 'e' in -elp
 Usage:
-  architeuthis mapping [command]
-
-Available Commands:
-  filter      Filter Kraken output based on read quality.
-  kmers       Summarize k-mer assignments for classified taxa.
-  score       Scores and evaluates reads.
-  summary     Summarize k-mer assignments for classified taxa on taxonomic ranks.
+  architeuthis lineage [flags]
 
 Flags:
-  -h, --help   help for mapping
+      --data-dir string   The path to the taxonomy dumps.
+  -f, --format string     The taxonomic ranks to consider during scoring. (default "d__{domain|acellularroot|superkingdom};p__{phylum};c__{class};o__{order};f__{family};g__{genus};s__{species}")
+  -h, --help              help for lineage
+  -o, --out string        The filename of the output CSV. (default "annotated.csv")
 
 Global Flags:
       --db string   path to the Kraken database [optional]
-
-Use "architeuthis mapping [command] --help" for more information about a command.
 ```
-
 
 ## architeuthis_merge
 
@@ -143,6 +65,115 @@ Global Flags:
       --db string   path to the Kraken database [optional]
 ```
 
+
+## architeuthis_mapping_filter
+
+### Tool Description
+Filter Kraken output based on read quality.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/architeuthis:0.5.0--he881be0_0
+- **Homepage**: https://github.com/cdiener/architeuthis
+- **Package**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: unknown shorthand flag: 'e' in -elp
+Usage:
+  architeuthis mapping filter [flags]
+
+Flags:
+      --data-dir string           The path to the taxonomy dumps.
+  -f, --format string             The taxonomic ranks to connsider during scoring. (default "d__{domain|acellularroot|superkingdom};p__{phylum};c__{class};o__{order};f__{family};g__{genus};s__{species}")
+  -h, --help                      help for filter
+      --max-entropy float         Maximum entropy for kmer classifications at classified rank. (default 0.1)
+      --max-multiplicity uint32   Maximum number of alternative classifications on the classified rank. (default 2)
+      --min-consistency float     Minimum consistency of the read classification. (default 0.9)
+      --out string                The output file (Kraken format). (default "filtered.k2")
+
+Global Flags:
+      --db string   path to the Kraken database [optional]
+```
+
+## architeuthis_mapping_kmers
+
+### Tool Description
+Summarize k-mer assignments for classified taxa.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/architeuthis:0.5.0--he881be0_0
+- **Homepage**: https://github.com/cdiener/architeuthis
+- **Package**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: unknown shorthand flag: 'e' in -elp
+Usage:
+  architeuthis mapping kmers [flags]
+
+Flags:
+  -h, --help         help for kmers
+      --out string   The output file (CSV format). (default "mapping_kmers.csv")
+
+Global Flags:
+      --db string   path to the Kraken database [optional]
+```
+
+## architeuthis_mapping_score
+
+### Tool Description
+Scores and evaluates reads.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/architeuthis:0.5.0--he881be0_0
+- **Homepage**: https://github.com/cdiener/architeuthis
+- **Package**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: unknown shorthand flag: 'e' in -elp
+Usage:
+  architeuthis mapping score [flags]
+
+Flags:
+      --data-dir string   The path to the taxonomy dumps.
+  -f, --format string     The taxonomic ranks to connsider during scoring. (default "d__{domain|acellularroot|superkingdom};p__{phylum};c__{class};o__{order};f__{family};g__{genus};s__{species}")
+  -h, --help              help for score
+      --out string        The output file (CSV format). (default "mapping_scores.csv")
+
+Global Flags:
+      --db string   path to the Kraken database [optional]
+```
+
+## architeuthis_mapping_summary
+
+### Tool Description
+Summarize k-mer assignments for classified taxa on taxonomic ranks.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/architeuthis:0.5.0--he881be0_0
+- **Homepage**: https://github.com/cdiener/architeuthis
+- **Package**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: unknown shorthand flag: 'e' in -elp
+Usage:
+  architeuthis mapping summary [flags]
+
+Flags:
+      --data-dir string   The path to the taxonomy dumps.
+  -f, --format string     The taxonomic ranks to connsider during scoring. (default "d__{domain|acellularroot|superkingdom};p__{phylum};c__{class};o__{order};f__{family};g__{genus};s__{species}")
+  -h, --help              help for summary
+      --out string        The output file (CSV format). (default "mapping_summary.csv")
+
+Global Flags:
+      --db string   path to the Kraken database [optional]
+```
 
 ## Metadata
 - **Skill**: generated

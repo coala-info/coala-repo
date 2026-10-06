@@ -123,7 +123,6 @@ Examples
     jupyter console --existing # connect to an existing ipython session
 ```
 
-
 ## jupyter_kernelspec
 
 ### Tool Description
@@ -158,7 +157,6 @@ install
 uninstall
     Alias for remove
 ```
-
 
 ## jupyter_migrate
 
@@ -220,7 +218,6 @@ on full configurables, see '--help-all'.
 
 To see all available configurables, use `--help-all`
 ```
-
 
 ## jupyter_nbconvert
 
@@ -350,7 +347,6 @@ Examples
     > jupyter nbconvert --config mycfg.py
 ```
 
-
 ## jupyter_nbextension
 
 ### Tool Description
@@ -421,7 +417,6 @@ Examples
     jupyter nbextension disable --py <packagename>    # disable all nbextensions in a Python package
     jupyter nbextension uninstall --py <packagename>  # uninstall an nbextension in a Python package
 ```
-
 
 ## jupyter_notebook
 
@@ -534,54 +529,6 @@ Examples
     jupyter notebook --certfile=mycert.pem # use SSL/TLS certificate
 ```
 
-
-## jupyter_qtconsole
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/jupyter:phenomenal-v387f29b6ca83_cv0.4.12
-- **Homepage**: https://github.com/jakevdp/PythonDataScienceHandbook
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/opt/conda/bin/jupyter-qtconsole", line 7, in <module>
-    from qtconsole.qtconsoleapp import main
-  File "/opt/conda/lib/python3.5/site-packages/qtconsole/qtconsoleapp.py", line 60, in <module>
-    from qtconsole.qt import QtCore, QtGui
-  File "/opt/conda/lib/python3.5/site-packages/qtconsole/qt.py", line 23, in <module>
-    QtCore, QtGui, QtSvg, QT_API = load_qt(api_opts)
-  File "/opt/conda/lib/python3.5/site-packages/qtconsole/qt_loaders.py", line 386, in load_qt
-    api_options))
-ImportError: 
-    Could not load requested Qt binding. Please ensure that
-    PyQt4 >= 4.7, PyQt5, PySide >= 1.0.3 or PySide2 is available,
-    and only one is imported per session.
-
-    Currently-imported Qt library:   None
-    PyQt4 installed:                 False
-    PyQt5 installed:                 False
-    PySide >= 1.0.3 installed:       False
-    PySide2 installed:               False
-    Tried to load:                   ['pyqt5', 'pyside2', 'pyside', 'pyqt']
-```
-
-
 ## jupyter_serverextension
 
 ### Tool Description
@@ -646,7 +593,6 @@ Examples
     jupyter serverextension enable --py <packagename>   # enable all server extensions in a Python package
     jupyter serverextension disable --py <packagename>  # disable all server extensions in a Python package
 ```
-
 
 ## jupyter_troubleshoot
 
@@ -866,7 +812,6 @@ conda list:
 	zlib                      1.2.8                         3
 ```
 
-
 ## jupyter_trust
 
 ### Tool Description
@@ -910,7 +855,6 @@ Traceback (most recent call last):
     raise NotJSONError(("Notebook does not appear to be JSON: %r" % s)[:77] + "...")
 nbformat.reader.NotJSONError: Notebook does not appear to be JSON: ''...
 ```
-
 
 ## Metadata
 - **Skill**: generated

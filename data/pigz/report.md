@@ -1,38 +1,5 @@
 # pigz CWL Generation Report
 
-## pigz
-
-### Tool Description
-'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pigz:2.8
-- **Homepage**: https://github.com/madler/pigz
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/main/packages/pigz/overview
-- **Total Downloads**: 1.5K
-- **Last updated**: 2025-09-11
-- **GitHub**: https://github.com/madler/pigz
-- **Stars**: N/A
-### Generation Failed
-
-'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
-
-
-### Validation Errors
-
-- 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

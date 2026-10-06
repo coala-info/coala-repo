@@ -27,72 +27,6 @@ Usage: ncvalidator [-h] | [-t] [-x] [-q] file
 *PnetCDF library version 1.14.0 of November 11, 2024
 ```
 
-
-## esme_pnetcdf_openmpi_4_1_6_ncmpidiff
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/esme_pnetcdf_openmpi_4_1_6:1.14.0--hcc24ad4_0
-- **Homepage**: https://parallel-netcdf.github.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/esme_pnetcdf_openmpi_4_1_6/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
---------------------------------------------------------------------------
-The value of the MCA parameter "plm_rsh_agent" was set to a path
-that could not be found:
-
-  plm_rsh_agent: ssh : rsh
-
-Please either unset the parameter, or check that the path is correct
---------------------------------------------------------------------------
-[1c9c6627d256:00007] [[INVALID],INVALID] FORCE-TERMINATE AT Not found:-13 - error plm_rsh_component.c(335)
-[1c9c6627d256:00001] [[INVALID],INVALID] ORTE_ERROR_LOG: Unable to start a daemon on the local node in file ess_singleton_module.c at line 716
-[1c9c6627d256:00001] [[INVALID],INVALID] ORTE_ERROR_LOG: Unable to start a daemon on the local node in file ess_singleton_module.c at line 172
---------------------------------------------------------------------------
-It looks like orte_init failed for some reason; your parallel process is
-likely to abort.  There are many reasons that a parallel process can
-fail during orte_init; some of which are due to configuration or
-environment problems.  This failure appears to be an internal failure;
-here's some additional information (which may only be relevant to an
-Open MPI developer):
-
-  orte_ess_init failed
-  --> Returned value Unable to start a daemon on the local node (-127) instead of ORTE_SUCCESS
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-It looks like MPI_INIT failed for some reason; your parallel process is
-likely to abort.  There are many reasons that a parallel process can
-fail during MPI_INIT; some of which are due to configuration or environment
-problems.  This failure appears to be an internal failure; here's some
-additional information (which may only be relevant to an Open MPI
-developer):
-
-  ompi_mpi_init: ompi_rte_init failed
-  --> Returned "Unable to start a daemon on the local node" (-127) instead of "Success" (0)
---------------------------------------------------------------------------
-*** An error occurred in MPI_Init
-*** on a NULL communicator
-*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
-***    and potentially your MPI job)
-[1c9c6627d256:00001] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
-```
-
-
 ## esme_pnetcdf_openmpi_4_1_6_ncoffsets
 
 ### Tool Description
@@ -119,7 +53,6 @@ Usage: ncoffsets [-h] | [-x] | [-sgr] [-v var1[,...]] file
        file            Input netCDF file name
 *PnetCDF library version 1.14.0 of November 11, 2024
 ```
-
 
 ## esme_pnetcdf_openmpi_4_1_6_pnetcdf-config
 
@@ -176,7 +109,6 @@ Available values for OPTION include:
   --config-date               Date of PnetCDF library was configured
 ```
 
-
 ## esme_pnetcdf_openmpi_4_1_6_pnetcdf_version
 
 ### Tool Description
@@ -198,7 +130,6 @@ MPICXX: /usr/local/bin/mpicxx -fvisibility-inlines-hidden -fmessage-length=0 -ma
 MPIF77: /usr/local/bin/mpif77 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /usr/local/include -I/opt/conda/conda-bld/esme_openmpi_4_1_6_1739309926923/_build_env/include -fdebug-prefix-map=/opt/conda/conda-bld/esme_openmpi_4_1_6_1739309926923/work=/usr/local/src/conda/esme_pnetcdf_openmpi_4_1_6-1.14.0 -fdebug-prefix-map=/usr/local=/usr/local/src/conda-prefix -fallow-argument-mismatch
 MPIF90: /usr/local/bin/mpif90 -g -O2 -fallow-argument-mismatch
 ```
-
 
 ## Metadata
 - **Skill**: generated

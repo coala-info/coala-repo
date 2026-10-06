@@ -61,7 +61,6 @@ Other arguments:
     -V, --version             Show version.
 ```
 
-
 ## locityper_prune
 
 ### Tool Description
@@ -101,7 +100,6 @@ Other arguments:
     -h, --help              Show this help message.
     -V, --version           Show version.
 ```
-
 
 ## locityper_preproc
 
@@ -162,7 +160,6 @@ Other arguments:
     -V, --version             Show version.
 ```
 
-
 ## locityper_genotype
 
 ### Tool Description
@@ -218,7 +215,6 @@ Other arguments:
     -V, --version             Show version.
 ```
 
-
 ## locityper_align
 
 ### Tool Description
@@ -267,7 +263,6 @@ Other arguments:
     -h, --help              Show this help message.
     -V, --version           Show version.
 ```
-
 
 ## locityper_recruit
 
@@ -352,40 +347,6 @@ Other arguments:
     -h, --help                Show this help message.
     -V, --version             Show version.
 ```
-
-
-## locityper_cite
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/locityper:1.3.4--ha6fb395_0
-- **Homepage**: https://github.com/tprodanov/locityper
-- **Package**: https://anaconda.org/channels/bioconda/packages/locityper/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Thank you for using our tool!
-
-Please cite our paper:
-    T.Prodanov, E.G.Plender, G.Seebohm, S.G.Meuth, E.E.Eichler, T.Marschall.
-    Locityper enables targeted genotyping of complex polymorphic genes.
-    Nature Genetics 57, 2901-2908 (2025). https://doi.org/10.1038/s41588-025-02362-4
-```
-
 
 ## Metadata
 - **Skill**: generated

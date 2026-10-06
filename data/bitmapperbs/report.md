@@ -1,38 +1,5 @@
 # bitmapperbs CWL Generation Report
 
-## bitmapperbs
-
-### Tool Description
-FAIL to generate CWL: bitmapperbs not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bitmapperbs:1.0.2.3--hf5e1c6e_5
-- **Homepage**: https://github.com/chhylp123/BitMapperBS
-- **Package**: https://anaconda.org/channels/bioconda/packages/bitmapperbs/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bitmapperbs/overview
-- **Total Downloads**: 23.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/chhylp123/BitMapperBS
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: bitmapperbs not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: bitmapperbs not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -58,12 +25,10 @@ General Options:
  -v|--version		Current Version.
  -h			Show the help file.
 
-
 Options of indexing step:
  --index [file]		Generate an index from the specified fasta file. 
  --index_folder [folder]Set the folder that stores the genome indexes. If this option is not set, 
 			the indexes would be stores in the same folder of genome (input fasta file). 
-
 
 Options of read mapping step:
  --search [file/folder]	Search in the specified genome. If the indexes of this genome are built without "--index_folder", 

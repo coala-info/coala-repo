@@ -55,7 +55,6 @@ optional arguments:
                         fasta input).
 ```
 
-
 ## deepac_filter
 
 ### Tool Description
@@ -111,7 +110,6 @@ optional arguments:
                         confidence threshold [.fasta].
 ```
 
-
 ## deepac_train
 
 ### Tool Description
@@ -151,7 +149,6 @@ optional arguments:
                         Run name (default: based on chosen config).
 ```
 
-
 ## deepac_preproc
 
 ### Tool Description
@@ -175,7 +172,6 @@ optional arguments:
   --trim      Automatically trim the sequences to the read length specified in
               the config file.
 ```
-
 
 ## deepac_eval
 
@@ -202,7 +198,6 @@ optional arguments:
                         Simple ensemble evaluation.
 ```
 
-
 ## deepac_convert
 
 ### Tool Description
@@ -227,7 +222,6 @@ optional arguments:
   -w, --weights  Use prepared weights instead of the model file.
   -i, --init     Initialize a random model from config.
 ```
-
 
 ## deepac_getmodels
 
@@ -254,7 +248,6 @@ optional arguments:
   --download-only  Fetch weights and config files but do not compile the
                    models.
 ```
-
 
 ## deepac_test
 
@@ -296,7 +289,6 @@ optional arguments:
   --no-check            Disable additivity check.
 ```
 
-
 ## deepac_explain
 
 ### Tool Description
@@ -331,7 +323,6 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
-
 ## deepac_gwpa
 
 ### Tool Description
@@ -364,37 +355,6 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
 ```
-
-
-## deepac_templates
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/deepac:0.14.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/rki_bioinformatics/DeePaC
-- **Package**: https://anaconda.org/channels/bioconda/packages/deepac/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-IPython could not be loaded!
-usage: deepac templates [-h]
-deepac templates: error: argument -h/--help: ignored explicit argument 'elp'
-```
-
 
 ## Metadata
 - **Skill**: generated

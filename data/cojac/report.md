@@ -31,7 +31,6 @@ Options:
   See cooc-pubmut for a CSV file that can be imported into an article
 ```
 
-
 ## cojac_cooc-curate
 
 ### Tool Description
@@ -79,7 +78,6 @@ Options:
 
   This tool queries LAPIS, see https://lapis-docs.readthedocs.io/en/latest/
 ```
-
 
 ## cojac_cooc-mutbamscan
 
@@ -145,7 +143,6 @@ Options:
   number of BAMs) in a file instead of command line
 ```
 
-
 ## cojac_cooc-pubmut
 
 ### Tool Description
@@ -184,57 +181,6 @@ Traceback (most recent call last):
 AssertionError: cannot succesfully load table
 ```
 
-
-## cojac_cooc-tabmut
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cojac:0.9.3--pyh7e72e81_0
-- **Homepage**: https://github.com/cbg-ethz/cojac
-- **Package**: https://anaconda.org/channels/bioconda/packages/cojac/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/cojac", line 10, in <module>
-    sys.exit(cli())
-             ^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1157, in __call__
-    return self.main(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1078, in main
-    rv = self.invoke(ctx)
-         ^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1688, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1434, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 783, in invoke
-    return __callback(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/cojac/cooc_tabmut.py", line 146, in cooc_tabmut
-    assert len(table) > 0, "cannot succesfully load table"
-           ^^^^^^^^^^^^^^
-AssertionError: cannot succesfully load table
-```
-
-
 ## cojac_generate-sigs-nextstrains
 
 ### Tool Description
@@ -260,7 +206,6 @@ Options:
   This tool fetchs a JSON from Github
 ```
 
-
 ## cojac_phe2cojac
 
 ### Tool Description
@@ -285,7 +230,6 @@ Options:
                         (if empty, build filename from shortname)
   -h, --help            Show this message and exit.
 ```
-
 
 ## cojac_sig-generate
 
@@ -337,7 +281,6 @@ Options:
 
   This tool queries LAPIS, see https://lapis-docs.readthedocs.io/en/latest/
 ```
-
 
 ## Metadata
 - **Skill**: generated

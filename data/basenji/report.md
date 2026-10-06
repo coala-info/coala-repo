@@ -5,12 +5,13 @@
 | Tool | Result | Reason |
 |---|---|---|
 | basenji_basenji_motifs.py | Failed | image problem: basenji_motifs.py crashes at start unless the HG38 environment variable is set, and it also reads an undefined split_label option; CWL flags were rewritten from the help. |
-| basenji_basenji_sat.py | Failed | not a usable tool: basenji_sat.py does not exist in the image (only basenji_sat_bed.py and basenji_sat_vcf.py), so the command cannot run. |
+| basenji_basenji_sat_bed.py | PASS |  |
+| basenji_basenji_sat_vcf.py | PASS |  |
 
-## basenji
+## basenji_basenji_sat_bed.py
 
 ### Tool Description
-The provided text does not contain help information for the tool 'basenji'. It appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space ('no space left on device').
+Perform an in silico saturation mutagenesis of sequences in a BED file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
@@ -23,239 +24,73 @@ The provided text does not contain help information for the tool 'basenji'. It a
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/calico/basenji
 - **Stars**: N/A
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-1180256839/rootfs/usr/local/bin/python3.9: no space left on device
-```
+Usage: basenji_sat_bed.py [options] <params_file> <model_file> <bed_file>
 
-
-## Metadata
-- **Skill**: generated
-
-## basenji_bam_cov.py
-
-### Tool Description
-The provided text does not contain help information for the tool; it is an error log describing a failure to build a Singularity/Apptainer container due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-2938121409/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_hdf5_single.py
-
-### Tool Description
-The provided text does not contain help information for the tool, but rather error logs from a container build process. No arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-2305440813/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_hdf5_cluster.py
-
-### Tool Description
-The provided text is an error log from a container build process (Singularity/Apptainer) and does not contain help information or argument definitions for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-3377651497/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_hdf5_genes.py
-
-### Tool Description
-A tool within the Basenji suite, likely used for processing gene data into HDF5 format. (Note: The provided help text contains system error logs regarding a failed container build and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-2712794270/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_train.py
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it is a system log showing a failed container build due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-3945433710/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_test.py
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log regarding a failed container build (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-1947639934/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_test_genes.py
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be an error log from a failed container build process (Singularity/Apptainer) due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-3372054360/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_sad.py
-
-### Tool Description
-The provided text does not contain help information for the tool, but rather system error messages related to a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-3110699210/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_sed.py
-
-### Tool Description
-The provided text does not contain help information for the tool, but appears to be a system error log (no space left on device) during a container build process. No arguments could be extracted from the provided text.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-2514404799/rootfs/usr/local/bin/python3.9: no space left on device
+Options:
+  -h, --help         show this help message and exit
+  -d MUT_DOWN        Nucleotides downstream of center sequence to mutate
+                     [Default: 0]
+  -f GENOME_FASTA    Genome FASTA for sequences [Default: none]
+  -l MUT_LEN         Length of center sequence to mutate [Default: 0]
+  -o OUT_DIR         Output directory [Default: sat_mut]
+  --plots            Make heatmap plots [Default: False]
+  -p PROCESSES       Number of processes, passed by multi script
+  --rc               Ensemble forward and reverse complement predictions
+                     [Default: False]
+  --shifts=SHIFTS    Ensemble prediction shifts [Default: 0]
+  --stats=SAD_STATS  Comma-separated list of stats to save. [Default: sum]
+  -t TARGETS_FILE    File specifying target indexes and labels in table format
+  -u MUT_UP          Nucleotides upstream of center sequence to mutate
+                     [Default: 0]
 ```
 
 ## basenji_basenji_sat_vcf.py
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is a log of a failed container build process due to insufficient disk space.
+Perform an in silico saturated mutagenesis of the sequences surrounding variants given in a VCF file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
 - **Homepage**: https://github.com/calico/basenji
 - **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
 - **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/basenji/overview
+- **Total Downloads**: 10.1K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/calico/basenji
+- **Stars**: N/A
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-1854537749/rootfs/usr/local/bin/python3.9: no space left on device
+Usage: basenji_sat_vcf.py [options] <params_file> <model_file> <vcf_file>
+
+Options:
+  -h, --help          show this help message and exit
+  -d MUT_DOWN         Nucleotides downstream of center sequence to mutate
+                      [Default: 0]
+  -f FIGURE_WIDTH     Figure width [Default: 20]
+  --f1=GENOME1_FASTA  Genome FASTA which which major allele sequences will be
+                      drawn
+  --f2=GENOME2_FASTA  Genome FASTA which which minor allele sequences will be
+                      drawn
+  -l MUT_LEN          Length of centered sequence to mutate [Default: 200]
+  -o OUT_DIR          Output directory [Default: sat_vcf]
+  --rc                Ensemble forward and reverse complement predictions
+                      [Default: False]
+  --shifts=SHIFTS     Ensemble prediction shifts [Default: 0]
+  --stats=SAD_STATS   Comma-separated list of stats to save. [Default: sum]
+  -t TARGETS_FILE     File specifying target indexes and labels in table
+                      format
+  -u MUT_UP           Nucleotides upstream of center sequence to mutate
+                      [Default: 0]
 ```
 
-## basenji_basenji_sat.py
-
-### Tool Description
-Compute saturation mutagenesis scores for sequences in an HDF5 file using a trained Basenji model.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-3606750890/rootfs/usr/local/bin/python3.9: no space left on device
-```
+## Metadata
+- **Skill**: generated
 
 ## basenji_basenji_motifs.py
 
@@ -275,25 +110,5 @@ INFO:    Starting build...
 INFO:    Fetching OCI image...
 INFO:    Extracting OCI image...
 FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-3494775948/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## basenji_basenji_map.py
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It consists of system error logs related to a failed Apptainer/Singularity container build (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/basenji:0.6--pyhdfd78af_0
-- **Homepage**: https://github.com/calico/basenji
-- **Package**: https://anaconda.org/channels/bioconda/packages/basenji/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/basenji:0.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:94c399ed1dd3ee1af742bfc75f0651ec77e215a437f344170b60c6df2e7e6a8f: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /scratch/21813747/build-temp-1921216023/rootfs/usr/local/bin/python3.9: no space left on device
 ```
 

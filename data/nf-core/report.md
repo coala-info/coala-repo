@@ -1,52 +1,5 @@
 # nf-core CWL Generation Report
 
-## nf-core_interface
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nf-core:3.5.2--pyhdfd78af_0
-- **Homepage**: http://nf-co.re/
-- **Package**: https://anaconda.org/channels/bioconda/packages/nf-core/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/nf-core/overview
-- **Total Downloads**: 136.6K
-- **Last updated**: 2026-02-02
-- **GitHub**: https://github.com/nf-core/tools
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-,--./,-.
-          ___     __   __   __   ___     /,-._.--~\ 
-    |\ | |__  __ /  ` /  \ |__) |__         }  {
-    | \| |       \__, \__/ |  \ |___     \`-._,-`-,
-                                          `._,._,'
-
-    nf-core/tools version 3.5.2 - https://nf-co.re
-
-
- Usage: nf-core interface [OPTIONS]                                             
-                                                                                
- Try 'nf-core interface -h' for help                                            
-╭─ Error ──────────────────────────────────────────────────────────────────────╮
-│ No such option: --h Did you mean --help?                                     │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
-
 ## nf-core_modules
 
 ### Tool Description
@@ -88,7 +41,6 @@ Usage: nf-core modules [OPTIONS] COMMAND [ARGS]...
  --help        -h  Show this message and exit.
 ```
 
-
 ## nf-core_pipelines
 
 ### Tool Description
@@ -128,7 +80,6 @@ Usage: nf-core pipelines [OPTIONS] COMMAND [ARGS]...
  --help  -h  Show this message and exit.
 ```
 
-
 ## nf-core_subworkflows
 
 ### Tool Description
@@ -167,7 +118,6 @@ Usage: nf-core subworkflows [OPTIONS] COMMAND [ARGS]...
                    repository.                                                  
  --help        -h  Show this message and exit.
 ```
-
 
 ## nf-core_test-datasets
 

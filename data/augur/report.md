@@ -7,16 +7,27 @@
 | augur_align | PASS |  |
 | augur_ancestral | PASS |  |
 | augur_clades | PASS |  |
-| augur_curate | Failed | not a usable tool: wraps only the 'augur curate' command group (subcommand string, no data inputs or outputs). |
+| augur_curate_abbreviate-authors | PASS |  |
+| augur_curate_apply-geolocation-rules | PASS |  |
+| augur_curate_apply-record-annotations | PASS |  |
+| augur_curate_format-dates | PASS |  |
+| augur_curate_normalize-strings | PASS |  |
+| augur_curate_parse-genbank-location | PASS |  |
+| augur_curate_passthru | PASS |  |
+| augur_curate_rename | PASS |  |
+| augur_curate_titlecase | PASS |  |
+| augur_curate_transform-strain-name | PASS |  |
 | augur_distance | PASS |  |
-| augur_export | Failed | not a usable tool: wraps only the 'augur export' command group (subcommand string, no data inputs or outputs). |
+| augur_export_v1 | PASS |  |
+| augur_export_v2 | PASS |  |
 | augur_filter | PASS |  |
 | augur_frequencies | PASS |  |
-| augur_import | Failed | not a usable tool: wraps only the 'augur import' command group (subcommand string, no data inputs or outputs). |
+| augur_import_beast | PASS |  |
 | augur_index | PASS |  |
 | augur_lbi | PASS |  |
 | augur_mask | PASS |  |
-| augur_measurements | Failed | not a usable tool: wraps only the 'augur measurements' command group (subcommand string, no data inputs or outputs). |
+| augur_measurements_concat | PASS |  |
+| augur_measurements_export | PASS |  |
 | augur_merge | PASS |  |
 | augur_parse | PASS |  |
 | augur_read-file | PASS |  |
@@ -24,7 +35,8 @@
 | augur_refine | PASS |  |
 | augur_sequence-traits | PASS |  |
 | augur_subsample | PASS |  |
-| augur_titers | Failed | not a usable tool: wraps only the 'augur titers' command group (subcommand string, no data inputs or outputs). |
+| augur_titers_sub | PASS |  |
+| augur_titers_tree | PASS |  |
 | augur_traits | PASS |  |
 | augur_translate | PASS |  |
 | augur_tree | PASS |  |
@@ -84,52 +96,6 @@ options:
                         attempt to parse non-standard dates and output them in
                         standard YYYY-MM-DD format (default: None)
 ```
-
-
-## augur_curate
-
-### Tool Description
-A suite of commands to help with data curation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextstrain/augur
-- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: augur curate [-h]
-                    {passthru,normalize-strings,format-dates,titlecase,apply-geolocation-rules,apply-record-annotations,abbreviate-authors,parse-genbank-location,transform-strain-name,rename} ...
-
-A suite of commands to help with data curation.
-
-positional arguments:
-  {passthru,normalize-strings,format-dates,titlecase,apply-geolocation-rules,apply-record-annotations,abbreviate-authors,parse-genbank-location,transform-strain-name,rename}
-    passthru            Pass through records without doing any data
-                        transformations.
-    normalize-strings   Normalize strings to a Unicode normalization form and
-                        strip leading and trailing whitespaces.
-    format-dates        Format date fields to ISO 8601 dates (YYYY-MM-DD).
-    titlecase           Applies titlecase to specified string fields
-    apply-geolocation-rules
-                        Applies user curated geolocation rules to the
-                        geolocation fields.
-    apply-record-annotations
-                        Applies record annotations to overwrite field values.
-    abbreviate-authors  Abbreviates a full list of authors to be '<first
-                        author> et al.'
-    parse-genbank-location
-                        Parses GenBank's location field into 3 separate
-                        fields: 'country', 'division', and 'location'.
-    transform-strain-name
-                        Verifies strain name pattern in the 'strain' field.
-    rename              Renames fields / columns of the input data
-
-options:
-  -h, --help            show this help message and exit
-```
-
 
 ## augur_merge
 
@@ -254,7 +220,6 @@ other:
                         (default: 1)
 ```
 
-
 ## augur_index
 
 ### Tool Description
@@ -286,7 +251,6 @@ options:
                         '-'), and other invalid characters. (default: None)
   --verbose, -v         print index statistics to stdout (default: False)
 ```
-
 
 ## augur_filter
 
@@ -554,7 +518,6 @@ deprecated:
   -o FILE               alias to --output-sequences
 ```
 
-
 ## augur_subsample
 
 ### Tool Description
@@ -663,7 +626,6 @@ Output options:
                         sample it came from.
 ```
 
-
 ## augur_mask
 
 ### Tool Description
@@ -705,7 +667,6 @@ options:
   --no-cleanup          Leave intermediate files around. May be useful for
                         debugging (default: True)
 ```
-
 
 ## augur_align
 
@@ -759,7 +720,6 @@ options:
                         which can help with debugging poor alignments.
                         (default: False)
 ```
-
 
 ## augur_tree
 
@@ -835,7 +795,6 @@ For example, to build a tree with IQ-TREE, use the following format: augur
 tree --method iqtree --alignment <alignment> --substitution-model <model>
 --output <tree> --tree-builder-args="<extra arguments>"
 ```
-
 
 ## augur_refine
 
@@ -966,7 +925,6 @@ options:
                         treetime verbosity, between 0 and 6 (higher values
                         more output) (default: 1)
 ```
-
 
 ## augur_ancestral
 
@@ -1104,7 +1062,6 @@ general:
                         (default: None)
 ```
 
-
 ## augur_translate
 
 ### Tool Description
@@ -1193,7 +1150,6 @@ VCF specific:
                         VCF input will be written (default: None)
 ```
 
-
 ## augur_reconstruct-sequences
 
 ### Tool Description
@@ -1229,7 +1185,6 @@ options:
                         (default: False)
   --output OUTPUT
 ```
-
 
 ## augur_clades
 
@@ -1291,7 +1246,6 @@ options:
                         --validation-mode=skip. Use at your own risk!
                         (default: None)
 ```
-
 
 ## augur_traits
 
@@ -1366,7 +1320,6 @@ Note that missing data must be represented by a `?` character. Missing data
 will currently be inferred.
 ```
 
-
 ## augur_sequence-traits
 
 ### Tool Description
@@ -1421,7 +1374,6 @@ options:
                         (default: None)
 ```
 
-
 ## augur_lbi
 
 ### Tool Description
@@ -1461,7 +1413,6 @@ options:
   --no-normalization    disable normalization of LBI by the maximum value
                         (default: False)
 ```
-
 
 ## augur_distance
 
@@ -1608,34 +1559,6 @@ options:
                         name and attribute name (default: None)
 ```
 
-
-## augur_titers
-
-### Tool Description
-Annotate a tree with actual and inferred titer measurements.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextstrain/augur
-- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: augur titers [-h] {tree,sub} ...
-
-Annotate a tree with actual and inferred titer measurements.
-
-positional arguments:
-  {tree,sub}
-    tree      tree model
-    sub       substitution model
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## augur_frequencies
 
 ### Tool Description
@@ -1765,172 +1688,6 @@ options:
                         None)
 ```
 
-
-## augur_export
-
-### Tool Description
-Export JSON files suitable for visualization with auspice.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextstrain/augur
-- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: augur export [-h]
-                    Augur export now needs you to define the JSON version you want, e.g. `augur export v2`. ...
-
-Export JSON files suitable for visualization with auspice.
-
-options:
-  -h, --help            show this help message and exit
-
-JSON SCHEMA:
-  Augur export now needs you to define the JSON version you want, e.g. `augur export v2`.
-    v2                  Export version 2 JSON schema for visualization with
-                        Auspice
-    v1                  Export version 1 JSON schema (separate meta and tree
-                        JSONs) for visualization with Auspice
-```
-
-
-## augur_validate
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextstrain/augur
-- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.13/site-packages/treetime/merger_models.py:189: SyntaxWarning: invalid escape sequence '\k'
-  in the Kingman model this is: :math:`\kappa(t) = (k(t)-1)/(2Tc(t))`
-/usr/local/lib/python3.13/site-packages/treetime/merger_models.py:199: SyntaxWarning: invalid escape sequence '\l'
-  in the Kingman model this is: :math:`\lambda(t) = k(t)(k(t)-1)/(2Tc(t))`
-/usr/local/lib/python3.13/site-packages/treetime/merger_models.py:214: SyntaxWarning: invalid escape sequence '\l'
-  :math:`-log(\lambda(t_n+ \\tau)^{(m-1)/m}) + \int_{t_n}^{t_n+ \\tau} \kappa(t) dt`, where m is the multiplicity
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/augur/__init__.py", line 71, in run
-    return args.__command__.run(args)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/augur/validate.py", line 485, in run
-    globals()[args.subcommand.replace('-','_')](**vars(args))
-              ^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'replace'
-
-
-An error occurred (see above) that has not been properly handled by Augur.
-To report this, please open a new issue including the original command and the error above:
-    <https://github.com/nextstrain/augur/issues/new/choose>
-```
-
-
-## augur_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextstrain/augur
-- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: augur version [-h]
-
-Print the version of augur.
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
-## augur_import
-
-### Tool Description
-Import analyses into augur pipeline from other systems
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextstrain/augur
-- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: augur import [-h]
-                    Import analyses into augur pipeline from other systems ...
-
-Import analyses into augur pipeline from other systems
-
-options:
-  -h, --help            show this help message and exit
-
-TYPE:
-  Import analyses into augur pipeline from other systems
-    beast               Import beast analysis
-```
-
-
-## augur_measurements
-
-### Tool Description
-Create JSON files suitable for visualization within the measurements panel of Auspice.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nextstrain/augur
-- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: augur measurements [-h] {export,concat} ...
-
-Create JSON files suitable for visualization within the measurements panel of
-Auspice.
-
-positional arguments:
-  {export,concat}
-    export         Export a measurements JSON for a single collection
-    concat         Concatenate multiple measurements JSONs into a single JSON
-                   file
-
-options:
-  -h, --help       show this help message and exit
-```
-
-
 ## augur_read-file
 
 ### Tool Description
@@ -1964,7 +1721,6 @@ options:
   -h, --help  show this help message and exit
 ```
 
-
 ## augur_write-file
 
 ### Tool Description
@@ -1988,6 +1744,1621 @@ usage: augur write-file [-h] PATH
 augur write-file: error: the following arguments are required: PATH
 ```
 
+## augur_curate_abbreviate-authors
+
+### Tool Description
+Abbreviates a full list of authors to be '<first author> et al.' (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate abbreviate-authors [-h] [--metadata METADATA]
+                                       [--id-column ID_COLUMN]
+                                       [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                                       [--fasta FASTA]
+                                       [--seq-id-column SEQ_ID_COLUMN]
+                                       [--seq-field SEQ_FIELD]
+                                       [--unmatched-reporting {error_first,error_all,warn,silent}]
+                                       [--duplicate-reporting {error_first,error_all,warn,silent}]
+                                       [--output-metadata OUTPUT_METADATA]
+                                       [--output-fasta OUTPUT_FASTA]
+                                       [--output-id-field OUTPUT_ID_FIELD]
+                                       [--output-seq-field OUTPUT_SEQ_FIELD]
+                                       [--authors-field AUTHORS_FIELD]
+                                       [--default-value DEFAULT_VALUE]
+                                       [--abbr-authors-field ABBR_AUTHORS_FIELD]
+
+Abbreviates a full list of authors to be '<first author> et al.' Expects
+NDJSON records from stdin and outputs modified records to stdout. Note: This
+is a "best effort" approach and can potentially mangle the author name.
+
+options:
+  -h, --help            show this help message and exit
+  --authors-field AUTHORS_FIELD
+                        The field containing list of authors. (default:
+                        authors)
+  --default-value DEFAULT_VALUE
+                        Default value to use if authors list is empty.
+                        (default: ?)
+  --abbr-authors-field ABBR_AUTHORS_FIELD
+                        The field for the generated abbreviated authors. If
+                        not provided, the original authors field will be
+                        modified. (default: None)
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+```
+
+## augur_curate_apply-geolocation-rules
+
+### Tool Description
+Applies user curated geolocation rules to the geolocation fields. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate apply-geolocation-rules [-h] [--metadata METADATA]
+                                            [--id-column ID_COLUMN]
+                                            [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                                            [--fasta FASTA]
+                                            [--seq-id-column SEQ_ID_COLUMN]
+                                            [--seq-field SEQ_FIELD]
+                                            [--unmatched-reporting {error_first,error_all,warn,silent}]
+                                            [--duplicate-reporting {error_first,error_all,warn,silent}]
+                                            [--output-metadata OUTPUT_METADATA]
+                                            [--output-fasta OUTPUT_FASTA]
+                                            [--output-id-field OUTPUT_ID_FIELD]
+                                            [--output-seq-field OUTPUT_SEQ_FIELD]
+                                            [--region-field REGION_FIELD]
+                                            [--country-field COUNTRY_FIELD]
+                                            [--division-field DIVISION_FIELD]
+                                            [--location-field LOCATION_FIELD]
+                                            [--geolocation-rules TSV]
+                                            [--case-sensitive]
+                                            [--no-default-rules]
+
+Applies user curated geolocation rules to the geolocation fields.
+
+options:
+  -h, --help            show this help message and exit
+  --region-field REGION_FIELD
+                        Field that contains regions in NDJSON records.
+                        (default: region)
+  --country-field COUNTRY_FIELD
+                        Field that contains countries in NDJSON records.
+                        (default: country)
+  --division-field DIVISION_FIELD
+                        Field that contains divisions in NDJSON records.
+                        (default: division)
+  --location-field LOCATION_FIELD
+                        Field that contains location in NDJSON records.
+                        (default: location)
+  --geolocation-rules TSV
+                        TSV file of geolocation rules with the format:
+                        '<raw_geolocation><tab><annotated_geolocation>' where
+                        the raw and annotated geolocations are formatted as
+                        '<region>/<country>/<division>/<location>'. If
+                        creating a general rule, then the raw field value can
+                        be substituted with '*'.Lines starting with '#' will
+                        be ignored as comments.Trailing '#' will be ignored as
+                        comments. Note that the raw geolocation matching is
+                        case-insensitive unless the `--case-sensitive` flag is
+                        provided. The rules defined in the provided file will
+                        have precedence over the default rules in <https://git
+                        hub.com/nextstrain/augur/blob/33.0.0/augur/data/geoloc
+                        ation_rules.tsv>. (default: None)
+  --case-sensitive      Use case-sensitive matching of raw geolocation fields
+                        to geolocation rules. (default: False)
+  --no-default-rules    Do not use Augur's default geolocation rules.
+                        (default: False)
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+```
+
+## augur_curate_apply-record-annotations
+
+### Tool Description
+Applies record annotations to overwrite field values. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate apply-record-annotations [-h] [--metadata METADATA]
+                                             [--id-column ID_COLUMN]
+                                             [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                                             [--fasta FASTA]
+                                             [--seq-id-column SEQ_ID_COLUMN]
+                                             [--seq-field SEQ_FIELD]
+                                             [--unmatched-reporting {error_first,error_all,warn,silent}]
+                                             [--duplicate-reporting {error_first,error_all,warn,silent}]
+                                             [--output-metadata OUTPUT_METADATA]
+                                             [--output-fasta OUTPUT_FASTA]
+                                             [--output-id-field OUTPUT_ID_FIELD]
+                                             [--output-seq-field OUTPUT_SEQ_FIELD]
+                                             --annotations TSV
+                                             [--id-field ID_FIELD]
+
+Applies record annotations to overwrite field values. This does not do any
+additional transformations on top of the annotations.
+
+options:
+  -h, --help            show this help message and exit
+  --annotations TSV     Manually curated annotations TSV file. The TSV should
+                        not have a header and should have exactly three
+                        columns: id to match existing metadata, field name,
+                        and field value. If there are multiple annotations for
+                        the same id and field, then the last value is used.
+                        Lines starting with '#' are treated as comments. Any
+                        '#' after the field value are treated as comments.
+                        (default: None)
+  --id-field ID_FIELD   The ID field in the metadata to use to merge with the
+                        annotations. (default: accession)
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+```
+
+## augur_curate_format-dates
+
+### Tool Description
+Format date fields to ISO 8601 dates (YYYY-MM-DD). (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate format-dates [-h] [--metadata METADATA]
+                                 [--id-column ID_COLUMN]
+                                 [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                                 [--fasta FASTA]
+                                 [--seq-id-column SEQ_ID_COLUMN]
+                                 [--seq-field SEQ_FIELD]
+                                 [--unmatched-reporting {error_first,error_all,warn,silent}]
+                                 [--duplicate-reporting {error_first,error_all,warn,silent}]
+                                 [--output-metadata OUTPUT_METADATA]
+                                 [--output-fasta OUTPUT_FASTA]
+                                 [--output-id-field OUTPUT_ID_FIELD]
+                                 [--output-seq-field OUTPUT_SEQ_FIELD]
+                                 [--date-fields NAME [NAME ...]]
+                                 [--expected-date-formats FORMAT [FORMAT ...]]
+                                 [--failure-reporting {error_first,error_all,warn,silent}]
+                                 [--no-mask-failure]
+
+Format date fields to ISO 8601 dates (YYYY-MM-DD). If the provided
+``--expected-date-formats`` represent incomplete dates then the incomplete
+dates are masked with 'XX'. For example, providing ``%Y`` will allow year only
+dates to be formatted as ``2023-XX-XX``.
+
+options:
+  -h, --help            show this help message and exit
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+
+REQUIRED:
+  --date-fields NAME [NAME ...]
+                        List of date field names in the record that need to be
+                        standardized. (default: None)
+
+OPTIONAL:
+  --expected-date-formats FORMAT [FORMAT ...]
+                        Custom date formats for values in the provided date
+                        fields, defined by standard format codes available at
+                        <https://docs.python.org/3/library/datetime.html#strft
+                        ime-and-strptime-format-codes>. If a value matches
+                        multiple formats, it will be parsed using the first
+                        match. Use 'XX' to match masked parts of the date
+                        (e.g. '%m/XX/%Y'). The following formats are builtin
+                        and automatically used: '%Y-%m-%d', '%Y-%m-XX',
+                        '%Y-XX-XX', 'XXXX-XX-XX'. User-provided values are
+                        considered after the builtin formats. (default: None)
+  --failure-reporting {error_first,error_all,warn,silent}
+                        How should failed date formatting be reported.
+                        (default: error_first)
+  --no-mask-failure     Do not mask dates with 'XXXX-XX-XX' and return
+                        original date string if date formatting failed.
+                        (default: False)
+```
+
+## augur_curate_normalize-strings
+
+### Tool Description
+Normalize strings to a Unicode normalization form and strip leading and trailing whitespaces. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate normalize-strings [-h] [--metadata METADATA]
+                                      [--id-column ID_COLUMN]
+                                      [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                                      [--fasta FASTA]
+                                      [--seq-id-column SEQ_ID_COLUMN]
+                                      [--seq-field SEQ_FIELD]
+                                      [--unmatched-reporting {error_first,error_all,warn,silent}]
+                                      [--duplicate-reporting {error_first,error_all,warn,silent}]
+                                      [--output-metadata OUTPUT_METADATA]
+                                      [--output-fasta OUTPUT_FASTA]
+                                      [--output-id-field OUTPUT_ID_FIELD]
+                                      [--output-seq-field OUTPUT_SEQ_FIELD]
+                                      [--form {NFC,NFKC,NFD,NFKD}]
+
+Normalize strings to a Unicode normalization form and strip leading and
+trailing whitespaces. Strings need to be normalized for predictable string
+comparisons, especially in cases where strings contain diacritics (see https:/
+/web.archive.org/web/20250922031915/https://unicode.org/faq/normalization.html
+).
+
+options:
+  -h, --help            show this help message and exit
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+
+OPTIONAL:
+  --form {NFC,NFKC,NFD,NFKD}
+                        Unicode normalization form to use for normalization.
+                        (default: NFC)
+```
+
+## augur_curate_parse-genbank-location
+
+### Tool Description
+Parses GenBank's location field into 3 separate fields: 'country', 'division', and 'location'. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate parse-genbank-location [-h] [--metadata METADATA]
+                                           [--id-column ID_COLUMN]
+                                           [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                                           [--fasta FASTA]
+                                           [--seq-id-column SEQ_ID_COLUMN]
+                                           [--seq-field SEQ_FIELD]
+                                           [--unmatched-reporting {error_first,error_all,warn,silent}]
+                                           [--duplicate-reporting {error_first,error_all,warn,silent}]
+                                           [--output-metadata OUTPUT_METADATA]
+                                           [--output-fasta OUTPUT_FASTA]
+                                           [--output-id-field OUTPUT_ID_FIELD]
+                                           [--output-seq-field OUTPUT_SEQ_FIELD]
+                                           [--location-field LOCATION_FIELD]
+
+Parses GenBank's location field into 3 separate fields: 'country', 'division',
+and 'location'. Checks that a record is from GenBank by verifying that the
+'database' field has a value of "GenBank" or "RefSeq".
+
+options:
+  -h, --help            show this help message and exit
+  --location-field LOCATION_FIELD
+                        The field containing the location, in the format
+                        `<geo_loc_name>[:<region>][, <locality>]` (default:
+                        geo_loc_name)
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+```
+
+## augur_curate_passthru
+
+### Tool Description
+Pass through records without doing any data transformations. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate passthru [-h] [--metadata METADATA]
+                             [--id-column ID_COLUMN]
+                             [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                             [--fasta FASTA] [--seq-id-column SEQ_ID_COLUMN]
+                             [--seq-field SEQ_FIELD]
+                             [--unmatched-reporting {error_first,error_all,warn,silent}]
+                             [--duplicate-reporting {error_first,error_all,warn,silent}]
+                             [--output-metadata OUTPUT_METADATA]
+                             [--output-fasta OUTPUT_FASTA]
+                             [--output-id-field OUTPUT_ID_FIELD]
+                             [--output-seq-field OUTPUT_SEQ_FIELD]
+
+Pass through records without doing any data transformations. Useful for
+testing, troubleshooting, or just converting file formats.
+
+options:
+  -h, --help            show this help message and exit
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+```
+
+## augur_curate_rename
+
+### Tool Description
+Renames fields / columns of the input data. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate rename [-h] [--metadata METADATA] [--id-column ID_COLUMN]
+                           [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                           [--fasta FASTA] [--seq-id-column SEQ_ID_COLUMN]
+                           [--seq-field SEQ_FIELD]
+                           [--unmatched-reporting {error_first,error_all,warn,silent}]
+                           [--duplicate-reporting {error_first,error_all,warn,silent}]
+                           [--output-metadata OUTPUT_METADATA]
+                           [--output-fasta OUTPUT_FASTA]
+                           [--output-id-field OUTPUT_ID_FIELD]
+                           [--output-seq-field OUTPUT_SEQ_FIELD]
+                           --field-map FIELD_MAP [FIELD_MAP ...] [--force]
+
+Renames fields / columns of the input data
+
+options:
+  -h, --help            show this help message and exit
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+
+REQUIRED:
+  --field-map FIELD_MAP [FIELD_MAP ...]
+                        Rename fields/columns via
+                        '{old_field_name}={new_field_name}'. If the new field
+                        already exists, then the renaming of the old field
+                        will be skipped. Multiple entries with the same
+                        '{old_field_name}' will duplicate the field/column.
+                        Skips the field if the old field name is the same as
+                        the new field name (case-sensitive). (default: None)
+
+OPTIONAL:
+  --force               Force renaming of old field even if the new field
+                        already exists. Please keep in mind this will
+                        overwrite the value of the new field. (default: False)
+```
+
+## augur_curate_titlecase
+
+### Tool Description
+Applies titlecase to specified string fields. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate titlecase [-h] [--metadata METADATA]
+                              [--id-column ID_COLUMN]
+                              [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                              [--fasta FASTA] [--seq-id-column SEQ_ID_COLUMN]
+                              [--seq-field SEQ_FIELD]
+                              [--unmatched-reporting {error_first,error_all,warn,silent}]
+                              [--duplicate-reporting {error_first,error_all,warn,silent}]
+                              [--output-metadata OUTPUT_METADATA]
+                              [--output-fasta OUTPUT_FASTA]
+                              [--output-id-field OUTPUT_ID_FIELD]
+                              [--output-seq-field OUTPUT_SEQ_FIELD]
+                              --titlecase-fields [TITLECASE_FIELDS ...]
+                              [--articles [ARTICLES ...]]
+                              [--abbreviations [ABBREVIATIONS ...]]
+                              [--failure-reporting {error_first,error_all,warn,silent}]
+
+Applies titlecase to specified string fields
+
+options:
+  -h, --help            show this help message and exit
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+
+REQUIRED:
+  --titlecase-fields [TITLECASE_FIELDS ...]
+                        List of fields to convert to titlecase. (default:
+                        None)
+
+OPTIONAL:
+  --articles [ARTICLES ...]
+                        List of articles that should not be converted to
+                        titlecase. (default: None)
+  --abbreviations [ABBREVIATIONS ...]
+                        List of abbreviations that should not be converted to
+                        titlecase, keeps uppercase. (default: None)
+  --failure-reporting {error_first,error_all,warn,silent}
+                        How should failed titlecase formatting be reported.
+                        (default: error_first)
+```
+
+## augur_curate_transform-strain-name
+
+### Tool Description
+Verifies strain name pattern in the 'strain' field. (augur curate)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur curate transform-strain-name [-h] [--metadata METADATA]
+                                          [--id-column ID_COLUMN]
+                                          [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                                          [--fasta FASTA]
+                                          [--seq-id-column SEQ_ID_COLUMN]
+                                          [--seq-field SEQ_FIELD]
+                                          [--unmatched-reporting {error_first,error_all,warn,silent}]
+                                          [--duplicate-reporting {error_first,error_all,warn,silent}]
+                                          [--output-metadata OUTPUT_METADATA]
+                                          [--output-fasta OUTPUT_FASTA]
+                                          [--output-id-field OUTPUT_ID_FIELD]
+                                          [--output-seq-field OUTPUT_SEQ_FIELD]
+                                          [--strain-regex STRAIN_REGEX]
+                                          [--backup-fields [BACKUP_FIELDS ...]]
+
+Verifies strain name pattern in the 'strain' field. Adds a 'strain' field to
+the record if it does not already exist.
+
+options:
+  -h, --help            show this help message and exit
+  --strain-regex STRAIN_REGEX
+                        Regex pattern for strain names. Strain names that do
+                        not match the pattern will be dropped. (default: ^.+$)
+  --backup-fields [BACKUP_FIELDS ...]
+                        List of backup fields to use as strain name if the
+                        value in 'strain' does not match the strain regex
+                        pattern. If multiple fields are provided, will use the
+                        first field that has a non-empty string. (default: [])
+
+INPUTS:
+  Input options shared by all `augur curate` commands. If no input options
+  are provided, commands will try to read NDJSON records from stdin.
+
+  --metadata METADATA   Input metadata file. May be plain text (TSV, CSV) or
+                        an Excel or OpenOffice spreadsheet workbook file. When
+                        an Excel or OpenOffice workbook, only the first
+                        visible worksheet will be read and initial empty
+                        rows/columns will be ignored. Accepts '-' to read
+                        plain text from stdin. (default: None)
+  --id-column ID_COLUMN
+                        Name of the metadata column that contains the record
+                        identifier for reporting duplicate records. Uses the
+                        first column of the metadata file if not provided.
+                        Ignored if also providing a FASTA file input.
+                        (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        Delimiters to accept when reading a plain text
+                        metadata file. Only one delimiter will be inferred.
+                        (default: (',', '\t'))
+  --fasta FASTA         Plain or gzipped FASTA file. Headers can only contain
+                        the sequence id used to match a metadata record. Note
+                        that an index file will be generated for the FASTA
+                        file as <filename>.fasta.fxi (default: None)
+  --seq-id-column SEQ_ID_COLUMN
+                        Name of metadata column that contains the sequence id
+                        to match sequences in the FASTA file. (default: None)
+  --seq-field SEQ_FIELD
+                        The name to use for the sequence field when joining
+                        sequences from a FASTA file. (default: None)
+  --unmatched-reporting {error_first,error_all,warn,silent}
+                        How unmatched records from combined metadata/FASTA
+                        input should be reported. (default: error_first)
+  --duplicate-reporting {error_first,error_all,warn,silent}
+                        How should duplicate records be reported. (default:
+                        error_first)
+
+OUTPUTS:
+  Output options shared by all `augur curate` commands. If no output options
+  are provided, commands will output NDJSON records to stdout.
+
+  --output-metadata OUTPUT_METADATA
+                        Output metadata TSV file. Accepts '-' to output TSV to
+                        stdout. (default: None)
+  --output-fasta OUTPUT_FASTA
+                        Output FASTA file. (default: None)
+  --output-id-field OUTPUT_ID_FIELD
+                        The record field to use as the sequence identifier in
+                        the FASTA output. (default: None)
+  --output-seq-field OUTPUT_SEQ_FIELD
+                        The record field that contains the sequence for the
+                        FASTA output. This field will be deleted from the
+                        metadata output. (default: None)
+```
+
+## augur_export_v1
+
+### Tool Description
+Export version 1 JSON schema (separate meta and tree JSONs) for visualization with Auspice.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur export v1 [-h] --tree TREE --metadata FILE
+                       [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                       --node-data NODE_DATA [NODE_DATA ...]
+                       [--output-tree OUTPUT_TREE] [--output-meta OUTPUT_META]
+                       [--auspice-config AUSPICE_CONFIG] [--colors FILE]
+                       [--lat-longs LAT_LONGS] [--tree-name TREE_NAME]
+                       [--minify-json] [--output-sequence OUTPUT_SEQUENCE]
+                       [--reference REFERENCE]
+                       [--reference-translations REFERENCE_TRANSLATIONS]
+
+Export version 1 JSON schema (separate meta and tree JSONs) for visualization
+with Auspice
+
+options:
+  -h, --help            show this help message and exit
+
+REQUIRED:
+  --tree, -t TREE       tree to perform trait reconstruction on (default:
+                        None)
+  --metadata FILE       sequence metadata (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        delimiters to accept when reading a metadata file.
+                        Only one delimiter will be inferred. (default: (',',
+                        '\t'))
+  --node-data NODE_DATA [NODE_DATA ...]
+                        JSON files with meta data for each node (default:
+                        None)
+  --output-tree OUTPUT_TREE
+                        JSON file name that is passed on to auspice (e.g.,
+                        zika_tree.json). (default: None)
+  --output-meta OUTPUT_META
+                        JSON file name that is passed on to auspice (e.g.,
+                        zika_meta.json). (default: None)
+  --auspice-config AUSPICE_CONFIG
+                        file with auspice configuration (default: None)
+
+OPTIONS:
+  --colors FILE         Custom color definitions, one per line in the format
+                        `TRAIT_TYPE\tTRAIT_VALUE\tHEX_CODE` (default: None)
+  --lat-longs LAT_LONGS
+                        file latitudes and longitudes, overrides built in
+                        mappings (default: None)
+  --tree-name TREE_NAME
+                        Tree name (needed for tangle tree functionality)
+                        (default: False)
+  --minify-json         export JSONs without indentation or line returns
+                        (default: False)
+  --output-sequence OUTPUT_SEQUENCE
+                        JSON file name that is passed on to auspice (e.g.,
+                        zika_seq.json). (default: None)
+  --reference REFERENCE
+                        reference sequence for export to browser, only vcf
+                        (default: None)
+  --reference-translations REFERENCE_TRANSLATIONS
+                        reference translations for export to browser, only vcf
+                        (default: None)
+```
+
+## augur_export_v2
+
+### Tool Description
+Export version 2 JSON schema for visualization with Auspice.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur export v2 [-h] --tree newick --output JSON
+                       [--auspice-config JSON [JSON ...]] [--title title]
+                       [--maintainers name [name ...]] [--build-url url]
+                       [--description description.md] [--warning text or file]
+                       [--geo-resolutions trait [trait ...]]
+                       [--color-by-metadata trait [trait ...]]
+                       [--metadata-columns METADATA_COLUMNS [METADATA_COLUMNS ...]]
+                       [--panels panels [panels ...]]
+                       [--node-data JSON [JSON ...]] [--metadata FILE]
+                       [--metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]]
+                       [--metadata-id-columns METADATA_ID_COLUMNS [METADATA_ID_COLUMNS ...]]
+                       [--colors FILE] [--lat-longs TSV] [--minify-json |
+                       --no-minify-json] [--include-root-sequence |
+                       --include-root-sequence-inline]
+                       [--validation-mode {error,warn,skip}]
+                       [--skip-validation] [--output-auspice-config JSON]
+
+Export version 2 JSON schema for visualization with Auspice
+
+options:
+  -h, --help            show this help message and exit
+
+REQUIRED:
+  --tree, -t newick     Phylogenetic tree, usually output from `augur refine`
+                        (default: None)
+  --output JSON         Output file (typically for visualisation in auspice)
+                        (default: None)
+
+DISPLAY CONFIGURATION:
+  These control the display settings for auspice. Config JSON(s) allow
+  customisation of all available options whereas individual command line
+  arguments are more limited but great to get started. Supplying both is
+  fine too, command line args will overrule what is set in the config file.
+  Multiple JSONs will be merged together, and lists present in multiple
+  configs will be merged by extending the original list.
+
+  --auspice-config JSON [JSON ...]
+                        Auspice configuration file(s) (default: [])
+  --title title         Title to be displayed by auspice (default: None)
+  --maintainers name [name ...]
+                        Analysis maintained by, in format 'Name <URL>' 'Name2
+                        <URL>', ... (default: None)
+  --build-url url       Build URL/repository to be displayed by Auspice
+                        (default: None)
+  --description description.md
+                        Markdown file with description of build and/or
+                        acknowledgements to be displayed by Auspice (default:
+                        None)
+  --warning text or file
+                        Text or file in Markdown format to be displayed as a
+                        warning banner by Auspice (default: None)
+  --geo-resolutions trait [trait ...]
+                        Geographic traits to be displayed on map (default:
+                        None)
+  --color-by-metadata trait [trait ...]
+                        Metadata columns to include as coloring options.
+                        Ignores columns named 'none', so please rename them if
+                        you would like to include them as colorings. (default:
+                        None)
+  --metadata-columns METADATA_COLUMNS [METADATA_COLUMNS ...]
+                        Metadata columns to export in addition to columns
+                        provided by --color-by-metadata or colorings in the
+                        Auspice configuration file. These columns will not be
+                        used as coloring options in Auspice but will be
+                        visible in the tree. Ignores columns named 'none', so
+                        please rename them if you would like to include them
+                        as metadata fields. (default: None)
+  --panels panels [panels ...]
+                        Restrict panel display in auspice. Options are tree,
+                        map, entropy, frequencies, measurements. Ignore this
+                        option to display all available panels. (default:
+                        None)
+
+OPTIONAL INPUT FILES:
+  --node-data JSON [JSON ...]
+                        JSON files containing metadata for nodes in the tree.
+                        Keys are automatically exported as colorings unless
+                        special-cased. URLs for a key 'X' can be stored under
+                        key 'X__url' and will be automatically exported.
+                        (default: None)
+  --metadata FILE       Additional metadata for strains in the tree. Columns
+                        are not typically exported by default and must be
+                        specified via arguments or within the config JSON.
+                        URLs for a column 'X' can be stored in column 'X__url'
+                        and will be automatically exported. (default: None)
+  --metadata-delimiters METADATA_DELIMITERS [METADATA_DELIMITERS ...]
+                        delimiters to accept when reading a metadata file.
+                        Only one delimiter will be inferred. (default: (',',
+                        '\t'))
+  --metadata-id-columns METADATA_ID_COLUMNS [METADATA_ID_COLUMNS ...]
+                        names of possible metadata columns containing
+                        identifier information, ordered by priority. Only one
+                        ID column will be inferred. (default: ('strain',
+                        'name'))
+  --colors FILE         Custom color definitions, one per line in the format
+                        `TRAIT_TYPE\tTRAIT_VALUE\tHEX_CODE` (default: None)
+  --lat-longs TSV       Latitudes and longitudes for geography traits. See
+                        this file for the format: <https://github.com/nextstra
+                        in/augur/blob/33.0.0/augur/data/lat_longs.tsv>. This
+                        file provides the default set of latitudes and
+                        longitudes. An additional file specified by this
+                        option will extend the default set. Duplicates based
+                        on the first two columns will be resolved by taking
+                        the coordinates from the user-provided file. (default:
+                        None)
+
+OPTIONAL MINIFY SETTINGS:
+  By default, output JSON files (both main and sidecar) are automatically
+  minimized if the size of the un-minified main JSON file exceeds 5 MB. Use
+  these options to override that behavior.
+
+  --minify-json         Always export JSONs without indentation or line
+                        returns. A truthy value (e.g. 1) in
+                        :envvar:`AUGUR_MINIFY_JSON` has the same effect, but
+                        it can be overridden by ``--no-minify-json``.
+  --no-minify-json      Always export JSONs to be human readable. This
+                        overrides :envvar:`AUGUR_MINIFY_JSON`.
+
+OPTIONAL ROOT-SEQUENCE SETTINGS:
+  The root-sequences describe the sequences (nuc + aa) for the parent of the
+  tree's root-node. They may represent a reference sequence or the inferred
+  sequence at the root node, depending on how they were generated. The data
+  is taken directly from the `reference` key within the provided node-data
+  JSONs. These arguments are mutually exclusive.
+
+  --include-root-sequence
+                        Export as an additional JSON. The filename will follow
+                        the pattern of <OUTPUT>_root-sequence.json for a main
+                        auspice JSON of <OUTPUT>.json (default: False)
+  --include-root-sequence-inline
+                        Export the root sequence within the dataset JSON. This
+                        should only be used for small genomes for file size
+                        reasons. (default: False)
+
+OTHER OPTIONAL SETTINGS:
+  --validation-mode {error,warn,skip}
+                        Control if optional validation checks are performed
+                        and what happens if they fail. 'error' and 'warn'
+                        modes perform validation and emit messages about
+                        failed validation checks. 'error' mode causes a non-
+                        zero exit status if any validation checks failed,
+                        while 'warn' does not. 'skip' mode performs no
+                        validation. Note that some validation checks are non-
+                        optional and as such are not affected by this setting.
+                        (default: error)
+  --skip-validation     Skip validation of input/output files, equivalent to
+                        --validation-mode=skip. Use at your own risk!
+                        (default: None)
+  --output-auspice-config JSON
+                        Write out the merged auspice configuration file for
+                        debugging purposes etc. File is only written if you
+                        provide multiple config files via --auspice-config.
+                        (default: None)
+```
+
+## augur_import_beast
+
+### Tool Description
+Import beast analysis.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur import beast [-h] --mcc MCC
+                          [--most-recent-tip-date MOST_RECENT_TIP_DATE]
+                          [--tip-date-regex TIP_DATE_REGEX]
+                          [--tip-date-format TIP_DATE_FORMAT]
+                          [--tip-date-delimeter TIP_DATE_DELIMETER]
+                          [--verbose] [--recursion-limit RECURSION_LIMIT]
+                          --output-tree OUTPUT_TREE
+                          --output-node-data OUTPUT_NODE_DATA
+
+Parse a BEAST MCC tree for further analysis in augur or export for auspice v2+
+(using `augur export v2` or greater).
+
+options:
+  -h, --help            show this help message and exit
+  --mcc MCC             BEAST MCC tree (default: None)
+  --most-recent-tip-date MOST_RECENT_TIP_DATE
+                        Numeric date of most recent tip in tree (--tip-date-
+                        regex, --tip-date-format and --tip-date-delimeter are
+                        ignored if this is set) (default: 0)
+  --tip-date-regex TIP_DATE_REGEX
+                        regex to extract dates from tip names (default:
+                        [0-9]{4}(\-[0-9]{2})*(\-[0-9]{2})*$)
+  --tip-date-format TIP_DATE_FORMAT
+                        Format of date (if extracted by regex) (default:
+                        %Y-%m-%d)
+  --tip-date-delimeter TIP_DATE_DELIMETER
+                        delimeter used in tip-date-format. Used to match
+                        partial dates. (default: -)
+  --verbose             Display verbose output. Only useful for debugging.
+                        (default: False)
+  --recursion-limit RECURSION_LIMIT
+                        Set a custom recursion limit (dangerous!) (default:
+                        False)
+  --output-tree OUTPUT_TREE
+                        file name to write tree to (default: None)
+  --output-node-data OUTPUT_NODE_DATA
+                        file name to write (temporal) branch lengths & BEAST
+                        traits as node data (default: None)
+```
+
+## augur_measurements_concat
+
+### Tool Description
+Concatenate multiple measurements JSONs into a single JSON file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur measurements concat [-h] --jsons JSONs [JSONs ...]
+                                 --output-json JSON
+                                 [--default-collection DEFAULT_COLLECTION]
+                                 [--minify-json]
+
+Concatenate multiple measurements JSONs into a single JSON file
+
+options:
+  -h, --help            show this help message and exit
+
+REQUIRED:
+  --jsons JSONs [JSONs ...]
+                        Measurement JSON files to concatenate. (default: None)
+  --output-json JSON    Output JSON file (default: None)
+
+OPTIONAL SETTINGS:
+  --default-collection DEFAULT_COLLECTION
+                        The key of the default collection to display. If not
+                        provided, the first collection of the first JSON file
+                        will be displayed (default: None)
+  --minify-json         Concatenate JSONs without indentation or line returns.
+                        (default: False)
+```
+
+## augur_measurements_export
+
+### Tool Description
+Export a measurements JSON for a single collection.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur measurements export [-h] --collection TSV
+                                 [--strain-column STRAIN_COLUMN]
+                                 [--value-column VALUE_COLUMN]
+                                 --output-json JSON [--collection-config JSON]
+                                 [--grouping-column GROUPING_COLUMN [GROUPING_COLUMN ...]]
+                                 [--key KEY] [--title TITLE]
+                                 [--x-axis-label X_AXIS_LABEL]
+                                 [--thresholds THRESHOLDS [THRESHOLDS ...]]
+                                 [--filters FILTERS [FILTERS ...]]
+                                 [--group-by GROUP_BY]
+                                 [--measurements-display {raw,mean}]
+                                 [--show-overall-mean] [--show-threshold]
+                                 [--include-columns INCLUDE_COLUMNS [INCLUDE_COLUMNS ...]]
+                                 [--minify-json]
+
+Export a measurements JSON for a single collection
+
+options:
+  -h, --help            show this help message and exit
+
+REQUIRED:
+  --collection TSV      Collection of measurements and metadata in a TSV file.
+                        Keep in mind duplicate columns will be renamed as 'X',
+                        'X.1', 'X.2'...'X.N' (default: None)
+  --strain-column STRAIN_COLUMN
+                        Name of the column containing strain names. Provided
+                        column will be renamed to `strain` so please make sure
+                        no other columns are named `strain`. Strain names in
+                        this column should match the strain names in the
+                        corresponding Auspice dataset JSON. (default: strain)
+  --value-column VALUE_COLUMN
+                        Name of the column containing the numeric values to be
+                        plotted for the given collection. Provided column will
+                        be renamed to `value` so please make sure no other
+                        columns are named `value`. (default: value)
+  --output-json JSON    Output JSON file. The file name must follow the
+                        Auspice sidecar file naming convention to be
+                        recognized as a sidecar file. See Nextstrain data
+                        format docs for more details. (default: None)
+
+COLLECTION CONFIGURATION:
+  These options control the configuration of the collection for Auspice. You
+  can provide a config JSON (which includes all available options) or
+  command line arguments (which are more limited). Command line arguments
+  will override the values set in the config JSON.
+
+  --collection-config JSON
+                        Collection configuration file for advanced
+                        configurations. (default: None)
+  --grouping-column GROUPING_COLUMN [GROUPING_COLUMN ...]
+                        Name of the column(s) that should be used as
+                        grouping(s) for measurements. Note that if groupings
+                        are provided via command line args, the default group-
+                        by field in the config JSON will be dropped. (default:
+                        None)
+  --key KEY             A short key name of the collection for internal use
+                        within Auspice. If not provided via config or command
+                        line option, the collection TSV filename will be used.
+                        (default: None)
+  --title TITLE         The full title of the collection to display in the
+                        measurements panel title. If not provided via config
+                        or command line option, the panel's default title is
+                        'Measurements'. (default: None)
+  --x-axis-label X_AXIS_LABEL
+                        The short label to display for the x-axis that
+                        describles the value of the measurements. If not
+                        provided via config or command line option, the
+                        panel's default x-axis label is 'measurement values'.
+                        (default: None)
+  --thresholds THRESHOLDS [THRESHOLDS ...]
+                        Measurements value threshold(s) to be displayed in the
+                        measurements panel. (default: None)
+  --filters FILTERS [FILTERS ...]
+                        The columns that are to be used a filters for
+                        measurements. If not provided, all columns will be
+                        available as filters. (default: None)
+  --group-by GROUP_BY   The default grouping column. If not provided, the
+                        first grouping will be used. (default: None)
+  --measurements-display {raw,mean}
+                        The default display of the measurements (default:
+                        None)
+  --show-overall-mean, --hide-overall-mean
+                        Show or hide the overall mean per group by default
+                        (default: None)
+  --show-threshold, --hide-threshold
+                        Show or hide the threshold(s) by default. This will be
+                        ignored if no threshold(s) are provided. (default:
+                        None)
+
+OPTIONAL SETTINGS:
+  --include-columns INCLUDE_COLUMNS [INCLUDE_COLUMNS ...]
+                        The columns to include from the collection TSV in the
+                        measurements JSON. Be sure to list columns that are
+                        used as groupings and/or filters. If no columns are
+                        provided, then all columns will be included by
+                        default. (default: None)
+  --minify-json         Export JSON without indentation or line returns.
+                        (default: False)
+```
+
+## augur_titers_sub
+
+### Tool Description
+Annotate titer drops onto substitutions with the substitution titer model.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur titers sub [-h] --titers TITERS [TITERS ...]
+                        --alignment ALIGNMENT [ALIGNMENT ...]
+                        --gene-names GENE_NAMES [GENE_NAMES ...] [--tree TREE]
+                        [--allow-empty-model]
+                        [--attribute-prefix ATTRIBUTE_PREFIX] --output OUTPUT
+
+options:
+  -h, --help            show this help message and exit
+  --titers TITERS [TITERS ...]
+                        file with titer measurements
+  --alignment ALIGNMENT [ALIGNMENT ...]
+                        sequence to be used in the substitution model,
+                        supplied as fasta files
+  --gene-names GENE_NAMES [GENE_NAMES ...]
+                        names of the sequences in the alignment, same order
+                        assumed
+  --tree, -t TREE       optional tree to annotate fit titer model to
+  --allow-empty-model   allow model to be empty
+  --attribute-prefix ATTRIBUTE_PREFIX
+                        prefix for node attributes in the JSON output
+                        including cumulative titer drop ('cTiterSub') and per-
+                        substitution titer drop ('dTiterSub'). Set a prefix to
+                        disambiguate annotations from multiple substitution
+                        model JSONs in the final Auspice JSON.
+  --output, -o OUTPUT   JSON file to save titer model
+```
+
+## augur_titers_tree
+
+### Tool Description
+Annotate titer drops onto a tree with the tree titer model.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/nextstrain/augur
+- **Package**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/augur/overview
+- **Total Downloads**: 280.5K
+- **Last updated**: 2026-01-27
+- **GitHub**: https://github.com/nextstrain/augur
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: augur titers tree [-h] --titers TITERS [TITERS ...] --tree TREE
+                         [--allow-empty-model]
+                         [--attribute-prefix ATTRIBUTE_PREFIX] --output OUTPUT
+
+options:
+  -h, --help            show this help message and exit
+  --titers TITERS [TITERS ...]
+                        file with titer measurements
+  --tree, -t TREE       tree to perform fit titer model to
+  --allow-empty-model   allow model to be empty
+  --attribute-prefix ATTRIBUTE_PREFIX
+                        prefix for node attributes in the JSON output
+                        including cumulative titer drop ('cTiter') and per-
+                        branch titer drop ('dTiter'). Set a prefix to
+                        disambiguate annotations from multiple tree model
+                        JSONs in the final Auspice JSON.
+  --output, -o OUTPUT   JSON file to save titer model
+```
 
 ## Metadata
 - **Skill**: generated

@@ -6,37 +6,6 @@
 |---|---|---|
 | artic-porechop_porechop | PASS |  |
 
-## artic-porechop
-
-### Tool Description
-The provided text does not contain help information for artic-porechop. It contains container execution logs and a fatal error indicating the executable was not found.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/artic-porechop:3.2pre1--py36hc9558a2_0
-- **Homepage**: https://github.com/artic-network/Porechop
-- **Package**: https://anaconda.org/channels/bioconda/packages/artic-porechop/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/artic-porechop/overview
-- **Total Downloads**: 24.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/artic-network/Porechop
-- **Stars**: 7
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/08 01:10:12  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "artic-porechop": executable file not found in $PATH
-```
-
-
 ## Metadata
 - **Skill**: generated
 

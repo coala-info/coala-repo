@@ -39,7 +39,6 @@ options : -o  output VCF/VCF.GZ/BCF file [-]
           -?  displays help
 ```
 
-
 ## vt_index
 
 ### Tool Description
@@ -64,7 +63,6 @@ usage : vt index [options] <in.vcf>
 options : -p  print options and summary []
           -?  displays help
 ```
-
 
 ## vt_normalize
 
@@ -98,7 +96,6 @@ options : -o  output VCF file [-]
           -?  displays help
 ```
 
-
 ## vt_decompose
 
 ### Tool Description
@@ -127,7 +124,6 @@ options : -s  smart decomposition [false]
           -?  displays help
 ```
 
-
 ## vt_uniq
 
 ### Tool Description
@@ -154,7 +150,6 @@ options : -o  output VCF file [-]
           -i  intervals []
           -?  displays help
 ```
-
 
 ## vt_cat
 
@@ -189,7 +184,6 @@ options : -s  print site information only without genotypes [false]
           -?  displays help
 ```
 
-
 ## vt_paste
 
 ### Tool Description
@@ -218,7 +212,6 @@ description : Pastes VCF files like the unix paste functions.
               1. INFO fields output will be that of the first file
               2. Genotype fields are the same for corresponding records
 
-
 usage : vt paste [options] <in1.vcf>...
 
 options : -L  file containing list of input VCF files
@@ -226,7 +219,6 @@ options : -L  file containing list of input VCF files
           -p  print options and summary []
           -?  displays help
 ```
-
 
 ## vt_sort
 
@@ -247,7 +239,6 @@ sort v0.5
 
 description : Sorts a VCF or BCF or VCF.GZ file.
 
-
 usage : vt sort [options] <in.vcf>
 
 options : -m  sorting modes. [full]
@@ -260,7 +251,6 @@ options : -m  sorting modes. [full]
           -p  print options and summary []
           -?  displays help
 ```
-
 
 ## vt_subset
 
@@ -290,7 +280,6 @@ options : -o  output VCF/VCF.GZ/BCF file [-]
           -i  Intervals
           -?  displays help
 ```
-
 
 ## vt_peek
 
@@ -322,7 +311,6 @@ options : -y  output pdf file [summary.pdf]
           -?  displays help
 ```
 
-
 ## vt_partition
 
 ### Tool Description
@@ -342,7 +330,6 @@ partition v0.5
 
 description : partition variants from two data sets.
 
-
 usage : vt partition [options] <in1.vcf><in2.vcf>
 
 options : -w  write partitioned variants to file
@@ -351,7 +338,6 @@ options : -w  write partitioned variants to file
           -i  intervals []
           -?  displays help
 ```
-
 
 ## vt_multi_partition
 
@@ -372,7 +358,6 @@ multi_partition v0.5
 
 description : partition variants from any number of data sets.
 
-
 usage : vt multi_partition [options] <in1.vcf><in2.vcf>...
 
 options : -f  filter
@@ -380,7 +365,6 @@ options : -f  filter
           -i  intervals []
           -?  displays help
 ```
-
 
 ## vt_annotate_variants
 
@@ -413,61 +397,6 @@ options : -g  coding regions BED file []
           -?  displays help
 ```
 
-
-## vt_annotate_db_rsid
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Command not found: annotate_db_rsid
-
-Help page on http://statgen.sph.umich.edu/wiki/Vt
-
-Useful tools:
-view                      view vcf/vcf.gz/bcf files
-index                     index vcf.gz/bcf files
-normalize                 normalize variants
-decompose                 decompose variants
-uniq                      drop duplicate variants
-cat                       concatenate VCF files
-paste                     paste VCF files
-sort                      sort VCF files
-subset                    subset VCF file to variants polymorphic in a sample
-
-peek                      summary of variants in the vcf file
-partition                 partition variants
-multi_partition           partition variants from multiple VCF files
-annotate_variants         annotate variants
-annotate_db_rsid          annotate variants with dbSNP rsid
-annotate_1000g            annotate variants with 1000 Genomes variants
-annotate_regions          annotate regions
-compute_concordance       compute genotype concordance between 2 call sets
-compute_features          compute genotype likelihood based statistics
-
-discover                  discover variants
-genotype                  genotype variants
-```
-
-
 ## vt_annotate_1000g
 
 ### Tool Description
@@ -496,7 +425,6 @@ options : -o  output VCF file [-]
           -i  intervals []
           -?  displays help
 ```
-
 
 ## vt_annotate_regions
 
@@ -530,7 +458,6 @@ options : -r  right window size for overlap []
           -?  displays help
 ```
 
-
 ## vt_compute_concordance
 
 ### Tool Description
@@ -550,7 +477,6 @@ compute_concordance v0.5
 
 description : Compute Concordance.
 
-
 usage : vt compute_concordance [options] <in1.vcf><in2.vcf>
 
 options : -f  filter expression
@@ -560,7 +486,6 @@ options : -f  filter expression
           -i  Intervals []
           -?  displays help
 ```
-
 
 ## vt_compute_features
 
@@ -590,7 +515,6 @@ options : -s  print site information only without genotypes [false]
           -i  Intervals
           -?  displays help
 ```
-
 
 ## vt_discover
 
@@ -627,7 +551,6 @@ options : -b  input BAM file
           -?  displays help
 ```
 
-
 ## vt_genotype
 
 ### Tool Description
@@ -647,7 +570,6 @@ genotype v0.5
 
 description : Genotypes variants for each sample.
 
-
 usage : vt genotype [options] <in.vcf>
 
 options : -d  debug alignments
@@ -659,7 +581,6 @@ options : -d  debug alignments
           -i  intervals []
           -?  displays help
 ```
-
 
 ## Metadata
 - **Skill**: generated

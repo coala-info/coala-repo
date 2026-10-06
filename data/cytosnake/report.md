@@ -26,7 +26,6 @@ Traceback (most recent call last):
 RuntimeError: Unexpected error captured in mode selection
 ```
 
-
 ## cytosnake_align
 
 ### Tool Description
@@ -47,40 +46,6 @@ Traceback (most recent call last):
     raise RuntimeError("Unexpected error captured in mode selection")
 RuntimeError: Unexpected error captured in mode selection
 ```
-
-
-## cytosnake_view
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cytosnake:0.0.2--pyhdfd78af_0
-- **Homepage**: https://github.com/WayScience/CytoSnake
-- **Package**: https://anaconda.org/channels/bioconda/packages/cytosnake/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/cytosnake", line 10, in <module>
-    sys.exit(run_cmd())
-  File "/usr/local/lib/python3.10/site-packages/cytosnake/cli/cmd.py", line 122, in run_cmd
-    raise RuntimeError("Unexpected error captured in mode selection")
-RuntimeError: Unexpected error captured in mode selection
-```
-
 
 ## Metadata
 - **Skill**: generated

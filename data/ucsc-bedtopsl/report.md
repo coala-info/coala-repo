@@ -28,7 +28,6 @@ docker: write /var/lib/docker/tmp/GetImageBlob4244108476: no space left on devic
 Run 'docker run --help' for more information
 ```
 
-
 ## Metadata
 - **Skill**: generated
 
@@ -50,65 +49,6 @@ Unable to find image 'quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0' local
 bd9ddc54bea9: Already exists
 90e8670e6ee4: Pulling fs layer
 docker: write /var/lib/docker/tmp/GetImageBlob4281756085: no space left on device
-
-Run 'docker run --help' for more information
-```
-
-## ucsc-bedtopsl_samtools
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-bedtopsl/overview
-- **Validation**: FAIL (generation failed)
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-### Validation Errors
-- No inputs — do not generate CWL.
-
-### Original Help Text
-```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedtopsl
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-90e8670e6ee4: Pulling fs layer
-90e8670e6ee4: Waiting
-docker: write /var/lib/docker/tmp/GetImageBlob33789569: no space left on device
-
-Run 'docker run --help' for more information
-```
-
-## ucsc-bedtopsl_cut
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-bedtopsl/overview
-- **Validation**: FAIL (generation failed)
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-### Validation Errors
-- No inputs — do not generate CWL.
-
-### Original Help Text
-```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedtopsl
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-90e8670e6ee4: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob2695896841: no space left on device
 
 Run 'docker run --help' for more information
 ```

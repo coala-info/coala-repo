@@ -82,7 +82,6 @@ Options:
       print_stages        List available stages
 ```
 
-
 ## hecatomb_test
 
 ### Tool Description
@@ -1080,7 +1079,6 @@ ilp scheduler plugin settings:
 defaults.
 ```
 
-
 ## hecatomb_config
 
 ### Tool Description
@@ -1119,7 +1117,6 @@ Options:
   --conda-prefix PATH           Custom conda env directory
   -h, --help                    Show this message and exit.
 ```
-
 
 ## hecatomb_install
 
@@ -2118,7 +2115,6 @@ ilp scheduler plugin settings:
 defaults.
 ```
 
-
 ## hecatomb_combine
 
 ### Tool Description
@@ -2183,7 +2179,6 @@ Options:
       print_stages        List available stages
 ```
 
-
 ## hecatomb_add-host
 
 ### Tool Description
@@ -2247,7 +2242,6 @@ Options:
       print_stages        List available stages
 ```
 
-
 ## hecatomb_list-hosts
 
 ### Tool Description
@@ -2286,48 +2280,6 @@ Options:
   --conda-prefix PATH           Custom conda env directory
   -h, --help                    Show this message and exit.
 ```
-
-
-## hecatomb_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hecatomb:1.3.4--pyh7e72e81_0
-- **Homepage**: https://github.com/shandley/hecatomb
-- **Package**: https://anaconda.org/channels/bioconda/packages/hecatomb/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-
-██╗  ██╗███████╗ ██████╗ █████╗ ████████╗ ██████╗ ███╗   ███╗██████╗
-██║  ██║██╔════╝██╔════╝██╔══██╗╚══██╔══╝██╔═══██╗████╗ ████║██╔══██╗
-███████║█████╗  ██║     ███████║   ██║   ██║   ██║██╔████╔██║██████╔╝
-██╔══██║██╔══╝  ██║     ██╔══██║   ██║   ██║   ██║██║╚██╔╝██║██╔══██╗
-██║  ██║███████╗╚██████╗██║  ██║   ██║   ╚██████╔╝██║ ╚═╝ ██║██████╔╝
-╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═════╝
-
-Usage: hecatomb citation [OPTIONS]
-
-  Print the citation(s) for this tool
-
-Options:
-  -h, --help  Show this message and exit.
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -84,7 +84,6 @@ options:
   --pearson_residuals   Using the pearson residuals. (default: False)
 ```
 
-
 ## gsmap_run_find_latent_representations
 
 ### Tool Description
@@ -152,69 +151,6 @@ options:
   --pearson_residuals   Using the pearson residuals. (default: False)
 ```
 
-
-## gsmap_Run
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
-- **Homepage**: https://github.com/LeonSong1995/gsMap
-- **Package**: https://anaconda.org/channels/bioconda/packages/gsmap/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: gsMap [-h] [--version]
-             {quick_mode,run_find_latent_representations,run_latent_to_gene,run_generate_ldscore,run_spatial_ldsc,run_cauchy_combination,run_report,format_sumstats,create_slice_mean}
-             ...
-gsMap: error: argument subcommand: invalid choice: 'Run' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
-```
-
-
-## gsmap_Find
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
-- **Homepage**: https://github.com/LeonSong1995/gsMap
-- **Package**: https://anaconda.org/channels/bioconda/packages/gsmap/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: gsMap [-h] [--version]
-             {quick_mode,run_find_latent_representations,run_latent_to_gene,run_generate_ldscore,run_spatial_ldsc,run_cauchy_combination,run_report,format_sumstats,create_slice_mean}
-             ...
-gsMap: error: argument subcommand: invalid choice: 'Find' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
-```
-
-
 ## gsmap_run_latent_to_gene
 
 ### Tool Description
@@ -267,38 +203,6 @@ options:
                         Name of the annotation in adata.obs to use (optional).
                         (default: None)
 ```
-
-
-## gsmap_Estimate
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
-- **Homepage**: https://github.com/LeonSong1995/gsMap
-- **Package**: https://anaconda.org/channels/bioconda/packages/gsmap/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: gsMap [-h] [--version]
-             {quick_mode,run_find_latent_representations,run_latent_to_gene,run_generate_ldscore,run_spatial_ldsc,run_cauchy_combination,run_report,format_sumstats,create_slice_mean}
-             ...
-gsMap: error: argument subcommand: invalid choice: 'Estimate' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
-```
-
 
 ## gsmap_run_generate_ldscore
 
@@ -359,7 +263,6 @@ options:
                         None)
 ```
 
-
 ## gsmap
 ### Tool Description
 gsMap: error: argument subcommand: invalid choice: 'Generate' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
@@ -377,7 +280,6 @@ usage: gsMap [-h] [--version]
              ...
 gsMap: error: argument subcommand: invalid choice: 'Generate' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
 ```
-
 
 ## gsmap_run_spatial_ldsc
 
@@ -428,7 +330,6 @@ options:
                         (default: True)
 ```
 
-
 ## gsmap_run_cauchy_combination
 
 ### Tool Description
@@ -465,7 +366,6 @@ options:
                         Path to save the combined Cauchy results. Required
                         when using multiple samples. (default: None)
 ```
-
 
 ## gsmap_run_report
 
@@ -517,7 +417,6 @@ options:
   --fig_style {dark,light}
                         Style of the generated figures. (default: light)
 ```
-
 
 ## gsmap_format_sumstats
 
@@ -583,7 +482,6 @@ options:
                         data (default: False)
 ```
 
-
 ## gsmap_create_slice_mean
 
 ### Tool Description
@@ -627,7 +525,6 @@ options:
                         Data layer for gene expression (e.g., "count",
                         "counts", "log1p"). (default: counts)
 ```
-
 
 ## Metadata
 - **Skill**: generated

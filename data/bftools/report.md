@@ -84,7 +84,6 @@ To test read a file in any format, run:
 * = may result in loss of precision
 ```
 
-
 ## bftools_bfconvert
 
 ### Tool Description
@@ -220,7 +219,6 @@ then 15 files will be created, with the names
 Each file would have a single image plane.
 ```
 
-
 ## bftools_tiffcomment
 
 ### Tool Description
@@ -246,7 +244,6 @@ If using the '-set' option, the new TIFF comment must be specified and may take 
   * '-', to enter the comment using stdin.  Entering a blank line will
     terminate reading from stdin.
 ```
-
 
 ## bftools_xmlvalid
 
@@ -282,7 +279,6 @@ org.xml.sax.SAXParseException: Premature end of file.
 	at loci.formats.tools.XMLValidate.validate(XMLValidate.java:67)
 	at loci.formats.tools.XMLValidate.main(XMLValidate.java:120)
 ```
-
 
 ## bftools_formatlist
 
@@ -472,240 +468,6 @@ Canon RAW: can read (cr2, crw, jpg, thm, wav)
 OBF: can read (obf, msr)
 BDV: can read (xml, h5)
 ```
-
-
-## bftools_domainlist
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bftools:8.0.0--hdfd78af_0
-- **Homepage**: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/bftools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Astronomy:
-  Flexible Image Transport System
-  OME-TIFF
-  OME-XML
-  SBIG
-Electron Microscopy (EM):
-  Gatan Digital Micrograph
-  IMAGIC
-  LEO
-  OME-TIFF
-  OME-XML
-  Perkin Elmer Densitometer
-  Pyramid TIFF
-  SPIDER
-Fluorescence-Lifetime Imaging:
-  Image Cytometry Standard
-  LI-FLIM
-  Lavision Imspector
-  OME-TIFF
-  OME-XML
-  PicoQuant Bin
-  SPC FIFO Data
-  SPCImage Data
-Gel/Blot Imaging:
-  Amersham Biosciences GEL
-  Bio-Rad GEL
-  Bio-Rad SCN
-  Fuji LAS 3000
-  Kodak Molecular Imaging
-  Li-Cor L2D
-  OME-TIFF
-  OME-XML
-Graphics:
-  Adobe Photoshop
-  Adobe Photoshop TIFF
-  Animated PNG
-  Audio Video Interleave
-  Canon RAW
-  DNG
-  Encapsulated PostScript
-  Graphics Interchange Format
-  Imacon
-  JPEG
-  JPEG-2000
-  JPX
-  Khoros XV
-  Minolta MRW
-  Multiple-image Network Graphics
-  Nikon NEF
-  PCX
-  PICT
-  POV-Ray
-  Portable Any Map
-  QuickTime
-  Truevision Targa
-  Windows Bitmap
-High-Content Screening (HCS):
-  BD Pathway
-  CellVoyager
-  CellWorx
-  Cellomics C01
-  Evotec Flex
-  InCell 1000/2000
-  MIAS
-  Metamorph STK
-  Metamorph TIFF
-  OME-TIFF
-  OME-XML
-  Olympus ScanR
-  PerkinElmer Columbus
-  PerkinElmer Operetta
-  Tecan Spark Cyto
-  Yokogawa CV7000
-Histology:
-  Aperio AFI
-  Aperio SVS
-  CellSens VSI
-  CellVoyager
-  Hamamatsu NDPI
-  Hamamatsu NDPIS
-  Hamamatsu VMS
-  Leica SCN
-  Mikroscan TIFF
-  OME-TIFF
-  OME-XML
-  PerkinElmer Vectra/QPTIFF
-  Trestle
-  Ventana .bif
-  Zeiss CZI
-Light Microscopy:
-  Andor SIF
-  Bio-Rad PIC
-  CellVoyager
-  Cellomics C01
-  Compix Simple-PCI
-  Deltavision
-  Hamamatsu Aquacosmos
-  I2I
-  Image Cytometry Standard
-  Laboratory Imaging
-  Leica
-  Leica Image File Format
-  Leica Object Format
-  Leica TCS TIFF
-  Medical Research Council
-  Metamorph STK
-  Metamorph TIFF
-  Micro-Manager
-  Mikroscan TIFF
-  Nikon Elements TIFF
-  Nikon ND2
-  Nikon TIFF
-  OME-TIFF
-  OME-XML
-  Olympus .omp2info
-  Olympus APL
-  Olympus FV1000
-  Olympus Fluoview/ABD TIFF
-  Olympus OIR
-  Olympus Slidebook
-  PerkinElmer
-  PerkinElmer Vectra/QPTIFF
-  Prairie TIFF
-  RCPNL
-  SimplePCI TIFF
-  SlideBook 7 SLD (native)
-  Slidebook TIFF
-  TillVision
-  Visitech XYS
-  Zeiss AxioVision TIFF
-  Zeiss CZI
-  Zeiss LMS
-  Zeiss Laser-Scanning Microscopy
-  Zeiss Vision Image (ZVI)
-Medical Imaging:
-  Analyze 7.5
-  Bruker
-  DICOM
-  ECAT7
-  Inveon
-  MINC MRI
-  Medical Research Council
-  MicroCT
-  NIfTI
-  OME-TIFF
-  OME-XML
-  Varian FDF
-Scanning Electron Microscopy (SEM):
-  Alicona AL3D
-  Burleigh
-  FEI TIFF
-  FEI/Philips
-  Hamamatsu HIS
-  Hitachi
-  JEOL
-  JPK Instruments
-  Molecular Imaging
-  OME-TIFF
-  OME-XML
-  Quesant AFM
-  SM Camera
-  Seiko
-  TopoMetrix
-  UBM
-  Veeco
-  WA Technology TOP
-Scanning Probe Microscopy (SPM):
-  Gatan DM2
-  OME-TIFF
-  OME-XML
-  Oxford Instruments
-  RHK Technologies
-  Unisoku STM
-  VG SAM
-Unknown:
-  AIM
-  ARF
-  Amira
-  BDV
-  Bitplane Imaris
-  Bitplane Imaris 3 (TIFF)
-  Bitplane Imaris 5.5 (HDF)
-  CellH5 (HDF)
-  Flexible Image Transport System
-  IMOD
-  INR
-  IPLab
-  IVision
-  Image Cytometry Standard
-  Image-Pro Sequence
-  Image-Pro Workspace
-  Improvision TIFF
-  InCell 3000
-  Ionpath MIBI
-  KLB
-  NIfTI
-  NOAA-HRD Gridded Data Format
-  NRRD
-  OME-TIFF
-  OME-XML
-  Olympus SIS TIFF
-  Openlab LIFF
-  Openlab RAW
-  PCO-RAW
-  Volocity Library
-  Volocity Library Clipping
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -4,12 +4,19 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| amiga | Failed | not a usable tool: it wraps only the amiga subcommand word with no data inputs or outputs. |
+| amiga_compare | PASS |  |
+| amiga_fit | PASS |  |
+| amiga_get_confidence | PASS |  |
+| amiga_get_time | Failed | tool bug: amiga 3.0.4 get_time imports get_time_main from amiga.libs.thresholds, which defines only main, so the command always stops with an ImportError. |
+| amiga_heatmap | PASS |  |
+| amiga_normalize | PASS |  |
+| amiga_summarize | PASS |  |
+| amiga_test | PASS |  |
 
-## amiga
+## amiga_summarize
 
 ### Tool Description
-A tool for analyzing growth curves, including fitting, summarizing, and comparing data.
+Perform a basic summary and plot curves
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
@@ -24,200 +31,370 @@ A tool for analyzing growth curves, including fitting, summarizing, and comparin
 - **Stars**: 16
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-/usr/local/lib/python3.12/site-packages/paramz/model.py:127: SyntaxWarning: invalid escape sequence '\*'
-  \*\*kwargs are passed to the optimizer.
-/usr/local/lib/python3.12/site-packages/paramz/core/parameter_core.py:302: SyntaxWarning: invalid escape sequence '\d'
-  _name_digit = re.compile("(?P<name>.*)_(?P<digit>\d+)$")
-/usr/local/lib/python3.12/site-packages/paramz/transformations.py:84: SyntaxWarning: invalid escape sequence '\p'
-  \frac{\frac{\partial L}{\partial f}\left(\left.\partial f(x)}{\partial x}\right|_{x=f^{-1}(f)\right)}
-/usr/local/lib/python3.12/site-packages/paramz/caching.py:239: SyntaxWarning: invalid escape sequence '\#'
-  return "Cacher({})\n  limit={}\n  \#cached={}".format(self.__name__, self.limit, len(self.cached_input_ids))
-/usr/local/lib/python3.12/site-packages/GPy/core/gp.py:286: SyntaxWarning: invalid escape sequence '\m'
-  The log marginal likelihood of the model, :math:`p(\mathbf{y})`, this is the objective function of the model being optimised
-/usr/local/lib/python3.12/site-packages/GPy/core/gp.py:299: SyntaxWarning: invalid escape sequence '\i'
-  p(f*|X*, X, Y) = \int^{\inf}_{\inf} p(f*|f,X*)p(f|X,Y) df
-/usr/local/lib/python3.12/site-packages/GPy/core/gp.py:705: SyntaxWarning: invalid escape sequence '\m'
-  p(y_{*}|D) = p(y_{*}|f_{*})p(f_{*}|\mu_{*}\\sigma^{2}_{*})
-/usr/local/lib/python3.12/site-packages/GPy/core/gp.py:721: SyntaxWarning: invalid escape sequence '\m'
-  p(y_{*}|D) = p(y_{*}|f_{*})p(f_{*}|\mu_{*}\\sigma^{2}_{*})
-/usr/local/lib/python3.12/site-packages/GPy/util/datasets.py:540: SyntaxWarning: invalid escape sequence '\('
-  data = re.sub('new Date\((\d+),(\d+),(\d+)\)', (lambda m: '"%s-%02d-%02d"' % (m.group(1).strip(), 1+int(m.group(2)), int(m.group(3)))), data)
-/usr/local/lib/python3.12/site-packages/GPy/util/datasets.py:785: SyntaxWarning: invalid escape sequence '\ '
-  \ -1, iff SNPij==(B2,B2)
-/usr/local/lib/python3.12/site-packages/GPy/util/datasets.py:1014: SyntaxWarning: invalid escape sequence '\('
-  rep = re.compile('\(.*\)')
-/usr/local/lib/python3.12/site-packages/GPy/util/datasets.py:1053: SyntaxWarning: invalid escape sequence '\d'
-  rep = re.compile('GSM\d+_')
-Matplotlib created a temporary cache directory at /tmp/matplotlib-vi54c6q2 because the default path (/user/qianghu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/link_functions.py:183: SyntaxWarning: invalid escape sequence '\l'
-  f = \log (-\log(1-p))
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/likelihood.py:133: SyntaxWarning: invalid escape sequence '\m'
-  p(y_{*}|D) = p(y_{*}|f_{*})p(f_{*}|\mu_{*}\\sigma^{2}_{*})
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/likelihood.py:202: SyntaxWarning: invalid escape sequence '\m'
-  f_{*s} ~ p(f_{*}|\mu_{*}\\sigma^{2}_{*})
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/exponential.py:17: SyntaxWarning: invalid escape sequence '\e'
-  L(x) = \exp(\lambda) * \lambda**Y_i / Y_i!
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/exponential.py:49: SyntaxWarning: invalid escape sequence '\l'
-  \\ln p(y_{i}|\lambda(f_{i})) = \\ln \\lambda(f_{i}) - y_{i}\\lambda(f_{i})
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/exponential.py:68: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d \\ln p(y_{i}|\lambda(f_{i}))}{d\\lambda(f)} = \\frac{1}{\\lambda(f)} - y_{i}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/exponential.py:90: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{2} \\ln p(y_{i}|\lambda(f_{i}))}{d^{2}\\lambda(f)} = -\\frac{1}{\\lambda(f_{i})^{2}}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/exponential.py:113: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{3} \\ln p(y_{i}|\lambda(f_{i}))}{d^{3}\\lambda(f)} = \\frac{2}{\\lambda(f_{i})^{3}}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/gamma.py:57: SyntaxWarning: invalid escape sequence '\l'
-  \\ln p(y_{i}|\lambda(f_{i})) = \\alpha_{i}\\log \\beta - \\log \\Gamma(\\alpha_{i}) + (\\alpha_{i} - 1)\\log y_{i} - \\beta y_{i}\\\\
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/gamma.py:104: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{2} \\ln p(y_{i}|\lambda(f_{i}))}{d^{2}\\lambda(f)} = -\\beta^{2}\\frac{d\\Psi(\\alpha_{i})}{d\\alpha_{i}}\\\\
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/gamma.py:129: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{3} \\ln p(y_{i}|\lambda(f_{i}))}{d^{3}\\lambda(f)} = -\\beta^{3}\\frac{d^{2}\\Psi(\\alpha_{i})}{d\\alpha_{i}}\\\\
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/poisson.py:57: SyntaxWarning: invalid escape sequence '\l'
-  \\ln p(y_{i}|\lambda(f_{i})) = -\\lambda(f_{i}) + y_{i}\\log \\lambda(f_{i}) - \\log y_{i}!
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/poisson.py:75: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d \\ln p(y_{i}|\lambda(f_{i}))}{d\\lambda(f)} = \\frac{y_{i}}{\\lambda(f_{i})} - 1
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/poisson.py:95: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{2} \\ln p(y_{i}|\lambda(f_{i}))}{d^{2}\\lambda(f)} = \\frac{-y_{i}}{\\lambda(f_{i})^{2}}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/poisson.py:116: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{3} \\ln p(y_{i}|\lambda(f_{i}))}{d^{3}\\lambda(f)} = \\frac{2y_{i}}{\\lambda(f_{i})^{3}}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/student_t.py:81: SyntaxWarning: invalid escape sequence '\l'
-  \\ln p(y_{i}|\lambda(f_{i})) = \\ln \\Gamma\\left(\\frac{v+1}{2}\\right) - \\ln \\Gamma\\left(\\frac{v}{2}\\right) - \\ln \\sqrt{v \\pi\\sigma^{2}} - \\frac{v+1}{2}\\ln \\left(1 + \\frac{1}{v}\\left(\\frac{(y_{i} - \lambda(f_{i}))^{2}}{\\sigma^{2}}\\right)\\right)
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/student_t.py:110: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d \\ln p(y_{i}|\lambda(f_{i}))}{d\\lambda(f)} = \\frac{(v+1)(y_{i}-\lambda(f_{i}))}{(y_{i}-\lambda(f_{i}))^{2} + \\sigma^{2}v}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/student_t.py:132: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{2} \\ln p(y_{i}|\lambda(f_{i}))}{d^{2}\\lambda(f)} = \\frac{(v+1)((y_{i}-\lambda(f_{i}))^{2} - \\sigma^{2}v)}{((y_{i}-\lambda(f_{i}))^{2} + \\sigma^{2}v)^{2}}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/student_t.py:157: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{3} \\ln p(y_{i}|\lambda(f_{i}))}{d^{3}\\lambda(f)} = \\frac{-2(v+1)((y_{i} - \lambda(f_{i}))^3 - 3(y_{i} - \lambda(f_{i})) \\sigma^{2} v))}{((y_{i} - \lambda(f_{i})) + \\sigma^{2} v)^3}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/student_t.py:178: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d \\ln p(y_{i}|\lambda(f_{i}))}{d\\sigma^{2}} = \\frac{v((y_{i} - \lambda(f_{i}))^{2} - \\sigma^{2})}{2\\sigma^{2}(\\sigma^{2}v + (y_{i} - \lambda(f_{i}))^{2})}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/student_t.py:202: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d}{d\\sigma^{2}}(\\frac{d \\ln p(y_{i}|\lambda(f_{i}))}{df}) = \\frac{-2\\sigma v(v + 1)(y_{i}-\lambda(f_{i}))}{(y_{i}-\lambda(f_{i}))^2 + \\sigma^2 v)^2}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/student_t.py:223: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d}{d\\sigma^{2}}(\\frac{d^{2} \\ln p(y_{i}|\lambda(f_{i}))}{d^{2}f}) = \\frac{v(v+1)(\\sigma^{2}v - 3(y_{i} - \lambda(f_{i}))^{2})}{(\\sigma^{2}v + (y_{i} - \lambda(f_{i}))^{2})^{3}}
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/weibull.py:57: SyntaxWarning: invalid escape sequence '\l'
-  \\ln p(y_{i}|\lambda(f_{i})) = \\alpha_{i}\\log \\beta - \\log \\Gamma(\\alpha_{i}) + (\\alpha_{i} - 1)\\log y_{i} - \\beta y_{i}\\\\
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/weibull.py:120: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{2} \\ln p(y_{i}|\lambda(f_{i}))}{d^{2}\\lambda(f)} = -\\beta^{2}\\frac{d\\Psi(\\alpha_{i})}{d\\alpha_{i}}\\\\
-/usr/local/lib/python3.12/site-packages/GPy/likelihoods/weibull.py:153: SyntaxWarning: invalid escape sequence '\l'
-  \\frac{d^{3} \\ln p(y_{i}|\lambda(f_{i}))}{d^{3}\\lambda(f)} = -\\beta^{3}\\frac{d^{2}\\Psi(\\alpha_{i})}{d\\alpha_{i}}\\\\
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/kern.py:149: SyntaxWarning: invalid escape sequence '\p'
-  \psi_0 = \sum_{i=0}^{n}E_{q(X)}[k(X_i, X_i)]
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/kern.py:155: SyntaxWarning: invalid escape sequence '\p'
-  \psi_1^{n,m} = E_{q(X)}[k(X_n, Z_m)]
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/kern.py:161: SyntaxWarning: invalid escape sequence '\p'
-  \psi_2^{m,m'} = \sum_{i=0}^{n}E_{q(X)}[ k(Z_m, X_i) k(X_i, Z_{m'})]
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/kern.py:167: SyntaxWarning: invalid escape sequence '\p'
-  \psi_2^{n,m,m'} = E_{q(X)}[ k(Z_m, X_n) k(X_n, Z_{m'})]
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/kern.py:176: SyntaxWarning: invalid escape sequence '\p'
-  \\frac{\partial L}{\partial X} = \\frac{\partial L}{\partial K}\\frac{\partial K}{\partial X}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/kern.py:185: SyntaxWarning: invalid escape sequence '\p'
-  \\frac{\partial^2 L}{\partial X\partial X_2} = \\frac{\partial L}{\partial K}\\frac{\partial^2 K}{\partial X\partial X_2}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/kern.py:219: SyntaxWarning: invalid escape sequence '\p'
-  \\frac{\partial L}{\partial \\theta_i} & = \\frac{\partial L}{\partial \psi_0}\\frac{\partial \psi_0}{\partial \\theta_i}\\
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/rbf.py:19: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \exp \\bigg(- \\frac{1}{2} r^2 \\bigg)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:38: SyntaxWarning: invalid escape sequence '\e'
-  r(x, x') = \\sqrt{ \\sum_{q=1}^Q \\frac{(x_q - x'_q)^2}{\ell_q^2} }.
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:156: SyntaxWarning: invalid escape sequence '\s'
-  r = \sqrt( \sum_{q=1}^Q (x_q - x'q)^2/l_q^2 )
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:262: SyntaxWarning: invalid escape sequence '\p'
-  \frac{\partial^2 K}{\partial X2 ^2} = - \frac{\partial^2 K}{\partial X\partial X2}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:298: SyntaxWarning: invalid escape sequence '\p'
-  \frac{\partial^2 K}{\partial X\partial X}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:426: SyntaxWarning: invalid escape sequence '\e'
-  k(r) = \\sigma^2 \exp(- r) \\ \\ \\ \\  \\text{ where  } r = \sqrt{\sum_{i=1}^{\text{input_dim}} \\frac{(x_i-y_i)^2}{\ell_i^2} }
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:463: SyntaxWarning: invalid escape sequence '\e'
-  k(r) = \\sigma^2 (1 + \\sqrt{3} r) \exp(- \sqrt{3} r) \\ \\ \\ \\  \\text{ where  } r = \sqrt{\sum_{i=1}^{\\text{input_dim}} \\frac{(x_i-y_i)^2}{\ell_i^2} }
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:562: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 (1 + \sqrt{5} r + \\frac53 r^2) \exp(- \sqrt{5} r)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:629: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \exp(- 0.5 r^2)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:670: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \cos(r)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:688: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \exp(-2\pi^2r^2)\cos(2\pi r/T)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:723: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \sinc(\pi r)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/stationary.py:745: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \\bigg( 1 + \\frac{r^2}{2} \\bigg)^{- \\alpha}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/grid_kerns.py:48: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \exp \\bigg(- \\frac{1}{2} r^2 \\bigg)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/linear.py:19: SyntaxWarning: invalid escape sequence '\s'
-  k(x,y) = \sum_{i=1}^{\\text{input_dim}} \sigma^2_i x_iy_i
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/linear.py:124: SyntaxWarning: invalid escape sequence '\p'
-  \frac{\partial^2 K}{\partial X2 ^2} = - \frac{\partial^2 K}{\partial X\partial X2}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/mlp.py:23: SyntaxWarning: invalid escape sequence '\s'
-  :param variance: the variance :math:`\sigma^2`
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/standard_periodic.py:27: SyntaxWarning: invalid escape sequence '\e'
-  k(x,y) = \theta_1 \exp \left[  - \frac{1}{2} \sum_{i=1}^{input\_dim}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/coregionalize.py:28: SyntaxWarning: invalid escape sequence '\m'
-  \mathbf{B} = \mathbf{W}\mathbf{W}^\intercal + \mathrm{diag}(kappa)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/eq_ode2.py:18: SyntaxWarning: invalid escape sequence '\s'
-  \frac{\text{d}^2y_j(t)}{\text{d}^2t} + C_j\frac{\text{d}y_j(t)}{\text{d}t} + B_jy_j(t) = \sum_{i=1}^R w_{j,i} u_i(t)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/eq_ode1.py:18: SyntaxWarning: invalid escape sequence '\s'
-  \frac{\text{d}y_j}{\text{d}t} = \sum_{i=1}^R w_{j,i} u_i(t-\delta_j) - d_jy_j(t)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/trunclinear.py:17: SyntaxWarning: invalid escape sequence '\s'
-  k(x,y) = \sum_{i=1}^input_dim \sigma^2_i \max(0, x_iy_i - \sigma_q)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/trunclinear.py:116: SyntaxWarning: invalid escape sequence '\s'
-  k(x,y) = \sum_{i=1}^input_dim \sigma^2_i \max(0, x_iy_i - \sigma_q)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/symmetric.py:56: SyntaxWarning: "is" with 'str' literal. Did you mean "=="?
-  if symmetry_type is 'odd':
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/symmetric.py:58: SyntaxWarning: "is" with 'str' literal. Did you mean "=="?
-  elif symmetry_type is 'even':
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_matern.py:22: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 (1 + \sqrt{3} r) \exp(- \sqrt{3} r) \\ \\ \\ \\  \text{ where  } r = \sqrt{\sum_{i=1}^{input dim} \frac{(x_i-y_i)^2}{\ell_i^2} }
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_matern.py:82: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 (1 + \sqrt{5} r + \frac{5}{3}r^2) \exp(- \sqrt{5} r) \\ \\ \\ \\  \text{ where  } r = \sqrt{\sum_{i=1}^{input dim} \frac{(x_i-y_i)^2}{\ell_i^2} }
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_linear.py:22: SyntaxWarning: invalid escape sequence '\s'
-  k(x,y) = \sum_{i=1}^{input dim} \sigma^2_i x_iy_i
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_standard_periodic.py:27: SyntaxWarning: invalid escape sequence '\e'
-  k(x,y) = \theta_1 \exp \left[  - \frac{1}{2} {}\sum_{i=1}^{input\_dim}
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_standard_periodic.py:180: SyntaxWarning: invalid escape sequence '\s'
-  k(\tau) =  \sum_{j=0}^{+\infty} q_j^2 \cos(j\omega_0 \tau)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_static.py:23: SyntaxWarning: invalid escape sequence '\d'
-  k(x,y) = \alpha*\delta(x-y)
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_stationary.py:32: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \exp \\bigg(- \\frac{1}{2} r^2 \\bigg) \\ \\ \\ \\  \text{ where  } r = \sqrt{\sum_{i=1}^{input dim} \frac{(x_i-y_i)^2}{\ell_i^2} }
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_stationary.py:207: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \exp \\bigg(- \\frac{1}{2} r \\bigg) \\ \\ \\ \\  \text{ where  } r = \sqrt{\sum_{i=1}^{input dim} \frac{(x_i-y_i)^2}{\ell_i^2} }
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_stationary.py:262: SyntaxWarning: invalid escape sequence '\s'
-  k(r) = \sigma^2 \\bigg( 1 + \\frac{r^2}{2} \\bigg)^{- \alpha} \\ \\ \\ \\  \text{ where  } r = \sqrt{\sum_{i=1}^{input dim} \frac{(x_i-y_i)^2}{\ell_i^2} }
-/usr/local/lib/python3.12/site-packages/GPy/kern/src/sde_brownian.py:23: SyntaxWarning: invalid escape sequence '\s'
-  k(x,y) = \sigma^2 min(x,y)
-/usr/local/lib/python3.12/site-packages/GPy/inference/latent_function_inference/posterior.py:181: SyntaxWarning: invalid escape sequence '\S'
-  (K_{xx} + \Sigma_{xx})^{-1}
-/usr/local/lib/python3.12/site-packages/GPy/inference/latent_function_inference/posterior.py:203: SyntaxWarning: invalid escape sequence '\S'
-  (K_{xx} + \Sigma)^{-1}Y
-/usr/local/lib/python3.12/site-packages/GPy/inference/latent_function_inference/laplace.py:30: SyntaxWarning: invalid escape sequence '\h'
-  Find the moments \hat{f} and the hessian at this point
- /usr/local/lib/python3.12/site-packages/GPy/mappings/kernel.py:15: SyntaxWarning:invalid escape sequence '\m'
- /usr/local/lib/python3.12/site-packages/GPy/mappings/linear.py:15: SyntaxWarning:invalid escape sequence '\m'
- /usr/local/lib/python3.12/site-packages/GPy/mappings/additive.py:13: SyntaxWarning:invalid escape sequence '\m'
- /usr/local/lib/python3.12/site-packages/GPy/mappings/compound.py:12: SyntaxWarning:invalid escape sequence '\m'
- /usr/local/lib/python3.12/site-packages/GPy/mappings/constant.py:12: SyntaxWarning:invalid escape sequence '\m'
- /usr/local/lib/python3.12/site-packages/GPy/models/warped_gp.py:149: SyntaxWarning:invalid escape sequence '\m'
- /usr/local/lib/python3.12/site-packages/GPy/models/mrd.py:307: SyntaxWarning:"is not" with 'int' literal. Did you mean "!="?
- /usr/local/lib/python3.12/site-packages/GPy/models/gp_kronecker_gaussian_regression.py:25: SyntaxWarning:invalid escape sequence '\i'
- /usr/local/lib/python3.12/site-packages/GPy/models/tp_regression.py:174: SyntaxWarning:invalid escape sequence '\m'
- /usr/local/lib/python3.12/site-packages/GPy/models/tp_regression.py:187: SyntaxWarning:invalid escape sequence '\i'
- /usr/local/lib/python3.12/site-packages/amiga/libs/interface.py:112: SyntaxWarning:invalid escape sequence '\+'
-usage: amiga <command> [<args>]
+usage: amiga [-h] -i INPUT [-o OUTPUT] [--dont-plot] [--merge-summary]
+             [--verbose] [-f FLAG] [-s SUBSET] [-y HYPOTHESIS] [-t INTERVAL]
+             [--save-cleaned-data] [--save-mapping-tables] [--subtract-blanks]
+             [--subtract-control]
 
-The most commonly used amiga commands are:
-    summarize       Perform basic summary and plot curves
-    fit             Fit growth curves
-    normalize       Normalize growth parameters of fitted curves
-    compare         Compare summary statistics for two growth curves
-    test            Test a specific hypothesis
-    heatmap         Plot a heatmap
-    get_confidence  Compute confidence intervals for parameters or curves
-    get_time        Get time at which growth reaches a certain value
-    print_defaults  Shows the default values stored in libs/config.py
+Perform a basic summary and plot curves
 
-See `amiga <command> --help` for information on a specific command.
-For full documentation, see https://firasmidani.github.io/amiga
-amiga: error: the following arguments are required: command
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+  -o OUTPUT, --output OUTPUT
+  --dont-plot
+  --merge-summary
+  --verbose
+  -f FLAG, --flag FLAG
+  -s SUBSET, --subset SUBSET
+  -y HYPOTHESIS, --hypothesis HYPOTHESIS
+  -t INTERVAL, --interval INTERVAL
+  --save-cleaned-data
+  --save-mapping-tables
+  --subtract-blanks
+  --subtract-control
+```
+
+
+## amiga_fit
+
+### Tool Description
+Fit growth curves
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
+- **Homepage**: https://github.com/firasmidani/amiga
+- **Package**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-09-25
+- **GitHub**: https://github.com/firasmidani/amiga
+- **Stars**: 16
+### Original Help Text
+```text
+usage: amiga [-h] -i INPUT [-o OUTPUT] [-f FLAG] [-s SUBSET] [-t INTERVAL]
+             [-tss TIME_STEP_SIZE] [-sfn SKIP_FIRST_N]
+             [--do-not-log-transform] [--subtract-blanks] [--subtract-control]
+             [--keep-missing-time-points] [--verbose] [--plot]
+             [--plot-derivative] [--pool-by POOL_BY] [--save-cleaned-data]
+             [--save-mapping-tables] [--save-gp-data] [--merge-summary]
+             [--fix-noise] [--sample-posterior]
+
+Fit growth curves
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+  -o OUTPUT, --output OUTPUT
+  -f FLAG, --flag FLAG
+  -s SUBSET, --subset SUBSET
+  -t INTERVAL, --interval INTERVAL
+  -tss TIME_STEP_SIZE, --time-step-size TIME_STEP_SIZE
+  -sfn SKIP_FIRST_N, --skip-first-n SKIP_FIRST_N
+  --do-not-log-transform
+  --subtract-blanks
+  --subtract-control
+  --keep-missing-time-points
+  --verbose
+  --plot
+  --plot-derivative
+  --pool-by POOL_BY
+  --save-cleaned-data
+  --save-mapping-tables
+  --save-gp-data
+  --merge-summary
+  --fix-noise
+  --sample-posterior
+```
+
+
+## amiga_normalize
+
+### Tool Description
+Normalize growth parameters of fitted curves
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
+- **Homepage**: https://github.com/firasmidani/amiga
+- **Package**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-09-25
+- **GitHub**: https://github.com/firasmidani/amiga
+- **Stars**: 16
+### Original Help Text
+```text
+usage: amiga [-h] -i INPUT [--over-write] [--verbose] [--group-by GROUP_BY]
+             [--normalize-by NORMALIZE_BY]
+             [--normalize-method {division,subtraction}]
+
+Compare two growth curves
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+  --over-write          Over-write file otherwise a new copy is made with
+                        "_normalize" suffix
+  --verbose
+  --group-by GROUP_BY
+  --normalize-by NORMALIZE_BY
+  --normalize-method {division,subtraction}
+```
+
+
+## amiga_compare
+
+### Tool Description
+Compare two growth curves
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
+- **Homepage**: https://github.com/firasmidani/amiga
+- **Package**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-09-25
+- **GitHub**: https://github.com/firasmidani/amiga
+- **Stars**: 16
+### Original Help Text
+```text
+usage: amiga [-h] -i INPUT -o OUTPUT -s SUBSET [--confidence CONFIDENCE]
+             [--verbose]
+
+Compare two growth curves
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+  -o OUTPUT, --output OUTPUT
+                        ouptut filename including path
+  -s SUBSET, --subset SUBSET
+  --confidence CONFIDENCE
+                        Must be between 80 and 100. Default is 95.
+  --verbose
+```
+
+
+## amiga_test
+
+### Tool Description
+Test for differential growth between two conditions
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
+- **Homepage**: https://github.com/firasmidani/amiga
+- **Package**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-09-25
+- **GitHub**: https://github.com/firasmidani/amiga
+- **Stars**: 16
+### Original Help Text
+```text
+usage: amiga [-h] -i INPUT [-o OUTPUT] [-f FLAG] [-s SUBSET] [-t INTERVAL] -y
+             HYPOTHESIS [-sfn SKIP_FIRST_N] [-tss TIME_STEP_SIZE]
+             [-np NUMBER_PERMUTATIONS] [-fdr FALSE_DISCOVERY_RATE]
+             [--confidence CONFIDENCE] [--subtract-blanks]
+             [--subtract-control] [--verbose] [--fix-noise]
+             [--include-gaussian-noise] [--sample-posterior] [--dont-plot]
+             [--dont-plot-delta-od] [--save-cleaned-data]
+             [--save-mapping-tables] [--save-gp-data] [--merge-summary]
+             [--do-not-log-transform]
+
+Test for differential growth between two conditions
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+  -o OUTPUT, --output OUTPUT
+  -f FLAG, --flag FLAG
+  -s SUBSET, --subset SUBSET
+  -t INTERVAL, --interval INTERVAL
+  -y HYPOTHESIS, --hypothesis HYPOTHESIS
+  -sfn SKIP_FIRST_N, --skip-first-n SKIP_FIRST_N
+  -tss TIME_STEP_SIZE, --time-step-size TIME_STEP_SIZE
+  -np NUMBER_PERMUTATIONS, --number-permutations NUMBER_PERMUTATIONS
+  -fdr FALSE_DISCOVERY_RATE, --false-discovery-rate FALSE_DISCOVERY_RATE
+  --confidence CONFIDENCE
+                        Must be between 80 and 100. Default is 95.
+  --subtract-blanks
+  --subtract-control
+  --verbose
+  --fix-noise
+  --include-gaussian-noise
+  --sample-posterior
+  --dont-plot
+  --dont-plot-delta-od
+  --save-cleaned-data
+  --save-mapping-tables
+  --save-gp-data
+  --merge-summary
+  --do-not-log-transform
+```
+
+
+## amiga_heatmap
+
+### Tool Description
+Plot a heatmap
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
+- **Homepage**: https://github.com/firasmidani/amiga
+- **Package**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-09-25
+- **GitHub**: https://github.com/firasmidani/amiga
+- **Stars**: 16
+### Original Help Text
+```text
+usage: amiga [-h] -i INPUT -o OUTPUT [-s SUBSET] -v VALUE -x X_VARIABLE -y
+             Y_VARIABLE [-p {mean,median}] [-f FILTER] [-t TITLE]
+             [--kwargs KWARGS] [--verbose] [--save-filtered-table]
+             [--width-height WIDTH_HEIGHT WIDTH_HEIGHT]
+             [--colorbar-ratio COLORBAR_RATIO] [--color-x-by COLOR_X_BY]
+             [--color-y-by COLOR_Y_BY] [--color-file-x COLOR_FILE_X]
+             [--color-file-y COLOR_FILE_Y] [--color-scheme-x COLOR_SCHEME_X]
+             [--color-scheme-y COLOR_SCHEME_Y] [--color-x-ratio COLOR_X_RATIO]
+             [--color-y-ratio COLOR_Y_RATIO] [--missing-color MISSING_COLOR]
+             [--cluster-x] [--cluster-y] [--sort-x-by SORT_X_BY]
+             [--sort-y-by SORT_Y_BY] [--keep-rows-missing-data]
+             [--keep-columns-missing-data]
+             [--x-tick-labels-scale X_TICK_LABELS_SCALE]
+             [--y-tick-labels-scale Y_TICK_LABELS_SCALE]
+             [--color-bar-labels-scale COLOR_BAR_LABELS_SCALE]
+             [--x-rotation X_ROTATION] [--highlight-labels HIGHLIGHT_LABELS]
+
+Plot a heatmap
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+  -o OUTPUT, --output OUTPUT
+  -s SUBSET, --subset SUBSET
+  -v VALUE, --value VALUE
+  -x X_VARIABLE, --x-variable X_VARIABLE
+  -y Y_VARIABLE, --y-variable Y_VARIABLE
+  -p {mean,median}, --operation {mean,median}
+  -f FILTER, --filter FILTER
+  -t TITLE, --title TITLE
+  --kwargs KWARGS
+  --verbose
+  --save-filtered-table
+  --width-height WIDTH_HEIGHT WIDTH_HEIGHT
+  --colorbar-ratio COLORBAR_RATIO
+                        Proportion of figure size devoted to color bar.
+                        Default is 0.1
+  --color-x-by COLOR_X_BY
+  --color-y-by COLOR_Y_BY
+  --color-file-x COLOR_FILE_X
+  --color-file-y COLOR_FILE_Y
+  --color-scheme-x COLOR_SCHEME_X
+  --color-scheme-y COLOR_SCHEME_Y
+  --color-x-ratio COLOR_X_RATIO
+                        Proportion of the heatmap devoted to the column color
+                        labels. Default is 0.1
+  --color-y-ratio COLOR_Y_RATIO
+                        Proportion of the heatmap devoted to the row color
+                        labels. Default is 0.1
+  --missing-color MISSING_COLOR
+  --cluster-x
+  --cluster-y
+  --sort-x-by SORT_X_BY
+  --sort-y-by SORT_Y_BY
+  --keep-rows-missing-data
+                        Drops columsn that have any missing data
+  --keep-columns-missing-data
+                        Drops rows that have any missing data
+  --x-tick-labels-scale X_TICK_LABELS_SCALE
+                        Must be between 0 (smallest) and 1 (largest).
+  --y-tick-labels-scale Y_TICK_LABELS_SCALE
+                        Must be between 0 (smallest) and 1 (largest).
+  --color-bar-labels-scale COLOR_BAR_LABELS_SCALE
+                        Must be between 0 (smallest) and 1 (largest).
+  --x-rotation X_ROTATION
+  --highlight-labels HIGHLIGHT_LABELS
+```
+
+
+## amiga_get_confidence
+
+### Tool Description
+Compute confidence intervals for parameters or curves.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
+- **Homepage**: https://github.com/firasmidani/amiga
+- **Package**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-09-25
+- **GitHub**: https://github.com/firasmidani/amiga
+- **Stars**: 16
+### Original Help Text
+```text
+usage: amiga [-h] -i INPUT --type {Parameters,Curves}
+             [--confidence CONFIDENCE] [--include-noise] [--over-write]
+             [--verbose]
+
+Compute confidence intervals for parameters or curves.
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+  --type {Parameters,Curves}
+  --confidence CONFIDENCE
+                        Must be between 80 and 100. Default is 95.
+  --include-noise       Include the estimated measurement noise when computing
+                        confidence interval (For Curves Only).
+  --over-write          Over-write file otherwise a new copy is made with
+                        "_confidence" suffix
+  --verbose
+```
+
+
+## amiga_get_time
+
+### Tool Description
+Get time at which OD reaches a certain value
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/amiga:3.0.4--pyhdfd78af_1
+- **Homepage**: https://github.com/firasmidani/amiga
+- **Package**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/amiga/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-09-25
+- **GitHub**: https://github.com/firasmidani/amiga
+- **Stars**: 16
+### Original Help Text
+```text
+usage: amiga [-h] --gp-data GP_DATA --summary SUMMARY --threshold THRESHOLD
+             [--curve-format {OD_Data,OD_Fit,GP_Input,GP_Output,OD_Growth_Fit,OD_Growth_Data,GP_Derivative}]
+
+Get time at which OD reaches a certain value
+
+options:
+  -h, --help            show this help message and exit
+  --gp-data GP_DATA
+  --summary SUMMARY
+  --threshold THRESHOLD
+  --curve-format {OD_Data,OD_Fit,GP_Input,GP_Output,OD_Growth_Fit,OD_Growth_Data,GP_Derivative}
 ```
 
 

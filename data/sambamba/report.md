@@ -62,7 +62,6 @@ Options: -F, --filter=FILTER
                     set seed for subsampling
 ```
 
-
 ## sambamba_index
 
 ### Tool Description
@@ -94,7 +93,6 @@ Options: -t, --nthreads=NTHREADS
                specify that input is in FASTA format
 ```
 
-
 ## sambamba_merge
 
 ### Tool Description
@@ -125,7 +123,6 @@ Options: -t, --nthreads=NTHREADS
          -F, --filter=FILTER
                keep only reads that satisfy FILTER
 ```
-
 
 ## sambamba_sort
 
@@ -172,7 +169,6 @@ Options: -m, --memory-limit=LIMIT
                keep only reads that satisfy FILTER
 ```
 
-
 ## sambamba_slice
 
 ### Tool Description
@@ -206,7 +202,6 @@ OPTIONS: -o, --output-filename=OUTPUT_FILENAME
          -F, --fasta-input
                specify that input is in FASTA format
 ```
-
 
 ## sambamba_markdup
 
@@ -257,7 +252,6 @@ Performance tweaking parameters
                     for reading and writing BAM during the second pass (default is 128)
 ```
 
-
 ## sambamba_subsample
 
 ### Tool Description
@@ -292,7 +286,6 @@ sambamba/main.d:114 [0x5f3c3440fd6e]
 ??:? [0x5f3c343a3d29]
 ```
 
-
 ## sambamba_flagstat
 
 ### Tool Description
@@ -319,7 +312,6 @@ OPTIONS: -t, --nthreads=NTHREADS
          -b, --tabular
             output in csv format
 ```
-
 
 ## sambamba_depth
 
@@ -388,39 +380,6 @@ window subcommand options:
                     same meaning as in 'region' subcommand
 ```
 
-
-## sambamba_validate
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sambamba:1.0.1--he614052_4
-- **Homepage**: https://github.com/biod/sambamba
-- **Package**: https://anaconda.org/channels/bioconda/packages/sambamba/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-sambamba 1.0.1
- by Artem Tarasov and Pjotr Prins (C) 2012-2023
-    LDC 1.39.0 / DMD v2.109.1 / LLVM17.0.6 / bootstrap LDC - the LLVM D compiler (1.39.0)
-
-INFO: Reading input files
-```
-
-
 ## sambamba_mpileup
 
 ### Tool Description
@@ -481,7 +440,6 @@ Sambamba paths:
 
 sambamba-pileup: failed to locate samtools executable in PATH
 ```
-
 
 ## Metadata
 - **Skill**: generated

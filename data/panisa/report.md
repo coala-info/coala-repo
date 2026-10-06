@@ -1,38 +1,5 @@
 # panisa CWL Generation Report
 
-## panisa
-
-### Tool Description
-FAIL to generate CWL: panisa not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/panisa:0.1.7--pyhdfd78af_0
-- **Homepage**: https://github.com/bvalot/panISa
-- **Package**: https://anaconda.org/channels/bioconda/packages/panisa/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/panisa/overview
-- **Total Downloads**: 3.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/bvalot/panISa
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: panisa not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: panisa not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

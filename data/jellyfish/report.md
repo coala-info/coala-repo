@@ -54,7 +54,6 @@ Options (default value in (), *required):
  -V, --version                            Version
 ```
 
-
 ## jellyfish_bc
 
 ### Tool Description
@@ -96,7 +95,6 @@ Options (default value in (), *required):
  -V, --version                            Version
 ```
 
-
 ## jellyfish_info
 
 ### Tool Description
@@ -126,7 +124,6 @@ Options (default value in (), *required):
  -h, --help                               This message
  -V, --version                            Version
 ```
-
 
 ## jellyfish_stats
 
@@ -162,7 +159,6 @@ Options (default value in (), *required):
      --full-help                          Detailed help
  -V, --version                            Version
 ```
-
 
 ## jellyfish_histo
 
@@ -204,7 +200,6 @@ Options (default value in (), *required):
  -V, --version                            Version
 ```
 
-
 ## jellyfish_dump
 
 ### Tool Description
@@ -237,7 +232,6 @@ Options (default value in (), *required):
  -V, --version                            Version
 ```
 
-
 ## jellyfish_merge
 
 ### Tool Description
@@ -263,7 +257,6 @@ Options (default value in (), *required):
  -h, --help                               This message
  -V, --version                            Version
 ```
-
 
 ## jellyfish_query
 
@@ -292,43 +285,6 @@ Options (default value in (), *required):
  -h, --help                               This message
  -V, --version                            Version
 ```
-
-
-## jellyfish_cite
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/jellyfish:v2.2.10-2-deb_cv1
-- **Homepage**: http://www.genome.umd.edu/jellyfish.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/jellyfish/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-This software has been published. If you use it for your research, cite:
-
-A fast, lock-free approach for efficient parallel counting of occurrences of k-mers
-Guillaume Marcais; Carl Kingsford
-Bioinformatics (2011) 27(6): 764-770 first published online January 7, 2011 doi:10.1093/bioinformatics/btr011
-
-
-http://www.cbcb.umd.edu/software/jellyfish
-http://bioinformatics.oxfordjournals.org/content/early/2011/01/07/bioinformatics.btr011
-```
-
 
 ## jellyfish_mem
 
@@ -374,7 +330,6 @@ Options (default value in (), *required):
  -V, --version                            Version
 ```
 
-
 ## jellyfish_jf
 
 ### Tool Description
@@ -414,7 +369,6 @@ Count k-mers in DNA, RNA or protein sequences.
 .-_)(   )__)  )(__  )(__ \  /  )__)  _)(_ \__ \ ) _ ( 
 \____) (____)(____)(____)(__) (__)  (____)(___/(_) (_)
 ```
-
 
 ## Metadata
 - **Skill**: not generated

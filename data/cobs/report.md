@@ -29,7 +29,6 @@ Options:
   -k, --term-size  term size (k-mer size), default: 31
 ```
 
-
 ## cobs_doc-dump
 
 ### Tool Description
@@ -54,7 +53,6 @@ Options:
       --no-canonicalize  don't canonicalize DNA k-mers, default: false
   -k, --term-size        term size (k-mer size), default: 31
 ```
-
 
 ## cobs_classic-construct
 
@@ -93,7 +91,6 @@ Options:
                              out_file + ".tmp")
 ```
 
-
 ## cobs_classic-construct-random
 
 ### Tool Description
@@ -120,7 +117,6 @@ Options:
   -s, --signature-size  number of bits of the signatures (vertical size), 
                         default: 2 Mi
 ```
-
 
 ## cobs_compact-construct
 
@@ -160,7 +156,6 @@ Options:
                              out_file + ".tmp")
 ```
 
-
 ## cobs_compact-construct-combine
 
 ### Tool Description
@@ -184,7 +179,6 @@ Parameters:
 Options:
   -p, --page-size  the page size of the compact the index, default: 8192
 ```
-
 
 ## cobs_classic-combine
 
@@ -213,7 +207,6 @@ Options:
   -m, --memory          memory in bytes to use, default: 49.989 Gi
   -T, --threads         number of threads to use, default: max cores
 ```
-
 
 ## cobs_query
 
@@ -247,7 +240,6 @@ Options:
                        default: 0.8
 ```
 
-
 ## cobs_print-parameters
 
 ### Tool Description
@@ -270,7 +262,6 @@ Options:
   -h, --num-hashes           number of hash functions, default: 1
 ```
 
-
 ## cobs_print-kmers
 
 ### Tool Description
@@ -292,7 +283,6 @@ Parameters:
 Options:
   -k, --kmer-size  the size of one kmer, default: 31
 ```
-
 
 ## cobs_benchmark-fpr
 
@@ -319,7 +309,6 @@ Options:
       --seed       random seed
   -w, --warmup     number of random warmup queries to run, default: 100
 ```
-
 
 ## cobs_generate-queries
 
@@ -353,35 +342,6 @@ Options:
   -N, --true-negative  check that negative queries actually are not in the 
                        documents (slow)
 ```
-
-
-## cobs_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0
-- **Homepage**: https://panthema.net/cobs
-- **Package**: https://anaconda.org/channels/bioconda/packages/cobs/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-COBS version 0.3.1
-```
-
 
 ## Metadata
 - **Skill**: generated

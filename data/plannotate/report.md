@@ -44,39 +44,6 @@ Options:
   --help                Show this message and exit.
 ```
 
-
-## plannotate_setupdb
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plannotate:1.2.4--pyhdfd78af_0
-- **Homepage**: https://github.com/barricklab/pLannotate
-- **Package**: https://anaconda.org/channels/bioconda/packages/plannotate/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Databases already downloaded.
-
-Run 'plannotate streamlit' or 'plannotate batch {arguments}' to launch pLannotate.
-To get a list of available arguments for command line use, run 'plannotate batch --help'.
-Please also consider citing: https://doi.org/10.1093/nar/gkab374 :)
-```
-
-
 ## plannotate_streamlit
 
 ### Tool Description
@@ -401,7 +368,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## plannotate_yaml
 
 ### Tool Description
@@ -486,7 +452,6 @@ swissprot:
   priority: 2
   version: Release 2021_03
 ```
-
 
 ## Metadata
 - **Skill**: generated

@@ -1,41 +1,5 @@
 # hs-blastn CWL Generation Report
 
-## hs-blastn_index
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hs-blastn:0.0.5--h9948957_6
-- **Homepage**: https://github.com/chenying2016/queries
-- **Package**: https://anaconda.org/channels/bioconda/packages/hs-blastn/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/hs-blastn/overview
-- **Total Downloads**: 10.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/chenying2016/queries
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[IndexBuilder] A genomic database index builder.
-
-[DbInfoGenerator] building DbInfo.
-[StreamLineReader] Fatal Error: Cannot open file --help for reading.
-```
-
-
 ## hs-blastn_align
 
 ### Tool Description

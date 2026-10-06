@@ -48,7 +48,6 @@ Usage: votuderep derep [OPTIONS]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## votuderep_filter
 
 ### Tool Description
@@ -122,7 +121,6 @@ Usage: votuderep filter [OPTIONS] FASTA CHECKV_OUT
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## votuderep_getdbs
 
 ### Tool Description
@@ -171,40 +169,6 @@ Usage: votuderep getdbs [OPTIONS]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
-## votuderep_splitcoverm
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/votuderep:0.6.0--pyhdfd78af_0
-- **Homepage**: https://github.com/quadram-institute-bioscience/votuderep
-- **Package**: https://anaconda.org/channels/bioconda/packages/votuderep/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: votuderep splitcoverm [OPTIONS]                                         
-                                                                                
- Try running the '--help' flag for more information.                            
-╭─ Error ──────────────────────────────────────────────────────────────────────╮
-│ No such option: --h Did you mean --help?                                     │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
-
 ## votuderep_tabulate
 
 ### Tool Description
@@ -245,7 +209,6 @@ Usage: votuderep tabulate [OPTIONS] INPUT_DIR
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## votuderep_trainingdata
 
 ### Tool Description
@@ -272,7 +235,6 @@ Usage: votuderep trainingdata [OPTIONS]
 │ --help    -h        Show this message and exit.                              │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
 
 ## Metadata
 - **Skill**: generated

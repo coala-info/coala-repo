@@ -36,7 +36,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## pybel_insert
 
 ### Tool Description
@@ -55,52 +54,6 @@ Try "pybel insert --help" for help.
 
 Error: no such option: --h  Did you mean --help?
 ```
-
-
-## pybel_machine
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pybel:0.13.2--py_0
-- **Homepage**: https://pybel.readthedocs.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/pybel/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/pybel", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1137, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 27, in new_func
-    return f(get_current_context().obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/pybel/cli.py", line 267, in machine
-    from indra.sources import indra_db_rest
-ModuleNotFoundError: No module named 'indra'
-```
-
 
 ## pybel_manage
 
@@ -132,7 +85,6 @@ Commands:
   summarize   Summarize the contents of the database.
 ```
 
-
 ## pybel_neo
 
 ### Tool Description
@@ -155,7 +107,6 @@ Options:
   --password TEXT
   --help             Show this message and exit.
 ```
-
 
 ## pybel_post
 
@@ -180,7 +131,6 @@ Options:
   --help       Show this message and exit.
 ```
 
-
 ## pybel_serialize
 
 ### Tool Description
@@ -200,7 +150,6 @@ Try "pybel serialize --help" for help.
 Error: no such option: --h  Did you mean --help?
 ```
 
-
 ## pybel_summarize
 
 ### Tool Description
@@ -219,38 +168,6 @@ Try "pybel summarize --help" for help.
 
 Error: no such option: --h  Did you mean --help?
 ```
-
-
-## pybel_warnings
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pybel:0.13.2--py_0
-- **Homepage**: https://pybel.readthedocs.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/pybel/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: pybel warnings [OPTIONS] path
-Try "pybel warnings --help" for help.
-
-Error: no such option: --h  Did you mean --help?
-```
-
 
 ## Metadata
 - **Skill**: generated

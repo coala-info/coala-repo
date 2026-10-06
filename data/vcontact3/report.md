@@ -1,41 +1,5 @@
 # vcontact3 CWL Generation Report
 
-## vcontact3_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vcontact3:3.1.6--pyhdfd78af_0
-- **Homepage**: https://bitbucket.org/MAVERICLab/vcontact3
-- **Package**: https://anaconda.org/channels/bioconda/packages/vcontact3/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/vcontact3/overview
-- **Total Downloads**: 3.7K
-- **Last updated**: 2025-10-23
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: vcontact3 version [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## vcontact3_prepare_databases
 
 ### Tool Description
@@ -75,7 +39,6 @@ Traceback (most recent call last):
     raise child_exception_type(errno_num, err_msg, err_filename)
 FileNotFoundError: [Errno 2] No such file or directory: 'curl'
 ```
-
 
 ## vcontact3_run
 
@@ -190,7 +153,6 @@ Miscellaneous Options:
   -f, --force-overwrite
                         Overwrite existing files. (default: False)
 ```
-
 
 ## Metadata
 - **Skill**: generated

@@ -52,79 +52,6 @@ options:
                         Order sequences by lowest sum of j-dist
 ```
 
-
-## vgorient_kmer_rotation_multiprocessing.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0
-- **Homepage**: https://github.com/whelixw/vgOrient
-- **Package**: https://anaconda.org/channels/bioconda/packages/vgorient/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 1: import: command not found
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 2: from: command not found
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 3: from: command not found
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 4: from: command not found
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 5: from: command not found
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 6: from: command not found
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 7: import: command not found
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 9: syntax error near unexpected token `('
-/usr/local/bin/kmer_rotation_multiprocessing.py: line 9: `def generate_kmer_deque(seq, k):'
-```
-
-
-## vgorient_cut_and_rot_rebuild.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0
-- **Homepage**: https://github.com/whelixw/vgOrient
-- **Package**: https://anaconda.org/channels/bioconda/packages/vgorient/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/bin/cut_and_rot_rebuild.py: line 1: import: command not found
-/usr/local/bin/cut_and_rot_rebuild.py: line 2: from: command not found
-/usr/local/bin/cut_and_rot_rebuild.py: line 3: from: command not found
-/usr/local/bin/cut_and_rot_rebuild.py: line 4: from: command not found
-/usr/local/bin/cut_and_rot_rebuild.py: line 5: import: command not found
-/usr/local/bin/cut_and_rot_rebuild.py: line 6: import: command not found
-/usr/local/bin/cut_and_rot_rebuild.py: line 7: import: command not found
-/usr/local/bin/cut_and_rot_rebuild.py: line 9: syntax error near unexpected token `('
-/usr/local/bin/cut_and_rot_rebuild.py: line 9: `def parse_vg_gfa(gfa_file):'
-```
-
-
 ## vgorient_noisify.py
 
 ### Tool Description
@@ -147,7 +74,6 @@ Adds random transformations to FASTA files.
 /usr/local/bin/noisify.py: line 8: syntax error near unexpected token `('
 /usr/local/bin/noisify.py: line 8: `def random_transform_fasta(input_file, output_dir, reverse, transformation_log):'
 ```
-
 
 ## Metadata
 - **Skill**: generated

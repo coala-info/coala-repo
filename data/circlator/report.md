@@ -125,7 +125,6 @@ fixstart options:
                         contigs and gene(s) to use as start point [70]
 ```
 
-
 ## circlator_mapreads
 
 ### Tool Description
@@ -154,7 +153,6 @@ optional arguments:
   --threads INT      Number of threads [1]
   --verbose          Be verbose
 ```
-
 
 ## circlator_bam2reads
 
@@ -198,7 +196,6 @@ optional arguments:
   --verbose             Be verbose
 ```
 
-
 ## circlator_assemble
 
 ### Tool Description
@@ -241,7 +238,6 @@ optional arguments:
                         String representing one of the 4 type of data analysed
                         (only used for Canu) [pacbio-corrected]
 ```
-
 
 ## circlator_merge
 
@@ -316,7 +312,6 @@ optional arguments:
   --verbose             Be verbose
 ```
 
-
 ## circlator_clean
 
 ### Tool Description
@@ -357,7 +352,6 @@ optional arguments:
   --verbose             Be verbose
 ```
 
-
 ## circlator_fixstart
 
 ### Tool Description
@@ -391,7 +385,6 @@ optional arguments:
                        contigs and gene(s) to use as start point [70]
   --verbose            Be verbose
 ```
-
 
 ## circlator_minimus2
 
@@ -427,7 +420,6 @@ optional arguments:
                   each contig
 ```
 
-
 ## circlator_get_dnaa
 
 ### Tool Description
@@ -462,53 +454,6 @@ optional arguments:
                         by --name_re. Default is to ignore case.
 ```
 
-
-## circlator_progcheck
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/circlator:v1.5.5-3-deb_cv1
-- **Homepage**: https://github.com/sanger-pathogens/circlator
-- **Package**: https://anaconda.org/channels/bioconda/packages/circlator/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Circlator version: 1.5.5
-
-External dependencies:
-bwa	0.7.17	/usr/bin/bwa
-WARNING: Didn't find canu in path. Looked for:canu
-nucmer	3.1	/usr/bin/nucmer
-prodigal	2.6.3	/usr/bin/prodigal
-samtools	1.9	/usr/bin/samtools
-spades	3.13.0	/usr/bin/spades.py
-
-Python version:
-3.7.3 (default, Apr  3 2019, 05:39:12) 
-[GCC 8.3.0]
-
-Python dependencies:
-openpyxl	2.4.9	/usr/lib/python3/dist-packages/openpyxl/__init__.py
-pyfastaq	3.17.0	/usr/lib/python3/dist-packages/pyfastaq/__init__.py
-pymummer	0.10.3	/usr/lib/python3/dist-packages/pymummer/__init__.py
-pysam	0.15.2	/usr/lib/python3/dist-packages/pysam/__init__.py
-```
-
-
 ## circlator_test
 
 ### Tool Description
@@ -533,35 +478,6 @@ optional arguments:
   -h, --help     show this help message and exit
   --threads INT  Number of threads [1]
 ```
-
-
-## circlator_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/circlator:v1.5.5-3-deb_cv1
-- **Homepage**: https://github.com/sanger-pathogens/circlator
-- **Package**: https://anaconda.org/channels/bioconda/packages/circlator/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-1.5.5
-```
-
 
 ## Metadata
 - **Skill**: generated

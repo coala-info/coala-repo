@@ -6,39 +6,6 @@
 |---|---|---|
 | autodock-vina_vina | PASS |  |
 
-## autodock-vina
-
-### Tool Description
-FAIL to generate CWL: autodock-vina not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: biocontainers/autodock-vina:v1.1.2-3b6-deb_cv1
-- **Homepage**: https://github.com/ccsb-scripps/AutoDock-Vina
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/autodock-vina/overview
-- **Total Downloads**: 41.5K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/ccsb-scripps/AutoDock-Vina
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: autodock-vina not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: autodock-vina not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

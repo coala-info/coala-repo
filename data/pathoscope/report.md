@@ -64,24 +64,6 @@ options:
                         specify an output prefix to name your target database
 ```
 
-
-## pathoscope_creation
-
-### Tool Description
-A tool for PathoScope database creation (Note: The provided help text is incomplete and only indicates a missing library dependency).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2
-- **Homepage**: https://github.com/PathoScope/PathoScope
-- **Package**: https://anaconda.org/channels/bioconda/packages/pathoscope/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Running without mySQLdb library
-```
-
-
 ## pathoscope_MAP
 
 ### Tool Description
@@ -148,7 +130,6 @@ options:
                         identification (Default: pathomap)
 ```
 
-
 ## pathoscope_ID
 
 ### Tool Description
@@ -195,7 +176,6 @@ options:
                         Alignment file path
 ```
 
-
 ## pathoscope_REP
 
 ### Tool Description
@@ -238,24 +218,6 @@ options:
   --noDisplayCutoff     Do not cutoff display of genomes, even if it is
                         insignificant
 ```
-
-
-## pathoscope_sequencing
-
-### Tool Description
-Running without mySQLdb library
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2
-- **Homepage**: https://github.com/PathoScope/PathoScope
-- **Package**: https://anaconda.org/channels/bioconda/packages/pathoscope/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Running without mySQLdb library
-```
-
 
 ## Metadata
 - **Skill**: generated

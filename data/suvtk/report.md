@@ -28,7 +28,6 @@ Options:
   -h, --help             Show this message and exit.
 ```
 
-
 ## suvtk_taxonomy
 
 ### Tool Description
@@ -56,7 +55,6 @@ Options:
   -t, --threads INTEGER  Number of threads to use  [default: 20]
   -h, --help             Show this message and exit.
 ```
-
 
 ## suvtk_features
 
@@ -105,7 +103,6 @@ Options:
   -h, --help                Show this message and exit.
 ```
 
-
 ## suvtk_virus-info
 
 ### Tool Description
@@ -131,38 +128,6 @@ Options:
   -o, --output PATH    Output directory  [required]
   -h, --help           Show this message and exit.
 ```
-
-
-## suvtk_their
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/suvtk:0.1.6--pyh64700be_0
-- **Homepage**: https://github.com/LanderDC/suvtk
-- **Package**: https://anaconda.org/channels/bioconda/packages/suvtk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: suvtk [OPTIONS] COMMAND [ARGS]...
-Try 'suvtk -h' for help.
-
-Error: No such command 'their'.
-```
-
 
 ## suvtk_co-occurrence
 
@@ -205,7 +170,6 @@ Options:
   -h, --help               Show this message and exit.
 ```
 
-
 ## suvtk_gbk2tbl
 
 ### Tool Description
@@ -231,7 +195,6 @@ Options:
   -p, --prefix TEXT            The prefix of output filenames  [default: seq]
   -h, --help                   Show this message and exit.
 ```
-
 
 ## suvtk_comments
 
@@ -261,7 +224,6 @@ Options:
   -o, --output PATH    Output filename.  [required]
   -h, --help           Show this message and exit.
 ```
-
 
 ## suvtk_table2asn
 
@@ -293,7 +255,6 @@ Options:
                        [required]
   -h, --help           Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: not generated

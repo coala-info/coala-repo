@@ -31,7 +31,6 @@ Options:
   -h, --help  Print help
 ```
 
-
 ## kmertools_cov
 
 ### Tool Description
@@ -101,7 +100,6 @@ Options:
           Print help (see a summary with '-h')
 ```
 
-
 ## kmertools_min
 
 ### Tool Description
@@ -157,7 +155,6 @@ Options:
           Print help (see a summary with '-h')
 ```
 
-
 ## kmertools_ctr
 
 ### Tool Description
@@ -204,39 +201,6 @@ Options:
   -h, --help
           Print help (see a summary with '-h')
 ```
-
-
-## kmertools_Print
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmertools:0.2.1--h5e00ca1_0
-- **Homepage**: https://github.com/anuradhawick/kmertools
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmertools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Print'
-
-Usage: kmertools <COMMAND>
-
-For more information, try '--help'.
-```
-
 
 ## Metadata
 - **Skill**: generated

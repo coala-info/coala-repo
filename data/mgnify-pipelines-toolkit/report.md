@@ -35,33 +35,3 @@ options:
                         sample_SSU_rRNA_eukarya.RF01960.fasta
 ```
 
-
-## mgnify-pipelines-toolkit_amrintegrator
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mgnify-pipelines-toolkit:1.4.16--pyhdfd78af_0
-- **Homepage**: https://github.com/EBI-Metagenomics/mgnify-pipelines-toolkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/mgnify-pipelines-toolkit/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-docker: Error response from daemon: open /var/lib/docker/overlay2/4ed6461d918bd5a6f36b924b427e9c20564821b263f461717a7cfee587af4eb3-init/merged/etc/hosts: no space left on device
-
-Run 'docker run --help' for more information
-```
-

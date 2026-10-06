@@ -1,38 +1,5 @@
 # conus CWL Generation Report
 
-## conus
-
-### Tool Description
-FAIL to generate CWL: conus not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/conus:1.0--h7b50bb2_6
-- **Homepage**: http://eddylab.org/software/conus/
-- **Package**: https://anaconda.org/channels/bioconda/packages/conus/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/conus/overview
-- **Total Downloads**: 7.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: conus not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: conus not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -109,7 +76,6 @@ where options are:
 -f            : debugging, print fill matrix from cyk 
 -q            : print predicted structures in stockholm format 
 -c            : print ct output format for predicted structure
-
 
 Grammars available in CONUS: (use three letter codes) 
   code	Grammar:

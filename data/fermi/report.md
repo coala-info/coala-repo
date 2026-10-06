@@ -29,7 +29,6 @@ Options: -b INT    use a small marker per 2^(INT+3) bytes [3]
          -s INT    number of symbols to process at a time [250000000]
 ```
 
-
 ## fermi_ropebwt
 
 ### Tool Description
@@ -60,7 +59,6 @@ Options: -a STR     algorithm: bpr or bcr [bpr]
          -T         print the tree stdout (bpr only)
 ```
 
-
 ## fermi_chkbwt
 
 ### Tool Description
@@ -80,7 +78,6 @@ Options: -M        load the FM-index as a memory mapped file
          -r        check rank
          -p        print the BWT to the stdout
 ```
-
 
 ## fermi_merge
 
@@ -102,7 +99,6 @@ Options: -f        force to overwrite the output file (effective with -o)
          -t INT    number of threads to use
 ```
 
-
 ## fermi_unpack
 
 ### Tool Description
@@ -121,7 +117,6 @@ Usage:   fermi unpack [-M] [-i index] <seqs.bwt>
 Options: -i INT    index of the read to output, starting from 0 [null]
          -M        load the FM-index as a memory mapped file
 ```
-
 
 ## fermi_exact
 
@@ -143,7 +138,6 @@ exact: invalid option -- 'l'
 exact: invalid option -- 'p'
 Usage: fermi exact [-Ms] <idxbase.bwt> <src.fa>
 ```
-
 
 ## fermi_correct
 
@@ -169,7 +163,6 @@ Options: -k INT      k-mer length; -1 for auto [-1]
          -K          keep bad/unfixable reads
 ```
 
-
 ## fermi_seqrank
 
 ### Tool Description
@@ -191,7 +184,6 @@ seqrank: invalid option -- 'p'
 Usage: fermi seqsort [-t nThreads=1] <reads.fmd>
 ```
 
-
 ## fermi_unitig
 
 ### Tool Description
@@ -211,7 +203,6 @@ Options: -l INT      min match [30]
          -t INT      number of threads [1]
          -r FILE     rank file [null]
 ```
-
 
 ## fermi_clean
 
@@ -244,7 +235,6 @@ Options: -N INT      read maximum INT neighbors per node [512]
          -r FLOAT    minimum fraction to keep a bubble [0.15]
 ```
 
-
 ## fermi_remap
 
 ### Tool Description
@@ -267,7 +257,6 @@ Options: -l INT      skip ending INT bases of a read pair [50]
          -t INT      number of threads [1]
 ```
 
-
 ## fermi_scaf
 
 ### Tool Description
@@ -287,7 +276,6 @@ Options: -t INT     number of threads [1]
          -m INT     minimum number of supporting reads [5]
          -P         print the links between unitigs
 ```
-
 
 ## fermi_contrast
 
@@ -309,7 +297,6 @@ Options: -o INT    minimum occurrence [3]
          -k INT    k-mer length [55]
 ```
 
-
 ## fermi_bitand
 
 ### Tool Description
@@ -325,7 +312,6 @@ Bitwise AND operation on two or more .bit files.
 ```text
 Usage: fermi bitand <in1.bit> <in2.bit> [...]
 ```
-
 
 ## fermi_sub
 
@@ -348,7 +334,6 @@ sub: invalid option -- 'p'
 Usage: fermi sub [-c] [-t nThreads] <in.fmd> <array.bits>
 ```
 
-
 ## fermi_splitfa
 
 ### Tool Description
@@ -364,7 +349,6 @@ Split a FASTQ file into multiple FASTA files.
 ```text
 Usage: fermi splitfa <in.fq> <out.prefix> [8]
 ```
-
 
 ## fermi_trimseq
 
@@ -384,7 +368,6 @@ trimseq: invalid option -- 'h'
 trimseq: invalid option -- 'e'
 Usage: fermi trimseq [-N] [-q qual=3] [-l minLen=0] <in.fq>
 ```
-
 
 ## fermi_fltuniq
 
@@ -407,7 +390,6 @@ fltuniq: invalid option -- 'p'
 Usage: fermi fltuniq <in.fa>
 ```
 
-
 ## fermi_pe2cofq
 
 ### Tool Description
@@ -423,37 +405,6 @@ Convert paired-end FASTQ to COFF format
 ```text
 Usage: fermi pe2cofq <in1.fq> <in2.fq>
 ```
-
-
-## fermi_cg2cofq
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fermi:1.1_r751_beta--h577a1d6_9
-- **Homepage**: https://github.com/quantumlib/OpenFermion
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[M::main] Version: 1.1-r751-beta
-[M::main] CMD: fermi cg2cofq --help
-[M::main] Real time: 0.000 sec; CPU: 0.045 sec; RSS: 1.875 MB
-```
-
 
 ## fermi_example
 
@@ -472,7 +423,6 @@ example: invalid option -- '-'
 example: invalid option -- 'h'
 Usage: fermi example [-ceU] [-k ecKmer] [-l utgKmer] <in.fq>
 ```
-
 
 ## Metadata
 - **Skill**: not generated

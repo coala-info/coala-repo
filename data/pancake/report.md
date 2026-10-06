@@ -50,7 +50,6 @@ optional arguments:
                         identical chromosomes as input (DEFAULT=False)
 ```
 
-
 ## pancake_status
 
 ### Tool Description
@@ -70,30 +69,6 @@ WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: 
 usage: pancake status [-h] PAN_FILE
 pancake status: error: argument -h/--help: ignored explicit argument 'elp'
 ```
-
-
-## pancake_addali
-
-### Tool Description
-Add alignments to a pancake project
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-usage: pancake [-h]
-               {create,status,addAli,specify,addChrom,core,singletons,sequence,graph}
-               ...
-pancake: error: argument subcommand: invalid choice: 'addali' (choose from 'create', 'status', 'addAli', 'specify', 'addChrom', 'core', 'singletons', 'sequence', 'graph')
-```
-
 
 ## pancake_specify
 
@@ -130,30 +105,6 @@ optional arguments:
   --delete OLD_NAME [OLD_NAME ...], -d OLD_NAME [OLD_NAME ...]
                         chromosome names to delete
 ```
-
-
-## pancake_addchrom
-
-### Tool Description
-Add chromosomes to a pancake database
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-usage: pancake [-h]
-               {create,status,addAli,specify,addChrom,core,singletons,sequence,graph}
-               ...
-pancake: error: argument subcommand: invalid choice: 'addchrom' (choose from 'create', 'status', 'addAli', 'specify', 'addChrom', 'core', 'singletons', 'sequence', 'graph')
-```
-
 
 ## pancake_core
 
@@ -218,7 +169,6 @@ optional arguments:
                         (DEFAULT=25)
 ```
 
-
 ## pancake_singletons
 
 ### Tool Description
@@ -276,7 +226,6 @@ optional arguments:
                         (DEFAULT= singletons_{REF_CHROM|REF_GENOME}.bed)
 ```
 
-
 ## pancake_sequence
 
 ### Tool Description
@@ -311,7 +260,6 @@ optional arguments:
   -stop INT             (1-based) stop position on CHROMOSME (DEFAULT = length
                         of CHROMOSME)
 ```
-
 
 ## pancake_graph
 
@@ -364,7 +312,6 @@ optional arguments:
   --output FILE, -o FILE
                         output DOT file (DEFAULT: STDOUT)
 ```
-
 
 ## Metadata
 - **Skill**: generated

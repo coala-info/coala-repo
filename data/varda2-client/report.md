@@ -35,7 +35,6 @@ optional arguments:
                         Varda variants file
 ```
 
-
 ## varda2-client_monitor
 
 ### Tool Description
@@ -56,65 +55,6 @@ optional arguments:
   -t TASKS_FN, --task-file TASKS_FN
                         Filename of tasks to monitor
 ```
-
-
-## varda2-client_save
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/varda2-client:0.9--py_0
-- **Homepage**: https://github.com/varda/varda2-client
-- **Package**: https://anaconda.org/channels/bioconda/packages/varda2-client/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: varda2-client save [-h]
-varda2-client save: error: argument -h/--help: ignored explicit argument 'elp'
-```
-
-
-## varda2-client_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/varda2-client:0.9--py_0
-- **Homepage**: https://github.com/varda/varda2-client
-- **Package**: https://anaconda.org/channels/bioconda/packages/varda2-client/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: varda2-client version [-h]
-varda2-client version: error: argument -h/--help: ignored explicit argument 'elp'
-```
-
 
 ## varda2-client_annotate
 
@@ -142,7 +82,6 @@ optional arguments:
                         Local sample id
 ```
 
-
 ## varda2-client_stab
 
 ### Tool Description
@@ -167,7 +106,6 @@ optional arguments:
                         Chromosome to look at
 ```
 
-
 ## varda2-client_seq
 
 ### Tool Description
@@ -188,7 +126,6 @@ optional arguments:
   -s SEQUENCE, --sequence SEQUENCE
                         Sequence
 ```
-
 
 ## varda2-client_snv
 
@@ -214,7 +151,6 @@ optional arguments:
   -r REFERENCE, --reference REFERENCE
                         Chromosome to look at
 ```
-
 
 ## varda2-client_mnv
 
@@ -242,7 +178,6 @@ optional arguments:
                         Chromosome to look at
 ```
 
-
 ## varda2-client_task
 
 ### Tool Description
@@ -262,7 +197,6 @@ optional arguments:
   -h, --help            show this help message and exit
   -u UUID, --uuid UUID  Task UUID
 ```
-
 
 ## varda2-client_sample
 
@@ -287,7 +221,6 @@ optional arguments:
   -l LAB_SAMPLE_ID, --lab-sample-id LAB_SAMPLE_ID
                         Local sample id
 ```
-
 
 ## Metadata
 - **Skill**: generated

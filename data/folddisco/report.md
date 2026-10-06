@@ -60,7 +60,6 @@ folddisco index -p h_sapiens -i index/h_sapiens -t 12 -y default -d 16 -a 4 # De
 folddisco index -p h_sapiens -i index/h_sapiens -t 12 -y pdb -d 8 -a 3 # PDB
 ```
 
-
 ## folddisco_query
 
 ### Tool Description
@@ -148,35 +147,6 @@ folddisco query -q query/zinc_finger.txt -i index/h_sapiens_folddisco -t 6 --con
 ## Coverage based filtering & top N filtering without residue matching
 folddisco query -q query/zinc_finger.txt -i index/h_sapiens_folddisco -t 6 --covered-node 3 --top 1000 --per-structure --skip-match
 ```
-
-
-## folddisco_benchmark
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/folddisco:1.7514114--ha6fb395_0
-- **Homepage**: https://github.com/steineggerlab/folddisco
-- **Package**: https://anaconda.org/channels/bioconda/packages/folddisco/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[1;31m[FAIL][0m Result, answer, and index files must be provided
-```
-
 
 ## Metadata
 - **Skill**: generated

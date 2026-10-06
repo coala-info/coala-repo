@@ -4,12 +4,14 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| bifrost_Bifrost | Failed | not a usable tool: wraps only the command group (a command string and one free parameter string) with no sequence inputs or graph outputs. |
+| bifrost_build | PASS |  |
+| bifrost_query | PASS |  |
+| bifrost_update | PASS |  |
 
-## bifrost_Bifrost
+## bifrost_build
 
 ### Tool Description
-Highly parallel construction, indexing and querying of colored and compacted de Bruijn graphs
+Build a compacted de Bruijn graph, with or without colors
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bifrost:1.3.5--h5ca1c30_3
@@ -22,19 +24,14 @@ Highly parallel construction, indexing and querying of colored and compacted de 
 - **Last updated**: 2025-08-04
 - **GitHub**: https://github.com/pmelsted/bifrost
 - **Stars**: N/A
+
 ### Original Help Text
 ```text
 Bifrost 1.3.5
 
 Highly parallel construction, indexing and querying of colored and compacted de Bruijn graphs
 
-Usage: Bifrost [COMMAND] [PARAMETERS]
-
-[COMMAND]:
-
-   build                   Build a compacted de Bruijn graph, with or without colors
-   update                  Update a compacted (colored) de Bruijn graph with new sequences
-   query                   Query a compacted (colored) de Bruijn graph
+Usage: Bifrost build [PARAMETERS]
 
 [PARAMETERS]: build
 
@@ -68,6 +65,32 @@ Usage: Bifrost [COMMAND] [PARAMETERS]
    -n, --no-compress-out    Output files must be uncompressed
    -N, --no-index-out       Do not make index file
    -v, --verbose            Print information messages during execution
+```
+
+## bifrost_update
+
+### Tool Description
+Update a compacted (colored) de Bruijn graph with new sequences
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bifrost:1.3.5--h5ca1c30_3
+- **Homepage**: https://github.com/pmelsted/bifrost
+- **Package**: https://anaconda.org/channels/bioconda/packages/bifrost/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bifrost/overview
+- **Total Downloads**: 34.6K
+- **Last updated**: 2025-08-04
+- **GitHub**: https://github.com/pmelsted/bifrost
+- **Stars**: N/A
+
+### Original Help Text
+```text
+Bifrost 1.3.5
+
+Highly parallel construction, indexing and querying of colored and compacted de Bruijn graphs
+
+Usage: Bifrost update [PARAMETERS]
 
 [PARAMETERS]: update
 
@@ -100,6 +123,32 @@ Usage: Bifrost [COMMAND] [PARAMETERS]
    -n, --no-compress-out    Output files must be uncompressed
    -N, --no-index-out       Do not make index file
    -v, --verbose            Print information messages during execution
+```
+
+## bifrost_query
+
+### Tool Description
+Query a compacted (colored) de Bruijn graph
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bifrost:1.3.5--h5ca1c30_3
+- **Homepage**: https://github.com/pmelsted/bifrost
+- **Package**: https://anaconda.org/channels/bioconda/packages/bifrost/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bifrost/overview
+- **Total Downloads**: 34.6K
+- **Last updated**: 2025-08-04
+- **GitHub**: https://github.com/pmelsted/bifrost
+- **Stars**: N/A
+
+### Original Help Text
+```text
+Bifrost 1.3.5
+
+Highly parallel construction, indexing and querying of colored and compacted de Bruijn graphs
+
+Usage: Bifrost query [PARAMETERS]
 
 [PARAMETERS]: query
 

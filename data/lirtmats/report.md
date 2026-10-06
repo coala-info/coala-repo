@@ -43,35 +43,3 @@ options:
                         Retention time matching result file format.
 ```
 
-
-## lirtmats_gui
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lirtmats:1.0.0--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/lirtmats/
-- **Package**: https://anaconda.org/channels/bioconda/packages/lirtmats/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Executing lirtmats version 1.0.0.
-usage: lirtmats gui [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-

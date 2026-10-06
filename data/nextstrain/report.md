@@ -83,7 +83,6 @@ optional arguments:
 Run again with --help-all instead to see more options.
 ```
 
-
 ## nextstrain_view
 
 ### Tool Description
@@ -131,7 +130,6 @@ optional arguments:
 Run again with --help-all instead to see more options.
 ```
 
-
 ## nextstrain_deploy
 
 ### Tool Description
@@ -168,7 +166,6 @@ positional arguments:
 optional arguments:
   -h, --help          show this help message and exit
 ```
-
 
 ## nextstrain_remote
 
@@ -222,7 +219,6 @@ commands:
     delete (rm)         Delete dataset and narrative files
 ```
 
-
 ## nextstrain_shell
 
 ### Tool Description
@@ -255,46 +251,6 @@ optional arguments:
 
 Run again with --help-all instead to see more options.
 ```
-
-
-## nextstrain_update
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextstrain:20200304--hdfd78af_1
-- **Homepage**: https://nextstrain.org
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextstrain/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-A new version of nextstrain-cli, 10.4.2, is available!  You're running 3.0.3.
-
-Upgrade by running:
-
-    python3.8 -m pip install --upgrade nextstrain-cli
-
-[1mUpdating Docker image from nextstrain/base to nextstrain/base:build-20260210T230050Z…[0m
-
-
-[0;31mUpdating images failed[0m
-
-[0;33mMaybe upgrading nextstrain-cli, as noted above, will help?[0m
-```
-
 
 ## nextstrain_check-setup
 
@@ -334,7 +290,6 @@ optional arguments:
                  setup. Checks run in the order: docker, native, aws-batch.
                  (default: False)
 ```
-
 
 ## Metadata
 - **Skill**: not generated

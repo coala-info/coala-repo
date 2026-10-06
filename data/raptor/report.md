@@ -1,38 +1,5 @@
 # raptor CWL Generation Report
 
-## raptor_See
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/raptor:3.0.1--haf24da9_4
-- **Homepage**: https://github.com/seqan/raptor
-- **Package**: https://anaconda.org/channels/bioconda/packages/raptor/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/raptor/overview
-- **Total Downloads**: 18.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/seqan/raptor
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[Error] You misspelled the subcommand! Please specify which sub-program you want to use: one of [build, layout, prepare, search, upgrade]. Use -h/--help for more information.
-```
-
-
 ## raptor_build
 
 ### Tool Description
@@ -158,63 +125,6 @@ LEGAL
     For full copyright and/or warranty information see --copyright.
 ```
 
-
-## raptor_The
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/raptor:3.0.1--haf24da9_4
-- **Homepage**: https://github.com/seqan/raptor
-- **Package**: https://anaconda.org/channels/bioconda/packages/raptor/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[Error] You misspelled the subcommand! Please specify which sub-program you want to use: one of [build, layout, prepare, search, upgrade]. Use -h/--help for more information.
-```
-
-
-## raptor_specified
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/raptor:3.0.1--haf24da9_4
-- **Homepage**: https://github.com/seqan/raptor
-- **Package**: https://anaconda.org/channels/bioconda/packages/raptor/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[Error] You misspelled the subcommand! Please specify which sub-program you want to use: one of [build, layout, prepare, search, upgrade]. Use -h/--help for more information.
-```
-
-
 ## raptor_subcommand
 
 ### Tool Description
@@ -230,7 +140,6 @@ Please specify which sub-program you want to use: one of [build, layout, prepare
 ```text
 [Error] You misspelled the subcommand! Please specify which sub-program you want to use: one of [build, layout, prepare, search, upgrade]. Use -h/--help for more information.
 ```
-
 
 ## Metadata
 - **Skill**: generated

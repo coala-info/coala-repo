@@ -22,36 +22,6 @@ terminate called after throwing an instance of 'std::logic_error'
   what():  basic_string: construction from null is not valid
 ```
 
-
-## dms_MS-comp-taxa-dynamic
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dms:1.1--h9948957_2
-- **Homepage**: https://github.com/qibebt-bioinfo/dynamic-meta-storms
-- **Package**: https://anaconda.org/channels/bioconda/packages/dms/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-terminate called after throwing an instance of 'std::logic_error'
-  what():  basic_string: construction from null is not valid
-```
-
-
 ## dms_MS-make-ref
 
 ### Tool Description
@@ -77,36 +47,6 @@ Options:
 	  -o Output reference name, default is "tree.dms" 
 	  -h Help
 ```
-
-
-## dms_MS-comp-taxa
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dms:1.1--h9948957_2
-- **Homepage**: https://github.com/qibebt-bioinfo/dynamic-meta-storms
-- **Package**: https://anaconda.org/channels/bioconda/packages/dms/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-terminate called after throwing an instance of 'std::logic_error'
-  what():  basic_string: construction from null is not valid
-```
-
 
 ## Metadata
 - **Skill**: generated

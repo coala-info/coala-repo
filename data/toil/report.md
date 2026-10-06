@@ -72,7 +72,6 @@ Logging Options:
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
 
-
 ## toil_config
 
 ### Tool Description
@@ -116,7 +115,6 @@ Logging Options:
                         from getting too big.
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
-
 
 ## toil_debug-file
 
@@ -209,7 +207,6 @@ Logging Options:
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
 
-
 ## toil_debug-job
 
 ### Tool Description
@@ -289,7 +286,6 @@ Logging Options:
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
 
-
 ## toil_destroy-cluster
 
 ### Tool Description
@@ -357,7 +353,6 @@ Logging Options:
                         from getting too big. (default: False)
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
-
 
 ## toil_kill
 
@@ -427,7 +422,6 @@ Logging Options:
                         from getting too big. (default: False)
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
-
 
 ## toil_launch-cluster
 
@@ -591,7 +585,6 @@ Logging Options:
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
 
-
 ## toil_rsync-cluster
 
 ### Tool Description
@@ -669,35 +662,6 @@ Logging Options:
                         from getting too big. (default: False)
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
-
-
-## toil_server
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/toil:7.0.0--pyhdfd78af_0
-- **Homepage**: https://toil.ucsc-cgl.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/toil/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-The toil[server] extra is not installed.
-```
-
 
 ## toil_ssh-cluster
 
@@ -778,7 +742,6 @@ Logging Options:
                         from getting too big. (default: False)
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
-
 
 ## toil_stats
 
@@ -865,7 +828,6 @@ Logging Options:
                         from getting too big. (default: False)
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
-
 
 ## toil_status
 
@@ -958,7 +920,6 @@ Logging Options:
                         from getting too big. (default: False)
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
-
 
 ## Metadata
 - **Skill**: generated

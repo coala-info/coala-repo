@@ -4,7 +4,6 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| baczy_citation | Failed | not a usable tool: it only prints a citation, the baseCommand is the CWL file name, and its inputs are DOI lines from the help. |
 | baczy_config | PASS |  |
 | baczy_run | Not completed | the Snakemake pipeline needs Bakta and GTDB-Tk databases plus per-rule Singularity or conda environments with network access; fastp, megahit and bakta are not in the image. |
 
@@ -77,31 +76,6 @@ Usage: baczy config [OPTIONS]
 Options:
   --configfile TEXT  Copy template config to file  [default: config.yaml]
   -h, --help         Show this message and exit.
-```
-
-
-## baczy_citation
-
-### Tool Description
-Please cite sphaehost in your paper using this article:
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/baczy:1.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/npbhavya/baczy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/baczy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Please cite sphaehost in your paper using this article:
-
-
-Please consider also citing these dependencies:
-Snaketool:
-https://doi.org/10.1371/journal.pcbi.1010705
-
-Snakemake:
-https://doi.org/10.12688/f1000research.29032.1
 ```
 
 

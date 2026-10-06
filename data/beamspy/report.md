@@ -58,7 +58,6 @@ options:
                         Number of central processing units (CPUs).
 ```
 
-
 ## beamspy_annotate-peak-patterns
 
 ### Tool Description
@@ -106,7 +105,6 @@ options:
                         Maximum number of monomer units.
 ```
 
-
 ## beamspy_annotate-mf
 
 ### Tool Description
@@ -145,7 +143,6 @@ options:
   -z MAX_MZ, --max-mz MAX_MZ
                         Maximum m/z value to assign molecular formula(e).
 ```
-
 
 ## beamspy_annotate-compounds
 
@@ -187,7 +184,6 @@ options:
                         isotope patterns) to filter annotations.
   -r RT, --rt RT        Retention time tolerance in seconds.
 ```
-
 
 ## beamspy_summary-results
 
@@ -232,39 +228,6 @@ options:
                         Covert the retention time to seconds or minutes. An
                         additional column will be added.
 ```
-
-
-## beamspy_start-gui
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/beamspy:1.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/computational-metabolomics/beamspy
-- **Package**: https://anaconda.org/channels/bioconda/packages/beamspy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Executing BEAMSpy version 1.2.0.
-usage: beamspy start-gui [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: not generated

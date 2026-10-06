@@ -1,48 +1,5 @@
 # jass CWL Generation Report
 
-## jass_serve
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/jass:2.3--pyhca03a8a_0
-- **Homepage**: http://statistical-genetics.pages.pasteur.fr/jass/
-- **Package**: https://anaconda.org/channels/bioconda/packages/jass/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/jass/overview
-- **Total Downloads**: 9.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-**     *******      *******   *******
-        **    **     **    **        **
-        **   **       **   **        **
-        **   **       **    ******    ******
-        **   ***********         **        **
- **     **   **       **         **        **
-  *******    **       **   *******   *******
-
-
-usage: jass serve [-h]
-jass serve: error: argument -h/--help: ignored explicit argument 'elp'
-```
-
-
 ## jass_list-phenotypes
 
 ### Tool Description
@@ -64,11 +21,9 @@ List available phenotypes
  **     **   **       **         **        **
   *******    **       **   *******   *******
 
-
 usage: jass list-phenotypes [-h] [--init-table-path INIT_TABLE_PATH]
 jass list-phenotypes: error: argument -h/--help: ignored explicit argument 'elp'
 ```
-
 
 ## jass_create-project-data
 
@@ -149,7 +104,6 @@ options:
   --strategy STRATEGY
 ```
 
-
 ## jass_clean-project-data
 
 ### Tool Description
@@ -171,12 +125,10 @@ Cleans project data by removing files that have not been accessed for a specifie
  **     **   **       **         **        **
   *******    **       **   *******   *******
 
-
 usage: jass clean-project-data [-h]
                                [--max-days-without-access MAX_DAYS_WITHOUT_ACCESS]
 jass clean-project-data: error: argument -h/--help: ignored explicit argument 'elp'
 ```
-
 
 ## jass_create-inittable
 
@@ -216,7 +168,6 @@ options:
                         path to the genetic covariance file to import. Used
                         only for display on Jass web application
 ```
-
 
 ## jass_create-worktable
 
@@ -283,7 +234,6 @@ options:
   --strategy STRATEGY
 ```
 
-
 ## jass_plot-manhattan
 
 ### Tool Description
@@ -305,12 +255,10 @@ Generates a Manhattan plot from a JASS worktable.
  **     **   **       **         **        **
   *******    **       **   *******   *******
 
-
 usage: jass plot-manhattan [-h] --worktable-path WORKTABLE_PATH --plot-path
                            PLOT_PATH
 jass plot-manhattan: error: the following arguments are required: --worktable-path, --plot-path
 ```
-
 
 ## jass_qq-plot
 
@@ -333,11 +281,9 @@ Generates a QQ plot from a worktable.
  **     **   **       **         **        **
   *******    **       **   *******   *******
 
-
 usage: jass qq-plot [-h] --worktable-path WORKTABLE_PATH --plot-path PLOT_PATH
 jass qq-plot: error: argument -h/--help: ignored explicit argument 'elp'
 ```
-
 
 ## jass_plot-quadrant
 
@@ -365,7 +311,6 @@ options:
   --significance-treshold SIGNIFICANCE_TRESHOLD
                         threshold at which a p-value is considered significant
 ```
-
 
 ## jass_add-gene-annotation
 
@@ -396,7 +341,6 @@ options:
   --exon-csv-path EXON_CSV_PATH
                         path to the file df_exon.csv
 ```
-
 
 ## jass_extract-tsv
 
@@ -431,7 +375,6 @@ options:
                         double entry table summarizing the number of
                         significant regions by test (univariate vs joint test)
 ```
-
 
 ## Metadata
 - **Skill**: generated

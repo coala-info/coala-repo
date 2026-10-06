@@ -80,38 +80,6 @@ general arguments:
   -h, --help            show this help message and exit
 ```
 
-
-## nanomotif_assembly
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/nanomotif/
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanomotif/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: nanomotif [-h] [--version]
-                 {motif_discovery, detect_contamination, include_contigs,
-                 MTase-linker, check_installation} ...
-nanomotif: error: argument {motif_discovery, detect_contamination, include_contigs, MTase-linker, check_installation}: invalid choice: 'assembly' (choose from motif_discovery, detect_contamination, include_contigs, MTase-linker, check_installation)
-```
-
-
 ## nanomotif_detect_contamination
 
 ### Tool Description
@@ -172,7 +140,6 @@ Mandatory Arguments:
                         Path to bins.tsv file for contig bins
   --out OUT             Path to output directory
 ```
-
 
 ## nanomotif_include_contigs
 
@@ -243,7 +210,6 @@ Mandatory Arguments:
   --out OUT             Path to output directory
 ```
 
-
 ## nanomotif_MTase-linker
 
 ### Tool Description
@@ -267,69 +233,6 @@ MTase-linker commands:
     run          Run the MTase-linker workflow
     install      Install additional dependencies for MTase-linker
 ```
-
-
-## nanomotif_check_installation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/nanomotif/
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanomotif/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: nanomotif check_installation [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
-## nanomotif_installation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/nanomotif/
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanomotif/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: nanomotif [-h] [--version]
-                 {motif_discovery, detect_contamination, include_contigs,
-                 MTase-linker, check_installation} ...
-nanomotif: error: argument {motif_discovery, detect_contamination, include_contigs, MTase-linker, check_installation}: invalid choice: 'installation' (choose from motif_discovery, detect_contamination, include_contigs, MTase-linker, check_installation)
-```
-
 
 ## Metadata
 - **Skill**: generated

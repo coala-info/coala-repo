@@ -169,7 +169,6 @@ options:
                         Limit lines emitted for commands executed (default: -)
 ```
 
-
 ## bioconda-utils_dag
 
 ### Tool Description
@@ -220,7 +219,6 @@ options:
   --log-command-max-lines LOG_COMMAND_MAX_LINES
                         Limit lines emitted for commands executed (default: -)
 ```
-
 
 ## bioconda-utils_dependent
 
@@ -273,7 +271,6 @@ options:
   --log-command-max-lines LOG_COMMAND_MAX_LINES
                         Limit lines emitted for commands executed (default: -)
 ```
-
 
 ## bioconda-utils_lint
 
@@ -362,7 +359,6 @@ options:
                         Limit lines emitted for commands executed (default: -)
 ```
 
-
 ## bioconda-utils_duplicates
 
 ### Tool Description
@@ -407,7 +403,6 @@ options:
   --log-command-max-lines LOG_COMMAND_MAX_LINES
                         Limit lines emitted for commands executed (default: -)
 ```
-
 
 ## bioconda-utils_update-pinning
 
@@ -473,7 +468,6 @@ options:
   --log-command-max-lines LOG_COMMAND_MAX_LINES
                         Limit lines emitted for commands executed (default: -)
 ```
-
 
 ## bioconda-utils_bioconductor-skeleton
 
@@ -562,7 +556,6 @@ options:
                         Limit lines emitted for commands executed (default: -)
 ```
 
-
 ## bioconda-utils_clean-cran-skeleton
 
 ### Tool Description
@@ -613,7 +606,6 @@ options:
   --log-command-max-lines LOG_COMMAND_MAX_LINES
                         Limit lines emitted for commands executed (default: -)
 ```
-
 
 ## bioconda-utils_autobump
 
@@ -727,7 +719,6 @@ options:
                         Limit lines emitted for commands executed (default: -)
 ```
 
-
 ## bioconda-utils_handle-merged-pr
 
 ### Tool Description
@@ -787,7 +778,6 @@ options:
                         Limit lines emitted for commands executed (default: -)
 ```
 
-
 ## bioconda-utils_annotate-build-failures
 
 ### Tool Description
@@ -829,7 +819,6 @@ options:
                         (default: False)
 ```
 
-
 ## bioconda-utils_list-build-failures
 
 ### Tool Description
@@ -869,41 +858,6 @@ options:
                         HEAD" to check commits in HEAD vs master, or just
                         "HEAD" to include uncommitted changes). (default: -)
 ```
-
-
-## bioconda-utils_bulk-trigger-ci
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bioconda-utils:4.0.0--pyhdfd78af_0
-- **Homepage**: http://bioconda.github.io/build-system.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/bioconda-utils/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: bioconda-utils bulk-trigger-ci [-h]
-
-Create an empty commit with the string "[ci run]" and push, which
-triggers a bulk CI run. Must be on the `bulk` branch.
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

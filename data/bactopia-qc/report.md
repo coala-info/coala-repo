@@ -4,12 +4,12 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| bactopia-qc | Failed | not a usable tool: wraps the bare java interpreter with a free main-class string and invented --output-r1 flags; the in=/in2= options belong to BBTools repair.sh, a dependency in the image. |
+| bactopia-qc | Failed | tool bug: the bactopia-qc script keeps unrendered Nextflow placeholders (bbduk.sh -Xmx!{xmx}, ain=!{params.ain}), so Java fails to start and every real read set ends as error FASTQs. |
 
 ## bactopia-qc
 
 ### Tool Description
-Splits paired-end reads into separate files for read 1, read 2, and unpaired reads.
+Quality control of Illumina or Oxford Nanopore reads for Bactopia (read-pair repair, adapter and PhiX removal, coverage reduction, read statistics).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bactopia-qc:1.0.3--hdfd78af_0
@@ -24,16 +24,9 @@ Splits paired-end reads into separate files for read 1, read 2, and unpaired rea
 - **Stars**: N/A
 ### Original Help Text
 ```text
-java -ea -Xmx34970m -cp /usr/local/opt/bbmap-39.08-0/current/ jgi.SplitPairsAndSingles rp in= in2= out=repair-r1.fq out2=repair-r2.fq outs=repair-singles.fq ain=!{params.ain}
-Executing jgi.SplitPairsAndSingles [rp, in=, in2=, out=repair-r1.fq, out2=repair-r2.fq, outs=repair-singles.fq, ain=!{params.ain}]
+bactopia-qc - v1.0.3
 
-Exception in thread "main" java.lang.RuntimeException: Error - at least one input file is required.
-	at jgi.SplitPairsAndSingles.<init>(SplitPairsAndSingles.java:149)
-	at jgi.SplitPairsAndSingles.main(SplitPairsAndSingles.java:37)
-cp: missing destination file operand after 'results/--help_R1.error-fastq.gz'
-Try 'cp --help' for more information.
-cp: missing destination file operand after 'results/--help_R2.error-fastq.gz'
-Try 'cp --help' for more information.
-pigz: skipping: repair-singles.fq does not exist
+bactopia-qc <PREFIX> <RUNTYPE> <R1> <R2> <GENOME_SIZE_FILE> <OPT1> ... <OPTN>
 ```
+
 

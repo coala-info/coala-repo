@@ -54,7 +54,6 @@ options:
                         only works with MSA input (--msa).
 ```
 
-
 ## olivar_tiling
 
 ### Tool Description
@@ -124,7 +123,6 @@ options:
   --deg                 Control whether use degenerate mode or not.
 ```
 
-
 ## olivar_Olivar
 
 ### Tool Description
@@ -141,7 +139,6 @@ olivar: error: argument subparser_name: invalid choice: 'Olivar' (choose from bu
 usage: olivar [-h] [--version] {build,tiling,save,specificity,sensitivity} ...
 olivar: error: argument subparser_name: invalid choice: 'Olivar' (choose from build, tiling, save, specificity, sensitivity)
 ```
-
 
 ## olivar_save
 
@@ -166,7 +163,6 @@ options:
   --output <string>, -o <string>
                         Output path (output to current directory by default).
 ```
-
 
 ## olivar_specificity
 
@@ -211,7 +207,6 @@ options:
                         Number of threads [1].
 ```
 
-
 ## olivar_sensitivity
 
 ### Tool Description
@@ -253,54 +248,6 @@ options:
                         Number of threads [1].
   --align, -a           Control whether do alignment or not.
 ```
-
-
-## olivar_an
-
-### Tool Description
-olivar: error: argument subparser_name: invalid choice: 'an' (choose from build, tiling, save, specificity, sensitivity)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/olivar:1.3.3--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/treangenlab/olivar
-- **Package**: https://anaconda.org/channels/bioconda/packages/olivar/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: olivar [-h] [--version] {build,tiling,save,specificity,sensitivity} ...
-olivar: error: argument subparser_name: invalid choice: 'an' (choose from build, tiling, save, specificity, sensitivity)
-```
-
-
-## olivar_primer
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/olivar:1.3.3--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/treangenlab/olivar
-- **Package**: https://anaconda.org/channels/bioconda/packages/olivar/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: olivar [-h] [--version] {build,tiling,save,specificity,sensitivity} ...
-olivar: error: argument subparser_name: invalid choice: 'primer' (choose from build, tiling, save, specificity, sensitivity)
-```
-
 
 ## Metadata
 - **Skill**: generated

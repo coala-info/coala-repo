@@ -7,39 +7,6 @@
 | baitfisher_BaitFilter | PASS |  |
 | baitfisher_BaitFisher | PASS |  |
 
-## baitfisher
-
-### Tool Description
-FAIL to generate CWL: baitfisher not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: biocontainers/baitfisher:v1.2.7git20180107.e92dbf2dfsg-1-deb_cv1
-- **Homepage**: https://github.com/cmayer/BaitFisher-package
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/baitfisher/overview
-- **Total Downloads**: 9.3K
-- **Last updated**: 2025-10-08
-- **GitHub**: https://github.com/cmayer/BaitFisher-package
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: baitfisher not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: baitfisher not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: not generated
 
@@ -76,7 +43,6 @@ BaitFilter is designed to post-process the output of the BaitFisher program to s
 ```text
 Welcome to Bait-Filter, version 1.0.6.
 
-
 USAGE: 
 
    /usr/bin/BaitFilter  -i <string> [-o <string>] [-c <string>] [-m
@@ -90,7 +56,6 @@ USAGE:
                         <string>] [-t <positive integer>] [--ID-prefix
                         <string>] [-S] [--verbosity <unsigned integer>] [-b
                         <string>] [--] [--version] [-h]
-
 
 Where: 
 
@@ -171,7 +136,6 @@ Where:
      "thin-s-old":  Similar to thin-s, but treats all loci as if they come
      from one alignment file. Identical to behaviour of thin-b in version
      1.0.5 or earlier.
-
 
    --blast-second-hit-evalue <floating point number>
      Maximum E-value for the second or second best hit. A bait is
@@ -264,7 +228,6 @@ Where:
 
      This option has no effect if combined with the -m or -c modes.
 
-
    --verbosity <unsigned integer>
      The verbosity option controls the amount of information Bait-Filter
      writes to the console while running. 0: Print only welcome message and
@@ -273,7 +236,6 @@ Where:
      progress, >10: debug output. Maximum 10000: write all possible
      diagnostic output. A value of 2 is required if startup parameters
      should be reported.
-
 
    -b <string>,  --blast-result-file <string>
      Conducting a blast analysis of all baits against a reference genome
@@ -303,7 +265,6 @@ Where:
 
    -h,  --help
      Displays usage information and exits.
-
 
    The Bait-Filter program has been designed to post process the output of
    the BaitFisher program in order select appropriate bait regions and to

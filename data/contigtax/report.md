@@ -1,29 +1,5 @@
 # contigtax CWL Generation Report
 
-## contigtax_valid
-
-### Tool Description
-A tool for taxonomic assignment of contigs.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0
-- **Homepage**: https://github.com/NBISweden/contigtax
-- **Package**: https://anaconda.org/channels/bioconda/packages/contigtax/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/contigtax/overview
-- **Total Downloads**: 6.0K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/NBISweden/contigtax
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: contigtax [-h] [-v]
-                 {download,format,update,build,search,assign,transfer} ...
-contigtax: error: invalid choice: 'valid' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer')
-```
-
-
 ## contigtax_download
 
 ### Tool Description
@@ -63,7 +39,6 @@ optional arguments:
                         'nr' database).
 ```
 
-
 ## contigtax_format
 
 ### Tool Description
@@ -102,7 +77,6 @@ optional arguments:
   --tmpdir TMPDIR       Temporary directory for writing fasta files
 ```
 
-
 ## contigtax_map
 
 ### Tool Description
@@ -120,7 +94,6 @@ usage: contigtax [-h] [-v]
                  {download,format,update,build,search,assign,transfer} ...
 contigtax: error: invalid choice: 'map' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer')
 ```
-
 
 ## contigtax_update
 
@@ -145,7 +118,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
 
 ## contigtax_build
 
@@ -176,7 +148,6 @@ optional arguments:
                         file
   -p CPUS, --cpus CPUS  Number of cpus to use when building (defaults to 1)
 ```
-
 
 ## contigtax_search
 
@@ -225,7 +196,6 @@ optional arguments:
   --taxonmap TAXONMAP   Protein accession to taxid mapfile (must be gzipped).
                         Only required for searchingif diamond version <0.9.19
 ```
-
 
 ## contigtax_assign
 
@@ -305,7 +275,6 @@ performance:
                         complete much faster than using the default value of 1
 ```
 
-
 ## contigtax_transfer
 
 ### Tool Description
@@ -343,7 +312,6 @@ optional arguments:
                         complete much faster than using the default value of
                         1.
 ```
-
 
 ## Metadata
 - **Skill**: generated

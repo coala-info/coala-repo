@@ -54,7 +54,6 @@ options:
                         provide a valid species. (default: )
 ```
 
-
 ## abritamr_report
 
 ### Tool Description
@@ -86,35 +85,6 @@ options:
   --sop_name SOP_NAME   The name of the process - will be reflected in the
                         names od the output files. (default: )
 ```
-
-
-## abritamr_update_db
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/abritamr:1.0.20--pyh5707d69_0
-- **Homepage**: https://github.com/MDU-PHL/abritamr
-- **Package**: https://anaconda.org/channels/bioconda/packages/abritamr/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[31;1m[CRITICAL:02/24/2026 04:19:58 AM] It seems that /usr/local/lib/python3.14/site-packages/abritamr/db/update_vars.json does not exist. Please check your installation and try again.[0m
-```
-
 
 ## Metadata
 - **Skill**: generated

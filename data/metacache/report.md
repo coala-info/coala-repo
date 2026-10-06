@@ -39,7 +39,6 @@ USAGE:
     merge         merge classification results of independent queries
     info          show database and reference sequence properties
 
-
 EXAMPLES:
 
     Query single FASTA file 'myreads.fna' against pre-built database 'refseq':
@@ -62,7 +61,6 @@ EXAMPLES:
     View documentation on how to build databases:
         metacache help build
 ```
-
 
 ## metacache_build
 
@@ -88,11 +86,9 @@ USAGE:
 
     metacache build <database> [OPTION]... <sequence file/directory>...
 
-
 You can view the full interface documentation of mode 'build' with:
     metacache help build | less
 ```
-
 
 ## metacache_modify
 
@@ -118,11 +114,9 @@ USAGE:
 
     metacache modify <database> [OPTION]... <sequence file/directory>...
 
-
 You can view the full interface documentation of mode 'modify' with:
     metacache help modify | less
 ```
-
 
 ## metacache_query
 
@@ -149,11 +143,9 @@ USAGE:
 
     metacache query <database> [OPTION]... <sequence file/directory>...
 
-
 You can view the full interface documentation of mode 'query' with:
     metacache help query | less
 ```
-
 
 ## metacache_build+query
 
@@ -184,11 +176,9 @@ USAGE:
 
     metacache build+query [OPTION]... -targets <sequence file/directory>... -query <sequence file/directory>...
 
-
 You can view the full interface documentation of mode 'build+query' with:
     metacache help build+query | less
 ```
-
 
 ## metacache_merge
 
@@ -215,64 +205,9 @@ USAGE:
 
     metacache merge -taxonomy <path> [-out <result>] [OPTION]... <query file/directory>...
 
-
 You can view the full interface documentation of mode 'merge' with:
     metacache help merge | less
 ```
-
-
-## metacache_info
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metacache:2.6.0--h077b44d_0
-- **Homepage**: https://github.com/muellan/metacache
-- **Package**: https://anaconda.org/channels/bioconda/packages/metacache/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-------------------------------------------------
-MetaCache version  2.6.0 (20260121)
-database version   20200820
-------------------------------------------------
-sequence type      mc::char_sequence
-target id type     unsigned int 32 bits
-target limit       4294967295
-------------------------------------------------
-window id type     unsigned int 32 bits
-window limit       4294967295
-window length      0
-window stride      0
-------------------------------------------------
-sketcher type      mc::single_function_unique_min_hasher<unsigned int, mc::same_size_hash<unsigned int> >
-feature type       unsigned int 32 bits
-feature hash       mc::same_size_hash<unsigned int>
-kmer size          0
-kmer limit         16
-sketch size        0
-------------------------------------------------
-bucket size type   unsigned char 8 bits
-max. locations     254
-location limit     254
-------------------------------------------------
-hit classifier       mc::best_distinct_matches_in_contiguous_window_ranges
-------------------------------------------------
-```
-
 
 ## Metadata
 - **Skill**: generated

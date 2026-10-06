@@ -56,7 +56,6 @@ MinYS: A pipeline for de novo assembly of circular DNA molecules
   -nb-cores             (1 arg) :    Number of cores [Default: 0]
 ```
 
-
 ## minys_filter_components.py
 
 ### Tool Description
@@ -80,38 +79,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
-
-## minys_enumerate_paths.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/minys:1.1--hc9558a2_1
-- **Homepage**: https://github.com/cguyomar/MinYS
-- **Package**: https://anaconda.org/channels/bioconda/packages/minys/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/enumerate_paths.py", line 15, in <module>
-    from progress.bar import Bar
-ModuleNotFoundError: No module named 'progress'
-```
-
 
 ## Metadata
 - **Skill**: generated

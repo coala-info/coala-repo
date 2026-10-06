@@ -1,41 +1,5 @@
 # hymet CWL Generation Report
 
-## hymet_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hymet:1.3.0--hdfd78af_0
-- **Homepage**: https://github.com/inesbmartins02/HYMET
-- **Package**: https://anaconda.org/channels/bioconda/packages/hymet/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/hymet/overview
-- **Total Downloads**: 230
-- **Last updated**: 2026-02-14
-- **GitHub**: https://github.com/inesbmartins02/HYMET
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: hymet version [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## hymet_init
 
 ### Tool Description
@@ -56,7 +20,6 @@ options:
   --quiet, -q      Don't exit with error on missing files
   --skip-taxonomy  Skip automatic NCBI taxonomy download
 ```
-
 
 ## hymet_run
 
@@ -93,7 +56,6 @@ options:
   --keep-work           Set KEEP_HYMET_WORK=1 to retain intermediates
   --dry-run             Show commands without executing them
 ```
-
 
 ## hymet_bench
 
@@ -135,7 +97,6 @@ options:
   --dry-run             Show commands without executing them
 ```
 
-
 ## hymet_case
 
 ### Tool Description
@@ -168,7 +129,6 @@ options:
   --keep-work           Set KEEP_HYMET_WORK=1 to retain intermediates
   --dry-run             Show commands without executing them
 ```
-
 
 ## hymet_ablation
 
@@ -208,7 +168,6 @@ options:
   --dry-run             Show commands without executing them
 ```
 
-
 ## hymet_truth
 
 ### Tool Description
@@ -232,7 +191,6 @@ options:
   -h, --help    show this help message and exit
 ```
 
-
 ## hymet_legacy
 
 ### Tool Description
@@ -255,7 +213,6 @@ HYMET now ships with a unified CLI (bin/hymet). For batch runs try:
 Please enter the path to the input directory (containing .fna files): [hymet] (/usr/local/share/hymet) $ perl /usr/local/share/hymet/main.pl
 ```
 
-
 ## hymet_artifacts
 
 ### Tool Description
@@ -275,7 +232,6 @@ options:
   -h, --help  show this help message and exit
   --dry-run   Show commands without executing them
 ```
-
 
 ## Metadata
 - **Skill**: generated

@@ -57,7 +57,6 @@ Options:
     -h  Prints a short help text.
 ```
 
-
 ## magetab-curation-scripts_magetab_insert_array.pl
 
 ### Tool Description
@@ -99,95 +98,6 @@ Options:
       Print a helpful message.
 ```
 
-
-## magetab-curation-scripts_launch_tracking_daemons.pl
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/magetab-curation-scripts:1.1.0--hdfd78af_0
-- **Homepage**: https://github.com/ebi-gene-expression-group/perl-curation-scripts
-- **Package**: https://anaconda.org/channels/bioconda/packages/magetab-curation-scripts/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/atlasprod/supporting_files/ArrayExpressSiteConfig.yml not present, initialising from /usr/local/atlasprod/supporting_files/ArrayExpressSiteConfig.yml.default at /usr/local/atlasprod/perl_modules/Atlas/Util.pm line 134.
-Use of uninitialized value in lc at /usr/local/lib/perl5/5.26.2/perl_lib/lib/perl5/Class/DBI.pm line 201.
-Can't connect to data source 'xxxx' because I can't work out what driver to use (it doesn't seem to contain a 'dbi:driver:' prefix and the DBI_DRIVER env var is not set) at /usr/local/lib/perl5/5.26.2/perl_lib/lib/perl5/Ima/DBI.pm line 328.
-```
-
-
-## magetab-curation-scripts_single_use_tracking_daemon.pl
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/magetab-curation-scripts:1.1.0--hdfd78af_0
-- **Homepage**: https://github.com/ebi-gene-expression-group/perl-curation-scripts
-- **Package**: https://anaconda.org/channels/bioconda/packages/magetab-curation-scripts/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/atlasprod/supporting_files/ArrayExpressSiteConfig.yml not present, initialising from /usr/local/atlasprod/supporting_files/ArrayExpressSiteConfig.yml.default at /usr/local/atlasprod/perl_modules/Atlas/Util.pm line 134.
-Use of uninitialized value in lc at /usr/local/lib/perl5/5.26.2/perl_lib/lib/perl5/Class/DBI.pm line 201.
-Can't connect to data source 'xxxx' because I can't work out what driver to use (it doesn't seem to contain a 'dbi:driver:' prefix and the DBI_DRIVER env var is not set) at /usr/local/lib/perl5/5.26.2/perl_lib/lib/perl5/Ima/DBI.pm line 328.
-```
-
-
-## magetab-curation-scripts_comment_out_assays.pl
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/magetab-curation-scripts:1.1.0--hdfd78af_0
-- **Homepage**: https://github.com/ebi-gene-expression-group/perl-curation-scripts
-- **Package**: https://anaconda.org/channels/bioconda/packages/magetab-curation-scripts/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Undefined subroutine &main::pod2usage called at /usr/local/bin/comment_out_assays.pl line 122.
-```
-
-
 ## magetab-curation-scripts_gal2adf.pl
 
 ### Tool Description
@@ -215,7 +125,6 @@ Usage: gal2adf.pl -i <input gal file>
 
                   -h <this help text>
 ```
-
 
 ## Metadata
 - **Skill**: generated

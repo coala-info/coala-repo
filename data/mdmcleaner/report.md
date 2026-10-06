@@ -66,7 +66,6 @@ options:
                         verified)
 ```
 
-
 ## mdmcleaner_makedb
 
 ### Tool Description
@@ -106,7 +105,6 @@ options:
   --quiet               quiet mode (suppress any status messages except Errors
                         and Warnings)
 ```
-
 
 ## mdmcleaner_get_markers
 
@@ -152,7 +150,6 @@ options:
                         be ignored)
 ```
 
-
 ## mdmcleaner_completeness
 
 ### Tool Description
@@ -190,7 +187,6 @@ options:
                         be ignored)
 ```
 
-
 ## mdmcleaner_acc2taxpath
 
 ### Tool Description
@@ -221,7 +217,6 @@ options:
                         '/usr/local/lib/python3.11/site-
                         packages/mdmcleaner/mdmcleaner.config'
 ```
-
 
 ## mdmcleaner_refdb_contams
 
@@ -263,7 +258,6 @@ options:
                         appended to end of that file
 ```
 
-
 ## mdmcleaner_set_configs
 
 ### Tool Description
@@ -301,7 +295,6 @@ options:
                         path to basedirectory for reference database
   --threads THREADS     threads to use by default
 ```
-
 
 ## mdmcleaner_show_configs
 
@@ -347,7 +340,6 @@ db_type	['gtdb']	/usr/local/lib/python3.11/site-packages/mdmcleaner/mdmcleaner.c
 blacklistfile	['/usr/local/lib/python3.11/site-packages/mdmcleaner/blacklist.list']	default
 ```
 
-
 ## mdmcleaner_check_dependencies
 
 ### Tool Description
@@ -379,7 +371,6 @@ reading settings from configfile: "/usr/local/lib/python3.11/site-packages/mdmcl
 		aragorn = 'aragorn'
 		prodigal = 'prodigal'
 
-
 	checking dependencies...
 		wget...1.20.3 --> OK!
 		blastn...2.13.0 --> OK!
@@ -395,36 +386,6 @@ reading settings from configfile: "/usr/local/lib/python3.11/site-packages/mdmcl
 
 SUCCESS: all dependencies are being met
 ```
-
-
-## mdmcleaner_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mdmcleaner:0.8.7--pyh7cba7a3_0
-- **Homepage**: https://github.com/KIT-IBG-5/mdmcleaner
-- **Package**: https://anaconda.org/channels/bioconda/packages/mdmcleaner/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: mdmcleaner version [-h]
-mdmcleaner version: error: argument -h/--help: ignored explicit argument 'elp'
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -4,7 +4,6 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| allhic_alleles | Failed | not a usable tool: allhic alleles in 0.9.14 is an unfinished stub that only parses the PAF and counts files and writes no output. |
 | allhic_assess | PASS | Yeast Hi-C reads (nf-core hic) mapped to a W303 assembly built by allhic; output files were not collected before the fix. |
 | allhic_build | PASS | Built 16 W303 yeast pseudo-chromosomes; CWL fixed: added the required output FASTA name and AGP output. |
 | allhic_extract | Failed | tool bug in allhic 0.9.14: extract closes pairs.txt before writing it, so pairs.txt is always empty (clm, counts and distribution are fine); CWL fixed to stage the BAM and collect outputs. |
@@ -13,41 +12,6 @@
 | allhic_pipeline | Failed | tool bug in allhic 0.9.14: the empty pairs.txt from extract gives 0 partitions and build then panics (index out of range). |
 | allhic_plot | Not completed | allhic plot writes its data and then starts a web server that never exits, so it cannot finish as a batch job. |
 | allhic_prune | PASS | Synthetic data: a planted alleles table on real yeast Hi-C pairs; the planted pair is labelled allelic; CWL fixed to collect the pruned pairs file. |
-
-## allhic_alleles
-
-### Tool Description
-Identify and classify allelic contigs from a PAF file to be used for 'allhic prune'. Generates 'alleles.table'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/allhic:0.9.14--he881be0_0
-- **Homepage**: https://github.com/tanghaibao/allhic
-- **Package**: https://anaconda.org/channels/bioconda/packages/allhic/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/allhic/overview
-- **Total Downloads**: 1.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/tanghaibao/allhic
-- **Stars**: 60
-### Original Help Text
-```text
-Alleles function:
-Given a paf file, we could identify and classify the allelic contigs to be used
-for "allhic prune". We recommend the following parameters to build the paf file:
-
-$ minimap2 -DP -k19 -w19 -m200 -t32 genome.fasta genome.fasta > genome.paf
-
-The PAF file contains all self-alignments, which is the basis for classification.
-ALLHiC generates "alleles.table", which can then be used for later steps.
-
-Usage:
-  allhic alleles genome.paf genome.counts_RE.txt [flags]
-
-Flags:
-  -h, --help   help for alleles
-```
-
 
 ## allhic_assess
 

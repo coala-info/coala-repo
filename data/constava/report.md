@@ -73,36 +73,6 @@ Miscellaneous options:
                         debugging mode.
 ```
 
-
-## constava_Fit
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/constava:1.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/bio2byte/constava
-- **Package**: https://anaconda.org/channels/bioconda/packages/constava/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: constava [-h] [--version] {fit-model,analyze,dihedrals,test} ...
-constava: error: argument subcommand: invalid choice: 'Fit' (choose from fit-model, analyze, dihedrals, test)
-```
-
-
 ## constava_analyze
 
 ### Tool Description
@@ -194,36 +164,6 @@ Miscellaneous options:
                         debugging mode.
 ```
 
-
-## constava_Analyze
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/constava:1.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/bio2byte/constava
-- **Package**: https://anaconda.org/channels/bioconda/packages/constava/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: constava [-h] [--version] {fit-model,analyze,dihedrals,test} ...
-constava: error: argument subcommand: invalid choice: 'Analyze' (choose from fit-model, analyze, dihedrals, test)
-```
-
-
 ## constava_dihedrals
 
 ### Tool Description
@@ -271,36 +211,6 @@ Input & output options:
   -O, --overwrite       If set any previously generated output will be overwritten.
 ```
 
-
-## constava_Obtain
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/constava:1.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/bio2byte/constava
-- **Package**: https://anaconda.org/channels/bioconda/packages/constava/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: constava [-h] [--version] {fit-model,analyze,dihedrals,test} ...
-constava: error: argument subcommand: invalid choice: 'Obtain' (choose from fit-model, analyze, dihedrals, test)
-```
-
-
 ## constava_test
 
 ### Tool Description
@@ -326,36 +236,6 @@ options:
                  multiple times (up to 2) to gradually increase output to
                  debugging mode.
 ```
-
-
-## constava_Run
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/constava:1.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/bio2byte/constava
-- **Package**: https://anaconda.org/channels/bioconda/packages/constava/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: constava [-h] [--version] {fit-model,analyze,dihedrals,test} ...
-constava: error: argument subcommand: invalid choice: 'Run' (choose from fit-model, analyze, dihedrals, test)
-```
-
 
 ## Metadata
 - **Skill**: generated

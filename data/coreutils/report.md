@@ -1,38 +1,5 @@
 # coreutils CWL Generation Report
 
-## coreutils
-
-### Tool Description
-FAIL to generate CWL: coreutils not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/coreutils/overview
-- **Total Downloads**: 222.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/uutils/coreutils
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: coreutils not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: coreutils not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -1021,52 +988,6 @@ Report any translation bugs to <https://translationproject.org/team/>
 Full documentation <https://www.gnu.org/software/coreutils/env>
 or available locally via: info '(coreutils) env invocation'
 ```
-## coreutils_arch
-
-### Tool Description
-Print system architecture
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-BusyBox v1.36.1 (2024-06-02 11:42:27 UTC) multi-call binary.
-
-Usage: arch
-
-Print system architecture
-```
-
-## coreutils_whoami
-
-### Tool Description
-Print the user name associated with the current effective user ID. Same as id -un.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-Usage: /usr/local/bin/whoami [OPTION]...
-Print the user name associated with the current effective user ID.
-Same as id -un.
-
-      --help        display this help and exit
-      --version     output version information and exit
-
-GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
-Report any translation bugs to <https://translationproject.org/team/>
-Full documentation <https://www.gnu.org/software/coreutils/whoami>
-or available locally via: info '(coreutils) whoami invocation'
-```
-
 ## coreutils_uptime
 
 ### Tool Description

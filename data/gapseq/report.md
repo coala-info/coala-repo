@@ -1,90 +1,5 @@
 # gapseq CWL Generation Report
 
-## gapseq_test
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gapseq:1.4.0--h9ee0642_1
-- **Homepage**: https://github.com/jotech/gapseq
-- **Package**: https://anaconda.org/channels/bioconda/packages/gapseq/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/gapseq/overview
-- **Total Downloads**: 3.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/jotech/gapseq
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-gapseq version: 1.4.0
-linux-gnu
-#100-Ubuntu SMP PREEMPT_DYNAMIC Tue Jan 13 16:40:06 UTC 2026 
-
-
-#######################
-#Checking dependencies#
-#######################
--V | head -n 1 NOT FOUND
--N -v /usr/local/lib 2>/dev/null | grep sbml.so NOT FOUND
--N -v /usr/local/lib 2>/dev/null | grep glpk.so NOT FOUND
-GNU Awk 5.3.1, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
-sed (GNU sed) 4.8
-grep (GNU grep) 3.11
-This is perl 5, version 32, subversion 1 (v5.32.1) built for x86_64-linux-thread-multi
-tblastn: 2.16.0+
-exonerate from exonerate version 2.4.0
-bedtools v2.31.1
-barrnap 0.9 - rapid ribosomal RNA prediction
-R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
-git version 2.48.1
-GNU parallel 20241222
-HMMER 3.4 (Aug 2023); http://hmmer.org/
-bc 1.07.1
-
-Missing dependencies: 3
-
-
-#####################
-#Checking R packages#
-#####################
-data.table 1.16.4 
-stringr 1.5.1 
-cobrar 0.1.1 
-getopt 1.20.4 
-R.utils 2.12.3 
-stringi 1.8.4 
-BiocManager 1.30.25 
-Biostrings 2.74.0 
-jsonlite 1.9.0 
-httr 1.4.7 
-
-Missing R packages:  0 
-
-
-##############################
-#Checking basic functionality#
-##############################
-Optimization test: OK 
-Building full model: OK 
-Blast test: OK
-
-Passed tests: 3/3
-```
-
-
 ## gapseq_find
 
 ### Tool Description
@@ -135,7 +50,6 @@ Details:
 "-t": if 'auto', gapseq tries to predict if the organism is Bacteria or Archaea based on the provided genome sequence. The prediction is based on the 16S rRNA gene sequence using a classifier that was trained on 16S rRNA genes from organisms with known Gram-staining phenotype. In case no 16S rRNA gene was found, a k-mer based classifier is used instead.
 ```
 
-
 ## gapseq_find-transport
 
 ### Tool Description
@@ -163,59 +77,6 @@ Usage
   -K Number of threads for sequence alignments. If option is not provided, number of available CPUs will be automatically determined.
 ```
 
-
-## gapseq_draft
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gapseq:1.4.0--h9ee0642_1
-- **Homepage**: https://github.com/jotech/gapseq
-- **Package**: https://anaconda.org/channels/bioconda/packages/gapseq/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-No traceback available 
-2: stop(paste("long flag \"", this_flag, "\" is ambiguous", sep = ""))
-1: getopt(spec)
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-No traceback available 
-1: dir.create(output.dir, recursive = TRUE, showWarnings = FALSE)
-No traceback available
-```
-
-
 ## gapseq_medium
 
 ### Tool Description
@@ -241,7 +102,6 @@ Usage: /usr/local/share/gapseq/src/predict_medium.R [-[-model|m] <character>] [-
     --f|--output.dir      Path to directory, where output files will be saved (default: current directory)
     -h|--help            help
 ```
-
 
 ## gapseq_fill
 
@@ -276,7 +136,6 @@ Usage: /usr/local/share/gapseq/src/gf.suite.R [-[-model|m] <character>] [-[-help
     -w|--write.cs.ferm          Write a list with found carbon sources and fermentation products
     -k|--min.obj.val            Minimum growth rate that should be achieved by gap-filling. Default: 0.01
 ```
-
 
 ## gapseq_doall
 
@@ -342,7 +201,6 @@ Options:
   -K              Number of threads for sequence alignments. If option is not provided, number of available CPUs will be automatically determined.
 ```
 
-
 ## gapseq_adapt
 
 ### Tool Description
@@ -372,7 +230,6 @@ Usage: /usr/local/share/gapseq/src/adapt.R [-[-model|m] <character>] [-[-id|i] [
     -v|--verbose             Verbose output and printing of debug messages. Default: FALSE
 ```
 
-
 ## gapseq_pan
 
 ### Tool Description
@@ -400,7 +257,6 @@ Usage: /usr/local/share/gapseq/src/pan-draft.R [-[-help|h]] [-[-models_path|m] <
     -f|--output.dir                path to directory, where output files will be saved (default: current directory)
     -s|--sbml.no.output            Do not save model as sbml file. Default: Save as SBML
 ```
-
 
 ## Metadata
 - **Skill**: generated

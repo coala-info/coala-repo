@@ -1,102 +1,5 @@
 # ncbi-datasets-cli CWL Generation Report
 
-## ncbi-datasets-cli_summary
-
-### Tool Description
-Print a data report containing gene, genome or virus metadata in JSON format.
-
-### Metadata
-- **Docker Image**: ensemblorg/datasets-cli:v18.25.1
-- **Homepage**: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/how-tos/
-- **Package**: Not found
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/conda-forge/packages/ncbi-datasets-cli/overview
-- **Total Downloads**: 1.1M
-- **Last updated**: 2026-04-30
-- **GitHub**: https://github.com/ncbi/datasets
-- **Stars**: N/A
-### Original Help Text
-```text
-Print a data report containing gene, genome or virus metadata in JSON format.
-
-Usage
-  datasets summary [flags]
-  datasets summary [command]
-
-Sample Commands
-  datasets summary genome accession GCF_000001405.40
-  datasets summary genome taxon "mus musculus"
-  datasets summary gene gene-id 672
-  datasets summary gene symbol brca1 --taxon mouse
-  datasets summary gene accession NP_000483.3
-  datasets summary virus genome accession NC_045512.2
-  datasets summary virus genome taxon sars-cov-2 --host dog
-
-Available Commands
-  gene        Print a summary of a gene dataset
-  genome      Print a data report containing genome metadata
-  virus       Print a data report containing virus genome metadata
-
-Global Flags
-      --api-key string   Specify an NCBI API key
-      --debug            Emit debugging info
-      --help             Print detailed help about a datasets command
-      --version          Print version of datasets
-
-Use datasets summary <command> --help for detailed help about a command.
-```
-
-
-## ncbi-datasets-cli_download
-
-### Tool Description
-Download genome, gene and virus data packages, including sequence, annotation, and metadata, as a zip file.
-
-### Metadata
-- **Docker Image**: ensemblorg/datasets-cli:latest
-- **Homepage**: https://github.com/ncbi/datasets
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Download genome, gene and virus data packages, including sequence, annotation, and metadata, as a zip file.
-
-Refer to NCBI's [download and install](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/) documentation for information about getting started with the command-line tools.
-
-Usage
-  datasets download [command]
-
-Sample Commands
-  datasets download genome accession GCF_000001405.40 --chromosomes X,Y --exclude-gff3 --exclude-rna
-  datasets download genome taxon "bos taurus"
-  datasets download gene gene-id 672
-  datasets download gene symbol brca1 --taxon mouse
-  datasets download gene accession NP_000483.3
-  datasets download virus genome taxon sars-cov-2 --host dog
-  datasets download virus protein S --host dog --filename SARS2-spike-dog.zip
-
-Available Commands
-  gene        Download a gene data package
-  genome      Download a genome data package
-  virus       Download a virus data package
-
-Flags
-      --filename string   Specify a custom file name for the downloaded data package (default "ncbi_dataset.zip")
-      --no-progressbar    Hide progress bar
-
-
-Global Flags
-      --api-key string   Specify an NCBI API key
-      --debug            Emit debugging info
-      --help             Print detailed help about a datasets command
-      --version          Print version of datasets
-
-Use datasets download <command> --help for detailed help about a command.
-```
-
-
 ## ncbi-datasets-cli_rehydrate
 
 ### Tool Description
@@ -122,14 +25,12 @@ Flags
       --match string       Specify substring that matches files for rehydration
       --max-workers int    Limit the maximum number of concurrent download workers (allowed range is 1-30) (default 10)
 
-
 Global Flags
       --api-key string   Specify an NCBI API key
       --debug            Emit debugging info
       --help             Print detailed help about a datasets command
       --version          Print version of datasets
 ```
-
 
 ## ncbi-datasets-cli_completion
 
@@ -168,7 +69,6 @@ Global Flags
 Use datasets completion <command> --help for detailed help about a command.
 ```
 
-
 ## dataformat_tsv
 
 ### Tool Description
@@ -204,8 +104,6 @@ Report Commands
 Flags
       --elide-header   Do not output header
   -h, --help           help for tsv
-
-
 
 Global Flags
       --force   Force dataformat to run without type check prompt
@@ -248,8 +146,6 @@ Report Commands
 Flags
   -h, --help                help for excel
       --outputfile string   Excel workbook file
-
-
 
 Global Flags
       --force   Force dataformat to run without type check prompt
@@ -301,7 +197,6 @@ Flags
                           * product:  Retrieve product data report
                           * ids_only: Only retrieve gene-ids
                              (default "complete")
-
 
 Global Flags
       --api-key string   Specify an NCBI API key
@@ -368,7 +263,6 @@ Flags
       --search strings           Limit results to genomes with specified text in the searchable fields:
                                  species and infraspecies, assembly name and submitter.
                                  To search multiple strings, use the flag multiple times.
-
 
 Global Flags
       --api-key string   Specify an NCBI API key
@@ -490,7 +384,6 @@ Flags
       --fasta-filter-file string   Limit protein and RNA sequence files to the specified RefSeq nucleotide and protein accessions included in the specified file
       --preview                    Show information about the requested data package
 
-
 Global Flags
       --api-key string    Specify an NCBI API key
       --debug             Emit debugging info
@@ -556,7 +449,6 @@ Flags
       --search strings           Limit results to genomes with specified text in the searchable fields:
                                  species and infraspecies, assembly name and submitter.
                                  To search multiple strings, use the flag multiple times.
-
 
 Global Flags
       --api-key string    Specify an NCBI API key

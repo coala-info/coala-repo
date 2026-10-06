@@ -22,7 +22,6 @@ Summate genotype data across specified regions.
 (expected "chromosome:length" or "chromosome:start:end")
 ```
 
-
 ## genodsp_slidingsum
 
 ### Tool Description
@@ -39,7 +38,6 @@ Calculates the sum of values within sliding windows along a genome.
 "slidingsum" contains no chromosome length
 (expected "chromosome:length" or "chromosome:start:end")
 ```
-
 
 ## genodsp_smooth
 
@@ -58,7 +56,6 @@ Smooths genomic data, but requires chromosome length information.
 (expected "chromosome:length" or "chromosome:start:end")
 ```
 
-
 ## genodsp_cumulativesum
 
 ### Tool Description
@@ -76,7 +73,6 @@ Calculates the cumulative sum of values across a genome, potentially considering
 (expected "chromosome:length" or "chromosome:start:end")
 ```
 
-
 ## genodsp_clump
 
 ### Tool Description
@@ -93,36 +89,6 @@ Clumps regions based on proximity. Requires chromosome lengths or explicit start
 "clump" contains no chromosome length
 (expected "chromosome:length" or "chromosome:start:end")
 ```
-
-
-## genodsp_anticlump
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
-- **Homepage**: https://github.com/rsharris/genodsp
-- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-"anticlump" contains no chromosome length
-(expected "chromosome:length" or "chromosome:start:end")
-```
-
 
 ## Metadata
 - **Skill**: generated

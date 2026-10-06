@@ -9,7 +9,7 @@
 | bacpage_phylogeny | Failed | image problem: run_gubbins.py is missing, so the default recombination detection fails; the tree builds only with --no-detect. |
 | bacpage_profile | PASS |  |
 | bacpage_setup | PASS |  |
-| bacpage_utilities | Failed | not a usable tool: wraps only the utilities command group with a subcommand string and no data inputs or outputs. |
+| bacpage_utilities_extract_region | PASS |  |
 
 ## bacpage_assemble
 
@@ -56,7 +56,6 @@ options:
   --verbose             Print lots of stuff to screen.
 ```
 
-
 ## bacpage_setup
 
 ### Tool Description
@@ -82,7 +81,6 @@ options:
   --quiet     Do not display helpful messages during creation.
   --force     Generate directory wihtout checking if it is empty.
 ```
-
 
 ## bacpage_identify_files
 
@@ -112,7 +110,6 @@ options:
   --index INDEX    index of sample name after splitting file name by delim [0]
   --output OUTPUT  location to save sample data ['sample_data.csv']
 ```
-
 
 ## bacpage_phylogeny
 
@@ -159,7 +156,6 @@ options:
   --verbose             Print lots of stuff to screen.
 ```
 
-
 ## bacpage_profile
 
 ### Tool Description
@@ -192,43 +188,10 @@ options:
   --verbose             Print lots of stuff to screen.
 ```
 
-
-## bacpage_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bacpage:2025.08.21--pyhdfd78af_0
-- **Homepage**: https://github.com/CholGen/bacpage
-- **Package**: https://anaconda.org/channels/bioconda/packages/bacpage/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: bacpage version [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
-## bacpage_utilities
+## bacpage_utilities_extract_region
 
 ### Tool Description
-Available utilities:
-  One of the following utilities must be specified:
+Extract regions specified in a bed file from consensus sequences in a project directory.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bacpage:2025.08.21--pyhdfd78af_0
@@ -236,20 +199,25 @@ Available utilities:
 - **Package**: https://anaconda.org/channels/bioconda/packages/bacpage/overview
 - **Validation**: PASS
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bacpage/overview
+- **Total Downloads**: 2.2K
+- **Last updated**: 2025-09-02
+- **GitHub**: https://github.com/CholGen/bacpage
+- **Stars**: N/A
 ### Original Help Text
 ```text
-usage: bacpage utilities [-h] {extract_region} ...
+usage: bacpage utilities extract_region [-h] [--region REGION] directory
+
+Extract regions specified in a bed file from consensus sequences in a project
+directory.
+
+positional arguments:
+  directory        location of FASTQ files [current directory]
 
 options:
-  -h, --help        show this help message and exit
-
-Available utilities:
-  One of the following utilities must be specified:
-
-  {extract_region}
-    extract_region  Extract substring from all consensus sequences.
+  -h, --help       show this help message and exit
+  --region REGION  BED file containing region(s) to extract.
 ```
-
 
 ## Metadata
 - **Skill**: generated

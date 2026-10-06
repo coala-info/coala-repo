@@ -43,7 +43,6 @@ options:
                         Json file output
 ```
 
-
 ## hmnfusion_quantification
 
 ### Tool Description
@@ -89,7 +88,6 @@ options:
                         Json file output
 ```
 
-
 ## hmnfusion_mmej-deletion
 
 ### Tool Description
@@ -117,7 +115,6 @@ options:
   --output-hmnfusion-xlsx OUTPUT_HMNFUSION_XLSX
                         Output file
 ```
-
 
 ## hmnfusion_mmej-fusion
 
@@ -163,7 +160,6 @@ options:
                         Json file output
 ```
 
-
 ## hmnfusion_workflow-align
 
 ### Tool Description
@@ -204,7 +200,6 @@ options:
   --threads [1-6]       Threads used
 ```
 
-
 ## hmnfusion_workflow-hmnfusion
 
 ### Tool Description
@@ -242,7 +237,6 @@ options:
   --output-hmnfusion-vcf OUTPUT_HMNFUSION_VCF
                         Vcf file output
 ```
-
 
 ## hmnfusion_workflow-fusion
 
@@ -297,83 +291,6 @@ options:
   --threads [1-6]       Threads used
 ```
 
-
-## hmnfusion_install-software
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0
-- **Homepage**: https://github.com/guillaume-gricourt/HmnFusion
-- **Package**: https://anaconda.org/channels/bioconda/packages/hmnfusion/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-24-02-2026 15:43 - INFO - Start - install-software
-24-02-2026 15:43 - INFO - Check if software required are installed
-Traceback (most recent call last):
-  File "/usr/local/bin/hmnfusion", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/hmnfusion/__main__.py", line 18, in main
-    args.func(args)
-    ~~~~~~~~~^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/hmnfusion/commands.py", line 723, in _cmd_install_software
-    if not install_software.InstallSoftware.required():
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/hmnfusion/install_software.py", line 68, in required
-    utils.find_executable(name=software)
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/hmnfusion/utils.py", line 187, in find_executable
-    raise ExecutableNotFound(name)
-hmnfusion.utils.ExecutableNotFound: ExecutableNotFound, make
-```
-
-
-## hmnfusion_fusion-flag
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0
-- **Homepage**: https://github.com/guillaume-gricourt/HmnFusion
-- **Package**: https://anaconda.org/channels/bioconda/packages/hmnfusion/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: hmnfusion fusion-flag [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## hmnfusion_download-zenodo
 
 ### Tool Description
@@ -405,7 +322,6 @@ options:
   --output-directory OUTPUT_DIRECTORY
                         Directory to write files
 ```
-
 
 ## Metadata
 - **Skill**: generated

@@ -42,7 +42,6 @@ Options:
     Sample format:  -Z tag,tga,taa
 ```
 
-
 ## tigr-glimmer_build-fixed
 
 ### Tool Description
@@ -72,7 +71,6 @@ Options:
  -t        Output model as text (for debugging only)
  -v <num>  Set verbose level; higher is more diagnostic printouts
 ```
-
 
 ## tigr-glimmer_build-icm
 
@@ -113,56 +111,6 @@ Options:
  -w <num>
     Set length of model window to <num>
 ```
-
-
-## tigr-glimmer_entropy-profile
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1
-- **Homepage**: Not found
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
---- Forward Translation ----    --- Reverse Translation ----
-AA  Count Percen  Entrpy   EFrac    Count Percen  Entrpy   EFrac
-A:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-C:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-D:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-E:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-F:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-G:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-H:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-I:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-K:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-L:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-M:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-N:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-P:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-Q:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-R:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-S:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-T:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-V:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-W:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-Y:      0   0.0%    -nan   0.000        0   0.0%    -nan   0.000
-```
-
 
 ## tigr-glimmer_entropy-score
 
@@ -222,7 +170,6 @@ Options:
     explicitly.
 ```
 
-
 ## tigr-glimmer_extract
 
 ### Tool Description
@@ -278,7 +225,6 @@ Options:
     around the circle.  Use the -d option to specify direction
     explicitly.
 ```
-
 
 ## tigr-glimmer_glimmer3
 
@@ -384,7 +330,6 @@ Options:
     Sample format:  -Z tag,tga,taa
 ```
 
-
 ## tigr-glimmer_long-orfs
 
 ### Tool Description
@@ -464,7 +409,6 @@ Options:
     Sample format:  -Z tag,tga,taa
 ```
 
-
 ## tigr-glimmer_multi-extract
 
 ### Tool Description
@@ -525,7 +469,6 @@ Options:
     explicitly.
 ```
 
-
 ## tigr-glimmer_score-fixed
 
 ### Tool Description
@@ -553,7 +496,6 @@ Options:
  -N        Use NULL negative model, i.e., constant zero
  -s        Output simple format of string num and 1 or -1
 ```
-
 
 ## tigr-glimmer_start-codon-distrib
 
@@ -598,35 +540,6 @@ Options:
     output only a comma separated list (no spaces) of atg, gtg, ttg
 start proportions, in that order
 ```
-
-
-## tigr-glimmer_test
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1
-- **Homepage**: Not found
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Starting at Wed Feb 25 23:22:54 2026
-```
-
 
 ## tigr-glimmer_uncovered
 
@@ -680,7 +593,6 @@ Options:
     explicitly.
 ```
 
-
 ## tigr-glimmer_window-acgt
 
 ### Tool Description
@@ -713,7 +625,6 @@ Options:
  -p  or  --percent
     Output percentages instead of counts
 ```
-
 
 ## Metadata
 - **Skill**: not generated

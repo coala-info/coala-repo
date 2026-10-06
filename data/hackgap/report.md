@@ -1,46 +1,5 @@
 # hackgap CWL Generation Report
 
-## hackgap_The
-
-### Tool Description
-hackgap: error: argument COMMAND: invalid choice: 'The' (choose from count, countwith, pycount, info)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hackgap:1.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/rahmannlab/hackgap
-- **Package**: https://anaconda.org/channels/bioconda/packages/hackgap/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/hackgap/overview
-- **Total Downloads**: 784
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: hackgap [-h] [--version] [--debug] COMMAND ...
-hackgap: error: argument COMMAND: invalid choice: 'The' (choose from count, countwith, pycount, info)
-```
-
-
-## hackgap_COMMAND
-
-### Tool Description
-hackgap: error: argument COMMAND: invalid choice: 'COMMAND' (choose from count, countwith, pycount, info)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hackgap:1.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/rahmannlab/hackgap
-- **Package**: https://anaconda.org/channels/bioconda/packages/hackgap/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: hackgap [-h] [--version] [--debug] COMMAND ...
-hackgap: error: argument COMMAND: invalid choice: 'COMMAND' (choose from count, countwith, pycount, info)
-```
-
-
 ## hackgap_count
 
 ### Tool Description
@@ -111,25 +70,6 @@ options:
                         forever:-1]
 ```
 
-
-## hackgap_or
-
-### Tool Description
-hackgap: error: argument COMMAND: invalid choice: 'or' (choose from count, countwith, pycount, info)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hackgap:1.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/rahmannlab/hackgap
-- **Package**: https://anaconda.org/channels/bioconda/packages/hackgap/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: hackgap [-h] [--version] [--debug] COMMAND ...
-hackgap: error: argument COMMAND: invalid choice: 'or' (choose from count, countwith, pycount, info)
-```
-
-
 ## hackgap_countwith
 
 ### Tool Description
@@ -166,7 +106,6 @@ options:
                         full (all subtables))
 ```
 
-
 ## hackgap_pycount
 
 ### Tool Description
@@ -192,7 +131,6 @@ options:
   -o, --out OUTPUT_PREFIX
                         name of output file (dummy, unused)
 ```
-
 
 ## hackgap_info
 
@@ -245,7 +183,6 @@ options:
                         all, INT)
 ```
 
-
 ## hackgap_counts
 
 ### Tool Description
@@ -262,7 +199,6 @@ hackgap: error: argument COMMAND: invalid choice: 'counts' (choose from count, c
 usage: hackgap [-h] [--version] [--debug] COMMAND ...
 hackgap: error: argument COMMAND: invalid choice: 'counts' (choose from count, countwith, pycount, info)
 ```
-
 
 ## Metadata
 - **Skill**: not generated

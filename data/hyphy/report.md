@@ -92,7 +92,6 @@ save-lf-for-sites
 	default value: null
 ```
 
-
 ## hyphy_mss
 
 ### Tool Description
@@ -122,7 +121,6 @@ alignment files
 
 - __Analysis Version__: 0.0.1
 
-
 List of files to include in this analysis (`/`) 
 Enter paths to files (blank line to end entry)
 ----------------------------------------------
@@ -135,7 +133,6 @@ Function call stack
 2 :  mss_selector.file_list=io.get_a_list_of_files(io.PromptUserForFilePathRead("List of files to include in this analysis"));
 -------
 ```
-
 
 ## hyphy_mss-ga
 
@@ -174,7 +171,6 @@ a collection of alignments
 
 - __Analysis Version__: 0.0.1
 
-
 List of files to include in this analysis (`/`) 
 Enter paths to files (blank line to end entry)
 ----------------------------------------------
@@ -187,7 +183,6 @@ Function call stack
 2 :  mss_selector.file_list=io.get_a_list_of_files(io.PromptUserForFilePathRead("List of files to include in this analysis"));
 -------
 ```
-
 
 ## hyphy_mss-ga-processor
 
@@ -219,7 +214,6 @@ and prune the tree accordingly.
 
 - __Analysis Version__: 0.1
 
-
 Codon GA output .JSON file (`/`) Error:
 'file_path' did not evaluate to a String in call to fscanf(file_path,"RawREWIND, ",test, );
 
@@ -229,75 +223,6 @@ Function call stack
 2 :  mss.json=io.ParseJSON(io.PromptUserForFilePathRead("Codon GA output .JSON file"));
 -------
 ```
-
-
-## hyphy_mh
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
-- **Homepage**: http://hyphy.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Available analysis command line options
----------------------------------------
-Use --option VALUE syntax to invoke
-If a [reqired] option is not provided on the command line, the analysis will prompt for its value
-[conditionally required] options may or not be required based on the values of other options
-
-No annotated keyword arguments are available for this analysis
-```
-
-
-## hyphy_mv
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
-- **Homepage**: http://hyphy.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Available analysis command line options
----------------------------------------
-Use --option VALUE syntax to invoke
-If a [reqired] option is not provided on the command line, the analysis will prompt for its value
-[conditionally required] options may or not be required based on the values of other options
-
-No annotated keyword arguments are available for this analysis
-```
-
 
 ## hyphy_mcc
 
@@ -315,7 +240,6 @@ Test for
 +--------+
 			|Test for|
 			+--------+
-
 
 	(1):[Mean branch length] Compare mean branch lengths between two or more non-nested clades.
 	(2):[Mean pairwise divergence] Compare mean within-clade pairwise divergence between two or more non-nested clades.
@@ -368,7 +292,6 @@ Function call stack
 -------
 ```
 
-
 ## hyphy_mclk
 
 ### Tool Description
@@ -384,11 +307,9 @@ RUNNING MOLECULAR CLOCK ANALYSIS
 ```text
 ---- RUNNING MOLECULAR CLOCK ANALYSIS ---- 
 
-
 			+---------+
 			|Data type|
 			+---------+
-
 
 	(1):[Nucleotide/Protein] Nucleotide or amino-acid (protein).
 	(2):[Codon] Codon (several available genetic codes).
@@ -441,7 +362,6 @@ Function call stack
 -------
 ```
 
-
 ## hyphy_mgvsgy
 
 ### Tool Description
@@ -458,7 +378,6 @@ Choose Genetic Code
 +-------------------+
 			|Choose Genetic Code|
 			+-------------------+
-
 
 	(1):[Universal] Universal code. (Genebank transl_table=1).
 	(2):[Vertebrate-mtDNA] Vertebrate mitochondrial DNA code. (Genebank transl_table=2).
@@ -731,7 +650,6 @@ Function call stack
 -------
 ```
 
-
 ## hyphy_mt
 
 ### Tool Description
@@ -764,7 +682,6 @@ Testing space includes 56 models
 
 Please specify a nucleotide data file: (`/`)
 ```
-
 
 ## hyphy_molerate
 
@@ -826,7 +743,6 @@ branch-level-analysis
 	Perform test clade branch-level testing
 	default value: No
 ```
-
 
 ## Metadata
 - **Skill**: generated

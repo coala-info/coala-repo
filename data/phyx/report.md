@@ -1,38 +1,5 @@
 # phyx CWL Generation Report
 
-## phyx
-
-### Tool Description
-FAIL to generate CWL: phyx not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phyx:1.1--hc0837bd_5
-- **Homepage**: https://github.com/FePhyFoFum/phyx
-- **Package**: https://anaconda.org/channels/bioconda/packages/phyx/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/phyx/overview
-- **Total Downloads**: 5.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/FePhyFoFum/phyx
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: phyx not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: phyx not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

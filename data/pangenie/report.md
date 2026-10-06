@@ -1,38 +1,5 @@
 # pangenie CWL Generation Report
 
-## pangenie
-
-### Tool Description
-FAIL to generate CWL: pangenie not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0
-- **Homepage**: https://github.com/eblerjana/pangenie
-- **Package**: https://anaconda.org/channels/bioconda/packages/pangenie/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pangenie/overview
-- **Total Downloads**: 358
-- **Last updated**: 2025-10-20
-- **GitHub**: https://github.com/eblerjana/pangenie
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pangenie not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pangenie not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

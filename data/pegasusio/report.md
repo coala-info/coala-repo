@@ -51,31 +51,3 @@ Examples:
   pegasusio aggregate_matrix --restriction Source:BM,CB --restriction Individual:1-8 --attributes Source,Platform count_matrix.csv aggr_data
 ```
 
-
-## pegasusio_This
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pegasusio:0.10.0--py311haab0aaa_0
-- **Homepage**: https://github.com/klarman-cell-observatory/pegasusio
-- **Package**: https://anaconda.org/channels/bioconda/packages/pegasusio/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Unknown command This!
-```
-

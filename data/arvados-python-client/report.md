@@ -8,36 +8,6 @@
 | arvados-python-client_arv-keepdocker | Not completed | Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available. |
 | arvados-python-client_arv-put | Not completed | Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available. |
 
-## arvados-python-client
-
-### Tool Description
-The provided text is a log of a failed container build process (Apptainer/Singularity) and does not contain help text, usage instructions, or argument definitions for the arvados-python-client tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/arvados-python-client:3.2.0--pyh7e72e81_0
-- **Homepage**: https://github.com/curoverse/arvados/tree/main/sdk/python
-- **Package**: https://anaconda.org/channels/bioconda/packages/arvados-python-client/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/arvados-python-client/overview
-- **Total Downloads**: 218.2K
-- **Last updated**: 2025-11-24
-- **GitHub**: https://github.com/curoverse/arvados
-- **Stars**: N/A
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/arvados-python-client:3.2.0--pyh7e72e81_0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
-
-
 ## Metadata
 - **Skill**: generated
 

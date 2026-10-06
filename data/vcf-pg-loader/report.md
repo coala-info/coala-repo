@@ -65,7 +65,6 @@ Usage: vcf-pg-loader load [OPTIONS] VCF_PATH
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## vcf-pg-loader_validate
 
 ### Tool Description
@@ -92,7 +91,6 @@ Usage: vcf-pg-loader validate [OPTIONS] LOAD_BATCH_ID
 │ --help                Show this message and exit.                            │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
 
 ## vcf-pg-loader_init-db
 
@@ -121,7 +119,6 @@ Usage: vcf-pg-loader init-db [OPTIONS]
 │ --help                                         Show this message and exit.   │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
 
 ## vcf-pg-loader_benchmark
 
@@ -184,7 +181,6 @@ Usage: vcf-pg-loader benchmark [OPTIONS]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## vcf-pg-loader_load-annotation
 
 ### Tool Description
@@ -230,7 +226,6 @@ Usage: vcf-pg-loader load-annotation [OPTIONS] VCF_PATH
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## vcf-pg-loader_list-annotations
 
 ### Tool Description
@@ -255,7 +250,6 @@ Usage: vcf-pg-loader list-annotations [OPTIONS]
 │ --help                 Show this message and exit.                           │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
 
 ## vcf-pg-loader_annotate
 
@@ -293,7 +287,6 @@ Usage: vcf-pg-loader annotate [OPTIONS] BATCH_ID
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## vcf-pg-loader_annotation-query
 
 ### Tool Description
@@ -322,86 +315,6 @@ Usage: vcf-pg-loader annotation-query [OPTIONS]
 │    --help                  Show this message and exit.                       │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
-
-## vcf-pg-loader_doctor
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vcf-pg-loader:0.5.4--pyhdfd78af_0
-- **Homepage**: https://github.com/Zacharyr41/vcf-pg-loader
-- **Package**: https://anaconda.org/channels/bioconda/packages/vcf-pg-loader/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: vcf-pg-loader doctor [OPTIONS]                                          
-                                                                                
- Check system dependencies and configuration.                                   
-                                                                                
- Verifies that all required dependencies are installed and                      
- provides installation instructions for any that are missing.                   
-                                                                                
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                  │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
-
-## vcf-pg-loader_db
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vcf-pg-loader:0.5.4--pyhdfd78af_0
-- **Homepage**: https://github.com/Zacharyr41/vcf-pg-loader
-- **Package**: https://anaconda.org/channels/bioconda/packages/vcf-pg-loader/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: vcf-pg-loader db [OPTIONS] COMMAND [ARGS]...                            
-                                                                                
- Manage the local PostgreSQL database                                           
-                                                                                
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                  │
-╰──────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ───────────────────────────────────────────────────────────────────╮
-│ start    Start the managed PostgreSQL database.                              │
-│ stop     Stop the managed PostgreSQL database.                               │
-│ status   Show status of the managed database.                                │
-│ url      Print the database connection URL.                                  │
-│ shell    Open a psql shell to the managed database.                          │
-│ reset    Stop and remove the database including all data.                    │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -39,7 +39,6 @@ Other options:
 Rhys J. P. Newell <rhys.newell near hdr.qut.edu.au>
 ```
 
-
 ## lorikeet-genome_lorikeet call
 
 ### Tool Description
@@ -68,7 +67,6 @@ Example: Perform read read mapping and variant calling on an entire directory of
 See lorikeet genotype --full-help for further options and further detail.
 ```
 
-
 ## lorikeet-genome_lorikeet genotype
 
 ### Tool Description
@@ -96,7 +94,6 @@ Example: Generate strain-level genotypes from read mappings compared to referenc
 
 See lorikeet genotype --full-help for further options and further detail.
 ```
-
 
 ## lorikeet-genome_lorikeet consensus
 
@@ -127,39 +124,6 @@ Usage: lorikeet consensus --read1 <read1>... --read2 <read2>... --coupled <coupl
 For more information, try '--help'.
 ```
 
-
-## lorikeet-genome_lorikeet evolve
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lorikeet-genome:0.8.2--h8e1a5b0_0
-- **Homepage**: https://github.com/rhysnewell/Lorikeet
-- **Package**: https://anaconda.org/channels/bioconda/packages/lorikeet-genome/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'evolve'
-
-Usage: lorikeet [OPTIONS] [COMMAND]
-
-For more information, try '--help'.
-```
-
-
 ## lorikeet-genome_lorikeet shell-completion
 
 ### Tool Description
@@ -184,7 +148,6 @@ Options:
       --shell <shell>              [possible values: bash, elvish, fish, powershell, zsh]
   -h, --help                       Print help
 ```
-
 
 ## Metadata
 - **Skill**: generated

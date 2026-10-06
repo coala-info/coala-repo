@@ -62,117 +62,6 @@ Usage: instanovo predict [OPTIONS] [OVERRIDES]...
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
-## instanovo_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/instanovo:1.2.2--pyhdfd78af_1
-- **Homepage**: https://github.com/instadeepai/instanovo
-- **Package**: https://anaconda.org/channels/bioconda/packages/instanovo/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: instanovo version [OPTIONS]                                             
-                                                                                
- Display version information for InstaNovo, Instanovo+ and its dependencies.    
-                                                                                
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                  │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
-
-## instanovo_transformer
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/instanovo:1.2.2--pyhdfd78af_1
-- **Homepage**: https://github.com/instadeepai/instanovo
-- **Package**: https://anaconda.org/channels/bioconda/packages/instanovo/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: instanovo transformer [OPTIONS] COMMAND [ARGS]...                       
-                                                                                
- Run predictions or train with only the transformer-based InstaNovo model.      
-                                                                                
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                  │
-╰──────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ───────────────────────────────────────────────────────────────────╮
-│ train     Train the InstaNovo model.                                         │
-│ predict   Run predictions with InstaNovo.                                    │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
-
-## instanovo_diffusion
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/instanovo:1.2.2--pyhdfd78af_1
-- **Homepage**: https://github.com/instadeepai/instanovo
-- **Package**: https://anaconda.org/channels/bioconda/packages/instanovo/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: instanovo diffusion [OPTIONS] COMMAND [ARGS]...                         
-                                                                                
- Run predictions or train with only the diffusion-based InstaNovo+ model.       
-                                                                                
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                  │
-╰──────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ───────────────────────────────────────────────────────────────────╮
-│ train     Train the InstaNovo+ model.                                        │
-│ predict   Run predictions with InstaNovo+.                                   │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
-
 ## instanovo_convert
 
 ### Tool Description
@@ -208,7 +97,6 @@ Usage: instanovo convert [OPTIONS] SOURCE TARGET
 │    --help                                       Show this message and exit.  │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
 
 ## Metadata
 - **Skill**: generated

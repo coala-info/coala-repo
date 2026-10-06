@@ -21,7 +21,6 @@ Build a library from read files.
 Usage buildlib <read_lib_file> <out_prefix>
 ```
 
-
 ## megagta_buildgraph
 
 ### Tool Description
@@ -52,7 +51,6 @@ Options:
       --need_mercy                       to add mercy edges.
 ```
 
-
 ## megagta_denovo
 
 ### Tool Description
@@ -78,7 +76,6 @@ options:
       --min_contig arg (=0)              min length of contig to output
 ```
 
-
 ## megagta_findstart
 
 ### Tool Description
@@ -94,7 +91,6 @@ Find the start of the first exon in a gene.
 ```text
 File --help doesn't exist
 ```
-
 
 ## megagta_search
 
@@ -112,35 +108,6 @@ Search for genes in a de Bruijn graph.
 Usage: search <succinct_dbg> <gene_list> <starting_kmers_prefix> <output_prefix> <prune_len> <low_cov_penalty> [num_threads=0]
 ```
 
-
-## megagta_dumpversion
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/megagta:0.1_alpha--0
-- **Homepage**: https://github.com/HKU-BAL/MegaGTA
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-v0.1-alpha
-```
-
-
 ## megagta_readstat
 
 ### Tool Description
@@ -156,35 +123,6 @@ Reads FASTQ files from standard input.
 ```text
 Usage: cat *.fq | readstat
 ```
-
-
-## megagta_filterbylen
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/megagta:0.1_alpha--0
-- **Homepage**: https://github.com/HKU-BAL/MegaGTA
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-0 contigs, total 0 bp, min 0 bp, max 0 bp, avg 0 bp, N50 0 bp
-```
-
 
 ## Metadata
 - **Skill**: generated

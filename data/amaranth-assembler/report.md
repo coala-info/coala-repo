@@ -6,39 +6,6 @@
 |---|---|---|
 | amaranth-assembler_amaranth | PASS |  |
 
-## amaranth-assembler
-
-### Tool Description
-FAIL to generate CWL: amaranth-assembler not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/amaranth-assembler:0.1.0--h5ca1c30_0
-- **Homepage**: https://github.com/Shao-Group/amaranth
-- **Package**: https://anaconda.org/channels/bioconda/packages/amaranth-assembler/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/amaranth-assembler/overview
-- **Total Downloads**: 672
-- **Last updated**: 2025-12-03
-- **GitHub**: https://github.com/Shao-Group/amaranth
-- **Stars**: 0
-### Generation Failed
-
-FAIL to generate CWL: amaranth-assembler not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: amaranth-assembler not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

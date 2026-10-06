@@ -1,38 +1,5 @@
 # pifcosm CWL Generation Report
 
-## pifcosm
-
-### Tool Description
-FAIL to generate CWL: pifcosm not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pifcosm:0.1.1--hdfd78af_0
-- **Homepage**: https://github.com/RybergGroup/PifCoSm
-- **Package**: https://anaconda.org/channels/bioconda/packages/pifcosm/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pifcosm/overview
-- **Total Downloads**: 2.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/RybergGroup/PifCoSm
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pifcosm not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pifcosm not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

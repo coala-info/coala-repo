@@ -36,7 +36,6 @@ Options:
   -h, --help        Print help
 ```
 
-
 ## varfish-server-worker_seqvars
 
 ### Tool Description
@@ -68,71 +67,6 @@ Options:
   -h, --help        Print help
 ```
 
-
-## varfish-server-worker_Increase
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/varfish-server-worker:0.17.3--h13c227e_0
-- **Homepage**: https://github.com/bihealth/varfish-server-worker
-- **Package**: https://anaconda.org/channels/bioconda/packages/varfish-server-worker/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Increase'
-
-Usage: varfish-server-worker [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
-## varfish-server-worker_Decrease
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/varfish-server-worker:0.17.3--h13c227e_0
-- **Homepage**: https://github.com/bihealth/varfish-server-worker
-- **Package**: https://anaconda.org/channels/bioconda/packages/varfish-server-worker/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Decrease'
-
-Usage: varfish-server-worker [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
 ## varfish-server-worker
 ### Tool Description
 varfish-server-worker
@@ -151,7 +85,6 @@ Usage: varfish-server-worker [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
 
 ## Metadata
 - **Skill**: generated

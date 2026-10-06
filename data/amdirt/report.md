@@ -45,7 +45,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## amdirt_convert
 
 ### Tool Description
@@ -103,7 +102,6 @@ Options:
   --help                  Show this message and exit.
 ```
 
-
 ## amdirt_download
 
 ### Tool Description
@@ -133,7 +131,6 @@ Options:
   -o, --output PATH               Output directory  [default: .]
   --help                          Show this message and exit.
 ```
-
 
 ## amdirt_merge
 
@@ -165,7 +162,6 @@ Options:
                                   .]
   --help                          Show this message and exit.
 ```
-
 
 ## amdirt_validate
 
@@ -201,34 +197,6 @@ Options:
   -m, --markdown                Output is in markdown format
   --help                        Show this message and exit.
 ```
-
-
-## amdirt_viewer
-
-### Tool Description
-A tool to view the AMDIRT Streamlit app.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/amdirt:1.7.0--pyhdfd78af_0
-- **Homepage**: https://github.com/SPAAM-community/AMDirT
-- **Package**: https://anaconda.org/channels/bioconda/packages/amdirt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-2026-02-05 18:01:51.740 
-  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
-  command:
-
-    streamlit run /usr/local/bin/amdirt [ARGUMENTS]
-Usage: amdirt viewer [OPTIONS]
-Try 'amdirt viewer --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## Metadata
 - **Skill**: generated

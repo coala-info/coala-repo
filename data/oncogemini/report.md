@@ -29,7 +29,6 @@ optional arguments:
   --clear          Set all values in this column to NULL before loading.
 ```
 
-
 ## oncogemini_annotate
 
 ### Tool Description
@@ -74,7 +73,6 @@ optional arguments:
                         variant valuesThis option is only valid if annotation
                         is a VCF file
 ```
-
 
 ## oncogemini_bottleneck
 
@@ -133,7 +131,6 @@ optional arguments:
                     civic_gene_abbrevations and/or cgi_gene_abbreviations
 ```
 
-
 ## oncogemini_db_info
 
 ### Tool Description
@@ -155,7 +152,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
 
 ## oncogemini_dump
 
@@ -188,57 +184,6 @@ optional arguments:
   --tfam        Output sample information to TFAM format.
 ```
 
-
-## oncogemini_examples
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/oncogemini:1.0.0--pyh3252c3a_0
-- **Homepage**: https://github.com/fakedrtom/oncogemini
-- **Package**: https://anaconda.org/channels/bioconda/packages/oncogemini/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[stats] - report basic statistics about your variants:
-   oncogemini stats --tstv my.db
-   oncogemini stats --tstv-coding my.db
-   oncogemini stats --sfs my.db
-   oncogemini stats --snp-counts my.db
-
-[query] - explore the database with ad hoc queries:
-   oncogemini query -q "select * from variants where is_lof = 1 and aaf <= 0.01" my.db
-   oncogemini query -q "select chrom, pos, gt_bases.NA12878 from variants" my.db
-   oncogemini query -q "select chrom, pos, in_omim, clin_sigs from variants" my.db
-
-[dump] - convenient "data dumps":
-   oncogemini dump --variants my.db
-   oncogemini dump --genotypes my.db
-   oncogemini dump --samples my.db
-
-[region] - access variants in specific genomic regions:
-   oncogemini region --reg chr1:100-200 my.db
-   oncogemini region --gene TP53 my.db
-
-[tools] - there are also many specific tools available
-   1. Find truncal variants.
-     oncogemini truncal my.db
-```
-
-
 ## oncogemini_fusions
 
 ### Tool Description
@@ -266,7 +211,6 @@ optional arguments:
   --evidence_type STR  The supporting evidence types for the variant ("PE",
                        "SR", or "PE,SR").
 ```
-
 
 ## oncogemini_loh
 
@@ -323,7 +267,6 @@ optional arguments:
                      civic_gene_abbrevations and/or cgi_gene_abbreviations
 ```
 
-
 ## oncogemini_query
 
 ### Tool Description
@@ -377,7 +320,6 @@ optional arguments:
                         stratified by the given sample phenotype column
 ```
 
-
 ## oncogemini_region
 
 ### Tool Description
@@ -410,7 +352,6 @@ optional arguments:
                     variant.
   --format FORMAT   Format of output (JSON, TPED or default)
 ```
-
 
 ## oncogemini_roh
 
@@ -452,7 +393,6 @@ optional arguments:
   -s SAMPLES            Comma separated list of samples to screen for ROHs.
                         e.g S120,S450
 ```
-
 
 ## oncogemini_set_somatic
 
@@ -501,7 +441,6 @@ optional arguments:
                         _would_ be set. For testing parameters.
 ```
 
-
 ## oncogemini_stats
 
 ### Tool Description
@@ -541,7 +480,6 @@ optional arguments:
                         The query to be issued to the database to summarize
   --gt-filter STRING    Restrictions to apply to genotype values
 ```
-
 
 ## oncogemini_truncal
 
@@ -593,7 +531,6 @@ optional arguments:
                     abbreviations) REQUIRES that db include
                     civic_gene_abbrevations and/or cgi_gene_abbreviations
 ```
-
 
 ## oncogemini_unique
 
@@ -649,7 +586,6 @@ optional arguments:
                      civic_gene_abbrevations and/or cgi_gene_abbreviations
 ```
 
-
 ## oncogemini_update
 
 ### Tool Description
@@ -677,7 +613,6 @@ optional arguments:
                         include
   --tooldir TOOLDIR     Directory for third party tools (ie /usr/local) update
 ```
-
 
 ## oncogemini_windower
 
@@ -709,7 +644,6 @@ optional arguments:
   -o {mean,median,min,max,collapse}
                         The operation that should be applied to the -t values.
 ```
-
 
 ## Metadata
 - **Skill**: generated

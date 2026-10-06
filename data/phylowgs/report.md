@@ -1,41 +1,5 @@
 # phylowgs CWL Generation Report
 
-## phylowgs_multievolve.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phylowgs:20181105--py27ha7db03b_3
-- **Homepage**: https://github.com/morrislab/phylowgs
-- **Package**: https://anaconda.org/channels/bioconda/packages/phylowgs/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/phylowgs/overview
-- **Total Downloads**: 25.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/morrislab/phylowgs
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/multievolve.py", line 9, in <module>
-    from util2 import logmsg
-ImportError: No module named util2
-```
-
-
 ## phylowgs_evolve.py
 
 ### Tool Description
@@ -93,7 +57,6 @@ optional arguments:
                         parser (default: None)
 ```
 
-
 ## phylowgs_write_results.py
 
 ### Tool Description
@@ -128,7 +91,6 @@ optional arguments:
   --min-ssms MIN_SSMS  Minimum number or percent of SSMs to retain a subclone
                        (default: 0.01)
 ```
-
 
 ## Metadata
 - **Skill**: generated

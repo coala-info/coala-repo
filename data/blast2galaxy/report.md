@@ -59,7 +59,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## blast2galaxy_blastp
 
 ### Tool Description
@@ -138,7 +137,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## blast2galaxy_blastx
 
 ### Tool Description
@@ -214,7 +212,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## blast2galaxy_diamond-blastp
 
 ### Tool Description
@@ -281,7 +278,6 @@ Options:
                                   1]
   --help                          Show this message and exit.
 ```
-
 
 ## blast2galaxy_diamond-blastx
 
@@ -350,7 +346,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## blast2galaxy_list-dbs
 
 ### Tool Description
@@ -374,7 +369,6 @@ Options:
   --tool TEXT    Tool-ID of a tool available on the Galaxy server  [required]
   --help         Show this message and exit.
 ```
-
 
 ## blast2galaxy_list-tools
 
@@ -401,41 +395,6 @@ Options:
                                   Type of BLAST search
   --help                          Show this message and exit.
 ```
-
-
-## blast2galaxy_show-config
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/blast2galaxy:1.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/IPK-BIT/blast2galaxy
-- **Package**: https://anaconda.org/channels/bioconda/packages/blast2galaxy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: blast2galaxy show-config [OPTIONS]
-
-  Show information about the currently available configuration loaded from a
-  .blast2galaxy.toml file
-
-Options:
-  --help  Show this message and exit.
-```
-
 
 ## blast2galaxy_tblastn
 
@@ -514,7 +473,6 @@ Options:
                                   2]
   --help                          Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

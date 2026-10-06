@@ -31,7 +31,6 @@ Commands:
   split        Splits fastq file(s) into equal chunks of n reads.
 ```
 
-
 ## capcruncher_genome
 
 ### Tool Description
@@ -55,7 +54,6 @@ Options:
 Commands:
   digest  Performs in silico digestion of a genome in fasta format.
 ```
-
 
 ## capcruncher_alignments
 
@@ -81,7 +79,6 @@ Commands:
   annotate  Annotates a bed file with other bed files using bedtools...
   filter    Removes unwanted aligned slices and identifies reporters.
 ```
-
 
 ## capcruncher_interactions
 
@@ -113,7 +110,6 @@ Commands:
   pileup             Extracts reporters from a capture experiment and...
 ```
 
-
 ## capcruncher_plot
 
 ### Tool Description
@@ -139,7 +135,6 @@ Options:
                        output format.
   --help               Show this message and exit.
 ```
-
 
 ## capcruncher_utilities
 
@@ -197,7 +192,6 @@ Traceback (most recent call last):
     import ibis
 ModuleNotFoundError: No module named 'ibis'
 ```
-
 
 ## capcruncher_pipeline
 
@@ -1301,37 +1295,6 @@ ENVIRONMENT MODULES:
  In general, command-line values override environment variables which override
 defaults.
 ```
-
-
-## capcruncher_pipeline-config
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
-- **Homepage**: https://github.com/sims-lab/CapCruncher.git
-- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: capcruncher pipeline-config [OPTIONS]
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## Metadata
 - **Skill**: generated

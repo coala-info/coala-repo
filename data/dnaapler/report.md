@@ -50,7 +50,6 @@ Options:
                            13]
 ```
 
-
 ## dnaapler_archaeal
 
 ### Tool Description
@@ -68,7 +67,6 @@ Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
 
 Error: No such command 'archaeal'.
 ```
-
 
 ## dnaapler_archaea
 
@@ -101,7 +99,6 @@ Options:
   --seed_value INTEGER     Random seed to ensure reproducibility.  [default:
                            13]
 ```
-
 
 ## dnaapler_bulk
 
@@ -136,7 +133,6 @@ Options:
                          specified.
 ```
 
-
 ## dnaapler_chromosome
 
 ### Tool Description
@@ -168,75 +164,6 @@ Options:
   --seed_value INTEGER     Random seed to ensure reproducibility.  [default:
                            13]
 ```
-
-
-## dnaapler_replication
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/dnaapler
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
-
-Error: No such command 'replication'.
-```
-
-
-## dnaapler_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/dnaapler
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Dnaapler has been published in JOSS. If you use Dnaapler in your work, please cite it as follows:
-
-George Bouras, Susanna R. Grigson, Bhavya Papudeshi, Vijini Mallawaarachchi, Michael J. Roach (2024). Dnaapler: A tool to reorient circular microbial genomes. Journal of Open Source Software, 9(93), 5968, https://doi.org/10.21105/joss.05968
-
-Additionally, please consider citing the dependencies:
-
-Altschul S.F., Gish W., Miller W., Myers E.W., Lipman D.J. Basic local alignment search tool. J Mol Biol. 1990 Oct 5;215(3):403-10. doi: 10.1016/S0022-2836(05)80360-2. PMID: 2231712.
-
-Larralde, M., (2022). Pyrodigal: Python bindings and interface to Prodigal, an efficient method for gene prediction in prokaryotes. Journal of Open Source Software, 7(72), 4296, https://doi.org/10.21105/joss.04296.
-
-Hyatt, D., Chen, GL., LoCascio, P.F. et al. Prodigal: prokaryotic gene recognition and translation initiation site identification. BMC Bioinformatics 11, 119 (2010). https://doi.org/10.1186/1471-2105-11-119.
-```
-
 
 ## dnaapler_custom
 
@@ -273,7 +200,6 @@ Options:
                            13]
 ```
 
-
 ## dnaapler_largest
 
 ### Tool Description
@@ -298,37 +224,6 @@ Options:
   -p, --prefix TEXT      Prefix for output files  [default: dnaapler]
   -f, --force            Force overwrites the output directory
 ```
-
-
-## dnaapler_by
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/dnaapler
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
-
-Error: No such command 'by'.
-```
-
 
 ## dnaapler_mystery
 
@@ -356,7 +251,6 @@ Options:
   --seed_value INTEGER   Random seed to ensure reproducibility.  [default: 13]
 ```
 
-
 ## dnaapler_nearest
 
 ### Tool Description
@@ -382,7 +276,6 @@ Options:
   -f, --force            Force overwrites the output directory
 ```
 
-
 ## dnaapler_pyrodigal
 
 ### Tool Description
@@ -400,7 +293,6 @@ Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
 
 Error: No such command 'pyrodigal'.
 ```
-
 
 ## dnaapler_phage
 
@@ -434,37 +326,6 @@ Options:
                            13]
 ```
 
-
-## dnaapler_subunit
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/dnaapler
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
-
-Error: No such command 'subunit'.
-```
-
-
 ## dnaapler_plasmid
 
 ### Tool Description
@@ -497,7 +358,6 @@ Options:
                            13]
 ```
 
-
 ## dnaapler_initiation
 
 ### Tool Description
@@ -515,7 +375,6 @@ Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
 
 Error: No such command 'initiation'.
 ```
-
 
 ## Metadata
 - **Skill**: generated

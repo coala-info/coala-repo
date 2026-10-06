@@ -110,7 +110,6 @@ options:
   -?, --help                           print this message
 ```
 
-
 ## metagem_megahit
 
 ### Tool Description
@@ -192,7 +191,6 @@ Other Arguments:
     -h/--help                               print the usage message
     -v/--version                            print version
 ```
-
 
 ## metagem_concoct
 
@@ -277,7 +275,6 @@ options:
   -v, --version         show program's version number and exit
 ```
 
-
 ## metagem_metabat
 
 ### Tool Description
@@ -327,48 +324,9 @@ Allowed options:
   -d [ --debug ]                    Debug output
   -v [ --verbose ]                  Verbose output
 
-
 [Error!] There was no --inFile specified
 [Error!] There was no --outFile specified
 ```
-
-
-## metagem_gtdbtk
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metagem:1.0.5--hdfd78af_0
-- **Homepage**: https://github.com/franciscozorrilla/metaGEM
-- **Package**: https://anaconda.org/channels/bioconda/packages/metagem/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-================================================================================
-                                     ERROR                                      
-________________________________________________________________________________
-
-           The GTDB-Tk reference data does not exist or is corrupted.           
-               GTDBTK_DATA_PATH=/usr/local/share/gtdbtk-1.7.0/db/               
-
-   Please compare the checksum to those provided in the download repository.    
-          https://github.com/Ecogenomics/GTDBTk#gtdb-tk-reference-data          
-================================================================================
-```
-
 
 ## Metadata
 - **Skill**: generated

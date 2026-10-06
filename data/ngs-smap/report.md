@@ -1,38 +1,5 @@
 # ngs-smap CWL Generation Report
 
-## ngs-smap_smap
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ngs-smap:5.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/truttink/smap
-- **Package**: https://anaconda.org/channels/bioconda/packages/ngs-smap/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ngs-smap/overview
-- **Total Downloads**: 16.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-16:44:58
-```
-
-
 ## ngs-smap_smap delineate
 
 ### Tool Description
@@ -164,35 +131,6 @@ Merging clusters filtering options:
                         analysis [0].
 ```
 
-
-## ngs-smap_smap haplotype
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ngs-smap:5.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/truttink/smap
-- **Package**: https://anaconda.org/channels/bioconda/packages/ngs-smap/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-16:46:37
-```
-
-
 ## ngs-smap_smap grm
 
 ### Tool Description
@@ -273,35 +211,6 @@ options:
   --debug               Enable verbose logging
 ```
 
-
-## ngs-smap_smap snp-seq
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ngs-smap:5.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/truttink/smap
-- **Package**: https://anaconda.org/channels/bioconda/packages/ngs-smap/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-16:48:22
-```
-
-
 ## ngs-smap_smap compare
 
 ### Tool Description
@@ -329,35 +238,6 @@ positional arguments:
 options:
   -h, --help  show this help message and exit
 ```
-
-
-## ngs-smap_smap target-selection
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ngs-smap:5.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/truttink/smap
-- **Package**: https://anaconda.org/channels/bioconda/packages/ngs-smap/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-16:50:22
-```
-
 
 ## Metadata
 - **Skill**: generated

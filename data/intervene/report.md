@@ -1,39 +1,5 @@
 # intervene CWL Generation Report
 
-## intervene_List
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/intervene:0.6.5--pyh3252c3a_1
-- **Homepage**: https://github.com/asntech/intervene
-- **Package**: https://anaconda.org/channels/bioconda/packages/intervene/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/intervene/overview
-- **Total Downloads**: 40.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/asntech/intervene
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: intervene <subcommand> [options]
-intervene: error: argument command: invalid choice: 'List' (choose from 'venn', 'upset', 'pairwise')
-```
-
-
 ## intervene_venn
 
 ### Tool Description
@@ -102,7 +68,6 @@ optional arguments:
                         
   --test                This will run the program on test data.
 ```
-
 
 ## intervene_upset
 
@@ -182,7 +147,6 @@ optional arguments:
                         
   --test                This will run the program on test data.
 ```
-
 
 ## intervene_pairwise
 
@@ -283,7 +247,6 @@ optional arguments:
                         
   --test                This will run the program on test data.
 ```
-
 
 ## Metadata
 - **Skill**: generated

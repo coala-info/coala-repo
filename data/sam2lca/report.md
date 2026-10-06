@@ -51,40 +51,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
-## sam2lca_list-db
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sam2lca:1.1.4--pyhdfd78af_0
-- **Homepage**: https://github.com/maxibor/sam2lca
-- **Package**: https://anaconda.org/channels/bioconda/packages/sam2lca/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: sam2lca list-db [OPTIONS]
-
-  List available taxonomy and acc2tax databases
-
-Options:
-  --help  Show this message and exit.
-```
-
-
 ## sam2lca_update-db
 
 ### Tool Description
@@ -117,7 +83,6 @@ Options:
                        2lca/master/data/acc2tax.json]
   --help               Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

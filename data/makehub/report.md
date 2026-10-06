@@ -119,7 +119,6 @@ options:
   -v, --version         show program's version number and exit
 ```
 
-
 ## makehub_bedToBigBed
 
 ### Tool Description
@@ -193,7 +192,6 @@ options:
    -maxAlloc=N -- Set the maximum memory allocation size to N bytes
 ```
 
-
 ## makehub_faToTwoBit
 
 ### Tool Description
@@ -219,7 +217,6 @@ options:
                     names.  Use 'twoBitDup' to find duplicate sequences.
    -namePrefix=XX.  add XX. to start of sequence name in 2bit.
 ```
-
 
 ## makehub_gtfToGenePred
 
@@ -255,7 +252,6 @@ options:
      -includeVersion - it gene_version and/or transcript_version attributes exist, include the version
       in the corresponding identifiers.
 ```
-
 
 ## makehub_hgGcPercent
 
@@ -297,7 +293,6 @@ example:
     | wigEncode stdin gc5Base.wig gc5Base.wib
 ```
 
-
 ## makehub_ixIxx
 
 ### Tool Description
@@ -322,7 +317,6 @@ options:
    -maxWordLength=N Maximum allowed word length. 
      Words with more characters than this limit are ignored and will not appear in index or be searchable.  Default is 31.
 ```
-
 
 ## makehub_twoBitInfo
 
@@ -354,7 +348,6 @@ The 2bit file may be specified in the form path:seq or path:seq1,seq2,seqN...
 so that information is returned only on the requested sequence(s).
 If the form path:seq:start-end is used, start-end is ignored.
 ```
-
 
 ## makehub_wigToBigWig
 
@@ -391,7 +384,6 @@ options:
    -fixedSummaries - If set, use a predefined sequence of summary levels.
    -keepAllChromosomes - If set, store all chromosomes in b-tree.
 ```
-
 
 ## makehub_samtools
 
@@ -466,66 +458,6 @@ Commands:
      version        detailed version information
 ```
 
-
-## makehub_python3
-
-### Tool Description
-Run a program in Python
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
-- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
-- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
-Options (and corresponding environment variables):
--b     : issue warnings about converting bytes/bytearray to str and comparing
-         bytes/bytearray with str or bytes with int. (-bb: issue errors)
--B     : don't write .pyc files on import; also PYTHONDONTWRITEBYTECODE=x
--c cmd : program passed in as string (terminates option list)
--d     : turn on parser debugging output (for experts only, only works on
-         debug builds); also PYTHONDEBUG=x
--E     : ignore PYTHON* environment variables (such as PYTHONPATH)
--h     : print this help message and exit (also -? or --help)
--i     : inspect interactively after running script; forces a prompt even
-         if stdin does not appear to be a terminal; also PYTHONINSPECT=x
--I     : isolate Python from the user's environment (implies -E and -s)
--m mod : run library module as a script (terminates option list)
--O     : remove assert and __debug__-dependent statements; add .opt-1 before
-         .pyc extension; also PYTHONOPTIMIZE=x
--OO    : do -O changes and also discard docstrings; add .opt-2 before
-         .pyc extension
--P     : don't prepend a potentially unsafe path to sys.path; also
-         PYTHONSAFEPATH
--q     : don't print version and copyright messages on interactive startup
--s     : don't add user site directory to sys.path; also PYTHONNOUSERSITE=x
--S     : don't imply 'import site' on initialization
--u     : force the stdout and stderr streams to be unbuffered;
-         this option has no effect on stdin; also PYTHONUNBUFFERED=x
--v     : verbose (trace import statements); also PYTHONVERBOSE=x
-         can be supplied multiple times to increase verbosity
--V     : print the Python version number and exit (also --version)
-         when given twice, print more information about the build
--W arg : warning control; arg is action:message:category:module:lineno
-         also PYTHONWARNINGS=arg
--x     : skip first line of source, allowing use of non-Unix forms of #!cmd
--X opt : set implementation-specific option
---check-hash-based-pycs always|default|never:
-         control how Python invalidates hash-based .pyc files
---help-env: print help about Python environment variables and exit
---help-xoptions: print help about implementation-specific -X options and exit
---help-all: print complete help information and exit
-
-Arguments:
-file   : program read from script file
--      : program read from stdin (default; interactive mode if a tty)
-arg ...: arguments passed to program in sys.argv[1:]
-```
-
-
 ## makehub_bam2wig
 
 ### Tool Description
@@ -548,7 +480,6 @@ Converts BAM files to WIG format for visualization.
 NOTE:File needs to be sorted by Reference ID (i.e. target name)
 Use 'samtools sort <in.bam>' to such effect.
 ```
-
 
 ## Metadata
 - **Skill**: generated

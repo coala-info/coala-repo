@@ -1,39 +1,5 @@
 # eagle CWL Generation Report
 
-## eagle_valid
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/eagle:0.9.4.6--pyh5ca1d4c_0
-- **Homepage**: https://bitbucket.org/christopherschroeder/eagle
-- **Package**: https://anaconda.org/channels/bioconda/packages/eagle/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/eagle/overview
-- **Total Downloads**: 19.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: eagle [-h] {interface,convert,meta,extract} ...
-eagle: error: argument command: invalid choice: 'valid' (choose from 'interface', 'convert', 'meta', 'extract')
-```
-
-
 ## eagle_interface
 
 ### Tool Description
@@ -61,7 +27,6 @@ optional arguments:
                         use up to M parallel processes to serve HTTP requests
                         (default=1).
 ```
-
 
 ## eagle_convert
 
@@ -91,7 +56,6 @@ optional arguments:
                         motifs information
 ```
 
-
 ## eagle_meta
 
 ### Tool Description
@@ -120,7 +84,6 @@ optional arguments:
                         a list containing key value pairs to store
 ```
 
-
 ## eagle
 ### Tool Description
 A command-line tool with subcommands for various operations.
@@ -136,7 +99,6 @@ A command-line tool with subcommands for various operations.
 usage: eagle [-h] {interface,convert,meta,extract} ...
 eagle: error: argument command: invalid choice: 'files' (choose from 'interface', 'convert', 'meta', 'extract')
 ```
-
 
 ## eagle_extract
 
@@ -163,7 +125,6 @@ optional arguments:
                         only use this fraction of regions
   -w W                  directly write the stats to this eagle file
 ```
-
 
 ## Metadata
 - **Skill**: generated

@@ -31,7 +31,6 @@ Options:
   --space        use the fasta identifier only up to the space as the key
 ```
 
-
 ## pyfasta_info
 
 ### Tool Description
@@ -53,7 +52,6 @@ Options:
   -n NSEQS, --n=NSEQS  max number of records to print. use -1 for all
   --gc                 show gc content
 ```
-
 
 ## pyfasta_split
 
@@ -96,38 +94,6 @@ Options:
                         based on the headers. a reasonable value would be
                         10Kbp
 ```
-
-
-## pyfasta_flatten
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyfasta:0.5.2--pyhdfd78af_2
-- **Homepage**: https://github.com/brentp/pyfasta
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: flatten a fasta file *inplace* so all later access by pyfasta will use that flattend (but still viable) fasta file
-
-Options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

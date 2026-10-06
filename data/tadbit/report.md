@@ -93,7 +93,6 @@ Descriptive, optional arguments:
                            --descr=cell:lymphoblast,flowcell:C68AEACXX,index:24nf
 ```
 
-
 ## tadbit_working
 
 ### Tool Description
@@ -112,7 +111,6 @@ usage: tadbit [-h]
               ...
 tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'working' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
 ```
-
 
 ## tadbit_parse
 
@@ -167,7 +165,6 @@ Mapped outside TADbit options:
                            paths to mapped bam files (second read-end)
   --renz STR               restriction enzyme name
 ```
-
 
 ## tadbit_filter
 
@@ -240,27 +237,6 @@ Filtering options:
                            dangling-ends)
 ```
 
-
-## tadbit_to
-
-### Tool Description
-A toolkit for analyzing and visualizing TADs.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1
-- **Homepage**: http://sgt.cnag.cat/3dg/tadbit/
-- **Package**: https://anaconda.org/channels/bioconda/packages/tadbit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tadbit [-h]
-              {map,parse,filter,describe,clean,normalize,bin,merge,segment}
-              ...
-tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'to' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
-```
-
-
 ## tadbit_describe
 
 ### Tool Description
@@ -316,7 +292,6 @@ General options:
                            Writes output in specified file.
 ```
 
-
 ## tadbit_clean
 
 ### Tool Description
@@ -348,38 +323,6 @@ General options:
   --noX                    no display server (X screen)
   --tmpdb PATH             if provided uses this directory to manipulate the database
 ```
-
-
-## tadbit_given
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1
-- **Homepage**: http://sgt.cnag.cat/3dg/tadbit/
-- **Package**: https://anaconda.org/channels/bioconda/packages/tadbit/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: tadbit [-h]
-              {map,parse,filter,describe,clean,normalize,bin,merge,segment}
-              ...
-tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'given' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
-```
-
 
 ## tadbit_normalize
 
@@ -475,7 +418,6 @@ Normalization options:
   --seed INT               [1] Only for oneD normalization: seed number for the random picking
                            of data when using the "prop_data" parameter
 ```
-
 
 ## tadbit_bin
 
@@ -575,7 +517,6 @@ Plotting options:
   --tad_def TAD_DEF        tsv file with tad definition, columns: # start end score density
 ```
 
-
 ## tadbit_merge
 
 ### Tool Description
@@ -643,7 +584,6 @@ General options:
   --tmpdb PATH             if provided uses this directory to manipulate the database
 ```
 
-
 ## tadbit_samples
 
 ### Tool Description
@@ -663,7 +603,6 @@ usage: tadbit [-h]
 tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'samples' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
 ```
 
-
 ## tadbit_generating
 
 ### Tool Description
@@ -682,7 +621,6 @@ usage: tadbit [-h]
               ...
 tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'generating' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
 ```
-
 
 ## tadbit_segment
 
@@ -764,7 +702,6 @@ TAD calling options:
   --max_tad_size INT       an integer defining the maximum size of TAD. Default defines it as
                            the number of rows/columns
 ```
-
 
 ## Metadata
 - **Skill**: generated

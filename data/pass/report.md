@@ -1,38 +1,5 @@
 # pass CWL Generation Report
 
-## pass
-
-### Tool Description
-FAIL to generate CWL: pass not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pass:0.3.1--hdfd78af_0
-- **Homepage**: https://github.com/bcgsc/PASS
-- **Package**: https://anaconda.org/channels/bioconda/packages/pass/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pass/overview
-- **Total Downloads**: 957
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/bcgsc/PASS
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pass not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pass not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

@@ -5,29 +5,31 @@
 | Tool | Result | Reason |
 |---|---|---|
 | apptainer_build | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
-| apptainer_cache | Failed | not a usable tool: wraps only the 'apptainer cache' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_capability | Failed | not a usable tool: wraps only the 'apptainer capability' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_checkpoint | Failed | not a usable tool: wraps only the 'apptainer checkpoint' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_cache_list | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_completion | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
-| apptainer_config | Failed | not a usable tool: wraps only the 'apptainer config' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
 | apptainer_delete | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_exec | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_inspect | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
-| apptainer_instance | Failed | not a usable tool: wraps only the 'apptainer instance' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_key | Failed | not a usable tool: wraps only the 'apptainer key' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_keyserver | Failed | not a usable tool: wraps only the 'apptainer keyserver' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_oci | Failed | not a usable tool: wraps only the 'apptainer oci' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_overlay | Failed | not a usable tool: wraps only the 'apptainer overlay' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_plugin | Failed | not a usable tool: wraps only the 'apptainer plugin' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_key_import | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_key_list | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_key_newpair | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_key_remove | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_overlay_create | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' (runs only with cwltool --no-match-user), and even then fails because mkfs.ext3 is missing from the image. |
+| apptainer_plugin_create | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_pull | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_push | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
-| apptainer_registry | Failed | not a usable tool: wraps only the 'apptainer registry' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
-| apptainer_remote | Failed | not a usable tool: wraps only the 'apptainer remote' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
 | apptainer_run | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_run-help | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_search | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_shell | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
-| apptainer_sif | Failed | not a usable tool: wraps only the 'apptainer sif' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_sif_add | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif_del | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif_dump | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif_header | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif_info | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif_list | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif_new | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif_setprim | Failed | image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_sign | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_test | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
 | apptainer_verify | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
@@ -267,134 +269,6 @@ For additional help or support, please visit https://apptainer.org/help/
 ```
 
 
-## apptainer_cache
-
-### Tool Description
-Manage your local Apptainer cache. You can list/clean using the specific types.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage the local cache
-
-Usage:
-  apptainer cache
-
-Description:
-  Manage your local Apptainer cache. You can list/clean using the specific
-  types.
-
-Options:
-  -h, --help   help for cache
-
-Available Commands:
-  clean       Clean your local Apptainer cache
-  list        List your local Apptainer cache
-
-Examples:
-  All group commands have their own help output:
-
-  $ apptainer cache
-  $ apptainer cache --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_capability
-
-### Tool Description
-Manage Linux capabilities for users and groups. Capabilities allow you to have fine grained control over the permissions that your containers need to run.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage Linux capabilities for users and groups
-
-Usage:
-  apptainer capability
-
-Description:
-  Capabilities allow you to have fine grained control over the permissions that
-  your containers need to run.
-
-  NOTE: capability add/drop commands require root to run. Granting capabilities 
-  to users allows them to escalate privilege inside the container and will
-  likely give them a route to privilege escalation on the host system as well.
-  Do not add capabilities to users who should not have root on the host system.
-
-Options:
-  -h, --help   help for capability
-
-Available Commands:
-  add         Add capabilities to a user or group (requires root)
-  avail       Show description for available capabilities
-  drop        Remove capabilities from a user or group (requires root)
-  list        Show capabilities for a given user or group
-
-Examples:
-  All group commands have their own help output:
-
-  $ apptainer help capability add
-  $ apptainer capability add --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_checkpoint
-
-### Tool Description
-Manage container checkpoint state (experimental)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage container checkpoint state (experimental)
-
-Usage:
-  apptainer checkpoint
-
-Description:
-  The checkpoint command allows for the creation and management of container checkpoint state.
-
-Options:
-  -h, --help   help for checkpoint
-
-Available Commands:
-  create      Create empty checkpoint storage (experimental)
-  delete      Delete a checkpoint (experimental)
-  instance    Checkpoint the state of a running instance (experimental)
-  list        List local checkpoints (experimental)
-
-Examples:
-  All checkpoint commands have their own help output:
-
-  $ apptainer help checkpoint create
-  $ apptainer checkpoint create --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
 ## apptainer_completion
 
 ### Tool Description
@@ -425,46 +299,6 @@ Available Commands:
   fish        Generate the autocompletion script for fish
   powershell  Generate the autocompletion script for powershell
   zsh         Generate the autocompletion script for zsh
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_config
-
-### Tool Description
-Manage various apptainer configuration (root user only). The config command allows root user to manage various configuration like fakeroot user mapping entries.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage various apptainer configuration (root user only)
-
-Usage:
-  apptainer config
-
-Description:
-  The config command allows root user to manage various configuration like fakeroot
-  user mapping entries.
-
-Options:
-  -h, --help   help for config
-
-Available Commands:
-  fakeroot    Manage fakeroot user mappings entries (root user only)
-  global      Edit apptainer.conf from command line (root user only or unprivileged installation)
-
-Examples:
-  All config commands have their own help output:
-
-  $ apptainer help config fakeroot
-  $ apptainer config fakeroot --help
 
 
 For additional help or support, please visit https://apptainer.org/help/
@@ -817,277 +651,6 @@ For additional help or support, please visit https://apptainer.org/help/
 ```
 
 
-## apptainer_instance
-
-### Tool Description
-Manage containers running as services. Instances allow you to run containers as background processes. This can be useful for running services such as web servers or databases.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage containers running as services
-
-Usage:
-  apptainer instance
-
-Description:
-  Instances allow you to run containers as background processes. This can be
-  useful for running services such as web servers or databases.
-
-Options:
-  -h, --help   help for instance
-
-Available Commands:
-  list        List all running and named Apptainer instances
-  run         Run a named instance of the given container image
-  start       Start a named instance of the given container image
-  stats       Get stats for a named instance
-  stop        Stop a named instance of a given container image
-
-Examples:
-  All group commands have their own help output:
-
-  $ apptainer help instance start
-  $ apptainer instance start --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_key
-
-### Tool Description
-Manage your trusted, public and private keys in your local or in the global keyring (local keyring: '~/.apptainer/keys' if 'APPTAINER_KEYSDIR' is not set, global keyring: '/usr/local/etc/apptainer/global-pgp-public')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage OpenPGP keys
-
-Usage:
-  apptainer key [key options...]
-
-Description:
-  Manage your trusted, public and private keys in your local or in the global keyring
-  (local keyring: '~/.apptainer/keys' if 'APPTAINER_KEYSDIR' is not set,
-  global keyring: '/usr/local/etc/apptainer/global-pgp-public')
-
-Options:
-  -h, --help   help for key
-
-Available Commands:
-  export      Export a public or private key into a specific file
-  import      Import a local key into the local or global keyring
-  list        List keys in your local or in the global keyring
-  newpair     Create a new key pair
-  pull        Download a public key from a key server
-  push        Upload a public key to a key server
-  remove      Remove a local public key from your local or the global keyring
-  search      Search for keys on a key server
-
-Examples:
-  All group commands have their own help output:
-
-  $ apptainer help key newpair
-  $ apptainer key list --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_keyserver
-
-### Tool Description
-The 'keyserver' command allows you to manage standalone keyservers that will be used for retrieving cryptographic keys.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage apptainer keyservers
-
-Usage:
-  apptainer keyserver [subcommand options...]
-
-Description:
-  The 'keyserver' command allows you to manage standalone keyservers that will 
-  be used for retrieving cryptographic keys.
-
-Options:
-  -c, --config string   path to the file holding keyserver configurations
-                        (default "/user/qianghu/.apptainer/remote.yaml")
-  -h, --help            help for keyserver
-
-Available Commands:
-  add         Add a keyserver (root user only)
-  list        List all keyservers that are configured
-  login       Login to a keyserver
-  logout      Logout from a keyserver
-  remove      Remove a keyserver (root user only)
-
-Examples:
-  All group commands have their own help output:
-
-    $ apptainer help keyserver add
-    $ apptainer keyserver add
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_oci
-
-### Tool Description
-Manage OCI containers. Allow you to manage containers from OCI bundle directories. NOTE: all oci commands requires to run as root.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage OCI containers
-
-Usage:
-  apptainer oci
-
-Description:
-  Allow you to manage containers from OCI bundle directories.
-
-  NOTE: all oci commands requires to run as root
-
-Options:
-  -h, --help   help for oci
-
-Available Commands:
-  attach      Attach console to a running container process (root user only)
-  create      Create a container from a bundle directory (root user only)
-  delete      Delete container (root user only)
-  exec        Execute a command within container (root user only)
-  kill        Kill a container (root user only)
-  mount       Mount create an OCI bundle from SIF image (root user only)
-  pause       Suspends all processes inside the container (root user only)
-  resume      Resumes all processes previously paused inside the container (root user only)
-  run         Create/start/attach/delete a container from a bundle directory (root user only)
-  start       Start container process (root user only)
-  state       Query state of a container (root user only)
-  umount      Umount delete bundle (root user only)
-  update      Update container cgroups resources (root user only)
-
-Examples:
-  All group commands have their own help output:
-
-  $ apptainer oci create -b ~/bundle mycontainer
-  $ apptainer oci start mycontainer
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_overlay
-
-### Tool Description
-The overlay command allows management of EXT3 writable overlay images.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage an EXT3 writable overlay image
-
-Usage:
-  apptainer overlay
-
-Description:
-  The overlay command allows management of EXT3 writable overlay images.
-
-Options:
-  -h, --help   help for overlay
-
-Available Commands:
-  create      Create EXT3 writable overlay image
-
-Examples:
-  All overlay commands have their own help output:
-
-  $ apptainer help overlay create
-  $ apptainer overlay create --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_plugin
-
-### Tool Description
-The 'plugin' command allows you to manage Apptainer plugins which provide add-on functionality to the default Apptainer installation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage Apptainer plugins
-
-Usage:
-  apptainer plugin [plugin options...]
-
-Description:
-  The 'plugin' command allows you to manage Apptainer plugins which
-  provide add-on functionality to the default Apptainer installation.
-
-Options:
-  -h, --help   help for plugin
-
-Available Commands:
-  compile     Compile an Apptainer plugin
-  create      Create a plugin skeleton directory
-  disable     disable an installed Apptainer plugin
-  enable      Enable an installed Apptainer plugin
-  inspect     Inspect an Apptainer plugin (either an installed one or an image)
-  install     Install a compiled Apptainer plugin
-  list        List installed Apptainer plugins
-  uninstall   Uninstall removes the named plugin from the system
-
-Examples:
-  All group commands have their own help output:
-
-  $ apptainer help plugin compile
-  $ apptainer plugin list --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
 ## apptainer_pull
 
 ### Tool Description
@@ -1210,112 +773,6 @@ Examples:
 
   To supported OCI registry
   $ apptainer push /home/user/my.sif oras://registry/namespace/image:tag
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_registry
-
-### Tool Description
-Manage authentication to OCI/Docker registries. The 'registry' command allows you to manage authentication to standalone OCI/Docker registries, such as 'docker://' or 'oras://'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage authentication to OCI/Docker registries
-
-Usage:
-  apptainer registry [subcommand options...]
-
-Description:
-  The 'registry' command allows you to manage authentication to standalone OCI/Docker
-  registries, such as 'docker://'' or 'oras://'.
-
-Options:
-  -c, --config string   path to the file holding registry configurations
-                        (default "/user/qianghu/.apptainer/remote.yaml")
-  -h, --help            help for registry
-
-Available Commands:
-  list        List all OCI credentials that are configured
-  login       Login to an OCI/Docker registry
-  logout      Logout from an OCI/Docker registry
-
-Examples:
-  All group commands have their own help output:
-
-    $ apptainer help registry login
-    $ apptainer registry login
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
-## apptainer_remote
-
-### Tool Description
-Manage apptainer remote endpoints through its subcommands. A 'remote endpoint' is a group of services compatible with the container library API.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage apptainer remote endpoints
-
-Usage:
-  apptainer remote [remote options...]
-
-Description:
-  The 'remote' command allows you to manage Apptainer remote endpoints through
-  its subcommands.
-
-  A 'remote endpoint' is a group of services that is compatible with the
-  container library API.  The remote endpoint is a single address,
-  e.g. 'cloud.example.com' through which library and/or keystore services
-  will be automatically discovered.
-
-  To configure a remote endpoint you must 'remote add' it. You can 'remote login' if
-  you will be performing actions needing authentication. Switch between
-  configured remote endpoints with the 'remote use' command. The active remote
-  endpoint will be used for key operations, and 'library://' pull
-  and push. You can also 'remote logout' from and 'remote remove' an endpoint that
-  is no longer required.
-
-  The remote configuration is stored in $HOME/.apptainer/remotes.yaml by default.
-
-Options:
-  -c, --config string   path to the file holding remote endpoint
-                        configurations (default
-                        "/user/qianghu/.apptainer/remote.yaml")
-  -h, --help            help for remote
-
-Available Commands:
-  add                Add a new apptainer remote endpoint
-  get-login-password Retrieves the cli secret for the current logged in user
-  list               List all apptainer remote endpoints that are configured
-  login              Login to an apptainer remote endpoint
-  logout             Log out from an apptainer remote endpoint
-  remove             Remove an existing apptainer remote endpoint
-  status             Check the status of the apptainer services at an endpoint, and your authentication token
-  use                Set an Apptainer remote endpoint to be actively used
-
-Examples:
-  All group commands have their own help output:
-
-    $ apptainer help remote list
-    $ apptainer remote list
 
 
 For additional help or support, please visit https://apptainer.org/help/
@@ -1875,53 +1332,6 @@ For additional help or support, please visit https://apptainer.org/help/
 ```
 
 
-## apptainer_sif
-
-### Tool Description
-Manipulate Singularity Image Format (SIF) images. A set of commands are provided to display elements such as the SIF global header, the data object descriptors and to dump data objects. It is also possible to modify a SIF file via this tool via the add/del commands.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apptainer:latest
-- **Homepage**: https://github.com/apptainer/apptainer
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manipulate Singularity Image Format (SIF) images
-
-Usage:
-  apptainer sif
-
-Description:
-  A set of commands are provided to display elements such as the SIF global
-  header, the data object descriptors and to dump data objects. It is also
-  possible to modify a SIF file via this tool via the add/del commands.
-
-Options:
-  -h, --help   help for sif
-
-Available Commands:
-  add         Add data object
-  del         Delete data object
-  dump        Dump data object
-  header      Display global header
-  info        Display data object info
-  list        List data objects
-  new         Create SIF image
-  setprim     Set primary system partition
-
-Examples:
-  All sif commands have their own help output:
-
-  $ apptainer help sif list
-  $ apptainer sif list --help
-
-
-For additional help or support, please visit https://apptainer.org/help/
-```
-
-
 ## apptainer_sign
 
 ### Tool Description
@@ -2224,6 +1634,683 @@ Examples:
 
   Verify with PGP:
   $ apptainer verify container.sif
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_cache_list
+
+### Tool Description
+List your local Apptainer cache
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+List your local Apptainer cache
+
+Usage:
+  apptainer cache list [list options...]
+
+Description:
+  This will list your local cache (stored at $HOME/.apptainer/cache if
+  APPTAINER_CACHEDIR is not set).
+
+Options:
+  -h, --help           help for list
+  -T, --type strings   a list of cache types to display, possible entries:
+                       library, oci, shub, blob(s), all (default [all])
+  -v, --verbose        include cache entries in the output
+
+
+Examples:
+  All group commands have their own help output:
+
+  $ apptainer help cache list
+  $ apptainer help cache list --type=library,oci
+  $ apptainer cache list --help
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_key_import
+
+### Tool Description
+Import a local key into the local or global keyring
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Import a local key into the local or global keyring
+
+Usage:
+  apptainer key import [import options...] <input-key>
+
+Description:
+  The 'key import' command allows you to add a key to your local or global keyring
+  from a specific file.
+
+Options:
+  -g, --global           manage global public keys (import/pull/remove are
+                         restricted to root user or unprivileged
+                         installation only)
+  -h, --help             help for import
+  -d, --keysdir string   set local keyring dir path, an alternative way is
+                         to set environment variable 'APPTAINER_KEYSDIR'
+                         (default "/root/.apptainer/keys")
+      --new-password     set a new password to the private key
+
+
+Examples:
+  $ apptainer key import ./my-key.asc
+
+  # Import into global keyring (root user only)
+  $ apptainer key import --global ./my-key.asc
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_key_list
+
+### Tool Description
+List keys in your local or in the global keyring
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+List keys in your local or in the global keyring
+
+Usage:
+  apptainer key list
+
+Description:
+  List your local keys in your keyring. Will list public (trusted) keys
+  by default.
+
+Options:
+  -g, --global           manage global public keys (import/pull/remove are
+                         restricted to root user or unprivileged
+                         installation only)
+  -h, --help             help for list
+  -d, --keysdir string   set local keyring dir path, an alternative way is
+                         to set environment variable 'APPTAINER_KEYSDIR'
+                         (default "/root/.apptainer/keys")
+  -s, --secret           list private keys instead of the default which
+                         displays public ones
+
+
+Examples:
+  $ apptainer key list
+  $ apptainer key list --secret
+
+  # list global public keys
+  $ apptainer key list --global
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_key_newpair
+
+### Tool Description
+Create a new key pair
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Create a new key pair
+
+Usage:
+  apptainer key newpair
+
+Description:
+  The 'key newpair' command allows you to create a new key or public/private
+  keys to be stored in the default user local keyring location (e.g., 
+  $HOME/.apptainer/keys).
+
+Options:
+  -b, --bit-length int    specify key bit length (default 4096)
+  -C, --comment string    key comment
+  -E, --email string      key owner email
+  -h, --help              help for newpair
+  -d, --keysdir string    set local keyring dir path, an alternative way
+                          is to set environment variable
+                          'APPTAINER_KEYSDIR' (default "/root/.apptainer/keys")
+  -N, --name string       key owner name
+  -P, --password string   key password
+  -U, --push              specify to push the public key to the remote keystore
+
+
+Examples:
+  $ apptainer key newpair
+  $ apptainer key newpair --password=psk --name=your-name --comment="key comment" --email=mail@email.com --push=false
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_key_remove
+
+### Tool Description
+Remove a local public key from your local or the global keyring
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Remove a local public key from your local or the global keyring
+
+Usage:
+  apptainer key remove <fingerprint>
+
+Description:
+  The 'key remove' command will remove a local public key from
+  the local or the global keyring.
+
+Options:
+  -b, --both             remove both public and private keys
+  -g, --global           manage global public keys (import/pull/remove are
+                         restricted to root user or unprivileged
+                         installation only)
+  -h, --help             help for remove
+  -d, --keysdir string   set local keyring dir path, an alternative way is
+                         to set environment variable 'APPTAINER_KEYSDIR'
+                         (default "/root/.apptainer/keys")
+  -p, --public           remove public keys only
+  -s, --secret           remove secret keys only
+
+
+Examples:
+  $ apptainer key remove D87FE3AF5C1F063FCBCC9B02F812842B5EEE5934
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_overlay_create
+
+### Tool Description
+Create EXT3 writable overlay image
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Create EXT3 writable overlay image
+
+Usage:
+  apptainer overlay create <options> image
+
+Description:
+  The overlay create command allows creating EXT3 writable overlay image either
+  as a single EXT3 image or by adding it automatically to an existing SIF image.
+
+Options:
+      --create-dir strings   directory to create as part of the overlay layout
+  -f, --fakeroot             make overlay layout usable by actions run
+                             with --fakeroot
+  -h, --help                 help for create
+  -s, --size int             size of the EXT3 writable overlay in MiB
+                             (default 64)
+  -S, --sparse               create a sparse overlay
+
+
+Examples:
+  To create and add a writable overlay to an existing SIF image:
+  $ apptainer overlay create --size 1024 /tmp/image.sif
+
+  To create a single EXT3 writable overlay image:
+  $ apptainer overlay create --size 1024 /tmp/my_overlay.img
+
+  To create a sparse overlay when creating a new ext3 file system image:
+  $ apptainer overlay create --size 1024 --sparse /tmp/ext3_overlay.img
+
+  To create an EXT3 writable overlay image for use with --fakeroot actions:
+  $ apptainer overlay create --fakeroot --size 1024 /tmp/my_overlay.img
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_plugin_create
+
+### Tool Description
+Create a plugin skeleton directory
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Create a plugin skeleton directory
+
+Usage:
+  apptainer plugin create <host_path> <name>
+
+Description:
+  The 'plugin create' command allows a user to creates a plugin skeleton directory
+  structure to start development of a new plugin.
+
+Options:
+  -h, --help   help for create
+
+
+Examples:
+  $ apptainer plugin create ~/myplugin github.com/username/myplugin
+  $ ls -1 ~/myplugin
+  go.mod
+  main.go
+  apptainer_source
+  
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_add
+
+### Tool Description
+Add data object
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Add data object
+
+Usage:
+  apptainer sif add <sif_path> <object_path> [flags]
+
+Description:Add a data object to a SIF image.
+
+Options:
+      --alignment int       set alignment [default: 4096 with --datatype
+                            4-Partition, 0 otherwise]
+      --datatype int        the type of data to add
+                            [NEEDED, no default]:
+                              1-Deffile,        2-EnvVar,        3-Labels,
+                              4-Partition,      5-Signature,    
+                            6-GenericJSON,
+                              7-Generic,        8-CryptoMessage, 9-SBOM,
+                              10-OCI.RootIndex, 11-OCI.Blob
+      --filename string     set logical filename/handle [default: input
+                            filename]
+      --groupid uint32      set groupid [default: 0]
+  -h, --help                help for add
+      --link uint32         set link pointer [default: 0]
+      --partarch int32      the main architecture used (with --datatype
+                            4-Partition)
+                            [NEEDED, no default]:
+                              1-386,       2-amd64,     3-arm,
+                              4-arm64,     5-ppc64,     6-ppc64le,
+                              7-mips,      8-mipsle,    9-mips64,
+                              10-mips64le, 11-s390x,    12-riscv64
+      --partfs int32        the filesystem used (with --datatype
+                            4-Partition)
+                            [NEEDED, no default]:
+                              1-Squash,    2-Ext3,      3-ImmuObj,
+                              4-Raw
+      --parttype int32      the type of partition (with --datatype
+                            4-Partition)
+                            [NEEDED, no default]:
+                              1-System,    2-PrimSys,   3-Data,
+                              4-Overlay
+      --sbomformat string   the SBOM format (with --datatype 9-sbom):
+                              cyclonedx-json, cyclonedx-xml,  github-json,
+                              spdx-json,      spdx-rdf,      
+                            spdx-tag-value,
+                              spdx-yaml,      syft-json
+      --signentity string   the entity that signs (with --datatype
+                            5-Signature)
+                            [NEEDED, no default]:
+                              example: 433FE984155206BD962725E20E8713472A879943
+      --signhash int32      the signature hash used (with --datatype
+                            5-Signature)
+                            [NEEDED, no default]:
+                              1-SHA256,      2-SHA384,      3-SHA512,
+                              4-BLAKE2s_256, 5-BLAKE2b_256
+
+
+Examples:sif add image.sif recipe.def --datatype 1
+sif add image.sif rootfs.squashfs --datatype 4 --parttype 1 --partfs 1 --partarch 2
+sif add image.sif signature.bin --datatype 5 --signentity 433FE984155206BD962725E20E8713472A879943 --signhash 1
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_del
+
+### Tool Description
+Delete data object
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Delete data object
+
+Usage:
+  apptainer sif del <id> <sif_path>
+
+Description:Delete a data object from a SIF image.
+
+Options:
+  -h, --help   help for del
+
+
+Examples:sif del 1 image.sif
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_dump
+
+### Tool Description
+Dump data object
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Dump data object
+
+Usage:
+  apptainer sif dump <id> <sif_path>
+
+Description:Dump a data object from a SIF image.
+
+Options:
+  -h, --help   help for dump
+
+
+Examples:sif dump 1 image.sif
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_header
+
+### Tool Description
+Display global header
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Display global header
+
+Usage:
+  apptainer sif header <sif_path>
+
+Description:Display global header from a SIF image.
+
+Options:
+  -h, --help   help for header
+
+
+Examples:sif header image.sif
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_info
+
+### Tool Description
+Display data object info
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Display data object info
+
+Usage:
+  apptainer sif info <id> <sif_path>
+
+Description:Display info about a data object from a SIF image.
+
+Options:
+  -h, --help   help for info
+
+
+Examples:sif info 1 image.sif
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_list
+
+### Tool Description
+List data objects
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+List data objects
+
+Usage:
+  apptainer sif list <sif_path>
+
+Description:List data objects from a SIF image.
+
+Options:
+  -h, --help   help for list
+
+
+Examples:sif list image.sif
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_new
+
+### Tool Description
+Create SIF image
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Create SIF image
+
+Usage:
+  apptainer sif new <sif_path>
+
+Description:Create a new, empty SIF image.
+
+Options:
+  -h, --help   help for new
+
+
+Examples:sif new image.sif
+
+
+For additional help or support, please visit https://apptainer.org/help/
+```
+
+
+## apptainer_sif_setprim
+
+### Tool Description
+Set primary system partition
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/apptainer:latest
+- **Homepage**: https://github.com/apptainer/apptainer
+- **Package**: Not found
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
+- **Total Downloads**: 127.6K
+- **Last updated**: 2025-12-03
+- **GitHub**: https://github.com/apptainer/apptainer
+- **Stars**: N/A
+### Original Help Text
+```text
+Set primary system partition
+
+Usage:
+  apptainer sif setprim <id> <sif_path>
+
+Description:Set the primary system partition in a SIF image.
+
+Options:
+  -h, --help   help for setprim
+
+
+Examples:sif setprim 1 image.sif
 
 
 For additional help or support, please visit https://apptainer.org/help/

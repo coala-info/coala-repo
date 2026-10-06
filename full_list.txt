@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1006; PASS: 730; Failed: 204; Not completed: 72
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1220; PASS: 906; Failed: 224; Not completed: 90
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -119,7 +119,10 @@ ale	ale_ale2wiggle.py	PASS
 ale-core	ale-core_ALE	PASS	
 alen	alen	Not completed	alen is an interactive terminal viewer that panics without a terminal (it reads the terminal size), so it cannot run in a batch CWL job; tested on the nf-core mammals protein alignment.
 aletsch	aletsch	PASS	
-alevin-fry	alevin-fry_atac	Failed	not a usable tool: it wraps only the 'atac' command group (a subcommand string, no data inputs or outputs); the atac subcommands (generate-permit-list, sort, collate, deduplicate) have no CWL
+alevin-fry	alevin-fry_atac_collate	Failed	tool bug: alevin-fry 0.11.2 atac collate crashes on a record-count check with the full real RAD file (multi-mapping reads); it runs only when the input holds uniquely mapped reads
+alevin-fry	alevin-fry_atac_deduplicate	Failed	tool bug: atac deduplicate in alevin-fry 0.11.2 never starts reading the collated RAD file (the reader call is commented out in the source), so it spins forever and leaves map.bed empty.
+alevin-fry	alevin-fry_atac_generate-permit-list	PASS	
+alevin-fry	alevin-fry_atac_sort	PASS	
 alevin-fry	alevin-fry_collate	PASS	
 alevin-fry	alevin-fry_convert	PASS	
 alevin-fry	alevin-fry_generate-permit-list	PASS	
@@ -153,7 +156,6 @@ alignstats	alignstats	PASS	nf-core sarscov2 BAM gives 200 records, 197 mapped; C
 aliview	aliview	Not completed	AliView is a GUI alignment viewer and editor with no batch mode, so it cannot run as a headless job.
 allegro	allegro	PASS	Galaxy test data; both Galaxy output assertions match; CWL fixed: -l log flag, staged data files named in the options file, outputs collected.
 allelecodes	allelecodes_assignAlleleCodes_py3.6.py	PASS	Upstream CAMP example profiles (521 isolates); CWL fixed: data directory staged writable and returned as an output.
-allhic	allhic_alleles	Failed	not a usable tool: allhic alleles in 0.9.14 is an unfinished stub that only parses the PAF and counts files and writes no output.
 allhic	allhic_assess	PASS	Yeast Hi-C reads (nf-core hic) mapped to a W303 assembly built by allhic; output files were not collected before the fix.
 allhic	allhic_build	PASS	Built 16 W303 yeast pseudo-chromosomes; CWL fixed: added the required output FASTA name and AGP output.
 allhic	allhic_extract	Failed	tool bug in allhic 0.9.14: extract closes pairs.txt before writing it, so pairs.txt is always empty (clm, counts and distribution are fine); CWL fixed to stage the BAM and collect outputs.
@@ -168,15 +170,20 @@ alloshp	alloshp_vcf2alignment	PASS	Packaged Brachypodium sample VCF; 6-sample MS
 alloshp	alloshp_vcf2synteny	PASS	Packaged sample VCF with the WGA BED; 762,307 loci, Bsta samples and hybrids carry B-subgenome variants; CWL fixed: added staged WGA folders and required -o.
 alphafill	alphafill_create-index	PASS	Upstream mini PDB-REDO test set (1cbs, 2cbs, 3cbs) gives 3 entity sequences; CWL fixed: --pdb-fasta is an output name, config made required.
 alphafill	alphafill_process	PASS	Upstream test model AF-P29373: first hit 1CBS chain A with retinoic acid (REA) transplanted, as the upstream test expects; CWL fixed: output name and outputs added, config made required.
-alphafill	alphafill_rebuild-db	Failed	not a usable tool: alphafill 2.2.0 has no rebuild-db command (only create-index and process); the file wraps bare alphafill with a command string and no data inputs or outputs.
-alphafill	alphafill_server	Failed	not a usable tool: alphafill 2.2.0 in this image has no server command (only create-index and process); the file wraps bare alphafill with a command string and no data inputs or outputs.
 alter-sequence-alignment	alter-sequence-alignment	PASS	
 altex-be	altex-be	PASS	
 altree	altree	PASS	
 alv	alv	PASS	
 amap	amap	PASS	
 amaranth-assembler	amaranth-assembler_amaranth	PASS	
-amas	amas_AMAS.py	Failed	not a usable tool: it wraps only the subcommand word with no data inputs or outputs, and its baseCommand AMAS is not in the image (the program is AMAS.py).
+amas	amas_concat	PASS	
+amas	amas_convert	PASS	
+amas	amas_remove	PASS	
+amas	amas_replicate	PASS	
+amas	amas_split	PASS	
+amas	amas_summary	PASS	
+amas	amas_translate	PASS	
+amas	amas_trim	PASS	
 ambertools	ambertools_MMPBSA.py	Failed	image problem: MMPBSA.py crashes at start because AMBERHOME is not set in the image (works only with extra environment set by hand).
 ambertools	ambertools_ante-MMPBSA.py	Failed	image problem: ante-MMPBSA.py stops with 'AMBERHOME is not set' because the image does not set AMBERHOME (works only with extra environment set by hand).
 ambertools	ambertools_reduce	PASS	
@@ -186,7 +193,14 @@ amdirt	amdirt_download	PASS
 amdirt	amdirt_merge	PASS	
 amdirt	amdirt_validate	PASS	
 amide	amide	Not completed	AMIDE is an interactive GTK image viewer that needs an X display, so it cannot run as a batch job.
-amiga	amiga	Failed	not a usable tool: it wraps only the amiga subcommand word with no data inputs or outputs.
+amiga	amiga_compare	PASS	
+amiga	amiga_fit	PASS	
+amiga	amiga_get_confidence	PASS	
+amiga	amiga_get_time	Failed	tool bug: amiga 3.0.4 get_time imports get_time_main from amiga.libs.thresholds, which defines only main, so the command always stops with an ImportError.
+amiga	amiga_heatmap	PASS	
+amiga	amiga_normalize	PASS	
+amiga	amiga_summarize	PASS	
+amiga	amiga_test	PASS	
 aminoextract	aminoextract	PASS	
 amira	amira	Not completed	Amira needs a species pandora panRG database, and the smallest one is about 530 MB, too large for this test.
 ampcombi	ampcombi_cluster	PASS	
@@ -232,22 +246,81 @@ amptk	amptk_taxonomy	PASS	Ran with --method sintax on a SINTAX DB built by amptk
 amptk	amptk_unoise2	Failed	image problem: amptk unoise2 runs vsearch --derep_fulllength on FASTQ, which the image's vsearch 2.24 rejects; it also needs licensed USEARCH9, not in the image.
 amptk	amptk_unoise3	PASS	
 amrfior	amrfior	PASS	
-amulety	amulety	Failed	not a usable tool: wraps only the amulety command group with a subcommand string and no data inputs or outputs.
+amulety	amulety_embed	PASS	
+amulety	amulety_translate-igblast	PASS	
 amused	amused_AMUSED	PASS	
-ananse	ananse_ananse	Failed	not a usable tool: wraps only the ananse command group with a subcommand string and free string options, no data inputs or outputs.
+ananse	ananse_binding	PASS	
+ananse	ananse_influence	PASS	
+ananse	ananse_network	PASS	
+ananse	ananse_plot	PASS	
+ananse	ananse_view	PASS	
 anansnake	anansnake	Not completed	The workflow builds conda environments with network access at run time and needs a genomepy genome plus RNA-seq and ATAC-seq count tables, which is too heavy for this test; baseCommand fixed from snakemake to anansnake.
 anarci	anarci_ANARCI	PASS	
-anchore-cli	anchore-cli_account	Failed	not a usable tool: wraps only the anchore-cli account command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_analysis-archive	Failed	not a usable tool: wraps only the anchore-cli analysis-archive command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_evaluate	Failed	not a usable tool: wraps only the anchore-cli evaluate command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_event	Failed	not a usable tool: wraps only the anchore-cli event command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_image	Failed	not a usable tool: wraps only the anchore-cli image command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_policy	Failed	not a usable tool: wraps only the anchore-cli policy command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_query	Failed	not a usable tool: wraps only the anchore-cli query command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_registry	Failed	not a usable tool: wraps only the anchore-cli registry command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_repo	Failed	not a usable tool: wraps only the anchore-cli repo command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_subscription	Failed	not a usable tool: wraps only the anchore-cli subscription command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
-anchore-cli	anchore-cli_system	Failed	not a usable tool: wraps only the anchore-cli system command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_disable	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_enable	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_user_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_user_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_user_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_user_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_user_setpassword	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_account_whoami	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_images_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_images_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_images_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_images_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_images_restore	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_rules_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_rules_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_rules_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive_rules_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_evaluate_check	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_event_delete	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_event_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_event_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_content	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_import	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_metadata	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_vuln	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image_wait	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_activate	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_describe	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_hub_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_hub_install	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_hub_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_query_images-by-package	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_query_images-by-vulnerability	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_registry_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_registry_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_registry_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_registry_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_registry_update	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_repo_add	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_repo_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_repo_get	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_repo_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_repo_unwatch	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_repo_watch	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_subscription_activate	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_subscription_deactivate	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_subscription_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_system_del	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_system_errorcodes	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_system_feeds_list	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_system_feeds_sync	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_system_status	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
+anchore-cli	anchore-cli_system_wait	Failed	image problem: the image ENTRYPOINT is anchore-cli, so cwltool runs 'anchore-cli anchore-cli ...' and it fails with 'No such command'; the command also needs a running Anchore Engine server.
 anchorwave	anchorwave_ali	PASS	
 anchorwave	anchorwave_genoAli	PASS	
 anchorwave	anchorwave_gff2seq	PASS	
@@ -262,27 +335,46 @@ anise_basil	anise_basil	PASS
 anise_basil	anise_basil_anise	PASS	
 anise_basil	anise_basil_filter_basil.py	Failed	image problem: filter_basil.py is Python 2 code run under Python 3.12 and crashes with a bytes/str TypeError on the upstream basil.vcf test file.
 annembed	annembed_hnsw	PASS	
-annonars	annonars_clinvar-genes	Failed	not a usable tool: wraps only the 'annonars clinvar-genes' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_clinvar-minimal	Failed	not a usable tool: wraps only the 'annonars clinvar-minimal' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_clinvar-sv	Failed	not a usable tool: wraps only the 'annonars clinvar-sv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_cons	Failed	not a usable tool: wraps only the 'annonars cons' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_db-utils	Failed	not a usable tool: wraps only the 'annonars db-utils' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_dbsnp	Failed	not a usable tool: wraps only the 'annonars dbsnp' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_freqs	Failed	not a usable tool: wraps only the 'annonars freqs' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_functional	Failed	not a usable tool: wraps only the 'annonars functional' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_gene	Failed	not a usable tool: wraps only the 'annonars gene' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_gnomad-mtdna	Failed	not a usable tool: wraps only the 'annonars gnomad-mtdna' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_gnomad-nuclear	Failed	not a usable tool: wraps only the 'annonars gnomad-nuclear' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_gnomad-sv	Failed	not a usable tool: wraps only the 'annonars gnomad-sv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_helixmtdb	Failed	not a usable tool: wraps only the 'annonars helixmtdb' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_regions	Failed	not a usable tool: wraps only the 'annonars regions' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_server	Failed	not a usable tool: wraps only the 'annonars server' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
-annonars	annonars_tsv	Failed	not a usable tool: wraps only the 'annonars tsv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_clinvar-genes_import	PASS	
+annonars	annonars_clinvar-genes_query	PASS	
+annonars	annonars_clinvar-minimal_import	PASS	
+annonars	annonars_clinvar-minimal_query	PASS	
+annonars	annonars_clinvar-sv_import	PASS	
+annonars	annonars_clinvar-sv_query	PASS	
+annonars	annonars_cons_import	PASS	
+annonars	annonars_cons_query	PASS	
+annonars	annonars_db-utils_copy	PASS	
+annonars	annonars_db-utils_dump-meta	PASS	
+annonars	annonars_dbsnp_import	PASS	
+annonars	annonars_dbsnp_query	PASS	
+annonars	annonars_freqs_import	PASS	
+annonars	annonars_freqs_query	PASS	
+annonars	annonars_functional_import	PASS	
+annonars	annonars_functional_query	PASS	
+annonars	annonars_gene_import	PASS	
+annonars	annonars_gene_query	PASS	
+annonars	annonars_gnomad-mtdna_import	PASS	
+annonars	annonars_gnomad-mtdna_query	PASS	
+annonars	annonars_gnomad-nuclear_import	PASS	
+annonars	annonars_gnomad-nuclear_query	PASS	
+annonars	annonars_gnomad-sv_import	PASS	
+annonars	annonars_gnomad-sv_query	PASS	
+annonars	annonars_helixmtdb_import	PASS	
+annonars	annonars_helixmtdb_query	PASS	
+annonars	annonars_regions_import	PASS	
+annonars	annonars_regions_query	PASS	
+annonars	annonars_server_schema	PASS	
+annonars	annonars_tsv_import	PASS	
+annonars	annonars_tsv_query	PASS	
 annosine2	annosine2_AnnoSINE_v2	PASS	
 annotsv	annotsv	Not completed	Needs the AnnotSV annotation database (5.3 GB human, 2.7 GB mouse), which is too large to download here; flags fixed from the help.
 annotwg	annotwg	PASS	
 ansible	ansible	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
-ansible	ansible_ansible-galaxy	Failed	not a usable tool: wraps only the ansible-galaxy command group with no data inputs or outputs, and the image also crashes on the unknown uid 1001.
+ansible	ansible_ansible-galaxy_info	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
+ansible	ansible_ansible-galaxy_init	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
+ansible	ansible_ansible-galaxy_install	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
+ansible	ansible_ansible-galaxy_list	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
+ansible	ansible_ansible-galaxy_remove	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
 ansible	ansible_ansible-pull	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
 ant	ant	PASS	Synthetic data: a small build.xml ran its target with a -D property and wrote the expected log.
 antarna	antarna_antarna.py	PASS	
@@ -296,29 +388,31 @@ apoc	apoc	PASS
 apollo	apollo_arrow	Not completed	arrow is a client for a running Apollo annotation web server, which is not available in this test; group options moved before the subcommand.
 appspam	appspam	PASS	
 apptainer	apptainer_build	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
-apptainer	apptainer_cache	Failed	not a usable tool: wraps only the 'apptainer cache' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_capability	Failed	not a usable tool: wraps only the 'apptainer capability' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_checkpoint	Failed	not a usable tool: wraps only the 'apptainer checkpoint' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_cache_list	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_completion	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
-apptainer	apptainer_config	Failed	not a usable tool: wraps only the 'apptainer config' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
 apptainer	apptainer_delete	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_exec	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_inspect	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
-apptainer	apptainer_instance	Failed	not a usable tool: wraps only the 'apptainer instance' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_key	Failed	not a usable tool: wraps only the 'apptainer key' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_keyserver	Failed	not a usable tool: wraps only the 'apptainer keyserver' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_oci	Failed	not a usable tool: wraps only the 'apptainer oci' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_overlay	Failed	not a usable tool: wraps only the 'apptainer overlay' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_plugin	Failed	not a usable tool: wraps only the 'apptainer plugin' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_key_import	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_key_list	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_key_newpair	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_key_remove	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_overlay_create	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' (runs only with cwltool --no-match-user), and even then fails because mkfs.ext3 is missing from the image.
+apptainer	apptainer_plugin_create	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_pull	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_push	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
-apptainer	apptainer_registry	Failed	not a usable tool: wraps only the 'apptainer registry' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
-apptainer	apptainer_remote	Failed	not a usable tool: wraps only the 'apptainer remote' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
 apptainer	apptainer_run	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_run-help	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_search	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_shell	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
-apptainer	apptainer_sif	Failed	not a usable tool: wraps only the 'apptainer sif' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_sif_add	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif_del	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif_dump	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif_header	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif_info	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif_list	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif_new	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif_setprim	Failed	image problem: apptainer 1.3.0 stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_sign	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_test	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
 apptainer	apptainer_verify	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
@@ -336,12 +430,21 @@ arb-bio	arb-bio_arb	Not completed	arb_ntree is an interactive X11 GUI program an
 arb-bio	arb-bio_arb_edit4	Not completed	arb_edit4 is the interactive X11 sequence editor of ARB and cannot run as a batch job.
 arborator	arborator	PASS	
 arborist	arborist	PASS	
-arcas-hla	arcas-hla_arcasHLA	Failed	not a usable tool: the CWL wraps only the arcasHLA command group with a subcommand string and has no data inputs or outputs.
+arcas-hla	arcas-hla_convert	Not completed	needs the IMGT/HLA reference, which arcasHLA builds (git clone of IMGT/HLA) only inside its own install folder; the image does not ship it, so on a real merged genotype table it stopped with dat/ref/hla.convert.json not found.
+arcas-hla	arcas-hla_customize	Failed	image problem: the command crashes on import with 'Bio.Alphabet has been removed from Biopython' (also needs the IMGT/HLA reference).
+arcas-hla	arcas-hla_extract	PASS	
+arcas-hla	arcas-hla_genotype	Not completed	needs the IMGT/HLA reference, which arcasHLA builds (git clone of IMGT/HLA) only inside its own install folder; the image does not ship it, so on real extracted reads of the tool's test.bam it tried to clone the database and stopped.
+arcas-hla	arcas-hla_merge	PASS	
+arcas-hla	arcas-hla_partial	Not completed	needs the IMGT/HLA reference, which arcasHLA builds (git clone of IMGT/HLA) only inside its own install folder; the image does not ship it, and it also needs a genotype.json from a genotype run that could not be done.
+arcas-hla	arcas-hla_quant	Not completed	needs a custom HLA index from arcasHLA customize, which cannot run in this image.
 archer	archer_launch	Not completed	archer launch starts a long-running gRPC server that uploads reads to an AWS S3 bucket, so it needs AWS credentials and cannot finish as a batch job.
 archer	archer_process	Not completed	archer process sends a JSON request from standard input to a running Archer server with AWS S3 access, which a batch test cannot provide.
 archer	archer_watch	Not completed	archer watch streams messages from a running Archer server and never ends on its own, so it cannot run as a batch job.
-architeuthis	architeuthis_completion	Failed	not a usable tool: it wraps the shell autocompletion generator, which takes no data inputs.
-architeuthis	architeuthis_mapping	Failed	not a usable tool: it wraps only the mapping command group with a subcommand string and has no data inputs or outputs.
+architeuthis	architeuthis_lineage	PASS	
+architeuthis	architeuthis_mapping_filter	PASS	
+architeuthis	architeuthis_mapping_kmers	PASS	
+architeuthis	architeuthis_mapping_score	PASS	
+architeuthis	architeuthis_mapping_summary	PASS	
 architeuthis	architeuthis_merge	PASS	
 arcs	arcs	PASS	
 arcs	arcs_arcs-make	Failed	image problem: the image lacks perl, LINKS and bwa, so the arks-long demo stops at its first step (the CWL also binds make options as separate words instead of key=value).
@@ -354,21 +457,35 @@ argnorm	argnorm_groot	PASS
 argnorm	argnorm_hamronization	PASS	
 argnorm	argnorm_resfinder	PASS	
 argo	argo	Not completed	Needs the 13.5 GB Argo SARG+/GTDB database from Zenodo plus indexing, too large for this test.
-argparse2tool	argparse2tool	Failed	not a usable tool: the argparse2tool command only prints the dropins folder path for PYTHONPATH and ignores all arguments, so every input and the output in the CWL are invented.
 args_oap	args_oap_make_db	PASS	
 args_oap	args_oap_stage_one	Failed	image problem: the image ships unindexed SARG/GreenGenes/KO30 databases in a root-owned package folder and stage_one always indexes them there, which fails in the read-only container run as the user (needs --no-read-only and --no-match-user).
 args_oap	args_oap_stage_two	PASS	Ran on the README example (STAS) with the SARG database indexed by make_db via --database, because the built-in database is not indexed in the image.
 aria2	aria2_aria2c	PASS	
-ariba	ariba	Failed	not a usable tool: wraps only the ariba command group (a subcommand string and stdout), with no data inputs or outputs.
+ariba	ariba_aln2meta	PASS	
+ariba	ariba_expandflag	PASS	
+ariba	ariba_flag	PASS	
+ariba	ariba_getref	PASS	
+ariba	ariba_micplot	PASS	synthetic data: small hand-written MIC table; the summary and prepareref folder come from a real ariba run (plot made with --no_combinations; with one variant combination the tool divides by zero).
+ariba	ariba_prepareref	PASS	
+ariba	ariba_prepareref_tb	PASS	
+ariba	ariba_pubmlstget	PASS	
+ariba	ariba_pubmlstspecies	PASS	
+ariba	ariba_refquery	PASS	
+ariba	ariba_run	PASS	
+ariba	ariba_summary	PASS	
 array-as-vcf	array-as-vcf	PASS	
 arriba	arriba_draw_fusions.r	PASS	
-art	art_df	Failed	not a usable tool: wraps the system df utility (from an unrelated 'art of command line' page), not an ART program, and art_df does not exist in the image.
-art	art_ifconfig	Failed	not a usable tool: wraps the system ifconfig utility (from an unrelated 'art of command line' page), not an ART program, and art_ifconfig does not exist in the image.
-art	art_less	PASS	
+art	art_454	PASS	
+art	art_SOLiD	PASS	
+art	art_aln2bed	Failed	image problem: aln2bed.pl is a perl script and the image has no /usr/bin/perl (exit 127).
+art	art_illumina	PASS	
+art	art_map2bed	Failed	image problem: map2bed.pl is a perl script and the image has no /usr/bin/perl (exit 127).
+art	art_profiler_454	Failed	image problem: art_profiler_454 is a perl script and the image has no /usr/bin/perl (exit 127).
+art	art_profiler_illumina	Failed	image problem: the image has no perl, so the helper script fastqReadAvg.pl that art_profiler_illumina calls cannot run.
 artemis	artemis_act	Not completed	ACT is an interactive Java GUI genome browser that needs a display and cannot run as a batch job.
 artemis	artemis_art	Not completed	Artemis is an interactive Java GUI genome browser that needs a display and cannot run as a batch job.
-artemis	artemis_bamview	Failed	not a usable tool: generated from a JVM start-up log line, with only JVM options and a command name that does not exist.
 artemis	artemis_dnaplotter	Not completed	DNAPlotter is an interactive Java GUI program that fails headless and cannot run as a batch job.
+artemis	artemis_writedb_entry	Not completed	writedb_entry exports entries from a Chado PostgreSQL database; no Chado server is available, so the run only logged 'Connection refused'.
 artex	artex	Failed	image problem: on the author's ERR5398250 test set the bundled Clair3 full-alignment step fails (gzip invalid magic), so bcftools isec finds no index and artex exits 1, also with plain docker run.
 artfastqgenerator	artfastqgenerator	PASS	
 artic	artic_export	Not completed	No small real test set with FAST5 raw-signal files and a matching sequencing summary was found.
@@ -382,7 +499,9 @@ artic-tools	artic-tools_align_trim	PASS
 artic-tools	artic-tools_check_vcf	PASS	
 artic-tools	artic-tools_get_scheme	PASS	
 artic-tools	artic-tools_validate_scheme	PASS	
-art_modern	art_modern	Failed	not a usable tool: generated from a container error log; its image (art 2016.06.05) has no art_modern command and the flags are invented.
+art_modern	art_modern	PASS	
+art_modern	art_modern_am_compress	PASS	
+art_modern	art_modern_art_profile_builder	PASS	
 art_modern-openmpi	art_modern-openmpi	PASS	
 arvados-cwl-runner	arvados-cwl-runner	Not completed	arvados-cwl-runner needs a running Arvados cluster with ARVADOS_API_HOST and ARVADOS_API_TOKEN, even for --validate.
 arvados-python-client	arvados-python-client_arv-get	Not completed	Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available.
@@ -391,7 +510,7 @@ arvados-python-client	arvados-python-client_arv-put	Not completed	Needs an Arvad
 asciigenome	asciigenome_ASCIIGenome	PASS	
 asgal	asgal	PASS	
 ashlar	ashlar	PASS	
-askocli	askocli	Failed	not a usable tool: wraps only the subcommand group as free strings with no data inputs or outputs, and every subcommand needs an AskOmics server and API key.
+askocli	askocli_integrate	Not completed	needs a running AskOmics server and API key; on a real GFF3 the command line parsed and the tool stopped at login with connection refused.
 asn2gb	asn2gb	PASS	
 aspera-cli	aspera-cli_ascli	Not completed	Real transfers need a remote Aspera server, credentials, network and the ascp binary (not in the image); after fixing the option syntax a local config command runs correctly.
 asqcan	asqcan	Not completed	The pipeline always downloads the multi-GB NCBI prot.accession2taxid.gz file into HOME before it starts, which needs network and is too large for this test.
@@ -399,12 +518,15 @@ assemblerflow	assemblerflow_build	PASS
 assembly-scan	assembly-scan	PASS	
 assembly-stats	assembly-stats	PASS	
 assemblytics	assemblytics	Failed	image problem: Assemblytics_between_alignments.pl uses /usr/bin/perl, which is missing in the image, so between-alignment variants are silently lost (1 of 43 expected yeast SVs).
-assembly_uploader	assembly_uploader	Failed	not a usable tool: generated from a failed image pull, it names the wrong image (assemblycomparator2) and an invented command and flags; the package's real commands are study_xmls, submit_study, assembly_manifest, release_study and webin_cli_handler.
+assembly_uploader	assembly_uploader_assembly_manifest	PASS	
+assembly_uploader	assembly_uploader_release_study	Not completed	release_study releases a study on ENA and needs ENA Webin credentials, which are not available.
+assembly_uploader	assembly_uploader_study_xmls	PASS	
+assembly_uploader	assembly_uploader_submit_study	Not completed	submit_study registers a study on ENA and needs ENA Webin credentials, which are not available.
+assembly_uploader	assembly_uploader_webin_cli_handler	Not completed	webin_cli_handler runs ENA Webin-CLI, which needs ENA Webin credentials for both validate and submit modes; none are available.
 assemblyutility	assemblyutility_AssemblyStatistics	PASS	
 assemblyutility	assemblyutility_SelectLongestReads	PASS	
 astalavista	astalavista_asta	PASS	
 astalavista	astalavista_astafunk	Not completed	With real chr21 GTF, genome and Pfam HMMs the exhaustive search throws NullPointerException for every gene and reports no hits, and heuristic mode needs a reference domain file that is not available.
-astalavista	astalavista_astalavista	Failed	not a usable tool: wraps only the Flux launcher's general options and a --tool string, with no data inputs or outputs; the real tools are wrapped in the other astalavista files.
 astalavista	astalavista_scorer	Not completed	Runs on chr21 with the GeneID human3iso parameter file, but every donor site scores about -10000 even with canonical GT motifs, so the scores cannot be confirmed (the parameter file may not match this old parser).
 astalavista	astalavista_sortbed	PASS	
 astalavista	astalavista_sortgtf	PASS	
@@ -413,8 +535,6 @@ astral-tree	astral-tree	PASS
 atactk	atactk_trim_adapters	Failed	tool bug: trim_adapters always exits 1 at the end of input (generator raised StopIteration under Python 3.7), so the run fails although the trimmed files are written.
 ataqv	ataqv	PASS	
 athena_meta	athena_meta_athena-meta	PASS	
-athena_meta	athena_meta_bwa	Failed	not a usable tool: wraps the bwa dependency inside the athena_meta image as a bare command group with no data inputs or outputs.
-athena_meta	athena_meta_samtools	Failed	not a usable tool: wraps the samtools dependency inside the athena_meta image as a bare command group with no data inputs or outputs.
 atlas	atlas_allelefreq	PASS	
 atlas	atlas_ancestralalleles	PASS	
 atlas	atlas_assesssoftclipping	PASS	
@@ -449,16 +569,27 @@ attotree	attotree	PASS
 augur	augur_align	PASS	
 augur	augur_ancestral	PASS	
 augur	augur_clades	PASS	
-augur	augur_curate	Failed	not a usable tool: wraps only the 'augur curate' command group (subcommand string, no data inputs or outputs).
+augur	augur_curate_abbreviate-authors	PASS	
+augur	augur_curate_apply-geolocation-rules	PASS	
+augur	augur_curate_apply-record-annotations	PASS	
+augur	augur_curate_format-dates	PASS	
+augur	augur_curate_normalize-strings	PASS	
+augur	augur_curate_parse-genbank-location	PASS	
+augur	augur_curate_passthru	PASS	
+augur	augur_curate_rename	PASS	
+augur	augur_curate_titlecase	PASS	
+augur	augur_curate_transform-strain-name	PASS	
 augur	augur_distance	PASS	
-augur	augur_export	Failed	not a usable tool: wraps only the 'augur export' command group (subcommand string, no data inputs or outputs).
+augur	augur_export_v1	PASS	
+augur	augur_export_v2	PASS	
 augur	augur_filter	PASS	
 augur	augur_frequencies	PASS	
-augur	augur_import	Failed	not a usable tool: wraps only the 'augur import' command group (subcommand string, no data inputs or outputs).
+augur	augur_import_beast	PASS	
 augur	augur_index	PASS	
 augur	augur_lbi	PASS	
 augur	augur_mask	PASS	
-augur	augur_measurements	Failed	not a usable tool: wraps only the 'augur measurements' command group (subcommand string, no data inputs or outputs).
+augur	augur_measurements_concat	PASS	
+augur	augur_measurements_export	PASS	
 augur	augur_merge	PASS	
 augur	augur_parse	PASS	
 augur	augur_read-file	PASS	
@@ -466,7 +597,8 @@ augur	augur_reconstruct-sequences	PASS
 augur	augur_refine	PASS	
 augur	augur_sequence-traits	PASS	
 augur	augur_subsample	PASS	
-augur	augur_titers	Failed	not a usable tool: wraps only the 'augur titers' command group (subcommand string, no data inputs or outputs).
+augur	augur_titers_sub	PASS	
+augur	augur_titers_tree	PASS	
 augur	augur_traits	PASS	
 augur	augur_translate	PASS	
 augur	augur_tree	PASS	
@@ -539,13 +671,19 @@ bacpage	bacpage_identify_files	PASS
 bacpage	bacpage_phylogeny	Failed	image problem: run_gubbins.py is missing, so the default recombination detection fails; the tree builds only with --no-detect.
 bacpage	bacpage_profile	PASS	
 bacpage	bacpage_setup	PASS	
-bacpage	bacpage_utilities	Failed	not a usable tool: wraps only the utilities command group with a subcommand string and no data inputs or outputs.
+bacpage	bacpage_utilities_extract_region	PASS	
 bacphlip	bacphlip	Failed	image problem: hmmsearch (HMMER) is missing from the image, so the pipeline stops after the six-frame translation.
-bactopia	bactopia	Failed	not a usable tool: baseCommand 'run' is the Nextflow run subcommand taken from nextflow help, not a program in the image, and it has no bactopia data inputs or outputs.
-bactopia-qc	bactopia-qc	Failed	not a usable tool: wraps the bare java interpreter with a free main-class string and invented --output-r1 flags; the in=/in2= options belong to BBTools repair.sh, a dependency in the image.
-bactopia-sketcher	bactopia-sketcher_sketch	Failed	not a usable tool: wraps sourmash sketch dna, a dependency inside the image, not the package's bactopia-sketcher program.
+bactopia	bactopia_atb_downloader	Not completed	The default All-the-Bacteria file list URL (osf.io/download/4yv85) now returns 404, and a real download needs multi-GB tar.xz archives.
+bactopia	bactopia_atb_formatter	PASS	
+bactopia	bactopia_datasets	Not completed	Downloads all optional Bactopia datasets (multi-GB), too large for this test.
+bactopia	bactopia_prepare	PASS	
+bactopia	bactopia_pubmlst_build	Not completed	Needs a PubMLST API token made by bactopia-pubmlst-setup with real credentials.
+bactopia	bactopia_pubmlst_setup	Not completed	Needs a PubMLST or Pasteur OAuth client ID and secret (credentials).
+bactopia	bactopia_search	PASS	
+bactopia	bactopia_summary	Not completed	No real Bactopia results folder is available; the tool needs per-sample QC, assembly and annotation outputs from a full Bactopia pipeline run, and an assembly-only folder gives 'No samples found to process'.
+bactopia-qc	bactopia-qc	Failed	tool bug: the bactopia-qc script keeps unrendered Nextflow placeholders (bbduk.sh -Xmx!{xmx}, ain=!{params.ain}), so Java fails to start and every real read set ends as error FASTQs.
+bactopia-sketcher	bactopia-sketcher	PASS	
 bactopia-variants	bactopia-variants	Failed	image problem: bactopia-variants is an unrendered Nextflow template script that ignores its arguments and fails on placeholders such as ${task.cpus}.
-baczy	baczy_citation	Failed	not a usable tool: it only prints a citation, the baseCommand is the CWL file name, and its inputs are DOI lines from the help.
 baczy	baczy_config	PASS	
 baczy	baczy_run	Not completed	the Snakemake pipeline needs Bakta and GTDB-Tk databases plus per-rule Singularity or conda environments with network access; fastp, megahit and bakta are not in the image.
 badread	badread_error_model	PASS	
@@ -554,7 +692,6 @@ badread	badread_qscore_model	PASS
 badread	badread_simulate	PASS	
 baitfisher	baitfisher_BaitFilter	PASS	
 baitfisher	baitfisher_BaitFisher	PASS	
-bakdrive	bakdrive	Failed	not a usable tool: wraps only the sub-command group with boolean sub-command words and no data inputs or outputs.
 bakdrive	bakdrive_driver	PASS	
 bakdrive	bakdrive_fmt_donor	PASS	
 bakdrive	bakdrive_fmt_driver	PASS	
@@ -605,7 +742,8 @@ bamrescue	bamrescue_bamfile	PASS
 bamrescue	bamrescue_check	PASS	
 bamrescue	bamrescue_output	PASS	
 bamrescue	bamrescue_rescue	PASS	
-bamscale	bamscale_BAMscale	Failed	not a usable tool: wraps only the BAMscale command group (a subcommand string), with no BAM or BED inputs and no outputs.
+bamscale	bamscale_cov	PASS	
+bamscale	bamscale_scale	PASS	
 bamslice	bamslice	PASS	
 bamsnap	bamsnap	PASS	
 bamstats	bamstats	PASS	
@@ -625,9 +763,39 @@ bamtools	bamtools_revert	PASS
 bamtools	bamtools_sort	PASS	
 bamtools	bamtools_split	PASS	
 bamtools	bamtools_stats	PASS	
-bamutil	bamutil_bam	Failed	not a usable tool: wraps only the bam command group with a tool-name string and free string arguments, so no SAM/BAM file can be staged and no output file is collected.
-bandage	bandage_Bandage	Failed	not a usable tool: wraps only the Bandage command group (a subcommand string), with no graph input and no image or info output.
-bandage_ng	bandage_ng_Bandage	Failed	not a usable tool: wraps only the Bandage command group (a subcommand string), with no graph input and no output, and it uses the old bandage 0.9.0 image instead of BandageNG.
+bamutil	bamutil_bam2FastQ	PASS	
+bamutil	bamutil_clipOverlap	PASS	
+bamutil	bamutil_convert	PASS	
+bamutil	bamutil_dedup	PASS	
+bamutil	bamutil_dedup_LowMem	PASS	
+bamutil	bamutil_diff	PASS	
+bamutil	bamutil_dumpHeader	PASS	
+bamutil	bamutil_dumpIndex	PASS	
+bamutil	bamutil_dumpRefInfo	PASS	
+bamutil	bamutil_filter	PASS	
+bamutil	bamutil_findCigars	PASS	
+bamutil	bamutil_gapInfo	PASS	
+bamutil	bamutil_mergeBam	PASS	
+bamutil	bamutil_polishBam	PASS	
+bamutil	bamutil_readReference	PASS	
+bamutil	bamutil_recab	PASS	
+bamutil	bamutil_revert	PASS	
+bamutil	bamutil_splitBam	PASS	
+bamutil	bamutil_splitChromosome	PASS	
+bamutil	bamutil_squeeze	PASS	
+bamutil	bamutil_stats	PASS	
+bamutil	bamutil_trimBam	PASS	
+bamutil	bamutil_validate	PASS	
+bamutil	bamutil_writeRegion	PASS	
+bandage	bandage_image	PASS	
+bandage	bandage_info	PASS	
+bandage	bandage_querypaths	Failed	image problem: NCBI BLAST (makeblastdb) is not in the bandage 0.9.0 image, so querypaths stops with 'The program makeblastdb was not found' and exit 139.
+bandage	bandage_reduce	PASS	
+bandage_ng	bandage_ng_image	PASS	
+bandage_ng	bandage_ng_info	Failed	tool bug: BandageNG 2026.9.1 counts a GFA link and its listed reverse complement as two edges (Edge count 8 instead of 4 on the Galaxy test GFA; Galaxy expects 4); all other statistics match.
+bandage_ng	bandage_ng_layout	PASS	
+bandage_ng	bandage_ng_querypaths	Failed	image problem: NCBI BLAST (makeblastdb) is not in the bandage_ng image, so querypaths stops with 'The program makeblastdb was not found'.
+bandage_ng	bandage_ng_reduce	PASS	
 banner	banner_predict	PASS	
 banner	banner_train	PASS	
 barbell	barbell_annotate	PASS	
@@ -639,8 +807,7 @@ barcodeforge	barcodeforge_barcode	PASS
 barcodeforge	barcodeforge_extract-auspice-data	PASS	
 barriers	barriers	PASS	
 barrnap	barrnap	PASS	
-barrnap-python	barrnap-python_barrnap	Failed	not a usable tool: wraps the perl barrnap dependency with inputs taken from log lines and no flags; the package's own barrnap.py also fails in this image because it cannot find the bac.hmm database (image problem).
-barseqcount	barseqcount	Failed	not a usable tool: wraps only the command group with a subcommand string and no data inputs or outputs, and its baseCommand barseqcount.py does not exist in the image (the program is barseqcount).
+barrnap-python	barrnap-python	Failed	image problem: barrnap.py cannot find its HMM database (db/bac.hmm is not installed in the image), so it exits before predicting rRNAs on a real bacterial genome.
 barseqcount	barseqcount_analyze	Not completed	needs the count report and CSV from barseqcount count, which cannot be produced because count crashes in this image; no public test data exists.
 barseqcount	barseqcount_count	Failed	image problem: barseqcount count crashes when creating its configuration file because the bundled dmbiolib 0.3.10 changed conf_start(), and a hand-written configuration on synthetic data crashes with KeyError in barcode assignment.
 bart	bart_avg	PASS	synthetic data (bart index 0..3): average is 1.5 as expected.
@@ -729,9 +896,9 @@ bart	bart_window	PASS	synthetic data: 8-point Hamming window values 0.08 to 0.95
 bart	bart_wshfl	PASS	synthetic data (BART coil phantom, wave PSF): BART test-wshfl passes (NRMSE 0.223 < 0.23).
 bart	bart_zeros	PASS	synthetic data: 50x50 array of zeros as expected.
 bart	bart_zexp	PASS	synthetic data: exp(i*pi) gives -1 as expected.
-bart-view	bart-view_bart	Failed	not a usable tool: it wraps only the bart command group with a subcommand string and no data inputs or outputs.
 basenji	basenji_basenji_motifs.py	Failed	image problem: basenji_motifs.py crashes at start unless the HG38 environment variable is set, and it also reads an undefined split_label option; CWL flags were rewritten from the help.
-basenji	basenji_basenji_sat.py	Failed	not a usable tool: basenji_sat.py does not exist in the image (only basenji_sat_bed.py and basenji_sat_vcf.py), so the command cannot run.
+basenji	basenji_basenji_sat_bed.py	PASS	
+basenji	basenji_basenji_sat_vcf.py	PASS	
 batch_brb	batch_brb	PASS	
 batch_brb	batch_brb_batch_correction_all_loess_wrapper.r	PASS	
 batch_brb	batch_brb_batch_correction_wrapper.r	PASS	
@@ -747,8 +914,14 @@ bayescode	bayescode_nodemutsel	PASS
 bayescode	bayescode_nodeomega	PASS	
 bayescode	bayescode_nodetraits	PASS	
 bayescode	bayescode_readmutselomega	PASS	
-bayestyper	bayestyper_bayesTyper	Failed	not a usable tool: it wraps only the command group with a subcommand string and free options, and its baseCommand bayestyper does not exist (the program is bayesTyper).
-bayestyper	bayestyper_bayesTyperTools	Failed	not a usable tool: it wraps only the bayesTyperTools command group with a subcommand string and free options, with no data inputs or outputs.
+bayestyper	bayestyper_bayesTyperTools_addAttributes	Failed	image problem: the bioconda build compiles out code inside assert() calls (NDEBUG), so addAttributes segfaults on a valid sarscov2 VCF.
+bayestyper	bayestyper_bayesTyperTools_annotate	Failed	image problem: the bioconda build compiles out code inside assert() calls (NDEBUG), so annotate segfaults on valid sarscov2 VCFs and writes an empty VCF.
+bayestyper	bayestyper_bayesTyperTools_combine	Failed	image problem: the bioconda build compiles out code inside assert() calls (NDEBUG), so combine segfaults even on a one-line valid VCF.
+bayestyper	bayestyper_bayesTyperTools_convertAllele	Failed	image problem: the bioconda build compiles out code inside assert() calls (NDEBUG), so convertAllele loads no genome sequences and aborts with unordered_map::at.
+bayestyper	bayestyper_bayesTyperTools_filter	Failed	image problem: the bioconda build compiles out code inside assert() calls (NDEBUG), so filter segfaults on a valid sarscov2 VCF.
+bayestyper	bayestyper_bayesTyperTools_makeBloom	Failed	image problem: the bioconda build compiles out code inside assert() calls (NDEBUG), so makeBloom reads 0 k-mers from a valid KMC3 table and segfaults.
+bayestyper	bayestyper_bayesTyper_cluster	Failed	image problem: the bioconda build compiles out code inside assert() calls (NDEBUG), so bayesTyper cluster aborts with map::at on a valid sarscov2 VCF, FASTA and KMC3 sample.
+bayestyper	bayestyper_bayesTyper_genotype	Not completed	needs bayesTyper cluster output, which this image cannot produce because cluster and makeBloom crash.
 bazam	bazam	PASS	
 bbmap	bbmap_bbduk.sh	PASS	
 bbmap	bbmap_bbmap.sh	PASS	
@@ -757,10 +930,12 @@ bbmap	bbmap_bbnorm.sh	PASS
 bbmap	bbmap_dedupe.sh	PASS	
 bbmap	bbmap_khist.sh	PASS	
 bbmap	bbmap_reformat.sh	PASS	
-bbmapy	bbmapy_bbmapy-test	Failed	not a usable tool: bbmapy-test is a built-in self-test that ignores all arguments, makes its own random data and deletes its outputs (the image also lacks Java and downloads it at run time).
 bcalm	bcalm	PASS	
 bcbio-nextgen	bcbio-nextgen_bcbio_nextgen.py	Not completed	Running the pipeline needs a full bcbio install (bcbio_system.yaml, indexed genomes and third-party tools such as bwa, samtools and gatk), which this image does not contain.
-bcbio-nextgen-vm	bcbio-nextgen-vm_bcbio_vm.py	Failed	not a usable tool: wraps only the bcbio_vm.py command group (a free subcommand string and --datadir) with no data inputs or outputs; the subcommands also drive Docker or cloud services.
+bcbio-nextgen-vm	bcbio-nextgen-vm_cwl	Not completed	needs an installed bcbio genome data bundle (GRCh37 indexes and tool-data loc files, many GB); with sarscov2 reads it stops at the genome lookup.
+bcbio-nextgen-vm	bcbio-nextgen-vm_cwlrun	Not completed	runs a bcbio-generated CWL workflow through a runner with Docker containers and bcbio genome data, which bcbio_vm.py cwl could not produce here.
+bcbio-nextgen-vm	bcbio-nextgen-vm_run	Not completed	starts the bcbio Docker container (Docker inside Docker) and needs the multi-GB bcbio genome data bundle.
+bcbio-nextgen-vm	bcbio-nextgen-vm_template	PASS	
 bcbio-rnaseq	bcbio-rnaseq_compare	Failed	image problem: R package 'reshape' is missing, so the caller-comparison step (compare.R plots) fails silently; the DESeq2/edgeR/voom tables themselves match the repo's expected results.
 bcbio-rnaseq	bcbio-rnaseq_simulate	PASS	
 bcbio-rnaseq	bcbio-rnaseq_summarize	PASS	
@@ -791,7 +966,7 @@ bcftools	bcftools_stats	PASS
 bcftools	bcftools_view	PASS	
 bcftools-gtc2vcf-plugin	bcftools-gtc2vcf-plugin	PASS	
 bcftools-liftover-plugin	bcftools-liftover-plugin	PASS	
-bcftools-snvphyl-plugin	bcftools-snvphyl-plugin_bcftools	Failed	not a usable tool: wraps only the bcftools command group with a command string and no data inputs or outputs, not the filter_snv_density plugin.
+bcftools-snvphyl-plugin	bcftools-snvphyl-plugin_filter_snv_density	PASS	
 bcgtree	bcgtree	PASS	
 bcl2fastq-nextseq	bcl2fastq-nextseq_bcl_to_fastq	Failed	image problem: the image lacks the bcl2fastq binary that bcl_to_fastq calls (left out of the recipe for licence reasons).
 bcool	bcool	PASS	
@@ -904,11 +1079,16 @@ bgt	bgt_fmf	PASS
 bgt	bgt_import	PASS	
 bgt	bgt_view	PASS	
 bialign	bialign_bialign.py	PASS	
-biasaway	biasaway_background	Failed	not a usable tool: wraps only the top-level command group (subcommand string and unbound k/w/g/c switches) with no sequence inputs or output files.
+biasaway	biasaway_c	PASS	
+biasaway	biasaway_g	PASS	
+biasaway	biasaway_k	PASS	
+biasaway	biasaway_w	PASS	
 bicseq2-norm	bicseq2-norm_BICseq2-norm.pl	Failed	image problem: the R package mgcv is missing, so NBICseq-norm.pl stops before any work (CWL rewritten to the real command NBICseq-norm.pl).
 bicseq2-seg	bicseq2-seg	PASS	synthetic data: planted 2x gain in normalized bins found exactly (log2 ratio 1.0); CWL rewritten to the real command NBICseq-seg.pl.
 bifidoannotator	bifidoannotator_bifidoAnnotator	PASS	B. breve UCC2003 benchmark proteome gives 18 GH hits to Bbr_ loci in 11 GH families; the mapping file must be passed because the image cannot find its packaged copy.
-bifrost	bifrost_Bifrost	Failed	not a usable tool: wraps only the command group (a command string and one free parameter string) with no sequence inputs or graph outputs.
+bifrost	bifrost_build	PASS	
+bifrost	bifrost_query	PASS	
+bifrost	bifrost_update	PASS	
 bifrost-httr	bifrost-httr_compile-model	PASS	Built-in and staged Stan models compile to executables; added the missing executable output.
 bifrost-httr	bifrost-httr_compress-output	PASS	synthetic data: fits of 4 probes compressed into one summary JSON holding all probes and the global PoD.
 bifrost-httr	bifrost-httr_create-report	PASS	synthetic data: MultiQC report ranks the planted responder top (log2 FC 2.92 vs planted 3); added report outputs.
@@ -927,17 +1107,17 @@ bigsi	bigsi_merge	PASS	Merging a one-sample index (s4) into the s1/s2 index make
 bigsi	bigsi_search	PASS	A test k-mer is found 100% in both samples and a random k-mer in none; added the index input (staged beside the config); thresholds below 1.0 miss single k-mers (tool behaviour).
 bigslice	bigslice	Not completed	Needs the 284 MB BiG-SLiCE HMM model database, which is not in the image; output folder input fixed from Directory to string.
 bigtools	bigtools_bigbedtobed	PASS	
-bigwig-nim	bigwig-nim_bigwig	Failed	not a usable tool: wraps only the bigwig command group with a stats switch, no data inputs or outputs; the view and stats subcommands are not wrapped.
+bigwig-nim	bigwig-nim_stats	PASS	
+bigwig-nim	bigwig-nim_view	PASS	
 binchicken	binchicken_build	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); build itself is the step that creates them.
 binchicken	binchicken_coassemble	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed.
-binchicken	binchicken_evaluate	Failed	not a usable tool: runs bare binchicken without the evaluate subcommand and with invented flags (--threads, --verbose, --output-file); real flags are --aviary-outputs, --new-genomes, --coassemble-output and others.
+binchicken	binchicken_evaluate	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder; command line parsed fine on the repo mock_coassemble test data.
 binchicken	binchicken_iterate	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string/File to File/Directory and bogus outputs removed.
-binchicken	binchicken_marker	Failed	not a usable tool: wraps only the binchicken command group with a subcommand string, no data inputs or outputs.
 binchicken	binchicken_single	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed.
 binchicken	binchicken_update	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string paths and bogus outputs to File/Directory inputs.
-bindash	bindash_Query	Failed	not a usable tool: named after a help word, duplicate of the generic bindash command-group wrapper with no data inputs or outputs.
-bindash	bindash_bindash	Failed	not a usable tool: wraps only the bindash command group with a subcommand string and free string options, no File inputs to stage genomes and no output files; sketch, dist and exact are not wrapped.
-bindash	bindash_genomes	Failed	not a usable tool: named after a help word, duplicate of the generic bindash command-group wrapper with no data inputs or outputs.
+bindash	bindash_dist	PASS	
+bindash	bindash_exact	PASS	
+bindash	bindash_sketch	PASS	
 bindashtree	bindashtree	PASS	
 binette	binette	PASS	
 binlorry	binlorry	PASS	
@@ -964,8 +1144,18 @@ bio	bio_search	PASS
 bio	bio_table	PASS	
 bio	bio_taxon	Not completed	Queries need a prebuilt NCBI taxonomy database in ~/.bio, and the CWL has no input to pass one in (--build runs alone and its database is not kept).
 bio	bio_uniq	PASS	
-bio2zarr	bio2zarr_plink2zarr	Failed	not a usable tool: wraps only the plink2zarr command group with a free subcommand string and argument list, no data inputs or outputs.
-bio2zarr	bio2zarr_vcf2zarr	Failed	not a usable tool: wraps only the vcf2zarr command group, with subcommand names as unbound booleans and no data inputs or outputs.
+bio2zarr	bio2zarr_plink2zarr_convert	PASS	
+bio2zarr	bio2zarr_vcf2zarr_convert	PASS	
+bio2zarr	bio2zarr_vcf2zarr_dencode_finalise	PASS	
+bio2zarr	bio2zarr_vcf2zarr_dencode_init	PASS	
+bio2zarr	bio2zarr_vcf2zarr_dencode_partition	PASS	
+bio2zarr	bio2zarr_vcf2zarr_dexplode_finalise	PASS	
+bio2zarr	bio2zarr_vcf2zarr_dexplode_init	PASS	
+bio2zarr	bio2zarr_vcf2zarr_dexplode_partition	PASS	
+bio2zarr	bio2zarr_vcf2zarr_encode	PASS	
+bio2zarr	bio2zarr_vcf2zarr_explode	PASS	
+bio2zarr	bio2zarr_vcf2zarr_inspect	PASS	
+bio2zarr	bio2zarr_vcf2zarr_mkschema	PASS	
 bioawk	bioawk	PASS	
 biobambam	biobambam_bamauxmerge	PASS	
 biobambam	biobambam_bammarkduplicatesopt	PASS	
@@ -978,7 +1168,19 @@ biobasehttptools	biobasehttptools_FetchSequence	PASS
 biobasehttptools	biobasehttptools_GeneIdToGOTerms	Failed	tool problem: it queries the retired rest.ensemblgenomes.org service and returns every gene id with an empty mapping.
 biobasehttptools	biobasehttptools_GeneIdToUniProtId	Failed	tool problem: it queries the retired rest.ensemblgenomes.org service and returns every gene id with an empty mapping.
 biobb_chemistry	biobb_chemistry_acpype_convert_amber_to_gmx	PASS	
-biobb_gromacs	biobb_gromacs_insert_molecules	Failed	not a usable tool: biobb_gromacs has no insert_molecules program or module in the image or in its source repository.
+biobb_gromacs	biobb_gromacs_append_ligand	PASS	
+biobb_gromacs	biobb_gromacs_editconf	PASS	
+biobb_gromacs	biobb_gromacs_genion	PASS	
+biobb_gromacs	biobb_gromacs_genrestr	PASS	
+biobb_gromacs	biobb_gromacs_gmxselect	PASS	
+biobb_gromacs	biobb_gromacs_grompp	PASS	
+biobb_gromacs	biobb_gromacs_grompp_mdrun	PASS	
+biobb_gromacs	biobb_gromacs_make_ndx	PASS	
+biobb_gromacs	biobb_gromacs_mdrun	PASS	
+biobb_gromacs	biobb_gromacs_ndx2resttop	PASS	
+biobb_gromacs	biobb_gromacs_pdb2gmx	PASS	
+biobb_gromacs	biobb_gromacs_solvate	PASS	
+biobb_gromacs	biobb_gromacs_trjcat	PASS	
 biobb_io	biobb_io_alphafold	PASS	
 biobb_mem	biobb_mem_lipyphilic_flipflop	PASS	
 biobloomtools	biobloomtools_biobloomcategorizer	PASS	
@@ -990,10 +1192,22 @@ biocode	biocode_add_blast_results_to_gff3_product.py	PASS	Real Ensembl GFF3 gene
 biocode	biocode_fastq_simple_stats.py	PASS	
 biocode	biocode_filter_fasta_by_header_regex.py	PASS	
 biocode	biocode_strip_fasta_headers_after_regex.py	PASS	
-biocommons.seqrepo	biocommons.seqrepo_seqrepo	Failed	not a usable tool: it wraps only the seqrepo command group as a subcommand string, with no way to pass subcommand arguments or collect data outputs.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_add_assembly_names	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_export	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_export_aliases	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_fetch_load	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; it also has no /usr/bin/bgzip (htslib) to store sequences, and the database setup calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_init	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_list_local_instances	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_list_remote_instances	Failed	image problem: the image has no rsync, and this subcommand both checks /usr/bin/rsync --version at start and uses rsync to query the remote server dl.biocommons.org.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_load	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; it also has no /usr/bin/bgzip (htslib) to store sequences, and the database setup calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_pull	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; it also needs the remote rsync server dl.biocommons.org (pull downloads a multi-GB repository).
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_show_status	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_snapshot	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_update_digests	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_update_latest	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
+biocommons.seqrepo	biocommons.seqrepo_seqrepo_upgrade	Failed	image problem: the image has no rsync, and every seqrepo subcommand runs /usr/bin/rsync --version at start and crashes; the database setup also calls getpwuid, which fails for the cwltool user unless --no-match-user is set.
 bioconda2biocontainer	bioconda2biocontainer	Failed	tool problem: it queries api.biocontainers.pro, which no longer resolves (DNS NXDOMAIN), so every run ends in a connection error.
 bioconda2biocontainer	bioconda2biocontainer_biocontainers-search	Failed	tool problem: it queries api.biocontainers.pro, which no longer resolves (DNS NXDOMAIN), so every run ends in a connection error.
-bioconda-backup	bioconda-backup	Failed	not a usable tool: the image has no bioconda-backup command, only an internal script that mirrors biocontainers images to a private registry through the Docker socket.
 bioconda-utils	bioconda-utils_annotate-build-failures	PASS	
 bioconda-utils	bioconda-utils_autobump	PASS	
 bioconda-utils	bioconda-utils_bioconductor-skeleton	PASS	

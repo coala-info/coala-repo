@@ -1,36 +1,5 @@
 # biotradis CWL Generation Report
 
-## biotradis
-
-### Tool Description
-The provided text is an error log indicating that the 'biotradis' executable was not found in the environment. No help text or usage information was available to parse arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/biotradis:1.4.5--0
-- **Homepage**: https://github.com/sanger-pathogens/Bio-Tradis
-- **Package**: https://anaconda.org/channels/bioconda/packages/biotradis/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/biotradis/overview
-- **Total Downloads**: 16.0K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/sanger-pathogens/Bio-Tradis
-- **Stars**: N/A
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/07 01:18:53  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "biotradis": executable file not found in $PATH
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -159,31 +128,5 @@ Options:
 -f  : mapped, sorted bam file
 -m	: mapping quality must be greater than X (optional. default: 30)
 -o  : output base name for plot (optional. default: tradis.plot)
-```
-
-## biotradis_tradis_gene_insert_sites
-
-### Tool Description
-A tool for analyzing TraDIS gene insertion sites. Note: The provided help text contains execution errors and does not list specific arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/biotradis:1.4.5--0
-- **Homepage**: https://github.com/sanger-pathogens/Bio-Tradis
-- **Package**: https://anaconda.org/channels/bioconda/packages/biotradis/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-perl: warning: Setting locale failed.
-perl: warning: Please check that your locale settings:
-	LANGUAGE = (unset),
-	LC_ALL = (unset),
-	LANG = "en_US.UTF-8"
-    are supported and installed on your system.
-perl: warning: Falling back to the standard locale ("C").
-Can't locate Bio/SeqIO.pm in @INC (you may need to install the Bio::SeqIO module) (@INC contains: /usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi /usr/local/lib/site_perl/5.26.2 /usr/local/lib/5.26.2/x86_64-linux-thread-multi /usr/local/lib/5.26.2 .) at /usr/local/bin/tradis_gene_insert_sites line 35.
-BEGIN failed--compilation aborted at /usr/local/bin/tradis_gene_insert_sites line 35.
 ```
 

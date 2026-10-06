@@ -56,7 +56,6 @@ Options: -c FILE    constrained tree(s) in NH format [null]
          -h         help
 ```
 
-
 ## treebest_best
 
 ### Tool Description
@@ -118,7 +117,6 @@ Note:    If you use this module in your work, please cite:
            Syst Biol, 52(5), 696-704
 ```
 
-
 ## treebest_phyml
 
 ### Tool Description
@@ -177,7 +175,6 @@ Note:    Do not calculate distance for multiple rate categories. This is might
            estimate large phylogenies by maximum likelihood. Syst Biol, 52(5), 696-704
 ```
 
-
 ## treebest_sdi
 
 ### Tool Description
@@ -207,46 +204,6 @@ Options: -r         reroot
          -m FILE    compare topology with FILE and re-order the leaves [null]
 ```
 
-
-## treebest_spec
-
-### Tool Description
-A species tree in Newick format used by TreeBest for gene tree reconstruction and species tree reconciliation. It defines the phylogenetic relationships and taxonomy IDs for various eukaryotic species.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/treebest:1.9.2_ep78--hfc679d8_2
-- **Homepage**: https://github.com/lh3/treebest
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-((ORYSA*-4530.rice,ARATH*-3702)Magnoliophyta-3398,(SCHPO*-4896.S_pombe,YEAST*-4932)Ascomycota-4890,
- ((((((((((((HUMAN*-9606,PANTR*-9598.chimpanzee)Homo/Pan/Gorilla-207598, 
-            MACMU*-9544.monkey)Catarrhini-9526, 
-            OTOGA-*30611.galago)Primates-9443, 
-         ((MOUSE*-10090,RAT*-10116)Murinae-39107,RABIT-9986)Glires-314147)Euarchontoglires-314146, 
-        ((BOVIN*-9913.cow,PIG-*9823)Cetartiodactyla-91561, 
-         (CANFA*-9615.dog,FELCA-*9685.cat)Carnivora-33554, 
-         SORAR-*42254.shrew, 
-         MYOLU-*59463.bat)Laurasiatheria-314145, 
-        (ECHTE-9371.tenrec,LOXAF-9785.elephant)Afrotheria-311790, 
-        DASNO-9361.armadillo)Eutheria-9347,MONDO*-13616.opossum)Theria-32525,
-       ORNAN-*9258.platypus)Mammalia-40674,
-      CHICK*-9031)Amniota-32524,
-     XENTR*-8364.frog)Tetrapoda-32523,
-    (BRARE*-7955.zebrafish, 
-     ((TETNG*-99883.pufferfish,FUGRU*-31033.pufferfish)Tetraodontidae-31031,
-      (GASAC*-69293.stickleback,ORYLA*-8090.ricefish)Smegmamorpha-129949)Percomorpha-32485)Clupeocephala-186625)Euteleostomi-117571,
-   (CIOIN*-7719,CIOSA*-51511)Ciona-7718)Chordata-7711,
-  (((DROME*-7227.fly,DROPS*-7237.fly)Sophophora-32341,
-    (AEDAE*-7159.mosquito,ANOGA*-7165.mosquito)Culicidae-7157)Diptera-7147, 
-   APIME-*7460.honeybee)Endopterygota-33392,
-  SCHMA*-6183.fluke,
-  (CAEEL*-6239.worm,CAEBR*-6238.worm,CAERE*-31234.worm)Caenorhabditis-6237)Bilateria-33213)Eukaryota-2759;
-```
-
-
 ## treebest_format
 
 ### Tool Description
@@ -265,7 +222,6 @@ INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 Usage:   treebest format [-1] <tree>
 ```
-
 
 ## treebest_filter
 
@@ -293,7 +249,6 @@ Options: -n         nucleotide alignment
          -F NUM     quality cut-off [15]
 ```
 
-
 ## treebest_trans
 
 ### Tool Description
@@ -312,7 +267,6 @@ INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 Usage: treebest trans <nucl_alignment>
 ```
-
 
 ## treebest_backtrans
 
@@ -333,7 +287,6 @@ WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: 
 Usage: treebest backtrans [-t <thres>] <aa_aln> <nt_seq>
 ```
 
-
 ## treebest_leaf
 
 ### Tool Description
@@ -352,7 +305,6 @@ INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 [tr_get_fp] fail to open file --help
 ```
-
 
 ## treebest_mfa2aln
 
@@ -373,27 +325,6 @@ WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: 
 Usage: treebest mfa2aln [-n] <fasta_align>
 ```
 
-
-## treebest_ortho
-
-### Tool Description
-TreeBest orthology analysis (Note: The tool failed to provide a standard help menu and instead attempted to open '--help' as a file, suggesting it may primarily accept file paths as positional arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/treebest:1.9.2_ep78--hfc679d8_2
-- **Homepage**: https://github.com/lh3/treebest
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-[tr_get_fp] fail to open file --help
-```
-
-
 ## treebest_distmat
 
 ### Tool Description
@@ -413,7 +344,6 @@ WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: 
 Usage: treebest distmat <dn|ds|dm|jtt|kimura|mm|dns> <alignment>
 ```
 
-
 ## treebest_treedist
 
 ### Tool Description
@@ -432,7 +362,6 @@ INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 Usage: treebest treedist <tree1> <tree2>
 ```
-
 
 ## treebest_pwalign
 
@@ -471,7 +400,6 @@ Options : -f       generate full alignment
           -h       help
 ```
 
-
 ## treebest_mmerge
 
 ### Tool Description
@@ -494,7 +422,6 @@ Usage  : treebest mmerge [-r] <forest>
 Options: -r         reroot
          -s FILE    species tree [default taxa tree]
 ```
-
 
 ## treebest_export
 
@@ -529,7 +456,6 @@ Options: -x NUM      width [640]
          -p          pseudo-length
 ```
 
-
 ## treebest_subtree
 
 ### Tool Description
@@ -548,7 +474,6 @@ INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 Usage: treebest subtree <tree> <list>
 ```
-
 
 ## treebest_simulate
 
@@ -626,7 +551,6 @@ Simulate gene trees given a species tree using a duplication-loss model.
 )Eukaryota:0.0208333;
 ```
 
-
 ## treebest_sortleaf
 
 ### Tool Description
@@ -645,7 +569,6 @@ INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 Usage: treebest sortleaf <tree1> [<tree2>]
 ```
-
 
 ## treebest_estlen
 
@@ -666,7 +589,6 @@ WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: 
 Usage: treebest estlen <tree> <matrix> <tag>
 ```
 
-
 ## treebest_trimpoor
 
 ### Tool Description
@@ -686,7 +608,6 @@ WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: 
 treebest trimpoor <tree> [<threshold>=0]
 ```
 
-
 ## treebest_root
 
 ### Tool Description
@@ -705,7 +626,6 @@ INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 [tr_get_fp] fail to open file --help
 ```
-
 
 ## Metadata
 - **Skill**: generated

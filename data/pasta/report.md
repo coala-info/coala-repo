@@ -1,38 +1,5 @@
 # pasta CWL Generation Report
 
-## pasta
-
-### Tool Description
-FAIL to generate CWL: pasta not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pasta:1.9.3--py312hccd54bf_0
-- **Homepage**: https://github.com/smirarab/pasta
-- **Package**: https://anaconda.org/channels/bioconda/packages/pasta/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pasta/overview
-- **Total Downloads**: 168.2K
-- **Last updated**: 2025-06-05
-- **GitHub**: https://github.com/smirarab/pasta
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pasta not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pasta not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -51,7 +18,6 @@ PASTA performs iterative realignment and tree inference, similar to SATe, but us
 False
 PASTA INFO: PASTA Version 1.9.3
 Usage: run_pasta.py [options] <settings_file1> <settings_file2> ...
-
 
 PASTA performs iterative realignment and tree inference, similar to SATe, but
 uses a very different merge algorithm which improves running time, memory
@@ -88,7 +54,6 @@ in later files replacing previously read values). Options specified in the
 command line are read last. Thus these values "overwrite" any settings from
 the configuration files. Note that the use of --auto option can overwrite some
 of the other options provided by commandline or through configuration files.
-
 
 Options:
   --version             show program's version number and exit
@@ -303,58 +268,5 @@ Options:
     --tree-estimator=TREE_ESTIMATOR
                         The name of the tree inference program to use to find
                         trees on fixed alignments. [default: fasttree]
-```
-
-## pasta_run_pasta_gui.py
-
-### Tool Description
-Main script for PASTA GUI on Windows/Mac/Linux
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pasta:1.9.3--py312hccd54bf_0
-- **Homepage**: https://github.com/smirarab/pasta
-- **Package**: https://anaconda.org/channels/bioconda/packages/pasta/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-/usr/local/bin/run_pasta_gui.py: line 2: Main script for PASTA GUI on Windows/Mac/Linux
-: No such file or directory
-/usr/local/bin/run_pasta_gui.py: line 21: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 22: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 23: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 24: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 25: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 26: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 27: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 28: import: command not found
-/usr/local/bin/run_pasta_gui.py: line 29: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 30: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 31: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 32: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 33: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 34: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 35: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 36: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 37: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 38: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 39: try:: command not found
-/usr/local/bin/run_pasta_gui.py: line 40: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 41: except:: command not found
-/usr/local/bin/run_pasta_gui.py: line 42: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 43: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 44: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 45: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 46: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 47: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 48: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 49: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 50: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 51: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 52: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 53: from: command not found
-/usr/local/bin/run_pasta_gui.py: line 55: syntax error near unexpected token `('
-/usr/local/bin/run_pasta_gui.py: line 55: `WELCOME_MESSAGE = "%s %s, %s\n\n"% (PROGRAM_NAME, PROGRAM_VERSION, PROGRAM_YEAR)'
 ```
 

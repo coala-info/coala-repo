@@ -40,7 +40,6 @@ ARGS:
     <end>           1-based exclusive end position
 ```
 
-
 ## rust-bio-tools_collapse-reads-to-fragments
 
 ### Tool Description
@@ -71,7 +70,6 @@ FLAGS:
     -V, --version    
             Prints version information
 
-
 SUBCOMMANDS:
     bam      Tool to merge sets of PCR duplicate reads from a BAM file into one maximum likelihood fragment sequence
              each with accordingly improved base quality scores
@@ -80,7 +78,6 @@ SUBCOMMANDS:
              accordingly
     help     Prints this message or the help of the given subcommand(s)
 ```
-
 
 ## rust-bio-tools_csv-report
 
@@ -128,40 +125,6 @@ ARGS:
     <output-path>    Relative output path for the report files. Default value is the current directory [default: .]
 ```
 
-
-## rust-bio-tools_ascending
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: Found argument 'ascending' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
-
 ## rust-bio-tools_fastq-filter
 
 ### Tool Description
@@ -191,59 +154,10 @@ FLAGS:
     -V, --version    
             Prints version information
 
-
 ARGS:
     <ids>    
             File with list of record IDs to remove, one per line
 ```
-
-
-## rust-bio-tools_fastq-split
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-rbt-fastq-split 0.42.2
-Johannes Köster <johannes.koester@tu-dortmund.de>
-Split FASTQ file from STDIN into N chunks.
-
-Example: rbt fastq-split A.fastq B.fastq < test.fastq
-
-USAGE:
-    rbt fastq-split [chunks]...
-
-FLAGS:
-    -h, --help       
-            Prints help information
-
-    -V, --version    
-            Prints version information
-
-
-ARGS:
-    <chunks>...    
-            File name(s) for the chunks to create.
-```
-
 
 ## rust-bio-tools_plot-bam
 
@@ -275,7 +189,6 @@ FLAGS:
     -V, --version    
             Prints version information
 
-
 OPTIONS:
     -b, --bam-path <bam-path>...             
             BAM file to be visualized
@@ -289,40 +202,6 @@ OPTIONS:
     -g, --region <region>                    
             Chromosome and region for the visualization. Example: 2:132424-132924
 ```
-
-
-## rust-bio-tools_then
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: Found argument 'then' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## rust-bio-tools_sequence-stats
 
@@ -359,7 +238,6 @@ FLAGS:
             Prints version information
 ```
 
-
 ## rust-bio-tools_vcf-annotate-dgidb
 
 ### Tool Description
@@ -389,7 +267,6 @@ FLAGS:
     -V, --version    
             Prints version information
 
-
 OPTIONS:
     -p, --api-path <api-path>
             Url prefix for requesting interaction drugs by gene names [default:
@@ -408,7 +285,6 @@ ARGS:
     <vcf>    
             VCF/BCF file to be extended by dgidb drug entries
 ```
-
 
 ## rust-bio-tools_record
 
@@ -430,7 +306,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rust-bio-tools_vcf-baf
 
@@ -462,50 +337,6 @@ FLAGS:
             Prints version information
 ```
 
-
-## rust-bio-tools_vcf-fix-iupac-alleles
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-rbt-vcf-fix-iupac-alleles 0.42.2
-Johannes Köster <johannes.koester@tu-dortmund.de>
-Convert any IUPAC codes in alleles into Ns (in order to comply with VCF 4 specs). Reads VCF/BCF from STDIN and writes
-BCF to STDOUT.
-
-Example: rbt vcf-fix-iupac-alleles < test.vcf > fixed.bcf
-
-USAGE:
-    rbt vcf-fix-iupac-alleles
-
-FLAGS:
-    -h, --help       
-            Prints help information
-
-    -V, --version    
-            Prints version information
-```
-
-
 ## rust-bio-tools_Reads
 
 ### Tool Description
@@ -526,7 +357,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rust-bio-tools_vcf-match
 
@@ -559,7 +389,6 @@ FLAGS:
     -V, --version    
             Prints version information
 
-
 OPTIONS:
     -d, --max-dist <INT>        
             Maximum distance between centres of two indels considered to match [default: 20]
@@ -567,45 +396,10 @@ OPTIONS:
     -l, --max-len-diff <INT>    
             Maximum difference between lengths of two indels [default: 10]
 
-
 ARGS:
     <vcf>    
             VCF/BCF file to match against
 ```
-
-
-## rust-bio-tools_given
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: Found argument 'given' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## rust-bio-tools_Results
 
@@ -627,40 +421,6 @@ USAGE:
 
 For more information try --help
 ```
-
-
-## rust-bio-tools_two
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: Found argument 'two' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## rust-bio-tools_vcf-report
 
@@ -694,7 +454,6 @@ FLAGS:
 
     -V, --version    
             Prints version information
-
 
 OPTIONS:
     -a, --annotation-field <annotation-field>    
@@ -743,40 +502,6 @@ ARGS:
             Relative output path for the report files. Default value is the current directory [default: .]
 ```
 
-
-## rust-bio-tools_with
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: Found argument 'with' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
-
 ## rust-bio-tools_using
 
 ### Tool Description
@@ -797,7 +522,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rust-bio-tools_vcf-split
 
@@ -829,7 +553,6 @@ FLAGS:
     -V, --version    
             Prints version information
 
-
 ARGS:
     <input>        
             Input VCF/BCF that shall be splitted.
@@ -838,40 +561,6 @@ ARGS:
             BCF files to split into. Breakends are kept together. Each file will contain approximately the same number
             of records.
 ```
-
-
-## rust-bio-tools_Breakends
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: Found argument 'Breakends' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## rust-bio-tools_vcf-to-txt
 
@@ -913,7 +602,6 @@ FLAGS:
         --with-filter    
             Include FILTER field
 
-
 OPTIONS:
     -f, --fmt <NAME>...     
             Select FORMAT tags
@@ -921,7 +609,6 @@ OPTIONS:
     -i, --info <NAME>...    
             Select INFO tags
 ```
-
 
 ## rust-bio-tools_FORMAT
 
@@ -943,7 +630,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## Metadata
 - **Skill**: generated

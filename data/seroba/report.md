@@ -29,7 +29,6 @@ optional arguments:
   -h, --help    show this help message and exit
 ```
 
-
 ## seroba_downloads
 
 ### Tool Description
@@ -46,7 +45,6 @@ Seroba command-line tool
 usage: seroba <command> <options>
 seroba: error: argument : invalid choice: 'downloads' (choose from 'getPneumocat', 'createDBs', 'runSerotyping', 'summary', 'version')
 ```
-
 
 ## seroba_createDBs
 
@@ -72,7 +70,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
 
 ## seroba_runSerotyping
 
@@ -109,7 +106,6 @@ Other options:
                         , default = 20
 ```
 
-
 ## seroba_indetify
 
 ### Tool Description
@@ -126,7 +122,6 @@ Seroba command-line tool
 usage: seroba <command> <options>
 seroba: error: argument : invalid choice: 'indetify' (choose from 'getPneumocat', 'createDBs', 'runSerotyping', 'summary', 'version')
 ```
-
 
 ## seroba_summary
 
@@ -151,25 +146,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
-
-## seroba_results
-
-### Tool Description
-Serotyping analysis tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seroba:1.0.2--pyhdfd78af_1
-- **Homepage**: https://github.com/sanger-pathogens/seroba
-- **Package**: https://anaconda.org/channels/bioconda/packages/seroba/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: seroba <command> <options>
-seroba: error: argument : invalid choice: 'results' (choose from 'getPneumocat', 'createDBs', 'runSerotyping', 'summary', 'version')
-```
-
 
 ## Metadata
 - **Skill**: generated

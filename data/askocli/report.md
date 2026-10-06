@@ -4,12 +4,12 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| askocli | Failed | not a usable tool: wraps only the subcommand group as free strings with no data inputs or outputs, and every subcommand needs an AskOmics server and API key. |
+| askocli_integrate | Not completed | needs a running AskOmics server and API key; on a real GFF3 the command line parsed and the tool stopped at login with connection refused. |
 
-## askocli
+## askocli_integrate
 
 ### Tool Description
-A command-line interface tool for askocli.
+Integrate data to a distant AskOmics
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/askocli:0.5--py_0
@@ -24,13 +24,46 @@ A command-line interface tool for askocli.
 - **Stars**: 0
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-usage: askocli <command> [<args>]
-askocli: error: argument -h/--help: ignored explicit argument 'elp'
-```
+usage: askocli integrate [-h] -k APIKEY -a ASKOMICS [--file-type FILE_TYPE]
+                         [--public] [--uri URI]
+                         [--headers [HEADERS [HEADERS ...]]]
+                         [--key-columns [KEY_COLUMNS [KEY_COLUMNS ...]]]
+                         [--disabled-columns [DISABLED_COLUMNS [DISABLED_COLUMNS ...]]]
+                         [-c [COLUMNS [COLUMNS ...]]]
+                         [-e [ENTITIES [ENTITIES ...]]] [-t TAXON]
+                         [-n ENTITY_NAME]
+                         [file]
 
+Integrate data to a distant AskOmics
+
+positional arguments:
+  file                  file to integrate
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -k APIKEY, --apikey APIKEY
+                        An API key associate with your account
+  -a ASKOMICS, --askomics ASKOMICS
+                        AskOmics URL
+  --file-type FILE_TYPE
+                        The file type
+  --public
+  --uri URI             Custom URI
+  --headers [HEADERS [HEADERS ...]]
+                        List of custom headers (csv)
+  --key-columns [KEY_COLUMNS [KEY_COLUMNS ...]]
+                        List of the key columns index (csv)
+  --disabled-columns [DISABLED_COLUMNS [DISABLED_COLUMNS ...]]
+                        List of columns index to disable (csv)
+  -c [COLUMNS [COLUMNS ...]], --columns [COLUMNS [COLUMNS ...]]
+                        List of forced columns types (csv)
+  -e [ENTITIES [ENTITIES ...]], --entities [ENTITIES [ENTITIES ...]]
+                        List of entities to integrate (gff)
+  -t TAXON, --taxon TAXON
+                        Taxon (gff and bed)
+  -n ENTITY_NAME, --entity-name ENTITY_NAME
+                        Entity name (bed)
+```
 
 ## Metadata
 - **Skill**: generated

@@ -35,35 +35,6 @@ Usage: FastK [-k<int(40)>] [-t[<int(1)>]] [-p[:<table>[.ktab]]] [-c] [-bc<int>]
       -c: Homopolymer compress every sequence
 ```
 
-
-## fastk_Histex
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastk:1.2--h71df26d_1
-- **Homepage**: https://github.com/thegenemyers/FASTK
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Histex: -- is an illegal option
-```
-
-
 ## fastk_Tabex
 
 ### Tool Description
@@ -87,7 +58,6 @@ Usage: Tabex [-1AC] [-t<int>] <source>[.ktab] [ <address>[-<address>] ]
       -1: Produce 1-code as output.
 ```
 
-
 ## fastk_Profex
 
 ### Tool Description
@@ -107,7 +77,6 @@ Usage: Profex [-1Az] <source_root>[.prof] [ <read:int>[-(<read:int>|#)] ... ]
       -A: tab-delimited ASCII as output.
       -z: Compress runs and ignore zeros.
 ```
-
 
 ## fastk_Logex
 
@@ -129,7 +98,6 @@ Usage: Logex  [-T<int(4)>] [-[hH][<int(1)>:]<int(32767)>]
       -h: Generate histograms.
       -H: Generate histograms only, no tables.
 ```
-
 
 ## Metadata
 - **Skill**: generated

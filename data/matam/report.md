@@ -30,35 +30,6 @@ options:
                         Maximum memory to use (in MBi). Default is 10000 MBi
 ```
 
-
-## matam_matam_db_preprocessing.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/matam:1.6.2--haf24da9_0
-- **Homepage**: https://github.com/bonsai-team/matam
-- **Package**: https://anaconda.org/channels/bioconda/packages/matam/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-No valid binary found for indexdb_rna
-```
-
-
 ## matam_matam_assembly.py
 
 ### Tool Description
@@ -165,7 +136,6 @@ Advanced parameters:
                                                                          correspond to the "Read mapping" section.
 ```
 
-
 ## matam_matam_compare_samples.py
 
 ### Tool Description
@@ -200,7 +170,6 @@ options:
   -c, --ouput_comparaison_table OUPUT_COMPARAISON_TABLE
                         Output a comparaison table (taxonomy vs samples)
 ```
-
 
 ## Metadata
 - **Skill**: generated

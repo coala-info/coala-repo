@@ -1,38 +1,5 @@
 # perl-ipc-run CWL Generation Report
 
-## perl-ipc-run_run
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-ipc-run:20250809.0--pl5321hdfd78af_0
-- **Homepage**: https://metacpan.org/pod/IPC::Run
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-ipc-run/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/perl-ipc-run/overview
-- **Total Downloads**: 332.7K
-- **Last updated**: 2025-08-15
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/env-execute: line 3: exec: run: cannot execute: Is a directory
-```
-
-
 ## perl-ipc-run_timeout
 
 ### Tool Description

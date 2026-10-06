@@ -81,7 +81,6 @@ SNPGenie: Estimating Evolutionary Parameters from SNPs!
 ################################################################################
 ```
 
-
 ## snpgenie_snpgenie_within_group.pl
 
 ### Tool Description
@@ -98,35 +97,6 @@ SNPGenie terminated.
 ### WARNING: The --fasta_file_name option must be a file with a .fa or .fasta extension
 ### SNPGenie terminated.
 ```
-
-
-## snpgenie_snpgenie_between_group.pl
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/snpgenie:1.0--hdfd78af_1
-- **Homepage**: https://github.com/chasewnelson/SNPGenie
-- **Package**: https://anaconda.org/channels/bioconda/packages/snpgenie/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-## WARNING: There are no .fa or .fasta files. SNPGenie terminated.
-```
-
 
 ## snpgenie_fasta2revcom.pl
 
@@ -146,7 +116,6 @@ Converts a '+' strand FASTA file to its reverse complement.
 
 ## For example: fasta2revcom.pl my_sequence.fasta
 ```
-
 
 ## snpgenie_gtf2revcom.pl
 
@@ -168,7 +137,6 @@ Converts a '+' strand GTF file to its reverse complement representation.
 ## For example: gtf2revcom.pl my_cds_file.gtf 10000
 ```
 
-
 ## snpgenie_vcf2revcom.pl
 
 ### Tool Description
@@ -188,7 +156,6 @@ Converts a VCF format 1 SNP report to a reverse complement sequence.
 
 ## For example: vcfformat1_to_revcom.pl my_snp_report.vcf 248956422
 ```
-
 
 ## Metadata
 - **Skill**: generated

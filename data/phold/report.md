@@ -38,38 +38,6 @@ Options:
                          [default: 500]
 ```
 
-
-## phold_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phold:1.2.2--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/phold
-- **Package**: https://anaconda.org/channels/bioconda/packages/phold/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: phold citation [OPTIONS]
-Try 'phold citation --help' for help.
-
-Error: No such option: -h
-```
-
-
 ## phold_compare
 
 ### Tool Description
@@ -136,7 +104,6 @@ Options:
                                 generated
 ```
 
-
 ## phold_createdb
 
 ### Tool Description
@@ -167,7 +134,6 @@ Options:
                          phold_foldseek_db]
   -f, --force            Force overwrites the output directory
 ```
-
 
 ## phold_install
 
@@ -202,7 +168,6 @@ Options:
                          functional labels.
   -t, --threads INTEGER  Number of threads  [default: 1]
 ```
-
 
 ## phold_plot
 
@@ -261,7 +226,6 @@ Options:
                                   file) that are guaranteed to be labelled.
 ```
 
-
 ## phold_predict
 
 ### Tool Description
@@ -314,7 +278,6 @@ Options:
   --hyps                         Use this to only annotate hypothetical
                                  proteins from a Pharokka GenBank input
 ```
-
 
 ## phold_proteins-compare
 
@@ -382,7 +345,6 @@ Options:
                                 generated
 ```
 
-
 ## phold_proteins-predict
 
 ### Tool Description
@@ -435,7 +397,6 @@ Options:
                                  proteins from a Pharokka GenBank input
 ```
 
-
 ## phold_remote
 
 ### Tool Description
@@ -487,7 +448,6 @@ Options:
                                 Foldseek output' after foldseek_results.tsv is
                                 generated
 ```
-
 
 ## phold_run
 
@@ -565,7 +525,6 @@ Options:
                                  Foldseek output' after foldseek_results.tsv
                                  is generated
 ```
-
 
 ## Metadata
 - **Skill**: generated

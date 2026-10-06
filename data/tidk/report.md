@@ -1,46 +1,5 @@
 # tidk CWL Generation Report
 
-## tidk_build
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tidk:0.2.65--h3dc2dae_0
-- **Homepage**: https://github.com/tolkit/telomeric-identifier
-- **Package**: https://anaconda.org/channels/bioconda/packages/tidk/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/tidk/overview
-- **Total Downloads**: 18.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/tolkit/telomeric-identifier
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Warning! No clades found in the database. Run 'tidk build' to fetch the latest data.
-
-error: unexpected argument '--h' found
-
-  tip: a similar argument exists: '--help'
-
-Usage: tidk build --help
-
-For more information, try '--help'.
-```
-
-
 ## tidk_find
 
 ### Tool Description
@@ -71,7 +30,6 @@ Options:
   -h, --help               Print help
   -V, --version            Print version
 ```
-
 
 ## tidk_explore
 
@@ -107,41 +65,6 @@ Options:
   -V, --version                  Print version
 ```
 
-
-## tidk_One
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tidk:0.2.65--h3dc2dae_0
-- **Homepage**: https://github.com/tolkit/telomeric-identifier
-- **Package**: https://anaconda.org/channels/bioconda/packages/tidk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Warning! No clades found in the database. Run 'tidk build' to fetch the latest data.
-
-error: unrecognized subcommand 'One'
-
-Usage: tidk [COMMAND]
-
-For more information, try '--help'.
-```
-
-
 ## tidk_search
 
 ### Tool Description
@@ -173,7 +96,6 @@ Options:
   -V, --version                  Print version
 ```
 
-
 ## tidk_plot
 
 ### Tool Description
@@ -201,7 +123,6 @@ Options:
   -h, --help                          Print help
   -V, --version                       Print version
 ```
-
 
 ## Metadata
 - **Skill**: generated

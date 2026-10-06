@@ -33,7 +33,6 @@ optional arguments:
   -c [STR ...]  advanced configuration (a JSON dictionary)
 ```
 
-
 ## prophyle_index
 
 ### Tool Description
@@ -72,7 +71,6 @@ optional arguments:
   -R            switch propagation off (only re-assemble leaves)
   -c [STR ...]  advanced configuration (a JSON dictionary)
 ```
-
 
 ## prophyle_classify
 
@@ -115,7 +113,6 @@ optional arguments:
   -c [STR ...]      advanced configuration (a JSON dictionary)
 ```
 
-
 ## prophyle_analyze
 
 ### Tool Description
@@ -153,7 +150,6 @@ optional arguments:
   -c [STR ...]             advanced configuration (a JSON dictionary)
 ```
 
-
 ## prophyle_footprint
 
 ### Tool Description
@@ -176,7 +172,6 @@ optional arguments:
   -h, --help    show this help message and exit
   -c [STR ...]  advanced configuration (a JSON dictionary)
 ```
-
 
 ## prophyle_compress
 
@@ -201,7 +196,6 @@ optional arguments:
   -h, --help        show this help message and exit
   -c [STR ...]      advanced configuration (a JSON dictionary)
 ```
-
 
 ## prophyle_decompress
 
@@ -229,7 +223,6 @@ optional arguments:
   -c [STR ...]      advanced configuration (a JSON dictionary)
 ```
 
-
 ## prophyle_compile
 
 ### Tool Description
@@ -253,53 +246,8 @@ optional arguments:
   -c [STR ...]  advanced configuration (a JSON dictionary)
 ```
 
-
 ## Metadata
 - **Skill**: generated
-
-## prophyle_prophyle build-index
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prophyle:0.3.3.2--py39h746d604_3
-- **Homepage**: https://github.com/karel-brinda/prophyle
-- **Package**: https://anaconda.org/channels/bioconda/packages/prophyle/overview
-- **Validation**: FAIL (generation failed)
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-### Validation Errors
-- No inputs — do not generate CWL.
-
-### Original Help Text
-```text
-usage: prophyle [-h] [-v]  ...
-
-Program: prophyle (phylogeny-based metagenomic classification)
-Version: 0.3.3.2
-Authors: Karel Brinda, Kamil Salikhov, Simone Pignotti, Gregory Kucherov
-Contact: kbrinda@hsph.harvard.edu
-
-Usage:   prophyle <command> [options]
-
-optional arguments:
-  -h, --help     show this help message and exit
-  -v, --version  show program's version number and exit
-
-subcommands:
-  
-    download     download a genomic database
-    index        build index
-    classify     classify reads
-    analyze      analyze results (experimental)
-    footprint    estimate memory footprint
-    compress     compress a ProPhyle index
-    decompress   decompress a compressed ProPhyle index
-    compile      compile auxiliary ProPhyle programs
-```
 
 ## prophyle_prophyle classify
 

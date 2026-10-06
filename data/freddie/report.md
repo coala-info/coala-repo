@@ -46,7 +46,6 @@ options:
                         Path to output directory. Default: freddie_split/
 ```
 
-
 ## freddie_freddie_segment.py
 
 ### Tool Description
@@ -100,38 +99,6 @@ options:
                         breakpoint
 ```
 
-
-## freddie_freddie_cluster.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/freddie:0.4--hdfd78af_0
-- **Homepage**: https://github.com/vpc-ccg/freddie
-- **Package**: https://anaconda.org/channels/bioconda/packages/freddie/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/freddie_cluster.py", line 13, in <module>
-    from gurobipy import Model, GRB, quicksum, LinExpr
-ModuleNotFoundError: No module named 'gurobipy'
-```
-
-
 ## freddie_freddie_isoforms.py
 
 ### Tool Description
@@ -172,7 +139,6 @@ options:
   -o OUTPUT, --output OUTPUT
                         Path to output file. Default: freddie_isoforms.gtf
 ```
-
 
 ## Metadata
 - **Skill**: generated

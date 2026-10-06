@@ -73,7 +73,6 @@ Options:
       print_trimmers  List available trimming modules
 ```
 
-
 ## trimnami_test
 
 ### Tool Description
@@ -1161,7 +1160,6 @@ ENVIRONMENT MODULES:
  In general, command-line values override environment variables which override
 defaults.
 ```
-
 
 ## trimnami_testhost
 
@@ -2251,7 +2249,6 @@ ENVIRONMENT MODULES:
 defaults.
 ```
 
-
 ## trimnami_testnp
 
 ### Tool Description
@@ -2319,7 +2316,6 @@ Options:
       print_trimmers  List available trimming modules
 ```
 
-
 ## trimnami_config
 
 ### Tool Description
@@ -2357,48 +2353,6 @@ Options:
                                 (outputDir)/trimnami.profile/]
   -h, --help                    Show this message and exit.
 ```
-
-
-## trimnami_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/trimnami:0.1.4--pyhdfd78af_0
-- **Homepage**: https://github.com/beardymcjohnface/Trimnami
-- **Package**: https://anaconda.org/channels/bioconda/packages/trimnami/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-
-████████╗██████╗ ██╗███╗   ███╗███╗   ██╗ █████╗ ███╗   ███╗██╗
-╚══██╔══╝██╔══██╗██║████╗ ████║████╗  ██║██╔══██╗████╗ ████║██║
-   ██║   ██████╔╝██║██╔████╔██║██╔██╗ ██║███████║██╔████╔██║██║
-   ██║   ██╔══██╗██║██║╚██╔╝██║██║╚██╗██║██╔══██║██║╚██╔╝██║██║
-   ██║   ██║  ██║██║██║ ╚═╝ ██║██║ ╚████║██║  ██║██║ ╚═╝ ██║██║
-   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝
-
-Usage: trimnami citation [OPTIONS]
-
-  Print the citation(s) for this tool
-
-Options:
-  -h, --help  Show this message and exit.
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -1,41 +1,5 @@
 # tadrep CWL Generation Report
 
-## tadrep_setup
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tadrep:0.9.2--pyhdfd78af_0
-- **Homepage**: https://github.com/oschwengers/tadrep
-- **Package**: https://anaconda.org/channels/bioconda/packages/tadrep/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/tadrep/overview
-- **Total Downloads**: 2.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/oschwengers/tadrep
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: TaDReP setup [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## tadrep_database
 
 ### Tool Description
@@ -59,7 +23,6 @@ Input / Output:
                         External DB to import (default = 'refseq')
   --force, -f           Force download and new setup of database
 ```
-
 
 ## tadrep_extract
 
@@ -95,7 +58,6 @@ Input:
                         Max sequence length (default = 1000000 bp)
 ```
 
-
 ## tadrep_characterize
 
 ### Tool Description
@@ -121,7 +83,6 @@ Input:
                         Import inc-types from given path into working
                         directory
 ```
-
 
 ## tadrep_cluster
 
@@ -150,7 +111,6 @@ Parameter:
                         basepairs (default = 1000)
   --skip, -s            Skips clustering, one group for each plasmid
 ```
-
 
 ## tadrep_detect
 
@@ -191,7 +151,6 @@ Detection:
   --gap-sequence-length GAP_SEQUENCE_LENGTH
                         Gap sequence N length (default = 10)
 ```
-
 
 ## tadrep_visualize
 
@@ -253,7 +212,6 @@ Omit:
   --omit-ratio [0-100]  Omit contigs shorter than X percent of plasmid length
                         from plot (default = 1%)
 ```
-
 
 ## Metadata
 - **Skill**: generated

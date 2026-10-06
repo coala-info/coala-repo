@@ -64,7 +64,6 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-
 ## zamp_run
 
 ### Tool Description
@@ -157,7 +156,6 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-
 ## zamp_insilico
 
 ### Tool Description
@@ -231,39 +229,6 @@ Options:
   --snake-default TEXT            Customise Snakemake runtime args
   -h, --help                      Show this message and exit.
 ```
-
-
-## zamp_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/zamp:1.0.0--pyhdfd78af_1
-- **Homepage**: https://github.com/metagenlab/zAMP/
-- **Package**: https://anaconda.org/channels/bioconda/packages/zamp/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Please consider also citing Snaketool:
-https://doi.org/10.1371/journal.pcbi.1010705
-
-and Snakemake:
-https://doi.org/10.12688/f1000research.29032.1
-```
-
 
 ## Metadata
 - **Skill**: generated

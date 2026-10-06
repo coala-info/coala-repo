@@ -1,38 +1,5 @@
 # blast-legacy CWL Generation Report
 
-## blast-legacy
-
-### Tool Description
-FAIL to generate CWL: blast-legacy not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/blast-legacy:2.2.26--h9ee0642_3
-- **Homepage**: http://blast.ncbi.nlm.nih.gov
-- **Package**: https://anaconda.org/channels/bioconda/packages/blast-legacy/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/blast-legacy/overview
-- **Total Downloads**: 175.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: blast-legacy not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: blast-legacy not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

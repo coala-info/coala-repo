@@ -1,38 +1,5 @@
 # cactus-gfa-tools CWL Generation Report
 
-## cactus-gfa-tools
-
-### Tool Description
-FAIL to generate CWL: cactus-gfa-tools not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0
-- **Homepage**: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/cactus-gfa-tools/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/cactus-gfa-tools/overview
-- **Total Downloads**: 489
-- **Last updated**: 2025-08-22
-- **GitHub**: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: cactus-gfa-tools not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: cactus-gfa-tools not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

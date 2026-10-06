@@ -36,7 +36,6 @@ Options:
   -h, --help  Print help
 ```
 
-
 ## deacon_filter
 
 ### Tool Description
@@ -92,7 +91,6 @@ Options:
           Print help
 ```
 
-
 ## deacon_server
 
 ### Tool Description
@@ -118,38 +116,6 @@ Commands:
 Options:
   -h, --help  Print help
 ```
-
-
-## deacon_cite
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/deacon:0.13.2--h7ef3eeb_1
-- **Homepage**: https://github.com/bede/deacon
-- **Package**: https://anaconda.org/channels/bioconda/packages/deacon/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Bede Constantinides, John Lees, Derrick W Crook.
-"Deacon: fast sequence filtering and contaminant depletion"
-bioRxiv 2025.06.09.658732
-https://doi.org/10.1101/2025.06.09.658732
-```
-
 
 ## Metadata
 - **Skill**: generated

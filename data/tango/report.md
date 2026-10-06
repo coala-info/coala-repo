@@ -1,29 +1,5 @@
 # tango CWL Generation Report
 
-## tango_valid
-
-### Tool Description
-tango: error: invalid choice: 'valid' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tango:0.5.7--py_0
-- **Homepage**: https://github.com/johnne/tango
-- **Package**: https://anaconda.org/channels/bioconda/packages/tango/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/tango/overview
-- **Total Downloads**: 26.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/johnne/tango
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: tango [-h] [-v]
-             {download,format,update,build,search,assign,transfer} ...
-tango: error: invalid choice: 'valid' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer')
-```
-
-
 ## tango_download
 
 ### Tool Description
@@ -61,7 +37,6 @@ optional arguments:
   --skip_idmap          Skip download of seqid->taxid mapfile (only applies to
                         'nr' database.
 ```
-
 
 ## tango_format
 
@@ -101,7 +76,6 @@ optional arguments:
   --tmpdir TMPDIR       Temporary directory for writing fasta files
 ```
 
-
 ## tango_map
 
 ### Tool Description
@@ -119,7 +93,6 @@ usage: tango [-h] [-v]
              {download,format,update,build,search,assign,transfer} ...
 tango: error: invalid choice: 'map' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer')
 ```
-
 
 ## tango_update
 
@@ -144,7 +117,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-
 
 ## tango_build
 
@@ -174,7 +146,6 @@ optional arguments:
                         file
   -p CPUS, --cpus CPUS  Number of cpus to use when building (defaults to 1)
 ```
-
 
 ## tango_search
 
@@ -220,7 +191,6 @@ optional arguments:
   -t TMPDIR, --tmpdir TMPDIR
                         directory for temporary files
 ```
-
 
 ## tango_assign
 
@@ -301,7 +271,6 @@ performance:
                         1.
 ```
 
-
 ## tango_transfer
 
 ### Tool Description
@@ -339,7 +308,6 @@ optional arguments:
                         complete much faster than using the default value of
                         1.
 ```
-
 
 ## Metadata
 - **Skill**: generated

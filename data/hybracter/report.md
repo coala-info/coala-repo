@@ -27,7 +27,6 @@ Snakemake is a Python based language and execution environment for GNU Make-like
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
 
-
 usage: snakemake [-h] [--dry-run] [--profile PROFILE]
                  [--workflow-profile WORKFLOW_PROFILE] [--cache [RULE ...]]
                  [--snakefile FILE] [--cores N] [--jobs N] [--local-cores N]
@@ -1005,7 +1004,6 @@ ilp scheduler plugin settings:
 defaults.
 ```
 
-
 ## hybracter_hybrid
 
 ### Tool Description
@@ -1027,7 +1025,6 @@ Run hybracter with hybrid long and paired end short reads
 | | | | |_| | |_) | | | (_| | (__| ||  __/ |   
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
-
 
 Usage: hybracter hybrid [OPTIONS] [SNAKE_ARGS]...
 
@@ -1123,7 +1120,6 @@ Options:
       print_targets   List available targets
 ```
 
-
 ## hybracter_hybrid-single
 
 ### Tool Description
@@ -1145,7 +1141,6 @@ Run hybracter hybrid on 1 isolate
 | | | | |_| | |_) | | | (_| | (__| ||  __/ |   
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
-
 
 Usage: hybracter hybrid-single [OPTIONS] [SNAKE_ARGS]...
 
@@ -1244,7 +1239,6 @@ Options:
       print_targets   List available targets
 ```
 
-
 ## hybracter_long
 
 ### Tool Description
@@ -1266,7 +1260,6 @@ Run hybracter with only long reads
 | | | | |_| | |_) | | | (_| | (__| ||  __/ |   
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
-
 
 Usage: hybracter long [OPTIONS] [SNAKE_ARGS]...
 
@@ -1356,7 +1349,6 @@ Options:
       print_targets   List available targets
 ```
 
-
 ## hybracter_long-single
 
 ### Tool Description
@@ -1378,7 +1370,6 @@ Run hybracter long on 1 isolate
 | | | | |_| | |_) | | | (_| | (__| ||  __/ |   
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
-
 
 Usage: hybracter long-single [OPTIONS] [SNAKE_ARGS]...
 
@@ -1469,7 +1460,6 @@ Options:
       print_targets   List available targets
 ```
 
-
 ## hybracter_test-hybrid
 
 ### Tool Description
@@ -1491,7 +1481,6 @@ Snakemake is a Python based language and execution environment for GNU Make-like
 | | | | |_| | |_) | | | (_| | (__| ||  __/ |   
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
-
 
 usage: snakemake [-h] [--dry-run] [--profile PROFILE]
                  [--workflow-profile WORKFLOW_PROFILE] [--cache [RULE ...]]
@@ -2470,7 +2459,6 @@ ilp scheduler plugin settings:
 defaults.
 ```
 
-
 ## hybracter_test-long
 
 ### Tool Description
@@ -2492,7 +2480,6 @@ Snakemake is a Python based language and execution environment for GNU Make-like
 | | | | |_| | |_) | | | (_| | (__| ||  __/ |   
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
-
 
 usage: snakemake [-h] [--dry-run] [--profile PROFILE]
                  [--workflow-profile WORKFLOW_PROFILE] [--cache [RULE ...]]
@@ -3471,7 +3458,6 @@ ilp scheduler plugin settings:
 defaults.
 ```
 
-
 ## hybracter_config
 
 ### Tool Description
@@ -3493,7 +3479,6 @@ Copy the system default config file
 | | | | |_| | |_) | | | (_| | (__| ||  __/ |   
 |_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
        |___/
-
 
 Usage: hybracter config [OPTIONS] [SNAKE_ARGS]...
 
@@ -3557,50 +3542,6 @@ Options:
                                   frontend conda]
   -h, --help                      Show this message and exit.
 ```
-
-
-## hybracter_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hybracter:0.12.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/hybracter
-- **Package**: https://anaconda.org/channels/bioconda/packages/hybracter/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-
-
- _           _                    _            
-| |__  _   _| |__  _ __ __ _  ___| |_ ___ _ __ 
-| '_ \| | | | '_ \| '__/ _` |/ __| __/ _ \ '__|
-| | | | |_| | |_) | | | (_| | (__| ||  __/ |   
-|_| |_|\__, |_.__/|_|  \__,_|\___|\__\___|_|   
-       |___/
-
-
-Usage: hybracter citation [OPTIONS]
-
-  Print the citation(s) for hybracter
-
-Options:
-  -h, --help  Show this message and exit.
-```
-
 
 ## Metadata
 - **Skill**: generated

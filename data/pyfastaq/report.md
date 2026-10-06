@@ -29,7 +29,6 @@ To get full help for a command use one of:
 fastaq command -h
 fastaq command --help
 
-
 Available commands:
 
 acgtn_only             Replace every non acgtnACGTN with an N
@@ -73,7 +72,6 @@ trim_ends              Trim fixed number of bases of start and/or end of every s
 version                Print version number and exit
 ```
 
-
 ## pyfastaq_fastaq acgtn_only
 
 ### Tool Description
@@ -97,7 +95,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq trim_Ns_at_end
 
@@ -123,7 +120,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
 ## pyfastaq_fastaq strip_illumina_suffix
 
 ### Tool Description
@@ -147,7 +143,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq filter
 
@@ -173,7 +168,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
 ## pyfastaq_fastaq sort_by_size
 
 ### Tool Description
@@ -197,7 +191,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq sort_by_name
 
@@ -223,7 +216,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
 ## pyfastaq_fastaq to_unique_by_id
 
 ### Tool Description
@@ -247,7 +239,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq interleave
 
@@ -273,7 +264,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
 ## pyfastaq_fastaq deinterleave
 
 ### Tool Description
@@ -297,7 +287,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq to_fasta
 
@@ -323,7 +312,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
 ## pyfastaq_fastaq fasta_to_fastq
 
 ### Tool Description
@@ -347,7 +335,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq scaffolds_to_contigs
 
@@ -373,7 +360,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
 ## pyfastaq_fastaq count_sequences
 
 ### Tool Description
@@ -397,7 +383,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq to_random_subset
 
@@ -423,43 +408,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
-## pyfastaq_fastaq search_for_seq
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
-- **Homepage**: https://github.com/sanger-pathogens/Fastaq
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
-```
-
-
 ## pyfastaq_fastaq to_fake_qual
 
 ### Tool Description
@@ -483,7 +431,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## pyfastaq_fastaq reverse_complement
 
@@ -509,7 +456,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-
 ## pyfastaq_fastaq translate
 
 ### Tool Description
@@ -533,7 +479,6 @@ Traceback (most recent call last):
   File "<string>", line 1, in <module>
 NameError: name 'pyfastaq' is not defined
 ```
-
 
 ## Metadata
 - **Skill**: generated

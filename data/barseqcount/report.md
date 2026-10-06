@@ -4,7 +4,6 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| barseqcount | Failed | not a usable tool: wraps only the command group with a subcommand string and no data inputs or outputs, and its baseCommand barseqcount.py does not exist in the image (the program is barseqcount). |
 | barseqcount_analyze | Not completed | needs the count report and CSV from barseqcount count, which cannot be produced because count crashes in this image; no public test data exists. |
 | barseqcount_count | Failed | image problem: barseqcount count crashes when creating its configuration file because the bundled dmbiolib 0.3.10 changed conf_start(), and a hand-written configuration on synthetic data crashes with KeyError in barcode assignment. |
 
@@ -75,31 +74,4 @@ options:
 
 ## Metadata
 - **Skill**: not generated
-
-## barseqcount
-
-### Tool Description
-Analysis of DNA barcode sequencing experiments. For full documentation, visit: https://barseqcount.readthedocs.io
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/barseqcount:0.1.5--pyhdfd78af_0
-- **Homepage**: https://github.com/damienmarsic/barseqcount
-- **Package**: https://anaconda.org/channels/bioconda/packages/barseqcount/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: barseqcount.py [-h] [-v] {count,analyze} ...
-
-Analysis of DNA barcode sequencing experiments. For full documentation, visit:
-https://barseqcount.readthedocs.io
-
-positional arguments:
-  {count,analyze}
-    count          Count barcodes from read files
-    analyze        Analyze data
-
-options:
-  -h, --help       show this help message and exit
-  -v, --version    Display version
-```
 

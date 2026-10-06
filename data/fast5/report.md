@@ -1,41 +1,5 @@
 # fast5 CWL Generation Report
 
-## fast5_f5ls
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/fast5:v0.6.5-2-deb_cv1
-- **Homepage**: https://github.com/mateidavid/fast5
-- **Package**: https://anaconda.org/channels/bioconda/packages/fast5/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/fast5/overview
-- **Total Downloads**: 246.1K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/mateidavid/fast5
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/bin/f5ls", line 12, in <module>
-    import dateutil.parser
-ModuleNotFoundError: No module named 'dateutil'
-```
-
-
 ## fast5_f5pack
 
 ### Tool Description

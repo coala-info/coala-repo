@@ -47,7 +47,6 @@ optional arguments:
                         suffix of M or G)
 ```
 
-
 ## strainge_kmersim
 
 ### Tool Description
@@ -92,27 +91,6 @@ optional arguments:
   -o FILE, --output FILE
                         File to write the results (default: standard output).
 ```
-
-
-## strainge_and
-
-### Tool Description
-A command-line tool for analyzing and manipulating k-mer databases.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/strainge:1.3.9--py38h737be40_0
-- **Homepage**: The package home page
-- **Package**: https://anaconda.org/channels/bioconda/packages/strainge/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: strainge [-h] [--version] [-v]
-                {kmerize,kmersim,cluster,createdb,search,call,view,compare,tree,stats,plot}
-                ...
-strainge: error: invalid choice: 'and' (choose from 'kmerize', 'kmersim', 'cluster', 'createdb', 'search', 'call', 'view', 'compare', 'tree', 'stats', 'plot')
-```
-
 
 ## strainge_cluster
 
@@ -169,7 +147,6 @@ optional arguments:
                         clusters and their entries.
 ```
 
-
 ## strainge_createdb
 
 ### Tool Description
@@ -202,27 +179,6 @@ optional arguments:
                         positional argument.
 ```
 
-
-## strainge_of
-
-### Tool Description
-A toolkit for analyzing k-mer profiles of sequencing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/strainge:1.3.9--py38h737be40_0
-- **Homepage**: The package home page
-- **Package**: https://anaconda.org/channels/bioconda/packages/strainge/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: strainge [-h] [--version] [-v]
-                {kmerize,kmersim,cluster,createdb,search,call,view,compare,tree,stats,plot}
-                ...
-strainge: error: invalid choice: 'of' (choose from 'kmerize', 'kmersim', 'cluster', 'createdb', 'search', 'call', 'view', 'compare', 'tree', 'stats', 'plot')
-```
-
-
 ## strainge_reference
 
 ### Tool Description
@@ -242,7 +198,6 @@ usage: strainge [-h] [--version] [-v]
 strainge: error: invalid choice: 'reference' (choose from 'kmerize', 'kmersim', 'cluster', 'createdb', 'search', 'call', 'view', 'compare', 'tree', 'stats', 'plot')
 ```
 
-
 ## strainge_samples
 
 ### Tool Description
@@ -261,7 +216,6 @@ usage: strainge [-h] [--version] [-v]
                 ...
 strainge: error: invalid choice: 'samples' (choose from 'kmerize', 'kmersim', 'cluster', 'createdb', 'search', 'call', 'view', 'compare', 'tree', 'stats', 'plot')
 ```
-
 
 ## strainge_view
 
@@ -320,27 +274,6 @@ optional arguments:
                         A value of 1 will also output any weak calls.
 ```
 
-
-## strainge_results
-
-### Tool Description
-A toolkit for analyzing genomic sequences using k-mer based methods.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/strainge:1.3.9--py38h737be40_0
-- **Homepage**: The package home page
-- **Package**: https://anaconda.org/channels/bioconda/packages/strainge/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: strainge [-h] [--version] [-v]
-                {kmerize,kmersim,cluster,createdb,search,call,view,compare,tree,stats,plot}
-                ...
-strainge: error: invalid choice: 'results' (choose from 'kmerize', 'kmersim', 'cluster', 'createdb', 'search', 'call', 'view', 'compare', 'tree', 'stats', 'plot')
-```
-
-
 ## strainge_compare
 
 ### Tool Description
@@ -398,7 +331,6 @@ optional arguments:
                         using --baseline or --all-vs-all.
 ```
 
-
 ## strainge_same
 
 ### Tool Description
@@ -417,7 +349,6 @@ usage: strainge [-h] [--version] [-v]
                 ...
 strainge: error: invalid choice: 'same' (choose from 'kmerize', 'kmersim', 'cluster', 'createdb', 'search', 'call', 'view', 'compare', 'tree', 'stats', 'plot')
 ```
-
 
 ## strainge_tree
 
@@ -452,7 +383,6 @@ optional arguments:
                         Output filename. Defaults to stdout.
 ```
 
-
 ## strainge_given
 
 ### Tool Description
@@ -471,7 +401,6 @@ usage: strainge [-h] [--version] [-v]
                 ...
 strainge: error: invalid choice: 'given' (choose from 'kmerize', 'kmersim', 'cluster', 'createdb', 'search', 'call', 'view', 'compare', 'tree', 'stats', 'plot')
 ```
-
 
 ## strainge_stats
 
@@ -505,7 +434,6 @@ optional arguments:
                         Output file, defaults to standard output.
 ```
 
-
 ## strainge_plot
 
 ### Tool Description
@@ -533,7 +461,6 @@ optional arguments:
   -t {spectrum}, --plot-type {spectrum}
                         The kind of plot to generate.
 ```
-
 
 ## Metadata
 - **Skill**: not generated

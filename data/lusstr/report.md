@@ -83,38 +83,6 @@ options:
   --custom              Specifying custom sequence ranges.
 ```
 
-
-## lusstr_gui
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lusstr:0.11--pyhdfd78af_0
-- **Homepage**: https://www.github.com/bioforensics/lusSTR
-- **Package**: https://anaconda.org/channels/bioconda/packages/lusstr/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: lusstr gui [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## lusstr_snps
 
 ### Tool Description
@@ -141,7 +109,6 @@ options:
   -h, --help         show this help message and exit
   -w W, --workdir W  working directory
 ```
-
 
 ## lusstr_strs
 
@@ -170,7 +137,6 @@ options:
   -h, --help            show this help message and exit
   -w W, --workdir W     working directory
 ```
-
 
 ## Metadata
 - **Skill**: generated

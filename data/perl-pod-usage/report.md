@@ -1,38 +1,5 @@
 # perl-pod-usage CWL Generation Report
 
-## perl-pod-usage
-
-### Tool Description
-FAIL to generate CWL: perl-pod-usage not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-pod-usage:2.05--pl5321hdfd78af_0
-- **Homepage**: http://search.cpan.org/~marekr/Pod-Usage-1.69/
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-pod-usage/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/perl-pod-usage/overview
-- **Total Downloads**: 163.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: perl-pod-usage not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: perl-pod-usage not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

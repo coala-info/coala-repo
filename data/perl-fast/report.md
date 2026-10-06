@@ -1,38 +1,5 @@
 # perl-fast CWL Generation Report
 
-## perl-fast
-
-### Tool Description
-FAIL to generate CWL: perl-fast not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
-- **Homepage**: http://metacpan.org/pod/FAST
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-fast/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/perl-fast/overview
-- **Total Downloads**: 3.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: perl-fast not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: perl-fast not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -1590,7 +1557,6 @@ Convert sequences and alignments either to or from fasta format.
 fasconvert 1.06
 
 Convert sequences and alignments either to or from from fasta format.
-
 
 Allowed formats: pir, embl, genbank, fasta, swiss, gcg, fastq, raw, 
 , msf, meme, mega, pfam, nexus, phylip, clustalw, fasta, bl2seq, selex, maf

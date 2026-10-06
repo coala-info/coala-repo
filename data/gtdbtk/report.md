@@ -89,7 +89,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_de_novo_wf
 
 ### Tool Description
@@ -204,7 +203,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_identify
 
 ### Tool Description
@@ -256,7 +254,6 @@ optional arguments:
                         (default: False)
   -h, --help            show help message
 ```
-
 
 ## gtdbtk_align
 
@@ -327,7 +324,6 @@ mutually exclusive optional arguments:
                         (default: False)
 ```
 
-
 ## gtdbtk_classify
 
 ### Tool Description
@@ -391,7 +387,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_infer
 
 ### Tool Description
@@ -430,7 +425,6 @@ optional arguments:
                         (default: False)
   -h, --help            show help message
 ```
-
 
 ## gtdbtk_root
 
@@ -476,7 +470,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_decorate
 
 ### Tool Description
@@ -517,7 +510,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_infer_ranks
 
 ### Tool Description
@@ -552,7 +544,6 @@ optional arguments:
                         (default: False)
   -h, --help            show help message
 ```
-
 
 ## gtdbtk_ani_rep
 
@@ -607,7 +598,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_trim_msa
 
 ### Tool Description
@@ -642,7 +632,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_export_msa
 
 ### Tool Description
@@ -667,7 +656,6 @@ optional arguments:
                       (default: False)
   -h, --help          show help message
 ```
-
 
 ## gtdbtk_remove_labels
 
@@ -697,7 +685,6 @@ optional arguments:
   -h, --help            show help message
 ```
 
-
 ## gtdbtk_convert_to_itol
 
 ### Tool Description
@@ -725,7 +712,6 @@ optional arguments:
                         (default: False)
   -h, --help            show help message
 ```
-
 
 ## gtdbtk_convert_to_species
 
@@ -763,87 +749,6 @@ optional arguments:
                         (default: False)
   -h, --help            show help message
 ```
-
-
-## gtdbtk_test
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2
-- **Homepage**: http://pypi.python.org/pypi/gtdbtk/
-- **Package**: https://anaconda.org/channels/bioconda/packages/gtdbtk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[2026-02-25 21:58:32] INFO: GTDB-Tk v2.6.1
-[2026-02-25 21:58:32] INFO: gtdbtk test
-
-================================================================================
-                                     ERROR                                      
-________________________________________________________________________________
-
-          The 'GTDBTK_DATA_PATH' environment variable is not defined.           
-
-            Please set this variable to your reference data package.            
-           https://ecogenomics.github.io/GTDBTk/installing/index.html           
-================================================================================
-[2026-02-25 21:58:32] ERROR: Controlled exit resulting from early termination.
-```
-
-
-## gtdbtk_check_install
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2
-- **Homepage**: http://pypi.python.org/pypi/gtdbtk/
-- **Package**: https://anaconda.org/channels/bioconda/packages/gtdbtk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[2026-02-25 21:58:59] INFO: GTDB-Tk v2.6.1
-[2026-02-25 21:58:59] INFO: gtdbtk check_install
-
-================================================================================
-                                     ERROR                                      
-________________________________________________________________________________
-
-          The 'GTDBTK_DATA_PATH' environment variable is not defined.           
-
-            Please set this variable to your reference data package.            
-           https://ecogenomics.github.io/GTDBTk/installing/index.html           
-================================================================================
-[2026-02-25 21:58:59] ERROR: Controlled exit resulting from early termination.
-```
-
 
 ## Metadata
 - **Skill**: generated

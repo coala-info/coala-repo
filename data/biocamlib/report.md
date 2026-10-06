@@ -525,39 +525,6 @@ stib-nodog
 wnodog
 ```
 
-
-## biocamlib_Octopus
-
-### Tool Description
-Octopus version 6, compiled against BiOCamLib version 245. A tool by Paolo Ribeca.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/biocamlib:1.0.0--h9ee0642_0
-- **Homepage**: https://github.com/PaoloRibeca/BiOCamLib
-- **Package**: https://anaconda.org/channels/bioconda/packages/biocamlib/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-[38;5;7m╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗[0m
-[38;5;7m┃                                           ┃[0m
-[38;5;7m┃[0m  [1mThis is[0m [38;5;2mOctopus[0m [1mversion[0m [38;5;2m6[0m [[38;5;4m02-Jan-2024[0m]  [38;5;7m┃[0m
-[38;5;7m┃                                           ┃[0m
-[38;5;7m╚┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╝[0m
- [38;5;7m│[0m compiled against: [38;5;2mBiOCamLib[0m version [38;5;2m245[0m [[38;5;4m14-Feb-2024[0m]
- [38;5;7m│[0m (c) 2016-2024 [1mPaolo Ribeca[0m <[4mpaolo.ribeca@gmail.com[0m>
-[38;5;1m Usage:[0m
-  [1mOctopus[0m [38;5;4m[OPTIONS][0m
- [38;5;2mMiscellaneous[0m
-  [38;5;4m-V[0m[38;5;7m|[0m[38;5;4m--version[0m
-   [38;5;7m│[0m print version and exit
-  [38;5;4m-h[0m[38;5;7m|[0m[38;5;4m--help[0m
-   [38;5;7m│[0m print syntax and exit
-```
-
-
 ## biocamlib_FASTools
 
 ### Tool Description
@@ -661,7 +628,6 @@ INFO:    Using cached SIF image
    [38;5;7m│[0m print syntax and exit
 ```
 
-
 ## biocamlib_Parallel
 
 ### Tool Description
@@ -723,7 +689,6 @@ INFO:    Using cached SIF image
    [38;5;7m│[0m print syntax and exit
 (BiOCamLib__Tools.Argv.parse.(fun)): [38;5;1mOption '--' is mandatory[0m
 ```
-
 
 ## Metadata
 - **Skill**: generated

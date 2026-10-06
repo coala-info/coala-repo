@@ -37,7 +37,6 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
-
 ## pyfba_fluxes
 
 ### Tool Description
@@ -71,7 +70,6 @@ optional arguments:
                         option
   -v, --verbose         verbose output
 ```
-
 
 ## pyfba_to_reactions
 
@@ -108,7 +106,6 @@ optional arguments:
                         'mycobacteria', 'plant']). Default=gramnegative
   -v, --verbose         verbose output
 ```
-
 
 ## pyfba_gapfill_roles
 
@@ -152,7 +149,6 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
-
 ## pyfba_multiple_media
 
 ### Tool Description
@@ -195,7 +191,6 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
-
 ## pyfba_gapfill_two_media
 
 ### Tool Description
@@ -235,7 +230,6 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
-
 ## pyfba_create_gaps
 
 ### Tool Description
@@ -274,7 +268,6 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
-
 ## pyfba_compare_media
 
 ### Tool Description
@@ -310,7 +303,6 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
-
 ## pyfba_reactions_to_roles
 
 ### Tool Description
@@ -340,7 +332,6 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
-
 ## pyfba_reactions_to_aliases
 
 ### Tool Description
@@ -369,7 +360,6 @@ optional arguments:
                         'mycobacteria', 'plant']). Default=gramnegative
   -v, --verbose         verbose output
 ```
-
 
 ## pyfba_media
 
@@ -483,7 +473,6 @@ MOPS_NoN_Tyramine
 MOPS_NoN_Uridine
 ```
 
-
 ## pyfba_media_compounds
 
 ### Tool Description
@@ -507,60 +496,6 @@ optional arguments:
                         the name of the media
   -v, --verbose         verbose output
 ```
-
-
-## pyfba_citations
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyfba:2.62--py38h3df17bf_5
-- **Homepage**: https://linsalrob.github.io/PyFBA/
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyfba/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Thank you for citing PyFBA and the ModelSEED!
-The two papers by Cuevas et al. are for PyFBA, and the Henry et al. paper describes the ModelSEED that PyFBA depend 
-upon. 
-    
-
-Cuevas DA, Garza D, Sanchez SE, Rostron J, Henry CS, Vonstein V, Overbeek RA, Segall A, Rohwer F,  Dinsdale EA, Edwards RA. 2014.
-Elucidating genomic gaps using phenotypic profiles. F1000Research. 3:210
-doi: 10.12688/f1000research.5140.2
-https://f1000research.com/articles/3-210
-
-Cuevas, Daniel A., Janaka Edirisinghe, Chris S. Henry, Ross Overbeek, Taylor G. O’Connell, and Robert A. Edwards. 2016.
-From DNA to FBA: How to Build Your Own Genome-Scale Metabolic Model.
-Frontiers in Microbiology 7 (June): 907.
-http://journal.frontiersin.org/article/10.3389/fmicb.2016.00907/full
-
-Henry CS, DeJongh M, Best AA, Frybarger PM, Linsay B, Stevens RL. 2010. 
-High-throughput generation, optimization and analysis of genome-scale metabolic models. 
-Nat Biotechnol 28:977–982.
-https://www.nature.com/articles/nbt.1672
-    
-Additionally, we use these resources, so please cite them:
-conda-forge:
-
-conda-forge community. (2015). 
-The conda-forge Project: Community-based Software Distribution Built on the conda Package Format and Ecosystem. 
-Zenodo. http://doi.org/10.5281/zenodo.4774216
-```
-
 
 ## Metadata
 - **Skill**: generated

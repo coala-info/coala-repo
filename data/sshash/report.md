@@ -21,91 +21,6 @@ Build a shash index from a FASTA file.
 sshash build --help
 ```
 
-
-## sshash_query
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
-- **Homepage**: https://github.com/jermp/sshash
-- **Package**: https://anaconda.org/channels/bioconda/packages/sshash/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-sshash query --help
-```
-
-
-## sshash_check
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
-- **Homepage**: https://github.com/jermp/sshash
-- **Package**: https://anaconda.org/channels/bioconda/packages/sshash/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-sshash check --help
-```
-
-
-## sshash_bench
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
-- **Homepage**: https://github.com/jermp/sshash
-- **Package**: https://anaconda.org/channels/bioconda/packages/sshash/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-sshash bench --help
-```
-
-
 ## sshash_permute
 
 ### Tool Description
@@ -121,7 +36,6 @@ Permute the order of sequences in a FASTA file.
 ```text
 sshash permute --help
 ```
-
 
 ## Metadata
 - **Skill**: generated

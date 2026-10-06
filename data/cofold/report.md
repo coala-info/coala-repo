@@ -1,38 +1,5 @@
 # cofold CWL Generation Report
 
-## cofold
-
-### Tool Description
-FAIL to generate CWL: cofold not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cofold:2.0.4--h87f3376_5
-- **Homepage**: https://github.com/jujubix/cofold
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/cofold/overview
-- **Total Downloads**: 9.1K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/jujubix/cofold
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: cofold not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: cofold not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -84,8 +51,6 @@ Once FASTA input was provided all following sequences must be in FASTA format
 too.
 The program will continue to read new sequences until a line consisting of the 
 single character @ or an end of file condition is encountered.
-
-
 
   -h, --help                    Print help and exit
       --detailed-help           Print help, including all details and hidden 
@@ -154,7 +119,6 @@ Model Details:
                                     (default=off)
   -P, --paramFile=paramfile     Read energy parameters from paramfile, instead 
                                   of using the default parameter set.
-
 
 If in doubt our program is right, nature is at fault.
 Comments should be sent to rna@tbi.univie.ac.at.

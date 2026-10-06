@@ -25,7 +25,6 @@ General config file: None
 snakemake Snakefile: /usr/local/opt/prophane/Snakefile
 ```
 
-
 ## prophane_init
 
 ### Tool Description
@@ -46,38 +45,6 @@ Usage: prophane init [OPTIONS] DB_DIR
 Options:
   --help  Show this message and exit.
 ```
-
-
-## prophane_list-dbs
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prophane:6.2.6--hdfd78af_0
-- **Homepage**: https://gitlab.com/s.fuchs/prophane/
-- **Package**: https://anaconda.org/channels/bioconda/packages/prophane/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: prophane list-dbs [OPTIONS]
-Try 'prophane list-dbs --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## prophane_list-styles
 
@@ -104,7 +71,6 @@ Proteome Discoverer   2.5   proteome_discoverer_2_5.yaml
             generic 1.2.0             mzident_1_2_0.yaml
 ```
 
-
 ## prophane_prepare-dbs
 
 ### Tool Description
@@ -128,7 +94,6 @@ Options:
   --help     Show this message and exit.
 ```
 
-
 ## prophane_run
 
 ### Tool Description
@@ -150,7 +115,6 @@ Options:
   --verbose
   --help     Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

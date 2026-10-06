@@ -64,7 +64,6 @@ sample_alias
 broker_name
 ```
 
-
 ## enasearch_get_display_options
 
 ### Tool Description
@@ -85,42 +84,6 @@ html	Results are displayed in HTML format. Supported by all ENA data classes. HT
 report	Results are displayed as a tab separated report
 fasta	Results are displayed in fasta format. Supported by assembled and annotated sequence and Trace data classes.
 ```
-
-
-## enasearch_get_download_options
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/enasearch:0.2.2--py27_0
-- **Homepage**: http://bebatut.fr/enasearch/
-- **Package**: https://anaconda.org/channels/bioconda/packages/enasearch/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: enasearch get_download_options [OPTIONS]
-
-  Get the options for download of data from ENA.
-
-  Each option is described.
-
-Options:
-  -h, --help  Show this message and exit.
-```
-
 
 ## enasearch_get_filter_fields
 
@@ -151,7 +114,6 @@ Options:
   --result TEXT  Id of a result (accessible with get_results)  [required]
   -h, --help     Show this message and exit.
 ```
-
 
 ## enasearch_get_filter_types
 
@@ -186,7 +148,6 @@ Date	=, !=, <, <=, >, >=	A,  , d, a, t, e,  , i, n,  , t, h, e,  , f, o, r, m, a
 Controlled vocabulary	=, !=	A,  , t, e, x, t,  , v, a, l, u, e,  , f, r, o, m,  , t, h, e,  , c, o, n, t, r, o, l, l, e, d,  , v, o, c, a, b, u, l, a, r, y,  , e, n, c, l, o, s, e, d,  , i, n,  ,  ,  ,  ,  ,  ,  ,  ,  , d, o, u, b, l, e,  , q, u, o, t, e, s
 ```
 
-
 ## enasearch_get_results
 
 ### Tool Description
@@ -220,7 +181,6 @@ analysis_study	Nucleotide sequence analyses from reads (grouped by study)
 noncoding_update	Non-coding sequences (Update)
 ```
 
-
 ## enasearch_get_returnable_fields
 
 ### Tool Description
@@ -246,42 +206,6 @@ Options:
   --result TEXT  Id of a result (accessible with get_results)  [required]
   -h, --help     Show this message and exit.
 ```
-
-
-## enasearch_get_run_fields
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/enasearch:0.2.2--py27_0
-- **Homepage**: http://bebatut.fr/enasearch/
-- **Package**: https://anaconda.org/channels/bioconda/packages/enasearch/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: enasearch get_run_fields [OPTIONS]
-
-  Get the fields extractable for a run.
-
-  This function returns the fields as a list.
-
-Options:
-  -h, --help  Show this message and exit.
-```
-
 
 ## enasearch_get_sortable_fields
 
@@ -313,7 +237,6 @@ Options:
   -h, --help     Show this message and exit.
 ```
 
-
 ## enasearch_get_taxonomy_results
 
 ### Tool Description
@@ -342,7 +265,6 @@ coding_update	Protein-coding sequences (Update)
 analysis_study	Nucleotide sequence analyses (grouped by study)
 noncoding_update	Non-coding sequences (Update)
 ```
-
 
 ## enasearch_retrieve_analysis_report
 
@@ -377,7 +299,6 @@ Options:
   --file PATH       File to save the report
   -h, --help        Show this message and exit.
 ```
-
 
 ## enasearch_retrieve_data
 
@@ -433,7 +354,6 @@ Options:
   -h, --help              Show this message and exit.
 ```
 
-
 ## enasearch_retrieve_run_report
 
 ### Tool Description
@@ -467,7 +387,6 @@ Options:
   --file PATH       File to save the report
   -h, --help        Show this message and exit.
 ```
-
 
 ## enasearch_retrieve_taxons
 
@@ -525,7 +444,6 @@ Options:
   --header                To obtain only the header of a record
   -h, --help              Show this message and exit.
 ```
-
 
 ## enasearch_search_data
 
@@ -591,7 +509,6 @@ Options:
                           different of fasta and fastq
   -h, --help              Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

@@ -160,7 +160,6 @@ greedy=t                Use a greedy algorithm to discard the least-useful
 kfilter=0               If positive, potential mapping sites must have at
                         least this many consecutive exact matches.
 
-
 Quality and Trimming Parameters:
 qin=auto                Set to 33 or 64 to specify input quality value ASCII
                         offset. 33 is Sanger, 64 is old Solexa.
@@ -682,7 +681,6 @@ to a secondary reference while also doing trimming.  Alignment does not affect
 whether reads go to the normal outputs (out, outm).  The main purpose is to
 simplify pipelines that need trimmed, aligned phiX reads for recalibration.
 
-
 Java Parameters:
 
 -Xmx                This will set Java's memory usage, overriding autodetection.
@@ -696,7 +694,6 @@ Java Parameters:
 Please contact Brian Bushnell at bbushnell@lbl.gov if you encounter any problems.
 For documentation and the latest version, visit: https://bbmap.org
 ```
-
 
 ## bbmap_bbmerge.sh
 
@@ -903,7 +900,6 @@ minapproxoverlap=26  For rem mode, do not merge reads if the extended reads
                      indicate that the raw reads should have overlapped by
                      at least this much, but no overlap was found.
 
-
 Bloom Filter Parameters (for kmer operations with less memory than Tadpole)
 *Note: These require more memory and should be run with bbmerge-auto.sh.*
 eccbloom=f           (eccb) If reads fail to merge, error-correct with bbcms
@@ -924,33 +920,6 @@ Java Parameters:
 Please contact Brian Bushnell at bbushnell@lbl.gov if you encounter any problems.
 For documentation and the latest version, visit: https://bbmap.org
 ```
-
-
-## bbmap_bbmerge-auto.sh
-
-### Tool Description
-BBMerge merges paired-end reads into single reads by identifying overlap. (Note: The provided help text resulted in a runtime error and did not list specific arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bbmap:39.52--he5f24ec_0
-- **Homepage**: https://sourceforge.net/projects/bbmap
-- **Package**: https://anaconda.org/channels/bioconda/packages/bbmap/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-java -ea  --add-modules jdk.incubator.vector -Xmx26469m -Xms26469m -cp /usr/local/opt/bbmap-39.52-0/current/ jgi.BBMerge --h
-WARNING: Using incubator modules: jdk.incubator.vector
-Executing jgi.BBMerge [h]
-Version 39.52
-
-Exception in thread "main" java.lang.RuntimeException: Unknown parameter h
-	at jgi.BBMerge.<init>(BBMerge.java:716)
-	at jgi.BBMerge.main(BBMerge.java:62)
-```
-
 
 ## bbmap_bbnorm.sh
 
@@ -1085,7 +1054,6 @@ Please contact Brian Bushnell at bbushnell@lbl.gov if you encounter any problems
 For documentation and the latest version, visit: https://bbmap.org
 ```
 
-
 ## bbmap_khist.sh
 
 ### Tool Description
@@ -1108,7 +1076,6 @@ Executing jgi.KmerNormalize [bits=32, ecc=f, passes=1, keepall, dr=f, prefilter,
 Exception in thread "main" java.lang.RuntimeException: Unknown parameter h
 	at jgi.KmerNormalize.main(KmerNormalize.java:474)
 ```
-
 
 ## bbmap_dedupe.sh
 
@@ -1243,7 +1210,6 @@ Java Parameters:
 Please contact Brian Bushnell at bbushnell@lbl.gov if you encounter any problems.
 For documentation and the latest version, visit: https://bbmap.org
 ```
-
 
 ## bbmap_reformat.sh
 
@@ -1465,7 +1431,6 @@ Java Parameters:
 Please contact Brian Bushnell at bbushnell@lbl.gov if you encounter any problems.
 For documentation and the latest version, visit: https://bbmap.org
 ```
-
 
 ## Metadata
 - **Skill**: generated

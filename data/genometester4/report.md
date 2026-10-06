@@ -39,7 +39,6 @@ Arguments:
     -D               - increase debug level
 ```
 
-
 ## genometester4_glistcompare
 
 ### Tool Description
@@ -72,7 +71,6 @@ Options:
     --disable_scouts         - disable list read-ahead in background thread
     -D                       - increase debug level
 ```
-
 
 ## genometester4_glistquery
 
@@ -107,35 +105,6 @@ Options:
     -all                      - in case of mismatches prints all found words
     -D                        - increase debug level
 ```
-
-
-## genometester4_gmer_caller
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genometester4:4.0--hec16e2b_4
-- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
-- **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Cannot read --help
-```
-
 
 ## Metadata
 - **Skill**: generated

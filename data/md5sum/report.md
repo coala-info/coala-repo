@@ -1,12 +1,5 @@
 # md5sum CWL Generation Report
 
-## Runtime validation summary
-
-| Tool | Runtime | Data used | Reason (if fail) |
-|------|---------|-----------|------------------|
-| md5sum | PASS | manifest:minimal.dat (Generic minimal file (e.g. for md5sum,… | — |
-
-
 ## md5sum
 
 ### Tool Description
@@ -58,12 +51,6 @@ Report any translation bugs to <https://translationproject.org/team/>
 Full documentation <https://www.gnu.org/software/coreutils/md5sum>
 or available locally via: info '(coreutils) md5sum invocation'
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: manifest:minimal.dat (Generic minimal file (e.g. for md5sum, checksum))
-- **Example job**: `md5sum_job.json`
 
 ## Metadata
 - **Validation-run**: PASS

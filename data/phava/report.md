@@ -80,37 +80,6 @@ RATIO PARAMETERS:
                         mapping (only for paired short reads!) (default: None)
 ```
 
-
-## phava_into
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phava:0.2.3--pyhdfd78af_0
-- **Homepage**: https://github.com/patrickwest/PhaVa
-- **Package**: https://anaconda.org/channels/bioconda/packages/phava/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: phava [-h]
-             {locate,create,ratio,variation_wf,summarize,cluster,test} ...
-phava: error: argument operation: invalid choice: 'into' (choose from 'locate', 'create', 'ratio', 'variation_wf', 'summarize', 'cluster', 'test')
-```
-
-
 ## phava_locate
 
 ### Tool Description
@@ -144,7 +113,6 @@ LOCATE PARAMETERS:
                         Name of input assembly file to be searched (default:
                         None)
 ```
-
 
 ## phava_create
 
@@ -201,7 +169,6 @@ CREATE SPECIFIC PARAMETERS:
                         command was never run) (default: None)
 ```
 
-
 ## phava_ratio
 
 ### Tool Description
@@ -257,37 +224,6 @@ RATIO SPECIFIC PARAMETERS:
                         generated from create command) (default: None)
 ```
 
-
-## phava_orientation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phava:0.2.3--pyhdfd78af_0
-- **Homepage**: https://github.com/patrickwest/PhaVa
-- **Package**: https://anaconda.org/channels/bioconda/packages/phava/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: phava [-h]
-             {locate,create,ratio,variation_wf,summarize,cluster,test} ...
-phava: error: argument operation: invalid choice: 'orientation' (choose from 'locate', 'create', 'ratio', 'variation_wf', 'summarize', 'cluster', 'test')
-```
-
-
 ## phava_summarize
 
 ### Tool Description
@@ -316,7 +252,6 @@ SYSTEM PARAMETERS:
                         Otherwise, it will be written to 'PhaVa.log' (default:
                         False)
 ```
-
 
 ## phava_cluster
 
@@ -362,7 +297,6 @@ CLUSTER PARAMETERS:
                         invertable regions (in bps) (default: 1000)
 ```
 
-
 ## phava_test
 
 ### Tool Description
@@ -387,7 +321,6 @@ INFO:root:------Finished IR search------
 INFO:root:------Finished pickling IR database------
 INFO:root:------Finished IR locating operation------
 
-
 PhaVa Create:
 INFO:root:------Beginning IR create operation------
 INFO:root:------Beginning mock IR creation------
@@ -395,7 +328,6 @@ INFO:root:------Finished unpickling IR database------
 INFO:root:------Finished mock IR creation------
 INFO:root:------Finished pickling IR database------
 INFO:root:------Finished IR create operation------
-
 
 PhaVa Ratio:
 INFO:root:------Beginning IR ratio operation------
@@ -406,7 +338,6 @@ test_genome:9567-9590-9803-9826	7	5	0.4166666666666667	simulated_reads.fastq
 INFO:root:------Finished IR ratio calculation------
 INFO:root:------Finished IR ratio operation------
 ```
-
 
 ## Metadata
 - **Skill**: generated

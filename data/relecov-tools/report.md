@@ -42,7 +42,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## relecov-tools_read-lab-metadata
 
 ### Tool Description
@@ -73,7 +72,6 @@ Options:
                                   read_lab_metadata.projects
   --help                          Show this message and exit.
 ```
-
 
 ## relecov-tools_send-mail
 
@@ -106,7 +104,6 @@ Options:
                                include in the email (optional).
   --help                       Show this message and exit.
 ```
-
 
 ## relecov-tools_validate
 
@@ -149,7 +146,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## relecov-tools_map
 
 ### Tool Description
@@ -178,7 +174,6 @@ Options:
                                   saved
   --help                          Show this message and exit.
 ```
-
 
 ## relecov-tools_upload-to-ena
 
@@ -213,7 +208,6 @@ Options:
                                   saved
   --help                          Show this message and exit.
 ```
-
 
 ## relecov-tools_upload-to-gisaid
 
@@ -251,7 +245,6 @@ Options:
   --gzip                          input fasta is gziped. Default: False
   --help                          Show this message and exit.
 ```
-
 
 ## relecov-tools_update-db
 
@@ -295,7 +288,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## relecov-tools_read-bioinfo-metadata
 
 ### Tool Description
@@ -329,7 +321,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## relecov-tools_metadata-homogeneizer
 
 ### Tool Description
@@ -358,7 +349,6 @@ Options:
                                   saved
   --help                          Show this message and exit.
 ```
-
 
 ## relecov-tools_pipeline-manager
 
@@ -393,7 +383,6 @@ Options:
                                   useful for testing purposes.
   --help                          Show this message and exit.
 ```
-
 
 ## relecov-tools_build-schema
 
@@ -442,7 +431,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## relecov-tools_logs-to-excel
 
 ### Tool Description
@@ -472,127 +460,6 @@ Options:
                                   [required]
   --help                          Show this message and exit.
 ```
-
-
-## relecov-tools_wrapper
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/relecov-tools:1.7.4--pyhdfd78af_0
-- **Homepage**: https://github.com/BU-ISCIII/relecov-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/relecov-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.12/site-packages/relecov_tools/utils.py:165: SyntaxWarning: invalid escape sequence '\d'
-  new_reg = sep + "\d{2}"  # Each date param occupies 2 digits (4 for year)
-                ___   ___       ___  ___  ___                           
-   \    |--|   |   \ |    |    |    |    |   | \      /  
-    \   \  /   |__ / |__  |    |___ |    |   |  \    /   
-    /   /  \   |  \  |    |    |    |    |   |   \  /    
-   /    |--|   |   \ |___ |___ |___ |___ |___|    \/     
-
-    RELECOV-tools version 1.7.4
-Usage: relecov-tools wrapper [OPTIONS]
-Try 'relecov-tools wrapper --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
-
-## relecov-tools_upload-results
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/relecov-tools:1.7.4--pyhdfd78af_0
-- **Homepage**: https://github.com/BU-ISCIII/relecov-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/relecov-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.12/site-packages/relecov_tools/utils.py:165: SyntaxWarning: invalid escape sequence '\d'
-  new_reg = sep + "\d{2}"  # Each date param occupies 2 digits (4 for year)
-                ___   ___       ___  ___  ___                           
-   \    |--|   |   \ |    |    |    |    |   | \      /  
-    \   \  /   |__ / |__  |    |___ |    |   |  \    /   
-    /   /  \   |  \  |    |    |    |    |   |   \  /    
-   /    |--|   |   \ |___ |___ |___ |___ |___|    \/     
-
-    RELECOV-tools version 1.7.4
-Usage: relecov-tools upload-results [OPTIONS]
-Try 'relecov-tools upload-results --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
-
-## relecov-tools_add-extra-config
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/relecov-tools:1.7.4--pyhdfd78af_0
-- **Homepage**: https://github.com/BU-ISCIII/relecov-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/relecov-tools/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.12/site-packages/relecov_tools/utils.py:165: SyntaxWarning: invalid escape sequence '\d'
-  new_reg = sep + "\d{2}"  # Each date param occupies 2 digits (4 for year)
-                ___   ___       ___  ___  ___                           
-   \    |--|   |   \ |    |    |    |    |   | \      /  
-    \   \  /   |__ / |__  |    |___ |    |   |  \    /   
-    /   /  \   |  \  |    |    |    |    |   |   \  /    
-   /    |--|   |   \ |___ |___ |___ |___ |___|    \/     
-
-    RELECOV-tools version 1.7.4
-Usage: relecov-tools add-extra-config [OPTIONS]
-Try 'relecov-tools add-extra-config --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## Metadata
 - **Skill**: generated

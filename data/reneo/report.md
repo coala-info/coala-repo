@@ -87,7 +87,6 @@ Options:
       print_targets   List available targets
 ```
 
-
 ## reneo_simulate
 
 ### Tool Description
@@ -1167,7 +1166,6 @@ ENVIRONMENT MODULES:
  In general, command-line values override environment variables which override
 defaults.
 ```
-
 
 ## reneo_test
 
@@ -2249,7 +2247,6 @@ ENVIRONMENT MODULES:
 defaults.
 ```
 
-
 ## reneo_install
 
 ### Tool Description
@@ -3330,7 +3327,6 @@ ENVIRONMENT MODULES:
 defaults.
 ```
 
-
 ## reneo_config
 
 ### Tool Description
@@ -3372,43 +3368,6 @@ Traceback (most recent call last):
     s1 = os.stat(f1)
 TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
 ```
-
-
-## reneo_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/reneo:0.5.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vini2/phables
-- **Package**: https://anaconda.org/channels/bioconda/packages/reneo/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Please cite Reneo in your paper using this article:
-
-
-Please consider also citing these dependencies:
-Snaketool:
-https://doi.org/10.1371/journal.pcbi.1010705
-
-Snakemake:
-https://doi.org/10.12688/f1000research.29032.1
-```
-
 
 ## Metadata
 - **Skill**: not generated

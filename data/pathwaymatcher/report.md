@@ -53,7 +53,6 @@ Match a list of proteoforms to reactions and pathways
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
 
-
 ## pathwaymatcher_match-genes
 
 ### Tool Description
@@ -92,7 +91,6 @@ Match a list of gene names
                                networks files.
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
-
 
 ## pathwaymatcher_match-uniprot
 
@@ -133,7 +131,6 @@ Match a list of UniProt protein accessions
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
 
-
 ## pathwaymatcher_match-ensembl
 
 ### Tool Description
@@ -172,7 +169,6 @@ Match a list of Ensembl protein identifiers
                                networks files.
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
-
 
 ## pathwaymatcher_match-vcf
 
@@ -213,7 +209,6 @@ Match a list of genetic variants in VCF format
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
 
-
 ## pathwaymatcher_match-chrbp
 
 ### Tool Description
@@ -253,28 +248,6 @@ Match a list of genetic variants as chromosome and base pairs
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
 
-
-## pathwaymatcher_base
-
-### Tool Description
-PathwayMatcher is a tool for mapping biological entities (genes, proteins, variants, etc.) to pathways. (Note: The provided text indicates an execution error or unrecognized subcommand).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pathwaymatcher:1.9.1--1
-- **Homepage**: https://github.com/LuisFranciscoHS/PathwayMatcher
-- **Package**: https://anaconda.org/channels/bioconda/packages/pathwaymatcher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-Unmatched arguments: base, -elp (while processing option: '-help')
-Did you mean: match-ensembl?
-```
-
-
 ## pathwaymatcher_match-rsids
 
 ### Tool Description
@@ -313,7 +286,6 @@ Match a list of genetic variants as RsIds
                                networks files.
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
-
 
 ## pathwaymatcher_match-peptides
 
@@ -356,7 +328,6 @@ Match a list of peptides
                                networks files.
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
-
 
 ## pathwaymatcher_match-modified-peptides
 
@@ -410,28 +381,6 @@ Match a list of peptides with post translational modifications
                              Default: 0
   -T, --topLevelPathways     Show Top Level Pathways in the search result.
 ```
-
-
-## pathwaymatcher_modifications
-
-### Tool Description
-A tool for matching biological entities (likely modified peptides) to pathways. Note: The provided help text indicates an error or invalid subcommand.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pathwaymatcher:1.9.1--1
-- **Homepage**: https://github.com/LuisFranciscoHS/PathwayMatcher
-- **Package**: https://anaconda.org/channels/bioconda/packages/pathwaymatcher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-Unmatched arguments: modifications, -elp (while processing option: '-help')
-Did you mean: match-modified-peptides or match-ensembl or match-peptides?
-```
-
 
 ## Metadata
 - **Skill**: generated

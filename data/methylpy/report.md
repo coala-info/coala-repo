@@ -48,7 +48,6 @@ optional inputs:
                         reference at once. (default: 100)
 ```
 
-
 ## methylpy_single-end-pipeline
 
 ### Tool Description
@@ -295,7 +294,6 @@ optional inputs:
                         can be useful for debugging, but in general should be
                         left False. (default: False)
 ```
-
 
 ## methylpy_paired-end-pipeline
 
@@ -558,7 +556,6 @@ optional inputs:
                         left False. (default: False)
 ```
 
-
 ## methylpy_dmrfind
 
 ### Tool Description
@@ -575,36 +572,6 @@ Find differentially methylated regions (DMRs) from ALLC files.
 usage: methylpy [-h]  ...
 methylpy: error: argument : invalid choice: 'dmrfind' (choose from 'build-reference', 'single-end-pipeline', 'paired-end-pipeline', 'DMRfind', 'reidentify-DMR', 'add-methylation-level', 'bam-quality-filter', 'call-methylation-state', 'allc-to-bigwig', 'merge-allc', 'index-allc', 'filter-allc', 'test-allc')
 ```
-
-
-## methylpy_reidentify-dmr
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0
-- **Homepage**: https://github.com/yupenghe/methylpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/methylpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: methylpy [-h]  ...
-methylpy: error: argument : invalid choice: 'reidentify-dmr' (choose from 'build-reference', 'single-end-pipeline', 'paired-end-pipeline', 'DMRfind', 'reidentify-DMR', 'add-methylation-level', 'bam-quality-filter', 'call-methylation-state', 'allc-to-bigwig', 'merge-allc', 'index-allc', 'filter-allc', 'test-allc')
-```
-
 
 ## methylpy_add-methylation-level
 
@@ -675,7 +642,6 @@ optional inputs:
                         generated in the output file. (default: False)
 ```
 
-
 ## methylpy_bam-quality-filter
 
 ### Tool Description
@@ -720,7 +686,6 @@ optional inputs:
                         size of buffer for reads to be written on hard drive.
                         (default: 100000)
 ```
-
 
 ## methylpy_call-methylation-state
 
@@ -860,7 +825,6 @@ optional inputs:
                         left False. (default: False)
 ```
 
-
 ## methylpy_allc-to-bigwig
 
 ### Tool Description
@@ -935,7 +899,6 @@ optional inputs:
                         overrides --remove-chr-prefix. (default: False)
 ```
 
-
 ## methylpy_merge-allc
 
 ### Tool Description
@@ -981,7 +944,6 @@ optional inputs:
                         is not recommended (default: 100)
 ```
 
-
 ## methylpy_index-allc
 
 ### Tool Description
@@ -1011,7 +973,6 @@ optional inputs:
   --reindex REINDEX     Boolean indicating whether to index allc files whose
                         index files already exist. (default: True)
 ```
-
 
 ## methylpy_filter-allc
 
@@ -1089,7 +1050,6 @@ optional inputs:
                         input allc file will be included. (default: None)
 ```
 
-
 ## methylpy_test-allc
 
 ### Tool Description
@@ -1151,7 +1111,6 @@ optional inputs:
                         output the "chr" prefix in the chromosome name
                         (default: True)
 ```
-
 
 ## Metadata
 - **Skill**: generated

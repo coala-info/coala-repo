@@ -63,7 +63,6 @@ optional arguments:
   -vc VC      Variation coverage threshold: Default 5 reads
 ```
 
-
 ## gs-tama_tama_merge.py
 
 ### Tool Description
@@ -101,7 +100,6 @@ optional arguments:
   -v V        Prints out version date and exits.
 ```
 
-
 ## gs-tama_tama_remove_fragment_models.py
 
 ### Tool Description
@@ -133,7 +131,6 @@ optional arguments:
               TSS and TTS are ignored if another CDS is found. Use longest_cds
               to pick the longest CDS
 ```
-
 
 ## gs-tama_tama_remove_single_read_models_levels.py
 
@@ -170,7 +167,6 @@ optional arguments:
               reads. Default is 2
 ```
 
-
 ## gs-tama_tama_filter_primary_transcripts_orf.py
 
 ### Tool Description
@@ -195,35 +191,6 @@ optional arguments:
   -b B        bed file (required)
   -o O        Output file name (required)
 ```
-
-
-## gs-tama_tama_format_gtf_to_bed12_ncbi.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gs-tama:1.0.3--hdfd78af_0
-- **Homepage**: https://github.com/sguizard/gs-tama
-- **Package**: https://anaconda.org/channels/bioconda/packages/gs-tama/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-opening gtf file
-```
-
 
 ## gs-tama_tama_cds_regions_bed_add.py
 
@@ -254,7 +221,6 @@ optional arguments:
               remove stop codon from CDS region
   -d D        Distance from last splice junction to call NMD (default 50bp)
 ```
-
 
 ## Metadata
 - **Skill**: generated

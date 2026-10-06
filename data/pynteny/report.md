@@ -80,7 +80,6 @@ options:
   -l , --log            path to log file. Log not written by default.
 ```
 
-
 ## pynteny_build
 
 ### Tool Description
@@ -131,7 +130,6 @@ options:
   -l , --log            path to log file. Log not written by default.
 ```
 
-
 ## pynteny_parse
 
 ### Tool Description
@@ -173,7 +171,6 @@ options:
   -l , --log            path to log file. Log not written by default.
 ```
 
-
 ## pynteny_download
 
 ### Tool Description
@@ -214,47 +211,6 @@ options:
   -f, --force     force-download database again if already downloaded
   -l , --log      path to log file. Log not written by default.
 ```
-
-
-## pynteny_cite
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pynteny:1.0.0--py310hec16e2b_0
-- **Homepage**: http://github.com/robaina/Pynteny
-- **Package**: https://anaconda.org/channels/bioconda/packages/pynteny/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-____              __
-   / __ \__  ______  / /____  ____  __  __
-  / /_/ / / / / __ \/ __/ _ \/ __ \/ / / /
- / ____/ /_/ / / / / /_/  __/ / / / /_/ /
-/_/    \__, /_/ /_/\__/\___/_/ /_/\__, /
-      /____/                     /____/
-
-Synteny-based Hmmer searches made easy, v1.0.0
-Semidán Robaina Estévez (srobaina@ull.edu.es), 2022
- 
-
-If you use this software, please cite it as below: 
-Semidán Robaina Estévez (2022). Pynteny: synteny-aware hmm searches made easy(Version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.7048685
-```
-
 
 ## Metadata
 - **Skill**: generated

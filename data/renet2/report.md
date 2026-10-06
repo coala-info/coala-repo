@@ -93,7 +93,6 @@ optional arguments:
   --is_sensitive_mode   using sensitive mode
 ```
 
-
 ## renet2_train
 
 ### Tool Description
@@ -181,7 +180,6 @@ optional arguments:
                         using new tokenizer
   --is_filter_sub       filter pmid in abs data
 ```
-
 
 ## renet2_evaluate_renet2_ft_cv
 
@@ -275,7 +273,6 @@ optional arguments:
   --is_filter_sub       filter pmid in abs data
 ```
 
-
 ## renet2_download_data
 
 ### Tool Description
@@ -313,7 +310,6 @@ optional arguments:
   --process_n PROCESS_N
                         cores number of multoprocessing
 ```
-
 
 ## renet2_parse_data
 
@@ -359,7 +355,6 @@ optional arguments:
   --no_s_f              disables generate the source session info file
 ```
 
-
 ## renet2_normalize_ann
 
 ### Tool Description
@@ -389,42 +384,6 @@ optional arguments:
   --in_f IN_F    input annotation None
   --out_f OUT_F  output file default: None
 ```
-
-
-## renet2_install_geniass
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/renet2:1.2--py_0
-- **Homepage**: https://github.com/sujunhao/RENET2
-- **Package**: https://anaconda.org/channels/bioconda/packages/renet2/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-____  _____ _   _ _____ _____ ____  
- |  _ \| ____| \ | | ____|_   _|___ \ 
- | |_) |  _| |  \| |  _|   | |   __) |
- |  _ <| |___| |\  | |___  | |  / __/ 
- |_| \_\_____|_| \_|_____| |_| |_____|
-
-           
-install geniass (cd /usr/local/lib/python3.7/site-packages/renet2/tools; tar -xf geniass-1.00.tar.gz; cd geniass; make)
-```
-
 
 ## Metadata
 - **Skill**: generated

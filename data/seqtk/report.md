@@ -39,7 +39,6 @@ INFO:    Using cached SIF image
 [E::stk_size] failed to open the input file/stream.
 ```
 
-
 ## seqtk_comp
 
 ### Tool Description
@@ -56,7 +55,6 @@ Get the nucleotide composition of a FASTA/FASTQ file
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
 INFO:    Using cached SIF image
 ```
-
 
 ## seqtk_sample
 
@@ -79,7 +77,6 @@ Usage:   seqtk sample [-2] [-s seed=11] <in.fa> <frac>|<number>
 Options: -s INT       RNG seed [11]
          -2           2-pass mode: twice as slow but with much reduced memory
 ```
-
 
 ## seqtk_subseq
 
@@ -104,7 +101,6 @@ Options:
 Note: Use 'samtools faidx' if only a few regions are intended.
 ```
 
-
 ## seqtk_fqchk
 
 ### Tool Description
@@ -124,7 +120,6 @@ Usage: seqtk fqchk [-q 20] <in.fq>
 Note: use -q0 to get the distribution of all quality values
 ```
 
-
 ## seqtk_mergepe
 
 ### Tool Description
@@ -142,7 +137,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 Usage: seqtk mergepe <in1.fq> <in2.fq>
 ```
-
 
 ## seqtk_split
 
@@ -164,7 +158,6 @@ Options:
   -n INT    number of files [10]
   -l INT    line length [0]
 ```
-
 
 ## seqtk_trimfq
 
@@ -192,7 +185,6 @@ Options: -q FLOAT    error rate threshold (disabled by -b/-e) [0.05]
          -Q          force FASTQ output
 ```
 
-
 ## seqtk_hety
 
 ### Tool Description
@@ -215,7 +207,6 @@ Options: -w INT   window size [50000]
          -t INT   # start positions in a window [5]
          -m       treat lowercases as masked
 ```
-
 
 ## seqtk_gc
 
@@ -240,7 +231,6 @@ Options:
   -x FLOAT   X-dropoff [10.0]
 ```
 
-
 ## seqtk_mutfa
 
 ### Tool Description
@@ -261,7 +251,6 @@ Usage: seqtk mutfa <in.fa> <in.snp>
 Note: <in.snp> contains at least four columns per line which are:
       'chr  1-based-pos  any  base-changed-to'.
 ```
-
 
 ## seqtk_mergefa
 
@@ -288,7 +277,6 @@ Options: -q INT   quality threshold [0]
          -h       suppress hets in the input
 ```
 
-
 ## seqtk_famask
 
 ### Tool Description
@@ -306,7 +294,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 Usage: seqtk famask <src.fa> <mask.fa>
 ```
-
 
 ## seqtk_dropse
 
@@ -326,7 +313,6 @@ INFO:    Using cached SIF image
 [E::stk_dropse] failed to open the input file/stream.
 ```
 
-
 ## seqtk_rename
 
 ### Tool Description
@@ -345,7 +331,6 @@ INFO:    Using cached SIF image
 [E::stk_rename] failed to open the input file/stream.
 ```
 
-
 ## seqtk_randbase
 
 ### Tool Description
@@ -363,7 +348,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 [E::stk_randbase] failed to open the input file/stream.
 ```
-
 
 ## seqtk_cutN
 
@@ -388,7 +372,6 @@ Options: -n INT    min size of N tract [1000]
          -g        print gaps only, no sequence
 ```
 
-
 ## seqtk_gap
 
 ### Tool Description
@@ -406,7 +389,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 Usage: seqtk gap [-l 50] <in.fa>
 ```
-
 
 ## seqtk_listhet
 
@@ -426,7 +408,6 @@ INFO:    Using cached SIF image
 [E::stk_listhet] failed to open the input file/stream.
 ```
 
-
 ## seqtk_hpc
 
 ### Tool Description
@@ -444,26 +425,6 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 [E::stk_hpc] failed to open the input file/stream.
 ```
-
-
-## seqtk_telo
-
-### Tool Description
-The provided text does not contain help information or a description for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seqtk:1.5--h577a1d6_1
-- **Homepage**: https://github.com/lh3/seqtk
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-0	0
-```
-
 
 ## Metadata
 - **Skill**: generated

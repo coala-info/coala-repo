@@ -100,36 +100,6 @@ options:
 -c* options can be used without a parameter to prompt for input.
 ```
 
-
 ## Metadata
 - **Skill**: generated
-
-## irida-uploader_irida-uploader-gui
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/irida-uploader:0.9.5--pyhdfd78af_0
-- **Homepage**: https://github.com/phac-nml/irida-uploader
-- **Package**: https://anaconda.org/channels/bioconda/packages/irida-uploader/overview
-- **Validation**: FAIL (generation failed)
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-### Validation Errors
-- No inputs — do not generate CWL.
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/irida-uploader-gui", line 6, in <module>
-    from iridauploader.gui.gui import main
-  File "/usr/local/lib/python3.13/site-packages/iridauploader/gui/__init__.py", line 1, in <module>
-    from iridauploader.gui.main_dialog import MainDialog
-  File "/usr/local/lib/python3.13/site-packages/iridauploader/gui/main_dialog.py", line 3, in <module>
-    import PyQt5.QtWidgets as QtWidgets
-ModuleNotFoundError: No module named 'PyQt5'
-```
 

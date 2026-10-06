@@ -999,7 +999,6 @@ ilp scheduler plugin settings:
 defaults.
 ```
 
-
 ## sphae_install
 
 ### Tool Description
@@ -1993,7 +1992,6 @@ ilp scheduler plugin settings:
  In general, command-line values override environment variables which override
 defaults.
 ```
-
 
 ## sphae_annotate
 
@@ -2989,7 +2987,6 @@ ilp scheduler plugin settings:
 defaults.
 ```
 
-
 ## sphae_config
 
 ### Tool Description
@@ -3011,69 +3008,6 @@ Options:
   --configfile TEXT  Copy template config to file  [default: config.yaml]
   -h, --help         Show this message and exit.
 ```
-
-
-## sphae_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sphae:1.5.3--pyhdfd78af_0
-- **Homepage**: https://github.com/linsalrob/sphae/
-- **Package**: https://anaconda.org/channels/bioconda/packages/sphae/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Please cite spae in your paper using this article: 10.5281/zenodo.8365089
-
-Please consider also citing these dependencies:
-Snaketool:
-https://doi.org/10.31219/osf.io/8w5j3
-
-Snakemake:
-https://doi.org/10.12688/f1000research.29032.1
-
-Trimnami:
-https://github.com/beardymcjohnface/Trimnami
-
-Megahit:
-https://doi.org/10.1016/j.ymeth.2016.02.020 
-
-Flye:
-https://github.com/fenderglass/Flye
-
-Koverage:
-https://github.com/beardymcjohnface/Koverage
-
-ViralVerify:
-https://github.com/ablab/viralVerify
-
-CheckV:
-https://bitbucket.org/berkeleylab/CheckV
-
-Pharokka:
-https://github.com/gbouras13/pharokka
-
-Phynteny:
-https://github.com/susiegriggo/Phynteny
-
-Phold
-https://github.com/gbouras13/phold
-```
-
 
 ## Metadata
 - **Skill**: generated

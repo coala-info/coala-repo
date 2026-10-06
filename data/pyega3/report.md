@@ -1,39 +1,5 @@
 # pyega3 CWL Generation Report
 
-## pyega3_datasets
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyega3:5.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/EGA-archive/ega-download-client
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyega3/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pyega3/overview
-- **Total Downloads**: 48.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/EGA-archive/ega-download-client
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: pyega3 datasets [-h]
-pyega3 datasets: error: argument -h/--help: ignored explicit argument 'elp'
-```
-
-
 ## pyega3_files
 
 ### Tool Description
@@ -55,7 +21,6 @@ positional arguments:
 options:
   -h, --help  show this help message and exit
 ```
-
 
 ## pyega3_fetch
 
@@ -115,7 +80,6 @@ options:
                         left on the disk after a failed transfer.
 ```
 
-
 ## pyega3_JSON
 
 ### Tool Description
@@ -134,47 +98,6 @@ usage: pyega3 [-h] [-d] [-cf CONFIG_FILE] [-sf SERVER_FILE] [-c CONNECTIONS]
               {datasets,files,fetch} ...
 pyega3: error: argument subcommand: invalid choice: 'JSON' (choose from 'datasets', 'files', 'fetch')
 ```
-
-
-## pyega3_Download
-
-### Tool Description
-pyega3: error: argument subcommand: invalid choice: 'Download' (choose from 'datasets', 'files', 'fetch')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyega3:5.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/EGA-archive/ega-download-client
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyega3/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: pyega3 [-h] [-d] [-cf CONFIG_FILE] [-sf SERVER_FILE] [-c CONNECTIONS]
-              [-t] [-ms MAX_SLICE_SIZE] [-j] [-v]
-              {datasets,files,fetch} ...
-pyega3: error: argument subcommand: invalid choice: 'Download' (choose from 'datasets', 'files', 'fetch')
-```
-
-
-## pyega3_this
-
-### Tool Description
-pyega3: error: argument subcommand: invalid choice: 'this' (choose from 'datasets', 'files', 'fetch')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyega3:5.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/EGA-archive/ega-download-client
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyega3/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: pyega3 [-h] [-d] [-cf CONFIG_FILE] [-sf SERVER_FILE] [-c CONNECTIONS]
-              [-t] [-ms MAX_SLICE_SIZE] [-j] [-v]
-              {datasets,files,fetch} ...
-pyega3: error: argument subcommand: invalid choice: 'this' (choose from 'datasets', 'files', 'fetch')
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -1,38 +1,5 @@
 # coverageanomalyscanner CWL Generation Report
 
-## coverageanomalyscanner
-
-### Tool Description
-FAIL to generate CWL: coverageanomalyscanner not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/coverageanomalyscanner:0.2.3--h69ac913_4
-- **Homepage**: https://github.com/rki-mf1/CoverageAnomalyScanner
-- **Package**: https://anaconda.org/channels/bioconda/packages/coverageanomalyscanner/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/coverageanomalyscanner/overview
-- **Total Downloads**: 3.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/rki-mf1/CoverageAnomalyScanner
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: coverageanomalyscanner not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: coverageanomalyscanner not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

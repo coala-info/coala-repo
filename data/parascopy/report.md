@@ -69,51 +69,6 @@ Other arguments:
   -V, --version         Show version.
 ```
 
-
-## parascopy_This
-
-### Tool Description
-A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "This"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-```
-
-
-## parascopy_to
-
-### Tool Description
-A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "to"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-```
-
-
 ## parascopy_table
 
 ### Tool Description
@@ -170,29 +125,6 @@ Other arguments:
   -V, --version         Show version.
 ```
 
-
-## parascopy_This
-
-### Tool Description
-A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "This"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-```
-
-
 ## parascopy_into
 
 ### Tool Description
@@ -213,7 +145,6 @@ Error: unknown command "into"
 Usage: parascopy <command>
     Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
 ```
-
 
 ## parascopy_depth
 
@@ -289,7 +220,6 @@ Other arguments:
   -h, --help            Show this help message
   -V, --version         Show version.
 ```
-
 
 ## parascopy_cn
 
@@ -421,29 +351,6 @@ Other arguments:
   -V, --version         Show version.
 ```
 
-
-## parascopy_for
-
-### Tool Description
-A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, and call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "for"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-```
-
-
 ## parascopy_cn-using
 
 ### Tool Description
@@ -543,7 +450,6 @@ Other arguments:
   -V, --version         Show version.
 ```
 
-
 ## parascopy_pool
 
 ### Tool Description
@@ -607,7 +513,6 @@ Other arguments:
   -h, --help            Show this help message
   -V, --version         Show version.
 ```
-
 
 ## parascopy_call
 
@@ -719,7 +624,6 @@ Other arguments:
   -V, --version         Show version.
 ```
 
-
 ## parascopy_view
 
 ### Tool Description
@@ -768,7 +672,6 @@ Other arguments:
   -h, --help            Show this help message
   -V, --version         Show version.
 ```
-
 
 ## parascopy_msa
 
@@ -819,29 +722,6 @@ Other arguments:
   -V, --version         Show version.
 ```
 
-
-## parascopy_homologous
-
-### Tool Description
-The provided help text indicates that 'homologous' is an unknown command for the 'parascopy' tool. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, and call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "homologous"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-```
-
-
 ## parascopy_psvs
 
 ### Tool Description
@@ -882,29 +762,6 @@ Other arguments:
   -h, --help            Show this help message
   -V, --version         Show version.
 ```
-
-
-## parascopy_between
-
-### Tool Description
-Error: unknown command "between". Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "between"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-```
-
 
 ## parascopy_examine
 
@@ -948,58 +805,6 @@ Other arguments:
   -h, --help            Show this help message
   -V, --version         Show version.
 ```
-
-
-## parascopy_and
-
-### Tool Description
-A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "and"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
-```
-
-
-## parascopy_cite
-
-### Tool Description
-Display citation information for Parascopy
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Parascopy v1.19.0
-Created by Timofey Prodanov & Vikas Bansal
-
-Please cite:
-  * Copy-number variation detection:
-    Prodanov, T. & Bansal, V. Robust and accurate estimation of paralog-specific copy number
-    for duplicated genes using whole-genome sequencing. [3mNature Communications[0m [1m13[0m, 3221 (2022)
-    [4mhttps://doi.org/10.1038/s41467-022-30930-3[0m
-
-  * Variant calling:
-    Prodanov, T. & Bansal, V. A multi-locus approach for accurate variant calling in low-copy
-    repeats using whole-genome sequencing. [3mBioinformatics[0m [1m39[0m, i279-i287 (2023)
-    [4mhttps://doi.org/10.1093/bioinformatics/btad268[0m
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -1,48 +1,5 @@
 # seqnado CWL Generation Report
 
-## seqnado_init
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seqnado:1.0.4--pyhdfd78af_0
-- **Homepage**: https://alsmith151.github.io/SeqNado/
-- **Package**: https://anaconda.org/channels/bioconda/packages/seqnado/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/seqnado/overview
-- **Total Downloads**: 11.3K
-- **Last updated**: 2026-02-21
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[32m2026-02-24 22:27:28.103[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m51[0m - [1mConda environment: /usr/local[0m
-[32m2026-02-24 22:27:28.103[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m78[0m - [1mApptainer not found on PATH; skipping container setup.[0m
-[32m2026-02-24 22:27:28.107[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m112[0m - [1mCopied Snakemake profile to /root/.config/snakemake/profile_aws[0m
-[32m2026-02-24 22:27:28.108[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m112[0m - [1mCopied Snakemake profile to /root/.config/snakemake/profile_local_conda[0m
-[32m2026-02-24 22:27:28.108[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m112[0m - [1mCopied Snakemake profile to /root/.config/snakemake/profile_local_docker[0m
-[32m2026-02-24 22:27:28.108[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m112[0m - [1mCopied Snakemake profile to /root/.config/snakemake/profile_local_environment[0m
-[32m2026-02-24 22:27:28.108[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m112[0m - [1mCopied Snakemake profile to /root/.config/snakemake/profile_local_singularity[0m
-[32m2026-02-24 22:27:28.109[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m112[0m - [1mCopied Snakemake profile to /root/.config/snakemake/profile_slurm_singularity[0m
-[32m2026-02-24 22:27:28.109[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m112[0m - [1mCopied Snakemake profile to /root/.config/snakemake/profile_test[0m
-[32m2026-02-24 22:27:28.109[0m | [1mINFO    [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m152[0m - [1mCreated genome config template (please update paths).[0m
-[32m2026-02-24 22:27:28.109[0m | [32m[1mSUCCESS [0m | [36mseqnado.cli.commands.init[0m:[36minit[0m:[36m166[0m - [32m[1mInitialization complete.[0m
-```
-
-
 ## seqnado_config
 
 ### Tool Description
@@ -62,7 +19,6 @@ Try 'seqnado config --help' for help.
 │ No such option: -h                                                           │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
 
 ## seqnado_tools
 
@@ -154,7 +110,6 @@ Use [32m'seqnado tools TOOL'[0m to see help for a specific tool.
 Use [32m'seqnado tools TOOL --options'[0m to see tool options from the container.
 ```
 
-
 ## seqnado_download
 
 ### Tool Description
@@ -209,7 +164,6 @@ Usage: seqnado download [OPTIONS] METADATA_TSV
 │                                                     exit.                    │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
 
 ## seqnado_design
 
@@ -287,7 +241,6 @@ Usage: seqnado design [OPTIONS] [ASSAY] [FASTQ ...]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
 ## seqnado_pipeline
 
 ### Tool Description
@@ -350,47 +303,6 @@ Usage: seqnado pipeline [OPTIONS] [ASSAY]
 │                                                            and exit.         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-
-
-## seqnado_genomes
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seqnado:1.0.4--pyhdfd78af_0
-- **Homepage**: https://alsmith151.github.io/SeqNado/
-- **Package**: https://anaconda.org/channels/bioconda/packages/seqnado/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: seqnado genomes [OPTIONS] COMMAND [ARGS]...                             
-                                                                                
- Manage genome configurations                                                   
-                                                                                
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                  │
-╰──────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ───────────────────────────────────────────────────────────────────╮
-│ list         Show packaged and user genome presets.                          │
-│ edit         Open user genome config in $EDITOR.                             │
-│ build        Download genome and build indices via Snakemake.                │
-│ fastqscreen  Generate FastqScreen configuration file.                        │
-╰──────────────────────────────────────────────────────────────────────────────╯
-```
-
 
 ## Metadata
 - **Skill**: generated

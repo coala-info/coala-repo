@@ -6,9 +6,8 @@
 |---|---|---|
 | binchicken_build | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); build itself is the step that creates them. |
 | binchicken_coassemble | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed. |
-| binchicken_evaluate | Failed | not a usable tool: runs bare binchicken without the evaluate subcommand and with invented flags (--threads, --verbose, --output-file); real flags are --aviary-outputs, --new-genomes, --coassemble-output and others. |
+| binchicken_evaluate | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder; command line parsed fine on the repo mock_coassemble test data. |
 | binchicken_iterate | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string/File to File/Directory and bogus outputs removed. |
-| binchicken_marker | Failed | not a usable tool: wraps only the binchicken command group with a subcommand string, no data inputs or outputs. |
 | binchicken_single | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed. |
 | binchicken_update | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string paths and bogus outputs to File/Directory inputs. |
 
@@ -101,25 +100,6 @@ usage: binchicken coassemble [-h] [--forward FORWARD [FORWARD ...]]
 binchicken coassemble: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
-
-## binchicken_marker
-
-### Tool Description
-A command-line tool for binning chicken genomes.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/binchicken:0.13.5--pyhdfd78af_0
-- **Homepage**: https://github.com/aroneys/binchicken
-- **Package**: https://anaconda.org/channels/bioconda/packages/binchicken/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: binchicken [-h] {coassemble,single,evaluate,update,iterate,build} ...
-binchicken: error: argument subparser_name: invalid choice: 'marker' (choose from 'coassemble', 'single', 'evaluate', 'update', 'iterate', 'build')
-```
-
-
 ## binchicken_single
 
 ### Tool Description
@@ -203,100 +183,6 @@ usage: binchicken single [-h] [--forward FORWARD [FORWARD ...]]
 binchicken single: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
-
-## binchicken_by
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/binchicken:0.13.5--pyhdfd78af_0
-- **Homepage**: https://github.com/aroneys/binchicken
-- **Package**: https://anaconda.org/channels/bioconda/packages/binchicken/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: binchicken [-h] {coassemble,single,evaluate,update,iterate,build} ...
-binchicken: error: argument subparser_name: invalid choice: 'by' (choose from 'coassemble', 'single', 'evaluate', 'update', 'iterate', 'build')
-```
-
-
-## binchicken_evaluate
-
-### Tool Description
-Evaluate binchicken results
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/binchicken:0.13.5--pyhdfd78af_0
-- **Homepage**: https://github.com/aroneys/binchicken
-- **Package**: https://anaconda.org/channels/bioconda/packages/binchicken/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/binchicken", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.10/site-packages/binchicken/binchicken.py", line 1834, in main
-    args = main_parser.parse_the_args()
-  File "/usr/local/lib/python3.10/site-packages/bird_tool_utils/argparsing.py", line 218, in parse_the_args
-    args = self._child_parser.parse_args()
-  File "/usr/local/lib/python3.10/argparse.py", line 1833, in parse_args
-    args, argv = self.parse_known_args(args, namespace)
-  File "/usr/local/lib/python3.10/argparse.py", line 1866, in parse_known_args
-    namespace, args = self._parse_known_args(args, namespace)
-  File "/usr/local/lib/python3.10/argparse.py", line 2061, in _parse_known_args
-    positionals_end_index = consume_positionals(start_index)
-  File "/usr/local/lib/python3.10/argparse.py", line 2038, in consume_positionals
-    take_action(action, args)
-  File "/usr/local/lib/python3.10/argparse.py", line 1943, in take_action
-    action(self, namespace, argument_values, option_string)
-  File "/usr/local/lib/python3.10/argparse.py", line 1221, in __call__
-    subnamespace, arg_strings = parser.parse_known_args(arg_strings, None)
-  File "/usr/local/lib/python3.10/argparse.py", line 1866, in parse_known_args
-    namespace, args = self._parse_known_args(args, namespace)
-  File "/usr/local/lib/python3.10/argparse.py", line 2079, in _parse_known_args
-    start_index = consume_optional(start_index)
-  File "/usr/local/lib/python3.10/argparse.py", line 2019, in consume_optional
-    take_action(action, args, option_string)
-  File "/usr/local/lib/python3.10/argparse.py", line 1943, in take_action
-    action(self, namespace, argument_values, option_string)
-  File "/usr/local/lib/python3.10/argparse.py", line 1106, in __call__
-    parser.print_help()
-  File "/usr/local/lib/python3.10/argparse.py", line 2567, in print_help
-    self._print_message(self.format_help(), file)
-  File "/usr/local/lib/python3.10/argparse.py", line 2551, in format_help
-    return formatter.format_help()
-  File "/usr/local/lib/python3.10/argparse.py", line 283, in format_help
-    help = self._root_section.format_help()
-  File "/usr/local/lib/python3.10/argparse.py", line 214, in format_help
-    item_help = join([func(*args) for func, args in self.items])
-  File "/usr/local/lib/python3.10/argparse.py", line 214, in <listcomp>
-    item_help = join([func(*args) for func, args in self.items])
-  File "/usr/local/lib/python3.10/argparse.py", line 214, in format_help
-    item_help = join([func(*args) for func, args in self.items])
-  File "/usr/local/lib/python3.10/argparse.py", line 214, in <listcomp>
-    item_help = join([func(*args) for func, args in self.items])
-  File "/usr/local/lib/python3.10/argparse.py", line 540, in _format_action
-    help_text = self._expand_help(action)
-  File "/usr/local/lib/python3.10/argparse.py", line 637, in _expand_help
-    return self._get_help_string(action) % params
-ValueError: unsupported format character ']' (0x5d) at index 50
-```
-
-
 ## binchicken_update
 
 ### Tool Description
@@ -357,7 +243,6 @@ usage: binchicken update [-h] [--forward FORWARD [FORWARD ...]]
                          [--full-help-roff]
 binchicken update: error: argument -h/--help: ignored explicit argument 'elp'
 ```
-
 
 ## binchicken_iterate
 
@@ -454,7 +339,6 @@ usage: binchicken iterate [-h] [--iteration ITERATION]
 binchicken iterate: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
-
 ## binchicken_build
 
 ### Tool Description
@@ -529,6 +413,179 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
+## binchicken_evaluate
+
+### Tool Description
+Evaluate coassembled bins
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/binchicken:0.13.5--pyhdfd78af_0
+- **Homepage**: https://github.com/aroneys/binchicken
+- **Package**: https://anaconda.org/channels/bioconda/packages/binchicken/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/binchicken/overview
+- **Total Downloads**: 11.1K
+- **Last updated**: 2025-09-28
+- **GitHub**: https://github.com/aroneys/binchicken
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: binchicken evaluate [-h] [--coassemble-output COASSEMBLE_OUTPUT]
+                           [--coassemble-unbinned COASSEMBLE_UNBINNED]
+                           [--coassemble-binned COASSEMBLE_BINNED]
+                           [--coassemble-targets COASSEMBLE_TARGETS]
+                           [--coassemble-elusive-edges COASSEMBLE_ELUSIVE_EDGES]
+                           [--coassemble-elusive-clusters COASSEMBLE_ELUSIVE_CLUSTERS]
+                           [--coassemble-summary COASSEMBLE_SUMMARY]
+                           [--aviary-outputs AVIARY_OUTPUTS [AVIARY_OUTPUTS ...]]
+                           [--new-genomes NEW_GENOMES [NEW_GENOMES ...]]
+                           [--new-genomes-list NEW_GENOMES_LIST]
+                           [--coassembly-run COASSEMBLY_RUN]
+                           [--singlem-metapackage SINGLEM_METAPACKAGE]
+                           [--prodigal-meta] [--checkm-version CHECKM_VERSION]
+                           [--min-completeness MIN_COMPLETENESS]
+                           [--max-contamination MAX_CONTAMINATION] [--cluster]
+                           [--cluster-ani CLUSTER_ANI]
+                           [--genomes GENOMES [GENOMES ...]]
+                           [--genomes-list GENOMES_LIST] [--output OUTPUT]
+                           [--cores CORES] [--dryrun]
+                           [--snakemake-profile SNAKEMAKE_PROFILE]
+                           [--local-cores LOCAL_CORES] [--retries RETRIES]
+                           [--snakemake-args SNAKEMAKE_ARGS]
+                           [--tmp-dir TMP_DIR] [--debug] [--version] [--quiet]
+                           [--full-help] [--full-help-roff]
+
+Evaluate coassembled bins
+
+Options:
+
+Base input arguments:
+--coassemble-output COASSEMBLE_OUTPUT
+Output dir from coassemble subcommand
+
+--coassemble-unbinned COASSEMBLE_UNBINNED
+SingleM appraise unbinned output from Bin Chicken coassemble (alternative to
+--coassemble-output)
+
+--coassemble-binned COASSEMBLE_BINNED
+SingleM appraise binned output from Bin Chicken coassemble (alternative to
+--coassemble-output)
+
+--coassemble-targets COASSEMBLE_TARGETS
+Target sequences output from Bin Chicken coassemble (alternative to
+--coassemble-output)
+
+--coassemble-elusive-edges COASSEMBLE_ELUSIVE_EDGES
+Elusive edges output from Bin Chicken coassemble (alternative to --coassemble-
+output)
+
+--coassemble-elusive-clusters COASSEMBLE_ELUSIVE_CLUSTERS
+Elusive clusters output from Bin Chicken coassemble (alternative to
+--coassemble-output)
+
+--coassemble-summary COASSEMBLE_SUMMARY
+Summary output from Bin Chicken coassemble (alternative to --coassemble-
+output)
+
+--aviary-outputs AVIARY_OUTPUTS [AVIARY_OUTPUTS ...]
+Output dir from Aviary coassembly and recover commands produced by coassemble
+subcommand
+
+--new-genomes NEW_GENOMES [NEW_GENOMES ...]
+New genomes to evaluate (alternative to --aviary-outputs, also requires
+--coassembly-run)
+
+--new-genomes-list NEW_GENOMES_LIST
+New genomes to evaluate (alternative to --aviary-outputs, also requires
+--coassembly-run) newline separated
+
+--coassembly-run COASSEMBLY_RUN
+Name of coassembly run to produce new genomes (alternative to --aviary-
+outputs, also requires --new-genomes)
+
+--singlem-metapackage SINGLEM_METAPACKAGE
+SingleM metapackage for sequence searching
+
+--prodigal-meta
+Use prodigal "-p meta" argument (for testing)
+
+Evaluation options:
+--checkm-version CHECKM_VERSION
+CheckM version to use to quality cutoffs [default: 2]
+
+--min-completeness MIN_COMPLETENESS
+Include bins with at least this minimum completeness [default: 70]
+
+--max-contamination MAX_CONTAMINATION
+Include bins with at most this maximum contamination [default: 10]
+
+Cluster options:
+--cluster
+Cluster new and original genomes and report number of new clusters
+
+--cluster-ani CLUSTER_ANI
+Cluster using this sequence identity [default: 86%]
+
+--genomes GENOMES [GENOMES ...]
+Original genomes used as references for coassemble subcommand
+
+--genomes-list GENOMES_LIST
+Original genomes used as references for coassemble subcommand newline
+separated
+
+General options:
+--output OUTPUT
+Output directory [default: .]
+
+--cores CORES
+Maximum number of cores to use [default: 1]
+
+--dryrun, --dry-run
+dry run workflow
+
+--snakemake-profile SNAKEMAKE_PROFILE
+Snakemake profile (see
+https://snakemake.readthedocs.io/en/v7.32.3/executing/cli.html#profiles). Can
+be used to submit rules as jobs to cluster engine (see
+https://snakemake.readthedocs.io/en/v7.32.3/executing/cluster.html).
+
+--local-cores LOCAL_CORES
+Maximum number of cores to use on localrules when running in cluster mode
+[default: 1]
+
+--retries RETRIES
+Number of times to retry a failed job [default: 3].
+
+--snakemake-args SNAKEMAKE_ARGS
+Additional commands to be supplied to snakemake in the form of a space-
+prefixed single string e.g. " --quiet"
+
+--tmp-dir TMP_DIR
+Path to temporary directory. [default: no default]
+
+Other general options:
+--debug
+output debug information
+
+--version
+output version information and quit
+
+--quiet
+only output errors
+
+--full-help
+print longer help message
+
+--full-help-roff
+print longer help message in ROFF (manpage) format
+
+Examples:
+evaluate a completed coassembly
+$ binchicken evaluate --coassemble-output coassemble_dir --aviary-outputs coassembly_0_dir ...
+evaluate a completed coassembly by providing genomes directly
+$ binchicken evaluate --coassemble-output coassemble_dir --new-genomes genome_1.fna ... --coassembly-run coassembly_0
+```
 
 ## Metadata
 - **Skill**: generated

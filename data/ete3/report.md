@@ -28,7 +28,6 @@ Traceback (most recent call last):
 ImportError: cannot import name 'TextFace' from 'ete3' (/usr/local/lib/python3.7/site-packages/ete3/__init__.py)
 ```
 
-
 ## ete3_expand
 
 ### Tool Description
@@ -51,7 +50,6 @@ Traceback (most recent call last):
     from .. import (Tree, PhyloTree, TextFace, RectFace, faces, TreeStyle, CircleFace, AttrFace,
 ImportError: cannot import name 'TextFace' from 'ete3' (/usr/local/lib/python3.7/site-packages/ete3/__init__.py)
 ```
-
 
 ## ete3_annotate
 
@@ -76,7 +74,6 @@ Traceback (most recent call last):
 ImportError: cannot import name 'TextFace' from 'ete3' (/usr/local/lib/python3.7/site-packages/ete3/__init__.py)
 ```
 
-
 ## ete3_ncbiquery
 
 ### Tool Description
@@ -99,42 +96,6 @@ Traceback (most recent call last):
     from .. import (Tree, PhyloTree, TextFace, RectFace, faces, TreeStyle, CircleFace, AttrFace,
 ImportError: cannot import name 'TextFace' from 'ete3' (/usr/local/lib/python3.7/site-packages/ete3/__init__.py)
 ```
-
-
-## ete3_view
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ete3:3.1.2
-- **Homepage**: http://etetoolkit.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ete3/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/ete3", line 6, in <module>
-    from ete3.tools.ete import main
-  File "/usr/local/lib/python3.7/site-packages/ete3/tools/ete.py", line 55, in <module>
-    from . import (ete_split, ete_expand, ete_annotate, ete_ncbiquery, ete_view,
-  File "/usr/local/lib/python3.7/site-packages/ete3/tools/ete_view.py", line 48, in <module>
-    from .. import (Tree, PhyloTree, TextFace, RectFace, faces, TreeStyle, CircleFace, AttrFace,
-ImportError: cannot import name 'TextFace' from 'ete3' (/usr/local/lib/python3.7/site-packages/ete3/__init__.py)
-```
-
 
 ## Metadata
 - **Skill**: generated

@@ -22,7 +22,6 @@ usage: seqseqpan.py [-h] subcommand ...
 seqseqpan.py: error: argument subcommand: invalid choice: 'subcommand' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
 
-
 ## seq-seq-pan_blockcountsplit
 
 ### Tool Description
@@ -56,7 +55,6 @@ required arguments:
                         XMFA input file
 ```
 
-
 ## seq-seq-pan_genomes
 
 ### Tool Description
@@ -73,7 +71,6 @@ A tool for pan-genome analysis and sequence processing.
 usage: seqseqpan.py [-h] subcommand ...
 seqseqpan.py: error: argument subcommand: invalid choice: 'genomes' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
-
 
 ## seq-seq-pan_extract
 
@@ -118,7 +115,6 @@ required arguments:
                         sequence.
 ```
 
-
 ## seq-seq-pan_join
 
 ### Tool Description
@@ -155,36 +151,6 @@ required arguments:
   -y XMFA_F_2, --xmfa_two XMFA_F_2
                         XMFA file to be joined with input file.
 ```
-
-
-## seq-seq-pan_first
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
-- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: seqseqpan.py [-h] subcommand ...
-seqseqpan.py: error: argument subcommand: invalid choice: 'first' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
-```
-
 
 ## seq-seq-pan_maf
 
@@ -225,7 +191,6 @@ required arguments:
                         be listed in the same order as in original FASTA file.
 ```
 
-
 ## seq-seq-pan_map
 
 ### Tool Description
@@ -262,36 +227,6 @@ required arguments:
                         sequence number. Then one coordinate per line.
                         Coordinates are 1-based!
 ```
-
-
-## seq-seq-pan_between
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
-- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: seqseqpan.py [-h] subcommand ...
-seqseqpan.py: error: argument subcommand: invalid choice: 'between' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
-```
-
 
 ## seq-seq-pan_mapall
 
@@ -333,7 +268,6 @@ required arguments:
                         Using all available threads if not specified.
 ```
 
-
 ## seq-seq-pan_merge
 
 ### Tool Description
@@ -372,7 +306,6 @@ required arguments:
                         XMFA input file
 ```
 
-
 ## seq-seq-pan_only
 
 ### Tool Description
@@ -389,7 +322,6 @@ A tool for pan-genome analysis. Note: 'only' is not a valid subcommand; valid su
 usage: seqseqpan.py [-h] subcommand ...
 seqseqpan.py: error: argument subcommand: invalid choice: 'only' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
-
 
 ## seq-seq-pan_realign
 
@@ -428,7 +360,6 @@ required arguments:
                         XMFA input file
 ```
 
-
 ## seq-seq-pan_be
 
 ### Tool Description
@@ -445,7 +376,6 @@ A tool for pan-genome analysis and sequence manipulation.
 usage: seqseqpan.py [-h] subcommand ...
 seqseqpan.py: error: argument subcommand: invalid choice: 'be' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
-
 
 ## seq-seq-pan_reconstruct
 
@@ -485,7 +415,6 @@ required arguments:
                         consensus FASTA file used in XMFA
 ```
 
-
 ## seq-seq-pan_genome
 
 ### Tool Description
@@ -502,7 +431,6 @@ A tool for pan-genome analysis and sequence alignment manipulation.
 usage: seqseqpan.py [-h] subcommand ...
 seqseqpan.py: error: argument subcommand: invalid choice: 'genome' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
-
 
 ## seq-seq-pan_remove
 
@@ -541,7 +469,6 @@ required arguments:
                         Number of genome to remove (as shown in XMFA header)
 ```
 
-
 ## seq-seq-pan_resolve
 
 ### Tool Description
@@ -579,7 +506,6 @@ required arguments:
                         consensus FASTA file used in XMFA
 ```
 
-
 ## seq-seq-pan_separate
 
 ### Tool Description
@@ -616,7 +542,6 @@ required arguments:
   -x XMFA_F, --xmfa XMFA_F
                         XMFA input file
 ```
-
 
 ## seq-seq-pan_split
 
@@ -660,7 +585,6 @@ required arguments:
                         be listed in the same order as in original FASTA file.
 ```
 
-
 ## seq-seq-pan_xmfa
 
 ### Tool Description
@@ -695,7 +619,6 @@ required arguments:
   -x XMFA_F, --xmfa XMFA_F
                         XMFA input file
 ```
-
 
 ## Metadata
 - **Skill**: generated

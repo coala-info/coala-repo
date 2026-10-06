@@ -70,7 +70,6 @@ options:
   --outdir OUTDIR       directory to write the output to
 ```
 
-
 ## treetime_ancestral
 
 ### Tool Description
@@ -143,7 +142,6 @@ options:
   --outdir OUTDIR       directory to write the output to
 ```
 
-
 ## treetime_mugration
 
 ### Tool Description
@@ -203,7 +201,6 @@ options:
   --verbose VERBOSE     verbosity of output 0-6
   --outdir OUTDIR       directory to write the output to
 ```
-
 
 ## treetime_clock
 
@@ -309,7 +306,6 @@ options:
   --verbose VERBOSE     verbosity of output 0-6
   --outdir OUTDIR       directory to write the output to
 ```
-
 
 ## treetime_arg
 
@@ -499,40 +495,6 @@ options:
   --verbose VERBOSE     verbosity of output 0-6
   --outdir OUTDIR       directory to write the output to
 ```
-
-
-## treetime_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/treetime:0.11.4--pyhdfd78af_0
-- **Homepage**: https://github.com/neherlab/treetime
-- **Package**: https://anaconda.org/channels/bioconda/packages/treetime/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: TreeTime: Maximum Likelihood Phylodynamics version [-h]
-
-print version
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

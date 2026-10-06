@@ -31,7 +31,6 @@ Usage of about:
     	prints out quota information for this drive
 ```
 
-
 ## drive_copy
 
 ### Tool Description
@@ -55,7 +54,6 @@ Usage of copy:
     	recursive copying
 ```
 
-
 ## drive_cp
 
 ### Tool Description
@@ -78,7 +76,6 @@ Usage of cp:
   -recursive
     	recursive copying
 ```
-
 
 ## drive_del
 
@@ -107,7 +104,6 @@ Usage of del:
     	if set, do not log anything but errors
 ```
 
-
 ## drive_delete
 
 ### Tool Description
@@ -134,7 +130,6 @@ Usage of delete:
   -quiet
     	if set, do not log anything but errors
 ```
-
 
 ## drive_diff
 
@@ -175,7 +170,6 @@ Use cases may include:
   -u	unified diff (default true)
 ```
 
-
 ## drive_edit-desc
 
 ### Tool Description
@@ -199,7 +193,6 @@ Usage of edit-desc:
     	get content in from standard input (stdin)
 ```
 
-
 ## drive_emptytrash
 
 ### Tool Description
@@ -220,65 +213,6 @@ Usage of emptytrash:
   -quiet
     	if set, do not log anything but errors
 ```
-
-
-## drive_features
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drive:0.3.9--0
-- **Homepage**: https://github.com/kamranahmedse/driver.js
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-no drive context found; run `drive init` or go into one of the directories (sub directories) that you performed `drive init`
-```
-
-
-## drive_init
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drive:0.3.9--0
-- **Homepage**: https://github.com/kamranahmedse/driver.js
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Visit this URL to get an authorization code
-https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=354790962074-7rrlnuanmamgg1i4feed12dpuq871bvd.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&state=2026-02-25+15%3A40%3A15.295790473+%2B0000+UTC2596996162
-Paste the authorization code:
-```
-
 
 ## drive_list
 
@@ -349,7 +283,6 @@ comma separated e.g modtime,md5_r,name
 		the server even with changes not visible to the user
 ```
 
-
 ## drive_ls
 
 ### Tool Description
@@ -419,7 +352,6 @@ comma separated e.g modtime,md5_r,name
 		the server even with changes not visible to the user
 ```
 
-
 ## drive_move
 
 ### Tool Description
@@ -442,7 +374,6 @@ Usage of move:
   -quiet
     	if set, do not log anything but errors
 ```
-
 
 ## drive_mv
 
@@ -467,7 +398,6 @@ Usage of mv:
     	if set, do not log anything but errors
 ```
 
-
 ## drive_open
 
 ### Tool Description
@@ -491,7 +421,6 @@ Usage of open:
     	open file in default browser (default true)
 ```
 
-
 ## drive_pub
 
 ### Tool Description
@@ -514,7 +443,6 @@ Usage of pub:
   -quiet
     	if set, do not log anything but errors
 ```
-
 
 ## drive_pull
 
@@ -594,7 +522,6 @@ Use cases may include:
     	show step by step information verbosely
 ```
 
-
 ## drive_push
 
 ### Tool Description
@@ -662,35 +589,6 @@ Use cases may include:
     	show step by step information verbosely
 ```
 
-
-## drive_quota
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drive:0.3.9--0
-- **Homepage**: https://github.com/kamranahmedse/driver.js
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-no drive context found; run `drive init` or go into one of the directories (sub directories) that you performed `drive init`
-```
-
-
 ## drive_rename
 
 ### Tool Description
@@ -717,7 +615,6 @@ Usage of rename:
   -remote
     	rename remote as well (default true)
 ```
-
 
 ## drive_share
 
@@ -764,7 +661,6 @@ Usage of share:
     	turn off file indexing so that only those with the link can view it
 ```
 
-
 ## drive_stat
 
 ### Tool Description
@@ -793,7 +689,6 @@ Usage of stat:
   -recursive
     	recursively discover folders
 ```
-
 
 ## drive_touch
 
@@ -834,7 +729,6 @@ See https://golang.org/pkg/time/#Parse (default "20060102150405")
     	show step by step information verbosely (default true)
 ```
 
-
 ## drive_trash
 
 ### Tool Description
@@ -862,7 +756,6 @@ Usage of trash:
     	show step by step information verbosely
 ```
 
-
 ## drive_unpub
 
 ### Tool Description
@@ -885,7 +778,6 @@ Usage of unpub:
   -quiet
     	if set, do not log anything but errors
 ```
-
 
 ## Metadata
 - **Skill**: generated

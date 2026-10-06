@@ -4,12 +4,12 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| bcftools-snvphyl-plugin_bcftools | Failed | not a usable tool: wraps only the bcftools command group with a command string and no data inputs or outputs, not the filter_snv_density plugin. |
+| bcftools-snvphyl-plugin_filter_snv_density | PASS |  |
 
-## bcftools-snvphyl-plugin_bcftools
+## bcftools-snvphyl-plugin_filter_snv_density
 
 ### Tool Description
-Tools for variant calling and manipulating VCFs and BCFs
+bcftools plugin that finds SNV high-density regions of the genome and writes them to a region file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bcftools-snvphyl-plugin:1.9--h4da6232_0
@@ -22,45 +22,41 @@ Tools for variant calling and manipulating VCFs and BCFs
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/phac-nml/snvphyl-tools
 - **Stars**: N/A
+
 ### Original Help Text
 ```text
-Program: bcftools (Tools for variant calling and manipulating VCFs and BCFs)
-Version: 1.9 (using htslib 1.9)
+About:   Run user defined plugin
+Usage:   bcftools plugin <name> [OPTIONS] <file> [-- PLUGIN_OPTIONS]
+         bcftools +name [OPTIONS] <file>  [-- PLUGIN_OPTIONS]
 
-Usage:   bcftools [--version|--version-only] [--help] <command> <argument>
+VCF input options:
+   -e, --exclude <expr>        exclude sites for which the expression is true
+   -i, --include <expr>        select sites for which the expression is true
+   -r, --regions <region>      restrict to comma-separated list of regions
+   -R, --regions-file <file>   restrict to regions listed in a file
+   -t, --targets <region>      similar to -r but streams rather than index-jumps
+   -T, --targets-file <file>   similar to -R but streams rather than index-jumps
+VCF output options:
+       --no-version            do not append version and command line to the header
+   -o, --output <file>         write output to a file [standard output]
+   -O, --output-type <type>    'b' compressed BCF; 'u' uncompressed BCF; 'z' compressed VCF; 'v' uncompressed VCF [v]
+       --threads <int>         number of extra output compression threads [0]
+Plugin options:
+   -h, --help                  list plugin's options
+   -l, --list-plugins          list available plugins. See BCFTOOLS_PLUGINS environment variable and man page for details
+   -v, --verbose               print verbose information, -vv increases verbosity
+   -V, --version               print version string and exit
 
-Commands:
 
- -- Indexing
-    index        index VCF/BCF files
 
- -- VCF/BCF manipulation
-    annotate     annotate and edit VCF/BCF files
-    concat       concatenate VCF/BCF files from the same set of samples
-    convert      convert VCF/BCF files to different formats and back
-    isec         intersections of VCF/BCF files
-    merge        merge VCF/BCF files files from non-overlapping sample sets
-    norm         left-align and normalize indels
-    plugin       user-defined plugins
-    query        transform VCF/BCF into user-defined formats
-    reheader     modify VCF/BCF header, change sample names
-    sort         sort VCF/BCF file
-    view         VCF/BCF conversion, view, subset and filter VCF/BCF files
+Plugin filter_snv_density:
+   A plugin which filters on freebayes for SNV's deemed to be within high density regions of the genome.
+   (The plugin prints no option help; options below are from bcfplugins/filter_snv_density.c in phac-nml/snvphyl-tools.)
 
- -- VCF/BCF analysis
-    call         SNP/indel calling
-    consensus    create consensus sequence by applying VCF variants
-    cnv          HMM CNV calling
-    csq          call variation consequences
-    filter       filter VCF/BCF files using fixed thresholds
-    gtcheck      check sample concordance, detect sample swaps and contamination
-    mpileup      multi-way pileup producing genotype likelihoods
-    roh          identify runs of autozygosity (HMM)
-    stats        produce VCF/BCF stats
-
- Most commands accept VCF, bgzipped VCF, and BCF with the file type detected
- automatically even when streaming from a pipe. Indexed VCF and BCF will work
- in all situations. Un-indexed VCF and BCF and streams will work in most but
- not all situations.
+PLUGIN_OPTIONS (after --):
+   --filename <file>           input VCF file name (stored, not otherwise used)
+   --region_file <file>        output file; high-density regions are appended as <chrom> <start> <end>
+   --window_size <int>         window size in bases [100]
+   --threshold <int>           number of SNVs in a window that makes it high density [10]
 ```
 

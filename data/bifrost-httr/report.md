@@ -36,7 +36,6 @@ Options:
   --help  Show this message and exit.
 ```
 
-
 ## bifrost-httr_compress-output
 
 ### Tool Description
@@ -66,7 +65,6 @@ Options:
   --no-compression           Save output as plain JSON without compression
   --help                     Show this message and exit.
 ```
-
 
 ## bifrost-httr_create-report
 
@@ -112,7 +110,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## bifrost-httr_prepare-inputs
 
 ### Tool Description
@@ -155,7 +152,6 @@ Options:
   --help                          Show this message and exit.
 ```
 
-
 ## bifrost-httr_run-analysis
 
 ### Tool Description
@@ -183,38 +179,6 @@ Options:
   -s, --seed INTEGER           Optional random seed for reproducibility
   --help                       Show this message and exit.
 ```
-
-
-## bifrost-httr_split-data
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bifrost-httr:0.5.0--pyhdfd78af_0
-- **Homepage**: https://github.com/seqera-services/bifrost-httr
-- **Package**: https://anaconda.org/channels/bioconda/packages/bifrost-httr/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Usage: bifrost-httr split-data [OPTIONS]
-Try 'bifrost-httr split-data --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## Metadata
 - **Skill**: not generated

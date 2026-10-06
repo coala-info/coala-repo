@@ -37,7 +37,6 @@ options:
   --list      Display list of supported single-cell technologies
 ```
 
-
 ## kb-python_kb ref
 
 ### Tool Description
@@ -119,7 +118,6 @@ required arguments for `nac` workflow:
   -c1 T2C               Path to generate cDNA transcripts-to-capture
   -c2 T2C               Path to generate unprocessed transcripts-to-capture
 ```
-
 
 ## kb-python_kb count
 
@@ -280,7 +278,6 @@ optional arguments for `BULK` and `SMARTSEQ2` technologies:
                         across multiple directories
 ```
 
-
 ## kb-python_kb --list
 
 ### Tool Description
@@ -324,50 +321,6 @@ STORMSEQ        STORM-seq                                                       
 SURECELL        SureCell for ddSEQ                                0,0,6 0,21,27 0,42,48      0,51,59    1,None,None                
 Visium          10x Visium                             yes        0,0,16                     0,16,28    1,None,None
 ```
-
-
-## kb-python_kb info
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kb-python:0.30.0--pyh7e72e81_0
-- **Homepage**: https://github.com/pachterlab/kb_python
-- **Package**: https://anaconda.org/channels/bioconda/packages/kb-python/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/kb", line 10, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/ngs_tools/logging.py", line 62, in inner
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/kb_python/main.py", line 1859, in main
-    display_info()
-  File "/usr/local/lib/python3.12/site-packages/kb_python/main.py", line 83, in display_info
-    info = f'kb_python {__version__}\n{get_binary_info()}'
-                                       ^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/kb_python/main.py", line 71, in get_binary_info
-    kallisto_version = '.'.join(str(i) for i in get_kallisto_version())
-                                                ^^^^^^^^^^^^^^^^^^^^^^
-TypeError: 'NoneType' object is not iterable
-```
-
 
 ## Metadata
 - **Skill**: generated

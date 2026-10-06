@@ -40,62 +40,6 @@ Options:
   --help                     Show this message and exit.
 ```
 
-
-## sierrapy_introspection
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0
-- **Homepage**: https://github.com/hivdb/sierra-client/tree/master/python
-- **Package**: https://anaconda.org/channels/bioconda/packages/sierrapy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/sierrapy", line 10, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/sierrapy/cmds.py", line 5, in main
-    cli(obj={})
-  File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1130, in __call__
-    return self.main(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1055, in main
-    rv = self.invoke(ctx)
-         ^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1657, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1404, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/click/core.py", line 760, in invoke
-    return __callback(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/click/decorators.py", line 26, in new_func
-    return f(get_current_context(), *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.11/site-packages/sierrapy/commands/introspection.py", line 16, in introspection
-    result: Dict[str, Any] = ctx.obj['CLIENT'].get_introspection()
-                             ~~~~~~~^^^^^^^^^^
-KeyError: 'CLIENT'
-```
-
-
 ## sierrapy_mutations
 
 ### Tool Description
@@ -129,7 +73,6 @@ Options:
   --ugly                     Output compressed JSON result.
   --help                     Show this message and exit.
 ```
-
 
 ## sierrapy_patterns
 
@@ -176,7 +119,6 @@ Options:
   --help                     Show this message and exit.
 ```
 
-
 ## sierrapy_recipe
 
 ### Tool Description
@@ -204,7 +146,6 @@ Commands:
   mutationtsv  Export mutation set of each sequences from Sierra result.
   sequencetsv  Export mutation set of each sequences from Sierra result.
 ```
-
 
 ## sierrapy_seqreads
 
@@ -243,7 +184,6 @@ Options:
   --ugly                          Output compressed JSON result
   --help                          Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

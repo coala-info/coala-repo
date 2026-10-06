@@ -46,7 +46,6 @@ usage: cat <fasta> | NCRF [options]
   scripts.
 ```
 
-
 ## ncrf_ncrf_cat.py
 
 ### Tool Description
@@ -78,35 +77,6 @@ files.
 It can also be used to verify that the input files contain end-of-file markers
 i.e. that they were not truncated when created.
 ```
-
-
-## ncrf_ncrf_consensus_filter.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ncrf:1.01.02--h7b50bb2_6
-- **Homepage**: https://github.com/makovalab-psu/NoiseCancellingRepeatFinder
-- **Package**: https://anaconda.org/channels/bioconda/packages/ncrf/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-ncrf_consensus_filter.py: alignment input may have been truncated (end marker is absent)
-```
-
 
 ## ncrf_ncrf_resolve_overlaps.py
 
@@ -156,7 +126,6 @@ from ncrf_summary_with_consensus.
    ...
 ```
 
-
 ## ncrf_ncrf_to_bed.py
 
 ### Tool Description
@@ -185,7 +154,6 @@ the match ratio times 1000 (e.g. 826 is 82.6%).
   FAB41174_005950 2312 3334 . - 811
    ...
 ```
-
 
 ## Metadata
 - **Skill**: generated

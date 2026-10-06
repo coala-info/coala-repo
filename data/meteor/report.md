@@ -32,7 +32,6 @@ options:
   -c                    Check the md5sum of the catalogue after download.
 ```
 
-
 ## meteor_fastq
 
 ### Tool Description
@@ -57,7 +56,6 @@ options:
   -m MASK_SAMPLE_NAME  Regular expression (between quotes) for extracting sample name.
   -o FASTQ_DIR         Directory where the fastq repository is created.
 ```
-
 
 ## meteor_mapping
 
@@ -105,7 +103,6 @@ options:
   -t THREADS            Number of alignment threads to launch (default: 1).
 ```
 
-
 ## meteor_profile
 
 ### Tool Description
@@ -147,7 +144,6 @@ options:
                         Value between 0.0 and 1.0 (default: 0.9).
 ```
 
-
 ## meteor_merge
 
 ### Tool Description
@@ -180,7 +176,6 @@ options:
   -p PREFIX             Prefix added to output filenames (default: output).
   -g                    Merge gene abundance tables.
 ```
-
 
 ## meteor_strain
 
@@ -231,7 +226,6 @@ options:
                         1).
 ```
 
-
 ## meteor_tree
 
 ### Tool Description
@@ -266,38 +260,6 @@ options:
   -t THREADS            Number of threads when infering each tree (default:
                         1).
 ```
-
-
-## meteor_test
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0
-- **Homepage**: https://github.com/metagenopolis/meteor
-- **Package**: https://anaconda.org/channels/bioconda/packages/meteor/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: Meteor test [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
 
 ## Metadata
 - **Skill**: generated

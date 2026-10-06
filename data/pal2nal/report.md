@@ -1,38 +1,5 @@
 # pal2nal CWL Generation Report
 
-## pal2nal
-
-### Tool Description
-FAIL to generate CWL: pal2nal not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: biocontainers/pal2nal:v14.1-2-deb_cv1
-- **Homepage**: http://www.bork.embl.de/pal2nal/
-- **Package**: https://anaconda.org/channels/bioconda/packages/pal2nal/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pal2nal/overview
-- **Total Downloads**: 15.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pal2nal not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pal2nal not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 
@@ -61,7 +28,6 @@ perl: warning: Falling back to the standard locale ("C").
 pal2nal.pl  (v14)
 
 Usage:  pal2nal.pl  pep.aln  nuc.fasta  [nuc.fasta...]  [options]
-
 
     pep.aln:    protein alignment either in CLUSTAL or FASTA format
 
@@ -100,11 +66,9 @@ Usage:  pal2nal.pl  pep.aln  nuc.fasta  [nuc.fasta...]  [options]
                    22  Scenedesmus obliquus mitochondrial code
                    23  Thraustochytrium mitochondrial code
 
-
               -html         HTML output (only for the web server)
 
               -nostderr     No STDERR messages (only for the web server)
-
 
     - sequence order in pep.aln and nuc.fasta should be the same.
 

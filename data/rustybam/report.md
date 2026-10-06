@@ -49,7 +49,6 @@ OPTIONS:
             Print version information
 ```
 
-
 ## rustybam_Get
 
 ### Tool Description
@@ -71,7 +70,6 @@ USAGE:
 For more information try --help
 ```
 
-
 ## rustybam_CIGAR
 
 ### Tool Description
@@ -92,7 +90,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_bed-length
 
@@ -122,7 +119,6 @@ OPTIONS:
     -h, --help               Print help information
     -V, --version            Print version information
 ```
-
 
 ## rustybam_filter
 
@@ -156,7 +152,6 @@ OPTIONS:
     -V, --version                    Print version information
 ```
 
-
 ## rustybam_Filter
 
 ### Tool Description
@@ -181,7 +176,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_invert
 
@@ -211,7 +205,6 @@ OPTIONS:
     -V, --version    Print version information
 ```
 
-
 ## rustybam_Invert
 
 ### Tool Description
@@ -236,7 +229,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_liftover
 
@@ -291,7 +283,6 @@ OPTIONS:
     -V, --version
             Print version information
 ```
-
 
 ## rustybam_trim-paf
 
@@ -351,7 +342,6 @@ OPTIONS:
             Print version information
 ```
 
-
 ## rustybam_Trim
 
 ### Tool Description
@@ -376,7 +366,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_orient
 
@@ -428,7 +417,6 @@ OPTIONS:
             Print version information
 ```
 
-
 ## rustybam_Orient
 
 ### Tool Description
@@ -453,7 +441,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_break-paf
 
@@ -484,7 +471,6 @@ OPTIONS:
     -V, --version                Print version information
 ```
 
-
 ## rustybam_paf-to-sam
 
 ### Tool Description
@@ -513,7 +499,6 @@ OPTIONS:
     -V, --version          Print version information
 ```
 
-
 ## rustybam_Convert
 
 ### Tool Description
@@ -538,7 +523,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_fastx-split
 
@@ -575,7 +559,6 @@ OPTIONS:
             Print version information
 ```
 
-
 ## rustybam_get-fasta
 
 ### Tool Description
@@ -603,7 +586,6 @@ OPTIONS:
     -h, --help             Print help information
     -V, --version          Print version information
 ```
-
 
 ## rustybam_nucfreq
 
@@ -636,7 +618,6 @@ OPTIONS:
     -V, --version            Print version information
 ```
 
-
 ## rustybam_repeat
 
 ### Tool Description
@@ -665,7 +646,6 @@ OPTIONS:
     -V, --version      Print version information
 ```
 
-
 ## rustybam_Report
 
 ### Tool Description
@@ -686,7 +666,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_suns
 
@@ -717,7 +696,6 @@ OPTIONS:
     -V, --version                  Print version information
 ```
 
-
 ## rustybam_Extract
 
 ### Tool Description
@@ -738,7 +716,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_add-rg
 
@@ -771,7 +748,6 @@ OPTIONS:
     -V, --version              Print version information
 ```
 
-
 ## rustybam_Add
 
 ### Tool Description
@@ -792,7 +768,6 @@ USAGE:
 
 For more information try --help
 ```
-
 
 ## rustybam_seq-stats
 
@@ -825,7 +800,6 @@ OPTIONS:
     -V, --version                      Print version information
 ```
 
-
 ## rustybam_Calculate
 
 ### Tool Description
@@ -847,7 +821,6 @@ USAGE:
 For more information try --help
 ```
 
-
 ## rustybam_quantiles
 
 ### Tool Description
@@ -868,33 +841,6 @@ USAGE:
 
 For more information try --help
 ```
-
-
-## rustybam_Print
-
-### Tool Description
-A command-line tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Print' wasn't recognized
-
-	Did you mean 'orient'?
-
-If you believe you received this message in error, try re-running with 'rustybam -- Print'
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 
 ## Metadata
 - **Skill**: generated

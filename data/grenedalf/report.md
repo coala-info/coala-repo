@@ -27,7 +27,6 @@ Input:
   --csv-path TEXT:PATH(existing)=[] ... Excludes: --json-path
                               List of csv files or directories to process. For directories, only files with the extension `.csv` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
 
-
 Color:
   --color-list TEXT=inferno   List of colors to use for the palette. Can either be the name of a color list, a file containing one color per line, or an actual comma-separated list of colors. Colors can be specified in the format `#rrggbb` using hex values, or by web color names.
   --reverse-color-list        If set, the order of colors of the `--color-list` is reversed.
@@ -41,12 +40,10 @@ Color:
   --min-value FLOAT=nan       As an alternative to determining the range of values automatically, the range limits can be set explicitly. This allows for instance to cap the visualization in cases of outliers that would otherwise hide detail in the lower values. Any value that is below the min specified here will then be mapped to the `under` color, or clipped to the lowest value in the color map.
   --max-value FLOAT=nan       See `--min-value`; this is the equivalent upper limit of values.Any value that is above the max specified here will then be mapped to the `over` color, or be clipped to the highest value in the color map.
 
-
 Output:
   --out-dir TEXT=.            Directory to write files to
   --file-prefix TEXT          File prefix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --file-suffix TEXT          File suffix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
-
 
 Global Options:
   --allow-file-overwriting    Allow to overwrite existing output files instead of aborting the command. By default, we abort if any output file already exists, to avoid overwriting by mistake.
@@ -55,10 +52,8 @@ Global Options:
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
 
 ## grenedalf_diversity
 
@@ -94,7 +89,6 @@ Input SAM/BAM/CRAM:
   --sam-flags-exclude-any TEXT Needs: --sam-path
                               Do not use reads with any bits set in the given value present in the FLAG field of the read. This is equivalent to the `-F` / `--excl-flags` / `--exclude-flags` setting in `samtools view`. See `--sam-flags-include-all` above for how to specify the value.
 
-
 Input (m)pileup:
   --pileup-path TEXT:PATH(existing)=[] ...
                               List of (m)pileup files or directories to process. For directories, only files with the extension `.(plp|mplp|pileup|mpileup)[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
@@ -103,16 +97,13 @@ Input (m)pileup:
   --pileup-quality-encoding TEXT:{sanger,illumina-1.3,illumina-1.5,illumina-1.8,solexa}=sanger Needs: --pileup-path
                               Encoding of the quality scores of the bases in (m)pileup files, when using `--pileup-min-base-qual`. Default is `"sanger"`, which seems to be the most common these days. Both `"sanger"` and `"illumina-1.8"` are identical and use an ASCII offset of 33, while `"illumina-1.3"` and `"illumina-1.5"` are identical with an ASCII offset of 64 (we provide different names for completeness). Lastly, `"solexa"` has an offset of 64, but uses a different equation (not phred score) for the encoding.
 
-
 Input sync:
   --sync-path TEXT:PATH(existing)=[] ...
                               List of sync (as specified by PoPoolation2) files or directories to process. For directories, only files with the extension `.sync[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
 
-
 Input VCF/BCF:
   --vcf-path TEXT:PATH(existing)=[] ...
                               List of vcf/bcf files or directories to process. For directories, only files with the extension `.vcf[.gz]|.bcf` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times. This expects that the input file has the per-sample VCF FORMAT field `AD` (alleleic depth) given, containing the counts of the reference and alternative base. This assumes that the data that was used to create the VCF file was actually a pool of individuals (e.g., from pool sequencing) for each sample (column) of the VCF file. We then interpret the `AD` field as the allele counts of each pool of individuals. Note that only SNP positions are used; positions that contain indels and other non-SNP variants are skipped.
-
 
 Input frequency table:
   --frequency-table-path TEXT:PATH(existing)=[] ...
@@ -142,7 +133,6 @@ Input frequency table:
   --frequency-table-sample-depth-column TEXT Needs: --frequency-table-path
                               Specify the exact prefix or suffix of the per-sample read depth columns in the header, case sensitive. By default, we look for column names having "readdepth", "depth", "coverage", "cov", or "ad", case insensitive, and ignoring any extra punctuation marks, as a prefix or suffix, with the remainder of the column name used as the sample name. For example, "S1.read-depth" indicates the read depth column for sample "S1".
 
-
 Input Settings:
   --multi-file-locus-set TEXT:{union,intersection}=union
                               When multiple input files are provided, select whether the union of all their loci is used (outer join), or their intersection (inner join). For their union, input files that do not have data at a particular locus are considered as missing at that locus. Note that we allow to use multiple input files even with different file types.
@@ -153,7 +143,6 @@ Input Settings:
                               Provide a reference genome sequence dictionary in `.dict` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
   --reference-genome-fai TEXT:FILE Excludes: --reference-genome-fasta --reference-genome-dict
                               Provide a reference genome sequence dictionary in `.fai` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
-
 
 Sample Names, Groups, and Filters:
   --rename-samples-list TEXT:FILE
@@ -166,7 +155,6 @@ Sample Names, Groups, and Filters:
                               Sample names to exclude (all other samples are included); either (1) a comma- or tab-separated list given on the command line (in a typical shell, this list has to be enclosed in quotation marks), or (2) a file with one sample name per line. If no sample filter is provided, all samples in the input file are used. The option is applied after potentially renaming the samples with `--rename-samples-list`.
   --sample-group-merge-table TEXT:FILE
                               When the input contains multiple samples (either within a single input file, or by providing multiple input files), these can be merged into new samples, by summing up their nucleotide base counts at each position. This has essentially the same effect as having merged the raw fastq files or the mapped sam/bam files of the samples, that is, all reads from those samples are treated as if they were a single sample. For this grouping, the option takes a simple table file (comma- or tab-separated), with the sample names (after the above renaming, if provided) in the first column, and their assigned group names in the second column. All samples in the same group are then merged into a grouped sample, and the group names are used as the new sample names for the output. Note that the `--pool-sizes` option then need to contain the summed up pool sizes for each group, using the group names.
-
 
 Region Filters:
   --filter-region TEXT=[] ... Genomic region to filter for, in the format "chr" (for whole chromosomes), "chr:position", "chr:start-end", or "chr:start..end". Positions are 1-based and inclusive (closed intervals). The filter keeps all listed positions, and removes all that are not listed. Multiple region options can be provided, see also `--filter-region-set`.
@@ -188,7 +176,6 @@ Region Filters:
                               When using `--filter-region-mask-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
   --filter-region-set TEXT:{union,intersection}=union
                               It is possible to provide multiple of the above region filter options, even of different types. In that case, decide on how to combine the loci of these filters.
-
 
 Masking Filters:
   --filter-mask-samples-bed-list TEXT:FILE Excludes: --filter-mask-samples-fasta-list
@@ -217,7 +204,6 @@ Masking Filters:
   --filter-mask-total-fasta-invert Needs: --filter-mask-total-fasta
                               When using `--filter-mask-total-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
 
-
 Numerical Filters:
   --filter-sample-min-count UINT:POSITIVE=0 REQUIRED
                               Minimum base count for a nucleotide (in `ACGT`) to be considered as an allele. Counts below that are set to zero, and hence ignored as an allele/variant. For example, singleton read sequencing errors can be filtered out this way.
@@ -244,13 +230,11 @@ Numerical Filters:
   --filter-total-snp-min-frequency FLOAT=0
                               Minimum allele frequency that needs to be reached for a position to be used. Positions where the allele frequency `af` across all samples, or `1 - af`, is below this value, are ignored. If both the reference and alternative base are known, allele frequencies are computed based on those; if only the reference base is known, the most frequent non-reference base is used as the alternative; if neither is known, the first and second most frequent bases are used to compute the frequency.
 
-
 Sample Subsampling:
   --subsample-max-read-depth UINT=0
                               If provided, the nucleotide counts of each sample are subsampled so that they do not exceed this given maximum total read depth (sum of the four nucleotide counts `ACGT`, as well as the any `N` and deleted `D` counts). If they are below this value anyway, they are not changed. This transformation is useful to limit the maximum read depth. For instance, the diversity estimators for Theta Pi and Theta Watterson have terms that depend on read depth. In particular when merging samples such as with `--sample-group-merge-table`, having an upper limit can hence avoid long compute times. Furthermore, a very low Tajima's D, usually indicative of a selective sweep, may be found as an artifact in highly covered regions, as such regions have just more sequencing errors. To avoid these kinds of biases we recommend to subsample to an uniform read depth. This transformation is applied after the numerical filters, so that, e.g., filters for high read depth are able to remove any unwanted positions first. See `--subsample-method` for the subsampling method.
   --subsample-method TEXT:{subscale,subsample-with-replacement,subsample-without-replacement}=subscale Needs: --subsample-max-read-depth
                               When using `--subsample-max-read-depth`, decide which method to use. The default `subscale` simply re-scales the base counts to the given max read depth, and hence maintains the allele frequencies (within integer precision). We recommend to use this to subsample to, e.g., a max read depth of 10,000, which is a good compromise in most cases. The two alternative options re-sample instead, with and without replacement, by drawing from a multinomial or multivariate hypergeometric distribution, respectively, based on the original counts of the sample.
-
 
 Window:
   --window-type TEXT:{interval,queue,single,regions,chromosomes,genome}=interval REQUIRED
@@ -277,7 +261,6 @@ Window:
                               When using `--window-type regions`: Genomic regions to process as windows, as a GFF2/GFF3/GTF file. This only uses the chromosome, as well as start and end information per line, and ignores everything else in the file. Multiple region options can be provided to add region windows to be processed.
   --window-region-skip-empty  When using `--window-type regions`: In cases where there is no data in the input files for a region window, by default, we produce some "empty" or NaN output. With this option however, regions without data are skipped in the output.
 
-
 Window Averaging:
   --window-average-policy TEXT:{window-length,available-loci,valid-loci,valid-snps,sum,provided-loci} REQUIRED
                               Denominator to use when computing the average of a metric in a window: 
@@ -300,7 +283,6 @@ Window Averaging:
   --window-average-loci-fasta-invert Needs: --window-average-loci-fasta
                               When using `--window-average-loci-fasta`, invert the set of loci. When it is set, all positions in the FASTA-like file below or equal to the threshold are counted towards the window average denominator.
 
-
 Settings:
   --pool-sizes TEXT REQUIRED  Pool sizes for all samples that are used (not filtered out). These are the number of haploids, so 100 diploid individuals correspond to a pool size of 200. Either 
                               (1) a single pool size that is used for all samples, specified on the command line, or 
@@ -317,7 +299,6 @@ Settings:
   --no-tajima-d               Do not compute Tajmias' D.
   --no-extra-columns          Do not output the extra columns containing counts for each position and sample pair that summarize the effects of the filtering. Only the window coordinates and the fst values are printed in that case.
 
-
 Formatting:
   --separator-char TEXT:{comma,tab,space,semicolon}=comma Excludes: --popoolation-format
                               Separator char between fields of output tabular data.
@@ -326,13 +307,11 @@ Formatting:
   --popoolation-format Excludes: --separator-char --na-entry
                               If set, instead of writing one output table for all measures and all samples, write the results in separate files for each sample and for each measure of Theta Pi, Theta Watterson, and Tajima's D, following the format of PoPoolation.
 
-
 Output:
   --out-dir TEXT=.            Directory to write files to
   --file-prefix TEXT          File prefix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --file-suffix TEXT          File suffix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --compress                  If set, compress the output files using gzip. Output file extensions are automatically extended by `.gz`.
-
 
 Global Options:
   --allow-file-overwriting    Allow to overwrite existing output files instead of aborting the command. By default, we abort if any output file already exists, to avoid overwriting by mistake.
@@ -341,10 +320,8 @@ Global Options:
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
 
 ## grenedalf_frequency
 
@@ -380,7 +357,6 @@ Input SAM/BAM/CRAM:
   --sam-flags-exclude-any TEXT Needs: --sam-path
                               Do not use reads with any bits set in the given value present in the FLAG field of the read. This is equivalent to the `-F` / `--excl-flags` / `--exclude-flags` setting in `samtools view`. See `--sam-flags-include-all` above for how to specify the value.
 
-
 Input (m)pileup:
   --pileup-path TEXT:PATH(existing)=[] ...
                               List of (m)pileup files or directories to process. For directories, only files with the extension `.(plp|mplp|pileup|mpileup)[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
@@ -389,16 +365,13 @@ Input (m)pileup:
   --pileup-quality-encoding TEXT:{sanger,illumina-1.3,illumina-1.5,illumina-1.8,solexa}=sanger Needs: --pileup-path
                               Encoding of the quality scores of the bases in (m)pileup files, when using `--pileup-min-base-qual`. Default is `"sanger"`, which seems to be the most common these days. Both `"sanger"` and `"illumina-1.8"` are identical and use an ASCII offset of 33, while `"illumina-1.3"` and `"illumina-1.5"` are identical with an ASCII offset of 64 (we provide different names for completeness). Lastly, `"solexa"` has an offset of 64, but uses a different equation (not phred score) for the encoding.
 
-
 Input sync:
   --sync-path TEXT:PATH(existing)=[] ...
                               List of sync (as specified by PoPoolation2) files or directories to process. For directories, only files with the extension `.sync[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
 
-
 Input VCF/BCF:
   --vcf-path TEXT:PATH(existing)=[] ...
                               List of vcf/bcf files or directories to process. For directories, only files with the extension `.vcf[.gz]|.bcf` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times. This expects that the input file has the per-sample VCF FORMAT field `AD` (alleleic depth) given, containing the counts of the reference and alternative base. This assumes that the data that was used to create the VCF file was actually a pool of individuals (e.g., from pool sequencing) for each sample (column) of the VCF file. We then interpret the `AD` field as the allele counts of each pool of individuals. Note that only SNP positions are used; positions that contain indels and other non-SNP variants are skipped.
-
 
 Input frequency table:
   --frequency-table-path TEXT:PATH(existing)=[] ...
@@ -428,7 +401,6 @@ Input frequency table:
   --frequency-table-sample-depth-column TEXT Needs: --frequency-table-path
                               Specify the exact prefix or suffix of the per-sample read depth columns in the header, case sensitive. By default, we look for column names having "readdepth", "depth", "coverage", "cov", or "ad", case insensitive, and ignoring any extra punctuation marks, as a prefix or suffix, with the remainder of the column name used as the sample name. For example, "S1.read-depth" indicates the read depth column for sample "S1".
 
-
 Input Settings:
   --multi-file-locus-set TEXT:{union,intersection}=union
                               When multiple input files are provided, select whether the union of all their loci is used (outer join), or their intersection (inner join). For their union, input files that do not have data at a particular locus are considered as missing at that locus. Note that we allow to use multiple input files even with different file types.
@@ -439,7 +411,6 @@ Input Settings:
                               Provide a reference genome sequence dictionary in `.dict` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
   --reference-genome-fai TEXT:FILE Excludes: --reference-genome-fasta --reference-genome-dict
                               Provide a reference genome sequence dictionary in `.fai` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
-
 
 Sample Names, Groups, and Filters:
   --rename-samples-list TEXT:FILE
@@ -452,7 +423,6 @@ Sample Names, Groups, and Filters:
                               Sample names to exclude (all other samples are included); either (1) a comma- or tab-separated list given on the command line (in a typical shell, this list has to be enclosed in quotation marks), or (2) a file with one sample name per line. If no sample filter is provided, all samples in the input file are used. The option is applied after potentially renaming the samples with `--rename-samples-list`.
   --sample-group-merge-table TEXT:FILE
                               When the input contains multiple samples (either within a single input file, or by providing multiple input files), these can be merged into new samples, by summing up their nucleotide base counts at each position. This has essentially the same effect as having merged the raw fastq files or the mapped sam/bam files of the samples, that is, all reads from those samples are treated as if they were a single sample. For this grouping, the option takes a simple table file (comma- or tab-separated), with the sample names (after the above renaming, if provided) in the first column, and their assigned group names in the second column. All samples in the same group are then merged into a grouped sample, and the group names are used as the new sample names for the output. Note that the `--pool-sizes` option then need to contain the summed up pool sizes for each group, using the group names.
-
 
 Region Filters:
   --filter-region TEXT=[] ... Genomic region to filter for, in the format "chr" (for whole chromosomes), "chr:position", "chr:start-end", or "chr:start..end". Positions are 1-based and inclusive (closed intervals). The filter keeps all listed positions, and removes all that are not listed. Multiple region options can be provided, see also `--filter-region-set`.
@@ -474,7 +444,6 @@ Region Filters:
                               When using `--filter-region-mask-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
   --filter-region-set TEXT:{union,intersection}=union
                               It is possible to provide multiple of the above region filter options, even of different types. In that case, decide on how to combine the loci of these filters.
-
 
 Masking Filters:
   --filter-mask-samples-bed-list TEXT:FILE Excludes: --filter-mask-samples-fasta-list
@@ -503,7 +472,6 @@ Masking Filters:
   --filter-mask-total-fasta-invert Needs: --filter-mask-total-fasta
                               When using `--filter-mask-total-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
 
-
 Settings:
   --write-sample-counts       If set, write 'REF_CNT' and 'ALT_CNT' columns per sample, containing the REF and ALT base counts at the position for each sample.
   --write-sample-read-depth   If set, write a 'DEPTH' column per sample, containing the read depth (sum of REF and ALT) counts of each sample.
@@ -520,19 +488,16 @@ Settings:
   --omit-alt-bases Excludes: --omit-ref-and-alt-bases
                               If set, do not write the column containing the alternative bases. This can be useful when the input is obtained from a source that does not contain them anyway. In that case, we internally assign the alternative base to be the transition base of the reference ('A' <-> 'G' and 'C' <-> 'T'), which usually is not correct, and hence should be omitted from the output. Note: To at least set the reference bases, consider providing the `--reference-genome-fasta` option.
 
-
 Formatting:
   --separator-char TEXT:{comma,tab,space,semicolon}=comma
                               Separator char between fields of output tabular data.
   --na-entry TEXT=nan         Set the text to use in the output for n/a and NaN entries (e.g., resulting from positions with no counts, or windows with no variants). This is useful to match formatting expectations of downstream software.
-
 
 Output:
   --out-dir TEXT=.            Directory to write files to
   --file-prefix TEXT          File prefix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --file-suffix TEXT          File suffix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --compress                  If set, compress the output files using gzip. Output file extensions are automatically extended by `.gz`.
-
 
 Global Options:
   --allow-file-overwriting    Allow to overwrite existing output files instead of aborting the command. By default, we abort if any output file already exists, to avoid overwriting by mistake.
@@ -541,10 +506,8 @@ Global Options:
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
 
 ## grenedalf_fst
 
@@ -580,7 +543,6 @@ Input SAM/BAM/CRAM:
   --sam-flags-exclude-any TEXT Needs: --sam-path
                               Do not use reads with any bits set in the given value present in the FLAG field of the read. This is equivalent to the `-F` / `--excl-flags` / `--exclude-flags` setting in `samtools view`. See `--sam-flags-include-all` above for how to specify the value.
 
-
 Input (m)pileup:
   --pileup-path TEXT:PATH(existing)=[] ...
                               List of (m)pileup files or directories to process. For directories, only files with the extension `.(plp|mplp|pileup|mpileup)[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
@@ -589,16 +551,13 @@ Input (m)pileup:
   --pileup-quality-encoding TEXT:{sanger,illumina-1.3,illumina-1.5,illumina-1.8,solexa}=sanger Needs: --pileup-path
                               Encoding of the quality scores of the bases in (m)pileup files, when using `--pileup-min-base-qual`. Default is `"sanger"`, which seems to be the most common these days. Both `"sanger"` and `"illumina-1.8"` are identical and use an ASCII offset of 33, while `"illumina-1.3"` and `"illumina-1.5"` are identical with an ASCII offset of 64 (we provide different names for completeness). Lastly, `"solexa"` has an offset of 64, but uses a different equation (not phred score) for the encoding.
 
-
 Input sync:
   --sync-path TEXT:PATH(existing)=[] ...
                               List of sync (as specified by PoPoolation2) files or directories to process. For directories, only files with the extension `.sync[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
 
-
 Input VCF/BCF:
   --vcf-path TEXT:PATH(existing)=[] ...
                               List of vcf/bcf files or directories to process. For directories, only files with the extension `.vcf[.gz]|.bcf` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times. This expects that the input file has the per-sample VCF FORMAT field `AD` (alleleic depth) given, containing the counts of the reference and alternative base. This assumes that the data that was used to create the VCF file was actually a pool of individuals (e.g., from pool sequencing) for each sample (column) of the VCF file. We then interpret the `AD` field as the allele counts of each pool of individuals. Note that only SNP positions are used; positions that contain indels and other non-SNP variants are skipped.
-
 
 Input frequency table:
   --frequency-table-path TEXT:PATH(existing)=[] ...
@@ -628,7 +587,6 @@ Input frequency table:
   --frequency-table-sample-depth-column TEXT Needs: --frequency-table-path
                               Specify the exact prefix or suffix of the per-sample read depth columns in the header, case sensitive. By default, we look for column names having "readdepth", "depth", "coverage", "cov", or "ad", case insensitive, and ignoring any extra punctuation marks, as a prefix or suffix, with the remainder of the column name used as the sample name. For example, "S1.read-depth" indicates the read depth column for sample "S1".
 
-
 Input Settings:
   --multi-file-locus-set TEXT:{union,intersection}=union
                               When multiple input files are provided, select whether the union of all their loci is used (outer join), or their intersection (inner join). For their union, input files that do not have data at a particular locus are considered as missing at that locus. Note that we allow to use multiple input files even with different file types.
@@ -639,7 +597,6 @@ Input Settings:
                               Provide a reference genome sequence dictionary in `.dict` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
   --reference-genome-fai TEXT:FILE Excludes: --reference-genome-fasta --reference-genome-dict
                               Provide a reference genome sequence dictionary in `.fai` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
-
 
 Sample Names, Groups, and Filters:
   --rename-samples-list TEXT:FILE
@@ -652,7 +609,6 @@ Sample Names, Groups, and Filters:
                               Sample names to exclude (all other samples are included); either (1) a comma- or tab-separated list given on the command line (in a typical shell, this list has to be enclosed in quotation marks), or (2) a file with one sample name per line. If no sample filter is provided, all samples in the input file are used. The option is applied after potentially renaming the samples with `--rename-samples-list`.
   --sample-group-merge-table TEXT:FILE
                               When the input contains multiple samples (either within a single input file, or by providing multiple input files), these can be merged into new samples, by summing up their nucleotide base counts at each position. This has essentially the same effect as having merged the raw fastq files or the mapped sam/bam files of the samples, that is, all reads from those samples are treated as if they were a single sample. For this grouping, the option takes a simple table file (comma- or tab-separated), with the sample names (after the above renaming, if provided) in the first column, and their assigned group names in the second column. All samples in the same group are then merged into a grouped sample, and the group names are used as the new sample names for the output. Note that the `--pool-sizes` option then need to contain the summed up pool sizes for each group, using the group names.
-
 
 Region Filters:
   --filter-region TEXT=[] ... Genomic region to filter for, in the format "chr" (for whole chromosomes), "chr:position", "chr:start-end", or "chr:start..end". Positions are 1-based and inclusive (closed intervals). The filter keeps all listed positions, and removes all that are not listed. Multiple region options can be provided, see also `--filter-region-set`.
@@ -674,7 +630,6 @@ Region Filters:
                               When using `--filter-region-mask-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
   --filter-region-set TEXT:{union,intersection}=union
                               It is possible to provide multiple of the above region filter options, even of different types. In that case, decide on how to combine the loci of these filters.
-
 
 Masking Filters:
   --filter-mask-samples-bed-list TEXT:FILE Excludes: --filter-mask-samples-fasta-list
@@ -703,7 +658,6 @@ Masking Filters:
   --filter-mask-total-fasta-invert Needs: --filter-mask-total-fasta
                               When using `--filter-mask-total-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
 
-
 Numerical Filters:
   --filter-sample-min-count UINT=0
                               Minimum base count for a nucleotide (in `ACGT`) to be considered as an allele. Counts below that are set to zero, and hence ignored as an allele/variant. For example, singleton read sequencing errors can be filtered out this way.
@@ -731,7 +685,6 @@ Numerical Filters:
   --filter-total-snp-min-frequency FLOAT=0
                               Minimum allele frequency that needs to be reached for a position to be used. Positions where the allele frequency `af` across all samples, or `1 - af`, is below this value, are ignored. If both the reference and alternative base are known, allele frequencies are computed based on those; if only the reference base is known, the most frequent non-reference base is used as the alternative; if neither is known, the first and second most frequent bases are used to compute the frequency.
 
-
 Window:
   --window-type TEXT:{interval,queue,single,regions,chromosomes,genome}=interval REQUIRED
                               Type of window to use. Depending on the type, additional options might need to be provided. 
@@ -757,7 +710,6 @@ Window:
                               When using `--window-type regions`: Genomic regions to process as windows, as a GFF2/GFF3/GTF file. This only uses the chromosome, as well as start and end information per line, and ignores everything else in the file. Multiple region options can be provided to add region windows to be processed.
   --window-region-skip-empty  When using `--window-type regions`: In cases where there is no data in the input files for a region window, by default, we produce some "empty" or NaN output. With this option however, regions without data are skipped in the output.
 
-
 Window Averaging:
   --window-average-policy TEXT:{window-length,available-loci,valid-loci,valid-snps,sum,provided-loci}
                               Denominator to use when computing the average of a metric in a window: 
@@ -780,7 +732,6 @@ Window Averaging:
   --window-average-loci-fasta-invert Needs: --window-average-loci-fasta
                               When using `--window-average-loci-fasta`, invert the set of loci. When it is set, all positions in the FASTA-like file below or equal to the threshold are counted towards the window average denominator.
 
-
 Settings:
   --method TEXT:{unbiased-nei,unbiased-hudson,kofler,karlsson}=unbiased-nei REQUIRED
                               FST method to use for the computation.
@@ -801,19 +752,16 @@ Settings:
   --no-extra-columns          Do not output the extra columns containing counts for each position and sample pair that summarize the effects of the filtering. Only the window coordinates and the fst values are printed in that case.
   --no-nan-windows            Do not output windows where all values are n/a. This is can be relevant with small window sizes (or individual positions), to reduce output clutter.
 
-
 Formatting:
   --separator-char TEXT:{comma,tab,space,semicolon}=comma
                               Separator char between fields of output tabular data.
   --na-entry TEXT=nan         Set the text to use in the output for n/a and NaN entries (e.g., resulting from positions with no counts, or windows with no variants). This is useful to match formatting expectations of downstream software.
-
 
 Output:
   --out-dir TEXT=.            Directory to write files to
   --file-prefix TEXT          File prefix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --file-suffix TEXT          File suffix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --compress                  If set, compress the output files using gzip. Output file extensions are automatically extended by `.gz`.
-
 
 Global Options:
   --allow-file-overwriting    Allow to overwrite existing output files instead of aborting the command. By default, we abort if any output file already exists, to avoid overwriting by mistake.
@@ -822,10 +770,8 @@ Global Options:
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
 
 ## grenedalf_fst-cathedral
 
@@ -861,7 +807,6 @@ Input SAM/BAM/CRAM:
   --sam-flags-exclude-any TEXT Needs: --sam-path
                               Do not use reads with any bits set in the given value present in the FLAG field of the read. This is equivalent to the `-F` / `--excl-flags` / `--exclude-flags` setting in `samtools view`. See `--sam-flags-include-all` above for how to specify the value.
 
-
 Input (m)pileup:
   --pileup-path TEXT:PATH(existing)=[] ...
                               List of (m)pileup files or directories to process. For directories, only files with the extension `.(plp|mplp|pileup|mpileup)[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
@@ -870,16 +815,13 @@ Input (m)pileup:
   --pileup-quality-encoding TEXT:{sanger,illumina-1.3,illumina-1.5,illumina-1.8,solexa}=sanger Needs: --pileup-path
                               Encoding of the quality scores of the bases in (m)pileup files, when using `--pileup-min-base-qual`. Default is `"sanger"`, which seems to be the most common these days. Both `"sanger"` and `"illumina-1.8"` are identical and use an ASCII offset of 33, while `"illumina-1.3"` and `"illumina-1.5"` are identical with an ASCII offset of 64 (we provide different names for completeness). Lastly, `"solexa"` has an offset of 64, but uses a different equation (not phred score) for the encoding.
 
-
 Input sync:
   --sync-path TEXT:PATH(existing)=[] ...
                               List of sync (as specified by PoPoolation2) files or directories to process. For directories, only files with the extension `.sync[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
 
-
 Input VCF/BCF:
   --vcf-path TEXT:PATH(existing)=[] ...
                               List of vcf/bcf files or directories to process. For directories, only files with the extension `.vcf[.gz]|.bcf` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times. This expects that the input file has the per-sample VCF FORMAT field `AD` (alleleic depth) given, containing the counts of the reference and alternative base. This assumes that the data that was used to create the VCF file was actually a pool of individuals (e.g., from pool sequencing) for each sample (column) of the VCF file. We then interpret the `AD` field as the allele counts of each pool of individuals. Note that only SNP positions are used; positions that contain indels and other non-SNP variants are skipped.
-
 
 Input frequency table:
   --frequency-table-path TEXT:PATH(existing)=[] ...
@@ -909,7 +851,6 @@ Input frequency table:
   --frequency-table-sample-depth-column TEXT Needs: --frequency-table-path
                               Specify the exact prefix or suffix of the per-sample read depth columns in the header, case sensitive. By default, we look for column names having "readdepth", "depth", "coverage", "cov", or "ad", case insensitive, and ignoring any extra punctuation marks, as a prefix or suffix, with the remainder of the column name used as the sample name. For example, "S1.read-depth" indicates the read depth column for sample "S1".
 
-
 Input Settings:
   --multi-file-locus-set TEXT:{union,intersection}=union
                               When multiple input files are provided, select whether the union of all their loci is used (outer join), or their intersection (inner join). For their union, input files that do not have data at a particular locus are considered as missing at that locus. Note that we allow to use multiple input files even with different file types.
@@ -920,7 +861,6 @@ Input Settings:
                               Provide a reference genome sequence dictionary in `.dict` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
   --reference-genome-fai TEXT:FILE Excludes: --reference-genome-fasta --reference-genome-dict
                               Provide a reference genome sequence dictionary in `.fai` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
-
 
 Sample Names, Groups, and Filters:
   --rename-samples-list TEXT:FILE
@@ -933,7 +873,6 @@ Sample Names, Groups, and Filters:
                               Sample names to exclude (all other samples are included); either (1) a comma- or tab-separated list given on the command line (in a typical shell, this list has to be enclosed in quotation marks), or (2) a file with one sample name per line. If no sample filter is provided, all samples in the input file are used. The option is applied after potentially renaming the samples with `--rename-samples-list`.
   --sample-group-merge-table TEXT:FILE
                               When the input contains multiple samples (either within a single input file, or by providing multiple input files), these can be merged into new samples, by summing up their nucleotide base counts at each position. This has essentially the same effect as having merged the raw fastq files or the mapped sam/bam files of the samples, that is, all reads from those samples are treated as if they were a single sample. For this grouping, the option takes a simple table file (comma- or tab-separated), with the sample names (after the above renaming, if provided) in the first column, and their assigned group names in the second column. All samples in the same group are then merged into a grouped sample, and the group names are used as the new sample names for the output. Note that the `--pool-sizes` option then need to contain the summed up pool sizes for each group, using the group names.
-
 
 Region Filters:
   --filter-region TEXT=[] ... Genomic region to filter for, in the format "chr" (for whole chromosomes), "chr:position", "chr:start-end", or "chr:start..end". Positions are 1-based and inclusive (closed intervals). The filter keeps all listed positions, and removes all that are not listed. Multiple region options can be provided, see also `--filter-region-set`.
@@ -955,7 +894,6 @@ Region Filters:
                               When using `--filter-region-mask-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
   --filter-region-set TEXT:{union,intersection}=union
                               It is possible to provide multiple of the above region filter options, even of different types. In that case, decide on how to combine the loci of these filters.
-
 
 Masking Filters:
   --filter-mask-samples-bed-list TEXT:FILE Excludes: --filter-mask-samples-fasta-list
@@ -984,7 +922,6 @@ Masking Filters:
   --filter-mask-total-fasta-invert Needs: --filter-mask-total-fasta
                               When using `--filter-mask-total-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
 
-
 Numerical Filters:
   --filter-sample-min-count UINT=0
                               Minimum base count for a nucleotide (in `ACGT`) to be considered as an allele. Counts below that are set to zero, and hence ignored as an allele/variant. For example, singleton read sequencing errors can be filtered out this way.
@@ -1012,7 +949,6 @@ Numerical Filters:
   --filter-total-snp-min-frequency FLOAT=0
                               Minimum allele frequency that needs to be reached for a position to be used. Positions where the allele frequency `af` across all samples, or `1 - af`, is below this value, are ignored. If both the reference and alternative base are known, allele frequencies are computed based on those; if only the reference base is known, the most frequent non-reference base is used as the alternative; if neither is known, the first and second most frequent bases are used to compute the frequency.
 
-
 Settings:
   --method TEXT:{unbiased-nei,unbiased-hudson}=unbiased-nei REQUIRED
                               FST method to use for the computation: The unbiased pool-sequencing statistic in two variants, following the definition of Nei, and the definition of Hudson.
@@ -1028,12 +964,10 @@ Settings:
   --cathedral-width UINT=1500 Width of the plot, in pixels. In particular, this determines the resolution of the last row of the plot, where each pixel corresponds to a window of the size `genome length / plot width`.
   --cathedral-height UINT=500 Height of the plot, in pixels. This determines the number of different window sizes displayed in the plot, from whole chromosome at the top to finest resolution at the bottom.
 
-
 Output:
   --out-dir TEXT=.            Directory to write files to
   --file-prefix TEXT          File prefix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --file-suffix TEXT          File suffix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
-
 
 Global Options:
   --allow-file-overwriting    Allow to overwrite existing output files instead of aborting the command. By default, we abort if any output file already exists, to avoid overwriting by mistake.
@@ -1042,10 +976,8 @@ Global Options:
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
 
 ## grenedalf_simulate
 
@@ -1068,10 +1000,8 @@ Settings:
                               Select the output file format, either (m)pileup, or PoPoolation2 sync.
   --random-seed UINT=0        Set the random seed for generating values, which allows reproducible results. If not provided, the system clock is used to obtain a random seed.
 
-
 Samples:
   --read-depths TEXT REQUIRED Read depths of the samples to simulate, as a comma- or tab-separated list. The read depth of each sample is used at the total count per position to randomly distribute across nucleotides. Per sample, the list can either contain a single number, which will be used as the read depth for that sample at each position, or it can be two numbers separated by a slash, which will be used as min/max to generate random read depth at each position. The length of this list is also used to determine the number of samples to simulate.
-
 
 Genome:
   --chromosome TEXT=A         Name of the chromosome. This is simply used as the first column in the output file. At the moment, only one chromosome is supported.
@@ -1082,7 +1012,6 @@ Genome:
   --length UINT=0 REQUIRED    Total length of the chromosome to simulate. Mutations are spread across this length.
   --omit-invariant-positions  If set, only write the mutated positions in the output file. Note that these are not standard (m)pileup or sync files any more; still this option might be useful.
 
-
 Pileup:
   --with-quality-scores       If set, phred-scaled quality scores are written when simulating an (m)pileup file, using the `--min-phred-score` and `--max-phred-score` settings. Ignored otherwise.
   --min-phred-score UINT:UINT in [0 - 90]=10
@@ -1090,13 +1019,11 @@ Pileup:
   --max-phred-score UINT:UINT in [0 - 90]=40
                               Maximum phred score to use when simulating an (m)pileup file. Ignored otherwise.
 
-
 Output:
   --out-dir TEXT=.            Directory to write files to
   --file-prefix TEXT          File prefix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --file-suffix TEXT          File suffix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --compress                  If set, compress the output files using gzip. Output file extensions are automatically extended by `.gz`.
-
 
 Global Options:
   --allow-file-overwriting    Allow to overwrite existing output files instead of aborting the command. By default, we abort if any output file already exists, to avoid overwriting by mistake.
@@ -1105,10 +1032,8 @@ Global Options:
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
 
 ## grenedalf_sync
 
@@ -1144,7 +1069,6 @@ Input SAM/BAM/CRAM:
   --sam-flags-exclude-any TEXT Needs: --sam-path
                               Do not use reads with any bits set in the given value present in the FLAG field of the read. This is equivalent to the `-F` / `--excl-flags` / `--exclude-flags` setting in `samtools view`. See `--sam-flags-include-all` above for how to specify the value.
 
-
 Input (m)pileup:
   --pileup-path TEXT:PATH(existing)=[] ...
                               List of (m)pileup files or directories to process. For directories, only files with the extension `.(plp|mplp|pileup|mpileup)[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
@@ -1153,16 +1077,13 @@ Input (m)pileup:
   --pileup-quality-encoding TEXT:{sanger,illumina-1.3,illumina-1.5,illumina-1.8,solexa}=sanger Needs: --pileup-path
                               Encoding of the quality scores of the bases in (m)pileup files, when using `--pileup-min-base-qual`. Default is `"sanger"`, which seems to be the most common these days. Both `"sanger"` and `"illumina-1.8"` are identical and use an ASCII offset of 33, while `"illumina-1.3"` and `"illumina-1.5"` are identical with an ASCII offset of 64 (we provide different names for completeness). Lastly, `"solexa"` has an offset of 64, but uses a different equation (not phred score) for the encoding.
 
-
 Input sync:
   --sync-path TEXT:PATH(existing)=[] ...
                               List of sync (as specified by PoPoolation2) files or directories to process. For directories, only files with the extension `.sync[.gz]` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times.
 
-
 Input VCF/BCF:
   --vcf-path TEXT:PATH(existing)=[] ...
                               List of vcf/bcf files or directories to process. For directories, only files with the extension `.vcf[.gz]|.bcf` are processed. To input more than one file or directory, either separate them with spaces, or provide this option multiple times. This expects that the input file has the per-sample VCF FORMAT field `AD` (alleleic depth) given, containing the counts of the reference and alternative base. This assumes that the data that was used to create the VCF file was actually a pool of individuals (e.g., from pool sequencing) for each sample (column) of the VCF file. We then interpret the `AD` field as the allele counts of each pool of individuals. Note that only SNP positions are used; positions that contain indels and other non-SNP variants are skipped.
-
 
 Input frequency table:
   --frequency-table-path TEXT:PATH(existing)=[] ...
@@ -1192,7 +1113,6 @@ Input frequency table:
   --frequency-table-sample-depth-column TEXT Needs: --frequency-table-path
                               Specify the exact prefix or suffix of the per-sample read depth columns in the header, case sensitive. By default, we look for column names having "readdepth", "depth", "coverage", "cov", or "ad", case insensitive, and ignoring any extra punctuation marks, as a prefix or suffix, with the remainder of the column name used as the sample name. For example, "S1.read-depth" indicates the read depth column for sample "S1".
 
-
 Input Settings:
   --multi-file-locus-set TEXT:{union,intersection}=union
                               When multiple input files are provided, select whether the union of all their loci is used (outer join), or their intersection (inner join). For their union, input files that do not have data at a particular locus are considered as missing at that locus. Note that we allow to use multiple input files even with different file types.
@@ -1203,7 +1123,6 @@ Input Settings:
                               Provide a reference genome sequence dictionary in `.dict` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
   --reference-genome-fai TEXT:FILE Excludes: --reference-genome-fasta --reference-genome-dict
                               Provide a reference genome sequence dictionary in `.fai` format. It is used to determine the chromosome order and length, without having to provide the full reference genome.
-
 
 Sample Names, Groups, and Filters:
   --rename-samples-list TEXT:FILE
@@ -1216,7 +1135,6 @@ Sample Names, Groups, and Filters:
                               Sample names to exclude (all other samples are included); either (1) a comma- or tab-separated list given on the command line (in a typical shell, this list has to be enclosed in quotation marks), or (2) a file with one sample name per line. If no sample filter is provided, all samples in the input file are used. The option is applied after potentially renaming the samples with `--rename-samples-list`.
   --sample-group-merge-table TEXT:FILE
                               When the input contains multiple samples (either within a single input file, or by providing multiple input files), these can be merged into new samples, by summing up their nucleotide base counts at each position. This has essentially the same effect as having merged the raw fastq files or the mapped sam/bam files of the samples, that is, all reads from those samples are treated as if they were a single sample. For this grouping, the option takes a simple table file (comma- or tab-separated), with the sample names (after the above renaming, if provided) in the first column, and their assigned group names in the second column. All samples in the same group are then merged into a grouped sample, and the group names are used as the new sample names for the output. Note that the `--pool-sizes` option then need to contain the summed up pool sizes for each group, using the group names.
-
 
 Region Filters:
   --filter-region TEXT=[] ... Genomic region to filter for, in the format "chr" (for whole chromosomes), "chr:position", "chr:start-end", or "chr:start..end". Positions are 1-based and inclusive (closed intervals). The filter keeps all listed positions, and removes all that are not listed. Multiple region options can be provided, see also `--filter-region-set`.
@@ -1238,7 +1156,6 @@ Region Filters:
                               When using `--filter-region-mask-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
   --filter-region-set TEXT:{union,intersection}=union
                               It is possible to provide multiple of the above region filter options, even of different types. In that case, decide on how to combine the loci of these filters.
-
 
 Masking Filters:
   --filter-mask-samples-bed-list TEXT:FILE Excludes: --filter-mask-samples-fasta-list
@@ -1266,7 +1183,6 @@ Masking Filters:
                               When using `--filter-mask-total-fasta`, set the cutoff threshold for the masked digits. All positions above that value are masked. The default is 0, meaning that only exactly the positons with value 0 will not be masked.
   --filter-mask-total-fasta-invert Needs: --filter-mask-total-fasta
                               When using `--filter-mask-total-fasta`, invert the mask. This option has the same effect as the equivalent in vcftools, but instead of specifying the file, this here is a flag. When it is set, the mask specified above is inverted.
-
 
 Numerical Filters:
   --filter-sample-min-count UINT=0
@@ -1300,13 +1216,11 @@ Numerical Filters:
   --filter-total-snp-min-frequency FLOAT=0
                               Minimum allele frequency that needs to be reached for a position to be used. Positions where the allele frequency `af` across all samples, or `1 - af`, is below this value, are ignored. If both the reference and alternative base are known, allele frequencies are computed based on those; if only the reference base is known, the most frequent non-reference base is used as the alternative; if neither is known, the first and second most frequent bases are used to compute the frequency.
 
-
 Sample Subsampling:
   --subsample-max-read-depth UINT=0
                               If provided, the nucleotide counts of each sample are subsampled so that they do not exceed this given maximum total read depth (sum of the four nucleotide counts `ACGT`, as well as the any `N` and deleted `D` counts). If they are below this value anyway, they are not changed. This transformation is useful to limit the maximum read depth. For instance, the diversity estimators for Theta Pi and Theta Watterson have terms that depend on read depth. In particular when merging samples such as with `--sample-group-merge-table`, having an upper limit can hence avoid long compute times. Furthermore, a very low Tajima's D, usually indicative of a selective sweep, may be found as an artifact in highly covered regions, as such regions have just more sequencing errors. To avoid these kinds of biases we recommend to subsample to an uniform read depth. This transformation is applied after the numerical filters, so that, e.g., filters for high read depth are able to remove any unwanted positions first. See `--subsample-method` for the subsampling method.
   --subsample-method TEXT:{subscale,subsample-with-replacement,subsample-without-replacement}=subscale Needs: --subsample-max-read-depth
                               When using `--subsample-max-read-depth`, decide which method to use. The default `subscale` simply re-scales the base counts to the given max read depth, and hence maintains the allele frequencies (within integer precision). We recommend to use this to subsample to, e.g., a max read depth of 10,000, which is a good compromise in most cases. The two alternative options re-sample instead, with and without replacement, by drawing from a multinomial or multivariate hypergeometric distribution, respectively, based on the original counts of the sample.
-
 
 Settings:
   --no-header                 We provide an extension of the sync format that allows to store sample names in sync files, where a header line is added to the output file of the form: `#chr pos ref S1...`, where `S1...` is the list of sample names. Not all other tools that read sync files will be able to parse this, and it hence can be deactivated with this option.
@@ -1314,13 +1228,11 @@ Settings:
   --gapless-gsync             By default, only the positions for which there is data are printed in the output. However, it might make processing with other tools easier if all files contain all positions, which one might call a `gsync` file (following the `gvcf` format). With this option, all missing positions are filled with the missing data indicator, or with zero counts, depending on the `--no-missing-marker` option. If a referene genome or dictionary is given, this might also include positions beyond where there is input data, up until the length of each chromosome. Hence, the resulting `gsync` files shall all have the exact same number of lines, which is convenient for simply downstream scripts. Note: This option is an alias for the more general `--make-gapless` option.
   --guess-reference-base      By default, when reading from input file formats that do not store the reference base, we do not attempt to guess it. When set however, we use the base with the highest count as the reference base for the output. Alternatively, when a reference genome is provided, we use that to correctly set the reference bases, independently of whether this flag is set.
 
-
 Output:
   --out-dir TEXT=.            Directory to write files to
   --file-prefix TEXT          File prefix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --file-suffix TEXT          File suffix for output files. Most grenedalf commands use the command name as the base name for file output. This option amends the base name, to distinguish runs with different data.
   --compress                  If set, compress the output files using gzip. Output file extensions are automatically extended by `.gz`.
-
 
 Global Options:
   --allow-file-overwriting    Allow to overwrite existing output files instead of aborting the command. By default, we abort if any output file already exists, to avoid overwriting by mistake.
@@ -1329,10 +1241,8 @@ Global Options:
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
 
 ## grenedalf_citation
 
@@ -1361,57 +1271,8 @@ Options:
   --all                       Print all relevant citations used by commands in grenedalf.
   --list                      List all available citation keys.
 
-
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```
-
-
-## grenedalf_license
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/grenedalf:0.6.3--hbefcdb2_0
-- **Homepage**: https://github.com/lczech/grenedalf
-- **Package**: https://anaconda.org/channels/bioconda/packages/grenedalf/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-grenedalf - Genome Analyses of Differential Allele Frequencies
-Copyright (C) 2020-2021 Lucas Czech
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Contact:
-Lucas Czech <lczech@carnegiescience.edu>
-Department of Plant Biology, Carnegie Institution For Science
-260 Panama Street, Stanford, CA 94305, USA
-```
-
 
 ## Metadata
 - **Skill**: generated

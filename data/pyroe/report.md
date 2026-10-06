@@ -1,50 +1,5 @@
 # pyroe CWL Generation Report
 
-## pyroe_valid
-
-### Tool Description
-pyroe: error: argument command: invalid choice: 'valid' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0
-- **Homepage**: https://github.com/COMBINE-lab/pyroe
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyroe/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pyroe/overview
-- **Total Downloads**: 36.5K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/COMBINE-lab/pyroe
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: pyroe [-h] [-v]
-             {make-spliced+intronic,make-splici,make-spliced+unspliced,make-spliceu,fetch-quant,id-to-name,convert}
-             ...
-pyroe: error: argument command: invalid choice: 'valid' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert')
-```
-
-
-## pyroe_additional
-
-### Tool Description
-pyroe: error: argument command: invalid choice: 'additional' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0
-- **Homepage**: https://github.com/COMBINE-lab/pyroe
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyroe/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: pyroe [-h] [-v]
-             {make-spliced+intronic,make-splici,make-spliced+unspliced,make-spliceu,fetch-quant,id-to-name,convert}
-             ...
-pyroe: error: argument command: invalid choice: 'additional' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert')
-```
-
-
 ## pyroe_Make
 
 ### Tool Description
@@ -63,7 +18,6 @@ usage: pyroe [-h] [-v]
              ...
 pyroe: error: argument command: invalid choice: 'Make' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert')
 ```
-
 
 ## pyroe_fetch-quant
 
@@ -131,7 +85,6 @@ Index of the available datasets:
 35. V2 1k Heart Cells from an E18 mouse (v2 chemistry)
 ```
 
-
 ## pyroe_id-to-name
 
 ### Tool Description
@@ -157,7 +110,6 @@ options:
                    This will be inferred from the filename, but if that fails
                    it can be provided explicitly.
 ```
-
 
 ## pyroe_convert
 
@@ -197,7 +149,6 @@ options:
                         mappings. Providing this file will project gene IDs to
                         gene names in the output.
 ```
-
 
 ## Metadata
 - **Skill**: not generated

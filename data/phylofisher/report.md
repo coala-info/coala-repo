@@ -46,7 +46,6 @@ additional information:
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
 
-
 ## phylofisher_matrix_constructor.py
 
 ### Tool Description
@@ -99,7 +98,6 @@ additional information:
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
 
-
 ## phylofisher_nucl_matrix_constructor.py
 
 ### Tool Description
@@ -143,38 +141,6 @@ additional information:
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
 
-
-## phylofisher_forest.py
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phylofisher:1.2.14--pyhdfd78af_0
-- **Homepage**: https://github.com/TheBrownLab/PhyloFisher
-- **Package**: https://anaconda.org/channels/bioconda/packages/phylofisher/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/forest.py", line 14, in <module>
-    from ete3 import Tree, TreeStyle, NodeStyle, TextFace
-ImportError: cannot import name 'TreeStyle' from 'ete3' (/usr/local/lib/python3.7/site-packages/ete3/__init__.py)
-```
-
-
 ## phylofisher_select_taxa.py
 
 ### Tool Description
@@ -204,7 +170,6 @@ additional information:
    GitHub: https://github.com/TheBrownLab/PhyloFisher
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
-
 
 ## phylofisher_taxon_collapser.py
 
@@ -239,7 +204,6 @@ additional information:
    GitHub: https://github.com/TheBrownLab/PhyloFisher
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
-
 
 ## phylofisher_aa_recoder.py
 
@@ -281,7 +245,6 @@ additional information:
    GitHub: https://github.com/TheBrownLab/PhyloFisher
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
-
 
 ## phylofisher_heterotachy.py
 
@@ -325,7 +288,6 @@ additional information:
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
 
-
 ## phylofisher_apply_to_db.py
 
 ### Tool Description
@@ -365,7 +327,6 @@ additional information:
    GitHub: https://github.com/TheBrownLab/PhyloFisher
    Cite: doi:https://10.1371/journal.pbio.3001365
 ```
-
 
 ## Metadata
 - **Skill**: generated

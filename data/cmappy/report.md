@@ -42,31 +42,3 @@ optional arguments:
                         Path to annotations file for columns (default: None)
 ```
 
-
-## cmappy_python -m cmapPy.pandasGEXpress.subset_gct
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8
-- **Homepage**: https://github.com/cmap/cmapPy
-- **Package**: https://anaconda.org/channels/bioconda/packages/cmappy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/bin/python: No module named cmapPy.pandasGEXpress.subset_gct
-```
-

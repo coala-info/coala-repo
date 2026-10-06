@@ -1,39 +1,5 @@
 # smalt CWL Generation Report
 
-## smalt_check
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/smalt:v0.7.6-8-deb_cv1
-- **Homepage**: https://github.com/roquie/smalte
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/smalt/overview
-- **Total Downloads**: 11.7K
-- **Last updated**: 2025-09-18
-- **GitHub**: https://github.com/roquie/smalte
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-# Command line:  smalt check --help
-[0] smalt.c:1533 ERROR: failure
-```
-
-
 ## smalt_index
 
 ### Tool Description
@@ -52,13 +18,11 @@ no input files specified.
 SYNOPSIS:
   smalt index [-k <wordlen>] [-s <stepsiz>]  <index_name> <reference_file>
 
-
 OPTIONS:
   -H       Print more extensive help on options.
   -k [INT] Length of the k-mer words indexed.
   -s [INT] Sample every <stepsiz>-th k-mer word (stride).
 ```
-
 
 ## smalt_map
 
@@ -105,7 +69,6 @@ OPTIONS:
   -y [FLT] Identity threshold (default: 0).
 ```
 
-
 ## smalt_sample
 
 ### Tool Description
@@ -134,7 +97,6 @@ OPTIONS:
   -T [STR] Write temporary files to specified directory.
   -u [INT] Map only every <nreads>-th read pair (default 100).
 ```
-
 
 ## Metadata
 - **Skill**: generated

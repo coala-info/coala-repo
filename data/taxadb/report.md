@@ -36,7 +36,6 @@ options:
                         Output Directory
 ```
 
-
 ## taxadb_create
 
 ### Tool Description
@@ -87,47 +86,6 @@ options:
                         Username to login as (required for MySQLdatabase and
                         PostgreSQLdatabase)
 ```
-
-
-## taxadb_query
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/taxadb:0.12.1--pyh5e36f6f_0
-- **Homepage**: https://github.com/HadrienG/taxadb
-- **Package**: https://anaconda.org/channels/bioconda/packages/taxadb/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: taxadb <command> [options]
-
-download and create the database used by the taxadb library
-
-options:
-  -h, --help     show this help message and exit
-  -v, --version  print software version and exit
-
-available commands:
-  
-    download     download the files required to create the database
-    create       build the database
-    query        query the database
-```
-
 
 ## Metadata
 - **Skill**: generated

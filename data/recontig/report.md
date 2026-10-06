@@ -1,38 +1,5 @@
 # recontig CWL Generation Report
 
-## recontig_build-help
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/recontig:1.5.0--h9ee0642_0
-- **Homepage**: https://github.com/blachlylab/recontig
-- **Package**: https://anaconda.org/channels/bioconda/packages/recontig/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/recontig/overview
-- **Total Downloads**: 13.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/blachlylab/recontig
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Valid builds: ["BDGP6", "CanFam3", "GRCh37", "GRCh38", "GRCm37", "GRCm38", "GRCz10", "GRCz11", "JGI_4.2", "MEDAKA1", "R64-1-1", "Rnor_6.0", "WBcel235", "Xenopus_laevis_v2", "Xenopus_tropicalis_v9.1", "Zv9", "dm3", "galGal4", "galGal6", "rn5"]
-```
-
-
 ## recontig_conversion-help
 
 ### Tool Description
@@ -56,7 +23,6 @@ usage: recontig conversion-help -b build
      --debug print extra debug information
 -h    --help This help information.
 ```
-
 
 ## recontig_convert
 
@@ -94,7 +60,6 @@ Input can be compressed with gzip or bgzf and can be accessed remotely via https
 -h           --help This help information.
 ```
 
-
 ## recontig_make-mapping
 
 ### Tool Description
@@ -121,7 +86,6 @@ usage: recontig make-mapping [-o output] <from.fa> <to.fa>
                 --debug print extra debug information
 -h               --help This help information.
 ```
-
 
 ## Metadata
 - **Skill**: generated

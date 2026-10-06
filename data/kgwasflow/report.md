@@ -1,57 +1,5 @@
 # kgwasflow CWL Generation Report
 
-## kgwasflow_init
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kgwasflow:1.3.0--pyhdfd78af_1
-- **Homepage**: https://github.com/akcorut/kGWASflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/kgwasflow/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/kgwasflow/overview
-- **Total Downloads**: 6.0K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/akcorut/kGWASflow
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-           
-     _     _______          __      _____  __ _               
-    | |   / ____\ \        / /\    / ____|/ _| |              
-    | | _| |  __ \ \  /\  / /  \  | (___ | |_| | _____      __
-    | |/ / | |_ | \ \/  \/ / /\ \  \___ \|  _| |/ _ \ \ /\ / /
-    |   <| |__| |  \  /\  / ____ \ ____) | | | | (_) \ V  V / 
-    |_|\_\_____|   \/  \/_/    \_\_____/|_| |_|\___/ \_/\_/  
-    
-    kGWASflow: A Snakemake Workflow for k-mers Based GWAS
-    
-Initializing a new kGWASflow working directory... Won't take long!
-
-[INFO] Config.yaml file has been created at: //config/config.yaml
-[INFO] Samples.tsv file has been created at: //config/samples.tsv
-[INFO] Phenos.tsv file has been created at: //config/phenos.tsv
-[INFO] Test directory has been created at: //test
-
-Success! kGWASflow initialization is complete! You can now run the workflow with:
-
-kgwasflow run (...)
-```
-
-
 ## kgwasflow_run
 
 ### Tool Description
@@ -1082,7 +1030,6 @@ ENVIRONMENT MODULES:
  In general, command-line values override environment variables which override
 defaults.
 ```
-
 
 ## kgwasflow_test
 
@@ -2115,7 +2062,6 @@ ENVIRONMENT MODULES:
  In general, command-line values override environment variables which override
 defaults.
 ```
-
 
 ## Metadata
 - **Skill**: generated

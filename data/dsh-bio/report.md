@@ -28,7 +28,6 @@ arguments:
    -o, --output-fastq-file [class java.io.File]  output FASTQ file, default stdout [optional]
 ```
 
-
 ## dsh-bio_compress-bed
 
 ### Tool Description
@@ -51,7 +50,6 @@ arguments:
    -i, --input-bed-path [interface java.nio.file.Path]  input BED path, default stdin [optional]
    -o, --output-bed-file [class java.io.File]  output BED file, default stdout [optional]
 ```
-
 
 ## dsh-bio_compress-fasta
 
@@ -80,7 +78,6 @@ Caused by: java.io.IOException: Premature stream end
 	... 6 more
 ```
 
-
 ## dsh-bio_compress-fastq
 
 ### Tool Description
@@ -103,7 +100,6 @@ arguments:
    -i, --input-fastq-path [interface java.nio.file.Path]  input FASTQ path, default stdin [optional]
    -o, --output-fastq-file [class java.io.File]  output FASTQ file, default stdout [optional]
 ```
-
 
 ## dsh-bio_compress-gaf
 
@@ -128,7 +124,6 @@ arguments:
    -o, --output-gaf-file [class java.io.File]  output GAF file, default stdout [optional]
 ```
 
-
 ## dsh-bio_compress-gfa1
 
 ### Tool Description
@@ -151,7 +146,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-gfa1-file [class java.io.File]  output GFA 1.0 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_compress-gfa2
 
@@ -176,7 +170,6 @@ arguments:
    -o, --output-gfa2-file [class java.io.File]  output GFA 2.0 file, default stdout [optional]
 ```
 
-
 ## dsh-bio_compress-gff3
 
 ### Tool Description
@@ -199,7 +192,6 @@ arguments:
    -i, --input-gff3-path [interface java.nio.file.Path]  input GFF3 path, default stdin [optional]
    -o, --output-gff3-file [class java.io.File]  output GFF3 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_compress-paf
 
@@ -224,7 +216,6 @@ arguments:
    -o, --output-paf-file [class java.io.File]  output PAF file, default stdout [optional]
 ```
 
-
 ## dsh-bio_compress-rgfa
 
 ### Tool Description
@@ -247,7 +238,6 @@ arguments:
    -i, --input-rgfa-path [interface java.nio.file.Path]  input rGFA path, default stdin [optional]
    -o, --output-rgfa-file [class java.io.File]  output rGFA file, default stdout [optional]
 ```
-
 
 ## dsh-bio_compress-sam
 
@@ -272,7 +262,6 @@ arguments:
    -o, --output-sam-file [class java.io.File]  output SAM file, default stdout [optional]
 ```
 
-
 ## dsh-bio_compress-vcf
 
 ### Tool Description
@@ -295,7 +284,6 @@ arguments:
    -i, --input-vcf-path [interface java.nio.file.Path]  input VCF path, default stdin [optional]
    -o, --output-vcf-file [class java.io.File]  output VCF file, default stdout [optional]
 ```
-
 
 ## dsh-bio_count-fastq
 
@@ -320,7 +308,6 @@ arguments:
    -o, --output-count-file [class java.io.File]  output count file, default stdout [optional]
 ```
 
-
 ## dsh-bio_create-sequence-dictionary
 
 ### Tool Description
@@ -344,7 +331,6 @@ arguments:
    -i, --input-fasta-path [interface java.nio.file.Path]  input FASTA path, default stdin [optional]
    -o, --output-sequence-dictionary-file [class java.io.File]  output SequenceDictionary .dict file, default stdout [optional]
 ```
-
 
 ## dsh-bio_disinterleave-fastq
 
@@ -379,7 +365,6 @@ arguments:
    -2, --second-fastq-file [class java.io.File]  second FASTQ output file [required]
 ```
 
-
 ## dsh-bio_downsample-fastq
 
 ### Tool Description
@@ -412,7 +397,6 @@ arguments:
    -p, --probability [class java.lang.Double]  probability a FASTQ record will be removed, [0.0-1.0] [required]
    -z, --seed [class java.lang.Integer]  random number seed, default relates to current time [optional]
 ```
-
 
 ## dsh-bio_downsample-interleaved-fastq
 
@@ -447,7 +431,6 @@ arguments:
    -z, --seed [class java.lang.Integer]  random number seed, default relates to current time [optional]
 ```
 
-
 ## dsh-bio_export-segments
 
 ### Tool Description
@@ -471,7 +454,6 @@ arguments:
    -o, --output-fasta-file [class java.io.File]  output FASTA file, default stdout [optional]
    -w, --line-width [class java.lang.Integer]  line width, default 70 [optional]
 ```
-
 
 ## dsh-bio_extract-fasta
 
@@ -499,7 +481,6 @@ Caused by: java.io.IOException: Premature stream end
 	at org.biojava.bio.seq.io.StreamReader.nextSequence(StreamReader.java:105)
 	... 6 more
 ```
-
 
 ## dsh-bio_extract-fasta-kmers
 
@@ -537,7 +518,6 @@ arguments:
    -d, --downstream-length [class java.lang.Integer]  downstream length, default 0 [optional]
 ```
 
-
 ## dsh-bio_extract-fasta-kmers-to-parquet
 
 ### Tool Description
@@ -573,7 +553,6 @@ arguments:
    -u, --upstream-length [class java.lang.Integer]  upstream length, default 0 [optional]
    -d, --downstream-length [class java.lang.Integer]  downstream length, default 0 [optional]
 ```
-
 
 ## dsh-bio_extract-fasta-kmers-to-parquet3
 
@@ -611,7 +590,6 @@ arguments:
    -d, --downstream-length [class java.lang.Integer]  downstream length, default 0 [optional]
 ```
 
-
 ## dsh-bio_extract-fastq
 
 ### Tool Description
@@ -636,7 +614,6 @@ arguments:
    -n, --name [class java.lang.String]  exact sequence name to match [optional]
    -d, --description [class java.lang.String]  FASTQ description regex pattern to match [optional]
 ```
-
 
 ## dsh-bio_extract-fastq-by-length
 
@@ -671,7 +648,6 @@ arguments:
    -x, --maximum-length [class java.lang.Integer]  maximum sequence length, exclusive [required]
 ```
 
-
 ## dsh-bio_extract-uniprot-features
 
 ### Tool Description
@@ -700,7 +676,6 @@ Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premat
 	at org.dishevelled.bio.protein.uniprot.UniprotEntryFeatureReader.stream(UniprotEntryFeatureReader.java:87)
 	... 6 more
 ```
-
 
 ## dsh-bio_extract-uniprot-features-to-parquet
 
@@ -733,7 +708,6 @@ arguments:
    -o, --output-feature-file [class java.io.File]  output feature Parquet file [required]
    -g, --row-group-size [class java.lang.Integer]  row group size, default 122880 [optional]
 ```
-
 
 ## dsh-bio_extract-uniprot-features-to-partitioned-parquet
 
@@ -768,48 +742,6 @@ arguments:
    -p, --partition-size [class java.lang.Long]  partition size, default 1228800 [optional]
 ```
 
-
-## dsh-bio_extract-uniprot-sequences
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0
-- **Homepage**: https://github.com/heuermh/dishevelled-bio
-- **Package**: https://anaconda.org/channels/bioconda/packages/dsh-bio/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-[Fatal Error] :1:1: Premature end of file.
-java.io.IOException: could not read UniProt XML
-	at org.dishevelled.bio.protein.uniprot.UniprotEntrySequenceReader.stream(UniprotEntrySequenceReader.java:85)
-	at org.dishevelled.bio.tools.ExtractUniprotSequences.call(ExtractUniprotSequences.java:104)
-	at org.dishevelled.bio.tools.ExtractUniprotSequences.main(ExtractUniprotSequences.java:165)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.dishevelled.bio.tools.Tools.call(Tools.java:79)
-	at org.dishevelled.bio.tools.Tools.main(Tools.java:327)
-Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
-	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1252)
-	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
-	at org.dishevelled.bio.protein.uniprot.UniprotEntrySequenceReader.stream(UniprotEntrySequenceReader.java:82)
-	... 6 more
-```
-
-
 ## dsh-bio_fasta-index-to-pangenome
 
 ### Tool Description
@@ -834,7 +766,6 @@ arguments:
    -s, --sort  sort pangenome samples, haplotypes, and scaffolds before writing [optional]
 ```
 
-
 ## dsh-bio_fasta-index-to-pangenome-tree
 
 ### Tool Description
@@ -858,7 +789,6 @@ arguments:
    -o, --output-pangenome-file [class java.io.File]  output pangenome tree file, default stdout [optional]
    -s, --sort  sort pangenome samples, haplotypes, and scaffolds before writing [optional]
 ```
-
 
 ## dsh-bio_fasta-to-fastq
 
@@ -887,7 +817,6 @@ Caused by: java.io.IOException: Premature stream end
 	... 6 more
 ```
 
-
 ## dsh-bio_fasta-to-pangenome
 
 ### Tool Description
@@ -912,7 +841,6 @@ arguments:
    -s, --sort  sort pangenome samples, haplotypes, and scaffolds before writing [optional]
 ```
 
-
 ## dsh-bio_fasta-to-pangenome-tree
 
 ### Tool Description
@@ -936,7 +864,6 @@ arguments:
    -o, --output-pangenome-file [class java.io.File]  output pangenome tree file, default stdout [optional]
    -s, --sort  sort pangenome samples, haplotypes, and scaffolds before writing [optional]
 ```
-
 
 ## dsh-bio_fasta-to-parquet
 
@@ -970,7 +897,6 @@ arguments:
    -e, --alphabet [class java.lang.String]  input FASTA alphabet { dna, protein }, default dna [optional]
    -g, --row-group-size [class java.lang.Integer]  row group size, default 122880 [optional]
 ```
-
 
 ## dsh-bio_fasta-to-parquet2
 
@@ -1006,7 +932,6 @@ arguments:
    -t, --transaction-size [class java.lang.Long]  transaction size, default 1228800 [optional]
 ```
 
-
 ## dsh-bio_fasta-to-parquet3
 
 ### Tool Description
@@ -1040,7 +965,6 @@ arguments:
    -g, --row-group-size [class java.lang.Integer]  row group size, default 122880 [optional]
    -p, --partition-size [class java.lang.Long]  partition size, default 1228800 [optional]
 ```
-
 
 ## dsh-bio_fasta-to-parquet4
 
@@ -1076,7 +1000,6 @@ arguments:
    -f, --flush-after [class java.lang.Long]  flush appender after each rows, default 1228800 [optional]
 ```
 
-
 ## dsh-bio_fasta-to-parquet5
 
 ### Tool Description
@@ -1109,7 +1032,6 @@ arguments:
    -e, --alphabet [class java.lang.String]  input FASTA alphabet { dna, protein }, default dna [optional]
    -g, --row-group-size [class java.lang.Integer]  row group size, default 122880 [optional]
 ```
-
 
 ## dsh-bio_fasta-to-parquet6
 
@@ -1144,7 +1066,6 @@ arguments:
    -g, --row-group-size [class java.lang.Integer]  row group size, default 122880 [optional]
 ```
 
-
 ## dsh-bio_fasta-to-text
 
 ### Tool Description
@@ -1172,7 +1093,6 @@ Caused by: java.io.IOException: Premature stream end
 	... 6 more
 ```
 
-
 ## dsh-bio_fastq-description
 
 ### Tool Description
@@ -1195,7 +1115,6 @@ arguments:
    -i, --fastq-path [interface java.nio.file.Path]  input FASTQ path, default stdin [optional]
    -o, --description-file [class java.io.File]  output file of description lines, default stdout [optional]
 ```
-
 
 ## dsh-bio_fastq-sequence-length
 
@@ -1220,7 +1139,6 @@ arguments:
    -o, --sequence-length-file [class java.io.File]  output file of sequence lengths, default stdout [optional]
 ```
 
-
 ## dsh-bio_fastq-to-fasta
 
 ### Tool Description
@@ -1244,7 +1162,6 @@ arguments:
    -o, --output-fasta-file [class java.io.File]  output FASTA file, default stdout [optional]
 ```
 
-
 ## dsh-bio_fastq-to-text
 
 ### Tool Description
@@ -1267,7 +1184,6 @@ arguments:
    -i, --input-fastq-path [interface java.nio.file.Path]  input FASTQ path, default stdin [optional]
    -o, --output-text-file [class java.io.File]  output text file, default stdout [optional]
 ```
-
 
 ## dsh-bio_filter-bed
 
@@ -1294,7 +1210,6 @@ arguments:
    -i, --input-bed-path [interface java.nio.file.Path]  input BED path, default stdin [optional]
    -o, --output-bed-file [class java.io.File]  output BED file, default stdout [optional]
 ```
-
 
 ## dsh-bio_filter-fasta
 
@@ -1323,7 +1238,6 @@ Caused by: java.io.IOException: Premature stream end
 	... 6 more
 ```
 
-
 ## dsh-bio_filter-fastq
 
 ### Tool Description
@@ -1348,7 +1262,6 @@ arguments:
    -i, --input-fastq-path [interface java.nio.file.Path]  input FASTQ path, default stdin [optional]
    -o, --output-fastq-file [class java.io.File]  output FASTQ file, default stdout [optional]
 ```
-
 
 ## dsh-bio_filter-gaf
 
@@ -1375,7 +1288,6 @@ arguments:
    -i, --input-gaf-path [interface java.nio.file.Path]  input GAF path, default stdin [optional]
    -o, --output-gaf-file [class java.io.File]  output GAF file, default stdout [optional]
 ```
-
 
 ## dsh-bio_filter-gfa1
 
@@ -1408,7 +1320,6 @@ arguments:
    -o, --output-gfa1-file [class java.io.File]  output GFA 1.0 file, default stdout [optional]
 ```
 
-
 ## dsh-bio_filter-gfa2
 
 ### Tool Description
@@ -1432,7 +1343,6 @@ arguments:
    -i, --input-gfa2-path [interface java.nio.file.Path]  input GFA 2.0 path, default stdin [optional]
    -o, --output-gfa2-file [class java.io.File]  output GFA 2.0 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_filter-gff3
 
@@ -1460,7 +1370,6 @@ arguments:
    -o, --output-gff3-file [class java.io.File]  output GFF3 file, default stdout [optional]
 ```
 
-
 ## dsh-bio_filter-paf
 
 ### Tool Description
@@ -1487,7 +1396,6 @@ arguments:
    -i, --input-paf-path [interface java.nio.file.Path]  input PAF path, default stdin [optional]
    -o, --output-paf-file [class java.io.File]  output PAF file, default stdout [optional]
 ```
-
 
 ## dsh-bio_filter-rgfa
 
@@ -1520,7 +1428,6 @@ arguments:
    -o, --output-rgfa-file [class java.io.File]  output rGFA file, default stdout [optional]
 ```
 
-
 ## dsh-bio_filter-sam
 
 ### Tool Description
@@ -1546,7 +1453,6 @@ arguments:
    -i, --input-sam-path [interface java.nio.file.Path]  input SAM path, default stdin [optional]
    -o, --output-sam-file [class java.io.File]  output SAM file, default stdout [optional]
 ```
-
 
 ## dsh-bio_filter-vcf
 
@@ -1576,7 +1482,6 @@ arguments:
    -o, --output-vcf-file [class java.io.File]  output VCF file, default stdout [optional]
 ```
 
-
 ## dsh-bio_gfa1-to-gfa2
 
 ### Tool Description
@@ -1599,7 +1504,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-gfa2-file [class java.io.File]  output GFA 2.0 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_gff3-to-bed
 
@@ -1624,7 +1528,6 @@ arguments:
    -o, --output-bed-file [class java.io.File]  output BED file, default stdout [optional]
 ```
 
-
 ## dsh-bio_identify-gfa1
 
 ### Tool Description
@@ -1647,7 +1550,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-gfa1-file [class java.io.File]  output GFA 1.0 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_interleave-fastq
 
@@ -1682,7 +1584,6 @@ arguments:
    -u, --unpaired-file [class java.io.File]  output unpaired FASTQ file [required]
 ```
 
-
 ## dsh-bio_links-to-cytoscape-edges
 
 ### Tool Description
@@ -1705,7 +1606,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-edges-file [class java.io.File]  output Cytoscape edges.txt format file, default stdout [optional]
 ```
-
 
 ## dsh-bio_links-to-property-graph
 
@@ -1730,41 +1630,6 @@ arguments:
    -o, --output-edges-file [class java.io.File]  output property graph CSV format file, default stdout [optional]
 ```
 
-
-## dsh-bio_list-filesystems
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0
-- **Homepage**: https://github.com/heuermh/dishevelled-bio
-- **Package**: https://anaconda.org/channels/bioconda/packages/dsh-bio/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Installed filesystem providers:
-  file	sun.nio.fs.LinuxFileSystemProvider
-  jar	jdk.nio.zipfs.ZipFileSystemProvider
-  jrt	jdk.internal.jrtfs.JrtFileSystemProvider
-  gs	com.google.cloud.storage.contrib.nio.CloudStorageFileSystemProvider
-  s3	software.amazon.nio.spi.s3.S3FileSystemProvider
-  s3x	software.amazon.nio.spi.s3.S3XFileSystemProvider
-```
-
-
 ## dsh-bio_reassemble-paths
 
 ### Tool Description
@@ -1787,7 +1652,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-gfa1-file [class java.io.File]  output GFA 1.0 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_remap-dbsnp
 
@@ -1812,7 +1676,6 @@ arguments:
    -o, --output-vcf-file [class java.io.File]  output VCF file, default stdout [optional]
 ```
 
-
 ## dsh-bio_remap-phase-set
 
 ### Tool Description
@@ -1835,7 +1698,6 @@ arguments:
    -i, --input-vcf-path [interface java.nio.file.Path]  input VCF path, default stdin [optional]
    -o, --output-vcf-file [class java.io.File]  output VCF file, default stdout [optional]
 ```
-
 
 ## dsh-bio_rename-bed-references
 
@@ -1861,7 +1723,6 @@ arguments:
    -o, --output-bed-file [class java.io.File]  output BED file, default stdout [optional]
 ```
 
-
 ## dsh-bio_rename-gff3-references
 
 ### Tool Description
@@ -1885,7 +1746,6 @@ arguments:
    -i, --input-gff3-path [interface java.nio.file.Path]  input GFF3 path, default stdin [optional]
    -o, --output-gff3-file [class java.io.File]  output GFF3 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_rename-vcf-references
 
@@ -1911,7 +1771,6 @@ arguments:
    -o, --output-vcf-file [class java.io.File]  output VCF file, default stdout [optional]
 ```
 
-
 ## dsh-bio_segments-to-cytoscape-nodes
 
 ### Tool Description
@@ -1935,7 +1794,6 @@ arguments:
    -o, --output-nodes-file [class java.io.File]  output Cytoscape nodes.txt format file, default stdout [optional]
 ```
 
-
 ## dsh-bio_segments-to-property-graph
 
 ### Tool Description
@@ -1958,7 +1816,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-nodes-file [class java.io.File]  output property graph CSV format file, default stdout [optional]
 ```
-
 
 ## dsh-bio_split-bed
 
@@ -1986,7 +1843,6 @@ arguments:
    -d, --left-pad [class java.lang.Integer]  left pad split index in output file name [optional]
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .bed.gz [optional]
 ```
-
 
 ## dsh-bio_split-fasta
 
@@ -2017,7 +1873,6 @@ arguments:
    -w, --line-width [class java.lang.Integer]  line width, default 70 [optional]
 ```
 
-
 ## dsh-bio_split-fastq
 
 ### Tool Description
@@ -2044,7 +1899,6 @@ arguments:
    -d, --left-pad [class java.lang.Integer]  left pad split index in output file name [optional]
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .fq.gz [optional]
 ```
-
 
 ## dsh-bio_split-gaf
 
@@ -2073,7 +1927,6 @@ arguments:
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .gaf.bgz [optional]
 ```
 
-
 ## dsh-bio_split-gff3
 
 ### Tool Description
@@ -2100,7 +1953,6 @@ arguments:
    -d, --left-pad [class java.lang.Integer]  left pad split index in output file name [optional]
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .gff3.gz [optional]
 ```
-
 
 ## dsh-bio_split-interleaved-fastq
 
@@ -2129,7 +1981,6 @@ arguments:
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .ifq.gz [optional]
 ```
 
-
 ## dsh-bio_split-paf
 
 ### Tool Description
@@ -2156,7 +2007,6 @@ arguments:
    -d, --left-pad [class java.lang.Integer]  left pad split index in output file name [optional]
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .paf.bgz [optional]
 ```
-
 
 ## dsh-bio_split-sam
 
@@ -2185,7 +2035,6 @@ arguments:
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .sam.bgz [optional]
 ```
 
-
 ## dsh-bio_split-vcf
 
 ### Tool Description
@@ -2212,7 +2061,6 @@ arguments:
    -d, --left-pad [class java.lang.Integer]  left pad split index in output file name [optional]
    -s, --suffix [class java.lang.String]  output file suffix, e.g. .vcf.bgz [optional]
 ```
-
 
 ## dsh-bio_summarize-uniprot-entries
 
@@ -2242,7 +2090,6 @@ Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premat
 	at org.dishevelled.bio.protein.uniprot.UniprotEntrySummaryReader.stream(UniprotEntrySummaryReader.java:87)
 	... 6 more
 ```
-
 
 ## dsh-bio_summarize-uniprot-entries-to-parquet
 
@@ -2276,7 +2123,6 @@ arguments:
    -g, --row-group-size [class java.lang.Integer]  row group size, default 122880 [optional]
 ```
 
-
 ## dsh-bio_text-to-fasta
 
 ### Tool Description
@@ -2302,7 +2148,6 @@ arguments:
    -w, --line-width [class java.lang.Integer]  output line width, default 70 [optional]
 ```
 
-
 ## dsh-bio_text-to-fastq
 
 ### Tool Description
@@ -2325,7 +2170,6 @@ arguments:
    -i, --input-text-path [interface java.nio.file.Path]  input text path, default stdin [optional]
    -o, --output-fastq-file [class java.io.File]  output FASTQ file, default stdout [optional]
 ```
-
 
 ## dsh-bio_traversals-to-cytoscape-edges
 
@@ -2350,7 +2194,6 @@ arguments:
    -o, --output-edges-file [class java.io.File]  output Cytoscape edges.txt format file, default stdout [optional]
 ```
 
-
 ## dsh-bio_traversals-to-property-graph
 
 ### Tool Description
@@ -2374,7 +2217,6 @@ arguments:
    -o, --output-edges-file [class java.io.File]  output property graph CSV format file, default stdout [optional]
 ```
 
-
 ## dsh-bio_traverse-paths
 
 ### Tool Description
@@ -2397,7 +2239,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-gfa1-file [class java.io.File]  output GFA 1.0 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_truncate-fasta
 
@@ -2426,7 +2267,6 @@ Caused by: java.io.IOException: Premature stream end
 	... 6 more
 ```
 
-
 ## dsh-bio_truncate-paths
 
 ### Tool Description
@@ -2449,7 +2289,6 @@ arguments:
    -i, --input-gfa1-path [interface java.nio.file.Path]  input GFA 1.0 path, default stdin [optional]
    -o, --output-gfa1-file [class java.io.File]  output GFA 1.0 file, default stdout [optional]
 ```
-
 
 ## dsh-bio_variant-table-to-vcf
 
@@ -2474,7 +2313,6 @@ arguments:
    -o, --output-vcf-file [class java.io.File]  output VCF file, default stdout [optional]
 ```
 
-
 ## dsh-bio_vcf-pedigree
 
 ### Tool Description
@@ -2498,7 +2336,6 @@ arguments:
    -o, --output-pedigree-file [class java.io.File]  output pedigree file, default stdout [optional]
 ```
 
-
 ## dsh-bio_vcf-samples
 
 ### Tool Description
@@ -2521,7 +2358,6 @@ arguments:
    -i, --input-vcf-path [interface java.nio.file.Path]  input VCF path, default stdin [optional]
    -o, --output-sample-file [class java.io.File]  output sample file, default stdout [optional]
 ```
-
 
 ## Metadata
 - **Skill**: generated

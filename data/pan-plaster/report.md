@@ -1,38 +1,5 @@
 # pan-plaster CWL Generation Report
 
-## pan-plaster
-
-### Tool Description
-FAIL to generate CWL: pan-plaster not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pan-plaster:1.2.1--hdfd78af_0
-- **Homepage**: https://gitlab.com/treangenlab/plaster
-- **Package**: https://anaconda.org/channels/bioconda/packages/pan-plaster/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pan-plaster/overview
-- **Total Downloads**: 15.1K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: pan-plaster not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: pan-plaster not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

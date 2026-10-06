@@ -42,7 +42,6 @@ Options:
   --help                 Show this message and exit.
 ```
 
-
 ## grzctl_encrypt
 
 ### Tool Description
@@ -74,46 +73,6 @@ Options:
                                   Check validation logs before encrypting.
   --help                          Show this message and exit.
 ```
-
-
-## grzctl_upload
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/BfArM-MVH/grz-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.13/site-packages/docopt.py:165: SyntaxWarning: invalid escape sequence '\S'
-  name = re.findall('(<\S*?>)', source)[0]
-/usr/local/lib/python3.13/site-packages/docopt.py:166: SyntaxWarning: invalid escape sequence '\['
-  value = re.findall('\[default: (.*)\]', source, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:207: SyntaxWarning: invalid escape sequence '\['
-  matched = re.findall('\[default: (.*)\]', description, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
-  split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
-Usage: grzctl upload [OPTIONS]
-Try 'grzctl upload --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## grzctl_submit
 
@@ -152,7 +111,6 @@ Options:
   --help                 Show this message and exit.
 ```
 
-
 ## grzctl_list
 
 ### Tool Description
@@ -179,7 +137,6 @@ Try 'grzctl list --help' for help.
 
 Error: Invalid value for '--config-file': File '/root/.config/grz-cli/config.yaml' does not exist.
 ```
-
 
 ## grzctl_download
 
@@ -213,124 +170,6 @@ Options:
                           (dangerous!)
   --help                  Show this message and exit.
 ```
-
-
-## grzctl_decrypt
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/BfArM-MVH/grz-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.13/site-packages/docopt.py:165: SyntaxWarning: invalid escape sequence '\S'
-  name = re.findall('(<\S*?>)', source)[0]
-/usr/local/lib/python3.13/site-packages/docopt.py:166: SyntaxWarning: invalid escape sequence '\['
-  value = re.findall('\[default: (.*)\]', source, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:207: SyntaxWarning: invalid escape sequence '\['
-  matched = re.findall('\[default: (.*)\]', description, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
-  split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
-Usage: grzctl decrypt [OPTIONS]
-Try 'grzctl decrypt --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
-
-## grzctl_archive
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/BfArM-MVH/grz-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.13/site-packages/docopt.py:165: SyntaxWarning: invalid escape sequence '\S'
-  name = re.findall('(<\S*?>)', source)[0]
-/usr/local/lib/python3.13/site-packages/docopt.py:166: SyntaxWarning: invalid escape sequence '\['
-  value = re.findall('\[default: (.*)\]', source, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:207: SyntaxWarning: invalid escape sequence '\['
-  matched = re.findall('\[default: (.*)\]', description, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
-  split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
-Usage: grzctl archive [OPTIONS]
-Try 'grzctl archive --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
-
-## grzctl_clean
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/BfArM-MVH/grz-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.13/site-packages/docopt.py:165: SyntaxWarning: invalid escape sequence '\S'
-  name = re.findall('(<\S*?>)', source)[0]
-/usr/local/lib/python3.13/site-packages/docopt.py:166: SyntaxWarning: invalid escape sequence '\['
-  value = re.findall('\[default: (.*)\]', source, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:207: SyntaxWarning: invalid escape sequence '\['
-  matched = re.findall('\[default: (.*)\]', description, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
-  split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
-Usage: grzctl clean [OPTIONS]
-Try 'grzctl clean --help' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
 
 ## grzctl_consent
 
@@ -370,7 +209,6 @@ Options:
   --help                 Show this message and exit.
 ```
 
-
 ## grzctl_pruefbericht
 
 ### Tool Description
@@ -403,7 +241,6 @@ Commands:
   generate  Generate a Prüfbericht JSON from submission metadata.
   submit    Submit a Prüfbericht JSON to BfArM.
 ```
-
 
 ## grzctl_db
 
@@ -445,7 +282,6 @@ Commands:
   upgrade               Upgrades the database schema using Alembic.
 ```
 
-
 ## grzctl_report
 
 ### Tool Description
@@ -479,7 +315,6 @@ Commands:
   processed  Generate a report of processed submissions.
   quarterly  Generate the tables for the quarterly report.
 ```
-
 
 ## Metadata
 - **Skill**: not generated

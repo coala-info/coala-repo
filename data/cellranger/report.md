@@ -143,7 +143,6 @@ Options:
           Print help
 ```
 
-
 ## cellranger_multi
 
 ### Tool Description
@@ -203,7 +202,6 @@ Options:
       --nopreflight         Skip preflight checks
   -h, --help                Print help
 ```
-
 
 ## cellranger_multi-template
 
@@ -292,7 +290,6 @@ sample_id,hashtag_ids,description
 sample1,hashtag1,Control # ID used must match Feature ID in feature reference CSV
 sample2,hashtag2,Treated
 ```
-
 
 ## cellranger_vdj
 
@@ -383,7 +380,6 @@ Options:
           Print help
 ```
 
-
 ## cellranger_aggr
 
 ### Tool Description
@@ -446,7 +442,6 @@ Options:
       --nopreflight           Skip preflight checks
   -h, --help                  Print help
 ```
-
 
 ## cellranger_annotate
 
@@ -526,7 +521,6 @@ Options:
   -h, --help
           Print help
 ```
-
 
 ## cellranger_reanalyze
 
@@ -621,7 +615,6 @@ Options:
   -h, --help
           Print help
 ```
-
 
 ## cellranger_mkvdjref
 
@@ -740,7 +733,6 @@ Options:
           Print help (see a summary with '-h')
 ```
 
-
 ## cellranger_testrun
 
 ### Tool Description
@@ -797,7 +789,6 @@ Options:
   -h, --help                Print help
 ```
 
-
 ## cellranger_cloud
 
 ### Tool Description
@@ -846,7 +837,6 @@ Flags:
 Use "txg [command] --help" for more information about a command.
 ```
 
-
 ## cellranger_mat2csv
 
 ### Tool Description
@@ -890,7 +880,6 @@ Options:
 /software/cellranger-10.1.0/external/anaconda/lib/python3.12/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
   split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
 ```
-
 
 ## cellranger_mkref
 
@@ -974,7 +963,6 @@ Options:
           Print help
 ```
 
-
 ## cellranger_mkgtf
 
 ### Tool Description
@@ -1019,7 +1007,6 @@ Options:
   split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
 ```
 
-
 ## cellranger_upload
 
 ### Tool Description
@@ -1036,364 +1023,6 @@ Upload a file with cellranger
 Usage:
         cellranger upload <your_email> <file>
 ```
-
-
-## cellranger_sitecheck
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: cumulusprod/cellranger:10.1.0
-- **Homepage**: https://github.com/10XGenomics/cellranger
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-cellranger sitecheck (10.1.0)
-Copyright 2023 10x Genomics, Inc. All rights reserved.
--------------------------------------------------------------------------------
-Mon Sep 28 21:16:53 UTC 2026
-
-=====================================================================
-System Info
-uname -a
----------------------------------------------------------------------
-Linux 5d336fd5bbb4 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026 x86_64
-=====================================================================
-
-=====================================================================
-CPU Model
-grep -m 1 'model name' /proc/cpuinfo | cut -d ':' -f 2 | sed 's/^[ 	]*//'
----------------------------------------------------------------------
-12th Gen Intel(R) Core(TM) i9-12900H
-=====================================================================
-
-=====================================================================
-Linux Distro
-cat /etc/*-release | sort -u
----------------------------------------------------------------------
-BUG_REPORT_URL="https://bugs.debian.org/"
-DEBIAN_VERSION_FULL=13.6
-HOME_URL="https://www.debian.org/"
-ID=debian
-NAME="Debian GNU/Linux"
-PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
-SUPPORT_URL="https://www.debian.org/support"
-VERSION="13 (trixie)"
-VERSION_CODENAME=trixie
-VERSION_ID="13"
-=====================================================================
-
-=====================================================================
-Kernel Build
-cat /proc/version
----------------------------------------------------------------------
-Linux version 6.8.0-142-generic (buildd@lcy02-amd64-049) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026
-=====================================================================
-
-=====================================================================
-glibc version
-ldd --version | head -n 1
----------------------------------------------------------------------
-ldd (GNU libc) 2.41
-=====================================================================
-
-=====================================================================
-CPU Support
-grep -m 1 'flags' /proc/cpuinfo | cut -d ':' -f 2 | sed 's/^[ 	]*//'
----------------------------------------------------------------------
-fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq tme rdpid movdiri movdir64b fsrm md_clear serialize pconfig arch_lbr ibt flush_l1d arch_capabilities ibpb_exit_to_user
-=====================================================================
-
-=====================================================================
-CPU Sockets
-grep 'physical id' /proc/cpuinfo | sort -u | wc -l
----------------------------------------------------------------------
-1
-=====================================================================
-
-=====================================================================
-CPU Cores
-grep -c processor /proc/cpuinfo
----------------------------------------------------------------------
-20
-=====================================================================
-
-=====================================================================
-Memory Total
-grep MemTotal /proc/meminfo | cut -d ':' -f 2 | sed 's/^[ 	]*//'
----------------------------------------------------------------------
-65521052 kB
-=====================================================================
-
-=====================================================================
-Filesystem Options
-mount | cut -d ' ' -f 5,6
----------------------------------------------------------------------
-overlay (rw,relatime)
-proc (rw,nosuid,nodev,noexec,relatime)
-tmpfs (rw,nosuid)
-devpts (rw,nosuid,noexec,relatime)
-sysfs (ro,nosuid,nodev,noexec,relatime)
-cgroup2 (ro,nosuid,nodev,noexec,relatime)
-mqueue (rw,nosuid,nodev,noexec,relatime)
-tmpfs (rw,nosuid,nodev,noexec,relatime)
-ext4 (rw,relatime)
-ext4 (rw,relatime)
-ext4 (rw,relatime)
-proc (ro,nosuid,nodev,noexec,relatime)
-proc (ro,nosuid,nodev,noexec,relatime)
-proc (ro,nosuid,nodev,noexec,relatime)
-proc (ro,nosuid,nodev,noexec,relatime)
-proc (ro,nosuid,nodev,noexec,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (rw,nosuid)
-tmpfs (rw,nosuid)
-tmpfs (rw,nosuid)
-tmpfs (rw,nosuid)
-tmpfs (ro,relatime)
-tmpfs (rw,nosuid)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-tmpfs (ro,relatime)
-=====================================================================
-
-=====================================================================
-User Limits
-bash -c 'ulimit -a'
----------------------------------------------------------------------
-core file size          (blocks, -c) unlimited
-data seg size           (kbytes, -d) unlimited
-scheduling priority             (-e) 0
-file size               (blocks, -f) unlimited
-pending signals                 (-i) 255010
-max locked memory       (kbytes, -l) 8192
-max memory size         (kbytes, -m) unlimited
-open files                      (-n) 524287
-POSIX message queues     (bytes, -q) 819200
-real-time priority              (-r) 0
-stack size              (kbytes, -s) 8192
-cpu time               (seconds, -t) unlimited
-max user processes              (-u) unlimited
-virtual memory          (kbytes, -v) unlimited
-file locks                      (-x) unlimited
-=====================================================================
-
-=====================================================================
-User Limits (hard)
-bash -c 'ulimit -aH'
----------------------------------------------------------------------
-core file size          (blocks, -c) unlimited
-data seg size           (kbytes, -d) unlimited
-scheduling priority             (-e) 0
-file size               (blocks, -f) unlimited
-pending signals                 (-i) 255010
-max locked memory       (kbytes, -l) 8192
-max memory size         (kbytes, -m) unlimited
-open files                      (-n) 524288
-POSIX message queues     (bytes, -q) 819200
-real-time priority              (-r) 0
-stack size              (kbytes, -s) unlimited
-cpu time               (seconds, -t) unlimited
-max user processes              (-u) unlimited
-virtual memory          (kbytes, -v) unlimited
-file locks                      (-x) unlimited
-=====================================================================
-
-=====================================================================
-Global File Limit
-cat /proc/sys/fs/file-max /proc/sys/fs/file-nr
----------------------------------------------------------------------
-9223372036854775807
-19848	0	9223372036854775807
-=====================================================================
-
-=====================================================================
-Memory config
-sysctl vm
----------------------------------------------------------------------
-vm.admin_reserve_kbytes = 8192
-vm.compact_unevictable_allowed = 1
-vm.compaction_proactiveness = 20
-vm.dirty_background_bytes = 0
-vm.dirty_background_ratio = 10
-vm.dirty_bytes = 0
-vm.dirty_expire_centisecs = 3000
-vm.dirty_ratio = 20
-vm.dirty_writeback_centisecs = 500
-vm.dirtytime_expire_seconds = 43200
-vm.extfrag_threshold = 500
-vm.hugetlb_optimize_vmemmap = 0
-vm.hugetlb_shm_group = 0
-vm.laptop_mode = 0
-vm.legacy_va_layout = 0
-vm.lowmem_reserve_ratio = 256	256	32	0	0
-vm.max_map_count = 1048576
-vm.memfd_noexec = 0
-vm.memory_failure_early_kill = 0
-vm.memory_failure_recovery = 1
-vm.min_free_kbytes = 67584
-vm.min_slab_ratio = 5
-vm.min_unmapped_ratio = 1
-vm.mmap_min_addr = 65536
-vm.mmap_rnd_bits = 32
-vm.mmap_rnd_compat_bits = 16
-vm.nr_hugepages = 0
-vm.nr_hugepages_mempolicy = 0
-vm.nr_overcommit_hugepages = 0
-vm.numa_stat = 1
-vm.numa_zonelist_order = Node
-vm.oom_dump_tasks = 1
-vm.oom_kill_allocating_task = 0
-vm.overcommit_kbytes = 0
-vm.overcommit_memory = 0
-vm.overcommit_ratio = 50
-vm.page-cluster = 3
-vm.page_lock_unfairness = 5
-vm.panic_on_oom = 0
-vm.percpu_pagelist_high_fraction = 0
-vm.stat_interval = 1
-vm.stat_refresh = 
-vm.swappiness = 60
-vm.unprivileged_userfaultfd = 0
-vm.user_reserve_kbytes = 131072
-vm.vfs_cache_pressure = 100
-vm.watermark_boost_factor = 15000
-vm.watermark_scale_factor = 10
-vm.zone_reclaim_mode = 0
-=====================================================================
-
-=====================================================================
-THP memory config
-cat /sys/kernel/mm/transparent_hugepage/enabled
----------------------------------------------------------------------
-always [madvise] never
-=====================================================================
-
-=====================================================================
-cgroups
-cat /proc/self/cgroup
----------------------------------------------------------------------
-0::/
-=====================================================================
-
-=====================================================================
-Container
-[ -e /.dockerenv ] || [ -e /.dockerinit ] \
-		|| [ ! -z "$container" ] || grep -m 1 -E 'docker|lxc' /proc/1/cgroup \
-		> /dev/null && echo 'Detected'
----------------------------------------------------------------------
-Detected
-=====================================================================
-
-=====================================================================
-init process
-head -n 1 /proc/1/sched | cut -d ' ' -f 1
----------------------------------------------------------------------
-cellranger (1, #threads: 1)
-=====================================================================
-
-=====================================================================
-SGE Submit
-which qsub
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-LSF Submit
-which bsub
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-HTCondor Submit
-which condor_submit
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-Batch system
-echo $BATCH_SYSTEM
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-BCL2FASTQ 1
-which configureBclToFastq.pl
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-BCL2FASTQ 1
-which bcl2fastq
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-Java
-which java
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-10X Refdata
-echo $TENX_REFDATA
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-slurm info
-sinfo -O nodes,maxcpuspernode,memory,time
----------------------------------------------------------------------
-=====================================================================
-
-=====================================================================
-MRP
-mrp --version
----------------------------------------------------------------------
-v4.0.15
-=====================================================================
-
-=====================================================================
-mrp templates
-ls $(dirname $(dirname $(which mrp)))/jobmanagers/*.template
----------------------------------------------------------------------
-=====================================================================
-```
-
 
 ## cellranger_telemetry
 
@@ -1422,7 +1051,6 @@ show:    Display contents of saved telemetry data for this product.
 For more information about what data is collected and how it's used, visit
 https://10xgen.com/pipeline-telemetry
 ```
-
 
 ## Metadata
 - **Skill**: generated

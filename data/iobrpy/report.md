@@ -32,7 +32,6 @@ options:
   --remove_version      Remove version suffix from gene IDs
 ```
 
-
 ## iobrpy_count2tpm
 
 ### Tool Description
@@ -75,7 +74,6 @@ options:
   --remove_version      Remove version suffix from gene IDs before processing
 ```
 
-
 ## iobrpy_anno_eset
 
 ### Tool Description
@@ -117,7 +115,6 @@ options:
                         Dup handling method
   --remove_version      Remove version suffix from gene IDs before annotation
 ```
-
 
 ## iobrpy_calculate_sig_score
 
@@ -162,7 +159,6 @@ options:
                         Threads for scoring (PCA/zscore/ssGSEA)
 ```
 
-
 ## iobrpy_cibersort
 
 ### Tool Description
@@ -195,36 +191,6 @@ options:
                         Path to save CIBERSORT results (CSV or TSV)
 ```
 
-
-## iobrpy_ips
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
-- **Homepage**: https://github.com/IOBR/IOBRpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: iobrpy [-h] [--version]  ...
-iobrpy: error: argument : invalid choice: 'ips' (choose from prepare_salmon, count2tpm, anno_eset, calculate_sig_score, cibersort, IPS, estimate, mcpcounter, quantiseq, epic, deside, tme_cluster, LR_cal, nmf, mouse2human_eset, batch_salmon, merge_salmon, merge_star_count, batch_star_count, fastq_qc, log2_eset, trust4, spechla, extract_hla_read, hla_typing, tme_profile, runall, bayesprism)
-```
-
-
 ## iobrpy_estimate
 
 ### Tool Description
@@ -250,7 +216,6 @@ options:
   -o OUTPUT_PATH, --output OUTPUT_PATH
                         Path to save estimate results
 ```
-
 
 ## iobrpy_mcpcounter
 
@@ -278,7 +243,6 @@ options:
   -o OUTPUT_PATH, --output OUTPUT_PATH
                         Path to save MCPcounter results (TSV)
 ```
-
 
 ## iobrpy_quantiseq
 
@@ -318,7 +282,6 @@ options:
                         list
 ```
 
-
 ## iobrpy_epic
 
 ### Tool Description
@@ -343,7 +306,6 @@ options:
   --reference {TRef,BRef,both}
                         Which reference to use for deconvolution
 ```
-
 
 ## iobrpy_deside
 
@@ -392,7 +354,6 @@ options:
                         Directory to save result plots
 ```
 
-
 ## iobrpy_tme_cluster
 
 ### Tool Description
@@ -435,36 +396,6 @@ options:
                         Field separator for output (auto-detect if not set)
 ```
 
-
-## iobrpy_lr_cal
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
-- **Homepage**: https://github.com/IOBR/IOBRpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: iobrpy [-h] [--version]  ...
-iobrpy: error: argument : invalid choice: 'lr_cal' (choose from prepare_salmon, count2tpm, anno_eset, calculate_sig_score, cibersort, IPS, estimate, mcpcounter, quantiseq, epic, deside, tme_cluster, LR_cal, nmf, mouse2human_eset, batch_salmon, merge_salmon, merge_star_count, batch_star_count, fastq_qc, log2_eset, trust4, spechla, extract_hla_read, hla_typing, tme_profile, runall, bayesprism)
-```
-
-
 ## iobrpy_nmf
 
 ### Tool Description
@@ -506,7 +437,6 @@ options:
                         not skip)
 ```
 
-
 ## iobrpy_mouse2human_eset
 
 ### Tool Description
@@ -545,7 +475,6 @@ options:
   --progress            Show a progress bar during saving.
 ```
 
-
 ## iobrpy_batch_salmon
 
 ### Tool Description
@@ -577,7 +506,6 @@ options:
   --gtf GTF             Optional GTF file path for Salmon (-g)
 ```
 
-
 ## iobrpy_merge_salmon
 
 ### Tool Description
@@ -603,7 +531,6 @@ options:
                         Threads for loading quant.sf (I/O bound)
 ```
 
-
 ## iobrpy_merge_star_count
 
 ### Tool Description
@@ -624,7 +551,6 @@ options:
   --path PATH        Folder containing STAR outputs
   --project PROJECT  Output name prefix
 ```
-
 
 ## iobrpy_batch_star_count
 
@@ -655,7 +581,6 @@ options:
   --num_threads NUM_THREADS
                         Threads for STAR and BAM sorting
 ```
-
 
 ## iobrpy_fastq_qc
 
@@ -691,7 +616,6 @@ options:
                         Minimum read length to keep
 ```
 
-
 ## iobrpy_log2_eset
 
 ### Tool Description
@@ -717,135 +641,6 @@ options:
                         delimiter (.csv/.tsv or mirror input).
 ```
 
-
-## iobrpy_trust4
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
-- **Homepage**: https://github.com/IOBR/IOBRpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-#########################################################
- IOBRpy: Immuno-Oncology Biological Research using Python 
- If you encounter any issues, please report them at 
- https://github.com/IOBR/IOBRpy/issues 
-#########################################################
- Author: Haonan Huang, Dongqiang Zeng
- Email: interlaken@smu.edu.cn 
-#########################################################
-```
-
-
-## iobrpy_spechla
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
-- **Homepage**: https://github.com/IOBR/IOBRpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: iobrpy spechla [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
-## iobrpy_extract_hla_read
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
-- **Homepage**: https://github.com/IOBR/IOBRpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: iobrpy extract_hla_read [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
-## iobrpy_hla_typing
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
-- **Homepage**: https://github.com/IOBR/IOBRpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: iobrpy hla_typing [-h]
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## iobrpy_tme_profile
 
 ### Tool Description
@@ -869,7 +664,6 @@ options:
                         Output directory (01-signatures, 02-tme, 03-LR_cal).
   --threads THREADS     Threads for ssGSEA and CIBERSORT (default: 1).
 ```
-
 
 ## iobrpy_runall
 
@@ -895,7 +689,6 @@ options:
   --resume
   --dry_run
 ```
-
 
 ## iobrpy_bayesprism
 
@@ -934,7 +727,6 @@ options:
                         defaults to 'Malignant_cells' when the bundled
                         reference is used.
 ```
-
 
 ## Metadata
 - **Skill**: generated

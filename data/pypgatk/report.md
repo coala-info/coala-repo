@@ -36,40 +36,6 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-
-## pypgatk_variation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
-- **Homepage**: http://github.com/bigbio/py-pgatk
-- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.9/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
-  warnings.warn(
-Usage: pypgatk [OPTIONS] COMMAND [ARGS]...
-Try 'pypgatk -h' for help.
-
-Error: No such command 'variation'.
-```
-
-
 ## pypgatk_cbioportal-downloader
 
 ### Tool Description
@@ -98,7 +64,6 @@ Options:
   --url_file TEXT              Add the url to a downloaded file
   -h, --help                   Show this message and exit.
 ```
-
 
 ## pypgatk_cbioportal-to-proteindb
 
@@ -135,40 +100,6 @@ Options:
                                   in input_mutation file
   -h, --help                      Show this message and exit.
 ```
-
-
-## pypgatk_proteindb
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
-- **Homepage**: http://github.com/bigbio/py-pgatk
-- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.9/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
-  warnings.warn(
-Usage: pypgatk [OPTIONS] COMMAND [ARGS]...
-Try 'pypgatk -h' for help.
-
-Error: No such command 'proteindb'.
-```
-
 
 ## pypgatk_cosmic-downloader
 
@@ -217,7 +148,6 @@ Traceback (most recent call last):
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 ```
 
-
 ## pypgatk_cosmic-to-proteindb
 
 ### Tool Description
@@ -250,7 +180,6 @@ Options:
                                 default is False
   -h, --help                    Show this message and exit.
 ```
-
 
 ## pypgatk_dnaseq-to-proteindb
 
@@ -296,7 +225,6 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-
 ## pypgatk_ensembl-check
 
 ### Tool Description
@@ -322,40 +250,6 @@ Options:
                             included in the database
   -h, --help                Show this message and exit.
 ```
-
-
-## pypgatk_gaps
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
-- **Homepage**: http://github.com/bigbio/py-pgatk
-- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.9/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
-  warnings.warn(
-Usage: pypgatk [OPTIONS] COMMAND [ARGS]...
-Try 'pypgatk -h' for help.
-
-Error: No such command 'gaps'.
-```
-
 
 ## pypgatk_ensembl-downloader
 
@@ -398,7 +292,6 @@ Options:
   --url_file TEXT                 Add the url to a downloaded file
   -h, --help                      Show this message and exit.
 ```
-
 
 ## pypgatk_generate-decoy
 
@@ -462,40 +355,6 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-
-## pypgatk_methods
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
-- **Homepage**: http://github.com/bigbio/py-pgatk
-- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.9/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
-  warnings.warn(
-Usage: pypgatk [OPTIONS] COMMAND [ARGS]...
-Try 'pypgatk -h' for help.
-
-Error: No such command 'methods'.
-```
-
-
 ## pypgatk_mztab_class_fdr
 
 ### Tool Description
@@ -528,40 +387,6 @@ Options:
                                   t];variants:[var_mut,var_rs]}"
   -h, --help                      Show this message and exit.
 ```
-
-
-## pypgatk_fdr
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
-- **Homepage**: http://github.com/bigbio/py-pgatk
-- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.9/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
-  warnings.warn(
-Usage: pypgatk [OPTIONS] COMMAND [ARGS]...
-Try 'pypgatk -h' for help.
-
-Error: No such command 'fdr'.
-```
-
 
 ## pypgatk_peptide-class-fdr
 
@@ -619,40 +444,6 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
-
-## pypgatk_threeframe-translation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
-- **Homepage**: http://github.com/bigbio/py-pgatk
-- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.9/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
-  warnings.warn(
-Usage: pypgatk threeframe-translation [OPTIONS]
-Try 'pypgatk threeframe-translation -h' for help.
-
-Error: No such option: --h Did you mean --help?
-```
-
-
 ## pypgatk_validate_peptides
 
 ### Tool Description
@@ -688,40 +479,6 @@ Options:
                                   defaults to mzTab format
   -h, --help                      Show this message and exit.
 ```
-
-
-## pypgatk_subsititution
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
-- **Homepage**: http://github.com/bigbio/py-pgatk
-- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-/usr/local/lib/python3.9/site-packages/Bio/pairwise2.py:278: BiopythonDeprecationWarning: Bio.pairwise2 has been deprecated, and we intend to remove it in a future release of Biopython. As an alternative, please consider using Bio.Align.PairwiseAligner as a replacement, and contact the Biopython developers if you still need the Bio.pairwise2 module.
-  warnings.warn(
-Usage: pypgatk [OPTIONS] COMMAND [ARGS]...
-Try 'pypgatk -h' for help.
-
-Error: No such command 'subsititution'.
-```
-
 
 ## pypgatk_vcf-to-proteindb
 
@@ -784,7 +541,6 @@ Options:
   --accepted_filters TEXT         Accepted filters for variant parsing
   -h, --help                      Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

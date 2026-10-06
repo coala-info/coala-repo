@@ -6,39 +6,6 @@
 |---|---|---|
 | aria2_aria2c | PASS |  |
 
-## aria2
-
-### Tool Description
-FAIL to generate CWL: aria2 not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/aria2:1.36.0
-- **Homepage**: https://aria2.github.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/aria2/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/aria2/overview
-- **Total Downloads**: 382.5K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/aria2/aria2
-- **Stars**: 40085
-### Generation Failed
-
-FAIL to generate CWL: aria2 not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: aria2 not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

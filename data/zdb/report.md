@@ -40,7 +40,6 @@ Environments (by default, singularity containers are used):
  --singularity_dir: the directory where the singularity images are downloaded (default singularity in current directory)
 ```
 
-
 ## zdb_webapp
 
 ### Tool Description
@@ -79,7 +78,6 @@ This can be changed with either one of the two following options:
 
 --singularity_dir: the directory where the singularity images are downloaded (default singularity in current directory)
 ```
-
 
 ## zdb_run
 
@@ -123,7 +121,6 @@ The following options can be used
  --singularity_dir: the directory where the singularity images are downloaded (default singularity in current directory)
 ```
 
-
 ## zdb_export
 
 ### Tool Description
@@ -145,7 +142,6 @@ The following options can be used
 
  --name: specify the run to be exported
 ```
-
 
 ## zdb_import
 
@@ -170,39 +166,6 @@ The following options can be used
 
  --archive: specify the archive to be unpacked
 ```
-
-
-## zdb_list_runs
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/zdb:1.3.11--hdfd78af_0
-- **Homepage**: https://github.com/metagenlab/zDB/
-- **Package**: https://anaconda.org/channels/bioconda/packages/zdb/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-This subcommands list the completed analysis runs available to start the webapp
-If no parameter is passed, it will look into the current directory
-
-Options:
---help|-h: prints this help
-```
-
 
 ## Metadata
 - **Skill**: generated

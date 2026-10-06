@@ -1,61 +1,5 @@
 # srprism CWL Generation Report
 
-## srprism_help
-
-### Tool Description
-Fast Short Read Aligner
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/srprism:2.4.24--hd6d6fdc_6
-- **Homepage**: https://github.com/ncbi/SRPRISM
-- **Package**: Not found
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/srprism/overview
-- **Total Downloads**: 43.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/ncbi/SRPRISM
-- **Stars**: N/A
-### Original Help Text
-```text
-Fast Short Read Aligner 
-
-version 2.4.24-alpha
-
-USAGE:
-
-	srprism cmd [--trace-level <min_level>] [--log-file <file-name>]
-
-COMMON PARAMETERS:
-
-        cmd [required]
-
-            Action to perform. Possible values are:
-
-                * help           - get usage help;
-
-                * search         - search for occurrences of the queries in 
-                    the database;
-
-                * mkindex        - create index from a source database.
-
-        --trace-level <min_level> [default: warning]
-
-            Minimum message level to report to the log stream. Possible 
-            values are "debug", "info", "warning", "error", "quiet".
-
-        --log-file <file-name> [optional]
-
-            File for storing diagnostic messages. Default is standard 
-            error.
-
-
-
-./options_parser_priv.hpp:140 [1] options parser error (unknown key help)
-ERROR:   ./options_parser_priv.hpp:140 [1] options parser error (unknown key help) <srprism.cpp:850>
-```
-
-
 ## srprism_search
 
 ### Tool Description
@@ -293,12 +237,9 @@ SEARCH PARAMETERS:
             "sam". See the software documentation for the details of 
             different supported output formats.
 
-
-
 ./options_parser_priv.hpp:245 [3] argument missing (missing required option index)
 ERROR:   ./options_parser_priv.hpp:245 [3] argument missing (missing required option index) <srprism.cpp:850>
 ```
-
 
 ## srprism_mkindex
 
@@ -403,12 +344,9 @@ MKINDEX PARAMETERS:
             extended to the left (right) in the case of non-fuzzy left 
             (right) end.
 
-
-
 ./options_parser_priv.hpp:245 [3] argument missing (missing required option output)
 ERROR:   ./options_parser_priv.hpp:245 [3] argument missing (missing required option output) <srprism.cpp:850>
 ```
-
 
 ## Metadata
 - **Skill**: not generated

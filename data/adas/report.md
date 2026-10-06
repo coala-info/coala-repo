@@ -10,39 +10,6 @@
 | adas_adas-knn | PASS |  |
 | adas_adas-search | PASS |  |
 
-## adas
-
-### Tool Description
-FAIL to generate CWL: adas not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/adas:0.1.3--h3ab6199_0
-- **Homepage**: https://github.com/jianshu93/adas
-- **Package**: https://anaconda.org/channels/bioconda/packages/adas/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/adas/overview
-- **Total Downloads**: 806
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/jianshu93/adas
-- **Stars**: 5
-### Generation Failed
-
-FAIL to generate CWL: adas not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: adas not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

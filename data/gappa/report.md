@@ -37,7 +37,6 @@ Subcommands:
 gappa - a toolkit for analyzing and visualizing phylogenetic (placement) data
 ```
 
-
 ## gappa_edit
 
 ### Tool Description
@@ -67,7 +66,6 @@ Subcommands:
 
 gappa - a toolkit for analyzing and visualizing phylogenetic (placement) data
 ```
-
 
 ## gappa_examine
 
@@ -101,87 +99,6 @@ Subcommands:
 gappa - a toolkit for analyzing and visualizing phylogenetic (placement) data
 ```
 
-
-## gappa_prepare
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gappa:0.9.0--h077b44d_0
-- **Homepage**: https://github.com/lczech/gappa
-- **Package**: https://anaconda.org/channels/bioconda/packages/gappa/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Commands for preparing and preprocessing of phylogenetic and placement data.
-Usage: gappa prepare [OPTIONS] SUBCOMMAND
-
-Options:
-  --help FLAG                 Print this help message and exit.
-
-Subcommands:
-  chunkify                    Chunkify a set of fasta files and create abundance maps.
-  clean-tree                  Clean a tree in Newick format by removing parts that other parsers have difficulties with.
-  phat                        Generate consensus sequences from a sequence database according to the PhAT method.
-  taxonomy-tree               Turn a taxonomy into a tree that can be used as a constraint for tree inference.
-  unchunkify                  Unchunkify a set of jplace files using abundance map files and create per-sample jplace files.
-
-gappa - a toolkit for analyzing and visualizing phylogenetic (placement) data
-```
-
-
-## gappa_simulate
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gappa:0.9.0--h077b44d_0
-- **Homepage**: https://github.com/lczech/gappa
-- **Package**: https://anaconda.org/channels/bioconda/packages/gappa/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Commands for random generation of phylogenetic and placement data.
-Usage: gappa simulate [OPTIONS] SUBCOMMAND
-
-Options:
-  --help FLAG                 Print this help message and exit.
-
-Subcommands:
-  random-alignment            Create a random alignment with a given numer of sequences of a given length.
-  random-placements           Create a set of random phylogenetic placements on a given reference tree.
-  random-tree                 Create a random tree with a given numer of leaf nodes.
-
-gappa - a toolkit for analyzing and visualizing phylogenetic (placement) data
-```
-
-
 ## gappa_tools
 
 ### Tool Description
@@ -208,7 +125,6 @@ Subcommands:
 
 gappa - a toolkit for analyzing and visualizing phylogenetic (placement) data
 ```
-
 
 ## Metadata
 - **Skill**: generated

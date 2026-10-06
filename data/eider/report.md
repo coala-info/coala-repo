@@ -1,48 +1,5 @@
 # eider CWL Generation Report
 
-## eider_help
-
-### Tool Description
-Eider is a command-line tool for interacting with databases using SQL queries.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/eider:0.3--hdfd78af_0
-- **Homepage**: https://github.com/heuermh/eider
-- **Package**: https://anaconda.org/channels/bioconda/packages/eider/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/eider/overview
-- **Total Downloads**: 307
-- **Last updated**: 2026-02-05
-- **GitHub**: https://github.com/heuermh/eider
-- **Stars**: N/A
-### Original Help Text
-```text
-USAGE
-  eider [-hV] [--preserve-whitespace] [--skip-history] [--verbose]
-        [-i=<queryPath>] [-q=<query>] [-u=<url>] [-p=<String=String>]...
-        [COMMAND]
-
-OPTIONS
-  -u, --url=<url>                    JDBC connection URL, defaults to "jdbc:
-                                       duckdb:".
-  -q, --query=<query>                Inline SQL query, if any.
-  -i, --query-path=<queryPath>       SQL query input path, default stdin.
-  -p, --parameters=<String=String>   Query template parameters, in KEY=VALUE
-                                       format. Specify multiple times if
-                                       necessary.
-      --preserve-whitespace          Preserve whitespace in SQL query.
-      --skip-history                 Skip writing query to history file.
-      --verbose                      Show additional logging messages.
-  -h, --help                         Show this help message and exit.
-  -V, --version                      Print version information and exit.
-
-COMMANDS
-  help                 Display help information about the specified command.
-  generate-completion  Generate bash/zsh completion script for eider.
-```
-
-
 ## eider_generate-completion
 
 ### Tool Description
@@ -310,7 +267,6 @@ function _picocli_eider_generatecompletion() {
 # default Bash completions and the Readline default filename completions are performed.
 complete -F _complete_eider -o default eider eider.sh eider.bash
 ```
-
 
 ## Metadata
 - **Skill**: generated

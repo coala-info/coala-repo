@@ -26,7 +26,6 @@ Exception in thread "main" java.lang.IllegalArgumentException: Usage: java Align
 	at edu.msu.cme.rdp.alignment.AlignmentToolsMain.main(AlignmentToolsMain.java:49)
 ```
 
-
 ## rdp-alignment_pairwise-knn
 
 ### Tool Description
@@ -53,7 +52,6 @@ usage: PairwiseKNN <options> <queryFile> <dbFile>
                         nucleotide)
 ```
 
-
 ## rdp-alignment_compare-error-type
 
 ### Tool Description
@@ -72,7 +70,6 @@ usage: CompareErrorType [options] <ref_nucl> (<query_nucl> |
  -s,--stem <arg>   Output stem (default <query_nucl.fasta>)
 ```
 
-
 ## rdp-alignment_align-nucl-to-prot
 
 ### Tool Description
@@ -88,7 +85,6 @@ Aligns nucleotide sequences to a protein alignment.
 ```text
 USAGE: AlignNucleotideToProtein <aligned prot seqs> <unaligned_nucl_seqs> <aligned nucl out> <stats out>
 ```
-
 
 ## rdp-alignment_rm-partialseq
 
@@ -116,34 +112,6 @@ usage:  [options] fulllengthSeqFile queryFile passedSeqOutFile
  -o,--alignment-out <arg>    The output file containing the pairwise alignment
 ```
 
-
 ## Metadata
 - **Skill**: not generated
-
-## rdp-alignment
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: biocontainers/rdp-alignment:v1.2.0-5-deb_cv1
-- **Homepage**: https://github.com/AlbertoMartinPerez/Sequence_Analyzer_automations
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-### Validation Errors
-- No inputs — do not generate CWL.
-
-### Original Help Text
-```text
-USAGE: AlignmentToolsMain <subcommand> <options>
-	alignment-merger     - Merge alignments
-	pairwise-knn         - Compute k-nearest-neighbors by pairwise alignment
-	compare-error-type   - Detect insertion, deletion and substitution errors in sequences comparing to reference sequences
-	align-nucl-to-prot   - Transfer a sequence alignment from protein sequences to nucleotide sequences
-	rm-partialseq        - remove partial sequences based on pairwise alignment to reference sequences
-```
 

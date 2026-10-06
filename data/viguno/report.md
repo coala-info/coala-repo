@@ -31,7 +31,6 @@ Options:
   -V, --version                      Print version
 ```
 
-
 ## viguno_query
 
 ### Tool Description
@@ -58,7 +57,6 @@ Options:
   -h, --help                               Print help
   -V, --version                            Print version
 ```
-
 
 ## viguno_server
 
@@ -88,71 +86,6 @@ Options:
   -h, --help        Print help
 ```
 
-
-## viguno_Increase
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/viguno:0.4.0--h13c227e_0
-- **Homepage**: https://github.com/bihealth/viguno
-- **Package**: https://anaconda.org/channels/bioconda/packages/viguno/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Increase'
-
-Usage: viguno [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
-## viguno_Decrease
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/viguno:0.4.0--h13c227e_0
-- **Homepage**: https://github.com/bihealth/viguno
-- **Package**: https://anaconda.org/channels/bioconda/packages/viguno/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Decrease'
-
-Usage: viguno [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
 ## viguno
 ### Tool Description
 A tool for processing and analyzing biological sequences.
@@ -171,7 +104,6 @@ Usage: viguno [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
 
 ## Metadata
 - **Skill**: generated

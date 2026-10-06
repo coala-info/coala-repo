@@ -101,42 +101,6 @@ options:
                         Length used for coverage bins (default=5)
 ```
 
-
-## savana_without
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/savana:1.3.6--pyhdfd78af_0
-- **Homepage**: https://github.com/cortes-ciriano-lab/savana
-- **Package**: https://anaconda.org/channels/bioconda/packages/savana/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-███████  █████  ██    ██  █████  ███    ██  █████
-██      ██   ██ ██    ██ ██   ██ ████   ██ ██   ██
-███████ ███████ ██    ██ ███████ ██ ██  ██ ███████
-     ██ ██   ██  ██  ██  ██   ██ ██  ██ ██ ██   ██
-███████ ██   ██   ████   ██   ██ ██   ████ ██   ██
-
-Version 1.3.6
-Source: /usr/local/lib/python3.11/site-packages/savana/savana.py
-```
-
-
 ## savana_classify
 
 ### Tool Description
@@ -203,7 +167,6 @@ options:
   --threads [THREADS]   Number of threads to use
 ```
 
-
 ## savana_evaluate
 
 ### Tool Description
@@ -253,7 +216,6 @@ options:
                         (default)
 ```
 
-
 ## savana_train
 
 ### Tool Description
@@ -301,7 +263,6 @@ options:
                         files are present
   --threads [THREADS]   Number of threads to use
 ```
-
 
 ## savana_cna
 
@@ -497,7 +458,6 @@ options:
                         Minimum length (bps) for a genomic block to be
                         considered for purity estimation.
 ```
-
 
 ## savana_to
 
@@ -787,7 +747,6 @@ options:
                         Minimum length (bps) for a genomic block to be
                         considered for purity estimation.
 ```
-
 
 ## Metadata
 - **Skill**: generated

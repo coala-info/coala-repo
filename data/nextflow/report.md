@@ -28,7 +28,6 @@ Commands:
   config   Configure Seqera Platform settings
 ```
 
-
 ## nextflow_clean
 
 ### Tool Description
@@ -69,7 +68,6 @@ Usage: clean [options]
        Default: false
 ```
 
-
 ## nextflow_clone
 
 ### Tool Description
@@ -98,7 +96,6 @@ Usage: clone [options] name of the project to clone
     -user
        Private repository user name
 ```
-
 
 ## nextflow_config
 
@@ -141,7 +138,6 @@ Usage: config [options] project name
        Print the value of a config option, or fail if the option is not defined
 ```
 
-
 ## nextflow_drop
 
 ### Tool Description
@@ -166,7 +162,6 @@ Usage: drop [options] name of the project to drop
        Default: false
 ```
 
-
 ## nextflow_fs
 
 ### Tool Description
@@ -190,7 +185,6 @@ Commands:
   rm	Remove a file
   stat	Print file to meta info
 ```
-
 
 ## nextflow_info
 
@@ -220,7 +214,6 @@ Usage: info [options] project name
     -o
        Output format, either: text (default), json, yaml
 ```
-
 
 ## nextflow_inspect
 
@@ -258,7 +251,6 @@ Usage: inspect [options] Project name or repository url
        Revision of the project to inspect (either a git branch, tag or commit
        SHA number)
 ```
-
 
 ## nextflow_kuberun
 
@@ -410,7 +402,6 @@ Usage: kuberun [options] Project name or repository url
        Directory where intermediate result files are stored
 ```
 
-
 ## nextflow_launch
 
 ### Tool Description
@@ -444,7 +435,6 @@ Options:
   --<param>=<value>         Set a parameter used by the pipeline
 ```
 
-
 ## nextflow_lineage
 
 ### Tool Description
@@ -469,7 +459,6 @@ Commands:
   render	Render the lineage graph for a workflow output
   view  	Print the description of a Lineage ID (lid)
 ```
-
 
 ## nextflow_lint
 
@@ -513,40 +502,6 @@ Usage: lint [options] List of paths to lint
        Indent with tabs
        Default: false
 ```
-
-
-## nextflow_list
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0
-- **Homepage**: https://github.com/nextflow-io/nextflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-List all downloaded projects
-Usage: list [options]
-  Options:
-    -h, -help
-       Print the command usage
-       Default: false
-```
-
 
 ## nextflow_log
 
@@ -592,40 +547,6 @@ Usage: log [options] Run name or session id
        Text template used to each record in the log
 ```
 
-
-## nextflow_plugin
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0
-- **Homepage**: https://github.com/nextflow-io/nextflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Execute plugin-specific commands
-Usage: plugin [options] 
-  Options:
-    -h, -help
-       Print the command usage
-       Default: false
-```
-
-
 ## nextflow_pull
 
 ### Tool Description
@@ -658,7 +579,6 @@ Usage: pull [options] project name or repository url to pull
     -user
        Private repository user name
 ```
-
 
 ## nextflow_run
 
@@ -793,7 +713,6 @@ Usage: run [options] Project name or repository url
        Directory where intermediate result files are stored
 ```
 
-
 ## nextflow_secrets
 
 ### Tool Description
@@ -816,46 +735,6 @@ Commands:
   list
   set
 ```
-
-
-## nextflow_self-update
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0
-- **Homepage**: https://github.com/nextflow-io/nextflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Downloading nextflow dependencies. It may require a few seconds, please wait .. 
-[KDownloading nextflow dependencies. It may require a few seconds, please wait .. 
-[K
-      N E X T F L O W
-      version 25.10.4 build 11173
-      created 10-02-2026 15:17 UTC (15:17 GMT)
-      cite doi:10.1038/nbt.3820
-      http://nextflow.io
-
-
-Nextflow installation completed. Please note:
-- the executable file `nextflow` has been created in the folder: /usr/local/bin
-```
-
 
 ## nextflow_view
 
@@ -883,7 +762,6 @@ Usage: view [options] project name
        Hide header line
        Default: false
 ```
-
 
 ## Metadata
 - **Skill**: generated

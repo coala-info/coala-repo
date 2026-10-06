@@ -29,12 +29,9 @@ If possible, provide a recipe for reproducing the error.
 A complete runnable program is good.
 A link on play.golang.org is best.
 
-
 #### What did you expect to see?
 
-
 #### What did you see instead?
-
 
 #### System details
 
@@ -63,7 +60,6 @@ uname -sr: Linux 6.8.0-100-generic
 ```
 ```
 
-
 ## go_build
 
 ### Tool Description
@@ -81,7 +77,6 @@ usage: go build [-o output] [-i] [build flags] [packages]
 Run 'go help build' for details.
 ```
 
-
 ## go_clean
 
 ### Tool Description
@@ -98,7 +93,6 @@ Run 'go help clean' for details.
 usage: go clean [clean flags] [build flags] [packages]
 Run 'go help clean' for details.
 ```
-
 
 ## go_doc
 
@@ -129,7 +123,6 @@ Flags:
   -u	show unexported symbols as well as exported
 exit status 2
 ```
-
 
 ## go_env
 
@@ -172,7 +165,6 @@ PKG_CONFIG="pkg-config"
 GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build991818294=/tmp/go-build -gno-record-gcc-switches"
 ```
 
-
 ## go_fix
 
 ### Tool Description
@@ -189,7 +181,6 @@ Run 'go help fix' for details.
 usage: go fix [packages]
 Run 'go help fix' for details.
 ```
-
 
 ## go_fmt
 
@@ -208,7 +199,6 @@ usage: go fmt [-n] [-x] [packages]
 Run 'go help fmt' for details.
 ```
 
-
 ## go_generate
 
 ### Tool Description
@@ -225,7 +215,6 @@ Run 'go help generate' for details.
 usage: go generate [-run regexp] [-n] [-v] [-x] [build flags] [file.go... | packages]
 Run 'go help generate' for details.
 ```
-
 
 ## go_get
 
@@ -244,7 +233,6 @@ usage: go get [-d] [-f] [-t] [-u] [-v] [-fix] [-insecure] [build flags] [package
 Run 'go help get' for details.
 ```
 
-
 ## go_install
 
 ### Tool Description
@@ -262,7 +250,6 @@ usage: go install [-i] [build flags] [packages]
 Run 'go help install' for details.
 ```
 
-
 ## go_list
 
 ### Tool Description
@@ -279,7 +266,6 @@ List packages or modules
 usage: go list [-f format] [-json] [-m] [list flags] [build flags] [packages]
 Run 'go help list' for details.
 ```
-
 
 ## go_mod
 
@@ -319,7 +305,6 @@ The commands are:
 Use "go help mod <command>" for more information about a command.
 ```
 
-
 ## go_run
 
 ### Tool Description
@@ -336,7 +321,6 @@ Run a Go program
 usage: go run [build flags] [-exec xprog] package [arguments...]
 Run 'go help run' for details.
 ```
-
 
 ## go_test
 
@@ -604,7 +588,6 @@ In the second example, the argument math is passed through to the test
 binary, instead of being interpreted as the package list.
 ```
 
-
 ## go_tool
 
 ### Tool Description
@@ -637,36 +620,6 @@ test2json
 trace
 vet
 ```
-
-
-## go_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/go:1.11.3
-- **Homepage**: https://github.com/avelino/awesome-go
-- **Package**: Not found
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: go version
-Run 'go help version' for details.
-```
-
 
 ## go_vet
 
@@ -729,7 +682,6 @@ Additional help topics:
 
 Use "go help <topic>" for more information about that topic.
 ```
-
 
 ## Metadata
 - **Skill**: generated

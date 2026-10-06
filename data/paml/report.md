@@ -1,38 +1,5 @@
 # paml CWL Generation Report
 
-## paml
-
-### Tool Description
-FAIL to generate CWL: paml not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/paml:4.10.10--h7b50bb2_0
-- **Homepage**: https://evomics.org/resources/software/molecular-evolution-software/paml
-- **Package**: https://anaconda.org/channels/bioconda/packages/paml/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/paml/overview
-- **Total Downloads**: 312.5K
-- **Last updated**: 2026-01-30
-- **GitHub**: https://github.com/abacus-gene/paml
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: paml not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: paml not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

@@ -23,7 +23,6 @@ Error: list index out of range
 python3 /usr/local/bin/transit example <comma-separated .wig files> <annotation .prot_table> <output file>
 ```
 
-
 ## transit_gumbel
 
 ### Tool Description
@@ -50,7 +49,6 @@ python3 /usr/local/bin/transit gumbel <comma-separated .wig files> <annotation .
         -iN <float>     :=  Ignore TAs occuring within given percentage (as integer) of the N terminus. Default: -iN 0
         -iC <float>     :=  Ignore TAs occuring within given percentage (as integer) of the C terminus. Default: -iC 0
 ```
-
 
 ## transit_binomial
 
@@ -90,7 +88,6 @@ python3 /usr/local/bin/transit binomial <comma-separated .wig files> <annotation
             -bw <float>     :=  Hyper-parameters for prior prob of gene being essential. Default: -bw 0.5
 ```
 
-
 ## transit_griffin
 
 ### Tool Description
@@ -115,7 +112,6 @@ python3 /usr/local/bin/transit griffin <comma-separated .wig files> <annotation 
         -iN <float>     :=  Ignore TAs occuring at given fraction (as integer) of the N terminus. Default: -iN 0
         -iC <float>     :=  Ignore TAs occuring at given fraction (as integer) of the C terminus. Default: -iC 0
 ```
-
 
 ## transit_hmm
 
@@ -142,7 +138,6 @@ python3 /usr/local/bin/transit hmm <comma-separated .wig files> <annotation .pro
             -iN <float>     :=  Ignore TAs occuring within given percentage (as integer) of the N terminus. Default: -iN 0
             -iC <float>     :=  Ignore TAs occuring within given percentage (as integer) of the C terminus. Default: -iC 0
 ```
-
 
 ## transit_resampling
 
@@ -191,7 +186,6 @@ Error: Incorrect number of args. See usage
         -sr             :=  site-restricted resampling; more sensitive, might find a few more significant conditionally essential genes"
 ```
 
-
 ## transit_tn5gaps
 
 ### Tool Description
@@ -215,7 +209,6 @@ python3 /usr/local/bin/transit tn5gaps <comma-separated .wig files> <annotation 
         -iN <float>     :=  Ignore TAs occuring within given percentage (as integer) of the N terminus. Default: -iN 0
         -iC <float>     :=  Ignore TAs occuring within given percentage (as integer) of the C terminus. Default: -iC 0
 ```
-
 
 ## transit_rankproduct
 
@@ -244,7 +237,6 @@ python3 /usr/local/bin/transit rankproduct <comma-separated .wig control files> 
         -iC <float>     :=  Ignore TAs occuring at given fraction (as integer) of the C terminus. Default: -iC 0
 ```
 
-
 ## transit_utest
 
 ### Tool Description
@@ -269,7 +261,6 @@ python3 /usr/local/bin/transit utest <comma-separated .wig control files> <comma
         -iN <float>     :=  Ignore TAs occuring at given fraction (as integer) of the N terminus. Default: -iN 0
         -iC <float>     :=  Ignore TAs occuring at given fraction (as integer) of the C terminus. Default: -iC 0
 ```
-
 
 ## transit_gi
 
@@ -309,7 +300,6 @@ Please use one of the known methods (or see documentation to add a new one):
 Usage: python /usr/local/bin/transit <method>
 ```
 
-
 ## transit_anova
 
 ### Tool Description
@@ -337,37 +327,6 @@ Usage: python3 transit.py anova <combined wig file> <samples_metadata file> <ann
   -alpha <N> := value added to MSE in F-test for moderated anova (makes genes with low counts less significant). Default: -alpha 1000
   -winz   := winsorize insertion counts for each gene in each condition (replace max cnt with 2nd highest; helps mitigate effect of outliers)
 ```
-
-
-## transit_zinb
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
-- **Homepage**: http://github.com/mad-lab/transit
-- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-=== Transit1 v3.3.20 ===
-Error: R and rpy2 (~= 3.0) required to run ZINB analysis.
-After installing R, you can install rpy2 using the command "pip install 'rpy2~=3.0'"
-```
-
 
 ## transit_pathway_enrichment
 
@@ -403,7 +362,6 @@ Optional parameters:
    -PC <int>          :  pseudo-counts to use in calculating p-value based on hypergeometric distribution (default=2)
 ```
 
-
 ## transit_tnseq_stats
 
 ### Tool Description
@@ -421,7 +379,6 @@ Calculate statistics for TnSeq data.
 usage: python3 /usr/local/bin/transit tnseq_stats <file.wig>+ [-o <output_file>]
        python /usr/local/bin/transit tnseq_stats -c <combined_wig> [-o <output_file>]
 ```
-
 
 ## transit_corrplot
 
@@ -441,37 +398,6 @@ Error: R and rpy2 (~= 3.0) required to run corrplot.
 After installing R, you can install rpy2 using the command "pip install 'rpy2~=3.0'"
 ```
 
-
-## transit_heatmap
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
-- **Homepage**: http://github.com/mad-lab/transit
-- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-=== Transit1 v3.3.20 ===
-Error: R and rpy2 (~= 3.0) required to run heatmap.
-After installing R, you can install rpy2 using the command "pip install 'rpy2~=3.0'"
-```
-
-
 ## transit_ttnfitness
 
 ### Tool Description
@@ -489,7 +415,6 @@ Calculates fitness based on transit data.
 Error: list index out of range
 python3 /usr/local/bin/transit ttnfitness <comma-separated .wig files> <annotation .prot_table> <genome .fna> <gumbel output file> <output1 file> <output2 file>
 ```
-
 
 ## transit_cgi
 
@@ -529,7 +454,6 @@ Please use one of the known methods (or see documentation to add a new one):
 Usage: python /usr/local/bin/transit <method>
 ```
 
-
 ## transit_normalize
 
 ### Tool Description
@@ -556,7 +480,6 @@ python3 /usr/local/bin/transit normalize -c <input combined_wig> <output.wig> [-
         -n <string>     :=  Normalization method. Default: -n TTR
 ```
 
-
 ## transit_convert
 
 ### Tool Description
@@ -576,7 +499,6 @@ Please use one of the known methods (or see documentation to add a new one):
 	 - gff_to_prot_table
 Usage: python /usr/local/bin/transit convert <method>
 ```
-
 
 ## transit_export
 
@@ -599,7 +521,6 @@ Please use one of the known methods (or see documentation to add a new one):
 	 - mean_counts
 Usage: python /usr/local/bin/transit export <method>
 ```
-
 
 ## Metadata
 - **Skill**: not generated

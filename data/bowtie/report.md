@@ -1,44 +1,5 @@
 # bowtie CWL Generation Report
 
-## bowtie
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10
-- **Homepage**: https://github.com/BenLangmead/bowtie
-- **Package**: https://anaconda.org/channels/bioconda/packages/bowtie/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bowtie/overview
-- **Total Downloads**: 755.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/BenLangmead/bowtie
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Unable to find image 'quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10' locally
-1.3.1--py312hf8dbd9f_10: Pulling from biocontainers/bowtie
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-79021d4a4cad: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob2346255163: no space left on device
-
-Run 'docker run --help' for more information
-```
-
 ## bowtie_bowtie-build
 
 ### Tool Description
@@ -76,29 +37,5 @@ Options:
     -h/--help               print detailed description of tool and its options
     --usage                 print this usage message
     --version               print version information and quit
-```
-
-## bowtie
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10
-- **Homepage**: https://github.com/BenLangmead/bowtie
-- **Package**: https://anaconda.org/channels/bioconda/packages/bowtie/overview
-- **Validation**: FAIL (generation failed)
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-### Validation Errors
-- No inputs — do not generate CWL.
-
-### Original Help Text
-```text
-docker: Error response from daemon: mkdir /var/lib/docker/overlay2/530b8385c132d9559369f09ca7b09e5b35186954aa2f203884b7f5e37f3d096c-init: no space left on device
-
-Run 'docker run --help' for more information
 ```
 

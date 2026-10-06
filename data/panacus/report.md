@@ -31,7 +31,6 @@ Options:
   -h, --help      Print help
 ```
 
-
 ## panacus_report
 
 ### Tool Description
@@ -60,7 +59,6 @@ Options:
   -v, --verbose   Set the number of threads used (default: use all threads)
   -h, --help      Print help
 ```
-
 
 ## panacus_hist
 
@@ -99,7 +97,6 @@ Options:
   -v, --verbose            Set the number of threads used (default: use all threads)
   -h, --help               Print help
 ```
-
 
 ## panacus_growth
 
@@ -159,7 +156,6 @@ Options:
   -h, --help                 Print help
 ```
 
-
 ## panacus_info
 
 ### Tool Description
@@ -195,7 +191,6 @@ Options:
   -v, --verbose            Set the number of threads used (default: use all threads)
   -h, --help               Print help
 ```
-
 
 ## panacus_ordered-histgrowth
 
@@ -260,28 +255,6 @@ Options:
   -h, --help                 Print help
 ```
 
-
-## panacus_path
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/panacus:0.4.1--hc1c3326_0
-- **Homepage**: https://github.com/marschall-lab/panacus
-- **Package**: https://anaconda.org/channels/bioconda/packages/panacus/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'path'
-
-Usage: panacus [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
 ## panacus_table
 
 ### Tool Description
@@ -326,7 +299,6 @@ Options:
   -h, --help               Print help
 ```
 
-
 ## panacus_node-distribution
 
 ### Tool Description
@@ -356,7 +328,6 @@ Options:
   -h, --help             Print help
 ```
 
-
 ## panacus_Due
 
 ### Tool Description
@@ -376,7 +347,6 @@ Usage: panacus [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
 
 ## panacus_plot
 
@@ -399,7 +369,6 @@ Usage: panacus [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
 
 ## panacus_similarity
 
@@ -442,7 +411,6 @@ Options:
   -v, --verbose                  Set the number of threads used (default: use all threads)
   -h, --help                     Print help
 ```
-
 
 ## Metadata
 - **Skill**: generated

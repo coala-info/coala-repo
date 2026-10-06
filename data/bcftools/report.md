@@ -28,35 +28,6 @@
 | bcftools_stats | PASS |  |
 | bcftools_view | PASS |  |
 
-## Runtime validation summary
-
-| Tool | Runtime | Data used | Reason (if fail) |
-|------|---------|-----------|------------------|
-| bcftools_annotate | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_call | FAIL | plan:pileup.vcf | WARNING Final process status is permanentFail |
-| bcftools_cnv | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
-| bcftools_concat | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_consensus | FAIL | plan:vcf_file.vcf.gz | } |
-| bcftools_convert | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_csq | FAIL | plan:vcf_file.vcf.gz, plan:minimal.fa, plan:gff_file.gff | WARNING Final process status is permanentFail |
-| bcftools_filter | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_gtcheck | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_head | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_index | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_isec | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
-| bcftools_merge | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
-| bcftools_mpileup | PASS | plan:mpileup.1.bam | — |
-| bcftools_norm | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
-| bcftools_plugin | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_polysomy | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
-| bcftools_query | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_reheader | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
-| bcftools_roh | FAIL | plan:vcf_file.vcf.gz | baseCommand 'bcftools' not found in container; the image may… |
-| bcftools_sort | FAIL | plan:vcf_file.vcf | WARNING Final process status is permanentFail |
-| bcftools_stats | PASS | plan:vcf_file.vcf.gz | — |
-| bcftools_view | PASS | plan:vcf_file.vcf.gz | — |
-
-
 ## bcftools_index
 
 ### Tool Description
@@ -77,12 +48,6 @@ Index VCF or BCF files for random access.
 ```text
 [E::main_vcfindex] must specify an output path for index file when reading VCF/BCF from stdin
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_index_job.json`
 
 ## bcftools_annotate
 
@@ -137,12 +102,6 @@ Examples:
    http://samtools.github.io/bcftools/howtos/annotate.html
 ```
 
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_annotate_job.json`
-
 ## bcftools_concat
 
 ### Tool Description
@@ -190,12 +149,6 @@ Options:
    -v, --verbosity INT            Set verbosity level
    -W, --write-index[=FMT]        Automatically index the output files [off]
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_concat_job.json`
 
 ## bcftools_convert
 
@@ -273,12 +226,6 @@ TSV conversion:
    -S, --samples-file FILE        File of sample names
 ```
 
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_convert_job.json`
-
 ## bcftools_head
 
 ### Tool Description
@@ -303,13 +250,6 @@ Options:
   -s, --samples INT      Display INT records starting with the #CHROM header line [none]
   -v, --verbosity INT    Verbosity level
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 1 (CWL modified by LLM)
-- **Example job**: `bcftools_head_job.json`
 
 ## bcftools_isec
 
@@ -367,14 +307,6 @@ Examples:
    bcftools isec A.vcf.gz B.vcf.gz -p dir -n -1 -c all
 ```
 
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_isec_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## bcftools_merge
 
 ### Tool Description
@@ -419,14 +351,6 @@ Options:
     -v, --verbosity INT               Verbosity level
     -W, --write-index[=FMT]           Automatically index the output files [off]
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_merge_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_norm
 
@@ -486,14 +410,6 @@ Examples:
    bcftools norm -m- in.vcf
 ```
 
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_norm_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## bcftools_plugin
 
 ### Tool Description
@@ -532,12 +448,6 @@ Plugin options:
    -V, --version                  Print version string and exit
    -W, --write-index[=FMT]        Automatically index the output files [off]
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_plugin_job.json`
 
 ## bcftools_query
 
@@ -582,13 +492,6 @@ Examples:
 	# For more examples see http://samtools.github.io/bcftools/bcftools.html#query
 ```
 
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_query_job.json`
-
 ## bcftools_reheader
 
 ### Tool Description
@@ -628,14 +531,6 @@ Example:
    bcftools reheader -h header.txt -o new.bcf old.bcf
 ```
 
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_reheader_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## bcftools_sort
 
 ### Tool Description
@@ -660,14 +555,6 @@ Options:
     -v, --verbosity INT            Verbosity level
     -W, --write-index[=FMT]        Automatically index the output files [off]
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_sort_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_view
 
@@ -796,14 +683,6 @@ Example:
    bcftools mpileup -Ou -f reference.fa alignments.bam | bcftools call -mv -Ob -o calls.bcf
 ```
 
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:pileup.vcf
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_call_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## bcftools_consensus
 
 ### Tool Description
@@ -861,14 +740,6 @@ Examples:
    # See also http://samtools.github.io/bcftools/howtos/consensus-sequence.html
 ```
 
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_consensus_job.json`
-- **Reason (not pass)**:                              }
-
 ## bcftools_cnv
 
 ### Tool Description
@@ -911,14 +782,6 @@ HMM Options:
     -P, --same-prob FLOA>            Prior probability of -s/-c being the same [0.5]
     -x, --xy-prob FLOAT              P(x|y) transition probability [1e-9]
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_cnv_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_csq
 
@@ -984,14 +847,6 @@ Example:
    http://ftp.ensembl.org/pub/grch37/current/gff3/homo_sapiens/
 ```
 
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz, plan:minimal.fa, plan:gff_file.gff
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_csq_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
-
 ## bcftools_filter
 
 ### Tool Description
@@ -1032,12 +887,6 @@ Options:
     -v, --verbosity INT            Verbosity level
     -W, --write-index[=FMT]        Automatically index the output files [off]
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_filter_job.json`
 
 ## bcftools_gtcheck
 
@@ -1096,12 +945,6 @@ Examples:
    # Compare only two pairs a1,b1 and a1,b2
    bcftools gtcheck -p a1,b1,a1,b2 -g A.bcf B.bcf
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_gtcheck_job.json`
 
 ## bcftools_mpileup
 
@@ -1191,13 +1034,6 @@ Example:
    bcftools mpileup -Ou -f reference.fa alignments.bam | bcftools call -mv -Ob -o calls.bcf
 ```
 
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:mpileup.1.bam
-- **Fix rounds**: 1 (CWL modified by LLM)
-- **Example job**: `bcftools_mpileup_job.json`
-
 ## bcftools_polysomy
 
 ### Tool Description
@@ -1233,14 +1069,6 @@ Algorithm options:
     -m, --min-fraction FLOAT       Minimum distinguishable fraction of aberrant cells [0.1]
     -p, --peak-symmetry FLOAT      Peak symmetry threshold (0-1, larger is stricter) [0.5]
 ```
-
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_polysomy_job.json`
-- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_roh
 
@@ -1305,15 +1133,6 @@ Example:
    misc/roh-viz -i out.txt -v test.vcf -o out.html
 ```
 
-
-### Runtime validation
-- **Runtime**: FAIL
-- **Data used**: plan:vcf_file.vcf.gz
-- **Fix rounds**: 2 (CWL modified by LLM)
-- **Example job**: `bcftools_roh_job.json`
-- **Reason (not pass)**: baseCommand 'bcftools' not found in container; the image may not provide this executable. CWL generation/validation failed. Original error: INFO /media/qhu/slim/Workspace/cwlagent/.venv/bin/cwltool 3.1.20260108082145
-INFO Resolved '/media
-
 ## bcftools_stats
 
 ### Tool Description
@@ -1358,12 +1177,6 @@ Options:
         --threads INT                Use multithreading with <int> worker threads [0]
     -v, --verbosity INT              Verbosity level
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:vcf_file.vcf.gz
-- **Example job**: `bcftools_stats_job.json`
 
 ## Metadata
 - **Skill**: generated

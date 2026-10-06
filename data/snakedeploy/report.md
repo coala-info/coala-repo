@@ -39,7 +39,6 @@ DEPLOY:
                    (default: repository name).
 ```
 
-
 ## snakedeploy_collect-files
 
 ### Tool Description
@@ -77,28 +76,6 @@ positional arguments:
 options:
   -h, --help  show this help message and exit
 ```
-
-
-## snakedeploy_from
-
-### Tool Description
-Deploy Snakemake workflows and manage their environments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0
-- **Homepage**: https://github.com/snakemake/snakedeploy
-- **Package**: https://anaconda.org/channels/bioconda/packages/snakedeploy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
-                   [--log-disable-color]
-                   {deploy-workflow,collect-files,pin-conda-envs,update-conda-envs,update-snakemake-wrappers,scaffold-snakemake-plugin}
-                   ...
-snakedeploy: error: argument subcommand: invalid choice: 'from' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
-```
-
 
 ## snakedeploy_pin-conda-envs
 
@@ -158,7 +135,6 @@ options:
                         the other envs.
 ```
 
-
 ## snakedeploy_package
 
 ### Tool Description
@@ -178,7 +154,6 @@ usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
                    ...
 snakedeploy: error: argument subcommand: invalid choice: 'package' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
 ```
-
 
 ## snakedeploy_update-conda-envs
 
@@ -236,7 +211,6 @@ options:
                         the other envs.
 ```
 
-
 ## snakedeploy_YAML
 
 ### Tool Description
@@ -256,28 +230,6 @@ usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
                    ...
 snakedeploy: error: argument subcommand: invalid choice: 'YAML' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
 ```
-
-
-## snakedeploy_the
-
-### Tool Description
-A tool for deploying and managing Snakemake workflows.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0
-- **Homepage**: https://github.com/snakemake/snakedeploy
-- **Package**: https://anaconda.org/channels/bioconda/packages/snakedeploy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
-                   [--log-disable-color]
-                   {deploy-workflow,collect-files,pin-conda-envs,update-conda-envs,update-snakemake-wrappers,scaffold-snakemake-plugin}
-                   ...
-snakedeploy: error: argument subcommand: invalid choice: 'the' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
-```
-
 
 ## snakedeploy_update-snakemake-wrappers
 
@@ -330,7 +282,6 @@ options:
                         all.
 ```
 
-
 ## snakedeploy_Update
 
 ### Tool Description
@@ -351,7 +302,6 @@ usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
 snakedeploy: error: argument subcommand: invalid choice: 'Update' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
 ```
 
-
 ## snakedeploy_their
 
 ### Tool Description
@@ -371,7 +321,6 @@ usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
                    ...
 snakedeploy: error: argument subcommand: invalid choice: 'their' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
 ```
-
 
 ## snakedeploy_scaffold-snakemake-plugin
 
@@ -400,7 +349,6 @@ options:
   -h, --help            show this help message and exit
 ```
 
-
 ## snakedeploy_Scaffold
 
 ### Tool Description
@@ -421,7 +369,6 @@ usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
 snakedeploy: error: argument subcommand: invalid choice: 'Scaffold' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
 ```
 
-
 ## snakedeploy_dependencies
 
 ### Tool Description
@@ -441,7 +388,6 @@ usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
                    ...
 snakedeploy: error: argument subcommand: invalid choice: 'dependencies' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
 ```
-
 
 ## Metadata
 - **Skill**: generated

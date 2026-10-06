@@ -1,38 +1,5 @@
 # parasail CWL Generation Report
 
-## parasail
-
-### Tool Description
-FAIL to generate CWL: parasail not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parasail:2.6.2--h5ca1c30_1
-- **Homepage**: https://github.com/jeffdaily/parasail
-- **Package**: https://anaconda.org/channels/bioconda/packages/parasail/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/parasail/overview
-- **Total Downloads**: 3.0K
-- **Last updated**: 2025-05-10
-- **GitHub**: https://github.com/jeffdaily/parasail
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: parasail not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: parasail not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

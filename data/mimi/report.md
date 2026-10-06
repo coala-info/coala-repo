@@ -1,43 +1,5 @@
 # mimi CWL Generation Report
 
-## mimi_mimi_kegg_extract
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mimi:1.0.4--pyhdfd78af_0
-- **Homepage**: https://github.com/NYUAD-Core-Bioinformatics/MIMI
-- **Package**: https://anaconda.org/channels/bioconda/packages/mimi/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/mimi/overview
-- **Total Downloads**: 355
-- **Last updated**: 2025-10-20
-- **GitHub**: https://github.com/NYUAD-Core-Bioinformatics/MIMI
-- **Stars**: N/A
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/mimi_kegg_extract", line 6, in <module>
-    from mimi.kegg import main
-  File "/usr/local/lib/python3.14/site-packages/mimi/kegg.py", line 28, in <module>
-    import requests
-ModuleNotFoundError: No module named 'requests'
-```
-
-
 ## mimi_mimi_hmdb_extract
 
 ### Tool Description
@@ -67,7 +29,6 @@ options:
                         Upper bound of molecular weight in Da
   -o, --output OUTPUT   Output TSV file path (default: metabolites.tsv)
 ```
-
 
 ## mimi_mimi_cache_create
 
@@ -99,7 +60,6 @@ options:
   -c, --cache DBBINARY  Binary DB output file (if not specified, will use base
                         name from JSON file)
 ```
-
 
 ## mimi_mimi_mass_analysis
 
@@ -133,7 +93,6 @@ options:
                         Input sample file
   -o, --output OUTPUT   Output file
 ```
-
 
 ## Metadata
 - **Skill**: generated

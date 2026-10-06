@@ -55,36 +55,6 @@ optional arguments:
   -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
 ```
 
-
-## peakachu_experiment
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/peakachu:0.2.0--py38h0020b31_4
-- **Homepage**: https://github.com/tbischler/PEAKachu
-- **Package**: https://anaconda.org/channels/bioconda/packages/peakachu/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: peakachu [-h] [--version] {window,adaptive,coverage,consensus_peak} ...
-peakachu: error: invalid choice: 'experiment' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
-```
-
-
 ## peakachu_adaptive
 
 ### Tool Description
@@ -146,65 +116,6 @@ optional arguments:
   -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
 ```
 
-
-## peakachu_based
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/peakachu:0.2.0--py38h0020b31_4
-- **Homepage**: https://github.com/tbischler/PEAKachu
-- **Package**: https://anaconda.org/channels/bioconda/packages/peakachu/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: peakachu [-h] [--version] {window,adaptive,coverage,consensus_peak} ...
-peakachu: error: invalid choice: 'based' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
-```
-
-
-## peakachu_comparison
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/peakachu:0.2.0--py38h0020b31_4
-- **Homepage**: https://github.com/tbischler/PEAKachu
-- **Package**: https://anaconda.org/channels/bioconda/packages/peakachu/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: peakachu [-h] [--version] {window,adaptive,coverage,consensus_peak} ...
-peakachu: error: invalid choice: 'comparison' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
-```
-
-
 ## peakachu_coverage
 
 ### Tool Description
@@ -227,36 +138,6 @@ optional arguments:
   -h, --help            show this help message and exit
   -p MAX_PROC, --max_proc MAX_PROC
 ```
-
-
-## peakachu_for
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/peakachu:0.2.0--py38h0020b31_4
-- **Homepage**: https://github.com/tbischler/PEAKachu
-- **Package**: https://anaconda.org/channels/bioconda/packages/peakachu/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: peakachu [-h] [--version] {window,adaptive,coverage,consensus_peak} ...
-peakachu: error: invalid choice: 'for' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
-```
-
 
 ## peakachu_consensus_peak
 
@@ -283,7 +164,6 @@ optional arguments:
                         consensus peaks
 ```
 
-
 ## peakachu
 ### Tool Description
 peakachu: error: invalid choice: 'on' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
@@ -299,7 +179,6 @@ peakachu: error: invalid choice: 'on' (choose from 'window', 'adaptive', 'covera
 usage: peakachu [-h] [--version] {window,adaptive,coverage,consensus_peak} ...
 peakachu: error: invalid choice: 'on' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
 ```
-
 
 ## Metadata
 - **Skill**: not generated

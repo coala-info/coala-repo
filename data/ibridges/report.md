@@ -38,44 +38,6 @@ Examples:
 > ibridges ls irods:some_collection
 ```
 
-
-## ibridges_pwd
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/iBridges-for-iRODS/iBridges
-- **Package**: https://anaconda.org/channels/bioconda/packages/ibridges/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: ibridges pwd [-h]
-
-Show current working collection.
-
-options:
-  -h, --help  show this help message and exit
-
-Examples:
-
-> ibridges pwd
-```
-
-
 ## ibridges_tree
 
 ### Tool Description
@@ -109,7 +71,6 @@ Examples:
 > ibridges tree irods:some_collection
 ```
 
-
 ## ibridges_meta-list
 
 ### Tool Description
@@ -138,7 +99,6 @@ Examples:
 > ibridges meta-list 
 > ibridges meta-list irods:remote_collection
 ```
-
 
 ## ibridges_meta-add
 
@@ -170,7 +130,6 @@ Examples:
 
 > ibridges meta-add irods:some_dataobj_or_collection new_key new_value new_units
 ```
-
 
 ## ibridges_meta-del
 
@@ -208,7 +167,6 @@ Examples:
 > ibridges meta-del irods:some_obj --key some_key --value some_val --units some_units
 ```
 
-
 ## ibridges_mkcoll
 
 ### Tool Description
@@ -236,7 +194,6 @@ Examples:
 
 > ibridges mkcoll irods:~/test
 ```
-
 
 ## ibridges_download
 
@@ -276,7 +233,6 @@ Examples:
 > ibridges download irods:~/some_collection
 ```
 
-
 ## ibridges_upload
 
 ### Tool Description
@@ -315,7 +271,6 @@ Examples:
 > ibridges upload local_file.txt irods:remote_collection
 > ibridges upload local_dir irods:remote_collection
 ```
-
 
 ## ibridges_search
 
@@ -361,7 +316,6 @@ Examples:
 > ibridges search irods:some_collection --item_type collection
 ```
 
-
 ## ibridges_cd
 
 ### Tool Description
@@ -390,7 +344,6 @@ Examples:
 > ibridges cd 
 > ibridges cd irods:some_collection
 ```
-
 
 ## ibridges_rm
 
@@ -421,7 +374,6 @@ Examples:
 > ibridges rm irods:~/test.txt
 > ibridges rm -r irods:~/test_collection
 ```
-
 
 ## ibridges_sync
 
@@ -459,119 +411,6 @@ Examples:
 > ibridges sync irods:remote_collection local_dir
 ```
 
-
-## ibridges_gui
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/iBridges-for-iRODS/iBridges
-- **Package**: https://anaconda.org/channels/bioconda/packages/ibridges/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: ibridges gui [-h]
-
-Start the iBridges GUI.
-
-options:
-  -h, --help  show this help message and exit
-
-Examples:
-
-> ibridges gui
-```
-
-
-## ibridges_version
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/iBridges-for-iRODS/iBridges
-- **Package**: https://anaconda.org/channels/bioconda/packages/ibridges/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-usage: ibridges version [-h]
-
-Print the version of iBridges.
-
-options:
-  -h, --help  show this help message and exit
-
-Examples:
-
-> ibridges version
-```
-
-
-## ibridges_shell
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/iBridges-for-iRODS/iBridges
-- **Package**: https://anaconda.org/channels/bioconda/packages/ibridges/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.14/site-packages/ibridges/cli/other.py", line 37, in run_command
-    IBridgesShell().cmdloop()
-    ~~~~~~~~~~~~~^^
-  File "/usr/local/lib/python3.14/site-packages/ibridges/cli/shell.py", line 58, in __init__
-    self.session = cli_authenticate(None)
-                   ~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/local/lib/python3.14/site-packages/ibridges/cli/util.py", line 20, in cli_authenticate
-    parser.error(f"Error: Irods environment file or alias '{ienv_path}' does not exist.")
-    ^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'error'
-```
-
-
 ## ibridges_alias
 
 ### Tool Description
@@ -602,7 +441,6 @@ Examples:
 > ibridges alias some_alias ~/.irods/irods_environment.json
 > ibridges alias other_alias --delete
 ```
-
 
 ## ibridges_init
 
@@ -635,7 +473,6 @@ Examples:
 > ibridges init some_alias
 ```
 
-
 ## ibridges_setup
 
 ### Tool Description
@@ -666,7 +503,6 @@ Examples:
 
 > ibridges setup some-servername -o ~/.irods/some_server.json
 ```
-
 
 ## Metadata
 - **Skill**: generated

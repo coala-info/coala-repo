@@ -6,39 +6,6 @@
 |---|---|---|
 | apollo_arrow | Not completed | arrow is a client for a running Apollo annotation web server, which is not available in this test; group options moved before the subcommand. |
 
-## apollo
-
-### Tool Description
-FAIL to generate CWL: apollo not found in Singularity image. The image may not provide this executable.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/apollo:4.2.13--pyh5e36f6f_0
-- **Homepage**: https://github.com/galaxy-genome-annotation/python-apollo
-- **Package**: https://anaconda.org/channels/bioconda/packages/apollo/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/apollo/overview
-- **Total Downloads**: 42.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/galaxy-genome-annotation/python-apollo
-- **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: apollo not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: apollo not found in Singularity image. The image may not provide this executable.
-
-
-
-### Original Help Text
-```text
-
-```
-
-
 ## Metadata
 - **Skill**: generated
 

@@ -82,7 +82,6 @@ Options:
           Print help (see a summary with '-h')
 ```
 
-
 ## sfs_fold
 
 ### Tool Description
@@ -143,7 +142,6 @@ Options:
   -h, --help
           Print help (see a summary with '-h')
 ```
-
 
 ## sfs_stat
 
@@ -218,7 +216,6 @@ Options:
   -h, --help
           Print help (see a summary with '-h')
 ```
-
 
 ## sfs_view
 
@@ -306,7 +303,6 @@ Options:
           Print help (see a summary with '-h')
 ```
 
-
 ## sfs_Suppress
 
 ### Tool Description
@@ -327,49 +323,6 @@ Usage: sfs [OPTIONS] <COMMAND>
 For more information, try '--help'.
 ```
 
-
-## sfs_By
-
-### Tool Description
-Command-line tool for sfs operations.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0
-- **Homepage**: https://github.com/malthesr/sfs
-- **Package**: https://anaconda.org/channels/bioconda/packages/sfs/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'By'
-
-Usage: sfs [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
-## sfs_Log
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0
-- **Homepage**: https://github.com/malthesr/sfs
-- **Package**: https://anaconda.org/channels/bioconda/packages/sfs/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Log'
-
-Usage: sfs [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-
 ## sfs_Set
 
 ### Tool Description
@@ -389,28 +342,6 @@ Usage: sfs [OPTIONS] <COMMAND>
 
 For more information, try '--help'.
 ```
-
-
-## sfs_Print
-
-### Tool Description
-Command-line tool for sequence similarity analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0
-- **Homepage**: https://github.com/malthesr/sfs
-- **Package**: https://anaconda.org/channels/bioconda/packages/sfs/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Print'
-
-Usage: sfs [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
 
 ## Metadata
 - **Skill**: generated

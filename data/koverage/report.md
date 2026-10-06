@@ -81,7 +81,6 @@ Options:
       print_targets   List available targets.
 ```
 
-
 ## koverage_test
 
 ### Tool Description
@@ -1170,7 +1169,6 @@ ENVIRONMENT MODULES:
 defaults.
 ```
 
-
 ## koverage_config
 
 ### Tool Description
@@ -1224,48 +1222,6 @@ Options:
                                   (outputDir)/koverage.profile/]
   -h, --help                      Show this message and exit.
 ```
-
-
-## koverage_citation
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/koverage:0.1.11--pyhdfd78af_0
-- **Homepage**: https://github.com/beardymcjohnface/Koverage
-- **Package**: https://anaconda.org/channels/bioconda/packages/koverage/overview
-- **Validation**: FAIL (generation failed)
-
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-
-### Validation Errors
-
-- No inputs — do not generate CWL.
-
-
-
-### Original Help Text
-```text
-
-██╗  ██╗ ██████╗ ██╗   ██╗███████╗██████╗  █████╗  ██████╗ ███████╗
-██║ ██╔╝██╔═══██╗██║   ██║██╔════╝██╔══██╗██╔══██╗██╔════╝ ██╔════╝
-█████╔╝ ██║   ██║██║   ██║█████╗  ██████╔╝███████║██║  ███╗█████╗  
-██╔═██╗ ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══██║██║   ██║██╔══╝  
-██║  ██╗╚██████╔╝ ╚████╔╝ ███████╗██║  ██║██║  ██║╚██████╔╝███████╗
-╚═╝  ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
-
-Usage: koverage citation [OPTIONS]
-
-  Print the citation(s) for this tool
-
-Options:
-  -h, --help  Show this message and exit.
-```
-
 
 ## Metadata
 - **Skill**: generated

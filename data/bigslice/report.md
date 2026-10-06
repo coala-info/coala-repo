@@ -100,30 +100,6 @@ positional arguments:
 _
 ```
 
-
 ## Metadata
 - **Skill**: generated
-
-## bigslice_download_bigslice_hmmdb
-
-### Tool Description
-No inputs — do not generate CWL.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bigslice:2.0.2--pyh8ed023e_0
-- **Homepage**: https://github.com/satriaphd/bigslice
-- **Package**: https://anaconda.org/channels/bioconda/packages/bigslice/overview
-- **Validation**: FAIL (generation failed)
-### Generation Failed
-
-No inputs — do not generate CWL.
-
-### Validation Errors
-- No inputs — do not generate CWL.
-
-### Original Help Text
-```text
-2026-02-25 06:39:01,924 - __main__ - INFO - Downloading bigslice_models.tar.gz...
-2026-02-25 06:39:01,925 - __main__ - ERROR - An error occurred while downloading bigslice_models.tar.gz: unknown url type: '-help'
-```
 

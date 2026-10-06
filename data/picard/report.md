@@ -1,12 +1,5 @@
 # picard CWL Generation Report
 
-## Runtime validation summary
-
-| Tool | Runtime | Data used | Reason (if fail) |
-|------|---------|-----------|------------------|
-| picard_MarkDuplicates | PASS | plan:test.bam | — |
-
-
 ## picard_CheckIlluminaDirectory
 
 ### Tool Description
@@ -39,7 +32,6 @@ BASECALLS_DIR=/BaseCalls/  \<br />      READ_STRUCTURE=25T8B25T \<br />      LAN
 </pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --BASECALLS_DIR,-B <File>     The basecalls output directory.   Required. 
@@ -62,7 +54,6 @@ Required Arguments:
                               therein. Note:  If you want to check whether or not a future IlluminaBasecallsToSam or
                               ExtractIlluminaBarcodes run will fail then be sure to use the exact same READ_STRUCTURE
                               that you would pass to these programs for this run.  Required. 
-
 
 Optional Arguments:
 
@@ -134,15 +125,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument BASECALLS_DIR was missing: Argument 'BASECALLS_DIR' is required
 ```
-
 
 ## picard_CollectIlluminaBasecallingMetrics
 
@@ -176,7 +164,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#Illu
 for a complete description of the metrics produced by this tool.  </p><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --BASECALLS_DIR,-B <File>     The Illumina basecalls output directory from which data are read  Required. 
@@ -196,7 +183,6 @@ Required Arguments:
                               * read four with 28 cycles (bases) of template
                               The skipped cycles would NOT be included in an output SAM/BAM file or in read groups
                               therein.  Required. 
-
 
 Optional Arguments:
 
@@ -254,15 +240,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument BASECALLS_DIR was missing: Argument 'BASECALLS_DIR' is required
 ```
-
 
 ## picard_CollectIlluminaLaneMetrics
 
@@ -290,7 +273,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#Coll
 for a complete description of the metrics produced by this tool.</p><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --OUTPUT_DIRECTORY <File>     The directory to which the output file will be written  Required. 
@@ -300,7 +282,6 @@ Required Arguments:
 
 --RUN_DIRECTORY <File>        The Illumina run directory of the run for which the lane metrics are to be generated 
                               Required. 
-
 
 Optional Arguments:
 
@@ -370,15 +351,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument RUN_DIRECTORY was missing: Argument 'RUN_DIRECTORY' is required
 ```
-
 
 ## picard_ExtractIlluminaBarcodes
 
@@ -423,7 +401,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#Extr
 for a complete description of the metrics produced by this tool.</p><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --BARCODE <String>            Barcode sequence.  These must be unique, and all the same length.  This cannot be used
@@ -456,7 +433,6 @@ Required Arguments:
                               * read four with 28 cycles (bases) of template
                               The skipped cycles would NOT be included in an output SAM/BAM file or in read groups
                               therein.  Required. 
-
 
 Optional Arguments:
 
@@ -556,15 +532,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument BARCODE_FILE was missing: Argument 'BARCODE_FILE' is required unless one of {[BARCODE]} are provided
 ```
-
 
 ## picard_IlluminaBasecallsToFastq
 
@@ -607,7 +580,6 @@ RUN_BARCODE=run15 \<br />      FLOWCELL_BARCODE=abcdeACXX <br /></pre><p>The FLO
 Casava 1.8-style read name headers.</p><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --BASECALLS_DIR,-B <File>     The Illumina basecalls directory.   Required. 
@@ -642,7 +614,6 @@ Required Arguments:
                               therein.  Required. 
 
 --RUN_BARCODE <String>        The barcode of the run.  Prefixed to read names.  Required. 
-
 
 Optional Arguments:
 
@@ -803,15 +774,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument OUTPUT_PREFIX was missing: Argument 'OUTPUT_PREFIX' is required unless one of {[MULTIPLEX_PARAMS]} are provided
 ```
-
 
 ## picard_IlluminaBasecallsToSam
 
@@ -848,7 +816,6 @@ IlluminaBasecallsToSam \<br />      BASECALLS_DIR=/BaseCalls/ \<br />      LANE=
 \<br />      RUN_BARCODE=run15 \<br />      IGNORE_UNEXPECTED_BARCODES=true \<br />      LIBRARY_PARAMS=library.params
 </pre><hr />
 Version:3.4.0
-
 
 Required Arguments:
 
@@ -899,7 +866,6 @@ Required Arguments:
 
 --SEQUENCING_CENTER <String>  The name of the sequencing center that produced the reads.  Used to set the @RG->CN header
                               tag.  Required. 
-
 
 Optional Arguments:
 
@@ -1083,15 +1049,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument OUTPUT was missing: Argument 'OUTPUT' is required unless one of {[BARCODE_PARAMS, LIBRARY_PARAMS]} are provided
 ```
-
 
 ## picard_MarkIlluminaAdapters
 
@@ -1116,13 +1079,11 @@ example:</h4><pre>java -jar picard.jar MarkIlluminaAdapters \<br /> INPUT=input.
 />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Undocumented option  Required. 
 
 --METRICS,-M <File>           Histogram showing counts of bases_clipped in how many reads  Required. 
-
 
 Optional Arguments:
 
@@ -1214,15 +1175,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_AccumulateQualityYieldMetrics
 
@@ -1244,14 +1202,12 @@ Combines multiple QualityYieldMetrics files into a single file. This tool is use
 calculated separately on shards of the same read-group.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input QualityYieldMetrics files to merge.  This argument must be specified at least once.
                               Required. 
 
 --OUTPUT,-O <File>            Output QualityYieldMetric file to write.  Required. 
-
 
 Optional Arguments:
 
@@ -1302,15 +1258,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_AccumulateVariantCallingMetrics
 
@@ -1334,14 +1287,12 @@ result over the entire callset. The shards are expected to contain the same samp
 do not) and to not have been run over overlapping genomic positions.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    Paths (except for the file extensions) of Variant Calling Metrics files to read and merge.
                               This argument must be specified at least once. Required. 
 
 --OUTPUT,-O <File>            Path (except for the file extension) of output metrics files to write.  Required. 
-
 
 Optional Arguments:
 
@@ -1392,15 +1343,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_BamIndexStats
 
@@ -1425,11 +1373,9 @@ corresponding index file.<br /><h4>Usage example:</h4><pre>java -jar picard.jar 
 \<br />      O=output</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             A BAM file to process.  Required. 
-
 
 Optional Arguments:
 
@@ -1480,15 +1426,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CalculateFingerprintMetrics
 
@@ -1522,7 +1465,6 @@ OUTPUT=sample.fingerprint_metrics
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --HAPLOTYPE_MAP,-H <File>     The file lists a set of SNPs, optionally arranged in high-LD blocks, to be used for
@@ -1534,7 +1476,6 @@ Required Arguments:
                               once. Required. 
 
 --OUTPUT,-O <File>            The output file to write (Metrics).  Required. 
-
 
 Optional Arguments:
 
@@ -1596,15 +1537,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CalculateReadGroupChecksum
 
@@ -1630,11 +1568,9 @@ AddOrReplaceReadGroups tool documentation for information regarding the addition
 groups.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The input SAM or BAM file.   Required. 
-
 
 Optional Arguments:
 
@@ -1687,15 +1623,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CheckDuplicateMarking
 
@@ -1718,11 +1651,9 @@ tool does NOT check that the duplicate marking is correct. The ONLY thing that i
 records with the same queryname are equal.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input BAM or SAM file to check.  Required. 
-
 
 Optional Arguments:
 
@@ -1781,15 +1712,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CheckFingerprint
 
@@ -1841,7 +1769,6 @@ When provided a VCF, the identity check looks at the PL, GL and GT fields (in th
 finds. 
 Version:3.4.0
 
-
 Required Arguments:
 
 --DETAIL_OUTPUT,-D <File>     The text file to which to write detail metrics.  Required.  Cannot be used in conjunction
@@ -1867,7 +1794,6 @@ Required Arguments:
 
 --SUMMARY_OUTPUT,-S <File>    The text file to which to write summary metrics.  Required.  Cannot be used in conjunction
                               with argument(s) OUTPUT (O)
-
 
 Optional Arguments:
 
@@ -1944,15 +1870,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CheckTerminatorBlock
 
@@ -1973,11 +1896,9 @@ USAGE: CheckTerminatorBlock [arguments]
 Asserts the provided gzip file's (e.g., BAM) last block is well-formed; RC 100 otherwise
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The block compressed file to check.  Required. 
-
 
 Optional Arguments:
 
@@ -2028,15 +1949,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_ClusterCrosscheckMetrics
 
@@ -2082,11 +2000,9 @@ itself!) will not be included in the metric file. Note that cross-group comparis
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The cross-check metrics file to be clustered.  Required. 
-
 
 Optional Arguments:
 
@@ -2141,15 +2057,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectAlignmentSummaryMetrics
 
@@ -2178,13 +2091,11 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#Alig
 a complete description of the metrics produced by this tool.</p><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -2275,15 +2186,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectArraysVariantCallingMetrics
 
@@ -2306,7 +2214,6 @@ and per-sample metrics. <h4>Usage example:</h4><pre>java -jar picard.jar Collect
 INPUT=genotyping_arrays.vcf \<br />      OUTPUT=outputBaseName</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --DBSNP <File>                Reference dbSNP file in dbSNP or VCF format.  Required. 
@@ -2314,7 +2221,6 @@ Required Arguments:
 --INPUT,-I <File>             Input vcf file for analysis  Required. 
 
 --OUTPUT,-O <File>            Path (except for the file extension) of output metrics files to write.  Required. 
-
 
 Optional Arguments:
 
@@ -2378,15 +2284,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectBaseDistributionByCycle
 
@@ -2424,7 +2327,6 @@ CollectBaseDistributionByCycle \<br />      CHART=collect_base_dist_by_cycle.pdf
 O=output.txt</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHART_OUTPUT,-CHART <File>  A file (with .pdf extension) to write the chart to.  Required. 
@@ -2432,7 +2334,6 @@ Required Arguments:
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -2495,15 +2396,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument CHART_OUTPUT was missing: Argument 'CHART_OUTPUT' is required
 ```
-
 
 ## picard_CollectGcBiasMetrics
 
@@ -2555,7 +2453,6 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#GcB
 documentation</a> for further explanations of each metric.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHART_OUTPUT,-CHART <File>  The PDF file to render the chart to.  Required. 
@@ -2565,7 +2462,6 @@ Required Arguments:
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
 
 --SUMMARY_OUTPUT,-S <File>    The text file to write summary metrics to.  Required. 
-
 
 Optional Arguments:
 
@@ -2643,15 +2539,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument CHART_OUTPUT was missing: Argument 'CHART_OUTPUT' is required
 ```
-
 
 ## picard_CollectHiSeqXPfFailMetrics
 
@@ -2698,7 +2591,6 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Col
 metrics for comprehensive explanations of the outputs produced by this tool.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --BASECALLS_DIR,-B <File>     The Illumina basecalls directory.   Required. 
@@ -2707,7 +2599,6 @@ Required Arguments:
 
 --OUTPUT,-O <File>            Basename for metrics file. Resulting file will be <OUTPUT>.pffail_summary_metrics 
                               Required. 
-
 
 Optional Arguments:
 
@@ -2773,15 +2664,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument BASECALLS_DIR was missing: Argument 'BASECALLS_DIR' is required
 ```
-
 
 ## picard_CollectHsMetrics
 
@@ -2822,7 +2710,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#HsMe
 descriptions of the output metrics produced by this tool.</p><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --BAIT_INTERVALS,-BI <File>   An interval list file that contains the locations of the baits used.  This argument must
@@ -2834,7 +2721,6 @@ Required Arguments:
 
 --TARGET_INTERVALS,-TI <File> An interval list file that contains the locations of the targets.  This argument must be
                               specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -2930,15 +2816,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument BAIT_INTERVALS was missing: Argument 'BAIT_INTERVALS' is required
 ```
-
 
 ## picard_CollectIndependentReplicateMetrics
 
@@ -2954,7 +2837,6 @@ Estimates the rate of independent replication rate of reads within a bam. This t
 ### Original Help Text
 ```text
 /usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-
 
 **EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK**
 
@@ -2973,7 +2855,6 @@ O=output.independent_replicates_metrics \
 </pre> 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input (indexed) BAM/CRAM file.  Required. 
@@ -2981,7 +2862,6 @@ Required Arguments:
 --OUTPUT,-O <File>            Write metrics to this file  Required. 
 
 --VCF,-V <File>               Input VCF file  Required. 
-
 
 Optional Arguments:
 
@@ -3062,15 +2942,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectInsertSizeMetrics
 
@@ -3104,7 +2981,6 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Ins
 for detailed explanations of each metric.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --Histogram_FILE,-H <File>    File to write insert size Histogram chart to.  Required. 
@@ -3112,7 +2988,6 @@ Required Arguments:
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -3193,15 +3068,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument Histogram_FILE was missing: Argument 'Histogram_FILE' is required
 ```
-
 
 ## picard_CollectJumpingLibraryMetrics
 
@@ -3231,14 +3103,12 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Jum
 for detailed explanations of the output metrics.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             BAM file(s) of reads with duplicates marked  This argument must be specified at least
                               once. Required. 
 
 --OUTPUT,-O <File>            File to which metrics should be written  Required. 
-
 
 Optional Arguments:
 
@@ -3298,15 +3168,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectMultipleMetrics
 
@@ -3336,13 +3203,11 @@ I=input.bam \<br />      O=multiple_metrics \<br />      R=reference_sequence.fa
 PROGRAM=QualityScoreDistribution \<br />      PROGRAM=MeanQualityByCycle </pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM or BAM file.  Required. 
 
 --OUTPUT,-O <String>          Base name of output files.  Required. 
-
 
 Optional Arguments:
 
@@ -3468,15 +3333,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectOxoGMetrics
 
@@ -3507,7 +3369,6 @@ example:</h4><pre>java -jar picard.jar CollectOxoGMetrics \<br />      I=input.b
 />      R=reference_sequence.fasta</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file for analysis.  Required. 
@@ -3516,7 +3377,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -3601,15 +3461,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectQualityYieldMetrics
 
@@ -3642,13 +3499,11 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Col
 QualityYieldMetrics documentation</a> for details and explanations of the output metrics.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -3721,15 +3576,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectQualityYieldMetricsFlow
 
@@ -3746,7 +3598,6 @@ Collect metrics about reads that pass quality thresholds from flow based read fi
 ```text
 /usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
 
-
 **EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK**
 
 USAGE: CollectQualityYieldMetricsFlow [arguments]
@@ -3757,13 +3608,11 @@ read group that pass a minimum base quality score threshold <h4>Usage Example:</
 CollectQualityYieldMetricsFlow \<br />       I=input.bam \<br />       O=quality_yield_metrics.txt \<br /></pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -3833,7 +3682,6 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --flow-fill-empty-bins-value <Double>
@@ -3844,10 +3692,8 @@ Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectQualityYieldMetricsSNVQ
 
@@ -3876,13 +3722,11 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Col
 QualityYieldMetrics documentation</a> for details and explanations of the output metrics.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -3955,15 +3799,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectRawWgsMetrics
 
@@ -4000,7 +3841,6 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Col
 WgsMetrics documentation</a> for detailed explanations of the output metrics.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
@@ -4009,7 +3849,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -4102,15 +3941,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectRnaSeqMetrics
 
@@ -4156,7 +3992,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#RnaS
 complete description of the metrics produced by this tool.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
@@ -4170,7 +4005,6 @@ Required Arguments:
                               For strand-specific library prep. For unpaired reads, use FIRST_READ_TRANSCRIPTION_STRAND
                               if the reads are expected to be on the transcription strand.  Required. Possible values:
                               {NONE, FIRST_READ_TRANSCRIPTION_STRAND, SECOND_READ_TRANSCRIPTION_STRAND} 
-
 
 Optional Arguments:
 
@@ -4253,15 +4087,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument REF_FLAT was missing: Argument 'REF_FLAT' is required
 ```
-
 
 ## picard_CollectRrbsMetrics
 
@@ -4300,7 +4131,6 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Rrb
 complete description of both the detail and summary metrics produced by this tool.</p><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The SAM/BAM/CRAM file containing aligned reads. Must be coordinate sorted  Required. 
@@ -4309,7 +4139,6 @@ Required Arguments:
                               Base name for output files  Required. 
 
 --REFERENCE,-R <File>         The reference sequence fasta file  Required. 
-
 
 Optional Arguments:
 
@@ -4381,15 +4210,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectSamErrorMetrics
 
@@ -4426,9 +4252,7 @@ interval where the user is relatively certain that the polymorphic sites are kno
 provided as a VCF and INTERVALS. The program will only process sites that are in the intersection of the interval lists
 in the INTERVALS argument as long as they are not polymorphic in the VCF.
 
-
 Version:3.4.0
-
 
 Required Arguments:
 
@@ -4443,7 +4267,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -4604,15 +4427,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectSequencingArtifactMetrics
 
@@ -4659,7 +4479,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#Sequ
 for complete descriptions of the output metrics produced by this tool. <hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
@@ -4668,7 +4487,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -4770,15 +4588,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectTargetedPcrMetrics
 
@@ -4812,7 +4627,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#Targ
 for detailed explanations of the output metrics produced by this tool.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --AMPLICON_INTERVALS,-AI <File>
@@ -4824,7 +4638,6 @@ Required Arguments:
 
 --TARGET_INTERVALS,-TI <File> An interval list file that contains the locations of the targets.  This argument must be
                               specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -4921,15 +4734,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument AMPLICON_INTERVALS was missing: Argument 'AMPLICON_INTERVALS' is required
 ```
-
 
 ## picard_CollectUmiPrevalenceMetrics
 
@@ -4946,7 +4756,6 @@ Tally the counts of UMIs in duplicate sets within a bam. This tool collects the 
 ```text
 /usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
 
-
 **EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK**
 
 USAGE: CollectUmiPrevalenceMetrics [arguments]
@@ -4957,13 +4766,11 @@ this distribution can help understand the role that the UMIs have in the determi
 UMI collisions, and of spurious reads that result from uncorrected UMIs.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    Input (indexed) BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            Write metrics to this file  Required. 
-
 
 Optional Arguments:
 
@@ -5032,15 +4839,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectVariantCallingMetrics
 
@@ -5061,7 +4865,6 @@ USAGE: CollectVariantCallingMetrics [arguments]
 Collects per-sample and aggregate (spanning all samples) metrics from the provided VCF file.
 Version:3.4.0
 
-
 Required Arguments:
 
 --DBSNP <PicardHtsPath>       Reference dbSNP file in dbSNP or VCF format.  Required. 
@@ -5069,7 +4872,6 @@ Required Arguments:
 --INPUT,-I <PicardHtsPath>    Input vcf file for analysis  Required. 
 
 --OUTPUT,-O <File>            Path (except for the file extension) of output metrics files to write.  Required. 
-
 
 Optional Arguments:
 
@@ -5132,15 +4934,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectWgsMetrics
 
@@ -5168,7 +4967,6 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Col
 for detailed explanations of the output metrics.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
@@ -5177,7 +4975,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -5270,15 +5067,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectWgsMetricsWithNonZeroCoverage
 
@@ -5295,7 +5089,6 @@ Collect metrics about coverage and performance of whole genome sequencing (WGS) 
 ```text
 /usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
 
-
 **EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK**
 
 USAGE: CollectWgsMetricsWithNonZeroCoverage [arguments]
@@ -5311,7 +5104,6 @@ href='https://broadinstitute.github.io/picard/picard-metric-definitions.html#Col
 documentation for detailed explanations of the output metrics.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHART_OUTPUT,-CHART <File>  A file (with .pdf extension) to write the chart to.  Required. 
@@ -5322,7 +5114,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -5415,15 +5206,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument CHART_OUTPUT was missing: Argument 'CHART_OUTPUT' is required
 ```
-
 
 ## picard_CompareMetrics
 
@@ -5449,11 +5237,9 @@ INPUT=metricfile2.txt \<br />      METRICS_TO_IGNORE=INSERT_LENGTH \<br />
 METRIC_ALLOWABLE_RELATIVE_CHANGE=HET_HOM_RATIO:0.0005 \<br />      IGNORE_HISTOGRAM_DIFFERENCES=false</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Metric files to compare.  This argument must be specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -5536,15 +5322,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CompareSAMs
 
@@ -5577,13 +5360,11 @@ file_1.bam \<br />      file_2.bam \<br />      LENIENT_LOW_MQ_ALIGNMENT=true \<
 LENIENT_HEADER=true \<br />      O=comparison.tsv<hr />
 Version:3.4.0
 
-
 Positional Arguments:
 
 --POSITIONAL (must be first) <File>
                               Exactly two input SAM/BAM/CRAM files to compare to one another.  This argument must be
                               specified at least once. 
-
 
 Optional Arguments:
 
@@ -5667,15 +5448,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument Positional Argument was missing: At least 2 positional arguments must be specified.
 ```
-
 
 ## picard_ConvertHaplotypeDatabaseToVcf
 
@@ -5699,7 +5477,6 @@ Convert Haplotype database file to vcf<h3>Examples</h3><pre>java -jar picard.jar
 -R reference.fasta</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Haplotype database to be converted to VCF.  Required. 
@@ -5708,7 +5485,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -5756,15 +5532,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_ConvertSequencingArtifactToOxoG
 
@@ -5870,7 +5643,6 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
@@ -5879,7 +5651,6 @@ Must specify either INPUT_BASE or PRE_ADAPTER_IN
 Must specify either INPUT_BASE or BAIT_BIAS_IN
 Must specify either OUTPUT_BASE or OXOG_OUT
 ```
-
 
 ## picard_CrosscheckFingerprints
 
@@ -5962,7 +5733,6 @@ mean coverage).<br /><br />When provided a VCF, the identity check looks at the 
 uses the first one that it finds. 
 Version:3.4.0
 
-
 Required Arguments:
 
 --HAPLOTYPE_MAP,-H <File>     The file lists a set of SNPs, optionally arranged in high-LD blocks, to be used for
@@ -5972,7 +5742,6 @@ Required Arguments:
 
 --INPUT,-I <String>           One or more input files (or lists of files) with which to compare fingerprints.  This
                               argument must be specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -6168,15 +5937,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_EstimateLibraryComplexity
 
@@ -6216,14 +5982,12 @@ see the documentation for the companion <a
 href='https://broadinstitute.github.io/picard/command-line-overview.html#MarkDuplicates'>MarkDuplicates</a> tool.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             One or more files to combine and estimate library complexity from. Reads can be mapped or
                               unmapped.  This argument must be specified at least once. Required. 
 
 --OUTPUT,-O <File>            Output file to writes per-library metrics to.  Required. 
-
 
 Optional Arguments:
 
@@ -6339,15 +6103,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_ExtractFingerprint
 
@@ -6369,7 +6130,6 @@ Computes/Extracts the fingerprint genotype likelihoods from the supplied file.It
 fingerprinting sites.
 Version:3.4.0
 
-
 Required Arguments:
 
 --HAPLOTYPE_MAP,-H <File>     A file of haplotype information. The file lists a set of SNPs, optionally arranged in
@@ -6383,7 +6143,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -6449,7 +6208,6 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --EXTRACT_NON_REPRESENTATIVES_TOO <Boolean>
@@ -6458,10 +6216,8 @@ Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_IdentifyContaminant
 
@@ -6484,7 +6240,6 @@ fingerprint is provided for the contamination (by default) for the main sample. 
 fingerprinting sites.
 Version:3.4.0
 
-
 Required Arguments:
 
 --HAPLOTYPE_MAP,-H <File>     A file of haplotype information. The file lists a set of SNPs, optionally arranged in
@@ -6498,7 +6253,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -6560,15 +6314,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_LiftOverHaplotypeMap
 
@@ -6590,7 +6341,6 @@ Lifts over a haplotype database from one reference to another. Based on UCSC lif
 Uses a UCSC chain file to guide the liftOver.
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHAIN <File>                Chain file that guides LiftOver. (UCSC format)  Required. 
@@ -6602,7 +6352,6 @@ Required Arguments:
 --SEQUENCE_DICTIONARY,-SD <File>
                               Sequence dictionary to write into the output haplotype database. (Any file from which a
                               dictionary is extractable.)  Required. 
-
 
 Optional Arguments:
 
@@ -6653,15 +6402,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_MeanQualityByCycle
 
@@ -6689,7 +6435,6 @@ picard.jar MeanQualityByCycle \<br />      I=input.bam \<br />      O=mean_qual_
 CHART=mean_qual_by_cycle.pdf</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHART_OUTPUT,-CHART <File>  A file (with .pdf extension) to write the chart to.  Required. 
@@ -6697,7 +6442,6 @@ Required Arguments:
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -6759,15 +6503,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument CHART_OUTPUT was missing: Argument 'CHART_OUTPUT' is required
 ```
-
 
 ## picard_QualityScoreDistribution
 
@@ -6798,7 +6539,6 @@ QualityScoreDistribution \<br />      I=input.bam \<br />      O=qual_score_dist
 CHART=qual_score_dist.pdf</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHART_OUTPUT,-CHART <File>  A file (with .pdf extension) to write the chart to.  Required. 
@@ -6806,7 +6546,6 @@ Required Arguments:
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --OUTPUT,-O <File>            The file to write the output to.  Required. 
-
 
 Optional Arguments:
 
@@ -6871,15 +6610,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument CHART_OUTPUT was missing: Argument 'CHART_OUTPUT' is required
 ```
-
 
 ## picard_ValidateSamFile
 
@@ -6918,11 +6654,9 @@ depend on the errors/warnings discovered:<p>-1 failed to complete execution
 3  errors but no warnings
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    Input SAM/BAM/CRAM file  Required. 
-
 
 Optional Arguments:
 
@@ -7037,15 +6771,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_ViewSam
 
@@ -7071,7 +6802,6 @@ RECORDS_ONLY.However, HEADER_ONLY and RECORDS_ONLY cannot both be specified at o
 </h4><pre>java -jar picard.jar ViewSam  <br />      I=sample.bam  <br />      HEADER_ONLY=true</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --ALIGNMENT_STATUS <AlignmentStatus>
@@ -7082,7 +6812,6 @@ Required Arguments:
 
 --PF_STATUS <PfStatus>        Print out all reads, just the PF reads or just the non-PF reads.  Required. Possible
                               values: {PF, NonPF, All} 
-
 
 Optional Arguments:
 
@@ -7139,15 +6868,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_BpmToNormalizationManifestCsv
 
@@ -7172,7 +6898,6 @@ zCall (https://github.com/jigold/zCall).<h4>Usage example:</h4><pre>java -jar pi
 \<br />      INPUT=input.bpm \<br />      CLUSTER_FILE=input.egt \<br />      OUTPUT=output.bpm.csv</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --CLUSTER_FILE,-CF <File>     An Illumina cluster file (egt)  Required. 
@@ -7180,7 +6905,6 @@ Required Arguments:
 --INPUT,-I <File>             The Illumina Bead Pool Manifest (.bpm) file  Required. 
 
 --OUTPUT,-O <File>            The output (bpm.csv) file to write.  Required. 
-
 
 Optional Arguments:
 
@@ -7231,15 +6955,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CombineGenotypingArrayVcfs
 
@@ -7263,13 +6984,11 @@ sample Ids. <h4>Usage example:</h4><pre>java -jar picard.jar CombineGenotypingAr
 \<br />      INPUT=input2.vcf \<br />      OUTPUT=output.vcf</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input VCF file(s).  This argument must be specified at least once. Required. 
 
 --OUTPUT,-O <File>            Output VCF file.  Required. 
-
 
 Optional Arguments:
 
@@ -7320,15 +7039,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CompareGtcFiles
 
@@ -7352,14 +7068,12 @@ chip type. <h4>Usage example:</h4><pre>java -jar picard.jar CompareGtcFiles \<br
 INPUT=input2.gtc \<br />      BPM_FILE=chip_name.bpm \<br /></pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --ILLUMINA_BEAD_POOL_MANIFEST_FILE,-BPM_FILE <File>
                               The Illumina Bead Pool Manifest (.bpm) file  Required. 
 
 --INPUT,-I <File>             GTC input files to compare.  This argument must be specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -7410,15 +7124,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CreateBafRegressMetricsFile
 
@@ -7443,14 +7154,12 @@ model.<h4>Usage example:</h4><pre>java -jar picard.jar CreateBafRegressMetricsFi
 INPUT=bafRegress.output.txt \<br />      OUTPUT=outputBaseName</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The output of bafRegress (typically captured stdout).  Required. 
 
 --OUTPUT,-O <File>            Basename for the metrics file that will be written. Resulting file will be
                               <OUTPUT>.bafregress_metrics  Required. 
-
 
 Optional Arguments:
 
@@ -7501,15 +7210,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CreateExtendedIlluminaManifest
 
@@ -7546,7 +7252,6 @@ illumina_chip_manifest.report.txt \<br />      --CLUSTER_FILE illumina_chip_mani
 build 37 using the build36ToBuild37 liftover file 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             This is the text version of the Illumina .bpm file  Required. 
@@ -7556,7 +7261,6 @@ Required Arguments:
 --REFERENCE_SEQUENCE,-R <File>The reference sequence (fasta) for the TARGET genome build.  Required. 
 
 --REPORT_FILE,-RF <File>      The name of the the report file  Required. 
-
 
 Optional Arguments:
 
@@ -7643,15 +7347,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CreateVerifyIDIntensityContaminationMetricsFile
 
@@ -7677,14 +7378,12 @@ CreateVerifyIDIntensityContaminationMetricsFile \<br />      INPUT=VerifyIDInten
 OUTPUT=outputBaseName</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The output of VerifyIDIntensity(typically captured stdout).  Required. 
 
 --OUTPUT,-O <File>            Basename for the metrics file that will be written. Resulting file will be
                               <OUTPUT>.verifyidintensity_metrics  Required. 
-
 
 Optional Arguments:
 
@@ -7735,15 +7434,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_GtcToVcf
 
@@ -7771,7 +7467,6 @@ OUTPUT=output.vcf \<br />      EXTENDED_ILLUMINA_MANIFEST=chip_name.extended.csv
 \<br />      ILLUMINA_BEAD_POOL_MANIFEST_FILE=chip_name.bpm \<br />      SAMPLE_ALIAS=my_sample_alias \<br /></pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --CLUSTER_FILE,-CF <File>     An Illumina cluster file (egt)  Required. 
@@ -7791,7 +7486,6 @@ Required Arguments:
                               Reference sequence file.  Required. 
 
 --SAMPLE_ALIAS <String>       The sample alias  Required. 
-
 
 Optional Arguments:
 
@@ -7858,15 +7552,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_MergePedIntoVcf
 
@@ -7896,7 +7587,6 @@ picard.jar MergePedIntoVcf \<br />      VCF=input.vcf \<br />      PED=zcall.out
 MAP=zcall.output.map \<br />      ZCALL_T_FILE=zcall.thresholds.7.txt \<br />      OUTPUT=output.vcf <br /></pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --MAP_FILE,-MAP <File>        MAP file for the PED file.  Required. 
@@ -7911,7 +7601,6 @@ Required Arguments:
                               The zcall thresholds file.  Required. 
 
 --ZCALL_VERSION <String>      The version of zcall used  Required. 
-
 
 Optional Arguments:
 
@@ -7962,15 +7651,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument ORIGINAL_VCF was missing: Argument 'ORIGINAL_VCF' is required
 ```
-
 
 ## picard_VcfToAdpc
 
@@ -7998,7 +7684,6 @@ OUTPUT=output.adpc.bin \<br />      SAMPLES_FILE=output.samples.txt \<br />     
 \<br /></pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --NUM_MARKERS_FILE,-NMF <File>A text file into which the number of loci in the VCF will be written. This is useful for
@@ -8011,7 +7696,6 @@ Required Arguments:
 
 --VCF <File>                  One or more VCF files containing array intensity data.  This argument must be specified at
                               least once. Required. 
-
 
 Optional Arguments:
 
@@ -8062,15 +7746,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument VCF was missing: Argument 'VCF' is required
 ```
-
 
 ## picard_BedToIntervalList
 
@@ -8116,7 +7797,6 @@ dictionary</br></pre><h4>Usage example:</h4><pre>java -jar picard.jar BedToInter
 O=list.interval_list \<br />      SD=reference_sequence.dict</pre><br /> <br /> <hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The input BED file  Required. 
@@ -8126,7 +7806,6 @@ Required Arguments:
 --SEQUENCE_DICTIONARY,-SD <File>
                               The sequence dictionary, or BAM/VCF/IntervalList from which a dictionary can be extracted.
                               Required. 
-
 
 Optional Arguments:
 
@@ -8187,15 +7866,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_IntervalListToBed
 
@@ -8216,13 +7892,11 @@ USAGE: IntervalListToBed [arguments]
 Converts an Picard IntervalList file to a BED file.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input IntervalList file.  Required. 
 
 --OUTPUT,-O <File>            Output BED file.  Required. 
-
 
 Optional Arguments:
 
@@ -8279,15 +7953,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_IntervalListTools
 
@@ -8366,14 +8037,12 @@ I=input1.interval_list \
 O=new.interval_list </pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    One or more interval lists. If multiple interval lists are provided the output is
                               theresult of merging the inputs. Supported formats are interval_list and VCF.If file
                               extension is unrecognized, assumes file is interval_listFor standard input (stdin), write
                               /dev/stdin as the input file  This argument must be specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -8508,15 +8177,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_LiftOverIntervalList
 
@@ -8557,7 +8223,6 @@ to increase the rate of successful hits...) the liftover could end up going to t
 other hand, if none of the hits pass the threshold a warning will be emitted and the interval will not be lifted.
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHAIN <File>                Chain file that guides the LiftOver process.  Required. 
@@ -8569,7 +8234,6 @@ Required Arguments:
 --SEQUENCE_DICTIONARY,-SD <File>
                               Sequence dictionary to place in the output interval list. (This should be any file from
                               which the dictionary of the target reference can be extracted.)  Required. 
-
 
 Optional Arguments:
 
@@ -8627,15 +8291,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_FifoBuffer
 
@@ -8725,12 +8386,10 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false}
 ```
-
 
 ## picard_SortGff
 
@@ -8772,13 +8431,11 @@ SD=dictionary.dict
 </pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input Gff3 file to sort.  Required. 
 
 --OUTPUT,-O <File>            Sorted Gff3 output file.  Required. 
-
 
 Optional Arguments:
 
@@ -8835,15 +8492,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_AddCommentsToBam
 
@@ -8868,7 +8522,6 @@ example:</h4><pre>java -jar picard.jar AddCommentsToBam \<br />      I=input.bam
 C=comment_1 \<br />      C="comment 2"</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --COMMENT,-C <String>         Comments to add to the BAM file  This argument must be specified at least once. Required. 
@@ -8876,7 +8529,6 @@ Required Arguments:
 --INPUT,-I <File>             Input BAM file to add a comment to the header  Required. 
 
 --OUTPUT,-O <File>            Output BAM file to write results  Required. 
-
 
 Optional Arguments:
 
@@ -8927,15 +8579,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_AddOATag
 
@@ -8960,13 +8609,11 @@ example:</h4><pre>java -jar picard.jar AddOATag \<br />      L=some_picard.inter
 />      O=fixed.bam <br /></pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <String>           SAM or BAM input file  Required. 
 
 --OUTPUT,-O <String>          SAM or BAM file to write merged result to  Required. 
-
 
 Optional Arguments:
 
@@ -9020,15 +8667,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_AddOrReplaceReadGroups
 
@@ -9072,7 +8716,6 @@ For more information about read-groups, see the <a href='https://www.broadinstit
 Dictionary entry.</a>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <String>           Input file (BAM or SAM or a GA4GH url).  Required. 
@@ -9086,7 +8729,6 @@ Required Arguments:
 --RGPU,-PU <String>           Read-Group platform unit (eg. run barcode)  Required. 
 
 --RGSM,-SM <String>           Read-Group sample name  Required. 
-
 
 Optional Arguments:
 
@@ -9159,15 +8801,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_BamToBfq
 
@@ -9196,7 +8835,6 @@ OUTPUT_FILE_PREFIX=output_name \
 PAIRED_RUN=false</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --ANALYSIS_DIR <File>         The analysis directory for the binary output file.   Required. 
@@ -9210,7 +8848,6 @@ Required Arguments:
                               FLOWCELL_BARCODE (F) LANE (L)
 
 --PAIRED_RUN,-PE <Boolean>    Whether this is a paired-end run.   Required. Possible values: {true, false} 
-
 
 Optional Arguments:
 
@@ -9286,15 +8923,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_BuildBamIndex
 
@@ -9318,11 +8952,9 @@ must be sorted in coordinate order.<h4>Usage example:</h4><pre>java -jar picard.
 I=input.bam</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    A BAM file or GA4GH URL to process. Must be sorted in coordinate order.  Required. 
-
 
 Optional Arguments:
 
@@ -9377,15 +9009,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CleanSam
 
@@ -9406,13 +9035,11 @@ USAGE: CleanSam [arguments]
 Cleans a SAM/BAM/CRAM files, soft-clipping beyond-end-of-reference alignments and setting MAPQ to 0 for unmapped reads
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file to be cleaned.  Required. 
 
 --OUTPUT,-O <File>            Where to write cleaned file.  Required. 
-
 
 Optional Arguments:
 
@@ -9463,15 +9090,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_CollectDuplicateMetrics
 
@@ -9495,13 +9119,11 @@ file will always have a READ_PAIR_OPTICAL_DUPLICATES=0 and as a result the ESTIM
 incorrect. 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file.  Required. 
 
 --METRICS_FILE,-M <File>      File to write duplication metrics to.  Required. 
-
 
 Optional Arguments:
 
@@ -9557,15 +9179,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument METRICS_FILE was missing: Argument 'METRICS_FILE' is required
 ```
-
 
 ## picard_DownsampleSam
 
@@ -9636,13 +9255,11 @@ ACCURACY=0.0000001
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    The input SAM or BAM file to downsample.  Required. 
 
 --OUTPUT,-O <PicardHtsPath>   The output, downsampled, SAM, BAM or CRAM file to write.  Required. 
-
 
 Optional Arguments:
 
@@ -9713,15 +9330,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_FastqToSam
 
@@ -9763,7 +9377,6 @@ SM=sample001 \
 RG=rg0013</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --FASTQ,-F1 <PicardHtsPath>   Input fastq file (optionally gzipped) for single end data, or first read in paired end
@@ -9772,7 +9385,6 @@ Required Arguments:
 --OUTPUT,-O <File>            Output BAM/SAM/CRAM file.   Required. 
 
 --SAMPLE_NAME,-SM <String>    Sample name to insert into the read group header  Required. 
-
 
 Optional Arguments:
 
@@ -9896,15 +9508,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument FASTQ was missing: Argument 'FASTQ' is required
 ```
-
 
 ## picard_FilterSamReads
 
@@ -9941,7 +9550,6 @@ a soft clip larger than 2 bases in beginning of read*/ <br/>function accept(rec)
 O=output.bam \ <br />       JAVASCRIPT_FILE=script.js \ <br/>      FILTER=includeJavascript</pre> 
 Version:3.4.0
 
-
 Required Arguments:
 
 --FILTER <Filter>             Which filter to use.  Required. includeAligned (Output aligned reads only. INPUT
@@ -9967,7 +9575,6 @@ Required Arguments:
 --INPUT,-I <File>             The SAM/BAM/CRAM file that will be filtered.  Required. 
 
 --OUTPUT,-O <File>            SAM/BAM/CRAM file for resulting reads.  Required. 
-
 
 Optional Arguments:
 
@@ -10045,15 +9652,12 @@ Optional Arguments:
 --WRITE_READS_FILES <Boolean> Create <OUTPUT>.reads file containing names of reads from INPUT and OUTPUT (for debugging
                               purposes.)  Default value: false. Possible values: {true, false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_FixMateInformation
 
@@ -10089,12 +9693,10 @@ The program should run with fairly limited memory unless there are many mate pai
 each other in the file, as it keeps track of the unmatched mates.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The SAM/BAM/CRAM input files to check and fix. Multiple files will be merged and sorted. 
                               This argument must be specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -10162,15 +9764,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_GatherBamFiles
 
@@ -10201,14 +9800,12 @@ O=gathered_files.bam</pre><h3>Notes</h3><p>Operates via copying of the gzip bloc
 generation of an MD5 on the output and indexing of the output BAM file.</p><hr/>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Two or more SAM/BAM/CRAM files or text files containing lists of SAM/BAM/CRAM files (one
                               per line).  This argument must be specified at least once. Required. 
 
 --OUTPUT,-O <File>            The output SAM/BAM/CRAM file to write.  Required. 
-
 
 Optional Arguments:
 
@@ -10259,15 +9856,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_MarkDuplicates
 
@@ -10322,7 +9916,6 @@ href='http://broadinstitute.github.io/picard/picard-metric-definitions.html#Dupl
 detailed explanations of the output metrics.<hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <String>           One or more input SAM, BAM or CRAM files to analyze. Must be coordinate sorted.  This
@@ -10331,7 +9924,6 @@ Required Arguments:
 --METRICS_FILE,-M <File>      File to write duplication metrics to  Required. 
 
 --OUTPUT,-O <File>            The output file to write marked records to  Required. 
-
 
 Optional Arguments:
 
@@ -10560,20 +10152,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
-
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: plan:test.bam
-- **Example job**: `picard_MarkDuplicates_job.json`
 
 ## picard_MarkDuplicatesWithMateCigar
 
@@ -10606,7 +10190,6 @@ are actually expressed as fractions!</p><h4>Usage example:</h4><pre>java -jar pi
 M=mark_dups_w_mate_cig_metrics.txt</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <String>           One or more input SAM, BAM or CRAM files to analyze. Must be coordinate sorted.  This
@@ -10615,7 +10198,6 @@ Required Arguments:
 --METRICS_FILE,-M <File>      File to write duplication metrics to  Required. 
 
 --OUTPUT,-O <File>            The output file to write marked records to  Required. 
-
 
 Optional Arguments:
 
@@ -10757,15 +10339,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_MergeBamAlignment
 
@@ -10828,7 +10407,6 @@ on both sides) as cross-species contamination and unmap the reads.</li>
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --OUTPUT,-O <File>            Merged SAM or BAM file to write to.  Required. 
@@ -10839,7 +10417,6 @@ Required Arguments:
 --UNMAPPED_BAM,-UNMAPPED <File>
                               Original SAM or BAM file of unmapped reads, which must be in queryname order.  Reads MUST
                               be unmapped.  Required. 
-
 
 Optional Arguments:
 
@@ -11040,15 +10617,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument UNMAPPED_BAM was missing: Argument 'UNMAPPED_BAM' is required
 ```
-
 
 ## picard_MergeSamFiles
 
@@ -11076,13 +10650,11 @@ example:</h4><pre>java -jar picard.jar MergeSamFiles \<br />      I=input_1.bam 
 O=output_merged_files.bam</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <String>           SAM/BAM/CRAM input file  This argument must be specified at least once. Required. 
 
 --OUTPUT,-O <File>            SAM/BAM/CRAM file to write merged result to  Required. 
-
 
 Optional Arguments:
 
@@ -11156,15 +10728,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_PositionBasedDownsampleSam
 
@@ -11228,7 +10797,6 @@ PositionBasedDownsampleSam violates this assumption. To guard against such input
 places a PG record in the header of its output, and aborts whenever it finds such a PG record in its input.
 Version:3.4.0
 
-
 Required Arguments:
 
 --FRACTION,-F <Double>        The (approximate) fraction of reads to be kept, between 0 and 1.  Required. 
@@ -11236,7 +10804,6 @@ Required Arguments:
 --INPUT,-I <File>             The input SAM/BAM/CRAM file to downsample.  Required. 
 
 --OUTPUT,-O <File>            The output, downsampled, SAM/BAM/CRAM file.  Required. 
-
 
 Optional Arguments:
 
@@ -11308,15 +10875,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_ReorderSam
 
@@ -11347,7 +10911,6 @@ SEQUENCE_DICTIONARY=reference_with_different_order.dict
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input file (SAM/BAM/CRAM) to extract reads from.  Required. 
@@ -11357,7 +10920,6 @@ Required Arguments:
 --SEQUENCE_DICTIONARY,-SD <File>
                               A Sequence Dictionary for the OUTPUT file (can be read from one of the following file
                               types (SAM, BAM, CRAM, VCF, BCF, Interval List, Fasta, or Dict)  Required. 
-
 
 Optional Arguments:
 
@@ -11418,15 +10980,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_ReplaceSamHeader
 
@@ -11452,7 +11011,6 @@ example:</h4><pre>java -jar picard.jar ReplaceSamHeader \<br />      I=input_1.b
 />      O=bam_with_new_head.bam</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --HEADER <File>               SAM/BAM/CRAM file from which SAMFileHeader will be read.  Required. 
@@ -11461,7 +11019,6 @@ Required Arguments:
 
 --OUTPUT,-O <File>            header from HEADER file will be written to this file, followed by records from INPUT file 
                               Required. 
-
 
 Optional Arguments:
 
@@ -11512,15 +11069,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_RevertOriginalBaseQualitiesAndAddMateCigar
 
@@ -11541,13 +11095,11 @@ USAGE: RevertOriginalBaseQualitiesAndAddMateCigar [arguments]
 Reverts the original base qualities and adds the mate cigar tag to read-group files.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The input SAM/BAM/CRAM file to revert the state of.  Required. 
 
 --OUTPUT,-O <File>            The output SAM/BAM/CRAM file to create.  Required. 
-
 
 Optional Arguments:
 
@@ -11611,15 +11163,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_RevertSam
 
@@ -11667,7 +11216,6 @@ obviated when the REMOVE_ALIGNMENT_INFORMATION option is used).
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    The input SAM/BAM/CRAM file to revert the state of.  Required. 
@@ -11679,7 +11227,6 @@ Required Arguments:
                               Tab separated file with two columns, READ_GROUP_ID and OUTPUT, providing file mapping only
                               used if OUTPUT_BY_READGROUP is true.  Required.  Cannot be used in conjunction with
                               argument(s) OUTPUT (O)
-
 
 Optional Arguments:
 
@@ -11799,15 +11346,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SamFormatConverter
 
@@ -11829,13 +11373,11 @@ Convert a BAM file to a SAM file, or SAM to BAM.
 Input and output formats are determined by file extension.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The SAM/BAM/CRAM file to parse.  Required. 
 
 --OUTPUT,-O <File>            The SAM/BAM/CRAM output file.   Required. 
-
 
 Optional Arguments:
 
@@ -11886,15 +11428,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SamToFastq
 
@@ -11926,7 +11465,6 @@ non-deterministic mappers such as BWA.</p><br /><h4>Usage example:</h4><pre>java
 I=input.bam<br />     FASTQ=output.fastq</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --FASTQ,-F <File>             Output FASTQ file (single-end fastq or, if paired, first end of the pair FASTQ). 
@@ -11934,7 +11472,6 @@ Required Arguments:
                               COMPRESS_OUTPUTS_PER_RG (GZOPRG) OUTPUT_DIR (ODIR)
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file to extract reads from  Required. 
-
 
 Optional Arguments:
 
@@ -12061,15 +11598,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SamToFastqWithTags
 
@@ -12098,7 +11632,6 @@ SamToFastqWithTags <br />     I=input.bam<br />     FASTQ=output.fastq<br />    
 QUALITY_TAG_GROUP=CY<br />     SEQUENCE_TAG_GROUP="CB,UR"<br />     QUALITY_TAG_GROUP="CY,UY"</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --FASTQ,-F <File>             Output FASTQ file (single-end fastq or, if paired, first end of the pair FASTQ). 
@@ -12110,7 +11643,6 @@ Required Arguments:
 --SEQUENCE_TAG_GROUP,-STG <String>
                               List of comma separated tag values to extract from Input SAM/BAM to be used as read
                               sequence  This argument must be specified at least once. Required. 
-
 
 Optional Arguments:
 
@@ -12250,15 +11782,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument SEQUENCE_TAG_GROUP was missing: Argument 'SEQUENCE_TAG_GROUP' is required
 ```
-
 
 ## picard_SetNmMdAndUqTags
 
@@ -12283,7 +11812,6 @@ ignored and only the UQ tag be set.<br /><h4>Usage example:</h4><pre>java -jar p
 I=sorted.bam \<br />      O=fixed.bam \<br /></pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The SAM/BAM/CRAM file to fix.  Required. 
@@ -12292,7 +11820,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -12347,15 +11874,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SimpleMarkDuplicatesWithMateCigar
 
@@ -12372,7 +11896,6 @@ Examines aligned records in the supplied SAM/BAM/CRAM file to locate duplicate m
 ```text
 /usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
 
-
 **EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK**
 
 USAGE: SimpleMarkDuplicatesWithMateCigar [arguments]
@@ -12380,7 +11903,6 @@ USAGE: SimpleMarkDuplicatesWithMateCigar [arguments]
 Examines aligned records in the supplied SAM/BAM/CRAM file to locate duplicate molecules. All records are then written
 to the output file with the duplicate records flagged.
 Version:3.4.0
-
 
 Required Arguments:
 
@@ -12390,7 +11912,6 @@ Required Arguments:
 --METRICS_FILE,-M <File>      File to write duplication metrics to  Required. 
 
 --OUTPUT,-O <File>            The output file to write marked records to  Required. 
-
 
 Optional Arguments:
 
@@ -12620,15 +12141,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SortSam
 
@@ -12657,7 +12175,6 @@ in future versions. </p><hr /><hr /><h4>Usage example:</h4><pre>java -jar picard
 \<br />      O=sorted.bam \<br />      SORT_ORDER=coordinate</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The SAM, BAM or CRAM file to sort.  Required. 
@@ -12676,7 +12193,6 @@ Required Arguments:
                               duplicate (Sorts the reads so that duplicates reads are adjacent. Required that the
                               mate-cigar (MC) tag is present. The resulting will be sorted by library, unclipped 5-prime
                               position, orientation, and mate's unclipped 5-prime position.)
-
 
 Optional Arguments:
 
@@ -12727,15 +12243,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SplitSamByLibrary
 
@@ -12759,11 +12272,9 @@ read group specified or whose read group does not have a library name are writte
 picard.jar SplitSamByLibrary <br />      I=input_reads.bam <br />      O=/output/directory/ <br /></pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The SAM, BAM of CRAM file to be split.   Required. 
-
 
 Optional Arguments:
 
@@ -12817,15 +12328,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SplitSamByNumberOfReads
 
@@ -12851,13 +12359,11 @@ I=paired_unmapped_input.bam \<br />     OUTPUT=out_dir \ <br />     TOTAL_READS_
 SPLIT_TO_N_READS=48000000</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input SAM/BAM/CRAM file to split  Required. 
 
 --OUTPUT,-O <File>            Directory in which to output the split BAM files.  Required. 
-
 
 Optional Arguments:
 
@@ -12925,15 +12431,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_UmiAwareMarkDuplicatesWithMateCigar
 
@@ -12949,7 +12452,6 @@ Identifies duplicate reads using information from read positions and UMIs. This 
 ### Original Help Text
 ```text
 /usr/local/bin/picard: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-
 
 **EXPERIMENTAL FEATURE - USE AT YOUR OWN RISK**
 
@@ -12977,7 +12479,6 @@ UmiAwareMarkDuplicatesWithMateCigar <br />      I=input.bam <br />      O=output
 M=output_duplicate_metrics.txt <br />      UMI_METRICS=output_umi_metrics.txt</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <String>           One or more input SAM, BAM or CRAM files to analyze. Must be coordinate sorted.  This
@@ -12989,7 +12490,6 @@ Required Arguments:
 
 --UMI_METRICS_FILE,-UMI_METRICS <File>
                               UMI Metrics  Required. 
-
 
 Optional Arguments:
 
@@ -13230,15 +12730,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument UMI_METRICS_FILE was missing: Argument 'UMI_METRICS_FILE' is required
 ```
-
 
 ## picard_BaitDesigner
 
@@ -13270,7 +12767,6 @@ selection reaction. </p><h4>Usage example:</h4><pre>java -jar picard.jar BaitDes
 TARGET=targets.interval_list \<br />      DESIGN_NAME=new_baits \<br />      R=reference_sequence.fasta </pre> <hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --DESIGN_NAME <String>        The name of the bait design  Required. 
@@ -13279,7 +12775,6 @@ Required Arguments:
                               Reference sequence file.  Required. 
 
 --TARGETS,-T <File>           The file with design parameters and targets  Required. 
-
 
 Optional Arguments:
 
@@ -13373,15 +12868,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument TARGETS was missing: Argument 'TARGETS' is required
 ```
-
 
 ## picard_CreateSequenceDictionary
 
@@ -13406,11 +12898,9 @@ reference sequence can be gzipped (both .fasta and .fasta.gz are supported).<h4>
 picard.jar CreateSequenceDictionary \ <br />      R=reference.fasta \ <br />      O=reference.dict</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --REFERENCE,-R <PicardHtsPath>Input reference fasta or fasta.gz  Required. 
-
 
 Optional Arguments:
 
@@ -13481,15 +12971,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument REFERENCE was missing: Argument 'REFERENCE' is required
 ```
-
 
 ## picard_ExtractSequences
 
@@ -13516,7 +13003,6 @@ INTERVAL_LIST=regions_of_interest.interval_list \<br />      R=reference.fasta \
 O=extracted_IL_sequences.fasta</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INTERVAL_LIST <File>        Interval list describing intervals to be extracted from the reference sequence.  Required.
@@ -13525,7 +13011,6 @@ Required Arguments:
 
 --REFERENCE_SEQUENCE,-R <PicardHtsPath>
                               Reference sequence file.  Required. 
-
 
 Optional Arguments:
 
@@ -13575,15 +13060,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INTERVAL_LIST was missing: Argument 'INTERVAL_LIST' is required
 ```
-
 
 ## picard_NonNFastaSize
 
@@ -13607,13 +13089,11 @@ bases in it.Note that it requires that the fasta file have associated index (.fa
 O=count.txt</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The input FASTA file.  Required. 
 
 --OUTPUT,-O <File>            The output file in which to record the count.  Required. 
-
 
 Optional Arguments:
 
@@ -13667,15 +13147,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_NormalizeFasta
 
@@ -13701,13 +13178,11 @@ compatibility.<br /><h4>Usage example:</h4><pre>java -jar picard.jar NormalizeFa
 \<br />      O=normalized_sequence.fasta</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The input FASTA file to normalize.  Required. 
 
 --OUTPUT,-O <File>            The output FASTA file to write.  Required. 
-
 
 Optional Arguments:
 
@@ -13764,15 +13239,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_ScatterIntervalsByNs
 
@@ -13811,9 +13283,7 @@ OUTPUT_TYPE=ACGT \
 OUTPUT=output.interval_list
 </pre>
 
-
 Version:3.4.0
-
 
 Required Arguments:
 
@@ -13821,7 +13291,6 @@ Required Arguments:
 
 --REFERENCE,-R <File>         Reference sequence to use. Note: this tool requires that the reference fasta has both an
                               associated index and a dictionary.  Required. 
-
 
 Optional Arguments:
 
@@ -13874,15 +13343,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument OUTPUT was missing: Argument 'OUTPUT' is required
 ```
-
 
 ## picard_FindMendelianViolations
 
@@ -13930,7 +13396,6 @@ values for PAR that are sensible for humans on either build b37 or hg38.
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input VCF or BCF with genotypes.  Required. 
@@ -13938,7 +13403,6 @@ Required Arguments:
 --OUTPUT,-O <File>            Output metrics file.  Required. 
 
 --TRIOS,-PED <File>           File of Trio information in PED format (with no genotype columns).  Required. 
-
 
 Optional Arguments:
 
@@ -14021,15 +13485,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_GenotypeConcordance
 
@@ -14103,7 +13564,6 @@ Validated genotypes - are TP sites where the exact genotype (HET or HOM-VAR) app
 - The truth sample name will be "truth" and call sample name will be "call"
 Version:3.4.0
 
-
 Required Arguments:
 
 --CALL_VCF,-CV <PicardHtsPath>The VCF containing the call sample  Required. 
@@ -14115,7 +13575,6 @@ Required Arguments:
 
 --TRUTH_VCF,-TV <PicardHtsPath>
                               The VCF containing the truth sample  Required. 
-
 
 Optional Arguments:
 
@@ -14206,15 +13665,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument TRUTH_VCF was missing: Argument 'TRUTH_VCF' is required
 ```
-
 
 ## picard_FilterVcf
 
@@ -14235,13 +13691,11 @@ USAGE: FilterVcf [arguments]
 Applies one or more hard filters to a VCF file to filter out genotypes and variants.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The INPUT VCF or BCF file.  Required. 
 
 --OUTPUT,-O <File>            The output VCF or BCF.  Required. 
-
 
 Optional Arguments:
 
@@ -14318,15 +13772,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_FixVcfHeader
 
@@ -14353,13 +13804,11 @@ FixVcfHeader \<br />     I=input.vcf \<br />     O=fixed.vcf \<br />     HEADER=
 example:</h4><pre>java -jar picard.jar FixVcfHeader \<br />     I=input.vcf \<br />     O=fixed.vcf \<br /></pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    The input VCF/BCF file.  Required. 
 
 --OUTPUT,-O <File>            The output VCF/BCF file.  Required. 
-
 
 Optional Arguments:
 
@@ -14420,15 +13869,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_GatherVcfs
 
@@ -14450,13 +13896,11 @@ Gathers multiple VCF files from a scatter operation into a single VCF file. Inpu
 order and must not have events at overlapping positions.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <HtsPath>          Input VCF file(s).  This argument must be specified at least once. Required. 
 
 --OUTPUT,-O <File>            Output VCF file.  Required. 
-
 
 Optional Arguments:
 
@@ -14516,15 +13960,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_LiftoverVcf
 
@@ -14578,7 +14019,6 @@ and FORMAT fields. Consider lowering to 100,000 or even less if you have many ge
 
 Version:3.4.0
 
-
 Required Arguments:
 
 --CHAIN,-C <File>             The liftover chain file. See https://genome.ucsc.edu/goldenPath/help/chain.html for a
@@ -14593,7 +14033,6 @@ Required Arguments:
                               file must have an accompanying sequence dictionary (.dict file).  Required. 
 
 --REJECT <File>               File to which to write rejected records.  Required. 
-
 
 Optional Arguments:
 
@@ -14681,15 +14120,12 @@ Optional Arguments:
                               Write the original contig/position for lifted variants to the INFO field.  Default value:
                               false. Possible values: {true, false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_MakeSitesOnlyVcf
 
@@ -14713,13 +14149,11 @@ including annotations based on genotypes (e.g. AN, AF). Output can beany support
 INPUT=input_variants.vcf \ <br />      OUTPUT=output_variants.vcf</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input VCF or BCF containing genotype and site-level information.  Required. 
 
 --OUTPUT,-O <File>            Output VCF or BCF file containing only site-level information.  Required. 
-
 
 Optional Arguments:
 
@@ -14773,15 +14207,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_MakeVcfSampleNameMap
 
@@ -14807,14 +14238,12 @@ INPUT=sample2.vcf.gz \
 OUTPUT=cohort.sample_map</pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <String>           One or more input VCFs to extract sample names from.  This argument must be specified at
                               least once. Required. 
 
 --OUTPUT,-O <File>            Output file to write the sample-name map to.  Required. 
-
 
 Optional Arguments:
 
@@ -14865,15 +14294,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_MergeVcfs
 
@@ -14911,7 +14337,6 @@ I=input_variant_files.list \
 O=output_variants.vcf.gz</pre><hr/>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <PicardHtsPath>    VCF or BCF input files (File format is determined by file extension), or a file having a
@@ -14919,7 +14344,6 @@ Required Arguments:
                               specified at least once. Required. 
 
 --OUTPUT,-O <File>            The merged VCF or BCF file. File format is determined by file extension.  Required. 
-
 
 Optional Arguments:
 
@@ -14977,15 +14401,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_RenameSampleInVcf
 
@@ -15010,7 +14431,6 @@ file must be single-sample VCF and that the NEW_SAMPLE_NAME is required.<br /><b
 NEW_SAMPLE_NAME=sample</pre><h4> Notes </h4><br />The input VCF (or BCF) <i>must</i> be single-sample.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input single sample VCF or BCF file.  Required. 
@@ -15018,7 +14438,6 @@ Required Arguments:
 --NEW_SAMPLE_NAME <String>    New name to give sample in output VCF.  Required. 
 
 --OUTPUT,-O <File>            Output single sample VCF.  Required. 
-
 
 Optional Arguments:
 
@@ -15072,15 +14491,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SortVcf
 
@@ -15106,14 +14522,12 @@ sample names in the same column order. <br /><h4>Usage example:</h4><pre>java -j
 I=vcf_1.vcf \<br />      I=vcf_2.vcf \<br />      O=sorted.vcf</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input VCF(s) to be sorted. Multiple inputs must have the same sample names (in order) 
                               This argument must be specified at least once. Required. 
 
 --OUTPUT,-O <File>            Output VCF to be written.  Required. 
-
 
 Optional Arguments:
 
@@ -15167,15 +14581,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_SplitVcfs
 
@@ -15200,7 +14611,6 @@ will raise an exception and quit. <br /><h4>Usage example:</h4><pre>java -jar pi
 I=input.vcf \<br />      SNP_OUTPUT=snp.vcf \<br />      INDEL_OUTPUT=indel.vcf \<br />      STRICT=false</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INDEL_OUTPUT <File>         The VCF or BCF file to which indel records should be written. The file format is
@@ -15210,7 +14620,6 @@ Required Arguments:
 
 --SNP_OUTPUT <File>           The VCF or BCF file to which SNP records should be written. The file format is determined
                               by file extension.  Required. 
-
 
 Optional Arguments:
 
@@ -15268,15 +14677,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_UpdateVcfSequenceDictionary
 
@@ -15297,7 +14703,6 @@ USAGE: UpdateVcfSequenceDictionary [arguments]
 Takes a VCF and a second file that contains a sequence dictionary and updates the VCF with the new sequence dictionary.
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             Input VCF  Required. 
@@ -15307,7 +14712,6 @@ Required Arguments:
 --SEQUENCE_DICTIONARY,-SD <File>
                               A Sequence Dictionary (can be read from one of the following file types (SAM, BAM, VCF,
                               BCF, Interval List, Fasta, or Dict)  Required. 
-
 
 Optional Arguments:
 
@@ -15358,15 +14762,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_VcfFormatConverter
 
@@ -15391,13 +14792,11 @@ results, it is recommended to ensure that an index file is present and set the R
 \<br />      REQUIRE_INDEX=true</pre><hr />
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The BCF or VCF input file.  Required. 
 
 --OUTPUT,-O <File>            The BCF or VCF output file name.  Required. 
-
 
 Optional Arguments:
 
@@ -15451,15 +14850,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## picard_VcfToIntervalList
 
@@ -15483,13 +14879,11 @@ by settingINCLUDE_FILTERED to true.<p><h4>Usage example:</h4><pre>java -jar pica
 I=sample.vcf <br />      O=sample.interval_list <br /></pre>
 Version:3.4.0
 
-
 Required Arguments:
 
 --INPUT,-I <File>             The BCF or VCF input file. The file format is determined by file extension.  Required. 
 
 --OUTPUT,-O <File>            The output Picard Interval List.  Required. 
-
 
 Optional Arguments:
 
@@ -15551,15 +14945,12 @@ Optional Arguments:
 --version <Boolean>           display the version number for this tool  Default value: false. Possible values: {true,
                               false} 
 
-
 Advanced Arguments:
 
 --showHidden <Boolean>        display hidden arguments  Default value: false. Possible values: {true, false} 
 
-
 Argument INPUT was missing: Argument 'INPUT' is required
 ```
-
 
 ## Metadata
 - **Validation-run**: PASS

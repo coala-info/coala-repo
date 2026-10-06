@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: check_tags
+baseCommand: check_tradis_tags
 label: biotradis_check_tradis_tags
 doc: "Check for the existence of tradis tags in a bam\n\nTool homepage: https://github.com/sanger-pathogens/Bio-Tradis"
 inputs:

@@ -1,5 +1,11 @@
 # brooklyn_plot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| brooklyn_plot | Failed | image problem: Rscript (R) is not in the image, so the brooklyn plot PDF is never made; the correlation CSV files are correct. |
+
 ## brooklyn_plot
 
 ### Tool Description

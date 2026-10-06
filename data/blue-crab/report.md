@@ -1,5 +1,12 @@
 # blue-crab CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blue-crab_p2s | Failed | image problem: pod5 0.3.27 with pyarrow 20.0.0 in the image cannot read POD5 signals (AttributeError: 'ExtensionScalar' object has no attribute 'as_buffer'), so p2s writes empty output for the tool's own test POD5 files. |
+| blue-crab_s2p | PASS |  |
+
 ## blue-crab_p2s
 
 ### Tool Description

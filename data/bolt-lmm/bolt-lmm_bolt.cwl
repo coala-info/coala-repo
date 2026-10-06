@@ -9,35 +9,47 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bed
     doc: PLINK .bed file(s); for >1, use multiple --bim and/or {i:j} expansion
     inputBinding:
       position: 101
-      prefix: --bed
   - id: bfile
     type:
       - 'null'
-      - string
-    doc: prefix of PLINK .fam, .bim, .bed files
+      - File
+    doc: prefix of PLINK .fam, .bim, .bed files (give the .bed file; .bim and 
+      .fam must sit beside it)
+    secondaryFiles:
+      - ^.bim
+      - ^.fam
     inputBinding:
       position: 101
       prefix: --bfile
+      valueFrom: $(self.path.replace(/\.bed$/, ''))
   - id: bfilegz
     type:
       - 'null'
-      - string
-    doc: prefix of PLINK .fam.gz, .bim.gz, .bed.gz files
+      - File
+    doc: prefix of PLINK .fam.gz, .bim.gz, .bed.gz files (give the .bed.gz 
+      file; .bim.gz and .fam.gz must sit beside it)
+    secondaryFiles:
+      - ^^.bim.gz
+      - ^^.fam.gz
     inputBinding:
       position: 101
       prefix: --bfilegz
+      valueFrom: $(self.path.replace(/\.bed\.gz$/, ''))
   - id: bgen_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bgenFile
     doc: file(s) containing Oxford BGEN-format genotypes to test for association
     inputBinding:
       position: 101
-      prefix: --bgenFile
   - id: bgen_min_info
     type:
       - 'null'
@@ -77,7 +89,7 @@ inputs:
   - id: bgen_sample_file_list
     type:
       - 'null'
-      - string
+      - File
     doc: list of [bgen sample] file pairs containing BGEN imputed variants to 
       test for association
     inputBinding:
@@ -86,7 +98,7 @@ inputs:
   - id: bgen_variants_to_test
     type:
       - 'null'
-      - string
+      - File
     doc: list of bgen variants to test (CHR POS REF ALT)
     inputBinding:
       position: 101
@@ -96,21 +108,23 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bim
     doc: PLINK .bim file(s); for >1, use multiple --bim and/or {i:j}, e.g., 
       data.chr{1:22}.bim
     inputBinding:
       position: 101
-      prefix: --bim
   - id: covar_col
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --covarCol
     doc: categorical covariate column(s); for >1, use multiple --covarCol and/or
       {i:j} expansion
     inputBinding:
       position: 101
-      prefix: --covarCol
   - id: covar_file
     type:
       - 'null'
@@ -131,7 +145,7 @@ inputs:
   - id: dosage2_file_list
     type:
       - 'null'
-      - string
+      - File
     doc: list of [map dosage] file pairs with 2-dosage SNP probabilities 
       (Ricopili/plink2 --dosage format=2) to test for association
     inputBinding:
@@ -151,20 +165,22 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --dosageFile
     doc: file(s) containing imputed SNP dosages to test for association (see 
       manual for format)
     inputBinding:
       position: 101
-      prefix: --dosageFile
   - id: exclude
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --exclude
     doc: file(s) listing SNPs to ignore (no header; SNP ID must be first column)
     inputBinding:
       position: 101
-      prefix: --exclude
   - id: fam
     type:
       - 'null'
@@ -181,14 +197,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --geneticMapFile
-  - id: helpFull
-    type:
-      - 'null'
-      - boolean
-    doc: print help message with full option list
-    inputBinding:
-      position: 101
-      prefix: --helpFull
   - id: impute2_fid_iid_file
     type:
       - 'null'
@@ -201,7 +209,7 @@ inputs:
   - id: impute2_file_list
     type:
       - 'null'
-      - string
+      - File
     doc: list of [chr file] pairs containing IMPUTE2 SNP probabilities to test 
       for association
     inputBinding:
@@ -269,11 +277,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --modelSnps
     doc: 'file(s) listing SNPs to use in model (i.e., GRM) (default: use all non-excluded
       SNPs)'
     inputBinding:
       position: 101
-      prefix: --modelSnps
   - id: num_threads
     type:
       - 'null'
@@ -311,11 +320,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --qCovarCol
     doc: quantitative covariate column(s); for >1, use multiple --qCovarCol 
       and/or {i:j} expansion
     inputBinding:
       position: 101
-      prefix: --qCovarCol
   - id: reml
     type:
       - 'null'
@@ -330,11 +340,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --remove
     doc: file(s) listing individuals to ignore (no header; FID IID must be first
       two columns)
     inputBinding:
       position: 101
-      prefix: --remove
   - id: sample_file
     type:
       - 'null'
@@ -343,19 +354,299 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sampleFile
+  - id: no_map_check
+    type:
+      - 'null'
+      - boolean
+    doc: "disable automatic check of genetic map scale"
+    inputBinding:
+      position: 101
+      prefix: --noMapCheck
+  - id: no_dosage_id_check
+    type:
+      - 'null'
+      - boolean
+    doc: "disable automatic check of match between PLINK and dosage sample IDs"
+    inputBinding:
+      position: 101
+      prefix: --noDosageIDcheck
+  - id: no_dosage2_id_check
+    type:
+      - 'null'
+      - boolean
+    doc: "disable automatic check of match between PLINK and 2-dosage sample IDs"
+    inputBinding:
+      position: 101
+      prefix: --noDosage2IDcheck
+  - id: no_impute2_id_check
+    type:
+      - 'null'
+      - boolean
+    doc: "disable automatic check of match between PLINK and IMPUTE2 sample IDs"
+    inputBinding:
+      position: 101
+      prefix: --noImpute2IDcheck
+  - id: no_bgen_id_check
+    type:
+      - 'null'
+      - boolean
+    doc: "disable automatic check of match between PLINK and BGEN sample IDs"
+    inputBinding:
+      position: 101
+      prefix: --noBgenIDcheck
+  - id: max_model_snps
+    type:
+      - 'null'
+      - int
+    doc: "an error-check: if millions of SNPs are imputed, it's inefficient to use them all (default 1000000)"
+    inputBinding:
+      position: 101
+      prefix: --maxModelSnps
+  - id: covar_max_levels
+    type:
+      - 'null'
+      - int
+    doc: "an error-check: maximum number of levels for a categorical covariate (default 10)"
+    inputBinding:
+      position: 101
+      prefix: --covarMaxLevels
+  - id: max_bgen_variants_to_scan
+    type:
+      - 'null'
+      - int
+    doc: "an error-check: if --bgenVariantsToTest is supplied, each bgen file is scanned for the presence of a listed variant within the first this many variants (default 100000)"
+    inputBinding:
+      position: 101
+      prefix: --maxBgenVariantsToScan
+  - id: num_leave_out_chunks
+    type:
+      - 'null'
+      - int
+    doc: "# of SNP groups left out in turn to avoid proximal contamination (default: # chroms; LOCO analysis)"
+    inputBinding:
+      position: 101
+      prefix: --numLeaveOutChunks
+  - id: num_calib_snps
+    type:
+      - 'null'
+      - int
+    doc: "# of random SNPs at which to compute denominator of prospective statistic for calibration (default 30)"
+    inputBinding:
+      position: 101
+      prefix: --numCalibSnps
+  - id: h2g_guess
+    type:
+      - 'null'
+      - float
+    doc: "initial guess of h2g for LMM assoc (default 0.25)"
+    inputBinding:
+      position: 101
+      prefix: --h2gGuess
+  - id: h2_est_mc_trials
+    type:
+      - 'null'
+      - int
+    doc: "number of MC trials to use when roughly estimating h2g for LMM assoc (0 = auto)"
+    inputBinding:
+      position: 101
+      prefix: --h2EstMCtrials
+  - id: re_est_mc_trials
+    type:
+      - 'null'
+      - int
+    doc: "number of MC trials to use when re-estimating h2g for each LOCO rep (0 = no re-est)"
+    inputBinding:
+      position: 101
+      prefix: --reEstMCtrials
+  - id: reml_no_refine
+    type:
+      - 'null'
+      - boolean
+    doc: "compute faster (~2-3x) but slightly less accurate (~1.03x higher SE) REML variance parameter estimates"
+    inputBinding:
+      position: 101
+      prefix: --remlNoRefine
+  - id: reml_guess_str
+    type:
+      - 'null'
+      - string
+    doc: "initial variance parameter guesses (see manual for format) for REML optimization"
+    inputBinding:
+      position: 101
+      prefix: --remlGuessStr
+  - id: gen_window
+    type:
+      - 'null'
+      - float
+    doc: "genetic dist buffer (Morgans) to avoid proximal contamination if # MLMe leave-out groups > # chroms (default 0.02)"
+    inputBinding:
+      position: 101
+      prefix: --genWindow
+  - id: phys_window
+    type:
+      - 'null'
+      - int
+    doc: "physical dist buffer (bp) to avoid proximal contamination if # MLMe leave-out groups > # chroms (default 2000000)"
+    inputBinding:
+      position: 101
+      prefix: --physWindow
+  - id: p_est
+    type:
+      - 'null'
+      - float
+    doc: "prior prob SNP effect is drawn from large-effect mixture component (default: est via CV)"
+    inputBinding:
+      position: 101
+      prefix: --pEst
+  - id: var_frac2_est
+    type:
+      - 'null'
+      - float
+    doc: "prior fraction of variance in small-effect mixture component (default: estimate via CV)"
+    inputBinding:
+      position: 101
+      prefix: --varFrac2Est
+  - id: cv_folds_split
+    type:
+      - 'null'
+      - int
+    doc: "cross-validation folds to split samples into for mixture param estimation (default 5)"
+    inputBinding:
+      position: 101
+      prefix: --CVfoldsSplit
+  - id: cv_folds_compute
+    type:
+      - 'null'
+      - int
+    doc: "max cross-validation folds to actually compute: for large N, few are needed (0 = auto)"
+    inputBinding:
+      position: 101
+      prefix: --CVfoldsCompute
+  - id: cv_no_early_exit
+    type:
+      - 'null'
+      - boolean
+    doc: "run full CV (by default, CV exits once best param choice is statistically clear"
+    inputBinding:
+      position: 101
+      prefix: --CVnoEarlyExit
+  - id: ldscores_col
+    type:
+      - 'null'
+      - string
+    doc: "column name of LD Scores to use in regression (default LDSCORE)"
+    inputBinding:
+      position: 101
+      prefix: --LDscoresCol
+  - id: ldscores_use_chip
+    type:
+      - 'null'
+      - boolean
+    doc: "use LD Scores estimated among chip SNPs instead of reference panel"
+    inputBinding:
+      position: 101
+      prefix: --LDscoresUseChip
+  - id: ldscores_match_bp
+    type:
+      - 'null'
+      - boolean
+    doc: "match SNPs to reference LD Scores based on (chr,bp) coordinates"
+    inputBinding:
+      position: 101
+      prefix: --LDscoresMatchBp
+  - id: n_autosomes
+    type:
+      - 'null'
+      - int
+    doc: "number of autosomes for organism being studied (default 22)"
+    inputBinding:
+      position: 101
+      prefix: --Nautosomes
+  - id: cg_tol
+    type:
+      - 'null'
+      - float
+    doc: "tolerance for declaring convergence of conjugate gradient solver (default 5e-4)"
+    inputBinding:
+      position: 101
+      prefix: --CGtol
+  - id: approx_ll_tol
+    type:
+      - 'null'
+      - float
+    doc: "tolerance for declaring convergence of variational Bayes (default 0.01)"
+    inputBinding:
+      position: 101
+      prefix: --approxLLtol
+  - id: max_iters
+    type:
+      - 'null'
+      - int
+    doc: "max number of iterations (default 500)"
+    inputBinding:
+      position: 101
+      prefix: --maxIters
+  - id: snps_per_block
+    type:
+      - 'null'
+      - int
+    doc: "working set of SNPs to process at once while performing computations (default 64)"
+    inputBinding:
+      position: 101
+      prefix: --snpsPerBlock
+  - id: lmm_bayes_mcmc
+    type:
+      - 'null'
+      - boolean
+    doc: "compute Bayesian mixed model assoc stats using MCMC"
+    inputBinding:
+      position: 101
+      prefix: --lmmBayesMCMC
+  - id: mcmc_iters
+    type:
+      - 'null'
+      - int
+    doc: "number of MCMC iterations to use (default: min(maxIters, 5*number of VB iters from CV))"
+    inputBinding:
+      position: 101
+      prefix: --MCMCiters
+  - id: verbose_stats
+    type:
+      - 'null'
+      - boolean
+    doc: "output additional columns in statsFile"
+    inputBinding:
+      position: 101
+      prefix: --verboseStats
+  - id: pred_betas_file_path
+    type:
+      - 'null'
+      - string
+    doc: output file of betas for risk prediction
+    inputBinding:
+      position: 107
+      prefix: --predBetasFile
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: data files named inside the list files (--impute2FileList, 
+      --dosage2FileList, --bgenSampleFileList); staged in the working directory 
+      so the names resolve
   - id: stats_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_path`
+    doc: output file for assoc stats at PLINK genotypes
     inputBinding:
       position: 102
-      prefix: --stats-file
+      prefix: --statsFile
   - id: stats_file_bgen_snps_path
     type:
       - 'null'
       - string
-    doc: arg         output file for assoc stats at BGEN-format genotypes
+    doc: output file for assoc stats at BGEN-format genotypes
     inputBinding:
       position: 103
       prefix: --statsFileBgenSnps
@@ -363,15 +654,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_dosage2_snps_path`
+    doc: output file for assoc stats at 2-dosage format genotypes
     inputBinding:
       position: 104
-      prefix: --stats-file-dosage2-snps
+      prefix: --statsFileDosage2Snps
   - id: stats_file_dosage_snps_path
     type:
       - 'null'
       - string
-    doc: arg       output file for assoc stats at dosage format genotypes
+    doc: output file for assoc stats at dosage format genotypes
     inputBinding:
       position: 105
       prefix: --statsFileDosageSnps
@@ -379,10 +670,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stats_file_impute2_snps_path`
+    doc: output file for assoc stats at IMPUTE2 format genotypes
     inputBinding:
       position: 106
-      prefix: --stats-file-impute2-snps
+      prefix: --statsFileImpute2Snps
 outputs:
   - id: stats_file
     type:
@@ -419,8 +710,21 @@ outputs:
     doc: output file for assoc stats at 2-dosage format genotypes
     outputBinding:
       glob: $(inputs.stats_file_dosage2_snps_path)
+  - id: pred_betas_file
+    type:
+      - 'null'
+      - File
+    doc: output file of betas for risk prediction
+    outputBinding:
+      glob: $(inputs.pred_betas_file_path)
+  - id: log
+    type: stdout
+    doc: BOLT-LMM log (standard output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.listed_files ? inputs.listed_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bolt-lmm:2.5--h15e0e67_0
+stdout: bolt.log

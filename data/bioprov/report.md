@@ -1,5 +1,13 @@
 # bioprov CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioprov_blastn | Failed | image problem: blastn is not in the image, and bioprov fails at import writing db.json into read-only site-packages (needs --no-read-only and --no-match-user). |
+| bioprov_genome_annotation | Failed | image problem: bioprov writes db.json into its read-only site-packages at import, so it fails under cwltool (needs --no-read-only and --no-match-user), and even as root it crashes building provenance after prodigal runs. |
+| bioprov_kaiju | Failed | image problem: kaiju and kaiju2table are not in the image, and bioprov fails at import writing db.json into read-only site-packages (needs --no-read-only and --no-match-user). |
+
 ## bioprov_genome_annotation
 
 ### Tool Description

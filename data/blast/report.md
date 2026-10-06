@@ -1,5 +1,19 @@
 # blast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blast_blast_formatter | PASS | Reformatted a blastp archive to tabular; all hit columns match the Galaxy expected table (query ID keeps its version suffix). |
+| blast_blastn | PASS | Megablast output matches the Galaxy BLAST+ expected table exactly, both with -subject and with a makeblastdb database. |
+| blast_blastp | PASS | Output matches the Galaxy BLAST+ expected tables exactly, both with -subject and with a makeblastdb database. |
+| blast_blastx | PASS | Output matches the Galaxy BLAST+ expected table (rhodopsin nucleotides vs four human proteins) exactly. |
+| blast_makeblastdb | PASS | Built protein and nucleotide databases from the Galaxy BLAST+ test FASTA files; blastp and blastn searches against them match the expected Galaxy tables. |
+| blast_segmasker | PASS | Masked FASTA matches the Galaxy BLAST+ expected segmasker output exactly. |
+| blast_tblastn | PASS | Output matches the Galaxy BLAST+ expected table (four human proteins vs rhodopsin nucleotides) exactly. |
+| blast_tblastx | PASS | Output matches the Galaxy BLAST+ expected table (rhodopsin vs three human mRNAs) exactly. |
+| blast_windowmasker | PASS | Made unit counts from the three human mRNA test sequences, then masked them (236 of 10732 bases soft-masked). |
+
 ## blast_blastn
 
 ### Tool Description

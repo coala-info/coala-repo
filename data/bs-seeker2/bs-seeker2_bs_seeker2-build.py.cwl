@@ -48,9 +48,10 @@ inputs:
   - id: reference_genome_library_path
     type:
       - 'null'
-      - Directory
-    doc: Path to the reference genome library (generated in preprocessing 
-      genome)
+      - string
+    doc: 'Path to the reference genome library (generated in preprocessing genome)
+      [Default: /usr/local/bin/bs_utils/reference_genomes, read-only in the container,
+      so set this]'
     inputBinding:
       position: 101
       prefix: --db
@@ -73,9 +74,18 @@ inputs:
       position: 101
       prefix: --up
 outputs:
+  - id: reference_genome_library
+    type:
+      - 'null'
+      - Directory
+    doc: Reference genome library folder with the bisulfite-converted index
+    outputBinding:
+      glob: $(inputs.reference_genome_library_path)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bs-seeker2:2.1.7--0

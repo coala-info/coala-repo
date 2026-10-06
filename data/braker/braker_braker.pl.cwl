@@ -8,8 +8,9 @@ inputs:
   - id: alternatives_from_evidence
     type:
       - 'null'
-      - boolean
+      - string
     doc: Output alternative transcripts based on explicit evidence from hints
+      (true or false; default is true)
     inputBinding:
       position: 101
       prefix: --alternatives-from-evidence
@@ -151,7 +152,7 @@ inputs:
   - id: softmasking
     type:
       - 'null'
-      - string
+      - boolean
     doc: Softmasking option for soft masked genome files. Set to 'on' or '1'
     inputBinding:
       position: 101
@@ -175,17 +176,18 @@ inputs:
   - id: utr
     type:
       - 'null'
-      - boolean
-    doc: Predict untranslated regions. Default is off.
+      - string
+    doc: Predict untranslated regions (on or off). Default is off.
     inputBinding:
       position: 101
       prefix: --UTR
   - id: working_dir_path
     type: string
-    doc: Output or path parameter `working_dir_path`
+    doc: Set path to working directory. In the working directory results and
+      temporary files are stored
     inputBinding:
       position: 102
-      prefix: --working-dir
+      prefix: --workingdir
 outputs:
   - id: working_dir
     type:
@@ -197,6 +199,10 @@ outputs:
       glob: $(inputs.working_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return {"class": "Directory", "basename": inputs.working_dir_path, "listing":
+        [], "writable": true}; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/braker:1.9--1

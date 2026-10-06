@@ -37,19 +37,21 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --genomehubs_files
     doc: Files to match to taxIDs - Experimental
     inputBinding:
       position: 101
-      prefix: --genomehubs_files
   - id: leaf_id
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --leaf-id
     doc: Leaf taxon/taxa for filtered taxonomy
     inputBinding:
       position: 101
-      prefix: --leaf-id
   - id: port
     type:
       - 'null'
@@ -63,14 +65,16 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --root-id
     doc: Root taxon/taxa for filtered taxonomy
     inputBinding:
       position: 101
-      prefix: --root-id
   - id: taxdump
     type:
       - 'null'
       - File
+      - Directory
     doc: Path to backbone taxonomy file/directory
     inputBinding:
       position: 101

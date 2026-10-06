@@ -53,6 +53,11 @@ outputs:
     doc: an output file of filtered features
     outputBinding:
       glob: '$(inputs.output_file)'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

@@ -1,5 +1,16 @@
 # bleties CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bleties_insert | PASS | synthetic data: IES from the milraa run inserted into a real Paramecium scaffold; output equals the planted MIC sequence. |
+| bleties_milcor | PASS | synthetic data: simulated reads on a real Paramecium scaffold; all 30 MAC reads and 26 of 30 MIC reads binned correctly. |
+| bleties_milraa | PASS | synthetic data: simulated CCS reads with 5 planted IES on a real Paramecium scaffold; all 5 IES found with correct lengths. |
+| bleties_milret | PASS | synthetic data: simulated reads with 5 planted IES on a real Paramecium scaffold; all 5 IES scored, with retention 0.38-0.54 matching the half MIC, half MAC read mix. |
+| bleties_miltel | PASS | synthetic data: simulated reads with planted telomeres on a real Paramecium scaffold; both contig ends called. |
+| bleties_miser | Not completed | synthetic data: finds all 5 planted IES and its read counts match pysam, but labels every true IES 'paralog' (simulated reads carry several IES each), so the diagnosis could not be confirmed |
+
 ## bleties_milraa
 
 ### Tool Description
@@ -223,6 +234,106 @@ optional arguments:
                         .seg_1, et seq. in the GFF output file. Only relevant
                         if --featuregff is specified. (default: False)
   -o OUT, --out OUT     Output filename prefix (default: insert.test)
+```
+
+## bleties_miser
+
+### Tool Description
+MISER - Method of IES Spurious or Erroneous Reporting (experimental)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bleties:0.1.11--pyhdfd78af_0
+- **Homepage**: https://github.com/Swart-lab/bleties
+- **Package**: https://anaconda.org/channels/bioconda/packages/bleties/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bleties/overview
+- **Total Downloads**: 5.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/Swart-lab/bleties
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: bleties miser [-h] [--bam BAM] [--ref REF] [--gff GFF] [--out [OUT]]
+                     [--split_gff] [--min_ies_length MIN_IES_LENGTH]
+                     [--spurious_ies_test SPURIOUS_IES_TEST]
+                     [--spurious_ies_pvalue SPURIOUS_IES_PVALUE]
+
+MISER - Method of IES Spurious or Erroneous Reporting (experimental)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --bam BAM             BAM file containing mapping, must be sorted and
+                        indexed (default: None)
+  --ref REF             FASTA file containing genomic contigs used as
+                        reference for the mapping (default: None)
+  --gff GFF             GFF file containing coordinates for putative IESs
+                        (default: None)
+  --out [OUT], -o [OUT]
+                        Path to write report statistics on possibly spurious
+                        IESs due to misassembly or mapped paralogs, defaults
+                        to STDOUT (default: <_io.TextIOWrapper name='<stdout>'
+                        mode='w' encoding='UTF-8'>)
+  --split_gff           Split input GFF entries into separate files for each
+                        category (ok, misassembly, paralog, ...), using input
+                        GFF filename as prefix (default: False)
+  --min_ies_length MIN_IES_LENGTH
+                        Minimum length of IES insert to allow (default: 15)
+  --spurious_ies_test SPURIOUS_IES_TEST
+                        Test to use to evaluate spurious IESs by mismatch
+                        percentage comparisons, either "mann-whitney" (Mann-
+                        Whitney's U) or "t" (Ward's t-test) (default: mann-
+                        whitney)
+  --spurious_ies_pvalue SPURIOUS_IES_PVALUE
+                        P-value cutoff (uncorrected) to use for spurious IES
+                        mismatch test; the Bonferroni correction will be
+                        applied depending on the number of tests (number of
+                        putative IESs) performed (default: 0.05)
+```
+
+## bleties_milret
+
+### Tool Description
+MILRET - Method of IES Long-read RETention
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bleties:0.1.11--pyhdfd78af_0
+- **Homepage**: https://github.com/Swart-lab/bleties
+- **Package**: https://anaconda.org/channels/bioconda/packages/bleties/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bleties/overview
+- **Total Downloads**: 5.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/Swart-lab/bleties
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: bleties milret [-h] [--bam BAM] [--ref REF] [--ies IES]
+                      [--use_ies_lengths]
+                      [--length_threshold LENGTH_THRESHOLD] [--out OUT]
+                      [--dump]
+
+MILRET - Method of IES Long-read RETention
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --bam BAM             BAM file containing mapping, must be sorted and
+                        indexed. (default: None)
+  --ref REF             FASTA file containing genomic contigs used as
+                        reference for the mapping (default: None)
+  --ies IES             GFF3 file containing coordinates of IES junctions in
+                        MAC genome, from MILRAA or third party tool (default:
+                        None)
+  --use_ies_lengths     Only count inserts that match IES lengths reported in
+                        the input GFF file. This assumes that the input GFF
+                        file is produced by BleTIES MILRAA (default: False)
+  --length_threshold LENGTH_THRESHOLD
+                        Length threshold to count matching IES length, if
+                        option --use_ies_lengths is applied (default: 0.05)
+  --out OUT, -o OUT     Output filename prefix (default: milret.test)
+  --dump                Dump contents of retention score objects to JSON file,
+                        for troubleshooting (default: False)
 ```
 
 

@@ -28,8 +28,34 @@ inputs:
   - id: database
     type:
       - 'null'
-      - string
-    doc: Database
+      - File
+    doc: Database (FASTA file formatted with formatdb; the .p* or .n* database files
+      sit beside it)
+    secondaryFiles:
+      - pattern: .phr
+        required: false
+      - pattern: .pin
+        required: false
+      - pattern: .psq
+        required: false
+      - pattern: .psd
+        required: false
+      - pattern: .psi
+        required: false
+      - pattern: .pal
+        required: false
+      - pattern: .nhr
+        required: false
+      - pattern: .nin
+        required: false
+      - pattern: .nsq
+        required: false
+      - pattern: .nsd
+        required: false
+      - pattern: .nsi
+        required: false
+      - pattern: .nal
+        required: false
     inputBinding:
       position: 101
       prefix: -d
@@ -328,10 +354,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `asn1_output_path`
+    doc: ASN.1 SeqAlign file; must be used in conjunction with -D2 option [File
+      Out]  Optional
     inputBinding:
       position: 102
-      prefix: --asn1-output
+      prefix: -O
   - id: masked_query_output_path
     type:
       - 'null'

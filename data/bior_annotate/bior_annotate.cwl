@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bior_annotate
+baseCommand:
+  - bior_annotate
 label: bior_annotate
 doc: "Annotates variants in a given input file (vcf)\n\nTool homepage: https://github.com/michaelmeiners/biorAnnotateLite"
 inputs:
@@ -12,6 +13,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --configfile
+  - id: input_vcf
+    type: File
+    doc: Variants to annotate (VCF columns, read from standard input)
   - id: log
     type:
       - 'null'
@@ -28,4 +32,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bior_annotate:v2.1.1_cv3
+stdin: $(inputs.input_vcf.path)
 stdout: bior_annotate.out

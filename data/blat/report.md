@@ -1,5 +1,11 @@
 # blat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blat | PASS |  |
+
 ## blat
 
 ### Tool Description

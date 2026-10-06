@@ -26,7 +26,7 @@ inputs:
   - id: wdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Working directory for the test run.
     inputBinding:
       position: 101

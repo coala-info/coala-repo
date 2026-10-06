@@ -1,5 +1,11 @@
 # btrim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| btrim | PASS |  |
+
 ## btrim
 
 ### Tool Description

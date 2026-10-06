@@ -11,10 +11,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --inputFile
     doc: Input sample json / yml, can give multiple file
     inputBinding:
       position: 101
-      prefix: --inputFile
   - id: log_level
     type:
       - 'null'

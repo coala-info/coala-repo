@@ -1,5 +1,11 @@
 # bubblefinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bubblefinder_BubbleFinder | PASS |  |
+
 ## bubblefinder_BubbleFinder
 
 ### Tool Description

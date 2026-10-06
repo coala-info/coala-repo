@@ -1,5 +1,28 @@
 # biscuit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biscuit_QC.sh | Failed | image problem: QC.sh requires GNU awk but the image has only BusyBox awk, so it stops before any QC step. |
+| biscuit_align | PASS |  |
+| biscuit_asm | PASS |  |
+| biscuit_bc | PASS |  |
+| biscuit_bsconv | PASS |  |
+| biscuit_bsstrand | PASS |  |
+| biscuit_build_biscuit_QC_assets.pl | Failed | image problem: bgzip and tabix are missing, so cpg.bed stays uncompressed and both GC-content window files are empty. |
+| biscuit_cinread | PASS |  |
+| biscuit_epiread | PASS |  |
+| biscuit_flip_pbat_strands.sh | Failed | image problem: samtools (and GNU awk) are missing from the image, so the script exits with command not found. |
+| biscuit_index | PASS |  |
+| biscuit_mergecg | PASS |  |
+| biscuit_pileup | PASS |  |
+| biscuit_qc | PASS |  |
+| biscuit_qc_coverage | PASS |  |
+| biscuit_rectangle | PASS |  |
+| biscuit_tview | Not completed | tview is an interactive ncurses viewer; in a batch job it stops with 'Error opening terminal'. |
+| biscuit_vcf2bed | PASS |  |
+
 ## biscuit_index
 
 ### Tool Description
@@ -121,61 +144,6 @@ Input/output options:
     -v INT          Verbosity level: 
                         1: error, 2: warning, 3: message, 4+: debugging [3]
     -h              This help
-```
-
-
-## biscuit_algorithm
-
-### Tool Description
-BISulfite-seq CUI Toolkit (BISCUIT) for bisulfite-seq data analysis, including mapping, BAM operations, base summary, and epiread manipulation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0
-- **Homepage**: https://github.com/huishenlab/biscuit
-- **Package**: https://anaconda.org/channels/bioconda/packages/biscuit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
-Program: BISCUIT (BISulfite-seq CUI Toolkit)
-Version: 1.7.1
-Contact: Jacob Morrison <jacob.morrison@vai.org>
-
-Usage: biscuit <command> [options]
-
-Command:
- -- Read mapping
-    index        Index reference genome sequences in the FASTA format
-    align        Align bisulfite treated short reads using adapted BWA-mem
-                     algorithm
-
- -- BAM operation
-    tview        Text alignment viewer with bisulfite coloring
-    bsstrand     Validate/correct bisulfite conversion strand label (YD tag)
-    bsconv       Summarize/filter reads by bisulfite conversion (ZN tag)
-    cinread      Print cytosine-read pair in a long form
-
- -- Base summary
-    pileup       Pileup cytosine and mutations
-    vcf2bed      Convert VCF to BED file
-    mergecg      Merge C and G in CpG context
-
- -- Epireads
-    epiread      Convert BAM to epibed format
-    rectangle    Convert epiread format to rectangle format
-    asm          Test allele-specific methylation
-
- -- Other
-    version      Print BISCUIT and library versions
-    help         Print usage and exit
-    qc           Generate QC files from BAM
-    qc_coverage  Generate coverage-specific QC files from BAM
-    bc           Extract barcodes from FASTQ files
-
-Unrecognized subcommand: algorithm
 ```
 
 

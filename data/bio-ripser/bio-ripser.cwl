@@ -25,31 +25,23 @@ inputs:
       - 'null'
       - string
     doc: Input file format (lower-distance, upper-distance, distance, point-cloud,
-      sparse, dipha, ripser).
+      dipha, sparse, binary).
     inputBinding:
       position: 102
       prefix: --format
-  - id: representative_cycles
+  - id: ratio
     type:
       - 'null'
-      - boolean
-    doc: Compute representative cycles for the persistent homology classes.
+      - float
+    doc: Only show persistence pairs with death/birth ratio > r.
     inputBinding:
       position: 102
-      prefix: --representative-cycles
-  - id: sparse
-    type:
-      - 'null'
-      - boolean
-    doc: Use a sparse representation of the filtration.
-    inputBinding:
-      position: 102
-      prefix: --sparse
+      prefix: --ratio
   - id: threshold
     type:
       - 'null'
       - float
-    doc: Compute homology up to filtration value <t>.
+    doc: Compute Rips complexes up to diameter <t>.
     inputBinding:
       position: 102
       prefix: --threshold

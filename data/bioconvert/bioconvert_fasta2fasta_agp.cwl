@@ -13,10 +13,17 @@ inputs:
     inputBinding:
       position: 1
   - id: output_file
-    type: File
-    doc: contig FASTA file followed by the AGP file.
+    type: string
+    doc: The path where the contig FASTA will be stored (first value of 
+      output_file).
     inputBinding:
       position: 2
+  - id: output_agp_file
+    type: string
+    doc: The path where the AGP file will be stored (second value of 
+      output_file).
+    inputBinding:
+      position: 3
   - id: allow_indirect_conversion
     type:
       - 'null'
@@ -151,10 +158,16 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_output_file
+    type: File
+    doc: The contig FASTA file.
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: out_agp_file
+    type: File
+    doc: The AGP file.
+    outputBinding:
+      glob: $(inputs.output_agp_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3
-stdout: bioconvert_fasta2fasta_agp.out

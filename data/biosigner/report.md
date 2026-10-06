@@ -1,5 +1,11 @@
 # biosigner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biosigner | PASS | output identical to the Galaxy expected variableMetadata.out; note: under Docker it works only because the image ENTRYPOINT (the wrapper script) reads the extra 'Rscript' word as a dummy key |
+
 ## biosigner
 
 ### Tool Description

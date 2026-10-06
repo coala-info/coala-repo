@@ -1,5 +1,19 @@
 # blobtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blobtools_bamfilter | PASS |  |
+| blobtools_covplot | PASS |  |
+| blobtools_create | PASS |  |
+| blobtools_map2cov | PASS |  |
+| blobtools_nodesdb | Failed | image problem: nodesdb always writes nodesDB.txt into the read-only install folder (site-packages/data) and has no output option, so it only works with --no-read-only. |
+| blobtools_plot | PASS |  |
+| blobtools_seqfilter | PASS |  |
+| blobtools_taxify | PASS |  |
+| blobtools_view | PASS |  |
+
 ## blobtools_create
 
 ### Tool Description

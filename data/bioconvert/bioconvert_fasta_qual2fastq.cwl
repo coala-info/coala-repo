@@ -9,9 +9,19 @@ doc: "Convert file from '(FASTA', 'QUAL')' to '(FASTQ',)' format. See bioconvert
 inputs:
   - id: input_file
     type: File
-    doc: The path to the file to convert.
+    doc: The FASTA file to convert (first value of input_file).
     inputBinding:
       position: 1
+  - id: qual_file
+    type: File
+    doc: The QUAL file that matches the FASTA file (second value of input_file).
+    inputBinding:
+      position: 2
+  - id: output_file
+    type: string
+    doc: The path where the FASTQ will be stored.
+    inputBinding:
+      position: 3
   - id: allow_indirect_conversion
     type:
       - 'null'
@@ -130,11 +140,11 @@ inputs:
       position: 102
       prefix: --verbosity
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
-    doc: The path where the result will be stored.
+    doc: The FASTQ file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3

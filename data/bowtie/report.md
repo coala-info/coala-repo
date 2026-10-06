@@ -1,5 +1,11 @@
 # bowtie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bowtie_bowtie-build | PASS |  |
+
 ## bowtie_bowtie-build
 
 ### Tool Description

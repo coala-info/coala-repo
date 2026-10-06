@@ -1,5 +1,11 @@
 # biomaj CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biomaj_biomaj-cli.py | Not completed | BioMAJ needs a running MongoDB server, a global.properties configuration and remote bank downloads, which a networkless batch job cannot provide. |
+
 ## Metadata
 - **Skill**: generated
 

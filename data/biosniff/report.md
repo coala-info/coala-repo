@@ -1,5 +1,11 @@
 # biosniff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biosniff | PASS |  |
+
 ## biosniff
 
 ### Tool Description

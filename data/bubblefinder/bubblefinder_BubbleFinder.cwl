@@ -5,7 +5,14 @@ label: bubblefinder_BubbleFinder
 doc: "Compute and output the SPQR tree of the input graph\n\nTool homepage: https://github.com/algbio/BubbleFinder"
 inputs:
   - id: command
-    type: string
+    type:
+      type: enum
+      symbols:
+        - superbubbles
+        - directed-superbubbles
+        - snarls
+        - ultrabubbles
+        - spqr-tree
     doc: Command to execute (superbubbles, directed-superbubbles, snarls, 
       ultrabubbles, spqr-tree)
     inputBinding:
@@ -13,7 +20,7 @@ inputs:
   - id: clsd_trees_file
     type:
       - 'null'
-      - File
+      - string
     doc: Write CLSD superbubble trees (ultrabubble hierarchy) to <file> 
       (ultrabubbles command only)
     inputBinding:
@@ -48,7 +55,7 @@ inputs:
     doc: Input graph file (possibly compressed)
     inputBinding:
       position: 102
-      prefix: --gfa
+      prefix: -g
   - id: stack_size
     type:
       - 'null'
@@ -66,9 +73,7 @@ inputs:
       position: 102
       prefix: -j
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: ' Output file'
     inputBinding:
       position: 103
@@ -87,6 +92,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: clsd_trees
+    type:
+      - 'null'
+      - File
+    doc: CLSD superbubble trees (ultrabubbles command only)
+    outputBinding:
+      glob: $(inputs.clsd_trees_file)
   - id: report_json_file
     type:
       - 'null'

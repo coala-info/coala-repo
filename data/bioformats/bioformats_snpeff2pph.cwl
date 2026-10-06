@@ -11,20 +11,17 @@ inputs:
     doc: Input VCF file
     inputBinding:
       position: 1
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Verbose output
-    inputBinding:
-      position: 102
-      prefix: -v
-outputs:
   - id: output_file
+    type: string
+    doc: the output file in the PolyPhen2 format
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_output_file
     type: File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

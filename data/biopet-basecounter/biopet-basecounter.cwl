@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: BaseCounter
+baseCommand: biopet-basecounter
 label: biopet-basecounter
 doc: "A tool for counting bases in a BAM file using a refFlat file.\n\nTool homepage:
   https://github.com/biopet/basecounter"
@@ -8,6 +8,9 @@ inputs:
   - id: bam
     type: File
     doc: Bam file. Mandatory
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -46,15 +49,11 @@ outputs:
     doc: Output directory. Mandatory
     outputBinding:
       glob: $(inputs.output_dir_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return [{"class": "Directory", "basename": inputs.output_dir_path, "listing": [], "writable": true}]; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-basecounter:0.1--0

@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: VcfStats
+baseCommand:
+  - biopet-vcfstats
 label: biopet-vcfstats
 doc: "A tool to generate statistics from VCF files, including general, genotype, and
   sample comparison stats.\n\nTool homepage: https://github.com/biopet/vcfstats"
@@ -26,22 +27,32 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Summarize these genotype tags
+        inputBinding:
+          prefix: --genotypeTag
+    doc: "Summarize these genotype tags (format <tag>:<method>; methods: Min, Max,
+      Avg, Unique, All)"
     inputBinding:
       position: 101
-      prefix: --genotypeTag
   - id: info_tag
     type:
       - 'null'
       - type: array
         items: string
-    doc: Summarize these info tags
+        inputBinding:
+          prefix: --infoTag
+    doc: "Summarize these info tags (format <tag>:<method>; methods: Min, Max, Avg,
+      Unique, All)"
     inputBinding:
       position: 101
-      prefix: --infoTag
   - id: input_file
     type: File
-    doc: Input VCF file (required)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .idx
+        required: false
+    doc: Input VCF file (required); the tool needs its index (.tbi for .vcf.gz, .idx
+      for .vcf)
     inputBinding:
       position: 101
       prefix: --inputFile
@@ -88,6 +99,10 @@ inputs:
       prefix: --notWriteContigStats
   - id: reference_file
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: ^.dict
+        required: false
     doc: Fasta reference which was used to call input VCF (required)
     inputBinding:
       position: 101
@@ -145,10 +160,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: '--sparkConfigValue:'
+          separate: false
     doc: 'Add values to the spark config (format: key=value)'
     inputBinding:
       position: 101
-      prefix: --sparkConfigValue
   - id: spark_executor_memory
     type:
       - 'null'
@@ -187,6 +204,10 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.output_dir_path, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-vcfstats:1.2--0

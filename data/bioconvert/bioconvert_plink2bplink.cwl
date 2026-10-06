@@ -8,17 +8,18 @@ doc: "Convert file from '('PLINK',)' to '('BPLINK',)' format. See bioconvert.rea
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: The path to the file to convert.
+    type: File
+    secondaryFiles:
+      - ^.map
+    doc: PLINK text .ped file; the .map file with the same prefix is staged 
+      beside it and the prefix is passed to bioconvert.
     inputBinding:
       position: 1
+      valueFrom: $(self.dirname)/$(self.nameroot)
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: The path where the result will be stored.
+    type: string
+    doc: Output prefix; bioconvert writes <prefix>.bed, <prefix>.bim and 
+      <prefix>.fam.
     inputBinding:
       position: 2
   - id: allow_indirect_conversion
@@ -139,10 +140,21 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_bed
+    type: File
+    doc: BED file
+    outputBinding:
+      glob: $(inputs.output_file).bed
+  - id: out_bim
+    type: File
+    doc: BIM file
+    outputBinding:
+      glob: $(inputs.output_file).bim
+  - id: out_fam
+    type: File
+    doc: FAM file
+    outputBinding:
+      glob: $(inputs.output_file).fam
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3
-stdout: bioconvert_plink2bplink.out

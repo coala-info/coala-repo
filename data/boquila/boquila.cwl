@@ -98,7 +98,9 @@ inputs:
       position: 102
       prefix: --setQual
   - id: bed_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: File name in which the simulated reads will be saved in BED format
     inputBinding:
       position: 103
@@ -111,8 +113,12 @@ outputs:
     doc: File name in which the simulated reads will be saved in BED format
     outputBinding:
       glob: $(inputs.bed_path)
+  - id: simulated_reads
+    type: stdout
+    doc: Generated reads (FASTQ, or FASTA with --fasta), written to stdout
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/boquila:0.6.1--hdfd78af_0
+stdout: "$(inputs.fasta ? 'simulated_reads.fa' : 'simulated_reads.fq')"

@@ -1,5 +1,11 @@
 # bioformats2raw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioformats2raw | PASS |  |
+
 ## bioformats2raw
 
 ### Tool Description

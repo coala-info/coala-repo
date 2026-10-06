@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: remove_tags
+baseCommand: remove_tradis_tags
 label: biotradis_remove_tradis_tags
 doc: "Removes transposon sequence and quality tags from the read strings\n\nTool homepage:
   https://github.com/sanger-pathogens/Bio-Tradis"

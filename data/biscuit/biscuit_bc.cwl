@@ -26,7 +26,7 @@ inputs:
     doc: length of barcode
     inputBinding:
       position: 103
-      prefix: --bc-length
+      prefix: -l
   - id: bc_start
     type:
       - 'null'
@@ -34,7 +34,7 @@ inputs:
     doc: start position of barcode in read (1-based)
     inputBinding:
       position: 103
-      prefix: --bc-start
+      prefix: -s
   - id: mate
     type:
       - 'null'
@@ -42,13 +42,13 @@ inputs:
     doc: which mate the barcode is in (1 or 2)
     inputBinding:
       position: 103
-      prefix: --mate
+      prefix: -m
   - id: output_prefix_path
     type: string
     doc: prefix for output files (NULL writes to stdout) [NULL]
     inputBinding:
       position: 104
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
     type:

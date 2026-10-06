@@ -6,9 +6,7 @@ doc: "Gene co-expression and transcriptional bursting pattern recognition tool i
   single cell/nucleus RNA-sequencing data\n\nTool homepage: https://github.com/arunhpatil/brooklyn/"
 inputs:
   - id: biomart
-    type:
-      - 'null'
-      - File
+    type: File
     doc: the reference gene annotations (in .csv format)
     inputBinding:
       position: 101
@@ -23,9 +21,7 @@ inputs:
       position: 101
       prefix: --corMethod
   - id: h5ad
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input file in .h5ad format (accepts .h5ad)
     inputBinding:
       position: 101
@@ -33,8 +29,9 @@ inputs:
   - id: outDir
     type:
       - 'null'
-      - Directory
-    doc: the directory of the outputs
+      - string
+    doc: 'the directory of the outputs; results go to a brooklyn_<date>_<time> folder
+      inside it (Default: current directory)'
     inputBinding:
       position: 101
       prefix: --outDir
@@ -48,18 +45,14 @@ inputs:
       position: 101
       prefix: --outFile
   - id: query
-    type:
-      - 'null'
-      - File
+    type: File
     doc: the list of genes to be queried upon (one gene per line and in .csv 
       format)
     inputBinding:
       position: 101
       prefix: --query
   - id: subject
-    type:
-      - 'null'
-      - File
+    type: File
     doc: the list of genes to be compared with (one gene per line and in .csv 
       format)
     inputBinding:
@@ -74,9 +67,17 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: results_dir
+    type: Directory
+    doc: brooklyn_<date>_<time> folder with cor_genes/, <outFile>_summary CSV files
+      and the <outFile>_plot.pdf brooklyn plot
+    outputBinding:
+      glob: '$(inputs.outDir ? inputs.outDir + "/" : "")brooklyn_*'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/brooklyn_plot:0.0.4--pyhdfd78af_0

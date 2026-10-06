@@ -77,7 +77,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in out
     outputBinding:
-      glob: $(inputs.out)*
+      glob: "$(inputs.out ? inputs.out : 'insert.test')*"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bleties:0.1.11--pyhdfd78af_0

@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - BisSNP-1.0.1.jar
+  - bis-snp
 label: bis-snp
 doc: "The BisSNP-1.0.1, Compiled 2018/02/19 05:43:50\nBased on The Genome Analysis
   Toolkit (GATK) v3.8-1-0-gf15c1c3ef (prebuild GATK package could be download here:
@@ -75,7 +73,7 @@ inputs:
     doc: "Disable both auto-generation \nof index files and index file \nlocking"
     inputBinding:
       position: 101
-      prefix: disable_auto_index_creation_and_locking_when_reading_rods
+      prefix: -disable_auto_index_creation_and_locking_when_reading_rods
   - id: disable_bam_indexing
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # booster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| booster | PASS |  |
+
 ## booster
 
 ### Tool Description

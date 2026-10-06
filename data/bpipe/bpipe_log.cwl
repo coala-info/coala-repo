@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bpipe_log
+baseCommand:
+  - bpipe
+  - log
 label: bpipe_log
 doc: "Show log output from bpipe jobs\n\nTool homepage: http://docs.bpipe.org/"
 inputs:

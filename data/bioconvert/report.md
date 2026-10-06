@@ -1,5 +1,103 @@
 # bioconvert CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioconvert_abi2fasta | PASS |  |
+| bioconvert_abi2fastq | PASS |  |
+| bioconvert_abi2qual | PASS |  |
+| bioconvert_bam2bedgraph | PASS |  |
+| bioconvert_bam2bigwig | PASS |  |
+| bioconvert_bam2cov | PASS |  |
+| bioconvert_bam2cram | PASS |  |
+| bioconvert_bam2fasta | PASS |  |
+| bioconvert_bam2fastq | PASS |  |
+| bioconvert_bam2json | PASS |  |
+| bioconvert_bam2sam | PASS |  |
+| bioconvert_bam2tsv | PASS |  |
+| bioconvert_bam2wiggle | PASS |  |
+| bioconvert_bcf2vcf | PASS |  |
+| bioconvert_bcf2wiggle | PASS |  |
+| bioconvert_bed2wiggle | PASS |  |
+| bioconvert_bedgraph2bigwig | PASS |  |
+| bioconvert_bedgraph2cov | PASS |  |
+| bioconvert_bedgraph2wiggle | PASS |  |
+| bioconvert_bigbed2bed | PASS |  |
+| bioconvert_bigbed2wiggle | PASS |  |
+| bioconvert_bigwig2bedgraph | PASS |  |
+| bioconvert_bigwig2wiggle | PASS |  |
+| bioconvert_bplink2plink | PASS |  |
+| bioconvert_bplink2vcf | PASS |  |
+| bioconvert_bz22gz | PASS |  |
+| bioconvert_clustal2phylip | PASS |  |
+| bioconvert_clustal2stockholm | PASS |  |
+| bioconvert_cram2bam | PASS |  |
+| bioconvert_cram2fasta | PASS |  |
+| bioconvert_cram2fastq | PASS |  |
+| bioconvert_cram2sam | PASS |  |
+| bioconvert_csv2tsv | PASS |  |
+| bioconvert_csv2xls | PASS |  |
+| bioconvert_dsrc2gz | PASS |  |
+| bioconvert_embl2fasta | PASS |  |
+| bioconvert_embl2genbank | PASS |  |
+| bioconvert_fast52pod5 | Failed | image problem: the pod5 package is missing, so bioconvert reports no valid method for fast52pod5. |
+| bioconvert_fasta2clustal | PASS |  |
+| bioconvert_fasta2faa | PASS |  |
+| bioconvert_fasta2fasta_agp | PASS |  |
+| bioconvert_fasta2fastq | PASS |  |
+| bioconvert_fasta2genbank | PASS |  |
+| bioconvert_fasta2nexus | PASS |  |
+| bioconvert_fasta2phylip | PASS |  |
+| bioconvert_fasta2twobit | PASS |  |
+| bioconvert_fasta_qual2fastq | PASS |  |
+| bioconvert_fastq2fasta | PASS |  |
+| bioconvert_fastq2fasta_qual | PASS |  |
+| bioconvert_genbank2embl | PASS |  |
+| bioconvert_gff32gff2 | PASS |  |
+| bioconvert_gff32gtf | PASS |  |
+| bioconvert_gz2bz2 | PASS |  |
+| bioconvert_gz2dsrc | PASS |  |
+| bioconvert_json2yaml | PASS |  |
+| bioconvert_maf2sam | PASS |  |
+| bioconvert_newick2nexus | PASS |  |
+| bioconvert_newick2phyloxml | PASS |  |
+| bioconvert_nexus2clustal | PASS |  |
+| bioconvert_nexus2fasta | PASS |  |
+| bioconvert_nexus2newick | PASS |  |
+| bioconvert_nexus2phylip | PASS |  |
+| bioconvert_nexus2phyloxml | PASS |  |
+| bioconvert_ods2csv | PASS |  |
+| bioconvert_pdb2faa | PASS |  |
+| bioconvert_phylip2clustal | PASS |  |
+| bioconvert_phylip2fasta | PASS |  |
+| bioconvert_phylip2nexus | PASS |  |
+| bioconvert_phylip2stockholm | PASS |  |
+| bioconvert_phylip2xmfa | PASS |  |
+| bioconvert_phyloxml2newick | PASS |  |
+| bioconvert_phyloxml2nexus | PASS |  |
+| bioconvert_plink2bplink | PASS |  |
+| bioconvert_plink2vcf | PASS |  |
+| bioconvert_sam2bam | PASS |  |
+| bioconvert_sam2cram | Failed | tool bug: --reference is parsed with nargs=1, so samtools gets the path wrapped in brackets and writes an empty CRAM while exiting 0. |
+| bioconvert_sam2paf | PASS |  |
+| bioconvert_scf2fasta | PASS |  |
+| bioconvert_scf2fastq | PASS |  |
+| bioconvert_sra2fastq | PASS |  |
+| bioconvert_stockholm2clustal | PASS |  |
+| bioconvert_stockholm2phylip | PASS |  |
+| bioconvert_tsv2csv | PASS |  |
+| bioconvert_twobit2fasta | PASS |  |
+| bioconvert_vcf2bcf | PASS |  |
+| bioconvert_vcf2bed | PASS |  |
+| bioconvert_vcf2bplink | PASS |  |
+| bioconvert_vcf2plink | PASS |  |
+| bioconvert_vcf2wiggle | PASS |  |
+| bioconvert_wig2bed | PASS |  |
+| bioconvert_xls2csv | PASS |  |
+| bioconvert_xlsx2csv | Failed | image problem: the pandas method needs openpyxl 3.1 or newer (3.0.9 installed) and the pyexcel method cannot read xlsx. |
+| bioconvert_xmfa2phylip | PASS |  |
+
 ## bioconvert_abi2fasta
 
 ### Tool Description

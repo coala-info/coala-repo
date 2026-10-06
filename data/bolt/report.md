@@ -1,5 +1,11 @@
 # bolt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bolt_call | Failed | Tool bug: bolt 0.3.0 crashes on real nf-core BAMs (illegal instruction on SARS-CoV-2, segfault on human) and rejects every -t value. |
+
 ## bolt_call
 
 ### Tool Description

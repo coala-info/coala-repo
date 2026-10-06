@@ -187,11 +187,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --read-2
+          separate: true
     doc: Fasta or fastq (for -q1) file with read pair mates, if used should be 
       repeated as many times as -1 is
     inputBinding:
       position: 101
-      prefix: --read-2
   - id: report
     type:
       - 'null'

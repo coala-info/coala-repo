@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genome_annotation
+baseCommand:
+  - bioprov
+  - genome_annotation
 label: bioprov_genome_annotation
 doc: "Genome annotation with Prodigal, Prokka and the COG database.\n\nTool homepage:
   https://github.com/vinisalazar/BioProv"
@@ -21,10 +23,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+  - id: assemblies
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Assembly FASTA files named in the 'assembly' column of the input table (staged
+      writable in the working directory so the table can name them by file name; outputs
+      are written beside them)
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: "Path to write log file to. If not set, will be defined\nautomatically."
     inputBinding:
       position: 101
@@ -98,6 +108,31 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: proteins
+    type: File[]
+    doc: Prodigal protein translations
+    outputBinding:
+      glob: '*_proteins.faa'
+  - id: genes
+    type: File[]
+    doc: Prodigal gene nucleotide sequences
+    outputBinding:
+      glob: '*_genes.fna'
+  - id: scores
+    type: File[]
+    doc: Prodigal gene scores
+    outputBinding:
+      glob: '*_scores.cds'
+  - id: log_file
+    type: File[]
+    doc: BioProv log file
+    outputBinding:
+      glob: '*.log'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.assemblies)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioprov:0.1.23--pyh5e36f6f_0

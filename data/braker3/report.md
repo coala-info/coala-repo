@@ -1,5 +1,11 @@
 # braker3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| braker3_braker.pl | PASS |  |
+
 ## braker3_braker.pl
 
 ### Tool Description

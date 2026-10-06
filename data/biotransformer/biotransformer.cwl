@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - biotransformer-4.0.jar
+  - biotransformer
 label: biotransformer
 doc: "BioTransformer is a software tool that predicts small molecule metabolism in
   mammals, their gut microbiota, as well as the soil/aquatic microbiota. It also assists
@@ -156,18 +154,22 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_output_path`
+    doc: CSV output file name (the wrapper script changes directory, so the 
+      name is made absolute)
     inputBinding:
       position: 102
-      prefix: --csv-output
+      prefix: --csvoutput
+      valueFrom: $(runtime.outdir)/$(self)
   - id: sdf_output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sdf_output_path`
+    doc: SDF output file name (the wrapper script changes directory, so the 
+      name is made absolute)
     inputBinding:
       position: 103
-      prefix: --sdf-output
+      prefix: --sdfoutput
+      valueFrom: $(runtime.outdir)/$(self)
 outputs:
   - id: csv_output
     type:

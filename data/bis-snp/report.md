@@ -1,5 +1,11 @@
 # bis-snp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bis-snp | Failed | image problem: the jar stores the Bis-SNP walker classes under a wrong package path, so every analysis type (BisulfiteGenotyper) fails with 'Could not find walker'. |
+
 ## bis-snp
 
 ### Tool Description

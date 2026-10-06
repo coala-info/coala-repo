@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: FastqSplitter
+baseCommand: biopet-fastqsplitter
 label: biopet-fastqsplitter
 doc: "A tool for splitting FastQ files into multiple output files.\n\nTool homepage:
   https://github.com/biopet/fastq-splitter"
@@ -21,14 +21,19 @@ inputs:
       position: 101
       prefix: --log_level
   - id: output_file_path
-    type: string
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --outputFile
     doc: Path to output file. Multiple output files can be specified.
     inputBinding:
       position: 102
-      prefix: --outputFile
 outputs:
   - id: output_file
-    type: File
+    type:
+      type: array
+      items: File
     doc: Path to output file. Multiple output files can be specified.
     outputBinding:
       glob: $(inputs.output_file_path)

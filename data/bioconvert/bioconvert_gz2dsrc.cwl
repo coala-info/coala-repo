@@ -8,16 +8,12 @@ doc: "Convert file from '('GZ',)' to '('DSRC',)' format. See bioconvert.readthed
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The path to the file to convert.
     inputBinding:
       position: 1
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: string
     doc: The path where the result will be stored.
     inputBinding:
       position: 2
@@ -147,10 +143,11 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_output_file
+    type: File
+    doc: The path where the result will be stored.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3
-stdout: bioconvert_gz2dsrc.out

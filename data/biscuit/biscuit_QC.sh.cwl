@@ -12,6 +12,8 @@ inputs:
   - id: genome
     type: File
     doc: Path to reference FASTA file used in alignment
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 2
   - id: sample_name
@@ -21,7 +23,9 @@ inputs:
       position: 3
   - id: input_bam
     type: File
-    doc: Aligned BAM from BISCUIT
+    doc: Aligned BAM from BISCUIT (coordinate sorted and indexed)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 4
   - id: keep_tmp_files

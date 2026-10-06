@@ -12,7 +12,7 @@ inputs:
     doc: FASTQ read files (which may be gzipped) are input as the last unnamed 
       argument(s).
     inputBinding:
-      position: 1
+      position: 103
   - id: aligned_sam
     type:
       - 'null'
@@ -370,6 +370,8 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --junction-only-reference
     doc: File containing reference sequences in GenBank, GFF3, or FASTA format. 
       These references are only used for calling junctions with other reference 
       sequences. An example of appropriate usage is including a transposon 
@@ -377,7 +379,6 @@ inputs:
       multiple times for multiple files.
     inputBinding:
       position: 102
-      prefix: --junction-only-reference
   - id: junction_score_cutoff
     type:
       - 'null'
@@ -513,8 +514,8 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
-    doc: Path to breseq output
+      - string
+    doc: Path to breseq output (DEFAULT=.)
     inputBinding:
       position: 102
       prefix: --output
@@ -679,11 +680,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --reference
     doc: File containing reference sequences in GenBank, GFF3, or FASTA format. 
       Option may be provided multiple times for multiple files
     inputBinding:
       position: 102
-      prefix: --reference
   - id: require_match_fraction
     type:
       - 'null'
@@ -744,9 +746,28 @@ inputs:
       position: 102
       prefix: --user-evidence-gd
 outputs:
+  - id: output_gd
+    type: File
+    doc: Annotated mutation predictions in GenomeDiff format (output/output.gd)
+    outputBinding:
+      glob: '$(inputs.output_dir ? inputs.output_dir + "/" : "")output/output.gd'
+  - id: html_output
+    type: Directory
+    doc: HTML report and evidence files (output/)
+    outputBinding:
+      glob: '$(inputs.output_dir ? inputs.output_dir + "/" : "")output'
+  - id: data_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Data files such as the reference alignment BAM (data/)
+    outputBinding:
+      glob: '$(inputs.output_dir ? inputs.output_dir + "/" : "")data'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/breseq:0.39.0--h077b44d_3

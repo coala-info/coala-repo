@@ -1,5 +1,11 @@
 # blend-bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blend-bio_blend | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

@@ -66,9 +66,16 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: index
+    type: File
+    doc: bronko index file (<output>.bkdb)
+    outputBinding:
+      glob: '$(inputs.output ? inputs.output : "bronko").bkdb'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bronko:0.1.3--h4349ce8_0

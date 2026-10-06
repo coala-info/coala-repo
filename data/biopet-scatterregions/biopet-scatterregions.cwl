@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ScatterRegions
+baseCommand:
+  - biopet-scatterregions
 label: biopet-scatterregions
 doc: "A tool to scatter genomic regions into smaller chunks, potentially based on
   a reference fasta or BAM file index.\n\nTool homepage: https://github.com/biopet/scatterregions"
@@ -11,6 +12,11 @@ inputs:
       - File
     doc: When given the regions will be scattered based on number of reads in 
       the index file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bamFile
@@ -51,7 +57,10 @@ inputs:
     type: File
     doc: Reference fasta file, (dict file should be next to it)
     secondaryFiles:
-      - .fai
+      - pattern: ^.dict
+        required: true
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --referenceFasta
@@ -85,6 +94,10 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.output_dir_path, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-scatterregions:0.2--0

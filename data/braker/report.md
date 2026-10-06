@@ -1,5 +1,11 @@
 # braker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| braker_braker.pl | Failed | image problem: the braker 1.9 image has no AUGUSTUS, no GeneMark-ET and lacks the Perl modules YAML, Hash::Merge and Logger::Simple. |
+
 ## Metadata
 - **Skill**: generated
 

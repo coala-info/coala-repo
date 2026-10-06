@@ -1,5 +1,11 @@
 # brawn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| brawn | PASS |  |
+
 ## brawn
 
 ### Tool Description

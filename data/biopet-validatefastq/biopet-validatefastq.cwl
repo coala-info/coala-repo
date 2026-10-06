@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ValidateFastq
+baseCommand:
+  - biopet-validatefastq
 label: biopet-validatefastq
 doc: "A tool to validate FASTQ files, supporting both single-end and paired-end data.\n
   \nTool homepage: https://github.com/biopet/validatefastq"
@@ -29,10 +30,10 @@ inputs:
       position: 101
       prefix: --log_level
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: log
+    type: stderr
+    doc: Validation log (the tool writes its result messages to stderr)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-validatefastq:0.1.1--1
-stdout: biopet-validatefastq.out
+stderr: biopet-validatefastq.log

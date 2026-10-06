@@ -155,6 +155,16 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Bowtie index files (<ebwt_outfile_base>.*.ebwt, or .ebwtl for large 
+      indexes)
+    outputBinding:
+      glob:
+        - $(inputs.ebwt_outfile_base).*.ebwt
+        - $(inputs.ebwt_outfile_base).*.ebwtl
   - id: stdout
     type: stdout
     doc: Standard output

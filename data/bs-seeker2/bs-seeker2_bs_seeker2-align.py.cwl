@@ -83,7 +83,7 @@ inputs:
       position: 101
       prefix: --end_base
   - id: genome
-    type: File
+    type: string
     doc: Name of the reference genome (should be the same as "-f" in 
       bs_seeker2-build.py ) [ex. chr21_hg18.fa]
     inputBinding:

@@ -8,7 +8,7 @@ inputs:
   - id: add_utr
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Adds UTRs from RNA-Seq coverage data to\n                              \
       \      augustus.hints.gtf file. Does not perform\n                         \
       \           training of AUGUSTUS or gene prediction with\n                 \
@@ -20,7 +20,7 @@ inputs:
   - id: alternatives_from_evidence
     type:
       - 'null'
-      - boolean
+      - string
     doc: Output alternative transcripts based on explicit evidence from hints 
       (default is true).
     inputBinding:
@@ -103,7 +103,9 @@ inputs:
     doc: bam file with spliced alignments from RNA-Seq
     inputBinding:
       position: 101
-      prefix: --bam
+      prefix: --bam=
+      separate: false
+      itemSeparator: ','
   - id: bamtools_path
     type:
       - 'null'
@@ -235,13 +237,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Depending on the mode in which braker.pl is executed, it may require 
       one ore several extrinsicCfgFiles. Don't use this option unless you know 
       what you are doing!
     inputBinding:
       position: 101
-      prefix: --extrinsicCfgFiles
+      prefix: --extrinsicCfgFiles=
+      separate: false
+      itemSeparator: ','
   - id: filter_out_short
     type:
       - 'null'
@@ -523,7 +527,9 @@ inputs:
       aligned reads as a BAM file (named ID.bam).
     inputBinding:
       position: 101
-      prefix: --rnaseq_sets_ids
+      prefix: --rnaseq_sets_ids=
+      separate: false
+      itemSeparator: ','
   - id: rounds
     type:
       - 'null'
@@ -682,7 +688,9 @@ inputs:
       \                               intron hints from the wrong strand, anyway)."
     inputBinding:
       position: 101
-      prefix: --stranded
+      prefix: --stranded=
+      separate: false
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'
@@ -742,7 +750,7 @@ inputs:
   - id: utr
     type:
       - 'null'
-      - boolean
+      - string
     doc: "create UTR training examples from RNA-Seq\n                            \
       \        coverage data; requires options\n                                 \
       \   --bam=rnaseq.bam.\n                                    Alternatively, if
@@ -774,9 +782,23 @@ inputs:
       position: 101
       prefix: --workingdir
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Working directory with results (braker.gtf, Augustus/augustus.hints.gtf,
+      hintsfile.gff, braker.log); ./braker when --workingdir is not set
+    outputBinding:
+      glob: '$(inputs.workingdir ? inputs.workingdir : "braker")'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return inputs.workingdir ? {"class": "Directory", "basename": inputs.workingdir,
+        "listing": [], "writable": true} : null; }'
+      - entry: $(inputs.augustus_config_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/braker3:3.0.8--hdfd78af_0

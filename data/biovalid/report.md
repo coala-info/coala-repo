@@ -1,5 +1,11 @@
 # biovalid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biovalid | PASS |  |
+
 ## biovalid
 
 ### Tool Description

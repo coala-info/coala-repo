@@ -1,5 +1,13 @@
 # bs-seeker2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bs-seeker2_bs_seeker2-align.py | PASS |  |
+| bs-seeker2_bs_seeker2-build.py | PASS |  |
+| bs-seeker2_bs_seeker2-call_methylation.py | PASS |  |
+
 ## bs-seeker2_bs_seeker2-build.py
 
 ### Tool Description

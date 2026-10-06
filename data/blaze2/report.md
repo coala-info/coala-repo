@@ -1,5 +1,11 @@
 # blaze2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blaze2_blaze | PASS |  |
+
 ## blaze2_blaze
 
 ### Tool Description

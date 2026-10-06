@@ -1,5 +1,11 @@
 # bio-ting CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bio-ting_ting | PASS |  |
+
 ## bio-ting_ting
 
 ### Tool Description

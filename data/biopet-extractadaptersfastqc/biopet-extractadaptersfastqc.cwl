@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ExtractAdaptersFastqc
+baseCommand: biopet-extractadaptersfastqc
 label: biopet-extractadaptersfastqc
 doc: "Extracts adapters and contaminations from FastQC data files.\n\nTool homepage:
   https://github.com/biopet/extractadaptersfastqc"
@@ -66,35 +66,39 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `adapter_output_file_path`
+    doc: Output file for adapters, if not supplied output will go to stdout
     inputBinding:
       position: 102
-      prefix: --adapter-output-file
+      prefix: --adapterOutputFile
   - id: contams_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `contams_output_file_path`
+    doc: Output file for contaminations, if not supplied output will go to stdout
     inputBinding:
       position: 103
-      prefix: --contams-output-file
+      prefix: --contamsOutputFile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (adapters and contaminations when no output files are given)
   - id: adapter_output_file
     type:
       - 'null'
       - File
-    doc: Output file for adapters, if not supplied output will go to stdout
+    doc: Output file for adapters
     outputBinding:
-      glob: $(inputs.adapter_output_file_path)
+      glob: '$(inputs.adapter_output_file_path ? inputs.adapter_output_file_path : [])'
   - id: contams_output_file
     type:
       - 'null'
       - File
-    doc: Output file for adapters, if not supplied output will go to stdout
+    doc: Output file for contaminations
     outputBinding:
-      glob: $(inputs.contams_output_file_path)
+      glob: '$(inputs.contams_output_file_path ? inputs.contams_output_file_path : [])'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-extractadaptersfastqc:0.2--1
+stdout: biopet-extractadaptersfastqc.out

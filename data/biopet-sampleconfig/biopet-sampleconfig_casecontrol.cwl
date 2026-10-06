@@ -21,10 +21,16 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --inputFiles
     doc: Input bam files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
-      prefix: --inputFiles
   - id: log_level
     type:
       - 'null'

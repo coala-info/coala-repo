@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bmtagger
+baseCommand: bmtagger.sh
 label: bmtagger_bmtagger.sh
 doc: "Identify and tag sequences that match a reference genome.\n\nTool homepage:
   https://github.com/movingpictures83/BMTagger"
@@ -48,8 +48,12 @@ inputs:
   - id: genome_seqdb
     type:
       - 'null'
-      - Directory
-    doc: Reference genome sequence database
+      - File
+    doc: Reference genome sequence database (the FASTA file given to makeblastdb, with its BLAST database files beside it)
+    secondaryFiles:
+      - .nhr
+      - .nin
+      - .nsq
     inputBinding:
       position: 101
       prefix: -d
@@ -91,23 +95,24 @@ inputs:
     inputBinding:
       position: 101
       prefix: -q
-  - id: reference
-    type:
-      - 'null'
-      - string
-    doc: Point to .wbm, seqdb and srprism index if they have the same path and 
-      basename
-    inputBinding:
-      position: 101
-      prefix: --ref
   - id: srindex
     type:
       - 'null'
-      - Directory
-    doc: SR index directory
+      - File
+    doc: srprism index (the <prefix>.idx file made by 'srprism mkindex -o <prefix>'; the other index files must sit beside it)
+    secondaryFiles:
+      - ^.amp
+      - ^.imp
+      - ^.map
+      - ^.pmp
+      - ^.rmp
+      - ^.ss
+      - ^.ssa
+      - ^.ssd
     inputBinding:
       position: 101
       prefix: -x
+      valueFrom: $(self.path.replace(/\.idx$/, ''))
   - id: tmpdir
     type:
       - 'null'
@@ -127,6 +132,15 @@ outputs:
     doc: Output blacklist file
     outputBinding:
       glob: $(inputs.blacklist)
+  - id: extracted_reads
+    type:
+      type: array
+      items: File
+    doc: Reads without the tagged (host) sequences, written with -X as <blacklist>.fa/.fastq or <blacklist>_1/_2.fa/.fastq
+    outputBinding:
+      glob: '$(inputs.blacklist ? [inputs.blacklist + ".f*", inputs.blacklist + "_1.f*", inputs.blacklist + "_2.f*"] : [])'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bmtagger:3.101--3

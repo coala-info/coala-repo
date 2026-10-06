@@ -16,6 +16,9 @@ inputs:
       position: 1
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input BAM file
     inputBinding:
       position: 2

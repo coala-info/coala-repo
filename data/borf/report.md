@@ -1,5 +1,11 @@
 # borf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| borf | PASS |  |
+
 ## borf
 
 ### Tool Description

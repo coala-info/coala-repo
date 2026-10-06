@@ -8,13 +8,17 @@ doc: "Call variants using the BOLT tool\n\nTool homepage: https://github.com/sak
 inputs:
   - id: reference_file
     type: File
-    doc: reference file path
+    doc: reference file path (FASTA with .fai index)
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: -r
   - id: sample_file
     type: File
-    doc: sample file path
+    doc: sample file path (sorted, indexed BAM)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -b
@@ -28,16 +32,21 @@ inputs:
       prefix: -t
   - id: output_path_path
     type: string
-    doc: output path (*required)
+    doc: output folder path (*required)
     inputBinding:
       position: 102
       prefix: -o
 outputs:
   - id: output_path
-    type: File
-    doc: output path
+    type: Directory
+    doc: output folder (result.vcf and the analysis folder)
     outputBinding:
       glob: $(inputs.output_path_path)
+  - id: result_vcf
+    type: File
+    doc: called structural variants
+    outputBinding:
+      glob: $(inputs.output_path_path)/result.vcf
 requirements:
   - class: InlineJavascriptRequirement
 hints:

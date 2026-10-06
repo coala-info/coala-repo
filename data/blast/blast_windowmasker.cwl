@@ -5,7 +5,9 @@ label: blast_windowmasker
 doc: Window based sequence masker
 inputs:
   - id: ustat
-    type: File
+    type:
+      - 'null'
+      - File
     doc: file with unit counts
     inputBinding:
       position: 101

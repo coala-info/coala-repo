@@ -213,7 +213,7 @@ inputs:
   - id: gilist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to list of GIs
     inputBinding:
       position: 101
@@ -221,7 +221,7 @@ inputs:
   - id: seqidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to list of SeqIDs
     inputBinding:
       position: 101
@@ -229,7 +229,7 @@ inputs:
   - id: negative_gilist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to everything except the specified GIs
     inputBinding:
       position: 101
@@ -237,7 +237,7 @@ inputs:
   - id: negative_seqidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to everything except the specified SeqIDs
     inputBinding:
       position: 101
@@ -262,7 +262,7 @@ inputs:
   - id: taxidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to include only the specified taxonomy IDs
     inputBinding:
       position: 101
@@ -270,7 +270,7 @@ inputs:
   - id: negative_taxidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to everything except the specified taxonomy
       IDs
     inputBinding:
@@ -288,7 +288,7 @@ inputs:
   - id: ipglist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to list of IPGs
     inputBinding:
       position: 101
@@ -296,7 +296,7 @@ inputs:
   - id: negative_ipglist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to everything except the specified IPGs
     inputBinding:
       position: 101

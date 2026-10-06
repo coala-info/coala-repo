@@ -19,6 +19,11 @@ inputs:
       - 'null'
       - File
     doc: Path to BAM file
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -27,6 +32,9 @@ inputs:
       - 'null'
       - File
     doc: Path to CRAM file
+    secondaryFiles:
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: --cram
@@ -90,8 +98,17 @@ outputs:
     doc: Path to output list of read IDs
     outputBinding:
       glob: $(inputs.read_list_output_path)
+  - id: filtered_files
+    type: File[]
+    doc: Filtered FASTA/FASTQ files written as <input name>.<suffix>.<extension> (with
+      --fasta-out / --fastq-out)
+    outputBinding:
+      glob: "$('*.' + (inputs.output_suffix ? inputs.output_suffix : 'filtered') + '.*')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$([inputs.fastq_file, inputs.fastq2_file, inputs.assembly_fasta].filter(function(f)
+      { return f !== null; }))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blobtk:0.7.1--py39hf6b2c50_0

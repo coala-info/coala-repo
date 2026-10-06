@@ -1,22 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bpipe
+baseCommand:
+  - bpipe
+  - touch
 label: bpipe_touch
 doc: "Bpipe Version 0.9.13   Built on Fri Aug 23 09:45:10 GMT 2024\n\nTool homepage:
   http://docs.bpipe.org/"
 inputs:
-  - id: command
-    type: string
-    doc: Command to execute (e.g., run, test, debug, touch, execute, retry, 
-      remake, resume, stop, history, log, jobs, checks, override, status, 
-      cleanup, query, preallocate, archive, autoarchive, preserve, register, 
-      diagram, diagrameditor)
-    inputBinding:
-      position: 1
   - id: pipeline
     type:
       - 'null'
-      - string
+      - File
     doc: Pipeline to execute
     inputBinding:
       position: 2
@@ -67,7 +61,7 @@ inputs:
     doc: generate an HTML report / documentation for pipeline
     inputBinding:
       position: 104
-      prefix: --report
+      prefix: -r
   - id: genomic_interval
     type:
       - 'null'
@@ -115,7 +109,7 @@ inputs:
     doc: generate report using named template
     inputBinding:
       position: 104
-      prefix: --report
+      prefix: -R
   - id: resource_limit
     type:
       - 'null'
@@ -129,10 +123,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --source
     doc: Load the given pipeline file(s) before running / executing
     inputBinding:
       position: 104
-      prefix: --source
   - id: test_mode
     type:
       - 'null'

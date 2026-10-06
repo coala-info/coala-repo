@@ -147,7 +147,9 @@ inputs:
       position: 101
       prefix: --var-type
   - id: output_cache_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path to Output cached pickle file
     inputBinding:
       position: 102
@@ -166,7 +168,7 @@ outputs:
       - Directory
     doc: Output directory for all output files
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: '$(inputs.outdir ? inputs.outdir : "output")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

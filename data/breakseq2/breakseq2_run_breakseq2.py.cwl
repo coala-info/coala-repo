@@ -10,6 +10,9 @@ inputs:
       type: array
       items: File
     doc: Alignment BAMs
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
       prefix: --bams
@@ -40,7 +43,8 @@ inputs:
       prefix: --bplib_gff
   - id: bwa
     type: string
-    doc: Path to BWA executable
+    default: /usr/local/bin/bwa
+    doc: Path to BWA executable (full path; the image has /usr/local/bin/bwa)
     inputBinding:
       position: 103
       prefix: --bwa
@@ -110,7 +114,8 @@ inputs:
       prefix: --sample
   - id: samtools
     type: string
-    doc: Path to SAMtools executable
+    default: /usr/local/bin/samtools
+    doc: Path to SAMtools executable (full path; the image has /usr/local/bin/samtools)
     inputBinding:
       position: 103
       prefix: --samtools
@@ -125,15 +130,30 @@ inputs:
   - id: work
     type:
       - 'null'
-      - Directory
-    doc: Working directory
+      - string
+    doc: Working directory (default work)
     inputBinding:
       position: 103
       prefix: --work
 outputs:
+  - id: work_dir
+    type: Directory
+    doc: Working directory with the final breakseq.vcf.gz and its index
+    outputBinding:
+      glob: '$(inputs.work ? inputs.work : "work")'
+  - id: vcf
+    type: File
+    doc: Called structural variants (breakseq.vcf.gz)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+    outputBinding:
+      glob: '$(inputs.work ? inputs.work : "work")/breakseq.vcf.gz'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/breakseq2:2.2--py27_0

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Break-Point-Inspector
+baseCommand: break-point-inspector
 label: break-point-inspector
 doc: "A second layer of filtering on top of Manta\n\nTool homepage: https://github.com/hartwigmedical/hmftools/tree/master/break-point-inspector"
 inputs:
@@ -26,12 +26,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: -ref
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: tumor
     type: File
     doc: the Tumor BAM (required)
     inputBinding:
       position: 101
       prefix: -tumor
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: vcf
     type: File
     doc: Manta VCF file to batch inspect (required)

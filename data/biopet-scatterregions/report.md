@@ -1,5 +1,11 @@
 # biopet-scatterregions CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-scatterregions | PASS |  |
+
 ## biopet-scatterregions
 
 ### Tool Description

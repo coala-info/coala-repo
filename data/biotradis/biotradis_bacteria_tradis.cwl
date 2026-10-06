@@ -20,6 +20,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: -f
+      valueFrom: $(self.basename)
+  - id: fastq_files
+    type:
+      type: array
+      items: File
+    doc: The fastq files named in the fastq list file; they are staged in the 
+      working directory next to the list file so the names in the list resolve.
   - id: kmer_value
     type:
       - 'null'
@@ -46,10 +53,12 @@ inputs:
       prefix: -mm
   - id: reference_genome
     type: File
-    doc: reference genome in fasta format (.fa)
+    doc: reference genome in fasta format (.fa); staged writable because the 
+      mapper index is written next to it
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: $(self.basename)
   - id: smalt_kmer
     type:
       - 'null'
@@ -127,6 +136,44 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: insert_site_plots
+    type:
+      type: array
+      items: File
+    doc: Insertion site plots for Artemis, one per fastq file and reference 
+      sequence
+    outputBinding:
+      glob: '*.insert_site_plot.gz'
+  - id: mapped_bams
+    type:
+      type: array
+      items: File
+    doc: Sorted mapped BAM files with their index
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    outputBinding:
+      glob: '*.mapped.bam'
+  - id: bamcheck_files
+    type:
+      type: array
+      items: File
+    doc: samtools stats output for each mapped BAM
+    outputBinding:
+      glob: '*.mapped.bamcheck'
+  - id: stats
+    type:
+      - 'null'
+      - File
+    doc: Stats summary of the run
+    outputBinding:
+      glob: '*.stats'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ return inputs.fastq_files.concat([inputs.fastq_list_file,
+             {"entry": inputs.reference_genome, "writable": true}]); }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biotradis:1.4.5--0

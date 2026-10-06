@@ -8,17 +8,18 @@ doc: "Convert file from '('BPLINK',)' to '('VCF',)' format. See bioconvert.readt
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: The path to the file to convert.
+    type: File
+    secondaryFiles:
+      - ^.bim
+      - ^.fam
+    doc: PLINK binary .bed file; the .bim and .fam files with the same prefix 
+      are staged beside it and the prefix is passed to bioconvert.
     inputBinding:
       position: 1
+      valueFrom: $(self.dirname)/$(self.nameroot)
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: The path where the result will be stored.
+    type: string
+    doc: The path where the VCF will be stored (end it with .vcf).
     inputBinding:
       position: 2
   - id: allow_indirect_conversion
@@ -139,10 +140,11 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_output_file
+    type: File
+    doc: The VCF file.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3
-stdout: bioconvert_bplink2vcf.out

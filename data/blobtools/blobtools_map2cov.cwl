@@ -12,10 +12,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
     doc: BAM file (requires pysam)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
-      prefix: --bam
   - id: calculate_cov
     type:
       - 'null'
@@ -30,10 +33,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --cas
     doc: CAS file (requires clc_mapping_info in $PATH)
     inputBinding:
       position: 101
-      prefix: --cas
   - id: infile
     type: File
     doc: FASTA file of assembly. Headers are split at whitespaces.

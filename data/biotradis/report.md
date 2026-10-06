@@ -1,5 +1,15 @@
 # biotradis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biotradis_bacteria_tradis | PASS |  |
+| biotradis_check_tradis_tags | PASS |  |
+| biotradis_filter_tradis_tags | PASS |  |
+| biotradis_remove_tradis_tags | PASS |  |
+| biotradis_tradis_plot | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

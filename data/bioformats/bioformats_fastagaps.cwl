@@ -12,12 +12,22 @@ inputs:
     doc: Input FASTA file to analyze for gaps
     inputBinding:
       position: 1
-outputs:
   - id: bed_gaps
+    type: string
+    doc: an output BED file of gap regions
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_bed_gaps
     type: File
     doc: Output BED file where gap coordinates will be written
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.bed_gaps)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

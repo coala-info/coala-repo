@@ -6,16 +6,19 @@ baseCommand:
 label: bioconvert_bam2tsv
 doc: "Convert file from ('BAM',) to ('TSV',) format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The path to the file to convert.
     inputBinding:
       position: 1
   - id: output_file
-    type: string?
+    type: string
     doc: The path where the result will be stored.
     inputBinding:
       position: 2
@@ -138,12 +141,10 @@ inputs:
       prefix: --verbosity
 outputs:
   - id: out_output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The path where the result will be stored.
     outputBinding:
-      glob: '$(inputs.output_file)'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3

@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: VcfFilter
+baseCommand:
+  - biopet-vcffilter
 label: biopet-vcffilter
 doc: "A tool for filtering VCF files based on various criteria such as depth, genotypes,
   and trio relationships.\n\nTool homepage: https://github.com/biopet/vcffilter"
@@ -8,19 +9,23 @@ inputs:
   - id: advanced_groups
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --advancedGroups
     doc: All members of groups sprated with a ','
     inputBinding:
       position: 101
-      prefix: --advancedGroups
   - id: called_in
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --calledIn
     doc: Must be called in this sample
     inputBinding:
       position: 101
-      prefix: --calledIn
   - id: de_novo_in_sample
     type:
       - 'null'
@@ -33,28 +38,34 @@ inputs:
   - id: de_novo_trio
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --deNovoTrio
     doc: Only show variants that are denovo in the trio
     inputBinding:
       position: 101
-      prefix: --deNovoTrio
   - id: diff_genotype
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --diffGenotype
     doc: Given samples must have a different genotype
     inputBinding:
       position: 101
-      prefix: --diffGenotype
   - id: filter_het_var_to_hom_var
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --filterHetVarToHomVar
     doc: If variants in sample 1 are heterogeneous and alternative alleles are 
       homogeneous in sample 2 variants are filtered
     inputBinding:
       position: 101
-      prefix: --filterHetVarToHomVar
   - id: filter_no_calls
     type:
       - 'null'
@@ -74,27 +85,34 @@ inputs:
   - id: id
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --id
     doc: Id that may pass the filter
     inputBinding:
       position: 101
-      prefix: --id
   - id: id_file
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --idFile
     doc: File that contain list of IDs to get from vcf file
     inputBinding:
       position: 101
-      prefix: --idFile
   - id: info_array_must_contain
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: '--infoArrayMustContain:'
+          separate: false
     doc: 'Info field must be a array and should match the given regex (format: key=value)'
     inputBinding:
       position: 101
-      prefix: --infoArrayMustContain
   - id: input_vcf
     type: File
     doc: Input vcf file
@@ -121,7 +139,7 @@ inputs:
   - id: min_avg_variant_gq
     type:
       - 'null'
-      - float
+      - int
     doc: Filter on the average GQ of variants
     inputBinding:
       position: 101
@@ -137,7 +155,7 @@ inputs:
   - id: min_genome_quality
     type:
       - 'null'
-      - float
+      - int
     doc: The minimum value in the Genome Quality field.
     inputBinding:
       position: 101
@@ -178,37 +196,45 @@ inputs:
   - id: must_have_genotype
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --mustHaveGenotype
     doc: Must have genotoype <genotype> for this sample. Genotype can be 
       NO_CALL, HOM_REF, HET, HOM_VAR, UNAVAILABLE, MIXED
     inputBinding:
       position: 101
-      prefix: --mustHaveGenotype
   - id: must_have_variant
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --mustHaveVariant
     doc: Given sample must have 1 alternative allele
     inputBinding:
       position: 101
-      prefix: --mustHaveVariant
   - id: must_not_have_variant
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --mustNotHaveVariant
     doc: Given sample may not have alternative alleles
     inputBinding:
       position: 101
-      prefix: --mustNotHaveVariant
   - id: res_to_dom
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --resToDom
     doc: Only shows variants where child is homozygous and both parants 
       hetrozygous
     inputBinding:
       position: 101
-      prefix: --resToDom
   - id: shared_only
     type:
       - 'null'
@@ -220,20 +246,24 @@ inputs:
   - id: trio_compound
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --trioCompound
     doc: Only shows variants where child is a compound variant combined from 
       both parants
     inputBinding:
       position: 101
-      prefix: --trioCompound
   - id: trio_loss_of_het
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --trioLossOfHet
     doc: Only show variants where a loss of hetrozygosity is detected
     inputBinding:
       position: 101
-      prefix: --trioLossOfHet
   - id: unique_only
     type:
       - 'null'
@@ -251,9 +281,7 @@ inputs:
       position: 102
       prefix: --invertedOutputVcf
   - id: output_vcf_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output vcf file
     inputBinding:
       position: 103

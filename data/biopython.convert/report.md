@@ -1,5 +1,11 @@
 # biopython.convert CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopython.convert | PASS |  |
+
 ## biopython.convert
 
 ### Tool Description

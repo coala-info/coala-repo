@@ -1,5 +1,11 @@
 # bmtool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bmtool | PASS |  |
+
 ## bmtool
 
 ### Tool Description

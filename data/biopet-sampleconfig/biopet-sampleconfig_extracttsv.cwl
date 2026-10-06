@@ -11,10 +11,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --inputFile
     doc: Input sample json, can give multiple file
     inputBinding:
       position: 101
-      prefix: --inputFile
   - id: library
     type:
       - 'null'
@@ -65,6 +66,9 @@ inputs:
       position: 103
       prefix: --tsvOutput
 outputs:
+  - id: names_list
+    type: stdout
+    doc: Sample, library or readgroup names printed when no json or tsv output is given
   - id: json_output
     type:
       - 'null'
@@ -79,6 +83,7 @@ outputs:
     doc: tsv output file
     outputBinding:
       glob: $(inputs.tsv_output_path)
+stdout: extracttsv_names.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

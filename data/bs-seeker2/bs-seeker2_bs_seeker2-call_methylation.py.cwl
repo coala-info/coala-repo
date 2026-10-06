@@ -154,6 +154,10 @@ outputs:
       glob: $(inputs.atcgmap_outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bs-seeker2:2.1.7--0

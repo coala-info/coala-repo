@@ -60,17 +60,21 @@ inputs:
       prefix: --upstream_incomplete_length
   - id: output_path_path
     type: string
+    doc: path to write output files. [OUTPUT_PATH].pep and [OUTPUT_PATH].txt
     inputBinding:
       position: 103
       prefix: --output_path
 outputs:
-  - id: output_path
-    type:
-      - 'null'
-      - File
-    doc: path to write output files. [OUTPUT_PATH].pep and [OUTPUT_PATH].txt
+  - id: peptides
+    type: File
+    doc: predicted ORF peptide sequences ([OUTPUT_PATH].pep)
     outputBinding:
-      glob: $(inputs.output_path_path)
+      glob: $(inputs.output_path_path).pep
+  - id: orf_table
+    type: File
+    doc: ORF prediction table ([OUTPUT_PATH].txt)
+    outputBinding:
+      glob: $(inputs.output_path_path).txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

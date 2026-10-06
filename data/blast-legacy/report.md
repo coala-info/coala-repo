@@ -1,5 +1,13 @@
 # blast-legacy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blast-legacy_blastall | PASS |  |
+| blast-legacy_formatdb | PASS |  |
+| blast-legacy_megablast | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

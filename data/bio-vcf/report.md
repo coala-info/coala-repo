@@ -1,5 +1,11 @@
 # bio-vcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bio-vcf | PASS |  |
+
 ## bio-vcf
 
 ### Tool Description

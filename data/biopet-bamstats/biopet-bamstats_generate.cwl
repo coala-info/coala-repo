@@ -10,6 +10,9 @@ inputs:
   - id: bam
     type: File
     doc: Input bam file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -45,6 +48,8 @@ inputs:
     doc: Fasta file of reference
     secondaryFiles:
       - .fai
+      - pattern: ^.dict
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -80,6 +85,9 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return [{"class": "Directory", "basename": inputs.output_dir_path, "listing": [], "writable": true}]; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-bamstats:1.0.1--0

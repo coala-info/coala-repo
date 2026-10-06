@@ -1,5 +1,14 @@
 # biopet-sampleconfig CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-sampleconfig_casecontrol | PASS |  |
+| biopet-sampleconfig_cromwellarrays | PASS |  |
+| biopet-sampleconfig_extracttsv | PASS |  |
+| biopet-sampleconfig_readfromtsv | PASS |  |
+
 ## biopet-sampleconfig_extracttsv
 
 ### Tool Description

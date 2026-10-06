@@ -1,5 +1,11 @@
 # blastbesties CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blastbesties | PASS |  |
+
 ## blastbesties
 
 ### Tool Description

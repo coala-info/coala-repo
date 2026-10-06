@@ -37,21 +37,19 @@ inputs:
       position: 101
       prefix: -t
   - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
+    type: string
+    doc: file name for Bracken default output
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
   - id: output_report_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_report_path`
+    doc: New Kraken REPORT output file with Bracken read estimates
     inputBinding:
       position: 103
-      prefix: --output-report
+      prefix: -w
 outputs:
   - id: output_file
     type: File
@@ -59,7 +57,9 @@ outputs:
     outputBinding:
       glob: $(inputs.output_file_path)
   - id: output_report
-    type: File
+    type:
+      - 'null'
+      - File
     doc: New Kraken REPORT output file with Bracken read estimates
     outputBinding:
       glob: $(inputs.output_report_path)

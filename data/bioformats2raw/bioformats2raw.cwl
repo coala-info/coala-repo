@@ -10,6 +10,11 @@ inputs:
     doc: file to convert
     inputBinding:
       position: 1
+  - id: output_dir
+    type: string
+    doc: path to the output pyramid directory
+    inputBinding:
+      position: 2
   - id: additional_scale_format_string_args
     type:
       - 'null'
@@ -39,10 +44,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Properties for the chosen compression
+        inputBinding:
+          prefix: --compression-properties
+    doc: Properties for the chosen compression (key=value)
     inputBinding:
       position: 102
-      prefix: --compression-properties
   - id: dimension_order
     type:
       - 'null'
@@ -69,6 +75,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --extra-readers=
+      itemSeparator: ','
       separate: false
   - id: fill_value
     type:
@@ -115,29 +122,28 @@ inputs:
   - id: memo_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory used to store .bfmemo cache files
     inputBinding:
       position: 102
       prefix: --memo-directory
-  - id: minmax
+  - id: no_minmax
     type:
       - 'null'
       - boolean
-    doc: Whether to calculate minimum and maximum pixel values. Min/max calculation
-      can result in slower conversions. If true, min/max values are saved as OMERO
-      rendering metadata (true by default)
+    doc: Do not calculate minimum and maximum pixel values (min/max calculation is
+      on by default; values are saved as OMERO rendering metadata)
     inputBinding:
       position: 102
-      prefix: --minmax
-  - id: nested
+      prefix: --no-minmax
+  - id: no_nested
     type:
       - 'null'
       - boolean
-    doc: Whether to use '/' as the chunk path separator (true by default)
+    doc: Do not use '/' as the chunk path separator (nested is on by default)
     inputBinding:
       position: 102
-      prefix: --nested
+      prefix: --no-nested
   - id: no_hcs
     type:
       - 'null'
@@ -172,7 +178,9 @@ inputs:
       to Filesystem implementations if used.'
     inputBinding:
       position: 102
-      prefix: --output-options
+      prefix: --output-options=
+      itemSeparator: '|'
+      separate: false
   - id: overwrite
     type:
       - 'null'
@@ -206,6 +214,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --options=
+      itemSeparator: ','
       separate: false
   - id: resolutions
     type:
@@ -272,10 +281,9 @@ inputs:
 outputs:
   - id: output_path
     type: Directory
-    doc: path to the output pyramid directory. The given path can also be a URI (containing
-      ://) which will activate **experimental** support for Filesystems.
+    doc: output Zarr pyramid directory
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats2raw:0.9

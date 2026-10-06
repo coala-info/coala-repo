@@ -9,7 +9,9 @@ doc: "Filter BAM files based on contig inclusion/exclusion lists and mapping sta
 inputs:
   - id: bam_file
     type: File
-    doc: BAM file (sorted by name)
+    doc: BAM file (sorted by name). The tool reads mapped/unmapped counts from the index, so a .bai index is required (a coordinate-sorted, indexed BAM works).
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam

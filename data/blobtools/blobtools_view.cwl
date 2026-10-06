@@ -66,11 +66,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --rank
     doc: "Taxonomic rank(s) at which output will be written. (supported: 'species',
       'genus', 'family', 'order', 'phylum', 'superkingdom', 'all')"
     inputBinding:
       position: 101
-      prefix: --rank
   - id: taxrule
     type:
       - 'null'

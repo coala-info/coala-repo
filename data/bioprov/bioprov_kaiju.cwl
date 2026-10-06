@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kaiju
+baseCommand:
+  - bioprov
+  - kaiju
 label: bioprov_kaiju
 doc: "Run Kaiju on metagenomic data and create reports for taxonomic ranks.\n\nTool
   homepage: https://github.com/vinisalazar/BioProv"

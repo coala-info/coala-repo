@@ -3,6 +3,10 @@ class: CommandLineTool
 baseCommand: makeblastdb
 label: blast_makeblastdb
 doc: Application to create BLAST databases, version 2.17.0+
+arguments:
+  - position: 101
+    prefix: -out
+    valueFrom: '$(inputs.output_db_name ? null : inputs.input_file.basename)'
 inputs:
   - id: dbtype
     type:
@@ -54,12 +58,14 @@ inputs:
   - id: mask_data
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Comma-separated list of input files containing masking data as produced
       by NCBI masking applications (e.g. dustmasker, segmasker, windowmasker)
     inputBinding:
       position: 101
       prefix: -mask_data
+      itemSeparator: ','
   - id: mask_id
     type:
       - 'null'
@@ -127,7 +133,9 @@ inputs:
       position: 101
       prefix: -metadata_output_prefix
   - id: logfile
-    type: string
+    type:
+      - 'null'
+      - string
     doc: File to which the program log should be redirected
     inputBinding:
       position: 101
@@ -161,9 +169,10 @@ outputs:
     type:
       - 'null'
       - File[]
-    doc: Name of BLAST database to be created
+    doc: Name of BLAST database to be created (default the input file name, in
+      the working directory)
     outputBinding:
-      glob: $(inputs.output_db_name).*
+      glob: $((inputs.output_db_name || inputs.input_file.basename) + '.*')
   - id: output_logfile
     type:
       - 'null'

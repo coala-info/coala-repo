@@ -16,18 +16,25 @@ inputs:
       position: 1
   - id: cpgs_bed
     type: File
-    doc: CpGs BED file (gzipped)
+    doc: CpGs BED file (bgzipped and tabix-indexed)
+    secondaryFiles:
+      - .tbi
     inputBinding:
       position: 2
   - id: input_bam
     type: File
-    doc: Input BAM file
+    doc: Input BAM file (coordinate sorted and indexed)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 3
   - id: bottom_gc_bed
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Bottom 10 percent GC content windows BED file
     inputBinding:
       position: 104
@@ -108,6 +115,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Top 10 percent GC content windows BED file
     inputBinding:
       position: 104

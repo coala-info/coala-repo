@@ -1,5 +1,28 @@
 # bioformats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioformats_bedautosql | PASS |  |
+| bioformats_bedcolumns | PASS |  |
+| bioformats_fastagaps | PASS |  |
+| bioformats_fastareorder | PASS |  |
+| bioformats_flanknfilter | PASS |  |
+| bioformats_gff2bed | PASS |  |
+| bioformats_gff2to3 | PASS |  |
+| bioformats_gfftagstat | PASS |  |
+| bioformats_interval2bed | PASS |  |
+| bioformats_ncbirenameseq | PASS |  |
+| bioformats_randomfasta | PASS |  |
+| bioformats_renameseq | PASS |  |
+| bioformats_rmout2bed | PASS |  |
+| bioformats_snpeff2bed | PASS |  |
+| bioformats_snpeff2pph | PASS |  |
+| bioformats_vcf2bed | PASS |  |
+| bioformats_vcfeffect2bed | PASS |  |
+| bioformats_vcfgeno2bed | PASS |  |
+
 ## bioformats_bedautosql
 
 ### Tool Description

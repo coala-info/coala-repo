@@ -1,5 +1,16 @@
 # blobtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blobtk_depth | PASS |  |
+| blobtk_filter | PASS |  |
+| blobtk_index | Failed | tool bug: in blobtk 0.7.1 the BUSCO count columns of the output TSV are in a different order on each row than in the header, so values are mislabeled. |
+| blobtk_plot | PASS | SVG output is complete; PNG output has no text labels because the image lacks fonts. |
+| blobtk_taxonomy | PASS |  |
+| blobtk_validate | PASS |  |
+
 ## blobtk_depth
 
 ### Tool Description

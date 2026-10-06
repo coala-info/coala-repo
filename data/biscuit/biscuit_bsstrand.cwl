@@ -16,9 +16,19 @@ inputs:
       position: 1
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input BAM file
     inputBinding:
       position: 2
+  - id: output_bam_name
+    type:
+      - 'null'
+      - string
+    doc: Output BAM file name (out.bam)
+    inputBinding:
+      position: 3
   - id: append_counts
     type:
       - 'null'
@@ -49,9 +59,16 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output BAM file
+    doc: Output BAM with YC/YG tags or corrected YD tags
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bam_name)
+  - id: strand_summary
+    type: stderr
+    doc: Mapped/corrected read counts and strand distribution (printed on 
+      stderr)
+stderr: biscuit_bsstrand.summary.txt
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

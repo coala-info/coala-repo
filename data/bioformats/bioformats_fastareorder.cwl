@@ -36,6 +36,11 @@ outputs:
     doc: an output FASTA file of reordered sequences
     outputBinding:
       glob: '$(inputs.output)'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

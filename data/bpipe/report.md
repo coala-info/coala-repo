@@ -1,5 +1,21 @@
 # bpipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bpipe_archive | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_autoarchive | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_checks | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_diagrameditor | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_execute | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_jobs | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_log | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_override | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_register | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_test | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+| bpipe_touch | Not completed | Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs. |
+
 ## bpipe_test
 
 ### Tool Description
@@ -136,86 +152,6 @@ Bpipe Version 0.9.13   Built on Fri Aug 23 09:45:10 GMT 2024
 ### Original Help Text
 ```text
 Bpipe Version 0.9.13   Built on Fri Aug 23 09:45:10 GMT 2024
-
-usage: bpipe [run|test|debug|touch|execute] [options] <pipeline> <in1> <in2>...
-             retry [job id] [test]
-             remake <file1> <file2>...
-             resume
-             stop [preallocated]
-             history
-             log [-n <lines>] [job id]
-             jobs
-             checks [options]
-             override
-             status
-             cleanup
-             query <file>
-             preallocate
-             archive [--delete] <zip file path>
-             autoarchive
-             preserve
-             register <pipeline> <in1> <in2>...
-             diagram <pipeline> <in1> <in2>...
-             diagrameditor <pipeline> <in1> <in2>...
-
-Options:
-
- -a,--autoarchive <arg>           clean up all internal files after run into given archive
- -b,--branch <arg>                Comma separated list of branches to limit execution to
- -d,--dir <arg>                   output directory
- -delay,--delay <arg>             Delay in seconds before starting pipeline
- -e,--env <arg>                   Environment to select from alternate configurations in
-                                  bpipe.config
- -f,--filename <arg>              output file name of report
- -h,--help                        usage information
- -l,--resource <resource=value>   place limit on named resource
- -L,--interval <arg>              the default genomic interval to execute pipeline for (samtools
-                                  format)
- -m,--memory <arg>                maximum memory in MB, or specified as <n>GB or <n>MB
- -n,--threads <arg>               maximum threads
- -p,--param <param=value>         defines a pipeline parameter, or file of parameters via @<file>
- -r,--report                      generate an HTML report / documentation for pipeline
- -R,--report <arg>                generate report using named template
- -s,--source <arg>                Load the given pipeline file(s) before running / executing
- -t,--test                        test mode
- -u,--until <arg>                 run until stage given
- -v,--verbose                     print internal logging to standard error
- -y,--yes                         answer yes to any prompts or questions
-```
-
-## bpipe_resume
-
-### Tool Description
-bpipe [run|test|debug|touch|execute] [options] <pipeline> <in1> <in2>...
-             retry [job id] [test]
-             remake <file1> <file2>...
-             resume
-             stop [preallocated]
-             history
-             log [-n <lines>] [job id]
-             jobs
-             checks [options]
-             override
-             status
-             cleanup
-             query <file>
-             preallocate
-             archive [--delete] <zip file path>
-             autoarchive
-             preserve
-             register <pipeline> <in1> <in2>...
-             diagram <pipeline> <in1> <in2>...
-             diagrameditor <pipeline> <in1> <in2>...
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bpipe:0.9.13--hdfd78af_0
-- **Homepage**: http://docs.bpipe.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/bpipe/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Could not understand command resume or find it as a file
 
 usage: bpipe [run|test|debug|touch|execute] [options] <pipeline> <in1> <in2>...
              retry [job id] [test]

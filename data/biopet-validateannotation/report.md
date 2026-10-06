@@ -1,5 +1,11 @@
 # biopet-validateannotation CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-validateannotation | PASS |  |
+
 ## biopet-validateannotation
 
 ### Tool Description

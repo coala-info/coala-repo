@@ -1,5 +1,11 @@
 # biopet-basecounter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-basecounter | PASS |  |
+
 ## biopet-basecounter
 
 ### Tool Description

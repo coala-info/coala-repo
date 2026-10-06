@@ -7,7 +7,9 @@ doc: "BLAZE2 is a tool for demultiplexing 10X single cell long-read RNA-seq data
   demultiplexed reads.\n\nTool homepage: https://github.com/shimlab/BLAZE"
 inputs:
   - id: input_fastq_filename_directory
-    type: File
+    type:
+      - File
+      - Directory
     doc: Filename of input fastq files. Can be a directory or a single file.
     inputBinding:
       position: 1
@@ -187,10 +189,45 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Filename of output fastq file name. Note that the filename has to end 
-      with .fastq, .fq, .fastq.gz or .fq.gz.
+    doc: Demultiplexed reads (<output-prefix><output-fastq>); not written with
+      --no-demultiplexing
     outputBinding:
-      glob: $(inputs.output_fastq_path)
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : '') + inputs.output_fastq_path)"
+  - id: putative_bc
+    type:
+      - 'null'
+      - File
+    doc: Putative barcode table (<output-prefix>putative_bc.csv)
+    outputBinding:
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : '') + 'putative_bc.csv')"
+  - id: whitelist
+    type:
+      - 'null'
+      - File
+    doc: Barcode whitelist (<output-prefix>whitelist.csv)
+    outputBinding:
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : '') + 'whitelist.csv')"
+  - id: empty_bc_list
+    type:
+      - 'null'
+      - File
+    doc: Empty droplet barcode list (<output-prefix>emtpy_bc_list.csv)
+    outputBinding:
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : '') + 'emtpy_bc_list.csv')"
+  - id: knee_plot
+    type:
+      - 'null'
+      - File
+    doc: Knee plot (<output-prefix>knee_plot.png)
+    outputBinding:
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : '') + 'knee_plot.png')"
+  - id: summary
+    type:
+      - 'null'
+      - File
+    doc: Run summary (<output-prefix>summary.txt)
+    outputBinding:
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : '') + 'summary.txt')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

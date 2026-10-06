@@ -32,10 +32,14 @@ inputs:
       position: 104
       prefix: -s
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: qc_files
+    type:
+      type: array
+      items: File
+    doc: QC tables written as <sample_name>_*.txt (insert size, MAPQ, strand,
+      duplicate, conversion rate and retention by read position)
+    outputBinding:
+      glob: $(inputs.sample_name)_*.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0
-stdout: biscuit_qc.out

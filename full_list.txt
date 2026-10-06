@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1220; PASS: 906; Failed: 224; Not completed: 90
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1576; PASS: 1211; Failed: 246; Not completed: 119
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -1220,3 +1220,359 @@ bioconda-utils	bioconda-utils_handle-merged-pr	Not completed	A dry run on a real
 bioconda-utils	bioconda-utils_lint	PASS	
 bioconda-utils	bioconda-utils_list-build-failures	PASS	
 bioconda-utils	bioconda-utils_update-pinning	PASS	
+bioconvert	bioconvert_abi2fasta	PASS	
+bioconvert	bioconvert_abi2fastq	PASS	
+bioconvert	bioconvert_abi2qual	PASS	
+bioconvert	bioconvert_bam2bedgraph	PASS	
+bioconvert	bioconvert_bam2bigwig	PASS	
+bioconvert	bioconvert_bam2cov	PASS	
+bioconvert	bioconvert_bam2cram	PASS	
+bioconvert	bioconvert_bam2fasta	PASS	
+bioconvert	bioconvert_bam2fastq	PASS	
+bioconvert	bioconvert_bam2json	PASS	
+bioconvert	bioconvert_bam2sam	PASS	
+bioconvert	bioconvert_bam2tsv	PASS	
+bioconvert	bioconvert_bam2wiggle	PASS	
+bioconvert	bioconvert_bcf2vcf	PASS	
+bioconvert	bioconvert_bcf2wiggle	PASS	
+bioconvert	bioconvert_bed2wiggle	PASS	
+bioconvert	bioconvert_bedgraph2bigwig	PASS	
+bioconvert	bioconvert_bedgraph2cov	PASS	
+bioconvert	bioconvert_bedgraph2wiggle	PASS	
+bioconvert	bioconvert_bigbed2bed	PASS	
+bioconvert	bioconvert_bigbed2wiggle	PASS	
+bioconvert	bioconvert_bigwig2bedgraph	PASS	
+bioconvert	bioconvert_bigwig2wiggle	PASS	
+bioconvert	bioconvert_bplink2plink	PASS	
+bioconvert	bioconvert_bplink2vcf	PASS	
+bioconvert	bioconvert_bz22gz	PASS	
+bioconvert	bioconvert_clustal2phylip	PASS	
+bioconvert	bioconvert_clustal2stockholm	PASS	
+bioconvert	bioconvert_cram2bam	PASS	
+bioconvert	bioconvert_cram2fasta	PASS	
+bioconvert	bioconvert_cram2fastq	PASS	
+bioconvert	bioconvert_cram2sam	PASS	
+bioconvert	bioconvert_csv2tsv	PASS	
+bioconvert	bioconvert_csv2xls	PASS	
+bioconvert	bioconvert_dsrc2gz	PASS	
+bioconvert	bioconvert_embl2fasta	PASS	
+bioconvert	bioconvert_embl2genbank	PASS	
+bioconvert	bioconvert_fast52pod5	Failed	image problem: the pod5 package is missing, so bioconvert reports no valid method for fast52pod5.
+bioconvert	bioconvert_fasta2clustal	PASS	
+bioconvert	bioconvert_fasta2faa	PASS	
+bioconvert	bioconvert_fasta2fasta_agp	PASS	
+bioconvert	bioconvert_fasta2fastq	PASS	
+bioconvert	bioconvert_fasta2genbank	PASS	
+bioconvert	bioconvert_fasta2nexus	PASS	
+bioconvert	bioconvert_fasta2phylip	PASS	
+bioconvert	bioconvert_fasta2twobit	PASS	
+bioconvert	bioconvert_fasta_qual2fastq	PASS	
+bioconvert	bioconvert_fastq2fasta	PASS	
+bioconvert	bioconvert_fastq2fasta_qual	PASS	
+bioconvert	bioconvert_genbank2embl	PASS	
+bioconvert	bioconvert_gff32gff2	PASS	
+bioconvert	bioconvert_gff32gtf	PASS	
+bioconvert	bioconvert_gz2bz2	PASS	
+bioconvert	bioconvert_gz2dsrc	PASS	
+bioconvert	bioconvert_json2yaml	PASS	
+bioconvert	bioconvert_maf2sam	PASS	
+bioconvert	bioconvert_newick2nexus	PASS	
+bioconvert	bioconvert_newick2phyloxml	PASS	
+bioconvert	bioconvert_nexus2clustal	PASS	
+bioconvert	bioconvert_nexus2fasta	PASS	
+bioconvert	bioconvert_nexus2newick	PASS	
+bioconvert	bioconvert_nexus2phylip	PASS	
+bioconvert	bioconvert_nexus2phyloxml	PASS	
+bioconvert	bioconvert_ods2csv	PASS	
+bioconvert	bioconvert_pdb2faa	PASS	
+bioconvert	bioconvert_phylip2clustal	PASS	
+bioconvert	bioconvert_phylip2fasta	PASS	
+bioconvert	bioconvert_phylip2nexus	PASS	
+bioconvert	bioconvert_phylip2stockholm	PASS	
+bioconvert	bioconvert_phylip2xmfa	PASS	
+bioconvert	bioconvert_phyloxml2newick	PASS	
+bioconvert	bioconvert_phyloxml2nexus	PASS	
+bioconvert	bioconvert_plink2bplink	PASS	
+bioconvert	bioconvert_plink2vcf	PASS	
+bioconvert	bioconvert_sam2bam	PASS	
+bioconvert	bioconvert_sam2cram	Failed	tool bug: --reference is parsed with nargs=1, so samtools gets the path wrapped in brackets and writes an empty CRAM while exiting 0.
+bioconvert	bioconvert_sam2paf	PASS	
+bioconvert	bioconvert_scf2fasta	PASS	
+bioconvert	bioconvert_scf2fastq	PASS	
+bioconvert	bioconvert_sra2fastq	PASS	
+bioconvert	bioconvert_stockholm2clustal	PASS	
+bioconvert	bioconvert_stockholm2phylip	PASS	
+bioconvert	bioconvert_tsv2csv	PASS	
+bioconvert	bioconvert_twobit2fasta	PASS	
+bioconvert	bioconvert_vcf2bcf	PASS	
+bioconvert	bioconvert_vcf2bed	PASS	
+bioconvert	bioconvert_vcf2bplink	PASS	
+bioconvert	bioconvert_vcf2plink	PASS	
+bioconvert	bioconvert_vcf2wiggle	PASS	
+bioconvert	bioconvert_wig2bed	PASS	
+bioconvert	bioconvert_xls2csv	PASS	
+bioconvert	bioconvert_xlsx2csv	Failed	image problem: the pandas method needs openpyxl 3.1 or newer (3.0.9 installed) and the pyexcel method cannot read xlsx.
+bioconvert	bioconvert_xmfa2phylip	PASS	
+bio-eagle	bio-eagle	PASS	
+bioexcel_seqqc	bioexcel_seqqc_bxcl_seqqc	PASS	
+bioformats	bioformats_bedautosql	PASS	
+bioformats	bioformats_bedcolumns	PASS	
+bioformats	bioformats_fastagaps	PASS	
+bioformats	bioformats_fastareorder	PASS	
+bioformats	bioformats_flanknfilter	PASS	
+bioformats	bioformats_gff2bed	PASS	
+bioformats	bioformats_gff2to3	PASS	
+bioformats	bioformats_gfftagstat	PASS	
+bioformats	bioformats_interval2bed	PASS	
+bioformats	bioformats_ncbirenameseq	PASS	
+bioformats	bioformats_randomfasta	PASS	
+bioformats	bioformats_renameseq	PASS	
+bioformats	bioformats_rmout2bed	PASS	
+bioformats	bioformats_snpeff2bed	PASS	
+bioformats	bioformats_snpeff2pph	PASS	
+bioformats	bioformats_vcf2bed	PASS	
+bioformats	bioformats_vcfeffect2bed	PASS	
+bioformats	bioformats_vcfgeno2bed	PASS	
+bioformats2raw	bioformats2raw	PASS	
+biomaj	biomaj_biomaj-cli.py	Not completed	BioMAJ needs a running MongoDB server, a global.properties configuration and remote bank downloads, which a networkless batch job cannot provide.
+biom-format	biom-format_add_metadata	PASS	
+biom-format	biom-format_convert	PASS	
+biom-format	biom-format_export_metadata	PASS	
+biom-format	biom-format_from_uc	PASS	
+biom-format	biom-format_head	PASS	
+biom-format	biom-format_normalize_table	PASS	
+biom-format	biom-format_subset_table	PASS	
+biom-format	biom-format_summarize_table	PASS	
+biom-format	biom-format_table_ids	PASS	
+biom-format	biom-format_validate_table	PASS	
+bionetcomp	bionetcomp	PASS	
+biopet	biopet_tool_AnnotateVcfWithBed	Failed	tool bug: the new INFO field holds the Scala Option text (region=Some(regionX)) instead of the BED region name
+biopet	biopet_tool_BamStats	PASS	
+biopet	biopet_tool_BaseCounter	PASS	
+biopet	biopet_tool_BastyGenerateFasta	PASS	
+biopet	biopet_tool_BedtoolsCoverageToCounts	PASS	
+biopet	biopet_tool_BiopetFlagstat	PASS	
+biopet	biopet_tool_CheckAllelesVcfInBam	PASS	
+biopet	biopet_tool_DownloadNcbiAssembly	PASS	
+biopet	biopet_tool_ExtractAlignedFastq	PASS	
+biopet	biopet_tool_FastqFilter	PASS	
+biopet	biopet_tool_FastqSplitter	PASS	
+biopet	biopet_tool_FastqSync	PASS	
+biopet	biopet_tool_FindOverlapMatch	PASS	
+biopet	biopet_tool_FindRepeatsPacBio	PASS	
+biopet	biopet_tool_GvcfToBed	PASS	
+biopet	biopet_tool_MergeAlleles	PASS	
+biopet	biopet_tool_MergeTables	PASS	
+biopet	biopet_tool_MpileupToVcf	PASS	
+biopet	biopet_tool_PipelineStatus	Not completed	Needs the output folder of a finished Biopet Queue pipeline run with its job dependency file; no such run is available.
+biopet	biopet_tool_PrefixFastq	PASS	
+biopet	biopet_tool_SageCountFastq	PASS	
+biopet	biopet_tool_SamplesTsvToConfig	PASS	
+biopet	biopet_tool_SeqStat	PASS	
+biopet	biopet_tool_SquishBed	PASS	
+biopet	biopet_tool_SummaryToTsv	PASS	
+biopet	biopet_tool_ValidateFastq	PASS	
+biopet	biopet_tool_ValidateVcf	PASS	
+biopet	biopet_tool_VcfFilter	PASS	
+biopet	biopet_tool_VcfStats	PASS	
+biopet	biopet_tool_VcfToTsv	PASS	
+biopet	biopet_tool_VcfWithVcf	PASS	
+biopet	biopet_tool_VepNormalizer	PASS	
+biopet-bamstats	biopet-bamstats_generate	PASS	
+biopet-bamstats	biopet-bamstats_merge	PASS	
+biopet-bamstats	biopet-bamstats_validate	PASS	
+biopet-basecounter	biopet-basecounter	PASS	
+biopet-extractadaptersfastqc	biopet-extractadaptersfastqc	PASS	
+biopet-fastqsplitter	biopet-fastqsplitter	PASS	
+biopet-sampleconfig	biopet-sampleconfig_casecontrol	PASS	
+biopet-sampleconfig	biopet-sampleconfig_cromwellarrays	PASS	
+biopet-sampleconfig	biopet-sampleconfig_extracttsv	PASS	
+biopet-sampleconfig	biopet-sampleconfig_readfromtsv	PASS	
+biopet-scatterregions	biopet-scatterregions	PASS	
+biopet-seattleseqkit	biopet-seattleseqkit_filter	PASS	
+biopet-seattleseqkit	biopet-seattleseqkit_mergegenes	PASS	
+biopet-seattleseqkit	biopet-seattleseqkit_multifilter	PASS	
+biopet-seqstat	biopet-seqstat_generate	PASS	
+biopet-seqstat	biopet-seqstat_merge	PASS	
+biopet-seqstat	biopet-seqstat_validate	PASS	
+biopet-validateannotation	biopet-validateannotation	PASS	
+biopet-validatefastq	biopet-validatefastq	PASS	
+biopet-validatevcf	biopet-validatevcf	PASS	
+biopet-vcffilter	biopet-vcffilter	PASS	
+biopet-vcfstats	biopet-vcfstats	PASS	
+bioprov	bioprov_blastn	Failed	image problem: blastn is not in the image, and bioprov fails at import writing db.json into read-only site-packages (needs --no-read-only and --no-match-user).
+bioprov	bioprov_genome_annotation	Failed	image problem: bioprov writes db.json into its read-only site-packages at import, so it fails under cwltool (needs --no-read-only and --no-match-user), and even as root it crashes building provenance after prodigal runs.
+bioprov	bioprov_kaiju	Failed	image problem: kaiju and kaiju2table are not in the image, and bioprov fails at import writing db.json into read-only site-packages (needs --no-read-only and --no-match-user).
+biopython.convert	biopython.convert	PASS	
+bior_annotate	bior_annotate	Failed	image problem: bior_annotate crashes at start because its usage logger cannot reach bsu-sage.mayo.edu (even with network), and it also needs the Mayo BioR catalogs that are not in the image.
+bio-ripser	bio-ripser	PASS	
+biosigner	biosigner	PASS	output identical to the Galaxy expected variableMetadata.out; note: under Docker it works only because the image ENTRYPOINT (the wrapper script) reads the extra 'Rscript' word as a dummy key
+biosniff	biosniff	PASS	
+biotdg	biotdg	PASS	
+bio-ting	bio-ting_ting	PASS	
+biotradis	biotradis_bacteria_tradis	PASS	
+biotradis	biotradis_check_tradis_tags	PASS	
+biotradis	biotradis_filter_tradis_tags	PASS	
+biotradis	biotradis_remove_tradis_tags	PASS	
+biotradis	biotradis_tradis_plot	PASS	
+biotransformer	biotransformer	PASS	
+bio-unicorn	bio-unicorn_bamstats	PASS	
+bio-unicorn	bio-unicorn_refstats	PASS	
+bio-unicorn	bio-unicorn_tidstats	PASS	
+biovalid	biovalid	PASS	
+bio-vcf	bio-vcf	PASS	
+biowdl-input-converter	biowdl-input-converter	PASS	
+biox	biox	PASS	
+biscot	biscot	PASS	
+biscuit	biscuit_QC.sh	Failed	image problem: QC.sh requires GNU awk but the image has only BusyBox awk, so it stops before any QC step.
+biscuit	biscuit_align	PASS	
+biscuit	biscuit_asm	PASS	
+biscuit	biscuit_bc	PASS	
+biscuit	biscuit_bsconv	PASS	
+biscuit	biscuit_bsstrand	PASS	
+biscuit	biscuit_build_biscuit_QC_assets.pl	Failed	image problem: bgzip and tabix are missing, so cpg.bed stays uncompressed and both GC-content window files are empty.
+biscuit	biscuit_cinread	PASS	
+biscuit	biscuit_epiread	PASS	
+biscuit	biscuit_flip_pbat_strands.sh	Failed	image problem: samtools (and GNU awk) are missing from the image, so the script exits with command not found.
+biscuit	biscuit_index	PASS	
+biscuit	biscuit_mergecg	PASS	
+biscuit	biscuit_pileup	PASS	
+biscuit	biscuit_qc	PASS	
+biscuit	biscuit_qc_coverage	PASS	
+biscuit	biscuit_rectangle	PASS	
+biscuit	biscuit_tview	Not completed	tview is an interactive ncurses viewer; in a batch job it stops with 'Error opening terminal'.
+biscuit	biscuit_vcf2bed	PASS	
+bismark	bismark	PASS	
+bis-snp	bis-snp	Failed	image problem: the jar stores the Bis-SNP walker classes under a wrong package path, so every analysis type (BisulfiteGenotyper) fails with 'Could not find walker'.
+bitmapperbs	bitmapperbs_bitmapperBS	Failed	image problem: indexing works, but bitmapperBS --search crashes with a segmentation fault (exit 139) right after loading the index, for every genome and read set tried.
+blacksheep-outliers	blacksheep-outliers_binarize	PASS	Split a three-value annotation column (derived from the repository's sample annotations) into correct binary columns.
+blacksheep-outliers	blacksheep-outliers_compare_groups	PASS	Q-value table matches the expected pidgin test file; note the --write_gene_list option crashes with a NameError (tool bug).
+blacksheep-outliers	blacksheep-outliers_outliers	PASS	Count table matches the expected pidgin test file; note the tool crashes unless up_or_down is set, despite its documented default.
+blacksheep-outliers	blacksheep-outliers_outliers_table	PASS	Output count and fraction tables match the expected pidgin test files from the tool repository.
+blacksheep-outliers	blacksheep-outliers_visualize	PASS	Heatmap PDF written from the repository test tables; note the --write_gene_list option crashes with a NameError (tool bug).
+blasr	blasr	PASS	Aligned 150 of 200 SARS-CoV-2 nanopore reads (nf-core) to the genome at about 90-94% identity; the other 50 went to the unaligned file.
+blast	blast_blast_formatter	PASS	Reformatted a blastp archive to tabular; all hit columns match the Galaxy expected table (query ID keeps its version suffix).
+blast	blast_blastn	PASS	Megablast output matches the Galaxy BLAST+ expected table exactly, both with -subject and with a makeblastdb database.
+blast	blast_blastp	PASS	Output matches the Galaxy BLAST+ expected tables exactly, both with -subject and with a makeblastdb database.
+blast	blast_blastx	PASS	Output matches the Galaxy BLAST+ expected table (rhodopsin nucleotides vs four human proteins) exactly.
+blast	blast_makeblastdb	PASS	Built protein and nucleotide databases from the Galaxy BLAST+ test FASTA files; blastp and blastn searches against them match the expected Galaxy tables.
+blast	blast_segmasker	PASS	Masked FASTA matches the Galaxy BLAST+ expected segmasker output exactly.
+blast	blast_tblastn	PASS	Output matches the Galaxy BLAST+ expected table (four human proteins vs rhodopsin nucleotides) exactly.
+blast	blast_tblastx	PASS	Output matches the Galaxy BLAST+ expected table (rhodopsin vs three human mRNAs) exactly.
+blast	blast_windowmasker	PASS	Made unit counts from the three human mRNA test sequences, then masked them (236 of 10732 bases soft-masked).
+blast2galaxy	blast2galaxy_blastn	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blast2galaxy	blast2galaxy_blastp	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blast2galaxy	blast2galaxy_blastx	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blast2galaxy	blast2galaxy_diamond-blastp	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blast2galaxy	blast2galaxy_diamond-blastx	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blast2galaxy	blast2galaxy_list-dbs	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blast2galaxy	blast2galaxy_list-tools	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blast2galaxy	blast2galaxy_tblastn	Not completed	Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'.
+blastbesties	blastbesties	PASS	
+blast-legacy	blast-legacy_blastall	PASS	
+blast-legacy	blast-legacy_formatdb	PASS	
+blast-legacy	blast-legacy_megablast	PASS	
+blastmining	blastmining_besthit	PASS	
+blastmining	blastmining_full_pipeline	PASS	
+blastmining	blastmining_lca	PASS	
+blastmining	blastmining_vote	PASS	
+blastmining	blastmining_voteSpecies	PASS	
+blat	blat	PASS	
+blaze2	blaze2_blaze	PASS	
+blend-bio	blend-bio_blend	PASS	
+bleties	bleties_insert	PASS	synthetic data: IES from the milraa run inserted into a real Paramecium scaffold; output equals the planted MIC sequence.
+bleties	bleties_milcor	PASS	synthetic data: simulated reads on a real Paramecium scaffold; all 30 MAC reads and 26 of 30 MIC reads binned correctly.
+bleties	bleties_milraa	PASS	synthetic data: simulated CCS reads with 5 planted IES on a real Paramecium scaffold; all 5 IES found with correct lengths.
+bleties	bleties_milret	PASS	synthetic data: simulated reads with 5 planted IES on a real Paramecium scaffold; all 5 IES scored, with retention 0.38-0.54 matching the half MIC, half MAC read mix.
+bleties	bleties_miltel	PASS	synthetic data: simulated reads with planted telomeres on a real Paramecium scaffold; both contig ends called.
+bleties	bleties_miser	Not completed	synthetic data: finds all 5 planted IES and its read counts match pysam, but labels every true IES 'paralog' (simulated reads carry several IES each), so the diagnosis could not be confirmed
+blobtk	blobtk_depth	PASS	
+blobtk	blobtk_filter	PASS	
+blobtk	blobtk_index	Failed	tool bug: in blobtk 0.7.1 the BUSCO count columns of the output TSV are in a different order on each row than in the header, so values are mislabeled.
+blobtk	blobtk_plot	PASS	SVG output is complete; PNG output has no text labels because the image lacks fonts.
+blobtk	blobtk_taxonomy	PASS	
+blobtk	blobtk_validate	PASS	
+blobtoolkit	blobtoolkit_add	PASS	
+blobtoolkit	blobtoolkit_create	PASS	
+blobtoolkit	blobtoolkit_filter	PASS	
+blobtoolkit	blobtoolkit_remove	PASS	
+blobtoolkit	blobtoolkit_replace	PASS	
+blobtoolkit	blobtoolkit_validate	PASS	
+blobtoolkit	blobtoolkit_view	PASS	
+blobtools	blobtools_bamfilter	PASS	
+blobtools	blobtools_covplot	PASS	
+blobtools	blobtools_create	PASS	
+blobtools	blobtools_map2cov	PASS	
+blobtools	blobtools_nodesdb	Failed	image problem: nodesdb always writes nodesDB.txt into the read-only install folder (site-packages/data) and has no output option, so it only works with --no-read-only.
+blobtools	blobtools_plot	PASS	
+blobtools	blobtools_seqfilter	PASS	
+blobtools	blobtools_taxify	PASS	
+blobtools	blobtools_view	PASS	
+blockclust	blockclust	PASS	
+bloocoo	bloocoo_Bloocoo	PASS	
+bloomfiltertrie	bloomfiltertrie_build	PASS	
+bloomfiltertrie	bloomfiltertrie_load	Failed	tool bug: -add_genomes writes the loaded BFT unchanged because bft 0.8 never counts the files in the list (nb_files_2_read stays 0); loading, -query_kmers, -query_sequences and -extract_kmers give correct results.
+blue-crab	blue-crab_p2s	Failed	image problem: pod5 0.3.27 with pyarrow 20.0.0 in the image cannot read POD5 signals (AttributeError: 'ExtensionScalar' object has no attribute 'as_buffer'), so p2s writes empty output for the tool's own test POD5 files.
+blue-crab	blue-crab_s2p	PASS	
+bmfilter	bmfilter	PASS	
+bmge	bmge	PASS	
+bmtagger	bmtagger_bmtagger.sh	Failed	image problem: srprism and blastn in bmtagger:3.101--3 fail with 'libbz2.so.1: cannot open shared object file', so bmtagger.sh stops at the srprism step on the Galaxy test reads.
+bmtagger	bmtagger_bmtool	PASS	
+bmtool	bmtool	PASS	
+bohra	bohra_deps_check	Not completed	Runs, but reports the bohra conda environments as missing; they are not in the image and need a multi-GB conda install.
+bohra	bohra_deps_install	Not completed	Installs many multi-GB conda environments from the network into the container, which a batch run cannot keep.
+bohra	bohra_deps_update	Not completed	Reinstalls many multi-GB conda environments from the network into the container, which a batch run cannot keep.
+bohra	bohra_generate-input	PASS	
+bohra	bohra_init-databases	Not completed	Setup asks interactive questions and downloads a Kraken2 database (11 MB to 644 GB); check mode only reads environment variables.
+bohra	bohra_test	Not completed	Pipeline, skipped: the self-test runs the full bohra Nextflow pipeline.
+bold-identification	bold-identification_bold_identification	Failed	Tool bug: it scrapes the retired BOLD v4 identification web page (now 404) and crashes with IndexError on every query.
+bolt	bolt_call	Failed	Tool bug: bolt 0.3.0 crashes on real nf-core BAMs (illegal instruction on SARS-CoV-2, segfault on human) and rejects every -t value.
+bolt-lmm	bolt-lmm_bolt	PASS	
+booster	booster	PASS	
+boquila	boquila	PASS	
+borf	borf	PASS	
+bowtie	bowtie_bowtie-build	PASS	
+bowtie2	bowtie2	PASS	
+bowtie2	bowtie2-build	PASS	
+bpipe	bpipe_archive	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_autoarchive	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_checks	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_diagrameditor	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_execute	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_jobs	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_log	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_override	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_register	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_test	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bpipe	bpipe_touch	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
+bppsuite	bppsuite_bppancestor	PASS	
+bppsuite	bppsuite_bppml	PASS	
+bppsuite	bppsuite_bppseqgen	PASS	
+bracken	bracken	PASS	
+braker	braker_braker.pl	Failed	image problem: the braker 1.9 image has no AUGUSTUS, no GeneMark-ET and lacks the Perl modules YAML, Hash::Merge and Logger::Simple.
+braker2	braker2_braker.pl	PASS	
+braker3	braker3_braker.pl	PASS	
+brawn	brawn	PASS	
+breakdancer	breakdancer_bam2cfg.pl	PASS	
+breakfast	breakfast	PASS	
+breakinator	breakinator	PASS	
+break-point-inspector	break-point-inspector	Not completed	No real tumor/normal BAMs with Manta SV calls were found; Manta on the nf-core chr21 tumor/normal BAMs called no SVs, so the tool ran on an empty VCF only.
+breakseq2	breakseq2_run_breakseq2.py	PASS	
+breseq	breseq	PASS	
+bronko	bronko_build	PASS	
+bronko	bronko_call	PASS	
+brooklyn_plot	brooklyn_plot	Failed	image problem: Rscript (R) is not in the image, so the brooklyn plot PDF is never made; the correlation CSV files are correct.
+bsmap	bsmap	PASS	
+bs-seeker2	bs-seeker2_bs_seeker2-align.py	PASS	
+bs-seeker2	bs-seeker2_bs_seeker2-build.py	PASS	
+bs-seeker2	bs-seeker2_bs_seeker2-call_methylation.py	PASS	
+btrim	btrim	PASS	
+bttcmp	bttcmp	PASS	
+btyper3	btyper3	PASS	
+bubblefinder	bubblefinder_BubbleFinder	PASS	
+bubblegun	bubblegun_bchains	PASS	
+bubblegun	bubblegun_bfs	PASS	
+bubblegun	bubblegun_biggestcomp	PASS	
+bubblegun	bubblegun_chainout	PASS	
+bubblegun	bubblegun_compact	PASS	
+bufet	bufet_bufet.py	PASS	

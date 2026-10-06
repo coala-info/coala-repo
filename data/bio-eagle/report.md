@@ -1,5 +1,11 @@
 # bio-eagle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bio-eagle | PASS |  |
+
 ## bio-eagle
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # biopet-extractadaptersfastqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-extractadaptersfastqc | PASS |  |
+
 ## biopet-extractadaptersfastqc
 
 ### Tool Description

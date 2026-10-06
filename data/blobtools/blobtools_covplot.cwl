@@ -185,11 +185,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --label
     doc: Relabel (taxonomic) groups, can be used several times. e.g. 
       "A=Actinobacteria,Proteobacteria"
     inputBinding:
       position: 101
-      prefix: --label
   - id: sort_first_labels
     type:
       - 'null'

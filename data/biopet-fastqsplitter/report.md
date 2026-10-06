@@ -1,5 +1,11 @@
 # biopet-fastqsplitter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-fastqsplitter | PASS |  |
+
 ## biopet-fastqsplitter
 
 ### Tool Description

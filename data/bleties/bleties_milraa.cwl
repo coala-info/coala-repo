@@ -12,6 +12,9 @@ inputs:
       - 'null'
       - File
     doc: BAM file containing mapping, must be sorted and indexed
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -163,7 +166,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_file
     outputBinding:
-      glob: $(inputs.output_file)*
+      glob: "$(inputs.output_file ? inputs.output_file : 'milraa.test')*"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bleties:0.1.11--pyhdfd78af_0

@@ -7,7 +7,10 @@ doc: "Flip PBAT strands in a BAM file, optionally for a specific region.\n\nTool
 inputs:
   - id: in_bam
     type: File
-    doc: input BAM to flip strands
+    doc: input BAM to flip strands (index needed with --region)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: out_bam

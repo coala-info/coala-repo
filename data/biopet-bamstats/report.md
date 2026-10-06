@@ -1,5 +1,13 @@
 # biopet-bamstats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-bamstats_generate | PASS |  |
+| biopet-bamstats_merge | PASS |  |
+| biopet-bamstats_validate | PASS |  |
+
 ## biopet-bamstats_generate
 
 ### Tool Description

@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ValidateAnnotation
+baseCommand:
+  - biopet-validateannotation
 label: biopet-validateannotation
 doc: "A tool to validate annotation files such as Refflat, GTF, and check them against
   a reference fasta.\n\nTool homepage: https://github.com/biopet/validateannotation"
@@ -17,11 +18,13 @@ inputs:
   - id: gtf_file
     type:
       - 'null'
-      - File
-    doc: Gtf files to check
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --gtfFile
+    doc: Gtf files to check (option can be given more than once)
     inputBinding:
       position: 101
-      prefix: --gtfFile
   - id: log_level
     type:
       - 'null'
@@ -35,6 +38,8 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+      - pattern: ^.dict
+        required: false
     doc: Reference fasta to check vcf file against
     inputBinding:
       position: 101
@@ -48,10 +53,10 @@ inputs:
       position: 101
       prefix: --refflatFile
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: log
+    type: stderr
+    doc: Validation log (the tool writes its result messages to stderr)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-validateannotation:0.1--0
-stdout: biopet-validateannotation.out
+stderr: biopet-validateannotation.log

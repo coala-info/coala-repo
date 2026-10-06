@@ -16,7 +16,10 @@ inputs:
       position: 1
   - id: input_bam
     type: File
-    doc: Input BAM file
+    doc: Input BAM file (index needed with -g)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 2
   - id: print_content

@@ -28,9 +28,9 @@ inputs:
   - id: alternatives_from_evidence
     type:
       - 'null'
-      - boolean
+      - string
     doc: Output alternative transcripts based on explicit evidence from hints 
-      (default is true).
+      (true or false; default is true).
     inputBinding:
       position: 101
       prefix: --alternatives-from-evidence
@@ -144,12 +144,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --extrinsicCfgFiles
     doc: Depending on the mode in which braker.pl is executed, it may require 
       one ore several extrinsicCfgFiles. Don't use this option unless you know 
       what you are doing!
     inputBinding:
       position: 101
-      prefix: --CfgFiles
   - id: check_software
     type:
       - 'null'
@@ -670,7 +671,9 @@ inputs:
       generation, not gene prediction by AUGUSTUS'
     inputBinding:
       position: 101
-      prefix: --splice_sites
+      prefix: --splice_sites=
+      separate: false
+      itemSeparator: ','
   - id: stranded
     type:
       - 'null'
@@ -687,7 +690,9 @@ inputs:
       filtering eliminates intron hints from the wrong strand, anyway).
     inputBinding:
       position: 101
-      prefix: --stranded
+      prefix: --stranded=
+      separate: false
+      itemSeparator: ','
   - id: train_from_gth
     type:
       - 'null'
@@ -757,9 +762,23 @@ inputs:
       position: 101
       prefix: --workingdir
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Working directory with results (braker.gtf, augustus.hints.gtf, hintsfile.gff,
+      braker.log); ./braker when --workingdir is not set
+    outputBinding:
+      glob: '$(inputs.workingdir ? inputs.workingdir : "braker")'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return inputs.workingdir ? {"class": "Directory", "basename": inputs.workingdir,
+        "listing": [], "writable": true} : null; }'
+      - entry: $(inputs.augustus_config_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/braker2:2.1.6--hdfd78af_5

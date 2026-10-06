@@ -1,5 +1,11 @@
 # bismark CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bismark | PASS |  |
+
 ## bismark
 
 ### Tool Description

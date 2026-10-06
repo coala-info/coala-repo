@@ -6,13 +6,38 @@ baseCommand:
 label: bpipe_checks
 doc: "Check Report\n\nTool homepage: http://docs.bpipe.org/"
 inputs:
-  - id: check_override
+  - id: comment
     type:
       - 'null'
       - string
-    doc: Enter a number of a check to override, * for all
+    doc: comment to add to given operation
     inputBinding:
-      position: 1
+      position: 101
+      prefix: -c
+  - id: fail_check
+    type:
+      - 'null'
+      - string
+    doc: fail specified check
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: list_checks
+    type:
+      - 'null'
+      - boolean
+    doc: list checks and exit, non-interactive mode
+    inputBinding:
+      position: 101
+      prefix: -l
+  - id: override_check
+    type:
+      - 'null'
+      - string
+    doc: override specified check to force it to pass
+    inputBinding:
+      position: 101
+      prefix: -o
 outputs:
   - id: stdout
     type: stdout

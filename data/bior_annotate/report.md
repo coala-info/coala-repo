@@ -1,5 +1,11 @@
 # bior_annotate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bior_annotate | Failed | image problem: bior_annotate crashes at start because its usage logger cannot reach bsu-sage.mayo.edu (even with network), and it also needs the Mayo BioR catalogs that are not in the image. |
+
 ## bior_annotate
 
 ### Tool Description

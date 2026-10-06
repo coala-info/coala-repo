@@ -1,5 +1,11 @@
 # biotdg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biotdg | PASS |  |
+
 ## biotdg
 
 ### Tool Description

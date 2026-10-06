@@ -39,8 +39,10 @@ inputs:
       position: 102
       prefix: --retain
   - id: output_pod5_path
-    type: string
-    doc: ' output to FILE (default: None)'
+    type:
+      - 'null'
+      - string
+    doc: 'output to FILE (.pod5) (default: None)'
     inputBinding:
       position: 103
       prefix: --output

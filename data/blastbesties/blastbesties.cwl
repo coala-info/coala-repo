@@ -80,7 +80,9 @@ outputs:
       - File
     doc: Write reciprocal BLAST pairs to this file.
     outputBinding:
-      glob: $(inputs.out_file_path)
+      glob: "$((inputs.out_dir_path ? inputs.out_dir_path + '/' : '') + (inputs.out_file_path
+        ? inputs.out_file_path : (inputs.blastAvB.nameroot + '_' + inputs.blastBvA.nameroot
+        + '_reciprocal_pairs.tab').replace(/ /g, '_')))"
   - id: out_dir
     type:
       - 'null'

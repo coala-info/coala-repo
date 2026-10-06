@@ -8,15 +8,13 @@ doc: "Convert file from '('VCF',)' to '('PLINK',)' format. See bioconvert.readth
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: The path to the file to convert.
+    type: File
+    doc: The VCF file to convert.
     inputBinding:
       position: 1
   - id: output_file
-    type: string?
-    doc: The path where the result will be stored.
+    type: string
+    doc: Output prefix; bioconvert writes <prefix>.ped and <prefix>.map.
     inputBinding:
       position: 2
   - id: allow_indirect_conversion
@@ -137,13 +135,16 @@ inputs:
       position: 102
       prefix: --verbosity
 outputs:
-  - id: out_output_file
-    type:
-      - 'null'
-      - File
-    doc: The path where the result will be stored.
+  - id: out_ped
+    type: File
+    doc: PED file
     outputBinding:
-      glob: '$(inputs.output_file)'
+      glob: $(inputs.output_file).ped
+  - id: out_map
+    type: File
+    doc: MAP file
+    outputBinding:
+      glob: $(inputs.output_file).map
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3

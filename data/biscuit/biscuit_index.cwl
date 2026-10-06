@@ -39,6 +39,39 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: indexed_fasta
+    type: File
+    doc: The input FASTA with the index files as secondary files (default 
+      prefix)
+    outputBinding:
+      glob: $(inputs.input_fasta.basename)
+    secondaryFiles:
+      - pattern: .bis.amb
+        required: false
+      - pattern: .bis.ann
+        required: false
+      - pattern: .bis.pac
+        required: false
+      - pattern: .dau.bwt
+        required: false
+      - pattern: .dau.sa
+        required: false
+      - pattern: .par.bwt
+        required: false
+      - pattern: .par.sa
+        required: false
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: All index files written (<prefix>.bis.*, .dau.*, .par.*)
+    outputBinding:
+      glob: "$((inputs.prefix ? inputs.prefix : inputs.input_fasta.basename) + '.*')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

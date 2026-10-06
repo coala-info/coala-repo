@@ -1,5 +1,11 @@
 # biopet-vcffilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-vcffilter | PASS |  |
+
 ## biopet-vcffilter
 
 ### Tool Description

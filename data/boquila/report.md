@@ -1,5 +1,11 @@
 # boquila CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| boquila | PASS |  |
+
 ## boquila
 
 ### Tool Description

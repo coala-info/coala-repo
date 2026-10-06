@@ -11,7 +11,7 @@ inputs:
       items: File
     doc: Input BAM files
     inputBinding:
-      position: 1
+      position: 103
   - id: coeff_variation_cutoff
     type:
       - 'null'

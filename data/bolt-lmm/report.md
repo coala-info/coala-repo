@@ -1,5 +1,11 @@
 # bolt-lmm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bolt-lmm_bolt | PASS |  |
+
 ## bolt-lmm_bolt
 
 ### Tool Description

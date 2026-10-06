@@ -18,7 +18,10 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input BAM file(s)
+    doc: Input BAM file(s) (coordinate sorted and indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 2
   - id: contamination_rate
@@ -264,9 +267,9 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in stats_prefix
+    doc: Pileup statistics files (<stats_prefix or output file>_meth_average.tsv)
     outputBinding:
-      glob: $(inputs.stats_prefix)*
+      glob: "$((inputs.stats_prefix ? inputs.stats_prefix : inputs.output_file_path) + '_*')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # bold-identification CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bold-identification_bold_identification | Failed | Tool bug: it scrapes the retired BOLD v4 identification web page (now 404) and crashes with IndexError on every query. |
+
 ## bold-identification_bold_identification
 
 ### Tool Description

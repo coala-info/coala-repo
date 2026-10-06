@@ -11,6 +11,11 @@ inputs:
       - 'null'
       - File
     doc: Path to BAM file
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -27,6 +32,9 @@ inputs:
       - 'null'
       - File
     doc: Path to CRAM file
+    secondaryFiles:
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: --cram

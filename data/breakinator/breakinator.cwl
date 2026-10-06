@@ -115,7 +115,7 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: '$(inputs.out_path ? inputs.out_path : "breakinator_out.txt")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

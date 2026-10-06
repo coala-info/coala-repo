@@ -2,12 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - bpipe
-  - diagram
+  - diagrameditor
 label: bpipe_diagrameditor
 doc: "Generate a diagram of a Bpipe pipeline\n\nTool homepage: http://docs.bpipe.org/"
 inputs:
   - id: pipeline
-    type: string
+    type: File
     doc: The Bpipe pipeline script
     inputBinding:
       position: 1

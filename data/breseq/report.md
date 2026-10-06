@@ -1,5 +1,11 @@
 # breseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| breseq | PASS |  |
+
 ## breseq
 
 ### Tool Description

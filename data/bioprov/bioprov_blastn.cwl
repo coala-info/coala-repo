@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bioprov_blastn
+baseCommand:
+  - bioprov
+  - blastn
 label: bioprov_blastn
 doc: "Align nucleotide data to a reference database with BLASTN.\n\nTool homepage:
   https://github.com/vinisalazar/BioProv"
@@ -31,7 +33,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: "Path to write log file to. If not set, will be defined\nautomatically."
     inputBinding:
       position: 101

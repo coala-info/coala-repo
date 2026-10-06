@@ -56,7 +56,7 @@ inputs:
   - id: gi_list
     type:
       - 'null'
-      - string
+      - File
     doc: Set gi list for blastdb file
     inputBinding:
       position: 101

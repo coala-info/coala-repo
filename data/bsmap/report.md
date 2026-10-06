@@ -1,5 +1,11 @@
 # bsmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bsmap | PASS |  |
+
 ## bsmap
 
 ### Tool Description

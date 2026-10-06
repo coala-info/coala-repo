@@ -99,7 +99,7 @@ inputs:
   - id: move_production_directories
     type:
       - 'null'
-      - Directory
+      - string
     doc: Change bank production directories location to this new path, path must exists
     inputBinding:
       position: 101

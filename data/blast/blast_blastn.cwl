@@ -35,14 +35,25 @@ inputs:
     inputBinding:
       position: 101
       prefix: -task
+  - id: db_dir
+    type:
+      - 'null'
+      - Directory
+    doc: >
+      Optional directory of local BLAST database files for one name
+      (e.g. mydb.nhr, mydb.nin, mydb.nsq). Omit when using -remote; -db is then
+      the db name only (e.g. nt).
   - id: db
     type:
       - 'null'
       - string
-    doc: BLAST database name
+    doc: >
+      BLAST database name, or local basename (no extension) inside db_dir.
+      With db_dir, -db is db_dir/path/db; without db_dir, -db is db.
     inputBinding:
       position: 101
       prefix: -db
+      valueFrom: '$(inputs.db_dir != null ? inputs.db_dir.path + ''/'' + self : self)'
   - id: out
     type: string
     doc: Output file name
@@ -220,7 +231,7 @@ inputs:
   - id: window_masker_db
     type:
       - 'null'
-      - string
+      - File
     doc: Enable WindowMasker filtering using this repeats database
     inputBinding:
       position: 101
@@ -244,7 +255,7 @@ inputs:
   - id: gilist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to list of GIs
     inputBinding:
       position: 101
@@ -252,7 +263,7 @@ inputs:
   - id: seqidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to list of SeqIDs
     inputBinding:
       position: 101
@@ -260,7 +271,7 @@ inputs:
   - id: negative_gilist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to everything except the specified GIs
     inputBinding:
       position: 101
@@ -268,7 +279,7 @@ inputs:
   - id: negative_seqidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to everything except the specified SeqIDs
     inputBinding:
       position: 101
@@ -293,7 +304,7 @@ inputs:
   - id: taxidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to include only the specified taxonomy IDs
     inputBinding:
       position: 101
@@ -301,7 +312,7 @@ inputs:
   - id: negative_taxidlist
     type:
       - 'null'
-      - string
+      - File
     doc: Restrict search of database to everything except the specified taxonomy
       IDs
     inputBinding:
@@ -446,7 +457,9 @@ inputs:
       position: 101
       prefix: -import_search_strategy
   - id: export_search_strategy
-    type: string
+    type:
+      - 'null'
+      - string
     doc: File name to record the search strategy used
     inputBinding:
       position: 101

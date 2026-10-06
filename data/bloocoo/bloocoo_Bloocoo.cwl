@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bloocoo
+baseCommand: Bloocoo
 label: bloocoo_Bloocoo
 doc: "Bloocoo is a k-mer based read error correction tool.\n\nTool homepage: http://gatb.inria.fr/software/bloocoo/"
 inputs:
@@ -241,6 +241,20 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.out_dir_path)
+  - id: corrected_reads
+    type:
+      - 'null'
+      - File
+    doc: corrected reads written under the default name <reads name>_corrected.fasta when -out is not given (FASTA format)
+    outputBinding:
+      glob: $(inputs.file.nameroot)_corrected.fa*
+  - id: kmer_counts_h5
+    type:
+      - 'null'
+      - File
+    doc: k-mer counts in HDF5 format (<reads name>.h5), reusable with -from-h5
+    outputBinding:
+      glob: $(inputs.file.nameroot).h5
 requirements:
   - class: InlineJavascriptRequirement
 hints:

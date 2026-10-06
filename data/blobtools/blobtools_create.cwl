@@ -15,6 +15,8 @@ inputs:
           prefix: --bam
           separate: true
     doc: BAM file(s), can be specified multiple times
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
   - id: calculate_cov
@@ -141,6 +143,8 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --taxrule
     doc: 'Taxrule determines how taxonomy of blobs is computed (by default both are
       calculated) "bestsum" : sum bitscore across all hits for each taxonomic rank
       "bestsumorder" : sum bitscore across all hits for each taxonomic rank. - If
@@ -148,7 +152,6 @@ inputs:
       the next <TAX> file is used.'
     inputBinding:
       position: 101
-      prefix: --taxrule
   - id: title
     type:
       - 'null'

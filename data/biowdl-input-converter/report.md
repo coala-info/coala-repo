@@ -1,5 +1,11 @@
 # biowdl-input-converter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biowdl-input-converter | PASS |  |
+
 ## biowdl-input-converter
 
 ### Tool Description

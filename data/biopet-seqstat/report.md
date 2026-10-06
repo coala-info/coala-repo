@@ -1,5 +1,13 @@
 # biopet-seqstat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-seqstat_generate | PASS |  |
+| biopet-seqstat_merge | PASS |  |
+| biopet-seqstat_validate | PASS |  |
+
 ## biopet-seqstat_generate
 
 ### Tool Description

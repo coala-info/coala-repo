@@ -1,9 +1,17 @@
 # biopet-seattleseqkit CWL Generation Report
 
-## biopet-seattleseqkit
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-seattleseqkit_filter | PASS |  |
+| biopet-seattleseqkit_mergegenes | PASS |  |
+| biopet-seattleseqkit_multifilter | PASS |  |
+
+## biopet-seattleseqkit_filter
 
 ### Tool Description
-A tool suite for processing SeattleSeq data, including Filter, MergeGenes, and MultiFilter tools.
+Filters a SeattleSeq file by bed regions and field values.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/biopet-seattleseqkit:0.2--0
@@ -18,55 +26,112 @@ A tool suite for processing SeattleSeq data, including Filter, MergeGenes, and M
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO  [2026-02-07 04:52:10,562] - General Biopet options
-INFO  [2026-02-07 04:52:10,563] - 
-INFO  [2026-02-07 04:52:10,564] - 
-INFO  [2026-02-07 04:52:10,564] - Options for SeattleSeqKit
-INFO  [2026-02-07 04:52:10,564] - 
-INFO  [2026-02-07 04:52:10,564] - Usage: SeattleSeqKit [options] [toolName] [tool args]
-INFO  [2026-02-07 04:52:10,564] - 
-INFO  [2026-02-07 04:52:10,564] -   -l, --log_level <value>  Level of log information printed. Possible levels: 'debug', 'info', 'warn', 'error'
-INFO  [2026-02-07 04:52:10,564] -   -h, --help               Print usage
-INFO  [2026-02-07 04:52:10,564] -   -v, --version            Print version
-INFO  [2026-02-07 04:52:10,564] -   toolName                 Name of the tool to execute
-INFO  [2026-02-07 04:52:10,564] -   tool args                Arguments for the tool
-INFO  [2026-02-07 04:52:10,564] - 
-INFO  [2026-02-07 04:52:10,565] - ** Tool **
-INFO  [2026-02-07 04:52:10,598] - Filter, MergeGenes, MultiFilter
-INFO  [2026-02-07 04:52:10,598] -
+General Biopet options
+
+
+Options for Filter
+
+Usage: Filter [options]
+
+  -l, --log_level <value>  Level of log information printed. Possible levels: 'debug', 'info', 'warn', 'error'
+  -h, --help               Print usage
+  -v, --version            Print version
+  -i, --inputFile <value>  Seattle seq input file
+  -o, --outputFile <value>
+                           Seattle seq output file
+  --geneColapseOutput <value>
+                           Output file to count per gene hits
+  --intervals <value>      Intervals bed file
+  --fieldMustContain:<key>=<key>=<text>
+                           Field must contain given text
+  --fieldMustBeBelow:<key>=<key>=<double>
+                           Field must be below given numeric value
+  --fieldMustBeAbove:<key>=<key>=<double>
+                           Field must be below given numeric value
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## biopet-seattleseqkit
+## biopet-seattleseqkit_mergegenes
 
 ### Tool Description
-General Biopet options and tools for SeattleSeqKit. Available tools: Filter, MergeGenes, MultiFilter.
+Merges per-sample gene count files into one table.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/biopet-seattleseqkit:0.2--0
 - **Homepage**: https://github.com/biopet/seattleseqkit
 - **Package**: https://anaconda.org/channels/bioconda/packages/biopet-seattleseqkit/overview
 - **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/biopet-seattleseqkit/overview
+- **Total Downloads**: 5.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/biopet/seattleseqkit
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO  [2026-02-07 04:54:12,345] - General Biopet options
-INFO  [2026-02-07 04:54:12,346] - 
-INFO  [2026-02-07 04:54:12,346] - 
-INFO  [2026-02-07 04:54:12,346] - Options for SeattleSeqKit
-INFO  [2026-02-07 04:54:12,346] - 
-INFO  [2026-02-07 04:54:12,346] - Usage: SeattleSeqKit [options] [toolName] [tool args]
-INFO  [2026-02-07 04:54:12,346] - 
-INFO  [2026-02-07 04:54:12,346] -   -l, --log_level <value>  Level of log information printed. Possible levels: 'debug', 'info', 'warn', 'error'
-INFO  [2026-02-07 04:54:12,346] -   -h, --help               Print usage
-INFO  [2026-02-07 04:54:12,346] -   -v, --version            Print version
-INFO  [2026-02-07 04:54:12,346] -   toolName                 Name of the tool to execute
-INFO  [2026-02-07 04:54:12,346] -   tool args                Arguments for the tool
-INFO  [2026-02-07 04:54:12,346] - 
-INFO  [2026-02-07 04:54:12,347] - ** Tool **
-INFO  [2026-02-07 04:54:12,374] - Filter, MergeGenes, MultiFilter
-INFO  [2026-02-07 04:54:12,374] -
+General Biopet options
+
+
+Options for MergeGenes
+
+Usage: MergeGenes [options]
+
+  -l, --log_level <value>  Level of log information printed. Possible levels: 'debug', 'info', 'warn', 'error'
+  -h, --help               Print usage
+  -v, --version            Print version
+  -i, --inputFile:<key>=<value>
+                           Gene counts per sample
+  -o, --outputFile <value>
+                           Output merges genes counts
 ```
+
+
+## biopet-seattleseqkit_multifilter
+
+### Tool Description
+Filters SeattleSeq files of several samples and merges their gene counts.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/biopet-seattleseqkit:0.2--0
+- **Homepage**: https://github.com/biopet/seattleseqkit
+- **Package**: https://anaconda.org/channels/bioconda/packages/biopet-seattleseqkit/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/biopet-seattleseqkit/overview
+- **Total Downloads**: 5.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/biopet/seattleseqkit
+- **Stars**: N/A
+### Original Help Text
+```text
+General Biopet options
+
+
+Options for MultiFilter
+
+Usage: MultiFilter [options]
+
+  -l, --log_level <value>  Level of log information printed. Possible levels: 'debug', 'info', 'warn', 'error'
+  -h, --help               Print usage
+  -v, --version            Print version
+  -i, --inputFile:<key>=<value>
+                           Seattle seq input file
+  -o, --outputDir <value>  Output directory
+  --multiSampleTreshold <value>
+                           Minimal number of samples per gene, default: 2
+  --geneColapseOutput <value>
+                           Output file to count per gene hits
+  --intervals:<key>=<value>
+                           Intervals bed file
+  --fieldMustContain:<key>=<key>=<text>
+                           Field must contain given text
+  --fieldMustBeBelow:<key>=<key>=<double>
+                           Field must be below given numeric value
+  --fieldMustBeAbove:<key>=<key>=<double>
+                           Field must be below given numeric value
+```
+
+
+## Metadata
+- **Skill**: generated
 

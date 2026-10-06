@@ -1,5 +1,12 @@
 # bronko CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bronko_build | PASS |  |
+| bronko_call | PASS |  |
+
 ## bronko_build
 
 ### Tool Description

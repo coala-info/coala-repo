@@ -137,13 +137,20 @@ inputs:
       position: 104
       prefix: -l
 outputs:
+  - id: database_files
+    type: File[]
+    doc: BLAST database files written by formatdb (.phr/.pin/.psq or .nhr/.nin/.nsq
+      and index files)
+    outputBinding:
+      glob: "$(inputs.base_name ? inputs.base_name : (inputs.input_file ? inputs.input_file.basename
+        : 'formatdb_none')).[pn]*"
   - id: logfile
     type:
       - 'null'
       - File
     doc: Logfile name
     outputBinding:
-      glob: $(inputs.logfile_path)
+      glob: "$(inputs.logfile_path ? inputs.logfile_path : 'formatdb.log')"
   - id: alias_file
     type:
       - 'null'
@@ -160,6 +167,9 @@ outputs:
       glob: $(inputs.binary_gifile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.input_file ? [{'entry': inputs.input_file, 'writable': true}] :
+      [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast-legacy:2.2.26--h9ee0642_3

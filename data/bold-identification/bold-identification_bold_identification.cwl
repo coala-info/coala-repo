@@ -92,9 +92,40 @@ inputs:
       position: 101
       prefix: -n
 outputs:
+  - id: taxa
+    type:
+      - 'null'
+      - File
+    doc: Taxon table of the BOLD hits (<prefix>.taxa)
+    outputBinding:
+      glob: $(inputs.output_prefix).taxa
+  - id: chimera_taxa
+    type:
+      - 'null'
+      - File
+    doc: Taxon table of the 5'- and 3'-end queries in chimera check mode
+    outputBinding:
+      glob: $(inputs.output_prefix).5-and-3ends.taxa
+  - id: no_bold_match
+    type:
+      type: array
+      items: File
+    doc: Sequences without a BOLD match
+    outputBinding:
+      glob: $(inputs.output_prefix)*.NoBoldMatchError.fasta
+  - id: timeout_sequences
+    type:
+      type: array
+      items: File
+    doc: Sequences that failed with a TimeoutException
+    outputBinding:
+      glob: $(inputs.output_prefix)*.TimeoutException.fasta
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bold-identification:0.0.27--py_0

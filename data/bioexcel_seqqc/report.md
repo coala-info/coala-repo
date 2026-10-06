@@ -1,5 +1,11 @@
 # bioexcel_seqqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioexcel_seqqc_bxcl_seqqc | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

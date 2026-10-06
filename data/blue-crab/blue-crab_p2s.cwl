@@ -71,8 +71,10 @@ inputs:
       position: 102
       prefix: --threads
   - id: output_file_path
-    type: string
-    doc: 'BLOW5, --output S/BLOW5 output to FILE (default: None)'
+    type:
+      - 'null'
+      - string
+    doc: 'output to FILE (.slow5 or .blow5) (default: None)'
     inputBinding:
       position: 103
       prefix: -o

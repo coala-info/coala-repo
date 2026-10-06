@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ReadFromTsv
+baseCommand:
+  - biopet-sampleconfig
+  - ReadFromTsv
 label: biopet-sampleconfig_readfromtsv
 doc: "Converts TSV files containing sample and library information into a Biopet configuration
   file (YAML or JSON).\n\nTool homepage: https://github.com/biopet/sampleconfig"
@@ -10,12 +12,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --inputFiles
     doc: Input must be a tsv file, first line is seen as header and must at 
       least have a 'sample' column, 'library' column is optional, multiple files
       can be specified by using multiple flags.
     inputBinding:
       position: 101
-      prefix: --inputFiles
   - id: log_level
     type:
       - 'null'
@@ -30,11 +33,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --tagFiles
     doc: This works the same as for a normal input file. Difference is that it 
       placed in a sub key 'tags' in the config file
     inputBinding:
       position: 101
-      prefix: --tagFiles
   - id: output_file_path
     type: string
     inputBinding:

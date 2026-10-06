@@ -252,7 +252,10 @@ inputs:
       position: 101
       prefix: --z-field
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: 'Output filename [default: output.svg]'
     inputBinding:
       position: 102
       prefix: --output
@@ -263,7 +266,7 @@ outputs:
       - File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.output_path ? inputs.output_path : 'output.svg')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

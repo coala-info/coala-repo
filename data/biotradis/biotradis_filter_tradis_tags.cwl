@@ -1,20 +1,12 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: filter_tags
+baseCommand: filter_tradis_tags
 label: biotradis_filter_tradis_tags
-doc: "Filters a BAM file and outputs reads with tag matching -t option\n\nTool homepage:
+doc: "Filters a fastq file and outputs reads with tag matching -t option\n\nTool homepage:
   https://github.com/sanger-pathogens/Bio-Tradis"
 inputs:
-  - id: bam_file
-    type: File
-    doc: BAM file to filter
-    inputBinding:
-      position: 101
-      prefix: -b
   - id: fastq_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: fastq file with tradis tags attached
     inputBinding:
       position: 101

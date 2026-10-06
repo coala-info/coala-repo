@@ -1,5 +1,11 @@
 # bio-ripser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bio-ripser | PASS |  |
+
 ## bio-ripser
 
 ### Tool Description

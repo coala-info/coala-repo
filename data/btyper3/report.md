@@ -1,5 +1,11 @@
 # btyper3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| btyper3 | PASS |  |
+
 ## btyper3
 
 ### Tool Description

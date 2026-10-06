@@ -1,5 +1,11 @@
 # biopet-validatefastq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-validatefastq | PASS |  |
+
 ## biopet-validatefastq
 
 ### Tool Description

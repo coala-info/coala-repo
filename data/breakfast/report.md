@@ -1,5 +1,11 @@
 # breakfast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| breakfast | PASS |  |
+
 ## breakfast
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # bufet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bufet_bufet.py | PASS |  |
+
 ## bufet_bufet.py
 
 ### Tool Description

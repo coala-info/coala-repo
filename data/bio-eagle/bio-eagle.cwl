@@ -23,19 +23,29 @@ inputs:
   - id: bfile
     type:
       - 'null'
-      - string
-    doc: prefix of PLINK .fam, .bim, .bed files
+      - File
+    doc: PLINK .bed file; its .bim and .fam files sit beside it and the prefix 
+      is passed to --bfile
+    secondaryFiles:
+      - ^.bim
+      - ^.fam
     inputBinding:
       position: 101
       prefix: --bfile
+      valueFrom: $(self.path.replace(/\.bed$/, ''))
   - id: bfilegz
     type:
       - 'null'
-      - string
-    doc: prefix of PLINK .fam.gz, .bim.gz, .bed.gz files
+      - File
+    doc: PLINK .bed.gz file; its .bim.gz and .fam.gz files sit beside it and 
+      the prefix is passed to --bfilegz
+    secondaryFiles:
+      - ^^.bim.gz
+      - ^^.fam.gz
     inputBinding:
       position: 101
       prefix: --bfilegz
+      valueFrom: $(self.path.replace(/\.bed\.gz$/, ''))
   - id: bim
     type:
       - 'null'
@@ -82,10 +92,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --exclude
     doc: file(s) listing SNPs to ignore (no header; SNP ID must be first column)
     inputBinding:
       position: 101
-      prefix: --exclude
   - id: expect_ibdc_m
     type:
       - 'null'
@@ -211,11 +222,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --remove
     doc: file(s) listing individuals to ignore (no header; FID IID must be first
       two columns)
     inputBinding:
       position: 101
-      prefix: --remove
   - id: v1
     type:
       - 'null'
@@ -236,6 +248,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: tabix-indexed [compressed] VCF/BCF file containing variants to exclude 
       from phasing
     inputBinding:
@@ -254,6 +271,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: tabix-indexed [compressed] VCF/BCF file for reference haplotypes
     inputBinding:
       position: 101
@@ -262,6 +284,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: tabix-indexed [compressed] VCF/BCF file for target genotypes
     inputBinding:
       position: 101

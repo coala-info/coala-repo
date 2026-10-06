@@ -46,8 +46,11 @@ inputs:
       position: 101
       prefix: --decompress
   - id: input
-    type: File
-    doc: Input file/directory path
+    type:
+      - File
+      - Directory
+    doc: Input file/directory path (a directory of FASTA files for analysis 
+      mode)
     inputBinding:
       position: 101
       prefix: --input
@@ -149,7 +152,8 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output file/directory path
+      - Directory
+    doc: Output file/directory path (a directory in analysis mode)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

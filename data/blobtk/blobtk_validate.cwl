@@ -18,10 +18,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --genomehubs_files
     doc: Files to match to taxIDs - Experimental
     inputBinding:
       position: 101
-      prefix: --genomehubs_files
   - id: name_classes
     type:
       - 'null'
@@ -41,6 +42,7 @@ inputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: Path to backbone taxonomy file/directory
     inputBinding:
       position: 101
@@ -53,8 +55,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxonomy-format
+  - id: genomehubs_support_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files (TSV) and other YAML files named in the genomehubs_files YAML
+      (file name, needs); staged next to the YAML so the names resolve
   - id: schema_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Path to output JSON Schema file (when set, only the schema is written)
     inputBinding:
       position: 102
       prefix: --schema
@@ -66,8 +78,25 @@ outputs:
     doc: Path to output JSON Schema file
     outputBinding:
       glob: $(inputs.schema_path)
+  - id: validated
+    type:
+      - 'null'
+      - Directory
+    doc: Validated data files and updated YAML configs (written beside the YAML)
+    outputBinding:
+      glob: validated
+  - id: exceptions
+    type:
+      - 'null'
+      - Directory
+    doc: Rows that failed validation (exceptions/exceptions.jsonl)
+    outputBinding:
+      glob: exceptions
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$((inputs.genomehubs_files || []).concat(inputs.genomehubs_support_files
+      || []))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blobtk:0.7.1--py39hf6b2c50_0

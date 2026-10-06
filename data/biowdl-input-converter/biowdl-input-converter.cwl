@@ -60,6 +60,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --validate
+  - id: read_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read files named in the samplesheet, staged in the working directory 
+      so that relative names resolve for the file and md5sum checks
   - id: output_path
     type: string
     inputBinding:
@@ -75,6 +82,9 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.read_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biowdl-input-converter:0.3.0--pyhdfd78af_0

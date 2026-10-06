@@ -24,7 +24,7 @@ inputs:
   - id: edge_filtering_ratio
     type:
       - 'null'
-      - float
+      - int
     doc: Edge filtering ratio
     inputBinding:
       position: 101
@@ -38,9 +38,7 @@ inputs:
       position: 101
       prefix: -h
   - id: kmer_size
-    type:
-      - 'null'
-      - int
+    type: int
     doc: Kmer size
     inputBinding:
       position: 101
@@ -70,9 +68,7 @@ inputs:
       position: 101
       prefix: -t
   - id: unitig_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Unitig file
     inputBinding:
       position: 101

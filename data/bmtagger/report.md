@@ -1,5 +1,12 @@
 # bmtagger CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bmtagger_bmtagger.sh | Failed | image problem: srprism and blastn in bmtagger:3.101--3 fail with 'libbz2.so.1: cannot open shared object file', so bmtagger.sh stops at the srprism step on the Galaxy test reads. |
+| bmtagger_bmtool | PASS |  |
+
 ## bmtagger_bmtagger.sh
 
 ### Tool Description

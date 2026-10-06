@@ -50,8 +50,8 @@ inputs:
   - id: exclude
     type:
       - 'null'
-      - File
-    doc: Exclude these (taxonomic) groups (also works for 'other')
+      - string
+    doc: Exclude these (taxonomic) groups (also works for 'other'), comma separated, e.g. "Actinobacteria,Proteobacteria,other"
     inputBinding:
       position: 101
       prefix: --exclude
@@ -90,11 +90,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --label
     doc: Relabel (taxonomic) groups, can be used several times. e.g. 
       "A=Actinobacteria,Proteobacteria"
     inputBinding:
       position: 101
-      prefix: --label
   - id: legend
     type:
       - 'null'

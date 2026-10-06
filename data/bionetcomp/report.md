@@ -1,5 +1,11 @@
 # bionetcomp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bionetcomp | PASS |  |
+
 ## bionetcomp
 
 ### Tool Description

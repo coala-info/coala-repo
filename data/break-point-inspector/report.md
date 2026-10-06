@@ -1,5 +1,11 @@
 # break-point-inspector CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| break-point-inspector | Not completed | No real tumor/normal BAMs with Manta SV calls were found; Manta on the nf-core chr21 tumor/normal BAMs called no SVs, so the tool ran on an empty VCF only. |
+
 ## break-point-inspector
 
 ### Tool Description

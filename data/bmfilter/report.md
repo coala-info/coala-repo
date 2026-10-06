@@ -1,5 +1,11 @@
 # bmfilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bmfilter | PASS |  |
+
 ## bmfilter
 
 ### Tool Description

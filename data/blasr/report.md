@@ -1,5 +1,11 @@
 # blasr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| blasr | PASS | Aligned 150 of 200 SARS-CoV-2 nanopore reads (nf-core) to the genome at about 90-94% identity; the other 50 went to the unaligned file. |
+
 ## blasr
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # biox CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biox | PASS |  |
+
 ## biox
 
 ### Tool Description

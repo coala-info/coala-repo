@@ -10,10 +10,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --inputFile
     doc: Files to merge into a single file
     inputBinding:
       position: 101
-      prefix: --inputFile
   - id: log_level
     type:
       - 'null'
@@ -31,9 +32,7 @@ inputs:
       prefix: --outputFile
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)

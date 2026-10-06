@@ -12,28 +12,25 @@ inputs:
     doc: Input GFF2 file to be converted
     inputBinding:
       position: 1
-  - id: inplace_or_ignore
-    type:
-      - 'null'
-      - boolean
-    doc: Optional flag for the gff2to3 conversion process
-    inputBinding:
-      position: 102
-      prefix: -i
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output
-    inputBinding:
-      position: 102
-      prefix: -v
-outputs:
   - id: output_file
+    type: string
+    doc: the output GFF3 file
+    inputBinding:
+      position: 2
+  - id: ignore_incorrect_records
+    type:
+      - 'null'
+      - boolean
+    doc: ignore incorrect records in the specified input GFF2 file
+    inputBinding:
+      position: 102
+      prefix: --ignore_incorrect_records
+outputs:
+  - id: out_output_file
     type: File
     doc: Output GFF3 file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

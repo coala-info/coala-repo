@@ -6,18 +6,16 @@ baseCommand:
 label: bioconvert_cram2fasta
 doc: "Convert file from '('CRAM',)' to '('FASTA',)' format. See bioconvert.readthedocs.io
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The path to the file to convert.
     inputBinding:
       position: 1
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: string
     doc: The path where the result will be stored.
     inputBinding:
       position: 2
@@ -147,10 +145,22 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_output_file
+    type:
+      - 'null'
+      - File
+    doc: The FASTA file (single-end input).
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: out_paired_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: 'Paired-end input: bioconvert writes <name>_1 and <name>_2 FASTA files (name
+      = output_file without its extension).'
+    outputBinding:
+      glob: $(inputs.output_file.split('.')[0])*_[12].*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3
-stdout: bioconvert_cram2fasta.out

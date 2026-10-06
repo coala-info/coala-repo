@@ -6,9 +6,7 @@ doc: "Vcf parser\n\nTool homepage: https://github.com/vcflib/bio-vcf"
 inputs:
   - id: filename
     type: File
-    doc: Input VCF filename
-    inputBinding:
-      position: 1
+    doc: Input VCF filename (bio-vcf reads the VCF from stdin)
   - id: add_filter
     type:
       - 'null'
@@ -42,14 +40,6 @@ inputs:
       position: 102
       prefix: --debug
   - id: efilter
-    type:
-      - 'null'
-      - string
-    doc: Exclude filter
-    inputBinding:
-      position: 102
-      prefix: --efilter
-  - id: efilter_cmd
     type:
       - 'null'
       - string
@@ -98,14 +88,6 @@ inputs:
       position: 102
       prefix: --id
   - id: ifilter
-    type:
-      - 'null'
-      - string
-    doc: Include filter
-    inputBinding:
-      position: 102
-      prefix: --ifilter
-  - id: ifilter_cmd
     type:
       - 'null'
       - string
@@ -237,7 +219,7 @@ inputs:
   - id: template
     type:
       - 'null'
-      - string
+      - File
     doc: Use ERB template for output
     inputBinding:
       position: 102
@@ -273,4 +255,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bio-vcf:0.9.5--hdfd78af_0
+stdin: $(inputs.filename.path)
 stdout: bio-vcf.out

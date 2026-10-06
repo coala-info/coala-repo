@@ -66,7 +66,8 @@ inputs:
     type: File
     doc: Reference genome for the sample.
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -84,14 +85,13 @@ inputs:
       prefix: --vcf
   - id: output_dir_path
     type: string
+    doc: Output directory
     inputBinding:
       position: 102
       prefix: --output-dir
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir_path)

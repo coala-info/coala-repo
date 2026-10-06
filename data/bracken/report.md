@@ -1,5 +1,11 @@
 # bracken CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bracken | PASS |  |
+
 ## bracken
 
 ### Tool Description

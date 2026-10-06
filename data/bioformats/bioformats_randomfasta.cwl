@@ -17,12 +17,17 @@ inputs:
     doc: Number of sequences to generate
     inputBinding:
       position: 2
-outputs:
   - id: output
+    type: string
+    doc: output filename
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_output
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

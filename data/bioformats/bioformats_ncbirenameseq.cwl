@@ -18,12 +18,17 @@ inputs:
       refseq_gi, genbank_gi, refseq, genbank, chr_refseq, chr_genbank)
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: an output file for renamed sequences
+    inputBinding:
+      position: 3
   - id: output_format
     type: string
     doc: a format of sequence names in output (refseq_full, genbank_full, 
       refseq_gi, genbank_gi, refseq, genbank, chr_refseq, chr_genbank, ucsc)
     inputBinding:
-      position: 3
+      position: 4
   - id: chr
     type:
       - 'null'
@@ -180,11 +185,11 @@ inputs:
       position: 105
       prefix: --output_table
 outputs:
-  - id: output_file
+  - id: out_output_file
     type: File
     doc: an output file for renamed sequences
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
   - id: output_table
     type:
       - 'null'

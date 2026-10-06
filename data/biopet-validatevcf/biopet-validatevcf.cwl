@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ValidateVcf
+baseCommand:
+  - biopet-validatevcf
 label: biopet-validatevcf
 doc: "A tool to validate a VCF file against a reference fasta file.\n\nTool homepage:
   https://github.com/biopet/validatevcf"
@@ -33,15 +34,17 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+      - pattern: ^.dict
+        required: false
     doc: Reference fasta to check vcf file against
     inputBinding:
       position: 101
       prefix: --reference
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: log
+    type: stderr
+    doc: Validation log (the tool writes its result messages to stderr)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-validatevcf:0.1--0
-stdout: biopet-validatevcf.out
+stderr: biopet-validatevcf.log

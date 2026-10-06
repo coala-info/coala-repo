@@ -1,5 +1,11 @@
 # bloocoo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bloocoo_Bloocoo | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

@@ -8,14 +8,12 @@ doc: "Convert file from '('ABI',)' to '('QUAL',)' format. See bioconvert.readthe
   for details\n\nTool homepage: http://bioconvert.readthedocs.io/"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The path to the file to convert.
     inputBinding:
       position: 1
   - id: output_file
-    type: string?
+    type: string
     doc: The path where the result will be stored.
     inputBinding:
       position: 2
@@ -138,12 +136,10 @@ inputs:
       prefix: --verbosity
 outputs:
   - id: out_output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The path where the result will be stored.
     outputBinding:
-      glob: '$(inputs.output_file)'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconvert:1.1.1--pyhdfd78af_3

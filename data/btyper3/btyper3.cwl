@@ -8,7 +8,10 @@ inputs:
   - id: ani_geneflow
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; assign genome to a pseudo-gene flow 
       unit using the method described by Carroll, et al. using FastANI
     inputBinding:
@@ -17,7 +20,10 @@ inputs:
   - id: ani_species
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; assign genome to a species using 
       FastANI
     inputBinding:
@@ -26,7 +32,10 @@ inputs:
   - id: ani_subspecies
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; assign genome to a subspecies, if 
       relevant, using FastANI
     inputBinding:
@@ -35,7 +44,10 @@ inputs:
   - id: ani_typestrains
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; calculate ANI values between the 
       query genome relative to all B. cereus s.l. species type strain genomes 
       using FastANI, and report the closest species type strain/highest ANI 
@@ -46,7 +58,10 @@ inputs:
   - id: bt
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; perform Bt toxin gene detection for 
       cry, cyt, and vip genes (required if one wants to assign genomes to biovar
       Thuringiensis)
@@ -88,7 +103,10 @@ inputs:
   - id: download_mlst_latest
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument for use with --mlst True; True or False; download the
       latest version of the seven-gene multi-locus sequence typing (MLST) scheme
       available in PubMLST; if this is False, BTyper3 will search for the 
@@ -116,7 +134,10 @@ inputs:
   - id: mlst
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; assign genome to a sequence type (ST)
       using the seven-gene multi-locus sequence typing (MLST) scheme available 
       in PubMLST
@@ -126,7 +147,10 @@ inputs:
   - id: panC
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; assign genome to a phylogenetic group
       (Group I-VIII) using an adjusted, eight-group panC group assignment scheme
     inputBinding:
@@ -135,7 +159,10 @@ inputs:
   - id: virulence
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'True'
+          - 'False'
     doc: Optional argument; True or False; perform virulence gene detection 
       (required if one wants to assign genomes to biovars Anthracis or Emeticus)
     inputBinding:
@@ -188,6 +215,10 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/btyper3:3.4.0--pyhdfd78af_0

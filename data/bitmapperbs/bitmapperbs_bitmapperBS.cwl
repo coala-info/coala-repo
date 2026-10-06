@@ -66,7 +66,7 @@ inputs:
   - id: index_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set the folder that stores the genome indexes. If this option is not 
       set, the indexes would be stores in the same folder of genome (input fasta
       file).
@@ -121,6 +121,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pbat
+  - id: paired_end
+    type:
+      - 'null'
+      - boolean
+    doc: Map paired-end reads (--seq1/--seq2). Not in the help text; documented in
+      the README examples and the option table of Process_CommandLines.cpp.
+    inputBinding:
+      position: 101
+      prefix: --pe
   - id: phred33
     type:
       - 'null'
@@ -148,9 +157,10 @@ inputs:
   - id: search
     type:
       - 'null'
-      - string
-    doc: Search in the specified genome. Provide the path to the fasta file or 
-      the index folder.
+      - Directory
+      - File
+    doc: Search in the specified genome. Provide the index folder (built with 
+      --index_folder), or the fasta file when its index files sit beside it.
     inputBinding:
       position: 101
       prefix: --search
@@ -214,19 +224,19 @@ inputs:
     inputBinding:
       position: 105
       prefix: --mapstats
-  - id: methy_out_path
+  - id: methy_out
     type:
       - 'null'
-      - string
+      - boolean
     doc: Output the intermediate methylation result files, instead of SAM or BAM
-      files.
+      files. The result goes to the -o file.
     inputBinding:
       position: 106
       prefix: --methy_out
-  - id: unmapped_out_path
+  - id: unmapped_out
     type:
       - 'null'
-      - string
+      - boolean
     doc: Report unmapped reads.
     inputBinding:
       position: 107
@@ -240,21 +250,20 @@ outputs:
       "stdout" (standard output) in SAM format.
     outputBinding:
       glob: $(inputs.output_path)
-  - id: methy_out
+  - id: index_dir
     type:
       - 'null'
-      - File
-    doc: Output the intermediate methylation result files, instead of SAM or BAM
-      files.
+      - Directory
+    doc: Index folder written by --index with --index_folder.
     outputBinding:
-      glob: $(inputs.methy_out_path)
-  - id: unmapped_out
+      glob: $(inputs.index_folder)
+  - id: index_files
     type:
-      - 'null'
-      - File
-    doc: Report unmapped reads.
+      type: array
+      items: File
+    doc: Index files written beside the genome by --index without --index_folder.
     outputBinding:
-      glob: $(inputs.unmapped_out_path)
+      glob: "$(inputs.index && !inputs.index_folder ? inputs.index.basename + '.index*' : [])"
   - id: mapstats
     type:
       - 'null'
@@ -264,6 +273,10 @@ outputs:
       glob: $(inputs.mapstats_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.index)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bitmapperbs:1.0.2.3--hf5e1c6e_5

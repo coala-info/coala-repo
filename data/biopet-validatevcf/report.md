@@ -1,5 +1,11 @@
 # biopet-validatevcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biopet-validatevcf | PASS |  |
+
 ## biopet-validatevcf
 
 ### Tool Description

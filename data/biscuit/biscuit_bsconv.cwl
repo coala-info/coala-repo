@@ -16,9 +16,19 @@ inputs:
       position: 1
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input BAM file
     inputBinding:
       position: 2
+  - id: output_bam_name
+    type:
+      - 'null'
+      - string
+    doc: Output BAM file name (out.bam)
+    inputBinding:
+      position: 3
   - id: filter_unclear_strand
     type:
       - 'null'
@@ -113,9 +123,15 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output BAM file
+    doc: Output BAM with the remaining (or, with -v, filtered) reads
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bam_name)
+  - id: stdout
+    type: stdout
+    doc: Reads in SAM format (or the -p table) when no output BAM is given
+stdout: biscuit_bsconv.out
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

@@ -10,10 +10,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --inputFile
     doc: Files to merge into a single file
     inputBinding:
       position: 101
-      prefix: --inputFile
   - id: log_level
     type:
       - 'null'

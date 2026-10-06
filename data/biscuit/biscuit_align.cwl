@@ -9,9 +9,17 @@ doc: "Align bisulfite-treated sequencing reads to a reference genome\n\nTool hom
 inputs:
   - id: fai_index_base
     type: File
-    doc: fai-index base
+    doc: fai-index base (the reference FASTA indexed with biscuit index)
     inputBinding:
       position: 1
+    secondaryFiles:
+      - .bis.amb
+      - .bis.ann
+      - .bis.pac
+      - .dau.bwt
+      - .dau.sa
+      - .par.bwt
+      - .par.sa
   - id: in1_fq
     type: File
     doc: Input FASTQ file 1

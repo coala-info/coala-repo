@@ -1,5 +1,11 @@
 # bitmapperbs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bitmapperbs_bitmapperBS | Failed | image problem: indexing works, but bitmapperBS --search crashes with a segmentation fault (exit 139) right after loading the index, for every genome and read set tried. |
+
 ## Metadata
 - **Skill**: generated
 

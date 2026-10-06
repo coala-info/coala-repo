@@ -9,7 +9,7 @@ inputs:
   - id: contigs
     type:
       - 'null'
-      - string
+      - Directory
     doc: Path to search for assembly files, e.g. *.f*a.gz
     inputBinding:
       position: 101
@@ -29,18 +29,24 @@ inputs:
       - 'null'
       - string
     doc: Name of the file to write the generated input table to.
+    default: bohra_input.tsv
     inputBinding:
       position: 101
       prefix: --outname
   - id: reads
     type:
       - 'null'
-      - string
+      - Directory
     doc: Path to search for reads files, e.g. *.f*q.gz
     inputBinding:
       position: 101
       prefix: --reads
 outputs:
+  - id: input_table
+    type: File
+    doc: Generated Bohra input table (tab-separated)
+    outputBinding:
+      glob: $(inputs.outname)
   - id: stdout
     type: stdout
     doc: Standard output

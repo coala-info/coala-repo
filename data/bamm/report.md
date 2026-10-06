@@ -1,5 +1,14 @@
 # bamm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamm_extract | Failed | image problem: bamm extract under Python 3.12 crashes with ctypes TypeError (str instead of bytes) on a valid BAM from the BamM example data. |
+| bamm_filter | Failed | image problem: bamm filter under Python 3.12 crashes with ctypes ArgumentError in _filterReads on a valid BAM from the BamM example data. |
+| bamm_make | Failed | image problem: bamm 1.7.3 under Python 3.12 crashes with TypeError (range of float) in bamMaker.py before mapping any reads. |
+| bamm_parse | Failed | image problem: bamm parse under Python 3.12 crashes with ctypes TypeError (str instead of bytes) on a valid BAM from the BamM example data. |
+
 ## bamm_make
 
 ### Tool Description

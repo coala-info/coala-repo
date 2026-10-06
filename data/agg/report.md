@@ -1,5 +1,14 @@
 # agg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| agg_anno | PASS |  |
+| agg_genotype | PASS |  |
+| agg_ingest1 | PASS |  |
+| agg_ingest2 | PASS |  |
+
 ## agg_ingest1
 
 ### Tool Description

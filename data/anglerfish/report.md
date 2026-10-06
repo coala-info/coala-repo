@@ -1,5 +1,12 @@
 # anglerfish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anglerfish_explore | Failed | image problem: the upstream CI command (anglerfish explore on testdata/BC18_P14351_1001.fastq.gz) crashes in explore.py with a numpy/pandas UFuncTypeError, a library version clash in the image. |
+| anglerfish_run | Not completed | runs on the project's test data (58 reads, 43 with both adaptors) but assigns 0 reads to the sample although its index is in the reads, so demultiplexing could not be confirmed |
+
 ## anglerfish_explore
 
 ### Tool Description

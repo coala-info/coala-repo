@@ -39,20 +39,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
+  - id: driver_nodes
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: List of identified driver species (<prefix>.<N>layer.str<S>.txt)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output || 'output_driver')/$(inputs.prefix || 'driver_nodes').*
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output file folder
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output || 'output_driver')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bakdrive:1.0.4--hdfd78af_0

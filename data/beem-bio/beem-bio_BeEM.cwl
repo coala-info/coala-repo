@@ -2,6 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: BeEM
 label: beem-bio_BeEM
+requirements:
+  - class: InlineJavascriptRequirement
 doc: "convert PDBx/mmCIF format input file 'input.cif' to Best Effort/Minimal PDB
   files. Output results to *-pdb-bundle*\n\nTool homepage: https://github.com/kad-ecoli/BeEM"
 inputs:
@@ -39,6 +41,7 @@ inputs:
       position: 102
       prefix: -chain=
       separate: false
+      itemSeparator: ','
   - id: convert_dbref
     type:
       - 'null'
@@ -111,9 +114,11 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Files written with the prefix given in output_prefix (default prefix is
+      the PDB ID read from the input)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$(inputs.output_prefix ? inputs.output_prefix + '*' : ['*.pdb', '*.fasta',
+        '*-chain-id-mapping.txt', '*-chain-id-mapping.tsv', '*.tar.gz'])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beem-bio:1.0.1--h9948957_0

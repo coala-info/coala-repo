@@ -11,7 +11,7 @@ inputs:
     type: File
     doc: Reference BED or Starch input file (must be sorted per sort-bed).
     inputBinding:
-      position: 1
+      position: 201
   - id: map_file
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: Map BED or Starch input file (must be sorted per sort-bed). If omitted,
       ref-file is treated as both ref-file and map-file.
     inputBinding:
-      position: 2
+      position: 202
   - id: chrom
     type:
       - 'null'

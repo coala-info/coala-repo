@@ -1,5 +1,26 @@
 # bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bio_align | PASS |  |
+| bio_code | PASS |  |
+| bio_comm | PASS |  |
+| bio_enrichr | PASS |  |
+| bio_explain | PASS |  |
+| bio_fasta | PASS |  |
+| bio_fetch | PASS |  |
+| bio_format | PASS |  |
+| bio_gff | PASS |  |
+| bio_gprofiler | PASS |  |
+| bio_meta | PASS |  |
+| bio_mygene | PASS |  |
+| bio_search | PASS |  |
+| bio_table | PASS |  |
+| bio_taxon | Not completed | Queries need a prebuilt NCBI taxonomy database in ~/.bio, and the CWL has no input to pass one in (--build runs alone and its database is not kept). |
+| bio_uniq | PASS |  |
+
 ## bio_search
 
 ### Tool Description

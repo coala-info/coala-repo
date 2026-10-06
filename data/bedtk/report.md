@@ -1,5 +1,15 @@
 # bedtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bedtk_cov | PASS |  |
+| bedtk_flt | PASS |  |
+| bedtk_isec | PASS |  |
+| bedtk_sub | PASS |  |
+| bedtk_sum | PASS |  |
+
 ## bedtk_isec
 
 ### Tool Description

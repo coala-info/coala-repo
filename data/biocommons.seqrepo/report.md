@@ -1,5 +1,11 @@
 # biocommons.seqrepo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biocommons.seqrepo_seqrepo | Failed | not a usable tool: it wraps only the seqrepo command group as a subcommand string, with no way to pass subcommand arguments or collect data outputs. |
+
 ## biocommons.seqrepo
 
 ### Tool Description

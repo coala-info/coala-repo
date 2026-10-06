@@ -13,6 +13,7 @@ inputs:
     doc: Path to folder containing recipes
     inputBinding:
       position: 1
+      valueFrom: '$(self === null ? null : self.basename)'
   - id: config
     type:
       - 'null'
@@ -20,6 +21,15 @@ inputs:
     doc: Path to Bioconda config
     inputBinding:
       position: 2
+      valueFrom: '$(self === null ? null : self.basename)'
+  - id: config_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files the config names by relative path (for example the files listed 
+      under `blacklists:`); they are staged beside the config so the names 
+      resolve
   - id: cache
     type:
       - 'null'
@@ -104,7 +114,7 @@ inputs:
   - id: failed_urls
     type:
       - 'null'
-      - File
+      - string
     doc: Write urls with permanent failure to this file
     inputBinding:
       position: 103
@@ -138,7 +148,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Write log to file
     inputBinding:
       position: 103
@@ -237,7 +247,7 @@ inputs:
   - id: recipe_status
     type:
       - 'null'
-      - File
+      - string
     doc: Write status for each recipe to this file
     inputBinding:
       position: 103
@@ -261,15 +271,60 @@ inputs:
   - id: unparsed_urls
     type:
       - 'null'
-      - File
+      - string
     doc: Write unrecognized urls to this file
     inputBinding:
       position: 103
       prefix: --unparsed-urls
 outputs:
+  - id: failed_urls_out
+    type:
+      - 'null'
+      - File
+    doc: File written by --failed-urls
+    outputBinding:
+      glob: $(inputs.failed_urls)
+  - id: recipe_status_out
+    type:
+      - 'null'
+      - File
+    doc: File written by --recipe-status
+    outputBinding:
+      glob: $(inputs.recipe_status)
+  - id: unparsed_urls_out
+    type:
+      - 'null'
+      - File
+    doc: File written by --unparsed-urls
+    outputBinding:
+      glob: $(inputs.unparsed_urls)
+  - id: recipes_out
+    type:
+      - 'null'
+      - Directory
+    doc: Recipe folder after the run (staged writable)
+    outputBinding:
+      glob: '$(inputs.recipe_folder === null ? "recipes" : inputs.recipe_folder.basename)'
+  - id: logfile_out
+    type:
+      - 'null'
+      - File
+    doc: Log file written by --logfile
+    outputBinding:
+      glob: $(inputs.logfile)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.config)
+      - $(inputs.config_files)
+      - entry: $(inputs.recipe_folder)
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconda-utils:4.0.0--pyhdfd78af_0

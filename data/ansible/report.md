@@ -1,5 +1,13 @@
 # ansible CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ansible | Failed | image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| ansible_ansible-galaxy | Failed | not a usable tool: wraps only the ansible-galaxy command group with no data inputs or outputs, and the image also crashes on the unknown uid 1001. |
+| ansible_ansible-pull | Failed | image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+
 ## ansible
 
 ### Tool Description

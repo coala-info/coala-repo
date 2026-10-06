@@ -71,6 +71,9 @@ inputs:
   - id: fasta_path
     type: File
     doc: Path of FASTA file
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --fasta-path
@@ -130,6 +133,10 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return {"class": "Directory", "basename": inputs.output_dir_path, "listing":
+        [], "writable": true}; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/altex-be:1.0.5--pyhdfd78af_0

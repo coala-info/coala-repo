@@ -1,14 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse
+baseCommand:
+  - bedparse
+  - 3pUTR
 label: bedparse_3putr
-doc: "A tool for parsing and manipulating BED files, with various sub-commands for
-  specific operations.\n\nTool homepage: https://github.com/tleonardi/bedparse"
+doc: "Report the 3'UTR of each coding transcript (i.e. transcripts with distinct\nvalues
+  of thickStart and thickEnd). Transcripts without CDS are not reported.\n\nTool homepage:
+  https://github.com/tleonardi/bedparse"
 inputs:
-  - id: sub_command
-    type: string
-    doc: 'The sub-command to execute. Available options: 3pUTR, 5pUTR, cds, promoter,
-      introns, filter, join, gtf2bed, bed12tobed6, convertChr, validateFormat'
+  - id: bedfile
+    type:
+      - 'null'
+      - File
+    doc: Path to the BED file.
     inputBinding:
       position: 1
 outputs:

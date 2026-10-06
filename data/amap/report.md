@@ -1,5 +1,11 @@
 # amap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amap | PASS |  |
+
 ## amap
 
 ### Tool Description

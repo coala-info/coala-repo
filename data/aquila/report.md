@@ -1,5 +1,13 @@
 # aquila CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aquila_Aquila_step0_sortbam | PASS |  |
+| aquila_Aquila_step1 | Not completed | Needs a 10x linked-read BAM with barcodes, a FreeBayes VCF and the large hg38 100-mer uniqueness map; the python3 plus bare script baseCommand was fixed. |
+| aquila_Aquila_step2 | Not completed | Needs the Aquila_step1 results folder from 10x linked-read data and GRCh38; the baseCommand was fixed and out_dir now takes the step1 folder staged writable. |
+
 ## aquila_Aquila_step0_sortbam
 
 ### Tool Description

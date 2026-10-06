@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: beast
+baseCommand: beast-mcmc
 label: beast-mcmc
 doc: "BEAST (Bayesian Evolutionary Analysis Sampling Trees)\n\nTool homepage: https://beast.community"
 inputs:
@@ -10,7 +10,7 @@ inputs:
       - File
     doc: Input file name
     inputBinding:
-      position: 1
+      position: 200
   - id: adaptation_off
     type:
       - 'null'
@@ -182,7 +182,7 @@ inputs:
   - id: citations_file
     type:
       - 'null'
-      - File
+      - string
     doc: Specify a filename to write a citation list to
     inputBinding:
       position: 102
@@ -310,7 +310,7 @@ inputs:
   - id: save_state
     type:
       - 'null'
-      - File
+      - string
     doc: Specify a filename to save state to
     inputBinding:
       position: 102
@@ -318,7 +318,7 @@ inputs:
   - id: save_stem
     type:
       - 'null'
-      - File
+      - string
     doc: Specify a stem for the filenames to save states to
     inputBinding:
       position: 102
@@ -399,6 +399,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Log, tree and operator files written by the run (names set in the XML)
+    outputBinding:
+      glob:
+        - '*.log'
+        - '*.trees'
+        - '*.ops'
+  - id: state_files
+    type:
+      type: array
+      items: File
+    doc: Saved state and citation files
+    outputBinding:
+      glob:
+        - $(inputs.save_state)
+        - $(inputs.save_stem)*
+        - $(inputs.citations_file)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/beast-mcmc:v1.10.4dfsg-1-deb_cv1

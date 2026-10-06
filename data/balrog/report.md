@@ -1,5 +1,11 @@
 # balrog CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| balrog | Failed | image problem: mmseqs and Python PyTorch are missing from the image, so gene scoring fails (CWL rewritten from the help, its flags were invented). |
+
 ## balrog
 
 ### Tool Description

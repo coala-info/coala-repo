@@ -1,30 +1,38 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bart_rss
+baseCommand: [bart, rss]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_rss
 doc: "Calculates root of sum of squares along selected dimensions.\n\nTool homepage:
-  https://github.com/tomdstanton/bart"
+  https://github.com/mrirecon/bart"
 inputs:
   - id: bitmask
     type: string
     doc: bitmask
     inputBinding:
-      position: 1
+      position: 10
   - id: input
-    type: string
+    type: File
     doc: input
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: output
     type: string
     doc: output
     inputBinding:
-      position: 3
+      position: 12
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Array written as output.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.output).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_rss.out

@@ -1,5 +1,17 @@
 # binchicken CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| binchicken_build | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); build itself is the step that creates them. |
+| binchicken_coassemble | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed. |
+| binchicken_evaluate | Failed | not a usable tool: runs bare binchicken without the evaluate subcommand and with invented flags (--threads, --verbose, --output-file); real flags are --aviary-outputs, --new-genomes, --coassemble-output and others. |
+| binchicken_iterate | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string/File to File/Directory and bogus outputs removed. |
+| binchicken_marker | Failed | not a usable tool: wraps only the binchicken command group with a subcommand string, no data inputs or outputs. |
+| binchicken_single | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed. |
+| binchicken_update | Failed | image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string paths and bogus outputs to File/Directory inputs. |
+
 ## binchicken_coassemble
 
 ### Tool Description

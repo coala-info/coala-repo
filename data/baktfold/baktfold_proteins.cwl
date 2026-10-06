@@ -35,7 +35,7 @@ inputs:
   - id: database
     type:
       - 'null'
-      - string
+      - Directory
     doc: Specific path to installed baktfold database
     inputBinding:
       position: 101
@@ -189,14 +189,14 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_directory || 'output_baktfold')/$(inputs.prefix || 'baktfold')*
   - id: output_directory_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory || 'output_baktfold')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/baktfold:0.0.3--pyhdfd78af_0

@@ -8,6 +8,11 @@ doc: VCF/BCF conversion, view, subset and filter VCF/BCF files.
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input VCF/BCF file
     inputBinding:
       position: 1

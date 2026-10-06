@@ -1,5 +1,11 @@
 # abra2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| abra2 | PASS |  |
+
 ## abra2
 
 ### Tool Description

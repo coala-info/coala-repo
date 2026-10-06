@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: run-asm-pipeline.sh
+baseCommand: 3d-dna
 label: 3d-dna
 doc: "This is a script to assemble draft assemblies (represented in input by draft
   fasta and deduplicated list of alignments of Hi-C reads to this fasta as produced
@@ -12,13 +12,13 @@ inputs:
     type: File
     doc: Specify file path to draft assembly fasta file.
     inputBinding:
-      position: 1
+      position: 200
   - id: input_mnd
     type: File
     doc: 'Specify path to deduplicated list of alignments of Hi-C reads to the draft
       assembly fasta as produced by the Juicer pipeline: the merged_nodups file (mnd).'
     inputBinding:
-      position: 2
+      position: 201
   - id: chromosome_map
     type:
       - 'null'
@@ -300,9 +300,24 @@ inputs:
       position: 103
       prefix: --stage
 outputs:
-  - id: stdout
+  - id: final_fasta
+    type: File
+    doc: Chromosome-length scaffolds (<input>.FINAL.fasta).
+    outputBinding:
+      glob: $(inputs.input_fasta.nameroot).FINAL.fasta
+  - id: final_assembly
+    type: File?
+    doc: Final assembly file for review in Juicebox (<input>.FINAL.assembly).
+    outputBinding:
+      glob: $(inputs.input_fasta.nameroot).FINAL.assembly
+  - id: final_hic
+    type: File?
+    doc: Hi-C contact map of the final assembly (<input>.final.hic).
+    outputBinding:
+      glob: $(inputs.input_fasta.nameroot).final.hic
+  - id: log
     type: stdout
-    doc: Standard output
+    doc: Pipeline log.
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/3d-dna:201008--hdfd78af_0

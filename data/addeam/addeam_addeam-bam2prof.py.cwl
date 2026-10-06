@@ -5,12 +5,18 @@ label: addeam_addeam-bam2prof.py
 doc: "Python wrapper for bam2prof\n\nTool homepage: https://github.com/LouisPwr/AdDeam"
 inputs:
   - id: bam_files
-    type:
-      - 'null'
-      - File
-    doc: File with paths to BAM files; one per line.
+    type: File
+    doc: File with paths to BAM files; one per line. List the files given in 
+      `bams` by their base names.
     inputBinding:
       position: 1
+  - id: bams
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: BAM files named in the list file; staged in the working directory so 
+      the list can name them by base name.
   - id: bam2prof_path
     type:
       - 'null'
@@ -229,6 +235,8 @@ outputs:
       glob: $(inputs.hpc_dry_run_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.bams ? inputs.bams : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/addeam:1.0.0--py313h1510ab2_0

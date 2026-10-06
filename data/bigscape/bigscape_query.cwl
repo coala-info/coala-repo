@@ -69,7 +69,7 @@ inputs:
   - id: db_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to sqlite db output file.
     inputBinding:
       position: 101
@@ -140,14 +140,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --force-gbk
-  - id: gbk_dir
-    type: Directory
-    doc: Input directory containing .gbk files to be used by BiG-SCAPE. 
-      Duplicated filenames can be handled, but are not recommended. See the wiki
-      for more details.
-    inputBinding:
-      position: 101
-      prefix: --gbk-dir
   - id: gcf_cutoffs
     type:
       - 'null'
@@ -262,6 +254,15 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .h3f
+        required: false
+      - pattern: .h3i
+        required: false
+      - pattern: .h3m
+        required: false
+      - pattern: .h3p
+        required: false
     doc: 'Path to Pfam database `.hmm` file (e.g Pfam-A.hmm). If the `.hmm` file has
       already been pressed and the pressed files are included in the same folder as
       the Pfam `.hmm` file, BiG-SCAPE will also use these pressed files. If this is
@@ -378,6 +379,13 @@ outputs:
     doc: Path to output profile file.
     outputBinding:
       glob: $(inputs.profile_path)
+  - id: db_path_out
+    type:
+      - 'null'
+      - File
+    doc: SQLite database written to db_path
+    outputBinding:
+      glob: $(inputs.db_path)
   - id: output_dir_dir
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # apt-probeset-summarize CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| apt-probeset-summarize | PASS |  |
+
 ## apt-probeset-summarize
 
 ### Tool Description

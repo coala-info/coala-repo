@@ -1,5 +1,27 @@
 # alfred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alfred_annotate | PASS |  |
+| alfred_ase | PASS |  |
+| alfred_bam2match | PASS |  |
+| alfred_barcode | PASS |  |
+| alfred_bcsplit | PASS |  |
+| alfred_consensus | PASS |  |
+| alfred_count_dna | PASS |  |
+| alfred_count_jct | PASS |  |
+| alfred_count_rna | PASS |  |
+| alfred_pwalign | PASS |  |
+| alfred_pwedit | PASS |  |
+| alfred_qc | PASS |  |
+| alfred_replication | Failed | tool bug: alfred replication sorts the read totals in place, so the last BAM's counts come out as 0; the CWL itself runs |
+| alfred_spaced_motif | PASS |  |
+| alfred_split | PASS |  |
+| alfred_telmotif | PASS |  |
+| alfred_tracks | PASS |  |
+
 ## alfred_qc
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # bakta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bakta | PASS |  |
+
 ## bakta
 
 ### Tool Description

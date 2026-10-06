@@ -13,6 +13,11 @@ hints:
 inputs:
 - id: input_file
   type: File
+  secondaryFiles:
+  - pattern: .tbi
+    required: false
+  - pattern: .csi
+    required: false
   doc: Input VCF/BCF file
   inputBinding:
     position: 1
@@ -184,12 +189,6 @@ inputs:
   inputBinding:
     position: 102
     prefix: --viterbi-training
-- id: ignore_pl
-  type: boolean?
-  doc: The FORMAT/PL tag not found in the header, consider running with -G
-  inputBinding:
-    position: 102
-    prefix: -G
 outputs:
 - id: output_output
   type: File

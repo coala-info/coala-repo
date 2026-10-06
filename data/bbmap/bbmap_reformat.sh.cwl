@@ -47,7 +47,8 @@ inputs:
     doc: Input file
     inputBinding:
       position: 101
-      prefix: in
+      prefix: in=
+      separate: false
   - id: input_file_2
     type:
       - 'null'
@@ -55,7 +56,8 @@ inputs:
     doc: Second input file for paired reads
     inputBinding:
       position: 101
-      prefix: in2
+      prefix: in2=
+      separate: false
   - id: interleaved
     type:
       - 'null'
@@ -234,7 +236,8 @@ inputs:
     doc: Output or path parameter `base_hist_path`
     inputBinding:
       position: 102
-      prefix: --base-hist
+      prefix: bhist=
+      separate: false
   - id: length_hist_path
     type:
       - 'null'
@@ -242,7 +245,8 @@ inputs:
     doc: Output or path parameter `length_hist_path`
     inputBinding:
       position: 103
-      prefix: --length-hist
+      prefix: lhist=
+      separate: false
   - id: output_file_path
     type:
       - 'null'
@@ -250,7 +254,8 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: out=
+      separate: false
   - id: output_file_2_path
     type:
       - 'null'
@@ -258,7 +263,8 @@ inputs:
     doc: Output or path parameter `output_file_2_path`
     inputBinding:
       position: 105
-      prefix: --output-file-2
+      prefix: out2=
+      separate: false
   - id: output_single_path
     type:
       - 'null'
@@ -266,7 +272,8 @@ inputs:
     doc: Output or path parameter `output_single_path`
     inputBinding:
       position: 106
-      prefix: --output-single
+      prefix: outs=
+      separate: false
   - id: quality_file_out_path
     type:
       - 'null'
@@ -274,7 +281,8 @@ inputs:
     doc: Output or path parameter `quality_file_out_path`
     inputBinding:
       position: 107
-      prefix: --quality-file-out
+      prefix: qfout=
+      separate: false
   - id: quality_hist_path
     type:
       - 'null'
@@ -282,7 +290,8 @@ inputs:
     doc: Output or path parameter `quality_hist_path`
     inputBinding:
       position: 108
-      prefix: --quality-hist
+      prefix: qhist=
+      separate: false
 outputs:
   - id: output_file
     type:

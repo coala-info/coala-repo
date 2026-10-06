@@ -20,7 +20,7 @@ inputs:
   - id: dropout
     type:
       - 'null'
-      - int
+      - float
     doc: Set the likelihood for an amplicon dropout [0,1]
     inputBinding:
       position: 103

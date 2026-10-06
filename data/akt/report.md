@@ -1,5 +1,15 @@
 # akt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| akt_kin | PASS |  |
+| akt_pca | PASS |  |
+| akt_pedphase | PASS |  |
+| akt_relatives | PASS |  |
+| akt_unrelated | PASS |  |
+
 ## akt_pca
 
 ### Tool Description

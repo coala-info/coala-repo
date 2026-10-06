@@ -20,6 +20,15 @@ inputs:
     doc: Path to Bioconda config
     inputBinding:
       position: 2
+      valueFrom: '$(self === null ? null : self.basename)'
+  - id: config_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files the config names by relative path (for example the files listed 
+      under `blacklists:`); they are staged beside the config so the names 
+      resolve
   - id: artifact_source
     type:
       - 'null'
@@ -68,7 +77,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Write log to file
     inputBinding:
       position: 103
@@ -107,9 +116,24 @@ inputs:
       position: 103
       prefix: --repo
 outputs:
+  - id: logfile_out
+    type:
+      - 'null'
+      - File
+    doc: Log file written by --logfile
+    outputBinding:
+      glob: $(inputs.logfile)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.config)
+      - $(inputs.config_files)
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconda-utils:4.0.0--pyhdfd78af_0

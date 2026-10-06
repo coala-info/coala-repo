@@ -12,6 +12,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rad
+  - id: header
+    type:
+      - 'null'
+      - boolean
+    doc: flag for printing header
+    inputBinding:
+      position: 101
+      prefix: --header
 outputs:
   - id: stdout
     type: stdout

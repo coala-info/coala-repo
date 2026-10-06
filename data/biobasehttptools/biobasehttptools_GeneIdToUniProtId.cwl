@@ -44,6 +44,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobasehttptools:1.1.0--0

@@ -1,5 +1,11 @@
 # bamtocov CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamtocov | PASS |  |
+
 ## bamtocov
 
 ### Tool Description

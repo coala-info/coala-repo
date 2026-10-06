@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: backspinpy_backspin
+baseCommand: backspin
 label: backspinpy_backspin
 doc: "backSPIN commandline tool\n\nTool homepage: https://github.com/linnarsson-lab/BackSPIN"
 inputs:

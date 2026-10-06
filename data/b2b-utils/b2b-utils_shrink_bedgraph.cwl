@@ -38,7 +38,7 @@ inputs:
     doc: Output or path parameter `out_bedgraph_path`
     inputBinding:
       position: 102
-      prefix: --out-bedgraph
+      prefix: --out
 outputs:
   - id: out_bedgraph
     type: File

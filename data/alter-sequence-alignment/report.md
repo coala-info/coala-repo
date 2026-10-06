@@ -1,5 +1,11 @@
 # alter-sequence-alignment CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alter-sequence-alignment | PASS |  |
+
 ## alter-sequence-alignment
 
 ### Tool Description

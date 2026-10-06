@@ -10,10 +10,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --graph
     doc: path(s) to the assembly graph file(s)
     inputBinding:
       position: 101
-      prefix: --graph
   - id: output_path
     type: string
     doc: path to the output folder  [required]
@@ -28,6 +29,11 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.output_path, "listing":
+          []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agtools:1.0.2--py313hdfd78af_0

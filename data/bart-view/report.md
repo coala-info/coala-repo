@@ -1,5 +1,11 @@
 # bart-view CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bart-view_bart | Failed | not a usable tool: it wraps only the bart command group with a subcommand string and no data inputs or outputs. |
+
 ## bart-view_bart
 
 ### Tool Description

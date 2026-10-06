@@ -1,5 +1,13 @@
 # alloshp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alloshp_WGA | PASS | Packaged Brachypodium sample genomes (Bd2 vs Chr01); 89 valid blocks and a 11.9 M-position BED, as in the upstream make test. |
+| alloshp_vcf2alignment | PASS | Packaged Brachypodium sample VCF; 6-sample MSA of 1,746,620 sites; CWL fixed: the -l report name is now required. |
+| alloshp_vcf2synteny | PASS | Packaged sample VCF with the WGA BED; 762,307 loci, Bsta samples and hybrids carry B-subgenome variants; CWL fixed: added staged WGA folders and required -o. |
+
 ## alloshp_WGA
 
 ### Tool Description

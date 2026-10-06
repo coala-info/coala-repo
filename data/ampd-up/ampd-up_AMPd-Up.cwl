@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - AMPd-Up.py
+  - AMPd-Up
 label: ampd-up_AMPd-Up
 doc: "Generate antimicrobial peptide sequences with recurrent neural network. Users
   can either generate sequences by training new models or from the existing models.\n\
@@ -10,8 +10,8 @@ inputs:
   - id: amp_train
     type:
       - 'null'
-      - Directory
-    doc: Directory of training data (fasta format); only specify this argument 
+      - File
+    doc: Training data file (fasta format); only specify this argument 
       if you want to train AMPd-Up with your own data (optional)
     inputBinding:
       position: 101
@@ -67,9 +67,14 @@ outputs:
       items: File
     doc: Files written with the prefix given in save_model
     outputBinding:
-      glob: $(inputs.save_model)*
+      glob: "$(inputs.save_model ? inputs.out_dir_path + '/' + inputs.save_model + '_*.pt'
+        : [])"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.out_dir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ampd-up:1.0.1--pyhdfd78af_0

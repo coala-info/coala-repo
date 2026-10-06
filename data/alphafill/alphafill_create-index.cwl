@@ -8,26 +8,22 @@ doc: "Create an index for AlphaFill using PDB mmCIF files and sequences\n\nTool 
   https://alphafill.eu"
 inputs:
   - id: config
-    type:
-      - 'null'
-      - File
-    doc: Configuration file to use
+    type: File
+    doc: Configuration file to use (required in practice; without it the image's 
+      template /usr/local/etc/alphafill.conf is read and the run fails; an empty 
+      file is fine when the paths are given as options)
     inputBinding:
       position: 101
       prefix: --config
   - id: pdb_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory containing the mmCIF files for the PDB
     inputBinding:
       position: 101
       prefix: --pdb-dir
   - id: pdb_fasta
-    type:
-      - 'null'
-      - File
-    doc: The FastA file containing the PDB sequences
+    type: string
+    doc: Name of the FastA file to write with the PDB sequences
     inputBinding:
       position: 101
       prefix: --pdb-fasta
@@ -56,6 +52,11 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: pdb_fasta_out
+    type: File
+    doc: FastA file with the PDB entity sequences
+    outputBinding:
+      glob: $(inputs.pdb_fasta)
   - id: stdout
     type: stdout
     doc: Standard output

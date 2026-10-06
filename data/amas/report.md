@@ -1,5 +1,11 @@
 # amas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amas_AMAS.py | Failed | not a usable tool: it wraps only the subcommand word with no data inputs or outputs, and its baseCommand AMAS is not in the image (the program is AMAS.py). |
+
 ## amas_AMAS.py
 
 ### Tool Description

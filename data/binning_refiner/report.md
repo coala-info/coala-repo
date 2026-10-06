@@ -1,5 +1,11 @@
 # binning_refiner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| binning_refiner_Binning_refiner | PASS |  |
+
 ## binning_refiner_Binning_refiner
 
 ### Tool Description

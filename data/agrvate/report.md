@@ -1,5 +1,11 @@
 # agrvate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| agrvate | PASS |  |
+
 ## agrvate
 
 ### Tool Description

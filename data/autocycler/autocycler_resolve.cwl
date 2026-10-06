@@ -24,6 +24,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: cluster_dir_out
+    type: Directory
+    doc: Cluster directory with the new 3_bridged.gfa, 4_merged.gfa and 5_final.gfa
+    outputBinding:
+      glob: $(inputs.cluster_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.cluster_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

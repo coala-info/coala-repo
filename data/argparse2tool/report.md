@@ -1,5 +1,11 @@
 # argparse2tool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| argparse2tool | Failed | not a usable tool: the argparse2tool command only prints the dropins folder path for PYTHONPATH and ignores all arguments, so every input and the output in the CWL are invented. |
+
 ## argparse2tool
 
 ### Tool Description

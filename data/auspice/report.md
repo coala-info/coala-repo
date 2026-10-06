@@ -1,5 +1,14 @@
 # auspice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| auspice_build | PASS |  |
+| auspice_convert | PASS |  |
+| auspice_develop | Not completed | Starts a long-running development web server, so it cannot run as a batch job. |
+| auspice_view | Not completed | Starts a long-running web server to view datasets, so it cannot run as a batch job. |
+
 ## auspice_view
 
 ### Tool Description

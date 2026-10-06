@@ -1,5 +1,11 @@
 # abawaca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| abawaca | Not completed | no test data; needs ESOM .names/.lrn files from prepare_esom_files.pl (not in the image) and per-scaffold coverage info, undocumented for v1.00. CWL fixed: the required <out-dir> was not passed |
+
 ## abawaca
 
 ### Tool Description

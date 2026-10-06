@@ -1,5 +1,96 @@
 # bart CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bart_avg | PASS | synthetic data (bart index 0..3): average is 1.5 as expected. |
+| bart_bench | PASS | synthetic data: one micro-benchmark ran; timing table and benchmark array written. |
+| bart_bitmask | PASS | synthetic data: dims 0 1 2 give bitmask 7 as expected. |
+| bart_cabs | PASS | synthetic data: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|3+4i\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\| gives 5 as expected. |
+| bart_caldir | PASS | synthetic data (BART coil phantom k-space): POCSENSE projection with the maps has NRMSE 0.02. |
+| bart_calmat | PASS | synthetic data (BART coil phantom): 361x288 matrix as expected, identical to a direct bart run. |
+| bart_carg | PASS | synthetic data: phase of 1i is pi/2 as expected. |
+| bart_casorati | PASS | synthetic data: BART test-casorati check passes (NRMSE 0). |
+| bart_cc | PASS | synthetic data (BART coil phantom): geometric compression keeps RSS of k-space (BART test-cc-geom, NRMSE 3e-6). |
+| bart_ccapply | PASS | synthetic data (BART coil phantom): matches cc -S -p 4 output (BART test-ccapply-forward, NRMSE 0). |
+| bart_cdf97 | PASS | synthetic data (BART phantom): forward then inverse transform returns the input (BART test-cdf97). |
+| bart_circshift | PASS | synthetic data: shift of 0..3 by 1 gives 3 0 1 2 as expected. |
+| bart_conj | PASS | synthetic data: conj(3+4i) gives 3-4i as expected. |
+| bart_conv | Failed | tool bug: BART 0.4.04 conv gives the right result for 8 samples but flips the sign for 4 or 6; the CWL itself runs |
+| bart_copy | PASS | synthetic data: plain copy and copy into an existing array at a position both match BART test-copy expectations (NRMSE 0). |
+| bart_cpyphs | PASS | synthetic data: phase of 3+4i gives 0.6+0.8i as expected. |
+| bart_creal | PASS | synthetic data: real part of 3+4i is 3 as expected. |
+| bart_crop | PASS | synthetic data (BART phantom): equals extract of the central 64 rows (NRMSE 0). |
+| bart_delta | PASS | synthetic data: delta 16 33 128 gives 128 ones on the diagonal as expected. |
+| bart_ecalib | PASS | synthetic data (BART coil phantom): BART test-ecalib passes (POCSENSE NRMSE 0.037 < 0.05). |
+| bart_ecaltwo | PASS | synthetic data (BART coil phantom, ecalib -1 first part): POCSENSE NRMSE 0.037 < 0.05. |
+| bart_estdelay | PASS | synthetic data (BART radial phantom with delays 1.5:1:-0.5): estimates 1.500:1.000:-0.500 (BART test-estdelay). |
+| bart_estdims | PASS | synthetic data (BART radial trajectory scaled 0.5): estimates 128 128 1 as expected. |
+| bart_estshift | PASS | synthetic data: flipped array gives shift 1.000000 as in BART test-estshift. |
+| bart_estvar | PASS | synthetic data (coil phantom plus noise of variance 100): estimates 95.1. |
+| bart_extract | PASS | synthetic data: matches the BART test-casorati extract step (NRMSE 0). |
+| bart_fakeksp | PASS | synthetic data (BART phantom and coils): equals unitary FFT of image times coils (NRMSE 0). |
+| bart_fft | PASS | synthetic data (BART phantom): unitary FFT then inverse FFT returns the input (NRMSE 0, BART test-fft-unitary). |
+| bart_fftmod | PASS | synthetic data (BART phantom): BART test-fft-uncentered passes (NRMSE 0). |
+| bart_fftshift | PASS | synthetic data: fftshift of 0..3 gives 2 3 0 1 as expected. |
+| bart_filter | PASS | synthetic data: median filter of 1 2 3 4 with length 3 gives 2 3 as expected. |
+| bart_flatten | PASS | synthetic data: BART test-flatten passes (NRMSE 0). |
+| bart_flip | PASS | synthetic data: flip of 0..3 gives 3 2 1 0 as expected. |
+| bart_fmac | PASS | synthetic data (BART phantom): image times coils equals the coil phantom (BART test-phantom-coil, NRMSE 0). |
+| bart_homodyne | PASS | synthetic data (BART coil phantom, 75 percent partial Fourier): BART test-homodyne passes (NRMSE 0.015 < 0.02). |
+| bart_index | PASS | synthetic data: index 0 4 gives 0 1 2 3 as expected. |
+| bart_invert | PASS | synthetic data: invert of 2 4 gives 0.5 0.25 as expected. |
+| bart_itsense | PASS | synthetic data (BART coil phantom): BART test-itsense passes (NRMSE 0.220 < 0.23). |
+| bart_join | PASS | synthetic data: three 6x1x7 arrays join to a 6x3x7 ones array (BART test-join, NRMSE 0). |
+| bart_lrmatrix | Failed | tool bug: lrmatrix in BART 0.4.04 opens argv[22] as its output name and segfaults (exit 139), also when run directly. |
+| bart_mandelbrot | PASS | synthetic data: 64x64 image with iteration counts 0 to 19 for 20 iterations. |
+| bart_mip | PASS | synthetic data: maximum of 0..3 is 3 as expected. |
+| bart_nlinv | PASS | synthetic data (BART coil phantom): BART test-nlinv passes (POCSENSE NRMSE 0.034 < 0.05). |
+| bart_noise | PASS | synthetic data: noise with variance 1 on 4096 zeros has standard deviation 1.02. |
+| bart_normalize | PASS | synthetic data (BART coils): RSS over coils of the output is 1 everywhere (NRMSE 0). |
+| bart_nrmse | PASS | synthetic data (BART phantom): scaled copy gives NRMSE 0 with scale 2i (BART test-nrmse-scale). |
+| bart_nufft | PASS | synthetic data (BART phantom, Cartesian trajectory): BART test-nufft-forward passes (NRMSE 0.0014 < 0.0015). |
+| bart_ones | PASS | synthetic data: 50x50 array of ones as expected. |
+| bart_pattern | PASS | synthetic data (BART coil phantom k-space): pattern matches a direct bart run (NRMSE 0). |
+| bart_phantom | PASS | synthetic data: 8-coil k-space phantom; inverse FFT matches the coil image phantom (NRMSE 0.214 < 0.22, BART test-phantom-ksp-coil). |
+| bart_pics | PASS | synthetic data (BART coil phantom): BART test-pics-pi passes (NRMSE 0.220 < 0.23). |
+| bart_pocsense | PASS | synthetic data (BART coil phantom with ESPIRiT maps): BART test-ecalib check passes (NRMSE 0.037 < 0.05). |
+| bart_poisson | PASS | synthetic data: 1x128x128 pattern, identical to a direct bart run with the same options. |
+| bart_poly | PASS | synthetic data: poly 128 0 1 equals ones (BART test-poly, NRMSE 0). |
+| bart_repmat | PASS | synthetic data: 0..3 repeated 3 times as expected. |
+| bart_reshape | PASS | synthetic data: BART test-flatten reshape step passes (NRMSE 0). |
+| bart_resize | PASS | synthetic data: centered zero-padding to 100x100 matches BART test-slice step (NRMSE 0). |
+| bart_rof | PASS | synthetic data (BART phantom plus noise): NRMSE to the clean phantom drops from 0.40 to 0.14. |
+| bart_rss | PASS | synthetic data (BART coils): equals sqrt(sum \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|c\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|^2) computed with fmac and spow (NRMSE 0). |
+| bart_sake | PASS | synthetic data (BART coil phantom, Poisson undersampled R=2): NRMSE to full k-space drops from 0.33 to 0.15. |
+| bart_saxpy | PASS | synthetic data: 2*1+1 gives 3 as expected. |
+| bart_scale | PASS | synthetic data (BART phantom): matches BART test-fft-basic scale step (NRMSE 0). |
+| bart_sdot | PASS | synthetic data: dot product of 36 ones with itself is 36 as expected. |
+| bart_show | PASS | synthetic data: prints 0 1 2 3 for bart index 0 4. |
+| bart_slice | PASS | synthetic data: BART test-slice step gives a 100-sample slice as expected. |
+| bart_spow | PASS | synthetic data: (3+4i)^2 gives -7+24i as expected. |
+| bart_sqpics | PASS | synthetic data (BART coil phantom): same check as BART test-pics-pi passes (NRMSE 0.220 < 0.23). |
+| bart_squeeze | PASS | synthetic data: BART test-squeeze passes (NRMSE 0, dims 2x3x4). |
+| bart_std | PASS | synthetic data: standard deviation of unit-variance noise is 1.02. |
+| bart_svd | PASS | synthetic data: U*S*VH reconstructs the 6x6 input (NRMSE < 1e-5). |
+| bart_threshold | PASS | synthetic data: soft threshold 0.5 of 0.2 1 gives 0 0.5 as expected. |
+| bart_toimg | PASS | synthetic data (BART phantom): writes a 128x128 PNG. |
+| bart_traj | PASS | synthetic data: radial trajectory 256x64, identical to a direct bart run; used by the passing nufft and pics checks. |
+| bart_transpose | PASS | synthetic data: transpose 0 1 of a 4-vector gives a 1x4 array with the same values. |
+| bart_twixread | PASS | real Siemens VB twix file (pymapvbvd test data, STEAM): 4096 samples x 32 coils x 2 averages, as pymapvbvd tests expect. |
+| bart_var | PASS | synthetic data: variance of unit-variance noise is 1.04. |
+| bart_vec | PASS | synthetic data: vec 1 2 3 gives 1 2 3 as expected. |
+| bart_walsh | PASS | synthetic data (BART coil phantom): walsh then ecaltwo gives maps with POCSENSE NRMSE 0.049 < 0.05. |
+| bart_wave | PASS | synthetic data (BART coil phantom, wave PSF): BART test-wave passes (NRMSE 0.223 < 0.23). |
+| bart_wavelet | PASS | synthetic data (BART phantom): forward then adjoint returns the input (BART test-wavelet, NRMSE 0). |
+| bart_wavepsf | PASS | synthetic data: 640x128 PSF identical to the one used in the passing BART test-wave and test-wshfl checks. |
+| bart_whiten | PASS | synthetic data: BART test-whiten passes (NRMSE 4e-5 < 0.001). |
+| bart_window | PASS | synthetic data: 8-point Hamming window values 0.08 to 0.95 as expected. |
+| bart_wshfl | PASS | synthetic data (BART coil phantom, wave PSF): BART test-wshfl passes (NRMSE 0.223 < 0.23). |
+| bart_zeros | PASS | synthetic data: 50x50 array of zeros as expected. |
+| bart_zexp | PASS | synthetic data: exp(i*pi) gives -1 as expected. |
+
 ## bart_avg
 
 ### Tool Description

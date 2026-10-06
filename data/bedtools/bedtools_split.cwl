@@ -43,9 +43,9 @@ outputs:
       - 'null'
       - type: array
         items: File
-    doc: Output BED file prefix.
+    doc: Split BED files (<prefix>.NNNNN.bed); the default prefix is _split.
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: '$(inputs.prefix ? inputs.prefix : "_split").*.bed'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

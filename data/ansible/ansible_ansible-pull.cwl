@@ -39,7 +39,7 @@ inputs:
   - id: directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to checkout repository to
     inputBinding:
       position: 102
@@ -163,6 +163,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: checkout_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory the repository was checked out to
+    outputBinding:
+      glob: $(inputs.directory)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ansible:1.9.4--py27_0

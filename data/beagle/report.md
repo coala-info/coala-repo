@@ -1,5 +1,11 @@
 # beagle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| beagle | PASS |  |
+
 ## beagle
 
 ### Tool Description

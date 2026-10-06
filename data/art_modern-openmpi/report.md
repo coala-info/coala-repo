@@ -1,5 +1,11 @@
 # art_modern-openmpi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| art_modern-openmpi | PASS |  |
+
 ## art_modern-openmpi
 
 ### Tool Description

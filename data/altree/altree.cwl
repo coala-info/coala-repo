@@ -65,6 +65,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --first-input-file
+      itemSeparator: ':'
   - id: nb_files
     type:
       - 'null'
@@ -159,6 +160,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --second-input-file
+      itemSeparator: ':'
   - id: splitmode
     type:
       - 'null'
@@ -180,11 +182,12 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --tree-to-analyse
     doc: Specify the tree to use (instead of random). Can be used several times 
       to specify multiple trees.
     inputBinding:
       position: 101
-      prefix: --tree-to-analyse
   - id: output_file_path
     type: string
     inputBinding:

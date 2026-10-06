@@ -35,13 +35,20 @@ inputs:
       position: 101
       prefix: --gene
   - id: models
-    type:
-      - 'null'
-      - File
-    doc: VNTR models file
+    type: string
+    default: advntr_models.db
+    doc: VNTR models file (SQLite database) to create, or to extend when 
+      existing_models is given. Written in the working directory.
     inputBinding:
       position: 101
       prefix: --models
+      valueFrom: "$(self.indexOf('/') < 0 ? './' + self : self)"
+  - id: existing_models
+    type:
+      - 'null'
+      - File
+    doc: Existing VNTR models database to extend; it is copied to the name in 
+      models and the new model is added to the copy.
   - id: pattern
     type: string
     doc: First repeating pattern of VNTR in forward (5' to 3') direction
@@ -49,7 +56,7 @@ inputs:
       position: 101
       prefix: --pattern
   - id: reference
-    type: string
+    type: File
     doc: Reference genome
     inputBinding:
       position: 101
@@ -64,6 +71,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: models_db
+    type: File
+    doc: VNTR models database with the new model
+    outputBinding:
+      glob: $(inputs.models)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (inputs.existing_models) {
+          return [{"entry": inputs.existing_models, "entryname": inputs.models, "writable": true}];
+        }
+        return [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/advntr:1.5.0--py310ha6711e0_1

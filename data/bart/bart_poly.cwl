@@ -1,33 +1,42 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poly
+baseCommand: [bart, poly]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_poly
 doc: "Evaluate polynomial p(x) = a_0 + a_1 x + a_2 x^2 ... a_N x^N at x = {0, 1, ...
-  , L - 1} where a_i are floats.\n\nTool homepage: https://github.com/tomdstanton/bart"
+  , L - 1} where a_i are floats.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: l
     type: int
     doc: Upper bound for x values (exclusive)
     inputBinding:
-      position: 1
+      position: 10
   - id: n
     type: int
     doc: Degree of the polynomial
     inputBinding:
-      position: 2
+      position: 11
   - id: a_coefficients
     type:
       type: array
       items: float
     doc: Coefficients of the polynomial (a_0 to a_N)
     inputBinding:
-      position: 3
+      position: 12
+  - id: output_name
+    type: string
+    doc: Output name without extension (writes <name>.cfl and <name>.hdr)
+    inputBinding:
+      position: 13
 outputs:
   - id: output
     type: File
     doc: Output file to write the results
+    secondaryFiles:
+      - ^.hdr
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1

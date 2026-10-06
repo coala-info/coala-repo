@@ -1,5 +1,11 @@
 # aminoextract CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aminoextract | PASS |  |
+
 ## aminoextract
 
 ### Tool Description

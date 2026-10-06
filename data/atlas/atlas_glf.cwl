@@ -1,252 +1,106 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: atlas
+baseCommand:
+  - atlas
+  - GLF
 label: atlas_glf
-doc: "ATLAS 2.0.1\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas/wiki/Home"
+doc: "Writing genotype likelihoods of a BAM file to a GLF file.\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas"
 inputs:
-  - id: allele_counts
+  - id: bam
+    type: File
+    doc: "Input BAM file."
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    inputBinding:
+      position: 1
+      prefix: --bam
+  - id: keep_reads_without_rg
     type:
       - 'null'
       - boolean
-    doc: Estimating population allele counts
+    doc: "Keep reads without a read group (by default ATLAS filters them out)."
     inputBinding:
-      position: 101
-  - id: allele_freq
+      position: 1
+      prefix: --keepReadsWithoutRG
+  - id: fasta
+    type:
+      - 'null'
+      - File
+    doc: "Reference genome FASTA (with .fai index)."
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+    inputBinding:
+      position: 1
+      prefix: --fasta
+  - id: print_all
     type:
       - 'null'
       - boolean
-    doc: Estimating population allele frequencies
+    doc: "Print likelihoods for all sites, even those without data."
     inputBinding:
-      position: 101
-  - id: allelic_depth
+      position: 1
+      prefix: --printAll
+  - id: filter_mq
     type:
       - 'null'
-      - boolean
-    doc: Writing genotype likelihoods to a GLF file
+      - string
+    doc: "Keep reads with mapping quality in this range, e.g. \"[30,256]\"."
     inputBinding:
-      position: 101
-  - id: ancestral_alleles
+      position: 1
+      prefix: --filterMQ
+  - id: chr
     type:
       - 'null'
-      - boolean
-    doc: Writing FASTA-file with ancestral alleles
+      - string
+    doc: "Comma-separated list of chromosomes to use."
     inputBinding:
-      position: 101
-  - id: assess_soft_clipping
-    type:
-      - 'null'
-      - boolean
-    doc: Assessing level of soft clipping in BAM file
+      position: 1
+      prefix: --chr
+  - id: out_prefix
+    type: string
+    doc: "Prefix for all output files (ATLAS --out)."
+    default: "atlas_GLF"
     inputBinding:
-      position: 101
-  - id: bam_diagnostics
-    type:
-      - 'null'
-      - boolean
-    doc: Estimating depth and read property frequencies
-    inputBinding:
-      position: 101
-  - id: calculate_f2
-    type:
-      - 'null'
-      - boolean
-    doc: Calculate F2 between samples, and within/between populations
-    inputBinding:
-      position: 101
-  - id: call
-    type:
-      - 'null'
-      - boolean
-    doc: Calling genotypes
-    inputBinding:
-      position: 101
-  - id: convert_vcf
-    type:
-      - 'null'
-      - boolean
-    doc: Converting a VCF file to other formats
-    inputBinding:
-      position: 101
-  - id: create_mask
-    type:
-      - 'null'
-      - boolean
-    doc: Creating a mask BED file
-    inputBinding:
-      position: 101
-  - id: downsample
-    type:
-      - 'null'
-      - boolean
-    doc: Downsampling a BAM file
-    inputBinding:
-      position: 101
-  - id: estimate_errors
-    type:
-      - 'null'
-      - boolean
-    doc: Estimating PMD pattern and Sequencing Errors
-    inputBinding:
-      position: 101
-  - id: filter_bam
-    type:
-      - 'null'
-      - boolean
-    doc: Writing reads that pass filters to BAM file
-    inputBinding:
-      position: 101
-  - id: genetic_dist
-    type:
-      - 'null'
-      - boolean
-    doc: Estimating the genetic distance between individuals
-    inputBinding:
-      position: 101
-  - id: glf
-    type:
-      - 'null'
-      - boolean
-    doc: Writing genotype likelihoods to a GLF file
-    inputBinding:
-      position: 101
-  - id: identify_illumina
-    type:
-      - 'null'
-      - boolean
-    doc: Reassigning read groups based on the platform unit in their name
-    inputBinding:
-      position: 101
-  - id: inbreeding
-    type:
-      - 'null'
-      - boolean
-    doc: Estimating the inbreeding coefficient
-    inputBinding:
-      position: 101
-  - id: major_minor
-    type:
-      - 'null'
-      - boolean
-    doc: Estimating major and minor alles
-    inputBinding:
-      position: 101
-  - id: merge_overlapping_reads
-    type:
-      - 'null'
-      - boolean
-    doc: Merging paired-end reads in BAM file
-    inputBinding:
-      position: 101
-  - id: merge_rg
-    type:
-      - 'null'
-      - boolean
-    doc: Merging read groups in a BAM file
-    inputBinding:
-      position: 101
-  - id: mutation_load
-    type:
-      - 'null'
-      - boolean
-    doc: Estimating mutation load across the genome
-    inputBinding:
-      position: 101
-  - id: pileup
-    type:
-      - 'null'
-      - boolean
-    doc: Printing pileup from BAM file
-    inputBinding:
-      position: 101
-  - id: pileup_to_bed
-    type:
-      - 'null'
-      - boolean
-    doc: Create bed file from pileup file
-    inputBinding:
-      position: 101
-  - id: pmds
-    type:
-      - 'null'
-      - boolean
-    doc: Filtering for ancient reads using PMDS
-    inputBinding:
-      position: 101
-  - id: print_glf
-    type:
-      - 'null'
-      - boolean
-    doc: Printing a GLF file to screen
-    inputBinding:
-      position: 101
-  - id: psmc
-    type:
-      - 'null'
-      - boolean
-    doc: Generating a PSMC Input file probabilistically
-    inputBinding:
-      position: 101
-  - id: quality_transformation
-    type:
-      - 'null'
-      - boolean
-    doc: Printing Quality Transformation
-    inputBinding:
-      position: 101
-  - id: saf
-    type:
-      - 'null'
-      - boolean
-    doc: Estimating Site Allele Frequencies
-    inputBinding:
-      position: 101
-  - id: simulate
-    type:
-      - 'null'
-      - boolean
-    doc: Simulate bam- or vcf-file[s]
-    inputBinding:
-      position: 101
-  - id: summary_stats
-    type:
-      - 'null'
-      - boolean
-    doc: 'Summary statistics per window/genomewide: Felsenstein, HKY85, Pi'
-    inputBinding:
-      position: 101
-  - id: test_hardy_weinberg
-    type:
-      - 'null'
-      - boolean
-    doc: Testing for Hardy-Weinberg equilibrium across multiple populations
-    inputBinding:
-      position: 101
-  - id: theta_ratio
-    type:
-      - 'null'
-      - boolean
-    doc: Estimate ratio in heterozygosity (theta) between genomic regions
-    inputBinding:
-      position: 101
-  - id: vcf_compare
-    type:
-      - 'null'
-      - boolean
-    doc: Comparing genotype calls in two VCF files
-    inputBinding:
-      position: 101
-  - id: vcf_diagnostics
-    type:
-      - 'null'
-      - boolean
-    doc: Diagnosing a VCF file
-    inputBinding:
-      position: 101
+      position: 1
+      prefix: --out
 outputs:
-  - id: stdout
+  - id: log
     type: stdout
-    doc: Standard output
+    doc: ATLAS progress report (standard output).
+  - id: glf
+    type: File
+    doc: "Binary GLF file with genotype likelihoods."
+    secondaryFiles:
+      - pattern: ^.idx
+        required: false
+    outputBinding:
+      glob: $(inputs.out_prefix).glf.gz
+  - id: parameters
+    type:
+      - 'null'
+      - File
+    doc: "Parameters used for the run."
+    outputBinding:
+      glob: $(inputs.out_prefix).parameters
+  - id: filter_summary
+    type:
+      - 'null'
+      - File
+    doc: "Counts of reads removed by each filter."
+    outputBinding:
+      glob: $(inputs.out_prefix)_filterSummary.txt
+  - id: rg_info
+    type:
+      - 'null'
+      - File
+    doc: "Read group information."
+    outputBinding:
+      glob: $(inputs.out_prefix)_RGInfo.json
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas:2.0.1--hadca570_0
-stdout: atlas_glf.out
+stdout: atlas_glf.log

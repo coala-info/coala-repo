@@ -1,5 +1,11 @@
 # bed2gtf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bed2gtf | PASS |  |
+
 ## bed2gtf
 
 ### Tool Description

@@ -304,7 +304,7 @@ inputs:
   - id: genome_singlem
     type:
       - 'null'
-      - string
+      - File
     doc: SingleM results for genomes
     inputBinding:
       position: 101
@@ -557,7 +557,7 @@ inputs:
   - id: singlem_metapackage
     type:
       - 'null'
-      - string
+      - Directory
     doc: SingleM metapackage to use
     inputBinding:
       position: 101

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-keep_samples.py
+baseCommand:
+  - amptk
+  - select
 label: amptk_select
 doc: "Script parses AMPtk de-multiplexed FASTQ file and keeps those sequences with
   barcode names in list\n\nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -39,7 +41,7 @@ inputs:
   - id: threshold
     type:
       - 'null'
-      - string
+      - int
     doc: Keep samples with more reads than threshold
     inputBinding:
       position: 101

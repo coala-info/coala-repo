@@ -2,6 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: beav
 label: beav
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (inputs.output_directory) {
+          return [{"class": "Directory", "basename": inputs.output_directory, "listing": [], "writable": true}];
+        }
+        return [];
+      }
 doc: "BEAV- Bacterial Element Annotation reVamped\n\nTool homepage: https://github.com/weisberglab/beav"
 inputs:
   - id: agrobacterium
@@ -44,7 +54,7 @@ inputs:
     doc: Use a GenBank file as input
     inputBinding:
       position: 101
-      prefix: --genbank
+      prefix: --gbk
   - id: input
     type: File
     doc: Input file in fasta nucleotide format (Required)
@@ -143,7 +153,9 @@ inputs:
       position: 101
       prefix: --threads
   - id: tiger_blast_database
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to a reference genome blast database for TIGER2 ICE analysis 
       (Required unless --skip_tiger is used)
     inputBinding:
@@ -153,6 +165,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type: Directory
+    doc: The output directory, or the strain folder when no output directory 
+      is given
+    outputBinding:
+      glob: "$(inputs.output_directory ? inputs.output_directory : (inputs.strain
+        ? inputs.strain : inputs.input.basename.replace(/\\.(fna|fasta|fas|gbff|gbk|fa|genbank)$/,
+        '')))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beav:1.4.0--hdfd78af_1

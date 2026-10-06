@@ -1,5 +1,11 @@
 # bcl2fastq-nextseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcl2fastq-nextseq_bcl_to_fastq | Failed | image problem: the image lacks the bcl2fastq binary that bcl_to_fastq calls (left out of the recipe for licence reasons). |
+
 ## bcl2fastq-nextseq_bcl_to_fastq
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # argo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| argo | Not completed | Needs the 13.5 GB Argo SARG+/GTDB database from Zenodo plus indexing, too large for this test. |
+
 ## argo
 
 ### Tool Description

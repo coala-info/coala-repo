@@ -106,6 +106,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -Xmx
+      separate: false
   - id: keep_all
     type:
       - 'null'
@@ -320,7 +321,8 @@ inputs:
       runs).
     inputBinding:
       position: 101
-      prefix: tmpdir
+      prefix: tmpdir=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -354,7 +356,8 @@ inputs:
     doc: Output or path parameter `histogram_input_path`
     inputBinding:
       position: 102
-      prefix: --histogram-input
+      prefix: hist=
+      separate: false
   - id: histogram_output_path
     type:
       - 'null'
@@ -362,7 +365,8 @@ inputs:
     doc: Output or path parameter `histogram_output_path`
     inputBinding:
       position: 103
-      prefix: --histogram-output
+      prefix: histout=
+      separate: false
   - id: output_file_path
     type:
       - 'null'
@@ -370,7 +374,17 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: out=
+      separate: false
+  - id: output_file_2_path
+    type:
+      - 'null'
+      - string
+    doc: File for normalized or corrected 2nd reads of pairs
+    inputBinding:
+      position: 104
+      prefix: out2=
+      separate: false
   - id: output_toss_path
     type:
       - 'null'
@@ -378,7 +392,8 @@ inputs:
     doc: Output or path parameter `output_toss_path`
     inputBinding:
       position: 105
-      prefix: --output-toss
+      prefix: outt=
+      separate: false
   - id: peaks_file_path
     type:
       - 'null'
@@ -386,7 +401,8 @@ inputs:
     doc: Output or path parameter `peaks_file_path`
     inputBinding:
       position: 106
-      prefix: --peaks-file
+      prefix: peaks=
+      separate: false
 outputs:
   - id: output_file
     type:
@@ -396,6 +412,13 @@ outputs:
       second file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_file_2
+    type:
+      - 'null'
+      - File
+    doc: File for normalized or corrected 2nd reads of pairs
+    outputBinding:
+      glob: $(inputs.output_file_2_path)
   - id: output_toss
     type:
       - 'null'

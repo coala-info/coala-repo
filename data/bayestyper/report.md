@@ -1,5 +1,12 @@
 # bayestyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bayestyper_bayesTyper | Failed | not a usable tool: it wraps only the command group with a subcommand string and free options, and its baseCommand bayestyper does not exist (the program is bayesTyper). |
+| bayestyper_bayesTyperTools | Failed | not a usable tool: it wraps only the bayesTyperTools command group with a subcommand string and free options, with no data inputs or outputs. |
+
 ## bayestyper_bayesTyper
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # annosine2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| annosine2_AnnoSINE_v2 | PASS |  |
+
 ## annosine2_AnnoSINE_v2
 
 ### Tool Description

@@ -8,6 +8,13 @@ doc: "Merge two or more datasets into one. Datasets can consist of metadata and/
   sequence files. If both are provided, the order and file contents are used independently.\n\
   \nTool homepage: https://github.com/nextstrain/augur"
 inputs:
+  - id: metadata_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Metadata files named in --metadata as NAME=FILE; they are staged in 
+      the working directory, so use their base names in NAME=FILE.
   - id: metadata
     type:
       - 'null'
@@ -133,6 +140,8 @@ outputs:
       glob: $(inputs.output_sequences_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.metadata_files ? inputs.metadata_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

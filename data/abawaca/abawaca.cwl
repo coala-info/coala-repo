@@ -2,8 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: abawaca
 label: abawaca
-doc: "A tool for processing .names, .lrn, and fasta files into an output directory.\n
-  \nTool homepage: https://github.com/CK7/abawaca"
+doc: "A tool for processing .names, .lrn, and fasta files into an output directory.\n \nTool homepage: https://github.com/CK7/abawaca"
 inputs:
   - id: names_file
     type: File
@@ -20,12 +19,18 @@ inputs:
     doc: The FASTA file
     inputBinding:
       position: 3
+  - id: out_dir
+    type: string
+    default: abawaca_out
+    doc: Output directory for the bins.
+    inputBinding:
+      position: 4
 outputs:
   - id: output_directory
     type: Directory
     doc: The output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_dir)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abawaca:1.00--h7d875b9_3

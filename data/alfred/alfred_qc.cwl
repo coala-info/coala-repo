@@ -8,6 +8,11 @@ doc: "Quality control for aligned sequencing reads\n\nTool homepage: https://git
 inputs:
   - id: aligned_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input aligned BAM file
     inputBinding:
       position: 1
@@ -76,9 +81,7 @@ inputs:
       position: 102
       prefix: --supplementary
   - id: json_output_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: gzipped json output file
     inputBinding:
       position: 103

@@ -1,5 +1,11 @@
 # angsd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| angsd | PASS |  |
+
 ## angsd
 
 ### Tool Description

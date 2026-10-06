@@ -1,15 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse
+baseCommand:
+  - bedparse
+  - 5pUTR
 label: bedparse_5putr
-doc: "bedparse: error: argument sub-command: invalid choice: '5putr' (choose from
-  '3pUTR', '5pUTR', 'cds', 'promoter', 'introns', 'filter', 'join', 'gtf2bed', 'bed12tobed6',
-  'convertChr', 'validateFormat')\n\nTool homepage: https://github.com/tleonardi/bedparse"
+doc: "Report the 5'UTR of each coding transcript (i.e. transcripts with distinct\nvalues
+  of thickStart and thickEnd). Transcripts without CDS are not reported.\n\nTool homepage:
+  https://github.com/tleonardi/bedparse"
 inputs:
-  - id: sub_command
-    type: string
-    doc: 'Sub-command to execute. Available choices: 3pUTR, 5pUTR, cds, promoter,
-      introns, filter, join, gtf2bed, bed12tobed6, convertChr, validateFormat'
+  - id: bedfile
+    type:
+      - 'null'
+      - File
+    doc: Path to the BED file.
     inputBinding:
       position: 1
 outputs:

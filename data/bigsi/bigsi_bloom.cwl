@@ -9,26 +9,26 @@ doc: "Creates a bloom filter from a sequence file or cortex graph.\n\nTool homep
 inputs:
   - id: ctx
     type: File
-    doc: Sequence file or cortex graph (fastq, fasta, bam, ctx)
+    doc: Cortex graph (.ctx) of the sample (this version reads only ctx files)
     inputBinding:
       position: 1
   - id: outfile
     type: string
-    doc: Output file for the bloom filter
+    doc: Output name for the bloom filter (written as a folder holding the filter)
     inputBinding:
       position: 2
   - id: config
     type:
       - 'null'
-      - string
-    doc: Configuration file
+      - File
+    doc: BIGSI configuration YAML file (k, m, h, storage engine)
     inputBinding:
       position: 102
       prefix: --config
 outputs:
   - id: out_outfile
-    type: File
-    doc: Output file for the bloom filter
+    type: Directory
+    doc: Bloom filter folder (pass it to bigsi build or insert)
     outputBinding:
       glob: '$(inputs.outfile)'
 hints:

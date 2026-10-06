@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - comm
 label: bio_comm
 doc: "A better 'comm' command. Prints elements common from columns from two files.\n\
   \nTool homepage: https://github.com/ialbert/bio"

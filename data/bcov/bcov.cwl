@@ -48,17 +48,13 @@ inputs:
       position: 101
       prefix: -v
   - id: output_beta_contact_map_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: "file:\tWrite predicted beta contact map to file. REQUIRED."
     inputBinding:
       position: 102
       prefix: -c
   - id: output_beta_strand_pairing_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: "file:\tWrite predicted beta strand pairing to file. REQUIRED."
     inputBinding:
       position: 103

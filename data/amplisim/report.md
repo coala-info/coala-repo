@@ -1,5 +1,11 @@
 # amplisim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amplisim | PASS |  |
+
 ## amplisim
 
 ### Tool Description

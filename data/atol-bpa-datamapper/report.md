@@ -1,5 +1,11 @@
 # atol-bpa-datamapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atol-bpa-datamapper_map-metadata | PASS |  |
+
 ## atol-bpa-datamapper_map-metadata
 
 ### Tool Description

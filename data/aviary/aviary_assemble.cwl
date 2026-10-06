@@ -63,7 +63,7 @@ inputs:
   - id: conda_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the location of installed conda environments, or where to 
       install new environments. Can be configured within the `configure` 
       subcommand

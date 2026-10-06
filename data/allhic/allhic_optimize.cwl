@@ -69,9 +69,19 @@ inputs:
       position: 103
       prefix: --skipGA
 outputs:
+  - id: tour
+    type: File
+    doc: Contig order and orientation (<counts_RE prefix>.tour)
+    outputBinding:
+      glob: $(inputs.counts_re_file.nameroot).tour
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.counts_re_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allhic:0.9.14--he881be0_0

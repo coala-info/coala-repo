@@ -7,6 +7,9 @@ doc: "Generate metrics for each base at specific genomic positions from a BAM fi
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: The BAM file to be analyzed.
     inputBinding:
       position: 1
@@ -78,7 +81,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Wait for the BAM file to become available (seconds).
+    doc: Maximum number of warnings of each type to emit. -1 gives an unlimited
+      number.
     inputBinding:
       position: 103
       prefix: -w

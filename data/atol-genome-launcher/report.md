@@ -1,5 +1,13 @@
 # atol-genome-launcher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atol-genome-launcher_bpa-file-downloader | Not completed | Needs a Bioplatforms Australia API key in BPA_APIKEY to download data; without it the tool stops with 'Set the BPA_APIKEY environment variable'. |
+| atol-genome-launcher_rnaseq-manifest-generator | PASS |  |
+| atol-genome-launcher_rnaseq-reads-downloader | Not completed | Downloads each read file through bpa-file-downloader, which needs a Bioplatforms Australia API key in BPA_APIKEY. |
+
 ## atol-genome-launcher_rnaseq-manifest-generator
 
 ### Tool Description

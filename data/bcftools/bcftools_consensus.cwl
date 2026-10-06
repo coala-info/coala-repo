@@ -24,7 +24,7 @@ inputs:
     position: 102
     prefix: --absent
 - id: chain
-  type: string
+  type: string?
   doc: Write a chain file for liftover
   inputBinding:
     position: 102

@@ -1,5 +1,11 @@
 # 3seq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| 3seq | PASS |  |
+
 ## 3seq
 
 ### Tool Description

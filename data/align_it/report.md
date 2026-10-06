@@ -1,5 +1,11 @@
 # align_it CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| align_it | Failed | image problem: the image is alignlib-lite, which has no align-it program; the CWL came from a failed Docker pull and its read-alignment inputs are invented (align-it aligns pharmacophores). |
+
 ## align_it
 
 ### Tool Description

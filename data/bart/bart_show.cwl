@@ -1,21 +1,26 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: show
+baseCommand: [bart, show]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_show
-doc: "Outputs values or meta data.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Outputs values or meta data.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: input
-    type: string
+    type: File
     doc: Input
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: dimension
     type:
       - 'null'
-      - string
+      - int
     doc: show size of dimension
     inputBinding:
-      position: 102
+      position: 1
       prefix: -d
   - id: format
     type:
@@ -23,7 +28,7 @@ inputs:
       - string
     doc: use <format> as the format.
     inputBinding:
-      position: 102
+      position: 1
       prefix: -f
   - id: separator
     type:
@@ -31,7 +36,7 @@ inputs:
       - string
     doc: use <sep> as the separator
     inputBinding:
-      position: 102
+      position: 1
       prefix: -s
   - id: show_meta_data
     type:
@@ -39,7 +44,7 @@ inputs:
       - boolean
     doc: show meta data
     inputBinding:
-      position: 102
+      position: 1
       prefix: -m
 outputs:
   - id: stdout

@@ -1,5 +1,11 @@
 # abruijn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| abruijn | Failed | the abruijn 2.1b image lacks BLASR, which ABruijn needs ('Error: BLASR is not installed'). CWL fixed: the required out_dir positional was missing |
+
 ## abruijn
 
 ### Tool Description

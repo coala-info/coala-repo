@@ -1,5 +1,11 @@
 # bamstats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamstats | PASS |  |
+
 ## bamstats
 
 ### Tool Description

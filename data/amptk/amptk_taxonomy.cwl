@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-assign_taxonomy.py
+baseCommand:
+  - amptk
+  - taxonomy
 label: amptk_taxonomy
 doc: "assign taxonomy to OTUs\n\nTool homepage: https://github.com/nextgenusfs/amptk"
 inputs:
@@ -15,7 +17,7 @@ inputs:
   - id: cpus
     type:
       - 'null'
-      - string
+      - int
     doc: 'Number of CPUs. Default: auto'
     inputBinding:
       position: 101
@@ -195,11 +197,12 @@ inputs:
 outputs:
   - id: out
     type:
-      - 'null'
-      - File
-    doc: Output file (FASTA)
+      type: array
+      items: File
+    doc: Files written with the output base name (taxonomy, OTU table with taxonomy,
+      BIOM, tree, log)
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

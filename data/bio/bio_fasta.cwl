@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - fasta
 label: bio_fasta
 doc: "A tool for manipulating FASTA files.\n\nTool homepage: https://github.com/ialbert/bio"
 inputs:

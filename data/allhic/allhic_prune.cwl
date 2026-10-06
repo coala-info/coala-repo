@@ -21,9 +21,19 @@ inputs:
     inputBinding:
       position: 2
 outputs:
+  - id: pruned_pairs
+    type: File
+    doc: Pairs file with allelic links removed (<pairs prefix>.prune.txt)
+    outputBinding:
+      glob: $(inputs.pairs_file.nameroot).prune.txt
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pairs_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allhic:0.9.14--he881be0_0

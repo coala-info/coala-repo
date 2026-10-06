@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Input PDB filename or - for stdin
     inputBinding:
-      position: 1
+      position: 200
   - id: all_alt
     type:
       - 'null'
@@ -26,6 +26,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -BADBumpcut
+      separate: false
   - id: bb_model
     type:
       - 'null'
@@ -67,6 +68,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -DENSity
+      separate: false
   - id: do_rot_met
     type:
       - 'null'
@@ -99,6 +101,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -H2OBcutoff
+      separate: false
   - id: h2o_occ_cutoff
     type:
       - 'null'
@@ -107,6 +110,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -H2OOCCcutoff
+      separate: false
   - id: hb_charged_cut
     type:
       - 'null'
@@ -115,6 +119,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -HBCHargedcut
+      separate: false
   - id: hb_reg_cutoff
     type:
       - 'null'
@@ -123,6 +128,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -HBREGcutoff
+      separate: false
   - id: his
     type:
       - 'null'
@@ -147,6 +153,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -LIMIT
+      separate: false
   - id: max_arom_dih
     type:
       - 'null'
@@ -155,6 +162,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -MAXAromdih
+      separate: false
   - id: metal_bump
     type:
       - 'null'
@@ -163,6 +171,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -METALBump
+      separate: false
   - id: model
     type:
       - 'null'
@@ -171,6 +180,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -Model
+      separate: false
   - id: n_bonds
     type:
       - 'null'
@@ -179,6 +189,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -NBonds
+      separate: false
   - id: n_term
     type:
       - 'null'
@@ -187,6 +198,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -Nterm
+      separate: false
   - id: no_adjust
     type:
       - 'null'
@@ -203,6 +215,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -NOBUILD
+      separate: false
   - id: no_con
     type:
       - 'null'
@@ -259,6 +272,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -NONMETALBump
+      separate: false
   - id: nuclear
     type:
       - 'null'
@@ -275,6 +289,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -OCCcutoff
+      separate: false
   - id: oh
     type:
       - 'null'
@@ -307,6 +322,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -PENalty
+      separate: false
   - id: quiet
     type:
       - 'null'
@@ -323,6 +339,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -RADius
+      separate: false
   - id: rot_ex_oh
     type:
       - 'null'

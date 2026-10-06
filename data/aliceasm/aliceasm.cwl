@@ -8,8 +8,8 @@ inputs:
   - id: bcalm_path
     type:
       - 'null'
-      - File
-    doc: path to bcalm
+      - string
+    doc: path to the bcalm executable inside the container (default bcalm on PATH)
     inputBinding:
       position: 101
       prefix: --bcalm

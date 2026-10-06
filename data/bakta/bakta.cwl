@@ -351,9 +351,17 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: Annotation files written with the output prefix (default prefix = genome
+      file name without extension)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: |-
+        ${
+          var d = inputs.output ? inputs.output + '/' : '';
+          var p = inputs.prefix ? inputs.prefix : inputs.genome.basename.replace(/\.gz$/, '').replace(/\.[^.]+$/, '');
+          return d + p + '.*';
+        }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bakta:1.12.0--pyhdfd78af_0

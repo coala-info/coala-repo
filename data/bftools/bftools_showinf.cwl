@@ -29,7 +29,7 @@ inputs:
   - id: cache_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "use the specified directory to store the cached\n              initialized
       reader. If unspecified, the cached reader\n              will be stored under
       the same folder as the image file"
@@ -225,7 +225,8 @@ inputs:
   - id: range
     type:
       - 'null'
-      - string
+      - type: array
+        items: int
     doc: specify range of planes to read (inclusive)
     inputBinding:
       position: 102

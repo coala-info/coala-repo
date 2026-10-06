@@ -4,77 +4,71 @@ baseCommand:
   - amptk
   - summarize
 label: amptk_summarize
-doc: "Summarize amplicon sequencing data\n\nTool homepage: https://github.com/nextgenusfs/amptk"
+doc: "Traverse the taxonomy information of an OTU table and create an OTU-like table
+  for each taxonomy level (Kingdom, Phylum, Class, ...). Optionally create a stacked
+  bar graph for each level.\n\nTool homepage: https://github.com/nextgenusfs/amptk"
 inputs:
-  - id: input_dir
-    type: Directory
-    doc: Directory containing OTU table and taxonomy files
+  - id: table
+    type: File
+    doc: OTU table containing taxonomy information (e.g. <base>.otu_table.taxonomy.txt
+      from amptk taxonomy)
     inputBinding:
-      position: 1
-  - id: force
+      position: 101
+      prefix: --table
+  - id: counts
+    type:
+      - 'null'
+      - string
+    doc: 'Method to count taxa: binary or actual. Default: binary'
+    inputBinding:
+      position: 101
+      prefix: --counts
+  - id: graphs
     type:
       - 'null'
       - boolean
-    doc: Overwrite existing files without asking
+    doc: Create stacked bar graphs.
     inputBinding:
-      position: 102
-      prefix: --force
+      position: 101
+      prefix: --graphs
   - id: format
     type:
       - 'null'
       - string
-    doc: Format for generated plots (png, pdf, svg)
+    doc: 'Image output format: eps, svg, png or pdf. Default: eps'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --format
-  - id: level
+  - id: percent
+    type:
+      - 'null'
+      - boolean
+    doc: 'Convert numbers to percent for graphs. Default: off'
+    inputBinding:
+      position: 101
+      prefix: --percent
+  - id: font_size
     type:
       - 'null'
       - int
-    doc: Taxonomic level to summarize (e.g., 3 for genus)
+    doc: 'Font size for X-axis sample labels. Default: 8'
     inputBinding:
-      position: 102
-      prefix: --level
-  - id: min_otu
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of reads for an OTU to be included in plots
-    inputBinding:
-      position: 102
-      prefix: --min_otu
-  - id: min_reads
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of reads to include a sample in plots
-    inputBinding:
-      position: 102
-      prefix: --min_reads
-  - id: plot_type
-    type:
-      - 'null'
-      - string
-    doc: Type of plot to generate (bar, pie, stackedbar)
-    inputBinding:
-      position: 102
-      prefix: --plot
-  - id: output_dir_path
+      position: 101
+      prefix: --font_size
+  - id: out
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Base name for output files
     inputBinding:
-      position: 103
-      prefix: --output-dir
+      position: 101
+      prefix: --out
 outputs:
-  - id: output_dir
+  - id: out_files
     type:
-      - 'null'
-      - Directory
-    doc: Directory to save summary files
+      type: array
+      items: File
+    doc: One table (.csv) per taxonomy level, plus graphs when --graphs is set
     outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

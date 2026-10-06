@@ -1,5 +1,11 @@
 # aliceasm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aliceasm | Failed | image problem: python3 is missing, so the bundled convertToGFA.py cannot run and every assembly stops with error 321. |
+
 ## aliceasm
 
 ### Tool Description

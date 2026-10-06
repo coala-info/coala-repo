@@ -101,6 +101,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.alignment)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

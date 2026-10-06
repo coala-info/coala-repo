@@ -63,6 +63,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_files
+    type: File[]
+    doc: HNSW database files written to the working directory (hnswdump.hnsw.data,
+      hnswdump.hnsw.graph, parameters.json, seqdict.json); put them in one 
+      directory for --hnsw of adas-search, adas-insert and adas-knn
+    outputBinding:
+      glob:
+        - hnswdump.hnsw.*
+        - parameters.json
+        - seqdict.json
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/adas:0.1.3--h3ab6199_0

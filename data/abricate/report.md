@@ -1,5 +1,12 @@
 # abricate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| abricate | PASS |  |
+| abricate_abricate-get_db | PASS |  |
+
 ## abricate
 
 ### Tool Description

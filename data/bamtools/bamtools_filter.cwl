@@ -29,14 +29,18 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -in
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: the input BAM file(s) [stdin]
     inputBinding:
       position: 101
-      prefix: -in
   - id: insert_size
     type:
       - 'null'
-      - int
+      - string
     doc: keep reads with insert size that matches pattern
     inputBinding:
       position: 101
@@ -140,7 +144,7 @@ inputs:
   - id: length
     type:
       - 'null'
-      - int
+      - string
     doc: keep reads with length that matches pattern
     inputBinding:
       position: 101
@@ -156,7 +160,7 @@ inputs:
   - id: map_quality
     type:
       - 'null'
-      - int
+      - string
     doc: keep reads with map quality that matches pattern
     inputBinding:
       position: 101

@@ -269,13 +269,11 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_gtf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_gtf_path`
+    type: string
+    doc: GTF file to which the assembled transcripts will be written
     inputBinding:
       position: 102
-      prefix: --output-gtf
+      prefix: -o
   - id: transcript_fragments_path
     type:
       - 'null'

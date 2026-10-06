@@ -15,6 +15,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --alignment
+      valueFrom: $(self.basename)
   - id: every
     type:
       - 'null'
@@ -71,13 +72,14 @@ inputs:
   - id: omegaarray
     type:
       - 'null'
-      - string
+      - File
     doc: File path to ω values (one ω per line), thus considered fixed. 
       `freeomega` is overridden to false and `omegancat` equals to the number of
       ω in the file.
     inputBinding:
       position: 102
       prefix: --omegaarray
+      valueFrom: $(self.basename)
   - id: omegancat
     type:
       - 'null'
@@ -97,7 +99,7 @@ inputs:
   - id: profiles
     type:
       - 'null'
-      - string
+      - File
     doc: File path the fitness profiles (tsv or csv), thus considered fixed. 
       Each line must contains the fitness of each of the 20 amino-acid, thus 
       summing to one. If same number of profiles as the codon alignment, site 
@@ -107,12 +109,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --profiles
+      valueFrom: $(self.basename)
   - id: tree
     type: File
     doc: File path to the tree (NHX format).
     inputBinding:
       position: 102
       prefix: --tree
+      valueFrom: $(self.basename)
   - id: until
     type:
       - 'null'
@@ -132,6 +136,16 @@ outputs:
     doc: Files written with the prefix given in chain_name
     outputBinding:
       glob: $(inputs.chain_name)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [inputs.alignment, inputs.tree];
+        if (inputs.profiles) { l.push(inputs.profiles); }
+        if (inputs.omegaarray) { l.push(inputs.omegaarray); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bayescode:1.3.4--h9948957_0

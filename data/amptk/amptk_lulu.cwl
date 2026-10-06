@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-lulu.py
+baseCommand:
+  - amptk
+  - lulu
 label: amptk_lulu
 doc: "Script runs OTU table post processing LULU to identify low abundance error OTUs\n\
   \nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -66,11 +68,11 @@ inputs:
 outputs:
   - id: out
     type:
-      - 'null'
-      - Directory
-    doc: Output folder basename
+      type: array
+      items: File
+    doc: Files written with the output base name (curated OTU table, OTUs, log)
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

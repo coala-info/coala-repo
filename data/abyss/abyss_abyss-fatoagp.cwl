@@ -1,46 +1,34 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: abyss-fatoagp
 label: abyss_abyss-fatoagp
-doc: "Convert FASTA files to AGP format using ABySS\n\nTool homepage: https://www.bcgsc.ca/platform/bioinfo/software/abyss"
-inputs:
-  - id: program_args
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Additional program arguments
-    inputBinding:
-      position: 1
-  - id: fasta_file
-    type:
-      - 'null'
-      - File
-    doc: Input FASTA file
-    inputBinding:
-      position: 102
-      prefix: -f
-  - id: scaffold_id
-    type:
-      - 'null'
-      - string
-    doc: Scaffold ID prefix
-    inputBinding:
-      position: 102
-      prefix: -S
-  - id: scaffold_size
-    type:
-      - 'null'
-      - int
-    doc: Minimum scaffold size
-    inputBinding:
-      position: 102
-      prefix: -s
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+doc: "Convert a FASTA file of scaffolds to a FASTA file of contigs (split at runs of N) and an AGP file describing how the contigs make the scaffolds. Written from the script source: the tool prints no help.\n\nTool homepage: https://github.com/bcgsc/abyss"
+baseCommand: [abyss-fatoagp]
 hints:
-  - class: DockerRequirement
+  DockerRequirement:
     dockerPull: quay.io/biocontainers/abyss:2.3.10--hf316886_2
-stdout: abyss_abyss-fatoagp.out
+inputs:
+  scaffolds:
+    type: File
+    doc: "Scaffolds (FASTA, one line per sequence as ABySS writes them)."
+    inputBinding: {position: 10}
+  contigs_output:
+    type: string?
+    doc: "Write the contigs (scaftigs) to this FASTA file (-f)."
+    inputBinding: {prefix: -f, position: 1}
+  min_scaffold_length:
+    type: int?
+    doc: "Scaffolds shorter than this are excluded (-s) [200]."
+    inputBinding: {prefix: -s, position: 1}
+  min_contig_length:
+    type: int?
+    doc: "Scaftigs shorter than this are masked with N (-S) [50]."
+    inputBinding: {prefix: -S, position: 1}
+outputs:
+  agp:
+    type: stdout
+    doc: "AGP file."
+  contigs:
+    type: File?
+    doc: "Contigs FASTA (with -f)."
+    outputBinding: {glob: $(inputs.contigs_output)}
+stdout: $(inputs.scaffolds.nameroot).agp

@@ -1,5 +1,11 @@
 # bcbio-nextgen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcbio-nextgen_bcbio_nextgen.py | Not completed | Running the pipeline needs a full bcbio install (bcbio_system.yaml, indexed genomes and third-party tools such as bwa, samtools and gatk), which this image does not contain. |
+
 ## bcbio-nextgen_bcbio_nextgen.py
 
 ### Tool Description

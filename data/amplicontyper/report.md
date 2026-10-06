@@ -1,5 +1,11 @@
 # amplicontyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amplicontyper_train | PASS |  |
+
 ## amplicontyper_train
 
 ### Tool Description

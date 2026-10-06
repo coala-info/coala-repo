@@ -1,5 +1,14 @@
 # bigscape CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bigscape_benchmark | PASS | Benchmark against curated GCFs gives V-measure 1.0 at the matching cutoff 0.8 and 0.64 at 0.3; note the tool crashes on cluster runs made with --label (tool bug). |
+| bigscape_cluster | PASS | Galaxy test region GBKs with pressed Pfam subset give 28 edges and GCF tables at two cutoffs; removed the duplicate gbk_dir alias input, db_path made a string, Pfam press files added as optional secondaryFiles. |
+| bigscape_dereplicate | PASS | A planted duplicate GBK collapses to one representative (8 of 9 kept); added a step that copies the representative symlinks so cwltool can collect them. |
+| bigscape_query | PASS | Query BGC NC_012963.1 vs 7 Galaxy GBKs gives 7 distances matching the cluster run and one family at cutoff 0.8; same input fixes as cluster. |
+
 ## bigscape_cluster
 
 ### Tool Description

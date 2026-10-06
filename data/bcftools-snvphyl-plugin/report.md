@@ -1,5 +1,11 @@
 # bcftools-snvphyl-plugin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcftools-snvphyl-plugin_bcftools | Failed | not a usable tool: wraps only the bcftools command group with a command string and no data inputs or outputs, not the filter_snv_density plugin. |
+
 ## bcftools-snvphyl-plugin_bcftools
 
 ### Tool Description

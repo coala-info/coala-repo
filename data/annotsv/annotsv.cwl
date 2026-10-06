@@ -14,6 +14,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -annotationMode
+  - id: annotations_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path of the annotations directory
+    inputBinding:
+      position: 101
+      prefix: -annotationsDir
   - id: genome_build
     type:
       - 'null'
@@ -45,7 +53,7 @@ inputs:
     doc: Path to a SNV VCF file for frequency calculation
     inputBinding:
       position: 101
-      prefix: -snvVCF
+      prefix: -snvIndelFiles
   - id: sv_input_file
     type: File
     doc: Path to the SV input file (VCF or BED)
@@ -59,7 +67,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -outputDir
   - id: output_file_path
     type:
       - 'null'
@@ -67,7 +75,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -outputFile
 outputs:
   - id: output_dir
     type:
@@ -85,6 +93,10 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sv_input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/annotsv:3.5.3--py313hdfd78af_0

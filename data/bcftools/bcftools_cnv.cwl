@@ -15,6 +15,11 @@ hints:
 inputs:
 - id: input_vcf
   type: File
+  secondaryFiles:
+  - pattern: .tbi
+    required: false
+  - pattern: .csi
+    required: false
   doc: Input VCF file
   inputBinding:
     position: 1
@@ -27,6 +32,7 @@ inputs:
   inputBinding:
     position: 102
     prefix: --aberrant
+    itemSeparator: ','
 - id: af_file
   type:
   - 'null'
@@ -44,6 +50,7 @@ inputs:
   inputBinding:
     position: 102
     prefix: --BAF-dev
+    itemSeparator: ','
 - id: baf_weight
   type:
   - 'null'
@@ -77,6 +84,7 @@ inputs:
   inputBinding:
     position: 102
     prefix: --LRR-dev
+    itemSeparator: ','
 - id: lrr_smooth_win
   type:
   - 'null'

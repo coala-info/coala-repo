@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - beagle.27Feb25.75f.jar
+baseCommand: beagle
 label: beagle
 doc: "BEAGLE 5.5 is a software package that performs genotype imputation and phasing.\n\
   \nTool homepage: https://github.com/yampelo/beagle"
@@ -212,6 +209,16 @@ inputs:
       prefix: window-markers=
       separate: false
 outputs:
+  - id: vcf
+    type: File
+    doc: Phased (and imputed) genotypes in bgzipped VCF
+    outputBinding:
+      glob: $(inputs.out).vcf.gz
+  - id: log
+    type: File
+    doc: Beagle run log
+    outputBinding:
+      glob: $(inputs.out).log
   - id: stdout
     type: stdout
     doc: Standard output

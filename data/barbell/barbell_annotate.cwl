@@ -64,11 +64,13 @@ inputs:
   - id: queries
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Query files (comma-separated paths)
     inputBinding:
       position: 101
       prefix: --queries
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'
@@ -96,14 +98,13 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string?
+    default: output.tsv
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file path
     outputBinding:
       glob: $(inputs.output_path)

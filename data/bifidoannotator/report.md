@@ -1,5 +1,11 @@
 # bifidoannotator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bifidoannotator_bifidoAnnotator | PASS | B. breve UCC2003 benchmark proteome gives 18 GH hits to Bbr_ loci in 11 GH families; the mapping file must be passed because the image cannot find its packaged copy. |
+
 ## bifidoannotator_bifidoAnnotator
 
 ### Tool Description

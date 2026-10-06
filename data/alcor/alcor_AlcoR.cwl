@@ -11,6 +11,18 @@ inputs:
     doc: 'The command to execute: info, extract, mapper, simulation, or visual'
     inputBinding:
       position: 1
+  - id: verbose
+    type: ['null', boolean]
+    doc: Verbose mode (more information)
+    inputBinding:
+      position: 2
+      prefix: -v
+  - id: input_file
+    type: ['null', File]
+    doc: Input FASTA file to analyze (last argument, mandatory for every command
+      except simulation)
+    inputBinding:
+      position: 100
 outputs:
   - id: stdout
     type: stdout

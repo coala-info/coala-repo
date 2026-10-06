@@ -22,9 +22,10 @@ inputs:
   - id: extend
     type:
       - 'null'
-      - string
-    doc: Build-time customisations to be applied. See documentation for more 
-      details.
+      - File
+    doc: Build-time customisations to be applied (JSON). See documentation for more
+      details. When given, the bundle is written to ./dist in the working directory;
+      without it auspice writes into its own install folder in the image.
     inputBinding:
       position: 101
       prefix: --extend
@@ -49,6 +50,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dist
+    type:
+      - 'null'
+      - Directory
+    doc: Built client bundle (written only when --extend is given)
+    outputBinding:
+      glob: dist
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/auspice:2.66.0--h503566f_2

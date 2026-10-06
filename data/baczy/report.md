@@ -1,5 +1,13 @@
 # baczy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| baczy_citation | Failed | not a usable tool: it only prints a citation, the baseCommand is the CWL file name, and its inputs are DOI lines from the help. |
+| baczy_config | PASS |  |
+| baczy_run | Not completed | the Snakemake pipeline needs Bakta and GTDB-Tk databases plus per-rule Singularity or conda environments with network access; fastp, megahit and bakta are not in the image. |
+
 ## baczy_run
 
 ### Tool Description

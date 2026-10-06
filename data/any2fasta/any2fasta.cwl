@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Input sequence file(s) (gb, fa, fq, gff, gfa, clw, sth and compressed variants)
     inputBinding:
-      position: 1
+      position: 200
   - id: include_version
     type:
       - 'null'

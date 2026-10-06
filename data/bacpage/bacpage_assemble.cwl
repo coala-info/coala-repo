@@ -81,6 +81,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Project directory with the results written by the pipeline
+    outputBinding:
+      glob: "${ return inputs.directory ? inputs.directory.basename : []; }"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bacpage:2025.08.21--pyhdfd78af_0

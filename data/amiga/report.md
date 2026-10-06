@@ -1,5 +1,11 @@
 # amiga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amiga | Failed | not a usable tool: it wraps only the amiga subcommand word with no data inputs or outputs. |
+
 ## amiga
 
 ### Tool Description

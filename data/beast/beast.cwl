@@ -8,9 +8,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input file name
+    doc: Input BEAST XML file (must come after all options)
     inputBinding:
-      position: 1
+      position: 200
   - id: adaptation_off
     type:
       - 'null'
@@ -215,7 +215,7 @@ inputs:
   - id: citations_file
     type:
       - 'null'
-      - File
+      - string
     doc: Specify a filename to write a citation list to
     inputBinding:
       position: 102
@@ -368,7 +368,7 @@ inputs:
   - id: plugins_dir
     type:
       - 'null'
-      - File
+      - Directory
     doc: Specify a directory to load plugins from, multiple can be separated 
       with ':'
     inputBinding:
@@ -401,7 +401,7 @@ inputs:
   - id: save_state
     type:
       - 'null'
-      - File
+      - string
     doc: Specify a filename to save state to
     inputBinding:
       position: 102
@@ -409,7 +409,7 @@ inputs:
   - id: save_stem
     type:
       - 'null'
-      - File
+      - string
     doc: Specify a stem for the filenames to save states to
     inputBinding:
       position: 102
@@ -503,9 +503,46 @@ inputs:
       position: 102
       prefix: -working
 outputs:
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Parameter log files named in the BEAST XML (*.log)
+    outputBinding:
+      glob: '*.log'
+  - id: tree_files
+    type:
+      type: array
+      items: File
+    doc: Tree log files named in the BEAST XML (*.trees)
+    outputBinding:
+      glob: '*.trees'
+  - id: operator_files
+    type:
+      type: array
+      items: File
+    doc: Operator analysis files (*.ops)
+    outputBinding:
+      glob: '*.ops'
+  - id: state_files
+    type:
+      type: array
+      items: File
+    doc: Saved state files written with -save_state, -save_stem or -citations_file
+    outputBinding:
+      glob: |-
+        ${
+          var g = [];
+          if (inputs.save_state) g.push(inputs.save_state);
+          if (inputs.save_stem) g.push(inputs.save_stem + "*");
+          if (inputs.citations_file) g.push(inputs.citations_file);
+          return g;
+        }
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beast:10.5.0--hdfd78af_0

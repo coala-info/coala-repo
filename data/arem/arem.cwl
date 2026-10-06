@@ -315,54 +315,78 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: bed_graph_path
+  - id: bdg
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `bed_graph_path`
+      - boolean
+    doc: Save extended fragment pileup at every bp into a bedGraph file.
     inputBinding:
       position: 102
-      prefix: --bed-graph
-  - id: wig_path
+      prefix: --bdg
+  - id: wig
     type:
       - 'null'
-      - string
+      - boolean
+    doc: Save extended fragment pileup at every WIGEXTEND bps into a wiggle 
+      file.
     inputBinding:
       position: 103
       prefix: --wig
-  - id: write_read_probs_path
+  - id: write_read_probs
     type:
       - 'null'
-      - string
-    doc: Write out all final reads, including their alignment
+      - boolean
+    doc: Write out all final reads, including their alignment probabilities as a
+      BED file.
     inputBinding:
       position: 104
       prefix: --write-read-probs
 outputs:
-  - id: wig
+  - id: peaks_xls
+    type: File
+    doc: Peak table (NAME_peaks.xls)
+    outputBinding:
+      glob: "$((inputs.name ? inputs.name : 'NA') + '_peaks.xls')"
+  - id: peaks_bed
+    type: File
+    doc: Peak BED file (NAME_peaks.bed)
+    outputBinding:
+      glob: "$((inputs.name ? inputs.name : 'NA') + '_peaks.bed')"
+  - id: summits_bed
     type:
       - 'null'
       - File
-    doc: Whether or not to save extended fragment pileup at every WIGEXTEND bps 
-      into a wiggle file.
+    doc: Peak summits BED file (NAME_summits.bed)
     outputBinding:
-      glob: $(inputs.wig_path)
-  - id: bed_graph
+      glob: "$((inputs.name ? inputs.name : 'NA') + '_summits.bed')"
+  - id: negative_peaks_xls
     type:
       - 'null'
       - File
-    doc: Whether or not to save extended fragment pileup at every bp into a 
-      bedGraph file.
+    doc: Negative peaks table, written when a control is given
     outputBinding:
-      glob: $(inputs.bed_graph_path)
-  - id: write_read_probs
+      glob: "$((inputs.name ? inputs.name : 'NA') + '_negative_peaks.xls')"
+  - id: read_probs
+    type:
+      type: array
+      items: File
+    doc: Reads with alignment probabilities (with --write-read-probs)
+    outputBinding:
+      glob: "$((inputs.name ? inputs.name : 'NA') + '_*_read_probs.bed')"
+  - id: wig_dir
     type:
       - 'null'
-      - File
-    doc: Write out all final reads, including their alignment probabilities as a
-      BED file.
+      - Directory
+    doc: Wiggle files folder (with --wig)
     outputBinding:
-      glob: $(inputs.write_read_probs_path)
+      glob: "$((inputs.name ? inputs.name : 'NA') + '_AREM_wiggle')"
+  - id: bedgraph_dir
+    type:
+      - 'null'
+      - Directory
+    doc: bedGraph files folder (with --bdg)
+    outputBinding:
+      glob: "$((inputs.name ? inputs.name : 'NA') + '_AREM_bedGraph')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

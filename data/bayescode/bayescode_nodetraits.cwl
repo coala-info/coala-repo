@@ -42,7 +42,7 @@ inputs:
       position: 102
       prefix: --ignore_rest
   - id: traitsfile
-    type: string
+    type: File
     doc: Traits file for taxon at the leaves
     inputBinding:
       position: 102

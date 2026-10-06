@@ -1,5 +1,11 @@
 # accusnv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| accusnv | PASS |  |
+
 ## accusnv
 
 ### Tool Description

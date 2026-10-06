@@ -1,5 +1,11 @@
 # anvio-minimal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anvio-minimal_anvi-gen-contigs-database | PASS |  |
+
 ## anvio-minimal
 
 ### Tool Description

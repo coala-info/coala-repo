@@ -1,23 +1,48 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: autometa
+baseCommand: autometa-config
 label: autometa_autometa-config
-doc: "Describe Autometa citation & version. No arguments will list the available autometa
-  commands, docs and code information\n\nTool homepage: https://github.com/KwanLab/Autometa"
+doc: "Update Autometa configuration using provided arguments\n\nTool homepage: https://github.com/KwanLab/Autometa"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: citation
+  - id: section
+    type:
+      - 'null'
+      - string
+    doc: "config section to update (environ, databases, ncbi, markers, gtdb)"
+    inputBinding:
+      position: 1
+      prefix: --section
+  - id: option
+    type:
+      - 'null'
+      - string
+    doc: "option in `--section` to update"
+    inputBinding:
+      position: 1
+      prefix: --option
+  - id: value
+    type:
+      - 'null'
+      - string
+    doc: "Value to update `--option`"
+    inputBinding:
+      position: 1
+      prefix: --value
+  - id: print
     type:
       - 'null'
       - boolean
-    doc: Print autometa citation (APA and BibTex)
+    doc: "Print configuration without updating"
     inputBinding:
-      position: 101
-      prefix: --citation
+      position: 1
+      prefix: --print
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
-stdout: autometa_autometa-config.out
+stdout: autometa-config.out

@@ -10,14 +10,14 @@ inputs:
     type:
       type: array
       items: File
-    doc: The bam files.
+    secondaryFiles:
+      - .bai
+    doc: The bam files (indexed).
     inputBinding:
       position: 101
       prefix: -bams
   - id: bed
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The bed file (bed/gff/vcf).
     inputBinding:
       position: 101
@@ -56,7 +56,9 @@ inputs:
       position: 101
       prefix: -S
   - id: overlap_fraction
-    type: float
+    type:
+      - 'null'
+      - float
     doc: Minimum overlap required as a fraction of each -bed record.
     inputBinding:
       position: 101

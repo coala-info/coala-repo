@@ -289,18 +289,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "(1 arg) :    output file  [default '']"
+    doc: Output file prefix; the tool writes <prefix>.unitigs.fa
     inputBinding:
       position: 103
       prefix: -out
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: output file
+    type: File
+    doc: Compacted de Bruijn graph unitigs (<out>.unitigs.fa; <out> defaults to
+      the input file name without extension)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_file_path ? inputs.output_file_path : inputs.input_file.nameroot).unitigs.fa'
   - id: output_dir
     type:
       - 'null'

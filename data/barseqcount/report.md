@@ -1,5 +1,13 @@
 # barseqcount CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| barseqcount | Failed | not a usable tool: wraps only the command group with a subcommand string and no data inputs or outputs, and its baseCommand barseqcount.py does not exist in the image (the program is barseqcount). |
+| barseqcount_analyze | Not completed | needs the count report and CSV from barseqcount count, which cannot be produced because count crashes in this image; no public test data exists. |
+| barseqcount_count | Failed | image problem: barseqcount count crashes when creating its configuration file because the bundled dmbiolib 0.3.10 changed conf_start(), and a hand-written configuration on synthetic data crashes with KeyError in barcode assignment. |
+
 ## barseqcount_count
 
 ### Tool Description

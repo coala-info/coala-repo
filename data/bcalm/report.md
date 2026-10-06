@@ -1,5 +1,11 @@
 # bcalm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcalm | PASS |  |
+
 ## bcalm
 
 ### Tool Description

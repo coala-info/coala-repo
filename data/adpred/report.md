@@ -1,5 +1,11 @@
 # adpred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| adpred_run-adpred | Failed | image problem: run-adpred always posts to the old http PSIPRED web API, which now redirects and returns no job ID, so it crashes before any prediction (no local psipred in the image). |
+
 ## adpred_run-adpred
 
 ### Tool Description

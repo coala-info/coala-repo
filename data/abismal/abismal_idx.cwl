@@ -9,7 +9,8 @@ inputs:
   - id: genome_fasta
     type: File
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     doc: genome fasta file
     inputBinding:
       position: 1

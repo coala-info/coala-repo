@@ -1,5 +1,11 @@
 # aeskulap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aeskulap | Failed | junk CWL: baseCommand 'Gio::Settings init' is a log line from the GUI startup, not a command; aeskulap itself is a GTK DICOM viewer that needs a display. |
+
 ## aeskulap
 
 ### Tool Description

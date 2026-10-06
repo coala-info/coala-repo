@@ -92,7 +92,7 @@ inputs:
   - id: minimap2_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to minimap2 binary (default=minimap2).
     inputBinding:
       position: 101
@@ -142,7 +142,7 @@ inputs:
   - id: pandora_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to pandora binary (default=pandora).
     inputBinding:
       position: 101
@@ -173,7 +173,7 @@ inputs:
   - id: racon_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to racon binary (default=racon).
     inputBinding:
       position: 101
@@ -197,7 +197,7 @@ inputs:
   - id: samtools_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to samtools binary (default=samtools).
     inputBinding:
       position: 101

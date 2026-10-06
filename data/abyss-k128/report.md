@@ -1,5 +1,11 @@
 # abyss-k128 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| abyss-k128_abyss-pe | Failed | image problem: the image lacks the 'column' program, so abyss-pe's last step (abyss-stats.md) fails after the assembly. CWL fixed: NAME=VALUE parameters (k=50, not 'k 50') and assembly outputs, as in abyss |
+
 ## abyss-k128
 
 ### Tool Description

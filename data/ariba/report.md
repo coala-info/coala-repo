@@ -1,5 +1,11 @@
 # ariba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ariba | Failed | not a usable tool: wraps only the ariba command group (a subcommand string and stdout), with no data inputs or outputs. |
+
 ## ariba
 
 ### Tool Description

@@ -170,8 +170,18 @@ outputs:
     doc: Output location of the filter and filter info files.
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: filter
+    type: File
+    doc: Bloom filter file (.bf) with its filter info file (.txt)
+    outputBinding:
+      glob: $(inputs.output_dir_path)/$(inputs.file_prefix).bf
+    secondaryFiles:
+      - ^.txt
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return {class: "Directory", basename: inputs.output_dir_path, listing: [], writable: true}; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobloomtools:2.3.5--h077b44d_6

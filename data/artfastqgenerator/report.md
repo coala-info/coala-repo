@@ -1,5 +1,11 @@
 # artfastqgenerator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| artfastqgenerator | PASS |  |
+
 ## artfastqgenerator
 
 ### Tool Description

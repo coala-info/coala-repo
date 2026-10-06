@@ -17,7 +17,7 @@ inputs:
     doc: report alternative transcripts when they are suggested by hints
     inputBinding:
       position: 102
-      prefix: --alternatives-from-evidence
+      prefix: --alternatives-from-evidence=true
   - id: alternatives_from_sampling
     type:
       - 'null'
@@ -25,7 +25,7 @@ inputs:
     doc: report alternative transcripts generated through probabilistic sampling
     inputBinding:
       position: 102
-      prefix: --alternatives-from-sampling
+      prefix: --alternatives-from-sampling=true
   - id: augustus_config_path
     type:
       - 'null'
@@ -33,7 +33,8 @@ inputs:
     doc: path to config directory (if not specified as environment variable)
     inputBinding:
       position: 102
-      prefix: --AUGUSTUS_CONFIG_PATH
+      prefix: --AUGUSTUS_CONFIG_PATH=
+      separate: false
   - id: genemodel
     type:
       - 'null'
@@ -41,7 +42,8 @@ inputs:
     doc: partial, intronless, complete, atleastone or exactlyone
     inputBinding:
       position: 102
-      prefix: --genemodel
+      prefix: --genemodel=
+      separate: false
   - id: gff3
     type:
       - 'null'
@@ -49,7 +51,7 @@ inputs:
     doc: output in gff3 format
     inputBinding:
       position: 102
-      prefix: --gff3
+      prefix: --gff3=on
   - id: hintsfile
     type:
       - 'null'
@@ -58,7 +60,8 @@ inputs:
       information) is turned on. hintsfilename contains the hints in gff format.
     inputBinding:
       position: 102
-      prefix: --hintsfile
+      prefix: --hintsfile=
+      separate: false
   - id: maxtracks
     type:
       - 'null'
@@ -67,7 +70,8 @@ inputs:
       RUNNING-AUGUSTUS.md.
     inputBinding:
       position: 102
-      prefix: --maxtracks
+      prefix: --maxtracks=
+      separate: false
   - id: minexonintronprob
     type:
       - 'null'
@@ -76,7 +80,8 @@ inputs:
       RUNNING-AUGUSTUS.md.
     inputBinding:
       position: 102
-      prefix: --minexonintronprob
+      prefix: --minexonintronprob=
+      separate: false
   - id: minmeanexonintronprob
     type:
       - 'null'
@@ -85,7 +90,8 @@ inputs:
       RUNNING-AUGUSTUS.md.
     inputBinding:
       position: 102
-      prefix: --minmeanexonintronprob
+      prefix: --minmeanexonintronprob=
+      separate: false
   - id: no_in_frame_stop
     type:
       - 'null'
@@ -94,7 +100,7 @@ inputs:
       stop codons could occur. Default: false'
     inputBinding:
       position: 102
-      prefix: --noInFrameStop
+      prefix: --noInFrameStop=true
   - id: noprediction
     type:
       - 'null'
@@ -103,7 +109,7 @@ inputs:
       for getting the annotated protein sequences.
     inputBinding:
       position: 102
-      prefix: --noprediction
+      prefix: --noprediction=true
   - id: prediction_end
     type:
       - 'null'
@@ -112,7 +118,8 @@ inputs:
       be found.
     inputBinding:
       position: 102
-      prefix: --predictionEnd
+      prefix: --predictionEnd=
+      separate: false
   - id: prediction_start
     type:
       - 'null'
@@ -121,7 +128,8 @@ inputs:
       be found.
     inputBinding:
       position: 102
-      prefix: --predictionStart
+      prefix: --predictionStart=
+      separate: false
   - id: progress
     type:
       - 'null'
@@ -129,7 +137,7 @@ inputs:
     doc: show a progressmeter
     inputBinding:
       position: 102
-      prefix: --progress
+      prefix: --progress=true
   - id: proteinprofile
     type:
       - 'null'
@@ -139,7 +147,8 @@ inputs:
       in section 5 of RUNNING-AUGUSTUS.md.
     inputBinding:
       position: 102
-      prefix: --proteinprofile
+      prefix: --proteinprofile=
+      separate: false
   - id: sample
     type:
       - 'null'
@@ -148,7 +157,8 @@ inputs:
       RUNNING-AUGUSTUS.md.
     inputBinding:
       position: 102
-      prefix: --sample
+      prefix: --sample=
+      separate: false
   - id: singlestrand
     type:
       - 'null'
@@ -157,14 +167,25 @@ inputs:
       opposite strands
     inputBinding:
       position: 102
-      prefix: --singlestrand
+      prefix: --singlestrand=true
+  - id: softmasking
+    type:
+      - 'null'
+      - string
+    doc: 'True/False (from --paramlist). Treat lower-case (softmasked) bases as nonexonpart
+      hints. The default depends on the species config.'
+    inputBinding:
+      position: 102
+      prefix: --softmasking=
+      separate: false
   - id: species
     type: string
     doc: SPECIES is an identifier for the species. Use --species=help to see a 
       list.
     inputBinding:
       position: 102
-      prefix: --species
+      prefix: --species=
+      separate: false
   - id: strand
     type:
       - 'null'
@@ -172,7 +193,8 @@ inputs:
     doc: both, forward or backward
     inputBinding:
       position: 102
-      prefix: --strand
+      prefix: --strand=
+      separate: false
   - id: testing_testmode
     type:
       - 'null'
@@ -181,7 +203,8 @@ inputs:
       run prediction over some given minimal data set'
     inputBinding:
       position: 102
-      prefix: --/Testing/testMode
+      prefix: --/Testing/testMode=
+      separate: false
   - id: unique_gene_id
     type:
       - 'null'
@@ -189,7 +212,7 @@ inputs:
     doc: 'If true, output gene identifyers like this: seqname.gN'
     inputBinding:
       position: 102
-      prefix: --uniqueGeneId
+      prefix: --uniqueGeneId=true
   - id: utr
     type:
       - 'null'
@@ -198,7 +221,7 @@ inputs:
       This currently works only for a subset of species.
     inputBinding:
       position: 102
-      prefix: --UTR
+      prefix: --UTR=on
 outputs:
   - id: stdout
     type: stdout

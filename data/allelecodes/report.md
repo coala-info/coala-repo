@@ -1,5 +1,11 @@
 # allelecodes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| allelecodes_assignAlleleCodes_py3.6.py | PASS | Upstream CAMP example profiles (521 isolates); CWL fixed: data directory staged writable and returned as an output. |
+
 ## allelecodes_assignAlleleCodes_py3.6.py
 
 ### Tool Description

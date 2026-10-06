@@ -1,5 +1,11 @@
 # bali-phy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bali-phy | PASS |  |
+
 ## bali-phy
 ### Tool Description
 Bayesian Inference of Alignment and Phylogeny

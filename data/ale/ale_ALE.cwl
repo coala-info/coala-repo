@@ -15,6 +15,12 @@ inputs:
     doc: Assembly fasta file (can be gzipped)
     inputBinding:
       position: 2
+  - id: output_name
+    type: string
+    doc: ALE output text file name
+    default: ale_output.txt
+    inputBinding:
+      position: 3
   - id: kmer
     type:
       - 'null'
@@ -95,16 +101,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `snp_report_path`
+    doc: Creates a new text file reporting all SNP phasing observed by a read
+      against ambiguous bases in the reference
     inputBinding:
-      position: 104
-      prefix: --snp-report
+      position: 103
+      prefix: --SNPreport
 outputs:
   - id: output_file
     type: File
     doc: ALE output text file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
   - id: snp_report
     type:
       - 'null'
@@ -113,6 +120,13 @@ outputs:
       against ambiguous bases in the reference
     outputBinding:
       glob: $(inputs.snp_report_path)
+  - id: param_file
+    type:
+      - 'null'
+      - File
+    doc: Library parameter file that ALE writes next to the output (<output>.param)
+    outputBinding:
+      glob: $(inputs.output_name).param
 requirements:
   - class: InlineJavascriptRequirement
 hints:

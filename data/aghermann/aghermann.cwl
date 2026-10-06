@@ -8,23 +8,26 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Experiment root directory
+    doc: Experiment root directory (Group/Subject/Session/Episode.edf tree). 
+      It is staged writable because Aghermann saves settings and computed 
+      profiles inside it.
     inputBinding:
       position: 1
   - id: no_gui
     type:
       - 'null'
       - boolean
-    doc: Run without GUI (implied by common CLI patterns for -n in this context)
+    doc: Initialise the experiment session in exp_root_dir and exit at once; 
+      no windows are opened. Needs exp_root_dir.
     inputBinding:
       position: 102
       prefix: -n
   - id: log_file_path
     type: string
-    doc: Output or path parameter `log_file_path`
+    doc: Write a log of Aghermann's inner workings to this file.
     inputBinding:
       position: 103
-      prefix: --log-file
+      prefix: -l
 outputs:
   - id: log_file
     type:
@@ -33,8 +36,19 @@ outputs:
     doc: Path to the log file
     outputBinding:
       glob: $(inputs.log_file_path)
+  - id: exp_root_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: The experiment root directory with the settings and profiles Aghermann
+      saved in it.
+    outputBinding:
+      glob: '$(inputs.exp_root_dir ? inputs.exp_root_dir.basename : "_no_exp_root_dir_")'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '${ return inputs.exp_root_dir ? [{"entry": inputs.exp_root_dir, "writable":
+      true}] : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/aghermann:v1.1.2-2-deb_cv1

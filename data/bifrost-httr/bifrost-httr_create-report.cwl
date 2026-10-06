@@ -131,6 +131,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: report
+    type: File
+    doc: MultiQC HTML report
+    outputBinding:
+      glob: '$(inputs.output_name ? inputs.output_name : "multiqc_report.html")'
+  - id: report_data
+    type:
+      - 'null'
+      - Directory
+    doc: MultiQC data directory of the report
+    outputBinding:
+      glob: '$((inputs.output_name ? inputs.output_name : "multiqc_report.html").replace(/\.html$/, "") + "_data")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bifrost-httr:0.5.0--pyhdfd78af_0

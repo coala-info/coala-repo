@@ -1,5 +1,11 @@
 # ale-core CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ale-core_ALE | PASS |  |
+
 ## ale-core_ALE
 
 ### Tool Description

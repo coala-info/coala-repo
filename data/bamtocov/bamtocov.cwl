@@ -157,12 +157,17 @@ inputs:
       position: 102
       prefix: --op
   - id: report_file_path
-    type: string
-    doc: Output or path parameter `report_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Output coverage report
     inputBinding:
       position: 103
-      prefix: --report-file
+      prefix: --report
 outputs:
+  - id: coverage
+    type: stdout
+    doc: Per-base coverage (BED, or WIG with --wig)
   - id: report_file
     type:
       - 'null'
@@ -175,3 +180,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamtocov:2.8.0--h1104d80_0
+stdout: bamtocov.out

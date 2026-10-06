@@ -2,8 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: abundancebin
 label: abundancebin
-doc: "A tool for binning metagenomic sequences based on abundance and k-mer composition.\n\
-  \ \nTool homepage: https://github.com/movingpictures83/AbundanceBin"
+doc: "A tool for binning metagenomic sequences based on abundance and k-mer composition.\n \nTool homepage: https://github.com/movingpictures83/AbundanceBin"
 inputs:
   - id: bin_num
     type:
@@ -60,21 +59,37 @@ inputs:
       position: 101
       prefix: -RECURSIVE_CLASSIFICATION
   - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: 'Output file (default: the input file name with .log appended).'
+    type: string
+    doc: 'Output log; bins are written beside it as <name>.1, <name>.2, ... (default would be <input>.log next to the read-only input).'
     inputBinding:
       position: 102
       prefix: -output
+    default: abundancebin.log
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: output file
+    type: File
+    doc: Run log with EM parameters and class sizes.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: bins
+    type:
+      type: array
+      items: File
+    doc: Classified reads, one file per bin (<name>.1, <name>.2, ...).
+    outputBinding:
+      glob: $(inputs.output_file_path).[0-9]*
+  - id: unclassified
+    type: File?
+    outputBinding:
+      glob: $(inputs.output_file_path).unclassified
+  - id: bin_feature
+    type: File?
+    outputBinding:
+      glob: $(inputs.output_file_path).bin_feature
+  - id: counts
+    type: File?
+    outputBinding:
+      glob: $(inputs.output_file_path).count
 requirements:
   - class: InlineJavascriptRequirement
 hints:

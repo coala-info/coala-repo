@@ -11,6 +11,11 @@ doc: |-
 inputs:
 - id: input_file
   type: File
+  secondaryFiles:
+  - pattern: .tbi
+    required: false
+  - pattern: .csi
+    required: false
   doc: Input VCF/BCF file
   inputBinding:
     position: 200
@@ -47,6 +52,9 @@ inputs:
     prefix: --exclude
 - id: fasta_ref
   type: File?
+  secondaryFiles:
+  - pattern: .fai
+    required: false
   doc: Reference sequence
   inputBinding:
     position: 102
@@ -77,6 +85,7 @@ inputs:
   inputBinding:
     position: 102
     prefix: --keep-sum
+    itemSeparator: ','
 - id: multi_overlaps
   type: string?
   doc: Fill in the reference (0) or missing (.) allele when splitting 

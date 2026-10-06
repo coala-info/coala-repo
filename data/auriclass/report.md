@@ -1,5 +1,11 @@
 # auriclass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| auriclass | PASS |  |
+
 ## auriclass
 
 ### Tool Description

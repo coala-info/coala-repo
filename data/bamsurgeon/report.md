@@ -1,5 +1,12 @@
 # bamsurgeon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamsurgeon_addsnv.py | PASS |  |
+| bamsurgeon_addsv.py | PASS |  |
+
 ## bamsurgeon
 
 ### Tool Description

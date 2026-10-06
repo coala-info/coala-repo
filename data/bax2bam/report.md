@@ -1,5 +1,11 @@
 # bax2bam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bax2bam | PASS |  |
+
 ## bax2bam
 
 ### Tool Description

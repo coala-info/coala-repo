@@ -1,5 +1,12 @@
 # atlas-data-import CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atlas-data-import_get_experiment_data.R | PASS |  |
+| atlas-data-import_import_classification_data.R | PASS |  |
+
 ## atlas-data-import_get_experiment_data.R
 
 ### Tool Description

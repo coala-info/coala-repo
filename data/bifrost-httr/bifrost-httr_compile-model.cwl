@@ -14,10 +14,22 @@ inputs:
     doc: Stan model file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: model_executable
+    type: File
+    doc: Compiled Stan model executable (written in the working directory)
+    outputBinding:
+      glob: '$(inputs.stan_file ? inputs.stan_file.nameroot : "BIFROST_HTTr_beta_logistic_batch")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.stan_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bifrost-httr:0.5.0--pyhdfd78af_0

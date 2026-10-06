@@ -16,7 +16,23 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to MMseqs2 database
+    doc: Path to MMseqs2 database (main file of the bifDB MMseqs2 database)
+    secondaryFiles:
+      - pattern: .dbtype
+      - pattern: .index
+      - pattern: _h
+      - pattern: _h.index
+      - pattern: _h.dbtype
+      - pattern: .lookup
+        required: false
+      - pattern: .source
+        required: false
+      - pattern: .idx
+        required: false
+      - pattern: .idx.index
+        required: false
+      - pattern: .idx.dbtype
+        required: false
     inputBinding:
       position: 101
       prefix: --bifdb
@@ -24,7 +40,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: float
+        items: int
     doc: Cluster heatmap figure size (width height)
     inputBinding:
       position: 101
@@ -33,13 +49,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: float
+        items: int
     doc: Enzyme heatmap figure size (width height)
     inputBinding:
       position: 101
       prefix: --enzyme-figsize
   - id: genome_directory
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Path to directory containing input FASTA files
     inputBinding:
       position: 101
@@ -48,7 +66,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: float
+        items: int
     doc: GH heatmap figure size (width height)
     inputBinding:
       position: 101
@@ -62,8 +80,10 @@ inputs:
       position: 101
       prefix: --heatmap_col
   - id: input_file
-    type: File
-    doc: Path to single input FASTA file
+    type:
+      - 'null'
+      - File
+    doc: Path to single input FASTA file (give this or genome_directory)
     inputBinding:
       position: 101
       prefix: --input_file
@@ -76,9 +96,8 @@ inputs:
       position: 101
       prefix: --mapping_file
   - id: output_dir
-    type:
-      - 'null'
-      - string
+    type: string
+    default: bifidoAnnotator_output
     doc: Output directory
     inputBinding:
       position: 101
@@ -112,9 +131,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir)

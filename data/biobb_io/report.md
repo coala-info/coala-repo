@@ -1,5 +1,11 @@
 # biobb_io CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biobb_io_alphafold | PASS |  |
+
 ## biobb_io
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # bcool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcool | PASS |  |
+
 ## bcool
 
 ### Tool Description

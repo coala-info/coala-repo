@@ -8,6 +8,11 @@ doc: "Generate track files from aligned BAM files\n\nTool homepage: https://gith
 inputs:
   - id: aligned_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input aligned BAM file
     inputBinding:
       position: 1

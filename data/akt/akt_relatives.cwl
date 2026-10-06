@@ -1,16 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - ./akt
-  - unrelated
+  - akt
+  - relatives
 label: akt_relatives
 doc: "Derive a set of pedigrees from the akt kin output.\n\nTool homepage: https://github.com/Illumina/akt"
 inputs:
-  - id: ibd_file
-    type: File
-    doc: akt kin output file
-    inputBinding:
-      position: 1
   - id: iterations
     type:
       - 'null'
@@ -27,14 +22,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --kmin
-  - id: graph_out_path
+  - id: graph_out
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `graph_out_path`
+      - boolean
+    doc: if present output pedigree graph files
     inputBinding:
       position: 103
-      prefix: --graph-out
+      prefix: -g
   - id: prefix_path
     type:
       - 'null'
@@ -43,24 +38,34 @@ inputs:
     inputBinding:
       position: 104
       prefix: --prefix
+  - id: ibd_file
+    type: File
+    doc: akt kin output file
+    inputBinding:
+      position: 105
 outputs:
-  - id: graph_out
-    type:
-      - 'null'
-      - File
-    doc: if present output pedigree graph files
+  - id: stdout
+    type: stdout
+    doc: Families, duplicates and relationship types found
+  - id: fam
+    type: File
+    doc: Pedigrees in plink .fam format (<prefix>.fam)
     outputBinding:
-      glob: $(inputs.graph_out_path)
-  - id: prefix
+      glob: '$(inputs.prefix_path ? inputs.prefix_path : "out").fam'
+  - id: graph_files
     type:
       - 'null'
       - type: array
         items: File
-    doc: output file prefix
+    doc: Pedigree graph files (<prefix>.allgraph and <prefix>.<family>.graph) 
+      written with graph_out
     outputBinding:
-      glob: $(inputs.prefix_path)*
+      glob:
+        - '$(inputs.prefix_path ? inputs.prefix_path : "out").allgraph'
+        - '$(inputs.prefix_path ? inputs.prefix_path : "out").*.graph'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/akt:0.3.3--h5ca1c30_7
+stdout: akt_relatives.out

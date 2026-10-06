@@ -59,11 +59,14 @@ inputs:
     type:
       type: array
       items: File
-    doc: List of filter files to use. Required option. eg. "filter1.bf 
-      filter2.bf"
+    doc: List of filter files to use (.bf, each with its .txt info file beside it).
+      Required option. eg. "filter1.bf filter2.bf"
+    secondaryFiles:
+      - ^.txt
     inputBinding:
       position: 102
       prefix: --filter_files
+      itemSeparator: ' '
   - id: fq
     type:
       - 'null'

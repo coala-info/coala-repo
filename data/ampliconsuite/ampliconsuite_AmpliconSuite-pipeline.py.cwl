@@ -345,6 +345,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --username
+  - id: aa_data_repo
+    type:
+      - 'null'
+      - Directory
+    doc: AmpliconArchitect data repository folder (holds <ref>/file_list.txt and
+      the reference files); exported as $AA_DATA_REPO. The tool stops without it.
   - id: output_directory_path
     type: string
     inputBinding:
@@ -360,6 +366,9 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      AA_DATA_REPO: "$(inputs.aa_data_repo ? inputs.aa_data_repo.path : '')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ampliconsuite:1.5.0--pyhdfd78af_0

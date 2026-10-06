@@ -1,5 +1,11 @@
 # bayescan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bayescan | PASS |  |
+
 ## bayescan
 
 ### Tool Description

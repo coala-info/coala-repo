@@ -165,7 +165,7 @@ inputs:
     doc: Output or path parameter `annotation_file_path`
     inputBinding:
       position: 103
-      prefix: --annotation-file
+      prefix: -annot
   - id: train_path
     type:
       - 'null'
@@ -174,6 +174,9 @@ inputs:
       position: 104
       prefix: --train
 outputs:
+  - id: alignment
+    type: stdout
+    doc: Multiple alignment written to standard output
   - id: annotation_file
     type:
       - 'null'
@@ -188,6 +191,7 @@ outputs:
     doc: 'compute EM transition probabilities, store in FILENAME (default: no training)'
     outputBinding:
       glob: $(inputs.train_path)
+stdout: amap.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

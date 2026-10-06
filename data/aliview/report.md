@@ -1,5 +1,11 @@
 # aliview CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aliview | Not completed | AliView is a GUI alignment viewer and editor with no batch mode, so it cannot run as a headless job. |
+
 ## aliview
 
 ### Tool Description

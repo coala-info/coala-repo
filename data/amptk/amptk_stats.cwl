@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-stats.py
+baseCommand:
+  - amptk
+  - stats
 label: amptk_stats
 doc: "Script takes BIOM as input and runs basic summary stats\n\nTool homepage: https://github.com/nextgenusfs/amptk"
 inputs:
@@ -76,6 +78,13 @@ outputs:
     doc: Output folder basename
     outputBinding:
       glob: $(inputs.out)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Run log (<out>.amptk-stats.log)
+    outputBinding:
+      glob: $(inputs.out).amptk-stats.log
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

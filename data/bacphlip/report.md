@@ -1,5 +1,11 @@
 # bacphlip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bacphlip | Failed | image problem: hmmsearch (HMMER) is missing from the image, so the pipeline stops after the six-frame translation. |
+
 ## bacphlip
 
 ### Tool Description

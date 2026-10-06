@@ -1,5 +1,11 @@
 # atactk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atactk_trim_adapters | Failed | tool bug: trim_adapters always exits 1 at the end of input (generator raised StopIteration under Python 3.7), so the run fails although the trimmed files are written. |
+
 ## atactk_trim_adapters
 
 ### Tool Description

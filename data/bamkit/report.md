@@ -1,5 +1,16 @@
 # bamkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamkit_bamcleanheader.py | PASS |  |
+| bamkit_bamfilterrg.py | PASS |  |
+| bamkit_bamgroupreads.py | PASS |  |
+| bamkit_bamheadrg.py | PASS |  |
+| bamkit_bamlibs.py | PASS |  |
+| bamkit_bamtofastq.py | PASS |  |
+
 ## bamkit_bamcleanheader.py
 
 ### Tool Description

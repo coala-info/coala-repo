@@ -1,5 +1,13 @@
 # athena_meta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| athena_meta_athena-meta | PASS |  |
+| athena_meta_bwa | Failed | not a usable tool: wraps the bwa dependency inside the athena_meta image as a bare command group with no data inputs or outputs. |
+| athena_meta_samtools | Failed | not a usable tool: wraps the samtools dependency inside the athena_meta image as a bare command group with no data inputs or outputs. |
+
 ## athena_meta_athena-meta
 
 ### Tool Description

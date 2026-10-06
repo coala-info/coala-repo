@@ -25,10 +25,14 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -in
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: the input BAM file(s) [stdin]
     inputBinding:
       position: 101
-      prefix: -in
   - id: input_list
     type:
       - 'null'

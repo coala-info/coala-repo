@@ -49,6 +49,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --dht-listen-port
+      itemSeparator: ','
   - id: dir
     type:
       - 'null'
@@ -140,6 +141,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --listen-port
+      itemSeparator: ','
   - id: load_cookies
     type:
       - 'null'
@@ -152,7 +154,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: The file name of the log file. If '-' is specified, log is written to 
       stdout.
     inputBinding:
@@ -248,7 +250,7 @@ outputs:
     doc: The file name of the downloaded file. It is always relative to the 
       directory given in -d option.
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: "$(inputs.dir ? inputs.dir + '/' + inputs.out_path : inputs.out_path)"
   - id: dir_dir
     type:
       - 'null'
@@ -256,8 +258,17 @@ outputs:
     doc: The directory to store the downloaded file.
     outputBinding:
       glob: $(inputs.dir)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: The log file given in log
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aria2:1.36.0

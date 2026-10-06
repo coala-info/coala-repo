@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-dada2.py
+baseCommand:
+  - amptk
+  - dada2
 label: amptk_dada2
 doc: "Script takes output from amptk pre-processing and runs DADA2\n\nTool homepage:
   https://github.com/nextgenusfs/amptk"
@@ -121,7 +123,7 @@ outputs:
         items: File
     doc: Output Basename
     outputBinding:
-      glob: $(inputs.out_path)*
+      glob: $(inputs.out_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

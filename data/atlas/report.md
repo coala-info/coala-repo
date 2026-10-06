@@ -1,5 +1,25 @@
 # atlas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atlas_allelefreq | PASS |  |
+| atlas_ancestralalleles | PASS |  |
+| atlas_assesssoftclipping | PASS |  |
+| atlas_createmask | PASS |  |
+| atlas_filterbam | PASS |  |
+| atlas_glf | PASS |  |
+| atlas_mergeoverlappingreads | PASS |  |
+| atlas_mergerg | PASS |  |
+| atlas_mutationload | PASS |  |
+| atlas_pileuptobed | PASS |  |
+| atlas_printglf | PASS |  |
+| atlas_psmc | PASS |  |
+| atlas_qualitytransformation | PASS |  |
+| atlas_simulate | PASS |  |
+| atlas_vcfcompare | PASS |  |
+
 ## atlas_assesssoftclipping
 
 ### Tool Description

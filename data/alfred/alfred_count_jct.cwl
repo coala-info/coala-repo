@@ -9,6 +9,11 @@ doc: "Count exon-exon junction reads from aligned BAM files using GTF/GFF3 or BE
 inputs:
   - id: aligned_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input aligned BAM file
     inputBinding:
       position: 1

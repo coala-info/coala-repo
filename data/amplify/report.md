@@ -1,5 +1,12 @@
 # amplify CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amplify_AMPlify | PASS | 49/50 known AMPs and 46/50 non-AMPs from the AMPlify test sets called correctly. |
+| amplify_train_amplify | PASS | Trained the 5-model ensemble on 60+60 AMPlify training sequences; test AUC 0.68 on 100 held-out sequences (small set, slow on CPU). |
+
 ## amplify_AMPlify
 
 ### Tool Description

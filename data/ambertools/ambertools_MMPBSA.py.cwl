@@ -25,14 +25,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -lp
-  - id: no_gui
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use the GUI.
-    inputBinding:
-      position: 101
-      prefix: -nogui
   - id: overwrite
     type:
       - 'null'
@@ -89,7 +81,7 @@ inputs:
     doc: Output or path parameter `csv_output_path`
     inputBinding:
       position: 102
-      prefix: --csv-output
+      prefix: -eo
   - id: decomp_output_path
     type:
       - 'null'
@@ -97,7 +89,7 @@ inputs:
     doc: Output or path parameter `decomp_output_path`
     inputBinding:
       position: 103
-      prefix: --decomp-output
+      prefix: -do
   - id: output_file_path
     type:
       - 'null'
@@ -105,7 +97,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

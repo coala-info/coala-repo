@@ -1,5 +1,11 @@
 # biasaway CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biasaway_background | Failed | not a usable tool: wraps only the top-level command group (subcommand string and unbound k/w/g/c switches) with no sequence inputs or output files. |
+
 ## biasaway_Valid
 
 ### Tool Description

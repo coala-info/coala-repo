@@ -35,6 +35,9 @@ inputs:
       position: 102
       prefix: --read-pattern-out
 outputs:
+  - id: summary
+    type: stdout
+    doc: Summary of the most common patterns
   - id: read_pattern_out
     type:
       - 'null'
@@ -44,6 +47,7 @@ outputs:
       glob: $(inputs.read_pattern_out_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: barbell_inspect.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barbell:0.3.1--hc1c3326_0

@@ -7,7 +7,8 @@ inputs:
   - id: reference
     type: File
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     doc: Specify the reference sequence. Only do this ONCE, when building the 
       index (unless using 'nodisk').
     inputBinding:
@@ -33,21 +34,27 @@ inputs:
       prefix: in2=
       separate: false
   - id: output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write all reads to this file.
     inputBinding:
       position: 101
       prefix: out=
       separate: false
   - id: output_unmapped
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write only unmapped reads to this file.
     inputBinding:
       position: 101
       prefix: outu=
       separate: false
   - id: output_mapped
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write only mapped reads to this file.
     inputBinding:
       position: 101
@@ -246,7 +253,9 @@ inputs:
       prefix: qtrim=
       separate: false
   - id: bam_script
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write a shell script to turn sam output into sorted, indexed bam.
     inputBinding:
       position: 101
@@ -269,21 +278,27 @@ inputs:
       position: 101
       prefix: overwrite
   - id: scafstats
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Statistics on how many reads mapped to which scaffold.
     inputBinding:
       position: 101
       prefix: scafstats=
       separate: false
   - id: covstats
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Per-scaffold coverage info.
     inputBinding:
       position: 101
       prefix: covstats=
       separate: false
   - id: rpkm
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Per-scaffold RPKM/FPKM counts.
     inputBinding:
       position: 101

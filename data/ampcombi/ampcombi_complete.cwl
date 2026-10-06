@@ -26,19 +26,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --summaries_files
-  - id: log_path
-    type: string?
-    inputBinding:
-      position: 102
-      prefix: --log
-outputs:
   - id: log
     type:
       - 'null'
-      - File
-    doc: Silences the standard output and captures it in a log file
+      - boolean
+    doc: Silence the standard output and capture it in a log file with a fixed 
+      name.
+    inputBinding:
+      position: 102
+      prefix: --log
+      valueFrom: '$(self ? "True" : null)'
+outputs:
+  - id: summary
+    type: File
+    doc: Combined AMPcombi summary of all samples
     outputBinding:
-      glob: $(inputs.log_path)
+      glob: Ampcombi_summary.tsv
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file written when log is set
+    outputBinding:
+      glob: Ampcombi_complete.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

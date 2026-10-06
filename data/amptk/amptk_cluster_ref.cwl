@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-OTU_cluster_ref.py
+baseCommand:
+  - amptk
+  - cluster_ref
 label: amptk_cluster_ref
 doc: "Script runs UPARSE OTU clustering. Requires USEARCH by Robert C. Edgar: http://drive5.com/usearch\n\
   \nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -24,7 +26,7 @@ inputs:
   - id: cpus
     type:
       - 'null'
-      - string
+      - int
     doc: 'Number of CPUs. Default: auto'
     inputBinding:
       position: 101
@@ -93,9 +95,10 @@ inputs:
       prefix: --pct_otu
   - id: reference_database
     type:
-      - 'null'
       - string
-    doc: Reference Database [ITS,ITS1,ITS2,16S,LSU,COI,custom]
+      - File
+    doc: Reference database, either a pre-installed name [ITS,ITS1,ITS2,16S,LSU,COI]
+      or a custom FASTA file
     inputBinding:
       position: 101
       prefix: --db
@@ -118,7 +121,7 @@ inputs:
   - id: utax_db
     type:
       - 'null'
-      - string
+      - File
     doc: UTAX Reference Database
     inputBinding:
       position: 101
@@ -135,6 +138,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the output base name (OTU/ASV FASTA, OTU tables, log)
+    outputBinding:
+      glob: $(inputs.out_base).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

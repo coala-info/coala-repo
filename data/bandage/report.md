@@ -1,5 +1,11 @@
 # bandage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bandage_Bandage | Failed | not a usable tool: wraps only the Bandage command group (a subcommand string), with no graph input and no image or info output. |
+
 ## bandage_Bandage
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # arvados-python-client CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arvados-python-client_arv-get | Not completed | Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available. |
+| arvados-python-client_arv-keepdocker | Not completed | Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available. |
+| arvados-python-client_arv-put | Not completed | Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available. |
+
 ## arvados-python-client
 
 ### Tool Description

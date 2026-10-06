@@ -1,5 +1,14 @@
 # badread CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| badread_error_model | PASS |  |
+| badread_plot | Not completed | badread plot only shows interactive matplotlib windows and writes no output file, so it cannot be checked as a batch job. |
+| badread_qscore_model | PASS |  |
+| badread_simulate | PASS |  |
+
 ## badread_simulate
 
 ### Tool Description

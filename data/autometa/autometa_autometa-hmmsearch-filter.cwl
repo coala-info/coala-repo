@@ -1,23 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: autometa
+baseCommand: autometa-hmmsearch-filter
 label: autometa_autometa-hmmsearch-filter
-doc: "Describe Autometa citation & version. No arguments will list the available autometa
-  commands, docs and code information\n\nTool homepage: https://github.com/KwanLab/Autometa"
+doc: "Filters domtblout generated from hmmsearch using provided cutoffs\n\nTool homepage: https://github.com/KwanLab/Autometa"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: citation
-    type:
-      - 'null'
-      - boolean
-    doc: Print autometa citation (APA and BibTex)
+  - id: domtblout
+    type: File
+    doc: "Path to domtblout generated from hmmsearch -domtblout <domtblout> ... <hmmfile> <seqdb>"
     inputBinding:
-      position: 101
-      prefix: --citation
+      position: 1
+      prefix: --domtblout
+  - id: cutoffs
+    type: File
+    doc: "Path to cutoffs corresponding to hmmfile used with hmmsearch <hmmfile> <seqdb>"
+    inputBinding:
+      position: 1
+      prefix: --cutoffs
+  - id: seqdb
+    type: File
+    doc: "Path to orfs seqdb used as input to hmmsearch ... <hmmfile> <seqdb>"
+    inputBinding:
+      position: 1
+      prefix: --seqdb
+  - id: out
+    type: string
+    doc: "Path to write table of markers passing provided cutoffs"
+    inputBinding:
+      position: 1
+      prefix: --out
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: markers_out
+    type: File
+    doc: "Table of markers passing cutoffs"
+    outputBinding:
+      glob: "$(inputs.out)"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
-stdout: autometa_autometa-hmmsearch-filter.out

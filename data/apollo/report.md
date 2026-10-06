@@ -1,5 +1,11 @@
 # apollo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| apollo_arrow | Not completed | arrow is a client for a running Apollo annotation web server, which is not available in this test; group options moved before the subcommand. |
+
 ## apollo
 
 ### Tool Description

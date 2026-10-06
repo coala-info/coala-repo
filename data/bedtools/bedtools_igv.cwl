@@ -70,18 +70,15 @@ inputs:
       position: 101
       prefix: -name
 outputs:
-  - id: output_output_path
-    type:
-      - 'null'
-      - Directory
-    doc: The full path to which the IGV snapshots should be written.
-    outputBinding:
-      glob: $(inputs.output_path)
+  - id: stdout
+    type: stdout
+    doc: IGV batch script
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
+stdout: bedtools_igv.out
 s:url: http://bedtools.readthedocs.org/
 $namespaces:
   s: https://schema.org/

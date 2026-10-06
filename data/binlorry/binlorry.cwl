@@ -86,7 +86,8 @@ inputs:
       prefix: --out-report
   - id: output
     type: string
-    doc: Output filename (or filename prefix)
+    doc: Output filename (or filename prefix). Give it a folder part such as 
+      ./name; binlorry 1.3.1 fails on a bare name.
     inputBinding:
       position: 101
       prefix: --output

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: csv2heatmap.py
+baseCommand:
+  - amptk
+  - heatmap
 label: amptk_heatmap
 doc: "Script that creates heatmap(s) from csv data, column 1 is the row name, csv
   file has headers.\n\nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -16,7 +18,7 @@ inputs:
   - id: cluster_columns
     type:
       - 'null'
-      - boolean
+      - string
     doc: Cluster columns
     inputBinding:
       position: 101
@@ -126,7 +128,7 @@ inputs:
   - id: vmax
     type:
       - 'null'
-      - string
+      - int
     doc: Max value for heatmap
     inputBinding:
       position: 101

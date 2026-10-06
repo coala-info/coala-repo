@@ -116,6 +116,7 @@ inputs:
   - id: faa
     type:
       - 'null'
+      - File
       - Directory
     doc: Enter the path to the folder containing the reference .faa files or to 
       one .faa file.
@@ -125,6 +126,7 @@ inputs:
   - id: gbk
     type:
       - 'null'
+      - File
       - Directory
     doc: Enter the path to the folder containing the reference .gbk/.gbff files 
       or to one .gbk/.gbff file.
@@ -247,20 +249,48 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_size_transporter
-  - id: log_path
-    type: string?
-    inputBinding:
-      position: 102
-      prefix: --log
-outputs:
   - id: log
     type:
       - 'null'
-      - File
-    doc: Silences the standard output and captures it in a log file
+      - boolean
+    doc: Silence the standard output and capture it in a log file with a fixed 
+      name.
+    inputBinding:
+      position: 102
+      prefix: --log
+      valueFrom: '$(self ? "True" : null)'
+outputs:
+  - id: sample_summaries
+    type:
+      type: array
+      items: File
+    doc: Per-sample AMPcombi summary tables (<sample>/<sample>_ampcombi.tsv)
     outputBinding:
-      glob: $(inputs.log_path)
+      glob: '*/*_ampcombi.tsv'
+  - id: sample_dirs
+    type:
+      type: array
+      items: Directory
+    doc: Per-sample result folders
+    outputBinding:
+      glob: '$(inputs.sample_list ? inputs.sample_list : [])'
+  - id: amp_database_out
+    type:
+      - 'null'
+      - Directory
+    doc: AMP reference database downloaded by the tool
+    outputBinding:
+      glob: amp_*_database
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file written when log is set
+    outputBinding:
+      glob: Ampcombi_parse_tables.log
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

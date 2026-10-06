@@ -105,9 +105,7 @@ inputs:
       position: 103
       prefix: --distribution_tabular_file
   - id: output_json_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 104
       prefix: --output_json_file

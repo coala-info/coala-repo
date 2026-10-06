@@ -6,16 +6,27 @@ doc: "Merges the alignments in the supplied BAM files, using the supplied sample
   and read groups to specifically add read group (RG) tags to each alignment. The
   output is uncompressed, and is suitable for input into downstream alignment systems
   which require RG tag information.\n\nTool homepage: https://github.com/ekg/bamaddrg"
+requirements:
+  - class: InlineJavascriptRequirement
+arguments:
+  - position: 102
+    valueFrom: |
+      ${
+        var a = [];
+        for (var i = 0; i < inputs.bam.length; i++) {
+          a.push("--bam", inputs.bam[i].path);
+          if (inputs.sample && i < inputs.sample.length) { a.push("--sample", inputs.sample[i]); }
+          if (inputs.read_group && i < inputs.read_group.length) { a.push("--read-group", inputs.read_group[i]); }
+        }
+        return a;
+      }
 inputs:
   - id: bam
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: use this BAM as input
-    inputBinding:
-      position: 101
-      prefix: --bam
+      type: array
+      items: File
+    doc: use this BAM as input (each BAM is passed as --bam FILE, followed by its
+      --sample and --read-group values when given)
   - id: clear
     type:
       - 'null'
@@ -37,10 +48,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: optionally apply this read group to the preceeding BAM file
-    inputBinding:
-      position: 101
-      prefix: --read-group
+    doc: optionally apply this read group to the preceeding BAM file (one per BAM,
+      in the same order as bam)
   - id: region
     type:
       - 'null'
@@ -54,10 +63,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: optionally apply this sample name to the preceeding BAM file
-    inputBinding:
-      position: 101
-      prefix: --sample
+    doc: optionally apply this sample name to the preceeding BAM file (one per BAM,
+      in the same order as bam)
   - id: uncompressed
     type:
       - 'null'

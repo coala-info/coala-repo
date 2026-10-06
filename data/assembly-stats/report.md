@@ -1,5 +1,11 @@
 # assembly-stats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| assembly-stats | PASS |  |
+
 ## assembly-stats
 
 ### Tool Description

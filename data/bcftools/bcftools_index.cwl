@@ -35,16 +35,18 @@ inputs:
     inputBinding:
       position: 102
       prefix: --min-shift
-  - id: nthreads
+  - id: threads
     type:
       - 'null'
       - int
     doc: Number of additional threads to use
     inputBinding:
       position: 102
-      prefix: --nthreads
+      prefix: --threads
   - id: output_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Specify an output path for the index file
     inputBinding:
       position: 102

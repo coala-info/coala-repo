@@ -1,5 +1,11 @@
 # bcftools-gtc2vcf-plugin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcftools-gtc2vcf-plugin | PASS |  |
+
 ## bcftools-gtc2vcf-plugin
 
 ### Tool Description

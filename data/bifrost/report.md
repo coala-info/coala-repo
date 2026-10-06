@@ -1,5 +1,11 @@
 # bifrost CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bifrost_Bifrost | Failed | not a usable tool: wraps only the command group (a command string and one free parameter string) with no sequence inputs or graph outputs. |
+
 ## bifrost_Bifrost
 
 ### Tool Description

@@ -1,5 +1,15 @@
 # bgt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bgt_atomize | PASS |  |
+| bgt_bcfidx | PASS |  |
+| bgt_fmf | PASS |  |
+| bgt_import | PASS |  |
+| bgt_view | PASS |  |
+
 ## bgt_import
 
 ### Tool Description

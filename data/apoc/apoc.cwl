@@ -9,12 +9,12 @@ inputs:
     type: File
     doc: First PDB file for comparison
     inputBinding:
-      position: 1
+      position: 200
   - id: pdbfile2
     type: File
     doc: Second PDB file for comparison
     inputBinding:
-      position: 2
+      position: 201
   - id: alignment_printout
     type:
       - 'null'
@@ -104,6 +104,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -pq
+      itemSeparator: ','
   - id: scoring_metric
     type:
       - 'null'
@@ -137,6 +138,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -pt
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout

@@ -8,7 +8,14 @@ doc: "Perform inference on equivalence class count data\n\nTool homepage: https:
 inputs:
   - id: count_mat
     type: File
-    doc: matrix of cells by equivalence class counts
+    doc: matrix of cells by equivalence class counts (geqc_counts.mtx from quant
+      --dump-eqclasses); infer reads quants_mat_rows.txt and quants_mat_cols.txt
+      from the same directory
+    secondaryFiles:
+      - pattern: "${ return 'quants_mat_rows.txt'; }"
+        required: true
+      - pattern: "${ return 'quants_mat_cols.txt'; }"
+        required: true
     inputBinding:
       position: 101
       prefix: --count-mat

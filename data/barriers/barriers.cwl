@@ -69,7 +69,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --moves
-  - id: path
+  - id: backtrack_path
     type:
       - 'null'
       - string
@@ -121,6 +121,41 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: tree_ps
+    type:
+      - 'null'
+      - File
+    doc: PostScript drawing of the barrier tree (not written with --quiet)
+    outputBinding:
+      glob: tree.ps
+  - id: rates_text
+    type:
+      - 'null'
+      - File
+    doc: Rates between macro states in ASCII format (with --rates)
+    outputBinding:
+      glob: rates.out
+  - id: rates_binary
+    type:
+      - 'null'
+      - File
+    doc: Rates between macro states in binary format (with --rates)
+    outputBinding:
+      glob: rates.bin
+  - id: path_files
+    type:
+      type: array
+      items: File
+    doc: Optimal paths between minima (with --path)
+    outputBinding:
+      glob: path.*.txt
+  - id: mapstruc_out
+    type:
+      - 'null'
+      - File
+    doc: Mapping of conformations to minima (with --mapstruc)
+    outputBinding:
+      glob: mapstruc.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barriers:1.8.1--pl5321h503566f_4

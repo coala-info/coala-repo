@@ -1,5 +1,12 @@
 # bio2zarr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bio2zarr_plink2zarr | Failed | not a usable tool: wraps only the plink2zarr command group with a free subcommand string and argument list, no data inputs or outputs. |
+| bio2zarr_vcf2zarr | Failed | not a usable tool: wraps only the vcf2zarr command group, with subcommand names as unbound booleans and no data inputs or outputs. |
+
 ## bio2zarr_vcf2zarr
 
 ### Tool Description

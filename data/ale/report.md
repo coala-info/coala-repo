@@ -1,5 +1,12 @@
 # ale CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ale_ALE | PASS |  |
+| ale_ale2wiggle.py | PASS |  |
+
 ## ale_ALE
 
 ### Tool Description

@@ -1,5 +1,21 @@
 # bedparse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bedparse_3putr | PASS |  |
+| bedparse_5putr | PASS |  |
+| bedparse_bed12tobed6 | PASS |  |
+| bedparse_cds | PASS |  |
+| bedparse_convertchr | PASS |  |
+| bedparse_filter | PASS |  |
+| bedparse_gtf2bed | PASS |  |
+| bedparse_introns | PASS |  |
+| bedparse_join | PASS |  |
+| bedparse_promoter | PASS |  |
+| bedparse_validateformat | PASS |  |
+
 ## bedparse_3putr
 
 ### Tool Description

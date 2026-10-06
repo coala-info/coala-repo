@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: biobambam_bamsort
+baseCommand: bamsort
 label: biobambam_bamsort
 doc: "Sorts BAM/SAM/CRAM files.\n\nTool homepage: https://gitlab.com/german.tischler/biobambam2"
 inputs:
@@ -107,9 +107,7 @@ inputs:
       prefix: indexfilename=
       separate: false
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input filename (standard input if unset)
     inputBinding:
       position: 101
@@ -159,7 +157,8 @@ inputs:
     doc: aux field id for nucleotide tag extraction (adddupmarksupport=1 only)
     inputBinding:
       position: 101
-      prefix: nucltag
+      prefix: nucltag=
+      separate: false
   - id: output_format
     type:
       - 'null'
@@ -296,8 +295,9 @@ inputs:
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 101
+      prefix: O=
+      separate: false
 outputs:
   - id: output_file
     type:
@@ -306,6 +306,20 @@ outputs:
     doc: output filename (standard output if unset)
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: index
+    type:
+      - 'null'
+      - File
+    doc: BAM index file (index=1 with indexfilename=)
+    outputBinding:
+      glob: $(inputs.index_filename)
+  - id: md5
+    type:
+      - 'null'
+      - File
+    doc: md5 check sum file (md5=1 with md5filename=)
+    outputBinding:
+      glob: $(inputs.md5_filename)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

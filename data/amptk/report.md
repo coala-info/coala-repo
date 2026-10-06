@@ -1,5 +1,36 @@
 # amptk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amptk_454 | PASS | Real Ion Torrent reads (amptk test_data) run through the 454 mode; no real 454 data available. |
+| amptk_SRA | PASS |  |
+| amptk_SRA-submit | Failed | image problem: amptk 1.6.0 SRA-submit crashes with AttributeError (args.input) for ion, illumina and 454 input; only the illumina3 path avoids it, and that path was not tested. |
+| amptk_cluster_ref | PASS | Closed-reference mode with a custom FASTA DB; the de novo part needs licensed USEARCH9, not in the image. |
+| amptk_dada2 | PASS |  |
+| amptk_database | PASS |  |
+| amptk_drop | PASS |  |
+| amptk_funguild | Not completed | Needs to download the FUNGuild database at run time (default mycoportal URL returns 404) and a fungal OTU table with taxonomy; neither was available. |
+| amptk_heatmap | Failed | image problem: --method heatmap fails with matplotlib TypeError (add_axes needs rect) and clustermap fails with NameError (cluster undefined) in amptk 1.6.0. |
+| amptk_illumina | PASS |  |
+| amptk_illumina2 | Not completed | No real in-line barcoded Illumina data; a planted test (real amptk reads with added barcodes) ran but demultiplexed 0 reads, cause not found. |
+| amptk_illumina3 | Failed | image problem: amptk 1.6.0 illumina3 crashes with TypeError when it joins the demultiplexed files (text written to a binary file), seen on real QIIME2 Atacama EMP reads. |
+| amptk_lulu | Failed | image problem: R package LULU is not installed in the image ('LULU not installed'). |
+| amptk_meta | PASS |  |
+| amptk_pacbio | Not completed | Needs a folder of lima-demultiplexed PacBio CCS amplicon BAM files; no such real test data found. |
+| amptk_pb-dada2 | Not completed | Needs amptk pacbio output (reads tagged rq= and bq= from lima BAMs); the real PacBio ITS reads found lack these tags, so all reads were filtered out. |
+| amptk_primers | PASS | Lists the primers built into AMPtk; removed an invented required positional input. |
+| amptk_remove | PASS |  |
+| amptk_sample | PASS |  |
+| amptk_select | PASS |  |
+| amptk_show | PASS | Barcode counts correct; the tool's own --quality_trim mode writes an empty file (bug in amptk 1.6.0: worker uses an undefined global args). |
+| amptk_stats | Failed | image problem: the bundled phyloseq R script stops with 'the condition has length > 1' (old adonis code under R 4.3 / vegan 2.6), so no HTML results are made. |
+| amptk_summarize | Failed | image problem: amptk summarize imports stackedBarGraph, which needs the Python package 'future' (past.utils), missing in the image. CWL was rewritten from the help (old file used invented flags). |
+| amptk_taxonomy | PASS | Ran with --method sintax on a SINTAX DB built by amptk database from the nf-core ampliseq Greengenes 85% test set. |
+| amptk_unoise2 | Failed | image problem: amptk unoise2 runs vsearch --derep_fulllength on FASTQ, which the image's vsearch 2.24 rejects; it also needs licensed USEARCH9, not in the image. |
+| amptk_unoise3 | PASS |  |
+
 ## amptk_illumina
 
 ### Tool Description

@@ -1,5 +1,16 @@
 # bakdrive CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bakdrive | Failed | not a usable tool: wraps only the sub-command group with boolean sub-command words and no data inputs or outputs. |
+| bakdrive_driver | PASS |  |
+| bakdrive_fmt_donor | PASS |  |
+| bakdrive_fmt_driver | PASS |  |
+| bakdrive_fmt_only | PASS |  |
+| bakdrive_interaction | PASS |  |
+
 ## bakdrive_interaction
 
 ### Tool Description

@@ -1,5 +1,14 @@
 # bamrescue CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamrescue_bamfile | PASS |  |
+| bamrescue_check | PASS |  |
+| bamrescue_output | PASS |  |
+| bamrescue_rescue | PASS |  |
+
 ## bamrescue_check
 
 ### Tool Description

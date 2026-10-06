@@ -284,7 +284,7 @@ inputs:
       position: 101
       prefix: --run_name
   - id: sample_list
-    type: File?
+    type: File
     doc: List of samples to analyze, as a three column tsv file with columns 
       sample and fastq paths. Can be generated with provided script 
       create_sampleSheet.sh
@@ -424,7 +424,7 @@ inputs:
       position: 101
       prefix: --use_conda
   - id: working_directory
-    type: string?
+    type: string
     doc: Working directory where results are saved
     inputBinding:
       position: 101
@@ -433,6 +433,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: Working directory with the AQUAMIS results
+    outputBinding:
+      glob: $(inputs.working_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aquamis:1.4.0--hdfd78af_0

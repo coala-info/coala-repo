@@ -1,5 +1,13 @@
 # bgen-cpp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bgen-cpp_bgenix | PASS |  |
+| bgen-cpp_cat-bgen | PASS |  |
+| bgen-cpp_edit-bgen | PASS |  |
+
 ## bgen-cpp_bgenix
 
 ### Tool Description

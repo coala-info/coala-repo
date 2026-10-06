@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - table
 label: bio_table
 doc: "Generates tabular output from data.\n\nTool homepage: https://github.com/ialbert/bio"
 inputs:

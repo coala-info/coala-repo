@@ -1,5 +1,14 @@
 # bedops CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bedops_bedmap | PASS |  |
+| bedops_closest-features | PASS |  |
+| bedops_sort-bed | PASS |  |
+| bedops_starchcat | PASS |  |
+
 ## bedops
 
 ### Tool Description

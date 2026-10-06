@@ -1,5 +1,15 @@
 # bftools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bftools_bfconvert | PASS |  |
+| bftools_formatlist | PASS |  |
+| bftools_showinf | PASS |  |
+| bftools_tiffcomment | PASS |  |
+| bftools_xmlvalid | PASS |  |
+
 ## bftools_showinf
 
 ### Tool Description

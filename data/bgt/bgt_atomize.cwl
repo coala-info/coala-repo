@@ -4,7 +4,7 @@ baseCommand:
   - bgt
   - atomize
 label: bgt_atomize
-doc: "Atomize a VCF/BCF file\n\nTool homepage: https://github.com/Dysman/bgTools-playerPrefsEditor"
+doc: "Atomize a VCF/BCF file\n\nTool homepage: https://github.com/lh3/bgt"
 inputs:
   - id: input_file
     type: File

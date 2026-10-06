@@ -6,11 +6,6 @@ doc: "Binsanity-profile is used to generate coverage files for input to BinSanit
   This uses Featurecounts to generate a a coverage profile and transforms data for
   input into Binsanity, Binsanity-refine, and Binsanity-wf\n\nTool homepage: https://github.com/edgraham/BinSanity"
 inputs:
-  - id: contig_ids
-    type: File
-    doc: contig_ids.txt
-    inputBinding:
-      position: 101
   - id: fasta_file
     type: File
     doc: Specify fasta file being profiled
@@ -26,9 +21,9 @@ inputs:
       position: 101
       prefix: -o
   - id: sam_bam_file
-    type: File
-    doc: "identify location of BAM files\n                            BAM files should
-      be indexed and sorted"
+    type: Directory
+    doc: Folder holding the sorted, indexed BAM files (all *.bam files in it 
+      are profiled)
     inputBinding:
       position: 101
       prefix: -s
@@ -63,11 +58,18 @@ inputs:
       position: 102
       prefix: -c
 outputs:
-  - id: output_file
+  - id: coverage
     type: File
-    doc: Identify name of output file for coverage information
+    doc: Raw coverage profile written to <output name>.cov
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).cov
+  - id: transformed_coverage
+    type:
+      - 'null'
+      - File
+    doc: Transformed coverage profile (<output name>.cov.<transform suffix>)
+    outputBinding:
+      glob: $(inputs.output_file_path).cov.*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

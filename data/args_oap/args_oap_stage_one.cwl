@@ -15,6 +15,51 @@ inputs:
     inputBinding:
       position: 101
       prefix: --database
+    secondaryFiles:
+      - pattern: .dmnd
+        required: false
+      - pattern: .pdb
+        required: false
+      - pattern: .phr
+        required: false
+      - pattern: .pin
+        required: false
+      - pattern: .pjs
+        required: false
+      - pattern: .pot
+        required: false
+      - pattern: .psq
+        required: false
+      - pattern: .ptf
+        required: false
+      - pattern: .pto
+        required: false
+      - pattern: .amb
+        required: false
+      - pattern: .ann
+        required: false
+      - pattern: .bwt
+        required: false
+      - pattern: .pac
+        required: false
+      - pattern: .sa
+        required: false
+      - pattern: .ndb
+        required: false
+      - pattern: .nhr
+        required: false
+      - pattern: .nin
+        required: false
+      - pattern: .njs
+        required: false
+      - pattern: .not
+        required: false
+      - pattern: .nsq
+        required: false
+      - pattern: .ntf
+        required: false
+      - pattern: .nto
+        required: false
   - id: e1
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # alcor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alcor_AlcoR | PASS |  |
+
 ## alcor_AlcoR
 
 ### Tool Description

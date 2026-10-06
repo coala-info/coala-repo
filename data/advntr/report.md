@@ -1,5 +1,12 @@
 # advntr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| advntr_addmodel | Failed | image problem: pomegranate 0.6.1 cannot build HMMs with the bundled networkx 3.4.2 (KeyError 0 in HiddenMarkovModel.bake), so addmodel crashes on real hg38 chr22 data. |
+| advntr_genotype | Failed | image problem: pomegranate 0.6.1 is incompatible with networkx 3.4.2 (topological_sort nbunch error), so every VNTR is skipped and the output is only 'Error'. |
+
 ## advntr_genotype
 
 ### Tool Description

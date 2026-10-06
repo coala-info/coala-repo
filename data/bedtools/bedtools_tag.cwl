@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: -files
   - id: input_bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input BAM file
     inputBinding:
       position: 101
@@ -33,7 +31,9 @@ inputs:
       position: 101
       prefix: -labels
   - id: min_overlap
-    type: float
+    type:
+      - 'null'
+      - float
     doc: Minimum overlap required as a fraction of the alignment.
     inputBinding:
       position: 101

@@ -14,18 +14,15 @@ inputs:
       position: 1
   - id: output_file_path
     type: string
-    doc: '- output to file (default: output is sent to stdout)'
-    inputBinding:
-      position: 101
-      prefix: -o
+    doc: Name of the file that captures the report. agc info 3.2 ignores -o and
+      always writes the report to stderr, so stderr is captured into this file.
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: 'output to file (default: output is sent to stdout)'
+    type: File
+    doc: Archive information report (captured stderr).
     outputBinding:
       glob: $(inputs.output_file_path)
+stderr: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

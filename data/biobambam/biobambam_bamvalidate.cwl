@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: biobambam2
+baseCommand: bamvalidate
 label: biobambam_bamvalidate
 doc: "Validate BAM/CRAM files and perform conversions.\n\nTool homepage: https://gitlab.com/german.tischler/biobambam2"
 inputs:
@@ -11,7 +11,7 @@ inputs:
     doc: print base quality histogram at end of a successful run
     inputBinding:
       position: 101
-      prefix: basequalhist
+      prefix: basequalhist=1
   - id: index
     type:
       - 'null'
@@ -19,7 +19,7 @@ inputs:
     doc: 'create BAM index (default: 0, passthrough=1 only)'
     inputBinding:
       position: 101
-      prefix: index
+      prefix: index=1
   - id: indexfilename
     type:
       - 'null'
@@ -27,11 +27,10 @@ inputs:
     doc: file name for BAM index file
     inputBinding:
       position: 101
-      prefix: indexfilename
+      prefix: indexfilename=
+      separate: false
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input filename (standard input if unset)
     inputBinding:
       position: 101
@@ -62,7 +61,7 @@ inputs:
     doc: 'create md5 check sum (default: 0, passthrough=1 only)'
     inputBinding:
       position: 101
-      prefix: md5
+      prefix: md5=1
   - id: md5filename
     type:
       - 'null'
@@ -98,7 +97,7 @@ inputs:
     doc: 'write alignments to standard output (default: do not pass through)'
     inputBinding:
       position: 101
-      prefix: passthrough
+      prefix: passthrough=1
   - id: range
     type:
       - 'null'
@@ -137,14 +136,20 @@ inputs:
     doc: print stats at the end of a successful run
     inputBinding:
       position: 101
-      prefix: verbose
+      prefix: verbose=1
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output or path parameter `output_file_path`
     inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 101
+      prefix: O=
+      separate: false
 outputs:
+  - id: report
+    type: stderr
+    doc: validation messages and statistics (verbose=1, basequalhist=1)
   - id: output_file
     type:
       - 'null'
@@ -152,8 +157,16 @@ outputs:
     doc: output filename (standard output if unset, passthrough=1 only)
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: index_file
+    type:
+      - 'null'
+      - File
+    doc: BAM index file (index=1 with indexfilename=, passthrough=1 only)
+    outputBinding:
+      glob: $(inputs.indexfilename)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobambam:2.0.185--h85de650_1
+stderr: bamvalidate.log

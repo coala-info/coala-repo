@@ -1,5 +1,11 @@
 # bamsnap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamsnap | PASS |  |
+
 ## bamsnap
 
 ### Tool Description

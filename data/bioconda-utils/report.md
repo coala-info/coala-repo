@@ -1,5 +1,22 @@
 # bioconda-utils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioconda-utils_annotate-build-failures | PASS |  |
+| bioconda-utils_autobump | PASS |  |
+| bioconda-utils_bioconductor-skeleton | PASS |  |
+| bioconda-utils_build | Failed | image problem: conda-build inside the image cannot find a home directory for the cwltool user and writes to /root/conda-bld, so the build only works with --no-match-user and --no-read-only. |
+| bioconda-utils_clean-cran-skeleton | PASS |  |
+| bioconda-utils_dag | PASS |  |
+| bioconda-utils_dependent | PASS |  |
+| bioconda-utils_duplicates | PASS |  |
+| bioconda-utils_handle-merged-pr | Not completed | A dry run on a real merged bioconda-recipes pull request found the PR but no build artifacts (expired), so the artifact upload path was not exercised; it needs fresh artifacts, a GitHub token and upload rights. |
+| bioconda-utils_lint | PASS |  |
+| bioconda-utils_list-build-failures | PASS |  |
+| bioconda-utils_update-pinning | PASS |  |
+
 ## bioconda-utils_build
 
 ### Tool Description

@@ -1,5 +1,15 @@
 # adas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| adas_adas-build | PASS |  |
+| adas_adas-chain | PASS | Both queries map to the expected SAR11 16S targets (614/615 matches); this version writes Rust debug records, not real SAM. |
+| adas_adas-insert | PASS |  |
+| adas_adas-knn | PASS |  |
+| adas_adas-search | PASS |  |
+
 ## adas
 
 ### Tool Description

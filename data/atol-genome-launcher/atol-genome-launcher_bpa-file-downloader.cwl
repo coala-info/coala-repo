@@ -18,8 +18,8 @@ inputs:
   - id: file_checksum
     type:
       - 'null'
-      - File
-    doc: Optional checksum file to verify the download.
+      - string
+    doc: Optional MD5 checksum to verify the download.
     inputBinding:
       position: 103
       prefix: --file_checksum
@@ -27,6 +27,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: downloaded_file
+    type: File
+    doc: The downloaded file
+    outputBinding:
+      glob: $(inputs.file_name)
+  - id: checksum_report
+    type:
+      - 'null'
+      - File
+    doc: MD5 check result, written when file_checksum is given
+    outputBinding:
+      glob: $(inputs.file_name).check.txt
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atol-genome-launcher:0.4.1--pyhdfd78af_0

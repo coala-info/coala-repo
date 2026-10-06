@@ -1,5 +1,11 @@
 # bfc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bfc | PASS |  |
+
 ## bfc
 
 ### Tool Description

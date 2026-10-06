@@ -71,6 +71,7 @@ inputs:
       prefix: --skip-quality-check
   - id: output_path
     type: string?
+    doc: FASTQ file to write
     inputBinding:
       position: 102
       prefix: --output
@@ -79,9 +80,9 @@ outputs:
     type:
       - 'null'
       - File
-    doc: FASTQ file to write
+    doc: FASTQ file to write (default PREFIX_DIRECTORY.fastq)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.output_path ? inputs.output_path : inputs.prefix + '_' + inputs.directory.basename + '.fastq')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

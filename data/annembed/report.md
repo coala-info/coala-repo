@@ -1,5 +1,11 @@
 # annembed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| annembed_hnsw | PASS |  |
+
 ## annembed_hnsw
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # alfa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alfa | PASS |  |
+
 ## alfa
 
 ### Tool Description

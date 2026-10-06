@@ -14,7 +14,8 @@ inputs:
       or literal sequence.
     inputBinding:
       position: 101
-      prefix: adapter
+      prefix: adapter=
+      separate: false
   - id: cutoff
     type:
       - 'null'
@@ -77,7 +78,8 @@ inputs:
     doc: Second input file for twin files mode.
     inputBinding:
       position: 101
-      prefix: in2
+      prefix: in2=
+      separate: false
   - id: interleaved
     type:
       - 'null'
@@ -269,11 +271,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: This flag will cause the process to exit if an out-of-memory exception 
-      occurs.  Requires Java 8u92+.
+    doc: File for merged reads.
     inputBinding:
       position: 103
-      prefix: -eoom
+      prefix: out=
+      separate: false
   - id: out2_path
     type:
       - 'null'
@@ -281,7 +283,8 @@ inputs:
     doc: Output or path parameter `out2_path`
     inputBinding:
       position: 104
-      prefix: --out2
+      prefix: out2=
+      separate: false
   - id: outadapter_path
     type:
       - 'null'
@@ -325,7 +328,8 @@ inputs:
     doc: Output or path parameter `outu2_path`
     inputBinding:
       position: 109
-      prefix: --outu2
+      prefix: outu2=
+      separate: false
 outputs:
   - id: out
     type:

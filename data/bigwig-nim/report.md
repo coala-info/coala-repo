@@ -1,5 +1,11 @@
 # bigwig-nim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bigwig-nim_bigwig | Failed | not a usable tool: wraps only the bigwig command group with a stats switch, no data inputs or outputs; the view and stats subcommands are not wrapped. |
+
 ## bigwig-nim_bigwig
 
 ### Tool Description

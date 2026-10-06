@@ -115,9 +115,7 @@ inputs:
       position: 105
       prefix: --out2
   - id: stats_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Stats output (json)
     inputBinding:
       position: 106

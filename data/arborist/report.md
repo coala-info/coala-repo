@@ -1,5 +1,11 @@
 # arborist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arborist | PASS |  |
+
 ## arborist
 
 ### Tool Description

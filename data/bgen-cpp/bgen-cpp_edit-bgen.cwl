@@ -2,6 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: edit-bgen
 label: bgen-cpp_edit-bgen
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bgen_files)
+        writable: true
 doc: "Edit bgen files.\n\nTool homepage: https://enkre.net/cgi-bin/code/bgen/"
 inputs:
   - id: bgen_files
@@ -44,6 +50,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: edited_bgen_files
+    type:
+      type: array
+      items: File
+    doc: The bgen file(s), changed in place when really is set
+    outputBinding:
+      glob: $(inputs.bgen_files.map(function(f) { return f.basename; }))
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0

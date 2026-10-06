@@ -1,5 +1,11 @@
 # bgreat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bgreat | PASS |  |
+
 ## bgreat
 
 ### Tool Description

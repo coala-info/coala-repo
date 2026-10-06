@@ -1,5 +1,11 @@
 # antarna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| antarna_antarna.py | PASS |  |
+
 ## antarna
 
 ### Tool Description

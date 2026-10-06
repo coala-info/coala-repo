@@ -78,6 +78,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -rp
+      separate: false
   - id: gc_metazoan
     type:
       - 'null'
@@ -118,6 +119,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -gc
+      separate: false
   - id: introns
     type:
       - 'null'
@@ -126,6 +128,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -i
+      separate: false
   - id: introns_fixed
     type:
       - 'null'
@@ -167,6 +170,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -ps
+      separate: false
   - id: mammalian_mitochondrial
     type:
       - 'null'
@@ -308,10 +312,11 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Print output to <outfile>. If <outfile> already exists, it is 
+      overwritten.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

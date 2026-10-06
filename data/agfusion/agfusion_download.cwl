@@ -43,7 +43,8 @@ inputs:
       prefix: --species
   - id: dir_path
     type: string
-    doc: (Optional) Directory to the database will be
+    doc: Directory the database will be downloaded to. It is created before the
+      run because agfusion needs it to exist.
     inputBinding:
       position: 102
       prefix: --dir
@@ -52,12 +53,18 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: (Optional) Directory to the database will be downloaded to (defaults to
-      current working directory).
+    doc: Directory with the downloaded AGFusion database 
+      (agfusion.<species>.<release>.db).
     outputBinding:
       glob: $(inputs.dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.dir_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agfusion:1.252--py_0

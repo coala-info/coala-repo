@@ -124,6 +124,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.annotation)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/asgal:1.1.8--h5ca1c30_2

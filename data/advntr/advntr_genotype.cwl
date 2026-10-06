@@ -11,6 +11,11 @@ inputs:
       - 'null'
       - File
     doc: alignment file in SAM/BAM/CRAM format
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: --alignment_file
@@ -151,10 +156,10 @@ inputs:
       prefix: --vntr_id
       itemSeparator: ','
   - id: working_directory
-    type:
-      - 'null'
-      - string
-    doc: working directory for creating temporary files needed for computation
+    type: string
+    default: .
+    doc: working directory for creating temporary files needed for computation 
+      (required by advntr genotype; the log file is written here)
     inputBinding:
       position: 101
       prefix: --working_directory
@@ -173,6 +178,13 @@ outputs:
       specified.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: adVNTR log file (log_<input file name>.log)
+    outputBinding:
+      glob: $(inputs.working_directory)/log_*.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

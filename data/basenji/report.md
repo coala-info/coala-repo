@@ -1,5 +1,12 @@
 # basenji CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| basenji_basenji_motifs.py | Failed | image problem: basenji_motifs.py crashes at start unless the HG38 environment variable is set, and it also reads an undefined split_label option; CWL flags were rewritten from the help. |
+| basenji_basenji_sat.py | Failed | not a usable tool: basenji_sat.py does not exist in the image (only basenji_sat_bed.py and basenji_sat_vcf.py), so the command cannot run. |
+
 ## basenji
 
 ### Tool Description

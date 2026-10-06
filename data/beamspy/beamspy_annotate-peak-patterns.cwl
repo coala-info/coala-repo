@@ -7,6 +7,12 @@ label: beamspy_annotate-peak-patterns
 doc: "Annotate peaks with adducts, isotopes, oligomers, and neutral losses.\n\nTool
   homepage: https://github.com/computational-metabolomics/beamspy"
 inputs:
+  - id: db_in
+    type:
+      - 'null'
+      - File
+    doc: Existing results database from a previous BEAMSpy step to extend; it is copied
+      to the name given in db_path
   - id: adducts
     type:
       - 'null'
@@ -122,6 +128,11 @@ outputs:
     outputBinding:
       glob: $(inputs.db_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db_in)
+        entryname: $(inputs.db_path)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

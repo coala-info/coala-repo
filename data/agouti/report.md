@@ -1,5 +1,12 @@
 # agouti CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| agouti_annotate | PASS |  |
+| agouti_create_db | PASS |  |
+
 ## agouti_create_db
 
 ### Tool Description

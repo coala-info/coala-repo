@@ -1,5 +1,11 @@
 # aniclustermap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aniclustermap_ANIclustermap | PASS |  |
+
 ## aniclustermap
 
 ### Tool Description

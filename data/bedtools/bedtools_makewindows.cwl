@@ -7,7 +7,9 @@ label: bedtools_makewindows
 doc: Makes adjacent or sliding windows across a genome or BED file.
 inputs:
   - id: bed
-    type: File
+    type:
+      - 'null'
+      - File
     doc: BED file (with chrom,start,end fields). Windows will be created for 
       each interval in the file.
     inputBinding:

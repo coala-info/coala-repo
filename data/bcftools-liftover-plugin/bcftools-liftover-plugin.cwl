@@ -6,11 +6,34 @@ baseCommand:
 label: bcftools-liftover-plugin
 doc: Lift over a VCF from one genome build to another.
 inputs:
+  - id: input_vcf
+    type: File
+    doc: Input VCF/BCF file in the source genome build
+    inputBinding:
+      position: 1
+  - id: output_type
+    type:
+      - 'null'
+      - string
+    doc: 'Output type of the lifted file (general bcftools plugin option); u/b: un/compressed
+      BCF, v/z: un/compressed VCF, 0-9: compression level'
+    inputBinding:
+      position: 2
+      prefix: --output-type
+  - id: output_path
+    type: string
+    doc: Output file name for the lifted variants (general bcftools plugin option)
+    inputBinding:
+      position: 3
+      prefix: --output
   - id: src_fasta_ref
     type:
       - 'null'
       - File
     doc: source reference sequence in fasta format
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --src-fasta-ref
@@ -19,6 +42,9 @@ inputs:
       - 'null'
       - File
     doc: destination reference sequence in fasta format
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --fasta-ref
@@ -212,6 +238,11 @@ inputs:
       prefix: --es-tags
       itemSeparator: ','
 outputs:
+  - id: output
+    type: File
+    doc: Lifted VCF/BCF file
+    outputBinding:
+      glob: $(inputs.output_path)
   - id: output_print_blocks
     type:
       - 'null'
@@ -226,6 +257,9 @@ outputs:
     doc: output variants that cannot be lifted over
     outputBinding:
       glob: $(inputs.reject)
+arguments:
+  - position: 100
+    valueFrom: --
 requirements:
   - class: InlineJavascriptRequirement
 hints:

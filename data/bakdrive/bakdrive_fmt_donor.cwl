@@ -11,6 +11,13 @@ inputs:
     doc: Input disease and donor sample file addresses
     inputBinding:
       position: 1
+  - id: taxa_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in input_file. They are staged in the working directory, so
+      input_file must list them by base name.
   - id: medium
     type:
       - 'null'
@@ -22,7 +29,7 @@ inputs:
   - id: model
     type:
       - 'null'
-      - string
+      - Directory
     doc: Metabolic model database
     inputBinding:
       position: 102
@@ -58,6 +65,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.taxa_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bakdrive:1.0.4--hdfd78af_0

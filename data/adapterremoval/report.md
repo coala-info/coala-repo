@@ -1,5 +1,11 @@
 # adapterremoval CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| adapterremoval_AdapterRemoval | PASS |  |
+
 ## adapterremoval_AdapterRemoval
 
 ### Tool Description

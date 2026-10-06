@@ -107,11 +107,14 @@ inputs:
 outputs:
   - id: outfile
     type:
-      - 'null'
-      - File
-    doc: Output file or base name for results
+      type: array
+      items: File
+    doc: Output file, or files written with the base name (.fa, .out)
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: $(inputs.outfile_path)*
+successCodes:
+  - 0
+  - 1
 requirements:
   - class: InlineJavascriptRequirement
 hints:

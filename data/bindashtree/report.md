@@ -1,5 +1,11 @@
 # bindashtree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bindashtree | PASS |  |
+
 ## bindashtree
 
 ### Tool Description

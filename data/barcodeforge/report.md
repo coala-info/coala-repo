@@ -1,5 +1,12 @@
 # barcodeforge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| barcodeforge_barcode | PASS |  |
+| barcodeforge_extract-auspice-data | PASS |  |
+
 ## barcodeforge_barcode
 
 ### Tool Description

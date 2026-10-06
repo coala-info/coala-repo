@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: app.py
+baseCommand: bigmag
 label: bigmag
 doc: "BIgMAG\n\nTool homepage: https://github.com/jeffe107/BIgMAG"
 inputs:

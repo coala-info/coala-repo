@@ -98,10 +98,10 @@ inputs:
       prefix: --sdev
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: The prefix of output filename
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: --out
 outputs:
   - id: output_prefix
     type:

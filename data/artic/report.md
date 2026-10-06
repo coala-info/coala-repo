@@ -1,5 +1,16 @@
 # artic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| artic_export | Not completed | No small real test set with FAST5 raw-signal files and a matching sequencing summary was found. |
+| artic_filter | Failed | image problem: artic filter in 1.8.5 always crashes with a TypeError in its final summary print, so it exits 1 on the MT007544 test reads. |
+| artic_guppyplex | PASS |  |
+| artic_minion | PASS |  |
+| artic_rampart | Not completed | artic rampart only starts RAMPART through interactive prompts and cannot run as a batch job. |
+| artic_run | Not completed | artic run processes a run folder through interactive prompts and cannot run as a batch job. |
+
 ## artic_minion
 
 ### Tool Description

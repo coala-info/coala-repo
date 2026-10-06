@@ -16,11 +16,13 @@ inputs:
   - id: attributes
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --attributes
     doc: Attributes to include in the metadata table (e.g., 'country', 'date').
     inputBinding:
       position: 102
-      prefix: --attributes
   - id: include_internal_nodes
     type:
       - 'null'
@@ -33,7 +35,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Path to save the metadata table (TSV         │
+    default: metadata.tsv
+    doc: Path to save the metadata table (TSV format).
     inputBinding:
       position: 103
       prefix: --output_metadata_path
@@ -41,22 +44,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Path to save the tree in Newick format.      │
+    default: tree.nwk
+    doc: Path to save the tree in Newick format.
     inputBinding:
       position: 104
       prefix: --output_tree_path
 outputs:
   - id: output_metadata_path
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to save the metadata table (TSV format).
     outputBinding:
       glob: $(inputs.output_metadata_path_path)
   - id: output_tree_path
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to save the tree in Newick format.
     outputBinding:
       glob: $(inputs.output_tree_path_path)

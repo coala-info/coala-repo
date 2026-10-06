@@ -1,5 +1,17 @@
 # argnorm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| argnorm_abricate | PASS |  |
+| argnorm_amrfinderplus | PASS |  |
+| argnorm_argsoap | PASS |  |
+| argnorm_deeparg | PASS |  |
+| argnorm_groot | PASS |  |
+| argnorm_hamronization | PASS |  |
+| argnorm_resfinder | PASS |  |
+
 ## argnorm_argsoap
 
 ### Tool Description

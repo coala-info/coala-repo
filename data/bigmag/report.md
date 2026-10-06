@@ -1,5 +1,11 @@
 # bigmag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bigmag | Not completed | bigmag starts an interactive Dash web server and never exits, so it cannot run as a batch job (baseCommand fixed from app.py to bigmag). |
+
 ## bigmag
 
 ### Tool Description

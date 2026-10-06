@@ -36,14 +36,15 @@ inputs:
       prefix: --outFile
 outputs:
   - id: outfile
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Where to write the model to
     outputBinding:
       glob: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+successCodes:
+  - 0
+  - 1
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/banner:0.0.2--py_0

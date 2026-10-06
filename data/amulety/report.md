@@ -1,5 +1,11 @@
 # amulety CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amulety | Failed | not a usable tool: wraps only the amulety command group with a subcommand string and no data inputs or outputs. |
+
 ## amulety
 
 ### Tool Description

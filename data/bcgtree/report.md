@@ -1,5 +1,11 @@
 # bcgtree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcgtree | PASS |  |
+
 ## bcgtree
 
 ### Tool Description

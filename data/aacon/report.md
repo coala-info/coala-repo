@@ -1,5 +1,11 @@
 # aacon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aacon | PASS |  |
+
 ## aacon
 
 ### Tool Description

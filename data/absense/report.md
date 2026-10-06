@@ -1,5 +1,11 @@
 # absense CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| Run_abSENSE.py | PASS |  |
+
 ## absense
 
 ### Tool Description

@@ -10,8 +10,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sets a VCF index to select to always get selected in the event of 
-      conflict
+    doc: Sets a VCF index to select to always get selected in the event of conflict
     inputBinding:
       position: 101
       prefix: --conflict-select
@@ -43,16 +42,21 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input variant call file (VCF), provided in priority order
+      inputBinding:
+        prefix: --input-vcf
+    doc: Input VCFs (bgzipped and indexed), in priority order; the flag repeats per file.
     inputBinding:
       position: 101
-      prefix: --input-vcf
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
   - id: max_branch_factor
     type:
       - 'null'
       - int
-    doc: Maximum branch factor in the query optimizer; limits work on dense 
-      variant regions
+    doc: Maximum branch factor in the query optimizer; limits work on dense variant regions
     inputBinding:
       position: 101
       prefix: --max-branch-factor
@@ -60,8 +64,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Selects pre-set merge strategy for inclusion of a variant (exact, 
-      no_conflict, majority, all)
+    doc: Selects pre-set merge strategy for inclusion of a variant (exact, no_conflict, majority, all)
     inputBinding:
       position: 101
       prefix: --merge-strategy
@@ -69,8 +72,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum gap (bp) between variants to split into separate 
-      sub-regions
+    doc: The minimum gap (bp) between variants to split into separate sub-regions
     inputBinding:
       position: 101
       prefix: --min-variant-gap
@@ -83,10 +85,8 @@ inputs:
       position: 101
       prefix: --reference
   - id: regions
-    type:
-      - 'null'
-      - File
-    doc: Regions to perform the merge (BED)
+    type: File
+    doc: Regions to perform the merge (BED). Listed as optional in the help, but aardvark 0.10.4 stops with 'High confidence regions are currently required' without it.
     inputBinding:
       position: 101
       prefix: --regions
@@ -117,8 +117,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101

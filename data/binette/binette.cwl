@@ -8,7 +8,8 @@ inputs:
   - id: bin_dirs
     type:
       - 'null'
-      - Directory
+      - type: array
+        items: Directory
     doc: List of bin folders containing each bin in a fasta file.
     inputBinding:
       position: 101
@@ -16,7 +17,7 @@ inputs:
   - id: checkm2_db
     type:
       - 'null'
-      - Directory
+      - File
     doc: Path to CheckM2 diamond database. By default the database set via 
       <checkm2 database> is used.
     inputBinding:
@@ -34,7 +35,8 @@ inputs:
   - id: contig2bin_tables
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: 'List of contig2bin tables with two columns: contig, bin.'
     inputBinding:
       position: 101
@@ -56,7 +58,8 @@ inputs:
   - id: fasta_extensions
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: FASTA file extensions to search for in bin directories (used with 
       --bin_dirs).
     inputBinding:
@@ -139,7 +142,7 @@ inputs:
       --no-write-fasta-bins).
     inputBinding:
       position: 101
-      prefix: --no-write-fasta-b
+      prefix: --no-write-fasta-bins
   - id: prefix
     type:
       - 'null'
@@ -210,7 +213,7 @@ inputs:
       prefix: --write-fasta-bins
   - id: outdir_path
     type: string
-    doc: PATH     Output directory.    │
+    doc: Output directory.
     inputBinding:
       position: 102
       prefix: --outdir

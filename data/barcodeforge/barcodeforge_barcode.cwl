@@ -81,6 +81,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: barcode_csv
+    type: File
+    doc: Lineage barcode table (<prefix>-barcode.csv or barcode.csv)
+    outputBinding:
+      glob: '*barcode.csv'
+  - id: barcode_plot
+    type: File
+    doc: Barcode plot (PDF)
+    outputBinding:
+      glob: '*barcode_plot.pdf'
+  - id: auspice_tree
+    type: File
+    doc: Annotated tree in Auspice JSON format from matUtils extract
+    outputBinding:
+      glob: auspice_tree.json
+  - id: workdir
+    type: Directory
+    doc: Intermediate files (VCF, UShER protobuf, lineage paths)
+    outputBinding:
+      glob: barcodeforge_workdir
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barcodeforge:1.1.2--pyhdfd78af_0

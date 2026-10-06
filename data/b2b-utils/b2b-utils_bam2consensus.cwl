@@ -42,6 +42,9 @@ inputs:
   - id: ref_file
     type: File
     doc: Path to reference sequence used to generate BAM alignments
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --ref
@@ -77,7 +80,7 @@ inputs:
     doc: Output or path parameter `consensus_file_path`
     inputBinding:
       position: 103
-      prefix: --consensus-file
+      prefix: --consensus
   - id: table_file_path
     type:
       - 'null'

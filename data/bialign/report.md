@@ -1,5 +1,11 @@
 # bialign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bialign_bialign.py | PASS |  |
+
 ## bialign_bialign.py
 
 ### Tool Description

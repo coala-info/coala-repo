@@ -1,5 +1,11 @@
 # aptardi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aptardi | Failed | image problem: aptardi calls samtools and bedtools, but neither is in the image; the CWL was also rewritten from the help because all its flags were invented. |
+
 ## aptardi
 
 ### Tool Description

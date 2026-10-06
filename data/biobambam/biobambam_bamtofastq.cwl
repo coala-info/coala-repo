@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: biobambam_bamtofastq
+baseCommand: bamtofastq
 label: biobambam_bamtofastq
 doc: "Convert BAM/SAM/CRAM to FASTQ format.\n\nTool homepage: https://gitlab.com/german.tischler/biobambam2"
 inputs:
@@ -96,9 +96,7 @@ inputs:
       prefix: inputbuffersize=
       separate: false
   - id: input_filename
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'input filename (default: read file from standard input)'
     inputBinding:
       position: 101
@@ -116,7 +114,7 @@ inputs:
   - id: matched_pairs_first_mates
     type:
       - 'null'
-      - File
+      - string
     doc: matched pairs first mates
     inputBinding:
       position: 101
@@ -125,7 +123,7 @@ inputs:
   - id: matched_pairs_second_mates
     type:
       - 'null'
-      - File
+      - string
     doc: matched pairs second mates
     inputBinding:
       position: 101
@@ -256,7 +254,7 @@ inputs:
   - id: single_end
     type:
       - 'null'
-      - File
+      - string
     doc: single end
     inputBinding:
       position: 101
@@ -297,7 +295,8 @@ inputs:
     doc: temporary file name
     inputBinding:
       position: 101
-      prefix: T
+      prefix: T=
+      separate: false
   - id: try_oq
     type:
       - 'null'
@@ -310,7 +309,7 @@ inputs:
   - id: unmatched_pairs_first_mates
     type:
       - 'null'
-      - File
+      - string
     doc: unmatched pairs first mates
     inputBinding:
       position: 101
@@ -319,7 +318,7 @@ inputs:
   - id: unmatched_pairs_second_mates
     type:
       - 'null'
-      - File
+      - string
     doc: unmatched pairs second mates
     inputBinding:
       position: 101
@@ -346,6 +345,41 @@ outputs:
     doc: 'directory for output if outputperreadgroup=1 (default: current directory)'
     outputBinding:
       glob: $(inputs.output_directory)
+  - id: first_mates
+    type:
+      - 'null'
+      - File
+    doc: matched pairs first mates (F=)
+    outputBinding:
+      glob: $(inputs.matched_pairs_first_mates)
+  - id: second_mates
+    type:
+      - 'null'
+      - File
+    doc: matched pairs second mates (F2=)
+    outputBinding:
+      glob: $(inputs.matched_pairs_second_mates)
+  - id: single_end_reads
+    type:
+      - 'null'
+      - File
+    doc: single end reads (S=)
+    outputBinding:
+      glob: $(inputs.single_end)
+  - id: unmatched_first_mates
+    type:
+      - 'null'
+      - File
+    doc: unmatched pairs first mates (O=)
+    outputBinding:
+      glob: $(inputs.unmatched_pairs_first_mates)
+  - id: unmatched_second_mates
+    type:
+      - 'null'
+      - File
+    doc: unmatched pairs second mates (O2=)
+    outputBinding:
+      glob: $(inputs.unmatched_pairs_second_mates)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobambam:2.0.185--h85de650_1

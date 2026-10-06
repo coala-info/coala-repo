@@ -10,7 +10,7 @@ inputs:
       - string
     doc: Bioawk program string
     inputBinding:
-      position: 1
+      position: 104
   - id: files
     type:
       - 'null'
@@ -18,7 +18,7 @@ inputs:
         items: File
     doc: Input file(s)
     inputBinding:
-      position: 2
+      position: 105
   - id: field_separator
     type:
       - 'null'

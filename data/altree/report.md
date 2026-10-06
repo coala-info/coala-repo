@@ -1,5 +1,11 @@
 # altree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| altree | PASS |  |
+
 ## altree
 
 ### Tool Description

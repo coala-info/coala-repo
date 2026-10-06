@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-extract_region.py
+baseCommand:
+  - amptk
+  - database
 label: amptk_database
 doc: "Script searches for primers and removes them if found. Useful for trimming a
   reference dataset for assigning taxonomy after OTU clustering. It is also capable
@@ -10,7 +12,7 @@ inputs:
   - id: cpus
     type:
       - 'null'
-      - string
+      - int
     doc: 'Number of CPUs. Default: auto'
     inputBinding:
       position: 101
@@ -48,9 +50,7 @@ inputs:
       position: 101
       prefix: --drop_ns
   - id: fasta_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: FASTA input
     inputBinding:
       position: 101
@@ -64,7 +64,9 @@ inputs:
       position: 101
       prefix: --format
   - id: fwd_primer
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Forward primer (fITS7)
     inputBinding:
       position: 101
@@ -152,7 +154,7 @@ inputs:
   - id: subsample
     type:
       - 'null'
-      - string
+      - int
     doc: Random subsample
     inputBinding:
       position: 101
@@ -168,7 +170,7 @@ inputs:
   - id: usearch
     type:
       - 'null'
-      - File
+      - string
     doc: USEARCH9 EXE
     inputBinding:
       position: 101
@@ -193,6 +195,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the output base name (database, trimmed FASTA, log)
+    outputBinding:
+      glob: $(inputs.output_base_name).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

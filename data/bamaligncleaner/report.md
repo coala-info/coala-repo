@@ -1,5 +1,11 @@
 # bamaligncleaner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamaligncleaner_bamAlignCleaner | PASS |  |
+
 ## bamaligncleaner_bamAlignCleaner
 
 ### Tool Description

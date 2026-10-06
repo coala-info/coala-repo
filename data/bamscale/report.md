@@ -1,5 +1,11 @@
 # bamscale CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamscale_BAMscale | Failed | not a usable tool: wraps only the BAMscale command group (a subcommand string), with no BAM or BED inputs and no outputs. |
+
 ## bamscale_BAMscale
 
 ### Tool Description

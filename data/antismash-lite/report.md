@@ -1,5 +1,12 @@
 # antismash-lite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| antismash-lite_antismash | Failed | image problem: antiSMASH 8.0.1 writes prepared model files into its own root-owned package folder on first run, so it runs only with cwltool --no-read-only and --no-match-user. |
+| antismash-lite_download-antismash-databases | Not completed | The full database download is several GB (Pfam, ClusterBlast, KnownClusterBlast, TIGRFam), too large for this test; output folder type fixed and network access added. |
+
 ## antismash-lite_antismash
 
 ### Tool Description

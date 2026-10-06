@@ -1,5 +1,11 @@
 # asgal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| asgal | PASS |  |
+
 ## asgal
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # aragorn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aragorn | PASS |  |
+
 ## aragorn
 
 ### Tool Description

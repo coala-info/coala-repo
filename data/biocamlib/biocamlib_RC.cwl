@@ -5,6 +5,10 @@ label: biocamlib_RC
 doc: "A tool to reverse-complement or complement biological sequences.\n\nTool homepage:
   https://github.com/PaoloRibeca/BiOCamLib"
 inputs:
+  - id: input_file
+    type: File
+    doc: Text file with one sequence per line; RC reads it from standard input and
+      writes the reverse complement of each line to standard output
   - id: no_complement
     type:
       - 'null'
@@ -20,4 +24,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biocamlib:1.0.0--h9ee0642_0
+stdin: $(inputs.input_file.path)
 stdout: biocamlib_RC.out

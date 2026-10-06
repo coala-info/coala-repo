@@ -53,6 +53,7 @@ inputs:
   inputBinding:
     position: 102
     prefix: --gvcf
+    itemSeparator: ','
 - id: insert_missed
   type: boolean?
   doc: Output also sites missed by mpileup but present in -T
@@ -97,6 +98,7 @@ inputs:
   inputBinding:
     position: 102
     prefix: --novel-rate
+    itemSeparator: ','
 - id: output
   type: string
   doc: Write output to a file [standard output]

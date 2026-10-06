@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-get_barcode_counts.py
+baseCommand:
+  - amptk
+  - show
 label: amptk_show
 doc: "Script loops through demuxed fastq file counting occurances of barcodes, can
   optionally quality trim and recount.\n\nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -36,12 +38,17 @@ inputs:
       position: 101
       prefix: --trunclen
   - id: out_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'Output for quality trimmed data (default:'
     inputBinding:
       position: 102
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Read counts per barcode (sample) and read length summary
   - id: out
     type:
       - 'null'
@@ -54,3 +61,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0
+stdout: amptk_show.out

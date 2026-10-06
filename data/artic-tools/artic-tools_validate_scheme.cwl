@@ -17,6 +17,9 @@ inputs:
       - 'null'
       - File
     doc: The reference sequence for the primer scheme (FASTA format)
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: --refSeq

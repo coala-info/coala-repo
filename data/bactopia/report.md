@@ -1,5 +1,11 @@
 # bactopia CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bactopia | Failed | not a usable tool: baseCommand 'run' is the Nextflow run subcommand taken from nextflow help, not a program in the image, and it has no bactopia data inputs or outputs. |
+
 ## bactopia
 
 ### Tool Description

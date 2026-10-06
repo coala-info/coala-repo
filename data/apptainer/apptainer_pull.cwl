@@ -7,12 +7,19 @@ label: apptainer_pull
 doc: "The 'pull' command allows you to download or build a container from a given
   URI.\n\nTool homepage: https://github.com/apptainer/apptainer"
 inputs:
+  - id: output_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the image file to write (default <name>_<tag>.sif)
+    inputBinding:
+      position: 1
   - id: uri
     type: string
     doc: The URI of the image to pull (e.g., library://, docker://, shub://, oras://,
       http://)
     inputBinding:
-      position: 1
+      position: 2
   - id: arch
     type:
       - 'null'
@@ -101,7 +108,11 @@ outputs:
       - File
     doc: Specify a name for the downloaded image file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.output_name ? inputs.output_name : "*.sif")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/apptainer:latest

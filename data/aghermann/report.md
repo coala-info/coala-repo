@@ -1,5 +1,11 @@
 # aghermann CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aghermann | PASS | Headless run (-n) on a PhysioNet EEG EDF (eegmmidb S001R01) with header IDs set to fit the experiment tree; all 63 channels profiled. |
+
 ## aghermann
 
 ### Tool Description

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: train_amplify.py
+baseCommand: train_amplify
 label: amplify_train_amplify
 doc: "AMPlify v2.0.0 training. Given training sets with two labels: AMP and non-AMP,
   train the AMP prediction model.\n\nTool homepage: https://github.com/bcgsc/AMPlify"
@@ -61,6 +61,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.out_dir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amplify:2.0.1--py36hdfd78af_0

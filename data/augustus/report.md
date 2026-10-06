@@ -1,5 +1,11 @@
 # augustus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| augustus | PASS |  |
+
 ## augustus
 
 ### Tool Description

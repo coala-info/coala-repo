@@ -1,5 +1,14 @@
 # b2b-utils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| b2b-utils_bam2consensus | PASS |  |
+| b2b-utils_fq_interleave | PASS |  |
+| b2b-utils_minimeta | Failed | image problem: seqkit and racon are not in the image, so minimeta stops with 'SeqKit is required for shuffling but not found'. |
+| b2b-utils_shrink_bedgraph | Failed | image problem: bedtools is not in the image, so shrink_bedgraph stops with 'bedtools is required but not found'. |
+
 ## b2b-utils_minimeta
 
 ### Tool Description

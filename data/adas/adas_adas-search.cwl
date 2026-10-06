@@ -35,6 +35,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: neighbors
+    type: File
+    doc: Search results (adas.neighbors.txt)
+    outputBinding:
+      glob: adas.neighbors.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/adas:0.1.3--h3ab6199_0

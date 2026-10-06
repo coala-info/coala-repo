@@ -2,13 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bfconvert
 label: bftools_bfconvert
+requirements:
+  - class: InlineJavascriptRequirement
 doc: "To convert a file between formats, run:\n\nTool homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html"
 inputs:
   - id: input_file
     type: File
     doc: Input file
     inputBinding:
-      position: 1
+      position: 201
+  - id: output_name
+    type: string
+    doc: Output file name; its extension sets the output format (e.g. .ome.tiff,
+      .tif, .png, .jpg). Patterns such as %z, %c, %t split the output into several
+      files.
+    inputBinding:
+      position: 202
   - id: autoscale
     type:
       - 'null'
@@ -37,7 +46,7 @@ inputs:
   - id: cache_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: use the specified directory to store the cached initialized reader. If 
       unspecified, the cached reader will be stored under the same folder as the
       image file
@@ -95,7 +104,7 @@ inputs:
   - id: map
     type:
       - 'null'
-      - File
+      - string
     doc: specify file on disk to which name should be mapped
     inputBinding:
       position: 102
@@ -169,10 +178,35 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: add the specified key/value pair to the options list
+    doc: add the specified key/value pair to the options list; two values, key
+      and value
     inputBinding:
       position: 102
       prefix: -option
+  - id: overwrite
+    type:
+      - 'null'
+      - boolean
+    doc: always overwrite the output file, if it already exists
+    inputBinding:
+      position: 102
+      prefix: -overwrite
+  - id: nooverwrite
+    type:
+      - 'null'
+      - boolean
+    doc: never overwrite the output file, if it already exists
+    inputBinding:
+      position: 102
+      prefix: -nooverwrite
+  - id: no_sequential
+    type:
+      - 'null'
+      - boolean
+    doc: do not assume that planes are written in sequential order
+    inputBinding:
+      position: 102
+      prefix: -no-sequential
   - id: padded
     type:
       - 'null'
@@ -219,8 +253,9 @@ inputs:
   - id: range
     type:
       - 'null'
-      - string
-    doc: specify range of planes to convert (inclusive)
+      - type: array
+        items: int
+    doc: specify range of planes to convert (inclusive); two values, start and end
     inputBinding:
       position: 102
       prefix: -range
@@ -298,10 +333,12 @@ inputs:
       prefix: -z
 outputs:
   - id: output_file
-    type: File
-    doc: Output file
+    type:
+      type: array
+      items: File
+    doc: Converted image file(s)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name.replace(/%[sncwztAxym]/g, '*'))
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bftools:8.0.0--hdfd78af_0

@@ -1,5 +1,11 @@
 # bazam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bazam | PASS |  |
+
 ## bazam
 
 ### Tool Description

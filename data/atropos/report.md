@@ -1,5 +1,11 @@
 # atropos CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atropos | PASS |  |
+
 ## atropos
 
 ### Tool Description

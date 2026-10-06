@@ -1,5 +1,11 @@
 # apscale CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| apscale | Failed | image problem: the Python module xlsxwriter is missing, so the final read-table step crashes after merging, trimming, filtering and denoising of nf-core ampliseq reads ran correctly. |
+
 ## apscale
 
 ### Tool Description

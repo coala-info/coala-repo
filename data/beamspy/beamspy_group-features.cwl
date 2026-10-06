@@ -13,8 +13,8 @@ inputs:
       position: 101
       prefix: --coeff-threshold
   - id: db
-    type: File
-    doc: Sqlite database to write results.
+    type: string
+    doc: Sqlite database to write results (file name; created or extended).
     inputBinding:
       position: 101
       prefix: --db
@@ -71,6 +71,11 @@ inputs:
       position: 102
       prefix: --gml-file
 outputs:
+  - id: db_out
+    type: File
+    doc: Sqlite database with the results
+    outputBinding:
+      glob: $(inputs.db)
   - id: gml_file
     type: File
     doc: Write graph to GraphML format.

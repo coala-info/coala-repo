@@ -19,12 +19,25 @@ inputs:
     doc: Input contigs fasta file
     inputBinding:
       position: 2
+  - id: output_fasta
+    type: string
+    doc: Output chromosome-level assembly FASTA file name (e.g. asm.chr.fasta); 
+      the AGP file is written beside it
+    inputBinding:
+      position: 3
 outputs:
   - id: asm_chr_fasta
     type: File
     doc: Output chromosome-level assembly fasta file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_fasta)
+  - id: asm_chr_agp
+    type: File
+    doc: AGP file describing the assembly (output name with .agp extension)
+    outputBinding:
+      glob: $(inputs.output_fasta.replace(/\.[^.\/]*$/, '') + '.agp')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allhic:0.9.14--he881be0_0

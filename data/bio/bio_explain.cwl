@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - explain
 label: bio_explain
 doc: "Search database by ontological name or GO/SO ids.\n\nTool homepage: https://github.com/ialbert/bio"
 inputs:
@@ -72,6 +74,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bio:1.8.1--pyhdfd78af_0

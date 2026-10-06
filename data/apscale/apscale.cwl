@@ -117,6 +117,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The apscale project folder, created by --create_project or updated by 
+      a module run.
+    outputBinding:
+      glob: '*_apscale'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var dirs = [inputs.run_apscale, inputs.pe_merging, inputs.primer_trimming,
+          inputs.quality_filtering, inputs.dereplication, inputs.denoising,
+          inputs.swarm_clustering, inputs.replicate_merging, inputs.nc_removal,
+          inputs.generate_read_table, inputs.analyze];
+        return dirs.filter(function(d) { return d; }).map(function(d) {
+          return {entry: d, writable: true};
+        });
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/apscale:4.3.0--pyhdfd78af_0

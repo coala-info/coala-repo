@@ -4,13 +4,24 @@ baseCommand:
   - bgt
   - view
 label: bgt_view
-doc: "View and convert VCF/BCF files\n\nTool homepage: https://github.com/Dysman/bgTools-playerPrefsEditor"
+requirements:
+  - class: InlineJavascriptRequirement
+doc: "View and convert VCF/BCF files\n\nTool homepage: https://github.com/lh3/bgt"
 inputs:
-  - id: bgt_prefix
-    type: string
-    doc: Prefix of the BGT file(s)
+  - id: bgt_files
+    type:
+      type: array
+      items: File
+    secondaryFiles:
+      - .csi
+      - ^.pbf
+      - pattern: ^.spl
+        required: false
+    doc: BGT database(s), given as the <prefix>.bcf file written by bgt import (with
+      <prefix>.bcf.csi, <prefix>.pbf and <prefix>.spl beside it)
     inputBinding:
       position: 1
+      valueFrom: $(self.map(function(f) { return f.path.replace(/\.bcf$/, ''); }))
   - id: alleles_expr
     type:
       - 'null'

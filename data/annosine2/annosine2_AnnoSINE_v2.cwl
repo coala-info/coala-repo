@@ -168,6 +168,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: AnnoSINE output folder
+    outputBinding:
+      glob: $(inputs.output_filename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/annosine2:2.0.9--pyh7e72e81_0

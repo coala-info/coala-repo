@@ -10,6 +10,11 @@ inputs:
   - id: input_bcf
     type: File
     doc: Input multisample BCF/VCF containing genotypes
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 1
   - id: aftag

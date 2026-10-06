@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-process_pacbio.py
+baseCommand:
+  - amptk
+  - pacbio
 label: amptk_pacbio
 doc: "Script to process pacbio CCS amplicon data\n\nTool homepage: https://github.com/nextgenusfs/amptk"
 inputs:

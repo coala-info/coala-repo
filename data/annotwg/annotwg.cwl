@@ -7,6 +7,8 @@ inputs:
   - id: annot
     type: File
     doc: path to an annotation file (bcf format csi indexed)
+    secondaryFiles:
+      - .csi
     inputBinding:
       position: 101
       prefix: --annot
@@ -105,6 +107,8 @@ inputs:
   - id: vcf
     type: File
     doc: vcf file bgzipped and indexed with tabix to annotate
+    secondaryFiles:
+      - .tbi
     inputBinding:
       position: 101
       prefix: --vcf

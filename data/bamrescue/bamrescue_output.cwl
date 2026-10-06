@@ -11,6 +11,11 @@ inputs:
     doc: Input BAM file to be rescued
     inputBinding:
       position: 1
+  - id: output_name
+    type: string
+    doc: Rescued BAM file to write
+    inputBinding:
+      position: 2
   - id: threads
     type:
       - 'null'
@@ -24,7 +29,7 @@ outputs:
     type: File
     doc: Output file for the rescued data
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamrescue:0.3.0--h4349ce8_0

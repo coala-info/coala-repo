@@ -6,20 +6,30 @@ baseCommand:
 label: beamspy_annotate-compounds
 doc: "Annotate compounds using a peaklist and a database.\n\nTool homepage: https://github.com/computational-metabolomics/beamspy"
 inputs:
+  - id: db_in
+    type:
+      - 'null'
+      - File
+    doc: Existing results database from a previous BEAMSpy step to extend; it is copied
+      to the name given in db
   - id: adducts_library
-    type: File
+    type:
+      - 'null'
+      - File
     doc: List of adducts to search for.
     inputBinding:
       position: 101
       prefix: --adducts-library
   - id: db
-    type: File
-    doc: Sqlite database to write results.
+    type: string
+    doc: Sqlite database to write results (file name; created or extended).
     inputBinding:
       position: 101
       prefix: --db
   - id: db_compounds
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Metabolite database (reference).
     inputBinding:
       position: 101
@@ -74,9 +84,20 @@ inputs:
       position: 101
       prefix: --skip-patterns
 outputs:
+  - id: db_out
+    type: File
+    doc: Sqlite database with the results
+    outputBinding:
+      glob: $(inputs.db)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db_in)
+        entryname: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beamspy:1.2.0--pyhdfd78af_0

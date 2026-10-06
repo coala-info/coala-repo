@@ -1,5 +1,11 @@
 # aprfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aprfinder | PASS |  |
+
 ## aprfinder
 
 ### Tool Description

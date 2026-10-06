@@ -8,39 +8,34 @@ doc: "Bazam is a tool to extract paired reads from a coordinate-sorted BAM file 
 inputs:
   - id: bam
     type: File
-    doc: The input BAM file
+    doc: BAM file to extract read pairs from
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: -bam
-  - id: dragen
-    type:
-      - 'null'
-      - boolean
-    doc: Enable DRAGEN-specific extraction
-    inputBinding:
-      position: 101
-      prefix: -dragen
   - id: n_threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: Concurrency parameter (4)
     inputBinding:
       position: 101
       prefix: -n
-  - id: name_sorted
+  - id: name_pos
     type:
       - 'null'
       - boolean
-    doc: Input BAM is already name sorted
+    doc: Add original position to the read names
     inputBinding:
       position: 101
-      prefix: -namesorted
+      prefix: -namepos
   - id: pad
     type:
       - 'null'
       - int
-    doc: Amount of padding to add to regions
+    doc: Amount to pad regions by (0)
     inputBinding:
       position: 101
       prefix: -pad
@@ -48,24 +43,88 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Regions to extract (e.g. chr1:1-100 or a BED file)
+    doc: Regions to include reads (and mates of reads) from
     inputBinding:
       position: 101
       prefix: -L
+  - id: regions_file
+    type:
+      - 'null'
+      - File
+    doc: BED file of regions to include reads (and mates of reads) from
+    inputBinding:
+      position: 101
+      prefix: -L
+  - id: gene
+    type:
+      - 'null'
+      - string
+    doc: Extract region of given gene
+    inputBinding:
+      position: 101
+      prefix: -gene
+  - id: filter
+    type:
+      - 'null'
+      - string
+    doc: Filter using specified groovy expression
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: shard
+    type:
+      - 'null'
+      - string
+    doc: 'Sharding factor: format <n>,<N>: output only reads belonging to shard n of N'
+    inputBinding:
+      position: 101
+      prefix: -s
   - id: fastq_output_path
-    type: string
-    doc: Output or path parameter `fastq_output_path`
+    type:
+      - 'null'
+      - string
+    doc: Output file (interleaved FASTQ)
     inputBinding:
       position: 102
-      prefix: --fastq-output
+      prefix: -o
+  - id: r1_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output for R1 if extracting FASTQ in separate files
+    inputBinding:
+      position: 102
+      prefix: -r1
+  - id: r2_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output for R2 if extracting FASTQ in separate files
+    inputBinding:
+      position: 102
+      prefix: -r2
 outputs:
   - id: fastq_output
     type:
       - 'null'
       - File
-    doc: Output FASTQ file (if not specified, outputs to stdout)
+    doc: Interleaved FASTQ output file
     outputBinding:
       glob: $(inputs.fastq_output_path)
+  - id: r1_output
+    type:
+      - 'null'
+      - File
+    doc: R1 FASTQ output file
+    outputBinding:
+      glob: $(inputs.r1_output_path)
+  - id: r2_output
+    type:
+      - 'null'
+      - File
+    doc: R2 FASTQ output file
+    outputBinding:
+      glob: $(inputs.r2_output_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

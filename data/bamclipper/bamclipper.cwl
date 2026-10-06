@@ -23,13 +23,15 @@ inputs:
       prefix: -g
   - id: input_bam
     type: File
-    doc: Input BAM file to be clipped
+    doc: Input BAM file to be clipped (indexed; the .bai must sit beside it)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -b
   - id: primer_bed
     type: File
-    doc: BED file containing primer locations
+    doc: BEDPE file containing primer pair locations
     inputBinding:
       position: 101
       prefix: -p
@@ -58,10 +60,16 @@ inputs:
       position: 101
       prefix: -u
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: clipped_bam
+    type: File
+    doc: Primer-clipped, coordinate-sorted BAM (<input>.primerclipped.bam) with
+      its index
+    secondaryFiles:
+      - .bai
+    outputBinding:
+      glob: $(inputs.input_bam.basename.replace(/\.bam$/, '')).primerclipped.bam
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamclipper:1.0.0--pl526_0
-stdout: bamclipper.out

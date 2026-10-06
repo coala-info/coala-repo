@@ -1,27 +1,35 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nrmse
+baseCommand: [bart, nrmse]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_nrmse
 doc: "Output normalized root mean square error (NRMSE), i.e. norm(input - ref) / norm(ref)\n\
-  \nTool homepage: https://github.com/tomdstanton/bart"
+  \nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: reference
-    type: string
+    type: File
     doc: reference
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: input
-    type: string
+    type: File
     doc: input
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: automatic_scaling
     type:
       - 'null'
       - boolean
     doc: automatic (complex) scaling
     inputBinding:
-      position: 103
+      position: 1
       prefix: -s
   - id: eps
     type:
@@ -29,7 +37,7 @@ inputs:
       - float
     doc: compare to eps
     inputBinding:
-      position: 103
+      position: 1
       prefix: -t
 outputs:
   - id: stdout

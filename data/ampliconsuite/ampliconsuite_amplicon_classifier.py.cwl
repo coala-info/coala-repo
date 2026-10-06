@@ -166,6 +166,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose_classification
+  - id: aa_data_repo
+    type:
+      - 'null'
+      - Directory
+    doc: AmpliconArchitect data repository folder (holds <ref>/file_list.txt and
+      the reference files); exported as $AA_DATA_REPO. The tool stops without it.
   - id: output_prefix_path
     type: string
     doc: Output filename prefix
@@ -176,12 +182,17 @@ outputs:
   - id: output_prefix
     type:
       type: array
-      items: File
-    doc: Output filename prefix
+      items:
+        - File
+        - Directory
+    doc: Files and folders written with the output prefix
     outputBinding:
       glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      AA_DATA_REPO: "$(inputs.aa_data_repo ? inputs.aa_data_repo.path : '')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ampliconsuite:1.5.0--pyhdfd78af_0

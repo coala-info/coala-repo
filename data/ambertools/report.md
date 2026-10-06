@@ -1,5 +1,13 @@
 # ambertools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ambertools_MMPBSA.py | Failed | image problem: MMPBSA.py crashes at start because AMBERHOME is not set in the image (works only with extra environment set by hand). |
+| ambertools_ante-MMPBSA.py | Failed | image problem: ante-MMPBSA.py stops with 'AMBERHOME is not set' because the image does not set AMBERHOME (works only with extra environment set by hand). |
+| ambertools_reduce | PASS |  |
+
 ## ambertools_reduce
 
 ### Tool Description

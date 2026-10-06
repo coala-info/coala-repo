@@ -12,6 +12,11 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input VCF/BCF files to concatenate
     inputBinding:
       position: 1

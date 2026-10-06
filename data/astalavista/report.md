@@ -1,5 +1,17 @@
 # astalavista CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| astalavista_asta | PASS |  |
+| astalavista_astafunk | Not completed | With real chr21 GTF, genome and Pfam HMMs the exhaustive search throws NullPointerException for every gene and reports no hits, and heuristic mode needs a reference domain file that is not available. |
+| astalavista_astalavista | Failed | not a usable tool: wraps only the Flux launcher's general options and a --tool string, with no data inputs or outputs; the real tools are wrapped in the other astalavista files. |
+| astalavista_scorer | Not completed | Runs on chr21 with the GeneID human3iso parameter file, but every donor site scores about -10000 even with canonical GT motifs, so the scores cannot be confirmed (the parameter file may not match this old parser). |
+| astalavista_sortbed | PASS |  |
+| astalavista_sortgtf | PASS |  |
+| astalavista_subsetter | PASS |  |
+
 ## astalavista_astalavista
 
 ### Tool Description

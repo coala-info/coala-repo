@@ -42,7 +42,7 @@ inputs:
   - id: fossils
     type:
       - 'null'
-      - string
+      - File
     doc: Fossils data (to clamp the node ages)
     inputBinding:
       position: 102
@@ -50,7 +50,7 @@ inputs:
   - id: traitsfile
     type:
       - 'null'
-      - string
+      - File
     doc: Traits file for taxon at the leaves
     inputBinding:
       position: 102

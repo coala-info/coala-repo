@@ -125,8 +125,8 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: List of aviary output files.
+        items: Directory
+    doc: Aviary assemble and recover folders produced by the coassemble subcommand.
     inputBinding:
       position: 101
       prefix: --aviary-outputs
@@ -198,24 +198,24 @@ inputs:
   - id: coassemble_binned
     type:
       - 'null'
-      - string
-    doc: Output file for binned coassembly results.
+      - File
+    doc: SingleM appraise binned table from a previous Bin Chicken coassemble run (alternative to --coassemble-output).
     inputBinding:
       position: 101
       prefix: --coassemble-binned
   - id: coassemble_output
     type:
       - 'null'
-      - string
-    doc: Output directory for coassembly.
+      - Directory
+    doc: Results folder of a previous Bin Chicken coassemble run.
     inputBinding:
       position: 101
       prefix: --coassemble-output
   - id: coassemble_unbinned
     type:
       - 'null'
-      - string
-    doc: Output file for unbinned coassembly results.
+      - File
+    doc: SingleM appraise unbinned table from a previous Bin Chicken coassemble run (alternative to --coassemble-output).
     inputBinding:
       position: 101
       prefix: --coassemble-unbinned
@@ -656,7 +656,7 @@ inputs:
   - id: singlem_metapackage
     type:
       - 'null'
-      - File
+      - Directory
     doc: Metapackage file for singlem analysis.
     inputBinding:
       position: 101
@@ -738,27 +738,6 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output_path)
-  - id: coassemble_binned_out
-    type:
-      - 'null'
-      - File
-    doc: Output file for binned coassembly results.
-    outputBinding:
-      glob: $(inputs.coassemble_binned)
-  - id: coassemble_unbinned_out
-    type:
-      - 'null'
-      - File
-    doc: Output file for unbinned coassembly results.
-    outputBinding:
-      glob: $(inputs.coassemble_unbinned)
-  - id: coassemble_output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory for coassembly.
-    outputBinding:
-      glob: $(inputs.coassemble_output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

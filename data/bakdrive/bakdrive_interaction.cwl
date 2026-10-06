@@ -12,6 +12,13 @@ inputs:
     doc: Input file of a list of taxonomic classification file addresses
     inputBinding:
       position: 1
+  - id: taxa_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in input_file. They are staged in the working directory, so
+      input_file must list them by base name.
   - id: flag
     type:
       - 'null'
@@ -59,6 +66,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.taxa_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bakdrive:1.0.4--hdfd78af_0

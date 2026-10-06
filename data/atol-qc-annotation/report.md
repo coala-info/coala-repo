@@ -1,5 +1,11 @@
 # atol-qc-annotation CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atol-qc-annotation | Not completed | Needs an OMAmer database (several GB), an ete3 NCBI taxonomy sqlite and a BUSCO lineage set, too large for this test. |
+
 ## atol-qc-annotation
 
 ### Tool Description

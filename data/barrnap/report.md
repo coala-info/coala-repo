@@ -1,5 +1,11 @@
 # barrnap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| barrnap | PASS |  |
+
 ## barrnap
 
 ### Tool Description

@@ -1,24 +1,32 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bart_estshift
+baseCommand: [bart, estshift]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_estshift
-doc: "Estimate shift in spectral data\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Estimate shift in spectral data\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: flags
     type: string
     doc: Flags for the estimation
     inputBinding:
-      position: 1
+      position: 10
   - id: arg1
-    type: string
+    type: File
     doc: First argument
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: arg2
-    type: string
+    type: File
     doc: Second argument
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 3
+      position: 12
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
 outputs:
   - id: stdout
     type: stdout

@@ -1,5 +1,11 @@
 # attotree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| attotree | PASS |  |
+
 ## attotree
 
 ### Tool Description

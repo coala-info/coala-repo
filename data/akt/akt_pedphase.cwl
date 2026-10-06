@@ -48,7 +48,7 @@ inputs:
     doc: output file name [stdout]
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

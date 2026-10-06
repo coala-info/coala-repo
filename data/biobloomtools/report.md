@@ -1,5 +1,12 @@
 # biobloomtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biobloomtools_biobloomcategorizer | PASS |  |
+| biobloomtools_biobloommaker | PASS |  |
+
 ## biobloomtools
 
 ### Tool Description

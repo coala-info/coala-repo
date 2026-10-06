@@ -1,5 +1,35 @@
 # augur CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| augur_align | PASS |  |
+| augur_ancestral | PASS |  |
+| augur_clades | PASS |  |
+| augur_curate | Failed | not a usable tool: wraps only the 'augur curate' command group (subcommand string, no data inputs or outputs). |
+| augur_distance | PASS |  |
+| augur_export | Failed | not a usable tool: wraps only the 'augur export' command group (subcommand string, no data inputs or outputs). |
+| augur_filter | PASS |  |
+| augur_frequencies | PASS |  |
+| augur_import | Failed | not a usable tool: wraps only the 'augur import' command group (subcommand string, no data inputs or outputs). |
+| augur_index | PASS |  |
+| augur_lbi | PASS |  |
+| augur_mask | PASS |  |
+| augur_measurements | Failed | not a usable tool: wraps only the 'augur measurements' command group (subcommand string, no data inputs or outputs). |
+| augur_merge | PASS |  |
+| augur_parse | PASS |  |
+| augur_read-file | PASS |  |
+| augur_reconstruct-sequences | PASS |  |
+| augur_refine | PASS |  |
+| augur_sequence-traits | PASS |  |
+| augur_subsample | PASS |  |
+| augur_titers | Failed | not a usable tool: wraps only the 'augur titers' command group (subcommand string, no data inputs or outputs). |
+| augur_traits | PASS |  |
+| augur_translate | PASS |  |
+| augur_tree | PASS |  |
+| augur_write-file | PASS |  |
+
 ## augur_parse
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # berokka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| berokka | PASS |  |
+
 ## berokka
 
 ### Tool Description

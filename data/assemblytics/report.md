@@ -1,5 +1,11 @@
 # assemblytics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| assemblytics | Failed | image problem: Assemblytics_between_alignments.pl uses /usr/bin/perl, which is missing in the image, so between-alignment variants are silently lost (1 of 43 expected yeast SVs). |
+
 ## assemblytics
 
 ### Tool Description

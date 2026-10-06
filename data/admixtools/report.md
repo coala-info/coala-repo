@@ -1,5 +1,17 @@
 # admixtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| admixtools_convertf | PASS |  |
+| admixtools_qp3Pop | PASS |  |
+| admixtools_qpAdm | PASS |  |
+| admixtools_qpDstat | PASS |  |
+| admixtools_qpGraph | PASS |  |
+| admixtools_qpWave | PASS |  |
+| admixtools_qpfstats | PASS |  |
+
 ## admixtools_convertf
 
 ### Tool Description

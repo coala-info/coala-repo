@@ -1,25 +1,33 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: invert
+baseCommand: [bart, invert]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_invert
 doc: "Invert array (1 / <input>). The output is set to zero in case of divide by zero.\n\
-  \nTool homepage: https://github.com/tomdstanton/bart"
+  \nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: input
-    type: string
+    type: File
     doc: Input array
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: output
     type: string
     doc: Output array
     inputBinding:
-      position: 2
+      position: 11
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Array written as output.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.output).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_invert.out

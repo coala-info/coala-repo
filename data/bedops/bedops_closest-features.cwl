@@ -13,15 +13,13 @@ inputs:
     doc: Input file in BED or Starch format (must be sorted per sort-bed; '-' 
       for stdin BED only)
     inputBinding:
-      position: 1
+      position: 201
   - id: query_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Query file in BED or Starch format (must be sorted per sort-bed; '-' 
       for stdin BED only)
     inputBinding:
-      position: 2
+      position: 202
   - id: chrom
     type:
       - 'null'

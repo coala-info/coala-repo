@@ -60,6 +60,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: forward_trimmed
+    type: File
+    doc: Trimmed forward reads (gzipped FASTQ), written as <basename>.trimmed.fastq.gz
+    outputBinding:
+      glob: $(inputs.forward.basename.replace(/\.f(ast)?q(\.gz)?$/, '').replace(/\.gz$/, '')).trimmed.fastq.gz
+  - id: reverse_trimmed
+    type: File
+    doc: Trimmed reverse reads (gzipped FASTQ), written as <basename>.trimmed.fastq.gz
+    outputBinding:
+      glob: $(inputs.reverse.basename.replace(/\.f(ast)?q(\.gz)?$/, '').replace(/\.gz$/, '')).trimmed.fastq.gz
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.forward)
+      - $(inputs.reverse)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atactk:0.1.9--pyh3252c3a_0

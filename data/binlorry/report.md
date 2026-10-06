@@ -1,5 +1,11 @@
 # binlorry CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| binlorry | PASS |  |
+
 ## binlorry
 
 ### Tool Description

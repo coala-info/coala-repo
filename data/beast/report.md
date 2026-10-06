@@ -1,5 +1,11 @@
 # beast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| beast | PASS |  |
+
 ## beast
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # addeam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| addeam_addeam-bam2prof.py | PASS |  |
+| addeam_addeam-cluster.py | PASS |  |
+| addeam_samtools | Failed | Junk file: samtools is a dependency inside the addeam image, not an AdDeam tool. |
+
 ## addeam_samtools
 
 ### Tool Description

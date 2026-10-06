@@ -8,6 +8,11 @@ doc: Annotate and edit VCF/BCF files.
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input VCF/BCF file
     inputBinding:
       position: 1
@@ -15,6 +20,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: 'VCF file or tabix-indexed FILE with annotations: CHR\tPOS[\tVALUE]+'
     inputBinding:
       position: 102
@@ -107,7 +117,9 @@ inputs:
       position: 102
       prefix: --merge-logic
   - id: min_overlap
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Required overlap as a fraction of variant in the -a file (ANN), the VCF
       (:VCF), or reciprocal (ANN:VCF)
     inputBinding:

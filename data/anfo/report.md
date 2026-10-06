@@ -1,5 +1,11 @@
 # anfo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anfo | Failed | image problem: anfo aborts with a protobuf CHECK failure whenever an index is given, so no read is aligned (SARS-CoV-2 genome, index and reads built in the image); the CWL also passes genome and index as paths, but anfo looks them up by name in ANFO_PATH. |
+
 ## anfo
 
 ### Tool Description

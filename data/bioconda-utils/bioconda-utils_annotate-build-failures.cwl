@@ -9,10 +9,12 @@ inputs:
   - id: recipes
     type:
       type: array
-      items: string
-    doc: Paths to recipes that shall be skiplisted
+      items: Directory
+    doc: Recipe folders that shall be skiplisted (staged writable; the 
+      build_failure.<platform>.yaml record is written inside each folder)
     inputBinding:
       position: 1
+      valueFrom: '$(self.map(function(d){ return d.basename; }))'
   - id: category
     type:
       - 'null'
@@ -60,9 +62,22 @@ inputs:
       position: 102
       prefix: --skiplist
 outputs:
+  - id: annotated_recipes
+    type:
+      type: array
+      items: Directory
+    doc: Recipe folders with their build failure records
+    outputBinding:
+      glob: '$(inputs.recipes.map(function(d){ return d.basename; }))'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.recipes)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconda-utils:4.0.0--pyhdfd78af_0

@@ -1,5 +1,16 @@
 # biobambam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biobambam_bamauxmerge | PASS |  |
+| biobambam_bammarkduplicatesopt | PASS |  |
+| biobambam_bamsormadup | PASS |  |
+| biobambam_bamsort | PASS |  |
+| biobambam_bamtofastq | PASS |  |
+| biobambam_bamvalidate | PASS |  |
+
 ## biobambam_bammarkduplicatesopt
 
 ### Tool Description

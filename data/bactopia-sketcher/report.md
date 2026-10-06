@@ -1,5 +1,11 @@
 # bactopia-sketcher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bactopia-sketcher_sketch | Failed | not a usable tool: wraps sourmash sketch dna, a dependency inside the image, not the package's bactopia-sketcher program. |
+
 ## bactopia-sketcher_sketch
 
 ### Tool Description

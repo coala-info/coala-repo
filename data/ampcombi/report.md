@@ -1,5 +1,14 @@
 # ampcombi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ampcombi_cluster | PASS |  |
+| ampcombi_complete | PASS |  |
+| ampcombi_parse_tables | PASS |  |
+| ampcombi_signal_peptide | Not completed | signal_peptide needs the SignalP 6 model files, which require a DTU academic licence to download. |
+
 ## ampcombi_parse_tables
 
 ### Tool Description

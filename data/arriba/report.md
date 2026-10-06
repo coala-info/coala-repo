@@ -1,5 +1,11 @@
 # arriba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arriba_draw_fusions.r | PASS |  |
+
 ## arriba
 
 ### Tool Description

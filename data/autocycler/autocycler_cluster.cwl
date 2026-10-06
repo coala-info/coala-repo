@@ -48,6 +48,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: autocycler_dir_out
+    type: Directory
+    doc: Autocycler directory with the new clustering/ folder (cluster directories with 1_untrimmed.gfa)
+    outputBinding:
+      glob: $(inputs.autocycler_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.autocycler_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

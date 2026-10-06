@@ -1,5 +1,11 @@
 # apu-label-propagation CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| apu-label-propagation | PASS |  |
+
 ## apu-label-propagation
 
 ### Tool Description

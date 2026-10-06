@@ -2,6 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: /usr/local/bin/get_experiment_data.R
 label: atlas-data-import_get_experiment_data.R
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 doc: "Downloads data from the ArrayExpress database.\n\nTool homepage: https://github.com/ebi-gene-expression-group/atlas-data-import"
 inputs:
   - id: accession_code
@@ -21,7 +25,7 @@ inputs:
   - id: exp_data_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output name for expression data directory
     inputBinding:
       position: 101
@@ -94,9 +98,7 @@ inputs:
       position: 101
       prefix: --markers-cell-grouping
   - id: matrix_type
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Type of expression data to download. Must be one of 'raw', 'filtered', 
       'TPM' or 'CPM'
     inputBinding:
@@ -131,6 +133,12 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Output directory with the downloaded study data
+    outputBinding:
+      glob: '$(inputs.output_dir_name ? inputs.output_dir_name : inputs.accession_code
+        + "_" + inputs.matrix_type.toUpperCase())'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas-data-import:0.1.1--hdfd78af_0

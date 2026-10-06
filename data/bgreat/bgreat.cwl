@@ -116,8 +116,10 @@ inputs:
       position: 101
       prefix: -c
   - id: paired_read_file
-    type: File
-    doc: read file (paired)
+    type:
+      - 'null'
+      - File
+    doc: read file (paired, interleaved); give this or unpaired_read_file
     inputBinding:
       position: 101
       prefix: -x
@@ -152,8 +154,10 @@ inputs:
       position: 101
       prefix: -g
   - id: unpaired_read_file
-    type: File
-    doc: read file (unpaired)
+    type:
+      - 'null'
+      - File
+    doc: read file (unpaired); give this or paired_read_file
     inputBinding:
       position: 101
       prefix: -u

@@ -14,15 +14,83 @@ inputs:
     doc: The subcommand to execute (distance, histogram, or scatter)
     inputBinding:
       position: 1
-  - id: args
+  - id: vcf
+    type:
+      type: array
+      items: File
+      inputBinding:
+        prefix: --vcf
+    doc: Path(s) to input VCF file(s) (bgzipped, tabix-indexed, with AD in 
+      FORMAT and contig lengths in the header)
+    secondaryFiles:
+      - .tbi
+    inputBinding:
+      position: 102
+  - id: label
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --label
+    doc: Label(s) to VCF file(s), one per VCF
+    inputBinding:
+      position: 102
+  - id: sample
     type:
       - 'null'
       - type: array
         items: string
-    doc: Arguments for the subcommand
+        inputBinding:
+          prefix: --sample
+    doc: Sample name(s) of VCF file(s). If not given, will use first sample in each VCF file
     inputBinding:
-      position: 2
+      position: 102
+  - id: exclude_pattern
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --exclude-pattern
+    doc: Regex pattern(s) to exclude from contig list
+    inputBinding:
+      position: 102
+  - id: output
+    type: string
+    doc: Path to output file (PNG)
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: color_palette
+    type:
+      - 'null'
+      - string
+    doc: The name of a color palette to pass to seaborn.set_palette
+    inputBinding:
+      position: 102
+      prefix: --color-palette
+  - id: dpi
+    type:
+      - 'null'
+      - int
+    doc: 'DPI for output PNGs (default: 300)'
+    inputBinding:
+      position: 102
+      prefix: --dpi
+  - id: kde_only
+    type:
+      - 'null'
+      - boolean
+    doc: Only show kernel density plot (histogram command only)
+    inputBinding:
+      position: 102
+      prefix: --kde-only
 outputs:
+  - id: plot
+    type: File
+    doc: Output plot
+    outputBinding:
+      glob: $(inputs.output)
   - id: stdout
     type: stdout
     doc: Standard output

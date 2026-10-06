@@ -37,6 +37,8 @@ inputs:
       - 'null'
       - File
     doc: BAM file to be visualized
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam-path
@@ -145,6 +147,11 @@ inputs:
       - File
     doc: Path to a VCF file that will be used to highlight all variant position 
       located within the given region
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcf
@@ -191,6 +198,10 @@ inputs:
       position: 107
       prefix: --spec-output
 outputs:
+  - id: plot
+    type: stdout
+    doc: Vega-lite plot specification (or HTML page with --html) written to 
+      stdout
   - id: coverage_output
     type:
       - 'null'
@@ -234,6 +245,7 @@ outputs:
     doc: If present vega-lite specs will be written to the given file path
     outputBinding:
       glob: $(inputs.spec_output_path)
+stdout: "$(inputs.html ? 'alignoth_plot.html' : 'alignoth_plot.vl.json')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

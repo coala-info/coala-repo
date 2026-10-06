@@ -9,6 +9,11 @@ doc: "Alfred replication analysis tool for analyzing replication timing using BA
 inputs:
   - id: g1_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: G1 phase BAM file
     inputBinding:
       position: 1
@@ -16,11 +21,21 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: S phase BAM files (s1.bam, s2.bam, s3.bam, s4.bam)
     inputBinding:
       position: 2
   - id: g2_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: G2 phase BAM file
     inputBinding:
       position: 3

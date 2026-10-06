@@ -1,5 +1,11 @@
 # automappa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| automappa | Not completed | Automappa is an interactive web dashboard that needs running Postgres, Redis and RabbitMQ servers, so it cannot run as a batch job. |
+
 ## automappa
 
 ### Tool Description

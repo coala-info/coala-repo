@@ -1,15 +1,12 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-process_illumina_raw.py
+baseCommand:
+  - amptk
+  - illumina3
 label: amptk_illumina3
 doc: "Script finds barcodes, strips forward and reverse primers, relabels, and then\n\
   trim/pads reads to a set length\n\nTool homepage: https://github.com/nextgenusfs/amptk"
 inputs:
-  - id: input_fastq
-    type: File
-    doc: Illumina FASTQ R1 reads
-    inputBinding:
-      position: 1
   - id: barcode_fasta
     type:
       - 'null'
@@ -45,15 +42,13 @@ inputs:
   - id: cpus
     type:
       - 'null'
-      - string
+      - int
     doc: 'Number of CPUs. Default: auto'
     inputBinding:
       position: 102
       prefix: --cpus
   - id: forward_fastq
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Illumina FASTQ R1 reads
     inputBinding:
       position: 102
@@ -68,9 +63,8 @@ inputs:
       prefix: --fwd_primer
   - id: index_fastq
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Illumina FASTQ index reads
     inputBinding:
       position: 102
@@ -156,9 +150,7 @@ inputs:
       position: 102
       prefix: --rev_primer
   - id: reverse_fastq
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Illumina FASTQ R2 reads
     inputBinding:
       position: 102
@@ -189,7 +181,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_base
     outputBinding:
-      glob: $(inputs.output_base)*
+      glob: $(inputs.output_base).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

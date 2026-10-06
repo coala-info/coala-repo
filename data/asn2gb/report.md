@@ -1,5 +1,11 @@
 # asn2gb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| asn2gb | PASS |  |
+
 ## asn2gb
 
 ### Tool Description

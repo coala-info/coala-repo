@@ -4,8 +4,7 @@ baseCommand:
   - aardvark
   - compare
 label: aardvark_compare
-doc: "Core function for measuring a query VCF relative to a truth VCF\n\nTool homepage:
-  https://github.com/PacificBiosciences/aardvark"
+doc: "Core function for measuring a query VCF relative to a truth VCF\n\nTool homepage: https://github.com/PacificBiosciences/aardvark"
 inputs:
   - id: compare_label
     type:
@@ -51,8 +50,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum branch factor in the query optimizer; limits work on dense 
-      variant regions
+    doc: Maximum branch factor in the query optimizer; limits work on dense variant regions
     inputBinding:
       position: 101
       prefix: --max-branch-factor
@@ -60,8 +58,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum gap (bp) between variants to split into separate 
-      sub-regions
+    doc: The minimum gap (bp) between variants to split into separate sub-regions
     inputBinding:
       position: 101
       prefix: --min-variant-gap
@@ -79,6 +76,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --query-vcf
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
   - id: reference
     type: File
     doc: Reference FASTA file
@@ -88,10 +90,8 @@ inputs:
       position: 101
       prefix: --reference
   - id: regions
-    type:
-      - 'null'
-      - File
-    doc: Confidence regions (BED)
+    type: File
+    doc: Confidence regions (BED). Listed as optional in the help, but aardvark 0.10.4 stops with 'High confidence regions are currently required' without it.
     inputBinding:
       position: 101
       prefix: --regions
@@ -125,11 +125,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --truth-vcf
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101

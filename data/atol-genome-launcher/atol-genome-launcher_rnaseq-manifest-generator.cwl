@@ -15,13 +15,13 @@ inputs:
     inputBinding:
       position: 2
   - id: packages
-    type: string
+    type: File
     doc: Mapped Packages CSV. FIXME. Should be JSON.
     inputBinding:
       position: 102
       prefix: --packages
   - id: resources
-    type: string
+    type: File
     doc: Mapped Resources CSV. FIXME. Should be JSON.
     inputBinding:
       position: 102

@@ -218,9 +218,7 @@ inputs:
       position: 101
       prefix: -w
   - id: output_anchors_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: FILE    output anchors file
     inputBinding:
       position: 102
@@ -235,21 +233,18 @@ inputs:
       position: 103
       prefix: -b
   - id: output_fragmentation_maf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_fragmentation_maf_path`
+    type: string
+    doc: output sequence alignment for each anchor/inter-anchor region in 
+      maf format
     inputBinding:
       position: 104
-      prefix: --output-fragmentation-maf
+      prefix: -f
   - id: output_maf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_maf_path`
+    type: string
+    doc: output file in maf format
     inputBinding:
       position: 105
-      prefix: --output-maf
+      prefix: -o
 outputs:
   - id: output_anchors_file
     type: File

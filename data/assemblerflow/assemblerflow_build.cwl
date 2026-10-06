@@ -83,6 +83,37 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pipeline_nf
+    type:
+      - 'null'
+      - File
+    doc: Nextflow pipeline file written by -o (.nf is added when missing)
+    outputBinding:
+      glob: '*.nf'
+  - id: pipeline_html
+    type:
+      - 'null'
+      - File
+    doc: HTML view of the pipeline DAG
+    outputBinding:
+      glob: '*.html'
+  - id: config_files
+    type:
+      type: array
+      items: File
+    doc: Nextflow configuration files written beside the pipeline
+    outputBinding:
+      glob: '*.config'
+  - id: support_dirs
+    type:
+      type: array
+      items: Directory
+    doc: Pipeline templates, bin and lib folders (absent with --pipeline-only)
+    outputBinding:
+      glob:
+        - templates
+        - bin
+        - lib
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/assemblerflow:1.1.0.post3--py35_1

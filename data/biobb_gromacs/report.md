@@ -1,5 +1,11 @@
 # biobb_gromacs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biobb_gromacs_insert_molecules | Failed | not a usable tool: biobb_gromacs has no insert_molecules program or module in the image or in its source repository. |
+
 ## biobb_gromacs
 
 ### Tool Description

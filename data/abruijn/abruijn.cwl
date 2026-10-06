@@ -9,11 +9,17 @@ inputs:
     doc: path to reads file (FASTA format)
     inputBinding:
       position: 1
+  - id: out_dir
+    type: string
+    default: abruijn_out
+    doc: Output directory.
+    inputBinding:
+      position: 2
   - id: coverage
     type: int
     doc: estimated assembly coverage
     inputBinding:
-      position: 2
+      position: 3
   - id: debug
     type:
       - 'null'
@@ -87,11 +93,16 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
-  - id: out_dir
+  - id: output_dir
     type: Directory
     doc: output directory
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out_dir)'
+  - id: contigs
+    type: File?
+    doc: Assembled contigs (contigs.fasta).
+    outputBinding:
+      glob: $(inputs.out_dir)/contigs.fasta
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abruijn:2.1b--py27_0

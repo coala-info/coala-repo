@@ -1,34 +1,45 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: saxpy
+baseCommand: [bart, saxpy]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_saxpy
-doc: "Multiply input1 with scale factor and add input2.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Multiply input1 with scale factor and add input2.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: scale
     type: string
     doc: scale
     inputBinding:
-      position: 1
+      position: 10
   - id: input1
-    type: string
+    type: File
     doc: input1
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: input2
-    type: string
+    type: File
     doc: input2
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 3
+      position: 12
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: output
     type: string
     doc: output
     inputBinding:
-      position: 4
+      position: 13
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Array written as output.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.output).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_saxpy.out

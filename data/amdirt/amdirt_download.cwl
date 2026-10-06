@@ -46,6 +46,12 @@ outputs:
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return {"class": "Directory", "basename": inputs.output_path, "listing": [],
+        "writable": true}; }'
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

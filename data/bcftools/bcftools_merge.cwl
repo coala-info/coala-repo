@@ -128,7 +128,9 @@ inputs:
     position: 102
     prefix: --missing-to-ref
 - id: no_index
-  type: boolean
+  type:
+    - 'null'
+    - boolean
   doc: |-
     Merge unindexed files, the same chromosomal order is required and -r/-R
     are not allowed

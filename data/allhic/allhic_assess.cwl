@@ -22,9 +22,21 @@ inputs:
     inputBinding:
       position: 3
 outputs:
+  - id: postprob
+    type: File
+    doc: Posterior probability of each contig orientation (<chr>.postprob.txt)
+    outputBinding:
+      glob: $(inputs.chromosome).postprob.txt
+  - id: distribution
+    type: File
+    doc: Link size distribution (<chr>.distribution.txt)
+    outputBinding:
+      glob: $(inputs.chromosome).distribution.txt
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allhic:0.9.14--he881be0_0

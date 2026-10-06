@@ -16,6 +16,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Working directory <input name>.axiome with the Makefile and report
+    outputBinding:
+      glob: $(inputs.input.nameroot).axiome
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/axiome:2.0.4--py27_0

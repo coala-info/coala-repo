@@ -1,5 +1,11 @@
 # behst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| behst | Failed | image problem: project.sh calls sort -V but the image only has BusyBox sort, which has no -V option, so no gene list is made. |
+
 ## behst
 
 ### Tool Description

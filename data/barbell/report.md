@@ -1,5 +1,15 @@
 # barbell CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| barbell_annotate | PASS |  |
+| barbell_filter | PASS |  |
+| barbell_inspect | PASS |  |
+| barbell_kit | PASS |  |
+| barbell_trim | PASS |  |
+
 ## barbell_annotate
 
 ### Tool Description

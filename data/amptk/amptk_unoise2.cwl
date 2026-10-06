@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-unoise2.py
+baseCommand:
+  - amptk
+  - unoise2
 label: amptk_unoise2
 doc: "Script runs UNOISE2 algorithm. Requires USEARCH9 by Robert C. Edgar: http://drive5.com/usearch\n\
   \nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -8,7 +10,7 @@ inputs:
   - id: cpus
     type:
       - 'null'
-      - string
+      - int
     doc: 'Number of CPUs. Default: auto'
     inputBinding:
       position: 101
@@ -87,6 +89,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the output base name (OTU/ASV FASTA, OTU tables, log)
+    outputBinding:
+      glob: $(inputs.out).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

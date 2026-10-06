@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - bcbio-variation-standalone.jar
+baseCommand: bcbio-variation
 label: bcbio-variation
 doc: "The Genome Analysis Toolkit (GATK) v3.2-12-g034abb9\n\nTool homepage: https://github.com/chapmanb/bcbio.variation"
 inputs:
@@ -142,6 +139,9 @@ inputs:
       - 'null'
       - File
     doc: Input file containing sequence data (SAM or BAM)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --input_file
@@ -348,6 +348,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file
     inputBinding:
       position: 101

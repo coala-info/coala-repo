@@ -1,5 +1,11 @@
 # annotwg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| annotwg | PASS |  |
+
 ## annotwg
 
 ### Tool Description

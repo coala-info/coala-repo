@@ -37,10 +37,10 @@ inputs:
       prefix: -x
   - id: output_sequences_path
     type: string
-    doc: Output or path parameter `output_sequences_path`
+    doc: output file of the longest CDS/exon for each gene
     inputBinding:
       position: 102
-      prefix: --output-sequences
+      prefix: -o
 outputs:
   - id: output_sequences
     type: File

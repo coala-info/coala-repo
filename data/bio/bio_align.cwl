@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - align
 label: bio_align
 doc: "Perform sequence alignment\n\nTool homepage: https://github.com/ialbert/bio"
 inputs:
@@ -12,6 +14,14 @@ inputs:
     doc: Input sequences
     inputBinding:
       position: 1
+  - id: sequence_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input FASTA files with the sequences to align
+    inputBinding:
+      position: 2
   - id: extend_penalty
     type:
       - 'null'
@@ -116,22 +126,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: --all
-  - id: output_vcf_path
-    type: string
-    doc: output vcf file
-    inputBinding:
-      position: 103
-      prefix: --vcf
-outputs:
   - id: output_vcf
     type:
       - 'null'
-      - File
+      - boolean
     doc: output vcf file
-    outputBinding:
-      glob: $(inputs.output_vcf_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    inputBinding:
+      position: 102
+      prefix: --vcf
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bio:1.8.1--pyhdfd78af_0
+stdout: bio_align.out

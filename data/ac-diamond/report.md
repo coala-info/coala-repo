@@ -1,5 +1,16 @@
 # ac-diamond CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ac-diamond_align | Failed | image problem: ac-diamond align crashes with a segmentation fault (exit 139) on every real input tried. |
+| ac-diamond_letters | Failed | Junk file: 'letters' is a help word, not an ac-diamond subcommand; the file duplicates the makedb/align/view wrappers. |
+| ac-diamond_makedb | PASS |  |
+| ac-diamond_range | Failed | Junk file: 'range' is a help word, not an ac-diamond subcommand; the file duplicates the makedb/align/view wrappers. |
+| ac-diamond_report | Failed | Junk file: 'report' is a help word, not an ac-diamond subcommand; the file duplicates the makedb/align/view wrappers. |
+| ac-diamond_view | Not completed | No DAA input can be made because ac-diamond align crashes in this image. |
+
 ## ac-diamond_makedb
 
 ### Tool Description

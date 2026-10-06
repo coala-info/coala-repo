@@ -1,5 +1,11 @@
 # admixture CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| admixture | PASS |  |
+
 ## admixture
 
 ### Tool Description

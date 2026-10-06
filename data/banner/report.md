@@ -1,5 +1,12 @@
 # banner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| banner_predict | PASS |  |
+| banner_train | PASS |  |
+
 ## banner_train
 
 ### Tool Description

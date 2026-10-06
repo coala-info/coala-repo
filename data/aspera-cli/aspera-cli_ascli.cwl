@@ -5,6 +5,15 @@ label: aspera-cli_ascli
 doc: "Use Aspera application to perform operations on command line.\n\nTool homepage:
   https://github.com/IBM/aspera-cli"
 inputs:
+  - id: command
+    type:
+      type: array
+      items: string
+    doc: 'Command and its arguments, e.g. [server, browse, /] or [config, echo, hello]
+      (first level commands: alee, aoc, ats, config, console, cos, faspex, faspex5,
+      faspio, httpgw, node, orchestrator, preview, server, shares)'
+    inputBinding:
+      position: 1
   - id: ascp_path
     type:
       - 'null'
@@ -12,7 +21,8 @@ inputs:
     doc: Path to ascp
     inputBinding:
       position: 101
-      prefix: --ascp-path
+      prefix: --ascp-path=
+      separate: false
   - id: ask_options
     type:
       - 'null'
@@ -20,7 +30,8 @@ inputs:
     doc: 'Ask even optional options: [no], yes'
     inputBinding:
       position: 101
-      prefix: --ask-options
+      prefix: --ask-options=
+      separate: false
   - id: bash_comp
     type:
       - 'null'
@@ -36,7 +47,8 @@ inputs:
     doc: 'Bulk operation error handling: no, [yes]'
     inputBinding:
       position: 101
-      prefix: --bfail
+      prefix: --bfail=
+      separate: false
   - id: bulk
     type:
       - 'null'
@@ -44,7 +56,8 @@ inputs:
     doc: 'Bulk operation (only some): [no], yes'
     inputBinding:
       position: 101
-      prefix: --bulk
+      prefix: --bulk=
+      separate: false
   - id: cache_tokens
     type:
       - 'null'
@@ -52,7 +65,8 @@ inputs:
     doc: 'Save and reuse OAuth tokens: no, [yes]'
     inputBinding:
       position: 101
-      prefix: --cache-tokens
+      prefix: --cache-tokens=
+      separate: false
   - id: cert_stores
     type:
       - 'null'
@@ -61,7 +75,9 @@ inputs:
     doc: List of folder with trusted certificates (Array, String)
     inputBinding:
       position: 101
-      prefix: --cert-stores
+      prefix: --cert-stores=
+      separate: false
+      itemSeparator: ','
   - id: clean_temp
     type:
       - 'null'
@@ -69,7 +85,8 @@ inputs:
     doc: 'Cleanup temporary files on exit: no, [yes]'
     inputBinding:
       position: 101
-      prefix: --clean-temp
+      prefix: --clean-temp=
+      separate: false
   - id: config_file
     type:
       - 'null'
@@ -77,7 +94,8 @@ inputs:
     doc: Path to YAML file with preset configuration
     inputBinding:
       position: 101
-      prefix: --config-file
+      prefix: --config-file=
+      separate: false
   - id: default
     type:
       - 'null'
@@ -86,7 +104,8 @@ inputs:
       no, [yes]'
     inputBinding:
       position: 101
-      prefix: --default
+      prefix: --default=
+      separate: false
   - id: display
     type:
       - 'null'
@@ -94,7 +113,8 @@ inputs:
     doc: 'Output only some information: [info], data, error'
     inputBinding:
       position: 101
-      prefix: --display
+      prefix: --display=
+      separate: false
   - id: fields
     type:
       - 'null'
@@ -104,7 +124,8 @@ inputs:
       Proc)'
     inputBinding:
       position: 101
-      prefix: --fields
+      prefix: --fields=
+      separate: false
       itemSeparator: ','
   - id: flat_hash
     type:
@@ -113,7 +134,8 @@ inputs:
     doc: '(Table) Display deep values as additional keys: no, [yes]'
     inputBinding:
       position: 101
-      prefix: --flat-hash
+      prefix: --flat-hash=
+      separate: false
   - id: format
     type:
       - 'null'
@@ -121,7 +143,8 @@ inputs:
     doc: 'Output format: text, nagios, ruby, json, jsonpp, yaml, [table], csv, image'
     inputBinding:
       position: 101
-      prefix: --format
+      prefix: --format=
+      separate: false
   - id: fpac
     type:
       - 'null'
@@ -129,7 +152,8 @@ inputs:
     doc: Proxy auto configuration script
     inputBinding:
       position: 101
-      prefix: --fpac
+      prefix: --fpac=
+      separate: false
   - id: home
     type:
       - 'null'
@@ -137,7 +161,8 @@ inputs:
     doc: Home folder for tool (String)
     inputBinding:
       position: 101
-      prefix: --home
+      prefix: --home=
+      separate: false
   - id: http_options
     type:
       - 'null'
@@ -145,7 +170,8 @@ inputs:
     doc: Options for HTTP/S socket (Hash)
     inputBinding:
       position: 101
-      prefix: --http-options
+      prefix: --http-options=
+      separate: false
   - id: http_proxy
     type:
       - 'null'
@@ -153,7 +179,8 @@ inputs:
     doc: URL for HTTP proxy with optional credentials (String)
     inputBinding:
       position: 101
-      prefix: --http-proxy
+      prefix: --http-proxy=
+      separate: false
   - id: ignore_certificate
     type:
       - 'null'
@@ -162,7 +189,9 @@ inputs:
     doc: Do not validate HTTPS certificate for these URLs (Array)
     inputBinding:
       position: 101
-      prefix: --ignore-certificate
+      prefix: --ignore-certificate=
+      separate: false
+      itemSeparator: ','
   - id: image
     type:
       - 'null'
@@ -170,7 +199,8 @@ inputs:
     doc: Options for image display (Hash)
     inputBinding:
       position: 101
-      prefix: --image
+      prefix: --image=
+      separate: false
   - id: insecure
     type:
       - 'null'
@@ -178,7 +208,8 @@ inputs:
     doc: 'Do not validate any HTTPS certificate: [no], yes'
     inputBinding:
       position: 101
-      prefix: --insecure
+      prefix: --insecure=
+      separate: false
   - id: interactive
     type:
       - 'null'
@@ -186,7 +217,8 @@ inputs:
     doc: 'Use interactive input of missing params: [no], yes'
     inputBinding:
       position: 101
-      prefix: --interactive
+      prefix: --interactive=
+      separate: false
   - id: key_path
     type:
       - 'null'
@@ -194,7 +226,8 @@ inputs:
     doc: 'Wizard: path to private key for JWT'
     inputBinding:
       position: 101
-      prefix: --key-path
+      prefix: --key-path=
+      separate: false
   - id: lock_port
     type:
       - 'null'
@@ -202,7 +235,8 @@ inputs:
     doc: Prevent dual execution of a command, e.g. in cron (Integer)
     inputBinding:
       position: 101
-      prefix: --lock-port
+      prefix: --lock-port=
+      separate: false
   - id: log_level
     type:
       - 'null'
@@ -210,7 +244,8 @@ inputs:
     doc: 'Log level: trace2, trace1, debug, info, [warn], error, fatal, unknown'
     inputBinding:
       position: 101
-      prefix: --log-level
+      prefix: --log-level=
+      separate: false
   - id: log_secrets
     type:
       - 'null'
@@ -218,7 +253,8 @@ inputs:
     doc: 'Show passwords in logs: [no], yes'
     inputBinding:
       position: 101
-      prefix: --log-secrets
+      prefix: --log-secrets=
+      separate: false
   - id: logger
     type:
       - 'null'
@@ -226,7 +262,8 @@ inputs:
     doc: 'Logging method: [stderr], stdout, syslog'
     inputBinding:
       position: 101
-      prefix: --logger
+      prefix: --logger=
+      separate: false
   - id: multi_table
     type:
       - 'null'
@@ -234,7 +271,8 @@ inputs:
     doc: '(Table) Each element of a table are displayed as a table: [no], yes'
     inputBinding:
       position: 101
-      prefix: --multi-table
+      prefix: --multi-table=
+      separate: false
   - id: no_default
     type:
       - 'null'
@@ -250,7 +288,8 @@ inputs:
     doc: Email ERB template for notification of transfers
     inputBinding:
       position: 101
-      prefix: --notify-template
+      prefix: --notify-template=
+      separate: false
   - id: notify_to
     type:
       - 'null'
@@ -258,7 +297,8 @@ inputs:
     doc: Email recipient for notification of transfers
     inputBinding:
       position: 101
-      prefix: --notify-to
+      prefix: --notify-to=
+      separate: false
   - id: once_only
     type:
       - 'null'
@@ -266,7 +306,8 @@ inputs:
     doc: 'Process only new items (some commands): [no], yes'
     inputBinding:
       position: 101
-      prefix: --once-only
+      prefix: --once-only=
+      separate: false
   - id: override
     type:
       - 'null'
@@ -274,7 +315,8 @@ inputs:
     doc: 'Wizard: override existing value: [no], yes'
     inputBinding:
       position: 101
-      prefix: --override
+      prefix: --override=
+      separate: false
   - id: pid_file
     type:
       - 'null'
@@ -282,7 +324,8 @@ inputs:
     doc: Write process identifier to file, delete on exit (String)
     inputBinding:
       position: 101
-      prefix: --pid-file
+      prefix: --pid-file=
+      separate: false
   - id: plugin_folder
     type:
       - 'null'
@@ -290,7 +333,8 @@ inputs:
     doc: Folder where to find additional plugins
     inputBinding:
       position: 101
-      prefix: --plugin-folder
+      prefix: --plugin-folder=
+      separate: false
   - id: preset
     type:
       - 'null'
@@ -298,7 +342,8 @@ inputs:
     doc: Load the named option preset from current config file
     inputBinding:
       position: 101
-      prefix: --presetVALUE
+      prefix: --presetVALUE=
+      separate: false
   - id: progress_bar
     type:
       - 'null'
@@ -306,7 +351,8 @@ inputs:
     doc: 'Display progress bar: [no], yes'
     inputBinding:
       position: 101
-      prefix: --progress-bar
+      prefix: --progress-bar=
+      separate: false
   - id: property
     type:
       - 'null'
@@ -314,7 +360,8 @@ inputs:
     doc: Name of property to set (modify operation)
     inputBinding:
       position: 101
-      prefix: --property
+      prefix: --property=
+      separate: false
   - id: proxy_credentials
     type:
       - 'null'
@@ -323,7 +370,9 @@ inputs:
     doc: 'HTTP proxy credentials for fpac: user, password (Array)'
     inputBinding:
       position: 101
-      prefix: --proxy-credentials
+      prefix: --proxy-credentials=
+      separate: false
+      itemSeparator: ','
   - id: query
     type:
       - 'null'
@@ -331,7 +380,8 @@ inputs:
     doc: Additional filter for for some commands (list/delete) (Hash, Array)
     inputBinding:
       position: 101
-      prefix: --query
+      prefix: --query=
+      separate: false
   - id: sdk_folder
     type:
       - 'null'
@@ -339,7 +389,8 @@ inputs:
     doc: SDK folder path
     inputBinding:
       position: 101
-      prefix: --sdk-folder
+      prefix: --sdk-folder=
+      separate: false
   - id: sdk_url
     type:
       - 'null'
@@ -347,7 +398,8 @@ inputs:
     doc: URL to get SDK
     inputBinding:
       position: 101
-      prefix: --sdk-url
+      prefix: --sdk-url=
+      separate: false
   - id: secret
     type:
       - 'null'
@@ -355,7 +407,8 @@ inputs:
     doc: Secret for access keys
     inputBinding:
       position: 101
-      prefix: --secret
+      prefix: --secret=
+      separate: false
   - id: select
     type:
       - 'null'
@@ -363,7 +416,8 @@ inputs:
     doc: 'Select only some items in lists: column, value (Hash, Proc)'
     inputBinding:
       position: 101
-      prefix: --select
+      prefix: --select=
+      separate: false
   - id: show_config
     type:
       - 'null'
@@ -379,7 +433,8 @@ inputs:
     doc: 'Show secrets on command output: [no], yes'
     inputBinding:
       position: 101
-      prefix: --show-secrets
+      prefix: --show-secrets=
+      separate: false
   - id: silent_insecure
     type:
       - 'null'
@@ -387,7 +442,8 @@ inputs:
     doc: 'Issue a warning if certificate is ignored: no, [yes]'
     inputBinding:
       position: 101
-      prefix: --silent-insecure
+      prefix: --silent-insecure=
+      separate: false
   - id: smtp
     type:
       - 'null'
@@ -395,7 +451,8 @@ inputs:
     doc: SMTP configuration (Hash)
     inputBinding:
       position: 101
-      prefix: --smtp
+      prefix: --smtp=
+      separate: false
   - id: sources
     type:
       - 'null'
@@ -403,7 +460,8 @@ inputs:
     doc: How list of transferred files is provided (@args,@ts,Array)
     inputBinding:
       position: 101
-      prefix: --sources
+      prefix: --sources=
+      separate: false
   - id: src_type
     type:
       - 'null'
@@ -411,7 +469,8 @@ inputs:
     doc: 'Type of file list: [list], pair'
     inputBinding:
       position: 101
-      prefix: --src-type
+      prefix: --src-type=
+      separate: false
   - id: struct_parser
     type:
       - 'null'
@@ -419,7 +478,8 @@ inputs:
     doc: 'Default parser when expected value is a struct: json, ruby'
     inputBinding:
       position: 101
-      prefix: --struct-parser
+      prefix: --struct-parser=
+      separate: false
   - id: table_style
     type:
       - 'null'
@@ -427,7 +487,8 @@ inputs:
     doc: Table display style (Hash)
     inputBinding:
       position: 101
-      prefix: --table-style
+      prefix: --table-style=
+      separate: false
   - id: test_mode
     type:
       - 'null'
@@ -435,7 +496,8 @@ inputs:
     doc: 'Wizard: skip private key check step: [no], yes'
     inputBinding:
       position: 101
-      prefix: --test-mode
+      prefix: --test-mode=
+      separate: false
   - id: to_folder
     type:
       - 'null'
@@ -443,7 +505,8 @@ inputs:
     doc: Destination folder for transferred files
     inputBinding:
       position: 101
-      prefix: --to-folder
+      prefix: --to-folder=
+      separate: false
   - id: transfer
     type:
       - 'null'
@@ -451,7 +514,8 @@ inputs:
     doc: 'Type of transfer agent: trsdk, alpha, httpgw, [direct], node, connect'
     inputBinding:
       position: 101
-      prefix: --transfer
+      prefix: --transfer=
+      separate: false
   - id: transfer_info
     type:
       - 'null'
@@ -459,7 +523,8 @@ inputs:
     doc: Parameters for transfer agent (Hash)
     inputBinding:
       position: 101
-      prefix: --transfer-info
+      prefix: --transfer-info=
+      separate: false
   - id: transpose_single
     type:
       - 'null'
@@ -467,7 +532,8 @@ inputs:
     doc: '(Table) Single object fields output vertically: no, [yes]'
     inputBinding:
       position: 101
-      prefix: --transpose-single
+      prefix: --transpose-single=
+      separate: false
   - id: ts
     type:
       - 'null'
@@ -475,7 +541,8 @@ inputs:
     doc: Override transfer spec values (Hash)
     inputBinding:
       position: 101
-      prefix: --ts
+      prefix: --ts=
+      separate: false
   - id: ui
     type:
       - 'null'
@@ -483,7 +550,8 @@ inputs:
     doc: 'Method to start browser: [text], graphical'
     inputBinding:
       position: 101
-      prefix: --ui
+      prefix: --ui=
+      separate: false
   - id: use_product
     type:
       - 'null'
@@ -491,7 +559,8 @@ inputs:
     doc: Use ascp from specified product
     inputBinding:
       position: 101
-      prefix: --use-product
+      prefix: --use-product=
+      separate: false
   - id: vault
     type:
       - 'null'
@@ -499,7 +568,8 @@ inputs:
     doc: Vault for secrets (Hash)
     inputBinding:
       position: 101
-      prefix: --vault
+      prefix: --vault=
+      separate: false
   - id: vault_password
     type:
       - 'null'
@@ -507,7 +577,8 @@ inputs:
     doc: Vault password
     inputBinding:
       position: 101
-      prefix: --vault-password
+      prefix: --vault-password=
+      separate: false
   - id: version_check_days
     type:
       - 'null'
@@ -515,13 +586,15 @@ inputs:
     doc: Period in days to check new version (zero to disable)
     inputBinding:
       position: 101
-      prefix: --version-check-days
+      prefix: --version-check-days=
+      separate: false
   - id: output_path
     type: string
     doc: Destination for results (String)
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --output=
+      separate: false
 outputs:
   - id: output
     type:

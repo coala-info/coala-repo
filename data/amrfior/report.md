@@ -1,5 +1,11 @@
 # amrfior CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amrfior | PASS |  |
+
 ## amrfior
 
 ### Tool Description

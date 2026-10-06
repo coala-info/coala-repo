@@ -18,9 +18,7 @@ inputs:
       position: 101
       prefix: --url
   - id: input_otu_table
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input OTU table with Taxonomy (via amptk taxonomy)
     inputBinding:
       position: 101

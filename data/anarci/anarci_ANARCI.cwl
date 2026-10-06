@@ -74,6 +74,7 @@ inputs:
   - id: sequence
     type:
       - 'null'
+      - File
       - string
     doc: A sequence or an input fasta file
     inputBinding:
@@ -119,6 +120,14 @@ outputs:
       \       Otherwise not output."
     outputBinding:
       glob: $(inputs.outfile_hits_path)
+  - id: csv_files
+    type:
+      type: array
+      items: File
+    doc: CSV files written with --csv, one per chain type 
+      (<outfile>_<chain_type>.csv)
+    outputBinding:
+      glob: '$(inputs.outfile_path ? inputs.outfile_path + "_*.csv" : [])'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

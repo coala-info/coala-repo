@@ -8,7 +8,7 @@ doc: "Collects sketches from STDIN and classifies them using a RFC\n\nTool homep
   https://www.github.com/will-rowe/banner"
 inputs:
   - id: model
-    type: string
+    type: File
     doc: The model that banner trained
     inputBinding:
       position: 101
@@ -29,6 +29,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: sketches
+    type: File
+    doc: Comma-separated sketch lines (one sketch per line), read from STDIN
 outputs:
   - id: stdout
     type: stdout
@@ -36,4 +39,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/banner:0.0.2--py_0
+stdin: $(inputs.sketches.path)
 stdout: banner_predict.out

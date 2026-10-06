@@ -23,7 +23,8 @@ inputs:
     type: File
     doc: Reference sequence in FASTA format
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --reference

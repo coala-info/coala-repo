@@ -24,6 +24,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: autocycler_dir_out
+    type: Directory
+    doc: Autocycler directory with the new consensus_assembly files
+    outputBinding:
+      glob: $(inputs.autocycler_dir.basename)
+  - id: consensus_assembly_fasta
+    type: File
+    doc: Consensus assembly in FASTA format
+    outputBinding:
+      glob: $(inputs.autocycler_dir.basename)/consensus_assembly.fasta
+  - id: consensus_assembly_gfa
+    type: File
+    doc: Consensus assembly graph in GFA format
+    outputBinding:
+      glob: $(inputs.autocycler_dir.basename)/consensus_assembly.gfa
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.autocycler_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

@@ -1,5 +1,11 @@
 # arcas-hla CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arcas-hla_arcasHLA | Failed | not a usable tool: the CWL wraps only the arcasHLA command group with a subcommand string and has no data inputs or outputs. |
+
 ## arcas-hla_arcasHLA
 
 ### Tool Description

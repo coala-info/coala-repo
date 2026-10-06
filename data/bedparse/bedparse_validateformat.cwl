@@ -1,17 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedparse
+baseCommand:
+  - bedparse
+  - validateFormat
 label: bedparse_validateformat
-doc: "bedparse: error: argument sub-command: invalid choice: 'validateformat' (choose
-  from '3pUTR', '5pUTR', 'cds', 'promoter', 'introns', 'filter', 'join', 'gtf2bed',
-  'bed12tobed6', 'convertChr', 'validateFormat')\n\nTool homepage: https://github.com/tleonardi/bedparse"
+doc: "Checks whether the BED file provided adheres to the BED format specifications.\n\
+  Optionally, it can fix field speration errors.\n\nTool homepage: https://github.com/tleonardi/bedparse"
 inputs:
-  - id: sub_command
-    type: string
-    doc: 'Sub-command to execute. Available choices: 3pUTR, 5pUTR, cds, promoter,
-      introns, filter, join, gtf2bed, bed12tobed6, convertChr, validateFormat'
+  - id: bedfile
+    type:
+      - 'null'
+      - File
+    doc: Path to the BED file.
     inputBinding:
       position: 1
+  - id: fix_separators
+    type:
+      - 'null'
+      - boolean
+    doc: If the fields are separated by multiple spaces (e.g. when copy-pasting 
+      BED files), replace them into tabs.
+    inputBinding:
+      position: 102
+      prefix: --fixSeparators
 outputs:
   - id: stdout
     type: stdout

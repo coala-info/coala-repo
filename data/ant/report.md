@@ -1,5 +1,11 @@
 # ant CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ant | PASS | Synthetic data: a small build.xml ran its target with a -D property and wrote the expected log. |
+
 ## ant
 
 ### Tool Description

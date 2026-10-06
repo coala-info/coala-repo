@@ -1,5 +1,12 @@
 # abritamr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| abritamr_report | PASS |  |
+| abritamr_run | PASS |  |
+
 ## abritamr_run
 
 ### Tool Description

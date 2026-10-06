@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - uniq
 label: bio_uniq
 doc: "\nTool homepage: https://github.com/ialbert/bio"
 inputs:

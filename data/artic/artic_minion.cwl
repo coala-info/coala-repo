@@ -137,6 +137,9 @@ inputs:
       - 'null'
       - File
     doc: Reference sequence for the scheme
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: --ref
@@ -187,6 +190,50 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: consensus
+    type:
+      - 'null'
+      - File
+    doc: Consensus sequence FASTA
+    outputBinding:
+      glob: $(inputs.sample).consensus.fasta
+  - id: pass_vcf
+    type:
+      - 'null'
+      - File
+    doc: Variants that passed filtering
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+    outputBinding:
+      glob: $(inputs.sample).pass.vcf.gz
+  - id: primertrimmed_bam
+    type:
+      - 'null'
+      - File
+    doc: Primer-trimmed, sorted alignments
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    outputBinding:
+      glob: $(inputs.sample).primertrimmed.rg.sorted.bam
+  - id: sample_files
+    type:
+      type: array
+      items: File
+    doc: All files written with the sample name as prefix
+    outputBinding:
+      glob: $(inputs.sample).*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (inputs.ref) {
+          return [{"entry": inputs.ref, "writable": true}];
+        }
+        return [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/artic:1.8.5--pyhdfd78af_0

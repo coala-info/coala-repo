@@ -108,12 +108,18 @@ inputs:
       prefix: --fragment-size-std-dev
   - id: input_mapping
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: 'Input SAM/BAM mapping file. Valid filetypes are: sam and bam.'
     inputBinding:
       position: 101
       prefix: --input-mapping
   - id: input_reference
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: 'Input FASTA file with reference. Valid filetypes are: fa and fasta.'
     inputBinding:
       position: 101
@@ -397,9 +403,7 @@ inputs:
       position: 102
       prefix: --output-debug-dir
   - id: output_fasta_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --output-fasta

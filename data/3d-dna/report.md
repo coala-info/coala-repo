@@ -1,5 +1,11 @@
 # 3d-dna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| 3d-dna | Not completed | no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step |
+
 ## 3d-dna
 
 ### Tool Description

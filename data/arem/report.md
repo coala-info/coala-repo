@@ -1,5 +1,11 @@
 # arem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arem | PASS |  |
+
 ## arem
 
 ### Tool Description

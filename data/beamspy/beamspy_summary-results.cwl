@@ -17,10 +17,12 @@ inputs:
       prefix: --convert-rt
   - id: db
     type: File
-    doc: Sqlite database that contains the results from the previous steps.
+    doc: Sqlite database that contains the results from the previous steps (a summary
+      table is added to it).
     inputBinding:
       position: 101
       prefix: --db
+      valueFrom: $(self.basename)
   - id: intensity_matrix
     type:
       - 'null'
@@ -68,9 +70,8 @@ inputs:
       position: 101
       prefix: --single-row
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: Output file for the summary
     inputBinding:
       position: 102
       prefix: --output
@@ -83,6 +84,11 @@ inputs:
       position: 103
       prefix: --pdf
 outputs:
+  - id: db_out
+    type: File
+    doc: Sqlite database with the added summary table
+    outputBinding:
+      glob: $(inputs.db.basename)
   - id: output
     type: File
     doc: Output file for the summary
@@ -97,6 +103,10 @@ outputs:
       glob: $(inputs.pdf_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beamspy:1.2.0--pyhdfd78af_0

@@ -1,15 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: estdims
+baseCommand: [bart, estdims]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_estdims
 doc: "Estimate image dimension from non-Cartesian trajectory.\nAssume trajectory scaled
-  to -DIM/2 to DIM/2 (ie dk=1/FOV=1)\n\nTool homepage: https://github.com/tomdstanton/bart"
+  to -DIM/2 to DIM/2 (ie dk=1/FOV=1)\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: traj
-    type: string
+    type: File
     doc: Trajectory file
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
 outputs:
   - id: stdout
     type: stdout

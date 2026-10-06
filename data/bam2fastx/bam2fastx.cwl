@@ -1,68 +1,83 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bam2fastx
 label: bam2fastx
-doc: "Convert PacBio BAM files into gzipped fasta and fastq files.\n\nTool homepage:
-  https://github.com/PacificBiosciences/bam2fastx"
+doc: "Convert PacBio BAM and/or DataSet files into gzipped FASTA (bam2fasta) or FASTQ
+  (bam2fastq) files. The package has no bam2fastx command; output_type picks the
+  program.\n\nTool homepage: https://github.com/PacificBiosciences/bam2fastx"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input BAM file (e.g., .subreads.bam or .ccs.bam)
+  - id: output_type
+    type:
+      type: enum
+      symbols:
+        - fasta
+        - fastq
+    default: fastq
+    doc: 'Output format: fasta runs bam2fasta, fastq runs bam2fastq'
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: Input BAM and/or DataSet file(s); a BAM needs its .pbi index beside it
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
     inputBinding:
       position: 1
+  - id: output_prefix_path
+    type: string
+    doc: Prefix of output filenames
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: compression_level
     type:
       - 'null'
       - int
-    doc: Compression level [1-9]
+    doc: Gzip compression level [1-9] [1]
     inputBinding:
       position: 102
       prefix: -c
-  - id: num_threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    inputBinding:
-      position: 102
-      prefix: --num-threads
-  - id: pbi
-    type:
-      - 'null'
-      - boolean
-    doc: Generate PacBio Index (.pbi) file
-    inputBinding:
-      position: 102
-      prefix: --pbi
-  - id: split_barcodes
-    type:
-      - 'null'
-      - boolean
-    doc: Split output files by barcode
-    inputBinding:
-      position: 102
-      prefix: --split-barcodes
   - id: uncompressed
     type:
       - 'null'
       - boolean
-    doc: Output uncompressed files
+    doc: Do not compress. In this case, .gz is not added and -c is ignored.
     inputBinding:
       position: 102
       prefix: -u
-  - id: output_prefix_path
-    type: string
-    doc: Output or path parameter `output_prefix_path`
+  - id: split_barcodes
+    type:
+      - 'null'
+      - boolean
+    doc: Split output into multiple files, by barcode pairs.
     inputBinding:
-      position: 103
-      prefix: --output-prefix
+      position: 102
+      prefix: --split-barcodes
+  - id: seqid_prefix
+    type:
+      - 'null'
+      - string
+    doc: Prefix for sequence IDs in headers
+    inputBinding:
+      position: 102
+      prefix: --seqid-prefix
+  - id: num_threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use, 0 means autodetection. [0]
+    inputBinding:
+      position: 102
+      prefix: --num-threads
+arguments:
+  - position: 0
+    valueFrom: "$(inputs.output_type == 'fasta' ? 'bam2fasta' : 'bam2fastq')"
 outputs:
   - id: output_prefix
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Prefix for output fasta/fastq files
+      type: array
+      items: File
+    doc: Output fasta/fastq files
     outputBinding:
       glob: $(inputs.output_prefix_path)*
 requirements:

@@ -114,7 +114,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.outdir_path)/$(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

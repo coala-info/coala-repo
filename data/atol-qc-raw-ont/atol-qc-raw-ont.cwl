@@ -47,7 +47,7 @@ inputs:
       position: 101
       prefix: --min-length
   - id: stats
-    type: File
+    type: string
     doc: Stats output (json)
     inputBinding:
       position: 101
@@ -80,6 +80,11 @@ outputs:
     doc: Combined output in fastq.gz
     outputBinding:
       glob: $(inputs.out_path)
+  - id: stats_file
+    type: File
+    doc: Stats output (json)
+    outputBinding:
+      glob: $(inputs.stats)
   - id: logs_dir
     type:
       - 'null'

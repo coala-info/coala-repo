@@ -4,6 +4,9 @@ baseCommand: /usr/local/bin/import_classification_data.R
 label: atlas-data-import_import_classification_data.R
 doc: "Imports classifiers for specified dataset accession codes, tools, or species.\n\
   \nTool homepage: https://github.com/ebi-gene-expression-group/atlas-data-import"
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: accession_code
     type:
@@ -16,6 +19,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --accession-code
+      itemSeparator: ','
   - id: classifiers_output_dir
     type:
       - 'null'
@@ -69,22 +73,19 @@ inputs:
     type:
       - 'null'
       - string
+    default: imported_SDRFs
     doc: Output path for imported SDRF files directory
     inputBinding:
       position: 101
       prefix: --sdrf-output-dir
   - id: species
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Which species' classifiers should be imported?
     inputBinding:
       position: 101
       prefix: --species
   - id: tool
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Which tool's classifiers should be imported?
     inputBinding:
       position: 101
@@ -108,6 +109,20 @@ outputs:
     doc: Output path for imported SDRF files directory
     outputBinding:
       glob: $(inputs.sdrf_output_dir)
+  - id: classifiers_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the imported classifiers
+    outputBinding:
+      glob: imported_classifiers
+  - id: tool_perf_table
+    type:
+      - 'null'
+      - File
+    doc: Imported tool performance table
+    outputBinding:
+      glob: '*.tsv'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas-data-import:0.1.1--hdfd78af_0

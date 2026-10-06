@@ -15,18 +15,22 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
+    doc: Path and base name of files to save as tab-separated tables ('[output]_stats.tsv',
+      '[output]_depth.tsv').
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Path and base name of files to save as tab-separated tables 
-      ('[output]_stats.tsv', '[output]_depth.tsv').
+  - id: stats
+    type: File
+    doc: Alignment summary statistics table ('[output]_stats.tsv').
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)_stats.tsv
+  - id: depth
+    type: File
+    doc: Per-position read depth table ('[output]_depth.tsv').
+    outputBinding:
+      glob: $(inputs.output_path)_depth.tsv
 requirements:
   - class: InlineJavascriptRequirement
 hints:

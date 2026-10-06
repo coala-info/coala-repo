@@ -1,5 +1,12 @@
 # assemblyutility CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| assemblyutility_AssemblyStatistics | PASS |  |
+| assemblyutility_SelectLongestReads | PASS |  |
+
 ## assemblyutility
 
 ### Tool Description

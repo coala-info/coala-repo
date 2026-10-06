@@ -6,7 +6,7 @@ doc: "Biosynthetic Gene clusters - Super Linear Clustering Engine\n\nTool homepa
   https://github.com/satriaphd/bigslice"
 inputs:
   - id: output_folder_path
-    type: Directory
+    type: string
     doc: the path to the (newly created or existing) output folder.
     inputBinding:
       position: 1
@@ -171,6 +171,11 @@ inputs:
       position: 103
       prefix: --export-tsv
 outputs:
+  - id: output_folder
+    type: Directory
+    doc: BiG-SLiCE output folder (SQLite database and visualization app)
+    outputBinding:
+      glob: $(inputs.output_folder_path)
   - id: export_tsv
     type:
       - 'null'

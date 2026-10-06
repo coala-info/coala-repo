@@ -1,5 +1,11 @@
 # asqcan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| asqcan | Not completed | The pipeline always downloads the multi-GB NCBI prot.accession2taxid.gz file into HOME before it starts, which needs network and is too large for this test. |
+
 ## asqcan
 
 ### Tool Description

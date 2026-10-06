@@ -6,8 +6,7 @@ doc: "adaptive banded Partial Order Alignment\n\nTool homepage: https://github.c
 inputs:
   - id: input_file
     type: File
-    doc: Input sequences in FASTA/FASTQ format (or a list of files if -l is 
-      used)
+    doc: Input sequences in FASTA/FASTQ format (or a list of files if -l is used)
     inputBinding:
       position: 1
   - id: aln_mode
@@ -22,8 +21,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: 'ambiguous strand mode: try the reverse complement if the current alignment
-      score is too low'
+    doc: 'ambiguous strand mode: try the reverse complement if the current alignment score is too low'
     inputBinding:
       position: 102
       prefix: --amb-strand
@@ -183,8 +181,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'output result mode (0: consensus FASTA, 1: MSA PIR, 2: both, 3: graph GFA,
-      4: graph+consensus GFA, 5: consensus FASTQ)'
+    doc: 'output result mode (0: consensus FASTA, 1: MSA PIR, 2: both, 3: graph GFA, 4: graph+consensus GFA, 5: consensus FASTQ)'
     inputBinding:
       position: 102
       prefix: --result
@@ -208,8 +205,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: take base quality score from FASTQ input file as graph edge weight for 
-      consensus calling
+    doc: take base quality score from FASTQ input file as graph edge weight for consensus calling
     inputBinding:
       position: 102
       prefix: --use-qual-weight
@@ -238,18 +234,15 @@ inputs:
       position: 103
       prefix: --out-pog
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output to FILE [stdout]
     inputBinding:
       position: 104
       prefix: --output
+    default: abpoa_out.fa
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output to FILE
     outputBinding:
       glob: $(inputs.output_path)

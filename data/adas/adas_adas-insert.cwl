@@ -29,6 +29,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: updated_hnsw
+    type: Directory
+    doc: HNSW database directory with the new sequences inserted
+    outputBinding:
+      glob: $(inputs.hnsw.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.hnsw)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/adas:0.1.3--h3ab6199_0

@@ -1,5 +1,11 @@
 # annotsv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| annotsv | Not completed | Needs the AnnotSV annotation database (5.3 GB human, 2.7 GB mouse), which is too large to download here; flags fixed from the help. |
+
 ## annotsv
 
 ### Tool Description

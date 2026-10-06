@@ -9,6 +9,11 @@ inputs:
   - id: input_file
     type: File
     doc: Input vcf/bcf file
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 1
   - id: alg
@@ -72,10 +77,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output vcf format
+    doc: output vcf format (htslib mode letter, e.g. z for compressed VCF, b for
+      BCF)
     inputBinding:
       position: 102
-      prefix: --outputfmt
+      prefix: -O
   - id: regions
     type:
       - 'null'
@@ -111,11 +117,11 @@ inputs:
   - id: svfile
     type:
       - 'null'
-      - File
-    doc: File containing singular values
+      - string
+    doc: Output file name for the singular values
     inputBinding:
       position: 102
-      prefix: --svfile
+      prefix: -F
   - id: targets
     type:
       - 'null'
@@ -141,12 +147,24 @@ inputs:
       position: 102
       prefix: --weight
   - id: output_path
-    type: string
-    doc: output vcf
+    type:
+      - 'null'
+      - string
+    doc: output vcf (site weights / PCA coefficients)
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -o
 outputs:
+  - id: projections
+    type: stdout
+    doc: Principal component projections of each sample
+  - id: singular_values
+    type:
+      - 'null'
+      - File
+    doc: Singular values
+    outputBinding:
+      glob: $(inputs.svfile)
   - id: output
     type:
       - 'null'
@@ -159,3 +177,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/akt:0.3.3--h5ca1c30_7
+stdout: akt_pca.out

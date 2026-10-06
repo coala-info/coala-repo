@@ -23,10 +23,9 @@ inputs:
       position: 101
       prefix: --fasta
   - id: graph
-    type:
-      type: array
-      items: File
-    doc: path(s) to the assembly graph file(s)
+    type: File
+    doc: path to the assembly graph file (only the first --graph is used by 
+      this subcommand)
     inputBinding:
       position: 101
       prefix: --graph
@@ -44,6 +43,11 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.output_path, "listing":
+          []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agtools:1.0.2--py313hdfd78af_0

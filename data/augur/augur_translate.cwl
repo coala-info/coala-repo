@@ -31,8 +31,6 @@ inputs:
   - id: reference_sequence
     type: File
     doc: GenBank or GFF file containing the annotation
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference-sequence
@@ -103,14 +101,15 @@ outputs:
       glob: $(inputs.output_node_data_path)
   - id: alignment_output
     type:
-      - 'null'
-      - File
+      type: array
+      items: File
     doc: "write out translated gene alignments. If a VCF-input, a .vcf or .vcf.gz
       will be output here (depending on file ending). If fasta-input, specify the
       file name like so: 'my_alignment_%GENE.fasta', where '%GENE' will be replaced
       by the name of the gene"
     outputBinding:
-      glob: $(inputs.alignment_output_path)
+      glob: '$(inputs.alignment_output_path ? inputs.alignment_output_path.replace("%GENE",
+        "*") : [])'
   - id: vcf_reference_output
     type:
       - 'null'

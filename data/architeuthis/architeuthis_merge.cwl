@@ -6,6 +6,14 @@ baseCommand:
 label: architeuthis_merge
 doc: "Merge results using architeuthis\n\nTool homepage: https://github.com/cdiener/architeuthis"
 inputs:
+  - id: files
+    type:
+      type: array
+      items: File
+    doc: Kraken2 output, Bracken output or mapping summary files to merge (all 
+      of the same format)
+    inputBinding:
+      position: 1
   - id: db
     type:
       - 'null'

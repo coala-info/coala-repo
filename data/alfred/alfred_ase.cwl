@@ -8,6 +8,11 @@ doc: "Allele-specific expression analysis using alfred\n\nTool homepage: https:/
 inputs:
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input BAM file
     inputBinding:
       position: 1
@@ -61,6 +66,8 @@ inputs:
       prefix: --sample
   - id: vcffile
     type: File
+    secondaryFiles:
+      - .csi
     doc: input (phased) BCF file
     inputBinding:
       position: 102

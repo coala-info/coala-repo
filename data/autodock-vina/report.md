@@ -1,5 +1,11 @@
 # autodock-vina CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| autodock-vina_vina | PASS |  |
+
 ## autodock-vina
 
 ### Tool Description

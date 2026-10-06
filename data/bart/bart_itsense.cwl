@@ -1,38 +1,54 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - bart
-  - itsense
-  - alpha
+baseCommand: [bart, itsense]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_itsense
 doc: "A simplified implementation of iterative sense reconstruction\nwith l2-regularization.\n\
-  \nTool homepage: https://github.com/tomdstanton/bart"
+  \nTool homepage: https://github.com/mrirecon/bart"
 inputs:
+  - id: alpha
+    type: float
+    doc: alpha
+    inputBinding:
+      position: 10
   - id: sensitivities
     type: File
     doc: sensitivities
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: kspace
     type: File
     doc: kspace
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 12
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: pattern
     type: File
     doc: pattern
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 3
+      position: 13
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: image
-    type: File
+    type: string
     doc: image
     inputBinding:
-      position: 4
+      position: 14
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: image_file
+    type: File
+    doc: Array written as image.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.image).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_itsense.out

@@ -1,5 +1,11 @@
 # 10x_bamtofastq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| 10x_bamtofastq | PASS |  |
+
 ## 10x_bamtofastq
 
 ### Tool Description

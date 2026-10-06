@@ -1,5 +1,15 @@
 # binsanity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| binsanity_Binsanity-lc | PASS |  |
+| binsanity_Binsanity-profile | PASS |  |
+| binsanity_Binsanity-refine | PASS |  |
+| binsanity_Binsanity-wf | PASS |  |
+| binsanity_Binsanity2-beta | PASS |  |
+
 ## binsanity_Binsanity-profile
 
 ### Tool Description

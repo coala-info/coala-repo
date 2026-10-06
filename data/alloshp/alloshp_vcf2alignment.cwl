@@ -68,9 +68,7 @@ inputs:
       position: 102
       prefix: -o
   - id: report_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'output report file name, 1-based coordinates    (example: -l vcf.report.log.gz)'
     inputBinding:
       position: 103

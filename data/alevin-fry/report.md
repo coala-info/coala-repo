@@ -1,5 +1,17 @@
 # alevin-fry CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alevin-fry_atac | Failed | not a usable tool: it wraps only the 'atac' command group (a subcommand string, no data inputs or outputs); the atac subcommands (generate-permit-list, sort, collate, deduplicate) have no CWL |
+| alevin-fry_collate | PASS |  |
+| alevin-fry_convert | PASS |  |
+| alevin-fry_generate-permit-list | PASS |  |
+| alevin-fry_infer | PASS |  |
+| alevin-fry_quant | PASS |  |
+| alevin-fry_view | PASS |  |
+
 ## alevin-fry_generate-permit-list
 
 ### Tool Description

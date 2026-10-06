@@ -1,41 +1,47 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccapply
+baseCommand: [bart, ccapply]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_ccapply
-doc: "Apply coil compression forward/inverse operation.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Apply coil compression forward/inverse operation.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: kspace
     type: File
     doc: Input k-space data
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: cc_matrix
     type: File
     doc: Coil compression matrix
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: proj_kspace
-    type: File
+    type: string
     doc: Output projected k-space data
     inputBinding:
-      position: 3
+      position: 12
   - id: espirit_type
     type:
       - 'null'
-      - type: array
-        items: string
+      - boolean
     doc: 'type: ESPIRiT'
     inputBinding:
-      position: 104
+      position: 1
       prefix: -E
   - id: geometric_type
     type:
       - 'null'
-      - type: array
-        items: string
+      - boolean
     doc: 'type: Geometric'
     inputBinding:
-      position: 104
+      position: 1
       prefix: -G
   - id: inverse
     type:
@@ -43,7 +49,7 @@ inputs:
       - boolean
     doc: apply inverse operation
     inputBinding:
-      position: 104
+      position: 1
       prefix: -u
   - id: no_fft
     type:
@@ -51,7 +57,7 @@ inputs:
       - boolean
     doc: don't apply FFT in readout
     inputBinding:
-      position: 104
+      position: 1
       prefix: -t
   - id: num_virtual_channels
     type:
@@ -59,22 +65,24 @@ inputs:
       - int
     doc: perform compression to N virtual channels
     inputBinding:
-      position: 104
+      position: 1
       prefix: -p
   - id: svd_type
     type:
       - 'null'
-      - type: array
-        items: string
+      - boolean
     doc: 'type: SVD'
     inputBinding:
-      position: 104
+      position: 1
       prefix: -S
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: proj_kspace_file
+    type: File
+    doc: Array written as proj_kspace.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.proj_kspace).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_ccapply.out

@@ -31,7 +31,9 @@ inputs:
       position: 102
       prefix: --configfile
   - id: input
-    type: string
+    type:
+      - File
+      - Directory
     doc: Input file/directory
     inputBinding:
       position: 102

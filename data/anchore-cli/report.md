@@ -1,5 +1,21 @@
 # anchore-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anchore-cli_account | Failed | not a usable tool: wraps only the anchore-cli account command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_analysis-archive | Failed | not a usable tool: wraps only the anchore-cli analysis-archive command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_evaluate | Failed | not a usable tool: wraps only the anchore-cli evaluate command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_event | Failed | not a usable tool: wraps only the anchore-cli event command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_image | Failed | not a usable tool: wraps only the anchore-cli image command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_policy | Failed | not a usable tool: wraps only the anchore-cli policy command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_query | Failed | not a usable tool: wraps only the anchore-cli query command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_registry | Failed | not a usable tool: wraps only the anchore-cli registry command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_repo | Failed | not a usable tool: wraps only the anchore-cli repo command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_subscription | Failed | not a usable tool: wraps only the anchore-cli subscription command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+| anchore-cli_system | Failed | not a usable tool: wraps only the anchore-cli system command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server. |
+
 ## anchore-cli_account
 
 ### Tool Description

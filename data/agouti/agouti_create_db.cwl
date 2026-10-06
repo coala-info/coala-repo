@@ -56,6 +56,10 @@ outputs:
     doc: name for the output database
     outputBinding:
       glob: $(inputs.database_path)
+    secondaryFiles:
+      - .attributes_and_features.pickle
+      - .relations
+      - .database.structure.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

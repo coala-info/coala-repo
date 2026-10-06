@@ -10,6 +10,11 @@ doc: Parses VCF or BCF and produces stats which can be plotted using
 inputs:
   - id: input_file_a
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input VCF or BCF file A
     inputBinding:
       position: 1
@@ -17,6 +22,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Optional second input VCF or BCF file B for comparison
     inputBinding:
       position: 2
@@ -81,6 +91,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Faidx indexed reference sequence file to determine INDEL context
     inputBinding:
       position: 103

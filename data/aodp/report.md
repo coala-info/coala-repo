@@ -1,5 +1,11 @@
 # aodp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aodp | PASS |  |
+
 ## aodp
 
 ### Tool Description

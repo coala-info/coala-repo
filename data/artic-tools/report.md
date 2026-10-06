@@ -1,5 +1,14 @@
 # artic-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| artic-tools_align_trim | PASS |  |
+| artic-tools_check_vcf | PASS |  |
+| artic-tools_get_scheme | PASS |  |
+| artic-tools_validate_scheme | PASS |  |
+
 ## artic-tools_align_trim
 
 ### Tool Description

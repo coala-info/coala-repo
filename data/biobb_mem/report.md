@@ -1,5 +1,11 @@
 # biobb_mem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biobb_mem_lipyphilic_flipflop | PASS |  |
+
 ## biobb_mem
 
 ### Tool Description

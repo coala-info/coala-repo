@@ -9,44 +9,59 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Force overwrite of existing output directory
+    doc: Force overwrite existing results directory
     inputBinding:
       position: 101
       prefix: --force
-  - id: input_directory
-    type: Directory
-    doc: Input directory containing assembly files (fasta, fa, fna)
-    inputBinding:
-      position: 101
-      prefix: --input
-  - id: mummer_path
+  - id: typing_only
     type:
       - 'null'
-      - Directory
-    doc: Path to MUMmer binaries
+      - boolean
+    doc: Does agr typing only (skips agr operon extraction and frameshift detection)
+    inputBinding:
+      position: 101
+      prefix: --typing-only
+  - id: mummer
+    type:
+      - 'null'
+      - boolean
+    doc: Uses mummer instead of usearch (May not perform frameshift detection). 
+      usearch is not in the bioconda image, so set this unless typing_only is set.
     inputBinding:
       position: 101
       prefix: --mummer
-  - id: threads
+  - id: databases
     type:
       - 'null'
-      - int
-    doc: Number of threads to use
+      - Directory
+    doc: Path to agrvate_databases (Not required if installed using Conda)
     inputBinding:
       position: 101
-      prefix: --threads
-  - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+      prefix: --databases
+  - id: input
+    type: File
+    doc: Input S. aureus genome in FASTA format
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: --input
 outputs:
   - id: output_directory
     type: Directory
-    doc: Output directory
+    doc: Results directory named <input name without extension>-results
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $(inputs.input.nameroot)-results
+  - id: summary
+    type: File
+    doc: agr typing summary table
+    outputBinding:
+      glob: $(inputs.input.nameroot)-results/$(inputs.input.nameroot)-summary.tab
+  - id: error_report
+    type:
+      - 'null'
+      - File
+    doc: Per-step error report table
+    outputBinding:
+      glob: $(inputs.input.basename)-error-report.tab
 requirements:
   - class: InlineJavascriptRequirement
 hints:

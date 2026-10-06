@@ -1,5 +1,11 @@
 # afragmenter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| afragmenter | PASS |  |
+
 ## afragmenter
 
 ### Tool Description

@@ -13,6 +13,11 @@ hints:
 inputs:
 - id: input_vcf
   type: File
+  secondaryFiles:
+  - pattern: .tbi
+    required: false
+  - pattern: .csi
+    required: false
   doc: Input VCF file
   inputBinding:
     position: 1
@@ -23,7 +28,7 @@ inputs:
     position: 102
     prefix: --custom-tag
 - id: dump_gff
-  type: string
+  type: string?
   doc: Dump the parsed GFF file (for debugging purposes)
   inputBinding:
     position: 102
@@ -36,6 +41,9 @@ inputs:
     prefix: --exclude
 - id: fasta_ref
   type: File
+  secondaryFiles:
+  - pattern: .fai
+    required: false
   doc: Reference file in fasta format
   inputBinding:
     position: 102

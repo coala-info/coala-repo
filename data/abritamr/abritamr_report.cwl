@@ -50,15 +50,22 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The name of the process - will be reflected in the names od the output 
-      files.
+    doc: The name of the process - will be reflected in the names od the output files.
     inputBinding:
       position: 101
       prefix: --sop_name
 outputs:
+  - id: report
+    type: File
+    doc: Report spreadsheet (<runid>_<sop_name>.xlsx).
+    outputBinding:
+      glob: '*.xlsx'
+  - id: log
+    type: File?
+    outputBinding:
+      glob: abritamr.log
   - id: stdout
     type: stdout
-    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abritamr:1.0.20--pyh5707d69_0

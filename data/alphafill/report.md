@@ -1,5 +1,14 @@
 # alphafill CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alphafill_create-index | PASS | Upstream mini PDB-REDO test set (1cbs, 2cbs, 3cbs) gives 3 entity sequences; CWL fixed: --pdb-fasta is an output name, config made required. |
+| alphafill_process | PASS | Upstream test model AF-P29373: first hit 1CBS chain A with retinoic acid (REA) transplanted, as the upstream test expects; CWL fixed: output name and outputs added, config made required. |
+| alphafill_rebuild-db | Failed | not a usable tool: alphafill 2.2.0 has no rebuild-db command (only create-index and process); the file wraps bare alphafill with a command string and no data inputs or outputs. |
+| alphafill_server | Failed | not a usable tool: alphafill 2.2.0 in this image has no server command (only create-index and process); the file wraps bare alphafill with a command string and no data inputs or outputs. |
+
 ## alphafill_server
 
 ### Tool Description

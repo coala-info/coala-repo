@@ -9,8 +9,13 @@ inputs:
   - id: chunks
     type:
       type: array
-      items: string
-    doc: agg chunks to genotype
+      items: File
+    doc: agg chunks to genotype (chunk .bcf files from agg ingest2; the .dpt 
+      depth files and indexes must sit beside them)
+    secondaryFiles:
+      - .csi
+      - ^.dpt
+      - ^.dpt.csi
     inputBinding:
       position: 1
   - id: output_type

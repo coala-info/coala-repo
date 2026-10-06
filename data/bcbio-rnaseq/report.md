@@ -1,5 +1,13 @@
 # bcbio-rnaseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcbio-rnaseq_compare | Failed | image problem: R package 'reshape' is missing, so the caller-comparison step (compare.R plots) fails silently; the DESeq2/edgeR/voom tables themselves match the repo's expected results. |
+| bcbio-rnaseq_simulate | PASS |  |
+| bcbio-rnaseq_summarize | PASS |  |
+
 ## bcbio-rnaseq_compare
 
 ### Tool Description

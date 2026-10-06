@@ -13,6 +13,11 @@ inputs:
       position: 1
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input VCF/BCF file
     inputBinding:
       position: 2
@@ -21,9 +26,10 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Options specific to the plugin
+    doc: Options specific to the plugin (passed after '--')
     inputBinding:
-      position: 3
+      position: 105
+      prefix: --
   - id: exclude
     type:
       - 'null'

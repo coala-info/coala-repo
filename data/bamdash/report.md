@@ -1,5 +1,11 @@
 # bamdash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamdash | PASS |  |
+
 ## bamdash
 
 ### Tool Description

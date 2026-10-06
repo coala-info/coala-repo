@@ -1,5 +1,11 @@
 # bamaddrg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamaddrg | PASS |  |
+
 ## bamaddrg
 
 ### Tool Description

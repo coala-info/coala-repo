@@ -9,6 +9,13 @@ inputs:
     doc: Collection locator, optionally with a file path or prefix.
     inputBinding:
       position: 1
+  - id: destination
+    type:
+      - 'null'
+      - string
+    doc: 'Local file or directory where the data is to be written. Default: stdout.'
+    inputBinding:
+      position: 2
   - id: batch_progress
     type:
       - 'null'
@@ -123,9 +130,9 @@ outputs:
     type:
       - 'null'
       - File
-    doc: 'Local file or directory where the data is to be written. Default: stdout.'
+    doc: Local file written to the destination path.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.destination)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/arvados-python-client:3.2.0--pyh7e72e81_0

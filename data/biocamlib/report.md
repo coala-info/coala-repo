@@ -1,5 +1,13 @@
 # biocamlib CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biocamlib_FASTools | PASS |  |
+| biocamlib_Parallel | PASS |  |
+| biocamlib_RC | PASS |  |
+
 ## biocamlib_RC
 
 ### Tool Description

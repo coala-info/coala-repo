@@ -1,5 +1,11 @@
 # awscli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| awscli_aws | PASS |  |
+
 ## awscli_aws
 
 ### Tool Description

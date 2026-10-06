@@ -1,5 +1,15 @@
 # bifrost-httr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bifrost-httr_compile-model | PASS | Built-in and staged Stan models compile to executables; added the missing executable output. |
+| bifrost-httr_compress-output | PASS | synthetic data: fits of 4 probes compressed into one summary JSON holding all probes and the global PoD. |
+| bifrost-httr_create-report | PASS | synthetic data: MultiQC report ranks the planted responder top (log2 FC 2.92 vs planted 3); added report outputs. |
+| bifrost-httr_prepare-inputs | PASS | synthetic data: 22-sample HTTr meta and counts give a BIFROST input JSON with the expected probes, counts and concentrations. |
+| bifrost-httr_run-analysis | PASS | synthetic data: planted responder probe gets very high CDS and up effect, flat probes very low; fixed --data-files to repeat per file. |
+
 ## bifrost-httr_compile-model
 
 ### Tool Description

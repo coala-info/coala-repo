@@ -10,6 +10,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Read ancestral genome
     inputBinding:
       position: 101
@@ -23,6 +26,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bam
+  - id: bam_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: BAM/CRAM files named in the -bam list file; staged into the working 
+      directory so that the names in the list resolve
   - id: cigstat
     type:
       - 'null'
@@ -179,6 +192,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Read reference genome
     inputBinding:
       position: 101
@@ -200,13 +216,15 @@ inputs:
 outputs:
   - id: out
     type:
-      - 'null'
-      - File
-    doc: Output file prefix
+      type: array
+      items: File
+    doc: Output files written with the -out prefix
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.bam_files ? inputs.bam_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/angsd:0.940--h13024bc_4

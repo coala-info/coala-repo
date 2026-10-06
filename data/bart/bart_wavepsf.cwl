@@ -1,21 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bart_wavepsf
+baseCommand: [bart, wavepsf]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_wavepsf
-doc: "Generate a wave PSF in hybrid space.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Generate a wave PSF in hybrid space.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: output
     type: string
     doc: Output file name
     inputBinding:
-      position: 1
+      position: 10
   - id: adc_dt
     type:
       - 'null'
       - float
     doc: ADC sampling rate in seconds
     inputBinding:
-      position: 102
+      position: 1
       prefix: -t
   - id: adc_t
     type:
@@ -23,7 +25,7 @@ inputs:
       - int
     doc: Readout duration in microseconds.
     inputBinding:
-      position: 102
+      position: 1
       prefix: -a
   - id: cosine_gradient_wave
     type:
@@ -31,7 +33,7 @@ inputs:
       - boolean
     doc: Set to use a cosine gradient wave
     inputBinding:
-      position: 102
+      position: 1
       prefix: -c
   - id: g_max
     type:
@@ -39,7 +41,7 @@ inputs:
       - float
     doc: Maximum gradient amplitude in Gauss/cm
     inputBinding:
-      position: 102
+      position: 1
       prefix: -g
   - id: ncyc
     type:
@@ -47,7 +49,7 @@ inputs:
       - int
     doc: Number of cycles in the gradient wave
     inputBinding:
-      position: 102
+      position: 1
       prefix: -n
   - id: pe_dim
     type:
@@ -55,7 +57,7 @@ inputs:
       - int
     doc: Number of phase encode points
     inputBinding:
-      position: 102
+      position: 1
       prefix: -y
   - id: pe_res
     type:
@@ -63,7 +65,7 @@ inputs:
       - float
     doc: Resolution of phase encode in cm
     inputBinding:
-      position: 102
+      position: 1
       prefix: -r
   - id: ro_dim
     type:
@@ -71,7 +73,7 @@ inputs:
       - int
     doc: Number of readout points
     inputBinding:
-      position: 102
+      position: 1
       prefix: -x
   - id: s_max
     type:
@@ -79,13 +81,16 @@ inputs:
       - float
     doc: Maximum gradient slew rate in Gauss/cm/second
     inputBinding:
-      position: 102
+      position: 1
       prefix: -s
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Array written as output.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.output).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_wavepsf.out

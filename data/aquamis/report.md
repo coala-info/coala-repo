@@ -1,5 +1,11 @@
 # aquamis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aquamis | Not completed | AQUAMIS needs kraken2, mash, taxonkit and ConFindR databases (rMLST access needs a licence), none of which ship in the image; required inputs and the results folder output were fixed. |
+
 ## aquamis
 
 ### Tool Description

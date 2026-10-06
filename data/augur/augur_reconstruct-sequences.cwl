@@ -10,8 +10,7 @@ inputs:
   - id: gene
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: gene to translate (list or file containing list)
     inputBinding:
       position: 101

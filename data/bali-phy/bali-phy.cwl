@@ -137,12 +137,13 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_directory_name_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Name for the output directory to create
+    type: Directory
+    doc: Output directory; bali-phy creates <name>-1 (default name = the input
+      file names joined)
     outputBinding:
-      glob: $(inputs.output_directory_name)
+      glob: $((inputs.output_directory_name || '*') + '-1')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bali-phy:4.1--py314hedd121d_0

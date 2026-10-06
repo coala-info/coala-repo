@@ -1,5 +1,33 @@
 # bcftools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcftools_annotate | PASS |  |
+| bcftools_call | PASS |  |
+| bcftools_cnv | PASS | synthetic data: planted BAF/LRR array VCF; all three planted copy-number segments were called correctly. |
+| bcftools_concat | PASS |  |
+| bcftools_consensus | PASS |  |
+| bcftools_convert | PASS |  |
+| bcftools_csq | PASS |  |
+| bcftools_filter | PASS |  |
+| bcftools_gtcheck | PASS |  |
+| bcftools_head | PASS |  |
+| bcftools_index | PASS |  |
+| bcftools_isec | PASS |  |
+| bcftools_merge | PASS |  |
+| bcftools_mpileup | PASS |  |
+| bcftools_norm | PASS |  |
+| bcftools_plugin | PASS |  |
+| bcftools_polysomy | PASS | synthetic data: planted BAF/LRR array VCF; the trisomic and the normal chromosome got copy numbers 3.00 and 2.00. |
+| bcftools_query | PASS |  |
+| bcftools_reheader | PASS |  |
+| bcftools_roh | PASS |  |
+| bcftools_sort | PASS |  |
+| bcftools_stats | PASS |  |
+| bcftools_view | PASS |  |
+
 ## Runtime validation summary
 
 | Tool | Runtime | Data used | Reason (if fail) |

@@ -1,5 +1,13 @@
 # archer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| archer_launch | Not completed | archer launch starts a long-running gRPC server that uploads reads to an AWS S3 bucket, so it needs AWS credentials and cannot finish as a batch job. |
+| archer_process | Not completed | archer process sends a JSON request from standard input to a running Archer server with AWS S3 access, which a batch test cannot provide. |
+| archer_watch | Not completed | archer watch streams messages from a running Archer server and never ends on its own, so it cannot run as a batch job. |
+
 ## archer_launch
 
 ### Tool Description

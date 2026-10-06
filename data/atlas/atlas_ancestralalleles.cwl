@@ -2,119 +2,75 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - atlas
-  - ancestralalleles
+  - ancestralAlleles
 label: atlas_ancestralalleles
-doc: "Writing FASTA-file with ancestral alleles\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas/wiki/Home"
+doc: "Writing a FASTA file with the ancestral allele of every locus, from an ATLAS alleleCounts file.\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas"
 inputs:
-  - id: input_bam
+  - id: allele_counts
     type: File
-    doc: Input BAM file
+    doc: "Allele counts file from ATLAS alleleCounts (--outFormat withAlleles)."
     inputBinding:
       position: 1
-  - id: ancestral_alleles_file
-    type:
-      - 'null'
-      - File
-    doc: File containing ancestral alleles
+      prefix: --alleleCounts
+  - id: fasta_index
+    type: File
+    doc: "FASTA index (.fai) of the reference genome."
     inputBinding:
-      position: 102
-      prefix: --ancestral-alleles
-  - id: include_ambiguous
-    type:
-      - 'null'
-      - boolean
-    doc: Include ambiguous sites in the output
-    inputBinding:
-      position: 102
-      prefix: --include-ambiguous
-  - id: include_missing
-    type:
-      - 'null'
-      - boolean
-    doc: Include missing sites in the output
-    inputBinding:
-      position: 102
-      prefix: --include-missing
-  - id: max_coverage
+      position: 1
+      prefix: --fastaIndex
+  - id: minor_count_maximum
     type:
       - 'null'
       - int
-    doc: Maximum coverage to call an allele
+    doc: "Maximum minor allele count still accepting the major allele as ancestral."
     inputBinding:
-      position: 102
-      prefix: --max-coverage
-  - id: min_allele_fraction
-    type:
-      - 'null'
-      - float
-    doc: Minimum allele fraction to call an allele
-    inputBinding:
-      position: 102
-      prefix: --min-allele-fraction
-  - id: min_baseq
+      position: 1
+      prefix: --minorCountMaximum
+  - id: total_count_minimum
     type:
       - 'null'
       - int
-    doc: Minimum base quality to consider a base
+    doc: "Minimum total allele count to accept the major allele as ancestral."
     inputBinding:
-      position: 102
-      prefix: --min-baseq
-  - id: min_coverage
+      position: 1
+      prefix: --totalCountMinimum
+  - id: population
     type:
       - 'null'
-      - int
-    doc: Minimum coverage to call an allele
+      - string
+    doc: "Population in the allele counts file to use."
     inputBinding:
-      position: 102
-      prefix: --min-coverage
-  - id: min_mapq
-    type:
-      - 'null'
-      - int
-    doc: Minimum mapping quality to consider a read
-    inputBinding:
-      position: 102
-      prefix: --min-mapq
-  - id: reference_genome
-    type:
-      - 'null'
-      - File
-    doc: Reference genome FASTA file
-    inputBinding:
-      position: 102
-      prefix: --reference
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_fasta_path
+      position: 1
+      prefix: --population
+  - id: out_prefix
     type: string
-    doc: Output or path parameter `output_fasta_path`
+    doc: "Prefix for all output files (ATLAS --out)."
+    default: "atlas_ancestralAlleles"
     inputBinding:
-      position: 103
-      prefix: --output-fasta
+      position: 1
+      prefix: --out
 outputs:
-  - id: output_fasta
+  - id: log
+    type: stdout
+    doc: ATLAS progress report (standard output).
+  - id: ancestral_fasta
+    type: File
+    doc: "FASTA file with ancestral alleles (N where unknown)."
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+    outputBinding:
+      glob: $(inputs.out_prefix).fasta
+  - id: parameters
     type:
       - 'null'
       - File
-    doc: Output FASTA file
+    doc: "Parameters used for the run."
     outputBinding:
-      glob: $(inputs.output_fasta_path)
+      glob: $(inputs.out_prefix).parameters
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas:2.0.1--hadca570_0
+stdout: atlas_ancestralalleles.log

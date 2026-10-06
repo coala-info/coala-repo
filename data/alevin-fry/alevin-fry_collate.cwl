@@ -43,9 +43,20 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: The generate-permit-list directory, now holding the collated RAD file
+      (map.collated.rad) and collate.json
+    outputBinding:
+      glob: $(inputs.input_dir.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alevin-fry:0.11.2--ha6fb395_0

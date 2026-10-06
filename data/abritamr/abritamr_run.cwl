@@ -10,8 +10,7 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Path to amrfinder DB to use
-      /usr/local/lib/python3.14/site-packages/abritamr/db/amrfinderplus/data/2024-07-22.1
+    doc: Path to amrfinder DB to use /usr/local/lib/python3.14/site-packages/abritamr/db/amrfinderplus/data/2024-07-22.1
     inputBinding:
       position: 101
       prefix: --amrfinder_db
@@ -19,9 +18,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Tab-delimited file with sample ID as column 1 and path to assemblies as
-      column 2 OR path to a contig file (used if only doing a single sample - 
-      should provide value for -pfx).
+    doc: Tab-delimited file with sample ID as column 1 and path to assemblies as column 2 OR path to a contig file (used if only doing a single sample - should provide value for -pfx).
     inputBinding:
       position: 101
       prefix: --contigs
@@ -29,9 +26,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Set the minimum identity of matches with amrfinder (0 - 1.0). Defaults 
-      to amrfinder preset, which is 0.9 unless a curated threshold is present 
-      for the gene.
+    doc: Set the minimum identity of matches with amrfinder (0 - 1.0). Defaults to amrfinder preset, which is 0.9 unless a curated threshold is present for the gene.
     inputBinding:
       position: 101
       prefix: --identity
@@ -44,35 +39,38 @@ inputs:
       position: 101
       prefix: --jobs
   - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: If running on a single sample, please provide a prefix for output 
-      directory
+    type: string
+    doc: If running on a single sample, please provide a prefix for output directory
     inputBinding:
       position: 101
       prefix: --prefix
+    default: abritamr
   - id: species
     type:
       - 'null'
       - string
-    doc: Set if you would like to use point mutations, please provide a valid 
-      species. Valid options include Acinetobacter_baumannii, 
-      Burkholderia_cepacia, etc.
+    doc: Set if you would like to use point mutations, please provide a valid species. Valid options include Acinetobacter_baumannii, Burkholderia_cepacia, etc.
     inputBinding:
       position: 101
       prefix: --species
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Output folder named by --prefix.
+    outputBinding:
+      glob: $(inputs.prefix)
+  - id: summary_matches
+    type: File?
+    doc: Genes found, by drug class.
+    outputBinding:
+      glob: $(inputs.prefix)/summary_matches.txt
+  - id: summary_partials
+    type: File?
+    doc: Partial matches.
+    outputBinding:
+      glob: $(inputs.prefix)/summary_partials.txt
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abritamr:1.0.20--pyh5707d69_0

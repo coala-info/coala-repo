@@ -2,16 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: abra2
 label: abra2
-doc: "ABRA2 is a realigner for next generation sequencing data. It uses localized
-  assembly and genetic algorithms to improve the accuracy of indel detection.\n\n\
-  Tool homepage: https://github.com/mozack/abra2"
+doc: "ABRA2 is a realigner for next generation sequencing data. It uses localized assembly and genetic algorithms to improve the accuracy of indel detection.\n\nTool homepage: https://github.com/mozack/abra2"
 inputs:
   - id: amq
     type:
       - 'null'
       - int
-    doc: Set mapq for alignments that map equally well to reference and an ABRA 
-      generated contig. default of -1 disables
+    doc: Set mapq for alignments that map equally well to reference and an ABRA generated contig. default of -1 disables
     inputBinding:
       position: 101
       prefix: --amq
@@ -27,8 +24,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use positional consensus sequence when aligning high quality soft 
-      clipping
+    doc: Use positional consensus sequence when aligning high quality soft clipping
     inputBinding:
       position: 101
       prefix: --cons
@@ -52,8 +48,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If specified, only reprocess regions that contain at least one contig 
-      containing an indel or splice (experimental)
+    doc: If specified, only reprocess regions that contain at least one contig containing an indel or splice (experimental)
     inputBinding:
       position: 101
       prefix: --gc
@@ -77,8 +72,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: VCF containing known (or suspected) variant sites. Very large files 
-      should be avoided.
+    doc: VCF containing known (or suspected) variant sites. Very large files should be avoided.
     inputBinding:
       position: 101
       prefix: --in-vcf
@@ -86,8 +80,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Enable BAM index generation when outputting sorted alignments (may 
-      require additonal memory)
+    doc: Enable BAM index generation when outputting sorted alignments (may require additonal memory)
     inputBinding:
       position: 101
       prefix: --index
@@ -100,6 +93,11 @@ inputs:
       position: 101
       prefix: --in
       itemSeparator: ','
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
   - id: junctions
     type:
       - 'null'
@@ -121,8 +119,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Optional assembly kmer size (delimit with commas if multiple sizes 
-      specified)
+    doc: Optional assembly kmer size (delimit with commas if multiple sizes specified)
     inputBinding:
       position: 101
       prefix: --kmer
@@ -186,8 +183,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Regions containing more reads than this value are not processed. Use -1
-      to disable.
+    doc: Regions containing more reads than this value are not processed. Use -1 to disable.
     inputBinding:
       position: 101
       prefix: --mrr
@@ -195,8 +191,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Max reads to keep in memory per sample during the sort phase. When this
-      value is exceeded, sort spills to disk
+    doc: Max reads to keep in memory per sample during the sort phase. When this value is exceeded, sort spills to disk
     inputBinding:
       position: 101
       prefix: --msr
@@ -204,8 +199,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum base quality for inclusion in assembly. This value is compared 
-      against the sum of base qualities per kmer position
+    doc: Minimum base quality for inclusion in assembly. This value is compared against the sum of base qualities per kmer position
     inputBinding:
       position: 101
       prefix: --mbq
@@ -229,8 +223,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum mapping quality for a read to be used in assembly and be 
-      eligible for realignment
+    doc: Minimum mapping quality for a read to be used in assembly and be eligible for realignment
     inputBinding:
       position: 101
       prefix: --mapq
@@ -246,8 +239,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If specified, do not update alignments for reads that have a complex 
-      indel at the read edge.
+    doc: If specified, do not update alignments for reads that have a complex indel at the read edge.
     inputBinding:
       position: 101
       prefix: --no-edge-ci
@@ -289,8 +281,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Scoring used for contig alignments (match, mismatch_penalty, 
-      gap_open_penalty, gap_extend_penalty)
+    doc: Scoring used for contig alignments (match, mismatch_penalty, gap_open_penalty, gap_extend_penalty)
     inputBinding:
       position: 101
       prefix: --sga
@@ -322,9 +313,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: If no target specified, skip realignment of chromosomes matching 
-      specified regex. 
-      GL.*|hs37d5|chr.*random|chrUn.*|chrEBV|CMV|HBV|HCV.*|HIV.*|KSHV|HTLV.*|MCV|SV40|HPV.*
+    doc: If no target specified, skip realignment of chromosomes matching specified regex. GL.*|hs37d5|chr.*random|chrUn.*|chrEBV|CMV|HBV|HCV.*|HIV.*|KSHV|HTLV.*|MCV|SV40|HPV.*
     inputBinding:
       position: 101
       prefix: --skip
@@ -348,8 +337,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Soft clip contig args [max_contigs, min_base_qual, 
-      frac_high_qual_bases, min_soft_clip_len]
+    doc: Soft clip contig args [max_contigs, min_base_qual, frac_high_qual_bases, min_soft_clip_len]
     inputBinding:
       position: 101
       prefix: --sc
@@ -357,8 +345,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: BED-like file containing target regions with per region kmer sizes in 
-      4th column
+    doc: BED-like file containing target regions with per region kmer sizes in 4th column
     inputBinding:
       position: 101
       prefix: --target-kmers

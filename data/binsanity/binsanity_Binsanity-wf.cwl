@@ -42,8 +42,8 @@ inputs:
   - id: fasta_file
     type:
       - 'null'
-      - File
-    doc: Specify the fasta file containing contigs you want to cluster
+      - string
+    doc: File name of the contig FASTA inside the folder given with -f
     inputBinding:
       position: 101
       prefix: -l
@@ -74,7 +74,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Give a name to the directory BinSanity results will be output in\n     \
       \                       [Default: 'BINSANITY-RESULTS']"
     inputBinding:
@@ -131,6 +131,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: BinSanity results folder
+    outputBinding:
+      glob: "$(inputs.output_directory ? inputs.output_directory : 'BINSANITY-RESULTS')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/binsanity:0.5.4--pyh5e36f6f_0

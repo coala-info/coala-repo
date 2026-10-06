@@ -1,5 +1,11 @@
 # bakrep-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bakrep-cli | PASS |  |
+
 ## bakrep-cli
 
 ### Tool Description

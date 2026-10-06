@@ -1,29 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bitmask
+baseCommand: [bart, bitmask]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_bitmask
-doc: "Convert between a bitmask and set of dimensions.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Convert between a bitmask and set of dimensions.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: dimensions
     type:
       type: array
       items: string
-    doc: set of dimensions
+    doc: Dimensions, or one bitmask when -b is set
     inputBinding:
-      position: 1
-  - id: bitmask
-    type: string
-    doc: bitmask
-    inputBinding:
-      position: 102
-      prefix: -b
+      position: 10
   - id: dimensions_from_bitmask
     type:
       - 'null'
       - boolean
     doc: dimensions from bitmask
     inputBinding:
-      position: 102
+      position: 1
       prefix: -b
 outputs:
   - id: stdout

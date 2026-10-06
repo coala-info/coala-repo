@@ -1,5 +1,11 @@
 # binette CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| binette | PASS |  |
+
 ## binette
 
 ### Tool Description

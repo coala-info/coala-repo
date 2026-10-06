@@ -1,5 +1,23 @@
 # bamtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamtools_convert | PASS |  |
+| bamtools_count | PASS |  |
+| bamtools_coverage | PASS |  |
+| bamtools_filter | PASS |  |
+| bamtools_header | PASS |  |
+| bamtools_index | PASS |  |
+| bamtools_merge | PASS |  |
+| bamtools_random | PASS |  |
+| bamtools_resolve | PASS |  |
+| bamtools_revert | PASS |  |
+| bamtools_sort | PASS |  |
+| bamtools_split | PASS |  |
+| bamtools_stats | PASS |  |
+
 ## bamtools_convert
 
 ### Tool Description

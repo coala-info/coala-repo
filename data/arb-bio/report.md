@@ -1,5 +1,12 @@
 # arb-bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arb-bio_arb | Not completed | arb_ntree is an interactive X11 GUI program and cannot run as a batch job; it also needs ARBHOME, which only the arb wrapper sets. |
+| arb-bio_arb_edit4 | Not completed | arb_edit4 is the interactive X11 sequence editor of ARB and cannot run as a batch job. |
+
 ## arb-bio
 
 ### Tool Description

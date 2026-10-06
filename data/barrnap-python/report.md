@@ -1,5 +1,11 @@
 # barrnap-python CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| barrnap-python_barrnap | Failed | not a usable tool: wraps the perl barrnap dependency with inputs taken from log lines and no flags; the package's own barrnap.py also fails in this image because it cannot find the bac.hmm database (image problem). |
+
 ## barrnap-python_barrnap
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # bactopia-qc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bactopia-qc | Failed | not a usable tool: wraps the bare java interpreter with a free main-class string and invented --output-r1 flags; the in=/in2= options belong to BBTools repair.sh, a dependency in the image. |
+
 ## bactopia-qc
 
 ### Tool Description

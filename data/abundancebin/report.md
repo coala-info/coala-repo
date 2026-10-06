@@ -1,5 +1,11 @@
 # abundancebin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| abundancebin | PASS |  |
+
 ## abundancebin
 
 ### Tool Description

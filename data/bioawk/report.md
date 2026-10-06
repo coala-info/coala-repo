@@ -1,5 +1,11 @@
 # bioawk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioawk | PASS |  |
+
 ## bioawk
 
 ### Tool Description

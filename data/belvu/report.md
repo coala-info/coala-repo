@@ -1,5 +1,11 @@
 # belvu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| belvu | PASS |  |
+
 ## belvu
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # bicseq2-seg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bicseq2-seg | PASS | synthetic data: planted 2x gain in normalized bins found exactly (log2 ratio 1.0); CWL rewritten to the real command NBICseq-seg.pl. |
+
 ## bicseq2-seg
 
 ### Tool Description

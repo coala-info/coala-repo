@@ -24,10 +24,9 @@ inputs:
       position: 101
       prefix: --compress
   - id: daa
-    type:
-      - 'null'
-      - File
-    doc: AC-DIAMOND alignment archive (DAA) file
+    type: string
+    doc: AC-DIAMOND alignment archive (DAA) output path, without the .daa 
+      extension
     inputBinding:
       position: 101
       prefix: --daa
@@ -241,10 +240,11 @@ inputs:
       position: 101
       prefix: --xdrop
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: daa_file
+    type: File
+    doc: AC-DIAMOND alignment archive (DAA) file
+    outputBinding:
+      glob: $(inputs.daa).daa
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ac-diamond:1.0--boost1.64_0
-stdout: ac-diamond_align.out

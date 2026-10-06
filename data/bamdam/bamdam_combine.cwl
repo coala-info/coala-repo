@@ -9,14 +9,17 @@ doc: "Combine multiple bamdam compute output TSV files into a single file.\n\nTo
 inputs:
   - id: in_tsv
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: List of input tsv file(s)
     inputBinding:
       position: 101
       prefix: --in_tsv
   - id: in_tsv_list
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to a text file containing paths to input tsv files, one per line
     inputBinding:
       position: 101

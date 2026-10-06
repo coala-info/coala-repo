@@ -1,5 +1,11 @@
 # amplicon_coverage_plot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amplicon_coverage_plot_amplicov | PASS |  |
+
 ## amplicon_coverage_plot
 
 ### Tool Description

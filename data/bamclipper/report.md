@@ -1,5 +1,11 @@
 # bamclipper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamclipper | PASS |  |
+
 ## bamclipper
 
 ### Tool Description

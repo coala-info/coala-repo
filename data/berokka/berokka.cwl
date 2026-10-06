@@ -6,7 +6,7 @@ doc: "Trim and clean prokaryotic gene overlaps\n\nTool homepage: https://github.
 inputs:
   - id: input_contigs
     type: File
-    doc: Input contigs in FASTA format
+    doc: Input long read assembly contigs in FASTA format (e.g. canu.contigs.fasta)
     inputBinding:
       position: 1
   - id: force
@@ -17,14 +17,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: --force
-  - id: minlen
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Debug info.
+    inputBinding:
+      position: 102
+      prefix: --debug
+  - id: readlen
     type:
       - 'null'
       - int
-    doc: Minimum length of contig to keep
+    doc: Approximate max read length [60000].
     inputBinding:
       position: 102
-      prefix: --minlen
+      prefix: --readlen
+  - id: fuzz
+    type:
+      - 'null'
+      - int
+    doc: Accept local alignment within --fuzz bp of global [5].
+    inputBinding:
+      position: 102
+      prefix: --fuzz
+  - id: keepfiles
+    type:
+      - 'null'
+      - boolean
+    doc: Keep intermediate files.
+    inputBinding:
+      position: 102
+      prefix: --keepfiles
+  - id: noanno
+    type:
+      - 'null'
+      - boolean
+    doc: Don't annotate FASTA with circular=true.
+    inputBinding:
+      position: 102
+      prefix: --noanno
+  - id: filter
+    type:
+      - 'null'
+      - File
+    doc: Contaminants to remove [/usr/local/db/controls.fna].
+    inputBinding:
+      position: 102
+      prefix: --filter
   - id: outdir_path
     type: string
     doc: Output or path parameter `outdir_path`
@@ -39,6 +79,16 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: trimmed_fasta
+    type: File
+    doc: Filtered, trimmed and circularised contigs
+    outputBinding:
+      glob: $(inputs.outdir_path)/02.trimmed.fa
+  - id: results_table
+    type: File
+    doc: Table of the result for each contig
+    outputBinding:
+      glob: $(inputs.outdir_path)/03.results.tab
 requirements:
   - class: InlineJavascriptRequirement
 hints:

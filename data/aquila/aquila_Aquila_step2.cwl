@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - python3
-  - Aquila_step2
+baseCommand: Aquila_step2
 label: aquila_Aquila_step2
 doc: "Aquila_step2\n\nTool homepage: https://github.com/maiziex/Aquila"
 inputs:
@@ -48,8 +46,9 @@ inputs:
       position: 101
       prefix: --num_threads_spades
   - id: out_dir
-    type: string
-    doc: Directory to store assembly results
+    type: Directory
+    doc: Aquila_step1 results directory; step2 reads it and stores the 
+      assembly results in it
     inputBinding:
       position: 101
       prefix: --out_dir
@@ -72,7 +71,13 @@ outputs:
       - Directory
     doc: Directory to store assembly results
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.out_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aquila:1.0.0--py_0

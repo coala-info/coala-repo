@@ -3,9 +3,7 @@ class: CommandLineTool
 baseCommand: astral
 label: astral-tree
 doc: "ASTRAL is a tool for estimating an unrooted species tree given a set of unrooted
-  gene trees. (Note: The provided text appears to be a container engine error log
-  rather than help text; arguments below are based on standard ASTRAL CLI usage).\n\
-  \nTool homepage: https://github.com/smirarab/ASTRAL"
+  gene trees.\n\nTool homepage: https://github.com/smirarab/ASTRAL"
 inputs:
   - id: annotation_level
     type:
@@ -15,14 +13,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
-  - id: cpu_cores
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use.
-    inputBinding:
-      position: 101
-      prefix: -T
   - id: exact
     type:
       - 'null'
@@ -37,25 +27,31 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
-  - id: quartet_file
+  - id: score_tree
     type:
       - 'null'
       - File
-    doc: A file containing quartets to be used for the search.
+    doc: Score the provided species tree and exit.
     inputBinding:
       position: 101
-      prefix: --quartets
+      prefix: --score-tree
+  - id: name_map_file
+    type:
+      - 'null'
+      - File
+    doc: File mapping gene tree names to species names.
+    inputBinding:
+      position: 101
+      prefix: --namemapfile
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The file to write the output species tree to.
     outputBinding:
       glob: $(inputs.output_file_path)

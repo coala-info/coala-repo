@@ -1,5 +1,11 @@
 # assembly-scan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| assembly-scan | PASS |  |
+
 ## assembly-scan
 
 ### Tool Description

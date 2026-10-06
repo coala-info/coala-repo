@@ -8,7 +8,14 @@ inputs:
     type: File
     doc: Options file
     inputBinding:
-      position: 1
+      position: 200
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the options file (PREFILE, DATFILE, MAPFILE, ...); 
+      staged in the working directory so their names resolve
   - id: m_flag
     type:
       - 'null'
@@ -38,8 +45,23 @@ inputs:
     doc: Output or path parameter `logfile_path`
     inputBinding:
       position: 103
-      prefix: --logfile
+      prefix: -l
 outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Result files named in the options file (haplotypes, linkage, 
+      descent, ...)
+    outputBinding:
+      glob: '*'
+      outputEval: |-
+        ${
+          var staged = [inputs.options_file.basename];
+          if (inputs.logfile_path) { staged.push(inputs.logfile_path); }
+          (inputs.data_files || []).forEach(function (f) { staged.push(f.basename); });
+          return self.filter(function (f) { return staged.indexOf(f.basename) < 0; });
+        }
   - id: logfile
     type:
       - 'null'
@@ -49,6 +71,8 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.data_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allegro:3--h077b44d_10

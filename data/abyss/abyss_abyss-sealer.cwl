@@ -1,10 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: abyss-sealer-b
+baseCommand: abyss-sealer
 label: abyss_abyss-sealer
-doc: "Close gaps by using left and right flanking sequences of gaps as 'reads' for
-  Konnector and performing multiple runs with each of the supplied K values.\n\nTool
-  homepage: https://www.bcgsc.ca/platform/bioinfo/software/abyss"
+doc: "Close gaps by using left and right flanking sequences of gaps as 'reads' for Konnector and performing multiple runs with each of the supplied K values.\n\nTool homepage: https://www.bcgsc.ca/platform/bioinfo/software/abyss"
 inputs:
   - id: reads1
     type: File
@@ -23,8 +21,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: size of Bloom filter (e.g. '40G'). Required when not using pre-built 
-      Bloom filter(s) (-i option)
+    doc: size of Bloom filter (e.g. '40G'). Required when not using pre-built Bloom filter(s) (-i option)
     inputBinding:
       position: 103
       prefix: --bloom-size
@@ -40,8 +37,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: find and fix single-base errors when reads have no kmers in bloom 
-      filter
+    doc: find and fix single-base errors when reads have no kmers in bloom filter
     inputBinding:
       position: 103
       prefix: --fix-errors
@@ -87,10 +83,11 @@ inputs:
     type:
       type: array
       items: int
-    doc: the size of a k-mer
+      inputBinding:
+        prefix: --kmer
+    doc: 'k-mer sizes; one run per value (-k repeats: -k90 -k80 ...).'
     inputBinding:
       position: 103
-      prefix: --kmer
   - id: lower
     type:
       - 'null'
@@ -175,8 +172,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: disable all limits; equivalent to '-B nolimit -m nolimit -M nolimit -P 
-      nolimit'
+    doc: disable all limits; equivalent to '-B nolimit -m nolimit -M nolimit -P nolimit'
     inputBinding:
       position: 103
       prefix: --no-limits
@@ -248,8 +244,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: trim bases from the ends of reads whose quality is less than the 
-      threshold
+    doc: trim bases from the ends of reads whose quality is less than the threshold
     inputBinding:
       position: 103
       prefix: --trim-quality
@@ -278,13 +273,12 @@ inputs:
       position: 105
       prefix: --gap-file
   - id: output_prefix_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: prefix of output FASTA files [required]
     inputBinding:
       position: 106
       prefix: --output-prefix
+    default: sealer
   - id: trace_file_path
     type:
       - 'null'

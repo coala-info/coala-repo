@@ -1,5 +1,26 @@
 # annonars CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| annonars_clinvar-genes | Failed | not a usable tool: wraps only the 'annonars clinvar-genes' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_clinvar-minimal | Failed | not a usable tool: wraps only the 'annonars clinvar-minimal' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_clinvar-sv | Failed | not a usable tool: wraps only the 'annonars clinvar-sv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_cons | Failed | not a usable tool: wraps only the 'annonars cons' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_db-utils | Failed | not a usable tool: wraps only the 'annonars db-utils' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_dbsnp | Failed | not a usable tool: wraps only the 'annonars dbsnp' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_freqs | Failed | not a usable tool: wraps only the 'annonars freqs' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_functional | Failed | not a usable tool: wraps only the 'annonars functional' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_gene | Failed | not a usable tool: wraps only the 'annonars gene' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_gnomad-mtdna | Failed | not a usable tool: wraps only the 'annonars gnomad-mtdna' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_gnomad-nuclear | Failed | not a usable tool: wraps only the 'annonars gnomad-nuclear' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_gnomad-sv | Failed | not a usable tool: wraps only the 'annonars gnomad-sv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_helixmtdb | Failed | not a usable tool: wraps only the 'annonars helixmtdb' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_regions | Failed | not a usable tool: wraps only the 'annonars regions' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_server | Failed | not a usable tool: wraps only the 'annonars server' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+| annonars_tsv | Failed | not a usable tool: wraps only the 'annonars tsv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs. |
+
 ## annonars_gene
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # binny CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| binny | Not completed | Every run first downloads the CheckM data (289 MB) and Mantis HMM databases (several GB) into the database folder, and the Prokka step pulls a Singularity image at run time inside the container. |
+
 ## binny
 
 ### Tool Description

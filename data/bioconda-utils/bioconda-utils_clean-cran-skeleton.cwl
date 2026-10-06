@@ -10,10 +10,12 @@ doc: "Cleans skeletons created by ``conda skeleton cran``.\n\nBefore submitting 
   for a Bioconda submission.\n\nTool homepage: http://bioconda.github.io/build-system.html"
 inputs:
   - id: recipe
-    type: string
-    doc: Path to recipe to be cleaned
+    type: Directory
+    doc: Recipe folder to be cleaned (meta.yaml, build.sh, bld.bat written by 
+      conda skeleton cran); it is staged writable and cleaned in place
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: log_command_max_lines
     type:
       - 'null'
@@ -59,9 +61,26 @@ inputs:
       position: 102
       prefix: --no-windows
 outputs:
+  - id: cleaned_recipe
+    type: Directory
+    doc: The cleaned recipe folder
+    outputBinding:
+      glob: $(inputs.recipe.basename)
+  - id: logfile_out
+    type:
+      - 'null'
+      - File
+    doc: Log file written by --logfile
+    outputBinding:
+      glob: $(inputs.logfile)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.recipe)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioconda-utils:4.0.0--pyhdfd78af_0

@@ -13,6 +13,13 @@ inputs:
     doc: The BED file to be sorted.
     inputBinding:
       position: 1
+      prefix: --input
+  - id: output_file_path
+    type: string
+    doc: BED output file name
+    inputBinding:
+      position: 103
+      prefix: --output
   - id: force
     type:
       - 'null'
@@ -42,10 +49,11 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output file where the sorted result is written. If not specified, result
-      is printed to standard out.
+    doc: Sorted BED output file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/astalavista:4.0--0

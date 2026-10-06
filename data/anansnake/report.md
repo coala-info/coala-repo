@@ -1,5 +1,11 @@
 # anansnake CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anansnake | Not completed | The workflow builds conda environments with network access at run time and needs a genomepy genome plus RNA-seq and ATAC-seq count tables, which is too heavy for this test; baseCommand fixed from snakemake to anansnake. |
+
 ## anansnake
 
 ### Tool Description

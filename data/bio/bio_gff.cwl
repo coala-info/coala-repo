@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - gff
 label: bio_gff
 doc: "Parses and filters GFF files.\n\nTool homepage: https://github.com/ialbert/bio"
 inputs:

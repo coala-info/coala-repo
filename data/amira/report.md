@@ -1,5 +1,11 @@
 # amira CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amira | Not completed | Amira needs a species pandora panRG database, and the smallest one is about 530 MB, too large for this test. |
+
 ## amira
 
 ### Tool Description

@@ -73,7 +73,7 @@ inputs:
     position: 102
     prefix: --no-version
 - id: output
-  type: string
+  type: string?
   doc: Write output to a file [standard output]
   inputBinding:
     position: 102
@@ -85,7 +85,7 @@ inputs:
     position: 102
     prefix: --output-type
 - id: prefix
-  type: string
+  type: string?
   doc: If given, subset each of the input files accordingly, see also -w
   inputBinding:
     position: 102

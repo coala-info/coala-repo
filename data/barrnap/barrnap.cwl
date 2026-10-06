@@ -33,7 +33,7 @@ inputs:
     doc: Tag genes < this ratio of expected length
     inputBinding:
       position: 102
-      prefix: --minlength
+      prefix: --lencutoff
   - id: quiet
     type:
       - 'null'
@@ -58,14 +58,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
-  - id: out_path
+  - id: incseq
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `out_path`
+      - boolean
+    doc: Include FASTA input sequences in GFF3 output
     inputBinding:
-      position: 103
-      prefix: --out
+      position: 102
+      prefix: --incseq
   - id: outseq_path
     type:
       - 'null'
@@ -83,14 +83,15 @@ outputs:
     outputBinding:
       glob: $(inputs.outseq_path)
   - id: out
-    type:
-      - 'null'
-      - File
-    doc: 'Write annotations to this file (default: stdout)'
-    outputBinding:
-      glob: $(inputs.out_path)
+    type: stdout
+    doc: rRNA annotations in GFF3 format (written to stdout)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_file)
+        writable: true
+stdout: barrnap.gff
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barrnap:0.9--1

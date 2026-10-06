@@ -79,6 +79,9 @@ inputs:
       position: 102
       prefix: --dump
 outputs:
+  - id: vcf
+    type: stdout
+    doc: The generated VCF (printed to stdout)
   - id: dump
     type:
       - 'null'
@@ -88,6 +91,9 @@ outputs:
       glob: $(inputs.dump_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/array-as-vcf:1.1.0--pyhdfd78af_0
+stdout: $(inputs.sample_name).vcf

@@ -4,16 +4,16 @@ baseCommand: bamsnap
 label: bamsnap
 doc: "convert bam (or cram) to image\n\nTool homepage: https://github.com/danielmsk/bamsnap"
 inputs:
-  - id: sub_command
-    type: string
-    doc: sub-command
-    inputBinding:
-      position: 1
   - id: bam_files
     type:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: bam or cram file(s)
     inputBinding:
       position: 102
@@ -665,6 +665,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference sequence fasta file (ex. hg19.fa)
     inputBinding:
       position: 102

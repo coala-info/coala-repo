@@ -1,112 +1,92 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: atlas
+baseCommand:
+  - atlas
+  - alleleFreq
 label: atlas_allelefreq
-doc: "Estimating population allele frequencies\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas/wiki/Home"
+doc: "Estimating population allele frequencies from a multi-sample VCF of bi-allelic sites (e.g. made by ATLAS majorMinor).\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas"
 inputs:
-  - id: input_bam
+  - id: vcf
     type: File
-    doc: Input BAM file
+    doc: "Input multi-sample VCF file (e.g. from ATLAS majorMinor)."
     inputBinding:
       position: 1
-  - id: exclude_regions
+      prefix: --vcf
+  - id: samples
     type:
       - 'null'
       - File
-    doc: BED file with regions to exclude
+    doc: "Text file with samples to use and their population (columns SAMPLE POPULATION)."
     inputBinding:
-      position: 102
-      prefix: --excludeRegions
-  - id: max_depth
-    type:
-      - 'null'
-      - int
-    doc: Maximum depth to consider for allele frequency calculation
-    inputBinding:
-      position: 102
-      prefix: --maxDepth
-  - id: min_allele_count
-    type:
-      - 'null'
-      - int
-    doc: Minimum allele count to consider an allele
-    inputBinding:
-      position: 102
-      prefix: --minAlleleCount
-  - id: min_allele_frequency
-    type:
-      - 'null'
-      - float
-    doc: Minimum allele frequency to consider an allele
-    inputBinding:
-      position: 102
-      prefix: --minAlleleFreq
-  - id: min_base_quality
-    type:
-      - 'null'
-      - int
-    doc: Minimum base quality to consider a base
-    inputBinding:
-      position: 102
-      prefix: --minBaseQ
-  - id: min_mapq
-    type:
-      - 'null'
-      - int
-    doc: Minimum mapping quality to consider a read
-    inputBinding:
-      position: 102
-      prefix: --minMapQ
-  - id: reference_genome
-    type:
-      - 'null'
-      - File
-    doc: Reference genome FASTA file
-    inputBinding:
-      position: 102
-      prefix: --ref
-  - id: regions
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Comma-separated list of regions to process (e.g., chr1:100-200)
-    inputBinding:
-      position: 102
-      prefix: --regions
-      itemSeparator: ','
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
+      position: 1
+      prefix: --samples
+  - id: likelihoods
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output
+    doc: "Write the sample allele frequency likelihoods instead of the allele frequency table."
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
+      position: 1
+      prefix: --likelihoods
+  - id: eps_f
+    type:
+      - 'null'
+      - float
+    doc: "Epsilon for the estimation algorithm."
+    inputBinding:
+      position: 1
+      prefix: --epsF
+  - id: iterations
+    type:
+      - 'null'
+      - int
+    doc: "Maximal number of iterations."
+    inputBinding:
+      position: 1
+      prefix: --iterations
+  - id: proposal_frac
+    type:
+      - 'null'
+      - float
+    doc: "Proposal width."
+    inputBinding:
+      position: 1
+      prefix: --proposalFrac
+  - id: out_prefix
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: "Prefix for all output files (ATLAS --out)."
+    default: "atlas_alleleFreq"
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 1
+      prefix: --out
 outputs:
-  - id: output_file
+  - id: log
+    type: stdout
+    doc: ATLAS progress report (standard output).
+  - id: allele_freq
     type:
       - 'null'
       - File
-    doc: Output file name
+    doc: "Allele frequencies for all positions and populations."
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.out_prefix)_alleleFreq.txt.gz
+  - id: allele_freq_likelihoods
+    type:
+      - 'null'
+      - File
+    doc: "Allele frequency log likelihoods (with --likelihoods)."
+    outputBinding:
+      glob: $(inputs.out_prefix)_alleleFreqLikelihoods.txt.gz
+  - id: parameters
+    type:
+      - 'null'
+      - File
+    doc: "Parameters used for the run."
+    outputBinding:
+      glob: $(inputs.out_prefix).parameters
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas:2.0.1--hadca570_0
+stdout: atlas_allelefreq.log

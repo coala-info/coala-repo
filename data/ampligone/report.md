@@ -1,5 +1,11 @@
 # ampligone CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ampligone | PASS |  |
+
 ## ampligone
 
 ### Tool Description

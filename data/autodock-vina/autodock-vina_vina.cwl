@@ -65,14 +65,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --flex
-  - id: help_advanced
-    type:
-      - 'null'
-      - boolean
-    doc: display usage summary with advanced options
-    inputBinding:
-      position: 101
-      prefix: --help_advanced
   - id: ligand
     type:
       - 'null'

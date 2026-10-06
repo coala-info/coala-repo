@@ -1,5 +1,14 @@
 # biobasehttptools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biobasehttptools_AccessionToTaxId | PASS |  |
+| biobasehttptools_FetchSequence | PASS |  |
+| biobasehttptools_GeneIdToGOTerms | Failed | tool problem: it queries the retired rest.ensemblgenomes.org service and returns every gene id with an empty mapping. |
+| biobasehttptools_GeneIdToUniProtId | Failed | tool problem: it queries the retired rest.ensemblgenomes.org service and returns every gene id with an empty mapping. |
+
 ## biobasehttptools_FetchSequence
 
 ### Tool Description

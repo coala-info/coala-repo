@@ -1,5 +1,11 @@
 # bactopia-variants CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bactopia-variants | Failed | image problem: bactopia-variants is an unrendered Nextflow template script that ignores its arguments and fails on placeholders such as ${task.cpus}. |
+
 ## bactopia-variants
 
 ### Tool Description

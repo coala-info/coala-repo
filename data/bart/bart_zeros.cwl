@@ -1,32 +1,37 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bart_zeros
+baseCommand: [bart, zeros]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_zeros
 doc: "Create a zero-filled array with {dims} dimensions of size {dim1} to {dimn}.\n\
-  \nTool homepage: https://github.com/tomdstanton/bart"
+  \nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: dims
     type: int
     doc: Number of dimensions
     inputBinding:
-      position: 1
+      position: 10
   - id: dim1
     type:
       type: array
       items: int
     doc: Size of dimension 1
     inputBinding:
-      position: 2
+      position: 11
   - id: name
     type: string
     doc: Name of the output array
     inputBinding:
-      position: 3
+      position: 12
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: name_file
+    type: File
+    doc: Array written as name.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.name).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_zeros.out

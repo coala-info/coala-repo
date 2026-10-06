@@ -7,7 +7,7 @@ label: bacpage_setup
 doc: "Set up project directory for analysis.\n\nTool homepage: https://github.com/CholGen/bacpage"
 inputs:
   - id: directory
-    type: Directory
+    type: string
     doc: Location to create project directory
     inputBinding:
       position: 1
@@ -31,6 +31,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_directory
+    type: Directory
+    doc: Created project directory
+    outputBinding:
+      glob: $(inputs.directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bacpage:2025.08.21--pyhdfd78af_0

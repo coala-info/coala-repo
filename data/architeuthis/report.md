@@ -1,5 +1,13 @@
 # architeuthis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| architeuthis_completion | Failed | not a usable tool: it wraps the shell autocompletion generator, which takes no data inputs. |
+| architeuthis_mapping | Failed | not a usable tool: it wraps only the mapping command group with a subcommand string and has no data inputs or outputs. |
+| architeuthis_merge | PASS |  |
+
 ## architeuthis_completion
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ananse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ananse_ananse | Failed | not a usable tool: wraps only the ananse command group with a subcommand string and free string options, no data inputs or outputs. |
+
 ## ananse_ananse
 
 ### Tool Description

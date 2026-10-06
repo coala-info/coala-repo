@@ -1,5 +1,11 @@
 # bcftools-liftover-plugin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcftools-liftover-plugin | PASS |  |
+
 ## bcftools-liftover-plugin
 
 ### Tool Description

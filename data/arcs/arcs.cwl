@@ -221,7 +221,7 @@ inputs:
     doc: Output or path parameter `graph_file_path`
     inputBinding:
       position: 105
-      prefix: --graph-file
+      prefix: --graph
   - id: tsv_output_path
     type:
       - 'null'
@@ -229,7 +229,7 @@ inputs:
     doc: Output or path parameter `tsv_output_path`
     inputBinding:
       position: 107
-      prefix: --tsv-output
+      prefix: --tsv
   - id: dist_tsv_path
     type:
       - 'null'

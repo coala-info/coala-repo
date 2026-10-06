@@ -8,6 +8,11 @@ doc: Converts VCF/BCF to other formats and back.
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input VCF/BCF file
     inputBinding:
       position: 1
@@ -39,6 +44,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference sequence in fasta format
     inputBinding:
       position: 102
@@ -52,6 +60,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gensample
+      itemSeparator: ','
   - id: gensample2vcf
     type:
       - 'null'
@@ -61,6 +70,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gensample2vcf
+      itemSeparator: ','
   - id: gvcf2vcf
     type:
       - 'null'
@@ -78,6 +88,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --haplegendsample
+      itemSeparator: ','
   - id: haplegendsample2vcf
     type:
       - 'null'
@@ -87,6 +98,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --haplegendsample2vcf
+      itemSeparator: ','
   - id: haploid2diploid
     type:
       - 'null'
@@ -104,6 +116,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --hapsample
+      itemSeparator: ','
   - id: hapsample2vcf
     type:
       - 'null'
@@ -113,6 +126,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --hapsample2vcf
+      itemSeparator: ','
   - id: include
     type:
       - 'null'
@@ -138,7 +152,9 @@ inputs:
       position: 102
       prefix: --no-version
   - id: output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file name
     inputBinding:
       position: 102
@@ -282,6 +298,18 @@ outputs:
     doc: Output file name
     outputBinding:
       glob: $(inputs.output)
+  - id: converted_files
+    type:
+      type: array
+      items: File
+    doc: Files written by --gensample, --hapsample and --haplegendsample (named from
+      the given prefix)
+    outputBinding:
+      glob:
+        - '*.gen.gz'
+        - '*.samples'
+        - '*.hap.gz'
+        - '*.legend.gz'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

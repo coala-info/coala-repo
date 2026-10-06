@@ -1,5 +1,11 @@
 # atol-qc-raw-shortread CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atol-qc-raw-shortread | PASS |  |
+
 ## atol-qc-raw-shortread
 
 ### Tool Description

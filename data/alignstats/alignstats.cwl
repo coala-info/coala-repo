@@ -90,9 +90,12 @@ inputs:
       position: 101
       prefix: -F
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Read INPUT as the input SAM, BAM, or CRAM file (stdin). Input must be 
       coordinate-sorted for accurate results.
     inputBinding:
@@ -190,12 +193,10 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Write report to OUTPUT (stdout).
     outputBinding:
       glob: $(inputs.output_file_path)

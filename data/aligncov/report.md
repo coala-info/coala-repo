@@ -1,5 +1,11 @@
 # aligncov CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aligncov | PASS |  |
+
 ## aligncov
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # artic-porechop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| artic-porechop_porechop | PASS |  |
+
 ## artic-porechop
 
 ### Tool Description

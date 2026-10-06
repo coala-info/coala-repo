@@ -40,7 +40,7 @@ inputs:
   - id: pickle
     type:
       - 'null'
-      - File
+      - string
     doc: path to where all pickled tree fits should be saved.
     inputBinding:
       position: 101
@@ -192,6 +192,13 @@ outputs:
     doc: Path to where the approximate cell posterior should be saved
     outputBinding:
       glob: $(inputs.q_z_path)
+  - id: pickle_out
+    type:
+      - 'null'
+      - File
+    doc: Pickled tree fits
+    outputBinding:
+      glob: $(inputs.pickle)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

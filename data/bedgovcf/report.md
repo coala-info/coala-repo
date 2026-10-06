@@ -1,5 +1,11 @@
 # bedgovcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bedgovcf | PASS |  |
+
 ## bedgovcf
 
 ### Tool Description

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: agat_sp_manage_ids.pl
+baseCommand: agat_sp_manage_IDs.pl
 label: agat_agat_sp_manage_ids.pl
 doc: "This script allows to manage IDs in a GFF file. It can be used to add, remove,
   or change IDs.\n\nTool homepage: https://github.com/NBISweden/AGAT"
@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Boolean - If you want to use the same ID for all features of the same 
-      type.
+    doc: Set a collective ID for discontinuous features (CDS, UTR) instead of a
+      uniq ID per line.
     inputBinding:
       position: 101
       prefix: --collective
@@ -23,11 +23,63 @@ inputs:
   - id: type
     type:
       - 'null'
-      - string
-    doc: Type of ID to manage (e.g. ID, Parent, Name, etc.)
+      - type: array
+        items: string
+        inputBinding:
+          prefix: -p
+    doc: Primary tag (feature type, column 3) or level (level1, level2, level3)
+      to handle. Repeat for several. Default all.
     inputBinding:
       position: 101
-      prefix: --type
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: Add a specific prefix to the ID. By default it is the feature type.
+    inputBinding:
+      position: 101
+      prefix: --prefix
+  - id: ensembl
+    type:
+      - 'null'
+      - boolean
+    doc: Build Ensembl-like IDs (e.g. PREFIXG00000000022).
+    inputBinding:
+      position: 101
+      prefix: --ensembl
+  - id: tair
+    type:
+      - 'null'
+      - boolean
+    doc: TAIR-like output IDs.
+    inputBinding:
+      position: 101
+      prefix: --tair
+  - id: type_dependent
+    type:
+      - 'null'
+      - boolean
+    doc: Number IDs per feature type.
+    inputBinding:
+      position: 101
+      prefix: --type_dependent
+  - id: gap
+    type:
+      - 'null'
+      - int
+    doc: Increment the next gene (level1 feature) suffix with this value. 
+      Default 0.
+    inputBinding:
+      position: 101
+      prefix: --gap
+  - id: nb
+    type:
+      - 'null'
+      - int
+    doc: Start numbering at this value. Default 1.
+    inputBinding:
+      position: 101
+      prefix: --nb
   - id: output_path
     type: string
     doc: Output or path parameter `output_path`

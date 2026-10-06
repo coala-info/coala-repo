@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: stats
+baseCommand: assembly-stats
 label: assembly-stats
 doc: "Reports sequence length statistics from fasta and/or fastq files\n\nTool homepage:
   https://github.com/sanger-pathogens/assembly-stats"
@@ -11,7 +11,7 @@ inputs:
       items: File
     doc: List of fasta and/or fastq files
     inputBinding:
-      position: 1
+      position: 200
   - id: grep_friendly
     type:
       - 'null'

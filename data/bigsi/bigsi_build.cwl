@@ -4,90 +4,50 @@ baseCommand:
   - bigsi
   - build
 label: bigsi_build
-doc: "Build a BIGSI index.\n\nTool homepage: https://github.com/Phelimb/BIGSI"
+doc: "Build a BIGSI index from bloom filters. The index is written to the storage-config
+  filename of the config file.\n\nTool homepage: https://github.com/Phelimb/BIGSI"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: input_files
+  - id: bloomfilters
     type:
       type: array
-      items: File
-    doc: Input FASTA or FASTQ files
+      items: Directory
+    doc: Bloom filter folders made by bigsi bloom
     inputBinding:
       position: 1
-  - id: config
+  - id: samples
     type:
       - 'null'
-      - File
-    doc: Configuration file
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --samples
+    doc: Sample names, one per bloom filter, in the same order
+    inputBinding:
+      position: 102
+  - id: config
+    type: File
+    loadContents: true
+    doc: BIGSI configuration YAML file; its storage-config filename names the index
     inputBinding:
       position: 102
       prefix: --config
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrite existing index if it exists
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: index_dir
-    type:
-      - 'null'
-      - string
-    doc: Directory to store the index
-    inputBinding:
-      position: 102
-      prefix: --index-dir
-  - id: kmer_size
-    type:
-      - 'null'
-      - int
-    doc: Size of k-mers to use
-    inputBinding:
-      position: 102
-      prefix: --kmer-size
-  - id: num_hashes
-    type:
-      - 'null'
-      - int
-    doc: Number of hash functions to use
-    inputBinding:
-      position: 102
-      prefix: --num-hashes
-  - id: num_tables
-    type:
-      - 'null'
-      - int
-    doc: Number of hash tables to use
-    inputBinding:
-      position: 102
-      prefix: --num-tables
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output
-    inputBinding:
-      position: 102
-      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: index_dir_dir
+  - id: index_out
     type:
-      - 'null'
+      - File
       - Directory
-    doc: Directory to store the index
+    doc: BIGSI index named by storage-config filename in the config file
     outputBinding:
-      glob: $(inputs.index_dir)
+      glob: |-
+        ${
+          var m = inputs.config.contents.match(/filename:\s*(\S+)/);
+          return m ? m[1].replace(/[\x22\x27]/g, "") : null;
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bigsi:0.3.1--py_0

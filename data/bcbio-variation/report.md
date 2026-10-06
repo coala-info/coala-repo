@@ -1,5 +1,11 @@
 # bcbio-variation CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcbio-variation | PASS |  |
+
 ## bcbio-variation
 
 ### Tool Description

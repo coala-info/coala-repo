@@ -24,10 +24,12 @@ inputs:
   - id: data_dir
     type: Directory
     doc: directory where logs and data files will be written if --nosave is not 
-      entered as input flag
+      entered as input flag (holds the historical profiles and tree; start 
+      with an empty directory); staged writable
     inputBinding:
       position: 101
       prefix: --dataDir
+      valueFrom: $(self.basename)
   - id: nosave
     type:
       - 'null'
@@ -59,6 +61,12 @@ inputs:
       position: 102
       prefix: --output
 outputs:
+  - id: data_dir_out
+    type: Directory
+    doc: Updated data directory with the nomenclature tree, allele calls and 
+      logs
+    outputBinding:
+      glob: $(inputs.data_dir.basename)
   - id: output
     type:
       - 'null'
@@ -69,6 +77,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.data_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allelecodes:2.1--py313hdfd78af_0

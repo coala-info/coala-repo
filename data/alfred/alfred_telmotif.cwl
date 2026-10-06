@@ -8,6 +8,11 @@ doc: "Identify telomeric motifs in sequencing data\n\nTool homepage: https://git
 inputs:
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input BAM file
     inputBinding:
       position: 1

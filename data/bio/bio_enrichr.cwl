@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - enrichr
 label: bio_enrichr
 doc: "Runs the enrichr tool on a csv file where one column contains gene names and
   some column contains pvalues.\n\nFilters the p values by a threshold, then submits
@@ -51,7 +53,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -62,6 +64,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bio:1.8.1--pyhdfd78af_0

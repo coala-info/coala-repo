@@ -8,6 +8,11 @@ doc: "Generate consensus sequences from BAM or FASTA files\n\nTool homepage: htt
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input BAM or gzipped FASTA file
     inputBinding:
       position: 1

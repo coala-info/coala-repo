@@ -9,6 +9,11 @@ doc: Detect number of chromosomal copies from Illumina's B-allele frequency
 inputs:
 - id: input_vcf
   type: File
+  secondaryFiles:
+  - pattern: .tbi
+    required: false
+  - pattern: .csi
+    required: false
   doc: Input VCF file
   inputBinding:
     position: 1

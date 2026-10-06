@@ -22,10 +22,14 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -in
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: the input BAM file [stdin]
     inputBinding:
       position: 101
-      prefix: -in
   - id: keep_duplicate
     type:
       - 'null'

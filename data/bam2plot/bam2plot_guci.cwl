@@ -1,13 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bam2plot
+baseCommand:
+  - bam2plot
+  - guci
 label: bam2plot_guci
 doc: "Plot GC content of your reference fasta!\n\nTool homepage: https://github.com/willros/bam2plot"
 inputs:
-  - id: sub_command
-    type: string
-    inputBinding:
-      position: 1
   - id: plot_type
     type:
       - 'null'
@@ -20,7 +18,8 @@ inputs:
     type: File
     doc: Reference fasta
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: --reference

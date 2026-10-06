@@ -1,5 +1,11 @@
 # appspam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| appspam | PASS |  |
+
 ## appspam
 
 ### Tool Description

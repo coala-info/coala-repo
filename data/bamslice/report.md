@@ -1,5 +1,11 @@
 # bamslice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamslice | PASS |  |
+
 ## bamslice
 
 ### Tool Description

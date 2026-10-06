@@ -1,66 +1,96 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: authentict
+baseCommand:
+  - AuthentiCT
+  - deam2cont
 label: authentict
-doc: "AuthentiCT: a tool for estimating contamination in ancient DNA sequences using
-  deamination patterns.\n\nTool homepage: https://github.com/StephanePeyregne/AuthentiCT"
+doc: "AuthentiCT deam2cont: estimate the present-day DNA contamination rate of an ancient
+  DNA single-stranded library from its deamination patterns. The input SAM needs MD tags
+  (samtools calmd).\n\nTool homepage: https://github.com/StephanePeyregne/AuthentiCT"
 inputs:
-  - id: subcommand
-    type: string
-    doc: Subcommand to run (e.g., run, train)
+  - id: input_sam
+    type: File
+    doc: Input SAM file with MD tags
     inputBinding:
       position: 1
-  - id: bam_file
-    type: File
-    doc: Input BAM file containing the alignments
-    inputBinding:
-      position: 102
-      prefix: --bam
-  - id: model_file
+  - id: config
     type:
       - 'null'
       - File
-    doc: Path to a pre-trained model file
+    doc: Input configuration file with tab-separated parameter names and start values
+      (e, rss, lo, lss, lds, rds, contam, o, o2)
     inputBinding:
-      position: 102
-      prefix: --model
-  - id: num_reads
+      position: 0
+      prefix: --config
+  - id: terminal
+    type:
+      - 'null'
+      - boolean
+    doc: Estimate contamination rate from terminal C-to-T substitutions only
+    inputBinding:
+      position: 0
+      prefix: --terminal
+  - id: mapq
     type:
       - 'null'
       - int
-    doc: Number of reads to sample from the BAM file
+    doc: 'Mapping quality cutoff (default: 0)'
     inputBinding:
-      position: 102
-      prefix: --n-reads
-  - id: read_length
+      position: 0
+      prefix: --mapq
+  - id: minlength
     type:
       - 'null'
       - int
-    doc: Maximum read length to consider
+    doc: 'Read length cutoff (default: 0)'
     inputBinding:
-      position: 102
-      prefix: --read-length
-  - id: vcf_file
-    type: File
-    doc: Input VCF file containing the variants
+      position: 0
+      prefix: --minlength
+  - id: bq
+    type:
+      - 'null'
+      - int
+    doc: 'Base quality cutoff (default: 0)'
     inputBinding:
-      position: 102
-      prefix: --vcf
-  - id: output_prefix_path
+      position: 0
+      prefix: --bq
+  - id: positions
+    type:
+      - 'null'
+      - File
+    doc: Positions that sequences should overlap
+    inputBinding:
+      position: 0
+      prefix: --positions
+  - id: sample
+    type:
+      - 'null'
+      - int
+    doc: 'Maximum number of sequences used to fit the deamination model (default: 100000)'
+    inputBinding:
+      position: 0
+      prefix: --sample
+  - id: decoding
+    type:
+      - 'null'
+      - boolean
+    doc: Print the posterior probabilities of each state, one line per position
+    inputBinding:
+      position: 0
+      prefix: --decoding
+  - id: output_file
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Output file name
+    default: authentict_deam2cont.txt
     inputBinding:
-      position: 103
-      prefix: --output-prefix
+      position: 0
+      prefix: -o
 outputs:
-  - id: output_prefix
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Prefix for the output files
+  - id: output
+    type: File
+    doc: Parameter estimates, including the contamination rate (contam)
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

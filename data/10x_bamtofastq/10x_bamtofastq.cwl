@@ -12,6 +12,12 @@ inputs:
     doc: Input 10x BAM file produced by Cell Ranger or Long Ranger
     inputBinding:
       position: 1
+  - id: out_dir
+    type: string
+    default: fastqs
+    doc: Output directory for the FASTQ files (must not exist yet).
+    inputBinding:
+      position: 2
   - id: bx_list
     type:
       - 'null'
@@ -90,7 +96,7 @@ outputs:
     type: Directory
     doc: Output directory for the FASTQ files
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/10x_bamtofastq:1.4.1--h3ab6199_4

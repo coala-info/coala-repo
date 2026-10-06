@@ -1,5 +1,11 @@
 # alientrimmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alientrimmer | PASS |  |
+
 ## alientrimmer
 
 ### Tool Description

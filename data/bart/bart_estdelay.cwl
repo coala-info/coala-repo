@@ -1,42 +1,50 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: estdelay
+baseCommand: [bart, estdelay]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_estdelay
-doc: "Estimate gradient delays from radial data.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Estimate gradient delays from radial data.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: trajectory
-    type: string
+    type: File
     doc: Trajectory file
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: data
-    type: string
+    type: File
     doc: Data file
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: central_region_size
     type:
       - 'null'
       - float
     doc: '[RING] Central region size'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -r
   - id: num_intersecting_spokes
     type:
       - 'null'
-      - float
+      - int
     doc: '[RING] Number of intersecting spokes'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -n
   - id: padding
     type:
       - 'null'
-      - float
+      - int
     doc: '[RING] Padding'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -p
   - id: ring_method
     type:
@@ -44,7 +52,7 @@ inputs:
       - boolean
     doc: RING method
     inputBinding:
-      position: 103
+      position: 1
       prefix: -R
 outputs:
   - id: stdout

@@ -8,6 +8,11 @@ doc: "RNA-seq counting tool for GTF/GFF3 or BED files\n\nTool homepage: https://
 inputs:
   - id: aligned_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input aligned BAM file
     inputBinding:
       position: 1

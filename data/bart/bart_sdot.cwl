@@ -1,19 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sdot
+baseCommand: [bart, sdot]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_sdot
-doc: "Compute dot product along selected dimensions.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Compute dot product along selected dimensions.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: input1
-    type: string
+    type: File
     doc: First input
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: input2
-    type: string
+    type: File
     doc: Second input
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
 outputs:
   - id: stdout
     type: stdout

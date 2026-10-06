@@ -1,5 +1,12 @@
 # ampliconsuite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ampliconsuite_AmpliconSuite-pipeline.py | PASS |  |
+| ampliconsuite_amplicon_classifier.py | PASS |  |
+
 ## ampliconsuite_AmpliconSuite-pipeline.py
 
 ### Tool Description

@@ -26,19 +26,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --signalp_model
-  - id: log_path
-    type: string?
-    inputBinding:
-      position: 102
-      prefix: --log
-outputs:
   - id: log
     type:
       - 'null'
+      - boolean
+    doc: Silence the standard output and capture it in a log file with a fixed 
+      name.
+    inputBinding:
+      position: 102
+      prefix: --log
+      valueFrom: '$(self ? "True" : null)'
+outputs:
+  - id: signal_peptide_summary
+    type:
+      - 'null'
       - File
-    doc: Silences the standard output and captures it in a log file
+    doc: Cluster summary with signal peptide predictions
     outputBinding:
-      glob: $(inputs.log_path)
+      glob: Ampcombi_summary_cluster_SP.tsv
+  - id: signal_peptide_only
+    type:
+      - 'null'
+      - File
+    doc: Clusters that contain a signal peptide
+    outputBinding:
+      glob: Ampcombi_summary_cluster_SP_onlyclusterswithSP.tsv
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file written when log is set
+    outputBinding:
+      glob: Ampcombi_signalpeptide.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,13 @@
 # bindash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bindash_Query | Failed | not a usable tool: named after a help word, duplicate of the generic bindash command-group wrapper with no data inputs or outputs. |
+| bindash_bindash | Failed | not a usable tool: wraps only the bindash command group with a subcommand string and free string options, no File inputs to stage genomes and no output files; sketch, dist and exact are not wrapped. |
+| bindash_genomes | Failed | not a usable tool: named after a help word, duplicate of the generic bindash command-group wrapper with no data inputs or outputs. |
+
 ## bindash_genomes
 
 ### Tool Description

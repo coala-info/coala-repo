@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: biobasehttptools_AccessionToTaxId
+baseCommand: AccessionToTaxId
 label: biobasehttptools_AccessionToTaxId
 doc: "Convert NCBI accession numbers to TaxIds.\n\nTool homepage: https://github.com/eggzilla/BiobaseHTTPTools"
 inputs:
@@ -30,6 +30,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobasehttptools:1.1.0--0

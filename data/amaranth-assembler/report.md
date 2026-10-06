@@ -1,5 +1,11 @@
 # amaranth-assembler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amaranth-assembler_amaranth | PASS |  |
+
 ## amaranth-assembler
 
 ### Tool Description

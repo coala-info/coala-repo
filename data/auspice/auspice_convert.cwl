@@ -19,11 +19,12 @@ inputs:
   - id: v1_meta_tree
     type:
       - 'null'
-      - File
-    doc: v1 dataset JSONs
+      - type: array
+        items: File
+    doc: v1 dataset JSONs, two files in order META TREE
     inputBinding:
       position: 101
-      prefix: --v1 META TREE
+      prefix: --v1
   - id: output_path
     type: string
     doc: File to write output to

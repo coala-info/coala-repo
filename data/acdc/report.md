@@ -1,5 +1,11 @@
 # acdc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| acdc | PASS |  |
+
 ## acdc
 
 ### Tool Description

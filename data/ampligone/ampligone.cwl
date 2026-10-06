@@ -86,7 +86,8 @@ inputs:
     type: File
     doc: Input Reference genome in FASTA format
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -124,9 +125,7 @@ inputs:
       position: 102
       prefix: --export-primers
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output (FastQ) file with cleaned
     inputBinding:
       position: 103

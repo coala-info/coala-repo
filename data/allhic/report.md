@@ -1,5 +1,19 @@
 # allhic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| allhic_alleles | Failed | not a usable tool: allhic alleles in 0.9.14 is an unfinished stub that only parses the PAF and counts files and writes no output. |
+| allhic_assess | PASS | Yeast Hi-C reads (nf-core hic) mapped to a W303 assembly built by allhic; output files were not collected before the fix. |
+| allhic_build | PASS | Built 16 W303 yeast pseudo-chromosomes; CWL fixed: added the required output FASTA name and AGP output. |
+| allhic_extract | Failed | tool bug in allhic 0.9.14: extract closes pairs.txt before writing it, so pairs.txt is always empty (clm, counts and distribution are fine); CWL fixed to stage the BAM and collect outputs. |
+| allhic_optimize | PASS | Yeast Hi-C counts and clm from extract; CWL fixed to stage the counts file and collect the tour file. |
+| allhic_partition | PASS | 16 groups match the optimize tour; pairs.txt was rebuilt from the real .clm because extract writes it empty; CWL fixed to collect outputs. |
+| allhic_pipeline | Failed | tool bug in allhic 0.9.14: the empty pairs.txt from extract gives 0 partitions and build then panics (index out of range). |
+| allhic_plot | Not completed | allhic plot writes its data and then starts a web server that never exits, so it cannot finish as a batch job. |
+| allhic_prune | PASS | Synthetic data: a planted alleles table on real yeast Hi-C pairs; the planted pair is labelled allelic; CWL fixed to collect the pruned pairs file. |
+
 ## allhic_alleles
 
 ### Tool Description

@@ -14,45 +14,42 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
-  - id: input_inpcrd_path
+  - id: input_crd_path
     type: File
-    doc: Path to the input Amber coordinates file (.inpcrd)
+    doc: 'Path to the input coordinates file (AMBER crd). Accepted formats: inpcrd.'
     inputBinding:
       position: 101
-      prefix: --input_inpcrd_path
-  - id: input_prmtop_path
+      prefix: --input_crd_path
+  - id: input_top_path
     type: File
-    doc: Path to the input Amber topology file (.prmtop)
+    doc: 'Path to the input topology file (AMBER ParmTop). Accepted formats: top, parmtop,
+      prmtop.'
     inputBinding:
       position: 101
-      prefix: --input_prmtop_path
-  - id: output_itp_path_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_itp_path_path`
+      prefix: --input_top_path
+  - id: output_path_gro
+    type: string
+    doc: 'Path to the GRO output file. Accepted formats: gro.'
     inputBinding:
       position: 102
-      prefix: --output-itp-path
-  - id: output_top_path_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_top_path_path`
+      prefix: --output_path_gro
+  - id: output_path_top
+    type: string
+    doc: 'Path to the TOP output file. Accepted formats: top.'
     inputBinding:
       position: 103
-      prefix: --output-top-path
+      prefix: --output_path_top
 outputs:
-  - id: output_top_path
+  - id: output_gro
     type: File
-    doc: Path to the output GROMACS topology file (.top)
+    doc: Output GROMACS coordinates file (.gro)
     outputBinding:
-      glob: $(inputs.output_top_path_path)
-  - id: output_itp_path
+      glob: $(inputs.output_path_gro)
+  - id: output_top
     type: File
-    doc: Path to the output GROMACS itp file (.itp)
+    doc: Output GROMACS topology file (.top)
     outputBinding:
-      glob: $(inputs.output_itp_path_path)
+      glob: $(inputs.output_path_top)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

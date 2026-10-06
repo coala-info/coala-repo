@@ -1,32 +1,35 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: estvar
+baseCommand: [bart, estvar]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_estvar
 doc: "Estimate the noise variance assuming white Gaussian noise.\n\nTool homepage:
-  https://github.com/tomdstanton/bart"
+  https://github.com/mrirecon/bart"
 inputs:
   - id: kspace
-    type: string
+    type: File
     doc: kspace
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: cal_size
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Limits the size of the calibration region.
     inputBinding:
-      position: 102
+      position: 1
       prefix: -r
   - id: ksize
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: kernel size
     inputBinding:
-      position: 102
+      position: 1
       prefix: -k
 outputs:
   - id: stdout

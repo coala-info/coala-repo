@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Fetchsequence
+baseCommand: FetchSequence
 label: biobasehttptools_FetchSequence
 doc: "Fetch sequence information based on gene ID, start, and stop.\n\nTool homepage:
   https://github.com/eggzilla/BiobaseHTTPTools"
@@ -49,6 +49,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobasehttptools:1.1.0--0

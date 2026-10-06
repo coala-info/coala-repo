@@ -1,5 +1,54 @@
 # bedtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bedtools_annotate | PASS |  |
+| bedtools_bamtobed | PASS |  |
+| bedtools_bamtofastq | Failed | tool bug: bedtools 2.31.1 bamtofastq writes every read twice (8 BAM records gave 16 FASTQ reads; bedtools2 issue 1058). |
+| bedtools_bed12tobed6 | PASS |  |
+| bedtools_bedpetobam | PASS |  |
+| bedtools_bedtobam | PASS |  |
+| bedtools_closest | PASS |  |
+| bedtools_cluster | PASS |  |
+| bedtools_complement | PASS |  |
+| bedtools_coverage | PASS |  |
+| bedtools_expand | PASS |  |
+| bedtools_fisher | PASS |  |
+| bedtools_flank | PASS |  |
+| bedtools_genomecov | PASS |  |
+| bedtools_getfasta | PASS |  |
+| bedtools_groupby | PASS |  |
+| bedtools_igv | PASS |  |
+| bedtools_intersect | PASS |  |
+| bedtools_jaccard | PASS |  |
+| bedtools_links | PASS |  |
+| bedtools_makewindows | PASS |  |
+| bedtools_map | PASS |  |
+| bedtools_maskfasta | PASS |  |
+| bedtools_merge | PASS |  |
+| bedtools_multicov | PASS |  |
+| bedtools_multiinter | PASS |  |
+| bedtools_nuc | PASS |  |
+| bedtools_overlap | PASS |  |
+| bedtools_pairtobed | PASS |  |
+| bedtools_pairtopair | PASS |  |
+| bedtools_random | PASS |  |
+| bedtools_reldist | PASS |  |
+| bedtools_sample | PASS |  |
+| bedtools_shift | PASS |  |
+| bedtools_shuffle | PASS |  |
+| bedtools_slop | PASS |  |
+| bedtools_sort | PASS |  |
+| bedtools_spacing | PASS |  |
+| bedtools_split | PASS |  |
+| bedtools_subtract | PASS |  |
+| bedtools_summary | PASS |  |
+| bedtools_tag | PASS |  |
+| bedtools_unionbedg | PASS |  |
+| bedtools_window | PASS |  |
+
 ## bedtools_intersect
 
 ### Tool Description

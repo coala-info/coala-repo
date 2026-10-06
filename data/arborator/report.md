@@ -1,5 +1,11 @@
 # arborator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arborator | PASS |  |
+
 ## arborator
 
 ### Tool Description

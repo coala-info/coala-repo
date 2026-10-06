@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: AMPlify.py
+baseCommand: AMPlify
 label: amplify_AMPlify
 doc: "Predict whether a sequence is AMP or not. Input sequences should be in fasta
   format. Sequences should be shorter than 201 amino acids long, and should not contain
@@ -61,6 +61,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.out_dir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amplify:2.0.1--py36hdfd78af_0

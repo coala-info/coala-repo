@@ -21,9 +21,7 @@ inputs:
       position: 101
       prefix: -d
   - id: file_or_uri
-    type:
-      - 'null'
-      - string
+    type: string
     doc: File or URI to fetch
     inputBinding:
       position: 101
@@ -63,7 +61,7 @@ inputs:
   - id: target_file
     type:
       - 'null'
-      - File
+      - string
     doc: Target file for download
     inputBinding:
       position: 101
@@ -71,8 +69,8 @@ inputs:
   - id: validate_only
     type:
       - 'null'
-      - boolean
-    doc: Validate only, don't download
+      - string
+    doc: Validate only, don't download (any non-empty value turns this on)
     inputBinding:
       position: 101
       prefix: -v
@@ -80,6 +78,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fetched_file
+    type:
+      - 'null'
+      - File
+    doc: The downloaded file
+    outputBinding:
+      glob: '$(inputs.target_file ? inputs.target_file : inputs.file_or_uri.split("/").pop())'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas-fastq-provider:0.4.8--hdfd78af_0

@@ -1,5 +1,37 @@
 # apptainer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| apptainer_build | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_cache | Failed | not a usable tool: wraps only the 'apptainer cache' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_capability | Failed | not a usable tool: wraps only the 'apptainer capability' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_checkpoint | Failed | not a usable tool: wraps only the 'apptainer checkpoint' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_completion | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_config | Failed | not a usable tool: wraps only the 'apptainer config' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_delete | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_exec | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_inspect | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_instance | Failed | not a usable tool: wraps only the 'apptainer instance' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_key | Failed | not a usable tool: wraps only the 'apptainer key' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_keyserver | Failed | not a usable tool: wraps only the 'apptainer keyserver' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_oci | Failed | not a usable tool: wraps only the 'apptainer oci' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_overlay | Failed | not a usable tool: wraps only the 'apptainer overlay' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_plugin | Failed | not a usable tool: wraps only the 'apptainer plugin' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_pull | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_push | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_registry | Failed | not a usable tool: wraps only the 'apptainer registry' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_remote | Failed | not a usable tool: wraps only the 'apptainer remote' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_run | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_run-help | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_search | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_shell | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_sif | Failed | not a usable tool: wraps only the 'apptainer sif' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001. |
+| apptainer_sign | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_test | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+| apptainer_verify | Failed | image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user. |
+
 ## apptainer_build
 
 ### Tool Description

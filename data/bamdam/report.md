@@ -1,5 +1,17 @@
 # bamdam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamdam_combine | PASS |  |
+| bamdam_compute | Failed | tool bug: compute never processes the last read of the BAM, so the test counts 3 of 4 reads (upstream main has the same loop). |
+| bamdam_extract | PASS |  |
+| bamdam_krona | PASS |  |
+| bamdam_plotbaminfo | PASS |  |
+| bamdam_plotdamage | PASS |  |
+| bamdam_shrink | PASS |  |
+
 ## bamdam_shrink
 
 ### Tool Description

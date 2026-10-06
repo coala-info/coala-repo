@@ -10,9 +10,10 @@ inputs:
       type: array
       items: string
     doc: Consider all the subsequent parameters as the command to be executed in
-      parallel. At least one command must be specified.
+      parallel. At least one command must be specified. Given after `--`.
     inputBinding:
-      position: 1
+      position: 200
+      prefix: --
   - id: debug
     type:
       - 'null'

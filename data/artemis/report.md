@@ -1,5 +1,14 @@
 # artemis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| artemis_act | Not completed | ACT is an interactive Java GUI genome browser that needs a display and cannot run as a batch job. |
+| artemis_art | Not completed | Artemis is an interactive Java GUI genome browser that needs a display and cannot run as a batch job. |
+| artemis_bamview | Failed | not a usable tool: generated from a JVM start-up log line, with only JVM options and a command name that does not exist. |
+| artemis_dnaplotter | Not completed | DNAPlotter is an interactive Java GUI program that fails headless and cannot run as a batch job. |
+
 ## artemis_art
 
 ### Tool Description

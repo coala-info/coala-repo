@@ -12,7 +12,7 @@ inputs:
     doc: Path to a local installation of psipred (e.g., ~/psipred/run_psipred)
     inputBinding:
       position: 101
-      prefix: --local_psipred
+      prefix: --local-psipred
   - id: sequence
     type:
       - 'null'
@@ -28,13 +28,21 @@ inputs:
     doc: UniProt ID to analyze
     inputBinding:
       position: 101
-      prefix: --uniprot_id
+      prefix: --uniprot-id
+  - id: saturated_mutagenesis
+    type:
+      - 'null'
+      - string
+    doc: list of start positions separated by comma (ends are starts+30)
+    inputBinding:
+      position: 101
+      prefix: --saturated-mutagenesis
   - id: out_prefix_path
     type: string
     doc: Output or path parameter `out_prefix_path`
     inputBinding:
       position: 102
-      prefix: --out-prefix
+      prefix: --output-prefix
 outputs:
   - id: out_prefix
     type:
@@ -46,6 +54,8 @@ outputs:
       glob: $(inputs.out_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/adpred:1.3.1--pyhdfd78af_0

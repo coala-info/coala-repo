@@ -9,7 +9,26 @@ inputs:
     type: string
     doc: "'MFE' (minimum free energy) or 'DP' (dotplot) mode selection"
     inputBinding:
-      position: 1
+      position: 200
+  - id: cstr
+    type:
+      - 'null'
+      - string
+    doc: "Structure constraint in RNA dot-bracket notation (subcommand option
+      -Cstr; required for MFE mode)"
+    inputBinding:
+      position: 201
+      prefix: --Cstr
+  - id: accuracy
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --accuracy
+    doc: "DP mode only: accuracy constraint, e.g. \"((((....)))) UB 0.5\""
+    inputBinding:
+      position: 202
   - id: alpha
     type:
       - 'null'
@@ -251,11 +270,20 @@ inputs:
       position: 102
       prefix: --verbose
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: "Output file (-of). Without it the designed sequences go to stdout.
+      antaRNA 2.0.1.2 crashes after writing this file (NameError curr_dir), so
+      prefer stdout."
     inputBinding:
-      position: 103
+      position: 102
       prefix: --output_file
+      valueFrom: '$(self.indexOf("/") < 0 ? "./" + self : self)'
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Designed RNA sequences (FASTA-like) when no output file is given
   - id: output_file
     type:
       - 'null'
@@ -268,3 +296,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/antarna:2.0.1.2--py27_0
+stdout: antarna.out

@@ -75,7 +75,7 @@ inputs:
   - id: log_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to log file
     inputBinding:
       position: 102
@@ -150,8 +150,19 @@ outputs:
     doc: Path to output report
     outputBinding:
       glob: $(inputs.output_report_path_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file written to log_file_path
+    outputBinding:
+      glob: $(inputs.log_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.read_file_paths)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/auriclass:0.5.4--pyhdfd78af_0

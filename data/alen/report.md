@@ -1,5 +1,11 @@
 # alen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alen | Not completed | alen is an interactive terminal viewer that panics without a terminal (it reads the terminal size), so it cannot run in a batch CWL job; tested on the nf-core mammals protein alignment. |
+
 ## alen
 
 ### Tool Description

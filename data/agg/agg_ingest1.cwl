@@ -15,6 +15,8 @@ inputs:
   - id: fasta_ref
     type: File
     doc: reference sequence
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --fasta-ref
@@ -35,9 +37,13 @@ inputs:
 outputs:
   - id: output_prefix
     type: File
-    doc: agg will output output_prefix.bcf and output_prefix.tmp
+    doc: Variant-only BCF (output_prefix.bcf) with its index and the temporary
+      depth interval file (output_prefix.tmp).
+    secondaryFiles:
+      - .csi
+      - ^.tmp
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path).bcf
 requirements:
   - class: InlineJavascriptRequirement
 hints:

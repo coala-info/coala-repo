@@ -1,5 +1,11 @@
 # bacgwasim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bacgwasim_BacGWASim | PASS |  |
+
 ## bacgwasim_BacGWASim
 
 ### Tool Description

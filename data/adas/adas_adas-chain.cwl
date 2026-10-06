@@ -13,8 +13,6 @@ inputs:
   - id: reference
     type: File
     doc: Reference FASTA file
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference

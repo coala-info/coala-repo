@@ -6,7 +6,7 @@ doc: "A fast and memory efficient BED to gff converter\n\nTool homepage: https:/
 inputs:
   - id: bed_file
     type: File
-    doc: Path to BED file
+    doc: Path to BED file (name must end in .bed)
     inputBinding:
       position: 101
       prefix: --bed
@@ -22,7 +22,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to isoforms file
+    doc: Path to isoforms file (gene and transcript per line; required unless no_gene is set)
     inputBinding:
       position: 101
       prefix: --isoforms
@@ -44,7 +44,7 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Path to output file
+    doc: Path to output file (name must end in .gff)
     inputBinding:
       position: 102
       prefix: --output

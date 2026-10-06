@@ -1,5 +1,11 @@
 # ampd-up CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ampd-up_AMPd-Up | PASS |  |
+
 ## ampd-up_AMPd-Up
 
 ### Tool Description

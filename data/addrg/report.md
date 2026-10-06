@@ -1,5 +1,11 @@
 # addrg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| addrg | PASS |  |
+
 ## addrg
 
 ### Tool Description

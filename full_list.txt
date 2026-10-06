@@ -1,0 +1,1008 @@
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1006; PASS: 730; Failed: 204; Not completed: 72
+package	tool	result	reason
+10x_bamtofastq	10x_bamtofastq	PASS	
+3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
+3seq	3seq	PASS	
+a3partitioner	A3Partitioner	PASS	
+aacon	aacon	PASS	
+aardvark	aardvark_compare	PASS	
+aardvark	aardvark_merge	PASS	
+abacas	abacas	PASS	
+abawaca	abawaca	Not completed	no test data; needs ESOM .names/.lrn files from prepare_esom_files.pl (not in the image) and per-scaffold coverage info, undocumented for v1.00. CWL fixed: the required <out-dir> was not passed
+abeona	abeona_assemble	PASS	
+abeona	abeona_reads	PASS	
+abeona	abeona_subgraphs	PASS	
+abismal	abismal_idx	PASS	
+abismal	abismal_map	PASS	
+abismal	abismal_sim	PASS	
+abpoa	abpoa	PASS	
+abra2	abra2	PASS	
+abricate	abricate	PASS	
+abricate	abricate_abricate-get_db	PASS	
+abritamr	abritamr_report	PASS	
+abritamr	abritamr_run	PASS	
+abruijn	abruijn	Failed	the abruijn 2.1b image lacks BLASR, which ABruijn needs ('Error: BLASR is not installed'). CWL fixed: the required out_dir positional was missing
+absense	Run_abSENSE.py	PASS	
+abundancebin	abundancebin	PASS	
+abyss	abyss_abyss-fatoagp	PASS	
+abyss	abyss_abyss-pe	PASS	
+abyss	abyss_abyss-sealer	PASS	
+abyss-k128	abyss-k128_abyss-pe	Failed	image problem: the image lacks the 'column' program, so abyss-pe's last step (abyss-stats.md) fails after the assembly. CWL fixed: NAME=VALUE parameters (k=50, not 'k 50') and assembly outputs, as in abyss
+ac	ac_AC	PASS	
+accusnv	accusnv	PASS	
+acdc	acdc	PASS	
+ac-diamond	ac-diamond_align	Failed	image problem: ac-diamond align crashes with a segmentation fault (exit 139) on every real input tried.
+ac-diamond	ac-diamond_letters	Failed	Junk file: 'letters' is a help word, not an ac-diamond subcommand; the file duplicates the makedb/align/view wrappers.
+ac-diamond	ac-diamond_makedb	PASS	
+ac-diamond	ac-diamond_range	Failed	Junk file: 'range' is a help word, not an ac-diamond subcommand; the file duplicates the makedb/align/view wrappers.
+ac-diamond	ac-diamond_report	Failed	Junk file: 'report' is a help word, not an ac-diamond subcommand; the file duplicates the makedb/align/view wrappers.
+ac-diamond	ac-diamond_view	Not completed	No DAA input can be made because ac-diamond align crashes in this image.
+aci	aci	PASS	
+actc	actc	PASS	
+adam	adam_adam-submit	Failed	image problem: Hadoop login fails because the image has no user entry for the host user ID that cwltool runs as; with cwltool --no-match-user, flagstat matches samtools and transformAlignments writes valid Parquet
+adapterremoval	adapterremoval_AdapterRemoval	PASS	
+adas	adas_adas-build	PASS	
+adas	adas_adas-chain	PASS	Both queries map to the expected SAR11 16S targets (614/615 matches); this version writes Rust debug records, not real SAM.
+adas	adas_adas-insert	PASS	
+adas	adas_adas-knn	PASS	
+adas	adas_adas-search	PASS	
+addeam	addeam_addeam-bam2prof.py	PASS	
+addeam	addeam_addeam-cluster.py	PASS	
+addeam	addeam_samtools	Failed	Junk file: samtools is a dependency inside the addeam image, not an AdDeam tool.
+addrg	addrg	PASS	
+admixtools	admixtools_convertf	PASS	
+admixtools	admixtools_qp3Pop	PASS	
+admixtools	admixtools_qpAdm	PASS	
+admixtools	admixtools_qpDstat	PASS	
+admixtools	admixtools_qpGraph	PASS	
+admixtools	admixtools_qpWave	PASS	
+admixtools	admixtools_qpfstats	PASS	
+admixture	admixture	PASS	
+adpred	adpred_run-adpred	Failed	image problem: run-adpred always posts to the old http PSIPRED web API, which now redirects and returns no job ID, so it crashes before any prediction (no local psipred in the image).
+advntr	advntr_addmodel	Failed	image problem: pomegranate 0.6.1 cannot build HMMs with the bundled networkx 3.4.2 (KeyError 0 in HiddenMarkovModel.bake), so addmodel crashes on real hg38 chr22 data.
+advntr	advntr_genotype	Failed	image problem: pomegranate 0.6.1 is incompatible with networkx 3.4.2 (topological_sort nbunch error), so every VNTR is skipped and the output is only 'Error'.
+aegean	aegean_canon-gff3	PASS	
+aegean	aegean_locuspocus	PASS	
+aeskulap	aeskulap	Failed	junk CWL: baseCommand 'Gio::Settings init' is a log line from the GUI startup, not a command; aeskulap itself is a GTK DICOM viewer that needs a display.
+afplot	afplot_regions	PASS	
+afplot	afplot_whole-genome	PASS	
+afragmenter	afragmenter	PASS	
+afterqc	afterqc_after.py	PASS	
+afwdist	afwdist	PASS	
+agat	agat_agat_convert_sp_gff2bed.pl	PASS	
+agat	agat_agat_sp_keep_longest_isoform.pl	PASS	
+agat	agat_agat_sp_manage_functional_annotation.pl	PASS	
+agat	agat_agat_sp_manage_ids.pl	PASS	
+agat	agat_agat_sp_manage_utrs.pl	PASS	
+agc	agc_append	PASS	
+agc	agc_create	PASS	
+agc	agc_getcol	PASS	
+agc	agc_getctg	PASS	
+agc	agc_getset	PASS	
+agc	agc_info	PASS	
+agc	agc_listctg	PASS	
+agc	agc_listref	PASS	
+agc	agc_listset	PASS	
+agfusion	agfusion_annotate	PASS	
+agfusion	agfusion_batch	PASS	Ran on a planted STAR-Fusion line (synthetic data) with the README Dlg1-Braf mouse fusion; CDS matches the repository's manual sequence.
+agfusion	agfusion_build	Failed	image problem: the MySQLdb (mysqlclient) Python module is missing, so build cannot query Ensembl.
+agfusion	agfusion_download	PASS	
+agg	agg_anno	PASS	
+agg	agg_genotype	PASS	
+agg	agg_ingest1	PASS	
+agg	agg_ingest2	PASS	
+aghermann	aghermann	PASS	Headless run (-n) on a PhysioNet EEG EDF (eegmmidb S001R01) with header IDs set to fit the experiment tree; all 63 channels profiled.
+agouti	agouti_annotate	PASS	
+agouti	agouti_create_db	PASS	
+agrvate	agrvate	PASS	
+agtools	agtools_asqg2gfa	PASS	
+agtools	agtools_clean	PASS	
+agtools	agtools_component	PASS	
+agtools	agtools_concat	PASS	
+agtools	agtools_fastg2gfa	PASS	
+agtools	agtools_filter	PASS	
+agtools	agtools_gfa2adj	PASS	
+agtools	agtools_gfa2dot	PASS	
+agtools	agtools_gfa2fasta	PASS	
+agtools	agtools_rename	PASS	
+agtools	agtools_stats	PASS	
+airr	airr_airr-tools	PASS	
+akt	akt_kin	PASS	
+akt	akt_pca	PASS	
+akt	akt_pedphase	PASS	
+akt	akt_relatives	PASS	
+akt	akt_unrelated	PASS	
+alcor	alcor_AlcoR	PASS	
+alder	alder	PASS	
+ale	ale_ALE	PASS	
+ale	ale_ale2wiggle.py	PASS	
+ale-core	ale-core_ALE	PASS	
+alen	alen	Not completed	alen is an interactive terminal viewer that panics without a terminal (it reads the terminal size), so it cannot run in a batch CWL job; tested on the nf-core mammals protein alignment.
+aletsch	aletsch	PASS	
+alevin-fry	alevin-fry_atac	Failed	not a usable tool: it wraps only the 'atac' command group (a subcommand string, no data inputs or outputs); the atac subcommands (generate-permit-list, sort, collate, deduplicate) have no CWL
+alevin-fry	alevin-fry_collate	PASS	
+alevin-fry	alevin-fry_convert	PASS	
+alevin-fry	alevin-fry_generate-permit-list	PASS	
+alevin-fry	alevin-fry_infer	PASS	
+alevin-fry	alevin-fry_quant	PASS	
+alevin-fry	alevin-fry_view	PASS	
+alfa	alfa	PASS	
+alfred	alfred_annotate	PASS	
+alfred	alfred_ase	PASS	
+alfred	alfred_bam2match	PASS	
+alfred	alfred_barcode	PASS	
+alfred	alfred_bcsplit	PASS	
+alfred	alfred_consensus	PASS	
+alfred	alfred_count_dna	PASS	
+alfred	alfred_count_jct	PASS	
+alfred	alfred_count_rna	PASS	
+alfred	alfred_pwalign	PASS	
+alfred	alfred_pwedit	PASS	
+alfred	alfred_qc	PASS	
+alfred	alfred_replication	Failed	tool bug: alfred replication sorts the read totals in place, so the last BAM's counts come out as 0; the CWL itself runs
+alfred	alfred_spaced_motif	PASS	
+alfred	alfred_split	PASS	
+alfred	alfred_telmotif	PASS	
+alfred	alfred_tracks	PASS	
+aliceasm	aliceasm	Failed	image problem: python3 is missing, so the bundled convertToGFA.py cannot run and every assembly stops with error 321.
+alientrimmer	alientrimmer	PASS	
+aligncov	aligncov	PASS	
+align_it	align_it	Failed	image problem: the image is alignlib-lite, which has no align-it program; the CWL came from a failed Docker pull and its read-alignment inputs are invented (align-it aligns pharmacophores).
+alignoth	alignoth	PASS	Upstream NA12878 test data; the VCF variant 257 A>G is highlighted; CWL fixed: stdout plot output, BAM .bai and VCF index secondary files.
+alignstats	alignstats	PASS	nf-core sarscov2 BAM gives 200 records, 197 mapped; CWL fixed: invented --output-file replaced by -o, input made required.
+aliview	aliview	Not completed	AliView is a GUI alignment viewer and editor with no batch mode, so it cannot run as a headless job.
+allegro	allegro	PASS	Galaxy test data; both Galaxy output assertions match; CWL fixed: -l log flag, staged data files named in the options file, outputs collected.
+allelecodes	allelecodes_assignAlleleCodes_py3.6.py	PASS	Upstream CAMP example profiles (521 isolates); CWL fixed: data directory staged writable and returned as an output.
+allhic	allhic_alleles	Failed	not a usable tool: allhic alleles in 0.9.14 is an unfinished stub that only parses the PAF and counts files and writes no output.
+allhic	allhic_assess	PASS	Yeast Hi-C reads (nf-core hic) mapped to a W303 assembly built by allhic; output files were not collected before the fix.
+allhic	allhic_build	PASS	Built 16 W303 yeast pseudo-chromosomes; CWL fixed: added the required output FASTA name and AGP output.
+allhic	allhic_extract	Failed	tool bug in allhic 0.9.14: extract closes pairs.txt before writing it, so pairs.txt is always empty (clm, counts and distribution are fine); CWL fixed to stage the BAM and collect outputs.
+allhic	allhic_optimize	PASS	Yeast Hi-C counts and clm from extract; CWL fixed to stage the counts file and collect the tour file.
+allhic	allhic_partition	PASS	16 groups match the optimize tour; pairs.txt was rebuilt from the real .clm because extract writes it empty; CWL fixed to collect outputs.
+allhic	allhic_pipeline	Failed	tool bug in allhic 0.9.14: the empty pairs.txt from extract gives 0 partitions and build then panics (index out of range).
+allhic	allhic_plot	Not completed	allhic plot writes its data and then starts a web server that never exits, so it cannot finish as a batch job.
+allhic	allhic_prune	PASS	Synthetic data: a planted alleles table on real yeast Hi-C pairs; the planted pair is labelled allelic; CWL fixed to collect the pruned pairs file.
+allo	allo	Failed	image problem: allo imports tensorflow.keras at start-up, but the image's TensorFlow 2.17 has no tensorflow.keras module (Keras 3 missing), so every run fails, even --readcount on the upstream test SAM files.
+alloshp	alloshp_WGA	PASS	Packaged Brachypodium sample genomes (Bd2 vs Chr01); 89 valid blocks and a 11.9 M-position BED, as in the upstream make test.
+alloshp	alloshp_vcf2alignment	PASS	Packaged Brachypodium sample VCF; 6-sample MSA of 1,746,620 sites; CWL fixed: the -l report name is now required.
+alloshp	alloshp_vcf2synteny	PASS	Packaged sample VCF with the WGA BED; 762,307 loci, Bsta samples and hybrids carry B-subgenome variants; CWL fixed: added staged WGA folders and required -o.
+alphafill	alphafill_create-index	PASS	Upstream mini PDB-REDO test set (1cbs, 2cbs, 3cbs) gives 3 entity sequences; CWL fixed: --pdb-fasta is an output name, config made required.
+alphafill	alphafill_process	PASS	Upstream test model AF-P29373: first hit 1CBS chain A with retinoic acid (REA) transplanted, as the upstream test expects; CWL fixed: output name and outputs added, config made required.
+alphafill	alphafill_rebuild-db	Failed	not a usable tool: alphafill 2.2.0 has no rebuild-db command (only create-index and process); the file wraps bare alphafill with a command string and no data inputs or outputs.
+alphafill	alphafill_server	Failed	not a usable tool: alphafill 2.2.0 in this image has no server command (only create-index and process); the file wraps bare alphafill with a command string and no data inputs or outputs.
+alter-sequence-alignment	alter-sequence-alignment	PASS	
+altex-be	altex-be	PASS	
+altree	altree	PASS	
+alv	alv	PASS	
+amap	amap	PASS	
+amaranth-assembler	amaranth-assembler_amaranth	PASS	
+amas	amas_AMAS.py	Failed	not a usable tool: it wraps only the subcommand word with no data inputs or outputs, and its baseCommand AMAS is not in the image (the program is AMAS.py).
+ambertools	ambertools_MMPBSA.py	Failed	image problem: MMPBSA.py crashes at start because AMBERHOME is not set in the image (works only with extra environment set by hand).
+ambertools	ambertools_ante-MMPBSA.py	Failed	image problem: ante-MMPBSA.py stops with 'AMBERHOME is not set' because the image does not set AMBERHOME (works only with extra environment set by hand).
+ambertools	ambertools_reduce	PASS	
+amdirt	amdirt_autofill	PASS	
+amdirt	amdirt_convert	PASS	
+amdirt	amdirt_download	PASS	
+amdirt	amdirt_merge	PASS	
+amdirt	amdirt_validate	PASS	
+amide	amide	Not completed	AMIDE is an interactive GTK image viewer that needs an X display, so it cannot run as a batch job.
+amiga	amiga	Failed	not a usable tool: it wraps only the amiga subcommand word with no data inputs or outputs.
+aminoextract	aminoextract	PASS	
+amira	amira	Not completed	Amira needs a species pandora panRG database, and the smallest one is about 530 MB, too large for this test.
+ampcombi	ampcombi_cluster	PASS	
+ampcombi	ampcombi_complete	PASS	
+ampcombi	ampcombi_parse_tables	PASS	
+ampcombi	ampcombi_signal_peptide	Not completed	signal_peptide needs the SignalP 6 model files, which require a DTU academic licence to download.
+ampd-up	ampd-up_AMPd-Up	PASS	
+amplici	amplici_run_AmpliCI	PASS	
+ampliconclassifier	ampliconclassifier_amplicon_classifier.py	PASS	
+amplicon_coverage_plot	amplicon_coverage_plot_amplicov	PASS	
+ampliconsplitter	ampliconsplitter_ampliconsplitter.py	PASS	
+ampliconsuite	ampliconsuite_AmpliconSuite-pipeline.py	PASS	
+ampliconsuite	ampliconsuite_amplicon_classifier.py	PASS	
+amplicontyper	amplicontyper_train	PASS	
+amplify	amplify_AMPlify	PASS	49/50 known AMPs and 46/50 non-AMPs from the AMPlify test sets called correctly.
+amplify	amplify_train_amplify	PASS	Trained the 5-model ensemble on 60+60 AMPlify training sequences; test AUC 0.68 on 100 held-out sequences (small set, slow on CPU).
+ampligone	ampligone	PASS	
+amplisim	amplisim	PASS	
+amptk	amptk_454	PASS	Real Ion Torrent reads (amptk test_data) run through the 454 mode; no real 454 data available.
+amptk	amptk_SRA	PASS	
+amptk	amptk_SRA-submit	Failed	image problem: amptk 1.6.0 SRA-submit crashes with AttributeError (args.input) for ion, illumina and 454 input; only the illumina3 path avoids it, and that path was not tested.
+amptk	amptk_cluster_ref	PASS	Closed-reference mode with a custom FASTA DB; the de novo part needs licensed USEARCH9, not in the image.
+amptk	amptk_dada2	PASS	
+amptk	amptk_database	PASS	
+amptk	amptk_drop	PASS	
+amptk	amptk_funguild	Not completed	Needs to download the FUNGuild database at run time (default mycoportal URL returns 404) and a fungal OTU table with taxonomy; neither was available.
+amptk	amptk_heatmap	Failed	image problem: --method heatmap fails with matplotlib TypeError (add_axes needs rect) and clustermap fails with NameError (cluster undefined) in amptk 1.6.0.
+amptk	amptk_illumina	PASS	
+amptk	amptk_illumina2	Not completed	No real in-line barcoded Illumina data; a planted test (real amptk reads with added barcodes) ran but demultiplexed 0 reads, cause not found.
+amptk	amptk_illumina3	Failed	image problem: amptk 1.6.0 illumina3 crashes with TypeError when it joins the demultiplexed files (text written to a binary file), seen on real QIIME2 Atacama EMP reads.
+amptk	amptk_lulu	Failed	image problem: R package LULU is not installed in the image ('LULU not installed').
+amptk	amptk_meta	PASS	
+amptk	amptk_pacbio	Not completed	Needs a folder of lima-demultiplexed PacBio CCS amplicon BAM files; no such real test data found.
+amptk	amptk_pb-dada2	Not completed	Needs amptk pacbio output (reads tagged rq= and bq= from lima BAMs); the real PacBio ITS reads found lack these tags, so all reads were filtered out.
+amptk	amptk_primers	PASS	Lists the primers built into AMPtk; removed an invented required positional input.
+amptk	amptk_remove	PASS	
+amptk	amptk_sample	PASS	
+amptk	amptk_select	PASS	
+amptk	amptk_show	PASS	Barcode counts correct; the tool's own --quality_trim mode writes an empty file (bug in amptk 1.6.0: worker uses an undefined global args).
+amptk	amptk_stats	Failed	image problem: the bundled phyloseq R script stops with 'the condition has length > 1' (old adonis code under R 4.3 / vegan 2.6), so no HTML results are made.
+amptk	amptk_summarize	Failed	image problem: amptk summarize imports stackedBarGraph, which needs the Python package 'future' (past.utils), missing in the image. CWL was rewritten from the help (old file used invented flags).
+amptk	amptk_taxonomy	PASS	Ran with --method sintax on a SINTAX DB built by amptk database from the nf-core ampliseq Greengenes 85% test set.
+amptk	amptk_unoise2	Failed	image problem: amptk unoise2 runs vsearch --derep_fulllength on FASTQ, which the image's vsearch 2.24 rejects; it also needs licensed USEARCH9, not in the image.
+amptk	amptk_unoise3	PASS	
+amrfior	amrfior	PASS	
+amulety	amulety	Failed	not a usable tool: wraps only the amulety command group with a subcommand string and no data inputs or outputs.
+amused	amused_AMUSED	PASS	
+ananse	ananse_ananse	Failed	not a usable tool: wraps only the ananse command group with a subcommand string and free string options, no data inputs or outputs.
+anansnake	anansnake	Not completed	The workflow builds conda environments with network access at run time and needs a genomepy genome plus RNA-seq and ATAC-seq count tables, which is too heavy for this test; baseCommand fixed from snakemake to anansnake.
+anarci	anarci_ANARCI	PASS	
+anchore-cli	anchore-cli_account	Failed	not a usable tool: wraps only the anchore-cli account command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_analysis-archive	Failed	not a usable tool: wraps only the anchore-cli analysis-archive command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_evaluate	Failed	not a usable tool: wraps only the anchore-cli evaluate command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_event	Failed	not a usable tool: wraps only the anchore-cli event command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_image	Failed	not a usable tool: wraps only the anchore-cli image command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_policy	Failed	not a usable tool: wraps only the anchore-cli policy command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_query	Failed	not a usable tool: wraps only the anchore-cli query command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_registry	Failed	not a usable tool: wraps only the anchore-cli registry command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_repo	Failed	not a usable tool: wraps only the anchore-cli repo command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_subscription	Failed	not a usable tool: wraps only the anchore-cli subscription command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchore-cli	anchore-cli_system	Failed	not a usable tool: wraps only the anchore-cli system command group with a subcommand string and free arguments, and every call needs a running Anchore Engine server.
+anchorwave	anchorwave_ali	PASS	
+anchorwave	anchorwave_genoAli	PASS	
+anchorwave	anchorwave_gff2seq	PASS	
+anchorwave	anchorwave_proali	PASS	
+andi	andi	Failed	image problem: andi 0.14 crashes with a segmentation fault (exit 139) on every input, including three SARS-CoV-2 genomes and a tiny FASTA.
+anfo	anfo	Failed	image problem: anfo aborts with a protobuf CHECK failure whenever an index is given, so no read is aligned (SARS-CoV-2 genome, index and reads built in the image); the CWL also passes genome and index as paths, but anfo looks them up by name in ANFO_PATH.
+anglerfish	anglerfish_explore	Failed	image problem: the upstream CI command (anglerfish explore on testdata/BC18_P14351_1001.fastq.gz) crashes in explore.py with a numpy/pandas UFuncTypeError, a library version clash in the image.
+anglerfish	anglerfish_run	Not completed	runs on the project's test data (58 reads, 43 with both adaptors) but assigns 0 reads to the sample although its index is in the reads, so demultiplexing could not be confirmed
+angsd	angsd	PASS	
+aniclustermap	aniclustermap_ANIclustermap	PASS	
+anise_basil	anise_basil	PASS	
+anise_basil	anise_basil_anise	PASS	
+anise_basil	anise_basil_filter_basil.py	Failed	image problem: filter_basil.py is Python 2 code run under Python 3.12 and crashes with a bytes/str TypeError on the upstream basil.vcf test file.
+annembed	annembed_hnsw	PASS	
+annonars	annonars_clinvar-genes	Failed	not a usable tool: wraps only the 'annonars clinvar-genes' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_clinvar-minimal	Failed	not a usable tool: wraps only the 'annonars clinvar-minimal' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_clinvar-sv	Failed	not a usable tool: wraps only the 'annonars clinvar-sv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_cons	Failed	not a usable tool: wraps only the 'annonars cons' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_db-utils	Failed	not a usable tool: wraps only the 'annonars db-utils' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_dbsnp	Failed	not a usable tool: wraps only the 'annonars dbsnp' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_freqs	Failed	not a usable tool: wraps only the 'annonars freqs' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_functional	Failed	not a usable tool: wraps only the 'annonars functional' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_gene	Failed	not a usable tool: wraps only the 'annonars gene' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_gnomad-mtdna	Failed	not a usable tool: wraps only the 'annonars gnomad-mtdna' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_gnomad-nuclear	Failed	not a usable tool: wraps only the 'annonars gnomad-nuclear' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_gnomad-sv	Failed	not a usable tool: wraps only the 'annonars gnomad-sv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_helixmtdb	Failed	not a usable tool: wraps only the 'annonars helixmtdb' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_regions	Failed	not a usable tool: wraps only the 'annonars regions' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_server	Failed	not a usable tool: wraps only the 'annonars server' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annonars	annonars_tsv	Failed	not a usable tool: wraps only the 'annonars tsv' command group (a subcommand string plus verbosity flags), with no data inputs or outputs.
+annosine2	annosine2_AnnoSINE_v2	PASS	
+annotsv	annotsv	Not completed	Needs the AnnotSV annotation database (5.3 GB human, 2.7 GB mouse), which is too large to download here; flags fixed from the help.
+annotwg	annotwg	PASS	
+ansible	ansible	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
+ansible	ansible_ansible-galaxy	Failed	not a usable tool: wraps only the ansible-galaxy command group with no data inputs or outputs, and the image also crashes on the unknown uid 1001.
+ansible	ansible_ansible-pull	Failed	image problem: Ansible 1.9.4 crashes because the container user (uid 1001) is not in /etc/passwd; it runs only with cwltool --no-match-user.
+ant	ant	PASS	Synthetic data: a small build.xml ran its target with a -D property and wrote the expected log.
+antarna	antarna_antarna.py	PASS	
+antismash	antismash	Failed	image problem: antiSMASH 8.0.4 writes prepared model files into its own root-owned package folder on first run, so it runs only with cwltool --no-read-only and --no-match-user.
+antismash-lite	antismash-lite_antismash	Failed	image problem: antiSMASH 8.0.1 writes prepared model files into its own root-owned package folder on first run, so it runs only with cwltool --no-read-only and --no-match-user.
+antismash-lite	antismash-lite_download-antismash-databases	Not completed	The full database download is several GB (Pfam, ClusterBlast, KnownClusterBlast, TIGRFam), too large for this test; output folder type fixed and network access added.
+anvio-minimal	anvio-minimal_anvi-gen-contigs-database	PASS	
+any2fasta	any2fasta	PASS	
+aodp	aodp	PASS	
+apoc	apoc	PASS	
+apollo	apollo_arrow	Not completed	arrow is a client for a running Apollo annotation web server, which is not available in this test; group options moved before the subcommand.
+appspam	appspam	PASS	
+apptainer	apptainer_build	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_cache	Failed	not a usable tool: wraps only the 'apptainer cache' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_capability	Failed	not a usable tool: wraps only the 'apptainer capability' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_checkpoint	Failed	not a usable tool: wraps only the 'apptainer checkpoint' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_completion	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_config	Failed	not a usable tool: wraps only the 'apptainer config' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_delete	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_exec	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_inspect	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_instance	Failed	not a usable tool: wraps only the 'apptainer instance' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_key	Failed	not a usable tool: wraps only the 'apptainer key' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_keyserver	Failed	not a usable tool: wraps only the 'apptainer keyserver' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_oci	Failed	not a usable tool: wraps only the 'apptainer oci' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_overlay	Failed	not a usable tool: wraps only the 'apptainer overlay' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_plugin	Failed	not a usable tool: wraps only the 'apptainer plugin' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_pull	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_push	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_registry	Failed	not a usable tool: wraps only the 'apptainer registry' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_remote	Failed	not a usable tool: wraps only the 'apptainer remote' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_run	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_run-help	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_search	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_shell	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_sif	Failed	not a usable tool: wraps only the 'apptainer sif' command group (a subcommand string, no data inputs or outputs); the image also fails on unknown userid 1001.
+apptainer	apptainer_sign	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_test	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+apptainer	apptainer_verify	Failed	image problem: every apptainer 1.3.0 command stops with 'unknown userid 1001' because the container user is not in /etc/passwd; it runs only with cwltool --no-match-user.
+aprfinder	aprfinder	PASS	
+apscale	apscale	Failed	image problem: the Python module xlsxwriter is missing, so the final read-table step crashes after merging, trimming, filtering and denoising of nf-core ampliseq reads ran correctly.
+aptardi	aptardi	Failed	image problem: aptardi calls samtools and bedtools, but neither is in the image; the CWL was also rewritten from the help because all its flags were invented.
+apt-probeset-summarize	apt-probeset-summarize	PASS	
+apu-label-propagation	apu-label-propagation	PASS	
+aquamis	aquamis	Not completed	AQUAMIS needs kraken2, mash, taxonkit and ConFindR databases (rMLST access needs a licence), none of which ship in the image; required inputs and the results folder output were fixed.
+aquila	aquila_Aquila_step0_sortbam	PASS	
+aquila	aquila_Aquila_step1	Not completed	Needs a 10x linked-read BAM with barcodes, a FreeBayes VCF and the large hg38 100-mer uniqueness map; the python3 plus bare script baseCommand was fixed.
+aquila	aquila_Aquila_step2	Not completed	Needs the Aquila_step1 results folder from 10x linked-read data and GRCh38; the baseCommand was fixed and out_dir now takes the step1 folder staged writable.
+aragorn	aragorn	PASS	
+arb-bio	arb-bio_arb	Not completed	arb_ntree is an interactive X11 GUI program and cannot run as a batch job; it also needs ARBHOME, which only the arb wrapper sets.
+arb-bio	arb-bio_arb_edit4	Not completed	arb_edit4 is the interactive X11 sequence editor of ARB and cannot run as a batch job.
+arborator	arborator	PASS	
+arborist	arborist	PASS	
+arcas-hla	arcas-hla_arcasHLA	Failed	not a usable tool: the CWL wraps only the arcasHLA command group with a subcommand string and has no data inputs or outputs.
+archer	archer_launch	Not completed	archer launch starts a long-running gRPC server that uploads reads to an AWS S3 bucket, so it needs AWS credentials and cannot finish as a batch job.
+archer	archer_process	Not completed	archer process sends a JSON request from standard input to a running Archer server with AWS S3 access, which a batch test cannot provide.
+archer	archer_watch	Not completed	archer watch streams messages from a running Archer server and never ends on its own, so it cannot run as a batch job.
+architeuthis	architeuthis_completion	Failed	not a usable tool: it wraps the shell autocompletion generator, which takes no data inputs.
+architeuthis	architeuthis_mapping	Failed	not a usable tool: it wraps only the mapping command group with a subcommand string and has no data inputs or outputs.
+architeuthis	architeuthis_merge	PASS	
+arcs	arcs	PASS	
+arcs	arcs_arcs-make	Failed	image problem: the image lacks perl, LINKS and bwa, so the arks-long demo stops at its first step (the CWL also binds make options as separate words instead of key=value).
+arem	arem	PASS	
+argnorm	argnorm_abricate	PASS	
+argnorm	argnorm_amrfinderplus	PASS	
+argnorm	argnorm_argsoap	PASS	
+argnorm	argnorm_deeparg	PASS	
+argnorm	argnorm_groot	PASS	
+argnorm	argnorm_hamronization	PASS	
+argnorm	argnorm_resfinder	PASS	
+argo	argo	Not completed	Needs the 13.5 GB Argo SARG+/GTDB database from Zenodo plus indexing, too large for this test.
+argparse2tool	argparse2tool	Failed	not a usable tool: the argparse2tool command only prints the dropins folder path for PYTHONPATH and ignores all arguments, so every input and the output in the CWL are invented.
+args_oap	args_oap_make_db	PASS	
+args_oap	args_oap_stage_one	Failed	image problem: the image ships unindexed SARG/GreenGenes/KO30 databases in a root-owned package folder and stage_one always indexes them there, which fails in the read-only container run as the user (needs --no-read-only and --no-match-user).
+args_oap	args_oap_stage_two	PASS	Ran on the README example (STAS) with the SARG database indexed by make_db via --database, because the built-in database is not indexed in the image.
+aria2	aria2_aria2c	PASS	
+ariba	ariba	Failed	not a usable tool: wraps only the ariba command group (a subcommand string and stdout), with no data inputs or outputs.
+array-as-vcf	array-as-vcf	PASS	
+arriba	arriba_draw_fusions.r	PASS	
+art	art_df	Failed	not a usable tool: wraps the system df utility (from an unrelated 'art of command line' page), not an ART program, and art_df does not exist in the image.
+art	art_ifconfig	Failed	not a usable tool: wraps the system ifconfig utility (from an unrelated 'art of command line' page), not an ART program, and art_ifconfig does not exist in the image.
+art	art_less	PASS	
+artemis	artemis_act	Not completed	ACT is an interactive Java GUI genome browser that needs a display and cannot run as a batch job.
+artemis	artemis_art	Not completed	Artemis is an interactive Java GUI genome browser that needs a display and cannot run as a batch job.
+artemis	artemis_bamview	Failed	not a usable tool: generated from a JVM start-up log line, with only JVM options and a command name that does not exist.
+artemis	artemis_dnaplotter	Not completed	DNAPlotter is an interactive Java GUI program that fails headless and cannot run as a batch job.
+artex	artex	Failed	image problem: on the author's ERR5398250 test set the bundled Clair3 full-alignment step fails (gzip invalid magic), so bcftools isec finds no index and artex exits 1, also with plain docker run.
+artfastqgenerator	artfastqgenerator	PASS	
+artic	artic_export	Not completed	No small real test set with FAST5 raw-signal files and a matching sequencing summary was found.
+artic	artic_filter	Failed	image problem: artic filter in 1.8.5 always crashes with a TypeError in its final summary print, so it exits 1 on the MT007544 test reads.
+artic	artic_guppyplex	PASS	
+artic	artic_minion	PASS	
+artic	artic_rampart	Not completed	artic rampart only starts RAMPART through interactive prompts and cannot run as a batch job.
+artic	artic_run	Not completed	artic run processes a run folder through interactive prompts and cannot run as a batch job.
+artic-porechop	artic-porechop_porechop	PASS	
+artic-tools	artic-tools_align_trim	PASS	
+artic-tools	artic-tools_check_vcf	PASS	
+artic-tools	artic-tools_get_scheme	PASS	
+artic-tools	artic-tools_validate_scheme	PASS	
+art_modern	art_modern	Failed	not a usable tool: generated from a container error log; its image (art 2016.06.05) has no art_modern command and the flags are invented.
+art_modern-openmpi	art_modern-openmpi	PASS	
+arvados-cwl-runner	arvados-cwl-runner	Not completed	arvados-cwl-runner needs a running Arvados cluster with ARVADOS_API_HOST and ARVADOS_API_TOKEN, even for --validate.
+arvados-python-client	arvados-python-client_arv-get	Not completed	Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available.
+arvados-python-client	arvados-python-client_arv-keepdocker	Not completed	Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available.
+arvados-python-client	arvados-python-client_arv-put	Not completed	Needs an Arvados API server and token (ARVADOS_API_HOST/ARVADOS_API_TOKEN), which are not available.
+asciigenome	asciigenome_ASCIIGenome	PASS	
+asgal	asgal	PASS	
+ashlar	ashlar	PASS	
+askocli	askocli	Failed	not a usable tool: wraps only the subcommand group as free strings with no data inputs or outputs, and every subcommand needs an AskOmics server and API key.
+asn2gb	asn2gb	PASS	
+aspera-cli	aspera-cli_ascli	Not completed	Real transfers need a remote Aspera server, credentials, network and the ascp binary (not in the image); after fixing the option syntax a local config command runs correctly.
+asqcan	asqcan	Not completed	The pipeline always downloads the multi-GB NCBI prot.accession2taxid.gz file into HOME before it starts, which needs network and is too large for this test.
+assemblerflow	assemblerflow_build	PASS	
+assembly-scan	assembly-scan	PASS	
+assembly-stats	assembly-stats	PASS	
+assemblytics	assemblytics	Failed	image problem: Assemblytics_between_alignments.pl uses /usr/bin/perl, which is missing in the image, so between-alignment variants are silently lost (1 of 43 expected yeast SVs).
+assembly_uploader	assembly_uploader	Failed	not a usable tool: generated from a failed image pull, it names the wrong image (assemblycomparator2) and an invented command and flags; the package's real commands are study_xmls, submit_study, assembly_manifest, release_study and webin_cli_handler.
+assemblyutility	assemblyutility_AssemblyStatistics	PASS	
+assemblyutility	assemblyutility_SelectLongestReads	PASS	
+astalavista	astalavista_asta	PASS	
+astalavista	astalavista_astafunk	Not completed	With real chr21 GTF, genome and Pfam HMMs the exhaustive search throws NullPointerException for every gene and reports no hits, and heuristic mode needs a reference domain file that is not available.
+astalavista	astalavista_astalavista	Failed	not a usable tool: wraps only the Flux launcher's general options and a --tool string, with no data inputs or outputs; the real tools are wrapped in the other astalavista files.
+astalavista	astalavista_scorer	Not completed	Runs on chr21 with the GeneID human3iso parameter file, but every donor site scores about -10000 even with canonical GT motifs, so the scores cannot be confirmed (the parameter file may not match this old parser).
+astalavista	astalavista_sortbed	PASS	
+astalavista	astalavista_sortgtf	PASS	
+astalavista	astalavista_subsetter	PASS	
+astral-tree	astral-tree	PASS	
+atactk	atactk_trim_adapters	Failed	tool bug: trim_adapters always exits 1 at the end of input (generator raised StopIteration under Python 3.7), so the run fails although the trimmed files are written.
+ataqv	ataqv	PASS	
+athena_meta	athena_meta_athena-meta	PASS	
+athena_meta	athena_meta_bwa	Failed	not a usable tool: wraps the bwa dependency inside the athena_meta image as a bare command group with no data inputs or outputs.
+athena_meta	athena_meta_samtools	Failed	not a usable tool: wraps the samtools dependency inside the athena_meta image as a bare command group with no data inputs or outputs.
+atlas	atlas_allelefreq	PASS	
+atlas	atlas_ancestralalleles	PASS	
+atlas	atlas_assesssoftclipping	PASS	
+atlas	atlas_createmask	PASS	
+atlas	atlas_filterbam	PASS	
+atlas	atlas_glf	PASS	
+atlas	atlas_mergeoverlappingreads	PASS	
+atlas	atlas_mergerg	PASS	
+atlas	atlas_mutationload	PASS	
+atlas	atlas_pileuptobed	PASS	
+atlas	atlas_printglf	PASS	
+atlas	atlas_psmc	PASS	
+atlas	atlas_qualitytransformation	PASS	
+atlas	atlas_simulate	PASS	
+atlas	atlas_vcfcompare	PASS	
+atlas-data-import	atlas-data-import_get_experiment_data.R	PASS	
+atlas-data-import	atlas-data-import_import_classification_data.R	PASS	
+atlas-fastq-provider	atlas-fastq-provider_deinterleave_fastq.sh	PASS	
+atlas-fastq-provider	atlas-fastq-provider_fetchEnaLibraryFastqs.sh	PASS	
+atlas-fastq-provider	atlas-fastq-provider_fetchFastq.sh	PASS	
+atlas-gene-annotation-manipulation	atlas-gene-annotation-manipulation_gtf2featureAnnotation.R	PASS	
+atlas-metadata-validator	atlas-metadata-validator_atlas_validation.py	Failed	image problem: the image has no git executable, so the GitPython import fails unless GIT_PYTHON_REFRESH=quiet is set by hand; CWL rewritten from the real help because its flags were invented.
+atol-bpa-datamapper	atol-bpa-datamapper_map-metadata	PASS	
+atol-genome-launcher	atol-genome-launcher_bpa-file-downloader	Not completed	Needs a Bioplatforms Australia API key in BPA_APIKEY to download data; without it the tool stops with 'Set the BPA_APIKEY environment variable'.
+atol-genome-launcher	atol-genome-launcher_rnaseq-manifest-generator	PASS	
+atol-genome-launcher	atol-genome-launcher_rnaseq-reads-downloader	Not completed	Downloads each read file through bpa-file-downloader, which needs a Bioplatforms Australia API key in BPA_APIKEY.
+atol-qc-annotation	atol-qc-annotation	Not completed	Needs an OMAmer database (several GB), an ete3 NCBI taxonomy sqlite and a BUSCO lineage set, too large for this test.
+atol-qc-raw-ont	atol-qc-raw-ont	PASS	
+atol-qc-raw-shortread	atol-qc-raw-shortread	PASS	
+atropos	atropos	PASS	
+attotree	attotree	PASS	
+augur	augur_align	PASS	
+augur	augur_ancestral	PASS	
+augur	augur_clades	PASS	
+augur	augur_curate	Failed	not a usable tool: wraps only the 'augur curate' command group (subcommand string, no data inputs or outputs).
+augur	augur_distance	PASS	
+augur	augur_export	Failed	not a usable tool: wraps only the 'augur export' command group (subcommand string, no data inputs or outputs).
+augur	augur_filter	PASS	
+augur	augur_frequencies	PASS	
+augur	augur_import	Failed	not a usable tool: wraps only the 'augur import' command group (subcommand string, no data inputs or outputs).
+augur	augur_index	PASS	
+augur	augur_lbi	PASS	
+augur	augur_mask	PASS	
+augur	augur_measurements	Failed	not a usable tool: wraps only the 'augur measurements' command group (subcommand string, no data inputs or outputs).
+augur	augur_merge	PASS	
+augur	augur_parse	PASS	
+augur	augur_read-file	PASS	
+augur	augur_reconstruct-sequences	PASS	
+augur	augur_refine	PASS	
+augur	augur_sequence-traits	PASS	
+augur	augur_subsample	PASS	
+augur	augur_titers	Failed	not a usable tool: wraps only the 'augur titers' command group (subcommand string, no data inputs or outputs).
+augur	augur_traits	PASS	
+augur	augur_translate	PASS	
+augur	augur_tree	PASS	
+augur	augur_write-file	PASS	
+augustus	augustus	PASS	
+auriclass	auriclass	PASS	
+auspice	auspice_build	PASS	
+auspice	auspice_convert	PASS	
+auspice	auspice_develop	Not completed	Starts a long-running development web server, so it cannot run as a batch job.
+auspice	auspice_view	Not completed	Starts a long-running web server to view datasets, so it cannot run as a batch job.
+authentict	authentict	PASS	
+autocycler	autocycler_clean	PASS	
+autocycler	autocycler_cluster	PASS	
+autocycler	autocycler_combine	PASS	
+autocycler	autocycler_compress	PASS	
+autocycler	autocycler_decompress	PASS	
+autocycler	autocycler_dotplot	PASS	
+autocycler	autocycler_gfa2fasta	PASS	
+autocycler	autocycler_helper	Failed	image problem: no assembler (flye, raven, ...) is in the image, so every helper task stops with 'required program not found'.
+autocycler	autocycler_resolve	PASS	
+autocycler	autocycler_subsample	PASS	
+autocycler	autocycler_table	PASS	
+autocycler	autocycler_trim	PASS	
+autodock-vina	autodock-vina_vina	PASS	
+automappa	automappa	Not completed	Automappa is an interactive web dashboard that needs running Postgres, Redis and RabbitMQ servers, so it cannot run as a batch job.
+autometa	autometa_autometa-bedtools-genomecov	PASS	
+autometa	autometa_autometa-benchmark	PASS	
+autometa	autometa_autometa-binning	PASS	
+autometa	autometa_autometa-binning-ldm	PASS	
+autometa	autometa_autometa-binning-ldm-loginfo	PASS	
+autometa	autometa_autometa-binning-summary	PASS	
+autometa	autometa_autometa-cami-format	PASS	
+autometa	autometa_autometa-config	Failed	image problem: autometa-config always rewrites default.config inside the image, so it fails in the read-only container and works only with cwltool --no-read-only.
+autometa	autometa_autometa-coverage	PASS	
+autometa	autometa_autometa-download-dataset	PASS	
+autometa	autometa_autometa-hmmsearch-filter	Failed	tool bug: main() reads args.infpath and args.markersout, which the parser never defines, so every run crashes with AttributeError.
+autometa	autometa_autometa-kmers	PASS	
+autometa	autometa_autometa-length-filter	PASS	
+autometa	autometa_autometa-markers	PASS	
+autometa	autometa_autometa-orfs	PASS	
+autometa	autometa_autometa-setup-gtdb	PASS	
+autometa	autometa_autometa-taxonomy	PASS	
+autometa	autometa_autometa-taxonomy-lca	PASS	
+autometa	autometa_autometa-taxonomy-majority-vote	PASS	
+autometa	autometa_autometa-unclustered-recruitment	PASS	
+autometa	autometa_autometa-update-databases	PASS	
+aviary	aviary_annotate	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+aviary	aviary_assemble	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+aviary	aviary_batch	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+aviary	aviary_cluster	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+aviary	aviary_complete	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+aviary	aviary_configure	Failed	image problem: configure writes settings into the image's read-only /usr/local conda folder, so it works only with --no-read-only.
+aviary	aviary_diversity	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+aviary	aviary_isolate	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+aviary	aviary_recover	Not completed	Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test.
+avro	avro	Failed	image problem: the avro script uses Python 2 print syntax in a Python 3.5 image and stops with SyntaxError; the CWL options are also not from any real help.
+awscli	awscli_aws	PASS	
+axiome	axiome_process	PASS	
+axiome	axiome_utility	PASS	
+b2btools	b2btools	PASS	
+b2b-utils	b2b-utils_bam2consensus	PASS	
+b2b-utils	b2b-utils_fq_interleave	PASS	
+b2b-utils	b2b-utils_minimeta	Failed	image problem: seqkit and racon are not in the image, so minimeta stops with 'SeqKit is required for shuffling but not found'.
+b2b-utils	b2b-utils_shrink_bedgraph	Failed	image problem: bedtools is not in the image, so shrink_bedgraph stops with 'bedtools is required but not found'.
+babappalign	babappalign	PASS	
+bacgwasim	bacgwasim_BacGWASim	PASS	
+backspinpy	backspinpy_backspin	PASS	
+bacpage	bacpage_assemble	Failed	image problem: the pipeline writes the bwa index into its own read-only package folder, so it runs only with --no-read-only and --no-match-user.
+bacpage	bacpage_identify_files	PASS	
+bacpage	bacpage_phylogeny	Failed	image problem: run_gubbins.py is missing, so the default recombination detection fails; the tree builds only with --no-detect.
+bacpage	bacpage_profile	PASS	
+bacpage	bacpage_setup	PASS	
+bacpage	bacpage_utilities	Failed	not a usable tool: wraps only the utilities command group with a subcommand string and no data inputs or outputs.
+bacphlip	bacphlip	Failed	image problem: hmmsearch (HMMER) is missing from the image, so the pipeline stops after the six-frame translation.
+bactopia	bactopia	Failed	not a usable tool: baseCommand 'run' is the Nextflow run subcommand taken from nextflow help, not a program in the image, and it has no bactopia data inputs or outputs.
+bactopia-qc	bactopia-qc	Failed	not a usable tool: wraps the bare java interpreter with a free main-class string and invented --output-r1 flags; the in=/in2= options belong to BBTools repair.sh, a dependency in the image.
+bactopia-sketcher	bactopia-sketcher_sketch	Failed	not a usable tool: wraps sourmash sketch dna, a dependency inside the image, not the package's bactopia-sketcher program.
+bactopia-variants	bactopia-variants	Failed	image problem: bactopia-variants is an unrendered Nextflow template script that ignores its arguments and fails on placeholders such as ${task.cpus}.
+baczy	baczy_citation	Failed	not a usable tool: it only prints a citation, the baseCommand is the CWL file name, and its inputs are DOI lines from the help.
+baczy	baczy_config	PASS	
+baczy	baczy_run	Not completed	the Snakemake pipeline needs Bakta and GTDB-Tk databases plus per-rule Singularity or conda environments with network access; fastp, megahit and bakta are not in the image.
+badread	badread_error_model	PASS	
+badread	badread_plot	Not completed	badread plot only shows interactive matplotlib windows and writes no output file, so it cannot be checked as a batch job.
+badread	badread_qscore_model	PASS	
+badread	badread_simulate	PASS	
+baitfisher	baitfisher_BaitFilter	PASS	
+baitfisher	baitfisher_BaitFisher	PASS	
+bakdrive	bakdrive	Failed	not a usable tool: wraps only the sub-command group with boolean sub-command words and no data inputs or outputs.
+bakdrive	bakdrive_driver	PASS	
+bakdrive	bakdrive_fmt_donor	PASS	
+bakdrive	bakdrive_fmt_driver	PASS	
+bakdrive	bakdrive_fmt_only	PASS	
+bakdrive	bakdrive_interaction	PASS	
+bakrep-cli	bakrep-cli	PASS	
+bakta	bakta	PASS	
+baktfold	baktfold_compare	Not completed	needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists.
+baktfold	baktfold_install	Not completed	downloads the 8.7 GB baktfold database and the 5 GB ProstT5 model, which is too large to test here.
+baktfold	baktfold_predict	Not completed	needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists.
+baktfold	baktfold_proteins	Not completed	needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists.
+baktfold	baktfold_proteins-compare	Not completed	needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists.
+baktfold	baktfold_run	Not completed	needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists.
+bali-phy	bali-phy	PASS	
+balrog	balrog	Failed	image problem: mmseqs and Python PyTorch are missing from the image, so gene scoring fails (CWL rewritten from the help, its flags were invented).
+bam2fasta	bam2fasta	PASS	
+bam2fastx	bam2fastx	PASS	
+bam2plot	bam2plot_from_bam	Failed	image problem: the image has NumPy 2, which removed numpy.trapz, so from_bam stops with 'Could not process dataframe'.
+bam2plot	bam2plot_from_reads	PASS	
+bam2plot	bam2plot_guci	Failed	image problem: polars 1.38 in the image does not broadcast the name column, so guci crashes with a ShapeError.
+bamaddrg	bamaddrg	PASS	
+bamaligncleaner	bamaligncleaner_bamAlignCleaner	PASS	
+bamclipper	bamclipper	PASS	
+bamdam	bamdam_combine	PASS	
+bamdam	bamdam_compute	Failed	tool bug: compute never processes the last read of the BAM, so the test counts 3 of 4 reads (upstream main has the same loop).
+bamdam	bamdam_extract	PASS	
+bamdam	bamdam_krona	PASS	
+bamdam	bamdam_plotbaminfo	PASS	
+bamdam	bamdam_plotdamage	PASS	
+bamdam	bamdam_shrink	PASS	
+bamdash	bamdash	PASS	
+bamdst	bamdst	PASS	
+bamhash	bamhash_bamhash_checksum_bam	PASS	
+bamhash	bamhash_bamhash_checksum_fasta	PASS	
+bamhash	bamhash_bamhash_checksum_fastq	PASS	
+bamkit	bamkit_bamcleanheader.py	PASS	
+bamkit	bamkit_bamfilterrg.py	PASS	
+bamkit	bamkit_bamgroupreads.py	PASS	
+bamkit	bamkit_bamheadrg.py	PASS	
+bamkit	bamkit_bamlibs.py	PASS	
+bamkit	bamkit_bamtofastq.py	PASS	
+bamm	bamm_extract	Failed	image problem: bamm extract under Python 3.12 crashes with ctypes TypeError (str instead of bytes) on a valid BAM from the BamM example data.
+bamm	bamm_filter	Failed	image problem: bamm filter under Python 3.12 crashes with ctypes ArgumentError in _filterReads on a valid BAM from the BamM example data.
+bamm	bamm_make	Failed	image problem: bamm 1.7.3 under Python 3.12 crashes with TypeError (range of float) in bamMaker.py before mapping any reads.
+bamm	bamm_parse	Failed	image problem: bamm parse under Python 3.12 crashes with ctypes TypeError (str instead of bytes) on a valid BAM from the BamM example data.
+bam-readcount	bam-readcount	PASS	
+bamrescue	bamrescue_bamfile	PASS	
+bamrescue	bamrescue_check	PASS	
+bamrescue	bamrescue_output	PASS	
+bamrescue	bamrescue_rescue	PASS	
+bamscale	bamscale_BAMscale	Failed	not a usable tool: wraps only the BAMscale command group (a subcommand string), with no BAM or BED inputs and no outputs.
+bamslice	bamslice	PASS	
+bamsnap	bamsnap	PASS	
+bamstats	bamstats	PASS	
+bamsurgeon	bamsurgeon_addsnv.py	PASS	
+bamsurgeon	bamsurgeon_addsv.py	PASS	
+bamtocov	bamtocov	PASS	
+bamtools	bamtools_convert	PASS	
+bamtools	bamtools_count	PASS	
+bamtools	bamtools_coverage	PASS	
+bamtools	bamtools_filter	PASS	
+bamtools	bamtools_header	PASS	
+bamtools	bamtools_index	PASS	
+bamtools	bamtools_merge	PASS	
+bamtools	bamtools_random	PASS	
+bamtools	bamtools_resolve	PASS	
+bamtools	bamtools_revert	PASS	
+bamtools	bamtools_sort	PASS	
+bamtools	bamtools_split	PASS	
+bamtools	bamtools_stats	PASS	
+bamutil	bamutil_bam	Failed	not a usable tool: wraps only the bam command group with a tool-name string and free string arguments, so no SAM/BAM file can be staged and no output file is collected.
+bandage	bandage_Bandage	Failed	not a usable tool: wraps only the Bandage command group (a subcommand string), with no graph input and no image or info output.
+bandage_ng	bandage_ng_Bandage	Failed	not a usable tool: wraps only the Bandage command group (a subcommand string), with no graph input and no output, and it uses the old bandage 0.9.0 image instead of BandageNG.
+banner	banner_predict	PASS	
+banner	banner_train	PASS	
+barbell	barbell_annotate	PASS	
+barbell	barbell_filter	PASS	
+barbell	barbell_inspect	PASS	
+barbell	barbell_kit	PASS	
+barbell	barbell_trim	PASS	
+barcodeforge	barcodeforge_barcode	PASS	
+barcodeforge	barcodeforge_extract-auspice-data	PASS	
+barriers	barriers	PASS	
+barrnap	barrnap	PASS	
+barrnap-python	barrnap-python_barrnap	Failed	not a usable tool: wraps the perl barrnap dependency with inputs taken from log lines and no flags; the package's own barrnap.py also fails in this image because it cannot find the bac.hmm database (image problem).
+barseqcount	barseqcount	Failed	not a usable tool: wraps only the command group with a subcommand string and no data inputs or outputs, and its baseCommand barseqcount.py does not exist in the image (the program is barseqcount).
+barseqcount	barseqcount_analyze	Not completed	needs the count report and CSV from barseqcount count, which cannot be produced because count crashes in this image; no public test data exists.
+barseqcount	barseqcount_count	Failed	image problem: barseqcount count crashes when creating its configuration file because the bundled dmbiolib 0.3.10 changed conf_start(), and a hand-written configuration on synthetic data crashes with KeyError in barcode assignment.
+bart	bart_avg	PASS	synthetic data (bart index 0..3): average is 1.5 as expected.
+bart	bart_bench	PASS	synthetic data: one micro-benchmark ran; timing table and benchmark array written.
+bart	bart_bitmask	PASS	synthetic data: dims 0 1 2 give bitmask 7 as expected.
+bart	bart_cabs	PASS	synthetic data: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|3+4i\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\| gives 5 as expected.
+bart	bart_caldir	PASS	synthetic data (BART coil phantom k-space): POCSENSE projection with the maps has NRMSE 0.02.
+bart	bart_calmat	PASS	synthetic data (BART coil phantom): 361x288 matrix as expected, identical to a direct bart run.
+bart	bart_carg	PASS	synthetic data: phase of 1i is pi/2 as expected.
+bart	bart_casorati	PASS	synthetic data: BART test-casorati check passes (NRMSE 0).
+bart	bart_cc	PASS	synthetic data (BART coil phantom): geometric compression keeps RSS of k-space (BART test-cc-geom, NRMSE 3e-6).
+bart	bart_ccapply	PASS	synthetic data (BART coil phantom): matches cc -S -p 4 output (BART test-ccapply-forward, NRMSE 0).
+bart	bart_cdf97	PASS	synthetic data (BART phantom): forward then inverse transform returns the input (BART test-cdf97).
+bart	bart_circshift	PASS	synthetic data: shift of 0..3 by 1 gives 3 0 1 2 as expected.
+bart	bart_conj	PASS	synthetic data: conj(3+4i) gives 3-4i as expected.
+bart	bart_conv	Failed	tool bug: BART 0.4.04 conv gives the right result for 8 samples but flips the sign for 4 or 6; the CWL itself runs
+bart	bart_copy	PASS	synthetic data: plain copy and copy into an existing array at a position both match BART test-copy expectations (NRMSE 0).
+bart	bart_cpyphs	PASS	synthetic data: phase of 3+4i gives 0.6+0.8i as expected.
+bart	bart_creal	PASS	synthetic data: real part of 3+4i is 3 as expected.
+bart	bart_crop	PASS	synthetic data (BART phantom): equals extract of the central 64 rows (NRMSE 0).
+bart	bart_delta	PASS	synthetic data: delta 16 33 128 gives 128 ones on the diagonal as expected.
+bart	bart_ecalib	PASS	synthetic data (BART coil phantom): BART test-ecalib passes (POCSENSE NRMSE 0.037 < 0.05).
+bart	bart_ecaltwo	PASS	synthetic data (BART coil phantom, ecalib -1 first part): POCSENSE NRMSE 0.037 < 0.05.
+bart	bart_estdelay	PASS	synthetic data (BART radial phantom with delays 1.5:1:-0.5): estimates 1.500:1.000:-0.500 (BART test-estdelay).
+bart	bart_estdims	PASS	synthetic data (BART radial trajectory scaled 0.5): estimates 128 128 1 as expected.
+bart	bart_estshift	PASS	synthetic data: flipped array gives shift 1.000000 as in BART test-estshift.
+bart	bart_estvar	PASS	synthetic data (coil phantom plus noise of variance 100): estimates 95.1.
+bart	bart_extract	PASS	synthetic data: matches the BART test-casorati extract step (NRMSE 0).
+bart	bart_fakeksp	PASS	synthetic data (BART phantom and coils): equals unitary FFT of image times coils (NRMSE 0).
+bart	bart_fft	PASS	synthetic data (BART phantom): unitary FFT then inverse FFT returns the input (NRMSE 0, BART test-fft-unitary).
+bart	bart_fftmod	PASS	synthetic data (BART phantom): BART test-fft-uncentered passes (NRMSE 0).
+bart	bart_fftshift	PASS	synthetic data: fftshift of 0..3 gives 2 3 0 1 as expected.
+bart	bart_filter	PASS	synthetic data: median filter of 1 2 3 4 with length 3 gives 2 3 as expected.
+bart	bart_flatten	PASS	synthetic data: BART test-flatten passes (NRMSE 0).
+bart	bart_flip	PASS	synthetic data: flip of 0..3 gives 3 2 1 0 as expected.
+bart	bart_fmac	PASS	synthetic data (BART phantom): image times coils equals the coil phantom (BART test-phantom-coil, NRMSE 0).
+bart	bart_homodyne	PASS	synthetic data (BART coil phantom, 75 percent partial Fourier): BART test-homodyne passes (NRMSE 0.015 < 0.02).
+bart	bart_index	PASS	synthetic data: index 0 4 gives 0 1 2 3 as expected.
+bart	bart_invert	PASS	synthetic data: invert of 2 4 gives 0.5 0.25 as expected.
+bart	bart_itsense	PASS	synthetic data (BART coil phantom): BART test-itsense passes (NRMSE 0.220 < 0.23).
+bart	bart_join	PASS	synthetic data: three 6x1x7 arrays join to a 6x3x7 ones array (BART test-join, NRMSE 0).
+bart	bart_lrmatrix	Failed	tool bug: lrmatrix in BART 0.4.04 opens argv[22] as its output name and segfaults (exit 139), also when run directly.
+bart	bart_mandelbrot	PASS	synthetic data: 64x64 image with iteration counts 0 to 19 for 20 iterations.
+bart	bart_mip	PASS	synthetic data: maximum of 0..3 is 3 as expected.
+bart	bart_nlinv	PASS	synthetic data (BART coil phantom): BART test-nlinv passes (POCSENSE NRMSE 0.034 < 0.05).
+bart	bart_noise	PASS	synthetic data: noise with variance 1 on 4096 zeros has standard deviation 1.02.
+bart	bart_normalize	PASS	synthetic data (BART coils): RSS over coils of the output is 1 everywhere (NRMSE 0).
+bart	bart_nrmse	PASS	synthetic data (BART phantom): scaled copy gives NRMSE 0 with scale 2i (BART test-nrmse-scale).
+bart	bart_nufft	PASS	synthetic data (BART phantom, Cartesian trajectory): BART test-nufft-forward passes (NRMSE 0.0014 < 0.0015).
+bart	bart_ones	PASS	synthetic data: 50x50 array of ones as expected.
+bart	bart_pattern	PASS	synthetic data (BART coil phantom k-space): pattern matches a direct bart run (NRMSE 0).
+bart	bart_phantom	PASS	synthetic data: 8-coil k-space phantom; inverse FFT matches the coil image phantom (NRMSE 0.214 < 0.22, BART test-phantom-ksp-coil).
+bart	bart_pics	PASS	synthetic data (BART coil phantom): BART test-pics-pi passes (NRMSE 0.220 < 0.23).
+bart	bart_pocsense	PASS	synthetic data (BART coil phantom with ESPIRiT maps): BART test-ecalib check passes (NRMSE 0.037 < 0.05).
+bart	bart_poisson	PASS	synthetic data: 1x128x128 pattern, identical to a direct bart run with the same options.
+bart	bart_poly	PASS	synthetic data: poly 128 0 1 equals ones (BART test-poly, NRMSE 0).
+bart	bart_repmat	PASS	synthetic data: 0..3 repeated 3 times as expected.
+bart	bart_reshape	PASS	synthetic data: BART test-flatten reshape step passes (NRMSE 0).
+bart	bart_resize	PASS	synthetic data: centered zero-padding to 100x100 matches BART test-slice step (NRMSE 0).
+bart	bart_rof	PASS	synthetic data (BART phantom plus noise): NRMSE to the clean phantom drops from 0.40 to 0.14.
+bart	bart_rss	PASS	synthetic data (BART coils): equals sqrt(sum \\\\\\\\\\\\\\\\\\\\\\\\\\\\\|c\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|^2) computed with fmac and spow (NRMSE 0).
+bart	bart_sake	PASS	synthetic data (BART coil phantom, Poisson undersampled R=2): NRMSE to full k-space drops from 0.33 to 0.15.
+bart	bart_saxpy	PASS	synthetic data: 2*1+1 gives 3 as expected.
+bart	bart_scale	PASS	synthetic data (BART phantom): matches BART test-fft-basic scale step (NRMSE 0).
+bart	bart_sdot	PASS	synthetic data: dot product of 36 ones with itself is 36 as expected.
+bart	bart_show	PASS	synthetic data: prints 0 1 2 3 for bart index 0 4.
+bart	bart_slice	PASS	synthetic data: BART test-slice step gives a 100-sample slice as expected.
+bart	bart_spow	PASS	synthetic data: (3+4i)^2 gives -7+24i as expected.
+bart	bart_sqpics	PASS	synthetic data (BART coil phantom): same check as BART test-pics-pi passes (NRMSE 0.220 < 0.23).
+bart	bart_squeeze	PASS	synthetic data: BART test-squeeze passes (NRMSE 0, dims 2x3x4).
+bart	bart_std	PASS	synthetic data: standard deviation of unit-variance noise is 1.02.
+bart	bart_svd	PASS	synthetic data: U*S*VH reconstructs the 6x6 input (NRMSE < 1e-5).
+bart	bart_threshold	PASS	synthetic data: soft threshold 0.5 of 0.2 1 gives 0 0.5 as expected.
+bart	bart_toimg	PASS	synthetic data (BART phantom): writes a 128x128 PNG.
+bart	bart_traj	PASS	synthetic data: radial trajectory 256x64, identical to a direct bart run; used by the passing nufft and pics checks.
+bart	bart_transpose	PASS	synthetic data: transpose 0 1 of a 4-vector gives a 1x4 array with the same values.
+bart	bart_twixread	PASS	real Siemens VB twix file (pymapvbvd test data, STEAM): 4096 samples x 32 coils x 2 averages, as pymapvbvd tests expect.
+bart	bart_var	PASS	synthetic data: variance of unit-variance noise is 1.04.
+bart	bart_vec	PASS	synthetic data: vec 1 2 3 gives 1 2 3 as expected.
+bart	bart_walsh	PASS	synthetic data (BART coil phantom): walsh then ecaltwo gives maps with POCSENSE NRMSE 0.049 < 0.05.
+bart	bart_wave	PASS	synthetic data (BART coil phantom, wave PSF): BART test-wave passes (NRMSE 0.223 < 0.23).
+bart	bart_wavelet	PASS	synthetic data (BART phantom): forward then adjoint returns the input (BART test-wavelet, NRMSE 0).
+bart	bart_wavepsf	PASS	synthetic data: 640x128 PSF identical to the one used in the passing BART test-wave and test-wshfl checks.
+bart	bart_whiten	PASS	synthetic data: BART test-whiten passes (NRMSE 4e-5 < 0.001).
+bart	bart_window	PASS	synthetic data: 8-point Hamming window values 0.08 to 0.95 as expected.
+bart	bart_wshfl	PASS	synthetic data (BART coil phantom, wave PSF): BART test-wshfl passes (NRMSE 0.223 < 0.23).
+bart	bart_zeros	PASS	synthetic data: 50x50 array of zeros as expected.
+bart	bart_zexp	PASS	synthetic data: exp(i*pi) gives -1 as expected.
+bart-view	bart-view_bart	Failed	not a usable tool: it wraps only the bart command group with a subcommand string and no data inputs or outputs.
+basenji	basenji_basenji_motifs.py	Failed	image problem: basenji_motifs.py crashes at start unless the HG38 environment variable is set, and it also reads an undefined split_label option; CWL flags were rewritten from the help.
+basenji	basenji_basenji_sat.py	Failed	not a usable tool: basenji_sat.py does not exist in the image (only basenji_sat_bed.py and basenji_sat_vcf.py), so the command cannot run.
+batch_brb	batch_brb	PASS	
+batch_brb	batch_brb_batch_correction_all_loess_wrapper.r	PASS	
+batch_brb	batch_brb_batch_correction_wrapper.r	PASS	
+batch_correction	batch_correction	PASS	
+batch_correction	batch_correction_batch_correction_all_loess_wrapper.r	PASS	
+batch_correction	batch_correction_batch_correction_wrapper.r	PASS	
+batchcorrection	batchcorrection_batch_correction_all_loess_wrapper.r	PASS	
+batchcorrection	batchcorrection_batch_correction_wrapper.r	Failed	image problem: the linear/lowess/loess path stops with 'there is no package called ade4' in this 2017 image.
+bax2bam	bax2bam	PASS	
+bayescan	bayescan	PASS	
+bayescode	bayescode_mutselomega	PASS	
+bayescode	bayescode_nodemutsel	PASS	
+bayescode	bayescode_nodeomega	PASS	
+bayescode	bayescode_nodetraits	PASS	
+bayescode	bayescode_readmutselomega	PASS	
+bayestyper	bayestyper_bayesTyper	Failed	not a usable tool: it wraps only the command group with a subcommand string and free options, and its baseCommand bayestyper does not exist (the program is bayesTyper).
+bayestyper	bayestyper_bayesTyperTools	Failed	not a usable tool: it wraps only the bayesTyperTools command group with a subcommand string and free options, with no data inputs or outputs.
+bazam	bazam	PASS	
+bbmap	bbmap_bbduk.sh	PASS	
+bbmap	bbmap_bbmap.sh	PASS	
+bbmap	bbmap_bbmerge.sh	PASS	
+bbmap	bbmap_bbnorm.sh	PASS	
+bbmap	bbmap_dedupe.sh	PASS	
+bbmap	bbmap_khist.sh	PASS	
+bbmap	bbmap_reformat.sh	PASS	
+bbmapy	bbmapy_bbmapy-test	Failed	not a usable tool: bbmapy-test is a built-in self-test that ignores all arguments, makes its own random data and deletes its outputs (the image also lacks Java and downloads it at run time).
+bcalm	bcalm	PASS	
+bcbio-nextgen	bcbio-nextgen_bcbio_nextgen.py	Not completed	Running the pipeline needs a full bcbio install (bcbio_system.yaml, indexed genomes and third-party tools such as bwa, samtools and gatk), which this image does not contain.
+bcbio-nextgen-vm	bcbio-nextgen-vm_bcbio_vm.py	Failed	not a usable tool: wraps only the bcbio_vm.py command group (a free subcommand string and --datadir) with no data inputs or outputs; the subcommands also drive Docker or cloud services.
+bcbio-rnaseq	bcbio-rnaseq_compare	Failed	image problem: R package 'reshape' is missing, so the caller-comparison step (compare.R plots) fails silently; the DESeq2/edgeR/voom tables themselves match the repo's expected results.
+bcbio-rnaseq	bcbio-rnaseq_simulate	PASS	
+bcbio-rnaseq	bcbio-rnaseq_summarize	PASS	
+bcbio-variation	bcbio-variation	PASS	
+bcbio-variation-recall	bcbio-variation-recall	Failed	image problem: the image lacks bgzip, bcftools and freebayes, so ensemble, merge and square all fail; the CWL also calls a 'recall' subcommand that does not exist (only ensemble, merge, square).
+bcftools	bcftools_annotate	PASS	
+bcftools	bcftools_call	PASS	
+bcftools	bcftools_cnv	PASS	synthetic data: planted BAF/LRR array VCF; all three planted copy-number segments were called correctly.
+bcftools	bcftools_concat	PASS	
+bcftools	bcftools_consensus	PASS	
+bcftools	bcftools_convert	PASS	
+bcftools	bcftools_csq	PASS	
+bcftools	bcftools_filter	PASS	
+bcftools	bcftools_gtcheck	PASS	
+bcftools	bcftools_head	PASS	
+bcftools	bcftools_index	PASS	
+bcftools	bcftools_isec	PASS	
+bcftools	bcftools_merge	PASS	
+bcftools	bcftools_mpileup	PASS	
+bcftools	bcftools_norm	PASS	
+bcftools	bcftools_plugin	PASS	
+bcftools	bcftools_polysomy	PASS	synthetic data: planted BAF/LRR array VCF; the trisomic and the normal chromosome got copy numbers 3.00 and 2.00.
+bcftools	bcftools_query	PASS	
+bcftools	bcftools_reheader	PASS	
+bcftools	bcftools_roh	PASS	
+bcftools	bcftools_sort	PASS	
+bcftools	bcftools_stats	PASS	
+bcftools	bcftools_view	PASS	
+bcftools-gtc2vcf-plugin	bcftools-gtc2vcf-plugin	PASS	
+bcftools-liftover-plugin	bcftools-liftover-plugin	PASS	
+bcftools-snvphyl-plugin	bcftools-snvphyl-plugin_bcftools	Failed	not a usable tool: wraps only the bcftools command group with a command string and no data inputs or outputs, not the filter_snv_density plugin.
+bcgtree	bcgtree	PASS	
+bcl2fastq-nextseq	bcl2fastq-nextseq_bcl_to_fastq	Failed	image problem: the image lacks the bcl2fastq binary that bcl_to_fastq calls (left out of the recipe for licence reasons).
+bcool	bcool	PASS	
+bcov	bcov	PASS	
+bctools	bctools_convert_bc_to_binary_RY.py	PASS	
+bctools	bctools_extract_bcs.py	PASS	
+bctools	bctools_merge_pcr_duplicates.py	Failed	image problem: the script calls GNU sort --compress-program but the image only has BusyBox sort, which rejects it.
+bctools	bctools_remove_tail.py	PASS	
+bctools	bctools_rm_spurious_events.py	Failed	image problem: the script calls GNU sort -k1,1V but the image only has BusyBox sort, which rejects the V key option.
+beacon2-import	beacon2-import	Not completed	needs a running MongoDB beacon database server reachable over the network, which this test setup does not provide.
+beagle	beagle	PASS	
+beamspy	beamspy_annotate-compounds	PASS	
+beamspy	beamspy_annotate-mf	PASS	
+beamspy	beamspy_annotate-peak-patterns	PASS	
+beamspy	beamspy_group-features	PASS	
+beamspy	beamspy_summary-results	PASS	
+beast	beast	PASS	
+beast2-mcmc	beast2-mcmc	Failed	image problem: the beast2-mcmc launcher calls Java 8 at a hard-coded path, but the image only has Java 11, so it exits 127.
+beast-mcmc	beast-mcmc	Failed	image problem: the BEAGLE native library is missing, so BEAST stops on the example XML, and with -java the MCMC crashes after state 0.
+beav	beav	PASS	
+bed2gff	bed2gff	PASS	
+bed2gtf	bed2gtf	PASS	
+bedgovcf	bedgovcf	PASS	
+bedops	bedops_bedmap	PASS	
+bedops	bedops_closest-features	PASS	
+bedops	bedops_sort-bed	PASS	
+bedops	bedops_starchcat	PASS	
+bedparse	bedparse_3putr	PASS	
+bedparse	bedparse_5putr	PASS	
+bedparse	bedparse_bed12tobed6	PASS	
+bedparse	bedparse_cds	PASS	
+bedparse	bedparse_convertchr	PASS	
+bedparse	bedparse_filter	PASS	
+bedparse	bedparse_gtf2bed	PASS	
+bedparse	bedparse_introns	PASS	
+bedparse	bedparse_join	PASS	
+bedparse	bedparse_promoter	PASS	
+bedparse	bedparse_validateformat	PASS	
+bedtk	bedtk_cov	PASS	
+bedtk	bedtk_flt	PASS	
+bedtk	bedtk_isec	PASS	
+bedtk	bedtk_sub	PASS	
+bedtk	bedtk_sum	PASS	
+bedtools	bedtools_annotate	PASS	
+bedtools	bedtools_bamtobed	PASS	
+bedtools	bedtools_bamtofastq	Failed	tool bug: bedtools 2.31.1 bamtofastq writes every read twice (8 BAM records gave 16 FASTQ reads; bedtools2 issue 1058).
+bedtools	bedtools_bed12tobed6	PASS	
+bedtools	bedtools_bedpetobam	PASS	
+bedtools	bedtools_bedtobam	PASS	
+bedtools	bedtools_closest	PASS	
+bedtools	bedtools_cluster	PASS	
+bedtools	bedtools_complement	PASS	
+bedtools	bedtools_coverage	PASS	
+bedtools	bedtools_expand	PASS	
+bedtools	bedtools_fisher	PASS	
+bedtools	bedtools_flank	PASS	
+bedtools	bedtools_genomecov	PASS	
+bedtools	bedtools_getfasta	PASS	
+bedtools	bedtools_groupby	PASS	
+bedtools	bedtools_igv	PASS	
+bedtools	bedtools_intersect	PASS	
+bedtools	bedtools_jaccard	PASS	
+bedtools	bedtools_links	PASS	
+bedtools	bedtools_makewindows	PASS	
+bedtools	bedtools_map	PASS	
+bedtools	bedtools_maskfasta	PASS	
+bedtools	bedtools_merge	PASS	
+bedtools	bedtools_multicov	PASS	
+bedtools	bedtools_multiinter	PASS	
+bedtools	bedtools_nuc	PASS	
+bedtools	bedtools_overlap	PASS	
+bedtools	bedtools_pairtobed	PASS	
+bedtools	bedtools_pairtopair	PASS	
+bedtools	bedtools_random	PASS	
+bedtools	bedtools_reldist	PASS	
+bedtools	bedtools_sample	PASS	
+bedtools	bedtools_shift	PASS	
+bedtools	bedtools_shuffle	PASS	
+bedtools	bedtools_slop	PASS	
+bedtools	bedtools_sort	PASS	
+bedtools	bedtools_spacing	PASS	
+bedtools	bedtools_split	PASS	
+bedtools	bedtools_subtract	PASS	
+bedtools	bedtools_summary	PASS	
+bedtools	bedtools_tag	PASS	
+bedtools	bedtools_unionbedg	PASS	
+bedtools	bedtools_window	PASS	
+beem-bio	beem-bio_BeEM	PASS	
+behst	behst	Failed	image problem: project.sh calls sort -V but the image only has BusyBox sort, which has no -V option, so no gene list is made.
+bellavista	bellavista	Not completed	BellaVista is an interactive napari viewer for spatial transcriptomics data and cannot run as a batch job.
+bellerophon	bellerophon	PASS	
+bellmans-gapc	bellmans-gapc	PASS	
+belvu	belvu	PASS	
+berkeley-express	berkeley-express	PASS	
+berokka	berokka	PASS	
+besst	besst_runBESST	Failed	image problem: the image has networkx 2.1, but BESST 2.2.8 uses the networkx 1.x G.edge API and crashes while building the contig graph.
+bfc	bfc	PASS	
+bftools	bftools_bfconvert	PASS	
+bftools	bftools_formatlist	PASS	
+bftools	bftools_showinf	PASS	
+bftools	bftools_tiffcomment	PASS	
+bftools	bftools_xmlvalid	PASS	
+bgen-cpp	bgen-cpp_bgenix	PASS	
+bgen-cpp	bgen-cpp_cat-bgen	PASS	
+bgen-cpp	bgen-cpp_edit-bgen	PASS	
+bgreat	bgreat	PASS	
+bgt	bgt_atomize	PASS	
+bgt	bgt_bcfidx	PASS	
+bgt	bgt_fmf	PASS	
+bgt	bgt_import	PASS	
+bgt	bgt_view	PASS	
+bialign	bialign_bialign.py	PASS	
+biasaway	biasaway_background	Failed	not a usable tool: wraps only the top-level command group (subcommand string and unbound k/w/g/c switches) with no sequence inputs or output files.
+bicseq2-norm	bicseq2-norm_BICseq2-norm.pl	Failed	image problem: the R package mgcv is missing, so NBICseq-norm.pl stops before any work (CWL rewritten to the real command NBICseq-norm.pl).
+bicseq2-seg	bicseq2-seg	PASS	synthetic data: planted 2x gain in normalized bins found exactly (log2 ratio 1.0); CWL rewritten to the real command NBICseq-seg.pl.
+bifidoannotator	bifidoannotator_bifidoAnnotator	PASS	B. breve UCC2003 benchmark proteome gives 18 GH hits to Bbr_ loci in 11 GH families; the mapping file must be passed because the image cannot find its packaged copy.
+bifrost	bifrost_Bifrost	Failed	not a usable tool: wraps only the command group (a command string and one free parameter string) with no sequence inputs or graph outputs.
+bifrost-httr	bifrost-httr_compile-model	PASS	Built-in and staged Stan models compile to executables; added the missing executable output.
+bifrost-httr	bifrost-httr_compress-output	PASS	synthetic data: fits of 4 probes compressed into one summary JSON holding all probes and the global PoD.
+bifrost-httr	bifrost-httr_create-report	PASS	synthetic data: MultiQC report ranks the planted responder top (log2 FC 2.92 vs planted 3); added report outputs.
+bifrost-httr	bifrost-httr_prepare-inputs	PASS	synthetic data: 22-sample HTTr meta and counts give a BIFROST input JSON with the expected probes, counts and concentrations.
+bifrost-httr	bifrost-httr_run-analysis	PASS	synthetic data: planted responder probe gets very high CDS and up effect, flat probes very low; fixed --data-files to repeat per file.
+bigmag	bigmag	Not completed	bigmag starts an interactive Dash web server and never exits, so it cannot run as a batch job (baseCommand fixed from app.py to bigmag).
+bigscape	bigscape_benchmark	PASS	Benchmark against curated GCFs gives V-measure 1.0 at the matching cutoff 0.8 and 0.64 at 0.3; note the tool crashes on cluster runs made with --label (tool bug).
+bigscape	bigscape_cluster	PASS	Galaxy test region GBKs with pressed Pfam subset give 28 edges and GCF tables at two cutoffs; removed the duplicate gbk_dir alias input, db_path made a string, Pfam press files added as optional secondaryFiles.
+bigscape	bigscape_dereplicate	PASS	A planted duplicate GBK collapses to one representative (8 of 9 kept); added a step that copies the representative symlinks so cwltool can collect them.
+bigscape	bigscape_query	PASS	Query BGC NC_012963.1 vs 7 Galaxy GBKs gives 7 distances matching the cluster run and one family at cutoff 0.8; same input fixes as cluster.
+bigsi	bigsi_bloom	PASS	Repo example ctx graphs give 1000-bit bloom filters whose index finds all 100 test k-mers; output fixed to the folder the tool writes, config made a File.
+bigsi	bigsi_build	PASS	Two bloom filters build a berkeleydb index that finds a test k-mer in s1 and s2 and not a random one; removed 7 invented flags, added --samples and the index output.
+bigsi	bigsi_delete	PASS	Delete empties the index (49 kB to 12 kB, metadata gone so search finds no rows); added the writable index input.
+bigsi	bigsi_insert	PASS	Inserting a third bloom filter as s3 makes search report s1, s2 and s3; added the writable index input and updated-index output.
+bigsi	bigsi_merge	PASS	Merging a one-sample index (s4) into the s1/s2 index makes search report s1, s2 and s4; config paths made Files, added both index inputs and the merged-index output.
+bigsi	bigsi_search	PASS	A test k-mer is found 100% in both samples and a random k-mer in none; added the index input (staged beside the config); thresholds below 1.0 miss single k-mers (tool behaviour).
+bigslice	bigslice	Not completed	Needs the 284 MB BiG-SLiCE HMM model database, which is not in the image; output folder input fixed from Directory to string.
+bigtools	bigtools_bigbedtobed	PASS	
+bigwig-nim	bigwig-nim_bigwig	Failed	not a usable tool: wraps only the bigwig command group with a stats switch, no data inputs or outputs; the view and stats subcommands are not wrapped.
+binchicken	binchicken_build	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); build itself is the step that creates them.
+binchicken	binchicken_coassemble	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed.
+binchicken	binchicken_evaluate	Failed	not a usable tool: runs bare binchicken without the evaluate subcommand and with invented flags (--threads, --verbose, --output-file); real flags are --aviary-outputs, --new-genomes, --coassemble-output and others.
+binchicken	binchicken_iterate	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string/File to File/Directory and bogus outputs removed.
+binchicken	binchicken_marker	Failed	not a usable tool: wraps only the binchicken command group with a subcommand string, no data inputs or outputs.
+binchicken	binchicken_single	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); command line parsed fine on repo test reads; singlem_metapackage and genome_singlem types fixed.
+binchicken	binchicken_update	Failed	image problem: every workflow step runs through pixi environments that are not in the image, and pixi fails to create them in the read-only site-packages folder (needs --no-read-only and network); previous-run inputs fixed from string paths and bogus outputs to File/Directory inputs.
+bindash	bindash_Query	Failed	not a usable tool: named after a help word, duplicate of the generic bindash command-group wrapper with no data inputs or outputs.
+bindash	bindash_bindash	Failed	not a usable tool: wraps only the bindash command group with a subcommand string and free string options, no File inputs to stage genomes and no output files; sketch, dist and exact are not wrapped.
+bindash	bindash_genomes	Failed	not a usable tool: named after a help word, duplicate of the generic bindash command-group wrapper with no data inputs or outputs.
+bindashtree	bindashtree	PASS	
+binette	binette	PASS	
+binlorry	binlorry	PASS	
+binning_refiner	binning_refiner_Binning_refiner	PASS	
+binny	binny	Not completed	Every run first downloads the CheckM data (289 MB) and Mantis HMM databases (several GB) into the database folder, and the Prokka step pulls a Singularity image at run time inside the container.
+binsanity	binsanity_Binsanity-lc	PASS	
+binsanity	binsanity_Binsanity-profile	PASS	
+binsanity	binsanity_Binsanity-refine	PASS	
+binsanity	binsanity_Binsanity-wf	PASS	
+binsanity	binsanity_Binsanity2-beta	PASS	
+bio	bio_align	PASS	
+bio	bio_code	PASS	
+bio	bio_comm	PASS	
+bio	bio_enrichr	PASS	
+bio	bio_explain	PASS	
+bio	bio_fasta	PASS	
+bio	bio_fetch	PASS	
+bio	bio_format	PASS	
+bio	bio_gff	PASS	
+bio	bio_gprofiler	PASS	
+bio	bio_meta	PASS	
+bio	bio_mygene	PASS	
+bio	bio_search	PASS	
+bio	bio_table	PASS	
+bio	bio_taxon	Not completed	Queries need a prebuilt NCBI taxonomy database in ~/.bio, and the CWL has no input to pass one in (--build runs alone and its database is not kept).
+bio	bio_uniq	PASS	
+bio2zarr	bio2zarr_plink2zarr	Failed	not a usable tool: wraps only the plink2zarr command group with a free subcommand string and argument list, no data inputs or outputs.
+bio2zarr	bio2zarr_vcf2zarr	Failed	not a usable tool: wraps only the vcf2zarr command group, with subcommand names as unbound booleans and no data inputs or outputs.
+bioawk	bioawk	PASS	
+biobambam	biobambam_bamauxmerge	PASS	
+biobambam	biobambam_bammarkduplicatesopt	PASS	
+biobambam	biobambam_bamsormadup	PASS	
+biobambam	biobambam_bamsort	PASS	
+biobambam	biobambam_bamtofastq	PASS	
+biobambam	biobambam_bamvalidate	PASS	
+biobasehttptools	biobasehttptools_AccessionToTaxId	PASS	
+biobasehttptools	biobasehttptools_FetchSequence	PASS	
+biobasehttptools	biobasehttptools_GeneIdToGOTerms	Failed	tool problem: it queries the retired rest.ensemblgenomes.org service and returns every gene id with an empty mapping.
+biobasehttptools	biobasehttptools_GeneIdToUniProtId	Failed	tool problem: it queries the retired rest.ensemblgenomes.org service and returns every gene id with an empty mapping.
+biobb_chemistry	biobb_chemistry_acpype_convert_amber_to_gmx	PASS	
+biobb_gromacs	biobb_gromacs_insert_molecules	Failed	not a usable tool: biobb_gromacs has no insert_molecules program or module in the image or in its source repository.
+biobb_io	biobb_io_alphafold	PASS	
+biobb_mem	biobb_mem_lipyphilic_flipflop	PASS	
+biobloomtools	biobloomtools_biobloomcategorizer	PASS	
+biobloomtools	biobloomtools_biobloommaker	PASS	
+biocamlib	biocamlib_FASTools	PASS	
+biocamlib	biocamlib_Parallel	PASS	
+biocamlib	biocamlib_RC	PASS	
+biocode	biocode_add_blast_results_to_gff3_product.py	PASS	Real Ensembl GFF3 gene model with a planted BLAST table line (synthetic data).
+biocode	biocode_fastq_simple_stats.py	PASS	
+biocode	biocode_filter_fasta_by_header_regex.py	PASS	
+biocode	biocode_strip_fasta_headers_after_regex.py	PASS	
+biocommons.seqrepo	biocommons.seqrepo_seqrepo	Failed	not a usable tool: it wraps only the seqrepo command group as a subcommand string, with no way to pass subcommand arguments or collect data outputs.
+bioconda2biocontainer	bioconda2biocontainer	Failed	tool problem: it queries api.biocontainers.pro, which no longer resolves (DNS NXDOMAIN), so every run ends in a connection error.
+bioconda2biocontainer	bioconda2biocontainer_biocontainers-search	Failed	tool problem: it queries api.biocontainers.pro, which no longer resolves (DNS NXDOMAIN), so every run ends in a connection error.
+bioconda-backup	bioconda-backup	Failed	not a usable tool: the image has no bioconda-backup command, only an internal script that mirrors biocontainers images to a private registry through the Docker socket.
+bioconda-utils	bioconda-utils_annotate-build-failures	PASS	
+bioconda-utils	bioconda-utils_autobump	PASS	
+bioconda-utils	bioconda-utils_bioconductor-skeleton	PASS	
+bioconda-utils	bioconda-utils_build	Failed	image problem: conda-build inside the image cannot find a home directory for the cwltool user and writes to /root/conda-bld, so the build only works with --no-match-user and --no-read-only.
+bioconda-utils	bioconda-utils_clean-cran-skeleton	PASS	
+bioconda-utils	bioconda-utils_dag	PASS	
+bioconda-utils	bioconda-utils_dependent	PASS	
+bioconda-utils	bioconda-utils_duplicates	PASS	
+bioconda-utils	bioconda-utils_handle-merged-pr	Not completed	A dry run on a real merged bioconda-recipes pull request found the PR but no build artifacts (expired), so the artifact upload path was not exercised; it needs fresh artifacts, a GitHub token and upload rights.
+bioconda-utils	bioconda-utils_lint	PASS	
+bioconda-utils	bioconda-utils_list-build-failures	PASS	
+bioconda-utils	bioconda-utils_update-pinning	PASS	

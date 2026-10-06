@@ -13,6 +13,11 @@ hints:
 inputs:
 - id: input_files
   type: File[]
+  secondaryFiles:
+  - pattern: .tbi
+    required: false
+  - pattern: .csi
+    required: false
   doc: Input VCF/BCF file(s)
   inputBinding:
     position: 103

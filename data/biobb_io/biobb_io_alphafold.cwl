@@ -9,30 +9,36 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Configuration file for the tool
+    doc: Configuration file for the tool (YAML or JSON). Give this or uniprot_code.
     inputBinding:
       position: 101
       prefix: --config
-  - id: uniprot_id
-    type: string
-    doc: UniProt ID of the protein structure to be fetched
+  - id: uniprot_code
+    type:
+      - 'null'
+      - string
+    doc: UniProt code of the protein structure to fetch (property uniprot_code, passed
+      as a JSON config string). Give this or config.
     inputBinding:
       position: 101
-      prefix: --uniprot_id
-  - id: output_pdb_path_path
+      prefix: --config
+      valueFrom: '$(JSON.stringify({properties: {uniprot_code: self}}))'
+  - id: output_pdb_path
     type: string
-    doc: Output or path parameter `output_pdb_path_path`
+    doc: 'Path to the output PDB file. Accepted formats: pdb.'
     inputBinding:
       position: 102
-      prefix: --output-pdb-path
+      prefix: --output_pdb_path
 outputs:
-  - id: output_pdb_path
+  - id: output_pdb
     type: File
-    doc: Path to the output PDB file
+    doc: Output PDB file
     outputBinding:
-      glob: $(inputs.output_pdb_path_path)
+      glob: $(inputs.output_pdb_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobb_io:5.2.2--pyhdfd78af_0

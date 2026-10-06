@@ -1,5 +1,11 @@
 # bamutil CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamutil_bam | Failed | not a usable tool: wraps only the bam command group with a tool-name string and free string arguments, so no SAM/BAM file can be staged and no output file is collected. |
+
 ## bamutil
 
 ### Tool Description

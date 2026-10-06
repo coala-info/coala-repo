@@ -7,7 +7,7 @@ inputs:
   - id: database_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Base directory for the antiSMASH databases
     inputBinding:
       position: 101
@@ -16,6 +16,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: databases
+    type:
+      - 'null'
+      - Directory
+    doc: Downloaded antiSMASH databases
+    outputBinding:
+      glob: $(inputs.database_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/antismash-lite:8.0.1--pyhdfd78af_0

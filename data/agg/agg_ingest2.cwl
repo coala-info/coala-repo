@@ -10,7 +10,11 @@ inputs:
     type:
       type: array
       items: File
-    doc: single sample agg files to merge
+    doc: single sample agg files to merge (the .bcf files from agg ingest1; 
+      the matching .tmp files must sit beside them)
+    secondaryFiles:
+      - .csi
+      - ^.tmp
     inputBinding:
       position: 1
   - id: list_file
@@ -38,9 +42,14 @@ inputs:
 outputs:
   - id: output_prefix
     type: File
-    doc: agg will output output_prefix.bcf and output_prefix.dpt
+    doc: agg chunk; output_prefix.bcf with its index and the depth track 
+      output_prefix.dpt with its index.
+    secondaryFiles:
+      - .csi
+      - ^.dpt
+      - ^.dpt.csi
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path).bcf
 requirements:
   - class: InlineJavascriptRequirement
 hints:

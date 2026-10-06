@@ -1,5 +1,19 @@
 # agc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| agc_append | PASS |  |
+| agc_create | PASS |  |
+| agc_getcol | PASS |  |
+| agc_getctg | PASS |  |
+| agc_getset | PASS |  |
+| agc_info | PASS |  |
+| agc_listctg | PASS |  |
+| agc_listref | PASS |  |
+| agc_listset | PASS |  |
+
 ## agc_create
 
 ### Tool Description

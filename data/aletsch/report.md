@@ -1,5 +1,11 @@
 # aletsch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aletsch | PASS |  |
+
 ## aletsch
 
 ### Tool Description

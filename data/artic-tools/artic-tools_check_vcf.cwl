@@ -26,10 +26,8 @@ inputs:
       position: 103
       prefix: --minQual
   - id: summary_out_path
-    type:
-      - 'null'
-      - string
-    doc: REQUIRED Summary of variant checks will be written here (TSV format)
+    type: string
+    doc: Summary of variant checks will be written here (TSV format)
     inputBinding:
       position: 104
       prefix: --summaryOut

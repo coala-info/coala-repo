@@ -1,5 +1,11 @@
 # beacon2-import CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| beacon2-import | Not completed | needs a running MongoDB beacon database server reachable over the network, which this test setup does not provide. |
+
 ## beacon2-import
 
 ### Tool Description

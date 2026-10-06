@@ -109,7 +109,14 @@ inputs:
   - id: ref_blast_db
     type:
       - 'null'
-      - string
+      - File
+    secondaryFiles:
+      - pattern: .nhr
+        required: false
+      - pattern: .nin
+        required: false
+      - pattern: .nsq
+        required: false
     doc: Base name to a blast data base file (fasta file of reference genome).
     inputBinding:
       position: 101
@@ -144,6 +151,9 @@ inputs:
       position: 102
       prefix: --output-bait-file-name
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Console report with the bait file statistics
   - id: output_bait_file
     type:
       - 'null'
@@ -156,3 +166,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/baitfisher:v1.2.7git20180107.e92dbf2dfsg-1-deb_cv1
+stdout: baitfisher_BaitFilter.out

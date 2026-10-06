@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: beast
+baseCommand: beast2-mcmc
 label: beast2-mcmc
 doc: "BEAST is a cross-platform program for Bayesian evolutionary analysis of molecular
   sequences from biological sequences. It is entirely orientated towards rooted, time-measured
@@ -11,7 +11,7 @@ inputs:
     type: File
     doc: The name of the BEAST XML input file.
     inputBinding:
-      position: 1
+      position: 200
   - id: errors
     type:
       - 'null'

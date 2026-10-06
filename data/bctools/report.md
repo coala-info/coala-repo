@@ -1,5 +1,15 @@
 # bctools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bctools_convert_bc_to_binary_RY.py | PASS |  |
+| bctools_extract_bcs.py | PASS |  |
+| bctools_merge_pcr_duplicates.py | Failed | image problem: the script calls GNU sort --compress-program but the image only has BusyBox sort, which rejects it. |
+| bctools_remove_tail.py | PASS |  |
+| bctools_rm_spurious_events.py | Failed | image problem: the script calls GNU sort -k1,1V but the image only has BusyBox sort, which rejects the V key option. |
+
 ## bctools_extract_bcs.py
 
 ### Tool Description

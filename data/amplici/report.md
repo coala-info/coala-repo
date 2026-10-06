@@ -1,5 +1,11 @@
 # amplici CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amplici_run_AmpliCI | PASS |  |
+
 ## amplici_run_AmpliCI
 
 ### Tool Description

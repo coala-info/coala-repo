@@ -1,51 +1,61 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bamkit_bamfilterrg.py
+baseCommand: bamfilterrg.py
 label: bamkit_bamfilterrg.py
-doc: "Filter BAM files by read group.\n\nTool homepage: https://github.com/hall-lab/bamkit"
+doc: "Filter read group(s) from a BAM file.\n\nTool homepage: https://github.com/hall-lab/bamkit"
 inputs:
   - id: input
     type: File
     doc: Input BAM file
     inputBinding:
-      position: 1
+      position: 101
+      prefix: --input
   - id: readgroup
-    type: string
-    doc: Read group ID to filter by
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Read group(s) to extract (comma separated)
     inputBinding:
-      position: 2
-  - id: S
+      position: 101
+      prefix: --readgroup
+      itemSeparator: ','
+  - id: first_n
+    type:
+      - 'null'
+      - int
+    doc: Output first n alignments and quit
+    inputBinding:
+      position: 101
+      prefix: -n
+  - id: input_sam
     type:
       - 'null'
       - boolean
-    doc: Output SAM format
+    doc: Input is SAM format
     inputBinding:
-      position: 103
-  - id: b
+      position: 101
+      prefix: -S
+  - id: output_bam
     type:
       - 'null'
       - boolean
-    doc: Output BAM format (default)
+    doc: Output BAM format (default is SAM)
     inputBinding:
-      position: 103
-  - id: n
-    type:
-      - 'null'
-      - string
-    doc: 'Output BAM file (default: stdout)'
-    inputBinding:
-      position: 103
-  - id: u
+      position: 101
+      prefix: -b
+  - id: output_uncompressed_bam
     type:
       - 'null'
       - boolean
-    doc: Uncompressed BAM output
+    doc: Output uncompressed BAM format (implies -b)
     inputBinding:
-      position: 103
+      position: 101
+      prefix: -u
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Filtered alignments (SAM, or BAM with -b/-u)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamkit:16.07.26--py_0

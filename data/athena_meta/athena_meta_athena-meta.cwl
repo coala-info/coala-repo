@@ -21,6 +21,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files named in the JSON config (contig FASTA with its BWA index 
+      files, reads-to-contig BAM with its .bai, interleaved FASTQ). They are 
+      staged writable in the working directory, so relative names in the config 
+      resolve.
   - id: force_reads
     type:
       - 'null'
@@ -49,6 +58,41 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: assembly
+    type:
+      - 'null'
+      - File
+    doc: Final Athena assembly (results/olc/athena.asm.fa).
+    outputBinding:
+      glob: results/olc/athena.asm.fa
+  - id: results_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Results directory written next to the config file.
+    outputBinding:
+      glob: results
+  - id: logs_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Log directory written next to the config file.
+    outputBinding:
+      glob: logs
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.config) { l.push(inputs.config); }
+        if (inputs.input_files) {
+          inputs.input_files.forEach(function (f) {
+            l.push({entry: f, writable: true});
+          });
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/athena_meta:1.3--py27_0

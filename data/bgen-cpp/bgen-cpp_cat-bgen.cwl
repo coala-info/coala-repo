@@ -6,9 +6,8 @@ doc: "Concatenate bgen files.\n\nTool homepage: https://enkre.net/cgi-bin/code/b
 inputs:
   - id: bgen_files
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Path of bgen file(s) to concatenate. These must all be bgen files 
       containing the same s- et of samples (in the same order). They must all be
       the same bgen version and be stored with the same flags.
@@ -50,9 +49,7 @@ inputs:
       prefix: -og
 outputs:
   - id: output_bgen_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path of bgen file to output.
     outputBinding:
       glob: $(inputs.output_bgen_file_path)

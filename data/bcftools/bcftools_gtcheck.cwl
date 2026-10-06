@@ -9,6 +9,11 @@ doc: Check sample identity. With no -g BCF given, multi-sample cross-check is
 inputs:
   - id: query_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Query VCF/BCF file
     inputBinding:
       position: 1
@@ -22,7 +27,9 @@ inputs:
       position: 102
       prefix: --distinctive-sites
   - id: dry_run
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: Stop after first record to estimate required time
     inputBinding:
       position: 102
@@ -48,6 +55,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Genotypes to compare against
     inputBinding:
       position: 102
@@ -161,6 +173,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --samples
+      itemSeparator: ','
   - id: samples_file
     type:
       - 'null'

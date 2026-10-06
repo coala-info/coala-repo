@@ -33,6 +33,9 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atol-genome-launcher:0.4.1--pyhdfd78af_0

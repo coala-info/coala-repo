@@ -26,7 +26,7 @@ inputs:
   - id: cache_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to cache the NCBI taxonomy after processing
     inputBinding:
       position: 104

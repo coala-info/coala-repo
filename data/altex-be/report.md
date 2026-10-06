@@ -1,5 +1,11 @@
 # altex-be CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| altex-be | PASS |  |
+
 ## altex-be
 
 ### Tool Description

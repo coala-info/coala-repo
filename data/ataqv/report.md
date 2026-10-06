@@ -1,5 +1,11 @@
 # ataqv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ataqv | PASS |  |
+
 ## ataqv
 
 ### Tool Description

@@ -1,5 +1,16 @@
 # baktfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| baktfold_compare | Not completed | needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists. |
+| baktfold_install | Not completed | downloads the 8.7 GB baktfold database and the 5 GB ProstT5 model, which is too large to test here. |
+| baktfold_predict | Not completed | needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists. |
+| baktfold_proteins | Not completed | needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists. |
+| baktfold_proteins-compare | Not completed | needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists. |
+| baktfold_run | Not completed | needs the full baktfold database (8.7 GB) and the ProstT5 model (5 GB); the repository tests also use it, so no small test database exists. |
+
 ## baktfold_citation
 
 ### Tool Description

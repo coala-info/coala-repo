@@ -1,5 +1,11 @@
 # atol-qc-raw-ont CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atol-qc-raw-ont | PASS |  |
+
 ## atol-qc-raw-ont
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # bioconda2biocontainer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioconda2biocontainer | Failed | tool problem: it queries api.biocontainers.pro, which no longer resolves (DNS NXDOMAIN), so every run ends in a connection error. |
+| bioconda2biocontainer_biocontainers-search | Failed | tool problem: it queries api.biocontainers.pro, which no longer resolves (DNS NXDOMAIN), so every run ends in a connection error. |
+
 ## bioconda2biocontainer
 
 ### Tool Description

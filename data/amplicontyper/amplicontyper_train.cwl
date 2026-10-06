@@ -1,7 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - amplicontyper
   - train
 label: amplicontyper_train
 doc: "Classify reads in BAM file using existing model or train a model from bam files\n\

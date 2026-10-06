@@ -50,23 +50,25 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -rm
     doc: reference model (<c>:<d>:<g>/<m>:<e>:<a>). <c> context-order size, <d> 
       alpha (1/<d>), <g> gamma [0;1), <m> max mutations, <e> estimator, <a> 
       gamma [0;1)
     inputBinding:
       position: 102
-      prefix: -rm
   - id: target_model
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -tm
     doc: target model (<c>:<d>:<g>/<m>:<e>:<a>). <c> context-order size, <d> 
       alpha (1/<d>), <g> gamma [0;1), <m> max mutations, <e> estimator, <a> 
       gamma [0;1)
     inputBinding:
       position: 102
-      prefix: -tm
   - id: threshold
     type:
       - 'null'

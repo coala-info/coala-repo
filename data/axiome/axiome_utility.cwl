@@ -18,6 +18,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: generated_files
+    type: File[]
+    doc: Files written to the current directory (mapping template, or sample.ax
+      and sample_file_mapping.tsv)
+    outputBinding:
+      glob:
+        - '*.tsv'
+        - '*.ax'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/axiome:2.0.4--py27_0

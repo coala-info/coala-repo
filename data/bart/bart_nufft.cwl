@@ -1,26 +1,39 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nufft
+baseCommand: [bart, nufft]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_nufft
-doc: "Perform non-uniform Fast Fourier Transform.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Perform non-uniform Fast Fourier Transform.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: traj
-    type: string
+    type: File
     doc: Trajectory file
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: input
-    type: string
+    type: File
     doc: Input data
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 2
+      position: 11
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
+  - id: output_name
+    type: string
+    doc: Output name without extension (writes <name>.cfl and <name>.hdr)
+    inputBinding:
+      position: 12
   - id: adjoint
     type:
       - 'null'
       - boolean
     doc: adjoint
     inputBinding:
-      position: 103
+      position: 1
       prefix: -a
   - id: dft
     type:
@@ -28,16 +41,15 @@ inputs:
       - boolean
     doc: DFT
     inputBinding:
-      position: 103
+      position: 1
       prefix: -s
   - id: dimensions
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: dimensions
     inputBinding:
-      position: 103
+      position: 1
       prefix: -d
   - id: gpu_inverse
     type:
@@ -45,7 +57,7 @@ inputs:
       - boolean
     doc: GPU (only inverse)
     inputBinding:
-      position: 103
+      position: 1
       prefix: -g
   - id: inverse
     type:
@@ -53,7 +65,7 @@ inputs:
       - boolean
     doc: inverse
     inputBinding:
-      position: 103
+      position: 1
       prefix: -i
   - id: l2_regularization
     type:
@@ -61,7 +73,7 @@ inputs:
       - float
     doc: l2 regularization
     inputBinding:
-      position: 103
+      position: 1
       prefix: -l
   - id: no_toeplitz_embedding_inverse
     type:
@@ -69,7 +81,7 @@ inputs:
       - boolean
     doc: turn-off Toeplitz embedding for inverse NUFFT
     inputBinding:
-      position: 103
+      position: 1
       prefix: -r
   - id: periodic_k_space
     type:
@@ -77,7 +89,7 @@ inputs:
       - boolean
     doc: periodic k-space
     inputBinding:
-      position: 103
+      position: 1
       prefix: -P
   - id: preconditioning_inverse
     type:
@@ -85,7 +97,7 @@ inputs:
       - boolean
     doc: Preconditioning for inverse NUFFT
     inputBinding:
-      position: 103
+      position: 1
       prefix: -c
   - id: toeplitz_embedding_inverse
     type:
@@ -93,14 +105,16 @@ inputs:
       - boolean
     doc: Toeplitz embedding for inverse NUFFT
     inputBinding:
-      position: 103
+      position: 1
       prefix: -t
 outputs:
   - id: output
     type: File
     doc: Output file
+    secondaryFiles:
+      - ^.hdr
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1

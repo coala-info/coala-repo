@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-process_illumina_folder.py
+baseCommand:
+  - amptk
+  - SRA
 label: amptk_SRA
 doc: "Script that takes De-mulitplexed Illumina data from a folder and processes it
   for amptk (merge PE reads, strip primers, trim/pad to set length.\n\nTool homepage:
@@ -175,6 +177,18 @@ outputs:
     doc: Name for output folder
     outputBinding:
       glob: $(inputs.output_folder)
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written beside the output folder (demux.fq.gz, log, mapping file)
+    outputBinding:
+      glob: $(inputs.output_folder).*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_folder)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # bcbio-variation-recall CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcbio-variation-recall | Failed | image problem: the image lacks bgzip, bcftools and freebayes, so ensemble, merge and square all fail; the CWL also calls a 'recall' subcommand that does not exist (only ensemble, merge, square). |
+
 ## bcbio-variation-recall
 
 ### Tool Description

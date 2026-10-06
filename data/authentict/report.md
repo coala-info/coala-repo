@@ -1,5 +1,11 @@
 # authentict CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| authentict | PASS |  |
+
 ## authentict
 
 ### Tool Description

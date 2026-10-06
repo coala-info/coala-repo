@@ -1,5 +1,11 @@
 # array-as-vcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| array-as-vcf | PASS |  |
+
 ## array-as-vcf
 
 ### Tool Description

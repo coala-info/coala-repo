@@ -45,8 +45,8 @@ inputs:
       position: 101
       prefix: -d
   - id: fasta_file_name
-    type: File
-    doc: Specify the fasta file containing contigs you want to cluster
+    type: string
+    doc: File name of the contig FASTA inside the folder given with -f
     inputBinding:
       position: 101
       prefix: -l

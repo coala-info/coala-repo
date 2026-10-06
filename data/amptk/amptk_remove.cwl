@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-remove_samples.py
+baseCommand:
+  - amptk
+  - remove
 label: amptk_remove
 doc: "Script parses AMPtk de-multiplexed FASTQ file and keeps those sequences with
   barcode names in list\n\nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -45,7 +47,7 @@ inputs:
   - id: threshold
     type:
       - 'null'
-      - string
+      - int
     doc: Keep samples with more reads than threshold
     inputBinding:
       position: 101
@@ -54,6 +56,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_file
+    type: File
+    doc: Output FASTQ (or FASTA) file
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

@@ -35,7 +35,8 @@ inputs:
       prefix: --species
   - id: dir_path
     type: string
-    doc: Directory to write database file to.
+    doc: Directory to write database file to. It is created before the run 
+      because agfusion needs it to exist.
     inputBinding:
       position: 102
       prefix: --dir
@@ -47,6 +48,12 @@ outputs:
       glob: $(inputs.dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.dir_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agfusion:1.252--py_0

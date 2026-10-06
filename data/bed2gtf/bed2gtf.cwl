@@ -6,7 +6,7 @@ doc: "A fast and memory efficient BED to GTF converter\n\nTool homepage: https:/
 inputs:
   - id: bed_file
     type: File
-    doc: Path to BED file
+    doc: Path to BED file (name must end in .bed)
     inputBinding:
       position: 101
       prefix: --bed
@@ -44,7 +44,7 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: Path to output file
+    doc: Path to output file (name must end in .gtf, also with gz)
     inputBinding:
       position: 102
       prefix: --output

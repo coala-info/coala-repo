@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: AlienTrimmer
+baseCommand: alientrimmer
 label: alientrimmer
 doc: "Fast trimming to filter out non-confident nucleotides and alien oligo-nucleotide
   sequences (adapters, primers) in both 5' and 3' read ends\n\nTool homepage: https://gitlab.pasteur.fr/GIPhy/AlienTrimmer"
@@ -123,10 +123,10 @@ inputs:
       prefix: -v
   - id: output_basename_path
     type: string
-    doc: Output or path parameter `output_basename_path`
+    doc: 'outfile basename: [SE] <name>.fastq[.gz] or [PE] <name>.{1,2,S}.fastq[.gz]'
     inputBinding:
       position: 102
-      prefix: --output-basename
+      prefix: -o
 outputs:
   - id: output_basename
     type:

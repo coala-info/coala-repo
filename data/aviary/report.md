@@ -1,5 +1,19 @@
 # aviary CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aviary_annotate | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+| aviary_assemble | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+| aviary_batch | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+| aviary_cluster | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+| aviary_complete | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+| aviary_configure | Failed | image problem: configure writes settings into the image's read-only /usr/local conda folder, so it works only with --no-read-only. |
+| aviary_diversity | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+| aviary_isolate | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+| aviary_recover | Not completed | Snakemake pipeline that needs GTDB, CheckM2, EggNOG and SingleM databases and network access to build conda environments for each step, too heavy for this test. |
+
 ## aviary_assemble
 
 ### Tool Description

@@ -1,5 +1,15 @@
 # beamspy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| beamspy_annotate-compounds | PASS |  |
+| beamspy_annotate-mf | PASS |  |
+| beamspy_annotate-peak-patterns | PASS |  |
+| beamspy_group-features | PASS |  |
+| beamspy_summary-results | PASS |  |
+
 ## beamspy_group-features
 
 ### Tool Description

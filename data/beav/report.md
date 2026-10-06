@@ -1,5 +1,11 @@
 # beav CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| beav | PASS |  |
+
 ## beav
 
 ### Tool Description

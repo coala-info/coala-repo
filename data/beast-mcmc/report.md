@@ -1,5 +1,11 @@
 # beast-mcmc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| beast-mcmc | Failed | image problem: the BEAGLE native library is missing, so BEAST stops on the example XML, and with -java the MCMC crashes after state 0. |
+
 ## beast-mcmc
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # askocli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| askocli | Failed | not a usable tool: wraps only the subcommand group as free strings with no data inputs or outputs, and every subcommand needs an AskOmics server and API key. |
+
 ## askocli
 
 ### Tool Description

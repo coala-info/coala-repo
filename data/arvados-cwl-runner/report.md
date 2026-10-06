@@ -1,5 +1,11 @@
 # arvados-cwl-runner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arvados-cwl-runner | Not completed | arvados-cwl-runner needs a running Arvados cluster with ARVADOS_API_HOST and ARVADOS_API_TOKEN, even for --validate. |
+
 ## arvados-cwl-runner
 
 ### Tool Description

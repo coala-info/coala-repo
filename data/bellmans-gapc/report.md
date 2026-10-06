@@ -1,5 +1,11 @@
 # bellmans-gapc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bellmans-gapc | PASS |  |
+
 ## bellmans-gapc
 
 ### Tool Description

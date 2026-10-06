@@ -1,5 +1,11 @@
 # bcbio-nextgen-vm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcbio-nextgen-vm_bcbio_vm.py | Failed | not a usable tool: wraps only the bcbio_vm.py command group (a free subcommand string and --datadir) with no data inputs or outputs; the subcommands also drive Docker or cloud services. |
+
 ## bcbio-nextgen-vm_bcbio_vm.py
 
 ### Tool Description

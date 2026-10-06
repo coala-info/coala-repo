@@ -1,5 +1,11 @@
 # amused CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amused_AMUSED | PASS |  |
+
 ## amused_AMUSED
 
 ### Tool Description

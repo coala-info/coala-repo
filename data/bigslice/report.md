@@ -1,5 +1,11 @@
 # bigslice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bigslice | Not completed | Needs the 284 MB BiG-SLiCE HMM model database, which is not in the image; output folder input fixed from Directory to string. |
+
 ## bigslice
 
 ### Tool Description

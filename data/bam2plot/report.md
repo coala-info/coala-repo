@@ -1,5 +1,13 @@
 # bam2plot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bam2plot_from_bam | Failed | image problem: the image has NumPy 2, which removed numpy.trapz, so from_bam stops with 'Could not process dataframe'. |
+| bam2plot_from_reads | PASS |  |
+| bam2plot_guci | Failed | image problem: polars 1.38 in the image does not broadcast the name column, so guci crashes with a ShapeError. |
+
 ## bam2plot_from_bam
 
 ### Tool Description

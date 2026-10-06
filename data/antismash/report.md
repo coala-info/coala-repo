@@ -1,5 +1,11 @@
 # antismash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| antismash | Failed | image problem: antiSMASH 8.0.4 writes prepared model files into its own root-owned package folder on first run, so it runs only with cwltool --no-read-only and --no-match-user. |
+
 ## antismash
 
 ### Tool Description

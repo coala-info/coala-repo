@@ -28,6 +28,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+  - id: genomes
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genome FASTA files named in the input list; staged in the working 
+      directory so the list can name them by file name
   - id: kmer_size
     type:
       - 'null'
@@ -95,6 +102,8 @@ outputs:
       glob: $(inputs.output_tree_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.genomes ? inputs.genomes : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bindashtree:0.1.1--h3ab6199_0

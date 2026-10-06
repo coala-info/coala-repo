@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bio
+baseCommand:
+  - bio
+  - fetch
 label: bio_fetch
 doc: "Fetch biological data from various databases.\n\nTool homepage: https://github.com/ialbert/bio"
 inputs:
@@ -44,21 +46,29 @@ inputs:
       position: 102
       prefix: --type
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output file (used as prefix in for FASTQ)
     inputBinding:
       position: 103
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (GenBank, FASTA, GFF or JSON records)
   - id: output_file
     type:
-      - 'null'
-      - File
-    doc: output file (used as prefix in for FASTQ)
+      type: array
+      items: File
+    doc: output files (used as prefix in for FASTQ)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_file_path ? inputs.output_file_path + "*" : "_no_out_")'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bio:1.8.1--pyhdfd78af_0
+stdout: bio_fetch.out

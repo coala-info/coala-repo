@@ -1,5 +1,13 @@
 # batch_brb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| batch_brb | PASS |  |
+| batch_brb_batch_correction_all_loess_wrapper.r | PASS |  |
+| batch_brb_batch_correction_wrapper.r | PASS |  |
+
 ## batch_brb_batch_correction_all_loess_wrapper.r
 
 ### Tool Description

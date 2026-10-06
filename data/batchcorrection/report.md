@@ -1,5 +1,12 @@
 # batchcorrection CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| batchcorrection_batch_correction_all_loess_wrapper.r | PASS |  |
+| batchcorrection_batch_correction_wrapper.r | Failed | image problem: the linear/lowess/loess path stops with 'there is no package called ade4' in this 2017 image. |
+
 ## batchcorrection_batch_correction_all_loess_wrapper.r
 
 ### Tool Description

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: 3seq
+baseCommand:
+  - 3seq
+  - -full
 label: 3seq
 doc: "Software For Identifying Recombination In Sequence Data\n\nTool homepage: https://mol.ax/software/3seq/"
 inputs:
@@ -34,6 +36,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -b
+      separate: false
   - id: bp_all
     type:
       - 'null'
@@ -76,6 +79,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -e
+      separate: false
   - id: fasta_output
     type:
       - 'null'
@@ -92,6 +96,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -f
+      separate: false
   - id: first_second_pos_only
     type:
       - 'null'
@@ -125,6 +130,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -l
+      separate: false
   - id: min_length
     type:
       - 'null'
@@ -133,6 +139,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -L
+      separate: false
   - id: nexus_output
     type:
       - 'null'
@@ -173,6 +180,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+      separate: false
   - id: run_id
     type:
       - 'null'
@@ -181,14 +189,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: -id
-  - id: run_mode
-    type:
-      - 'null'
-      - boolean
-    doc: Full recombination analysis mode (most common usage)
-    inputBinding:
-      position: 102
-      prefix: -full
   - id: subset_file
     type:
       - 'null'
@@ -238,9 +238,19 @@ inputs:
       position: 102
       prefix: -y
 outputs:
+  - id: recombinants_csv
+    type: File?
+    doc: Candidate recombinant triplets with p-values and breakpoints (3s.rec.csv; absent with -nr).
+    outputBinding:
+      glob: "*3s.rec.csv"
+  - id: result_files
+    type: File[]
+    doc: All files 3SEQ writes (3s.log, 3s.rec.csv, 3s.pvalHist, ...; prefixed by -id when given).
+    outputBinding:
+      glob: "*3s.*"
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Run summary.
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/3seq:1.8--h9948957_6

@@ -70,6 +70,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: BEHST-results folder with the gene list (and g:Profiler results unless
+      no_gprofiler is set)
+    outputBinding:
+      glob: BEHST-results
+  - id: gene_list
+    type: File
+    doc: Gene list of the query regions
+    outputBinding:
+      glob: BEHST-results/*_gene_list.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/behst:3.8--0

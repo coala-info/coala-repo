@@ -1,5 +1,16 @@
 # bacpage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bacpage_assemble | Failed | image problem: the pipeline writes the bwa index into its own read-only package folder, so it runs only with --no-read-only and --no-match-user. |
+| bacpage_identify_files | PASS |  |
+| bacpage_phylogeny | Failed | image problem: run_gubbins.py is missing, so the default recombination detection fails; the tree builds only with --no-detect. |
+| bacpage_profile | PASS |  |
+| bacpage_setup | PASS |  |
+| bacpage_utilities | Failed | not a usable tool: wraps only the utilities command group with a subcommand string and no data inputs or outputs. |
+
 ## bacpage_assemble
 
 ### Tool Description

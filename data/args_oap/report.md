@@ -1,5 +1,13 @@
 # args_oap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| args_oap_make_db | PASS |  |
+| args_oap_stage_one | Failed | image problem: the image ships unindexed SARG/GreenGenes/KO30 databases in a root-owned package folder and stage_one always indexes them there, which fails in the read-only container run as the user (needs --no-read-only and --no-match-user). |
+| args_oap_stage_two | PASS | Ran on the README example (STAS) with the SARG database indexed by make_db via --database, because the built-in database is not indexed in the image. |
+
 ## args_oap_stage_one
 
 ### Tool Description

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-drop.py
+baseCommand:
+  - amptk
+  - drop
 label: amptk_drop
 doc: "Script that drops OTUs and then creates OTU table\n\nTool homepage: https://github.com/nextgenusfs/amptk"
 inputs:
@@ -42,11 +44,11 @@ inputs:
 outputs:
   - id: out
     type:
-      - 'null'
-      - File
-    doc: Base output name
+      type: array
+      items: File
+    doc: Files written with the output base name (cleaned OTUs, OTU table, log)
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

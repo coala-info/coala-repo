@@ -5,6 +5,20 @@ label: bayescode_readmutselomega
 doc: "Computes posterior probabilities of ω and ω₀, and related statistics.\n\nTool
   homepage: https://github.com/ThibaultLatrille/bayescode"
 inputs:
+  - id: chain_files
+    type:
+      type: array
+      items: File
+    doc: Files of the chain(s) written by mutselomega ({chain_name}.chain, .param,
+      .run, .trace; also those of the chain_omega chain when used). They are staged
+      in the working directory.
+  - id: data_files
+    type:
+      type: array
+      items: File
+    doc: Alignment and tree files (and profiles or omega files, if used) named in
+      the .param file; mutselomega must have been run with them in its working
+      directory so that the .param file holds their base names.
   - id: chain_name
     type: string
     doc: Chain name (output file prefix).
@@ -144,7 +158,10 @@ inputs:
       position: 102
       prefix: --until
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output file path (optional)
     inputBinding:
       position: 103
       prefix: --output
@@ -163,31 +180,10 @@ outputs:
     doc: Files written with the prefix given in chain_name
     outputBinding:
       glob: $(inputs.chain_name)*
-  - id: chain_omega_dir
-    type:
-      - 'null'
-      - Directory
-    doc: A second chain ran with the option --freeomega and --flatfitness to 
-      obtain the classical ω-based codon model (Muse & Gaut). These two chains 
-      allow to compute posterior of ω, ω₀, ωᴬ=ω-ω₀ and p(ωᴬ>0) for each site and
-      at the gene level. Results are written in {chain_name}.omegaA.tsv by 
-      default (optionally use the --output argument to specify a different 
-      output path).
-    outputBinding:
-      glob: $(inputs.chain_omega)
-  - id: omega_threshold_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Threshold to compute the mean posterior probability that ω⁎ (or ω if 
-      option `flatfitness` is used in `mutselomega`) is greater than a given 
-      value (1.0 to test for adaptation). Results are written in 
-      {chain_name}.omegappgt{omega_pp}.tsv by default (optionally use the 
-      --output argument to specify a different output path).
-    outputBinding:
-      glob: $(inputs.omega_threshold)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.chain_files.concat(inputs.data_files))
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bayescode:1.3.4--h9948957_0

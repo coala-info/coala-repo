@@ -1,5 +1,13 @@
 # anise_basil CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anise_basil | PASS |  |
+| anise_basil_anise | PASS |  |
+| anise_basil_filter_basil.py | Failed | image problem: filter_basil.py is Python 2 code run under Python 3.12 and crashes with a bytes/str TypeError on the upstream basil.vcf test file. |
+
 ## anise_basil
 
 ### Tool Description

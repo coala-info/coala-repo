@@ -1,5 +1,13 @@
 # art CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| art_df | Failed | not a usable tool: wraps the system df utility (from an unrelated 'art of command line' page), not an ART program, and art_df does not exist in the image. |
+| art_ifconfig | Failed | not a usable tool: wraps the system ifconfig utility (from an unrelated 'art of command line' page), not an ART program, and art_ifconfig does not exist in the image. |
+| art_less | PASS |  |
+
 ## art
 
 ### Tool Description

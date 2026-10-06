@@ -163,6 +163,15 @@ inputs:
       position: 101
       prefix: interleaved=
       separate: false
+  - id: java_memory
+    type:
+      - 'null'
+      - string
+    doc: Set Java's memory usage, overriding autodetection (e.g. 4g gives -Xmx4g).
+    inputBinding:
+      position: 100
+      prefix: -Xmx
+      separate: false
   - id: k
     type:
       - 'null'
@@ -504,11 +513,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: This flag will cause the process to exit if an out-of-memory exception 
-      occurs.  Requires Java 8u92+.
+    doc: Destination for all output contigs.
     inputBinding:
       position: 104
-      prefix: -eoom
+      prefix: out=
+      separate: false
   - id: outd_path
     type:
       - 'null'
@@ -538,11 +547,12 @@ outputs:
   - id: pattern
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Clusters will be written to individual files, where the '%' symbol in 
       the pattern is replaced by cluster number.
     outputBinding:
-      glob: $(inputs.pattern_path)
+      glob: '$(inputs.pattern_path ? inputs.pattern_path.replace("%", "*") : null)'
   - id: outd
     type:
       - 'null'

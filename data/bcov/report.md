@@ -1,5 +1,11 @@
 # bcov CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bcov | PASS |  |
+
 ## bcov
 
 ### Tool Description

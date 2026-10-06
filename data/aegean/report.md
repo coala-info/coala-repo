@@ -1,5 +1,12 @@
 # aegean CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aegean_canon-gff3 | PASS |  |
+| aegean_locuspocus | PASS |  |
+
 ## aegean_locuspocus
 
 ### Tool Description

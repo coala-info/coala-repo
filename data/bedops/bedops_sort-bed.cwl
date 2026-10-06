@@ -11,7 +11,7 @@ inputs:
       items: File
     doc: Input BED file(s). May use '-' to indicate stdin.
     inputBinding:
-      position: 1
+      position: 201
   - id: check_sort
     type:
       - 'null'
@@ -56,18 +56,15 @@ inputs:
       position: 102
       prefix: --duplicates
 outputs:
-  - id: output_tmpdir
-    type:
-      - 'null'
-      - Directory
-    doc: Temporary directory, useful only with --max-mem.
-    outputBinding:
-      glob: $(inputs.tmpdir)
+  - id: stdout
+    type: stdout
+    doc: Sorted BED written to standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedops:2.4.42--hd6d6fdc_1
+stdout: sort-bed.out
 s:url: http://bedops.readthedocs.io
 $namespaces:
   s: https://schema.org/

@@ -1,5 +1,11 @@
 # alignstats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alignstats | PASS | nf-core sarscov2 BAM gives 200 records, 197 mapped; CWL fixed: invented --output-file replaced by -o, input made required. |
+
 ## alignstats
 
 ### Tool Description

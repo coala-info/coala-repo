@@ -1,5 +1,11 @@
 # asciigenome CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| asciigenome_ASCIIGenome | PASS |  |
+
 ## asciigenome_ASCIIGenome
 
 ### Tool Description

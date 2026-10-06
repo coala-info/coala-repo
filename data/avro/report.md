@@ -1,5 +1,11 @@
 # avro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| avro | Failed | image problem: the avro script uses Python 2 print syntax in a Python 3.5 image and stops with SyntaxError; the CWL options are also not from any real help. |
+
 ## avro
 
 ### Tool Description

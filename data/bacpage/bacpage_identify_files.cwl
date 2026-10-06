@@ -36,12 +36,10 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: location to save sample data
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.output_path ? inputs.output_path : 'sample_data.csv')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

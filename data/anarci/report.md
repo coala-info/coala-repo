@@ -1,5 +1,11 @@
 # anarci CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anarci_ANARCI | PASS |  |
+
 ## anarci_ANARCI
 
 ### Tool Description

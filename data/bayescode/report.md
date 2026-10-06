@@ -1,5 +1,15 @@
 # bayescode CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bayescode_mutselomega | PASS |  |
+| bayescode_nodemutsel | PASS |  |
+| bayescode_nodeomega | PASS |  |
+| bayescode_nodetraits | PASS |  |
+| bayescode_readmutselomega | PASS |  |
+
 ## bayescode_mutselomega
 
 ### Tool Description

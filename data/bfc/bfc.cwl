@@ -36,7 +36,7 @@ inputs:
   - id: dump_hash_table
     type:
       - 'null'
-      - File
+      - string
     doc: Dump hash table to FILE.
     inputBinding:
       position: 103
@@ -52,7 +52,7 @@ inputs:
   - id: genome_size
     type:
       - 'null'
-      - float
+      - string
     doc: Approximate genome size (k/m/g allowed; change -k and -b).
     inputBinding:
       position: 103
@@ -124,7 +124,14 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Corrected reads (FASTQ, or FASTA with -Q)
+  - id: hash_table
+    type:
+      - 'null'
+      - File
+    doc: Hash table dumped with dump_hash_table
+    outputBinding:
+      glob: $(inputs.dump_hash_table)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bfc:r181--h577a1d6_12

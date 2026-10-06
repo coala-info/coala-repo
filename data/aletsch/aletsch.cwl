@@ -41,10 +41,21 @@ inputs:
       prefix: --chrm_list_string
   - id: input_bam_list
     type: File
-    doc: input-bam-list
+    doc: 'input-bam-list: one line per sample with 3 space-separated fields: BAM file,
+      BAI file and protocol (single_end, paired_end, pacbio_ccs, pacbio_sub, ont)'
     inputBinding:
       position: 101
       prefix: -i
+  - id: bam_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: Sorted BAM files (with .bai) named in the input BAM list. They are staged
+      in the working directory, so the list must name them by file name only.
   - id: max_group_size
     type:
       - 'null'
@@ -216,18 +227,18 @@ inputs:
       position: 101
       prefix: --region_partition_length
   - id: output_gtf_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_gtf_path`
+    type: string
+    doc: Output GTF file with the assembled transcripts
+    default: aletsch.gtf
     inputBinding:
       position: 102
-      prefix: --output-gtf
+      prefix: -o
   - id: output_gtf_dir_path
     type:
       - 'null'
       - string
-    doc: 'existing directory for individual transcripts, default: N/A'
+    doc: 'directory for individual transcripts (created in the working directory),
+      default: N/A'
     inputBinding:
       position: 103
       prefix: --output_gtf_dir
@@ -246,6 +257,16 @@ outputs:
       glob: $(inputs.output_gtf_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = inputs.bam_files ? inputs.bam_files.slice() : [];
+        if (inputs.output_gtf_dir_path) {
+          l.push({"class": "Directory", "basename": inputs.output_gtf_dir_path,
+                  "listing": [], "writable": true});
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aletsch:1.1.3--h503566f_1

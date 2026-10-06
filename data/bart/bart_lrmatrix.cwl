@@ -1,26 +1,31 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lrmatrix
+baseCommand: [bart, lrmatrix]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_lrmatrix
-doc: "Perform (multi-scale) low rank matrix completion\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Perform (multi-scale) low rank matrix completion\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: input
-    type: string
+    type: File
     doc: input
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: output
     type: string
     doc: output
     inputBinding:
-      position: 2
+      position: 11
   - id: add_noise_scale
     type:
       - 'null'
       - boolean
     doc: add noise scale to account for Gaussian noise.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -N
   - id: block_size_scaling
     type:
@@ -28,7 +33,7 @@ inputs:
       - int
     doc: block size scaling from one scale to the next one.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -j
   - id: decomposition
     type:
@@ -36,7 +41,7 @@ inputs:
       - boolean
     doc: perform decomposition instead, ie fully sampled
     inputBinding:
-      position: 103
+      position: 1
       prefix: -d
   - id: locally_low_rank_block_size
     type:
@@ -44,7 +49,7 @@ inputs:
       - int
     doc: perform locally low rank soft thresholding with specified block size.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -l
   - id: low_rank_sparse_completion
     type:
@@ -52,7 +57,7 @@ inputs:
       - boolean
     doc: perform low rank + sparse matrix completion.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -s
   - id: max_iterations
     type:
@@ -60,7 +65,7 @@ inputs:
       - int
     doc: maximum iterations.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -i
   - id: multi_scale_partition
     type:
@@ -68,7 +73,7 @@ inputs:
       - int
     doc: which dimensions to perform multi-scale partition.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -f
   - id: reshape_dimensions
     type:
@@ -76,7 +81,7 @@ inputs:
       - int
     doc: which dimensions are reshaped to matrix columns.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -m
   - id: smallest_block_size
     type:
@@ -84,24 +89,33 @@ inputs:
       - int
     doc: smallest block size
     inputBinding:
-      position: 103
+      position: 1
       prefix: -k
   - id: denoised_output_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: "out2      \tsummed over all non-noise scales to create a denoised output."
     inputBinding:
-      position: 104
+      position: 1
       prefix: -o
 outputs:
+  - id: output_file
+    type: File
+    doc: Array written as output.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.output).cfl
   - id: denoised_output
     type:
       - 'null'
       - File
     doc: summed over all non-noise scales to create a denoised output.
+    secondaryFiles:
+      - ^.hdr
     outputBinding:
-      glob: $(inputs.denoised_output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.denoised_output_path).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1

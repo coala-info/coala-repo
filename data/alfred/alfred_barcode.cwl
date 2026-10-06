@@ -7,33 +7,48 @@ label: alfred_barcode
 doc: "Generate Hamming-distanced barcodes for sequencing experiments.\n\nTool homepage:
   https://github.com/tobiasrausch/alfred"
 inputs:
-  - id: distance
+  - id: barcodes_fasta
+    type:
+      - 'null'
+      - File
+    doc: Optional FASTA file of candidate barcodes (otherwise all barcodes are enumerated)
+    inputBinding:
+      position: 1
+  - id: target
     type:
       - 'null'
       - int
-    doc: Minimum Hamming distance between barcodes
+    doc: min. hamming distance
     inputBinding:
       position: 101
-      prefix: --dist
-  - id: length
+      prefix: --target
+  - id: barlen
     type:
       - 'null'
       - int
-    doc: Barcode length
+    doc: barcode length
     inputBinding:
       position: 101
-      prefix: --len
-  - id: number
+      prefix: --barlen
+  - id: enumall
     type:
       - 'null'
       - int
-    doc: Number of barcodes to generate
+    doc: enumerate all possible barcodes until this length
     inputBinding:
       position: 101
-      prefix: --num
+      prefix: --enumall
+  - id: entropy
+    type:
+      - 'null'
+      - float
+    doc: min. barcode entropy
+    inputBinding:
+      position: 101
+      prefix: --entropy
   - id: outfile_path
     type: string
-    doc: Output or path parameter `outfile_path`
+    doc: output FASTA file
     inputBinding:
       position: 102
       prefix: --outfile
@@ -42,7 +57,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output filename for the generated barcodes
+    doc: Output FASTA file with the generated barcodes
     outputBinding:
       glob: $(inputs.outfile_path)
 requirements:

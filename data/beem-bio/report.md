@@ -1,5 +1,11 @@
 # beem-bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| beem-bio_BeEM | PASS |  |
+
 ## beem-bio_BeEM
 
 ### Tool Description

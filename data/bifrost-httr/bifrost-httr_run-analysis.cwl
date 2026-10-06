@@ -11,10 +11,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --data-files
     doc: List of probe .pkl files to process
     inputBinding:
       position: 101
-      prefix: --data-files
   - id: model_executable
     type:
       - 'null'

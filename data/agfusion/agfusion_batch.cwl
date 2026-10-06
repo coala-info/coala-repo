@@ -15,6 +15,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --algorithm
+  - id: pyensembl_cache
+    type: Directory
+    doc: pyensembl cache folder (set as PYENSEMBL_CACHE_DIR) holding the Ensembl
+      release that matches the database, made with `pyensembl install --release 
+      R --species S`. The container has no network, so it cannot download it.
   - id: database
     type: File
     doc: Path to the AGFusion database (e.g. --db 
@@ -49,7 +54,7 @@ inputs:
       position: 101
       prefix: --exclude_domain
   - id: file
-    type: string
+    type: File
     doc: Output file from fusion-finding algorithm.
     inputBinding:
       position: 101
@@ -113,23 +118,25 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --recolor
     doc: (Optional) Re-color a domain. Provide the original name of the domain 
       then your color (semi-colon delimited, all in quotes). Can specify 
       --recolor multiples for each domain.
     inputBinding:
       position: 101
-      prefix: --recolor
   - id: rename
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --rename
     doc: (Optional) Rename a domain. Provide the original name of the domain 
       then your new name (semi-colon delimited, all in quotes). Can specify 
       --rename multiples for each domain.
     inputBinding:
       position: 101
-      prefix: --rename
   - id: type
     type:
       - 'null'
@@ -167,15 +174,11 @@ outputs:
     doc: Directory to save results
     outputBinding:
       glob: $(inputs.out_path)
-  - id: file_out
-    type:
-      - 'null'
-      - File
-    doc: Output file from fusion-finding algorithm.
-    outputBinding:
-      glob: $(inputs.file)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      PYENSEMBL_CACHE_DIR: $(inputs.pyensembl_cache.path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agfusion:1.252--py_0

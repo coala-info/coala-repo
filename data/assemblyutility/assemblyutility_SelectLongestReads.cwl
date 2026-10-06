@@ -1,54 +1,58 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: assemblyutility_SelectLongestReads
+baseCommand: SelectLongestReads
 label: assemblyutility_SelectLongestReads
-doc: "A tool to select the longest reads from FASTA/FASTQ files until a specified
-  total length is reached.\n\nTool homepage: https://github.com/yechengxi/AssemblyUtility"
+doc: "Select reads from FASTA/FASTQ files until a total number of bases is reached, either the
+  first reads (longest 0) or the longest reads (longest 1). Writes FASTA.\n\nTool homepage:
+  https://github.com/yechengxi/AssemblyUtility"
 inputs:
-  - id: sum_mode
-    type: string
-    doc: Mode identifier (typically 'sum')
+  - id: total_length
+    type: long
+    doc: The target total number of bases to select
     inputBinding:
       position: 1
-  - id: total_length
-    type: int
-    doc: The target total length of bases to select
+      prefix: sum
+  - id: longest
+    type:
+      - 'null'
+      - int
+    doc: '0: select the first reads that sum to total_length bases; 1: select the longest
+      reads that sum to total_length bases (default 0)'
     inputBinding:
       position: 2
-  - id: selection_type
+      prefix: longest
+  - id: output_file_path
     type: string
-    doc: Selection strategy (typically 'longest')
+    doc: Output FASTA file name
     inputBinding:
       position: 3
-  - id: min_length
-    type: int
-    doc: Minimum length threshold for reads
-    inputBinding:
-      position: 4
+      prefix: o
   - id: input_files
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: f
     doc: Input FASTA or FASTQ files
     inputBinding:
-      position: 105
-      prefix: f
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 106
-      prefix: --output-file
+      position: 4
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: The output file path
+    type: File
+    doc: Selected reads in FASTA format
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: log_file
+    type: File
+    doc: Selection log
+    outputBinding:
+      glob: LongReadSelection_log.txt
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/assemblyutility:20160209--h077b44d_9
+stdout: assemblyutility_SelectLongestReads.out

@@ -3,22 +3,28 @@ class: CommandLineTool
 baseCommand: abricate-get_db
 label: abricate_abricate-get_db
 doc: "Download databases for abricate to use\n\nTool homepage: https://github.com/tseemann/abricate"
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.dbdir, listing: []})"
+        writable: true
 inputs:
   - id: database
     type: string
-    doc: 'Choices: argannot bacmet2 card ecoh ecoli_vf megares ncbi plasmidfinder
-      resfinder vfdb victors'
+    doc: 'Choices: argannot bacmet2 card ecoh ecoli_vf megares ncbi plasmidfinder resfinder vfdb victors'
     inputBinding:
       position: 101
       prefix: --db
   - id: dbdir
-    type:
-      - 'null'
-      - Directory
-    doc: Parent folder
+    type: string
+    doc: Parent folder for the downloaded database (created in the output directory).
     inputBinding:
       position: 101
       prefix: --dbdir
+    default: abricate_db
   - id: debug
     type:
       - 'null'
@@ -36,9 +42,13 @@ inputs:
       position: 101
       prefix: --force
 outputs:
-  - id: stdout
+  - id: database_dir
+    type: Directory
+    doc: Downloaded and indexed database (<dbdir>/<db>).
+    outputBinding:
+      glob: $(inputs.dbdir)
+  - id: log
     type: stdout
-    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abricate:1.2.0--h05cac1d_0

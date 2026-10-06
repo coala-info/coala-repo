@@ -1,5 +1,11 @@
 # atlas-metadata-validator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atlas-metadata-validator_atlas_validation.py | Failed | image problem: the image has no git executable, so the GitPython import fails unless GIT_PYTHON_REFRESH=quiet is set by hand; CWL rewritten from the real help because its flags were invented. |
+
 ## atlas-metadata-validator_atlas_validation.py
 
 ### Tool Description

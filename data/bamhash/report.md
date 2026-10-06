@@ -1,5 +1,13 @@
 # bamhash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bamhash_bamhash_checksum_bam | PASS |  |
+| bamhash_bamhash_checksum_fasta | PASS |  |
+| bamhash_bamhash_checksum_fastq | PASS |  |
+
 ## bamhash_bamhash_checksum_bam
 
 ### Tool Description

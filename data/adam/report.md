@@ -1,5 +1,11 @@
 # adam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| adam_adam-submit | Failed | image problem: Hadoop login fails because the image has no user entry for the host user ID that cwltool runs as; with cwltool --no-match-user, flagstat matches samtools and transformAlignments writes valid Parquet |
+
 ## adam_adam-submit
 
 ### Tool Description

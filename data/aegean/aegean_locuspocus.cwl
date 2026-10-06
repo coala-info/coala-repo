@@ -78,11 +78,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --parent
     doc: if a feature of type $CT exists without a parent, create a parent for 
       this feature with type $PT; e.g., mRNA:gene
     inputBinding:
       position: 102
-      prefix: --parent
   - id: pseudo
     type:
       - 'null'

@@ -4,7 +4,7 @@ baseCommand:
   - bgt
   - import
 label: bgt_import
-doc: "Import VCF/BCF files into BGT format\n\nTool homepage: https://github.com/Dysman/bgTools-playerPrefsEditor"
+doc: "Import VCF/BCF files into BGT format\n\nTool homepage: https://github.com/lh3/bgt"
 inputs:
   - id: out_prefix
     type: string

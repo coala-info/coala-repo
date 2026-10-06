@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - ArtificialFastqGenerator.jar
+baseCommand: artfastqgenerator
 label: artfastqgenerator
 doc: ArtificialFastqGenerator generates artificial FASTQ files from a reference 
   genome, simulating coverage biases and quality scores.
@@ -75,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -GCC
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: gc_content_region_size
     type:
       - 'null'
@@ -139,6 +137,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -SE
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: start_sequence_identifier
     type: string
     doc: Prefix of the sequence identifier in the reference after which read 
@@ -171,6 +170,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -URQS
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: x_start
     type:
       - 'null'
@@ -189,16 +189,25 @@ inputs:
       prefix: -Y
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: Path for the artificial fastq and log files, including their base name.
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: -O
 outputs:
-  - id: output_path
-    type: File
-    doc: Path for the artificial fastq and log files, including their base name.
+  - id: fastq_files
+    type:
+      type: array
+      items: File
+    doc: Artificial paired fastq files written with the -O base name.
     outputBinding:
-      glob: $(inputs.output_path_path)
+      glob: $(inputs.output_path_path)*.fastq
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Log and coverage statistics files written with the -O base name.
+    outputBinding:
+      glob: $(inputs.output_path_path)*.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

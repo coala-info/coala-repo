@@ -1,5 +1,11 @@
 # barriers CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| barriers | PASS |  |
+
 ## barriers
 
 ### Tool Description

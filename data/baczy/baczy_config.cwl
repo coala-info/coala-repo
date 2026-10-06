@@ -18,6 +18,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: config
+    type: File
+    doc: Copied template config file
+    outputBinding:
+      glob: "$(inputs.configfile ? inputs.configfile : 'config.yaml')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/baczy:1.0.3--pyhdfd78af_0

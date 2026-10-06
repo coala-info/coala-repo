@@ -6,7 +6,9 @@ doc: "Generate a coverage plot from BAM files.\n\nTool homepage: https://github.
 inputs:
   - id: bam_file
     type: File
-    doc: bam file location
+    doc: bam file location (indexed; the .bai must sit beside it)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam
@@ -29,8 +31,9 @@ inputs:
   - id: dimensions
     type:
       - 'null'
-      - string
-    doc: width and height of the static image in px
+      - type: array
+        items: int
+    doc: width and height of the static image in px (two integers)
     inputBinding:
       position: 101
       prefix: --dimensions
@@ -98,10 +101,29 @@ inputs:
       position: 101
       prefix: --tracks
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: plot_html
+    type: File
+    doc: Interactive coverage plot (<reference>_plot.html)
+    outputBinding:
+      glob: $(inputs.reference_id)_plot.html
+  - id: static_plot
+    type:
+      - 'null'
+      - File
+    doc: Static plot written when export_static is set (<reference>_plot.<format>)
+    outputBinding:
+      glob: "$(inputs.export_static ? inputs.reference_id + '_plot.' + inputs.export_static : [])"
+  - id: dumped_data
+    type:
+      type: array
+      items: File
+    doc: Track data and BAM statistics written with --dump
+    outputBinding:
+      glob:
+        - $(inputs.reference_id)_*.tabular
+        - $(inputs.reference_id)_gb_data_*.json
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamdash:0.4.5--pyhdfd78af_0
-stdout: bamdash.out

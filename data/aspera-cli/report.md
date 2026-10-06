@@ -1,5 +1,11 @@
 # aspera-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aspera-cli_ascli | Not completed | Real transfers need a remote Aspera server, credentials, network and the ascp binary (not in the image); after fixing the option syntax a local config command runs correctly. |
+
 ## aspera-cli_ascli
 
 ### Tool Description

@@ -68,12 +68,17 @@ inputs:
       position: 102
       prefix: --verbose
   - id: report_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output an align_trim report to file
     inputBinding:
       position: 103
       prefix: --report
 outputs:
+  - id: trimmed_bam
+    type: stdout
+    doc: Trimmed alignments in BAM format (written to STDOUT)
   - id: report
     type:
       - 'null'
@@ -86,3 +91,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/artic-tools:0.3.1--hf9554c4_7
+stdout: "$(inputs.input_file ? inputs.input_file.nameroot : 'align_trim').trimmed.bam"

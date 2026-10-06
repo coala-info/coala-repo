@@ -9,6 +9,11 @@ doc: "Split unphased BAM files into haplotype-specific BAM files using phased va
 inputs:
   - id: unphased_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input unphased BAM file
     inputBinding:
       position: 1
@@ -52,6 +57,8 @@ inputs:
       prefix: --sample
   - id: vcffile
     type: File
+    secondaryFiles:
+      - .csi
     doc: input phased VCF/BCF file
     inputBinding:
       position: 102

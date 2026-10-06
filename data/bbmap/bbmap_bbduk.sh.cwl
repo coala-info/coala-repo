@@ -283,11 +283,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: This flag will cause the process to exit if an out-of-memory exception 
-      occurs.  Requires Java 8u92+.
+    doc: Write reads here that do not contain kmers matching the database.
     inputBinding:
       position: 105
-      prefix: -eoom
+      prefix: out=
+      separate: false
   - id: out2_path
     type:
       - 'null'

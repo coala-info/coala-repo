@@ -1,5 +1,11 @@
 # bioconda-backup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bioconda-backup | Failed | not a usable tool: the image has no bioconda-backup command, only an internal script that mirrors biocontainers images to a private registry through the Docker socket. |
+
 ## bioconda-backup
 
 ### Tool Description

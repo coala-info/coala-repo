@@ -1,8 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fmf
+baseCommand:
+  - bgt
+  - fmf
 label: bgt_fmf
-doc: "Process FMF files\n\nTool homepage: https://github.com/Dysman/bgTools-playerPrefsEditor"
+doc: "Query FMF (flat metadata format) files, such as the .spl sample file of a BGT database\n\nTool homepage: https://github.com/lh3/bgt"
 inputs:
   - id: input_fmf
     type: File

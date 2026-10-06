@@ -1,5 +1,11 @@
 # bellavista CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bellavista | Not completed | BellaVista is an interactive napari viewer for spatial transcriptomics data and cannot run as a batch job. |
+
 ## bellavista
 
 ### Tool Description

@@ -80,6 +80,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -l
+  - id: wga_folders
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: WGA output folders named in the config file (WGA lines, e.g. 
+      Bdis.fna.gz.Bsta.fna.gz/...bed); staged in the working directory so the 
+      relative paths resolve
   - id: temp_dir
     type:
       - 'null'
@@ -89,9 +97,7 @@ inputs:
       position: 101
       prefix: -t
   - id: output_fasta_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'output FASTA file name                  (example: -o out.fasta)'
     inputBinding:
       position: 102
@@ -120,6 +126,8 @@ outputs:
       glob: $(inputs.output_vcf_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.wga_folders || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alloshp:2025.09.12--h7b50bb2_0

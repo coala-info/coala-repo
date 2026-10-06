@@ -47,6 +47,42 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: predictions
+    type: File
+    doc: Lifestyle predictions (temperate / virulent probabilities)
+    outputBinding:
+      glob: $(inputs.input_file.basename).bacphlip
+  - id: hmmsearch_table
+    type: File
+    doc: Table of protein domain hits used as classifier input
+    outputBinding:
+      glob: $(inputs.input_file.basename).hmmsearch.tsv
+  - id: six_frame
+    type:
+      - 'null'
+      - File
+    doc: Six-frame translation of the genome (single-genome mode)
+    outputBinding:
+      glob: $(inputs.input_file.basename).6frame
+  - id: hmmsearch_output
+    type:
+      - 'null'
+      - File
+    doc: Raw hmmsearch output (single-genome mode)
+    outputBinding:
+      glob: $(inputs.input_file.basename).hmmsearch
+  - id: multi_fasta_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Per-genome intermediate files (multi-FASTA mode)
+    outputBinding:
+      glob: $(inputs.input_file.basename).BACPHLIP_DIR
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bacphlip:0.9.6--py_0

@@ -18,11 +18,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --analysis
     doc: String representing analysis pathway desired (e.g., rma-sketch, 
       plier-mm-sketch).
     inputBinding:
       position: 102
-      prefix: --analysis
   - id: analysis_files_path
     type:
       - 'null'
@@ -76,10 +77,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chip-type
     doc: Chip types to check library and CEL files against.
     inputBinding:
       position: 102
-      prefix: --chip-type
   - id: clf_file
     type:
       - 'null'

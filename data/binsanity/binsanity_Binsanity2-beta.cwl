@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Binsanity-lc
+baseCommand: Binsanity2-beta
 label: binsanity_Binsanity2-beta
 doc: "Binsanity2 is a workflow script that will subset assemblies using kmeans and
   subsequently binning the resultant clusters of contigs using coverage and affinity
@@ -49,8 +49,8 @@ inputs:
       position: 101
       prefix: -d
   - id: fasta_file_name
-    type: File
-    doc: Specify the fasta file containing contigs you want to cluster
+    type: string
+    doc: File name of the contig FASTA inside the folder given with -f
     inputBinding:
       position: 101
       prefix: -l
@@ -77,7 +77,7 @@ inputs:
       position: 101
       prefix: -m
   - id: output_directory
-    type: Directory
+    type: string
     doc: "Give a name to the directory BinSanity results will be output in \n    \
       \                        [Default:'BINSANITY-RESULTS']"
     inputBinding:
@@ -143,6 +143,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: BinSanity results folder
+    outputBinding:
+      glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/binsanity:0.5.4--pyh5e36f6f_0

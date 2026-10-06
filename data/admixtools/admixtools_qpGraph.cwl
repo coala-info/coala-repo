@@ -5,16 +5,11 @@ label: admixtools_qpGraph
 doc: "qpGraph is a tool for fitting population graphs to f-statistics.\n\nTool homepage:
   https://github.com/DReichLab/AdmixTools"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input file
-    inputBinding:
-      position: 1
   - id: graph_name
     type:
       - 'null'
-      - string
-    doc: use <nam> as graph name
+      - File
+    doc: use <nam> as graph name (graph topology file)
     inputBinding:
       position: 102
       prefix: -g
@@ -35,9 +30,7 @@ inputs:
       position: 102
       prefix: -x
   - id: parameter_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: use parameters from <file>
     inputBinding:
       position: 102
@@ -82,6 +75,13 @@ inputs:
     inputBinding:
       position: 104
       prefix: -d
+  - id: data_files
+    type:
+      type: array
+      items: File
+    doc: Genotype, SNP, individual and population list files that the 
+      parameter file names. They are staged into the working directory, so 
+      the parameter file must refer to them by file name only.
 outputs:
   - id: out_graph
     type:
@@ -97,8 +97,14 @@ outputs:
     doc: use <nam> for graph dot name
     outputBinding:
       glob: $(inputs.graph_dot_name_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.data_files)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
+stdout: admixtools_qpGraph.out

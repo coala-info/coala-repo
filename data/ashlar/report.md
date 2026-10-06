@@ -1,5 +1,11 @@
 # ashlar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ashlar | PASS |  |
+
 ## ashlar
 
 ### Tool Description

@@ -2,12 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bgenix
 label: bgen-cpp_bgenix
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bgen_file)
+        writable: true
 doc: "OPTIONS:\n\nTool homepage: https://enkre.net/cgi-bin/code/bgen/"
 inputs:
   - id: bgen_file
-    type:
-      - 'null'
-      - File
+    type: File
+    secondaryFiles:
+      - pattern: .bgi
+        required: false
     doc: Path of bgen file to operate on.  (An optional form where "-g" is 
       omitted and the filename is specified as the first argument, i.e. bgenix 
       <filename>, can also be used).
@@ -153,7 +160,14 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (selected variants as BGEN, VCF, or a variant list)
+  - id: index_output
+    type:
+      - 'null'
+      - File
+    doc: Index file (<filename>.bgen.bgi) written with index
+    outputBinding:
+      glob: "$(inputs.index ? inputs.bgen_file.basename + '.bgi' : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0

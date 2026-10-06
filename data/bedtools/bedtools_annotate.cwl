@@ -34,9 +34,7 @@ inputs:
       position: 101
       prefix: -files
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input bed/gff/vcf file to be annotated.
     inputBinding:
       position: 101

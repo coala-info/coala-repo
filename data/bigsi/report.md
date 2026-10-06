@@ -1,5 +1,16 @@
 # bigsi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bigsi_bloom | PASS | Repo example ctx graphs give 1000-bit bloom filters whose index finds all 100 test k-mers; output fixed to the folder the tool writes, config made a File. |
+| bigsi_build | PASS | Two bloom filters build a berkeleydb index that finds a test k-mer in s1 and s2 and not a random one; removed 7 invented flags, added --samples and the index output. |
+| bigsi_delete | PASS | Delete empties the index (49 kB to 12 kB, metadata gone so search finds no rows); added the writable index input. |
+| bigsi_insert | PASS | Inserting a third bloom filter as s3 makes search report s1, s2 and s3; added the writable index input and updated-index output. |
+| bigsi_merge | PASS | Merging a one-sample index (s4) into the s1/s2 index makes search report s1, s2 and s4; config paths made Files, added both index inputs and the merged-index output. |
+| bigsi_search | PASS | A test k-mer is found 100% in both samples and a random k-mer in none; added the index input (staged beside the config); thresholds below 1.0 miss single k-mers (tool behaviour). |
+
 ## bigsi_bloom
 
 ### Tool Description

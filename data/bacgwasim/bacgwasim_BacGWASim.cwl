@@ -185,8 +185,8 @@ inputs:
   - id: plot_ld
     type:
       - 'null'
-      - boolean
-    doc: Generate the LD plot
+      - string
+    doc: Generate the LD plot (True or False)
     inputBinding:
       position: 101
       prefix: --plot-ld

@@ -13,7 +13,7 @@ inputs:
     doc: Lexicographically-sorted, headerless starch archive(s). At least one is
       required.
     inputBinding:
-      position: 1
+      position: 201
   - id: note
     type:
       - 'null'
@@ -21,7 +21,8 @@ inputs:
     doc: Append note to output archive metadata (optional).
     inputBinding:
       position: 102
-      prefix: --note
+      prefix: --note=
+      separate: false
   - id: bzip2
     type:
       - 'null'
@@ -55,7 +56,8 @@ inputs:
       error stream (optional)
     inputBinding:
       position: 102
-      prefix: --report-progress
+      prefix: --report-progress=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

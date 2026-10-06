@@ -62,20 +62,24 @@ inputs:
       prefix: -r
   - id: output_path_path
     type: string
-    doc: '- output to files at path (default: output is sent to stdout)'
+    doc: Output directory; one FASTA file per sample is written in it. The 
+      directory is created before the run because agc needs it to exist.
     inputBinding:
       position: 103
       prefix: -o
 outputs:
   - id: output_path
-    type:
-      - 'null'
-      - File
-    doc: 'output to files at path (default: output is sent to stdout)'
+    type: Directory
+    doc: Directory with one FASTA file per sample.
     outputBinding:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.output_path_path, "listing":
+          []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agc:3.2.1--h9ee0642_0

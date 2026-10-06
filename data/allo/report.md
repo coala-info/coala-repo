@@ -1,5 +1,11 @@
 # allo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| allo | Failed | image problem: allo imports tensorflow.keras at start-up, but the image's TensorFlow 2.17 has no tensorflow.keras module (Keras 3 missing), so every run fails, even --readcount on the upstream test SAM files. |
+
 ## allo
 
 ### Tool Description

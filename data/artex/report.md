@@ -1,5 +1,11 @@
 # artex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| artex | Failed | image problem: on the author's ERR5398250 test set the bundled Clair3 full-alignment step fails (gzip invalid magic), so bcftools isec finds no index and artex exits 1, also with plain docker run. |
+
 ## artex
 
 ### Tool Description

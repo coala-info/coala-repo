@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snakemake
+baseCommand: anansnake
 label: anansnake
 doc: "Snakemake is a Python based language and execution environment for GNU Make-like
   workflows.\n\nTool homepage: https://github.com/vanheeringen-lab/anansnake"

@@ -119,7 +119,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: use given file for log
     inputBinding:
       position: 102
@@ -127,7 +127,7 @@ inputs:
   - id: logfile_alias
     type:
       - 'null'
-      - File
+      - string
     doc: use given file for log
     inputBinding:
       position: 102
@@ -203,13 +203,16 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: use value for given property
+        inputBinding:
+          prefix: -D
+          separate: false
+    doc: use value for given property (name=value)
     inputBinding:
       position: 102
   - id: property_file
     type:
       - 'null'
-      - string
+      - File
     doc: load all properties from file with -D properties taking precedence
     inputBinding:
       position: 102
@@ -259,6 +262,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Ant log file written by -logfile / -l
+    outputBinding:
+      glob: $(inputs.logfile || inputs.logfile_alias)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ant:1.10.0--0

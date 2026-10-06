@@ -1,5 +1,11 @@
 # andi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| andi | Failed | image problem: andi 0.14 crashes with a segmentation fault (exit 139) on every input, including three SARS-CoV-2 genomes and a tiny FASTA. |
+
 ## andi
 
 ### Tool Description

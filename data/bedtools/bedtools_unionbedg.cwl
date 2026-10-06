@@ -34,7 +34,9 @@ inputs:
       position: 101
       prefix: -filler
   - id: genome
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Use genome file to calculate empty regions.
     inputBinding:
       position: 101
@@ -49,9 +51,8 @@ inputs:
       prefix: -header
   - id: input_files
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: BedGraph files to combine. Assumes that each BedGraph file is sorted by
       chrom/start and that the intervals in each are non-overlapping.
     inputBinding:

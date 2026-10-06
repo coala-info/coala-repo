@@ -62,13 +62,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+  - id: output_folder
+    type: Directory
+    doc: Output folder <prefix>_Binning_refiner_outputs with the refined bins 
+      and the contigs and sources reports
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$(inputs.output_prefix ? inputs.output_prefix : 'Refined')_Binning_refiner_outputs"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/binning_refiner:1.4.3

@@ -13,11 +13,13 @@ inputs:
     doc: Name of input file for forward reads
     inputBinding:
       position: 1
+      prefix: '--1'
   - id: reads2
     type: File
     doc: Name of input file for reverse reads
     inputBinding:
       position: 2
+      prefix: '--2'
   - id: check
     type:
       - 'null'

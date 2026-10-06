@@ -42,7 +42,9 @@ inputs:
       position: 101
       prefix: -filler
   - id: genome_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Use genome file to calculate empty regions.
     inputBinding:
       position: 101
@@ -57,9 +59,8 @@ inputs:
       prefix: -header
   - id: input_files
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: A list of BED/GFF/VCF files to combine.
     inputBinding:
       position: 101

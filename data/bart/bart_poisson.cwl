@@ -1,21 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poisson
+baseCommand: [bart, poisson]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_poisson
-doc: "Computes Poisson-disc sampling pattern.\n\nTool homepage: https://github.com/tomdstanton/bart"
+doc: "Computes Poisson-disc sampling pattern.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: outfile
     type: string
     doc: Output file name
     inputBinding:
-      position: 1
+      position: 10
   - id: acceleration_dim1
     type:
       - 'null'
       - float
     doc: acceleration dim 1
     inputBinding:
-      position: 102
+      position: 1
       prefix: -y
   - id: acceleration_dim2
     type:
@@ -23,7 +25,7 @@ inputs:
       - float
     doc: acceleration dim 2
     inputBinding:
-      position: 102
+      position: 1
       prefix: -z
   - id: calibration_region_size
     type:
@@ -31,7 +33,7 @@ inputs:
       - int
     doc: size of calibration region
     inputBinding:
-      position: 102
+      position: 1
       prefix: -C
   - id: elliptical_scanning
     type:
@@ -39,7 +41,7 @@ inputs:
       - boolean
     doc: elliptical scanning
     inputBinding:
-      position: 102
+      position: 1
       prefix: -e
   - id: random_seed
     type:
@@ -47,7 +49,7 @@ inputs:
       - int
     doc: random seed
     inputBinding:
-      position: 102
+      position: 1
       prefix: -s
   - id: size_dim1
     type:
@@ -55,7 +57,7 @@ inputs:
       - int
     doc: size dimension 1
     inputBinding:
-      position: 102
+      position: 1
       prefix: -Y
   - id: size_dim2
     type:
@@ -63,7 +65,7 @@ inputs:
       - int
     doc: size dimension 2
     inputBinding:
-      position: 102
+      position: 1
       prefix: -Z
   - id: variable_density
     type:
@@ -71,20 +73,16 @@ inputs:
       - boolean
     doc: variable density
     inputBinding:
-      position: 102
+      position: 1
       prefix: -v
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: outfile_out
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file name
+    secondaryFiles:
+      - ^.hdr
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_poisson.out

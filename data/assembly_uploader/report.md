@@ -1,5 +1,11 @@
 # assembly_uploader CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| assembly_uploader | Failed | not a usable tool: generated from a failed image pull, it names the wrong image (assemblycomparator2) and an invented command and flags; the package's real commands are study_xmls, submit_study, assembly_manifest, release_study and webin_cli_handler. |
+
 ## assembly_uploader
 
 ### Tool Description

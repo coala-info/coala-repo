@@ -1,5 +1,15 @@
 # agat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| agat_agat_convert_sp_gff2bed.pl | PASS |  |
+| agat_agat_sp_keep_longest_isoform.pl | PASS |  |
+| agat_agat_sp_manage_functional_annotation.pl | PASS |  |
+| agat_agat_sp_manage_ids.pl | PASS |  |
+| agat_agat_sp_manage_utrs.pl | PASS |  |
+
 ## agat
 
 ### Tool Description

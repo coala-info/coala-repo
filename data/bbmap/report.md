@@ -1,5 +1,17 @@
 # bbmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bbmap_bbduk.sh | PASS |  |
+| bbmap_bbmap.sh | PASS |  |
+| bbmap_bbmerge.sh | PASS |  |
+| bbmap_bbnorm.sh | PASS |  |
+| bbmap_dedupe.sh | PASS |  |
+| bbmap_khist.sh | PASS |  |
+| bbmap_reformat.sh | PASS |  |
+
 ## bbmap_bbmap.sh
 
 ### Tool Description

@@ -5,142 +5,164 @@ baseCommand:
   - /files/batch_correction/batch_correction_docker_wrapper.R
 label: batch_correction
 doc: "Wrapper script for batch correction, which can call either batch_correction_all_loess_wrapper.R
-  or batch_correction_wrapper.R based on the --loess option.\n\nTool homepage: https://github.com/USTCPCS/CVPR2018_attention"
+  or batch_correction_wrapper.R based on the --loess option.\n\nTool homepage: https://github.com/workflow4metabolomics/batch_correction"
 inputs:
-  - id: analyse
-    type: string
-    doc: Must be set to "batch_correction".
-    inputBinding:
-      position: 101
-  - id: batch_col_name
-    type:
-      - 'null'
-      - string
-    doc: The column name for batch.
-    inputBinding:
-      position: 101
   - id: dataMatrix
     type: File
-    doc: Set the input data matrix file.
+    doc: Input data matrix file
     inputBinding:
-      position: 101
-  - id: detail
-    type:
-      - 'null'
-      - string
-    doc: Set the detail value (if span value is set to NULL, optional).
+      position: 1
+      prefix: dataMatrix
+  - id: sampleMetadata
+    type: File
+    doc: Input sample metadata file
     inputBinding:
-      position: 101
-  - id: injection_order_col_name
-    type:
-      - 'null'
-      - string
-    doc: The column name for the injection order.
+      position: 2
+      prefix: sampleMetadata
+  - id: variableMetadata
+    type: File
+    doc: Input variable metadata file
     inputBinding:
-      position: 101
+      position: 3
+      prefix: variableMetadata
   - id: loess
     type:
       - 'null'
       - boolean
-    doc: If TRUE, call the script as "batch_correction_all_loess_wrapper.R"; 
-      otherwise call it as "batch_correction_wrapper.R".
+    doc: Call the script as "batch_correction_all_loess_wrapper.R" (passes --loess
+      TRUE); otherwise call it as "batch_correction_wrapper.R"
     inputBinding:
-      position: 101
-      prefix: --loess
+      position: 0
+      valueFrom: '$(self ? ["--loess", "TRUE"] : null)'
+  - id: analyse
+    type:
+      - 'null'
+      - string
+    doc: Must be set to "batch_correction" when loess is not set
+    inputBinding:
+      position: 0
+      prefix: analyse
   - id: method
     type: string
-    doc: Set the method. For all_loess_wrapper, can be "all_loess_pool" or 
-      "all_loess_sample". For wrapper, can be "linear", "lowess", or "loess".
+    doc: Set the method; "all_loess_pool" or "all_loess_sample" (with loess), or
+      "linear", "lowess" or "loess" (without loess)
     inputBinding:
-      position: 101
+      position: 4
+      prefix: method
+  - id: span
+    type: string
+    doc: Set the span condition; set to "none" if method is set to "linear"
+    inputBinding:
+      position: 5
+      prefix: span
   - id: ref_factor
     type:
       - 'null'
       - string
-    doc: Set the ref_factor value (if span value is set to NULL, optional).
+    default: batch
+    doc: Set the ref_factor value (wrapper only; if span value is set to NULL)
     inputBinding:
-      position: 101
-  - id: sampleMetadata
-    type: File
-    doc: Set the input sample metadata file.
+      position: 6
+      prefix: ref_factor
+  - id: detail
+    type:
+      - 'null'
+      - string
+    default: 'no'
+    doc: Set the detail value, "no", "plot" or "reg" (wrapper only; if span value is set to NULL)
     inputBinding:
-      position: 101
+      position: 7
+      prefix: detail
+  - id: valnull
+    type:
+      - 'null'
+      - string
+    default: '0'
+    doc: What to do with generated negative or infinite values, "0" or "NA"
+      (wrapper only; used by the Galaxy tool)
+    inputBinding:
+      position: 8
+      prefix: valnull
+  - id: batch_col_name
+    type:
+      - 'null'
+      - string
+    doc: The column name for batch (default "batch")
+    inputBinding:
+      position: 20
+      prefix: batch_col_name
+  - id: injection_order_col_name
+    type:
+      - 'null'
+      - string
+    doc: The column name for the injection order (default "injectionOrder")
+    inputBinding:
+      position: 21
+      prefix: injection_order_col_name
   - id: sample_type_col_name
     type:
       - 'null'
       - string
-    doc: The column name for the sample types.
+    doc: The column name for the sample types (default "sampleType")
     inputBinding:
-      position: 101
+      position: 22
+      prefix: sample_type_col_name
   - id: sample_type_tags
     type:
       - 'null'
       - string
     doc: 'The tags used inside the sample type column, defined as key/value pairs
-      separated by commas (example: blank=blank,pool=pool,sample=sample).'
+      separated by commas (example: blank=blank,pool=pool,sample=sample)'
     inputBinding:
-      position: 101
-  - id: span
-    type: string
-    doc: Set the span condition. Set to "none" if method is set to "linear".
-    inputBinding:
-      position: 101
-  - id: variableMetadata
-    type: File
-    doc: Set the input variable metadata file.
-    inputBinding:
-      position: 101
+      position: 23
+      prefix: sample_type_tags
   - id: dataMatrix_out_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `dataMatrix_out_path`
+    type: string
+    default: dataMatrix_out.tsv
+    doc: Output data matrix file name
     inputBinding:
-      position: 102
-      prefix: --dataMatrix-out
-  - id: graph_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `graph_output_path`
-    inputBinding:
-      position: 103
-      prefix: --graph-output
-  - id: rdata_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `rdata_output_path`
-    inputBinding:
-      position: 104
-      prefix: --rdata-output
+      position: 30
+      prefix: dataMatrix_out
   - id: variableMetadata_out_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `variableMetadata_out_path`
+    type: string
+    default: variableMetadata_out.tsv
+    doc: Output variable metadata file name
     inputBinding:
-      position: 105
-      prefix: --variableMetadata-out
+      position: 31
+      prefix: variableMetadata_out
+  - id: graph_output_path
+    type: string
+    default: graph_output.pdf
+    doc: Output graph file name (PDF)
+    inputBinding:
+      position: 32
+      prefix: graph_output
+  - id: rdata_output_path
+    type: string
+    default: rdata_output.Rdata
+    doc: Output Rdata file name
+    inputBinding:
+      position: 33
+      prefix: rdata_output
 outputs:
   - id: dataMatrix_out
     type: File
-    doc: Set the output data matrix file.
+    doc: Output data matrix file
     outputBinding:
       glob: $(inputs.dataMatrix_out_path)
   - id: variableMetadata_out
     type: File
-    doc: Set the output variable metadata file.
+    doc: Output variable metadata file
     outputBinding:
       glob: $(inputs.variableMetadata_out_path)
   - id: graph_output
     type: File
-    doc: Set the output graph file.
+    doc: Output graph file
     outputBinding:
       glob: $(inputs.graph_output_path)
   - id: rdata_output
     type: File
-    doc: Set the output Rdata file.
+    doc: Output Rdata file
     outputBinding:
       glob: $(inputs.rdata_output_path)
 requirements:

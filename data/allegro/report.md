@@ -1,5 +1,11 @@
 # allegro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| allegro | PASS | Galaxy test data; both Galaxy output assertions match; CWL fixed: -l log flag, staged data files named in the options file, outputs collected. |
+
 ## allegro
 
 ### Tool Description

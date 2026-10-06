@@ -55,6 +55,9 @@ inputs:
   - id: database
     type: File
     doc: database file created with the agouti create_db run mode
+    secondaryFiles:
+      - .attributes_and_features.pickle
+      - .relations
     inputBinding:
       position: 101
       prefix: --database

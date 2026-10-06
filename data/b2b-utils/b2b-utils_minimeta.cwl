@@ -243,7 +243,7 @@ inputs:
     doc: Output or path parameter `output_consensus_path`
     inputBinding:
       position: 102
-      prefix: --output-consensus
+      prefix: --out
 outputs:
   - id: output_consensus
     type:

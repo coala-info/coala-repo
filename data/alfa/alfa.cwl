@@ -18,22 +18,28 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Input BAM file(s) and label(s). The BAM files must be sorted by 
-      position.
-    inputBinding:
-      position: 101
-      prefix: --bam
-  - id: bedgraph
+        items: File
+    doc: Input BAM file(s), sorted by position. Each BAM is paired with the label
+      at the same index in bam_labels (rendered as --bam BAM1 LABEL1 BAM2 LABEL2).
+  - id: bam_labels
     type:
       - 'null'
       - type: array
         items: string
-    doc: Use this options if your input(s) is/are BedGraph file(s). If stranded,
-      provide the BedGraph files for each strand for all samples.
-    inputBinding:
-      position: 101
-      prefix: --bedgraph
+    doc: One sample label per BAM file in bam.
+  - id: bedgraph
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input BedGraph file(s). If stranded, give the plus and minus BedGraph
+      files of each sample in order; the files are split evenly among bedgraph_labels.
+  - id: bedgraph_labels
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: One sample label per sample in bedgraph.
   - id: categories_depth
     type:
       - 'null'
@@ -70,6 +76,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome_index
+  - id: genome_index_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Existing ALFA index files (<basename>.stranded.ALFA_index and 
+      <basename>.unstranded.ALFA_index). They are staged in the working directory,
+      so set genome_index to their basename.
   - id: keep_ambiguous
     type:
       - 'null'
@@ -154,27 +168,56 @@ outputs:
   - id: pdf
     type:
       - 'null'
-      - File
-    doc: Save produced plots in PDF format at the specified path 
-      ('categories_plots.pdf' if no argument provided).
+      - type: array
+        items: File
+    doc: PDF plots (<pdf_path basename>.Categories.pdf and .Biotypes.pdf)
     outputBinding:
-      glob: $(inputs.pdf_path)
+      glob: |-
+        ${
+          if (!inputs.pdf_path) return [];
+          var d = inputs.output_dir_path ? inputs.output_dir_path.replace(/\/$/, '') + '/' : '';
+          return d + inputs.pdf_path.replace(/\.pdf$/, '') + '.*.pdf';
+        }
   - id: png
     type:
       - 'null'
-      - File
-    doc: Save produced plots in PNG format with the provided argument as 
-      basename ('categories.png' and 'biotypes.png' if no argument provided).
+      - type: array
+        items: File
+    doc: PNG plots (<png_path basename>.Categories.png and .Biotypes.png)
     outputBinding:
-      glob: $(inputs.png_path)
+      glob: |-
+        ${
+          if (!inputs.png_path) return [];
+          var d = inputs.output_dir_path ? inputs.output_dir_path.replace(/\/$/, '') + '/' : '';
+          return d + inputs.png_path.replace(/\.png$/, '') + '.*.png';
+        }
   - id: svg
     type:
       - 'null'
-      - File
-    doc: Save produced plots in SVG format with the provided argument as 
-      basename or 'categories.svg' and 'biotypes.svg' if no argument provided.
+      - type: array
+        items: File
+    doc: SVG plots (<svg_path basename>.Categories.svg and .Biotypes.svg)
     outputBinding:
-      glob: $(inputs.svg_path)
+      glob: |-
+        ${
+          if (!inputs.svg_path) return [];
+          var d = inputs.output_dir_path ? inputs.output_dir_path.replace(/\/$/, '') + '/' : '';
+          return d + inputs.svg_path.replace(/\.svg$/, '') + '.*.svg';
+        }
+  - id: counts_files
+    type:
+      type: array
+      items: File
+    doc: ALFA counts files (<label>.ALFA_feature_counts.tsv)
+    outputBinding:
+      glob: "$(inputs.output_dir_path ? inputs.output_dir_path.replace(/\\/$/, '') + '/' : '')*.ALFA_feature_counts.tsv"
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: ALFA genome index files created from the annotation (*.ALFA_index)
+    outputBinding:
+      glob: "$(inputs.annotation ? (inputs.output_dir_path ? inputs.output_dir_path.replace(/\\/$/, '') + '/' : '') + '*.ALFA_index' : [])"
   - id: output_dir
     type:
       - 'null'
@@ -183,8 +226,34 @@ outputs:
       default).
     outputBinding:
       glob: $(inputs.output_dir_path)
+arguments:
+  - position: 101
+    valueFrom: |-
+      ${
+        if (!inputs.bam) return null;
+        var a = ["--bam"];
+        for (var i = 0; i < inputs.bam.length; i++) {
+          a.push(inputs.bam[i].path);
+          a.push(inputs.bam_labels[i]);
+        }
+        return a;
+      }
+  - position: 101
+    valueFrom: |-
+      ${
+        if (!inputs.bedgraph) return null;
+        var a = ["--bedgraph"];
+        var n = inputs.bedgraph.length / inputs.bedgraph_labels.length;
+        for (var i = 0; i < inputs.bedgraph_labels.length; i++) {
+          for (var j = 0; j < n; j++) a.push(inputs.bedgraph[i * n + j].path);
+          a.push(inputs.bedgraph_labels[i]);
+        }
+        return a;
+      }
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.genome_index_files ? inputs.genome_index_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alfa:1.1.1--pyh5e36f6f_0

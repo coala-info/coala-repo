@@ -1,5 +1,12 @@
 # arcs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| arcs | PASS |  |
+| arcs_arcs-make | Failed | image problem: the image lacks perl, LINKS and bwa, so the arks-long demo stops at its first step (the CWL also binds make options as separate words instead of key=value). |
+
 ## arcs
 
 ### Tool Description

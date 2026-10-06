@@ -2,18 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: xmlvalid
 label: bftools_xmlvalid
-doc: "Validates an XML file against a schema.\n\nTool homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html"
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+doc: "Validates XML files (e.g. OME-XML) against the schema they declare.\n\nTool homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html"
 inputs:
-  - id: schema_path
-    type: File
-    doc: Path to the XML schema file
+  - id: xml_files
+    type:
+      type: array
+      items: File
+    doc: XML file(s) to validate against the schema named in each file (e.g. OME-XML)
     inputBinding:
       position: 1
-  - id: input_file
-    type: File
-    doc: Path to the XML file to validate
-    inputBinding:
-      position: 2
 outputs:
   - id: stdout
     type: stdout

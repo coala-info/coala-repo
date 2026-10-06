@@ -12,7 +12,7 @@ inputs:
       - boolean
     doc: put each FASTA/FASTQ record on one tab-separated line
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compact
   - id: dropq
     type:
@@ -20,7 +20,7 @@ inputs:
       - boolean
     doc: drop qualities in FASTA/FASTQ records or tab-separated lines
     inputBinding:
-      position: 101
+      position: 1
       prefix: --dropq
   - id: expand
     type:
@@ -28,7 +28,7 @@ inputs:
       - boolean
     doc: split each tab-separated line into one or more FASTA/FASTQ records
     inputBinding:
-      position: 101
+      position: 1
       prefix: --expand
   - id: fasta
     type:
@@ -36,7 +36,7 @@ inputs:
       - File
     doc: process FASTA input file containing sequences
     inputBinding:
-      position: 101
+      position: 3
       prefix: --fasta
   - id: fasta_stdin
     type:
@@ -44,7 +44,7 @@ inputs:
       - boolean
     doc: process FASTA sequences from standard input
     inputBinding:
-      position: 101
+      position: 3
       prefix: -F
   - id: flush
     type:
@@ -52,7 +52,7 @@ inputs:
       - boolean
     doc: flush output after each record (global option)
     inputBinding:
-      position: 101
+      position: 0
       prefix: --flush
   - id: interleaved_stdin
     type:
@@ -60,7 +60,7 @@ inputs:
       - boolean
     doc: process interleaved FASTQ sequencing reads from standard input
     inputBinding:
-      position: 101
+      position: 3
       prefix: -P
   - id: linter
     type:
@@ -69,7 +69,7 @@ inputs:
     doc: sets linter for sequence ('none'|'DNA'|'dna'|'protein'). All 
       non-base/non-AA characters are converted to unknowns
     inputBinding:
-      position: 101
+      position: 1
       prefix: --linter
   - id: linter_keep_dashes
     type:
@@ -78,8 +78,9 @@ inputs:
     doc: sets whether the linter should keep dashes appearing in sequences 
       rather than convert them to unknowns
     inputBinding:
-      position: 101
+      position: 1
       prefix: --linter-keep-dashes
+      valueFrom: '$(self ? "true" : "false")'
   - id: linter_keep_lowercase
     type:
       - 'null'
@@ -87,8 +88,9 @@ inputs:
     doc: sets whether the linter should keep lowercase DNA/protein characters 
       appearing in sequences rather than capitalise them
     inputBinding:
-      position: 101
+      position: 1
       prefix: --linter-keep-lowercase
+      valueFrom: '$(self ? "true" : "false")'
   - id: match
     type:
       - 'null'
@@ -96,7 +98,7 @@ inputs:
     doc: select matching sequence names in FASTA/FASTQ records or tab-separated 
       lines using a regular expression
     inputBinding:
-      position: 101
+      position: 1
       prefix: --match
   - id: paired_end
     type:
@@ -106,7 +108,7 @@ inputs:
     doc: process FASTQ input files containing paired-end sequencing reads 
       (expects two files)
     inputBinding:
-      position: 101
+      position: 3
       prefix: --paired-end
   - id: revcom
     type:
@@ -115,7 +117,7 @@ inputs:
     doc: reverse-complement sequences in FASTA/FASTQ records or tab-separated 
       lines
     inputBinding:
-      position: 101
+      position: 1
       prefix: --revcom
   - id: single_end
     type:
@@ -123,7 +125,7 @@ inputs:
       - File
     doc: process FASTQ input file containing single-end sequencing reads
     inputBinding:
-      position: 101
+      position: 3
       prefix: --single-end
   - id: single_end_stdin
     type:
@@ -131,7 +133,7 @@ inputs:
       - boolean
     doc: process single-end FASTQ sequencing reads from standard input
     inputBinding:
-      position: 101
+      position: 3
       prefix: -S
   - id: tabular
     type:
@@ -139,7 +141,7 @@ inputs:
       - File
     doc: process input file containing FAST[A|Q] records as tab-separated lines
     inputBinding:
-      position: 101
+      position: 3
       prefix: --tabular
   - id: tabular_stdin
     type:
@@ -147,7 +149,7 @@ inputs:
       - boolean
     doc: process FAST[A|Q] records in tabular form from standard input
     inputBinding:
-      position: 101
+      position: 3
       prefix: -T
   - id: verbose
     type:
@@ -155,21 +157,24 @@ inputs:
       - boolean
     doc: set verbose execution (global option)
     inputBinding:
-      position: 101
+      position: 0
       prefix: --verbose
   - id: output_path
     type:
       - 'null'
       - string
+    doc: name of the output file (set before the inputs, so position 2)
     inputBinding:
-      position: 102
+      position: 2
       prefix: --output
   - id: paired_end_output_path
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+    doc: names of the two paired-end FASTQ output files
     inputBinding:
-      position: 103
+      position: 2
       prefix: --paired-end-output
 outputs:
   - id: output
@@ -182,7 +187,8 @@ outputs:
   - id: paired_end_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: set the names of paired-end FASTQ output files (expects two files)
     outputBinding:
       glob: $(inputs.paired_end_output_path)

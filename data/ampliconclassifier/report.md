@@ -1,5 +1,11 @@
 # ampliconclassifier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ampliconclassifier_amplicon_classifier.py | PASS |  |
+
 ## ampliconclassifier
 
 ### Tool Description

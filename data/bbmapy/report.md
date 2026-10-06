@@ -1,5 +1,11 @@
 # bbmapy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bbmapy_bbmapy-test | Failed | not a usable tool: bbmapy-test is a built-in self-test that ignores all arguments, makes its own random data and deletes its outputs (the image also lacks Java and downloads it at run time). |
+
 ## bbmapy_bbmapy-test
 
 ### Tool Description

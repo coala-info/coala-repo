@@ -63,9 +63,14 @@ outputs:
     type:
       - 'null'
       - File
-    doc: database file
+    doc: database file (<db>.data)
     outputBinding:
-      glob: $(inputs.db_path)
+      glob: $(inputs.db_path).data
+  - id: index_files
+    type: File[]
+    doc: database index files (<db>_<block>.index)
+    outputBinding:
+      glob: $(inputs.db_path)_*.index
 requirements:
   - class: InlineJavascriptRequirement
 hints:

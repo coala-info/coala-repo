@@ -1,5 +1,11 @@
 # ampliconsplitter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ampliconsplitter_ampliconsplitter.py | PASS |  |
+
 ## ampliconsplitter
 
 ### Tool Description

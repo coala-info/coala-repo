@@ -1,5 +1,11 @@
 # bam-readcount CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bam-readcount | PASS |  |
+
 ## bam-readcount
 
 ### Tool Description

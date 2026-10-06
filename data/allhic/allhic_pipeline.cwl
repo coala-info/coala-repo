@@ -115,9 +115,23 @@ inputs:
       position: 104
       prefix: --skipGA
 outputs:
+  - id: results
+    type:
+      type: array
+      items: File
+    doc: Files written by the extract, partition, optimize and build steps 
+      (named from the BAM prefix)
+    outputBinding:
+      glob: $(inputs.bamfile.nameroot).*
+      outputEval: $(self.filter(function (f) { return f.basename != inputs.bamfile.basename; }))
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.bamfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allhic:0.9.14--he881be0_0

@@ -7,6 +7,9 @@ inputs:
   - id: bam_file
     type: File
     doc: BAM alignment file (sorted, and optionally indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: method

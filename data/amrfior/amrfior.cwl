@@ -65,6 +65,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+      itemSeparator: ','
   - id: minimap2_preset
     type:
       - 'null'

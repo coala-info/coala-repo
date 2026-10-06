@@ -46,8 +46,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum length of exact matching word (nucmer default = 12, promer 
-      default = 4)
+    doc: minimum length of exact matching word (nucmer default = 12, promer default = 4)
     inputBinding:
       position: 101
       prefix: -s
@@ -116,8 +115,10 @@ inputs:
       position: 101
       prefix: -t
   - id: uncovered_regions_file
-    type: string
-    doc: print uncovered regions (gaps) on reference to file name
+    type:
+      - 'null'
+      - string
+    doc: Print uncovered regions (gaps) on the reference to this file name; abacas appends .Gaps_onRef.
     inputBinding:
       position: 101
       prefix: -g
@@ -130,13 +131,12 @@ inputs:
       position: 101
       prefix: -a
   - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: output files will have this prefix
+    type: string
+    doc: Prefix of the output files (pseudomolecule <prefix>.fasta, .tab, .bin, .crunch, .gaps).
     inputBinding:
       position: 101
       prefix: -o
+    default: abacas_out
   - id: pick_primer_sets
     type:
       - 'null'
@@ -170,13 +170,37 @@ inputs:
       position: 101
       prefix: -c
 outputs:
+  - id: pseudomolecule
+    type: File
+    doc: Ordered contigs joined into a pseudomolecule (<prefix>.fasta).
+    outputBinding:
+      glob: $(inputs.output_prefix).fasta
+  - id: contig_order
+    type: File
+    doc: Placement of contigs on the reference (<prefix>.tab).
+    outputBinding:
+      glob: $(inputs.output_prefix).tab
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: All files named by the prefix (.fasta, .tab, .bin, .crunch, .gaps, .gaps.tab, and with -m/-b the contig FASTA files).
+    outputBinding:
+      glob: $(inputs.output_prefix)*
   - id: output_uncovered_regions_file
     type:
       - 'null'
       - File
-    doc: print uncovered regions (gaps) on reference to file name
+    doc: Gaps on the reference (-g).
     outputBinding:
-      glob: $(inputs.uncovered_regions_file)
+      glob: "$(inputs.uncovered_regions_file ? inputs.uncovered_regions_file + '.Gaps_onRef' : [])"
+  - id: unused_contigs
+    type:
+      - 'null'
+      - File
+    doc: Contigs that could not be placed.
+    outputBinding:
+      glob: unused_contigs.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

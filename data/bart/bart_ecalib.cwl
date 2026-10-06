@@ -1,43 +1,47 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ecalib
+baseCommand: [bart, ecalib]
+requirements:
+  - class: InlineJavascriptRequirement
 label: bart_ecalib
 doc: "Estimate coil sensitivities using ESPIRiT calibration.\nOptionally outputs the
-  eigenvalue maps.\n\nTool homepage: https://github.com/tomdstanton/bart"
+  eigenvalue maps.\n\nTool homepage: https://github.com/mrirecon/bart"
 inputs:
   - id: kspace
     type: File
     doc: k-space data
+    secondaryFiles:
+      - ^.hdr
     inputBinding:
-      position: 1
+      position: 10
+      valueFrom: $(self.path.replace(/\.cfl$/, ''))
   - id: sensitivities
     type: string
     doc: Output file for sensitivities
     inputBinding:
-      position: 2
+      position: 11
   - id: ev_maps
     type:
       - 'null'
-      - File
+      - string
     doc: Optional output for eigenvalue maps
     inputBinding:
-      position: 3
+      position: 12
   - id: auto_threshold
     type:
       - 'null'
       - boolean
     doc: Automatically pick thresholds.
     inputBinding:
-      position: 104
+      position: 1
       prefix: -a
   - id: cal_size
     type:
       - 'null'
-      - type: array
-        items: int
+      - string
     doc: Limits the size of the calibration region.
     inputBinding:
-      position: 104
+      position: 1
       prefix: -r
   - id: crop_value
     type:
@@ -45,15 +49,15 @@ inputs:
       - float
     doc: Crop the sensitivities if the eigenvalue is smaller than {crop_value}.
     inputBinding:
-      position: 104
+      position: 1
       prefix: -c
   - id: debug_level
     type:
       - 'null'
-      - Directory
+      - int
     doc: Debug level
     inputBinding:
-      position: 104
+      position: 1
       prefix: -d
   - id: first_part_only
     type:
@@ -61,7 +65,7 @@ inputs:
       - boolean
     doc: perform only first part of the calibration
     inputBinding:
-      position: 104
+      position: 1
       prefix: '-1'
   - id: intensity_correction
     type:
@@ -69,16 +73,15 @@ inputs:
       - boolean
     doc: intensity correction
     inputBinding:
-      position: 104
+      position: 1
       prefix: -I
   - id: ksize
     type:
       - 'null'
-      - type: array
-        items: int
+      - string
     doc: kernel size
     inputBinding:
-      position: 104
+      position: 1
       prefix: -k
   - id: no_phase_rotation
     type:
@@ -86,7 +89,7 @@ inputs:
       - boolean
     doc: Do not rotate the phase with respect to the first principal component
     inputBinding:
-      position: 104
+      position: 1
       prefix: -P
   - id: noise_variance
     type:
@@ -94,15 +97,15 @@ inputs:
       - float
     doc: Variance of noise in data.
     inputBinding:
-      position: 104
+      position: 1
       prefix: -v
   - id: num_maps
     type:
       - 'null'
-      - Directory
+      - int
     doc: Number of maps to compute.
     inputBinding:
-      position: 104
+      position: 1
       prefix: -m
   - id: soft_sense
     type:
@@ -110,7 +113,7 @@ inputs:
       - boolean
     doc: create maps with smooth transitions (Soft-SENSE).
     inputBinding:
-      position: 104
+      position: 1
       prefix: -S
   - id: soft_weighting
     type:
@@ -118,7 +121,7 @@ inputs:
       - boolean
     doc: soft-weighting of the singular vectors.
     inputBinding:
-      position: 104
+      position: 1
       prefix: -W
   - id: threshold
     type:
@@ -126,20 +129,25 @@ inputs:
       - float
     doc: This determined the size of the null-space.
     inputBinding:
-      position: 104
+      position: 1
       prefix: -t
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: sensitivities_out
+    type: File
+    doc: Output file for sensitivities
+    secondaryFiles:
+      - ^.hdr
+    outputBinding:
+      glob: $(inputs.sensitivities).cfl
+  - id: ev_maps_out
     type:
       - 'null'
       - File
-    doc: Output file for sensitivities
+    doc: Array written as ev_maps.cfl/.hdr
+    secondaryFiles:
+      - ^.hdr
     outputBinding:
-      glob: $(inputs.sensitivities)
+      glob: $(inputs.ev_maps).cfl
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/bart:v0.4.04-2-deb_cv1
-stdout: bart_ecalib.out

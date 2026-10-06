@@ -1,14 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bam2plot
+baseCommand:
+  - bam2plot
+  - from_bam
 label: bam2plot_from_bam
 doc: "Plot your bam files!\n\nTool homepage: https://github.com/willros/bam2plot"
 inputs:
-  - id: sub_command
-    type: string
-    doc: sub_command
-    inputBinding:
-      position: 1
   - id: bam_file
     type: File
     doc: bam file

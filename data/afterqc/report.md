@@ -1,5 +1,11 @@
 # afterqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| afterqc_after.py | PASS |  |
+
 ## afterqc_after.py
 
 ### Tool Description

@@ -4,18 +4,25 @@ baseCommand:
   - augur
   - write-file
 label: augur_write-file
-doc: "Writes data to a file.\n\nTool homepage: https://github.com/nextstrain/augur"
+doc: "Write a file like Augur (input from stdin), with transparent compression 
+  chosen from the output file name and universal newlines.\n\nTool homepage: https://github.com/nextstrain/augur"
 inputs:
-  - id: path
+  - id: input_file
     type: File
-    doc: Path to the file to write.
+    doc: File whose content is passed on standard input.
+  - id: output_path
+    type: string
+    doc: Path of the file to write (.gz, .bz2, .xz or .zst selects 
+      compression).
     inputBinding:
       position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type: File
+    doc: The written file.
+    outputBinding:
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0
-stdout: augur_write-file.out
+stdin: $(inputs.input_file.path)

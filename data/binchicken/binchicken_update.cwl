@@ -321,8 +321,7 @@ inputs:
   - id: snakemake_args
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Additional arguments to pass to Snakemake.
     inputBinding:
       position: 101
@@ -378,56 +377,57 @@ inputs:
   - id: coassemble_binned_path
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 102
       prefix: --coassemble-binned
   - id: coassemble_elusive_clusters_path
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 103
       prefix: --coassemble-elusive-clusters
   - id: coassemble_elusive_edges_path
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 104
       prefix: --coassemble-elusive-edges
   - id: coassemble_output_path
     type:
       - 'null'
-      - string
+      - Directory
     inputBinding:
       position: 105
       prefix: --coassemble-output
   - id: coassemble_summary_path
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 106
       prefix: --coassemble-summary
   - id: coassemble_targets_path
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 107
       prefix: --coassemble-targets
   - id: coassemble_unbinned_path
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 108
       prefix: --coassemble-unbinned
   - id: coassemblies_path
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     inputBinding:
       position: 109
       prefix: --coassemblies
@@ -439,62 +439,6 @@ inputs:
       position: 110
       prefix: --output
 outputs:
-  - id: coassemble_output
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory for coassembly results.
-    outputBinding:
-      glob: $(inputs.coassemble_output_path)
-  - id: coassemble_unbinned
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to store unbinned contigs from coassembly.
-    outputBinding:
-      glob: $(inputs.coassemble_unbinned_path)
-  - id: coassemble_binned
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to store binned contigs from coassembly.
-    outputBinding:
-      glob: $(inputs.coassemble_binned_path)
-  - id: coassemble_targets
-    type:
-      - 'null'
-      - File
-    doc: File to store target sequences from coassembly.
-    outputBinding:
-      glob: $(inputs.coassemble_targets_path)
-  - id: coassemble_elusive_edges
-    type:
-      - 'null'
-      - File
-    doc: File to store elusive edges from coassembly.
-    outputBinding:
-      glob: $(inputs.coassemble_elusive_edges_path)
-  - id: coassemble_elusive_clusters
-    type:
-      - 'null'
-      - File
-    doc: File to store elusive clusters from coassembly.
-    outputBinding:
-      glob: $(inputs.coassemble_elusive_clusters_path)
-  - id: coassemble_summary
-    type:
-      - 'null'
-      - File
-    doc: Summary file for coassembly results.
-    outputBinding:
-      glob: $(inputs.coassemble_summary_path)
-  - id: coassemblies
-    type:
-      - 'null'
-      - Directory
-    doc: List of directories containing coassembly results.
-    outputBinding:
-      glob: $(inputs.coassemblies_path)
   - id: output
     type:
       - 'null'

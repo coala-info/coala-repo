@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-process_ion.py
+baseCommand:
+  - amptk
+  - illumina2
 label: amptk_illumina2
 doc: "Script finds barcodes, strips forward and reverse primers, relabels, and then
   trim/pads reads to a set length\n\nTool homepage: https://github.com/nextgenusfs/amptk"
@@ -32,7 +34,7 @@ inputs:
   - id: cpus
     type:
       - 'null'
-      - string
+      - int
     doc: 'Number of CPUs. Default: auto'
     inputBinding:
       position: 101

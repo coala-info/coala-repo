@@ -9,6 +9,11 @@ doc: "Extract matches from a BAM file against a reference genome\n\nTool homepag
 inputs:
   - id: contig_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input BAM file
     inputBinding:
       position: 1

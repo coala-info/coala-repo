@@ -6,12 +6,16 @@ doc: "Align clr to ccs reads.\n\nTool homepage: https://github.com/PacificBiosci
 inputs:
   - id: subreads_bam
     type: File
-    doc: Subreads BAM.
+    doc: Subreads BAM. Needs its PacBio index (.pbi) beside it.
+    secondaryFiles:
+      - .pbi
     inputBinding:
       position: 1
   - id: ccs_bam
     type: File
-    doc: CCS BAM.
+    doc: CCS BAM. Needs its PacBio index (.pbi) beside it.
+    secondaryFiles:
+      - .pbi
     inputBinding:
       position: 2
   - id: out_bam
@@ -31,7 +35,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log to a file, instead of stderr.
     inputBinding:
       position: 103
@@ -74,6 +78,18 @@ outputs:
     doc: Aligned subreads to CCS BAM.
     outputBinding:
       glob: '$(inputs.out_bam)'
+  - id: ccs_fasta
+    type: File
+    doc: CCS reads in FASTA format, written beside the output BAM.
+    outputBinding:
+      glob: '*.fasta'
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file, when --log-file is set.
+    outputBinding:
+      glob: $(inputs.log_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/actc:0.6.1--h9ee0642_0

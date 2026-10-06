@@ -1,5 +1,11 @@
 # amide CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| amide | Not completed | AMIDE is an interactive GTK image viewer that needs an X display, so it cannot run as a batch job. |
+
 ## amide
 
 ### Tool Description

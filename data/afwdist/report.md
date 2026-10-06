@@ -1,5 +1,11 @@
 # afwdist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| afwdist | PASS |  |
+
 ## afwdist
 
 ### Tool Description

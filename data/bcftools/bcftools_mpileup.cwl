@@ -372,6 +372,9 @@ inputs:
   - 'null'
   - float
   doc: Ratio of score
+  inputBinding:
+    position: 102
+    prefix: --score-vs-ref
 arguments:
 - position: 101
   valueFrom: |

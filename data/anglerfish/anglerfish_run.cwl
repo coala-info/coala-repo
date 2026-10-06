@@ -83,6 +83,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --samplesheet
+  - id: fastq_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ files named in the samplesheet; staged into the working directory
+      so that relative paths in the samplesheet resolve
   - id: skip_demux
     type:
       - 'null'
@@ -115,6 +122,14 @@ outputs:
       glob: $(inputs.out_fastq_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = inputs.fastq_files ? inputs.fastq_files.slice() : [];
+        l.push({"class": "Directory", "basename": inputs.out_fastq_path,
+                "listing": [], "writable": true});
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anglerfish:0.7.0--pyhdfd78af_0

@@ -51,9 +51,27 @@ inputs:
       position: 104
       prefix: --nonInformativeRatio
 outputs:
+  - id: group_counts
+    type:
+      type: array
+      items: File
+    doc: RE counts file for each partition (<counts_RE prefix>.<k>g<n>.txt)
+    outputBinding:
+      glob: $(inputs.counts_re.nameroot).$(inputs.k)g*.txt
+  - id: clusters
+    type: File
+    doc: Contigs in each partition (<prefix>.clusters.txt)
+    outputBinding:
+      glob: '*.clusters.txt'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.counts_re)
+      - $(inputs.pairs)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allhic:0.9.14--he881be0_0

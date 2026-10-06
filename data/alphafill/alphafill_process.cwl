@@ -12,6 +12,12 @@ inputs:
     doc: Input file (AlphaFold model)
     inputBinding:
       position: 1
+  - id: output_name
+    type: string
+    doc: Output file name for the filled model (e.g. AF-X-F1-filled.cif.gz); 
+      the JSON metadata is written beside it
+    inputBinding:
+      position: 2
   - id: blast_report_limit
     type:
       - 'null'
@@ -30,10 +36,10 @@ inputs:
       position: 102
       prefix: --clash-distance-cutoff
   - id: config
-    type:
-      - 'null'
-      - File
-    doc: Configuration file to use
+    type: File
+    doc: Configuration file to use (required in practice; without it the image's 
+      template /usr/local/etc/alphafill.conf is read and the run fails; an empty 
+      file is fine when the paths are given as options)
     inputBinding:
       position: 102
       prefix: --config
@@ -147,12 +153,17 @@ inputs:
       prefix: --verbose
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file
+    type: File
+    doc: Filled model in mmCIF format
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
+  - id: metadata_json
+    type: File
+    doc: JSON file with the hits and transplanted ligands
+    outputBinding:
+      glob: $(inputs.output_name.replace(/\.gz$/, '') + '.json')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alphafill:2.2.0--haf24da9_0

@@ -1,216 +1,198 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: atlas
+baseCommand:
+  - atlas
+  - simulate
 label: atlas_simulate
-doc: "Simulate bam- or vcf-file[s]\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas/wiki/Home"
+doc: "Simulating BAM (and optionally VCF) files with a matching reference genome.\n\nTool homepage: https://bitbucket.org/wegmannlab/atlas"
 inputs:
-  - id: input_files
-    type:
-      type: array
-      items: File
-    doc: BAM or VCF file(s) to simulate
-    inputBinding:
-      position: 1
-  - id: base_freq
-    type:
-      - 'null'
-      - string
-    doc: Base frequencies
-    inputBinding:
-      position: 102
-  - id: base_n
-    type:
-      - 'null'
-      - float
-    doc: Base = N probability for reads
-    inputBinding:
-      position: 102
-  - id: base_quality
-    type:
-      - 'null'
-      - string
-    doc: Base quality distribution for read groups
-    inputBinding:
-      position: 102
   - id: chr_length
     type:
       - 'null'
-      - type: array
-        items: int
-    doc: Chromosome lengths
-      - 10000
+      - string
+    doc: "Chromosome length(s), comma-separated, e.g. \"10000\" or \"5000,8000\"."
     inputBinding:
-      position: 102
+      position: 1
+      prefix: --chrLength
   - id: depth
     type:
       - 'null'
-      - type: array
-        items: int
-    doc: Sequencing depths
-      - 5
-    inputBinding:
-      position: 102
-  - id: duplication_rate
-    type:
-      - 'null'
-      - float
-    doc: Duplication rate for read groups
-    inputBinding:
-      position: 102
-  - id: fragment_length
-    type:
-      - 'null'
       - string
-    doc: Fragment length distribution for read groups
+    doc: "Sequencing depth(s), comma-separated."
     inputBinding:
-      position: 102
-  - id: frequency
-    type:
-      - 'null'
-      - float
-    doc: Read group frequency
-    inputBinding:
-      position: 102
-  - id: mapping_quality
-    type:
-      - 'null'
-      - string
-    doc: Mapping quality distribution for read groups
-    inputBinding:
-      position: 102
-  - id: num_read_groups
-    type:
-      - 'null'
-      - int
-    doc: Number of read groups to initialize
-    inputBinding:
-      position: 102
-  - id: out
-    type:
-      - 'null'
-      - string
-    doc: Output files tag
-    inputBinding:
-      position: 102
-  - id: out_qual
-    type:
-      - 'null'
-      - boolean
-    doc: Use full range of quality scores when writing alignments
-    inputBinding:
-      position: 102
+      position: 1
+      prefix: --depth
   - id: ploidy
     type:
       - 'null'
-      - type: array
-        items: int
-    doc: Ploidys
-      - 2
+      - string
+    doc: "Ploidy per chromosome, e.g. \"2{3},1\"."
     inputBinding:
-      position: 102
-  - id: pmd
+      position: 1
+      prefix: --ploidy
+  - id: sim_type
     type:
       - 'null'
       - string
-    doc: Postmortem damage model for read groups
+    doc: "Type of simulation, e.g. one (single individual) or HW (Hardy-Weinberg population)."
     inputBinding:
-      position: 102
-  - id: recal
-    type:
-      - 'null'
-      - string
-    doc: Base quality score recalibration model for read groups
-    inputBinding:
-      position: 102
-  - id: ref_bias
-    type:
-      - 'null'
-      - float
-    doc: Reference bias for reads
-    inputBinding:
-      position: 102
-  - id: ref_div
-    type:
-      - 'null'
-      - float
-    doc: Reference divergence
-    inputBinding:
-      position: 102
-  - id: ref_n
-    type:
-      - 'null'
-      - float
-    doc: Reference Ref = N probability
-    inputBinding:
-      position: 102
-  - id: seed
+      position: 1
+      prefix: --type
+  - id: sample_size
     type:
       - 'null'
       - int
-    doc: Seed for random number generator
+    doc: "Number of individuals to simulate (population types)."
     inputBinding:
-      position: 102
-  - id: seq_cycles
+      position: 1
+      prefix: --sampleSize
+  - id: write_vcf
     type:
       - 'null'
-      - int
-    doc: Number of sequencing cycles for read groups
+      - boolean
+    doc: "Simulate a VCF file of genotypes instead of BAM files."
     inputBinding:
-      position: 102
+      position: 1
+      prefix: --vcf
   - id: seq_type
     type:
       - 'null'
       - string
-    doc: Sequencing type for read groups
+    doc: "Sequencing type: single or paired."
     inputBinding:
-      position: 102
-  - id: soft_clipping
+      position: 1
+      prefix: --seqType
+  - id: seq_cycles
     type:
       - 'null'
-      - string
-    doc: Soft clipping distribution for read groups
+      - int
+    doc: "Number of sequencing cycles (read length)."
     inputBinding:
-      position: 102
+      position: 1
+      prefix: --seqCycles
+  - id: num_read_groups
+    type:
+      - 'null'
+      - int
+    doc: "Number of read groups."
+    inputBinding:
+      position: 1
+      prefix: --numReadGroups
   - id: theta
     type:
       - 'null'
       - float
-    doc: Theta for single individual simulation
+    doc: "Population mutation rate theta."
     inputBinding:
-      position: 102
-  - id: type
+      position: 1
+      prefix: --theta
+  - id: ref_div
+    type:
+      - 'null'
+      - float
+    doc: "Divergence from the reference."
+    inputBinding:
+      position: 1
+      prefix: --refDiv
+  - id: fragment_length
     type:
       - 'null'
       - string
-    doc: Type of simulation (e.g., 'one' for single individual)
+    doc: "Fragment length distribution, e.g. \"gamma(10,0.2)[30,200]\"."
     inputBinding:
-      position: 102
-  - id: write_binned_qualities
+      position: 1
+      prefix: --fragmentLength
+  - id: base_quality
     type:
       - 'null'
-      - boolean
-    doc: Write binned quality scores
+      - string
+    doc: "Base quality distribution, e.g. \"normal(30,10)[0,93]\"."
     inputBinding:
-      position: 102
-  - id: write_true_genotypes
+      position: 1
+      prefix: --baseQuality
+  - id: mapping_quality
     type:
       - 'null'
-      - boolean
-    doc: Write true genotypes to file
+      - string
+    doc: "Mapping quality distribution."
     inputBinding:
-      position: 102
-  - id: write_variant_bed
+      position: 1
+      prefix: --mappingQuality
+  - id: pmd
     type:
       - 'null'
-      - boolean
-    doc: Write BED files with variant and invariant positions
+      - string
+    doc: "Post-mortem damage model."
     inputBinding:
-      position: 102
+      position: 1
+      prefix: --pmd
+  - id: recal
+    type:
+      - 'null'
+      - string
+    doc: "Base quality recalibration model."
+    inputBinding:
+      position: 1
+      prefix: --recal
+  - id: fixed_seed
+    type:
+      - 'null'
+      - int
+    doc: "Set the random seed."
+    inputBinding:
+      position: 1
+      prefix: --fixedSeed
+  - id: out_prefix
+    type: string
+    doc: "Prefix for all output files (ATLAS --out)."
+    default: "ATLAS_simulations"
+    inputBinding:
+      position: 1
+      prefix: --out
 outputs:
-  - id: stdout
+  - id: log
     type: stdout
-    doc: Standard output
+    doc: ATLAS progress report (standard output).
+  - id: bams
+    type: File[]
+    doc: "Simulated BAM file(s) with index (none with --vcf)."
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    outputBinding:
+      glob: $(inputs.out_prefix)*.bam
+  - id: reference
+    type: File
+    doc: "Simulated reference genome with index."
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+    outputBinding:
+      glob: $(inputs.out_prefix).fasta
+  - id: vcf
+    type:
+      - 'null'
+      - File
+    doc: "Simulated VCF file (with --vcf)."
+    outputBinding:
+      glob: $(inputs.out_prefix)*.vcf.gz
+  - id: parameters
+    type:
+      - 'null'
+      - File
+    doc: "Parameters used for the run."
+    outputBinding:
+      glob: $(inputs.out_prefix).parameters
+  - id: rg_info
+    type:
+      - 'null'
+      - File
+    doc: "Read group information."
+    outputBinding:
+      glob: $(inputs.out_prefix)_RGInfo.json
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas:2.0.1--hadca570_0
-stdout: atlas_simulate.out
+stdout: atlas_simulate.log

@@ -1,5 +1,12 @@
 # aardvark CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| aardvark_compare | PASS |  |
+| aardvark_merge | PASS |  |
+
 ## aardvark_compare
 
 ### Tool Description

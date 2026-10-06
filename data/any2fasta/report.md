@@ -1,5 +1,11 @@
 # any2fasta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| any2fasta | PASS |  |
+
 ## any2fasta
 
 ### Tool Description

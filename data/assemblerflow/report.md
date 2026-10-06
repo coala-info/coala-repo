@@ -1,5 +1,11 @@
 # assemblerflow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| assemblerflow_build | PASS |  |
+
 ## assemblerflow_build
 
 ### Tool Description

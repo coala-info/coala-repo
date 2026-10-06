@@ -1,5 +1,11 @@
 # a3partitioner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| A3Partitioner | PASS |  |
+
 ## A3Partitioner
 
 ### Tool Description

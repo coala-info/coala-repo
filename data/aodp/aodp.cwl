@@ -6,14 +6,6 @@ doc: "Automated Oligonucleotide Design Pipeline generates oligonucleotide signat
   for sequences in FASTA format and for all groups in a phylogeny in the Newick tree
   format.\n\nTool homepage: https://github.com/peterk87/aodp"
 inputs:
-  - id: output
-    type:
-      - 'null'
-      - string
-    doc: Output specification (though the help text suggests output is handled 
-      via specific flags, the synopsis lists it as a positional argument).
-    inputBinding:
-      position: 1
   - id: fasta_sequence_files
     type:
       type: array
@@ -28,7 +20,8 @@ inputs:
     doc: Whether oligos containing ambiguous bases will be sought (yes/no)
     inputBinding:
       position: 103
-      prefix: --ambiguous-oligos
+      prefix: --ambiguous-oligos=
+      separate: false
   - id: ambiguous_sources
     type:
       - 'null'
@@ -36,7 +29,8 @@ inputs:
     doc: Whether sequences containing ambiguities are considered (yes/no)
     inputBinding:
       position: 103
-      prefix: --ambiguous-sources
+      prefix: --ambiguous-sources=
+      separate: false
   - id: basename
     type:
       - 'null'
@@ -45,7 +39,8 @@ inputs:
       flags.
     inputBinding:
       position: 103
-      prefix: --basename
+      prefix: --basename=
+      separate: false
   - id: clusters
     type:
       - 'null'
@@ -54,7 +49,8 @@ inputs:
       signatures using the provided name.
     inputBinding:
       position: 103
-      prefix: --clusters
+      prefix: --clusters=
+      separate: false
   - id: crowded
     type:
       - 'null'
@@ -63,7 +59,8 @@ inputs:
       (yes/no)
     inputBinding:
       position: 103
-      prefix: --crowded
+      prefix: --crowded=
+      separate: false
   - id: database
     type:
       - 'null'
@@ -72,7 +69,8 @@ inputs:
       format.
     inputBinding:
       position: 103
-      prefix: --database
+      prefix: --database=
+      separate: false
   - id: first_site_gap
     type:
       - 'null'
@@ -81,7 +79,8 @@ inputs:
       site
     inputBinding:
       position: 103
-      prefix: --first-site-gap
+      prefix: --first-site-gap=
+      separate: false
   - id: ignore_snp
     type:
       - 'null'
@@ -97,7 +96,8 @@ inputs:
     doc: Size of the gap between sites inside an oligo range
     inputBinding:
       position: 103
-      prefix: --inter-site-gap
+      prefix: --inter-site-gap=
+      separate: false
   - id: isolation_file
     type:
       - 'null'
@@ -105,7 +105,8 @@ inputs:
     doc: A list of taxa or sequences to isolate
     inputBinding:
       position: 103
-      prefix: --isolation-file
+      prefix: --isolation-file=
+      separate: false
   - id: match
     type:
       - 'null'
@@ -114,7 +115,8 @@ inputs:
       target-FASTA-file.
     inputBinding:
       position: 103
-      prefix: --match
+      prefix: --match=
+      separate: false
   - id: max_ambiguities
     type:
       - 'null'
@@ -122,7 +124,8 @@ inputs:
     doc: Maximum number of ambiguous bases allowed in a sequence
     inputBinding:
       position: 103
-      prefix: --max-ambiguities
+      prefix: --max-ambiguities=
+      separate: false
   - id: max_crowded_ambiguities
     type:
       - 'null'
@@ -130,7 +133,8 @@ inputs:
     doc: Maximum number of ambiguous bases within an oligo size window
     inputBinding:
       position: 103
-      prefix: --max-crowded-ambiguities
+      prefix: --max-crowded-ambiguities=
+      separate: false
   - id: max_homolo
     type:
       - 'null'
@@ -138,7 +142,8 @@ inputs:
     doc: Maximum length of a homopolymer in any oligo
     inputBinding:
       position: 103
-      prefix: --max-homolo
+      prefix: --max-homolo=
+      separate: false
   - id: max_melting
     type:
       - 'null'
@@ -146,7 +151,8 @@ inputs:
     doc: Maximum melting temperature (Celsius) for any discovered oligo
     inputBinding:
       position: 103
-      prefix: --max-melting
+      prefix: --max-melting=
+      separate: false
   - id: oligo_size
     type:
       - 'null'
@@ -155,7 +161,8 @@ inputs:
       (e.g., 32 or 24-32)
     inputBinding:
       position: 103
-      prefix: --oligo-size
+      prefix: --oligo-size=
+      separate: false
   - id: outgroup_file
     type:
       - 'null'
@@ -163,7 +170,8 @@ inputs:
     doc: List of species to be excluded from the final output
     inputBinding:
       position: 103
-      prefix: --outgroup-file
+      prefix: --outgroup-file=
+      separate: false
   - id: reverse_complement
     type:
       - 'null'
@@ -179,7 +187,8 @@ inputs:
     doc: Na+ concentration (e.g., 0.1M)
     inputBinding:
       position: 103
-      prefix: --salt
+      prefix: --salt=
+      separate: false
   - id: strand
     type:
       - 'null'
@@ -187,7 +196,8 @@ inputs:
     doc: Single strand concentration in mM
     inputBinding:
       position: 103
-      prefix: --strand
+      prefix: --strand=
+      separate: false
   - id: taxonomy
     type:
       - 'null'
@@ -196,7 +206,8 @@ inputs:
       database.
     inputBinding:
       position: 103
-      prefix: --taxonomy
+      prefix: --taxonomy=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -204,7 +215,8 @@ inputs:
     doc: The maximum number of threads for multiprocessor systems
     inputBinding:
       position: 103
-      prefix: --threads
+      prefix: --threads=
+      separate: false
   - id: tree_file
     type:
       - 'null'
@@ -212,7 +224,8 @@ inputs:
     doc: Use the phylogeny file in the Newick tree format
     inputBinding:
       position: 103
-      prefix: --tree-file
+      prefix: --tree-file=
+      separate: false
   - id: fasta_out_path
     type:
       - 'null'
@@ -220,7 +233,8 @@ inputs:
     doc: Output or path parameter `fasta_out_path`
     inputBinding:
       position: 107
-      prefix: --fasta-out
+      prefix: --fasta=
+      separate: false
   - id: newick_out_path
     type:
       - 'null'
@@ -228,14 +242,16 @@ inputs:
     doc: Output or path parameter `newick_out_path`
     inputBinding:
       position: 112
-      prefix: --newick-out
+      prefix: --newick=
+      separate: false
   - id: cladogram_path
     type:
       - 'null'
       - string
     inputBinding:
       position: 113
-      prefix: --cladogram
+      prefix: --cladogram=
+      separate: false
   - id: cluster_list_path
     type:
       - 'null'
@@ -282,7 +298,8 @@ inputs:
       - string
     inputBinding:
       position: 119
-      prefix: --match-output
+      prefix: --match-output=
+      separate: false
   - id: node_list_path
     type:
       - 'null'

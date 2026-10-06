@@ -55,10 +55,12 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: This removes any hits that did not form a cluster
+    doc: This removes any hits that did not form a cluster (tool default 
+      true; false passes an empty value, which the tool reads as off)
     inputBinding:
       position: 101
       prefix: --cluster_remove_singletons
+      valueFrom: '$(self === false ? "" : (self ? "True" : null))'
   - id: cluster_retain_label
     type:
       - 'null'
@@ -96,19 +98,34 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
-  - id: log_path
-    type: string?
-    inputBinding:
-      position: 102
-      prefix: --log
-outputs:
   - id: log
     type:
       - 'null'
-      - File
-    doc: Silences the standard output and captures it in a log file
+      - boolean
+    doc: Silence the standard output and capture it in a log file with a fixed 
+      name.
+    inputBinding:
+      position: 102
+      prefix: --log
+      valueFrom: '$(self ? "True" : null)'
+outputs:
+  - id: cluster_summary
+    type: File
+    doc: AMPcombi summary with cluster assignments
     outputBinding:
-      glob: $(inputs.log_path)
+      glob: Ampcombi_summary_cluster.tsv
+  - id: representative_seqs
+    type: File
+    doc: Representative sequence of each cluster
+    outputBinding:
+      glob: Ampcombi_summary_cluster_representative_seq.tsv
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file written when log is set
+    outputBinding:
+      glob: Ampcombi_cluster.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

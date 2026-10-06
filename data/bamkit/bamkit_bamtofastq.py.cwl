@@ -38,12 +38,17 @@ inputs:
       position: 102
       prefix: --rename
   - id: header_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: ' Write BAM header to file'
     inputBinding:
       position: 103
       prefix: --header
 outputs:
+  - id: fastq
+    type: stdout
+    doc: Interleaved FASTQ of the paired reads (read 1 then read 2)
   - id: header_file
     type:
       - 'null'
@@ -56,3 +61,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamkit:16.07.26--py_0
+stdout: bamkit_bamtofastq.py.fastq

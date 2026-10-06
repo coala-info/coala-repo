@@ -1,5 +1,11 @@
 # alignoth CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alignoth | PASS | Upstream NA12878 test data; the VCF variant 257 A>G is highlighted; CWL fixed: stdout plot output, BAM .bai and VCF index secondary files. |
+
 ## alignoth
 
 ### Tool Description

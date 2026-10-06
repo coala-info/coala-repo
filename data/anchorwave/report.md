@@ -1,5 +1,14 @@
 # anchorwave CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| anchorwave_ali | PASS |  |
+| anchorwave_genoAli | PASS |  |
+| anchorwave_gff2seq | PASS |  |
+| anchorwave_proali | PASS |  |
+
 ## anchorwave_gff2seq
 
 ### Tool Description

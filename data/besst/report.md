@@ -1,5 +1,11 @@
 # besst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| besst_runBESST | Failed | image problem: the image has networkx 2.1, but BESST 2.2.8 uses the networkx 1.x G.edge API and crashes while building the contig graph. |
+
 ## besst
 
 ### Tool Description

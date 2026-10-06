@@ -10,7 +10,7 @@ inputs:
     type: string
     doc: The subcommand to execute (e.g., init, annotations, organisms, etc.)
     inputBinding:
-      position: 1
+      position: 200
   - id: args
     type:
       - 'null'
@@ -18,7 +18,7 @@ inputs:
         items: string
     doc: Arguments for the subcommand
     inputBinding:
-      position: 2
+      position: 201
   - id: apollo_instance
     type: string
     doc: name of apollo instance from /user/qianghu/.apollo-arrow.yml

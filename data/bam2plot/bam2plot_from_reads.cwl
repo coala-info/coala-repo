@@ -1,13 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bam2plot
+baseCommand:
+  - bam2plot
+  - from_reads
 label: bam2plot_from_reads
 doc: "Align your reads and plot the coverage!\n\nTool homepage: https://github.com/willros/bam2plot"
 inputs:
-  - id: sub_command
-    type: string
-    inputBinding:
-      position: 1
   - id: no_guci
     type:
       - 'null'
@@ -50,7 +48,8 @@ inputs:
     type: File
     doc: Reference fasta
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: --reference

@@ -49,7 +49,8 @@ inputs:
   - id: reference_sequence
     type: File
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     doc: reference sequence (single sequence in FASTA format)
     inputBinding:
       position: 101

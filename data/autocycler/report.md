@@ -1,5 +1,22 @@
 # autocycler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| autocycler_clean | PASS |  |
+| autocycler_cluster | PASS |  |
+| autocycler_combine | PASS |  |
+| autocycler_compress | PASS |  |
+| autocycler_decompress | PASS |  |
+| autocycler_dotplot | PASS |  |
+| autocycler_gfa2fasta | PASS |  |
+| autocycler_helper | Failed | image problem: no assembler (flye, raven, ...) is in the image, so every helper task stops with 'required program not found'. |
+| autocycler_resolve | PASS |  |
+| autocycler_subsample | PASS |  |
+| autocycler_table | PASS |  |
+| autocycler_trim | PASS |  |
+
 ## autocycler_clean
 
 ### Tool Description

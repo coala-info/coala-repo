@@ -1,5 +1,21 @@
 # agtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| agtools_asqg2gfa | PASS |  |
+| agtools_clean | PASS |  |
+| agtools_component | PASS |  |
+| agtools_concat | PASS |  |
+| agtools_fastg2gfa | PASS |  |
+| agtools_filter | PASS |  |
+| agtools_gfa2adj | PASS |  |
+| agtools_gfa2dot | PASS |  |
+| agtools_gfa2fasta | PASS |  |
+| agtools_rename | PASS |  |
+| agtools_stats | PASS |  |
+
 ## agtools_stats
 
 ### Tool Description

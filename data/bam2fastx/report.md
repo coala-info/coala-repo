@@ -1,5 +1,11 @@
 # bam2fastx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bam2fastx | PASS |  |
+
 ## bam2fastx
 
 ### Tool Description

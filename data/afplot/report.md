@@ -1,5 +1,12 @@
 # afplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| afplot_regions | PASS |  |
+| afplot_whole-genome | PASS |  |
+
 ## afplot_regions
 
 ### Tool Description

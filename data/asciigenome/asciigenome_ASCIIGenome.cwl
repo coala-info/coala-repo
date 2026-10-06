@@ -10,6 +10,13 @@ inputs:
       - type: array
         items: File
     doc: 'Input files to be displayed: bam, bed, gtf, bigwig, bedgraph, etc.'
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 1
   - id: batch_file

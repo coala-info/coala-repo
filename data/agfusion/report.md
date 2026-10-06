@@ -1,5 +1,14 @@
 # agfusion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| agfusion_annotate | PASS |  |
+| agfusion_batch | PASS | Ran on a planted STAR-Fusion line (synthetic data) with the README Dlg1-Braf mouse fusion; CDS matches the repository's manual sequence. |
+| agfusion_build | Failed | image problem: the MySQLdb (mysqlclient) Python module is missing, so build cannot query Ensembl. |
+| agfusion_download | PASS |  |
+
 ## agfusion_annotate
 
 ### Tool Description

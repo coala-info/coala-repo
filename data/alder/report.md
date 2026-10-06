@@ -1,5 +1,11 @@
 # alder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alder | PASS |  |
+
 ## alder
 
 ### Tool Description

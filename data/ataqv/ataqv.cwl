@@ -12,6 +12,9 @@ inputs:
   - id: alignment_file
     type: File
     doc: A BAM file with duplicate reads marked.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 2
   - id: autosomal_reference_file
@@ -37,11 +40,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --excluded-region-file
     doc: A BED file containing excluded regions. Peaks or TSS overlapping these 
-      will be ignored.
+      will be ignored. May be given multiple times.
     inputBinding:
       position: 103
-      prefix: --excluded-region-file
   - id: ignore_read_groups
     type:
       - 'null'
@@ -179,9 +183,7 @@ inputs:
       prefix: --metrics-file
 outputs:
   - id: metrics_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The JSON file to which metrics will be written. The default filename 
       will be based on the BAM file, with the suffix ".ataqv.json".
     outputBinding:

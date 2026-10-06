@@ -26,7 +26,7 @@ inputs:
   - id: database
     type:
       - 'null'
-      - string
+      - Directory
     doc: Specific path to installed baktfold database
     inputBinding:
       position: 101
@@ -139,15 +139,13 @@ inputs:
       prefix: --ultra-sensitive
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir_path)
@@ -157,7 +155,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_dir_path)/$(inputs.prefix || 'baktfold')*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

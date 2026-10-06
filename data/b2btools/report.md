@@ -1,5 +1,11 @@
 # b2btools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| b2btools | PASS |  |
+
 ## b2btools
 
 ### Tool Description

@@ -4,26 +4,35 @@ baseCommand:
   - bigsi
   - search
 label: bigsi_search
-doc: "Search for a sequence\n\nTool homepage: https://github.com/Phelimb/BIGSI"
+doc: "Search for a sequence in a BIGSI index\n\nTool homepage: https://github.com/Phelimb/BIGSI"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.index)
+        writable: true
 inputs:
   - id: seq
     type: string
-    doc: Basic text / string value
+    doc: Query sequence
     inputBinding:
       position: 1
   - id: config
-    type:
-      - 'null'
-      - string
-    doc: Basic text / string value
+    type: File
+    loadContents: true
+    doc: BIGSI configuration YAML file; its storage-config filename names the index
     inputBinding:
       position: 102
       prefix: --config
+  - id: index
+    type:
+      - File
+      - Directory
+    doc: BIGSI index (file or folder) named in the config file
   - id: threshold
     type:
       - 'null'
       - float
-    doc: A float number
+    doc: Minimum fraction of query k-mers found (default 1.0)
     inputBinding:
       position: 102
       prefix: --threshold

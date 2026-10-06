@@ -1,5 +1,12 @@
 # baitfisher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| baitfisher_BaitFilter | PASS |  |
+| baitfisher_BaitFisher | PASS |  |
+
 ## baitfisher
 
 ### Tool Description

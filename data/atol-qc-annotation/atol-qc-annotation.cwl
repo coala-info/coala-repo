@@ -31,8 +31,8 @@ inputs:
       position: 101
       prefix: -n
   - id: ete_ncbi_db
-    type: Directory
-    doc: Path to the ete3 NCBI database to be used.
+    type: File
+    doc: Path to the ete3 NCBI database (taxa.sqlite) to be used.
     inputBinding:
       position: 101
       prefix: --ete_ncbi_db
@@ -71,7 +71,7 @@ inputs:
       position: 101
       prefix: --mem
   - id: omamer_db
-    type: string
+    type: File
     doc: OMAmer database
     inputBinding:
       position: 101

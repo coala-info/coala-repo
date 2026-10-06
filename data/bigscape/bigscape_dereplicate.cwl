@@ -44,14 +44,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --exclude-gbk
-  - id: gbk_dir
-    type: Directory
-    doc: Input directory containing .gbk files to be used by BiG-SCAPE. 
-      Duplicated filenames can be handled, but are not recommended. See the wiki
-      for more details.
-    inputBinding:
-      position: 101
-      prefix: --gbk-dir
   - id: include_gbk
     type:
       - 'null'
@@ -140,6 +132,13 @@ outputs:
     doc: Output directory for all BiG-SCAPE results files.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: ShellCommandRequirement
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: '&& for f in $(inputs.output_dir)/representative_clusters/*; do if
+      [ -L "$f" ]; then cp -L "$f" "$f.tmp" && mv "$f.tmp" "$f"; fi; done'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bigscape:2.0.2--pyhdfd78af_0

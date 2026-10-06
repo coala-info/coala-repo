@@ -108,6 +108,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: -q
+  - id: randomize_nmer
+    type:
+      - 'null'
+      - int
+    doc: compare seqs to randomized versions that preserve this n-mer 
+      composition (instead of -b)
+    inputBinding:
+      position: 101
+      prefix: -r
   - id: sub_z_cutoff
     type:
       - 'null'

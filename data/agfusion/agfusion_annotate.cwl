@@ -7,6 +7,11 @@ label: agfusion_annotate
 doc: "Annotate and visualize gene fusion events using the AGFusion database.\n\nTool
   homepage: https://github.com/murphycj/AGFusion"
 inputs:
+  - id: pyensembl_cache
+    type: Directory
+    doc: pyensembl cache folder (set as PYENSEMBL_CACHE_DIR) holding the Ensembl
+      release that matches the database, made with `pyensembl install --release 
+      R --species S`. The container has no network, so it cannot download it.
   - id: database
     type: File
     doc: Path to the AGFusion database (e.g. --db 
@@ -126,21 +131,23 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --recolor
     doc: (Optional) Re-color a domain. Provide the original name of the domain 
       then your color (semi-colon delimited, all in quotes).
     inputBinding:
       position: 101
-      prefix: --recolor
   - id: rename
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --rename
     doc: (Optional) Rename a domain. Provide the original name of the domain 
       then your new name (semi-colon delimited, all in quotes).
     inputBinding:
       position: 101
-      prefix: --rename
   - id: scale
     type:
       - 'null'
@@ -189,6 +196,9 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      PYENSEMBL_CACHE_DIR: $(inputs.pyensembl_cache.path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agfusion:1.252--py_0

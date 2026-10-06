@@ -1,17 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - annembed
-  - hnsw
+baseCommand: annembed
 label: annembed_hnsw
 doc: "Build HNSW graph\n\nTool homepage: https://github.com/jean-pierreBoth/gsearch"
 inputs:
   - id: csv_file
     type: File
-    doc: Input CSV file
+    doc: Input CSV file (a main-command option, so it goes before hnsw)
     inputBinding:
-      position: 101
+      position: 1
       prefix: --csv
+  - id: out_file
+    type:
+      - 'null'
+      - string
+    doc: Output file name for the embedding (default embedded.csv)
+    inputBinding:
+      position: 1
+      prefix: -o
   - id: dist
     type: string
     doc: Distance type is required, must be one of "DistL1", "DistL2", "DistCosine"
@@ -45,10 +51,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --scale_modify_f
+arguments:
+  - position: 2
+    valueFrom: hnsw
 outputs:
+  - id: embedding
+    type: File
+    doc: Embedded coordinates, one CSV row per input row
+    outputBinding:
+      glob: '$(inputs.out_file ? inputs.out_file : "embedded.csv")'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/annembed:0.2.6--h3dc2dae_0

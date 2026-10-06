@@ -1,5 +1,14 @@
 # biocode CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| biocode_add_blast_results_to_gff3_product.py | PASS | Real Ensembl GFF3 gene model with a planted BLAST table line (synthetic data). |
+| biocode_fastq_simple_stats.py | PASS |  |
+| biocode_filter_fasta_by_header_regex.py | PASS |  |
+| biocode_strip_fasta_headers_after_regex.py | PASS |  |
+
 ## biocode
 
 ### Tool Description

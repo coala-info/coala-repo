@@ -60,8 +60,8 @@ inputs:
   - id: ref_genome
     type:
       - 'null'
-      - File
-    doc: The reference genome
+      - Directory
+    doc: The reference genome directory (holds genome.fasta and annotations.gff)
     inputBinding:
       position: 101
       prefix: --rer
@@ -80,6 +80,10 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.ref_genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/accusnv:1.0.0.5--pyhdfd78af_0

@@ -25,7 +25,7 @@ inputs:
   - id: gap_cost
     type:
       - 'null'
-      - float
+      - int
     doc: Similarity of a single gap position
     inputBinding:
       position: 103
@@ -33,7 +33,7 @@ inputs:
   - id: gap_opening_cost
     type:
       - 'null'
-      - float
+      - int
     doc: Similarity of opening a gap (turns on affine gap cost if not 0)
     inputBinding:
       position: 103
@@ -81,7 +81,7 @@ inputs:
   - id: sequence_match_similarity
     type:
       - 'null'
-      - float
+      - int
     doc: Similarity of matching nucleotides
     inputBinding:
       position: 103
@@ -89,7 +89,7 @@ inputs:
   - id: sequence_mismatch_similarity
     type:
       - 'null'
-      - float
+      - int
     doc: Similarity of mismatching nucleotides
     inputBinding:
       position: 103
@@ -97,7 +97,7 @@ inputs:
   - id: shift_cost
     type:
       - 'null'
-      - float
+      - int
     doc: Similarity of shifting the two scores against each other
     inputBinding:
       position: 103
@@ -129,7 +129,7 @@ inputs:
   - id: structure_weight
     type:
       - 'null'
-      - float
+      - int
     doc: Weighting factor for structure similarity
     inputBinding:
       position: 103

@@ -6,11 +6,16 @@ baseCommand:
 label: apptainer_build
 doc: "Build an Apptainer image\n\nTool homepage: https://github.com/apptainer/apptainer"
 inputs:
+  - id: image_path_name
+    type: string
+    doc: Path of the image (SIF file or sandbox directory) to build
+    inputBinding:
+      position: 1
   - id: build_spec
     type: string
     doc: The build spec target (definition file, local image, or URI)
     inputBinding:
-      position: 1
+      position: 2
   - id: bind
     type:
       - 'null'
@@ -238,10 +243,12 @@ inputs:
       prefix: --writable-tmpfs
 outputs:
   - id: image_path
-    type: File
+    type:
+      - File
+      - Directory
     doc: Path to the output image or sandbox directory
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.image_path_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/apptainer:latest

@@ -8,21 +8,21 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Size of chunks for processing.
+    doc: Chunk size for Clair3.
     inputBinding:
       position: 101
-      prefix: --chunk-size
+      prefix: --chunk_size
   - id: config
     type:
       - 'null'
-      - File
-    doc: Configuration file for Artex.
+      - string
+    doc: Basecalling configuration with a bundled Clair3 model (R9G2, R9G4 or R9G6).
     inputBinding:
       position: 101
       prefix: --config
   - id: input
-    type: File
-    doc: Input sequencing data file (e.g., BAM, CRAM).
+    type: Directory
+    doc: ARTIC pipeline output directory (sorted.bam, pass.vcf.gz, fail.vcf).
     inputBinding:
       position: 101
       prefix: --input
@@ -30,15 +30,15 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum coverage required for variant calling.
+    doc: Minimum coverage required to call a variant in Clair3.
     inputBinding:
       position: 101
-      prefix: --min-coverage
+      prefix: --min_coverage
   - id: model
     type:
       - 'null'
-      - File
-    doc: Model file for variant calling.
+      - Directory
+    doc: Path to a Clair3 model directory (instead of --config).
     inputBinding:
       position: 101
       prefix: --model
@@ -54,7 +54,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Reference genome file (e.g., FASTA).
+    doc: Reference FASTA (default is the bundled nCoV-2019 V3 reference).
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --ref
@@ -74,35 +77,41 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose mode.
+    inputBinding:
+      position: 101
+      prefix: --verbose
   - id: work
     type:
       - 'null'
-      - Directory
-    doc: Working directory for intermediate files.
+      - string
+    doc: Working directory for intermediate files (default is the output directory).
     inputBinding:
       position: 101
       prefix: --work
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output directory
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
+    type: Directory
+    doc: Output directory with Clair3 results, intersected and merged VCFs.
+    outputBinding:
+      glob: $(inputs.output_path)
+  - id: artex_vcf
     type:
       - 'null'
       - File
-    doc: Output file for variant calls (e.g., VCF).
+    doc: Final Artex VCF (ARTIC PASS variants plus extra variants found by Artex).
     outputBinding:
-      glob: $(inputs.output_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_path)/$(inputs.prefix || 'sample').artex.vcf.gz
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # bicseq2-norm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bicseq2-norm_BICseq2-norm.pl | Failed | image problem: the R package mgcv is missing, so NBICseq-norm.pl stops before any work (CWL rewritten to the real command NBICseq-norm.pl). |
+
 ## bicseq2-norm
 
 ### Tool Description

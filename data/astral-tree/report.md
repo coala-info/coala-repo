@@ -1,5 +1,11 @@
 # astral-tree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| astral-tree | PASS |  |
+
 ## astral-tree
 
 ### Tool Description

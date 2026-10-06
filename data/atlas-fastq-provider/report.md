@@ -1,5 +1,13 @@
 # atlas-fastq-provider CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| atlas-fastq-provider_deinterleave_fastq.sh | PASS |  |
+| atlas-fastq-provider_fetchEnaLibraryFastqs.sh | PASS |  |
+| atlas-fastq-provider_fetchFastq.sh | PASS |  |
+
 ## atlas-fastq-provider_fetchFastq.sh
 
 ### Tool Description

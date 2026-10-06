@@ -10,8 +10,6 @@ inputs:
   - id: reference_fasta
     type: File
     doc: Reference FASTA file
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
   - id: input_fastas

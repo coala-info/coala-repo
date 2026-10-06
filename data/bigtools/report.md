@@ -1,5 +1,11 @@
 # bigtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bigtools_bigbedtobed | PASS |  |
+
 ## bigtools
 
 ### Tool Description

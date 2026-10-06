@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: amptk-fastq2sra.py
+baseCommand:
+  - amptk
+  - SRA-submit
 label: amptk_SRA-submit
 doc: "Script to split FASTQ file from Ion, 454, or Illumina by barcode sequence into
   separate files for submission to SRA. This script can take the BioSample worksheet
@@ -188,7 +190,9 @@ outputs:
   - id: out_files
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: Files written with the prefix given in out
     outputBinding:
       glob: $(inputs.out)*

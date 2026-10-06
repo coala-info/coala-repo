@@ -7,15 +7,15 @@ inputs:
   - id: debug
     type:
       - 'null'
-      - boolean
-    doc: Print command lines
+      - int
+    doc: Print command lines (1 to print, default 0)
     inputBinding:
       position: 101
       prefix: -d
   - id: ksize
     type:
       - 'null'
-      - string
+      - int
     doc: k-mer size
     inputBinding:
       position: 101
@@ -55,15 +55,14 @@ inputs:
       position: 101
       prefix: -t
   - id: out_dir
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: bcool_out
     doc: Path to store the results
     inputBinding:
       position: 101
       prefix: -o
   - id: single_readfiles
-    type: File?
+    type: File
     doc: input fasta read files. Several read files must be concatenated
     inputBinding:
       position: 101
@@ -79,12 +78,38 @@ inputs:
   - id: unitig_coverage
     type:
       - 'null'
-      - string
+      - int
     doc: Unitig Coverage for cleaning
     inputBinding:
       position: 101
       prefix: -S
 outputs:
+  - id: corrected_reads
+    type: File
+    doc: Corrected reads in FASTA format
+    outputBinding:
+      glob: $(inputs.out_dir)/reads_corrected.fa
+  - id: graph
+    type:
+      - 'null'
+      - File
+    doc: De Bruijn graph unitigs used for correction
+    outputBinding:
+      glob: $(inputs.out_dir)/dbg*.fa
+  - id: parameters_log
+    type:
+      - 'null'
+      - File
+    doc: Parameters used
+    outputBinding:
+      glob: $(inputs.out_dir)/ParametersUsed.txt
+  - id: logs
+    type:
+      - 'null'
+      - Directory
+    doc: Log files of the BCALM and BGREAT steps
+    outputBinding:
+      glob: $(inputs.out_dir)/logs
   - id: stdout
     type: stdout
     doc: Standard output

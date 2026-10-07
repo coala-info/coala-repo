@@ -1,5 +1,12 @@
 # deepnog CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deepnog_infer | PASS |  |
+| deepnog_train | PASS |  |
+
 ## deepnog_train
 
 ### Tool Description

@@ -10,6 +10,14 @@ inputs:
     doc: Config file containing file paths and settings
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+  - id: tables
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: CSV/TSV tables named in the config file; staged in the working 
+      directory so the relative paths in the config resolve
   - id: debug
     type:
       - 'null'
@@ -30,8 +38,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Verbose mode (-v, -vv, -vvv, etc.)
     inputBinding:
       position: 102
@@ -54,12 +61,16 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: Output file
+    type: Directory
+    doc: Output directory with the HTML report
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.config)
+      - $(inputs.tables)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datavzrd:2.23.2

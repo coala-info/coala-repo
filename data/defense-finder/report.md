@@ -1,5 +1,12 @@
 # defense-finder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| defense-finder_run | PASS | All 67 expected systems of the repo's df_test_prot.faa test are found, plus 3 from newer models (CasFinder 3.1.0 models, --skip-model-version-check). |
+| defense-finder_update | Failed | tool bug: update installs the latest CasFinder (3.1.1, model format 2.1), which this image's MacSyFinder 2.1.4 cannot parse, so run then fails. |
+
 ## defense-finder_run
 
 ### Tool Description

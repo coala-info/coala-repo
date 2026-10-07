@@ -105,9 +105,9 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: Files written in the output directory with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.output_path)/$(inputs.prefix ? inputs.prefix : '')*"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

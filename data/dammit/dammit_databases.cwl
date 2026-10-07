@@ -20,8 +20,7 @@ inputs:
   - id: busco_group
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Which BUSCO group to use. Should be chosen based on the organism being 
       annotated. Full list of options is below.
     inputBinding:
@@ -39,13 +38,14 @@ inputs:
   - id: database_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to store databases. Existing databases will not be 
       overwritten. By default, the database directory is 
       $HOME/.dammit/databases.
     inputBinding:
       position: 101
       prefix: --database-dir
+      valueFrom: $(runtime.outdir + "/" + self)
   - id: force
     type:
       - 'null'
@@ -131,6 +131,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Database directory named by database_dir (filled with --install)
+    outputBinding:
+      glob: $(inputs.database_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dammit:1.2--pyh5ca1d4c_0

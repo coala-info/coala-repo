@@ -9,22 +9,31 @@ doc: "Removes sequences from a FASTA file based on a filter file.\n\nTool homepa
 inputs:
   - id: input_fasta
     type: File
-    doc: The input FASTA file.
+    doc: Input FASTA file
     inputBinding:
-      position: 1
+      position: 101
+      prefix: --input-fasta
   - id: filter_file
     type: File
     doc: A file containing sequences to remove. Each line should be a sequence 
       ID.
     inputBinding:
       position: 102
-      prefix: --filter_file
+      prefix: --filter-file
   - id: output_fasta_path
     type: string
     doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 103
       prefix: --output-fasta
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Run with high verbosity (debug level logging)
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: output_fasta
     type:
@@ -32,6 +41,9 @@ outputs:
       - File
     doc: The output FASTA file. If not provided, results will be printed to 
       stdout.
+    secondaryFiles:
+      - pattern: .log
+        required: false
     outputBinding:
       glob: $(inputs.output_fasta_path)
 requirements:

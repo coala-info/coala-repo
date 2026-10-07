@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - bed
 label: debarcer_bed
 doc: "Generate a BED file from a BAM file, identifying genomic intervals based on
@@ -10,6 +10,8 @@ inputs:
   - id: bamfile
     type: File
     doc: Path to the BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --Bamfile

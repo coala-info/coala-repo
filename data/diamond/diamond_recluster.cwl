@@ -149,7 +149,8 @@ inputs:
   - id: cluster_steps
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: Clustering steps
     inputBinding:
       position: 101
@@ -165,7 +166,8 @@ inputs:
   - id: round_coverage
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: Per-round coverage cutoffs for cascaded clustering
     inputBinding:
       position: 101
@@ -173,13 +175,16 @@ inputs:
   - id: round_approx_id
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: Per-round approx-id cutoffs for cascaded clustering
     inputBinding:
       position: 101
       prefix: --round-approx-id
   - id: aln_out
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file for clustering alignments
     inputBinding:
       position: 101

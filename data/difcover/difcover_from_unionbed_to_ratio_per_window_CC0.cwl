@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: difcover_from_unionbed_to_ratio_per_window_CC0
+baseCommand: from_unionbed_to_ratio_per_window_CC0
 label: difcover_from_unionbed_to_ratio_per_window_CC0
 doc: "Calculates the ratio of coverage per window between two samples from a unionbed
   file.\n\nTool homepage: https://github.com/timnat/DifCover"
@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Expected *.unionbed file
     inputBinding:
-      position: 1
+      position: 103
   - id: maximum_depth_sample1
     type:
       - 'null'
@@ -59,6 +59,11 @@ inputs:
       position: 102
       prefix: -v
 outputs:
+  - id: ratio_per_window
+    type: File
+    doc: Coverage ratio per window (sample1_sample2.ratio_per_w_CC0_a*_A*_b*_B*_v*_l*).
+    outputBinding:
+      glob: '*.ratio_per_w_CC0_*'
   - id: stdout
     type: stdout
     doc: Standard output

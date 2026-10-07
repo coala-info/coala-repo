@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - call
 label: debarcer_call
 doc: "Call variants based on consensus files and thresholds.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
@@ -13,6 +13,7 @@ inputs:
     doc: List of consensus files
     inputBinding:
       position: 1
+      prefix: --Consfiles
   - id: alt_threshold
     type:
       - 'null'
@@ -26,7 +27,7 @@ inputs:
   - id: config
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the config file
     inputBinding:
       position: 102

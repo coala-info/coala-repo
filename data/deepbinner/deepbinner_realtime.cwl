@@ -143,6 +143,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepbinner:0.2.0--py36hc873e9d_0

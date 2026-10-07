@@ -47,6 +47,10 @@ outputs:
       glob: $(inputs.output_folder_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.output_folder_path, listing:
+          [], writable: true})'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dedup:0.12.9--hdfd78af_0

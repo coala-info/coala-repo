@@ -27,10 +27,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-fasta
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Run with high verbosity (debug level logging)
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: output_fasta
     type: File
     doc: Path to the output merged FASTA file.
+    secondaryFiles:
+      - pattern: .log
+        required: false
     outputBinding:
       glob: $(inputs.output_fasta_path)
 requirements:

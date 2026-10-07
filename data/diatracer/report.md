@@ -1,5 +1,11 @@
 # diatracer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| diatracer | Not completed | needs a Nesvilab license key that is checked online plus diaPASEF timsTOF .d data; the old CWL had only --key, so the .d input, work directory and tuning options were added from the jar's usage text. |
+
 ## diatracer
 
 ### Tool Description

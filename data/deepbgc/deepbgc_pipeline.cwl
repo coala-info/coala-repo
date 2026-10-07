@@ -28,12 +28,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --classifier
     doc: Trained classification model name (run "deepbgc download" to download 
       models) or path to trained model pickle file. Can be provided multiple 
       times (-c first -c second)
     inputBinding:
       position: 102
-      prefix: --classifier
   - id: debug
     type:
       - 'null'
@@ -46,31 +47,34 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --detector
     doc: Trained detection model name (run "deepbgc download" to download 
       models) or path to trained model pickle file. Can be provided multiple 
       times (-d first -d second)
     inputBinding:
       position: 102
-      prefix: --detector
   - id: labels
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --label
     doc: Label for detected clusters (equal to --detector by default). If 
       multiple detectors are provided, a label should be provided for each one
     inputBinding:
       position: 102
-      prefix: --label
   - id: limit_to_record
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --limit-to-record
     doc: Process only specific record ID. Can be provided multiple times
     inputBinding:
       position: 102
-      prefix: --limit-to-record
   - id: merge_max_nucl_gap
     type:
       - 'null'
@@ -173,9 +177,17 @@ inputs:
       prefix: --score
   - id: output_path
     type: string
+    doc: Custom output directory path
     inputBinding:
       position: 103
       prefix: --output
+  - id: downloads_dir
+    type:
+      - 'null'
+      - Directory
+    doc: DeepBGC downloads directory made by "deepbgc download" (models and Pfam 
+      database); passed to the tool as the DEEPBGC_DOWNLOADS_DIR environment 
+      variable
 outputs:
   - id: output
     type:
@@ -186,6 +198,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      DEEPBGC_DOWNLOADS_DIR: '$(inputs.downloads_dir ? inputs.downloads_dir.path : runtime.outdir
+        + "/deepbgc_downloads")'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepbgc:0.1.31--pyhca03a8a_0

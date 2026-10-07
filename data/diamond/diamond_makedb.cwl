@@ -111,9 +111,9 @@ inputs:
 outputs:
   - id: output_db
     type: File
-    doc: database file
+    doc: database file (diamond adds .dmnd when the name lacks it)
     outputBinding:
-      glob: $(inputs.db)
+      glob: "$(inputs.db.endsWith('.dmnd') ? inputs.db : inputs.db + '.dmnd')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

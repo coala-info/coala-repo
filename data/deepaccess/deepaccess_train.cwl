@@ -1,8 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepaccess
+baseCommand:
+  - deepaccess
+  - train
 label: deepaccess_train
-doc: "Train a deep learning model for variant calling.\n\nTool homepage: https://github.com/gifford-lab/deepaccess-package"
+doc: "Train a DeepAccess ensemble of convolutional neural networks for multi-task classification of DNA sequences.\n\nTool homepage: https://github.com/gifford-lab/deepaccess-package"
 inputs:
   - id: bedfiles
     type:
@@ -24,9 +26,9 @@ inputs:
   - id: fasta_labels
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Labels corresponding to FASTA files
+      - File
+    doc: Text file with tab-delimited labels (0 or 1) for each FASTA sequence, 
+      one column per class
     inputBinding:
       position: 101
       prefix: --fasta_labels
@@ -76,7 +78,8 @@ inputs:
       - File
     doc: Reference FASTA file
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --refFasta
@@ -103,7 +106,7 @@ inputs:
       prefix: --out
 outputs:
   - id: out
-    type: File
+    type: Directory
     doc: Output directory for trained model and results
     outputBinding:
       glob: $(inputs.out_path)

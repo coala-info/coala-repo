@@ -1,5 +1,12 @@
 # detonate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| detonate_ref-eval-estimate-true-assembly | PASS |  |
+| detonate_rsem-eval-calculate-score | PASS |  |
+
 ## detonate_rsem-eval-calculate-score
 
 ### Tool Description

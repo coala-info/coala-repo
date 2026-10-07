@@ -1,5 +1,11 @@
 # dartunifrac-gpu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dartunifrac-gpu_dartunifrac-cuda | Not completed | Needs an NVIDIA GPU and CUDA driver; without one the tool stops because libcuda.so cannot be loaded. |
+
 ## dartunifrac-gpu_dartunifrac-cuda
 
 ### Tool Description

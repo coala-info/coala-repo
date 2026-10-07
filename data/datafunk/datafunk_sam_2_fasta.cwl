@@ -58,8 +58,6 @@ inputs:
   - id: reference_fasta
     type: File
     doc: reference
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -91,6 +89,20 @@ inputs:
       position: 102
       prefix: --output-fasta
 outputs:
+  - id: insertions_log
+    type:
+      - 'null'
+      - File
+    doc: insertions.txt written with --log-inserts / --log-all-inserts
+    outputBinding:
+      glob: insertions.txt
+  - id: deletions_log
+    type:
+      - 'null'
+      - File
+    doc: deletions.txt written with --log-deletions / --log-all-deletions
+    outputBinding:
+      glob: deletions.txt
   - id: output_fasta
     type:
       - 'null'

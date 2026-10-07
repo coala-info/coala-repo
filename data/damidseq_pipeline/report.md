@@ -1,5 +1,11 @@
 # damidseq_pipeline CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| damidseq_pipeline | PASS |  |
+
 ## damidseq_pipeline
 
 ### Tool Description

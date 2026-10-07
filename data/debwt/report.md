@@ -1,5 +1,11 @@
 # debwt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| debwt_deBWT | Failed | image problem: the image has no jellyfish, which deBWT calls for k-mer counting, and deBWT crashes with a segfault on the SARS-CoV-2 genome. |
+
 ## debwt_deBWT
 
 ### Tool Description

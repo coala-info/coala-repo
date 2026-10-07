@@ -68,6 +68,8 @@ outputs:
       glob: $(inputs.out_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/diapysef:1.0.10--pyh7cba7a3_0

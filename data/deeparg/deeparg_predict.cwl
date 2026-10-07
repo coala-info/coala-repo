@@ -89,15 +89,35 @@ inputs:
       prefix: --type
   - id: output_file_path
     type: string
+    doc: Output file prefix where to store results
     inputBinding:
       position: 102
       prefix: --output-file
 outputs:
-  - id: output_file
+  - id: mapping_arg
     type: File
-    doc: Output file where to store results
+    doc: Predicted ARGs (<output>.mapping.ARG)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).mapping.ARG
+  - id: mapping_potential_arg
+    type: File
+    doc: Potential ARGs below the probability cutoff (<output>.mapping.potential.ARG)
+    outputBinding:
+      glob: $(inputs.output_file_path).mapping.potential.ARG
+  - id: alignment_hits
+    type:
+      - 'null'
+      - File
+    doc: All DIAMOND alignment hits (<output>.align.daa.tsv)
+    outputBinding:
+      glob: $(inputs.output_file_path).align.daa.tsv
+  - id: alignment_daa
+    type:
+      - 'null'
+      - File
+    doc: DIAMOND alignment archive (<output>.align.daa)
+    outputBinding:
+      glob: $(inputs.output_file_path).align.daa
 requirements:
   - class: InlineJavascriptRequirement
 hints:

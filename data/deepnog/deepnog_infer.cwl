@@ -137,6 +137,13 @@ outputs:
       predictions to stdout.
     outputBinding:
       glob: $(inputs.out_file_path)
+  - id: performance_file
+    type:
+      - 'null'
+      - File
+    doc: Model performance measures, written when --test_labels is given
+    outputBinding:
+      glob: $(inputs.out_file_path.replace(/\.[^.\/]*$/, '') + '.performance.csv')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

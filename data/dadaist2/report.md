@@ -1,5 +1,11 @@
 # dadaist2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dadaist2 | Failed | image problem: the dada2 R library fails to load (undefined symbol _ZTIN3tbb4taskE in dada2.so), so dadaist2 aborts at its dependency check. |
+
 ## dadaist2
 
 ### Tool Description

@@ -1,5 +1,24 @@
 # dimspy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dimspy_align-samples | PASS |  |
+| dimspy_blank-filter | PASS |  |
+| dimspy_create-sample-list | PASS |  |
+| dimspy_get-average-peaklist | PASS |  |
+| dimspy_get-peaklists | PASS |  |
+| dimspy_hdf5-pls-to-txt | PASS |  |
+| dimspy_hdf5-pm-to-txt | PASS |  |
+| dimspy_merge-peaklists | PASS |  |
+| dimspy_mv-sample-filter | PASS |  |
+| dimspy_process-scans | PASS |  |
+| dimspy_remove-samples | Failed | tool bug: dimspy 2.0.0 stores --input as a list and passes it to h5py.File, so remove-samples crashes with a TypeError on any input. |
+| dimspy_replicate-filter | PASS |  |
+| dimspy_sample-filter | PASS |  |
+| dimspy_unzip | PASS |  |
+
 ## dimspy_process-scans
 
 ### Tool Description

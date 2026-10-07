@@ -26,19 +26,24 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --limit-to-record
     doc: Process only specific record ID. Can be provided multiple times
     inputBinding:
       position: 102
-      prefix: --limit-to-record
   - id: prodigal_meta_mode
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: Run Prodigal in '-p meta' mode to enable detecting genes in short 
       contigs
     inputBinding:
       position: 102
       prefix: --prodigal-meta-mode
   - id: protein
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: Accept amino-acid protein sequences as input (experimental). Will treat
       each file as a single record with multiple proteins.
     inputBinding:
@@ -48,6 +53,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Output GenBank file path
     inputBinding:
       position: 103
       prefix: --output-gbk
@@ -55,9 +61,17 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Output TSV file path
     inputBinding:
       position: 104
       prefix: --output-tsv
+  - id: downloads_dir
+    type:
+      - 'null'
+      - Directory
+    doc: DeepBGC downloads directory made by "deepbgc download" (models and Pfam 
+      database); passed to the tool as the DEEPBGC_DOWNLOADS_DIR environment 
+      variable
 outputs:
   - id: output_gbk
     type:
@@ -75,6 +89,10 @@ outputs:
       glob: $(inputs.output_tsv_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      DEEPBGC_DOWNLOADS_DIR: '$(inputs.downloads_dir ? inputs.downloads_dir.path : runtime.outdir
+        + "/deepbgc_downloads")'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepbgc:0.1.31--pyhca03a8a_0

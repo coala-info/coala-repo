@@ -1,5 +1,11 @@
 # ddquint CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ddquint | Not completed | No public data from the ddQuint 5-plex assay exists; on real ddPCRclust amplitude CSVs the run finished and wrote the Excel report and plots, but no cluster matched the assay centroids, so copy numbers cannot be checked. |
+
 ## ddquint
 
 ### Tool Description

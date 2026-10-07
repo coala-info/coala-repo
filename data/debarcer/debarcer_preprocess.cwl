@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - preprocess
 label: debarcer_preprocess
 doc: "Preprocess FASTQ files for debarcer.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"

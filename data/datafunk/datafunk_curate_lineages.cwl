@@ -8,8 +8,9 @@ doc: "Find new lineages, merge ones that need merging, split ones that need spli
   \nTool homepage: https://github.com/cov-ert/datafunk"
 inputs:
   - id: input_directory
-    type: Directory
-    doc: Path to input directory containing traits.csv files
+    type: File
+    doc: traits.csv file (taxon,country,lineage,uk_lineage,acc_lineage,...). 
+      Despite the option name, the tool opens this path as a file.
     inputBinding:
       position: 101
       prefix: --input-directory

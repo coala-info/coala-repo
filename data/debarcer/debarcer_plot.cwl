@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - plot
 label: debarcer_plot
 doc: "Plotting tool for debarcer results.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
@@ -73,7 +73,7 @@ inputs:
   - id: report
     type:
       - 'null'
-      - boolean
+      - string
     doc: Generate a report if activated. Default is True
     inputBinding:
       position: 101
@@ -91,6 +91,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: Input directory with the new Figures (and Report) subdirectories
+    outputBinding:
+      glob: $(inputs.directory.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/debarcer:2.1.4--pyhdfd78af_2

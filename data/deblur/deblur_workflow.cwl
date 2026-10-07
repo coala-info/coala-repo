@@ -70,7 +70,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file name
     inputBinding:
       position: 101
@@ -115,18 +115,26 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --neg-ref-db-fp
+          valueFrom: $(self.path.replace(/\.stats$/, ''))
     doc: An indexed version of the negative filtering database. If not supplied,
       deblur will index the database.For multiple databases, the order must 
       follow that of --neg-ref-fp, for example, --neg-ref-db-fp db1.idx 
       --neg-ref- db-fp db2.idx ..
+    secondaryFiles:
+      - ^.bursttrie_0.dat
+      - ^.kmer_0.dat
+      - ^.pos_0.dat
     inputBinding:
       position: 101
-      prefix: --neg-ref-db-fp
   - id: neg_ref_fp
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --neg-ref-fp
     doc: Negative (artifacts) filtering database. Drop all sequences which align
       to any record in this FASTA file. This defaults to a database composed of 
       multiple PhiX genomes and known Illumina adapters. For multiple databases,
@@ -134,7 +142,6 @@ inputs:
       fp db2.fa
     inputBinding:
       position: 101
-      prefix: --neg-ref-fp
   - id: overwrite
     type:
       - 'null'
@@ -148,19 +155,27 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --pos-ref-db-fp
+          valueFrom: $(self.path.replace(/\.stats$/, ''))
     doc: An indexed version of the positive filtering database. This can be 
       useful to avoid incurring the expense of reindexing on every run. If not 
       supplied, deblur will index the database. For multiple databases, the 
       order must follow that of --pos-ref-fp, for example, --pos- ref-db-fp 
       db1.idx --pos-ref- db-fp db2.idx ..
+    secondaryFiles:
+      - ^.bursttrie_0.dat
+      - ^.kmer_0.dat
+      - ^.pos_0.dat
     inputBinding:
       position: 101
-      prefix: --pos-ref-db-fp
   - id: pos_ref_fp
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --pos-ref-fp
     doc: Positive reference filtering database. Keep all sequences permissively 
       aligning to any sequence in this FASTA file; these results are stored in 
       the reference-hit.biom output file. This defaults to the Greengenes 13_8 
@@ -169,9 +184,10 @@ inputs:
       multiple times, e.g., --pos- ref-fp db1.fa --pos-ref-fp db2.fa
     inputBinding:
       position: 101
-      prefix: --pos-ref-fp
   - id: seqs_fp
-    type: File
+    type:
+      - File
+      - Directory
     doc: "Either a Demultiplexed FASTA or FASTQ file\n                           \
       \       including all samples, or a directory of\n                         \
       \         per-sample FASTA or FASTQ files. Gzip'd\n                        \
@@ -203,6 +219,13 @@ inputs:
       position: 102
       prefix: --output-dir
 outputs:
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : 'deblur.log')"
   - id: output_dir
     type: Directory
     doc: "Directory path to store output including\n                             \

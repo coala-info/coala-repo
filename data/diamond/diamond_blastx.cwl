@@ -237,13 +237,17 @@ inputs:
       position: 101
       prefix: --strand
   - id: un
-    type: string
+    type:
+      - 'null'
+      - string
     doc: file for unaligned queries
     inputBinding:
       position: 101
       prefix: --un
   - id: al
-    type: string
+    type:
+      - 'null'
+      - string
     doc: file or aligned queries
     inputBinding:
       position: 101

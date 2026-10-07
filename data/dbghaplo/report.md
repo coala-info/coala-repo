@@ -1,5 +1,11 @@
 # dbghaplo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dbghaplo | PASS |  |
+
 ## dbghaplo
 
 ### Tool Description

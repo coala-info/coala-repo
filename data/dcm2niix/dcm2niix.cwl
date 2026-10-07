@@ -8,7 +8,7 @@ inputs:
     type: Directory
     doc: Input directory containing DICOM files
     inputBinding:
-      position: 1
+      position: 103
   - id: compression_level
     type:
       - 'null'
@@ -16,7 +16,8 @@ inputs:
     doc: gz compression level (1=fastest..9=smallest, default 6)
     inputBinding:
       position: 102
-      prefix: '-1'
+      prefix: '-'
+      separate: false
   - id: bids_sidecar
     type:
       - 'null'
@@ -113,10 +114,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory (omit to save to input folder)
+    doc: output directory (created in the working directory)
     inputBinding:
       position: 102
       prefix: -o
+    default: dcm2niix_out
   - id: philips_precise_scaling
     type:
       - 'null'
@@ -158,6 +160,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -u
+  - id: verbose
+    type:
+      - 'null'
+      - string
+    doc: verbose (n/y or 0/1/2 [no, yes, logorrheic], default 0)
+    inputBinding:
+      position: 102
+      prefix: -v
   - id: crop
     type:
       - 'null'
@@ -177,14 +187,16 @@ inputs:
       prefix: -z
 outputs:
   - id: output_output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output directory (omit to save to input folder)
+    type: Directory
+    doc: output directory with the NIfTI and BIDS sidecar files
     outputBinding:
       glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.output_dir, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/dcm2niix:v1.0.20181125-1-deb_cv1

@@ -1,5 +1,11 @@
 # dascrubber CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dascrubber_DAStrim | PASS |  |
+
 ## dascrubber_DAStrim
 
 ### Tool Description

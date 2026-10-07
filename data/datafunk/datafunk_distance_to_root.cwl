@@ -23,6 +23,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: distances
+    type: File
+    doc: Per sample genetic distance to WH04
+    outputBinding:
+      glob: distances.tsv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

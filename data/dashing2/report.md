@@ -1,5 +1,15 @@
 # dashing2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dashing2_cmp | PASS |  |
+| dashing2_contain | PASS |  |
+| dashing2_printmin | PASS |  |
+| dashing2_sketch | PASS |  |
+| dashing2_wsketch | PASS |  |
+
 ## dashing2_sketch
 
 ### Tool Description

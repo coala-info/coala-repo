@@ -15,6 +15,13 @@ inputs:
     doc: Input FASTA files to sketch
     inputBinding:
       position: 1
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the ffile / qfile path lists; staged in the working 
+      folder so the names in those lists resolve
   - id: bagminhash
     type:
       - 'null'
@@ -282,9 +289,11 @@ inputs:
   - id: outprefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specifies directory in which to save sketches instead of adjacent to 
-      the input files.
+      the input files. Default here is the working folder, because the inputs 
+      are read-only.
+    default: .
     inputBinding:
       position: 102
       prefix: --outprefix
@@ -418,15 +427,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sketch-size-l2
-  - id: sketch_type
-    type:
-      - 'null'
-      - string
-    doc: 'Specifies the sketching mode. Options include: SetSketch (default), FullSetSketch,
-      WeightedSetSketch, DiscreteProbabilitySetSketch, K-mer Sets (--set), Full k-mer
-      countdict (--countdict), Full k-mer (or minimizer) sequence (--seq).'
-    inputBinding:
-      position: 102
   - id: sketchsize
     type:
       - 'null'
@@ -470,6 +470,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --count-threshold
+  - id: similarity_threshold
+    type:
+      - 'null'
+      - float
+    doc: Minimum fraction similarity for inclusion. If this is enabled, only pairwise similarities over <arg> will be emitted.
+    inputBinding:
+      position: 102
+      prefix: --similarity-threshold
+  - id: topk
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of nearest neighbors to list. If <arg> is greater than N - 1, pairwise distances are instead emitted.
+    inputBinding:
+      position: 102
+      prefix: --topk
   - id: union_size
     type:
       - 'null'
@@ -507,9 +523,19 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Sketches are stacked into a single file and written to <arg>.
+    doc: Stacked sketches (with the .names.txt file of input names)
+    secondaryFiles:
+      - pattern: .names.txt
+        required: false
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: kmer_outputs
+    type:
+      type: array
+      items: File
+    doc: Saved k-mers and k-mer counts (--save-kmers, --save-kmercounts)
+    outputBinding:
+      glob: "$(inputs.outfile_path ? inputs.outfile_path + '.kmer*' : '*.kmer*')"
   - id: cmpout
     type:
       - 'null'
@@ -519,6 +545,9 @@ outputs:
       glob: $(inputs.cmpout_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "$(inputs.listed_files ? inputs.listed_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dashing2:2.1.20--he9e5f93_0

@@ -1,5 +1,11 @@
 # dazz_db CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dazz_db_DBshow | PASS |  |
+
 ## dazz_db_DBshow
 
 ### Tool Description

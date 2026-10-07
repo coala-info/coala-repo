@@ -1,5 +1,11 @@
 # deltapd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deltapd | Failed | image problem: deltapd 0.1.5 calls PhyloDM.get_from_newick_file, which the installed phylodm no longer has (AttributeError) on the repo example trees. |
+
 ## deltapd
 
 ### Tool Description

@@ -11,11 +11,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --exclude
     doc: A file that contains (anywhere) EPI_ISL_###### IDs to exclude (can 
       provide many files, e.g. -e FILE1 -e FILE2 ...)
     inputBinding:
       position: 101
-      prefix: --exclude
   - id: exclude_uk
     type:
       - 'null'

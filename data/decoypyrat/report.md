@@ -1,5 +1,11 @@
 # decoypyrat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| decoypyrat | PASS |  |
+
 ## decoypyrat
 
 ### Tool Description

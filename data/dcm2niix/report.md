@@ -1,5 +1,11 @@
 # dcm2niix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dcm2niix | PASS |  |
+
 ## dcm2niix
 
 ### Tool Description

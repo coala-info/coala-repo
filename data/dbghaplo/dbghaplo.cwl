@@ -15,6 +15,8 @@ inputs:
       prefix: --allele-output
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Indexed bam file to phase
     inputBinding:
       position: 101
@@ -63,7 +65,7 @@ inputs:
   - id: max_frags
     type:
       - 'null'
-      - int
+      - long
     doc: Maximum number of alignments per contig
     inputBinding:
       position: 101
@@ -113,6 +115,7 @@ inputs:
       - 'null'
       - string
     doc: Output directory
+    default: dbghaplo_output
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -218,6 +221,9 @@ inputs:
       prefix: --trace
   - id: vcf_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: VCF file with SNPs
     inputBinding:
       position: 101
@@ -227,9 +233,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir)

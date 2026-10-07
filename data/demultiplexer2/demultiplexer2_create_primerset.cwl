@@ -4,6 +4,9 @@ baseCommand:
   - demultiplexer2
   - create_primerset
 label: demultiplexer2_create_primerset
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 doc: "Create a primerset\n\nTool homepage: https://github.com/DominikBuchner/demultiplexer2"
 inputs:
   - id: n_primers

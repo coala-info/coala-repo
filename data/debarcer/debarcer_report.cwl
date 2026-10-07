@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - report
 label: debarcer_report
 doc: "Generate a report from debarcer results.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
@@ -69,6 +69,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: Input directory with the new Report subdirectory
+    outputBinding:
+      glob: $(inputs.directory.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/debarcer:2.1.4--pyhdfd78af_2

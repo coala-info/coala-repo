@@ -49,7 +49,7 @@ inputs:
   - id: index_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify a directory to write the index files required by macsyfinder 
       when the input file is in a read-only folder
     inputBinding:
@@ -124,6 +124,29 @@ outputs:
     doc: The target directory where to store the results.
     outputBinding:
       glob: $(inputs.out_dir)
+  - id: systems
+    type:
+      - 'null'
+      - File
+    doc: Defense systems found
+    outputBinding:
+      glob: '$(inputs.out_dir ? inputs.out_dir + "/" : "")*_defense_finder_systems.tsv'
+  - id: genes
+    type:
+      - 'null'
+      - File
+    doc: Genes of the defense systems found
+    outputBinding:
+      glob: '$(inputs.out_dir ? inputs.out_dir + "/" : "")*_defense_finder_genes.tsv'
+  - id: hmmer
+    type:
+      - 'null'
+      - File
+    doc: HMMER hits
+    outputBinding:
+      glob: '$(inputs.out_dir ? inputs.out_dir + "/" : "")*_defense_finder_hmmer.tsv'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/defense-finder:2.0.1--pyhdfd78af_0

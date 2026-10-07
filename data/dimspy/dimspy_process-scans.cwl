@@ -94,7 +94,7 @@ inputs:
   - id: report
     type:
       - 'null'
-      - File
+      - string
     doc: Summary/Report of processed mass spectra
     inputBinding:
       position: 101
@@ -132,7 +132,9 @@ inputs:
       position: 101
       prefix: --snr-threshold
   - id: source
-    type: File
+    type:
+      - File
+      - Directory
     doc: Directory (*.raw, *.mzml or tab-delimited peaklist files), single 
       *.mzml/*.raw file or zip archive (*.mzml only)
     inputBinding:
@@ -149,6 +151,13 @@ outputs:
     doc: HDF5 file to save the peaklist objects to.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: report_file
+    type:
+      - 'null'
+      - File
+    doc: Summary/Report of processed mass spectra
+    outputBinding:
+      glob: $(inputs.report)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -7,16 +7,12 @@ doc: "Please make sure your sequence don't contain any uncertain characters like
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: sequence in fasta or fastq format
     inputBinding:
       position: 1
   - id: jellyfish_directory
-    type:
-      - 'null'
-      - Directory
-    doc: jellyfish directory
+    type: string
+    doc: jellyfish directory (folder that holds the jellyfish binary)
     inputBinding:
       position: 102
       prefix: -j
@@ -29,9 +25,7 @@ inputs:
       position: 102
       prefix: -k
   - id: output_bwt_file
-    type:
-      - 'null'
-      - boolean
+    type: string
     doc: output bwt file(binary)
     inputBinding:
       position: 102
@@ -45,6 +39,11 @@ inputs:
       position: 102
       prefix: -t
 outputs:
+  - id: bwt_file
+    type: File
+    doc: BWT output file (binary)
+    outputBinding:
+      glob: $(inputs.output_bwt_file)
   - id: stdout
     type: stdout
     doc: Standard output

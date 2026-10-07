@@ -1,51 +1,46 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dbg2olc_SelectLongestReads
+baseCommand: SelectLongestReads
 label: dbg2olc_SelectLongestReads
-doc: "Selects the longest reads from a FASTA/FASTQ file based on total length.\n\n\
-  Tool homepage: https://github.com/yechengxi/DBG2OLC"
+doc: "Select reads from FASTA/FASTQ files up to a total number of bases (the longest
+  reads first when longest is 1), and write them to one FASTA file.\n\nTool homepage:
+  https://github.com/yechengxi/DBG2OLC"
 inputs:
-  - id: ProgramFile
-    type: string
-    doc: Program file name
-    inputBinding:
-      position: 1
-  - id: sum
-    type: string
-    doc: Sum parameter
-    inputBinding:
-      position: 2
   - id: total_length
-    type: string
-    doc: Total length parameter
+    type: long
+    doc: Total number of bases to select
     inputBinding:
-      position: 3
+      position: 101
+      prefix: sum
   - id: longest
-    type: string
-    doc: Longest parameter
+    type:
+      - 'null'
+      - int
+    doc: 1 to select the longest reads first, 0 to keep the input order
     inputBinding:
-      position: 4
-  - id: initial_total_bases
-    type: int
-    doc: Initial total bases
-    inputBinding:
-      position: 5
-  - id: input_file1
-    type: File
-    doc: First input FASTA/FASTQ file
-    inputBinding:
-      position: 6
-  - id: input_file2
-    type: File
-    doc: Second input FASTA/FASTQ file
-    inputBinding:
-      position: 7
-outputs:
+      position: 101
+      prefix: longest
   - id: outfile
-    type: File
+    type: string
     doc: Output file
+    inputBinding:
+      position: 101
+      prefix: o
+  - id: input_files
+    type:
+      type: array
+      items: File
+      inputBinding:
+        prefix: f
+    doc: Input FASTA/FASTQ files
+    inputBinding:
+      position: 102
+outputs:
+  - id: selected_reads
+    type: File
+    doc: Selected reads
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dbg2olc:20200723--h077b44d_4

@@ -19,7 +19,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file name
     inputBinding:
       position: 102
@@ -39,11 +39,20 @@ inputs:
       position: 102
       prefix: --trim-length
 outputs:
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : 'deblur.log')"
   - id: out_output_fp
     type: File
     doc: Output FASTA file
     outputBinding:
       glob: '$(inputs.output_fp)'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deblur:1.1.1--pyhdfd78af_0

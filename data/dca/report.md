@@ -1,5 +1,11 @@
 # dca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dca | Failed | image problem: TensorFlow is missing from the image, so dca stops with an ImportError before training. |
+
 ## dca
 
 ### Tool Description

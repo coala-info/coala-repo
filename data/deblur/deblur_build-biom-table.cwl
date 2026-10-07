@@ -13,20 +13,11 @@ inputs:
     inputBinding:
       position: 1
   - id: output_biom_fp
-    type: File
+    type: string
     doc: the path where to save the output biom table files ('all.biom', 
       'reference-hit.biom', 'reference-non-hit.biom')
     inputBinding:
       position: 2
-  - id: file_type
-    type:
-      - 'null'
-      - string
-    doc: the files type to add to the table 
-      (default='.trim.derep.no_artifacts.msa.deblur.no_chimeras', can be 
-      '.fasta' or '.fa' if needed)
-    inputBinding:
-      position: 103
   - id: file_type_option
     type:
       - 'null'
@@ -38,7 +29,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file name
     inputBinding:
       position: 103
@@ -62,9 +53,32 @@ inputs:
       position: 103
       prefix: --min-reads
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Directory with the BIOM table (all.biom) and its sequences (all.seq.fa)
+    outputBinding:
+      glob: $(inputs.output_biom_fp)
+  - id: biom_table
+    type: File
+    doc: BIOM table of all samples
+    outputBinding:
+      glob: $(inputs.output_biom_fp)/all.biom
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : 'deblur.log')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.output_biom_fp, listing: []})"
+        writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deblur:1.1.1--pyhdfd78af_0

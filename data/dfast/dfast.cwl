@@ -32,7 +32,7 @@ inputs:
   - id: complete
     type:
       - 'null'
-      - boolean
+      - string
     doc: Treat the query as a complete genome. Not required unless you need 
       INSDC submission files.
     inputBinding:
@@ -227,6 +227,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: OUT
     doc: Output directory
     inputBinding:
       position: 101
@@ -241,6 +242,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --references
+      itemSeparator: ';'
   - id: seq_names
     type:
       - 'null'
@@ -278,7 +280,7 @@ inputs:
   - id: sort_sequence
     type:
       - 'null'
-      - boolean
+      - string
     doc: Sort sequences by length
     inputBinding:
       position: 101
@@ -327,7 +329,7 @@ inputs:
   - id: use_original_name
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use original sequence names in a query FASTA file
     inputBinding:
       position: 101
@@ -351,7 +353,7 @@ inputs:
   - id: use_separate_tags
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use separate tags according to feature types
     inputBinding:
       position: 101

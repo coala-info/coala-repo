@@ -1,5 +1,11 @@
 # dajin2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dajin2_DAJIN2 | PASS |  |
+
 ## dajin2_DAJIN2
 
 ### Tool Description

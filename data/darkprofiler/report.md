@@ -1,5 +1,12 @@
 # darkprofiler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| darkprofiler_download | Not completed | Downloads a 1 GB genome bundle into the image's own package folder, so a CWL run cannot keep the result. |
+| darkprofiler_run | Not completed | Needs the 1 GB genome bundle installed inside the image's package folder, which a plain CWL run does not have. |
+
 ## darkprofiler_download
 
 ### Tool Description
@@ -74,30 +81,4 @@ options:
 
 ## Metadata
 - **Skill**: not generated
-
-## darkprofiler
-
-### Tool Description
-DarkProfiler: classify peptides into canonical, alternative, mutant, and dark proteome categories.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/darkprofiler:0.2.6--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/darkprofiler/
-- **Package**: https://anaconda.org/channels/bioconda/packages/darkprofiler/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: darkprofiler [-h] {download,run} ...
-
-DarkProfiler: classify peptides into canonical, alternative, mutant, and dark
-proteome categories.
-
-positional arguments:
-  {download,run}
-    download      Download a reference genome bundle (hg19/hg38/mm10/mm39).
-    run           Run DarkProfiler classification pipeline.
-
-options:
-  -h, --help      show this help message and exit
-```
 

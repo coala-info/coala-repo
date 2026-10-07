@@ -1,12 +1,18 @@
 # data_hacks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| data_hacks_bar_chart.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 
 ## data_hacks_bar_chart.py
 
 ### Tool Description
-A command line tool for creating bar charts from input data.
+Draw an ASCII bar chart of how often each value occurs in the input (read from stdin).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/data_hacks:0.3.1--py27_0
@@ -15,12 +21,18 @@ A command line tool for creating bar charts from input data.
 - **Validation**: PASS
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 17:44:21  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/data_hacks:0.3.1--py27_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:6b50641946e84ae8271469da999090df23bd6ba9e93a42f57c3d5c5a1d5ba670: unpack entry: usr/local/bin/openssl: unpack to regular file: short write: write /tmp/build-temp-3422976453/rootfs/usr/local/bin/openssl: no space left on device
+Usage: cat data | bar_chart.py [options]
+
+Options:
+  -h, --help           show this help message and exit
+  -a, --agg            Two column input format, space seperated with
+                       value<space>key
+  -A, --agg-key-value  Two column input format, space seperated with
+                       key<space>value
+  -k, --sort-keys      sort by the key [default]
+  -v, --sort-values    sort by the frequence
+  -r, --reverse-sort   reverse the sort
+  -n, --numeric-sort   sort keys by numeric sequencing
+  -p, --percentage     List percentage for each bar
 ```
 

@@ -100,7 +100,7 @@ inputs:
   - id: scale
     type:
       - 'null'
-      - float
+      - int
     doc: 'Generate s*1024 reads for testing (Default: s=1).'
     inputBinding:
       position: 101
@@ -109,6 +109,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: test_output
+    type:
+      - 'null'
+      - Directory
+    doc: Test data and results written by the self-test
+    outputBinding:
+      glob: deepac-tests
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepac:0.14.1--pyhdfd78af_0

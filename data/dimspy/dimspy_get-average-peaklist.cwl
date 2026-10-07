@@ -7,11 +7,9 @@ label: dimspy_get-average-peaklist
 doc: "Calculates the average peaklist from input HDF5 files.\n\nTool homepage: https://github.com/computational-metabolomics/dimspy"
 inputs:
   - id: input
-    type:
-      type: array
-      items: File
-    doc: Single or Multiple HDF5 files that contain a peak matrix object from 
-      one of the processing steps.
+    type: File
+    doc: HDF5 file that contains a peak matrix object from one of the 
+      processing steps.
     inputBinding:
       position: 101
       prefix: --input

@@ -1,5 +1,11 @@
 # ddipy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ddipy_omicsdi | Failed | tool bug: ddipy 0.0.5 builds OmicsDI API URLs with a double slash (ws//dataset/search), which the server now answers with 404, so no accession can be found. |
+
 ## ddipy_omicsdi
 
 ### Tool Description

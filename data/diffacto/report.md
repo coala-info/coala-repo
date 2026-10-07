@@ -1,5 +1,11 @@
 # diffacto CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| diffacto | PASS | On a 2127-peptide subset of the repository's iPRG example the spiked proteins ALBU, BGAL, CAH2, MYG and PYGM get MCFDR <= 0.03 while yeast background proteins stay near 1 (fixed -mc_out and -loadings_out prefixes). |
+
 ## diffacto
 
 ### Tool Description

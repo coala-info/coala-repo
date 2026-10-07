@@ -1,5 +1,17 @@
 # deepbinner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deepbinner_balance | PASS |  |
+| deepbinner_bin | PASS |  |
+| deepbinner_classify | PASS |  |
+| deepbinner_prep | Failed | image problem: the mappy Python module is missing, so deepbinner prep stops with ModuleNotFoundError. |
+| deepbinner_realtime | Not completed | Watches a sequencer folder in an endless loop until interrupted, so it cannot finish as a batch job. |
+| deepbinner_refine | PASS |  |
+| deepbinner_train | PASS |  |
+
 ## deepbinner_classify
 
 ### Tool Description

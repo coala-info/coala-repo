@@ -2,26 +2,27 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: datamash
 label: datamash_bin
-doc: "Performs numeric/string operations on input from stdin.\n\nTool homepage: https://github.com/agordon/datamash"
+doc: "Performs numeric/string operations on input from stdin.\n\nRuns the 'bin' operation: bin numeric values into buckets (default bucket size 100).\n\nTool homepage: https://github.com/agordon/datamash"
+requirements:
+  - class: InlineJavascriptRequirement
+arguments:
+  - position: 1
+    valueFrom: "$(inputs.operation_parameter == null ? 'bin' : 'bin:' + inputs.operation_parameter)"
 inputs:
-  - id: operation
+  - id: input_file
+    type: File
+    doc: Input table (TAB-separated unless field_separator or whitespace is set);
+      datamash reads it on stdin.
+  - id: field
     type: string
-    doc: The operation to perform. If a primary operation is used, it must be 
-      listed first, optionally followed by other operations.
-    inputBinding:
-      position: 1
-  - id: fields
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: The input field to use. Can be a number (1=first field), or a field 
-      name when using the -H or --header-in options. Multiple fields can be 
-      listed with a comma (e.g. 1,6,8). A range of fields can be listed with a 
-      dash (e.g. 2-8). Use colons for operations which require a pair of fields 
-      (e.g. 'pcov 2:6').
+    doc: "Input field(s): a number (1=first field), or a field name when using -H or --header-in. List fields with a comma (e.g. 1,6,8) or a range with a dash (e.g. 2-8). Pair operations use a colon (e.g. 2:6)."
     inputBinding:
       position: 2
+  - id: operation_parameter
+    type:
+      - 'null'
+      - float
+    doc: "Optional operation parameter: bucket size (e.g. 10 gives bin:10)"
   - id: collapse_delimiter
     type:
       - 'null'
@@ -145,7 +146,7 @@ inputs:
     doc: set a seed for operations that use randomization
     inputBinding:
       position: 103
-      prefix: --seed
+      prefix: -S
   - id: skip_comments
     type:
       - 'null'
@@ -202,4 +203,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datamash:1.9
+stdin: $(inputs.input_file.path)
 stdout: datamash_bin.out

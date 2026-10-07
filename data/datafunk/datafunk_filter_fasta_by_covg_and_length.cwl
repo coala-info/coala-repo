@@ -7,11 +7,6 @@ label: datafunk_filter_fasta_by_covg_and_length
 doc: "Filters a FASTA file based on coverage and length thresholds.\n\nTool homepage:
   https://github.com/cov-ert/datafunk"
 inputs:
-  - id: threshold
-    type: string
-    doc: Coverage threshold
-    inputBinding:
-      position: 1
   - id: input_fasta
     type: File
     doc: Input FASTA

@@ -1,5 +1,13 @@
 # demultiplexer2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| demultiplexer2_create_primerset | Failed | tool bug: it writes the primer set into its own install folder (site-packages/demultiplexer2/data/primersets), which is read-only in a container. |
+| demultiplexer2_create_tagging_scheme | PASS | synthetic data: planted tagged read pair with the bundled fwh2F-fwhR2n primer set; scheme lists the pair and the two chosen combinations (answers given on stdin). |
+| demultiplexer2_demultiplex | PASS | synthetic data: 60 planted read pairs; 30 and 20 go to the two samples and 10 with an unused tag pair are unmatched, as planted. |
+
 ## demultiplexer2_create_primerset
 
 ### Tool Description

@@ -46,7 +46,7 @@ inputs:
   - id: maximal_abundance_threshold
     type:
       - 'null'
-      - boolean
+      - int
     doc: set the maximal abundance threshold for a k-mer in dBG
     inputBinding:
       position: 101
@@ -67,13 +67,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+  - id: corrected_reads
+    type: File
+    doc: Final corrected reads (<prefix>.ec.fa)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix).ec.fa
+  - id: stage1_corrected_reads
+    type:
+      - 'null'
+      - File
+    doc: Reads corrected by stage 1 (dBG), written beside the input reads
+    outputBinding:
+      glob: recorrected.fa
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_reads)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dechat:1.0.1--h56e2c18_1

@@ -6,7 +6,9 @@ doc: "Microbial source tracking for contamination assessment of ancient oral sam
   using k-mer-based methods\n\nTool homepage: https://github.com/CamilaDuitama/decOM"
 inputs:
   - id: key
-    type: string
+    type:
+      - 'null'
+      - File
     doc: filtering key (a kmtricks fof with only one sample). When this argument
       is set, -s/--sink must be defined too.
     inputBinding:
@@ -19,7 +21,9 @@ inputs:
       position: 101
       prefix: --memory
   - id: path_keys
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Path to folder with filtering keys (a kmtricks fof with only one 
       sample). You should have as many .fof files as sinks. When this argument 
       is set, -p_sinks/--path_sinks must be defined too.
@@ -27,7 +31,9 @@ inputs:
       position: 101
       prefix: --path_keys
   - id: path_sinks
-    type: File
+    type:
+      - 'null'
+      - File
     doc: .txt file with a list of sinks limited by a newline (\n). When this 
       argument is set, -p_keys/--path_keys must be defined too.
     inputBinding:
@@ -43,14 +49,19 @@ inputs:
   - id: plot
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'False'
+          - 'True'
     doc: True if you want a plot (in pdf and html format) with the source 
       proportions of the sink, else False
     inputBinding:
       position: 101
       prefix: --plot
   - id: sink
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write down the name of your sink. It must be the same as the first 
       element of key.fof. When this argument is set, -k/--key must be defined 
       too

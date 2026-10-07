@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - merge
 label: debarcer_merge
 doc: "Merge files of a specified data type.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"

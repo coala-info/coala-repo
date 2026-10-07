@@ -11,6 +11,9 @@ inputs:
       type: array
       items: File
     doc: Input BCF files or a text file listing BCF files
+    secondaryFiles:
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
   - id: bp_offset
@@ -113,6 +116,9 @@ outputs:
       - 'null'
       - File
     doc: Merged SV BCF output file
+    secondaryFiles:
+      - pattern: .csi
+        required: false
     outputBinding:
       glob: $(inputs.outfile_path)
 requirements:

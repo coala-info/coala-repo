@@ -8,7 +8,10 @@ doc: "Calculate mappability of a BAM file\n\nTool homepage: https://github.com/g
 inputs:
   - id: input_bam
     type: File
-    doc: Chopped BAM file
+    doc: Chopped BAM file (reads from dicey chop mapped to the genome, 
+      coordinate-sorted and indexed)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: chromosome

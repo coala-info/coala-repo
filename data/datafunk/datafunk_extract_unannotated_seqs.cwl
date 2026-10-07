@@ -25,18 +25,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-metadata
-  - id: input_metadata_file
-    type: File
-    doc: metadata whose columns and rows will be checked
-    inputBinding:
-      position: 101
-      prefix: --input-metadata
-  - id: input_tree
-    type: File
-    doc: input tree file
-    inputBinding:
-      position: 101
-      prefix: --input-tree
   - id: null_column
     type: string
     doc: metadata column which will be checked as empty
@@ -44,37 +32,11 @@ inputs:
       position: 101
       prefix: --null-column
   - id: output_fasta_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output-fasta
-  - id: output_metadata_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 103
-      prefix: --output-metadata
-  - id: output_tree_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 104
-      prefix: --output-tree
 outputs:
-  - id: output_tree
-    type: File
-    doc: output tree file
-    outputBinding:
-      glob: $(inputs.output_tree_path)
-  - id: output_metadata
-    type: File
-    doc: output metadata file
-    outputBinding:
-      glob: $(inputs.output_metadata_path)
   - id: output_fasta
     type: File
     doc: fasta file to write

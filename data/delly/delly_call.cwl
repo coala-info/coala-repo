@@ -8,12 +8,24 @@ doc: "Compute structural variants\n\nTool homepage: https://github.com/dellytool
 inputs:
   - id: sample1_sort_bam
     type: File
-    doc: sample1.sort.bam
+    doc: sample1.sort.bam (indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 1
   - id: sample2_sort_bam
-    type: File
-    doc: sample2.sort.bam
+    type:
+      - 'null'
+      - File
+    doc: sample2.sort.bam (indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 2
   - id: additional_samples
@@ -21,7 +33,12 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Additional sample BAM files
+    doc: Additional sample BAM files (indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 3
   - id: exclude_regions_file
@@ -35,6 +52,9 @@ inputs:
   - id: genome_fasta_file
     type: File
     doc: genome fasta file
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 104
       prefix: --genome
@@ -43,6 +63,9 @@ inputs:
       - 'null'
       - File
     doc: input VCF/BCF file for genotyping
+    secondaryFiles:
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 104
       prefix: --vcffile
@@ -164,6 +187,9 @@ outputs:
       - 'null'
       - File
     doc: BCF output file
+    secondaryFiles:
+      - pattern: .csi
+        required: false
     outputBinding:
       glob: $(inputs.outfile_path)
   - id: dump_sv_reads_file

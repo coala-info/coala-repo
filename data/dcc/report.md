@@ -1,5 +1,11 @@
 # dcc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dcc_DCC | PASS |  |
+
 ## dcc_DCC
 
 ### Tool Description

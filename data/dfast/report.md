@@ -1,5 +1,11 @@
 # dfast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dfast | PASS |  |
+
 ## dfast
 
 ### Tool Description

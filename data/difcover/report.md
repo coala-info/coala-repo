@@ -1,5 +1,15 @@
 # difcover CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| difcover_from_DNAcopyout_to_p_fragments.sh | PASS | With p=0.1 the score-0.18 segment goes to the .up0.1 file and the .down-0.1 file is empty, as expected (input made a single File, staged in the work dir, outputs collected). |
+| difcover_from_bams_to_unionbed.sh | PASS | Two nf-core chr22 BAMs give an 808-interval unionbedcv with both coverage columns and the 40001 bp chr22 length (added the missing outputs and staged sample1 BAM in the work dir because the script writes <bam>.header beside it). |
+| difcover_from_ratio_per_window__to__DNAcopy_output.sh | PASS | DNAcopy merges the 24 windows into one chr22 segment with score 0.18 and writes the log2adj table and PDF (fixed the command name, staged the input in the work dir, collected the outputs). |
+| difcover_from_unionbed_to_ratio_per_window_CC0 | PASS | Gives 24 windows of 50 valid bases with average coverages and ratios near 1 for the two similar samples (fixed the command name, moved the unionbed file after the options, collected the ratio file). |
+| difcover_run_difcover.sh | Not completed | pipeline, skipped: run_difcover.sh is a template driver that takes no arguments and runs all stages with hard-coded sample1.bam/sample2.bam and ../dif_cover_scripts paths (baseCommand fixed to run_difcover.sh). |
+
 ## difcover_run_difcover.sh
 
 ### Tool Description

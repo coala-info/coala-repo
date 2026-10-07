@@ -1,5 +1,12 @@
 # deepaccess CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deepaccess_interpret | PASS |  |
+| deepaccess_train | PASS |  |
+
 ## deepaccess_train
 
 ### Tool Description

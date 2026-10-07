@@ -41,7 +41,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file name
     inputBinding:
       position: 102
@@ -64,9 +64,27 @@ inputs:
       position: 102
       prefix: --mean-error
 outputs:
+  - id: clean_seqs
+    type: File
+    doc: Deblurred sequences, written beside the input as <input>.clean
+    outputBinding:
+      glob: $(inputs.seqs_fp.basename).clean
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : 'deblur.log')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.seqs_fp)
+        writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deblur:1.1.1--pyhdfd78af_0

@@ -9,6 +9,7 @@ inputs:
     doc: Input filename
     inputBinding:
       position: 1
+      prefix: -F
   - id: gap_extension_penalty
     type: float
     doc: gap extension penalty

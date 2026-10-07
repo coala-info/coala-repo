@@ -1,5 +1,11 @@
 # decom CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| decom_decOM | Not completed | decOM needs the 1.3 GB decOM_sources k-mer matrix from Zenodo, which is too large for this test. |
+
 ## decom_decOM
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ddrage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ddrage | PASS |  |
+
 ## ddrage
 
 ### Tool Description

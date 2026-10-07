@@ -6,9 +6,7 @@ doc: "Converts DNAcopy output to p fragments, filtering intervals based on enric
   scores.\n\nTool homepage: https://github.com/timnat/DifCover"
 inputs:
   - id: dna_copy_out_files
-    type:
-      type: array
-      items: File
+    type: File
     doc: 'Input files in *.DNAcopyout format. Format: scaffold fragment_start fragment_size
       number_of_windows_merged_into_fragment av(adj_coef*log2ratio).'
     inputBinding:
@@ -19,9 +17,23 @@ inputs:
     inputBinding:
       position: 2
 outputs:
+  - id: up_fragments
+    type: File
+    doc: Fragments with enrichment score >= p (sample1 coverage > sample2).
+    outputBinding:
+      glob: $(inputs.dna_copy_out_files.basename).up*
+  - id: down_fragments
+    type: File
+    doc: Fragments with enrichment score <= -p (sample2 coverage > sample1).
+    outputBinding:
+      glob: $(inputs.dna_copy_out_files.basename).down-*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.dna_copy_out_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/difcover:3.0.1--h9948957_2

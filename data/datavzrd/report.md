@@ -1,5 +1,11 @@
 # datavzrd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| datavzrd | PASS |  |
+
 ## datavzrd
 
 ### Tool Description

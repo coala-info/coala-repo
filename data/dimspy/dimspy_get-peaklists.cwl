@@ -10,11 +10,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --input
     doc: Single or Multiple HDF5 files that contain a peak matrix object from 
       one of the processing steps.
     inputBinding:
       position: 101
-      prefix: --input
   - id: output_path
     type: string
     inputBinding:

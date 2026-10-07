@@ -26,12 +26,23 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Variables in model JSON file to replace (e.g. --config PFAM2VEC 
-      path/to/pfam2vec.csv)
+        items:
+          type: array
+          items: string
+        inputBinding:
+          prefix: --config
+    doc: Variables in model JSON file to replace, one [NAME, VALUE] pair per 
+      item (e.g. --config PFAM2VEC path/to/pfam2vec.csv). Name files given in 
+      config_files by their basename.
     inputBinding:
       position: 102
-      prefix: --config
+  - id: config_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in --config values (e.g. the pfam2vec table), staged in 
+      the working directory so their basenames resolve
   - id: debug
     type:
       - 'null'
@@ -42,7 +53,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Progress log output path (e.g. TensorBoard)
     inputBinding:
       position: 102
@@ -66,10 +77,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --validation
     doc: Validation sequence file path. Repeat to specify multiple files
     inputBinding:
       position: 102
-      prefix: --validation
   - id: verbose
     type:
       - 'null'
@@ -80,6 +92,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
+    doc: Output trained model file path
     inputBinding:
       position: 103
       prefix: --output
@@ -89,8 +102,18 @@ outputs:
     doc: Output trained model file path
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+      - Directory
+    doc: Progress log written to the --log path
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.config_files ? inputs.config_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepbgc:0.1.31--pyhca03a8a_0

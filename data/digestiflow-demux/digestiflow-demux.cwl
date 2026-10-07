@@ -120,12 +120,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --lane
     doc: Select individual lanes for demultiplexing; default is to use all for 
       which the sample sheet provides information; provide multiple times for 
       selecting multiple lanes.
     inputBinding:
       position: 103
-      prefix: --lane
   - id: log_api_token
     type:
       - 'null'
@@ -172,11 +173,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tiles
     doc: Select tile regex; provide multiple times for multiple regexes with 
       bcl2fastq. Picard will use the first tile. Conflicts with --lane
     inputBinding:
       position: 103
-      prefix: --tiles
   - id: verbose
     type:
       - 'null'

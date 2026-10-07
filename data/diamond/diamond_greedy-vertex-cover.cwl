@@ -40,7 +40,8 @@ inputs:
       prefix: --tmpdir
   - id: db
     type: File
-    doc: database file
+    doc: database file; for greedy-vertex-cover a text file with one sequence 
+      accession per line (first column), which maps edge names to ids
     inputBinding:
       position: 101
       prefix: --db
@@ -100,7 +101,9 @@ inputs:
       position: 101
       prefix: --no-reassign
   - id: centroid_out
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file for centroids
     inputBinding:
       position: 101

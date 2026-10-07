@@ -1,9 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ddocent_RefMapOpt.sh
+baseCommand: RefMapOpt.sh
 label: ddocent_RefMapOpt.sh
 doc: "RefMapOpt\n\nTool homepage: https://ddocent.com"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 inputs:
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: Demultiplexed reads in dDocent naming, staged in the working 
+      directory (<sample>.F.fq.gz and <sample>.R.fq.gz; RefMapOpt.sh also 
+      maps the trimmed <sample>.R1.fq.gz and <sample>.R2.fq.gz)
   - id: minK1
     type: int
     doc: minK1
@@ -42,12 +52,18 @@ inputs:
   - id: optional_list_of_individuals
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: optional_list_of_individuals
+      - File
+    doc: Optional file listing the individuals (one name per line) to map; 
+      default is a random subset of the individuals
     inputBinding:
       position: 8
 outputs:
+  - id: mapping_results
+    type: File
+    doc: 'Mapping statistics for each K1/K2 pair (mapping.results: mean reads per
+      contig, contigs, K1, K2, mappings, properly paired, ...)'
+    outputBinding:
+      glob: mapping.results
   - id: stdout
     type: stdout
     doc: Standard output

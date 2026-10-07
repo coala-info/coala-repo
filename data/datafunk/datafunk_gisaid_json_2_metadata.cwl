@@ -32,11 +32,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --exclude
     doc: A file that contains (anywhere) EPI_ISL_###### IDs to exclude (can 
       provide more than one file, e.g. -e FILE1 -e FILE2 ...)
     inputBinding:
       position: 101
-      prefix: --exclude
   - id: new_metadata_csv_path
     type: string
     doc: metadata.csv, --output-metadata NEW_metadata.csv New csv file to write

@@ -18,11 +18,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --download
-  - id: input_directory
+  - id: file_ids
     type:
       - 'null'
-      - Directory
-    doc: Output directory when downloading files
+      - string
+    doc: Comma-separated file IDs (the 10-character IDs shown with --verbose) 
+      to select which files to download (the help text calls it an output 
+      directory, but the code uses it as a file ID filter)
     inputBinding:
       position: 102
       prefix: --input
@@ -30,7 +32,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output directory when downloading files
+    doc: Output directory when downloading files (created in the working 
+      directory; default CWD)
     inputBinding:
       position: 102
       prefix: --output
@@ -53,6 +56,14 @@ outputs:
     doc: Output directory when downloading files
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ if (inputs.output_directory) { return [{"class": "Directory", "basename": inputs.output_directory, "listing": [], "writable": true}]; } return []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ddipy:0.0.5--py_0

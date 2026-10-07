@@ -5,10 +5,20 @@ baseCommand:
   - wsketch
 label: dashing2_wsketch
 doc: "Sketch raw IDs, with optional weights added\n\nTool homepage: https://github.com/dnbaker/dashing2"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_bin)
+        writable: true
+      - entry: $(inputs.input_weights_bin)
+        writable: true
+      - entry: $(inputs.indptr_bin)
+        writable: true
 inputs:
   - id: input_bin
     type: File
-    doc: Input binary file containing raw IDs or indices
+    doc: Input binary file containing raw IDs or indices (staged writable, as the tool memory-maps inputs read-write)
     inputBinding:
       position: 1
   - id: input_weights_bin
@@ -109,6 +119,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sketch_files
+    type:
+      type: array
+      items: File
+    doc: Sketch files named after the output prefix (or after input.bin when no
+      prefix is set)
+    outputBinding:
+      glob: "$((inputs.outprefix ? inputs.outprefix : inputs.input_bin.basename) + '.*')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dashing2:2.1.20--he9e5f93_0

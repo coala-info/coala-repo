@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - group
 label: debarcer_group
 doc: "Group UMIs based on proximity and abundance.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
@@ -11,6 +11,8 @@ inputs:
       - 'null'
       - File
     doc: Path to the BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --Bamfile
@@ -33,7 +35,7 @@ inputs:
   - id: ignore
     type:
       - 'null'
-      - boolean
+      - string
     doc: Keep the most abundant family and ignore families at other positions 
       within each group. Default is False
     inputBinding:
@@ -81,7 +83,7 @@ inputs:
   - id: truncate
     type:
       - 'null'
-      - boolean
+      - string
     doc: Discard reads overlapping with the genomic region if True. Default is 
       False
     inputBinding:

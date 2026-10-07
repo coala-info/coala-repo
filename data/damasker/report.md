@@ -1,5 +1,14 @@
 # damasker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| damasker_HPC.REPmask | PASS |  |
+| damasker_REPmask | PASS |  |
+| damasker_TANmask | PASS |  |
+| damasker_datander | Failed | image problem: datander runs LAsort and LAmerge from daligner, which are not in the image (LAsort: command not found). |
+
 ## damasker_REPmask
 
 ### Tool Description

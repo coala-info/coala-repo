@@ -58,6 +58,7 @@ inputs:
     doc: concentration of annealing(!) Oligos in nMol
     inputBinding:
       position: 105
+      prefix: --dna
   - id: apply_distance_to_probe
     type:
       - 'null'
@@ -87,6 +88,7 @@ inputs:
     doc: concentration of divalent ions in mMol
     inputBinding:
       position: 105
+      prefix: --divalent
   - id: enttemp
     type:
       - 'null'
@@ -102,6 +104,7 @@ inputs:
     doc: maximum arm GC fraction
     inputBinding:
       position: 105
+      prefix: --gcmax
   - id: gc_min
     type:
       - 'null'
@@ -109,6 +112,7 @@ inputs:
     doc: minimum arm GC fraction
     inputBinding:
       position: 105
+      prefix: --gcmin
   - id: gtf_attribute
     type:
       - 'null'
@@ -140,6 +144,7 @@ inputs:
     doc: concentration of monovalent ions in mMol
     inputBinding:
       position: 105
+      prefix: --monovalent
   - id: neighborhood_distance
     type:
       - 'null'
@@ -158,7 +163,13 @@ inputs:
       prefix: --armlen
   - id: ref_genome
     type: File
-    doc: genome file
+    doc: genome file (bgzip-compressed, with samtools faidx index and the 
+      dicey index <genome without .gz>.fm9)
+    secondaryFiles:
+      - .fai
+      - .gzi
+      - ^.fm9
+      - ^.fm9_check
     inputBinding:
       position: 105
       prefix: --genome
@@ -208,6 +219,7 @@ inputs:
     doc: the sum of all dNTPs in mMol
     inputBinding:
       position: 105
+      prefix: --dntp
   - id: use_hamming
     type:
       - 'null'

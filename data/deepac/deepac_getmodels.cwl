@@ -43,6 +43,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: models
+    type: Directory
+    doc: Rebuilt or fetched models, written to deepac_builtin_models
+    outputBinding:
+      glob: deepac_builtin_models
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepac:0.14.1--pyhdfd78af_0

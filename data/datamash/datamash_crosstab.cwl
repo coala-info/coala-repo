@@ -2,26 +2,34 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: datamash
 label: datamash_crosstab
-doc: "Performs numeric/string operations on input from stdin.\n\nTool homepage: https://github.com/agordon/datamash"
+doc: "Performs numeric/string operations on input from stdin.\n\nRuns the 'crosstab' operation: cross-tabulate two fields (default operation: count).\n\nTool homepage: https://github.com/agordon/datamash"
+arguments:
+  - position: 1
+    valueFrom: crosstab
 inputs:
-  - id: operation
-    type: string
-    doc: The operation to perform. If a primary operation is used, it must be 
-      listed first, optionally followed by other operations.
-    inputBinding:
-      position: 1
+  - id: input_file
+    type: File
+    doc: Input table (TAB-separated unless field_separator or whitespace is set);
+      datamash reads it on stdin.
   - id: fields
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: The input field to use. Can be a number (1=first field), or a field 
-      name when using the -H or --header-in options. Multiple fields can be 
-      listed with a comma (e.g. 1,6,8). A range of fields can be listed with a 
-      dash (e.g. 2-8). Use colons for operations which require a pair of fields 
-      (e.g. 'pcov 2:6').
+    type: string
+    doc: "Two fields X,Y to cross-tabulate (e.g. 1,2)."
     inputBinding:
       position: 2
+  - id: crosstab_operation
+    type:
+      - 'null'
+      - string
+    doc: "Operation to apply in each cell (default count), e.g. sum."
+    inputBinding:
+      position: 3
+  - id: crosstab_field
+    type:
+      - 'null'
+      - string
+    doc: "Field the cell operation uses (needed when crosstab_operation is set)."
+    inputBinding:
+      position: 4
   - id: collapse_delimiter
     type:
       - 'null'
@@ -64,14 +72,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --full
-  - id: group
-    type:
-      - 'null'
-      - string
-    doc: group via fields X,[Y,Z]; equivalent to primary operation 'groupby'
-    inputBinding:
-      position: 103
-      prefix: --group
   - id: header_in
     type:
       - 'null'
@@ -141,11 +141,11 @@ inputs:
   - id: seed
     type:
       - 'null'
-      - boolean
+      - int
     doc: set a seed for operations that use randomization
     inputBinding:
       position: 103
-      prefix: --seed
+      prefix: -S
   - id: skip_comments
     type:
       - 'null'
@@ -202,4 +202,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datamash:1.9
+stdin: $(inputs.input_file.path)
 stdout: datamash_crosstab.out

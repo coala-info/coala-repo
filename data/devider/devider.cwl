@@ -16,6 +16,8 @@ inputs:
   - id: bam_file
     type: File
     doc: Indexed bam file to phase
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam-file
@@ -211,20 +213,22 @@ inputs:
   - id: vcf_file
     type: File
     doc: VCF file with SNPs
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcf-file
   - id: output_dir_path
-    type: string?
+    type: string
+    default: devider_output
     doc: 'Output directory [default: devider_output]'
     inputBinding:
       position: 102
       prefix: --output-dir
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir_path)

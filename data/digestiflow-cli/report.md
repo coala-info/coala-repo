@@ -1,5 +1,11 @@
 # digestiflow-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| digestiflow-cli_ingest | Not completed | Ingest always queries a Digestiflow web server (URL and token from a config file) and panics without one, so it cannot run offline on the MiSeq test run folder. |
+
 ## digestiflow-cli_ingest
 
 ### Tool Description

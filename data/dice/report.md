@@ -1,5 +1,11 @@
 # dice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dice | PASS |  |
+
 ## dice
 
 ### Tool Description

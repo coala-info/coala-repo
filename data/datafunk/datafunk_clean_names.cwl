@@ -11,7 +11,7 @@ inputs:
     doc: Path to the input metadata CSV file.
     inputBinding:
       position: 101
-      prefix: --input_metadata
+      prefix: --input-metadata
   - id: trait
     type: string
     doc: The name of the trait column to clean.
@@ -24,10 +24,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-metadata
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Run with high verbosity (debug level logging)
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: output_metadata
     type: File
     doc: Path to save the cleaned metadata CSV file.
+    secondaryFiles:
+      - pattern: .log
+        required: false
     outputBinding:
       glob: $(inputs.output_metadata_path)
 requirements:

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: debreak.py
+baseCommand: debreak
 label: debreak
 doc: "SV caller for long-read sequencing data\n\nTool homepage: https://github.com/ChongLab/DeBreak"
 inputs:
@@ -15,6 +15,8 @@ inputs:
   - id: bam
     type: File
     doc: input sorted bam. index required
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam

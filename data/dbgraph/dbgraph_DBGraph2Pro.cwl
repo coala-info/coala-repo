@@ -5,14 +5,17 @@ label: dbgraph_DBGraph2Pro
 doc: "DBGraph2Pro version 0.1\n\nTool homepage: https://github.com/COL-IU/graph2pro-var/tree/master/Graph2Pro"
 inputs:
   - id: edge_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The input edge file name
     inputBinding:
       position: 101
       prefix: -e
   - id: edge_seq_file
     type: File
-    doc: The input edge sequence (contig) file name
+    doc: The input edge sequence (contig) file name, or the FASTG assembly 
+      graph with -f / -S
     inputBinding:
       position: 101
       prefix: -s
@@ -48,14 +51,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -m
-  - id: max_seq_len
-    type:
-      - 'null'
-      - int
-    doc: maximum sequence length (for memory allocation)
-    inputBinding:
-      position: 101
-      prefix: -L
   - id: metaspades_fastg_output
     type:
       - 'null'
@@ -99,14 +94,14 @@ inputs:
       prefix: -u
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file for the protein (peptide) sequences
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File
-    doc: Protein Sequences files (base name only)
+    doc: Protein sequences (FASTA)
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:

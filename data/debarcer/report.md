@@ -1,5 +1,19 @@
 # debarcer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| debarcer_bed | Failed | tool bug: debarcer 2.1.4 bed always stops with AttributeError because its code reads an args.contig option that the bed parser never defines. |
+| debarcer_call | PASS |  |
+| debarcer_collapse | PASS |  |
+| debarcer_group | PASS |  |
+| debarcer_merge | PASS |  |
+| debarcer_plot | PASS |  |
+| debarcer_preprocess | PASS |  |
+| debarcer_report | PASS |  |
+| debarcer_run | Not completed | pipeline, skipped: debarcer run writes job scripts and submits them with SGE qsub. |
+
 ## debarcer_preprocess
 
 ### Tool Description

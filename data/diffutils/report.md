@@ -1,5 +1,12 @@
 # diffutils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| diffutils_cmp | PASS |  |
+| diffutils_diff3 | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

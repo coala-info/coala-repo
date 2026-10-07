@@ -1,5 +1,11 @@
 # dbgraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dbgraph_DBGraph2Pro | PASS |  |
+
 ## dbgraph_DBGraph2Pro
 
 ### Tool Description

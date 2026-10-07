@@ -1,5 +1,11 @@
 # desman CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| desman | Failed | image problem: desman calls DataFrame.as_matrix, which the bundled pandas 2.2.3 no longer has, so every run crashes. |
+
 ## desman
 
 ### Tool Description

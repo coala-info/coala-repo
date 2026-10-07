@@ -63,7 +63,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log file to use (otherwise uses stdout)
     inputBinding:
       position: 101
@@ -79,6 +79,13 @@ inputs:
       position: 103
       prefix: --output-metadata
 outputs:
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --log
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: output_fasta
     type: File
     doc: Input FASTA

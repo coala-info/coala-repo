@@ -8,7 +8,11 @@ doc: "This application is inspired by mash screen.\n\nTool homepage: https://git
 inputs:
   - id: database_kmers
     type: File
-    doc: database.kmers
+    doc: k-mer database written by dashing2 sketch --save-kmers -o <arg> 
+      (<arg>.kmer64), with its .names.txt file beside it
+    secondaryFiles:
+      - pattern: .names.txt
+        required: false
     inputBinding:
       position: 1
   - id: input_fq
@@ -54,6 +58,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Containment results written with -o
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dashing2:2.1.20--he9e5f93_0

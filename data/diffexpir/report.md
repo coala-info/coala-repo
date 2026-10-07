@@ -1,5 +1,11 @@
 # diffexpir CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| diffexpir_diffexpIR | PASS |  |
+
 ## diffexpir_diffexpIR
 
 ### Tool Description

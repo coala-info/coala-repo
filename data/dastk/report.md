@@ -1,5 +1,11 @@
 # dastk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dastk_differential_md_score | Failed | image problem: matplotlib 3.6.3 in the image rejects plt.xscale(basex=2), so the MA plot step crashes (exit 1) after the scores table is written. |
+
 ## Metadata
 - **Skill**: generated
 

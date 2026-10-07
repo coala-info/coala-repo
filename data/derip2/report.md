@@ -1,5 +1,11 @@
 # derip2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| derip2 | PASS |  |
+
 ## derip2
 
 ### Tool Description

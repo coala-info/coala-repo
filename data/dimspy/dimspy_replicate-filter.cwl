@@ -69,9 +69,7 @@ inputs:
       position: 101
       prefix: --rsd-threshold
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output

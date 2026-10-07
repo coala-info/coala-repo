@@ -1,5 +1,11 @@
 # derna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| derna | PASS |  |
+
 ## derna
 
 ### Tool Description

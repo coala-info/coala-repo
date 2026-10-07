@@ -96,6 +96,7 @@ inputs:
       - 'null'
       - string
     doc: 'Output prefix (default: ./decifer)'
+    default: decifer
     inputBinding:
       position: 102
       prefix: --output

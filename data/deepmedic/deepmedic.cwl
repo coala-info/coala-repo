@@ -9,34 +9,56 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The device to run on (e.g., 'cpu', 'gpu', 'gpu0').
+    doc: 'Device to run the process on: cpu or cuda (default = cpu); a particular
+      GPU as cuda2.'
     inputBinding:
       position: 101
       prefix: -dev
-  - id: load_saved_model
+  - id: saved_model
     type:
       - 'null'
       - File
-    doc: Path to a saved model to load for training or testing.
+    doc: The path to a saved existing cnn model, to train or test with. Not in 
+      combination with -newModel.
     inputBinding:
       position: 101
-      prefix: -load
+      prefix: -model
   - id: model_config
     type:
       - 'null'
       - File
-    doc: Path to the model configuration file.
+    doc: Create a new CNN model with model parameters at given config file.
     inputBinding:
       position: 101
-      prefix: -model
+      prefix: -newModel
+  - id: pretrained_model
+    type:
+      - 'null'
+      - File
+    doc: Transfer the weights from a previously trained model to a new model 
+      (must follow -newModel).
+    inputBinding:
+      position: 101
+      prefix: -pretrained
+  - id: layers_to_transfer
+    type:
+      - 'null'
+      - type: array
+        items: int
+    doc: Layers of the new model to which the pretrained parameters are 
+      transferred (use after -pretrained). First layer is 1.
+    inputBinding:
+      position: 101
+      prefix: -layers
   - id: reset_optimizer
     type:
       - 'null'
       - boolean
-    doc: Reset the optimizer's state when loading a model.
+    doc: Reset the model's optimization state before starting the training 
+      session (use with -train).
     inputBinding:
       position: 101
-      prefix: -reset_opt
+      prefix: -resetOptimizer
   - id: test_config
     type:
       - 'null'

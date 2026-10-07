@@ -2,13 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: DAJIN2
 label: dajin2_DAJIN2
-doc: "DAJIN2 batch mode or DAJIN2 GUI mode\n\nTool homepage: https://github.com/akikuno/DAJIN2"
+doc: "DAJIN2 single-sample mode: genotype a genome-edited sample against a
+  control from nanopore reads (batch and GUI modes are subcommands).\n\nTool homepage: https://github.com/akikuno/DAJIN2"
 inputs:
-  - id: mode
-    type: string
-    doc: DAJIN2 batch mode or DAJIN2 GUI mode
-    inputBinding:
-      position: 1
   - id: allele_file
     type:
       - 'null'
@@ -74,6 +70,12 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
+  - id: results_dir
+    type: Directory
+    doc: DAJIN_Results folder with the allele report, consensus sequences, BAM 
+      files and read plots for the run named by output_dir_name
+    outputBinding:
+      glob: DAJIN_Results
   - id: stdout
     type: stdout
     doc: Standard output

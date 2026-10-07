@@ -4,7 +4,17 @@ baseCommand: ReferenceOpt.sh
 label: ddocent_ReferenceOpt.sh
 doc: "Scales similarity parameters for reference-based assembly.\n\nTool homepage:
   https://ddocent.com"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 inputs:
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: Demultiplexed reads in dDocent naming, staged in the working 
+      directory (<sample>.F.fq.gz and <sample>.R.fq.gz; RefMapOpt.sh also 
+      maps the trimmed <sample>.R1.fq.gz and <sample>.R2.fq.gz)
   - id: minK1
     type: int
     doc: Minimum value for K1 parameter
@@ -57,6 +67,19 @@ inputs:
     inputBinding:
       position: 9
 outputs:
+  - id: kopt_data
+    type: File
+    doc: 'Number of reference contigs for each K1, K2 and similarity value (kopt.data:
+      K1 K2 similarity contigs)'
+    outputBinding:
+      glob: kopt.data
+  - id: reference
+    type:
+      - 'null'
+      - File
+    doc: Reference built with the last parameter set tried
+    outputBinding:
+      glob: reference.fasta
   - id: stdout
     type: stdout
     doc: Standard output

@@ -1,5 +1,11 @@
 # dig2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dig2 | PASS |  |
+
 ## dig2
 
 ### Tool Description

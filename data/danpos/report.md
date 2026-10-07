@@ -1,5 +1,12 @@
 # danpos CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| danpos_dpeak | PASS |  |
+| danpos_dpos | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 
@@ -13,191 +20,298 @@ Analyze dynamics of nucleosome positions, including occupancy, position, and fuz
 - **Homepage**: https://sites.google.com/site/danposdoc/
 - **Package**: https://anaconda.org/channels/bioconda/packages/danpos/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 17:24:15  warn rootless{dev/agpgart} creating empty file in place of device 10:175
-2026/02/11 17:24:15  warn rootless{dev/audio} creating empty file in place of device 14:4
-2026/02/11 17:24:15  warn rootless{dev/audio1} creating empty file in place of device 14:20
-2026/02/11 17:24:15  warn rootless{dev/audio2} creating empty file in place of device 14:36
-2026/02/11 17:24:15  warn rootless{dev/audio3} creating empty file in place of device 14:52
-2026/02/11 17:24:15  warn rootless{dev/audioctl} creating empty file in place of device 14:7
-2026/02/11 17:24:15  warn rootless{dev/console} creating empty file in place of device 5:1
-2026/02/11 17:24:15  warn rootless{dev/dsp} creating empty file in place of device 14:3
-2026/02/11 17:24:15  warn rootless{dev/dsp1} creating empty file in place of device 14:19
-2026/02/11 17:24:15  warn rootless{dev/dsp2} creating empty file in place of device 14:35
-2026/02/11 17:24:15  warn rootless{dev/dsp3} creating empty file in place of device 14:51
-2026/02/11 17:24:15  warn rootless{dev/full} creating empty file in place of device 1:7
-2026/02/11 17:24:15  warn rootless{dev/kmem} creating empty file in place of device 1:2
-2026/02/11 17:24:15  warn rootless{dev/loop0} creating empty file in place of device 7:0
-2026/02/11 17:24:15  warn rootless{dev/loop1} creating empty file in place of device 7:1
-2026/02/11 17:24:15  warn rootless{dev/loop2} creating empty file in place of device 7:2
-2026/02/11 17:24:15  warn rootless{dev/loop3} creating empty file in place of device 7:3
-2026/02/11 17:24:15  warn rootless{dev/loop4} creating empty file in place of device 7:4
-2026/02/11 17:24:15  warn rootless{dev/loop5} creating empty file in place of device 7:5
-2026/02/11 17:24:15  warn rootless{dev/loop6} creating empty file in place of device 7:6
-2026/02/11 17:24:15  warn rootless{dev/loop7} creating empty file in place of device 7:7
-2026/02/11 17:24:15  warn rootless{dev/mem} creating empty file in place of device 1:1
-2026/02/11 17:24:15  warn rootless{dev/midi0} creating empty file in place of device 35:0
-2026/02/11 17:24:15  warn rootless{dev/midi00} creating empty file in place of device 14:2
-2026/02/11 17:24:15  warn rootless{dev/midi01} creating empty file in place of device 14:18
-2026/02/11 17:24:15  warn rootless{dev/midi02} creating empty file in place of device 14:34
-2026/02/11 17:24:15  warn rootless{dev/midi03} creating empty file in place of device 14:50
-2026/02/11 17:24:15  warn rootless{dev/midi1} creating empty file in place of device 35:1
-2026/02/11 17:24:15  warn rootless{dev/midi2} creating empty file in place of device 35:2
-2026/02/11 17:24:15  warn rootless{dev/midi3} creating empty file in place of device 35:3
-2026/02/11 17:24:15  warn rootless{dev/mixer} creating empty file in place of device 14:0
-2026/02/11 17:24:15  warn rootless{dev/mixer1} creating empty file in place of device 14:16
-2026/02/11 17:24:15  warn rootless{dev/mixer2} creating empty file in place of device 14:32
-2026/02/11 17:24:15  warn rootless{dev/mixer3} creating empty file in place of device 14:48
-2026/02/11 17:24:15  warn rootless{dev/mpu401data} creating empty file in place of device 31:0
-2026/02/11 17:24:15  warn rootless{dev/mpu401stat} creating empty file in place of device 31:1
-2026/02/11 17:24:15  warn rootless{dev/null} creating empty file in place of device 1:3
-2026/02/11 17:24:15  warn rootless{dev/port} creating empty file in place of device 1:4
-2026/02/11 17:24:15  warn rootless{dev/ram0} creating empty file in place of device 1:0
-2026/02/11 17:24:15  warn rootless{dev/ram1} creating empty file in place of device 1:1
-2026/02/11 17:24:15  warn rootless{dev/ram10} creating empty file in place of device 1:10
-2026/02/11 17:24:15  warn rootless{dev/ram11} creating empty file in place of device 1:11
-2026/02/11 17:24:15  warn rootless{dev/ram12} creating empty file in place of device 1:12
-2026/02/11 17:24:15  warn rootless{dev/ram13} creating empty file in place of device 1:13
-2026/02/11 17:24:15  warn rootless{dev/ram14} creating empty file in place of device 1:14
-2026/02/11 17:24:15  warn rootless{dev/ram15} creating empty file in place of device 1:15
-2026/02/11 17:24:15  warn rootless{dev/ram16} creating empty file in place of device 1:16
-2026/02/11 17:24:15  warn rootless{dev/ram2} creating empty file in place of device 1:2
-2026/02/11 17:24:15  warn rootless{dev/ram3} creating empty file in place of device 1:3
-2026/02/11 17:24:15  warn rootless{dev/ram4} creating empty file in place of device 1:4
-2026/02/11 17:24:15  warn rootless{dev/ram5} creating empty file in place of device 1:5
-2026/02/11 17:24:15  warn rootless{dev/ram6} creating empty file in place of device 1:6
-2026/02/11 17:24:15  warn rootless{dev/ram7} creating empty file in place of device 1:7
-2026/02/11 17:24:15  warn rootless{dev/ram8} creating empty file in place of device 1:8
-2026/02/11 17:24:15  warn rootless{dev/ram9} creating empty file in place of device 1:9
-2026/02/11 17:24:15  warn rootless{dev/random} creating empty file in place of device 1:8
-2026/02/11 17:24:15  warn rootless{dev/rmidi0} creating empty file in place of device 35:64
-2026/02/11 17:24:15  warn rootless{dev/rmidi1} creating empty file in place of device 35:65
-2026/02/11 17:24:15  warn rootless{dev/rmidi2} creating empty file in place of device 35:66
-2026/02/11 17:24:15  warn rootless{dev/rmidi3} creating empty file in place of device 35:67
-2026/02/11 17:24:15  warn rootless{dev/sequencer} creating empty file in place of device 14:1
-2026/02/11 17:24:15  warn rootless{dev/smpte0} creating empty file in place of device 35:128
-2026/02/11 17:24:15  warn rootless{dev/smpte1} creating empty file in place of device 35:129
-2026/02/11 17:24:15  warn rootless{dev/smpte2} creating empty file in place of device 35:130
-2026/02/11 17:24:15  warn rootless{dev/smpte3} creating empty file in place of device 35:131
-2026/02/11 17:24:15  warn rootless{dev/sndstat} creating empty file in place of device 14:6
-2026/02/11 17:24:15  warn rootless{dev/tty} creating empty file in place of device 5:0
-2026/02/11 17:24:15  warn rootless{dev/tty0} creating empty file in place of device 4:0
-2026/02/11 17:24:15  warn rootless{dev/tty1} creating empty file in place of device 4:1
-2026/02/11 17:24:15  warn rootless{dev/tty2} creating empty file in place of device 4:2
-2026/02/11 17:24:15  warn rootless{dev/tty3} creating empty file in place of device 4:3
-2026/02/11 17:24:15  warn rootless{dev/tty4} creating empty file in place of device 4:4
-2026/02/11 17:24:15  warn rootless{dev/tty5} creating empty file in place of device 4:5
-2026/02/11 17:24:15  warn rootless{dev/tty6} creating empty file in place of device 4:6
-2026/02/11 17:24:15  warn rootless{dev/tty7} creating empty file in place of device 4:7
-2026/02/11 17:24:15  warn rootless{dev/tty8} creating empty file in place of device 4:8
-2026/02/11 17:24:15  warn rootless{dev/tty9} creating empty file in place of device 4:9
-2026/02/11 17:24:15  warn rootless{dev/urandom} creating empty file in place of device 1:9
-2026/02/11 17:24:15  warn rootless{dev/zero} creating empty file in place of device 1:5
-FATAL:   Unable to handle docker://biocontainers/danpos:v2.2.2_cv3 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:9ff7e2e5f967fb9c4e8099e63508ab0dddebe3f820d08ca7fd568431b0d10c0e: unpack entry: etc/dpkg/dpkg.cfg.d: mkdirall: unpriv.mkdirall: mkdir /tmp/build-temp-1081647916/rootfs/etc/dpkg/dpkg.cfg.d: no space left on device
+danpos 2.2.2  version
+
+usage: 
+
+python danpos.py  <command>  <path> [optional arguments]
+
+positional arguments:
+  command               set as 'dpos' to run analysis for each position.
+  path                  Pairs of paths to sequencing data sets. The two paths
+                        in each pair must be seperated by ':', a:b means a
+                        minus b, different pairs must be seperated by ',' e.g.
+                        file1.bed:dir2/,dir3/, each path could point to a file
+                        or a directory containing multiple files, files under
+                        each directory represent multiple replicates for the
+                        same group. suggest to use .sam or .bam format for
+                        input files, please read the documentation for details
+                        about the other supported input formats.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --------------------------         
+  --- general parameters ---         
+  --------------------------          
+  -m , --paired         set to 1 if the input data is mate-pair (paired-end)
+                        reads. Ignore this when the input is wiggle format
+                        occupancy data (default: 0)
+  -p , --pheight        occupancy/intensity P value cutoff for calling
+                        invidual binding position (default: 0)
+  -q , --height         occupancy/intensity cutoff for calling invidual
+                        binding position (default: 5)
+  -t , --testcut        P value cutoff for calling differential position
+                        between samples (e.g. 1e-10). Set as 0 when don't need
+                        to define positions based on differential P value, so
+                        binding positions will then be defined only on
+                        occupancy cutoff, and differential P value will be
+                        calculated for each of them. (default: 0)
+  -o , --out            a name for the output directory (default: result)
+  -f , --fdr            set to 0 if need not to calculate FDR values (slow
+                        process). (default: 1)
+  -s , --save           save middle stage files? set to 0 if don't save,
+                        otherwise set to 1 (default: 0)
+  -b , --bg             pairs of paths, each pair secify a genomic background
+                        data set for a MNase-/ChIP-Seq data set, a:b means b
+                        is the background data set for a, put a word 'None'
+                        when a MNase-/ChIP-Seq data set has no background data
+                        set, e.g. file1.bed:bgdir1,dir2/:None,dir3/:bg3.bed,
+                        this function is not recommended for MNase-Seq data
+                        set. (default: None)
+  --------------------------   
+  ---  Position calling  --- 
+  --------------------------    
+  -jw , --width         the window size used for scanning for the summit of
+                        each potential position. (default: 40)
+  -jd , --distance      minimal center-to-center distance between positions,
+                        positions closer than d will be merged as one single
+                        position (default: 100)
+  -jf , --position_reference 
+                        map each defined position to a reference position
+                        provided in the position file by this parameter.
+                        (default: None)
+  -R , --ratio          the ratio between the minimal occupancy flanking a
+                        position and the maximal occupancy in a position, only
+                        positions with values lower than this ratio will be
+                        used for defining position shift events. (default:
+                        0.9)
+  -e , --edge           set to 1 if need to detect edges for each
+                        position,else set to 0 (default: 0)
+  -g , --gapfill        do gap filling? fill the gap between two neighboring
+                        positions with an additional position if the gap size
+                        is close to the a position size, set to 0 if don't
+                        fill, otherwise set to 1 (default: 0)
+  --------------------------     
+  ---occupancy processing--- 
+  --------------------------      
+  -c , --count          specify the count of reads to be normalized to, e.g.
+                        10000000. Or specify the count for each group, e.g.
+                        file1.bed:10000000,dir2/:20000000,dir3/:15000000, Do
+                        this only when you are clear about what you are doing,
+                        e.g. when you have spike-ins to measure the real reads
+                        count in each replicate (default: None)
+  -a , --span           the span or step size in the generated wiggle data
+                        (default: 10)
+  -z , --smooth_width   the smooth width before position calling, set to 0 if
+                        need not to smooth (default: 20)
+  -L , --exclude_low_percent 
+                        the percent of extremely low occupancy positions to be
+                        excluded in determining normalization factors, may be
+                        helpful to avoid the influence of background noise on
+                        normalization (default: 0)
+  -H , --exclude_high_percent 
+                        the percent of extremely high occupancy positions to
+                        be excluded in determining normalization factors, may
+                        be helpful to avoid the influence of some highly
+                        clonal or repeat regions on normalization. (default:
+                        0)
+  -l , --lmd            lambda width for smoothing background data before
+                        background subtraction, ignore this when the parameter
+                        -b is not specified. (default: 300)
+  -n , --nor            data normalization method, could be 'F','S' or 'N',
+                        representing normalization by fold change, normalize
+                        by sampling, or no normalization (default: F)
+  -N , --nor_region_file 
+                        A '.wig' format file to denote the regions that could
+                        be used to calculate normalization factors. Regions to
+                        be used and not used should be assigned a value 1 and
+                        0 in this .wig file, respectively. (default: None)
+  --nonzero             set to 1 if want to normalize basepairs with non-zero
+                        values to have the same average value between
+                        different data sets. This function will be useful when
+                        some data sets has severious clonal effect, E.g. one
+                        data set has non-zero value at 10 percent of base
+                        pairs and each non-zero vase pair has 8 fold clonal
+                        effects, whereas another data set has non-zero value
+                        at 40 percent of base pairs and each non-zero base
+                        pair has 2 fold clonal effects. (default: 0)
+  --------------------------       
+  ---  reads processing  --- 
+  --------------------------        
+  -u , --clonalcut      the cutoff for adjusting clonal signal, set as a P
+                        value larger than 0 and smaller than 1, e.g 1e-10, or
+                        set as a interger reads count, set as 0 if don't need
+                        to adjust clonal signal. (default: 0)
+  --frsz                specify the average size of DNA fragments in the
+                        seuqnecing experiment. By default it is automatically
+                        detected by DANPOS. Ignore this when the input is
+                        wiggle format occupancy data (default: None)
+  --mifrsz              minimal size of the DNA fragments, DANPOS will select
+                        a most probable frsz value within the range between
+                        --mifrsz value and --mafrsz value. ignore this when '
+                        --frsz' has been specified. Ignore this when the input
+                        is wiggle format occupancy data (default: 50)
+  --mafrsz              maximal size of the DNA fragments, DANPOS will select
+                        a most probable frsz value within the range between
+                        --mifrsz value and --mafrsz value. ignore this when '
+                        --frsz' has been specified. Ignore this when the input
+                        is wiggle format occupancy data (default: 300)
+  --extend              specify the size theat each fragment will be adjusted
+                        to, the size of each fragment will be adjusted to this
+                        size when reads data is converted to occupancy data.
+                        Ignore this when the input is wiggle format occupancy
+                        data (default: 80)
+
+Kaifu Chen, et al. chenkaifu@gmail.com, Li lab, Biostatistics department, Dan
+L. Duncan cancer center, Baylor College of Medicine.
 ```
 
 ## danpos_dpeak
 
 ### Tool Description
-The dpeak function in DANPOS is used for calling peaks (nucleosomes) from sequencing data, typically after preprocessing or for specific enrichment analysis.
+Call binding peaks from MNase-/ChIP-Seq data and their changes between samples (DANPOS dpeak).
 
 ### Metadata
 - **Docker Image**: biocontainers/danpos:v2.2.2_cv3
 - **Homepage**: https://sites.google.com/site/danposdoc/
 - **Package**: https://anaconda.org/channels/bioconda/packages/danpos/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 17:24:37  warn rootless{dev/agpgart} creating empty file in place of device 10:175
-2026/02/11 17:24:37  warn rootless{dev/audio} creating empty file in place of device 14:4
-2026/02/11 17:24:37  warn rootless{dev/audio1} creating empty file in place of device 14:20
-2026/02/11 17:24:37  warn rootless{dev/audio2} creating empty file in place of device 14:36
-2026/02/11 17:24:37  warn rootless{dev/audio3} creating empty file in place of device 14:52
-2026/02/11 17:24:37  warn rootless{dev/audioctl} creating empty file in place of device 14:7
-2026/02/11 17:24:37  warn rootless{dev/console} creating empty file in place of device 5:1
-2026/02/11 17:24:37  warn rootless{dev/dsp} creating empty file in place of device 14:3
-2026/02/11 17:24:37  warn rootless{dev/dsp1} creating empty file in place of device 14:19
-2026/02/11 17:24:37  warn rootless{dev/dsp2} creating empty file in place of device 14:35
-2026/02/11 17:24:37  warn rootless{dev/dsp3} creating empty file in place of device 14:51
-2026/02/11 17:24:37  warn rootless{dev/full} creating empty file in place of device 1:7
-2026/02/11 17:24:37  warn rootless{dev/kmem} creating empty file in place of device 1:2
-2026/02/11 17:24:37  warn rootless{dev/loop0} creating empty file in place of device 7:0
-2026/02/11 17:24:37  warn rootless{dev/loop1} creating empty file in place of device 7:1
-2026/02/11 17:24:37  warn rootless{dev/loop2} creating empty file in place of device 7:2
-2026/02/11 17:24:37  warn rootless{dev/loop3} creating empty file in place of device 7:3
-2026/02/11 17:24:37  warn rootless{dev/loop4} creating empty file in place of device 7:4
-2026/02/11 17:24:37  warn rootless{dev/loop5} creating empty file in place of device 7:5
-2026/02/11 17:24:37  warn rootless{dev/loop6} creating empty file in place of device 7:6
-2026/02/11 17:24:37  warn rootless{dev/loop7} creating empty file in place of device 7:7
-2026/02/11 17:24:37  warn rootless{dev/mem} creating empty file in place of device 1:1
-2026/02/11 17:24:37  warn rootless{dev/midi0} creating empty file in place of device 35:0
-2026/02/11 17:24:37  warn rootless{dev/midi00} creating empty file in place of device 14:2
-2026/02/11 17:24:37  warn rootless{dev/midi01} creating empty file in place of device 14:18
-2026/02/11 17:24:37  warn rootless{dev/midi02} creating empty file in place of device 14:34
-2026/02/11 17:24:37  warn rootless{dev/midi03} creating empty file in place of device 14:50
-2026/02/11 17:24:37  warn rootless{dev/midi1} creating empty file in place of device 35:1
-2026/02/11 17:24:37  warn rootless{dev/midi2} creating empty file in place of device 35:2
-2026/02/11 17:24:37  warn rootless{dev/midi3} creating empty file in place of device 35:3
-2026/02/11 17:24:37  warn rootless{dev/mixer} creating empty file in place of device 14:0
-2026/02/11 17:24:37  warn rootless{dev/mixer1} creating empty file in place of device 14:16
-2026/02/11 17:24:37  warn rootless{dev/mixer2} creating empty file in place of device 14:32
-2026/02/11 17:24:37  warn rootless{dev/mixer3} creating empty file in place of device 14:48
-2026/02/11 17:24:37  warn rootless{dev/mpu401data} creating empty file in place of device 31:0
-2026/02/11 17:24:37  warn rootless{dev/mpu401stat} creating empty file in place of device 31:1
-2026/02/11 17:24:37  warn rootless{dev/null} creating empty file in place of device 1:3
-2026/02/11 17:24:37  warn rootless{dev/port} creating empty file in place of device 1:4
-2026/02/11 17:24:37  warn rootless{dev/ram0} creating empty file in place of device 1:0
-2026/02/11 17:24:37  warn rootless{dev/ram1} creating empty file in place of device 1:1
-2026/02/11 17:24:37  warn rootless{dev/ram10} creating empty file in place of device 1:10
-2026/02/11 17:24:37  warn rootless{dev/ram11} creating empty file in place of device 1:11
-2026/02/11 17:24:37  warn rootless{dev/ram12} creating empty file in place of device 1:12
-2026/02/11 17:24:37  warn rootless{dev/ram13} creating empty file in place of device 1:13
-2026/02/11 17:24:37  warn rootless{dev/ram14} creating empty file in place of device 1:14
-2026/02/11 17:24:37  warn rootless{dev/ram15} creating empty file in place of device 1:15
-2026/02/11 17:24:37  warn rootless{dev/ram16} creating empty file in place of device 1:16
-2026/02/11 17:24:37  warn rootless{dev/ram2} creating empty file in place of device 1:2
-2026/02/11 17:24:37  warn rootless{dev/ram3} creating empty file in place of device 1:3
-2026/02/11 17:24:37  warn rootless{dev/ram4} creating empty file in place of device 1:4
-2026/02/11 17:24:37  warn rootless{dev/ram5} creating empty file in place of device 1:5
-2026/02/11 17:24:37  warn rootless{dev/ram6} creating empty file in place of device 1:6
-2026/02/11 17:24:37  warn rootless{dev/ram7} creating empty file in place of device 1:7
-2026/02/11 17:24:37  warn rootless{dev/ram8} creating empty file in place of device 1:8
-2026/02/11 17:24:37  warn rootless{dev/ram9} creating empty file in place of device 1:9
-2026/02/11 17:24:37  warn rootless{dev/random} creating empty file in place of device 1:8
-2026/02/11 17:24:37  warn rootless{dev/rmidi0} creating empty file in place of device 35:64
-2026/02/11 17:24:37  warn rootless{dev/rmidi1} creating empty file in place of device 35:65
-2026/02/11 17:24:37  warn rootless{dev/rmidi2} creating empty file in place of device 35:66
-2026/02/11 17:24:37  warn rootless{dev/rmidi3} creating empty file in place of device 35:67
-2026/02/11 17:24:37  warn rootless{dev/sequencer} creating empty file in place of device 14:1
-2026/02/11 17:24:37  warn rootless{dev/smpte0} creating empty file in place of device 35:128
-2026/02/11 17:24:37  warn rootless{dev/smpte1} creating empty file in place of device 35:129
-2026/02/11 17:24:37  warn rootless{dev/smpte2} creating empty file in place of device 35:130
-2026/02/11 17:24:37  warn rootless{dev/smpte3} creating empty file in place of device 35:131
-2026/02/11 17:24:37  warn rootless{dev/sndstat} creating empty file in place of device 14:6
-2026/02/11 17:24:37  warn rootless{dev/tty} creating empty file in place of device 5:0
-2026/02/11 17:24:37  warn rootless{dev/tty0} creating empty file in place of device 4:0
-2026/02/11 17:24:37  warn rootless{dev/tty1} creating empty file in place of device 4:1
-2026/02/11 17:24:37  warn rootless{dev/tty2} creating empty file in place of device 4:2
-2026/02/11 17:24:37  warn rootless{dev/tty3} creating empty file in place of device 4:3
-2026/02/11 17:24:37  warn rootless{dev/tty4} creating empty file in place of device 4:4
-2026/02/11 17:24:37  warn rootless{dev/tty5} creating empty file in place of device 4:5
-2026/02/11 17:24:37  warn rootless{dev/tty6} creating empty file in place of device 4:6
-2026/02/11 17:24:37  warn rootless{dev/tty7} creating empty file in place of device 4:7
-2026/02/11 17:24:37  warn rootless{dev/tty8} creating empty file in place of device 4:8
-2026/02/11 17:24:37  warn rootless{dev/tty9} creating empty file in place of device 4:9
-2026/02/11 17:24:37  warn rootless{dev/urandom} creating empty file in place of device 1:9
-2026/02/11 17:24:37  warn rootless{dev/zero} creating empty file in place of device 1:5
-FATAL:   Unable to handle docker://biocontainers/danpos:v2.2.2_cv3 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:9ff7e2e5f967fb9c4e8099e63508ab0dddebe3f820d08ca7fd568431b0d10c0e: unpack entry: etc/dpkg/dpkg.cfg.d: mkdirall: unpriv.mkdirall: mkdir /tmp/build-temp-1658898796/rootfs/etc/dpkg/dpkg.cfg.d: no space left on device
-```
+danpos 2.2.2  version
 
+usage: 
+
+python danpos.py  <command>  <path> [optional arguments]
+
+positional arguments:
+  command               set as 'dpeak' to run analysis for each dpeak.
+  path                  Pairs of paths to sequencing data sets. The two paths
+                        in each pair must be seperated by ':', a:b means a
+                        minus b, different pairs must be seperated by ',' e.g.
+                        file1.bed:dir2/,dir3/, each path could point to a file
+                        or a directory containing multiple files, files under
+                        each directory represent multiple replicates for the
+                        same group. suggest to use .sam or .bam format for
+                        input files, please read the documentation for details
+                        about the other supported input formats.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --------------------------         
+  --- general parameters ---         
+  --------------------------          
+  -m , --paired         set to 1 if the input data is mate-pair (paired-end)
+                        reads. Ignore this when the input is wiggle format
+                        occupancy data (default: 0)
+  -p , --pheight        occupancy/intensity P value cutoff for calling
+                        invidual binding peak (default: 1e-10)
+  -q , --height         occupancy/intensity cutoff for calling invidual
+                        binding peak (default: 0)
+  -t , --testcut        P value cutoff for calling differential peak between
+                        samples (e.g. 1e-10). Set as 0 when don't need to
+                        define peaks based on differential P value, so peaks
+                        will then be defined only on occupancy cutoff, and
+                        differential P value will be calculated for each of
+                        them. (default: 0)
+  -o , --out            a name for the output directory (default: result)
+  -f , --fdr            set to 0 if need not to calculate FDR values (slow
+                        process). (default: 1)
+  -s , --save           save middle stage files? set to 0 if don't save,
+                        otherwise set to 1 (default: 0)
+  -b , --bg             pairs of paths, each pair secify a genomic background
+                        data set for a MNase-/ChIP-Seq data set, a:b means b
+                        is the background data set for a, put a word 'None'
+                        when a MNase-/ChIP-Seq data set has no background data
+                        set, e.g. file1.bed:bgdir1,dir2/:None,dir3/:bg3.bed,
+                        this function is not recommended for MNase-Seq data
+                        set. (default: None)
+  --------------------------               
+  ---    peak calling    ---               
+  --------------------------             
+  -kd , --peak_dis      minimal tail-to-head distance (bp) between neighboring
+                        peaks, neighboring peaks closer than -D will be merged
+                        as one single peak (default: 40)
+  -kw , --peak_width    minimal width of each peak (default: 40)
+  -kf , --peak_reference 
+                        Don't call peaks, but retrive values for a set of
+                        reference peaks provided in the peak file by this
+                        parameter. (default: None)
+  --------------------------     
+  ---occupancy processing--- 
+  --------------------------      
+  -c , --count          specify the count of reads to be normalized to, e.g.
+                        10000000. Or specify the count for each group, e.g.
+                        file1.bed:10000000,dir2/:20000000,dir3/:15000000, Do
+                        this only when you are clear about what you are doing,
+                        e.g. when you have spike-ins to measure the real reads
+                        count in each replicate (default: None)
+  -a , --span           the span or step size in the generated wiggle data
+                        (default: 10)
+  -z , --smooth_width   the smooth width before position calling, set to 0 if
+                        need not to smooth (default: 20)
+  -L , --exclude_low_percent 
+                        the percent of extremely low occupancy positions to be
+                        excluded in determining normalization factors, may be
+                        helpful to avoid the influence of background noise on
+                        normalization (default: 0)
+  -H , --exclude_high_percent 
+                        the percent of extremely high occupancy positions to
+                        be excluded in determining normalization factors, may
+                        be helpful to avoid the influence of some highly
+                        clonal or repeat regions on normalization. (default:
+                        0)
+  -l , --lmd            lambda width for smoothing background data before
+                        background subtraction, ignore this when the parameter
+                        -b is not specified. (default: 300)
+  -n , --nor            data normalization method, could be 'F','S' or 'N',
+                        representing normalization by fold change, normalize
+                        by sampling, or no normalization (default: F)
+  -N , --nor_region_file 
+                        A '.wig' format file to denote the regions that could
+                        be used to calculate normalization factors. Regions to
+                        be used and not used should be assigned a value 1 and
+                        0 in this .wig file, respectively. (default: None)
+  --nonzero             set to 1 if want to normalize basepairs with non-zero
+                        values to have the same average value between
+                        different data sets. This function will be useful when
+                        some data sets has severious clonal effect, E.g. one
+                        data set has non-zero value at 10 percent of base
+                        pairs and each non-zero vase pair has 8 fold clonal
+                        effects, whereas another data set has non-zero value
+                        at 40 percent of base pairs and each non-zero base
+                        pair has 2 fold clonal effects. (default: 0)
+  --------------------------       
+  ---  reads processing  --- 
+  --------------------------        
+  -u , --clonalcut      the cutoff for adjusting clonal signal, set as a P
+                        value larger than 0 and smaller than 1, e.g 1e-10, or
+                        set as a interger reads count, set as 0 if don't need
+                        to adjust clonal signal. (default: 0)
+  --frsz                specify the average size of DNA fragments in the
+                        seuqnecing experiment. By default it is automatically
+                        detected by DANPOS. Ignore this when the input is
+                        wiggle format occupancy data (default: None)
+  --mifrsz              minimal size of the DNA fragments, DANPOS will select
+                        a most probable frsz value within the range between
+                        --mifrsz value and --mafrsz value. ignore this when '
+                        --frsz' has been specified. Ignore this when the input
+                        is wiggle format occupancy data (default: 50)
+  --mafrsz              maximal size of the DNA fragments, DANPOS will select
+                        a most probable frsz value within the range between
+                        --mifrsz value and --mafrsz value. ignore this when '
+                        --frsz' has been specified. Ignore this when the input
+                        is wiggle format occupancy data (default: 300)
+  --extend              specify the size theat each fragment will be adjusted
+                        to, the size of each fragment will be adjusted to this
+                        size when reads data is converted to occupancy data.
+                        Ignore this when the input is wiggle format occupancy
+                        data (default: 80)
+
+Kaifu Chen, et al. chenkaifu@gmail.com, Li lab, Biostatistics department, Dan
+L. Duncan cancer center, Baylor College of Medicine.
+```

@@ -1,78 +1,77 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: data_hacks_bar_chart.py
+baseCommand:
+  - bar_chart.py
 label: data_hacks_bar_chart.py
-doc: "A command line tool for creating bar charts from input data.\n\nTool homepage:
-  https://github.com/bitly/data_hacks"
+doc: "Draw an ASCII bar chart of how often each value (one per line) occurs in the
+  input, read from stdin.\n\nTool homepage: https://github.com/bitly/data_hacks"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: Input file containing data points (defaults to stdin if not provided)
-    inputBinding:
-      position: 1
-  - id: aggregate
+    type: File
+    doc: Input data, one value per line (or two columns with --agg / 
+      --agg-key-value); passed to the tool on stdin
+  - id: agg
     type:
       - 'null'
       - boolean
-    doc: Aggregate data
+    doc: Two column input format, space seperated with value<space>key
     inputBinding:
       position: 102
       prefix: --agg
-  - id: format
-    type:
-      - 'null'
-      - string
-    doc: Format of the output
-    inputBinding:
-      position: 102
-      prefix: --format
-  - id: keys
+  - id: agg_key_value
     type:
       - 'null'
       - boolean
-    doc: Data contains keys
+    doc: Two column input format, space seperated with key<space>value
     inputBinding:
       position: 102
-      prefix: --keys
-  - id: numeric
+      prefix: --agg-key-value
+  - id: sort_keys
     type:
       - 'null'
       - boolean
-    doc: Sort numerically
+    doc: sort by the key [default]
     inputBinding:
       position: 102
-      prefix: --numeric
-  - id: reverse
+      prefix: --sort-keys
+  - id: sort_values
     type:
       - 'null'
       - boolean
-    doc: Reverse the sort order
+    doc: sort by the frequence
     inputBinding:
       position: 102
-      prefix: --reverse
-  - id: sort
+      prefix: --sort-values
+  - id: reverse_sort
     type:
       - 'null'
       - boolean
-    doc: Sort the output
+    doc: reverse the sort
     inputBinding:
       position: 102
-      prefix: --sort
-  - id: width
+      prefix: --reverse-sort
+  - id: numeric_sort
     type:
       - 'null'
-      - int
-    doc: Width of the bar chart
+      - boolean
+    doc: sort keys by numeric sequencing
     inputBinding:
       position: 102
-      prefix: --width
+      prefix: --numeric-sort
+  - id: percentage
+    type:
+      - 'null'
+      - boolean
+    doc: List percentage for each bar
+    inputBinding:
+      position: 102
+      prefix: --percentage
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: ASCII bar chart
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/data_hacks:0.3.1--py27_0
+stdin: $(inputs.input_file.path)
 stdout: data_hacks_bar_chart.py.out

@@ -1,5 +1,11 @@
 # daisyblast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| daisyblast | PASS |  |
+
 ## daisyblast
 
 ### Tool Description

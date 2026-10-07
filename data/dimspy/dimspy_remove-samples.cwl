@@ -10,10 +10,11 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --sample-names
     doc: Sample name(s)
     inputBinding:
       position: 101
-      prefix: --sample-names
   - id: source
     type: File
     doc: HDF5 file that contains a peak matrix object or list of peaklist 

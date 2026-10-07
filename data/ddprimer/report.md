@@ -1,5 +1,11 @@
 # ddprimer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ddprimer | PASS |  |
+
 ## ddprimer
 
 ### Tool Description

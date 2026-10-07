@@ -1,5 +1,24 @@
 # diamond CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| diamond_blastp | PASS |  |
+| diamond_blastx | PASS |  |
+| diamond_cluster | PASS |  |
+| diamond_dbinfo | PASS |  |
+| diamond_getseq | PASS |  |
+| diamond_greedy-vertex-cover | PASS |  |
+| diamond_linclust | PASS |  |
+| diamond_makedb | PASS |  |
+| diamond_makeidx | PASS |  |
+| diamond_merge-daa | PASS |  |
+| diamond_realign | PASS |  |
+| diamond_reassign | Failed | tool bug: diamond 2.1.24 reassign stops with 'Error: Block::ids()' for both FASTA and .dmnd databases with a valid clustering file. |
+| diamond_recluster | PASS |  |
+| diamond_view | PASS |  |
+
 ## diamond_makedb
 
 ### Tool Description

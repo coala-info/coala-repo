@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - debarcer.py
+  - debarcer
   - collapse
 label: debarcer_collapse
 doc: "Collapse UMIs based on various criteria.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
@@ -11,6 +11,8 @@ inputs:
       - 'null'
       - File
     doc: Path to the BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --Bamfile
@@ -50,7 +52,7 @@ inputs:
   - id: ignore_orphans
     type:
       - 'null'
-      - boolean
+      - string
     doc: Ignore orphans (paired reads that are not in a proper pair).
     inputBinding:
       position: 101
@@ -115,7 +117,7 @@ inputs:
   - id: truncate
     type:
       - 'null'
-      - boolean
+      - string
     doc: If truncate is True and a region is given, only pileup columns in the 
       exact region specificied are returned.
     inputBinding:

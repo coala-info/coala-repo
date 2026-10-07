@@ -19,11 +19,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --input
     doc: Multiple HDF5 files that contain peaklists or peak matrix from one of 
       the processing steps.
     inputBinding:
       position: 101
-      prefix: --input
   - id: output_path
     type: string
     inputBinding:
@@ -31,9 +32,8 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: Directory
-    doc: Directory (if using multilist column in filelist) or HDF5 file to write
-      to.
+    type: File
+    doc: HDF5 file to write to (without a multilist column in the filelist).
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

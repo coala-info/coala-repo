@@ -136,6 +136,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: seed_index
+    type: File
+    doc: Seed index written beside the database (<db>.seed_idx)
+    secondaryFiles:
+      - pattern: ^
+        required: false
+    outputBinding:
+      glob: $(inputs.db.basename).seed_idx
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.db)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/diamond:2.1.24--hf93d47f_0

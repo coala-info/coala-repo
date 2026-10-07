@@ -1,38 +1,11 @@
 # ddocent CWL Generation Report
 
-## ddocent_dDocent
+## Real Data Test
 
-### Tool Description
-dDocent 2.9.8
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0
-- **Homepage**: https://ddocent.com
-- **Package**: https://anaconda.org/channels/bioconda/packages/ddocent/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ddocent/overview
-- **Total Downloads**: 116.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/jpuritz/dDocent
-- **Stars**: N/A
-### Original Help Text
-```text
-dDocent 2.9.8 
-
-Contact jpuritz@uri.edu with any problems 
-
- 
-Checking for required software
-
-All required software is installed!
-
-dDocent version 2.9.8 started Wed Feb 25 06:22:11 AM UTC 2026 
-
-0 individuals are detected. Is this correct? Enter yes or no and press [ENTER]
-Incorrect Input
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| ddocent_RefMapOpt.sh | PASS |  |
+| ddocent_ReferenceOpt.sh | PASS |  |
 
 ## ddocent_ReferenceOpt.sh
 

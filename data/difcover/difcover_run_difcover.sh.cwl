@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: difcover_run_difcover.sh
+baseCommand: run_difcover.sh
 label: difcover_run_difcover.sh
 doc: "Stage 1\n\nTool homepage: https://github.com/timnat/DifCover"
 inputs:

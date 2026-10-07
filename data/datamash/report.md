@@ -1,5 +1,80 @@
 # datamash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| datamash_absmax | PASS |  |
+| datamash_absmin | PASS |  |
+| datamash_antimode | PASS |  |
+| datamash_barename | PASS |  |
+| datamash_base64 | PASS |  |
+| datamash_basename | PASS |  |
+| datamash_bin | PASS |  |
+| datamash_ceil | PASS |  |
+| datamash_check | PASS |  |
+| datamash_collapse | PASS |  |
+| datamash_count | PASS |  |
+| datamash_countunique | PASS |  |
+| datamash_crosstab | PASS |  |
+| datamash_cut | PASS |  |
+| datamash_debase64 | PASS |  |
+| datamash_dirname | PASS |  |
+| datamash_dotprod | PASS |  |
+| datamash_dpo | PASS |  |
+| datamash_extname | PASS |  |
+| datamash_first | PASS |  |
+| datamash_floor | PASS |  |
+| datamash_frac | PASS |  |
+| datamash_geomean | PASS |  |
+| datamash_getnum | PASS |  |
+| datamash_groupby | PASS |  |
+| datamash_harmmean | PASS |  |
+| datamash_iqr | PASS |  |
+| datamash_jarque | PASS |  |
+| datamash_last | PASS |  |
+| datamash_mad | PASS |  |
+| datamash_madraw | PASS |  |
+| datamash_max | PASS |  |
+| datamash_md5 | PASS |  |
+| datamash_mean | PASS |  |
+| datamash_median | PASS |  |
+| datamash_min | PASS |  |
+| datamash_mode | PASS |  |
+| datamash_ms | PASS |  |
+| datamash_pcov | PASS |  |
+| datamash_perc | PASS |  |
+| datamash_pkurt | PASS |  |
+| datamash_ppearson | PASS |  |
+| datamash_pskew | PASS |  |
+| datamash_pstdev | PASS |  |
+| datamash_pvar | PASS |  |
+| datamash_q1 | PASS |  |
+| datamash_q3 | PASS |  |
+| datamash_rand | PASS |  |
+| datamash_range | PASS |  |
+| datamash_reverse | PASS |  |
+| datamash_rmdup | PASS |  |
+| datamash_rms | PASS |  |
+| datamash_round | PASS |  |
+| datamash_scov | PASS |  |
+| datamash_sha1 | PASS |  |
+| datamash_sha224 | PASS |  |
+| datamash_sha256 | PASS |  |
+| datamash_sha384 | PASS |  |
+| datamash_sha512 | PASS |  |
+| datamash_skurt | PASS |  |
+| datamash_spearson | PASS |  |
+| datamash_sskew | PASS |  |
+| datamash_sstdev | PASS |  |
+| datamash_strbin | PASS |  |
+| datamash_sum | PASS |  |
+| datamash_svar | PASS |  |
+| datamash_transpose | PASS |  |
+| datamash_trimmean | PASS |  |
+| datamash_trunc | PASS |  |
+| datamash_unique | PASS |  |
+
 ## datamash_groupby
 
 ### Tool Description

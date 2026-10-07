@@ -128,7 +128,7 @@ inputs:
     doc: Output or path parameter `loadings_output_file_path`
     inputBinding:
       position: 102
-      prefix: --loadings-output-file
+      prefix: -loadings_out
   - id: mc_output_file_path
     type:
       - 'null'
@@ -136,7 +136,7 @@ inputs:
     doc: Output or path parameter `mc_output_file_path`
     inputBinding:
       position: 103
-      prefix: --mc-output-file
+      prefix: -mc_out
   - id: output_file_path
     type:
       - 'null'

@@ -4,43 +4,37 @@ baseCommand:
   - datafunk
   - snp_finder
 label: datafunk_snp_finder
-doc: "Find SNPs from alignment files.\n\nTool homepage: https://github.com/cov-ert/datafunk"
+doc: "Query an alignment position for informative SNP\n\nTool homepage: https://github.com/cov-ert/datafunk"
 inputs:
   - id: alignment_file
     type: File
-    doc: Path to the alignment file (e.g., BAM, CRAM).
+    doc: Alignment (to Wuhan-Hu-1 / WH04) in FASTA format
     inputBinding:
       position: 101
       prefix: -a
-  - id: output_directory_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_directory_path`
+  - id: snp_csv
+    type: File
+    doc: 'CSV with a header line and the SNPs to type, format: 
+      name,location,nuc1,label1,nuc2,label2 (e.g. D614G,23403,A,D,G,G)'
+    inputBinding:
+      position: 101
+      prefix: --snp-csv
+  - id: output_path
+    type: string
+    doc: CSV file with the typing results to write
     inputBinding:
       position: 102
-      prefix: --output-directory
-  - id: snp_output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `snp_output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --snp-output-file
+      prefix: -o
 outputs:
-  - id: snp_output_file
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_file
     type: File
-    doc: Path to write the output SNP file.
+    doc: SNP typing results
     outputBinding:
-      glob: $(inputs.snp_output_file_path)
-  - id: output_directory
-    type: Directory
-    doc: Directory to save the output files.
-    outputBinding:
-      glob: $(inputs.output_directory_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
+stdout: datafunk_snp_finder.out

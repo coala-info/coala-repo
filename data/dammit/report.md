@@ -1,5 +1,13 @@
 # dammit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dammit_annotate | PASS |  |
+| dammit_databases | Failed | tool problem: --install fetches BUSCO from a dead URL (busco.ezlab.org/v2, HTTP 404) and the image's tar has no -z, so it exits 0 with an empty database folder. |
+| dammit_migrate | PASS | Tested on an old-layout OrthoDB-style LAST database built with lastdb from dammit's own test proteins. |
+
 ## dammit_migrate
 
 ### Tool Description

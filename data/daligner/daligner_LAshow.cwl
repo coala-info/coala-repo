@@ -4,115 +4,128 @@ baseCommand: LAshow
 label: daligner_LAshow
 doc: "Display local alignments produced by daligner in a human-readable format.\n\n
   Tool homepage: https://github.com/thegenemyers/DALIGNER"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: src
     type: File
     doc: The source database or dam file (.db or .dam)
     inputBinding:
       position: 1
-  - id: align
+    secondaryFiles:
+      - pattern: '${ return "." + self.nameroot + ".idx"; }'
+      - pattern: '${ return "." + self.nameroot + ".bps"; }'
+      - pattern: '${ return "." + self.nameroot + ".hdr"; }'
+        required: false
+  - id: src2
     type:
       - 'null'
       - File
-    doc: The alignment file (.las)
+    doc: Second source database or dam file (.db or .dam) when the B-reads come
+      from another database
     inputBinding:
       position: 2
+    secondaryFiles:
+      - pattern: '${ return "." + self.nameroot + ".idx"; }'
+      - pattern: '${ return "." + self.nameroot + ".bps"; }'
+      - pattern: '${ return "." + self.nameroot + ".hdr"; }'
+        required: false
+  - id: align
+    type: File
+    doc: The alignment file (.las)
+    inputBinding:
+      position: 3
   - id: reads
     type:
       - 'null'
       - type: array
         items: string
-    doc: Optional range of reads to display
+    doc: Optional reads or read ranges to display (for example 1-10)
     inputBinding:
-      position: 3
+      position: 4
+  - id: reads_file
+    type:
+      - 'null'
+      - File
+    doc: Optional file listing the reads to display
+    inputBinding:
+      position: 5
+  - id: cartoon
+    type:
+      - 'null'
+      - boolean
+    doc: Show a cartoon of the LA between reads.
+    inputBinding:
+      position: 0
+      prefix: -c
   - id: all_alignments
     type:
       - 'null'
       - boolean
-    doc: Show all alignments
+    doc: Show the alignment of each LA.
     inputBinding:
-      position: 104
+      position: 0
       prefix: -a
-  - id: border
-    type:
-      - 'null'
-      - int
-    doc: Border size for the alignment display
-    inputBinding:
-      position: 104
-      prefix: -b
-  - id: coordinates
+  - id: reference_rows
     type:
       - 'null'
       - boolean
-    doc: Show coordinates
+    doc: Show the alignment of each LA with -w bp's of A in each row.
     inputBinding:
-      position: 104
-      prefix: -c
-  - id: indent
-    type:
-      - 'null'
-      - boolean
-    doc: Indent the alignment
-    inputBinding:
-      position: 104
-      prefix: -i
-  - id: list_format
-    type:
-      - 'null'
-      - boolean
-    doc: Display in list format
-    inputBinding:
-      position: 104
-      prefix: -l
+      position: 0
+      prefix: -r
   - id: only_overlaps
     type:
       - 'null'
       - boolean
-    doc: Show only overlaps
+    doc: Show only proper overlaps.
     inputBinding:
-      position: 104
+      position: 0
       prefix: -o
-  - id: show_alignment
+  - id: flip_roles
     type:
       - 'null'
       - boolean
-    doc: Show the alignment
+    doc: Switch the roles of A- and B-reads.
     inputBinding:
-      position: 104
-      prefix: -s
-  - id: trace_points
-    type:
-      - 'null'
-      - boolean
-    doc: Show trace points
-    inputBinding:
-      position: 104
-      prefix: -t
+      position: 0
+      prefix: -F
   - id: upper_case
     type:
       - 'null'
       - boolean
-    doc: Show sequences in upper case
+    doc: Show alignments in upper case.
     inputBinding:
-      position: 104
-      prefix: -u
-  - id: verbose
+      position: 0
+      prefix: -U
+  - id: indent
     type:
       - 'null'
-      - boolean
-    doc: Verbose mode
+      - int
+    doc: Indent alignments and cartoons by -i. Default 4.
     inputBinding:
-      position: 104
-      prefix: -v
+      position: 0
+      prefix: -i
+      separate: false
   - id: width
     type:
       - 'null'
       - int
-    doc: Width of the alignment display
+    doc: Width of each row of alignment in symbols (-a) or bps (-r). Default
+      100.
     inputBinding:
-      position: 104
+      position: 0
       prefix: -w
+      separate: false
+  - id: border
+    type:
+      - 'null'
+      - int
+    doc: Number of border bp.s to show on each side of LA. Default 10.
+    inputBinding:
+      position: 0
+      prefix: -b
+      separate: false
 outputs:
   - id: stdout
     type: stdout

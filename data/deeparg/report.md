@@ -1,5 +1,13 @@
 # deeparg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deeparg_download_data | Not completed | Downloads the full 1.9 GB deepARG data archive from Zenodo, too large for this test. |
+| deeparg_predict | PASS |  |
+| deeparg_short_reads_pipeline | Not completed | Needs the 2.5 GB gg13 16S bowtie2 index from the full deepARG data, too large for this test. |
+
 ## deeparg_predict
 
 ### Tool Description

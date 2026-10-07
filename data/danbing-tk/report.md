@@ -1,5 +1,11 @@
 # danbing-tk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| danbing-tk | Not completed | No usable test graph: the CWL runs on the repo's tiny QC graph, but 0 reads from the HG002 haplotypes are assigned, so the counts cannot be confirmed; a real graph is multi-GB or must be built with other package tools. |
+
 ## danbing-tk
 
 ### Tool Description

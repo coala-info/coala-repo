@@ -94,7 +94,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Filename for the program log.
     inputBinding:
       position: 101
@@ -302,13 +302,13 @@ outputs:
       new directory for each run.
     outputBinding:
       glob: $(inputs.output_directory_path)
-  - id: prefix_files
+  - id: log_output
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      - 'null'
+      - File
+    doc: Program log written to the file named in log_file
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

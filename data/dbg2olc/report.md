@@ -1,9 +1,18 @@
 # dbg2olc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dbg2olc_DBG2OLC | PASS |  |
+| dbg2olc_SelectLongestReads | PASS |  |
+| dbg2olc_Sparc | PASS |  |
+| dbg2olc_SparseAssembler | PASS |  |
+
 ## dbg2olc_SparseAssembler
 
 ### Tool Description
-Sparse assembler for long reads.
+Sparse de Bruijn graph assembler for short reads (makes the contigs for DBG2OLC).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dbg2olc:20200723--h077b44d_4
@@ -62,7 +71,7 @@ Error! Genome size not given.
 ## dbg2olc_DBG2OLC
 
 ### Tool Description
-DBG2OLC is a tool for correcting long reads using a de Bruijn graph.
+Hybrid assembly of long reads using de Bruijn graph contigs from short reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dbg2olc:20200723--h077b44d_4
@@ -72,7 +81,7 @@ DBG2OLC is a tool for correcting long reads using a de Bruijn graph.
 
 ### Original Help Text
 ```text
-Example command: 
+ Example command: 
 For third-gen sequencing: DBG2OLC LD1 0 Contigs contig.fa k 17 KmerCovTh 2 MinOverlap 20 AdaptiveTh 0.005 f reads_file1.fq/fa f reads_file2.fq/fa
 For sec-gen sequencing: DBG2OLC LD1 0 Contigs contig.fa k 31 KmerCovTh 0 MinOverlap 50 PathCovTh 1 f reads_file1.fq/fa f reads_file2.fq/fa
 Parameters:
@@ -102,7 +111,7 @@ Loading long read index
 ## dbg2olc_Sparc
 
 ### Tool Description
-dbg2olc_Sparc tool for generating consensus sequences.
+Consensus (polishing) of a backbone sequence from reads mapped with blasr -m 5.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dbg2olc:20200723--h077b44d_4

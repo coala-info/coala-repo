@@ -34,7 +34,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: path to output folder
+    doc: Path to output folder (created in the working directory before the run)
+    default: dampa_output
     inputBinding:
       position: 101
       prefix: --outputfolder
@@ -66,13 +67,6 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outputprefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in outputprefix
-    outputBinding:
-      glob: $(inputs.outputprefix)*
   - id: outputfolder_dir
     type:
       - 'null'
@@ -80,6 +74,11 @@ outputs:
     doc: path to output folder
     outputBinding:
       glob: $(inputs.outputfolder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return {"class": "Directory", "basename": inputs.outputfolder, "listing": [], "writable": true}; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dampa:0.2.0--pyhdfd78af_0

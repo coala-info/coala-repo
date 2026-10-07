@@ -1,5 +1,11 @@
 # deeplc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deeplc | PASS |  |
+
 ## deeplc
 
 ### Tool Description

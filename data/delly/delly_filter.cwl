@@ -8,7 +8,10 @@ doc: "Filter SV calls in a BCF file\n\nTool homepage: https://github.com/dellyto
 inputs:
   - id: input_bcf
     type: File
-    doc: Input BCF file
+    doc: Input BCF file (indexed)
+    secondaryFiles:
+      - pattern: .csi
+        required: true
     inputBinding:
       position: 1
   - id: filter_mode
@@ -135,6 +138,9 @@ outputs:
       - 'null'
       - File
     doc: Filtered SV BCF output file
+    secondaryFiles:
+      - pattern: .csi
+        required: false
     outputBinding:
       glob: $(inputs.outfile_path)
 requirements:

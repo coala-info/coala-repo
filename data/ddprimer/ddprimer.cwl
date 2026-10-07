@@ -15,22 +15,27 @@ inputs:
   - id: config
     type:
       - 'null'
-      - string
-    doc: Configuration file path. With no arguments, shows config help mode.
+      - File
+    doc: Configuration file (JSON).
     inputBinding:
       position: 101
       prefix: --config
   - id: db
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Create or select a BLAST database. With no arguments, shows database 
-      selection menu.Optionally use FASTA file path argument to create 
-      database,optional second argument to determine database name.
+      - File
+    doc: FASTA file to create a BLAST database from (created in the output 
+      directory)
     inputBinding:
-      position: 101
+      position: 99
       prefix: --db
+  - id: db_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the BLAST database created from --db
+    inputBinding:
+      position: 100
   - id: debug
     type:
       - 'null'
@@ -44,7 +49,7 @@ inputs:
   - id: direct
     type:
       - 'null'
-      - string
+      - File
     doc: Enable target-sequence based primer design workflow using CSV/Excel 
       input.
     inputBinding:
@@ -54,6 +59,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference genome FASTA file
     inputBinding:
       position: 101
@@ -62,6 +70,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: GFF annotation file
     inputBinding:
       position: 101
@@ -85,7 +96,7 @@ inputs:
   - id: remap
     type:
       - 'null'
-      - string
+      - File
     doc: Enable primer remapping and re-evaluation workflow using CSV/Excel 
       input.
     inputBinding:
@@ -103,18 +114,23 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Variant Call Format (VCF) file with variants
     inputBinding:
       position: 101
       prefix: --vcf
   - id: output_dir_path
     type: string?
+    doc: Output directory
+    default: ddprimer_output
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output_dir
-    type: Directory?
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir_path)

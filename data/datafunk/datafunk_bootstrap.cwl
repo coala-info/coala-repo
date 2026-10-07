@@ -5,6 +5,8 @@ baseCommand:
   - bootstrap
 label: datafunk_bootstrap
 doc: "bootstrap an alignment\n\nTool homepage: https://github.com/cov-ert/datafunk"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: input_fasta
     type: File
@@ -38,7 +40,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : 'bootstrap_') + '*')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

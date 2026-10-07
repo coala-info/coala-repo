@@ -7,12 +7,12 @@ label: deepbinner_refine
 doc: "Refine the training set\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:
   - id: training_data
-    type: string
+    type: File
     doc: Balanced training data produced by the balance command
     inputBinding:
       position: 1
   - id: classification_data
-    type: string
+    type: File
     doc: Training data barcode calls produced by the classify command
     inputBinding:
       position: 2

@@ -3,15 +3,21 @@ class: CommandLineTool
 baseCommand: dart
 label: dart
 doc: "DART v1.4.6 (Hsin-Nan Lin & Wen-Lian Hsu)\n\nTool homepage: https://github.com/hsinnan75/Dart"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: alignment_output_bam
-    type: boolean
+    type:
+      - 'null'
+      - string
     doc: alignment filename in BAM format
     inputBinding:
       position: 101
       prefix: -bo
   - id: alignment_output_sam
-    type: boolean
+    type:
+      - 'null'
+      - string
     doc: alignment filename in SAM format
     inputBinding:
       position: 101
@@ -25,11 +31,18 @@ inputs:
       position: 101
       prefix: -all_sj
   - id: index_prefix
-    type: string
-    doc: Index_Prefix
+    type: File
+    doc: BWT index made by bwt_index; give the .bwt file, the other index files
+      (.amb, .ann, .pac, .sa) must sit beside it
+    secondaryFiles:
+      - ^.amb
+      - ^.ann
+      - ^.pac
+      - ^.sa
     inputBinding:
       position: 101
       prefix: -i
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: interlaced_paired_end_reads
     type:
       - 'null'
@@ -41,7 +54,7 @@ inputs:
   - id: junction_output_file
     type:
       - 'null'
-      - File
+      - string
     doc: splice junction output filename
     inputBinding:
       position: 101
@@ -123,6 +136,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sam_output
+    type:
+      - 'null'
+      - File
+    doc: alignment in SAM format
+    outputBinding:
+      glob: $(inputs.alignment_output_sam)
+  - id: bam_output
+    type:
+      - 'null'
+      - File
+    doc: alignment in BAM format
+    outputBinding:
+      glob: $(inputs.alignment_output_bam)
+  - id: junctions
+    type:
+      - 'null'
+      - File
+    doc: splice junction output
+    outputBinding:
+      glob: "$(inputs.junction_output_file ? inputs.junction_output_file : 'junctions.tab')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dart:1.4.6--h13024bc_7

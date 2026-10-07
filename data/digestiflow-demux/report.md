@@ -1,5 +1,11 @@
 # digestiflow-demux CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| digestiflow-demux | Not completed | pipeline, skipped: it runs a Snakemake demultiplexing workflow that needs a Digestiflow web server for the sample sheet, and the image has no bcl2fastq or Picard. |
+
 ## digestiflow-demux
 
 ### Tool Description

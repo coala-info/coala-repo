@@ -1,9 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cmp
+baseCommand:
+  - cmp
 label: diffutils_cmp
-doc: "Compare two files byte by byte. (Note: The provided help text contained a system
-  error; arguments are based on standard diffutils cmp usage).\n\nTool homepage: https://github.com/uutils/diffutils"
+doc: "Compare two files byte by byte.\n\nTool homepage: https://www.gnu.org/software/diffutils/"
 inputs:
   - id: file1
     type: File
@@ -42,8 +42,9 @@ inputs:
   - id: ignore_initial
     type:
       - 'null'
-      - int
-    doc: Skip first SKIP bytes of both inputs
+      - string
+    doc: Skip first SKIP bytes of both inputs, or SKIP1:SKIP2 to skip SKIP1 
+      bytes of FILE1 and SKIP2 bytes of FILE2
     inputBinding:
       position: 105
       prefix: --ignore-initial
@@ -67,7 +68,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output byte numbers and values for all differing bytes
+    doc: Output byte numbers and differing byte values
     inputBinding:
       position: 105
       prefix: --verbose
@@ -79,3 +80,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/diffutils:3.10
 stdout: diffutils_cmp.out
+successCodes:
+  - 0
+  - 1

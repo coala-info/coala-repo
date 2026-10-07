@@ -37,6 +37,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: converted_model
+    type: File
+    doc: Rebuilt model (<model>_converted.h5; with --init the model file is 
+      overwritten)
+    outputBinding:
+      glob: '$(inputs.init ? inputs.model.basename : inputs.model.nameroot + "_converted.h5")'
+  - id: weights_file
+    type:
+      - 'null'
+      - File
+    doc: Weights extracted from the saved model (<model>_weights.h5)
+    outputBinding:
+      glob: $(inputs.model.nameroot)_weights.h5
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.model)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepac:0.14.1--pyhdfd78af_0

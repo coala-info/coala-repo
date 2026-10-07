@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sketch
+baseCommand:
+  - dashing
+  - sketch
 label: dashing_sketch
 doc: "Sketching genomes with sketch: 0/HLL/HyperLogLog\n\nTool homepage: https://github.com/dnbaker/dashing"
 inputs:
@@ -124,7 +126,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set prefix for sketch file locations [empty]
+    doc: Set prefix (an existing folder) for sketch file locations. Default here
+      is the working folder, because the tool otherwise writes beside the 
+      read-only input genomes.
+    default: .
     inputBinding:
       position: 102
       prefix: --prefix
@@ -284,6 +289,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sketches
+    type:
+      type: array
+      items: File
+    doc: Sketch files (<genome>.w.<k>.spacing...<sketch size>.<hll|bmh|rmh|bf|khs|...>)
+    outputBinding:
+      glob: $(inputs.prefix)/*.spacing*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dashing:1.0--h5b0a936_3

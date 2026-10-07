@@ -237,13 +237,17 @@ inputs:
       position: 101
       prefix: --strand
   - id: un
-    type: string
+    type:
+      - 'null'
+      - string
     doc: file for unaligned queries
     inputBinding:
       position: 101
       prefix: --un
   - id: al
-    type: string
+    type:
+      - 'null'
+      - string
     doc: file or aligned queries
     inputBinding:
       position: 101
@@ -355,7 +359,8 @@ inputs:
   - id: outfmt
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: output format (0, 5, 6, 100, 101, 102, 103, 104)
     inputBinding:
       position: 101

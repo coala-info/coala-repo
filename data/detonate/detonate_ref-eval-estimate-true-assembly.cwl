@@ -30,11 +30,13 @@ inputs:
       position: 101
       prefix: --alignment-policy
   - id: expression
-    type: string
-    doc: The prefix of the expression built by rsem-calculate-expression.
+    type: File
+    doc: The <prefix>.transcript.sorted.bam file written by 
+      rsem-calculate-expression; its prefix is passed to --expression.
     inputBinding:
       position: 101
       prefix: --expression
+      valueFrom: $(self.path.replace(/\.transcript\.sorted\.bam$/, ''))
   - id: min_alignment_prob
     type:
       - 'null'
@@ -78,11 +80,13 @@ inputs:
       position: 101
       prefix: --paired-end
   - id: reference
-    type: string
-    doc: The prefix of the reference built by rsem-prepare-reference.
+    type: File
+    doc: The <prefix>.transcripts.fa file built by rsem-prepare-reference; its
+      prefix is passed to --reference.
     inputBinding:
       position: 101
       prefix: --reference
+      valueFrom: $(self.path.replace(/\.transcripts\.fa$/, ''))
   - id: assembly_path
     type: string
     inputBinding:

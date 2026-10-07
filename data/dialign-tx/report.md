@@ -1,5 +1,11 @@
 # dialign-tx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dialign-tx | PASS |  |
+
 ## dialign-tx
 
 ### Tool Description

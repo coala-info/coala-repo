@@ -25,6 +25,9 @@ outputs:
     doc: output file
     outputBinding:
       glob: $(inputs.output_file_path)
+    secondaryFiles:
+      - pattern: _check
+        required: false
 requirements:
   - class: InlineJavascriptRequirement
 hints:

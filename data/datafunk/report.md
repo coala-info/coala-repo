@@ -1,5 +1,34 @@
 # datafunk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| datafunk_AA_finder | PASS |  |
+| datafunk_add_epi_week | PASS |  |
+| datafunk_add_header_column | PASS |  |
+| datafunk_bootstrap | PASS |  |
+| datafunk_clean_names | PASS | Matches the repo's expected output except for float formatting. |
+| datafunk_curate_lineages | PASS | The repo's sample traits.csv crashes the current code; it passed after reordering its columns to the layout the code reads. |
+| datafunk_del_finder | PASS |  |
+| datafunk_distance_to_root | PASS |  |
+| datafunk_exclude_uk_seqs | PASS |  |
+| datafunk_extract_unannotated_seqs | PASS |  |
+| datafunk_filter_fasta_by_covg_and_length | PASS |  |
+| datafunk_get_CDS | PASS | Nucleotide CDS output is correct; --translate crashes on gapped alignments (Biopython TranslationError). |
+| datafunk_gisaid_json_2_metadata | Not completed | Needs a GISAID JSON dump (restricted access); no public test data. |
+| datafunk_mask | PASS |  |
+| datafunk_merge_fasta | PASS |  |
+| datafunk_pad_alignment | Failed | tool bug: the subcommand is registered under its full usage string, so 'datafunk pad_alignment' is rejected as an invalid choice. |
+| datafunk_phylotype_consensus | Failed | image problem: mafft is not in the image, so clades with more than 2 sequences fail (mafft: command not found). |
+| datafunk_process_gisaid_data | Not completed | Needs a GISAID JSON dump (restricted access); no public test data. |
+| datafunk_process_gisaid_sequence_data | Failed | tool bug: the subcommand reads options.output-fasta and crashes with AttributeError on every run. |
+| datafunk_remove_fasta | PASS |  |
+| datafunk_repair_names | PASS |  |
+| datafunk_sam_2_fasta | PASS |  |
+| datafunk_set_uniform_header | PASS |  |
+| datafunk_snp_finder | PASS |  |
+
 ## datafunk_repair_names
 
 ### Tool Description
@@ -122,24 +151,6 @@ TypeError: expected str, bytes or os.PathLike object, not NoneType
 ```
 
 
-## datafunk_duplicates
-
-### Tool Description
-Subcommand for datafunk. The provided help text indicates 'duplicates' is an invalid choice, suggesting it might be a placeholder or an incorrect subcommand name. The valid subcommands are listed.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'duplicates' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
 ## datafunk_filter_fasta_by_covg_and_length
 
 ### Tool Description
@@ -170,42 +181,6 @@ optional arguments:
                         Output file name for resulting filtered FASTA (default
                         adds .filtered to input file name)
   -v, --verbose         Run with high verbosity (debug level logging)
-```
-
-
-## datafunk_Removes
-
-### Tool Description
-A command-line tool with various subcommands for data manipulation and analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'Removes' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
-## datafunk_falls
-
-### Tool Description
-Subcommand 'falls' is not a valid subcommand for datafunk. Please choose from the available subcommands.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'falls' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
 ```
 
 
@@ -241,24 +216,6 @@ optional arguments:
   --exclude-uk          Removes all GISAID entries with containing England,
                         Ireland, Scotland or Wales
   --exclude-undated     Removes all GISAID entries with an incomplete date
-```
-
-
-## datafunk_Process
-
-### Tool Description
-Process GISAID sequence data
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'Process' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
 ```
 
 
@@ -338,42 +295,6 @@ optional arguments:
 ```
 
 
-## datafunk_Split
-
-### Tool Description
-Split a fasta file into multiple files based on padding.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'Split' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
-## datafunk_consensus
-
-### Tool Description
-Subcommand for datafunk, specifically 'consensus'. The available subcommands for datafunk are: 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'consensus' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
 ## datafunk_gisaid_json_2_metadata
 
 ### Tool Description
@@ -409,42 +330,6 @@ required arguments:
 optional arguments:
   -l lineages.csv, --lineages lineages.csv
                         csv file of ineages to include
-```
-
-
-## datafunk_Add
-
-### Tool Description
-A collection of bioinformatics tools for sequence data processing.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'Add' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
-## datafunk_metadata
-
-### Tool Description
-A collection of bioinformatics tools for data processing and analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'metadata' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
 ```
 
 
@@ -499,24 +384,6 @@ optional arguments:
 ```
 
 
-## datafunk_fasta
-
-### Tool Description
-A collection of bioinformatics tools for sequence data manipulation and analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'fasta' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
 ## datafunk_add_epi_week
 
 ### Tool Description
@@ -544,24 +411,6 @@ optional arguments:
                         Column name for epi week column
   --epi-day-column-name EPI_DAY_COLUMN_NAME
                         Column name for epi day column
-```
-
-
-## datafunk_optionally
-
-### Tool Description
-A collection of bioinformatics tools for sequence data processing and analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'optionally' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
 ```
 
 
@@ -610,24 +459,6 @@ optional arguments:
 ```
 
 
-## datafunk_Gisaid
-
-### Tool Description
-Process GISAID sequence data
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'Gisaid' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
 ## datafunk_pad_alignment
 
 ### Tool Description
@@ -643,24 +474,6 @@ Pads a FASTA alignment with gaps on the left and/or right.
 ```text
 usage: datafunk <subcommand> <options>
 datafunk: error: argument : invalid choice: 'pad_alignment' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
-## datafunk_pad
-
-### Tool Description
-Pad an alignment with gaps
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'pad' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
 ```
 
 
@@ -743,24 +556,6 @@ required arguments:
 ```
 
 
-## datafunk_writes
-
-### Tool Description
-A tool with various subcommands for data processing.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'writes' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
 ## datafunk_mask
 
 ### Tool Description
@@ -788,24 +583,6 @@ required arguments:
 ```
 
 
-## datafunk_external
-
-### Tool Description
-External subcommand for datafunk. The provided help text indicates an error and lists available subcommands.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'external' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
 ## datafunk_curate_lineages
 
 ### Tool Description
@@ -830,24 +607,6 @@ optional arguments:
                         Path to input directory containing traits.csv files
   -o OUTPUT_FILE, --output_file OUTPUT_FILE
                         Name of output CSV
-```
-
-
-## datafunk_ones
-
-### Tool Description
-A command-line tool for various bioinformatics data processing tasks.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'ones' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
 ```
 
 
@@ -997,42 +756,6 @@ required arguments:
                         metadata column to match to fasta file
   --output-fasta output.fasta
                         fasta file to write
-```
-
-
-## datafunk_extract
-
-### Tool Description
-Extract unannotated sequences from a FASTA file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'extract' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
-```
-
-
-## datafunk_cell
-
-### Tool Description
-Subcommand for datafunk. The provided 'cell' is not a valid subcommand. Please choose from the available subcommands.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/cov-ert/datafunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/datafunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: datafunk <subcommand> <options>
-datafunk: error: argument : invalid choice: 'cell' (choose from 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap')
 ```
 
 

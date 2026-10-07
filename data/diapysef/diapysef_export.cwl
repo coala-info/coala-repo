@@ -94,9 +94,25 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: out_file
+    type: File
+    doc: Exported data (tsv, parquet, sqMass or pkl).
+    outputBinding:
+      glob: "$(inputs.out ? inputs.out : 'diapasef_extracted_data.tsv')"
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file with console messages.
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : 'mobidik_export.log')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/diapysef:1.0.10--pyh7cba7a3_0

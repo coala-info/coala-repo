@@ -1,5 +1,17 @@
 # dicey CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dicey_blacklist | PASS | Masked exactly the six ARTIC primer intervals of the sarscov2 genome with N (added the .fai/.gzi secondary files). |
+| dicey_chop | PASS | Chopped sarscov2 into 2963 read pairs (fixed null-prefix globs and added the .fai/.gzi secondary files). |
+| dicey_hunt | PASS | Found the sarscov2 20-mer at 1001-1020 with distance 0 (added .fai/.gzi/^.fm9/^.fm9_check secondary files; dicey looks for the index as <genome without .gz>.fm9). |
+| dicey_index | PASS |  |
+| dicey_mappability2 | PASS | Map from minimap2-aligned chop reads marks all 2963 read starts as unique (added the .bai secondary file). |
+| dicey_padlock | PASS | Designed 25 padlock probes inside yeast TPD3 (Ensembl chrI); the sarscov2 NCBI GTF gives none because it lacks transcript_biotype (fixed six options that had no prefix, added genome index secondary files). |
+| dicey_search | PASS | ARTIC V3 primer pair 1 on sarscov2 gives the expected 380 bp amplicon with the repository's primer3_config (added genome index secondary files). |
+
 ## dicey_index
 
 ### Tool Description

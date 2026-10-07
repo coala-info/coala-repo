@@ -6,7 +6,9 @@ doc: "Calculates RSEM-EVAL score and expression values using alignments.\n\nTool
   https://github.com/deweylab/detonate"
 inputs:
   - id: input
-    type: File
+    type:
+      - 'null'
+      - File
     doc: SAM/BAM formatted input file. If "-" is specified for the filename, 
       SAM/BAM input is instead assumed to come from standard input. RSEM-EVAL 
       requires all alignments of the same read group together. For paired-end 
@@ -17,8 +19,9 @@ inputs:
       position: 1
   - id: upstream_read_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Comma-separated list of files containing single-end reads or upstream 
       reads for paired-end data. By default, these files are assumed to be in 
       FASTQ format. If the --no-qualities option is specified, then FASTA format
@@ -31,7 +34,7 @@ inputs:
     doc: A multi-FASTA file contains the assembly used for calculating RSEM-EVAL
       score.
     inputBinding:
-      position: 3
+      position: 4
   - id: downstream_read_files
     type:
       - 'null'
@@ -42,7 +45,7 @@ inputs:
       in FASTQ format. If the --no-qualities option is specified, then FASTA 
       format is expected.
     inputBinding:
-      position: 4
+      position: 3
       itemSeparator: ','
   - id: sample_name
     type: string
@@ -444,6 +447,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: score_files
+    type:
+      type: array
+      items: File
+    doc: RSEM-EVAL score and result files (sample_name.score, 
+      sample_name.score.isoforms.results, sample_name.score.genes.results, 
+      ...)
+    outputBinding:
+      glob:
+        - $(inputs.sample_name).score*
+        - $(inputs.sample_name).transcript*
+  - id: stat_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Model statistics folder (sample_name.stat)
+    outputBinding:
+      glob: $(inputs.sample_name).stat
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/detonate:1.11--boost1.64_1

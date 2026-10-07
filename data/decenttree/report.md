@@ -1,5 +1,11 @@
 # decenttree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| decenttree | PASS |  |
+
 ## decenttree
 
 ### Tool Description

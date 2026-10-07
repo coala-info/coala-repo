@@ -38,10 +38,10 @@ inputs:
       position: 101
       prefix: --dir
   - id: output
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory for results (defaults to input directory)
+    type: string
+    doc: Output directory for results (defaults to input directory). The input 
+      directory is staged read-only, so an output directory is required here.
+    default: ddquint_output
     inputBinding:
       position: 101
       prefix: --output
@@ -82,6 +82,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Output directory with the Excel report, plate plot and per-well graphs
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ddquint:0.1.0--pyhdfd78af_0

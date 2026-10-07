@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dialign-t
+baseCommand: dialign-tx
 label: dialign-tx
 doc: "Align sequences using the DIALIGN-T algorithm.\n\nTool homepage: https://dialign-tx.gobics.de"
 inputs:
@@ -9,12 +9,19 @@ inputs:
     doc: Configuration directory containing score matrix and probability 
       distribution files.
     inputBinding:
-      position: 1
+      position: 201
   - id: fasta_file
     type: File
     doc: Input FASTA file containing sequences to align.
     inputBinding:
-      position: 2
+      position: 202
+  - id: fasta_out_file_name
+    type:
+      - 'null'
+      - string
+    doc: Optional output FASTA file for aligned sequences (stdout if not given).
+    inputBinding:
+      position: 203
   - id: add_to_score
     type:
       - 'null'
@@ -133,15 +140,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: -s
-  - id: min_avg_score_in_frag_window
-    type:
-      - 'null'
-      - float
-    doc: 'Minimal allowed average score in fragment window containing low scoring
-      positions. Defaults to PROTEIN: 4.0, DNA: 0.25.'
-    inputBinding:
-      position: 103
-      prefix: -m
   - id: min_fragment_length
     type:
       - 'null'
@@ -181,7 +179,7 @@ inputs:
   - id: probability_distribution_file
     type:
       - 'null'
-      - File
+      - string
     doc: 'Probability distribution file name (in the configuration directory). Defaults
       to PROTEIN: BLOSUM.diag_prob_t10 or DNA: dna_diag_prob_100_exp_550000.'
     inputBinding:
@@ -190,7 +188,7 @@ inputs:
   - id: score_matrix_file
     type:
       - 'null'
-      - File
+      - string
     doc: 'Score matrix file name (in the configuration directory). Defaults to PROTEIN:
       BLOSUM.scr or DNA: dna_matrix.scr.'
     inputBinding:
@@ -240,7 +238,11 @@ outputs:
       - File
     doc: Optional output FASTA file for aligned sequences.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.fasta_out_file_name)
+  - id: stdout
+    type: stdout
+    doc: Alignment printed to stdout when no output file is given
+stdout: dialign-tx.out
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/dialign-tx:v1.0.2-12-deb_cv1

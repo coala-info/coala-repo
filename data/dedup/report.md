@@ -1,5 +1,11 @@
 # dedup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dedup | PASS |  |
+
 ## dedup
 
 ### Tool Description

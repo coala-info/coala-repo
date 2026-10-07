@@ -21,7 +21,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file name
     inputBinding:
       position: 103
@@ -59,18 +59,26 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --ref-db-fp
+          valueFrom: $(self.path.replace(/\.stats$/, ''))
     doc: "Keep all sequences aligning to this indexed\n                          \
       \        database. For multiple databases, the order\n                     \
       \             must follow that of --ref-fp, for example,\n                 \
       \                 --ref-db-fp db1.idx --ref-db-fp db2.idx .."
+    secondaryFiles:
+      - ^.bursttrie_0.dat
+      - ^.kmer_0.dat
+      - ^.pos_0.dat
     inputBinding:
       position: 103
-      prefix: --ref-db-fp
   - id: ref_fp
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --ref-fp
     doc: "Keep all sequences aligning to this FASTA database (for multiple databases,
       use --ref-\n                                  fp db1.fa --ref-fp db2.fa ..)
       default for\n                                  positive filtering is: /usr/local/lib/python3.10/site-\n\
@@ -79,7 +87,6 @@ inputs:
       \                                  packages/deblur/support_files/artifacts.fa"
     inputBinding:
       position: 103
-      prefix: --ref-fp
   - id: threads_per_sample
     type:
       - 'null'
@@ -90,16 +97,27 @@ inputs:
       position: 103
       prefix: --threads-per-sample
 outputs:
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : 'deblur.log')"
   - id: stdout
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.output_dir, listing: []})"
+        writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deblur:1.1.1--pyhdfd78af_0

@@ -7,13 +7,6 @@ label: dashing2_cmp
 doc: "Performs comparisons across inputs, but sketches if necessary.\n\nTool homepage:
   https://github.com/dnbaker/dashing2"
 inputs:
-  - id: opts
-    type:
-      - 'null'
-      - string
-    doc: Options for the command
-    inputBinding:
-      position: 1
   - id: fastas
     type:
       - 'null'
@@ -22,6 +15,13 @@ inputs:
     doc: Input FASTA files (optional)
     inputBinding:
       position: 2
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the ffile / qfile path lists; staged in the working 
+      folder so the names in those lists resolve
   - id: asymmetric_all_pairs
     type:
       - 'null'
@@ -39,6 +39,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --bbit-sigs
+  - id: bed
+    type:
+      - 'null'
+      - boolean
+    doc: Sketch BED files for interval sets
+    inputBinding:
+      position: 103
+      prefix: --bed
+  - id: bigwig
+    type:
+      - 'null'
+      - boolean
+    doc: Sketch BigWig files for coverage vectors
+    inputBinding:
+      position: 103
+      prefix: --bigwig
+  - id: leafcutter
+    type:
+      - 'null'
+      - boolean
+    doc: Sketch LeafCutter splicing output
+    inputBinding:
+      position: 103
+      prefix: --leafcutter
   - id: binary_output
     type:
       - 'null'
@@ -54,7 +78,7 @@ inputs:
     doc: Save sketches to disk instead of re-computing each time.
     inputBinding:
       position: 103
-      prefix: --cache/--cache-sketches
+      prefix: --cache
   - id: compute_edit_distance
     type:
       - 'null'
@@ -131,7 +155,7 @@ inputs:
       8 (64 bits), 4 (32 bits), 2 (16 bits), or 1 (8 bits).
     inputBinding:
       position: 103
-      prefix: --fastcmp/--regsize
+      prefix: --fastcmp
   - id: fastcmp_bytes
     type:
       - 'null'
@@ -181,7 +205,7 @@ inputs:
       behavior for larger sketches and small sets.
     inputBinding:
       position: 103
-      prefix: --full/--full-setsketch
+      prefix: --full
   - id: greedy
     type:
       - 'null'
@@ -208,7 +232,7 @@ inputs:
       number of k-mers shared between the two.
     inputBinding:
       position: 103
-      prefix: --intersection-size/--intersection
+      prefix: --intersection-size
   - id: kmer_length
     type:
       - 'null'
@@ -225,7 +249,7 @@ inputs:
     doc: Use 128-bit k-mer hashes instead of 64-bit.
     inputBinding:
       position: 103
-      prefix: --128bit/long-kmers
+      prefix: --long-kmers
   - id: mash_distance
     type:
       - 'null'
@@ -233,7 +257,7 @@ inputs:
     doc: Emit distances, as estimated by the Poisson model for k-mer distances.
     inputBinding:
       position: 103
-      prefix: --mash-distance/--poisson-distance/--distance
+      prefix: --mash-distance
   - id: maxcand
     type:
       - 'null'
@@ -250,7 +274,7 @@ inputs:
     doc: 'Enable WeightedSetSketch: Weighted Sets sketched by BagMinHash.'
     inputBinding:
       position: 103
-      prefix: --multiset/--bagminhash
+      prefix: --multiset
   - id: nlsh
     type:
       - 'null'
@@ -271,10 +295,10 @@ inputs:
     inputBinding:
       position: 103
       prefix: --no-canon
-  - id: outfile
+  - id: outfile_path
     type:
       - 'null'
-      - File
+      - string
     doc: Sketches are stacked into a single file and written to <arg>. This is 
       the path for the stacked sketches; to set output location, use --cmpout 
       instead.
@@ -284,9 +308,11 @@ inputs:
   - id: outprefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specifies directory in which to save sketches instead of adjacent to 
-      the input files.
+      the input files. Default here is the working folder, because the inputs 
+      are read-only.
+    default: .
     inputBinding:
       position: 103
       prefix: --outprefix
@@ -298,14 +324,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --parse-by-seq
-  - id: prefix
-    type:
-      - 'null'
-      - Directory
-    doc: Alias for --outprefix.
-    inputBinding:
-      position: 103
-      prefix: --prefix
   - id: presketched
     type:
       - 'null'
@@ -323,7 +341,7 @@ inputs:
       using ProbMinHash.'
     inputBinding:
       position: 103
-      prefix: --prob/--pminhash
+      prefix: --prob
   - id: protein14
     type:
       - 'null'
@@ -492,7 +510,7 @@ inputs:
       sketch k-mers with count >= <arg>
     inputBinding:
       position: 103
-      prefix: --threshold/--count-threshold
+      prefix: --threshold
   - id: topk
     type:
       - 'null'
@@ -501,7 +519,7 @@ inputs:
       - 1, pairwise distances are instead emitted.
     inputBinding:
       position: 103
-      prefix: --topk/--top-k
+      prefix: --topk
   - id: union_size
     type:
       - 'null'
@@ -526,6 +544,23 @@ inputs:
       position: 104
       prefix: --cmpout
 outputs:
+  - id: outfile
+    type:
+      - 'null'
+      - File
+    doc: Stacked sketches (with the .names.txt file of input names)
+    secondaryFiles:
+      - pattern: .names.txt
+        required: false
+    outputBinding:
+      glob: $(inputs.outfile_path)
+  - id: kmer_outputs
+    type:
+      type: array
+      items: File
+    doc: Saved k-mers and k-mer counts (--save-kmers, --save-kmercounts)
+    outputBinding:
+      glob: "$(inputs.outfile_path ? inputs.outfile_path + '.kmer*' : '*.kmer*')"
   - id: cmpout
     type:
       - 'null'
@@ -535,6 +570,9 @@ outputs:
       glob: $(inputs.cmpout_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "$(inputs.listed_files ? inputs.listed_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dashing2:2.1.20--he9e5f93_0

@@ -7,7 +7,9 @@ label: deepbinner_classify
 doc: "Classify fast5 reads\n\nTool homepage: https://github.com/rrwick/Deepbinner"
 inputs:
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: 'One of the following: a single fast5 file, a directory of fast5 files (will
       be searched recursively) or a tab-delimited file of training data'
     inputBinding:

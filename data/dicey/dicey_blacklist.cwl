@@ -8,7 +8,12 @@ doc: "Generates a blacklist file for a given genome.\n\nTool homepage: https://g
 inputs:
   - id: input_genome
     type: File
-    doc: Input genome file in FASTA format (gzipped).
+    doc: Input mappability map or genome in FASTA format (plain or 
+      bgzip-compressed) with its samtools faidx index.
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     inputBinding:
       position: 1
   - id: blacklist_file

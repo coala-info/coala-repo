@@ -134,9 +134,26 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output distance matrix in TSV format
+    doc: Output distance matrix in TSV format (.zst added with --compress or 
+      --streaming)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob:
+        - $(inputs.output_path)
+        - $(inputs.output_path).zst
+  - id: pcoa_output
+    type:
+      - 'null'
+      - File
+    doc: PCoA coordinates written with --pcoa
+    outputBinding:
+      glob: pcoa.txt
+  - id: ordination_output
+    type:
+      - 'null'
+      - File
+    doc: Ordination results written with --pcoa
+    outputBinding:
+      glob: ordination.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

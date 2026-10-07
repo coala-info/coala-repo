@@ -1,5 +1,11 @@
 # density-fitness CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| density-fitness | PASS |  |
+
 ## density-fitness
 
 ### Tool Description

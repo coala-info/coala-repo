@@ -422,6 +422,14 @@ outputs:
     doc: Path to output file (if not specified, will print to standard output).
     outputBinding:
       glob: $(inputs.output_tree_filepath_path)
+  - id: extended_output
+    type:
+      type: array
+      items: File
+    doc: Extended summarization files written with the --extended-output prefix
+    outputBinding:
+      glob: "$(inputs.extended_output_prefix ? inputs.extended_output_prefix + '.*'
+        : [])"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

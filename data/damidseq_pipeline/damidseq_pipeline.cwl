@@ -4,6 +4,15 @@ baseCommand: damidseq_pipeline
 label: damidseq_pipeline
 doc: "Copyright 2013-25, Owen Marshall\n\nTool homepage: https://github.com/owenjm/damidseq_pipeline"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ (or BAM, with --bamfiles) files to process. If none are given, 
+      all .fastq.gz/.gz/.fastq (or .bam) files in --datadir are processed.
+    inputBinding:
+      position: 102
   - id: as_gatc
     type:
       - 'null'
@@ -27,7 +36,8 @@ inputs:
     doc: path to BEDTools executable (leave blank if in path)
     inputBinding:
       position: 101
-      prefix: --bedtools_path
+      prefix: --bedtools_path=
+      separate: false
   - id: bins
     type:
       - 'null'
@@ -35,7 +45,8 @@ inputs:
     doc: Width of bins to use for mapping reads
     inputBinding:
       position: 101
-      prefix: --bins
+      prefix: --bins=
+      separate: false
   - id: bowtie
     type:
       - 'null'
@@ -51,15 +62,25 @@ inputs:
     doc: Additional flags to use for bowtie2 alignment
     inputBinding:
       position: 101
-      prefix: --bowtie2_add_flags
+      prefix: --bowtie2_add_flags=
+      separate: false
   - id: bowtie2_genome_dir
     type:
       - 'null'
-      - Directory
-    doc: Directory and basename for bowtie2 .bt2 indices
+      - File
+    doc: Bowtie2 index, given as its <basename>.1.bt2 file; the other .bt2 
+      files must sit beside it. The option receives the index basename.
     inputBinding:
       position: 101
-      prefix: --bowtie2_genome_dir
+      prefix: --bowtie2_genome_dir=
+      separate: false
+      valueFrom: $(self.path.replace(/\.1\.bt2l?$/, ""))
+    secondaryFiles:
+      - ^^.2.bt2
+      - ^^.3.bt2
+      - ^^.4.bt2
+      - ^^.rev.1.bt2
+      - ^^.rev.2.bt2
   - id: bowtie2_path
     type:
       - 'null'
@@ -67,7 +88,8 @@ inputs:
     doc: path to bowtie2 executable (leave blank if in path)
     inputBinding:
       position: 101
-      prefix: --bowtie2_path
+      prefix: --bowtie2_path=
+      separate: false
   - id: catada
     type:
       - 'null'
@@ -100,7 +122,8 @@ inputs:
     doc: Specify file to use as Dam control
     inputBinding:
       position: 101
-      prefix: --dam
+      prefix: --dam=
+      separate: false
   - id: datadir
     type:
       - 'null'
@@ -108,7 +131,9 @@ inputs:
     doc: Process all files in this directory
     inputBinding:
       position: 101
-      prefix: --datadir
+      prefix: --datadir=
+      separate: false
+      valueFrom: $(self.path + "/")
   - id: exp_prefix
     type:
       - 'null'
@@ -117,7 +142,8 @@ inputs:
       filename is Dam_Exp1_n1.fq.gz, use _ as the prefix)
     inputBinding:
       position: 101
-      prefix: --exp_prefix
+      prefix: --exp_prefix=
+      separate: false
   - id: exp_suffix
     type:
       - 'null'
@@ -127,7 +153,8 @@ inputs:
       Dam_Exp1_some-other-text_n1.fq.gz, use _ as the suffix)
     inputBinding:
       position: 101
-      prefix: --exp_suffix
+      prefix: --exp_suffix=
+      separate: false
   - id: extend_reads
     type:
       - 'null'
@@ -146,7 +173,8 @@ inputs:
       whichever is shorter. Using this option increases peak resolution.'
     inputBinding:
       position: 101
-      prefix: --extension_method
+      prefix: --extension_method=
+      separate: false
   - id: full_data_files
     type:
       - 'null'
@@ -162,7 +190,8 @@ inputs:
     doc: GFF file containing all instances of the sequence GATC
     inputBinding:
       position: 101
-      prefix: --gatc_frag_file
+      prefix: --gatc_frag_file=
+      separate: false
   - id: just_align
     type:
       - 'null'
@@ -211,7 +240,8 @@ inputs:
     doc: Length to extend reads to
     inputBinding:
       position: 101
-      prefix: --len
+      prefix: --len=
+      separate: false
   - id: load_defaults
     type:
       - 'null'
@@ -220,7 +250,8 @@ inputs:
       options)
     inputBinding:
       position: 101
-      prefix: --load_defaults
+      prefix: --load_defaults=
+      separate: false
   - id: markdup
     type:
       - 'null'
@@ -237,7 +268,8 @@ inputs:
     doc: Maximum log2 value to limit normalisation search at (default = +5)
     inputBinding:
       position: 101
-      prefix: --max_norm_value
+      prefix: --max_norm_value=
+      separate: false
   - id: method_subtract
     type:
       - 'null'
@@ -254,7 +286,8 @@ inputs:
     doc: Minimum log2 value to limit normalisation search at (default = -5)
     inputBinding:
       position: 101
-      prefix: --min_norm_value
+      prefix: --min_norm_value=
+      separate: false
   - id: n
     type:
       - 'null'
@@ -298,7 +331,8 @@ inputs:
       normalisation command (set with --rawbins_cmd)'
     inputBinding:
       position: 101
-      prefix: --norm_method
+      prefix: --norm_method=
+      separate: false
   - id: norm_override
     type:
       - 'null'
@@ -306,7 +340,8 @@ inputs:
     doc: Normalise by this amount instead
     inputBinding:
       position: 101
-      prefix: --norm_override
+      prefix: --norm_override=
+      separate: false
   - id: norm_steps
     type:
       - 'null'
@@ -314,7 +349,8 @@ inputs:
     doc: Number of points in normalisation routine (default = 300)
     inputBinding:
       position: 101
-      prefix: --norm_steps
+      prefix: --norm_steps=
+      separate: false
   - id: out_name
     type:
       - 'null'
@@ -322,7 +358,8 @@ inputs:
     doc: Use this as the fusion-protein name when saving the final ratio
     inputBinding:
       position: 101
-      prefix: --out_name
+      prefix: --out_name=
+      separate: false
   - id: output_format
     type:
       - 'null'
@@ -330,7 +367,8 @@ inputs:
     doc: Output tracks in this format [gff/bedgraph]
     inputBinding:
       position: 101
-      prefix: --output_format
+      prefix: --output_format=
+      separate: false
   - id: paired
     type:
       - 'null'
@@ -347,7 +385,8 @@ inputs:
       paired-reads (regex format)
     inputBinding:
       position: 101
-      prefix: --paired_match
+      prefix: --paired_match=
+      separate: false
   - id: ps_debug
     type:
       - 'null'
@@ -364,7 +403,8 @@ inputs:
       (default = 10)
     inputBinding:
       position: 101
-      prefix: --ps_factor
+      prefix: --ps_factor=
+      separate: false
   - id: pseudocounts
     type:
       - 'null'
@@ -373,7 +413,8 @@ inputs:
       determined algorithmically)'
     inputBinding:
       position: 101
-      prefix: --pseudocounts
+      prefix: --pseudocounts=
+      separate: false
   - id: q
     type:
       - 'null'
@@ -381,7 +422,8 @@ inputs:
     doc: Cutoff average Q score for aligned reads
     inputBinding:
       position: 101
-      prefix: --q
+      prefix: --q=
+      separate: false
   - id: qscore1max
     type:
       - 'null'
@@ -389,7 +431,8 @@ inputs:
     doc: max decile for normalising from Dam array
     inputBinding:
       position: 101
-      prefix: --qscore1max
+      prefix: --qscore1max=
+      separate: false
   - id: qscore1min
     type:
       - 'null'
@@ -397,7 +440,8 @@ inputs:
     doc: min decile for normalising from Dam array
     inputBinding:
       position: 101
-      prefix: --qscore1min
+      prefix: --qscore1min=
+      separate: false
   - id: qscore2max
     type:
       - 'null'
@@ -405,7 +449,8 @@ inputs:
     doc: max decile for normalising from fusion-protein array
     inputBinding:
       position: 101
-      prefix: --qscore2max
+      prefix: --qscore2max=
+      separate: false
   - id: rawbins_cmd
     type:
       - 'null'
@@ -414,7 +459,8 @@ inputs:
       command should be the normalisation factor (use with caution)
     inputBinding:
       position: 101
-      prefix: --rawbins_cmd
+      prefix: --rawbins_cmd=
+      separate: false
   - id: remdups
     type:
       - 'null'
@@ -432,7 +478,8 @@ inputs:
       Dam_Exp1_n1.fq.gz, use _n as the rep_prefix)
     inputBinding:
       position: 101
-      prefix: --rep_prefix
+      prefix: --rep_prefix=
+      separate: false
   - id: reset_defaults
     type:
       - 'null'
@@ -448,7 +495,8 @@ inputs:
     doc: path to samtools executable (leave blank if in path)
     inputBinding:
       position: 101
-      prefix: --samtools_path
+      prefix: --samtools_path=
+      separate: false
   - id: save_defaults
     type:
       - 'null'
@@ -457,7 +505,8 @@ inputs:
       different genomes -- these can be loaded with 'load_defaults')
     inputBinding:
       position: 101
-      prefix: --save_defaults
+      prefix: --save_defaults=
+      separate: false
   - id: scores_as_rpm
     type:
       - 'null'
@@ -474,7 +523,8 @@ inputs:
     doc: threads for bowtie2 to use
     inputBinding:
       position: 101
-      prefix: --threads
+      prefix: --threads=
+      separate: false
   - id: unique
     type:
       - 'null'
@@ -495,6 +545,31 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: ratio_files
+    type:
+      type: array
+      items: File
+    doc: Normalised log2(fusion/Dam) ratio tracks (bedGraph or GFF)
+    outputBinding:
+      glob:
+        - '*.bedgraph'
+        - '*.gff'
+  - id: bam_files
+    type:
+      type: array
+      items: File
+    doc: Aligned (and extended) BAM files
+    outputBinding:
+      glob: '*.bam'
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Pipeline log
+    outputBinding:
+      glob: '*.log'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/damidseq_pipeline:1.6.2--pl5321hdfd78af_0

@@ -1,5 +1,14 @@
 # deepbgc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deepbgc_download | Not completed | Downloads the full Pfam 31.0 database (over 1 GB unpacked) plus models, too large for this test. |
+| deepbgc_pipeline | PASS |  |
+| deepbgc_prepare | PASS |  |
+| deepbgc_train | PASS |  |
+
 ## deepbgc_download
 
 ### Tool Description

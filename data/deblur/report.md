@@ -1,5 +1,19 @@
 # deblur CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deblur_build-biom-table | PASS |  |
+| deblur_build-db-index | PASS |  |
+| deblur_deblur-seqs | PASS |  |
+| deblur_dereplicate | PASS |  |
+| deblur_multiple-seq-alignment | Failed | tool bug: deblur 1.1.1 multiple-seq-alignment crashes with AttributeError because it calls to_fasta() on the alignment file path string. |
+| deblur_remove-artifacts | PASS |  |
+| deblur_remove-chimeras-denovo | PASS |  |
+| deblur_trim | Failed | tool bug: deblur 1.1.1 trim always crashes because the command calls trim_seqs() without its required left_trim_len argument. |
+| deblur_workflow | Failed | tool bug: on real EMP reads the workflow silently drops sample SKB8 (4078 reads, one unique sequence) from all.biom because single-sequence samples skip alignment and their file name lacks .msa; the SKB7 counts and the upstream s4 test set match exactly. |
+
 ## deblur_build-biom-table
 
 ### Tool Description

@@ -75,9 +75,19 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: mzml
+    type: File[]
+    doc: The converted mzML file(s); with --overlap N the output is split into N 
+      files named after --out.
+    outputBinding:
+      glob: $(inputs.out.replace(/\.[^.]*$/, ''))*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/diapysef:1.0.10--pyh7cba7a3_0

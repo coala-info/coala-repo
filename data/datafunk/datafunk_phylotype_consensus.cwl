@@ -35,9 +35,13 @@ inputs:
       prefix: --verbose
   - id: output_folder_path
     type: string
+    doc: Output folder for the phylotype fasta files and consensus file 
+      (created by the wrapper; the tool joins names to it without a slash, so
+      the wrapper adds one)
     inputBinding:
       position: 102
       prefix: --output-folder
+      valueFrom: $(self.replace(/\/*$/, '') + '/')
 outputs:
   - id: output_folder
     type: Directory
@@ -46,6 +50,10 @@ outputs:
       glob: $(inputs.output_folder_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.output_folder_path.replace(/\\/*$/, ''), listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

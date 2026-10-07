@@ -2,6 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: DM.py
 label: deepmicro_DM.py
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var d = [];
+        if (inputs.custom_data) { d.push(inputs.custom_data); }
+        if (inputs.custom_data_labels) { d.push(inputs.custom_data_labels); }
+        return [
+          {"class": "Directory", "basename": "data", "listing": d},
+          {"class": "Directory", "basename": "results", "listing": [], "writable": true}
+        ];
+      }
 doc: "DeepMicro: A deep learning framework for microbiome analysis.\n\nTool homepage:
   https://github.com/paulzierep/DeepMicro"
 inputs:
@@ -57,18 +70,20 @@ inputs:
     type:
       - 'null'
       - File
-    doc: filename for custom input data under the 'data' folder
+    doc: custom input data (staged into the 'data' folder)
     inputBinding:
       position: 101
       prefix: --custom_data
+      valueFrom: $(self.basename)
   - id: custom_data_labels
     type:
       - 'null'
       - File
-    doc: filename for custom input labels under the 'data' folder
+    doc: custom input labels (staged into the 'data' folder)
     inputBinding:
       position: 101
       prefix: --custom_data_labels
+      valueFrom: $(self.basename)
   - id: data
     type:
       - 'null'
@@ -85,14 +100,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dataType
-  - id: data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: custom path for both '/data' and '/results' folders
-    inputBinding:
-      position: 101
-      prefix: --data_dir
   - id: dims
     type:
       - 'null'
@@ -280,6 +287,31 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: results folder (classification results, learned representations, 
+      plots)
+    outputBinding:
+      glob: results
+  - id: result_table
+    type:
+      - 'null'
+      - File
+    doc: classification results
+    outputBinding:
+      glob: results/*_result.txt
+  - id: representation
+    type:
+      - 'null'
+      - File
+    doc: learned representation of the training set (--save_rep)
+    outputBinding:
+      glob: results/*_rep.csv
+  - id: models
+    type: File[]
+    doc: trained autoencoder models
+    outputBinding:
+      glob: '*.h5'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepmicro:1.4--pyhdfd78af_1

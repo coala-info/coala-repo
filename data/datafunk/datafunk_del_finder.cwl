@@ -30,9 +30,7 @@ inputs:
       position: 101
       prefix: --input-fasta
   - id: genotypes_table_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --genotypes-table

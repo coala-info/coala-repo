@@ -1,9 +1,15 @@
 # deepmei CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| deepmei | Failed | image problem: the DeepMEI_model/reference folder (default ME_add_ALU.fa and ME_*.bed files) is missing, and the script writes temp files into its read-only install folder /usr/local/bin. |
+
 ## deepmei
 
 ### Tool Description
-Generate index for BAM files
+DeepMEI: detect mobile element insertions from short-read BAM or CRAM files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/deepmei:1.6.24--hdfd78af_1
@@ -18,55 +24,25 @@ Generate index for BAM files
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Start analysis at Wed Feb 25 08:06:57 UTC 2026
-Random seed is 3222
-Joint analysis is 
-quick_model:0
-Indexed file is missed. Generate index ...
-Usage: samtools index -M [-bc] [-m INT] <in1.bam> <in2.bam>...
-   or: samtools index [-bc] [-m INT] <in.bam> [out.index]
-Options:
-  -b, --bai            Generate BAI-format index for BAM files [default]
-  -c, --csi            Generate CSI-format index for BAM files
-  -m, --min-shift INT  Set minimum interval size for CSI indices to 2^INT [14]
-  -M                   Interpret all filename arguments as files to be indexed
-  -o, --output FILE    Write index to FILE [alternative to <out.index> in args]
-  -@, --threads INT    Sets the number of threads [none]
-/usr/local/bin
--r reference.fa is required
+deepmei version 1.6.24
+Usage:
+  deepmei [-i bamfile] [-r reference] [-b bedfile] [-m ME_REF] [-q input genotype] [ -q quick_model] [-o output_prefix] [-v docker] [-w output_dir] [-d depth] [-c clean] [-j joint] [-h/? usage]  
+   -i input bam file or cram file full path, required
+   -r reference full path, required
+   -m mobile elements reference, optional
+   -b input genotype file, optional
+   -q quick model, optional
+   -o output prefix, optional,default is bam name
+   -v only avaliable in docker images, optional
+   -w output directory, required
+   -d sequencing depth, default is 25, optional
+   -c clean temp files[-c 1], optional but recommended
+   -j joint genotyping,optional
+   -h help
+   -? help
 ```
 
 
 ## Metadata
 - **Skill**: generated
-
-## deepmei
-
-### Tool Description
-Generate index for BAM files
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/deepmei:1.6.24--hdfd78af_1
-- **Homepage**: https://github.com/Kanglu123/deepmei
-- **Package**: https://anaconda.org/channels/bioconda/packages/deepmei/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Start analysis at Wed Feb 25 08:08:59 UTC 2026
-Random seed is 23144
-Joint analysis is 
-quick_model:0
-Indexed file is missed. Generate index ...
-Usage: samtools index -M [-bc] [-m INT] <in1.bam> <in2.bam>...
-   or: samtools index [-bc] [-m INT] <in.bam> [out.index]
-Options:
-  -b, --bai            Generate BAI-format index for BAM files [default]
-  -c, --csi            Generate CSI-format index for BAM files
-  -m, --min-shift INT  Set minimum interval size for CSI indices to 2^INT [14]
-  -M                   Interpret all filename arguments as files to be indexed
-  -o, --output FILE    Write index to FILE [alternative to <out.index> in args]
-  -@, --threads INT    Sets the number of threads [none]
-/usr/local/bin
--r reference.fa is required
-```
 

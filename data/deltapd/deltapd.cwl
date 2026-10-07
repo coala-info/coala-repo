@@ -65,13 +65,13 @@ inputs:
       position: 101
       prefix: --max_taxa
   - id: metadata
-    type: File?
+    type: File
     doc: path to the metadata file
     inputBinding:
       position: 101
       prefix: --metadata
   - id: msa_file
-    type: File?
+    type: File
     doc: path to the msa file used to infer the query tree
     inputBinding:
       position: 101
@@ -85,7 +85,7 @@ inputs:
       position: 101
       prefix: --plot
   - id: q_tree
-    type: File?
+    type: File
     doc: path to the query tree
     inputBinding:
       position: 101
@@ -99,20 +99,20 @@ inputs:
       position: 101
       prefix: --qry_sep
   - id: r_tree
-    type: File?
+    type: File
     doc: path to the reference tree
     inputBinding:
       position: 101
       prefix: --r_tree
   - id: out_dir_path
-    type: string?
+    type: string
     doc: path to output directory
     inputBinding:
       position: 102
       prefix: --out_dir
 outputs:
   - id: out_dir
-    type: Directory?
+    type: Directory
     doc: path to output directory
     outputBinding:
       glob: $(inputs.out_dir_path)

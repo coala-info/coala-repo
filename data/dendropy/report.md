@@ -1,5 +1,11 @@
 # dendropy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dendropy_sumtrees | PASS |  |
+
 ## dendropy_sumtrees
 
 ### Tool Description

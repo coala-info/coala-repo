@@ -4,11 +4,17 @@ baseCommand:
   - dicey
   - chop
 label: dicey_chop
-doc: "Generic options:\n\nTool homepage: https://github.com/gear-genomics/dicey"
+doc: "Chop a genome into single-end or paired-end reads (gzipped FASTQ) for
+  mappability analysis.\n\nTool homepage: https://github.com/gear-genomics/dicey"
 inputs:
   - id: input_fasta
     type: File
-    doc: Input FASTA file
+    doc: Input FASTA file (plain or bgzip-compressed) with its samtools faidx 
+      index
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     inputBinding:
       position: 1
   - id: chop_offset
@@ -85,14 +91,16 @@ outputs:
       items: File
     doc: Files written with the prefix given in read1_prefix
     outputBinding:
-      glob: $(inputs.read1_prefix)*
+      glob: "$(inputs.read1_prefix ? inputs.read1_prefix : 'read1')*"
   - id: read2_prefix_files
     type:
       type: array
       items: File
     doc: Files written with the prefix given in read2_prefix
     outputBinding:
-      glob: $(inputs.read2_prefix)*
+      glob: "$(inputs.read2_prefix ? inputs.read2_prefix : 'read2')*"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dicey:0.3.4--h4d20210_0

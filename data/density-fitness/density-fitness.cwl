@@ -193,12 +193,8 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Write output to this file instead of stdout
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Scores written to stdout when no --output file is given
   - id: output_file
     type:
       - 'null'
@@ -206,6 +202,7 @@ outputs:
     doc: Write output to this file instead of stdout
     outputBinding:
       glob: $(inputs.output_file_path)
+stdout: density-fitness.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

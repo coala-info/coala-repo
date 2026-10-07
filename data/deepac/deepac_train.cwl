@@ -10,6 +10,7 @@ inputs:
     type:
       - 'null'
       - File
+    loadContents: true
     doc: Use the user-supplied configuration file.
     inputBinding:
       position: 101
@@ -58,6 +59,7 @@ inputs:
   - id: train_data
     type:
       - 'null'
+      - File
       - Directory
     doc: Path to training data.
     inputBinding:
@@ -74,6 +76,7 @@ inputs:
   - id: val_data
     type:
       - 'null'
+      - File
       - Directory
     doc: Path to validation data.
     inputBinding:
@@ -87,10 +90,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --val-labels
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files named in the config file; staged in the working directory 
+      so the relative names in the config resolve.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: logs
+    type: Directory
+    doc: Training logs and saved models (LogPath of the config file, default 
+      logs)
+    outputBinding:
+      glob: |-
+        ${
+          if (inputs.custom) {
+            var m = inputs.custom.contents.match(/^\s*LogPath\s*=\s*(\S+)/m);
+            if (m) { return m[1]; }
+          }
+          return "logs";
+        }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepac:0.14.1--pyhdfd78af_0

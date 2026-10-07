@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 2861; PASS: 2162; Failed: 399; Not completed: 300
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 3224; PASS: 2453; Failed: 440; Not completed: 331
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -2861,3 +2861,366 @@ cytocad	cytocad	Not completed	Runs end to end on a small real nanopore BAM (180 
 cytoscape	cytoscape_cytoscape.sh	Failed	image problem: cytoscape.sh does not start (Java error: Module javafx.web not found); Cytoscape is also a GUI desktop app with no headless batch mode.
 cyvcf	cyvcf_cyvcf2	Failed	image problem: the cyvcf2 0.8.0 command crashes at start (click needs the missing 'locale' program and a UTF-8 locale); CWL rewritten to the real 0.8 options.
 cyvcf2	cyvcf2	Failed	tool bug: --include drops the #CHROM header line, so the output is not a valid VCF; --exclude and region queries give correct output
+dadaist2	dadaist2	Failed	image problem: the dada2 R library fails to load (undefined symbol _ZTIN3tbb4taskE in dada2.so), so dadaist2 aborts at its dependency check.
+dagchainer	dagchainer	PASS	
+daisyblast	daisyblast	PASS	
+dajin2	dajin2_DAJIN2	PASS	
+daligner	daligner	PASS	
+daligner	daligner_HPC.daligner	PASS	
+daligner	daligner_LA2ONE	PASS	
+daligner	daligner_LAcat	PASS	
+daligner	daligner_LAcheck	PASS	
+daligner	daligner_LAmerge	PASS	
+daligner	daligner_LAshow	Failed	tool bug: LAshow always aborts at exit (free(): invalid pointer), so the job fails and the last lines of its output are lost; with read ranges it also crashes.
+daligner	daligner_LAsort	PASS	
+daligner	daligner_LAsplit	PASS	
+daligner	daligner_ONE2LA	PASS	
+damasker	damasker_HPC.REPmask	PASS	
+damasker	damasker_REPmask	PASS	
+damasker	damasker_TANmask	PASS	
+damasker	damasker_datander	Failed	image problem: datander runs LAsort and LAmerge from daligner, which are not in the image (LAsort: command not found).
+damidseq_pipeline	damidseq_pipeline	PASS	
+dammit	dammit_annotate	PASS	
+dammit	dammit_databases	Failed	tool problem: --install fetches BUSCO from a dead URL (busco.ezlab.org/v2, HTTP 404) and the image's tar has no -z, so it exits 0 with an empty database folder.
+dammit	dammit_migrate	PASS	Tested on an old-layout OrthoDB-style LAST database built with lastdb from dammit's own test proteins.
+dampa	dampa_design	PASS	
+dampa	dampa_eval	PASS	
+dampa	dampa_targets	PASS	
+danbing-tk	danbing-tk	Not completed	No usable test graph: the CWL runs on the repo's tiny QC graph, but 0 reads from the HG002 haplotypes are assigned, so the counts cannot be confirmed; a real graph is multi-GB or must be built with other package tools.
+danpos	danpos_dpeak	PASS	
+danpos	danpos_dpos	PASS	
+darkprofiler	darkprofiler_download	Not completed	Downloads a 1 GB genome bundle into the image's own package folder, so a CWL run cannot keep the result.
+darkprofiler	darkprofiler_run	Not completed	Needs the 1 GB genome bundle installed inside the image's package folder, which a plain CWL run does not have.
+dart	dart	PASS	
+dartunifrac	dartunifrac	PASS	
+dartunifrac-gpu	dartunifrac-gpu_dartunifrac-cuda	Not completed	Needs an NVIDIA GPU and CUDA driver; without one the tool stops because libcuda.so cannot be loaded.
+dascrubber	dascrubber_DAStrim	PASS	
+dashing	dashing_cmp	PASS	
+dashing	dashing_cmp_by_seq	PASS	Works with b-bit minhash sketches (-8); with default HLL sketches the tool crashes (bad_alloc).
+dashing	dashing_fold	PASS	
+dashing	dashing_hll	PASS	
+dashing	dashing_printmat	Failed	tool bug: cannot read the binary matrix written by dashing cmp --emit-binary (header size error, exit 139).
+dashing	dashing_sketch	PASS	
+dashing	dashing_sketch_by_seq	PASS	
+dashing	dashing_union	PASS	
+dashing	dashing_view	PASS	
+dashing2	dashing2_cmp	PASS	
+dashing2	dashing2_contain	PASS	
+dashing2	dashing2_printmin	PASS	
+dashing2	dashing2_sketch	PASS	
+dashing2	dashing2_wsketch	PASS	
+dastk	dastk_differential_md_score	Failed	image problem: matplotlib 3.6.3 in the image rejects plt.xscale(basex=2), so the MA plot step crashes (exit 1) after the scores table is written.
+datafunk	datafunk_AA_finder	PASS	
+datafunk	datafunk_add_epi_week	PASS	
+datafunk	datafunk_add_header_column	PASS	
+datafunk	datafunk_bootstrap	PASS	
+datafunk	datafunk_clean_names	PASS	Matches the repo's expected output except for float formatting.
+datafunk	datafunk_curate_lineages	PASS	The repo's sample traits.csv crashes the current code; it passed after reordering its columns to the layout the code reads.
+datafunk	datafunk_del_finder	PASS	
+datafunk	datafunk_distance_to_root	PASS	
+datafunk	datafunk_exclude_uk_seqs	PASS	
+datafunk	datafunk_extract_unannotated_seqs	PASS	
+datafunk	datafunk_filter_fasta_by_covg_and_length	PASS	
+datafunk	datafunk_get_CDS	PASS	Nucleotide CDS output is correct; --translate crashes on gapped alignments (Biopython TranslationError).
+datafunk	datafunk_gisaid_json_2_metadata	Not completed	Needs a GISAID JSON dump (restricted access); no public test data.
+datafunk	datafunk_mask	PASS	
+datafunk	datafunk_merge_fasta	PASS	
+datafunk	datafunk_pad_alignment	Failed	tool bug: the subcommand is registered under its full usage string, so 'datafunk pad_alignment' is rejected as an invalid choice.
+datafunk	datafunk_phylotype_consensus	Failed	image problem: mafft is not in the image, so clades with more than 2 sequences fail (mafft: command not found).
+datafunk	datafunk_process_gisaid_data	Not completed	Needs a GISAID JSON dump (restricted access); no public test data.
+datafunk	datafunk_process_gisaid_sequence_data	Failed	tool bug: the subcommand reads options.output-fasta and crashes with AttributeError on every run.
+datafunk	datafunk_remove_fasta	PASS	
+datafunk	datafunk_repair_names	PASS	
+datafunk	datafunk_sam_2_fasta	PASS	
+datafunk	datafunk_set_uniform_header	PASS	
+datafunk	datafunk_snp_finder	PASS	
+data_hacks	data_hacks_bar_chart.py	PASS	
+datamash	datamash_absmax	PASS	
+datamash	datamash_absmin	PASS	
+datamash	datamash_antimode	PASS	
+datamash	datamash_barename	PASS	
+datamash	datamash_base64	PASS	
+datamash	datamash_basename	PASS	
+datamash	datamash_bin	PASS	
+datamash	datamash_ceil	PASS	
+datamash	datamash_check	PASS	
+datamash	datamash_collapse	PASS	
+datamash	datamash_count	PASS	
+datamash	datamash_countunique	PASS	
+datamash	datamash_crosstab	PASS	
+datamash	datamash_cut	PASS	
+datamash	datamash_debase64	PASS	
+datamash	datamash_dirname	PASS	
+datamash	datamash_dotprod	PASS	
+datamash	datamash_dpo	PASS	
+datamash	datamash_extname	PASS	
+datamash	datamash_first	PASS	
+datamash	datamash_floor	PASS	
+datamash	datamash_frac	PASS	
+datamash	datamash_geomean	PASS	
+datamash	datamash_getnum	PASS	
+datamash	datamash_groupby	PASS	
+datamash	datamash_harmmean	PASS	
+datamash	datamash_iqr	PASS	
+datamash	datamash_jarque	PASS	
+datamash	datamash_last	PASS	
+datamash	datamash_mad	PASS	
+datamash	datamash_madraw	PASS	
+datamash	datamash_max	PASS	
+datamash	datamash_md5	PASS	
+datamash	datamash_mean	PASS	
+datamash	datamash_median	PASS	
+datamash	datamash_min	PASS	
+datamash	datamash_mode	PASS	
+datamash	datamash_ms	PASS	
+datamash	datamash_pcov	PASS	
+datamash	datamash_perc	PASS	
+datamash	datamash_pkurt	PASS	
+datamash	datamash_ppearson	PASS	
+datamash	datamash_pskew	PASS	
+datamash	datamash_pstdev	PASS	
+datamash	datamash_pvar	PASS	
+datamash	datamash_q1	PASS	
+datamash	datamash_q3	PASS	
+datamash	datamash_rand	PASS	
+datamash	datamash_range	PASS	
+datamash	datamash_reverse	PASS	
+datamash	datamash_rmdup	PASS	
+datamash	datamash_rms	PASS	
+datamash	datamash_round	PASS	
+datamash	datamash_scov	PASS	
+datamash	datamash_sha1	PASS	
+datamash	datamash_sha224	PASS	
+datamash	datamash_sha256	PASS	
+datamash	datamash_sha384	PASS	
+datamash	datamash_sha512	PASS	
+datamash	datamash_skurt	PASS	
+datamash	datamash_spearson	PASS	
+datamash	datamash_sskew	PASS	
+datamash	datamash_sstdev	PASS	
+datamash	datamash_strbin	PASS	
+datamash	datamash_sum	PASS	
+datamash	datamash_svar	PASS	
+datamash	datamash_transpose	PASS	
+datamash	datamash_trimmean	PASS	
+datamash	datamash_trunc	PASS	
+datamash	datamash_unique	PASS	
+datavzrd	datavzrd	PASS	
+dawg	dawg	PASS	
+dazz_db	dazz_db_DBshow	PASS	
+dbcan	dbcan_CAZyme_annotation	PASS	
+dbcan	dbcan_Pfam_null_cgc	Not completed	Needs CGC finder results and the Pfam-A HMM database, too large for this test.
+dbcan	dbcan_cgc_circle_plot	Not completed	Needs CGC finder results, which need the large CGC databases.
+dbcan	dbcan_cgc_finder	Not completed	Needs cgc.gff from gff_process, which needs the large CGC databases; with only CAZyme results it exits 0 and writes nothing.
+dbcan	dbcan_database	Not completed	Downloads several GB of dbCAN databases, too large for this test.
+dbcan	dbcan_easy_CGC	Not completed	Needs the full dbCAN database set (CAZy.dmnd 2.2 GB plus CGC databases), too large for this test.
+dbcan	dbcan_easy_substrate	Not completed	Needs the full dbCAN database set (several GB), too large for this test.
+dbcan	dbcan_gff_process	Not completed	Needs the CGC databases (peptidase 333 MB, SulfAtlas 103 MB, TCDB, TF, STP), too large for this test.
+dbcan	dbcan_substrate_prediction	Not completed	Needs CGC results plus the dbCAN-sub (2.4 GB) and dbCAN-PUL databases.
+dbcanlight	dbcanlight_build	Not completed	Downloads and builds the full dbCAN databases (several GB), too large for this test.
+dbcanlight	dbcanlight_conclude	PASS	
+dbcanlight	dbcanlight_search	PASS	
+dbg2olc	dbg2olc_DBG2OLC	PASS	
+dbg2olc	dbg2olc_SelectLongestReads	PASS	
+dbg2olc	dbg2olc_Sparc	PASS	
+dbg2olc	dbg2olc_SparseAssembler	PASS	
+dbghaplo	dbghaplo	PASS	
+dbgraph	dbgraph_DBGraph2Pro	PASS	
+dca	dca	Failed	image problem: TensorFlow is missing from the image, so dca stops with an ImportError before training.
+dcc	dcc_DCC	PASS	
+dcm2niix	dcm2niix	PASS	
+ddipy	ddipy_omicsdi	Failed	tool bug: ddipy 0.0.5 builds OmicsDI API URLs with a double slash (ws//dataset/search), which the server now answers with 404, so no accession can be found.
+ddocent	ddocent_RefMapOpt.sh	PASS	
+ddocent	ddocent_ReferenceOpt.sh	PASS	
+ddprimer	ddprimer	PASS	
+ddquint	ddquint	Not completed	No public data from the ddQuint 5-plex assay exists; on real ddPCRclust amplitude CSVs the run finished and wrote the Excel report and plots, but no cluster matched the assay centroids, so copy numbers cannot be checked.
+ddrage	ddrage	PASS	
+deacon	deacon_filter	PASS	
+deacon	deacon_index_build	PASS	
+deacon	deacon_index_diff	PASS	
+deacon	deacon_index_dump	PASS	
+deacon	deacon_index_fetch	Not completed	Fetching needs network access and downloads a multi-gigabyte prebuilt human index, too large for this test.
+deacon	deacon_index_info	PASS	
+deacon	deacon_index_intersect	PASS	
+deacon	deacon_index_union	PASS	
+debarcer	debarcer_bed	Failed	tool bug: debarcer 2.1.4 bed always stops with AttributeError because its code reads an args.contig option that the bed parser never defines.
+debarcer	debarcer_call	PASS	
+debarcer	debarcer_collapse	PASS	
+debarcer	debarcer_group	PASS	
+debarcer	debarcer_merge	PASS	
+debarcer	debarcer_plot	PASS	
+debarcer	debarcer_preprocess	PASS	
+debarcer	debarcer_report	PASS	
+debarcer	debarcer_run	Not completed	pipeline, skipped: debarcer run writes job scripts and submits them with SGE qsub.
+deblur	deblur_build-biom-table	PASS	
+deblur	deblur_build-db-index	PASS	
+deblur	deblur_deblur-seqs	PASS	
+deblur	deblur_dereplicate	PASS	
+deblur	deblur_multiple-seq-alignment	Failed	tool bug: deblur 1.1.1 multiple-seq-alignment crashes with AttributeError because it calls to_fasta() on the alignment file path string.
+deblur	deblur_remove-artifacts	PASS	
+deblur	deblur_remove-chimeras-denovo	PASS	
+deblur	deblur_trim	Failed	tool bug: deblur 1.1.1 trim always crashes because the command calls trim_seqs() without its required left_trim_len argument.
+deblur	deblur_workflow	Failed	tool bug: on real EMP reads the workflow silently drops sample SKB8 (4078 reads, one unique sequence) from all.biom because single-sequence samples skip alignment and their file name lacks .msa; the SKB7 counts and the upstream s4 test set match exactly.
+debreak	debreak	PASS	
+debwt	debwt_deBWT	Failed	image problem: the image has no jellyfish, which deBWT calls for k-mer counting, and deBWT crashes with a segfault on the SARS-CoV-2 genome.
+decenttree	decenttree	PASS	
+dechat	dechat	PASS	
+decifer	decifer	Failed	image problem: decifer fails at import with ModuleNotFoundError: No module named sklearn.
+decom	decom_decOM	Not completed	decOM needs the 1.3 GB decOM_sources k-mer matrix from Zenodo, which is too large for this test.
+decoypyrat	decoypyrat	PASS	
+dedup	dedup	PASS	
+deepac	deepac_convert	PASS	
+deepac	deepac_eval	PASS	
+deepac	deepac_explain_fa2transfac	PASS	
+deepac	deepac_explain_fcontribs	PASS	
+deepac	deepac_explain_franking	PASS	
+deepac	deepac_explain_maxact	PASS	
+deepac	deepac_explain_mcompare	PASS	
+deepac	deepac_explain_transfac2IC	PASS	
+deepac	deepac_explain_weblogos	Failed	image problem: logo drawing fails with 'Could not find Ghostscript on path' because the image has no gs.
+deepac	deepac_explain_xlogos	Failed	image problem: logo drawing fails with 'Could not find Ghostscript on path' because the image has no gs.
+deepac	deepac_filter	PASS	
+deepac	deepac_getmodels	PASS	
+deepac	deepac_gwpa_factiv	PASS	
+deepac	deepac_gwpa_fenrichment	PASS	
+deepac	deepac_gwpa_fragment	PASS	
+deepac	deepac_gwpa_genomemap	PASS	
+deepac	deepac_gwpa_gff2genome	PASS	
+deepac	deepac_gwpa_granking	PASS	
+deepac	deepac_gwpa_ntcontribs	PASS	
+deepac	deepac_predict	PASS	
+deepac	deepac_preproc	PASS	
+deepac	deepac_test	PASS	
+deepac	deepac_train	PASS	
+deepaccess	deepaccess_interpret	PASS	
+deepaccess	deepaccess_train	PASS	
+deepacstrain	deepacstrain_convert	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
+deepacstrain	deepacstrain_eval	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
+deepacstrain	deepacstrain_filter	PASS	
+deepacstrain	deepacstrain_getmodels	Failed	tool bug: getmodels calls os.rmdir on deepac_builtin_models/weights before it exists and stops with FileNotFoundError.
+deepacstrain	deepacstrain_predict	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
+deepacstrain	deepacstrain_preproc	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
+deepacstrain	deepacstrain_templates	PASS	
+deepacstrain	deepacstrain_train	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
+deeparg	deeparg_download_data	Not completed	Downloads the full 1.9 GB deepARG data archive from Zenodo, too large for this test.
+deeparg	deeparg_predict	PASS	
+deeparg	deeparg_short_reads_pipeline	Not completed	Needs the 2.5 GB gg13 16S bowtie2 index from the full deepARG data, too large for this test.
+deepbgc	deepbgc_download	Not completed	Downloads the full Pfam 31.0 database (over 1 GB unpacked) plus models, too large for this test.
+deepbgc	deepbgc_pipeline	PASS	
+deepbgc	deepbgc_prepare	PASS	
+deepbgc	deepbgc_train	PASS	
+deepbinner	deepbinner_balance	PASS	
+deepbinner	deepbinner_bin	PASS	
+deepbinner	deepbinner_classify	PASS	
+deepbinner	deepbinner_prep	Failed	image problem: the mappy Python module is missing, so deepbinner prep stops with ModuleNotFoundError.
+deepbinner	deepbinner_realtime	Not completed	Watches a sequencer folder in an endless loop until interrupted, so it cannot finish as a batch job.
+deepbinner	deepbinner_refine	PASS	
+deepbinner	deepbinner_train	PASS	
+deepfplearn	deepfplearn_convert	PASS	
+deepfplearn	deepfplearn_predict	PASS	
+deepfplearn	deepfplearn_predictgnn	PASS	
+deepfplearn	deepfplearn_train	PASS	
+deepfplearn	deepfplearn_traingnn	PASS	
+deeplc	deeplc	PASS	
+deepmased	deepmased_evaluate	PASS	
+deepmased	deepmased_features	PASS	
+deepmased	deepmased_predict	PASS	
+deepmased	deepmased_train	PASS	
+deepmedic	deepmedic	Failed	image problem: Theano finds no C++ compiler or BLAS in the image, so the tinyCnn example training stops with an AbstractConv3d optimization error.
+deepmei	deepmei	Failed	image problem: the DeepMEI_model/reference folder (default ME_add_ALU.fa and ME_*.bed files) is missing, and the script writes temp files into its read-only install folder /usr/local/bin.
+deepmicro	deepmicro_DM.py	PASS	
+deepmicroclass	deepmicroclass_predict	PASS	
+deepmicroclass	deepmicroclass_train	Failed	tool bug: the train subcommand has no handler and crashes with KeyError 'func' (train.py is empty in this release).
+deepnog	deepnog_infer	PASS	
+deepnog	deepnog_train	PASS	
+deepsig	deepsig	PASS	
+deepsignal-plant	deepsignal-plant_call_freq	PASS	synthetic data: planted call_mods results; bedMethyl frequencies 75, 0 and 50 percent match the plan.
+deepsignal-plant	deepsignal-plant_call_mods	Failed	image problem: call_mods imports h5py, which fails with undefined symbol H5Pset_fapl_ros3.
+deepsignal-plant	deepsignal-plant_denoise	PASS	synthetic data: planted CpG features; one round keeps 142 of 300 positives and all negatives in the denoised file.
+deepsignal-plant	deepsignal-plant_extract	Failed	image problem: h5py fails to import (undefined symbol H5Pset_fapl_ros3), so extract crashes on tombo-resquiggled SARS-CoV-2 fast5 reads.
+deepsignal-plant	deepsignal-plant_train	PASS	synthetic data: planted CpG features (extract is broken in the image); 2 epochs reach 0.855 validation accuracy and write .ckpt models.
+deepsvr	deepsvr_classify_data	Failed	image problem: the click CLI aborts at start because the image has no locale program or UTF-8 locale (FileNotFoundError: 'locale'); setting LC_ALL does not help.
+deepsvr	deepsvr_prepare_data	Failed	image problem: the click CLI aborts at start because the image has no locale program or UTF-8 locale (FileNotFoundError: 'locale'); setting LC_ALL does not help.
+deepsvr	deepsvr_train_classifier	Failed	image problem: the click CLI aborts at start because the image has no locale program or UTF-8 locale (FileNotFoundError: 'locale'); setting LC_ALL does not help.
+defense-finder	defense-finder_run	PASS	All 67 expected systems of the repo's df_test_prot.faa test are found, plus 3 from newer models (CasFinder 3.1.0 models, --skip-model-version-check).
+defense-finder	defense-finder_update	Failed	tool bug: update installs the latest CasFinder (3.1.1, model format 2.1), which this image's MacSyFinder 2.1.4 cannot parse, so run then fails.
+defiant	defiant	PASS	methylKit RRBS example files run but share too few CpGs for a DMR; a planted case (synthetic data) DMR at chr1:10400-10780 is found as 10420-10780.
+degenotate	degenotate	PASS	Rewritten from help (old file used invented flags and a missing command); repo test data: multi-cds.fa gives correct per-site degeneracy, corBra VCF gives an MK table for 988 transcripts.
+dehomopolymerate	dehomopolymerate	PASS	
+delly	delly_call	PASS	delly example sr.bam/ref.fa: one PASS precise deletion 18:100000-108001 (PE=9, SR=7).
+delly	delly_filter	PASS	Galaxy call_1.bcf.gz somatic filter: 140-line VCF as in the Galaxy test; tag mode marks low-quality and germline sites correctly.
+delly	delly_merge	PASS	Galaxy call_1/call_2 BCFs merge into a 3-site BCF with a 129-line VCF (Galaxy test with delly 0.9.1 expects 128).
+deltamsi	deltamsi_evaluate	Not completed	Needs a trained DeltaMSI model and labelled tumour BAMs; no public model or test set is available.
+deltamsi	deltamsi_predict	Not completed	Needs a trained DeltaMSI model, which needs at least 10 labelled tumour BAMs; no public model or test set is available.
+deltamsi	deltamsi_train	Not completed	Training needs at least 10 tumour BAMs with known MSI status and no small public set exists; with four 1000 Genomes BAMs the command line works but the tool stops with 'not enough samples'.
+deltapd	deltapd	Failed	image problem: deltapd 0.1.5 calls PhyloDM.get_from_newick_file, which the installed phylodm no longer has (AttributeError) on the repo example trees.
+delve-bio	delve-bio_call	PASS	nf-core ARTIC SARS-CoV-2 BAM on MN908947.3: 24 calls including the known homozygous C241T, C3037T, C14408T and A23403G (D614G).
+demultiplexer	demultiplexer	Not completed	GUI-only program (PySimpleGUI window, no command-line arguments; the image also lacks libX11), so it cannot run as a batch job; the CWL flags are not real options.
+demultiplexer2	demultiplexer2_create_primerset	Failed	tool bug: it writes the primer set into its own install folder (site-packages/demultiplexer2/data/primersets), which is read-only in a container.
+demultiplexer2	demultiplexer2_create_tagging_scheme	PASS	synthetic data: planted tagged read pair with the bundled fwh2F-fwhR2n primer set; scheme lists the pair and the two chosen combinations (answers given on stdin).
+demultiplexer2	demultiplexer2_demultiplex	PASS	synthetic data: 60 planted read pairs; 30 and 20 go to the two samples and 10 with an unused tag pair are unmatched, as planted.
+demuxlet	demuxlet	PASS	
+dendropy	dendropy_sumtrees	PASS	
+density-fitness	density-fitness	PASS	
+derip2	derip2	PASS	
+derna	derna	PASS	
+desman	desman	Failed	image problem: desman calls DataFrame.as_matrix, which the bundled pandas 2.2.3 no longer has, so every run crashes.
+detonate	detonate_ref-eval-estimate-true-assembly	PASS	
+detonate	detonate_rsem-eval-calculate-score	PASS	
+devider	devider	PASS	
+dfast	dfast	PASS	
+dialign-tx	dialign-tx	PASS	
+diamond	diamond_blastp	PASS	
+diamond	diamond_blastx	PASS	
+diamond	diamond_cluster	PASS	
+diamond	diamond_dbinfo	PASS	
+diamond	diamond_getseq	PASS	
+diamond	diamond_greedy-vertex-cover	PASS	
+diamond	diamond_linclust	PASS	
+diamond	diamond_makedb	PASS	
+diamond	diamond_makeidx	PASS	
+diamond	diamond_merge-daa	PASS	
+diamond	diamond_realign	PASS	
+diamond	diamond_reassign	Failed	tool bug: diamond 2.1.24 reassign stops with 'Error: Block::ids()' for both FASTA and .dmnd databases with a valid clustering file.
+diamond	diamond_recluster	PASS	
+diamond	diamond_view	PASS	
+diapysef	diapysef_converttdftomzml	Failed	tool bug: diapysef downloads the Bruker SDK (libtimsdata.so) only after its reader module is imported, so in a fresh working directory the conversion of a real timsTOF .d (opentims test.d) crashes with 'TimsData has no attribute readScans'; a second run in the same folder works.
+diapysef	diapysef_export	PASS	synthetic data: exported the extracted mzML to a 21700-row tsv with m/z, RT, IM and intensity for the 3 peptides (added the output file, log and NetworkAccess).
+diapysef	diapysef_prepare-coordinates	PASS	synthetic data: small scored OSW built from the OpenMS OpenSwathWorkflow_23 ion-mobility test (3 peptides); the pickle holds the right precursor m/z, RT, IM and product m/z for each peptide (fixed --out-file to --out, added NetworkAccess because every subcommand downloads the Bruker SDK at start).
+diapysef	diapysef_report	PASS	synthetic data: made a 3-page RT/IM heatmap PDF, one page per peptide, from the export tsv (added NetworkAccess).
+diapysef	diapysef_targeted-extraction	PASS	synthetic data: OpenMS OpenSwathWorkflow_23 ion-mobility mzML with coordinates from prepare-coordinates; MS2 extraction gives 247 spectra for PEPTIDEA/B/C (added NetworkAccess; MS1 extraction crashes on this file because its MS1 spectra have no precursor).
+diatracer	diatracer	Not completed	needs a Nesvilab license key that is checked online plus diaPASEF timsTOF .d data; the old CWL had only --key, so the .d input, work directory and tuning options were added from the jar's usage text.
+dice	dice	PASS	
+dicey	dicey_blacklist	PASS	Masked exactly the six ARTIC primer intervals of the sarscov2 genome with N (added the .fai/.gzi secondary files).
+dicey	dicey_chop	PASS	Chopped sarscov2 into 2963 read pairs (fixed null-prefix globs and added the .fai/.gzi secondary files).
+dicey	dicey_hunt	PASS	Found the sarscov2 20-mer at 1001-1020 with distance 0 (added .fai/.gzi/^.fm9/^.fm9_check secondary files; dicey looks for the index as <genome without .gz>.fm9).
+dicey	dicey_index	PASS	
+dicey	dicey_mappability2	PASS	Map from minimap2-aligned chop reads marks all 2963 read starts as unique (added the .bai secondary file).
+dicey	dicey_padlock	PASS	Designed 25 padlock probes inside yeast TPD3 (Ensembl chrI); the sarscov2 NCBI GTF gives none because it lacks transcript_biotype (fixed six options that had no prefix, added genome index secondary files).
+dicey	dicey_search	PASS	ARTIC V3 primer pair 1 on sarscov2 gives the expected 380 bp amplicon with the repository's primer3_config (added genome index secondary files).
+difcover	difcover_from_DNAcopyout_to_p_fragments.sh	PASS	With p=0.1 the score-0.18 segment goes to the .up0.1 file and the .down-0.1 file is empty, as expected (input made a single File, staged in the work dir, outputs collected).
+difcover	difcover_from_bams_to_unionbed.sh	PASS	Two nf-core chr22 BAMs give an 808-interval unionbedcv with both coverage columns and the 40001 bp chr22 length (added the missing outputs and staged sample1 BAM in the work dir because the script writes <bam>.header beside it).
+difcover	difcover_from_ratio_per_window__to__DNAcopy_output.sh	PASS	DNAcopy merges the 24 windows into one chr22 segment with score 0.18 and writes the log2adj table and PDF (fixed the command name, staged the input in the work dir, collected the outputs).
+difcover	difcover_from_unionbed_to_ratio_per_window_CC0	PASS	Gives 24 windows of 50 valid bases with average coverages and ratios near 1 for the two similar samples (fixed the command name, moved the unionbed file after the options, collected the ratio file).
+difcover	difcover_run_difcover.sh	Not completed	pipeline, skipped: run_difcover.sh is a template driver that takes no arguments and runs all stages with hard-coded sample1.bam/sample2.bam and ../dif_cover_scripts paths (baseCommand fixed to run_difcover.sh).
+diffacto	diffacto	PASS	On a 2127-peptide subset of the repository's iPRG example the spiked proteins ALBU, BGAL, CAH2, MYG and PYGM get MCFDR <= 0.03 while yeast background proteins stay near 1 (fixed -mc_out and -loadings_out prefixes).
+diffexpir	diffexpir_diffexpIR	PASS	
+diffutils	diffutils_cmp	PASS	
+diffutils	diffutils_diff3	PASS	
+dig2	dig2	PASS	
+digestiflow-cli	digestiflow-cli_ingest	Not completed	Ingest always queries a Digestiflow web server (URL and token from a config file) and panics without one, so it cannot run offline on the MiSeq test run folder.
+digestiflow-demux	digestiflow-demux	Not completed	pipeline, skipped: it runs a Snakemake demultiplexing workflow that needs a Digestiflow web server for the sample sheet, and the image has no bcl2fastq or Picard.
+dimspy	dimspy_align-samples	PASS	
+dimspy	dimspy_blank-filter	PASS	
+dimspy	dimspy_create-sample-list	PASS	
+dimspy	dimspy_get-average-peaklist	PASS	
+dimspy	dimspy_get-peaklists	PASS	
+dimspy	dimspy_hdf5-pls-to-txt	PASS	
+dimspy	dimspy_hdf5-pm-to-txt	PASS	
+dimspy	dimspy_merge-peaklists	PASS	
+dimspy	dimspy_mv-sample-filter	PASS	
+dimspy	dimspy_process-scans	PASS	
+dimspy	dimspy_remove-samples	Failed	tool bug: dimspy 2.0.0 stores --input as a list and passes it to h5py.File, so remove-samples crashes with a TypeError on any input.
+dimspy	dimspy_replicate-filter	PASS	
+dimspy	dimspy_sample-filter	PASS	
+dimspy	dimspy_unzip	PASS	

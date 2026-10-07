@@ -1,13 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dbg2olc_SparseAssembler
+baseCommand: SparseAssembler
 label: dbg2olc_SparseAssembler
-doc: "Sparse assembler for long reads.\n\nTool homepage: https://github.com/yechengxi/DBG2OLC"
+doc: "SparseAssembler: sparse de Bruijn graph assembler for short reads (used to make the contigs for DBG2OLC).\n\nTool homepage: https://github.com/yechengxi/DBG2OLC"
 inputs:
   - id: build_contigs
     type:
       - 'null'
-      - boolean
+      - int
     doc: "1: build contigs.0: don't build."
     inputBinding:
       position: 101
@@ -25,7 +25,7 @@ inputs:
   - id: denoise
     type:
       - 'null'
-      - boolean
+      - int
     doc: use 1 to call the error correction module. (default 0)
     inputBinding:
       position: 101
@@ -77,7 +77,7 @@ inputs:
   - id: hybrid_mode
     type:
       - 'null'
-      - boolean
+      - int
     doc: 'hybrid mode. 0 (Default): reads will be trimmed at the ends to ensure denoising
       accuracy (*MUST* set 0 for the last round). 1: reads will not be trimmed at
       the ends;'
@@ -89,21 +89,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: f
     doc: single end reads. Multiple inputs shall be independently imported with 
       this parameter.
     inputBinding:
       position: 101
-      prefix: f
-  - id: input_file2
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: single end reads. Multiple inputs shall be independently imported with 
-      this parameter.
-    inputBinding:
-      position: 101
-      prefix: f
   - id: insert_size
     type:
       - 'null'
@@ -149,7 +140,7 @@ inputs:
   - id: iterative_scaffolding
     type:
       - 'null'
-      - boolean
+      - int
     doc: '1: iterative scaffolding using the already built scaffolds (/super contigs).
       0: one round scaffolding.'
     inputBinding:
@@ -174,8 +165,8 @@ inputs:
   - id: load_skg
     type:
       - 'null'
-      - File
-    doc: load a saved k-mer graph.
+      - int
+    doc: load a saved k-mer graph (1) or build a new one (0).
     inputBinding:
       position: 101
       prefix: LD
@@ -190,7 +181,7 @@ inputs:
   - id: output_kmer_table
     type:
       - 'null'
-      - boolean
+      - int
     doc: 1 if you want to output the kmer table.
     inputBinding:
       position: 101
@@ -250,7 +241,7 @@ inputs:
   - id: scaffold
     type:
       - 'null'
-      - boolean
+      - int
     doc: '1: scaffolding with paired reads. 0: single end assembly.'
     inputBinding:
       position: 101
@@ -280,6 +271,25 @@ inputs:
       position: 101
       prefix: TrimN
 outputs:
+  - id: contigs
+    type: File
+    doc: Assembled contigs (Contigs.txt, FASTA)
+    outputBinding:
+      glob: Contigs.txt
+  - id: scaffolds
+    type:
+      - 'null'
+      - File
+    doc: Scaffolds (SuperContigs.txt), written when scaffolding is on
+    outputBinding:
+      glob: SuperContigs.txt
+  - id: assembly_log
+    type:
+      - 'null'
+      - File
+    doc: Assembly log
+    outputBinding:
+      glob: Assembly_Log.txt
   - id: stdout
     type: stdout
     doc: Standard output

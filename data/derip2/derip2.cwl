@@ -142,9 +142,11 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: Files written with the prefix given in prefix (default deRIPseq), 
+      inside out_dir when it is set
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.out_dir ? inputs.out_dir + '/' : '')$(inputs.prefix ? inputs.prefix
+        : 'deRIPseq')*"
   - id: out_dir_dir
     type:
       - 'null'
@@ -152,6 +154,17 @@ outputs:
     doc: Directory for deRIP'd sequence files to be written to.
     outputBinding:
       glob: $(inputs.out_dir)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (written inside out_dir when it is set)
+    outputBinding:
+      glob: "$(inputs.logfile ? (inputs.out_dir ? inputs.out_dir + '/' : '') + inputs.logfile
+        : [])"
+
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/derip2:0.4.1--pyhdfd78af_0

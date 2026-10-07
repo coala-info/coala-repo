@@ -29,7 +29,13 @@ inputs:
       prefix: --forward
   - id: genome_file
     type: File
-    doc: genome file
+    doc: genome file (bgzip-compressed, with samtools faidx index and the
+      dicey index <genome without .gz>.fm9)
+    secondaryFiles:
+      - .fai
+      - .gzi
+      - ^.fm9
+      - ^.fm9_check
     inputBinding:
       position: 102
       prefix: --genome

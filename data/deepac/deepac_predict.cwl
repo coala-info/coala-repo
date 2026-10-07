@@ -31,7 +31,7 @@ inputs:
   - id: custom_model
     type:
       - 'null'
-      - string
+      - File
     doc: Use the user-supplied, already compiled CUSTOM model.
     inputBinding:
       position: 102

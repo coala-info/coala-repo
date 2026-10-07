@@ -34,14 +34,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --BBD-beta
-  - id: combine_p7_bcs
-    type:
-      - 'null'
-      - boolean
-    doc: Combine individuals with multiple p7 barcodes in one output file.
-    inputBinding:
-      position: 101
-      prefix: --combine-p7-bcs
   - id: coverage
     type:
       - 'null'
@@ -94,7 +86,8 @@ inputs:
   - id: event_probabilities
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: 'Probability profile for the distribution of event types (common, dropout,
       mutation; in this order). Example: ``python ddrage.py --event-probabilities
       0.9 0.05 0.05`` -> common 90%, dropout 5%, mutation 5% (Default). Each entry
@@ -152,6 +145,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: Number of loci for which reads will be created or path to a FASTA file 
       with predefined fragments.
     inputBinding:
@@ -177,7 +171,8 @@ inputs:
   - id: mutation_type_probabilities
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: "Probability profile for the distribution of mutation types (snp, insertion,
       deletion, p5 na alternative, p7 na alternative, p5 na dropout, p7 na dropout;
       in this order). Example: ``python ddrage.py --mutation-type- probabilities 0.8999
@@ -215,9 +210,8 @@ inputs:
       position: 101
       prefix: --nr-individuals
   - id: output_path_prefix
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: ddrage_output
     doc: Prefix of the output path. At this point a folder will be created that 
       contains all output files created by ddrage.
     inputBinding:
@@ -325,14 +319,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --read-length
-  - id: se
-    type:
-      - 'null'
-      - boolean
-    doc: Write a single-end dataset. Only writes a p5 FASTQ file.
-    inputBinding:
-      position: 101
-      prefix: --se
   - id: single_end
     type:
       - 'null'
@@ -372,6 +358,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Folder with the simulated FASTQ files, ground truth, barcodes and logs
+    outputBinding:
+      glob: $(inputs.output_path_prefix)
+  - id: reads
+    type: File[]
+    doc: Simulated FASTQ files (p5 and, for paired-end data, p7)
+    outputBinding:
+      glob: $(inputs.output_path_prefix)/*.fastq*
+  - id: ground_truth
+    type: File[]
+    doc: Ground truth YAML files
+    outputBinding:
+      glob: $(inputs.output_path_prefix)/*_gt.yaml
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ddrage:1.8.1--pyhdfd78af_0

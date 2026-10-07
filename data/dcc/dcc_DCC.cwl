@@ -8,7 +8,7 @@ inputs:
   - id: input
     type:
       type: array
-      items: string
+      items: File
     doc: "Input of the Chimeric.out.junction file from STAR.\n                   \
       \     Alternatively, a sample sheet specifying where your\n                \
       \        chimeric.out.junction files are, each sample per line,\n          \
@@ -29,6 +29,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: A file specifying the mapped BAM files from which host gene expression 
       is computed; must have the same order as input chimeric junction files
     inputBinding:
@@ -56,7 +59,8 @@ inputs:
   - id: countthreshold_replicatethreshold
     type:
       - 'null'
-      - string
+      - type: array
+        items: int
     doc: countthreshold replicatethreshold
     inputBinding:
       position: 102
@@ -98,7 +102,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: 'If specified, the program will only filter based on two files provided:
       1) a coordinates file [BED6 format] and 2) a count file. E.g.: -f example.bed
       counts.txt'
@@ -186,7 +190,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: DCC output directory
     inputBinding:
       position: 102
@@ -204,6 +208,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference sequence FASTA file
     inputBinding:
       position: 102
@@ -234,9 +241,43 @@ inputs:
       position: 102
       prefix: --temp
 outputs:
+  - id: circ_rna_count
+    type:
+      - 'null'
+      - File
+    doc: Junction read counts of the detected circRNAs (CircRNACount)
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir + '/' : '')CircRNACount"
+  - id: circ_coordinates
+    type:
+      - 'null'
+      - File
+    doc: circRNA coordinates with host gene annotation (CircCoordinates)
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir + '/' : '')CircCoordinates"
+  - id: linear_count
+    type:
+      - 'null'
+      - File
+    doc: Host gene linear read counts (LinearCount, with --gene)
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir + '/' : '')LinearCount"
+  - id: circ_skip_junctions
+    type:
+      - 'null'
+      - File
+    doc: Circular skip junctions (CircSkipJunctions, with --gene)
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir + '/' : '')CircSkipJunctions"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ var l = []; [inputs.input, inputs.mate1, inputs.mate2].forEach(function(a) { if (a) { a.forEach(function(f) { l.push({"entry": f, "writable": true}); }); } }); return l; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dcc:0.5.0--pyhca03a8a_0

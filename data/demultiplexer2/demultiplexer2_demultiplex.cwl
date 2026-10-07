@@ -24,6 +24,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output_dir
+  - id: data_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the input read files, staged into the working directory
+      so that relative paths in the tagging scheme resolve.
 outputs:
   - id: output_dir
     type: Directory
@@ -32,6 +38,15 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [{"class": "Directory", "basename": inputs.output_dir_path, "listing": [], "writable": true}];
+        if (inputs.data_dir) { l.push(inputs.data_dir); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/demultiplexer2:1.1.6--pyhdfd78af_0

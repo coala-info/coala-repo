@@ -1,5 +1,11 @@
 # dagchainer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dagchainer | PASS |  |
+
 ## dagchainer
 
 ### Tool Description

@@ -19,7 +19,8 @@ inputs:
     doc: append output to file
     inputBinding:
       position: 102
-      prefix: --append
+      prefix: --append=
+      separate: false
   - id: arg_file
     type:
       - 'null'
@@ -43,7 +44,8 @@ inputs:
     doc: label each simulation with a unique id
     inputBinding:
       position: 102
-      prefix: --label
+      prefix: --label=
+      separate: false
   - id: reps
     type:
       - 'null'
@@ -67,7 +69,8 @@ inputs:
     doc: split output into separate files
     inputBinding:
       position: 102
-      prefix: --split
+      prefix: --split=
+      separate: false
   - id: output_file_path
     type: string
     doc: output to this file

@@ -1,5 +1,11 @@
 # demultiplexer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| demultiplexer | Not completed | GUI-only program (PySimpleGUI window, no command-line arguments; the image also lacks libX11), so it cannot run as a batch job; the CWL flags are not real options. |
+
 ## demultiplexer
 
 ### Tool Description

@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: diffexpIR
+baseCommand:
+  - diffexpIR
 label: diffexpir_diffexpIR
 doc: "Performs differential expression analysis.\n\nTool homepage: https://github.com/r78v10a07/DiffExpIR"
 inputs:
@@ -21,9 +22,7 @@ inputs:
       position: 101
       prefix: -k
   - id: gtf_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: GTF file
     inputBinding:
       position: 101
@@ -62,9 +61,7 @@ inputs:
       position: 101
       prefix: -v
   - id: sample_prefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Prefix for grouping samples. (sample_1,sample_2)
     inputBinding:
       position: 101
@@ -78,9 +75,7 @@ inputs:
       position: 101
       prefix: -s
   - id: tpm_output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory with the TPM output files
     inputBinding:
       position: 101
@@ -101,9 +96,7 @@ inputs:
       prefix: -o
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file name
     outputBinding:
       glob: $(inputs.output_file_path)

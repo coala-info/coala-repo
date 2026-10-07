@@ -1,5 +1,13 @@
 # delly CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| delly_call | PASS | delly example sr.bam/ref.fa: one PASS precise deletion 18:100000-108001 (PE=9, SR=7). |
+| delly_filter | PASS | Galaxy call_1.bcf.gz somatic filter: 140-line VCF as in the Galaxy test; tag mode marks low-quality and germline sites correctly. |
+| delly_merge | PASS | Galaxy call_1/call_2 BCFs merge into a 3-site BCF with a 129-line VCF (Galaxy test with delly 0.9.1 expects 128). |
+
 ## delly_call
 
 ### Tool Description

@@ -10,10 +10,11 @@ inputs:
       - 'null'
       - type: array
         items: float
+        inputBinding:
+          prefix: --alpha
     doc: Grid of alpha to search for (default is 0, 0.5) - 0.0 - 0.5
     inputBinding:
       position: 101
-      prefix: --alpha
   - id: cap_bq
     type:
       - 'null'
@@ -57,7 +58,7 @@ inputs:
   - id: group_list
     type:
       - 'null'
-      - string
+      - File
     doc: List of tag readgroup/cell barcode to consider in this run. All other 
       barcodes will be ignored. This is useful for parallelized run
     inputBinding:
@@ -130,9 +131,12 @@ inputs:
       position: 101
       prefix: --min-uniq
   - id: sam
-    type:
-      - 'null'
-      - File
+    type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input SAM/BAM/CRAM file. Must be sorted by coordinates and indexed
     inputBinding:
       position: 101
@@ -150,10 +154,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sm
     doc: 'List of sample IDs to compare to (default: use all)'
     inputBinding:
       position: 101
-      prefix: --sm
   - id: sm_list
     type:
       - 'null'
@@ -180,9 +185,7 @@ inputs:
       position: 101
       prefix: --tag-UMI
   - id: vcf
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input VCF/BCF file, containing the individual genotypes (GT), posterior
       probability (GP), or genotype likelihood (PL)
     inputBinding:

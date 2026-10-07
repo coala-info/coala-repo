@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: debarcer_run
+baseCommand:
+  - debarcer
+  - run
 label: debarcer_run
 doc: "Run the debarcer pipeline.\n\nTool homepage: https://github.com/oicr-gsi/debarcer"
 inputs:

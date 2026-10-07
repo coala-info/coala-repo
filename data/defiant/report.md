@@ -1,5 +1,11 @@
 # defiant CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| defiant | PASS | methylKit RRBS example files run but share too few CpGs for a DMR; a planted case (synthetic data) DMR at chr1:10400-10780 is found as 10420-10780. |
+
 ## defiant
 
 ### Tool Description

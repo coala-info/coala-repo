@@ -1,5 +1,15 @@
 # diapysef CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| diapysef_converttdftomzml | Failed | tool bug: diapysef downloads the Bruker SDK (libtimsdata.so) only after its reader module is imported, so in a fresh working directory the conversion of a real timsTOF .d (opentims test.d) crashes with 'TimsData has no attribute readScans'; a second run in the same folder works. |
+| diapysef_export | PASS | synthetic data: exported the extracted mzML to a 21700-row tsv with m/z, RT, IM and intensity for the 3 peptides (added the output file, log and NetworkAccess). |
+| diapysef_prepare-coordinates | PASS | synthetic data: small scored OSW built from the OpenMS OpenSwathWorkflow_23 ion-mobility test (3 peptides); the pickle holds the right precursor m/z, RT, IM and product m/z for each peptide (fixed --out-file to --out, added NetworkAccess because every subcommand downloads the Bruker SDK at start). |
+| diapysef_report | PASS | synthetic data: made a 3-page RT/IM heatmap PDF, one page per peptide, from the export tsv (added NetworkAccess). |
+| diapysef_targeted-extraction | PASS | synthetic data: OpenMS OpenSwathWorkflow_23 ion-mobility mzML with coordinates from prepare-coordinates; MS2 extraction gives 247 spectra for PEPTIDEA/B/C (added NetworkAccess; MS1 extraction crashes on this file because its MS1 spectra have no precursor). |
+
 ## diapysef_converttdftomzml
 
 ### Tool Description

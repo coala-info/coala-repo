@@ -19,8 +19,7 @@ inputs:
   - id: busco_group
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Which BUSCO group to use. Should be chosen based on the organism being 
       annotated. Full list of options is below.
     inputBinding:
@@ -45,6 +44,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --database-dir
+      valueFrom: $(self.basename)
   - id: destructive
     type:
       - 'null'
@@ -130,6 +130,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: migrated_database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The database directory after migration (staged writable, changed in 
+      place)
+    outputBinding:
+      glob: '$(inputs.database_dir ? inputs.database_dir.basename : [])'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ return inputs.database_dir ? [{"entry": inputs.database_dir, "writable": true}] : []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dammit:1.2--pyh5ca1d4c_0

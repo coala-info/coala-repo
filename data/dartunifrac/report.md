@@ -1,5 +1,11 @@
 # dartunifrac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dartunifrac | PASS |  |
+
 ## dartunifrac
 
 ### Tool Description

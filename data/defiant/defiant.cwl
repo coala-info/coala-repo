@@ -1,18 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./defiant
+baseCommand: defiant
 label: defiant
+requirements:
+  - class: InlineJavascriptRequirement
 doc: "Differential methylation: Easy, Fast, Identification and ANnoTation\n\nTool
   homepage: https://github.com/hhg7/defiant"
 inputs:
   - id: input_files
     type:
       type: array
-      items: File
-    doc: Start reading input files. This is the only required argument. All 
-      further entries to the command line are assumed to be files.
+      items:
+        type: array
+        items: File
+    doc: Input files after "-i", one list per group; replicates in a group are 
+      joined with commas and groups are separated by spaces.
     inputBinding:
-      position: 1
+      position: 200
+      prefix: -i
+      valueFrom: '${ return self.map(function(g) { return g.map(function(f) { 
+        return f.path; }).join(","); }); }'
   - id: annotation_file
     type:
       - 'null'
@@ -253,6 +260,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dmr_tables
+    type: File[]
+    doc: DMR tables and DMR count tables
+    outputBinding:
+      glob: '*.tsv'
+  - id: dmr_beds
+    type: File[]
+    doc: DMRs in bed format (-b)
+    outputBinding:
+      glob: '*.bed'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/defiant:1.1.4--h7b50bb2_6

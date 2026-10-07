@@ -1,5 +1,11 @@
 # demuxlet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| demuxlet | PASS |  |
+
 ## demuxlet
 
 ### Tool Description

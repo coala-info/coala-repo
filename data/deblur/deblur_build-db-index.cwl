@@ -19,7 +19,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file name
     inputBinding:
       position: 103
@@ -33,16 +33,27 @@ inputs:
       position: 103
       prefix: --log-level
 outputs:
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : 'deblur.log')"
   - id: stdout
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: the directory to where to write the indexed database
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.output_dir, listing: []})"
+        writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deblur:1.1.1--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # dehomopolymerate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dehomopolymerate | PASS |  |
+
 ## dehomopolymerate
 
 ### Tool Description

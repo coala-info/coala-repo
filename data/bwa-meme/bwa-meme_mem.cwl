@@ -10,14 +10,18 @@ inputs:
   - id: idxbase
     type: File
     doc: The BWA-MEME index, given as the file named like the index prefix (for example
-      ref.fa); the bwa-mem2 index files must sit beside it, and the learned-index files
-      (.suffixarray_uint64*) too when -7 is used
+      ref.fa); the .0123, .amb, .ann and .pac files must sit beside it, with .bwt.2bit.64
+      for the default mode, and the learned-index files (.pos_packed,
+      .suffixarray_uint64*) when -7 is used
     secondaryFiles:
       - '.0123'
       - .amb
       - .ann
-      - .bwt.2bit.64
+      - pattern: .bwt.2bit.64
+        required: false
       - .pac
+      - pattern: .pos_packed
+        required: false
       - pattern: .suffixarray_uint64
         required: false
       - pattern: .suffixarray_uint64_L0_PARAMETERS

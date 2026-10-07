@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_nwck2phy
+baseCommand:
+  - ccphylo
+  - nwck2phy
 label: ccphylo_nwck2phy
 doc: "converts newick files to phylip distance files.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
 inputs:
@@ -81,7 +83,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

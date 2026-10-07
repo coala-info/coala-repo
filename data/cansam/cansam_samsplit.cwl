@@ -14,6 +14,8 @@ inputs:
     type:
       - 'null'
       - string
+    doc: 'Output file name template (default: "%*-%ID.%.", i.e. input basename, read
+      group ID and sam/bam extension)'
     inputBinding:
       position: 2
   - id: compression_level
@@ -49,12 +51,29 @@ inputs:
       position: 103
       prefix: -f
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Write all selected records to FILE, in addition to splitting
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
+  - id: split_files
+    type:
+      type: array
+      items: File
+    doc: One SAM/BAM file per read group, named by the template
+    outputBinding:
+      glob:
+        - '*.sam'
+        - '*.bam'
+      outputEval: |-
+        ${
+          return self.filter(function(f) {
+            return f.basename !== inputs.output_file_path;
+          });
+        }
   - id: output_file
     type:
       - 'null'

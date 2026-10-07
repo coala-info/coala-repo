@@ -1,5 +1,11 @@
 # centrifuge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| centrifuge_centrifuge-build | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

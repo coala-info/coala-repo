@@ -1,5 +1,11 @@
 # cctyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cctyper | PASS |  |
+
 ## cctyper
 
 ### Tool Description

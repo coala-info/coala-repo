@@ -81,6 +81,8 @@ outputs:
       glob: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cdskit:0.16.1--pyhdfd78af_0

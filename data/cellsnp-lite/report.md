@@ -1,5 +1,11 @@
 # cellsnp-lite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cellsnp-lite | PASS |  |
+
 ## cellsnp-lite
 
 ### Tool Description

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cats-rf_CATS_rf
+baseCommand: CATS_rf
 label: cats-rf_CATS_rf
 doc: "reference-free transcriptome assembly assessment\n\nTool homepage: https://github.com/bodulic/CATS-rf"
 inputs:
@@ -8,19 +8,19 @@ inputs:
     type: File
     doc: Transcriptome file
     inputBinding:
-      position: 1
+      position: 201
   - id: reads1
     type: File
     doc: First FASTQ file
     inputBinding:
-      position: 2
+      position: 202
   - id: reads2
     type:
       - 'null'
       - File
     doc: Second FASTQ file (for paired-end reads)
     inputBinding:
-      position: 3
+      position: 203
   - id: accuracy_breakpoints
     type:
       - 'null'
@@ -243,7 +243,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: CATS-rf output directory name
     inputBinding:
       position: 104
@@ -374,13 +374,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_file_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_file_prefix
+  - id: output_dir
+    type: Directory
+    doc: CATS-rf output directory (default <transcriptome>_CATS_rf_dir)
     outputBinding:
-      glob: $(inputs.output_file_prefix)*
+      glob: '$(inputs.output_directory ? inputs.output_directory : inputs.transcriptome.basename + "_CATS_rf_dir")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cats-rf:1.0.4--hdfd78af_0

@@ -1,21 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cats-rb_compare
+baseCommand: CATS_rb_compare
 label: cats-rb_CATS_rb_compare
 doc: "transcriptome assembly comparison script\n\nTool homepage: https://github.com/bodulic/CATS-rb"
 inputs:
   - id: genome
-    type: string
+    type: File
     doc: Genome file
     inputBinding:
-      position: 1
+      position: 201
   - id: transcriptome_map_dir1
     type:
       type: array
       items: Directory
-    doc: Transcriptome map directory
+    doc: CATS_rb_map output directories (one per transcriptome assembly). They are
+      staged into the working directory because the script expects paths relative
+      to it.
     inputBinding:
-      position: 2
+      position: 202
+      valueFrom: '$(self.map(function(d) { return d.basename; }))'
   - id: aligned_transcript_distribution_breakpoints
     type:
       - 'null'
@@ -54,7 +57,7 @@ inputs:
   - id: comparison_output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Comparison output directory name
     inputBinding:
       position: 103
@@ -350,6 +353,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: comparison_dir
+    type: Directory
+    doc: Comparison output directory
+    outputBinding:
+      glob: '$(inputs.comparison_output_directory ? inputs.comparison_output_directory : "CATS_rb_comparison")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.transcriptome_map_dir1)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cats-rb:1.0.3--hdfd78af_0

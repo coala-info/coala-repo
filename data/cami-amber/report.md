@@ -1,5 +1,13 @@
 # cami-amber CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cami-amber_add_length_column.py | PASS |  |
+| cami-amber_amber.py | PASS |  |
+| cami-amber_convert_fasta_bins_to_biobox_format.py | PASS |  |
+
 ## cami-amber_amber.py
 
 ### Tool Description

@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - bxtools
-  - stat
+  - stats
 label: bxtools_stats
 doc: "Gather BX-level statistics\n\nTool homepage: https://github.com/walaj/bxtools"
 inputs:
@@ -26,7 +26,7 @@ inputs:
     doc: Set verbose output
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout
@@ -34,4 +34,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bxtools:0.1.0--h13024bc_6
-stdout: bxtools_stats.out
+stdout: bxtools_stats.tsv

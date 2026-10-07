@@ -132,11 +132,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --embedding
     doc: Embedding name, eg, 'umap'. Repeat option for multiple embeddings. 
       Defaults to all.
     inputBinding:
       position: 102
-      prefix: --embedding
   - id: gene_sets_file
     type:
       - 'null'

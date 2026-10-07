@@ -14,6 +14,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
+  - id: reference_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the config file (genome FASTA, gene GTF, motifs file). 
+      They are staged in the working directory, so the config file can name 
+      them by base name.
   - id: nthreads
     type:
       - 'null'
@@ -43,6 +51,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: reference_dir
+    type:
+      type: array
+      items: Directory
+    doc: Reference package folder named after the genome in the config file
+    outputBinding:
+      glob: '*'
+      outputEval: '$(self.filter(function(f) { return f.class == "Directory"; 
+        }))'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.reference_files ? inputs.reference_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger-arc:2.2.0

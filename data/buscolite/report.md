@@ -1,5 +1,11 @@
 # buscolite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| buscolite | PASS |  |
+
 ## buscolite
 
 ### Tool Description

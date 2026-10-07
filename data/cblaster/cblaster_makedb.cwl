@@ -49,10 +49,42 @@ inputs:
     inputBinding:
       position: 102
       prefix: --name
+  - id: ncbi_email
+    type:
+      - 'null'
+      - string
+    doc: E-mail address for NCBI Entrez. cblaster refuses to start without an 
+      e-mail or NCBI API key in its config file; this CWL writes that file 
+      ($HOME/.config/cblaster/config.ini) from ncbi_email / ncbi_api_key.
+  - id: ncbi_api_key
+    type:
+      - 'null'
+      - string
+    doc: NCBI API key written to the cblaster config file (alternative to 
+      ncbi_email)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: diamond_db
+    type: File
+    doc: DIAMOND database (<name>.dmnd) with the cblaster SQLite database 
+      (<name>.sqlite3) beside it
+    outputBinding:
+      glob: $(inputs.name).dmnd
+    secondaryFiles:
+      - ^.sqlite3
+  - id: fasta
+    type: File?
+    doc: Protein FASTA written while building the databases (<name>.fasta)
+    outputBinding:
+      glob: $(inputs.name).fasta
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ var s = "[cblaster]\n"; if (inputs.ncbi_email) { s += "email = " + inputs.ncbi_email + "\n"; } if (inputs.ncbi_api_key) { s += "api_key = " + inputs.ncbi_api_key + "\n"; } return {"class": "Directory", "basename": ".config", "listing": [{"class": "Directory", "basename": "cblaster", "listing": [{"class": "File", "basename": "config.ini", "contents": s}]}]}; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cblaster:1.4.0--pyhdfd78af_0

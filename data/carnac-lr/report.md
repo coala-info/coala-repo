@@ -1,5 +1,11 @@
 # carnac-lr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| carnac-lr | PASS |  |
+
 ## carnac-lr
 
 ### Tool Description

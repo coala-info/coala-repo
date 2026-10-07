@@ -1,5 +1,11 @@
 # catfasta2phyml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| catfasta2phyml | PASS |  |
+
 ## catfasta2phyml
 
 ### Tool Description

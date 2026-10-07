@@ -4,13 +4,6 @@ baseCommand: ceas
 label: ceas
 doc: "CEAS (Cis-regulatory Element Annotation System)\n\nTool homepage: https://github.com/jhardy/compass-ceaser-easing"
 inputs:
-  - id: input_files
-    type:
-      type: array
-      items: File
-    doc: input files
-    inputBinding:
-      position: 1
   - id: bed_file
     type:
       - 'null'
@@ -58,9 +51,7 @@ inputs:
       position: 102
       prefix: --ebed
   - id: gene_annotation_db
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Gene annotation table (eg, a refGene table in sqlite3 db format 
       provided through the CEAS web, 
       http://liulab.dfci.harvard.edu/CEAS/download.html).
@@ -91,13 +82,15 @@ inputs:
   - id: gene_groups_of_interest
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Gene-groups of particular interest in wig profiling. Each gene group 
       file must have gene names in the 1st column. The file names are separated 
       by commas w/ no space (eg, --gn-groups=top10.txt,bottom10.txt)
     inputBinding:
       position: 102
       prefix: --gn-groups
+      itemSeparator: ','
   - id: promoter_sizes
     type:
       - 'null'
@@ -159,6 +152,34 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: annotation_xls
+    type:
+      - 'null'
+      - File
+    doc: Gene-centered annotation table (NAME.xls)
+    outputBinding:
+      glob: '*.xls'
+  - id: r_script
+    type:
+      - 'null'
+      - File
+    doc: R script that draws the annotation and profiling plots (NAME.R)
+    outputBinding:
+      glob: '*.R'
+  - id: pdf_report
+    type:
+      - 'null'
+      - File
+    doc: PDF report made by running the R script (NAME.pdf)
+    outputBinding:
+      glob: '*.pdf'
+  - id: dumped_profiles
+    type:
+      type: array
+      items: File
+    doc: Raw profiles near TSS, TTS and gene body written with --dump
+    outputBinding:
+      glob: '*_dump_*'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ceas:1.0.2--py27_1

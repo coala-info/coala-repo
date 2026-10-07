@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cats_rb_map
+baseCommand: CATS_rb_map
 label: cats-rb_CATS_rb_map
 doc: "transcriptome assembly mapping script\n\nTool homepage: https://github.com/bodulic/CATS-rb"
 inputs:
@@ -8,16 +8,16 @@ inputs:
     type: Directory
     doc: Genome index directory
     inputBinding:
-      position: 1
+      position: 201
   - id: transcriptome
     type: File
     doc: Transcriptome file
     inputBinding:
-      position: 2
+      position: 202
   - id: coding_potential_score_contribution
     type:
       - 'null'
-      - int
+      - float
     doc: Relative contribution of coding potential to mapping score
     inputBinding:
       position: 103
@@ -81,13 +81,15 @@ inputs:
   - id: translation_initiation_signal_score_contribution
     type:
       - 'null'
-      - int
+      - float
     doc: Relative contribution of translation initiation signal to mapping score
     inputBinding:
       position: 103
       prefix: -T
   - id: output_directory_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: ': Mapping output directory name, default: TRANSCRIPTOME_CATS_rb_map'
     inputBinding:
       position: 104
@@ -99,7 +101,7 @@ outputs:
       - Directory
     doc: Mapping output directory name
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: '$(inputs.output_directory_path ? inputs.output_directory_path : inputs.transcriptome.basename + "_CATS_rb_map")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

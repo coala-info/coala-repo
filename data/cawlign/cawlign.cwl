@@ -11,7 +11,7 @@ inputs:
       - File
     doc: read sequences to compare from this file (default=stdin)
     inputBinding:
-      position: 1
+      position: 200
   - id: datatype
     type:
       - 'null'
@@ -73,8 +73,6 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: "read the reference sequence from this file (default=\"HXB2_pol\")\n    \
       \                       first checks to see if the filepath exists, if not looks
       inside the res/references directory\n                           relative to
@@ -138,7 +136,28 @@ inputs:
     inputBinding:
       position: 103
       prefix: -o
+  - id: reference_name
+    type:
+      - 'null'
+      - string
+    doc: Name of a built-in reference (e.g. HXB2_pol, HXB2_prrt, CoV2-S) or a 
+      literal reference sequence, passed to -r; use instead of reference
+    inputBinding:
+      position: 102
+      prefix: -r
+  - id: score_name
+    type:
+      - 'null'
+      - string
+    doc: Name of a built-in scoring file (e.g. Nucleotide-BLAST, BLOSUM62, 
+      HIV_BETWEEN_F), passed to -s; use instead of score
+    inputBinding:
+      position: 102
+      prefix: -s
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Alignment written to standard output when output_path is not set
   - id: output
     type:
       - 'null'
@@ -151,3 +170,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cawlign:0.1.16--he91c24d_0
+stdout: cawlign.out

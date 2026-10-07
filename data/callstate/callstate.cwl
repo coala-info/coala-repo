@@ -13,6 +13,13 @@ inputs:
   - id: bam_file
     type: File
     doc: the alignment file for which to calculate callable states
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: flag

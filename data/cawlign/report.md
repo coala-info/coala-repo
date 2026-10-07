@@ -1,5 +1,11 @@
 # cawlign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cawlign | PASS |  |
+
 ## cawlign
 
 ### Tool Description

@@ -1,5 +1,22 @@
 # bustools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bustools_allowlist | PASS |  |
+| bustools_capture | PASS |  |
+| bustools_compress | PASS |  |
+| bustools_correct | PASS |  |
+| bustools_count | PASS |  |
+| bustools_decompress | PASS |  |
+| bustools_extract | PASS |  |
+| bustools_fromtext | PASS |  |
+| bustools_inspect | PASS |  |
+| bustools_sort | PASS |  |
+| bustools_text | PASS |  |
+| bustools_umicorrect | PASS |  |
+
 ## bustools_sort
 
 ### Tool Description

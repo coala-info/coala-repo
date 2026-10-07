@@ -60,6 +60,9 @@ inputs:
       prefix: --path_to_samtools
   - id: subreads
     type: File
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
     doc: path to subreads.bam file as input
     inputBinding:
       position: 101
@@ -88,6 +91,9 @@ outputs:
       default.
     outputBinding:
       glob: $(inputs.output_path)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
 requirements:
   - class: InlineJavascriptRequirement
 hints:

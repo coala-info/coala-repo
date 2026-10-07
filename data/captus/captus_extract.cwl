@@ -26,7 +26,9 @@ inputs:
       position: 101
       prefix: --blat_path
   - id: captus_assemblies_dir
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Path to an output directory from the 'assemble' step of Captus-assembly
       which is tipically called '02_assemblies'. If you DID NOT assemble any 
       sample within Captus and want to start exclusivey with FASTAs assembled 
@@ -351,6 +353,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: "Set of mitochondrial protein reference target sequences, options are: SeedPlantsMIT
       = A set of mitochondrial proteins for Seed Plants, curated by us Alternatively,
       provide a path to a FASTA file containing your reference target protein sequences
@@ -425,6 +428,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: "Set of nuclear protein reference target sequences, options are: Angiosperms353
       = The original set of target proteins from Angiosperms353 Mega353 = The improved
       set of target proteins from Angiosperms353 Alternatively, provide a path to
@@ -531,6 +535,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: "Set of plastidial protein reference target sequences, options are: SeedPlantsPTD
       = A set of plastidial proteins for Seed Plants, curated by us Alternatively,
       provide a path to a FASTA file containing your reference target protein sequences
@@ -599,6 +604,21 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.captus_assemblies_dir) {
+          l.push({entry: inputs.captus_assemblies_dir, writable: true});
+        }
+        ['nuc_refs', 'ptd_refs', 'mit_refs', 'dna_refs'].forEach(function(k) {
+          var v = inputs[k];
+          if (v && typeof v === 'object' && v.class === 'File') {
+            l.push({entry: v, writable: true});
+          }
+        });
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/captus:1.6.3--pyh05cac1d_0

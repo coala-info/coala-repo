@@ -1,5 +1,11 @@
 # cegroomer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cegroomer_tracegroomer | PASS | All four tables match the Galaxy tools-iuc expected outputs; added staged metadata files, --no- switches and table outputs. |
+
 ## Metadata
 - **Skill**: generated
 

@@ -1,5 +1,11 @@
 # carp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| carp | PASS |  |
+
 ## carp
 
 ### Tool Description

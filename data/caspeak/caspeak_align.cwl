@@ -44,8 +44,8 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
-    doc: 'working directory (default: current directory)'
+      - string
+    doc: 'working directory to create (default: current directory)'
     inputBinding:
       position: 101
       prefix: --workdir
@@ -53,6 +53,29 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: lastdb
+    type:
+      - 'null'
+      - Directory
+    doc: LAST databases of the reference and insert
+    outputBinding:
+      glob: "$((inputs.workdir ? inputs.workdir + '/' : '') + 'lastdb')"
+  - id: lastal
+    type:
+      - 'null'
+      - Directory
+    doc: Read alignments (read_to_ref.maf, read_to_insert.maf)
+    outputBinding:
+      glob: "$((inputs.workdir ? inputs.workdir + '/' : '') + 'lastal')"
+  - id: work_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The whole working directory (only when workdir is set)
+    outputBinding:
+      glob: '$(inputs.workdir ? inputs.workdir : [])'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/caspeak:1.1.5--pyhdfd78af_0

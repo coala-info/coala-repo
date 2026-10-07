@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_merge
+baseCommand:
+  - ccphylo
+  - merge
 label: ccphylo_merge
 doc: "Merges matrices from a multi Phylip file into one matrix\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
 inputs:
@@ -23,7 +25,7 @@ inputs:
   - id: float_precision
     type:
       - 'null'
-      - string
+      - boolean
     doc: Float precision on distance matrix
     inputBinding:
       position: 101
@@ -47,8 +49,8 @@ inputs:
   - id: nucleotide_numbers
     type:
       - 'null'
-      - boolean
-    doc: Output number of nucleotides included
+      - string
+    doc: Write the number of nucleotides included to this file
     inputBinding:
       position: 101
       prefix: --nucleotide_numbers
@@ -105,7 +107,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -114,6 +116,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: nucleotide_numbers_file
+    type:
+      - 'null'
+      - File
+    doc: Number of nucleotides included
+    outputBinding:
+      glob: $(inputs.nucleotide_numbers)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

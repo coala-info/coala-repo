@@ -8,10 +8,13 @@ doc: "Simulate proportions for genomes, primers, and reference.\n\nTool homepage
   https://github.com/andersen-lab/Bygul"
 inputs:
   - id: genomes
-    type: File
-    doc: Input genomes
+    type:
+      type: array
+      items: File
+    doc: Input genomes, one FASTA file per sample (passed comma-separated)
     inputBinding:
       position: 1
+      itemSeparator: ','
   - id: primers
     type: File
     doc: Input primers
@@ -93,6 +96,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: results
     doc: Output directory
     inputBinding:
       position: 104

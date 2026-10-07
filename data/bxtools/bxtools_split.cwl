@@ -45,16 +45,24 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - int
+      - boolean
     doc: Select verbosity level (0-4)
     inputBinding:
       position: 102
       prefix: --verbose
 outputs:
+  - id: split_bams
+    type:
+      type: array
+      items: File
+    doc: One BAM per unique BX tag, named <analysis_id>.<BX>.bam (none with 
+      --no-output)
+    outputBinding:
+      glob: $(inputs.analysis_id).*.bam
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bxtools:0.1.0--h13024bc_6
-stdout: bxtools_split.out
+stdout: bxtools_split.tsv

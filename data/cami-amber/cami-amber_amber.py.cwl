@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: AMBER
+baseCommand: amber.py
 label: cami-amber_amber.py
 doc: "AMBER: Assessment of Metagenome BinnERs\n\nTool homepage: https://github.com/CAMI-challenge/AMBER"
 inputs:
@@ -38,7 +38,7 @@ inputs:
   - id: genome_coverage
     type:
       - 'null'
-      - string
+      - File
     doc: genome coverages
     inputBinding:
       position: 102

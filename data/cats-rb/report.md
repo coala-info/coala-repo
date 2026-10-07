@@ -1,5 +1,13 @@
 # cats-rb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cats-rb_CATS_rb_compare | PASS |  |
+| cats-rb_CATS_rb_index | PASS |  |
+| cats-rb_CATS_rb_map | PASS |  |
+
 ## cats-rb_CATS_rb_index
 
 ### Tool Description

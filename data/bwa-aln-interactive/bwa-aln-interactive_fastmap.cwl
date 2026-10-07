@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - bwa-aln-interactive
   - fastmap
 label: bwa-aln-interactive_fastmap
 doc: "Fastmap identifies Super Maximal Exact Matches (SMEMs) in sequences using a
@@ -67,6 +67,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-aln-interactive:0.7.18--h577a1d6_2

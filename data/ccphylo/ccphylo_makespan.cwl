@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_makespan
+baseCommand:
+  - ccphylo
+  - makespan
 label: ccphylo_makespan
 doc: "make a DBSCAN given a set of phylip distance matrices.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
 inputs:
@@ -31,9 +33,8 @@ inputs:
   - id: loads
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Load on machines double[,double...]
+      - string
+    doc: Load on machines, comma separated (double[,double...])
     inputBinding:
       position: 101
       prefix: --loads
@@ -100,7 +101,7 @@ inputs:
     doc: Output or path parameter `machine_output_file_path`
     inputBinding:
       position: 102
-      prefix: --machine-output-file
+      prefix: --machine_output
   - id: output_file_path
     type:
       - 'null'
@@ -108,7 +109,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

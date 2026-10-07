@@ -30,7 +30,8 @@ inputs:
   - id: reference
     type: File
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     doc: Give the full path to a reference FASTA file
     inputBinding:
       position: 102

@@ -1,5 +1,12 @@
 # cats-rf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cats-rf_CATS_rf | PASS |  |
+| cats-rf_CATS_rf_compare | PASS |  |
+
 ## cats-rf_CATS_rf
 
 ### Tool Description

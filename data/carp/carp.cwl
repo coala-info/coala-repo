@@ -53,17 +53,20 @@ inputs:
       position: 103
       prefix: --write-measure
 outputs:
+  - id: stdout
+    type: stdout
+    doc: SCJ CARP measure printed to standard output
   - id: write_ancestor
     type:
       - 'null'
-      - Directory
+      - File
     doc: Path to write ancestral adjacencies to.
     outputBinding:
       glob: $(inputs.write_ancestor_path)
   - id: write_measure
     type:
       - 'null'
-      - Directory
+      - File
     doc: Path to write the carp measure to.
     outputBinding:
       glob: $(inputs.write_measure_path)
@@ -72,3 +75,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carp:0.1.1--h4349ce8_0
+stdout: carp.out

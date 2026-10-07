@@ -1,5 +1,11 @@
 # camitk-actionstatemachine CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| camitk-actionstatemachine | Not completed | Qt GUI state-machine player that needs an X display and a CamiTK SCXML pipeline file, and no test SCXML file is available. |
+
 ## camitk-actionstatemachine
 
 ### Tool Description

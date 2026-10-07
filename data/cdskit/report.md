@@ -1,5 +1,25 @@
 # cdskit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cdskit_accession2fasta | PASS |  |
+| cdskit_aggregate | PASS |  |
+| cdskit_backalign | PASS |  |
+| cdskit_backtrim | PASS |  |
+| cdskit_gapjust | Failed | tool bug: when gaps are shortened (--gap_len 10) the output GFF gets wrong, negative coordinates (gene2 at -2..7); with --gap_len 100 the output matches the test fixture. |
+| cdskit_hammer | PASS |  |
+| cdskit_intersection | PASS |  |
+| cdskit_label | PASS |  |
+| cdskit_mask | PASS |  |
+| cdskit_pad | PASS |  |
+| cdskit_parsegb | PASS |  |
+| cdskit_printseq | PASS |  |
+| cdskit_rmseq | PASS |  |
+| cdskit_split | PASS |  |
+| cdskit_stats | PASS |  |
+
 ## cdskit_accession2fasta
 
 ### Tool Description

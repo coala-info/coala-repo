@@ -25,7 +25,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory path.
+    doc: output directory path. Default ./ (created when given)
     inputBinding:
       position: 101
       prefix: --outdir
@@ -38,6 +38,16 @@ inputs:
       position: 101
       prefix: --types
 outputs:
+  - id: network_file
+    type: File
+    doc: Array network file (Array_network.txt)
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')Array_network.txt"
+  - id: clusters_file
+    type: File
+    doc: Array cluster file (Array_clusters.txt)
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')Array_clusters.txt"
   - id: stdout
     type: stdout
     doc: Standard output
@@ -45,9 +55,15 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: output directory path.
+    doc: output directory path. Default ./ (created when given)
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "${ return inputs.outdir ? [{class: 'Directory', basename: inputs.outdir,
+        listing: [], writable: true}] : []; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cctk:1.0.3--pyhdfd78af_0

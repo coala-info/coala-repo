@@ -239,6 +239,9 @@ inputs:
       position: 107
       prefix: --summarise-to-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Resolved hits in plain text (unless --quiet is set)
   - id: hits_text_to_file
     type:
       - 'null'
@@ -280,3 +283,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0
+stdout: cath-tools_cath-resolve-hits.out

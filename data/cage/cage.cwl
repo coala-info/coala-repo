@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: cage
 label: cage
-doc: "Changepoint detection for efficient variant calling\n\nTool homepage: https://github.com/docker/cagent"
+doc: "Changepoint detection for efficient variant calling\n\nTool homepage: https://github.com/adambloniarz/CAGe"
 inputs:
   - id: contig
     type: string
@@ -29,6 +29,15 @@ inputs:
     doc: beta parameter for PELT
     inputBinding:
       position: 5
+  - id: cage_output_file_path
+    type: string
+    doc: File to output the changepoints determined by CAGe
+    inputBinding:
+      position: 6
+  - id: input_stream
+    type: File
+    doc: Input read on stdin; the reference dump (nth byte is the nth base of the 
+      contig) followed by the `bamdump` output for the same region
   - id: input_snp_db
     type:
       - 'null'
@@ -64,7 +73,8 @@ outputs:
     type: File
     doc: File to output the changepoints determined by CAGe
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.cage_output_file_path)
+stdin: $(inputs.input_stream.path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

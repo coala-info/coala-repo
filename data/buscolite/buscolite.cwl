@@ -29,7 +29,7 @@ inputs:
       position: 101
       prefix: --input
   - id: lineage
-    type: string
+    type: Directory
     doc: "Specify location of the BUSCO lineage data to be used (full\n          \
       \        path)."
     inputBinding:
@@ -59,6 +59,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: gff3
+    type:
+      - 'null'
+      - File
+    doc: Predicted BUSCO gene models (genome mode)
+    outputBinding:
+      glob: $(inputs.out).buscolite.gff3
+  - id: summary
+    type: File
+    doc: BUSCO summary table
+    outputBinding:
+      glob: $(inputs.out).buscolite.tsv
+  - id: results_json
+    type: File
+    doc: Raw BUSCO results in JSON
+    outputBinding:
+      glob: $(inputs.out).buscolite.json
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/buscolite:26.1.26--pyhdfd78af_0

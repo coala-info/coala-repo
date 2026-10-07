@@ -14,8 +14,15 @@ inputs:
     inputBinding:
       position: 1
   - id: bwa_index
-    type: Directory
-    doc: Path to the bwa reference index.
+    type: File
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
+    doc: Path to the bwa reference index (the indexed FASTA; the bwa index files
+      must sit beside it).
     inputBinding:
       position: 2
   - id: cpus_for_alignment
@@ -106,9 +113,11 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in out_prefix
+    doc: Files written with the prefix given in out_prefix (default cayman)
     outputBinding:
-      glob: $(inputs.out_prefix)*
+      glob: '$(inputs.out_prefix ? inputs.out_prefix : "cayman")*'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cayman:0.10.2--pyh7e72e81_0

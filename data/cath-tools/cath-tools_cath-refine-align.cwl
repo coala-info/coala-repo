@@ -5,24 +5,6 @@ label: cath-tools_cath-refine-align
 doc: "Iteratively refine an existing alignment by attempting to optimise SSAP score\n\
   \nTool homepage: https://github.com/UCLOrengoGroup/cath-tools"
 inputs:
-  - id: alignment_source
-    type: string
-    doc: Alignment source
-    inputBinding:
-      position: 1
-  - id: protein_file_source
-    type: string
-    doc: Protein file source
-    inputBinding:
-      position: 2
-  - id: superposition_outputs
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Superposition outputs
-    inputBinding:
-      position: 3
   - id: align_refining
     type:
       - 'null'
@@ -97,7 +79,8 @@ inputs:
       --ssap-scores-infile. Use a suitable temp directory if none is specified
     inputBinding:
       position: 104
-      prefix: --do-the-ssaps
+      prefix: --do-the-ssaps=
+      separate: false
   - id: fasta_aln_infile
     type:
       - 'null'
@@ -120,10 +103,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Structure ids
+        inputBinding:
+          prefix: --id
+    doc: Structure ids (one per structure)
     inputBinding:
       position: 104
-      prefix: --id
   - id: normalise_scores
     type:
       - 'null'
@@ -299,6 +283,9 @@ inputs:
       position: 112
       prefix: --sup-to-pymol-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: aln_to_cath_aln_file
     type:
       - 'null'
@@ -360,6 +347,11 @@ outputs:
       glob: $(inputs.sup_to_json_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ if (inputs.sup_to_pdb_files_dir_path) { return [{"class": "Directory", "basename": inputs.sup_to_pdb_files_dir_path, "listing": [], "writable": true}]; } return []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0
+stdout: cath-tools_cath-refine-align.out

@@ -31,6 +31,13 @@ inputs:
   - id: hts_file
     type: File
     doc: Path to sample HTS file.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --hts-file

@@ -1,5 +1,16 @@
 # cath-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cath-tools_cath-cluster | PASS |  |
+| cath-tools_cath-refine-align | PASS |  |
+| cath-tools_cath-resolve-hits | PASS |  |
+| cath-tools_cath-score-align | PASS |  |
+| cath-tools_cath-ssap | PASS |  |
+| cath-tools_cath-superpose | PASS |  |
+
 ## cath-tools_cath-ssap
 
 ### Tool Description

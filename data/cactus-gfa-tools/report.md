@@ -1,5 +1,16 @@
 # cactus-gfa-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cactus-gfa-tools_gaf2paf | PASS |  |
+| cactus-gfa-tools_gaf2unstable | PASS |  |
+| cactus-gfa-tools_gaffilter | PASS |  |
+| cactus-gfa-tools_mzgaf2paf | PASS |  |
+| cactus-gfa-tools_paf2lastz | PASS |  |
+| cactus-gfa-tools_rgfa-split | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

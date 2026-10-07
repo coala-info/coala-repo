@@ -35,6 +35,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: config_file
+    type: File
+    doc: The written cblaster configuration file ($HOME/.config/cblaster/config.ini)
+    outputBinding:
+      glob: .config/cblaster/config.ini
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cblaster:1.4.0--pyhdfd78af_0

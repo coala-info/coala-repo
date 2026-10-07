@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: carna
 label: carna
-doc: "A tool for pairwise Alignment of RNA.\n\nTool homepage: https://github.com/Code52/carnac"
+doc: "A tool for pairwise Alignment of RNA.\n\nTool homepage: https://www.bioinf.uni-leipzig.de/~will/Software/CARNA/"
 inputs:
   - id: file1
     type: File
@@ -203,8 +203,8 @@ inputs:
   - id: use_ribosum
     type:
       - 'null'
-      - boolean
-    doc: Use ribosum scores
+      - string
+    doc: Use ribosum scores (true or false; default true)
     inputBinding:
       position: 103
       prefix: --use-ribosum
@@ -228,19 +228,22 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `clustal_output_file_path`
+    doc: Clustal output file name
     inputBinding:
       position: 104
-      prefix: --clustal-output-file
+      prefix: --clustal
   - id: pp_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pp_output_file_path`
+    doc: PP output file name
     inputBinding:
       position: 105
-      prefix: --pp-output-file
+      prefix: --pp
 outputs:
+  - id: alignment
+    type: stdout
+    doc: Alignment and score written to standard output
   - id: clustal_output_file
     type:
       - 'null'
@@ -260,3 +263,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carna:1.3.3--1
+stdout: carna.out

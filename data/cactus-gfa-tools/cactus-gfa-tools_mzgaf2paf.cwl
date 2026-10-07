@@ -106,8 +106,8 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: PAF of minimizer matches
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0
-stdout: cactus-gfa-tools_mzgaf2paf.out
+stdout: cactus-gfa-tools_mzgaf2paf.paf

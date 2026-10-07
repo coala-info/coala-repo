@@ -1,5 +1,11 @@
 # carna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| carna | PASS |  |
+
 ## carna
 
 ### Tool Description
@@ -7,14 +13,14 @@ A tool for pairwise Alignment of RNA.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/carna:1.3.3--1
-- **Homepage**: https://github.com/Code52/carnac
+- **Homepage**: https://www.bioinf.uni-leipzig.de/~will/Software/CARNA/
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/carna/overview
 - **Total Downloads**: 36.3K
 - **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/Code52/carnac
+- **GitHub**: https://www.bioinf.uni-leipzig.de/~will/Software/CARNA/
 - **Stars**: N/A
 ### Original Help Text
 ```text

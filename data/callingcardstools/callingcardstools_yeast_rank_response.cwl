@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yeast_rank_response
+baseCommand:
+  - callingcardstools
+  - yeast_rank_response
 label: callingcardstools_yeast_rank_response
 doc: "Rank response of yeast genes based on calling cards data.\n\nTool homepage:
   https://github.com/cmatKhan/callingCardsTools"
@@ -20,6 +22,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Binding and expression data files named in the config json. They are 
+      staged in the working directory, so the config should name them by file 
+      name only.
   - id: log_level
     type:
       - 'null'
@@ -35,14 +45,15 @@ inputs:
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the output file. Default is rank_response.csv
+    type: File
+    doc: Rank response table (csv, gzipped with --compress)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_file_path ? inputs.output_file_path : "rank_response.csv")$(inputs.compress
+        && !(inputs.output_file_path || "").endsWith(".gz") ? ".gz" : "")'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.data_files ? inputs.data_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

@@ -4,24 +4,6 @@ baseCommand: cath-score-align
 label: cath-tools_cath-score-align
 doc: "Score an existing alignment using structural data\n\nTool homepage: https://github.com/UCLOrengoGroup/cath-tools"
 inputs:
-  - id: alignment_source
-    type: string
-    doc: Alignment source
-    inputBinding:
-      position: 1
-  - id: protein_file_source
-    type: string
-    doc: Protein file source
-    inputBinding:
-      position: 2
-  - id: superposition_outputs
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Superposition outputs
-    inputBinding:
-      position: 3
   - id: align_refining
     type:
       - 'null'
@@ -50,7 +32,8 @@ inputs:
       --ssap-scores-infile. Use a suitable temp directory if none is specified
     inputBinding:
       position: 104
-      prefix: --do-the-ssaps
+      prefix: --do-the-ssaps=
+      separate: false
   - id: fasta_aln_infile
     type:
       - 'null'

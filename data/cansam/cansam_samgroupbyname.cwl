@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cansam_samgroupbyname
+baseCommand: samgroupbyname
 label: cansam_samgroupbyname
 doc: "Group SAM/BAM records by read name.\n\nTool homepage: https://github.com/jmarshall/cansam"
 inputs:

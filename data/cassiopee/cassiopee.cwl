@@ -133,16 +133,14 @@ inputs:
       position: 101
       prefix: -m
   - id: sequence
-    type:
-      - 'null'
-      - string
-    doc: sequence to index
+    type: File
+    doc: sequence file to index (one-line sequence with no header)
     inputBinding:
       position: 101
       prefix: -s
   - id: output_file_path
     type: string
-    doc: ': output file'
+    doc: output file
     inputBinding:
       position: 102
       prefix: -o
@@ -154,8 +152,26 @@ outputs:
     doc: output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: dot_file
+    type:
+      - 'null'
+      - File
+    doc: graph of the index in dot format (with -g)
+    outputBinding:
+      glob: cassiopee.dot
+  - id: saved_index
+    type:
+      type: array
+      items: File
+    doc: saved index files written beside the sequence (with -u)
+    outputBinding:
+      glob: $(inputs.sequence.basename).cass.*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sequence)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/cassiopee:v1.0.9-2-deb_cv1

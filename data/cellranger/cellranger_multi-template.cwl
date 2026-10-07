@@ -17,10 +17,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --parameters
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Optional output file path
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: template_csv
+    type:
+      - 'null'
+      - File
+    doc: Multi config CSV template written to --output
+    outputBinding:
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger:10.1.0

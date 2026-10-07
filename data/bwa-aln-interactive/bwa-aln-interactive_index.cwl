@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - bwa-aln-interactive
   - index
 label: bwa-aln-interactive_index
 doc: "Index database sequences in the FASTA format\n\nTool homepage: https://github.com/fulcrumgenomics/bwa-aln-interactive"
@@ -11,6 +11,7 @@ inputs:
     doc: Input FASTA file to be indexed
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: algorithm
     type:
       - 'null'
@@ -44,9 +45,23 @@ inputs:
       position: 102
       prefix: '-6'
 outputs:
+  - id: index_files
+    type: File[]
+    doc: Index files (.amb, .ann, .bwt, .pac, .sa) named by the prefix
+    outputBinding:
+      glob:
+        - '*.amb'
+        - '*.ann'
+        - '*.bwt'
+        - '*.pac'
+        - '*.sa'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-aln-interactive:0.7.18--h577a1d6_2

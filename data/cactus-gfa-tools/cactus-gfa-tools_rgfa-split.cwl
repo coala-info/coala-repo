@@ -28,11 +28,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bed
     doc: BED file. Used to subtract out softmasked regions when computing 
       coverage (multiple allowed)
     inputBinding:
       position: 101
-      prefix: --bed
   - id: contig_file
     type:
       - 'null'
@@ -46,10 +47,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --contig-name
     doc: Only process NAME (multiple allowed)
     inputBinding:
       position: 101
-      prefix: --contig-name
   - id: contig_prefix
     type:
       - 'null'
@@ -96,11 +98,12 @@ inputs:
       - 'null'
       - type: array
         items: float
+        inputBinding:
+          prefix: --min-query-coverage
     doc: At least this fraction of input contig must align to reference contig 
       for it to be assigned (can repeat)
     inputBinding:
       position: 101
-      prefix: --min-query-coverage
   - id: min_query_uniqueness
     type:
       - 'null'
@@ -150,11 +153,12 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --small-coverage-threshold
     doc: Used to toggle between the coverage thresholds (-n). Should have 
       one-fewer value than -n
     inputBinding:
       position: 101
-      prefix: --small-coverage-threshold
   - id: split_gfa
     type:
       - 'null'
@@ -183,7 +187,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: All output files will be of the form <PREFIX><contig>.paf/.fa_contigs
+    doc: All output files will be of the form <PREFIX><contig>.paf/.fa_contigs (PAF files)
     inputBinding:
       position: 104
       prefix: --output-prefix
@@ -193,9 +197,25 @@ outputs:
       - 'null'
       - type: array
         items: File
-    doc: All output files will be of the form <PREFIX><contig>.paf/.fa_contigs
+    doc: All output files will be of the form <PREFIX><contig>.paf/.fa_contigs (PAF files)
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: "$(inputs.output_prefix_path ? inputs.output_prefix_path : '')*.paf"
+  - id: output_fa_contigs
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Per-contig lists of query contigs, <PREFIX><contig>.fa_contigs
+    outputBinding:
+      glob: "$(inputs.output_prefix_path ? inputs.output_prefix_path : '')*.fa_contigs"
+  - id: output_gfa
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Per-contig GFA files, <PREFIX><contig>.gfa (with --split-gfa)
+    outputBinding:
+      glob: "$(inputs.output_prefix_path ? inputs.output_prefix_path : '')*.gfa"
   - id: output_contig_map
     type:
       - 'null'
@@ -212,6 +232,12 @@ outputs:
       glob: $(inputs.log_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (!inputs.rgfa) { return []; }
+        return [{"entry": inputs.rgfa, "writable": true}];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0

@@ -12,6 +12,7 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: algorithm
     type:
       - 'null'
@@ -45,9 +46,20 @@ inputs:
       position: 102
       prefix: '-6'
 outputs:
+  - id: index_files
+    type: File[]
+    doc: Index files named by the prefix (.0123, .amb, .ann, .pac, and .bwt.2bit.64 or,
+      with -a meme, .pos_packed and .suffixarray_uint64)
+    outputBinding:
+      glob: '$(inputs.prefix ? inputs.prefix : inputs.input_fasta.basename).*'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-meme:1.0.6--hdcf5f25_2

@@ -1,5 +1,11 @@
 # cellprofiler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cellprofiler | PASS | The ExampleHuman pipeline ran headless and found 289 nuclei and 22 PH3-positive cells; output and done file paths were changed from File to string. |
+
 ## cellprofiler
 
 ### Tool Description

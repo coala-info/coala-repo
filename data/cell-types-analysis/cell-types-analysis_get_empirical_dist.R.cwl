@@ -93,7 +93,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Cache directory path
     inputBinding:
       position: 101
@@ -113,6 +113,10 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: LD_LIBRARY_PATH
+        envValue: /usr/local/jre/lib/amd64/server
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cell-types-analysis:0.1.11--hdfd78af_1

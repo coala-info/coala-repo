@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - bwa-aln-interactive
   - pac2bwt
 label: bwa-aln-interactive_pac2bwt
 doc: "Convert a PAC file to a BWT file.\n\nTool homepage: https://github.com/fulcrumgenomics/bwa-aln-interactive"

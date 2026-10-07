@@ -13,14 +13,21 @@ inputs:
       position: 101
       prefix: --region
   - id: template
-    type: string
+    type: File
     doc: TOML file containing the template for the plot
     inputBinding:
       position: 101
       prefix: --template
+  - id: template_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files named in the template (bigWig, bed, hdf5, ...); staged in 
+      the working directory so the names in the template resolve
   - id: output_path
     type: string
-    doc: Output file path. The file extension determines the
+    doc: Output file path. The file extension determines the output format.
     inputBinding:
       position: 102
       prefix: --output
@@ -34,6 +41,9 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.template_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1

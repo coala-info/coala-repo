@@ -62,7 +62,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix : inputs.outfile_path)_*_codon_positions.*"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

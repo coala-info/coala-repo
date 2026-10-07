@@ -1,5 +1,11 @@
 # bygul CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bygul_simulate-proportions | Failed | image problem: bygul.utils imports the Python module regex, which is missing from the image (ModuleNotFoundError). |
+
 ## bygul_simulate-proportions
 
 ### Tool Description

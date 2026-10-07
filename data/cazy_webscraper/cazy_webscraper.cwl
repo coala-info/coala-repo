@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cazy_webscraper.py
+baseCommand: cazy_webscraper
 label: cazy_webscraper
 doc: "Scrapes the CAZy database\n\nTool homepage: https://hobnobmancer.github.io/cazy_webscraper/"
 inputs:
@@ -13,7 +13,7 @@ inputs:
   - id: cache_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Target path for cache dir to be used instead of default path
     inputBinding:
       position: 102
@@ -113,7 +113,7 @@ inputs:
   - id: log_file_name
     type:
       - 'null'
-      - File
+      - string
     doc: Defines log file name and/or path
     inputBinding:
       position: 102
@@ -228,7 +228,9 @@ inputs:
       position: 102
       prefix: --verbose
   - id: db_output_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 103
       prefix: --db_output
@@ -236,12 +238,39 @@ outputs:
   - id: db_output
     type:
       - 'null'
-      - Directory
-    doc: Target output path to build new SQL database
+      - File
+    doc: New local CAZyme SQLite database
     outputBinding:
       glob: $(inputs.db_output_path)
+  - id: updated_database
+    type:
+      - 'null'
+      - File
+    doc: The existing database given with --database, after the update
+    outputBinding:
+      glob: '$(inputs.database ? inputs.database.basename : null)'
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_file_name)
+  - id: cache
+    type:
+      - 'null'
+      - Directory
+    doc: Cache directory
+    outputBinding:
+      glob: $(inputs.cache_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cazy_webscraper:2.3.0.4--pyhdfd78af_0

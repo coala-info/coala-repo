@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cats-rf_compare
+baseCommand: CATS_rf_compare
 label: cats-rf_CATS_rf_compare
 doc: "transcriptome assembly comparison script\n\nTool homepage: https://github.com/bodulic/CATS-rf"
 inputs:
@@ -8,9 +8,11 @@ inputs:
     type:
       type: array
       items: Directory
-    doc: Directory containing CATS-rf output for comparison
+    doc: CATS-rf output directories to compare. They are staged into the working
+      directory because the script expects paths relative to it.
     inputBinding:
-      position: 1
+      position: 201
+      valueFrom: '$(self.map(function(d) { return d.basename; }))'
   - id: barplot_colors
     type:
       - 'null'
@@ -99,6 +101,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: comparison_dir
+    type: Directory
+    doc: Comparison output directory
+    outputBinding:
+      glob: '$(inputs.comparison_output_dir ? inputs.comparison_output_dir : "CATS_rf_comparison")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.cats_rf_dir1)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cats-rf:1.0.4--hdfd78af_0

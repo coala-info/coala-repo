@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - calitas
-  - PairwiseAlignSequences
+arguments:
+  - position: 50
+    valueFrom: PairwiseAlignSequences
 label: calitas_PairwiseAlignSequences
 doc: "Performs pairwise alignment of sequences. Input is a file with two sequences
   per line, separated by whitespace.\nSequences may be composed of DNA and RNA bases
@@ -20,7 +22,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --async-io
   - id: compression
     type:
@@ -28,7 +30,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --compression
   - id: genome_gap_net_cost
     type:
@@ -67,7 +69,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 10
       prefix: --log-level
   - id: max_gaps_between_guide_and_pam
     type:
@@ -99,7 +101,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 10
       prefix: --sam-validation-stringency
   - id: threads
     type:
@@ -115,14 +117,14 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --tmp-dir
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -133,6 +135,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/calitas:1.0--hdfd78af_1

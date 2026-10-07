@@ -7,18 +7,17 @@ label: carpedeam_nuclassemble
 doc: "By Louis Kraft <lokraf@dtu.dk> and Annika Jochheim <annika.jochheim@mpinat.mpg.de>\n\
   \nTool homepage: https://github.com/LouisPwr/CarpeDeam"
 inputs:
-  - id: input_fastq_pairs
-    type:
-      type: array
-      items: File
-    doc: Input FASTQ paired-end files (can be gzipped)
-    inputBinding:
-      position: 1
   - id: input_fastx_files
     type:
       type: array
       items: File
-    doc: Input FASTQ/FASTA files (can be gzipped)
+    doc: Input FASTA/FASTQ file, or FASTQ pairs (file_1 file_2 ...), can be 
+      gzipped
+    inputBinding:
+      position: 1
+  - id: output_fasta
+    type: string
+    doc: Output FASTA file
     inputBinding:
       position: 2
   - id: temporary_directory
@@ -72,10 +71,15 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to damage matrix (ancient)
+    doc: Damage matrix (ancient), given as the <prefix>5p.prof file; the matching
+      <prefix>3p.prof file must sit beside it. The tool gets the shared prefix.
+    secondaryFiles:
+      - pattern: $(self.basename.replace(/5p\.prof$/, '3p.prof'))
+        required: true
     inputBinding:
       position: 104
       prefix: --ancient-damage
+      valueFrom: $(self.path.replace(/5p\.prof$/, ''))
   - id: chop_cycle
     type:
       - 'null'
@@ -533,7 +537,9 @@ outputs:
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_fasta)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carpedeam:1.0.1--hd6d6fdc_0

@@ -5,13 +5,6 @@ label: callerpp
 doc: "A tool for consensus calling and multiple sequence alignment.\n\nTool homepage:
   https://github.com/nh13/callerpp"
 inputs:
-  - id: sequences
-    type: string
-    doc: "The input will be read from standard input. Each batch of\n       input
-      sequences should start with a FASTA header line ('>').\n       Each sequence
-      in the batch should be on its own line thereafter."
-    inputBinding:
-      position: 1
   - id: alignment_algorithm
     type:
       - 'null'
@@ -31,10 +24,10 @@ inputs:
       position: 102
       prefix: --gap
   - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: Read from this input file, stdin otherwise
+    type: File
+    doc: Read from this input file, stdin otherwise. Each batch of input 
+      sequences starts with a FASTA header line ('>'), followed by one sequence 
+      per line.
     inputBinding:
       position: 102
       prefix: --input

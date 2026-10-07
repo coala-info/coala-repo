@@ -223,6 +223,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Output directory written by CAGEE
+    outputBinding:
+      glob: '$(inputs.output_prefix ? inputs.output_prefix : "results")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cagee:1.2--he96a11b_1

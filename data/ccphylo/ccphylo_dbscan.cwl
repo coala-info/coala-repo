@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_dbscan
+baseCommand:
+  - ccphylo
+  - dbscan
 label: ccphylo_dbscan
 doc: "make a DBSCAN given a set of phylip distance matrices.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
 inputs:
@@ -15,7 +17,7 @@ inputs:
   - id: float_precision
     type:
       - 'null'
-      - string
+      - boolean
     doc: Float precision on distance matrix
     inputBinding:
       position: 101
@@ -89,7 +91,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

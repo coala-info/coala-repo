@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_union
+baseCommand:
+  - ccphylo
+  - union
 label: ccphylo_union
 doc: "CCPhylo union finds the union between templates in res files created by e.g.
   KMA.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
@@ -8,8 +10,8 @@ inputs:
   - id: create_reference_fasta_file
     type:
       - 'null'
-      - boolean
-    doc: Create reference fasta file
+      - string
+    doc: Create a reference FASTA file with this name (needs --database)
     inputBinding:
       position: 101
       prefix: --reference_file
@@ -24,7 +26,7 @@ inputs:
   - id: min_cov
     type:
       - 'null'
-      - string
+      - float
     doc: Minimum coverage
     inputBinding:
       position: 101
@@ -48,17 +50,23 @@ inputs:
   - id: print_ordered_wrt_template_db_filename
     type:
       - 'null'
-      - boolean
-    doc: Print ordered wrt. template DB filename
+      - File
+    secondaryFiles:
+      - pattern: ^.length.b
+        required: false
+      - pattern: ^.seq.b
+        required: false
+    doc: KMA template database .name file; output is ordered by this database
     inputBinding:
       position: 101
       prefix: --database
+      valueFrom: $(self.path.replace(/\.name$/, ''))
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -67,6 +75,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: reference_fasta
+    type:
+      - 'null'
+      - File
+    doc: Reference FASTA file
+    outputBinding:
+      glob: $(inputs.create_reference_fasta_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

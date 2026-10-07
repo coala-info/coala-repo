@@ -1,5 +1,16 @@
 # cell-types-analysis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cell-types-analysis_build_cell_ontology_dict.R | PASS |  |
+| cell-types-analysis_combine_tool_outputs.R | PASS |  |
+| cell-types-analysis_get_consensus_output.R | Failed | tool bug: with --true-labels the similarity-to-true-label column is wrong (335 cells whose top label equals the true label score 0: a column-for-row lookup and no lowercasing); the run without it checks out |
+| cell-types-analysis_get_empirical_dist.R | PASS |  |
+| cell-types-analysis_get_tool_performance_table.R | PASS |  |
+| cell-types-analysis_get_tool_pvals.R | PASS |  |
+
 ## cell-types-analysis_build_cell_ontology_dict.R
 
 ### Tool Description

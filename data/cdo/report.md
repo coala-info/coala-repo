@@ -1,5 +1,11 @@
 # cdo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cdo | PASS |  |
+
 ## cdo
 
 ### Tool Description
@@ -9,14 +15,14 @@ CDO version 2.0.0, Copyright (C) 2003-2021 MPI für Meteorologie
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cdo:2.0.0
-- **Homepage**: https://github.com/cxong/cdogs-sdl
+- **Homepage**: https://code.mpimet.mpg.de/projects/cdo
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/cdo/overview
 - **Total Downloads**: 602.4K
 - **Last updated**: 2025-09-16
-- **GitHub**: https://github.com/cxong/cdogs-sdl
+- **GitHub**: https://code.mpimet.mpg.de/projects/cdo
 - **Stars**: N/A
 ### Original Help Text
 ```text

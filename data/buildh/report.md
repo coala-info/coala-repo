@@ -1,5 +1,11 @@
 # buildh CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| buildh_buildH | PASS |  |
+
 ## buildh_buildH
 
 ### Tool Description

@@ -23,8 +23,9 @@ inputs:
   - id: conf
     type:
       - 'null'
-      - File
-    doc: Specify config file
+      - string
+    doc: Specify config file (path of the config file to write; default 
+      ~/.caper/default.conf)
     inputBinding:
       position: 102
       prefix: --conf
@@ -104,6 +105,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: caper_conf
+    type: File
+    doc: the Caper config file written for the platform
+    outputBinding:
+      glob: '$(inputs.conf ? inputs.conf : ".caper/default.conf")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/caper:1.1.0--py_0

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_dist
+baseCommand:
+  - ccphylo
+  - dist
 label: ccphylo_dist
 doc: "calculates distances between samples based on overlaps between nucleotide count
   matrices created by e.g. KMA.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
@@ -48,7 +50,7 @@ inputs:
   - id: float_precision
     type:
       - 'null'
-      - string
+      - boolean
     doc: Float precision on distance matrix
     inputBinding:
       position: 101
@@ -73,8 +75,8 @@ inputs:
   - id: min_cov
     type:
       - 'null'
-      - string
-    doc: Minimum coverage
+      - float
+    doc: Minimum coverage in percent (default 50)
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -105,7 +107,7 @@ inputs:
   - id: normalization_weight
     type:
       - 'null'
-      - string
+      - int
     doc: Normalization weight
     inputBinding:
       position: 101
@@ -113,16 +115,16 @@ inputs:
   - id: nucleotide_numbers
     type:
       - 'null'
-      - boolean
-    doc: Output number of nucleotides included
+      - string
+    doc: Write the number of nucleotides included to this file
     inputBinding:
       position: 101
       prefix: --nucleotide_numbers
   - id: nucleotide_variations
     type:
       - 'null'
-      - boolean
-    doc: Output nucleotide variations
+      - string
+    doc: Write the nucleotide variations to this file
     inputBinding:
       position: 101
       prefix: --nucleotide_variations
@@ -203,7 +205,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -212,6 +214,20 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: nucleotide_numbers_file
+    type:
+      - 'null'
+      - File
+    doc: Number of nucleotides included per sample pair
+    outputBinding:
+      glob: $(inputs.nucleotide_numbers)
+  - id: nucleotide_variations_file
+    type:
+      - 'null'
+      - File
+    doc: Nucleotide variations
+    outputBinding:
+      glob: $(inputs.nucleotide_variations)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

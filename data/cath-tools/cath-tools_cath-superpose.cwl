@@ -4,23 +4,6 @@ baseCommand: cath-superpose
 label: cath-tools_cath-superpose
 doc: "Superpose protein structures using an existing alignment\n\nTool homepage: https://github.com/UCLOrengoGroup/cath-tools"
 inputs:
-  - id: alignment_source
-    type: string
-    doc: Alignment source
-    inputBinding:
-      position: 1
-  - id: pdb_file_source
-    type: string
-    doc: PDB file source
-    inputBinding:
-      position: 2
-  - id: superposition_outputs
-    type:
-      - 'null'
-      - string
-    doc: Superposition outputs
-    inputBinding:
-      position: 3
   - id: align_refining
     type:
       - 'null'
@@ -47,10 +30,10 @@ inputs:
       ("No match"))'
     inputBinding:
       position: 104
-  - id: aln_to_cath_aln_file
+  - id: aln_to_cath_aln_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: '[EXPERIMENTAL] Write the alignment to a CATH alignment file'
     inputBinding:
       position: 104
@@ -63,10 +46,10 @@ inputs:
     inputBinding:
       position: 104
       prefix: --aln-to-cath-aln-stdout
-  - id: aln_to_fasta_file
+  - id: aln_to_fasta_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: Write the alignment to a FASTA file
     inputBinding:
       position: 104
@@ -79,10 +62,10 @@ inputs:
     inputBinding:
       position: 104
       prefix: --aln-to-fasta-stdout
-  - id: aln_to_html_file
+  - id: aln_to_html_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: Write the alignment to a HTML file
     inputBinding:
       position: 104
@@ -95,10 +78,10 @@ inputs:
     inputBinding:
       position: 104
       prefix: --aln-to-html-stdout
-  - id: aln_to_ssap_file
+  - id: aln_to_ssap_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: Write the alignment to a SSAP file
     inputBinding:
       position: 104
@@ -127,7 +110,8 @@ inputs:
       --ssap-scores-infile. Use a suitable temp directory if none is specified
     inputBinding:
       position: 104
-      prefix: --do-the-ssaps
+      prefix: --do-the-ssaps=
+      separate: false
   - id: fasta_aln_infile
     type:
       - 'null'
@@ -150,10 +134,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Structure ids
+        inputBinding:
+          prefix: --id
+    doc: Structure ids (one per structure)
     inputBinding:
       position: 104
-      prefix: --id
   - id: json_sup_infile
     type:
       - 'null'
@@ -321,16 +306,47 @@ inputs:
     inputBinding:
       position: 108
       prefix: --sup-to-pymol-file
-  - id: sup_to_stdout_path
+  - id: sup_to_stdout
     type:
       - 'null'
-      - string
+      - boolean
     doc: Print the superposed structures to stdout, separated using faked chain 
       codes
     inputBinding:
       position: 109
       prefix: --sup-to-stdout
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: aln_to_cath_aln_file
+    type:
+      - 'null'
+      - File
+    doc: Alignment in CATH alignment format
+    outputBinding:
+      glob: $(inputs.aln_to_cath_aln_file_path)
+  - id: aln_to_fasta_file
+    type:
+      - 'null'
+      - File
+    doc: Alignment in FASTA format
+    outputBinding:
+      glob: $(inputs.aln_to_fasta_file_path)
+  - id: aln_to_html_file
+    type:
+      - 'null'
+      - File
+    doc: Alignment in HTML format
+    outputBinding:
+      glob: $(inputs.aln_to_html_file_path)
+  - id: aln_to_ssap_file
+    type:
+      - 'null'
+      - File
+    doc: Alignment in SSAP format
+    outputBinding:
+      glob: $(inputs.aln_to_ssap_file_path)
   - id: sup_to_pdb_file
     type:
       - 'null'
@@ -346,14 +362,6 @@ outputs:
     doc: Write the superposed structures to separate PDB files in directory
     outputBinding:
       glob: $(inputs.sup_to_pdb_files_dir_path)
-  - id: sup_to_stdout
-    type:
-      - 'null'
-      - File
-    doc: Print the superposed structures to stdout, separated using faked chain 
-      codes
-    outputBinding:
-      glob: $(inputs.sup_to_stdout_path)
   - id: sup_to_pymol_file
     type:
       - 'null'
@@ -372,6 +380,11 @@ outputs:
       glob: $(inputs.sup_to_json_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ if (inputs.sup_to_pdb_files_dir_path) { return [{"class": "Directory", "basename": inputs.sup_to_pdb_files_dir_path, "listing": [], "writable": true}]; } return []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0
+stdout: cath-tools_cath-superpose.out

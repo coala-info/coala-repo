@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cadd-scripts_cadd.sh
+baseCommand:
+  - cadd.sh
 label: cadd-scripts_cadd.sh
 doc: "CADD version 1.7\n\nTool homepage: https://github.com/kircherlab/CADD-scripts"
 inputs:
@@ -8,7 +9,7 @@ inputs:
     type: File
     doc: input vcf of vcf.gz file (required)
     inputBinding:
-      position: 1
+      position: 200
   - id: caddversion
     type:
       - 'null'
@@ -87,7 +88,7 @@ inputs:
     doc: Output or path parameter `outfile_path`
     inputBinding:
       position: 103
-      prefix: --outfile
+      prefix: -o
 outputs:
   - id: outfile
     type:

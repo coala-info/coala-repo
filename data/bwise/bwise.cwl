@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bwise
+baseCommand:
+  - bwise
 label: bwise
 doc: "High order De Bruijn graph assembler\n\nTool homepage: https://github.com/Malfoy/BWISE"
 inputs:
@@ -15,7 +16,7 @@ inputs:
   - id: fraction_anchor
     type:
       - 'null'
-      - float
+      - int
     doc: Fraction of the anchor that are indexed (default all, put 10 to index 
       one out of 10 anchors)
     inputBinding:
@@ -24,16 +25,16 @@ inputs:
   - id: greedy_k2000
     type:
       - 'null'
-      - boolean
-    doc: Greedy contig extension
+      - int
+    doc: Greedy contig extension (integer, default 0)
     inputBinding:
       position: 101
       prefix: -g
   - id: haplo_mode
     type:
       - 'null'
-      - boolean
-    doc: Produce a haploid assembly
+      - int
+    doc: Produce a haploid assembly (integer, default 0)
     inputBinding:
       position: 101
       prefix: -H
@@ -105,7 +106,8 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
+    default: bwise_out
     doc: path to store the results
     inputBinding:
       position: 101
@@ -113,8 +115,7 @@ inputs:
   - id: paired_readfiles
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: input fasta or (compressed .gz if -c option is != 0) paired-end read 
       files. Several read files must be concatenated.
     inputBinding:
@@ -123,8 +124,7 @@ inputs:
   - id: single_readfiles
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: input fasta or (compressed .gz if -c option is != 0) single-end read 
       files. Several read files must be concatenated.
     inputBinding:
@@ -148,6 +148,25 @@ inputs:
       position: 101
       prefix: -p
 outputs:
+  - id: out_directory
+    type: Directory
+    doc: Output folder with the contigs (contigs_k*.fa), assembly graphs (assembly_graph*.gfa) and logs
+    outputBinding:
+      glob: $(inputs.out_dir)
+  - id: contigs
+    type:
+      type: array
+      items: File
+    doc: Contigs of each k-mer size (contigs_k*.fa)
+    outputBinding:
+      glob: $(inputs.out_dir)/contigs_k*.fa
+  - id: assembly_graphs
+    type:
+      type: array
+      items: File
+    doc: Assembly graphs of each k-mer size (assembly_graph*.gfa)
+    outputBinding:
+      glob: $(inputs.out_dir)/assembly_graph*.gfa
   - id: stdout
     type: stdout
     doc: Standard output

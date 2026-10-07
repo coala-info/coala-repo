@@ -27,6 +27,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --csv
+      valueFrom: $(self.basename)
+    loadContents: true
   - id: dry
     type:
       - 'null'
@@ -151,6 +153,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nopreflight
+  - id: multi_input_files
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Files or folders named in the --csv config (reference, FASTQ 
+      folders, probe set, feature reference, VDJ reference). They are staged in 
+      the working directory, so the CSV can name them by relative path 
+      (basename); those names are rewritten to absolute paths in a copy of 
+      the CSV, because cellranger multi does not resolve relative paths.
 outputs:
   - id: output_output_dir
     type:
@@ -161,6 +175,19 @@ outputs:
       glob: $(inputs.output_dir || inputs.id)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var staged = inputs.multi_input_files ? inputs.multi_input_files : [];
+        var names = staged.map(function (f) { return f.basename; });
+        var lines = inputs.csv.contents.split("\n").map(function (line) {
+          return line.split(",").map(function (field) {
+            var v = field.trim().replace(/^\.\//, "");
+            return names.indexOf(v) >= 0 ? runtime.outdir + "/" + v : field;
+          }).join(",");
+        });
+        return [{"entryname": inputs.csv.basename, "entry": lines.join("\n")}].concat(staged);
+      }
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger:10.1.0

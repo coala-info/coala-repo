@@ -1,5 +1,11 @@
 # cap3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cap3 | PASS |  |
+
 ## cap3
 
 ### Tool Description

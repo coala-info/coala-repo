@@ -9,11 +9,15 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: File(s) to align (fasta)
+    doc: File(s) to align (fasta); staged writable because progressiveMauve 
+      writes .sslist files beside them
     inputBinding:
       position: 1
+      valueFrom: '$(self == null ? null : self.map(function(f){ return f.basename; }))'
   - id: database
-    type: string?
+    type:
+      - 'null'
+      - File
     doc: CanSNP database
     inputBinding:
       position: 102
@@ -45,7 +49,7 @@ inputs:
   - id: logdir
     type:
       - 'null'
-      - boolean
+      - string
     doc: Specify log directory
     inputBinding:
       position: 102
@@ -77,11 +81,14 @@ inputs:
   - id: refdir
     type:
       - 'null'
-      - boolean
-    doc: Specify reference directory
+      - Directory
+    doc: Specify reference directory (holds <genome>.fna files, see 
+      CanSNPer2-download); staged writable because progressiveMauve writes 
+      .sslist files beside the references
     inputBinding:
       position: 102
       prefix: --refdir
+      valueFrom: $(self.basename)
   - id: rerun
     type:
       - 'null'
@@ -135,8 +142,8 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - boolean
-    doc: Specify reference directory
+      - string
+    doc: Specify tmp directory
     inputBinding:
       position: 102
       prefix: --tmpdir
@@ -151,13 +158,14 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - boolean
+      - string
     doc: Change workdir default (./)
     inputBinding:
       position: 102
       prefix: --workdir
   - id: outdir_path
     type: string
+    default: results
     doc: Output directory
     inputBinding:
       position: 103
@@ -172,6 +180,12 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.refdir)
+        writable: true
+      - entry: $(inputs.query)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cansnper2:2.0.6--py_0

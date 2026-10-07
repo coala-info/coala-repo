@@ -1,5 +1,14 @@
 # captus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| captus_align | PASS |  |
+| captus_assemble | PASS |  |
+| captus_clean | PASS |  |
+| captus_extract | PASS |  |
+
 ## captus_clean
 
 ### Tool Description

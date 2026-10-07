@@ -1,5 +1,11 @@
 # calcs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| calcs | PASS |  |
+
 ## calcs
 
 ### Tool Description

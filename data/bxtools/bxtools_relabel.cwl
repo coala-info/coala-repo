@@ -14,7 +14,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - int
+      - boolean
     doc: 'Select verbosity level (0-4). Default: 0'
     inputBinding:
       position: 102
@@ -26,4 +26,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bxtools:0.1.0--h13024bc_6
-stdout: bxtools_relabel.out
+stdout: bxtools_relabel.bam

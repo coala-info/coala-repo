@@ -1,5 +1,12 @@
 # bx-python CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bx-python_maf_build_index.py | PASS |  |
+| bx-python_maf_extract_ranges_indexed.py | PASS |  |
+
 ## bx-python_maf_build_index.py
 
 ### Tool Description

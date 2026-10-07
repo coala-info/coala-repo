@@ -1,114 +1,32 @@
 # capcruncher CWL Generation Report
 
-## capcruncher_fastq
+## Real Data Test
 
-### Tool Description
-Fastq splitting, deduplication and digestion.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
-- **Homepage**: https://github.com/sims-lab/CapCruncher.git
-- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Total Downloads**: 17.9K
-- **Last updated**: 2025-05-03
-- **GitHub**: https://github.com/sims-lab/CapCruncher
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: capcruncher fastq [OPTIONS] COMMAND [ARGS]...
-
-  Fastq splitting, deduplication and digestion.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  deduplicate  Identifies PCR duplicate fragments from Fastq files.
-  digest       Performs in silico digestion of one or a pair of fastq files.
-  split        Splits fastq file(s) into equal chunks of n reads.
-```
-
-## capcruncher_genome
-
-### Tool Description
-Genome wide methods digestion.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
-- **Homepage**: https://github.com/sims-lab/CapCruncher.git
-- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: capcruncher genome [OPTIONS] COMMAND [ARGS]...
-
-  Genome wide methods digestion.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  digest  Performs in silico digestion of a genome in fasta format.
-```
-
-## capcruncher_alignments
-
-### Tool Description
-Alignment annotation, identification and deduplication.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
-- **Homepage**: https://github.com/sims-lab/CapCruncher.git
-- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: capcruncher alignments [OPTIONS] COMMAND [ARGS]...
-
-  Alignment annotation, identification and deduplication.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  annotate  Annotates a bed file with other bed files using bedtools...
-  filter    Removes unwanted aligned slices and identifies reporters.
-```
-
-## capcruncher_interactions
-
-### Tool Description
-Reporter counting, storing, comparison and pileups
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
-- **Homepage**: https://github.com/sims-lab/CapCruncher.git
-- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: capcruncher interactions [OPTIONS] COMMAND [ARGS]...
-
-  Reporter counting, storing, comparison and pileups
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  compare            Compare bedgraphs and CapCruncher cooler files.
-  count              Determines the number of captured restriction...
-  counts-to-cooler   Stores restriction fragment interaction combinations...
-  deduplicate        Identifies and removes duplicated aligned fragments.
-  fragments-to-bins  Convert a cooler group containing restriction...
-  merge              Merges capcruncher HDF5 files together.
-  pileup             Extracts reporters from a capture experiment and...
-```
+| Tool | Result | Reason |
+|---|---|---|
+| capcruncher_alignments_annotate | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_alignments_filter | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_fastq_deduplicate | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_fastq_digest | Failed | image problem: No module named 'capcruncher_tools', so the command crashes at import. |
+| capcruncher_fastq_split | Failed | image problem: No module named 'joblib', so the command crashes at import. |
+| capcruncher_genome_digest | Failed | image problem: No module named 'capcruncher_tools', so the command crashes at import. |
+| capcruncher_interactions_compare_concat | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_interactions_compare_differential | Failed | image problem: No module named 'ray', so the command crashes at import. |
+| capcruncher_interactions_compare_summarise | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_interactions_count | Failed | image problem: No module named 'capcruncher_tools', so the command crashes at import. |
+| capcruncher_interactions_counts-to-cooler | Failed | image problem: No module named 'ray', so the command crashes at import. |
+| capcruncher_interactions_deduplicate | Failed | image problem: No module named 'ibis', so the command crashes at import. |
+| capcruncher_interactions_fragments-to-bins | Failed | image problem: No module named 'ray', so the command crashes at import. |
+| capcruncher_interactions_merge | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_interactions_pileup | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_pipeline | Not completed | pipeline, skipped: runs the whole CapCruncher Snakemake pipeline. |
+| capcruncher_plot | Failed | image problem: No module named 'pandera', so the command crashes at import. |
+| capcruncher_utilities_cis-and-trans-stats | Failed | image problem: No module named 'ibis', so the command crashes at import. |
+| capcruncher_utilities_dump | Failed | image problem: No module named 'ibis', so the command crashes at import. |
+| capcruncher_utilities_gtf-to-bed12 | Failed | image problem: No module named 'ibis', so the command crashes at import. |
+| capcruncher_utilities_make-chicago-maps | Failed | image problem: No module named 'ibis', so the command crashes at import. |
+| capcruncher_utilities_regenerate-fastq | Failed | image problem: No module named 'ibis', so the command crashes at import. |
+| capcruncher_utilities_viewpoint-coordinates | Failed | image problem: No module named 'ibis', so the command crashes at import. |
 
 ## capcruncher_plot
 
@@ -134,63 +52,6 @@ Options:
   -o, --output TEXT    Output file path. The file extension determines the
                        output format.
   --help               Show this message and exit.
-```
-
-## capcruncher_utilities
-
-### Tool Description
-Command-line interface for capcruncher utilities.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
-- **Homepage**: https://github.com/sims-lab/CapCruncher.git
-- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/capcruncher", line 10, in <module>
-    sys.exit(cli())
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1082, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1695, in invoke
-    sub_ctx = cmd.make_context(cmd_name, args, parent=ctx)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 949, in make_context
-    self.parse_args(ctx, args)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1650, in parse_args
-    echo(ctx.get_help(), color=ctx.color)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 711, in get_help
-    return self.command.get_help(self)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1334, in get_help
-    self.format_help(ctx, formatter)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1365, in format_help
-    self.format_usage(ctx, formatter)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1274, in format_usage
-    pieces = self.collect_usage_pieces(ctx)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1567, in collect_usage_pieces
-    rv = super().collect_usage_pieces(ctx)
-  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1283, in collect_usage_pieces
-    for param in self.get_params(ctx):
-  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 44, in get_params
-    return self._impl.get_params(ctx)
-  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 29, in _impl
-    return getattr(import_module(module), name)
-  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/cli_utilities.py", line 7, in <module>
-    import ibis
-ModuleNotFoundError: No module named 'ibis'
 ```
 
 ## capcruncher_pipeline
@@ -1294,6 +1155,850 @@ ENVIRONMENT MODULES:
 
  In general, command-line values override environment variables which override
 defaults.
+```
+
+## capcruncher_alignments_annotate
+
+### Tool Description
+Annotates a bed file with other bed files using bedtools intersect. Interval names and counts can be used to annotate intervals at the same time; duplicate entries/multimapping reads are removed first.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher alignments annotate [OPTIONS] SLICES
+
+  Annotates a bed file with other bed files using bedtools intersect.
+
+  Whilst bedtools intersect allows for interval names and counts to be used
+  for annotating intervals, this command provides the ability to annotate
+  intervals with both interval names and counts at the same time. As the
+  pipeline allows for empty bed files, this command has built in support to
+  deal with blank/malformed bed files and will return default N/A values.
+
+  Prior to interval annotation, the bed file to be intersected is validated
+  and duplicate entries/multimapping reads are removed to ensure consistent
+  annotations and prevent issues with reporter identification.
+
+Options:
+  -a, --actions [get|count]       Determines if the overlaps are counted or if
+                                  the name should just be reported
+  -b, --bed_files TEXT            Bed file(s) to intersect with slices
+  -n, --names TEXT                Names to use as column names for the output
+                                  tsv file.
+  -f, --overlap_fractions FLOAT   The minimum overlap required for an
+                                  intersection between two intervals to be
+                                  reported.
+  -t, --dtypes TEXT               Data type for column
+  -o, --output TEXT               Path for the annotated slices to be output.
+  --duplicates [remove]           Method to use for reconciling duplicate
+                                  slices (i.e. multimapping). Currently only
+                                  'remove' is supported.
+  -p, --n_cores INTEGER           Intersections are performed in parallel, set
+                                  this to the number of intersections required
+  --invalid_bed_action [ignore|error]
+                                  Method to deal with invalid bed files e.g.
+                                  blank or incorrectly formatted. Setting this
+                                  to 'ignore' will report default N/A values
+                                  (either '.' or 0) for invalid files
+  --blacklist TEXT                Regions to remove from the BAM file prior to
+                                  annotation
+  --prioritize-cis-slices         Attempts to prevent slices on the most
+                                  common chromosome in a fragment (ideally cis
+                                  to the viewpoint) being removed by
+                                  deduplication
+  --priority-chroms TEXT          A comma separated list of chromosomes to
+                                  prioritize during deduplication
+  --help                          Show this message and exit.
+```
+
+## capcruncher_alignments_filter
+
+### Tool Description
+Removes unwanted aligned slices and identifies reporters. Parses a BAM file and merges this with a supplied annotation to identify unwanted slices. Filtering can be tuned for Capture-C, Tri-C and Tiled-C data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher alignments filter [OPTIONS] {capture|tri|tiled}
+
+  Removes unwanted aligned slices and identifies reporters.
+
+  Parses a BAM file and merges this with a supplied annotation to identify
+  unwanted slices. Filtering can be tuned for Capture-C, Tri-C and Tiled-C
+  data to ensure optimal filtering.
+
+Options:
+  -b, --bam TEXT                Bam file to process  [required]
+  -a, --annotations TEXT        Annotations for the bam file that must contain
+                                the required columns, see description.
+                                [required]
+  --custom-filtering TEXT       Custom filtering to be used. This must be
+                                supplied as a path to a yaml file.
+  -o, --output_prefix TEXT      Output prefix for deduplicated fastq file(s)
+  --statistics TEXT             Output path for stats file
+  --sample-name TEXT            Name of sample e.g. DOX_treated_1
+  --read-type [flashed|pe]      Type of read
+  --fragments / --no-fragments  Determines if read fragment aggregations are
+                                produced
+  --help                        Show this message and exit.
+```
+
+## capcruncher_fastq_deduplicate
+
+### Tool Description
+Identifies PCR duplicate fragments from Fastq files. PCR duplicates are very commonly present in Capture-C/Tri-C/Tiled-C data and must be removed for accurate analysis.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher fastq deduplicate [OPTIONS]
+
+  Identifies PCR duplicate fragments from Fastq files.
+
+  PCR duplicates are very commonly present in Capture-C/Tri-C/Tiled-C data and
+  must be removed for accurate analysis. These commands attempt to identify
+  and remove duplicate reads/fragments from fastq file(s) to speed up
+  downstream analysis.
+
+Options:
+  -1, --fastq1 TEXT         Read 1 FASTQ files  [required]
+  -2, --fastq2 TEXT         Read 2 FASTQ files  [required]
+  -o, --output-prefix TEXT  Output prefix for deduplicated FASTQ files
+  --sample-name TEXT        Name of sample e.g. DOX_treated_1
+  -s, --statistics TEXT     Statistics output file name
+  --shuffle                 Shuffle reads before deduplication
+  --help                    Show this message and exit.
+```
+
+## capcruncher_fastq_digest
+
+### Tool Description
+Performs in silico digestion of one or a pair of fastq files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher fastq digest [OPTIONS] FASTQS...
+
+  Performs in silico digestion of one or a pair of fastq files.
+
+Options:
+  -r, --restriction_enzyme TEXT   Restriction enzyme name or sequence to use
+                                  for in silico digestion.  [required]
+  -m, --mode [flashed|pe]         Digestion mode. Combined (Flashed) or non-
+                                  combined (PE) read pairs.  [required]
+  -o, --output_file TEXT
+  --minimum_slice_length INTEGER
+  --statistics TEXT               Output path for stats file
+  --sample-name TEXT              Name of sample e.g. DOX_treated_1. Required
+                                  for correct statistics.
+  --help                          Show this message and exit.
+```
+
+## capcruncher_fastq_split
+
+### Tool Description
+Splits fastq file(s) into equal chunks of n reads.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher fastq split [OPTIONS] INPUT_FILES...
+
+  Splits fastq file(s) into equal chunks of n reads.
+
+Options:
+  -m, --method [python|unix]   Method to use for splitting
+  -o, --output_prefix TEXT     Output prefix for deduplicated fastq file(s)
+  --compression_level INTEGER  Level of compression for output files
+  -n, --n_reads INTEGER        Number of reads per fastq file
+  --gzip / --no-gzip           Determines if files are gziped or not
+  -p, --n_cores INTEGER
+  -s, --suffix TEXT            Suffix to add to output files (ignore
+                               {read_number}.fastq as this is added
+                               automatically)
+  --help                       Show this message and exit.
+```
+
+## capcruncher_genome_digest
+
+### Tool Description
+Performs in silico digestion of a genome in fasta format. Digests the supplied genome fasta file and generates a bed file containing the locations of all restriction fragments produced by the supplied restriction enzyme. A log file recording the number of restriction fragments is also generated.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher genome digest [OPTIONS] INPUT_FASTA
+
+  Performs in silico digestion of a genome in fasta format.
+
+  Digests the supplied genome fasta file and generates a bed file containing
+  the locations of all restriction fragments produced by the supplied
+  restriction enzyme.
+
+  A log file recording the number of restriction fragments for the suplied
+  genome is also generated.
+
+Options:
+  -r, --recognition_site TEXT  Recognition enzyme or sequence  [required]
+  -l, --logfile TEXT           Path for digestion log file
+  -o, --output_file TEXT       Output file path
+  --remove_cutsite BOOLEAN     Exclude the recognition sequence from the
+                               output
+  --sort                       Sorts the output bed file by chromosome and
+                               start coord.
+  --help                       Show this message and exit.
+```
+
+## capcruncher_interactions_compare_concat
+
+### Tool Description
+Concatenate viewpoint interactions from bedgraphs or CapCruncher cooler files into one table.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions compare concat [OPTIONS] INFILES...
+
+Options:
+  -f, --format [auto|bedgraph|cooler]
+                                  Input file format
+  -o, --output TEXT               Output file name
+  -v, --viewpoint TEXT            Viewpoint to extract
+  -r, --resolution TEXT           Resolution to extract
+  --region TEXT                   Limit to specific coordinates in the format
+                                  chrom:start-end
+  --normalisation [raw|n_cis|region]
+                                  Method to use interaction normalisation
+  --normalisation-regions TEXT    Regions to use for interaction
+                                  normalisation. The --normalisation method
+                                  MUST be 'region'
+  --scale_factor INTEGER          Scale factor to use for bedgraph
+                                  normalisation
+  -p, --n_cores INTEGER           Number of cores to use for extracting
+                                  bedgraphs
+  --help                          Show this message and exit.
+```
+
+## capcruncher_interactions_compare_differential
+
+### Tool Description
+Perform differential testing on CapCruncher HDF5 files. Requires a design matrix and a contrast to test; the output is a tab separated bedgraph.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions compare differential [OPTIONS]
+                                                     INTERACTION_FILES...
+
+  Perform differential testing on CapCruncher HDF5 files.
+
+  This command performs differential testing on CapCruncher HDF5 files. It
+  requires a design matrix and a contrast to test. The design matrix should be
+  a tab separated file with the first column containing the sample names and
+  the remaining columns containing the conditions. The contrast should specify
+  the name of the column in the design matrix to test. The output is a tab
+  separated bedgraph.
+
+Options:
+  -o, --output-prefix TEXT        Output file prefix
+  -v, --viewpoint TEXT            Viewpoint to extract  [required]
+  -d, --design-matrix TEXT        Design matrix file  [required]
+  -c, --contrast TEXT             Contrast to test
+  -r, --regions-of-interest TEXT  Regions of interest to test for differential
+                                  interactions
+  --viewpoint-distance INTEGER    Distance from viewpoint to test for
+                                  differential interactions
+  --threshold-count INTEGER       Minimum number of interactions to test for
+                                  differential interactions
+  --threshold-q FLOAT             Minimum q-value to test for differential
+                                  interactions
+  --help                          Show this message and exit.
+```
+
+## capcruncher_interactions_compare_summarise
+
+### Tool Description
+Aggregate (summarise) concatenated viewpoint interactions by groups of samples, with optional subtraction between groups.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions compare summarise [OPTIONS] INFILE
+
+Options:
+  -d, --design-matrix TEXT        Design matrix file, should be formatted as a
+                                  tab separated file with the first column
+                                  containing the sample names and the other
+                                  column containing the conditions.
+  -o, --output-prefix TEXT        Output file prefix
+  -f, --output-format [bedgraph|tsv]
+  -m, --summary-methods TEXT      Summary methods to use for aggregation. Can
+                                  be any method in numpy or scipy.stats
+  -n, --group-names TEXT          Group names for aggregation
+  -c, --group-columns TEXT        Column names/numbers (0 indexed, the first
+                                  column after the end coordinate counts as 0)
+                                  for aggregation.
+  --subtraction                   Perform subtration between aggregated groups
+  --suffix TEXT                   Add a suffix before the file extension
+  --help                          Show this message and exit.
+```
+
+## capcruncher_interactions_count
+
+### Tool Description
+Determines the number of captured restriction fragment interactions genome wide. The output is a cooler formatted HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions count [OPTIONS] REPORTERS
+
+  Determines the number of captured restriction fragment interactions genome
+  wide.
+
+  Counts the number of interactions between each restriction fragment and all
+  other restriction fragments in the fragment.
+
+  The output is a cooler formatted HDF5 file containing a single group
+  containing the interactions between restriction fragments.
+
+  See `https://cooler.readthedocs.io/en/latest/` for further details.
+
+Options:
+  -o, --output TEXT            Name of output file
+  --remove_exclusions          Prevents analysis of fragments marked as
+                               proximity exclusions
+  --remove_capture             Prevents analysis of capture fragment
+                               interactions
+  --subsample FLOAT            Subsamples reporters before analysis of
+                               interactions
+  -f, --fragment-map TEXT      Path to digested genome bed file
+  -v, --viewpoint-path TEXT    Path to viewpoints file
+  -p, --n-cores INTEGER        Number of cores to use for counting.
+  --assay [capture|tri|tiled]
+  --help                       Show this message and exit.
+```
+
+## capcruncher_interactions_counts-to-cooler
+
+### Tool Description
+Stores restriction fragment interaction combinations at the restriction fragment level in a cooler formatted group in an HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions counts-to-cooler [OPTIONS] COUNTS
+
+  Stores restriction fragment interaction combinations at the restriction
+  fragment level.
+
+  Parses reporter restriction fragment interaction counts produced by
+  "capcruncher reporters count" and gerates a cooler formatted group in an
+  HDF5 File. See `https://cooler.readthedocs.io/en/latest/` for further
+  details.
+
+Options:
+  -f, --fragment-map TEXT    Path to digested genome bed file  [required]
+  -v, --viewpoint-path TEXT  Path to viewpoints file  [required]
+  -n, --viewpoint-name TEXT  Name of viewpoint to store
+  -g, --genome TEXT          Name of genome
+  --suffix TEXT              Suffix to append after the capture name for the
+                             output file
+  -o, --output TEXT          Name of output file. (Cooler formatted hdf5 file)
+  --help                     Show this message and exit.
+```
+
+## capcruncher_interactions_deduplicate
+
+### Tool Description
+Identifies and removes duplicated aligned fragments. Unlike fastq deduplicate, this command removes fragments with identical genomic coordinates.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions deduplicate [OPTIONS] SLICES
+
+  Identifies and removes duplicated aligned fragments.
+
+  PCR duplicates are very commonly present in Capture-C/Tri-C/Tiled-C data and
+  must be removed for accurate analysis. Unlike fastq deduplicate, this
+  command removes fragments with identical genomic coordinates.
+
+  Non-combined (pe) and combined (flashed) reads are treated slightly
+  differently due to the increased confidence that the ligation junction has
+  been captured for the flashed reads.
+
+Options:
+  -o, --output TEXT         Output prefix for directory of deduplicated slices
+  --statistics TEXT         Output prefix for stats file(s)
+  --sample-name TEXT        Name of sample e.g. DOX_treated_1
+  --read-type [flashed|pe]  Type of read
+  --help                    Show this message and exit.
+```
+
+## capcruncher_interactions_fragments-to-bins
+
+### Tool Description
+Convert a cooler group containing restriction fragments to constant genomic windows; optionally adds normalised counts.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions fragments-to-bins [OPTIONS] COOLER_PATH
+
+  Convert a cooler group containing restriction fragments to constant genomic
+  windows
+
+  Parses a cooler group and aggregates restriction fragment interaction counts
+  into genomic bins of a specified size. If the normalise option is selected,
+  columns containing normalised counts are added to the pixels table of the
+  output
+
+Options:
+  -b, --binsizes INTEGER       Binsizes to use for windowing
+  --normalise                  Enables normalisation of interaction counts
+                               during windowing
+  --overlap_fraction FLOAT     Minimum overlap between genomic bins and
+                               restriction fragments for overlap
+  -p, --n_cores INTEGER        Number of cores used for binning
+  --scale-factor INTEGER       Scaling factor used for normalisation
+  --conversion_tables TEXT     Pickle file containing pre-computed fragment ->
+                               bin conversions.
+  -o, --output TEXT            Name of output file. (Cooler formatted hdf5
+                               file)
+  --assay [capture|tri|tiled]
+  --help                       Show this message and exit.
+```
+
+## capcruncher_interactions_merge
+
+### Tool Description
+Merges capcruncher HDF5 files together.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions merge [OPTIONS] COOLERS...
+
+  Merges capcruncher HDF5 files together.
+
+  Produces a unified cooler with both restriction fragment and genomic bins
+  whilst reducing the storage space required by hard linking the "bins" tables
+  to prevent duplication.
+
+Options:
+  -o, --output TEXT  Output file name
+  --help             Show this message and exit.
+```
+
+## capcruncher_interactions_pileup
+
+### Tool Description
+Extracts reporters from a capture experiment and generates a bedgraph file, optionally normalised and binned into even genomic windows.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: capcruncher interactions pileup [OPTIONS] URI
+
+  Extracts reporters from a capture experiment and generates a bedgraph file.
+
+  Identifies reporters for a single probe (if a probe name is supplied) or all
+  capture probes present in a capture experiment HDF5 file.
+
+  The bedgraph generated can be normalised by the number of cis interactions
+  for inter experiment comparisons and/or extract pilups binned into even
+  genomic windows.
+
+Options:
+  -n, --viewpoint_names TEXT      Viewpoint to extract and convert to
+                                  bedgraph, if not provided will transform
+                                  all.
+  -o, --output_prefix TEXT        Output prefix for bedgraphs
+  --normalisation [raw|n_cis|region]
+                                  Method to use interaction normalisation
+  --normalisation-regions TEXT    Regions to use for interaction
+                                  normalisation. The --normalisation method
+                                  MUST be 'region'
+  --binsize INTEGER               Binsize to use for converting bedgraph to
+                                  evenly sized genomic bins
+  --gzip                          Compress output using gzip
+  --scale-factor INTEGER          Scale factor to use for bedgraph
+                                  normalisation
+  --sparse / --dense              Produce bedgraph containing just positive
+                                  bins (sparse) or all bins (dense)
+  -f, --format [bedgraph|bigwig]  Output file format
+  --help                          Show this message and exit.
+```
+
+## capcruncher_utilities_cis-and-trans-stats
+
+### Tool Description
+Count cis and trans reporters per viewpoint from CapCruncher slices.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/capcruncher", line 10, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1695, in invoke
+    sub_ctx = cmd.make_context(cmd_name, args, parent=ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 949, in make_context
+    self.parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1653, in parse_args
+    rest = super().parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1413, in parse_args
+    parser = self.make_parser(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1324, in make_parser
+    for param in self.get_params(ctx):
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 44, in get_params
+    return self._impl.get_params(ctx)
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 29, in _impl
+    return getattr(import_module(module), name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/cli_utilities.py", line 7, in <module>
+    import ibis
+ModuleNotFoundError: No module named 'ibis'
+```
+
+## capcruncher_utilities_dump
+
+### Tool Description
+Dump the interactions of a viewpoint from a CapCruncher parquet or cooler (hdf5) file to a tsv file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/capcruncher", line 10, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1695, in invoke
+    sub_ctx = cmd.make_context(cmd_name, args, parent=ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 949, in make_context
+    self.parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1653, in parse_args
+    rest = super().parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1413, in parse_args
+    parser = self.make_parser(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1324, in make_parser
+    for param in self.get_params(ctx):
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 44, in get_params
+    return self._impl.get_params(ctx)
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 29, in _impl
+    return getattr(import_module(module), name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/cli_utilities.py", line 7, in <module>
+    import ibis
+ModuleNotFoundError: No module named 'ibis'
+```
+
+## capcruncher_utilities_gtf-to-bed12
+
+### Tool Description
+Convert a GTF file to BED12 format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/capcruncher", line 10, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1695, in invoke
+    sub_ctx = cmd.make_context(cmd_name, args, parent=ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 949, in make_context
+    self.parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1653, in parse_args
+    rest = super().parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1413, in parse_args
+    parser = self.make_parser(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1324, in make_parser
+    for param in self.get_params(ctx):
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 44, in get_params
+    return self._impl.get_params(ctx)
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 29, in _impl
+    return getattr(import_module(module), name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/cli_utilities.py", line 7, in <module>
+    import ibis
+ModuleNotFoundError: No module named 'ibis'
+```
+
+## capcruncher_utilities_make-chicago-maps
+
+### Tool Description
+Make CHiCAGO restriction map (.rmap) and bait map (.baitmap) files from a restriction fragment file and a viewpoints file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/capcruncher", line 10, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1695, in invoke
+    sub_ctx = cmd.make_context(cmd_name, args, parent=ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 949, in make_context
+    self.parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1653, in parse_args
+    rest = super().parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1413, in parse_args
+    parser = self.make_parser(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1324, in make_parser
+    for param in self.get_params(ctx):
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 44, in get_params
+    return self._impl.get_params(ctx)
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 29, in _impl
+    return getattr(import_module(module), name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/cli_utilities.py", line 7, in <module>
+    import ibis
+ModuleNotFoundError: No module named 'ibis'
+```
+
+## capcruncher_utilities_regenerate-fastq
+
+### Tool Description
+Regenerates FASTQ files from a parquet file containing the required reads.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/capcruncher", line 10, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1695, in invoke
+    sub_ctx = cmd.make_context(cmd_name, args, parent=ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 949, in make_context
+    self.parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1653, in parse_args
+    rest = super().parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1413, in parse_args
+    parser = self.make_parser(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1324, in make_parser
+    for param in self.get_params(ctx):
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 44, in get_params
+    return self._impl.get_params(ctx)
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 29, in _impl
+    return getattr(import_module(module), name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/cli_utilities.py", line 7, in <module>
+    import ibis
+ModuleNotFoundError: No module named 'ibis'
+```
+
+## capcruncher_utilities_viewpoint-coordinates
+
+### Tool Description
+Align viewpoint (capture oligo) sequences to the genome and report the restriction fragments they fall in.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/capcruncher:0.3.14--pyhdfd78af_1
+- **Homepage**: https://github.com/sims-lab/CapCruncher.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/capcruncher", line 10, in <module>
+    sys.exit(cli())
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1695, in invoke
+    sub_ctx = cmd.make_context(cmd_name, args, parent=ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 949, in make_context
+    self.parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1653, in parse_args
+    rest = super().parse_args(ctx, args)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1413, in parse_args
+    parser = self.make_parser(ctx)
+  File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1324, in make_parser
+    for param in self.get_params(ctx):
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 44, in get_params
+    return self._impl.get_params(ctx)
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/__init__.py", line 29, in _impl
+    return getattr(import_module(module), name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.10/site-packages/capcruncher/cli/cli_utilities.py", line 7, in <module>
+    import ibis
+ModuleNotFoundError: No module named 'ibis'
 ```
 
 ## Metadata

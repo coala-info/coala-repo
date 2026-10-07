@@ -10,7 +10,7 @@ inputs:
   - id: bedtools_genome
     type:
       - 'null'
-      - string
+      - File
     doc: genome data for bedtools
     inputBinding:
       position: 101
@@ -145,14 +145,36 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: working directory
+    doc: working directory from the previous caspeak step (holds lastdb/,
+      lastal/, peak/); it is copied writable and the step runs inside it
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: peak
+    type:
+      - 'null'
+      - Directory
+    doc: Peaks (peaks.bed, sorted.bed) and trimmed reads
+    outputBinding:
+      glob: "$((inputs.workdir ? inputs.workdir.basename + '/' : '') + 'peak')"
+  - id: work_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The updated working directory (only when workdir is given)
+    outputBinding:
+      glob: '$(inputs.workdir ? inputs.workdir.basename : [])'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/caspeak:1.1.5--pyhdfd78af_0

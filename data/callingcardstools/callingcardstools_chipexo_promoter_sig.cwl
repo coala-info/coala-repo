@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chipexo_promoter_sig
+baseCommand:
+  - callingcardstools
+  - chipexo_promoter_sig
 label: callingcardstools_chipexo_promoter_sig
 doc: "Compare CHIPEXO and promoter data to find significant regions.\n\nTool homepage:
   https://github.com/cmatKhan/callingCardsTools"

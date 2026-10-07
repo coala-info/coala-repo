@@ -129,7 +129,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory.
+    doc: output directory. Default ./ (created when given)
     inputBinding:
       position: 101
       prefix: --outdir
@@ -166,6 +166,26 @@ inputs:
       position: 101
       prefix: --trailer-loss
 outputs:
+  - id: evolved_arrays
+    type: File
+    doc: Evolved arrays file
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')evolved_arrays_*.txt"
+  - id: colour_scheme
+    type: File
+    doc: JSON colour scheme of the evolved arrays
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')color_scheme_*.json"
+  - id: tree_newick
+    type: File
+    doc: Evolved tree in newick format
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')evolved_tree_file_*.nwk"
+  - id: tree_plot
+    type: File
+    doc: Plot of the evolved tree
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')evolved_tree_*.png"
   - id: stdout
     type: stdout
     doc: Standard output
@@ -173,9 +193,15 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: output directory.
+    doc: output directory. Default ./ (created when given)
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "${ return inputs.outdir ? [{class: 'Directory', basename: inputs.outdir,
+        listing: [], writable: true}] : []; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cctk:1.0.3--pyhdfd78af_0

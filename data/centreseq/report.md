@@ -1,5 +1,14 @@
 # centreseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| centreseq_core | PASS |  |
+| centreseq_extract | PASS |  |
+| centreseq_subset | PASS |  |
+| centreseq_tree | PASS |  |
+
 ## centreseq_core
 
 ### Tool Description
@@ -62,26 +71,6 @@ Options:
   -v, --verbose                Set this flag to enable more verbose logging.
   --version                    Use this flag to print the version and exit.
   --help                       Show this message and exit.
-```
-
-
-## centreseq_genome
-
-### Tool Description
-CentreSeq is a tool for analyzing sequencing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/centreseq:0.3.8--py_0
-- **Homepage**: https://github.com/bfssi-forest-dussault/centreseq
-- **Package**: https://anaconda.org/channels/bioconda/packages/centreseq/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: centreseq [OPTIONS] COMMAND [ARGS]...
-Try "centreseq --help" for help.
-
-Error: No such command "genome".
 ```
 
 

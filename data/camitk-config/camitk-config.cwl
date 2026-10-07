@@ -65,6 +65,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: QT_QPA_PLATFORM
+        envValue: offscreen
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/camitk-config:v4.1.2-3-deb_cv1

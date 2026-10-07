@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: process_mammals_bam
+baseCommand:
+  - callingcardstools
+  - process_mammals_bam
 label: callingcardstools_process_mammals_bam
 doc: "Processes BAM files for calling cards analysis in mammals.\n\nTool homepage:
   https://github.com/cmatKhan/callingCardsTools"
@@ -22,6 +24,10 @@ inputs:
       prefix: --filename
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     doc: Path to the genome FASTA file. Must have a corresponding .fai index 
       file.
     inputBinding:
@@ -29,6 +35,8 @@ inputs:
       prefix: --genome
   - id: input
     type: File
+    secondaryFiles:
+      - .bai
     doc: Path to the BAM file. Must be sorted and have a corresponding .bai 
       index file.
     inputBinding:
@@ -72,6 +80,37 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: passing_bam
+    type:
+      - 'null'
+      - File
+    doc: Sorted bam of the passing reads
+    outputBinding:
+      glob: '$(inputs.filename ? inputs.filename : inputs.input.nameroot)$(inputs.suffix ? "_" + inputs.suffix : "")_passing.bam'
+  - id: failing_bam
+    type:
+      - 'null'
+      - File
+    doc: Sorted bam of the failing reads
+    outputBinding:
+      glob: '$(inputs.filename ? inputs.filename : inputs.input.nameroot)$(inputs.suffix ? "_" + inputs.suffix : "")_failing.bam'
+  - id: qbed
+    type:
+      - 'null'
+      - File
+    doc: qBed of the passing insertions (not written with --pickle)
+    outputBinding:
+      glob: '$(inputs.filename ? inputs.filename : inputs.input.nameroot)$(inputs.suffix ? "_" + inputs.suffix : "").qbed'
+  - id: qc_files
+    type:
+      type: array
+      items: File
+    doc: All files written with the output basename (bams, qbed, QC tables, or 
+      the qbed and barcode QC pickles with --pickle)
+    outputBinding:
+      glob: '$(inputs.filename ? inputs.filename : inputs.input.nameroot)$(inputs.suffix ? "_" + inputs.suffix : "")_*'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

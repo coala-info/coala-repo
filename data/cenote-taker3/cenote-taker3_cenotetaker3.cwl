@@ -302,9 +302,11 @@ inputs:
   - id: working_directory
     type:
       - 'null'
-      - Directory
+      - string
+    default: .
     doc: Set working directory with absolute or relative path. run directory 
-      will be created within.
+      will be created within. Set to the output directory here so the run 
+      directory is collected (the tool default is /tmp).
     inputBinding:
       position: 101
       prefix: --working_directory
@@ -321,6 +323,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: run_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Run directory named after run_title, with the final annotated contigs,
+      summary tables and GenBank files.
+    outputBinding:
+      glob: "$(inputs.working_directory)/$(inputs.run_title)"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cenote-taker3:3.4.4--pyhdfd78af_0

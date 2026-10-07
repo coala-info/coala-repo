@@ -15,6 +15,14 @@ inputs:
       action (list, metadata and abort). Wildcards (* and ?) are allowed.
     inputBinding:
       position: 1
+  - id: metadata_file
+    type:
+      - 'null'
+      - File
+    doc: Cromwell metadata JSON file to troubleshoot instead of a workflow ID 
+      (no Caper server needed)
+    inputBinding:
+      position: 1
   - id: aws_loc_dir
     type:
       - 'null'

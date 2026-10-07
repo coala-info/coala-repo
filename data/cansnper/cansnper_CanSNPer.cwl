@@ -16,11 +16,13 @@ inputs:
   - id: db_path
     type:
       - 'null'
-      - Directory
-    doc: path to CanSNPerDB.db
+      - File
+    doc: path to CanSNPerDB.db (SQLite file; staged writable so import options 
+      can update it)
     inputBinding:
       position: 101
       prefix: --db_path
+      valueFrom: $(self.basename)
   - id: delete_organism
     type:
       - 'null'
@@ -115,10 +117,12 @@ inputs:
     type:
       - 'null'
       - File
-    doc: fasta sequence file name that is to be analysed
+    doc: fasta sequence file name that is to be analysed (staged in the working
+      directory, because the SNP list and tree PDF are written beside it)
     inputBinding:
       position: 101
       prefix: --query
+      valueFrom: $(self.basename)
   - id: reference
     type:
       - 'null'
@@ -172,6 +176,46 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: snp_list
+    type:
+      - 'null'
+      - File
+    doc: SNP list written with --list_snps
+    outputBinding:
+      glob: '*_snplist.txt'
+  - id: tree_pdf
+    type:
+      - 'null'
+      - File
+    doc: tree PDF written with --draw_tree
+    outputBinding:
+      glob: '*_tree.pdf'
+  - id: alignments
+    type:
+      type: array
+      items: File
+    doc: alignment files saved with --save_align
+    outputBinding:
+      glob: '*.CanSNPer.*.fa'
+  - id: database
+    type:
+      - 'null'
+      - File
+    doc: the (possibly updated) CanSNPer database
+    outputBinding:
+      glob: '$(inputs.db_path ? inputs.db_path.basename : [])'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: cansnper
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.query)
+        writable: true
+      - entry: $(inputs.db_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cansnper:1.0.10--py_1

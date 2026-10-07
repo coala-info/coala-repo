@@ -54,8 +54,8 @@ outputs:
   - id: output
     type:
       - 'null'
-      - Directory
-    doc: Output directory gene matrix files
+      - File
+    doc: UMI-corrected BUS file
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

@@ -16,8 +16,8 @@ inputs:
   - id: dump
     type:
       - 'null'
-      - boolean
-    doc: Dump uncorrected to corrected barcodes (optional)
+      - string
+    doc: File name to dump uncorrected to corrected barcodes (optional)
     inputBinding:
       position: 102
       prefix: --dump
@@ -66,6 +66,13 @@ outputs:
     doc: File for corrected bus output
     outputBinding:
       glob: $(inputs.output_path)
+  - id: dump_file
+    type:
+      - 'null'
+      - File
+    doc: Uncorrected to corrected barcode mapping (--dump)
+    outputBinding:
+      glob: $(inputs.dump)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,38 +1,16 @@
 # cblaster CWL Generation Report
 
-## cblaster_gui
+## Real Data Test
 
-### Tool Description
-A tool for finding homologous sequences in a database using BLAST.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cblaster:1.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gamcil/cblaster
-- **Package**: https://anaconda.org/channels/bioconda/packages/cblaster/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/cblaster/overview
-- **Total Downloads**: 17.5K
-- **Last updated**: 2025-10-31
-- **GitHub**: https://github.com/gamcil/cblaster
-- **Stars**: N/A
-### Original Help Text
-```text
-Importing genomicsqlite failed, falling back to SQLite3
-Traceback (most recent call last):
-  File "/usr/local/bin/cblaster", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.14/site-packages/cblaster/main.py", line 420, in main
-    set_entrez()
-    ~~~~~~~~~~^^
-  File "/usr/local/lib/python3.14/site-packages/cblaster/main.py", line 42, in set_entrez
-    cfg = config.get_config_parser()
-  File "/usr/local/lib/python3.14/site-packages/cblaster/config.py", line 20, in get_config_parser
-    raise IOError("No configuration folder detected, please run cblaster config")
-OSError: No configuration folder detected, please run cblaster config
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| cblaster_config | PASS |  |
+| cblaster_extract | PASS |  |
+| cblaster_extract_clusters | PASS |  |
+| cblaster_gne | PASS |  |
+| cblaster_makedb | PASS |  |
+| cblaster_plot_clusters | PASS |  |
+| cblaster_search | PASS |  |
 
 ## cblaster_makedb
 

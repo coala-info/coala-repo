@@ -1,5 +1,15 @@
 # caspeak CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| caspeak_align | PASS | Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads. |
+| caspeak_exec | PASS | Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads. |
+| caspeak_peak | PASS | Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads. |
+| caspeak_plot | PASS | Synthetic data: plots the validated planted L1HS insertion (validate.maf from caspeak exec) as a dotplot PNG. |
+| caspeak_valid | PASS | Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads. |
+
 ## caspeak_align
 
 ### Tool Description
@@ -29,24 +39,6 @@ options:
   --workdir DIR    working directory (default: current directory)
   --thread THREAD  number of threads (default: 1)
   -v, --verbose    show progress messages and data
-```
-
-
-## caspeak_sequence
-
-### Tool Description
-caspeak: error: argument {align,peak,valid,exec,plot}: invalid choice: 'sequence' (choose from align, peak, valid, exec, plot)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/caspeak:1.1.5--pyhdfd78af_0
-- **Homepage**: https://github.com/Rye-lxy/CasPeak
-- **Package**: https://anaconda.org/channels/bioconda/packages/caspeak/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: caspeak [-h] [-v] {align,peak,valid,exec,plot} ...
-caspeak: error: argument {align,peak,valid,exec,plot}: invalid choice: 'sequence' (choose from align, peak, valid, exec, plot)
 ```
 
 

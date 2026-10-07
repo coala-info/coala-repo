@@ -123,6 +123,11 @@ inputs:
       prefix: --identity
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
     doc: input bam, should be aligned and sorted
     inputBinding:
       position: 101

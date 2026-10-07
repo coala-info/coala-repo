@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - bwa-aln-interactive
   - bwt2sa
 label: bwa-aln-interactive_bwt2sa
 doc: "Generate suffix array (SA) from BWT\n\nTool homepage: https://github.com/fulcrumgenomics/bwa-aln-interactive"

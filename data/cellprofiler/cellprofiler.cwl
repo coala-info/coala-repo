@@ -7,7 +7,7 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Optional filename for the output file of measurements when running 
       headless.
     inputBinding:
@@ -69,7 +69,7 @@ inputs:
   - id: done_file
     type:
       - 'null'
-      - File
+      - string
     doc: The path to the "Done" file, written by CellProfiler shortly before 
       exiting
     inputBinding:
@@ -282,6 +282,22 @@ outputs:
     doc: Make this directory the default output folder
     outputBinding:
       glob: $(inputs.output_directory)
+  - id: measurements_file
+    type:
+      - 'null'
+      - File
+    doc: Measurements file written to the <output-file> path (CellProfiler 
+      4.2 headless runs accept this argument but do not write it; use 
+      ExportToSpreadsheet results in the output directory)
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: done_file_out
+    type:
+      - 'null'
+      - File
+    doc: The "Done" file written shortly before exiting
+    outputBinding:
+      glob: $(inputs.done_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cellprofiler:4.2.8--pyhdfd78af_0

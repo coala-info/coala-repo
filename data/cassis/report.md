@@ -1,5 +1,11 @@
 # cassis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cassis | PASS | Synthetic data: a translocation planted between real human chr22 and SARS-CoV-2 sequence is reported as one inter breakpoint between the flanking genes, and the refined region covers the planted site. |
+
 ## cassis
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # bwise CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bwise | Failed | image problem: bwise crashes after the btrim step because it deletes dbg63.fa1/dbg63.fa2, which the bundled btrim never writes (FileNotFoundError on SARS-CoV-2 reads). |
+
 ## bwise
 
 ### Tool Description

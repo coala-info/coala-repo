@@ -1,9 +1,15 @@
 # canopy CWL Generation Report
 
-## canopy_build
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| canopy_cc.bin | PASS |  |
+
+## canopy_cc.bin
 
 ### Tool Description
-Converts OCI blobs to SIF format and builds a container image.
+Cluster abundance profiles into co-abundant gene groups using canopy clustering (cc.bin prints no usage text; options taken from options.cpp of canopy2 v0.25).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/canopy:0.25--h077b44d_1
@@ -18,12 +24,8 @@ Converts OCI blobs to SIF format and builds a container image.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/canopy:0.25--h077b44d_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a56887daaa80d38151b70c4c4481c202a4e4c9e2f5466263bab3c64a0f67508d: unpack entry: usr/local/lib/libstdc++.so.6.0.33: unpack to regular file: short write: write /tmp/build-temp-3044087807/rootfs/usr/local/lib/libstdc++.so.6.0.33: no space left on device
+cc.bin v 0.25
+Option: "input_file_path" must be accessible and readable.
 ```
 
 ## Metadata

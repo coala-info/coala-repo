@@ -1,5 +1,15 @@
 # canu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| canu_assemble | PASS |  |
+| canu_correct | PASS |  |
+| canu_haplotype | PASS |  |
+| canu_trim | PASS |  |
+| canu_trim-assemble | PASS |  |
+
 ## canu_haplotype
 
 ### Tool Description

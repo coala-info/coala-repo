@@ -10,31 +10,31 @@ inputs:
     doc: Path for the file that contains the table of orthologous genes or 
       synteny blocks.
     inputBinding:
-      position: 1
+      position: 201
   - id: type
     type: string
     doc: 'Type of the table: G for orthologous genes and B for synteny blocks.'
     inputBinding:
-      position: 2
+      position: 202
   - id: dir_gr
     type: Directory
     doc: Path for the directory where the script can locate the FASTA files of 
       the chromosomes of the reference genome (GR).
     inputBinding:
-      position: 3
+      position: 203
   - id: dir_go
     type: Directory
     doc: Path for the directory where the script can locate the FASTA files of 
       the chromosomes of the genome (GO) which will be compared with the 
       reference genome.
     inputBinding:
-      position: 4
+      position: 204
   - id: output_dir
-    type: Directory
+    type: string
     doc: Name of the directory where the script will write the results. The 
-      directory must exist (the script will not try to create it).
+      CWL creates it empty before the run.
     inputBinding:
-      position: 5
+      position: 205
   - id: extend_ab_by_adding_fragment
     type:
       - 'null'
@@ -50,7 +50,7 @@ inputs:
   - id: extend_ab_by_adding_gene
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Extend sequences SA and SB: True [T] or FALSE [F]. Extend sequences SA and
       SB by adding the non orthologous genes which are in the boundaries of them.
       (Non orthologous genes: Co and Do). Warning: This parameter is available only
@@ -61,7 +61,7 @@ inputs:
   - id: extend_before
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Extend before verify length: True [T] or FALSE [F]. This parameter determines
       if the method verifies the minimum sequence length before (F) or after (T) extending
       the sequence.'
@@ -83,7 +83,7 @@ inputs:
   - id: extend_by_adding_gene
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Extend sequences SR, SA and SB: True [T] or FALSE [F]. Extend sequences
       SR, SA and SB by adding the orthologous genes which are in the boundaries of
       them. (Orthologous genes: pairs (Ar,Ao) and (Br,Bo)). Warning: This parameter
@@ -135,6 +135,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type: Directory
+    doc: Results (NonRefinedBreakpoints.txt, segmentation.txt, alignments, 
+      dotplot, fasta, segmentation)
+    outputBinding:
+      glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: |-
+          ${ return {class: 'Directory', basename: inputs.output_dir, listing: []}; }
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cassis:0.0.20120106--hdfd78af_1

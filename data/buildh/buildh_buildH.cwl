@@ -23,7 +23,7 @@ inputs:
       position: 101
       prefix: --coord
   - id: defop
-    type: string
+    type: File
     doc: Order parameter definition file. Can be found on 
       https://github.com/patrickfuchs/buildH/tree/master/def_files.
     inputBinding:
@@ -95,6 +95,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: order_parameters
+    type: File
+    doc: Order parameters output file
+    outputBinding:
+      glob: "$(inputs.out ? inputs.out : 'OP_buildH.out')"
+  - id: trajectory_with_h
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: PDB and XTC files with hydrogens (-opx)
+    outputBinding:
+      glob: "$(inputs.opdbxtc ? [inputs.opdbxtc + '.pdb', inputs.opdbxtc + '.xtc'] : [])"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/buildh:1.6.1--pyhdfd78af_0

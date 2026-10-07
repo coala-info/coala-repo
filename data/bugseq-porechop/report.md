@@ -1,5 +1,11 @@
 # bugseq-porechop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bugseq-porechop_porechop | PASS |  |
+
 ## bugseq-porechop_porechop
 
 ### Tool Description

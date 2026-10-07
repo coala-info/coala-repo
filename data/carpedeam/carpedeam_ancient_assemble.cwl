@@ -55,10 +55,15 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to damage matrix (ancient)
+    doc: Damage matrix (ancient), given as the <prefix>5p.prof file; the matching
+      <prefix>3p.prof file must sit beside it. The tool gets the shared prefix.
+    secondaryFiles:
+      - pattern: $(self.basename.replace(/5p\.prof$/, '3p.prof'))
+        required: true
     inputBinding:
       position: 103
       prefix: --ancient-damage
+      valueFrom: $(self.path.replace(/5p\.prof$/, ''))
   - id: chop_cycle
     type:
       - 'null'
@@ -621,6 +626,8 @@ outputs:
     doc: Output FASTA file
     outputBinding:
       glob: '$(inputs.fasta_file)'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carpedeam:1.0.1--hd6d6fdc_0

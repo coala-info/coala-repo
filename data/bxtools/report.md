@@ -1,5 +1,16 @@
 # bxtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bxtools_convert | PASS |  |
+| bxtools_mol | Failed | tool bug: on real haplotagging reads with planted integer MI tags the molecule spans are right but the MI column holds garbage numbers, and string MI tags give empty output. |
+| bxtools_relabel | PASS |  |
+| bxtools_split | Failed | tool bug: split drops the read that opens each per-barcode BAM, so every BAM holds one read fewer than its count (A22C25B91D68: 13 reads written, 14 counted). |
+| bxtools_stats | PASS |  |
+| bxtools_tile | PASS |  |
+
 ## bxtools_split
 
 ### Tool Description
@@ -46,9 +57,6 @@ Gather BX-level statistics
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Usage: bxtools stat <BAM/SAM/CRAM> > stats.tsv
 Description: Gather BX-level statistics
 

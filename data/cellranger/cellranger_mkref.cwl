@@ -32,12 +32,11 @@ inputs:
       position: 101
   - id: genes
     type:
-      - 'null'
-      - type: array
-        items: File
-        inputBinding:
-          prefix: --genes
-          separate: true
+      type: array
+      items: File
+      inputBinding:
+        prefix: --genes
+        separate: true
     doc: Path to genes GTF file containing annotated genes for your genome 
       reference. Specify multiple genomes by specifying this argument multiple 
       times

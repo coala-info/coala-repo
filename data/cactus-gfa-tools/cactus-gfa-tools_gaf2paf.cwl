@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gaf2paf
+baseCommand:
+  - gaf2paf
 label: cactus-gfa-tools_gaf2paf
 doc: "Convert minigraph GAF to PAF\n\nTool homepage: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools"
 inputs:
@@ -22,8 +23,8 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: PAF converted from the GAF input(s)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0
-stdout: cactus-gfa-tools_gaf2paf.out
+stdout: cactus-gfa-tools_gaf2paf.paf

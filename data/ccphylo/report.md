@@ -1,5 +1,22 @@
 # ccphylo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ccphylo_dbscan | PASS |  |
+| ccphylo_dist | PASS |  |
+| ccphylo_fullphy | PASS |  |
+| ccphylo_makespan | PASS |  |
+| ccphylo_merge | PASS |  |
+| ccphylo_nwck2phy | PASS |  |
+| ccphylo_phycmp | PASS |  |
+| ccphylo_rarify | Failed | tool bug: on a real KMA matrix, rarify carries the rounding remainder against the rarification factor instead of the fragment count, so counts come out about 33% too high and shift columns. |
+| ccphylo_tree | PASS |  |
+| ccphylo_trim | Failed | tool bug: on five real KMA consensus alignments of equal length, trim writes random non-nucleotide bytes or empty sequences, and the output changes from run to run. |
+| ccphylo_tsv2phy | PASS |  |
+| ccphylo_union | PASS |  |
+
 ## ccphylo_dist
 
 ### Tool Description

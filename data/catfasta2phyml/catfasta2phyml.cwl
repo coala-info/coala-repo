@@ -1,25 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: catfasta2phyml.pl
+baseCommand: catfasta2phyml
 label: catfasta2phyml
 doc: "Concatenate fasta files to a phyml readable format\n\nTool homepage: https://github.com/nylander/catfasta2phyml"
 inputs:
   - id: files
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Input fasta files
     inputBinding:
       position: 1
   - id: basename
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Ensure the basename is used as partition definition. If the provided 
       "suffix" (required) matches the file suffix, it will be removed from the 
       output string.
     inputBinding:
       position: 102
-      prefix: --basename
+      prefix: --basename=
+      separate: false
   - id: concatenate
     type:
       - 'null'
@@ -84,8 +86,12 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (concatenated alignment)
+  - id: partitions
+    type: stderr
+    doc: Standard error (partition definitions and messages)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/catfasta2phyml:1.2.1--hdfd78af_0
 stdout: catfasta2phyml.out
+stderr: catfasta2phyml.partitions.txt

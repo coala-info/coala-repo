@@ -27,7 +27,7 @@ inputs:
   - id: barcode_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Reads will be binned based on their barcode and\nsaved to separate files
       in this directory\n(incompatible with --output)"
     inputBinding:
@@ -283,7 +283,10 @@ inputs:
       position: 101
       prefix: --verbosity
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: "Filename for FASTA or FASTQ of trimmed reads (incompatible with\n--barcode_dir)"
     inputBinding:
       position: 102
       prefix: --output
@@ -296,6 +299,20 @@ outputs:
       will be printed to stdout)"
     outputBinding:
       glob: $(inputs.output_path)
+  - id: barcode_bins
+    type:
+      - 'null'
+      - Directory
+    doc: Directory of reads binned by barcode
+    outputBinding:
+      glob: $(inputs.barcode_dir)
+  - id: barcode_stats
+    type:
+      - 'null'
+      - File
+    doc: CSV of barcode names and identities per read (--barcode_stats_csv)
+    outputBinding:
+      glob: barcode_stats.csv
 requirements:
   - class: InlineJavascriptRequirement
 hints:

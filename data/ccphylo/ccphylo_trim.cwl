@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_trim
+baseCommand:
+  - ccphylo
+  - trim
 label: ccphylo_trim
 doc: "Trims multiple alignments from different files, and merge them into one\n\n\
   Tool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
@@ -67,7 +69,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,5 +1,11 @@
 # camitk-imp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| camitk-imp | Not completed | Interactive GUI application (needs an X display), so it cannot run as a batch job. |
+
 ## camitk-imp
 
 ### Tool Description

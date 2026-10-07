@@ -1,5 +1,11 @@
 # camitk-config CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| camitk-config | PASS |  |
+
 ## camitk-config
 
 ### Tool Description

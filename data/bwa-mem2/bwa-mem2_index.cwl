@@ -11,6 +11,7 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: prefix
     type:
       - 'null'
@@ -20,9 +21,23 @@ inputs:
       position: 102
       prefix: -p
 outputs:
+  - id: index_files
+    type: File[]
+    doc: Index files (.0123, .amb, .ann, .bwt.2bit.64, .pac) named by the prefix
+    outputBinding:
+      glob:
+        - '*.0123'
+        - '*.amb'
+        - '*.ann'
+        - '*.bwt.2bit.64'
+        - '*.pac'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-mem2:2.3--he70b90d_0

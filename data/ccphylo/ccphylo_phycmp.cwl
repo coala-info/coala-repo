@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_phycmp
+baseCommand:
+  - ccphylo
+  - phycmp
 label: ccphylo_phycmp
 doc: "Compares two distance matrices in phylip format.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
 inputs:
@@ -31,8 +33,9 @@ inputs:
   - id: input_file
     type:
       - 'null'
-      - File
-    doc: Input file(s)
+      - type: array
+        items: File
+    doc: Input Phylip distance matrices to compare (two files, or one multi-Phylip file)
     inputBinding:
       position: 101
       prefix: --input
@@ -81,7 +84,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

@@ -1,8 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: split_fastq
+baseCommand:
+  - callingcardstools
+  - yeast_combine_qc
 label: callingcardstools_yeast_combine_qc
-doc: "Splits BarcodeQcCounter objects into separate files based on barcode details.\n\
+doc: "Combine BarcodeQcCounter objects which may result from splitting the fastq files prior to demultiplexing.\n\
   \nTool homepage: https://github.com/cmatKhan/callingCardsTools"
 inputs:
   - id: input_files
@@ -11,12 +13,13 @@ inputs:
       items: File
     doc: a list of paths to BarcodeQcCounter object pickle files
     inputBinding:
-      position: 1
+      position: 103
+      prefix: --input
   - id: barcode_details
-    type: string
+    type: File
     doc: barcode filename (full path)
     inputBinding:
-      position: 2
+      position: 103
       prefix: --barcode_details
   - id: log_level
     type:
@@ -47,13 +50,6 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: output_dirpath_dir
     type:
       - 'null'
@@ -62,6 +58,20 @@ outputs:
       to the current directory
     outputBinding:
       glob: $(inputs.output_dirpath)
+  - id: barcode_qc
+    type:
+      type: array
+      items: File
+    doc: Combined barcode QC summary csv files (<prefix>_r1_primer_summary.csv,
+      <prefix>_r2_transposon_summary.csv)
+    outputBinding:
+      glob: '$(inputs.output_dirpath ? inputs.output_dirpath : ".")/$(inputs.prefix
+        ? inputs.prefix : "barcode_qc")*.csv'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.output_dirpath ? [{"class": "Directory", "basename": inputs.output_dirpath,
+      "listing": [], "writable": true}] : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

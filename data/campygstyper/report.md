@@ -1,5 +1,11 @@
 # campygstyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| campygstyper | PASS |  |
+
 ## campygstyper
 
 ### Tool Description

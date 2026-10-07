@@ -1,5 +1,11 @@
 # cassiopee CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cassiopee | PASS |  |
+
 ## cassiopee
 
 ### Tool Description

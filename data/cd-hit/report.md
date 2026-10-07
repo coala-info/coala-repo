@@ -1,5 +1,11 @@
 # cd-hit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cd-hit_cd-hit-est-2d | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

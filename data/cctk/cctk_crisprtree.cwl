@@ -245,9 +245,8 @@ inputs:
       position: 103
       prefix: --colour-scheme-outfile
   - id: out_file_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: output plot file name and path
     inputBinding:
       position: 104
       prefix: --out-file
@@ -261,17 +260,27 @@ inputs:
       prefix: --output-arrays
 outputs:
   - id: out_file
-    type: File
-    doc: output plot file name and path
+    type:
+      type: array
+      items: File
+    doc: output plot file(s); when several trees are equally parsimonious, one 
+      plot per tree is written as <name>_<n>.<ext>
     outputBinding:
-      glob: $(inputs.out_file_path)
+      glob:
+        - $(inputs.out_file_path)
+        - "$(inputs.out_file_path.replace(/\\.[^.\\/]*$/, ''))_*.$(inputs.out_file_path.split('.').pop())"
   - id: output_arrays
     type:
-      - 'null'
-      - File
-    doc: file to store analyzed arrays and hypothetical ancestors
+      type: array
+      items: File
+    doc: file(s) storing analyzed arrays and hypothetical ancestors (one per 
+      equally parsimonious tree as <name>_<n>.txt)
     outputBinding:
-      glob: $(inputs.output_arrays_path)
+      glob: "${ if (!inputs.output_arrays_path) return []; var p = inputs.output_arrays_path;
+        return [p, p.slice(0, -4) + '_*.txt']; }"
+  - id: stdout
+    type: stdout
+    doc: Newick string(s) of the inferred tree(s)
   - id: colour_scheme_outfile
     type:
       - 'null'
@@ -279,6 +288,7 @@ outputs:
     doc: output file to store json format colour schemes
     outputBinding:
       glob: $(inputs.colour_scheme_outfile_path)
+stdout: cctk_crisprtree.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

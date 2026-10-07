@@ -1,5 +1,15 @@
 # cdst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cdst_generate | PASS |  |
+| cdst_hc | PASS |  |
+| cdst_matrix | PASS |  |
+| cdst_mst | PASS |  |
+| cdst_run | PASS |  |
+
 ## cdst_run
 
 ### Tool Description

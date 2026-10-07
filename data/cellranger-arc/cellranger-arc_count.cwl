@@ -31,12 +31,23 @@ inputs:
       prefix: --reference
   - id: libraries
     type: File
+    loadContents: true
     doc: Path to 3-column CSV file defining the paths to ATAC and gene 
       expression FASTQ data generated with the Chromium Single Cell Multiome 
-      ATAC + Gene Expression solution.
+      ATAC + Gene Expression solution. A relative path in the fastqs column 
+      (for example '.') is resolved against the working directory, where 
+      fastq_files are staged.
     inputBinding:
       position: 101
       prefix: --libraries
+      valueFrom: $(runtime.outdir)/libraries_staged.csv
+  - id: fastq_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ files named by the libraries CSV. They are staged in the working 
+      directory, so the CSV fastqs column can be '.'.
   - id: min_atac_count
     type:
       - 'null'
@@ -116,6 +127,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --create-bam
+      valueFrom: '$(self ? "true" : "false")'
   - id: nosecondary
     type:
       - 'null'
@@ -274,6 +286,20 @@ outputs:
       glob: $(inputs.output_dir || inputs.id)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: libraries_staged.csv
+        entry: |-
+          ${
+            return inputs.libraries.contents.split('\n').map(function(line) {
+              var c = line.split(',');
+              if (c.length >= 3 && c[0] != '' && c[0] != 'fastqs' && c[0].charAt(0) != '/') {
+                c[0] = c[0] == '.' ? runtime.outdir : runtime.outdir + '/' + c[0];
+              }
+              return c.join(',');
+            }).join('\n');
+          }
+      - '$(inputs.fastq_files ? inputs.fastq_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger-arc:2.2.0

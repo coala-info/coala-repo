@@ -8,22 +8,42 @@ doc: "By Louis Kraft <lokraf@dtu.dk>\n\nTool homepage: https://github.com/LouisP
 inputs:
   - id: sequence_db
     type: File
-    doc: Input sequence database
+    doc: Input sequence database (MMseqs2 format; the .index, .dbtype and _h
+      header files sit beside it)
+    secondaryFiles:
+      - .index
+      - .dbtype
+      - _h
+      - _h.index
+      - _h.dbtype
+      - pattern: .lookup
+        required: false
+      - pattern: .source
+        required: false
     inputBinding:
       position: 1
   - id: aln_result
     type: File
-    doc: Input alignment result
+    doc: Input alignment result (MMseqs2 format; .index and .dbtype sit beside
+      it)
+    secondaryFiles:
+      - .index
+      - .dbtype
     inputBinding:
       position: 2
   - id: ancient_damage
     type:
       - 'null'
       - File
-    doc: Path to damage matrix (ancient)
+    doc: Damage matrix (ancient), given as the <prefix>5p.prof file; the matching
+      <prefix>3p.prof file must sit beside it. The tool gets the shared prefix.
+    secondaryFiles:
+      - pattern: $(self.basename.replace(/5p\.prof$/, '3p.prof'))
+        required: true
     inputBinding:
       position: 103
       prefix: --ancient-damage
+      valueFrom: $(self.path.replace(/5p\.prof$/, ''))
   - id: excess_penalty
     type:
       - 'null'
@@ -154,10 +174,14 @@ inputs:
       position: 3
 outputs:
   - id: repr_seq_db
-    type: File
-    doc: Output representative sequence database
+    type:
+      type: array
+      items: File
+    doc: Output representative sequence database (all of its files)
     outputBinding:
-      glob: '$(inputs.repr_seq_db_path)'
+      glob: '$(inputs.repr_seq_db_path)*'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carpedeam:1.0.1--hd6d6fdc_0

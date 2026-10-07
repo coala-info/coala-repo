@@ -1,5 +1,19 @@
 # cctk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cctk_blast | PASS |  |
+| cctk_constrain | PASS |  |
+| cctk_crisprdiff | PASS |  |
+| cctk_crisprtree | PASS | --branch-support crashes in this image (DendroPy 5 has no textprocessing.StringIO); the run without it matches the tutorial tree. |
+| cctk_evolve | PASS |  |
+| cctk_minced | PASS |  |
+| cctk_network | PASS |  |
+| cctk_quickrun | PASS |  |
+| cctk_spacerblast | PASS |  |
+
 ## cctk_blast
 
 ### Tool Description

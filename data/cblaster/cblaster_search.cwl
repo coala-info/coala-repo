@@ -344,6 +344,43 @@ inputs:
     inputBinding:
       position: 107
       prefix: --recompute
+  - id: ncbi_email
+    type:
+      - 'null'
+      - string
+    doc: E-mail address for NCBI Entrez. cblaster refuses to start without an 
+      e-mail or NCBI API key in its config file; this CWL writes that file 
+      ($HOME/.config/cblaster/config.ini) from ncbi_email / ncbi_api_key.
+  - id: ncbi_api_key
+    type:
+      - 'null'
+      - string
+    doc: NCBI API key written to the cblaster config file (alternative to 
+      ncbi_email)
+  - id: database_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - ^.sqlite3
+    doc: Local databases for local/hmm/combi modes (DIAMOND .dmnd, or FASTA for
+      hmm mode) with the cblaster <name>.sqlite3 beside each. They are staged 
+      into the working directory and passed to --database by file name. Use 
+      database for NCBI database names in remote mode.
+    inputBinding:
+      position: 101
+      prefix: --database
+      valueFrom: '$(self.map(function(f) { return f.basename; }))'
+  - id: session_file_path
+    type:
+      - 'null'
+      - string
+    doc: Name of a new session JSON file to save the search results to (-s). 
+      Use session_file instead to load existing sessions.
+    inputBinding:
+      position: 108
+      prefix: --session_file
 outputs:
   - id: output
     type:
@@ -392,8 +429,24 @@ outputs:
       saved (e.g. for plotting purposes).
     outputBinding:
       glob: $(inputs.recompute_path)
+  - id: session
+    type:
+      - 'null'
+      - File
+    doc: New session JSON file
+    outputBinding:
+      glob: $(inputs.session_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ var s = "[cblaster]\n"; if (inputs.ncbi_email) { s += "email = " + inputs.ncbi_email + "\n"; } if (inputs.ncbi_api_key) { s += "api_key = " + inputs.ncbi_api_key + "\n"; } return {"class": "Directory", "basename": ".config", "listing": [{"class": "Directory", "basename": "cblaster", "listing": [{"class": "File", "basename": "config.ini", "contents": s}]}]}; }
+      - |-
+        ${ var l = []; if (inputs.database_files) { inputs.database_files.forEach(function(f) { l.push(f); (f.secondaryFiles || []).forEach(function(x) { l.push(x); }); }); } return l; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cblaster:1.4.0--pyhdfd78af_0
+    dockerOutputDirectory: /cblaster

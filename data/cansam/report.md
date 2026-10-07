@@ -1,5 +1,15 @@
 # cansam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cansam_samcat | Failed | tool bug: this cansam build (commit 21d64bb) exits 1 with 'basic_ios::clear: iostream error' at the end of every input, even a one-record SAM, so no run succeeds. |
+| cansam_samgroupbyname | Failed | tool bug: this cansam build (commit 21d64bb) exits 1 with 'basic_ios::clear: iostream error' at the end of every input, even a one-record SAM, so no run succeeds. |
+| cansam_samhead | PASS |  |
+| cansam_samsort | Failed | tool bug: samsort is an unfinished stub in cansam; it parses options and exits 0 without sorting or writing any output. |
+| cansam_samsplit | Failed | tool bug: this cansam build (commit 21d64bb) exits 1 with 'basic_ios::clear: iostream error' at the end of every input, even a one-record SAM, so no run succeeds. |
+
 ## cansam_samcat
 
 ### Tool Description

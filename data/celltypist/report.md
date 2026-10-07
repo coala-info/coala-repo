@@ -1,5 +1,11 @@
 # celltypist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| celltypist | PASS |  |
+
 ## celltypist
 
 ### Tool Description

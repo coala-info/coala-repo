@@ -9,7 +9,7 @@ inputs:
   - id: lib
     type:
       - 'null'
-      - string
+      - File
     doc: the library (a set of closely related sequences) used to distinguish 
       true insertion from these related sequences
     inputBinding:
@@ -107,14 +107,36 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: working directory
+    doc: working directory from the previous caspeak step (holds lastdb/,
+      lastal/, peak/); it is copied writable and the step runs inside it
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result
+    type:
+      - 'null'
+      - Directory
+    doc: Validated insertions (validate.bed, .fasta, .maf, .vcf)
+    outputBinding:
+      glob: "$((inputs.workdir ? inputs.workdir.basename + '/' : '') + 'result')"
+  - id: work_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The updated working directory (only when workdir is given)
+    outputBinding:
+      glob: '$(inputs.workdir ? inputs.workdir.basename : [])'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/caspeak:1.1.5--pyhdfd78af_0

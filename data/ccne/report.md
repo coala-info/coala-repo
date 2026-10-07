@@ -1,5 +1,12 @@
 # ccne CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ccne_ccne-acc | Not completed | Runs on real SRR14561347 reads (1.2M pairs) with the strain's assembly, but estimates 1.8 KPC-2 copies where the isolate has 3 (README 3.73), so the result could not be confirmed. |
+| ccne_ccne-fast | PASS |  |
+
 ## ccne_ccne-fast
 
 ### Tool Description

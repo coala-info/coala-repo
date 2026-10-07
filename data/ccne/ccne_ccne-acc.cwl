@@ -50,6 +50,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --listdb
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ read files and genome assembly FASTA files named in the --in list file; staged in the working directory so
+      the relative names in the list resolve
   - id: quiet
     type:
       - 'null'
@@ -60,7 +67,7 @@ inputs:
       prefix: --quiet
   - id: output_file_path
     type: string
-    doc: '[X]          Output file name (required)'
+    doc: Output file name (required)
     inputBinding:
       position: 102
       prefix: --out
@@ -72,6 +79,9 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "$(inputs.data_files ? inputs.data_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ccne:1.1.2--hdfd78af_0

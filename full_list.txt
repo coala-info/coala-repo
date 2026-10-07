@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1576; PASS: 1211; Failed: 246; Not completed: 119
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1956; PASS: 1475; Failed: 305; Not completed: 176
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -1576,3 +1576,383 @@ bubblegun	bubblegun_biggestcomp	PASS
 bubblegun	bubblegun_chainout	PASS	
 bubblegun	bubblegun_compact	PASS	
 bufet	bufet_bufet.py	PASS	
+bugseq-porechop	bugseq-porechop_porechop	PASS	
+buildh	buildh_buildH	PASS	
+busco	busco	PASS	
+buscolite	buscolite	PASS	
+bustools	bustools_allowlist	PASS	
+bustools	bustools_capture	PASS	
+bustools	bustools_compress	PASS	
+bustools	bustools_correct	PASS	
+bustools	bustools_count	PASS	
+bustools	bustools_decompress	PASS	
+bustools	bustools_extract	PASS	
+bustools	bustools_fromtext	PASS	
+bustools	bustools_inspect	PASS	
+bustools	bustools_sort	PASS	
+bustools	bustools_text	PASS	
+bustools	bustools_umicorrect	PASS	
+bwa	bwa_aln	PASS	
+bwa	bwa_bwasw	PASS	
+bwa	bwa_bwt2sa	PASS	
+bwa	bwa_bwtupdate	PASS	
+bwa	bwa_fa2pac	PASS	
+bwa	bwa_fastmap	PASS	
+bwa	bwa_index	PASS	
+bwa	bwa_mem	PASS	
+bwa	bwa_pac2bwt	PASS	
+bwa	bwa_pac2bwtgen	PASS	
+bwa	bwa_pemerge	PASS	
+bwa	bwa_sampe	PASS	
+bwa	bwa_samse	PASS	
+bwa	bwa_shm	Not completed	The index loads into shared memory with exit 0, but that memory disappears with the run's container, so the result cannot be used or checked.
+bwa-aln-interactive	bwa-aln-interactive_aln	PASS	
+bwa-aln-interactive	bwa-aln-interactive_bwasw	PASS	
+bwa-aln-interactive	bwa-aln-interactive_bwt2sa	PASS	
+bwa-aln-interactive	bwa-aln-interactive_bwtupdate	PASS	
+bwa-aln-interactive	bwa-aln-interactive_fa2pac	PASS	
+bwa-aln-interactive	bwa-aln-interactive_fastmap	PASS	
+bwa-aln-interactive	bwa-aln-interactive_index	PASS	
+bwa-aln-interactive	bwa-aln-interactive_mem	PASS	
+bwa-aln-interactive	bwa-aln-interactive_pac2bwt	PASS	
+bwa-aln-interactive	bwa-aln-interactive_pac2bwtgen	PASS	
+bwa-aln-interactive	bwa-aln-interactive_pemerge	PASS	
+bwa-aln-interactive	bwa-aln-interactive_sampe	Failed	tool bug: sampe crashes with a segmentation fault (exit 139) on valid aln output, also outside CWL.
+bwa-aln-interactive	bwa-aln-interactive_samse	Failed	tool bug: samse opens a garbage file name instead of the reads file and writes no alignments, also outside CWL.
+bwa-aln-interactive	bwa-aln-interactive_shm	Not completed	The index loads and the run exits 0, but shared memory vanishes with the container, so the result cannot be checked.
+bwakit	bwakit_bwa-postalt.js	PASS	synthetic data: real HLA-A alleles as ALT contigs on a small chr6 region; ALT hits are lifted with pa tags and HLA-A reads are written.
+bwakit	bwakit_run-HLA	PASS	synthetic data: reads simulated from the real HLA-A haplotypes of the bwakit resource; the call HLA-A*01:01:01:01/HLA-A*03:01:01:01 matches the known types.
+bwakit	bwakit_run-bwamem	PASS	
+bwakit	bwakit_run-gen-ref	Not completed	It downloads a multi-GB human reference genome, which is too heavy for this test.
+bwakit	bwakit_typeHLA-selctg.js	PASS	synthetic data: contigs from reads simulated off real HLA-A haplotypes; it selects the HLA-A contigs that give the known HLA-A*01:01/03:01 call.
+bwakit	bwakit_typeHLA.js	PASS	synthetic data: reads simulated from the real HLA-A haplotypes of the bwakit resource; the call HLA-A*01:01:01:01/HLA-A*03:01:01:01 matches the known types.
+bwakit	bwakit_typeHLA.sh	PASS	synthetic data: reads simulated from the real HLA-A haplotypes of the bwakit resource; the call HLA-A*01:01:01:01/HLA-A*03:01:01:01 matches the known types.
+bwa-mem2	bwa-mem2_index	PASS	
+bwa-mem2	bwa-mem2_mem	PASS	
+bwa-meme	bwa-meme_build_rmis_dna.sh	PASS	
+bwa-meme	bwa-meme_index	PASS	
+bwa-meme	bwa-meme_mem	PASS	
+bwameth	bwameth_bwameth.py	PASS	
+bwise	bwise	Failed	image problem: bwise crashes after the btrim step because it deletes dbg63.fa1/dbg63.fa2, which the bundled btrim never writes (FileNotFoundError on SARS-CoV-2 reads).
+bwtk	bwtk_adjust	PASS	
+bwtk	bwtk_bg2bw	PASS	
+bwtk	bwtk_chroms	PASS	
+bwtk	bwtk_merge	Failed	tool bug: bwtk 1.8.1 merge rounds values to integers (mean of 1.25 and 2.5 gives 2, not 1.875), fixed upstream in 1.8.2.
+bwtk	bwtk_score	PASS	
+bwtk	bwtk_values	PASS	
+bx-python	bx-python_maf_build_index.py	PASS	
+bx-python	bx-python_maf_extract_ranges_indexed.py	PASS	
+bxtools	bxtools_convert	PASS	
+bxtools	bxtools_mol	Failed	tool bug: on real haplotagging reads with planted integer MI tags the molecule spans are right but the MI column holds garbage numbers, and string MI tags give empty output.
+bxtools	bxtools_relabel	PASS	
+bxtools	bxtools_split	Failed	tool bug: split drops the read that opens each per-barcode BAM, so every BAM holds one read fewer than its count (A22C25B91D68: 13 reads written, 14 counted).
+bxtools	bxtools_stats	PASS	
+bxtools	bxtools_tile	PASS	
+bygul	bygul_simulate-proportions	Failed	image problem: bygul.utils imports the Python module regex, which is missing from the image (ModuleNotFoundError).
+c4counter	c4counter	PASS	
+cactus	cactus	Failed	image problem: every run crashes at start with AttributeError 'Namespace' object has no attribute 'deadlockWait' (cactus 2019.03.01 does not match the bundled Toil).
+cactus-gfa-tools	cactus-gfa-tools_gaf2paf	PASS	
+cactus-gfa-tools	cactus-gfa-tools_gaf2unstable	PASS	
+cactus-gfa-tools	cactus-gfa-tools_gaffilter	PASS	
+cactus-gfa-tools	cactus-gfa-tools_mzgaf2paf	PASS	
+cactus-gfa-tools	cactus-gfa-tools_paf2lastz	PASS	
+cactus-gfa-tools	cactus-gfa-tools_rgfa-split	PASS	
+cadd-scripts	cadd-scripts_cadd-install.sh	Not completed	CADD runs a Snakemake pipeline that needs the multi-hundred-GB annotation database and conda or Apptainer environments.
+cadd-scripts	cadd-scripts_cadd.sh	Not completed	CADD runs a Snakemake pipeline that needs the multi-hundred-GB annotation database and conda or Apptainer environments.
+cage	cage	PASS	
+cagecleaner	cagecleaner	Failed	image problem: the image has BusyBox sort without --parallel, so skDER selects no representative genomes and cagecleaner drops every hit.
+cagee	cagee	PASS	
+calcs	calcs	PASS	
+calib	calib	PASS	
+calisp	calisp	PASS	
+calitas	calitas_AlignToReference	PASS	
+calitas	calitas_PairwiseAlignSequences	PASS	
+calitas	calitas_PrepareVcf	PASS	
+calitas	calitas_SearchReference	PASS	
+callerpp	callerpp	PASS	
+callingcardstools	callingcardstools_barcode_table_to_json	PASS	
+callingcardstools	callingcardstools_chipexo_promoter_sig	PASS	
+callingcardstools	callingcardstools_legacy_makeccf	Failed	image problem: legacy_makeccf calls pandas set_categories(inplace=True), which the pandas 2 in the image removed, so it crashes before writing the ccf files.
+callingcardstools	callingcardstools_legacy_split_fastq	PASS	
+callingcardstools	callingcardstools_mammals_combine_qc	PASS	
+callingcardstools	callingcardstools_process_mammals_bam	PASS	
+callingcardstools	callingcardstools_process_yeast_bam	PASS	
+callingcardstools	callingcardstools_split_fastq	PASS	
+callingcardstools	callingcardstools_yeast_call_peaks	PASS	
+callingcardstools	callingcardstools_yeast_combine_qc	PASS	
+callingcardstools	callingcardstools_yeast_rank_response	PASS	
+callstate	callstate	PASS	
+cameo	cameo_design	Failed	With USER set in the CWL it no longer crashes, but no design comes out: for vanillin, pathway prediction hit its time limit and the table was empty, and an itaconate run did not finish within 50 minutes.
+cameo	cameo_search	PASS	
+cami-amber	cami-amber_add_length_column.py	PASS	
+cami-amber	cami-amber_amber.py	PASS	
+cami-amber	cami-amber_convert_fasta_bins_to_biobox_format.py	PASS	
+cami-opal	cami-opal_opal.py	PASS	
+camitk-actionstatemachine	camitk-actionstatemachine	Not completed	Qt GUI state-machine player that needs an X display and a CamiTK SCXML pipeline file, and no test SCXML file is available.
+camitk-config	camitk-config	PASS	
+camitk-imp	camitk-imp	Not completed	Interactive GUI application (needs an X display), so it cannot run as a batch job.
+campyagainst	campyagainst	PASS	
+campygstyper	campygstyper	PASS	
+cancerit-allelecount	cancerit-allelecount_alleleCounter	PASS	
+cannoli	cannoli_bcftoolsCall	Failed	image problem: bcftools is not in the image (Cannot run program bcftools), and Spark also fails under --net=none because it cannot resolve the container host name.
+canopy	canopy_cc.bin	PASS	
+cansam	cansam_samcat	Failed	tool bug: this cansam build (commit 21d64bb) exits 1 with 'basic_ios::clear: iostream error' at the end of every input, even a one-record SAM, so no run succeeds.
+cansam	cansam_samgroupbyname	Failed	tool bug: this cansam build (commit 21d64bb) exits 1 with 'basic_ios::clear: iostream error' at the end of every input, even a one-record SAM, so no run succeeds.
+cansam	cansam_samhead	PASS	
+cansam	cansam_samsort	Failed	tool bug: samsort is an unfinished stub in cansam; it parses options and exits 0 without sorting or writing any output.
+cansam	cansam_samsplit	Failed	tool bug: this cansam build (commit 21d64bb) exits 1 with 'basic_ios::clear: iostream error' at the end of every input, even a one-record SAM, so no run succeeds.
+cansnper	cansnper_CanSNPer	PASS	
+cansnper2	cansnper2_CanSNPer2	Failed	image problem: ete3 tree drawing needs PyQt5, which fails on missing libGL.so.1, so every sample crashes after the Mauve alignment.
+cansnper2	cansnper2_CanSNPer2-database	PASS	
+cansnper2	cansnper2_CanSNPer2-download	Failed	tool bug: gunzip is started but not awaited, so the downloaded reference FASTA is truncated (1.1 of 4.9 MB) when the container exits.
+canu	canu_assemble	PASS	
+canu	canu_correct	PASS	
+canu	canu_haplotype	PASS	
+canu	canu_trim	PASS	
+canu	canu_trim-assemble	PASS	
+cap3	cap3	PASS	
+capc-map	capc-map_capCdigestfastq	PASS	
+capc-map	capc-map_capClocation2fragment	PASS	
+capc-map	capc-map_capCmain	PASS	
+capc-map	capc-map_capCpair2bg	PASS	
+capc-map	capc-map_capCpileup2binned	PASS	
+capc-map	capc-map_combinereps	PASS	
+capc-map	capc-map_genomedigest	PASS	
+capc-map	capc-map_getchromsizes	PASS	
+capc-map	capc-map_postprocess	PASS	
+capcruncher	capcruncher_alignments_annotate	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_alignments_filter	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_fastq_deduplicate	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_fastq_digest	Failed	image problem: No module named 'capcruncher_tools', so the command crashes at import.
+capcruncher	capcruncher_fastq_split	Failed	image problem: No module named 'joblib', so the command crashes at import.
+capcruncher	capcruncher_genome_digest	Failed	image problem: No module named 'capcruncher_tools', so the command crashes at import.
+capcruncher	capcruncher_interactions_compare_concat	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_interactions_compare_differential	Failed	image problem: No module named 'ray', so the command crashes at import.
+capcruncher	capcruncher_interactions_compare_summarise	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_interactions_count	Failed	image problem: No module named 'capcruncher_tools', so the command crashes at import.
+capcruncher	capcruncher_interactions_counts-to-cooler	Failed	image problem: No module named 'ray', so the command crashes at import.
+capcruncher	capcruncher_interactions_deduplicate	Failed	image problem: No module named 'ibis', so the command crashes at import.
+capcruncher	capcruncher_interactions_fragments-to-bins	Failed	image problem: No module named 'ray', so the command crashes at import.
+capcruncher	capcruncher_interactions_merge	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_interactions_pileup	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_pipeline	Not completed	pipeline, skipped: runs the whole CapCruncher Snakemake pipeline.
+capcruncher	capcruncher_plot	Failed	image problem: No module named 'pandera', so the command crashes at import.
+capcruncher	capcruncher_utilities_cis-and-trans-stats	Failed	image problem: No module named 'ibis', so the command crashes at import.
+capcruncher	capcruncher_utilities_dump	Failed	image problem: No module named 'ibis', so the command crashes at import.
+capcruncher	capcruncher_utilities_gtf-to-bed12	Failed	image problem: No module named 'ibis', so the command crashes at import.
+capcruncher	capcruncher_utilities_make-chicago-maps	Failed	image problem: No module named 'ibis', so the command crashes at import.
+capcruncher	capcruncher_utilities_regenerate-fastq	Failed	image problem: No module named 'ibis', so the command crashes at import.
+capcruncher	capcruncher_utilities_viewpoint-coordinates	Failed	image problem: No module named 'ibis', so the command crashes at import.
+caper	caper_abort	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+caper	caper_debug	PASS	
+caper	caper_init	PASS	
+caper	caper_list	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+caper	caper_metadata	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+caper	caper_run	Failed	image problem: the image has no Java, so Cromwell cannot start; caper also needs a passwd entry for the user (--no-match-user).
+caper	caper_server	Failed	image problem: the image has no Java, so the Cromwell server cannot start.
+caper	caper_submit	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+caper	caper_troubleshoot	PASS	
+caper	caper_unhold	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+captus	captus_align	PASS	
+captus	captus_assemble	PASS	
+captus	captus_clean	PASS	
+captus	captus_extract	PASS	
+carna	carna	PASS	
+carnac-lr	carnac-lr	PASS	
+carp	carp	PASS	
+carpedeam	carpedeam_ancient_assemble	PASS	
+carpedeam	carpedeam_ancient_correction	PASS	
+carpedeam	carpedeam_nuclassemble	PASS	
+cas-offinder	cas-offinder	Failed	image problem: the OpenCL CPU runtime (PoCL) cannot link its kernel because the linker ld is missing from the image, so no search runs.
+caspeak	caspeak_align	PASS	Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads.
+caspeak	caspeak_exec	PASS	Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads.
+caspeak	caspeak_peak	PASS	Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads.
+caspeak	caspeak_plot	PASS	Synthetic data: plots the validated planted L1HS insertion (validate.maf from caspeak exec) as a dotplot PNG.
+caspeak	caspeak_valid	PASS	Synthetic data: reads simulated from a real L1HS planted into a real human chr22 piece; the planted insertion at chr22:20000 is found with 24 supporting reads.
+cassiopee	cassiopee	PASS	
+cassis	cassis	PASS	Synthetic data: a translocation planted between real human chr22 and SARS-CoV-2 sequence is reported as one inter breakpoint between the flanking genes, and the refined region covers the planted site.
+cat	cat_add_names	PASS	
+cat	cat_bins	PASS	Ran BAT on a bin made of the CAT_pack repository test contigs with a database built from the repository test proteins; the bin gets the expected class_3 lineage.
+cat	cat_contigs	PASS	
+cat	cat_download	Not completed	Downloads and preprocesses the full NCBI nr or GTDB database (tens to hundreds of GB), too large for this test.
+cat	cat_prepare	PASS	
+cat	cat_reads	PASS	Synthetic data: reads simulated from the CAT_pack repository test contigs; read counts per contig (300 and 591) match the simulated reads and lineages match CAT.
+cat	cat_summarise	PASS	
+catch	catch_design.py	PASS	
+catch	catch_design_large.py	PASS	
+catch	catch_pool.py	PASS	
+catfasta2phyml	catfasta2phyml	PASS	
+cath-tools	cath-tools_cath-cluster	PASS	
+cath-tools	cath-tools_cath-refine-align	PASS	
+cath-tools	cath-tools_cath-resolve-hits	PASS	
+cath-tools	cath-tools_cath-score-align	PASS	
+cath-tools	cath-tools_cath-ssap	PASS	
+cath-tools	cath-tools_cath-superpose	PASS	
+cats-rb	cats-rb_CATS_rb_compare	PASS	
+cats-rb	cats-rb_CATS_rb_index	PASS	
+cats-rb	cats-rb_CATS_rb_map	PASS	
+cats-rf	cats-rf_CATS_rf	PASS	
+cats-rf	cats-rf_CATS_rf_compare	PASS	
+cawlign	cawlign	PASS	
+cayman	cayman_annotate_proteome	PASS	
+cayman	cayman_profile	PASS	
+cazy_webscraper	cazy_webscraper	PASS	
+cblaster	cblaster_config	PASS	
+cblaster	cblaster_extract	PASS	
+cblaster	cblaster_extract_clusters	PASS	
+cblaster	cblaster_gne	PASS	
+cblaster	cblaster_makedb	PASS	
+cblaster	cblaster_plot_clusters	PASS	
+cblaster	cblaster_search	PASS	
+ccmetagen	ccmetagen_CCMetagen.py	Failed	tool bug: CCMetagen 1.5.0 runs on the tutorial KMA .res file but writes unk_sk as Superkingdom for every hit with the current NCBI taxonomy (fixed upstream, not released), and it ignores --local_taxfile for lineages.
+ccne	ccne_ccne-acc	Not completed	Runs on real SRR14561347 reads (1.2M pairs) with the strain's assembly, but estimates 1.8 KPC-2 copies where the isolate has 3 (README 3.73), so the result could not be confirmed.
+ccne	ccne_ccne-fast	PASS	
+ccphylo	ccphylo_dbscan	PASS	
+ccphylo	ccphylo_dist	PASS	
+ccphylo	ccphylo_fullphy	PASS	
+ccphylo	ccphylo_makespan	PASS	
+ccphylo	ccphylo_merge	PASS	
+ccphylo	ccphylo_nwck2phy	PASS	
+ccphylo	ccphylo_phycmp	PASS	
+ccphylo	ccphylo_rarify	Failed	tool bug: on a real KMA matrix, rarify carries the rounding remainder against the rarification factor instead of the fragment count, so counts come out about 33% too high and shift columns.
+ccphylo	ccphylo_tree	PASS	
+ccphylo	ccphylo_trim	Failed	tool bug: on five real KMA consensus alignments of equal length, trim writes random non-nucleotide bytes or empty sequences, and the output changes from run to run.
+ccphylo	ccphylo_tsv2phy	PASS	
+ccphylo	ccphylo_union	PASS	
+ccsmeth	ccsmeth_align_hifi	PASS	
+ccsmeth	ccsmeth_call_freqb	PASS	
+ccsmeth	ccsmeth_call_freqt	PASS	
+ccsmeth	ccsmeth_call_hifi	PASS	
+ccsmeth	ccsmeth_call_mods	PASS	
+ccsmeth	ccsmeth_extract	PASS	
+ccsmeth	ccsmeth_train	PASS	
+ccsmeth	ccsmeth_trainm	Not completed	Multi-GPU training needs CUDA GPUs and the NCCL backend, which this machine does not have.
+cct	cct_build_blast_atlas	Failed	image problem: it calls cgview_comparison_tool with the broken default global_settings.conf ($CCT_HOME/lib/scripts/... does not exist), so project creation fails.
+cct	cct_build_blast_atlas_all_vs_all	Failed	image problem: ImageMagick (convert, montage) is not installed in the image.
+cct	cct_cgview_comparison_tool	Failed	image problem: the default global_settings.conf points to $CCT_HOME/lib/scripts/..., which does not exist, so project creation fails; the run works only when a corrected config is passed with -g.
+cct	cct_convert_vcf_to_features	PASS	
+cct	cct_create_zoomed_maps	Failed	image problem: the script runs $CCT_HOME/bin/cgview.jar, which does not exist in the image.
+cct	cct_fetch_all_refseq_bacterial_genomes	PASS	
+cct	cct_fetch_all_refseq_chloroplast_genomes	Not completed	It downloads every RefSeq chloroplast genome from NCBI with no size filter, too large for a test run.
+cct	cct_fetch_all_refseq_mitochondrial_genomes	Not completed	It downloads every RefSeq mitochondrial genome from NCBI with no size filter, too large for a test run.
+cct	cct_fetch_genome_by_accession	Failed	image problem: the script calls $CCT_HOME/lib/scripts/ncbi_search/ncbi_search.pl, which does not exist in the image.
+cct	cct_fetch_refseq_bacterial_genomes_by_name	Failed	image problem: the /usr/bin wrapper passes arguments unquoted, so a species name with a space breaks the call; a one-word genus name works.
+cct	cct_ncbi_search	Failed	image problem: the /usr/bin wrapper passes arguments unquoted, so a query with spaces is split and wrong records come back; single-term queries work.
+cct	cct_redraw_maps	Failed	image problem: the script runs $CCT_HOME/bin/cgview.jar, which does not exist in the image.
+cct	cct_remove_long_seqs	PASS	
+cct	cct_remove_short_seqs	PASS	
+cctk	cctk_blast	PASS	
+cctk	cctk_constrain	PASS	
+cctk	cctk_crisprdiff	PASS	
+cctk	cctk_crisprtree	PASS	--branch-support crashes in this image (DendroPy 5 has no textprocessing.StringIO); the run without it matches the tutorial tree.
+cctk	cctk_evolve	PASS	
+cctk	cctk_minced	PASS	
+cctk	cctk_network	PASS	
+cctk	cctk_quickrun	PASS	
+cctk	cctk_spacerblast	PASS	
+cctyper	cctyper	PASS	
+cdbfasta	cdbfasta	PASS	
+cdbtools	cdbtools_cdbfasta	PASS	
+cdbtools	cdbtools_cdbyank	PASS	
+cd-hit	cd-hit_cd-hit-est-2d	PASS	
+cdhit-reader	cdhit-reader_cdhit-compare	PASS	
+cdna_cupcake	cdna_cupcake_collapse_isoforms_by_sam.py	PASS	
+cdna_cupcake	cdna_cupcake_fa2fq.py	PASS	
+cdna_cupcake	cdna_cupcake_get_abundance_post_collapse.py	PASS	
+cdo	cdo	PASS	
+cdskit	cdskit_accession2fasta	PASS	
+cdskit	cdskit_aggregate	PASS	
+cdskit	cdskit_backalign	PASS	
+cdskit	cdskit_backtrim	PASS	
+cdskit	cdskit_gapjust	Failed	tool bug: when gaps are shortened (--gap_len 10) the output GFF gets wrong, negative coordinates (gene2 at -2..7); with --gap_len 100 the output matches the test fixture.
+cdskit	cdskit_hammer	PASS	
+cdskit	cdskit_intersection	PASS	
+cdskit	cdskit_label	PASS	
+cdskit	cdskit_mask	PASS	
+cdskit	cdskit_pad	PASS	
+cdskit	cdskit_parsegb	PASS	
+cdskit	cdskit_printseq	PASS	
+cdskit	cdskit_rmseq	PASS	
+cdskit	cdskit_split	PASS	
+cdskit	cdskit_stats	PASS	
+cdst	cdst_generate	PASS	
+cdst	cdst_hc	PASS	
+cdst	cdst_matrix	PASS	
+cdst	cdst_mst	PASS	
+cdst	cdst_run	PASS	
+ceas	ceas	PASS	The xls table matches the Galaxy expected output; the image has no R, so only the R script is written, not the PDF.
+cegroomer	cegroomer_tracegroomer	PASS	All four tables match the Galaxy tools-iuc expected outputs; added staged metadata files, --no- switches and table outputs.
+cellpose	cellpose	Not completed	The command line is accepted, but segmentation needs the 1.15 GB cpsam model downloaded from Hugging Face, which is too large for this test.
+cellprofiler	cellprofiler	PASS	The ExampleHuman pipeline ran headless and found 289 nuclei and 22 PH3-positive cells; output and done file paths were changed from File to string.
+cellranger	cellranger_aggr	PASS	Aggregating two copies of the tiny molecule_info.h5 gave 1,084 cells per sample; added a staged input for the files the CSV names.
+cellranger	cellranger_annotate	Not completed	Cell annotation needs a 10x Cloud token or a local model for hg19/GRCh38 data; the tiny reference run stops at preflight for this reason.
+cellranger	cellranger_cloud_analyses_download	Not completed	Downloads from 10x Genomics Cloud need an account access token and network access, which this test does not have.
+cellranger	cellranger_cloud_fastqs_upload	Not completed	Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have.
+cellranger	cellranger_cloud_files_download	Not completed	Downloads from 10x Genomics Cloud need an account access token and network access, which this test does not have.
+cellranger	cellranger_cloud_files_upload	Not completed	Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have.
+cellranger	cellranger_cloud_references_upload	Not completed	Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have.
+cellranger	cellranger_count	PASS	The tiny dataset gave 1,084 cells and 128 genes, the same as testrun; fixed --create-bam, --include-introns and --check-library-compatibility to pass =true/false.
+cellranger	cellranger_mat2csv	PASS	The tiny filtered matrix converted to a dense CSV of 273 genes by 1,084 cells, matching the testrun cell count.
+cellranger	cellranger_mkgtf	PASS	Filtering the tiny reference GTF with gene_type:protein_coding kept exactly the 124 protein-coding genes.
+cellranger	cellranger_mkref	PASS	Rebuilt the tiny reference from its FASTA and GTF; the FASTA hash, chromosome table and 273-gene STAR index match the bundled reference.
+cellranger	cellranger_mkvdjref	PASS	Built a V(D)J reference from the nf-core GRCh38 regions.fa with --seqs; it kept 702 of 742 segments with V, D, J, C and UTR regions.
+cellranger	cellranger_multi	PASS	A gene-expression config on the tiny dataset gave 1,137 cells from 461,083 reads; added staged inputs and an absolute-path copy of the CSV.
+cellranger	cellranger_multi-template	PASS	Writes the multi config template with the added --output option and prints parameter descriptions with --parameters.
+cellranger	cellranger_reanalyze	PASS	Reanalysis of the tiny filtered matrix produced PCA, UMAP, differential expression and graph clusters for all 1,084 cells.
+cellranger	cellranger_testrun	PASS	The bundled tiny dataset ran through count and reported 1,084 cells and 128 genes detected.
+cellranger	cellranger_upload	Not completed	Uploads a file to 10x Genomics support over the network with the user's email, which cannot be tested here.
+cellranger	cellranger_vdj	Not completed	The run finished on nf-core subsampled T-cell reads (86.5% map to TRA/TRB), but 10,000 read pairs are too few to assemble contigs or call cells, and full VDJ data is too large.
+cellranger-arc	cellranger-arc_aggr	PASS	
+cellranger-arc	cellranger-arc_cloud_analyses_download	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_analyses_files	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_analyses_get	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_analyses_list	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_annotation_models	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_auth_reset	Not completed	Ran with exit 0 but the container has no saved 10x Cloud token, so there was nothing to delete or check.
+cellranger-arc	cellranger-arc_cloud_auth_verify	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_fastqs_list	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_fastqs_upload	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_files_download	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_files_list	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_files_upload	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_projects_create	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_projects_list	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access; a run with a dummy token reached the server and was refused.
+cellranger-arc	cellranger-arc_cloud_projects_update	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_references_delete	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_references_get	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_references_list	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_references_update	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_cloud_references_upload	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
+cellranger-arc	cellranger-arc_count	PASS	
+cellranger-arc	cellranger-arc_mkfastq	Failed	image problem: bcl2fastq is not in the image, and mkfastq needs it on PATH to demultiplex.
+cellranger-arc	cellranger-arc_mkgtf	PASS	
+cellranger-arc	cellranger-arc_mkref	PASS	
+cellranger-arc	cellranger-arc_reanalyze	PASS	
+cellranger-arc	cellranger-arc_telemetry	PASS	
+cellranger-arc	cellranger-arc_testrun	PASS	
+cellranger-arc	cellranger-arc_upload	Not completed	Sends a file to 10x Genomics support servers; needs network access and a real email, so it was not run.
+cellsnake	cellsnake_advanced	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
+cellsnake	cellsnake_clustree	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
+cellsnake	cellsnake_integrate	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
+cellsnake	cellsnake_integrated	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
+cellsnake	cellsnake_minimal	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
+cellsnake	cellsnake_standard	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
+cellsnp-lite	cellsnp-lite	PASS	
+cell-types-analysis	cell-types-analysis_build_cell_ontology_dict.R	PASS	
+cell-types-analysis	cell-types-analysis_combine_tool_outputs.R	PASS	
+cell-types-analysis	cell-types-analysis_get_consensus_output.R	Failed	tool bug: with --true-labels the similarity-to-true-label column is wrong (335 cells whose top label equals the true label score 0: a column-for-row lookup and no lowercasing); the run without it checks out
+cell-types-analysis	cell-types-analysis_get_empirical_dist.R	PASS	
+cell-types-analysis	cell-types-analysis_get_tool_performance_table.R	PASS	
+cell-types-analysis	cell-types-analysis_get_tool_pvals.R	PASS	
+celltypist	celltypist	PASS	
+cellxgene	cellxgene_annotate	Failed	image problem: annotate runs 'mlflow models predict', but mlflow is not installed in the image (and no small public model archive exists).
+cellxgene	cellxgene_launch	Not completed	launch starts a long-running interactive web server, which cannot run as a batch job.
+cellxgene	cellxgene_prepare	Failed	image problem: the image lacks the cellxgene[prepare] extras (scanpy), so prepare exits asking to pip install them.
+cenmap	cenmap	Not completed	pipeline, skipped: cenmap runs a whole Snakemake centromere workflow (RepeatMasker, HMMER, alignments) on full assemblies.
+cenote-taker3	cenote-taker3_cenotetaker3	Not completed	needs the 362 MB Cenote-Taker 3 hmmscan database (over the test-data budget); with only the hallmark taxonomy DB the run stops at the missing HMM files.
+cenote-taker3	cenote-taker3_get_ct3_dbs	PASS	
+centreseq	centreseq_core	PASS	
+centreseq	centreseq_extract	PASS	
+centreseq	centreseq_subset	PASS	
+centreseq	centreseq_tree	PASS	
+centrifuge	centrifuge_centrifuge-build	PASS	

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_tsv2phy
+baseCommand:
+  - ccphylo
+  - tsv2phy
 label: ccphylo_tsv2phy
 doc: "converts tsv files to phylip distance files.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
 inputs:
@@ -39,7 +41,7 @@ inputs:
   - id: float_precision
     type:
       - 'null'
-      - string
+      - boolean
     doc: Float precision on distance matrix
     inputBinding:
       position: 101
@@ -105,7 +107,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

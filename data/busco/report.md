@@ -1,5 +1,11 @@
 # busco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| busco | PASS |  |
+
 ## busco
 
 ### Tool Description

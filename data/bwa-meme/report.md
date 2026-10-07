@@ -1,5 +1,13 @@
 # bwa-meme CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bwa-meme_build_rmis_dna.sh | PASS |  |
+| bwa-meme_index | PASS |  |
+| bwa-meme_mem | PASS |  |
+
 ## bwa-meme_index
 
 ### Tool Description

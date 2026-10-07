@@ -4,7 +4,7 @@ baseCommand:
   - cctk
   - blast
 label: cctk_blast
-doc: "BLASTn settings:\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
+doc: "Find CRISPR arrays with user-provided repeat(s) using BLASTn.\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
 inputs:
   - id: append
     type:
@@ -41,10 +41,19 @@ inputs:
       prefix: --blast-options
   - id: blastdb
     type: string
-    doc: path to blast db (excluding file extension)
+    doc: path to blast db (excluding file extension). With blastdb_dir, the name of the database inside that 
+      directory.
     inputBinding:
       position: 101
       prefix: --blastdb
+      valueFrom: "$(inputs.blastdb_dir != null ? inputs.blastdb_dir.path + '/' + self
+        : self)"
+  - id: blastdb_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory holding the BLAST database files (made with makeblastdb 
+      -parse_seqids)
   - id: evalue
     type:
       - 'null'

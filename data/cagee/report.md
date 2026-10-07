@@ -1,5 +1,11 @@
 # cagee CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cagee | PASS |  |
+
 ## cagee
 
 ### Tool Description

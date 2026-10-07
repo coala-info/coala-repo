@@ -1,5 +1,13 @@
 # cdna_cupcake CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cdna_cupcake_collapse_isoforms_by_sam.py | PASS |  |
+| cdna_cupcake_fa2fq.py | PASS |  |
+| cdna_cupcake_get_abundance_post_collapse.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

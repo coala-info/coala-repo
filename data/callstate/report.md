@@ -1,5 +1,11 @@
 # callstate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| callstate | PASS |  |
+
 ## callstate
 
 ### Tool Description

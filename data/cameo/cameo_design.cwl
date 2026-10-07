@@ -73,10 +73,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --host
     doc: The host organisms to consider
     inputBinding:
       position: 102
-      prefix: --host
   - id: logging
     type:
       - 'null'
@@ -143,6 +144,10 @@ outputs:
       glob: $(inputs.output_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: cameo
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cameo:0.13.6--pyhdfd78af_0

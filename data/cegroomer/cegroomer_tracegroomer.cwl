@@ -128,10 +128,90 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_internal_standard
+  - id: no_alternative_div_amount_material
+    type:
+      - 'null'
+      - boolean
+    doc: When dividing values by the amount of material, do not multiply by mean(amountMaterial)
+    inputBinding:
+      position: 101
+      prefix: --no-alternative_div_amount_material
+  - id: no_div_isotopologues_by_amount_material
+    type:
+      - 'null'
+      - boolean
+    doc: Normalize only total abundances by the amount of material, not isotopologue absolute values
+    inputBinding:
+      position: 101
+      prefix: --no-div_isotopologues_by_amount_material
+  - id: no_fractions_stomp_values
+    type:
+      - 'null'
+      - boolean
+    doc: Do not stomp fractional contributions and isotopologue proportions to [0, 1]
+    inputBinding:
+      position: 101
+      prefix: --no-fractions_stomp_values
+  - id: no_under_detection_limit_set_nan
+    type:
+      - 'null'
+      - boolean
+    doc: On VIB results, keep abundances below the limit of detection
+    inputBinding:
+      position: 101
+      prefix: --no-under_detection_limit_set_nan
+  - id: no_subtract_blankavg
+    type:
+      - 'null'
+      - boolean
+    doc: On VIB results, do not subtract the average of the blanks
+    inputBinding:
+      position: 101
+      prefix: --no-subtract_blankavg
+  - id: no_isotopologues_preview
+    type:
+      - 'null'
+      - boolean
+    doc: Do not plot isotopologue values
+    inputBinding:
+      position: 101
+      prefix: --no-isotopologues_preview
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files the configuration file names by stem (sample metadata, variable 
+      metadata). They are staged in the working directory, so the configuration 
+      file must set groom_out_path to '.'.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: groomed_tables
+    type:
+      type: array
+      items: File
+    doc: Tables written to groom_out_path ('.'), one per quantification named in 
+      the configuration file
+    outputBinding:
+      glob: '*.$(inputs.output_files_extension ? inputs.output_files_extension : "csv")'
+      outputEval: |-
+        ${
+          var staged = (inputs.data_files || []).map(function (f) { return f.basename; });
+          return self.filter(function (f) { return staged.indexOf(f.basename) < 0; });
+        }
+  - id: preview_plots
+    type:
+      type: array
+      items: File
+    doc: Isotopologue preview plots written with --isotopologues_preview
+    outputBinding:
+      glob: '*.pdf'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.data_files ? inputs.data_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tracegroomer:0.1.4--pyhdfd78af_0

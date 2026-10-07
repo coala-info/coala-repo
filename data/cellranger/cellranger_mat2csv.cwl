@@ -8,7 +8,9 @@ doc: Tool for converting feature-barcode matrices from sparse format to dense
   CSV format, for use by external programs.
 inputs:
   - id: input_path
-    type: File
+    type:
+      - File
+      - Directory
     doc: Path to a Cell Ranger feature-barcode matrix. Can be either a 
       feature-barcode h5 file (recommended) or a path to a MEX Cell Ranger 
       output folder.

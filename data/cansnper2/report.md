@@ -1,5 +1,13 @@
 # cansnper2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cansnper2_CanSNPer2 | Failed | image problem: ete3 tree drawing needs PyQt5, which fails on missing libGL.so.1, so every sample crashes after the Mauve alignment. |
+| cansnper2_CanSNPer2-database | PASS |  |
+| cansnper2_CanSNPer2-download | Failed | tool bug: gunzip is started but not awaited, so the downloaded reference FASTA is truncated (1.1 of 4.9 MB) when the container exits. |
+
 ## cansnper2_CanSNPer2-download
 
 ### Tool Description

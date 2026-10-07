@@ -5,7 +5,7 @@ label: cansnper2_CanSNPer2-download
 doc: "CanSNPer2-download\n\nTool homepage: https://github.com/FOI-Bioinformatics/CanSNPer2"
 inputs:
   - id: database
-    type: string
+    type: File
     doc: CanSNP database
     inputBinding:
       position: 101
@@ -13,7 +13,7 @@ inputs:
   - id: logs
     type:
       - 'null'
-      - boolean
+      - string
     doc: Specify log directory
     inputBinding:
       position: 101
@@ -21,7 +21,8 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
+    default: references
     doc: reference genomes folder
     inputBinding:
       position: 101
@@ -46,6 +47,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: references_dir
+    type: Directory
+    doc: reference genomes folder (genomes in source/, linked as <genome>.fna)
+    outputBinding:
+      glob: $(inputs.outdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cansnper2:2.0.6--py_0

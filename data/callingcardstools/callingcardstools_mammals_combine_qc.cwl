@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mammals_combine_qc
+baseCommand:
+  - callingcardstools
+  - mammals_combine_qc
 label: callingcardstools_mammals_combine_qc
 doc: "Combines QC data from multiple Qbed and BarcodeQcCounter objects.\n\nTool homepage:
   https://github.com/cmatKhan/callingCardsTools"
@@ -59,6 +61,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: combined_files
+    type:
+      type: array
+      items: File
+    doc: Combined qbed and QC tables, or pickles with --pickle
+    outputBinding:
+      glob: '$(inputs.filename ? inputs.filename : "combined")$(inputs.suffix ? "_" + inputs.suffix : "")*'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # ceas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ceas | PASS | The xls table matches the Galaxy expected output; the image has no R, so only the R script is written, not the PDF. |
+
 ## ceas
 
 ### Tool Description

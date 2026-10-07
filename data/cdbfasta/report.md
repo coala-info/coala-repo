@@ -1,5 +1,11 @@
 # cdbfasta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cdbfasta | PASS |  |
+
 ## cdbfasta
 
 ### Tool Description

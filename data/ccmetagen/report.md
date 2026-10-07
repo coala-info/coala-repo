@@ -1,5 +1,11 @@
 # ccmetagen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ccmetagen_CCMetagen.py | Failed | tool bug: CCMetagen 1.5.0 runs on the tutorial KMA .res file but writes unk_sk as Superkingdom for every hit with the current NCBI taxonomy (fixed upstream, not released), and it ignores --local_taxfile for lineages. |
+
 ## Metadata
 - **Skill**: generated
 

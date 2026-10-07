@@ -1,17 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - bwa-aln-interactive
   - aln
 label: bwa-aln-interactive_aln
 doc: "Align sequences using BWA (Burrows-Wheeler Aligner) aln algorithm.\n\nTool homepage:
   https://github.com/fulcrumgenomics/bwa-aln-interactive"
 inputs:
   - id: prefix
-    type: string
-    doc: Prefix of the BWA index
+    type: File
+    doc: The bwa index, given as its .bwt file (for example ref.fa.bwt from bwa index) or
+      as the file named like the index prefix (for example ref.fa); the .amb, .ann,
+      .bwt, .pac and .sa files must sit beside it
+    secondaryFiles:
+      - pattern: "${ var b = self.basename.replace(/\\.bwt$/, ''); var s = ['.amb', '.ann', '.pac', '.sa']; if (b === self.basename) { s.push('.bwt'); } return s.map(function (e) { return b + e; }); }"
+        required: true
     inputBinding:
       position: 1
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: input_fastq
     type: File
     doc: Input FASTQ file

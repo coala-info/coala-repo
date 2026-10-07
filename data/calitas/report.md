@@ -1,5 +1,14 @@
 # calitas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| calitas_AlignToReference | PASS |  |
+| calitas_PairwiseAlignSequences | PASS |  |
+| calitas_PrepareVcf | PASS |  |
+| calitas_SearchReference | PASS |  |
+
 ## calitas_AlignToReference
 
 ### Tool Description

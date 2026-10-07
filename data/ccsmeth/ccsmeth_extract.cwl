@@ -48,6 +48,11 @@ inputs:
       prefix: --identity
   - id: input
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
     doc: "input file in bam/sam format, can be unaligned\nhifi.bam/sam and aligned
       sorted hifi.bam/sam."
     inputBinding:

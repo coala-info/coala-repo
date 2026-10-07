@@ -112,6 +112,9 @@ outputs:
       specified, the results will be saved in input_file_prefix.bam by default.
     outputBinding:
       glob: $(inputs.output_path)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - calitas
-  - AlignToReference
+arguments:
+  - position: 50
+    valueFrom: AlignToReference
 label: calitas_AlignToReference
 doc: "Performs glocal alignment of query sequence to a window on the reference. Input
   should be a tab-delimited file with the following columns (with headers):\n\n  *
@@ -29,7 +31,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --async-io
   - id: compression
     type:
@@ -37,7 +39,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --compression
   - id: genome_gap_net_cost
     type:
@@ -76,7 +78,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 10
       prefix: --log-level
   - id: max_gaps_between_guide_and_pam
     type:
@@ -128,6 +130,9 @@ inputs:
       prefix: --pam-mismatch-net-cost
   - id: ref
     type: File
+    secondaryFiles:
+      - .fai
+      - ^.dict
     doc: Reference genome fasta, must be indexed with faidx.
     inputBinding:
       position: 101
@@ -138,7 +143,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 10
       prefix: --sam-validation-stringency
   - id: threads
     type:
@@ -154,7 +159,7 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --tmp-dir
   - id: window_size
     type:
@@ -169,7 +174,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -180,6 +185,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/calitas:1.0--hdfd78af_1

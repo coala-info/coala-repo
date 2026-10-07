@@ -1,5 +1,11 @@
 # cami-opal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cami-opal_opal.py | PASS |  |
+
 ## cami-opal_opal.py
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # cancerit-allelecount CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cancerit-allelecount_alleleCounter | PASS |  |
+
 ## cancerit-allelecount_alleleCounter
 
 ### Tool Description

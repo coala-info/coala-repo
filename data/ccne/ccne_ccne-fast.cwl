@@ -74,6 +74,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --multiref
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ read files named in the --in list file; staged in the working directory so
+      the relative names in the list resolve
   - id: quiet
     type:
       - 'null'
@@ -94,7 +101,7 @@ inputs:
       prefix: --ref
   - id: sp
     type: string
-    doc: Species name[Kp|Ec|Ab|Pa|Pls]
+    doc: Species code (Kpn, Eco, Aba, Pae, Pls, ...); see --listsp
     inputBinding:
       position: 101
       prefix: --sp
@@ -111,6 +118,9 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "$(inputs.data_files ? inputs.data_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ccne:1.1.2--hdfd78af_0

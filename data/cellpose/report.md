@@ -1,5 +1,11 @@
 # cellpose CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cellpose | Not completed | The command line is accepted, but segmentation needs the 1.15 GB cpsam model downloaded from Hugging Face, which is too large for this test. |
+
 ## cellpose
 
 ### Tool Description

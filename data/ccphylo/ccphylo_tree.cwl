@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ccphylo_tree
+baseCommand:
+  - ccphylo
+  - tree
 label: ccphylo_tree
 doc: "forms tree(s) in newick format given a set of phylip distance matrices.\n\n\
   Tool homepage: https://bitbucket.org/genomicepidemiology/ccphylo"
@@ -130,7 +132,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

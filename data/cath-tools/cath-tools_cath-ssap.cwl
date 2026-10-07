@@ -31,7 +31,7 @@ inputs:
   - id: aligndir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write alignment to directory <dir>
     inputBinding:
       position: 103
@@ -238,7 +238,7 @@ inputs:
   - id: supdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: '[DEPRECATED] Output a superposition to directory <dir>'
     inputBinding:
       position: 103
@@ -277,12 +277,27 @@ inputs:
       position: 103
       prefix: --xmlsup
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: '[DEPRECATED] Output scores to <file> rather than to stdout'
     inputBinding:
       position: 104
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: SSAP scores (unless --outfile is set)
+  - id: alignment_files
+    type: File[]
+    doc: Alignment files (<protein1><protein2>.list) written to the alignment directory
+    outputBinding:
+      glob: '$(inputs.aligndir ? inputs.aligndir + "/*.list" : "*.list")'
+  - id: superposition_dir
+    type: Directory?
+    doc: Superposition output directory (--supdir)
+    outputBinding:
+      glob: $(inputs.supdir)
   - id: outfile
     type:
       - 'null'
@@ -292,6 +307,11 @@ outputs:
       glob: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ var l = []; [inputs.aligndir, inputs.supdir].forEach(function(d) { if (d && d != ".") { l.push({"class": "Directory", "basename": d, "listing": [], "writable": true}); } }); return l; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0
+stdout: cath-tools_cath-ssap.out

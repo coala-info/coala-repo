@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: c4counter
+baseCommand:
+  - c4counter
 label: c4counter
 doc: "Count occurrences in reference FASTA files\n\nTool homepage: https://github.com/irunonayran/c4counter.git"
 inputs:
@@ -14,7 +15,14 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Number and types of C4 genes (C4A / C4B, HERV / no HERV) per FASTA file
+  - id: svg
+    type:
+      - 'null'
+      - File
+    doc: Simple graphical representation of the C4 genes (c4.svg)
+    outputBinding:
+      glob: c4.svg
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/c4counter:0.0.2--pyhdfd78af_0

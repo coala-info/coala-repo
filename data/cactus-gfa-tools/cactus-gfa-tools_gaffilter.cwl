@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gaffilter
+baseCommand:
+  - gaffilter
 label: cactus-gfa-tools_gaffilter
 doc: "Filter GAF record if its query interval overlaps another query interval based
   on primary/secondary status, MAPQ ratio, or block length ratio.\n\nTool homepage:
@@ -75,8 +76,8 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Filtered GAF (or PAF with --paf)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0
-stdout: cactus-gfa-tools_gaffilter.out
+stdout: cactus-gfa-tools_gaffilter.gaf

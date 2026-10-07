@@ -4,7 +4,7 @@ baseCommand:
   - cctk
   - crisprdiff
 label: cctk_crisprdiff
-doc: "Control run behaviour\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
+doc: "Produce a CRISPRdiff plot comparing CRISPR arrays.\n\nTool homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit"
 inputs:
   - id: arrays_to_align
     type:
@@ -13,7 +13,7 @@ inputs:
         items: string
     doc: 'IDs of the arrays you want to analyse. Default: all'
     inputBinding:
-      position: 1
+      position: 200
   - id: approx_ordered
     type:
       - 'null'
@@ -133,9 +133,8 @@ inputs:
       position: 103
       prefix: --colour-scheme-outfile
   - id: out_file_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: output plot file name and path
     inputBinding:
       position: 104
       prefix: --out-file

@@ -1,5 +1,24 @@
 # bwa-aln-interactive CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bwa-aln-interactive_aln | PASS |  |
+| bwa-aln-interactive_bwasw | PASS |  |
+| bwa-aln-interactive_bwt2sa | PASS |  |
+| bwa-aln-interactive_bwtupdate | PASS |  |
+| bwa-aln-interactive_fa2pac | PASS |  |
+| bwa-aln-interactive_fastmap | PASS |  |
+| bwa-aln-interactive_index | PASS |  |
+| bwa-aln-interactive_mem | PASS |  |
+| bwa-aln-interactive_pac2bwt | PASS |  |
+| bwa-aln-interactive_pac2bwtgen | PASS |  |
+| bwa-aln-interactive_pemerge | PASS |  |
+| bwa-aln-interactive_sampe | Failed | tool bug: sampe crashes with a segmentation fault (exit 139) on valid aln output, also outside CWL. |
+| bwa-aln-interactive_samse | Failed | tool bug: samse opens a garbage file name instead of the reads file and writes no alignments, also outside CWL. |
+| bwa-aln-interactive_shm | Not completed | The index loads and the run exits 0, but shared memory vanishes with the container, so the result cannot be checked. |
+
 ## bwa-aln-interactive_index
 
 ### Tool Description

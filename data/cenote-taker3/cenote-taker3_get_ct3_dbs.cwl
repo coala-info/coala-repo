@@ -9,7 +9,7 @@ inputs:
   - id: domain_list
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101
@@ -49,7 +49,7 @@ inputs:
   - id: hmm_db
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Default: False -- choose: True -or- False'
     inputBinding:
       position: 101
@@ -87,6 +87,9 @@ outputs:
     doc: output directory when database will be downloaded
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cenote-taker3:3.4.4--pyhdfd78af_0

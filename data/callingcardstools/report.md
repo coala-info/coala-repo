@@ -1,5 +1,21 @@
 # callingcardstools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| callingcardstools_barcode_table_to_json | PASS |  |
+| callingcardstools_chipexo_promoter_sig | PASS |  |
+| callingcardstools_legacy_makeccf | Failed | image problem: legacy_makeccf calls pandas set_categories(inplace=True), which the pandas 2 in the image removed, so it crashes before writing the ccf files. |
+| callingcardstools_legacy_split_fastq | PASS |  |
+| callingcardstools_mammals_combine_qc | PASS |  |
+| callingcardstools_process_mammals_bam | PASS |  |
+| callingcardstools_process_yeast_bam | PASS |  |
+| callingcardstools_split_fastq | PASS |  |
+| callingcardstools_yeast_call_peaks | PASS |  |
+| callingcardstools_yeast_combine_qc | PASS |  |
+| callingcardstools_yeast_rank_response | PASS |  |
+
 ## callingcardstools_barcode_table_to_json
 
 ### Tool Description

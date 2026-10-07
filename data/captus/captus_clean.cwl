@@ -199,6 +199,9 @@ outputs:
     doc: Output directory name
     outputBinding:
       glob: $(inputs.out)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/captus:1.6.3--pyh05cac1d_0

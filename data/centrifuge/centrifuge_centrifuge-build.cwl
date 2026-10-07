@@ -5,14 +5,92 @@ label: centrifuge_centrifuge-build
 doc: "Builds a Centrifuge index from a set of DNA sequences.\n\nTool homepage: https://github.com/DaehwanKimLab/centrifuge"
 inputs:
   - id: reference_in
-    type: string
-    doc: Comma-separated list of files with ref sequences
+    type:
+      type: array
+      items: File
+    doc: Files with reference sequences (FASTA); joined with commas
     inputBinding:
       position: 1
-  - id: conversion_table
+      itemSeparator: ','
+  - id: index_base
+    type: string
+    doc: Write centrifuge index data to files with this dir/basename
+    inputBinding:
+      position: 2
+  - id: noauto
+    type:
+      - 'null'
+      - boolean
+    doc: Disable automatic -p/--bmax/--dcv memory-fitting
+    inputBinding:
+      position: 102
+      prefix: --noauto
+  - id: bmax
+    type:
+      - 'null'
+      - int
+    doc: Max bucket size for blockwise suffix-array builder
+    inputBinding:
+      position: 102
+      prefix: --bmax
+  - id: bmaxdivn
+    type:
+      - 'null'
+      - int
+    doc: 'Max bucket size as divisor of ref len (default: 4)'
+    inputBinding:
+      position: 102
+      prefix: --bmaxdivn
+  - id: dcv
+    type:
+      - 'null'
+      - int
+    doc: 'Diff-cover period for blockwise (default: 1024)'
+    inputBinding:
+      position: 102
+      prefix: --dcv
+  - id: nodc
+    type:
+      - 'null'
+      - boolean
+    doc: Disable diff-cover (algorithm becomes quadratic)
+    inputBinding:
+      position: 102
+      prefix: --nodc
+  - id: noref
+    type:
+      - 'null'
+      - boolean
+    doc: Do not build .3/.4 (packed reference) portion
+    inputBinding:
+      position: 102
+      prefix: --noref
+  - id: justref
+    type:
+      - 'null'
+      - boolean
+    doc: Just build .3/.4 (packed reference) portion
+    inputBinding:
+      position: 102
+      prefix: --justref
+  - id: size_table
     type:
       - 'null'
       - File
+    doc: Table of contig (or genome) sizes
+    inputBinding:
+      position: 102
+      prefix: --size-table
+  - id: kmer_count
+    type:
+      - 'null'
+      - int
+    doc: k size for counting the number of distinct k-mers
+    inputBinding:
+      position: 102
+      prefix: --kmer-count
+  - id: conversion_table
+    type: File
     doc: A table that maps every reference sequence to a specific taxonomic ID
     inputBinding:
       position: 102
@@ -58,9 +136,7 @@ inputs:
       position: 102
       prefix: --seed
   - id: taxonomy_tree
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Taxonomy tree file (nodes.dmp)
     inputBinding:
       position: 102
@@ -74,11 +150,13 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
-  - id: centrifuge_index_base
-    type: File
-    doc: Write centrifuge index data to files with this base
+  - id: centrifuge_index
+    type:
+      type: array
+      items: File
+    doc: Centrifuge index files (<index_base>.1.cf ... .4.cf)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.index_base).*.cf
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centrifuge:1.0.4.2--h077b44d_1

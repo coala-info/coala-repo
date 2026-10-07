@@ -1,5 +1,11 @@
 # cazy_webscraper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cazy_webscraper | PASS |  |
+
 ## cazy_webscraper
 
 ### Tool Description

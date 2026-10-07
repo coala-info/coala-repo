@@ -1,5 +1,12 @@
 # bwa-mem2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bwa-mem2_index | PASS |  |
+| bwa-mem2_mem | PASS |  |
+
 ## bwa-mem2_index
 
 ### Tool Description

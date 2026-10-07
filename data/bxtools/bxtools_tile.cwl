@@ -42,7 +42,7 @@ inputs:
     doc: Set verbose output
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: -v
   - id: width
     type:
       - 'null'
@@ -58,4 +58,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bxtools:0.1.0--h13024bc_6
-stdout: bxtools_tile.out
+stdout: bxtools_tile.bed

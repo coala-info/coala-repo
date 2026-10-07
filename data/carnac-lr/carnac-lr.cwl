@@ -5,42 +5,27 @@ label: carnac-lr
 doc: "CARNAC-LR is a tool for clustering long reads (PacBio or Oxford Nanopore) for
   de novo assembly of transcriptomes.\n\nTool homepage: https://github.com/kamimrcht/CARNAC-LR"
 inputs:
-  - id: ground_truth
-    type:
-      - 'null'
-      - File
-    doc: Optional ground truth file for validation (e.g., in PAF format).
-    inputBinding:
-      position: 101
-      prefix: -g
   - id: input_file
     type: File
-    doc: Input fasta or fastq file containing the reads.
+    doc: Input read connection file in CARNAC-LR format (from paf_to_CARNAC.py)
+      or Short Read Connector Linker output.
     inputBinding:
       position: 101
       prefix: -f
-  - id: min_size
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of reads in a cluster.
-    inputBinding:
-      position: 101
-      prefix: -s
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use.
+    doc: Number of threads to use (default 2).
     inputBinding:
       position: 101
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name for the clusters (default final_g_clusters.txt)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

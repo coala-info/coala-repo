@@ -7,7 +7,7 @@ inputs:
   - id: add_model
     type:
       - 'null'
-      - string
+      - File
     doc: model path to copy model to hidden .cellpose folder for using in 
       GUI/CLI
     inputBinding:
@@ -354,6 +354,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: model to use for running or starting training
     inputBinding:
       position: 101
@@ -454,9 +455,10 @@ inputs:
   - id: savedir
     type:
       - 'null'
-      - Directory
+      - string
     doc: folder to which segmentation results will be saved (defaults to input 
-      image directory)
+      image directory, which is read-only here, so set it); it is created 
+      before the run
     inputBinding:
       position: 101
       prefix: --savedir
@@ -550,10 +552,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --Zstack
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: show information about running and settings and save to log
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: segmentation_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder given by --savedir with the masks, _seg.npy files, outlines, 
+      flows and ROI files
+    outputBinding:
+      glob: $(inputs.savedir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${
+          if (!inputs.savedir) { return null; }
+          return {"class": "Directory", "basename": inputs.savedir, "listing": [], "writable": true};
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cellpose:4.0.8

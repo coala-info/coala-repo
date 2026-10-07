@@ -21,11 +21,16 @@ inputs:
       position: 101
       prefix: --create
   - id: database
-    type: string?
-    doc: CanSNPer2 database name
+    type:
+      - 'null'
+      - File
+      - string
+    doc: CanSNPer2 database name (a string names a new database for --create; 
+      an existing database File is staged writable so it can be modified)
     inputBinding:
       position: 101
       prefix: -db
+      valueFrom: '$(self.class == "File" ? self.basename : self)'
   - id: debug
     type:
       - 'null'
@@ -54,7 +59,7 @@ inputs:
   - id: logs
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify log directory
     inputBinding:
       position: 101
@@ -141,7 +146,10 @@ inputs:
       position: 101
       prefix: --verbose
   - id: outdir_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: outdir for database export!
     inputBinding:
       position: 102
       prefix: --outdir
@@ -153,8 +161,24 @@ outputs:
     doc: outdir for database export!
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: database_out
+    type:
+      - 'null'
+      - File
+    doc: the created or modified database
+    outputBinding:
+      glob: '$(inputs.database == null ? [] : (inputs.database.class == "File" ? 
+        inputs.database.basename : inputs.database))'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.database != null && inputs.database.class == "File" ? 
+          inputs.database : null)'
+        writable: true
+      - entry: '$(inputs.outdir_path == null ? null : {"class": "Directory", "basename":
+          inputs.outdir_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cansnper2:2.0.6--py_0

@@ -26,4 +26,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bxtools:0.1.0--h13024bc_6
-stdout: bxtools_mol.out
+stdout: bxtools_mol.bed

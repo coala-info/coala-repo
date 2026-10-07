@@ -1,5 +1,11 @@
 # cenmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cenmap | Not completed | pipeline, skipped: cenmap runs a whole Snakemake centromere workflow (RepeatMasker, HMMER, alignments) on full assemblies. |
+
 ## cenmap
 
 ### Tool Description

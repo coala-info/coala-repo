@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - bwa-aln-interactive
   - pemerge
 label: bwa-aln-interactive_pemerge
 doc: "Merge paired-end reads\n\nTool homepage: https://github.com/fulcrumgenomics/bwa-aln-interactive"

@@ -1,5 +1,11 @@
 # cactus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cactus | Failed | image problem: every run crashes at start with AttributeError 'Namespace' object has no attribute 'deadlockWait' (cactus 2019.03.01 does not match the bundled Toil). |
+
 ## cactus
 
 ### Tool Description

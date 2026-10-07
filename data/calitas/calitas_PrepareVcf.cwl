@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - calitas
-  - PrepareVcf
+arguments:
+  - position: 50
+    valueFrom: PrepareVcf
 label: calitas_PrepareVcf
 doc: "Prepares a VCF for optimal use by SearchReference. Does the following:\n\n \
   \ * Removes variants and alleles below an allele frequency threshold\n  * Remove
@@ -19,14 +21,16 @@ inputs:
     doc: If true, add 'chr' to chroms 1-22, X and Y.
     inputBinding:
       position: 101
-      prefix: --add-chr-prefix
+      prefix: --add-chr-prefix=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: async_io
     type:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --async-io
   - id: compression
     type:
@@ -34,7 +38,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --compression
   - id: dict
     type:
@@ -59,7 +63,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 10
       prefix: --log-level
   - id: min_af
     type:
@@ -75,7 +79,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 10
       prefix: --sam-validation-stringency
   - id: tmp_dir
     type:
@@ -83,14 +87,14 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 10
       prefix: --tmp-dir
   - id: output_vcf_path
     type: string
     doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: --output
 outputs:
   - id: output_vcf
     type: File
@@ -99,6 +103,8 @@ outputs:
       glob: $(inputs.output_vcf_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/calitas:1.0--hdfd78af_1

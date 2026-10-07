@@ -1,5 +1,12 @@
 # cameo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cameo_design | Failed | With USER set in the CWL it no longer crashes, but no design comes out: for vanillin, pathway prediction hit its time limit and the table was empty, and an itaconate run did not finish within 50 minutes. |
+| cameo_search | PASS |  |
+
 ## cameo_design
 
 ### Tool Description

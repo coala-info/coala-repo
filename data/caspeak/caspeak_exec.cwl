@@ -10,7 +10,7 @@ inputs:
   - id: bedtools_genome
     type:
       - 'null'
-      - string
+      - File
     doc: 'genome data for bedtools (default: hg38 file in bedtools)'
     inputBinding:
       position: 101
@@ -32,7 +32,7 @@ inputs:
   - id: lib
     type:
       - 'null'
-      - string
+      - File
     doc: the library (a set of closely related sequences) used to distinguish 
       true insertion from these related sequences
     inputBinding:
@@ -195,8 +195,8 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
-    doc: 'working directory (default: current directory)'
+      - string
+    doc: 'working directory to create (default: current directory)'
     inputBinding:
       position: 101
       prefix: --workdir
@@ -204,6 +204,36 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result
+    type:
+      - 'null'
+      - Directory
+    doc: Validated insertions (validate.bed, .fasta, .maf, .vcf)
+    outputBinding:
+      glob: "$((inputs.workdir ? inputs.workdir + '/' : '') + 'result')"
+  - id: peak
+    type:
+      - 'null'
+      - Directory
+    doc: Peaks and trimmed reads
+    outputBinding:
+      glob: "$((inputs.workdir ? inputs.workdir + '/' : '') + 'peak')"
+  - id: lastal
+    type:
+      - 'null'
+      - Directory
+    doc: Read alignments
+    outputBinding:
+      glob: "$((inputs.workdir ? inputs.workdir + '/' : '') + 'lastal')"
+  - id: work_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The whole working directory (only when workdir is set)
+    outputBinding:
+      glob: '$(inputs.workdir ? inputs.workdir : [])'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/caspeak:1.1.5--pyhdfd78af_0

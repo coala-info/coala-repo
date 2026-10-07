@@ -6,8 +6,9 @@ doc: "Design probes for target genomes.\n\nTool homepage: https://github.com/bro
 inputs:
   - id: dataset
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
     doc: One or more target datasets (e.g., one per species). Each dataset can 
       be specified in one of two ways. (1) If dataset is in the format 
       'download:TAXID', then CATCH downloads from NCBI all whole genomes for the
@@ -15,6 +16,15 @@ inputs:
       dataset is a path to a FASTA file, then its sequences are read and used as
       input. For segmented viruses, the format for NCBI downloads can also be 
       'download:TAXID-SEGMENT'.
+    inputBinding:
+      position: 1
+  - id: dataset_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Target datasets given as FASTA files (one file per dataset). Use this or
+      dataset (download:TAXID labels); at least one dataset is required.
     inputBinding:
       position: 1
   - id: adapter_a
@@ -416,7 +426,7 @@ inputs:
       position: 102
       prefix: --ncbi-api-key
   - id: output_probes
-    type: File
+    type: string
     doc: The file to which all final probes should be written; they are written 
       in FASTA format
     inputBinding:
@@ -512,7 +522,7 @@ inputs:
   - id: write_analysis_to_tsv
     type:
       - 'null'
-      - File
+      - string
     doc: The file to which to write a TSV-formatted matrix of the probe set's 
       coverage analysis
     inputBinding:
@@ -521,7 +531,7 @@ inputs:
   - id: write_probe_map_counts_to_tsv
     type:
       - 'null'
-      - File
+      - string
     doc: The file to which to write a TSV-formatted list of the number of 
       sequences each probe maps to. This explicitly does not count reverse 
       complements.
@@ -531,7 +541,7 @@ inputs:
   - id: write_sliding_window_coverage
     type:
       - 'null'
-      - File
+      - string
     doc: The file to which to write the average coverage achieved by the probe 
       set within sliding windows of each target genome
     inputBinding:
@@ -540,7 +550,7 @@ inputs:
   - id: write_taxid_acc
     type:
       - 'null'
-      - Directory
+      - string
     doc: If 'download:' labels are used in datasets, write downloaded accessions
       to a file in this directory. Accessions are written to 
       WRITE_TAXID_ACC/TAXID.txt
@@ -551,6 +561,37 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: probes
+    type: File
+    doc: Final probes in FASTA format
+    outputBinding:
+      glob: $(inputs.output_probes)
+  - id: analysis_tsv
+    type: File?
+    doc: TSV matrix of the probe set's coverage analysis
+    outputBinding:
+      glob: $(inputs.write_analysis_to_tsv)
+  - id: probe_map_counts_tsv
+    type: File?
+    doc: TSV list of the number of sequences each probe maps to
+    outputBinding:
+      glob: $(inputs.write_probe_map_counts_to_tsv)
+  - id: sliding_window_coverage
+    type: File?
+    doc: Average coverage within sliding windows of each target genome
+    outputBinding:
+      glob: $(inputs.write_sliding_window_coverage)
+  - id: taxid_acc_dir
+    type: Directory?
+    doc: Directory with downloaded accessions (TAXID.txt files)
+    outputBinding:
+      glob: $(inputs.write_taxid_acc)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ if (inputs.write_taxid_acc) { return [{"class": "Directory", "basename": inputs.write_taxid_acc, "listing": [], "writable": true}]; } return []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/catch:1.5.2--pyhdfd78af_0

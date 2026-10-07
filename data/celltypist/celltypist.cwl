@@ -65,9 +65,9 @@ inputs:
   - id: model
     type:
       - 'null'
-      - string
-    doc: Model used for predictions. If not provided, default to using the 
-      `Immune_All_Low.pkl` model.
+      - File
+    doc: Model file (.pkl) used for predictions. If not provided, default to 
+      using the `Immune_All_Low.pkl` model (needs a network download).
     inputBinding:
       position: 101
       prefix: --model
@@ -180,9 +180,13 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.outdir_path)/$(inputs.prefix ? inputs.prefix : '')*"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.outdir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/celltypist:1.7.1--pyhdfd78af_0

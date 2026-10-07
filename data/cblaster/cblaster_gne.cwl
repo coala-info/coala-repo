@@ -44,10 +44,10 @@ inputs:
     inputBinding:
       position: 102
       prefix: --max_gap
-  - id: plot
+  - id: plot_path
     type:
       - 'null'
-      - File
+      - string
     doc: Specify this argument without value to dynamically serve te plot. If a 
       file location is provided the plot will be saved there.
     inputBinding:
@@ -75,6 +75,19 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output
+  - id: ncbi_email
+    type:
+      - 'null'
+      - string
+    doc: E-mail address for NCBI Entrez. cblaster refuses to start without an 
+      e-mail or NCBI API key in its config file; this CWL writes that file 
+      ($HOME/.config/cblaster/config.ini) from ncbi_email / ncbi_api_key.
+  - id: ncbi_api_key
+    type:
+      - 'null'
+      - string
+    doc: NCBI API key written to the cblaster config file (alternative to 
+      ncbi_email)
 outputs:
   - id: output
     type:
@@ -83,8 +96,19 @@ outputs:
     doc: Write results to file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: plot
+    type:
+      - 'null'
+      - File
+    doc: Static HTML plot
+    outputBinding:
+      glob: $(inputs.plot_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ var s = "[cblaster]\n"; if (inputs.ncbi_email) { s += "email = " + inputs.ncbi_email + "\n"; } if (inputs.ncbi_api_key) { s += "api_key = " + inputs.ncbi_api_key + "\n"; } return {"class": "Directory", "basename": ".config", "listing": [{"class": "Directory", "basename": "cblaster", "listing": [{"class": "File", "basename": "config.ini", "contents": s}]}]}; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cblaster:1.4.0--pyhdfd78af_0

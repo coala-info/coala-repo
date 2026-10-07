@@ -4,114 +4,50 @@ baseCommand:
   - callingcardstools
   - legacy_makeccf
 label: callingcardstools_legacy_makeccf
-doc: "Converts alignment files to calling card format.\n\nTool homepage: https://github.com/cmatKhan/callingCardsTools"
+doc: "This function make .ccf files from mapped .bam files. ccf files have the following
+  columns: [chr,start,end,reads,strand,barcode] but only the first 4 columns are required.
+  The genome coordinates are 1-indexed\n\nTool homepage: https://github.com/cmatKhan/callingCardsTools"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input alignment file (e.g., SAM, BAM, CRAM).
-    inputBinding:
-      position: 1
-  - id: max_insert_size
-    type:
-      - 'null'
-      - int
-    doc: Maximum insert size to consider for paired-end reads.
-    inputBinding:
-      position: 102
-      prefix: --max_insert_size
-  - id: min_baseq
-    type:
-      - 'null'
-      - int
-    doc: Minimum base quality to consider a base for calling card generation.
-    inputBinding:
-      position: 102
-      prefix: --min_baseq
-  - id: min_insert_size
-    type:
-      - 'null'
-      - int
-    doc: Minimum insert size to consider for paired-end reads.
-    inputBinding:
-      position: 102
-      prefix: --min_insert_size
-  - id: min_mapq
-    type:
-      - 'null'
-      - int
-    doc: Minimum mapping quality to consider a read for calling card generation.
-    inputBinding:
-      position: 102
-      prefix: --min_mapq
-  - id: output_prefix
+  - id: log_level
     type:
       - 'null'
       - string
-    doc: Prefix for the output calling card files.
+    doc: 'Set the logging level. Options: critical, error, warning, info, debug'
     inputBinding:
-      position: 102
-      prefix: --output_prefix
-  - id: skip_duplicates
-    type:
-      - 'null'
-      - boolean
-    doc: Skip duplicate reads.
+      position: 101
+      prefix: --log_level
+  - id: sampath
+    type: File
+    secondaryFiles:
+      - .bai
+    doc: path to sam/bam (indexed bam with the legacy NC_0011xx yeast chromosome
+      names)
     inputBinding:
-      position: 102
-      prefix: --skip_duplicates
-  - id: skip_low_quality
-    type:
-      - 'null'
-      - boolean
-    doc: Skip reads with low mapping quality or base quality.
-    inputBinding:
-      position: 102
-      prefix: --skip_low_quality
-  - id: skip_secondary
-    type:
-      - 'null'
-      - boolean
-    doc: Skip secondary alignments.
-    inputBinding:
-      position: 102
-      prefix: --skip_secondary
-  - id: skip_unmapped
-    type:
-      - 'null'
-      - boolean
-    doc: Skip unmapped reads.
-    inputBinding:
-      position: 102
-      prefix: --skip_unmapped
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for processing.
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: outputpath_path
+      position: 101
+      prefix: --sampath
+  - id: outputpath
     type: string
-    doc: Output or path parameter `outputpath_path`
+    default: .
+    doc: output path (directory for the .ccf and _ccfQC.txt files)
     inputBinding:
-      position: 103
+      position: 101
       prefix: --outputpath
 outputs:
-  - id: outputpath
-    type: Directory
-    doc: Path to the output directory for calling card files.
+  - id: ccf_file
+    type: File
+    doc: ccf file named after the input bam
     outputBinding:
-      glob: $(inputs.outputpath_path)
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+      glob: $(inputs.outputpath)/$(inputs.sampath.nameroot).ccf
+  - id: ccf_qc_file
+    type: File
+    doc: ccf QC summary (sample, number of insertions, number of reads)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.outputpath)/$(inputs.sampath.nameroot)_ccfQC.txt
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.outputpath == "." ? [] : [{"class": "Directory", "basename":
+      inputs.outputpath, "listing": [], "writable": true}])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

@@ -37,7 +37,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify the name of the BUSCO lineage to be used.
+      - Directory
+    doc: Specify the name of the BUSCO lineage to be used, or a local lineage
+      dataset directory.
     inputBinding:
       position: 101
       prefix: --lineage_dataset
@@ -148,7 +150,7 @@ inputs:
   - id: download_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify local filepath for storing BUSCO dataset downloads
     inputBinding:
       position: 101
@@ -321,12 +323,26 @@ outputs:
   - id: output_out
     type:
       - 'null'
-      - File[]
+      - Directory
     doc: Give your analysis run a recognisable short name. Output folders and 
       files will be labelled with this name. The path to the output folder is 
       set with --out_path.
     outputBinding:
-      glob: $(inputs.out)*
+      glob: $(inputs.out)
+  - id: downloads
+    type:
+      - 'null'
+      - Directory
+    doc: Downloaded BUSCO datasets (--download)
+    outputBinding:
+      glob: "$(inputs.download ? (inputs.download_path ? inputs.download_path : 'busco_downloads') : null)"
+  - id: plot_figure
+    type:
+      - 'null'
+      - File
+    doc: BUSCO summary plot written by --plot
+    outputBinding:
+      glob: "$(inputs.plot ? inputs.plot.basename + '/busco_figure.png' : null)"
   - id: output_out_path
     type:
       - 'null'
@@ -337,6 +353,10 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.plot)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/busco:6.0.0--pyhdfd78af_2

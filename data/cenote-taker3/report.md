@@ -1,5 +1,12 @@
 # cenote-taker3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cenote-taker3_cenotetaker3 | Not completed | needs the 362 MB Cenote-Taker 3 hmmscan database (over the test-data budget); with only the hallmark taxonomy DB the run stops at the missing HMM files. |
+| cenote-taker3_get_ct3_dbs | PASS |  |
+
 ## cenote-taker3_cenotetaker3
 
 ### Tool Description

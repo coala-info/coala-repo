@@ -1,5 +1,12 @@
 # cayman CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cayman_annotate_proteome | PASS |  |
+| cayman_profile | PASS |  |
+
 ## cayman_annotate_proteome
 
 ### Tool Description

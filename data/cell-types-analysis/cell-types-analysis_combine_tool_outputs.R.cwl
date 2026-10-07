@@ -6,7 +6,9 @@ doc: "Combines standardized output TSV files from multiple classifiers.\n\nTool 
   https://github.com/ebi-gene-expression-group/cell-types-analysis"
 inputs:
   - id: exclusions
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to the yaml file with excluded terms. Must contain fields 
       'unlabelled' and 'trivial_terms'
     inputBinding:

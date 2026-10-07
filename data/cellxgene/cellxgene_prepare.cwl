@@ -21,11 +21,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --embedding
     doc: Embedding algorithm(s). Repeat option for multiple embeddings. - umap -
       tsne
     inputBinding:
       position: 102
-      prefix: --embedding
   - id: make_obs_names_unique
     type:
       - 'null'

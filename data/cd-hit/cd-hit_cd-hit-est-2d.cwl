@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/cd-hit-est-2d
+baseCommand: cd-hit-est-2d
 label: cd-hit_cd-hit-est-2d
 doc: 'CD-HIT: a fast program for clustering and comparing large sets of protein or
   nucleotide sequences (nucleotide version for comparing two datasets)'
@@ -12,9 +12,7 @@ inputs:
       position: 101
       prefix: -i
   - id: input_db2
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input filename for db2 in fasta format, required, can be in .gz format
     inputBinding:
       position: 101
@@ -329,6 +327,11 @@ outputs:
     doc: output filename, required
     outputBinding:
       glob: $(inputs.output)
+  - id: output_clusters
+    type: File
+    doc: Cluster file (.clstr) listing the db2 sequences clustered to db1
+    outputBinding:
+      glob: $(inputs.output).clstr
   - id: output_output_r2
     type:
       - 'null'

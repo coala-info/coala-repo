@@ -234,9 +234,8 @@ inputs:
       position: 102
       prefix: --colour-scheme-outfile
   - id: out_plot_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: output plot file name
     inputBinding:
       position: 103
       prefix: --out-plot
@@ -268,6 +267,10 @@ outputs:
     doc: output file to store json format colour schemes
     outputBinding:
       glob: $(inputs.colour_scheme_outfile_path)
+  - id: stdout
+    type: stdout
+    doc: Total tree score and Newick string of the constrained tree
+stdout: cctk_constrain.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

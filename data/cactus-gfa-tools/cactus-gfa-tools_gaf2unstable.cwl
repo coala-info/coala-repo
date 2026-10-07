@@ -13,18 +13,24 @@ inputs:
       position: 1
   - id: rgfa
     type: File
-    doc: (uncompressed) minigraph rGFA, required to look up unstable mappings
+    doc: (uncompressed) minigraph rGFA, required to look up unstable mappings 
+      (staged writable, the GFA reader cannot open a read-only file)
     inputBinding:
       position: 102
-      prefix: --rGFA
+      prefix: -g
   - id: out_lengths_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output lengths of all minigraph sequences in given file (can be passed 
       to gaf2paf)
     inputBinding:
       position: 103
-      prefix: --out-lengths
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: GAF with unstable graph node names in the path steps
   - id: out_lengths
     type:
       - 'null'
@@ -35,6 +41,11 @@ outputs:
       glob: $(inputs.out_lengths_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.rgfa)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0
+stdout: cactus-gfa-tools_gaf2unstable.gaf

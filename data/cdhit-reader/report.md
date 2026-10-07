@@ -1,5 +1,11 @@
 # cdhit-reader CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cdhit-reader_cdhit-compare | PASS |  |
+
 ## cdhit-reader_cdhit-compare
 
 ### Tool Description

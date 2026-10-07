@@ -42,9 +42,9 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output file path
+    doc: CSV file with the filtered CAZyme annotations (default cazy_annotations.csv)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_file_path ? inputs.output_file_path : "cazy_annotations.csv")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

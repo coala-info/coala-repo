@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: split_fastq
+baseCommand:
+  - callingcardstools
+  - split_fastq
 label: callingcardstools_split_fastq
 doc: "Splits fastq files based on barcode details.\n\nTool homepage: https://github.com/cmatKhan/callingCardsTools"
 inputs:
@@ -89,6 +91,33 @@ outputs:
       to the current directory
     outputBinding:
       glob: $(inputs.output_dirpath)
+  - id: split_fastqs
+    type:
+      type: array
+      items: File
+    doc: Demultiplexed and undetermined read 1 and read 2 fastq files
+    outputBinding:
+      glob: '$(inputs.output_dirpath ? inputs.output_dirpath : ".")/*.fq'
+  - id: barcode_qc
+    type:
+      type: array
+      items: File
+    doc: Barcode QC summary csv files, or the BarcodeQcCounter pickle with 
+      --pickle_qc
+    outputBinding:
+      glob: '$(inputs.output_dirpath ? inputs.output_dirpath : ".")/barcode_qc*'
+  - id: id_bc_map
+    type:
+      - 'null'
+      - File
+    doc: Read id to barcode component map, written with --verbose_qc
+    outputBinding:
+      glob: '$(inputs.output_dirpath ? inputs.output_dirpath : ".")/id_bc_map.tsv'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.output_dirpath ? [{"class": "Directory", "basename": inputs.output_dirpath,
+      "listing": [], "writable": true}] : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

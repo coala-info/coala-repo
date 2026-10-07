@@ -174,6 +174,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nopreflight
+  - id: aggr_input_files
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Files or folders named in the --csv file (molecule_info.h5 files or 
+      count/vdj/multi output folders). They are staged in the working 
+      directory, so the CSV can name them by relative path (basename).
 outputs:
   - id: output_output_dir
     type:
@@ -184,6 +194,8 @@ outputs:
       glob: $(inputs.output_dir || inputs.id)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.aggr_input_files ? inputs.aggr_input_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger:10.1.0

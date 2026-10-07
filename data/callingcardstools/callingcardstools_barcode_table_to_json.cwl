@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: barcode_table_to_json
+baseCommand:
+  - callingcardstools
+  - barcode_table_to_json
 label: callingcardstools_barcode_table_to_json
 doc: "Converts a barcode table to JSON format.\n\nTool homepage: https://github.com/cmatKhan/callingCardsTools"
 inputs:
@@ -28,6 +30,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: barcode_details_json
+    type: File
+    doc: Barcode details json written as <batch>_barcode_details.json
+    outputBinding:
+      glob: $(inputs.batch)_barcode_details.json
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

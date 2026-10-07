@@ -86,7 +86,7 @@ inputs:
   - id: megahit_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to MEGAHIT
     inputBinding:
       position: 102
@@ -94,7 +94,7 @@ inputs:
   - id: megahit_toolkit_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to MEGAHIT's toolkit
     inputBinding:
       position: 102
@@ -195,7 +195,7 @@ inputs:
   - id: reformat_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to reformat.sh
     inputBinding:
       position: 102
@@ -203,7 +203,7 @@ inputs:
   - id: salmon_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to Salmon
     inputBinding:
       position: 102
@@ -265,6 +265,8 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/captus:1.6.3--pyh05cac1d_0

@@ -14,7 +14,6 @@ inputs:
       a_R2.fastq,b_R2.fastq note that the order must be maintained."
     inputBinding:
       position: 1
-      itemSeparator: ','
   - id: read_group
     type:
       - 'null'
@@ -26,7 +25,8 @@ inputs:
   - id: reference
     type: File
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
       - .bwameth.c2t
       - .bwameth.c2t.amb
       - .bwameth.c2t.ann
@@ -61,8 +61,8 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Aligned reads in SAM format (written to standard output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwameth:0.20--py35_0
-stdout: bwameth_bwameth.py.out
+stdout: bwameth_bwameth.py.sam

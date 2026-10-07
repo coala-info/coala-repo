@@ -1,5 +1,11 @@
 # cagecleaner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cagecleaner | Failed | image problem: the image has BusyBox sort without --parallel, so skDER selects no representative genomes and cagecleaner drops every hit. |
+
 ## cagecleaner
 
 ### Tool Description

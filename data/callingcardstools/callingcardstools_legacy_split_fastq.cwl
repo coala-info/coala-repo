@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: legacy_split_fastq
+baseCommand:
+  - callingcardstools
+  - legacy_split_fastq
 label: callingcardstools_legacy_split_fastq
 doc: "Splits paired-end FASTQ files based on barcodes.\n\nTool homepage: https://github.com/cmatKhan/callingCardsTools"
 inputs:
@@ -63,6 +65,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.output_path, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

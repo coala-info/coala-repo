@@ -1,5 +1,24 @@
 # bwa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bwa_aln | PASS |  |
+| bwa_bwasw | PASS |  |
+| bwa_bwt2sa | PASS |  |
+| bwa_bwtupdate | PASS |  |
+| bwa_fa2pac | PASS |  |
+| bwa_fastmap | PASS |  |
+| bwa_index | PASS |  |
+| bwa_mem | PASS |  |
+| bwa_pac2bwt | PASS |  |
+| bwa_pac2bwtgen | PASS |  |
+| bwa_pemerge | PASS |  |
+| bwa_sampe | PASS |  |
+| bwa_samse | PASS |  |
+| bwa_shm | Not completed | The index loads into shared memory with exit 0, but that memory disappears with the run's container, so the result cannot be used or checked. |
+
 ## bwa_index
 
 ### Tool Description

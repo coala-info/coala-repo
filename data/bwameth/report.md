@@ -1,5 +1,11 @@
 # bwameth CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bwameth_bwameth.py | PASS |  |
+
 ## bwameth_bwameth.py
 
 ### Tool Description

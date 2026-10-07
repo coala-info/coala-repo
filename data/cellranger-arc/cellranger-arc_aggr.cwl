@@ -32,11 +32,25 @@ inputs:
       prefix: --reference
   - id: csv
     type: File
+    loadContents: true
     doc: Path to CSV file enumerating 'cellranger-arc count' outputs required 
-      for aggregation.
+      for aggregation. Relative paths in the CSV are resolved against the 
+      working directory, where count_outputs are staged.
     inputBinding:
       position: 101
       prefix: --csv
+      valueFrom: $(runtime.outdir)/aggr_staged.csv
+  - id: count_outputs
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Files or folders named by the aggregation CSV (atac_fragments.tsv.gz 
+      with its .tbi, per_barcode_metrics.csv, gex_molecule_info.h5). They are 
+      staged in the working directory, so the CSV can name them by relative 
+      path.
   - id: peaks
     type:
       - 'null'
@@ -197,6 +211,25 @@ outputs:
       glob: $(inputs.output_dir || inputs.id)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: aggr_staged.csv
+        entry: |-
+          ${
+            var header = true;
+            return inputs.csv.contents.split('\n').map(function(line) {
+              if (line.trim() == '') { return line; }
+              if (header) { header = false; return line; }
+              var c = line.split(',');
+              for (var i = 1; i < c.length; i++) {
+                if (c[i] != '' && c[i].charAt(0) != '/' && (c[i].indexOf('.') >= 0 || c[i].indexOf('/') >= 0)) {
+                  c[i] = runtime.outdir + '/' + c[i];
+                }
+              }
+              return c.join(',');
+            }).join('\n');
+          }
+      - '$(inputs.count_outputs ? inputs.count_outputs : [])'
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger-arc:2.2.0

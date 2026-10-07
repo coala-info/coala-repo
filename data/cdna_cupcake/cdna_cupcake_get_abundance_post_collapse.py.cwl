@@ -1,34 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cdna_cupcake_get_abundance_post_collapse.py
+baseCommand: get_abundance_post_collapse.py
 label: cdna_cupcake_get_abundance_post_collapse.py
-doc: "Calculate transcript abundance after collapsing redundant isoforms by mapping
-  back to the original cluster reports.\n\nTool homepage: https://github.com/Magdoll/cDNA_Cupcake"
+doc: "Get abundance/read stat information after running collapse script. Works for
+  Iso-Seq1, 2, and 3 output.\n\nTool homepage: https://github.com/Magdoll/cDNA_Cupcake"
 inputs:
   - id: collapse_prefix
     type: string
-    doc: Prefix of the collapsed output (e.g., the prefix used for .collapsed.gff
-      and .collapsed.rep.fq)
+    doc: Collapse prefix (must have .group.txt), e.g. test.collapsed
     inputBinding:
       position: 1
+  - id: group_file
+    type: File
+    doc: The <collapse_prefix>.group.txt file from collapse_isoforms_by_sam.py; 
+      staged as <collapse_prefix>.group.txt
   - id: cluster_report
     type: File
-    doc: The cluster report file (usually cluster_report.csv or similar) from the
-      clustering step
+    doc: Cluster CSV report
     inputBinding:
       position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: collapse_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in collapse_prefix
+  - id: read_stat
+    type: File
+    doc: Read stat file (<collapse_prefix>.read_stat.txt)
     outputBinding:
-      glob: $(inputs.collapse_prefix)*
+      glob: $(inputs.collapse_prefix).read_stat.txt
+  - id: abundance
+    type: File
+    doc: Abundance file (<collapse_prefix>.abundance.txt)
+    outputBinding:
+      glob: $(inputs.collapse_prefix).abundance.txt
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.group_file)
+        entryname: $(inputs.collapse_prefix).group.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cdna_cupcake:29.0.0--py310h79ef01b_0
-stdout: cdna_cupcake_get_abundance_post_collapse.py.out

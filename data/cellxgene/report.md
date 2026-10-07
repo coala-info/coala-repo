@@ -1,5 +1,13 @@
 # cellxgene CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cellxgene_annotate | Failed | image problem: annotate runs 'mlflow models predict', but mlflow is not installed in the image (and no small public model archive exists). |
+| cellxgene_launch | Not completed | launch starts a long-running interactive web server, which cannot run as a batch job. |
+| cellxgene_prepare | Failed | image problem: the image lacks the cellxgene[prepare] extras (scanpy), so prepare exits asking to pip install them. |
+
 ## cellxgene_annotate
 
 ### Tool Description
@@ -190,24 +198,6 @@ Options:
                                   to determine the approximate distribution.
                                   Mode 'auto' is incompatible with --backed.
                                   [default: auto]
-```
-
-
-## cellxgene
-### Tool Description
-Command-line interface for cellxgene
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cellxgene:1.3.0--pyhdfd78af_0
-- **Homepage**: https://chanzuckerberg.github.io/cellxgene/
-- **Package**: https://anaconda.org/channels/bioconda/packages/cellxgene/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: cellxgene <options> COMMAND <args>
-
-Error: No such command 'for'.
 ```
 
 

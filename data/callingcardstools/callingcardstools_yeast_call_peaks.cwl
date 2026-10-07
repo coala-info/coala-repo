@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: yeast_call_peaks
+baseCommand:
+  - callingcardstools
+  - yeast_call_peaks
 label: callingcardstools_yeast_call_peaks
 doc: "Call peaks for yeast calling cards data.\n\nTool homepage: https://github.com/cmatKhan/callingCardsTools"
 inputs:

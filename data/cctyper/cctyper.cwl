@@ -271,13 +271,12 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output
+  - id: output_dir
+    type: Directory
+    doc: Output directory (CRISPR_Cas.tab, cas_operons.tab, crisprs_all.tab, 
+      genes.tab, hmmer.tab, spacers/, plot, ...)
     outputBinding:
-      glob: $(inputs.output)*
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cctyper:1.8.0--pyhdfd78af_1

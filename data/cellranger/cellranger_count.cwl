@@ -105,7 +105,9 @@ inputs:
       unsure. See https://10xgen.com/create-bam for additional guidance
     inputBinding:
       position: 101
-      prefix: --create-bam
+      prefix: --create-bam=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: nosecondary
     type:
       - 'null'
@@ -137,7 +139,9 @@ inputs:
     doc: Include intronic reads in count
     inputBinding:
       position: 101
-      prefix: --include-introns
+      prefix: --include-introns=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: chemistry
     type:
       - 'null'
@@ -169,7 +173,9 @@ inputs:
     doc: Whether to check for barcode compatibility between libraries.
     inputBinding:
       position: 101
-      prefix: --check-library-compatibility
+      prefix: --check-library-compatibility=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: tenx_cloud_token_path
     type:
       - 'null'

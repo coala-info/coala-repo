@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cats_rb_index
+baseCommand: CATS_rb_index
 label: cats-rb_CATS_rb_index
 doc: "genome index generation script\n\nTool homepage: https://github.com/bodulic/CATS-rb"
 inputs:
@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Genome file
     inputBinding:
-      position: 1
+      position: 201
   - id: max_gene_length
     type:
       - 'null'
@@ -37,6 +37,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_dir
+    type: Directory
+    doc: Genome index directory (CATS_rb_index_<genome>)
+    outputBinding:
+      glob: CATS_rb_index_*
+      outputEval: '$(self.filter(function(d) { return d.class == "Directory"; })[0])'
+  - id: log_file
+    type: File?
+    doc: Run log (CATS_rb_index_run_<date>)
+    outputBinding:
+      glob: CATS_rb_index_run_*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cats-rb:1.0.3--hdfd78af_0

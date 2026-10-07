@@ -1,5 +1,11 @@
 # cas-offinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cas-offinder | Failed | image problem: the OpenCL CPU runtime (PoCL) cannot link its kernel because the linker ld is missing from the image, so no search runs. |
+
 ## cas-offinder
 
 ### Tool Description

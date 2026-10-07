@@ -1,5 +1,11 @@
 # cansnper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cansnper_CanSNPer | PASS |  |
+
 ## cansnper_CanSNPer
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # c4counter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| c4counter | PASS |  |
+
 ## c4counter
 
 ### Tool Description

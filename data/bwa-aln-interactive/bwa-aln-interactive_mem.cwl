@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - bwa-aln-interactive
   - mem
 label: bwa-aln-interactive_mem
 doc: "Burrows-Wheeler Alignment Tool, MEM algorithm for long-read alignment\n\nTool

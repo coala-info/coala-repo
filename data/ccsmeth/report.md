@@ -1,5 +1,18 @@
 # ccsmeth CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ccsmeth_align_hifi | PASS |  |
+| ccsmeth_call_freqb | PASS |  |
+| ccsmeth_call_freqt | PASS |  |
+| ccsmeth_call_hifi | PASS |  |
+| ccsmeth_call_mods | PASS |  |
+| ccsmeth_extract | PASS |  |
+| ccsmeth_train | PASS |  |
+| ccsmeth_trainm | Not completed | Multi-GPU training needs CUDA GPUs and the NCCL backend, which this machine does not have. |
+
 ## ccsmeth_call_hifi
 
 ### Tool Description

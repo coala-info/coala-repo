@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maf_extract_ranges_indexed.py
+baseCommand:
+  - maf_extract_ranges_indexed.py
 label: bx-python_maf_extract_ranges_indexed.py
 doc: "Extract ranges from MAF files.\n\nTool homepage: https://github.com/bxlab/bx-python"
 inputs:
@@ -8,14 +9,16 @@ inputs:
     type:
       type: array
       items: File
-    doc: MAF file(s) to extract ranges from
+    secondaryFiles:
+      - .index
+    doc: MAF file(s) to extract ranges from, each with its maf_fname.index file 
+      (from maf_build_index.py) beside it
     inputBinding:
       position: 1
   - id: interval_file
     type: File
-    doc: File containing intervals to extract
-    inputBinding:
-      position: 2
+    doc: File containing intervals to extract (src start end [strand]; read 
+      from standard input)
   - id: chop
     type:
       - 'null'
@@ -68,21 +71,34 @@ inputs:
       position: 103
       prefix: --usecache
   - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    type:
+      - 'null'
+      - string
+    doc: Write each interval as a separate file in this directory
     inputBinding:
-      position: 104
-      prefix: --output-dir
+      position: 103
+      prefix: --dir
 outputs:
   - id: output_dir
     type:
       - 'null'
       - Directory
-    doc: Write each interval as a separate file in this directory
+    doc: Directory with one MAF file per interval (when --dir is given)
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: stdout
+    type: stdout
+    doc: Extracted MAF blocks (when --dir is not given)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (!inputs.output_dir_path) { return []; }
+        return [{"class": "Directory", "basename": inputs.output_dir_path, "listing": [], "writable": true}];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bx-python:0.14.0--py312h5e9d817_0
+stdin: $(inputs.interval_file.path)
+stdout: bx-python_maf_extract_ranges_indexed.py.maf

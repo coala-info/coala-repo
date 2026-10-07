@@ -1,5 +1,28 @@
 # cellranger CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cellranger_aggr | PASS | Aggregating two copies of the tiny molecule_info.h5 gave 1,084 cells per sample; added a staged input for the files the CSV names. |
+| cellranger_annotate | Not completed | Cell annotation needs a 10x Cloud token or a local model for hg19/GRCh38 data; the tiny reference run stops at preflight for this reason. |
+| cellranger_cloud_analyses_download | Not completed | Downloads from 10x Genomics Cloud need an account access token and network access, which this test does not have. |
+| cellranger_cloud_fastqs_upload | Not completed | Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have. |
+| cellranger_cloud_files_download | Not completed | Downloads from 10x Genomics Cloud need an account access token and network access, which this test does not have. |
+| cellranger_cloud_files_upload | Not completed | Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have. |
+| cellranger_cloud_references_upload | Not completed | Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have. |
+| cellranger_count | PASS | The tiny dataset gave 1,084 cells and 128 genes, the same as testrun; fixed --create-bam, --include-introns and --check-library-compatibility to pass =true/false. |
+| cellranger_mat2csv | PASS | The tiny filtered matrix converted to a dense CSV of 273 genes by 1,084 cells, matching the testrun cell count. |
+| cellranger_mkgtf | PASS | Filtering the tiny reference GTF with gene_type:protein_coding kept exactly the 124 protein-coding genes. |
+| cellranger_mkref | PASS | Rebuilt the tiny reference from its FASTA and GTF; the FASTA hash, chromosome table and 273-gene STAR index match the bundled reference. |
+| cellranger_mkvdjref | PASS | Built a V(D)J reference from the nf-core GRCh38 regions.fa with --seqs; it kept 702 of 742 segments with V, D, J, C and UTR regions. |
+| cellranger_multi | PASS | A gene-expression config on the tiny dataset gave 1,137 cells from 461,083 reads; added staged inputs and an absolute-path copy of the CSV. |
+| cellranger_multi-template | PASS | Writes the multi config template with the added --output option and prints parameter descriptions with --parameters. |
+| cellranger_reanalyze | PASS | Reanalysis of the tiny filtered matrix produced PCA, UMAP, differential expression and graph clusters for all 1,084 cells. |
+| cellranger_testrun | PASS | The bundled tiny dataset ran through count and reported 1,084 cells and 128 genes detected. |
+| cellranger_upload | Not completed | Uploads a file to 10x Genomics support over the network with the user's email, which cannot be tested here. |
+| cellranger_vdj | Not completed | The run finished on nf-core subsampled T-cell reads (86.5% map to TRA/TRB), but 10,000 read pairs are too few to assemble contigs or call cells, and full VDJ data is too large. |
+
 ## cellranger_count
 
 ### Tool Description
@@ -789,54 +812,6 @@ Options:
   -h, --help                Print help
 ```
 
-## cellranger_cloud
-
-### Tool Description
-The official command-line client for 10x Genomics Cloud Analysis.
-
-### Metadata
-- **Docker Image**: cumulusprod/cellranger:10.1.0
-- **Homepage**: https://github.com/10XGenomics/cellranger
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-The official command-line client for 10x Genomics Cloud Analysis.
-
-You can use 'txg help command' for more information on any of the available
-commands.
-
-Before using the CLI, you'll need to authenticate with 'txg auth setup'.  See
-'txg help auth' for more information.
-
-For more information, please visit https://support.10xgenomics.com/cloud-analysis
-
-Usage:
-  txg [command]
-
-Available Commands:
-  analyses    Manage analyses
-  annotation  Cell type annotation functions
-  auth        Manage authentication
-  fastqs      Upload and manage FASTQs
-  files       Upload and manage files
-  help        Help about any command
-  projects    Manage projects
-  references  Upload and manage custom references
-
-Flags:
-      --access-token string   Specify an access token to use.  Default: the saved token from 'txg auth setup'.
-  -y, --assumeyes             Assume yes (don't interactively prompt for confirmation, etc).  Default: off.
-  -H, --header header         Extra header to include in the request when sending HTTP requests to a server.  May be given multiple times to add multiple headers.  Each header must be of the form 'Header: value'.  Default: no extra headers.
-  -h, --help                  Display help and exit.
-  -q, --quiet                 Don't show progress or messages.  Default: off.
-  -v, --verbose               Display extra debugging information.  Default: off.
-      --version               Display version and exit.
-
-Use "txg [command] --help" for more information about a command.
-```
-
 ## cellranger_mat2csv
 
 ### Tool Description
@@ -1024,32 +999,163 @@ Usage:
         cellranger upload <your_email> <file>
 ```
 
-## cellranger_telemetry
+## cellranger_cloud_analyses_download
 
 ### Tool Description
-Configure and inspect telemetry settings and data
+Download analysis files in a single analysis
 
 ### Metadata
 - **Docker Image**: cumulusprod/cellranger:10.1.0
 - **Homepage**: https://github.com/10XGenomics/cellranger
 - **Package**: Not found
 - **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cellranger/overview
+- **GitHub**: https://github.com/10XGenomics/cellranger
 
 ### Original Help Text
 ```text
-Configure and inspect telemetry settings and data
+Usage:
+  txg analyses download ANALYSIS-ID
 
-Usage: telemetry [help] (check|disable|enable|list|show)
+Flags:
+      --file-id strings     IDs of the files to download.
+      --target-dir string   Destination directory to download to (default is current directory). (default ".")
 
-check:   Show whether telemetry is currently enabled and
-         configuration information.
-disable: Disable telemetry collection for this user.
-enable:  Enable telemetry collection for this user.
-list:    List files containing saved telemetry data for this product.
-show:    Display contents of saved telemetry data for this product.
+Global Flags:
+      --access-token string   Specify an access token to use.  Default: the saved token from 'txg auth setup'.
+  -y, --assumeyes             Assume yes (don't interactively prompt for confirmation, etc).  Default: off.
+  -H, --header header         Extra header to include in the request when sending HTTP requests to a server.  May be given multiple times to add multiple headers.  Each header must be of the form 'Header: value'.  Default: no extra headers.
+  -h, --help                  Display help and exit.
+  -q, --quiet                 Don't show progress or messages.  Default: off.
+  -v, --verbose               Display extra debugging information.  Default: off.
+      --version               Display version and exit.
+```
 
-For more information about what data is collected and how it's used, visit
-https://10xgen.com/pipeline-telemetry
+## cellranger_cloud_files_download
+
+### Tool Description
+Download project files
+
+### Metadata
+- **Docker Image**: cumulusprod/cellranger:10.1.0
+- **Homepage**: https://github.com/10XGenomics/cellranger
+- **Package**: Not found
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cellranger/overview
+- **GitHub**: https://github.com/10XGenomics/cellranger
+
+### Original Help Text
+```text
+Usage:
+  txg files download PROJECT-ID
+
+Flags:
+      --file-id strings     IDs of the files to download.
+      --target-dir string   Destination directory to download to (default is current directory). (default ".")
+
+Global Flags:
+      --access-token string   Specify an access token to use.  Default: the saved token from 'txg auth setup'.
+  -y, --assumeyes             Assume yes (don't interactively prompt for confirmation, etc).  Default: off.
+  -H, --header header         Extra header to include in the request when sending HTTP requests to a server.  May be given multiple times to add multiple headers.  Each header must be of the form 'Header: value'.  Default: no extra headers.
+  -h, --help                  Display help and exit.
+  -q, --quiet                 Don't show progress or messages.  Default: off.
+  -v, --verbose               Display extra debugging information.  Default: off.
+      --version               Display version and exit.
+```
+
+## cellranger_cloud_files_upload
+
+### Tool Description
+Upload files
+
+### Metadata
+- **Docker Image**: cumulusprod/cellranger:10.1.0
+- **Homepage**: https://github.com/10XGenomics/cellranger
+- **Package**: Not found
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cellranger/overview
+- **GitHub**: https://github.com/10XGenomics/cellranger
+
+### Original Help Text
+```text
+Usage:
+  txg files upload [--project-id ID|--new-project NAME] PATH...
+
+Flags:
+  -n, --new-project string   Create a new project with the specified name and immediately upload the FASTQs to it.
+  -p, --project-id id        Upload the FASTQs to the project with the specified ID.
+
+Global Flags:
+      --access-token string   Specify an access token to use.  Default: the saved token from 'txg auth setup'.
+  -y, --assumeyes             Assume yes (don't interactively prompt for confirmation, etc).  Default: off.
+  -H, --header header         Extra header to include in the request when sending HTTP requests to a server.  May be given multiple times to add multiple headers.  Each header must be of the form 'Header: value'.  Default: no extra headers.
+  -h, --help                  Display help and exit.
+  -q, --quiet                 Don't show progress or messages.  Default: off.
+  -v, --verbose               Display extra debugging information.  Default: off.
+      --version               Display version and exit.
+```
+
+## cellranger_cloud_fastqs_upload
+
+### Tool Description
+Upload FASTQ files
+
+### Metadata
+- **Docker Image**: cumulusprod/cellranger:10.1.0
+- **Homepage**: https://github.com/10XGenomics/cellranger
+- **Package**: Not found
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cellranger/overview
+- **GitHub**: https://github.com/10XGenomics/cellranger
+
+### Original Help Text
+```text
+Usage:
+  txg fastqs upload [--project-id ID|--new-project NAME] PATH...
+
+Flags:
+  -n, --new-project string   Create a new project with the specified name and immediately upload the FASTQs to it.
+  -p, --project-id id        Upload the FASTQs to the project with the specified ID.
+
+Global Flags:
+      --access-token string   Specify an access token to use.  Default: the saved token from 'txg auth setup'.
+  -y, --assumeyes             Assume yes (don't interactively prompt for confirmation, etc).  Default: off.
+  -H, --header header         Extra header to include in the request when sending HTTP requests to a server.  May be given multiple times to add multiple headers.  Each header must be of the form 'Header: value'.  Default: no extra headers.
+  -h, --help                  Display help and exit.
+  -q, --quiet                 Don't show progress or messages.  Default: off.
+  -v, --verbose               Display extra debugging information.  Default: off.
+      --version               Display version and exit.
+```
+
+## cellranger_cloud_references_upload
+
+### Tool Description
+Upload a custom reference
+
+### Metadata
+- **Docker Image**: cumulusprod/cellranger:10.1.0
+- **Homepage**: https://github.com/10XGenomics/cellranger
+- **Package**: Not found
+- **Validation**: PASS
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cellranger/overview
+- **GitHub**: https://github.com/10XGenomics/cellranger
+
+### Original Help Text
+```text
+Usage:
+  txg references upload FILE [--name NAME]
+
+Flags:
+      --name string   Reference name
+
+Global Flags:
+      --access-token string   Specify an access token to use.  Default: the saved token from 'txg auth setup'.
+  -y, --assumeyes             Assume yes (don't interactively prompt for confirmation, etc).  Default: off.
+  -H, --header header         Extra header to include in the request when sending HTTP requests to a server.  May be given multiple times to add multiple headers.  Each header must be of the form 'Header: value'.  Default: no extra headers.
+  -h, --help                  Display help and exit.
+  -q, --quiet                 Don't show progress or messages.  Default: off.
+  -v, --verbose               Display extra debugging information.  Default: off.
+      --version               Display version and exit.
 ```
 
 ## Metadata

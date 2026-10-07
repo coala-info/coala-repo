@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: paf2lastz
+baseCommand:
+  - paf2lastz
 label: cactus-gfa-tools_paf2lastz
 doc: "Convert PAF(s) with cg cigars to LASTZ cigars\n\nTool homepage: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools"
 inputs:
@@ -26,11 +27,16 @@ inputs:
       position: 103
       prefix: --mapq-score
   - id: secondary_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 104
       prefix: --secondary-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: LASTZ cigars converted from the PAF input(s)
   - id: secondary_file
     type:
       - 'null'
@@ -43,3 +49,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cactus-gfa-tools:0.1--h9948957_0
+stdout: cactus-gfa-tools_paf2lastz.cigar

@@ -241,6 +241,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: summary
+    type:
+      - 'null'
+      - File
+    doc: Summary of runs, group sizes, retraining iterations and accuracies 
+      (summary.txt, with --dump)
+    outputBinding:
+      glob: summary.txt
+  - id: selection
+    type:
+      - 'null'
+      - File
+    doc: Selected features (selection.txt, with --select_features and --dump)
+    outputBinding:
+      glob: selection.txt
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.dataset)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chopin2:1.0.9.post1

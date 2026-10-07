@@ -168,11 +168,19 @@ inputs:
   - id: reference
     type:
       - 'null'
-      - string
-    doc: Specify the reference genome (FILE,SEQ).
+      - File
+    doc: Specify the reference genome (FILE,SEQ); FASTA file holding the 
+      reference sequence named in reference_seq_name.
     inputBinding:
       position: 101
       prefix: -ref
+      valueFrom: $(self.path),$(inputs.reference_seq_name)
+  - id: reference_seq_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the reference sequence in the reference file (the SEQ part of 
+      -ref FILE,SEQ).
   - id: replace_intree
     type:
       - 'null'
@@ -271,8 +279,11 @@ inputs:
       position: 101
       prefix: --zero-branch-supp
   - id: out_aln_path
-    type: string
-    doc: Write the input alignment to a file in
+    type:
+      - 'null'
+      - string
+    doc: Write the input alignment to a file in MAPLE (default), PHYLIP, or 
+      FASTA format.
     inputBinding:
       position: 102
       prefix: --out-aln
@@ -289,11 +300,15 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: Output files (tree, log, ...) named with prefix, or with the 
+      alignment file name when no prefix is given
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix + '.*' : inputs.alignment.basename + '.*')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.alignment)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmaple:1.1.0--h503566f_1

@@ -1,5 +1,11 @@
 # ci-proxy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ci-proxy | Not completed | The image runs a long-lived gunicorn web server for the BioContainers CI webhook proxy (needs Jenkins and GitHub access), so there is no batch job or data to test. |
+
 ## ci-proxy
 
 ### Tool Description

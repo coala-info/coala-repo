@@ -10,6 +10,12 @@ inputs:
     doc: 'Input file: file containing (absolute) file names of training genomes.'
     inputBinding:
       position: 1
+  - id: training_genomes
+    type:
+      type: array
+      items: File
+    doc: Training genome FASTA/Q files named in in_file; staged in the working 
+      directory so that in_file can list them by file name.
   - id: out_file
     type: string
     doc: Output training database/reference file (in HDF5 format)
@@ -63,6 +69,18 @@ outputs:
     doc: Output training database/reference file (in HDF5 format)
     outputBinding:
       glob: '$(inputs.out_file)'
+  - id: intersect_nodegraph_file
+    type:
+      - 'null'
+      - File
+    doc: Nodegraph file (bloom filter) of all training k-mers, written with 
+      --intersect_nodegraph
+    outputBinding:
+      glob: $(inputs.out_file.replace(/\.[^.\/]*$/, '') + '.intersect.Nodegraph')
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.training_genomes)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmash:0.5.2--pyh5e36f6f_0

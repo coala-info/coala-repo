@@ -1,5 +1,11 @@
 # clever-toolkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clever-toolkit_clever | Failed | image problem: clever runs its workflow through make, but make is not in the image, so it stops before any analysis. |
+
 ## clever-toolkit_clever
 
 ### Tool Description

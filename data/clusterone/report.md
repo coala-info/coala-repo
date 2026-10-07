@@ -1,5 +1,11 @@
 # clusterone CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clusterone | PASS |  |
+
 ## clusterone
 
 ### Tool Description

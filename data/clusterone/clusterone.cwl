@@ -1,11 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cl1
+baseCommand: clusterone
 label: clusterone
 doc: "ClusterONE (Clustering with Overlapping Neighborhood Expansion) is a tool for
   detecting overlapping protein complexes or functional modules in protein-protein
   interaction networks.\n\nTool homepage: https://paccanarolab.org/cluster-one/"
 inputs:
+  - id: input_file
+    type: File
+    doc: input network file (edge list with optional weights, or SIF)
+    inputBinding:
+      position: 1
   - id: debug
     type:
       - 'null'

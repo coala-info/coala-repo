@@ -364,9 +364,8 @@ inputs:
       position: 101
       prefix: --numcomps
   - id: output_file_prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: chexmix_out
     doc: output file prefix
     inputBinding:
       position: 101
@@ -506,13 +505,12 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_file_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_file_prefix
+  - id: output_dir
+    type: Directory
+    doc: Output directory named after the output prefix, with the binding events
+      (<prefix>.events), subtype results, images and intermediate results
     outputBinding:
-      glob: $(inputs.output_file_prefix)*
+      glob: $(inputs.output_file_prefix)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chexmix:0.52--hdfd78af_0

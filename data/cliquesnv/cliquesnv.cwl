@@ -6,9 +6,7 @@ doc: "CliqueSNV is a tool for detecting sub-populations (cliques) of viruses or 
   from NGS data.\n\nTool homepage: https://github.com/vtsyvina/CliqueSNV"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input file (e.g., reads.sam)
     inputBinding:
       position: 101
@@ -33,10 +31,10 @@ inputs:
       prefix: -threads
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Folder with output
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -outDir
 outputs:
   - id: output_directory
     type:

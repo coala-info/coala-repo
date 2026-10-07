@@ -1,5 +1,11 @@
 # chewiesnake CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chewiesnake | Not completed | pipeline, skipped: chewiesnake runs a whole Snakemake cgMLST workflow (assembly, allele calling, clustering). |
+
 ## chewiesnake
 
 ### Tool Description

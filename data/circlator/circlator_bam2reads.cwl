@@ -8,6 +8,8 @@ doc: "Make reads from mapping to be reassembled\n\nTool homepage: https://github
 inputs:
   - id: input_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Name of input bam file
     inputBinding:
       position: 1

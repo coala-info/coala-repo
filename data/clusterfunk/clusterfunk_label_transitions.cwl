@@ -95,7 +95,9 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      - File
+      - Directory
     doc: The output file (or directory if --exploded_trees is used)
     outputBinding:
       glob: $(inputs.output_path)

@@ -8,6 +8,8 @@ inputs:
   - id: bamfile
     type: File
     doc: Input BAM file containing aligned reads.
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: bootstraps
@@ -37,20 +39,23 @@ inputs:
       position: 102
       prefix: --quiet
   - id: outdir_path
-    type: string?
+    type: string
+    doc: Directory to save output files (created before the run).
+    default: greylist_out
     inputBinding:
       position: 103
       prefix: --outdir
 outputs:
   - id: outdir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to save output files.
+    type: Directory
+    doc: Directory with the greylist BED file and depth tables.
     outputBinding:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "${ return {class: 'Directory', basename: inputs.outdir_path, listing: [], writable: true}; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chipseq-greylist:1.0.2--pyh145b6a8_1

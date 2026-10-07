@@ -1,5 +1,11 @@
 # clustal-omega CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clustal-omega_clustalo | PASS |  |
+
 ## clustal-omega_clustalo
 
 ### Tool Description

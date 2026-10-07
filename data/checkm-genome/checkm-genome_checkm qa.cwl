@@ -13,9 +13,11 @@ inputs:
       position: 1
   - id: analyze_dir
     type: Directory
-    doc: directory specified during analyze command
+    doc: directory specified during analyze command (staged writable; qa writes
+      bin_stats_ext.tsv and marker_gene_stats.tsv into its storage folder)
     inputBinding:
       position: 2
+      valueFrom: $(self.basename)
   - id: aai_strain
     type:
       - 'null'
@@ -155,6 +157,14 @@ inputs:
       position: 105
       prefix: --file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (results when --file is not given)
+  - id: analyze_dir_out
+    type: Directory
+    doc: analyze directory updated by qa
+    outputBinding:
+      glob: $(inputs.analyze_dir.basename)
   - id: alignment_file
     type:
       - 'null'
@@ -172,6 +182,11 @@ outputs:
       glob: $(inputs.file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.analyze_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkm-genome:1.2.4--pyhdfd78af_2
+stdout: checkm-genome_checkm_qa.out

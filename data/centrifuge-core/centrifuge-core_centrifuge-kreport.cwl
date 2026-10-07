@@ -12,12 +12,19 @@ inputs:
     doc: Centrifuge output file(s)
     inputBinding:
       position: 1
-  - id: index_name
-    type: string
-    doc: Centrifuge index
+  - id: index
+    type: File
+    doc: Centrifuge index; give the <index name>.1.cf file, the other .cf files 
+      are staged beside it and -x gets the prefix
+    secondaryFiles:
+      - ^^.2.cf
+      - ^^.3.cf
+      - pattern: ^^.4.cf
+        required: false
     inputBinding:
       position: 102
       prefix: -x
+      valueFrom: $(self.path.replace(/\.1\.cf$/, ''))
   - id: is_count_table
     type:
       - 'null'
@@ -64,6 +71,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centrifuge-core:1.0.4.2--h5ca1c30_2

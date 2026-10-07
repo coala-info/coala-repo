@@ -6,6 +6,11 @@ baseCommand:
 label: chromosomer_simulator
 doc: "Simulate fragments and test assembly for testing purposes.\n\nTool homepage:
   https://github.com/gtamazian/chromosomer"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return {class: "Directory", basename: inputs.output_dir, listing: [], writable: true}; }'
 inputs:
   - id: fr_num
     type: int
@@ -56,9 +61,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: the directory for output files
     outputBinding:
       glob: $(inputs.output_dir)

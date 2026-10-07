@@ -1,5 +1,14 @@
 # cmash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cmash_MakeDNADatabase.py | PASS |  |
+| cmash_MakeStreamingDNADatabase.py | PASS |  |
+| cmash_QueryDNADatabase.py | Failed | image problem: the khmer version in the image lacks Nodegraph.consume_seqfile_with_reads_parser and khmer.load_nodegraph, so the query crashes. |
+| cmash_StreamingQueryDNADatabase.py | PASS |  |
+
 ## cmash_MakeDNADatabase.py
 
 ### Tool Description

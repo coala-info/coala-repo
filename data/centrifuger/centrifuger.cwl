@@ -55,10 +55,16 @@ inputs:
       prefix: --hitk-factor
   - id: index_prefix
     type: File
-    doc: index prefix
+    doc: index prefix; give the <prefix>.1.cfr file, the .2/.3/.4.cfr files are 
+      staged beside it and -x gets the prefix
+    secondaryFiles:
+      - ^^.2.cfr
+      - ^^.3.cfr
+      - ^^.4.cfr
     inputBinding:
       position: 101
       prefix: -x
+      valueFrom: $(self.path.replace(/\.1\.cfr$/, ''))
   - id: interleaved_read
     type:
       - 'null'
@@ -161,6 +167,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: classified_reads
+    type:
+      type: array
+      items: File
+    doc: classified reads written with the --cl prefix
+    outputBinding:
+      glob: "$(inputs.classified_prefix ? inputs.classified_prefix + '*' : [])"
+  - id: unclassified_reads
+    type:
+      type: array
+      items: File
+    doc: unclassified reads written with the --un prefix
+    outputBinding:
+      glob: "$(inputs.unclassified_prefix ? inputs.unclassified_prefix + '*' : [])"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centrifuger:1.1.0--hf426362_0

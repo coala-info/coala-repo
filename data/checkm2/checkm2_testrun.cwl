@@ -10,8 +10,8 @@ inputs:
   - id: database_path
     type:
       - 'null'
-      - Directory
-    doc: Provide a location for the CheckM2 database for a given predict run
+      - File
+    doc: Provide the CheckM2 DIAMOND database file (uniref100.KO.1.dmnd) for a given predict run
     inputBinding:
       position: 101
       prefix: --database_path

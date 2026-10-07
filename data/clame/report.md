@@ -1,5 +1,11 @@
 # clame CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clame | PASS |  |
+
 ## clame
 
 ### Tool Description

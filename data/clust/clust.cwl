@@ -6,7 +6,9 @@ doc: "Optimised consensus clustering of multiple heterogeneous datasets\n\nTool 
   https://github.com/baselabujamous/clust"
 inputs:
   - id: datapath
-    type: Directory
+    type:
+      - File
+      - Directory
     doc: Data file path or directory with data file(s).
     inputBinding:
       position: 1
@@ -136,7 +138,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items:
+          - File
+          - string
     doc: Normalisation file or list of codes
     inputBinding:
       position: 102
@@ -174,8 +178,11 @@ inputs:
       position: 102
       prefix: -r
   - id: output_directory_path
-    type: string?
+    type:
+      - 'null'
+      - string
     doc: Output directory
+    default: clust_results
     inputBinding:
       position: 103
       prefix: -o

@@ -6,6 +6,11 @@ baseCommand:
 label: chromosomer_fastalength
 doc: "Get lengths of sequences in the specified FASTA file (required to build a fragment
   map).\n\nTool homepage: https://github.com/gtamazian/chromosomer"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta)
+        writable: true
 inputs:
   - id: fasta
     type: File

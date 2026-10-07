@@ -12,7 +12,9 @@ inputs:
     inputBinding:
       position: 1
   - id: bin_input
-    type: string
+    type:
+      - Directory
+      - File
     doc: directory containing bins (fasta format) or path to file describing 
       genomes/genes - tab separated in 2 or 3 columns [genome ID, genome fna, 
       genome translation file (pep)]

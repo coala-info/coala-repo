@@ -1,5 +1,11 @@
 # chain2paf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chain2paf | PASS |  |
+
 ## chain2paf
 
 ### Tool Description

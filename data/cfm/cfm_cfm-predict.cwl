@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cfm_predict.exe
+baseCommand: cfm-predict
 label: cfm_cfm-predict
 doc: "Predicts mass spectra for a given chemical structure.\n\nTool homepage: https://sourceforge.net/p/cfm-id/wiki/Home/"
 inputs:
@@ -17,19 +17,19 @@ inputs:
     inputBinding:
       position: 2
   - id: param_filename
-    type: string
+    type: File
     doc: The filename where the parameters of a trained cfm model can be found 
       (if not given, assumes param_output.log in current directory)
     inputBinding:
       position: 3
   - id: config_filename
-    type: string
+    type: File
     doc: The filename where the configuration parameters of the cfm model can be
       found (if not given, assumes param_config.txt in current directory)
     inputBinding:
       position: 4
   - id: include_annotations
-    type: boolean
+    type: int
     doc: 'Whether to include fragment information in the output spectra (0 = NO (default),
       1 = YES ). Note: ignored for msp/mgf output.'
     inputBinding:
@@ -42,7 +42,7 @@ inputs:
     inputBinding:
       position: 6
   - id: apply_postprocessing
-    type: boolean
+    type: int
     doc: Whether or not to post-process predicted spectra to take the top 80% of
       energy (at least 5 peaks), or the highest 30 peaks (whichever comes first)
       (0 = OFF, 1 = ON (default) ).
@@ -51,16 +51,23 @@ inputs:
   - id: suppress_exception
     type:
       - 'null'
-      - boolean
+      - int
     doc: Suppress exceptions so that the program returns normally even when it 
       fails to produce a result (0 = OFF (default), 1 = ON).
     inputBinding:
-      position: 108
-      prefix: --suppress_exception
+      position: 8
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_spectra
+    type:
+      - 'null'
+      - File
+      - Directory
+    doc: Predicted spectra file (or directory for a list of inputs)
+    outputBinding:
+      glob: $(inputs.output_filename_or_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cfm:33--h7600467_7

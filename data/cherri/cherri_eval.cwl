@@ -42,6 +42,9 @@ inputs:
     type: File
     doc: Path to genome FASTA file, or use the built-in download function if you
       want the human or mouse genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --genome
@@ -117,15 +120,11 @@ outputs:
       preparation as well as the evaluated instances
     outputBinding:
       glob: $(inputs.out_path_path)
-  - id: out_name_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Name for the output directory.
-    outputBinding:
-      glob: $(inputs.out_name)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "${ return {class: 'Directory', basename: inputs.out_path_path, listing: [], writable: true}; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cherri:0.8--pyh7cba7a3_0

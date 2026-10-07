@@ -8,8 +8,8 @@ doc: "Select best genomes based on stats retrieved from genome_summary\n\nTool h
   https://github.com/MGXlab/cirtap/"
 inputs:
   - id: output_path
-    type: Directory
-    doc: Path to write results
+    type: string
+    doc: Path to write results (a folder; created if missing)
     inputBinding:
       position: 1
   - id: db_dir
@@ -20,7 +20,7 @@ inputs:
       position: 102
       prefix: --db-dir
   - id: index_path
-    type: Directory
+    type: File
     doc: Path to the index file
     inputBinding:
       position: 102
@@ -28,7 +28,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Write logging information in this file
     inputBinding:
       position: 102
@@ -63,6 +63,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_path_dir
+    type: Directory
+    doc: Results folder with genome ids, stats and lineages
+    outputBinding:
+      glob: $(inputs.output_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Logging information file
+    outputBinding:
+      glob: $(inputs.logfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cirtap:0.3.1--pyh5e36f6f_0

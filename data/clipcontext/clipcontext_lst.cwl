@@ -49,6 +49,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_file
+    type: File
+    doc: Output transcript IDs list file
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clipcontext:0.7--py_0

@@ -1,5 +1,11 @@
 # cite-seq-count CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cite-seq-count_CITE-seq-Count | Failed | image problem: pandas 2.2.2 in the image rejects the set of uncorrected cells (ValueError: columns cannot be a set), so every run crashes before writing counts. |
+
 ## cite-seq-count_CITE-seq-Count
 
 ### Tool Description

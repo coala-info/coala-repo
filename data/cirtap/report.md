@@ -1,5 +1,15 @@
 # cirtap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cirtap_best | Not completed | Needs a PATRIC mirror with RELEASE_NOTES genome summaries and the ete3 NCBI taxonomy database (taxa.sqlite); no small test set exists. |
+| cirtap_collect | PASS |  |
+| cirtap_index | PASS |  |
+| cirtap_mirror | Not completed | Mirrors the whole PATRIC FTP site, which is far too large for a test, and the FTP server refused access from this machine. |
+| cirtap_pack | PASS |  |
+
 ## cirtap_best
 
 ### Tool Description

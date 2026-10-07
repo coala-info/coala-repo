@@ -116,7 +116,7 @@ inputs:
   - id: matrix_out
     type:
       - 'null'
-      - File
+      - string
     doc: Save cluster similarity matrix to file
     inputBinding:
       position: 102
@@ -132,10 +132,11 @@ inputs:
   - id: plot
     type:
       - 'null'
-      - File
+      - string
     doc: Plot cluster alignments using clustermap.js. If a path is given, 
-      clinker will generate a portable HTML file at that path. Otherwise, the 
-      plot will be served dynamically using Python's HTTP server.
+      clinker will generate a portable HTML file at that path. (Without a 
+      path the plot is served by an HTTP server, which a batch job cannot 
+      use, so this wrapper always takes a path.)
     inputBinding:
       position: 102
       prefix: --plot
@@ -153,7 +154,7 @@ inputs:
   - id: session
     type:
       - 'null'
-      - File
+      - string
     doc: Path to clinker session
     inputBinding:
       position: 102
@@ -180,6 +181,27 @@ outputs:
     doc: Save alignments to file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: matrix_out_file
+    type:
+      - 'null'
+      - File
+    doc: Cluster similarity matrix
+    outputBinding:
+      glob: $(inputs.matrix_out)
+  - id: plot_file
+    type:
+      - 'null'
+      - File
+    doc: Portable HTML plot
+    outputBinding:
+      glob: $(inputs.plot)
+  - id: session_file
+    type:
+      - 'null'
+      - File
+    doc: Saved clinker session (JSON)
+    outputBinding:
+      glob: $(inputs.session)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

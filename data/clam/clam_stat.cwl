@@ -9,12 +9,17 @@ inputs:
   - id: vcf
     type: File
     doc: Path to input VCF file (bgzipped and indexed)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
   - id: callable
     type:
       - 'null'
-      - File
+      - Directory
     doc: Path to callable sites zarr array (from clam loci)
     inputBinding:
       position: 102

@@ -1,5 +1,11 @@
 # chromatiblock CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chromatiblock | PASS |  |
+
 ## chromatiblock
 
 ### Tool Description

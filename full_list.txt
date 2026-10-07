@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 1956; PASS: 1475; Failed: 305; Not completed: 176
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 2249; PASS: 1709; Failed: 335; Not completed: 205
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -1956,3 +1956,296 @@ centreseq	centreseq_extract	PASS
 centreseq	centreseq_subset	PASS	
 centreseq	centreseq_tree	PASS	
 centrifuge	centrifuge_centrifuge-build	PASS	
+centrifuge-core	centrifuge-core_centrifuge	PASS	
+centrifuge-core	centrifuge-core_centrifuge-RemoveN.pl	PASS	
+centrifuge-core	centrifuge-core_centrifuge-build	PASS	
+centrifuge-core	centrifuge-core_centrifuge-download	PASS	
+centrifuge-core	centrifuge-core_centrifuge-kreport	PASS	
+centrifuger	centrifuger	PASS	
+centroid_rna_package	centroid_rna_package_centroid_alifold	PASS	
+centroid_rna_package	centroid_rna_package_centroid_fold	PASS	
+cerberus-x	cerberus-x_cerberus.py	Not completed	pipeline, skipped (multi-step Ray workflow that also needs multi-GB HMM databases)
+cesar	cesar	PASS	
+cesm	cesm_create_newcase	PASS	
+cfm	cfm_cfm-id	PASS	
+cfm	cfm_cfm-predict	PASS	
+cfm	cfm_fraggraph-gen	PASS	
+cgmlst-dists	cgmlst-dists	PASS	
+cgpbigwig	cgpbigwig_bwjoin	PASS	
+cgview	cgview	Failed	image problem: the image has no fonts, so Java stops with 'No fonts found' for PNG and SVG output on the bundled cybercell.xml example.
+chado-tools	chado-tools_admin_create	PASS	Tested against a PostgreSQL 11 server in Docker; the database was created.
+chado-tools	chado-tools_admin_drop	PASS	Tested against a PostgreSQL 11 server in Docker; the CWL answers the y/n prompt with a default file, and the database was dropped.
+chado-tools	chado-tools_admin_dump	PASS	Tested against a PostgreSQL 11 server in Docker; the archive (3.4 MB) was restored into a new database with all features.
+chado-tools	chado-tools_admin_grant	PASS	Tested against a PostgreSQL 11 server in Docker; the role got privileges on 240 tables.
+chado-tools	chado-tools_admin_restore	PASS	Tested against a PostgreSQL 11 server in Docker; the restored database holds the same organisms and 21 features.
+chado-tools	chado-tools_admin_revoke	PASS	Tested against a PostgreSQL 11 server in Docker; the role has no table privileges left.
+chado-tools	chado-tools_admin_setup	PASS	Tested against a PostgreSQL 11 server in Docker; the GMOD Chado 1.31 schema was downloaded and set up.
+chado-tools	chado-tools_delete_organism	Failed	tool bug: deleting an organism that has features stops with a NOT NULL error on feature.organism_id; an organism without features is deleted fine.
+chado-tools	chado-tools_execute_audit_backup	Not completed	Needs a database with the GeneDB audit schema (audit_backup.backup_proc), which the GMOD schema does not have.
+chado-tools	chado-tools_export_fasta	PASS	Tested against a PostgreSQL 11 server in Docker; the contig sequence matches the imported FASTA.
+chado-tools	chado-tools_export_gaf	PASS	Tested against a PostgreSQL 11 server in Docker; the exported GAF line matches the imported one.
+chado-tools	chado-tools_export_gff	PASS	Tested against a PostgreSQL 11 server in Docker; the GFF3 and FASTA output match the features stored in the database.
+chado-tools	chado-tools_extract_annotation_updates	Not completed	No GeneDB annotation history is in the test database, so the output was only a header and could not be checked.
+chado-tools	chado-tools_extract_curator_comments	Not completed	No curator comments are in the test database, so the output was an empty list and could not be checked.
+chado-tools	chado-tools_extract_cvterms	PASS	Tested against a PostgreSQL 11 server in Docker; the 2 terms of the imported test ontology were listed.
+chado-tools	chado-tools_extract_gene_products	Not completed	The GFF3 test data has no products in the GeneDB format, so the output was only a header and could not be checked.
+chado-tools	chado-tools_extract_organisms	PASS	Tested against a PostgreSQL 11 server in Docker; both inserted organisms were listed.
+chado-tools	chado-tools_import_essentials	PASS	Tested against a PostgreSQL 11 server in Docker; the basic CV terms were loaded.
+chado-tools	chado-tools_import_fasta	PASS	Tested against a PostgreSQL 11 server in Docker; the repo test FASTA contig was loaded and exported back unchanged.
+chado-tools	chado-tools_import_gaf	PASS	Tested against a PostgreSQL 11 server in Docker; synthetic data: one GAF line for a real gene from the repo GFF3 was loaded and exported back unchanged.
+chado-tools	chado-tools_import_gff	Failed	tool bug: on the repo test GFF3, CDS lines listed before their mRNA lose their Parent link (8 of 12 part_of links stored); a parent-first GFF3 loads all 12.
+chado-tools	chado-tools_import_ontology	PASS	Tested against a PostgreSQL 11 server in Docker; the repo test OBO gave 2 terms, and SOFA 3.1 (with a default-namespace header line added) gave 300 terms; a part_of relationship term was added by SQL first.
+chado-tools	chado-tools_insert_organism	PASS	Tested against a PostgreSQL 11 server in Docker; the organism and its taxon ID were listed back by extract organisms.
+chado-tools	chado-tools_query	PASS	Tested against a PostgreSQL 11 server in Docker; feature counts (4 gene, 4 mRNA, 8 CDS, 4 polypeptide, 1 region) match the GFF3.
+chain2paf	chain2paf	PASS	
+chamois	chamois_annotate	PASS	Repo test BGC0000703 (kanamycin cluster) gave a feature table in HDF5.
+chamois	chamois_compare	Not completed	The command needs the ClassyFire web service to classify query compounds, and the server was down.
+chamois	chamois_cv	PASS	3-fold random cross-validation on the native dataset gave AUROC 0.81 and a best model.
+chamois	chamois_cvi	PASS	3-fold group cross-validation on the native dataset gave AUROC 0.82; sampling random stops with a tool error (groups is None).
+chamois	chamois_explain_class	PASS	Aminoglycosides class gave a domain weight table led by the DegT aminotransferase domain.
+chamois	chamois_explain_cluster	PASS	Repo test BGC0000703 gave a gene contribution table per predicted class.
+chamois	chamois_explain_feature	PASS	PF01041.24 gave a class weight table that includes Aminoglycosides.
+chamois	chamois_predict	PASS	Repo test BGC0000703 gave aminoglycoside classes, as in the README.
+chamois	chamois_render	PASS	The predict output renders the README class tree (Aminoglycosides 0.918).
+chamois	chamois_search	PASS	BGC0000703 against the MIBiG 3.1 class catalog ranks kanamycin first.
+chamois	chamois_train	PASS	The repo native dataset (70 BGCs) trained a model with training AUROC 0.96.
+chamois	chamois_validate	PASS	The trained model on the native dataset gave metrics and a per-class report.
+changeo	changeo_DefineClones.py	PASS	
+changeo	changeo_ParseDb.py	PASS	
+chap	chap	PASS	
+checkatlas	checkatlas	PASS	
+checkm2	checkm2_database	Not completed	Needs a download of the CheckM2 DIAMOND database (about 3 GB); a --current run built the right command and reported no database installed.
+checkm2	checkm2_predict	Not completed	Needs the CheckM2 DIAMOND database (about 3 GB), which is too large to download for this test.
+checkm2	checkm2_testrun	Not completed	The self-test needs the CheckM2 DIAMOND database (about 3 GB), which is too large to download for this test.
+checkm-genome	checkm-genome_checkm analyze	PASS	
+checkm-genome	checkm-genome_checkm lineage_wf	PASS	
+checkm-genome	checkm-genome_checkm qa	PASS	
+checkm-genome	checkm-genome_checkm ssu_finder	PASS	
+checkm-genome	checkm-genome_checkm taxonomy_wf	PASS	
+checkm-genome	checkm-genome_coding_plot	PASS	
+checkm-genome	checkm-genome_coverage	Failed	tool bug: CheckM 1.2.4 imports pysam only inside run(), so the BAM worker crashes with NameError: name 'pysam' is not defined.
+checkm-genome	checkm-genome_dist_plot	PASS	
+checkm-genome	checkm-genome_gc_bias_plot	Failed	tool bug: CheckM 1.2.4 coverage windows code crashes with NameError: name 'pysam' is not defined when reading the BAM.
+checkm-genome	checkm-genome_gc_plot	PASS	
+checkm-genome	checkm-genome_len_hist	PASS	
+checkm-genome	checkm-genome_lineage_set	PASS	
+checkm-genome	checkm-genome_marker_plot	PASS	
+checkm-genome	checkm-genome_merge	PASS	
+checkm-genome	checkm-genome_modify	PASS	
+checkm-genome	checkm-genome_nx_plot	PASS	
+checkm-genome	checkm-genome_outliers	PASS	
+checkm-genome	checkm-genome_profile	PASS	
+checkm-genome	checkm-genome_taxon_list	PASS	
+checkm-genome	checkm-genome_taxon_set	PASS	
+checkm-genome	checkm-genome_tetra	PASS	
+checkm-genome	checkm-genome_tetra_plot	PASS	
+checkm-genome	checkm-genome_tree	PASS	
+checkm-genome	checkm-genome_tree_qa	PASS	
+checkm-genome	checkm-genome_unbinned	PASS	
+checkm-genome	checkm-genome_unique	PASS	
+checkqc	checkqc	Failed	image problem: the checkqc 4.0.7 image lacks the Illumina InterOp Python module, so it crashes with No module named 'interop' on a real run folder.
+check-sort-order	check-sort-order	PASS	
+checkv	checkv_complete_genomes	PASS	
+checkv	checkv_completeness	PASS	
+checkv	checkv_contamination	PASS	
+checkv	checkv_download_database	Not completed	Downloads the full CheckV database (several GB), which is too large for this test; the other CheckV tools were tested with the nf-core minimal database.
+checkv	checkv_end_to_end	PASS	
+checkv	checkv_quality_summary	PASS	
+checkv	checkv_update_database	Failed	tool bug: update_database re-appends every genome of the database to checkv_reps.tsv (duplicate rows, old genbank types reset to circular), not only the new genomes.
+chemfp	chemfp_fpcat	PASS	
+chemfp	chemfp_ob2fps	PASS	
+chemfp	chemfp_rdkit2fps	PASS	
+chemfp	chemfp_sdf2fps	PASS	
+chemfp	chemfp_simsearch	PASS	
+cherri	cherri_eval	PASS	
+cherri	cherri_train	PASS	
+chewbbaca	chewbbaca_AlleleCall	PASS	
+chewbbaca	chewbbaca_AlleleCallEvaluator	PASS	
+chewbbaca	chewbbaca_ComputeMSA	PASS	
+chewbbaca	chewbbaca_CreateSchema	PASS	
+chewbbaca	chewbbaca_DownloadSchema	PASS	
+chewbbaca	chewbbaca_ExtractCgMLST	PASS	
+chewbbaca	chewbbaca_GetAlleles	PASS	
+chewbbaca	chewbbaca_JoinProfiles	PASS	
+chewbbaca	chewbbaca_LoadSchema	Not completed	Uploading a schema needs a Chewie-NS account with upload rights, so it was not run.
+chewbbaca	chewbbaca_NSStats	PASS	
+chewbbaca	chewbbaca_PrepExternalSchema	PASS	
+chewbbaca	chewbbaca_RemoveGenes	PASS	
+chewbbaca	chewbbaca_SchemaEvaluator	PASS	
+chewbbaca	chewbbaca_SyncSchema	Not completed	The only downloadable test schema has no remote updates, so the tool stops with exit 1 and 'Local schema is up-to-date'; nothing to sync.
+chewbbaca	chewbbaca_UniprotFinder	PASS	
+chewiesnake	chewiesnake	Not completed	pipeline, skipped: chewiesnake runs a whole Snakemake cgMLST workflow (assembly, allele calling, clustering).
+chexmix	chexmix	Failed	image problem: Java in the image has no font configuration, so ChExMix crashes (NullPointerException in FontConfiguration) when it plots read distributions in post-processing.
+chimeraslayer	chimeraslayer	PASS	
+chip-r	chip-r_ChIP-R	PASS	
+chip-r	chip-r_chipr	PASS	
+chips	chips_learn	PASS	
+chips	chips_simreads	PASS	
+chipseq-greylist	chipseq-greylist	PASS	
+chira	chira_collapse	PASS	
+chira	chira_extract	PASS	
+chira	chira_map	PASS	
+chira	chira_merge	PASS	
+chira	chira_quantify	PASS	
+chisel	chisel	Not completed	No usable test data: CHISEL needs a barcoded single-cell BAM, a matched-normal BAM, a full reference genome and phased SNPs, and its demo data is several GB.
+chopin2	chopin2	PASS	
+chopper	chopper	PASS	
+chromap	chromap	PASS	
+chromatiblock	chromatiblock	PASS	
+chromeister	chromeister_detect_events.py	PASS	
+chromograph	chromograph	PASS	
+chromosight	chromosight_detect	PASS	
+chromosight	chromosight_generate-config	PASS	
+chromosight	chromosight_list-kernels	PASS	
+chromosight	chromosight_quantify	PASS	
+chromosight	chromosight_test	PASS	
+chromosomer	chromosomer_agp2map	PASS	
+chromosomer	chromosomer_assemble	PASS	
+chromosomer	chromosomer_fastalength	PASS	
+chromosomer	chromosomer_fragmentmap	PASS	
+chromosomer	chromosomer_fragmentmapbed	PASS	
+chromosomer	chromosomer_fragmentmapstat	PASS	
+chromosomer	chromosomer_simulator	PASS	
+chromosomer	chromosomer_transfer	PASS	
+chromsize	chromsize	PASS	
+chronumental	chronumental	PASS	
+chunked-scatter	chunked-scatter	PASS	
+cif2cell	cif2cell	PASS	
+ci-proxy	ci-proxy	Not completed	The image runs a long-lived gunicorn web server for the BioContainers CI webhook proxy (needs Jenkins and GitHub access), so there is no batch job or data to test.
+circlator	circlator_all	PASS	
+circlator	circlator_assemble	PASS	
+circlator	circlator_bam2reads	PASS	
+circlator	circlator_clean	PASS	
+circlator	circlator_fixstart	PASS	
+circlator	circlator_get_dnaa	Failed	image problem: wget is not in the image, so the UniProt download fails.
+circlator	circlator_mapreads	PASS	
+circlator	circlator_merge	PASS	
+circlator	circlator_minimus2	Failed	image problem: toAmos and the other AMOS minimus2 programs are not in the image.
+circlator	circlator_test	PASS	
+circle-map-cpp	circle-map-cpp_ReadExtractor	PASS	
+circle-map-cpp	circle-map-cpp_Realign	Failed	image problem: the megadepth program that Realign calls (/usr/local/bin/thirdparty/megadepth) is not in the image, so no circles are written.
+circminer	circminer	Not completed	After fixing the index staging, it ran on nf-core human RNA-seq test reads but reported 0 circRNAs, and the nf-core C. elegans circRNA set crashes its GTF loader, so detection could not be confirmed.
+circos	circos	PASS	
+circtools	circtools_circtest	Failed	image problem: the R package CircTest that the circtest wrapper loads is not in the image.
+circtools	circtools_conservation	Not completed	Needs network access to the Ensembl REST service and a human, mouse, rat, pig or dog genome with annotation; no small test set fits.
+circtools	circtools_detect	PASS	
+circtools	circtools_enrich	Not completed	No real RBP CLIP peak BED for the test genome; a trial with exon intervals crashed with KeyError feature_length in the default gene mode.
+circtools	circtools_exon	Not completed	Needs ballgown data, CircTest results and multi-sample detect output; no such real test set was found.
+circtools	circtools_nanopore	Failed	image problem: NanoFilt and samtools are not in the image (circtools nanopore --check reports them missing).
+circtools	circtools_padlock	Failed	image problem: the Python module primer3 is not in the image.
+circtools	circtools_primex	Failed	image problem: the R package primex is not in the image, so the HTML report is empty.
+circtools	circtools_quickcheck	Not completed	Needs per-sample STAR mapping folders plus circtools detect output for several samples; no such real test set was found.
+circtools	circtools_reconstruct	Not completed	Needs a STAR BAM with chimeric reads and a matching exon BED; no such small real test set was found.
+circtools	circtools_sirna	Failed	image problem: the image's Biopython no longer accepts SeqFeature(strand=...), so sirna crashes while drawing.
+circulocov	circulocov	PASS	
+ciri-full	ciri-full_CIRI	PASS	
+ciri-full	ciri-full_CIRI-AS	PASS	
+ciri-full	ciri-full_Merge	PASS	
+ciri-full	ciri-full_RO1	PASS	
+ciri-full	ciri-full_RO2	PASS	
+cirtap	cirtap_best	Not completed	Needs a PATRIC mirror with RELEASE_NOTES genome summaries and the ete3 NCBI taxonomy database (taxa.sqlite); no small test set exists.
+cirtap	cirtap_collect	PASS	
+cirtap	cirtap_index	PASS	
+cirtap	cirtap_mirror	Not completed	Mirrors the whole PATRIC FTP site, which is far too large for a test, and the FTP server refused access from this machine.
+cirtap	cirtap_pack	PASS	
+cistrome-ceas	cistrome-ceas_ceas	PASS	
+cite-seq-count	cite-seq-count_CITE-seq-Count	Failed	image problem: pandas 2.2.2 in the image rejects the set of uncorrected cells (ValueError: columns cannot be a set), so every run crashes before writing counts.
+cladeomatic	cladeomatic_benchmark	PASS	
+cladeomatic	cladeomatic_create	Failed	image problem: cladeomatic create cannot import NodeStyle from the ete3 in the image (needs the ete3 tree-drawing extras), so it crashes before reading inputs.
+cladeomatic	cladeomatic_genotype	PASS	
+cladeomatic	cladeomatic_namer	Failed	tool bug: namer calls parse_metadata() with an unknown keyword 'colum', so every run crashes with a TypeError.
+clair	clair_Bin2To3	Failed	tool bug: import mode stops before printing the last batch of 10000 tensors, so a 19-tensor bin prints nothing and a 12243-tensor bin prints only 10000 (export mode works).
+clair	clair_CombineBins	PASS	
+clair	clair_CreateTensor	PASS	
+clair	clair_ExtractVariantCandidates	PASS	
+clair	clair_GetTruth	PASS	
+clair	clair_PairWithNonVariants	PASS	
+clair	clair_Tensor2Bin	PASS	
+clair	clair_callVarBam	PASS	
+clair	clair_callVarBamParallel	PASS	
+clair	clair_call_var	PASS	
+clair	clair_ensemble	PASS	
+clair	clair_evaluate	PASS	
+clair	clair_overlap_variant	PASS	
+clair	clair_plot_tensor	PASS	
+clair	clair_train	PASS	
+clair	clair_train_clr	PASS	
+clair3	clair3_run_clair3.sh	PASS	
+clair3-trio	clair3-trio_run_clair3_trio.sh	Failed	image problem: the image's busybox gzip cannot read plain files with 'gzip -fdc', so the trio step gets no candidate regions and writes empty VCFs (pileup step runs, 25907 records for HG002).
+clairvoyante	clairvoyante_ExtractVariantCandidates.py	Failed	image problem: samtools is not in the image, so the script fails when it runs samtools faidx (and clairvoyante.py cannot import dataPrepScripts at all).
+clairvoyante	clairvoyante_callVar.py	PASS	
+clam	clam_collect	PASS	
+clam	clam_loci	PASS	
+clam	clam_stat	PASS	
+clame	clame	PASS	
+cleanifier	cleanifier_download	Not completed	needs network access and downloads the 6.8 GB (probabilistic) or 13.9 GB (exact) human index from Zenodo, too large for this test.
+cleanifier	cleanifier_filter	PASS	
+cleanifier	cleanifier_index	PASS	
+cleanifier	cleanifier_info	Failed	tool bug: cleanifier info imports its module as '..fastcash_info' relative to the cleanifier package, so every run stops with 'attempted relative import beyond top-level package'.
+clearcnv	clearcnv_annotations	PASS	
+clearcnv	clearcnv_cnv_calling	PASS	
+clearcnv	clearcnv_coverage	PASS	
+clearcnv	clearcnv_matchscores	PASS	
+clearcnv	clearcnv_merge_bed	PASS	
+clearcnv	clearcnv_merge_coverages	PASS	
+clearcnv	clearcnv_prepare_reassignment	PASS	
+clearcnv	clearcnv_visualize	PASS	
+clearcut	clearcut	PASS	
+cleaverna	cleaverna	PASS	
+clermontyping	clermontyping_clermonTyping.sh	PASS	
+clever-toolkit	clever-toolkit_clever	Failed	image problem: clever runs its workflow through make, but make is not in the image, so it stops before any analysis.
+cligv	cligv	Not completed	Interactive terminal viewer: in batch it prints one screen of the region and exits at end of input, so there is no batch result to check.
+clincnv	clincnv_clinCNV.R	Failed	image problem: cytobands.txt and cytobandsHG38.txt are missing from the script folder, so clinCNV.R stops with cannot open the connection in getCytobands.
+clinker	clinker	Not completed	pipeline, skipped: clinker runs the Clinker bpipe fusion pipeline, which also needs large genome and transcriptome references.
+clinker-py	clinker-py_clinker	PASS	
+clinod	clinod	PASS	
+clinvar-this	clinvar-this_data_acmg_class_by_freq	PASS	
+clinvar-this	clinvar-this_data_extract_vars	PASS	
+clinvar-this	clinvar-this_data_gene_phenotype_links	PASS	
+clinvar-this	clinvar-this_data_gene_variant_report	PASS	
+clinvar-this	clinvar-this_data_xml_to_jsonl	PASS	
+clinvar-tsv	clinvar-tsv_clinvar_tsv main	Not completed	pipeline, skipped: main runs the full Snakemake pipeline, which downloads the whole ClinVar release and needs GRCh37 and GRCh38 genomes.
+clinvar-tsv	clinvar-tsv_clinvar_tsv parse_xml	PASS	
+clinvar-tsv	clinvar-tsv_merge_tsvs	PASS	
+clinvar-tsv	clinvar-tsv_normalize_tsv	PASS	
+clipcontext	clipcontext_eir	PASS	
+clipcontext	clipcontext_exb	PASS	
+clipcontext	clipcontext_g2t	PASS	
+clipcontext	clipcontext_int	PASS	
+clipcontext	clipcontext_lst	PASS	
+clipcontext	clipcontext_mtf	PASS	
+clipcontext	clipcontext_t2g	PASS	
+clipkit	clipkit	PASS	
+clippy	clippy	PASS	
+cliquesnv	cliquesnv	PASS	
+cloci	cloci	Not completed	Rewrote the invented CWL from the help; a run needs a MycotoolsDB or a set of many annotated fungal genomes built into one with network taxonomy lookups, too heavy for a minimal test.
+clonalframeml	clonalframeml	PASS	
+clonalorigin	clonalorigin	PASS	
+cloudspades	cloudspades_spades.py	PASS	
+clove	clove	PASS	
+clsify	clsify_cli	Failed	tool bug: the run writes the XLSX report, but version 0.1.1 assigns the wrong haplotype to known reference sequences (KY777461, haplotype E, called A; HQ454302, haplotype D, called C).
+clsify	clsify_web	Not completed	Starts a long-running web server; it cannot run as a batch job.
+clust	clust	PASS	
+clustalo	clustalo	PASS	
+clustal-omega	clustal-omega_clustalo	PASS	
+clustalw	clustalw	PASS	
+clusterfunk	clusterfunk_ancestral_reconstruction	PASS	
+clusterfunk	clusterfunk_annotate_tips	PASS	
+clusterfunk	clusterfunk_annotate_tips_from_nodes	Failed	tool bug: clusterfunk 0.0.2 recurses on the same node (TraversalAction.run calls run(node), not run(child)) and stops with RecursionError on any annotated tree.
+clusterfunk	clusterfunk_extract_tip_annotations	PASS	
+clusterfunk	clusterfunk_get_taxa	PASS	
+clusterfunk	clusterfunk_graft	Failed	tool bug: clusterfunk 0.0.2 reads options.scions while the parser stores --scion, so every graft run stops with AttributeError.
+clusterfunk	clusterfunk_label_transitions	PASS	
+clusterfunk	clusterfunk_phylotype	PASS	
+clusterfunk	clusterfunk_prune	PASS	
+clusterone	clusterone	PASS	
+cluster-picker	cluster-picker	PASS	
+clusty	clusty	PASS	
+cmaple	cmaple	PASS	
+cmappy	cmappy_python -m cmapPy.pandasGEXpress.gct2gctx	Failed	image problem: cmapPy 4.0.1 calls numpy.string_, which NumPy 2.0.2 in the image removed, so writing the .gctx file crashes.
+cmash	cmash_MakeDNADatabase.py	PASS	
+cmash	cmash_MakeStreamingDNADatabase.py	PASS	
+cmash	cmash_QueryDNADatabase.py	Failed	image problem: the khmer version in the image lacks Nodegraph.consume_seqfile_with_reads_parser and khmer.load_nodegraph, so the query crashes.
+cmash	cmash_StreamingQueryDNADatabase.py	PASS	
+cmfinder	cmfinder	PASS	
+cmip	cmip	PASS	

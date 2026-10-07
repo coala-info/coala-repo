@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cladeomatic
+baseCommand:
+  - cladeomatic
+  - namer
 label: cladeomatic_namer
 doc: "Clade-O-Matic: Genotyping scheme genotype namer v. 0.1.1\n\nTool homepage: https://github.com/phac-nml/cladeomatic"
 inputs:

@@ -21,7 +21,7 @@ inputs:
   - id: dump
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory where to save matrix dumps during processing and detection. 
       Each dump is saved as a compressed npz of a sparse matrix and can be 
       loaded using scipy.sparse.load_npz.
@@ -222,6 +222,13 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+  - id: dump_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the matrix dumps (when dump is given)
+    outputBinding:
+      glob: $(inputs.dump)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chromosight:1.6.3--pyhdfd78af_0

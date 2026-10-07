@@ -1,5 +1,15 @@
 # centrifuge-core CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| centrifuge-core_centrifuge | PASS |  |
+| centrifuge-core_centrifuge-RemoveN.pl | PASS |  |
+| centrifuge-core_centrifuge-build | PASS |  |
+| centrifuge-core_centrifuge-download | PASS |  |
+| centrifuge-core_centrifuge-kreport | PASS |  |
+
 ## centrifuge-core_centrifuge-build
 
 ### Tool Description

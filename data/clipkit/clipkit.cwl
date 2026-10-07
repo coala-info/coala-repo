@@ -136,6 +136,7 @@ inputs:
       - 'null'
       - string
     doc: output file name
+    default: output.clipkit
     inputBinding:
       position: 103
       prefix: --output
@@ -155,6 +156,20 @@ outputs:
     doc: output file name
     outputBinding:
       glob: $(inputs.output_file_name_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: log file written with --log
+    outputBinding:
+      glob: $(inputs.output_file_name_path).log
+  - id: complement_file
+    type:
+      - 'null'
+      - File
+    doc: complementary alignment written with --complementary
+    outputBinding:
+      glob: $(inputs.output_file_name_path).complement
   - id: report_json
     type:
       - 'null'

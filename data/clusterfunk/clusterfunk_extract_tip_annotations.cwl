@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - clusterfunk
-  - extract_annotations
+  - extract_tip_annotations
 label: clusterfunk_extract_tip_annotations
 doc: "Extract tip annotations from a phylogenetic tree file into a CSV.\n\nTool homepage:
   https://github.com/cov-ert/clusterfunk"

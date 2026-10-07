@@ -1,5 +1,11 @@
 # cleaverna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cleaverna | PASS |  |
+
 ## cleaverna
 
 ### Tool Description

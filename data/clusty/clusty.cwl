@@ -9,6 +9,11 @@ inputs:
     doc: input TSV/CSV table with pairwise distances
     inputBinding:
       position: 1
+  - id: assignments
+    type: string
+    doc: output TSV/CSV table with assignments
+    inputBinding:
+      position: 2
   - id: algo
     type:
       - 'null'
@@ -134,7 +139,7 @@ outputs:
     type: File
     doc: output TSV/CSV table with assignments
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.assignments)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clusty:1.2.2--h9ee0642_0

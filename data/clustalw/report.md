@@ -1,5 +1,11 @@
 # clustalw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clustalw | PASS |  |
+
 ## clustalw
 
 ### Tool Description

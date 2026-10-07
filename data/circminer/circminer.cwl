@@ -3,6 +3,12 @@ class: CommandLineTool
 baseCommand: circminer
 label: circminer
 doc: "CircRNA detection and analysis tool\n\nTool homepage: https://github.com/vpc-ccg/circminer"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 inputs:
   - id: band_width
     type:
@@ -113,8 +119,15 @@ inputs:
   - id: reference
     type: File
     secondaryFiles:
-      - .fai
-    doc: Reference file.
+      - pattern: .packed.fa
+        required: false
+      - pattern: .packed.fa.index
+        required: false
+      - pattern: .packed.fa.index.info
+        required: false
+    doc: Reference file. The indexing stage writes the index beside it; the mapping
+      stage needs that index (.packed.fa, .packed.fa.index, .packed.fa.index.info)
+      beside it.
     inputBinding:
       position: 101
       prefix: --reference
@@ -192,9 +205,16 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Files written with the prefix given in output_prefix (default output)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $((inputs.output_prefix || 'output') + '*')
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Genome index files written by the indexing stage
+    outputBinding:
+      glob: $(inputs.reference.basename).packed.fa*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/circminer:0.4.2--h5ca1c30_6

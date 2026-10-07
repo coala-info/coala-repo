@@ -1,5 +1,11 @@
 # checkqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| checkqc | Failed | image problem: the checkqc 4.0.7 image lacks the Illumina InterOp Python module, so it crashes with No module named 'interop' on a real run folder. |
+
 ## checkqc
 
 ### Tool Description

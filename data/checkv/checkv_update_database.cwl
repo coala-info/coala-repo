@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: dest_db
-    type: Directory
+    type: string
     doc: Path to updated CheckV database.
     inputBinding:
       position: 2
@@ -50,6 +50,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dest_db_dir
+    type: Directory
+    doc: Updated CheckV database.
+    outputBinding:
+      glob: $(inputs.dest_db)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkv:1.0.3--pyhdfd78af_0

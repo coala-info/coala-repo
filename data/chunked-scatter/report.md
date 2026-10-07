@@ -1,5 +1,11 @@
 # chunked-scatter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chunked-scatter | PASS |  |
+
 ## chunked-scatter
 
 ### Tool Description

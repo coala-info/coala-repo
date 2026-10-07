@@ -114,8 +114,10 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: The output file
+    type:
+      - File
+      - Directory
+    doc: The output file (or directory when --trait is used)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

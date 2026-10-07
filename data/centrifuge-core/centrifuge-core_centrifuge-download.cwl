@@ -10,7 +10,7 @@ inputs:
       for genomic sequences, - contaminants gets contaminant sequences from UniVec
       and EmVec, - taxonomy for taxonomy mappings.'
     inputBinding:
-      position: 1
+      position: 200
   - id: assembly_level
     type:
       - 'null'
@@ -73,7 +73,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Folder to which the files are downloaded.
     inputBinding:
       position: 102
@@ -114,6 +114,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: downloaded_files
+    type: Directory
+    doc: Folder with the downloaded files
+    outputBinding:
+      glob: "$(inputs.output_directory ? inputs.output_directory : '.')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centrifuge-core:1.0.4.2--h5ca1c30_2

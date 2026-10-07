@@ -32,7 +32,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Write logging information in this file
     inputBinding:
       position: 102
@@ -51,6 +51,13 @@ outputs:
     doc: The files to write all the info in
     outputBinding:
       glob: '$(inputs.output_index)'
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Logging information file
+    outputBinding:
+      glob: $(inputs.logfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cirtap:0.3.1--pyh5e36f6f_0

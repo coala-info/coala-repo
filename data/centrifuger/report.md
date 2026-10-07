@@ -1,5 +1,11 @@
 # centrifuger CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| centrifuger | PASS |  |
+
 ## centrifuger
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # chexmix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chexmix | Failed | image problem: Java in the image has no font configuration, so ChExMix crashes (NullPointerException in FontConfiguration) when it plots read distributions in post-processing. |
+
 ## chexmix
 
 ### Tool Description

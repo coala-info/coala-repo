@@ -23,9 +23,11 @@ inputs:
   - id: search_folder
     type: Directory
     doc: 'Required argument: Your folder containing Scanpy, CellRanger and Seurat
-      atlasesv'
+      atlases. It must hold checkatlas_files/List_scanpy.csv (or List_cellranger.csv,
+      List_seurat.csv) listing the atlases; results are written into checkatlas_files/.'
     inputBinding:
       position: 3
+      valueFrom: $(self.basename)
   - id: debug
     type:
       - 'null'
@@ -101,6 +103,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: checkatlas_files
+    type: Directory
+    doc: The checkatlas_files folder with the tables and figures written by this
+      process (summary, adata, qc, violin, umap, tsne, cluster, annotation, dimred).
+    outputBinding:
+      glob: $(inputs.search_folder.basename)/checkatlas_files
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.search_folder)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkatlas:0.7.1--pyhdfd78af_0

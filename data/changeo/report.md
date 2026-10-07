@@ -1,5 +1,12 @@
 # changeo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| changeo_DefineClones.py | PASS |  |
+| changeo_ParseDb.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

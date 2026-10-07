@@ -1,5 +1,11 @@
 # cistrome-ceas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cistrome-ceas_ceas | PASS |  |
+
 ## cistrome-ceas_ceas
 
 ### Tool Description

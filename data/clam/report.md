@@ -1,5 +1,13 @@
 # clam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clam_collect | PASS |  |
+| clam_loci | PASS |  |
+| clam_stat | PASS |  |
+
 ## clam_loci
 
 ### Tool Description

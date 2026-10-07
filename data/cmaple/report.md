@@ -1,5 +1,11 @@
 # cmaple CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cmaple | PASS |  |
+
 ## cmaple
 
 ### Tool Description

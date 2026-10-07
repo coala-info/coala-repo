@@ -1,39 +1,13 @@
 # clinvar-tsv CWL Generation Report
 
-## clinvar-tsv_clinvar_tsv
+## Real Data Test
 
-### Tool Description
-A tool for processing ClinVar data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clinvar-tsv:0.6.3--pyhdfd78af_0
-- **Homepage**: https://github.com/bihealth/clinvar-tsv
-- **Package**: https://anaconda.org/channels/bioconda/packages/clinvar-tsv/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/clinvar-tsv/overview
-- **Total Downloads**: 18.5K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/bihealth/clinvar-tsv
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: clinvar-tsv [-h] [--version]
-                   {inspect,main,parse_xml,normalize_tsv,merge_tsvs} ...
-
-positional arguments:
-  {inspect,main,parse_xml,normalize_tsv,merge_tsvs}
-    inspect             Show files to be created
-    main                Run the full process pipeline
-    parse_xml           Parse the Clinvar XML
-    normalize_tsv       Parse the Clinvar XML
-    merge_tsvs          Merge TSV file (result: one per VCV)
-
-options:
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| clinvar-tsv_clinvar_tsv main | Not completed | pipeline, skipped: main runs the full Snakemake pipeline, which downloads the whole ClinVar release and needs GRCh37 and GRCh38 genomes. |
+| clinvar-tsv_clinvar_tsv parse_xml | PASS |  |
+| clinvar-tsv_merge_tsvs | PASS |  |
+| clinvar-tsv_normalize_tsv | PASS |  |
 
 ## clinvar-tsv_clinvar_tsv main
 
@@ -99,6 +73,70 @@ options:
   --max-rcvs MAX_RCVS   Maximal number of RCV records to process.
 ```
 
+
+## clinvar-tsv_normalize_tsv
+
+### Tool Description
+Normalize variants of a parsed ClinVar TSV file against a reference FASTA (the help says: Parse the Clinvar XML)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/clinvar-tsv:0.6.3--pyhdfd78af_0
+- **Homepage**: https://github.com/bihealth/clinvar-tsv
+- **Package**: https://anaconda.org/channels/bioconda/packages/clinvar-tsv/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/clinvar-tsv/overview
+- **Total Downloads**: 18.5K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/bihealth/clinvar-tsv
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: clinvar-tsv normalize_tsv [-h] --reference REFERENCE --input-tsv
+                                 INPUT_TSV --output-tsv OUTPUT_TSV
+
+options:
+  -h, --help            show this help message and exit
+  --reference REFERENCE
+                        Path to reference FASTA file
+  --input-tsv INPUT_TSV
+                        Path to input TSV file.
+  --output-tsv OUTPUT_TSV
+                        Path to output TSV file.
+```
+
+## clinvar-tsv_merge_tsvs
+
+### Tool Description
+Merge TSV file (result: one per VCV)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/clinvar-tsv:0.6.3--pyhdfd78af_0
+- **Homepage**: https://github.com/bihealth/clinvar-tsv
+- **Package**: https://anaconda.org/channels/bioconda/packages/clinvar-tsv/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/clinvar-tsv/overview
+- **Total Downloads**: 18.5K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/bihealth/clinvar-tsv
+- **Stars**: N/A
+
+### Original Help Text
+```text
+usage: clinvar-tsv merge_tsvs [-h] --input-tsv INPUT_TSV --output-tsv
+                              OUTPUT_TSV --clinvar-version CLINVAR_VERSION
+
+options:
+  -h, --help            show this help message and exit
+  --input-tsv INPUT_TSV
+                        Path to input TSV file.
+  --output-tsv OUTPUT_TSV
+                        Path to output TSV file.
+  --clinvar-version CLINVAR_VERSION
+                        String to put as clinvar version
+```
 
 ## Metadata
 - **Skill**: generated

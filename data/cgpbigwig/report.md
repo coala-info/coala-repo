@@ -1,5 +1,11 @@
 # cgpbigwig CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cgpbigwig_bwjoin | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

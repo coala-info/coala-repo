@@ -1,5 +1,11 @@
 # clusty CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clusty | PASS |  |
+
 ## clusty
 
 ### Tool Description

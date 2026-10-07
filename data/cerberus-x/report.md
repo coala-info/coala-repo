@@ -1,5 +1,11 @@
 # cerberus-x CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cerberus-x_cerberus.py | Not completed | pipeline, skipped (multi-step Ray workflow that also needs multi-GB HMM databases) |
+
 ## cerberus-x_cerberus.py
 
 ### Tool Description

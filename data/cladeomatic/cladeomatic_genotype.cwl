@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cladeomatic
+baseCommand:
+  - cladeomatic
+  - genotype
 label: cladeomatic_genotype
 doc: "Clade-O-Matic: Genotyping scheme development v. 0.1.1\n\nTool homepage: https://github.com/phac-nml/cladeomatic"
 inputs:
@@ -48,14 +50,14 @@ inputs:
       prefix: --sample_meta
   - id: outfile_path
     type: string
-    doc: 'Output Directory to put results (default: None)'
+    doc: 'Output file for the genotype calls (the help calls it "Output Directory to put results", but the tool writes one file)'
     inputBinding:
       position: 102
       prefix: --outfile
 outputs:
   - id: outfile
-    type: Directory
-    doc: Output Directory to put results
+    type: File
+    doc: Genotype call report (tab delimited)
     outputBinding:
       glob: $(inputs.outfile_path)
 requirements:

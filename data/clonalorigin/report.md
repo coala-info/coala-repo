@@ -1,5 +1,11 @@
 # clonalorigin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clonalorigin | PASS |  |
+
 ## clonalorigin
 
 ### Tool Description

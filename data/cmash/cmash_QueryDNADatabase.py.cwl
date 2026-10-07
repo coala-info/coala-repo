@@ -13,6 +13,9 @@ inputs:
   - id: training_data
     type: File
     doc: Training/reference data (HDF5 file created by MakeTrainingDatabase.py)
+    secondaryFiles:
+      - pattern: ^.intersect.Nodegraph
+        required: false
     inputBinding:
       position: 2
   - id: out_csv
@@ -94,6 +97,14 @@ outputs:
     doc: Output CSV file
     outputBinding:
       glob: '$(inputs.out_csv)'
+  - id: node_graph_out
+    type:
+      - 'null'
+      - File
+    doc: NodeGraph/bloom filter of the query k-mers, created beside the output 
+      CSV when node_graph is not given
+    outputBinding:
+      glob: $(inputs.in_file.basename).NodeGraph.K*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmash:0.5.2--pyh5e36f6f_0

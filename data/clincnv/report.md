@@ -1,5 +1,11 @@
 # clincnv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clincnv_clinCNV.R | Failed | image problem: cytobands.txt and cytobandsHG38.txt are missing from the script folder, so clinCNV.R stops with cannot open the connection in getCytobands. |
+
 ## clincnv_clinCNV.R
 
 ### Tool Description

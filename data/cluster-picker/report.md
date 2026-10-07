@@ -1,5 +1,11 @@
 # cluster-picker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cluster-picker | PASS |  |
+
 ## cluster-picker
 
 ### Tool Description

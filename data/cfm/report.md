@@ -1,5 +1,13 @@
 # cfm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cfm_cfm-id | PASS |  |
+| cfm_cfm-predict | PASS |  |
+| cfm_fraggraph-gen | PASS |  |
+
 ## cfm_fraggraph-gen
 
 ### Tool Description

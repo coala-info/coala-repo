@@ -1,5 +1,13 @@
 # checkm2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| checkm2_database | Not completed | Needs a download of the CheckM2 DIAMOND database (about 3 GB); a --current run built the right command and reported no database installed. |
+| checkm2_predict | Not completed | Needs the CheckM2 DIAMOND database (about 3 GB), which is too large to download for this test. |
+| checkm2_testrun | Not completed | The self-test needs the CheckM2 DIAMOND database (about 3 GB), which is too large to download for this test. |
+
 ## checkm2_predict
 
 ### Tool Description
@@ -67,25 +75,6 @@ additional arguments:
 ```
 
 
-## checkm2_directory
-
-### Tool Description
-checkm2: error: argument subparser_name: invalid choice: 'directory' (choose from predict, testrun, database)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/checkm2:1.1.0--pyh7e72e81_1
-- **Homepage**: https://github.com/chklovski/CheckM2
-- **Package**: https://anaconda.org/channels/bioconda/packages/checkm2/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: checkm2 [-h] [--debug] [--version] [--quiet] [--lowmem]
-               {predict,testrun,database} ...
-checkm2: error: argument subparser_name: invalid choice: 'directory' (choose from predict, testrun, database)
-```
-
-
 ## checkm2_testrun
 
 ### Tool Description
@@ -116,6 +105,51 @@ options:
                         number of CPUS to use [default: 1]
   --database_path DATABASE_PATH
                         Provide a location for the CheckM2 database for a given predict run [default: use either internal path set via <checkm2 database> or CHECKM2DB environmental variable]
+```
+
+
+## checkm2_database
+
+### Tool Description
+Download/set up required diamond database for CheckM2.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/checkm2:1.1.0--pyh7e72e81_1
+- **Homepage**: https://github.com/chklovski/CheckM2
+- **Package**: https://anaconda.org/channels/bioconda/packages/checkm2/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/checkm2/overview
+- **Total Downloads**: 14.5K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/chklovski/CheckM2
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: checkm2 database [-h] [--debug] [--version] [--quiet] [--lowmem]
+                        (--download | --setdblocation SETDBLOCATION | --current)
+                        [--path PATH] [--no_write_json_db]
+
+Download/set up required diamond database for CheckM2. Example usage: 
+
+ 	checkm2 database --download (downloads database into /home/user/databases)
+ 	checkm2 database --download --path /path/to/custom_location  (downloads database into specified folder)
+ 	checkm2 database --setdblocation /path/to/downloaded_database_file (uses specified database file as DB) 
+
+ Alternatively, add an existing DIAMOND DB file to path: "export CHECKM2DB=/path/to/database/database.dmnd"
+
+options:
+  -h, --help            show this help message and exit
+  --debug               output debug information
+  --version             output version information and quit
+  --quiet               only output errors
+  --lowmem              Low memory mode. Reduces DIAMOND blocksize to significantly reduce RAM usage at the expense of longer runtime
+  --download            Download DIAMOND database. By default installs into [/root/databases]
+  --setdblocation SETDBLOCATION
+                        Point CheckM2 to the DIAMOND database location if already downloaded.
+  --current             Print where current database is installed.
+  --path PATH           Custom path for downloading and installing database file.
+  --no_write_json_db    Do NOT attempt to write database path to internal JSON file [useful if install directory is not writable]
 ```
 
 

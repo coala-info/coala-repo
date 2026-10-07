@@ -8,12 +8,14 @@ doc: "Identify marker genes in bins and calculate genome statistics.\n\nTool hom
   https://github.com/Ecogenomics/CheckM"
 inputs:
   - id: marker_file
-    type: string
+    type: File
     doc: markers for assessing bins (marker set or HMM file)
     inputBinding:
       position: 1
   - id: bin_input
-    type: string
+    type:
+      - Directory
+      - File
     doc: directory containing bins (fasta format) or path to file describing 
       genomes/genes - tab separated in 2 or 3 columns [genome ID, genome fna, 
       genome translation file (pep)]

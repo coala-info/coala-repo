@@ -1,5 +1,11 @@
 # check-sort-order CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| check-sort-order | PASS |  |
+
 ## check-sort-order
 
 ### Tool Description

@@ -28,7 +28,8 @@ inputs:
     doc: bootstrap a NJ tree (n= number of bootstraps; def. = 1000).
     inputBinding:
       position: 101
-      prefix: -BOOTSTRAP
+      prefix: -BOOTSTRAP=
+      separate: false
   - id: case
     type:
       - 'null'
@@ -36,7 +37,8 @@ inputs:
     doc: LOWER or UPPER (for GDE output only)
     inputBinding:
       position: 101
-      prefix: -CASE
+      prefix: -CASE=
+      separate: false
   - id: clustering
     type:
       - 'null'
@@ -408,7 +410,8 @@ inputs:
     doc: PERCENT or ABSOLUTE
     inputBinding:
       position: 101
-      prefix: -SCORE
+      prefix: -SCORE=
+      separate: false
   - id: secstrout
     type:
       - 'null'
@@ -649,8 +652,27 @@ outputs:
     doc: file for new guide tree for profile2
     outputBinding:
       glob: $(inputs.newtree2_path)
+  - id: tree_outputs
+    type:
+      type: array
+      items: File
+    doc: Tree, distance and identity matrix files written beside the input 
+      (.dnd, .ph, .phb, .dst, .pim, .tre)
+    outputBinding:
+      glob:
+        - '*.dnd'
+        - '*.ph'
+        - '*.phb'
+        - '*.dst'
+        - '*.pim'
+        - '*.tre'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.infile)
+      - $(inputs.profile1)
+      - $(inputs.profile2)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clustalw:2.1--h9948957_12

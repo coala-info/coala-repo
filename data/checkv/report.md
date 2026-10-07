@@ -1,5 +1,17 @@
 # checkv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| checkv_complete_genomes | PASS |  |
+| checkv_completeness | PASS |  |
+| checkv_contamination | PASS |  |
+| checkv_download_database | Not completed | Downloads the full CheckV database (several GB), which is too large for this test; the other CheckV tools were tested with the nf-core minimal database. |
+| checkv_end_to_end | PASS |  |
+| checkv_quality_summary | PASS |  |
+| checkv_update_database | Failed | tool bug: update_database re-appends every genome of the database to checkv_reps.tsv (duplicate rows, old genbank types reset to circular), not only the new genomes. |
+
 ## checkv_end_to_end
 
 ### Tool Description

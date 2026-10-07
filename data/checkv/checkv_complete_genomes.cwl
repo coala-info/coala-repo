@@ -18,6 +18,13 @@ inputs:
     doc: Output directory
     inputBinding:
       position: 2
+  - id: existing_output
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory written by earlier CheckV steps (contamination and completeness); it is
+      staged writable under the name given by output so this step can read
+      and add to it
   - id: kmer_max_freq
     type:
       - 'null'
@@ -75,6 +82,16 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: '$(inputs.output)'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (inputs.existing_output) {
+          return [{"entry": inputs.existing_output, "entryname": inputs.output, "writable": true}];
+        }
+        return [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkv:1.0.3--pyhdfd78af_0

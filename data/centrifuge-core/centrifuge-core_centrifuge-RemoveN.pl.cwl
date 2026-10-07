@@ -14,7 +14,8 @@ outputs:
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.input_fasta.nameroot).noN.fa
+stdout: $(inputs.input_fasta.nameroot).noN.fa
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centrifuge-core:1.0.4.2--h5ca1c30_2

@@ -13,7 +13,8 @@ inputs:
       position: 1
   - id: output_path
     type: string
-    doc: Path to output directory
+    doc: Output FASTA file with the collected sequences (gzipped when the name ends
+      in .gz)
     inputBinding:
       position: 2
   - id: cleanup
@@ -25,8 +26,8 @@ inputs:
       position: 103
       prefix: --cleanup
   - id: index_path
-    type: string
-    doc: Path to index
+    type: File
+    doc: Path to the index file created by cirtap index
     inputBinding:
       position: 103
       prefix: --index-path
@@ -41,7 +42,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Write logging information in this file
     inputBinding:
       position: 103
@@ -67,13 +68,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_path_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Path to output directory
+  - id: output_fasta
+    type: File
+    doc: Collected sequences
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Logging information file
+    outputBinding:
+      glob: $(inputs.logfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cirtap:0.3.1--pyh5e36f6f_0

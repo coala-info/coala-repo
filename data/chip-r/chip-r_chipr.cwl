@@ -15,6 +15,7 @@ inputs:
       space
     inputBinding:
       position: 1
+      prefix: --input
   - id: alpha
     type:
       - 'null'

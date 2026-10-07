@@ -150,6 +150,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --max-seed-frequencies
+      itemSeparator: ','
   - id: min_frag_length
     type:
       - 'null'
@@ -283,7 +284,7 @@ inputs:
   - id: summary
     type:
       - 'null'
-      - File
+      - string
     doc: Summarize the mapping statistics at bulk or barcode level
     inputBinding:
       position: 101
@@ -334,6 +335,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: summary_file
+    type:
+      - 'null'
+      - File
+    doc: Mapping statistics summary (with --summary)
+    outputBinding:
+      glob: $(inputs.summary)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

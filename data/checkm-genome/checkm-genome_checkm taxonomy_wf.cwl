@@ -17,7 +17,9 @@ inputs:
     inputBinding:
       position: 2
   - id: bin_input
-    type: string
+    type:
+      - Directory
+      - File
     doc: directory containing bins (fasta format) or path to file describing 
       genomes/genes - tab separated in 2 or 3 columns [genome ID, genome fna, 
       genome translation file (pep)]
@@ -39,7 +41,7 @@ inputs:
   - id: alignment_file
     type:
       - 'null'
-      - File
+      - string
     doc: produce file showing alignment of multi-copy genes and their AAI 
       identity
     inputBinding:
@@ -121,7 +123,7 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: 'print results to file (default: stdout)'
     inputBinding:
       position: 105
@@ -185,6 +187,22 @@ outputs:
     doc: directory to write output files
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: alignment_file_out
+    type:
+      - 'null'
+      - File
+    doc: alignment of multi-copy genes and their AAI identity
+    outputBinding:
+      glob: $(inputs.alignment_file)
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: results written with --file
+    outputBinding:
+      glob: $(inputs.output_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkm-genome:1.2.4--pyhdfd78af_2

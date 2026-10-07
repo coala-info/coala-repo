@@ -22,7 +22,7 @@ inputs:
   - id: model
     type:
       - 'null'
-      - string
+      - File
     doc: The path to an alternative model used for predicting classes.
     inputBinding:
       position: 101

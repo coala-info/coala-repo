@@ -1,5 +1,11 @@
 # cligv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cligv | Not completed | Interactive terminal viewer: in batch it prints one screen of the region and exits at end of input, so there is no batch result to check. |
+
 ## cligv
 
 ### Tool Description

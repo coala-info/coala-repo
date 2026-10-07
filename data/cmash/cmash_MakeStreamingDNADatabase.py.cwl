@@ -10,6 +10,12 @@ inputs:
     doc: 'Input file: file containing (absolute) file names of training genomes.'
     inputBinding:
       position: 1
+  - id: training_genomes
+    type:
+      type: array
+      items: File
+    doc: Training genome FASTA/Q files named in in_file; staged in the working 
+      directory so that in_file can list them by file name.
   - id: out_file
     type: string
     doc: Output training database/reference file (in HDF5 format). An additional
@@ -65,6 +71,12 @@ outputs:
       same base name.
     outputBinding:
       glob: '$(inputs.out_file)'
+    secondaryFiles:
+      - ^.tst
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.training_genomes)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmash:0.5.2--pyh5e36f6f_0

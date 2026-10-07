@@ -1,5 +1,11 @@
 # circulocov CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| circulocov | PASS |  |
+
 ## circulocov
 
 ### Tool Description

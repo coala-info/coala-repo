@@ -1,5 +1,11 @@
 # chromsize CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chromsize | PASS |  |
+
 ## chromsize
 
 ### Tool Description

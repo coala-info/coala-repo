@@ -101,6 +101,8 @@ inputs:
   - id: normal
     type: File
     doc: Matched-normal BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --normal
@@ -115,7 +117,7 @@ inputs:
   - id: running_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Running directory (default: current directory)'
     inputBinding:
       position: 101
@@ -148,6 +150,8 @@ inputs:
   - id: tumor
     type: File
     doc: Barcoded single-cell BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --tumor
@@ -164,6 +168,53 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: rdr_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Read-depth ratio estimates (rdr.tsv, total.tsv)
+    outputBinding:
+      glob: "$(inputs.running_directory ? inputs.running_directory + '/' : '')rdr"
+  - id: baf_dir
+    type:
+      - 'null'
+      - Directory
+    doc: B-allele frequency estimates (baf.tsv)
+    outputBinding:
+      glob: "$(inputs.running_directory ? inputs.running_directory + '/' : '')baf"
+  - id: combo_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Combined RDR and BAF per bin (combo.tsv)
+    outputBinding:
+      glob: "$(inputs.running_directory ? inputs.running_directory + '/' : '')combo"
+  - id: calls_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Allele- and haplotype-specific copy-number calls (calls.tsv)
+    outputBinding:
+      glob: "$(inputs.running_directory ? inputs.running_directory + '/' : '')calls"
+  - id: clones_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Clone inference results (mapping.tsv)
+    outputBinding:
+      glob: "$(inputs.running_directory ? inputs.running_directory + '/' : '')clones"
+  - id: plots_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Plots of the results
+    outputBinding:
+      glob: "$(inputs.running_directory ? inputs.running_directory + '/' : '')plots"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "${ if (inputs.running_directory) { return [{class: 'Directory', basename: inputs.running_directory, listing: [], writable: true}]; } return []; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chisel:1.1.4--pyhdfd78af_0

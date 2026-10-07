@@ -9,6 +9,13 @@ inputs:
       - 'null'
       - File
     doc: db in fasta format (megablast formatted)
+    secondaryFiles:
+      - pattern: .nhr
+        required: false
+      - pattern: .nin
+        required: false
+      - pattern: .nsq
+        required: false
     inputBinding:
       position: 101
       prefix: --db_FASTA
@@ -24,7 +31,7 @@ inputs:
   - id: exec_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: chdir to here before running
     inputBinding:
       position: 101
@@ -187,6 +194,43 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: cps_output
+    type: File
+    doc: ChimeraParentSelector output (<query>.CPS)
+    outputBinding:
+      glob: $(inputs.query_nast.basename).CPS
+  - id: cpc_output
+    type: File
+    doc: ChimeraSlayer chimera calls (<query>.CPS.CPC)
+    outputBinding:
+      glob: $(inputs.query_nast.basename).CPS.CPC
+  - id: cpc_with_taxons
+    type:
+      - 'null'
+      - File
+    doc: Chimera calls with taxonomy added (<query>.CPS.CPC.wTaxons)
+    outputBinding:
+      glob: $(inputs.query_nast.basename).CPS.CPC.wTaxons
+  - id: cpc_alignments
+    type:
+      - 'null'
+      - File
+    doc: Alignments of queries with candidate parents (<query>.CPS.CPC.align, 
+      with --printFinalAlignments)
+    outputBinding:
+      glob: $(inputs.query_nast.basename).CPS.CPC.align
+  - id: renast_alignment
+    type:
+      - 'null'
+      - File
+    doc: Query sequences re-aligned by NAST based on the CPS results 
+      (<query>.CPS_RENAST)
+    outputBinding:
+      glob: $(inputs.query_nast.basename).CPS_RENAST
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.query_nast)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/chimeraslayer:v20101212dfsg1-2-deb_cv1

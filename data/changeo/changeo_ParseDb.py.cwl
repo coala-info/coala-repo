@@ -7,8 +7,8 @@ doc: "A utility to parse, filter, and manipulate Change-O tab-delimited database
 inputs:
   - id: action
     type: string
-    doc: 'Action to perform. One of: split, select, index, merge, rename, update,
-      delete, drop, sort, subset.'
+    doc: 'Subcommand to run. One of: add, delete, drop, index, rename, select, sort,
+      update, merge, split.'
     inputBinding:
       position: 1
   - id: db_files
@@ -19,6 +19,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -d
+  - id: descend
+    type:
+      - 'null'
+      - boolean
+    doc: Sort records in descending order (sort subcommand).
+    inputBinding:
+      position: 102
+      prefix: --descend
   - id: fields
     type:
       - 'null'

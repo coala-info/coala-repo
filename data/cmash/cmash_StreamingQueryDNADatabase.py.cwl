@@ -14,6 +14,8 @@ inputs:
     type: File
     doc: Training database/reference file (in HDF5 format). Created with 
       MakeStreamingDNADatabase.py
+    secondaryFiles:
+      - ^.tst
     inputBinding:
       position: 2
   - id: out_file
@@ -105,6 +107,15 @@ outputs:
     doc: Output csv file with the containment indices.
     outputBinding:
       glob: '$(inputs.out_file)'
+  - id: plot
+    type:
+      - 'null'
+      - File
+    doc: Plot of the k-mer curves, written with --plot_file
+    outputBinding:
+      glob: $(inputs.out_file.replace(/\.[^.\/]*$/, '') + '.png')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmash:0.5.2--pyh5e36f6f_0

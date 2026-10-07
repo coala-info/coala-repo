@@ -136,6 +136,8 @@ inputs:
       - 'null'
       - File
     doc: Read BAM file used to score each peak
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -b
@@ -150,6 +152,9 @@ inputs:
   - id: reference_genome
     type: File
     doc: FASTA file with reference genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -f

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: CleaveRNA
+baseCommand: cleaverna
 label: cleaverna
 doc: "Advanced machine learning-based computational tool for scoring candidate DNAzyme
   cleavage sites in substrate RNA sequences using structural and thermodynamic features.\n\
@@ -16,7 +16,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Output directory for results (default: current directory)'
+    doc: 'Output directory for results (default: current directory). In CleaveRNA 1.0.0 this option is unreliable: a relative path makes the run fail and an absolute path skips the predictions, so leave it unset.'
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -94,6 +94,22 @@ outputs:
     doc: 'Output directory for results (default: current directory)'
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: results
+    type:
+      type: array
+      items: File
+    doc: Result tables (MODEL_CleaveRNA_output.csv, MODEL_ML_metrics.csv, MODEL_ML_train.csv, MODEL_ML_train_feature_set.csv, MODEL_balanced_classification.csv, ...)
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir + '/' : '')$(inputs.model_name)_*"
+  - id: parameters_cfg
+    type:
+      - 'null'
+      - File
+    doc: Parameters used for the run
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir + '/' : '')parameters.cfg"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0

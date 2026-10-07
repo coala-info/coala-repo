@@ -47,12 +47,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ignore-quals
-  - id: index_prefix
-    type: string
-    doc: Index filename prefix (minus trailing .X.cf).
+  - id: index
+    type: File
+    doc: Centrifuge index; give the <cf-idx>.1.cf file, the .2/.3/.4.cf files 
+      are staged beside it and -x gets the prefix (minus trailing .X.cf).
+    secondaryFiles:
+      - ^^.2.cf
+      - ^^.3.cf
+      - pattern: ^^.4.cf
+        required: false
     inputBinding:
       position: 101
       prefix: -x
+      valueFrom: $(self.path.replace(/\.1\.cf$/, ''))
   - id: int_quals
     type:
       - 'null'
@@ -71,6 +78,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: '-1'
+      itemSeparator: ','
   - id: mates2
     type:
       - 'null'
@@ -81,6 +89,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: '-2'
+      itemSeparator: ','
   - id: max_assignments
     type:
       - 'null'
@@ -284,6 +293,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -U
+      itemSeparator: ','
   - id: upto_reads
     type:
       - 'null'
@@ -299,7 +309,7 @@ inputs:
     doc: Output or path parameter `aligned_reads_bz2_output_path`
     inputBinding:
       position: 102
-      prefix: --aligned-reads-bz2-output
+      prefix: --al-bz2
   - id: aligned_reads_gz_output_path
     type:
       - 'null'
@@ -307,7 +317,7 @@ inputs:
     doc: Output or path parameter `aligned_reads_gz_output_path`
     inputBinding:
       position: 103
-      prefix: --aligned-reads-gz-output
+      prefix: --al-gz
   - id: aligned_reads_output_path
     type:
       - 'null'
@@ -323,7 +333,7 @@ inputs:
     doc: Output or path parameter `conc_pairs_bz2_output_path`
     inputBinding:
       position: 105
-      prefix: --conc-pairs-bz2-output
+      prefix: --al-conc-bz2
   - id: conc_pairs_gz_output_path
     type:
       - 'null'
@@ -331,7 +341,7 @@ inputs:
     doc: Output or path parameter `conc_pairs_gz_output_path`
     inputBinding:
       position: 106
-      prefix: --conc-pairs-gz-output
+      prefix: --al-conc-gz
   - id: conc_pairs_output_path
     type:
       - 'null'
@@ -339,7 +349,7 @@ inputs:
     doc: Output or path parameter `conc_pairs_output_path`
     inputBinding:
       position: 107
-      prefix: --conc-pairs-output
+      prefix: --al-conc
   - id: metrics_file_path
     type:
       - 'null'
@@ -355,7 +365,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 109
-      prefix: --output-file
+      prefix: -S
   - id: unaligned_reads_bz2_output_path
     type:
       - 'null'
@@ -363,7 +373,7 @@ inputs:
     doc: Output or path parameter `unaligned_reads_bz2_output_path`
     inputBinding:
       position: 111
-      prefix: --unaligned-reads-bz2-output
+      prefix: --un-bz2
   - id: unaligned_reads_gz_output_path
     type:
       - 'null'
@@ -371,7 +381,7 @@ inputs:
     doc: Output or path parameter `unaligned_reads_gz_output_path`
     inputBinding:
       position: 112
-      prefix: --unaligned-reads-gz-output
+      prefix: --un-gz
   - id: unaligned_reads_output_path
     type:
       - 'null'
@@ -379,7 +389,7 @@ inputs:
     doc: Output or path parameter `unaligned_reads_output_path`
     inputBinding:
       position: 113
-      prefix: --unaligned-reads-output
+      prefix: --un
   - id: unconc_pairs_bz2_output_path
     type:
       - 'null'
@@ -387,7 +397,7 @@ inputs:
     doc: Output or path parameter `unconc_pairs_bz2_output_path`
     inputBinding:
       position: 114
-      prefix: --unconc-pairs-bz2-output
+      prefix: --un-conc-bz2
   - id: unconc_pairs_gz_output_path
     type:
       - 'null'
@@ -395,7 +405,7 @@ inputs:
     doc: Output or path parameter `unconc_pairs_gz_output_path`
     inputBinding:
       position: 115
-      prefix: --unconc-pairs-gz-output
+      prefix: --un-conc-gz
   - id: unconc_pairs_output_path
     type:
       - 'null'
@@ -403,7 +413,7 @@ inputs:
     doc: Output or path parameter `unconc_pairs_output_path`
     inputBinding:
       position: 116
-      prefix: --unconc-pairs-output
+      prefix: --un-conc
   - id: report_file_path
     type:
       - 'null'
@@ -425,7 +435,7 @@ outputs:
       - File
     doc: 'File for tabular report output (default: centrifuge_report.tsv)'
     outputBinding:
-      glob: $(inputs.report_file_path)
+      glob: "$(inputs.report_file_path ? inputs.report_file_path : 'centrifuge_report.tsv')"
   - id: unaligned_reads_output
     type:
       - 'null'
@@ -443,17 +453,19 @@ outputs:
   - id: unconc_pairs_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write pairs that didn't align concordantly to <path>
     outputBinding:
-      glob: $(inputs.unconc_pairs_output_path)
+      glob: "$(inputs.unconc_pairs_output_path ? inputs.unconc_pairs_output_path.replace(/\\.[^.\\/]*$/, '') + '*' : [])"
   - id: conc_pairs_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write pairs that aligned concordantly at least once to <path>
     outputBinding:
-      glob: $(inputs.conc_pairs_output_path)
+      glob: "$(inputs.conc_pairs_output_path ? inputs.conc_pairs_output_path.replace(/\\.[^.\\/]*$/, '') + '*' : [])"
   - id: unaligned_reads_gz_output
     type:
       - 'null'
@@ -471,17 +483,19 @@ outputs:
   - id: unconc_pairs_gz_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write pairs that didn't align concordantly to <path> (gzipped)
     outputBinding:
-      glob: $(inputs.unconc_pairs_gz_output_path)
+      glob: "$(inputs.unconc_pairs_gz_output_path ? inputs.unconc_pairs_gz_output_path.replace(/\\.[^.\\/]*$/, '') + '*' : [])"
   - id: conc_pairs_gz_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write pairs that aligned concordantly at least once to <path> (gzipped)
     outputBinding:
-      glob: $(inputs.conc_pairs_gz_output_path)
+      glob: "$(inputs.conc_pairs_gz_output_path ? inputs.conc_pairs_gz_output_path.replace(/\\.[^.\\/]*$/, '') + '*' : [])"
   - id: unaligned_reads_bz2_output
     type:
       - 'null'
@@ -500,18 +514,20 @@ outputs:
   - id: unconc_pairs_bz2_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write pairs that didn't align concordantly to <path> (bzip2 compressed)
     outputBinding:
-      glob: $(inputs.unconc_pairs_bz2_output_path)
+      glob: "$(inputs.unconc_pairs_bz2_output_path ? inputs.unconc_pairs_bz2_output_path.replace(/\\.[^.\\/]*$/, '') + '*' : [])"
   - id: conc_pairs_bz2_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write pairs that aligned concordantly at least once to <path> (bzip2 
       compressed)
     outputBinding:
-      glob: $(inputs.conc_pairs_bz2_output_path)
+      glob: "$(inputs.conc_pairs_bz2_output_path ? inputs.conc_pairs_bz2_output_path.replace(/\\.[^.\\/]*$/, '') + '*' : [])"
   - id: metrics_file
     type:
       - 'null'

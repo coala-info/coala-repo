@@ -49,7 +49,8 @@ inputs:
       - 'null'
       - string
     doc: 'The prefix of the ouput files. Output will be named like: <PREFIX><N>.bed,
-      in which N is an incrementing number.'
+      in which N is an incrementing number. Default ''scatter-''.'
+    default: scatter-
     inputBinding:
       position: 102
       prefix: --prefix
@@ -80,7 +81,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.prefix)*.bed
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chunked-scatter:1.0.0--py_0

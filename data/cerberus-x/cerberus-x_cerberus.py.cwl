@@ -26,7 +26,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Protein Amino Acid sequence
     inputBinding:
       position: 101
@@ -104,7 +104,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Eukaryote nucleotide sequence (includes other viruses, works all around
       for everything)
     inputBinding:
@@ -133,7 +133,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Annotations tsv file from HMMER (experimental)
     inputBinding:
       position: 101
@@ -198,7 +198,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Phage sequence (EXPERIMENTAL)
     inputBinding:
       position: 101
@@ -215,7 +215,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Prokaryote nucleotide sequence (includes microbes, bacteriophage)
     inputBinding:
       position: 101
@@ -224,7 +224,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Giant virus nucleotide sequence
     inputBinding:
       position: 101
@@ -233,7 +233,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Protein Amino Acid sequence
     inputBinding:
       position: 101
@@ -298,7 +298,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Run sequence in both --prodigal and --fraggenescan modes
     inputBinding:
       position: 101

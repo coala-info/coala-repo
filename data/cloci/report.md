@@ -1,5 +1,11 @@
 # cloci CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cloci | Not completed | Rewrote the invented CWL from the help; a run needs a MycotoolsDB or a set of many annotated fungal genomes built into one with network taxonomy lookups, too heavy for a minimal test. |
+
 ## cloci
 
 ### Tool Description

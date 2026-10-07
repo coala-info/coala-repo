@@ -13,7 +13,7 @@ inputs:
       position: 1
       itemSeparator: ','
   - id: cf_index_base
-    type: Directory
+    type: string
     doc: write cf data to files with this dir/basename
     inputBinding:
       position: 2
@@ -161,6 +161,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Centrifuge index files (<cf_index_base>.N.cf)
+    outputBinding:
+      glob: $(inputs.cf_index_base).*.cf
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centrifuge-core:1.0.4.2--h5ca1c30_2

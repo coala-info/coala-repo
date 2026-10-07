@@ -33,7 +33,9 @@ inputs:
       position: 101
       prefix: --gtf
   - id: input
-    type: string
+    type:
+      - File
+      - Directory
     doc: 'Three different inputs possible: (1) output folder of clipcontext g2t or
       clipcontext t2g with genomic and transcript context sequence sets in which to
       look for given --motif. (2) BED file (genomic or transcript regions) in which
@@ -64,6 +66,9 @@ inputs:
       position: 103
       prefix: --stats-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (motif search counts and frequencies)
   - id: out
     type:
       - 'null'
@@ -85,3 +90,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clipcontext:0.7--py_0
+stdout: clipcontext_mtf.out

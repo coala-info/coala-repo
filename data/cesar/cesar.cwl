@@ -10,7 +10,9 @@ inputs:
     inputBinding:
       position: 1
   - id: clade
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Clade to use (human or mouse)
     inputBinding:
       position: 102
@@ -33,23 +35,25 @@ inputs:
       prefix: --lastexon
   - id: matrix_file
     type: File
-    doc: Matrix file for alignment
+    doc: Codon substitution matrix file (e.g. eth_codon_sub.txt); the image 
+      does not ship the default tables
     inputBinding:
       position: 102
       prefix: --matrix
   - id: max_memory
     type:
       - 'null'
-      - boolean
-    doc: Enable maximum memory usage
+      - int
+    doc: Maximum memory to use (GB)
     inputBinding:
       position: 102
       prefix: --max-memory
   - id: profiles
     type:
       type: array
-      items: string
-    doc: Accumulation profile and deletion-only profile
+      items: File
+    doc: Acceptor profile and donor profile (two files, e.g. acc_profile.txt 
+      do_profile.txt); the image does not ship the default tables
     inputBinding:
       position: 102
       prefix: --profiles
@@ -68,12 +72,13 @@ inputs:
         items: string
     doc: Set custom options (name=value pairs)
     inputBinding:
-      position: 102
+      position: 200
       prefix: --set
   - id: split_codon_emissions
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: File
     doc: Accumulation split codon emissions and deletion-only split codon 
       emissions
     inputBinding:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cladeomatic
+baseCommand:
+  - cladeomatic
+  - benchmark
 label: cladeomatic_benchmark
 doc: "Clade-O-Matic: Benchmarking Genotyping scheme development v. 0.1.1\n\nTool homepage:
   https://github.com/phac-nml/cladeomatic"

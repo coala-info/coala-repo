@@ -1,5 +1,11 @@
 # clipkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clipkit | PASS |  |
+
 ## clipkit
 
 ### Tool Description

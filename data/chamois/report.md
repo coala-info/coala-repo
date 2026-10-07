@@ -1,5 +1,22 @@
 # chamois CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chamois_annotate | PASS | Repo test BGC0000703 (kanamycin cluster) gave a feature table in HDF5. |
+| chamois_compare | Not completed | The command needs the ClassyFire web service to classify query compounds, and the server was down. |
+| chamois_cv | PASS | 3-fold random cross-validation on the native dataset gave AUROC 0.81 and a best model. |
+| chamois_cvi | PASS | 3-fold group cross-validation on the native dataset gave AUROC 0.82; sampling random stops with a tool error (groups is None). |
+| chamois_explain_class | PASS | Aminoglycosides class gave a domain weight table led by the DegT aminotransferase domain. |
+| chamois_explain_cluster | PASS | Repo test BGC0000703 gave a gene contribution table per predicted class. |
+| chamois_explain_feature | PASS | PF01041.24 gave a class weight table that includes Aminoglycosides. |
+| chamois_predict | PASS | Repo test BGC0000703 gave aminoglycoside classes, as in the README. |
+| chamois_render | PASS | The predict output renders the README class tree (Aminoglycosides 0.918). |
+| chamois_search | PASS | BGC0000703 against the MIBiG 3.1 class catalog ranks kanamycin first. |
+| chamois_train | PASS | The repo native dataset (70 BGCs) trained a model with training AUROC 0.96. |
+| chamois_validate | PASS | The trained model on the native dataset gave metrics and a per-class report. |
+
 ## chamois_annotate
 
 ### Tool Description
@@ -480,37 +497,6 @@ Output:
 ```
 
 
-## chamois_explain
-
-### Tool Description
-Explain which domains contribute to a class prediction.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0
-- **Homepage**: https://chamois.readthedocs.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/chamois/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: chamois explain [-h] [-m MODEL] {class,feature,cluster} ...
-
-Positional Arguments:
-  {class,feature,cluster}
-    class               Explain which domains contribute to a class
-                        prediction.
-    feature             Explain which features contribute to a class
-                        prediction.
-    cluster             Explain which genes of a cluster contribute to which
-                        predicted classes.
-
-Options:
-  -h, --help            show this help message and exit
-  -m, --model MODEL     The path to an alternative model to extract weights
-                        from. (default: None)
-```
-
-
 ## chamois_validate
 
 ### Tool Description
@@ -584,6 +570,198 @@ Output:
                         evaluation report. (default: None)
 ```
 
+
+## chamois_explain_class
+
+### Tool Description
+Explain which domains contribute to a class prediction.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0
+- **Homepage**: https://chamois.readthedocs.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/chamois/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/chamois/overview
+- **Total Downloads**: 344
+- **Last updated**: 2026-02-13
+- **GitHub**: https://github.com/zellerlab/CHAMOIS
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: chamois explain [-h] [-m MODEL] {class,feature,cluster} ...
+
+Positional Arguments:
+  {class,feature,cluster}
+    class               Explain which domains contribute to a class
+                        prediction.
+    feature             Explain which features contribute to a class
+                        prediction.
+    cluster             Explain which genes of a cluster contribute to which
+                        predicted classes.
+
+Options:
+  -h, --help            show this help message and exit
+  -m, --model MODEL     The path to an alternative model to extract weights
+                        from. (default: None)
+
+Usage: chamois explain class [-h] [--nonzero | --min-weight MIN_WEIGHT]
+                             [-o OUTPUT] [--render]
+                             class_id
+
+Positional Arguments:
+  class_id              The class to explain
+
+Options:
+  -h, --help            show this help message and exit
+
+Weights:
+  Control which weights are displayed in the output.
+
+  --nonzero             Display non-zero weights instead of only positive
+                        weights. (default: False)
+  --min-weight MIN_WEIGHT
+                        The minimum weight to filter the table with. (default:
+                        0.0)
+
+Output:
+  Mandatory and optional outputs.
+
+  -o, --output OUTPUT   The path where to write the cluster contribution table
+                        in TSV format. (default: None)
+  --render              Display the cluster contribution table in the console.
+                        (default: False)
+```
+
+## chamois_explain_feature
+
+### Tool Description
+Explain which features contribute to a class prediction.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0
+- **Homepage**: https://chamois.readthedocs.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/chamois/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/chamois/overview
+- **Total Downloads**: 344
+- **Last updated**: 2026-02-13
+- **GitHub**: https://github.com/zellerlab/CHAMOIS
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: chamois explain [-h] [-m MODEL] {class,feature,cluster} ...
+
+Positional Arguments:
+  {class,feature,cluster}
+    class               Explain which domains contribute to a class
+                        prediction.
+    feature             Explain which features contribute to a class
+                        prediction.
+    cluster             Explain which genes of a cluster contribute to which
+                        predicted classes.
+
+Options:
+  -h, --help            show this help message and exit
+  -m, --model MODEL     The path to an alternative model to extract weights
+                        from. (default: None)
+
+Usage: chamois explain feature [-h] [--nonzero | --min-weight MIN_WEIGHT]
+                               [-o OUTPUT] [--render]
+                               feature_id
+
+Positional Arguments:
+  feature_id            The feature to explain
+
+Options:
+  -h, --help            show this help message and exit
+
+Weights:
+  Control which weights are displayed in the output.
+
+  --nonzero             Display non-zero weights instead of only positive
+                        weights. (default: False)
+  --min-weight MIN_WEIGHT
+                        The minimum weight to filter the table with. (default:
+                        0.0)
+
+Output:
+  Mandatory and optional outputs.
+
+  -o, --output OUTPUT   The path where to write the cluster contribution table
+                        in TSV format. (default: None)
+  --render              Display the cluster contribution table in the console.
+                        (default: False)
+```
+
+## chamois_explain_cluster
+
+### Tool Description
+Explain which genes of a cluster contribute to which predicted classes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0
+- **Homepage**: https://chamois.readthedocs.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/chamois/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/chamois/overview
+- **Total Downloads**: 344
+- **Last updated**: 2026-02-13
+- **GitHub**: https://github.com/zellerlab/CHAMOIS
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: chamois explain [-h] [-m MODEL] {class,feature,cluster} ...
+
+Positional Arguments:
+  {class,feature,cluster}
+    class               Explain which domains contribute to a class
+                        prediction.
+    feature             Explain which features contribute to a class
+                        prediction.
+    cluster             Explain which genes of a cluster contribute to which
+                        predicted classes.
+
+Options:
+  -h, --help            show this help message and exit
+  -m, --model MODEL     The path to an alternative model to extract weights
+                        from. (default: None)
+
+Usage: chamois explain cluster [-h] -i INPUT [-H HMM] [--disentangle] [--cds]
+                               [-o OUTPUT] [--render]
+                               [cluster_id]
+
+Positional Arguments:
+  cluster_id            The cluster to explain (default: None)
+
+Options:
+  -h, --help            show this help message and exit
+
+Input:
+  Mandatory input files required by the command.
+
+  -i, --input INPUT     The input BGC sequences to process. (default: None)
+  -H, --hmm HMM         The path to the HMM file containing protein domains
+                        for annotation. (default: None)
+  --disentangle         Remove overlapping domains by best P-value. (default:
+                        False)
+
+Gene Finding:
+  Parameters for controlling gene extraction from clusters.
+
+  --cds                 Use CDS features in the GenBank input as genes instead
+                        of running Pyrodigal. (default: False)
+
+Output:
+  Mandatory and optional outputs.
+
+  -o, --output OUTPUT   The path where to write the cluster contribution table
+                        in TSV format. (default: None)
+  --render              Display the cluster contribution table in the console.
+                        (default: False)
+```
 
 ## Metadata
 - **Skill**: generated

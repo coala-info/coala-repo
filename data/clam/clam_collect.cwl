@@ -12,6 +12,11 @@ inputs:
       - type: array
         items: File
     doc: Input depth files (not needed when using --samples)
+    secondaryFiles:
+      - pattern: .gzi
+        required: false
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 1
   - id: chunk_size
@@ -112,8 +117,8 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: Output path for callable sites zarr array
+    type: Directory
+    doc: Output zarr store (a directory)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

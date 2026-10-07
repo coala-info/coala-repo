@@ -1,5 +1,11 @@
 # cesm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cesm_create_newcase | PASS |  |
+
 ## cesm_create_newcase
 
 ### Tool Description

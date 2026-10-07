@@ -1,5 +1,11 @@
 # clove CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clove | PASS |  |
+
 ## clove
 
 ### Tool Description

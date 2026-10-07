@@ -1,5 +1,11 @@
 # chisel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chisel | Not completed | No usable test data: CHISEL needs a barcoded single-cell BAM, a matched-normal BAM, a full reference genome and phased SNPs, and its demo data is several GB. |
+
 ## chisel
 
 ### Tool Description

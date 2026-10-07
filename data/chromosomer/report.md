@@ -1,5 +1,18 @@
 # chromosomer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chromosomer_agp2map | PASS |  |
+| chromosomer_assemble | PASS |  |
+| chromosomer_fastalength | PASS |  |
+| chromosomer_fragmentmap | PASS |  |
+| chromosomer_fragmentmapbed | PASS |  |
+| chromosomer_fragmentmapstat | PASS |  |
+| chromosomer_simulator | PASS |  |
+| chromosomer_transfer | PASS |  |
+
 ## chromosomer_assemble
 
 ### Tool Description

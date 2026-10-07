@@ -1,5 +1,11 @@
 # clonalframeml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clonalframeml | PASS |  |
+
 ## clonalframeml
 
 ### Tool Description

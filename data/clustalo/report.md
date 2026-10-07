@@ -1,5 +1,11 @@
 # clustalo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clustalo | PASS |  |
+
 ## clustalo
 
 ### Tool Description

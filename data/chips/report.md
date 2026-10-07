@@ -1,5 +1,12 @@
 # chips CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chips_learn | PASS |  |
+| chips_simreads | PASS |  |
+
 ## chips_simreads
 
 ### Tool Description

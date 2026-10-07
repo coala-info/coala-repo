@@ -8,7 +8,12 @@ inputs:
     type: File
     doc: Input sequence file
     inputBinding:
-      position: 1
+      position: 201
+  - id: cmfile_output
+    type: string
+    doc: Output covariance model file
+    inputBinding:
+      position: 202
   - id: candidate_file
     type:
       - 'null'
@@ -98,11 +103,11 @@ inputs:
       position: 103
       prefix: -o
 outputs:
-  - id: cmfile_output
+  - id: cmfile
     type: File
     doc: Output covariance model file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.cmfile_output)
   - id: output_align_file
     type:
       - 'null'

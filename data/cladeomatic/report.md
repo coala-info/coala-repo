@@ -1,9 +1,18 @@
 # cladeomatic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cladeomatic_benchmark | PASS |  |
+| cladeomatic_create | Failed | image problem: cladeomatic create cannot import NodeStyle from the ete3 in the image (needs the ete3 tree-drawing extras), so it crashes before reading inputs. |
+| cladeomatic_genotype | PASS |  |
+| cladeomatic_namer | Failed | tool bug: namer calls parse_metadata() with an unknown keyword 'colum', so every run crashes with a TypeError. |
+
 ## cladeomatic_create
 
 ### Tool Description
-Create a clade from a phylogenetic tree and a set of sequences.
+Identify population structure and develop typing scheme (options taken from create.py because --help crashes in the image).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cladeomatic:0.1.1--pyhdfd78af_0

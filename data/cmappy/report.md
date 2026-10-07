@@ -1,5 +1,11 @@
 # cmappy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cmappy_python -m cmapPy.pandasGEXpress.gct2gctx | Failed | image problem: cmapPy 4.0.1 calls numpy.string_, which NumPy 2.0.2 in the image removed, so writing the .gctx file crashes. |
+
 ## cmappy_python -m cmapPy.pandasGEXpress.gct2gctx
 
 ### Tool Description

@@ -7,6 +7,8 @@ doc: "command line Interactive Genome Viewer. Displays FASTA sequence, VCF varia
 inputs:
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to the reference genome FASTA file (indexed with .fai)
     inputBinding:
       position: 1
@@ -14,6 +16,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
     doc: Path to BAM file (indexed with .bai or .csi)
     inputBinding:
       position: 102
@@ -55,6 +62,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Path to VCF file (indexed with tabix)
     inputBinding:
       position: 102

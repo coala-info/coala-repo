@@ -5,6 +5,11 @@ baseCommand:
   - assemble
 label: chromosomer_assemble
 doc: "Get the FASTA file of assembled chromosomes.\n\nTool homepage: https://github.com/gtamazian/chromosomer"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fragment_fasta)
+        writable: true
 inputs:
   - id: map
     type: File

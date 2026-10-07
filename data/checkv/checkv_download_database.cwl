@@ -7,7 +7,7 @@ label: checkv_download_database
 doc: "Download the latest version of CheckV's database\n\nTool homepage: https://bitbucket.org/berkeleylab/checkv"
 inputs:
   - id: destination
-    type: Directory
+    type: string
     doc: Directory where the database will be downloaded to.
     inputBinding:
       position: 1
@@ -23,6 +23,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir
+    type: Directory
+    doc: Directory with the downloaded database.
+    outputBinding:
+      glob: $(inputs.destination)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/checkv:1.0.3--pyhdfd78af_0

@@ -1,5 +1,12 @@
 # chip-r CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chip-r_ChIP-R | PASS |  |
+| chip-r_chipr | PASS |  |
+
 ## chip-r_chipr
 
 ### Tool Description

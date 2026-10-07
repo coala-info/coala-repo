@@ -1,5 +1,11 @@
 # cmip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cmip | PASS |  |
+
 ## cmip
 
 ### Tool Description

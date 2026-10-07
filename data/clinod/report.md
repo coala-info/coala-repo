@@ -1,5 +1,11 @@
 # clinod CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clinod | PASS |  |
+
 ## clinod
 
 ### Tool Description

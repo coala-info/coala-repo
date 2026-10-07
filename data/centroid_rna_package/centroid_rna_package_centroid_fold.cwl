@@ -6,8 +6,8 @@ doc: "CentroidFold v0.0.16 for predicting RNA secondary structures\n\nTool homep
   https://github.com/satoken/centroid-rna-package"
 inputs:
   - id: sequence
-    type: string
-    doc: Input sequence
+    type: File
+    doc: Input sequence file (FASTA)
     inputBinding:
       position: 1
   - id: bp_matrix
@@ -157,7 +157,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
   - id: output_posteriors_file_path
     type:
       - 'null'
@@ -165,8 +165,18 @@ inputs:
     doc: Output or path parameter `output_posteriors_file_path`
     inputBinding:
       position: 105
-      prefix: --output-posteriors-file
+      prefix: --oposteriors
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Predicted structures (when no output file is given)
+  - id: postscript_file
+    type:
+      - 'null'
+      - File
+    doc: secondary structure drawing in postscript (PS) format
+    outputBinding:
+      glob: $(inputs.postscript)
   - id: output_file
     type:
       - 'null'
@@ -185,6 +195,7 @@ outputs:
       glob: $(inputs.output_posteriors_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: centroid_rna_package_centroid_fold.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centroid_rna_package:0.0.16--0

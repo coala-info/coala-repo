@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - clinod-1.3.jar
+  - clinod
 label: clinod
 doc: "Nucleolar localization sequence Detector\n\nTool homepage: https://github.com/RogerioAP/Clinodonto-Soft"
 inputs:
@@ -64,7 +62,7 @@ inputs:
       - 'null'
       - string
     doc: optional, defaults to MEDIUM. Possible values COMPLETE, FULL, MEDIUM, 
-      SHORT and MINIMAL (case sensitive)
+      MEDIUM_TAB, SHORT, MINIMAL and MINIMAL_TAB (case sensitive)
     inputBinding:
       position: 101
       prefix: -f=
@@ -97,10 +95,11 @@ inputs:
       separate: false
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output file (by default the system prints the output to the console)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -out=
+      separate: false
 outputs:
   - id: output_file
     type:

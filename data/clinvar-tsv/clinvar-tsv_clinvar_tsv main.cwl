@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - clinvar-tsv
+  - clinvar_tsv
   - main
 label: clinvar-tsv_clinvar_tsv main
 doc: "Main command for clinvar-tsv\n\nTool homepage: https://github.com/bihealth/clinvar-tsv"
@@ -51,7 +51,7 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to working directory
     inputBinding:
       position: 101

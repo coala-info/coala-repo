@@ -1,5 +1,11 @@
 # clinker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clinker | Not completed | pipeline, skipped: clinker runs the Clinker bpipe fusion pipeline, which also needs large genome and transcriptome references. |
+
 ## clinker
 
 ### Tool Description

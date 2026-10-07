@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --color
   - id: input
-    type: string
+    type: File
     doc: The input probabilites obtained from the predictor.
     inputBinding:
       position: 101
@@ -23,7 +23,7 @@ inputs:
   - id: model
     type:
       - 'null'
-      - string
+      - File
     doc: The path to an alternative predictor with classes metadata.
     inputBinding:
       position: 101

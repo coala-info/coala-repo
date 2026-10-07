@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fraggraph-gen.exe
+baseCommand: fraggraph-gen
 label: cfm_fraggraph-gen
 doc: "Generates a fragmentation graph from a molecule.\n\nTool homepage: https://sourceforge.net/p/cfm-id/wiki/Home/"
 inputs:
@@ -27,14 +27,25 @@ inputs:
     doc: Type of graph to generate (fullgraph or fragonly)
     inputBinding:
       position: 4
-outputs:
   - id: output_filename
     type:
       - 'null'
+      - string
+    doc: Optional output filename (defaults to stdout); needs graph_type
+    inputBinding:
+      position: 5
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Fragmentation graph (when no output file is given)
+  - id: output_file
+    type:
+      - 'null'
       - File
-    doc: Optional output filename (defaults to stdout)
+    doc: Fragmentation graph written to output_filename
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_filename)
+stdout: cfm_fraggraph-gen.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cfm:33--h7600467_7

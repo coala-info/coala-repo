@@ -1,5 +1,11 @@
 # cmfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cmfinder | PASS |  |
+
 ## cmfinder
 
 ### Tool Description

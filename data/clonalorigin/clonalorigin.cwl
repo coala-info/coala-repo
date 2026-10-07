@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: weakarg
+baseCommand: warg
 label: clonalorigin
 doc: "Perform inference of recombination in bacteria using the ClonalOrigin model.\n\
   \nTool homepage: https://github.com/xavierdidelot/ClonalOrigin"
@@ -98,6 +98,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -i
+      itemSeparator: ','
   - id: rho
     type:
       - 'null'

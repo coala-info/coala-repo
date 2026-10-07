@@ -77,10 +77,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --hmm-in
     doc: HMM input files
     inputBinding:
       position: 101
-      prefix: --hmm-in
   - id: infile
     type:
       - 'null'

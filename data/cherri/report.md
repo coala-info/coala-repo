@@ -1,5 +1,12 @@
 # cherri CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cherri_eval | PASS |  |
+| cherri_train | PASS |  |
+
 ## cherri_eval
 
 ### Tool Description

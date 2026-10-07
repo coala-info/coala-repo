@@ -1,5 +1,20 @@
 # circlator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| circlator_all | PASS |  |
+| circlator_assemble | PASS |  |
+| circlator_bam2reads | PASS |  |
+| circlator_clean | PASS |  |
+| circlator_fixstart | PASS |  |
+| circlator_get_dnaa | Failed | image problem: wget is not in the image, so the UniProt download fails. |
+| circlator_mapreads | PASS |  |
+| circlator_merge | PASS |  |
+| circlator_minimus2 | Failed | image problem: toAmos and the other AMOS minimus2 programs are not in the image. |
+| circlator_test | PASS |  |
+
 ## circlator_all
 
 ### Tool Description

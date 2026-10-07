@@ -53,7 +53,9 @@ outputs:
     doc: out path/name for output gctx file. Default is just to modify the 
       extension
     outputBinding:
-      glob: $(inputs.output_filepath_path)
+      glob: "$(inputs.output_filepath_path ? (inputs.output_filepath_path.endsWith('.gctx')
+        ? inputs.output_filepath_path : inputs.output_filepath_path + '.gctx') : inputs.filename.nameroot
+        + '.gctx')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

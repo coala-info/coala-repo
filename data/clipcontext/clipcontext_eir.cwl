@@ -14,7 +14,7 @@ inputs:
       position: 101
       prefix: --gtf
   - id: tr
-    type: string
+    type: File
     doc: Transcript sequence IDs list file for which to extract exon + intron 
       regions
     inputBinding:

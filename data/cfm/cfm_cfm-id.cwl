@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cfm-id.exe
+baseCommand: cfm-id
 label: cfm_cfm-id
 doc: "Predicts candidate structures for a given spectrum and list of candidates.\n\
   \nTool homepage: https://sourceforge.net/p/cfm-id/wiki/Home/"
@@ -89,29 +89,47 @@ inputs:
   - id: apply_postprocessing
     type:
       - 'null'
-      - boolean
+      - int
     doc: Whether or not to post-process predicted spectra to take the top 80% of
       energy (at least 5 peaks), or the highest 30 peaks (whichever comes first)
       (0 = OFF (default for EI-MS), 1 = ON (default for ESI-MS/MS)).
     inputBinding:
       position: 11
-outputs:
   - id: output_filename
     type:
       - 'null'
-      - File
+      - string
     doc: The filename of the output file to write to (if not given, prints to 
       stdout)
-    outputBinding:
-      glob: '*.out'
+    inputBinding:
+      position: 12
   - id: output_msp_or_mgf
     type:
       - 'null'
-      - File
+      - string
     doc: The filename for an output msp or mgf file to record predicted 
       candidate spectra (if not given, doesn't save predicted spectra)
+    inputBinding:
+      position: 13
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Ranked candidates (when no output file is given)
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Ranked candidates written to output_filename
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_filename)
+  - id: output_spectra
+    type:
+      - 'null'
+      - File
+    doc: Predicted candidate spectra (msp or mgf)
+    outputBinding:
+      glob: $(inputs.output_msp_or_mgf)
+stdout: cfm_cfm-id.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cfm:33--h7600467_7

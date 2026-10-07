@@ -23,8 +23,8 @@ inputs:
   - id: fm9_file
     type:
       - 'null'
-      - boolean
-    doc: Load fm9 file
+      - File
+    doc: Load fm9 file (FM-index made by an earlier clame run)
     inputBinding:
       position: 101
       prefix: -fm9
@@ -53,9 +53,7 @@ inputs:
       position: 101
       prefix: -sizeBin
   - id: multi_fasta_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: FILE with all the reads
     inputBinding:
       position: 101
@@ -65,6 +63,7 @@ inputs:
       - 'null'
       - string
     doc: name for the output-file if print option was selected
+    default: output
     inputBinding:
       position: 101
       prefix: -output
@@ -80,7 +79,54 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: binning
+    type:
+      - 'null'
+      - File
+    doc: All bins reported (OUTPUT.binning)
+    outputBinding:
+      glob: $(inputs.output_file_name).binning
+  - id: bins
+    type:
+      type: array
+      items: File
+    doc: Sequences of each reported bin (OUTPUT_N.fasta or .fastq, with -print)
+    outputBinding:
+      glob: $(inputs.output_file_name)_*
+  - id: fm9_index
+    type:
+      - 'null'
+      - File
+    doc: FM-index output (OUTPUT.fm9)
+    outputBinding:
+      glob: $(inputs.output_file_name).fm9
+  - id: read_index
+    type:
+      - 'null'
+      - File
+    doc: Original read names and the index used by CLAME (OUTPUT.index)
+    outputBinding:
+      glob: $(inputs.output_file_name).index
+  - id: links
+    type:
+      - 'null'
+      - File
+    doc: Histogram of links by number of reads (OUTPUT.links)
+    outputBinding:
+      glob: $(inputs.output_file_name).links
+  - id: result
+    type:
+      - 'null'
+      - File
+    doc: Adjacency list of the overlaps detected for each read (OUTPUT.result)
+    outputBinding:
+      glob: $(inputs.output_file_name).result
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clame:1.0--h503566f_3
 stdout: clame.out
+successCodes:
+  - 0
+  - 1

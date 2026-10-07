@@ -147,17 +147,16 @@ inputs:
       position: 101
       prefix: --verbose
   - id: outfilename_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `outfilename_path`
+    type: string
+    doc: Output tree file name (--out)
     inputBinding:
       position: 103
-      prefix: --outfilename
+      prefix: --out
   - id: matrixout_path
     type:
       - 'null'
       - string
+    doc: Output distance matrix to specified file.
     inputBinding:
       position: 104
       prefix: --matrixout

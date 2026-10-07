@@ -263,13 +263,14 @@ inputs:
       position: 101
       prefix: --onlyTumor
   - id: out
-    type:
-      - 'null'
-      - string
-    doc: output folder path
+    type: string
+    default: result
+    doc: output folder path (passed as an absolute path; the script changes 
+      its working directory)
     inputBinding:
       position: 101
       prefix: --out
+      valueFrom: $(runtime.outdir)/$(self)
   - id: pair
     type:
       - 'null'
@@ -407,7 +408,9 @@ inputs:
       position: 101
       prefix: --triosFile
   - id: tumor
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path to table with tumor coverages
     inputBinding:
       position: 101

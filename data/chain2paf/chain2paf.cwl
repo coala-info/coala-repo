@@ -10,6 +10,24 @@ inputs:
     doc: Input UCSC chain file to be converted
     inputBinding:
       position: 1
+      prefix: --input
+  - id: fasta
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTA files (uncompressed or bgzipped) for targets (1st file) and 
+      queries (2nd file). If specified, it writes =/X CIGAR operators (slower).
+      The tool reads a .fai index (and .gzi for bgzipped files) beside each 
+      file; give them, as the staged input folder is read-only.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+      - pattern: .gzi
+        required: false
+    inputBinding:
+      position: 2
+      prefix: --fasta
 outputs:
   - id: stdout
     type: stdout

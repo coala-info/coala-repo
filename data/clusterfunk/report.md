@@ -1,5 +1,19 @@
 # clusterfunk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clusterfunk_ancestral_reconstruction | PASS |  |
+| clusterfunk_annotate_tips | PASS |  |
+| clusterfunk_annotate_tips_from_nodes | Failed | tool bug: clusterfunk 0.0.2 recurses on the same node (TraversalAction.run calls run(node), not run(child)) and stops with RecursionError on any annotated tree. |
+| clusterfunk_extract_tip_annotations | PASS |  |
+| clusterfunk_get_taxa | PASS |  |
+| clusterfunk_graft | Failed | tool bug: clusterfunk 0.0.2 reads options.scions while the parser stores --scion, so every graft run stops with AttributeError. |
+| clusterfunk_label_transitions | PASS |  |
+| clusterfunk_phylotype | PASS |  |
+| clusterfunk_prune | PASS |  |
+
 ## clusterfunk_phylotype
 
 ### Tool Description
@@ -39,23 +53,6 @@ Required:
                         format flag.
   -o output.*, --output output.*
                         The output file
-```
-
-## clusterfunk_Assigns
-
-### Tool Description
-A tool for manipulating and annotating phylogenetic trees.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'Assigns' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
 ```
 
 ## clusterfunk_annotate_tips
@@ -119,23 +116,6 @@ Annotation from metadata file:
                         taxon labels to match the data file keys
 ```
 
-## clusterfunk_Annotates
-
-### Tool Description
-A suite of tools for manipulating and annotating phylogenetic trees.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'Annotates' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
-```
-
 ## clusterfunk_ancestral_reconstruction
 
 ### Tool Description
@@ -180,40 +160,6 @@ Required:
                         The output file
 ```
 
-## clusterfunk_Reconstructs
-
-### Tool Description
-A tool for manipulating and annotating phylogenetic trees. Available subcommands include phylotype, ancestral_reconstruction, prune, graft, and others.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'Reconstructs' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
-```
-
-## clusterfunk_Fitch
-
-### Tool Description
-A tool for phylogenetic tree manipulation and annotation. The provided help text indicates an invalid subcommand choice and lists available subcommands.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'Fitch' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
-```
-
 ## clusterfunk_annotate_tips_from_nodes
 
 ### Tool Description
@@ -252,40 +198,6 @@ Required:
                         The output file
 ```
 
-## clusterfunk_provided
-
-### Tool Description
-A suite of tools for manipulating and annotating phylogenetic trees.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'provided' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
-```
-
-## clusterfunk_descendent
-
-### Tool Description
-A suite of tools for manipulating and annotating phylogenetic trees.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'descendent' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
-```
-
 ## clusterfunk_extract_tip_annotations
 
 ### Tool Description
@@ -318,40 +230,6 @@ Required:
                         format flag.
   -o output.*, --output output.*
                         The output file
-```
-
-## clusterfunk_extracts
-
-### Tool Description
-A tool for manipulating and annotating phylogenetic trees.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'extracts' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
-```
-
-## clusterfunk_csv
-
-### Tool Description
-A tool for tree manipulation and annotation
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'csv' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
 ```
 
 ## clusterfunk_get_taxa
@@ -530,40 +408,6 @@ Required:
                         format flag.
   -o output.*, --output output.*
                         The output file
-```
-
-## clusterfunk_at
-
-### Tool Description
-A tool for annotating and manipulating phylogenetic trees. Note: The provided help text indicates 'at' is an invalid subcommand choice.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'at' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
-```
-
-## clusterfunk_shared
-
-### Tool Description
-A tool for phylogenetic tree manipulation and annotation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0
-- **Homepage**: https://github.com/cov-ert/clusterfunk
-- **Package**: https://anaconda.org/channels/bioconda/packages/clusterfunk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: clusterfunk <subcommand> <options>
-clusterfunk: error: argument : invalid choice: 'shared' (choose from 'phylotype', 'phylotype_dat_tree', 'annotate_tips', 'annotate_dat_tips', 'ancestral_reconstruction', 'annotate_tips_from_nodes', 'extract_tip_annotations', 'extract_dat_tree', 'get_taxa', 'get_dat_taxa', 'label_transitions', 'label_dat_transition', 'prune', 'prune_dat_tree', 'graft', 'graft_dat_tree')
 ```
 
 ## Metadata

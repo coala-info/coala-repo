@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: chipr
+baseCommand: ChIP-R
 label: chip-r_ChIP-R
 doc: "Combine multiple ChIP-seq files and return a union of all peak locations and
   a set confident, reproducible peaks as determined by rank product analysis\n\nTool
@@ -15,6 +15,7 @@ inputs:
       space
     inputBinding:
       position: 1
+      prefix: --input
   - id: alpha
     type:
       - 'null'

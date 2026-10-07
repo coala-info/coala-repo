@@ -1,5 +1,15 @@
 # chromosight CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chromosight_detect | PASS |  |
+| chromosight_generate-config | PASS |  |
+| chromosight_list-kernels | PASS |  |
+| chromosight_quantify | PASS |  |
+| chromosight_test | PASS |  |
+
 ## chromosight_detect
 
 ### Tool Description
@@ -170,7 +180,7 @@ Advanced options:
 ## chromosight_generate-config
 
 ### Tool Description
-Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching.
+Generate pre-filled config files (JSON parameters and kernel matrices) to use for detect and quantify.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/chromosight:1.6.3--pyhdfd78af_0
@@ -494,7 +504,7 @@ Advanced options:
 ## chromosight_list-kernels
 
 ### Tool Description
-Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching.
+Prints information about available kernels.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/chromosight:1.6.3--pyhdfd78af_0
@@ -656,7 +666,7 @@ Advanced options:
 ## chromosight_test
 
 ### Tool Description
-Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching.
+Download example data and run loop detection on it.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/chromosight:1.6.3--pyhdfd78af_0

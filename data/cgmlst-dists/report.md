@@ -1,5 +1,11 @@
 # cgmlst-dists CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cgmlst-dists | PASS |  |
+
 ## cgmlst-dists
 
 ### Tool Description

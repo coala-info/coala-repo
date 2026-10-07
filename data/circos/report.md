@@ -1,9 +1,15 @@
 # circos CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| circos | PASS |  |
+
 ## circos
 
 ### Tool Description
-Circos could not find the configuration file []. To run Circos, you need to specify this file using the -conf flag. The configuration file contains all the parameters that define the image, including input files, image size, formatting, etc.
+circos - generate circular data visualizations
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/circos:0.69.9--hdfd78af_0
@@ -18,75 +24,160 @@ Circos could not find the configuration file []. To run Circos, you need to spec
 - **Stars**: N/A
 ### Original Help Text
 ```text
-debuggroup summary 0.25s welcome to circos v0.69-8 15 Jun 2019 on Perl 5.032001
-debuggroup summary 0.26s current working directory /
-debuggroup summary 0.26s command /usr/local/bin/circos [no flags]
-debuggroup summary 0.26s guessing configuration file
+    circos - generate circular data visualizations
 
-  *** CIRCOS ERROR ***
+SYNOPSIS
+      # without -conf Circos will search for configuration
+      circos
 
-      cwd: /
+      # use specific configuration file
+      circos -conf circos.conf 
 
-      command: /usr/local/bin/circos
+      # diagnose required modules
+      circos -modules
 
-  CONFIGURATION FILE ERROR
+      # detailed debugging for code components
+      # see http://www.circos.ca/documentation/tutorials/configuration/debugging
+      circos -debug_group GROUP1,[GROUP2,...]
 
-  Circos could not find the configuration file []. To run Circos, you need to
-  specify this file using the -conf flag. The configuration file contains all
-  the parameters that define the image, including input files, image size,
-  formatting, etc.
+      # full debugging
+      circos -debug_group _all
 
-  If you do not use the -conf flag, Circos will attempt to look for a file
-  circos.conf in several reasonable places such as . etc/ ../etc
+      # absolutely no reporting
+      circos ... [-silent]
 
-  To see where Circos looks for the file, use
+      # configuration dump of a block (or block tree) of
+      # any parameters that match REGEXP (optional)
+      circos -cdump [BLOCK1/[BLOCK2/...]]{:REGEXP}
+      circos -cdump ideogram
+      circos -cdump ideogram:label
+      circos -cdump ideogram/spacing
 
-      circos -debug_flag io
+      # override configuration parameters
+      circos -param image/radius=2000p -param ideogram/show=no
 
-  To see how configuration files work, create the example image, whose
-  configuration and data are found in example/. From the Circos distribution
-  directory,
+      # for fun - randomize all colors in the image except for
+      # COLOR1, COLOR2,...
+      circos -randomcolor COLOR1,[COLOR2,...]
+      circos -randomcolor white,black
 
-      cd example
+      # brief help
+      circos -h
 
-      ../bin/circos -conf ./circos.conf
+      # man page
+      circos -man
 
-  or use the 'run' script (UNIX only).
+      # version
+      circos -v
 
-  Configuration files are described here
+OPTIONS
+  Configuration
+    -configfile FILE
+        Name of configuration file. This is required.
 
-      http://circos.ca/tutorials/lessons/configuration/configuration_files/
+        Circos will attempt to guess the location of this file, searching
+        for "circos.conf" in ".", "..", and "../..". This is described
+        above.
 
-  and the use of command-line flags, such as -conf, is described here
+  Output Format
+    -png, -nopng
+    -svg, -nosvg
+        Toggles output of PNG and SVG files.
 
-      http://circos.ca/tutorials/lessons/configuration/runtime_parameters/
+  Image Elements
+    -show_ticks, -noshow_ticks
+    -show_tick_labels, -noshow_tick_labels
+        Override the display of ticks and their labels. These are both
+        usually defined in the <ticks> block.
 
-  Windows users unfamiliar with Perl should read
+        These flags are shortcuts to
 
-      http://circos.ca/tutorials/lessons/configuration/unix_vs_windows/
+          -param show_ticks=no
+          -param show_tick_labels=no
 
-  This error can also be produced if supporting configuration files, such as
-  track defaults, cannot be read.
+  Output Paths
+    -outputdir DIR, -dir DIR
+    -outputfile FILE, -file FILE
+        Change the output directory and filename. The FILE can contain a
+        path.
 
-  If you are having trouble debugging this error, first read the best practices
-  tutorial for helpful tips that address many common problems
+  Debugging
+    -debug
+        Turn on basic debugging output. Reports information from
 
-      http://www.circos.ca/documentation/tutorials/reference/best_practices
+          image, io, layer, summary, timer
 
-  The debugging facility is helpful to figure out what's happening under the
-  hood
+        debug groups (see below).
 
-      http://www.circos.ca/documentation/tutorials/configuration/debugging
+    -debug_group {+-}GROUP1,[{+-}GROUP2,...]
+        Turn on debugging output for specific groups. For a list of groups,
+        see
 
-  If you're still stumped, get support in the Circos Google Group.
+        <http://www.circos.ca/documentation/tutorials/configuration/debuggin
+        g>
 
-      http://groups.google.com/group/circos-data-visualization
+        To add a group to the output prefix it with +. To remove it, with -.
 
-  Please include this error, all your configuration, data files and the version
-  of Circos you're running (circos -v). Do not email me directly -- please use
-  the group.
+          # use default debugging groups but exclude layer and io
+          -debug -debug_group -layer,-io
 
-  Stack trace:
+          # use default debugging groups and add spacing
+          -debug -debug_group +spacing
+
+          # explicitly specify the groups
+          -debug_group png,io,timer
+
+        To list the groups that are supported, use the flag without an
+        argument
+
+          -debug_group
+
+        Those listed with a "*" are turned on by default. To change this,
+        adjust "debug_group" in "etc/housekeeping.conf" in the distribution
+        directory.
+
+    -time
+        Report timing information. Same as "-debug_group +timer".
+
+    -silent
+        Generate no reporting.
+
+    -paranoid, -noparanoid
+        Run in paranoid mode (default), or not. The default for this setting
+        is defined by "paranoid" in "etc/housekeeping.conf".
+
+    -warnings, -nowarnings
+        Display warnings, or not (default). The default for this setting is
+        defined by "warnings" in "etc/housekeeping.conf".
+
+    -fakeerror =item -fakeerror CAT =item -fakeerror ,ID =item -fakeerror
+    CAT,ID
+        Fake an error by displaying the error message for category CAT and
+        error name ID. If one or neither are specified, lists which errors
+        are available.
+
+        Unless you truly enjoy seeing error messages, there should be little
+        reason for you to want to use this.
+
+  Usage
+    -version
+        Show the version.
+
+    -help
+        Show brief usage synopsis.
+
+    -man
+        Show man page.
+
+  Goofing Around
+    -randomcolor [color1,color2,...]
+        Randomize the color of every element in the image, except for an
+        optional list of colors.
+
+        For example, to keep the background white and anything that is
+        black,
+
+          -randomcolor white,black
 ```
 
 

@@ -4,6 +4,10 @@ baseCommand: create_newcase
 label: cesm_create_newcase
 doc: "Script to create a new CIME Case Control System (CSS) experimental case.\n\n\
   Tool homepage: https://github.com/ESCOMP/cesm"
+arguments:
+  - position: 1000
+    valueFrom: '&& find $(inputs.case_name) -type l -delete'
+    shellQuote: false
 inputs:
   - id: case_name
     type: string
@@ -213,6 +217,13 @@ inputs:
       position: 102
       prefix: --output-root
 outputs:
+  - id: case_dir
+    type: Directory
+    doc: The new case directory (the case scripts that the tool links into 
+      the image, such as case.setup and case.build, are removed so the folder 
+      can be collected)
+    outputBinding:
+      glob: $(inputs.case_name)
   - id: output_root
     type:
       - 'null'
@@ -222,6 +233,10 @@ outputs:
       glob: $(inputs.output_root_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: EnvVarRequirement
+    envDef:
+      USER: cesm
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cesm:2.1.3--py39hd40aa7f_3

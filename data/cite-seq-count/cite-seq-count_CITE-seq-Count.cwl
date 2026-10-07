@@ -158,6 +158,7 @@ inputs:
       - 'null'
       - string
     doc: ' Results will be written to this folder'
+    default: Results
     inputBinding:
       position: 102
       prefix: --output
@@ -165,6 +166,8 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Write table of unknown TAGs to this file name inside the output folder.
+    default: unmapped.csv
     inputBinding:
       position: 103
       prefix: --unmapped-tags
@@ -182,7 +185,7 @@ outputs:
       - File
     doc: Write table of unknown TAGs to file.
     outputBinding:
-      glob: $(inputs.unmapped_file_path)
+      glob: $(inputs.output_folder_path)/$(inputs.unmapped_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

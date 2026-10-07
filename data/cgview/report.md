@@ -1,5 +1,11 @@
 # cgview CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cgview | Failed | image problem: the image has no fonts, so Java stops with 'No fonts found' for PNG and SVG output on the bundled cybercell.xml example. |
+
 ## cgview
 
 ### Tool Description

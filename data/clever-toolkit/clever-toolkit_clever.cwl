@@ -142,7 +142,7 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Working directory (default: <result-directory>/work).'
     inputBinding:
       position: 104

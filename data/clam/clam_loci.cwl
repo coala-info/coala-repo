@@ -10,9 +10,16 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: Input depth files. Not needed when using --samples, except a single 
+        items:
+          - File
+          - Directory
+    doc: Input depth files (or one zarr store from clam collect). Not needed when using --samples, except a single 
       zarr store can be combined with --samples for population override
+    secondaryFiles:
+      - pattern: .gzi
+        required: false
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 1
   - id: chunk_size
@@ -170,8 +177,8 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: Output path for callable sites zarr array
+    type: Directory
+    doc: Output zarr store (a directory)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

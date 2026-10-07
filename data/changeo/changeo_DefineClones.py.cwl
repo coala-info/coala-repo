@@ -9,17 +9,66 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Action to perform: 'set' (fixed threshold), 'min' (minimum distance), or
-      'max' (maximum distance)."
+    doc: 'How to handle multiple V(D)J assignments for initial grouping: first or
+      set (default: set).'
     inputBinding:
       position: 101
       prefix: --act
   - id: db_file
     type: File
-    doc: A Change-O formatted TSV file.
+    doc: A tab delimited database file (AIRR or Change-O format).
     inputBinding:
       position: 101
       prefix: -d
+  - id: failed
+    type:
+      - 'null'
+      - boolean
+    doc: If specified create files containing records that fail processing.
+    inputBinding:
+      position: 101
+      prefix: --failed
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: 'Input and output format: airr or changeo (default: airr).'
+    inputBinding:
+      position: 101
+      prefix: --format
+  - id: seq_field
+    type:
+      - 'null'
+      - string
+    doc: Field to be used to calculate distance between records.
+    inputBinding:
+      position: 101
+      prefix: --sf
+  - id: v_field
+    type:
+      - 'null'
+      - string
+    doc: Field containing the germline V segment call.
+    inputBinding:
+      position: 101
+      prefix: --vf
+  - id: j_field
+    type:
+      - 'null'
+      - string
+    doc: Field containing the germline J segment call.
+    inputBinding:
+      position: 101
+      prefix: --jf
+  - id: mode
+    type:
+      - 'null'
+      - string
+    doc: 'Use the V(D)J allele or gene for initial grouping: allele or gene (default:
+      gene).'
+    inputBinding:
+      position: 101
+      prefix: --mode
   - id: dist
     type:
       - 'null'
@@ -33,10 +82,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Columns to use for grouping (e.g., V_CALL, J_CALL, JUNCTION_LENGTH).
+    doc: Additional fields to use for grouping clones aside from V, J and junction
+      length.
     inputBinding:
       position: 101
-      prefix: --group
+      prefix: --gf
   - id: link
     type:
       - 'null'
@@ -48,8 +98,8 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
-    doc: User specified log file name.
+      - string
+    doc: Write verbose logging to this file.
     inputBinding:
       position: 101
       prefix: --log
@@ -73,7 +123,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Normalization method for distance (len, none).
+    doc: 'How to normalize distances: len, mut or none (default: len).'
     inputBinding:
       position: 101
       prefix: --norm
@@ -115,6 +165,13 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Verbose log file.
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

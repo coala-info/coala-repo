@@ -1,5 +1,11 @@
 # circminer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| circminer | Not completed | After fixing the index staging, it ran on nf-core human RNA-seq test reads but reported 0 circRNAs, and the nf-core C. elegans circRNA set crashes its GTF loader, so detection could not be confirmed. |
+
 ## circminer
 
 ### Tool Description

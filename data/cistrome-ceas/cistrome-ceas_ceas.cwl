@@ -1,16 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ceas
+requirements:
+  - class: InlineJavascriptRequirement
 label: cistrome-ceas_ceas
 doc: "CEAS (Cis-regulatory Element Annotation System)\n\nTool homepage: https://bitbucket.org/cistrome/cistrome-applications-harvard/overview"
 inputs:
-  - id: input_files
-    type:
-      type: array
-      items: File
-    doc: input files
-    inputBinding:
-      position: 1
   - id: bed_file
     type:
       - 'null'
@@ -87,7 +82,8 @@ inputs:
   - id: gene_groups_of_interest
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: "Gene-groups of particular interest in wig profiling.\n                 \
       \       Each gene group file must have gene names in the 1st\n             \
       \           column. The file names are separated by commas w/ no\n         \
@@ -95,6 +91,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gn-groups
+      itemSeparator: ','
   - id: promoter_sizes
     type:
       - 'null'
@@ -173,6 +170,34 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: annotation_xls
+    type:
+      - 'null'
+      - File
+    doc: Tab-delimited annotation table (NAME.xls)
+    outputBinding:
+      glob: "$(inputs.experiment_name ? inputs.experiment_name : inputs.bed_file ? inputs.bed_file.nameroot : '*').xls"
+  - id: report_pdf
+    type:
+      - 'null'
+      - File
+    doc: PDF report of the annotation and profiles (NAME.pdf)
+    outputBinding:
+      glob: "$(inputs.experiment_name ? inputs.experiment_name : inputs.bed_file ? inputs.bed_file.nameroot : '*').pdf"
+  - id: r_script
+    type:
+      - 'null'
+      - File
+    doc: R script that draws the PDF report (NAME.R)
+    outputBinding:
+      glob: "$(inputs.experiment_name ? inputs.experiment_name : inputs.bed_file ? inputs.bed_file.nameroot : '*').R"
+  - id: raw_profiles
+    type:
+      type: array
+      items: File
+    doc: Raw TSS, TTS and gene body profiles written with --dump
+    outputBinding:
+      glob: "*_dump_*.txt"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cistrome-ceas:1.0.2b1--py27_1

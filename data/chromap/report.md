@@ -1,5 +1,11 @@
 # chromap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chromap | PASS |  |
+
 ## chromap
 
 ### Tool Description

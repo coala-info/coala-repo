@@ -1,5 +1,11 @@
 # cliquesnv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cliquesnv | PASS |  |
+
 ## cliquesnv
 
 ### Tool Description

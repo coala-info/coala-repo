@@ -1,5 +1,11 @@
 # clearcut CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clearcut | PASS |  |
+
 ## clearcut
 
 ### Tool Description

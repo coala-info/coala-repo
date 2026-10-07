@@ -1,5 +1,12 @@
 # clsify CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clsify_cli | Failed | tool bug: the run writes the XLSX report, but version 0.1.1 assigns the wrong haplotype to known reference sequences (KY777461, haplotype E, called A; HQ454302, haplotype D, called C). |
+| clsify_web | Not completed | Starts a long-running web server; it cannot run as a batch job. |
+
 ## clsify_cli
 
 ### Tool Description

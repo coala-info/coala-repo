@@ -1,5 +1,12 @@
 # centroid_rna_package CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| centroid_rna_package_centroid_alifold | PASS |  |
+| centroid_rna_package_centroid_fold | PASS |  |
+
 ## centroid_rna_package_centroid_fold
 
 ### Tool Description

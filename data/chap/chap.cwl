@@ -207,8 +207,10 @@ inputs:
   - id: path_finding_channel_direction_vector
     type:
       - 'null'
-      - string
-    doc: Channel direction vector. Will be normalised to unit vector internally.
+      - type: array
+        items: float
+    doc: Channel direction vector (three values x y z). Will be normalised to unit
+      vector internally.
     inputBinding:
       position: 101
       prefix: -pf-chan-dir-vec
@@ -225,9 +227,10 @@ inputs:
   - id: path_finding_initial_probe_position
     type:
       - 'null'
-      - string
-    doc: Initial position of probe in probe-based pore finding algorithms. If 
-      set explicitly, it will overwrite the COM-based initial position set with 
+      - type: array
+        items: float
+    doc: Initial position of probe (three values x y z) in probe-based pore finding
+      algorithms. If set explicitly, it will overwrite the COM-based initial position set with 
       the ippSelflag.
     inputBinding:
       position: 101
@@ -455,6 +458,41 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_json
+    type: File
+    doc: JSON file with pathway profiles and summary.
+    outputBinding:
+      glob: $((inputs.output_filename || "output") + ".json")
+  - id: output_pdb
+    type:
+      - 'null'
+      - File
+    doc: PDB file with pore-lining residue annotation.
+    outputBinding:
+      glob: $((inputs.output_filename || "output") + ".pdb")
+  - id: output_obj
+    type:
+      - 'null'
+      - File
+    doc: Wavefront OBJ file of the pathway surface.
+    outputBinding:
+      glob: $((inputs.output_filename || "output") + ".obj")
+  - id: output_mtl
+    type:
+      - 'null'
+      - File
+    doc: Material file for the OBJ surface.
+    outputBinding:
+      glob: $((inputs.output_filename || "output") + ".mtl")
+  - id: output_detailed_json
+    type:
+      - 'null'
+      - File
+    doc: Detailed per-frame newline delimited JSON file.
+    outputBinding:
+      glob: $((inputs.output_filename || "output") + "_stream.json")
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chap:0.9.1--h2df963e_2

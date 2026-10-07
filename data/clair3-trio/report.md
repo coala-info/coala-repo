@@ -1,5 +1,11 @@
 # clair3-trio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clair3-trio_run_clair3_trio.sh | Failed | image problem: the image's busybox gzip cannot read plain files with 'gzip -fdc', so the trio step gets no candidate regions and writes empty VCFs (pileup step runs, 25907 records for HG002). |
+
 ## clair3-trio_run_clair3_trio.sh
 
 ### Tool Description

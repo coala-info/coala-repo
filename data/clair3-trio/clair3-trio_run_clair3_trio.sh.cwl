@@ -1,27 +1,39 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./run_clair3_trio.sh
+baseCommand: run_clair3_trio.sh
 label: clair3-trio_run_clair3_trio.sh
 doc: "Clair3-Trio v0.7\n\nTool homepage: https://github.com/HKU-BAL/Clair3-Trio"
 inputs:
   - id: bam_fn_c
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: BAM file input, for child. The input file must be samtools indexed.
     inputBinding:
       position: 101
-      prefix: --bam_fn_c
+      prefix: --bam_fn_c=
+      separate: false
   - id: bam_fn_p1
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: BAM file input, for parent1. The input file must be samtools indexed.
     inputBinding:
       position: 101
-      prefix: --bam_fn_p1
+      prefix: --bam_fn_p1=
+      separate: false
   - id: bam_fn_p2
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: BAM file input, for parent1. The input file must be samtools indexed.
     inputBinding:
       position: 101
-      prefix: --bam_fn_p2
+      prefix: --bam_fn_p2=
+      separate: false
   - id: bed_fn
     type:
       - 'null'
@@ -29,7 +41,8 @@ inputs:
     doc: Call variants only in the provided bed regions.
     inputBinding:
       position: 101
-      prefix: --bed_fn
+      prefix: --bed_fn=
+      separate: false
   - id: chunk_size
     type:
       - 'null'
@@ -37,7 +50,8 @@ inputs:
     doc: 'The size of each chuck for parallel processing, default: 5000000.'
     inputBinding:
       position: 101
-      prefix: --chunk_size
+      prefix: --chunk_size=
+      separate: false
   - id: ctg_name
     type:
       - 'null'
@@ -45,7 +59,8 @@ inputs:
     doc: The name of the sequence to be processed.
     inputBinding:
       position: 101
-      prefix: --ctg_name
+      prefix: --ctg_name=
+      separate: false
   - id: enable_output_haplotagging
     type:
       - 'null'
@@ -97,23 +112,26 @@ inputs:
       increase a bit of sensitivity in trade of speed and accuracy, default: ont:0.15,hifi:0.08,ilmn:0.08.'
     inputBinding:
       position: 101
-      prefix: --indel_min_af
+      prefix: --indel_min_af=
+      separate: false
   - id: model_path_clair3
-    type: string
+    type: Directory
     doc: The folder path containing a Clair3 model (requiring six files in the 
       folder, including pileup.data-00000-of-00002, pileup.data-00001-of-00002 
       pileup.index, full_alignment.data-00000-of-00002, 
       full_alignment.data-00001-of-00002  and full_alignment.index).
     inputBinding:
       position: 101
-      prefix: --model_path_clair3
+      prefix: --model_path_clair3=
+      separate: false
   - id: model_path_clair3_trio
-    type: string
+    type: Directory
     doc: The folder path containing a Clair3-Trio model (files structure same as
       Clair3).
     inputBinding:
       position: 101
-      prefix: --model_path_clair3_trio
+      prefix: --model_path_clair3_trio=
+      separate: false
   - id: parallel
     type:
       - 'null'
@@ -121,7 +139,8 @@ inputs:
     doc: Path of parallel, parallel >= 20191122 is required.
     inputBinding:
       position: 101
-      prefix: --parallel
+      prefix: --parallel=
+      separate: false
   - id: pileup_model_prefix
     type:
       - 'null'
@@ -130,7 +149,8 @@ inputs:
       $prefix.data-00001-of-00002 $prefix.index. default: pileup.'
     inputBinding:
       position: 101
-      prefix: --pileup_model_prefix
+      prefix: --pileup_model_prefix=
+      separate: false
   - id: pileup_only
     type:
       - 'null'
@@ -162,7 +182,8 @@ inputs:
     doc: Path of pypy3, pypy3 >= 3.6 is required.
     inputBinding:
       position: 101
-      prefix: --pypy
+      prefix: --pypy=
+      separate: false
   - id: python
     type:
       - 'null'
@@ -170,7 +191,8 @@ inputs:
     doc: Path of python, python3 >= 3.6 is required.
     inputBinding:
       position: 101
-      prefix: --python
+      prefix: --python=
+      separate: false
   - id: qual
     type:
       - 'null'
@@ -179,13 +201,18 @@ inputs:
       otherwise.
     inputBinding:
       position: 101
-      prefix: --qual
+      prefix: --qual=
+      separate: false
   - id: ref_fn
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: FASTA reference file input. The input file must be samtools indexed.
     inputBinding:
       position: 101
-      prefix: --ref_fn
+      prefix: --ref_fn=
+      separate: false
   - id: ref_pct_full
     type:
       - 'null'
@@ -194,7 +221,8 @@ inputs:
       called in the pileup mode for full-alignment mode calling, default:  0.1 .'
     inputBinding:
       position: 101
-      prefix: --ref_pct_full
+      prefix: --ref_pct_full=
+      separate: false
   - id: sample_name_c
     type:
       - 'null'
@@ -202,7 +230,8 @@ inputs:
     doc: Define the sample name for Child to be shown in the VCF file.
     inputBinding:
       position: 101
-      prefix: --sample_name_c
+      prefix: --sample_name_c=
+      separate: false
   - id: sample_name_p1
     type:
       - 'null'
@@ -210,7 +239,8 @@ inputs:
     doc: Define the sample name for Parent1 to be shown in the VCF file.
     inputBinding:
       position: 101
-      prefix: --sample_name_p1
+      prefix: --sample_name_p1=
+      separate: false
   - id: sample_name_p2
     type:
       - 'null'
@@ -218,7 +248,8 @@ inputs:
     doc: Define the sample name for Parent2 to be shown in the VCF file.
     inputBinding:
       position: 101
-      prefix: --sample_name_p2
+      prefix: --sample_name_p2=
+      separate: false
   - id: samtools
     type:
       - 'null'
@@ -226,7 +257,8 @@ inputs:
     doc: Path of samtools, samtools version >= 1.10 is required.
     inputBinding:
       position: 101
-      prefix: --samtools
+      prefix: --samtools=
+      separate: false
   - id: snp_min_af
     type:
       - 'null'
@@ -235,7 +267,8 @@ inputs:
       increase a bit of sensitivity in trade of speed and accuracy, default: ont:0.08,hifi:0.08,ilmn:0.08.'
     inputBinding:
       position: 101
-      prefix: --snp_min_af
+      prefix: --snp_min_af=
+      separate: false
   - id: threads
     type: int
     doc: 'Max #threads to be used. The full genome will be divided into small chunks
@@ -243,7 +276,8 @@ inputs:
       simultaneously is ceil(#threads/4)*3. 3 is the overloading factor.'
     inputBinding:
       position: 101
-      prefix: --threads
+      prefix: --threads=
+      separate: false
   - id: trio_model_prefix
     type:
       - 'null'
@@ -252,7 +286,8 @@ inputs:
       $prefix.index, default: trio.'
     inputBinding:
       position: 101
-      prefix: --trio_model_prefix
+      prefix: --trio_model_prefix=
+      separate: false
   - id: var_pct_full
     type:
       - 'null'
@@ -262,7 +297,8 @@ inputs:
       0.3.'
     inputBinding:
       position: 101
-      prefix: --var_pct_full
+      prefix: --var_pct_full=
+      separate: false
   - id: var_pct_phasing
     type:
       - 'null'
@@ -271,7 +307,8 @@ inputs:
       used in WhatsHap phasing, default: 0.8 for ont guppy5 and 0.7 for other platforms.'
     inputBinding:
       position: 101
-      prefix: --var_pct_phasing
+      prefix: --var_pct_phasing=
+      separate: false
   - id: vcf_fn
     type:
       - 'null'
@@ -280,7 +317,8 @@ inputs:
       sites in the VCF file if provided.
     inputBinding:
       position: 101
-      prefix: --vcf_fn
+      prefix: --vcf_fn=
+      separate: false
   - id: whatshap
     type:
       - 'null'
@@ -288,18 +326,50 @@ inputs:
     doc: Path of whatshap, whatshap >= 1.0 is required.
     inputBinding:
       position: 101
-      prefix: --whatshap
+      prefix: --whatshap=
+      separate: false
   - id: output_path
     type: string
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --output=
+      separate: false
 outputs:
   - id: output
     type: Directory
     doc: VCF/GVCF output directory.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: child_vcf
+    type:
+      - 'null'
+      - File
+    doc: Final trio calls for the child
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+    outputBinding:
+      glob: "$(inputs.output_path)/$(inputs.sample_name_c ? inputs.sample_name_c : 'Child')_c3t.vcf.gz"
+  - id: parent1_vcf
+    type:
+      - 'null'
+      - File
+    doc: Final trio calls for parent 1
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+    outputBinding:
+      glob: "$(inputs.output_path)/$(inputs.sample_name_p1 ? inputs.sample_name_p1 : 'Parent1')_c3t.vcf.gz"
+  - id: parent2_vcf
+    type:
+      - 'null'
+      - File
+    doc: Final trio calls for parent 2
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+    outputBinding:
+      glob: "$(inputs.output_path)/$(inputs.sample_name_p2 ? inputs.sample_name_p2 : 'Parent2')_c3t.vcf.gz"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

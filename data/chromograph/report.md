@@ -1,9 +1,15 @@
 # chromograph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chromograph | PASS |  |
+
 ## chromograph
 
 ### Tool Description
-Chromograph is a tool for plotting data on chromosomes. (Note: The provided text contains system error logs rather than help text; arguments were inferred from the tool's standard interface).
+Chromograph plots genomic data (coverage, autozygosity, homozygous SNP fraction, ideograms, UPD regions and sites) on chromosomes as PNG images.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/chromograph:1.3.1--pyhdfd78af_2
@@ -18,12 +24,44 @@ Chromograph is a tool for plotting data on chromosomes. (Note: The provided text
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/chromograph:1.3.1--pyhdfd78af_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ca7680d1025d7a2df2c11bc7fdcc87594a7d0c43f16f970e7b0b4bef1b266918: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3301504539/rootfs/usr/bin/bash: no space left on device
+usage: chromograph [-h] [-a FILE] [-c FILE] [-f FILE] [-i FILE] [-m FILE]
+                   [-r FILE] [-s FILE] [--step STEP] [--version] [-d FILE]
+                   [-e] [-k FILE] [-n] [-u CHUNK] [-x] [--small] [--medium]
+                   [--large]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -a FILE, --autozyg FILE
+                        Plot regions of autozygosity from bed file [OPERATION]
+  -c FILE, --coverage FILE
+                        Plot coverage from fixed step wig file [OPERATION]
+  -f FILE, --fracsnp FILE
+                        Plot fraction of homozygous SNPs from wig file
+                        [OPERATION]
+  -i FILE, --ideogram FILE
+                        Plot ideograms from bed-file on format ['chrom',
+                        'start', 'end', 'name', 'gStain'] [OPERATION]
+  -m FILE, --exom FILE  Plot exom coverage from bed file [OPERATION]
+  -r FILE, --regions FILE
+                        Plot UPD regions from bed file [OPERATION]
+  -s FILE, --sites FILE
+                        Plot UPD sites from bed file [OPERATION]
+  --step STEP           fixed step size (default 5000)
+  --version             Display program version (1.3.1) and exit.
+  -d FILE, --outd FILE  output dir
+  -e, --euploid         Always output an euploid amount of files -even if some
+                        are empty
+  -k FILE, --rgb FILE   Set color (RGB hex, only with --coverage option)
+  -n, --norm            Normalize data (wig/coverage)
+  -u CHUNK, --chunk CHUNK
+                        Set Matplotlib.agg.path.chunksize (default 10000)
+  -x, --combine         Write all graphs to one file (default one plot per
+                        file)
+  --small
+  --medium
+  --large
+
+One OPERATION Command is needed for Chromograph to produce output
 ```
 
 

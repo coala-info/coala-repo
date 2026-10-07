@@ -129,8 +129,7 @@ inputs:
   - id: order_list
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: List of fasta files in desired order.
     inputBinding:
       position: 102
@@ -214,6 +213,20 @@ outputs:
     doc: Location to write output.
     outputBinding:
       glob: $(inputs.out_path)
+  - id: out_files
+    type:
+      - 'null'
+      - Directory
+    doc: Per-block HTML pages linked from the figure (<out>_files)
+    outputBinding:
+      glob: $(inputs.out_path)_files
+  - id: working_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Intermediate files (Sibelia blocks, circos files), kept with --keep
+    outputBinding:
+      glob: $(inputs.working_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

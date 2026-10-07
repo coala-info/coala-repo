@@ -54,7 +54,7 @@ inputs:
     doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 102
-      prefix: --output-tree
+      prefix: --output
 outputs:
   - id: output_tree
     type: File

@@ -6,8 +6,8 @@ doc: "CentroidAlifold v0.0.16 for predicting common RNA secondary structures\n\n
   homepage: https://github.com/satoken/centroid-rna-package"
 inputs:
   - id: seq
-    type: string
-    doc: Input sequence
+    type: File
+    doc: Input multiple alignment (CLUSTAL format)
     inputBinding:
       position: 1
   - id: bp_matrix
@@ -103,7 +103,7 @@ inputs:
   - id: params
     type:
       - 'null'
-      - string
+      - File
     doc: use the parameter file
     inputBinding:
       position: 103
@@ -120,7 +120,7 @@ inputs:
   - id: postscript
     type:
       - 'null'
-      - boolean
+      - string
     doc: draw predicted secondary structures with the postscript (PS) format
     inputBinding:
       position: 103
@@ -166,6 +166,16 @@ inputs:
       position: 105
       prefix: --posteriors-output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Predicted structures (when no output file is given)
+  - id: postscript_file
+    type:
+      - 'null'
+      - File
+    doc: secondary structure drawing in postscript (PS) format
+    outputBinding:
+      glob: $(inputs.postscript)
   - id: output
     type:
       - 'null'
@@ -184,6 +194,7 @@ outputs:
       glob: $(inputs.posteriors_output_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: centroid_rna_package_centroid_alifold.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centroid_rna_package:0.0.16--0

@@ -1,5 +1,11 @@
 # chimeraslayer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chimeraslayer | PASS |  |
+
 ## chimeraslayer
 
 ### Tool Description

@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - cgview.jar
+  - cgview
 label: cgview
 doc: "Generates graphical representations of circular genomes.\n\nTool homepage: http://wishart.biology.ualberta.ca/cgview/"
 inputs:
@@ -23,6 +21,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -I
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: embed_vector_text
     type:
       - 'null'
@@ -31,6 +30,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -E
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: exclude_svg_from_series
     type:
       - 'null'
@@ -39,6 +39,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -e
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: external_legend_width
     type:
       - 'null'
@@ -59,7 +60,7 @@ inputs:
   - id: image_series_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to receive an image series.
     inputBinding:
       position: 101
@@ -118,6 +119,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -u
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: reference_stylesheet
     type:
       - 'null'
@@ -126,6 +128,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -S
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: remove_labels
     type:
       - 'null'
@@ -134,6 +137,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -R
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: remove_legends
     type:
       - 'null'
@@ -142,6 +146,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: ruler_font_size
     type:
       - 'null'
@@ -181,7 +186,7 @@ inputs:
     doc: Output or path parameter `html_file_path`
     inputBinding:
       position: 102
-      prefix: --html-file
+      prefix: -h
   - id: output_image_file_path
     type:
       - 'null'
@@ -189,7 +194,7 @@ inputs:
     doc: Output or path parameter `output_image_file_path`
     inputBinding:
       position: 103
-      prefix: --output-image-file
+      prefix: -o
 outputs:
   - id: html_file
     type:
@@ -205,6 +210,13 @@ outputs:
     doc: The image file to create.
     outputBinding:
       glob: $(inputs.output_image_file_path)
+  - id: image_series
+    type:
+      - 'null'
+      - Directory
+    doc: Directory that receives the image series
+    outputBinding:
+      glob: $(inputs.image_series_directory)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

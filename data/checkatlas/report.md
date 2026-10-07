@@ -1,5 +1,11 @@
 # checkatlas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| checkatlas | PASS |  |
+
 ## checkatlas
 
 ### Tool Description

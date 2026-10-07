@@ -8,7 +8,7 @@ doc: "Compare chemical classes predicted by CHAMOIS for BGCs against a set of qu
   \nTool homepage: https://chamois.readthedocs.io/"
 inputs:
   - id: input
-    type: string
+    type: File
     doc: The chemical classes predicted by CHAMOIS for BGCs.
     inputBinding:
       position: 101
@@ -16,18 +16,21 @@ inputs:
   - id: model
     type:
       - 'null'
-      - string
+      - File
     doc: The path to an alternative model used for predicting classes.
     inputBinding:
       position: 101
       prefix: --model
   - id: queries
-    type: string
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --query
     doc: The compounds to search in the predictions, as a SMILES, InChi, or 
       InChiKey.
     inputBinding:
       position: 101
-      prefix: --query
   - id: rank
     type:
       - 'null'
@@ -76,6 +79,8 @@ outputs:
       glob: $(inputs.distance_matrix_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0

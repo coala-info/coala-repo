@@ -1,5 +1,11 @@
 # cloudspades CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cloudspades_spades.py | PASS |  |
+
 ## cloudspades_spades.py
 
 ### Tool Description

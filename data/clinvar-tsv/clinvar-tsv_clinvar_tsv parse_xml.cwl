@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - clinvar-tsv
+  - clinvar_tsv
   - parse_xml
 label: clinvar-tsv_clinvar_tsv parse_xml
 doc: "Parse ClinVar XML file into TSV format.\n\nTool homepage: https://github.com/bihealth/clinvar-tsv"

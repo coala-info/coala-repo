@@ -78,6 +78,8 @@ inputs:
   - id: reads_bam
     type: File
     doc: BAM file with ChIP reads (.bai index required)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -b

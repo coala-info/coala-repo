@@ -5,6 +5,13 @@ baseCommand:
   - merge
 label: circlator_merge
 doc: "Merge original and new assembly\n\nTool homepage: https://github.com/sanger-pathogens/circlator"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.original_fasta)
+        writable: true
+      - entry: $(inputs.new_fasta)
+        writable: true
 inputs:
   - id: original_fasta
     type: File
@@ -190,8 +197,10 @@ outputs:
   - id: outprefix_files
     type:
       type: array
-      items: File
-    doc: Files written with the prefix given in outprefix
+      items:
+        - File
+        - Directory
+    doc: Files (and, with --reads, iteration folders) written with the prefix given in outprefix
     outputBinding:
       glob: $(inputs.outprefix)*
 hints:

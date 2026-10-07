@@ -10,7 +10,9 @@ inputs:
   - id: input
     type:
       type: array
-      items: Directory
+      items:
+        - File
+        - Directory
     doc: Path to folder containing MAGs or list of MAGS to be analyzed
     inputBinding:
       position: 1
@@ -26,8 +28,8 @@ inputs:
   - id: database_path
     type:
       - 'null'
-      - Directory
-    doc: 'Provide a location for the CheckM2 database for a given predict run [default:
+      - File
+    doc: 'Provide the CheckM2 DIAMOND database file (uniref100.KO.1.dmnd) for a given predict run [default:
       use either internal path set via <checkm2 database> or CHECKM2DB environmental
       variable]'
     inputBinding:

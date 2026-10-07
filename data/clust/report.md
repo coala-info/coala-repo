@@ -1,5 +1,11 @@
 # clust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| clust | PASS |  |
+
 ## clust
 
 ### Tool Description

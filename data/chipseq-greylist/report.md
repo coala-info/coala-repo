@@ -1,5 +1,11 @@
 # chipseq-greylist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| chipseq-greylist | PASS |  |
+
 ## chipseq-greylist
 
 ### Tool Description

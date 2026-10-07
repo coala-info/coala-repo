@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - clusterfunk
-  - annotate
+  - annotate_tips
 label: clusterfunk_annotate_tips
 doc: "Annotate tips and nodes in a phylogenetic tree using taxon labels, metadata
   files, or MRCA rules.\n\nTool homepage: https://github.com/cov-ert/clusterfunk"

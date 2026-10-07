@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - ariba
+  - circlator
   - test
 label: circlator_test
 doc: "Run Circlator on a small test dataset\n\nTool homepage: https://github.com/sanger-pathogens/circlator"

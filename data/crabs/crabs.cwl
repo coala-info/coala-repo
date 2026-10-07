@@ -39,8 +39,9 @@ inputs:
   - id: amplicons
     type:
       - 'null'
-      - string
-    doc: file name for the amplicons retrieved during in silico PCR
+      - File
+    doc: file name for the amplicons retrieved during in silico PCR (input for --pairwise-global-alignment
+      and --amplification-efficiency-figure)
     inputBinding:
       position: 101
       prefix: --amplicons
@@ -486,9 +487,8 @@ inputs:
   - id: species
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: species of interest list
+      - string
+    doc: species of interest list (names joined by '+', or a file path)
     inputBinding:
       position: 101
       prefix: --species
@@ -570,8 +570,17 @@ outputs:
     doc: output directory or filename
     outputBinding:
       glob: $(inputs.output_path)
+  - id: untrimmed_output
+    type:
+      - 'null'
+      - File
+    doc: untrimmed sequences written by --in-silico-pcr
+    outputBinding:
+      glob: $(inputs.untrimmed)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crabs:1.14.0--pyhdfd78af_0

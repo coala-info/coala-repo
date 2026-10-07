@@ -183,6 +183,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: Output directory named by output_name
+    outputBinding:
+      glob: $(inputs.output_name)
+  - id: report
+    type: File
+    doc: Contamination report (confindr_report.csv)
+    outputBinding:
+      glob: $(inputs.output_name)/confindr_report.csv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/confindr:0.8.2--pyhdfd78af_0

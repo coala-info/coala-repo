@@ -1,5 +1,14 @@
 # commec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| commec_flag | PASS | Upstream v1.0.3 test screen files give the exact expected screen_pipeline_status.csv rows. |
+| commec_screen | PASS | Runs on the upstream v1.0.3 test databases with --skip-tx (taxonomy test DB is only a placeholder); JSON, log and HTML outputs report the expected no-hit Warning status. |
+| commec_setup | Not completed | Database download helper: with --auto it starts fetching the full NCBI nr BLAST database (hundreds of GB), too large to test here. |
+| commec_split | PASS |  |
+
 ## commec_screen
 
 ### Tool Description

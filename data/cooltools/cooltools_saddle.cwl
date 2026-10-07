@@ -63,11 +63,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --fig
     doc: Generate a figure and save to a file of the specified format. If not 
       specified - no image is generated. Repeat for multiple output formats.
     inputBinding:
       position: 104
-      prefix: --fig
   - id: hist_color
     type:
       - 'null'
@@ -202,10 +203,29 @@ inputs:
       position: 104
       prefix: --vrange
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: saddledump
+    type: File
+    doc: Saddle data, bin edges and histogram arrays (out_prefix.saddledump.npz).
+    outputBinding:
+      glob: $(inputs.out_prefix).saddledump.npz
+  - id: digitized_track
+    type: File
+    doc: Digitized track values in bedGraph-style TSV (out_prefix.digitized.tsv).
+    outputBinding:
+      glob: $(inputs.out_prefix).digitized.tsv
+  - id: figures
+    type: File[]
+    doc: Saddle plot figures (out_prefix.<format>), one per --fig format.
+    outputBinding:
+      glob:
+        - $(inputs.out_prefix).png
+        - $(inputs.out_prefix).jpg
+        - $(inputs.out_prefix).svg
+        - $(inputs.out_prefix).pdf
+        - $(inputs.out_prefix).ps
+        - $(inputs.out_prefix).eps
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
-stdout: cooltools_saddle.out

@@ -1,5 +1,11 @@
 # covtobed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| covtobed | PASS |  |
+
 ## covtobed
 
 ### Tool Description

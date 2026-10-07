@@ -7,7 +7,7 @@ label: colorid_bv_info
 doc: "dumps index parameters and accessions\n\nTool homepage: https://github.com/hcdenbakker/colorid_bv"
 inputs:
   - id: bigsi
-    type: File
+    type: Directory
     doc: index for which info is requested
     inputBinding:
       position: 101

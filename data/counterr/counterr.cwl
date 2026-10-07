@@ -15,6 +15,9 @@ inputs:
   - id: bam_file
     type: File
     doc: the input bam file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: -bam
@@ -180,6 +183,11 @@ outputs:
     doc: the output directory for figures and stats
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/counterr:0.1--py_0

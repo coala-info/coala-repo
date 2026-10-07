@@ -129,10 +129,10 @@ inputs:
       position: 101
       prefix: --root
   - id: srnaseq
-    type:
-      - 'null'
-      - File
-    doc: FASTA file with small RNA sequences
+    type: File
+    doc: FASTA file with small RNA sequences (at least 3 homologous sRNAs; each
+      header is the RefSeq ID of the organism's genome, the first one is the 
+      organism of interest)
     inputBinding:
       position: 101
       prefix: --srnaseq
@@ -173,6 +173,52 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result
+    type: File
+    doc: Central result table with the top predictions (CopraRNA_result.csv).
+    outputBinding:
+      glob: CopraRNA_result.csv
+  - id: result_all
+    type:
+      - 'null'
+      - File
+    doc: Result table with all predictions (CopraRNA_result_all.csv).
+    outputBinding:
+      glob: CopraRNA_result_all.csv
+  - id: result_dirs
+    type:
+      type: array
+      items: Directory
+    doc: Result folders (IntaRNA, Phylogeny, FASTA, Regions_plots, Enrichment, 
+      all_predictions, Rdata); present when temporary files are cleaned.
+    outputBinding:
+      glob:
+        - IntaRNA
+        - Phylogeny
+        - FASTA
+        - Regions_plots
+        - Enrichment
+        - all_predictions
+        - Rdata
+  - id: other_files
+    type:
+      type: array
+      items: File
+    doc: Other files of the run directory (README.txt, option file, weights, 
+      evo_alignments.zip, plots, ...).
+    outputBinding:
+      glob:
+        - README.txt
+        - CopraRNA_option_file.txt
+        - '*.weight'
+        - weights.warning
+        - evo_alignments.zip
+        - '*.png'
+        - '*.ps'
+        - '*.pdf'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coprarna:2.1.4--hdfd78af_0

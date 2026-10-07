@@ -1,5 +1,15 @@
 # cnmf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cnmf_combine | PASS |  |
+| cnmf_consensus | PASS |  |
+| cnmf_factorize | PASS |  |
+| cnmf_k_selection_plot | PASS |  |
+| cnmf_prepare | PASS |  |
+
 ## cnmf_prepare
 
 ### Tool Description

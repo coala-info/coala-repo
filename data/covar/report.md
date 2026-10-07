@@ -1,5 +1,11 @@
 # covar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| covar | PASS |  |
+
 ## covar
 
 ### Tool Description

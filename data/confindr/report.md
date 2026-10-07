@@ -1,5 +1,11 @@
 # confindr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| confindr | PASS |  |
+
 ## confindr
 
 ### Tool Description

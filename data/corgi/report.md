@@ -1,5 +1,11 @@
 # corgi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| corgi | Failed | image problem: the default pretrained model fails to load because the image's scipy lacks skew_norm_gen. |
+
 ## corgi
 
 ### Tool Description

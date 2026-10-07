@@ -12,96 +12,16 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: alignment files
+        inputBinding:
+          prefix: --alignments
+    doc: alignment files (BAM/CRAM, indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
-      prefix: --alignments
-  - id: batchname_sep
-    type:
-      - 'null'
-      - string
-    doc: concatenate samplename/batchname from samples tsv
-    inputBinding:
-      position: 101
-      prefix: --batchname
-  - id: bedfile
-    type:
-      - 'null'
-      - File
-    doc: 'bedfile defining the amplicons, with format: ref\tstart\tstop\tamp_num\tpool\tstrand'
-    inputBinding:
-      position: 101
-      prefix: --bedfile
-  - id: comment
-    type:
-      - 'null'
-      - boolean
-    doc: 'add comments in the out amplicon YAML with names from BED file (default:
-      comment the YAML)'
-    inputBinding:
-      position: 101
-      prefix: --comment
-  - id: cooc
-    type:
-      - 'null'
-      - int
-    doc: minimum number of cooccurrences to search for
-    inputBinding:
-      position: 101
-      prefix: --cooc
-  - id: dump
-    type:
-      - 'null'
-      - boolean
-    doc: dump the python object to the terminal
-    inputBinding:
-      position: 101
-      prefix: --dump
-  - id: fix_subset
-    type:
-      - 'null'
-      - boolean
-    doc: Fix variants attribution when cooccurrence are subset/superset of other
-      variants
-    inputBinding:
-      position: 101
-      prefix: --fix-subset
-  - id: fs
-    type:
-      - 'null'
-      - boolean
-    doc: Fix variants attribution when cooccurrence are subset/superset of other
-      variants
-    inputBinding:
-      position: 101
-      prefix: --fs
-  - id: in_amp
-    type:
-      - 'null'
-      - File
-    doc: use the supplied YAML file to query amplicons instead of building it 
-      from BED + voc's DIR
-    inputBinding:
-      position: 101
-      prefix: --in-amp
-  - id: in_amplicons
-    type:
-      - 'null'
-      - File
-    doc: use the supplied YAML file to query amplicons instead of building it 
-      from BED + voc's DIR
-    inputBinding:
-      position: 101
-      prefix: --amplicons
-  - id: in_amplicons_yaml
-    type:
-      - 'null'
-      - File
-    doc: use the supplied YAML file to query amplicons instead of building it 
-      from BED + voc's DIR
-    inputBinding:
-      position: 101
-      prefix: --in-amplicons
   - id: name
     type:
       - 'null'
@@ -110,41 +30,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --name
-  - id: no_comment
+  - id: samples
     type:
       - 'null'
-      - boolean
-    doc: 'add comments in the out amplicon YAML with names from BED file (default:
-      comment the YAML)'
+      - File
+    doc: V-pipe samples list tsv
     inputBinding:
       position: 101
-      prefix: --no-comment
-  - id: no_fix_subset
+      prefix: --samples
+  - id: batchname_sep
     type:
       - 'null'
-      - boolean
-    doc: Fix variants attribution when cooccurrence are subset/superset of other
-      variants
+      - string
+    doc: concatenate samplename/batchname from samples tsv
     inputBinding:
       position: 101
-      prefix: --no-fix-subset
-  - id: no_fs
-    type:
-      - 'null'
-      - boolean
-    doc: Fix variants attribution when cooccurrence are subset/superset of other
-      variants
-    inputBinding:
-      position: 101
-      prefix: --no-fs
-  - id: no_sort_bedfile
-    type:
-      - 'null'
-      - boolean
-    doc: "sort the bedfile by 'reference name' and 'start position' (default: sorted)"
-    inputBinding:
-      position: 101
-      prefix: --no-sort
+      prefix: --batchname
   - id: prefix
     type:
       - 'null'
@@ -162,31 +63,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference
-  - id: samples
-    type:
-      - 'null'
-      - File
-    doc: V-pipe samples list tsv
-    inputBinding:
-      position: 101
-      prefix: --samples
-  - id: sort_bedfile
-    type:
-      - 'null'
-      - boolean
-    doc: "sort the bedfile by 'reference name' and 'start position' (default: sorted)"
-    inputBinding:
-      position: 101
-      prefix: --sort
-  - id: voc
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: individual yamls defining the variant of concerns
-    inputBinding:
-      position: 101
-      prefix: --voc
   - id: vocdir
     type:
       - 'null'
@@ -195,6 +71,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vocdir
+  - id: voc
+    type:
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --voc
+    doc: individual yamls defining the variant of concerns
+    inputBinding:
+      position: 101
   - id: with_revert
     type:
       - 'null'
@@ -208,49 +94,125 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: also include reverts when compiling amplicons (requires VOC YAML files 
-      with revert category)
+    doc: do not include reverts when compiling amplicons
     inputBinding:
       position: 101
       prefix: --no-rev
-  - id: json_path
+  - id: bedfile
     type:
       - 'null'
-      - string
-    doc: results generated by mutbamscan
+      - File
+    doc: 'bedfile defining the amplicons, with format: ref\tstart\tstop\tamp_num\tpool\tstrand'
     inputBinding:
-      position: 102
-      prefix: --json
-  - id: out_amplicons_yaml_path
+      position: 101
+      prefix: --bedfile
+  - id: sort_bedfile
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `out_amplicons_yaml_path`
+      - boolean
+    doc: "sort the bedfile by 'reference name' and 'start position' (default: sorted)"
     inputBinding:
-      position: 104
-      prefix: --out-amplicons-yaml
-  - id: yaml_path
+      position: 101
+      prefix: --sort
+  - id: no_sort_bedfile
     type:
       - 'null'
-      - string
-    doc: results generated by mutbamscan
+      - boolean
+    doc: do not sort the bedfile
     inputBinding:
-      position: 106
-      prefix: --yaml
+      position: 101
+      prefix: --no-sort
+  - id: cooc
+    type:
+      - 'null'
+      - int
+    doc: minimum number of cooccurrences to search for
+    inputBinding:
+      position: 101
+      prefix: --cooc
+  - id: fix_subset
+    type:
+      - 'null'
+      - boolean
+    doc: Fix variants attribution when cooccurrence are subset/superset of other
+      variants
+    inputBinding:
+      position: 101
+      prefix: --fix-subset
+  - id: no_fix_subset
+    type:
+      - 'null'
+      - boolean
+    doc: Do not fix variants attribution when cooccurrence are subset/superset 
+      of other variants
+    inputBinding:
+      position: 101
+      prefix: --no-fix-subset
+  - id: in_amplicons
+    type:
+      - 'null'
+      - File
+    doc: use the supplied YAML file to query amplicons instead of building it 
+      from BED + voc's DIR
+    inputBinding:
+      position: 101
+      prefix: --in-amplicons
+  - id: comment
+    type:
+      - 'null'
+      - boolean
+    doc: 'add comments in the out amplicon YAML with names from BED file (default:
+      comment the YAML)'
+    inputBinding:
+      position: 101
+      prefix: --comment
+  - id: no_comment
+    type:
+      - 'null'
+      - boolean
+    doc: do not add comments in the out amplicon YAML
+    inputBinding:
+      position: 101
+      prefix: --no-comment
+  - id: dump
+    type:
+      - 'null'
+      - boolean
+    doc: dump the python object to the terminal
+    inputBinding:
+      position: 101
+      prefix: --dump
   - id: out_amplicons_path
     type:
       - 'null'
       - string
+    doc: output amplicon query in a YAML file
     inputBinding:
-      position: 107
+      position: 102
       prefix: --out-amplicons
+  - id: json_path
+    type:
+      - 'null'
+      - string
+    doc: output results to a JSON file
+    inputBinding:
+      position: 102
+      prefix: --json
+  - id: yaml_path
+    type:
+      - 'null'
+      - string
+    doc: output results to a yaml file
+    inputBinding:
+      position: 102
+      prefix: --yaml
   - id: tsv_path
     type:
       - 'null'
       - string
     doc: output results to a (raw) tsv file
     inputBinding:
-      position: 108
+      position: 102
       prefix: --tsv
 outputs:
   - id: out_amplicons
@@ -260,13 +222,6 @@ outputs:
     doc: output amplicon query in a YAML file
     outputBinding:
       glob: $(inputs.out_amplicons_path)
-  - id: out_amplicons_yaml
-    type:
-      - 'null'
-      - File
-    doc: output amplicon query in a YAML file
-    outputBinding:
-      glob: $(inputs.out_amplicons_yaml_path)
   - id: json
     type:
       - 'null'

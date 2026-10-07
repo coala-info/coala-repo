@@ -20,6 +20,11 @@ inputs:
     doc: Map file (PSL or chain)
     inputBinding:
       position: 2
+  - id: out_psl_path
+    type: string
+    doc: Output PSL file name
+    inputBinding:
+      position: 3
   - id: chain_map_file
     type:
       - 'null'
@@ -91,7 +96,8 @@ inputs:
     doc: verbose output. 2 - show each overlap and the mapping
     inputBinding:
       position: 103
-      prefix: -verbose=n
+      prefix: -verbose=
+      separate: false
   - id: map_info_file_path
     type:
       - 'null'
@@ -115,7 +121,7 @@ outputs:
     type: File
     doc: Output PSL file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_psl_path)
   - id: map_info_file
     type:
       - 'null'

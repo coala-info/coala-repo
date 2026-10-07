@@ -195,11 +195,16 @@ inputs:
   - id: root_file
     type:
       - 'null'
+      - string
       - File
-    doc: Root file for storing/retrieving data
+    doc: Root file for storing/retrieving data. Give a file name (string) to 
+      create a new root file with -tree, or an existing root file (File) for 
+      the other steps; an existing file is staged writable because most steps 
+      update it in place.
     inputBinding:
       position: 101
       prefix: -root
+      valueFrom: "$(self === null ? null : (typeof self === 'string' ? self : self.basename))"
   - id: stat_bin_size
     type:
       - 'null'
@@ -213,6 +218,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Create root file from BAM files
     inputBinding:
       position: 101
@@ -245,10 +253,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pe_output_file_path`
+    doc: Output file for paired-end analysis (-f, used with -pe)
     inputBinding:
       position: 103
-      prefix: --pe-output-file
+      prefix: -f
   - id: cptrees_path
     type:
       - 'null'
@@ -257,6 +265,16 @@ inputs:
       position: 104
       prefix: -cptrees
 outputs:
+  - id: root_file_out
+    type:
+      - 'null'
+      - File
+    doc: Root file created or updated by this step
+    outputBinding:
+      glob: "$(inputs.root_file === null ? [] : (typeof inputs.root_file === 'string' ? inputs.root_file : inputs.root_file.basename))"
+  - id: stdout
+    type: stdout
+    doc: Standard output (CNV calls from -call, listing from -ls, statistics)
   - id: pe_output_file
     type:
       - 'null'
@@ -273,6 +291,11 @@ outputs:
       glob: $(inputs.cptrees_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.root_file !== null && typeof inputs.root_file === 'object' ? inputs.root_file : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnvnator:0.4.1--py312h99c8fb2_11
+stdout: cnvnator.out

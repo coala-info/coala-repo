@@ -161,7 +161,7 @@ inputs:
     doc: Alias for ``--maximum-longitude`` and ``--maximum-x``.
     inputBinding:
       position: 101
-      prefix: --maximum-x
+      prefix: -X
   - id: maximum_y
     type:
       - 'null'
@@ -178,7 +178,7 @@ inputs:
     doc: Alias for ``--maximum-latitude`` and ``--maximum-y``.
     inputBinding:
       position: 101
-      prefix: --maximum-y
+      prefix: -Y
   - id: minimum_depth
     type:
       - 'null'
@@ -221,7 +221,7 @@ inputs:
     doc: Alias for ``--minimum-longitude`` and ``--minimum-x``.
     inputBinding:
       position: 101
-      prefix: --minimum-x
+      prefix: -x
   - id: minimum_y
     type:
       - 'null'
@@ -238,7 +238,7 @@ inputs:
     doc: Alias for ``--minimum-latitude`` and ``--minimum-y``.
     inputBinding:
       position: 101
-      prefix: --minimum-y
+      prefix: -y
   - id: motu_api_request
     type:
       - 'null'
@@ -418,6 +418,8 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/copernicusmarine:2.3.0

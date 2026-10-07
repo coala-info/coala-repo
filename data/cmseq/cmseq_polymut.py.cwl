@@ -7,7 +7,11 @@ doc: "Reports the polymorphic rate of each reference (polymorphic bases / total 
 inputs:
   - id: bam_file
     type: File
-    doc: The file on which to operate
+    doc: The file on which to operate (sorted BAM; its .bai index is needed 
+      unless --sortindex is set)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: contig

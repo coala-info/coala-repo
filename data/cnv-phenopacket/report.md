@@ -1,5 +1,11 @@
 # cnv-phenopacket CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cnv-phenopacket | PASS |  |
+
 ## cnv-phenopacket
 
 ### Tool Description

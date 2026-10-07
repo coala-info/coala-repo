@@ -1,5 +1,31 @@
 # cooler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cooler_attrs | PASS |  |
+| cooler_balance | PASS |  |
+| cooler_cload_hiclib | Not completed | no test data: needs a legacy hiclib HDF5 fragment file and none is published in the cooler, Galaxy or nf-core test sets. |
+| cooler_cload_pairix | PASS |  |
+| cooler_cload_pairs | PASS |  |
+| cooler_cload_tabix | PASS |  |
+| cooler_coarsen | PASS |  |
+| cooler_cp | PASS |  |
+| cooler_csort | PASS |  |
+| cooler_digest | Failed | tool bug: fragment ends are 2 bp after the true cut site (cooler adds 1 to Biopython's 1-based cut positions; DpnII GATC at 0-based 37 gives end 39). |
+| cooler_dump | PASS |  |
+| cooler_info | PASS |  |
+| cooler_ln | PASS |  |
+| cooler_load | PASS |  |
+| cooler_ls | PASS |  |
+| cooler_makebins | PASS |  |
+| cooler_merge | PASS |  |
+| cooler_mv | PASS |  |
+| cooler_show | Failed | image problem: matplotlib is not installed, so cooler show exits with 'Install matplotlib to use cooler show'. |
+| cooler_tree | PASS |  |
+| cooler_zoomify | PASS |  |
+
 ## cooler_balance
 
 ### Tool Description
@@ -86,36 +112,6 @@ Options:
                                   gracefully; 'error': Abort with non-zero
                                   exit status.  [default: store_final]
   -h, --help                      Show this message and exit.
-```
-
-
-## cooler_cload
-
-### Tool Description
-Create a cooler from genomic pairs and bins.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0
-- **Homepage**: https://github.com/open2c/cooler
-- **Package**: https://anaconda.org/channels/bioconda/packages/cooler/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: cooler cload [OPTIONS] COMMAND [ARGS]...
-
-  Create a cooler from genomic pairs and bins.
-
-  Choose a subcommand based on the format of the input contact list.
-
-Options:
-  -h, --help  Show this message and exit.
-
-Commands:
-  hiclib  Bin a hiclib HDF5 contact list (frag) file.
-  pairix  Bin a pairix-indexed contact list file.
-  pairs   Bin any text file or stream of pairs.
-  tabix   Bin a tabix-indexed contact list file.
 ```
 
 
@@ -839,6 +835,250 @@ Options:
   -h, --help               Show this message and exit.
 ```
 
+
+## cooler_cload_pairs
+
+### Tool Description
+Bin any text file or stream of pairs.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0
+- **Homepage**: https://github.com/open2c/cooler
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Total Downloads**: 291.2K
+- **Last updated**: 2025-07-22
+- **GitHub**: https://github.com/open2c/cooler
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooler cload pairs [OPTIONS] BINS PAIRS_PATH COOL_PATH
+
+  Bin any text file or stream of pairs.
+
+  Pairs data need not be sorted. Accepts compressed files. To pipe input from
+  stdin, set PAIRS_PATH to '-'.
+
+  BINS : One of the following
+
+      <TEXT:INTEGER> : 1. Path to a chromsizes file, 2. Bin size in bp
+
+      <TEXT> : Path to BED file defining the genomic bin segmentation.
+
+  PAIRS_PATH : Path to contacts (i.e. read pairs) file.
+
+  COOL_PATH : Output COOL file path or URI.
+
+Options:
+  --metadata TEXT                 Path to JSON file containing user metadata.
+  --assembly TEXT                 Name of genome assembly (e.g. hg19, mm10)
+  -c1, --chrom1 INTEGER           chrom1 field number (one-based)  [required]
+  -p1, --pos1 INTEGER             pos1 field number (one-based)  [required]
+  -c2, --chrom2 INTEGER           chrom2 field number (one-based)  [required]
+  -p2, --pos2 INTEGER             pos2 field number (one-based)  [required]
+  -0, --zero-based                Positions are zero-based
+  --comment-char TEXT             Comment character that indicates lines to
+                                  ignore.  [default: #]
+  -N, --no-symmetric-upper        Create a complete square matrix without
+                                  implicit symmetry. This allows for distinct
+                                  upper- and lower-triangle values
+  --input-copy-status [unique|duplex]
+                                  Copy status of input data when using
+                                  symmetric-upper storage. | `unique`:
+                                  Incoming data comes from a unique half of a
+                                  symmetric map, regardless of how the
+                                  coordinates of a pair are ordered. `duplex`:
+                                  Incoming data contains upper- and lower-
+                                  triangle duplicates. All input records that
+                                  map to the lower triangle will be discarded!
+                                  | If you wish to treat lower- and upper-
+                                  triangle input data as distinct, use the
+                                  ``--no-symmetric-upper`` option.   [default:
+                                  unique]
+  --field TEXT                    Specify quantitative input fields to
+                                  aggregate into value columns using the
+                                  syntax ``--field <field-name>=<field-
+                                  number>``. Optionally, append ``:`` followed
+                                  by ``dtype=<dtype>`` to specify the data
+                                  type (e.g. float), and/or ``agg=<agg>`` to
+                                  specify an aggregation function different
+                                  from sum (e.g. mean). Field numbers are
+                                  1-based. Passing 'count' as the target name
+                                  will override the default behavior of
+                                  storing pair counts. Repeat the ``--field``
+                                  option for each additional field.
+  -c, --chunksize INTEGER         Size in number of lines/records of data
+                                  chunks to read and process from the input
+                                  stream at a time. These chunks will be saved
+                                  as temporary partial coolers and then
+                                  merged.
+  --mergebuf INTEGER              Total number of pixel records to buffer per
+                                  epoch of merging data. Defaults to the same
+                                  value as `chunksize`.
+  --max-merge INTEGER             Maximum number of chunks to merge in a
+                                  single pass.  [default: 200]
+  --temp-dir DIRECTORY            Create temporary files in a specified
+                                  directory. Pass ``-`` to use the platform
+                                  default temp dir.
+  --no-delete-temp                Do not delete temporary files when finished.
+  --storage-options TEXT          Options to modify the data filter pipeline.
+                                  Provide as a comma-separated list of key-
+                                  value pairs of the form 'k1=v1,k2=v2,...'.
+                                  See http://docs.h5py.org/en/stable/high/data
+                                  set.html#filter-pipeline for more details.
+  -a, --append                    Pass this flag to append the output cooler
+                                  to an existing file instead of overwriting
+                                  the file.
+  -h, --help                      Show this message and exit.
+```
+
+## cooler_cload_pairix
+
+### Tool Description
+Bin a pairix-indexed contact list file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0
+- **Homepage**: https://github.com/open2c/cooler
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Total Downloads**: 291.2K
+- **Last updated**: 2025-07-22
+- **GitHub**: https://github.com/open2c/cooler
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooler cload pairix [OPTIONS] BINS PAIRS_PATH COOL_PATH
+
+  Bin a pairix-indexed contact list file.
+
+  BINS : One of the following
+
+      <TEXT:INTEGER> : 1. Path to a chromsizes file, 2. Bin size in bp
+
+      <TEXT> : Path to BED file defining the genomic bin segmentation.
+
+  PAIRS_PATH : Path to contacts (i.e. read pairs) file.
+
+  COOL_PATH : Output COOL file path or URI.
+
+  See also: 'cooler csort' to sort and index a contact list file
+
+  Pairix on GitHub: <https://github.com/4dn-dcic/pairix>.
+
+Options:
+  --metadata TEXT          Path to JSON file containing user metadata.
+  --assembly TEXT          Name of genome assembly (e.g. hg19, mm10)
+  -p, --nproc INTEGER      Number of processes to split the work between.
+                           [default: 8]
+  -0, --zero-based         Positions are zero-based
+  -s, --max-split INTEGER  Divide the pairs from each chromosome into at most
+                           this many chunks. Smaller chromosomes will be split
+                           less frequently or not at all. Increase ths value
+                           if large chromosomes dominate the workload on
+                           multiple processors.  [default: 2]
+  --block-char TEXT        Character separating contig names in the block
+                           names of the pairix index.  [default: |]
+  -h, --help               Show this message and exit.
+```
+
+## cooler_cload_tabix
+
+### Tool Description
+Bin a tabix-indexed contact list file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0
+- **Homepage**: https://github.com/open2c/cooler
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Total Downloads**: 291.2K
+- **Last updated**: 2025-07-22
+- **GitHub**: https://github.com/open2c/cooler
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooler cload tabix [OPTIONS] BINS PAIRS_PATH COOL_PATH
+
+  Bin a tabix-indexed contact list file.
+
+  BINS : One of the following
+
+      <TEXT:INTEGER> : 1. Path to a chromsizes file, 2. Bin size in bp
+
+      <TEXT> : Path to BED file defining the genomic bin segmentation.
+
+  PAIRS_PATH : Path to contacts (i.e. read pairs) file.
+
+  COOL_PATH : Output COOL file path or URI.
+
+  See also: 'cooler csort' to sort and index a contact list file
+
+  Tabix manpage: <http://www.htslib.org/doc/tabix.html>.
+
+Options:
+  --metadata TEXT          Path to JSON file containing user metadata.
+  --assembly TEXT          Name of genome assembly (e.g. hg19, mm10)
+  -p, --nproc INTEGER      Number of processes to split the work between.
+                           [default: 8]
+  -c2, --chrom2 INTEGER    chrom2 field number (one-based)
+  -p2, --pos2 INTEGER      pos2 field number (one-based)
+  -0, --zero-based         Positions are zero-based
+  -s, --max-split INTEGER  Divide the pairs from each chromosome into at most
+                           this many chunks. Smaller chromosomes will be split
+                           less frequently or not at all. Increase ths value
+                           if large chromosomes dominate the workload on
+                           multiple processors.  [default: 2]
+  -h, --help               Show this message and exit.
+```
+
+## cooler_cload_hiclib
+
+### Tool Description
+Bin a hiclib HDF5 contact list (frag) file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0
+- **Homepage**: https://github.com/open2c/cooler
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooler/overview
+- **Total Downloads**: 291.2K
+- **Last updated**: 2025-07-22
+- **GitHub**: https://github.com/open2c/cooler
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooler cload hiclib [OPTIONS] BINS PAIRS_PATH COOL_PATH
+
+  Bin a hiclib HDF5 contact list (frag) file.
+
+  BINS : One of the following
+
+      <TEXT:INTEGER> : 1. Path to a chromsizes file, 2. Bin size in bp
+
+      <TEXT> : Path to BED file defining the genomic bin segmentation.
+
+  PAIRS_PATH : Path to contacts (i.e. read pairs) file.
+
+  COOL_PATH : Output COOL file path or URI.
+
+  hiclib on BitBucket: <https://github.com/mirnylab/hiclib-legacy>.
+
+Options:
+  --metadata TEXT          Path to JSON file containing user metadata.
+  --assembly TEXT          Name of genome assembly (e.g. hg19, mm10)
+  -c, --chunksize INTEGER  Control the number of pixels handled by each worker
+                           process at a time.  [default: 100000000]
+  -h, --help               Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

@@ -157,6 +157,48 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: clustering
+    type: File
+    doc: Cluster assignment of each contig (contig_id,cluster_id)
+    outputBinding:
+      glob: "$(inputs.basename ? inputs.basename : '')clustering_gt*.csv"
+  - id: pca_components
+    type:
+      - 'null'
+      - File
+    doc: PCA components of the combined data
+    outputBinding:
+      glob: "$(inputs.basename ? inputs.basename : '')PCA_components_data_gt*.csv"
+  - id: pca_transformed
+    type:
+      - 'null'
+      - File
+    doc: PCA transformed data
+    outputBinding:
+      glob: "$(inputs.basename ? inputs.basename : '')PCA_transformed_data_gt*.csv"
+  - id: original_data
+    type:
+      - 'null'
+      - File
+    doc: Original composition and coverage data (not written with --no_original_data)
+    outputBinding:
+      glob: "$(inputs.basename ? inputs.basename : '')original_data_gt*.csv"
+  - id: args_file
+    type:
+      - 'null'
+      - File
+    doc: Arguments used for the run
+    outputBinding:
+      glob: "$(inputs.basename ? inputs.basename : '')args.txt"
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Run log
+    outputBinding:
+      glob: "$(inputs.basename ? inputs.basename : '')log.txt"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/concoct:1.1.0--py312hb1d17a5_9

@@ -5,7 +5,9 @@ label: covid-spike-classification
 doc: "Classify COVID spike protein sequences.\n\nTool homepage: https://github.com/kblin/covid-spike-classification/"
 inputs:
   - id: reads
-    type: File
+    type:
+      - File
+      - Directory
     doc: A zip file or directory containing the ab1 files to call variants on.
     inputBinding:
       position: 1
@@ -34,12 +36,18 @@ inputs:
       position: 102
       prefix: --quiet
   - id: reference
-    type:
-      - 'null'
-      - File
-    doc: Reference FASTA file to use
+    type: File
+    doc: Reference FASTA file to use, with its samtools index (.fai) and 
+      bowtie2 index (<name>.index.*.bt2) beside it. The tool default 
+      (./ref/NC_045512.fasta) does not exist inside a CWL run.
     secondaryFiles:
       - .fai
+      - ^.index.1.bt2
+      - ^.index.2.bt2
+      - ^.index.3.bt2
+      - ^.index.4.bt2
+      - ^.index.rev.1.bt2
+      - ^.index.rev.2.bt2
     inputBinding:
       position: 102
       prefix: --reference

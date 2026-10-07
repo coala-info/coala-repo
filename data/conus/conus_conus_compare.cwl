@@ -11,7 +11,7 @@ inputs:
       items: File
     doc: Test files to compare
     inputBinding:
-      position: 1
+      position: 200
   - id: cumulative_statistics
     type:
       - 'null'

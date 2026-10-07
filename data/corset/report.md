@@ -1,5 +1,11 @@
 # corset CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| corset | Failed | image problem: corset segfaults (exit 139) after reading the first BAM, even on real nf-core transcriptome BAMs and a tiny planted case. |
+
 ## corset
 
 ### Tool Description

@@ -24,6 +24,8 @@ inputs:
   - id: input
     type: File
     doc: Input BAM file (must be primer trimmed, sorted and indexed)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --input
@@ -56,7 +58,8 @@ inputs:
     type: File
     doc: Reference genome FASTA file
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --reference

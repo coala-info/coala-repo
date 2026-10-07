@@ -1,5 +1,11 @@
 # consensify CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| consensify_consensify_c | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

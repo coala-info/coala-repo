@@ -2,13 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rm
 label: coreutils_rm
-doc: "Remove (unlink) the FILE(s).\n\nTool homepage: https://github.com/uutils/coreutils"
+doc: "Remove (unlink) the FILE(s).\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: files
     type:
       - 'null'
       - type: array
-        items: File
+        items:
+          - File
+          - Directory
     doc: File(s) to remove
     inputBinding:
       position: 1
@@ -101,6 +103,12 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ if (!inputs.files) return [];
+         return inputs.files.map(function(f){ return {entry: f, writable: true}; }); }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5

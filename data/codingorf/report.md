@@ -1,5 +1,11 @@
 # codingorf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| codingorf | PASS |  |
+
 ## codingorf
 
 ### Tool Description

@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: chown
 label: coreutils_chown
 doc: "Change the owner and/or group of each FILE to OWNER and/or GROUP. With --reference,
-  change the owner and group of each FILE to those of RFILE.\n\nTool homepage: https://github.com/uutils/coreutils"
+  change the owner and group of each FILE to those of RFILE.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: owner_group
     type:
@@ -15,7 +15,9 @@ inputs:
   - id: files
     type:
       type: array
-      items: File
+      items:
+      - File
+      - Directory
     doc: One or more files or directories to change ownership for
     inputBinding:
       position: 2
@@ -89,8 +91,6 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: use RFILE's ownership rather than specifying values
     inputBinding:
       position: 103
@@ -131,6 +131,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: changed_files
+    type:
+      type: array
+      items:
+        - File
+        - Directory
+    doc: The input files with the changed ownership (staged writable copies)
+    outputBinding:
+      glob: $(inputs.files.map(function(f){ return f.basename; }))
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ return inputs.files.map(function(f){ return {entry: f, writable: true}; }); }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5

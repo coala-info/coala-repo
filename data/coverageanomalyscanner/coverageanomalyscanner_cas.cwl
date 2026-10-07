@@ -8,6 +8,9 @@ inputs:
   - id: bam
     type: File
     doc: Read alignment in BAM file format.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -56,6 +59,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: predicted_events_bed
+    type:
+      - 'null'
+      - File
+    doc: BED file of predicted coverage anomaly events
+    outputBinding:
+      glob: predictedEvents.bed
+  - id: predicted_events_vcf
+    type:
+      - 'null'
+      - File
+    doc: VCF file of predicted duplication and deletion events
+    outputBinding:
+      glob: predictedEvents.vcf
+  - id: coverage_csv
+    type:
+      - 'null'
+      - File
+    doc: Coverage metadata (raw coverage, log2 fold change, threshold)
+    outputBinding:
+      glob: coverage.csv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coverageanomalyscanner:0.2.3--h69ac913_4

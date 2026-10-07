@@ -6,6 +6,11 @@ doc: "CoreGeneBuilder extracts a core genome or a persistent genome from a set o
   bacterial genomes. The core genome is the set of homologous genes (protein families)
   shared by all genomes. The persistent genome is the set of homologous genes (protein
   families) shared by less than 100% of the genomes.\n\nTool homepage: https://github.com/C3BI-pasteur-fr/CoreGeneBuilder"
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: "&& find $(inputs.input_directory.basename) -type l -lname '/root/mydisk/*'
+      -delete"
 inputs:
   - id: contig_id_prefix
     type:
@@ -67,9 +72,12 @@ inputs:
     type: Directory
     doc: directory where are stored input and output files, it must contain at 
       least a directory called assemblies where are genomic sequence fasta files
+      (staged writable under /root/mydisk, the fixed data folder of the image; 
+      the tool gets its name)
     inputBinding:
       position: 101
       prefix: -d
+      valueFrom: $(self.basename)
   - id: name_of_4_chars
     type: string
     doc: 'four letter name (ex : esco (es:escherichia; co:coli))'
@@ -105,17 +113,18 @@ inputs:
   - id: reference_genome_fasta
     type:
       - 'null'
-      - File
+      - string
     doc: reference genome fasta file -- annotation and core genome construction 
-      steps
+      steps (file name inside <input_directory>/assemblies)
     inputBinding:
       position: 101
       prefix: -g
   - id: reference_genome_genbank
     type:
       - 'null'
-      - File
-    doc: reference genome genbank file -- annotation step
+      - string
+    doc: reference genome genbank file -- annotation step (file name inside 
+      <input_directory>/ref_gbk_annotation)
     inputBinding:
       position: 101
       prefix: -a
@@ -169,7 +178,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: analysis_directory
+    type: Directory
+    doc: analysis directory with the diversity, genes, proteins, ecamber_output 
+      and core_genome results
+    outputBinding:
+      glob: $(inputs.input_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/coregenebuilder:v1.0_cv2
+    dockerOutputDirectory: /root/mydisk
 stdout: coregenebuilder.out

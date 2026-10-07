@@ -4,6 +4,11 @@ baseCommand:
   - cpstools
   - SSRs
 label: cpstools_SSRs
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 doc: "Find Simple Sequence Repeats (SSRs) in GenBank files.\n\nTool homepage: https://github.com/Xwb7533/CPStools"
 inputs:
   - id: input_file
@@ -24,6 +29,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: ssr_results
+    type: File
+    doc: SSRs with their location and region type, written beside the input file
+    outputBinding:
+      glob: '*_SSRs_loc_results.txt'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cpstools:3.0--pyhdfd78af_0

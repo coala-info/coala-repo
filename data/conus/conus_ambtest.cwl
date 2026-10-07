@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Input sequence file
     inputBinding:
-      position: 1
+      position: 200
   - id: ct_format
     type:
       - 'null'

@@ -6,9 +6,9 @@ doc: "Search for queries in databases and store results.\n\nTool homepage: https
 inputs:
   - id: query
     type:
-      type: array
-      items: File
-    doc: fasta files with the queries.
+      - File
+      - Directory
+    doc: fasta file (or directory of fasta files) with the queries.
     inputBinding:
       position: 1
   - id: dbbase
@@ -156,6 +156,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: Directory with the results (A3M MSAs and intermediate files)
+    outputBinding:
+      glob: $(inputs.base)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colabfold:1.5.5--pyh7cba7a3_2

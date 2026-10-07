@@ -1,5 +1,11 @@
 # conifer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| conifer | PASS |  |
+
 ## conifer
 
 ### Tool Description

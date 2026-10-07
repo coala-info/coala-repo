@@ -70,6 +70,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: ref_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: reference FASTA/FASTQ files named in the refs file; staged in the 
+      working directory so that relative names in the refs file resolve
   - id: bigsi_path
     type: string
     inputBinding:
@@ -77,12 +84,14 @@ inputs:
       prefix: --bigsi
 outputs:
   - id: bigsi
-    type: File
+    type: Directory
     doc: Sets the bigsi output file
     outputBinding:
       glob: $(inputs.bigsi_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.ref_files ? inputs.ref_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colorid_bv:0.1.0--h3ab6199_2

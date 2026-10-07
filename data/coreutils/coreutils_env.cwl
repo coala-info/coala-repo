@@ -11,14 +11,14 @@ inputs:
         items: string
     doc: Set each NAME to VALUE in the environment
     inputBinding:
-      position: 1
+      position: 2
   - id: command
     type:
       - 'null'
       - string
     doc: Command to run
     inputBinding:
-      position: 2
+      position: 3
   - id: command_args
     type:
       - 'null'
@@ -26,14 +26,14 @@ inputs:
         items: string
     doc: Arguments to pass to COMMAND
     inputBinding:
-      position: 3
+      position: 4
   - id: argv0
     type:
       - 'null'
       - string
     doc: pass ARG as the zeroth argument of COMMAND
     inputBinding:
-      position: 104
+      position: 1
       prefix: --argv0
   - id: ignore_environment
     type:
@@ -41,7 +41,7 @@ inputs:
       - boolean
     doc: start with an empty environment
     inputBinding:
-      position: 104
+      position: 1
       prefix: --ignore-environment
   - id: 'null'
     type:
@@ -49,7 +49,7 @@ inputs:
       - boolean
     doc: end each output line with NUL, not newline
     inputBinding:
-      position: 104
+      position: 1
       prefix: --null
   - id: unset
     type:
@@ -57,7 +57,7 @@ inputs:
       - string
     doc: remove variable from the environment
     inputBinding:
-      position: 104
+      position: 1
       prefix: --unset
   - id: chdir
     type:
@@ -65,7 +65,7 @@ inputs:
       - Directory
     doc: change working directory to DIR
     inputBinding:
-      position: 104
+      position: 1
       prefix: --chdir
   - id: split_string
     type:
@@ -74,7 +74,7 @@ inputs:
     doc: process and split S into separate arguments; used to pass multiple 
       arguments on shebang lines
     inputBinding:
-      position: 104
+      position: 1
       prefix: --split-string
   - id: block_signal
     type:
@@ -83,7 +83,7 @@ inputs:
         items: string
     doc: block delivery of SIG signal(s) to COMMAND
     inputBinding:
-      position: 104
+      position: 1
       prefix: --block-signal=
       separate: false
       itemSeparator: ','
@@ -94,7 +94,7 @@ inputs:
         items: string
     doc: reset handling of SIG signal(s) to the default
     inputBinding:
-      position: 104
+      position: 1
       prefix: --default-signal=
       separate: false
       itemSeparator: ','
@@ -105,7 +105,7 @@ inputs:
         items: string
     doc: set handling of SIG signal(s) to do nothing
     inputBinding:
-      position: 104
+      position: 1
       prefix: --ignore-signal=
       separate: false
       itemSeparator: ','
@@ -115,7 +115,7 @@ inputs:
       - boolean
     doc: list non default signal handling to stderr
     inputBinding:
-      position: 104
+      position: 1
       prefix: --list-signal-handling
   - id: debug
     type:
@@ -123,7 +123,7 @@ inputs:
       - boolean
     doc: print verbose information for each processing step
     inputBinding:
-      position: 104
+      position: 1
       prefix: --debug
 outputs:
   - id: stdout
@@ -133,6 +133,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5
 stdout: env.out
-s:url: https://github.com/uutils/coreutils
+s:url: https://www.gnu.org/software/coreutils/
 $namespaces:
   s: https://schema.org/

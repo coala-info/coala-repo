@@ -1,5 +1,13 @@
 # comparative-annotation-toolkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| comparative-annotation-toolkit_faToTwoBit | PASS |  |
+| comparative-annotation-toolkit_gff3ToGenePred | PASS |  |
+| comparative-annotation-toolkit_pslMap | PASS |  |
+
 ## comparative-annotation-toolkit_faToTwoBit
 
 ### Tool Description

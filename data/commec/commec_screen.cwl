@@ -8,9 +8,11 @@ doc: "Run Common Mechanism screening on an input FASTA.\n\nTool homepage: https:
 inputs:
   - id: fasta_file
     type: File
-    doc: FASTA file to screen
+    doc: FASTA file to screen (staged in the working directory, because 
+      commec writes its outputs relative to the input file's directory)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: cleanup
     type:
       - 'null'
@@ -67,9 +69,12 @@ inputs:
     type:
       - 'null'
       - string
+    default: commec_screen
     doc: Prefix for output files. Can be a string (interpreted as output 
       basename) or a directory (files will be output there, names will be 
-      determined from input FASTA)
+      determined from input FASTA). Defaults to commec_screen in the working 
+      directory, because the tool's own default writes beside the read-only 
+      input FASTA
     inputBinding:
       position: 102
       prefix: --output
@@ -136,6 +141,36 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type:
+      type: array
+      items: File
+    doc: screen results (<prefix>.output.json, <prefix>.screen.log, 
+      <prefix>_summary.html)
+    outputBinding:
+      glob:
+        - '*.output.json'
+        - '*.screen.log'
+        - '*_summary.html'
+        - '*/*.output.json'
+        - '*/*.screen.log'
+        - '*/*_summary.html'
+  - id: intermediate_dirs
+    type:
+      type: array
+      items: Directory
+    doc: intermediate search outputs (input_<name>/ and output_<name>/; 
+      removed by --cleanup)
+    outputBinding:
+      glob:
+        - input_*
+        - output_*
+        - '*/input_*'
+        - '*/output_*'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fasta_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/commec:1.0.3--pyhdfd78af_0

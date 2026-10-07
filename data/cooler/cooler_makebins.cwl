@@ -28,9 +28,9 @@ inputs:
   - id: rel_ids
     type:
       - 'null'
-      - boolean
+      - string
     doc: Include a column of relative bin IDs for each chromosome. Choose 
-      whether to report them as 0- or 1-based.
+      whether to report them as 0- or 1-based (0 or 1).
     inputBinding:
       position: 103
       prefix: --rel-ids

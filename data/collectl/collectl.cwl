@@ -143,11 +143,12 @@ inputs:
 outputs:
   - id: filename
     type:
-      - 'null'
-      - File
-    doc: name of directory/file to write to
+      type: array
+      items: File
+    doc: files written with the given name prefix (collectl adds 
+      -<host>-<date>.raw.gz or plot suffixes)
     outputBinding:
-      glob: $(inputs.filename_path)
+      glob: $(inputs.filename_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -45,7 +45,7 @@ inputs:
       prefix: --thread_num
   - id: outdir_path
     type: string
-    doc: Output directory [required]                     │
+    doc: Output directory [required]
     inputBinding:
       position: 102
       prefix: --outdir

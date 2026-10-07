@@ -1,5 +1,13 @@
 # cpinsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cpinsim_annotate | PASS | Inputs are interaction and competition tables rebuilt from the repo example proteins file; the competing partners got a shared domain as expected. |
+| cpinsim_parse | PASS | Parsed the annotate output back into the example protein format, with the competing partners sharing one domain. |
+| cpinsim_simulate | Failed | image problem: the image has networkx 2.1, and the simulation crashes on 'EdgeDataView' indexing even for the README example. |
+
 ## cpinsim_annotate
 
 ### Tool Description

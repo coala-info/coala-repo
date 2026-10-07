@@ -169,6 +169,7 @@ inputs:
       prefix: --worker-index
   - id: output_dir_path
     type: string?
+    default: cnmf_output
     inputBinding:
       position: 102
       prefix: --output-dir

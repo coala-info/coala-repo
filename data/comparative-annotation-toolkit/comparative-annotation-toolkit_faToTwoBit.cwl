@@ -11,6 +11,11 @@ inputs:
     doc: Input FASTA files
     inputBinding:
       position: 1
+  - id: output_2bit
+    type: string
+    doc: Output 2bit file name
+    inputBinding:
+      position: 2
   - id: ignore_dups
     type:
       - 'null'
@@ -50,7 +55,7 @@ outputs:
     type: File
     doc: Output 2bit file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_2bit)
 hints:
   - class: DockerRequirement
     dockerPull: 

@@ -110,10 +110,10 @@ inputs:
       position: 102
   - id: mph_file_path
     type: string
-    doc: Output or path parameter `mph_file_path`
+    doc: minimum perfect hash function file (output path when -g is set; input path otherwise)
     inputBinding:
       position: 103
-      prefix: --mph-file
+      prefix: -m
 outputs:
   - id: mph_file
     type:

@@ -11,6 +11,7 @@ inputs:
       - 'null'
       - string
     doc: The output directory for the YAML files
+    default: voc_nextstrain
     inputBinding:
       position: 101
       prefix: --outdir
@@ -33,6 +34,9 @@ outputs:
     doc: The output directory for the YAML files
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cojac:0.9.3--pyh7e72e81_0

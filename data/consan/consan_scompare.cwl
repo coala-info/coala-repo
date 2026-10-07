@@ -7,9 +7,10 @@ doc: "Given a MSA, calculate foldings for all pairs. Output two files -- predict
 inputs:
   - id: test_msa
     type: File
-    doc: Input multiple sequence alignment (MSA) file
+    doc: Input multiple sequence alignment (MSA) file, Stockholm format. Options
+      must come before it on the command line.
     inputBinding:
-      position: 1
+      position: 201
   - id: cyk_predicted_pins
     type:
       - 'null'
@@ -42,6 +43,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: -f
+  - id: model_file
+    type:
+      - 'null'
+      - File
+    doc: Use parameters, grammar and scoring specified in model <file> (shared
+      Consan option, used with scompare in the Consan paper guide)
+    inputBinding:
+      position: 102
+      prefix: -m
   - id: memory_limit
     type:
       - 'null'
@@ -86,8 +96,12 @@ outputs:
     doc: Output of given structure in ordered pairs (needed for comppair)
     outputBinding:
       glob: $(inputs.given_structure_output_path)
+  - id: predicted_structure_output
+    type: stdout
+    doc: Predicted pairs (written to standard output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/consan:1.2--h7b50bb2_7
+stdout: consan_scompare.out

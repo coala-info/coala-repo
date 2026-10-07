@@ -1,5 +1,11 @@
 # codonw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| codonw | PASS |  |
+
 ## codonw
 
 ### Tool Description

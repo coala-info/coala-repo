@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: chmod
 label: coreutils_chmod
 doc: "Change the mode of each FILE to MODE. With --reference, change the mode of each
-  FILE to that of RFILE.\n\nTool homepage: https://github.com/uutils/coreutils"
+  FILE to that of RFILE.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: mode
     type:
@@ -15,7 +15,9 @@ inputs:
   - id: files
     type:
       type: array
-      items: File
+      items:
+      - File
+      - Directory
     doc: Files to change the mode of
     inputBinding:
       position: 2
@@ -122,6 +124,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: changed_files
+    type:
+      type: array
+      items:
+        - File
+        - Directory
+    doc: The input files with the changed mode (staged writable copies)
+    outputBinding:
+      glob: $(inputs.files.map(function(f){ return f.basename; }))
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ return inputs.files.map(function(f){ return {entry: f, writable: true}; }); }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5

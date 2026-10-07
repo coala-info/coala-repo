@@ -17,11 +17,26 @@ inputs:
   - id: blast_db_path
     type:
       - 'null'
-      - string
-    doc: Path to the BLAST database.
+      - File
+    doc: Path to the BLAST database (the allele FASTA written by coreprofiler db 
+      makeblastdb, with its BLAST index files beside it).
     inputBinding:
       position: 101
       prefix: --blast_db_path
+    secondaryFiles:
+      - .nhr
+      - .nin
+      - .nsq
+      - pattern: .ndb
+        required: false
+      - pattern: .not
+        required: false
+      - pattern: .ntf
+        required: false
+      - pattern: .nto
+        required: false
+      - pattern: .njs
+        required: false
   - id: detailed
     type:
       - 'null'

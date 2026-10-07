@@ -2,15 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: cp
 label: coreutils_cp
-doc: "Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.\n\nTool homepage: https://github.com/uutils/coreutils"
+doc: "Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: source
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: Source file(s) or directory(s) to copy
     inputBinding:
       position: 1
+  - id: destination
+    type:
+      - 'null'
+      - string
+    doc: DEST file name (or directory) to copy SOURCE to; leave empty when 
+      target_directory_path is used
+    inputBinding:
+      position: 2
   - id: archive
     type:
       - 'null'
@@ -294,9 +304,10 @@ outputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: Destination file or directory
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.destination)
   - id: target_directory
     type:
       - 'null'
@@ -306,6 +317,10 @@ outputs:
       glob: $(inputs.target_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ if (!inputs.target_directory_path) return [];
+         return [{class: 'Directory', basename: inputs.target_directory_path, listing: [], writable: true}]; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5

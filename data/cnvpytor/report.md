@@ -1,5 +1,11 @@
 # cnvpytor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cnvpytor | Failed | Image problem: the reference genome resource files (GC and mask) are missing from the image, so every command stops with 'Run cnvpytor -download' and writes nothing. |
+
 ## cnvpytor
 
 ### Tool Description

@@ -1,5 +1,31 @@
 # coreutils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coreutils_base32 | PASS |  |
+| coreutils_base64 | PASS |  |
+| coreutils_basenc | PASS |  |
+| coreutils_cat | PASS |  |
+| coreutils_chmod | PASS |  |
+| coreutils_chown | PASS |  |
+| coreutils_cp | PASS |  |
+| coreutils_cut | PASS |  |
+| coreutils_df | PASS |  |
+| coreutils_du | PASS |  |
+| coreutils_env | PASS |  |
+| coreutils_head | PASS |  |
+| coreutils_ls | PASS |  |
+| coreutils_mv | PASS |  |
+| coreutils_numfmt | PASS |  |
+| coreutils_rm | PASS |  |
+| coreutils_sort | PASS |  |
+| coreutils_tac | PASS |  |
+| coreutils_tail | PASS |  |
+| coreutils_uniq | PASS |  |
+| coreutils_uptime | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 
@@ -10,7 +36,7 @@ List information about the FILEs (the current directory by default). Sort entrie
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -163,7 +189,7 @@ Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -273,7 +299,7 @@ Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -339,7 +365,7 @@ Remove (unlink) the FILE(s).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -396,7 +422,7 @@ Change the mode of each FILE to MODE. With --reference, change the mode of each 
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -447,7 +473,7 @@ Change the owner and/or group of each FILE to OWNER and/or GROUP. With --referen
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -511,7 +537,7 @@ Concatenate FILE(s) to standard output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -551,7 +577,7 @@ Write each FILE to standard output, last line first. With no FILE, or when FILE 
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -581,7 +607,7 @@ Print the first 10 lines of each FILE to standard output. With more than one FIL
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -623,7 +649,7 @@ Print the last 10 lines of each FILE to standard output. With more than one FILE
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -687,7 +713,7 @@ Write sorted concatenation of all FILE(s) to standard output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -775,7 +801,7 @@ Filter adjacent matching lines from INPUT (or standard input), writing to OUTPUT
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -823,7 +849,7 @@ Print selected parts of lines from each FILE to standard output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -873,7 +899,7 @@ Show information about the file system on which each FILE resides, or all file s
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -931,7 +957,7 @@ Estimate file space usage
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -946,7 +972,7 @@ Set each NAME to VALUE in the environment and run COMMAND.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -995,7 +1021,7 @@ Print the current time, the length of time the system has been up, the number of
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -1023,7 +1049,7 @@ Reformat NUMBER(s), or the numbers from standard input if none are specified.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -1132,7 +1158,7 @@ Base32 encode or decode FILE, or standard input, to standard output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -1168,7 +1194,7 @@ Base64 encode or decode FILE, or standard input, to standard output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text
@@ -1204,7 +1230,7 @@ basenc encode or decode FILE, or standard input, to standard output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreutils:9.5
-- **Homepage**: https://github.com/uutils/coreutils
+- **Homepage**: https://www.gnu.org/software/coreutils/
 - **Package**: Not found
 - **Validation**: PASS
 ### Original Help Text

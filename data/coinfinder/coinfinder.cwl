@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: confinder
+baseCommand: coinfinder
 label: coinfinder
 doc: "File input- specify either: The path to the gene_presence_absence.csv output
   from Roary -or- The path of the Gene-to-Genome file with (gene)(TAB)(genome)\n\n\
@@ -125,6 +125,7 @@ inputs:
       - 'null'
       - string
     doc: 'The prefix of all output files (default: coincident).'
+    default: coincident
     inputBinding:
       position: 101
       prefix: --output

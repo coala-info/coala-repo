@@ -1,5 +1,11 @@
 # consel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| consel | PASS |  |
+
 ## consel
 
 ### Tool Description

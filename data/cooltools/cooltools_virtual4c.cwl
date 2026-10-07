@@ -55,9 +55,16 @@ outputs:
   - id: out_prefix
     type: File
     doc: Save virtual 4C track as a BED-like file. Contact frequency is stored 
-      in out_prefix.v4C.tsv
+      in out_prefix.tsv (the help says out_prefix.v4C.tsv, but the tool writes out_prefix.tsv)
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path).tsv
+  - id: bigwig_track
+    type:
+      - 'null'
+      - File
+    doc: Virtual 4C track as bigWig (out_prefix.bw), with --bigwig.
+    outputBinding:
+      glob: $(inputs.out_prefix_path).bw
 requirements:
   - class: InlineJavascriptRequirement
 hints:

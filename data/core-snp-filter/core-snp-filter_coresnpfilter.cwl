@@ -26,10 +26,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --exclude_invariant
-  - id: invariant_counts_path
+  - id: invariant_counts
     type:
       - 'null'
-      - string
+      - boolean
+    doc: Output invariant site counts (suitable for IQ-TREE -fconst) and nothing
+      else
     inputBinding:
       position: 103
       prefix: --invariant_counts
@@ -42,6 +44,10 @@ inputs:
       position: 104
       prefix: --table
 outputs:
+  - id: filtered_alignment
+    type: stdout
+    doc: Filtered alignment (FASTA) written to stdout; with --invariant_counts,
+      the invariant site counts instead
   - id: table
     type:
       - 'null'
@@ -49,16 +55,9 @@ outputs:
     doc: Create a table with per-site information
     outputBinding:
       glob: $(inputs.table_path)
-  - id: invariant_counts
-    type:
-      - 'null'
-      - File
-    doc: Output invariant site counts (suitable for IQ-TREE -fconst) and nothing
-      else
-    outputBinding:
-      glob: $(inputs.invariant_counts_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/core-snp-filter:0.2.0--h3ab6199_2
+stdout: coresnpfilter.out

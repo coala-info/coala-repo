@@ -1,5 +1,11 @@
 # cnvnator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cnvnator | PASS |  |
+
 ## cnvnator
 
 ### Tool Description

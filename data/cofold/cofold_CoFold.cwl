@@ -1,10 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: RNAfold
+baseCommand: CoFold
 label: cofold_CoFold
-doc: "Calculate minimum free energy secondary structures and partition function of
-  RNAs\n\nTool homepage: https://github.com/jujubix/cofold"
+doc: "CoFold: RNA secondary structure prediction (minimum free energy and partition
+  function) with co-transcriptional folding effects, derived from RNAfold 2.0.4.
+  Reads sequences from standard input.\n\nTool homepage: https://github.com/jujubix/cofold"
 inputs:
+  - id: sequences
+    type: File
+    doc: RNA sequences (one per line, or FASTA), read from standard input
+  - id: dist_alpha
+    type: double
+    doc: A value between 0 and 1 for the alpha CoFold model parameter (authors' 
+      optimal value 0.5)
+    inputBinding:
+      position: 101
+      prefix: --distAlpha
+  - id: dist_tau
+    type: double
+    doc: A value greater than 0 for the tau CoFold model parameter (authors' 
+      optimal value 640)
+    inputBinding:
+      position: 101
+      prefix: --distTau
   - id: circ
     type:
       - 'null'
@@ -118,8 +136,17 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Predicted structures and energies
+  - id: postscript_plots
+    type:
+      type: array
+      items: File
+    doc: Structure and dot plot PostScript files (name_ss.ps, name_dp.ps, rna.ps, 
+      dot.ps)
+    outputBinding:
+      glob: '*.ps'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cofold:2.0.4--h87f3376_5
+stdin: $(inputs.sequences.path)
 stdout: cofold_CoFold.out

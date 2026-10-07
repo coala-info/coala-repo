@@ -1,5 +1,11 @@
 # collect_mgf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| collect_mgf | PASS | Synthetic data (planted Bruker EXPNO folders and dd_results, no public test set); output MGF has the expected PEPMASS and CHARGE per scan. |
+
 ## collect_mgf
 
 ### Tool Description

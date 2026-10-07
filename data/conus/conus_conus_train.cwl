@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Training set files
     inputBinding:
-      position: 1
+      position: 200
   - id: debugging_output
     type:
       - 'null'

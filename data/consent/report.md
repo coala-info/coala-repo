@@ -1,5 +1,12 @@
 # consent CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| consent_CONSENT-correct | PASS |  |
+| consent_CONSENT-polish | Failed | image problem: the CONSENT-polish script calls sort --parallel, but the image only has BusyBox sort, which rejects that option. |
+
 ## consent_CONSENT-correct
 
 ### Tool Description

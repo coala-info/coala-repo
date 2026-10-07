@@ -150,7 +150,7 @@ inputs:
   - id: out_sorted_bedpe
     type:
       - 'null'
-      - File
+      - string
     doc: Output bedpe of sorted stripe regions
     inputBinding:
       position: 101
@@ -269,7 +269,14 @@ outputs:
       - File
     doc: Where to save the plot
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.output_path ? inputs.output_path : 'pup.pdf')"
+  - id: sorted_bedpe
+    type:
+      - 'null'
+      - File
+    doc: Output bedpe of sorted stripe regions
+    outputBinding:
+      glob: "$(inputs.out_sorted_bedpe ? inputs.out_sorted_bedpe : [])"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

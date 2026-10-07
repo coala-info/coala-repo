@@ -7,7 +7,7 @@ label: cooler_dump
 doc: "Dump a cooler's data to a text stream.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
   - id: cool_path
-    type: string
+    type: File
     doc: Path to COOL file or cooler URI.
     inputBinding:
       position: 1

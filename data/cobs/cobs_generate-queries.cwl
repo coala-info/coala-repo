@@ -7,8 +7,10 @@ label: cobs_generate-queries
 doc: "Generates positive and negative queries from base documents.\n\nTool homepage:
   https://panthema.net/cobs"
 inputs:
-  - id: path
-    type: Directory
+  - id: documents
+    type:
+      - File
+      - Directory
     doc: path to base documents
     inputBinding:
       position: 1
@@ -91,6 +93,10 @@ outputs:
     outputBinding:
       glob: $(inputs.out_file_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.documents)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

@@ -1,5 +1,14 @@
 # constava CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| constava_analyze | PASS |  |
+| constava_dihedrals | PASS |  |
+| constava_fit-model | PASS |  |
+| constava_test | PASS | Built-in self-test; all 8 test cases reported OK. |
+
 ## constava_fit-model
 
 ### Tool Description

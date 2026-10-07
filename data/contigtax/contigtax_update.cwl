@@ -18,11 +18,16 @@ inputs:
     inputBinding:
       position: 2
   - id: newfile
-    type: File
+    type: string
     doc: Updated mapfile
     inputBinding:
       position: 3
 outputs:
+  - id: updated_map
+    type: File
+    doc: Updated mapfile
+    outputBinding:
+      glob: $(inputs.newfile)
   - id: stdout
     type: stdout
     doc: Standard output

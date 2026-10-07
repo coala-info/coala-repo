@@ -7,7 +7,7 @@ label: cooler_zoomify
 doc: "Generate a multi-resolution cooler file by coarsening.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
   - id: cool_path
-    type: string
+    type: File
     doc: Path to a COOL file or Cooler URI.
     inputBinding:
       position: 1
@@ -34,11 +34,12 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
+        inputBinding:
+          prefix: --base-uri
     doc: One or more additional base coolers to aggregate from, if needed.
     inputBinding:
       position: 102
-      prefix: --base-uri
   - id: chunksize
     type:
       - 'null'
@@ -52,13 +53,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --field
     doc: Specify the names of value columns to merge as '<name>'. Repeat the 
       ``--field`` option for each one. Use '<name>:dtype=<dtype>' to specify the
       dtype. Include ',agg=<agg>' to specify an aggregation function different 
       from 'sum'.
     inputBinding:
       position: 102
-      prefix: --field
   - id: legacy
     type:
       - 'null'

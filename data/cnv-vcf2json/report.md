@@ -1,5 +1,11 @@
 # cnv-vcf2json CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cnv-vcf2json | PASS |  |
+
 ## cnv-vcf2json
 
 ### Tool Description

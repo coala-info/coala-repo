@@ -1,5 +1,11 @@
 # comet-ms CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| comet-ms_comet | PASS | Comet legacy test cases (plain, tryptic) return the expected top peptides; -i builds an index, but searching that index segfaults in this Comet build (also outside CWL). |
+
 ## comet-ms_comet
 
 ### Tool Description

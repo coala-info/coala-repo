@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: numfmt
 label: coreutils_numfmt
 doc: "Reformat NUMBER(s), or the numbers from standard input if none are specified.\n
-  \nTool homepage: https://github.com/uutils/coreutils"
+  \nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: numbers
     type:

@@ -7,7 +7,9 @@ label: cobs_compact-construct
 doc: "Constructs a COBS compact index.\n\nTool homepage: https://panthema.net/cobs"
 inputs:
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: path to the input directory or file
     inputBinding:
       position: 1
@@ -108,7 +110,7 @@ inputs:
   - id: tmp_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for intermediate index files
     inputBinding:
       position: 102
@@ -119,6 +121,11 @@ outputs:
     doc: path to the output .cobs_compact index file
     outputBinding:
       glob: '$(inputs.out_file)'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

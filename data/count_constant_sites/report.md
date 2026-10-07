@@ -1,5 +1,11 @@
 # count_constant_sites CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| count_constant_sites | PASS |  |
+
 ## count_constant_sites
 
 ### Tool Description

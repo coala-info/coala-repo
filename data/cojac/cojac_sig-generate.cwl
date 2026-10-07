@@ -78,23 +78,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no-debug
-  - id: no_quirk_no_star
-    type:
-      - 'null'
-      - boolean
-    doc: special work-around options
-    inputBinding:
-      position: 101
-      prefix: --quirk
   - id: quirk
     type:
       - 'null'
       - type: array
         items: string
-    doc: special work-around options
+        inputBinding:
+          prefix: --quirk
+    doc: 'special work-around options (choice: noStar)'
     inputBinding:
       position: 101
-      prefix: --quirk
   - id: url
     type:
       - 'null'
@@ -115,6 +108,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cojac:0.9.3--pyh7e72e81_0

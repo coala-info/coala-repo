@@ -138,6 +138,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: -l
+  - id: parameter_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: ATOMS.DAT, MARGINS.DAT and BONDS.DAT parameter files written by dist; 
+      disco reads them from the working directory
   - id: random_seed
     type:
       - 'null'
@@ -183,10 +190,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_gromos_path`
+    doc: '- output trajectory in formatted GROMOS87 format'
     inputBinding:
       position: 103
-      prefix: --output-gromos
+      prefix: -ot
   - id: output_nmr_pdb_path
     type:
       - 'null'
@@ -199,10 +206,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_pdb_prefix_path`
+    doc: '- basic filename for output PDB structures (a number plus extension .pdb
+      will be added)'
     inputBinding:
       position: 105
-      prefix: --output-pdb-prefix
+      prefix: -op
   - id: output_rmsd_path
     type:
       - 'null'
@@ -267,6 +275,8 @@ outputs:
       glob: $(inputs.output_b_factors_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.parameter_files ? inputs.parameter_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/concoord:2.1.2--h9ee0642_4

@@ -1,5 +1,11 @@
 # collect-columns CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| collect-columns | PASS |  |
+
 ## collect-columns
 
 ### Tool Description

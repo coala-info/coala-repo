@@ -1,5 +1,11 @@
 # concoct CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| concoct | PASS |  |
+
 ## concoct
 
 ### Tool Description

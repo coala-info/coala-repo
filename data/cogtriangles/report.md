@@ -1,5 +1,12 @@
 # cogtriangles CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cogtriangles_COGmakehash | PASS |  |
+| cogtriangles_COGreadblast | PASS |  |
+
 ## Metadata
 - **Skill**: not generated
 

@@ -7,11 +7,18 @@ label: cooler_load
 doc: "Create a cooler from a pre-binned matrix.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
   - id: bins_path
-    type: string
+    type: File
     doc: 'One of the following: <TEXT:INTEGER> : 1. Path to a chromsizes file, 2.
-      Bin size in bp, or <TEXT> : Path to BED file defining the genomic bin segmentation.'
+      Bin size in bp, or <TEXT> : Path to BED file defining the genomic bin segmentation.
+      Give a chromsizes file together with bin_size, or a BED file alone.'
     inputBinding:
       position: 1
+      valueFrom: "$(inputs.bin_size ? self.path + ':' + inputs.bin_size : self.path)"
+  - id: bin_size
+    type:
+      - 'null'
+      - int
+    doc: Bin size in bp, used when bins_path is a chromsizes file.
   - id: pixels_path
     type: File
     doc: Text file containing nonzero pixel values. May be gzipped. Pass '-' to 
@@ -72,6 +79,8 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --field
     doc: Add supplemental value fields or override default field numbers for the
       specified format. Specify quantitative input fields to aggregate into 
       value columns using the syntax ``--field <field-name>=<field-number>``. 
@@ -80,7 +89,6 @@ inputs:
       option for each additional field.
     inputBinding:
       position: 104
-      prefix: --field
   - id: format
     type: string
     doc: "'coo' refers to a tab-delimited sparse triplet file (bin1, bin2, count).
@@ -185,6 +193,8 @@ outputs:
     doc: Output COOL file path or URI.
     outputBinding:
       glob: $(inputs.cool_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

@@ -13,7 +13,7 @@ inputs:
       position: 1
   - id: out_file
     type: string
-    doc: Filename to store PTR table.
+    doc: Filename to store PTR table (.csv is added when missing).
     inputBinding:
       position: 2
   - id: min_cov
@@ -45,7 +45,10 @@ outputs:
     type: File
     doc: Filename to store PTR table.
     outputBinding:
-      glob: '$(inputs.out_file)'
+      glob: "$(inputs.out_file.endsWith('.csv') ? inputs.out_file : inputs.out_file\
+        \ + '.csv')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3

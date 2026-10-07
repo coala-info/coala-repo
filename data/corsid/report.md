@@ -1,5 +1,11 @@
 # corsid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| corsid | PASS |  |
+
 ## corsid
 
 ### Tool Description

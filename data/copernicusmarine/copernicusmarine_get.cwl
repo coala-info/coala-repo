@@ -261,6 +261,9 @@ outputs:
       directory.
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/copernicusmarine:2.3.0

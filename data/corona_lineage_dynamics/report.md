@@ -1,5 +1,11 @@
 # corona_lineage_dynamics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| corona_lineage_dynamics | PASS |  |
+
 ## corona_lineage_dynamics
 
 ### Tool Description

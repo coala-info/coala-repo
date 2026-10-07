@@ -1,5 +1,11 @@
 # constax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| constax | PASS |  |
+
 ## constax
 
 ### Tool Description

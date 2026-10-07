@@ -122,6 +122,10 @@ outputs:
       glob: $(inputs.output_gff3_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/corsid:0.1.3--pyh5e36f6f_0

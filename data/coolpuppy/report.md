@@ -1,5 +1,12 @@
 # coolpuppy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coolpuppy_coolpup.py | PASS |  |
+| coolpuppy_plotpup.py | PASS |  |
+
 ## coolpuppy_coolpup.py
 
 ### Tool Description

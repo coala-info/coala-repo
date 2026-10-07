@@ -7,14 +7,14 @@ doc: "Structural folding and alignment tool for sequences using parameters, gram
 inputs:
   - id: seqfile1
     type: File
-    doc: First sequence file
+    doc: First sequence file. Options must come before the sequence files.
     inputBinding:
-      position: 1
+      position: 201
   - id: seqfile2
     type: File
     doc: Second sequence file
     inputBinding:
-      position: 2
+      position: 202
   - id: debug
     type:
       - 'null'

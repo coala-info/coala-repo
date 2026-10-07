@@ -1,5 +1,11 @@
 # contammix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| contammix | Failed | image problem: perl is missing in the image, so the bundled sam2mn.pl step fails and no estimate is made. |
+
 ## contammix
 
 ### Tool Description

@@ -39,18 +39,28 @@ inputs:
       position: 101
       prefix: --experiment
   - id: file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: VCF file version 4.2 to process. If -f is used don't use -l (Mandatory)
     inputBinding:
       position: 101
       prefix: --file
   - id: list
-    type: File
+    type:
+      - 'null'
+      - File
     doc: input text file, one vcf by lane. If -l is used don't use -f 
       (Mandatory)
     inputBinding:
       position: 101
       prefix: --list
+  - id: list_vcfs
+    type:
+      - 'null'
+      - File[]
+    doc: VCF files named in the --list file; staged in the working directory 
+      so that their names resolve
   - id: mail
     type:
       - 'null'
@@ -98,6 +108,8 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.list_vcfs ? inputs.list_vcfs : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contatester:1.0.0--py311r44he3b539c_4

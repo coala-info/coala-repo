@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: base32
 label: coreutils_base32
 doc: "Base32 encode or decode FILE, or standard input, to standard output.\n\nTool
-  homepage: https://github.com/uutils/coreutils"
+  homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: file
     type:

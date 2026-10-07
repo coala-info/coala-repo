@@ -5,7 +5,9 @@ label: colabfold_colabfold_batch
 doc: "ColabFold batch prediction\n\nTool homepage: https://github.com/sokrypton/ColabFold"
 inputs:
   - id: input
-    type: string
+    type:
+      - File
+      - Directory
     doc: 'One of: 1) directory with FASTA/A3M files, 2) CSV/TSV file, 3) FASTA file
       or 4) A3M file.'
     inputBinding:
@@ -407,12 +409,13 @@ outputs:
     type: stdout
     doc: Standard output
   - id: results_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Results output directory.
     outputBinding:
       glob: $(inputs.results)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colabfold:1.5.5--pyh7cba7a3_2

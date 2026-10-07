@@ -11,8 +11,8 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: VOCs to query
+        items: File
+    doc: YAML files defining the variants of concern to query
     inputBinding:
       position: 1
   - id: always_mutations
@@ -112,14 +112,16 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-debug
-  - id: quirk_no_star
+  - id: quirk
     type:
       - 'null'
-      - boolean
-    doc: special work-around options
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --quirk
+    doc: 'special work-around options (choice: noStar)'
     inputBinding:
       position: 102
-      prefix: --quirk
   - id: url
     type:
       - 'null'
@@ -134,6 +136,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cojac:0.9.3--pyh7e72e81_0

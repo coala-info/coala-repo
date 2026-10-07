@@ -150,6 +150,11 @@ inputs:
       position: 105
       prefix: --taxidout
 outputs:
+  - id: out_outfile
+    type: File
+    doc: Output file with assigned taxonomy
+    outputBinding:
+      glob: $(inputs.outfile)
   - id: blobout
     type:
       - 'null'
@@ -166,6 +171,8 @@ outputs:
       glob: $(inputs.taxidout_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.taxdir ? [{'entry': inputs.taxdir, 'writable': true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0

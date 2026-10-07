@@ -9,13 +9,21 @@ inputs:
     type: File
     doc: fasta or fastq file of long reads to correct.
     inputBinding:
-      position: 1
+      position: 102
+      prefix: --in
   - id: type_reads_technology
     type: string
     doc: Indicate whether the long reads are from PacBio (--type PB) or Oxford 
       Nanopore (--type ONT)
     inputBinding:
-      position: 2
+      position: 102
+      prefix: --type
+  - id: out_path
+    type: string
+    doc: fasta file where to output the corrected long reads.
+    inputBinding:
+      position: 102
+      prefix: --out
   - id: anchor_support
     type:
       - 'null'
@@ -111,7 +119,9 @@ outputs:
     type: File
     doc: fasta file where to output the corrected long reads.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/consent:2.2.2--h3452944_6

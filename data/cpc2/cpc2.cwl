@@ -10,19 +10,36 @@ inputs:
     doc: Input sequence in FASTA format
     inputBinding:
       position: 101
-      prefix: --input
-  - id: output_file_path
+      prefix: -i
+  - id: reverse
+    type:
+      - 'null'
+      - boolean
+    doc: Also check the reverse strand
+    inputBinding:
+      position: 101
+      prefix: -r
+  - id: orf
+    type:
+      - 'null'
+      - boolean
+    doc: Output the start position of longest ORF
+    inputBinding:
+      position: 101
+      prefix: --ORF
+  - id: output_prefix
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name; CPC2 adds '.txt' to it (default cpc2output gives 
+      cpc2output.txt)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File
-    doc: Output file to write the results
+    doc: Tab-separated coding potential results
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_prefix).txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

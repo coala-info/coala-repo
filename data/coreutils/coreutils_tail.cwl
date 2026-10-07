@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: tail
 label: coreutils_tail
 doc: "Print the last 10 lines of each FILE to standard output. With more than one
-  FILE, precede each with a header giving the file name.\n\nTool homepage: https://github.com/uutils/coreutils"
+  FILE, precede each with a header giving the file name.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: files
     type:
@@ -62,11 +62,12 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --pid
     doc: with -f, terminate after process ID, PID dies; can be repeated to watch multiple
       processes
     inputBinding:
       position: 102
-      prefix: --pid
   - id: quiet
     type:
       - 'null'

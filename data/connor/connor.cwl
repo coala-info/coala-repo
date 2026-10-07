@@ -8,9 +8,11 @@ doc: "Deduplicates BAM file based on custom inline DNA barcodes. Emits a new BAM
 inputs:
   - id: input_bam
     type: File
-    doc: path to input BAM
+    doc: path to input BAM (must be indexed)
     inputBinding:
       position: 1
+    secondaryFiles:
+      - .bai
   - id: output_bam
     type: string
     doc: path to deduplicated output BAM
@@ -45,8 +47,8 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
-    doc: Path to verbose log file
+      - string
+    doc: Path to verbose log file (default {output_bam}.log)
     inputBinding:
       position: 102
       prefix: --log_file
@@ -98,6 +100,9 @@ outputs:
     doc: path to deduplicated output BAM
     outputBinding:
       glob: '$(inputs.output_bam)'
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: annotated_output_bam
     type:
       - 'null'
@@ -106,6 +111,16 @@ outputs:
       tags
     outputBinding:
       glob: $(inputs.annotated_output_bam_path)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: verbose log file
+    outputBinding:
+      glob: "$(inputs.log_file ? inputs.log_file : inputs.output_bam + '.log')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

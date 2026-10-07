@@ -32,13 +32,20 @@ inputs:
   - id: dbfile
     type:
       - 'null'
-      - File
+      - string
     doc: Name of diamond database file. Defaults to diamond.dmnd in same 
       directory as the protein fasta file
     inputBinding:
       position: 104
       prefix: --dbfile
 outputs:
+  - id: diamond_db
+    type:
+      - 'null'
+      - File
+    doc: Diamond database file
+    outputBinding:
+      glob: $(inputs.dbfile)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -6,7 +6,11 @@ doc: "calculate the Breadth and Depth of coverage of BAMFILE.\n\nTool homepage: 
 inputs:
   - id: bamfile
     type: File
-    doc: The file on which to operate
+    doc: The file on which to operate (sorted BAM; its .bai index is needed 
+      unless --sortindex is set)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: combine

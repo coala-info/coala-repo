@@ -1,5 +1,12 @@
 # comebin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| comebin_gen_cov_file.sh | PASS | Reads extracted from the Galaxy comebin test BAM realign to the Galaxy test assembly with the same 94 of 2000 reads mapped; single-end mode also tested. |
+| comebin_run_comebin.sh | Not completed | Small public test assemblies (Galaxy comebin and maxbin2 sets) are too small for COMEBin 1.0.4: training runs, but no marker-gene seeds are found, so no bins are written; a realistic metagenome run is too heavy here. |
+
 ## comebin_gen_cov_file.sh
 
 ### Tool Description

@@ -1,28 +1,23 @@
 # cpstools CWL Generation Report
 
-## cpstools_sub-command
+## Real Data Test
 
-### Tool Description
-A collection of tools for analyzing sequence data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cpstools:3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Xwb7533/CPStools
-- **Package**: https://anaconda.org/channels/bioconda/packages/cpstools/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/cpstools/overview
-- **Total Downloads**: 7.0K
-- **Last updated**: 2025-08-08
-- **GitHub**: https://github.com/Xwb7533/CPStools
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: cpstools [-h] [-v]
-                {gbcheck,info,Seq,IR,Pi,RSCU,SSRs,convert,LSRs,phy,KaKs,exc,GC,depth} ...
-cpstools: error: argument {gbcheck,info,Seq,IR,Pi,RSCU,SSRs,convert,LSRs,phy,KaKs,exc,GC,depth}: invalid choice: 'sub-command' (choose from gbcheck, info, Seq, IR, Pi, RSCU, SSRs, convert, LSRs, phy, KaKs, exc, GC, depth)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| cpstools_GC | PASS |  |
+| cpstools_IR | PASS |  |
+| cpstools_KaKs | Failed | image problem: KaKs_Calculator and mafft are not in the image, so KaKs crashes at the 'which KaKs_Calculator' check. |
+| cpstools_LSRs | PASS |  |
+| cpstools_Pi | Failed | image problem: mafft is not in the image, so Pi stops after extracting common genes with 'Please provide the abspath of mafft'. |
+| cpstools_RSCU | PASS |  |
+| cpstools_SSRs | PASS |  |
+| cpstools_Seq | PASS |  |
+| cpstools_convert | PASS |  |
+| cpstools_depth | Failed | image problem: bowtie2 and samtools are not in the image, so depth stops with 'No such file or directory: bowtie2-build'. |
+| cpstools_exc | PASS |  |
+| cpstools_gbcheck | PASS |  |
+| cpstools_info | PASS |  |
+| cpstools_phy | PASS |  |
 
 ## cpstools_gbcheck
 
@@ -45,25 +40,6 @@ options:
                         reference GenBank file
   -i, --test_file TEST_FILE
                         testing GenBank file
-```
-
-
-## cpstools_difference
-
-### Tool Description
-A collection of tools for analyzing and manipulating sequence data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cpstools:3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Xwb7533/CPStools
-- **Package**: https://anaconda.org/channels/bioconda/packages/cpstools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: cpstools [-h] [-v]
-                {gbcheck,info,Seq,IR,Pi,RSCU,SSRs,convert,LSRs,phy,KaKs,exc,GC,depth} ...
-cpstools: error: argument {gbcheck,info,Seq,IR,Pi,RSCU,SSRs,convert,LSRs,phy,KaKs,exc,GC,depth}: invalid choice: 'difference' (choose from gbcheck, info, Seq, IR, Pi, RSCU, SSRs, convert, LSRs, phy, KaKs, exc, GC, depth)
 ```
 
 
@@ -281,25 +257,6 @@ options:
                         Input the directory of genbank files
   -m, --mode {cds,pro}  Mode: cds for common cds sequences; pro for common
                         protein sequences
-```
-
-
-## cpstools_phylogenetic
-
-### Tool Description
-A collection of tools for phylogenetic analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cpstools:3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Xwb7533/CPStools
-- **Package**: https://anaconda.org/channels/bioconda/packages/cpstools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: cpstools [-h] [-v]
-                {gbcheck,info,Seq,IR,Pi,RSCU,SSRs,convert,LSRs,phy,KaKs,exc,GC,depth} ...
-cpstools: error: argument {gbcheck,info,Seq,IR,Pi,RSCU,SSRs,convert,LSRs,phy,KaKs,exc,GC,depth}: invalid choice: 'phylogenetic' (choose from gbcheck, info, Seq, IR, Pi, RSCU, SSRs, convert, LSRs, phy, KaKs, exc, GC, depth)
 ```
 
 

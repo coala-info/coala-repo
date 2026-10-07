@@ -1,5 +1,11 @@
 # compalignp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| compalignp | PASS |  |
+
 ## compalignp
 
 ### Tool Description

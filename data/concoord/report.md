@@ -1,5 +1,12 @@
 # concoord CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| concoord_disco | PASS |  |
+| concoord_dist | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

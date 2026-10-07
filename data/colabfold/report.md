@@ -1,5 +1,12 @@
 # colabfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| colabfold_colabfold_batch | Not completed | An MSA-only run on a real peptide worked after fixing the input type, but structure prediction needs the 3.5 GB AlphaFold weights and is too heavy without a GPU. |
+| colabfold_colabfold_search | Not completed | Needs the UniRef30 and ColabFold environmental MMseqs2 databases (hundreds of GB). |
+
 ## colabfold_colabfold_batch
 
 ### Tool Description

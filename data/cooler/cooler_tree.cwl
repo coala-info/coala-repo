@@ -7,7 +7,7 @@ label: cooler_tree
 doc: "Display a file's data hierarchy.\n\nTool homepage: https://github.com/open2c/cooler"
 inputs:
   - id: uri
-    type: string
+    type: File
     doc: URI of the cooler file
     inputBinding:
       position: 1

@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: df
 label: coreutils_df
 doc: "Show information about the file system on which each FILE resides, or all file
-  systems by default.\n\nTool homepage: https://github.com/uutils/coreutils"
+  systems by default.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: files
     type:

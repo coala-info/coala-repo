@@ -15,14 +15,15 @@ inputs:
       position: 101
       prefix: -a
   - id: converted_data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: directory for converted data (must contain hash.csv)
+    type: Directory
+    doc: directory for converted data (must contain hash.csv); staged writable, the
+      processed BLAST data (self.csv, hits.csv, query2subject.csv) are written into
+      it
     inputBinding:
       position: 101
       prefix: -d=
       separate: false
+      valueFrom: $(self.basename)
   - id: evalue_threshold
     type:
       - 'null'
@@ -42,9 +43,7 @@ inputs:
       prefix: -q=
       separate: false
   - id: self_blast_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: directory with the self-BLAST results
     inputBinding:
       position: 101
@@ -69,9 +68,7 @@ inputs:
       prefix: -t=
       separate: false
   - id: unfiltered_blast_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: directory with the unfiltered BLAST results
     inputBinding:
       position: 101
@@ -85,23 +82,41 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
-  - id: filtered_blast_dir_path
-    type: string
-    doc: "=dfilt\tdirectory with the filtered BLAST results (default ./blaf)"
+  - id: filtered_blast_dir
+    type: Directory
+    doc: directory with the filtered BLAST results (*.tab files)
     inputBinding:
-      position: 102
+      position: 101
       prefix: -f=
       separate: false
 outputs:
-  - id: filtered_blast_dir
-    type:
-      - 'null'
-      - Directory
-    doc: directory with the filtered BLAST results
+  - id: converted_data
+    type: Directory
+    doc: directory with the converted data (hash.csv, self.csv, hits.csv, 
+      query2subject.csv)
     outputBinding:
-      glob: $(inputs.filtered_blast_dir_path)
+      glob: $(inputs.converted_data_dir.basename)
+  - id: self_file
+    type: File
+    doc: 'Self-similarity data "<num-prot-id>,<prot-length>,<self-score>"'
+    outputBinding:
+      glob: $(inputs.converted_data_dir.basename)/self.csv
+  - id: hits_file
+    type: File
+    doc: Processed hits from the unfiltered BLAST search
+    outputBinding:
+      glob: $(inputs.converted_data_dir.basename)/hits.csv
+  - id: query2subject_file
+    type: File
+    doc: Query-subject pairs from the filtered BLAST search
+    outputBinding:
+      glob: $(inputs.converted_data_dir.basename)/query2subject.csv
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.converted_data_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cogtriangles:2012.04--h9948957_4

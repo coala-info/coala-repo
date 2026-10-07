@@ -6,8 +6,10 @@ baseCommand:
 label: cobs_doc-dump
 doc: "Dump documents from a path\n\nTool homepage: https://panthema.net/cobs"
 inputs:
-  - id: path
-    type: string
+  - id: documents
+    type:
+      - File
+      - Directory
     doc: path to documents to dump
     inputBinding:
       position: 1
@@ -19,6 +21,7 @@ inputs:
       cortex, fasta, fastq, etc)'
     inputBinding:
       position: 102
+      prefix: --file-type
   - id: no_canonicalize
     type:
       - 'null'
@@ -39,6 +42,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.documents)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

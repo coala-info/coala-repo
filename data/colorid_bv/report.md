@@ -1,5 +1,17 @@
 # colorid_bv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| colorid_bv_batch_id | PASS |  |
+| colorid_bv_build | PASS |  |
+| colorid_bv_info | PASS |  |
+| colorid_bv_merge | Failed | tool bug: merge exits 0 but the merged index cannot be read by info or search (deserialize error 'Invalid Inner'). |
+| colorid_bv_read_filter | PASS |  |
+| colorid_bv_read_id | PASS |  |
+| colorid_bv_search | PASS |  |
+
 ## colorid_bv_batch_id
 
 ### Tool Description

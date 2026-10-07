@@ -1,5 +1,11 @@
 # counterr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| counterr | PASS | Ran on the nf-core PacBio chrM BAM after turning =/X CIGAR ops into M; the tool crashes on =/X CIGAR and on base qualities of 50 or more. |
+
 ## counterr
 
 ### Tool Description

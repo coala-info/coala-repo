@@ -1,5 +1,11 @@
 # coinfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coinfinder | PASS |  |
+
 ## coinfinder
 
 ### Tool Description

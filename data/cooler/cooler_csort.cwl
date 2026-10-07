@@ -128,6 +128,11 @@ outputs:
     doc: Output gzip file
     outputBinding:
       glob: $(inputs.output_file_path)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .px2
+        required: false
 requirements:
   - class: InlineJavascriptRequirement
 hints:

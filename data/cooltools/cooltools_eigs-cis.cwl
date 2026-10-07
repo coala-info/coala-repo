@@ -60,12 +60,20 @@ inputs:
   - id: phasing_track
     type:
       - 'null'
-      - string
-    doc: Phasing track for orienting and ranking eigenvectors,provided as 
-      /path/to/track::track_value_column_name.
+      - File
+    doc: Phasing track for orienting and ranking eigenvectors (BedGraph-like 
+      file with columns chrom, start, end and the track value).
     inputBinding:
       position: 102
       prefix: --phasing-track
+      valueFrom: "$(inputs.phasing_track_column ? self.path + '::' + inputs.phasing_track_column\
+        \ : self.path)"
+  - id: phasing_track_column
+    type:
+      - 'null'
+      - string
+    doc: Name of the track value column in the phasing track (passed as 
+      /path/to/track::track_value_column_name). Default is the 4th column.
   - id: regions
     type:
       - 'null'
@@ -95,10 +103,25 @@ inputs:
       position: 102
       prefix: --view
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: eigenvectors
+    type: File
+    doc: Eigenvectors per bin (out_prefix.cis.vecs.tsv).
+    outputBinding:
+      glob: $(inputs.out_prefix).cis.vecs.tsv
+  - id: eigenvalues
+    type: File
+    doc: Eigenvalues (out_prefix.cis.lam.txt).
+    outputBinding:
+      glob: $(inputs.out_prefix).cis.lam.txt
+  - id: bigwig_track
+    type:
+      - 'null'
+      - File
+    doc: Compartment track (E1) as bigWig (out_prefix.cis.bw), with --bigwig.
+    outputBinding:
+      glob: $(inputs.out_prefix).cis.bw
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
-stdout: cooltools_eigs-cis.out

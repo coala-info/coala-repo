@@ -1,5 +1,11 @@
 # coprarna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coprarna_CopraRNA2.pl | PASS |  |
+
 ## coprarna_CopraRNA2.pl
 
 ### Tool Description

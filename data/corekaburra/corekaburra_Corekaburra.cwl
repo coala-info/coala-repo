@@ -13,11 +13,13 @@ inputs:
     doc: Path to gff files used for pan-genome
     inputBinding:
       position: 1
+      prefix: -ig
   - id: input_pangenome
     type: Directory
     doc: Path to the folder produced by Panaroo or Roary
     inputBinding:
       position: 2
+      prefix: -ip
   - id: complete_genomes
     type:
       - 'null'
@@ -85,19 +87,18 @@ inputs:
       prefix: -o
 outputs:
   - id: output_path
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to where output files will be placed
     outputBinding:
       glob: $(inputs.output_path_path)
-  - id: prefix_files
+  - id: output_tables
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: Output tables (core_pair_summary, core_core_accessory_gene_content, 
+      low_frequency_gene_placement, ...), with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_path_path)/*.tsv
 requirements:
   - class: InlineJavascriptRequirement
 hints:

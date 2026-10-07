@@ -7,9 +7,19 @@ doc: "Remove overlapping hits from cmsearch, cmscan, nhmmer, or hmmsearch tblout
 inputs:
   - id: tblout_file
     type: File
-    doc: Single tblout file or a list of tblout files if -l is specified
+    doc: Single tblout file or a list of tblout files if -l is specified. The 
+      tool writes <tblout file>.deoverlapped beside it, so it is staged writable
+      in the working directory.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+  - id: listed_tblout_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: with -l, the tblout files named in the list file (the list must name 
+      them by file name only); they are staged writable in the working directory
   - id: besthmm
     type:
       - 'null'
@@ -136,11 +146,21 @@ inputs:
       position: 102
       prefix: -v
   - id: overlapout_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: create new tabular file with overlap information in <s>
     inputBinding:
       position: 103
       prefix: --overlapout
 outputs:
+  - id: deoverlapped
+    type:
+      type: array
+      items: File
+    doc: tblout file(s) with overlapping hits removed (<tblout file>.deoverlapped)
+    outputBinding:
+      glob: '*.deoverlapped'
   - id: overlapout
     type:
       - 'null'
@@ -150,6 +170,11 @@ outputs:
       glob: $(inputs.overlapout_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.tblout_file)
+        writable: true
+      - '${ return inputs.listed_tblout_files ? inputs.listed_tblout_files.map(function(f){ return {"entry": f, "writable": true}; }) : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: 

@@ -9,6 +9,11 @@ inputs:
     doc: Input GFF3 file
     inputBinding:
       position: 1
+  - id: output_gp_path
+    type: string
+    doc: Output genePred file name
+    inputBinding:
+      position: 2
   - id: allow_minimal_genes
     type:
       - 'null'
@@ -145,7 +150,7 @@ outputs:
     type: File
     doc: Output genePred file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_gp_path)
   - id: attrs_out
     type:
       - 'null'

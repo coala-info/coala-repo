@@ -1,5 +1,11 @@
 # crabs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crabs | PASS |  |
+
 ## crabs
 
 ### Tool Description

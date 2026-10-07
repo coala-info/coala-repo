@@ -30,19 +30,24 @@ inputs:
       prefix: --recursive
   - id: output_path
     type: string
+    doc: Output directory name (created before the run; the tool requires an 
+      existing directory)
     inputBinding:
       position: 103
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory name (defaults to directory if not provided)
+    type: Directory
+    doc: Output directory with the flag CSV files
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.output_path, listing: 
+          []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/commec:1.0.3--pyhdfd78af_0

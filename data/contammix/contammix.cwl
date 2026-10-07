@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./estimate.R
+baseCommand: contammix
 label: contammix
 doc: "Estimate the proportion of authentic sequences in a sample, accounting for potential
   contamination and aDNA damage.\n\nTool homepage: https://github.com/plfjohnson/contamMix"
@@ -66,6 +66,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nrThreads
+  - id: record_all
+    type:
+      - 'null'
+      - boolean
+    doc: record all proportions from the MCMC chain
+    inputBinding:
+      position: 101
+      prefix: --recordAll
   - id: sam_fn
     type: File
     doc: SAM/BAM data file aligned to consensus
@@ -75,7 +83,7 @@ inputs:
   - id: save_data
     type:
       - 'null'
-      - boolean
+      - string
     doc: save chain data to specified file (in .Rdata format) for manual 
       diagnostics
     inputBinding:
@@ -118,7 +126,11 @@ inputs:
       position: 101
       prefix: --trimBases
   - id: figure_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: 'if supplied, generates a PDF figure with 3 panels (".pdf" is added when 
+      missing)'
     inputBinding:
       position: 102
       prefix: --figure
@@ -131,7 +143,20 @@ outputs:
       diagnostic (if --nChains>1), Pr(authentic) as a function of MC iteration, estimated
       posterior density for Pr(authentic)'
     outputBinding:
-      glob: $(inputs.figure_path)
+      glob: "$(inputs.figure_path ? (inputs.figure_path.match(/\\.pdf$/) ? inputs.figure_path
+        : inputs.figure_path + '.pdf') : [])"
+  - id: chain_data
+    type:
+      - 'null'
+      - File
+    doc: MCMC chain data and results in .Rdata format
+    outputBinding:
+      glob: "$(inputs.save_data ? (inputs.save_data.match(/\\.Rdata$/) ? inputs.save_data
+        : inputs.save_data + '.Rdata') : [])"
+  - id: results
+    type: stdout
+    doc: Estimated proportion of authentic sequences (text or tab-separated)
+stdout: contammix_results.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -8,15 +8,19 @@ doc: "Codon conservation analysis from Pfam domains and CDS sequences.\n\nTool h
   https://github.com/hanjunlee21/conservation"
 inputs:
   - id: cds
-    type: string
-    doc: Comma-separated list of CDS fasta files for each organism
+    type:
+      type: array
+      items: File
+    doc: CDS fasta files, one for each organism (passed as a comma-separated
+      list; the species name is the file name before the first dot)
     inputBinding:
       position: 101
       prefix: --cds
+      itemSeparator: ','
   - id: conservedness
     type:
       - 'null'
-      - string
+      - float
     doc: Identity ratio threshold
     inputBinding:
       position: 101

@@ -1,5 +1,11 @@
 # cosap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cosap | Not completed | pipeline, skipped: cosap runs a whole mapping and variant-calling pipeline that needs reference genomes. |
+
 ## cosap
 
 ### Tool Description

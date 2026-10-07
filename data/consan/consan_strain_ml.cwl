@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mltrain
+baseCommand: strain_ml
 label: consan_strain_ml
 doc: "Train models for consan_strain using training set files.\n\nTool homepage: http://eddylab.org/software/consan/"
 inputs:
@@ -8,9 +8,10 @@ inputs:
     type:
       type: array
       items: File
-    doc: Training set files
+    doc: Training set files (Stockholm alignments with structure). Options must
+      come before them on the command line.
     inputBinding:
-      position: 1
+      position: 201
   - id: debug
     type:
       - 'null'
@@ -100,14 +101,15 @@ inputs:
       prefix: -s
 outputs:
   - id: save_model
-    type:
-      - 'null'
-      - File
+    type: File
     doc: save model file to <file>
     outputBinding:
       glob: $(inputs.save_model_path)
 requirements:
   - class: InlineJavascriptRequirement
+successCodes:
+  - 0
+  - 1
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/consan:1.2--h7b50bb2_7

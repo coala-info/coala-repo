@@ -40,13 +40,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --field
     doc: Specify the names of value columns to merge as '<name>'. Repeat the 
       `--field` option for each one. Use '<name>,dtype=<dtype>' to specify the 
       dtype. Include ',agg=<agg>' to specify an aggregation function different 
       from 'sum'.
     inputBinding:
       position: 103
-      prefix: --field
 outputs:
   - id: stdout
     type: stdout

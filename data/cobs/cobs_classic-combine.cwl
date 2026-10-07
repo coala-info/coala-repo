@@ -58,6 +58,12 @@ outputs:
     doc: path to the output directory
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ return {"class": "Directory", "basename": inputs.out_dir, "listing": [], "writable": true}; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

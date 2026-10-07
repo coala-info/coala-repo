@@ -224,7 +224,7 @@ inputs:
   - id: tax
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for taxonomy assignments
     inputBinding:
       position: 101
@@ -240,7 +240,7 @@ inputs:
   - id: trainfile
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to which training files will be written
     inputBinding:
       position: 101
@@ -266,6 +266,20 @@ outputs:
     doc: Output directory for classifications
     outputBinding:
       glob: $(inputs.output_path)
+  - id: tax_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for taxonomy assignments
+    outputBinding:
+      glob: "$(inputs.tax ? inputs.tax : 'taxonomy_assignments')"
+  - id: trainfile_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with training files
+    outputBinding:
+      glob: "$(inputs.trainfile ? inputs.trainfile : 'training_files')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

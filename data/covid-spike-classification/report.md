@@ -1,5 +1,11 @@
 # covid-spike-classification CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| covid-spike-classification | PASS |  |
+
 ## covid-spike-classification
 
 ### Tool Description

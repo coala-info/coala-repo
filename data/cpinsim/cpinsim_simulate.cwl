@@ -19,15 +19,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --association-probability
-  - id: concentrations
+  - id: max_protein_instances
     type:
       - 'null'
-      - string
-    doc: Maximum number of protein instances and path to a csv-file containing a
-      concentration for each protein.
+      - int
+    doc: Maximum number of protein instances; first value of --concentrations. 
+      Give it together with concentrations_file.
     inputBinding:
-      position: 102
+      position: 105
       prefix: --concentrations
+  - id: concentrations_file
+    type:
+      - 'null'
+      - File
+    doc: Csv-file containing a concentration for each protein; second value of 
+      --concentrations. Give it together with max_protein_instances.
+    inputBinding:
+      position: 106
   - id: dissociation_probability
     type:
       - 'null'
@@ -57,16 +65,19 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items:
+          type: array
+          items: string
+        inputBinding:
+          prefix: --perturbation
     doc: Protein that should be overexpressed or down regulated by factor FACTOR
-      for perturbation analysis.
+      for perturbation analysis. Each item is a pair [PROTEIN, FACTOR], e.g. 
+      [[FYN, '0'], [ABL1, '5']]; each pair becomes one --perturbation option.
     inputBinding:
       position: 102
-      prefix: --perturbation
   - id: output_graph_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: Path for the pickled (gzipped) graph at the end of simulation.
     inputBinding:
       position: 103
       prefix: --output-graph
@@ -79,9 +90,7 @@ inputs:
       prefix: --output-log
 outputs:
   - id: output_graph
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Pickle the complete graph at the end of simulation (after last 
       dissociation step) and write it to the given path.
     outputBinding:

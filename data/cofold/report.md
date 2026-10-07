@@ -1,5 +1,11 @@
 # cofold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cofold_CoFold | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Input sequence file
     inputBinding:
-      position: 1
+      position: 200
   - id: save_ambiguous_path
     type: string
     doc: ': save ambiguous sequences to this file'
@@ -17,6 +17,9 @@ inputs:
       position: 101
       prefix: -s
 outputs:
+  - id: unambiguous
+    type: stdout
+    doc: Sequences without ambiguous bases (Stockholm)
   - id: save_ambiguous
     type:
       - 'null'
@@ -29,3 +32,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/conus:1.0--h7b50bb2_6
+stdout: conus_weedamb.out

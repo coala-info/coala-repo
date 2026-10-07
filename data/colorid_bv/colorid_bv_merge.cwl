@@ -7,13 +7,13 @@ label: colorid_bv_merge
 doc: "merges (concatenates) indices\n\nTool homepage: https://github.com/hcdenbakker/colorid_bv"
 inputs:
   - id: index_1
-    type: File
+    type: Directory
     doc: index to which index 2 will be concatenated
     inputBinding:
       position: 101
       prefix: --index_1
   - id: index_2
-    type: File
+    type: Directory
     doc: index to be concatenated to index 1
     inputBinding:
       position: 101
@@ -26,7 +26,7 @@ inputs:
       prefix: --out_bigsi
 outputs:
   - id: out_bigsi
-    type: File
+    type: Directory
     doc: name output index
     outputBinding:
       glob: $(inputs.out_bigsi_path)

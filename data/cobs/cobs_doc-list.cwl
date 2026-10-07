@@ -6,8 +6,10 @@ baseCommand:
 label: cobs_doc-list
 doc: "list documents\n\nTool homepage: https://panthema.net/cobs"
 inputs:
-  - id: path
-    type: Directory
+  - id: documents
+    type:
+      - File
+      - Directory
     doc: path to documents to list
     inputBinding:
       position: 1
@@ -32,6 +34,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.documents)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

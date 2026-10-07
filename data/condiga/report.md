@@ -1,5 +1,11 @@
 # condiga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| condiga | Not completed | No usable test data: it needs MetaGeneMark gene predictions (licensed tool), Kraken2 results, CoverM coverages and the NCBI bacteria assembly_summary.txt, and it downloads reference genomes from NCBI at run time. |
+
 ## condiga
 
 ### Tool Description

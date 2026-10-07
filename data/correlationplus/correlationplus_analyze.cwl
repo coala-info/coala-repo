@@ -66,13 +66,14 @@ inputs:
       position: 102
       prefix: -o
 outputs:
-  - id: output_file
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: This will be your output file. Output figures are in png format.
+      type: array
+      items: File
+    doc: Output files (dat, png, pdb, pml, tcl) whose names start with the 
+      output prefix.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # coregenebuilder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coregenebuilder | PASS |  |
+
 ## coregenebuilder
 
 ### Tool Description

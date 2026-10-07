@@ -1,5 +1,12 @@
 # conterminator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| conterminator_dna | Failed | image problem: the createtaxdb step always downloads the NCBI taxdump (ignoring --ncbi-tax-dump) and the image's BusyBox tar has no -z option, so the step dies. |
+| conterminator_protein | Failed | image problem: the createtaxdb step always downloads the NCBI taxdump (ignoring --ncbi-tax-dump) and the image's BusyBox tar has no -z option, so the step dies. |
+
 ## conterminator_dna
 
 ### Tool Description

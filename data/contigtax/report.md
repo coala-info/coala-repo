@@ -1,5 +1,17 @@
 # contigtax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| contigtax_assign | PASS | Main and --taxidout outputs are right (529 of 857 shreds get the true species); the optional --blobout output crashes with a pandas KeyError (tool bug). |
+| contigtax_build | PASS |  |
+| contigtax_download | PASS | Downloaded the NCBI taxdump and built the ete3 taxonomy.sqlite (needs network). |
+| contigtax_format | PASS |  |
+| contigtax_search | PASS |  |
+| contigtax_transfer | Failed | tool bug: contig_lca indexes a multi-ORF table with a one-element boolean mask, so any contig with more than one ORF raises IndexError. |
+| contigtax_update | PASS |  |
+
 ## contigtax_download
 
 ### Tool Description
@@ -75,24 +87,6 @@ optional arguments:
                         database). Ids longer than this are written to a file
                         with the original id
   --tmpdir TMPDIR       Temporary directory for writing fasta files
-```
-
-## contigtax_map
-
-### Tool Description
-A tool for taxonomic assignment of contigs.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0
-- **Homepage**: https://github.com/NBISweden/contigtax
-- **Package**: https://anaconda.org/channels/bioconda/packages/contigtax/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: contigtax [-h] [-v]
-                 {download,format,update,build,search,assign,transfer} ...
-contigtax: error: invalid choice: 'map' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer')
 ```
 
 ## contigtax_update

@@ -1,5 +1,11 @@
 # concavity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| concavity | PASS |  |
+
 ## concavity
 
 ### Tool Description

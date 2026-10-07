@@ -6,12 +6,26 @@ doc: "A program for codon usage analysis, including correspondence analysis and 
   of various indices.\n\nTool homepage: http://codonw.sourceforge.net"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input sequence file
     inputBinding:
       position: 1
+  - id: output_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the output file for the codon usage indices
+    default: codonw.out
+    inputBinding:
+      position: 2
+  - id: bulk_output_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the bulk output file
+    default: codonw.blk
+    inputBinding:
+      position: 3
   - id: all_indices
     type:
       - 'null'
@@ -289,7 +303,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Prevent the menu interface being displayed
+    doc: Prevent the menu interface being displayed (needed for batch runs)
+    default: true
     inputBinding:
       position: 102
       prefix: -nomenu
@@ -370,16 +385,23 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Main output file
+    doc: Main output file with the requested indices
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
   - id: bulk_output_file
     type:
       - 'null'
       - File
-    doc: Bulk output file
+    doc: Bulk output file (codon usage, RSCU, translation, ...)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.bulk_output_name)
+  - id: coa_files
+    type:
+      type: array
+      items: File
+    doc: Correspondence analysis result files (*.coa)
+    outputBinding:
+      glob: '*.coa'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/codonw:v1.4.4-4-deb_cv1

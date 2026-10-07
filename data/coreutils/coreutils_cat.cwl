@@ -101,6 +101,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5
 stdout: cat.out
-s:url: https://github.com/uutils/coreutils
+s:url: https://www.gnu.org/software/coreutils/
 $namespaces:
   s: https://schema.org/

@@ -1,5 +1,11 @@
 # conodictor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| conodictor | PASS |  |
+
 ## conodictor
 
 ### Tool Description

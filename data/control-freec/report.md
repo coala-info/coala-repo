@@ -1,5 +1,11 @@
 # control-freec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| control-freec_freec | PASS | Tumour/normal chr21 BAMs gave copy-number calls with the control used; the -control command-line option is ignored by freec 11.6, so the control is set via mateFile in the config. |
+
 ## control-freec_freec
 
 ### Tool Description

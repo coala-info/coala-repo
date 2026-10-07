@@ -1,5 +1,17 @@
 # coptr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coptr_count | PASS |  |
+| coptr_estimate | PASS |  |
+| coptr_extract | PASS |  |
+| coptr_index | PASS |  |
+| coptr_map | PASS |  |
+| coptr_merge | PASS |  |
+| coptr_rabun | PASS |  |
+
 ## coptr_index
 
 ### Tool Description
@@ -228,35 +240,4 @@ optional arguments:
 
 ## Metadata
 - **Skill**: not generated
-
-## coptr
-
-### Tool Description
-CoPTR (v1.1.4): Compute PTRs from complete reference genomes and assemblies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3
-- **Homepage**: https://github.com/tyjo/coptr
-- **Package**: https://anaconda.org/channels/bioconda/packages/coptr/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: coptr <command> [options]
-
-command: index            create a bowtie2 index for a reference database
-         map              map reads against a reference database
-         merge            merge BAM files from reads mapped to multiple indexes
-         extract          compute coverage maps from bam files
-         estimate         estimate PTRs from coverage maps
-         count            compute read counts for each genome after filtering
-         rabun            estimate relative abundances for each genomes after filtering
-
-CoPTR (v1.1.4): Compute PTRs from complete reference genomes and assemblies.
-
-positional arguments:
-  command     Command to run.
-
-optional arguments:
-  -h, --help  show this help message and exit
-```
 

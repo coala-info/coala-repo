@@ -9,7 +9,7 @@ doc: "Coarsen a cooler to a lower resolution.\n\nWorks by pooling *k*-by-*k* nei
   Tool homepage: https://github.com/open2c/cooler"
 inputs:
   - id: cool_path
-    type: string
+    type: File
     doc: Path to a COOL file or Cooler URI.
     inputBinding:
       position: 1
@@ -45,6 +45,8 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --field
     doc: "Specify the names of value columns to merge as\n                       \
       \    '<name>'. Repeat the `--field` option for each one.\n                 \
       \          Use '<name>,dtype=<dtype>' to specify the dtype.\n              \
@@ -52,7 +54,6 @@ inputs:
       \              function different from 'sum'."
     inputBinding:
       position: 102
-      prefix: --field
   - id: nproc
     type:
       - 'null'

@@ -7,7 +7,7 @@ label: colorid_bv_search
 doc: "does a bigsi search on one or more fasta/fastq.gz files\n\nTool homepage: https://github.com/hcdenbakker/colorid_bv"
 inputs:
   - id: bigsi
-    type: File
+    type: Directory
     doc: Sets the name of the index file for search
     inputBinding:
       position: 101

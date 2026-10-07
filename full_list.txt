@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 2249; PASS: 1709; Failed: 335; Not completed: 205
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 2590; PASS: 1997; Failed: 371; Not completed: 222
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -2249,3 +2249,344 @@ cmash	cmash_QueryDNADatabase.py	Failed	image problem: the khmer version in the i
 cmash	cmash_StreamingQueryDNADatabase.py	PASS	
 cmfinder	cmfinder	PASS	
 cmip	cmip	PASS	
+cmph	cmph	PASS	
+cmsearch_tblout_deoverlap	cmsearch_tblout_deoverlap_cmsearch-deoverlap.pl	PASS	
+cmseq	cmseq_breadth_depth.py	PASS	
+cmseq	cmseq_polymut.py	PASS	
+cmsip	cmsip	Not completed	End-to-end CMS-IP pipeline (HaMiP) run from a config file with absolute paths, needing two whole-chromosome FASTAs and network access for chromosome sizes; pipeline, skipped.
+cnasim	cnasim	PASS	
+cnmf	cnmf_combine	PASS	
+cnmf	cnmf_consensus	PASS	
+cnmf	cnmf_factorize	PASS	
+cnmf	cnmf_k_selection_plot	PASS	
+cnmf	cnmf_prepare	PASS	
+cnvetti	cnvetti_cmd_build-model-pool	PASS	
+cnvetti	cnvetti_cmd_build-model-wis	PASS	
+cnvetti	cnvetti_cmd_coverage	PASS	
+cnvetti	cnvetti_cmd_genotype	PASS	
+cnvetti	cnvetti_cmd_merge-cov	PASS	
+cnvetti	cnvetti_cmd_merge-seg	PASS	
+cnvetti	cnvetti_cmd_mod-coverage	PASS	
+cnvetti	cnvetti_cmd_normalize	PASS	
+cnvetti	cnvetti_cmd_ratio	PASS	
+cnvetti	cnvetti_cmd_segment	PASS	
+cnvetti	cnvetti_quick_pool-build-model	PASS	
+cnvetti	cnvetti_quick_pool-call	PASS	
+cnvetti	cnvetti_quick_wis-build-model	PASS	
+cnvetti	cnvetti_quick_wis-call	Failed	Tool bug: the built-in genotyping step fails for every segmentation method (missing FORMAT/SGS or FORMAT/CVZ, or 'Not implemented yet').
+cnvetti	cnvetti_visualize_cov-to-igv	PASS	
+cnvkit	cnvkit_access	PASS	
+cnvkit	cnvkit_antitarget	PASS	
+cnvkit	cnvkit_autobin	PASS	
+cnvkit	cnvkit_bintest	PASS	
+cnvkit	cnvkit_breaks	PASS	
+cnvkit	cnvkit_call	PASS	
+cnvkit	cnvkit_coverage	PASS	
+cnvkit	cnvkit_diagram	PASS	
+cnvkit	cnvkit_export_bed	PASS	
+cnvkit	cnvkit_export_cdt	PASS	
+cnvkit	cnvkit_export_gistic	PASS	
+cnvkit	cnvkit_export_jtv	PASS	
+cnvkit	cnvkit_export_nexus-basic	PASS	
+cnvkit	cnvkit_export_nexus-ogt	PASS	
+cnvkit	cnvkit_export_seg	PASS	
+cnvkit	cnvkit_export_theta	PASS	
+cnvkit	cnvkit_export_vcf	PASS	
+cnvkit	cnvkit_fix	PASS	
+cnvkit	cnvkit_genemetrics	PASS	
+cnvkit	cnvkit_heatmap	PASS	
+cnvkit	cnvkit_import-picard	PASS	
+cnvkit	cnvkit_import-rna	Failed	Image problem: import-rna crashes with AttributeError because the image's pandas no longer has DataFrame.iteritems.
+cnvkit	cnvkit_import-seg	PASS	
+cnvkit	cnvkit_import-theta	PASS	
+cnvkit	cnvkit_metrics	PASS	
+cnvkit	cnvkit_reference	PASS	
+cnvkit	cnvkit_scatter	PASS	
+cnvkit	cnvkit_segment	PASS	
+cnvkit	cnvkit_segmetrics	PASS	
+cnvkit	cnvkit_sex	PASS	
+cnvkit	cnvkit_target	PASS	
+cnvnator	cnvnator	PASS	
+cnv-phenopacket	cnv-phenopacket	PASS	
+cnvpytor	cnvpytor	Failed	Image problem: the reference genome resource files (GC and mask) are missing from the image, so every command stops with 'Run cnvpytor -download' and writes nothing.
+cnv-vcf2json	cnv-vcf2json	PASS	
+coatran	coatran_coatran_constant	PASS	
+coatran	coatran_coatran_expgrowth	Failed	tool bug: the trees have negative branch lengths, and the upstream README says this mode does not work yet.
+coatran	coatran_coatran_inftime	PASS	
+coatran	coatran_coatran_transtree	PASS	
+cobra-meta	cobra-meta	PASS	
+cobs	cobs_benchmark-fpr	PASS	
+cobs	cobs_classic-combine	Failed	tool bug: classic-combine copies the input folder without its index files and then stops with 'could not find any cobs_classic to combine'.
+cobs	cobs_classic-construct	PASS	
+cobs	cobs_classic-construct-random	PASS	
+cobs	cobs_compact-construct	PASS	
+cobs	cobs_compact-construct-combine	PASS	
+cobs	cobs_doc-dump	PASS	
+cobs	cobs_doc-list	PASS	
+cobs	cobs_generate-queries	PASS	
+cobs	cobs_print-kmers	Failed	tool bug: print-kmers drops the last k-mer of the query (a 42 bp query gives 11 of 12 k-mers).
+cobs	cobs_print-parameters	PASS	
+cobs	cobs_query	PASS	
+coconet-binning	coconet-binning_cluster	Failed	tool bug: config.yaml stores every path as the text of the Path class (path_to_str uses str(Path)), so cluster crashes when it reloads an earlier step's folder; 'coconet run' clusters fine.
+coconet-binning	coconet-binning_learn	PASS	
+coconet-binning	coconet-binning_preprocess	PASS	
+coconet-binning	coconet-binning_run	PASS	
+codan	codan_codan.py	PASS	
+codan	codan_tops-viterbi_decoding	PASS	
+codingorf	codingorf	PASS	
+codingquarry	codingquarry_CodingQuarry	PASS	
+codoff	codoff	PASS	
+codonw	codonw	PASS	
+cofold	cofold_CoFold	PASS	
+cogclassifier	cogclassifier_COGclassifier	PASS	
+cogtriangles	cogtriangles_COGmakehash	PASS	
+cogtriangles	cogtriangles_COGreadblast	PASS	
+coidb	coidb	Not completed	pipeline, skipped: coidb is a Snakemake workflow that downloads and processes the BOLD database.
+coinfinder	coinfinder	PASS	
+cojac	cojac_cooc-colourmut	PASS	
+cojac	cojac_cooc-curate	PASS	
+cojac	cojac_cooc-mutbamscan	PASS	
+cojac	cojac_cooc-pubmut	PASS	
+cojac	cojac_generate-sigs-nextstrains	PASS	
+cojac	cojac_phe2cojac	PASS	
+cojac	cojac_sig-generate	PASS	
+colabfold	colabfold_colabfold_batch	Not completed	An MSA-only run on a real peptide worked after fixing the input type, but structure prediction needs the 3.5 GB AlphaFold weights and is too heavy without a GPU.
+colabfold	colabfold_colabfold_search	Not completed	Needs the UniRef30 and ColabFold environmental MMseqs2 databases (hundreds of GB).
+collect-columns	collect-columns	PASS	
+collectl	collectl	PASS	
+collect_mgf	collect_mgf	PASS	Synthetic data (planted Bruker EXPNO folders and dd_results, no public test set); output MGF has the expected PEPMASS and CHARGE per scan.
+colord	colord_compress-ont	PASS	
+colord	colord_compress-pbhifi	PASS	
+colord	colord_compress-pbraw	PASS	
+colord	colord_decompress	PASS	
+colord	colord_info	PASS	
+colorid_bv	colorid_bv_batch_id	PASS	
+colorid_bv	colorid_bv_build	PASS	
+colorid_bv	colorid_bv_info	PASS	
+colorid_bv	colorid_bv_merge	Failed	tool bug: merge exits 0 but the merged index cannot be read by info or search (deserialize error 'Invalid Inner').
+colorid_bv	colorid_bv_read_filter	PASS	
+colorid_bv	colorid_bv_read_id	PASS	
+colorid_bv	colorid_bv_search	PASS	
+combined-pvalues	combined-pvalues_acf	PASS	Upstream test data pvals.bed; N per lag matches expected_acf.txt, correlations differ slightly because that file predates the switch to rank correlation.
+combined-pvalues	combined-pvalues_fdr	PASS	
+combined-pvalues	combined-pvalues_filter	Failed	image problem: bedtools is missing from the image, so filter fails with 'bedtools: command not found' and writes nothing.
+combined-pvalues	combined-pvalues_hist	PASS	
+combined-pvalues	combined-pvalues_manhattan	Failed	image problem: matplotlib is missing from the image (ImportError), so no plot is made.
+combined-pvalues	combined-pvalues_peaks	PASS	
+combined-pvalues	combined-pvalues_pipeline	PASS	Upstream example file.bed gives the expected acf, slk, fdr, regions and regions-p files; the optional --region-filter-p/-n step needs bedtools, which the image lacks, so regions-t.bed stays empty.
+combined-pvalues	combined-pvalues_region_p	PASS	
+combined-pvalues	combined-pvalues_slk	PASS	
+comebin	comebin_gen_cov_file.sh	PASS	Reads extracted from the Galaxy comebin test BAM realign to the Galaxy test assembly with the same 94 of 2000 reads mapped; single-end mode also tested.
+comebin	comebin_run_comebin.sh	Not completed	Small public test assemblies (Galaxy comebin and maxbin2 sets) are too small for COMEBin 1.0.4: training runs, but no marker-gene seeds are found, so no bins are written; a realistic metagenome run is too heavy here.
+comet-ms	comet-ms_comet	PASS	Comet legacy test cases (plain, tryptic) return the expected top peptides; -i builds an index, but searching that index segfaults in this Comet build (also outside CWL).
+commec	commec_flag	PASS	Upstream v1.0.3 test screen files give the exact expected screen_pipeline_status.csv rows.
+commec	commec_screen	PASS	Runs on the upstream v1.0.3 test databases with --skip-tx (taxonomy test DB is only a placeholder); JSON, log and HTML outputs report the expected no-hit Warning status.
+commec	commec_setup	Not completed	Database download helper: with --auto it starts fetching the full NCBI nr BLAST database (hundreds of GB), too large to test here.
+commec	commec_split	PASS	
+compalignp	compalignp	PASS	
+comparative-annotation-toolkit	comparative-annotation-toolkit_faToTwoBit	PASS	
+comparative-annotation-toolkit	comparative-annotation-toolkit_gff3ToGenePred	PASS	
+comparative-annotation-toolkit	comparative-annotation-toolkit_pslMap	PASS	
+comparem	comparem_aa_usage	PASS	
+comparem	comparem_aai	PASS	
+comparem	comparem_aai_wf	Failed	image problem: the image has BusyBox sort, which rejects --parallel, so the DIAMOND hit table is never sorted and AAI finds 0 orthologs between two Bacteroides fragilis assemblies.
+comparem	comparem_call_genes	PASS	
+comparem	comparem_classify	PASS	
+comparem	comparem_classify_wf	Failed	image problem: the image has BusyBox sort, which rejects --parallel, so the DIAMOND hit table is never sorted and classify finds only 3 orthologs between two Bacteroides fragilis assemblies (658 with a sorted table).
+comparem	comparem_codon_usage	PASS	
+comparem	comparem_diss	PASS	
+comparem	comparem_hclust	PASS	
+comparem	comparem_kmer_usage	PASS	
+comparem	comparem_lgt_codon	PASS	
+comparem	comparem_lgt_di	PASS	
+comparem	comparem_similarity	Failed	image problem: the image has BusyBox sort, which rejects --parallel, so the DIAMOND hit table is never sorted (hits_sorted.tsv is left unsorted, which breaks the aai and classify steps).
+comparem	comparem_stop_usage	PASS	
+comparems2	comparems2_compareMS2	PASS	
+compleasm	compleasm_analyze	PASS	
+compleasm	compleasm_download	Failed	tool bug: compleasm 0.2.7 crashes while parsing the current BUSCO file_versions.tsv (new odb12.2 placement file names hold an extra dot), so no lineage is downloaded.
+compleasm	compleasm_list	PASS	
+compleasm	compleasm_miniprot	PASS	
+compleasm	compleasm_protein	PASS	
+compleasm	compleasm_run	PASS	
+concavity	concavity	PASS	
+concoct	concoct	PASS	
+concoord	concoord_disco	PASS	
+concoord	concoord_dist	PASS	
+condiga	condiga	Not completed	No usable test data: it needs MetaGeneMark gene predictions (licensed tool), Kraken2 results, CoverM coverages and the NCBI bacteria assembly_summary.txt, and it downloads reference genomes from NCBI at run time.
+conduit-assembler	conduit-assembler_conduit_hybrid	PASS	
+confindr	confindr	PASS	
+conifer	conifer	PASS	
+connectome-workbench	connectome-workbench_wb_command_file-information	PASS	
+connectome-workbench	connectome-workbench_wb_command_metric-stats	PASS	
+connectome-workbench	connectome-workbench_wb_command_volume-smoothing	PASS	
+connectome-workbench	connectome-workbench_wb_command_volume-stats	PASS	
+connectome-workbench	connectome-workbench_wb_view	Not completed	wb_view is an interactive graphical viewer that cannot run as a batch job.
+connor	connor	PASS	
+conodictor	conodictor	PASS	
+consan	consan_scompare	PASS	Correct stem-loop predicted in full mode (-f) with the mix80 model; the default pin mode segfaults because the image lacks the DART dpswalign helper, and the -s file stays empty because v1.2 never writes it.
+consan	consan_sfold	PASS	Correct stem-loop predicted in full mode (-f) with the mix80 model; the default pin mode segfaults because the image lacks the DART dpswalign helper.
+consan	consan_strain_ml	PASS	Trained a model on the Rfam v7 set that sfold then uses correctly; strain_ml exits 1 on success, so the CWL accepts exit codes 0 and 1.
+consel	consel	PASS	
+consensify	consensify_consensify_c	PASS	
+consensusfixer	consensusfixer	PASS	
+consent	consent_CONSENT-correct	PASS	
+consent	consent_CONSENT-polish	Failed	image problem: the CONSENT-polish script calls sort --parallel, but the image only has BusyBox sort, which rejects that option.
+conservation	conservation_codon	Failed	image problem: after writing the substitution tables, the tool always crashes with a RecursionError in np.log2 on a pandas DataFrame (pandas 2.2.3, numpy 2.2.4) while drawing the log2 observed/expected plot.
+consplice	consplice_ML_score-vcf	PASS	Synthetic data: invented SpliceAI and SQUIRLS annotations on the real GIAB chr22 VCF; the two planted high-score variants ranked highest (0.96) with the bundled model.
+consplice	consplice_ML_train	PASS	Synthetic data: invented pathogenic and benign training tables; the trained model directory scored planted high-risk variants at 0.74 and 1.0.
+consplice	consplice_constraint_agg-overlapping-reg	Failed	tool bug: the code passes agg_type to the wrong function, so every run stops with 'aggregate_intersecting_regions() missing 1 required positional argument: agg_type'.
+consplice	consplice_constraint_calculate-oe	Not completed	Needs the outputs of oe-counts and sub-matrix, which could not be produced without the gnomAD and SpliceAI data.
+consplice	consplice_constraint_oe-counts	Not completed	Needs genome-wide gnomAD VCF and coverage files, precomputed SpliceAI scores (Illumina BaseSpace login) and a sub-matrix output, too large for this test.
+consplice	consplice_constraint_score-bed	PASS	Synthetic data: synthetic ConSplice scores on real GIAB chr22 variants; by-gene mode added the expected maximum region score; max mode crashes on variants outside all scored regions (tool bug).
+consplice	consplice_constraint_score-txt	PASS	Synthetic data: synthetic ConSplice scores on real GIAB chr22 variants; by-gene mode added the expected maximum region score; max mode crashes on variants outside all scored regions (tool bug).
+consplice	consplice_constraint_score-vcf	PASS	Synthetic data: synthetic ConSplice scores on the real GIAB chr22 VCF; the 28 variants inside scored genes got the expected gene and percentile in the ConSplice INFO field.
+consplice	consplice_constraint_select-score	PASS	Synthetic data: ConSplice scores invented for real GRCh38 chr22 gene regions; the chosen O/E and percentile columns were kept and renamed correctly.
+consplice	consplice_constraint_sub-matrix	Not completed	Needs genome-wide gnomAD VCF and coverage files plus precomputed SpliceAI scores (Illumina BaseSpace login), too large for this test.
+consplice	consplice_constraint_to-bed	PASS	Synthetic data: ConSplice scores invented for real GRCh38 chr22 gene regions; start positions were shifted to 0-based for bed and bed.gz output.
+constava	constava_analyze	PASS	
+constava	constava_dihedrals	PASS	
+constava	constava_fit-model	PASS	
+constava	constava_test	PASS	Built-in self-test; all 8 test cases reported OK.
+constax	constax	PASS	
+contammix	contammix	Failed	image problem: perl is missing in the image, so the bundled sam2mn.pl step fails and no estimate is made.
+contatester	contatester	Failed	image problem: the pegasus-mpi-cluster program that contatester launches through mpirun is missing from the image, so no VCF is processed.
+conterminator	conterminator_dna	Failed	image problem: the createtaxdb step always downloads the NCBI taxdump (ignoring --ncbi-tax-dump) and the image's BusyBox tar has no -z option, so the step dies.
+conterminator	conterminator_protein	Failed	image problem: the createtaxdb step always downloads the NCBI taxdump (ignoring --ncbi-tax-dump) and the image's BusyBox tar has no -z option, so the step dies.
+contigtax	contigtax_assign	PASS	Main and --taxidout outputs are right (529 of 857 shreds get the true species); the optional --blobout output crashes with a pandas KeyError (tool bug).
+contigtax	contigtax_build	PASS	
+contigtax	contigtax_download	PASS	Downloaded the NCBI taxdump and built the ete3 taxonomy.sqlite (needs network).
+contigtax	contigtax_format	PASS	
+contigtax	contigtax_search	PASS	
+contigtax	contigtax_transfer	Failed	tool bug: contig_lca indexes a multi-ORF table with a one-element boolean mask, so any contig with more than one ORF raises IndexError.
+contigtax	contigtax_update	PASS	
+contrafold	contrafold_predict	PASS	
+contrafold	contrafold_train	PASS	
+control-freec	control-freec_freec	PASS	Tumour/normal chr21 BAMs gave copy-number calls with the control used; the -control command-line option is ignored by freec 11.6, so the control is set via mateFile in the config.
+conus	conus_ambtest	PASS	Known answer reproduced: the NUS model is reported ambiguous and the UNA model unambiguous on Rfam seed structures.
+conus	conus_conus_compare	Failed	tool bug: the CYK step segfaults (exit 139) on every input, even the 74-nt tRNA example from the CONUS notes with a freshly trained model.
+conus	conus_conus_fold	Failed	tool bug: the CYK step segfaults (exit 139) on every input, even the 74-nt tRNA example from the CONUS notes with a freshly trained model.
+conus	conus_conus_train	PASS	
+conus	conus_reorder	Failed	tool bug: the CYK step segfaults (exit 139) on every input, even the 74-nt tRNA example from the CONUS notes with a freshly trained model.
+conus	conus_stk2ct	PASS	
+conus	conus_weedamb	PASS	
+convert_zero_one_based	convert_zero_one_based	Failed	image problem: the click library aborts at start because the image has no locale program and no UTF-8 locale, even with LC_ALL set.
+cooler	cooler_attrs	PASS	
+cooler	cooler_balance	PASS	
+cooler	cooler_cload_hiclib	Not completed	no test data: needs a legacy hiclib HDF5 fragment file and none is published in the cooler, Galaxy or nf-core test sets.
+cooler	cooler_cload_pairix	PASS	
+cooler	cooler_cload_pairs	PASS	
+cooler	cooler_cload_tabix	PASS	
+cooler	cooler_coarsen	PASS	
+cooler	cooler_cp	PASS	
+cooler	cooler_csort	PASS	
+cooler	cooler_digest	Failed	tool bug: fragment ends are 2 bp after the true cut site (cooler adds 1 to Biopython's 1-based cut positions; DpnII GATC at 0-based 37 gives end 39).
+cooler	cooler_dump	PASS	
+cooler	cooler_info	PASS	
+cooler	cooler_ln	PASS	
+cooler	cooler_load	PASS	
+cooler	cooler_ls	PASS	
+cooler	cooler_makebins	PASS	
+cooler	cooler_merge	PASS	
+cooler	cooler_mv	PASS	
+cooler	cooler_show	Failed	image problem: matplotlib is not installed, so cooler show exits with 'Install matplotlib to use cooler show'.
+cooler	cooler_tree	PASS	
+cooler	cooler_zoomify	PASS	
+coolpuppy	coolpuppy_coolpup.py	PASS	
+coolpuppy	coolpuppy_plotpup.py	PASS	
+cooltools	cooltools_coverage	PASS	
+cooltools	cooltools_dots	PASS	
+cooltools	cooltools_eigs-cis	PASS	
+cooltools	cooltools_eigs-trans	PASS	
+cooltools	cooltools_expected-cis	PASS	
+cooltools	cooltools_expected-trans	PASS	
+cooltools	cooltools_genome_binnify	PASS	
+cooltools	cooltools_genome_digest	PASS	
+cooltools	cooltools_genome_fetch-chromsizes	PASS	
+cooltools	cooltools_genome_gc	PASS	
+cooltools	cooltools_genome_genecov	PASS	
+cooltools	cooltools_insulation	PASS	
+cooltools	cooltools_pileup	PASS	
+cooltools	cooltools_random-sample	PASS	
+cooltools	cooltools_rearrange	PASS	
+cooltools	cooltools_saddle	PASS	
+cooltools	cooltools_virtual4c	PASS	
+copernicusmarine	copernicusmarine_describe	PASS	
+copernicusmarine	copernicusmarine_get	Not completed	Download needs a Copernicus Marine account username and password, which cannot be used here.
+copernicusmarine	copernicusmarine_login	Not completed	Login needs a Copernicus Marine account username and password, which cannot be used here.
+copernicusmarine	copernicusmarine_subset	Not completed	Download needs a Copernicus Marine account username and password, which cannot be used here.
+coprarna	coprarna_CopraRNA2.pl	PASS	
+coptr	coptr_count	PASS	
+coptr	coptr_estimate	PASS	
+coptr	coptr_extract	PASS	
+coptr	coptr_index	PASS	
+coptr	coptr_map	PASS	
+coptr	coptr_merge	PASS	
+coptr	coptr_rabun	PASS	
+coral	coral	PASS	
+coregenebuilder	coregenebuilder	PASS	
+corekaburra	corekaburra_Corekaburra	PASS	
+coreprofiler	coreprofiler_allele_calling	PASS	
+coreprofiler	coreprofiler_db_download	PASS	
+coreprofiler	coreprofiler_db_get_num_alleles	PASS	
+coreprofiler	coreprofiler_db_get_request_tokens	Not completed	Needs a pubMLST/BIGSdb consumer key and secret (account credentials), which are not available.
+coreprofiler	coreprofiler_db_makeblastdb	PASS	
+coreprofiler	coreprofiler_db_update	PASS	
+core-snp-filter	core-snp-filter_coresnpfilter	PASS	
+coreutils	coreutils_base32	PASS	
+coreutils	coreutils_base64	PASS	
+coreutils	coreutils_basenc	PASS	
+coreutils	coreutils_cat	PASS	
+coreutils	coreutils_chmod	PASS	
+coreutils	coreutils_chown	PASS	
+coreutils	coreutils_cp	PASS	
+coreutils	coreutils_cut	PASS	
+coreutils	coreutils_df	PASS	
+coreutils	coreutils_du	PASS	
+coreutils	coreutils_env	PASS	
+coreutils	coreutils_head	PASS	
+coreutils	coreutils_ls	PASS	
+coreutils	coreutils_mv	PASS	
+coreutils	coreutils_numfmt	PASS	
+coreutils	coreutils_rm	PASS	
+coreutils	coreutils_sort	PASS	
+coreutils	coreutils_tac	PASS	
+coreutils	coreutils_tail	PASS	
+coreutils	coreutils_uniq	PASS	
+coreutils	coreutils_uptime	PASS	
+corgi	corgi	Failed	image problem: the default pretrained model fails to load because the image's scipy lacks skew_norm_gen.
+corona_lineage_dynamics	corona_lineage_dynamics	PASS	
+correlationplus	correlationplus_analyze	PASS	
+correlationplus	correlationplus_calculate	PASS	
+correlationplus	correlationplus_diffMap	PASS	
+correlationplus	correlationplus_paths	PASS	
+correlationplus	correlationplus_visualize	Failed	image problem: ProDy atom selection crashes because the image's pyparsing has no operatorPrecedence.
+corset	corset	Failed	image problem: corset segfaults (exit 139) after reading the first BAM, even on real nf-core transcriptome BAMs and a tiny planted case.
+corsid	corsid	PASS	
+cosap	cosap	Not completed	pipeline, skipped: cosap runs a whole mapping and variant-calling pipeline that needs reference genomes.
+cosigt	cosigt	PASS	synthetic data: sample coverage planted as the sum of two paths of the real nf-core B-3106 graph; cosigt recovered both haplotypes.
+count_constant_sites	count_constant_sites	PASS	
+counterr	counterr	PASS	Ran on the nf-core PacBio chrM BAM after turning =/X CIGAR ops into M; the tool crashes on =/X CIGAR and on base qualities of 50 or more.
+covar	covar	PASS	
+coverageanomalyscanner	coverageanomalyscanner_cas	PASS	
+covid-spike-classification	covid-spike-classification	PASS	
+covtobed	covtobed	PASS	
+cpat	cpat_make_logitModel	PASS	
+cpc2	cpc2	Failed	image problem: CPC2.py looks for svm-scale and svm-predict under /usr/local/libs/libsvm/libsvm-3.18/, which the image lacks, so no result file is written.
+cpinsim	cpinsim_annotate	PASS	Inputs are interaction and competition tables rebuilt from the repo example proteins file; the competing partners got a shared domain as expected.
+cpinsim	cpinsim_parse	PASS	Parsed the annotate output back into the example protein format, with the competing partners sharing one domain.
+cpinsim	cpinsim_simulate	Failed	image problem: the image has networkx 2.1, and the simulation crashes on 'EdgeDataView' indexing even for the README example.
+cpstools	cpstools_GC	PASS	
+cpstools	cpstools_IR	PASS	
+cpstools	cpstools_KaKs	Failed	image problem: KaKs_Calculator and mafft are not in the image, so KaKs crashes at the 'which KaKs_Calculator' check.
+cpstools	cpstools_LSRs	PASS	
+cpstools	cpstools_Pi	Failed	image problem: mafft is not in the image, so Pi stops after extracting common genes with 'Please provide the abspath of mafft'.
+cpstools	cpstools_RSCU	PASS	
+cpstools	cpstools_SSRs	PASS	
+cpstools	cpstools_Seq	PASS	
+cpstools	cpstools_convert	PASS	
+cpstools	cpstools_depth	Failed	image problem: bowtie2 and samtools are not in the image, so depth stops with 'No such file or directory: bowtie2-build'.
+cpstools	cpstools_exc	PASS	
+cpstools	cpstools_gbcheck	PASS	
+cpstools	cpstools_info	PASS	
+cpstools	cpstools_phy	PASS	
+crabs	crabs	PASS	

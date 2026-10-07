@@ -1,15 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: givect
+baseCommand: stk2ct
 label: conus_stk2ct
-doc: "A tool to process sequence files, likely converting or extracting vector information
-  from sequence alignment files.\n\nTool homepage: http://eddylab.org/software/conus/"
+doc: "Convert the structures of a Stockholm file (CONUS format) into CT format.\n\nTool homepage: http://eddylab.org/software/conus/"
 inputs:
   - id: seqfile_in
     type: File
     doc: Input sequence file
     inputBinding:
-      position: 1
+      position: 200
 outputs:
   - id: stdout
     type: stdout

@@ -4,7 +4,7 @@ baseCommand: head
 label: coreutils_head
 doc: "Print the first 10 lines of each FILE to standard output. With more than one
   FILE, precede each with a header giving the file name. With no FILE, or when FILE
-  is -, read standard input.\n\nTool homepage: https://github.com/uutils/coreutils"
+  is -, read standard input.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: files
     type:

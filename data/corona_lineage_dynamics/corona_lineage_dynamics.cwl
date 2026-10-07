@@ -15,17 +15,36 @@ inputs:
     doc: Monthly data file
     inputBinding:
       position: 2
+  - id: output_folder
+    type: string
+    doc: Output folder for generated plots
+    inputBinding:
+      position: 3
   - id: threshold
     type: float
     doc: Threshold value for analysis
     inputBinding:
-      position: 3
+      position: 4
+  - id: lineage_list_html
+    type:
+      - 'null'
+      - File
+    doc: Local copy of https://cov-lineages.org/lineage_list.html, used when 
+      the page cannot be downloaded (staged as testdata/lineage_list.html)
 outputs:
-  - id: output_folder
+  - id: output_dir
     type: Directory
     doc: Output folder for generated plots
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${ if (inputs.lineage_list_html) { return [{"entryname": "testdata/lineage_list.html", "entry": inputs.lineage_list_html}]; } return []; }
 hints:
   - class: DockerRequirement
     dockerPull: 

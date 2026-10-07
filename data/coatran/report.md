@@ -1,5 +1,14 @@
 # coatran CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coatran_coatran_constant | PASS |  |
+| coatran_coatran_expgrowth | Failed | tool bug: the trees have negative branch lengths, and the upstream README says this mode does not work yet. |
+| coatran_coatran_inftime | PASS |  |
+| coatran_coatran_transtree | PASS |  |
+
 ## coatran_coatran_constant
 
 ### Tool Description

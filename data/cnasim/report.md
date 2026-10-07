@@ -1,5 +1,11 @@
 # cnasim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cnasim | PASS |  |
+
 ## cnasim
 
 ### Tool Description

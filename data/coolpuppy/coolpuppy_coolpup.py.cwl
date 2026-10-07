@@ -319,6 +319,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pileup
+    type: File
+    doc: Pile-up result file (HDF5 .clpy); named by outname, or automatically 
+      when outname is not set.
+    outputBinding:
+      glob: "$(inputs.outname ? inputs.outname : '*.clpy')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coolpuppy:1.1.0--pyh086e186_0

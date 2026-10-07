@@ -1,5 +1,11 @@
 # corekaburra CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| corekaburra_Corekaburra | PASS |  |
+
 ## corekaburra_Corekaburra
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # connor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| connor | PASS |  |
+
 ## connor
 
 ### Tool Description

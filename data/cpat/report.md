@@ -1,5 +1,11 @@
 # cpat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cpat_make_logitModel | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

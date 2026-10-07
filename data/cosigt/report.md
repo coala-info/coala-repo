@@ -1,5 +1,11 @@
 # cosigt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cosigt | PASS | synthetic data: sample coverage planted as the sum of two paths of the real nf-core B-3106 graph; cosigt recovered both haplotypes. |
+
 ## cosigt
 
 ### Tool Description

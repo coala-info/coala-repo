@@ -48,6 +48,12 @@ outputs:
     doc: Folder to store coverage maps.
     outputBinding:
       glob: '$(inputs.out_folder)'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.out_folder, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3

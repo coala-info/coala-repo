@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: uniq
 label: coreutils_uniq
 doc: "Filter adjacent matching lines from INPUT (or standard input), writing to OUTPUT
-  (or standard output).\n\nTool homepage: https://github.com/uutils/coreutils"
+  (or standard output).\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: input
     type:
@@ -104,12 +104,9 @@ inputs:
       prefix: --zero-terminated
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output file (or standard output)
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Filtered lines (standard output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5
+stdout: coreutils_uniq.out

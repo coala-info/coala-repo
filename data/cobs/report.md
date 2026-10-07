@@ -1,5 +1,22 @@
 # cobs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cobs_benchmark-fpr | PASS |  |
+| cobs_classic-combine | Failed | tool bug: classic-combine copies the input folder without its index files and then stops with 'could not find any cobs_classic to combine'. |
+| cobs_classic-construct | PASS |  |
+| cobs_classic-construct-random | PASS |  |
+| cobs_compact-construct | PASS |  |
+| cobs_compact-construct-combine | PASS |  |
+| cobs_doc-dump | PASS |  |
+| cobs_doc-list | PASS |  |
+| cobs_generate-queries | PASS |  |
+| cobs_print-kmers | Failed | tool bug: print-kmers drops the last k-mer of the query (a 42 bp query gives 11 of 12 k-mers). |
+| cobs_print-parameters | PASS |  |
+| cobs_query | PASS |  |
+
 ## cobs_doc-list
 
 ### Tool Description

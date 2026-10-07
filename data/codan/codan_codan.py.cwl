@@ -8,7 +8,25 @@ inputs:
   - id: blastdb
     type:
       - 'null'
-      - string
+      - File
+    secondaryFiles:
+      - .phr
+      - .pin
+      - .psq
+      - pattern: .pdb
+        required: false
+      - pattern: .pot
+        required: false
+      - pattern: .ptf
+        required: false
+      - pattern: .pto
+        required: false
+      - pattern: .pjs
+        required: false
+      - pattern: .pos
+        required: false
+      - pattern: .pog
+        required: false
     doc: Optional - path to blastDB of known protein sequences, 
       /path/to/blast/DB/DB_name
     inputBinding:
@@ -67,6 +85,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.transcripts)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/codan:1.2--hdfd78af_1

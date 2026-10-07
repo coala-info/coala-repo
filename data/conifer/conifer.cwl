@@ -30,8 +30,9 @@ inputs:
   - id: filter
     type:
       - 'null'
-      - boolean
-    doc: filter kraken file by confidence score
+      - float
+    doc: filter kraken file by confidence score (keep reads with score >= this
+      threshold)
     inputBinding:
       position: 101
       prefix: --filter
@@ -49,19 +50,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rtl
-  - id: summary_path
-    type: string
-    inputBinding:
-      position: 102
-      prefix: --summary
-outputs:
   - id: summary
     type:
       - 'null'
-      - File
+      - boolean
     doc: output summary statistics for each taxonomy
+    inputBinding:
+      position: 101
+      prefix: --summary
+  - id: output_name
+    type:
+      - 'null'
+      - string
+    doc: name of the file that receives the standard output
+    default: conifer_output.tsv
+outputs:
+  - id: output
+    type: File
+    doc: per-read scores, or per-taxon summary statistics with --summary
     outputBinding:
-      glob: $(inputs.summary_path)
+      glob: $(inputs.output_name)
+stdout: $(inputs.output_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

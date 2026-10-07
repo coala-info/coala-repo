@@ -1,5 +1,11 @@
 # coidb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coidb | Not completed | pipeline, skipped: coidb is a Snakemake workflow that downloads and processes the BOLD database. |
+
 ## coidb
 
 ### Tool Description

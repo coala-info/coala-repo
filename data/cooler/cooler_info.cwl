@@ -39,6 +39,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_file
+    type:
+      - 'null'
+      - File
+    doc: Output file written when --out is given
+    outputBinding:
+      glob: "$(inputs.out ? inputs.out : [])"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

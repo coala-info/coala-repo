@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --batch
   - id: bigsi
-    type: File
+    type: Directory
     doc: index to be used for search
     inputBinding:
       position: 101

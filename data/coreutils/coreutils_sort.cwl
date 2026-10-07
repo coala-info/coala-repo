@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: sort
 label: coreutils_sort
 doc: "Write sorted concatenation of all FILE(s) to standard output.\n\nTool homepage:
-  https://github.com/uutils/coreutils"
+  https://www.gnu.org/software/coreutils/"
 inputs:
   - id: files
     type:
@@ -204,12 +204,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --temporary-directory
     doc: use DIR for temporaries, not $TMPDIR or /tmp; multiple options specify 
       multiple directories
     inputBinding:
       position: 102
-      prefix: --temporary-directory
   - id: unique
     type:
       - 'null'

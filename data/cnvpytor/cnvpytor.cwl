@@ -263,7 +263,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file
     inputBinding:
       position: 101
@@ -561,11 +561,16 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: 'CNVnator hd5 file: data storage for all calculations'
+        items:
+          - string
+          - File
+    doc: 'CNVnator hd5 file: data storage for all calculations. Give a file name 
+      (string) to create a new pytor file with -rd, or existing pytor files 
+      (File), which are staged writable because most steps update them in place.'
     inputBinding:
       position: 101
       prefix: --root
+      valueFrom: "$(self === null ? null : self.map(function(x){ return typeof x === 'string' ? x : x.basename; }))"
   - id: s_bin_size
     type:
       - 'null'
@@ -675,7 +680,10 @@ inputs:
       position: 101
       prefix: --view
   - id: plot_output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: output filename prefix and extension
     inputBinding:
       position: 102
       prefix: --plot_output_file
@@ -687,9 +695,34 @@ outputs:
         items: File
     doc: output filename prefix and extension
     outputBinding:
-      glob: $(inputs.plot_output_file_path)*
+      glob: "$(inputs.plot_output_file_path === null ? [] : inputs.plot_output_file_path + '*')"
+  - id: root_out
+    type:
+      type: array
+      items: File
+    doc: pytor file(s) created or updated by this step
+    outputBinding:
+      glob: "$(inputs.root === null ? [] : inputs.root.map(function(x){ return typeof x === 'string' ? x : x.basename; }))"
+  - id: log_file_out
+    type:
+      - 'null'
+      - File
+    doc: log file
+    outputBinding:
+      glob: $(inputs.log_file)
+  - id: stdout
+    type: stdout
+    doc: Standard output (calls, statistics, listings)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (inputs.root === null) { return []; }
+        return inputs.root.filter(function(x){ return typeof x !== 'string'; })
+          .map(function(x){ return {"entry": x, "writable": true}; });
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnvpytor:1.3.2--pyhdfd78af_0
+stdout: cnvpytor.out

@@ -455,15 +455,308 @@ inputs:
       prefix: --wrapped-scoring
   - id: result_path
     type: string
-    doc: Output result file
+    doc: Prefix of the result files (<result>_conterm_prediction and <result>_all)
     inputBinding:
       position: 3
+  - id: qid
+    type:
+      - 'null'
+      - float
+    doc: 'reduce diversity of output MSAs using min.seq. identity with query sequences [0.0,1.0] [0.000]'
+    inputBinding:
+      position: 104
+      prefix: --qid
+  - id: qsc
+    type:
+      - 'null'
+      - float
+    doc: 'reduce diversity of output MSAs using min. score per aligned residue with query sequences [-50.0,100.0] [-20.000]'
+    inputBinding:
+      position: 104
+      prefix: --qsc
+  - id: cov
+    type:
+      - 'null'
+      - float
+    doc: 'filter output MSAs using min. fraction of query residues covered by matched sequences [0.0,1.0] [0.000]'
+    inputBinding:
+      position: 104
+      prefix: --cov
+  - id: diff
+    type:
+      - 'null'
+      - int
+    doc: 'filter MSAs by selecting most diverse set of sequences, keeping at least this many seqs in each MSA block of length 50 [1000]'
+    inputBinding:
+      position: 104
+      prefix: --diff
+  - id: allow_deletion
+    type:
+      - 'null'
+      - boolean
+    doc: 'allow deletions in a MSA'
+    inputBinding:
+      position: 104
+      prefix: --allow-deletion
+  - id: max_length
+    type:
+      - 'null'
+      - int
+    doc: 'maximum codon number in open reading frames [32734]'
+    inputBinding:
+      position: 104
+      prefix: --max-length
+  - id: max_gaps
+    type:
+      - 'null'
+      - int
+    doc: 'maximum number of codons with gaps or unknown residues before an open reading frame is rejected [2147483647]'
+    inputBinding:
+      position: 104
+      prefix: --max-gaps
+  - id: contig_start_mode
+    type:
+      - 'null'
+      - int
+    doc: 'Contig start can be 0: incomplete, 1: complete, 2: both [2]'
+    inputBinding:
+      position: 104
+      prefix: --contig-start-mode
+  - id: contig_end_mode
+    type:
+      - 'null'
+      - int
+    doc: 'Contig end can be 0: incomplete, 1: complete, 2: both  [2]'
+    inputBinding:
+      position: 104
+      prefix: --contig-end-mode
+  - id: orf_start_mode
+    type:
+      - 'null'
+      - int
+    doc: 'Orf fragment can be 0: from start to stop, 1: from any to stop, 2: from last encountered start to stop (no start in the middle) [1]'
+    inputBinding:
+      position: 104
+      prefix: --orf-start-mode
+  - id: forward_frames
+    type:
+      - 'null'
+      - string
+    doc: 'comma-seperated list of ORF frames on the forward strand to be extracted [1]'
+    inputBinding:
+      position: 104
+      prefix: --forward-frames
+  - id: reverse_frames
+    type:
+      - 'null'
+      - string
+    doc: 'comma-seperated list of ORF frames on the reverse strand to be extracted [1]'
+    inputBinding:
+      position: 104
+      prefix: --reverse-frames
+  - id: use_all_table_starts
+    type:
+      - 'null'
+      - boolean
+    doc: 'use all alteratives for a start codon in the genetic table, if false - only ATG (AUG)'
+    inputBinding:
+      position: 104
+      prefix: --use-all-table-starts
+  - id: id_offset
+    type:
+      - 'null'
+      - int
+    doc: 'numeric ids in index file are offset by this value  [0]'
+    inputBinding:
+      position: 104
+      prefix: --id-offset
+  - id: add_orf_stop
+    type:
+      - 'null'
+      - boolean
+    doc: 'add * at complete start and end'
+    inputBinding:
+      position: 104
+      prefix: --add-orf-stop
+  - id: start_sens
+    type:
+      - 'null'
+      - float
+    doc: 'start sensitivity [4.000]'
+    inputBinding:
+      position: 104
+      prefix: --start-sens
+  - id: sens_steps
+    type:
+      - 'null'
+      - int
+    doc: 'Search steps performed from --start-sense and -s. [1]'
+    inputBinding:
+      position: 104
+      prefix: --sens-steps
+  - id: remove_tmp_files
+    type:
+      - 'null'
+      - int
+    doc: 'Delete temporary files [1, set to 0 to disable]'
+    inputBinding:
+      position: 104
+      prefix: --remove-tmp-files
+  - id: dbtype
+    type:
+      - 'null'
+      - int
+    doc: 'Database type 0: auto, 1: amino acid 2: nucleotides [0]'
+    inputBinding:
+      position: 104
+      prefix: --dbtype
+  - id: shuffle
+    type:
+      - 'null'
+      - int
+    doc: 'Shuffle input database [1, set to 0 to disable]'
+    inputBinding:
+      position: 104
+      prefix: --shuffle
+  - id: createdb_mode
+    type:
+      - 'null'
+      - int
+    doc: 'createdb mode 0: copy data, 1: soft link data and write new index (works only with single line fasta/q) [0]'
+    inputBinding:
+      position: 104
+      prefix: --createdb-mode
+  - id: blacklist
+    type:
+      - 'null'
+      - string
+    doc: 'Comma separated list of ignored taxa in LCA computation [10239,12908,28384,81077,11632,340016,61964,48479,48510]'
+    inputBinding:
+      position: 104
+      prefix: --blacklist
+  - id: kingdoms
+    type:
+      - 'null'
+      - string
+    doc: '[(2||2157),4751,33208,33090,(2759&&!4751&&!33208&&!33090)]'
+    inputBinding:
+      position: 104
+      prefix: --kingdoms
+  - id: sub_mat
+    type:
+      - 'null'
+      - string
+    doc: 'amino acid substitution matrix file [nucl:nucleotide.out,aa:blosum62.out]'
+    inputBinding:
+      position: 104
+      prefix: --sub-mat
+  - id: max_seq_len
+    type:
+      - 'null'
+      - int
+    doc: 'maximum sequence length (range 1-32768]) [1000]'
+    inputBinding:
+      position: 104
+      prefix: --max-seq-len
+  - id: db_load_mode
+    type:
+      - 'null'
+      - int
+    doc: 'Database preload mode 0: auto, 1: fread, 2: mmap, 3: mmap+touch [0]'
+    inputBinding:
+      position: 104
+      prefix: --db-load-mode
+  - id: compressed
+    type:
+      - 'null'
+      - int
+    doc: 'write results in compressed format [0]'
+    inputBinding:
+      position: 104
+      prefix: --compressed
+  - id: split_memory_limit
+    type:
+      - 'null'
+      - string
+    doc: 'Set max memory per split. E.g. 800B, 5K, 10M, 1G. Defaults (0) to all available system memory. [0]'
+    inputBinding:
+      position: 104
+      prefix: --split-memory-limit
+  - id: mpi_runner
+    type:
+      - 'null'
+      - string
+    doc: 'Use MPI on compute grid with this MPI command (e.g. "mpirun -np 42") []'
+    inputBinding:
+      position: 104
+      prefix: --mpi-runner
+  - id: filter_hits
+    type:
+      - 'null'
+      - boolean
+    doc: 'filter hits by seq.id. and coverage'
+    inputBinding:
+      position: 104
+      prefix: --filter-hits
+  - id: sort_results
+    type:
+      - 'null'
+      - int
+    doc: 'Sort results: 0: no sorting, 1: sort by evalue (Alignment) or seq.id. (Hamming) [0]'
+    inputBinding:
+      position: 104
+      prefix: --sort-results
+  - id: omit_consensus
+    type:
+      - 'null'
+      - boolean
+    doc: 'Omit consensus sequence in alignment'
+    inputBinding:
+      position: 104
+      prefix: --omit-consensus
+  - id: create_lookup
+    type:
+      - 'null'
+      - int
+    doc: 'Create database lookup file (can be very large) [0]'
+    inputBinding:
+      position: 104
+      prefix: --create-lookup
+  - id: chain_alignments
+    type:
+      - 'null'
+      - int
+    doc: 'Chain overlapping alignments [0]'
+    inputBinding:
+      position: 104
+      prefix: --chain-alignments
+  - id: merge_query
+    type:
+      - 'null'
+      - int
+    doc: 'combine ORFs/split sequences to a single entry [1]'
+    inputBinding:
+      position: 104
+      prefix: --merge-query
+  - id: strand
+    type:
+      - 'null'
+      - int
+    doc: 'Strand selection only works for DNA/DNA search 0: reverse, 1: forward, 2: both [2]'
+    inputBinding:
+      position: 104
+      prefix: --strand
 outputs:
-  - id: result
+  - id: conterm_prediction
     type: File
-    doc: Output result file
+    doc: Predicted contamination (TSV), written to <result>_conterm_prediction
     outputBinding:
-      glob: '$(inputs.result_path)'
+      glob: $(inputs.result_path)_conterm_prediction
+  - id: all_alignments
+    type: File
+    doc: All alignments used to predict contamination, written to <result>_all
+    outputBinding:
+      glob: $(inputs.result_path)_all
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/conterminator:1.c74b5--h9cf7dee_0

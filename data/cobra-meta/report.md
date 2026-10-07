@@ -1,5 +1,11 @@
 # cobra-meta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cobra-meta | PASS |  |
+
 ## cobra-meta
 
 ### Tool Description

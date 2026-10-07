@@ -12,10 +12,10 @@ inputs:
     inputBinding:
       position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: info
+    type: stderr
+    doc: archive information (colord prints it to stderr)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colord:1.1.0--h9ee0642_0
-stdout: colord_info.out
+stderr: colord_info.out

@@ -6,8 +6,8 @@ label: comebin_run_comebin.sh
 doc: "COMEBin version: 1.0.4\n\nTool homepage: https://github.com/ziyewang/COMEBin"
 inputs:
   - id: bam_file_path
-    type: string
-    doc: path to access to the bam files
+    type: Directory
+    doc: path to access to the bam files (directory with the sorted BAM files)
     inputBinding:
       position: 101
       prefix: -p
@@ -20,11 +20,13 @@ inputs:
       position: 101
       prefix: -b
   - id: contig_file
-    type: string
-    doc: metagenomic assembly file
+    type: File
+    doc: metagenomic assembly file (staged writable; COMEBin writes length and 
+      marker seed files beside it)
     inputBinding:
       position: 101
       prefix: -a
+      valueFrom: $(self.basename)
   - id: embedding_size_comebin
     type:
       - 'null'
@@ -67,10 +69,11 @@ inputs:
       prefix: -t
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: output directory (created before the run; the script needs it to 
+      exist)
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type: Directory
@@ -79,6 +82,13 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.contig_file)
+        writable: true
+      - entry: '$({class: "Directory", basename: inputs.output_dir_path, listing: 
+          []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/comebin:1.0.4--hdfd78af_1

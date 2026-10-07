@@ -15,7 +15,11 @@ inputs:
   - id: fasta_path
     type: File
     doc: Genome assembly FASTA file or folder containing FASTA files 
-      (uncompressed).
+      (uncompressed). It is staged writable so pyfaidx can write a .fai 
+      index beside it when none is given.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 2
   - id: enzyme
@@ -56,6 +60,10 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

@@ -1,5 +1,17 @@
 # conus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| conus_ambtest | PASS | Known answer reproduced: the NUS model is reported ambiguous and the UNA model unambiguous on Rfam seed structures. |
+| conus_conus_compare | Failed | tool bug: the CYK step segfaults (exit 139) on every input, even the 74-nt tRNA example from the CONUS notes with a freshly trained model. |
+| conus_conus_fold | Failed | tool bug: the CYK step segfaults (exit 139) on every input, even the 74-nt tRNA example from the CONUS notes with a freshly trained model. |
+| conus_conus_train | PASS |  |
+| conus_reorder | Failed | tool bug: the CYK step segfaults (exit 139) on every input, even the 74-nt tRNA example from the CONUS notes with a freshly trained model. |
+| conus_stk2ct | PASS |  |
+| conus_weedamb | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

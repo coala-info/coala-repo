@@ -167,21 +167,26 @@ inputs:
     inputBinding:
       position: 101
       prefix: --worker-index
-  - id: output_dir_path
-    type: string?
+  - id: output_dir
+    type: Directory
+    doc: '[all] Output directory from earlier cNMF steps (it holds [name]/...); 
+      it is staged writable and the results of this step are added to it'
     inputBinding:
       position: 102
       prefix: --output-dir
+      valueFrom: $(self.basename)
 outputs:
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
+  - id: output_dir_out
+    type: Directory
     doc: '[all] Output directory. All output will be placed in [output-dir]/[name]/...'
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_dir.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.output_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnmf:1.7.0--pyhdfd78af_0

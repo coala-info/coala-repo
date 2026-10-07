@@ -133,7 +133,7 @@ outputs:
     doc: Prefix for the output filenames. The output files will be of the form 
       <prefix>-counts.txt and <prefix>-clusters.txt.
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: "$(inputs.output_prefix_path ? inputs.output_prefix_path + '*' : '*.txt')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

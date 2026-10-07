@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --batch
   - id: bigsi
-    type: File
+    type: Directory
     doc: index to be used for search
     inputBinding:
       position: 101
@@ -63,6 +63,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --query
+  - id: read_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: read files named in the query file; staged in the working directory 
+      so that relative names in the query file resolve
   - id: supress_taxon
     type:
       - 'null'
@@ -87,9 +94,21 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: classification_files
+    type:
+      type: array
+      items: File
+    doc: per-sample read classifications (<sample>_<tag>_reads.txt) and 
+      counts (<sample>_<tag>_counts.txt)
+    outputBinding:
+      glob: '*_$(inputs.tag)_*.txt'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.read_files ? inputs.read_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colorid_bv:0.1.0--h3ab6199_2

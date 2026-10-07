@@ -83,7 +83,7 @@ outputs:
     doc: Write files to this directory. Defaults to db name in current 
       directory. Will be created if missing.
     outputBinding:
-      glob: $(inputs.download_directory)
+      glob: "$(inputs.download_directory ? inputs.download_directory : inputs.database)"
   - id: taxdir_dir
     type:
       - 'null'
@@ -91,7 +91,11 @@ outputs:
     doc: Directory to store NCBI taxdump files. Defaults to 'taxonomy/' in 
       current directory
     outputBinding:
-      glob: $(inputs.taxdir)
+      glob: "$(inputs.taxdir ? inputs.taxdir : 'taxonomy')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0

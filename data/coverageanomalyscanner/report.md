@@ -1,5 +1,11 @@
 # coverageanomalyscanner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| coverageanomalyscanner_cas | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

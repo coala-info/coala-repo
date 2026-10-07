@@ -166,6 +166,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: balanced_cool
+    type: File
+    doc: The input COOL file with the balancing weight column added (unchanged 
+      when --stdout or --check is used).
+    outputBinding:
+      glob: $(inputs.cool_path.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.cool_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

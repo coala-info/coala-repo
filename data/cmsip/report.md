@@ -1,5 +1,11 @@
 # cmsip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cmsip | Not completed | End-to-end CMS-IP pipeline (HaMiP) run from a config file with absolute paths, needing two whole-chromosome FASTAs and network access for chromosome sizes; pipeline, skipped. |
+
 ## cmsip
 
 ### Tool Description

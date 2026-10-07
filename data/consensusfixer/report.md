@@ -1,5 +1,11 @@
 # consensusfixer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| consensusfixer | PASS |  |
+
 ## consensusfixer
 
 ### Tool Description

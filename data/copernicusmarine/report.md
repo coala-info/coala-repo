@@ -1,5 +1,14 @@
 # copernicusmarine CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| copernicusmarine_describe | PASS |  |
+| copernicusmarine_get | Not completed | Download needs a Copernicus Marine account username and password, which cannot be used here. |
+| copernicusmarine_login | Not completed | Login needs a Copernicus Marine account username and password, which cannot be used here. |
+| copernicusmarine_subset | Not completed | Download needs a Copernicus Marine account username and password, which cannot be used here. |
+
 ## copernicusmarine_describe
 
 ### Tool Description

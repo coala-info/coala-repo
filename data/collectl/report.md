@@ -1,5 +1,11 @@
 # collectl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| collectl | PASS |  |
+
 ## collectl
 
 ### Tool Description

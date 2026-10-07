@@ -1,5 +1,11 @@
 # contatester CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| contatester | Failed | image problem: the pegasus-mpi-cluster program that contatester launches through mpirun is missing from the image, so no VCF is processed. |
+
 ## contatester
 
 ### Tool Description

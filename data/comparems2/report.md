@@ -1,5 +1,11 @@
 # comparems2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| comparems2_compareMS2 | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

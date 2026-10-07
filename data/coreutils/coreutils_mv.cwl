@@ -2,12 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mv
 label: coreutils_mv
-doc: "Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.\n\nTool homepage: https://github.com/uutils/coreutils"
+doc: "Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
 inputs:
   - id: source
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: Source file(s) or directory(ies) to move
     inputBinding:
       position: 1
@@ -15,7 +17,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Destination file or directory
+    doc: Destination file or directory (DEST); leave empty when 
+      target_directory_path is used
     inputBinding:
       position: 2
   - id: backup
@@ -116,11 +119,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --suffix
-  - id: target_directory
+  - id: target_directory_path
     type:
       - 'null'
-      - Directory
-    doc: move all SOURCE arguments into DIRECTORY
+      - string
+    doc: move all SOURCE arguments into DIRECTORY (created in the working 
+      directory)
     inputBinding:
       position: 103
       prefix: --target-directory
@@ -153,6 +157,29 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dest
+    type:
+      - 'null'
+      - File
+      - Directory
+    doc: Moved (renamed) file or directory
+    outputBinding:
+      glob: $(inputs.destination)
+  - id: target_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with all moved SOURCE arguments
+    outputBinding:
+      glob: $(inputs.target_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ var l = inputs.source.map(function(f){ return {entry: f, writable: true}; });
+         if (inputs.target_directory_path)
+           l.push({class: 'Directory', basename: inputs.target_directory_path, listing: [], writable: true});
+         return l; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreutils:9.5

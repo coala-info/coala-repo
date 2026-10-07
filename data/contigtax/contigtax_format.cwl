@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: reformatted
-    type: File
+    type: string
     doc: Path to reformatted fastafile
     inputBinding:
       position: 2
@@ -45,7 +45,7 @@ inputs:
   - id: taxidmap
     type:
       - 'null'
-      - File
+      - string
     doc: Protein accession to taxid mapfile. For UniRef this file is created 
       from information in the fasta headers and stored in a file named 
       prot.accession2taxid.gz in the same directory as the reformatted fasta 
@@ -62,9 +62,31 @@ inputs:
       position: 103
       prefix: --tmpdir
 outputs:
+  - id: reformatted_fasta
+    type: File
+    doc: Reformatted protein fasta file
+    outputBinding:
+      glob: $(inputs.reformatted)
+  - id: taxidmap_file
+    type:
+      - 'null'
+      - File
+    doc: Protein accession to taxid mapfile (prot.accession2taxid.gz by 
+      default)
+    outputBinding:
+      glob: "$(inputs.taxidmap ? inputs.taxidmap : 'prot.accession2taxid.gz')"
+  - id: idmap
+    type:
+      - 'null'
+      - File
+    doc: File mapping sequence ids longer than --maxidlen to new ids
+    outputBinding:
+      glob: idmap.tsv.gz
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0

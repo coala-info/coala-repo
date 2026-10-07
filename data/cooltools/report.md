@@ -1,5 +1,27 @@
 # cooltools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cooltools_coverage | PASS |  |
+| cooltools_dots | PASS |  |
+| cooltools_eigs-cis | PASS |  |
+| cooltools_eigs-trans | PASS |  |
+| cooltools_expected-cis | PASS |  |
+| cooltools_expected-trans | PASS |  |
+| cooltools_genome_binnify | PASS |  |
+| cooltools_genome_digest | PASS |  |
+| cooltools_genome_fetch-chromsizes | PASS |  |
+| cooltools_genome_gc | PASS |  |
+| cooltools_genome_genecov | PASS |  |
+| cooltools_insulation | PASS |  |
+| cooltools_pileup | PASS |  |
+| cooltools_random-sample | PASS |  |
+| cooltools_rearrange | PASS |  |
+| cooltools_saddle | PASS |  |
+| cooltools_virtual4c | PASS |  |
+
 ## cooltools_coverage
 
 ### Tool Description
@@ -346,35 +368,6 @@ Options:
                            cooler.Provide empty argument to calculate cis-
                            expected on raw data  [default: weight]
   -h, --help               Show this message and exit.
-```
-
-
-## cooltools_genome
-
-### Tool Description
-Utilities for binned genome assemblies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
-- **Homepage**: https://github.com/mirnylab/cooltools
-- **Package**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: cooltools genome [OPTIONS] COMMAND [ARGS]...
-
-  Utilities for binned genome assemblies.
-
-Options:
-  -h, --help  Show this message and exit.
-
-Commands:
-  binnify
-  digest
-  fetch-chromsizes
-  gc
-  genecov           BINS_PATH is the path to bintable.
 ```
 
 
@@ -752,6 +745,140 @@ Options:
   -p, --nproc INTEGER     Number of processes to split the work between.
                           [default: 1, i.e. no process pool]
   -h, --help              Show this message and exit.
+```
+
+
+## cooltools_genome_binnify
+
+### Tool Description
+Divide the chromosomes of a chrom sizes file into fixed-size bins and print the bin table.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
+- **Homepage**: https://github.com/mirnylab/cooltools
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Total Downloads**: 345.2K
+- **Last updated**: 2025-08-04
+- **GitHub**: https://github.com/mirnylab/cooltools
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooltools genome binnify [OPTIONS] CHROMSIZES_PATH BINSIZE
+
+Options:
+  --all-names  Parse all chromosome names from file, not only default
+               r"^chr[0-9]+$", r"^chr[XY]$", r"^chrM$".
+  -h, --help   Show this message and exit.
+```
+
+
+## cooltools_genome_digest
+
+### Tool Description
+Digest a genome FASTA in silico with a restriction enzyme and print the restriction fragment table.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
+- **Homepage**: https://github.com/mirnylab/cooltools
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Total Downloads**: 345.2K
+- **Last updated**: 2025-08-04
+- **GitHub**: https://github.com/mirnylab/cooltools
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooltools genome digest [OPTIONS] CHROMSIZES_PATH FASTA_PATH
+                               ENZYME_NAME
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
+
+## cooltools_genome_fetch-chromsizes
+
+### Tool Description
+Download the chromosome sizes of a genome assembly from UCSC and print them.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
+- **Homepage**: https://github.com/mirnylab/cooltools
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Total Downloads**: 345.2K
+- **Last updated**: 2025-08-04
+- **GitHub**: https://github.com/mirnylab/cooltools
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooltools genome fetch-chromsizes [OPTIONS] DB
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
+
+## cooltools_genome_gc
+
+### Tool Description
+Add the GC fraction of each bin of a bin table, computed from a genome FASTA.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
+- **Homepage**: https://github.com/mirnylab/cooltools
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Total Downloads**: 345.2K
+- **Last updated**: 2025-08-04
+- **GitHub**: https://github.com/mirnylab/cooltools
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooltools genome gc [OPTIONS] BINS_PATH FASTA_PATH
+
+Options:
+  --mapped-only
+  -h, --help     Show this message and exit.
+```
+
+
+## cooltools_genome_genecov
+
+### Tool Description
+BINS_PATH is the path to bintable. DB is the name of the genome assembly; gene locations are downloaded from the UCSC goldenPath.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3
+- **Homepage**: https://github.com/mirnylab/cooltools
+- **Package**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cooltools/overview
+- **Total Downloads**: 345.2K
+- **Last updated**: 2025-08-04
+- **GitHub**: https://github.com/mirnylab/cooltools
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: cooltools genome genecov [OPTIONS] BINS_PATH DB
+
+  BINS_PATH is the path to bintable.
+
+  DB is the name of the genome assembly. The gene locations will be
+  automatically downloaded from teh UCSC goldenPath.
+
+Options:
+  -h, --help  Show this message and exit.
 ```
 
 

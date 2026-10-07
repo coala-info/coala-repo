@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: cut
 label: coreutils_cut
 doc: "Print selected parts of lines from each FILE to standard output.\n\nTool homepage:
-  https://github.com/uutils/coreutils"
+  https://www.gnu.org/software/coreutils/"
 inputs:
   - id: files
     type:

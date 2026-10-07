@@ -1,5 +1,16 @@
 # compleasm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| compleasm_analyze | PASS |  |
+| compleasm_download | Failed | tool bug: compleasm 0.2.7 crashes while parsing the current BUSCO file_versions.tsv (new odb12.2 placement file names hold an extra dot), so no lineage is downloaded. |
+| compleasm_list | PASS |  |
+| compleasm_miniprot | PASS |  |
+| compleasm_protein | PASS |  |
+| compleasm_run | PASS |  |
+
 ## compleasm_download
 
 ### Tool Description

@@ -12,8 +12,8 @@ inputs:
     inputBinding:
       position: 1
   - id: out_file
-    type: File
-    doc: Filename to store PTR table.
+    type: string
+    doc: Filename to store PTR table (.csv is added when missing).
     inputBinding:
       position: 2
   - id: min_cov
@@ -43,8 +43,9 @@ inputs:
   - id: plot
     type:
       - 'null'
-      - Directory
-    doc: Plot model fit and save the results.
+      - string
+    doc: Plot model fit and save the results (name of the plot output 
+      folder).
     inputBinding:
       position: 103
       prefix: --plot
@@ -61,6 +62,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: ptr_table
+    type: File
+    doc: Table of log2(PTR) estimates per genome and sample.
+    outputBinding:
+      glob: "$(inputs.out_file.endsWith('.csv') ? inputs.out_file : inputs.out_file\
+        \ + '.csv')"
+  - id: plot_folder
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the model fit plots (with --plot).
+    outputBinding:
+      glob: $(inputs.plot)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.coverage_map_folder)
+        writable: true
+      - entry: "$(inputs.plot ? {class: 'Directory', basename: inputs.plot, listing: []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3

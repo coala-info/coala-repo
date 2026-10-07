@@ -7,9 +7,12 @@ doc: "Collect MGF data from experiment directories and results files\n\nTool hom
 inputs:
   - id: expno_directory
     type: Directory
-    doc: EXPNO directory
+    doc: EXPNO directory (holds <EXPNO>/pdata/1/<dir name>_<EXPNO>_1.mgf); 
+      staged in the working directory and passed by name, because the tool 
+      also uses the name inside each MGF file name
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: dd_results_file
     type: File
     doc: dd_results file
@@ -25,12 +28,21 @@ inputs:
     doc: end EXPNO index (even)
     inputBinding:
       position: 4
-outputs:
   - id: output_file
-    type: File
+    type: string
     doc: output file
+    inputBinding:
+      position: 5
+outputs:
+  - id: output_mgf
+    type: File
+    doc: combined MGF file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.expno_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/collect_mgf:1.0--h7b50bb2_7

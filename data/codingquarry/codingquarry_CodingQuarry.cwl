@@ -81,6 +81,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: predicted_genes
+    type: File
+    doc: Predicted gene models in GFF3 format
+    outputBinding:
+      glob: out/PredictedPass.gff3
+  - id: predicted_cds
+    type:
+      - 'null'
+      - File
+    doc: Nucleotide sequences of the predicted coding sequences
+    outputBinding:
+      glob: out/Predicted_CDS.fa
+  - id: output_dir
+    type: Directory
+    doc: Folder with all CodingQuarry results
+    outputBinding:
+      glob: out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/codingquarry:2.0--py311he264feb_11

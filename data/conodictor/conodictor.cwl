@@ -7,9 +7,11 @@ doc: "Improved prediction of conopeptide superfamilies with ConoDictor 2.0\n\nTo
 inputs:
   - id: file
     type: File
-    doc: Specifies input file.
+    doc: Specifies input file. It is staged writable because the FASTA reader
+      writes an index file beside it.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: cpus
     type:
       - 'null'
@@ -99,6 +101,10 @@ outputs:
       glob: $(inputs.output_folder_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/conodictor:v2.3.1_cv1

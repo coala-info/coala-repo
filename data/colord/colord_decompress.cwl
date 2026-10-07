@@ -11,6 +11,11 @@ inputs:
     doc: archive path
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: output file path
+    inputBinding:
+      position: 2
   - id: reference_genome
     type:
       - 'null'
@@ -30,11 +35,11 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: output
+  - id: out_output
     type: File
     doc: output file path
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/colord:1.1.0--h9ee0642_0

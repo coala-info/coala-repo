@@ -1,5 +1,13 @@
 # consan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| consan_scompare | PASS | Correct stem-loop predicted in full mode (-f) with the mix80 model; the default pin mode segfaults because the image lacks the DART dpswalign helper, and the -s file stays empty because v1.2 never writes it. |
+| consan_sfold | PASS | Correct stem-loop predicted in full mode (-f) with the mix80 model; the default pin mode segfaults because the image lacks the DART dpswalign helper. |
+| consan_strain_ml | PASS | Trained a model on the Rfam v7 set that sfold then uses correctly; strain_ml exits 1 on success, so the CWL accepts exit codes 0 and 1. |
+
 ## Metadata
 - **Skill**: generated
 

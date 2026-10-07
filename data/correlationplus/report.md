@@ -1,5 +1,15 @@
 # correlationplus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| correlationplus_analyze | PASS |  |
+| correlationplus_calculate | PASS |  |
+| correlationplus_diffMap | PASS |  |
+| correlationplus_paths | PASS |  |
+| correlationplus_visualize | Failed | image problem: ProDy atom selection crashes because the image's pyparsing has no operatorPrecedence. |
+
 ## correlationplus_calculate
 
 ### Tool Description
@@ -280,10 +290,10 @@ Arguments: -i: A file containing correlations in matrix format. (Mandatory)
 ```
 
 
-## correlationplus_diffmap
+## correlationplus_diffMap
 
 ### Tool Description
-A Python package to calculate, visualize and analyze protein correlation maps.
+Plot the difference map of two protein correlation maps (ndcc, nlmi or absndcc).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/correlationplus:0.2.1--pyh5e36f6f_0
@@ -291,6 +301,11 @@ A Python package to calculate, visualize and analyze protein correlation maps.
 - **Package**: https://anaconda.org/channels/bioconda/packages/correlationplus/overview
 - **Validation**: PASS
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/correlationplus/overview
+- **Total Downloads**: 11.8K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tekpinar/correlationplus
+- **Stars**: N/A
 ### Original Help Text
 ```text
 |------------------------------Correlation Plus------------------------------|
@@ -309,20 +324,15 @@ A Python package to calculate, visualize and analyze protein correlation maps.
 
 
 
-Example usage:
+Example minimal usage:
+correlationplus diffMap -i 4z90-cross-correlations.txt -j 4z91-cross-correlations.txt -p 4z90.pdb
 
-correlationplus -h
-
-CorrelationPlus contains five apps:
- - calculate
- - visualize
- - analyze
- - paths
- - diffMap
-
-You can get more information about each individual app as follows:
-
-correlationplus analyze -h
+Arguments: -i: The first file containing normalized dynamical cross correlations or LMI in matrix format. (Mandatory)
+           -j: The second file containing normalized dynamical cross correlations or LMI in matrix format. (Mandatory)
+           -p: PDB file of the protein. (Mandatory)")
+           -q: A second PDB file for the other conformation if residues numbers are not same in two conformations. (Optional)
+           -t: It can be ndcc, nlmi or absndcc (absolute values of ndcc). Default value is ndcc (Optional)
+           -o: This will be your output file prefix. Output figures are in png format. (Optional)
 ```
 
 

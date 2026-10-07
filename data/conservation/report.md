@@ -1,5 +1,11 @@
 # conservation CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| conservation_codon | Failed | image problem: after writing the substitution tables, the tool always crashes with a RecursionError in np.log2 on a pandas DataFrame (pandas 2.2.3, numpy 2.2.4) while drawing the log2 observed/expected plot. |
+
 ## conservation_codon
 
 ### Tool Description

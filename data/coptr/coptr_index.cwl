@@ -7,16 +7,16 @@ label: coptr_index
 doc: "Index a reference FASTA file for use with coptr.\n\nTool homepage: https://github.com/tyjo/coptr"
 inputs:
   - id: ref_fasta
-    type: File
-    secondaryFiles:
-      - .fai
+    type:
+      - File
+      - Directory
     doc: File or folder containing fasta to index. If a folder, the extension 
       for each fasta must be one of [.fasta, .fna, .fa]
     inputBinding:
       position: 1
   - id: index_out
-    type: File
-    doc: Filepath to store index.
+    type: string
+    doc: Filepath to store index (bowtie2 index prefix).
     inputBinding:
       position: 2
   - id: bt2_bmax
@@ -53,10 +53,19 @@ inputs:
       position: 103
       prefix: --bt2-threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: index
+    type: File
+    doc: Bowtie2 index (index_out.1.bt2) with the other index files and the 
+      list of genome ids (index_out.genomes) as secondary files.
+    outputBinding:
+      glob: $(inputs.index_out).1.bt2
+    secondaryFiles:
+      - ^^.2.bt2
+      - ^^.3.bt2
+      - ^^.4.bt2
+      - ^^.rev.1.bt2
+      - ^^.rev.2.bt2
+      - ^^.genomes
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coptr:1.1.4--pyhdfd78af_3
-stdout: coptr_index.out

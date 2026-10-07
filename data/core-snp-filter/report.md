@@ -1,5 +1,11 @@
 # core-snp-filter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| core-snp-filter_coresnpfilter | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

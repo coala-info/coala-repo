@@ -16,11 +16,13 @@ inputs:
   - id: index
     type:
       - 'null'
-      - Directory
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --index
     doc: path to index file(s)
     inputBinding:
       position: 102
-      prefix: --index
   - id: index_sizes
     type:
       - 'null'

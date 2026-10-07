@@ -109,10 +109,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_output_file_path`
+    doc: A path to output the results as a CSV. If not given then a default name is chosen inside the output directory.
     inputBinding:
       position: 102
-      prefix: --csv-output-file
+      prefix: --csv
   - id: output_dir_path
     type:
       - 'null'
@@ -139,6 +139,8 @@ outputs:
       glob: $(inputs.csv_output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/corgi:0.4.3--pyhdfd78af_0

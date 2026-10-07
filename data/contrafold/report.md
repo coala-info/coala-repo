@@ -1,5 +1,12 @@
 # contrafold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| contrafold_predict | PASS |  |
+| contrafold_train | PASS |  |
+
 ## contrafold_predict
 
 ### Tool Description

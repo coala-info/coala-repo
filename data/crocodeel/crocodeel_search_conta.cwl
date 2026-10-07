@@ -83,6 +83,9 @@ outputs:
     outputBinding:
       glob: $(inputs.contamination_events_file_path)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      USER: crocodeel
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

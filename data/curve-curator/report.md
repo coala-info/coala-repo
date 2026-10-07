@@ -1,5 +1,11 @@
 # curve-curator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| curve-curator_CurveCurator | PASS |  |
+
 ## curve-curator_CurveCurator
 
 ### Tool Description

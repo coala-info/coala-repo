@@ -5,7 +5,7 @@ baseCommand:
   - print-processed-spectra
 label: crux_print-processed-spectra
 doc: "Parse fragmentation spectra from MS2 files and write processed spectra to an
-  output file.\n\nTool homepage: https://github.com/redbadger/crux"
+  output file.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: ms2_file
     type: File
@@ -13,6 +13,11 @@ inputs:
       spectra, in any of the file formats supported by ProteoWizard.
     inputBinding:
       position: 1
+  - id: output_file_name
+    type: string
+    doc: File where spectrum will be written (inside crux-output).
+    inputBinding:
+      position: 2
   - id: output_units
     type:
       - 'null'
@@ -30,10 +35,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 102
@@ -63,6 +69,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-z-line
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -77,9 +84,11 @@ inputs:
 outputs:
   - id: output_file
     type: File
-    doc: File where spectrum will be written.
+    doc: File where spectrum will be written (inside crux-output).
     outputBinding:
-      glob: '*.out'
+      glob: crux-output/$(inputs.output_file_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -1,5 +1,12 @@
 # cutesv-ol CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cutesv-ol_cuteSV | PASS |  |
+| cutesv-ol_cuteSV_ONLINE | PASS |  |
+
 ## cutesv-ol_cuteSV_ONLINE
 
 ### Tool Description
@@ -61,10 +68,10 @@ options:
 ```
 
 
-## cutesv-ol_minimap2
+## cutesv-ol_cuteSV
 
 ### Tool Description
-Minimap2 is a versatile tool for sequence alignment. It can be used for various tasks including indexing reference genomes, mapping long reads (PacBio, Nanopore), short reads, and performing spliced alignments for RNA-seq data. It also supports read overlap detection.
+Two-step cuteSV shipped with cuteSV-OL (--mode 1 extracts SV signatures, --mode 2 clusters them into a VCF).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cutesv-ol:1.0.2--py312h7b50bb2_0
@@ -72,65 +79,165 @@ Minimap2 is a versatile tool for sequence alignment. It can be used for various 
 - **Package**: https://anaconda.org/channels/bioconda/packages/cutesv-ol/overview
 - **Validation**: PASS
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cutesv-ol/overview
+- **Total Downloads**: 773
+- **Last updated**: 2025-11-19
+- **GitHub**: https://github.com/120L022331/cuteSV-OL
+- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: minimap2 [options] <target.fa>|<target.idx> [query.fa] [...]
-Options:
-  Indexing:
-    -H           use homopolymer-compressed k-mer (preferrable for PacBio)
-    -k INT       k-mer size (no larger than 28) [15]
-    -w INT       minimizer window size [10]
-    -I NUM       split index for every ~NUM input bases [8G]
-    -d FILE      dump index to FILE []
-  Mapping:
-    -f FLOAT     filter out top FLOAT fraction of repetitive minimizers [0.0002]
-    -g NUM       stop chain enlongation if there are no minimizers in INT-bp [5000]
-    -G NUM       max intron length (effective with -xsplice; changing -r) [200k]
-    -F NUM       max fragment length (effective with -xsr or in the fragment mode) [800]
-    -r NUM[,NUM] chaining/alignment bandwidth and long-join bandwidth [500,20000]
-    -n INT       minimal number of minimizers on a chain [3]
-    -m INT       minimal chaining score (matching bases minus log gap penalty) [40]
-    -X           skip self and dual mappings (for the all-vs-all mode)
-    -p FLOAT     min secondary-to-primary score ratio [0.8]
-    -N INT       retain at most INT secondary alignments [5]
-  Alignment:
-    -A INT       matching score [2]
-    -B INT       mismatch penalty (larger value for lower divergence) [4]
-    -O INT[,INT] gap open penalty [4,24]
-    -E INT[,INT] gap extension penalty; a k-long gap costs min{O1+k*E1,O2+k*E2} [2,1]
-    -z INT[,INT] Z-drop score and inversion Z-drop score [400,200]
-    -s INT       minimal peak DP alignment score [80]
-    -u CHAR      how to find GT-AG. f:transcript strand, b:both strands, n:don't match GT-AG [n]
-    -J INT       splice mode. 0: original minimap2 model; 1: miniprot model [1]
-    -j FILE      junctions in BED12 to extend *short* RNA-seq alignment []
-  Input/Output:
-    -a           output in the SAM format (PAF by default)
-    -o FILE      output alignments to FILE [stdout]
-    -L           write CIGAR with >65535 ops at the CG tag
-    -R STR       SAM read group line in a format like '@RG\tID:foo\tSM:bar' []
-    -c           output CIGAR in PAF
-    --cs[=STR]   output the cs tag; STR is 'short' (if absent) or 'long' [none]
-    --ds         output the ds tag, which is an extension to cs
-    --MD         output the MD tag
-    --eqx        write =/X CIGAR operators
-    -Y           use soft clipping for supplementary alignments
-    -y           copy FASTA/Q comments to output SAM
-    -t INT       number of threads [3]
-    -K NUM       minibatch size for mapping [500M]
-    --version    show version number
-  Preset:
-    -x STR       preset (always applied before other options; see minimap2.1 for details) []
-                 - lr:hq - accurate long reads (error rate <1%) against a reference genome
-                 - splice/splice:hq - spliced alignment for long reads/accurate long reads
-                 - splice:sr - spliced alignment for short RNA-seq reads
-                 - asm5/asm10/asm20 - asm-to-ref mapping, for ~0.1/1/5% sequence divergence
-                 - sr - short reads against a reference
-                 - map-pb/map-hifi/map-ont/map-iclr - CLR/HiFi/Nanopore/ICLR vs reference mapping
-                 - ava-pb/ava-ont - PacBio CLR/Nanopore read overlap
+usage: cuteSV [-h] [--version] [--input [BAM]] [--reference REFERENCE]
+              [--output OUTPUT] [--work_dir WORK_DIR] [--mode MODE]
+              [--bam_name BAM_NAME] [-t THREADS] [-b BATCHES] [-S SAMPLE]
+              [--retain_work_dir] [--write_old_sigs] [--report_readid]
+              [--ignore_sequence] [-p MAX_SPLIT_PARTS] [-q MIN_MAPQ]
+              [-r MIN_READ_LEN] [-md MERGE_DEL_THRESHOLD]
+              [-mi MERGE_INS_THRESHOLD] [-include_bed INCLUDE_BED]
+              [-s MIN_SUPPORT] [-l MIN_SIZE] [-L MAX_SIZE] [-sl MIN_SIGLENGTH]
+              [--genotype] [--gt_round GT_ROUND] [--read_range READ_RANGE]
+              [-Ivcf IVCF] [--max_cluster_bias_INS MAX_CLUSTER_BIAS_INS]
+              [--diff_ratio_merging_INS DIFF_RATIO_MERGING_INS]
+              [--max_cluster_bias_DEL MAX_CLUSTER_BIAS_DEL]
+              [--diff_ratio_merging_DEL DIFF_RATIO_MERGING_DEL]
+              [--max_cluster_bias_INV MAX_CLUSTER_BIAS_INV]
+              [--max_cluster_bias_DUP MAX_CLUSTER_BIAS_DUP]
+              [--max_cluster_bias_TRA MAX_CLUSTER_BIAS_TRA]
+              [--diff_ratio_filtering_TRA DIFF_RATIO_FILTERING_TRA]
+              [--remain_reads_ratio REMAIN_READS_RATIO]
 
-See `man ./minimap2.1' for detailed description of these and other advanced command-line options.
+		
+	Current version: v2.1.2
+	Author: Tao Jiang
+	Contact: tjiang@hit.edu.cn
+
+	If you use cuteSV in your work, please cite:
+		Jiang T et al. Long-read-based human genomic structural variation detection with cuteSV. 
+		Genome Biol 21,189(2020). https://doi.org/10.1186/s13059-020-02107-y
+
+	Suggestions:
+
+	For PacBio CLR data:
+		--max_cluster_bias_INS		100
+		--diff_ratio_merging_INS	0.3
+		--max_cluster_bias_DEL	200
+		--diff_ratio_merging_DEL	0.5
+
+	For PacBio CCS(HIFI) data:
+		--max_cluster_bias_INS		1000
+		--diff_ratio_merging_INS	0.9
+		--max_cluster_bias_DEL	1000
+		--diff_ratio_merging_DEL	0.5
+
+	For ONT data:
+		--max_cluster_bias_INS		100
+		--diff_ratio_merging_INS	0.3
+		--max_cluster_bias_DEL	100
+		--diff_ratio_merging_DEL	0.3
+
+	
+
+options:
+  -h, --help            show this help message and exit
+  --version, -v         show program's version number and exit
+  --input [BAM]         Sorted .bam file from NGMLR or Minimap2.
+  --reference REFERENCE
+                        The reference genome in fasta format.
+  --output OUTPUT       Output VCF format file.
+  --work_dir WORK_DIR   Work-directory for distributed jobs
+  --mode MODE           convert cutesv to two steps
+  --bam_name BAM_NAME   bam_name
+  -t THREADS, --threads THREADS
+                        Number of threads to use.[16]
+  -b BATCHES, --batches BATCHES
+                        Batch of genome segmentation interval.[10000000]
+  -S SAMPLE, --sample SAMPLE
+                        Sample name/id
+  --retain_work_dir     Enable to retain temporary folder and files.
+  --write_old_sigs      Enable to write sigs file in temporary folder for
+                        legacy compatibilities.
+  --report_readid       Enable to report supporting read ids for each SV.
+  --ignore_sequence     Do not output sequences for SVs.
+
+Collection of SV signatures:
+  -p MAX_SPLIT_PARTS, --max_split_parts MAX_SPLIT_PARTS
+                        Maximum number of split segments a read may be aligned
+                        before it is ignored. All split segments are
+                        considered when using -1. (Recommand -1 when applying
+                        assembly-based alignment.)[7]
+  -q MIN_MAPQ, --min_mapq MIN_MAPQ
+                        Minimum mapping quality value of alignment to be taken
+                        into account.[20]
+  -r MIN_READ_LEN, --min_read_len MIN_READ_LEN
+                        Ignores reads that only report alignments with not
+                        longer than bp.[500]
+  -md MERGE_DEL_THRESHOLD, --merge_del_threshold MERGE_DEL_THRESHOLD
+                        Maximum distance of deletion signals to be merged. In
+                        our paper, I used -md 500 to process HG002 real human
+                        sample data.[0]
+  -mi MERGE_INS_THRESHOLD, --merge_ins_threshold MERGE_INS_THRESHOLD
+                        Maximum distance of insertion signals to be merged. In
+                        our paper, I used -mi 500 to process HG002 real human
+                        sample data.[100]
+  -include_bed INCLUDE_BED
+                        Optional given bed file. Only detect SVs in regions in
+                        the BED file. [NULL]
+
+Generation of SV clusters:
+  -s MIN_SUPPORT, --min_support MIN_SUPPORT
+                        Minimum number of reads that support a SV to be
+                        reported.[10]
+  -l MIN_SIZE, --min_size MIN_SIZE
+                        Minimum size of SV to be reported.[30]
+  -L MAX_SIZE, --max_size MAX_SIZE
+                        Maximum size of SV to be reported. All SVs are
+                        reported when using -1. [100000]
+  -sl MIN_SIGLENGTH, --min_siglength MIN_SIGLENGTH
+                        Minimum length of SV signal to be extracted.[10]
+
+Computing genotypes:
+  --genotype            Enable to generate genotypes.
+  --gt_round GT_ROUND   Maximum round of iteration for alignments searching if
+                        perform genotyping.[500]
+  --read_range READ_RANGE
+                        The interval range for counting reads
+                        distribution.[1000]
+
+Force calling:
+  -Ivcf IVCF            The force calling module was disabled in cuteSV,
+                        please install cuteFC
+                        (https://github.com/Meltpinkg/cuteFC) to achieve SV
+                        force calling/regenotyping.
+
+Advanced:
+  --max_cluster_bias_INS MAX_CLUSTER_BIAS_INS
+                        Maximum distance to cluster read together for
+                        insertion.[100]
+  --diff_ratio_merging_INS DIFF_RATIO_MERGING_INS
+                        Do not merge breakpoints with basepair identity more
+                        than [0.3] for insertion.
+  --max_cluster_bias_DEL MAX_CLUSTER_BIAS_DEL
+                        Maximum distance to cluster read together for
+                        deletion.[200]
+  --diff_ratio_merging_DEL DIFF_RATIO_MERGING_DEL
+                        Do not merge breakpoints with basepair identity more
+                        than [0.5] for deletion.
+  --max_cluster_bias_INV MAX_CLUSTER_BIAS_INV
+                        Maximum distance to cluster read together for
+                        inversion.[500]
+  --max_cluster_bias_DUP MAX_CLUSTER_BIAS_DUP
+                        Maximum distance to cluster read together for
+                        duplication.[500]
+  --max_cluster_bias_TRA MAX_CLUSTER_BIAS_TRA
+                        Maximum distance to cluster read together for
+                        translocation.[50]
+  --diff_ratio_filtering_TRA DIFF_RATIO_FILTERING_TRA
+                        Filter breakpoints with basepair identity less than
+                        [0.6] for translocation.
+  --remain_reads_ratio REMAIN_READS_RATIO
+                        The ratio of reads remained in cluster. Set lower when
+                        the alignment data have high quality but recommand
+                        over 0.5.[1.0]
 ```
-
 
 ## Metadata
 - **Skill**: generated

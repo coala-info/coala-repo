@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - pipeline
 label: crux_pipeline
-doc: "Run the Crux pipeline for peptide identification.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Run the Crux pipeline for peptide identification.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: mass_spectra
     type:
@@ -17,7 +17,9 @@ inputs:
     inputBinding:
       position: 1
   - id: peptide_source
-    type: string
+    type:
+      - File
+      - Directory
     doc: Either the name of a file in fasta format from which to retrieve 
       proteins and peptides or an index created by a previous run of crux 
       tide-index (for Tide searching).
@@ -337,6 +339,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --bullseye
+      valueFrom: '$(self ? "T" : "F")'
   - id: bullseye_max_mass
     type:
       - 'null'
@@ -401,6 +404,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --combine-charge-states
+      valueFrom: '$(self ? "T" : "F")'
   - id: combine_modified_peptides
     type:
       - 'null'
@@ -411,6 +415,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --combine-modified-peptides
+      valueFrom: '$(self ? "T" : "F")'
   - id: compute_sp
     type:
       - 'null'
@@ -426,6 +431,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --compute-sp
+      valueFrom: '$(self ? "T" : "F")'
   - id: concat
     type:
       - 'null'
@@ -438,6 +444,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --concat
+      valueFrom: '$(self ? "T" : "F")'
   - id: decoy_prefix
     type:
       - 'null'
@@ -470,6 +477,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --decoy-xml-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: default_direction
     type:
       - 'null'
@@ -542,6 +550,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --exact-match
+      valueFrom: '$(self ? "T" : "F")'
   - id: exact_p_value
     type:
       - 'null'
@@ -559,6 +568,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --exact-p-value
+      valueFrom: '$(self ? "T" : "F")'
   - id: exact_tolerance
     type:
       - 'null'
@@ -578,6 +588,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --feature-file-out
+      valueFrom: '$(self ? "T" : "F")'
   - id: fido_alpha
     type:
       - 'null'
@@ -606,6 +617,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --fido-empirical-protein-q
+      valueFrom: '$(self ? "T" : "F")'
   - id: fido_fast_gridsearch
     type:
       - 'null'
@@ -653,6 +665,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --fido-no-split-large-components
+      valueFrom: '$(self ? "T" : "F")'
   - id: fido_protein_truncation_threshold
     type:
       - 'null'
@@ -671,6 +684,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --file-column
+      valueFrom: '$(self ? "T" : "F")'
   - id: fileroot
     type:
       - 'null'
@@ -716,7 +730,7 @@ inputs:
   - id: init_weights
     type:
       - 'null'
-      - string
+      - File
     doc: Read initial weights from the given file (one per line).
     inputBinding:
       position: 103
@@ -749,6 +763,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --klammer
+      valueFrom: '$(self ? "T" : "F")'
   - id: list_of_files
     type:
       - 'null'
@@ -758,6 +773,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --list-of-files
+      valueFrom: '$(self ? "T" : "F")'
   - id: mass_offsets
     type:
       - 'null'
@@ -925,6 +941,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --mzid-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: nucleotide_reading_frame
     type:
       - 'null'
@@ -983,6 +1000,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --only-psms
+      valueFrom: '$(self ? "T" : "F")'
   - id: output_dir
     type:
       - 'null'
@@ -1048,6 +1066,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output-weights
+      valueFrom: '$(self ? "T" : "F")'
   - id: override
     type:
       - 'null'
@@ -1060,6 +1079,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --override
+      valueFrom: '$(self ? "T" : "F")'
   - id: override_charge
     type:
       - 'null'
@@ -1079,6 +1099,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -1100,6 +1121,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --peptide-centric-search
+      valueFrom: '$(self ? "T" : "F")'
   - id: peptide_mass_tolerance
     type:
       - 'null'
@@ -1127,6 +1149,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --pepxml-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: percolator_seed
     type:
       - 'null'
@@ -1163,6 +1186,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --pin-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: pm_charge
     type:
       - 'null'
@@ -1289,6 +1313,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --pout-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: precision
     type:
       - 'null'
@@ -1372,6 +1397,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --protein
+      valueFrom: '$(self ? "T" : "F")'
   - id: protein_enzyme
     type:
       - 'null'
@@ -1391,6 +1417,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --protein-report-duplicates
+      valueFrom: '$(self ? "T" : "F")'
   - id: protein_report_fragments
     type:
       - 'null'
@@ -1408,6 +1435,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --protein-report-fragments
+      valueFrom: '$(self ? "T" : "F")'
   - id: quick_validation
     type:
       - 'null'
@@ -1416,6 +1444,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --quick-validation
+      valueFrom: '$(self ? "T" : "F")'
   - id: remove_precursor_peak
     type:
       - 'null'
@@ -1425,6 +1454,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --remove-precursor-peak
+      valueFrom: '$(self ? "T" : "F")'
   - id: remove_precursor_peak_alt
     type:
       - 'null'
@@ -1574,6 +1604,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sidak
+      valueFrom: '$(self ? "T" : "F")'
   - id: skip_preprocessing
     type:
       - 'null'
@@ -1582,6 +1613,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --skip-preprocessing
+      valueFrom: '$(self ? "T" : "F")'
   - id: skip_researching
     type:
       - 'null'
@@ -1663,6 +1695,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sqt-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: store_index
     type:
       - 'null'
@@ -1707,6 +1740,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --tdc
+      valueFrom: '$(self ? "T" : "F")'
   - id: test_each_iteration
     type:
       - 'null'
@@ -1715,6 +1749,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --test-each-iteration
+      valueFrom: '$(self ? "T" : "F")'
   - id: test_fdr
     type:
       - 'null'
@@ -1760,6 +1795,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --train-best-positive
+      valueFrom: '$(self ? "T" : "F")'
   - id: train_fdr
     type:
       - 'null'
@@ -1776,6 +1812,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --txt-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: unitnorm
     type:
       - 'null'
@@ -1786,6 +1823,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --unitnorm
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_A_ions
     type:
       - 'null'
@@ -1858,6 +1896,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-flanking-peaks
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_neutral_loss_peaks
     type:
       - 'null'
@@ -1869,6 +1908,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-neutral-loss-peaks
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_z_line
     type:
       - 'null'
@@ -1878,6 +1918,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-z-line
+      valueFrom: '$(self ? "T" : "F")'
   - id: variable_mod01
     type:
       - 'null'
@@ -1985,7 +2026,11 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

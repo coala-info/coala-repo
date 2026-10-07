@@ -1,5 +1,11 @@
 # cytocad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cytocad | Not completed | Runs end to end on a small real nanopore BAM (180 chr22 reads), but such sparse data gives meaningless calls; a genome-wide low-depth WGS BAM is needed to confirm the CNV output. |
+
 ## cytocad
 
 ### Tool Description

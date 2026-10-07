@@ -5,7 +5,7 @@ baseCommand:
   - sort-by-column
 label: crux_sort-by-column
 doc: "Sorts a tab-delimited file by the values in a specified column.\n\nTool homepage:
-  https://github.com/redbadger/crux"
+  https://crux.ms"
 inputs:
   - id: tsv_file
     type: File
@@ -26,6 +26,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --ascending
+      valueFrom: '$(self ? "T" : "F")'
   - id: column_type
     type:
       - 'null'
@@ -54,6 +55,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --header
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -69,6 +71,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

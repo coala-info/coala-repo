@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - tide-index
 label: crux_tide-index
-doc: "Create a peptide index for the tide search engine.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Create a peptide index for the tide search engine.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: protein_fasta_file
     type: File
@@ -30,6 +30,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --allow-dups
+      valueFrom: '$(self ? "T" : "F")'
   - id: clip_nterm_methionine
     type:
       - 'null'
@@ -40,6 +41,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --clip-nterm-methionine
+      valueFrom: '$(self ? "T" : "F")'
   - id: cterm_peptide_mods_spec
     type:
       - 'null'
@@ -254,10 +256,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 103
@@ -274,6 +277,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --peptide-list
+      valueFrom: '$(self ? "T" : "F")'
   - id: seed
     type:
       - 'null'
@@ -305,6 +309,11 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
+  - id: index_dir
+    type: Directory
+    doc: The binary peptide index created by tide-index.
+    outputBinding:
+      glob: $(inputs.index_name)
   - id: stdout
     type: stdout
     doc: Standard output
@@ -314,7 +323,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -15,9 +15,7 @@ inputs:
       position: 101
       prefix: --cisCG
   - id: input_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Full path to directory where your '*allMolecules.txt' files are 
       located. If no '--dir' is specified, ctseq will look in your current 
       directory.
@@ -41,9 +39,7 @@ inputs:
       position: 101
       prefix: --processes
   - id: reference_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Full path to directory where you have already built your methylation 
       reference files. If no '--refDir' is specified, ctseq will look in your 
       current directory.
@@ -60,6 +56,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Directory with the <nameRun>_*.txt methylation reports added
+    outputBinding:
+      glob: $(inputs.input_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctseq:0.0.2--py_0

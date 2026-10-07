@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - CrossMap.py
+  - CrossMap
   - vcf
 label: crossmap_vcf
 doc: "CrossMap is a program for convenient conversion of genome coordinates and genome
@@ -10,34 +10,83 @@ doc: "CrossMap is a program for convenient conversion of genome coordinates and 
 inputs:
   - id: chain_file
     type: File
-    doc: Chain file in UCSC format.
+    doc: Chain file (https://genome.ucsc.edu/goldenPath/help/chain.html) describes
+      pairwise alignments between two genomes. The input chain file can be a plain
+      text file or compressed (.gz, .Z, .z, .bz, .bz2, .bzip2) file.
     inputBinding:
       position: 1
   - id: input_vcf
     type: File
-    doc: Input VCF file.
+    doc: Input VCF (variant call format). The VCF file can be plain text file or
+      compressed file with extension of .gz, .Z, .z, .bz, .bz2 and .bzip2.
     inputBinding:
       position: 2
   - id: ref_genome
     type: File
-    doc: Reference genome sequence file in FASTA format.
+    secondaryFiles:
+      - .fai
+    doc: Chromosome sequences of target assembly in FASTA format.
     inputBinding:
       position: 3
-  - id: no_comp_header
+  - id: out_vcf
+    type: string
+    doc: Output VCF file.
+    inputBinding:
+      position: 4
+  - id: chromid
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - a
+          - s
+          - l
+          - n
+    doc: 'The style of the output chromosome IDs. "a" = "as-is", "l" = "long style",
+      "s" = "short style", and "n" = "no-change".'
+    inputBinding:
+      position: 104
+      prefix: --chromid
+  - id: ref_consistent
     type:
       - 'null'
       - boolean
-    doc: Whether to check if the reference genome is compatible with the VCF 
-      file.
+    doc: If set, CrossMap will check if reference allele is consistent during liftover.
     inputBinding:
       position: 104
-      prefix: --no-comp-header
+      prefix: --ref-consistent
+  - id: no_comp_alleles
+    type:
+      - 'null'
+      - boolean
+    doc: If set, CrossMap does NOT check if the reference allele is different from
+      the alternate allele.
+    inputBinding:
+      position: 104
+      prefix: --no-comp-alleles
+  - id: compress
+    type:
+      - 'null'
+      - boolean
+    doc: If set, compress the output VCF file by calling the system "gzip".
+    inputBinding:
+      position: 104
+      prefix: --compress
 outputs:
   - id: output_vcf
     type: File
-    doc: Output VCF file.
+    doc: Output VCF file (gzip-compressed with a .gz suffix when compress is set).
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.compress ? inputs.out_vcf + ".gz" : inputs.out_vcf)'
+  - id: unmapped_vcf
+    type:
+      - 'null'
+      - File
+    doc: VCF records that could not be lifted over.
+    outputBinding:
+      glob: '$(inputs.out_vcf).unmap*'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0

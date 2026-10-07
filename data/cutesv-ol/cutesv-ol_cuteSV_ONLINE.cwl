@@ -10,6 +10,7 @@ inputs:
     doc: The fastq folder monitored by cuteSV-OL.
     inputBinding:
       position: 1
+      valueFrom: $(self.path + '/')
   - id: reference
     type: File
     secondaryFiles:
@@ -18,15 +19,19 @@ inputs:
     inputBinding:
       position: 2
   - id: work_dir
-    type: Directory
-    doc: Work diretory for cuteSV-OL.
+    type: string
+    doc: Work diretory for cuteSV-OL (created empty in the working directory).
+    default: cutesv_ol_work
     inputBinding:
       position: 3
   - id: output_vcf
-    type: Directory
-    doc: The vcf folder where cuteSV-OL outputs real-time test results to.
+    type: string
+    doc: The vcf folder where cuteSV-OL outputs real-time test results to. 
+      The tool creates it; it must not exist yet.
+    default: cutesv_ol_vcf
     inputBinding:
       position: 4
+      valueFrom: $(self + '/')
   - id: batch_interval
     type:
       - 'null'
@@ -46,7 +51,7 @@ inputs:
   - id: mmi_path
     type:
       - 'null'
-      - string
+      - File
     doc: Minimizer index for the reference in minimap2.
     inputBinding:
       position: 105
@@ -125,9 +130,25 @@ inputs:
       position: 105
       prefix: --user_defined
 outputs:
+  - id: vcf_dir
+    type: Directory
+    doc: Folder with the real-time VCF results (<depth>_output.vcf)
+    outputBinding:
+      glob: $(inputs.output_vcf)
+  - id: work_dir_out
+    type: Directory
+    doc: cuteSV-OL work directory (BAM files, signatures, depth logs)
+    outputBinding:
+      glob: $(inputs.work_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.work_dir, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cutesv-ol:1.0.2--py312h7b50bb2_0

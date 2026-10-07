@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 2590; PASS: 1997; Failed: 371; Not completed: 222
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 2861; PASS: 2162; Failed: 399; Not completed: 300
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -2590,3 +2590,274 @@ cpstools	cpstools_gbcheck	PASS
 cpstools	cpstools_info	PASS	
 cpstools	cpstools_phy	PASS	
 crabs	crabs	PASS	
+crabz	crabz	PASS	
+crac	crac	PASS	
+cram-archiver	cram-archiver	PASS	
+cramino	cramino	PASS	
+cramtools	cramtools_bam	PASS	
+cramtools	cramtools_cram	Failed	tool bug: -Q/--lossless-quality-score has no effect and the CRAM keeps no quality scores; conversion with --lossy-quality-score-spec '*40' works
+cramtools	cramtools_fastq	PASS	
+cramtools	cramtools_fixheader	PASS	
+cramtools	cramtools_getref	Failed	tool bug: getref asks the ENA service over http, does not follow the redirect to https, and writes a FASTA header with no sequence while exiting 0.
+cramtools	cramtools_index	PASS	
+cramtools	cramtools_merge	PASS	
+cramtools	cramtools_qstat	PASS	
+craq	craq	PASS	
+crass	crass	PASS	
+crb-blast	crb-blast	Failed	image problem: crb-blast checks for BLAST 2.2.29 but the image has BLAST 2.13.0, so it tries to download BLAST from the NCBI FTP site and stops.
+cressent	cressent_adjust_seq	PASS	
+cressent	cressent_align	PASS	
+cressent	cressent_build_contaminant_db	PASS	
+cressent	cressent_build_tree	PASS	
+cressent	cressent_cluster	PASS	
+cressent	cressent_db_builder	PASS	
+cressent	cressent_detect_contamination	PASS	
+cressent	cressent_gc_ht	PASS	
+cressent	cressent_gene_map	PASS	
+cressent	cressent_motif	PASS	
+cressent	cressent_motif_disc	PASS	
+cressent	cressent_motif_map_viz	PASS	
+cressent	cressent_plot_tree	PASS	
+cressent	cressent_recombination	PASS	
+cressent	cressent_run_cruise	Failed	tool bug: the run_cruise command in cli.py uses an undefined name 'outputdir', so it always stops with a NameError.
+cressent	cressent_seq_logo	PASS	
+cressent	cressent_sl_finder	Failed	image problem: the ViennaRNA Python package (RNA) is missing from the image, so sl_finder stops at start.
+cressent	cressent_tanglegram	PASS	
+crimson	crimson_fastqc	PASS	
+crimson	crimson_flagstat	PASS	
+crimson	crimson_fusioncatcher	PASS	
+crimson	crimson_picard	PASS	
+crimson	crimson_star	PASS	
+crimson	crimson_star-fusion	PASS	
+crimson	crimson_vep	PASS	
+crispector	crispector	PASS	
+crispector2	crispector2_crispector	PASS	
+crisper_recognition_tool	crisper_recognition_tool_crt	PASS	
+crisprbact	crisprbact_predict_from-seq	PASS	
+crisprbact	crisprbact_predict_from-str	PASS	
+crispresso	crispresso_CRISPResso	PASS	
+crispresso	crispresso_CRISPRessoCompare	PASS	
+crispresso	crispresso_CRISPRessoPooled	PASS	
+crispresso	crispresso_CRISPRessoWGS	PASS	
+crispresso2	crispresso2_CRISPRessoAggregate	PASS	
+crispritz	crispritz_add-variants	PASS	
+crispritz	crispritz_annotate-results	PASS	
+crispritz	crispritz_generate-report	Failed	tool bug: radar_chart.py fills the plot with random.randint values instead of the annotation counts, so the report is wrong.
+crispritz	crispritz_index-genome	PASS	
+crispritz	crispritz_scores	Failed	image problem: scores.py cannot import its bundled azimuth package (only a Python 2 __init__.pyc, bad magic number under Python 3.8), so no score files are written; the same breaks search -scores.
+crispritz	crispritz_search	PASS	
+crisprlungo	crisprlungo_CRISPRlungo	Failed	image problem: the compiled SSW aligner library libssw.so is missing from the image, so the run stops at primer trimming (exit 0, no summary).
+crisprme	crisprme_complete-search	Failed	image problem: the pipeline calls pr (GNU coreutils), which is missing from the image, so a 1000G variant search on a 30 kb hg38 region stops at the targets join; reference-only runs also fail because busybox realpath errors on the '_' placeholder.
+crisprme	crisprme_generate-personal-card	Not completed	needs a finished variant-aware complete-search result folder, which cannot be produced with this image.
+crisprme	crisprme_gnomAD-converter	PASS	
+crisprme	crisprme_targets-integration	Not completed	needs the final integrated results file from complete-search, which cannot be produced with this image.
+crnsimulator	crnsimulator	PASS	
+crocodeel	crocodeel_easy_wf	PASS	
+crocodeel	crocodeel_plot_conta	PASS	
+crocodeel	crocodeel_search_conta	PASS	
+crocodeel	crocodeel_test_install	PASS	Built-in self-test; added stderr output to collect its log.
+crocodeel	crocodeel_train_model	PASS	Training table built by relabelling the tool's test profiles into 7 contaminated and 7 non-contaminated pairs.
+cromshell	cromshell_abort	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_alias	Not completed	needs a workflow ID submitted to a running Cromwell server.
+cromshell	cromshell_cost	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_counts	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_list	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_list-outputs	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_logs	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_metadata	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_slim-metadata	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_status	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_submit	Not completed	needs a running Cromwell server (status run fails with: Failed to connect).
+cromshell	cromshell_timing	Not completed	needs a running Cromwell server and opens the timing diagram in a browser.
+cromshell	cromshell_update-server	PASS	Local command; added the written config file as an output.
+cromshell	cromshell_validate	Failed	image problem: miniwdl (Python module WDL) is not installed, so local validation crashes; womtool validation needs a Cromwell server.
+cromwell	cromwell_server	Not completed	pipeline, skipped: this CWL runs a whole workflow or a web server with the Cromwell engine, and Cromwell 40 has no other utility commands.
+cromwell-tools	cromwell-tools_abort	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_health	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_metadata	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_query	Failed	tool bug: the query command is not implemented in the CLI and crashes with a TypeError on any call.
+cromwell-tools	cromwell-tools_release_hold	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_status	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_submit	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_task_runtime	Not completed	needs Google Cloud metadata and a Google service account key to look up machine types (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_wait	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+croo	croo	PASS	
+crossfilt	crossfilt_crossfilt-filter	PASS	
+crossfilt	crossfilt_crossfilt-lift	PASS	
+crossfilt	crossfilt_crossfilt-split	PASS	
+crossmap	crossmap_vcf	PASS	
+crumble	crumble	PASS	
+crunchstat-summary	crunchstat-summary	Not completed	the tool connects to the Arvados API on every run, also for a local log file, so it needs an Arvados host and token.
+crussmap	crussmap_bed	Failed	tool bug: regions lifted to a minus-strand chain block get a start shifted by the block length (chr10:15069751 instead of 15069810 in the CrossMap Galaxy test); plus-strand regions match.
+crussmap	crussmap_view	PASS	
+crux	crux_assign-confidence	PASS	
+crux	crux_barista	PASS	
+crux	crux_bullseye	PASS	
+crux	crux_cascade-search	PASS	
+crux	crux_comet	PASS	
+crux	crux_extract-columns	PASS	
+crux	crux_extract-rows	PASS	
+crux	crux_generate-peptides	PASS	
+crux	crux_get-ms2-spectrum	PASS	
+crux	crux_hardklor	PASS	
+crux	crux_localize-modification	PASS	
+crux	crux_make-pin	PASS	
+crux	crux_param-medic	PASS	
+crux	crux_percolator	PASS	
+crux	crux_pipeline	PASS	
+crux	crux_predict-peptide-ions	PASS	
+crux	crux_print-processed-spectra	PASS	
+crux	crux_psm-convert	PASS	
+crux	crux_q-ranker	PASS	
+crux	crux_search-for-xlinks	PASS	
+crux	crux_sort-by-column	PASS	
+crux	crux_spectral-counts	PASS	
+crux	crux_stat-column	Failed	tool bug: crux 3.2 stat-column reports a wrong StdDev (3.87 for the values 1,2,3,4 and 640.8 for xcorr scores whose true SD is 0.93), while N, min, max, sum, mean and median are correct.
+crux	crux_subtract-index	PASS	
+crux	crux_tide-index	PASS	
+crux	crux_tide-search	PASS	
+crux	crux_xlink-assign-ions	Failed	tool bug: crux 3.2 xlink-assign-ions reads the demo.ms2 spectrum, then aborts with 'basic_string::_S_construct null not valid' for any valid cross-linked peptide pair (same command fails outside CWL).
+crux	crux_xlink-score-spectrum	Failed	tool bug: crux 3.2 xlink-score-spectrum aborts with 'basic_string::_S_construct null not valid' for any valid cross-linked peptide pair and scan (same command fails outside CWL).
+cryfa	cryfa	PASS	
+cryfa	cryfa_keygen	PASS	
+cryptkeeper	cryptkeeper	Failed	image problem: the TransTermHP program transterm is missing from the image, so the run stops with a traceback.
+cryptogenotyper	cryptogenotyper	PASS	
+csblast	csblast	Failed	image problem: the image has no blastpgp (legacy PSI-BLAST), so csblast stops with 'No PSI-BLAST binary in directory'.
+csvkit	csvkit_csvclean	PASS	
+csvkit	csvkit_csvcut	PASS	
+csvkit	csvkit_csvformat	PASS	
+csvkit	csvkit_csvgrep	PASS	
+csvkit	csvkit_csvjoin	PASS	
+csvkit	csvkit_csvlook	PASS	
+csvkit	csvkit_csvsort	PASS	
+csvkit	csvkit_csvsql	PASS	
+csvkit	csvkit_csvstack	PASS	
+csvkit	csvkit_csvstat	PASS	
+csvkit	csvkit_in2csv	PASS	
+csvtk	csvtk_add-header	PASS	
+csvtk	csvtk_comb	PASS	
+csvtk	csvtk_concat	PASS	
+csvtk	csvtk_corr	PASS	
+csvtk	csvtk_csv2json	PASS	
+csvtk	csvtk_csv2md	PASS	
+csvtk	csvtk_csv2rst	PASS	
+csvtk	csvtk_csv2tab	PASS	
+csvtk	csvtk_csv2xlsx	PASS	
+csvtk	csvtk_cut	PASS	
+csvtk	csvtk_del-header	PASS	
+csvtk	csvtk_del-quotes	PASS	
+csvtk	csvtk_dim	PASS	
+csvtk	csvtk_filter	PASS	
+csvtk	csvtk_filter2	PASS	
+csvtk	csvtk_fix	PASS	
+csvtk	csvtk_fix-quotes	PASS	
+csvtk	csvtk_fmtdate	PASS	
+csvtk	csvtk_freq	PASS	
+csvtk	csvtk_grep	PASS	
+csvtk	csvtk_head	PASS	
+csvtk	csvtk_headers	PASS	
+csvtk	csvtk_inter	PASS	
+csvtk	csvtk_join	PASS	
+csvtk	csvtk_mutate	PASS	
+csvtk	csvtk_ncol	PASS	
+csvtk	csvtk_nrow	PASS	
+csvtk	csvtk_pretty	PASS	
+csvtk	csvtk_sample	PASS	
+csvtk	csvtk_space2tab	PASS	
+csvtk	csvtk_split	PASS	
+csvtk	csvtk_splitxlsx	PASS	
+csvtk	csvtk_summary	PASS	
+csvtk	csvtk_tab2csv	PASS	
+csvtk	csvtk_uniq	PASS	
+csvtk	csvtk_watch	PASS	
+csvtk	csvtk_xlsx2csv	PASS	
+ctat-mutations	ctat-mutations	Not completed	Pipeline (STAR, GATK, CRAVAT) that needs a multi-GB CTAT genome library, skipped; fixed --out_dir and removed invented flags.
+cthreepo	cthreepo	PASS	
+ctseq	ctseq_add_umis	PASS	Synthetic data (bisulfite reads simulated from the real ctseq panel): UMIs from the R2 file were added to the read names; the fastq directory is now staged writable and collected.
+ctseq	ctseq_align	Failed	image problem: GNU split is missing from the image, so no reads reach Bismark and the SAM files are empty.
+ctseq	ctseq_analyze	Failed	image problem: GNU split is missing from the image, so the align step gives empty SAM files.
+ctseq	ctseq_call_methylation	Failed	image problem: GNU split is missing from the image, so every methylation value is NA (correct values when split is supplied).
+ctseq	ctseq_call_molecules	PASS	Synthetic data (Bismark SAM of reads simulated from the real panel): molecule counts and methylation calls match the planted truth for all 20 sample-loci.
+ctseq	ctseq_make_methyl_ref	PASS	Built the Bismark bisulfite index from the real ctseq panel FASTA; the reference directory is now staged writable and collected.
+ctseq	ctseq_plot	Failed	tool bug: the R heatmap step crashes ('breaks are not unique') when a run-statistics column such as methUnknownCNorCHN is all zero, so only 2 of 4 PDFs are made (synthetic data).
+ctseq	ctseq_plot_multiple	Failed	tool bug: same R heatmap crash as ctseq plot on an all-zero run-statistics column; the wrapper now takes the run directories as a Directory[] input and writes the _directories.txt file (synthetic data).
+ctyper	ctyper	Not completed	The repo's CYP2D and SMN test matrices run but give an empty genotype with this ctyper build (matrix version warning), and the matching 2.2 GB database is too large; fixed -O, -r, list-file staging and the .index secondary file.
+cufflinks	cufflinks	PASS	Quantified the nf-core chr22 RNA-seq BAM against the chr22 GTF; genes with reads get non-zero FPKM.
+cuna	cuna_detect	Failed	image problem: pod5 0.3.27 in the image cannot read signals with its pyarrow ('ExtensionScalar' has no attribute 'values'), so detect hangs on the repo test POD5 with empty outputs.
+cuna	cuna_features	Failed	image problem: pod5 0.3.27 in the image cannot read signals with its pyarrow ('ExtensionScalar' has no attribute 'values'), so features hangs on the repo training POD5.
+cuna	cuna_merge	PASS	Synthetic data (two small aligned per-read files with planted calls, via --list): per-site coverage and mod fractions are exactly as expected.
+cuna	cuna_train	PASS	Synthetic data (feature .npz with a planted signal, since features cannot run in this image): trained a BiLSTM, wrote checkpoints, model.cfg and plots, test F1 0.93.
+curare	curare	Not completed	Snakemake RNA-seq pipeline that builds conda environments per module, skipped; fixed baseCommand curare.py to curare (the real entry point).
+cured	cured_CURED_FindREs.py	PASS	Ran on 30 k-mers from CURED_Main with the repo example genomes and an enzyme list; reports are complete (note: with the default all-NEB enzyme set this version crashes with IndexError when blastn finds no hit).
+cured	cured_CURED_Main.py	PASS	Found 967 k-mers present in all 5 case and no control genomes of the repo example data; spot check of 20 k-mers against the genomes agrees.
+curesim	curesim	PASS	Simulated 500 reads (mean length 150) from the nf-core SARS-CoV-2 genome; fixed baseCommand from 'java -jar simulator.jar' to the curesim wrapper and the default output glob.
+curl	curl	PASS	Downloaded a small BED file from GitHub; md5 matches the file fetched on the host; added NetworkAccess so the container can reach the network.
+curve-curator	curve-curator_CurveCurator	PASS	
+cutadapt	cutadapt	PASS	
+cutesv	cutesv_cuteSV	PASS	
+cutesv-ol	cutesv-ol_cuteSV	PASS	
+cutesv-ol	cutesv-ol_cuteSV_ONLINE	PASS	
+cutqc	cutqc_cutqc	PASS	
+cutqc	cutqc_qc_only	PASS	
+cuttlefish	cuttlefish_build	PASS	
+cvbio	cvbio_Disambiguate	PASS	
+cvbio	cvbio_FetchEnsemblGtf	Not completed	It can only fetch the full human GTF (about 1.5 GB) from Ensembl FTP; a direct probe streamed valid GTF, but a full run is too large for a minimal test.
+cvbio	cvbio_IgvBoss	Not completed	It drives a running IGV desktop application over a port, so it cannot run as a batch job.
+cvbio	cvbio_UpdateContigNames	PASS	
+cwl2wdl	cwl2wdl	Failed	tool bug: on its own test CWLs it writes invalid WDL (prefixes unquoted as ${-unc + unc}, item prefixes dropped, import steps crash), and --validate fails because the image lacks the wdl module.
+cwl-Allele-specific-expression-network-clustering-analysis-for-Huntington's-Disease	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-beacon-omop-worker-survival	beacon-omop-worker	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-beacon-omop-worker-survival	beacon-omop-worker-survival	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-beacon-omop-worker-survival	workflow_entrypoint	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-beacon-omop-worker-survival	workflow_entrypoint_survival	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-beacon-workflow	beacon-omop-worker	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-beacon-workflow	beacon-omop-worker-survival	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-beacon-workflow	workflow_entrypoint	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-beacon-workflow	workflow_entrypoint_survival	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-COVID-19-PubSeq-Pangenome-Generate	pangenome-generate	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CroMaSt-A-workflow-for-assessing-protein-domain-classification-by-cross-mapping-of-structural-instances-between-domain-databases-and-structural-alignment	CroMaSt	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-Cryo-electron-microscopy-of-SARS-CoV-2-spike-in-prefusion-state	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-ABC-MD-Setup-tutorial	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Amber-Protein-Ligand-Complex-MD-Setup-tutorial	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Amber-Protein-MD-Setup-tutorial	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-based-ChIP-Seq-workflow	ChIP-Seq_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-based-(multi-sample)-workflow-for-germline-variant-calling	gatk_multi-sample_bqsr_vqsr	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-based-RNA-Seq-workflow	RNA-Seq_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-based-(single-sample)-workflow-for-germline-variant-calling	gatk_single-sample_bqsr_cnn_hard-filtering	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-GMX-Automatic-Ligand-Parameterization-tutorial	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Molecular-Structure-Checking	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Protein-conformational-ensembles-generation	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Protein-Ligand-Complex-MD-Setup-tutorial	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Protein-ligand-Docking-tutorial-(Fpocket)	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Protein-MD-Setup-tutorial	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Protein-MD-Setup-tutorial-with-mutations	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-CWL-Protein-MD-Setup-tutorial-with-mutations	workflow_gather	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (ExpressionTool) package, not a single command-line tool
+cwl-CWL-Protein-MD-Setup-tutorial-with-mutations	workflow_list	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-entryTitleTest	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-Example-of-setting-up-a-simulation-system	1_md_list	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (?) package, not a single command-line tool
+cwl-Example-of-setting-up-a-simulation-system	md_list	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-exome-alignment	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-Gravitational-Wave-source-Cone-Search	conesearch	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-NMR-pipe	nmrpipe_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-Prostate-cancer-classification-workflow	classify_tumor	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-Prostate-cancer-classification-workflow	extract_tissue	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-Prostate-cancer-classification-workflow	pca_classification_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-Protein-ligand-docking-(fpocket)	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-Protein-MD-Setup-tutorial-using-BioExcel-Building-Blocks-(biobb)-in-CWL	protein_md	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-seurat-scRNA-seq	steps	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-SPARQL-query-(in-a-file)-on-graph-database	sparql-query	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-Tango-Numerical-reconciliation-of-bacterial-fermentation-in-cheese-production	packed	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (?) package, not a single command-line tool
+cwltest	cwltest	PASS	
+cwl-testEntryTitleNew	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-Tissue-segmentation-workflow	extract_tissue	Not completed	pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool
+cwl-Tissue-segmentation-workflow	tissue_segmentation_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwltool	cwltool	PASS	
+cwl-Use-Case-13-Novel-Cell-Surface-Targets-for-Individual-Cancer-Patients-Analyzed-with-Common-Fund-Datasets	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-VariantCaller_GATK3.6	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-WRF-EMEP-Linear-Workflow	wrf_emep_full_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cyntenator	cyntenator	PASS	
+cyrcular	cyrcular_plot	PASS	
+cytocad	cytocad	Not completed	Runs end to end on a small real nanopore BAM (180 chr22 reads), but such sparse data gives meaningless calls; a genome-wide low-depth WGS BAM is needed to confirm the CNV output.
+cytoscape	cytoscape_cytoscape.sh	Failed	image problem: cytoscape.sh does not start (Java error: Module javafx.web not found); Cytoscape is also a GUI desktop app with no headless batch mode.
+cyvcf	cyvcf_cyvcf2	Failed	image problem: the cyvcf2 0.8.0 command crashes at start (click needs the missing 'locale' program and a UTF-8 locale); CWL rewritten to the real 0.8 options.
+cyvcf2	cyvcf2	Failed	tool bug: --include drops the #CHROM header line, so the output is not a valid VCF; --exclude and region queries give correct output

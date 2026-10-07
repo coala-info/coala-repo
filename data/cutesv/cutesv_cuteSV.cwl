@@ -9,6 +9,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Sorted .bam file from NGMLR or Minimap2.
     inputBinding:
       position: 1
@@ -19,11 +22,18 @@ inputs:
     doc: The reference genome in fasta format.
     inputBinding:
       position: 2
-  - id: work_dir
-    type: Directory
-    doc: Work-directory for distributed jobs
+  - id: output
+    type: string
+    doc: Output VCF format file.
     inputBinding:
       position: 3
+  - id: work_dir
+    type: string
+    doc: Work-directory for distributed jobs (created empty in the working 
+      directory)
+    default: cutesv_work
+    inputBinding:
+      position: 4
   - id: batches
     type:
       - 'null'
@@ -281,7 +291,20 @@ outputs:
     type: File
     doc: Output VCF format file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
+  - id: work_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Work directory (kept with --retain_work_dir)
+    outputBinding:
+      glob: $(inputs.work_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.work_dir, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cutesv:2.1.3--pyhdfd78af_0

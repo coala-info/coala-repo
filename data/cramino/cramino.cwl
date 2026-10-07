@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cramino
+baseCommand:
+  - cramino
 label: cramino
 doc: "Tool to extract QC metrics from cram or bam\n\nTool homepage: https://github.com/wdecoster/cramino"
 inputs:
@@ -101,7 +102,8 @@ inputs:
     doc: If histograms have to be generated (optionally specify output file)
     inputBinding:
       position: 104
-      prefix: --hist
+      prefix: --hist=
+      separate: false
   - id: hist_count_path
     type:
       - 'null'
@@ -110,8 +112,12 @@ inputs:
       file)
     inputBinding:
       position: 105
-      prefix: --hist-count
+      prefix: --hist-count=
+      separate: false
 outputs:
+  - id: metrics
+    type: stdout
+    doc: QC metrics report (text, json or tsv)
   - id: hist
     type:
       - 'null'
@@ -139,3 +145,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramino:1.3.0--h3dc2dae_0
+stdout: cramino_metrics.txt

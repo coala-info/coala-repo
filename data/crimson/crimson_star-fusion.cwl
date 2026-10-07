@@ -13,12 +13,9 @@ inputs:
       position: 1
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output file
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Converted output in JSON format
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crimson:1.1.1--pyh7cba7a3_0
+stdout: crimson_star-fusion.json

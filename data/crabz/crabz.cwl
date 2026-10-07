@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crabz
+baseCommand:
+  - crabz
 label: crabz
 doc: "A cross-platform multi-threaded compressor and decompressor.\n\nTool homepage:
   https://github.com/sstadick/crabz"
@@ -25,7 +26,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Compression format (e.g., gzip, zlib, raw, xz, lzma, bzip2, zstd)
+    doc: 'The format to use [default: gzip] (gzip, bgzf, mgzip, zlib, deflate, snap)'
     inputBinding:
       position: 102
       prefix: --format
@@ -33,30 +34,45 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Compression level
+    doc: 'Compression level [default: 6]'
     inputBinding:
       position: 102
-      prefix: --level
+      prefix: --compression-level
   - id: threads
     type:
       - 'null'
       - int
-    doc: 'Number of threads to use [default: number of logical CPUs]'
+    doc: Number of compression threads to use, or the number of decompression 
+      threads for formats that allow multi-threaded decompression
     inputBinding:
       position: 102
-      prefix: --threads
+      prefix: --compression-threads
+  - id: pin_at
+    type:
+      - 'null'
+      - int
+    doc: Specify the physical core to pin threads at
+    inputBinding:
+      position: 102
+      prefix: --pin-at
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Suppress non-error messages
+    inputBinding:
+      position: 102
+      prefix: --quiet
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output path to write to
     inputBinding:
       position: 103
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output file name. If not provided, writes to stdout.
+    type: File
+    doc: Compressed or decompressed output file
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

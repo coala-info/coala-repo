@@ -1,5 +1,12 @@
 # crussmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crussmap_bed | Failed | tool bug: regions lifted to a minus-strand chain block get a start shifted by the block length (chr10:15069751 instead of 15069810 in the CrossMap Galaxy test); plus-strand regions match. |
+| crussmap_view | PASS |  |
+
 ## crussmap_view
 
 ### Tool Description

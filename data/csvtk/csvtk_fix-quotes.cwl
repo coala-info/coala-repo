@@ -7,6 +7,14 @@ label: csvtk_fix-quotes
 doc: "fix malformed CSV/TSV caused by double-quotes to meet the RFC4180 specification\n\
   \ \nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: buffer_size
     type:
       - 'null'

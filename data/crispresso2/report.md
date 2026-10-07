@@ -1,5 +1,11 @@
 # crispresso2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crispresso2_CRISPRessoAggregate | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

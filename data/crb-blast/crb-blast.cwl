@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crb-blast
+baseCommand:
+  - crb-blast
 label: crb-blast
 doc: "Conditional Reciprocal Best BLAST\n\nTool homepage: https://github.com/cboursnell/crb-blast"
 inputs:

@@ -16,6 +16,8 @@ inputs:
       prefix: --file-size
   - id: input
     type: File
+    secondaryFiles:
+      - .bai
     doc: The input BAM file to split
     inputBinding:
       position: 101
@@ -58,9 +60,11 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output
+    doc: Sorted and indexed BAM chunks written with the prefix given in output
     outputBinding:
-      glob: $(inputs.output)*
+      glob: $(inputs.output).sorted.*.bam
+    secondaryFiles:
+      - .bai
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0

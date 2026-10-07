@@ -5,7 +5,7 @@ baseCommand:
   - bullseye
 label: crux_bullseye
 doc: "Bullseye will search for PPIDs in these spectra. Bullseye will assign high-resolution
-  precursor masses to these spectra.\n\nTool homepage: https://github.com/redbadger/crux"
+  precursor masses to these spectra.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: ms1_spectra
     type: File
@@ -53,6 +53,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --exact-match
+      valueFrom: '$(self ? "T" : "F")'
   - id: exact_tolerance
     type:
       - 'null'
@@ -104,6 +105,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -171,7 +173,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

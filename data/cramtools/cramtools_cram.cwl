@@ -119,6 +119,8 @@ inputs:
       - File
     doc: The reference fasta file, uncompressed and indexed (.fai file, use 
       'samtools faidx').
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --reference-fasta-file

@@ -86,7 +86,9 @@ inputs:
       position: 101
       prefix: --fastp_options_string
   - id: keep_intermediate_files
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: Keep intermediate files for debug purposes
     inputBinding:
       position: 101

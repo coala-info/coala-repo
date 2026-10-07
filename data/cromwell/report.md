@@ -1,5 +1,11 @@
 # cromwell CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cromwell_server | Not completed | pipeline, skipped: this CWL runs a whole workflow or a web server with the Cromwell engine, and Cromwell 40 has no other utility commands. |
+
 ## cromwell_server
 
 ### Tool Description

@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - cvbio
-  - FetchEnsemblGtf
+arguments:
+  - position: 2
+    valueFrom: FetchEnsemblGtf
 label: cvbio_FetchEnsemblGtf
 doc: "Fetch a GTF file from the Ensembl web server.\n\nTool homepage: https://github.com/clintval/cvbio"
 inputs:
@@ -12,7 +14,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: build
     type:
@@ -28,7 +30,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: log_level
     type:
@@ -37,7 +39,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: release
     type:
@@ -53,7 +55,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: species
     type:
@@ -69,7 +71,7 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
   - id: output_path
     type: string
@@ -84,6 +86,8 @@ outputs:
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

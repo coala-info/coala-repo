@@ -6,24 +6,34 @@ baseCommand:
 label: csvtk_pretty
 doc: "convert CSV to a readable aligned table\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: align_center
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --align-center
     doc: align right for selected columns (field index/range or column name)
     inputBinding:
       position: 101
-      prefix: --align-center
   - id: align_right
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --align-right
     doc: align right for selected columns (field index/range or column name)
     inputBinding:
       position: 101
-      prefix: --align-right
   - id: buf_rows
     type:
       - 'null'

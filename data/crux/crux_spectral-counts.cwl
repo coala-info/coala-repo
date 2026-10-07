@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - spectral-counts
 label: crux_spectral-counts
-doc: "Calculate spectral counts for PSMs.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Calculate spectral counts for PSMs.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: input_psms
     type: File
@@ -23,6 +23,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --custom-threshold-min
+      valueFrom: '$(self ? "T" : "F")'
   - id: custom_threshold_name
     type:
       - 'null'
@@ -45,7 +46,7 @@ inputs:
   - id: input_ms2
     type:
       - 'null'
-      - string
+      - File
     doc: MS2 file corresponding to the psm file. Required to measure the SIN. 
       Ignored for NSAF, dNSAF and EMPAI.
     inputBinding:
@@ -69,6 +70,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --mzid-use-pass-threshold
+      valueFrom: '$(self ? "T" : "F")'
   - id: output_dir
     type:
       - 'null'
@@ -86,10 +88,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 102
@@ -164,6 +167,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unique-mapping
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -185,7 +189,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

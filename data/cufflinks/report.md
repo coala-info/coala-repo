@@ -1,5 +1,11 @@
 # cufflinks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cufflinks | PASS | Quantified the nf-core chr22 RNA-seq BAM against the chr22 GTF; genes with reads get non-zero FPKM. |
+
 ## cufflinks
 
 ### Tool Description

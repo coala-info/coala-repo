@@ -84,10 +84,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --Inputs
+  - id: listed_input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input files named in the --Inputs and --Profile list files; staged in 
+      the working directory so their names resolve.
   - id: matrix
     type: File
     doc: Path to the matrix database (requires <file>.index). If not provided, 
       the tool runs in dry-run mode to only estimate NGS read depth.
+    secondaryFiles:
+      - .index
+      - pattern: .bgd
+        required: false
     inputBinding:
       position: 101
       prefix: --matrix
@@ -130,11 +141,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -r
     doc: Add a specific region for analysis (chr:start-end) or special keys 
       ('gene', 'Unmap', 'HLA').
     inputBinding:
       position: 101
-      prefix: -r
   - id: subthreads
     type:
       - 'null'
@@ -159,14 +171,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
-  - id: outputs_list_path
+  - id: outputs_list_file
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `outputs_list_path`
+      - File
+    doc: Path to a file listing output files corresponding to each input file 
+      (relative names are written to the output directory).
+    loadContents: true
     inputBinding:
       position: 103
-      prefix: --outputs-list
+      prefix: --Outputs
   - id: output_path
     type:
       - 'null'
@@ -183,15 +197,23 @@ outputs:
     doc: 'Output file (append if file exits, default: stdout)'
     outputBinding:
       glob: $(inputs.output_path)
-  - id: outputs_list
-    type:
-      - 'null'
-      - File
-    doc: Path to a file listing output files corresponding to each input file.
+  - id: listed_outputs
+    type: File[]
+    doc: Output files named in the --Outputs list file.
     outputBinding:
-      glob: $(inputs.outputs_list_path)
+      glob: |-
+        ${
+          if (!inputs.outputs_list_file) return [];
+          return inputs.outputs_list_file.contents.split("\n")
+            .map(function(x) { return x.trim(); })
+            .filter(function(x) { return x.length > 0; })
+            .map(function(x) { return x.split("/").pop(); });
+        }
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.listed_input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctyper:1.0.5--h5ca1c30_0

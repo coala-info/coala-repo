@@ -25,11 +25,19 @@ inputs:
   - id: bowtie2_index
     type:
       - 'null'
-      - string
-    doc: Basename of Bowtie2 index for the reference genome
+      - File
+    doc: Bowtie2 index for the reference genome; give the <basename>.1.bt2 file,
+      the other index files are staged beside it and the basename is passed
+    secondaryFiles:
+      - $(self.basename.replace(/\.1\.bt2$/, '.2.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.3.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.4.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.rev.1.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.rev.2.bt2'))
     inputBinding:
       position: 101
       prefix: --bowtie2_index
+      valueFrom: $(self.path.replace(/\.1\.bt2$/, ''))
   - id: bowtie2_options_string
     type:
       - 'null'

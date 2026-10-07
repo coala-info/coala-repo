@@ -1,5 +1,11 @@
 # ctyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ctyper | Not completed | The repo's CYP2D and SMN test matrices run but give an empty genotype with this ctyper build (matrix version warning), and the matching 2.2 GB database is too large; fixed -O, -r, list-file staging and the .index secondary file. |
+
 ## ctyper
 
 ### Tool Description

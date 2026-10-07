@@ -6,6 +6,14 @@ baseCommand:
 label: csvtk_add-header
 doc: "add column names\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'
@@ -71,10 +79,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --names
     doc: column names to add, in CSV format
     inputBinding:
       position: 101
-      prefix: --names
   - id: no_header_row
     type:
       - 'null'

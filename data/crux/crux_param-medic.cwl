@@ -5,7 +5,7 @@ baseCommand:
   - param-medic
 label: crux_param-medic
 doc: "Parse fragmentation spectra to estimate measurement error.\n\nTool homepage:
-  https://github.com/redbadger/crux"
+  https://crux.ms"
 inputs:
   - id: spectrum_file
     type:
@@ -146,6 +146,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

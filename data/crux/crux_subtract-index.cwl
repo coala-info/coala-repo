@@ -5,18 +5,24 @@ baseCommand:
   - subtract-index
 label: crux_subtract-index
 doc: "A new peptide index containing all peptides that occur in the first index but
-  not the second.\n\nTool homepage: https://github.com/redbadger/crux"
+  not the second.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: tide_index_1
-    type: File
+    type: Directory
     doc: A peptide index produced using tide-index
     inputBinding:
       position: 1
   - id: tide_index_2
-    type: File
+    type: Directory
     doc: A second peptide index, to be subtracted from the first index.
     inputBinding:
       position: 2
+  - id: output_index_name
+    type: string
+    doc: A new peptide index containing all peptides that occur in the first 
+      index but not the second.
+    inputBinding:
+      position: 3
   - id: mass_precision
     type:
       - 'null'
@@ -42,10 +48,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 103
@@ -62,6 +69,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --peptide-list
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -75,18 +83,20 @@ inputs:
       prefix: --verbosity
 outputs:
   - id: output_index
-    type: File
+    type: Directory
     doc: A new peptide index containing all peptides that occur in the first 
       index but not the second.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_index_name)
   - id: output_dir_dir
     type:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -7,6 +7,14 @@ label: csvtk_join
 doc: "join files by selected fields (inner, left and outer join).\n\nTool homepage:
   https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'
@@ -212,10 +220,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --suffix
     doc: add suffixes to colnames from each file
     inputBinding:
       position: 101
-      prefix: --suffix
   - id: tabs
     type:
       - 'null'

@@ -7,6 +7,14 @@ label: csvtk_csv2md
 doc: "convert CSV to markdown format. csv2md treats the first row as header line and
   requires them to be unique\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: alignments
     type:
       - 'null'

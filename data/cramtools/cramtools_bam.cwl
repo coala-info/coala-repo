@@ -96,7 +96,10 @@ inputs:
       - 'null'
       - File
     doc: The path or FTP URL to the CRAM file to uncompress. Omit if standard 
-      input (pipe).
+      input (pipe). A .crai index beside it is needed to access a region.
+    secondaryFiles:
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 102
       prefix: --input-cram-file
@@ -138,6 +141,8 @@ inputs:
       - File
     doc: Path to the reference fasta file, it must be uncompressed and indexed 
       (use 'samtools faidx' for example).
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference-fasta-file

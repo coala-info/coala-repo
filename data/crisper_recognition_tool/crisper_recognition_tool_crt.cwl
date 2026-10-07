@@ -1,182 +1,97 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java
+baseCommand:
+  - crt
+  - crt
 label: crisper_recognition_tool_crt
-doc: "Java Virtual Machine launcher used to run the CRISPR Recognition Tool (CRT).\n
-  \nTool homepage: http://www.room220.com/crt/"
+doc: "CRISPR Recognition Tool (CRT): finds CRISPR repeat arrays in a FASTA genome
+  sequence. The bioconda wrapper `crt` runs `java -cp CRT1.2-CLI.jar`, so the
+  class name `crt` is the first argument.\n\nTool homepage: http://www.room220.com/crt/"
 inputs:
-  - id: class_name
+  - id: min_nr
     type:
       - 'null'
-      - string
-    doc: The class to execute (if -jar is not used)
+      - int
+    doc: minimum number of repeats a CRISPR must contain; default 3
     inputBinding:
       position: 1
-  - id: app_args
+      prefix: -minNR
+  - id: min_rl
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Arguments passed to the application
+      - int
+    doc: minimum length of a CRISPR's repeated region; default 19
+    inputBinding:
+      position: 1
+      prefix: -minRL
+  - id: max_rl
+    type:
+      - 'null'
+      - int
+    doc: maximum length of a CRISPR's repeated region; default 38
+    inputBinding:
+      position: 1
+      prefix: -maxRL
+  - id: min_sl
+    type:
+      - 'null'
+      - int
+    doc: minimum length of a CRISPR's non-repeated region (or spacer region); 
+      default 19
+    inputBinding:
+      position: 1
+      prefix: -minSL
+  - id: max_sl
+    type:
+      - 'null'
+      - int
+    doc: maximum length of a CRISPR's non-repeated region (or spacer region); 
+      default 48
+    inputBinding:
+      position: 1
+      prefix: -maxSL
+  - id: screen
+    type:
+      - 'null'
+      - int
+    doc: print results to the screen, instead of a file; (range 0-1); default 0
+    inputBinding:
+      position: 1
+      prefix: -screen
+  - id: search_wl
+    type:
+      - 'null'
+      - int
+    doc: length of search window used to discover CRISPRs; (range 6-9); default 
+      8
+    inputBinding:
+      position: 1
+      prefix: -searchWL
+  - id: input_file
+    type: File
+    doc: Input genome sequence in FASTA format
     inputBinding:
       position: 2
-  - id: agent_lib
+  - id: output_file
     type:
       - 'null'
       - string
-    doc: load native agent library <libname>
+    doc: Output report file; default a.out
     inputBinding:
-      position: 103
-      prefix: '-agentlib:'
-  - id: agent_path
-    type:
-      - 'null'
-      - string
-    doc: load native agent library by full pathname
-    inputBinding:
-      position: 103
-      prefix: '-agentpath:'
-  - id: classpath
-    type:
-      - 'null'
-      - string
-    doc: 'A : separated list of directories, JAR archives, and ZIP archives to search
-      for class files.'
-    inputBinding:
-      position: 103
-      prefix: -classpath
-  - id: disable_assertions
-    type:
-      - 'null'
-      - string
-    doc: disable assertions with specified granularity
-    inputBinding:
-      position: 103
-      prefix: -disableassertions
-  - id: disable_system_assertions
-    type:
-      - 'null'
-      - boolean
-    doc: disable system assertions
-    inputBinding:
-      position: 103
-      prefix: -disablesystemassertions
-  - id: enable_assertions
-    type:
-      - 'null'
-      - string
-    doc: enable assertions with specified granularity
-    inputBinding:
-      position: 103
-      prefix: -enableassertions
-  - id: enable_system_assertions
-    type:
-      - 'null'
-      - boolean
-    doc: enable system assertions
-    inputBinding:
-      position: 103
-      prefix: -enablesystemassertions
-  - id: jar_file
-    type:
-      - 'null'
-      - File
-    doc: execute a jar file
-    inputBinding:
-      position: 103
-      prefix: -jar
-  - id: java_agent
-    type:
-      - 'null'
-      - File
-    doc: load Java programming language agent
-    inputBinding:
-      position: 103
-      prefix: '-javaagent:'
-  - id: jre_restrict_search
-    type:
-      - 'null'
-      - boolean
-    doc: include user private JREs in the version search
-    inputBinding:
-      position: 103
-      prefix: -jre-restrict-search
-  - id: no_jre_restrict_search
-    type:
-      - 'null'
-      - boolean
-    doc: exclude user private JREs in the version search
-    inputBinding:
-      position: 103
-      prefix: -no-jre-restrict-search
-  - id: non_standard_options
-    type:
-      - 'null'
-      - boolean
-    doc: print help on non-standard options
-    inputBinding:
-      position: 103
-      prefix: -X
-  - id: server
-    type:
-      - 'null'
-      - boolean
-    doc: to select the "server" VM
-    inputBinding:
-      position: 103
-      prefix: -server
-  - id: show_version
-    type:
-      - 'null'
-      - boolean
-    doc: print product version and continue
-    inputBinding:
-      position: 103
-      prefix: -showversion
-  - id: splash_image
-    type:
-      - 'null'
-      - File
-    doc: show splash screen with specified image
-    inputBinding:
-      position: 103
-      prefix: '-splash:'
-  - id: system_property
-    type:
-      - 'null'
-      - string
-    doc: set a system property (e.g., -D<name>=<value>)
-    inputBinding:
-      position: 103
-      prefix: -D
-  - id: use_32bit
-    type:
-      - 'null'
-      - boolean
-    doc: use a 32-bit data model if available
-    inputBinding:
-      position: 103
-      prefix: -d32
-  - id: use_64bit
-    type:
-      - 'null'
-      - boolean
-    doc: use a 64-bit data model if available
-    inputBinding:
-      position: 103
-      prefix: -d64
-  - id: verbose
-    type:
-      - 'null'
-      - string
-    doc: enable verbose output (class|gc|jni)
-    inputBinding:
-      position: 103
-      prefix: '-verbose:'
+      position: 3
 outputs:
+  - id: crispr_report
+    type:
+      - 'null'
+      - File
+    doc: CRISPR arrays found (repeats and spacers per array)
+    outputBinding:
+      glob: '$(inputs.output_file ? inputs.output_file : "a.out")'
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (the report when -screen 1 is set)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crisper_recognition_tool:1.2--py35_0

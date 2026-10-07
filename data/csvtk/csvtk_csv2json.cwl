@@ -6,6 +6,14 @@ baseCommand:
 label: csvtk_csv2json
 doc: "convert CSV to JSON format\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: blanks
     type:
       - 'null'
@@ -128,11 +136,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --parse-num
     doc: parse numeric values for nth column, multiple values are supported and 
       "a"/"all" for all columns
     inputBinding:
       position: 101
-      prefix: --parse-num
   - id: quiet
     type:
       - 'null'

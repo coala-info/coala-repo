@@ -1,5 +1,11 @@
 # craq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| craq | PASS |  |
+
 ## craq
 
 ### Tool Description

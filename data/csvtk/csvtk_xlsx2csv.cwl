@@ -6,6 +6,11 @@ baseCommand:
 label: csvtk_xlsx2csv
 doc: "convert XLSX to CSV format\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_file
+    type: File
+    doc: Input XLSX file
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'

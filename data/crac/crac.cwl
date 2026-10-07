@@ -1,9 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crac
+baseCommand:
+  - crac
 label: crac
 doc: "CRAC: a tool for analyzing RNA-seq data, detecting and classifying biological
-  events (splice, snv, indel, chimera)\n\nTool homepage: https://github.com/brannondorsey/wifi-cracking"
+  events (splice, snv, indel, chimera)\n\nTool homepage: http://crac.gforge.inria.fr/"
 inputs:
   - id: bam
     type:
@@ -15,10 +16,14 @@ inputs:
       prefix: --bam
   - id: genome_index
     type: File
-    doc: set genome index file (without the extension filename)
+    doc: set genome index file; give the .ssa file made by crac-index, with its
+      .conf file beside it (passed without the extension)
+    secondaryFiles:
+      - ^.conf
     inputBinding:
       position: 101
       prefix: -i
+      valueFrom: $(self.path.replace(/\.ssa$/, ''))
   - id: kmer_length
     type: int
     doc: set k-mer length
@@ -53,12 +58,11 @@ inputs:
   - id: orientation
     type:
       - 'null'
-      - boolean
-    doc: 'set the mates alignement orientation (DEFAULT --fr). Note: also supports
-      --rf or --ff'
+      - string
+    doc: set the mates alignement orientation, one of fr, rf, ff (DEFAULT fr)
     inputBinding:
       position: 101
-      prefix: --fr
+      valueFrom: $('--' + self)
   - id: read_files
     type:
       type: array
@@ -95,10 +99,8 @@ inputs:
       position: 101
       prefix: --treat-multiple
   - id: output_sam_path
-    type:
-      - 'null'
-      - string
-    doc: set SAM output filename or print on STDOUT with "-o -" argument
+    type: string
+    doc: set SAM output filename
     inputBinding:
       position: 102
       prefix: --sam

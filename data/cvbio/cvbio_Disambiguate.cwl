@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - cvbio
-  - Disambiguate
+arguments:
+  - position: 2
+    valueFrom: Disambiguate
 label: cvbio_Disambiguate
 doc: "Disambiguate reads that were mapped to multiple references.\n\nTool homepage:
   https://github.com/clintval/cvbio"
@@ -13,7 +15,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: compression
     type:
@@ -21,7 +23,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: input
     type:
@@ -38,7 +40,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: prefix
     type: string
@@ -62,7 +64,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: strategy
     type:
@@ -78,7 +80,7 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
 outputs:
   - id: stdout
@@ -91,6 +93,22 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+  - id: ambiguous_alignments
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the input-specific BAMs of ambiguously assigned templates
+    outputBinding:
+      glob: |-
+        ${
+          var p = inputs.prefix;
+          var i = p.lastIndexOf('/');
+          return (i < 0 ? '' : p.substring(0, i + 1)) + 'ambiguous-alignments';
+        }
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cvbio:3.0.0--0

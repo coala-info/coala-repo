@@ -6,6 +6,14 @@ baseCommand:
 label: csvtk_dim
 doc: "dimensions of CSV file\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: cols
     type:
       - 'null'

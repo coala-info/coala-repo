@@ -1,5 +1,11 @@
 # ctat-mutations CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ctat-mutations | Not completed | Pipeline (STAR, GATK, CRAVAT) that needs a multi-GB CTAT genome library, skipped; fixed --out_dir and removed invented flags. |
+
 ## ctat-mutations
 
 ### Tool Description

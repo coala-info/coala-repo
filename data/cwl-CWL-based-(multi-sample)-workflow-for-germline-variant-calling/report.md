@@ -1,5 +1,11 @@
 # CWL-based (multi-sample) workflow for germline variant calling CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gatk_multi-sample_bqsr_vqsr | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://biodataanalysisgroup.github.io/

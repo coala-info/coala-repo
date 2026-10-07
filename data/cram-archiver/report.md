@@ -1,5 +1,11 @@
 # cram-archiver CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cram-archiver | PASS |  |
+
 ## cram-archiver
 
 ### Tool Description

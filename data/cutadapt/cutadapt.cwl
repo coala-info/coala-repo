@@ -576,6 +576,9 @@ inputs:
       position: 119
       prefix: --rest-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Summary report, or the trimmed reads when no --output is given
   - id: json
     type:
       - 'null'
@@ -681,3 +684,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cutadapt:5.2--py311haab0aaa_0
+stdout: cutadapt.out

@@ -1,5 +1,18 @@
 # cramtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cramtools_bam | PASS |  |
+| cramtools_cram | Failed | tool bug: -Q/--lossless-quality-score has no effect and the CRAM keeps no quality scores; conversion with --lossy-quality-score-spec '*40' works |
+| cramtools_fastq | PASS |  |
+| cramtools_fixheader | PASS |  |
+| cramtools_getref | Failed | tool bug: getref asks the ENA service over http, does not follow the redirect to https, and writes a FASTA header with no sequence while exiting 0. |
+| cramtools_index | PASS |  |
+| cramtools_merge | PASS |  |
+| cramtools_qstat | PASS |  |
+
 ## cramtools_bam
 
 ### Tool Description

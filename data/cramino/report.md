@@ -1,5 +1,11 @@
 # cramino CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cramino | PASS |  |
+
 ## cramino
 
 ### Tool Description

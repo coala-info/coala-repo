@@ -1,5 +1,12 @@
 # cryfa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cryfa | PASS |  |
+| cryfa_keygen | PASS |  |
+
 ## cryfa
 
 ### Tool Description
@@ -18,13 +25,6 @@ A secure encryption tool for genomic data. Compacts and encrypts FASTA/FASTQ fil
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
 [1mNAME[0m
       Cryfa - a secure encryption tool for genomic data 
 
@@ -95,8 +95,6 @@ A utility to generate a key for Cryfa encryption by providing a password and an 
 - **Validation**: PASS
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 Enter a password, then press 'Enter':
 Enter a file name to save the generated key, then press 'Enter':
 ```

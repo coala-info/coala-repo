@@ -5,7 +5,7 @@ baseCommand:
   - tide-search
 label: crux_tide-search
 doc: "Search for peptides in mass spectrometry data using the Tide algorithm.\n\n\
-  Tool homepage: https://github.com/redbadger/crux"
+  Tool homepage: https://crux.ms"
 inputs:
   - id: tide_spectra_files
     type:
@@ -19,7 +19,9 @@ inputs:
     inputBinding:
       position: 1
   - id: tide_database
-    type: File
+    type:
+      - File
+      - Directory
     doc: Either a FASTA file or a directory containing a database index created 
       by a previous run of crux tide-index.
     inputBinding:
@@ -61,6 +63,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --compute-sp
+      valueFrom: '$(self ? "T" : "F")'
   - id: concat
     type:
       - 'null'
@@ -73,6 +76,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --concat
+      valueFrom: '$(self ? "T" : "F")'
   - id: deisotope
     type:
       - 'null'
@@ -115,6 +119,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --exact-p-value
+      valueFrom: '$(self ? "T" : "F")'
   - id: file_column
     type:
       - 'null'
@@ -123,6 +128,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --file-column
+      valueFrom: '$(self ? "T" : "F")'
   - id: fileroot
     type:
       - 'null'
@@ -213,6 +219,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --mzid-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: num_threads
     type:
       - 'null'
@@ -238,6 +245,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -259,6 +267,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --peptide-centric-search
+      valueFrom: '$(self ? "T" : "F")'
   - id: pepxml_output
     type:
       - 'null'
@@ -267,6 +276,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --pepxml-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: pin_output
     type:
       - 'null'
@@ -275,6 +285,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --pin-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: pm_charge
     type:
       - 'null'
@@ -442,6 +453,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --remove-precursor-peak
+      valueFrom: '$(self ? "T" : "F")'
   - id: remove_precursor_tolerance
     type:
       - 'null'
@@ -479,6 +491,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --skip-preprocessing
+      valueFrom: '$(self ? "T" : "F")'
   - id: spectrum_charge
     type:
       - 'null'
@@ -524,6 +537,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sqt-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: store_index
     type:
       - 'null'
@@ -563,6 +577,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --txt-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_flanking_peaks
     type:
       - 'null'
@@ -573,6 +588,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-flanking-peaks
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_neutral_loss_peaks
     type:
       - 'null'
@@ -584,6 +600,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-neutral-loss-peaks
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_z_line
     type:
       - 'null'
@@ -593,6 +610,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-z-line
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -614,7 +632,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -7,6 +7,9 @@ inputs:
   - id: bam_file
     type: File
     doc: WGS aligned bam file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam_file
@@ -185,6 +188,9 @@ inputs:
       - File
     doc: A FASTA format reference file (for example hg19.fa for the human 
       genome)
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --reference_file

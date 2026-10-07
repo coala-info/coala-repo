@@ -12,14 +12,6 @@ inputs:
     doc: The ID of the Cromwell workflow to analyze.
     inputBinding:
       position: 1
-  - id: options
-    type:
-      - 'null'
-      - boolean
-    doc: Display additional options for timing analysis.
-    inputBinding:
-      position: 102
-      prefix: --options
 outputs:
   - id: stdout
     type: stdout

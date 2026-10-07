@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - extract-rows
 label: crux_extract-rows
-doc: "Extract rows from a TSV file based on a column value.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Extract rows from a TSV file based on a column value.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: tsv_file
     type: File
@@ -59,6 +59,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --header
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -74,6 +75,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

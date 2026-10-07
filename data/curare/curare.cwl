@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: curare.py
+baseCommand: curare
 label: curare
 doc: "Customizable and Reproducible Analysis Pipeline for RNA-Seq Experiments (Curare).\n\
   \nTool homepage: https://github.com/pblumenkamp/Curare"

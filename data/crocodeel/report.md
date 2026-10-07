@@ -1,5 +1,15 @@
 # crocodeel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crocodeel_easy_wf | PASS |  |
+| crocodeel_plot_conta | PASS |  |
+| crocodeel_search_conta | PASS |  |
+| crocodeel_test_install | PASS | Built-in self-test; added stderr output to collect its log. |
+| crocodeel_train_model | PASS | Training table built by relabelling the tool's test profiles into 7 contaminated and 7 non-contaminated pairs. |
+
 ## crocodeel_easy_wf
 
 ### Tool Description

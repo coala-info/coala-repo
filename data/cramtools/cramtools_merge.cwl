@@ -27,6 +27,8 @@ inputs:
       - File
     doc: Path to the reference fasta file, it must be uncompressed and indexed 
       (use 'samtools faidx' for example).
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference-fasta-file
@@ -75,6 +77,10 @@ outputs:
     doc: Path to the output BAM file. Omit for stdout.
     outputBinding:
       glob: $(inputs.output_file_path)
+arguments:
+  - position: 0
+    valueFrom: "$(inputs.reference_fasta_file ? '-Dsamjdk.reference_fasta=' + inputs.reference_fasta_file.path
+      : null)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

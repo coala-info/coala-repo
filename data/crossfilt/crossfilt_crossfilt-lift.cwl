@@ -21,6 +21,8 @@ inputs:
       prefix: --chain
   - id: input
     type: File
+    secondaryFiles:
+      - .bai
     doc: The input BAM file to convert
     inputBinding:
       position: 101
@@ -41,21 +43,34 @@ inputs:
       prefix: --paired
   - id: query_fasta
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
+      - pattern: .gzi
+        required: false
     doc: The genomic sequence of the query (the species we are converting to)
     inputBinding:
       position: 101
       prefix: --query-fasta
   - id: target_fasta
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
+      - pattern: .gzi
+        required: false
     doc: The genomic sequence of the target (the species we are converting from)
     inputBinding:
       position: 101
       prefix: --target-fasta
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: lifted_bam
+    type: File
+    doc: Sorted and indexed BAM file with coordinates in the query genome
+    outputBinding:
+      glob: $(inputs.output).bam
+    secondaryFiles:
+      - .bai
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0
-stdout: crossfilt_crossfilt-lift.out

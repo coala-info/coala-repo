@@ -1,5 +1,11 @@
 # crass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crass | PASS |  |
+
 ## crass
 
 ### Tool Description

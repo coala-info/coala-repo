@@ -8,7 +8,7 @@ doc: "Converts STAR Log.final.out file.\n\nTool homepage: https://github.com/bow
 inputs:
   - id: input
     type: File
-    doc: Input STAR Log.final.out file. Use "-" for stdin.
+    doc: Input STAR Log.final.out file.
     inputBinding:
       position: 1
   - id: input_linesep
@@ -22,12 +22,9 @@ inputs:
       prefix: --input-linesep
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output file. Use "-" for stdout.
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Converted output in JSON format
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crimson:1.1.1--pyh7cba7a3_0
+stdout: crimson_star.json

@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - predict-peptide-ions
 label: crux_predict-peptide-ions
-doc: "Predict theoretical peptide ions.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Predict theoretical peptide ions.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: peptide_sequence
     type: string
@@ -24,6 +24,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --flanking
+      valueFrom: '$(self ? "T" : "F")'
   - id: fragment_mass
     type:
       - 'null'
@@ -81,6 +82,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --precursor-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: primary_ions
     type:
       - 'null'
@@ -95,6 +97,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

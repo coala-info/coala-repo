@@ -1,5 +1,11 @@
 # cuttlefish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cuttlefish_build | PASS |  |
+
 ## cuttlefish_build
 
 ### Tool Description

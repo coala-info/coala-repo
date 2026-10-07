@@ -11,11 +11,12 @@ inputs:
         items: string
     doc: arguments to pass first to tool runner
     inputBinding:
-      position: 1
+      position: 200
+      prefix: --
   - id: badgedir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory that stores JSON files for badges.
     inputBinding:
       position: 102
@@ -122,6 +123,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: --test
+      valueFrom: $(self.basename)
+  - id: test_files
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Tool, job and data files named in the test YAML file, staged beside it
   - id: test_arg_cache_equals_cache_dir
     type:
       - 'null'
@@ -162,6 +172,18 @@ inputs:
       position: 103
       prefix: --junit-xml
 outputs:
+  - id: badges
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with JSON files for badges
+    outputBinding:
+      glob: $(inputs.badgedir)
+  - id: log
+    type: File
+    doc: Test run summary written to stderr
+    outputBinding:
+      glob: cwltest.log
   - id: junit_xml
     type:
       - 'null'
@@ -169,8 +191,16 @@ outputs:
     doc: Path to JUnit xml file
     outputBinding:
       glob: $(inputs.junit_xml_path)
+stderr: cwltest.log
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [inputs.test];
+        if (inputs.test_files) { l = l.concat(inputs.test_files); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cwltest:2.2.20220521103021--pyhdfd78af_0

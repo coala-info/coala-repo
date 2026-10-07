@@ -7,6 +7,14 @@ label: csvtk_fix
 doc: "fix CSV/TSV with different numbers of columns in rows by appending empty cells
   to rows with fewer columns\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: buf_rows
     type:
       - 'null'

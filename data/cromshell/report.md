@@ -1,5 +1,24 @@
 # cromshell CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cromshell_abort | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_alias | Not completed | needs a workflow ID submitted to a running Cromwell server. |
+| cromshell_cost | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_counts | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_list | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_list-outputs | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_logs | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_metadata | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_slim-metadata | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_status | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_submit | Not completed | needs a running Cromwell server (status run fails with: Failed to connect). |
+| cromshell_timing | Not completed | needs a running Cromwell server and opens the timing diagram in a browser. |
+| cromshell_update-server | PASS | Local command; added the written config file as an output. |
+| cromshell_validate | Failed | image problem: miniwdl (Python module WDL) is not installed, so local validation crashes; womtool validation needs a Cromwell server. |
+
 ## cromshell_abort
 
 ### Tool Description

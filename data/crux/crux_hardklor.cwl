@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - hardklor
 label: crux_hardklor
-doc: "Parses high-resolution spectra from a file.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Parses high-resolution spectra from a file.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: spectra
     type: File
@@ -87,6 +87,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --centroided
+      valueFrom: '$(self ? "T" : "F")'
   - id: corr
     type:
       - 'null'
@@ -119,6 +120,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --distribution-area
+      valueFrom: '$(self ? "T" : "F")'
   - id: fileroot
     type:
       - 'null'
@@ -140,7 +142,7 @@ inputs:
   - id: hardklor_data_file
     type:
       - 'null'
-      - string
+      - File
     doc: Specifies an ASCII text file that defines symbols for the periodic 
       table.
     inputBinding:
@@ -160,7 +162,7 @@ inputs:
   - id: isotope_data_file
     type:
       - 'null'
-      - string
+      - File
     doc: Specifies an ASCII text file that can be read to override the natural 
       isotope abundances for all elements.
     inputBinding:
@@ -257,10 +259,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 102
@@ -346,6 +349,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --static-sn
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -367,7 +371,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -1,5 +1,11 @@
 # COVID-19 PubSeq Pangenome Generate CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pangenome-generate | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: http://covid-19.genenetwork.org/

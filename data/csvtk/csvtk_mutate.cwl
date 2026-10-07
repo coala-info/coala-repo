@@ -7,6 +7,14 @@ label: csvtk_mutate
 doc: "create new column from selected fields by regular expression\n\nTool homepage:
   https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: after
     type:
       - 'null'

@@ -7,7 +7,7 @@ inputs:
   - id: settings_file
     type:
       - 'null'
-      - string
+      - File
     doc: Tab-separated settings file
     inputBinding:
       position: 1
@@ -64,10 +64,18 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Bowtie2-indexed genome file.
+    doc: Bowtie2-indexed genome; give the <basename>.1.bt2 file, the other index
+      files are staged beside it and the basename is passed
+    secondaryFiles:
+      - $(self.basename.replace(/\.1\.bt2$/, '.2.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.3.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.4.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.rev.1.bt2'))
+      - $(self.basename.replace(/\.1\.bt2$/, '.rev.2.bt2'))
     inputBinding:
       position: 102
       prefix: --bowtie2_genome
+      valueFrom: $(self.path.replace(/\.1\.bt2$/, ''))
   - id: casoffinder_command
     type:
       - 'null'
@@ -232,6 +240,8 @@ inputs:
       - File
     doc: Genome sequence file for alignment. This should point to a file ending 
       in ".fa", and the accompanying index file (".fai") should exist.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --genome
@@ -323,14 +333,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --n_processes
-  - id: name
-    type:
-      - 'null'
-      - string
-    doc: Output directory file root
-    inputBinding:
-      position: 102
-      prefix: --name
   - id: novel_cut_merge_distance
     type:
       - 'null'
@@ -508,13 +510,31 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: root_dir
+  - id: summary
     type:
       - 'null'
-      - Directory
-    doc: Output directory file root
+      - File
+    doc: Summary of read classifications
     outputBinding:
-      glob: $(inputs.root)
+      glob: '$(inputs.root ? inputs.root : "CRISPRlungo").summary.txt'
+  - id: report
+    type:
+      - 'null'
+      - File
+    doc: HTML report
+    outputBinding:
+      glob: '$(inputs.root ? inputs.root : "CRISPRlungo").html'
+  - id: result_files
+    type:
+      type: array
+      items:
+        - File
+        - Directory
+    doc: All files and folders written with the output root prefix
+    outputBinding:
+      glob: '$(inputs.root ? inputs.root : "CRISPRlungo").*'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crisprlungo:0.1.14--py310h086e186_0

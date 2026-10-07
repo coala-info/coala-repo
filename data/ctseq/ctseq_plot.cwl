@@ -7,9 +7,7 @@ label: ctseq_plot
 doc: "Generate plots from CT-seq data.\n\nTool homepage: https://github.com/ryanhmiller/ctseq"
 inputs:
   - id: directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to directory where you have your plot input files. If no '--dir' 
       is specified, ctseq will look in your current directory.
     inputBinding:
@@ -27,6 +25,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Directory with the plot PDF files added
+    outputBinding:
+      glob: $(inputs.directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctseq:0.0.2--py_0

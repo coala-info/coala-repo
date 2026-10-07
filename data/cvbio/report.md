@@ -1,5 +1,14 @@
 # cvbio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cvbio_Disambiguate | PASS |  |
+| cvbio_FetchEnsemblGtf | Not completed | It can only fetch the full human GTF (about 1.5 GB) from Ensembl FTP; a direct probe streamed valid GTF, but a full run is too large for a minimal test. |
+| cvbio_IgvBoss | Not completed | It drives a running IGV desktop application over a port, so it cannot run as a batch job. |
+| cvbio_UpdateContigNames | PASS |  |
+
 ## cvbio_Disambiguate
 
 ### Tool Description

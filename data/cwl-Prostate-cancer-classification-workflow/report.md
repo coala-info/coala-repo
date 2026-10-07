@@ -1,24 +1,12 @@
 # Prostate cancer classification workflow CWL Workflow Report
 
-### Metadata
-- **Docker Image**: N/A
-- **Homepage**: https://workflowhub.eu/workflows/1329
-- **Package**: https://workflowhub.eu/workflows/1329
-- **Validation**: N/A
+## Real Data Test
 
-- **RO-Crate download**: https://workflowhub.eu/workflows/1329/ro_crate?version=1
-- **Conda**: N/A
-- **Total Downloads**: 414
-- **Last updated**: 2025-04-02
-- **GitHub**: N/A
-- **Stars**: N/A
-- **Version**: 1
-- **License**: MIT
-- **Workflow type**: Common Workflow Language
-- **Main workflow (WorkflowHub):** `pca_classification_workflow.cwl` (Main Workflow)
-- **Project**: CDPP
-- **Views**: 1474
-- **Creators**: Mauro Del Rio
+| Tool | Result | Reason |
+|---|---|---|
+| classify_tumor | Not completed | pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool |
+| extract_tissue | Not completed | pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool |
+| pca_classification_workflow | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
 
 ## Description
 

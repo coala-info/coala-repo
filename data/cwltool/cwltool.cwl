@@ -7,31 +7,43 @@ doc: "Reference executor for Common Workflow Language standards.\n\nTool homepag
 inputs:
   - id: cwl_document
     type:
-      type: array
-      items: string
+      - 'null'
+      - File
     doc: path or URL to a CWL Workflow, CommandLineTool, or ExpressionTool. If 
       the `inputs_object` has a `cwl:tool` field indicating the path or URL to 
       the cwl_document, then the `workflow` argument is optional.
     inputBinding:
-      position: 1
+      position: 200
+      valueFrom: $(self.basename)
   - id: inputs_object
     type:
       - 'null'
-      - string
+      - File
     doc: path or URL to a YAML or JSON formatted description of the required 
       input values for the given cwl_document.
     inputBinding:
-      position: 2
+      position: 201
+      valueFrom: $(self.basename)
+  - id: extra_files
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Files and directories that the CWL document or the input object refer 
+      to by relative path, staged beside them
   - id: add_ga4gh_tool_registry
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --add-ga4gh-tool-registry
     doc: Add a GA4GH tool registry endpoint to use for resolution, default 
       ['https://dockstore.org:8443']
     inputBinding:
       position: 103
-      prefix: --add-ga4gh-tool-registry
   - id: basedir
     type:
       - 'null'
@@ -42,7 +54,7 @@ inputs:
   - id: cachedir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to cache intermediate workflow outputs to avoid recomputing 
       steps.
     inputBinding:
@@ -51,7 +63,7 @@ inputs:
   - id: cidfile_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for storing the Docker container ID file. The default is the 
       current directory
     inputBinding:
@@ -328,11 +340,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --preserve-environment
     doc: Preserve specific environment variable when running CommandLineTools. 
       May be provided multiple times.
     inputBinding:
       position: 103
-      prefix: --preserve-environment
   - id: print_deps
     type:
       - 'null'
@@ -477,7 +490,7 @@ inputs:
   - id: tmp_outdir_prefix
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path prefix for intermediate output directories
     inputBinding:
       position: 103
@@ -538,3 +551,14 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cwltool:1.0.20180225105849--py36_0
 stdout: cwltool.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [];
+        if (inputs.cwl_document) { l.push(inputs.cwl_document); }
+        if (inputs.inputs_object) { l.push(inputs.inputs_object); }
+        if (inputs.extra_files) { l = l.concat(inputs.extra_files); }
+        return l;
+      }

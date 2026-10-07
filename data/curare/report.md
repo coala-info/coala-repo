@@ -1,5 +1,11 @@
 # curare CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| curare | Not completed | Snakemake RNA-seq pipeline that builds conda environments per module, skipped; fixed baseCommand curare.py to curare (the real entry point). |
+
 ## curare
 
 ### Tool Description

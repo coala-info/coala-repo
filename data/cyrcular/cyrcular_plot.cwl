@@ -8,7 +8,9 @@ doc: "Generates a circular plot from BAM data.\n\nTool homepage: https://github.
 inputs:
   - id: input
     type: File
-    doc: Input BAM file
+    doc: Input BAM file (coordinate-sorted, with .bai index)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: bin_size
@@ -46,6 +48,8 @@ inputs:
       prefix: --threads
   - id: output_path
     type: string?
+    doc: Output plot file; .html writes an interactive plot, .png, .svg or 
+      .pdf write an image
     inputBinding:
       position: 103
       prefix: --output

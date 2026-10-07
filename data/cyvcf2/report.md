@@ -1,5 +1,11 @@
 # cyvcf2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cyvcf2 | Failed | tool bug: --include drops the #CHROM header line, so the output is not a valid VCF; --exclude and region queries give correct output |
+
 ## cyvcf2
 
 ### Tool Description

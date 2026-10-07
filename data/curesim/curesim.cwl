@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - simulator.jar
+  - curesim
 label: curesim
 doc: "CuReSim version 1.3\n\nTool homepage: https://github.com/BenKearns/CureSim"
 inputs:
@@ -130,7 +128,7 @@ outputs:
       - File
     doc: name of output fastq file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_file_path ? inputs.output_file_path : 'output.fastq')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

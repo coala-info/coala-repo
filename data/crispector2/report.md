@@ -1,5 +1,11 @@
 # crispector2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crispector2_crispector | PASS |  |
+
 ## crispector2_crispector
 
 ### Tool Description

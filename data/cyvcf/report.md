@@ -1,5 +1,11 @@
 # cyvcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cyvcf_cyvcf2 | Failed | image problem: the cyvcf2 0.8.0 command crashes at start (click needs the missing 'locale' program and a UTF-8 locale); CWL rewritten to the real 0.8 options. |
+
 ## cyvcf_cyvcf2
 
 ### Tool Description

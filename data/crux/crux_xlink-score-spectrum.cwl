@@ -5,7 +5,7 @@ baseCommand:
   - xlink-score-spectrum
 label: crux_xlink-score-spectrum
 doc: "Score cross-linked peptides based on their mass spectrum.\n\nTool homepage:
-  https://github.com/redbadger/crux"
+  https://crux.ms"
 inputs:
   - id: peptide_a
     type: string
@@ -59,6 +59,7 @@ inputs:
     inputBinding:
       position: 109
       prefix: --use-a-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_b_ions
     type:
       - 'null'
@@ -67,6 +68,7 @@ inputs:
     inputBinding:
       position: 109
       prefix: --use-b-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_c_ions
     type:
       - 'null'
@@ -75,6 +77,7 @@ inputs:
     inputBinding:
       position: 109
       prefix: --use-c-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_flanking_peaks
     type:
       - 'null'
@@ -85,6 +88,7 @@ inputs:
     inputBinding:
       position: 109
       prefix: --use-flanking-peaks
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_x_ions
     type:
       - 'null'
@@ -93,6 +97,7 @@ inputs:
     inputBinding:
       position: 109
       prefix: --use-x-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_y_ions
     type:
       - 'null'
@@ -101,6 +106,7 @@ inputs:
     inputBinding:
       position: 109
       prefix: --use-y-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_z_ions
     type:
       - 'null'
@@ -109,6 +115,7 @@ inputs:
     inputBinding:
       position: 109
       prefix: --use-z-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -132,6 +139,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -17,9 +17,7 @@ inputs:
       position: 101
       prefix: --consensus
   - id: dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Full path to directory where your .sam files are located. If no '--dir'
       is specified, ctseq will look in your current directory.
     inputBinding:
@@ -35,9 +33,7 @@ inputs:
       position: 101
       prefix: --processes
   - id: ref_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Full path to directory where you have already built your methylation 
       reference files. If no '--refDir' is specified, ctseq will look in your 
       current directory.
@@ -65,6 +61,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Directory with the per-sample *_allMolecules.txt files added
+    outputBinding:
+      glob: $(inputs.dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctseq:0.0.2--py_0

@@ -1,5 +1,17 @@
 # crimson CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crimson_fastqc | PASS |  |
+| crimson_flagstat | PASS |  |
+| crimson_fusioncatcher | PASS |  |
+| crimson_picard | PASS |  |
+| crimson_star | PASS |  |
+| crimson_star-fusion | PASS |  |
+| crimson_vep | PASS |  |
+
 ## crimson_fastqc
 
 ### Tool Description

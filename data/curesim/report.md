@@ -1,5 +1,11 @@
 # curesim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| curesim | PASS | Simulated 500 reads (mean length 150) from the nf-core SARS-CoV-2 genome; fixed baseCommand from 'java -jar simulator.jar' to the curesim wrapper and the default output glob. |
+
 ## curesim
 
 ### Tool Description

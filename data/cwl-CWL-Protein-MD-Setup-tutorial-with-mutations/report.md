@@ -1,25 +1,12 @@
 # CWL Protein MD Setup tutorial with mutations CWL Workflow Report
 
-### Metadata
-- **Docker Image**: N/A
-- **Homepage**: https://mmb.irbbarcelona.org/biobb/
-- **Package**: https://workflowhub.eu/workflows/289
-- **Validation**: N/A
+## Real Data Test
 
-- **RO-Crate download**: https://workflowhub.eu/workflows/289/ro_crate?version=2
-- **Conda**: N/A
-- **Total Downloads**: 1.3K
-- **Last updated**: 2023-06-07
-- **GitHub**: N/A
-- **Stars**: N/A
-- **Version**: 2
-- **License**: Apache-2.0
-- **Workflow type**: Common Workflow Language
-- **Main workflow (WorkflowHub):** `workflow.cwl` (Main Workflow)
-- **Project**: BioBB Building Blocks
-- **Views**: 63062
-- **Creators**: Adam Hospital, Genís Bayarri
-- **Discussion / source**: http://mmb.irbbarcelona.org/biobb/workflows
+| Tool | Result | Reason |
+|---|---|---|
+| workflow | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+| workflow_gather | Not completed | pipeline, skipped: WorkflowHub CWL workflow step (ExpressionTool) package, not a single command-line tool |
+| workflow_list | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
 
 ## Description
 

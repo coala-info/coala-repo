@@ -7,6 +7,14 @@ label: csvtk_summary
 doc: "summary statistics of selected numeric or text fields (groupby group fields)\n\
   \ \nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'
@@ -45,13 +53,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --fields
     doc: 'operations on these fields. e.g -f 1:count,1:sum or -f colA:mean. available
       operations: argmax, argmin, collapse, count, countn, countuniq, countunique,
       entropy, first, last, max, mean, median, min, prod, q1, q2, q3, rand, stdev,
       sum, uniq, unique, variance'
     inputBinding:
       position: 101
-      prefix: --fields
   - id: groups
     type:
       - 'null'

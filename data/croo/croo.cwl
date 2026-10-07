@@ -5,7 +5,7 @@ label: croo
 doc: "Path, URL or URI for metadata.json for a workflow\n\nTool homepage: https://github.com/ENCODE-DCC/croo"
 inputs:
   - id: metadata_json
-    type: string
+    type: File
     doc: "Path, URL or URI for metadata.json for a workflow\n                    \
       \    Example: /scratch/sample1/metadata.json,\n                        gs://some/where/metadata.json,\n\
       \                        http://hello.com/world/metadata.json"
@@ -73,12 +73,19 @@ inputs:
   - id: out_def_json
     type:
       - 'null'
-      - string
+      - File
     doc: "Output definition JSON file for a WDL file\n                        corresponding
       to the specified metadata.json file"
     inputBinding:
       position: 102
       prefix: --out-def-json
+  - id: cromwell_outputs
+    type:
+      - 'null'
+      - Directory
+    doc: Cromwell workflow output directory that holds the files listed in metadata.json.
+      It is staged in the working directory (HOME), so metadata.json must refer to its
+      files as ~/<directory name>/... when croo runs in a container.
   - id: public_gcs
     type:
       - 'null'
@@ -158,7 +165,8 @@ inputs:
       prefix: --use-presigned-url-s3
   - id: out_dir_path
     type: string?
-    doc: Output directory/bucket (LOCAL OR REMOTE). This can be
+    default: croo_out
+    doc: Output directory/bucket (LOCAL OR REMOTE). This can be a local path, gs:// or s3://.
     inputBinding:
       position: 103
       prefix: --out-dir
@@ -171,26 +179,11 @@ outputs:
       \         a local path, gs:// or s3://."
     outputBinding:
       glob: $(inputs.out_dir_path)
-  - id: out_def_json_out
-    type:
-      - 'null'
-      - File
-    doc: Output definition JSON file for a WDL file corresponding to the 
-      specified metadata.json file
-    outputBinding:
-      glob: $(inputs.out_def_json)
-  - id: method_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Method to localize files on output directory/bucket. "link" means a 
-      soft-linking and it's for local directory only. Original output files will
-      be kept in Cromwell's output directory. "copy" makes copies of Cromwell's 
-      original outputs
-    outputBinding:
-      glob: $(inputs.method)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.cromwell_outputs)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/croo:0.6.0--pyhdfd78af_0

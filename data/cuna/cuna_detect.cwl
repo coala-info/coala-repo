@@ -45,7 +45,9 @@ inputs:
       position: 101
       prefix: --disable_pruning
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: Path to POD5 file or folder containing POD5 files.
     inputBinding:
       position: 101
@@ -76,12 +78,22 @@ inputs:
       position: 101
       prefix: --mod_t
   - id: model
-    type: string
-    doc: Name of the model to use. For custom models, provide 
-      "config.cfg,model.pt".
-    inputBinding:
-      position: 101
-      prefix: --model
+    type:
+      - 'null'
+      - string
+    doc: Name of the model to use. For custom models, give model_config and 
+      model_checkpoint instead.
+  - id: model_config
+    type:
+      - 'null'
+      - File
+    doc: Custom model configuration file (model.cfg); passed as 
+      "config.cfg,model.pt" to --model together with model_checkpoint.
+  - id: model_checkpoint
+    type:
+      - 'null'
+      - File
+    doc: Custom model checkpoint file (model.pt); used with model_config.
   - id: motif
     type:
       type: array
@@ -92,10 +104,9 @@ inputs:
       position: 101
       prefix: --motif
   - id: output
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: Path to folder where intermediate and final files will be stored
+    default: cuna_detect_output
     inputBinding:
       position: 101
       prefix: --output
@@ -149,17 +160,48 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unmod_t
+arguments:
+  - position: 101
+    prefix: --model
+    valueFrom: |-
+      ${
+        if (inputs.model_config && inputs.model_checkpoint)
+          return inputs.model_config.path + "," + inputs.model_checkpoint.path;
+        return inputs.model;
+      }
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+  - id: output_dir
+    type: Directory
+    doc: Output folder with the <prefix>.per_read, <prefix>.per_site, 
+      <prefix>.bam and args files
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output)
+  - id: per_read
+    type:
+      - 'null'
+      - File
+    doc: Per-read modification predictions
+    outputBinding:
+      glob: $(inputs.output)/$(inputs.prefix || 'output').per_read
+  - id: per_site
+    type:
+      - 'null'
+      - File
+    doc: Per-site modification predictions
+    outputBinding:
+      glob: $(inputs.output)/$(inputs.prefix || 'output').per_site
+  - id: mod_bam
+    type:
+      - 'null'
+      - File
+    doc: BAM file annotated with modification tags
+    outputBinding:
+      glob: $(inputs.output)/$(inputs.prefix || 'output').bam
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cuna:0.3.0--pyhdfd78af_0

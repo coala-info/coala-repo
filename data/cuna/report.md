@@ -1,5 +1,14 @@
 # cuna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cuna_detect | Failed | image problem: pod5 0.3.27 in the image cannot read signals with its pyarrow ('ExtensionScalar' has no attribute 'values'), so detect hangs on the repo test POD5 with empty outputs. |
+| cuna_features | Failed | image problem: pod5 0.3.27 in the image cannot read signals with its pyarrow ('ExtensionScalar' has no attribute 'values'), so features hangs on the repo training POD5. |
+| cuna_merge | PASS | Synthetic data (two small aligned per-read files with planted calls, via --list): per-site coverage and mod fractions are exactly as expected. |
+| cuna_train | PASS | Synthetic data (feature .npz with a planted signal, since features cannot run in this image): trained a BiLSTM, wrote checkpoints, model.cfg and plots, test F1 0.93. |
+
 ## cuna_detect
 
 ### Tool Description

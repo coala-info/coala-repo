@@ -18,7 +18,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log
+    type: stderr
+    doc: Test log (the results of the checks are logged to standard error)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      USER: crocodeel
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crocodeel:1.1.0--pyhdfd78af_0
 stdout: crocodeel_test_install.out
+stderr: crocodeel_test_install.log

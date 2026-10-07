@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - search-for-xlinks
 label: crux_search-for-xlinks
-doc: "Search for cross-linked peptides in MS2 and FASTA files.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Search for cross-linked peptides in MS2 and FASTA files.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: ms2_files
     type:
@@ -56,6 +56,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --compute-p-values
+      valueFrom: '$(self ? "T" : "F")'
   - id: compute_sp
     type:
       - 'null'
@@ -71,6 +72,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --compute-sp
+      valueFrom: '$(self ? "T" : "F")'
   - id: concat
     type:
       - 'null'
@@ -83,6 +85,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --concat
+      valueFrom: '$(self ? "T" : "F")'
   - id: custom_enzyme
     type:
       - 'null'
@@ -135,6 +138,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --file-column
+      valueFrom: '$(self ? "T" : "F")'
   - id: fragment_mass
     type:
       - 'null'
@@ -338,10 +342,11 @@ inputs:
     inputBinding:
       position: 105
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 105
@@ -415,6 +420,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --require-xlink-candidate
+      valueFrom: '$(self ? "T" : "F")'
   - id: scan_number
     type:
       - 'null'
@@ -486,6 +492,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-a-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_b_ions
     type:
       - 'null'
@@ -494,6 +501,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-b-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_c_ions
     type:
       - 'null'
@@ -502,6 +510,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-c-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_flanking_peaks
     type:
       - 'null'
@@ -512,6 +521,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-flanking-peaks
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_old_xlink
     type:
       - 'null'
@@ -523,6 +533,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-old-xlink
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_x_ions
     type:
       - 'null'
@@ -531,6 +542,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-x-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_y_ions
     type:
       - 'null'
@@ -539,6 +551,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-y-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_z_ions
     type:
       - 'null'
@@ -547,6 +560,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-z-ions
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_z_line
     type:
       - 'null'
@@ -556,6 +570,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --use-z-line
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -575,6 +590,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --xlink-include-deadends
+      valueFrom: '$(self ? "T" : "F")'
   - id: xlink_include_inter
     type:
       - 'null'
@@ -583,6 +599,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --xlink-include-inter
+      valueFrom: '$(self ? "T" : "F")'
   - id: xlink_include_inter_intra
     type:
       - 'null'
@@ -591,6 +608,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --xlink-include-inter-intra
+      valueFrom: '$(self ? "T" : "F")'
   - id: xlink_include_intra
     type:
       - 'null'
@@ -599,6 +617,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --xlink-include-intra
+      valueFrom: '$(self ? "T" : "F")'
   - id: xlink_include_linears
     type:
       - 'null'
@@ -607,6 +626,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --xlink-include-linears
+      valueFrom: '$(self ? "T" : "F")'
   - id: xlink_include_selfloops
     type:
       - 'null'
@@ -615,6 +635,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: --xlink-include-selfloops
+      valueFrom: '$(self ? "T" : "F")'
   - id: xlink_prevents_cleavage
     type:
       - 'null'
@@ -643,7 +664,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -6,17 +6,13 @@ baseCommand:
 label: ctseq_plot_multiple
 doc: "Create plots for multiple samples combined.\n\nTool homepage: https://github.com/ryanhmiller/ctseq"
 inputs:
-  - id: directory
-    type:
-      - 'null'
-      - Directory
-    doc: Path to directory where you want your plots to be created. If no path 
-      is given, ctseq will create the plots in your current working directory. 
-      Remember to include a file ending in '_directories.txt' containing the 
-      paths of the directories containing the data you want to plot
-    inputBinding:
-      position: 101
-      prefix: --dir
+  - id: run_dirs
+    type: Directory[]
+    doc: Directories with the results of each sequencing run to plot together 
+      (each holds the *_totalMolecules.txt, *_methylatedMolecules.txt, 
+      *_methylationRatio.txt and *_runStatistics.txt files). Their paths are 
+      written to the '<name>_directories.txt' file that ctseq reads from 
+      '--dir'.
   - id: frag_info
     type: File
     doc: Name of file containing your fragment info file for these combined 
@@ -32,10 +28,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --name
+arguments:
+  - position: 100
+    prefix: --dir
+    valueFrom: $(runtime.outdir)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: plots
+    type: File[]
+    doc: Combined plot PDF files
+    outputBinding:
+      glob: $(inputs.name)*.pdf
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.name)_directories.txt
+        entry: |-
+          ${
+            return inputs.run_dirs.map(function(d) { return d.path; }).join("\n") + "\n";
+          }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctseq:0.0.2--py_0

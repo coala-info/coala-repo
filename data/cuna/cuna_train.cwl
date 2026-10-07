@@ -82,14 +82,16 @@ inputs:
   - id: mixed_training_dataset
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: Training dataset with mixed labels. A whitespace separated list of 
       folders containing .npz files or paths to individual .npz files.
     inputBinding:
       position: 101
       prefix: --mixed_training_dataset
   - id: model_save_path
-    type: Directory
+    type: string
     doc: Path to save trained model checkpoints.
     inputBinding:
       position: 101
@@ -168,7 +170,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items:
+          - File
+          - Directory
     doc: Validation dataset for "dataset" mode. A list of folders with .npz 
       files or paths to .npz files.
     inputBinding:
@@ -205,6 +209,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: model_dir
+    type: Directory
+    doc: Folder with the model checkpoints (.pt), model.cfg, log, args and 
+      metric plots
+    outputBinding:
+      glob: $(inputs.model_save_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cuna:0.3.0--pyhdfd78af_0

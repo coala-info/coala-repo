@@ -7,6 +7,11 @@ label: csvtk_splitxlsx
 doc: "split XLSX sheet into multiple sheets according to column values\n\nTool homepage:
   https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_file
+    type: File
+    doc: Input XLSX file
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'

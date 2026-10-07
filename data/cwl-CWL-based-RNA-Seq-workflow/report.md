@@ -1,5 +1,11 @@
 # CWL-based RNA-Seq workflow CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| RNA-Seq_workflow | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://biodataanalysisgroup.github.io/

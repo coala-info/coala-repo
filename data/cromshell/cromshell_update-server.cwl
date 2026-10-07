@@ -12,18 +12,18 @@ inputs:
     doc: Cromwell server URL
     inputBinding:
       position: 1
-  - id: config_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the cromshell config file
-    inputBinding:
-      position: 102
-      prefix: --config-file
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: config_json
+    type:
+      - 'null'
+      - File
+    doc: Updated cromshell config file ($HOME/.cromshell/cromshell_config.json; 
+      HOME is the working directory)
+    outputBinding:
+      glob: .cromshell/cromshell_config.json
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cromshell:2.1.1--pyhdfd78af_0

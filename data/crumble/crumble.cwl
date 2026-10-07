@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Input SAM/BAM/CRAM file
     inputBinding:
-      position: 1
+      position: 200
   - id: bd_qual_cutoff
     type:
       - 'null'
@@ -61,12 +61,19 @@ inputs:
   - id: compression_level
     type:
       - 'null'
-      - boolean
-    doc: Combination of options for compression level (can be -1, -3, -5, -7, 
-      -8, -9)
+      - type: enum
+        symbols:
+          - '1'
+          - '3'
+          - '5'
+          - '7'
+          - '8'
+          - '9'
+    doc: Standard compression level combining the other options (-1, -3, -5, -7,
+      -8, -9); given as the first option. Level 9 is the default.
     inputBinding:
-      position: 102
-      prefix: '-9'
+      position: 101
+      valueFrom: $('-' + self)
   - id: depth_ratio_keep
     type:
       - 'null'
@@ -348,11 +355,16 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: out_file
+    type: string
+    doc: Output SAM/BAM/CRAM file name (format set by output_format, default SAM)
+    inputBinding:
+      position: 201
   - id: output_bed_path
     type:
       - 'null'
       - string
-    doc: out.bed        Output suspicious regions to out.bed []
+    doc: Output suspicious regions to out.bed
     inputBinding:
       position: 103
       prefix: -b
@@ -361,7 +373,7 @@ outputs:
     type: File
     doc: Output SAM/BAM/CRAM file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_file)
   - id: output_bed
     type:
       - 'null'

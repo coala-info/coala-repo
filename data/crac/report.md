@@ -1,5 +1,11 @@
 # crac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crac | PASS |  |
+
 ## crac
 
 ### Tool Description

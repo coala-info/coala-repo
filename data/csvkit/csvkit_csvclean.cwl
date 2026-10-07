@@ -217,10 +217,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: error_report
+    type: stderr
+    doc: Error report written to standard error
 hints:
   - class: DockerRequirement
     dockerPull: ghcr.io/wireservice/csvkit:latest
 stdout: csvkit_csvclean.out
+stderr: csvkit_csvclean.err
+successCodes:
+  - 0
+  - 1
 s:url: https://github.com/wireservice/csvkit
 $namespaces:
   s: https://schema.org/

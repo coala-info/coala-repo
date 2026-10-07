@@ -80,6 +80,8 @@ inputs:
       - File
     doc: Path to the reference fasta file, it must be uncompressed and indexed 
       (use 'samtools faidx' for example).
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --reference-fasta-file

@@ -1,5 +1,11 @@
 # CroMaSt: A workflow for assessing protein domain classification by cross-mapping of structural instances between domain databases and structural alignment CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| CroMaSt | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://capsid.loria.fr/

@@ -4,9 +4,17 @@ baseCommand:
   - cramtools
   - getref
 label: cramtools_getref
-doc: "A list of MD5 checksums for which the sequences should be downloaded.\n\nTool
+doc: "Download reference sequences from the ENA reference service by MD5 checksum.\n\nTool
   homepage: https://github.com/enasequence/cramtools"
 inputs:
+  - id: md5_checksums
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: A list of MD5 checksums for which the sequences should be downloaded.
+    inputBinding:
+      position: 1
   - id: fasta_line_length
     type:
       - 'null'
@@ -63,6 +71,8 @@ outputs:
       glob: $(inputs.destination_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramtools:3.0.b127--0

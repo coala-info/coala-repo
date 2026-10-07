@@ -1,5 +1,11 @@
 # cytoscape CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cytoscape_cytoscape.sh | Failed | image problem: cytoscape.sh does not start (Java error: Module javafx.web not found); Cytoscape is also a GUI desktop app with no headless batch mode. |
+
 ## cytoscape_cytoscape.sh
 
 ### Tool Description

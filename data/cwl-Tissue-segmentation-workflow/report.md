@@ -1,24 +1,11 @@
 # Tissue segmentation workflow CWL Workflow Report
 
-### Metadata
-- **Docker Image**: N/A
-- **Homepage**: https://workflowhub.eu/workflows/1328
-- **Package**: https://workflowhub.eu/workflows/1328
-- **Validation**: N/A
+## Real Data Test
 
-- **RO-Crate download**: https://workflowhub.eu/workflows/1328/ro_crate?version=1
-- **Conda**: N/A
-- **Total Downloads**: 1.3K
-- **Last updated**: 2025-04-02
-- **GitHub**: N/A
-- **Stars**: N/A
-- **Version**: 1
-- **License**: MIT
-- **Workflow type**: Common Workflow Language
-- **Main workflow (WorkflowHub):** `tissue_segmentation_workflow.cwl` (Main Workflow)
-- **Project**: CDPP
-- **Views**: 2809
-- **Creators**: Mauro Del Rio
+| Tool | Result | Reason |
+|---|---|---|
+| extract_tissue | Not completed | pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool |
+| tissue_segmentation_workflow | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
 
 ## Description
 

@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - q-ranker
 label: crux_q-ranker
-doc: "Rank fragmentation spectra using search results.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Rank fragmentation spectra using search results.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: fragmentation_spectra
     type: File
@@ -62,6 +62,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --feature-file-out
+      valueFrom: '$(self ? "T" : "F")'
   - id: fileroot
     type:
       - 'null'
@@ -79,6 +80,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --list-of-files
+      valueFrom: '$(self ? "T" : "F")'
   - id: output_dir
     type:
       - 'null'
@@ -96,6 +98,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -112,6 +115,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --pepxml-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: re_run
     type:
       - 'null'
@@ -154,6 +158,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --skip-cleanup
+      valueFrom: '$(self ? "T" : "F")'
   - id: spectrum_parser
     type:
       - 'null'
@@ -170,6 +175,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --txt-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_spec_features
     type:
       - 'null'
@@ -179,6 +185,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --use-spec-features
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -200,7 +207,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

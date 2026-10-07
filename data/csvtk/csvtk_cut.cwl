@@ -6,6 +6,14 @@ baseCommand:
 label: csvtk_cut
 doc: "select and arrange fields\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: allow_missing_col
     type:
       - 'null'

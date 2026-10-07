@@ -4,6 +4,12 @@ baseCommand: CRISPRessoAggregate
 label: crispresso2_CRISPRessoAggregate
 doc: Aggregate CRISPResso2 Runs
 inputs:
+  - id: crispresso_folders
+    type:
+      type: array
+      items: Directory
+    doc: CRISPResso2 output folders to aggregate; they are staged in the 
+      working directory so that --prefix/--suffix can find them
   - id: prefix
     type:
       - 'null'
@@ -91,6 +97,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
+  - id: verbosity
+    type:
+      - 'null'
+      - int
+    doc: Verbosity level of output to the console (1-4), 4 is the most verbose
+    inputBinding:
+      position: 101
+      prefix: --verbosity
   - id: halt_on_plot_fail
     type:
       - 'null'
@@ -112,6 +126,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: aggregate_folder
+    type: Directory
+    doc: Aggregate output folder CRISPRessoAggregate_on_<name>
+    outputBinding:
+      glob: CRISPRessoAggregate_on_$(inputs.name)
+  - id: report
+    type:
+      - 'null'
+      - File
+    doc: HTML report (written beside the output folder by default)
+    outputBinding:
+      glob: CRISPRessoAggregate_on_$(inputs.name).html
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.crispresso_folders)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crispresso2:2.3.3--py39hff726c5_0

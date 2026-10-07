@@ -5,7 +5,7 @@ baseCommand:
   - make-pin
 label: crux_make-pin
 doc: "Creates a pin file from one or more input files containing peptide-spectrum
-  matches (PSMs).\n\nTool homepage: https://github.com/redbadger/crux"
+  matches (PSMs).\n\nTool homepage: https://crux.ms"
 inputs:
   - id: target_input
     type:
@@ -64,6 +64,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -101,16 +102,17 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Path where pin file will be written instead of make-pin.pin.
+    doc: Path where pin file will be written instead of make-pin.pin (inside the
+      output directory).
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")/$(inputs.output_file_path)'
   - id: output_dir_dir
     type:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # cwl2wdl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cwl2wdl | Failed | tool bug: on its own test CWLs it writes invalid WDL (prefixes unquoted as ${-unc + unc}, item prefixes dropped, import steps crash), and --validate fails because the image lacks the wdl module. |
+
 ## cwl2wdl
 
 ### Tool Description

@@ -5,7 +5,7 @@ baseCommand:
   - barista
 label: crux_barista
 doc: "Barista is a tool for identifying peptides from tandem mass spectra.\n\nTool
-  homepage: https://github.com/redbadger/crux"
+  homepage: https://crux.ms"
 inputs:
   - id: database
     type: File
@@ -77,6 +77,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --feature-file-out
+      valueFrom: '$(self ? "T" : "F")'
   - id: fileroot
     type:
       - 'null'
@@ -94,6 +95,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --list-of-files
+      valueFrom: '$(self ? "T" : "F")'
   - id: optimization
     type:
       - 'null'
@@ -120,6 +122,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -136,6 +139,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --pepxml-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: re_run
     type:
       - 'null'
@@ -178,6 +182,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --skip-cleanup
+      valueFrom: '$(self ? "T" : "F")'
   - id: spectrum_parser
     type:
       - 'null'
@@ -194,6 +199,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --txt-output
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_spec_features
     type:
       - 'null'
@@ -203,6 +209,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --use-spec-features
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -224,7 +231,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

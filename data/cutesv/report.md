@@ -1,5 +1,11 @@
 # cutesv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cutesv_cuteSV | PASS |  |
+
 ## cutesv_cuteSV
 
 ### Tool Description

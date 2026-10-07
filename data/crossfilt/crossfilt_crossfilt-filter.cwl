@@ -7,11 +7,15 @@ doc: "Outputs reads from bam1 that that have identical contig, position, CIGAR s
 inputs:
   - id: bam1
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input bam file 1.
     inputBinding:
       position: 1
   - id: bam2
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input bam file 2.
     inputBinding:
       position: 2
@@ -45,10 +49,10 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
-  - id: stdout
+  - id: filtered_bam
     type: stdout
-    doc: Standard output
+    doc: BAM file with the reads from bam1 that match bam2
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0
-stdout: crossfilt_crossfilt-filter.out
+stdout: crossfilt_crossfilt-filter.bam

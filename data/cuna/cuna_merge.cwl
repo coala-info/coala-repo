@@ -34,6 +34,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --list
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Per-read call files named in the --list file; staged in the working 
+      directory so their names resolve.
   - id: mod_t
     type:
       - 'null'
@@ -44,11 +51,10 @@ inputs:
       position: 101
       prefix: --mod_t
   - id: output
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: Path to folder where intermediate and final files will be stored, 
       default is current working directory
+    default: cuna_merge_output
     inputBinding:
       position: 101
       prefix: --output
@@ -81,13 +87,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+  - id: output_dir
+    type: Directory
+    doc: Output folder with the merged per-site file
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output)
+  - id: per_site
+    type: File[]
+    doc: Merged per-site modification calls
+    outputBinding:
+      glob: $(inputs.output)/*per_site*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.listed_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cuna:0.3.0--pyhdfd78af_0

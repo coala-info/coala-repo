@@ -2,183 +2,78 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: cyvcf2
 label: cyvcf_cyvcf2
-doc: "cyvcf2 is a fast, zero-copy, Pythonic interface to htslib's VCF/BCF reading
-  and writing capabilities.\n\nTool homepage: https://github.com/brentp/cyvcf2"
+doc: "fast vcf parsing with cython + htslib\n\nTool homepage: https://github.com/brentp/cyvcf2"
 inputs:
-  - id: input_vcf
+  - id: vcf_file
     type: File
-    doc: Input VCF/BCF file
+    doc: VCF/BCF file to parse
     inputBinding:
       position: 1
-  - id: exclude_samples
+  - id: chrom
     type:
       - 'null'
-      - File
-    doc: File containing list of samples to exclude
+      - string
+    doc: Specify what chromosome to include.
     inputBinding:
       position: 102
-      prefix: --exclude-samples
-  - id: force_contigs
+      prefix: --chrom
+  - id: start
     type:
       - 'null'
-      - boolean
-    doc: Force contig names to be loaded from header
+      - int
+    doc: Specify the start of region.
     inputBinding:
       position: 102
-      prefix: --force-contigs
-  - id: indels_only
+      prefix: --start
+  - id: end
     type:
       - 'null'
-      - boolean
-    doc: Only process indels
+      - int
+    doc: Specify the end of the region.
     inputBinding:
       position: 102
-      prefix: --indels-only
-  - id: no_contigs
-    type:
-      - 'null'
-      - boolean
-    doc: Do not load contig names from header
-    inputBinding:
-      position: 102
-      prefix: --no-contigs
-  - id: no_eof
-    type:
-      - 'null'
-      - boolean
-    doc: Do not check for EOF marker in BCF files
-    inputBinding:
-      position: 102
-      prefix: --no-eof
-  - id: no_genotypes
-    type:
-      - 'null'
-      - boolean
-    doc: Do not load genotypes
-    inputBinding:
-      position: 102
-      prefix: --no-genotypes
-  - id: no_header
-    type:
-      - 'null'
-      - boolean
-    doc: Do not load header
-    inputBinding:
-      position: 102
-      prefix: --no-header
-  - id: no_strict_somatic
-    type:
-      - 'null'
-      - boolean
-    doc: Do not enforce somatic variant calling conventions
-    inputBinding:
-      position: 102
-      prefix: --no-strict-somatic
-  - id: region
+      prefix: --end
+  - id: include_info_field
     type:
       - 'null'
       - type: array
         items: string
-    doc: Region(s) to process (e.g., 'chr1:1000-2000')
+        inputBinding:
+          prefix: --include
+    doc: Specify what info field to include.
     inputBinding:
       position: 102
-      prefix: --region
-  - id: samples
+  - id: exclude_info_field
     type:
       - 'null'
-      - File
-    doc: File containing list of samples to include
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --exclude
+    doc: Specify what info field to exclude.
     inputBinding:
       position: 102
-      prefix: --samples
-  - id: skip_all
+  - id: loglevel
     type:
       - 'null'
-      - boolean
-    doc: Skip all fields except POS, REF, ALT
+      - string
+    doc: Set the level of log output (DEBUG, INFO, WARNING, ERROR, CRITICAL).
     inputBinding:
       position: 102
-      prefix: --skip-all
-  - id: skip_fmt
-    type:
-      - 'null'
-      - boolean
-    doc: Skip FORMAT fields
-    inputBinding:
-      position: 102
-      prefix: --skip-fmt
-  - id: skip_genotype
+      prefix: --loglevel
+  - id: silent
     type:
       - 'null'
       - boolean
-    doc: Skip genotype fields
+    doc: Skip printing of vcf.
     inputBinding:
       position: 102
-      prefix: --skip-genotype
-  - id: skip_info
-    type:
-      - 'null'
-      - boolean
-    doc: Skip INFO fields
-    inputBinding:
-      position: 102
-      prefix: --skip-info
-  - id: snps_only
-    type:
-      - 'null'
-      - boolean
-    doc: Only process SNPs
-    inputBinding:
-      position: 102
-      prefix: --snps-only
-  - id: strict_somatic
-    type:
-      - 'null'
-      - boolean
-    doc: Strictly enforce somatic variant calling conventions
-    inputBinding:
-      position: 102
-      prefix: --strict-somatic
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for reading/writing
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: variants_only
-    type:
-      - 'null'
-      - boolean
-    doc: Only load variants (skip INFO fields)
-    inputBinding:
-      position: 102
-      prefix: --variants-only
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_vcf_path
-    type: string
-    doc: Output or path parameter `output_vcf_path`
-    inputBinding:
-      position: 103
-      prefix: --output-vcf
+      prefix: --silent
 outputs:
-  - id: output_vcf
-    type:
-      - 'null'
-      - File
-    doc: 'Output VCF/BCF file (default: stdout)'
-    outputBinding:
-      glob: $(inputs.output_vcf_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Parsed VCF records
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cyvcf:0.8.0--py36_0
+stdout: cyvcf_cyvcf2.out

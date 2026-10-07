@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - cvbio
-  - IgvBoss
+arguments:
+  - position: 2
+    valueFrom: IgvBoss
 label: cvbio_IgvBoss
 doc: "Take control of your IGV session from end-to-end.\n\nIf no inputs are provided,
   then no new sessions will be created. Adding multiple IGV-valid locus identifiers
@@ -34,7 +36,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: base_quality_maximum
     type:
@@ -66,7 +68,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: downsample
     type:
@@ -125,7 +127,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: memory
     type:
@@ -149,7 +151,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: tmp_dir
     type:
@@ -157,12 +159,15 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cvbio:3.0.0--0

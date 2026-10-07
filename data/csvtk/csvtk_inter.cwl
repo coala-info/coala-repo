@@ -7,6 +7,14 @@ label: csvtk_inter
 doc: "intersection of multiple files. Fields in all files should be the same.\n\n\
   \ Tool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'

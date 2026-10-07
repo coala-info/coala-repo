@@ -9,6 +9,14 @@ inputs:
     doc: CWL file.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+  - id: dependencies
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: CWL files the main file imports or runs (tools of a workflow), staged 
+      beside it so relative references resolve.
   - id: format
     type:
       - 'null'
@@ -29,6 +37,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [inputs.file];
+        if (inputs.dependencies) { l = l.concat(inputs.dependencies); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cwl2wdl:0.1dev44--py36_1

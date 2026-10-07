@@ -1,9 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crass
+baseCommand:
+  - crass
 label: crass
 doc: "CRisprASSembler (crass) - A tool for identifying and assembling CRISPR loci
-  from metagenomic sequencing data.\n\nTool homepage: https://mummer4.github.io/"
+  from metagenomic sequencing data.\n\nTool homepage: https://github.com/ctSkennerton/crass"
 inputs:
   - id: input_files
     type:

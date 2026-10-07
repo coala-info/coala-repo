@@ -1,5 +1,11 @@
 # cutadapt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cutadapt | PASS |  |
+
 ## cutadapt
 
 ### Tool Description

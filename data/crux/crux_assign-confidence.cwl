@@ -5,7 +5,7 @@ baseCommand:
   - assign-confidence
 label: crux_assign-confidence
 doc: "Assign confidence estimates to peptide-spectrum matches (PSMs).\n\nTool homepage:
-  https://github.com/redbadger/crux"
+  https://crux.ms"
 inputs:
   - id: target_input
     type:
@@ -32,6 +32,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --combine-charge-states
+      valueFrom: '$(self ? "T" : "F")'
   - id: combine_modified_peptides
     type:
       - 'null'
@@ -42,6 +43,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --combine-modified-peptides
+      valueFrom: '$(self ? "T" : "F")'
   - id: decoy_prefix
     type:
       - 'null'
@@ -78,6 +80,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --list-of-files
+      valueFrom: '$(self ? "T" : "F")'
   - id: output_dir
     type:
       - 'null'
@@ -95,10 +98,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 102
@@ -125,6 +129,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sidak
+      valueFrom: '$(self ? "T" : "F")'
   - id: top_match_in
     type:
       - 'null'
@@ -156,7 +161,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

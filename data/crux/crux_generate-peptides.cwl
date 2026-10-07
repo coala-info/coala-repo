@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - generate-peptides
 label: crux_generate-peptides
-doc: "Generate peptides from a protein FASTA file.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Generate peptides from a protein FASTA file.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: protein_fasta_file
     type: File
@@ -191,7 +191,7 @@ inputs:
   - id: parameter_file
     type:
       - 'null'
-      - string
+      - File
     doc: A file containing parameters.
     inputBinding:
       position: 102
@@ -227,7 +227,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

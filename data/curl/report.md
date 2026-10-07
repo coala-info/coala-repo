@@ -1,5 +1,11 @@
 # curl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| curl | PASS | Downloaded a small BED file from GitHub; md5 matches the file fetched on the host; added NetworkAccess so the container can reach the network. |
+
 ## curl
 
 ### Tool Description

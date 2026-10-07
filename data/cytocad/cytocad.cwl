@@ -7,16 +7,12 @@ doc: "CytoCAD is a tool for discovering large genomic copy-number variation thro
   \nTool homepage: https://github.com/cytham/cytocad"
 inputs:
   - id: bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: "path to mapped BAM file.\n                        Format: .bam"
     inputBinding:
       position: 1
   - id: work_directory
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: "path to work directory. Directory will be created \n                   \
       \     if it does not exist."
     inputBinding:
@@ -125,6 +121,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: work_dir
+    type: Directory
+    doc: Work directory with the CNV BED file, ideogram figure and plots
+    outputBinding:
+      glob: $(inputs.work_directory)
+  - id: cnv_bed
+    type:
+      - 'null'
+      - File
+    doc: CNV calls in BED format
+    outputBinding:
+      glob: $(inputs.work_directory)/*.CNV.bed
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cytocad:1.0.3--py310h4b81fae_2

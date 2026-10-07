@@ -1,5 +1,11 @@
 # cyrcular CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cyrcular_plot | PASS |  |
+
 ## cyrcular_plot
 
 ### Tool Description

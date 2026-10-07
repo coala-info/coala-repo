@@ -59,11 +59,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --suppress
     doc: Warnings to disable e.g. StringCoercion,NonemptyCoercion. (can supply 
       multiple times)
     inputBinding:
       position: 103
-      prefix: --suppress
 outputs:
   - id: stdout
     type: stdout

@@ -1,5 +1,11 @@
 # crb-blast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crb-blast | Failed | image problem: crb-blast checks for BLAST 2.2.29 but the image has BLAST 2.13.0, so it tries to download BLAST from the NCBI FTP site and stops. |
+
 ## crb-blast
 
 ### Tool Description

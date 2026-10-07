@@ -1,5 +1,11 @@
 # csblast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| csblast | Failed | image problem: the image has no blastpgp (legacy PSI-BLAST), so csblast stops with 'No PSI-BLAST binary in directory'. |
+
 ## csblast
 
 ### Tool Description

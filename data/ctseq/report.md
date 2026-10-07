@@ -1,5 +1,18 @@
 # ctseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ctseq_add_umis | PASS | Synthetic data (bisulfite reads simulated from the real ctseq panel): UMIs from the R2 file were added to the read names; the fastq directory is now staged writable and collected. |
+| ctseq_align | Failed | image problem: GNU split is missing from the image, so no reads reach Bismark and the SAM files are empty. |
+| ctseq_analyze | Failed | image problem: GNU split is missing from the image, so the align step gives empty SAM files. |
+| ctseq_call_methylation | Failed | image problem: GNU split is missing from the image, so every methylation value is NA (correct values when split is supplied). |
+| ctseq_call_molecules | PASS | Synthetic data (Bismark SAM of reads simulated from the real panel): molecule counts and methylation calls match the planted truth for all 20 sample-loci. |
+| ctseq_make_methyl_ref | PASS | Built the Bismark bisulfite index from the real ctseq panel FASTA; the reference directory is now staged writable and collected. |
+| ctseq_plot | Failed | tool bug: the R heatmap step crashes ('breaks are not unique') when a run-statistics column such as methUnknownCNorCHN is all zero, so only 2 of 4 PDFs are made (synthetic data). |
+| ctseq_plot_multiple | Failed | tool bug: same R heatmap crash as ctseq plot on an all-zero run-statistics column; the wrapper now takes the run directories as a Directory[] input and writes the _directories.txt file (synthetic data). |
+
 ## ctseq_make_methyl_ref
 
 ### Tool Description

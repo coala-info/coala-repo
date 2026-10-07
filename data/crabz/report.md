@@ -1,5 +1,11 @@
 # crabz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crabz | PASS |  |
+
 ## crabz
 
 ### Tool Description

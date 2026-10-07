@@ -1,5 +1,11 @@
 # croo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| croo | PASS |  |
+
 ## croo
 
 ### Tool Description

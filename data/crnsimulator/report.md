@@ -1,5 +1,11 @@
 # crnsimulator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crnsimulator | PASS |  |
+
 ## crnsimulator
 
 ### Tool Description

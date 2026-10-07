@@ -378,6 +378,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sqlite_db
+    type:
+      - 'null'
+      - File
+    doc: SQLite database file written when db is a relative sqlite:/// 
+      connection string
+    outputBinding:
+      glob: "$(inputs.db && inputs.db.indexOf('sqlite:///') == 0 ? inputs.db.substring(10)
+        : [])"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: ghcr.io/wireservice/csvkit:latest

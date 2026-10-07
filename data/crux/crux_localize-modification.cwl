@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - localize-modification
 label: crux_localize-modification
-doc: "Localize modifications in PSM files.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Localize modifications in PSM files.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: input_psm_file
     type: File
@@ -12,6 +12,14 @@ inputs:
       format
     inputBinding:
       position: 1
+  - id: spectrum_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Spectrum files named in the file column of the PSM file. They are 
+      staged in the working directory, where the tool looks for them by base 
+      name.
   - id: min_mod_mass
     type:
       - 'null'
@@ -46,6 +54,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -83,7 +92,11 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.spectrum_files ? inputs.spectrum_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

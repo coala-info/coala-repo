@@ -5,7 +5,7 @@ baseCommand:
   - comet
 label: crux_comet
 doc: "Comet is a widely used open-source tandem mass spectrometry search algorithm.\n\
-  \nTool homepage: https://github.com/redbadger/crux"
+  \nTool homepage: https://crux.ms"
 inputs:
   - id: input_spectra
     type:
@@ -576,6 +576,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -991,7 +992,11 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -1,15 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cram-archiver
+baseCommand:
+  - cram-archiver
 label: cram-archiver
 doc: "Archive BAM files to CRAM format recursively, with options for reference checking,
   age filtering, and cleanup.\n\nTool homepage: https://github.com/lumc/cram-archiver"
 inputs:
-  - id: path
+  - id: bam_file
     type: File
-    doc: Path to BAM file or directory to be recursively searched.
+    doc: BAM file to convert. It is staged writable in the working directory,
+      where the CRAM file is written beside it.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: cram_version
     type:
       - 'null'
@@ -55,10 +58,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclude
     doc: Exclude file or directory from conversion. Can be supplied multiple times.
     inputBinding:
       position: 102
-      prefix: --exclude
   - id: exclude_list
     type:
       - 'null'
@@ -89,11 +93,14 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --reference
     doc: Reference to be used for CRAM conversion. Can be used multiple times. Reference
-      will be checked with the BAM file.
+      will be checked with the BAM file. Needs a .fai index beside it.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
-      prefix: --reference
   - id: threads
     type:
       - 'null'
@@ -111,9 +118,32 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
+  - id: cram
+    type:
+      - 'null'
+      - File
+    doc: CRAM file converted from the BAM file
+    secondaryFiles:
+      - pattern: .crai
+        required: false
+    outputBinding:
+      glob: $(inputs.bam_file.nameroot).cram
+  - id: checksums
+    type:
+      type: array
+      items: File
+    doc: samtools checksum output of the BAM and CRAM files
+    outputBinding:
+      glob: '*.checksum'
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (BAM paths listed by --dry-run)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cram-archiver:1.1.0--pyhdfd78af_0

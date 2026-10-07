@@ -36,8 +36,10 @@ inputs:
       position: 101
       prefix: --file_type
   - id: input
-    type: Directory
-    doc: Path to folder containing POD5 files
+    type:
+      - File
+      - Directory
+    doc: Path to folder containing POD5 files (a single POD5 file also works)
     inputBinding:
       position: 101
       prefix: --input
@@ -82,6 +84,8 @@ inputs:
   - id: ref
     type: File
     doc: Path to reference FASTA file
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref
@@ -120,13 +124,11 @@ outputs:
     doc: Path to folder where features will be stored
     outputBinding:
       glob: $(inputs.output_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+  - id: features
+    type: File[]
+    doc: Feature files (<prefix>.features.N.npz)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_path)/*.npz
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -2,8 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: crnsimulator
 label: crnsimulator
-doc: "crnsimulator\n\nTool homepage: https://github.com/bad-ants-fleet/crnsimulator"
+doc: "Simulate Chemical Reaction Networks (CRNs) using Ordinary Differential Equations
+  (ODEs). The CRN is read from standard input; the ODE system is written to <output>.py
+  and simulated when initial concentrations are given.\n\nTool homepage: https://github.com/bad-ants-fleet/crnsimulator"
 inputs:
+  - id: crn_file
+    type: File
+    doc: CRN file (one reaction per line, e.g. "A + B -> B + B [k = 0.2]"), read
+      from standard input
   - id: atol
     type:
       - 'null'
@@ -194,8 +200,32 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (time course when --nxy is set)
+  - id: ode_library
+    type:
+      - 'null'
+      - File
+    doc: Executable python script with the ODE system
+    outputBinding:
+      glob: '$(inputs.output ? inputs.output : "odesystem").py'
+  - id: plot
+    type:
+      - 'null'
+      - File
+    doc: Plot of the ODE simulation
+    outputBinding:
+      glob: $(inputs.pyplot)
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Logging information file
+    outputBinding:
+      glob: $(inputs.logfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crnsimulator:0.9--pyh5bfb8f1_0
+stdin: $(inputs.crn_file.path)
 stdout: crnsimulator.out

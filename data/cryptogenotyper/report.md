@@ -1,5 +1,11 @@
 # cryptogenotyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cryptogenotyper | PASS |  |
+
 ## cryptogenotyper
 
 ### Tool Description

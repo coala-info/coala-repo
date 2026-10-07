@@ -6,6 +6,14 @@ baseCommand:
 label: csvtk_filter2
 doc: "filter rows by awk-like arithmetic/string expressions\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'

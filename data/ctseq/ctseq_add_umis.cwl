@@ -7,9 +7,7 @@ label: ctseq_add_umis
 doc: "Add UMIs to fastq files.\n\nTool homepage: https://github.com/ryanhmiller/ctseq"
 inputs:
   - id: dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to directory containing fastq files; forward/reverse reads and umi
       files. If no '--dir' is specified, ctseq will look in your current 
       directory.
@@ -60,6 +58,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Fastq directory with the *_forwardReadsWithUMIs.fastq and *_reverseReadsWithUMIs.fastq files added
+    outputBinding:
+      glob: $(inputs.dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctseq:0.0.2--py_0

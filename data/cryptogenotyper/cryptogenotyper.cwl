@@ -23,7 +23,9 @@ inputs:
       position: 101
       prefix: --forwardprimername
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: Path to SINGLE directory with AB1/FASTA forward and reverse files OR 
       path to a SINGLE AB1/FASTA file. Use -f and/or -r to filter inputs
     inputBinding:
@@ -91,6 +93,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: report_tsv
+    type: File
+    doc: Tab-delimited typing report
+    outputBinding:
+      glob: '*cryptogenotyper_report.txt'
+  - id: report_fasta
+    type:
+      - 'null'
+      - File
+    doc: FASTA file of the typed sequences
+    outputBinding:
+      glob: '*cryptogenotyper_report.fa'
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Run log
+    outputBinding:
+      glob: cryptogenotyper.log
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cryptogenotyper:1.5.0--pyhdfd78af_3

@@ -1,5 +1,11 @@
 # crumble CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crumble | PASS |  |
+
 ## crumble
 
 ### Tool Description

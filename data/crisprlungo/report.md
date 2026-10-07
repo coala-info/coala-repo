@@ -1,5 +1,11 @@
 # crisprlungo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| crisprlungo_CRISPRlungo | Failed | image problem: the compiled SSW aligner library libssw.so is missing from the image, so the run stops at primer trimming (exit 0, no summary). |
+
 ## crisprlungo_CRISPRlungo
 
 ### Tool Description

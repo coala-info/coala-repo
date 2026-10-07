@@ -8,6 +8,14 @@ doc: "convert CSV/TSV files to XLSX file. Multiple CSV/TSV files are saved as se
   sheets in .xlsx file. All input files should all be CSV or TSV. First rows are freezed
   unless given '-H/--no-header-row'.\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'

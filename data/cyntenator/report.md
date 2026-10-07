@@ -1,5 +1,11 @@
 # cyntenator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cyntenator | PASS |  |
+
 ## cyntenator
 
 ### Tool Description

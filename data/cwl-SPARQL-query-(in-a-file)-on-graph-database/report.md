@@ -1,5 +1,11 @@
 # SPARQL query (in a file) on graph database CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sparql-query | Not completed | pipeline, skipped: WorkflowHub CWL workflow step (CommandLineTool) package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://workflowhub.eu/workflows/122

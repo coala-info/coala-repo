@@ -1,5 +1,21 @@
 # csvkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| csvkit_csvclean | PASS |  |
+| csvkit_csvcut | PASS |  |
+| csvkit_csvformat | PASS |  |
+| csvkit_csvgrep | PASS |  |
+| csvkit_csvjoin | PASS |  |
+| csvkit_csvlook | PASS |  |
+| csvkit_csvsort | PASS |  |
+| csvkit_csvsql | PASS |  |
+| csvkit_csvstack | PASS |  |
+| csvkit_csvstat | PASS |  |
+| csvkit_in2csv | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

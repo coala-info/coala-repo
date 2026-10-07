@@ -7,6 +7,11 @@ inputs:
   - id: vcf_file
     type: File
     doc: vcf file or - for stdin
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
   - id: chrom
@@ -28,27 +33,33 @@ inputs:
   - id: exclude_info_field
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --exclude
     doc: Specify what info field to exclude.
     inputBinding:
       position: 102
-      prefix: --exclude
   - id: include_info_field
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --include
     doc: Specify what info field to include.
     inputBinding:
       position: 102
-      prefix: --include
   - id: individual
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --individual
     doc: Only print genotype call for individual.
     inputBinding:
       position: 102
-      prefix: --individual
   - id: loglevel
     type:
       - 'null'

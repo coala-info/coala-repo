@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: craq
+baseCommand:
+  - craq
 label: craq
 doc: "Genome benchmarking using CRAQ\n\nTool homepage: https://github.com/JiaoLaboratory/CRAQ"
 inputs:
@@ -110,12 +111,16 @@ inputs:
   - id: ngs_input
     type:
       type: array
-      items: string
-    doc: NGS short-read alignment(.bam) or sequences(.fq.gz), separated with 
-      comma if paired
+      items: File
+    doc: NGS short-read alignment(.bam) or sequences(.fq.gz); give two read 
+      files if paired (joined with a comma)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --ngs_input
+      itemSeparator: ','
   - id: norm_window
     type:
       - 'null'
@@ -176,6 +181,9 @@ inputs:
   - id: sms_input
     type: File
     doc: SMS long-read alignment(.bam) or sequences(.fq.gz)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --sms_input
@@ -201,8 +209,13 @@ outputs:
     doc: User-specified output directory
     outputBinding:
       glob: $(inputs.output_dir_path)
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: '&& find $(inputs.output_dir_path) -maxdepth 1 -type l -delete'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/craq:1.10--hdfd78af_0

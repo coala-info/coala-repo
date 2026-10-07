@@ -26,9 +26,7 @@ inputs:
       position: 101
       prefix: --cutadaptCores
   - id: fastq_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to directory where you have your fastq files. If no '--dir' is 
       specified, ctseq will look in your current directory.
     inputBinding:
@@ -53,9 +51,7 @@ inputs:
       position: 101
       prefix: --readsPerFile
   - id: reference_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Full path to directory where you have already built your methylation 
       reference files. If no '--refDir' is specified, ctseq will look in your 
       current directory.
@@ -74,6 +70,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Fastq directory with the per-sample .sam alignments and Bismark reports added
+    outputBinding:
+      glob: $(inputs.fastq_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fastq_directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctseq:0.0.2--py_0

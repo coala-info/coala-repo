@@ -44,28 +44,31 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --dir
     doc: input file directories
     inputBinding:
       position: 101
-      prefix: --dir
   - id: input_file_lists
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --list
     doc: input file lists
     inputBinding:
       position: 101
-      prefix: --list
   - id: input_seq_files
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --seq
     doc: input files
     inputBinding:
       position: 101
-      prefix: --seq
   - id: kmer_len
     type:
       - 'null'
@@ -165,7 +168,7 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory
     inputBinding:
       position: 101
@@ -179,11 +182,12 @@ inputs:
 outputs:
   - id: output_file
     type:
-      - 'null'
-      - File
-    doc: output file
+      type: array
+      items: File
+    doc: output files (<prefix>.fa / .gfa1 / .gfa2 / .cf_seg / .cf_seq unitig or
+      graph files and the <prefix>.json run info)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path + '*')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

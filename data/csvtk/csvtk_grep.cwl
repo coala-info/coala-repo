@@ -7,6 +7,14 @@ label: csvtk_grep
 doc: "grep data by selected fields with patterns/regular expressions\n\nTool homepage:
   https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'
@@ -170,11 +178,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --pattern
     doc: "query pattern (multiple values supported). Attention: use double quotation
       marks for patterns containing comma, e.g., -p '\"A{2,}\"'"
     inputBinding:
       position: 101
-      prefix: --pattern
   - id: pattern_file
     type:
       - 'null'

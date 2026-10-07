@@ -44,8 +44,13 @@ inputs:
   - id: database
     type:
       - 'null'
-      - string
-    doc: Protein database to search against (def=nr)
+      - File
+    doc: Protein database to search against (def=nr); a FASTA file formatted 
+      with legacy formatdb
+    secondaryFiles:
+      - .phr
+      - .pin
+      - .psq
     inputBinding:
       position: 101
       prefix: --database

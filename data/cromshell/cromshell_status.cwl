@@ -11,14 +11,6 @@ inputs:
     doc: The ID of the workflow to check the status for.
     inputBinding:
       position: 1
-  - id: config_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the cromshell configuration file.
-    inputBinding:
-      position: 102
-      prefix: --config
 outputs:
   - id: stdout
     type: stdout

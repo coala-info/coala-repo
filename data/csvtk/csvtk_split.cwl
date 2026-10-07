@@ -7,6 +7,14 @@ label: csvtk_split
 doc: "split CSV/TSV into multiple files according to column values\n\nTool homepage:
   https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: buf_groups
     type:
       - 'null'

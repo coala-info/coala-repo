@@ -6,6 +6,14 @@ baseCommand:
 label: csvtk_corr
 doc: "calculate Pearson correlation between two columns\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: comment_char
     type:
       - 'null'
@@ -156,12 +164,18 @@ inputs:
       position: 101
       prefix: --tabs
   - id: out_file_path
-    type: string
-    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
+    type:
+      - 'null'
+      - string
+    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-"); 
+      written only in passthrough mode (--pass)
     inputBinding:
       position: 102
       prefix: --out-file
 outputs:
+  - id: correlation
+    type: stderr
+    doc: Pearson correlation result (csvtk corr writes it to standard error)
   - id: out_file
     type:
       - 'null'
@@ -174,3 +188,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/csvtk:0.31.0--h9ee0642_0
+stderr: csvtk_corr.err

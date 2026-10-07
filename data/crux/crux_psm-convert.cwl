@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - psm-convert
 label: crux_psm-convert
-doc: "Convert PSM files to different formats.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Convert PSM files to different formats.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: input_psm_file
     type: File
@@ -26,6 +26,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --distinct-matches
+      valueFrom: '$(self ? "T" : "F")'
   - id: input_format
     type:
       - 'null'
@@ -51,6 +52,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --overwrite
+      valueFrom: '$(self ? "T" : "F")'
   - id: parameter_file
     type:
       - 'null'
@@ -88,7 +90,9 @@ outputs:
       - Directory
     doc: The name of the directory where output files will be created.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "crux-output")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

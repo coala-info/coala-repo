@@ -70,6 +70,9 @@ outputs:
     outputBinding:
       glob: $(inputs.json_report_file_path)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      USER: crocodeel
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

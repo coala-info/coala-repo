@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - extract-columns
 label: crux_extract-columns
-doc: "Extracts specified columns from a tab-delimited file.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Extracts specified columns from a tab-delimited file.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: tsv_file
     type: File
@@ -36,6 +36,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --header
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -51,6 +52,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

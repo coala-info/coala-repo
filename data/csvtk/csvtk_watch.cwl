@@ -6,6 +6,14 @@ baseCommand:
 label: csvtk_watch
 doc: "monitor the specified fields\n\nTool homepage: https://github.com/shenwei356/csvtk"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input CSV/TSV files (default is standard input)
+    inputBinding:
+      position: 1
   - id: bins
     type:
       - 'null'
@@ -201,6 +209,9 @@ inputs:
       position: 103
       prefix: --out-file
 outputs:
+  - id: histogram_log
+    type: stderr
+    doc: Histogram plot or histogram data (--dump) written to standard error
   - id: image
     type:
       - 'null'
@@ -220,3 +231,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/csvtk:0.31.0--h9ee0642_0
+stderr: csvtk_watch.err

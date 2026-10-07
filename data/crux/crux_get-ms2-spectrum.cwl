@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - get-ms2-spectrum
 label: crux_get-ms2-spectrum
-doc: "Parse fragmentation spectra from MS2 files.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Parse fragmentation spectra from MS2 files.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: ms2_file
     type:
@@ -50,6 +50,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --stats
+      valueFrom: '$(self ? "T" : "F")'
   - id: use_z_line
     type:
       - 'null'
@@ -59,6 +60,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-z-line
+      valueFrom: '$(self ? "T" : "F")'
   - id: verbosity
     type:
       - 'null'
@@ -74,6 +76,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

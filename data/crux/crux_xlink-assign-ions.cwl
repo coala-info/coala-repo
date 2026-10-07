@@ -4,7 +4,7 @@ baseCommand:
   - crux
   - xlink-assign-ions
 label: crux_xlink-assign-ions
-doc: "Assigns cross-linked peptides to MS/MS spectra.\n\nTool homepage: https://github.com/redbadger/crux"
+doc: "Assigns cross-linked peptides to MS/MS spectra.\n\nTool homepage: https://crux.ms"
 inputs:
   - id: peptide_a
     type: string
@@ -112,6 +112,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

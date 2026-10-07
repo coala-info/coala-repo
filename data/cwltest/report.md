@@ -1,5 +1,11 @@
 # cwltest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| cwltest | PASS |  |
+
 ## cwltest
 
 ### Tool Description

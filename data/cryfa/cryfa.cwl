@@ -12,7 +12,7 @@ inputs:
       - File
     doc: Input file to be encrypted or decrypted.
     inputBinding:
-      position: 1
+      position: 201
   - id: decrypt
     type:
       - 'null'

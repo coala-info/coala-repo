@@ -24,7 +24,7 @@ inputs:
   - id: bed
     type:
       - 'null'
-      - File
+      - string
     doc: A summary bed file of all regions for display in the UCSC genome 
       browser or downstream analyses with e.g. bedtools. The score field is 
       log2(#ChIP/#Input) * 100 capped at a 1000.
@@ -34,7 +34,7 @@ inputs:
   - id: bigwig
     type:
       - 'null'
-      - Directory
+      - string
     doc: For each file, store a bigwig of both enriched and non-enriched regions
       to folder <BIGWIG>. Requires different basenames for each file.
     inputBinding:
@@ -43,7 +43,7 @@ inputs:
   - id: chip_bigwig
     type:
       - 'null'
-      - File
+      - string
     doc: Store an RPKM-normalized summed bigwig for all ChIP files in file 
       <CHIP-BIGWIG>.
     inputBinding:
@@ -107,7 +107,7 @@ inputs:
   - id: individual_log2fc_bigwigs
     type:
       - 'null'
-      - Directory
+      - string
     doc: For each file, store a bigwig of the log2fc of ChIP/(Sum Input) to 
       folder <INDIVIDUAL-LOG2FC-BIGWIGS>. Requires different basenames for each 
       file.
@@ -117,7 +117,7 @@ inputs:
   - id: input_bigwig
     type:
       - 'null'
-      - File
+      - string
     doc: Store an RPKM-normalized summed bigwig for all Input files in file 
       <INPUT-BIGWIG>.
     inputBinding:
@@ -135,7 +135,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: File to write log messages to.
     inputBinding:
       position: 103
@@ -143,7 +143,7 @@ inputs:
   - id: log2fc_bigwig
     type:
       - 'null'
-      - File
+      - string
     doc: Store an log2(ChIP/Input) bigwig in file <LOG2FC-BIGWIG>. (Both ChIP 
       and Input are RPKM-normalized before dividing.)
     inputBinding:
@@ -160,7 +160,7 @@ inputs:
   - id: store_matrix
     type:
       - 'null'
-      - File
+      - string
     doc: Store the matrix of counts per bin for ChIP and input to gzipped file 
       <STORE_MATRIX>.
     inputBinding:
@@ -188,6 +188,62 @@ outputs:
     doc: File to write results to. By default sent to stdout.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: bed_out
+    type:
+      - 'null'
+      - File
+    doc: A summary bed file of all regions for display in the UCSC genome browser or downstream analyses with e.g. bedtools. The score field is log2(#ChIP/#Input) * 100 capped at a 1000.
+    outputBinding:
+      glob: $(inputs.bed)
+  - id: bigwig_out
+    type:
+      - 'null'
+      - Directory
+    doc: For each file, store a bigwig of both enriched and non-enriched regions to folder <BIGWIG>. Requires different basenames for each file.
+    outputBinding:
+      glob: $(inputs.bigwig)
+  - id: chip_bigwig_out
+    type:
+      - 'null'
+      - File
+    doc: Store an RPKM-normalized summed bigwig for all ChIP files in file <CHIP-BIGWIG>.
+    outputBinding:
+      glob: $(inputs.chip_bigwig)
+  - id: input_bigwig_out
+    type:
+      - 'null'
+      - File
+    doc: Store an RPKM-normalized summed bigwig for all Input files in file <INPUT-BIGWIG>.
+    outputBinding:
+      glob: $(inputs.input_bigwig)
+  - id: log2fc_bigwig_out
+    type:
+      - 'null'
+      - File
+    doc: Store an log2(ChIP/Input) bigwig in file <LOG2FC-BIGWIG>. (Both ChIP and Input are RPKM-normalized before dividing.)
+    outputBinding:
+      glob: $(inputs.log2fc_bigwig)
+  - id: individual_log2fc_bigwigs_out
+    type:
+      - 'null'
+      - Directory
+    doc: For each file, store a bigwig of the log2fc of ChIP/(Sum Input) to folder <INDIVIDUAL-LOG2FC-BIGWIGS>. Requires different basenames for each file.
+    outputBinding:
+      glob: $(inputs.individual_log2fc_bigwigs)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: File to write log messages to.
+    outputBinding:
+      glob: $(inputs.log)
+  - id: store_matrix_out
+    type:
+      - 'null'
+      - File
+    doc: Store the matrix of counts per bin for ChIP and input to gzipped file <STORE_MATRIX>.
+    outputBinding:
+      glob: $(inputs.store_matrix)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # equirep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| equirep_EquiRep | PASS | Fixed the command (EquiRep, not ./EquiRep); ran on the repository's example FASTA and got one repeat unit per read, each occurring in its read. |
+
 ## equirep_EquiRep
 
 ### Tool Description

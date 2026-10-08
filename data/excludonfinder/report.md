@@ -1,5 +1,11 @@
 # excludonfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| excludonfinder_ExcludonFinder | Failed | image problem: ExcludonFinder needs reformat.sh (BBMap), which is missing in the image; fixed baseCommand from main.sh to ExcludonFinder |
+
 ## excludonfinder_ExcludonFinder
 
 ### Tool Description

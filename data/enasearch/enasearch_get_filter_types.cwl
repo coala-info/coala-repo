@@ -1,16 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: enasearch_get_filter_types
+baseCommand:
+  - enasearch
+  - get_filter_types
 label: enasearch_get_filter_types
-doc: "Get available filter types and their associated operators and value descriptions.\n\
-  \nTool homepage: http://bebatut.fr/enasearch/"
-inputs:
-  - id: filter_type
-    type: string
-    doc: The type of filter to get information for (e.g., geo_box2, Text, 
-      Number).
-    inputBinding:
-      position: 1
+doc: "Return the filters usable for the different type of data.\n\nThis function returns the filters that can be used for the different type of data (information available with the information on the filter fileds). Each filter is described with its name, the possible operators or paramters, a description of the expected values\n\nTool homepage: http://bebatut.fr/enasearch/"
+inputs: []
 outputs:
   - id: stdout
     type: stdout

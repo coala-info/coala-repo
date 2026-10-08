@@ -1,5 +1,11 @@
 # fastani CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastani | PASS |  |
+
 ## fastani
 
 ### Tool Description

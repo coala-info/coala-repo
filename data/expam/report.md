@@ -1,5 +1,30 @@
 # expam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| expam_add | PASS |  |
+| expam_build | PASS |  |
+| expam_classify | PASS | tool hangs unless the database was set with n_processes of 7 or more; run with 7 |
+| expam_create | PASS |  |
+| expam_cutoff | PASS |  |
+| expam_distance | Failed | image problem: expam distance needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation' |
+| expam_download_taxonomy | Not completed | needs the NCBI taxonomy database (ete3 download, large) and taxids typed by hand into accession_ids.csv |
+| expam_draw_tree | Not completed | needs the NCBI taxonomy database (ete3 download, large) and taxids typed by hand into accession_ids.csv |
+| expam_fake_phylogeny | PASS |  |
+| expam_mashtree | Failed | image problem: expam mashtree needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation' |
+| expam_nj | Failed | image problem: expam nj needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation' |
+| expam_phylotree | PASS |  |
+| expam_plot_memory | PASS |  |
+| expam_print | PASS |  |
+| expam_quickrun | PASS |  |
+| expam_remove | PASS |  |
+| expam_set | PASS |  |
+| expam_sketch | Failed | image problem: expam sketch needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation' |
+| expam_to_taxonomy | Not completed | needs the NCBI taxonomy database (ete3 download, large) and taxids typed by hand into accession_ids.csv |
+| expam_tree | Failed | image problem: expam tree needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation' |
+
 ## expam_create
 
 ### Tool Description
@@ -205,104 +230,6 @@ optional arguments:
 
 ### Tool Description
 Print current database parameters.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
-- **Homepage**: https://github.com/seansolari/expam
-- **Package**: https://anaconda.org/channels/bioconda/packages/expam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: expam [-h] [--version] [-db [database name]] [-k [k value int)]]
-             [-n [n (int)]] [-s [sketch size (int]] [-p [phylogeny URL]]
-             [-d [directory]] [-l [read length]] [-o [out URL]]
-             [-y [pile size]] [-e [error rate]] [-t TRUTH_DIR] [--plot]
-             [--first FIRST_N] [--cpm CPM] [--taxonomy] [--rank RANK]
-             [--keep-zeros] [--ignore-names] [--group GROUPS [GROUPS ...]]
-             [--colour-list COLOUR_LIST [COLOUR_LIST ...]] [--sourmash]
-             [--rapidnj] [--quicktree] [--paired] [--alpha ALPHA]
-             [--log-scores] [--itol] [--flat-colour] [--debug]
-             [command]
-
-  expam CLI
---------------
-
-positional arguments:
-  [command]             
-                        Command to execute. Valid commands include:
-                        -------------------------------------------
-                        create:-	Initialise database.
-                        build:-		Start building database.
-                        print:-		Print current database parameters.
-                        run:-		Run reads against database.
-                        add:-		Add sequence to the database.
-                        remove:-	Remove sequence from database (only impacts future db builds).
-                        set:-		Set database build parameters.
-                        to_taxonomy:-		Convert results to taxonomic setting.
-                        phylotree:-		Draw results on phylotree.
-                        draw_tree:-		Draw the reference tree.
-                        download_taxonomy:-		Download taxonomic information for reference seqeunces.
-                        cutoff:-		Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS!
-                        mashtree:-	Create mashtree from current sequences and add to database.
-                        quickrun:-	Initialise, set parameters and start building db (assumes
-                        			sequences all lie in the same folder).
-                        make_reads:-	Uniformly sample reads of length l from some input sequence.
-                        		This is for testing purposes only, and is not a replacement
-                        		for actual read generating software.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-  -db [database name], --db_name [database name]
-                        Name of database.
-  -k [k value (int)], --kmer [k value (int)]
-                        Length of mer used for analysis.
-  -n [n (int)], --n-processes [n (int)]
-                        Number of CPUs to use for processing.
-  -s [sketch size (int)], --sketch [sketch size (int)]
-                        Sketch size for mash.
-  -p [phylogeny URL], --phylogeny [phylogeny URL]
-                        URL of Newick file containing phylogeny.
-  -d [directory], --directory [directory]
-                        File URL, context depending on command supplied.
-  -l [read length], --length [read length]
-                        Length of simulated reads.
-  -o [out URL], --out [out URL]
-                        Where to save classification results.
-  -y [pile size], --pile [pile size]
-                        Number of genomes to pile at a time (or inf).
-  -e [error rate], --error-rate [error rate]
-                        Generate error in reads (error ~ reads with errors / reads).
-  -t TRUTH_DIR, --truth TRUTH_DIR
-                        Location of truth dataset.
-  --plot                Plot timing data of database build.
-  --first FIRST_N       Add first n genomes in folder.
-  --cpm CPM             Counts/million cutoff for read-count to be non-negligible.
-  --taxonomy            Convert phylogenetic results to taxonomic results.
-  --rank RANK           Rank at which to sort results.
-  --keep-zeros          Keep nodes of output where no reads have been assigned.
-  --ignore-names
-  --group GROUPS [GROUPS ...]
-                        Space-separated list of sample files to be treated as a single group in phylotree.
-  --colour-list COLOUR_LIST [COLOUR_LIST ...]
-                        List of colours to use when plotting groups in phylotree.
-  --sourmash            Use sourmash for distance estimation.
-  --rapidnj             Use RapidNJ for Neighbour-Joining algorithm.
-  --quicktree           Use QuickTree for Neighbour-Joining algorithm.
-  --paired              Treat reads as paired-end.
-  --alpha ALPHA         Percentage requirement for classification subtrees (see Tutorials 1 & 2).
-  --log-scores          Log transformation to opacity scores on phylotree (think uneven distributions).
-  --itol                Output plotting data in ITOL format.
-  --flat-colour         Do not use abundance to make phylotree colours opaque.
-  --debug               Set logging level to DEBUG (as opposed to INFO).
-```
-
-
-## expam_run
-
-### Tool Description
-Run reads against database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
@@ -1377,10 +1304,598 @@ optional arguments:
 ```
 
 
-## expam_make_reads
+## expam_fake_phylogeny
 
 ### Tool Description
-Uniformly sample reads of length l from some input sequence. This is for testing purposes only, and is not a replacement for actual read generating software.
+Generate a balanced placeholder phylogeny from the sequences added to the database and set it as the database phylogeny.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
+- **Homepage**: https://github.com/seansolari/expam
+- **Package**: https://anaconda.org/channels/bioconda/packages/expam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: expam [-h] [--version] [-db [database name]] [-k [k value int)]]
+             [-n [n (int)]] [-s [sketch size (int]] [-p [phylogeny URL]]
+             [-d [directory]] [-l [read length]] [-o [out URL]]
+             [-y [pile size]] [-e [error rate]] [-t TRUTH_DIR] [--plot]
+             [--first FIRST_N] [--cpm CPM] [--taxonomy] [--rank RANK]
+             [--keep-zeros] [--ignore-names] [--group GROUPS [GROUPS ...]]
+             [--colour-list COLOUR_LIST [COLOUR_LIST ...]] [--sourmash]
+             [--rapidnj] [--quicktree] [--paired] [--alpha ALPHA]
+             [--log-scores] [--itol] [--flat-colour] [--debug]
+             [command]
+
+  expam CLI
+--------------
+
+positional arguments:
+  [command]             
+                        Command to execute. Valid commands include:
+                        -------------------------------------------
+                        create:-	Initialise database.
+                        build:-		Start building database.
+                        print:-		Print current database parameters.
+                        run:-		Run reads against database.
+                        add:-		Add sequence to the database.
+                        remove:-	Remove sequence from database (only impacts future db builds).
+                        set:-		Set database build parameters.
+                        to_taxonomy:-		Convert results to taxonomic setting.
+                        phylotree:-		Draw results on phylotree.
+                        draw_tree:-		Draw the reference tree.
+                        download_taxonomy:-		Download taxonomic information for reference seqeunces.
+                        cutoff:-		Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS!
+                        mashtree:-	Create mashtree from current sequences and add to database.
+                        quickrun:-	Initialise, set parameters and start building db (assumes
+                        			sequences all lie in the same folder).
+                        make_reads:-	Uniformly sample reads of length l from some input sequence.
+                        		This is for testing purposes only, and is not a replacement
+                        		for actual read generating software.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -db [database name], --db_name [database name]
+                        Name of database.
+  -k [k value (int)], --kmer [k value (int)]
+                        Length of mer used for analysis.
+  -n [n (int)], --n-processes [n (int)]
+                        Number of CPUs to use for processing.
+  -s [sketch size (int)], --sketch [sketch size (int)]
+                        Sketch size for mash.
+  -p [phylogeny URL], --phylogeny [phylogeny URL]
+                        URL of Newick file containing phylogeny.
+  -d [directory], --directory [directory]
+                        File URL, context depending on command supplied.
+  -l [read length], --length [read length]
+                        Length of simulated reads.
+  -o [out URL], --out [out URL]
+                        Where to save classification results.
+  -y [pile size], --pile [pile size]
+                        Number of genomes to pile at a time (or inf).
+  -e [error rate], --error-rate [error rate]
+                        Generate error in reads (error ~ reads with errors / reads).
+  -t TRUTH_DIR, --truth TRUTH_DIR
+                        Location of truth dataset.
+  --plot                Plot timing data of database build.
+  --first FIRST_N       Add first n genomes in folder.
+  --cpm CPM             Counts/million cutoff for read-count to be non-negligible.
+  --taxonomy            Convert phylogenetic results to taxonomic results.
+  --rank RANK           Rank at which to sort results.
+  --keep-zeros          Keep nodes of output where no reads have been assigned.
+  --ignore-names
+  --group GROUPS [GROUPS ...]
+                        Space-separated list of sample files to be treated as a single group in phylotree.
+  --colour-list COLOUR_LIST [COLOUR_LIST ...]
+                        List of colours to use when plotting groups in phylotree.
+  --sourmash            Use sourmash for distance estimation.
+  --rapidnj             Use RapidNJ for Neighbour-Joining algorithm.
+  --quicktree           Use QuickTree for Neighbour-Joining algorithm.
+  --paired              Treat reads as paired-end.
+  --alpha ALPHA         Percentage requirement for classification subtrees (see Tutorials 1 & 2).
+  --log-scores          Log transformation to opacity scores on phylotree (think uneven distributions).
+  --itol                Output plotting data in ITOL format.
+  --flat-colour         Do not use abundance to make phylotree colours opaque.
+  --debug               Set logging level to DEBUG (as opposed to INFO).
+```
+
+
+## expam_classify
+
+### Tool Description
+Classify reads against the database. Writes phylogenetic results (phy/) and, with --taxonomy, taxonomic results (tax/).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
+- **Homepage**: https://github.com/seansolari/expam
+- **Package**: https://anaconda.org/channels/bioconda/packages/expam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: expam [-h] [--version] [-db [database name]] [-k [k value int)]]
+             [-n [n (int)]] [-s [sketch size (int]] [-p [phylogeny URL]]
+             [-d [directory]] [-l [read length]] [-o [out URL]]
+             [-y [pile size]] [-e [error rate]] [-t TRUTH_DIR] [--plot]
+             [--first FIRST_N] [--cpm CPM] [--taxonomy] [--rank RANK]
+             [--keep-zeros] [--ignore-names] [--group GROUPS [GROUPS ...]]
+             [--colour-list COLOUR_LIST [COLOUR_LIST ...]] [--sourmash]
+             [--rapidnj] [--quicktree] [--paired] [--alpha ALPHA]
+             [--log-scores] [--itol] [--flat-colour] [--debug]
+             [command]
+
+  expam CLI
+--------------
+
+positional arguments:
+  [command]             
+                        Command to execute. Valid commands include:
+                        -------------------------------------------
+                        create:-	Initialise database.
+                        build:-		Start building database.
+                        print:-		Print current database parameters.
+                        run:-		Run reads against database.
+                        add:-		Add sequence to the database.
+                        remove:-	Remove sequence from database (only impacts future db builds).
+                        set:-		Set database build parameters.
+                        to_taxonomy:-		Convert results to taxonomic setting.
+                        phylotree:-		Draw results on phylotree.
+                        draw_tree:-		Draw the reference tree.
+                        download_taxonomy:-		Download taxonomic information for reference seqeunces.
+                        cutoff:-		Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS!
+                        mashtree:-	Create mashtree from current sequences and add to database.
+                        quickrun:-	Initialise, set parameters and start building db (assumes
+                        			sequences all lie in the same folder).
+                        make_reads:-	Uniformly sample reads of length l from some input sequence.
+                        		This is for testing purposes only, and is not a replacement
+                        		for actual read generating software.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -db [database name], --db_name [database name]
+                        Name of database.
+  -k [k value (int)], --kmer [k value (int)]
+                        Length of mer used for analysis.
+  -n [n (int)], --n-processes [n (int)]
+                        Number of CPUs to use for processing.
+  -s [sketch size (int)], --sketch [sketch size (int)]
+                        Sketch size for mash.
+  -p [phylogeny URL], --phylogeny [phylogeny URL]
+                        URL of Newick file containing phylogeny.
+  -d [directory], --directory [directory]
+                        File URL, context depending on command supplied.
+  -l [read length], --length [read length]
+                        Length of simulated reads.
+  -o [out URL], --out [out URL]
+                        Where to save classification results.
+  -y [pile size], --pile [pile size]
+                        Number of genomes to pile at a time (or inf).
+  -e [error rate], --error-rate [error rate]
+                        Generate error in reads (error ~ reads with errors / reads).
+  -t TRUTH_DIR, --truth TRUTH_DIR
+                        Location of truth dataset.
+  --plot                Plot timing data of database build.
+  --first FIRST_N       Add first n genomes in folder.
+  --cpm CPM             Counts/million cutoff for read-count to be non-negligible.
+  --taxonomy            Convert phylogenetic results to taxonomic results.
+  --rank RANK           Rank at which to sort results.
+  --keep-zeros          Keep nodes of output where no reads have been assigned.
+  --ignore-names
+  --group GROUPS [GROUPS ...]
+                        Space-separated list of sample files to be treated as a single group in phylotree.
+  --colour-list COLOUR_LIST [COLOUR_LIST ...]
+                        List of colours to use when plotting groups in phylotree.
+  --sourmash            Use sourmash for distance estimation.
+  --rapidnj             Use RapidNJ for Neighbour-Joining algorithm.
+  --quicktree           Use QuickTree for Neighbour-Joining algorithm.
+  --paired              Treat reads as paired-end.
+  --alpha ALPHA         Percentage requirement for classification subtrees (see Tutorials 1 & 2).
+  --log-scores          Log transformation to opacity scores on phylotree (think uneven distributions).
+  --itol                Output plotting data in ITOL format.
+  --flat-colour         Do not use abundance to make phylotree colours opaque.
+  --debug               Set logging level to DEBUG (as opposed to INFO).
+```
+
+
+## expam_tree
+
+### Tool Description
+Make the phylogeny: sketch sequences, compute pairwise distances and run neighbour-joining.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
+- **Homepage**: https://github.com/seansolari/expam
+- **Package**: https://anaconda.org/channels/bioconda/packages/expam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: expam [-h] [--version] [-db [database name]] [-k [k value int)]]
+             [-n [n (int)]] [-s [sketch size (int]] [-p [phylogeny URL]]
+             [-d [directory]] [-l [read length]] [-o [out URL]]
+             [-y [pile size]] [-e [error rate]] [-t TRUTH_DIR] [--plot]
+             [--first FIRST_N] [--cpm CPM] [--taxonomy] [--rank RANK]
+             [--keep-zeros] [--ignore-names] [--group GROUPS [GROUPS ...]]
+             [--colour-list COLOUR_LIST [COLOUR_LIST ...]] [--sourmash]
+             [--rapidnj] [--quicktree] [--paired] [--alpha ALPHA]
+             [--log-scores] [--itol] [--flat-colour] [--debug]
+             [command]
+
+  expam CLI
+--------------
+
+positional arguments:
+  [command]             
+                        Command to execute. Valid commands include:
+                        -------------------------------------------
+                        create:-	Initialise database.
+                        build:-		Start building database.
+                        print:-		Print current database parameters.
+                        run:-		Run reads against database.
+                        add:-		Add sequence to the database.
+                        remove:-	Remove sequence from database (only impacts future db builds).
+                        set:-		Set database build parameters.
+                        to_taxonomy:-		Convert results to taxonomic setting.
+                        phylotree:-		Draw results on phylotree.
+                        draw_tree:-		Draw the reference tree.
+                        download_taxonomy:-		Download taxonomic information for reference seqeunces.
+                        cutoff:-		Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS!
+                        mashtree:-	Create mashtree from current sequences and add to database.
+                        quickrun:-	Initialise, set parameters and start building db (assumes
+                        			sequences all lie in the same folder).
+                        make_reads:-	Uniformly sample reads of length l from some input sequence.
+                        		This is for testing purposes only, and is not a replacement
+                        		for actual read generating software.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -db [database name], --db_name [database name]
+                        Name of database.
+  -k [k value (int)], --kmer [k value (int)]
+                        Length of mer used for analysis.
+  -n [n (int)], --n-processes [n (int)]
+                        Number of CPUs to use for processing.
+  -s [sketch size (int)], --sketch [sketch size (int)]
+                        Sketch size for mash.
+  -p [phylogeny URL], --phylogeny [phylogeny URL]
+                        URL of Newick file containing phylogeny.
+  -d [directory], --directory [directory]
+                        File URL, context depending on command supplied.
+  -l [read length], --length [read length]
+                        Length of simulated reads.
+  -o [out URL], --out [out URL]
+                        Where to save classification results.
+  -y [pile size], --pile [pile size]
+                        Number of genomes to pile at a time (or inf).
+  -e [error rate], --error-rate [error rate]
+                        Generate error in reads (error ~ reads with errors / reads).
+  -t TRUTH_DIR, --truth TRUTH_DIR
+                        Location of truth dataset.
+  --plot                Plot timing data of database build.
+  --first FIRST_N       Add first n genomes in folder.
+  --cpm CPM             Counts/million cutoff for read-count to be non-negligible.
+  --taxonomy            Convert phylogenetic results to taxonomic results.
+  --rank RANK           Rank at which to sort results.
+  --keep-zeros          Keep nodes of output where no reads have been assigned.
+  --ignore-names
+  --group GROUPS [GROUPS ...]
+                        Space-separated list of sample files to be treated as a single group in phylotree.
+  --colour-list COLOUR_LIST [COLOUR_LIST ...]
+                        List of colours to use when plotting groups in phylotree.
+  --sourmash            Use sourmash for distance estimation.
+  --rapidnj             Use RapidNJ for Neighbour-Joining algorithm.
+  --quicktree           Use QuickTree for Neighbour-Joining algorithm.
+  --paired              Treat reads as paired-end.
+  --alpha ALPHA         Percentage requirement for classification subtrees (see Tutorials 1 & 2).
+  --log-scores          Log transformation to opacity scores on phylotree (think uneven distributions).
+  --itol                Output plotting data in ITOL format.
+  --flat-colour         Do not use abundance to make phylotree colours opaque.
+  --debug               Set logging level to DEBUG (as opposed to INFO).
+```
+
+
+## expam_sketch
+
+### Tool Description
+Sketch the sequences of the database with mash (or sourmash).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
+- **Homepage**: https://github.com/seansolari/expam
+- **Package**: https://anaconda.org/channels/bioconda/packages/expam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: expam [-h] [--version] [-db [database name]] [-k [k value int)]]
+             [-n [n (int)]] [-s [sketch size (int]] [-p [phylogeny URL]]
+             [-d [directory]] [-l [read length]] [-o [out URL]]
+             [-y [pile size]] [-e [error rate]] [-t TRUTH_DIR] [--plot]
+             [--first FIRST_N] [--cpm CPM] [--taxonomy] [--rank RANK]
+             [--keep-zeros] [--ignore-names] [--group GROUPS [GROUPS ...]]
+             [--colour-list COLOUR_LIST [COLOUR_LIST ...]] [--sourmash]
+             [--rapidnj] [--quicktree] [--paired] [--alpha ALPHA]
+             [--log-scores] [--itol] [--flat-colour] [--debug]
+             [command]
+
+  expam CLI
+--------------
+
+positional arguments:
+  [command]             
+                        Command to execute. Valid commands include:
+                        -------------------------------------------
+                        create:-	Initialise database.
+                        build:-		Start building database.
+                        print:-		Print current database parameters.
+                        run:-		Run reads against database.
+                        add:-		Add sequence to the database.
+                        remove:-	Remove sequence from database (only impacts future db builds).
+                        set:-		Set database build parameters.
+                        to_taxonomy:-		Convert results to taxonomic setting.
+                        phylotree:-		Draw results on phylotree.
+                        draw_tree:-		Draw the reference tree.
+                        download_taxonomy:-		Download taxonomic information for reference seqeunces.
+                        cutoff:-		Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS!
+                        mashtree:-	Create mashtree from current sequences and add to database.
+                        quickrun:-	Initialise, set parameters and start building db (assumes
+                        			sequences all lie in the same folder).
+                        make_reads:-	Uniformly sample reads of length l from some input sequence.
+                        		This is for testing purposes only, and is not a replacement
+                        		for actual read generating software.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -db [database name], --db_name [database name]
+                        Name of database.
+  -k [k value (int)], --kmer [k value (int)]
+                        Length of mer used for analysis.
+  -n [n (int)], --n-processes [n (int)]
+                        Number of CPUs to use for processing.
+  -s [sketch size (int)], --sketch [sketch size (int)]
+                        Sketch size for mash.
+  -p [phylogeny URL], --phylogeny [phylogeny URL]
+                        URL of Newick file containing phylogeny.
+  -d [directory], --directory [directory]
+                        File URL, context depending on command supplied.
+  -l [read length], --length [read length]
+                        Length of simulated reads.
+  -o [out URL], --out [out URL]
+                        Where to save classification results.
+  -y [pile size], --pile [pile size]
+                        Number of genomes to pile at a time (or inf).
+  -e [error rate], --error-rate [error rate]
+                        Generate error in reads (error ~ reads with errors / reads).
+  -t TRUTH_DIR, --truth TRUTH_DIR
+                        Location of truth dataset.
+  --plot                Plot timing data of database build.
+  --first FIRST_N       Add first n genomes in folder.
+  --cpm CPM             Counts/million cutoff for read-count to be non-negligible.
+  --taxonomy            Convert phylogenetic results to taxonomic results.
+  --rank RANK           Rank at which to sort results.
+  --keep-zeros          Keep nodes of output where no reads have been assigned.
+  --ignore-names
+  --group GROUPS [GROUPS ...]
+                        Space-separated list of sample files to be treated as a single group in phylotree.
+  --colour-list COLOUR_LIST [COLOUR_LIST ...]
+                        List of colours to use when plotting groups in phylotree.
+  --sourmash            Use sourmash for distance estimation.
+  --rapidnj             Use RapidNJ for Neighbour-Joining algorithm.
+  --quicktree           Use QuickTree for Neighbour-Joining algorithm.
+  --paired              Treat reads as paired-end.
+  --alpha ALPHA         Percentage requirement for classification subtrees (see Tutorials 1 & 2).
+  --log-scores          Log transformation to opacity scores on phylotree (think uneven distributions).
+  --itol                Output plotting data in ITOL format.
+  --flat-colour         Do not use abundance to make phylotree colours opaque.
+  --debug               Set logging level to DEBUG (as opposed to INFO).
+```
+
+
+## expam_distance
+
+### Tool Description
+Compute pairwise distances between sketched sequences.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
+- **Homepage**: https://github.com/seansolari/expam
+- **Package**: https://anaconda.org/channels/bioconda/packages/expam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: expam [-h] [--version] [-db [database name]] [-k [k value int)]]
+             [-n [n (int)]] [-s [sketch size (int]] [-p [phylogeny URL]]
+             [-d [directory]] [-l [read length]] [-o [out URL]]
+             [-y [pile size]] [-e [error rate]] [-t TRUTH_DIR] [--plot]
+             [--first FIRST_N] [--cpm CPM] [--taxonomy] [--rank RANK]
+             [--keep-zeros] [--ignore-names] [--group GROUPS [GROUPS ...]]
+             [--colour-list COLOUR_LIST [COLOUR_LIST ...]] [--sourmash]
+             [--rapidnj] [--quicktree] [--paired] [--alpha ALPHA]
+             [--log-scores] [--itol] [--flat-colour] [--debug]
+             [command]
+
+  expam CLI
+--------------
+
+positional arguments:
+  [command]             
+                        Command to execute. Valid commands include:
+                        -------------------------------------------
+                        create:-	Initialise database.
+                        build:-		Start building database.
+                        print:-		Print current database parameters.
+                        run:-		Run reads against database.
+                        add:-		Add sequence to the database.
+                        remove:-	Remove sequence from database (only impacts future db builds).
+                        set:-		Set database build parameters.
+                        to_taxonomy:-		Convert results to taxonomic setting.
+                        phylotree:-		Draw results on phylotree.
+                        draw_tree:-		Draw the reference tree.
+                        download_taxonomy:-		Download taxonomic information for reference seqeunces.
+                        cutoff:-		Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS!
+                        mashtree:-	Create mashtree from current sequences and add to database.
+                        quickrun:-	Initialise, set parameters and start building db (assumes
+                        			sequences all lie in the same folder).
+                        make_reads:-	Uniformly sample reads of length l from some input sequence.
+                        		This is for testing purposes only, and is not a replacement
+                        		for actual read generating software.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -db [database name], --db_name [database name]
+                        Name of database.
+  -k [k value (int)], --kmer [k value (int)]
+                        Length of mer used for analysis.
+  -n [n (int)], --n-processes [n (int)]
+                        Number of CPUs to use for processing.
+  -s [sketch size (int)], --sketch [sketch size (int)]
+                        Sketch size for mash.
+  -p [phylogeny URL], --phylogeny [phylogeny URL]
+                        URL of Newick file containing phylogeny.
+  -d [directory], --directory [directory]
+                        File URL, context depending on command supplied.
+  -l [read length], --length [read length]
+                        Length of simulated reads.
+  -o [out URL], --out [out URL]
+                        Where to save classification results.
+  -y [pile size], --pile [pile size]
+                        Number of genomes to pile at a time (or inf).
+  -e [error rate], --error-rate [error rate]
+                        Generate error in reads (error ~ reads with errors / reads).
+  -t TRUTH_DIR, --truth TRUTH_DIR
+                        Location of truth dataset.
+  --plot                Plot timing data of database build.
+  --first FIRST_N       Add first n genomes in folder.
+  --cpm CPM             Counts/million cutoff for read-count to be non-negligible.
+  --taxonomy            Convert phylogenetic results to taxonomic results.
+  --rank RANK           Rank at which to sort results.
+  --keep-zeros          Keep nodes of output where no reads have been assigned.
+  --ignore-names
+  --group GROUPS [GROUPS ...]
+                        Space-separated list of sample files to be treated as a single group in phylotree.
+  --colour-list COLOUR_LIST [COLOUR_LIST ...]
+                        List of colours to use when plotting groups in phylotree.
+  --sourmash            Use sourmash for distance estimation.
+  --rapidnj             Use RapidNJ for Neighbour-Joining algorithm.
+  --quicktree           Use QuickTree for Neighbour-Joining algorithm.
+  --paired              Treat reads as paired-end.
+  --alpha ALPHA         Percentage requirement for classification subtrees (see Tutorials 1 & 2).
+  --log-scores          Log transformation to opacity scores on phylotree (think uneven distributions).
+  --itol                Output plotting data in ITOL format.
+  --flat-colour         Do not use abundance to make phylotree colours opaque.
+  --debug               Set logging level to DEBUG (as opposed to INFO).
+```
+
+
+## expam_nj
+
+### Tool Description
+Run neighbour-joining on the distance matrices.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0
+- **Homepage**: https://github.com/seansolari/expam
+- **Package**: https://anaconda.org/channels/bioconda/packages/expam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: expam [-h] [--version] [-db [database name]] [-k [k value int)]]
+             [-n [n (int)]] [-s [sketch size (int]] [-p [phylogeny URL]]
+             [-d [directory]] [-l [read length]] [-o [out URL]]
+             [-y [pile size]] [-e [error rate]] [-t TRUTH_DIR] [--plot]
+             [--first FIRST_N] [--cpm CPM] [--taxonomy] [--rank RANK]
+             [--keep-zeros] [--ignore-names] [--group GROUPS [GROUPS ...]]
+             [--colour-list COLOUR_LIST [COLOUR_LIST ...]] [--sourmash]
+             [--rapidnj] [--quicktree] [--paired] [--alpha ALPHA]
+             [--log-scores] [--itol] [--flat-colour] [--debug]
+             [command]
+
+  expam CLI
+--------------
+
+positional arguments:
+  [command]             
+                        Command to execute. Valid commands include:
+                        -------------------------------------------
+                        create:-	Initialise database.
+                        build:-		Start building database.
+                        print:-		Print current database parameters.
+                        run:-		Run reads against database.
+                        add:-		Add sequence to the database.
+                        remove:-	Remove sequence from database (only impacts future db builds).
+                        set:-		Set database build parameters.
+                        to_taxonomy:-		Convert results to taxonomic setting.
+                        phylotree:-		Draw results on phylotree.
+                        draw_tree:-		Draw the reference tree.
+                        download_taxonomy:-		Download taxonomic information for reference seqeunces.
+                        cutoff:-		Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS!
+                        mashtree:-	Create mashtree from current sequences and add to database.
+                        quickrun:-	Initialise, set parameters and start building db (assumes
+                        			sequences all lie in the same folder).
+                        make_reads:-	Uniformly sample reads of length l from some input sequence.
+                        		This is for testing purposes only, and is not a replacement
+                        		for actual read generating software.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -db [database name], --db_name [database name]
+                        Name of database.
+  -k [k value (int)], --kmer [k value (int)]
+                        Length of mer used for analysis.
+  -n [n (int)], --n-processes [n (int)]
+                        Number of CPUs to use for processing.
+  -s [sketch size (int)], --sketch [sketch size (int)]
+                        Sketch size for mash.
+  -p [phylogeny URL], --phylogeny [phylogeny URL]
+                        URL of Newick file containing phylogeny.
+  -d [directory], --directory [directory]
+                        File URL, context depending on command supplied.
+  -l [read length], --length [read length]
+                        Length of simulated reads.
+  -o [out URL], --out [out URL]
+                        Where to save classification results.
+  -y [pile size], --pile [pile size]
+                        Number of genomes to pile at a time (or inf).
+  -e [error rate], --error-rate [error rate]
+                        Generate error in reads (error ~ reads with errors / reads).
+  -t TRUTH_DIR, --truth TRUTH_DIR
+                        Location of truth dataset.
+  --plot                Plot timing data of database build.
+  --first FIRST_N       Add first n genomes in folder.
+  --cpm CPM             Counts/million cutoff for read-count to be non-negligible.
+  --taxonomy            Convert phylogenetic results to taxonomic results.
+  --rank RANK           Rank at which to sort results.
+  --keep-zeros          Keep nodes of output where no reads have been assigned.
+  --ignore-names
+  --group GROUPS [GROUPS ...]
+                        Space-separated list of sample files to be treated as a single group in phylotree.
+  --colour-list COLOUR_LIST [COLOUR_LIST ...]
+                        List of colours to use when plotting groups in phylotree.
+  --sourmash            Use sourmash for distance estimation.
+  --rapidnj             Use RapidNJ for Neighbour-Joining algorithm.
+  --quicktree           Use QuickTree for Neighbour-Joining algorithm.
+  --paired              Treat reads as paired-end.
+  --alpha ALPHA         Percentage requirement for classification subtrees (see Tutorials 1 & 2).
+  --log-scores          Log transformation to opacity scores on phylotree (think uneven distributions).
+  --itol                Output plotting data in ITOL format.
+  --flat-colour         Do not use abundance to make phylotree colours opaque.
+  --debug               Set logging level to DEBUG (as opposed to INFO).
+```
+
+
+## expam_plot_memory
+
+### Tool Description
+Plot expam database build memory usage from the build logs.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/expam:1.4.0.7--py39hbcbf7aa_0

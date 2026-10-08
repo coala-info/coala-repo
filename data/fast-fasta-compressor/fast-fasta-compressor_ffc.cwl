@@ -68,9 +68,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file, use hyphen symbol (-) for stdout
     outputBinding:
       glob: $(inputs.output_path)

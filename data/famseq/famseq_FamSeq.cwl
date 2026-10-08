@@ -17,7 +17,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: float
     doc: Genotype probability of three kinds of genotype for autosome in 
       population (Pr(G)) when the variant is in dbSNP.
     inputBinding:
@@ -27,7 +27,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: float
     doc: Genotype probability of three kinds of genotype for autosome in 
       population (Pr(G)) when the variant is not in dbSNP.
     inputBinding:
@@ -37,7 +37,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: float
     doc: Genotype probability of two kinds of genotype for chromosome X for male
       in population (Pr(G)) when the variant is in dbSNP.
     inputBinding:
@@ -47,12 +47,23 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: float
     doc: Genotype probability of two kinds of genotype for chromosome X for male
       in population (Pr(G)) when the variant is not in dbSNP.
     inputBinding:
       position: 102
       prefix: -genoProbXN
+  - id: lrc
+    type:
+      - 'null'
+      - float
+    doc: Likelihood ratio cutoff. If likelihood (most likely genotype)/sum(likelihood
+      of all genotypes) is less than the cutoff, pedigree information is used to
+      improve variant calling. The default is 1 (all variants use pedigree
+      information); 0 uses only the single individual method.
+    inputBinding:
+      position: 102
+      prefix: -LRC
   - id: lk_file
     type:
       - 'null'
@@ -140,14 +151,13 @@ inputs:
       prefix: -vcfFile
   - id: output_path
     type: string
+    doc: The name of output file
     inputBinding:
       position: 103
       prefix: -output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The name of output file
     outputBinding:
       glob: $(inputs.output_path)

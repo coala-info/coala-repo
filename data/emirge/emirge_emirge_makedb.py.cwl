@@ -11,7 +11,7 @@ inputs:
   - id: bowtie_build
     type:
       - 'null'
-      - File
+      - string
     doc: path to bowtie-build binary
     inputBinding:
       position: 101
@@ -60,8 +60,8 @@ inputs:
   - id: release
     type:
       - 'null'
-      - int
-    doc: SILVA release number
+      - string
+    doc: 'SILVA release number (default: current SILVA release)'
     inputBinding:
       position: 101
       prefix: --release
@@ -85,19 +85,34 @@ inputs:
     type:
       - 'null'
       - string
-    doc: working directory for temporary files
+    doc: working directory for temporary files (default = /tmp)
     inputBinding:
       position: 101
       prefix: --tmpdir
   - id: vsearch
     type:
       - 'null'
-      - File
+      - string
     doc: path to vsearch binary
     inputBinding:
       position: 101
       prefix: --vsearch
 outputs:
+  - id: database_fasta
+    type:
+      type: array
+      items: File
+    doc: clustered SILVA FASTA file with ambiguous bases replaced 
+      (*.fixed.fasta)
+    outputBinding:
+      glob: '*.fixed.fasta'
+  - id: bowtie_index
+    type:
+      type: array
+      items: File
+    doc: bowtie index files of the database
+    outputBinding:
+      glob: '*.ebwt'
   - id: stdout
     type: stdout
     doc: Standard output
@@ -105,3 +120,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emirge:0.61.1--py27_1
 stdout: emirge_emirge_makedb.py.out
+requirements:
+  - class: NetworkAccess
+    networkAccess: true

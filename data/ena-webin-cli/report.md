@@ -1,5 +1,11 @@
 # ena-webin-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ena-webin-cli | Not completed | needs an ENA Webin account to validate or submit; only the offline -fields mode ran, and the base command was fixed to the ena-webin-cli wrapper |
+
 ## ena-webin-cli
 
 ### Tool Description

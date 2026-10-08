@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - webin-cli-9.0.3.jar
+baseCommand: ena-webin-cli
 label: ena-webin-cli
 doc: "Validate and submit files to ENA using the Webin submission service. Use the
   -fields option to see supported manifest fields for all contexts or for a specific
@@ -21,14 +18,18 @@ inputs:
       position: 101
       prefix: -ascp
   - id: center_name
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Mandatory center name for broker accounts.
     inputBinding:
       position: 101
       prefix: -centerName=
       separate: false
   - id: context
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'Submission type: genome, transcriptome, sequence, polysample, reads, taxrefset'
     inputBinding:
       position: 101
@@ -53,7 +54,9 @@ inputs:
       prefix: -inputDir=
       separate: false
   - id: manifest
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Manifest text file containing file and metadata fields.
     inputBinding:
       position: 101
@@ -164,6 +167,9 @@ outputs:
       in the <validate> sub-directory.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ena-webin-cli:9.0.3--hdfd78af_0

@@ -1,11 +1,47 @@
 # emmtyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emmtyper | PASS | two real Streptococcus pyogenes genomes from NCBI typed as EMM1 and EMM18 with the blast and pcr workflows |
+| emmtyper_emmtyper-db | Failed | tool bug: emmtyper-db crashes at start in a container (read-only install folder gives OSError, setting EMM_DB gives TypeError), and the CDC FTP login also fails |
+
 ## emmtyper
 
 ### Tool Description
 Welcome to emmtyper.
 
+### emmtyper_emmtyper-db
+
+### Tool Description
+Update the EMM database used by emmtyper (EMAIL is needed to connect to the CDC FTP server)
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/emmtyper:0.2.0--py_0
+- **Homepage**: https://github.com/MDUPHL/emmtyper
+- **Package**: https://anaconda.org/channels/bioconda/packages/emmtyper/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: emmtyper-db [OPTIONS] EMAIL
+
+  EMAIL is needed to connect to CDC FTP server.
+
+  By default, db_folder will be taken from EMM_DB environmental folder. If
+  can't find the folder, will default to where emmtyper is installed. If it
+  cannot write to the installation folder, it will make a suggestion in your
+  /home folder.
+
+Options:
+  -d, --db_folder TEXT  Where to update the DB  [default:
+                        /usr/local/lib/python3.7/site-packages/emmtyper/db]
+
+  --help                Show this message and exit.
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/emmtyper:0.2.0--py_0
 - **Homepage**: https://github.com/MDUPHL/emmtyper
 - **Package**: https://anaconda.org/channels/bioconda/packages/emmtyper/overview

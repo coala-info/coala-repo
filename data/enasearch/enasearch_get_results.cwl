@@ -1,17 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: enasearch_get_results
+baseCommand:
+  - enasearch
+  - get_results
 label: enasearch_get_results
-doc: "Get results from ENA.\n\nTool homepage: http://bebatut.fr/enasearch/"
-inputs:
-  - id: result_type
-    type: string
-    doc: 'Type of result to retrieve. Available types: noncoding_release, assembly,
-      sequence_release, wgs_set, study, taxon, coding_release, sample, environmental,
-      read_run, read_study, read_experiment, analysis, sequence_update, coding_update,
-      tsa_set, analysis_study, noncoding_update'
-    inputBinding:
-      position: 1
+doc: "Get the possible results (type of data).\n\nThis function return the possible results (or type of data) accessible with ENA with their ids and a short description\n\nTool homepage: http://bebatut.fr/enasearch/"
+inputs: []
 outputs:
   - id: stdout
     type: stdout

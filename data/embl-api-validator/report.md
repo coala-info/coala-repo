@@ -1,5 +1,11 @@
 # embl-api-validator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| embl-api-validator | PASS | validated two real ENA EMBL records, good and bad entries split correctly; the -fix_diagnose option crashes inside the tool |
+
 ## embl-api-validator
 
 ### Tool Description

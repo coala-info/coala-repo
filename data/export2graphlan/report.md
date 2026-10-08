@@ -1,5 +1,11 @@
 # export2graphlan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| export2graphlan_export2graphlan.py | PASS |  |
+
 ## export2graphlan_export2graphlan.py
 
 ### Tool Description

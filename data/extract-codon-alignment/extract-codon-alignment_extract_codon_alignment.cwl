@@ -24,7 +24,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Codon position(s) to be extracted
+    doc: Codon position(s) to be extracted (one of 1, 2, 3, 12, 13, 23; default 12)
     inputBinding:
       position: 101
       prefix: --codonPoses

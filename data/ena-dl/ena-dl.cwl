@@ -125,6 +125,9 @@ outputs:
     doc: Directory to output downloads to.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ena-dl:1.0.0--1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: famli
+baseCommand:
+  - famli
+  - filter
 label: famli_filter
 doc: "Filter a set of existing alignments in tabular format with FAMLI\n\nTool homepage:
   https://github.com/FredHutch/FAMLI"
@@ -22,9 +24,7 @@ inputs:
       position: 101
       prefix: --bitscore-ix
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Location for input alignement file.
     inputBinding:
       position: 101

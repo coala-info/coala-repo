@@ -1,5 +1,12 @@
 # esviritu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esviritu_EsViritu | PASS |  |
+| esviritu_summarize_esv_runs | PASS |  |
+
 ## esviritu_EsViritu
 
 ### Tool Description

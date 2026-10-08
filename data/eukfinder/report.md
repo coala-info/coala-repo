@@ -1,5 +1,15 @@
 # eukfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eukfinder_download_db | Not completed | only downloads the large Eukfinder reference databases (multi-GB), too heavy to fetch here |
+| eukfinder_long_seqs | Not completed | needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists |
+| eukfinder_read_prep | Not completed | needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists |
+| eukfinder_read_prep_env | Not completed | needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists |
+| eukfinder_short_seqs | Not completed | needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists |
+
 ## eukfinder_short_seqs
 
 ### Tool Description

@@ -1,5 +1,14 @@
 # emu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emu_abundance | PASS | EMU example full-length and paired short reads against the default EMU database gave the expected species, such as Staphylococcus aureus and Salmonella enterica |
+| emu_build-database | PASS | built the custom database from the EMU repository example; taxonomy table is identical to the repository copy |
+| emu_collapse-taxonomy | PASS | collapsed a real EMU abundance table to genus with correct sums |
+| emu_combine-outputs | PASS | combined two real EMU abundance tables into abundance and taxonomy tables; the counts option needs a counts column in every input |
+
 ## emu_abundance
 
 ### Tool Description

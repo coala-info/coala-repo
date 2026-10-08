@@ -1,5 +1,21 @@
 # eval CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eval_combine_eval_reports.pl | PASS |  |
+| eval_evaluate_gtf.pl | PASS |  |
+| eval_filter_badlist.pl | PASS |  |
+| eval_filter_gtfs.pl | PASS |  |
+| eval_get_distribution.pl | PASS |  |
+| eval_get_general_stats.pl | PASS |  |
+| eval_get_overlap_stats.pl | PASS |  |
+| eval_graph_gtfs.pl | PASS |  |
+| eval_make_intron_lenght_vs_performance_graph.pl | PASS |  |
+| eval_validate_gtf.pl | PASS |  |
+| eval_validate_splice_sites.pl | PASS |  |
+
 ## eval_evaluate_gtf.pl
 
 ### Tool Description
@@ -150,6 +166,221 @@ Distribution Modes:
   6) Exon_Score
 ```
 
+
+## eval_filter_badlist.pl
+
+### Tool Description
+Removes the genes named in a gene list from a GTF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Unknown option: h
+usage: /usr/local/bin/filter_badlist.pl [-fl] <gtf file> <gene list>
+
+Options:
+     -f  Flag to fix the file.
+     -l  Output those genes that are in the list.
+```
+
+## eval_combine_eval_reports.pl
+
+### Tool Description
+Combines several Eval reports or general statistics reports into one.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/combine_eval_reports.pl [-hes] <report 1> <report 2> [report 3] ...
+This script combines several Eval reports or general statistics reports into one. 
+  Options:
+    -e: Eval report mode [default]
+    -s: General statistics report mode.  Cannot be used with -e.
+    -h: Display this help message and exit.
+```
+
+## eval_get_general_stats.pl
+
+### Tool Description
+Get general statistics on a list of gtf sets using the Eval package.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/get_general_stats.pl <list 1> <list 2> ...
+Get general statistics on a list of gtf sets using the Eval package.
+Options:
+  -g: Input files are gtf not lists
+  -q: Quick load the gtf file.  Do not check them for errors.
+  -A: Do not get stats for alternative splices. (Faster)
+  -v: Verbose mode
+  -h: Display this help message and exit
+```
+
+## eval_graph_gtfs.pl
+
+### Tool Description
+Creates graph tables from a graph file, an annotation and predictions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/graph_gtfs.pl [-gGh] [-r <file>] <graph file> <ann> <pred 1> [pred 2] ...
+Takes a graph file (see below), and annotation and one or more predictions and 
+creates each graph specified by the graph file for each pred.
+  Options:
+    -G: Display list of possible x and y values for graphs
+    -g: Load GTFs instead of lists of GTFs
+    -q: Quick load the gtf file.  Do not check them for errors.
+    -r <resolution file>:  Load resolution from this file
+        instead of users .eval.rc or default 
+    -h: Display this help message
+  Graph file format:
+    Each line should be of the format:
+    "y_level::y_type::y_stat vs x_type::x_level"
+    where options for y_level,y_type_,y_stat, and x_type can be found by 
+    giving the -G option
+  Resolution file format:
+    Each line should be in one of the following formats (all fields are  
+    separated by tabs):
+    1)"x_type User # # #"
+      where values for 'x_type' can be found by using the -G option and bins of 
+      values for 'x_type' are made from each '#' to the next '#'
+    2)"x_type Uniform min size count"
+      where 'min' is the minimum value of any bin, bins are of size 'size',
+      and there are a total of 'count' bins, and 'x_type'is as above
+```
+
+## eval_get_overlap_stats.pl
+
+### Tool Description
+Computes overlap statistics using the Eval package.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/get_overlap_stats.pl [-ghv] [m mode] <list 1> <list 2> ...
+Computes overlap statistics using the Eval package.  Inputs are gtf list files.
+Options:
+  -m <mode>: Specify overlap mode.  Must be a number selected from the list below.
+      Default is mode 1.
+  -g: Input files are in GTF format.
+  -q: Quick load the gtf file.  Do not check them for errors.
+  -v: Verbose mode.
+  -h: Display this help message and exit.
+Overlap Modes:
+  1) Transcript_Exact_Overlap
+  2) Transcript_Coding_Overlap
+  3) Transcript_Region_Overlap
+  4) Transcript_80p_Region_Overlap
+  5) Transcript_80p_Both_Region_Overlap
+  6) Transcript_Exact_Exon_Overlap
+  7) Transcript_Exact_Intron_Overlap
+  8) Exon_Exact_Overlap
+  9) Exon_One_Base_Overlap
+  10) Exon_80p_Overlap
+  11) Exon_80p_Both_Overlap
+```
+
+## eval_validate_splice_sites.pl
+
+### Tool Description
+Checks the splice sites of the genes in a GTF file against the genome sequence.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: /usr/local/bin/validate_splice_sites.pl <gtf file> <sequence file> <bad genes list>
+```
+
+## eval_filter_gtfs.pl
+
+### Tool Description
+Filters prediction GTFs according to a filter file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/filter_gtfs.pl [fg] <filter file> <ann gtf> <pred gtf 1> [pred gtf 2] ...
+Takes a filter file (see below) a annotation gtf and one or more 
+prediction gtfs and filters them according to the filter file.
+Options: 
+  -f: List filter types
+  -g: Inputs are gtf files instead of list files
+  -A: Do not check for alternative splices. (Faster)
+  -q: Quick load the gtf file.  Do not check them for errors.  
+  -h: Display this help message
+Filter File Format:
+  A list of filter types with a single character label for each:
+    A - Gene Correct
+    B - Transcript All_Introns
+    C - Exon Correct
+  This list is followed by one or more empty lines then the filter string:
+    (A&&B)||!C
+```
+
+## eval_make_intron_lenght_vs_performance_graph.pl
+
+### Tool Description
+Create a graph of intron performance vs intron length.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eval:2.2.8--pl526_0
+- **Homepage**: http://mblab.wustl.edu/software.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/eval/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/make_intron_lenght_vs_performance_graph.pl <annotation list> <prediction list 1> [prediction list 2] ...
+Create a graph of intron performance vs intron length 
+Options:
+  -m <min_bin_start>: Sets the minimum bin start [default: min intron length];
+  -x <max_bin_stop>: Sets the maximum bin end [default: max intron length];
+  -b <bin_size>: Sets the bin size [default: 1/10 length range] 
+                 Cannot be used with -B
+  -B <bin_count>: Sets the number of bins [default: 10] 
+                  Cannot be used with -b
+  -g: Input files are gtf not lists
+  -q: Quick load the gtf file.  Do not check them for errors.
+  -v: Verbose mode
+  -h: Display this help message and exit
+```
 
 ## Metadata
 - **Skill**: not generated

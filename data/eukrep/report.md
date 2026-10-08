@@ -1,5 +1,11 @@
 # eukrep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eukrep_EukRep | PASS |  |
+
 ## eukrep_EukRep
 
 ### Tool Description

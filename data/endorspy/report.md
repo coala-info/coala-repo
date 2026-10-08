@@ -1,5 +1,11 @@
 # endorspy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| endorspy | PASS |  |
+
 ## endorspy
 
 ### Tool Description

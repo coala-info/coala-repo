@@ -1,5 +1,11 @@
 # fast2q CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fast2q_2fast2q | PASS | counts match the repository expected compiled.csv |
+
 ## fast2q_2fast2q
 
 ### Tool Description

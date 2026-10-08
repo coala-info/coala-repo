@@ -1,5 +1,11 @@
 # fa-lint CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fa-lint | PASS |  |
+
 ## fa-lint
 
 ### Tool Description

@@ -16,7 +16,9 @@ inputs:
       position: 101
       prefix: --all
   - id: calculator
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Desired calculator (e.g., Bray-Curtis, Canberra).
     inputBinding:
       position: 101
@@ -108,7 +110,9 @@ inputs:
       position: 101
       prefix: --threshold
   - id: tree_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Tree in Newick format (if phylogenetic beta-diversity is desired).
     inputBinding:
       position: 101
@@ -141,6 +145,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Output file for cluster of calculators (default clusters.txt).
     inputBinding:
       position: 102
       prefix: --output-file
@@ -148,6 +153,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Output prefix (default output).
     inputBinding:
       position: 103
       prefix: --output-prefix

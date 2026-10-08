@@ -1,5 +1,13 @@
 # expressbetadiversity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| expressbetadiversity_ExpressBetaDiversity | PASS |  |
+| expressbetadiversity_convertToEBD.py | PASS |  |
+| expressbetadiversity_convertToFullMatrix.py | PASS |  |
+
 ## expressbetadiversity_convertToEBD.py
 
 ### Tool Description

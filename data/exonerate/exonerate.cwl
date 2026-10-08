@@ -31,8 +31,8 @@ inputs:
   - id: compiled
     type:
       - 'null'
-      - boolean
-    doc: Use compiled viterbi implementations
+      - string
+    doc: Use compiled viterbi implementations (yes or no; default yes)
     inputBinding:
       position: 101
       prefix: --compiled
@@ -135,8 +135,8 @@ inputs:
   - id: gapped_extension
     type:
       - 'null'
-      - boolean
-    doc: Use gapped extension (default is SDP)
+      - string
+    doc: Use gapped extension (default is SDP) (yes or no; default yes)
     inputBinding:
       position: 101
       prefix: --gappedextension
@@ -229,8 +229,8 @@ inputs:
   - id: revcomp
     type:
       - 'null'
-      - boolean
-    doc: Also search reverse complement of query and target
+      - string
+    doc: Also search reverse complement of query and target (yes or no; default yes)
     inputBinding:
       position: 101
       prefix: --revcomp
@@ -261,8 +261,8 @@ inputs:
   - id: show_alignment
     type:
       - 'null'
-      - boolean
-    doc: Include (human readable) alignment in results
+      - string
+    doc: Include (human readable) alignment in results (yes or no; default yes)
     inputBinding:
       position: 101
       prefix: --showalignment
@@ -301,16 +301,16 @@ inputs:
   - id: show_vulgar
     type:
       - 'null'
-      - boolean
-    doc: Include 'vulgar' format output in results
+      - string
+    doc: Include 'vulgar' format output in results (yes or no; default yes)
     inputBinding:
       position: 101
       prefix: --showvulgar
   - id: single_pass
     type:
       - 'null'
-      - boolean
-    doc: Generate suboptimal alignment in a single pass
+      - string
+    doc: Generate suboptimal alignment in a single pass (yes or no; default yes)
     inputBinding:
       position: 101
       prefix: --singlepass
@@ -333,8 +333,8 @@ inputs:
   - id: subopt
     type:
       - 'null'
-      - boolean
-    doc: Search for suboptimal alignments
+      - string
+    doc: Search for suboptimal alignments (yes or no; default yes)
     inputBinding:
       position: 101
       prefix: --subopt
@@ -376,6 +376,334 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: terminalrangeint
+    type:
+      - 'null'
+      - int
+    doc: Value for --terminalrangeint
+    inputBinding:
+      position: 101
+      prefix: --terminalrangeint
+  - id: terminalrangeext
+    type:
+      - 'null'
+      - int
+    doc: Value for --terminalrangeext
+    inputBinding:
+      position: 101
+      prefix: --terminalrangeext
+  - id: joinrangeint
+    type:
+      - 'null'
+      - int
+    doc: Value for --joinrangeint
+    inputBinding:
+      position: 101
+      prefix: --joinrangeint
+  - id: joinrangeext
+    type:
+      - 'null'
+      - int
+    doc: Value for --joinrangeext
+    inputBinding:
+      position: 101
+      prefix: --joinrangeext
+  - id: spanrangeint
+    type:
+      - 'null'
+      - int
+    doc: Value for --spanrangeint
+    inputBinding:
+      position: 101
+      prefix: --spanrangeint
+  - id: spanrangeext
+    type:
+      - 'null'
+      - int
+    doc: Value for --spanrangeext
+    inputBinding:
+      position: 101
+      prefix: --spanrangeext
+  - id: joinfilter
+    type:
+      - 'null'
+      - int
+    doc: Value for --joinfilter
+    inputBinding:
+      position: 101
+      prefix: --joinfilter
+  - id: wordjump
+    type:
+      - 'null'
+      - int
+    doc: Value for --wordjump
+    inputBinding:
+      position: 101
+      prefix: --wordjump
+  - id: wordambiguity
+    type:
+      - 'null'
+      - int
+    doc: Value for --wordambiguity
+    inputBinding:
+      position: 101
+      prefix: --wordambiguity
+  - id: codongapopen
+    type:
+      - 'null'
+      - int
+    doc: Value for --codongapopen
+    inputBinding:
+      position: 101
+      prefix: --codongapopen
+  - id: codongapextend
+    type:
+      - 'null'
+      - int
+    doc: Value for --codongapextend
+    inputBinding:
+      position: 101
+      prefix: --codongapextend
+  - id: minner
+    type:
+      - 'null'
+      - int
+    doc: Value for --minner
+    inputBinding:
+      position: 101
+      prefix: --minner
+  - id: maxner
+    type:
+      - 'null'
+      - int
+    doc: Value for --maxner
+    inputBinding:
+      position: 101
+      prefix: --maxner
+  - id: neropen
+    type:
+      - 'null'
+      - int
+    doc: Value for --neropen
+    inputBinding:
+      position: 101
+      prefix: --neropen
+  - id: minintron
+    type:
+      - 'null'
+      - int
+    doc: Value for --minintron
+    inputBinding:
+      position: 101
+      prefix: --minintron
+  - id: maxintron
+    type:
+      - 'null'
+      - int
+    doc: Value for --maxintron
+    inputBinding:
+      position: 101
+      prefix: --maxintron
+  - id: hspfilter
+    type:
+      - 'null'
+      - int
+    doc: Value for --hspfilter
+    inputBinding:
+      position: 101
+      prefix: --hspfilter
+  - id: seedrepeat
+    type:
+      - 'null'
+      - int
+    doc: Value for --seedrepeat
+    inputBinding:
+      position: 101
+      prefix: --seedrepeat
+  - id: dnawordlen
+    type:
+      - 'null'
+      - int
+    doc: Value for --dnawordlen
+    inputBinding:
+      position: 101
+      prefix: --dnawordlen
+  - id: proteinwordlen
+    type:
+      - 'null'
+      - int
+    doc: Value for --proteinwordlen
+    inputBinding:
+      position: 101
+      prefix: --proteinwordlen
+  - id: codonwordlen
+    type:
+      - 'null'
+      - int
+    doc: Value for --codonwordlen
+    inputBinding:
+      position: 101
+      prefix: --codonwordlen
+  - id: dnahspdropoff
+    type:
+      - 'null'
+      - int
+    doc: Value for --dnahspdropoff
+    inputBinding:
+      position: 101
+      prefix: --dnahspdropoff
+  - id: proteinhspdropoff
+    type:
+      - 'null'
+      - int
+    doc: Value for --proteinhspdropoff
+    inputBinding:
+      position: 101
+      prefix: --proteinhspdropoff
+  - id: codonhspdropoff
+    type:
+      - 'null'
+      - int
+    doc: Value for --codonhspdropoff
+    inputBinding:
+      position: 101
+      prefix: --codonhspdropoff
+  - id: dnahspthreshold
+    type:
+      - 'null'
+      - int
+    doc: Value for --dnahspthreshold
+    inputBinding:
+      position: 101
+      prefix: --dnahspthreshold
+  - id: proteinhspthreshold
+    type:
+      - 'null'
+      - int
+    doc: Value for --proteinhspthreshold
+    inputBinding:
+      position: 101
+      prefix: --proteinhspthreshold
+  - id: codonhspthreshold
+    type:
+      - 'null'
+      - int
+    doc: Value for --codonhspthreshold
+    inputBinding:
+      position: 101
+      prefix: --codonhspthreshold
+  - id: dnawordlimit
+    type:
+      - 'null'
+      - int
+    doc: Value for --dnawordlimit
+    inputBinding:
+      position: 101
+      prefix: --dnawordlimit
+  - id: proteinwordlimit
+    type:
+      - 'null'
+      - int
+    doc: Value for --proteinwordlimit
+    inputBinding:
+      position: 101
+      prefix: --proteinwordlimit
+  - id: codonwordlimit
+    type:
+      - 'null'
+      - int
+    doc: Value for --codonwordlimit
+    inputBinding:
+      position: 101
+      prefix: --codonwordlimit
+  - id: geneseed
+    type:
+      - 'null'
+      - int
+    doc: Value for --geneseed
+    inputBinding:
+      position: 101
+      prefix: --geneseed
+  - id: geneseedrepeat
+    type:
+      - 'null'
+      - int
+    doc: Value for --geneseedrepeat
+    inputBinding:
+      position: 101
+      prefix: --geneseedrepeat
+  - id: alignmentwidth
+    type:
+      - 'null'
+      - int
+    doc: Value for --alignmentwidth
+    inputBinding:
+      position: 101
+      prefix: --alignmentwidth
+  - id: quality
+    type:
+      - 'null'
+      - int
+    doc: Value for --quality
+    inputBinding:
+      position: 101
+      prefix: --quality
+  - id: forcefsm
+    type:
+      - 'null'
+      - string
+    doc: Force FSM word index on query or target (none, query, target)
+    inputBinding:
+      position: 101
+      prefix: --forcefsm
+  - id: useaatla
+    type:
+      - 'null'
+      - string
+    doc: Use three-letter amino acid codes in alignments (yes or no; default yes)
+    inputBinding:
+      position: 101
+      prefix: --useaatla
+  - id: useworddropoff
+    type:
+      - 'null'
+      - string
+    doc: Use word neighbourhood dropoff (yes or no; default yes)
+    inputBinding:
+      position: 101
+      prefix: --useworddropoff
+  - id: forwardcoordinates
+    type:
+      - 'null'
+      - string
+    doc: Report coordinates on the forward strand (yes or no; default yes)
+    inputBinding:
+      position: 101
+      prefix: --forwardcoordinates
+  - id: splice3
+    type:
+      - 'null'
+      - string
+    doc: Splice site model for the 3 prime site (default primate)
+    inputBinding:
+      position: 101
+      prefix: --splice3
+  - id: splice5
+    type:
+      - 'null'
+      - string
+    doc: Splice site model for the 5 prime site (default primate)
+    inputBinding:
+      position: 101
+      prefix: --splice5
+  - id: forcegtag
+    type:
+      - 'null'
+      - boolean
+    doc: Force GT/AG splice sites at intron boundaries
+    inputBinding:
+      position: 101
+      prefix: --forcegtag
 outputs:
   - id: stdout
     type: stdout

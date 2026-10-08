@@ -33,6 +33,13 @@ inputs:
       position: 103
       prefix: --split-tables
 outputs:
+  - id: combined_tables
+    type:
+      type: array
+      items: File
+    doc: Combined table(s) written into the directory (emu-combined-*.tsv)
+    outputBinding:
+      glob: $(inputs.dir_path.basename)/emu-combined*.tsv
   - id: stdout
     type: stdout
     doc: Standard output
@@ -40,3 +47,9 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emu:3.6.1--hdfd78af_0
 stdout: emu_combine-outputs.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dir_path)
+        writable: true

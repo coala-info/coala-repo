@@ -1,5 +1,11 @@
 # fasta-splitter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fasta-splitter | PASS | sequence content of the parts equals the input |
+
 ## fasta-splitter
 
 ### Tool Description

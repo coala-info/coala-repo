@@ -1,13 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ena-upoad-cli
+baseCommand: ena-upload-cli
 label: ena-upload-cli
 doc: "The program makes submission of data and respective metadata to European Nucleotide
   Archive (ENA) easy. The metadata can be provided in a xlsx spreadsheet or tsv tables.\n\
   \nTool homepage: https://github.com/usegalaxy-eu/ena-upload-cli"
 inputs:
   - id: action
-    type: string
+    type:
+      type: enum
+      symbols: [add, modify, cancel, release]
     doc: "add: add an object to the archive\n                         modify: modify
       an object in the archive\n                         cancel: cancel a private
       object and its dependent objects\n                         release: release
@@ -67,11 +69,12 @@ inputs:
   - id: experiment
     type:
       - 'null'
-      - string
+      - File
     doc: table of EXPERIMENT object
     inputBinding:
       position: 101
       prefix: --experiment
+      valueFrom: $(self.basename)
   - id: isa_assay_stream
     type:
       - 'null'
@@ -85,7 +88,7 @@ inputs:
   - id: isa_json
     type:
       - 'null'
-      - string
+      - File
     doc: 'BETA: ISA json describing describing the ENA objects'
     inputBinding:
       position: 101
@@ -103,19 +106,21 @@ inputs:
   - id: run
     type:
       - 'null'
-      - string
+      - File
     doc: table of RUN object
     inputBinding:
       position: 101
       prefix: --run
+      valueFrom: $(self.basename)
   - id: sample
     type:
       - 'null'
-      - string
+      - File
     doc: table of SAMPLE object
     inputBinding:
       position: 101
       prefix: --sample
+      valueFrom: $(self.basename)
   - id: secret
     type: File
     doc: ".secret.yml file containing the password and Webin ID\n                \
@@ -126,11 +131,12 @@ inputs:
   - id: study
     type:
       - 'null'
-      - string
+      - File
     doc: table of STUDY object
     inputBinding:
       position: 101
       prefix: --study
+      valueFrom: $(self.basename)
   - id: tool_name
     type:
       - 'null'
@@ -161,6 +167,28 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: updated_tables
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Tables rewritten by the tool with the ENA accessions and checksums (*_updated.tsv)
+    outputBinding:
+      glob: '*_updated.tsv'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.study)
+        writable: true
+      - entry: $(inputs.sample)
+        writable: true
+      - entry: $(inputs.experiment)
+        writable: true
+      - entry: $(inputs.run)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ena-upload-cli:0.9.0--pyhdfd78af_0

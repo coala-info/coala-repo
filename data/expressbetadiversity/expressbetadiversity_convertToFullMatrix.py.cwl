@@ -10,12 +10,17 @@ inputs:
     doc: Dissimilarity matrix produced by EBD.
     inputBinding:
       position: 1
+  - id: output_matrix_name
+    type: string
+    doc: Output full dissimilarity matrix. (file name to write)
+    inputBinding:
+      position: 2
 outputs:
   - id: output_matrix
     type: File
     doc: Output full dissimilarity matrix.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_matrix_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/expressbetadiversity:1.0.10--h9948957_6

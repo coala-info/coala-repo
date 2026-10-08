@@ -26,7 +26,7 @@ inputs:
       - 'null'
       - string
     doc: List which levels should be annotated in the tree. Use a comma separate
-      values form, e.g., --annotation_levels 1,2,3.
+      values form, e.g., --annotations 1,2,3.
     inputBinding:
       position: 101
       prefix: --annotations
@@ -276,20 +276,18 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Write processed data matrix to file
     inputBinding:
       position: 103
       prefix: --out_table
   - id: annotation_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: Output filename where save GraPhlAn annotation
     inputBinding:
       position: 104
       prefix: --annotation
   - id: tree_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output filename where save the input tree for GraPhlAn
     inputBinding:
       position: 105

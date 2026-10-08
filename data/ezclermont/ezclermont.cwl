@@ -39,12 +39,17 @@ inputs:
       position: 102
       prefix: --no_partial
   - id: logfile_path
-    type: string?
+    type:
+      - 'null'
+      - string
     doc: send log messages to logfile instead stderr
     inputBinding:
       position: 103
       prefix: --logfile
 outputs:
+  - id: phylotype
+    type: stdout
+    doc: Tab-separated experiment name and Clermont phylotype (standard output).
   - id: logfile
     type:
       - 'null'
@@ -57,3 +62,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ezclermont:0.7.0--pyhdfd78af_0
+stdout: ezclermont.out

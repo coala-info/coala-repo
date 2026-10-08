@@ -8,7 +8,9 @@ doc: "Extract protein DB from prokaryotic genome sequence(s) using Prodigal\n\nT
   homepage: http://leb.snu.ac.kr/ezaai"
 inputs:
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: Input prokaryotic genome sequence or directory with prokaryotic genome 
       sequences
     inputBinding:
@@ -64,18 +66,24 @@ inputs:
       prefix: -ufasta
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Output protein database
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
-    type: File
+    type:
+      - File
+      - Directory
     doc: Output protein database or output directory for protein databases
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ezaai:1.2.4--hdfd78af_0

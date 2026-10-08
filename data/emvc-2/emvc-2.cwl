@@ -7,14 +7,18 @@ inputs:
   - id: bam_file
     type: File
     doc: The bam file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam_file
+      valueFrom: $(self.basename)
   - id: bypass_dt
     type:
       - 'null'
-      - string
-    doc: Bypass Decision Tree filter
+      - int
+    doc: Bypass Decision Tree filter (1 to bypass, default 0)
     inputBinding:
       position: 101
       prefix: --bypass_dt
@@ -37,6 +41,9 @@ inputs:
   - id: ref_file
     type: File
     doc: The reference fasta file
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --ref_file
@@ -69,6 +76,10 @@ outputs:
       glob: $(inputs.out_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emvc-2:1.0--h7b50bb2_4

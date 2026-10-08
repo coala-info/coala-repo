@@ -73,6 +73,12 @@ outputs:
     doc: Directory to save logs.
     outputBinding:
       glob: $(inputs.log_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.models_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/famus:0.2.2--py312hdfd78af_0

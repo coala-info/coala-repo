@@ -1,5 +1,11 @@
 # encode-blacklist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| encode-blacklist_Blacklist | Failed | image problem: the Blacklist program stops with an illegal instruction (exit 132) on the demo data, even with plain docker run |
+
 ## encode-blacklist_Blacklist
 
 ### Tool Description

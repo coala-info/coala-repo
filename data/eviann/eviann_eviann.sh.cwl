@@ -47,12 +47,17 @@ inputs:
       prefix: --functional
   - id: genome_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: 'MANDATORY: genome fasta file'
     inputBinding:
       position: 101
       prefix: -g
+  - id: reads_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read files named in the reads list (-r); staged next to it so the names
+      in the list resolve.
   - id: lncrna_min_tpm
     type:
       - 'null'
@@ -152,6 +157,28 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: annotation_gff
+    type: File
+    doc: Output annotation in GFF3 format
+    outputBinding:
+      glob: $(inputs.genome_fasta.basename).pseudo_label.gff
+  - id: proteins_fasta
+    type: File
+    doc: Predicted protein sequences
+    outputBinding:
+      glob: $(inputs.genome_fasta.basename).proteins.fasta
+  - id: transcripts_fasta
+    type: File
+    doc: Predicted transcript sequences
+    outputBinding:
+      glob: $(inputs.genome_fasta.basename).transcripts.fasta
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_fasta)
+        writable: true
+      - $(inputs.reads_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eviann:2.0.5--pl5321haf24da9_1

@@ -34,7 +34,7 @@ inputs:
   - id: min_sequence_length
     type:
       - 'null'
-      - string
+      - int
     doc: Minimum sequence length cutoff for sequences to be included in 
       prediction.
     inputBinding:
@@ -43,7 +43,7 @@ inputs:
   - id: model
     type:
       - 'null'
-      - string
+      - File
     doc: Path to an alternate trained linear SVM model.
     inputBinding:
       position: 101
@@ -51,7 +51,7 @@ inputs:
   - id: prokarya_output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Name of file to output predicted prokaryotic sequences to. Default is 
       to not output prokaryotic sequences.
     inputBinding:
@@ -101,6 +101,13 @@ outputs:
     doc: output file name
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: prokarya_output
+    type:
+      - 'null'
+      - File
+    doc: Predicted prokaryotic sequences (written when --prokarya is given).
+    outputBinding:
+      glob: $(inputs.prokarya_output_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

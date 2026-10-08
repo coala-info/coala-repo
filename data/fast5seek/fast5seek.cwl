@@ -49,6 +49,7 @@ inputs:
       prefix: --reference
   - id: output_path
     type: string
+    doc: Filename to write fast5 paths to.
     inputBinding:
       position: 102
       prefix: --output

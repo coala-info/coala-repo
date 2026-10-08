@@ -140,7 +140,7 @@ inputs:
   - id: translate_to_protein_file
     type:
       - 'null'
-      - File
+      - string
     doc: Translate to protein. - means stdout. will go to the file and the 
       nucleotides will still go to stdout.
     inputBinding:
@@ -162,6 +162,13 @@ outputs:
       only proteins will be written.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: protein_file
+    type:
+      - 'null'
+      - File
+    doc: Protein translation written by -t.
+    outputBinding:
+      glob: $(inputs.translate_to_protein_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

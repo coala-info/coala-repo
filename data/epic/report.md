@@ -1,5 +1,11 @@
 # epic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| epic | Failed | image problem: perl is missing in the image, so read counting fails and epic crashes; output paths were also fixed in the CWL |
+
 ## epic
 
 ### Tool Description

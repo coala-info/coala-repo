@@ -17,6 +17,11 @@ inputs:
     inputBinding:
       position: 2
 outputs:
+  - id: collapsed_file
+    type: File
+    doc: Collapsed abundance table (<input name>-<rank>.tsv)
+    outputBinding:
+      glob: '*-$(inputs.rank).tsv'
   - id: stdout
     type: stdout
     doc: Standard output
@@ -24,3 +29,8 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emu:3.6.1--hdfd78af_0
 stdout: emu_collapse-taxonomy.out
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_path)
+        writable: true

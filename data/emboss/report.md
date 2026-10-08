@@ -1,5 +1,12 @@
 # emboss CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emboss_printsextract | Failed | image problem: the tool can only write its output into the read-only EMBOSS data folder inside the image |
+| emboss_transeq | PASS | real PAX6 cDNA from the EMBOSS test set translated in six frames; frame 1 contains the PAX6 protein |
+
 ## Metadata
 - **Skill**: generated
 

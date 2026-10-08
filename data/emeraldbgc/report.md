@@ -1,5 +1,11 @@
 # emeraldbgc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emeraldbgc | PASS | real BGC0001472 GenBank file with its InterProScan GFF3 from the tool repository gave the expected RiPP cluster 312-19485; plain FASTA input needs InterProScan and was not run |
+
 ## emeraldbgc
 
 ### Tool Description

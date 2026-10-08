@@ -4,13 +4,11 @@ baseCommand:
   - fade
   - out
 label: fade_out
-doc: "Fragmentase Artifact Detection and Elimination. Removes all reads and mates
-  for reads containing the artifact (used after annotate) or hard clips out artifact
-  sequence from reads.\n\nTool homepage: https://github.com/blachlylab/fade"
+doc: "Fragmentase Artifact Detection and Elimination. Removes all reads and mates for reads containing the artifact (used after annotate) or, with the -c flag, hard clips out artifact sequence from reads. It is recommended that the input SAM/BAM be queryname sorted.\n\nThe alignments are written to standard output as SAM, or as BAM with --bam or uncompressed BAM with --ubam.\n\nTool homepage: https://github.com/blachlylab/fade"
 inputs:
   - id: input_bam_sam
     type: File
-    doc: Input BAM/SAM file
+    doc: Input annotated BAM/SAM file
     inputBinding:
       position: 1
   - id: clip
@@ -29,37 +27,32 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
-  - id: bam_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 103
-      prefix: --bam
-  - id: ubam_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 104
-      prefix: --ubam
-outputs:
   - id: bam
     type:
       - 'null'
-      - File
+      - boolean
     doc: output bam
-    outputBinding:
-      glob: $(inputs.bam_path)
+    inputBinding:
+      position: 103
+      prefix: --bam
   - id: ubam
     type:
       - 'null'
-      - File
+      - boolean
     doc: output uncompressed bam
-    outputBinding:
-      glob: $(inputs.ubam_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    inputBinding:
+      position: 104
+      prefix: --ubam
+  - id: output_name
+    type: string
+    default: filtered.sam
+    doc: File name for the filtered alignments (standard output); use a .bam 
+      name with --bam or --ubam
+outputs:
+  - id: filtered
+    type: stdout
+    doc: Filtered or clipped alignments (standard output)
+stdout: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fade:0.6.0--h9ee0642_0

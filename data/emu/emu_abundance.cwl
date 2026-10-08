@@ -147,12 +147,12 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output directory name [./results]
+    type: Directory
+    doc: 'output directory (default: ./results)'
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: '$(inputs.output_dir ? inputs.output_dir : "results")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emu:3.6.1--hdfd78af_0

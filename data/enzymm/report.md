@@ -1,5 +1,11 @@
 # enzymm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| enzymm | PASS | Ran on the tool's own 1AMY test structure; the hits match the repository's expected M-CSA and UniProt IDs. |
+
 ## enzymm
 
 ### Tool Description

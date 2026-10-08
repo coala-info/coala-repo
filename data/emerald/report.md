@@ -1,5 +1,11 @@
 # emerald CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emerald | PASS | ran on the example clusters from the EMERALD repository and gave correct safety windows; the experimental --drawgraph option crashes inside the tool |
+
 ## emerald
 
 ### Tool Description

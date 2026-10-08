@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: main.sh
+baseCommand: ExcludonFinder
 label: excludonfinder_ExcludonFinder
 doc: "ExcludonFinder main processing script\n\nTool homepage: https://github.com/Alvarosmb/ExcludonFinder"
 inputs:
@@ -59,8 +59,6 @@ inputs:
   - id: reference_fasta
     type: File
     doc: Reference genome in FASTA format
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: -f

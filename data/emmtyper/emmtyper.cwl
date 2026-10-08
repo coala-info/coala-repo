@@ -6,9 +6,8 @@ doc: "Welcome to emmtyper.\n\nTool homepage: https://github.com/MDUPHL/emmtyper"
 inputs:
   - id: fasta_files
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Input FASTA files
     inputBinding:
       position: 1
@@ -24,11 +23,18 @@ inputs:
   - id: blast_db
     type:
       - 'null'
-      - string
-    doc: Path to EMM BLAST DB
+      - File
+    doc: Path to EMM BLAST DB (FASTA file with its BLAST index files)
     inputBinding:
       position: 102
       prefix: --blast_db
+    secondaryFiles:
+      - pattern: .nhr
+        required: false
+      - pattern: .nin
+        required: false
+      - pattern: .nsq
+        required: false
   - id: blast_path
     type:
       - 'null'
@@ -121,7 +127,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output stream. Path to file for output to a file.
+    doc: 'Output stream. Path to file for output to a file. [default: stdout]'
     inputBinding:
       position: 102
       prefix: --output
@@ -144,7 +150,7 @@ inputs:
   - id: primer_db
     type:
       - 'null'
-      - string
+      - File
     doc: '[isPcr] PCR primer. Text file with 3 columns: Name, Forward Primer, Reverse
       Primer.'
     inputBinding:
@@ -162,6 +168,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Result file written with --output
+    outputBinding:
+      glob: $(inputs.output)
+  - id: kept_files
+    type:
+      type: array
+      items: File
+    doc: BLAST and isPcr output files kept with --keep
+    outputBinding:
+      glob:
+        - '*.tmp'
+        - '*.blast*'
+        - '*.isPcr*'
+        - '*.pcr*'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emmtyper:0.2.0--py_0

@@ -89,12 +89,17 @@ inputs:
       prefix: --sortfields
       itemSeparator: ','
   - id: file_path
-    type: string
-    doc: File to save the content of the search (used with
+    type:
+      - 'null'
+      - string
+    doc: File to save the content of the search (used with download option)
     inputBinding:
       position: 102
       prefix: --file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the records, when no file is given)
   - id: file
     type:
       - 'null'
@@ -104,6 +109,9 @@ outputs:
       glob: $(inputs.file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/enasearch:0.2.2--py27_0
+stdout: enasearch_search_data.out

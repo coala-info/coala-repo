@@ -1,5 +1,11 @@
 # falco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| falco | PASS | falco 1.2.5 output matches the Galaxy expected values except for newer-version formatting differences. |
+
 ## falco
 
 ### Tool Description

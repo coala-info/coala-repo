@@ -55,24 +55,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: '[OUTPUT] specify a file format for an output file. Options: <json> for a
-      MultiQC json output. Default: none'
+  - id: output_format
+    type:
+      - 'null'
+      - string
+    doc: 'specify a file format for an output file. Options: <json> for a MultiQC
+      json output. Default: none'
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Percent on target, clonality and percent duplicates printed to screen
   - id: output_file
     type:
       - 'null'
       - File
-    doc: 'specify a file format for an output file. Options: <json> for a MultiQC
-      json output. Default: none'
+    doc: MultiQC json file named <name>_percent_on_target_mqc.json (written with --output json)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '*_percent_on_target_mqc.json'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/endorspy:1.4--hdfd78af_0
+stdout: endorspy.out

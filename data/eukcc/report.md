@@ -1,5 +1,13 @@
 # eukcc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eukcc_define_set | Not completed | needs the EukCC database (about 6.4 GB), no small real database exists |
+| eukcc_folder | Not completed | needs the EukCC database (about 6.4 GB), no small real database exists |
+| eukcc_single | Not completed | needs the EukCC database (about 6.4 GB), no small real database exists |
+
 ## eukcc_single
 
 ### Tool Description

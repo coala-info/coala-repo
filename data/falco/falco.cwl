@@ -227,9 +227,8 @@ inputs:
       position: 103
       prefix: -data-filename
   - id: outdir_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: falco_out
     inputBinding:
       position: 104
       prefix: --outdir
@@ -251,9 +250,7 @@ inputs:
       prefix: -summary-filename
 outputs:
   - id: outdir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Create all output files in the specified output directory.
     outputBinding:
       glob: $(inputs.outdir_path)

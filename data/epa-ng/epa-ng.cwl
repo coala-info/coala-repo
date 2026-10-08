@@ -239,6 +239,12 @@ outputs:
     doc: Path to output directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.outdir ? {"class": "Directory", "basename": inputs.outdir, "listing": []} : null)'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/epa-ng:0.3.8--h077b44d_7

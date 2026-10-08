@@ -7,7 +7,8 @@ doc: "FAMSA (Fast and Accurate Multiple Sequence Alignment) is a tool for multip
 inputs:
   - id: input_file
     type: File
-    doc: Input file in FASTA format. Can be replaced with STDIN.
+    doc: Input file in FASTA format (multiple sequence alignment with one input,
+      profile-profile alignment with two).
     inputBinding:
       position: 1
   - id: input_file_2
@@ -17,6 +18,12 @@ inputs:
     doc: Second input file for profile-profile alignment.
     inputBinding:
       position: 2
+  - id: output_file
+    type: string
+    doc: Output file name (alignment in FASTA format, guide tree in Newick format
+      with -gt_export, or distance matrix in CSV format with -dist_export).
+    inputBinding:
+      position: 3
   - id: disable_gap_optimization
     type:
       - 'null'
@@ -101,10 +108,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Guide tree method: sl (single linkage), upgma, nj, or import <file>'
+    doc: 'Guide tree method: sl (single linkage), upgma, or nj'
     inputBinding:
       position: 103
       prefix: -gt
+  - id: guide_tree_import
+    type:
+      - 'null'
+      - File
+    doc: Import the guide tree from a Newick file (-gt import <file>).
+    inputBinding:
+      position: 103
+      prefix: -gt
+      valueFrom: $(["import", self.path])
   - id: gz
     type:
       - 'null'
@@ -227,12 +243,13 @@ inputs:
       position: 103
       prefix: -v
 outputs:
-  - id: output_file
+  - id: alignment
     type: File
-    doc: Output file (alignment, guide tree, or distance matrix). Pass STDOUT 
-      for standard output.
+    doc: Output file (alignment, guide tree, or distance matrix).
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/famsa:2.4.1--h9ee0642_0

@@ -5,6 +5,13 @@ label: eqtlbma_eqtlbma_bf
 doc: "performs eQTL mapping in multiple subgroups via a Bayesian model.\n\nTool homepage:
   https://github.com/timflutre/eqtlbma"
 inputs:
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the list files (--geno, --exp, --covar, --inss), staged in
+      the working directory so the relative names in the lists resolve
   - id: analys
     type:
       - 'null'
@@ -335,6 +342,8 @@ outputs:
       glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.data_files ? inputs.data_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eqtlbma:1.3.3--h3dbd7e7_0

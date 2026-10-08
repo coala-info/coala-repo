@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - ./fade
+  - fade
   - stats
 label: fade_stats
 doc: "reports extended information about all artifact reads (used after annotate)\n\

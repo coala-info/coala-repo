@@ -32,7 +32,9 @@ inputs:
       position: 101
       prefix: --force
   - id: hmm_model
-    type: string
+    type:
+      - string
+      - File
     doc: The Hidden Markov Model that should be used to analyse the data. Could 
       either be one of the pre-defined models or the path to a custom HMM.
     inputBinding:
@@ -172,7 +174,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Directory for (sometimes large) intermediate files. (default: OUT_DIR/tmpdir)'
     inputBinding:
       position: 101
@@ -189,6 +191,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: fargene_analysis.log
     doc: 'Logfile (default: fargene_analysis.log).'
     inputBinding:
       position: 102
@@ -197,6 +200,8 @@ inputs:
     type:
       - 'null'
       - string
+    doc: 'The output directory for the whole run (default: ./fargene_output).'
+    default: fargene_output
     inputBinding:
       position: 103
       prefix: --output
@@ -217,6 +222,9 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.infiles)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fargene:0.1--py27h5ca1d4c_2

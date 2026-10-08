@@ -1,5 +1,11 @@
 # eskrim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eskrim | PASS | Fixed: added the missing -i flag on the input reads; ran on the nf-core mag minigut metagenome reads and the read counts in the stats file match the input. |
+
 ## eskrim
 
 ### Tool Description

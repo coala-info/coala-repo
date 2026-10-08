@@ -1,5 +1,26 @@
 # fastafunk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastafunk_add_columns | PASS | output equals the repository expected files for three modes |
+| fastafunk_annotate | PASS | FASTA and metadata equal the repository expected files |
+| fastafunk_consensus | Failed | image problem: mafft is not installed in the image, so the alignment step crashes |
+| fastafunk_count | Failed | tool bug: crashes with AttributeError in filter_by_omit_columns for any input |
+| fastafunk_drop_columns | PASS | output equals the repository expected files |
+| fastafunk_extract | PASS | matching sequences extracted and the rest written to the reject file |
+| fastafunk_fetch | PASS | FASTA and metadata equal the repository expected files for three modes |
+| fastafunk_filter_column | PASS | rows with a true or false value in the column are removed as described |
+| fastafunk_merge | PASS | merged FASTA equals the repository expected file |
+| fastafunk_new | Failed | tool bug: crashes with TypeError, load_new_metadata() got an unexpected keyword argument index |
+| fastafunk_remove | PASS | output equals the repository expected file |
+| fastafunk_shuffle | PASS | rows are the same set in a new order |
+| fastafunk_split | PASS | all five lineage FASTA files equal the repository expected files |
+| fastafunk_strip | PASS | gap, ambiguity, missing, front and keep-alignment options give the expected sequences |
+| fastafunk_subsample | PASS | one sequence per group kept, extra sequence dropped |
+| fastafunk_unwrap | PASS | sequences are on one line each |
+
 ## fastafunk_consensus
 
 ### Tool Description

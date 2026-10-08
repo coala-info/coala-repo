@@ -1,39 +1,59 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: extract_fullseq
+baseCommand: [extract_fullseq]
 label: extract_fullseq
-doc: Extracts full sequences from a FASTA file.
+doc: "Extract (keep) or remove sequences listed in an id list from a FASTA or FASTQ file (from NCBI bmtools); the result is written to standard output.\n\nTool homepage: https://ftp.ncbi.nlm.nih.gov/pub/agarwala/bmtagger/"
 inputs:
-  - id: input_fasta
+  - id: id_list
     type: File
-    doc: Input FASTA file containing sequences.
+    doc: File with the sequence ids to keep or remove.
     inputBinding:
       position: 1
-  - id: sequence_ids
+  - id: action
+    type:
+      type: enum
+      symbols:
+        - keep
+        - remove
+    doc: Keep the listed sequences, or remove them.
+    inputBinding:
+      position: 2
+      valueFrom: -$(self)
+  - id: format
+    type:
+      type: enum
+      symbols:
+        - fasta
+        - fastq
+    doc: Format of the sequence file.
+    inputBinding:
+      position: 3
+      valueFrom: -$(self)
+  - id: read_type
+    type:
+      type: enum
+      symbols:
+        - single
+        - mate1
+        - mate2
+    doc: Single reads, or first or second mate of paired reads.
+    inputBinding:
+      position: 4
+      valueFrom: -$(self)
+  - id: sequence_file
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Comma-separated list of sequence IDs to extract. If not provided, all 
-      sequences will be extracted.
+      - File
+    doc: Sequence file (large file); standard input is read when not given.
     inputBinding:
-      position: 102
-      prefix: --ids
-      itemSeparator: ','
-  - id: output_fasta_path
-    type: string
-    doc: Output or path parameter `output_fasta_path`
-    inputBinding:
-      position: 103
-      prefix: --output-fasta
+      position: 5
 outputs:
-  - id: output_fasta
-    type: File
-    doc: Output FASTA file to write the extracted full sequences.
-    outputBinding:
-      glob: $(inputs.output_fasta_path)
+  - id: extracted_sequences
+    type: stdout
+    doc: Extracted sequences (standard output).
+stdout: extracted_sequences.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0
+    dockerPull: quay.io/biocontainers/extract_fullseq:3.101--h9948957_6

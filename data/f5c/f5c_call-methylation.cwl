@@ -8,6 +8,9 @@ doc: "Call methylation from nanopore reads using f5c\n\nTool homepage: https://g
 inputs:
   - id: alignments_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: sorted bam file
     inputBinding:
       position: 101
@@ -30,6 +33,9 @@ inputs:
       prefix: --debug-break
   - id: genome
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: reference genome
     inputBinding:
       position: 101
@@ -157,6 +163,15 @@ inputs:
       prefix: --read-dump
   - id: read_file
     type: File
+    secondaryFiles:
+      - pattern: .index
+        required: true
+      - pattern: .index.fai
+        required: true
+      - pattern: .index.gzi
+        required: true
+      - pattern: .index.readdb
+        required: false
     doc: fastq/fasta read file
     inputBinding:
       position: 101
@@ -190,6 +205,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .idx
+        required: true
     doc: read from a slow5 file
     inputBinding:
       position: 101
@@ -227,9 +245,8 @@ inputs:
       position: 101
       prefix: --write-dump
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: methylation_calls.tsv
     doc: output to file [stdout]
     inputBinding:
       position: 102
@@ -245,9 +262,7 @@ inputs:
       prefix: --skip-ultra
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output to file
     outputBinding:
       glob: $(inputs.output_file_path)

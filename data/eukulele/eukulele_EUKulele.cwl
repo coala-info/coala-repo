@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eukulele
+baseCommand: EUKulele
 label: eukulele_EUKulele
 doc: "EUKulele is a standalone taxonomic annotation software designed primarily for
   marine microbial eukaryotes.\n\nTool homepage: https://github.com/AlexanderLabWHOI/EUKulele"
@@ -143,9 +143,10 @@ inputs:
   - id: names_to_reads
     type:
       - 'null'
-      - File
-    doc: A file to be created or used if it exists that relates transcript names
-      to salmon counts from the salmon directory.
+      - string
+    doc: Name of a file in the reference directory, to be created or used if it
+      exists, that relates transcript names to salmon counts from the salmon
+      directory.
     inputBinding:
       position: 102
       prefix: --names_to_reads
@@ -194,8 +195,9 @@ inputs:
   - id: protein_map
     type:
       - 'null'
-      - File
-    doc: Protein map file.
+      - string
+    doc: Protein map file name, inside the reference directory (default 
+      prot-map.json).
     inputBinding:
       position: 102
       prefix: --protein_map
@@ -210,12 +212,10 @@ inputs:
   - id: ref_fasta
     type:
       - 'null'
-      - File
+      - string
     doc: Either a file in the reference directory where the fasta file for the 
       database is located, or a directory containing multiple fasta files that 
       constitute the database.
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 102
       prefix: --ref_fasta
@@ -259,8 +259,9 @@ inputs:
   - id: tax_table
     type:
       - 'null'
-      - File
-    doc: Taxonomy table file.
+      - string
+    doc: Taxonomy table file name, inside the reference directory (default 
+      tax-table.txt).
     inputBinding:
       position: 102
       prefix: --tax_table
@@ -312,6 +313,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eukulele:2.1.2--pyhdfd78af_0

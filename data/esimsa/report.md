@@ -1,5 +1,11 @@
 # esimsa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esimsa | Not completed | synthetic data: no real peak list exists; the added output argument works and the 2+ planted mass was recovered, but 1+ and 3+ planted clusters gave no or shifted masses, so the output cannot be confirmed |
+
 ## esimsa
 
 ### Tool Description

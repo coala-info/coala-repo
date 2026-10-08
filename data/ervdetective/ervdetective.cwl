@@ -47,7 +47,7 @@ inputs:
       position: 101
       prefix: --gag
   - id: host_genome
-    type: File?
+    type: File
     doc: The file-path of host genome sequence, the suffix is generally *.fna, 
       *.fas, *.fasta.
     inputBinding:

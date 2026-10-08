@@ -25,7 +25,7 @@ inputs:
   - id: exec_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory that EVM cd's to before running.
     inputBinding:
       position: 101
@@ -59,7 +59,7 @@ inputs:
       position: 101
       prefix: --min_intron_length
   - id: overlap_size
-    type: string
+    type: int
     doc: length of sequence overlap between segmented sequences
     inputBinding:
       position: 101
@@ -120,7 +120,7 @@ inputs:
       position: 101
       prefix: --search_long_introns
   - id: segment_size
-    type: string
+    type: int
     doc: length of a single sequence for running EVM
     inputBinding:
       position: 101
@@ -176,6 +176,34 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: evm_gff3
+    type:
+      - 'null'
+      - File
+    doc: Consensus gene models in GFF3 format
+    outputBinding:
+      glob: $(inputs.sample_id).EVM.gff3
+  - id: evm_proteins
+    type:
+      - 'null'
+      - File
+    doc: Protein sequences of the consensus gene models
+    outputBinding:
+      glob: $(inputs.sample_id).EVM.pep
+  - id: evm_cds
+    type:
+      - 'null'
+      - File
+    doc: CDS sequences of the consensus gene models
+    outputBinding:
+      glob: $(inputs.sample_id).EVM.cds
+  - id: evm_bed
+    type:
+      - 'null'
+      - File
+    doc: Consensus gene models in BED format
+    outputBinding:
+      glob: $(inputs.sample_id).EVM.bed
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5

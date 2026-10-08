@@ -28,15 +28,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --accession
-  - id: advanced_help
-    type:
-      - 'null'
-      - string
-    doc: Display advanced information of the parameter specified or of all 
-      parameters if none specified.
-    inputBinding:
-      position: 103
-      prefix: --ah
   - id: author
     type:
       - 'null'
@@ -397,6 +388,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: sequence_version
+    type:
+      - 'null'
+      - int
+    doc: Sequence version number. The default value is 1.
+    inputBinding:
+      position: 103
+      prefix: --version
   - id: output_path
     type: string
     doc: Output filename.
@@ -408,11 +407,17 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output filename.
+    doc: Output EMBL file (gzipped, with .gz or .embl.gz added, when the gzip 
+      option is set)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob:
+        - $(inputs.output_path)
+        - $(inputs.output_path).gz
+        - $(inputs.output_path).embl.gz
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emblmygff3:2.4--pyhdfd78af_1

@@ -1,5 +1,11 @@
 # fastan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastan_FasTAN | PASS |  |
+
 ## fastan_FasTAN
 
 ### Tool Description

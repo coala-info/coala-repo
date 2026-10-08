@@ -1,5 +1,11 @@
 # exonerate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| exonerate | PASS |  |
+
 ## exonerate
 
 ### Tool Description

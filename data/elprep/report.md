@@ -1,5 +1,15 @@
 # elprep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| elprep_bed-to-elsites | PASS |  |
+| elprep_fasta-to-elfasta | PASS |  |
+| elprep_filter | PASS |  |
+| elprep_sfm | PASS |  |
+| elprep_vcf-to-elsites | PASS |  |
+
 ## elprep_filter
 
 ### Tool Description

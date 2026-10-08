@@ -1,5 +1,11 @@
 # ervmancer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ervmancer | Not completed | needs the 1.2 GB k-mer dictionary and the 3.7 GB GRCh38 Bowtie2 index from Zenodo, too large for this machine's test budget |
+
 ## ervmancer
 
 ### Tool Description

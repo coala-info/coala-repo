@@ -4,7 +4,7 @@ baseCommand:
   - ema
   - align
 label: ema_align
-doc: "choose best alignments based on barcodes\n\nTool homepage: http://ema.csail.mit.edu/"
+doc: "choose best alignments based on barcodes\n\nTool homepage: https://github.com/arshajii/ema"
 inputs:
   - id: preprocessed_inputs
     type:
@@ -13,7 +13,7 @@ inputs:
         items: File
     doc: list of all preprocessed inputs (only for -x)
     inputBinding:
-      position: 1
+      position: 200
   - id: ema_fastq_path
     type:
       - 'null'
@@ -73,10 +73,17 @@ inputs:
       prefix: -R
   - id: reference_path
     type: File
-    doc: indexed reference
+    doc: indexed reference (FASTA with .fai and BWA index files)
     inputBinding:
       position: 102
       prefix: -r
+    secondaryFiles:
+      - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
   - id: sequencing_platform
     type:
       - 'null'
@@ -95,7 +102,7 @@ inputs:
       prefix: -t
   - id: output_sam_file_path
     type: string
-    doc: ': output SAM file [stdout]'
+    doc: 'output SAM file [stdout]'
     inputBinding:
       position: 103
       prefix: -o

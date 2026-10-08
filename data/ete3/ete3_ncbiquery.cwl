@@ -4,62 +4,124 @@ baseCommand:
   - ete3
   - ncbiquery
 label: ete3_ncbiquery
-doc: "Query NCBI databases for sequences and retrieve them in Newick format.\n\nTool
-  homepage: http://etetoolkit.org/"
+doc: "Query the NCBI taxonomy database: dump a pruned taxonomy tree, descendants or
+  lineage information for taxids or species names (ETE tree toolkit command line).\n\
+  \nTool homepage: http://etetoolkit.org/"
 inputs:
-  - id: query
-    type: string
-    doc: The query string to search NCBI databases.
+  - id: search
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: A list of taxid or species names
     inputBinding:
-      position: 1
-  - id: database
+      position: 101
+      prefix: --search
+  - id: db
     type:
       - 'null'
       - string
-    doc: The NCBI database to query (e.g., nr, nt, pdb, sw,瞽).
+    doc: NCBI sqlite3 db file.
     inputBinding:
-      position: 102
-      prefix: --database
-  - id: format
-    type:
-      - 'null'
-      - string
-    doc: Output format (newick, fasta, phylip).
-    inputBinding:
-      position: 102
-      prefix: --format
-  - id: max_results
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of results to retrieve.
-    inputBinding:
-      position: 102
-      prefix: --max_results
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 101
+      prefix: --db
+  - id: taxdump_file
     type:
       - 'null'
       - File
-    doc: Path to save the output Newick tree.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    doc: Use local NCBI taxdump file instead of downloading from NCBI.
+    inputBinding:
+      position: 101
+      prefix: --taxdump_file
+  - id: create
+    type:
+      - 'null'
+      - boolean
+    doc: Create taxdump file and exit.
+    inputBinding:
+      position: 101
+      prefix: --create
+  - id: fuzzy
+    type:
+      - 'null'
+      - float
+    doc: 'EXPERIMENTAL: fuzzy (and SLOW) search for species names that could not be
+      translated into taxids; minimum string similarity.'
+    inputBinding:
+      position: 101
+      prefix: --fuzzy
+  - id: tree
+    type:
+      - 'null'
+      - boolean
+    doc: dump a pruned version of the NCBI taxonomy tree containing target 
+      species
+    inputBinding:
+      position: 101
+      prefix: --tree
+  - id: descendants
+    type:
+      - 'null'
+      - boolean
+    doc: dump the descendant taxa for each of the queries
+    inputBinding:
+      position: 101
+      prefix: --descendants
+  - id: info
+    type:
+      - 'null'
+      - boolean
+    doc: dump NCBI taxonomy information for each target species
+    inputBinding:
+      position: 101
+      prefix: --info
+  - id: collapse_subspecies
+    type:
+      - 'null'
+      - boolean
+    doc: collapse all nodes under the species rank
+    inputBinding:
+      position: 101
+      prefix: --collapse_subspecies
+  - id: rank_limit
+    type:
+      - 'null'
+      - string
+    doc: discard all nodes under the provided rank
+    inputBinding:
+      position: 101
+      prefix: --rank_limit
+  - id: full_lineage
+    type:
+      - 'null'
+      - boolean
+    doc: do not prune one-child nodes; keep the complete lineage from root to 
+      tips
+    inputBinding:
+      position: 101
+      prefix: --full_lineage
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Base output file name
+    inputBinding:
+      position: 101
+      prefix: -o
+  - id: verbosity
+    type:
+      - 'null'
+      - int
+    doc: 'Verbosity level: 0=totally quite, 1=errors only, 2=warning+errors, 3=info+warnings+errors
+      4=debug'
+    inputBinding:
+      position: 101
+      prefix: -v
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ete3:3.1.2
+stdout: ete3_ncbiquery.out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: famli
+baseCommand:
+  - famli
+  - align
 label: famli_align
 doc: "Align a set of reads with DIAMOND, filter alignments with FAMLI, and return
   the results\n\nTool homepage: https://github.com/FredHutch/FAMLI"
@@ -23,9 +25,11 @@ inputs:
       position: 101
       prefix: --blocks
   - id: input
-    type: string
+    type:
+      - File
+      - string
     doc: 'Location for input file(s). Combine multiple files with +. (Supported: sra://,
-      s3://, or ftp://).'
+      s3://, or ftp://, or a local FASTQ path).'
     inputBinding:
       position: 101
       prefix: --input
@@ -54,9 +58,9 @@ inputs:
       position: 101
       prefix: --query-gencode
   - id: ref_db
-    type: Directory
-    doc: 'Folder containing reference database. (Supported: s3://, ftp://, or local
-      path).'
+    type: File
+    doc: 'Reference database in DIAMOND format (a .dmnd file). (Supported: s3://, or
+      local path).'
     inputBinding:
       position: 101
       prefix: --ref-db
@@ -70,7 +74,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Folder used for temporary files.
+    doc: Folder used for temporary files (the tool default /share does not exist in
+      the container, so the working directory is used).
+    default: .
     inputBinding:
       position: 101
       prefix: --temp-folder
@@ -84,6 +90,7 @@ inputs:
       prefix: --threads
   - id: output_folder_path
     type: string
+    doc: 'Folder to place results. (Supported: s3://, or local path).'
     inputBinding:
       position: 102
       prefix: --output-folder
@@ -95,6 +102,11 @@ outputs:
       glob: $(inputs.output_folder_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.output_folder_path, listing:
+          []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/famli:v1.0_cv2

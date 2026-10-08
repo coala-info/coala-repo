@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./EquiRep
+baseCommand: EquiRep
 label: equirep_EquiRep
 doc: "This program processes an input FASTA file and generates an output file.\n\n\
   Tool homepage: https://github.com/Shao-Group/EquiRep"

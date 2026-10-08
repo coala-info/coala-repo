@@ -75,7 +75,7 @@ inputs:
   - id: in_nextstrain
     type:
       - 'null'
-      - File
+      - Directory
     doc: nextstrain results with tree.nwk and [traitOfInterst].json
     inputBinding:
       position: 101

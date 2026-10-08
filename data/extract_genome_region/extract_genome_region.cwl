@@ -1,66 +1,50 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: extract-codon-alignment
+baseCommand: [extract_genome_region]
 label: extract_genome_region
-doc: "Extracts codon alignments from genomic sequences.\n\nTool homepage: https://github.com/xguse/extract-genome-region"
+doc: "Given a CSV file of variable information defining the regions of interest along with input and output fasta file paths, write a file that contains a fasta-formatted representation of these regions.\n\nThe regions CSV has the columns record_name, scaffold, start, stop, left_bfr and right_bfr.\n\nTool homepage: https://github.com/xguse/extract-genome-region"
 inputs:
-  - id: input_fasta
+  - id: regions
     type: File
-    doc: Input FASTA file containing genomic sequences.
+    doc: CSV file defining the regions of interest (record_name, scaffold, start,
+      stop, left_bfr, right_bfr).
     inputBinding:
       position: 1
-  - id: gene_list
+  - id: in_fasta
     type: File
-    doc: File containing a list of genes to extract.
+    doc: Input fasta file with the source sequences.
     inputBinding:
       position: 2
-  - id: flank_size
-    type:
-      - 'null'
-      - int
-    doc: Number of flanking bases to include around the gene region.
-    inputBinding:
-      position: 103
-      prefix: --flank-size
-  - id: min_codon_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum length of a codon region to be considered valid.
-    inputBinding:
-      position: 103
-      prefix: --min-codon-length
-  - id: strand
-    type:
-      - 'null'
-      - string
-    doc: Strand to consider for gene annotation ('forward', 'reverse', or 
-      'both').
-    inputBinding:
-      position: 103
-      prefix: --strand
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 103
-      prefix: --verbose
-  - id: output_dir_path
+  - id: out_fasta
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output fasta file name.
     inputBinding:
-      position: 104
-      prefix: --output-dir
+      position: 3
+  - id: naming
+    type:
+      - 'null'
+      - type: enum
+        symbols:
+          - csv
+          - seq_range
+          - csv_seq_range
+    doc: How each new fasta record is named (csv, seq_range or csv_seq_range).
+      Default is csv.
+    inputBinding:
+      position: 0
+      prefix: --naming
 outputs:
-  - id: output_dir
-    type: Directory
-    doc: Directory to save the extracted codon alignments.
+  - id: output_fasta
+    type: File
+    doc: Fasta file with the extracted regions.
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.out_fasta)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0
+    dockerPull: quay.io/biocontainers/extract_genome_region:0.0.3--py_2

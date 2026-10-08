@@ -1,5 +1,11 @@
 # ervdetective CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ervdetective | Failed | image problem: the tool unzips its HMM profiles into its own install folder at run time, which fails for the non-root user and read-only image (needs root and --no-read-only) |
+
 ## ervdetective
 
 ### Tool Description

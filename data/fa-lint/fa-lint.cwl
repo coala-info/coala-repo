@@ -30,9 +30,7 @@ inputs:
       position: 101
       prefix: -s
   - id: fasta
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Fasta[.gz] file to process
     inputBinding:
       position: 101

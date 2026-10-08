@@ -1,11 +1,126 @@
 # eqtlbma CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eqtlbma_eqtlbma_avg_bfs | PASS | New file; grid-averaged Bayes factors match the tool's own expected values on its simulated test set (equal grid weights). |
+| eqtlbma_eqtlbma_bf | PASS | Added staging of the files named in the list files; all five outputs are identical to the tool's own expected results on its simulated test set. |
+| eqtlbma_eqtlbma_hm | PASS | New file; fitted the hierarchical model on the averaged Bayes factors of the tool's simulated test set and got pi0 and configuration weights that sum to 1. |
+
 ## eqtlbma_eqtlbma_bf
 
 ### Tool Description
 performs eQTL mapping in multiple subgroups via a Bayesian model.
 
+### eqtlbma_eqtlbma_avg_bfs
+
+### Tool Description
+Averages the raw BFs over the grid, or over the grid and the configurations, and can compute posteriors.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/eqtlbma:1.3.3--h3dbd7e7_0
+- **Homepage**: https://github.com/timflutre/eqtlbma
+- **Package**: https://anaconda.org/channels/bioconda/packages/eqtlbma/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+`eqtlbma_avg_bfs' averages the raw BFs over the grid only,
+or over both the grid and the configurations,
+and it can also compute posteriors.
+
+Usage: eqtlbma_avg_bfs [OPTIONS] ...
+
+Options:
+  -h, --help	display the help and exit
+  -V, --version	output version information and exit
+  -v, --verbose	verbosity level (0/default=1/2/3)
+      --in	pattern to glob '_l10abfs_raw' files from 'eqtlbma_bf'
+      --gwts	file with grid weights (one per line, only the value)
+      --gtk	ind-ex/icies of grid weights to keep (all by default)
+		e.g. '1+3+5+7+9' to keep only those with no heterogeneity
+      --model	which model (default=configs/types)
+      --nsubgrp	number of subgroups
+      --dim	dimension of the model (nb of active configs or types)
+      --cwts	file with configuration weights (one per line, name<sep>value)
+		only a subset of the configs can be given, in agreement with --nsubgrp and --dim
+      --tswts	file with type and subgroup weights (one per line, name<sep>value)
+      --save	precise what to save (bf/post/bf+post)
+		'post' requires also options --pi0 and --post
+      --pi0	proba for a gene to have no eQTL in any subgroup
+		if not provided, BFs will be saved instead of posterior probability
+      --post	save various kinds of posterior probabilities (e.g. 'a+b')
+		a: the gene has at least one eQTL
+		b: the SNP is 'the' eQTL for the gene, in at least one subgroup, given that the gene has exactly one eQTL,
+		assuming all cis SNPs are equally likely and a single eQTL per gene
+		c: the SNP is 'an' eQTL for the gene, in at least one subgroup, given that the gene contains at least one eQTL
+		and that SNPs are independent
+		d: the SNP is an eQTL in subgroup s, given that it is 'the' eQTL for the gene, the configs/types being marginalized
+      --gene	file with subset of gene(s) to keep (one per line)
+      --snp	file with subset of snp(s) to keep (one per line)
+		caution, it can change the gene-level BFs and posteriors
+      --gene-snp	file with subset of gene-snp pai(s) to keep (gene<tab>snp, one per line)
+		caution, it can change the gene-level BFs and posteriors
+      --bestsnp	report the best SNP(s) per gene
+		0: report all SNPs (default)
+		1: report only the single best SNP (pick one if tie)
+		2: report the best SNP(s) listed in decreasing order of their probability of being the eQTL (conditional on the gene containing an eQTL), such that the sum of these probabilities exceeds 0.95
+      --bestdim	report the best config/type per SNP (and its posterior)
+      --alldim	report also BF and/or posterior for all dimensions (configs or types)
+		caution, the number of configurations can be big
+      --out	name of the output file (gzipped)
+		if --cwts is not provided, the output file will be used as input for 'eqtlbma_hm'
+      --thread	number of threads (default=1)
+```
+
+## eqtlbma_eqtlbma_hm
+
+### Tool Description
+Fits the hierarchical model of eQtlBma with an EM algorithm.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eqtlbma:1.3.3--h3dbd7e7_0
+- **Homepage**: https://github.com/timflutre/eqtlbma
+- **Package**: https://anaconda.org/channels/bioconda/packages/eqtlbma/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+`eqtlbma_hm' fits the hierarchical model of eQtlBma with an EM algorithm.
+
+Usage: eqtlbma_hm [OPTIONS] ...
+
+Options:
+  -h, --help	display the help and exit
+  -V, --version	output version information and exit
+  -v, --verbose	verbosity level (0/default=1/2/3)
+      --data	input data (usually output files from eqtlbma_bf)
+      --nsubgrp	number of subgroups
+      --model	which model to fit (default=configs/types)
+      --dim	dimension of the model (nb of active configs or types)
+      --ngrid	number of grid points
+      --out	output file (gzipped)
+      --init	file for initialization
+		3 columns: param<tab>value<tab>fixed (TRUE or FALSE)
+      --rand	random initialization
+      --seed	seed used with --rand, otherwise use time
+      --thresh	threshold to stop the EM (default=0.05)
+      --maxit	maximum number of iterations (optional)
+		useful if wall-time limit (see also --init)
+      --msl	maximum step length for SQUAREM
+		default=1 (meaning classical EM), around 3 is a good option
+      --thread	number of threads (default=1)
+      --configs	subset of configurations to keep (e.g. "1|3|1-3")
+      --keepgen	keep 'general' ABFs (useful for BMAlite)
+      --getci	compute the confidence intervals (single thread, thus slow)
+      --getbf	compute the Bayes Factors using the estimated weights
+		can take some time, otherwise only the estimated weights are reported
+      --pi0	fixed value for pi0 (pi0 hence won't be updated in the EM)
+      --ci	file with estimates of hyperparameters to only compute confidence intervals
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/eqtlbma:1.3.3--h3dbd7e7_0
 - **Homepage**: https://github.com/timflutre/eqtlbma
 - **Package**: https://anaconda.org/channels/bioconda/packages/eqtlbma/overview

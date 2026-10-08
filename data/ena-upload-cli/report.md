@@ -1,5 +1,11 @@
 # ena-upload-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ena-upload-cli | Not completed | needs an ENA Webin account to submit; only the no-submission draft mode ran (tables checked, checksums made, XML built) |
+
 ## ena-upload-cli
 
 ### Tool Description

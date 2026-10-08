@@ -1,5 +1,15 @@
 # ezaai CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ezaai_calculate | PASS |  |
+| ezaai_cluster | PASS |  |
+| ezaai_convert | PASS |  |
+| ezaai_convertdb | PASS |  |
+| ezaai_extract | PASS |  |
+
 ## ezaai_extract
 
 ### Tool Description

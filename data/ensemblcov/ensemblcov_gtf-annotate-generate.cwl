@@ -4,17 +4,24 @@ baseCommand:
   - ensemblcov
   - gtf-annotate-generate
 label: ensemblcov_gtf-annotate-generate
-doc: "Generate annotations from GTF files.\n\nTool homepage: https://github.com/IBCHgenomic/ensemlcov"
+doc: "gtf file for annotation: writes the gene id to gene name table (annotation) from a GENCODE GTF file\n\nTool homepage: https://github.com/IBCHgenomic/ensemlcov"
 inputs:
-  - id: gtf_file
+  - id: gtf
     type: File
-    doc: Path to the GTF file
+    doc: "path to the gtf file"
     inputBinding:
       position: 1
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: annotation_table
+    type:
+      - 'null'
+      - File
+    doc: "Gene id to gene name table"
+    outputBinding:
+      glob: annotation
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0

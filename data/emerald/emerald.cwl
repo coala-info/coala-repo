@@ -34,7 +34,7 @@ inputs:
       prefix: --approximation
   - id: clusterfile
     type: File
-    doc: Input cluster file
+    doc: Path to input FASTA cluster file
     inputBinding:
       position: 101
       prefix: -f
@@ -59,9 +59,9 @@ inputs:
   - id: drawgraph
     type:
       - 'null'
-      - Directory
-    doc: Returns dot code files of all alignments in an existent directory for 
-      plotting the Delta suboptimal subgraph.
+      - string
+    doc: Name of a directory (created before the run) that receives dot code 
+      files of all alignments for plotting the Delta suboptimal subgraph.
     inputBinding:
       position: 101
       prefix: --drawgraph
@@ -118,18 +118,37 @@ inputs:
       prefix: --windowmerge
   - id: outputfile_path
     type: string
-    doc: Output or path parameter `outputfile_path`
+    doc: Path to the output file. EMERALD appends to an existing file.
     inputBinding:
       position: 102
-      prefix: --outputfile
+      prefix: -o
 outputs:
   - id: outputfile
     type: File
     doc: Output file name
     outputBinding:
       glob: $(inputs.outputfile_path)
+  - id: suboptimal_alignments
+    type:
+      type: array
+      items: File
+    doc: FASTA files with randomly chosen suboptimal alignments (written with 
+      --alignments)
+    outputBinding:
+      glob: suboptimal_*.fasta
+  - id: drawgraph_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with dot code files (written with --drawgraph)
+    outputBinding:
+      glob: $(inputs.drawgraph)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "$(inputs.drawgraph ? {class: 'Directory', basename: inputs.drawgraph, listing:
+        []} : null)"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emerald:1.2.1--hd2a2fb8_2

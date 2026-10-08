@@ -8,6 +8,9 @@ doc: "Align nanopore events to a reference genome\n\nTool homepage: https://gith
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: sorted bam file
     inputBinding:
       position: 101
@@ -38,6 +41,9 @@ inputs:
       prefix: --debug-break
   - id: genome
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: reference genome
     inputBinding:
       position: 101
@@ -173,6 +179,15 @@ inputs:
       prefix: --read-dump
   - id: reads
     type: File
+    secondaryFiles:
+      - pattern: .index
+        required: true
+      - pattern: .index.fai
+        required: true
+      - pattern: .index.gzi
+        required: true
+      - pattern: .index.readdb
+        required: false
     doc: fastq/fasta read file
     inputBinding:
       position: 101
@@ -243,15 +258,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --signal-index
-  - id: skip_ultra
-    type:
-      - 'null'
-      - File
-    doc: skip ultra long reads and write those entries to the bam file provided 
-      as the argument
-    inputBinding:
-      position: 101
-      prefix: --skip-ultra
   - id: skip_unreadable
     type:
       - 'null'
@@ -264,6 +270,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .idx
+        required: true
     doc: read from a slow5 file
     inputBinding:
       position: 101
@@ -301,13 +310,21 @@ inputs:
       position: 101
       prefix: --write-dump
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: eventalign.tsv
     doc: output to file [stdout]
     inputBinding:
       position: 102
       prefix: -o
+  - id: skip_ultra_path
+    type:
+      - 'null'
+      - string
+    doc: skip ultra long reads and write those entries to the bam file provided 
+      as the argument
+    inputBinding:
+      position: 103
+      prefix: --skip-ultra
   - id: summary_path
     type:
       - 'null'
@@ -318,12 +335,17 @@ inputs:
       prefix: --summary
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output to file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: skip_ultra
+    type:
+      - 'null'
+      - File
+    doc: bam file with the skipped ultra long reads
+    outputBinding:
+      glob: $(inputs.skip_ultra_path)
   - id: summary
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # epa-ng CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| epa-ng | PASS | Fixed: output directory is now created before the run; placed 2 query sequences on the repository's test tree. |
+
 ## epa-ng
 
 ### Tool Description

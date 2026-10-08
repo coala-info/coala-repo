@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 4572; PASS: 3569; Failed: 589; Not completed: 414
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 4844; PASS: 3757; Failed: 646; Not completed: 441
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -3768,6 +3768,7 @@ dysgu	dysgu_filter	PASS
 dysgu	dysgu_merge	PASS	
 dysgu	dysgu_run	PASS	
 dysgu	dysgu_test	PASS	
+e-mem	e-mem	PASS	
 ea-utils	ea-utils_fastq-join	PASS	
 ea-utils	ea-utils_fastq-mcf	PASS	
 ea-utils	ea-utils_fastq-multx	PASS	
@@ -3821,6 +3822,105 @@ elastic-blast	elastic-blast_submit	Not completed	Needs an AWS or GCP cloud accou
 elastix	elastix	PASS	
 elector	elector	Failed	image problem: elector 1.0.4 opens every input FASTA with mode 'rU', which Python 3.12 rejects (ValueError: invalid mode: 'rU').
 elph	elph	PASS	
+elprep	elprep_bed-to-elsites	PASS	
+elprep	elprep_fasta-to-elfasta	PASS	
+elprep	elprep_filter	PASS	
+elprep	elprep_sfm	PASS	
+elprep	elprep_vcf-to-elsites	PASS	
+ema	ema_align	PASS	synthetic data: real 10x scATAC reads reformatted into linked-read layout (barcode plus 7 N bases before read 1); small chr1 region reference
+ema	ema_count	PASS	synthetic data: real 10x scATAC reads reformatted into linked-read layout (barcode plus 7 N bases before read 1); small chr1 region reference
+ema	ema_preproc	PASS	synthetic data: real 10x scATAC reads reformatted into linked-read layout (barcode plus 7 N bases before read 1); small chr1 region reference
+embl-api-validator	embl-api-validator	PASS	validated two real ENA EMBL records, good and bad entries split correctly; the -fix_diagnose option crashes inside the tool
+emblmygff3	emblmygff3_EMBLmyGFF3	Failed	tool bug: GFF3 to EMBL conversion of the Augustus example is correct, but two or more values for --keyword or --ra are written reversed and without separators
+emboss	emboss_printsextract	Failed	image problem: the tool can only write its output into the read-only EMBOSS data folder inside the image
+emboss	emboss_transeq	PASS	real PAX6 cDNA from the EMBOSS test set translated in six frames; frame 1 contains the PAX6 protein
+emerald	emerald	PASS	ran on the example clusters from the EMERALD repository and gave correct safety windows; the experimental --drawgraph option crashes inside the tool
+emeraldbgc	emeraldbgc	PASS	real BGC0001472 GenBank file with its InterProScan GFF3 from the tool repository gave the expected RiPP cluster 312-19485; plain FASTA input needs InterProScan and was not run
+emirge	emirge_emirge.py	Failed	image problem: the image has no usearch program, which emirge.py needs at start
+emirge	emirge_emirge_amplicon.py	Failed	image problem: the image has no usearch program, which emirge_amplicon.py needs at start
+emirge	emirge_emirge_makedb.py	PASS	downloaded real SILVA 128 LSU data, clustered sequences of 3150-3300 bp at 97 percent and built a bowtie index; the default SSU database is much larger and was not run
+emirge	emirge_emirge_rename_fasta.py	PASS	synthetic data: a small iter.01 folder built from three real NCBI 16S sequences; sorting by prior, record prefix, prob_min filter and N trimming were correct
+emmtyper	emmtyper	PASS	two real Streptococcus pyogenes genomes from NCBI typed as EMM1 and EMM18 with the blast and pcr workflows
+emmtyper	emmtyper_emmtyper-db	Failed	tool bug: emmtyper-db crashes at start in a container (read-only install folder gives OSError, setting EMM_DB gives TypeError), and the CDC FTP login also fails
+emu	emu_abundance	PASS	EMU example full-length and paired short reads against the default EMU database gave the expected species, such as Staphylococcus aureus and Salmonella enterica
+emu	emu_build-database	PASS	built the custom database from the EMU repository example; taxonomy table is identical to the repository copy
+emu	emu_collapse-taxonomy	PASS	collapsed a real EMU abundance table to genus with correct sums
+emu	emu_combine-outputs	PASS	combined two real EMU abundance tables into abundance and taxonomy tables; the counts option needs a counts column in every input
+emu-pca	emu-pca_emu	PASS	
+emvc-2	emvc-2	Failed	image problem: the bundled decision tree model (scikit-learn pickle) cannot be loaded by the scikit-learn version in the image, so the tool stops before calling variants
+ena-dl	ena-dl	Failed	tool bug: the tool queries the retired ENA warehouse URL, which now redirects to a web page, so it finds no run records and crashes
+ena-upload-cli	ena-upload-cli	Not completed	needs an ENA Webin account to submit; only the no-submission draft mode ran (tables checked, checksums made, XML built)
+ena-webin-cli	ena-webin-cli	Not completed	needs an ENA Webin account to validate or submit; only the offline -fields mode ran, and the base command was fixed to the ena-webin-cli wrapper
+enano	enano	PASS	
+enasearch	enasearch_get_analysis_fields	PASS	
+enasearch	enasearch_get_display_options	PASS	
+enasearch	enasearch_get_download_options	PASS	
+enasearch	enasearch_get_filter_fields	PASS	
+enasearch	enasearch_get_filter_types	PASS	
+enasearch	enasearch_get_results	PASS	
+enasearch	enasearch_get_returnable_fields	PASS	
+enasearch	enasearch_get_run_fields	PASS	
+enasearch	enasearch_get_sortable_fields	PASS	
+enasearch	enasearch_get_taxonomy_results	PASS	
+enasearch	enasearch_retrieve_analysis_report	Failed	tool bug: the tool calls retired ENA web addresses and returns an HTML web page instead of the records
+enasearch	enasearch_retrieve_data	PASS	
+enasearch	enasearch_retrieve_run_report	Failed	tool bug: the tool calls retired ENA web addresses and returns an HTML web page instead of the records
+enasearch	enasearch_retrieve_taxons	PASS	
+enasearch	enasearch_search_data	Failed	tool bug: the tool calls retired ENA web addresses and returns an HTML web page instead of the records
+encode-blacklist	encode-blacklist_Blacklist	Failed	image problem: the Blacklist program stops with an illegal instruction (exit 132) on the demo data, even with plain docker run
+endorspy	endorspy	PASS	
+enhjoerning	enhjoerning_unicorn_alnfilt	PASS	
+enhjoerning	enhjoerning_unicorn_bamstats	Failed	tool bug: the --outstat option writes no file; the statistics only go to the standard output
+enhjoerning	enhjoerning_unicorn_reassign	PASS	
+enhjoerning	enhjoerning_unicorn_refstats	PASS	
+enhjoerning	enhjoerning_unicorn_taxstats	PASS	
+enrichm	enrichm_annotate	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+enrichm	enrichm_classify	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+enrichm	enrichm_enrichment	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+enrichm	enrichm_explore	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+enrichm	enrichm_generate	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+enrichm	enrichm_pathway	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+enrichm	enrichm_predict	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+enrichm	enrichm_uses	Failed	image problem: enrichm stops at start with ModuleNotFoundError: No module named 'dataclasses' (Python 3.6 image)
+ensembl-vep	ensembl-vep_filter_vep	PASS	
+ensembl-vep	ensembl-vep_haplo	PASS	
+ensembl-vep	ensembl-vep_variant_recoder	PASS	
+ensembl-vep	ensembl-vep_vep	PASS	
+ensembl-vep	ensembl-vep_vep_convert_cache	PASS	
+ensemblcov	ensemblcov_auto-generate	Not completed	too heavy: downloads the 1.9 GB GENCODE v48 GTF and converts about 200 genes per minute (1592 of 86364 genes in 8 minutes)
+ensemblcov	ensemblcov_countconvert	Failed	tool bug: gene names are matched to counts by line position, so a counts file with a header row or a different row order gets values on the wrong genes and a gene subset crashes
+ensemblcov	ensemblcov_differentialexpression	Failed	tool bug: gene names are matched to the table by line position, so a header row or a different row order gives values on the wrong genes
+ensemblcov	ensemblcov_exon-ensembl	Not completed	too heavy: downloads the 1.9 GB GENCODE v48 GTF and did not finish 3 exon ids in 10 minutes
+ensemblcov	ensemblcov_gene-ensembl	Failed	image problem: the program stops at the extract step with file not found; it calls ./src/awk.sh, which is not in the image
+ensemblcov	ensemblcov_gtf-annotate-generate	PASS	
+ensemblcov	ensemblcov_threaded-auto	PASS	
+entrez-direct	entrez-direct_efetch	PASS	
+entrez-direct	entrez-direct_efilter	PASS	Filtered a real PubMed search by date and language; the -pub option fails in the image because fmt is missing.
+entrez-direct	entrez-direct_einfo	PASS	
+entrez-direct	entrez-direct_elink	PASS	
+entrez-direct	entrez-direct_epost	PASS	
+entrez-direct	entrez-direct_esearch	PASS	
+entrez-direct	entrez-direct_esummary	PASS	
+entrez-direct	entrez-direct_nquire	PASS	Rewrote the file as mode flag, path words and query arguments; tested E-utilities and PubChem queries.
+entrez-direct	entrez-direct_transmute	PASS	Tested -molwt on a real protein; the -x2p mode fails because xmllint is missing in the image.
+entrez-direct	entrez-direct_xtract	PASS	Rewrote the file with ordered expression input and XML on stdin; tested on real PubMed XML.
+enzbert	enzbert	Not completed	needs the multi-gigabyte ProtBert-BFD and fine-tuned model weights, which are not in the image
+enzymm	enzymm	PASS	Ran on the tool's own 1AMY test structure; the hits match the repository's expected M-CSA and UniProt IDs.
+epa-ng	epa-ng	PASS	Fixed: output directory is now created before the run; placed 2 query sequences on the repository's test tree.
+ephemeris	ephemeris_galaxy-tool-test	Not completed	needs a running Galaxy server and an API key
+ephemeris	ephemeris_get-tool-list	PASS	Fixed the output file and option prefixes; listed 1861 tools from the public usegalaxy.org server.
+ephemeris	ephemeris_shed-tools_install	Not completed	needs a Galaxy server with an admin API key
+ephemeris	ephemeris_shed-tools_test	Not completed	needs a Galaxy server with an admin API key
+ephemeris	ephemeris_shed-tools_update	Not completed	needs a Galaxy server with an admin API key
+epic	epic	Failed	image problem: perl is missing in the image, so read counting fails and epic crashes; output paths were also fixed in the CWL
+epic2	epic2	PASS	Called islands on the tool's own test and control BED files; first island matches the epic reference example.
+epicore	epicore_generate-epicore-csv	Not completed	rewrote the file with the real subcommand; it runs, but the epitope groups differ from the repository's expected result file, which may be from a newer version
+epicore	epicore_plot-landscape	PASS	Rewrote the file with the real subcommand; drew a landscape plot (SVG and PDF) from the result of the test evidence file.
+epik	epik_place	PASS	New file for the real subcommand; placed 6 query proteins on the IPK repository's D140 test database, with sister sequences on adjacent edges.
+epimuller	epimuller	PASS	Fixed: the Nextstrain input is a folder, not a file; ran on the repository's real NYC tree, metadata and case data (lineage trait made with augur) and got clade tables and Muller plots.
+epimuller	epimuller_define	PASS	New file; clade tables from the repository's real NYC tree and metadata (lineage trait made with augur).
+epimuller	epimuller_draw	PASS	New file; Muller plots drawn from the clade tables and the repository's real case data.
+epimuller	epimuller_parse	PASS	synthetic data: SARS-CoV-2 reads renamed to the GISAID header form; the metadata table has the same columns as the repository's metadata file.
 epydoc	epydoc_check	PASS	
 epydoc	epydoc_dvi	Failed	image problem: latex is not in the image, so epydoc writes the .tex files but cannot build api.dvi.
 epydoc	epydoc_html	PASS	
@@ -3829,6 +3929,17 @@ epydoc	epydoc_pdf	Failed	image problem: latex is not in the image, so epydoc wri
 epydoc	epydoc_pickle	PASS	
 epydoc	epydoc_ps	Failed	image problem: latex is not in the image, so epydoc writes the .tex files but cannot build api.ps.
 epydoc	epydoc_text	PASS	
+eqtlbma	eqtlbma_eqtlbma_avg_bfs	PASS	New file; grid-averaged Bayes factors match the tool's own expected values on its simulated test set (equal grid weights).
+eqtlbma	eqtlbma_eqtlbma_bf	PASS	Added staging of the files named in the list files; all five outputs are identical to the tool's own expected results on its simulated test set.
+eqtlbma	eqtlbma_eqtlbma_hm	PASS	New file; fitted the hierarchical model on the averaged Bayes factors of the tool's simulated test set and got pi0 and configuration weights that sum to 1.
+equirep	equirep_EquiRep	PASS	Fixed the command (EquiRep, not ./EquiRep); ran on the repository's example FASTA and got one repeat unit per read, each occurring in its read.
+ericscript	ericscript_ericscript.pl	Not completed	needs the human Ensembl reference database (multi-gigabyte download and index build), which is not in the image; output folder type was fixed
+ervdetective	ervdetective	Failed	image problem: the tool unzips its HMM profiles into its own install folder at run time, which fails for the non-root user and read-only image (needs root and --no-read-only)
+ervmancer	ervmancer	Not completed	needs the 1.2 GB k-mer dictionary and the 3.7 GB GRCh38 Bowtie2 index from Zenodo, too large for this machine's test budget
+escher-fluxomics	escher-fluxomics_best_fit_fluxes2escher_fluxes_csv	Failed	image problem: the image entrypoint is create_site_for_data, so any other command is passed to it as arguments and this script never runs
+escher-fluxomics	escher-fluxomics_create_site_for_data	PASS	New file for the real script (it relies on the image entrypoint); built an Escher site from a real Escher map and iso2flux flux data.
+esimsa	esimsa	Not completed	synthetic data: no real peak list exists; the added output argument works and the 2+ planted mass was recovered, but 1+ and 3+ planted clusters gave no or shifted masses, so the output cannot be confirmed
+eskrim	eskrim	PASS	Fixed: added the missing -i flag on the input reads; ran on the nf-core mag minigut metagenome reads and the read counts in the stats file match the input.
 esme_mpich_4_2_3	esme_mpich_4_2_3_nf-config	PASS	Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.1 built with mpicc/mpifort (MPICH 4.2.3 environment).
 esme_mpich_4_3_1	esme_mpich_4_3_1_nf-config	PASS	Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.2 built with mpicc/mpifort (MPICH 4.3.1 environment).
 esme_mvapich_4_0	esme_mvapich_4_0_nf-config	PASS	Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.2 built with mpicc/mpifort (MVAPICH 4.0 environment).
@@ -3862,6 +3973,118 @@ esme_pnetcdf_openmpi_5_0_6	esme_pnetcdf_openmpi_5_0_6_pnetcdf-config	PASS	Fixed 
 esme_pnetcdf_openmpi_5_0_6	esme_pnetcdf_openmpi_5_0_6_pnetcdf_version	PASS	Rewrote from the help (was invented string positionals and a wrong baseCommand); -v -d -c -b print PnetCDF version, date, configure args and MPI compilers.
 esme_psmpi_5_10_0	esme_psmpi_5_10_0_nf-config	PASS	Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.1 with mpicc/mpifort (ParaStation MPI 5.10.0 environment).
 esme_psmpi_5_12_1	esme_psmpi_5_12_1_nf-config	PASS	Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.2 with mpicc/mpifort (ParaStation MPI 5.12.1 environment).
+est-sfs	est-sfs	PASS	Fixed: added the two output file arguments and a writable seed file; ran the release's own test data (52 sites) and got an SFS file and ancestral probabilities.
+estscan	estscan	PASS	
+esviritu	esviritu_EsViritu	PASS	
+esviritu	esviritu_summarize_esv_runs	PASS	
+ete3	ete3_annotate	Failed	image problem: the ete3 command crashes at start with ImportError cannot import name TextFace (Qt dependency missing)
+ete3	ete3_expand	Failed	image problem: the ete3 command crashes at start with ImportError cannot import name TextFace (Qt dependency missing)
+ete3	ete3_ncbiquery	Failed	image problem: the ete3 command crashes at start with ImportError cannot import name TextFace (Qt dependency missing)
+eukcc	eukcc_define_set	Not completed	needs the EukCC database (about 6.4 GB), no small real database exists
+eukcc	eukcc_folder	Not completed	needs the EukCC database (about 6.4 GB), no small real database exists
+eukcc	eukcc_single	Not completed	needs the EukCC database (about 6.4 GB), no small real database exists
+eukfinder	eukfinder_download_db	Not completed	only downloads the large Eukfinder reference databases (multi-GB), too heavy to fetch here
+eukfinder	eukfinder_long_seqs	Not completed	needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists
+eukfinder	eukfinder_read_prep	Not completed	needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists
+eukfinder	eukfinder_read_prep_env	Not completed	needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists
+eukfinder	eukfinder_short_seqs	Not completed	needs a Centrifuge and PLAST reference database (multi-GB); no small real database exists
+eukrep	eukrep_EukRep	PASS	
+eukulele	eukulele_EUKulele	PASS	
+eval	eval_combine_eval_reports.pl	PASS	
+eval	eval_evaluate_gtf.pl	PASS	
+eval	eval_filter_badlist.pl	PASS	
+eval	eval_filter_gtfs.pl	PASS	
+eval	eval_get_distribution.pl	PASS	
+eval	eval_get_general_stats.pl	PASS	
+eval	eval_get_overlap_stats.pl	PASS	
+eval	eval_graph_gtfs.pl	PASS	
+eval	eval_make_intron_lenght_vs_performance_graph.pl	PASS	
+eval	eval_validate_gtf.pl	PASS	
+eval	eval_validate_splice_sites.pl	PASS	
+eviann	eviann_eviann.sh	PASS	
+evidencemodeler	evidencemodeler_EVidenceModeler	PASS	
+evofold2	evofold2_EvoFoldV2	PASS	
+evofold2	evofold2_dfgEval	PASS	
+evofold2	evofold2_dfgTrain	PASS	
+evofold2	evofold2_grammarTrain	PASS	
+evofold2	evofold2_multinomial	PASS	synthetic data: small planted counts with a hand-checkable answer (0.012016)
+evofr	evofr_prepare-data	PASS	synthetic data: simulated sequence and case counts from the repo's own test data generator
+evofr	evofr_run-model	Failed	tool bug: the --pivot, --seq-path and --export-path overrides are silently ignored in this version (config values are used)
+examl	examl_examl	PASS	
+examl	examl_parse-examl	PASS	
+excludonfinder	excludonfinder_ExcludonFinder	Failed	image problem: ExcludonFinder needs reformat.sh (BBMap), which is missing in the image; fixed baseCommand from main.sh to ExcludonFinder
+exonerate	exonerate	PASS	
+expam	expam_add	PASS	
+expam	expam_build	PASS	
+expam	expam_classify	PASS	tool hangs unless the database was set with n_processes of 7 or more; run with 7
+expam	expam_create	PASS	
+expam	expam_cutoff	PASS	
+expam	expam_distance	Failed	image problem: expam distance needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation'
+expam	expam_download_taxonomy	Not completed	needs the NCBI taxonomy database (ete3 download, large) and taxids typed by hand into accession_ids.csv
+expam	expam_draw_tree	Not completed	needs the NCBI taxonomy database (ete3 download, large) and taxids typed by hand into accession_ids.csv
+expam	expam_fake_phylogeny	PASS	
+expam	expam_mashtree	Failed	image problem: expam mashtree needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation'
+expam	expam_nj	Failed	image problem: expam nj needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation'
+expam	expam_phylotree	PASS	
+expam	expam_plot_memory	PASS	
+expam	expam_print	PASS	
+expam	expam_quickrun	PASS	
+expam	expam_remove	PASS	
+expam	expam_set	PASS	
+expam	expam_sketch	Failed	image problem: expam sketch needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation'
+expam	expam_to_taxonomy	Not completed	needs the NCBI taxonomy database (ete3 download, large) and taxids typed by hand into accession_ids.csv
+expam	expam_tree	Failed	image problem: expam tree needs mash/mashtree/rapidnj (not in the image): it stops with 'Could not find local installation'
+expansionhunter	expansionhunter_ExpansionHunter	PASS	
+expansionhunterdenovo	expansionhunterdenovo_annotate_ehdn	Not completed	needs a licensed ANNOVAR installation and its refGene humandb
+expansionhunterdenovo	expansionhunterdenovo_casecontrol_locus	Failed	image problem: the python script stops with ModuleNotFoundError: numpy (not in the image)
+expansionhunterdenovo	expansionhunterdenovo_casecontrol_motif	Failed	image problem: the python script stops with ModuleNotFoundError: numpy (not in the image)
+expansionhunterdenovo	expansionhunterdenovo_make_bamlet	Failed	image problem: the python script stops with ModuleNotFoundError: pysam (not in the image)
+expansionhunterdenovo	expansionhunterdenovo_merge	PASS	
+expansionhunterdenovo	expansionhunterdenovo_outlier_locus	Failed	image problem: the python script stops with ModuleNotFoundError: numpy (not in the image)
+expansionhunterdenovo	expansionhunterdenovo_outlier_motif	Failed	image problem: the python script stops with ModuleNotFoundError: numpy (not in the image)
+expansionhunterdenovo	expansionhunterdenovo_profile	PASS	
+export2graphlan	export2graphlan_export2graphlan.py	PASS	
+express	express	PASS	
+expressbetadiversity	expressbetadiversity_ExpressBetaDiversity	PASS	
+expressbetadiversity	expressbetadiversity_convertToEBD.py	PASS	
+expressbetadiversity	expressbetadiversity_convertToFullMatrix.py	PASS	
+extract-codon-alignment	extract-codon-alignment_extract_codon_alignment	PASS	
+extract-sv-reads	extract-sv-reads	PASS	
+extracthifi	extracthifi	PASS	
+extract_fasta_seq	extract_fasta_seq	PASS	
+extract_fullseq	extract_fullseq	PASS	
+extract_genome_region	extract_genome_region	PASS	
+ezaai	ezaai_calculate	PASS	
+ezaai	ezaai_cluster	PASS	
+ezaai	ezaai_convert	PASS	
+ezaai	ezaai_convertdb	PASS	
+ezaai	ezaai_extract	PASS	
+ezclermont	ezclermont	PASS	
+ezfastq	ezfastq	PASS	
+f5c	f5c_call-methylation	PASS	slow5 mode matches the expected output of the f5c repository; fast5 mode cannot reuse an index built in another container, because the index stores absolute fast5 paths.
+f5c	f5c_eventalign	PASS	slow5 mode summary matches the expected output of the f5c repository; fast5 mode cannot reuse an index built in another container, because the index stores absolute fast5 paths.
+f5c	f5c_freq-merge	PASS	
+f5c	f5c_index	PASS	
+f5c	f5c_meth-freq	PASS	
+f5c	f5c_resquiggle	PASS	
+fa-lint	fa-lint	PASS	
+fade	fade_annotate	PASS	
+fade	fade_extract	PASS	
+fade	fade_out	PASS	
+fade	fade_stats	PASS	
+fade	fade_stats-clip	PASS	
+fairy	fairy_coverage	PASS	
+fairy	fairy_sketch	PASS	
+falco	falco	PASS	falco 1.2.5 output matches the Galaxy expected values except for newer-version formatting differences.
+falcon-ms	falcon-ms_falcon	PASS	
+famli	famli_align	Failed	image problem: famli align needs root to create /root/ncbi, so it crashes with Permission denied as the Docker user; also the image has diamond 0.9.10 while the test database is for 0.9.22
+famli	famli_filter	Failed	tool bug: image version 1.0 has the upstream drop-last-line error, giving 359 reads instead of the expected 360, and --batchsize 50000 gives 242
+famsa	famsa	PASS	
+famseq	famseq_FamSeq	PASS	
+famus	famus_famus-classify	Failed	image problem: PyTorch is not installed in the image, so classification cannot run; models also need a download of 2.5 GB or more
+famus	famus_famus-convert-sdf	Not completed	needs installed models (2.5 GB or more download); training preprocessing writes only the pickle it would create
+famus	famus_famus-install	Not completed	the smallest model download is 2.5 GB (up to 11.7 GB), too large for this test
+famus	famus_famus-train	Failed	image problem: PyTorch is not installed in the image, so training cannot run; preprocessing with --stop-before-training works
 fanc	fanc_aggregate	PASS	
 fanc	fanc_boundaries	PASS	
 fanc	fanc_cis_trans	PASS	
@@ -3889,6 +4112,55 @@ fanc	fanc_to_cooler	PASS
 fanc	fanc_to_juicer	Failed	image problem: java and juicer_tools are not in the image, so the Juicer conversion cannot run.
 fanc	fanc_upgrade	Failed	tool bug: fanc upgrade reads the class ID as bytes (b'HIC') and stops with 'No suitable upgrade method' on the legacy Hic test file from the fanc repo.
 fanc	fanc_write_config	PASS	
+fargene	fargene	PASS	
+fast-fasta-compressor	fast-fasta-compressor_ffc	PASS	round trip of compress then decompress gives identical FASTA
+fast2q	fast2q_2fast2q	PASS	counts match the repository expected compiled.csv
+fast5	fast5_f5ls	Failed	image problem: f5ls crashes at start with ModuleNotFoundError: No module named 'dateutil'
+fast5	fast5_f5pack	Failed	image problem: f5pack crashes at start with TypeError: expected bytes, str found (Python 3 and the fast5 extension do not match)
+fast5-research	fast5-research_extract_reads	Failed	image problem: the program crashes at import with SyntaxError at 'yield from' (Python 2.7 image, Python 3 code)
+fast5-research	fast5-research_filter_from_bam	Failed	image problem: the program crashes at import with SyntaxError at 'yield from' (Python 2.7 image, Python 3 code)
+fast5-research	fast5-research_filter_reads	Failed	image problem: the program crashes at import with SyntaxError at 'yield from' (Python 2.7 image, Python 3 code)
+fast5-research	fast5-research_index_reads	Failed	image problem: the program crashes at import with SyntaxError at 'yield from' (Python 2.7 image, Python 3 code)
+fast5-research	fast5-research_read_summary	Failed	image problem: the program crashes at import with SyntaxError at 'yield from' (Python 2.7 image, Python 3 code)
+fast5seek	fast5seek	PASS	mapped and unmapped read ids give the expected 6 and 8 fast5 files
+fasta-splitter	fasta-splitter	PASS	sequence content of the parts equals the input
+fasta3	fasta3_fasta36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_fastf36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_fastm36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_fasts36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_fastx36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_fasty36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_ggsearch36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_glsearch36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_lalign36	PASS	self-alignment of calmodulin gives the repeated EF-hand local alignments
+fasta3	fasta3_ssearch36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_tfastf36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_tfastm36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_tfasts36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_tfastx36	PASS	top hits are the known GST relatives with the expected identities
+fasta3	fasta3_tfasty36	PASS	top hits are the known GST relatives with the expected identities
+fastafunk	fastafunk_add_columns	PASS	output equals the repository expected files for three modes
+fastafunk	fastafunk_annotate	PASS	FASTA and metadata equal the repository expected files
+fastafunk	fastafunk_consensus	Failed	image problem: mafft is not installed in the image, so the alignment step crashes
+fastafunk	fastafunk_count	Failed	tool bug: crashes with AttributeError in filter_by_omit_columns for any input
+fastafunk	fastafunk_drop_columns	PASS	output equals the repository expected files
+fastafunk	fastafunk_extract	PASS	matching sequences extracted and the rest written to the reject file
+fastafunk	fastafunk_fetch	PASS	FASTA and metadata equal the repository expected files for three modes
+fastafunk	fastafunk_filter_column	PASS	rows with a true or false value in the column are removed as described
+fastafunk	fastafunk_merge	PASS	merged FASTA equals the repository expected file
+fastafunk	fastafunk_new	Failed	tool bug: crashes with TypeError, load_new_metadata() got an unexpected keyword argument index
+fastafunk	fastafunk_remove	PASS	output equals the repository expected file
+fastafunk	fastafunk_shuffle	PASS	rows are the same set in a new order
+fastafunk	fastafunk_split	PASS	all five lineage FASTA files equal the repository expected files
+fastafunk	fastafunk_strip	PASS	gap, ambiguity, missing, front and keep-alignment options give the expected sequences
+fastafunk	fastafunk_subsample	PASS	one sequence per group kept, extra sequence dropped
+fastafunk	fastafunk_unwrap	PASS	sequences are on one line each
+fastagap	fastagap	PASS	
+fastahack	fastahack	PASS	
+fastaindex	fastaindex_FastaIndex	Failed	image problem: Python 2 code runs under Python 3.6 and stops with NameError: name 'file' is not defined
+fastaindex	fastaindex_fasta_stats	Failed	image problem: Python 2 code runs under Python 3.6 and stops with NameError: name 'file' is not defined
+fastan	fastan_FasTAN	PASS	
+fastani	fastani	PASS	
 foldcomp	foldcomp_check	Failed	tool bug: check passes a truncated FCZ file without flagging it; valid files are reported correctly
 foldcomp	foldcomp_compress	PASS	
 foldcomp	foldcomp_decompress	PASS	

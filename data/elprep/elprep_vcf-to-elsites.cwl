@@ -11,10 +11,15 @@ inputs:
     doc: Input VCF file
     inputBinding:
       position: 1
+  - id: elsites_file_name
+    type: string
+    doc: Name of the output file
+    inputBinding:
+      position: 2
   - id: log_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to store logs
     inputBinding:
       position: 102
@@ -24,7 +29,7 @@ outputs:
     type: File
     doc: Output ELSIF sites file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.elsites_file_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/elprep:5.1.3--he881be0_2

@@ -1,5 +1,11 @@
 # fargene CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fargene | PASS |  |
+
 ## fargene
 
 ### Tool Description

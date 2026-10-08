@@ -1,9 +1,29 @@
 # enasearch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| enasearch_get_analysis_fields | PASS |  |
+| enasearch_get_display_options | PASS |  |
+| enasearch_get_download_options | PASS |  |
+| enasearch_get_filter_fields | PASS |  |
+| enasearch_get_filter_types | PASS |  |
+| enasearch_get_results | PASS |  |
+| enasearch_get_returnable_fields | PASS |  |
+| enasearch_get_run_fields | PASS |  |
+| enasearch_get_sortable_fields | PASS |  |
+| enasearch_get_taxonomy_results | PASS |  |
+| enasearch_retrieve_analysis_report | Failed | tool bug: the tool calls retired ENA web addresses and returns an HTML web page instead of the records |
+| enasearch_retrieve_data | PASS |  |
+| enasearch_retrieve_run_report | Failed | tool bug: the tool calls retired ENA web addresses and returns an HTML web page instead of the records |
+| enasearch_retrieve_taxons | PASS |  |
+| enasearch_search_data | Failed | tool bug: the tool calls retired ENA web addresses and returns an HTML web page instead of the records |
+
 ## enasearch_get_analysis_fields
 
 ### Tool Description
-Get analysis fields from ENA.
+Get the fields extractable for an analysis.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/enasearch:0.2.2--py27_0
@@ -11,57 +31,62 @@ Get analysis fields from ENA.
 - **Package**: https://anaconda.org/channels/bioconda/packages/enasearch/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/enasearch/overview
-- **Total Downloads**: 30.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
 ### Original Help Text
 ```text
-[u'analysis_accession',
- u'study_accession',
- u'secondary_study_accession',
- u'sample_accession',
- u'secondary_sample_accession',
- u'analysis_title',
- u'analysis_type',
- u'center_name',
- u'first_public',
- u'last_updated',
- u'study_title',
- u'tax_id',
- u'scientific_name',
- u'analysis_alias',
- u'study_alias',
- u'submitted_bytes',
- u'submitted_md5',
- u'submitted_ftp',
- u'submitted_aspera',
- u'submitted_galaxy',
- u'sample_alias',
- u'broker_name']
-analysis_accession
-study_accession
-secondary_study_accession
-sample_accession
-secondary_sample_accession
-analysis_title
-analysis_type
-center_name
-first_public
-last_updated
-study_title
-tax_id
-scientific_name
-analysis_alias
-study_alias
-submitted_bytes
-submitted_md5
-submitted_ftp
-submitted_aspera
-submitted_galaxy
-sample_alias
-broker_name
+Usage: enasearch get_analysis_fields [OPTIONS]
+
+  Get the fields extractable for an analysis.
+
+  This function returns the fields as a list.
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
+## enasearch_get_download_options
+
+### Tool Description
+Get the options for download of data from ENA.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/enasearch:0.2.2--py27_0
+- **Homepage**: http://bebatut.fr/enasearch/
+- **Package**: https://anaconda.org/channels/bioconda/packages/enasearch/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: enasearch get_download_options [OPTIONS]
+
+  Get the options for download of data from ENA.
+
+  Each option is described.
+
+Options:
+  -h, --help  Show this message and exit.
+```
+
+## enasearch_get_run_fields
+
+### Tool Description
+Get the fields extractable for a run.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/enasearch:0.2.2--py27_0
+- **Homepage**: http://bebatut.fr/enasearch/
+- **Package**: https://anaconda.org/channels/bioconda/packages/enasearch/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: enasearch get_run_fields [OPTIONS]
+
+  Get the fields extractable for a run.
+
+  This function returns the fields as a list.
+
+Options:
+  -h, --help  Show this message and exit.
 ```
 
 ## enasearch_get_display_options

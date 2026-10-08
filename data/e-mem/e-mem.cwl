@@ -1,9 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ../e-mem
+baseCommand: e-mem
 label: e-mem
 doc: "E-MEM finds and outputs the position and length of all maximal exact matches
-  (MEMs) between <query-file> and <reference-file>\n\nTool homepage: https://github.com/EverMind-AI/EverMemOS"
+  (MEMs) between <query-file> and <reference-file>\n\nTool homepage: https://github.com/lucian-ilie/E-MEM"
 inputs:
   - id: reference_file
     type: File

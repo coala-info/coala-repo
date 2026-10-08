@@ -85,9 +85,42 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
+  - id: indexed_reads
+    type: File
+    doc: Reads file with its index files (.index, .index.fai, .index.gzi and,
+      for fast5 signals, .index.readdb)
+    secondaryFiles:
+      - pattern: .index
+        required: true
+      - pattern: .index.fai
+        required: true
+      - pattern: .index.gzi
+        required: true
+      - pattern: .index.readdb
+        required: false
+    outputBinding:
+      glob: $(inputs.reads_fastq.basename)
+  - id: slow5_with_index
+    type:
+      - 'null'
+      - File
+    doc: slow5 file with its .idx index
+    secondaryFiles:
+      - pattern: .idx
+        required: false
+    outputBinding:
+      glob: "$(inputs.slow5 ? inputs.slow5.basename : '__no_slow5__')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reads_fastq)
+        writable: true
+      - entry: $(inputs.slow5)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/f5c:1.6--hee927d3_0

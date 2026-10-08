@@ -1,5 +1,11 @@
 # emu-pca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emu-pca_emu | PASS |  |
+
 ## emu-pca_emu
 
 ### Tool Description

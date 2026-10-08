@@ -142,9 +142,9 @@ inputs:
   - id: working_directory
     type:
       - 'null'
-      - Directory
-    doc: 'Default: / -- Set working directory with absolute or relative path. Run
-      directory will be created within.'
+      - string
+    doc: 'Default: current directory -- Set working directory with absolute or relative
+      path. Run directory will be created within.'
     inputBinding:
       position: 101
       prefix: --working_directory

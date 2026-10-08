@@ -16,10 +16,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix for PLINK files (.bed, .bim, .fam)
+    doc: Prefix for PLINK files (.bed, .bim, .fam); the files must be given in bfile_files
     inputBinding:
       position: 101
       prefix: --bfile
+  - id: bfile_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: PLINK .bed, .bim and .fam files, staged so that bfile_prefix resolves
   - id: maf_threshold
     type:
       - 'null'
@@ -133,6 +139,8 @@ outputs:
       glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.bfile_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emu-pca:1.5.0--py310h20b60a1_0

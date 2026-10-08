@@ -114,9 +114,7 @@ inputs:
       prefix: --sample-output-directory
 outputs:
   - id: sample_output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory for sample sketches
     outputBinding:
       glob: $(inputs.sample_output_directory_path)

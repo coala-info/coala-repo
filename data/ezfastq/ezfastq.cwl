@@ -61,35 +61,25 @@ inputs:
     type:
       - 'null'
       - string
-    doc: subdirectory path under --workdir to which sequence
+    doc: subdirectory path under --workdir to which sequence files will be 
+      written; PATH=`seq` by default, but can contain nesting (e.g. `seq/study`)
     inputBinding:
       position: 104
       prefix: --subdir
   - id: workdir_path
-    type:
-      - 'null'
-      - string
-    doc: project directory to which input files will be copied
+    type: string
+    default: project
+    doc: project directory to which input files will be copied and renamed
     inputBinding:
       position: 105
       prefix: --workdir
 outputs:
   - id: workdir
-    type:
-      - 'null'
-      - Directory
-    doc: project directory to which input files will be copied and renamed; 
-      current directory is used by default
+    type: Directory
+    doc: project directory with the renamed sequence files (in the `seq` or
+      --subdir subdirectory)
     outputBinding:
       glob: $(inputs.workdir_path)
-  - id: subdir
-    type:
-      - 'null'
-      - Directory
-    doc: subdirectory path under --workdir to which sequence files will be 
-      written; PATH=`seq` by default, but can contain nesting (e.g. `seq/study`)
-    outputBinding:
-      glob: $(inputs.subdir_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

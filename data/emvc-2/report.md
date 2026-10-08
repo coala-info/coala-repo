@@ -1,5 +1,11 @@
 # emvc-2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emvc-2 | Failed | image problem: the bundled decision tree model (scikit-learn pickle) cannot be loaded by the scikit-learn version in the image, so the tool stops before calling variants |
+
 ## emvc-2
 
 ### Tool Description

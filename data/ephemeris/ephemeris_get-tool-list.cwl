@@ -50,7 +50,7 @@ inputs:
       position: 101
       prefix: --include-tool-panel-id
   - id: output_file
-    type: File
+    type: string
     doc: tool_list.yml output file
     inputBinding:
       position: 101
@@ -98,9 +98,18 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: tool_list
+    type: File
+    doc: tool_list.yml output file
+    outputBinding:
+      glob: $(inputs.output_file)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ephemeris:0.10.11--pyhdfd78af_0

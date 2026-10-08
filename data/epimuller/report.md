@@ -1,11 +1,189 @@
 # epimuller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| epimuller | PASS | Fixed: the Nextstrain input is a folder, not a file; ran on the repository's real NYC tree, metadata and case data (lineage trait made with augur) and got clade tables and Muller plots. |
+| epimuller_define | PASS | New file; clade tables from the repository's real NYC tree and metadata (lineage trait made with augur). |
+| epimuller_draw | PASS | New file; Muller plots drawn from the clade tables and the repository's real case data. |
+| epimuller_parse | PASS | synthetic data: SARS-CoV-2 reads renamed to the GISAID header form; the metadata table has the same columns as the repository's metadata file. |
+
 ## epimuller
 
 ### Tool Description
 epimuller
 
+### epimuller_parse
+
+### Tool Description
+Parses a GISAID FASTA file into a metadata TSV and a renamed FASTA file.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/epimuller:0.0.8--pyhdfd78af_0
+- **Homepage**: https://github.com/jennifer-bio/epimuller
+- **Package**: https://anaconda.org/channels/bioconda/packages/epimuller/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: epimuller-parse [-h] -iF INFASTA -oM OUTMETA -oF OUTFASTA
+                       [-p INPANGOLIN]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -iF INFASTA, --inFasta INFASTA
+                        full metadata file with ISO date after last '|' in
+                        name (default: None)
+  -oM OUTMETA, --outMeta OUTMETA
+                        output for metadata file (default: None)
+  -oF OUTFASTA, --outFasta OUTFASTA
+                        output for fasta file (default: None)
+  -p INPANGOLIN, --inPangolin INPANGOLIN
+                        pangolin output lineage_report.csv file, if argument
+                        not supplied adds ? in 'lineage' col (default: None)
+```
+
+## epimuller_define
+
+### Tool Description
+Defines clades from a tree and a trait and counts them over time windows.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/epimuller:0.0.8--pyhdfd78af_0
+- **Homepage**: https://github.com/jennifer-bio/epimuller
+- **Package**: https://anaconda.org/channels/bioconda/packages/epimuller/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: epimuller-define [-h] [-oDir OUTDIRECTORY] -oP OUTPREFIX
+                        (-n INNEXTSTRAIN | -a ANNOTATEDTREE) -m INMETA
+                        [-p INPANGOLIN] [--noPangolin] [-k TRAITOFINTERSTKEY]
+                        [-f TRAITOFINTERSTFILE] [-g GENEBOUNDRY]
+                        [-mut VOCLIST [VOCLIST ...]] [-t TIMEWINDOW]
+                        [-s STARTDATE] [-e ENDDATE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -oDir OUTDIRECTORY, --outDirectory OUTDIRECTORY
+                        folder for output (default: ./)
+  -oP OUTPREFIX, --outPrefix OUTPREFIX
+                        prefix of out files withen outDirectory (default:
+                        None)
+  -n INNEXTSTRAIN, --inNextstrain INNEXTSTRAIN
+                        nextstrain results with tree.nwk and
+                        [traitOfInterstFile].json (default: None)
+  -a ANNOTATEDTREE, --annotatedTree ANNOTATEDTREE
+                        nexus file name with annotation:
+                        [&!traitOfInterstKey=value], as output by treetime
+                        (default: None)
+  -m INMETA, --inMeta INMETA
+                        metadata tsv with 'strain' and 'date'cols, optional:
+                        col for [traitOfInterstKey]; and pangolin col named:
+                        'pangolin_lineage' 'lineage' or 'pangolin_lin'
+                        (default: None)
+  -p INPANGOLIN, --inPangolin INPANGOLIN
+                        pangolin output lineage_report.csv file, if argument
+                        not supplied looks in inMeta for col with
+                        'pangolin_lineage', 'pangolin_lin', or 'lineage'
+                        (default: metadata)
+  --noPangolin          do not add lineage to clade names (default: False)
+  -k TRAITOFINTERSTKEY, --traitOfInterstKey TRAITOFINTERSTKEY
+                        key for trait of interst in json file OR (if
+                        -a/--annotatedTree AND key is mutations with aa (not
+                        nuc): use 'aa_muts') (default: aa_muts)
+  -f TRAITOFINTERSTFILE, --traitOfInterstFile TRAITOFINTERSTFILE
+                        [use with -n/--inNextstrain] name of
+                        [traitOfInterstFile].json in '-n/--inNextstrain'
+                        folder (default: aa_muts.json)
+  -g GENEBOUNDRY, --geneBoundry GENEBOUNDRY
+                        [use with -a/--annotatedTree AND -k/--traitOfInterst
+                        aa_muts] json formated file specifing start end
+                        postions of genes in alignment for annotatedTree (see
+                        example data/geneAAboundries.json) (default: None)
+  -mut VOCLIST [VOCLIST ...], --VOClist VOCLIST [VOCLIST ...]
+                        list of aa of interest in form
+                        [GENE][*ORAncAA][site][*ORtoAA] ex. S*501*, gaps
+                        represented by X, wild card aa represented by *
+                        (default: None)
+  -t TIMEWINDOW, --timeWindow TIMEWINDOW
+                        number of days for sampling window (default: 7)
+  -s STARTDATE, --startDate STARTDATE
+                        start date in iso format YYYY-MM-DD or 'firstDate'
+                        which is in metadata (default: 2020-03-01)
+  -e ENDDATE, --endDate ENDDATE
+                        end date in iso format YYYY-MM-DD or 'lastDate' which
+                        is in metadata (default: lastDate)
+```
+
+## epimuller_draw
+
+### Tool Description
+Draws Muller plots from the clade and abundance tables.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/epimuller:0.0.8--pyhdfd78af_0
+- **Homepage**: https://github.com/jennifer-bio/epimuller
+- **Package**: https://anaconda.org/channels/bioconda/packages/epimuller/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: epimuller-draw [-h] -p PARENTHIERARCHY_NAME -a ABUNDANCE_NAME
+                      [-c CASES_NAME] [--avgWindow AVGWINDOW] -o OUTFOLDER
+                      [-mt MINTIME] [-min MINTOTALCOUNT]
+                      [-l {date,time,bimonthly}] [-lp {Right,Max,Start,End}]
+                      [--WIDTH WIDTH] [--HEIGHT HEIGHT]
+                      [--LEGENDWIDTH LEGENDWIDTH] [--LABELSHIFT LABELSHIFT]
+                      [--MARGIN MARGIN] [--FONTSIZE FONTSIZE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PARENTHIERARCHY_NAME, --parentHierarchy_name PARENTHIERARCHY_NAME
+                        csv output from mutationLinages_report.py with child
+                        parent col (default: None)
+  -a ABUNDANCE_NAME, --abundance_name ABUNDANCE_NAME
+                        csv output from mutationLinages_report.py with
+                        abundances of clades (default: None)
+  -c CASES_NAME, --cases_name CASES_NAME
+                        file with cases - formated with 'date' in ISO format
+                        and 'confirmed_rolling' cases, in tsv format (default:
+                        None)
+  --avgWindow AVGWINDOW
+                        width of rolling mean window in terms of
+                        --timeWindow's (recomend using with small
+                        --timeWindow) ; default: sum of counts withen
+                        timeWindow (ie no average) (default: None)
+  -o OUTFOLDER, --outFolder OUTFOLDER
+                        csv output from mutationLinages_report.py with child
+                        parent col (default: None)
+  -mt MINTIME, --MINTIME MINTIME
+                        minimum time point to start plotting (default: 30)
+  -min MINTOTALCOUNT, --MINTOTALCOUNT MINTOTALCOUNT
+                        minimum total count for group to be included (default:
+                        50)
+  -l {date,time,bimonthly}, --xlabel {date,time,bimonthly}
+                        Format of x axis label: ISO date format or timepoints
+                        from start, or dd-Mon-YYYY on 1st and 15th (default:
+                        date)
+  -lp {Right,Max,Start,End}, --labelPosition {Right,Max,Start,End}
+                        choose position of clade labels (default: Right)
+
+Options for page setup:
+  --WIDTH WIDTH         WIDTH of page (px) (default: 1500)
+  --HEIGHT HEIGHT       HEIGHT of page (px) (default: 1000)
+  --LEGENDWIDTH LEGENDWIDTH
+                        LEGENDWIDTH to the right of plotting area (px)
+                        (default: 220)
+  --LABELSHIFT LABELSHIFT
+                        nudge label over by LABELSHIFT (px) (default: 15)
+  --MARGIN MARGIN       MARGIN around all sides of plotting area (px)
+                        (default: 60)
+  --FONTSIZE FONTSIZE
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/epimuller:0.0.8--pyhdfd78af_0
 - **Homepage**: https://github.com/jennifer-bio/epimuller
 - **Package**: https://anaconda.org/channels/bioconda/packages/epimuller/overview

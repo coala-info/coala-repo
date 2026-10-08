@@ -1,5 +1,11 @@
 # ena-dl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ena-dl | Failed | tool bug: the tool queries the retired ENA warehouse URL, which now redirects to a web page, so it finds no run records and crashes |
+
 ## ena-dl
 
 ### Tool Description

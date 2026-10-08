@@ -1,5 +1,11 @@
 # emblmygff3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emblmygff3_EMBLmyGFF3 | Failed | tool bug: GFF3 to EMBL conversion of the Augustus example is correct, but two or more values for --keyword or --ra are written reversed and without separators |
+
 ## emblmygff3_EMBLmyGFF3
 
 ### Tool Description

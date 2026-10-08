@@ -1,5 +1,11 @@
 # estscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| estscan | PASS |  |
+
 ## estscan
 
 ### Tool Description

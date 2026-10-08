@@ -1,5 +1,11 @@
 # evidencemodeler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| evidencemodeler_EVidenceModeler | PASS |  |
+
 ## evidencemodeler_EVidenceModeler
 
 ### Tool Description

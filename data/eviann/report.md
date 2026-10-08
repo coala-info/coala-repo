@@ -1,5 +1,11 @@
 # eviann CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eviann_eviann.sh | PASS |  |
+
 ## eviann_eviann.sh
 
 ### Tool Description

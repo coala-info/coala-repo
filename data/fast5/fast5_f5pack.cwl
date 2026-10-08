@@ -8,7 +8,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items:
+          - File
+          - Directory
     doc: Input directories, fast5 files, or files of fast5 file names. For input
       directories, the subdirectory hierarchy (if traversed with --recurse) is 
       recreated in the output directory.

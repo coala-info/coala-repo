@@ -50,14 +50,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --normroc
-  - id: calcstats_output_folder
-    type:
-      - 'null'
-      - Directory
-    doc: where statistics file will be stored
-    inputBinding:
-      position: 103
-      prefix: --outputfolder
   - id: calcstats_results_folder
     type:
       - 'null'
@@ -137,8 +129,8 @@ inputs:
   - id: output_folder
     type:
       - 'null'
-      - Directory
-    doc: where the results will be stored
+      - string
+    doc: where the results (or synthetic datasets, or statistics) will be stored
     inputBinding:
       position: 103
       prefix: --outputfolder
@@ -314,9 +306,18 @@ inputs:
       position: 103
       prefix: --verbose
 outputs:
+  - id: output_folder_out
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the results
+    outputBinding:
+      glob: $(inputs.output_folder)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ericscript:0.5.5--pl5.22.0r3.3.2_1

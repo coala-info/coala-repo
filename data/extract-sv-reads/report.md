@@ -1,5 +1,11 @@
 # extract-sv-reads CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| extract-sv-reads | PASS |  |
+
 ## extract-sv-reads
 
 ### Tool Description

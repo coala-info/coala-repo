@@ -4,7 +4,12 @@ baseCommand: efilter
 label: entrez-direct_efilter
 doc: "Filters search results based on various criteria.\n\nTool homepage: https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/24.0.20250527/README"
 inputs:
-  - id: class
+  - id: edirect_in
+    type:
+      - 'null'
+      - File
+    doc: ENTREZ_DIRECT message from esearch or elink, read from standard input
+  - id: snp_class
     type:
       - 'null'
       - string
@@ -175,9 +180,11 @@ outputs:
     type: stdout
     doc: Standard output
 requirements:
+  - class: InlineJavascriptRequirement
   - class: NetworkAccess
     networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/entrez-direct:24.0--he881be0_0
+stdin: '$(inputs.edirect_in ? inputs.edirect_in.path : null)'
 stdout: entrez-direct_efilter.out

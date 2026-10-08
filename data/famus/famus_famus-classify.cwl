@@ -48,6 +48,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --load-sdf-from-pickle
+  - id: no_load_sdf_from_pickle
+    type:
+      - 'null'
+      - boolean
+    doc: Do not load sdf_train from pickle (read the json file instead).
+    inputBinding:
+      position: 102
+      prefix: --no-load-sdf-from-pickle
   - id: log_dir
     type:
       - 'null'

@@ -14,6 +14,9 @@ inputs:
       position: 1
   - id: signals_blow5
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: true
     doc: Input signals in BLOW5 format
     inputBinding:
       position: 2

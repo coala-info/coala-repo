@@ -1,5 +1,11 @@
 # fastahack CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastahack | PASS |  |
+
 ## fastahack
 
 ### Tool Description

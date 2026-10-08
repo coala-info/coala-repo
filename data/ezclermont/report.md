@@ -1,5 +1,11 @@
 # ezclermont CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ezclermont | PASS |  |
+
 ## ezclermont
 
 ### Tool Description

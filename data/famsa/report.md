@@ -1,5 +1,11 @@
 # famsa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| famsa | PASS |  |
+
 ## famsa
 
 ### Tool Description

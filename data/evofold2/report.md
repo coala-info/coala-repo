@@ -1,5 +1,15 @@
 # evofold2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| evofold2_EvoFoldV2 | PASS |  |
+| evofold2_dfgEval | PASS |  |
+| evofold2_dfgTrain | PASS |  |
+| evofold2_grammarTrain | PASS |  |
+| evofold2_multinomial | PASS | synthetic data: small planted counts with a hand-checkable answer (0.012016) |
+
 ## evofold2_dfgEval
 
 ### Tool Description
@@ -140,6 +150,119 @@ Allowed options:
                                         debugging factor graph specification.
 ```
 
+
+## evofold2_EvoFoldV2
+
+### Tool Description
+EvoFold predicts and scores secondary structures in multiple sequence alignments.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/evofold2:0.1--0
+- **Homepage**: https://github.com/jakob-skou-pedersen/phy
+- **Package**: https://anaconda.org/channels/bioconda/packages/evofold2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+EvoFold predicts and scores secondary structures in mulitple sequence alignments.
+
+  Usage: EvoFold [options] <alg.ama> <tree.neiwck>
+
+The tabular output contains the following columns:
+
+  seqId beginPos endPos basePairCount strCykProb bgCykProb strProb bgProb cykScore score strPostProb fold posScore
+
+Setting alg.ama to '-' reads from stdin.
+Allowed options:
+  -h [ --help ]                     produce help message
+  -c [ --configFilePath ] arg (=./) Path to EvoFold configuration files.
+  -f [ --completeFile ] arg         Output complete structure predictions for 
+                                    each input element in addition to the 
+                                    sub-structures.
+  -n [ --annoName ] arg             Name of annotation to use (see annoMap file
+                                    for definition of annotation symbols. Note 
+                                    that '*' can be used as wildcard. 
+                                    Specifying annotation is useful for adding 
+                                    constraints on the predicted structure.
+  --decimals arg (=5)               Output precision of score.
+  -o [ --outputFile ] arg (=-)      Output file (default is stdout).
+```
+
+## evofold2_grammarTrain
+
+### Tool Description
+grammarTrain estimates transition probabilities of stochastic context free grammars.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/evofold2:0.1--0
+- **Homepage**: https://github.com/jakob-skou-pedersen/phy
+- **Package**: https://anaconda.org/channels/bioconda/packages/evofold2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+grammarTrins estimate transition probabilities (production rule probabilities) of stochastic context free grammars. Currently ama type input data is supported.
+
+  Usage: grammarTrain [options] <grammar.txt> <emitModels.txt> <alg.ama>
+
+Setting alg.ama to '-' reads from stdin.
+Allowed options:
+  -h [ --help ]                         produce help message
+  -t [ --treeFile ] arg                 File with Newick tree used with phylo 
+                                        grammars.
+  -a [ --annoMapFile ] arg              Anno map file.
+  -n [ --annoName ] arg                 Name of annotation to use.
+  -p [ --pseudoCounts ] arg (=0)        Defines total number of pseudocounts 
+                                        used for each transition distribution 
+                                        (For each transition, the number of 
+                                        pseudocounts is defined as the initital
+                                        transition probs in the input file 
+                                        times the given pseudoCounts value).
+  -d [ --minDeltaLogLik ] arg (=0.0001) Defines stopping criteria for the EM 
+                                        training. The training will stop when 
+                                        the difference in log likelihood is 
+                                        below minDeltaLogLik (default is 1e-4).
+  -i [ --maxIter ] arg (=100)           Max numbr if iterations of the EM 
+                                        training (default is 100).
+  -l [ --logFile ] arg (=grammarLogFile.txt)
+                                        Log file for EM training (default is 
+                                        ./grammarLogFile.txt).
+  -o [ --outputGrammar ] arg (=-)       Output file for trained grammar 
+                                        (default is stdout).
+  -o [ --tmpGrammar ] arg (=tmpGrammar.txt)
+                                        Output file for partly trained grammar,
+                                        printed in each interation (default is 
+                                        tmpGrammar.txt).
+```
+
+## evofold2_multinomial
+
+### Tool Description
+multinomial calculates probabilities of category counts under the multinomial distribution.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/evofold2:0.1--0
+- **Homepage**: https://github.com/jakob-skou-pedersen/phy
+- **Package**: https://anaconda.org/channels/bioconda/packages/evofold2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+multinomial calculates probabilities of category counts under the multinomial distribution.
+
+  Usage: multinomial [options] <parameters.tab> <counts.tab> <output.tab> 
+
+By default, all input and output files use named data format.
+
+Allowed options:
+  -h [ --help ]               produce help message
+  -p [ --precision ] arg (=5) Output precision of real numbers.
+  -c [ --coefficients ]       Output coefficients instead of probabilities.
+  -f [ --outputFormat ] arg   Use alternative output format. Possible values 
+                              are: vector, rowMat, and colMat, which all use 
+                              ublas style formatting.
+  -l [ --logarithm ]          Output natural logarithm of result values.
+```
 
 ## Metadata
 - **Skill**: generated

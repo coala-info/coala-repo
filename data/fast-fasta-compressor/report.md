@@ -1,5 +1,11 @@
 # fast-fasta-compressor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fast-fasta-compressor_ffc | PASS | round trip of compress then decompress gives identical FASTA |
+
 ## fast-fasta-compressor_ffc
 
 ### Tool Description

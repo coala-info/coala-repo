@@ -1,5 +1,11 @@
 # fast5seek CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fast5seek | PASS | mapped and unmapped read ids give the expected 6 and 8 fast5 files |
+
 ## fast5seek
 
 ### Tool Description

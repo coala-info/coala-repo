@@ -40,6 +40,11 @@ inputs:
       position: 102
       prefix: --taxonomy-list
 outputs:
+  - id: database_dir
+    type: Directory
+    doc: Database directory named db_name
+    outputBinding:
+      glob: $(inputs.db_name)
   - id: stdout
     type: stdout
     doc: Standard output

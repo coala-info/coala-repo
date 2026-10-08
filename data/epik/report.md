@@ -1,9 +1,14 @@
 # epik CWL Generation Report
 
-## epik_epik.py
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| epik_place | PASS | New file for the real subcommand; placed 6 query proteins on the IPK repository's D140 test database, with sister sequences on adjacent edges. |
+## epik_place
 
 ### Tool Description
-EPIK: Evolutionary Placement with Informative K-mers
+Places .fasta files using the input IPK database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/epik:0.2.0--h077b44d_2
@@ -11,24 +16,29 @@ EPIK: Evolutionary Placement with Informative K-mers
 - **Package**: https://anaconda.org/channels/bioconda/packages/epik/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/epik/overview
-- **Total Downloads**: 1.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/phylo42/epik
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: epik.py [OPTIONS] COMMAND [ARGS]...
+Usage: epik.py place [OPTIONS] INPUT_FILE
 
-  EPIK: Evolutionary Placement with Informative K-mers
+  Places .fasta files using the input IPK database.
 
-  N. Romashchenko, B. Linard, F. Pardi, E. Rivals
+  epik.py place -s [nucl|amino] -i DB.ipk -o output file.fasta [file2.fasta
+  ...]
+
+  Examples:     epik.py place -i DB.ipk -o temp --max-ram 4G --threads 8
+  query.fasta
 
 Options:
-  --version  Show the version and exit.
-  --help     Show this message and exit.
-
-Commands:
-  place  Places .fasta files using the input IPK database.
+  -i, --database FILE        Input database.  [required]
+  -s, --states [nucl|amino]  States used in analysis.  [default: nucl;
+                             required]
+  --omega FLOAT              User omega value, determines the score threhold.
+  --mu FLOAT                 The proportion of the database to keep.
+  -o, --outputdir DIRECTORY  Output directory.  [required]
+  --threads INTEGER          Number of threads used.  [default: 1]
+  --max-ram TEXT             Approximate RAM limit to use. Database may not be
+                             fully loaded
+  --help                     Show this message and exit.
 ```
+
 

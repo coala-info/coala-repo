@@ -7,9 +7,7 @@ doc: "Rewrites an emirge fasta file to include proper sequence names and prior p
   least abundant\n\nTool homepage: https://github.com/csmiller/EMIRGE"
 inputs:
   - id: iter_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: 'One of the iteration directories created by emirge (for example: emirge_working_dir/iter.40).
       If no iter.DIR is given, emirge_rename_fasta.py assumes that iter.DIR is the
       current working directory.'
@@ -53,8 +51,9 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: renamed FASTA file with prior probabilities, sorted from most to least 
+      abundant
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emirge:0.61.1--py27_1
-stdout: emirge_emirge_rename_fasta.py.out
+stdout: renamed.fasta

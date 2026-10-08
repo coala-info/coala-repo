@@ -1,5 +1,11 @@
 # ezfastq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ezfastq | PASS |  |
+
 ## ezfastq
 
 ### Tool Description

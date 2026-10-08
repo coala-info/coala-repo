@@ -11,11 +11,16 @@ inputs:
     doc: Input SAM file
     inputBinding:
       position: 1
+  - id: sam_output_name
+    type: string
+    doc: Name of the output SAM/BAM file
+    inputBinding:
+      position: 2
   - id: activity_profile
     type:
       - 'null'
-      - File
-    doc: IGV file for activity profile
+      - string
+    doc: Output activity profile IGV file (name of the file to write)
     inputBinding:
       position: 102
       prefix: --activity-profile
@@ -30,16 +35,17 @@ inputs:
   - id: assembly_regions
     type:
       - 'null'
-      - File
-    doc: IGV file for assembly regions
+      - string
+    doc: Output assembly regions IGV file (name of the file to write)
     inputBinding:
       position: 102
       prefix: --assembly-regions
   - id: bqsr
     type:
       - 'null'
-      - boolean
-    doc: Base Quality Score Recalibration
+      - string
+    doc: Output base quality score recalibration table (name of the file to 
+      write); the tool requires a file name
     inputBinding:
       position: 102
       prefix: --bqsr
@@ -110,8 +116,8 @@ inputs:
   - id: haplotypecaller
     type:
       - 'null'
-      - File
-    doc: VCF file for HaplotypeCaller
+      - string
+    doc: Output VCF file from the haplotype caller (name of the file to write)
     inputBinding:
       position: 102
       prefix: --haplotypecaller
@@ -143,15 +149,17 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: List of known sites VCF files
+        items: File
+    doc: List of known sites elsites files (made with vcf-to-elsites or 
+      bed-to-elsites)
     inputBinding:
       position: 102
       prefix: --known-sites
+      itemSeparator: ','
   - id: log_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path for log files
     inputBinding:
       position: 102
@@ -167,8 +175,8 @@ inputs:
   - id: mark_optical_duplicates
     type:
       - 'null'
-      - File
-    doc: Mark optical duplicates from a file
+      - string
+    doc: Output optical duplicates metrics file (name of the file to write)
     inputBinding:
       position: 102
       prefix: --mark-optical-duplicates
@@ -216,9 +224,7 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
-    doc: Reference FASTA file
+    doc: Reference elFASTA file (made with fasta-to-elfasta)
     inputBinding:
       position: 102
       prefix: --reference
@@ -295,6 +301,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sqq
+      itemSeparator: ','
   - id: target_regions
     type:
       - 'null'
@@ -324,7 +331,42 @@ outputs:
     type: File
     doc: Output SAM file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.sam_output_name)'
+  - id: activity_profile_file
+    type:
+      - 'null'
+      - File
+    doc: Output activity profile IGV file
+    outputBinding:
+      glob: $(inputs.activity_profile)
+  - id: assembly_regions_file
+    type:
+      - 'null'
+      - File
+    doc: Output assembly regions IGV file
+    outputBinding:
+      glob: $(inputs.assembly_regions)
+  - id: haplotypecaller_vcf
+    type:
+      - 'null'
+      - File
+    doc: Output VCF file from the haplotype caller
+    outputBinding:
+      glob: $(inputs.haplotypecaller)
+  - id: optical_duplicates_metrics
+    type:
+      - 'null'
+      - File
+    doc: Output optical duplicates metrics file
+    outputBinding:
+      glob: $(inputs.mark_optical_duplicates)
+  - id: bqsr_recal_file
+    type:
+      - 'null'
+      - File
+    doc: Output base quality score recalibration table
+    outputBinding:
+      glob: $(inputs.bqsr)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/elprep:5.1.3--he881be0_2

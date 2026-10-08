@@ -1,5 +1,12 @@
 # fastaindex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastaindex_FastaIndex | Failed | image problem: Python 2 code runs under Python 3.6 and stops with NameError: name 'file' is not defined |
+| fastaindex_fasta_stats | Failed | image problem: Python 2 code runs under Python 3.6 and stops with NameError: name 'file' is not defined |
+
 ## fastaindex_FastaIndex
 
 ### Tool Description

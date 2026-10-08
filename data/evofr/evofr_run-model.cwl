@@ -7,6 +7,13 @@ label: evofr_run-model
 doc: "Run an evofr model using a configuration file and optional data overrides.\n\
   \nTool homepage: https://github.com/blab/evofr"
 inputs:
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files named in the YAML configuration (for example raw_seq_path);
+      staged in the working directory so relative names in the config resolve.
   - id: cases_path
     type:
       - 'null'
@@ -38,7 +45,10 @@ inputs:
       position: 101
       prefix: --seq-path
   - id: export_path_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: Optional export directory override
     inputBinding:
       position: 102
       prefix: --export-path
@@ -52,6 +62,9 @@ outputs:
       glob: $(inputs.export_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.data_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/evofr:0.2.0--pyhdfd78af_0

@@ -9,7 +9,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: cmd line mode.
+    default: true
+    doc: cmd line mode (without it the tool does not run on the command line).
     inputBinding:
       position: 101
       prefix: -c
@@ -118,7 +119,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Adds progress bars (default is enabled)
+    doc: Progress bars are enabled by default; setting this flag disables them.
     inputBinding:
       position: 101
       prefix: --pb
@@ -133,8 +134,9 @@ inputs:
   - id: sequencing_path
     type:
       - 'null'
-      - File
-    doc: The full path to the directory with the sequencing files OR file.
+      - Directory
+    doc: The full path to the directory with the sequencing files (.fastq or .gz).
+      A single file path is not found by the tool.
     inputBinding:
       position: 101
       prefix: --s
@@ -173,7 +175,7 @@ inputs:
       position: 101
       prefix: --us
   - id: output_directory_path
-    type: string?
+    type: string
     doc: The full path to the output directory
     inputBinding:
       position: 102

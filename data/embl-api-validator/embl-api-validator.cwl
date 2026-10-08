@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ena_validator
+baseCommand: embl-api-validator
 label: embl-api-validator
 doc: "Validates biological sequence data files.\n\nTool homepage: http://www.ebi.ac.uk/ena/software/flat-file-validator"
 inputs:
@@ -125,10 +125,56 @@ inputs:
       position: 102
       prefix: -wrap
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: report_files
+    type:
+      type: array
+      items: File
+    doc: Report files written by the validator (prefix_VAL_*.txt)
+    outputBinding:
+      glob:
+        - '*_VAL_*.txt'
+  - id: good_entries_file
+    type:
+      - 'null'
+      - File
+    doc: Entries without errors (<filter>_good.txt), written with -filter
+    outputBinding:
+      glob: $(inputs.filter)_good.txt
+  - id: bad_entries_file
+    type:
+      - 'null'
+      - File
+    doc: Entries with errors (<filter>_bad.txt), written with -filter
+    outputBinding:
+      glob: $(inputs.filter)_bad.txt
+  - id: diagnose_dir
+    type:
+      - 'null'
+      - Directory
+    doc: diagnose folder written with -fix_diagnose
+    outputBinding:
+      glob: diagnose
+  - id: original_files_dir
+    type:
+      - 'null'
+      - Directory
+    doc: original_files folder with the unfixed input files, written with -fix
+    outputBinding:
+      glob: original_files
+  - id: stderr
+    type: stderr
+    doc: Validator messages and summary
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.files)
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/embl-api-validator:1.1.180--1
-stdout: embl-api-validator.out
+stderr: embl-api-validator.log
+successCodes:
+  - 0
+  - 3

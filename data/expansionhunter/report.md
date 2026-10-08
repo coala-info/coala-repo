@@ -1,5 +1,11 @@
 # expansionhunter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| expansionhunter_ExpansionHunter | PASS |  |
+
 ## expansionhunter_ExpansionHunter
 
 ### Tool Description

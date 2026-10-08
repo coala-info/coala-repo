@@ -1,5 +1,16 @@
 # f5c CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| f5c_call-methylation | PASS | slow5 mode matches the expected output of the f5c repository; fast5 mode cannot reuse an index built in another container, because the index stores absolute fast5 paths. |
+| f5c_eventalign | PASS | slow5 mode summary matches the expected output of the f5c repository; fast5 mode cannot reuse an index built in another container, because the index stores absolute fast5 paths. |
+| f5c_freq-merge | PASS |  |
+| f5c_index | PASS |  |
+| f5c_meth-freq | PASS |  |
+| f5c_resquiggle | PASS |  |
+
 ## f5c_index
 
 ### Tool Description

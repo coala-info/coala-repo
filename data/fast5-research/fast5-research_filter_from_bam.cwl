@@ -2,64 +2,77 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: filter_from_bam
 label: fast5-research_filter_from_bam
-doc: "Filter FAST5 files based on BAM alignment information.\n\nTool homepage: https://github.com/nanoporetech/fast5_research"
+doc: "Create filter file from BAM and sequencing summary. The table of read ids and
+  fast5 file names is written to standard output.\n\nTool homepage: https://github.com/nanoporetech/fast5_research"
 inputs:
   - id: bam_file
     type: File
-    doc: Input BAM file containing alignment information.
+    doc: Path to BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    inputBinding:
+      position: 101
+  - id: summary_files
+    type:
+      type: array
+      items: File
+    doc: Sequencing summary files (gzip compressed)
+    inputBinding:
+      position: 102
+  - id: separator
+    type:
+      - 'null'
+      - string
+    doc: Seperator in sequencing summary files
     inputBinding:
       position: 1
-  - id: fast5_dir
-    type: Directory
-    doc: Directory containing the FAST5 files to filter.
-    inputBinding:
-      position: 2
-  - id: exclude_unmapped
+      prefix: --seperator
+  - id: id_col
     type:
       - 'null'
-      - boolean
-    doc: Exclude reads that are unmapped in the BAM file.
+      - string
+    doc: Column name for read_id in sequencing summary files
     inputBinding:
-      position: 103
-      prefix: --exclude_unmapped
-  - id: include_unmapped
+      position: 1
+      prefix: --id-col
+  - id: fname_col
     type:
       - 'null'
-      - boolean
-    doc: Include reads that are unmapped in the BAM file.
+      - string
+    doc: Column name for fast5 filename in sequencing summary files
     inputBinding:
-      position: 103
-      prefix: --include_unmapped
-  - id: min_mapq
+      position: 1
+      prefix: --fname-col
+  - id: region
     type:
       - 'null'
-      - int
-    doc: Minimum mapping quality score for reads to be included.
+      - string
+    doc: Print reads only from this region
     inputBinding:
-      position: 103
-      prefix: --min_mapq
-  - id: threads
+      position: 1
+      prefix: --region
+  - id: workers
     type:
       - 'null'
       - int
-    doc: Number of threads to use for processing.
+    doc: Number of worker processes.
     inputBinding:
-      position: 103
-      prefix: --threads
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+      position: 1
+      prefix: --workers
+  - id: primary_only
+    type:
+      - 'null'
+      - boolean
+    doc: Ignore secondary and supplementary alignments
     inputBinding:
-      position: 104
-      prefix: --output-dir
+      position: 1
+      prefix: --primary-only
 outputs:
-  - id: output_dir
-    type: Directory
-    doc: Directory where the filtered FAST5 files will be saved.
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: filter_table
+    type: stdout
+    doc: Tab separated table with columns read_id and filename.
+stdout: fast5-research_filter_from_bam.tsv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fast5-research:1.2.22--pyh864c0ab_0

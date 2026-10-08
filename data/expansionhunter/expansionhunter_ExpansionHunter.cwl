@@ -5,6 +5,30 @@ label: expansionhunter_ExpansionHunter
 doc: "A tool for estimating sizes of tandem repeat expansions from sequencing data.\n\
   \nTool homepage: https://github.com/Illumina/ExpansionHunter"
 inputs:
+  - id: aligner
+    type:
+      - 'null'
+      - string
+    doc: Specify which aligner to use (dag-aligner or path-aligner)
+    inputBinding:
+      position: 101
+      prefix: --aligner
+  - id: analysis_mode
+    type:
+      - 'null'
+      - string
+    doc: Specify which analysis workflow to use (seeking or streaming)
+    inputBinding:
+      position: 101
+      prefix: --analysis-mode
+  - id: region_extension_length
+    type:
+      - 'null'
+      - int
+    doc: How far from on/off-target regions to search for informative reads
+    inputBinding:
+      position: 101
+      prefix: --region-extension-length
   - id: log_level
     type:
       - 'null'
@@ -15,6 +39,11 @@ inputs:
       prefix: --log-level
   - id: reads
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: BAM or CRAM file containing reads
     inputBinding:
       position: 101

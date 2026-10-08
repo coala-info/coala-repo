@@ -1,5 +1,11 @@
 # epic2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| epic2 | PASS | Called islands on the tool's own test and control BED files; first island matches the epic reference example. |
+
 ## epic2
 
 ### Tool Description

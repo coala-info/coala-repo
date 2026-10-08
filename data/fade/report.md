@@ -1,5 +1,15 @@
 # fade CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fade_annotate | PASS |  |
+| fade_extract | PASS |  |
+| fade_out | PASS |  |
+| fade_stats | PASS |  |
+| fade_stats-clip | PASS |  |
+
 ## fade_annotate
 
 ### Tool Description

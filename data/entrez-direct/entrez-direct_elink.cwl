@@ -5,14 +5,11 @@ label: entrez-direct_elink
 doc: "Finds links between records in different databases or within the same database.\n\
   \nTool homepage: https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/24.0.20250527/README"
 inputs:
-  - id: acheck
+  - id: edirect_in
     type:
       - 'null'
-      - boolean
-    doc: All links available
-    inputBinding:
-      position: 101
-      prefix: acheck
+      - File
+    doc: ENTREZ_DIRECT message from esearch or elink, read from standard input
   - id: cited
     type:
       - 'null'
@@ -33,7 +30,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Command type
+    doc: Command type (edirect, uid, history, neighbor, score, acheck, ncheck, lcheck, llinks, llibs, prlinks)
     inputBinding:
       position: 101
       prefix: -cmd
@@ -45,22 +42,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -db
-  - id: edirect
-    type:
-      - 'null'
-      - boolean
-    doc: Instantiate results in ENTREZ_DIRECT message
-    inputBinding:
-      position: 101
-      prefix: edirect
-  - id: history
-    type:
-      - 'null'
-      - boolean
-    doc: Save results in Entrez history server
-    inputBinding:
-      position: 101
-      prefix: history
   - id: id
     type:
       - 'null'
@@ -70,6 +51,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -id
+      itemSeparator: ','
   - id: input
     type:
       - 'null'
@@ -78,30 +60,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -input
-  - id: lcheck
-    type:
-      - 'null'
-      - boolean
-    doc: Existence of external links (LinkOuts)
-    inputBinding:
-      position: 101
-      prefix: lcheck
-  - id: llibs
-    type:
-      - 'null'
-      - boolean
-    doc: All LinkOut providers
-    inputBinding:
-      position: 101
-      prefix: llibs
-  - id: llinks
-    type:
-      - 'null'
-      - boolean
-    doc: Non-library LinkOut providers
-    inputBinding:
-      position: 101
-      prefix: llinks
   - id: log
     type:
       - 'null'
@@ -118,30 +76,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -name
-  - id: ncheck
-    type:
-      - 'null'
-      - boolean
-    doc: Existence of neighbors
-    inputBinding:
-      position: 101
-      prefix: ncheck
-  - id: neighbor
-    type:
-      - 'null'
-      - boolean
-    doc: Neighbors or links
-    inputBinding:
-      position: 101
-      prefix: neighbor
-  - id: prlinks
-    type:
-      - 'null'
-      - boolean
-    doc: Primary LinkOut provider
-    inputBinding:
-      position: 101
-      prefix: prlinks
   - id: related
     type:
       - 'null'
@@ -150,38 +84,24 @@ inputs:
     inputBinding:
       position: 101
       prefix: -related
-  - id: score
-    type:
-      - 'null'
-      - boolean
-    doc: Neighbors with computed similarity scores
-    inputBinding:
-      position: 101
-      prefix: score
   - id: target
     type:
       - 'null'
-      - boolean
+      - string
     doc: Links in different database
     inputBinding:
       position: 101
       prefix: -target
-  - id: uid
-    type:
-      - 'null'
-      - boolean
-    doc: Return results as sorted and uniqued UID list
-    inputBinding:
-      position: 101
-      prefix: uid
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 requirements:
+  - class: InlineJavascriptRequirement
   - class: NetworkAccess
     networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/entrez-direct:24.0--he881be0_0
+stdin: '$(inputs.edirect_in ? inputs.edirect_in.path : null)'
 stdout: entrez-direct_elink.out

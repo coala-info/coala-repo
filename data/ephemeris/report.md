@@ -1,39 +1,14 @@
 # ephemeris CWL Generation Report
 
-## ephemeris_shed-tools
+## Real Data Test
 
-### Tool Description
-A command-line tool for managing tools in Galaxy from the Tool Shed.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ephemeris:0.10.11--pyhdfd78af_0
-- **Homepage**: https://github.com/galaxyproject/ephemeris
-- **Package**: https://anaconda.org/channels/bioconda/packages/ephemeris/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ephemeris/overview
-- **Total Downloads**: 63.4K
-- **Last updated**: 2025-09-26
-- **GitHub**: https://github.com/galaxyproject/ephemeris
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: shed-tools [-h] {install,update,test} ...
-
-positional arguments:
-  {install,update,test}
-    install             This installs tools in Galaxy from the Tool Shed.Use
-                        shed-tools install --help for more information
-    update              This updates all tools in Galaxy to the latest
-                        revision. Use shed-tools update --help for more
-                        information
-    test                This tests the supplied list of tools in Galaxy. Use
-                        shed-tools test --help for more information
-
-options:
-  -h, --help            show this help message and exit
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| ephemeris_galaxy-tool-test | Not completed | needs a running Galaxy server and an API key |
+| ephemeris_get-tool-list | PASS | Fixed the output file and option prefixes; listed 1861 tools from the public usegalaxy.org server. |
+| ephemeris_shed-tools_install | Not completed | needs a Galaxy server with an admin API key |
+| ephemeris_shed-tools_test | Not completed | needs a Galaxy server with an admin API key |
+| ephemeris_shed-tools_update | Not completed | needs a Galaxy server with an admin API key |
 
 ## ephemeris_get-tool-list
 
@@ -193,6 +168,306 @@ options:
                         data
 ```
 
+
+## ephemeris_shed-tools_install
+
+### Tool Description
+shed-tools install: Galaxy Tool Shed tool management.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ephemeris:0.10.11--pyhdfd78af_0
+- **Homepage**: https://github.com/galaxyproject/ephemeris
+- **Package**: https://anaconda.org/channels/bioconda/packages/ephemeris/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: shed-tools install [-h] [-v] [--log-file LOG_FILE] [-g GALAXY]
+                          [-u USER] [-p PASSWORD] [-a API_KEY]
+                          [-t TOOL_LIST_FILE] [-y TOOL_YAML] [--name NAME]
+                          [--owner OWNER] [--revisions [REVISIONS ...]]
+                          [--tool-shed TOOL_SHED_URL]
+                          [--install-tool-dependencies]
+                          [--skip-install-resolver-dependencies]
+                          [--skip-install-repository-dependencies] [--test]
+                          [--test-existing] [--test-json TEST_JSON]
+                          [--test-user-api-key TEST_USER]
+                          [--test-user TEST_USER]
+                          [--parallel-tests PARALLEL_TESTS]
+                          [--section TOOL_PANEL_SECTION_ID]
+                          [--section-label TOOL_PANEL_SECTION_LABEL]
+                          [--latest]
+
+options:
+  -h, --help            show this help message and exit
+  -t, --tools-file, --toolsfile TOOL_LIST_FILE
+                        Tools file to use (see tool_list.yaml.sample)
+  -y, --yaml-tool TOOL_YAML
+                        Install tool represented by yaml string
+  --name NAME           The name of the tool to install (only applicable if
+                        the tools file is not provided).
+  --owner OWNER         The owner of the tool to install (only applicable if
+                        the tools file is not provided).
+  --revisions [REVISIONS ...]
+                        The revisions of the tool repository that will be
+                        installed. All revisions must be specified after this
+                        flag by a space.Example: --revisions 0a5c7992b1ac
+                        f048033da666(Only applicable if the tools file is not
+                        provided).
+  --tool-shed, --toolshed TOOL_SHED_URL
+                        The Tool Shed URL where to install the tool from. This
+                        is applicable only if the tool info is provided as an
+                        option vs. in the tools file.
+  --install-tool-dependencies
+                        Turn on installation of tool dependencies using
+                        classic toolshed packages. Can be overwritten on a
+                        per-tool basis in the tools file.
+  --skip-install-resolver-dependencies
+                        Skip installing tool dependencies through resolver
+                        (e.g. conda). Will be ignored on galaxy releases older
+                        than 16.07. Can be overwritten on a per-tool basis in
+                        the tools file
+  --skip-install-repository-dependencies
+                        Skip installing the repository dependencies.
+  --test                Run tool tests on install tools, requires Galaxy 18.05
+                        or newer.
+  --test-existing       If testing tools during install, also run tool tests
+                        on repositories already installed (i.e. skipped
+                        repositories).
+  --test-json TEST_JSON
+                        If testing tools, record tool test output to specified
+                        file. This file can be turned into reports with
+                        ``planemo test_reports <output.json>``.
+  --test-user-api-key TEST_USER
+                        If testing tools, a user is needed to execute the
+                        tests. This can be different the --api_key which is
+                        assumed to be an admin key. If --api_key is a valid
+                        user (e.g. it is not a master API key) this does not
+                        need to be specified and --api_key will be reused.
+  --test-user TEST_USER
+                        If testing tools, a user is needed to execute the
+                        tests. If --api_key is a master api key (i.e. not tied
+                        to a real user) and --test_user_api_key isn't
+                        specified, this user email will be used. This user
+                        will be created if needed.
+  --parallel-tests PARALLEL_TESTS
+                        Specify the maximum number of tests that will be run
+                        in parallel.
+  --section TOOL_PANEL_SECTION_ID
+                        Galaxy tool panel section ID where the tool will be
+                        installed (the section must exist in Galaxy; only
+                        applicable if the tools file is not provided).
+  --section-label TOOL_PANEL_SECTION_LABEL
+                        Galaxy tool panel section label where tool will be
+                        installed (if the section does not exist, it will be
+                        created; only applicable if the tools file is not
+                        provided).
+  --latest              Will override the revisions in the tools file and
+                        always install the latest revision.
+
+General options:
+  -v, --verbose         Increase output verbosity.
+  --log-file LOG_FILE   Where the log file should be stored. Default is a file
+                        in your system's temp folder
+
+Galaxy connection:
+  -g, --galaxy GALAXY   Target Galaxy instance URL/IP address
+  -u, --user USER       Galaxy user email address
+  -p, --password PASSWORD
+                        Password for the Galaxy user
+  -a, --api-key API_KEY
+                        Galaxy admin user API key (required if not defined in
+                        the tools list file)
+```
+
+## ephemeris_shed-tools_update
+
+### Tool Description
+shed-tools update: Galaxy Tool Shed tool management.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ephemeris:0.10.11--pyhdfd78af_0
+- **Homepage**: https://github.com/galaxyproject/ephemeris
+- **Package**: https://anaconda.org/channels/bioconda/packages/ephemeris/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: shed-tools update [-h] [-v] [--log-file LOG_FILE] [-g GALAXY] [-u USER]
+                         [-p PASSWORD] [-a API_KEY] [-t TOOL_LIST_FILE]
+                         [-y TOOL_YAML] [--name NAME] [--owner OWNER]
+                         [--revisions [REVISIONS ...]]
+                         [--tool-shed TOOL_SHED_URL]
+                         [--install-tool-dependencies]
+                         [--skip-install-resolver-dependencies]
+                         [--skip-install-repository-dependencies] [--test]
+                         [--test-existing] [--test-json TEST_JSON]
+                         [--test-user-api-key TEST_USER]
+                         [--test-user TEST_USER]
+                         [--parallel-tests PARALLEL_TESTS]
+
+options:
+  -h, --help            show this help message and exit
+  -t, --tools-file, --toolsfile TOOL_LIST_FILE
+                        Tools file to use (see tool_list.yaml.sample)
+  -y, --yaml-tool TOOL_YAML
+                        Install tool represented by yaml string
+  --name NAME           The name of the tool to install (only applicable if
+                        the tools file is not provided).
+  --owner OWNER         The owner of the tool to install (only applicable if
+                        the tools file is not provided).
+  --revisions [REVISIONS ...]
+                        The revisions of the tool repository that will be
+                        installed. All revisions must be specified after this
+                        flag by a space.Example: --revisions 0a5c7992b1ac
+                        f048033da666(Only applicable if the tools file is not
+                        provided).
+  --tool-shed, --toolshed TOOL_SHED_URL
+                        The Tool Shed URL where to install the tool from. This
+                        is applicable only if the tool info is provided as an
+                        option vs. in the tools file.
+  --install-tool-dependencies
+                        Turn on installation of tool dependencies using
+                        classic toolshed packages. Can be overwritten on a
+                        per-tool basis in the tools file.
+  --skip-install-resolver-dependencies
+                        Skip installing tool dependencies through resolver
+                        (e.g. conda). Will be ignored on galaxy releases older
+                        than 16.07. Can be overwritten on a per-tool basis in
+                        the tools file
+  --skip-install-repository-dependencies
+                        Skip installing the repository dependencies.
+  --test                Run tool tests on install tools, requires Galaxy 18.05
+                        or newer.
+  --test-existing       If testing tools during install, also run tool tests
+                        on repositories already installed (i.e. skipped
+                        repositories).
+  --test-json TEST_JSON
+                        If testing tools, record tool test output to specified
+                        file. This file can be turned into reports with
+                        ``planemo test_reports <output.json>``.
+  --test-user-api-key TEST_USER
+                        If testing tools, a user is needed to execute the
+                        tests. This can be different the --api_key which is
+                        assumed to be an admin key. If --api_key is a valid
+                        user (e.g. it is not a master API key) this does not
+                        need to be specified and --api_key will be reused.
+  --test-user TEST_USER
+                        If testing tools, a user is needed to execute the
+                        tests. If --api_key is a master api key (i.e. not tied
+                        to a real user) and --test_user_api_key isn't
+                        specified, this user email will be used. This user
+                        will be created if needed.
+  --parallel-tests PARALLEL_TESTS
+                        Specify the maximum number of tests that will be run
+                        in parallel.
+
+General options:
+  -v, --verbose         Increase output verbosity.
+  --log-file LOG_FILE   Where the log file should be stored. Default is a file
+                        in your system's temp folder
+
+Galaxy connection:
+  -g, --galaxy GALAXY   Target Galaxy instance URL/IP address
+  -u, --user USER       Galaxy user email address
+  -p, --password PASSWORD
+                        Password for the Galaxy user
+  -a, --api-key API_KEY
+                        Galaxy admin user API key (required if not defined in
+                        the tools list file)
+```
+
+## ephemeris_shed-tools_test
+
+### Tool Description
+shed-tools test: Galaxy Tool Shed tool management.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ephemeris:0.10.11--pyhdfd78af_0
+- **Homepage**: https://github.com/galaxyproject/ephemeris
+- **Package**: https://anaconda.org/channels/bioconda/packages/ephemeris/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: shed-tools test [-h] [-v] [--log-file LOG_FILE] [-g GALAXY] [-u USER]
+                       [-p PASSWORD] [-a API_KEY] [-t TOOL_LIST_FILE]
+                       [-y TOOL_YAML] [--name NAME] [--owner OWNER]
+                       [--revisions [REVISIONS ...]]
+                       [--tool-shed TOOL_SHED_URL] [--test-json TEST_JSON]
+                       [--test-user-api-key TEST_USER_API_KEY]
+                       [--test-user TEST_USER]
+                       [--test-history-name TEST_HISTORY_NAME]
+                       [--parallel-tests PARALLEL_TESTS] [--test-all-versions]
+                       [--client-test-config CLIENT_TEST_CONFIG]
+
+options:
+  -h, --help            show this help message and exit
+  -t, --tools-file, --toolsfile TOOL_LIST_FILE
+                        Tools file to use (see tool_list.yaml.sample)
+  -y, --yaml-tool TOOL_YAML
+                        Install tool represented by yaml string
+  --name NAME           The name of the tool to install (only applicable if
+                        the tools file is not provided).
+  --owner OWNER         The owner of the tool to install (only applicable if
+                        the tools file is not provided).
+  --revisions [REVISIONS ...]
+                        The revisions of the tool repository that will be
+                        installed. All revisions must be specified after this
+                        flag by a space.Example: --revisions 0a5c7992b1ac
+                        f048033da666(Only applicable if the tools file is not
+                        provided).
+  --tool-shed, --toolshed TOOL_SHED_URL
+                        The Tool Shed URL where to install the tool from. This
+                        is applicable only if the tool info is provided as an
+                        option vs. in the tools file.
+  --test-json TEST_JSON
+                        Record tool test output to specified file. This file
+                        can be turned into reports with ``planemo test_reports
+                        <output.json>``.
+  --test-user-api-key TEST_USER_API_KEY
+                        A user is needed to execute the tests. This can be
+                        different the --api_key which is assumed to be an
+                        admin key. If --api_key is a valid user (e.g. it is
+                        not a master API key) this does not need to be
+                        specified and --api_key will be reused.
+  --test-user TEST_USER
+                        A user is needed to execute the tests. If --api_key is
+                        a master api key (i.e. not tied to a real user) and
+                        --test_user_api_key isn't specified, this user email
+                        will be used. This user will be created if needed.
+  --test-history-name TEST_HISTORY_NAME
+                        Use existing history or create history with provided
+                        name if none exists. If --test_history_name is not
+                        set, a new history with a default name will always be
+                        created. If multiple histories match the provided
+                        name, the first (newest) one returned by the Galaxy
+                        API will be selected.
+  --parallel-tests PARALLEL_TESTS
+                        Specify the maximum number of tests that will be run
+                        in parallel.
+  --test-all-versions   Run tests on all installed versions of tools. This
+                        will only apply for tools where revisions have not
+                        been provided through the --revisions arg, --tool_file
+                        or --tool_yaml.
+  --client-test-config CLIENT_TEST_CONFIG
+                        Annotate expectations about tools in client testing
+                        YAML configuration file.
+
+General options:
+  -v, --verbose         Increase output verbosity.
+  --log-file LOG_FILE   Where the log file should be stored. Default is a file
+                        in your system's temp folder
+
+Galaxy connection:
+  -g, --galaxy GALAXY   Target Galaxy instance URL/IP address
+  -u, --user USER       Galaxy user email address
+  -p, --password PASSWORD
+                        Password for the Galaxy user
+  -a, --api-key API_KEY
+                        Galaxy admin user API key (required if not defined in
+                        the tools list file)
+```
 
 ## Metadata
 - **Skill**: generated

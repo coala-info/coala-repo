@@ -1,5 +1,11 @@
 # famseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| famseq_FamSeq | PASS |  |
+
 ## famseq_FamSeq
 
 ### Tool Description

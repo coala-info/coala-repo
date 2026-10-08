@@ -1,5 +1,11 @@
 # extract-codon-alignment CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| extract-codon-alignment_extract_codon_alignment | PASS |  |
+
 ## extract-codon-alignment_extract_codon_alignment
 
 ### Tool Description

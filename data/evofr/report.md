@@ -1,5 +1,12 @@
 # evofr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| evofr_prepare-data | PASS | synthetic data: simulated sequence and case counts from the repo's own test data generator |
+| evofr_run-model | Failed | tool bug: the --pivot, --seq-path and --export-path overrides are silently ignored in this version (config values are used) |
+
 ## evofr_prepare-data
 
 ### Tool Description

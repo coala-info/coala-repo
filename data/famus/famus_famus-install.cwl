@@ -15,7 +15,7 @@ inputs:
   - id: download_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Directory to download tar files to (default: current directory)'
     inputBinding:
       position: 101
@@ -76,6 +76,9 @@ outputs:
     doc: Directory to save the installed models to
     outputBinding:
       glob: $(inputs.models_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/famus:0.2.2--py312hdfd78af_0

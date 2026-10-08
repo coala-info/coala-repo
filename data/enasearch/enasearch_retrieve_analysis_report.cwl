@@ -29,12 +29,17 @@ inputs:
       prefix: --fields
       itemSeparator: ','
   - id: file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: File to save the report
     inputBinding:
       position: 102
       prefix: --file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the records, when no file is given)
   - id: file
     type:
       - 'null'
@@ -44,6 +49,9 @@ outputs:
       glob: $(inputs.file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/enasearch:0.2.2--py27_0
+stdout: enasearch_retrieve_analysis_report.out

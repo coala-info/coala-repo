@@ -13,6 +13,7 @@ inputs:
       bzip2 compression accepted)
     inputBinding:
       position: 1
+      prefix: -i
   - id: kmer_length
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # enzbert CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| enzbert | Not completed | needs the multi-gigabyte ProtBert-BFD and fine-tuned model weights, which are not in the image |
+
 ## enzbert
 
 ### Tool Description

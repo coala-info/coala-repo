@@ -4,8 +4,7 @@ baseCommand:
   - fade
   - annotate
 label: fade_annotate
-doc: "performs re-alignment of soft-clips and annotates bam records with bitflag (rs)
-  and realignment tags (am)\n\nTool homepage: https://github.com/blachlylab/fade"
+doc: "performs re-alignment of soft-clips and annotates bam records with bitflag (rs) and realignment tags (am)\n\nThe alignments are written to standard output as SAM, or as BAM with --bam or uncompressed BAM with --ubam.\n\nTool homepage: https://github.com/blachlylab/fade"
 inputs:
   - id: input_bam_sam
     type: File
@@ -15,6 +14,9 @@ inputs:
   - id: indexed_fasta_reference
     type: File
     doc: Indexed fasta reference
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 2
   - id: min_length
@@ -43,37 +45,32 @@ inputs:
     inputBinding:
       position: 103
       prefix: --window-size
-  - id: bam_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 104
-      prefix: --bam
-  - id: ubam_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 105
-      prefix: --ubam
-outputs:
   - id: bam
     type:
       - 'null'
-      - File
+      - boolean
     doc: output bam
-    outputBinding:
-      glob: $(inputs.bam_path)
+    inputBinding:
+      position: 104
+      prefix: --bam
   - id: ubam
     type:
       - 'null'
-      - File
+      - boolean
     doc: output uncompressed bam
-    outputBinding:
-      glob: $(inputs.ubam_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    inputBinding:
+      position: 105
+      prefix: --ubam
+  - id: output_name
+    type: string
+    default: annotated.sam
+    doc: File name for the annotated alignments (standard output); use a .bam 
+      name with --bam or --ubam
+outputs:
+  - id: annotated
+    type: stdout
+    doc: Annotated alignments (standard output)
+stdout: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fade:0.6.0--h9ee0642_0

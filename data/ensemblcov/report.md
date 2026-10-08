@@ -1,5 +1,17 @@
 # ensemblcov CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ensemblcov_auto-generate | Not completed | too heavy: downloads the 1.9 GB GENCODE v48 GTF and converts about 200 genes per minute (1592 of 86364 genes in 8 minutes) |
+| ensemblcov_countconvert | Failed | tool bug: gene names are matched to counts by line position, so a counts file with a header row or a different row order gets values on the wrong genes and a gene subset crashes |
+| ensemblcov_differentialexpression | Failed | tool bug: gene names are matched to the table by line position, so a header row or a different row order gives values on the wrong genes |
+| ensemblcov_exon-ensembl | Not completed | too heavy: downloads the 1.9 GB GENCODE v48 GTF and did not finish 3 exon ids in 10 minutes |
+| ensemblcov_gene-ensembl | Failed | image problem: the program stops at the extract step with file not found; it calls ./src/awk.sh, which is not in the image |
+| ensemblcov_gtf-annotate-generate | PASS |  |
+| ensemblcov_threaded-auto | PASS |  |
+
 ## ensemblcov_threaded-auto
 
 ### Tool Description

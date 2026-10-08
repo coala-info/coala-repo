@@ -1,5 +1,12 @@
 # fairy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fairy_coverage | PASS |  |
+| fairy_sketch | PASS |  |
+
 ## fairy_coverage
 
 ### Tool Description

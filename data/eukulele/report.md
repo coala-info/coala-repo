@@ -1,5 +1,11 @@
 # eukulele CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eukulele_EUKulele | PASS |  |
+
 ## eukulele_EUKulele
 
 ### Tool Description

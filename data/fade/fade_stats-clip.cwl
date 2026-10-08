@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - ./fade
+  - fade
   - stats-clip
 label: fade_stats-clip
 doc: "reports extended information about all soft-clipped reads (used after annotate)\n\

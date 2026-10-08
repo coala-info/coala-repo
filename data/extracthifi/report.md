@@ -1,5 +1,11 @@
 # extracthifi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| extracthifi | PASS |  |
+
 ## extracthifi
 
 ### Tool Description

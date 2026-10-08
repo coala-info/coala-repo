@@ -130,9 +130,7 @@ inputs:
       prefix: --output-file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output to this file instead of stdout
     outputBinding:
       glob: $(inputs.output_file_path)

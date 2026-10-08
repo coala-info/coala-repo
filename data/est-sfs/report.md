@@ -1,5 +1,11 @@
 # est-sfs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| est-sfs | PASS | Fixed: added the two output file arguments and a writable seed file; ran the release's own test data (52 sites) and got an SFS file and ancestral probabilities. |
+
 ## est-sfs
 
 ### Tool Description

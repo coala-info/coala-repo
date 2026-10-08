@@ -1,5 +1,11 @@
 # ericscript CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ericscript_ericscript.pl | Not completed | needs the human Ensembl reference database (multi-gigabyte download and index build), which is not in the image; output folder type was fixed |
+
 ## ericscript_ericscript.pl
 
 ### Tool Description

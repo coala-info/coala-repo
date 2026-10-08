@@ -4,6 +4,11 @@ baseCommand: efetch
 label: entrez-direct_efetch
 doc: "Fetch records from NCBI databases.\n\nTool homepage: https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/24.0.20250527/README"
 inputs:
+  - id: edirect_in
+    type:
+      - 'null'
+      - File
+    doc: ENTREZ_DIRECT message from esearch or elink, read from standard input
   - id: chr_start
     type:
       - 'null'
@@ -84,6 +89,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -id
+      itemSeparator: ','
   - id: immediate
     type:
       - 'null'
@@ -186,6 +192,7 @@ outputs:
     type: stdout
     doc: Standard output
 requirements:
+  - class: InlineJavascriptRequirement
   - class: NetworkAccess
     networkAccess: true
 hints:
@@ -193,4 +200,5 @@ hints:
     dockerPull: quay.io/biocontainers/entrez-direct:24.0--he881be0_0
   - class: NetworkAccess
     networkAccess: true
+stdin: '$(inputs.edirect_in ? inputs.edirect_in.path : null)'
 stdout: entrez-direct_efetch.out

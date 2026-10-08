@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastagap.pl
+baseCommand: fastagap
 label: fastagap
 doc: "Report or replace/remove missing-data characters in fasta. Can identify and
   manipulate leading, trailing, and inner gap regions. Reads fasta-formatted files
@@ -35,6 +35,8 @@ inputs:
       option can not be combined with the removal options.
     inputBinding:
       position: 102
+      prefix: -MAX=
+      separate: false
   - id: min_length
     type:
       - 'null'
@@ -43,6 +45,8 @@ inputs:
       option can not be combined with the removal options.
     inputBinding:
       position: 102
+      prefix: -MIN=
+      separate: false
   - id: missing_symbol
     type:
       - 'null'

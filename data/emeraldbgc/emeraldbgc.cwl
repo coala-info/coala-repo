@@ -17,6 +17,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --antismash_output
+      valueFrom: '$(self ? "True" : "False")'
   - id: cpu
     type:
       - 'null'
@@ -52,6 +53,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --meta
+      valueFrom: '$(self ? "True" : "False")'
   - id: minimal
     type:
       - 'null'
@@ -60,6 +62,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --minimal
+      valueFrom: '$(self ? "True" : "False")'
   - id: outdir
     type:
       - 'null'
@@ -76,6 +79,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --refined
+      valueFrom: '$(self ? "True" : "False")'
   - id: score
     type:
       - 'null'
@@ -85,7 +89,9 @@ inputs:
       position: 102
       prefix: --score
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output file [default outdir/SEQUENCE_FILE.emerald.gff]
     inputBinding:
       position: 103
@@ -102,9 +108,9 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: output directory
+    doc: 'output directory (default: SEQUENCE_FILE.emerald in the working directory)'
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: '$(inputs.outdir ? inputs.outdir : "*.emerald")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,12 @@
 # epicore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| epicore_generate-epicore-csv | Not completed | rewrote the file with the real subcommand; it runs, but the epitope groups differ from the repository's expected result file, which may be from a newer version |
+| epicore_plot-landscape | PASS | Rewrote the file with the real subcommand; drew a landscape plot (SVG and PDF) from the result of the test evidence file. |
+
 ## epicore_generate-epicore-csv
 
 ### Tool Description
@@ -18,10 +25,24 @@ epicore
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: epicore [OPTIONS] COMMAND [ARGS]...
-Try 'epicore --help' for help.
+Usage: epicore generate-epicore-csv [OPTIONS]
 
-Error: Missing option '--reference_proteome'.
+Options:
+  --evidence_file PATH      [required]
+  --html
+  --report
+  --end_column TEXT
+  --start_column TEXT
+  --prot_accession TEXT
+  --mod_pattern TEXT
+  --delimiter TEXT          [required]
+  --intensity_column TEXT
+  --protacc_column TEXT     [required]
+  --seq_column TEXT         [required]
+  --max_step_size INTEGER   [required]
+  --min_overlap INTEGER
+  --min_epi_length INTEGER
+  --help                    Show this message and exit.
 ```
 
 
@@ -38,10 +59,12 @@ Epicore is a tool for analyzing and visualizing genomic data.
 
 ### Original Help Text
 ```text
-Usage: epicore [OPTIONS] COMMAND [ARGS]...
-Try 'epicore --help' for help.
+Usage: epicore plot-landscape [OPTIONS]
 
-Error: Missing option '--reference_proteome'.
+Options:
+  --epicore_csv PATH  [required]
+  --protacc TEXT      [required]
+  --help              Show this message and exit.
 ```
 
 

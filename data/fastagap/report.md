@@ -1,5 +1,11 @@
 # fastagap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastagap | PASS |  |
+
 ## fastagap
 
 ### Tool Description

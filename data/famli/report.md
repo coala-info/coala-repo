@@ -1,5 +1,12 @@
 # famli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| famli_align | Failed | image problem: famli align needs root to create /root/ncbi, so it crashes with Permission denied as the Docker user; also the image has diamond 0.9.10 while the test database is for 0.9.22 |
+| famli_filter | Failed | tool bug: image version 1.0 has the upstream drop-last-line error, giving 359 reads instead of the expected 360, and --batchsize 50000 gives 242 |
+
 ## famli_align
 
 ### Tool Description

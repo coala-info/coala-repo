@@ -1,5 +1,14 @@
 # emirge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| emirge_emirge.py | Failed | image problem: the image has no usearch program, which emirge.py needs at start |
+| emirge_emirge_amplicon.py | Failed | image problem: the image has no usearch program, which emirge_amplicon.py needs at start |
+| emirge_emirge_makedb.py | PASS | downloaded real SILVA 128 LSU data, clustered sequences of 3150-3300 bp at 97 percent and built a bowtie index; the default SSU database is much larger and was not run |
+| emirge_emirge_rename_fasta.py | PASS | synthetic data: a small iter.01 folder built from three real NCBI 16S sequences; sorting by prior, record prefix, prob_min filter and N trimming were correct |
+
 ## emirge_emirge_makedb.py
 
 ### Tool Description
@@ -59,49 +68,6 @@ Options:
 ```
 
 
-## emirge_bowtie-build
-
-### Tool Description
-Builds a Bowtie index from a reference sequence.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/emirge:0.61.1--py27_1
-- **Homepage**: https://github.com/csmiller/EMIRGE
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-No input sequence or sequence file specified!
-Usage: bowtie-build [options]* <reference_in> <ebwt_outfile_base>
-    reference_in            comma-separated list of files with ref sequences
-    ebwt_outfile_base       write Ebwt data to files with this dir/basename
-Options:
-    -f                      reference files are Fasta (default)
-    -c                      reference sequences given on cmd line (as <seq_in>)
-    --large-index           force generated index to be 'large', even if ref
-                            has fewer than 4 billion nucleotides
-    -C/--color              build a colorspace index
-    -a/--noauto             disable automatic -p/--bmax/--dcv memory-fitting
-    -p/--packed             use packed strings internally; slower, uses less mem
-    --bmax <int>            max bucket sz for blockwise suffix-array builder
-    --bmaxdivn <int>        max bucket sz as divisor of ref len (default: 4)
-    --dcv <int>             diff-cover period for blockwise (default: 1024)
-    --nodc                  disable diff-cover (algorithm becomes quadratic)
-    -r/--noref              don't build .3/.4.ebwt (packed reference) portion
-    -3/--justref            just build .3/.4.ebwt (packed reference) portion
-    -o/--offrate <int>      SA is sampled every 2^offRate BWT chars (default: 5)
-    -t/--ftabchars <int>    # of chars consumed in initial lookup (default: 10)
-    --threads <int>         # of threads
-    --ntoa                  convert Ns in reference to As
-    --seed <int>            seed for random number generator
-    -q/--quiet              verbose output (for debugging)
-    -h/--help               print detailed description of tool and its options
-    --usage                 print this usage message
-    --version               print version information and quit
-```
-
-
 ## emirge_emirge_rename_fasta.py
 
 ### Tool Description
@@ -146,169 +112,255 @@ Options:
 ```
 
 
-## emirge_bowtie
+## emirge_emirge.py
 
 ### Tool Description
-Alignments for short DNA sequences
+EMIRGE attempts to reconstruct rRNA SSU genes from Illumina metagenomic data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/emirge:0.61.1--py27_1
 - **Homepage**: https://github.com/csmiller/EMIRGE
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/emirge/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-No index, query, or output file specified!
-Usage: 
-bowtie [options]* <ebwt> {-1 <m1> -2 <m2> | --12 <r> | --interleaved <i> | <s>} [<hit>]
+Usage: emirge.py DIR <required_parameters> [options]
 
-  <m1>    Comma-separated list of files containing upstream mates (or the
-          sequences themselves, if -c is set) paired with mates in <m2>
-  <m2>    Comma-separated list of files containing downstream mates (or the
-          sequences themselves if -c is set) paired with mates in <m1>
-  <r>     Comma-separated list of files containing Crossbow-style reads.  Can be
-          a mixture of paired and unpaired.  Specify "-" for stdin.
-  <i>     Files with interleaved paired-end FASTQ reads.
-  <s>     Comma-separated list of files containing unpaired reads, or the
-          sequences themselves, if -c is set.  Specify "-" for stdin.
-  <hit>   File to write hits to (default: stdout)
-Input:
-  -q                 query input files are FASTQ .fq/.fastq (default)
-  -f                 query input files are (multi-)FASTA .fa/.mfa
-  -r                 query input files are raw one-sequence-per-line
-  -c                 query sequences given on cmd line (as <mates>, <singles>)
-  -C                 reads and index are in colorspace
-  -Q/--quals <file>  QV file(s) corresponding to CSFASTA inputs; use with -f -C
-  --Q1/--Q2 <file>   same as -Q, but for mate files 1 and 2 respectively
-  -s/--skip <int>    skip the first <int> reads/pairs in the input
-  -u/--qupto <int>   stop after first <int> reads/pairs (excl. skipped reads)
-  -5/--trim5 <int>   trim <int> bases from 5' (left) end of reads
-  -3/--trim3 <int>   trim <int> bases from 3' (right) end of reads
-  --phred33-quals    input quals are Phred+33 (default)
-  --phred64-quals    input quals are Phred+64 (same as --solexa1.3-quals)
-  --solexa-quals     input quals are from GA Pipeline ver. < 1.3
-  --solexa1.3-quals  input quals are from GA Pipeline ver. >= 1.3
-  --integer-quals    qualities are given as space-separated integers (not ASCII)
-  --large-index      force usage of a 'large' index, even if a small one is present
-Alignment:
-  -v <int>           report end-to-end hits w/ <=v mismatches; ignore qualities
-    or
-  -n/--seedmms <int> max mismatches in seed (can be 0-3, default: -n 2)
-  -e/--maqerr <int>  max sum of mismatch quals across alignment for -n (def: 70)
-  -l/--seedlen <int> seed length for -n (default: 28)
-  --nomaqround       disable Maq-like quality rounding for -n (nearest 10 <= 30)
-  -I/--minins <int>  minimum insert size for paired-end alignment (default: 0)
-  -X/--maxins <int>  maximum insert size for paired-end alignment (default: 250)
-  --fr/--rf/--ff     -1, -2 mates align fw/rev, rev/fw, fw/fw (default: --fr)
-  --nofw/--norc      do not align to forward/reverse-complement reference strand
-  --maxbts <int>     max # backtracks for -n 2/3 (default: 125, 800 for --best)
-  --pairtries <int>  max # attempts to find mate for anchor hit (default: 100)
-  -y/--tryhard       try hard to find valid alignments, at the expense of speed
-  --chunkmbs <int>   max megabytes of RAM for best-first search frames (def: 64)
- --reads-per-batch   # of reads to read from input file at once (default: 16)
-Reporting:
-  -k <int>           report up to <int> good alignments per read (default: 1)
-  -a/--all           report all alignments per read (much slower than low -k)
-  -m <int>           suppress all alignments if > <int> exist (def: no limit)
-  -M <int>           like -m, but reports 1 random hit (MAPQ=0); requires --best
-  --best             hits guaranteed best stratum; ties broken by quality
-  --strata           hits in sub-optimal strata aren't reported (requires --best)
-Output:
-  -t/--time          print wall-clock time taken by search phases
-  -B/--offbase <int> leftmost ref offset = <int> in bowtie output (default: 0)
-  --quiet            print nothing but the alignments
-  --refidx           refer to ref. seqs by 0-based index rather than name
-  --al <fname>       write aligned reads/pairs to file(s) <fname>
-  --un <fname>       write unaligned reads/pairs to file(s) <fname>
-  --no-unal          suppress SAM records for unaligned reads
-  --max <fname>      write reads/pairs over -m limit to file(s) <fname>
-  --suppress <cols>  suppresses given columns (comma-delim'ed) in default output
-  --fullref          write entire ref name (default: only up to 1st space)
-Colorspace:
-  --snpphred <int>   Phred penalty for SNP when decoding colorspace (def: 30)
-     or
-  --snpfrac <dec>    approx. fraction of SNP bases (e.g. 0.001); sets --snpphred
-  --col-cseq         print aligned colorspace seqs as colors, not decoded bases
-  --col-cqual        print original colorspace quals, not decoded quals
-  --col-keepends     keep nucleotides at extreme ends of decoded alignment
-SAM:
-  -S/--sam           write hits in SAM format
-  --mapq <int>       default mapping quality (MAPQ) to print for SAM alignments
-  --sam-nohead       supppress header lines (starting with @) for SAM output
-  --sam-nosq         supppress @SQ header lines for SAM output
-  --sam-RG <text>    add <text> (usually "lab=value") to @RG line of SAM header
-Performance:
-  -o/--offrate <int> override offrate of index; must be >= index's offrate
-  -p/--threads <int> number of alignment threads to launch (default: 1)
-  --mm               use memory-mapped I/O for index; many 'bowtie's can share
-  --shmem            use shared mem for index; many 'bowtie's can share
-Other:
-  --seed <int>       seed for random number generator
-  --verbose          verbose output (for debugging)
-  --version          print version information and quit
-  -h/--help          print this usage message
+This version of EMIRGE (emirge.py) attempts to reconstruct rRNA SSU genes from
+Illumina metagenomic data.
+DIR is the working directory to process data in.
+Use --help to see a list of required and optional arguments
+
+Additional information:
+https://groups.google.com/group/emirge-users
+https://github.com/csmiller/EMIRGE/wiki
+
+If you use EMIRGE in your work, please cite these manuscripts, as appropriate.
+
+Miller CS, Baker BJ, Thomas BC, Singer SW, Banfield JF (2011)
+EMIRGE: reconstruction of full-length ribosomal genes from microbial community short read sequencing data.
+Genome biology 12: R44. doi:10.1186/gb-2011-12-5-r44.
+
+Miller CS, Handley KM, Wrighton KC, Frischkorn KR, Thomas BC, Banfield JF (2013)
+Short-Read Assembly of Full-Length 16S Amplicons Reveals Bacterial Diversity in Subsurface Sediments.
+PloS one 8: e56018. doi:10.1371/journal.pone.0056018.
+
+
+Options:
+  -h, --help            show this help message and exit
+
+  Required flags:
+    These flags are all required to run EMIRGE, and may be supplied in any
+    order.
+
+    -1 reads_1.fastq[.gz]
+                        path to fastq file with \1 (forward) reads from
+                        paired-end sequencing run, or all reads from single-
+                        end sequencing run.  File may optionally be gzipped.
+                        EMIRGE expects ASCII-offset of 64 for quality scores.
+                        (Note that running EMIRGE with single-end reads is
+                        largely untested.  Please let me know how it works for
+                        you.)
+    -f FASTA_DB, --fasta_db=FASTA_DB
+                        path to fasta file of candidate SSU sequences
+    -b BOWTIE_DB, --bowtie_db=BOWTIE_DB
+                        precomputed bowtie index of candidate SSU sequences
+                        (path to appropriate prefix; see --fasta_db)
+    -l MAX_READ_LENGTH, --max_read_length=MAX_READ_LENGTH
+                        length of longest read in input data.
+
+  Required flags for paired-end reads:
+    These flags are required to run EMIRGE when you have paired-end reads
+    (the standard way of running EMIRGE), and may be supplied in any
+    order.
+
+    -2 reads_2.fastq    path to fastq file with \2 (reverse) reads from
+                        paired-end run.  File must be unzipped for mapper.
+                        EMIRGE expects ASCII-offset of 64 for quality scores.
+    -i INSERT_MEAN, --insert_mean=INSERT_MEAN
+                        insert size distribution mean.
+    -s INSERT_STDDEV, --insert_stddev=INSERT_STDDEV
+                        insert size distribution standard deviation.
+
+  Optional parameters:
+    Defaults should normally be fine for these options in order to run
+    EMIRGE
+
+    -n ITERATIONS, --iterations=ITERATIONS
+                        Number of iterations to perform.  It may be necessary
+                        to use more iterations for more complex samples
+                        (default=40)
+    -a PROCESSORS, --processors=PROCESSORS
+                        Number of processors to use in the mapping steps.  You
+                        probably want to raise this if you have the
+                        processors. (default: 1)
+    -m MAPPING, --mapping=MAPPING
+                        path to precomputed initial mapping (bam file).  If
+                        not provided, and initial mapping will be run for you.
+    -p SNP_FRACTION_THRESH, --snp_fraction_thresh=SNP_FRACTION_THRESH
+                        If fraction of variants in a candidate sequence
+                        exceeds this threhold, then split the candidate into
+                        two sequences for next iteration.  See also
+                        --variant_fraction_thresh. (default: 0.04)
+    -v VARIANT_FRACTION_THRESH, --variant_fraction_thresh=VARIANT_FRACTION_THRESH
+                        minimum probability of second most probable base at a
+                        site required in order to call site a variant.  See
+                        also --snp_fraction_thresh.  (default: 0.1)
+    -j JOIN_THRESHOLD, --join_threshold=JOIN_THRESHOLD
+                        If two candidate sequences share >= this fractional
+                        identity over their bases with mapped reads, then
+                        merge the two sequences into one for the next
+                        iteration.  (default: 0.97; valid range: [0.95, 1.0] )
+    -c MIN_DEPTH, --min_depth=MIN_DEPTH
+                        minimum average read depth below which a candidate
+                        sequence is discarded for next iteration(default: 3)
+    --nice_mapping=NICE_MAPPING
+                        If set, during mapping phase, the mapper will be
+                        "niced" by the Linux kernel with this value (default:
+                        no nice)
+    --phred33           Illumina quality values in fastq files are the (fastq
+                        standard) ascii offset of Phred+33.  This is the new
+                        default for Illumina pipeline >= 1.8. DEFAULT is still
+                        to assume that quality scores are Phred+64
+    -e SAVE_EVERY, --save_every=SAVE_EVERY
+                        every SAVE_EVERY iterations, save some information
+                        about the program's state.  This is solely for
+                        debugging information, and is NOT required to resume a
+                        run (see --resume_from below).  (default=none)
+
+  Resuming iterations:
+    These options allow you to resume iterations from a previously
+    completed EMIRGE iteration.  This requires that directories for the
+    iteration to resume from and the previous iteration both be present.
+    It is STRONGLY recommended that other options set on the command line
+    be identical to the original run.  Note that EMIRGE does not check
+    this for you!
+
+    -r RESUME_FROM, --resume_from=RESUME_FROM
+                        Resume iterations from COMPLETED iteration specified.
+                        Requires that the iteration and previous iteration
+                        fully completed, i.e. a priors file, bam file, and
+                        fasta file are all present in the iteration directory.
 ```
 
-
-## emirge_samtools
+## emirge_emirge_amplicon.py
 
 ### Tool Description
-Tools for alignments in the SAM format
+EMIRGE amplicon reconstructs full-length rRNA SSU genes from Illumina 16S amplicon data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/emirge:0.61.1--py27_1
 - **Homepage**: https://github.com/csmiller/EMIRGE
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/emirge/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-Program: samtools (Tools for alignments in the SAM format)
-Version: 1.7 (using htslib 1.7)
+Usage: emirge_amplicon.py DIR <required_parameters> [options]
 
-Usage:   samtools <command> [options]
+This version of EMIRGE (emirge_amplicon.py) attempts to reconstruct rRNA SSU genes
+from Illumina amplicon data.  It can handle up to a few million rRNA
+reads at a time.
+DIR is the working directory to process data in.
+Use --help to see a list of required and optional arguments
 
-Commands:
-  -- Indexing
-     dict           create a sequence dictionary file
-     faidx          index/extract FASTA
-     index          index alignment
+Additional information:
+https://groups.google.com/group/emirge-users
+https://github.com/csmiller/EMIRGE/wiki
 
-  -- Editing
-     calmd          recalculate MD/NM tags and '=' bases
-     fixmate        fix mate information
-     reheader       replace BAM header
-     targetcut      cut fosmid regions (for fosmid pool only)
-     addreplacerg   adds or replaces RG tags
-     markdup        mark duplicates
+If you use EMIRGE in your work, please cite these manuscripts, as appropriate.
 
-  -- File operations
-     collate        shuffle and group alignments by name
-     cat            concatenate BAMs
-     merge          merge sorted alignments
-     mpileup        multi-way pileup
-     sort           sort alignment file
-     split          splits a file by read group
-     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
-     fastq          converts a BAM to a FASTQ
-     fasta          converts a BAM to a FASTA
+Miller CS, Baker BJ, Thomas BC, Singer SW, Banfield JF (2011)
+EMIRGE: reconstruction of full-length ribosomal genes from microbial community short read sequencing data.
+Genome biology 12: R44. doi:10.1186/gb-2011-12-5-r44.
 
-  -- Statistics
-     bedcov         read depth per BED region
-     depth          compute the depth
-     flagstat       simple stats
-     idxstats       BAM index stats
-     phase          phase heterozygotes
-     stats          generate stats (former bamcheck)
+Miller CS, Handley KM, Wrighton KC, Frischkorn KR, Thomas BC, Banfield JF (2013)
+Short-Read Assembly of Full-Length 16S Amplicons Reveals Bacterial Diversity in Subsurface Sediments.
+PloS one 8: e56018. doi:10.1371/journal.pone.0056018.
 
-  -- Viewing
-     flags          explain BAM flags
-     tview          text alignment viewer
-     view           SAM<->BAM<->CRAM conversion
-     depad          convert padded BAM to unpadded BAM
+
+Options:
+  -h, --help            show this help message and exit
+
+  Required flags:
+    These flags are all required to run EMIRGE, and may be supplied in any
+    order.
+
+    -1 reads_1.fastq[.gz]
+                        path to fastq file with \1 (forward) reads from
+                        paired-end sequencing run, or all reads from single-
+                        end sequencing run.  File may optionally be gzipped.
+                        EMIRGE expects ASCII-offset of 64 for quality scores
+                        (but see --phred33).  (Note that running EMIRGE with
+                        single-end reads is largely untested.  Please let me
+                        know how it works for you.)
+    -f FASTA_DB, --fasta_db=FASTA_DB
+                        path to fasta file of candidate SSU sequences
+    -b BOWTIE_DB, --bowtie_db=BOWTIE_DB
+                        precomputed bowtie index of candidate SSU sequences
+                        (path to appropriate prefix; see --fasta_db)
+    -l MAX_READ_LENGTH, --max_read_length=MAX_READ_LENGTH
+                        length of longest read in input data.
+
+  Required flags for paired-end reads:
+    These flags are required to run EMIRGE when you have paired-end reads
+    (the standard way of running EMIRGE), and may be supplied in any
+    order.
+
+    -2 reads_2.fastq    path to fastq file with \2 (reverse) reads from
+                        paired-end run.  File must be unzipped for mapper.
+                        EMIRGE expects ASCII-offset of 64 for quality scores
+                        (but see --phred33).
+    -i INSERT_MEAN, --insert_mean=INSERT_MEAN
+                        insert size distribution mean.
+    -s INSERT_STDDEV, --insert_stddev=INSERT_STDDEV
+                        insert size distribution standard deviation.
+
+  Optional parameters:
+    Defaults should normally be fine for these options in order to run
+    EMIRGE
+
+    -n ITERATIONS, --iterations=ITERATIONS
+                        Number of iterations to perform.  It may be necessary
+                        to use more iterations for more complex samples
+                        (default=40)
+    -a PROCESSORS, --processors=PROCESSORS
+                        Number of processors to use in the mapping steps.  You
+                        probably want to raise this if you have the
+                        processors. (default: 1)
+    -m MAPPING, --mapping=MAPPING
+                        path to precomputed initial mapping (bam file).  If
+                        not provided, an initial mapping will be run for you.
+    -p SNP_FRACTION_THRESH, --snp_fraction_thresh=SNP_FRACTION_THRESH
+                        If fraction of variants in a candidate sequence
+                        exceeds this threhold, then split the candidate into
+                        two sequences for next iteration.  See also
+                        --variant_fraction_thresh. (default: 0.04)
+    -v VARIANT_FRACTION_THRESH, --variant_fraction_thresh=VARIANT_FRACTION_THRESH
+                        minimum probability of second most probable base at a
+                        site required in order to call site a variant.  See
+                        also --snp_fraction_thresh.  (default: 0.1)
+    -j JOIN_THRESHOLD, --join_threshold=JOIN_THRESHOLD
+                        If two candidate sequences share >= this fractional
+                        identity over their bases with mapped reads, then
+                        merge the two sequences into one for the next
+                        iteration.  (default: 0.97; valid range: [0.95, 1.0] )
+    -c MIN_LENGTH_COVERAGE, --min_length_coverage=MIN_LENGTH_COVERAGE
+                        minimum fraction of the length of a candidate
+                        reference sequence that must be covered by mapped
+                        reads.  If not met, a candidate sequence is discarded
+                        for the next iteration.  (default: 0.3; valid range:
+                        (0.0, 1.0])
+    --nice_mapping=NICE_MAPPING
+                        If set, during mapping phase, the mapper will be
+                        "niced" by the Linux kernel with this value (default:
+                        no nice)
+    --phred33           Illumina quality values in fastq files are the (fastq
+                        standard) ascii offset of Phred+33.  This is the new
+                        default for Illumina pipeline >= 1.8. DEFAULT is still
+                        to assume that quality scores are Phred+64
 ```
-
 
 ## Metadata
 - **Skill**: generated

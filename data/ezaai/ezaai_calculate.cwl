@@ -39,13 +39,17 @@ inputs:
       position: 101
       prefix: -id
   - id: input_1
-    type: File
+    type:
+      - File
+      - Directory
     doc: First input protein DB / directory with protein DBs
     inputBinding:
       position: 101
       prefix: -i
   - id: input_2
-    type: File
+    type:
+      - File
+      - Directory
     doc: Second input protein DB / directory with protein DBs
     inputBinding:
       position: 101
@@ -102,10 +106,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `match_output_path`
+    doc: Path to write a result of matched CDS names
     inputBinding:
       position: 102
-      prefix: --match-output
+      prefix: -match
   - id: mtx_output_path
     type:
       - 'null'

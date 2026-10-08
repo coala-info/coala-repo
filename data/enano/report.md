@@ -1,5 +1,11 @@
 # enano CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| enano | PASS |  |
+
 ## enano
 
 ### Tool Description

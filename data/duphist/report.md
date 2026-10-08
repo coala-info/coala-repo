@@ -1,9 +1,15 @@
 # duphist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| duphist | Failed | image problem: the image has BusyBox split, which lacks -d and --additional-suffix, so no alignment or tree jobs run and the result table is empty. |
+
 ## duphist
 
 ### Tool Description
-Create DIRECTORY
+DupHIST reconstructs the order and timing of gene duplication events from a config file naming CDS, protein and group info files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/duphist:1.1.0--hdfd78af_1
@@ -18,14 +24,5 @@ Create DIRECTORY
 - **Stars**: N/A
 ### Original Help Text
 ```text
-BusyBox v1.36.1 (2024-06-02 11:42:27 UTC) multi-call binary.
-
-Usage: mkdir [-m MODE] [-p] DIRECTORY...
-
-Create DIRECTORY
-
-	-m MODE	Mode
-	-p	No error if exists; make parent directories as needed
-Illegal division by zero at /usr/local/bin/scripts/main_pipeline_ver_perl.pl line 105.
+Usage: duphist [config_file_name]
 ```
-

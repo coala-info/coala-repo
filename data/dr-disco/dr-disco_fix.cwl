@@ -4,7 +4,7 @@ baseCommand:
   - dr-disco
   - fix
 label: dr-disco_fix
-doc: "Fixes an alignment file by removing duplicate reads.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
+doc: "Fixes chimeric SAM/BAM alignment produced by RNA-STAR.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
 inputs:
   - id: input_alignment_file
     type: File
@@ -28,6 +28,9 @@ outputs:
   - id: out_output_alignment_file
     type: File
     doc: Output alignment file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     outputBinding:
       glob: '$(inputs.output_alignment_file)'
 hints:

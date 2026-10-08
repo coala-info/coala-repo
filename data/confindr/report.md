@@ -5,6 +5,8 @@
 | Tool | Result | Reason |
 |---|---|---|
 | confindr | PASS |  |
+| confindr_create_db | Failed | image problem: the script calls makeblastdb and blastn for every gene and genome, but neither is in the image (it also needs the 250 MB RefSeq assembly summary plus all complete genomes of the genus). |
+| confindr_database_setup | PASS | Without an rMLST secret it downloaded and KMA-indexed the Escherichia, Salmonella and Listeria databases and refseq.msh; confindr with this folder types E. coli ATCC 700926 reads as Escherichia, not contaminated. |
 
 ## confindr
 
@@ -107,4 +109,85 @@ options:
                         order for a genus to be considered present in a
                         sample. Default is 150
 ```
+
+## confindr_create_db
+
+### Tool Description
+Create a genus-specific ConFindr core-gene database from RefSeq complete genomes and candidate gene FASTA files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/confindr:0.8.2--pyhdfd78af_0
+- **Homepage**: https://github.com/lowandrew/ConFindr
+- **Package**: https://anaconda.org/channels/bioconda/packages/confindr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/confindr/overview
+- **Total Downloads**: 60.9K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/lowandrew/ConFindr
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: confindr_create_db [-h] -o OUTPUT_FOLDER -i INPUT_FOLDER -g GENUS
+                          [--desired_number_genes DESIRED_NUMBER_GENES]
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
+                        Folder to first store temporary files, and eventually
+                        store the created database.
+  -i INPUT_FOLDER, --input_folder INPUT_FOLDER
+                        Folder with your input files to try to find core
+                        genes. Each gene should be in a FASTA file. Expected
+                        extension is .fasta
+  -g GENUS, --genus GENUS
+                        Name of genus you're creating a database for.
+  --desired_number_genes DESIRED_NUMBER_GENES
+                        Minimum number of genes you want to find.
+```
+
+
+## confindr_database_setup
+
+### Tool Description
+Download the ConFindr databases (cgMLST-derived Escherichia, Salmonella and Listeria databases, RefSeq mash sketch, optionally rMLST).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/confindr:0.8.2--pyhdfd78af_0
+- **Homepage**: https://github.com/lowandrew/ConFindr
+- **Package**: https://anaconda.org/channels/bioconda/packages/confindr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/confindr/overview
+- **Total Downloads**: 60.9K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/lowandrew/ConFindr
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: confindr_database_setup [-h] [-o OUTPUT_FOLDER] [-s SECRET_FILE] [-i]
+                               [-u]
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
+                        Path to download databases to - if folder does not
+                        exist, will be created. If folder does exist, will be
+                        deleted and updated sequences downloaded. Defaults to
+                        ~/.confindr_db, or the CONFINDR_DB environmental
+                        variable.
+  -s SECRET_FILE, --secret_file SECRET_FILE
+                        Path to consumer secret file for rMLST database.
+  -i, --index_databases
+                        Enable this option if you are installing the databases
+                        to a drive that will be read-only after the
+                        installation. The script will create and index all the
+                        necessary genus-specific database files. Note that
+                        this is very slow for the rMLST database.
+  -u, --unverified      Enable this option if you plan on running ConFindr
+                        behind a firewall and/or have a self- signed
+                        certificate. Adds 'verify=False' during session
+                        requests.
+```
+
 

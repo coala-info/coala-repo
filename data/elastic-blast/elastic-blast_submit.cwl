@@ -5,15 +5,20 @@ baseCommand:
   - submit
 label: elastic-blast_submit
 doc: "Submit a BLAST search to ElasticBLAST\n\nTool homepage: https://pypi.org/project/elastic-blast/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: blast_opts
     type:
       - 'null'
       - type: array
         items: string
-    doc: Options to pass to BLAST program
+    doc: Options to pass to BLAST program (given last, after a -- separator)
     inputBinding:
-      position: 1
+      position: 200
+      prefix: --
   - id: aws_region
     type:
       - 'null'
@@ -81,8 +86,8 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
-    doc: 'Default: elastic-blast.log'
+      - string
+    doc: 'Log file name. Default: elastic-blast.log'
     inputBinding:
       position: 102
       prefix: --logfile
@@ -155,6 +160,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: ElasticBLAST log file
+    outputBinding:
+      glob: "$(inputs.logfile ? inputs.logfile : 'elastic-blast.log')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/elastic-blast:1.5.0--pyhdfd78af_0

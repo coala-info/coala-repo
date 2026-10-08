@@ -4,14 +4,6 @@ baseCommand: dsh-filter-paf
 label: dsh-bio_filter-paf
 doc: "Filters a PAF file based on various criteria.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_paf_path
     type:
       - 'null'

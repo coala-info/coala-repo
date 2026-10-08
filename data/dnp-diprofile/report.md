@@ -1,5 +1,11 @@
 # dnp-diprofile CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnp-diprofile | PASS |  |
+
 ## dnp-diprofile
 
 ### Tool Description

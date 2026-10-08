@@ -4,14 +4,6 @@ baseCommand: dsh-text-to-fastq
 label: dsh-bio_text-to-fastq
 doc: "Converts a text file to a FASTQ file.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_text_path
     type:
       - 'null'

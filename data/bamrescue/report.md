@@ -4,9 +4,7 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| bamrescue_bamfile | PASS |  |
 | bamrescue_check | PASS |  |
-| bamrescue_output | PASS |  |
 | bamrescue_rescue | PASS |  |
 
 ## bamrescue_check
@@ -39,54 +37,6 @@ Usage: bamrescue check [--quiet] [--threads=<threads>] <bamfile>
 
 
 ## bamrescue_rescue
-
-### Tool Description
-Rescue data from a corrupted BAM file
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bamrescue:0.3.0--h4349ce8_0
-- **Homepage**: https://github.com/Arkanosis/bamrescue
-- **Package**: https://anaconda.org/channels/bioconda/packages/bamrescue/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Unknown flag: '--h'
-
-Usage: bamrescue check [--quiet] [--threads=<threads>] <bamfile>
-       bamrescue rescue [--threads=<threads>] <bamfile> <output>
-       bamrescue -h | --help
-       bamrescue --version
-```
-
-
-## bamrescue_bamfile
-
-### Tool Description
-Check a BAM file for corruption or rescue data from a corrupted BAM file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bamrescue:0.3.0--h4349ce8_0
-- **Homepage**: https://github.com/Arkanosis/bamrescue
-- **Package**: https://anaconda.org/channels/bioconda/packages/bamrescue/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Unknown flag: '--h'
-
-Usage: bamrescue check [--quiet] [--threads=<threads>] <bamfile>
-       bamrescue rescue [--threads=<threads>] <bamfile> <output>
-       bamrescue -h | --help
-       bamrescue --version
-```
-
-
-## bamrescue_output
 
 ### Tool Description
 Rescue data from a corrupted BAM file

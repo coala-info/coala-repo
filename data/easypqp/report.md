@@ -1,5 +1,20 @@
 # easypqp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| easypqp_convert | Failed | image problem: numpy 2.3 makes np.array_split return arrays, so reading mzML/mzXML spectra crashes ('numpy.ndarray' object has no attribute 'itertuples'). |
+| easypqp_convertpsm | Failed | image problem: the same mzML/mzXML spectrum reader as convert crashes under numpy 2.3 ('numpy.ndarray' object has no attribute 'itertuples'). |
+| easypqp_convertsage | PASS |  |
+| easypqp_filter-unimod | Failed | tool bug: the --ids/--sites callback transform_comma_string_to_list has the wrong signature, so every run crashes with a TypeError. |
+| easypqp_insilico-library | Failed | image problem: the easypqp_rs Rust backend is not installed, so the tool prints an error and writes no library. |
+| easypqp_library | Failed | tool bug: with --diannpqp, multi-digit FragmentSeriesNumber values come out as 1 (9 of 869 rows wrong); the default output matches the upstream regression output exactly |
+| easypqp_openswath-assay-generator | PASS |  |
+| easypqp_openswath-decoy-generator | PASS |  |
+| easypqp_reduce | PASS |  |
+| easypqp_targeted-file-converter | PASS |  |
+
 ## easypqp_convert
 
 ### Tool Description
@@ -184,50 +199,6 @@ Options:
                                   size (bytes) >= this threshold. Default:
                                   2GB.  [default: 2000000000]
   --help                          Show this message and exit.
-```
-
-
-## easypqp_filter-unimod
-
-### Tool Description
-Filter unimodified peptides from a PQP file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/easypqp:0.1.56--pyhdfd78af_0
-- **Homepage**: https://github.com/grosenberger/easypqp
-- **Package**: https://anaconda.org/channels/bioconda/packages/easypqp/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/easypqp", line 10, in <module>
-    sys.exit(cli())
-             ^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
-    return self.main(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1406, in main
-    rv = self.invoke(ctx)
-         ^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1891, in invoke
-    sub_ctx = cmd.make_context(
-              ^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1216, in make_context
-    self.parse_args(ctx, args)
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1227, in parse_args
-    _, args = param.handle_parse_result(ctx, opts, args)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 2578, in handle_parse_result
-    value = self.process_value(ctx, value)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 3313, in process_value
-    return super().process_value(ctx, value)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 2448, in process_value
-    value = self.callback(ctx, self, value)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: transform_comma_string_to_list() takes from 0 to 1 positional arguments but 3 were given
 ```
 
 
@@ -682,6 +653,56 @@ Options:
   --help                          Show this message and exit.
 ```
 
+
+## easypqp_filter-unimod
+
+### Tool Description
+Reduce UniMod XML Database file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/easypqp:0.1.56--pyhdfd78af_0
+- **Homepage**: https://github.com/grosenberger/easypqp
+- **Package**: https://anaconda.org/channels/bioconda/packages/easypqp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: easypqp filter-unimod [OPTIONS]
+
+  Reduce UniMod XML Database file
+
+Options:
+  --in PATH     Input UniMod XML file.  [default:
+                /usr/local/lib/python3.12/site-
+                packages/easypqp/data/unimod.xml]
+  --out PATH    Output Filtered UniMod XML file.  [default: unimod_ipf.xml]
+  --ids TEXT    UniMod record ids to filter for, i.e. 1,2,4,21.  [default:
+                1,2,4,5,7,21,26,27,28,34,35,36,40,121,122,259,267,299,354]
+  --sites TEXT  Optional further restriction for specificity, i.e.
+                [n,],M,nK[,QN,STY,*,*,*,EDcRK,WM,RK,Y,K,[TKnS,K,R,EK,Y].
+                Ensure, you match the sites you want to restrict per unimod.
+                
+                For example, if --ids=1,21,35, then you should have the
+                following for --sites=n,STY,M. This will restrict acetylation
+                for any N-Term, phosphorylation for serine, threonine, and
+                tyrosine, and oxidation for methionine. 
+                
+                Valid Sites:
+                
+                * - wildcard, will not restrict for any specificty for
+                corresponding UniMod entry.
+                
+                [ - Protein N-Term
+                
+                ] - Protein C-Term
+                
+                n - Any N-Term
+                
+                c - Any C-Term
+                
+                Amino Acid Letter - A valid amino acid one letter code.
+  --help        Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

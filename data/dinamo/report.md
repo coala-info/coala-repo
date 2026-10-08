@@ -1,5 +1,11 @@
 # dinamo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dinamo | PASS |  |
+
 ## dinamo
 
 ### Tool Description

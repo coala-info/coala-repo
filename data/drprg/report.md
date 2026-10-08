@@ -1,5 +1,13 @@
 # drprg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| drprg_build | PASS |  |
+| drprg_index | PASS |  |
+| drprg_predict | PASS |  |
+
 ## drprg_build
 
 ### Tool Description
@@ -113,29 +121,6 @@ Input/Output:
           CSV file with blanket rules that describe resistance (or susceptibility). The columns are <variant type>,<gene>,<start>,<end>,<drug(s)>. See the docs for a detailed explanation.
 ```
 
-## drprg_Build
-
-### Tool Description
-Build a DRaWoR program
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drprg:0.1.1--h5076881_1
-- **Homepage**: https://github.com/mbhall88/drprg
-- **Package**: https://anaconda.org/channels/bioconda/packages/drprg/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Build'
-
-  tip: a similar subcommand exists: 'build'
-  tip: to pass 'Build' as a value, use 'drprg -- Build'
-
-Usage: drprg [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
 ## drprg_predict
 
 ### Tool Description
@@ -245,29 +230,6 @@ Filter:
           [default: 0]
 ```
 
-## drprg_Predict
-
-### Tool Description
-Command-line tool for running various prediction tasks.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drprg:0.1.1--h5076881_1
-- **Homepage**: https://github.com/mbhall88/drprg
-- **Package**: https://anaconda.org/channels/bioconda/packages/drprg/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Predict'
-
-  tip: a similar subcommand exists: 'predict'
-  tip: to pass 'Predict' as a value, use 'drprg -- Predict'
-
-Usage: drprg [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
 ## drprg_index
 
 ### Tool Description
@@ -320,26 +282,6 @@ Options:
 
   -h, --help
           Print help (see a summary with '-h')
-```
-
-## drprg_Maximum
-
-### Tool Description
-A command-line tool for managing and processing data. This specific invocation seems to be for a subcommand that is not recognized.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drprg:0.1.1--h5076881_1
-- **Homepage**: https://github.com/mbhall88/drprg
-- **Package**: https://anaconda.org/channels/bioconda/packages/drprg/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Maximum'
-
-Usage: drprg [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
 ```
 
 ## Metadata

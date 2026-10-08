@@ -13,22 +13,23 @@ inputs:
     type: File
     doc: Input filename
     inputBinding:
-      position: 2
+      position: 3
   - id: automated_compression_mode
     type:
       - 'null'
       - int
     doc: 'Compression mode: 0 (fast), 1 (better ratio), 2 (best ratio)'
     inputBinding:
-      position: 103
+      position: 2
       prefix: -m
+      separate: false
   - id: crc32_checksum
     type:
       - 'null'
       - boolean
     doc: Calculate and check CRC32 checksum calculation per block
     inputBinding:
-      position: 103
+      position: 2
       prefix: -c
   - id: dna_compression_mode
     type:
@@ -36,31 +37,34 @@ inputs:
       - int
     doc: 'DNA compression mode: 0-3'
     inputBinding:
-      position: 103
+      position: 2
       prefix: -d
+      separate: false
   - id: fastq_buffer_size
     type:
       - 'null'
       - int
     doc: FASTQ input buffer size in MB
     inputBinding:
-      position: 103
+      position: 2
       prefix: -b
+      separate: false
   - id: fields_to_keep
     type:
       - 'null'
       - string
     doc: Keep only those fields no. in tag field string
     inputBinding:
-      position: 103
+      position: 2
       prefix: -f
+      separate: false
   - id: lossy_quality_mode
     type:
       - 'null'
       - boolean
     doc: Use Quality lossy mode (Illumina binning scheme)
     inputBinding:
-      position: 103
+      position: 2
       prefix: -l
   - id: quality_compression_mode
     type:
@@ -68,31 +72,34 @@ inputs:
       - int
     doc: 'Quality compression mode: 0-2'
     inputBinding:
-      position: 103
+      position: 2
       prefix: -q
+      separate: false
   - id: quality_offset
     type:
       - 'null'
       - int
     doc: Quality offset
     inputBinding:
-      position: 103
+      position: 2
       prefix: -o
+      separate: false
   - id: threads
     type:
       - 'null'
       - int
     doc: Processing threads number
     inputBinding:
-      position: 103
+      position: 2
       prefix: -t
+      separate: false
   - id: use_stdin_stdout
     type:
       - 'null'
       - boolean
     doc: Use stdin/stdout for reading/writing raw FASTQ data
     inputBinding:
-      position: 103
+      position: 2
       prefix: -s
   - id: verbose
     type:
@@ -100,14 +107,20 @@ inputs:
       - boolean
     doc: Verbose mode
     inputBinding:
-      position: 103
+      position: 2
       prefix: -v
+  - id: output_name
+    type: string
+    doc: Output filename (DSRC archive when compressing, FASTQ when 
+      decompressing)
+    inputBinding:
+      position: 4
 outputs:
   - id: output_filename
     type: File
     doc: Output filename
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsrc:2015.06.04--h077b44d_10

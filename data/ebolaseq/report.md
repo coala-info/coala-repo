@@ -1,5 +1,11 @@
 # ebolaseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ebolaseq | PASS |  |
+
 ## ebolaseq
 
 ### Tool Description

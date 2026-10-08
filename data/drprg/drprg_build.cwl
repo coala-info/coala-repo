@@ -17,6 +17,9 @@ inputs:
   - id: fasta_file
     type: File
     doc: Reference genome in FASTA format (must be indexed with samtools faidx)
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --fasta
@@ -156,6 +159,9 @@ inputs:
       - File
     doc: An indexed VCF to build the index PRG from. If not provided, then a 
       prebuilt PRG must be given. See `--prebuilt-prg`
+    secondaryFiles:
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcf

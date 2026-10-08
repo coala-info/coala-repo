@@ -1,5 +1,11 @@
 # dnoise CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnoise | PASS |  |
+
 ## dnoise
 
 ### Tool Description

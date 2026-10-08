@@ -1,5 +1,11 @@
 # eagle2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eagle2_eagle | PASS |  |
+
 ## eagle2_eagle
 
 ### Tool Description

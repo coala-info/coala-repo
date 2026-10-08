@@ -7,7 +7,7 @@ inputs:
   - id: input_files
     type:
       type: array
-      items: string
+      items: File
     doc: File(s) to encrypt. Provide file/folder path or comma separated file 
       path if multiple files in double quotes
     inputBinding:
@@ -52,22 +52,22 @@ inputs:
       position: 101
       prefix: -t
   - id: output_file_path
-    type: string
-    doc: 'Path of the output file. This is optional. If not provided then output files
+    type:
+      - 'null'
+      - string
+    doc: 'Path of the output folder. This is optional. If not provided then output files
       will be generated in the same path as that of source file (default: output-
       files)'
     inputBinding:
       position: 102
       prefix: -o
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: 'Path of the output file. This is optional. If not provided then output files
-      will be generated in the same path as that of source file (default: output-files)'
+  - id: output_dir
+    type: Directory
+    doc: Folder with the encrypted files (.gpg) and their checksums (.md5, 
+      .gpg.md5)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_file_path ? inputs.output_file_path : 'output-files')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

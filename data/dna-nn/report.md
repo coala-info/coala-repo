@@ -1,5 +1,12 @@
 # dna-nn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dna-nn_dna-brnn | PASS |  |
+| dna-nn_gen-fq | PASS |  |
+
 ## dna-nn_dna-brnn
 
 ### Tool Description

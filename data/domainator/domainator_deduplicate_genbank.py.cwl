@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: domainator_deduplicate_genbank.py
+baseCommand: deduplicate_genbank.py
 label: domainator_deduplicate_genbank.py
 doc: "Remove redundant sequences from a genbank file\n\nRuns a clustering algorithm,
   such as cdhit or usearch on sequences from a genbank (or fasta) file to reduce redundancy.\n\
@@ -45,7 +45,7 @@ inputs:
   - id: cluster_table
     type:
       - 'null'
-      - File
+      - string
     doc: 'If supplied, then write a tab separated table with columns: representative,
       contigs.'
     inputBinding:
@@ -106,7 +106,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: The name of the log file. If not supplied, writes to stderr.
     inputBinding:
       position: 101
@@ -164,6 +164,20 @@ outputs:
     doc: The name of the output file. If not supplied, writes to stdout.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: cluster_table_out
+    type:
+      - 'null'
+      - File
+    doc: tab separated table with columns representative, contigs
+    outputBinding:
+      glob: $(inputs.cluster_table)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: log file
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -2,7 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: dvorfs
 label: dvorfs
-doc: "DVORFS v1.0.1\n\nTool homepage: https://github.com/ilevantis/dvorfs"
+doc: "DVORFS v1.0.1. Disrupted Viral ORF Search: finds and reconstructs degraded viral
+  ORFs (endogenous viral elements) in DNA sequences with HMMER and GeneWise.\n\nTool homepage: https://github.com/ilevantis/dvorfs"
 inputs:
   - id: bed
     type:
@@ -30,7 +31,10 @@ inputs:
       prefix: --fai
   - id: fasta
     type: File
-    doc: Input fasta file.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+    doc: Input fasta file (indexed; default index <input.fasta>.fai).
     inputBinding:
       position: 101
       prefix: --fasta
@@ -188,13 +192,31 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
+  - id: presearch_bed
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      - 'null'
+      - File
+    doc: Regions found by the HMMER presearch (<prefix>.presearch.bed)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')$(inputs.prefix ? inputs.prefix\
+        \ : 'dvorfs').presearch.bed"
+  - id: hits_tsv
+    type:
+      - 'null'
+      - File
+    doc: Table of hits (<prefix>.hits.tsv); not written when the presearch finds
+      nothing
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')$(inputs.prefix ? inputs.prefix\
+        \ : 'dvorfs').hits.tsv"
+  - id: alis_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Explicit codon alignments per query (<prefix>.alis)
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')$(inputs.prefix ? inputs.prefix\
+        \ : 'dvorfs').alis"
   - id: outdir_dir
     type:
       - 'null'
@@ -209,6 +231,8 @@ outputs:
     doc: Directory in which DVORFS will save files during a run
     outputBinding:
       glob: $(inputs.workdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dvorfs:1.0.1--pyhdfd78af_0

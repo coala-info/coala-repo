@@ -5,6 +5,7 @@
 | Tool | Result | Reason |
 |---|---|---|
 | bio2zarr_plink2zarr_convert | PASS |  |
+| bio2zarr_tskit2zarr_convert | PASS |  |
 | bio2zarr_vcf2zarr_convert | PASS |  |
 | bio2zarr_vcf2zarr_dencode_finalise | PASS |  |
 | bio2zarr_vcf2zarr_dencode_init | PASS |  |
@@ -16,6 +17,7 @@
 | bio2zarr_vcf2zarr_explode | PASS |  |
 | bio2zarr_vcf2zarr_inspect | PASS |  |
 | bio2zarr_vcf2zarr_mkschema | PASS |  |
+| bio2zarr_vcfpartition | PASS |  |
 
 ## bio2zarr_vcf2zarr_convert
 
@@ -444,6 +446,91 @@ Options:
                                   Chunk size in the variants dimension
   -w, --samples-chunk-size INTEGER
                                   Chunk size in the samples dimension
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_vcfpartition
+
+### Tool Description
+Output bcftools region strings that partition indexed VCF/BCF files into parts.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: vcfpartition [OPTIONS] VCFS...
+
+  Output bcftools region strings that partition the indexed VCF/BCF files into
+  either an approximate number of parts (-n), or parts of approximately a
+  given size (-s). One of -n or -s must be supplied.
+
+  If multiple VCF/BCF files are provided, the number of parts (-n) is
+  interpreted as the total number of partitions across all the files, and the
+  partitions are distributed evenly among the files.
+
+  Note that both the number of partitions and sizes are a target, and the
+  returned number of partitions may not exactly correspond. In particular,
+  there is a maximum level of granularity determined by the associated index
+  which cannot be exceeded.
+
+  Note also that the partitions returned may vary considerably in the number
+  of records that they contain.
+
+Options:
+  --version                       Show the version and exit.
+  -v, --verbose                   Increase verbosity
+  -n, --num-partitions INTEGER RANGE
+                                  Target number of partitions to split into
+                                  [x>=1]
+  -s, --partition-size TEXT       Target (compressed) size of VCF partitions,
+                                  e.g. 100KB, 10MiB, 1G.
+  --help                          Show this message and exit.
+```
+
+## bio2zarr_tskit2zarr_convert
+
+### Tool Description
+Convert tskit tree sequence(s) to VCF Zarr format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bio2zarr:0.1.7--pyhdfd78af_0
+- **Homepage**: https://sgkit-dev.github.io/bio2zarr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
+- **Total Downloads**: 478
+- **Last updated**: 2026-02-03
+- **GitHub**: https://github.com/sgkit-dev/bio2zarr
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: tskit2zarr convert [OPTIONS] TS_PATH ZARR_PATH
+
+Options:
+  --contig-id TEXT                Contig/chromosome ID (default: '1')
+  --isolated-as-missing / --isolated-as-ancestral
+                                  Treat isolated samples without mutations as
+                                  missing or ancestral (default: tskit
+                                  default)
+  -l, --variants-chunk-size INTEGER
+                                  Chunk size in the variants dimension
+  -w, --samples-chunk-size INTEGER
+                                  Chunk size in the samples dimension
+  -v, --verbose                   Increase verbosity
+  -P, --progress / -Q, --no-progress
+                                  Show progress bars (default: show)
+  -p, --worker-processes INTEGER  Number of worker processes  [default: 0]
+  -f, --force                     Force overwriting of existing directories
   --help                          Show this message and exit.
 ```
 

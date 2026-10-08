@@ -30,20 +30,22 @@ inputs:
       prefix: -n
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: output path (optional, default is ./); the folder is created before the run
+    default: traceback_output
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output path (optional, default is ./)
+    type: Directory
+    doc: output folder with the sequence-labels_N.bin files
     outputBinding:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return {class: "Directory", basename: inputs.output_dir_path, listing: [], writable: true}; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dpcstruct:0.1.1--h9948957_0

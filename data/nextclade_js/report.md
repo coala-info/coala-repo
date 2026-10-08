@@ -98,7 +98,7 @@ Verbosity:
 ```
 
 
-## nextclade_js_nextclade dataset
+## nextclade_js_nextclade_dataset
 
 ### Tool Description
 List and download available Nextclade datasets (pathogens)

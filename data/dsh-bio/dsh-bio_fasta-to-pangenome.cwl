@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-fasta-to-pangenome
+baseCommand:
+  - dsh-bio
+  - fasta-to-pangenome
 label: dsh-bio_fasta-to-pangenome
 doc: "Converts FASTA files to a pangenome representation.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:

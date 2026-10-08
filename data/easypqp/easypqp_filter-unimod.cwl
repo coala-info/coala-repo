@@ -1,72 +1,54 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: easypqp_filter-unimod
+baseCommand:
+  - easypqp
+  - filter-unimod
 label: easypqp_filter-unimod
-doc: "Filter unimodified peptides from a PQP file.\n\nTool homepage: https://github.com/grosenberger/easypqp"
+doc: "Reduce UniMod XML Database file\n\nTool homepage: https://github.com/grosenberger/easypqp"
 inputs:
-  - id: input_pqp
-    type: File
-    doc: Input PQP file.
-    inputBinding:
-      position: 1
-  - id: max_length
+  - id: in_file
     type:
       - 'null'
-      - int
-    doc: Maximum peptide length to keep.
+      - File
+    doc: Input UniMod XML file. The tool uses its built-in unimod.xml when not
+      given.
     inputBinding:
-      position: 102
-      prefix: --max_length
-  - id: min_intensity
+      position: 101
+      prefix: --in
+  - id: ids
     type:
       - 'null'
-      - float
-    doc: Minimum intensity to keep a peptide.
+      - string
+    doc: UniMod record ids to filter for, i.e. 1,2,4,21.
     inputBinding:
-      position: 102
-      prefix: --min_intensity
-  - id: min_length
+      position: 101
+      prefix: --ids
+  - id: sites
     type:
       - 'null'
-      - int
-    doc: Minimum peptide length to keep.
+      - string
+    doc: "Optional further restriction for specificity, i.e.
+      [n,],M,nK[,QN,STY,*,*,*,EDcRK,WM,RK,Y,K,[TKnS,K,R,EK,Y]. Give one site
+      entry per UniMod id, in the same order as --ids (for example --ids 1,21,35
+      with --sites n,STY,M). Valid sites: * (wildcard, no restriction), [
+      (protein N-term), ] (protein C-term), n (any N-term), c (any C-term), or
+      amino acid one letter codes."
+    inputBinding:
+      position: 101
+      prefix: --sites
+  - id: out_path
+    type: string
+    default: unimod_ipf.xml
+    doc: Output Filtered UniMod XML file.
     inputBinding:
       position: 102
-      prefix: --min_length
-  - id: min_score
-    type:
-      - 'null'
-      - float
-    doc: Minimum score to keep a peptide.
-    inputBinding:
-      position: 102
-      prefix: --min_score
-  - id: unimod_ids
-    type:
-      - 'null'
-      - type: array
-        items: int
-    doc: List of UNIMOD IDs to filter out (comma-separated).
-    inputBinding:
-      position: 102
-      prefix: --unimod_ids
-      itemSeparator: ','
-  - id: unimod_mods
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: List of UNIMOD modifications to filter out (comma-separated).
-    inputBinding:
-      position: 102
-      prefix: --unimod_mods
-      itemSeparator: ','
+      prefix: --out
 outputs:
-  - id: output_pqp
+  - id: out
     type: File
-    doc: Output PQP file.
+    doc: Output Filtered UniMod XML file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/easypqp:0.1.56--pyhdfd78af_0

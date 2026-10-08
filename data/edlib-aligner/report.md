@@ -1,5 +1,11 @@
 # edlib-aligner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| edlib-aligner | PASS |  |
+
 ## edlib-aligner
 
 ### Tool Description

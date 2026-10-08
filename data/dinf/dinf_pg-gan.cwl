@@ -40,9 +40,7 @@ inputs:
       position: 101
       prefix: --max-pretraining-iterations
   - id: model
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Python script from which to import the variable "dinf_model". This is a
       dinf.DinfModel object that describes the model components. See the 
       examples/ folder of the git repository for example models. 

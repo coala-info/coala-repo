@@ -1,5 +1,11 @@
 # elph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| elph | PASS |  |
+
 ## elph
 
 ### Tool Description
@@ -7,14 +13,13 @@ Motif finder program ELPH (Estimated Locations of Pattern Hits)
 
 ### Metadata
 - **Docker Image**: biocontainers/elph:v1.0.1-2-deb_cv1
-- **Homepage**: https://github.com/emacsmirror/elpher
+- **Homepage**: https://ccb.jhu.edu/software/ELPH/
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/elph/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/emacsmirror/elpher
 - **Stars**: N/A
 ### Original Help Text
 ```text

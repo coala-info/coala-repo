@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - Dinosaur-1.2.0.jar
+  - dinosaur
 label: dinosaur
 doc: "Analyze MzML files for isotope patterns.\n\nTool homepage: https://github.com/fickludd/dinosaur"
 inputs:
@@ -11,15 +9,7 @@ inputs:
     type: File
     doc: The shotgun MzML file to analyze
     inputBinding:
-      position: 1
-  - id: adv_help
-    type:
-      - 'null'
-      - boolean
-    doc: set to output adv param file help and quit
-    inputBinding:
-      position: 102
-      prefix: advHelp
+      position: 200
   - id: adv_params
     type:
       - 'null'
@@ -27,7 +17,8 @@ inputs:
     doc: path to adv param file
     inputBinding:
       position: 102
-      prefix: advParams
+      prefix: --advParams=
+      separate: false
   - id: concurrency
     type:
       - 'null'
@@ -35,7 +26,8 @@ inputs:
     doc: the number of assays to analyze in parallel
     inputBinding:
       position: 102
-      prefix: concurrency
+      prefix: --concurrency=
+      separate: false
   - id: force
     type:
       - 'null'
@@ -43,7 +35,7 @@ inputs:
     doc: ignore missing mzML params
     inputBinding:
       position: 102
-      prefix: force
+      prefix: --force
   - id: max_charge
     type:
       - 'null'
@@ -51,7 +43,8 @@ inputs:
     doc: max searched ion charge
     inputBinding:
       position: 102
-      prefix: maxCharge
+      prefix: --maxCharge=
+      separate: false
   - id: min_charge
     type:
       - 'null'
@@ -59,7 +52,8 @@ inputs:
     doc: min searched ion charge
     inputBinding:
       position: 102
-      prefix: minCharge
+      prefix: --minCharge=
+      separate: false
   - id: mode
     type:
       - 'null'
@@ -68,7 +62,8 @@ inputs:
       targeted only those matching targets.'
     inputBinding:
       position: 102
-      prefix: mode
+      prefix: --mode=
+      separate: false
   - id: n_report
     type:
       - 'null'
@@ -76,15 +71,16 @@ inputs:
     doc: number of random assay to export control figure for
     inputBinding:
       position: 102
-      prefix: nReport
+      prefix: --nReport=
+      separate: false
   - id: out_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output directory (by default same as input mzML)
+    type: string
+    default: .
+    doc: output directory (by default same as input mzML; the input folder is read-only here, so it defaults to the working directory)
     inputBinding:
       position: 102
-      prefix: outDir
+      prefix: --outDir=
+      separate: false
   - id: out_name
     type:
       - 'null'
@@ -92,7 +88,8 @@ inputs:
     doc: basename for output files (by default same as input mzML)
     inputBinding:
       position: 102
-      prefix: outName
+      prefix: --outName=
+      separate: false
   - id: profiling
     type:
       - 'null'
@@ -100,7 +97,7 @@ inputs:
     doc: set to enable CPU profiling
     inputBinding:
       position: 102
-      prefix: profiling
+      prefix: --profiling
   - id: report_deiso_mz_height
     type:
       - 'null'
@@ -108,7 +105,8 @@ inputs:
     doc: mz range in deisotoper reports
     inputBinding:
       position: 102
-      prefix: reportDeisoMzHeight
+      prefix: --reportDeisoMzHeight=
+      separate: false
   - id: report_high_res
     type:
       - 'null'
@@ -116,7 +114,7 @@ inputs:
     doc: generate high-resolution plot trail when supported (for print)
     inputBinding:
       position: 102
-      prefix: reportHighRes
+      prefix: --reportHighRes
   - id: report_seed
     type:
       - 'null'
@@ -124,7 +122,8 @@ inputs:
     doc: seed to use for report assay selection (<0 means random)
     inputBinding:
       position: 102
-      prefix: reportSeed
+      prefix: --reportSeed=
+      separate: false
   - id: report_targets
     type:
       - 'null'
@@ -132,7 +131,7 @@ inputs:
     doc: set to create a special report figure for each target
     inputBinding:
       position: 102
-      prefix: reportTargets
+      prefix: --reportTargets
   - id: seed
     type:
       - 'null'
@@ -140,7 +139,8 @@ inputs:
     doc: seed to use for bootstrapping of mass calibration (<0 means random)
     inputBinding:
       position: 102
-      prefix: seed
+      prefix: --seed=
+      separate: false
   - id: target_preference
     type:
       - 'null'
@@ -149,7 +149,8 @@ inputs:
       or the most intense (intensity)
     inputBinding:
       position: 102
-      prefix: targetPreference
+      prefix: --targetPreference=
+      separate: false
   - id: targets
     type:
       - 'null'
@@ -157,7 +158,8 @@ inputs:
     doc: path to isotope patterns target file (not used by default)
     inputBinding:
       position: 102
-      prefix: targets
+      prefix: --targets=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -165,7 +167,7 @@ inputs:
     doc: increase details in output
     inputBinding:
       position: 102
-      prefix: verbose
+      prefix: --verbose
   - id: write_binary
     type:
       - 'null'
@@ -173,7 +175,7 @@ inputs:
     doc: set to output binary MSFeatureProtocol file
     inputBinding:
       position: 102
-      prefix: writeBinary
+      prefix: --writeBinary
   - id: write_hills
     type:
       - 'null'
@@ -181,7 +183,7 @@ inputs:
     doc: set to output csv file with all hills assigned to isotope patterns
     inputBinding:
       position: 102
-      prefix: writeHills
+      prefix: --writeHills
   - id: write_ms_inspect
     type:
       - 'null'
@@ -189,7 +191,7 @@ inputs:
     doc: set to output MsInspect feature csv file
     inputBinding:
       position: 102
-      prefix: writeMsInspect
+      prefix: --writeMsInspect
   - id: write_quant_ml
     type:
       - 'null'
@@ -197,7 +199,7 @@ inputs:
     doc: set to output mzQuantML file
     inputBinding:
       position: 102
-      prefix: writeQuantML
+      prefix: --writeQuantML
   - id: zip_qc_folder
     type:
       - 'null'
@@ -205,11 +207,59 @@ inputs:
     doc: set to zip the entire qc folder on algorithm completion
     inputBinding:
       position: 102
-      prefix: zipQcFolder
+      prefix: --zipQcFolder
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: features
+    type: File
+    doc: Feature (isotope pattern) table
+    outputBinding:
+      glob: |
+        $(inputs.out_dir + '/' + (inputs.out_name ? inputs.out_name : inputs.mzml_file.nameroot) + '.features.tsv')
+  - id: hills
+    type:
+      - 'null'
+      - File
+    doc: CSV file with all hills assigned to isotope patterns (writeHills)
+    outputBinding:
+      glob: |
+        $(inputs.out_dir + '/' + (inputs.out_name ? inputs.out_name : inputs.mzml_file.nameroot) + '.hills.csv')
+  - id: ms_inspect
+    type:
+      - 'null'
+      - File
+    doc: MsInspect feature file (writeMsInspect)
+    outputBinding:
+      glob: |
+        $(inputs.out_dir + '/' + (inputs.out_name ? inputs.out_name : inputs.mzml_file.nameroot) + '.msInspect.tsv')
+  - id: quant_ml
+    type:
+      - 'null'
+      - File
+    doc: mzQuantML file (writeQuantML)
+    outputBinding:
+      glob: |
+        $(inputs.out_dir + '/' + (inputs.out_name ? inputs.out_name : inputs.mzml_file.nameroot) + '.mzq')
+  - id: binary
+    type:
+      - 'null'
+      - File
+    doc: Binary MSFeatureProtocol file (writeBinary)
+    outputBinding:
+      glob: |
+        $(inputs.out_dir + '/' + (inputs.out_name ? inputs.out_name : inputs.mzml_file.nameroot) + '.features.bin')
+  - id: qc
+    type:
+      type: array
+      items: [File, Directory]
+    doc: QC report files and folder
+    outputBinding:
+      glob: |
+        $(inputs.out_dir + '/' + (inputs.out_name ? inputs.out_name : inputs.mzml_file.nameroot) + '.qc*')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dinosaur:1.2.0--hdfd78af_1

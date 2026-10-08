@@ -7,6 +7,8 @@ doc: "SNP-Assisted Structural Variant Calling and Phasing Using Oxford Nanopore 
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: sorted alignment file in .bam format (along with .bai file in the same 
       directory)
     inputBinding:
@@ -20,7 +22,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output
-    type: Directory
+    type: string
     doc: working and output directory (existing files in the directory will be 
       overwritten)
     inputBinding:
@@ -87,6 +89,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Working and output directory
+    outputBinding:
+      glob: $(inputs.output)
+  - id: phased_sv_vcf
+    type:
+      - 'null'
+      - File
+    doc: Phased structural variant calls
+    outputBinding:
+      glob: $(inputs.output)/phased_sv.vcf
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/duet:1.0--pyhdfd78af_0

@@ -4,12 +4,12 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| clinvar-tsv_clinvar_tsv main | Not completed | pipeline, skipped: main runs the full Snakemake pipeline, which downloads the whole ClinVar release and needs GRCh37 and GRCh38 genomes. |
-| clinvar-tsv_clinvar_tsv parse_xml | PASS |  |
+| clinvar-tsv_clinvar_tsv_main | Not completed | pipeline, skipped: main runs the full Snakemake pipeline, which downloads the whole ClinVar release and needs GRCh37 and GRCh38 genomes. |
+| clinvar-tsv_clinvar_tsv_parse_xml | PASS |  |
 | clinvar-tsv_merge_tsvs | PASS |  |
 | clinvar-tsv_normalize_tsv | PASS |  |
 
-## clinvar-tsv_clinvar_tsv main
+## clinvar-tsv_clinvar_tsv_main
 
 ### Tool Description
 Main command for clinvar-tsv
@@ -39,7 +39,7 @@ options:
 ```
 
 
-## clinvar-tsv_clinvar_tsv parse_xml
+## clinvar-tsv_clinvar_tsv_parse_xml
 
 ### Tool Description
 Parse ClinVar XML file into TSV format.

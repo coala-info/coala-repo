@@ -1,12 +1,27 @@
 # dnaapler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnaapler_all | PASS |  |
+| dnaapler_archaea | PASS |  |
+| dnaapler_bulk | PASS |  |
+| dnaapler_chromosome | PASS |  |
+| dnaapler_custom | PASS |  |
+| dnaapler_largest | PASS |  |
+| dnaapler_mystery | PASS |  |
+| dnaapler_nearest | PASS |  |
+| dnaapler_phage | PASS |  |
+| dnaapler_plasmid | PASS |  |
+
 ## dnaapler_all
 
 ### Tool Description
 Run dnaapler on all contigs in the input file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -50,31 +65,13 @@ Options:
                            13]
 ```
 
-## dnaapler_archaeal
-
-### Tool Description
-A tool for analyzing and annotating archaeal genomes.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/dnaapler
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
-
-Error: No such command 'archaeal'.
-```
-
 ## dnaapler_archaea
 
 ### Tool Description
 Run dnaapler on archaea genomes
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -106,7 +103,7 @@ Options:
 Reorient sequences in bulk
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -139,7 +136,7 @@ Options:
 This command is part of the dnaapler tool and is used for processing chromosome-related data.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -171,7 +168,7 @@ Options:
 Custom reorientation of sequences using a custom MMseqs2 database.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -206,7 +203,7 @@ Options:
 Finds the largest contig in a FASTA or GFA file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -231,7 +228,7 @@ Options:
 Mystery tool for dnaapler
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -257,7 +254,7 @@ Options:
 Find the nearest reference genome for each input sequence.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -276,31 +273,13 @@ Options:
   -f, --force            Force overwrites the output directory
 ```
 
-## dnaapler_pyrodigal
-
-### Tool Description
-A tool for analyzing DNA sequences.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/dnaapler
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
-
-Error: No such command 'pyrodigal'.
-```
-
 ## dnaapler_phage
 
 ### Tool Description
 Run dnaapler on phage genomes
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -332,7 +311,7 @@ Options:
 Runs the plasmid detection pipeline.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gbouras13/dnaapler
 - **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
 - **Validation**: PASS
@@ -356,24 +335,6 @@ Options:
                            mystery, largest, or nearest [default: none]
   --seed_value INTEGER     Random seed to ensure reproducibility.  [default:
                            13]
-```
-
-## dnaapler_initiation
-
-### Tool Description
-A tool for analyzing DNA sequences.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/dnaapler
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnaapler/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: dnaapler [OPTIONS] COMMAND [ARGS]...
-
-Error: No such command 'initiation'.
 ```
 
 ## Metadata

@@ -208,6 +208,9 @@ inputs:
       position: 106
       prefix: --visualize
 outputs:
+  - id: corrected_families
+    type: stdout
+    doc: Families file with barcodes (and orders) corrected
   - id: visualize
     type:
       - 'null'
@@ -229,3 +232,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4
+stdout: families.corrected.tsv

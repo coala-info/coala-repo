@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: domainator_domainate.py
+baseCommand: domainate.py
 label: domainator_domainate.py
 doc: "Annotate sequence files with hmm profiles\n\nFor each CDS or protein in the
   input file, run the hmmer3 against the target domain hmm database to annotate all
@@ -259,10 +259,10 @@ inputs:
       prefix: -Z
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output genbank filename
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

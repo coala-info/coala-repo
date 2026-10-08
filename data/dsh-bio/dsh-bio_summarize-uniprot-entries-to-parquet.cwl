@@ -27,7 +27,7 @@ inputs:
       prefix: --output-summary-parquet-file
 outputs:
   - id: output_summary_parquet_file
-    type: File
+    type: Directory
     doc: output summary Parquet file
     outputBinding:
       glob: $(inputs.output_summary_parquet_file_path)

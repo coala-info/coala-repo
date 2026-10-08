@@ -2,11 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: duphold
 label: duphold
-doc: "duphold is a tool for calling structural variants (SVs) from long-read sequencing
-  data.\n\nTool homepage: https://github.com/brentp/duphold"
+doc: "duphold annotates structural variant calls with depth fold-change, read
+  depth and SNP allele-balance information from a BAM/CRAM.\n\nTool homepage: https://github.com/brentp/duphold"
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .csi
+        required: false
     doc: path to indexed BAM/CRAM
     inputBinding:
       position: 101
@@ -22,6 +33,8 @@ inputs:
       prefix: --drop
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: indexed fasta reference.
     inputBinding:
       position: 101
@@ -38,6 +51,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     doc: optional path to snp/indel VCF/BCF with which to annotate SVs. BCF is 
       highly recommended as it's much faster to parse.
     inputBinding:
@@ -60,7 +78,14 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (annotated VCF when no output is given)
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Annotated VCF/BCF written to the output path
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/duphold:0.2.1--hfb13731_0

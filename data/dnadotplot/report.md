@@ -1,5 +1,11 @@
 # dnadotplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnadotplot | PASS |  |
+
 ## dnadotplot
 
 ### Tool Description

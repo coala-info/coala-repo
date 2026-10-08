@@ -6,12 +6,22 @@ doc: "elastix registers a moving image to a fixed image.\nThe registration-proce
   is specified in the parameter file.\n\nTool homepage: https://github.com/SuperElastix/elastix"
 inputs:
   - id: fixed_image
+    secondaryFiles:
+      - pattern: ^.raw
+        required: false
+      - pattern: ^.zraw
+        required: false
     type: File
     doc: fixed image
     inputBinding:
       position: 101
       prefix: -f
   - id: fixed_image_mask
+    secondaryFiles:
+      - pattern: ^.raw
+        required: false
+      - pattern: ^.zraw
+        required: false
     type:
       - 'null'
       - File
@@ -28,12 +38,22 @@ inputs:
       position: 101
       prefix: -t0
   - id: moving_image
+    secondaryFiles:
+      - pattern: ^.raw
+        required: false
+      - pattern: ^.zraw
+        required: false
     type: File
     doc: moving image
     inputBinding:
       position: 101
       prefix: -m
   - id: moving_image_mask
+    secondaryFiles:
+      - pattern: ^.raw
+        required: false
+      - pattern: ^.zraw
+        required: false
     type:
       - 'null'
       - File
@@ -45,10 +65,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: -p
     doc: parameter file, elastix handles 1 or more "-p"
     inputBinding:
       position: 101
-      prefix: -p
   - id: priority
     type:
       - 'null'
@@ -80,6 +101,11 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        return [{class: 'Directory', basename: inputs.output_directory_path, listing: [], writable: true}];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/elastix:v4.9.0-1-deb_cv1

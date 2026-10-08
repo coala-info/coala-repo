@@ -275,11 +275,8 @@ inputs:
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file for the generated library. Overrides the output directory 
-      specified in the
+    type: File
+    doc: Output file for the generated library.
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:

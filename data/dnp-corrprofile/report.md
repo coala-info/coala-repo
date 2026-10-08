@@ -1,5 +1,11 @@
 # dnp-corrprofile CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnp-corrprofile | PASS |  |
+
 ## dnp-corrprofile
 
 ### Tool Description

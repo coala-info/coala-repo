@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: The multiple sequence alignment file
     inputBinding:
-      position: 1
+      position: 103
   - id: amino
     type:
       - 'null'
@@ -27,14 +27,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --dna
-  - id: inform
+  - id: informat
     type:
       - 'null'
       - string
-    doc: Specify that input alignment is in format <s>
+    doc: specify the input MSA file is in format <s>
     inputBinding:
       position: 102
-      prefix: --inform
+      prefix: --informat
+  - id: noheader
+    type:
+      - 'null'
+      - boolean
+    doc: no header
+    inputBinding:
+      position: 102
+      prefix: --noheader
+  - id: outformat
+    type:
+      - 'null'
+      - string
+    doc: write the output MSA in format <s>
+    inputBinding:
+      position: 102
+      prefix: --outformat
   - id: rna
     type:
       - 'null'

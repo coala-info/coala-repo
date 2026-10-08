@@ -1,71 +1,64 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: downpore_consensus
+baseCommand:
+  - downpore
+  - consensus
 label: downpore_consensus
-doc: "Generates a consensus sequence from multiple input sequences using dynamic time
-  warping.\n\nTool homepage: https://github.com/jteutenberg/downpore"
+doc: "Builds a consensus sequence from a set of reads of the same region with dynamic
+  time warping. Writes the consensus and three per-base quality lines (cost, votes,
+  state space) to stdout.\n\nTool homepage: https://github.com/jteutenberg/downpore"
 inputs:
-  - id: input_sequences
-    type:
-      type: array
-      items: File
-    doc: One or more input sequence files (e.g., FASTA, FASTQ).
+  - id: input
+    type: File
+    doc: Fasta/fastq input file (one line per sequence)
     inputBinding:
-      position: 1
-  - id: max_gap_extend
-    type:
-      - 'null'
-      - int
-    doc: Maximum length of gap extensions allowed in alignments.
-    inputBinding:
-      position: 102
-      prefix: --max-gap-extend
-  - id: max_gap_open
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of gap openings allowed in alignments.
-    inputBinding:
-      position: 102
-      prefix: --max-gap-open
-  - id: min_score
-    type:
-      - 'null'
-      - float
-    doc: Minimum alignment score threshold for considering sequences.
-    inputBinding:
-      position: 102
-      prefix: --min-score
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for computation.
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output for debugging.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 101
+      prefix: -input
+  - id: rc_input
     type:
       - 'null'
       - File
-    doc: Path to the output consensus sequence file.
+    doc: Additional input file containing sequences from reverse-complement reads
+    inputBinding:
+      position: 101
+      prefix: -rc_input
+  - id: model
+    type:
+      - 'null'
+      - File
+    doc: Model file containing current levels
+    inputBinding:
+      position: 101
+      prefix: -model
+  - id: matrix
+    type:
+      - 'null'
+      - File
+    doc: K-mer confusion matrix to use in place of a model
+    inputBinding:
+      position: 101
+      prefix: -matrix
+  - id: k
+    type:
+      - 'null'
+      - int
+    doc: K-mer size for alignment when no model specified (default 5)
+    inputBinding:
+      position: 101
+      prefix: -k
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Name of the file that receives the consensus written to stdout
+    default: downpore_consensus.txt
+outputs:
+  - id: output_file
+    type: File
+    doc: Consensus sequence line followed by three quality lines
     outputBinding:
       glob: $(inputs.output_file_path)
+stdout: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

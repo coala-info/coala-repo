@@ -1,5 +1,11 @@
 # dupre CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dupre | PASS |  |
+
 ## dupre
 
 ### Tool Description

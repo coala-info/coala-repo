@@ -5,14 +5,6 @@ label: dsh-bio_extract-fastq
 doc: "Extracts sequences from a FASTQ file based on name or description.\n\nTool homepage:
   https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: description
     type:
       - 'null'

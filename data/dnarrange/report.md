@@ -1,5 +1,11 @@
 # dnarrange CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnarrange | PASS |  |
+
 ## dnarrange
 
 ### Tool Description

@@ -1,5 +1,101 @@
 # dsh-bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dsh-bio_bin-fastq-quality-scores | PASS |  |
+| dsh-bio_compress-bed | PASS |  |
+| dsh-bio_compress-fasta | PASS |  |
+| dsh-bio_compress-fastq | PASS |  |
+| dsh-bio_compress-gaf | PASS |  |
+| dsh-bio_compress-gfa1 | PASS |  |
+| dsh-bio_compress-gfa2 | PASS |  |
+| dsh-bio_compress-gff3 | PASS |  |
+| dsh-bio_compress-paf | PASS |  |
+| dsh-bio_compress-rgfa | PASS |  |
+| dsh-bio_compress-sam | PASS |  |
+| dsh-bio_compress-vcf | PASS |  |
+| dsh-bio_count-fastq | PASS |  |
+| dsh-bio_create-sequence-dictionary | PASS |  |
+| dsh-bio_disinterleave-fastq | PASS |  |
+| dsh-bio_downsample-fastq | PASS |  |
+| dsh-bio_downsample-interleaved-fastq | PASS |  |
+| dsh-bio_export-segments | PASS |  |
+| dsh-bio_extract-fasta | PASS |  |
+| dsh-bio_extract-fasta-kmers | PASS |  |
+| dsh-bio_extract-fasta-kmers-to-parquet | PASS |  |
+| dsh-bio_extract-fasta-kmers-to-parquet3 | PASS |  |
+| dsh-bio_extract-fastq | PASS |  |
+| dsh-bio_extract-fastq-by-length | PASS |  |
+| dsh-bio_extract-uniprot-features | PASS |  |
+| dsh-bio_extract-uniprot-features-to-parquet | PASS |  |
+| dsh-bio_extract-uniprot-features-to-partitioned-parquet | PASS |  |
+| dsh-bio_fasta-index-to-pangenome | PASS |  |
+| dsh-bio_fasta-index-to-pangenome-tree | PASS |  |
+| dsh-bio_fasta-to-fastq | PASS |  |
+| dsh-bio_fasta-to-pangenome | PASS |  |
+| dsh-bio_fasta-to-pangenome-tree | PASS |  |
+| dsh-bio_fasta-to-parquet | PASS |  |
+| dsh-bio_fasta-to-parquet2 | PASS |  |
+| dsh-bio_fasta-to-parquet3 | PASS |  |
+| dsh-bio_fasta-to-parquet4 | PASS |  |
+| dsh-bio_fasta-to-parquet5 | PASS |  |
+| dsh-bio_fasta-to-parquet6 | PASS |  |
+| dsh-bio_fasta-to-text | PASS |  |
+| dsh-bio_fastq-description | PASS |  |
+| dsh-bio_fastq-sequence-length | PASS |  |
+| dsh-bio_fastq-to-bam | PASS |  |
+| dsh-bio_fastq-to-fasta | PASS |  |
+| dsh-bio_fastq-to-text | PASS |  |
+| dsh-bio_filter-bed | PASS |  |
+| dsh-bio_filter-fasta | PASS |  |
+| dsh-bio_filter-fastq | PASS |  |
+| dsh-bio_filter-gaf | PASS |  |
+| dsh-bio_filter-gfa1 | PASS |  |
+| dsh-bio_filter-gfa2 | PASS |  |
+| dsh-bio_filter-gff3 | PASS |  |
+| dsh-bio_filter-paf | PASS |  |
+| dsh-bio_filter-rgfa | PASS |  |
+| dsh-bio_filter-sam | PASS |  |
+| dsh-bio_filter-vcf | PASS |  |
+| dsh-bio_gfa1-to-gfa2 | PASS |  |
+| dsh-bio_gff3-to-bed | PASS |  |
+| dsh-bio_identify-gfa1 | PASS |  |
+| dsh-bio_interleave-fastq | PASS |  |
+| dsh-bio_interleaved-fastq-to-bam | PASS |  |
+| dsh-bio_links-to-cytoscape-edges | PASS |  |
+| dsh-bio_links-to-property-graph | PASS |  |
+| dsh-bio_reassemble-paths | PASS |  |
+| dsh-bio_remap-dbsnp | PASS |  |
+| dsh-bio_remap-phase-set | Failed | tool bug: PS values are remapped but every Number=R FORMAT field (AD, ADALL) is written twice, e.g. 0,381 becomes 0,381,0,381. |
+| dsh-bio_rename-bed-references | PASS |  |
+| dsh-bio_rename-gff3-references | PASS |  |
+| dsh-bio_rename-vcf-references | PASS |  |
+| dsh-bio_segments-to-cytoscape-nodes | PASS |  |
+| dsh-bio_segments-to-property-graph | PASS |  |
+| dsh-bio_split-bed | PASS |  |
+| dsh-bio_split-fasta | PASS |  |
+| dsh-bio_split-fastq | PASS |  |
+| dsh-bio_split-gaf | PASS |  |
+| dsh-bio_split-gff3 | PASS |  |
+| dsh-bio_split-interleaved-fastq | PASS |  |
+| dsh-bio_split-paf | PASS |  |
+| dsh-bio_split-sam | PASS |  |
+| dsh-bio_split-vcf | PASS |  |
+| dsh-bio_summarize-uniprot-entries | PASS |  |
+| dsh-bio_summarize-uniprot-entries-to-parquet | PASS |  |
+| dsh-bio_text-to-fasta | PASS |  |
+| dsh-bio_text-to-fastq | PASS |  |
+| dsh-bio_traversals-to-cytoscape-edges | PASS |  |
+| dsh-bio_traversals-to-property-graph | PASS |  |
+| dsh-bio_traverse-paths | PASS |  |
+| dsh-bio_truncate-fasta | PASS |  |
+| dsh-bio_truncate-paths | PASS |  |
+| dsh-bio_variant-table-to-vcf | PASS |  |
+| dsh-bio_vcf-pedigree | PASS |  |
+| dsh-bio_vcf-samples | PASS |  |
+
 ## dsh-bio_bin-fastq-quality-scores
 
 ### Tool Description
@@ -2357,6 +2453,74 @@ arguments:
    -h, --help  display help message [optional]
    -i, --input-vcf-path [interface java.nio.file.Path]  input VCF path, default stdin [optional]
    -o, --output-sample-file [class java.io.File]  output sample file, default stdout [optional]
+```
+
+## dsh-bio_fastq-to-bam
+
+### Tool Description
+Convert FASTQ format to unaligned BAM format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0
+- **Homepage**: https://github.com/heuermh/dishevelled-bio
+- **Package**: https://anaconda.org/channels/bioconda/packages/dsh-bio/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/dsh-bio/overview
+- **Total Downloads**: 170.3K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/heuermh/dishevelled-bio
+- **Stars**: N/A
+### Original Help Text
+```text
+usage:
+dsh-fastq-to-bam [args]
+
+arguments:
+   -a, --about  display about message [optional]
+   -h, --help  display help message [optional]
+   -i, --input-fastq-path [interface java.nio.file.Path]  input FASTQ path, default stdin [optional]
+   -o, --output-bam-file [class java.io.File]  output BAM file, default stdout [optional]
+   -r, --read-group-id [class java.lang.String]  read group id [optional]
+   -s, --read-group-sample [class java.lang.String]  read group sample [optional]
+   -y, --read-group-library [class java.lang.String]  read group library [optional]
+   -p, --read-group-platform-unit [class java.lang.String]  read group platform unit [optional]
+   -z, --read-group-insert-size [class java.lang.Integer]  read group predicted median insert size [optional]
+   -b, --read-group-barcodes [java.util.List<java.lang.String>]  read group barcodes [optional]
+```
+
+## dsh-bio_interleaved-fastq-to-bam
+
+### Tool Description
+Convert interleaved paired-end FASTQ format to unaligned BAM format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0
+- **Homepage**: https://github.com/heuermh/dishevelled-bio
+- **Package**: https://anaconda.org/channels/bioconda/packages/dsh-bio/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/dsh-bio/overview
+- **Total Downloads**: 170.3K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/heuermh/dishevelled-bio
+- **Stars**: N/A
+### Original Help Text
+```text
+usage:
+dsh-interleaved-fastq-to-bam [args]
+
+arguments:
+   -a, --about  display about message [optional]
+   -h, --help  display help message [optional]
+   -i, --input-fastq-path [interface java.nio.file.Path]  input interleaved FASTQ path, default stdin [optional]
+   -o, --output-bam-file [class java.io.File]  output BAM file, default stdout [optional]
+   -r, --read-group-id [class java.lang.String]  read group id [optional]
+   -s, --read-group-sample [class java.lang.String]  read group sample [optional]
+   -y, --read-group-library [class java.lang.String]  read group library [optional]
+   -p, --read-group-platform-unit [class java.lang.String]  read group platform unit [optional]
+   -z, --read-group-insert-size [class java.lang.Integer]  read group predicted median insert size [optional]
+   -b, --read-group-barcodes [java.util.List<java.lang.String>]  read group barcodes [optional]
 ```
 
 ## Metadata

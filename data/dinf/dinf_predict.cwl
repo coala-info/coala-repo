@@ -7,17 +7,13 @@ label: dinf_predict
 doc: "Make predictions using a trained discriminator.\n\nTool homepage: https://github.com/RacimoLab/dinf"
 inputs:
   - id: discriminator
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File containing discriminator network weights.
     inputBinding:
       position: 101
       prefix: --discriminator
   - id: model
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Python script from which to import the variable "dinf_model". This is a
       dinf.DinfModel object that describes the model components. See the 
       examples/ folder of the git repository for example models. 

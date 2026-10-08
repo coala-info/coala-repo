@@ -1,5 +1,11 @@
 # dnamarkmaker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnamarkmaker_DNAMarkMaker | PASS |  |
+
 ## dnamarkmaker_DNAMarkMaker
 
 ### Tool Description

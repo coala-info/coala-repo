@@ -1,5 +1,11 @@
 # edta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| edta_EDTA.pl | PASS |  |
+
 ## edta_EDTA.pl
 
 ### Tool Description

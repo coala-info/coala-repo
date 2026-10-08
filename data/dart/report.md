@@ -5,6 +5,7 @@
 | Tool | Result | Reason |
 |---|---|---|
 | dart | PASS |  |
+| dart_bwt_index | PASS |  |
 
 ## dart
 
@@ -43,5 +44,26 @@ Options: -t INT        number of threads [4]
          -max_intron   the maximal intron size [500000]
          -min_intron   the minimal intron size [10]
          -v            version
+```
+
+## dart_bwt_index
+
+### Tool Description
+Build the BWT index of a reference genome (Usage: bwt_index Ref_File Prefix).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dart:1.4.6--h13024bc_7
+- **Homepage**: https://github.com/hsinnan75/Dart
+- **Package**: https://anaconda.org/channels/bioconda/packages/dart/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/dart/overview
+- **Total Downloads**: 34.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/hsinnan75/Dart
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: bwt_index Ref_File[ex. ref.fa] Prefix[ex. MyRef]
 ```
 

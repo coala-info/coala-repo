@@ -4,10 +4,13 @@ baseCommand:
   - dr-disco
   - detect
 label: dr-disco_detect
-doc: "Detects potential discoidin domains in BAM input files.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
+doc: "Detects and interprets intronic break points.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
 inputs:
   - id: bam_input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input BAM file
     inputBinding:
       position: 1
@@ -31,6 +34,12 @@ outputs:
     doc: Output file
     outputBinding:
       glob: '$(inputs.output_file)'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0

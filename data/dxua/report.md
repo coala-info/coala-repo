@@ -1,5 +1,11 @@
 # dxua CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dxua | Not completed | needs a DNAnexus login token and project; the image has no CA bundle, so a certificate_file input was added, and with it the upload reaches the DNAnexus server, which rejects the placeholder token. |
+
 ## dxua
 
 ### Tool Description

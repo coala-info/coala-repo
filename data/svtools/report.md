@@ -3,7 +3,7 @@
 ## Metadata
 - **Skill**: generated
 
-## svtools_svtools vcftobedpe
+## svtools_svtools_vcftobedpe
 
 ### Tool Description
 Convert a VCF file to a BEDPE file

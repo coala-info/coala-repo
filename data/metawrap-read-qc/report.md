@@ -1,6 +1,6 @@
 # metawrap-read-qc CWL Generation Report
 
-## metawrap-read-qc_metawrap read_qc
+## metawrap-read-qc_metawrap_read_qc
 
 ### Tool Description
 Performs quality control on raw sequencing reads.

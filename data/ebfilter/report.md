@@ -1,5 +1,11 @@
 # ebfilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ebfilter_EBFilter | Failed | image problem: the image lacks the vcfpy Python module and the samtools program, so both the VCF and annovar modes crash. |
+
 ## ebfilter_EBFilter
 
 ### Tool Description

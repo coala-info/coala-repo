@@ -8,11 +8,21 @@ doc: "Convert BAM files to DM format for methylation ratio and chromatin accessi
   analysis.\n\nTool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
   - id: binput
-    type: File
-    doc: Bam format file, sorted by chrom.
+    type:
+      - 'null'
+      - File
+    doc: Bam format file, sorted by chrom. Give this or sam_input.
     inputBinding:
       position: 101
       prefix: --binput
+  - id: sam_input
+    type:
+      - 'null'
+      - File
+    doc: Sam format file, sorted by chrom. Give this or binput.
+    inputBinding:
+      position: 101
+      prefix: --input
   - id: context_filter
     type:
       - 'null'
@@ -88,7 +98,7 @@ inputs:
     doc: Prefix of methratio.dm output file
     inputBinding:
       position: 101
-      prefix: --out
+      prefix: -o
   - id: print_context
     type:
       - 'null'

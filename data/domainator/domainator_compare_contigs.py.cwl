@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: domainator_compare_contigs.py
+baseCommand: compare_contigs.py
 label: domainator_compare_contigs.py
 doc: "Calculates similarity metrics for gene neighborhoods\n\nTool homepage: https://github.com/nebiolabs/domainator"
 inputs:
@@ -52,7 +52,7 @@ inputs:
   - id: dense_matrix_hdf5
     type:
       - 'null'
-      - File
+      - string
     doc: Write a dense distance matrix hdf5 file to this path.
     inputBinding:
       position: 101
@@ -60,7 +60,7 @@ inputs:
   - id: dense_matrix_tsv
     type:
       - 'null'
-      - File
+      - string
     doc: Write a dense distance matrix tsv file to this path.
     inputBinding:
       position: 101
@@ -106,7 +106,7 @@ inputs:
   - id: sparse_matrix_hdf5
     type:
       - 'null'
-      - File
+      - string
     doc: Write a sparse distance matrix hdf5 file to this path.
     inputBinding:
       position: 101
@@ -120,6 +120,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: -k
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: "Name of genbank output, contigs will be sorted hierarchically within the
+      output genbank. If not supplied then no genbank output will be generated."
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -129,7 +138,28 @@ outputs:
       output genbank. If not supplied then no genbank output will be generated. To
       write to stdout, use '-'. default: None"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+  - id: dense_matrix_hdf5_out
+    type:
+      - 'null'
+      - File
+    doc: dense distance matrix hdf5 file
+    outputBinding:
+      glob: $(inputs.dense_matrix_hdf5)
+  - id: dense_matrix_tsv_out
+    type:
+      - 'null'
+      - File
+    doc: dense distance matrix tsv file
+    outputBinding:
+      glob: $(inputs.dense_matrix_tsv)
+  - id: sparse_matrix_hdf5_out
+    type:
+      - 'null'
+      - File
+    doc: sparse distance matrix hdf5 file
+    outputBinding:
+      glob: $(inputs.sparse_matrix_hdf5)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/domainator:0.8.1--pyhdfd78af_0

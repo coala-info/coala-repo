@@ -1,5 +1,11 @@
 # dnp-mapping CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnp-mapping | PASS |  |
+
 ## dnp-mapping
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # duet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| duet | Failed | image problem: bcftools in the image cannot load libcrypto.so.1.0.0, so SNP phasing fails and phased_sv.vcf has no calls. |
+
 ## duet
 
 ### Tool Description

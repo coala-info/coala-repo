@@ -1,30 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-bio_summarize-uniprot-entries
+baseCommand:
+  - dsh-summarize-uniprot-entries
 label: dsh-bio_summarize-uniprot-entries
-doc: "Summarizes UniProt entries from XML files.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
+doc: "summarize UniProt entries in XML format\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: uniprot_xml_files
-    type:
-      type: array
-      items: File
-    doc: One or more UniProt XML files to process.
-    inputBinding:
-      position: 1
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+  - id: input_uniprot_xml_path
+    type: File
+    doc: "input UniProt XML path, default stdin"
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: --input-uniprot-xml-path
+  - id: output_summary_file_path
+    type: string
+    doc: "output summary file, default stdout"
+    inputBinding:
+      position: 101
+      prefix: --output-summary-file
 outputs:
-  - id: output_file
+  - id: output_summary_file
     type:
       - 'null'
       - File
-    doc: The file to write the summary to. Defaults to standard output.
+    doc: "output summary file, default stdout"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_summary_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

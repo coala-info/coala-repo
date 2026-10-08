@@ -1,5 +1,11 @@
 # eklipse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eklipse_eKLIPse.py | Failed | image problem: eKLIPse 1.8 is Python 2 code run under Python 3.13 and crashes with NameError: name 'split' is not defined, then hangs on its spinner thread. |
+
 ## eklipse_eKLIPse.py
 
 ### Tool Description

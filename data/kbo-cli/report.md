@@ -33,7 +33,7 @@ Options:
 ```
 
 
-## kbo-cli_kbo call
+## kbo-cli_kbo_call
 
 ### Tool Description
 Call variants using k-mer based approach.
@@ -77,7 +77,7 @@ Build options:
 ```
 
 
-## kbo-cli_kbo find
+## kbo-cli_kbo_find
 
 ### Tool Description
 Finds sequences in query files based on a reference or index.
@@ -129,7 +129,7 @@ Build options:
 ```
 
 
-## kbo-cli_kbo map
+## kbo-cli_kbo_map
 
 ### Tool Description
 Map sequence data against a reference.
@@ -180,7 +180,7 @@ Build options:
 ```
 
 
-## kbo-cli_kbo build
+## kbo-cli_kbo_build
 
 ### Tool Description
 Build a k-mer index

@@ -172,17 +172,13 @@ inputs:
       position: 101
       prefix: --precision_digits
   - id: psm
-    type:
-      type: array
-      items: File
-    doc: The input psm.tsv file or a list of psm.tsv files.
+    type: File
+    doc: The input psm.tsv file (its name must end with psm.tsv).
     inputBinding:
       position: 101
       prefix: --psm
   - id: spectra
-    type:
-      type: array
-      items: File
+    type: File
     doc: The input mzXML or MGF (timsTOF only) file.
     inputBinding:
       position: 101
@@ -218,14 +214,14 @@ outputs:
       - File
     doc: Output PSMs file.
     outputBinding:
-      glob: $(inputs.psms_path)
+      glob: '$(inputs.psms_path ? inputs.psms_path : "*.psmpkl")'
   - id: peaks
     type:
       - 'null'
       - File
     doc: Output peaks file.
     outputBinding:
-      glob: $(inputs.peaks_path)
+      glob: '$(inputs.peaks_path ? inputs.peaks_path : "*.peakpkl")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

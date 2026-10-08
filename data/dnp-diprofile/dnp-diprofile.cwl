@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: diprofile
+baseCommand: dnp-diprofile
 label: dnp-diprofile
 doc: "This program computes a profile of a frequency of occurrence of the dinucleotide
   in a batch of fasta sequences aligned by their start position.\n\nTool homepage:
@@ -48,7 +48,7 @@ inputs:
   - id: version_check
     type:
       - 'null'
-      - boolean
+      - string
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
     inputBinding:

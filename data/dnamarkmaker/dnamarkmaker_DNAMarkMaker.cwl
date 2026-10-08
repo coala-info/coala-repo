@@ -9,6 +9,8 @@ inputs:
       - 'null'
       - File
     doc: Full path of A bam
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --Abam
@@ -25,6 +27,8 @@ inputs:
       - 'null'
       - File
     doc: Full path of B bam
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --Bbam
@@ -47,7 +51,7 @@ inputs:
   - id: b_sim
     type:
       - 'null'
-      - string
+      - File
     doc: B simulation file
     inputBinding:
       position: 101
@@ -57,13 +61,15 @@ inputs:
       - 'null'
       - File
     doc: Full path of C bam
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --Cbam
   - id: c_sim
     type:
       - 'null'
-      - string
+      - File
     doc: C simulation file
     inputBinding:
       position: 101
@@ -197,8 +203,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --work
+  - id: previous_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory of an earlier step (target_SNP_selection or 
+      ARMS_preparation); it is copied to output_dir_path so that CAPS, 
+      ARMS_preparation, tri_ARMS and tetra_ARMS can continue from it
   - id: output_dir_path
     type: string
+    doc: Output directory
     inputBinding:
       position: 102
       prefix: --output_dir
@@ -212,6 +226,11 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.previous_output_dir)
+        entryname: $(inputs.output_dir_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dnamarkmaker:1.0--pyhdfd78af_0

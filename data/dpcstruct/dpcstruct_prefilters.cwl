@@ -13,26 +13,34 @@ inputs:
       position: 101
       prefix: -i
   - id: gaps_threshold
-    type: float
-    doc: Gaps threshold
+    type:
+      - 'null'
+      - float
+    doc: 'Gaps threshold (default: 0.2)'
     inputBinding:
       position: 101
       prefix: -g
   - id: lddt_threshold
-    type: float
-    doc: LDDT threshold
+    type:
+      - 'null'
+      - float
+    doc: 'LDDT threshold (default: 0.4)'
     inputBinding:
       position: 101
       prefix: -l
   - id: plddt_threshold
-    type: float
-    doc: PLDDT threshold
+    type:
+      - 'null'
+      - float
+    doc: 'PLDDT threshold (default: 60.0)'
     inputBinding:
       position: 101
       prefix: -q
   - id: plddts
-    type: Directory
-    doc: path to PLDDTs directory
+    type:
+      - 'null'
+      - Directory
+    doc: path to PLDDTs directory (optional; the pLDDT filter is skipped without it)
     inputBinding:
       position: 101
       prefix: -p
@@ -43,21 +51,23 @@ inputs:
       position: 101
       prefix: -m
   - id: tm_threshold
-    type: float
-    doc: TM-score threshold
+    type:
+      - 'null'
+      - float
+    doc: 'TM-score threshold (default: 0.4)'
     inputBinding:
       position: 101
       prefix: -t
   - id: output_path
     type: string
-    doc: output directory
+    doc: output file of filtered alignments (the help calls it a directory, but the tool writes one file)
     inputBinding:
       position: 102
       prefix: -o
 outputs:
   - id: output
-    type: Directory
-    doc: output directory
+    type: File
+    doc: filtered alignments file
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

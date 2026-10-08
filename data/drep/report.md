@@ -1,36 +1,13 @@
 # drep CWL Generation Report
 
-## drep_dRep check_dependencies
+## Real Data Test
 
-### Tool Description
-Check dependencies for dRep
+| Tool | Result | Reason |
+|---|---|---|
+| drep_dRep_compare | PASS |  |
+| drep_dRep_dereplicate | PASS |  |
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/drep:3.6.2--pyhdfd78af_0
-- **Homepage**: https://github.com/MrOlm/drep
-- **Package**: https://anaconda.org/channels/bioconda/packages/drep/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/drep/overview
-- **Total Downloads**: 99.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/MrOlm/drep
-- **Stars**: N/A
-### Original Help Text
-```text
-mash.................................... all good        (location = /usr/local/bin/mash)
-nucmer.................................. all good        (location = /usr/local/bin/nucmer)
-checkm.................................. all good        (location = /usr/local/bin/checkm)
-ANIcalculator........................... !!! ERROR !!!   (location = None)
-prodigal................................ all good        (location = /usr/local/bin/prodigal)
-centrifuge.............................. !!! ERROR !!!   (location = None)
-nsimscan................................ !!! ERROR !!!   (location = None)
-fastANI................................. all good        (location = /usr/local/bin/fastANI)
-skani................................... all good        (location = /usr/local/bin/skani)
-```
-
-
-## drep_dRep compare
+## drep_dRep_compare
 
 ### Tool Description
 Compare genomes to find similar ones
@@ -165,7 +142,7 @@ Example: dRep compare output_dir/ -g /path/to/genomes/*.fasta
 ```
 
 
-## drep_dRep dereplicate
+## drep_dRep_dereplicate
 
 ### Tool Description
 Dereplicate genomes based on ANI and other quality metrics.

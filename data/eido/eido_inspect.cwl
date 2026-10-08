@@ -4,8 +4,20 @@ baseCommand:
   - eido
   - inspect
 label: eido_inspect
-doc: "Inspect a PEP\n\nTool homepage: https://github.com/mayneyao/eidos"
+doc: "Inspect a PEP\n\nTool homepage: https://github.com/pepkit/eido"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pep)
+      - $(inputs.pep_files)
 inputs:
+  - id: pep_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files the PEP configuration names (sample table, subsample table); 
+      staged beside the configuration so its relative paths resolve
   - id: pep
     type: File
     doc: Path to a PEP configuration file in yaml format.

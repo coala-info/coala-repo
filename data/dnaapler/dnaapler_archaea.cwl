@@ -42,6 +42,7 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
+    default: dnaapler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -81,9 +82,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_directory_path)/$(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+    dockerPull: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0

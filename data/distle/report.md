@@ -1,5 +1,11 @@
 # distle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| distle | PASS |  |
+
 ## distle
 
 ### Tool Description

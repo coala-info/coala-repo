@@ -39,7 +39,7 @@ Options:
 ```
 
 
-## savvy_sav import
+## savvy_sav_import
 
 ### Tool Description
 Import data into SAV format
@@ -76,7 +76,7 @@ Usage: sav import [opts ...] [in.sav] [out.{vcf,vcf.gz,sav}]
 ```
 
 
-## savvy_sav export
+## savvy_sav_export
 
 ### Tool Description
 Export SAV data to VCF, VCF.GZ, or SAV format.
@@ -114,7 +114,7 @@ Usage: sav export [opts ...] [in.sav] [out.{vcf,vcf.gz,sav}]
 ```
 
 
-## savvy_sav concat
+## savvy_sav_concat
 
 ### Tool Description
 Concatenates SAV files.
@@ -135,7 +135,7 @@ Usage: sav concat [opts ...] <first.sav> <second.sav> [addl_files.sav ...]
 ```
 
 
-## savvy_sav head
+## savvy_sav_head
 
 ### Tool Description
 Print headers or sample IDs from a Savvy file
@@ -157,7 +157,7 @@ Usage: sav head [opts ...] <in.sav>
 ```
 
 
-## savvy_sav rehead
+## savvy_sav_rehead
 
 ### Tool Description
 Replace headers in a SAV file.
@@ -179,7 +179,7 @@ Or: sav rehead [opts ...] -i <sample_ids_file> <in.sav> <out.sav>
 ```
 
 
-## savvy_sav stat
+## savvy_sav_stat
 
 ### Tool Description
 Too few arguments
@@ -199,7 +199,7 @@ Usage: sav stat [opts ...] <in.sav>
 ```
 
 
-## savvy_sav stat-index
+## savvy_sav_stat-index
 
 ### Tool Description
 Index a SAV file for fast random access.
@@ -219,7 +219,7 @@ Usage: sav stat-index [opts ...] <in.sav>
 ```
 
 
-## savvy_sav sort
+## savvy_sav_sort
 
 ### Tool Description
 Sorts a SAV file.

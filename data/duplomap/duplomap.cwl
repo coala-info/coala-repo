@@ -50,7 +50,9 @@ inputs:
   - id: database
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: Database file or directory (multiple entries allowed).
     inputBinding:
       position: 101
@@ -126,6 +128,13 @@ inputs:
       prefix: --gt-prior
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input reads in the sorted and indexed bam format.
     inputBinding:
       position: 101
@@ -317,6 +326,23 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: realigned_bam
+    type:
+      - 'null'
+      - File
+    doc: Sorted and indexed realigned reads.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    outputBinding:
+      glob: $(inputs.output_dir_path)/realigned.bam
+  - id: psvs_vcf
+    type:
+      - 'null'
+      - File
+    doc: Genotyped paralogous sequence variants.
+    outputBinding:
+      glob: $(inputs.output_dir_path)/psvs.vcf.gz
 requirements:
   - class: InlineJavascriptRequirement
 hints:

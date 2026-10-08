@@ -206,9 +206,27 @@ outputs:
     type:
       - 'null'
       - File
-    doc: output file
+    doc: k-mer counts in HDF5 format (<out>.h5, or <reads basename>.h5 in the 
+      output directory)
     outputBinding:
-      glob: $(inputs.out)
+      glob: "${ var d = inputs.out_dir ? inputs.out_dir + '/' : ''; return inputs.out
+        ? inputs.out + '.h5' : d + '*.h5'; }"
+  - id: histo_out
+    type:
+      - 'null'
+      - File
+    doc: k-mer abundance histogram (written when -histo is set)
+    outputBinding:
+      glob: "${ var d = inputs.out_dir ? inputs.out_dir + '/' : ''; return inputs.out
+        ? inputs.out + '.histo' : d + '*.histo'; }"
+  - id: kff_out
+    type:
+      - 'null'
+      - File
+    doc: k-mers in kff format (written when -kff is set)
+    outputBinding:
+      glob: "${ var d = inputs.out_dir ? inputs.out_dir + '/' : ''; return (inputs.out
+        ? '' : d) + '*.kff'; }"
   - id: solid_kmers_out_out
     type:
       - 'null'
@@ -223,6 +241,8 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsk:2.3.3--h5ca1c30_7

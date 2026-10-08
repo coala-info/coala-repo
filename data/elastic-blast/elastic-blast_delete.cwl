@@ -5,6 +5,10 @@ baseCommand:
   - delete
 label: elastic-blast_delete
 doc: "Deletes an ElasticBLAST job.\n\nTool homepage: https://pypi.org/project/elastic-blast/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: aws_region
     type:
@@ -57,8 +61,8 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
-    doc: 'Default: elastic-blast.log'
+      - string
+    doc: 'Log file name. Default: elastic-blast.log'
     inputBinding:
       position: 101
       prefix: --logfile
@@ -82,6 +86,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: ElasticBLAST log file
+    outputBinding:
+      glob: "$(inputs.logfile ? inputs.logfile : 'elastic-blast.log')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/elastic-blast:1.5.0--pyhdfd78af_0

@@ -149,7 +149,7 @@ Available sub-commands/plugins:
 ```
 
 
-## pygtftk_gtftk get_example
+## pygtftk_gtftk_get_example
 
 ### Tool Description
 Print example files including GTF.
@@ -195,7 +195,7 @@ Command-wise optional arguments:
 ```
 
 
-## pygtftk_gtftk get_tx_seq
+## pygtftk_gtftk_get_tx_seq
 
 ### Tool Description
 Get transcripts sequences in a flexible fasta format from a GTF file.

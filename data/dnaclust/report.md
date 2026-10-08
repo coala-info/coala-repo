@@ -1,5 +1,11 @@
 # dnaclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnaclust | PASS |  |
+
 ## dnaclust
 
 ### Tool Description

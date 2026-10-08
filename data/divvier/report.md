@@ -1,5 +1,11 @@
 # divvier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| divvier | PASS |  |
+
 ## divvier
 
 ### Tool Description

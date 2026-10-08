@@ -1,5 +1,11 @@
 # dvorfs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dvorfs | Failed | image problem: gawk is missing from the image, so the windowing step crashes after the HMMER presearch and no hits table is written. |
+
 ## dvorfs
 
 ### Tool Description

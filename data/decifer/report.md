@@ -5,6 +5,8 @@
 | Tool | Result | Reason |
 |---|---|---|
 | decifer | Failed | image problem: decifer fails at import with ModuleNotFoundError: No module named sklearn. |
+| decifer_generatestatetrees | PASS |  |
+| decifer_mergestatetrees | PASS |  |
 
 ## decifer
 
@@ -94,5 +96,60 @@ options:
                         cluster center VAF (default 1.5)
   --silhouette          Beta: select the number of clusters using a silhouette
                         score
+```
+
+## decifer_generatestatetrees
+
+### Tool Description
+Generate DeCiFer state trees for sets of copy-number states.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/decifer:2.1.4--py312hf731ba3_4
+- **Homepage**: https://github.com/raphael-group/decifer
+- **Package**: https://anaconda.org/channels/bioconda/packages/decifer/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/decifer/overview
+- **Total Downloads**: 59.9K
+- **Last updated**: 2025-09-21
+- **GitHub**: https://github.com/raphael-group/decifer
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage:
+  generatestatetrees [--help|-h|-help] [-S str] [-SS str] [-maxCN int]
+     [-maxXY int]
+Where:
+  --help|-h|-help
+     Print a short help message
+  -S str
+     Input state tree file
+  -SS str
+     Output state tree file
+  -maxCN int
+     Maximum number of copy number events (default: 2)
+  -maxXY int
+     Maximum number of maternal/paternal copies (default: 2)
+```
+
+## decifer_mergestatetrees
+
+### Tool Description
+Merge DeCiFer state tree files (Usage: mergestatetrees <state_tree_file_1> ... <state_tree_file_n>).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/decifer:2.1.4--py312hf731ba3_4
+- **Homepage**: https://github.com/raphael-group/decifer
+- **Package**: https://anaconda.org/channels/bioconda/packages/decifer/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/decifer/overview
+- **Total Downloads**: 59.9K
+- **Last updated**: 2025-09-21
+- **GitHub**: https://github.com/raphael-group/decifer
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: mergestatetrees <state_tree_file_1> ... <state_tree_file_n>
 ```
 

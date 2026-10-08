@@ -249,7 +249,7 @@ optional arguments:
 ## Metadata
 - **Skill**: generated
 
-## prophyle_prophyle classify
+## prophyle_prophyle_classify
 
 ### Tool Description
 Classify reads using a prophyle index.

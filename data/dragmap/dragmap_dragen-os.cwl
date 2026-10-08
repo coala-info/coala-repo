@@ -1,19 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dragenos
+baseCommand: dragen-os
 label: dragmap_dragen-os
-doc: "Command line options:\n\nTool homepage: https://github.com/Illumina/DRAGMAP"
+doc: "DRAGEN open-source mapper: builds a reference hash table or maps reads to it (SAM output).\n\nTool homepage: https://github.com/Illumina/DRAGMAP"
 inputs:
-  - id: reference
-    type: string
-    doc: Reference
-    inputBinding:
-      position: 1
-  - id: base_calls
-    type: string
-    doc: Base calls
-    inputBinding:
-      position: 2
   - id: bam_input
     type:
       - 'null'
@@ -371,7 +361,7 @@ inputs:
   - id: ht_uncompress
     type:
       - 'null'
-      - boolean
+      - int
     doc: Uncompress hash_table.cmp to hash_table.bin and extend_table.bin 
       (standalone option)
     inputBinding:
@@ -648,13 +638,6 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_file_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_file_prefix
-    outputBinding:
-      glob: $(inputs.output_file_prefix)*
   - id: output_directory_dir
     type:
       - 'null'
@@ -662,6 +645,11 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ if (inputs.output_directory) { return {class: "Directory", basename: inputs.output_directory, listing: [], writable: true}; } return []; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dragmap:1.3.0--h5ca1c30_7

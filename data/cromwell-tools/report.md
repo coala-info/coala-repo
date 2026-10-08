@@ -4,15 +4,15 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| cromwell-tools_abort | Not completed | needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL). |
-| cromwell-tools_health | Not completed | needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL). |
-| cromwell-tools_metadata | Not completed | needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL). |
+| cromwell-tools_abort | Not completed | skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server |
+| cromwell-tools_health | Not completed | skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server |
+| cromwell-tools_metadata | Not completed | skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server |
 | cromwell-tools_query | Failed | tool bug: the query command is not implemented in the CLI and crashes with a TypeError on any call. |
-| cromwell-tools_release_hold | Not completed | needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL). |
-| cromwell-tools_status | Not completed | needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL). |
-| cromwell-tools_submit | Not completed | needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL). |
+| cromwell-tools_release_hold | Not completed | skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server |
+| cromwell-tools_status | Not completed | skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server |
+| cromwell-tools_submit | Not completed | skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server |
 | cromwell-tools_task_runtime | Not completed | needs Google Cloud metadata and a Google service account key to look up machine types (networkAccess added to the CWL). |
-| cromwell-tools_wait | Not completed | needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL). |
+| cromwell-tools_wait | Not completed | skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server |
 
 ## cromwell-tools_submit
 

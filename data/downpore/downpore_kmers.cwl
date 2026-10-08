@@ -1,54 +1,105 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: downpore_kmers
+baseCommand:
+  - downpore
+  - kmers
 label: downpore_kmers
-doc: "Compute k-mers from a FASTQ file.\n\nTool homepage: https://github.com/jteutenberg/downpore"
+doc: "Measures per-k-mer read accuracy from reads aligned to a reference (SAM) and
+  writes heatmaps of accuracy against k-mer order, base quality, strand balance and
+  (with training data) trained accuracy. Heatmap files are named after the SAM file:
+  <alignment>_lex_<k>.txt, <alignment>_qual_<k>.txt, <alignment>_bal_<k>.txt,
+  <alignment>_train_<k>.txt. Summary statistics go to stdout.\n\nTool homepage: https://github.com/jteutenberg/downpore"
 inputs:
-  - id: input_fastq
+  - id: input
     type: File
-    doc: Input FASTQ file
+    doc: Reads input file (fasta/fastq, one line per sequence)
     inputBinding:
-      position: 1
+      position: 101
+      prefix: -input
+  - id: alignment
+    type: File
+    doc: SAM input file with the reads aligned to the reference
+    inputBinding:
+      position: 101
+      prefix: -alignment
+      valueFrom: $(self.basename)
+  - id: reference
+    type: File
+    doc: Reference fasta file (one line per sequence)
+    inputBinding:
+      position: 101
+      prefix: -reference
+  - id: training
+    type:
+      - 'null'
+      - File
+    doc: Training input file
+    inputBinding:
+      position: 101
+      prefix: -training
+  - id: training_alignment
+    type:
+      - 'null'
+      - File
+    doc: SAM training file
+    inputBinding:
+      position: 101
+      prefix: -training_alignment
+  - id: training_ref
+    type:
+      - 'null'
+      - File
+    doc: Training reference fasta file
+    inputBinding:
+      position: 101
+      prefix: -training_ref
   - id: k
     type:
       - 'null'
       - int
-    doc: k-mer size
+    doc: K-mer size (default 10)
     inputBinding:
-      position: 102
-      prefix: --k
-  - id: threads
+      position: 101
+      prefix: -k
+  - id: map_size
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: Dimensions for heatmaps (default 100; used when k is 8 or less)
     inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
+      position: 101
+      prefix: -map_size
+  - id: num_workers
     type:
       - 'null'
-      - boolean
-    doc: Enable verbose output
+      - int
+    doc: Number of worker threads to use (default 4)
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 101
+      prefix: -num_workers
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Name of the file that receives the summary statistics written to stdout
+    default: downpore_kmers.log
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file for k-mer counts
+  - id: heatmaps
+    type: File[]
+    doc: Heatmap files (x y count per line) written beside the SAM file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.alignment.basename)_*_*.txt
+  - id: log_file
+    type: File
+    doc: Summary statistics (means, correlations) printed by the tool
+    outputBinding:
+      glob: $(inputs.log_file_path)
+stdout: $(inputs.log_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.alignment)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/downpore:0.3.4--h375a9b1_0

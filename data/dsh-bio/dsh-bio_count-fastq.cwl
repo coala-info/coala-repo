@@ -4,14 +4,6 @@ baseCommand: dsh-count-fastq
 label: dsh-bio_count-fastq
 doc: "Count FASTQ reads\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_fastq_path
     type:
       - 'null'

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-bio_reassemble-paths
+baseCommand: dsh-reassemble-paths
 label: dsh-bio_reassemble-paths
 doc: "Reassemble paths from a GFA file.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:

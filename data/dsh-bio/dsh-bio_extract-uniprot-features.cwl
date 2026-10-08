@@ -1,49 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-bio_extract-uniprot-features
+baseCommand:
+  - dsh-extract-uniprot-features
 label: dsh-bio_extract-uniprot-features
-doc: "Extracts features from UniProt XML entries.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
+doc: "extract protein features from UniProt XML format\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: uniprot_xml_file
+  - id: input_uniprot_xml_path
     type: File
-    doc: Path to the UniProt XML file.
+    doc: "input UniProt XML path, default stdin"
     inputBinding:
-      position: 1
-  - id: feature_types
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: A comma-separated list of feature types to extract (e.g., 
-      'DOMAIN,REGION,MOTIF'). If not specified, all feature types will be 
-      extracted.
-    inputBinding:
-      position: 102
-      prefix: --feature-types
-      itemSeparator: ','
-  - id: include_comments
-    type:
-      - 'null'
-      - boolean
-    doc: Include comments in the output.
-    inputBinding:
-      position: 102
-      prefix: --include-comments
-  - id: output_file_path
+      position: 101
+      prefix: --input-uniprot-xml-path
+  - id: output_feature_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: "output feature file, default stdout"
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 101
+      prefix: --output-feature-file
 outputs:
-  - id: output_file
+  - id: output_feature_file
     type:
       - 'null'
       - File
-    doc: Path to the output file for extracted features. If not specified, 
-      features will be printed to standard output.
+    doc: "output feature file, default stdout"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_feature_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # elastix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| elastix | PASS |  |
+
 ## elastix
 
 ### Tool Description

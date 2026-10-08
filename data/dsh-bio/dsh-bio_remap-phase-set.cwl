@@ -4,14 +4,6 @@ baseCommand: dsh-remap-phase-set
 label: dsh-bio_remap-phase-set
 doc: "Remaps phase sets in a VCF file.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_vcf_path
     type:
       - 'null'

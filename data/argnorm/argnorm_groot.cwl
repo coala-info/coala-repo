@@ -2,17 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - argnorm
+  - groot
 label: argnorm_groot
 doc: "argNorm normalizes ARG annotation results from different tools and databases
   to the same ontology, namely ARO (Antibiotic Resistance Ontology).\n\nTool homepage:
   https://github.com/BigDataBiology/argNorm"
 inputs:
-  - id: tool
-    type: string
-    doc: The bioinformatics tool used for ARG annotation (argsoap, abricate, 
-      deeparg, resfinder, amrfinderplus, groot, hamronization).
-    inputBinding:
-      position: 1
   - id: db
     type:
       - 'null'

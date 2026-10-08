@@ -1,5 +1,11 @@
 # ectyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ectyper | PASS |  |
+
 ## ectyper
 
 ### Tool Description

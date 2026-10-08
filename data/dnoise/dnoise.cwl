@@ -201,17 +201,21 @@ outputs:
   - id: csv_output
     type:
       - 'null'
-      - File
-    doc: common path for csv format
+      - type: array
+        items: File
+    doc: files written with the common csv output path as prefix 
+      (<path>_denoised_*.csv, <path>_denoising_info.csv, ...)
     outputBinding:
-      glob: $(inputs.csv_output_path)
+      glob: $(inputs.csv_output_path + '*')
   - id: fasta_output
     type:
       - 'null'
-      - File
-    doc: common path for fasta format
+      - type: array
+        items: File
+    doc: files written with the common fasta output path as prefix 
+      (<path>_denoised_*.fasta, <path>_denoising_info.csv, ...)
     outputBinding:
-      glob: $(inputs.fasta_output_path)
+      glob: $(inputs.fasta_output_path + '*')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

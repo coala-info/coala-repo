@@ -1,5 +1,14 @@
 # ebisearch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ebisearch_get_domains | PASS |  |
+| ebisearch_get_entries | PASS |  |
+| ebisearch_get_fields | PASS |  |
+| ebisearch_get_query_results | PASS |  |
+
 ## ebisearch_get_domains
 
 ### Tool Description

@@ -102,6 +102,9 @@ outputs:
     doc: Output directory for results
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ebolaseq:0.1.6--pyhdfd78af_0

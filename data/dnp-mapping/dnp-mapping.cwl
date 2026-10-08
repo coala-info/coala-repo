@@ -5,25 +5,21 @@ label: dnp-mapping
 doc: "Mapping DNA sequence by pattern matrix CC\n\nTool homepage: https://github.com/erinijapranckeviciene/mapping_CC"
 inputs:
   - id: input_pattern
-    type:
-      - 'null'
-      - string
-    doc: input pattern
+    type: File
+    doc: input pattern (mono or dinucleotide matrix, e.g. AATT_human.mtr)
     inputBinding:
       position: 101
       prefix: -m
   - id: input_sequence
-    type:
-      - 'null'
-      - string
-    doc: input sequence
+    type: File
+    doc: input sequence in one-line seq format
     inputBinding:
       position: 101
       prefix: -s
   - id: sigma
     type:
       - 'null'
-      - float
+      - int
     doc: sigma (recomend 1 - 5, 0 average)
     inputBinding:
       position: 101

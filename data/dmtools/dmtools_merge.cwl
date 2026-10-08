@@ -10,10 +10,11 @@ inputs:
     type:
       type: array
       items: File
-    doc: input DM files
+    doc: input DM files, joined with commas
     inputBinding:
       position: 101
       prefix: -i
+      itemSeparator: ','
   - id: max_coverage
     type:
       - 'null'

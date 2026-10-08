@@ -15,7 +15,9 @@ inputs:
       position: 101
       prefix: -b
   - id: custom_blast_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: "Alignment/mapping file in custom BLAST format. The required columns and
       their order are: 'qseqid', 'sseqid', 'slen', 'sstart', 'evalue'. Additional
       columns are ignored. Example command for creating appropriate file with diamond:
@@ -41,7 +43,7 @@ inputs:
   - id: debug_plots_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to directory for writing debug plots to.
     inputBinding:
       position: 101
@@ -82,7 +84,9 @@ inputs:
       position: 101
       prefix: -o
   - id: sam_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Alignment/mapping file in SAM format. DUDes does not depend on any 
       specific read mapper, but it requires header information (@SQ 
       SN:gi|556555098|ref|NC_022650.1| LN:55956) and mismatch information (check
@@ -127,6 +131,13 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+  - id: debug_plots
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with debug plots
+    outputBinding:
+      glob: $(inputs.debug_plots_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dudes:0.10.0--pyhdfd78af_0

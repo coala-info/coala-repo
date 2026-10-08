@@ -4,7 +4,7 @@ baseCommand:
   - dr-disco
   - subtract
 label: dr-disco_subtract
-doc: "Subtracts alignments from another alignment file.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
+doc: "Subtract chimeric SAM/BAM alignment produced by RNA-STAR v2.6 or higher.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
 inputs:
   - id: input_alignment_file
     type: File
@@ -28,6 +28,9 @@ outputs:
   - id: out_output_alignment_file
     type: File
     doc: Output alignment file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     outputBinding:
       glob: '$(inputs.output_alignment_file)'
 hints:

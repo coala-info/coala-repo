@@ -409,8 +409,10 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
-    doc: Where output files should be written
+      - string
+    doc: Where output files should be written (created in the working 
+      directory; the tool default /tmp is not collected)
+    default: .
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -751,7 +753,17 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_dir)/$(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (inputs.output_dir && inputs.output_dir != '.') {
+          return [{class: 'Directory', basename: inputs.output_dir, listing: [], writable: true}];
+        }
+        return [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eggnog-mapper:2.1.13--pyhdfd78af_2

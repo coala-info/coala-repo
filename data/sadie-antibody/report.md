@@ -33,7 +33,7 @@ Commands:
 ```
 
 
-## sadie-antibody_sadie airr
+## sadie-antibody_sadie_airr
 
 ### Tool Description
 Run the AIRR annotation pipeline from the command line on a single file or a directory of abi files.
@@ -71,7 +71,7 @@ Options:
 ```
 
 
-## sadie-antibody_sadie renumbering
+## sadie-antibody_sadie_renumbering
 
 ### Tool Description
 Renumber antibody sequences based on specified schemes and regions.

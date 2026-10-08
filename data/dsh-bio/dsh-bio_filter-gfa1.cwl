@@ -4,14 +4,6 @@ baseCommand: dsh-filter-gfa1
 label: dsh-bio_filter-gfa1
 doc: "Filter GFA1 files based on various criteria.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: fragment_count
     type:
       - 'null'

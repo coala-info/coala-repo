@@ -37,7 +37,7 @@ options:
   --list      Display list of supported single-cell technologies
 ```
 
-## kb-python_kb ref
+## kb-python_kb_ref
 
 ### Tool Description
 Build a kallisto index and transcript-to-gene mapping
@@ -119,7 +119,7 @@ required arguments for `nac` workflow:
   -c2 T2C               Path to generate unprocessed transcripts-to-capture
 ```
 
-## kb-python_kb count
+## kb-python_kb_count
 
 ### Tool Description
 Generate count matrices from a set of single-cell FASTQ files. Run `kb --list`
@@ -278,7 +278,7 @@ optional arguments for `BULK` and `SMARTSEQ2` technologies:
                         across multiple directories
 ```
 
-## kb-python_kb --list
+## kb-python_kb_--list
 
 ### Tool Description
 List of supported single-cell technologies

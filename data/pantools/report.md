@@ -1154,7 +1154,7 @@ command explanation in browser.
 ## Metadata
 - **Skill**: generated
 
-## pantools_pantools build
+## pantools_pantools_build
 
 ### Tool Description
 Path to the database root directory.
@@ -1392,7 +1392,7 @@ pantools COMMAND --help; or call pantools COMMAND --manual to open the detailed
 command explanation in browser.
 ```
 
-## pantools_pantools analyze
+## pantools_pantools_analyze
 
 ### Tool Description
 Path to the database root directory.

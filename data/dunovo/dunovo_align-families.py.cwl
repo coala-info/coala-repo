@@ -117,11 +117,16 @@ inputs:
       position: 102
       prefix: --verbose
   - id: log_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 103
       prefix: --log-file
 outputs:
+  - id: msa_tsv
+    type: stdout
+    doc: Aligned families (families.msa.tsv)
   - id: log_file
     type:
       - 'null'
@@ -135,3 +140,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4
+stdout: families.msa.tsv

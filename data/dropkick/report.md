@@ -1,5 +1,12 @@
 # dropkick CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dropkick_qc | PASS |  |
+| dropkick_run | PASS |  |
+
 ## dropkick_run
 
 ### Tool Description

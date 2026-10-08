@@ -4,6 +4,17 @@
 
 | Tool | Result | Reason |
 |---|---|---|
+| conduit-assembler_conduitUtils_bed2gtf | PASS | Converted the nf-core chr22 genome.bed12 (trailing commas removed, which the parser cannot read); exon coordinates match genome.gtf exactly. |
+| conduit-assembler_conduitUtils_callNonCanonical | PASS | On bedtools getfasta intron sequences from the yeast data, it reports exactly the two non GT-AG introns (TRN1 and SUP56 tRNA introns). |
+| conduit-assembler_conduitUtils_callNovelNonCanonical | PASS | Yeast intron IDs with read counts added to the names: against the full yeast GTF 0 novel, against the GTF without SNC1 exactly the SNC1 intron; the intron with 2 reads is skipped. |
+| conduit-assembler_conduitUtils_callOverlapping | PASS | Comparing all 5 yeast intron IDs with the 4 plus-strand ones reports 4 shared and 1 non-overlapping intron, as expected. |
+| conduit-assembler_conduitUtils_compareBLASTP | Failed | tool bug: same BLASTP parser as parseBLASTP; on BLAST+ 2.17 default output of 21 matched proteins it reports TP 0 after 'ERROR PARSING BLASTP OUTPUT'. |
+| conduit-assembler_conduitUtils_compareFASTA | PASS | Compared CONDUIT proteins translated with min length 75 (query) and 50 (reference): TP 23, FP 0, FN 3, as counted independently. |
+| conduit-assembler_conduitUtils_extractIntrons | PASS | Extracted the 5 introns of the nf-core yeast genome_gfp.bed12; e.g. the SNC1 intron 87387-87500 lies exactly between its GTF exons. |
+| conduit-assembler_conduitUtils_filterFASTA | PASS | Kept the 8 CONDUIT consensus records with at least 5 supporting reads, as counted independently. |
+| conduit-assembler_conduitUtils_parseBLASTP | Failed | tool bug: the parser expects a BLASTP header layout ('Score        E') that BLAST+ 2.11 and 2.17 default output does not have, so it stops with 'ERROR PARSING BLASTP OUTPUT' after the first query. |
+| conduit-assembler_conduitUtils_splitFASTA | PASS | Split the CONDUIT consensus FASTA into the 10 read-support bins; each record lands in the bin of its _<reads> suffix (1, 2-4, 5-9, 10-19). |
+| conduit-assembler_conduitUtils_translate | PASS | Translated the 32 CONDUIT consensus sequences from a conduit hybrid run on SARS-CoV-2 amplicon reads; 27 ORFs of at least 50 aa, which BLASTP maps to ORF1ab and N. |
 | conduit-assembler_conduit_hybrid | PASS |  |
 
 ## conduit-assembler_conduit_hybrid
@@ -127,6 +138,339 @@ Options (defaults in parentheses):
         <path> where temporary files will be created
     -t, --threads (4)
         Number of threads to run in parallel (used for both Bowtie2 and Partial Order Graph correction)
+```
+
+
+## conduit-assembler_conduitUtils_translate
+
+### Tool Description
+Translates FASTA/Q nucleotide sequences into protein based on their longest ORF
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+translate   - Translates FASTA/Q nucleotide sequences into protein based on their longest ORF
+Usage:
+  ./conduitUtils translate [options] -i <transcripts.fa> -o <predicted_protein.fa>
+  <transcripts.fa>         FASTA/Q infile containing putative transcripts to be translated
+  <predicted_protein.fa>   FASTA outfile containing in silico translated ORFs from transcripts.fa
+
+Options (defaults in parentheses):
+  Input Options:
+    -a, --fasta (default)
+        Input file is in FASTA format
+    -q, --fastq
+        Input file is in FASTQ format
+    -s, --stranded
+        Input reads are forward stranded
+  Filtering Options:
+    -l, --min-length (75)
+        Minimum length in Amino Acids necessary for a putative ORF to be reported
+```
+
+
+## conduit-assembler_conduitUtils_bed2gtf
+
+### Tool Description
+Converts BED12 files to well structured GTF file suitable for use in GFFcompare
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+bed2gtf     - Converts BED12 files to well structured GTF file suitable for use in GFFcompare
+Usage:
+  ./conduitUtils bed2gtf -i <infile.bed> -o <outfile.gtf>
+  <infile.bed>    BED12 infile to be converted in to GTF format
+  <outfile.gtf>   GTF outfile
+
+Options (defaults in parentheses):
+  Input Options:
+    -s, --stranded
+        Report gtf fields with strand information
+```
+
+
+## conduit-assembler_conduitUtils_parseBLASTP
+
+### Tool Description
+Parses BLASTP output and outputs closest match for each query transcript as determined by BLASTP
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+parseBLASTP   - Parses BLASTP output and outputs closest match for each query transcript as determined by BLASTP
+Usage:
+  ./conduitUtils parseBLASTP -i <inBLASTP.txt> -o <outPutativeOrthologs.tsv>
+  <inBLASTP.txt>              Default output of BLASTP search of translated protein products vs some reference proteome
+  <outPutativeOrthologs.tsv>  Tab separated file of putative ortholog matches
+                              In format: <Query ID>	<Reference proteome top match ID>	<E value>
+```
+
+
+## conduit-assembler_conduitUtils_compareBLASTP
+
+### Tool Description
+Compares BLASTP output and reference proteome to determine the # of true positives, false positives, and false negatives for a sample
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+compareBLASTP - Compares BLASTP output and reference proteome to determine the # of true positives, false positives, and false negatives for a sample
+Usage:
+  ./conduitUtils compareBLASTP -r <reference_proteome.fa> -i <inBLASTP.txt>
+  <reference_proteome.fa>     FASTA file describing the reference proteome used in the BLASTP search
+  <inBLASTP.txt>              Default output of BLASTP search of translated protein products vs some reference proteome
+```
+
+
+## conduit-assembler_conduitUtils_compareFASTA
+
+### Tool Description
+Compares two FASTA files, an input and a reference, to determine the # of true positives, false positives, and false negatives for a sample
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+compareFASTA  - Compares two FASTA files, an input and a reference, to determine the # of true positives, false positives, and false negatives for a sample
+Usage:
+  ./conduitUtils compareFASTA -r <reference.fa> -i <query.fa>
+  <reference.fa>              Reference FASTA file defining the truth set
+  <query.fa>                  Query FASTA files defining the query set
+```
+
+
+## conduit-assembler_conduitUtils_splitFASTA
+
+### Tool Description
+Splits CONDUIT produced FASTA file based on the number of reads supporting each isoform
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+splitFASTA    - Splits CONDUIT produced FASTA file based on the number of reads supporting each isoform
+Usage:
+  ./conduitUtils splitFASTA -i <conduit_output.fa> -o <outprefix>
+  <conduit_output.fa>         CONDUIT produced FASTA file to be split based on number of reads supporting each isoform
+  <outprefix>                 Prefix for the fasta files to be output, suffix will describe the bin being reported
+```
+
+
+## conduit-assembler_conduitUtils_filterFASTA
+
+### Tool Description
+Filters CONDUIT produced FASTA file based on number of reads supporting each isoform
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+filterFASTA   - Filters CONDUIT produced FASTA file based on number of reads supporting each isoform
+Usage:
+  ./conduitUtils filterFASTA -i <inBLASTP.txt> -o <outPutativeOrthologs.tsv>
+  <conduit_output.fa>         CONDUIT produced FASTA file to be filtered based on number of reads supporting each isoform
+  <filtered.fa>               Output FASTA file for filtered reads
+Options: (defaults in parentheses)
+  Filtering options:
+     -n (5)
+        Minimum number of reads that must support an isoform for it to be reported in the filtered FASTA
+```
+
+
+## conduit-assembler_conduitUtils_extractIntrons
+
+### Tool Description
+Extracts out intronic sequences from BED12 formatted input and outputs as BED6
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+extractIntrons   - Extracts out intronic sequences from BED12 formatted input and outputs as BED6
+Usage:
+  ./conduitUtils extractIntrons -i <transcripts.bed12> -o <introns.bed>
+  <transcripts.bed12>         Transcripts in BED12 format to extract introns from
+  <introns.bed>               BED6 output of extracted introns
+```
+
+
+## conduit-assembler_conduitUtils_callNonCanonical
+
+### Tool Description
+Reads in a FASTA file and reports the readIDs of sequences that dont begin with GT and end with AG
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+callNonCanonical - Reads in a FASTA file and reports the readIDs of sequences that dont begin with GT and end with AG
+Usage:
+  ./conduitUtils callNonCanonical -i <introns.fa> -o <noncanonical.txt>
+  <introns.fa>              FASTA describing the stranded sequence of introns extracted from `extractIntrons`
+                            Introns sequences can be obtained using `bedtools getfasta -name -s`
+  <noncanonical.txt>        Read IDs of the sequences that didn't begin with GT and end with AG
+```
+
+
+## conduit-assembler_conduitUtils_callNovelNonCanonical
+
+### Tool Description
+Compares introns described by reference GTF file to introns described by a list of readIDs in the format produced by bedtools getfasta -name, outputs the novel introns in BED format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+callNovelNonCanonical - Compares introns described by reference GTF file to introns described by a list of readIDs in the format produced by `bedtools getfasta -name` function, outputs the novel introns in BED format
+Usage:
+  ./conduitUtils callNovelNonCanonical -r <reference.gtf> -i <noncanonical.txt> -o <novel.bed>
+  <reference.gtf>              Reference GTF file specifying the introns to compare against
+  <noncanonical.txt>           Read IDs specifying intron structure in the format produced by `bedtools getfasta -name`
+  <novel.bed>                  Output of introns found in the noncanonical.txt file but not found in the reference, in BED6 format
+```
+
+
+## conduit-assembler_conduitUtils_callOverlapping
+
+### Tool Description
+Compares two files of readIDs specifying introns in the format produced by bedtools getfasta -name, and reports the introns that are shared between the two files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
+- **Homepage**: https://github.com/NatPRoach/conduit
+- **Package**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/conduit-assembler/overview
+- **Total Downloads**: 3.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/NatPRoach/conduit
+- **Stars**: N/A
+### Original Help Text
+```text
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Utilities Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+callOverlapping - Compares two files of readIDs specifying introns in the format produced by `bedtools getfasta -name`, and reports the introns that are shared between the two files (not stranded)
+Usage:
+  ./conduitUtils callOverlapping -r <introns1.txt> -i <introns2.txt> -o <shared_introns.txt>
+  <introns1.txt>              Read IDs specifying introns in the format produced by `bedtools getfasta -name`
+  <introns2.txt>              Read IDs specifying introns in the format produced by `bedtools getfasta -name`
+  <shared_introns.txt>        The introns in common between the two files
 ```
 
 

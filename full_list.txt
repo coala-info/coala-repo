@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 3224; PASS: 2453; Failed: 440; Not completed: 331
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 3631; PASS: 2780; Failed: 479; Not completed: 372
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -738,9 +738,7 @@ bamm	bamm_filter	Failed	image problem: bamm filter under Python 3.12 crashes wit
 bamm	bamm_make	Failed	image problem: bamm 1.7.3 under Python 3.12 crashes with TypeError (range of float) in bamMaker.py before mapping any reads.
 bamm	bamm_parse	Failed	image problem: bamm parse under Python 3.12 crashes with ctypes TypeError (str instead of bytes) on a valid BAM from the BamM example data.
 bam-readcount	bam-readcount	PASS	
-bamrescue	bamrescue_bamfile	PASS	
 bamrescue	bamrescue_check	PASS	
-bamrescue	bamrescue_output	PASS	
 bamrescue	bamrescue_rescue	PASS	
 bamscale	bamscale_cov	PASS	
 bamscale	bamscale_scale	PASS	
@@ -899,9 +897,6 @@ bart	bart_zexp	PASS	synthetic data: exp(i*pi) gives -1 as expected.
 basenji	basenji_basenji_motifs.py	Failed	image problem: basenji_motifs.py crashes at start unless the HG38 environment variable is set, and it also reads an undefined split_label option; CWL flags were rewritten from the help.
 basenji	basenji_basenji_sat_bed.py	PASS	
 basenji	basenji_basenji_sat_vcf.py	PASS	
-batch_brb	batch_brb	PASS	
-batch_brb	batch_brb_batch_correction_all_loess_wrapper.r	PASS	
-batch_brb	batch_brb_batch_correction_wrapper.r	PASS	
 batch_correction	batch_correction	PASS	
 batch_correction	batch_correction_batch_correction_all_loess_wrapper.r	PASS	
 batch_correction	batch_correction_batch_correction_wrapper.r	PASS	
@@ -1145,6 +1140,7 @@ bio	bio_table	PASS
 bio	bio_taxon	Not completed	Queries need a prebuilt NCBI taxonomy database in ~/.bio, and the CWL has no input to pass one in (--build runs alone and its database is not kept).
 bio	bio_uniq	PASS	
 bio2zarr	bio2zarr_plink2zarr_convert	PASS	
+bio2zarr	bio2zarr_tskit2zarr_convert	PASS	
 bio2zarr	bio2zarr_vcf2zarr_convert	PASS	
 bio2zarr	bio2zarr_vcf2zarr_dencode_finalise	PASS	
 bio2zarr	bio2zarr_vcf2zarr_dencode_init	PASS	
@@ -1156,6 +1152,7 @@ bio2zarr	bio2zarr_vcf2zarr_encode	PASS
 bio2zarr	bio2zarr_vcf2zarr_explode	PASS	
 bio2zarr	bio2zarr_vcf2zarr_inspect	PASS	
 bio2zarr	bio2zarr_vcf2zarr_mkschema	PASS	
+bio2zarr	bio2zarr_vcfpartition	PASS	
 bioawk	bioawk	PASS	
 biobambam	biobambam_bamauxmerge	PASS	
 biobambam	biobambam_bammarkduplicatesopt	PASS	
@@ -1509,6 +1506,9 @@ blobtools	blobtools_seqfilter	PASS
 blobtools	blobtools_taxify	PASS	
 blobtools	blobtools_view	PASS	
 blockclust	blockclust	PASS	
+blockclust	blockclust_blockclust.py_analysis	PASS	
+blockclust	blockclust_blockclust.py_post	PASS	
+blockclust	blockclust_blockclust.py_pre	PASS	
 bloocoo	bloocoo_Bloocoo	PASS	
 bloomfiltertrie	bloomfiltertrie_build	PASS	
 bloomfiltertrie	bloomfiltertrie_load	Failed	tool bug: -add_genomes writes the loaded BFT unchanged because bft 0.8 never counts the files in the list (nb_files_2_read stays 0); loading, -query_kmers, -query_sequences and -extract_kmers give correct results.
@@ -1743,16 +1743,16 @@ capcruncher	capcruncher_utilities_gtf-to-bed12	Failed	image problem: No module n
 capcruncher	capcruncher_utilities_make-chicago-maps	Failed	image problem: No module named 'ibis', so the command crashes at import.
 capcruncher	capcruncher_utilities_regenerate-fastq	Failed	image problem: No module named 'ibis', so the command crashes at import.
 capcruncher	capcruncher_utilities_viewpoint-coordinates	Failed	image problem: No module named 'ibis', so the command crashes at import.
-caper	caper_abort	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+caper	caper_abort	Not completed	skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server
 caper	caper_debug	PASS	
 caper	caper_init	PASS	
-caper	caper_list	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
-caper	caper_metadata	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
-caper	caper_run	Failed	image problem: the image has no Java, so Cromwell cannot start; caper also needs a passwd entry for the user (--no-match-user).
-caper	caper_server	Failed	image problem: the image has no Java, so the Cromwell server cannot start.
-caper	caper_submit	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+caper	caper_list	Not completed	skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server
+caper	caper_metadata	Not completed	skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server
+caper	caper_run	Not completed	skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server
+caper	caper_server	Not completed	skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server
+caper	caper_submit	Not completed	skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server
 caper	caper_troubleshoot	PASS	
-caper	caper_unhold	Not completed	client command that needs a running Caper server, and no server can run from this image (no Java).
+caper	caper_unhold	Not completed	skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server
 captus	captus_align	PASS	
 captus	captus_assemble	PASS	
 captus	captus_clean	PASS	
@@ -1881,7 +1881,6 @@ cdst	cdst_matrix	PASS
 cdst	cdst_mst	PASS	
 cdst	cdst_run	PASS	
 ceas	ceas	PASS	The xls table matches the Galaxy expected output; the image has no R, so only the R script is written, not the PDF.
-cegroomer	cegroomer_tracegroomer	PASS	All four tables match the Galaxy tools-iuc expected outputs; added staged metadata files, --no- switches and table outputs.
 cellpose	cellpose	Not completed	The command line is accepted, but segmentation needs the 1.15 GB cpsam model downloaded from Hugging Face, which is too large for this test.
 cellprofiler	cellprofiler	PASS	The ExampleHuman pipeline ran headless and found 289 nuclei and 22 PH3-positive cells; output and done file paths were changed from File to string.
 cellranger	cellranger_aggr	PASS	Aggregating two copies of the tiny molecule_info.h5 gave 1,084 cells per sample; added a staged input for the files the CSV names.
@@ -1931,15 +1930,13 @@ cellranger-arc	cellranger-arc_reanalyze	PASS
 cellranger-arc	cellranger-arc_telemetry	PASS	
 cellranger-arc	cellranger-arc_testrun	PASS	
 cellranger-arc	cellranger-arc_upload	Not completed	Sends a file to 10x Genomics support servers; needs network access and a real email, so it was not run.
-cellsnake	cellsnake_advanced	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
-cellsnake	cellsnake_clustree	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
-cellsnake	cellsnake_integrate	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
-cellsnake	cellsnake_integrated	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
 cellsnake	cellsnake_minimal	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
 cellsnake	cellsnake_standard	Not completed	pipeline, skipped: cellsnake runs a whole Snakemake single-cell workflow.
 cellsnp-lite	cellsnp-lite	PASS	
 cell-types-analysis	cell-types-analysis_build_cell_ontology_dict.R	PASS	
+cell-types-analysis	cell-types-analysis_check_labels.R	PASS	
 cell-types-analysis	cell-types-analysis_combine_tool_outputs.R	PASS	
+cell-types-analysis	cell-types-analysis_downsample_cells.R	PASS	
 cell-types-analysis	cell-types-analysis_get_consensus_output.R	Failed	tool bug: with --true-labels the similarity-to-true-label column is wrong (335 cells whose top label equals the true label score 0: a column-for-row lookup and no lowercasing); the run without it checks out
 cell-types-analysis	cell-types-analysis_get_empirical_dist.R	PASS	
 cell-types-analysis	cell-types-analysis_get_tool_performance_table.R	PASS	
@@ -2017,11 +2014,11 @@ checkatlas	checkatlas	PASS
 checkm2	checkm2_database	Not completed	Needs a download of the CheckM2 DIAMOND database (about 3 GB); a --current run built the right command and reported no database installed.
 checkm2	checkm2_predict	Not completed	Needs the CheckM2 DIAMOND database (about 3 GB), which is too large to download for this test.
 checkm2	checkm2_testrun	Not completed	The self-test needs the CheckM2 DIAMOND database (about 3 GB), which is too large to download for this test.
-checkm-genome	checkm-genome_checkm analyze	PASS	
-checkm-genome	checkm-genome_checkm lineage_wf	PASS	
-checkm-genome	checkm-genome_checkm qa	PASS	
-checkm-genome	checkm-genome_checkm ssu_finder	PASS	
-checkm-genome	checkm-genome_checkm taxonomy_wf	PASS	
+checkm-genome	checkm-genome_checkm_analyze	PASS	
+checkm-genome	checkm-genome_checkm_lineage_wf	PASS	
+checkm-genome	checkm-genome_checkm_qa	PASS	
+checkm-genome	checkm-genome_checkm_ssu_finder	PASS	
+checkm-genome	checkm-genome_checkm_taxonomy_wf	PASS	
 checkm-genome	checkm-genome_coding_plot	PASS	
 checkm-genome	checkm-genome_coverage	Failed	tool bug: CheckM 1.2.4 imports pysam only inside run(), so the BAM worker crashes with NameError: name 'pysam' is not defined.
 checkm-genome	checkm-genome_dist_plot	PASS	
@@ -2092,6 +2089,8 @@ chopin2	chopin2	PASS
 chopper	chopper	PASS	
 chromap	chromap	PASS	
 chromatiblock	chromatiblock	PASS	
+chromeister	chromeister_CHROMEISTER	PASS	
+chromeister	chromeister_compute_score.R	PASS	
 chromeister	chromeister_detect_events.py	PASS	
 chromograph	chromograph	PASS	
 chromosight	chromosight_detect	PASS	
@@ -2110,8 +2109,8 @@ chromosomer	chromosomer_transfer	PASS
 chromsize	chromsize	PASS	
 chronumental	chronumental	PASS	
 chunked-scatter	chunked-scatter	PASS	
+chunked-scatter	chunked-scatter_scatter-regions	PASS	
 cif2cell	cif2cell	PASS	
-ci-proxy	ci-proxy	Not completed	The image runs a long-lived gunicorn web server for the BioContainers CI webhook proxy (needs Jenkins and GitHub access), so there is no batch job or data to test.
 circlator	circlator_all	PASS	
 circlator	circlator_assemble	PASS	
 circlator	circlator_bam2reads	PASS	
@@ -2204,8 +2203,8 @@ clinvar-this	clinvar-this_data_extract_vars	PASS
 clinvar-this	clinvar-this_data_gene_phenotype_links	PASS	
 clinvar-this	clinvar-this_data_gene_variant_report	PASS	
 clinvar-this	clinvar-this_data_xml_to_jsonl	PASS	
-clinvar-tsv	clinvar-tsv_clinvar_tsv main	Not completed	pipeline, skipped: main runs the full Snakemake pipeline, which downloads the whole ClinVar release and needs GRCh37 and GRCh38 genomes.
-clinvar-tsv	clinvar-tsv_clinvar_tsv parse_xml	PASS	
+clinvar-tsv	clinvar-tsv_clinvar_tsv_main	Not completed	pipeline, skipped: main runs the full Snakemake pipeline, which downloads the whole ClinVar release and needs GRCh37 and GRCh38 genomes.
+clinvar-tsv	clinvar-tsv_clinvar_tsv_parse_xml	PASS	
 clinvar-tsv	clinvar-tsv_merge_tsvs	PASS	
 clinvar-tsv	clinvar-tsv_normalize_tsv	PASS	
 clipcontext	clipcontext_eir	PASS	
@@ -2242,7 +2241,7 @@ clusterone	clusterone	PASS
 cluster-picker	cluster-picker	PASS	
 clusty	clusty	PASS	
 cmaple	cmaple	PASS	
-cmappy	cmappy_python -m cmapPy.pandasGEXpress.gct2gctx	Failed	image problem: cmapPy 4.0.1 calls numpy.string_, which NumPy 2.0.2 in the image removed, so writing the .gctx file crashes.
+cmappy	cmappy_python_-m_cmapPy.pandasGEXpress.gct2gctx	Failed	image problem: cmapPy 4.0.1 calls numpy.string_, which NumPy 2.0.2 in the image removed, so writing the .gctx file crashes.
 cmash	cmash_MakeDNADatabase.py	PASS	
 cmash	cmash_MakeStreamingDNADatabase.py	PASS	
 cmash	cmash_QueryDNADatabase.py	Failed	image problem: the khmer version in the image lacks Nodegraph.consume_seqfile_with_reads_parser and khmer.load_nodegraph, so the query crashes.
@@ -2347,6 +2346,7 @@ cojac	cojac_cooc-colourmut	PASS
 cojac	cojac_cooc-curate	PASS	
 cojac	cojac_cooc-mutbamscan	PASS	
 cojac	cojac_cooc-pubmut	PASS	
+cojac	cojac_cooc-tabmut	PASS	Tabulated the cojac test cooccurrence JSON with amplicon mutations; counts match the JSON (amplicon 76: 4 reads, amplicon 81: 211 reads with 209 one-less).
 cojac	cojac_generate-sigs-nextstrains	PASS	
 cojac	cojac_phe2cojac	PASS	
 cojac	cojac_sig-generate	PASS	
@@ -2413,9 +2413,25 @@ concoct	concoct	PASS
 concoord	concoord_disco	PASS	
 concoord	concoord_dist	PASS	
 condiga	condiga	Not completed	No usable test data: it needs MetaGeneMark gene predictions (licensed tool), Kraken2 results, CoverM coverages and the NCBI bacteria assembly_summary.txt, and it downloads reference genomes from NCBI at run time.
+conduit-assembler	conduit-assembler_conduitUtils_bed2gtf	PASS	Converted the nf-core chr22 genome.bed12 (trailing commas removed, which the parser cannot read); exon coordinates match genome.gtf exactly.
+conduit-assembler	conduit-assembler_conduitUtils_callNonCanonical	PASS	On bedtools getfasta intron sequences from the yeast data, it reports exactly the two non GT-AG introns (TRN1 and SUP56 tRNA introns).
+conduit-assembler	conduit-assembler_conduitUtils_callNovelNonCanonical	PASS	Yeast intron IDs with read counts added to the names: against the full yeast GTF 0 novel, against the GTF without SNC1 exactly the SNC1 intron; the intron with 2 reads is skipped.
+conduit-assembler	conduit-assembler_conduitUtils_callOverlapping	PASS	Comparing all 5 yeast intron IDs with the 4 plus-strand ones reports 4 shared and 1 non-overlapping intron, as expected.
+conduit-assembler	conduit-assembler_conduitUtils_compareBLASTP	Failed	tool bug: same BLASTP parser as parseBLASTP; on BLAST+ 2.17 default output of 21 matched proteins it reports TP 0 after 'ERROR PARSING BLASTP OUTPUT'.
+conduit-assembler	conduit-assembler_conduitUtils_compareFASTA	PASS	Compared CONDUIT proteins translated with min length 75 (query) and 50 (reference): TP 23, FP 0, FN 3, as counted independently.
+conduit-assembler	conduit-assembler_conduitUtils_extractIntrons	PASS	Extracted the 5 introns of the nf-core yeast genome_gfp.bed12; e.g. the SNC1 intron 87387-87500 lies exactly between its GTF exons.
+conduit-assembler	conduit-assembler_conduitUtils_filterFASTA	PASS	Kept the 8 CONDUIT consensus records with at least 5 supporting reads, as counted independently.
+conduit-assembler	conduit-assembler_conduitUtils_parseBLASTP	Failed	tool bug: the parser expects a BLASTP header layout ('Score        E') that BLAST+ 2.11 and 2.17 default output does not have, so it stops with 'ERROR PARSING BLASTP OUTPUT' after the first query.
+conduit-assembler	conduit-assembler_conduitUtils_splitFASTA	PASS	Split the CONDUIT consensus FASTA into the 10 read-support bins; each record lands in the bin of its _<reads> suffix (1, 2-4, 5-9, 10-19).
+conduit-assembler	conduit-assembler_conduitUtils_translate	PASS	Translated the 32 CONDUIT consensus sequences from a conduit hybrid run on SARS-CoV-2 amplicon reads; 27 ORFs of at least 50 aa, which BLASTP maps to ORF1ab and N.
 conduit-assembler	conduit-assembler_conduit_hybrid	PASS	
 confindr	confindr	PASS	
+confindr	confindr_create_db	Failed	image problem: the script calls makeblastdb and blastn for every gene and genome, but neither is in the image (it also needs the 250 MB RefSeq assembly summary plus all complete genomes of the genus).
+confindr	confindr_database_setup	PASS	Without an rMLST secret it downloaded and KMA-indexed the Escherichia, Salmonella and Listeria databases and refseq.msh; confindr with this folder types E. coli ATCC 700926 reads as Escherichia, not contaminated.
 conifer	conifer	PASS	
+conifer	conifer_is_a_parent_of_b	PASS	On the Conifer test taxo.k2d, Clostridia vs F. prausnitzii gives 1 and Bacteroides vs F. prausnitzii gives 0, in single-pair and list modes.
+conifer	conifer_show_ancestors	PASS	On the Conifer test taxo.k2d, taxid 853 gives the correct lineage from F. prausnitzii up to root.
+conifer	conifer_taxid_name	PASS	On the Conifer test taxo.k2d, taxid 816 gives Bacteroides.
 connectome-workbench	connectome-workbench_wb_command_file-information	PASS	
 connectome-workbench	connectome-workbench_wb_command_metric-stats	PASS	
 connectome-workbench	connectome-workbench_wb_command_volume-smoothing	PASS	
@@ -2423,10 +2439,23 @@ connectome-workbench	connectome-workbench_wb_command_volume-stats	PASS
 connectome-workbench	connectome-workbench_wb_view	Not completed	wb_view is an interactive graphical viewer that cannot run as a batch job.
 connor	connor	PASS	
 conodictor	conodictor	PASS	
+consan	consan_bstats	Failed	tool bug: the bootstrap sensitivity mean is sometimes huge garbage (e.g. 7e33) because bstat.c zeroes element [r] instead of [i], leaving the sum unset; PPV and alignment values are correct.
+consan	consan_comppair	PASS	Compared 4 Rfam tRNA pairs from the Consan R100 set with their scompare predictions: 154/168 trusted pairs found (91.7% sensitivity) and 98% alignment identity.
+consan	consan_pModel	PASS	Printed the transition and background parameters of the mix80 model from the Consan source; each transition row sums to 1.
 consan	consan_scompare	PASS	Correct stem-loop predicted in full mode (-f) with the mix80 model; the default pin mode segfaults because the image lacks the DART dpswalign helper, and the -s file stays empty because v1.2 never writes it.
 consan	consan_sfold	PASS	Correct stem-loop predicted in full mode (-f) with the mix80 model; the default pin mode segfaults because the image lacks the DART dpswalign helper.
 consan	consan_strain_ml	PASS	Trained a model on the Rfam v7 set that sfold then uses correctly; strain_ml exits 1 on success, so the CWL accepts exit codes 0 and 1.
 consel	consel	PASS	
+consel	consel_catass	PASS	Extracting hypotheses 1 and 5 (-X) from mam15.ass gives trees {1,5,8} and {4,5,6}, as in the CONSEL user guide.
+consel	consel_catci	PASS	Printed the shipped example mam15.ci; the au confidence limits match the CONSEL user guide table.
+consel	consel_catmt	PASS	Joined mam15.mt and KH-prescreened it at 0.01 (15 to 9 trees, KH p-values agree with catpv); joining two copies gives N 6828.
+consel	consel_catpv	PASS	Printed the shipped example mam15.pv; all values equal the shipped mam15-pv.txt (tiny values now print as exponents).
+consel	consel_catrep	PASS	Joined two makerep rep files (B 2000 per scale); consel -R on the result gives au 0.746 and 0.057 as expected; note -m (rmt) mode needs --no_sort, since the default sort breaks rmt replicates.
+consel	consel_makerep	PASS	Made a rep file for the 2 edge hypotheses from mam15.lnf; consel -R gives au 0.729 and 0.059, close to the user guide values (0.749, 0.076).
+consel	consel_makermt	PASS	Made mam15.rmt from the CONSEL example mam15.lnf with k10s.pa; consel on it gives the same tree ranking and obs values as the shipped result and close p-values (au 0.757 vs 0.789 for tree 1).
+consel	consel_randrep	PASS	Generated 3 rep files from the example sim1.vt and short.pa with seed 333; consel -R reads them and gives p-values for 3 items.
+consel	consel_seqmt	PASS	Converted the CONSEL example PAML file mam15.lnf to mam15.mt with 15 trees and 3414 sites.
+consel	consel_treeass	PASS	With outgroup 6, mam15.ass from the example mam15.tpl is identical to the shipped result mam15.ass.
 consensify	consensify_consensify_c	PASS	
 consensusfixer	consensusfixer	PASS	
 consent	consent_CONSENT-correct	PASS	
@@ -2592,6 +2621,8 @@ cpstools	cpstools_phy	PASS
 crabs	crabs	PASS	
 crabz	crabz	PASS	
 crac	crac	PASS	
+crac	crac_crac-index_get	PASS	
+crac	crac_crac-index_index	PASS	
 cram-archiver	cram-archiver	PASS	
 cramino	cramino	PASS	
 cramtools	cramtools_bam	PASS	
@@ -2672,20 +2703,29 @@ cromshell	cromshell_timing	Not completed	needs a running Cromwell server and ope
 cromshell	cromshell_update-server	PASS	Local command; added the written config file as an output.
 cromshell	cromshell_validate	Failed	image problem: miniwdl (Python module WDL) is not installed, so local validation crashes; womtool validation needs a Cromwell server.
 cromwell	cromwell_server	Not completed	pipeline, skipped: this CWL runs a whole workflow or a web server with the Cromwell engine, and Cromwell 40 has no other utility commands.
-cromwell-tools	cromwell-tools_abort	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
-cromwell-tools	cromwell-tools_health	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
-cromwell-tools	cromwell-tools_metadata	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_abort	Not completed	skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server
+cromwell-tools	cromwell-tools_health	Not completed	skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server
+cromwell-tools	cromwell-tools_metadata	Not completed	skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server
 cromwell-tools	cromwell-tools_query	Failed	tool bug: the query command is not implemented in the CLI and crashes with a TypeError on any call.
-cromwell-tools	cromwell-tools_release_hold	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
-cromwell-tools	cromwell-tools_status	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
-cromwell-tools	cromwell-tools_submit	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_release_hold	Not completed	skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server
+cromwell-tools	cromwell-tools_status	Not completed	skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server
+cromwell-tools	cromwell-tools_submit	Not completed	skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server
 cromwell-tools	cromwell-tools_task_runtime	Not completed	needs Google Cloud metadata and a Google service account key to look up machine types (networkAccess added to the CWL).
-cromwell-tools	cromwell-tools_wait	Not completed	needs a running Cromwell server to talk to; starting a local server was not allowed on this machine (networkAccess added to the CWL).
+cromwell-tools	cromwell-tools_wait	Not completed	skipped: WDL/Cromwell (not tested by rule); this command needs a running Cromwell server
 croo	croo	PASS	
 crossfilt	crossfilt_crossfilt-filter	PASS	
 crossfilt	crossfilt_crossfilt-lift	PASS	
 crossfilt	crossfilt_crossfilt-split	PASS	
+crossmap	crossmap_bam	PASS	
+crossmap	crossmap_bed	PASS	
+crossmap	crossmap_bigwig	PASS	
+crossmap	crossmap_gff	PASS	
+crossmap	crossmap_gvcf	PASS	
+crossmap	crossmap_maf	PASS	
+crossmap	crossmap_region	PASS	
 crossmap	crossmap_vcf	PASS	
+crossmap	crossmap_viewchain	PASS	
+crossmap	crossmap_wig	PASS	
 crumble	crumble	PASS	
 crunchstat-summary	crunchstat-summary	Not completed	the tool connects to the Arvados API on every run, also for a local log file, so it needs an Arvados host and token.
 crussmap	crussmap_bed	Failed	tool bug: regions lifted to a minus-strand chain block get a start shifted by the block length (chr10:15069751 instead of 15069810 in the CrossMap Galaxy test); plus-strand regions match.
@@ -2892,8 +2932,10 @@ danpos	danpos_dpos	PASS
 darkprofiler	darkprofiler_download	Not completed	Downloads a 1 GB genome bundle into the image's own package folder, so a CWL run cannot keep the result.
 darkprofiler	darkprofiler_run	Not completed	Needs the 1 GB genome bundle installed inside the image's package folder, which a plain CWL run does not have.
 dart	dart	PASS	
+dart	dart_bwt_index	PASS	
 dartunifrac	dartunifrac	PASS	
 dartunifrac-gpu	dartunifrac-gpu_dartunifrac-cuda	Not completed	Needs an NVIDIA GPU and CUDA driver; without one the tool stops because libcuda.so cannot be loaded.
+dascrubber	dascrubber_DASqv	PASS	
 dascrubber	dascrubber_DAStrim	PASS	
 dashing	dashing_cmp	PASS	
 dashing	dashing_cmp_by_seq	PASS	Works with b-bit minhash sketches (-8); with default HLL sketches the tool crashes (bad_alloc).
@@ -2909,7 +2951,12 @@ dashing2	dashing2_contain	PASS
 dashing2	dashing2_printmin	PASS	
 dashing2	dashing2_sketch	PASS	
 dashing2	dashing2_wsketch	PASS	
+dastk	dastk_barcode_plot	PASS	
 dastk	dastk_differential_md_score	Failed	image problem: matplotlib 3.6.3 in the image rejects plt.xscale(basex=2), so the MA plot step crashes (exit 1) after the scores table is written.
+dastk	dastk_ma_plot	Failed	image problem: matplotlib 3.6.3 in the image rejects plt.xscale(basex=2), so ma_plot crashes (exit 1) before it saves the plot.
+dastk	dastk_process_atac	PASS	
+dastk	dastk_tf_intersect	PASS	
+dastk	dastk_tf_result_explanations	Failed	image problem: networkx 3.0 in the image has no read_gpickle, and the prot_reactome_interactions.pkl knowledge graph is missing from the package, so the tool crashes at start.
 datafunk	datafunk_AA_finder	PASS	
 datafunk	datafunk_add_epi_week	PASS	
 datafunk	datafunk_add_header_column	PASS	
@@ -3066,7 +3113,14 @@ debwt	debwt_deBWT	Failed	image problem: the image has no jellyfish, which deBWT 
 decenttree	decenttree	PASS	
 dechat	dechat	PASS	
 decifer	decifer	Failed	image problem: decifer fails at import with ModuleNotFoundError: No module named sklearn.
+decifer	decifer_generatestatetrees	PASS	
+decifer	decifer_mergestatetrees	PASS	
 decom	decom_decOM	Not completed	decOM needs the 1.3 GB decOM_sources k-mer matrix from Zenodo, which is too large for this test.
+decom	decom_decOM-CV	Not completed	decOM-CV needs the 1.3 GB decOM_sources k-mer matrix from Zenodo, which is too large for this test.
+decom	decom_decOM-LOO	PASS	Partly synthetic data: the repo's D1/D2 test sequences, each used as two samples so every environment has two.
+decom	decom_decOM-MST	PASS	
+decom	decom_decOM-aOralOut	Not completed	decOM-aOralOut needs the 1 GB aOralOut_sources k-mer matrix from Zenodo, which is too large for this test.
+decom	decom_decOM-format	PASS	
 decoypyrat	decoypyrat	PASS	
 dedup	dedup	PASS	
 deepac	deepac_convert	PASS	
@@ -3096,8 +3150,23 @@ deepaccess	deepaccess_interpret	PASS
 deepaccess	deepaccess_train	PASS	
 deepacstrain	deepacstrain_convert	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
 deepacstrain	deepacstrain_eval	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
+deepacstrain	deepacstrain_explain_fa2transfac	PASS	
+deepacstrain	deepacstrain_explain_fcontribs	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; the run stops with a segmentation fault (exit 139) before it writes its outputs.
+deepacstrain	deepacstrain_explain_franking	PASS	
+deepacstrain	deepacstrain_explain_maxact	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; the run finishes its work and then ends with a segmentation fault (exit 139).
+deepacstrain	deepacstrain_explain_mcompare	PASS	
+deepacstrain	deepacstrain_explain_transfac2IC	PASS	
+deepacstrain	deepacstrain_explain_weblogos	PASS	
+deepacstrain	deepacstrain_explain_xlogos	PASS	
 deepacstrain	deepacstrain_filter	PASS	
 deepacstrain	deepacstrain_getmodels	Failed	tool bug: getmodels calls os.rmdir on deepac_builtin_models/weights before it exists and stops with FileNotFoundError.
+deepacstrain	deepacstrain_gwpa_factiv	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; the run finishes its work and then ends with a segmentation fault (exit 139).
+deepacstrain	deepacstrain_gwpa_fenrichment	Failed	image problem: the Python 3.8.6 and TensorFlow 2.2 environment of the image crashes with a segmentation fault (exit 139) while the tool processes the input.
+deepacstrain	deepacstrain_gwpa_fragment	PASS	
+deepacstrain	deepacstrain_gwpa_genomemap	PASS	
+deepacstrain	deepacstrain_gwpa_gff2genome	PASS	
+deepacstrain	deepacstrain_gwpa_granking	Failed	image problem: the Python 3.8.6 and TensorFlow 2.2 environment of the image crashes with a segmentation fault (exit 139) while the tool processes the input.
+deepacstrain	deepacstrain_gwpa_ntcontribs	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; the run finishes its work and then ends with a segmentation fault (exit 139).
 deepacstrain	deepacstrain_predict	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
 deepacstrain	deepacstrain_preproc	Failed	image problem: TensorFlow 2.2 on Python 3.8.6 crashes; eager mode fails with SystemError and --debug-no-eager runs end with a double-free segfault (exit 139).
 deepacstrain	deepacstrain_templates	PASS	
@@ -3165,9 +3234,23 @@ density-fitness	density-fitness	PASS
 derip2	derip2	PASS	
 derna	derna	PASS	
 desman	desman	Failed	image problem: desman calls DataFrame.as_matrix, which the bundled pandas 2.2.3 no longer has, so every run crashes.
+desman	desman_CalcGeneCov.py	Failed	image problem: the script calls DataFrame.as_matrix, which the bundled pandas 2.2.3 no longer has, so it crashes on the DESMAN example COG0015.freq.
+desman	desman_ClassifyContigNR.py	Not completed	needs BLAST matches against NCBI NR plus multi-GB accession-to-taxid and lineage files.
+desman	desman_ExtractCogs.py	Not completed	needs RPS-BLAST output against the NCBI COG (CDD) database, which is not available here.
+desman	desman_ExtractCountFreqGenes.py	Failed	image problem: the script uses np.int, which the bundled numpy 2.0.2 no longer has, so it crashes on real SARS-CoV-2 bam-readcount files.
+desman	desman_ExtractGenes.py	PASS	
+desman	desman_LengthFilter.py	PASS	
+desman	desman_Lengths.py	PASS	
+desman	desman_Variant_Filter.py	Failed	image problem: the script calls DataFrame.as_matrix, which the bundled pandas 2.2.3 no longer has, so it crashes on the DESMAN example COG0015.freq.
+desman	desman_contig_read_count_per_genome.py	PASS	synthetic data: real SARS-CoV-2 BAMs with read names relabelled to carry the source genome name; counts 300 reads = 200 + 100 aligned.
+desman	desman_extract_species_contigs.py	PASS	
+desman	desman_gene_read_count_per_genome.py	PASS	synthetic data: real SARS-CoV-2 BAMs with read names relabelled to carry the source genome name; per-gene counts follow the GFF CDS coordinates.
+desman	desman_pileups_to_freq_table.py	PASS	
+detonate	detonate_ref-eval	PASS	
 detonate	detonate_ref-eval-estimate-true-assembly	PASS	
 detonate	detonate_rsem-eval-calculate-score	PASS	
 devider	devider	PASS	
+devider	devider_haplotag_bam	PASS	
 dfast	dfast	PASS	
 dialign-tx	dialign-tx	PASS	
 diamond	diamond_blastp	PASS	
@@ -3206,7 +3289,9 @@ difcover	difcover_run_difcover.sh	Not completed	pipeline, skipped: run_difcover.
 diffacto	diffacto	PASS	On a 2127-peptide subset of the repository's iPRG example the spiked proteins ALBU, BGAL, CAH2, MYG and PYGM get MCFDR <= 0.03 while yeast background proteins stay near 1 (fixed -mc_out and -loadings_out prefixes).
 diffexpir	diffexpir_diffexpIR	PASS	
 diffutils	diffutils_cmp	PASS	
+diffutils	diffutils_diff	PASS	
 diffutils	diffutils_diff3	PASS	
+diffutils	diffutils_sdiff	PASS	
 dig2	dig2	PASS	
 digestiflow-cli	digestiflow-cli_ingest	Not completed	Ingest always queries a Digestiflow web server (URL and token from a config file) and panics without one, so it cannot run offline on the MiSeq test run folder.
 digestiflow-demux	digestiflow-demux	Not completed	pipeline, skipped: it runs a Snakemake demultiplexing workflow that needs a Digestiflow web server for the sample sheet, and the image has no bcl2fastq or Picard.
@@ -3224,3 +3309,325 @@ dimspy	dimspy_remove-samples	Failed	tool bug: dimspy 2.0.0 stores --input as a l
 dimspy	dimspy_replicate-filter	PASS	
 dimspy	dimspy_sample-filter	PASS	
 dimspy	dimspy_unzip	PASS	
+dinamo	dinamo	PASS	
+dindel	dindel	PASS	
+dinf	dinf_check	PASS	
+dinf	dinf_mc	PASS	
+dinf	dinf_mcmc	PASS	
+dinf	dinf_pg-gan	PASS	
+dinf	dinf_predict	PASS	
+dinf	dinf_train	PASS	
+dinosaur	dinosaur	Failed	image problem: the image has no fonts, so the default QC plots (nReport 10) crash in the Java font manager and the run hangs; with n_report 0 the features match the repo's expected output
+dipcall	dipcall	PASS	
+dipper	dipper_dipper_cpu	PASS	
+dirseq	dirseq	Failed	image problem: the bundled samtools cannot load libncurses.so.5, so dirseq fails at its samtools idxstats step on the repo's own test BAM
+discasm	discasm_DISCASM	PASS	
+discovardenovo	discovardenovo	PASS	
+distle	distle	PASS	
+distree	distree	PASS	
+disty	disty	PASS	
+disulfinder	disulfinder	PASS	
+ditasic	ditasic	Failed	image problem: the image has no R (Rscript missing), so the ditasic R script exits with status 127 before reading any input
+divvier	divvier	PASS	
+djinn	djinn_fastq_convert	PASS	
+djinn	djinn_fastq_extract	PASS	
+djinn	djinn_fastq_filter_invalid	PASS	
+djinn	djinn_fastq_filter_singletons	PASS	
+djinn	djinn_fastq_ncbi	PASS	
+djinn	djinn_fastq_sample	PASS	
+djinn	djinn_fastq_sort	Failed	tool bug: with paired-end input R2 is written to a file literally named '{prefix}.R2.fq.gz' (missing f-string in sort.py), so the R2 output is lost
+djinn	djinn_fastq_spoof_hic	PASS	
+djinn	djinn_fastq_standardize	PASS	
+djinn	djinn_sam_assign_mi	PASS	
+djinn	djinn_sam_concat	PASS	
+djinn	djinn_sam_extract	PASS	
+djinn	djinn_sam_filter_invalid	PASS	
+djinn	djinn_sam_filter_singletons	PASS	
+djinn	djinn_sam_ncbi	PASS	
+djinn	djinn_sam_sample	PASS	
+djinn	djinn_sam_sort	PASS	
+djinn	djinn_sam_standardize	PASS	
+dlcpar	dlcpar	PASS	
+dmox	dmox	PASS	
+dms	dms_MS-make-ref	Failed	image problem: MS-make-ref calls Rscript with the package's Rscript/config.R and MS_new_tree.R, but the image has neither R nor those scripts, and the tool crashes (exit 139)
+dms	dms_MS-single-to-table	PASS	
+dmtools	dmtools_addzm	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_align	Failed	image problem: the image has no bwa or samtools, which dmtools align pipes the reads through, so no BAM is written
+dmtools	dmtools_bam2dm	Failed	tool bug: bam2dm exits with a random non-zero code (segfault at exit) after a SAM run and leaves the DM file without its data index, and it crashes with a double free on BAM input
+dmtools	dmtools_bodystats	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_bw	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_chrmeth	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_chromstats	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_dmDMR	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_ebsrate	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_index	Failed	image problem: bwa is not in the image, so dmtools index stops after writing the converted genome and builds no bwa index
+dmtools	dmtools_merge	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_mr2dm	Failed	tool bug: mr2dm segfaults on every input tried (methratio and bismark formats, even a 5-line file) and writes no DM file
+dmtools	dmtools_overlap	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_profile	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_regionstats	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_stats	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_view	Not completed	no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file
+dmtools	dmtools_viewheader	PASS	
+dnaapler	dnaapler_all	PASS	
+dnaapler	dnaapler_archaea	PASS	
+dnaapler	dnaapler_bulk	PASS	
+dnaapler	dnaapler_chromosome	PASS	
+dnaapler	dnaapler_custom	PASS	
+dnaapler	dnaapler_largest	PASS	
+dnaapler	dnaapler_mystery	PASS	
+dnaapler	dnaapler_nearest	PASS	
+dnaapler	dnaapler_phage	PASS	
+dnaapler	dnaapler_plasmid	PASS	
+dnachisel	dnachisel	PASS	
+dnaclust	dnaclust	PASS	
+dnadotplot	dnadotplot	PASS	
+dnamarkmaker	dnamarkmaker_DNAMarkMaker	PASS	
+dna-nn	dna-nn_dna-brnn	PASS	
+dna-nn	dna-nn_gen-fq	PASS	
+dnarrange	dnarrange	PASS	
+dnoise	dnoise	PASS	
+dnp-binstrings	dnp-binstrings	PASS	
+dnp-corrprofile	dnp-corrprofile	PASS	
+dnp-diprofile	dnp-diprofile	PASS	
+dnp-fourier	dnp-fourier	PASS	
+dnp-mapping	dnp-mapping	PASS	
+dockq	dockq_DockQ	PASS	
+dodge	dodge	PASS	
+doit	doit_doit	PASS	
+domainator	domainator_build_ssn.py	Failed	image problem: pandas 3.0 in the image makes the xgmml writer crash with --metadata (TypeError on StringDtype); clustering without metadata matches the expected clusters.
+domainator	domainator_compare_contigs.py	PASS	
+domainator	domainator_deduplicate_genbank.py	PASS	
+domainator	domainator_domain_search.py	PASS	
+domainator	domainator_domainate.py	PASS	
+domainator	domainator_select_by_cds.py	PASS	
+dos2unix	dos2unix	PASS	
+dosage_score	dosage_score	PASS	
+doubletd	doubletd	Not completed	the README example runs, but 1573 of 1592 cell calls (and 211 scores) differ from the repo's example/prediction.tsv, which predates later code changes, so the output could not be confirmed
+downpore	downpore_align	PASS	
+downpore	downpore_consensus	PASS	
+downpore	downpore_correct	Failed	tool bug: the experimental command panics (index out of range) on 2 of 3 real nanopore read sets, and successful runs print only progress counts, no corrected reads.
+downpore	downpore_kmers	PASS	
+downpore	downpore_map	PASS	
+downpore	downpore_overlap	PASS	With -k 12 -num_seeds 30 all 411 overlaps on 1000 real nanopore reads agree with minimap2 read positions; with the default seeds the tool panics (index out of range).
+downpore	downpore_subseq	PASS	
+downpore	downpore_trim	PASS	
+dpcstruct	dpcstruct_postfilters	PASS	
+dpcstruct	dpcstruct_prefilters	PASS	
+dpcstruct	dpcstruct_primarycluster	PASS	
+dpcstruct	dpcstruct_secondarycluster_classify	PASS	
+dpcstruct	dpcstruct_secondarycluster_distance	PASS	
+dpcstruct	dpcstruct_traceback	PASS	
+dragmap	dragmap_dragen-os	PASS	
+dr-disco	dr-disco_bam-extract	PASS	
+dr-disco	dr-disco_classify	PASS	
+dr-disco	dr-disco_detect	PASS	
+dr-disco	dr-disco_fix	PASS	
+dr-disco	dr-disco_integrate	PASS	
+dr-disco	dr-disco_is-blacklisted	PASS	
+dr-disco	dr-disco_logo-sequence	PASS	
+dr-disco	dr-disco_subtract	PASS	
+dr-disco	dr-disco_unfix	Failed	image problem: unfix crashes with a pysam TypeError (AlignmentHeader does not support item assignment) because the image's pysam is newer than the code expects.
+dreamtools	dreamtools	PASS	
+drep	drep_dRep_compare	PASS	
+drep	drep_dRep_dereplicate	PASS	
+drevalpy	drevalpy	PASS	
+drhip	drhip	PASS	
+dropkick	dropkick_qc	PASS	
+dropkick	dropkick_run	PASS	
+dropletutils-scripts	dropletutils-scripts_dropletutils-barcoderanks.R	PASS	
+dropletutils-scripts	dropletutils-scripts_dropletutils-downsample-matrix.R	PASS	
+dropletutils-scripts	dropletutils-scripts_dropletutils-empty-drops.R	PASS	
+dropletutils-scripts	dropletutils-scripts_dropletutils-read-10x-counts.R	PASS	
+dropseq_tools	dropseq_tools_DetectBeadSubstitutionErrors	PASS	
+dropseq_tools	dropseq_tools_DigitalExpression	PASS	
+dropseq_tools	dropseq_tools_PolyATrimmer	PASS	
+dropseq_tools	dropseq_tools_TagReadWithGeneFunction	PASS	
+dropseq_tools	dropseq_tools_TrimStartingSequence	PASS	
+drprg	drprg_build	PASS	
+drprg	drprg_index	PASS	
+drprg	drprg_predict	PASS	
+dsh-bio	dsh-bio_bin-fastq-quality-scores	PASS	
+dsh-bio	dsh-bio_compress-bed	PASS	
+dsh-bio	dsh-bio_compress-fasta	PASS	
+dsh-bio	dsh-bio_compress-fastq	PASS	
+dsh-bio	dsh-bio_compress-gaf	PASS	
+dsh-bio	dsh-bio_compress-gfa1	PASS	
+dsh-bio	dsh-bio_compress-gfa2	PASS	
+dsh-bio	dsh-bio_compress-gff3	PASS	
+dsh-bio	dsh-bio_compress-paf	PASS	
+dsh-bio	dsh-bio_compress-rgfa	PASS	
+dsh-bio	dsh-bio_compress-sam	PASS	
+dsh-bio	dsh-bio_compress-vcf	PASS	
+dsh-bio	dsh-bio_count-fastq	PASS	
+dsh-bio	dsh-bio_create-sequence-dictionary	PASS	
+dsh-bio	dsh-bio_disinterleave-fastq	PASS	
+dsh-bio	dsh-bio_downsample-fastq	PASS	
+dsh-bio	dsh-bio_downsample-interleaved-fastq	PASS	
+dsh-bio	dsh-bio_export-segments	PASS	
+dsh-bio	dsh-bio_extract-fasta	PASS	
+dsh-bio	dsh-bio_extract-fasta-kmers	PASS	
+dsh-bio	dsh-bio_extract-fasta-kmers-to-parquet	PASS	
+dsh-bio	dsh-bio_extract-fasta-kmers-to-parquet3	PASS	
+dsh-bio	dsh-bio_extract-fastq	PASS	
+dsh-bio	dsh-bio_extract-fastq-by-length	PASS	
+dsh-bio	dsh-bio_extract-uniprot-features	PASS	
+dsh-bio	dsh-bio_extract-uniprot-features-to-parquet	PASS	
+dsh-bio	dsh-bio_extract-uniprot-features-to-partitioned-parquet	PASS	
+dsh-bio	dsh-bio_fasta-index-to-pangenome	PASS	
+dsh-bio	dsh-bio_fasta-index-to-pangenome-tree	PASS	
+dsh-bio	dsh-bio_fasta-to-fastq	PASS	
+dsh-bio	dsh-bio_fasta-to-pangenome	PASS	
+dsh-bio	dsh-bio_fasta-to-pangenome-tree	PASS	
+dsh-bio	dsh-bio_fasta-to-parquet	PASS	
+dsh-bio	dsh-bio_fasta-to-parquet2	PASS	
+dsh-bio	dsh-bio_fasta-to-parquet3	PASS	
+dsh-bio	dsh-bio_fasta-to-parquet4	PASS	
+dsh-bio	dsh-bio_fasta-to-parquet5	PASS	
+dsh-bio	dsh-bio_fasta-to-parquet6	PASS	
+dsh-bio	dsh-bio_fasta-to-text	PASS	
+dsh-bio	dsh-bio_fastq-description	PASS	
+dsh-bio	dsh-bio_fastq-sequence-length	PASS	
+dsh-bio	dsh-bio_fastq-to-bam	PASS	
+dsh-bio	dsh-bio_fastq-to-fasta	PASS	
+dsh-bio	dsh-bio_fastq-to-text	PASS	
+dsh-bio	dsh-bio_filter-bed	PASS	
+dsh-bio	dsh-bio_filter-fasta	PASS	
+dsh-bio	dsh-bio_filter-fastq	PASS	
+dsh-bio	dsh-bio_filter-gaf	PASS	
+dsh-bio	dsh-bio_filter-gfa1	PASS	
+dsh-bio	dsh-bio_filter-gfa2	PASS	
+dsh-bio	dsh-bio_filter-gff3	PASS	
+dsh-bio	dsh-bio_filter-paf	PASS	
+dsh-bio	dsh-bio_filter-rgfa	PASS	
+dsh-bio	dsh-bio_filter-sam	PASS	
+dsh-bio	dsh-bio_filter-vcf	PASS	
+dsh-bio	dsh-bio_gfa1-to-gfa2	PASS	
+dsh-bio	dsh-bio_gff3-to-bed	PASS	
+dsh-bio	dsh-bio_identify-gfa1	PASS	
+dsh-bio	dsh-bio_interleave-fastq	PASS	
+dsh-bio	dsh-bio_interleaved-fastq-to-bam	PASS	
+dsh-bio	dsh-bio_links-to-cytoscape-edges	PASS	
+dsh-bio	dsh-bio_links-to-property-graph	PASS	
+dsh-bio	dsh-bio_reassemble-paths	PASS	
+dsh-bio	dsh-bio_remap-dbsnp	PASS	
+dsh-bio	dsh-bio_remap-phase-set	Failed	tool bug: PS values are remapped but every Number=R FORMAT field (AD, ADALL) is written twice, e.g. 0,381 becomes 0,381,0,381.
+dsh-bio	dsh-bio_rename-bed-references	PASS	
+dsh-bio	dsh-bio_rename-gff3-references	PASS	
+dsh-bio	dsh-bio_rename-vcf-references	PASS	
+dsh-bio	dsh-bio_segments-to-cytoscape-nodes	PASS	
+dsh-bio	dsh-bio_segments-to-property-graph	PASS	
+dsh-bio	dsh-bio_split-bed	PASS	
+dsh-bio	dsh-bio_split-fasta	PASS	
+dsh-bio	dsh-bio_split-fastq	PASS	
+dsh-bio	dsh-bio_split-gaf	PASS	
+dsh-bio	dsh-bio_split-gff3	PASS	
+dsh-bio	dsh-bio_split-interleaved-fastq	PASS	
+dsh-bio	dsh-bio_split-paf	PASS	
+dsh-bio	dsh-bio_split-sam	PASS	
+dsh-bio	dsh-bio_split-vcf	PASS	
+dsh-bio	dsh-bio_summarize-uniprot-entries	PASS	
+dsh-bio	dsh-bio_summarize-uniprot-entries-to-parquet	PASS	
+dsh-bio	dsh-bio_text-to-fasta	PASS	
+dsh-bio	dsh-bio_text-to-fastq	PASS	
+dsh-bio	dsh-bio_traversals-to-cytoscape-edges	PASS	
+dsh-bio	dsh-bio_traversals-to-property-graph	PASS	
+dsh-bio	dsh-bio_traverse-paths	PASS	
+dsh-bio	dsh-bio_truncate-fasta	PASS	
+dsh-bio	dsh-bio_truncate-paths	PASS	
+dsh-bio	dsh-bio_variant-table-to-vcf	PASS	
+dsh-bio	dsh-bio_vcf-pedigree	PASS	
+dsh-bio	dsh-bio_vcf-samples	PASS	
+dsk	dsk	PASS	
+dsrc	dsrc	PASS	
+dssp	dssp	PASS	
+dudes	dudes	PASS	
+duet	duet	Failed	image problem: bcftools in the image cannot load libcrypto.so.1.0.0, so SNP phasing fails and phased_sv.vcf has no calls.
+dunovo	dunovo_align-families.py	PASS	
+dunovo	dunovo_baralign.sh	PASS	
+dunovo	dunovo_correct.py	PASS	
+dunovo	dunovo_make-consensi.py	PASS	
+dunovo	dunovo_make-families.sh	PASS	
+duphist	duphist	Failed	image problem: the image has BusyBox split, which lacks -d and --additional-suffix, so no alignment or tree jobs run and the result table is empty.
+duphold	duphold	PASS	
+duplomap	duplomap	PASS	
+dupre	dupre	PASS	
+dupsifter	dupsifter	PASS	
+dvorfs	dvorfs	Failed	image problem: gawk is missing from the image, so the windowing step crashes after the HMMER presearch and no hits table is written.
+dwgsim	dwgsim	PASS	
+dx-cwl	dx-cwl_compile-tool	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dx-cwl	dx-cwl_compile-workflow	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dx-cwl	dx-cwl_run-workflow	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_build	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_cat	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_describe	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_download	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_extract_dataset	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_find_data	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_generate_batch_inputs	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_get	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_head	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_ls	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_make_download_url	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_run	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxpy	dxpy_dx_upload	Not completed	needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token.
+dxua	dxua	Not completed	needs a DNAnexus login token and project; the image has no CA bundle, so a certificate_file input was added, and with it the upload reaches the DNAnexus server, which rejects the placeholder token.
+dysgu	dysgu_call	PASS	
+dysgu	dysgu_fetch	PASS	
+dysgu	dysgu_filter	PASS	
+dysgu	dysgu_merge	PASS	
+dysgu	dysgu_run	PASS	
+dysgu	dysgu_test	PASS	
+eagle	eagle_convert	PASS	
+eagle	eagle_extract	PASS	
+eagle	eagle_interface	Not completed	Starts a long-running web server, which cannot run as a batch job.
+eagle	eagle_meta	PASS	
+eagle2	eagle2_eagle	PASS	
+earlgrey	earlgrey_earlGreyAnnotationOnly	Not completed	pipeline, skipped
+easel	easel_esl-alipid	PASS	
+eastr	eastr	PASS	
+easypqp	easypqp_convert	Failed	image problem: numpy 2.3 makes np.array_split return arrays, so reading mzML/mzXML spectra crashes ('numpy.ndarray' object has no attribute 'itertuples').
+easypqp	easypqp_convertpsm	Failed	image problem: the same mzML/mzXML spectrum reader as convert crashes under numpy 2.3 ('numpy.ndarray' object has no attribute 'itertuples').
+easypqp	easypqp_convertsage	PASS	
+easypqp	easypqp_filter-unimod	Failed	tool bug: the --ids/--sites callback transform_comma_string_to_list has the wrong signature, so every run crashes with a TypeError.
+easypqp	easypqp_insilico-library	Failed	image problem: the easypqp_rs Rust backend is not installed, so the tool prints an error and writes no library.
+easypqp	easypqp_library	Failed	tool bug: with --diannpqp, multi-digit FragmentSeriesNumber values come out as 1 (9 of 869 rows wrong); the default output matches the upstream regression output exactly
+easypqp	easypqp_openswath-assay-generator	PASS	
+easypqp	easypqp_openswath-decoy-generator	PASS	
+easypqp	easypqp_reduce	PASS	
+easypqp	easypqp_targeted-file-converter	PASS	
+ea-utils	ea-utils_fastq-join	PASS	
+ea-utils	ea-utils_fastq-mcf	PASS	
+ea-utils	ea-utils_fastq-multx	PASS	
+ea-utils	ea-utils_fastq-stats	PASS	
+ea-utils	ea-utils_sam-stats	PASS	
+ebfilter	ebfilter_EBFilter	Failed	image problem: the image lacks the vcfpy Python module and the samtools program, so both the VCF and annovar modes crash.
+ebisearch	ebisearch_get_domains	PASS	
+ebisearch	ebisearch_get_entries	PASS	
+ebisearch	ebisearch_get_fields	PASS	
+ebisearch	ebisearch_get_query_results	PASS	
+ebolaseq	ebolaseq	PASS	
+ectyper	ectyper	PASS	
+edd	edd	Failed	image problem: pysam in the image cannot load libhts.so.1, so edd crashes on import.
+edlib-aligner	edlib-aligner	PASS	
+edta	edta_EDTA.pl	PASS	
+edtsurf	edtsurf_EDTSurf	PASS	
+efishent	efishent	Failed	image problem: jellyfish is missing, so the k-mer step crashes and no final probe set is written.
+ega2	ega2	Not completed	needs EGA account credentials and the retired EGA v2 download service; the client starts but cannot log in (SSL handshake fails).
+ega-cryptor	ega-cryptor	PASS	
+egap	egap_EGAP	Not completed	pipeline, skipped: EGAP runs a whole multi-step genome assembly pipeline (trimming, assembly, polishing, BUSCO QC).
+eggnog-mapper	eggnog-mapper_download_eggnog_data.py	Not completed	The download needs several GB of eggNOG databases; only simulate mode (-s) was run, which printed the expected wget commands.
+eggnog-mapper	eggnog-mapper_emapper.py	PASS	
+eider	eider	PASS	
+eido	eido_convert	PASS	
+eido	eido_inspect	PASS	
+eido	eido_validate	PASS	
+eigensoft	eigensoft_convertf	PASS	
+eklipse	eklipse_eKLIPse.py	Failed	image problem: eKLIPse 1.8 is Python 2 code run under Python 3.13 and crashes with NameError: name 'split' is not defined, then hangs on its spinner thread.
+elastic-blast	elastic-blast_delete	Not completed	Needs an ElasticBLAST search running on an AWS or GCP cloud account; no account is available here.
+elastic-blast	elastic-blast_run-summary	Not completed	Needs an ElasticBLAST search running on an AWS or GCP cloud account; no account is available here.
+elastic-blast	elastic-blast_status	Not completed	Needs an ElasticBLAST search running on an AWS or GCP cloud account; no account is available here.
+elastic-blast	elastic-blast_submit	Not completed	Needs an AWS or GCP cloud account; a GCP dry run parsed the options but stopped because the image lacks gke-gcloud-auth-plugin.
+elastix	elastix	PASS	
+elector	elector	Failed	image problem: elector 1.0.4 opens every input FASTA with mode 'rU', which Python 3.12 rejects (ValueError: invalid mode: 'rU').
+elph	elph	PASS	

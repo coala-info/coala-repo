@@ -1,6 +1,6 @@
 # montreal-forced-aligner CWL Generation Report
 
-## montreal-forced-aligner_mfa model download acoustic
+## montreal-forced-aligner_mfa_model_download_acoustic
 
 ### Tool Description
 Download an acoustic model for Montreal Forced Aligner.
@@ -32,7 +32,7 @@ Traceback (most recent call last):
 TypeError: Path.copy() missing 1 required positional argument: 'target'
 ```
 
-## montreal-forced-aligner_mfa validate
+## montreal-forced-aligner_mfa_validate
 
 ### Tool Description
 Validate the alignment files for a corpus.
@@ -64,7 +64,7 @@ Traceback (most recent call last):
 TypeError: Path.copy() missing 1 required positional argument: 'target'
 ```
 
-## montreal-forced-aligner_mfa train_acoustic
+## montreal-forced-aligner_mfa_train_acoustic
 
 ### Tool Description
 Train an acoustic model.

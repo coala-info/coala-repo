@@ -30,7 +30,7 @@ There is no command "--help"
 ```
 
 
-## mantis_pfa_mantis setup
+## mantis_pfa_mantis_setup
 
 ### Tool Description
 Mantis is a k-mer based sequence analysis tool.
@@ -55,7 +55,7 @@ There is no command "setup"
 ```
 
 
-## mantis_pfa_mantis check
+## mantis_pfa_mantis_check
 
 ### Tool Description
 Mantis is a k-mer based sequence analysis tool.
@@ -80,7 +80,7 @@ There is no command "check"
 ```
 
 
-## mantis_pfa_mantis check_sql
+## mantis_pfa_mantis_check_sql
 
 ### Tool Description
 Mantis is a k-mer based sequence analysis tool.

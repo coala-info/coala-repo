@@ -15,6 +15,17 @@ inputs:
       position: 1
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input BAM/CRAM file
     inputBinding:
       position: 2
@@ -127,13 +138,20 @@ inputs:
       position: 103
       prefix: --write_all
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output reads, discordant, supplementary and soft- clipped reads to 
       file.
     inputBinding:
       position: 104
       prefix: --output
 outputs:
+  - id: working_dir
+    type: Directory
+    doc: Working directory with the filtered SV reads bam
+    outputBinding:
+      glob: $(inputs.working_directory)
   - id: output_file
     type:
       - 'null'

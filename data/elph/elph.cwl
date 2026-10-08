@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: elph
 label: elph
 doc: "Motif finder program ELPH (Estimated Locations of Pattern Hits)\n\nTool homepage:
-  https://github.com/emacsmirror/elpher"
+  https://ccb.jhu.edu/software/ELPH/"
 inputs:
   - id: multi_fasta_file
     type: File
@@ -81,6 +81,8 @@ inputs:
     doc: n = no of iterations to compute the global maximum
     inputBinding:
       position: 103
+      prefix: ITERNO=
+      separate: false
   - id: iterations_before_plateau
     type:
       - 'null'
@@ -97,6 +99,8 @@ inputs:
     doc: n = no of iterations to compute the local maximum
     inputBinding:
       position: 103
+      prefix: MAXLOOP=
+      separate: false
   - id: markov_chain_degree
     type:
       - 'null'
@@ -122,6 +126,8 @@ inputs:
     doc: n = length of motif
     inputBinding:
       position: 103
+      prefix: LEN=
+      separate: false
   - id: motif_not_closest_edit_distance
     type:
       - 'null'
@@ -154,6 +160,8 @@ inputs:
     doc: n = no of iterations to compute significance of motif
     inputBinding:
       position: 103
+      prefix: SGFNO=
+      separate: false
   - id: test_matrix_file
     type:
       - 'null'

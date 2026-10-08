@@ -1,5 +1,11 @@
 # ditasic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ditasic | Failed | image problem: the image has no R (Rscript missing), so the ditasic R script exits with status 127 before reading any input |
+
 ## ditasic
 
 ### Tool Description
@@ -18,22 +24,22 @@ Differential Taxon Abundance Subtraction and Intersection Counting for accurate 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ditasic:0.2--py37h470a237_0' locally
-0.2--py37h470a237_0: Pulling from biocontainers/ditasic
-a3ed95caeb02: Already exists
-b0dc45cd432d: Already exists
-3aaade50789a: Already exists
-ddd482ea7b54: Already exists
-7ff999a2256f: Already exists
-e7c454e5167d: Already exists
-dfda3e01f2b6: Already exists
-a3ed95caeb02: Already exists
-10c3bb32200b: Already exists
-fc5f6d86f4d9: Pulling fs layer
-fc5f6d86f4d9: Waiting
-docker: write /var/lib/docker/tmp/GetImageBlob3412267906: no space left on device
+usage: ditasic -r REFPATH_FILE -a SIMILARITY_MATRIX -x COUNTS_S1 -n TOTAL_S1 [-y COUNTS_S2 -m TOTAL_S2] [options]
 
-Run 'docker run --help' for more information
+(The image has no Rscript, so --help cannot run; options taken from core/parameters.R in the image.)
+
+Options:
+  -r, --refs          taxa names file containing the absolute path to all considered taxa references
+  -a, --Mat           path to the similarity_matrix.npy file (output of 'ditasic_matrix')
+  -x, --counts_s1     mapped count vector of sample 1: sample.npy file (output of 'ditasic_mapping')
+  -y, --counts_s2     mapped count vector of sample 2: sample.npy file (output of 'ditasic_mapping')
+  -n, --N_s1          total vector of sample 1: total.npy file (output of 'ditasic_mapping')
+  -m, --N_s2          total vector of sample 2: total.npy file (output of 'ditasic_mapping')
+  -f, --filter        apply filtering to remove false-positive taxa (logical, default = F)
+  -o, --output        name of the output file (default DiffAbund_Result.txt)
+  -p, --pval_thres    p-value threshold for filtering (default = 0.05)
+  -t, --min_thres     minimum number of reads to assign significant taxa existence (default = 0)
+  -s, --seed          seed for sampling in empirical distributions (default = 1448)
 ```
 
 

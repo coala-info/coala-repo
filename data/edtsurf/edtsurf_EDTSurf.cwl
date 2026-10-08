@@ -6,12 +6,11 @@ doc: "EDTSurf calculates the solvent accessible surface area (SASA) and the volu
   of the cavities of a protein.\n\nTool homepage: https://github.com/UnixJunkie/EDTSurf"
 inputs:
   - id: pdbname
-    type:
-      type: array
-      items: File
-    doc: Input PDB file(s)
+    type: File
+    doc: Input PDB file
     inputBinding:
       position: 1
+      prefix: -i
   - id: cavity_type
     type:
       - 'null'
@@ -71,6 +70,27 @@ inputs:
       position: 102
       prefix: -t
 outputs:
+  - id: surface_ply
+    type:
+      - 'null'
+      - File
+    doc: Surface mesh in PLY format
+    outputBinding:
+      glob: $(inputs.outname).ply
+  - id: asa
+    type:
+      - 'null'
+      - File
+    doc: Per-atom accessible surface area
+    outputBinding:
+      glob: $(inputs.outname).asa
+  - id: cavity_pdb
+    type:
+      - 'null'
+      - File
+    doc: Cavity atoms in PDB format
+    outputBinding:
+      glob: $(inputs.outname)-cav.pdb
   - id: stdout
     type: stdout
     doc: Standard output

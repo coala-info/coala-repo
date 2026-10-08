@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-fasta-to-parquet2
+baseCommand:
+  - dsh-bio
+  - fasta-to-parquet2
 label: dsh-bio_fasta-to-parquet2
 doc: "Converts FASTA files to Parquet format.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:

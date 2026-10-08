@@ -5,7 +5,9 @@ label: dindel
 doc: "dindel\n\nTool homepage: https://github.com/genome/dindel-tgi"
 inputs:
   - id: analysis
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'Analysis type: getCIGARindels: Extract indels from CIGARs of mapped reads,
       and infer libary insert size distributions indels: infer indels realignCandidates:
       Realign/reposition candidates in candidate file'
@@ -13,13 +15,22 @@ inputs:
       position: 101
       prefix: --analysis
   - id: bam_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: read alignment file (should be indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bamFile
   - id: bam_files
-    type: File
+    type:
+      - 'null'
+      - File
     doc: file containing filepaths for BAMs to be jointly analysed (not possible
       for --analysis==indels
     inputBinding:
@@ -288,11 +299,15 @@ inputs:
   - id: ref
     type: File
     doc: fasta reference sequence (should be indexed with .fai file)
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref
   - id: region
-    type: string
+    type:
+      - 'null'
+      - string
     doc: region to be analysed in format start-end, eg. 1000-2000
     inputBinding:
       position: 101
@@ -338,13 +353,17 @@ inputs:
       position: 101
       prefix: --skipMaxHap
   - id: tid
-    type: string
+    type:
+      - 'null'
+      - string
     doc: target sequence (eg 'X')
     inputBinding:
       position: 101
       prefix: --tid
   - id: var_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: file with candidate variants to be tested.
     inputBinding:
       position: 101
@@ -365,37 +384,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --width
-  - id: output_realigned_bam_path
+  - id: output_realigned_bam
     type:
       - 'null'
-      - string
+      - boolean
     doc: output BAM file with realigned reads
     inputBinding:
       position: 102
       prefix: --outputRealignedBAM
-  - id: process_realigned_bam_path
-    type:
-      - 'null'
-      - string
-    doc: arg             ABSOLUTE path to script to process realigned BAM file
-    inputBinding:
-      position: 103
-      prefix: --processRealignedBAM
-outputs:
-  - id: output_realigned_bam
-    type:
-      - 'null'
-      - File
-    doc: output BAM file with realigned reads
-    outputBinding:
-      glob: $(inputs.output_realigned_bam_path)
   - id: process_realigned_bam
     type:
       - 'null'
       - File
     doc: ABSOLUTE path to script to process realigned BAM file
-    outputBinding:
-      glob: $(inputs.process_realigned_bam_path)
+    inputBinding:
+      position: 103
+      prefix: --processRealignedBAM
+outputs:
   - id: output_file_files
     type:
       type: array

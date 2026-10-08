@@ -7,7 +7,9 @@ label: dysgu_call
 doc: "Call structural variants from bam alignment file/stdin\n\nTool homepage: https://github.com/kcleal/dysgu"
 inputs:
   - id: reference
-    type: string
+    type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome
     inputBinding:
       position: 1
@@ -26,8 +28,8 @@ inputs:
   - id: all_sites
     type:
       - 'null'
-      - boolean
-    doc: Output a genotype for all variants in --sites (including homozygous 
+      - string
+    doc: (True or False) Output a genotype for all variants in --sites (including homozygous 
       reference 0/0)
     inputBinding:
       position: 104
@@ -59,8 +61,8 @@ inputs:
   - id: contigs
     type:
       - 'null'
-      - boolean
-    doc: Generate consensus contigs for each side of break and use 
+      - string
+    doc: (True or False) Generate consensus contigs for each side of break and use 
       sequence-based metrics in model scoring
     inputBinding:
       position: 104
@@ -68,8 +70,8 @@ inputs:
   - id: diploid
     type:
       - 'null'
-      - boolean
-    doc: Use diploid model for scoring variants. Use 'False' for non-diploid or 
+      - string
+    doc: (True or False) Use diploid model for scoring variants. Use 'False' for non-diploid or 
       poly clonal samples
     inputBinding:
       position: 104
@@ -94,8 +96,8 @@ inputs:
   - id: drop_gaps
     type:
       - 'null'
-      - boolean
-    doc: Drop SVs near gaps +/- 250 bp of Ns in reference
+      - string
+    doc: (True or False) Drop SVs near gaps +/- 250 bp of Ns in reference
     inputBinding:
       position: 104
       prefix: --drop-gaps
@@ -103,6 +105,17 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .csi
+        required: false
     doc: Original input file usef with 'fetch' command, used for calculating 
       insert size parameters
     inputBinding:
@@ -111,8 +124,8 @@ inputs:
   - id: ignore_sample_sites
     type:
       - 'null'
-      - boolean
-    doc: If --sites is multi-sample, ignore variants from the input file 
+      - string
+    doc: (True or False) If --sites is multi-sample, ignore variants from the input file 
       SV-ALIGNS
     inputBinding:
       position: 104
@@ -174,8 +187,8 @@ inputs:
   - id: merge_within
     type:
       - 'null'
-      - boolean
-    doc: Try and merge similar events, recommended for most situations
+      - string
+    doc: (True or False) Try and merge similar events, recommended for most situations
     inputBinding:
       position: 104
       prefix: --merge-within
@@ -253,16 +266,16 @@ inputs:
   - id: paired
     type:
       - 'null'
-      - boolean
-    doc: Paired-end reads or single
+      - string
+    doc: (True or False) Paired-end reads or single
     inputBinding:
       position: 104
       prefix: --paired
   - id: parse_probs
     type:
       - 'null'
-      - boolean
-    doc: Parse INFO:MeanPROB or FORMAT:PROB instead of using --sites-p
+      - string
+    doc: (True or False) Parse INFO:MeanPROB or FORMAT:PROB instead of using --sites-p
     inputBinding:
       position: 104
       prefix: --parse-probs
@@ -302,8 +315,8 @@ inputs:
   - id: regions_mm_only
     type:
       - 'null'
-      - boolean
-    doc: If --regions is provided, only use minimizer clustering within 
+      - string
+    doc: (True or False) If --regions is provided, only use minimizer clustering within 
       --regions. Useful for high coverage targeted sequencing
     inputBinding:
       position: 104
@@ -311,8 +324,8 @@ inputs:
   - id: regions_only
     type:
       - 'null'
-      - boolean
-    doc: If --regions is provided, call only events within target regions
+      - string
+    doc: (True or False) If --regions is provided, call only events within target regions
     inputBinding:
       position: 104
       prefix: --regions-only
@@ -354,8 +367,8 @@ inputs:
   - id: sites_pass_only
     type:
       - 'null'
-      - boolean
-    doc: Only add variants from sites that have PASS
+      - string
+    doc: (True or False) Only add variants from sites that have PASS
     inputBinding:
       position: 104
       prefix: --sites-pass-only
@@ -424,6 +437,9 @@ inputs:
       position: 105
       prefix: --svs-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Variant calls written to stdout when svs_out_path is not given
   - id: svs_out
     type:
       - 'null'
@@ -436,3 +452,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dysgu:1.8.7--py311h8ddd9a4_0
+stdout: dysgu_call.out

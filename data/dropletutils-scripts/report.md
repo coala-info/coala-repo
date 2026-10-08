@@ -1,5 +1,14 @@
 # dropletutils-scripts CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dropletutils-scripts_dropletutils-barcoderanks.R | PASS |  |
+| dropletutils-scripts_dropletutils-downsample-matrix.R | PASS |  |
+| dropletutils-scripts_dropletutils-empty-drops.R | PASS |  |
+| dropletutils-scripts_dropletutils-read-10x-counts.R | PASS |  |
+
 ## dropletutils-scripts_dropletutils-read-10x-counts.R
 
 ### Tool Description

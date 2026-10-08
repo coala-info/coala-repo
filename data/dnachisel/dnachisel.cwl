@@ -42,6 +42,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: target_output
+    type:
+      - 'null'
+      - File
+      - Directory
+    doc: The optimized result written to the target (a folder, a .zip file, or
+      a Genbank file)
+    outputBinding:
+      glob: $(inputs.target)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dnachisel:3.2.16--pyh7e72e81_0

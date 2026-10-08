@@ -10,6 +10,11 @@ inputs:
   - id: bam
     type: File
     doc: a bam/sam/cram file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 1
   - id: capturekit
@@ -32,6 +37,9 @@ inputs:
       position: 104
       prefix: -w
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output with the stats when -w is not given
   - id: write_stats_to_file
     type:
       - 'null'
@@ -44,3 +52,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eagle:0.9.4.6--pyh5ca1d4c_0
+stdout: eagle_extract.out

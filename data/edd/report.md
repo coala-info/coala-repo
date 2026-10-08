@@ -1,5 +1,11 @@
 # edd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| edd | Failed | image problem: pysam in the image cannot load libhts.so.1, so edd crashes on import. |
+
 ## edd
 
 ### Tool Description

@@ -5,8 +5,8 @@ label: dsh-bio_disinterleave-fastq
 doc: "Disinterleaves a FASTQ file into paired and unpaired files.\n\nTool homepage:
   https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: first_fastq_file
-    type: File
+  - id: first_fastq_file_path
+    type: string
     doc: first FASTQ output file
     inputBinding:
       position: 101
@@ -17,8 +17,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --paired-path
-  - id: second_fastq_file
-    type: File
+  - id: second_fastq_file_path
+    type: string
     doc: second FASTQ output file
     inputBinding:
       position: 101
@@ -32,10 +32,18 @@ inputs:
       position: 101
       prefix: --unpaired-path
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: first_fastq_file
+    type: File
+    doc: first FASTQ output file
+    outputBinding:
+      glob: $(inputs.first_fastq_file_path)
+  - id: second_fastq_file
+    type: File
+    doc: second FASTQ output file
+    outputBinding:
+      glob: $(inputs.second_fastq_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0
-stdout: dsh-bio_disinterleave-fastq.out

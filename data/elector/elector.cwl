@@ -71,8 +71,6 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Fasta file with reference genome sequences (each sequence on one line)
     inputBinding:
       position: 101
@@ -113,17 +111,18 @@ inputs:
   - id: uncorrected
     type:
       - 'null'
-      - string
-    doc: Prefix of the reads simulation files
+      - File
+    doc: Prefix of the reads simulation files (the uncorrected reads FASTA file
+      for -simulator simlord or real)
     inputBinding:
       position: 101
       prefix: -uncorrected
   - id: output_dir_path_path
     type: string
-    doc: Output or path parameter `output_dir_path_path`
+    doc: Name for output directory
     inputBinding:
       position: 102
-      prefix: --output-dir-path
+      prefix: -output
 outputs:
   - id: output_dir_path
     type:

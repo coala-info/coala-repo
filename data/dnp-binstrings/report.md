@@ -1,5 +1,11 @@
 # dnp-binstrings CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnp-binstrings | PASS |  |
+
 ## dnp-binstrings
 
 ### Tool Description

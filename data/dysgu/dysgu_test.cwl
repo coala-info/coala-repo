@@ -18,7 +18,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: test_log
+    type: stderr
+    doc: Test log with one PASS/FAIL line per test command
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dysgu:1.8.7--py311h8ddd9a4_0
 stdout: dysgu_test.out
+stderr: dysgu_test.log

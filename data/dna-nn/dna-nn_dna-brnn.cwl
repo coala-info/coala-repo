@@ -7,7 +7,8 @@ doc: "Reads a sequence file and performs training or prediction using a recurren
 inputs:
   - id: seq_fq
     type: File
-    doc: Input sequence file in FASTQ format
+    doc: Input sequence file (FASTA or FASTQ; FASTQ with label qualities for 
+      training or -E)
     inputBinding:
       position: 1
   - id: bases_to_train_per_epoch
@@ -147,12 +148,17 @@ inputs:
       position: 102
       prefix: -X
   - id: output_model_file_path
-    type: string
-    doc: Output or path parameter `output_model_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Write the trained model to FILE
     inputBinding:
-      position: 103
-      prefix: --output-model-file
+      position: 102
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Prediction output in BED format (with -A or -E)
   - id: output_model_file
     type:
       - 'null'
@@ -165,3 +171,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dna-nn:0.1--h077b44d_3
+stdout: dna-nn_dna-brnn.out

@@ -4,14 +4,6 @@ baseCommand: dsh-traversals-to-property-graph
 label: dsh-bio_traversals-to-property-graph
 doc: "Converts GFA traversals to a property graph format.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_gfa1_path
     type:
       - 'null'

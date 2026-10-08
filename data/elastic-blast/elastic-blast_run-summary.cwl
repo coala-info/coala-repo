@@ -5,6 +5,10 @@ baseCommand:
   - run-summary
 label: elastic-blast_run-summary
 doc: "Show a summary of the ElasticBLAST run.\n\nTool homepage: https://pypi.org/project/elastic-blast/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: aws_region
     type:
@@ -65,8 +69,8 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
-    doc: 'Default: elastic-blast.log'
+      - string
+    doc: 'Log file name. Default: elastic-blast.log'
     inputBinding:
       position: 101
       prefix: --logfile
@@ -100,8 +104,13 @@ outputs:
     doc: 'Output file, default: stdout'
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: ElasticBLAST log file
+    outputBinding:
+      glob: "$(inputs.logfile ? inputs.logfile : 'elastic-blast.log')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/elastic-blast:1.5.0--pyhdfd78af_0

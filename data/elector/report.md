@@ -1,5 +1,11 @@
 # elector CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| elector | Failed | image problem: elector 1.0.4 opens every input FASTA with mode 'rU', which Python 3.12 rejects (ValueError: invalid mode: 'rU'). |
+
 ## elector
 
 ### Tool Description

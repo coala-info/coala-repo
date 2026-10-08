@@ -65,13 +65,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: out_dir_dir
+  - id: assembled_transcripts
     type:
       - 'null'
-      - Directory
-    doc: output directory
+      - File
+    doc: De novo assembled transcripts (Trinity, Oases or Oases multi-K)
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob:
+        - $(inputs.out_dir)/trinity_out_dir/Trinity.fasta
+        - $(inputs.out_dir)/oases_out_dir/oases.transcripts.fa
+        - $(inputs.out_dir)/oasesMultiK_out_dir/oases.transcripts.fa
+  - id: extracted_reads
+    type:
+      type: array
+      items: File
+    doc: Chimeric and unmapped reads extracted for assembly (and their normalized
+      versions)
+    outputBinding:
+      glob: $(inputs.out_dir)/*.fq
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/discasm:0.1.3--py27pl5.22.0_0

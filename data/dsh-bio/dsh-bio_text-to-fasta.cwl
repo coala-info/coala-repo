@@ -4,14 +4,6 @@ baseCommand: dsh-text-to-fasta
 label: dsh-bio_text-to-fasta
 doc: "Converts text input to FASTA format.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: alphabet
     type:
       - 'null'

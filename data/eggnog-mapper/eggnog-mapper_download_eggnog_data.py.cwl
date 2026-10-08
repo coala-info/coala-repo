@@ -7,8 +7,9 @@ inputs:
   - id: data_dir
     type:
       - 'null'
-      - boolean
-    doc: Directory to use for DATA_PATH.
+      - string
+    doc: Directory to use for DATA_PATH (created in the working directory and 
+      collected as output).
     inputBinding:
       position: 101
       prefix: --data_dir
@@ -110,6 +111,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: data_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the downloaded databases
+    outputBinding:
+      glob: $(inputs.data_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        if (inputs.data_dir) {
+          return [{class: 'Directory', basename: inputs.data_dir, listing: [], writable: true}];
+        }
+        return [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eggnog-mapper:2.1.13--pyhdfd78af_2

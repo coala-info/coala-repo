@@ -1,5 +1,11 @@
 # eastr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eastr | PASS |  |
+
 ## eastr
 
 ### Tool Description

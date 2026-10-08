@@ -68,6 +68,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: psmpkl
+    type:
+      type: array
+      items: File
+    doc: PSM pickle files, one per run (<run>.psmpkl)
+    outputBinding:
+      glob: '*.psmpkl'
+  - id: peakpkl
+    type:
+      type: array
+      items: File
+    doc: Peak pickle files, one per run (<run>.peakpkl)
+    outputBinding:
+      glob: '*.peakpkl'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/easypqp:0.1.56--pyhdfd78af_0

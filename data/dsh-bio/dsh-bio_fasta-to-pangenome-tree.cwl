@@ -1,17 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-fasta-to-pangenome-tree
+baseCommand:
+  - dsh-bio
+  - fasta-to-pangenome-tree
 label: dsh-bio_fasta-to-pangenome-tree
 doc: "Converts FASTA files to a pangenome tree.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_fasta_path
     type:
       - 'null'

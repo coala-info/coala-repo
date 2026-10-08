@@ -38,7 +38,7 @@ commands:
   vcf2tsv
 ```
 
-## vcfkit_vk genome
+## vcfkit_vk_genome
 
 ### Tool Description
 Manage genome data
@@ -63,7 +63,7 @@ options:
   --directory=<dir>           Set Genome Directory
 ```
 
-## vcfkit_vk tajima
+## vcfkit_vk_tajima
 
 ### Tool Description
 Calculate Tajima's D
@@ -99,7 +99,7 @@ output:
     TajimaD
 ```
 
-## vcfkit_vk calc
+## vcfkit_vk_calc
 
 ### Tool Description
 Calculate various statistics from VCF files.
@@ -124,7 +124,7 @@ options:
   --version                   Show version.
 ```
 
-## vcfkit_vk phylo
+## vcfkit_vk_phylo
 
 ### Tool Description
 Phylogenetic analysis tools for VCF files.
@@ -146,7 +146,7 @@ options:
   --version                   Show version.
 ```
 
-## vcfkit_vk vcf2tsv
+## vcfkit_vk_vcf2tsv
 
 ### Tool Description
 Convert VCF to TSV format
@@ -167,7 +167,7 @@ options:
   --version                   Show version.
 ```
 
-## vcfkit_vk rename
+## vcfkit_vk_rename
 
 ### Tool Description
 Rename samples in a VCF file.
@@ -188,7 +188,7 @@ options:
   --version                   Show version.
 ```
 
-## vcfkit_vk filter
+## vcfkit_vk_filter
 
 ### Tool Description
 Filter VCF based on genotype counts.

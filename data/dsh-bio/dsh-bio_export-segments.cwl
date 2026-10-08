@@ -4,14 +4,6 @@ baseCommand: dsh-export-segments
 label: dsh-bio_export-segments
 doc: "Export segments from a GFA file to FASTA format.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_gfa1_path
     type:
       - 'null'

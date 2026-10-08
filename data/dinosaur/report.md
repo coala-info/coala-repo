@@ -1,5 +1,11 @@
 # dinosaur CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dinosaur | Failed | image problem: the image has no fonts, so the default QC plots (nReport 10) crash in the Java font manager and the run hangs; with n_report 0 the features match the repo's expected output |
+
 ## dinosaur
 
 ### Tool Description

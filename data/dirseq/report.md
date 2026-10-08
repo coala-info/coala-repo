@@ -1,5 +1,11 @@
 # dirseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dirseq | Failed | image problem: the bundled samtools cannot load libncurses.so.5, so dirseq fails at its samtools idxstats step on the repo's own test BAM |
+
 ## dirseq
 
 ### Tool Description

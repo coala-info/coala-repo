@@ -1,6 +1,6 @@
 # metawrap-kraken CWL Generation Report
 
-## metawrap-kraken_metawrap kraken
+## metawrap-kraken_metawrap_kraken
 
 ### Tool Description
 Run on any number of fasta assembly files and/or or paired-end reads.
@@ -34,7 +34,7 @@ Options:
 ```
 
 
-## metawrap-kraken_metawrap kraken2
+## metawrap-kraken_metawrap_kraken2
 
 ### Tool Description
 Please select a proper module of metaWRAP.

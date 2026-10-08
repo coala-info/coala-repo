@@ -18,6 +18,17 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .csi
+        required: false
     doc: Normal BAM files
     inputBinding:
       position: 2
@@ -138,6 +149,9 @@ inputs:
       position: 104
       prefix: --svs-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Variant calls written to stdout when svs_out_path is not given
   - id: svs_out
     type:
       - 'null'
@@ -150,3 +164,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dysgu:1.8.7--py311h8ddd9a4_0
+stdout: dysgu_filter.out

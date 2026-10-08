@@ -5,17 +5,14 @@ label: dosage_score
 doc: "Dosage-score pipeline 2023/8/21\n\nTool homepage: https://github.com/SegawaTenta/Dosage-score"
 inputs:
   - id: bam_info
-    type:
-      - 'null'
-      - File
-    doc: BAM info file.
+    type: File
+    doc: 'BAM info file: tab separated sample name, BAM path, Control/Test, genome
+      names. Give the BAM paths as the basenames of the bam_files input.'
     inputBinding:
       position: 101
       prefix: --bam_info
   - id: genome_info
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Genome info file.
     inputBinding:
       position: 101
@@ -45,18 +42,16 @@ inputs:
       position: 101
       prefix: --minMQ
   - id: output_dir
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output directory.
     inputBinding:
       position: 101
       prefix: --output_dir
   - id: ref_fa1
-    type:
-      - 'null'
-      - File
-    doc: Referance fasta file.
+    type: File
+    doc: Referance fasta file (with its .fai index).
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --ref_fa1
@@ -92,6 +87,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_size
+  - id: bam_files
+    type:
+      type: array
+      items: File
+    doc: BAM files (with .bai index) named in the BAM info file; staged in the 
+      working directory so the names in the BAM info file resolve.
+    secondaryFiles:
+      - .bai
 outputs:
   - id: stdout
     type: stdout
@@ -103,6 +106,9 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.bam_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dosage_score:1.0.0--pyhdfd78af_0

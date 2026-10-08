@@ -5,7 +5,9 @@
 | Tool | Result | Reason |
 |---|---|---|
 | cell-types-analysis_build_cell_ontology_dict.R | PASS |  |
+| cell-types-analysis_check_labels.R | PASS |  |
 | cell-types-analysis_combine_tool_outputs.R | PASS |  |
+| cell-types-analysis_downsample_cells.R | PASS |  |
 | cell-types-analysis_get_consensus_output.R | Failed | tool bug: with --true-labels the similarity-to-true-label column is wrong (335 cells whose top label equals the true label score 0: a column-for-row lookup and no lowercasing); the run without it checks out |
 | cell-types-analysis_get_empirical_dist.R | PASS |  |
 | cell-types-analysis_get_tool_performance_table.R | PASS |  |
@@ -351,6 +353,109 @@ Options:
 		Show this help message and exit
 ```
 
+
+## cell-types-analysis_downsample_cells.R
+
+### Tool Description
+Weighted down-sampling of cells in 10x expression data to avoid memory overflow when training classifiers
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cell-types-analysis:0.1.11--hdfd78af_1
+- **Homepage**: https://github.com/ebi-gene-expression-group/cell-types-analysis
+- **Package**: https://anaconda.org/channels/bioconda/packages/cell-types-analysis/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cell-types-analysis/overview
+- **Total Downloads**: 38.8K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ebi-gene-expression-group/cell-types-analysis
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: /usr/local/bin/downsample_cells.R [options]
+
+
+Options:
+	-e EXPRESSION-DATA, --expression-data=EXPRESSION-DATA
+		10xGenomics-type directory holding expression matrix, genes, 
+                and barcodes
+
+	-m METADATA, --metadata=METADATA
+		Metadata file mapping cells to cell types
+
+	-x EXCLUSIONS, --exclusions=EXCLUSIONS
+		Path to the yaml file with excluded terms for 
+        initial matrix filtering
+
+	-i CELL-ID-FIELD, --cell-id-field=CELL-ID-FIELD
+		Name of cell id column in metada file
+
+	-c CELL-TYPE-FIELD, --cell-type-field=CELL-TYPE-FIELD
+		Name of cell type column in metada file
+
+	-l ARRAY-SIZE-LIMIT, --array-size-limit=ARRAY-SIZE-LIMIT
+		Maximum length of R array
+
+	-o OUTPUT-DIR, --output-dir=OUTPUT-DIR
+		Output directory for downsampled expression data
+
+	-r CELL-COUNT-THRESHOLD, --cell-count-threshold=CELL-COUNT-THRESHOLD
+		Threshold number of cells to keep a cell type in the matrix
+
+	-n METADATA-UPD, --metadata-upd=METADATA-UPD
+		Updated metadata file output path
+
+	-h, --help
+		Show this help message and exit
+```
+
+## cell-types-analysis_check_labels.R
+
+### Tool Description
+Remove non-alphanumeric characters from cell labels in a metadata file and set them to lower case
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cell-types-analysis:0.1.11--hdfd78af_1
+- **Homepage**: https://github.com/ebi-gene-expression-group/cell-types-analysis
+- **Package**: https://anaconda.org/channels/bioconda/packages/cell-types-analysis/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cell-types-analysis/overview
+- **Total Downloads**: 38.8K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ebi-gene-expression-group/cell-types-analysis
+- **Stars**: N/A
+### Original Help Text
+```text
+Usage: /usr/local/bin/check_labels.R [options]
+
+
+Options:
+	-i INPUT-FILE, --input-file=INPUT-FILE
+		Path to input metadata file in .tsv format
+
+	-l LABEL-FIELD, --label-field=LABEL-FIELD
+		Name of label field in metadata file
+
+	-k, --condensed
+		Is the provided metadata file in condensed format? Default: False
+
+	-t ATTRIBUTE-TYPE-COL-NUM, --attribute-type-col-num=ATTRIBUTE-TYPE-COL-NUM
+		Number of the attribute type field in condensed metadata file.
+                Default: 5
+
+	-v VARIABLE-COL-NUM, --variable-col-num=VARIABLE-COL-NUM
+		Number of the label field in condensed metadata file. Default: 6
+
+	-a, --avoid-lowercase
+		Should setting the labels to lowercase be skipped? Default: False
+
+	-o OUTPUT-PATH, --output-path=OUTPUT-PATH
+		Output for updated file
+
+	-h, --help
+		Show this help message and exit
+```
 
 ## Metadata
 - **Skill**: generated

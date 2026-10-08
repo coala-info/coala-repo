@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: dupsifter
 label: dupsifter
-doc: "Program: dupsifter\n\nTool homepage: https://github.com/huishenlab/dupsifter"
+doc: "dupsifter marks PCR duplicates in WGBS (and WGS) alignments from name-sorted
+  BAM input.\n\nTool homepage: https://github.com/huishenlab/dupsifter"
 inputs:
   - id: ref_fa
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference FASTA file
     inputBinding:
       position: 1
@@ -111,9 +115,13 @@ outputs:
       - File
     doc: name of file to write statistics to
     outputBinding:
-      glob: $(inputs.stats_output_path)
+      glob: "$(inputs.stats_output_path ? inputs.stats_output_path : '*dupsifter.stat')"
+  - id: stdout
+    type: stdout
+    doc: Marked alignments in SAM format when no output file is given
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dupsifter:1.3.0.20241113--h566b1c6_1
+stdout: dupsifter.out.sam

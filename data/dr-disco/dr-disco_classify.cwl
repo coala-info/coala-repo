@@ -4,7 +4,7 @@ baseCommand:
   - dr-disco
   - classify
 label: dr-disco_classify
-doc: "Classify junctions based on alignment data.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
+doc: "Classifies between true and false positives, without rerunning a whole dataset.\n\nTool homepage: https://github.com/yhoogstrate/dr-disco"
 inputs:
   - id: table_input_file
     type: File
@@ -19,7 +19,7 @@ inputs:
   - id: blacklist_junctions
     type:
       - 'null'
-      - string
+      - File
     doc: Blacklist these region-to-region junctions (custom format, see files in
       ./share/)
     inputBinding:

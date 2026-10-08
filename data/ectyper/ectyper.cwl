@@ -27,7 +27,7 @@ inputs:
   - id: dbpath
     type:
       - 'null'
-      - Directory
+      - File
     doc: Path to a custom database of O and H antigen alleles in JSON format.
     inputBinding:
       position: 102
@@ -120,8 +120,6 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Location of pre-computed MASH sketch for species identification. If 
       provided, genomes identified as non-E. coli will have their species 
       identified using MASH dist

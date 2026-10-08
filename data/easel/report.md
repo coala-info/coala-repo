@@ -1,5 +1,11 @@
 # easel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| easel_esl-alipid | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

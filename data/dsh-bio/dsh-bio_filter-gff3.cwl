@@ -4,14 +4,6 @@ baseCommand: dsh-filter-gff3
 label: dsh-bio_filter-gff3
 doc: "Filter GFF3 files based on various criteria.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_gff3_path
     type:
       - 'null'

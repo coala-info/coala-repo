@@ -98,6 +98,9 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+successCodes:
+  - 0
+  - 1
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/decom:0.0.32--pyhdfd78af_2

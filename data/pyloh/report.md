@@ -1,6 +1,6 @@
 # pyloh CWL Generation Report
 
-## pyloh_PyLOH.py preprocess
+## pyloh_PyLOH.py_preprocess
 
 ### Tool Description
 Preprocesses BAM files for PyLOH analysis.
@@ -53,7 +53,7 @@ optional arguments:
 ```
 
 
-## pyloh_PyLOH.py run_model
+## pyloh_PyLOH.py_run_model
 
 ### Tool Description
 Run the PyLOH model training.
@@ -91,7 +91,7 @@ optional arguments:
 ```
 
 
-## pyloh_PyLOH.py BAF_heatmap
+## pyloh_PyLOH.py_BAF_heatmap
 
 ### Tool Description
 Generates a BAF heatmap from preprocessed files.

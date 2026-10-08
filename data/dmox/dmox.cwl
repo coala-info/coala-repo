@@ -5,9 +5,11 @@ label: dmox
 doc: "Demultiplex reads based on their sequenced index barcodes for haplotagging.\n\
   Supposed to match the `demultiplex` step of Harpy's pipeline:\n    https://pdimens.github.io/harpy/workflows/demultiplex/\n\
   \nTool homepage: https://gitlab.mbb.cnrs.fr/ibonnici/dmox"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: barcodes_table
-    type: File
+    type: string
     doc: Where to write the file summarizing assigned / unassigned barcodes
     inputBinding:
       position: 101
@@ -16,10 +18,12 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Raise to output BX codes as part of demultiplexed fastq identifiers
+    doc: Output BX codes as part of demultiplexed fastq identifiers (true/false; tool default true)
     inputBinding:
       position: 101
-      prefix: --bx
+      prefix: --bx=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: distance
     type:
       - 'null'
@@ -44,10 +48,12 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Raise to output the last part of original fastq identifiers
+    doc: Output the last part of original fastq identifiers (tool default false)
     inputBinding:
       position: 101
-      prefix: --id-tail
+      prefix: --id-tail=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: max_distance
     type:
       - 'null'
@@ -105,10 +111,12 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Raise to output QX codes as part of demultiplexed fastq identifiers
+    doc: Output QX codes as part of demultiplexed fastq identifiers (tool default false)
     inputBinding:
       position: 101
-      prefix: --qx
+      prefix: --qx=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: r1
     type: File
     doc: Forward reads .fastq.gz file
@@ -158,10 +166,12 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Raise to output RX codes as part of demultiplexed fastq identifiers
+    doc: Output RX codes as part of demultiplexed fastq identifiers (tool default false)
     inputBinding:
       position: 101
-      prefix: --rx
+      prefix: --rx=
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
   - id: samples
     type: string
     doc: Desired output folder for the resulting sample files. Created if 
@@ -217,13 +227,32 @@ outputs:
     type: stdout
     doc: Standard output
   - id: samples_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Desired output folder for the resulting sample files. Created if 
-      missing
+    type: Directory
+    doc: Output folder with the demultiplexed sample files 
+      (<sample>.R1.fq.gz, <sample>.R2.fq.gz)
     outputBinding:
       glob: $(inputs.samples)
+  - id: barcodes_table_file
+    type: File
+    doc: File summarizing assigned / unassigned barcodes
+    outputBinding:
+      glob: $(inputs.barcodes_table)
+  - id: undetermined_barcodes_fastq
+    type:
+      type: array
+      items: File
+    doc: Reads with undetermined barcode (<stub>.R1.fq.gz, <stub>.R2.fq.gz), 
+      with --undetermined-barcodes
+    outputBinding:
+      glob: $(inputs.undetermined_barcodes).R*.fq.gz
+  - id: undetermined_samples_fastq
+    type:
+      type: array
+      items: File
+    doc: Reads with determined barcodes but undetermined samples 
+      (<stub>.R1.fq.gz, <stub>.R2.fq.gz), with --undetermined-samples
+    outputBinding:
+      glob: $(inputs.undetermined_samples).R*.fq.gz
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dmox:0.2.1--h3ab6199_0

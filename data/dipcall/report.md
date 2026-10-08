@@ -1,5 +1,11 @@
 # dipcall CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dipcall | PASS |  |
+
 ## dipcall
 
 ### Tool Description

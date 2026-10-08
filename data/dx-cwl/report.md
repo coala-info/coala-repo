@@ -1,5 +1,13 @@
 # dx-cwl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dx-cwl_compile-tool | Not completed | needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token. |
+| dx-cwl_compile-workflow | Not completed | needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token. |
+| dx-cwl_run-workflow | Not completed | needs a DNAnexus login token and project; the command line parses and reaches the DNAnexus server, which rejects the placeholder token. |
+
 ## dx-cwl_compile-tool
 
 ### Tool Description

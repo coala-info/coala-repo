@@ -5,6 +5,7 @@
 | Tool | Result | Reason |
 |---|---|---|
 | chunked-scatter | PASS |  |
+| chunked-scatter_scatter-regions | PASS |  |
 
 ## chunked-scatter
 
@@ -66,5 +67,52 @@ optional arguments:
   -o OVERLAP, --overlap OVERLAP
                         The number of bases which each chunk should overlap
                         with the preceding one. Defaults to 150.
+```
+
+## chunked-scatter_scatter-regions
+
+### Tool Description
+Given a sequence dict, fasta index or a bed file, scatter over the defined contigs/regions. Creates a bed file where the contigs add up approximately to the given scatter size.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/chunked-scatter:1.0.0--py_0
+- **Homepage**: https://github.com/biowdl/chunked-scatter
+- **Package**: https://anaconda.org/channels/bioconda/packages/chunked-scatter/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/chunked-scatter/overview
+- **Total Downloads**: 8.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/biowdl/chunked-scatter
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: scatter-regions [-h] [-p PREFIX] [-S] [-P] [-s SCATTER_SIZE] INPUT
+
+Given a sequence dict, fasta index or a bed file, scatter over the defined
+contigs/regions. Creates a bed file where the contigs add up approximately to
+the given scatter size.
+
+positional arguments:
+  INPUT                 The input file. The format is detected by the
+                        extension. Supported extensions are: '.bed', '.dict',
+                        '.fai', '.vcf', '.vcf.gz', '.bcf'.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PREFIX, --prefix PREFIX
+                        The prefix of the ouput files. Output will be named
+                        like: <PREFIX><N>.bed, in which N is an incrementing
+                        number. Default 'scatter-'.
+  -S, --split-contigs   If set, contigs are allowed to be split up over
+                        multiple files.
+  -P, --print-paths     If set prints paths of the output files to STDOUT.
+                        This makes the program usable in scripts and
+                        worfklows.
+  -s SCATTER_SIZE, --scatter-size SCATTER_SIZE
+                        The maximum size for the regions over which to
+                        scatter. If contigs are not split, and a contig is
+                        bigger than the maximum size, the contig will be
+                        placed in its own file. Default: 1000000000.
 ```
 

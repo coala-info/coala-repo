@@ -73,14 +73,14 @@ inputs:
       prefix: --strand
   - id: output_bigwig_file_path
     type: string
-    doc: Output or path parameter `output_bigwig_file_path`
+    doc: output bigwig file
     inputBinding:
       position: 102
-      prefix: --output-bigwig-file
+      prefix: -o
 outputs:
   - id: output_bigwig_file
     type: File
-    doc: Prefix of methratio.dm output file
+    doc: output bigwig file
     outputBinding:
       glob: $(inputs.output_bigwig_file_path)
 requirements:

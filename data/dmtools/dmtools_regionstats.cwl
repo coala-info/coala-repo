@@ -8,8 +8,11 @@ doc: "Calculate methylation statistics for regions in a DM file.\n\nTool homepag
   https://github.com/ZhouQiangwei/dmtools"
 inputs:
   - id: bed_file
-    type: File
-    doc: 'bed file for view, format: chrom start end [strand].'
+    type:
+      - 'null'
+      - File
+    doc: 'bed file for view, format: chrom start end [strand]. Give this, gtf_file
+      or gff_file.'
     inputBinding:
       position: 101
       prefix: --bed

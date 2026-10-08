@@ -28,7 +28,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Root directory to place CWL workflow, tools, and resources
+    doc: Root directory to place CWL workflow, tools, and resources (a folder 
+      in the DNAnexus project, default /dx-cwl-run)
     inputBinding:
       position: 103
       prefix: --rootdir
@@ -42,9 +43,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Pointer to CWL input file on (JSON or YAML) the platform. All files 
-      referenced within this file should exist within the project on the 
-      platform. Relative paths are supported.
+    doc: Wait until the analysis on the platform is done (the help text repeats
+      the inputs description by mistake).
     inputBinding:
       position: 103
       prefix: --wait
@@ -52,13 +52,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: rootdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Root directory to place CWL workflow, tools, and resources
-    outputBinding:
-      glob: $(inputs.rootdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dx-cwl:0.1.0a20180820--py27_0

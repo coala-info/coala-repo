@@ -5,6 +5,8 @@
 | Tool | Result | Reason |
 |---|---|---|
 | crac | PASS |  |
+| crac_crac-index_get | PASS |  |
+| crac_crac-index_index | PASS |  |
 
 ## crac
 
@@ -56,6 +58,94 @@ Optional arguments
    --no-ambiguity       <none>          discard biological events (splice, snv, indel, chimera) which have several matches on the reference index
 ```
 
+
+## crac_crac-index_index
+
+### Tool Description
+Create an index on the specified FASTA or MultiFASTA file(s) (writes <name>.ssa and <name>.conf)
+
+### Metadata
+- **Docker Image**: biocontainers/crac:v2.5.0dfsg-3-deb_cv1
+- **Homepage**: http://crac.gforge.inria.fr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/crac/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/crac/overview
+### Original Help Text
+```text
+crac-index version 2.5.0	Compiled on Sep 13 2018
+
+Usage : crac-index [options] <command> <output file> <input file>+
+
+  command must be one of:
+    index: create an index on the specified input file(s).
+
+    get:   get a (multi)FASTA file containing the original sequences.
+
+  options can be (for the index command only):
+
+  -b <bucket_size>	 the size of the bucket for the index construction
+                  	 (default 100000000)
+  -d <diff-cover> 	 parameter for the index construction (default 1024)
+  -s <sample dist>	 sample distance (default 64)
+  -v              	 verbose mode
+
+  Examples: 
+	Indexing:
+		crac-index index myIndex sequence1.fa sequence2.fa sequence3.fa
+			You can specify FASTA or MultiFASTA file(s).
+			In this example, two files will be created:
+			- myIndex.ssa (index storing the compressed sequences)
+			- myIndex.conf (information on sequence names and length)
+	Extracting:
+		crac-index get sequences.fa myIndex
+			Sequences indexed in myIndex will be extracted
+			to the sequences.fa file
+```
+
+## crac_crac-index_get
+
+### Tool Description
+Get a (multi)FASTA file containing the original sequences from a CRAC index
+
+### Metadata
+- **Docker Image**: biocontainers/crac:v2.5.0dfsg-3-deb_cv1
+- **Homepage**: http://crac.gforge.inria.fr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/crac/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/crac/overview
+### Original Help Text
+```text
+crac-index version 2.5.0	Compiled on Sep 13 2018
+
+Usage : crac-index [options] <command> <output file> <input file>+
+
+  command must be one of:
+    index: create an index on the specified input file(s).
+
+    get:   get a (multi)FASTA file containing the original sequences.
+
+  options can be (for the index command only):
+
+  -b <bucket_size>	 the size of the bucket for the index construction
+                  	 (default 100000000)
+  -d <diff-cover> 	 parameter for the index construction (default 1024)
+  -s <sample dist>	 sample distance (default 64)
+  -v              	 verbose mode
+
+  Examples: 
+	Indexing:
+		crac-index index myIndex sequence1.fa sequence2.fa sequence3.fa
+			You can specify FASTA or MultiFASTA file(s).
+			In this example, two files will be created:
+			- myIndex.ssa (index storing the compressed sequences)
+			- myIndex.conf (information on sequence names and length)
+	Extracting:
+		crac-index get sequences.fa myIndex
+			Sequences indexed in myIndex will be extracted
+			to the sequences.fa file
+```
 
 ## Metadata
 - **Skill**: generated

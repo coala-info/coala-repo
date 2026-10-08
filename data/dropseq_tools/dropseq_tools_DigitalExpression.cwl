@@ -19,10 +19,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: cell_barcode_tag
     type:
       - 'null'
@@ -74,7 +75,7 @@ inputs:
       - boolean
     doc: Echo final command line before executing.
     inputBinding:
-      position: 101
+      position: 0
       prefix: -v
   - id: edit_distance
     type:
@@ -137,18 +138,19 @@ inputs:
       - string
     doc: Heap size to allocate for the JVM.
     inputBinding:
-      position: 101
+      position: 0
       prefix: -m
   - id: locus_function_list
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --LOCUS_FUNCTION_LIST
     doc: A list of functional annotations that reads need to be completely 
       contained by to be considered for analysis.
     inputBinding:
       position: 101
-      prefix: --LOCUS_FUNCTION_LIST
   - id: max_records_in_ram
     type:
       - 'null'
@@ -239,10 +241,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --OUTPUT_HEADER
-  - id: output_long_format
+  - id: output_long_format_path
     type:
       - 'null'
-      - File
+      - string
     doc: An alternate output of expression where each row represents a cell, 
       gene, and count of UMIs. Cell/Gene pairings with 0 UMIs are not emitted.
     inputBinding:
@@ -320,10 +322,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --STRAND_STRATEGY
-  - id: summary
+  - id: summary_path
     type:
       - 'null'
-      - File
+      - string
     doc: 'A summary of the digital expression output, containing 3 columns - the cell
       barcode, the #genes, and the #transcripts.'
     inputBinding:
@@ -333,12 +335,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: unique_experiment_id
     type:
       - 'null'
@@ -399,6 +402,22 @@ outputs:
       and bz2.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_long_format
+    type:
+      - 'null'
+      - File
+    doc: An alternate output of expression where each row represents a cell, 
+      gene, and count of UMIs. Cell/Gene pairings with 0 UMIs are not emitted.
+    outputBinding:
+      glob: $(inputs.output_long_format_path)
+  - id: summary
+    type:
+      - 'null'
+      - File
+    doc: 'A summary of the digital expression output, containing 3 columns - the cell
+      barcode, the #genes, and the #transcripts.'
+    outputBinding:
+      glob: $(inputs.summary_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

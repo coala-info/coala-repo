@@ -26,7 +26,7 @@ inputs:
   - id: blacklist_junctions
     type:
       - 'null'
-      - string
+      - File
     doc: "Blacklist these region-to-region junctions\n                           \
       \   (custom format, see files in ./share/)"
     inputBinding:
@@ -35,8 +35,8 @@ inputs:
   - id: blacklist_regions
     type:
       - 'null'
-      - string
-    doc: Blacklist these regions
+      - File
+    doc: Blacklist these regions (BED file)
     inputBinding:
       position: 103
       prefix: --blacklist-regions

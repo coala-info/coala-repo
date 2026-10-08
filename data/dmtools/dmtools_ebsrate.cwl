@@ -17,7 +17,7 @@ inputs:
   - id: chr
     type:
       - 'null'
-      - boolean
+      - string
     doc: chromosome level used for calculate bisulfite convertion rate, default,
       chrM and chrC
     inputBinding:

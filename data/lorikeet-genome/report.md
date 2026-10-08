@@ -39,7 +39,7 @@ Other options:
 Rhys J. P. Newell <rhys.newell near hdr.qut.edu.au>
 ```
 
-## lorikeet-genome_lorikeet call
+## lorikeet-genome_lorikeet_call
 
 ### Tool Description
 Perform read mapping and variant calling using local reassembly of active regions
@@ -67,7 +67,7 @@ Example: Perform read read mapping and variant calling on an entire directory of
 See lorikeet genotype --full-help for further options and further detail.
 ```
 
-## lorikeet-genome_lorikeet genotype
+## lorikeet-genome_lorikeet_genotype
 
 ### Tool Description
 Report strain-level genotypes and abundances based on variant read mappings
@@ -95,7 +95,7 @@ Example: Generate strain-level genotypes from read mappings compared to referenc
 See lorikeet genotype --full-help for further options and further detail.
 ```
 
-## lorikeet-genome_lorikeet consensus
+## lorikeet-genome_lorikeet_consensus
 
 ### Tool Description
 Consensus caller for lorikeet
@@ -124,7 +124,7 @@ Usage: lorikeet consensus --read1 <read1>... --read2 <read2>... --coupled <coupl
 For more information, try '--help'.
 ```
 
-## lorikeet-genome_lorikeet shell-completion
+## lorikeet-genome_lorikeet_shell-completion
 
 ### Tool Description
 Generate a shell completion script for lorikeet

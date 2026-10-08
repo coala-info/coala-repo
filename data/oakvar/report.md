@@ -48,7 +48,7 @@ Commands:
 ```
 
 
-## oakvar_ov module search
+## oakvar_ov_module_search
 
 ### Tool Description
 Manage ov modules
@@ -66,7 +66,7 @@ ov module: error: argument {install,pack,update,uninstall,info,ls,create}: inval
 ```
 
 
-## oakvar_ov module install
+## oakvar_ov_module_install
 
 ### Tool Description
 Installs OakVar modules.
@@ -109,7 +109,7 @@ options:
 ```
 
 
-## oakvar_ov module update
+## oakvar_ov_module_update
 
 ### Tool Description
 updates modules.
@@ -136,7 +136,7 @@ options:
 ```
 
 
-## oakvar_ov run
+## oakvar_ov_run
 
 ### Tool Description
 Run OakVar on input files.
@@ -299,7 +299,7 @@ inputs should be the first argument
 ```
 
 
-## oakvar_ov report
+## oakvar_ov_report
 
 ### Tool Description
 Generate reports from a job
@@ -374,7 +374,7 @@ dbpath must be the first argument
 ```
 
 
-## oakvar_ov gui
+## oakvar_ov_gui
 
 ### Tool Description
 OakVar graphical user interface
@@ -407,7 +407,7 @@ options:
 ```
 
 
-## oakvar_ov system setup
+## oakvar_ov_system_setup
 
 ### Tool Description
 OakVar system setup
@@ -447,7 +447,7 @@ Do you already have an OakVar store account? (y/N):
 ```
 
 
-## oakvar_ov module info
+## oakvar_ov_module_info
 
 ### Tool Description
 returns information of the queried module

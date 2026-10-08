@@ -5,14 +5,6 @@ label: dsh-bio_extract-uniprot-features-to-parquet
 doc: "Extracts features from UniProt XML files and saves them to a Parquet file.\n\
   \nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_uniprot_xml_path
     type:
       - 'null'
@@ -36,7 +28,7 @@ inputs:
       prefix: --output-feature-file
 outputs:
   - id: output_feature_file
-    type: File
+    type: Directory
     doc: output feature Parquet file
     outputBinding:
       glob: $(inputs.output_feature_file_path)

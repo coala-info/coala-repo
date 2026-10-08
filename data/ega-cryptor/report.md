@@ -1,5 +1,11 @@
 # ega-cryptor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ega-cryptor | PASS |  |
+
 ## ega-cryptor
 
 ### Tool Description

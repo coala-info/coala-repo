@@ -1,26 +1,56 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-bio_truncate-fasta
+baseCommand:
+  - dsh-truncate-fasta
 label: dsh-bio_truncate-fasta
-doc: "Truncates FASTA sequences to a specified length.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
+doc: "truncate DNA or protein sequences in FASTA format\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: input_fasta
+  - id: input_fasta_path
     type: File
-    doc: The input FASTA file.
+    doc: "input FASTA path, default stdin"
     inputBinding:
-      position: 1
+      position: 101
+      prefix: --input-fasta-path
+  - id: output_fasta_file_path
+    type: string
+    doc: "output FASTA file, default stdout"
+    inputBinding:
+      position: 101
+      prefix: --output-fasta-file
   - id: length
-    type: int
-    doc: The maximum length to truncate sequences to.
+    type:
+      - 'null'
+      - int
+    doc: "length, default 10000"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --length
+  - id: alphabet
+    type:
+      - 'null'
+      - string
+    doc: "input FASTA alphabet { dna, protein }, default dna"
+    inputBinding:
+      position: 101
+      prefix: --alphabet
+  - id: line_width
+    type:
+      - 'null'
+      - int
+    doc: "line width, default 70"
+    inputBinding:
+      position: 101
+      prefix: --line-width
 outputs:
-  - id: output_fasta
-    type: File
-    doc: The output FASTA file.
+  - id: output_fasta_file
+    type:
+      - 'null'
+      - File
+    doc: "output FASTA file, default stdout"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_fasta_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

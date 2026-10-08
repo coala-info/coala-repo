@@ -436,7 +436,7 @@ options:
 ## Metadata
 - **Skill**: generated
 
-## mrpast_mrpast simulate
+## mrpast_mrpast_simulate
 
 ### Tool Description
 Simulate demographic histories using mr.py.
@@ -478,7 +478,7 @@ options:
   --debug-demo, -d      Output results from msprime demography debugger.
 ```
 
-## mrpast_mrpast solve
+## mrpast_mrpast_solve
 
 ### Tool Description
 Solve problems using the mrpast solver.

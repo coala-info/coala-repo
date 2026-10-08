@@ -4,14 +4,6 @@ baseCommand: dsh-compress-paf
 label: dsh-bio_compress-paf
 doc: "Compresses a PAF file.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_paf_path
     type:
       - 'null'

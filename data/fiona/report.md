@@ -50,7 +50,7 @@ Commands:
 ```
 
 
-## fiona_fio info
+## fiona_fio_info
 
 ### Tool Description
 Print information about a dataset.
@@ -87,7 +87,7 @@ Options:
 ```
 
 
-## fiona_fio cat
+## fiona_fio_cat
 
 ### Tool Description
 Concatenate and print the features of input datasets as a sequence of GeoJSON features.
@@ -135,7 +135,7 @@ Options:
 ```
 
 
-## fiona_fio load
+## fiona_fio_load
 
 ### Tool Description
 Load features from JSON to a file in another format.

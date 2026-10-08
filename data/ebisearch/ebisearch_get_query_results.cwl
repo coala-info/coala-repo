@@ -11,8 +11,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Domain id in EBI (accessible with get_domains) (accessible with 
-      get_domains)
+    doc: Domain id in EBI (accessible with get_domains)
     inputBinding:
       position: 101
       prefix: --domain
@@ -37,32 +36,35 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --facet_fields
     doc: (Optional, Multiple) Facet field identifiers associated with facets to 
       retrieve (facet_id accessible with get_fields with facet as type)
     inputBinding:
       position: 101
-      prefix: --facet_fields
   - id: facets
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --facets
     doc: (Optional, Multiple) Facet selections to apply on search results with 
       facet_id:facet_value (facet_id accessible with get_fields with facet as 
       type)
     inputBinding:
       position: 101
-      prefix: --facets
   - id: field
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --field
     doc: (Multiple) Field to export (accessible with get_fields with retrievable
       as type)
     inputBinding:
       position: 101
-      prefix: --field
   - id: field_url
     type:
       - 'null'
@@ -74,7 +76,10 @@ inputs:
   - id: order
     type:
       - 'null'
-      - string
+      - type: enum
+        symbols:
+          - ascending
+          - descending
     doc: (Optional) Order to sort the results (optional), should come along with
       "sortfield" and not allowed to use with "sort" parameters
     inputBinding:
@@ -94,12 +99,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sort
     doc: (Optional, Multiple) Sorting criteria with field_id:order (field_id 
       accessible with get_fields with retrievable as type), should not be used 
       in conjunction with any of "sortfield" and "order" parameters
     inputBinding:
       position: 101
-      prefix: --sort
   - id: sort_field
     type:
       - 'null'
@@ -118,7 +124,9 @@ inputs:
       position: 101
       prefix: --view_url
   - id: file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: (Optional) File to export the entry content
     inputBinding:
       position: 102
@@ -131,8 +139,14 @@ outputs:
     doc: (Optional) File to export the entry content
     outputBinding:
       glob: $(inputs.file_path)
+  - id: stdout
+    type: stdout
+    doc: Query results printed to standard output
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ebisearch:0.0.3--py27_1
+stdout: ebisearch_get_query_results.out

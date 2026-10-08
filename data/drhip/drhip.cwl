@@ -38,7 +38,9 @@ outputs:
       - Directory
     doc: Path to output directory (defaults to current directory)
     outputBinding:
-      glob: $(inputs.output)
+      glob: "$(inputs.output ? inputs.output : '.')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/drhip:0.1.4--pyhdfd78af_0

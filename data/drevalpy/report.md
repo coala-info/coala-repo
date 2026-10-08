@@ -1,5 +1,11 @@
 # drevalpy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| drevalpy | PASS |  |
+
 ## drevalpy
 
 ### Tool Description

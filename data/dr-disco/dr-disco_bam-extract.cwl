@@ -4,7 +4,7 @@ baseCommand:
   - dr-disco
   - bam-extract
 label: dr-disco_bam-extract
-doc: "Extracts reads from BAM files that overlap with specified regions.\n\nTool homepage:
+doc: "Extract reads from two chromosomal positions (and also take the mates with the same name) - regions are in the format chr1:123-546.\n\nTool homepage:
   https://github.com/yhoogstrate/dr-disco"
 inputs:
   - id: region1
@@ -19,6 +19,9 @@ inputs:
       position: 2
   - id: bam_input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: The input BAM file.
     inputBinding:
       position: 3
@@ -40,8 +43,17 @@ outputs:
   - id: out_bam_output_file
     type: File
     doc: The output BAM file.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     outputBinding:
       glob: '$(inputs.bam_output_file)'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0

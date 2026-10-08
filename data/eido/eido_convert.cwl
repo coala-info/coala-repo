@@ -4,8 +4,21 @@ baseCommand:
   - eido
   - convert
 label: eido_convert
-doc: "Convert PEP format using filters\n\nTool homepage: https://github.com/mayneyao/eidos"
+doc: "Convert PEP format using filters\n\nTool homepage: https://github.com/pepkit/eido"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pep)
+      - $(inputs.pep_files)
 inputs:
+  - id: pep_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files the PEP configuration names (sample table, subsample table); 
+      staged beside the configuration so its relative paths resolve
   - id: pep
     type: File
     doc: Path to a PEP configuration file in yaml format.
@@ -75,6 +88,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: path_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files written for --paths key=value pairs
+    outputBinding:
+      glob: |-
+        ${
+          if (!inputs.paths) { return []; }
+          return inputs.paths.map(function(p) { return p.split('=').slice(1).join('='); });
+        }
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/eido:0.1.9_cv2

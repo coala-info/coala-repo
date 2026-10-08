@@ -174,14 +174,14 @@ outputs:
       - File
     doc: Output PSMs file.
     outputBinding:
-      glob: $(inputs.psms_path)
+      glob: '$(inputs.psms_path ? inputs.psms_path : "*.psmpkl")'
   - id: peaks
     type:
       - 'null'
       - File
     doc: Output peaks file.
     outputBinding:
-      glob: $(inputs.peaks_path)
+      glob: '$(inputs.peaks_path ? inputs.peaks_path : "*.peakpkl")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

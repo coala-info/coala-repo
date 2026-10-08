@@ -135,10 +135,13 @@ inputs:
       prefix: --outbreakmethod
   - id: outputprefix
     type: string
-    doc: output path and prefix for output file generation
+    doc: output path and prefix for output file generation (written in the 
+      working directory; dodge exits when the prefix has no folder part, so 
+      './' is added)
     inputBinding:
       position: 101
       prefix: --outputPrefix
+      valueFrom: ./$(self)
   - id: snpqual
     type:
       - 'null'
@@ -210,7 +213,9 @@ inputs:
       position: 101
       prefix: --useref
   - id: variant_data
-    type: File
+    type:
+      - File
+      - Directory
     doc: file containing allele profiles (tab delimited table) or snp data (path
       to folder containing .subs.vcf files from snippy, and optionally 
       consensus.fasta masked genomes.)

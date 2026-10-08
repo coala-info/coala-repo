@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: --bytes
   - id: input_path
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input interleaved FASTQ path, default stdin
     inputBinding:
       position: 101
@@ -53,17 +51,15 @@ inputs:
       position: 101
       prefix: --suffix
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: prefix_files
     type:
       type: array
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix : inputs.input_path.basename.split('.')[0])*"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0
-stdout: dsh-bio_split-interleaved-fastq.out

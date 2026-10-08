@@ -17,9 +17,10 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: control-file(s)
+    doc: control-file(s), given after a ':' separator
     inputBinding:
       position: 2
+      prefix: ':'
   - id: filter
     type:
       - 'null'

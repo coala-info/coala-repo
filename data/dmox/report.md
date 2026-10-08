@@ -1,5 +1,11 @@
 # dmox CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dmox | PASS |  |
+
 ## dmox
 
 ### Tool Description

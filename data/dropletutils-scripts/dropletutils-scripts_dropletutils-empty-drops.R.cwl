@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --filter-empty
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: filter_fdr
     type:
       - 'null'
@@ -73,32 +74,25 @@ inputs:
     inputBinding:
       position: 101
       prefix: --test-ambient
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: output_object_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output-object-file
   - id: output_text_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --output-text-file
 outputs:
   - id: output_text_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File name of text file in which to store output data frame.
     outputBinding:
       glob: $(inputs.output_text_file_path)
   - id: output_object_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File name in which to store serialized SingleCellExperiment object.
     outputBinding:
       glob: $(inputs.output_object_file_path)

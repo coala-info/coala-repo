@@ -190,12 +190,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --u
-  - id: rmout_path
-    type: string
-    inputBinding:
-      position: 102
-      prefix: --rmout
-outputs:
   - id: rmout
     type:
       - 'null'
@@ -204,8 +198,52 @@ outputs:
       library for masking. File is in RepeatMasker .out format. This\nfile will be
       merged with the structural-based TE annotation. (--anno 1\nrequired). Default:
       use the EDTA library for annotation."
+    inputBinding:
+      position: 101
+      prefix: --rmout
+outputs:
+  - id: te_library
+    type:
+      - 'null'
+      - File
+    doc: Non-redundant TE library
     outputBinding:
-      glob: $(inputs.rmout_path)
+      glob: $(inputs.genome.basename).mod.EDTA.TElib.fa
+  - id: intact_gff3
+    type:
+      - 'null'
+      - File
+    doc: Intact TE annotation in GFF3 format
+    outputBinding:
+      glob: $(inputs.genome.basename).mod.EDTA.intact.gff3
+  - id: intact_fasta
+    type:
+      - 'null'
+      - File
+    doc: Intact TE sequences
+    outputBinding:
+      glob: $(inputs.genome.basename).mod.EDTA.intact.fa
+  - id: te_anno_gff3
+    type:
+      - 'null'
+      - File
+    doc: Whole-genome TE annotation (--anno 1)
+    outputBinding:
+      glob: $(inputs.genome.basename).mod.EDTA.TEanno.gff3
+  - id: te_anno_sum
+    type:
+      - 'null'
+      - File
+    doc: Summary of whole-genome TE annotation (--anno 1)
+    outputBinding:
+      glob: $(inputs.genome.basename).mod.EDTA.TEanno.sum
+  - id: masked_genome
+    type:
+      - 'null'
+      - File
+    doc: Low-threshold TE masking for MAKER gene annotation (--anno 1)
+    outputBinding:
+      glob: $(inputs.genome.basename).mod.MAKER.masked
 requirements:
   - class: InlineJavascriptRequirement
 hints:

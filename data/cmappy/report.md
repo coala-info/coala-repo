@@ -4,9 +4,9 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| cmappy_python -m cmapPy.pandasGEXpress.gct2gctx | Failed | image problem: cmapPy 4.0.1 calls numpy.string_, which NumPy 2.0.2 in the image removed, so writing the .gctx file crashes. |
+| cmappy_python_-m_cmapPy.pandasGEXpress.gct2gctx | Failed | image problem: cmapPy 4.0.1 calls numpy.string_, which NumPy 2.0.2 in the image removed, so writing the .gctx file crashes. |
 
-## cmappy_python -m cmapPy.pandasGEXpress.gct2gctx
+## cmappy_python_-m_cmapPy.pandasGEXpress.gct2gctx
 
 ### Tool Description
 Command-line script to convert a .gct file to .gctx. Main method takes in a .gct file path (and, optionally, an out path and/or name to which to save the equivalent .gctx) and saves the enclosed content to a .gctx file. Note: Only supports v1.3 .gct files.

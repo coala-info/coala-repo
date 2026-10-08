@@ -21,6 +21,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --id
+      itemSeparator: ','
   - id: input_vcf_path
     type:
       - 'null'

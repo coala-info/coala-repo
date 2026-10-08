@@ -103,6 +103,9 @@ inputs:
       position: 104
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: DockQ scores printed to standard output
   - id: json
     type:
       - 'null'
@@ -115,3 +118,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dockq:2.1.3--py312h031d066_0
+stdout: dockq_DockQ.out

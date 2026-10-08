@@ -1,5 +1,11 @@
 # eigensoft CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eigensoft_convertf | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

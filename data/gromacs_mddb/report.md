@@ -1,54 +1,6 @@
 # gromacs_mddb CWL Generation Report
 
-## gromacs_mddb_gmx
-
-### Tool Description
-GROMACS command-line tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gromacs:2022
-- **Homepage**: https://www.gromacs.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/gromacs_mddb/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/gromacs_mddb/overview
-- **Total Downloads**: 994
-- **Last updated**: 2026-01-23
-- **GitHub**: N/A
-- **Stars**: N/A
-### Original Help Text
-```text
-SYNOPSIS
-
-gmx [-[no]h] [-[no]quiet] [-[no]version] [-[no]copyright] [-nice <int>]
-    [-[no]backup]
-
-OPTIONS
-
-Other options:
-
- -[no]h                     (no)
-           Print help and quit
- -[no]quiet                 (no)
-           Do not print common startup info or quotes
- -[no]version               (no)
-           Print extended version information and quit
- -[no]copyright             (no)
-           Print copyright information on startup
- -nice   <int>              (19)
-           Set the nicelevel (default depends on command)
- -[no]backup                (yes)
-           Write backups if output files exist
-
-Additional help is available on the following topics:
-    commands    List of available commands
-    selections  Selection syntax and usage
-To access the help, use 'gmx help <topic>'.
-For help on a command, use 'gmx help <command>'.
-```
-
-
-## gromacs_mddb_gmx dump
+## gromacs_mddb_gmx_dump
 
 ### Tool Description
 Reads a run input file (.tpr), a trajectory (.trr/.xtc/tng), an energy file (.edr), a checkpoint file (.cpt) or topology file (.top) and prints that to standard output in a readable format. This program is essential for checking your run input file in case of problems.
@@ -118,7 +70,7 @@ KNOWN ISSUES
 ```
 
 
-## gromacs_mddb_gmx grompp
+## gromacs_mddb_gmx_grompp
 
 ### Tool Description
 reads a molecular topology file, checks the validity of the file, expands the topology from a molecular description to an atomic description. The topology file contains information about molecule types and the number of molecules, the preprocessor copies each molecule as needed. There is no limitation on the number of molecule types. Bonds and bond-angles can be converted into constraints, separately for hydrogens and heavy atoms. Then a coordinate file is read and velocities can be generated from a Maxwellian distribution if requested. gmx grompp also reads parameters for gmx mdrun (eg. number of MD steps, time step, cut-off). Eventually a binary file is produced that can serve as the sole input file for the MD program.
@@ -282,7 +234,7 @@ Other options:
 ```
 
 
-## gromacs_mddb_gmx mdrun
+## gromacs_mddb_gmx_mdrun
 
 ### Tool Description
 gmx mdrun is the main computational chemistry engine within GROMACS. Obviously, it performs Molecular Dynamics simulations, but it can also perform Stochastic Dynamics, Energy Minimization, test particle insertion or (re)calculation of energies. Normal mode analysis is another option. In this case mdrun builds a Hessian matrix from single conformation. For usual Normal Modes-like calculations, make sure that the structure provided is properly energy-minimized. The generated matrix can be diagonalized by gmx nmeig.
@@ -592,7 +544,7 @@ Other options:
 ```
 
 
-## gromacs_mddb_gmx trjconv
+## gromacs_mddb_gmx_trjconv
 
 ### Tool Description
 gmx trjconv can convert trajectory files in many ways:

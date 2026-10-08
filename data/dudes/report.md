@@ -1,5 +1,11 @@
 # dudes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dudes | PASS |  |
+
 ## dudes
 
 ### Tool Description

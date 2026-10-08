@@ -1,6 +1,6 @@
 # simscsntree CWL Generation Report
 
-## simscsntree_python -m SimSCSnTree
+## simscsntree_python_-m_SimSCSnTree
 
 ### Tool Description
 A single cell simulator generating low coverage data. The program automatically generates a phylogenetic tree with copy number variations on the branches. On each leave of the tree, it generates the reads whose error profile, such as uneven coverage, mimics the real single cell data.

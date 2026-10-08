@@ -1,5 +1,11 @@
 # dsrc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dsrc | PASS |  |
+
 ## dsrc
 
 ### Tool Description

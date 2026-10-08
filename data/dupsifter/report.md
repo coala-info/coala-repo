@@ -1,5 +1,11 @@
 # dupsifter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dupsifter | PASS |  |
+
 ## dupsifter
 
 ### Tool Description

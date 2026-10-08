@@ -25,6 +25,7 @@ inputs:
       - 'null'
       - string
     doc: Output directory
+    default: output.dnaapler
     inputBinding:
       position: 101
       prefix: --output
@@ -33,6 +34,7 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
+    default: dnaapler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -54,7 +56,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_directory)/$(inputs.prefix)*
   - id: output_directory_dir
     type:
       - 'null'
@@ -64,5 +66,5 @@ outputs:
       glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/dnaapler:1.3.0--pyhdfd78af_0
+    dockerPull: quay.io/biocontainers/dnaapler:1.4.0--pyhdfd78af_0
 stdout: dnaapler_largest.out

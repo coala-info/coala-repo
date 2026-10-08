@@ -342,14 +342,37 @@ inputs:
     inputBinding:
       position: 105
       prefix: -o
+  - id: mate_output_file_paths
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: -o
+    doc: Output files for the mate inputs; with paired-end inputs, a -o option 
+      is required for each
+    inputBinding:
+      position: 106
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Output file for stats (defaults to stderr, stdout if specified)
+    doc: Clipped reads
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: mate_output_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Clipped mate reads
+    outputBinding:
+      glob: $(inputs.mate_output_file_paths)
+  - id: stats
+    type: stdout
+    doc: Clipping statistics (stdout when -o is given)
+stdout: fastq-mcf.stats.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

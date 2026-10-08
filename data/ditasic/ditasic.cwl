@@ -3,67 +3,106 @@ class: CommandLineTool
 baseCommand: ditasic
 label: ditasic
 doc: "Differential Taxon Abundance Subtraction and Intersection Counting for accurate
-  profiling of metagenomes.\n\nTool homepage: https://rki_bioinformatics.gitlab.io/ditasic/"
+  profiling of metagenomes. Estimates taxon abundances (and differential abundance
+  between two samples) from the similarity matrix of ditasic_matrix.py and the
+  count vectors of ditasic_mapping.py.\n\nTool homepage: https://rki_bioinformatics.gitlab.io/ditasic/"
 inputs:
-  - id: subcommand
-    type: string
-    doc: "Subcommand to run: 'build' to create a reference index or 'run' to perform
-      abundance estimation."
+  - id: refs
+    type: File
+    doc: Taxa names file containing the absolute path to all considered taxa
+      references in this analysis (already required in previous
+      'ditasic_mapping' and 'ditasic_matrix')
     inputBinding:
-      position: 1
-  - id: prefix
-    type: string
-    doc: Prefix for the index files or output files.
+      position: 101
+      prefix: --refs
+  - id: similarity_matrix
+    type: File
+    doc: Path to the similarity_matrix.npy file (output of 'ditasic_matrix').
     inputBinding:
-      position: 102
-      prefix: --prefix
-  - id: query
+      position: 101
+      prefix: --Mat
+  - id: counts_s1
+    type: File
+    doc: 'Mapped count vector of sample 1: sample.npy file (default output of
+      ditasic_mapping).'
+    inputBinding:
+      position: 101
+      prefix: --counts_s1
+  - id: total_s1
+    type: File
+    doc: 'Total vector of sample 1, containing the total number of input reads:
+      total.npy file (default output of ditasic_mapping).'
+    inputBinding:
+      position: 101
+      prefix: --N_s1
+  - id: counts_s2
     type:
       - 'null'
       - File
-    doc: Query sequences (BAM/SAM format) for the 'run' subcommand.
+    doc: 'Mapped count vector of sample 2: sample.npy file (default output of
+      ditasic_mapping).'
     inputBinding:
-      position: 102
-      prefix: --query
-  - id: reference
+      position: 101
+      prefix: --counts_s2
+  - id: total_s2
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
-    doc: Reference sequences (FASTA format) for the 'build' subcommand.
+    doc: 'Total vector of sample 2, containing the total number of input reads:
+      total.npy file (default output of ditasic_mapping).'
     inputBinding:
-      position: 102
-      prefix: --reference
-  - id: threads
+      position: 101
+      prefix: --N_s2
+  - id: filter
+    type:
+      - 'null'
+      - boolean
+    doc: Apply a filtering to detect and remove false-positive taxa in the data
+      (default = F)
+    inputBinding:
+      position: 101
+      prefix: --filter
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
+  - id: output_name
+    type: string
+    default: DiffAbund_Result.txt
+    doc: Name of the output file
+    inputBinding:
+      position: 101
+      prefix: --output
+  - id: pval_thres
+    type:
+      - 'null'
+      - float
+    doc: P-value threshold to remove false-positive taxa in case of filtering
+      applied (default = 0.05)
+    inputBinding:
+      position: 101
+      prefix: --pval_thres
+  - id: min_thres
     type:
       - 'null'
       - int
-    doc: Number of threads to use for processing.
+    doc: Minimum number of reads to assign significant taxa existence (default =
+      0)
     inputBinding:
-      position: 102
-      prefix: --threads
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
-outputs:
-  - id: output
+      position: 101
+      prefix: --min_thres
+  - id: seed
     type:
       - 'null'
-      - File
-    doc: Path to the output file for abundance estimates.
+      - int
+    doc: Seed for sampling processes used in creating the empirical
+      distributions (default = 1448)
+    inputBinding:
+      position: 101
+      prefix: --seed
+outputs:
+  - id: output
+    type: File
+    doc: Abundance (or differential abundance) result table
     outputBinding:
-      glob: $(inputs.output_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,16 @@
 # domainator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| domainator_build_ssn.py | Failed | image problem: pandas 3.0 in the image makes the xgmml writer crash with --metadata (TypeError on StringDtype); clustering without metadata matches the expected clusters. |
+| domainator_compare_contigs.py | PASS |  |
+| domainator_deduplicate_genbank.py | PASS |  |
+| domainator_domain_search.py | PASS |  |
+| domainator_domainate.py | PASS |  |
+| domainator_select_by_cds.py | PASS |  |
+
 ## domainator_domainate.py
 
 ### Tool Description

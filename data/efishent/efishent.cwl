@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: efishent
 label: efishent
-doc: "1meFISHent 🎣 🧬 to design all your probes.\n\nTool homepage: https://github.com/bbquercus/eFISHent/"
+doc: "eFISHent 🎣 🧬 to design all your probes.\n\nTool homepage: https://github.com/bbquercus/eFISHent/"
 inputs:
   - id: analyze_probeset
     type:
@@ -22,6 +22,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --build-indices
+      valueFrom: "$(self ? 'True' : 'False')"
   - id: encode_count_table
     type:
       - 'null'
@@ -69,6 +70,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --is-endogenous
+      valueFrom: "$(self ? 'True' : 'False')"
   - id: is_plus_strand
     type:
       - 'null'
@@ -78,6 +80,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --is-plus-strand
+      valueFrom: "$(self ? 'True' : 'False')"
   - id: kmer_length
     type:
       - 'null'
@@ -240,6 +243,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --save-intermediates
+      valueFrom: "$(self ? 'True' : 'False')"
   - id: sequence_file
     type:
       - 'null'
@@ -285,6 +289,20 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: probes_fasta
+    type:
+      type: array
+      items: File
+    doc: Designed probe sequences
+    outputBinding:
+      glob: "$((inputs.output_dir ? inputs.output_dir + '/' : '') + '*.fasta')"
+  - id: probes_table
+    type:
+      type: array
+      items: File
+    doc: Table of designed probes and their properties
+    outputBinding:
+      glob: "$((inputs.output_dir ? inputs.output_dir + '/' : '') + '*.csv')"
   - id: stdout
     type: stdout
     doc: Standard output
@@ -296,6 +314,12 @@ outputs:
       directory.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/efishent:0.0.5--pyhdfd78af_0

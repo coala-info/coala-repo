@@ -1,6 +1,6 @@
 # muse CWL Generation Report
 
-## muse_MuSE call
+## muse_MuSE_call
 
 ### Tool Description
 Call somatic mutations using MuSE
@@ -27,7 +27,7 @@ Options:
 ```
 
 
-## muse_MuSE sump
+## muse_MuSE_sump
 
 ### Tool Description
 Summarize MuSE variant calls

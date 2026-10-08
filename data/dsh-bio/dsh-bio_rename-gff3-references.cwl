@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-rename-references
+baseCommand: dsh-rename-gff3-references
 label: dsh-bio_rename-gff3-references
 doc: "Rename chromosome references in a GFF3 file.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:

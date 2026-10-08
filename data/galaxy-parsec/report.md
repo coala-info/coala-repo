@@ -65,7 +65,7 @@ Commands:
 ```
 
 
-## galaxy-parsec_parsec init
+## galaxy-parsec_parsec_init
 
 ### Tool Description
 Initialize Galaxy parsec connection.

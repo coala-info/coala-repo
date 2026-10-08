@@ -41,7 +41,7 @@ Global arguments:
 ```
 
 
-## microhapulator_mhpl8r pipe
+## microhapulator_mhpl8r_pipe
 
 ### Tool Description
 Perform a complete end-to-end microhap analysis pipeline
@@ -110,7 +110,7 @@ optional arguments:
 ```
 
 
-## microhapulator_mhpl8r seq
+## microhapulator_mhpl8r_seq
 
 ### Tool Description
 Simulate paired-end Illumina MiSeq sequencing of the given profile(s)
@@ -154,7 +154,7 @@ optional arguments:
 ```
 
 
-## microhapulator_mhpl8r filter
+## microhapulator_mhpl8r_filter
 
 ### Tool Description
 Apply static and/or dynamic thresholds to distinguish true and false haplotypes. Thresholds are applied to the haplotype read counts of a raw typing result. Static integer thresholds are commonly used as detection thresholds, below which any haplotype count is considered noise. Dynamic thresholds are commonly used as analytical thresholds and represent a percentage of the total read count at the marker, after any haplotypes failing a static threshold are discarded.
@@ -194,7 +194,7 @@ optional arguments:
 ```
 
 
-## microhapulator_mhpl8r contribution
+## microhapulator_mhpl8r_contribution
 
 ### Tool Description
 Microhaplotype analysis tool

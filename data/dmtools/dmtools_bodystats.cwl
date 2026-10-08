@@ -8,8 +8,11 @@ doc: "Calculate DNA methylation level of upstream and downstream N-bp window.\n\
   Tool homepage: https://github.com/ZhouQiangwei/dmtools"
 inputs:
   - id: bed_file
-    type: File
-    doc: 'bed file for view, format: chrom start end [strand].'
+    type:
+      - 'null'
+      - File
+    doc: 'bed file for view, format: chrom start end [strand]. Give this, gtf_file
+      or gff_file.'
     inputBinding:
       position: 101
       prefix: --bed
@@ -106,14 +109,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --strand
+  - id: output_file_path
+    type: string
+    doc: output file
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dmtools:0.2.6--hda3def1_0

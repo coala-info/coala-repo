@@ -1,5 +1,11 @@
 # dosage_score CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dosage_score | PASS |  |
+
 ## dosage_score
 
 ### Tool Description

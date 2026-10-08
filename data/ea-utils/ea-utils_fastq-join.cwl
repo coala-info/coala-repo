@@ -56,7 +56,7 @@ inputs:
   - id: stitch_report_file
     type:
       - 'null'
-      - File
+      - string
     doc: Verbose stitch length report
     inputBinding:
       position: 104
@@ -72,18 +72,43 @@ inputs:
       prefix: -v
   - id: output_template_path
     type: string
-    doc: Output or path parameter `output_template_path`
+    doc: Output file name template; the suffix 'un1', 'un2' or 'join' is 
+      appended, or replaces a %-character if present
     inputBinding:
       position: 105
-      prefix: --output-template
+      prefix: -o
 outputs:
-  - id: output_template
+  - id: joined
     type:
       - 'null'
       - File
-    doc: Output file name template or list of files for un1, un2, join
+    doc: Joined reads
     outputBinding:
-      glob: $(inputs.output_template_path)
+      glob: "$(inputs.output_template_path.indexOf('%') >= 0 ? inputs.output_template_path.replace('%', 'join') : inputs.output_template_path + 'join')"
+  - id: unjoined1
+    type:
+      - 'null'
+      - File
+    doc: Unjoined read 1
+    outputBinding:
+      glob: "$(inputs.output_template_path.indexOf('%') >= 0 ? inputs.output_template_path.replace('%', 'un1') : inputs.output_template_path + 'un1')"
+  - id: unjoined2
+    type:
+      - 'null'
+      - File
+    doc: Unjoined read 2
+    outputBinding:
+      glob: "$(inputs.output_template_path.indexOf('%') >= 0 ? inputs.output_template_path.replace('%', 'un2') : inputs.output_template_path + 'un2')"
+  - id: stitch_report
+    type:
+      - 'null'
+      - File
+    doc: Verbose stitch length report
+    outputBinding:
+      glob: $(inputs.stitch_report_file)
+  - id: log
+    type: stdout
+stdout: fastq-join.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

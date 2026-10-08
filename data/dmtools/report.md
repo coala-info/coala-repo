@@ -1,5 +1,28 @@
 # dmtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dmtools_addzm | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_align | Failed | image problem: the image has no bwa or samtools, which dmtools align pipes the reads through, so no BAM is written |
+| dmtools_bam2dm | Failed | tool bug: bam2dm exits with a random non-zero code (segfault at exit) after a SAM run and leaves the DM file without its data index, and it crashes with a double free on BAM input |
+| dmtools_bodystats | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_bw | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_chrmeth | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_chromstats | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_dmDMR | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_ebsrate | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_index | Failed | image problem: bwa is not in the image, so dmtools index stops after writing the converted genome and builds no bwa index |
+| dmtools_merge | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_mr2dm | Failed | tool bug: mr2dm segfaults on every input tried (methratio and bismark formats, even a 5-line file) and writes no DM file |
+| dmtools_overlap | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_profile | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_regionstats | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_stats | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_view | Not completed | no valid DM test file: this image's bam2dm leaves DM files unfinished and mr2dm crashes, and no DM file is published; the run crashed or gave empty output on the unfinished file |
+| dmtools_viewheader | PASS |  |
+
 ## dmtools_index
 
 ### Tool Description
@@ -504,46 +527,6 @@ Usage:
 ```
 
 
-## dmtools_dmdmr
-
-### Tool Description
-A collection of tools for DNA methylation analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dmtools:0.2.6--hda3def1_0
-- **Homepage**: https://github.com/ZhouQiangwei/dmtools
-- **Package**: https://anaconda.org/channels/bioconda/packages/dmtools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Please define correct mode!!!
-Command Format :  dmtools <mode> [opnions]
-
-Usage:
-	  [mode]         index align bam2dm mr2dm view ebsrate viewheader overlap regionstats bodystats profile chromstats
-
-	  index          build index for genome
-	  align          alignment fastq
-	  bam2dm         calculate DNA methylation (DM format) with BAM file
-	  mr2dm          convert txt meth file to dm format
-	  view           dm format to txt/dm meth
-	  merge          merge more than 1 dm files to one dm file
-	  ebsrate        estimate bisulfite conversion rate
-	  viewheader     view header of dm file
-	  overlap        overlap cytosine site with more than two dm files
-	  regionstats    calculate DNA methylation level of per region
-	  bodystats      calculate DNA methylation level of body, upstream and downstream.
-	  profile        calculate DNA methylation profile
-	  chromstats     calculate DNA methylation level across chromosome
-	  chrmeth        calculate DNA methylation level of chromosomes
-	  addzm          add or change zoom levels for dm format, need for browser visulization
-	  stats          coverage and methylation level distribution of data
-	  dmDMR          differential DNA methylation analysis
-	  bw             convert dm file to bigwig file
-```
-
-
 ## dmtools_bw
 
 ### Tool Description
@@ -571,6 +554,39 @@ Usage: dmtools bw -i input.dm -o meth.bw
 	--mincover            >= minumum coverage show, default: 0
 	--maxcover            <= maximum coverage show, default: 10000
 	--zl                  The maximum number of zoom levels. [0-10], default: 2
+	-h|--help
+```
+
+
+## dmtools_dmDMR
+
+### Tool Description
+Differential DNA methylation analysis between two groups of DM files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dmtools:0.2.6--hda3def1_0
+- **Homepage**: https://github.com/ZhouQiangwei/dmtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/dmtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Command Format :  dmtools dmDMR [options] -p <prefix of result> -1 [Sample1-methdm,..] -2 [sample2-methdm,..]
+
+dmDMR -1 s1.dm -2 s2.dm -p prefix --mindmc 5 --minstep 200
+
+Usage:
+	-p            output file prefix
+	-1            sample1 methy dm files, sperate by comma.
+	-2            sample2 methy dm files, sperate by comma.
+	--mindmc      min dmc sites in dmr region. [default : 4]
+	--minstep     min step in bp [default : 100]
+	--maxdis      max length of dmr [default : 0]
+	--pvalue      pvalue cutoff, default: 0.01
+	--fdr         adjust pvalue cutoff default : 1.0
+	--methdiff    the cutoff of methylation differention. default: 0.25 [CpG]
+	--element     caculate gene or TE etc function elements.
+	--context     Context for DM. C/CG/CHG/CHH, [C]
 	-h|--help
 ```
 

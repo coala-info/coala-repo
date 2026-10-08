@@ -24,7 +24,7 @@ inputs:
   - id: coverage_rna_output
     type:
       - 'null'
-      - File
+      - string
     doc: Coverage/RNA output (coverage, 3' bias, etc, implies -A)
     inputBinding:
       position: 102
@@ -61,14 +61,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: -z
-  - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: Output prefix enabling extended output (see below)
-    inputBinding:
-      position: 102
-      prefix: -O
   - id: overwrite_if_newer
     type:
       - 'null'
@@ -85,25 +77,31 @@ inputs:
     inputBinding:
       position: 102
       prefix: -A
-  - id: sample_reads_per_base_stats
-    type:
-      - 'null'
-      - int
-    doc: Number of reads to sample for per-base stats
-    inputBinding:
-      position: 102
-      prefix: -b
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
+  - id: coverage_rna_file
+    type:
+      - 'null'
+      - File
+    doc: Coverage/RNA output written by -R
+    outputBinding:
+      glob: $(inputs.coverage_rna_output)
+  - id: extension_stats_files
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Per-input stats files <filename>.<ext> written with -x or multiple 
+      inputs
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: |-
+        ${ if (!inputs.input_files || (inputs.input_files.length < 2 && !inputs.file_extension_multiple_files)) return []; return '*.' + (inputs.file_extension_multiple_files || 'stats'); }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ return inputs.input_files || []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ea-utils:1.1.2.779--h9dd4a16_0

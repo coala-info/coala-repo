@@ -1,5 +1,11 @@
 # egap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| egap_EGAP | Not completed | pipeline, skipped: EGAP runs a whole multi-step genome assembly pipeline (trimming, assembly, polishing, BUSCO QC). |
+
 ## egap_EGAP
 
 ### Tool Description

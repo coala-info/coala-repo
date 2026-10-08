@@ -40,7 +40,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Index directory\n          \n          Use this if your indices are not
       in a default location, or you want to download them to a non-default location"
     inputBinding:
@@ -67,6 +67,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Index directory with the downloaded indices
+    outputBinding:
+      glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/drprg:0.1.1--h5076881_1

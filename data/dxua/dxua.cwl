@@ -7,7 +7,9 @@ inputs:
   - id: input_file
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: File(s) to upload
     inputBinding:
       position: 1
@@ -19,6 +21,16 @@ inputs:
     inputBinding:
       position: 102
       prefix: --auth-token
+  - id: certificate_file
+    type:
+      - 'null'
+      - File
+    doc: CA certificate bundle used to verify the SSL connection (hidden 
+      option, not in --help; the image has no CA bundle, and dxua also reads 
+      the DX_CA_CERT environment variable)
+    inputBinding:
+      position: 102
+      prefix: --certificate-file
   - id: chunk_size
     type:
       - 'null'
@@ -73,7 +85,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Name of the destination folder
+    doc: Name of the destination folder in the project (default /)
     inputBinding:
       position: 102
       prefix: --folder
@@ -107,11 +119,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --property
     doc: Key-value pair to add as a property; repeat as necessary, e.g. 
       "--property key1=val1 --property key2=val2"
     inputBinding:
       position: 102
-      prefix: --property
   - id: read_from_stdin
     type:
       - 'null'
@@ -141,11 +154,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tag
     doc: Tag of the data object; repeat as necessary, e.g. "--tag tag1 --tag 
       tag2"
     inputBinding:
       position: 102
-      prefix: --tag
   - id: test
     type:
       - 'null'
@@ -177,11 +191,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --type
     doc: Type of the data object; repeat as necessary, e.g. "--type type1 --type
       type2"
     inputBinding:
       position: 102
-      prefix: --type
   - id: upload_threads
     type:
       - 'null'
@@ -218,13 +233,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: folder_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Name of the destination folder
-    outputBinding:
-      glob: $(inputs.folder)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dxua:1.5.31--0

@@ -12,9 +12,10 @@ inputs:
       - type: array
         items: File
     doc: Input PSM and Peak pickle files generated from an `easypqp 
-      convert[psm|sage]` command.
+      convert[psm|sage]` command. Placed after all options, because easypqp 
+      chains subcommands and stops reading options at the first file.
     inputBinding:
-      position: 1
+      position: 200
   - id: consensus
     type:
       - 'null'
@@ -67,7 +68,7 @@ inputs:
   - id: im_reference_run_path
     type:
       - 'null'
-      - File
+      - string
     doc: Writes reference run IM file, if IM reference file is not provided.
     inputBinding:
       position: 102
@@ -146,6 +147,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --perform_im_calibration
+      valueFrom: '$(self ? "True" : "False")'
   - id: perform_rt_calibration
     type:
       - 'null'
@@ -154,6 +156,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --perform_rt_calibration
+      valueFrom: '$(self ? "True" : "False")'
   - id: pi0_lambda
     type:
       - 'null'
@@ -233,15 +236,13 @@ inputs:
   - id: rt_reference_run_path
     type:
       - 'null'
-      - File
+      - string
     doc: Writes reference run RT file, if RT reference file is not provided.
     inputBinding:
       position: 102
       prefix: --rt_reference_run_path
   - id: out_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output TSV peptide query parameter file.
     inputBinding:
       position: 103
@@ -269,17 +270,45 @@ outputs:
     outputBinding:
       glob: $(inputs.out_path)
   - id: peptide_plot
-    type: File
-    doc: Output peptide-level PDF report.
+    type:
+      - 'null'
+      - File
+    doc: Output peptide-level PDF report (written when FDR is assessed).
     outputBinding:
-      glob: $(inputs.peptide_plot_path)
+      glob: '$(inputs.peptide_plot_path ? inputs.peptide_plot_path : "easypqp_peptide_report.pdf")'
   - id: protein_plot
-    type: File
-    doc: Output protein-level PDF report.
+    type:
+      - 'null'
+      - File
+    doc: Output protein-level PDF report (written when FDR is assessed).
     outputBinding:
-      glob: $(inputs.protein_plot_path)
+      glob: '$(inputs.protein_plot_path ? inputs.protein_plot_path : "easypqp_protein_report.pdf")'
+  - id: run_peaks
+    type:
+      type: array
+      items: File
+    doc: Per-run peak tables (<run>_run_peaks.tsv) that easypqp writes beside 
+      the input pickle files
+    outputBinding:
+      glob: '*_run_peaks.tsv'
+  - id: rt_reference_run
+    type:
+      - 'null'
+      - File
+    doc: Reference run RT file, written if no RT reference file is provided.
+    outputBinding:
+      glob: '$(inputs.rt_reference_run_path ? inputs.rt_reference_run_path : "easypqp_rt_reference_run.tsv")'
+  - id: im_reference_run
+    type:
+      - 'null'
+      - File
+    doc: Reference run IM file, written if no IM reference file is provided.
+    outputBinding:
+      glob: '$(inputs.im_reference_run_path ? inputs.im_reference_run_path : "easypqp_im_reference_run.tsv")'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.infiles ? inputs.infiles : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/easypqp:0.1.56--pyhdfd78af_0

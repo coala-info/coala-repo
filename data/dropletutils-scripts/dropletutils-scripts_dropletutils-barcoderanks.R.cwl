@@ -6,7 +6,9 @@ doc: "R script for barcode ranking in droplet-based single-cell experiments.\n\n
   homepage: https://github.com/ebi-gene-expression-group/dropletutils-scripts"
 inputs:
   - id: fit_bounds
-    type: string
+    type:
+      - 'null'
+      - string
     doc: A string, '<lower>,<upper>', specifying the lower and upper bouunds on 
       the total UMI count for spline fitting.
     inputBinding:
@@ -20,38 +22,32 @@ inputs:
       position: 101
       prefix: --input-object-file
   - id: lower
-    type: float
+    type:
+      - 'null'
+      - float
     doc: A numeric scalar specifying the lower bound on the total UMI count, at 
       or below which all barcodes are assumed to correspond to empty droplets.
     inputBinding:
       position: 101
       prefix: --lower
   - id: output_object_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output-object-file
   - id: output_png_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --output-png-file
 outputs:
   - id: output_object_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File name in which to store serialized SingleCellExperiment object.
     outputBinding:
       glob: $(inputs.output_object_file_path)
   - id: output_png_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File name in which to store serialized SingleCellExperiment object.
     outputBinding:
       glob: $(inputs.output_png_file_path)

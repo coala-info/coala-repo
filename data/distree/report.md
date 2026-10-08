@@ -1,5 +1,11 @@
 # distree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| distree | PASS |  |
+
 ## distree
 
 ### Tool Description

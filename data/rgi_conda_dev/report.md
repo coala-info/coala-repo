@@ -61,7 +61,7 @@ optional arguments:
 ```
 
 
-## rgi_conda_dev_rgi main
+## rgi_conda_dev_rgi_main
 
 ### Tool Description
 Resistance Gene Identifier - Version 3.1.2
@@ -117,7 +117,7 @@ optional arguments:
 ```
 
 
-## rgi_conda_dev_rgi bwt
+## rgi_conda_dev_rgi_bwt
 
 ### Tool Description
 Resistance Gene Identifier - Version 3.1.2
@@ -173,7 +173,7 @@ optional arguments:
 ```
 
 
-## rgi_conda_dev_rgi kmer_query
+## rgi_conda_dev_rgi_kmer_query
 
 ### Tool Description
 Resistance Gene Identifier - Version 3.1.2

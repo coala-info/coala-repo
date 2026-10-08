@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: binstrings
+baseCommand: dnp-binstrings
 label: dnp-binstrings
 doc: "This program reads the fasta file and each sequence is transformed into\n  \
   \  0011 form in which ones denotedinucleotides and zeros are elsewhere.Binary\n\
@@ -24,7 +24,7 @@ inputs:
   - id: version_check
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Turn this option off to disable version update notifications of the\n  \
       \        application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO."
     inputBinding:

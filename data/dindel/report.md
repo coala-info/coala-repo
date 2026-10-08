@@ -1,5 +1,11 @@
 # dindel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dindel | PASS |  |
+
 ## dindel
 
 ### Tool Description

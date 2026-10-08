@@ -25,10 +25,27 @@ inputs:
       prefix: --fastp
   - id: genome
     type: File
-    doc: genome fasta file
+    doc: genome fasta file, with the files made by dmtools index beside it
+    secondaryFiles:
+      - pattern: .batmeth2.fa
+        required: false
+      - pattern: .batmeth2.fa.amb
+        required: false
+      - pattern: .batmeth2.fa.ann
+        required: false
+      - pattern: .batmeth2.fa.bwt
+        required: false
+      - pattern: .batmeth2.fa.pac
+        required: false
+      - pattern: .batmeth2.fa.sa
+        required: false
+      - pattern: .bin
+        required: false
+      - pattern: .len
+        required: false
     inputBinding:
       position: 101
-      prefix: --genome
+      prefix: -g
   - id: input_file
     type:
       - 'null'

@@ -20,16 +20,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --complexity
-  - id: full_occupancy
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: true occupancy vector of the full dataset (space-separated ints, or a 
-      filename)
-    inputBinding:
-      position: 101
-      prefix: --full
   - id: histogram
     type:
       - 'null'
@@ -60,6 +50,16 @@ inputs:
       - type: array
         items: string
     doc: observed occupancy vector (space-separated ints, or a filename)
+    inputBinding:
+      position: 101
+      prefix: --observed
+  - id: observed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: observed occupancy vector file(s) (or PRESEQ histogram files with 
+      --histogram)
     inputBinding:
       position: 101
       prefix: --observed
@@ -97,6 +97,15 @@ inputs:
         items: string
     doc: true occupancy vector of the full dataset (space-separated ints, or a 
       filename)
+    inputBinding:
+      position: 101
+      prefix: --truth
+  - id: truth_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: file(s) with the true occupancy vector of the full dataset
     inputBinding:
       position: 101
       prefix: --truth

@@ -4,14 +4,6 @@ baseCommand: dsh-filter-gaf
 label: dsh-bio_filter-gaf
 doc: "Filter GAF files based on various criteria.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_gaf_path
     type:
       - 'null'

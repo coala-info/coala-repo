@@ -1,5 +1,11 @@
 # doubletd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| doubletd | Not completed | the README example runs, but 1573 of 1592 cell calls (and 211 scores) differ from the repo's example/prediction.tsv, which predates later code changes, so the output could not be confirmed |
+
 ## doubletd
 
 ### Tool Description

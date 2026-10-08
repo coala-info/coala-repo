@@ -72,7 +72,7 @@ trim_ends              Trim fixed number of bases of start and/or end of every s
 version                Print version number and exit
 ```
 
-## pyfastaq_fastaq acgtn_only
+## pyfastaq_fastaq_acgtn_only
 
 ### Tool Description
 Filter FASTA/FASTQ sequences to only include ACGTN characters.
@@ -96,7 +96,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq trim_Ns_at_end
+## pyfastaq_fastaq_trim_Ns_at_end
 
 ### Tool Description
 Remove Ns from the ends of sequences.
@@ -120,7 +120,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq strip_illumina_suffix
+## pyfastaq_fastaq_strip_illumina_suffix
 
 ### Tool Description
 Remove Illumina suffix from FASTA/FASTQ IDs
@@ -144,7 +144,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq filter
+## pyfastaq_fastaq_filter
 
 ### Tool Description
 Filter FASTA/FASTQ files based on various criteria.
@@ -168,7 +168,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq sort_by_size
+## pyfastaq_fastaq_sort_by_size
 
 ### Tool Description
 Sort FASTA/FASTQ files by sequence length.
@@ -192,7 +192,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq sort_by_name
+## pyfastaq_fastaq_sort_by_name
 
 ### Tool Description
 Sort FASTA/FASTQ records by name.
@@ -216,7 +216,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq to_unique_by_id
+## pyfastaq_fastaq_to_unique_by_id
 
 ### Tool Description
 Remove duplicate sequences from a FASTA or FASTQ file, keeping only the first occurrence of each sequence ID.
@@ -240,7 +240,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq interleave
+## pyfastaq_fastaq_interleave
 
 ### Tool Description
 Interleave two FASTA files.
@@ -264,7 +264,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq deinterleave
+## pyfastaq_fastaq_deinterleave
 
 ### Tool Description
 Deinterleaves a FASTAQ file into two separate FASTAQ files.
@@ -288,7 +288,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq to_fasta
+## pyfastaq_fastaq_to_fasta
 
 ### Tool Description
 Convert FASTA to FASTA format.
@@ -312,7 +312,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq fasta_to_fastq
+## pyfastaq_fastaq_fasta_to_fastq
 
 ### Tool Description
 Convert FASTA to FASTQ format.
@@ -336,7 +336,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq scaffolds_to_contigs
+## pyfastaq_fastaq_scaffolds_to_contigs
 
 ### Tool Description
 Convert scaffolds to contigs
@@ -360,7 +360,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq count_sequences
+## pyfastaq_fastaq_count_sequences
 
 ### Tool Description
 Count the number of sequences in a FASTA or FASTQ file.
@@ -384,7 +384,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq to_random_subset
+## pyfastaq_fastaq_to_random_subset
 
 ### Tool Description
 Select a random subset of sequences from a FASTA file.
@@ -408,7 +408,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq to_fake_qual
+## pyfastaq_fastaq_to_fake_qual
 
 ### Tool Description
 Convert FASTA to FASTQ with fake quality scores.
@@ -432,7 +432,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq reverse_complement
+## pyfastaq_fastaq_reverse_complement
 
 ### Tool Description
 Reverse complement a FASTA file
@@ -456,7 +456,7 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
-## pyfastaq_fastaq translate
+## pyfastaq_fastaq_translate
 
 ### Tool Description
 Translate DNA sequences to protein sequences.

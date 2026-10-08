@@ -1,5 +1,11 @@
 # dreamtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dreamtools | PASS |  |
+
 ## dreamtools
 
 ### Tool Description

@@ -8,7 +8,8 @@ doc: "Output files must contain a '%' sign which is replaced with the barcode id
 inputs:
   - id: barcodes_file
     type: File
-    doc: Barcodes file
+    doc: Barcodes file (or the indexed read file with -g); given after -g, -l, 
+      -L or -B
     inputBinding:
       position: 1
   - id: read1_fq
@@ -19,8 +20,9 @@ inputs:
   - id: mate_fq
     type:
       - 'null'
-      - File
-    doc: Mate FASTQ file
+      - type: array
+        items: File
+    doc: Mate FASTQ files (kept in sync with read 1)
     inputBinding:
       position: 3
   - id: determine_barcodes_from_any_read
@@ -29,7 +31,7 @@ inputs:
       - boolean
     doc: Determine barcodes from any read, using BCFIL as a master list
     inputBinding:
-      position: 104
+      position: 0
       prefix: -l
   - id: determine_barcodes_from_indexed_read
     type:
@@ -37,7 +39,7 @@ inputs:
       - boolean
     doc: Determine barcodes from the indexed read
     inputBinding:
-      position: 104
+      position: 0
       prefix: -g
   - id: determine_barcodes_from_read1
     type:
@@ -45,7 +47,7 @@ inputs:
       - boolean
     doc: Determine barcodes from <read1.fq>, using BCFIL as a master list
     inputBinding:
-      position: 104
+      position: 0
       prefix: -L
   - id: divide_threshold_factor
     type:
@@ -118,7 +120,7 @@ inputs:
       - boolean
     doc: Use barcodes from BCFIL, no determination step, codes in <read1.fq>
     inputBinding:
-      position: 104
+      position: 0
       prefix: -B
   - id: use_group_name
     type:
@@ -144,37 +146,29 @@ inputs:
     inputBinding:
       position: 104
       prefix: -v
-  - id: output_r1_path
+  - id: output_paths
     type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_r1_path`
+      type: array
+      items: string
+      inputBinding:
+        prefix: -o
+    doc: Output files (one per input, required); each must contain a '%' sign 
+      which is replaced with the barcode id, or be n/a to discard that input
     inputBinding:
       position: 105
-      prefix: --output-r1
-  - id: output_r2_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_r2_path`
-    inputBinding:
-      position: 106
-      prefix: --output-r2
 outputs:
-  - id: output_r1
+  - id: demultiplexed
     type:
-      - 'null'
-      - File
-    doc: Output file for read 1 (must contain '%')
+      type: array
+      items: File
+    doc: Demultiplexed FASTQ files, one per barcode id and input
     outputBinding:
-      glob: $(inputs.output_r1_path)
-  - id: output_r2
-    type:
-      - 'null'
-      - File
-    doc: Output file for read 2 (must contain '%')
-    outputBinding:
-      glob: $(inputs.output_r2_path)
+      glob: |-
+        ${ return inputs.output_paths.filter(function(p){ return p != 'n/a'; }).map(function(p){ return p.replace('%', '*'); }); }
+  - id: stats
+    type: stdout
+    doc: Barcode counts per output file
+stdout: fastq-multx.stats.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -17,8 +17,8 @@ inputs:
   - id: add_kind
     type:
       - 'null'
-      - boolean
-    doc: Add region-overlap 'kind' to vcf output
+      - string
+    doc: (True or False) Add region-overlap 'kind' to vcf output
     inputBinding:
       position: 102
       prefix: --add-kind
@@ -41,8 +41,8 @@ inputs:
   - id: collapse_nearby
     type:
       - 'null'
-      - boolean
-    doc: Merges more aggressively by collapsing nearby SV
+      - string
+    doc: (True or False) Merges more aggressively by collapsing nearby SV
     inputBinding:
       position: 102
       prefix: --collapse-nearby
@@ -65,8 +65,8 @@ inputs:
   - id: merge_across
     type:
       - 'null'
-      - boolean
-    doc: Merge records across input samples
+      - string
+    doc: (True or False) Merge records across input samples
     inputBinding:
       position: 102
       prefix: --merge-across
@@ -90,8 +90,8 @@ inputs:
   - id: merge_within
     type:
       - 'null'
-      - boolean
-    doc: Perform additional merge within input samples, prior to --merge-across
+      - string
+    doc: (True or False) Perform additional merge within input samples, prior to --merge-across
     inputBinding:
       position: 102
       prefix: --merge-within
@@ -131,8 +131,8 @@ inputs:
   - id: separate
     type:
       - 'null'
-      - boolean
-    doc: Keep merged tables separate, adds --post-fix to file names, csv format 
+      - string
+    doc: (True or False) Keep merged tables separate, adds --post-fix to file names, csv format 
       only
     inputBinding:
       position: 102
@@ -161,6 +161,9 @@ inputs:
       position: 103
       prefix: --svs-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Variant calls written to stdout when svs_out_path is not given
   - id: svs_out
     type:
       - 'null'
@@ -173,3 +176,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dysgu:1.8.7--py311h8ddd9a4_0
+stdout: dysgu_merge.out

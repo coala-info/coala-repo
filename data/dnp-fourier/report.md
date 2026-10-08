@@ -1,5 +1,11 @@
 # dnp-fourier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dnp-fourier | PASS |  |
+
 ## dnp-fourier
 
 ### Tool Description

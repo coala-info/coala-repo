@@ -1,5 +1,11 @@
 # duplomap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| duplomap | PASS |  |
+
 ## duplomap
 
 ### Tool Description

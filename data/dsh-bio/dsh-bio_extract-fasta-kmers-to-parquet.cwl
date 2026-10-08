@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-extract-fasta-kmers-to-parquet
+baseCommand:
+  - dsh-bio
+  - extract-fasta-kmers-to-parquet
 label: dsh-bio_extract-fasta-kmers-to-parquet
 doc: "Extracts kmers from FASTA files and outputs them to a Parquet file.\n\nTool
   homepage: https://github.com/heuermh/dishevelled-bio"
@@ -58,7 +60,7 @@ inputs:
       prefix: --output-kmer-file
 outputs:
   - id: output_kmer_file
-    type: File
+    type: Directory
     doc: output kmer file
     outputBinding:
       glob: $(inputs.output_kmer_file_path)

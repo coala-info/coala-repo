@@ -1,6 +1,6 @@
 # ngs-smap CWL Generation Report
 
-## ngs-smap_smap delineate
+## ngs-smap_smap_delineate
 
 ### Tool Description
 Create a bed file with clusters of Stacks using a set of bam files containing aligned GBS reads. The Stack Mapping Anchor Points "SMAP" within clustersof Stacks are listed 0-based. The position of the clusters of Stacks themselves are 0-based according to BED format.
@@ -131,7 +131,7 @@ Merging clusters filtering options:
                         analysis [0].
 ```
 
-## ngs-smap_smap grm
+## ngs-smap_smap_grm
 
 ### Tool Description
 Convert the haplotype table from SMAP haplotype-sites or SMAP haplotype-windows into a genetic similarity/distance matrix and/or a locus information matrix.
@@ -211,7 +211,7 @@ options:
   --debug               Enable verbose logging
 ```
 
-## ngs-smap_smap compare
+## ngs-smap_smap_compare
 
 ### Tool Description
 Compare merged clusters of two SMAP outputs.

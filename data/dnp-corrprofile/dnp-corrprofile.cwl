@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: corrprofile
+baseCommand: dnp-corrprofile
 label: dnp-corrprofile
 doc: "This program computes correlations between the profiles of dinucleotide\n  \
   \  frequency on forward and reverse complent sequences within a sliding\n    window.\n\
@@ -30,7 +30,7 @@ inputs:
   - id: version_check
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Turn this option off to disable version update notifications of the\n  \
       \        application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO."
     inputBinding:

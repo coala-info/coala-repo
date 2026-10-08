@@ -15,7 +15,9 @@ inputs:
       prefix: --accepted-feature-types
   - id: bam_file
     type: File
-    doc: path to mapping file
+    doc: path to mapping file (must be indexed)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam

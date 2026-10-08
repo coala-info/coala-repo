@@ -1,29 +1,46 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-bio_compress-fasta
+baseCommand:
+  - dsh-compress-fasta
 label: dsh-bio_compress-fasta
-doc: "Compresses a FASTA file.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
+doc: "compress sequences in FASTA format to splittable bgzf or bzip2 compression codecs\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: input_fasta
+  - id: input_fasta_path
     type: File
-    doc: The input FASTA file to compress.
-    inputBinding:
-      position: 1
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    doc: "input FASTA path, default stdin"
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: --input-fasta-path
+  - id: output_fasta_file_path
+    type: string
+    doc: "output FASTA file, default stdout"
+    inputBinding:
+      position: 101
+      prefix: --output-fasta-file
+  - id: alphabet
+    type:
+      - 'null'
+      - string
+    doc: "input FASTA alphabet { dna, protein }, default dna"
+    inputBinding:
+      position: 101
+      prefix: --alphabet
+  - id: line_width
+    type:
+      - 'null'
+      - int
+    doc: "line width, default 70"
+    inputBinding:
+      position: 101
+      prefix: --line-width
 outputs:
-  - id: output_file
+  - id: output_fasta_file
     type:
       - 'null'
       - File
-    doc: The output file for the compressed FASTA. If not specified, the 
-      compressed data will be written to standard output.
+    doc: "output FASTA file, default stdout"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_fasta_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

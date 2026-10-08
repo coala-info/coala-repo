@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: The families file produced by make-barcodes.awk and sorted.
     inputBinding:
-      position: 1
+      position: 2
   - id: refdir
     type:
       - 'null'
@@ -16,31 +16,40 @@ inputs:
     doc: The directory to put the reference file ("barcodes.fa") and its index 
       files in.
     inputBinding:
-      position: 2
+      position: 3
+  - id: outfile_name
+    type:
+      - 'null'
+      - string
+    doc: Print the output to this path. It will be in SAM format unless the path
+      ends in ".bam". If not given, it will be printed to stdout in SAM format.
+      Needs refdir.
+    inputBinding:
+      position: 4
   - id: bowtie_chunkmbs
     type:
       - 'null'
       - int
     doc: Number to pass to bowtie's --chunkmbs option
     inputBinding:
-      position: 103
+      position: 1
       prefix: -c
   - id: no_reversed_barcodes
     type:
       - 'null'
       - boolean
     doc: Don't include reversed barcodes (alpha+beta -> beta+alpha) in the 
-      alignment target.
+      alignment target. The help says -R, but the script only accepts -r.
     inputBinding:
-      position: 103
-      prefix: -R
+      position: 1
+      prefix: -r
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Quiet mode
     inputBinding:
-      position: 103
+      position: 1
       prefix: -q
   - id: report_platform_galaxy
     type:
@@ -48,7 +57,7 @@ inputs:
       - boolean
     doc: Report the platform as "galaxy" when sending usage data.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -g
   - id: report_usage
     type:
@@ -62,7 +71,7 @@ inputs:
       output file). No filenames are sent. All the reporting and recording code 
       is available at https://github.com/NickSto/ET.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -p
   - id: threads
     type:
@@ -70,9 +79,12 @@ inputs:
       - int
     doc: Number of threads for bowtie and bowtie-build to use
     inputBinding:
-      position: 103
+      position: 1
       prefix: -t
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Barcode alignment in SAM format when no outfile_name is given
   - id: outfile
     type:
       - 'null'
@@ -80,7 +92,7 @@ outputs:
     doc: Print the output to this path. It will be in SAM format unless the path
       ends in ".bam". If not given, it will be printed to stdout in SAM format.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outfile_name)
   - id: refdir_dir
     type:
       - 'null'
@@ -92,3 +104,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4
+stdout: dunovo_baralign.sh.sam

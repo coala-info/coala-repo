@@ -13,6 +13,9 @@ inputs:
       - File
     doc: Input BAM file or a TXT file containing a list of BAM files with read 
       alignments
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -25,11 +28,35 @@ inputs:
       position: 101
       prefix: --bed
   - id: bowtie2_index
-    type: Directory
-    doc: Path to Bowtie2 index for the reference genome
+    type: File
+    doc: Bowtie2 index for the reference genome, given as its .1.bt2 (or 
+      .1.bt2l) file; the other index files must sit beside it and the index 
+      prefix is passed to the tool
+    secondaryFiles:
+      - pattern: ^^.2.bt2
+        required: false
+      - pattern: ^^.3.bt2
+        required: false
+      - pattern: ^^.4.bt2
+        required: false
+      - pattern: ^^.rev.1.bt2
+        required: false
+      - pattern: ^^.rev.2.bt2
+        required: false
+      - pattern: ^^.2.bt2l
+        required: false
+      - pattern: ^^.3.bt2l
+        required: false
+      - pattern: ^^.4.bt2l
+        required: false
+      - pattern: ^^.rev.1.bt2l
+        required: false
+      - pattern: ^^.rev.2.bt2l
+        required: false
     inputBinding:
       position: 101
       prefix: --bowtie2_index
+      valueFrom: $(self.path.replace(/\.1\.bt2l?$/, ''))
   - id: bt2_k
     type:
       - 'null'
@@ -92,16 +119,19 @@ inputs:
   - id: minimap2_gap_extension_penalty
     type:
       - 'null'
-      - string
-    doc: Gap extension penalty. A gap of length k costs min(O1+k*E1, O2+k*E2).
+      - type: array
+        items: int
+    doc: Gap extension penalty (two values). A gap of length k costs 
+      min(O1+k*E1, O2+k*E2).
     inputBinding:
       position: 101
       prefix: -E
   - id: minimap2_gap_open_penalty
     type:
       - 'null'
-      - string
-    doc: Gap open penalty.
+      - type: array
+        items: int
+    doc: Gap open penalty (two values).
     inputBinding:
       position: 101
       prefix: -O
@@ -199,28 +229,44 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Output path; a bare file name is passed as ./<name> because eastr 
+      cannot create the parent of a path without a directory part
     inputBinding:
       position: 102
       prefix: --out_filtered_bam
+      valueFrom: '$(self.indexOf("/") < 0 ? "./" + self : self)'
   - id: out_original_junctions_path
     type:
       - 'null'
       - string
+    doc: Output path; a bare file name is passed as ./<name> because eastr 
+      cannot create the parent of a path without a directory part
     inputBinding:
       position: 103
       prefix: --out_original_junctions
+      valueFrom: '$(self.indexOf("/") < 0 ? "./" + self : self)'
   - id: out_removed_junctions_path
     type:
       - 'null'
       - string
+    doc: Output path for removed junctions; for BAM or BED input the file name 
+      must contain the input file's name stem (e.g. sample_removed.bed). A bare 
+      file name is passed as ./<name> because eastr cannot create the parent of 
+      a path without a directory part
     inputBinding:
       position: 104
       prefix: --out_removed_junctions
+      valueFrom: '$(self.indexOf("/") < 0 ? "./" + self : self)'
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Removed junctions in BED format when out_removed_junctions_path is not 
+      given
   - id: out_original_junctions
     type:
       - 'null'
       - File
+      - Directory
     doc: Write original junctions to the OUT file or directory
     outputBinding:
       glob: $(inputs.out_original_junctions_path)
@@ -228,6 +274,7 @@ outputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: Write removed junctions to OUT file or directory; the default output is
       to terminal
     outputBinding:
@@ -235,6 +282,7 @@ outputs:
   - id: out_filtered_bam
     type:
       - 'null'
+      - File
       - Directory
     doc: Write filtered bams to OUT file or directory
     outputBinding:
@@ -244,3 +292,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eastr:1.1.2--py311h2de2dd3_1
+stdout: eastr.out

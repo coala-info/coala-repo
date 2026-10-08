@@ -18,17 +18,13 @@ inputs:
       position: 101
       prefix: --second-fastq-path
   - id: paired_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output interleaved paired FASTQ file [required]
     inputBinding:
       position: 102
       prefix: --paired-file
   - id: unpaired_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output unpaired FASTQ file [required]
     inputBinding:
       position: 103

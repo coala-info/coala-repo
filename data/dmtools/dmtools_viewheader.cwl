@@ -13,10 +13,10 @@ inputs:
       position: 101
       prefix: -i
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: header
+    type: stderr
+    doc: DM file header (the tool prints it to standard error)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dmtools:0.2.6--hda3def1_0
-stdout: dmtools_viewheader.out
+stderr: dmtools_viewheader.txt

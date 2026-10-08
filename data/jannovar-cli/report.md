@@ -1,6 +1,6 @@
 # jannovar-cli CWL Generation Report
 
-## jannovar-cli_jannovar annotate-vcf
+## jannovar-cli_jannovar_annotate-vcf
 
 ### Tool Description
 Perform annotation of a single VCF file

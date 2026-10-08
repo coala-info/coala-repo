@@ -1,9 +1,15 @@
 # discovardenovo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| discovardenovo | PASS |  |
+
 ## discovardenovo
 
 ### Tool Description
-DISCOVAR de novo is a large genome assembler that can also be used for variant calling. It is designed to operate on a single Illumina library of PCR-free 250bp paired-end reads.
+DISCOVAR de novo (experimental) is a de novo genome assembler that requires only a single PCR-free paired end Illumina library containing 250 base reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/discovardenovo:52488--1
@@ -18,21 +24,47 @@ DISCOVAR de novo is a large genome assembler that can also be used for variant c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/discovardenovo:52488--1' locally
-52488--1: Pulling from biocontainers/discovardenovo
-a3ed95caeb02: Already exists
-77c6c00e8b61: Already exists
-3aaade50789a: Already exists
-00cf8b9f3d2a: Already exists
-7ff999a2256f: Already exists
-d2ba336f2e44: Already exists
-dfda3e01f2b6: Already exists
-a3ed95caeb02: Already exists
-10c3bb32200b: Already exists
-f97ca33c4f14: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob3984788629: no space left on device
+Usage: DiscovarDeNovo arg1=value1 arg2=value2 ...
 
-Run 'docker run --help' for more information
+DISCOVAR de novo (experimental) is a de novo genome assembler that
+requires only a single PCR-free paired end Illumina library containing
+250 base reads.
+
+Required arguments:
+
+READS (String) 
+  Comma-separated list of input files, see manual for details
+OUT_DIR (String) 
+  name of output directory
+
+Optional arguments:
+
+NUM_THREADS (unsigned int) default: 0 
+  Number of threads. By default, the number of processors online.
+REFHEAD (String) 
+  use reference sequence REFHEAD.fasta to annotate assembly, and also
+  REFHEAD.names if it exists
+MAX_MEM_GB (double) default: 0 
+  if specified, maximum allowed RAM use in GB; in some cases may be
+  exceeded by our code
+MEMORY_CHECK (Bool) default: False 
+  if True, attempt to determine actual available memory and cap memory
+  usage accordingly; slow and can cause machine to become very
+  sluggish, or can result in process being killed
+
+Special arguments:
+
+GDB (Bool) default: False 
+  Whether to use GDB for tracebacks.
+NO_HEADER, or NH (Bool) default: False 
+  Whether to suppress the normal command-line header block.
+MEM_MONITOR, or MM (Bool) default: False 
+  Monitor the memory usage of this module by forking MemMonitor. All
+  arguments specifiable to MemMonitor can be supplied here by
+  prefixing them with '_MM_'. See MemMonitor help for more
+  information.
+TEE (String) 
+  Redirect standard out to the supplied space separated list of files.
 ```
 
 

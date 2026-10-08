@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dipper_dipper_cpu
+baseCommand: dipper_cpu
 label: dipper_dipper_cpu
 doc: "DIPPER Command Line Arguments\n\nTool homepage: https://github.com/TurakhiaLab/DIPPER"
 inputs:

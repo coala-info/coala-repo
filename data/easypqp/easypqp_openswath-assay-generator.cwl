@@ -33,6 +33,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --disable_identification_ms2_precursors
+      valueFrom: '$(self ? "True" : "False")'
   - id: disable_identification_specific_losses
     type:
       - 'null'
@@ -42,6 +43,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --disable_identification_specific_losses
+      valueFrom: '$(self ? "True" : "False")'
   - id: enable_detection_specific_losses
     type:
       - 'null'
@@ -51,6 +53,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --enable_detection_specific_losses
+      valueFrom: '$(self ? "True" : "False")'
   - id: enable_detection_unspecific_losses
     type:
       - 'null'
@@ -60,6 +63,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --enable_detection_unspecific_losses
+      valueFrom: '$(self ? "True" : "False")'
   - id: enable_identification_unspecific_losses
     type:
       - 'null'
@@ -69,6 +73,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --enable_identification_unspecific_losses
+      valueFrom: '$(self ? "True" : "False")'
   - id: enable_ipf
     type:
       - 'null'
@@ -78,6 +83,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --enable_ipf
+      valueFrom: '$(self ? "True" : "False")'
   - id: enable_swath_specifity
     type:
       - 'null'
@@ -88,6 +94,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --enable_swath_specifity
+      valueFrom: '$(self ? "True" : "False")'
   - id: in
     type: File
     doc: "Input file (valid formats: 'tsv', 'mrm', 'pqp', 'TraML')"

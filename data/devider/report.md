@@ -5,6 +5,7 @@
 | Tool | Result | Reason |
 |---|---|---|
 | devider | PASS |  |
+| devider_haplotag_bam | PASS |  |
 
 ## devider
 
@@ -88,3 +89,35 @@ ALGORITHM:
           FDR for strand bias filtering [default: 0.005]
 ```
 
+
+## devider_haplotag_bam
+
+### Tool Description
+Tag BAM reads based on accessions from a given IDs file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/devider:0.0.1--ha6fb395_3
+- **Homepage**: https://github.com/bluenote-1577/devider
+- **Package**: https://anaconda.org/channels/bioconda/packages/devider/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/devider/overview
+- **Total Downloads**: 1.6K
+- **Last updated**: 2025-12-15
+- **GitHub**: https://github.com/bluenote-1577/devider
+- **Stars**: N/A
+### Original Help Text
+```text
+usage: haplotag_bam [-h] [-i IDS_FILE] input_bam
+
+Tag BAM reads based on accessions from a given IDs file.
+
+positional arguments:
+  input_bam             Input BAM file.
+
+options:
+  -h, --help            show this help message and exit
+  -i IDS_FILE, --ids_file IDS_FILE
+                        IDs file with accessions and tags. Default:
+                        dbghap_output/ids.txt
+```

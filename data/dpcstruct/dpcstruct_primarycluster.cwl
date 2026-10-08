@@ -14,8 +14,10 @@ inputs:
       position: 101
       prefix: -i
   - id: threads
-    type: int
-    doc: number of threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads (optional; default is all available threads)
     inputBinding:
       position: 101
       prefix: -t

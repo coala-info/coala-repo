@@ -1,17 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-fasta-to-parquet6
+baseCommand:
+  - dsh-bio
+  - fasta-to-parquet6
 label: dsh-bio_fasta-to-parquet6
 doc: "Converts FASTA files to Parquet format.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: alphabet
     type:
       - 'null'
@@ -43,7 +37,7 @@ inputs:
       prefix: --output-parquet-file
 outputs:
   - id: output_parquet_file
-    type: File
+    type: Directory
     doc: output Parquet file
     outputBinding:
       glob: $(inputs.output_parquet_file_path)

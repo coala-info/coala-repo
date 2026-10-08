@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: domainator_domain_search.py
+baseCommand: domain_search.py
 label: domainator_domain_search.py
 doc: "Search for matches to hmm profiles\n\nFor searching large databases of sequences
   (genbank files or fasta files) with small numbers (< ~100) of queries (profiles
@@ -339,10 +339,10 @@ inputs:
       prefix: -Z
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output genbank filename
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

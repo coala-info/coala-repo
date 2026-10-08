@@ -1,5 +1,19 @@
 # dr-disco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dr-disco_bam-extract | PASS |  |
+| dr-disco_classify | PASS |  |
+| dr-disco_detect | PASS |  |
+| dr-disco_fix | PASS |  |
+| dr-disco_integrate | PASS |  |
+| dr-disco_is-blacklisted | PASS |  |
+| dr-disco_logo-sequence | PASS |  |
+| dr-disco_subtract | PASS |  |
+| dr-disco_unfix | Failed | image problem: unfix crashes with a pysam TypeError (AlignmentHeader does not support item assignment) because the image's pysam is newer than the code expects. |
+
 ## dr-disco_bam-extract
 
 ### Tool Description
@@ -188,25 +202,6 @@ Options:
   -n, --offset-negative INTEGER
   -p, --offset-positive INTEGER
   --help                         Show this message and exit.
-```
-
-## dr-disco_after
-
-### Tool Description
-Command-line tool for disco identification and analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dr-disco:0.18.3--pyh086e186_0
-- **Homepage**: https://github.com/yhoogstrate/dr-disco
-- **Package**: https://anaconda.org/channels/bioconda/packages/dr-disco/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: dr-disco [OPTIONS] COMMAND [ARGS]...
-Try 'dr-disco --help' for help.
-
-Error: No such command 'after'.
 ```
 
 ## dr-disco_subtract

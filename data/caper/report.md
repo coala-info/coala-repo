@@ -4,16 +4,16 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| caper_abort | Not completed | client command that needs a running Caper server, and no server can run from this image (no Java). |
+| caper_abort | Not completed | skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server |
 | caper_debug | PASS |  |
 | caper_init | PASS |  |
-| caper_list | Not completed | client command that needs a running Caper server, and no server can run from this image (no Java). |
-| caper_metadata | Not completed | client command that needs a running Caper server, and no server can run from this image (no Java). |
-| caper_run | Failed | image problem: the image has no Java, so Cromwell cannot start; caper also needs a passwd entry for the user (--no-match-user). |
-| caper_server | Failed | image problem: the image has no Java, so the Cromwell server cannot start. |
-| caper_submit | Not completed | client command that needs a running Caper server, and no server can run from this image (no Java). |
+| caper_list | Not completed | skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server |
+| caper_metadata | Not completed | skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server |
+| caper_run | Not completed | skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server |
+| caper_server | Not completed | skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server |
+| caper_submit | Not completed | skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server |
 | caper_troubleshoot | PASS |  |
-| caper_unhold | Not completed | client command that needs a running Caper server, and no server can run from this image (no Java). |
+| caper_unhold | Not completed | skipped: WDL/Cromwell (not tested by rule); this command runs Cromwell or needs a Caper/Cromwell server |
 
 ## caper_init
 

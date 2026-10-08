@@ -1,5 +1,11 @@
 # dodge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dodge | PASS |  |
+
 ## dodge
 
 ### Tool Description

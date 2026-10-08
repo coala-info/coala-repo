@@ -1,5 +1,14 @@
 # eagle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eagle_convert | PASS |  |
+| eagle_extract | PASS |  |
+| eagle_interface | Not completed | Starts a long-running web server, which cannot run as a batch job. |
+| eagle_meta | PASS |  |
+
 ## eagle_interface
 
 ### Tool Description
@@ -82,22 +91,6 @@ optional arguments:
   --delete              delete the meta information
   --storelist [STORELIST]
                         a list containing key value pairs to store
-```
-
-## eagle
-### Tool Description
-A command-line tool with subcommands for various operations.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/eagle:0.9.4.6--pyh5ca1d4c_0
-- **Homepage**: https://bitbucket.org/christopherschroeder/eagle
-- **Package**: https://anaconda.org/channels/bioconda/packages/eagle/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: eagle [-h] {interface,convert,meta,extract} ...
-eagle: error: argument command: invalid choice: 'files' (choose from 'interface', 'convert', 'meta', 'extract')
 ```
 
 ## eagle_extract

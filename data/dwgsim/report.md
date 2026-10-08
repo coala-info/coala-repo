@@ -1,5 +1,11 @@
 # dwgsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dwgsim | PASS |  |
+
 ## dwgsim
 
 ### Tool Description

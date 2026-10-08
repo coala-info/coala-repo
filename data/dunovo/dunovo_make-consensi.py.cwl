@@ -177,7 +177,7 @@ inputs:
     doc: Output or path parameter `duplexes_1_fa_path`
     inputBinding:
       position: 103
-      prefix: --duplexes-1-fa
+      prefix: --dcs1
   - id: duplexes_2_fa_path
     type:
       - 'null'
@@ -185,7 +185,7 @@ inputs:
     doc: Output or path parameter `duplexes_2_fa_path`
     inputBinding:
       position: 104
-      prefix: --duplexes-2-fa
+      prefix: --dcs2
   - id: sscs1_fa_path
     type:
       - 'null'
@@ -213,6 +213,9 @@ inputs:
       position: 108
       prefix: --log
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: duplexes_1_fa
     type:
       - 'null'
@@ -257,3 +260,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4
+stdout: dunovo_make-consensi.py.out

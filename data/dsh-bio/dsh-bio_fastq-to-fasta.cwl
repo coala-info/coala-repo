@@ -4,14 +4,6 @@ baseCommand: dsh-fastq-to-fasta
 label: dsh-bio_fastq-to-fasta
 doc: "Converts FASTQ format to FASTA format.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: input_fastq_path
     type:
       - 'null'

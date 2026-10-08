@@ -1,5 +1,11 @@
 # dragmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dragmap_dragen-os | PASS |  |
+
 ## dragmap_dragen-os
 
 ### Tool Description

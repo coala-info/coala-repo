@@ -2,13 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: divvier
 label: divvier
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 doc: "a program for MSA processing\n\nTool homepage: https://github.com/simonwhelan/Divvier"
 inputs:
   - id: input_file
     type: File
-    doc: input file
+    doc: input file (FASTA alignment); must be the last argument
     inputBinding:
-      position: 1
+      position: 200
+      valueFrom: $(self.basename)
   - id: approx
     type:
       - 'null'
@@ -85,6 +91,19 @@ inputs:
       position: 102
       prefix: -thresh
 outputs:
+  - id: filtered_alignment
+    type: File
+    doc: Divvied alignment (<input stem>.divvy.fas) or partially filtered 
+      alignment (<input stem>.partial.fas with -partial)
+    outputBinding:
+      glob:
+        - '*.divvy.fas'
+        - '*.partial.fas'
+  - id: posterior_probabilities
+    type: File?
+    doc: Pairwise posterior probabilities (<input>.PP)
+    outputBinding:
+      glob: '*.PP'
   - id: stdout
     type: stdout
     doc: Standard output

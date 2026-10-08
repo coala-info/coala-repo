@@ -82,7 +82,7 @@ notification of monthly CARD updates via the CARD Mailing List
 ```
 
 
-## rgi_rgi main
+## rgi_rgi_main
 
 ### Tool Description
 Resistance Gene Identifier - 6.0.5 - Main
@@ -141,7 +141,7 @@ options:
 ```
 
 
-## rgi_rgi bwt
+## rgi_rgi_bwt
 
 ### Tool Description
 Aligns metagenomic reads to CARD and wildCARD reference using kma, bowtie2 or bwa and provide reports.
@@ -188,7 +188,7 @@ options:
 ```
 
 
-## rgi_rgi kmer_query
+## rgi_rgi_kmer_query
 
 ### Tool Description
 Tests sequenes using CARD*kmers
@@ -224,7 +224,7 @@ options:
 ```
 
 
-## rgi_rgi load
+## rgi_rgi_load
 
 ### Tool Description
 Resistance Gene Identifier - 6.0.5 - Load
@@ -286,7 +286,7 @@ options:
 ```
 
 
-## rgi_rgi heatmap
+## rgi_rgi_heatmap
 
 ### Tool Description
 Creates a heatmap when given multiple RGI results.

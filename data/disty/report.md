@@ -1,5 +1,11 @@
 # disty CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| disty | PASS |  |
+
 ## disty
 
 ### Tool Description

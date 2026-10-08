@@ -24,18 +24,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dmfiles
+      itemSeparator: ','
   - id: meth1_dm
     type:
-      type: array
-      items: File
+      - 'null'
+      - File
     doc: input DM file
     inputBinding:
       position: 101
       prefix: -i
   - id: meth2_dm
     type:
-      type: array
-      items: File
+      - 'null'
+      - File
     doc: input DM file2
     inputBinding:
       position: 101

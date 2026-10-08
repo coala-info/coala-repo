@@ -5,6 +5,12 @@ label: dlcpar
 doc: "dlcpar is a phylogenetic program for finding the most parsimonious gene tree-species
   tree reconciliation by inferring speciation, duplication, loss, and deep coalescence
   events. See http://compbio.mit.edu/dlcpar for details.\n\nTool homepage: https://github.com/wutron/dlcpar"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gene_tree)
+        writable: true
 inputs:
   - id: gene_tree
     type:
@@ -46,7 +52,9 @@ inputs:
       position: 102
       prefix: --inputext
   - id: locus_map
-    type: File
+    type:
+      - 'null'
+      - File
     doc: gene to locus map (species-specific)
     inputBinding:
       position: 102
@@ -163,6 +171,16 @@ inputs:
       position: 102
       prefix: --stree
 outputs:
+  - id: reconciliation_files
+    type:
+      type: array
+      items: File
+    doc: Reconciliation outputs written beside each gene tree (<tree><output 
+      ext>.tree/.recon/.order/.info, or .coal.tree/.coal.recon/.locus.tree/.locus.recon/.daughters
+      with --output_format dlcoal, and .log.gz with --log)
+    outputBinding:
+      glob: '$("*" + (inputs.output_file_extension ? inputs.output_file_extension
+        : ".dlcpar") + ".*")'
   - id: stdout
     type: stdout
     doc: Standard output

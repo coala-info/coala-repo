@@ -1,5 +1,12 @@
 # eggnog-mapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eggnog-mapper_download_eggnog_data.py | Not completed | The download needs several GB of eggNOG databases; only simulate mode (-s) was run, which printed the expected wget commands. |
+| eggnog-mapper_emapper.py | PASS |  |
+
 ## eggnog-mapper_download_eggnog_data.py
 
 ### Tool Description

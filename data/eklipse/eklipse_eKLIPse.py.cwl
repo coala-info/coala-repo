@@ -1,11 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
-  - eKLIPse
+  - eKLIPse.py
 label: eklipse_eKLIPse.py
 doc: "eKLIPse: a tool for identifying circular DNA breakpoints\n\nTool homepage: https://github.com/dooguypapua/eKLIPse"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.alignment_files)
 inputs:
+  - id: alignment_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: BAM files named in the -in file; staged in the working directory under
+      their own names (with their .bai index when present)
   - id: blast_cost_to_extend_a_gap
     type:
       - 'null'
@@ -73,14 +87,15 @@ inputs:
   - id: filter_non_bilateral_blast_deletions
     type:
       - 'null'
-      - boolean
-    doc: Filter non-bilateral BLAST deletions
+      - string
+    doc: Filter non-bilateral BLAST deletions (True or False; default True)
     inputBinding:
       position: 101
       prefix: -bilateral
   - id: input_file
     type: File
-    doc: FILE with Alignment paths
+    doc: FILE with Alignment paths (one line per BAM, tab-separated BAM path 
+      and title)
     inputBinding:
       position: 101
       prefix: -in
@@ -114,7 +129,7 @@ inputs:
       - boolean
     doc: Disable output colors
     inputBinding:
-      position: 101
+      position: 200
       prefix: --nocolor
   - id: output_dir
     type:
@@ -168,7 +183,7 @@ inputs:
       - boolean
     doc: eKLIPse test
     inputBinding:
-      position: 101
+      position: 200
       prefix: --test
   - id: threads
     type:
@@ -202,9 +217,9 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: Output directory path
+    doc: Result folder eKLIPse_<id> written inside the output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: "$(inputs.output_dir ? inputs.output_dir : '.')/eKLIPse_*"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eklipse:1.8--hdfd78af_2

@@ -1,5 +1,16 @@
 # dinf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dinf_check | PASS |  |
+| dinf_mc | PASS |  |
+| dinf_mcmc | PASS |  |
+| dinf_pg-gan | PASS |  |
+| dinf_predict | PASS |  |
+| dinf_train | PASS |  |
+
 ## dinf_check
 
 ### Tool Description

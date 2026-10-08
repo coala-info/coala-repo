@@ -32,7 +32,7 @@ FATAL ERROR: Failed to write to output filesystem
 ## Metadata
 - **Skill**: not generated
 
-## perm_php artisan permission:create-permission
+## perm_php_artisan_permission:create-permission
 
 ### Tool Description
 Create a new permission for the Spatie Laravel-permission package

@@ -1,6 +1,6 @@
 # sirius-csifingerid CWL Generation Report
 
-## sirius-csifingerid_sirius login
+## sirius-csifingerid_sirius_login
 
 ### Tool Description
 Allows a user to login for SIRIUS Webservices (e.g. CSI:FingerID or CANOPUS) and securely store a personal access token.

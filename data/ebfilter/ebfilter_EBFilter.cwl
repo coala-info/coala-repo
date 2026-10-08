@@ -13,13 +13,31 @@ inputs:
   - id: target_bam
     type: File
     doc: the path to the target bam file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 2
   - id: control_bam_list
     type: File
-    doc: the list of paths to control bam files
+    doc: the list of paths to control bam files; give the control BAM file 
+      names as staged from control_bams
     inputBinding:
       position: 3
+  - id: control_bams
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Control BAM files named in control_bam_list, staged into the working 
+      directory so the names resolve
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
   - id: output_vcf
     type: string
     doc: the path to the output
@@ -52,7 +70,10 @@ inputs:
   - id: format
     type:
       - 'null'
-      - string
+      - type: enum
+        symbols:
+          - vcf
+          - anno
     doc: the format of mutation file vcf or annovar (tsv) format
     inputBinding:
       position: 104
@@ -96,6 +117,11 @@ outputs:
     doc: the path to the output
     outputBinding:
       glob: '$(inputs.output_vcf)'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${ return inputs.control_bams || []; }
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ebfilter:0.2.2--pyh5ca1d4c_0

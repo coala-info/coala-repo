@@ -1,5 +1,11 @@
 # ega2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ega2 | Not completed | needs EGA account credentials and the retired EGA v2 download service; the client starts but cannot log in (SSL handshake fails). |
+
 ## ega2
 
 ### Tool Description

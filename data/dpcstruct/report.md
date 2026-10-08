@@ -1,5 +1,16 @@
 # dpcstruct CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dpcstruct_postfilters | PASS |  |
+| dpcstruct_prefilters | PASS |  |
+| dpcstruct_primarycluster | PASS |  |
+| dpcstruct_secondarycluster_classify | PASS |  |
+| dpcstruct_secondarycluster_distance | PASS |  |
+| dpcstruct_traceback | PASS |  |
+
 ## dpcstruct_prefilters
 
 ### Tool Description
@@ -71,28 +82,6 @@ Description:
 ```
 
 
-## dpcstruct_secondarycluster
-
-### Tool Description
-Perform secondary clustering operations.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dpcstruct:0.1.1--h9948957_0
-- **Homepage**: https://github.com/RitAreaSciencePark/DPCstruct
-- **Package**: https://anaconda.org/channels/bioconda/packages/dpcstruct/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: 
-	dpcstruct-secondarycluster MODE OPTIONS 
-Modes:
-	distance   Calculate distance matrix between primary clusters.
-
-	classify   Classify secondary clustering based on distance matrix.
-```
-
-
 ## dpcstruct_traceback
 
 ### Tool Description
@@ -146,6 +135,66 @@ Options:
 
 Description:
 	filters the results produced by traceback.cc.
+```
+
+
+## dpcstruct_secondarycluster_distance
+
+### Tool Description
+Calculate distances between primary clusters.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dpcstruct:0.1.1--h9948957_0
+- **Homepage**: https://github.com/RitAreaSciencePark/DPCstruct
+- **Package**: https://anaconda.org/channels/bioconda/packages/dpcstruct/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: 
+	dpcstruct secondarycluster distance -i INPUTA -j INPUTB -o OUTPUT -p PRODUCERS -c CONSUMERS 
+
+Options:
+	-i INPUTA		input file A
+
+	-j INPUTB		input file B
+
+	-o OUTPUT		output file for the distance matrix
+
+	-p PRODUCERS		producer threads
+
+	-c CONSUMERS		consumer threads
+
+Description:
+	Calculate distances between primary clusters.
+```
+
+
+## dpcstruct_secondarycluster_classify
+
+### Tool Description
+Classify primary clusters into secondary clusters or metaclusters.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dpcstruct:0.1.1--h9948957_0
+- **Homepage**: https://github.com/RitAreaSciencePark/DPCstruct
+- **Package**: https://anaconda.org/channels/bioconda/packages/dpcstruct/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: 
+	dpcstruct secondarycluster classify INPUT -o OUTPUT -t THREADS 
+
+Options:
+	INPUT			list of space-separated files
+
+	-o OUTPUT		output file containing the classified primary clusters
+
+	-t THREADS		number of threads (TBI)
+
+Description:
+	Classify primary clusters into secondary clusters or metaclusters.
 ```
 
 

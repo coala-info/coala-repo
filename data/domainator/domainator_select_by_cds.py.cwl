@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: domainator_select_by_cds.py
+baseCommand: select_by_cds.py
 label: domainator_select_by_cds.py
 doc: "Extract contigs regions around selected CDSs\n\nTakes a domain-annotated genbank
   file and extracts regions of contigs based on contig or CDS name or presence of
@@ -213,7 +213,8 @@ inputs:
       by comma. The supported flags are: comments, skip_default, skip_null.'
     inputBinding:
       position: 101
-      prefix: --print_config
+      prefix: --print_config=
+      separate: false
   - id: search_hits
     type:
       - 'null'

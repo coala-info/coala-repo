@@ -1,5 +1,14 @@
 # elastic-blast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| elastic-blast_delete | Not completed | Needs an ElasticBLAST search running on an AWS or GCP cloud account; no account is available here. |
+| elastic-blast_run-summary | Not completed | Needs an ElasticBLAST search running on an AWS or GCP cloud account; no account is available here. |
+| elastic-blast_status | Not completed | Needs an ElasticBLAST search running on an AWS or GCP cloud account; no account is available here. |
+| elastic-blast_submit | Not completed | Needs an AWS or GCP cloud account; a GCP dry run parsed the options but stopped because the image lacks gke-gcloud-auth-plugin. |
+
 ## elastic-blast_submit
 
 ### Tool Description
@@ -218,36 +227,4 @@ Application options:
 
 ## Metadata
 - **Skill**: not generated
-
-## elastic-blast
-
-### Tool Description
-This application facilitates running BLAST on large amounts of query sequence data on the cloud
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/elastic-blast:1.5.0--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/elastic-blast/
-- **Package**: https://anaconda.org/channels/bioconda/packages/elastic-blast/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: elastic-blast [-h] [--version] {submit,status,delete,run-summary} ...
-
-This application facilitates running BLAST on large amounts of query sequence
-data on the cloud
-
-positional arguments:
-  {submit,status,delete,run-summary}
-    submit              Submit an ElasticBLAST search
-    status              Get the status of an ElasticBLAST search
-    delete              Delete resources associated with an ElasticBLAST
-                        search
-    run-summary         ElasticBLAST run summary generation tool
-
-options:
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-
-To get help about specific command run elastic-blast command --help
-```
 

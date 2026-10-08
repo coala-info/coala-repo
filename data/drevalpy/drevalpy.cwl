@@ -73,7 +73,7 @@ inputs:
   - id: model_checkpoint_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to save model checkpoints
     inputBinding:
       position: 101
@@ -236,7 +236,7 @@ outputs:
       - Directory
     doc: Path to the output directory
     outputBinding:
-      glob: $(inputs.path_out_path)
+      glob: "$(inputs.path_out_path ? inputs.path_out_path : 'results')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,6 +1,6 @@
 # genomics-data-index CWL Generation Report
 
-## genomics-data-index_gdi analysis
+## genomics-data-index_gdi_analysis
 
 ### Tool Description
 Perform analysis on genomic data.
@@ -120,7 +120,7 @@ Error: No such option: --h Did you mean --help?
 ```
 
 
-## genomics-data-index_gdi load vcf
+## genomics-data-index_gdi_load_vcf
 
 ### Tool Description
 Load VCF files into the Genomics Data Index.
@@ -235,7 +235,7 @@ Error: No such option: --h Did you mean --help?
 ```
 
 
-## genomics-data-index_gdi load mlst-tseemann
+## genomics-data-index_gdi_load_mlst-tseemann
 
 ### Tool Description
 Load MLST data from TSEEMANN format into the Genomics Data Index.
@@ -350,7 +350,7 @@ Error: No such option: --h Did you mean --help?
 ```
 
 
-## genomics-data-index_gdi load mlst-sistr
+## genomics-data-index_gdi_load_mlst-sistr
 
 ### Tool Description
 Load MLST-sistr data into the Genomics Data Index.

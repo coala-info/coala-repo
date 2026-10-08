@@ -63,10 +63,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_fastx_file_path`
+    doc: output fastx statistics (requires an output filename)
     inputBinding:
       position: 104
-      prefix: --output-fastx-file
+      prefix: -x
   - id: output_length_counts_file_path
     type:
       - 'null'
@@ -98,6 +98,10 @@ outputs:
     doc: Output length counts
     outputBinding:
       glob: $(inputs.output_length_counts_file_path)
+  - id: stats
+    type: stdout
+    doc: Read statistics printed to stdout
+stdout: fastq-stats.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

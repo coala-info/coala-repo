@@ -9,19 +9,19 @@ inputs:
     type: File
     doc: First input fastq file
     inputBinding:
-      position: 1
+      position: 2
   - id: reads_2
     type: File
     doc: Second input fastq file
     inputBinding:
-      position: 2
+      position: 3
   - id: invariant_len
     type:
       - 'null'
       - int
     doc: The length of the invariant (ligation) portion of each read.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -i
   - id: sort_memory_param
     type:
@@ -30,7 +30,7 @@ inputs:
     doc: "The memory usage parameter to pass directly to the sort command's -S option.\n\
       \    Can be an absolute figure like 5G or a percentage. See man sort for details."
     inputBinding:
-      position: 103
+      position: 1
       prefix: -S
   - id: sort_temp_dir
     type:
@@ -39,7 +39,7 @@ inputs:
     doc: "The temporary file directory that sort should use.\n    Will be passed directly
       to the sort command's -T option."
     inputBinding:
-      position: 103
+      position: 1
       prefix: -T
   - id: tag_len
     type:
@@ -47,7 +47,7 @@ inputs:
       - int
     doc: The length of the barcode portion of each read.
     inputBinding:
-      position: 103
+      position: 1
       prefix: -t
 outputs:
   - id: stdout

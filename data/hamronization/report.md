@@ -62,7 +62,7 @@ Tools with hAMRonizable reports:
 ```
 
 
-## hamronization_hamronize summarize
+## hamronization_hamronize_summarize
 
 ### Tool Description
 Concatenate and summarize AMR detection reports
@@ -90,7 +90,7 @@ options:
 ```
 
 
-## hamronization_hamronize interactive
+## hamronization_hamronize_interactive
 
 ### Tool Description
 hamronize: error: argument analysis_tool: invalid choice: 'interactive' (choose from abricate, amrfinderplus, amrplusplus, ariba, csstar, deeparg, fargene, groot, kmerresistance, resfams, resfinder, mykrobe, rgi, srax, srst2, staramr, tbprofiler, summarize)

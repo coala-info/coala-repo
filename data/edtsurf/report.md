@@ -1,5 +1,11 @@
 # edtsurf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| edtsurf_EDTSurf | PASS |  |
+
 ## edtsurf_EDTSurf
 
 ### Tool Description

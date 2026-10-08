@@ -1,5 +1,13 @@
 # eido CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eido_convert | PASS |  |
+| eido_inspect | PASS |  |
+| eido_validate | PASS |  |
+
 ## eido_validate
 
 ### Tool Description
@@ -7,14 +15,14 @@ Validate a PEP or its components
 
 ### Metadata
 - **Docker Image**: biocontainers/eido:0.1.9_cv2
-- **Homepage**: https://github.com/mayneyao/eidos
+- **Homepage**: https://github.com/pepkit/eido
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/eido/overview
 - **Total Downloads**: 381.6K
 - **Last updated**: 2026-02-04
-- **GitHub**: https://github.com/mayneyao/eidos
+- **GitHub**: https://github.com/pepkit/eido
 - **Stars**: N/A
 ### Original Help Text
 ```text
@@ -48,7 +56,7 @@ Inspect a PEP
 
 ### Metadata
 - **Docker Image**: biocontainers/eido:0.1.9_cv2
-- **Homepage**: https://github.com/mayneyao/eidos
+- **Homepage**: https://github.com/pepkit/eido
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -81,7 +89,7 @@ Convert PEP format using filters
 
 ### Metadata
 - **Docker Image**: biocontainers/eido:0.1.9_cv2
-- **Homepage**: https://github.com/mayneyao/eidos
+- **Homepage**: https://github.com/pepkit/eido
 - **Package**: Not found
 - **Validation**: PASS
 

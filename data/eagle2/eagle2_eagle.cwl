@@ -23,19 +23,29 @@ inputs:
   - id: bfile
     type:
       - 'null'
-      - string
-    doc: prefix of PLINK .fam, .bim, .bed files
+      - File
+    doc: PLINK .bed file whose .bim and .fam files sit beside it; passed as the 
+      prefix of PLINK .fam, .bim, .bed files
+    secondaryFiles:
+      - ^.bim
+      - ^.fam
     inputBinding:
       position: 101
       prefix: --bfile
+      valueFrom: $(self.path.replace(/\.bed$/, ''))
   - id: bfilegz
     type:
       - 'null'
-      - string
-    doc: prefix of PLINK .fam.gz, .bim.gz, .bed.gz files
+      - File
+    doc: PLINK .bed.gz file whose .bim.gz and .fam.gz files sit beside it; passed
+      as the prefix of PLINK .fam.gz, .bim.gz, .bed.gz files
+    secondaryFiles:
+      - ^^.bim.gz
+      - ^^.fam.gz
     inputBinding:
       position: 101
       prefix: --bfilegz
+      valueFrom: $(self.path.replace(/\.bed\.gz$/, ''))
   - id: bim
     type:
       - 'null'
@@ -82,10 +92,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --exclude
     doc: file(s) listing SNPs to ignore (no header; SNP ID must be first column)
     inputBinding:
       position: 101
-      prefix: --exclude
   - id: expect_ibdc_m
     type:
       - 'null'
@@ -104,9 +115,10 @@ inputs:
       prefix: --fam
   - id: genetic_map_file
     type:
-      - 'null'
       - File
-    doc: 'HapMap genetic map provided with download: tables/genetic_map_hg##.txt.gz'
+      - string
+    doc: 'HapMap genetic map provided with download: tables/genetic_map_hg##.txt.gz
+      (or the word USE_BIM to take cM positions from the PLINK .bim file)'
     inputBinding:
       position: 101
       prefix: --geneticMapFile
@@ -175,9 +187,7 @@ inputs:
       position: 101
       prefix: --numThreads
   - id: out_prefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: prefix for output files
     inputBinding:
       position: 101
@@ -211,11 +221,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --remove
     doc: file(s) listing individuals to ignore (no header; FID IID must be first
       two columns)
     inputBinding:
       position: 101
-      prefix: --remove
   - id: v1
     type:
       - 'null'
@@ -235,10 +246,14 @@ inputs:
   - id: vcf_exclude
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: tabix-indexed [compressed] VCF/BCF file containing variants to exclude 
       from phasing
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcfExclude
@@ -256,6 +271,11 @@ inputs:
       - 'null'
       - File
     doc: tabix-indexed [compressed] VCF/BCF file for reference haplotypes
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcfRef
@@ -264,6 +284,11 @@ inputs:
       - 'null'
       - File
     doc: tabix-indexed [compressed] VCF/BCF file for target genotypes
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcfTarget
@@ -278,6 +303,8 @@ outputs:
     doc: Files written with the prefix given in out_prefix
     outputBinding:
       glob: $(inputs.out_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eagle2:2.4.1--h6a68c12_0

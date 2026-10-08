@@ -4,14 +4,6 @@ baseCommand: dsh-fastq-description
 label: dsh-bio_fastq-description
 doc: "Display description lines from a FASTQ file.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: about
-    type:
-      - 'null'
-      - boolean
-    doc: display about message
-    inputBinding:
-      position: 101
-      prefix: --about
   - id: fastq_path
     type:
       - 'null'

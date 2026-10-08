@@ -4,11 +4,11 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| checkm-genome_checkm analyze | PASS |  |
-| checkm-genome_checkm lineage_wf | PASS |  |
-| checkm-genome_checkm qa | PASS |  |
-| checkm-genome_checkm ssu_finder | PASS |  |
-| checkm-genome_checkm taxonomy_wf | PASS |  |
+| checkm-genome_checkm_analyze | PASS |  |
+| checkm-genome_checkm_lineage_wf | PASS |  |
+| checkm-genome_checkm_qa | PASS |  |
+| checkm-genome_checkm_ssu_finder | PASS |  |
+| checkm-genome_checkm_taxonomy_wf | PASS |  |
 | checkm-genome_coding_plot | PASS |  |
 | checkm-genome_coverage | Failed | tool bug: CheckM 1.2.4 imports pysam only inside run(), so the BAM worker crashes with NameError: name 'pysam' is not defined. |
 | checkm-genome_dist_plot | PASS |  |
@@ -31,7 +31,7 @@
 | checkm-genome_unbinned | PASS |  |
 | checkm-genome_unique | PASS |  |
 
-## checkm-genome_checkm lineage_wf
+## checkm-genome_checkm_lineage_wf
 
 ### Tool Description
 Runs tree, lineage_set, analyze, qa
@@ -98,7 +98,7 @@ options:
 Example: checkm lineage_wf ./bins ./output
 ```
 
-## checkm-genome_checkm taxonomy_wf
+## checkm-genome_checkm_taxonomy_wf
 
 ### Tool Description
 Runs taxon_set, analyze, qa
@@ -162,7 +162,7 @@ options:
 Example: checkm taxonomy_wf domain Bacteria ./bins ./output
 ```
 
-## checkm-genome_checkm qa
+## checkm-genome_checkm_qa
 
 ### Tool Description
 Assess bins for contamination and completeness.
@@ -234,7 +234,7 @@ Note: lineage_wf and taxonomy_wf produce a marker file in the specified output d
 Example: checkm qa ./output/lineage.ms ./output
 ```
 
-## checkm-genome_checkm ssu_finder
+## checkm-genome_checkm_ssu_finder
 
 ### Tool Description
 Identify SSU (16S/18S) rRNAs in sequences.
@@ -272,7 +272,7 @@ options:
 Example: checkm ssu_finder seqs.fna ./bins ./ssu_finder
 ```
 
-## checkm-genome_checkm analyze
+## checkm-genome_checkm_analyze
 
 ### Tool Description
 Identify marker genes in bins and calculate genome statistics.

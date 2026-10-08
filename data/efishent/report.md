@@ -1,5 +1,11 @@
 # efishent CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| efishent | Failed | image problem: jellyfish is missing, so the k-mer step crashes and no final probe set is written. |
+
 ## efishent
 
 ### Tool Description

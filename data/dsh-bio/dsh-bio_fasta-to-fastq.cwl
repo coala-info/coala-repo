@@ -1,46 +1,40 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dsh-bio_fasta-to-fastq
+baseCommand:
+  - dsh-fasta-to-fastq
 label: dsh-bio_fasta-to-fastq
-doc: "Converts FASTA sequences to FASTQ format.\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
+doc: "convert DNA sequences in FASTA format to FASTQ format\n\nTool homepage: https://github.com/heuermh/dishevelled-bio"
 inputs:
-  - id: input_fasta
+  - id: input_fasta_path
     type: File
-    doc: Input FASTA file
+    doc: "input FASTA path, default stdin"
     inputBinding:
-      position: 1
-  - id: default_quality
+      position: 101
+      prefix: --input-fasta-path
+  - id: output_fastq_file_path
+    type: string
+    doc: "output FASTQ file, default stdout"
+    inputBinding:
+      position: 101
+      prefix: --output-fastq-file
+  - id: quality
     type:
       - 'null'
       - int
-    doc: Default quality score to assign to all bases if not specified in the 
-      FASTA header. Default is 30.
+    doc: "quality score for FASTQ, [0..93], default 40"
     inputBinding:
-      position: 102
-      prefix: --default-quality
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrite output file if it already exists.
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: quality_score_type
-    type:
-      - 'null'
-      - string
-    doc: Type of quality scores to generate (e.g., ILLUMINA, SOLEXA, SANGER). 
-      Default is ILLUMINA.
-    inputBinding:
-      position: 102
-      prefix: --quality-score-type
+      position: 101
+      prefix: --quality
 outputs:
-  - id: output_fastq
-    type: File
-    doc: Output FASTQ file
+  - id: output_fastq_file
+    type:
+      - 'null'
+      - File
+    doc: "output FASTQ file, default stdout"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_fastq_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

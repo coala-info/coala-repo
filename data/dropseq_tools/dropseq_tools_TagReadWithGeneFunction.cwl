@@ -22,10 +22,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -57,7 +58,7 @@ inputs:
       - boolean
     doc: Echo final command line before executing.
     inputBinding:
-      position: 101
+      position: 0
       prefix: -v
   - id: gene_function_tag
     type:
@@ -97,7 +98,7 @@ inputs:
       - string
     doc: Heap size to allocate for the JVM.
     inputBinding:
-      position: 101
+      position: 0
       prefix: -m
   - id: max_records_in_ram
     type:
@@ -161,10 +162,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --showHidden
-  - id: summary
+  - id: summary_path
     type:
       - 'null'
-      - File
+      - string
     doc: The strand specific summary info
     inputBinding:
       position: 101
@@ -173,12 +174,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -238,6 +240,13 @@ outputs:
     doc: The output BAM, written with new Gene/Exon tag
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: summary
+    type:
+      - 'null'
+      - File
+    doc: The strand specific summary info
+    outputBinding:
+      glob: $(inputs.summary_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

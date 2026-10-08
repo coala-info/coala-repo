@@ -1,5 +1,11 @@
 # dlcpar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| dlcpar | PASS |  |
+
 ## dlcpar
 
 ### Tool Description
